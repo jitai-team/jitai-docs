@@ -6,10 +6,10 @@
 
 **为AI而生，下一代企业级智件和软件开发平台**
 
-[![GitHub stars](https://img.shields.io/github/stars/WanyunJit/JitDoc?style=social)](https://github.com/WanyunJit/JitDoc/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/WanyunJit/JitDoc?style=social)](https://github.com/WanyunJit/JitDoc/network/members)
-[![GitHub issues](https://img.shields.io/github/issues/WanyunJit/JitDoc)](https://github.com/WanyunJit/JitDoc/issues)
-[![GitHub license](https://img.shields.io/github/license/WanyunJit/JitDoc)](https://github.com/WanyunJit/JitDoc/blob/master/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/jitai-team/jitai-docs?style=social)](https://github.com/jitai-team/jitai-docs/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/jitai-team/jitai-docs?style=social)](https://github.com/jitai-team/jitai-docs/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/jitai-team/jitai-docs)](https://github.com/jitai-team/jitai-docs/issues)
+[![GitHub license](https://img.shields.io/github/license/jitai-team/jitai-docs)](https://github.com/jitai-team/jitai-docs/blob/master/LICENSE)
 
 [🌐 在线文档](https://developer.jit.pro) | [📖 快速开始](#快速开始) | [🤝 参与贡献](#参与贡献) | [💬 社区交流](#社区交流)
 
@@ -51,8 +51,8 @@ JitAi 开发者文档是为 JitAi 平台用户和开发者提供的完整技术�
 
 1. **克隆仓库**
    ```bash
-   git clone https://github.com/WanyunJit/JitDoc.git
-   cd JitDoc
+   git clone https://github.com/jitai-team/jitai-docs.git
+   cd jitai-docs
    ```
 
 2. **安装依赖**
@@ -86,7 +86,7 @@ yarn serve
 ## 🛠️ 项目结构
 
 ```
-JitDoc/
+jitai-docs/
 ├── docs/                    # 文档内容
 │   ├── tutorial/           # 教程文档
 │   │   ├── 00快速上手/     # 快速入门指南
@@ -114,7 +114,7 @@ JitDoc/
 
 如果您发现了文档中的错误、不准确的描述或其他问题：
 
-1. 检查 [Issues](https://github.com/WanyunJit/JitDoc/issues) 页面，确认问题尚未被报告
+1. 检查 [Issues](https://github.com/jitai-team/jitai-docs/issues) 页面，确认问题尚未被报告
 2. 创建新的 Issue，请详细描述：
    - 问题的具体位置（页面链接、章节标题等）
    - 问题的详细描述
@@ -173,8 +173,8 @@ JitDoc/
 
 加入我们的开发者社区，与其他开发者交流经验、获取帮助：
 
-- **GitHub Discussions**: [项目讨论区](https://github.com/WanyunJit/JitDoc/discussions)
-- **GitHub Issues**: [问题报告和功能请求](https://github.com/WanyunJit/JitDoc/issues)
+- **GitHub Discussions**: [项目讨论区](https://github.com/jitai-team/jitai-docs/discussions)
+- **GitHub Issues**: [问题报告和功能请求](https://github.com/jitai-team/jitai-docs/issues)
 - **官方网站**: [https://jit.pro](https://jit.pro)
 
 ## 🙏 致谢

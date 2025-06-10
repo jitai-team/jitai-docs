@@ -102,11 +102,11 @@ We follow these code standards:
 # Fork the repository to your GitHub account
 # Then clone your fork
 
-git clone https://github.com/YOUR_USERNAME/JitDoc.git
-cd JitDoc
+git clone https://github.com/YOUR_USERNAME/jitai-docs.git
+cd jitai-docs
 
 # Add upstream repository
-git remote add upstream https://github.com/WanyunJit/JitDoc.git
+git remote add upstream https://github.com/jitai-team/jitai-docs.git
 ```
 
 ### 2. Install Dependencies
@@ -247,7 +247,7 @@ Add any other context about the issue.
 
 ### 1. Choose a Task
 
-- Check [Issues](https://github.com/WanyunJit/JitDoc/issues) for tasks marked as `good first issue`
+- Check [Issues](https://github.com/jitai-team/jitai-docs/issues) for tasks marked as `good first issue`
 - Comment on the Issue to indicate you want to handle it
 - Wait for maintainer confirmation and assignment
 
@@ -392,8 +392,8 @@ We welcome contributions to translate documentation into other languages. If you
 
 If you encounter any problems during the contribution process:
 
-- 📋 Check [Issues](https://github.com/WanyunJit/JitDoc/issues) for similar problems
-- 💬 Ask questions in [Discussions](https://github.com/WanyunJit/JitDoc/discussions)
+- 📋 Check [Issues](https://github.com/jitai-team/jitai-docs/issues) for similar problems
+- 💬 Ask questions in [Discussions](https://github.com/jitai-team/jitai-docs/discussions)
 - 📧 Contact maintainers through Issues
 
 ## 🎖️ Contributor Recognition

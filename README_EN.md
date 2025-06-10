@@ -6,10 +6,10 @@
 
 **Born for AI, Next-Generation Enterprise-Level AI Application Development Platform**
 
-[![GitHub stars](https://img.shields.io/github/stars/WanyunJit/JitDoc?style=social)](https://github.com/WanyunJit/JitDoc/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/WanyunJit/JitDoc?style=social)](https://github.com/WanyunJit/JitDoc/network/members)
-[![GitHub issues](https://img.shields.io/github/issues/WanyunJit/JitDoc)](https://github.com/WanyunJit/JitDoc/issues)
-[![GitHub license](https://img.shields.io/github/license/WanyunJit/JitDoc)](https://github.com/WanyunJit/JitDoc/blob/master/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/jitai-team/jitai-docs?style=social)](https://github.com/jitai-team/jitai-docs/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/jitai-team/jitai-docs?style=social)](https://github.com/jitai-team/jitai-docs/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/jitai-team/jitai-docs)](https://github.com/jitai-team/jitai-docs/issues)
+[![GitHub license](https://img.shields.io/github/license/jitai-team/jitai-docs)](https://github.com/jitai-team/jitai-docs/blob/master/LICENSE)
 
 [🌐 Online Documentation](https://developer.jit.pro) | [📖 Quick Start](#quick-start) | [🤝 Contributing](#contributing) | [💬 Community](#community)
 
@@ -51,8 +51,8 @@ JitAi Developer Documentation is a comprehensive technical documentation collect
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/WanyunJit/JitDoc.git
-   cd JitDoc
+   git clone https://github.com/jitai-team/jitai-docs.git
+   cd jitai-docs
    ```
 
 2. **Install Dependencies**
@@ -86,7 +86,7 @@ yarn serve
 ## 🛠️ Project Structure
 
 ```
-JitDoc/
+jitai-docs/
 ├── docs/                    # Documentation content
 │   ├── tutorial/           # Tutorial documentation
 │   │   ├── 00快速上手/     # Quick start guide
@@ -114,7 +114,7 @@ We warmly welcome and appreciate contributions from every developer! Whether you
 
 If you find errors, inaccurate descriptions, or other issues in the documentation:
 
-1. Check the [Issues](https://github.com/WanyunJit/JitDoc/issues) page to confirm the issue hasn't been reported yet
+1. Check the [Issues](https://github.com/jitai-team/jitai-docs/issues) page to confirm the issue hasn't been reported yet
 2. Create a new Issue with detailed description:
    - Specific location of the issue (page link, section title, etc.)
    - Detailed description of the issue
@@ -174,8 +174,8 @@ Thanks to all developers who have contributed to this project:
 
 Join our developer community to exchange experiences and get help:
 
-- **GitHub Discussions**: [Project Discussion Area](https://github.com/WanyunJit/JitDoc/discussions)
-- **GitHub Issues**: [Issue Reports and Feature Requests](https://github.com/WanyunJit/JitDoc/issues)
+- **GitHub Discussions**: [Project Discussion Area](https://github.com/jitai-team/jitai-docs/discussions)
+- **GitHub Issues**: [Issue Reports and Feature Requests](https://github.com/jitai-team/jitai-docs/issues)
 - **Official Website**: [https://jit.pro](https://jit.pro)
 
 ## 🙏 Acknowledgments

@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![JitAi Logo](static/img/jit.png)
+<img src="static/img/jit.png" alt="JitAi Logo" width="200" />
 
 **为AI而生，下一代企业级智件和软件开发平台**
 

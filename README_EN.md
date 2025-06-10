@@ -2,9 +2,9 @@
 
 <div align="center">
 
-![JitAi Logo](static/img/jit.png)
+<img src="static/img/jit.png" alt="JitAi Logo" width="200" />
 
-**Born for AI, Next-Generation Enterprise-Level Smart Components and Software Development Platform**
+**Born for AI, Next-Generation Enterprise-Level AI Application Development Platform**
 
 [![GitHub stars](https://img.shields.io/github/stars/WanyunJit/DocSite?style=social)](https://github.com/WanyunJit/DocSite/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/WanyunJit/DocSite?style=social)](https://github.com/WanyunJit/DocSite/network/members)

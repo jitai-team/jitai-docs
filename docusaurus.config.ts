@@ -22,7 +22,7 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'WanyunJit', // Usually your GitHub org/user name.
+  organizationName: 'jitai-team', // Usually your GitHub org/user name.
   projectName: 'devdocs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -45,7 +45,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/WanyunJit/devdocs/tree/main/docs',
+            'https://github.com/jitai-team/jitai-docs/tree/master/docs',
         },
         blog: {
           showReadingTime: true,
@@ -56,7 +56,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/WanyunJit/devdocs/tree/main/blog',
+            'https://github.com/jitai-team/jitai-docs/tree/master/blog',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -103,7 +103,7 @@ const config: Config = {
         },
         //GitHub
         {
-          href: 'https://github.com/WanyunJit',
+          href: 'https://github.com/jitai-team',
           label: 'GitHub',
           position: 'right',
         },
@@ -151,7 +151,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/WanyunJit',
+              href: 'https://github.com/jitai-team',
             },
           ],
         },

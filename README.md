@@ -188,6 +188,6 @@ jitai-docs/
 
 **如果这个项目对您有帮助，请给我们一个 ⭐**
 
-Made with ❤️ by [武汉万云科技](https://github.com/WanyunJit) Team
+Made with ❤️ by [武汉万云科技](https://github.com/jitai-team) Team
 
 </div>

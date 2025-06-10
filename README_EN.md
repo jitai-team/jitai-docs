@@ -189,6 +189,6 @@ Join our developer community to exchange experiences and get help:
 
 **If this project is helpful to you, please give us a ⭐**
 
-Made with ❤️ by [Wuhan Wanyun Technology](https://github.com/WanyunJit) Team
+Made with ❤️ by [Wuhan Wanyun Technology](https://github.com/jitai-team) Team
 
 </div> 

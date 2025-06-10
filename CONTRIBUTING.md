@@ -102,11 +102,11 @@ import TabItem from '@theme/TabItem';
 # Fork 仓库到您的 GitHub 账户
 # 然后克隆您的 fork
 
-git clone https://github.com/YOUR_USERNAME/DocSite.git
-cd DocSite
+git clone https://github.com/YOUR_USERNAME/JitDoc.git
+cd JitDoc
 
 # 添加上游仓库
-git remote add upstream https://github.com/WanyunJit/DocSite.git
+git remote add upstream https://github.com/WanyunJit/JitDoc.git
 ```
 
 ### 2. 安装依赖
@@ -247,7 +247,7 @@ yarn start
 
 ### 1. 选择任务
 
-- 查看 [Issues](https://github.com/WanyunJit/DocSite/issues) 寻找标记为 `good first issue` 的任务
+- 查看 [Issues](https://github.com/WanyunJit/JitDoc/issues) 寻找标记为 `good first issue` 的任务
 - 在 Issue 中留言表明您想要处理该问题
 - 等待维护者确认分配
 
@@ -392,8 +392,8 @@ docs: 添加 API 认证章节
 
 如果您在贡献过程中遇到任何问题：
 
-- 📋 查看 [Issues](https://github.com/WanyunJit/DocSite/issues) 寻找相似问题
-- 💬 在 [Discussions](https://github.com/WanyunJit/DocSite/discussions) 中提问
+- 📋 查看 [Issues](https://github.com/WanyunJit/JitDoc/issues) 寻找相似问题
+- 💬 在 [Discussions](https://github.com/WanyunJit/JitDoc/discussions) 中提问
 - 📧 通过 Issues 联系维护者
 
 ## 🎖️ 贡献者认可

@@ -404,10 +404,6 @@ We value every contributor's efforts:
 - Important contributors will be invited to become project maintainers
 - We regularly publish contributor leaderboards
 
-## 📄 License
-
-By contributing to this project, you agree that your contributions will be licensed under the [MIT License](LICENSE).
-
 ---
 
 Thank you again for your contribution to the JitAi Developer Documentation project! Let's work together to create a better developer experience. 🚀 

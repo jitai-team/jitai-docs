@@ -6,7 +6,7 @@
 
 ## 加入我们
 
-- **GitHub**: [WanyunJit](https://github.com/WanyunJit)
+- **GitHub**: [jitai-team](https://github.com/jitai-team)
 - **讨论区**: 即将推出
 - **QQ群**: 即将推出
 

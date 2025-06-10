@@ -23,7 +23,7 @@ const config: Config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'jitai-team', // Usually your GitHub org/user name.
-  projectName: 'devdocs', // Usually your repo name.
+  projectName: 'jitai-docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -45,7 +45,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/jitai-team/jitai-docs/tree/master/docs',
+            'https://github.com/jitai-team/jitai-docs/tree/master',
         },
         blog: {
           showReadingTime: true,
@@ -56,7 +56,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/jitai-team/jitai-docs/tree/master/blog',
+            'https://github.com/jitai-team/jitai-docs/tree/master',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -121,7 +121,7 @@ const config: Config = {
             },
             {
               label: '快速上手',
-              to: '/docs/tutorial/00快速上手/02-5分钟开发一个AI应用（智能客服）',
+              to: '/docs/tutorial/00快速上手/03-5分钟开发一个AI应用（智能客服）',
             }
           ],
         },

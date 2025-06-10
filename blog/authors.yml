@@ -1,0 +1,22 @@
+liushao:
+  name: iSuperCoder
+  title: Engineer
+  url: https://github.com/iSuperCoder
+  image_url: https://avatars.githubusercontent.com/u/12913198?s=400&u=2cf6029c46f4eaa45f7353ce0a6bd5812fb682e2&v=4
+  page: true
+  socials:
+    github: iSuperCoder
+
+slorber:
+  name: Sébastien Lorber
+  title: Docusaurus maintainer
+  url: https://sebastienlorber.com
+  image_url: https://github.com/slorber.png
+  page:
+    # customize the url of the author page at /blog/authors/<permalink>
+    permalink: '/all-sebastien-lorber-articles'
+  socials:
+    x: sebastienlorber
+    linkedin: sebastienlorber
+    github: slorber
+    newsletter: https://thisweekinreact.com

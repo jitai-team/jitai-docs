@@ -35,6 +35,7 @@ const config: Config = {
     defaultLocale: 'zh-Hans',
     locales: ['zh-Hans'],
   },
+  noIndex: true, // 等文档完善后，再放开
 
   presets: [
     [
@@ -82,25 +83,25 @@ const config: Config = {
         src: 'img/jit.png',
       },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: '文档',
-        },
-        {to: '/blog', label: '博客', position: 'left'},
-        {
-          type: 'docSidebar',
-          sidebarId: 'caseSidebar',
-          position: 'left',
-          label: '案例展示',
-        },
-        {
-          type: 'docSidebar',
-          sidebarId: 'communitySidebar',
-          position: 'left',
-          label: '社区',
-        },
+        // {
+        //   type: 'docSidebar',
+        //   sidebarId: 'tutorialSidebar',
+        //   position: 'left',
+        //   label: '文档',
+        // },
+        // {to: '/blog', label: '博客', position: 'left'},
+        // {
+        //   type: 'docSidebar',
+        //   sidebarId: 'caseSidebar',
+        //   position: 'left',
+        //   label: '案例展示',
+        // },
+        // {
+        //   type: 'docSidebar',
+        //   sidebarId: 'communitySidebar',
+        //   position: 'left',
+        //   label: '社区',
+        // },
         //GitHub
         {
           href: 'https://github.com/jitai-team',
@@ -125,36 +126,36 @@ const config: Config = {
             }
           ],
         },
-        {
-          title: '社区',
-          items: [
-            {
-              label: 'Slack',
-              href: 'https://join.slack.com/t/jit-pro/shared_invite/zt-23999999999999999999999999999999',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/jitai',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/jitai',
-            },
-          ],
-        },
-        {
-          title: '更多',
-          items: [
-            {
-              label: '博客',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/jitai-team',
-            },
-          ],
-        },
+        // {
+        //   title: '社区',
+        //   items: [
+        //     {
+        //       label: 'Slack',
+        //       href: 'https://join.slack.com/t/jit-pro/shared_invite/zt-23999999999999999999999999999999',
+        //     },
+        //     {
+        //       label: 'Discord',
+        //       href: 'https://discordapp.com/invite/jitai',
+        //     },
+        //     {
+        //       label: 'X',
+        //       href: 'https://x.com/jitai',
+        //     },
+        //   ],
+        // },
+        // {
+        //   title: '更多',
+        //   items: [
+        //     {
+        //       label: '博客',
+        //       to: '/blog',
+        //     },
+        //     {
+        //       label: 'GitHub',
+        //       href: 'https://github.com/jitai-team',
+        //     },
+        //   ],
+        // },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Jit, Inc. Built with 武汉万云 Co., Ltd.`,
     },

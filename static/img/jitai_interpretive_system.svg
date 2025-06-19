@@ -1,0 +1,112 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background complex system grid -->
+  <defs>
+    <pattern id="complexGrid" width="15" height="15" patternUnits="userSpaceOnUse">
+      <path d="M 15 0 L 0 0 0 15" fill="none" stroke="#4F46E5" stroke-width="0.3" opacity="0.3"/>
+    </pattern>
+    <radialGradient id="aiCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#4F46E5;stop-opacity:0.1"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Complex system background -->
+  <rect x="10" y="10" width="180" height="180" fill="url(#complexGrid)" opacity="0.5"/>
+  
+  <!-- Multiple system layers -->
+  <g opacity="0.6">
+    <!-- Outer system ring -->
+    <circle cx="100" cy="100" r="85" fill="none" stroke="#8B5CF6" stroke-width="1" stroke-dasharray="5,3"/>
+    <circle cx="100" cy="100" r="70" fill="none" stroke="#6366F1" stroke-width="1" stroke-dasharray="3,2"/>
+    <circle cx="100" cy="100" r="55" fill="none" stroke="#4F46E5" stroke-width="1.5" stroke-dasharray="2,1"/>
+  </g>
+  
+  <!-- Central AI interpretation engine -->
+  <circle cx="100" cy="100" r="30" fill="url(#aiCore)" stroke="#4F46E5" stroke-width="2"/>
+  
+  <!-- AI brain neural pattern -->
+  <g stroke="#4F46E5" stroke-width="1.5" fill="none">
+    <path d="M85 90 Q100 80 115 90 Q110 100 100 105 Q90 100 85 90"/>
+    <path d="M85 110 Q100 120 115 110 Q110 100 100 95 Q90 100 85 110"/>
+    <circle cx="90" cy="95" r="2" fill="#4F46E5"/>
+    <circle cx="110" cy="95" r="2" fill="#4F46E5"/>
+    <circle cx="100" cy="105" r="2" fill="#4F46E5"/>
+  </g>
+  
+  <!-- Complex application systems (different shapes representing different types) -->
+  <g>
+    <!-- Web applications -->
+    <rect x="25" y="25" width="20" height="15" rx="3" fill="#10B981" stroke="#059669" stroke-width="1.5"/>
+    <rect x="155" y="25" width="20" height="15" rx="3" fill="#10B981" stroke="#059669" stroke-width="1.5"/>
+    
+    <!-- Database systems -->
+    <ellipse cx="35" cy="170" rx="12" ry="8" fill="#F59E0B" stroke="#D97706" stroke-width="1.5"/>
+    <ellipse cx="165" cy="170" rx="12" ry="8" fill="#F59E0B" stroke="#D97706" stroke-width="1.5"/>
+    
+    <!-- API services -->
+    <polygon points="175,90 185,100 175,110 165,100" fill="#EF4444" stroke="#DC2626" stroke-width="1.5"/>
+    <polygon points="35,90 45,100 35,110 25,100" fill="#EF4444" stroke="#DC2626" stroke-width="1.5"/>
+    
+    <!-- Microservices -->
+    <circle cx="50" cy="50" r="8" fill="#8B5CF6" stroke="#7C3AED" stroke-width="1.5"/>
+    <circle cx="150" cy="50" r="8" fill="#8B5CF6" stroke="#7C3AED" stroke-width="1.5"/>
+    <circle cx="50" cy="150" r="8" fill="#8B5CF6" stroke="#7C3AED" stroke-width="1.5"/>
+    <circle cx="150" cy="150" r="8" fill="#8B5CF6" stroke="#7C3AED" stroke-width="1.5"/>
+    
+    <!-- IoT devices -->
+    <rect x="90" y="20" width="20" height="12" rx="6" fill="#06B6D4" stroke="#0891B2" stroke-width="1.5"/>
+    <rect x="90" y="168" width="20" height="12" rx="6" fill="#06B6D4" stroke="#0891B2" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Complex dynamic connections showing AI interpretation -->
+  <g stroke="#4F46E5" stroke-width="1" fill="none" opacity="0.7">
+    <!-- Curved connections from AI core to systems -->
+    <path d="M70 85 Q50 70 35 45"/>
+    <path d="M130 85 Q150 70 165 45"/>
+    <path d="M115 130 Q135 145 150 158"/>
+    <path d="M85 130 Q65 145 50 158"/>
+    <path d="M70 100 Q45 100 25 100"/>
+    <path d="M130 100 Q155 100 175 100"/>
+    <path d="M100 70 Q100 45 100 32"/>
+    <path d="M100 130 Q100 155 100 168"/>
+    
+    <!-- Cross-system connections showing dynamic orchestration -->
+    <path d="M50 58 Q75 75 100 70" stroke-dasharray="2,2"/>
+    <path d="M150 58 Q125 75 100 70" stroke-dasharray="2,2"/>
+    <path d="M175 110 Q175 135 165 162" stroke-dasharray="2,2"/>
+    <path d="M25 110 Q25 135 35 162" stroke-dasharray="2,2"/>
+  </g>
+  
+  <!-- Dynamic interpretation signals -->
+  <g>
+    <!-- AI interpretation waves -->
+    <circle cx="100" cy="100" r="35" fill="none" stroke="#4F46E5" stroke-width="1" opacity="0.3">
+      <animate attributeName="r" values="35;45;35" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.1;0.3" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="100" cy="100" r="40" fill="none" stroke="#4F46E5" stroke-width="1" opacity="0.2">
+      <animate attributeName="r" values="40;50;40" dur="3s" repeatCount="indefinite" begin="1s"/>
+      <animate attributeName="opacity" values="0.2;0.05;0.2" dur="3s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    
+    <!-- Data flow particles -->
+    <g fill="#F59E0B">
+      <circle cx="80" cy="80" r="2">
+        <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0; 20,-20; 0,0" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="120" cy="80" r="2">
+        <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0; -20,-20; 0,0" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+      </circle>
+      <circle cx="80" cy="120" r="2">
+        <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" begin="1s"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0; 20,20; 0,0" dur="2s" repeatCount="indefinite" begin="1s"/>
+      </circle>
+      <circle cx="120" cy="120" r="2">
+        <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" begin="1.5s"/>
+        <animateTransform attributeName="transform" type="translate" values="0,0; -20,20; 0,0" dur="2s" repeatCount="indefinite" begin="1.5s"/>
+      </circle>
+    </g>
+  </g>
+</svg> 

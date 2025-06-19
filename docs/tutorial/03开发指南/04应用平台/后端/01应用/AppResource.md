@@ -15,7 +15,7 @@ AppResource（应用资源管理器），用于管理和操作应用的已打包
 | envId | str | 运行环境ID，例如：`JRE_MWcVmUZjEq` |
 | appId | str | 应用ID，例如：`wanyun.MyApp` |
 | version | str | 应用版本，例如：`1.0.0` |
-| env | [Environ](../02运行环境/Environ) | 应用所属的运行环境对象 |
+| env | [Environ](../02运行环境/01Environ) | 应用所属的运行环境对象 |
 | app | [App](../01应用/App) | 应用对象 |
 | marks | Set[str] | 已向运行环境获取过的资源标记集合 |
 | files | Dict[str, str] | 文件资源缓存，key为文件路径，value为文件内容 |

@@ -1,0 +1,8 @@
+{
+  "label": "Core",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "JitCore 核心功能模块，提供基础服务和公共模块"
+  }
+} 

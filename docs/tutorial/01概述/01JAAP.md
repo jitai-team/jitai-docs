@@ -112,36 +112,6 @@ MyApp/                     # 应用根目录
       "defaultShell": "shells.Main",
       // 默认存储配置
       "defaultStorage": "storages.Default"
-    },
-    // 元素设置（通常在IDE应用中使用）
-    "elementSettings": {
-      "defaultOpt": [
-        {
-          "elementType": "shells.Meta",
-          "required": 1,
-          "title": "默认门户"
-        },
-        {
-          "elementType": "themes.Meta",
-          "required": 0,
-          "title": "默认主题样式"
-        },
-        {
-          "elementType": "databases.Meta",
-          "required": 1,
-          "title": "默认数据存储"
-        },
-        {
-          "elementType": "caches.Meta",
-          "required": 1,
-          "title": "默认缓存存储"
-        },
-        {
-          "elementType": "storages.Meta",
-          "required": 1,
-          "title": "默认文件存储"
-        }
-      ]
     }
   }
 }

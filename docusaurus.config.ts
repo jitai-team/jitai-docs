@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'JitAi',
-  tagline: '为AI而生，下一代企业级智件和软件开发平台',
+  tagline: '为AI而生的下一代应用开发技术体系，加快AI应用进程，开启AI应用规模化时代',
   favicon: 'img/jit.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -83,12 +83,12 @@ const config: Config = {
         src: 'img/jit.png',
       },
       items: [
-        // {
-        //   type: 'docSidebar',
-        //   sidebarId: 'tutorialSidebar',
-        //   position: 'left',
-        //   label: '文档',
-        // },
+         {
+           type: 'docSidebar',
+           sidebarId: 'tutorialSidebar',
+           position: 'left',
+           label: '文档',
+         },
         // {to: '/blog', label: '博客', position: 'left'},
         // {
         //   type: 'docSidebar',
@@ -96,12 +96,12 @@ const config: Config = {
         //   position: 'left',
         //   label: '案例展示',
         // },
-        // {
-        //   type: 'docSidebar',
-        //   sidebarId: 'communitySidebar',
-        //   position: 'left',
-        //   label: '社区',
-        // },
+        {
+           type: 'docSidebar',
+           sidebarId: 'communitySidebar',
+           position: 'left',
+           label: '社区',
+         },
         //GitHub
         {
           href: 'https://github.com/jitai-team',
@@ -143,21 +143,17 @@ const config: Config = {
         //     },
         //   ],
         // },
-        // {
-        //   title: '更多',
-        //   items: [
-        //     {
-        //       label: '博客',
-        //       to: '/blog',
-        //     },
-        //     {
-        //       label: 'GitHub',
-        //       href: 'https://github.com/jitai-team',
-        //     },
-        //   ],
-        // },
+         {
+           title: '更多',
+           items: [
+             {
+               label: 'GitHub',
+               href: 'https://github.com/jitai-team',
+             },
+           ],
+         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Jit, Inc. Built with 武汉万云 Co., Ltd.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Jit, Inc. Built with 万云 Co., Ltd.`,
     },
     prism: {
       theme: prismThemes.github,

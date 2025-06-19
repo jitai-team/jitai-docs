@@ -1,0 +1,8 @@
+{
+  "label": "JitData",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "JitData 数据存储、缓存管理和数据交换相关功能"
+  }
+} 

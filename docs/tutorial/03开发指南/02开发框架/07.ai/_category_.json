@@ -1,0 +1,8 @@
+{
+  "label": "JitAI",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "JitAI AI能力相关模块，包括大模型、知识库、智能体和助手"
+  }
+} 

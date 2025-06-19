@@ -1,0 +1,8 @@
+{
+  "label": "JitSecurity",
+  "position": 11,
+  "link": {
+    "type": "generated-index",
+    "description": "JitSecurity 安全、认证和权限管理，包括登录、组织架构和角色管理"
+  }
+} 

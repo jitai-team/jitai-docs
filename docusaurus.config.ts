@@ -83,12 +83,12 @@ const config: Config = {
         src: 'img/jit.png',
       },
       items: [
-        // {
-        //   type: 'docSidebar',
-        //   sidebarId: 'tutorialSidebar',
-        //   position: 'left',
-        //   label: '文档',
-        // },
+         {
+           type: 'docSidebar',
+           sidebarId: 'tutorialSidebar',
+           position: 'left',
+           label: '文档',
+         },
         // {to: '/blog', label: '博客', position: 'left'},
         // {
         //   type: 'docSidebar',
@@ -96,12 +96,12 @@ const config: Config = {
         //   position: 'left',
         //   label: '案例展示',
         // },
-        // {
-        //   type: 'docSidebar',
-        //   sidebarId: 'communitySidebar',
-        //   position: 'left',
-        //   label: '社区',
-        // },
+        {
+           type: 'docSidebar',
+           sidebarId: 'communitySidebar',
+           position: 'left',
+           label: '社区',
+         },
         //GitHub
         {
           href: 'https://github.com/jitai-team',
@@ -143,19 +143,15 @@ const config: Config = {
         //     },
         //   ],
         // },
-        // {
-        //   title: '更多',
-        //   items: [
-        //     {
-        //       label: '博客',
-        //       to: '/blog',
-        //     },
-        //     {
-        //       label: 'GitHub',
-        //       href: 'https://github.com/jitai-team',
-        //     },
-        //   ],
-        // },
+         {
+           title: '更多',
+           items: [
+             {
+               label: 'GitHub',
+               href: 'https://github.com/jitai-team',
+             },
+           ],
+         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Jit, Inc. Built with 武汉万云 Co., Ltd.`,
     },

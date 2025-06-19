@@ -22,11 +22,10 @@ App（即应用），每个应用在JitNode中都对应一个App对象，开发�
 | envId | str | 运行环境ID，例如：`JRE_MWcVmUZjEq` |
 | nodeId | str | 节点ID，例如：`JN_c1tqsCN7Q5` |
 | env | [Environ](../02运行环境/01Environ) | 应用所属的运行环境对象 |
-| node | [Node](../04Jit节点/Node) | Jit节点对象 |
 | domain | str | 应用所在域名，例如：`http://127.0.0.1:8080` |
 | entry | str | 应用访问地址，例如：`http://127.0.0.1:8080/whwy/testjitai` |
 | endpoint | str | 应用API端点根路径，例如：`http://127.0.0.1:8080/api/whwy/testjitai` |
-| jit | Dict | 应用配置信息，内容参考[应用规范](/docs/tutorial/01概述/02应用规范.md)中的app.jit |
+| jit | Dict | 应用配置信息，内容参考[应用规范](/docs/tutorial/01概述/01JAAP#应用规范)中的app.jit |
 | initData | Dict[str, Any] | 应用的初始化数据 |
 | envVars | Dict[str, Any] | 应用的环境变量列表，key为变量名，value为变量值。示例：`{'DB_HOST': '127.0.0.1', 'DB_PORT': 3306}` |
 | app_hierarchy | List[[App](App)] | 应用的继承链（包含当前应用自身），访问该属性会触发继承链上所有应用的加载（如果尚未加载）|
@@ -173,10 +172,6 @@ OrderedDict[str, Dict]
 ```python title="创建单行文本变量"
 text_var = app.newVariable({'dataType': 'Stext'}, 'Hello, World!')
 ```
-
-:::tip[数据类型参考]
-关于所有支持的极态数据类型，请参考[数据类型](/docs/tutorial/03指南/03BaseApp/04数据类型)文档。
-:::
 
 ### registerGlobalVar
 注册全局变量，设置后可通过`builtins`访问该变量。

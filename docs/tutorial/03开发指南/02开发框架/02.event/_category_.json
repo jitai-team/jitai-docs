@@ -1,0 +1,8 @@
+{
+  "label": "Event",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "JitEvent 事件驱动机制，处理系统消息通知和事件分发"
+  }
+} 

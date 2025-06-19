@@ -11,32 +11,42 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: '解释型系统',
+    Svg: require('@site/static/img/jitai_interpretive_system.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        JAAP(Jit AI Application Protocol)，让应用系统成为可被AI动态感知、
+        动态调用、动态编排的解释型系统，将传统应用生态带入AI驱动和AI编排时代。
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: '矩阵型元架构',
+    Svg: require('@site/static/img/jitai_matrix_architecture.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        元素族类、元素分层、应用继承机制共同构成矩阵型元架构，提供无与伦比的复用和扩展能力，
+        是通用统一的架构"语言"，让复杂度和工程量降低90%。
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: '图形化编排开发',
+    Svg: require('@site/static/img/jitai_visual_development.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        支持图形化编排和编程的开发工具和开发方式，使开发速度提升10倍，
+        让开发者从容应对AI应用的复杂多变。
+      </>
+    ),
+  },
+  {
+    title: '自动化运维',
+    Svg: require('@site/static/img/jitai_automated_ops.svg').default,
+    description: (
+      <>
+        自动化的DevOps工具，让AI应用的构建、发布、部署和运维简单化、轻量化，
+        大幅降低运维成本和复杂度。
       </>
     ),
   },
@@ -44,7 +54,7 @@ const FeatureList: FeatureItem[] = [
 
 function Feature({title, Svg, description}: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--3')}>
       <div className="text--center">
         <Svg className={styles.featureSvg} role="img" />
       </div>

@@ -1,0 +1,78 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="20" y="20" width="160" height="160" fill="none" stroke="#8B5CF6" stroke-width="2" opacity="0.2"/>
+  
+  <!-- Matrix grid lines -->
+  <g stroke="#8B5CF6" stroke-width="1" opacity="0.4">
+    <!-- Vertical lines -->
+    <line x1="60" y1="20" x2="60" y2="180"/>
+    <line x1="100" y1="20" x2="100" y2="180"/>
+    <line x1="140" y1="20" x2="140" y2="180"/>
+    
+    <!-- Horizontal lines -->
+    <line x1="20" y1="60" x2="180" y2="60"/>
+    <line x1="20" y1="100" x2="180" y2="100"/>
+    <line x1="20" y1="140" x2="180" y2="140"/>
+  </g>
+  
+  <!-- Layer 1 - Top layer (Application Layer) -->
+  <g fill="#8B5CF6" opacity="0.8">
+    <rect x="30" y="30" width="20" height="20" rx="2"/>
+    <rect x="70" y="30" width="20" height="20" rx="2"/>
+    <rect x="110" y="30" width="20" height="20" rx="2"/>
+    <rect x="150" y="30" width="20" height="20" rx="2"/>
+  </g>
+  
+  <!-- Layer 2 - Middle layer (Element Layer) -->
+  <g fill="#10B981" opacity="0.7">
+    <rect x="30" y="70" width="20" height="20" rx="2"/>
+    <rect x="70" y="70" width="20" height="20" rx="2"/>
+    <rect x="110" y="70" width="20" height="20" rx="2"/>
+    <rect x="150" y="70" width="20" height="20" rx="2"/>
+    
+    <rect x="30" y="110" width="20" height="20" rx="2"/>
+    <rect x="70" y="110" width="20" height="20" rx="2"/>
+    <rect x="110" y="110" width="20" height="20" rx="2"/>
+    <rect x="150" y="110" width="20" height="20" rx="2"/>
+  </g>
+  
+  <!-- Layer 3 - Bottom layer (Base Layer) -->
+  <g fill="#F59E0B" opacity="0.6">
+    <rect x="30" y="150" width="20" height="20" rx="2"/>
+    <rect x="70" y="150" width="20" height="20" rx="2"/>
+    <rect x="110" y="150" width="20" height="20" rx="2"/>
+    <rect x="150" y="150" width="20" height="20" rx="2"/>
+  </g>
+  
+  <!-- Inheritance arrows -->
+  <g stroke="#EF4444" stroke-width="2" fill="none" marker-end="url(#arrowhead)">
+    <line x1="40" y1="50" x2="40" y2="70"/>
+    <line x1="80" y1="50" x2="80" y2="70"/>
+    <line x1="120" y1="50" x2="120" y2="70"/>
+    <line x1="160" y1="50" x2="160" y2="70"/>
+    
+    <line x1="40" y1="130" x2="40" y2="150"/>
+    <line x1="80" y1="130" x2="80" y2="150"/>
+    <line x1="120" y1="130" x2="120" y2="150"/>
+    <line x1="160" y1="130" x2="160" y2="150"/>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#EF4444"/>
+    </marker>
+  </defs>
+  
+  <!-- Connection lines showing relationships -->
+  <g stroke="#6B7280" stroke-width="1" opacity="0.5" stroke-dasharray="2,2">
+    <line x1="50" y1="40" x2="70" y2="80"/>
+    <line x1="90" y1="40" x2="110" y2="80"/>
+    <line x1="130" y1="40" x2="150" y2="80"/>
+    <line x1="50" y1="80" x2="70" y2="120"/>
+    <line x1="90" y1="80" x2="110" y2="120"/>
+    <line x1="130" y1="80" x2="150" y2="120"/>
+  </g>
+  
+
+</svg> 

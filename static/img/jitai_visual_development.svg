@@ -1,0 +1,78 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background workspace -->
+  <rect x="10" y="10" width="180" height="180" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="2" rx="8"/>
+  
+  <!-- Grid pattern -->
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#E2E8F0" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect x="10" y="10" width="180" height="180" fill="url(#grid)" opacity="0.5"/>
+  
+  <!-- Component blocks -->
+  <g>
+    <!-- Start block -->
+    <rect x="30" y="40" width="40" height="30" rx="15" fill="#10B981" stroke="#059669" stroke-width="2"/>
+    
+    <!-- Processing block -->
+    <rect x="120" y="80" width="50" height="30" rx="5" fill="#3B82F6" stroke="#2563EB" stroke-width="2"/>
+    
+    <!-- Decision block -->
+    <polygon points="100,130 120,150 100,170 80,150" fill="#F59E0B" stroke="#D97706" stroke-width="2"/>
+    
+    <!-- End block -->
+    <rect x="130" y="140" width="40" height="30" rx="15" fill="#EF4444" stroke="#DC2626" stroke-width="2"/>
+  </g>
+  
+  <!-- Connection lines -->
+  <g stroke="#6B7280" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <path d="M 70 55 Q 95 55 120 85"/>
+    <line x1="145" y1="110" x2="100" y2="130"/>
+    <line x1="120" y1="150" x2="130" y2="155"/>
+  </g>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#6B7280"/>
+    </marker>
+  </defs>
+  
+  <!-- Drag handles -->
+  <g fill="#8B5CF6" stroke="#7C3AED" stroke-width="1">
+    <circle cx="75" cy="50" r="4">
+      <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="175" cy="90" r="4">
+      <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    <circle cx="175" cy="150" r="4">
+      <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+  </g>
+  
+  <!-- Toolbar -->
+  <rect x="20" y="20" width="160" height="15" fill="#E5E7EB" stroke="#D1D5DB" stroke-width="1" rx="3"/>
+  <g fill="#6B7280">
+    <rect x="25" y="23" width="8" height="8" rx="1"/>
+    <rect x="38" y="23" width="8" height="8" rx="1"/>
+    <rect x="51" y="23" width="8" height="8" rx="1"/>
+    <rect x="64" y="23" width="8" height="8" rx="1"/>
+  </g>
+  
+  <!-- Properties panel -->
+  <rect x="30" y="100" width="35" height="40" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="1" rx="2"/>
+  <line x1="32" y1="110" x2="63" y2="110" stroke="#D1D5DB" stroke-width="0.5"/>
+  <rect x="32" y="115" width="28" height="2" fill="#E5E7EB" rx="1"/>
+  <rect x="32" y="120" width="22" height="2" fill="#E5E7EB" rx="1"/>
+  <rect x="32" y="125" width="25" height="2" fill="#E5E7EB" rx="1"/>
+  <rect x="32" y="130" width="20" height="2" fill="#E5E7EB" rx="1"/>
+  
+  <!-- Visual indicator for speed -->
+  <g stroke="#10B981" stroke-width="2" fill="none">
+    <path d="M 160 40 L 170 35 L 170 45 Z" fill="#10B981"/>
+    <path d="M 155 40 L 165 35 L 165 45 Z" fill="#10B981" opacity="0.6"/>
+    <path d="M 150 40 L 160 35 L 160 45 Z" fill="#10B981" opacity="0.3"/>
+  </g>
+</svg> 

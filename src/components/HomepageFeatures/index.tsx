@@ -25,7 +25,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/jitai_matrix_architecture.svg').default,
     description: (
       <>
-        元素族类、元素分层、应用继承机制共同构成矩阵型元架构，提供无与伦比的复用和扩展能力，
+        矩阵型元架构，提供无与伦比的复用和扩展能力，
         是通用统一的架构"语言"，让复杂度和工程量降低90%。
       </>
     ),

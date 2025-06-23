@@ -1,8 +1,0 @@
-{
-  "label": "JitWeb",
-  "position": 4,
-  "link": {
-    "type": "generated-index",
-    "description": "JitWeb 前端展示和交互相关模块，包括门户、页面、样式和控件"
-  }
-} 

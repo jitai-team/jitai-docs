@@ -1,0 +1,8 @@
+{
+  "label": "AI Agent",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "AI Agent智能代理系统，支持可视化代理编排、多步骤任务执行和工具调用集成"
+  }
+} 

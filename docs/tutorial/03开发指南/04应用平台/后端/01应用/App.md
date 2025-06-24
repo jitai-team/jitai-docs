@@ -25,6 +25,7 @@ App（即应用），每个应用在JitNode中都对应一个App对象，开发�
 | envId | str | 运行环境ID，例如：`JRE_MWcVmUZjEq` |
 | nodeId | str | 节点ID，例如：`JN_c1tqsCN7Q5` |
 | env | [Environ](../02运行环境/01Environ) | 应用所属的运行环境对象 |
+| node | [Node](../04Jit节点/Node) | Jit节点对象 |
 | domain | str | 应用所在域名，例如：`http://127.0.0.1:8080` |
 | entry | str | 应用访问地址，例如：`http://127.0.0.1:8080/whwy/testjitai` |
 | endpoint | str | 应用API端点根路径，例如：`http://127.0.0.1:8080/api/whwy/testjitai` |

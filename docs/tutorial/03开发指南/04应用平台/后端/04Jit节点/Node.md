@@ -1,6 +1,5 @@
 ---
 sidebar_position: 1
-draft: true
 ---
 
 # Node
@@ -21,7 +20,6 @@ Node对象对应着当前运行的Jit节点，开发者使用`app.node`获得Nod
 | indexHTML | str | 节点首页HTML文件路径|
 | activeHTML | str | 节点激活页路径|
 | version | str | 节点版本，例如：`1.0.0` |
-
 
 :::info
 所有属性均为只读属性

@@ -1,8 +1,0 @@
-{
-  "label": "JitORM",
-  "position": 3,
-  "link": {
-    "type": "generated-index",
-    "description": "JitORM 对象关系映射，处理数据结构和模型定义"
-  }
-} 

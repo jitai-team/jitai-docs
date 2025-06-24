@@ -1,0 +1,8 @@
+{
+  "label": "AI大模型",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "AI大模型集成和管理，支持多种主流大语言模型的接入、调用和管理"
+  }
+} 

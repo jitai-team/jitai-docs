@@ -1,8 +1,0 @@
-{
-  "label": "JitTask",
-  "position": 10,
-  "link": {
-    "type": "generated-index",
-    "description": "JitTask 任务调度和管理，提供定时任务和异步处理"
-  }
-} 

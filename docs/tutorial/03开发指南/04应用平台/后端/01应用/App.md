@@ -2,6 +2,9 @@
 sidebar_position: 1
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # App
 
 App（即应用），每个应用在JitNode中都对应一个App对象，开发者可以在后端代码中直接使用`app`关键字调用App对象。
@@ -169,10 +172,100 @@ OrderedDict[str, Dict]
 
 **示例：**
 
-```python title="创建单行文本变量"
+<Tabs>
+<TabItem value="stext" label="单行文本变量">
+
+```python
 text_var = app.newVariable({'dataType': 'Stext'}, 'Hello, World!')
 ```
 
+</TabItem>
+<TabItem value="ltext" label="多行文本变量">
+
+```python
+text_var = app.newVariable({'dataType': 'Ltext'}, 'Hello, World!')
+```
+
+</TabItem>
+<TabItem value="numeric" label="数字变量">
+
+```python
+number_var = app.newVariable({'dataType': 'Numeric'}, 123)
+```
+
+</TabItem>
+<TabItem value="jitdict" label="JitDict变量">
+
+```python
+dict_var = app.newVariable({
+    'name': 'userInfo',
+    'title': '用户信息',
+    'dataType': 'JitDict',
+    'variableList': [
+        {
+            'name': 'username',
+            'title': '用户名',
+            'dataType': 'Stext'
+        },
+        {
+            'name': 'age',
+            'title': '年龄',
+            'dataType': 'Numeric'
+        }
+    ]
+    }, {
+        'username': '张三',
+        'age': 18
+    })
+```
+
+</TabItem>
+<TabItem value="jitlist" label="JitList变量">
+
+```python
+list_var = app.newVariable({
+    'name': 'userList',
+    'title': '用户列表',
+    'dataType': 'JitList',
+    'variableConfig': {
+        'dataType': 'JitDict',
+        'variableList': [
+            {
+                'name': 'username',
+                'title': '用户名',
+                'dataType': 'Stext'
+            }
+        ]
+    }
+},[
+    {
+        'username': '张三',
+        'age': 18
+    },
+    
+])
+```
+
+</TabItem>
+<TabItem value="rowdata" label="RowData变量">
+
+```python
+row_data_var = app.newVariable({
+    'name': 'customerInfo',
+    'title': '客户信息',
+    'dataType': 'RowData',
+    'generic': 'models.CustomerModel'
+},{
+    'name': '张三',
+    'age': 18,
+    'gender': '男',
+    'phone': '13800138000',
+    'email': 'zhangsan@example.com'
+})
+```
+
+</TabItem>
+</Tabs>
 ### registerGlobalVar
 注册全局变量，设置后可通过`builtins`访问该变量。
 
@@ -180,6 +273,7 @@ text_var = app.newVariable({'dataType': 'Stext'}, 'Hello, World!')
 
 * **name** (str): 变量名
 * **value** (Any): 变量值
+
 
 :::warning[注意]
 开发者需谨慎使用全局变量，避免污染全局命名空间。

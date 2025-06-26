@@ -1,0 +1,46 @@
+<svg width="700" height="140" viewBox="0 0 700 140" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="agentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 智能体 -->
+  <rect x="50" y="40" width="120" height="60" rx="10" fill="url(#agentGrad)" />
+  <text x="110" y="60" text-anchor="middle" fill="white" font-size="14" font-weight="bold">智能体</text>
+  <text x="110" y="80" text-anchor="middle" fill="white" font-size="12">Agent</text>
+  
+  <!-- 等号 -->
+  <text x="200" y="75" text-anchor="middle" font-size="24" font-weight="bold">=</text>
+  
+  <!-- 工程化标题 -->
+  <text x="450" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#495057">工程化 Engineering</text>
+  
+  <!-- 左括号 -->
+  <text x="240" y="75" text-anchor="middle" font-size="32" font-weight="bold" fill="#495057">(</text>
+  
+  <!-- 提示词 -->
+  <rect x="270" y="40" width="90" height="60" rx="8" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" />
+  <text x="315" y="60" text-anchor="middle" font-size="12" font-weight="bold" fill="#1976d2">提示词</text>
+  <text x="315" y="80" text-anchor="middle" font-size="10" fill="#1976d2">Prompt</text>
+  
+  <!-- 加号 -->
+  <text x="385" y="75" text-anchor="middle" font-size="20" font-weight="bold" fill="#495057">+</text>
+  
+  <!-- 大模型 -->
+  <rect x="410" y="40" width="90" height="60" rx="8" fill="#fff3e0" stroke="#f57c00" stroke-width="2" />
+  <text x="455" y="60" text-anchor="middle" font-size="12" font-weight="bold" fill="#f57c00">大模型</text>
+  <text x="455" y="80" text-anchor="middle" font-size="10" fill="#f57c00">LLM</text>
+  
+  <!-- 加号 -->
+  <text x="525" y="75" text-anchor="middle" font-size="20" font-weight="bold" fill="#495057">+</text>
+  
+  <!-- 工具 -->
+  <rect x="550" y="40" width="90" height="60" rx="8" fill="#e8f5e8" stroke="#388e3c" stroke-width="2" />
+  <text x="595" y="60" text-anchor="middle" font-size="12" font-weight="bold" fill="#388e3c">工具</text>
+  <text x="595" y="80" text-anchor="middle" font-size="10" fill="#388e3c">Tools</text>
+  
+  <!-- 右括号 -->
+  <text x="665" y="75" text-anchor="middle" font-size="32" font-weight="bold" fill="#495057">)</text>
+</svg> 

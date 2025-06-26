@@ -1,0 +1,90 @@
+<svg width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- 传统应用架构标题 -->
+  <text x="300" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#495057">传统应用架构</text>
+  
+  <!-- 传统架构流程 -->
+  <g transform="translate(50, 50)">
+    <!-- 硬编码集成 -->
+    <rect x="0" y="0" width="150" height="80" rx="10" fill="#ffa726" />
+    <text x="75" y="30" text-anchor="middle" font-size="13" font-weight="bold" fill="white">硬编码集成</text>
+    <text x="75" y="50" text-anchor="middle" font-size="11" fill="white">开发时固定功能</text>
+    <text x="75" y="65" text-anchor="middle" font-size="10" fill="white">Hard-coded Integration</text>
+    
+    <!-- 箭头 -->
+    <path d="M 160 40 L 180 40" stroke="#495057" stroke-width="3" fill="none" />
+    <polygon points="180,37 190,40 180,43" fill="#495057" />
+    
+    <!-- 静态功能模块 -->
+    <rect x="190" y="0" width="150" height="80" rx="10" fill="#ffa726" />
+    <text x="265" y="30" text-anchor="middle" font-size="13" font-weight="bold" fill="white">静态功能模块</text>
+    <text x="265" y="50" text-anchor="middle" font-size="11" fill="white">无法动态组合</text>
+    <text x="265" y="65" text-anchor="middle" font-size="10" fill="white">Static Modules</text>
+    
+    <!-- 箭头 -->
+    <path d="M 350 40 L 370 40" stroke="#495057" stroke-width="3" fill="none" />
+    <polygon points="370,37 380,40 370,43" fill="#495057" />
+    
+    <!-- 孤立应用系统 -->
+    <rect x="380" y="0" width="150" height="80" rx="10" fill="#ffa726" />
+    <text x="455" y="30" text-anchor="middle" font-size="13" font-weight="bold" fill="white">孤立应用系统</text>
+    <text x="455" y="50" text-anchor="middle" font-size="11" fill="white">难以AI集成</text>
+    <text x="455" y="65" text-anchor="middle" font-size="10" fill="white">Isolated Systems</text>
+  </g>
+  
+  <!-- 传统架构特性 -->
+  <g transform="translate(50, 160)">
+    <rect x="0" y="0" width="500" height="100" rx="8" fill="#fff3e0" stroke="#ff9800" stroke-width="2" />
+    <text x="20" y="25" font-size="12" fill="#495057">• 开发时功能固定，难以适应变化</text>
+    <text x="20" y="45" font-size="12" fill="#495057">• 模块间紧耦合，维护成本高</text>
+    <text x="20" y="65" font-size="12" fill="#495057">• 缺乏标准化接口，集成复杂</text>
+    <text x="260" y="25" font-size="12" fill="#495057">• 无法支持AI动态调用和编排</text>
+    <text x="260" y="45" font-size="12" fill="#495057">• 权限控制粗粒度，安全性不足</text>
+  </g>
+  
+  <!-- 分隔线和VS标识 -->
+  <line x1="100" y1="310" x2="500" y2="310" stroke="#e0e0e0" stroke-width="3" stroke-dasharray="8,8" />
+  <circle cx="300" cy="310" r="30" fill="#f8f9fa" stroke="#495057" stroke-width="3" />
+  <text x="300" y="317" text-anchor="middle" font-size="16" font-weight="bold" fill="#495057">VS</text>
+  
+  <!-- JAAP AI架构标题 -->
+  <text x="300" y="360" text-anchor="middle" font-size="18" font-weight="bold" fill="#495057">JAAP AI架构</text>
+  
+  <!-- JAAP架构流程 -->
+  <g transform="translate(50, 380)">
+    <!-- 自描述元素 -->
+    <rect x="0" y="0" width="150" height="80" rx="10" fill="#42a5f5" />
+    <text x="75" y="30" text-anchor="middle" font-size="13" font-weight="bold" fill="white">自描述元素</text>
+    <text x="75" y="50" text-anchor="middle" font-size="11" fill="white">AI可直接理解</text>
+    <text x="75" y="65" text-anchor="middle" font-size="10" fill="white">Self-describing</text>
+    
+    <!-- 箭头 -->
+    <path d="M 160 40 L 180 40" stroke="#495057" stroke-width="3" fill="none" />
+    <polygon points="180,37 190,40 180,43" fill="#495057" />
+    
+    <!-- 动态工具编排 -->
+    <rect x="190" y="0" width="150" height="80" rx="10" fill="#42a5f5" />
+    <text x="265" y="30" text-anchor="middle" font-size="13" font-weight="bold" fill="white">动态工具编排</text>
+    <text x="265" y="50" text-anchor="middle" font-size="11" fill="white">运行时灵活组合</text>
+    <text x="265" y="65" text-anchor="middle" font-size="10" fill="white">Dynamic Tools</text>
+    
+    <!-- 箭头 -->
+    <path d="M 350 40 L 370 40" stroke="#495057" stroke-width="3" fill="none" />
+    <polygon points="370,37 380,40 370,43" fill="#495057" />
+    
+    <!-- 智能体生态系统 -->
+    <rect x="380" y="0" width="150" height="80" rx="10" fill="#42a5f5" />
+    <text x="455" y="30" text-anchor="middle" font-size="13" font-weight="bold" fill="white">智能体生态系统</text>
+    <text x="455" y="50" text-anchor="middle" font-size="11" fill="white">AI原生架构</text>
+    <text x="455" y="65" text-anchor="middle" font-size="10" fill="white">AI Native</text>
+  </g>
+  
+  <!-- JAAP架构特性 -->
+  <g transform="translate(50, 490)">
+    <rect x="0" y="0" width="500" height="100" rx="8" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" />
+    <text x="20" y="25" font-size="12" fill="#495057">• 元素自描述，AI可直接理解调用</text>
+    <text x="20" y="45" font-size="12" fill="#495057">• 松耦合设计，支持热插拔替换</text>
+    <text x="20" y="65" font-size="12" fill="#495057">• 标准化协议，简化系统集成</text>
+    <text x="260" y="25" font-size="12" fill="#495057">• 运行时动态编排，适应AI需求</text>
+    <text x="260" y="45" font-size="12" fill="#495057">• 工具级权限控制，安全可控</text>
+  </g>
+</svg> 

@@ -46,8 +46,8 @@
   <circle cx="300" cy="310" r="30" fill="#f8f9fa" stroke="#495057" stroke-width="3" />
   <text x="300" y="317" text-anchor="middle" font-size="16" font-weight="bold" fill="#495057">VS</text>
   
-  <!-- JAAP AI架构标题 -->
-  <text x="300" y="360" text-anchor="middle" font-size="18" font-weight="bold" fill="#495057">JAAP AI架构</text>
+  <!-- JAAP架构标题 -->
+  <text x="300" y="360" text-anchor="middle" font-size="18" font-weight="bold" fill="#495057">JAAP架构</text>
   
   <!-- JAAP架构流程 -->
   <g transform="translate(50, 380)">

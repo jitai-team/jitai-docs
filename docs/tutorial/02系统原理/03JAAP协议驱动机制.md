@@ -1,10 +1,10 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
-# JAAP协议解释执行原理
+# JAAP协议驱动机制
 
-JAAP（Jit AI Application Protocol）是极态技术体系的核心，作为统一架构语言贯穿整个系统。本节将深入分析JAAP协议的设计原理、解释执行机制，以及如何通过协议驱动实现系统的一致性和扩展性。理解JAAP的工作原理对于充分发挥极态技术优势、进行系统扩展和性能优化具有关键意义。 
+JAAP（Jit AI Application Protocol）是JitAi技术体系的核心驱动力，作为统一架构语言贯穿整个系统。本章从机制视角解析JAAP协议的设计哲学、驱动原理，以及如何通过协议实现系统的一致性和扩展性。 
 
 ## JAAP协议规范体系
 

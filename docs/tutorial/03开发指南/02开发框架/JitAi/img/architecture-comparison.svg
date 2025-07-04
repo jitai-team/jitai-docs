@@ -33,18 +33,18 @@
   
   <!-- 传统架构特性 -->
   <g transform="translate(50, 160)">
-    <rect x="0" y="0" width="500" height="100" rx="8" fill="#fff3e0" stroke="#ff9800" stroke-width="2" />
+    <rect x="0" y="0" width="530" height="100" rx="8" fill="#fff3e0" stroke="#ff9800" stroke-width="2" />
     <text x="20" y="25" font-size="12" fill="#495057">• 开发时功能固定，难以适应变化</text>
     <text x="20" y="45" font-size="12" fill="#495057">• 模块间紧耦合，维护成本高</text>
     <text x="20" y="65" font-size="12" fill="#495057">• 缺乏标准化接口，集成复杂</text>
-    <text x="260" y="25" font-size="12" fill="#495057">• 无法支持AI动态调用和编排</text>
-    <text x="260" y="45" font-size="12" fill="#495057">• 权限控制粗粒度，安全性不足</text>
+    <text x="280" y="25" font-size="12" fill="#495057">• 无法支持AI动态调用和编排</text>
+    <text x="280" y="45" font-size="12" fill="#495057">• 权限控制粗粒度，安全性不足</text>
   </g>
   
   <!-- 分隔线和VS标识 -->
-  <line x1="100" y1="310" x2="500" y2="310" stroke="#e0e0e0" stroke-width="3" stroke-dasharray="8,8" />
-  <circle cx="300" cy="310" r="30" fill="#f8f9fa" stroke="#495057" stroke-width="3" />
-  <text x="300" y="317" text-anchor="middle" font-size="16" font-weight="bold" fill="#495057">VS</text>
+  <line x1="50" y1="310" x2="580" y2="310" stroke="#e0e0e0" stroke-width="3" stroke-dasharray="8,8" />
+  <circle cx="315" cy="310" r="30" fill="#f8f9fa" stroke="#495057" stroke-width="3" />
+  <text x="315" y="317" text-anchor="middle" font-size="16" font-weight="bold" fill="#495057">VS</text>
   
   <!-- JAAP架构标题 -->
   <text x="300" y="360" text-anchor="middle" font-size="18" font-weight="bold" fill="#495057">JAAP架构</text>
@@ -80,11 +80,11 @@
   
   <!-- JAAP架构特性 -->
   <g transform="translate(50, 490)">
-    <rect x="0" y="0" width="500" height="100" rx="8" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" />
+    <rect x="0" y="0" width="530" height="100" rx="8" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" />
     <text x="20" y="25" font-size="12" fill="#495057">• 元素自描述，AI可直接理解调用</text>
     <text x="20" y="45" font-size="12" fill="#495057">• 松耦合设计，支持热插拔替换</text>
     <text x="20" y="65" font-size="12" fill="#495057">• 标准化协议，简化系统集成</text>
-    <text x="260" y="25" font-size="12" fill="#495057">• 运行时动态编排，适应AI需求</text>
-    <text x="260" y="45" font-size="12" fill="#495057">• 工具级权限控制，安全可控</text>
+    <text x="280" y="25" font-size="12" fill="#495057">• 运行时动态编排，适应AI需求</text>
+    <text x="280" y="45" font-size="12" fill="#495057">• 工具级权限控制，安全可控</text>
   </g>
 </svg> 

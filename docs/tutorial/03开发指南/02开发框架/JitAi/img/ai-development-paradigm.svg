@@ -1,0 +1,214 @@
+<svg width="800" height="420" viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 渐变定义 -->
+    <linearGradient id="aiCoreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="humanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ee5a24;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="backendGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#26de81;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#20bf6b;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="frontendGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#45b7d1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d98da;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 箭头标记 -->
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#495057" />
+    </marker>
+    
+    <marker id="arrowheadBlue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2d98da" />
+    </marker>
+    
+    <marker id="arrowheadGreen" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#20bf6b" />
+    </marker>
+    
+    <marker id="arrowheadRed" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ee5a24" />
+    </marker>
+    
+    <marker id="arrowheadPurple" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#9c88ff" />
+    </marker>
+    
+    <marker id="arrowheadDarkBlue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#3742fa" />
+    </marker>
+    
+    <!-- 渐变箭头标记 -->
+    <marker id="arrowheadAIColor" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#764ba2" />
+    </marker>
+    
+    <marker id="arrowheadHumanColor" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#ee5a24" />
+    </marker>
+    
+    <marker id="arrowheadFrontendUIColor" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#3742fa" />
+    </marker>
+    
+    <marker id="arrowheadBackendColor" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#20bf6b" />
+    </marker>
+    
+    <marker id="arrowheadFrontendToolsColor" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#2d98da" />
+    </marker>
+    
+    <!-- 箭头渐变定义 -->
+    <linearGradient id="gradientHumanToAI" gradientUnits="userSpaceOnUse" x1="300" y1="160" x2="300" y2="220">
+      <stop offset="0%" style="stop-color:#ee5a24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="gradientFrontendUIToAI" gradientUnits="userSpaceOnUse" x1="500" y1="160" x2="500" y2="220">
+      <stop offset="0%" style="stop-color:#3742fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="gradientHumanToFrontendUI" gradientUnits="userSpaceOnUse" x1="360" y1="130" x2="440" y2="130">
+      <stop offset="0%" style="stop-color:#ee5a24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3742fa;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="gradientFrontendUIToHuman" gradientUnits="userSpaceOnUse" x1="440" y1="145" x2="360" y2="145">
+      <stop offset="0%" style="stop-color:#3742fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ee5a24;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="gradientAIToBackend" gradientUnits="userSpaceOnUse" x1="240" y1="280" x2="170" y2="280">
+      <stop offset="0%" style="stop-color:#764ba2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#20bf6b;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="gradientBackendToAI" gradientUnits="userSpaceOnUse" x1="170" y1="300" x2="240" y2="300">
+      <stop offset="0%" style="stop-color:#20bf6b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="gradientAIToFrontendTools" gradientUnits="userSpaceOnUse" x1="560" y1="280" x2="630" y2="280">
+      <stop offset="0%" style="stop-color:#764ba2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d98da;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="gradientFrontendToolsToAI" gradientUnits="userSpaceOnUse" x1="630" y1="300" x2="560" y2="300">
+      <stop offset="0%" style="stop-color:#2d98da;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="gradientFrontendToolsToUI" gradientUnits="userSpaceOnUse" x1="705" y1="220" x2="560" y2="130">
+      <stop offset="0%" style="stop-color:#2d98da;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3742fa;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 标题 -->
+  <text x="400" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#2c3e50">AI应用开发范式</text>
+  <text x="400" y="46" text-anchor="middle" font-size="14" fill="#7f8c8d">AI Application Development Paradigm</text>
+  
+  <!-- 人类用户 -->
+  <rect x="240" y="100" width="120" height="60" rx="15" fill="url(#humanGrad)" />
+  <text x="300" y="125" text-anchor="middle" fill="white" font-size="14" font-weight="bold">人类用户</text>
+  <text x="300" y="140" text-anchor="middle" fill="white" font-size="12">Human User</text>
+  <text x="300" y="155" text-anchor="middle" fill="white" font-size="10">语言指令</text>
+  
+  <!-- 前端UI -->
+  <rect x="440" y="100" width="120" height="60" rx="15" fill="#3742fa" />
+  <text x="500" y="125" text-anchor="middle" fill="white" font-size="14" font-weight="bold">前端UI</text>
+  <text x="500" y="140" text-anchor="middle" fill="white" font-size="12">Frontend UI</text>
+  <text x="500" y="155" text-anchor="middle" fill="white" font-size="10">UI操作交互</text>
+  
+  <!-- AI应用核心 -->
+  <rect x="240" y="220" width="320" height="160" rx="20" fill="url(#aiCoreGrad)" />
+  <text x="400" y="250" text-anchor="middle" fill="white" font-size="16" font-weight="bold">AI应用核心</text>
+  <text x="400" y="270" text-anchor="middle" fill="white" font-size="12">AI Application Core</text>
+  
+  <!-- AI核心组件 -->
+  <rect x="280" y="310" width="70" height="35" rx="5" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.5)" stroke-width="1" />
+  <text x="315" y="325" text-anchor="middle" fill="white" font-size="10">提示词</text>
+  <text x="315" y="337" text-anchor="middle" fill="white" font-size="9">Prompt</text>
+  
+  <rect x="365" y="310" width="70" height="35" rx="5" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.5)" stroke-width="1" />
+  <text x="400" y="325" text-anchor="middle" fill="white" font-size="10">大模型</text>
+  <text x="400" y="337" text-anchor="middle" fill="white" font-size="9">LLM</text>
+  
+  <rect x="450" y="310" width="70" height="35" rx="5" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.5)" stroke-width="1" />
+  <text x="485" y="325" text-anchor="middle" fill="white" font-size="10">工具</text>
+  <text x="485" y="337" text-anchor="middle" fill="white" font-size="9">Tools</text>
+  
+  <!-- 后端程序模块 -->
+  <rect x="20" y="220" width="150" height="160" rx="10" fill="url(#backendGrad)" />
+  <text x="95" y="245" text-anchor="middle" fill="white" font-size="14" font-weight="bold">后端工具集</text>
+  <text x="95" y="260" text-anchor="middle" fill="white" font-size="10">Backend Tools</text>
+  
+  <text x="95" y="280" text-anchor="middle" fill="white" font-size="11">数据模型操作</text>
+  <text x="95" y="295" text-anchor="middle" fill="white" font-size="11">服务函数调用</text>
+  <text x="95" y="310" text-anchor="middle" fill="white" font-size="11">API接口集成</text>
+  <text x="95" y="325" text-anchor="middle" fill="white" font-size="11">MCP Server</text>
+  <text x="95" y="340" text-anchor="middle" fill="white" font-size="11">数据库查询</text>
+  <text x="95" y="355" text-anchor="middle" fill="white" font-size="11">事务处理</text>
+  
+  <!-- 前端UI -->
+  <rect x="630" y="220" width="150" height="160" rx="10" fill="url(#frontendGrad)" />
+  <text x="705" y="245" text-anchor="middle" fill="white" font-size="14" font-weight="bold">前端工具集</text>
+  <text x="705" y="260" text-anchor="middle" fill="white" font-size="10">Frontend Tools</text>
+  
+  <text x="705" y="280" text-anchor="middle" fill="white" font-size="11">界面元素操作</text>
+  <text x="705" y="295" text-anchor="middle" fill="white" font-size="11">页面状态管理</text>
+  <text x="705" y="310" text-anchor="middle" fill="white" font-size="11">用户交互控件</text>
+  <text x="705" y="325" text-anchor="middle" fill="white" font-size="11">动态内容生成</text>
+  <text x="705" y="340" text-anchor="middle" fill="white" font-size="11">响应式反馈</text>
+  <text x="705" y="355" text-anchor="middle" fill="white" font-size="11">界面布局调整</text>
+  
+  <!-- 交互流程箭头 -->
+  
+  <!-- 人类用户到AI核心 -->
+  <path d="M 300 160 L 300 220" stroke="url(#gradientHumanToAI)" stroke-width="2" fill="none" marker-end="url(#arrowheadAIColor)" />
+  <text x="255" y="190" fill="#ee5a24" font-size="10">语言指令</text>
+  
+  <!-- 前端UI到AI核心 -->
+  <path d="M 500 160 L 500 220" stroke="url(#gradientFrontendUIToAI)" stroke-width="2" fill="none" marker-end="url(#arrowheadAIColor)" />
+  <text x="505" y="190" fill="#3742fa" font-size="10">UI操作指令</text>
+  
+  <!-- 人类用户与前端UI交互 -->
+  <path d="M 360 130 L 440 130" stroke="url(#gradientHumanToFrontendUI)" stroke-width="2" fill="none" marker-end="url(#arrowheadFrontendUIColor)" />
+  <text x="390" y="125" fill="#ee5a24" font-size="10">UI操作</text>
+  
+  <path d="M 440 145 L 360 145" stroke="url(#gradientFrontendUIToHuman)" stroke-width="2" fill="none" marker-end="url(#arrowheadHumanColor)" />
+  <text x="390" y="160" fill="#3742fa" font-size="10">界面反馈</text>
+  
+  <!-- AI核心到后端 -->
+  <path d="M 240 280 L 170 280" stroke="url(#gradientAIToBackend)" stroke-width="2" fill="none" marker-end="url(#arrowheadBackendColor)" />
+  <text x="205" y="275" text-anchor="middle" fill="#764ba2" font-size="10">调用</text>
+  
+  <!-- 后端到AI核心 -->
+  <path d="M 170 300 L 240 300" stroke="url(#gradientBackendToAI)" stroke-width="2" fill="none" marker-end="url(#arrowheadAIColor)" />
+  <text x="205" y="315" text-anchor="middle" fill="#20bf6b" font-size="10">结果反馈</text>
+  
+  <!-- AI核心到前端工具集 -->
+  <path d="M 560 280 L 630 280" stroke="url(#gradientAIToFrontendTools)" stroke-width="2" fill="none" marker-end="url(#arrowheadFrontendToolsColor)" />
+  <text x="595" y="275" text-anchor="middle" fill="#764ba2" font-size="10">调用</text>
+  
+  <!-- 前端工具集到AI核心 -->
+  <path d="M 630 300 L 560 300" stroke="url(#gradientFrontendToolsToAI)" stroke-width="2" fill="none" marker-end="url(#arrowheadAIColor)" />
+  <text x="595" y="315" text-anchor="middle" fill="#2d98da" font-size="10">结果反馈</text>
+  
+  <!-- 前端工具集到前端UI -->
+  <path d="M 705 220 L 705 140 Q 705 130 695 130 L 560 130" stroke="url(#gradientFrontendToolsToUI)" stroke-width="2" fill="none" marker-end="url(#arrowheadFrontendUIColor)" />
+  <text x="710" y="180" fill="#2d98da" font-size="10">界面更新</text>
+  
+
+  
+</svg> 

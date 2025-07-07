@@ -406,7 +406,7 @@ config.json 是实例元素的运行时配置文件，配置的格式内容完�
 | `1` | 线程级别 | 单次请求期间 | 请求上下文数据 |
 
 ### 元素的调用
-#### 元素调用接口
+#### 在业务逻辑中调用元素
 
 通过标准化 API 调用元素实例：
 
@@ -420,6 +420,66 @@ auth_service = app.getElement("services.AuthService")
 login_result = auth_service.authenticate(username, password)
 ```
 
+#### 通过HTTP接口调用元素
+
+除了标准的元素调用接口外，JAAP协议还支持通过HTTP协议直接调用元素实例，实现跨平台和跨语言的服务集成。
+
+##### HTTP调用机制
+
+任何元素只需实现 `requestHandle(self, request)` 函数，即可通过HTTP协议进行远程调用。该函数作为HTTP请求路由器，负责将外部请求转发到目标业务函数，开发者可以自定义路由转发逻辑。
+
+```python title="HTTP调用处理器实现示例"
+def requestHandle(self, request):
+    """
+    HTTP请求处理器
+    
+    Args:
+        request: 平台增强的HTTP Request对象（继承自Flask HTTP Request）
+        
+    Returns:
+        dict: 响应数据，将自动序列化为JSON返回
+    """
+    # 从请求路径中提取目标函数名称
+    func = request.path.strip("/").split("/")[-1]
+    
+    # 获取请求参数（平台增强属性）
+    argsDict = request.argsDict
+    
+    # 获取目标函数对象
+    funcObj = getattr(self, func, None)
+    if funcObj is None:
+        raise AttributeError(f"Function '{func}' not found")
+    
+    # 调用目标函数
+    return funcObj(**argsDict)
+```
+
+##### HTTP调用路径规范
+
+HTTP调用遵循标准化的URL路径规范：
+
+```
+https://[运行环境入口域名]/api/[orgId]/[appId]/[elementPath]/[functionName]
+```
+
+**路径参数说明**：
+
+| 参数 | 描述 | 示例 |
+|------|------|------|
+| `运行环境入口域名` | 应用部署的访问域名 | `app.example.com` |
+| `orgId` | 组织标识符 | `wanyun` |
+| `appId` | 应用标识符 | `MyApp` |
+| `elementPath` | 元素路径（fullName中的`.`替换为`/`） | `services/UserService` |
+| `functionName` | 目标函数名称 | `getUserById` |
+
+**调用示例**：
+
+```bash title="HTTP调用示例"
+# 调用用户服务的getUserById函数
+curl -X POST https://app.example.com/api/wanyun/MyApp/services/UserService/getUserById \
+  -H "Content-Type: application/json" \
+  -d '{"userId": "12345"}'
+```
 
 ## 🚀 元素开发最佳实践
 

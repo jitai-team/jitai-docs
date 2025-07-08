@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './index.module.css';
+import Masonry from 'react-masonry-css';
 
 // 文案内容配置
 const CONTENT = {
@@ -92,7 +93,7 @@ const CONTENT = {
         sections: `
         JitAi元素三层架构（meta-type-实例）具备自描述、自加载（零依赖、热插拔）、可扩展、可替换、可编排式生成、可编排式使用等特性，AI&GUI友好。<br/>
         元素机制实现模块间彻底隔离和最大化封闭/开放，三层结构模式提升通用部分复用和差异部分自由度。<br/>
-        跨应用的模块继承机制、模块类型机制、矩阵型元架构模型，让整个体系拥有“极致的关注点分离”能力，进而使得运行平台关注底层，开发框架关注应用技术封装，业务系统只关注业务差异化实现。`
+        跨应用的模块继承机制、模块类型机制、矩阵型元架构模型，让整个体系拥有"极致的关注点分离"能力，进而使得运行平台关注底层，开发框架关注应用技术封装，业务系统只关注业务差异化实现。`
       },
       {
         title: '零代码和低代码',
@@ -118,8 +119,8 @@ const CONTENT = {
       {
         title: '封装与开放',
         sections: `
-        JitAi 应用平台是高度开放的微内核架构平台，封装了设备基础设施和物理集群环境的虚拟化、前后端网络通信协同、应用管理/加载、元素管理/加载、进程/线程管理等基础能力。平台仅负责容器能力（应用容器、元素容器），不介入具体业务或技术实现（如元素的实际加载和构造）。​实际能力由元素层自主实现，赋予应用系统最大的自由度和扩展性<br/>
-        JitAi 开发框架在高度封装（基础设施平台化、架构模型框架化、技术实现type元素化）的同时，基于分层模式​（技术模块层[复用] + 业务定义层[扩展]）与元素机制，JitAi 框架达成“高集成开箱即用”与“灵活扩展无限制”的完美平衡。<br/>
+        JitAi 应用平台是高度开放的微内核架构平台，封装了设备基础设施和物理集群环境的虚拟化、前后端网络通信协同、应用管理/加载、元素管理/加载、进程/线程管理等基础能力。平台仅负责容器能力（应用容器、元素容器），不介入具体业务或技术实现（如元素的实际加载和构造）。​实际能力由元素层自主实现，赋予应用系统最大的自由度和扩展性。<br/>
+        JitAi 开发框架在高度封装（基础设施平台化、架构模型框架化、技术实现type元素化）的同时，基于分层模式​（技术模块层[复用] + 业务定义层[扩展]）与元素机制，JitAi 框架达成"高集成开箱即用"与"灵活扩展无限制"的完美平衡。<br/>
         JitAi 提供灵活共享的生态库和生态应用：基于JitAi应用协议，生态开发者可以通过发布JitAi应用的方式提供可复用的工具，支持第三方无侵入修改、轻量跨平台、灵活选择开源/闭源与收费模式，进而解决了传统复用方式对发布者版本的强依赖问题。`
       },
     ]
@@ -325,42 +326,21 @@ const HomePage: React.FC = () => {
       <section id="section-3" className={styles.featuresSection}>
         <div className={styles.sectionContent}>
           <h2 className={styles.sectionTitle}>{CONTENT.features.title}</h2>
-          <div id="section-3-1" style={{ fontSize: '14px', lineHeight: '24px', color: '#374151', position: 'relative', padding: '2.5rem 3.5rem' }}>
-            <span style={{
-              position: 'absolute',
-              left: 0,
-              top: 0,
-              fontSize: '6rem',
-              color: '#b6c3e6',
-              fontFamily: 'serif',
-              lineHeight: 1,
-              fontWeight: 'bold',
-              userSelect: 'none',
-              pointerEvents: 'none',
-            }}>&ldquo;</span>
-            <span style={{
-              position: 'absolute',
-              right: 0,
-              bottom: 0,
-              fontSize: '6rem',
-              color: '#b6c3e6',
-              fontFamily: 'serif',
-              lineHeight: 1,
-              fontWeight: 'bold',
-              userSelect: 'none',
-              pointerEvents: 'none',
-            }}>&rdquo;</span>
-            <span style={{fontStyle: 'italic'}}>
-            JitAi 独创的 ​JAAP 协议，赋予系统模块自描述、自加载、独立可编排的特性，打造面向 AI 的“解释型”架构。AI 可动态感知、调用、编排任意模块，将传统应用生态无缝融入 AI 体系。<br/>
-            企业 AI 应用复杂且需快速迭代。JitAi 以强大架构解决“复杂”与“高效”矛盾：<br/>
-            * ​矩阵型元架构：​​ 开创性统一架构模型，实现极致的复用与扩展，确保系统随复杂度增长仍保持简洁与灵活。<br/>
-            ​* 高开放框架：​​ 业务层高度可编排，​复杂度与工程量降低 90%​。<br/>
-            * ​图形化双模工具：​​ 支持编排与编程，​开发速度提升 10 倍，从容应对需求变化与快速迭代。<br/>
-            ​* 自动化 DevOps：​​ 构建、发布、部署、运维全面简化轻量化。<br/>
-            JitAi 通过 ​JAAP 协议实现 ​AI 可驱动，凭借矩阵架构与图形化工具达成​极简开发与高效运维，是企业构建复杂、灵活 AI 应用的理想技术底座。
-            </span>
+          <div className={styles.featuresIntro}>
+            <div className={styles.featuresIntroText}>
+              JitAi 独创的 ​JAAP 协议，赋予系统模块自描述、自加载、独立可编排的特性，打造面向 AI 的"解释型"架构。AI 可动态感知、调用、编排任意模块，将传统应用生态无缝融入 AI 体系。<br/><br/>
+              企业 AI 应用复杂且需快速迭代。JitAi 以强大架构解决"复杂"与"高效"矛盾：<br/>
+              • ​矩阵型元架构：​​ 开创性统一架构模型，实现极致的复用与扩展，确保系统随复杂度增长仍保持简洁与灵活。<br/>
+              ​• 高开放框架：​​ 业务层高度可编排，​复杂度与工程量降低 90%​。<br/>
+              • ​图形化双模工具：​​ 支持编排与编程，​开发速度提升 10 倍，从容应对需求变化与快速迭代。<br/>
+              ​• 自动化 DevOps：​​ 构建、发布、部署、运维全面简化轻量化。<br/><br/>
+            </div>
           </div>
-          <div className={styles.featuresGrid}>
+          <Masonry
+            breakpointCols={{default: 2, 900: 1}}
+            className={styles.featuresGrid}
+            columnClassName={styles.featuresGridColumn}
+          >
             {CONTENT.features.cards.map((card, index) => (
               <div key={index} className={styles.featureCard}>
                 <h3>{card.title}</h3>
@@ -371,7 +351,7 @@ const HomePage: React.FC = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </Masonry>
         </div>
       </section>
 

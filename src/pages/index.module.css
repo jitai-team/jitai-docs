@@ -100,25 +100,86 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
   background: linear-gradient(135deg, #f0f9ff 0%, #f5f3ff 100%);
   color: white;
-  padding: 0 2rem;
+  padding: 0 10rem;
   position: relative;
   overflow: hidden;
-
 }
 
-/* .hero::before {
-  content: '';
+.brandBg {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-  opacity: 0.3;
-} */
+  right: 10vw;
+  top: 55%;
+  transform: translateY(-50%) rotate(-4deg);
+  z-index: 0;
+  opacity: 0.13;
+  pointer-events: none;
+  user-select: none;
+  text-align: right;
+  width: 28vw;
+  min-width: 320px;
+  max-width: 40vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.taglineBlock {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.taglineLine1{
+  font-size: 2.8vw;
+  color: #222;
+  /* font-weight: 500; */
+  letter-spacing: 0.18em;
+  filter: blur(1.2px);
+  /* line-height: 1.1; */
+  margin-bottom: 0.5vw;
+  text-align: right;
+}
+
+.taglineLine2 {
+  font-size: 2vw;
+  color: #444;
+  /* font-weight: 500; */
+  letter-spacing: 0.32em;
+  filter: blur(1.2px);
+  line-height: 1.1;
+  text-align: right;
+}
+
+.boldInitial, .boldAI {
+  font-weight: 900;
+  font-size: 2.8vw;
+  color: #600085;
+  letter-spacing: 0.05em;
+  filter: blur(0.5px);
+}
+
+.mainBrand {
+  font-size: 4vw;
+  font-weight: 500;
+  color: #222;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  filter: blur(2px);
+}
+
+.tagline {
+  font-size: 1.8vw;
+  color: #222;
+  letter-spacing: 0.4em;
+  font-weight: 500;
+  margin-top: 0.5vw;
+  filter: blur(1px);
+}
 
 .hero::before {
   content: none;
@@ -279,98 +340,144 @@ body {
 }
 
 .primaryButton {
-  background: linear-gradient(135deg, #3b82f6, #6366f1);
-  color: white;
+  background: linear-gradient(90deg, rgb(36, 73, 254) 0%, rgb(202, 75, 167) 100%);
+  color: #fff;
   border: none;
-  padding: 1rem 2rem;
-  border-radius: 0.5rem;
+  padding: 1rem 2.2rem;
+  border-radius: 2.5rem;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+  transition: all 0.3s cubic-bezier(.4,0,.2,1);
+  box-shadow: 0 4px 16px rgba(36, 73, 254, 0.10), 0 1.5px 6px rgba(202, 75, 167, 0.08);
+  letter-spacing: 0.04em;
 }
 
 .primaryButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 15px rgba(59, 130, 246, 0.4);
-  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(36, 73, 254, 0.18), 0 3px 12px rgba(202, 75, 167, 0.12);
+  filter: brightness(1.07);
 }
 
 .secondaryButton {
   background: transparent;
-  color: #374151;
-  border: 2px solid #6b7280;
-  padding: 1rem 2rem;
-  border-radius: 0.5rem;
+  color: rgb(36, 73, 254);
+  border: 2px solid rgba(36, 73, 254, 0.25);
+  padding: 1rem 2.2rem;
+  border-radius: 2.5rem;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(.4,0,.2,1);
+  letter-spacing: 0.04em;
 }
 
 .secondaryButton:hover {
-  background: #374151;
-  color: white;
-  border-color: #374151;
+  background: linear-gradient(90deg, rgba(36, 73, 254, 0.10) 0%, rgba(202, 75, 167, 0.10) 100%);
+  color: rgb(36, 73, 254);
+  border-color: rgba(202, 75, 167, 0.25);
 }
 
 .heroRight {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: slideInRight 1s ease-out;
+  opacity: 0.85;
+  transform: scale(1.1);
+  position: relative;
+  z-index: 1;
 }
 
 .animationContainer {
   text-align: center;
+  position: relative;
 }
 
 .jitaiAnimation {
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 1rem;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(59, 130, 246, 0.2);
-  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.1);
+  padding: 3rem 2.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2rem;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 25px 50px rgba(36, 73, 254, 0.08),
+    0 8px 16px rgba(202, 75, 167, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
 }
 
-.jitaiText {
-  font-size: 4rem;
-  font-weight: 900;
-  margin-bottom: 1rem;
+.jitaiAnimation::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg,
+    rgba(36, 73, 254, 0.03) 0%,
+    rgba(202, 75, 167, 0.03) 100%);
+  border-radius: 2rem;
+  z-index: -1;
+}
+
+.brandLayout {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 2rem;
+  position: relative;
 }
 
 .jit {
-  color: #60a5fa;
-  animation: pulse 2s infinite;
-}
-
-.plus {
-  color: #fbbf24;
-  animation: bounce 2s infinite;
+  background: linear-gradient(135deg, rgba(36, 73, 254, 0.95) 0%, rgba(36, 73, 254, 0.8) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-weight: 300;
+  transform: translateY(-0.1em);
 }
 
 .ai {
-  color: #34d399;
-  animation: pulse 2s infinite 0.5s;
+  background: linear-gradient(135deg, rgba(202, 75, 167, 0.95) 0%, rgba(202, 75, 167, 0.8) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-weight: 300;
+  transform: translateY(0.1em);
 }
 
-.subtitle {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #1e40af;
+.just {
+  color: rgba(36, 73, 254, 0.7);
+  transform: translateY(-0.2em);
+  font-size: 0.9rem;
 }
 
-.description {
-  font-size: 1.1rem;
-  color: #6b7280;
-  opacity: 0.9;
+.in {
+  color: rgba(202, 75, 167, 0.6);
+  transform: translateY(0.1em);
+  font-size: 0.8rem;
+}
+
+.time {
+  color: rgba(36, 73, 254, 0.8);
+  transform: translateY(-0.1em);
+  font-size: 1rem;
+}
+
+.for {
+  color: rgba(202, 75, 167, 0.5);
+  transform: translateY(0.2em);
+  font-size: 0.7rem;
+}
+
+.aiApp {
+  color: rgba(36, 73, 254, 0.9);
+  transform: translateY(-0.3em);
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 
 /* 动画效果 */
@@ -402,18 +509,6 @@ body {
   }
   50% {
     transform: scale(1.1);
-  }
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
   }
 }
 
@@ -710,8 +805,22 @@ body {
     justify-content: center;
   }
 
-  .jitaiText {
-    font-size: 2.5rem;
+      .mainBrand {
+    font-size: 4rem;
+  }
+
+  .tagline {
+    font-size: 0.9rem;
+    gap: 0.6rem;
+  }
+
+  .heroRight {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+
+  .jitaiAnimation {
+    padding: 2rem 1.5rem;
   }
 }
 
@@ -742,6 +851,24 @@ body {
 
   .featureCard {
     padding: 1.5rem;
+  }
+
+    .mainBrand {
+    font-size: 2.8rem;
+  }
+
+  .tagline {
+    font-size: 0.7rem;
+    gap: 0.4rem;
+  }
+
+  .heroRight {
+    opacity: 0.75;
+    transform: scale(0.9);
+  }
+
+  .jitaiAnimation {
+    padding: 1.5rem 1rem;
   }
 }
 

@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './styles.module.css';
 
-interface HeroSectionProps {
-  isVisible: boolean;
-}
-
 const CONTENT = {
   heroTitles: [
     {
@@ -16,11 +12,21 @@ const CONTENT = {
   ]
 };
 
-const HeroSection: React.FC<HeroSectionProps> = ({ isVisible }) => {
+const HeroSection: React.FC = () => {
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const [isFading, setIsFading] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
+  // 延迟显示，让页面先加载完成
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   // 打字机效果
   useEffect(() => {
@@ -52,8 +58,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ isVisible }) => {
             setTimeout(() => {
               setCurrentTitleIndex(prev => (prev + 1) % CONTENT.heroTitles.length);
               setIsFading(false); // 重置淡出状态
-            }, 500); // 等待淡出动画完成
-          }, 2500); // 增加显示时间到3秒
+            }, 300); // 等待淡出动画完成
+          }, 1000); // 增加显示时间到1秒
         }
       }, 100);
 

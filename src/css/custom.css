@@ -28,3 +28,40 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  /* 优化触摸体验 */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* 防止移动端缩放 */
+  input, textarea, select {
+    font-size: 16px;
+  }
+
+  /* 优化滚动体验 */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* 防止移动端横向滚动 */
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* 优化移动端点击区域 */
+  .mobile-nav-item {
+    touch-action: manipulation;
+  }
+}
+
+/* 移动端菜单打开时禁止背景滚动 */
+body.menu-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}

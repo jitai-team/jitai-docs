@@ -14,8 +14,17 @@ const CONTENT = {
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
     const handleScroll = () => {
       const isScrolled = window.scrollY > 50;
       setScrolled(isScrolled);
@@ -35,8 +44,24 @@ const Navbar: React.FC = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', checkMobile);
+    };
   }, []);
+
+  // 移动端菜单状态变化时控制背景滚动
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.classList.add('menu-open');
+    } else {
+      document.body.classList.remove('menu-open');
+    }
+
+    return () => {
+      document.body.classList.remove('menu-open');
+    };
+  }, [isMobileMenuOpen]);
 
   const handleNavClick = (item: any) => {
     if (item.type === 'section') {
@@ -48,6 +73,15 @@ const Navbar: React.FC = () => {
     } else if (item.type === 'link') {
       window.open(item.url, '_blank');
     }
+
+    // 移动端点击后关闭菜单
+    if (isMobile) {
+      setIsMobileMenuOpen(false);
+    }
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
@@ -56,7 +90,9 @@ const Navbar: React.FC = () => {
         <div className={styles.logo} onClick={() => handleNavClick({ id: 0, type: 'section' })}>
           <span>JitAi</span>
         </div>
-        <div className={styles.navLinks}>
+
+        {/* 桌面端导航 */}
+        <div className={`${styles.navLinks} ${styles.desktopNav}`}>
           {CONTENT.navItems.map((item, index) => {
             const isActive = item.type === 'section' &&
               CONTENT.navItems.filter(navItem => navItem.type === 'section').findIndex(navItem => navItem.id === item.id) === activeSection;
@@ -73,6 +109,43 @@ const Navbar: React.FC = () => {
             );
           })}
         </div>
+
+        {/* 移动端汉堡菜单按钮 */}
+        <button
+          className={`${styles.mobileMenuButton} ${isMobileMenuOpen ? styles.active : ''}`}
+          onClick={toggleMobileMenu}
+          aria-label="切换菜单"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        {/* 移动端导航菜单 */}
+        <div className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.open : ''}`}>
+          <div className={styles.mobileNavLinks}>
+            {CONTENT.navItems.map((item, index) => {
+              const isActive = item.type === 'section' &&
+                CONTENT.navItems.filter(navItem => navItem.type === 'section').findIndex(navItem => navItem.id === item.id) === activeSection;
+
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => handleNavClick(item)}
+                  className={`${styles.mobileNavItem} ${isActive ? styles.active : ''} mobile-nav-item`}
+                  data-type={item.type}
+                >
+                  {item.label}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* 移动端菜单遮罩 */}
+        {isMobileMenuOpen && (
+          <div className={styles.mobileOverlay} onClick={() => setIsMobileMenuOpen(false)} />
+        )}
       </div>
     </nav>
   );

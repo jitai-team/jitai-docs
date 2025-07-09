@@ -4,10 +4,10 @@ import styles from './styles.module.css';
 const CONTENT = {
   heroTitles: [
     {
-      content: '为 AI 而生的 下一代应用开发技术体系'
+      content: '为 AI 而生的<br/> 下一代应用开发技术体系'
     },
     {
-      content: '解释型、编排式的 生产级AI应用开发平台'
+      content: '解释型、编排式的 <br/> 生产级AI应用开发平台'
     }
   ]
 };
@@ -91,7 +91,12 @@ const HeroSection: React.FC = () => {
         <div className={styles.heroLeft}>
           {/* <h1 className={styles.heroTitle}>JitAi 是 </h1> */}
           <h1 className={`${styles.heroTitle} ${isFading ? styles.fadeOut : ''}`}>
-            {displayedText}
+            {displayedText.split('\n').map((line, index) => (
+              <React.Fragment key={index}>
+                {line}
+                {index < displayedText.split('\n').length - 1 && <br />}
+              </React.Fragment>
+            ))}
             {<span className={styles.cursor}>|</span>}
           </h1>
           <p className={styles.heroSubtitle}>

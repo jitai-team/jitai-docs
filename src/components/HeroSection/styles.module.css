@@ -278,6 +278,10 @@
 
 /* 响应式设计 */
 @media (max-width: 768px) {
+  .hero {
+    padding: 0 2rem;
+  }
+
   .heroContent {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -286,6 +290,7 @@
 
   .heroTitle {
     font-size: 2.5rem;
+    min-height: calc(2.5rem * 1.2 * 2);
   }
 
   .heroButtons {
@@ -294,8 +299,13 @@
 }
 
 @media (max-width: 480px) {
+  .hero {
+    padding: 0 1rem;
+  }
+
   .heroTitle {
     font-size: 2rem;
+    min-height: calc(2rem * 1.2 * 2);
   }
 
   .heroSubtitle {

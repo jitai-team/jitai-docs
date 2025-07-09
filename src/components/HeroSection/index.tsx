@@ -4,10 +4,12 @@ import styles from './styles.module.css';
 const CONTENT = {
   heroTitles: [
     {
-      content: '为 AI 而生的<br/> 下一代应用开发技术体系'
+      content: '为 AI 而生的 下一代应用开发技术体系',
+      contentMobile: '为 AI 而生的<br/> 下一代应用开发技术体系'
     },
     {
-      content: '解释型、编排式的 <br/> 生产级AI应用开发平台'
+      content: '解释型、编排式的 生产级AI应用开发平台',
+      contentMobile: '解释型、编排式的 <br/> 生产级AI应用开发平台'
     }
   ]
 };
@@ -18,6 +20,19 @@ const HeroSection: React.FC = () => {
   const [isTyping, setIsTyping] = useState(false);
   const [isFading, setIsFading] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // 检测屏幕尺寸
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
 
   // 延迟显示，让页面先加载完成
   useEffect(() => {
@@ -31,7 +46,9 @@ const HeroSection: React.FC = () => {
   // 打字机效果
   useEffect(() => {
     const startTyping = () => {
-      const currentTitle = CONTENT.heroTitles[currentTitleIndex].content;
+      const currentTitle = isMobile
+        ? CONTENT.heroTitles[currentTitleIndex].contentMobile
+        : CONTENT.heroTitles[currentTitleIndex].content;
       const cleanText = currentTitle.replace(/<br\s*\/?>/gi, '\n');
       const textArray = cleanText.split('');
 
@@ -69,7 +86,7 @@ const HeroSection: React.FC = () => {
     // 立即开始打字
     const cleanup = startTyping();
     return cleanup;
-  }, [currentTitleIndex]);
+  }, [currentTitleIndex, isMobile]);
 
   return (
     <section id="section-0" className={`${styles.hero} ${isVisible ? styles.fadeIn : ''}`}>

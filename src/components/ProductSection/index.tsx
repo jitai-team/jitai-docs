@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './styles.module.css';
+import globalStyles from '../../pages/index.module.css';
 
 const CONTENT = {
   product: {
@@ -42,15 +43,15 @@ const CONTENT = {
 
 const ProductSection: React.FC = () => {
   return (
-    <section id="section-1" className={styles.productSection}>
-      <div className={styles.sectionContent}>
-        <h2 className={styles.sectionTitle}>{CONTENT.product.title}</h2>
+    <section id="section-1" className={`${styles.productSection} ${globalStyles.gradientBackground}`}>
+      <div className={globalStyles.sectionContent}>
+        <h2 className={globalStyles.sectionTitle}>{CONTENT.product.title}</h2>
         <p className={styles.sectionSubtitle}>
           {CONTENT.product.subtitle}
         </p>
         <div className={styles.cardsGrid}>
           {CONTENT.product.cards.map((card, index) => (
-            <div key={index} className={styles.card}>
+            <div key={index} className={`${globalStyles.baseCard} ${styles.card}`}>
               <div className={styles.cardIcon}>{card.icon}</div>
               <h3>{card.title}</h3>
               <p>{card.description}</p>

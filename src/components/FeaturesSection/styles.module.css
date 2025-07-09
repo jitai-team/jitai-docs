@@ -16,23 +16,9 @@
   pointer-events: none;
 }
 
-.sectionContent {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.sectionTitle {
-  font-size: 3rem;
-  font-weight: 800;
-  text-align: center;
-  margin-bottom: 1rem;
-  color: #1f2937;
-}
-
 .featuresIntro {
   border-radius: 1.5rem;
-  padding: 4rem 4.5rem;
+  padding: 4rem 2rem;
   margin-bottom: 4rem;
   margin-top: 4rem;
   position: relative;
@@ -42,8 +28,8 @@
 .featuresIntro::before {
   content: '“';
   position: absolute;
-  left: 2rem;
-  top: 2rem;
+  left: 1rem;
+  top: 0.5rem;
   font-size: 8rem;
   color: #cbd5e1;
   font-family: serif;
@@ -95,46 +81,11 @@
   margin-bottom: 2.5rem;
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
   padding: 3rem 2.5rem;
-  border-radius: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06),
-    0 0 0 1px rgba(255, 255, 255, 0.05);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
   opacity: 1;
   visibility: visible;
   min-height: 200px;
   height: 100%;
-}
-
-.featureCard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
-  transform: scaleX(0);
-  transition: transform 0.4s ease;
-}
-
-.featureCard:hover {
-  transform: translateY(-8px);
-  box-shadow:
-    0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04),
-    0 0 0 1px rgba(255, 255, 255, 0.1);
-}
-
-.featureCard:hover::before {
-  transform: scaleX(1);
 }
 
 .featureCard h3 {
@@ -200,6 +151,8 @@
   .featureCard {
     padding: 2rem 1.5rem;
     margin-bottom: 2rem;
+    min-height: auto;
+    height: auto;
   }
 
   .featuresIntro {
@@ -220,6 +173,8 @@
 @media (max-width: 480px) {
   .featureCard {
     padding: 1.5rem;
+    min-height: auto;
+    height: auto;
   }
 
   .featureCard h3 {
@@ -231,7 +186,7 @@
   }
 
   .featuresIntro {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1rem;
   }
 
   .featuresIntroText {

@@ -262,17 +262,19 @@
   display: none;
 }
 
-.mobileNavItem:hover {
+.mobileNavItem:hover[data-type="section"] {
   color: #7c3aed;
   background: rgba(124, 58, 237, 0.05);
-  padding-left: 1rem;
 }
 
-.mobileNavItem.active {
+.mobileNavItem.active[data-type="section"] {
   color: #7c3aed;
   background: rgba(124, 58, 237, 0.1);
   /* padding-left: 1rem; */
 }
+
+
+
 
 /* .mobileNavItem[data-type="link"]::after {
   content: '↗';

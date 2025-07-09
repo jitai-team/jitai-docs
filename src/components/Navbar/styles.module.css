@@ -78,21 +78,19 @@
 }
 
 .navLinks button {
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: none;
+  border: none;
+  color: #22292f; /* 深灰色，接近黑色 */
   font-size: 1rem;
-  color: #374151;
+  font-weight: 600;
   cursor: pointer;
   padding: 0.75rem 1.5rem;
-  border-radius: 1rem;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  font-weight: 600;
-  backdrop-filter: blur(10px);
-  box-shadow:
-    0 2px 4px -1px rgba(0, 0, 0, 0.1),
-    0 1px 2px -1px rgba(0, 0, 0, 0.06);
+  border-radius: 0;
+  box-shadow: none;
+  transition: color 0.2s;
+  backdrop-filter: none;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -110,31 +108,16 @@
   transition: transform 0.4s ease;
 }
 
-.navLinks button:hover {
-  background: rgba(255, 255, 255, 0.95);
-  color: #1e293b;
-  transform: translateY(-2px) scale(1.02);
-  box-shadow:
-    0 8px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  border-color: rgba(59, 130, 246, 0.3);
-}
-
-.navLinks button:hover::before {
-  transform: scaleX(1);
+.navLinks button:hover, .navLinks button:focus {
+  color: #7c3aed;
+  background: none;
+  border: none;
 }
 
 .navLinks button.active {
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
-  color: #1e293b;
-  border-color: rgba(59, 130, 246, 0.4);
-  box-shadow:
-    0 4px 8px -2px rgba(59, 130, 246, 0.2),
-    0 2px 4px -1px rgba(59, 130, 246, 0.1);
-}
-
-.navLinks button.active::before {
-  transform: scaleX(1);
+  color: #7c3aed;
+  background: none;
+  border: none;
 }
 
 /* 外部链接按钮特殊样式 */

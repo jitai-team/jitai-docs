@@ -1,0 +1,82 @@
+/* Navbar 样式 */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 1rem 0;
+}
+
+.navContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e40af;
+}
+
+.logo img {
+  height: 32px;
+  width: auto;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.navLinks button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #374151;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.navLinks button:hover {
+  background: rgba(59, 130, 246, 0.1);
+  color: #2563eb;
+  transform: translateY(-1px);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .navContent {
+    padding: 0 1rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .logo img {
+    height: 28px;
+  }
+
+  .navLinks {
+    gap: 1rem;
+  }
+
+  .navLinks button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}

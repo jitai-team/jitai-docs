@@ -1,0 +1,247 @@
+/* Features Section 样式 */
+.featuresSection {
+  padding: 8rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.featuresSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.sectionContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.sectionTitle {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.featuresIntro {
+  border-radius: 1.5rem;
+  padding: 4rem 4.5rem;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.featuresIntro::before {
+  content: '“';
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+  font-size: 8rem;
+  color: #cbd5e1;
+  font-family: serif;
+  line-height: 1;
+  font-weight: bold;
+  user-select: none;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.featuresIntro::after {
+  content: '”';
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  font-size: 8rem;
+  color: #cbd5e1;
+  font-family: serif;
+  line-height: 1;
+  font-weight: bold;
+  user-select: none;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.featuresIntroText {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #374151;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+.featuresGrid {
+  display: flex;
+  margin-left: -2.5rem;
+  width: auto;
+}
+
+.featuresGridColumn {
+  padding-left: 2.5rem;
+  background-clip: padding-box;
+}
+
+.featureCard {
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 3rem 2.5rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  opacity: 1;
+  visibility: visible;
+  min-height: 200px;
+  height: fit-content;
+}
+
+.featureCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.featureCard:hover::before {
+  transform: scaleX(1);
+}
+
+.featureCard h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #1e293b;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f1f5f9;
+  position: relative;
+  display: flex;
+  align-items: center;
+  opacity: 1;
+  visibility: visible;
+}
+
+.featureCard h3::before {
+  content: '';
+  width: 3px;
+  height: 1.5rem;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  border-radius: 2px;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.featureContent {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-top: 1rem;
+}
+
+.featureSection {
+  text-align: left;
+  flex: 1;
+}
+
+.featureSection p {
+  font-size: 1.1rem;
+  color: #475569;
+  line-height: 1.8;
+  margin: 0;
+  font-weight: 400;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .featuresSection {
+    padding: 4rem 0;
+  }
+
+  .featuresGrid {
+    margin-left: 0;
+  }
+
+  .featuresGridColumn {
+    padding-left: 0;
+  }
+
+  .featureCard {
+    padding: 2rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .featuresIntro {
+    padding: 3rem 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .featuresIntro::before,
+  .featuresIntro::after {
+    font-size: 4rem;
+  }
+
+  .featuresIntroText {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .featureCard {
+    padding: 1.5rem;
+  }
+
+  .featureCard h3 {
+    font-size: 1.3rem;
+  }
+
+  .featureSection p {
+    font-size: 1rem;
+  }
+
+  .featuresIntro {
+    padding: 2rem 1.5rem;
+  }
+
+  .featuresIntroText {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .featuresGrid {
+    margin-left: 0;
+  }
+  .featuresGridColumn {
+    padding-left: 0;
+  }
+}

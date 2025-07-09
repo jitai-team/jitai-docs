@@ -51,7 +51,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
+    <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''} custom-navbar`}>
       <div className={styles.navContent}>
         <div className={styles.logo} onClick={() => handleNavClick({ id: 0, type: 'section' })}>
           <img src="/img/jit.png" alt="JitAi" />

@@ -28,3 +28,19 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* 在home页面隐藏Docusaurus默认navbar */
+/* body[data-page-id="home"] .theme-layout-navbar,
+body[data-page-id="home"] .navbar--fixed-top,
+body[data-page-id="home"] [data-theme='light'] .navbar,
+body[data-theme='dark'] .navbar,
+body[data-page-id="home"] .navbar:not(.custom-navbar),
+body[data-page-id="home"] .navbar__inner,
+body[data-page-id="home"] .navbar__brand,
+body[data-page-id="home"] .navbar__items {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+} */

@@ -40,13 +40,14 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
+  position: relative;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 800;
   background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
   -webkit-background-clip: text;
@@ -155,6 +156,150 @@
   transform: translateY(0) scale(0.98);
 }
 
+/* 移动端汉堡菜单按钮 */
+.mobileMenuButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1.7rem;
+  height: 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+  position: relative;
+  gap: 0.32rem;
+}
+
+.mobileMenuButton span {
+  width: 1.7rem;
+  height: 0.15rem;
+  background: #565656;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  position: relative;
+  margin: 0;
+}
+
+.mobileMenuButton.active span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+}
+
+.mobileMenuButton.active span:nth-child(1) {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.mobileMenuButton.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobileMenuButton.active span:nth-child(3) {
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+/* 移动端导航菜单 */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  padding: 5rem 0 2rem 0;
+  overflow-y: auto;
+}
+
+.mobileMenu.open {
+  right: 0;
+}
+
+.mobileNavLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.mobileNavItem {
+  background: none;
+  border: none;
+  color: #22292f;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 1.2rem 2rem;
+  text-align: left;
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobileNavItem::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 2rem;
+  right: 2rem;
+  bottom: 0;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+}
+
+.mobileNavItem:last-child::after {
+  display: none;
+}
+
+.mobileNavItem:hover[data-type="section"] {
+  color: #7c3aed;
+  background: rgba(124, 58, 237, 0.05);
+}
+
+.mobileNavItem.active[data-type="section"] {
+  color: #7c3aed;
+  background: rgba(124, 58, 237, 0.1);
+  /* padding-left: 1rem; */
+}
+
+
+
+
+/* .mobileNavItem[data-type="link"]::after {
+  content: '↗';
+  font-size: 0.9rem;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+} */
+
+.mobileNavItem[data-type="link"]:hover::after {
+  opacity: 1;
+  transform: translateX(2px) translateY(-2px);
+}
+
+/* 移动端菜单遮罩 */
+.mobileOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  backdrop-filter: blur(2px);
+}
+
 /* 响应式设计 */
 @media (max-width: 768px) {
   .navContent {
@@ -162,20 +307,25 @@
   }
 
   .logo {
-    font-size: 1.3rem;
+    font-size: 1.6rem;
   }
 
   .logo img {
     height: 32px;
   }
 
-  .navLinks {
-    gap: 1rem;
+  /* 隐藏桌面端导航 */
+  .desktopNav {
+    display: none;
   }
 
-  .navLinks button {
-    font-size: 0.9rem;
-    padding: 0.6rem 1.2rem;
+  /* 显示移动端菜单按钮 */
+  .mobileMenuButton {
+    display: flex;
+  }
+
+  .navbar {
+    padding: 0.75rem 0;
   }
 }
 
@@ -185,19 +335,35 @@
   }
 
   .logo {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   .logo img {
     height: 28px;
   }
 
-  .navLinks {
-    gap: 0.75rem;
+  .mobileMenu {
+    width: 100%;
+    right: -100%;
   }
 
-  .navLinks button {
-    font-size: 0.85rem;
-    padding: 0.5rem 1rem;
+  .mobileNavItem {
+    font-size: 1rem;
+    padding: 1.2rem 2rem;
+  }
+}
+
+/* 桌面端保持原有样式 */
+@media (min-width: 769px) {
+  .mobileMenuButton {
+    display: none;
+  }
+
+  .mobileMenu {
+    display: none;
+  }
+
+  .mobileOverlay {
+    display: none;
   }
 }

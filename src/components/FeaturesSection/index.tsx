@@ -1,6 +1,7 @@
 import React from 'react';
 import Masonry from 'react-masonry-css';
 import styles from './styles.module.css';
+import globalStyles from '../../pages/index.module.css';
 
 const CONTENT = {
   features: {
@@ -72,8 +73,8 @@ const CONTENT = {
 const FeaturesSection: React.FC = () => {
   return (
     <section id="section-3" className={styles.featuresSection}>
-      <div className={styles.sectionContent}>
-        <h2 className={styles.sectionTitle}>{CONTENT.features.title}</h2>
+      <div className={globalStyles.sectionContent}>
+        <h2 className={globalStyles.sectionTitle}>{CONTENT.features.title}</h2>
         <div className={styles.featuresIntro}>
           <div className={styles.featuresIntroText}>
             JitAi 独创的 ​JAAP 协议，赋予系统模块自描述、自加载、独立可编排的特性，打造面向 AI 的解释型架构。AI 可动态感知、调用、编排任意模块，将传统应用生态无缝融入 AI 体系。<br/><br/>
@@ -90,7 +91,7 @@ const FeaturesSection: React.FC = () => {
           columnClassName={styles.featuresGridColumn}
         >
           {CONTENT.features.cards.map((card, index) => (
-            <div key={index} className={styles.featureCard}>
+            <div key={index} className={`${globalStyles.baseCard} ${styles.featureCard}`}>
               <h3>{card.title}</h3>
               <div className={styles.featureContent}>
                 <div className={styles.featureSection}>

@@ -83,6 +83,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ isVisible }) => {
       </div>
       <div className={styles.heroContent}>
         <div className={styles.heroLeft}>
+          {/* <h1 className={styles.heroTitle}>JitAi 是 </h1> */}
           <h1 className={`${styles.heroTitle} ${isFading ? styles.fadeOut : ''}`}>
             {displayedText}
             {<span className={styles.cursor}>|</span>}

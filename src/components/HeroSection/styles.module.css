@@ -5,7 +5,7 @@
   align-items: center;
   background: linear-gradient(135deg, #f0f9ff 0%, #f5f3ff 100%);
   color: white;
-  padding: 0 10rem;
+  padding: 0 6rem;
   position: relative;
   overflow: hidden;
 }
@@ -79,7 +79,7 @@
 .heroContent {
   max-width: 1200px;
   margin: 0 auto;
-  display: grid;
+  /* display: grid; */
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
@@ -89,7 +89,6 @@
 
 .heroLeft {
   animation: slideInLeft 1s ease-out;
-  min-width: 600px;
 }
 
 @keyframes slideInLeft {
@@ -107,14 +106,13 @@
   font-size: 3.5rem;
   font-weight: 800;
   line-height: 1.2;
-  margin-bottom: 1.5rem;
   background: linear-gradient(90deg, rgb(36, 73, 254) 0%, rgb(202, 75, 167) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out, filter 0.8s ease-in-out;
-  min-height: 8.4rem;
+  /* min-height: 8.4rem; */
   flex-direction: column;
   justify-content: center;
   white-space: pre-line;
@@ -192,7 +190,7 @@
 }
 
 .heroTitle.fadeOut {
-  animation: smoothFadeOut 0.8s ease-out forwards;
+  /* animation: smoothFadeOut 0.8s ease-out forwards; */
 }
 
 .heroTitle.fadeIn {
@@ -222,7 +220,7 @@
 .heroSubtitle {
   font-size: 1.25rem;
   line-height: 1.6;
-  margin-bottom: 2rem;
+  margin: 4rem 0;
   color: #374151;
   opacity: 0.9;
 }

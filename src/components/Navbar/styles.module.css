@@ -93,6 +93,9 @@
     0 1px 2px -1px rgba(0, 0, 0, 0.06);
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .navLinks button::before {
@@ -132,6 +135,35 @@
 
 .navLinks button.active::before {
   transform: scaleX(1);
+}
+
+/* 外部链接按钮特殊样式 */
+/* .navLinks button[data-type="link"] {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+  border-color: rgba(34, 197, 94, 0.3);
+  color: #065f46;
+}
+
+.navLinks button[data-type="link"]:hover {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.15) 0%, rgba(16, 185, 129, 0.15) 100%);
+  border-color: rgba(34, 197, 94, 0.5);
+  color: #047857;
+}
+
+.navLinks button[data-type="link"]::before {
+  background: linear-gradient(90deg, #10b981, #059669, #047857);
+} */
+
+.navLinks button[data-type="link"]::after {
+  content: '↗';
+  font-size: 0.8rem;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.navLinks button[data-type="link"]:hover::after {
+  opacity: 1;
+  transform: translateX(2px) translateY(-2px);
 }
 
 .navLinks button:active {

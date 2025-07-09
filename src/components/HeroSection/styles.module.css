@@ -311,4 +311,8 @@
   .heroSubtitle {
     font-size: 1rem;
   }
+
+  .secondaryButton {
+    display: none;
+  }
 }

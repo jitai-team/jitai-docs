@@ -249,6 +249,7 @@
   transform: translateY(-2px) scale(1.03);
   box-shadow: 0 8px 24px rgba(36, 73, 254, 0.18), 0 3px 12px rgba(202, 75, 167, 0.12);
   filter: brightness(1.07);
+  text-decoration: none;
 }
 
 .secondaryButton {
@@ -268,6 +269,11 @@
   background: linear-gradient(90deg, rgba(36, 73, 254, 0.10) 0%, rgba(202, 75, 167, 0.10) 100%);
   color: rgb(36, 73, 254);
   border-color: rgba(202, 75, 167, 0.25);
+
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(36, 73, 254, 0.18), 0 3px 12px rgba(202, 75, 167, 0.12);
+  filter: brightness(1.07);
+  text-decoration: none;
 }
 
 /* 响应式设计 */

@@ -95,8 +95,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ isVisible }) => {
             帮助开发者快速构建与传统管理系统原生一体的生产级AI应用，实现"AI助理智件"和"传统管理软件"的无缝融合，加速企业AI应用的规模化。
           </p>
           <div className={styles.heroButtons}>
-            <button className={styles.primaryButton}>立即体验</button>
-            <button className={styles.secondaryButton}>了解更多</button>
+            <a className={styles.primaryButton} href="./docs/tutorial/00快速上手/01下载安装" target="_blank">立即下载</a>
+            <a className={styles.secondaryButton} href="https://demo.jit.pro" target="_blank">在线体验</a>
           </div>
         </div>
       </div>

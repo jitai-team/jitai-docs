@@ -4,7 +4,7 @@
 
 <img src="static/img/jit.png" alt="JitAi Logo" width="200" />
 
-**为AI而生，下一代企业级智件和软件开发平台**
+**为AI而生的下一代应用开发技术体系**
 
 [![GitHub stars](https://img.shields.io/github/stars/jitai-team/jitai-docs?style=social)](https://github.com/jitai-team/jitai-docs/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/jitai-team/jitai-docs?style=social)](https://github.com/jitai-team/jitai-docs/network/members)

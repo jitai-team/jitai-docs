@@ -8,16 +8,12 @@ import Details from '@theme/Details';
 
 # JitNode目录详解
 
-:::info 目录概览
-JitNode 采用清晰的目录结构来组织执行程序和运行时数据。
+JitNode 采用清晰的目录结构来组织执行程序和运行时数据。开发者应对JitNode的目录结构有基本的了解，以便更好地进行后续开发和管理工作。
 
-开发者应对JitNode的目录结构有基本的了解，以便更好地进行后续开发和管理工作。
-:::
-
-## 📁 根目录结构
+## 目录总览
 
 <Tabs>
-  <TabItem value="overview" label="目录总览" default>
+  <TabItem value="overview" label="总览" default>
 
 ```
 JitNode/
@@ -29,18 +25,12 @@ JitNode/
 │   └── logs/                 # 运行日志
 └── system/                   # 执行程序目录
 ```
-
-:::note 平台说明
-- **桌面版**：包含 `runJitNode.cmd/command` 启动脚本
-- **Docker版**：包含额外的 `databases/` 目录（内置MySQL、Redis）
-:::
-
   </TabItem>
   
   <TabItem value="home" label="home/ 目录">
 
-## 🏠 home/ - 运行时数据
-
+## home/ - 运行时数据
+在桌面版中，用户首次运行时可以自定义路径。
 <Details summary="📋 ./ - 配置文件" open>
 
 ```
@@ -107,7 +97,7 @@ home/databases/
   
   <TabItem value="system" label="system/ 目录">
 
-## ⚙️ system/ - 执行程序
+## system/ - 执行程序
 
 <Details summary="🔧 bin/ - 第三方程序" open>
 
@@ -150,14 +140,12 @@ system/
   </TabItem>
 </Tabs>
 
-## 🚀 快速导航
+## 快速导航
 
-:::success 开发者指南
 - **部署应用**: 将应用放在 `home/environs/[环境ID]/[组织ID]/[应用ID]/[版本]/` 目录下
 - **查看日志**: 可在 `home/logs/` 目录查看运行日志
 - **调试代码**: 桌面版使用 `system/jitDebuger.py` 进行调试，详细使用方法参考[本地开发与调试](../04进阶指南/01本地开发与调试)。
 - **配置修改**: 编辑 `home/node.json` 修改JitNode配置
-:::
 
 
 

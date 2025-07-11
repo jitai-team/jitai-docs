@@ -6,8 +6,8 @@ const CONTENT = {
     { id: 0, label: '首页', type: 'section' },
     { id: 1, label: '产品介绍', type: 'section' },
     { id: 3, label: '技术特性', type: 'section' },
-    { id: 'guide', label: '开发指南', type: 'link', url: './docs/tutorial/00快速上手/01下载安装' },
-    { id: 'community', label: '社区', type: 'link', url: './docs/community/intro' }
+    { id: 'guide', label: '开发指南', type: 'link', url: './docs/tutorial/00快速上手/01下载安装' }
+    //{ id: 'community', label: '社区', type: 'link', url: './docs/community/intro' }
   ]
 };
 

@@ -8,7 +8,23 @@ import Details from '@theme/Details';
 
 # JitNode目录详解
 
-JitNode 采用清晰的目录结构来组织执行程序和运行时数据。开发者应对JitNode的目录结构有基本的了解，以便更好地进行后续开发和管理工作。
+JitNode 采用清晰的目录结构来组织执行程序和运行时数据，开发者应对JitNode的目录结构有基本的了解，以便更好地进行后续开发、管理、调试工作。
+
+在桌面版中，JitNode目录位于安装目录中：
+```shell title="MacOS中的路径"
+/Applications/Jit.app/Contents/Resources/app.asar.unpacked/JitNode
+```
+
+```shell title="Windows中的路径"
+C:\Program Files\jit\resources\app.asar.unpacked\JitNode
+```
+
+在服务器版中，JitNode目录位于Docker容器中：
+
+```shell title="Docker容器中的路径"
+/data/JitNode
+```
+通常在部署容器时会将JitNode目录挂载到宿主机中，开发者在宿主机对应目录下也可以找到JitNode目录
 
 ## 目录总览
 

@@ -96,12 +96,12 @@ const config: Config = {
         //   position: 'left',
         //   label: '案例展示',
         // },
-        {
-           type: 'docSidebar',
-           sidebarId: 'communitySidebar',
-           position: 'left',
-           label: '社区',
-         },
+        //{
+        //   type: 'docSidebar',
+        //   sidebarId: 'communitySidebar',
+        //   position: 'left',
+        //   label: '社区',
+        // },
         //GitHub
         {
           href: 'https://github.com/jitai-team',

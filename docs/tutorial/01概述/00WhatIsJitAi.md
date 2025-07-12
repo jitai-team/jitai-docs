@@ -3,9 +3,6 @@ sidebar_position: 0
 ---
 
 # 极态是什么？
-
-## 概述
-
 **JitAi = Jit + AI**，Just In Time 即时、快速构建，for AI application。
 
 **极态**，极客态度（Geek Attitude），是为AI而生的下一代应用开发技术体系，旨在加快企业级AI应用落地，开启AI应用规模化时代。

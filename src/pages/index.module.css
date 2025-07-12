@@ -104,6 +104,10 @@ body {
   .sectionTitle {
     font-size: 2rem;
   }
+
+  .sectionContent {
+    align-items: center;
+  }
 }
 
 @media (max-width: 480px) {

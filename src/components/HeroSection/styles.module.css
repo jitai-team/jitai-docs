@@ -5,7 +5,7 @@
   align-items: center;
   background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 50%, #f5f3ff 100%);
   color: #1a1a1a;
-  padding: 0 8rem;
+  padding: 8rem 0;
   position: relative;
   overflow: hidden;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -156,17 +156,14 @@
   filter: blur(0.5px);
 }
 
-.heroContent {
-  max-width: 1400px;
-  margin: 0 auto;
-  width: 100%;
-  position: relative;
-  padding: 0 2rem;
-  z-index: 1;
-}
+/* 使用全局sectionContent样式，移除本地heroContent样式 */
 
 .heroLeft {
   animation: slideInLeft 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 @keyframes slideInLeft {
@@ -426,7 +423,7 @@
 /* 响应式设计 */
 @media (max-width: 1400px) {
   .hero {
-    padding: 0 2rem;
+    padding: 6rem 0;
   }
 
   .heroTitle {
@@ -440,10 +437,11 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: 0 2rem;
+    padding: 4rem 0;
   }
 
-  .heroContent {
+  .heroLeft {
+    align-items: center;
     text-align: center;
   }
 
@@ -476,7 +474,7 @@
 
 @media (max-width: 480px) {
   .hero {
-    padding: 0 1.5rem;
+    padding: 4rem 0;
   }
 
   .heroTitle {

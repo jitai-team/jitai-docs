@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './styles.module.css';
+import globalStyles from '../../pages/index.module.css';
 
 const CONTENT = {
   mainTitle: '面向AI的下一代企业级应用开发技术',
@@ -52,7 +53,7 @@ const HeroSection: React.FC = () => {
         </div>
       </div> */}
 
-      <div className={styles.heroContent}>
+      <div className={globalStyles.sectionContent}>
         <div className={styles.heroLeft}>
           {/* 主标题区域 */}
           <div className={styles.titleSection}>

@@ -21,7 +21,7 @@ body {
 
 /* 通用section样式 */
 .sectionContent {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
 }
@@ -103,6 +103,10 @@ body {
 @media (max-width: 768px) {
   .sectionTitle {
     font-size: 2rem;
+  }
+
+  .sectionContent {
+    align-items: center;
   }
 }
 

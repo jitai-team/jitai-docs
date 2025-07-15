@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 import globalStyles from '../../pages/index.module.css';
 
 const CONTENT = {
-  features: {
+  technologies: {
     title: 'JitAi 技术体系特性',
     cards: [
       {
@@ -70,13 +70,13 @@ const CONTENT = {
   }
 };
 
-const FeaturesSection: React.FC = () => {
+const TechnologiesSection: React.FC = () => {
   return (
-    <section id="section-3" className={styles.featuresSection}>
+    <section id="section-3" className={styles.technologiesSection}>
       <div className={globalStyles.sectionContent}>
-        <h2 className={globalStyles.sectionTitle}>{CONTENT.features.title}</h2>
-        <div className={styles.featuresIntro}>
-          <div className={styles.featuresIntroText}>
+        <h2 className={globalStyles.sectionTitle}>{CONTENT.technologies.title}</h2>
+        <div className={styles.technologiesIntro}>
+          <div className={styles.technologiesIntroText}>
             JitAi 独创的 ​JAAP 协议，赋予系统模块自描述、自加载、独立可编排的特性，打造面向 AI 的解释型架构。AI 可动态感知、调用、编排任意模块，将传统应用生态无缝融入 AI 体系。<br/><br/>
             企业 AI 应用复杂且需快速迭代。JitAi 以强大架构解决"复杂"与"高效"矛盾：<br/>
             • ​矩阵型元架构：​​ 开创性统一架构模型，实现极致的复用与扩展，确保系统随复杂度增长仍保持简洁与灵活。<br/>
@@ -87,14 +87,14 @@ const FeaturesSection: React.FC = () => {
         </div>
         <Masonry
           breakpointCols={{default: 2, 900: 1}}
-          className={styles.featuresGrid}
-          columnClassName={styles.featuresGridColumn}
+          className={styles.technologiesGrid}
+          columnClassName={styles.technologiesGridColumn}
         >
-          {CONTENT.features.cards.map((card, index) => (
-            <div key={index} className={`${globalStyles.baseCard} ${styles.featureCard}`}>
+          {CONTENT.technologies.cards.map((card, index) => (
+            <div key={index} className={`${globalStyles.baseCard} ${styles.technologyCard}`}>
               <h3>{card.title}</h3>
-              <div className={styles.featureContent}>
-                <div className={styles.featureSection}>
+              <div className={styles.technologyContent}>
+                <div className={styles.technologySection}>
                   <p dangerouslySetInnerHTML={{ __html: card.sections }}></p>
                 </div>
               </div>
@@ -106,4 +106,4 @@ const FeaturesSection: React.FC = () => {
   );
 };
 
-export default FeaturesSection;
+export default TechnologiesSection;

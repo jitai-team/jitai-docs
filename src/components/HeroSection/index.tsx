@@ -5,7 +5,7 @@ import globalStyles from '../../pages/index.module.css';
 const CONTENT = {
   mainTitle: '面向AI的下一代企业级应用开发技术',
   subTitle1: '全栈一体化的AI开发与运维平台​',
-  subDesc1: '覆盖“开发->调测->发布->部署->更新”全生命周期的一站式平台，助力开发者高效构建"AI助理软件"和"管理软件"原生一体的生产级企业AI应用，加速企业AI应用的规模化。',
+  subDesc1: '覆盖"开发->调测->发布->部署->更新"全生命周期的一站式平台，助力开发者高效构建"AI助理软件"和"管理软件"原生一体的生产级企业AI应用，加速企业AI应用的规模化。',
   subTitle2: '解释型、编排式的生产级AI开发范式',
   subDesc2: '开创性的解释型应用架构、应用协议和应用运行平台，带来解释型、可编排的AI上下文环境，以及全新的应用开发新范式、新框架、新工具，引领企业级应用开发迈入AI时代。'
 };
@@ -37,27 +37,11 @@ const HeroSection: React.FC = () => {
         <div className={styles.gradientOrb}></div>
       </div>
 
-      {/* 品牌背景 */}
-      {/* <div className={styles.brandBg}>
-        <div className={styles.taglineBlock}>
-          <div className={styles.taglineLine1}>
-            <span className={styles.boldInitial}>J</span>UST
-            <span style={{margin: '0 0.5vw'}}></span>
-            <span className={styles.boldInitial}>I</span>N
-            <span style={{margin: '0 0.5vw'}}></span>
-            <span className={styles.boldInitial}>T</span>IME
-          </div>
-          <div className={styles.taglineLine2}>
-            FOR <span className={styles.boldInitial}>A</span><span className={styles.boldAI}>I</span> APP
-          </div>
-        </div>
-      </div> */}
-
       <div className={globalStyles.sectionContent}>
         <div className={styles.heroLeft}>
           {/* 主标题区域 */}
           <div className={styles.titleSection}>
-            <div className={styles.titleBadge}>
+            <div className={`${styles.titleBadge} ${styles.hideOnMobile}`}>
               <span className={styles.badgeText}>NEXT-GEN</span>
             </div>
             <h1 className={`${styles.heroTitle} ${animateElements ? styles.titleAnimate : ''}`}>
@@ -109,7 +93,7 @@ const HeroSection: React.FC = () => {
                 </svg>
               </span>
             </a>
-            <a className={styles.secondaryButton} href="https://demo.jit.pro" target="_blank">
+            <a className={`${styles.secondaryButton} ${styles.hideOnMobile}`} href="https://demo.jit.pro" target="_blank">
               <span className={styles.buttonText}>在线体验</span>
               <span className={styles.buttonIcon}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

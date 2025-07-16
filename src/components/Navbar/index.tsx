@@ -3,17 +3,34 @@ import styles from './styles.module.css';
 
 const CONTENT = {
   navItems: [
-    { id: 0, label: '首页', type: 'section' },
-    { id: 1, label: '产品介绍', type: 'section' },
-    { id: 3, label: '技术特性', type: 'section' },
-    { id: 'guide', label: '开发指南', type: 'link', url: './docs/tutorial/00快速上手/01下载安装' }
-    //{ id: 'community', label: '社区', type: 'link', url: './docs/community/intro' }
+    {
+      id: 'home',
+      label: '首页',
+      type: 'link',
+      url: '/',
+      external: true
+    },
+    {
+      id: 'jit-framework',
+      label: 'Jit开发框架',
+      type: 'link',
+      url: '/jit-framework',
+      external: true
+    },
+    {
+      id: 'guide',
+      label: '开发指南',
+      type: 'link',
+      url: './docs/tutorial/00快速上手/01下载安装',
+      external: true
+    }
+    //{ id: 'community', label: '社区', type: 'link', url: './docs/community/intro', external: true }
   ]
 };
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState(0);
+  const [activeNavItem, setActiveNavItem] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -28,21 +45,18 @@ const Navbar: React.FC = () => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 50;
       setScrolled(isScrolled);
+    };
 
-      // 检测当前活跃的section（只检测section类型的导航项）
-      const sectionItems = CONTENT.navItems.filter(item => item.type === 'section');
-      const sections = sectionItems.map(item => document.getElementById(`section-${item.id}`));
-      const currentSection = sections.findIndex(section => {
-        if (!section) return false;
-        const rect = section.getBoundingClientRect();
-        return rect.top <= 100 && rect.bottom >= 100;
-      });
-
-      if (currentSection !== -1) {
-        setActiveSection(currentSection);
+    // 设置当前活跃的导航项
+    const setCurrentActiveNav = () => {
+      const currentPath = window.location.pathname;
+      const currentItem = CONTENT.navItems.find(item => item.url === currentPath);
+      if (currentItem) {
+        setActiveNavItem(currentItem.id);
       }
     };
 
+    setCurrentActiveNav();
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -63,20 +77,12 @@ const Navbar: React.FC = () => {
     };
   }, [isMobileMenuOpen]);
 
-  const handleNavClick = (item: any) => {
-    if (item.type === 'section') {
-      const element = document.getElementById(`section-${item.id}`);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-        setActiveSection(CONTENT.navItems.filter(navItem => navItem.type === 'section').findIndex(navItem => navItem.id === item.id));
-      }
-    } else if (item.type === 'link') {
-      window.open(item.url, '_blank');
-    }
+    const handleNavClick = (item: any) => {
+      window.location.href = item.url;
 
-    // 移动端点击后关闭菜单
-    if (isMobile) {
-      setIsMobileMenuOpen(false);
+      // 移动端点击后关闭菜单
+      if (isMobile) {
+        setIsMobileMenuOpen(false);
     }
   };
 
@@ -87,15 +93,14 @@ const Navbar: React.FC = () => {
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''} custom-navbar`}>
       <div className={styles.navContent}>
-        <div className={styles.logo} onClick={() => handleNavClick({ id: 0, type: 'section' })}>
+        <div className={styles.logo} onClick={() => handleNavClick(CONTENT.navItems[0])}>
           <span>JitAi</span>
         </div>
 
         {/* 桌面端导航 */}
         <div className={`${styles.navLinks} ${styles.desktopNav}`}>
           {CONTENT.navItems.map((item, index) => {
-            const isActive = item.type === 'section' &&
-              CONTENT.navItems.filter(navItem => navItem.type === 'section').findIndex(navItem => navItem.id === item.id) === activeSection;
+            const isActive = item.id === activeNavItem;
 
             return (
               <button
@@ -125,8 +130,7 @@ const Navbar: React.FC = () => {
         <div className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.open : ''}`}>
           <div className={styles.mobileNavLinks}>
             {CONTENT.navItems.map((item, index) => {
-              const isActive = item.type === 'section' &&
-                CONTENT.navItems.filter(navItem => navItem.type === 'section').findIndex(navItem => navItem.id === item.id) === activeSection;
+              const isActive = item.id === activeNavItem;
 
               return (
                 <button

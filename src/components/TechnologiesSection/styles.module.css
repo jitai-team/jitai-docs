@@ -26,7 +26,7 @@
 }
 
 .technologiesIntro::before {
-  content: '"';  /* 中文双引号 */
+  content: '“';  /* 中文双引号，禁止修改 */
   position: absolute;
   left: 1rem;
   top: 0.5rem;
@@ -41,7 +41,7 @@
 }
 
 .technologiesIntro::after {
-  content: '"';  /* 中文双引号 */
+  content: '”';  /* 中文双引号，禁止修改 */
   position: absolute;
   right: 2rem;
   bottom: 0rem;

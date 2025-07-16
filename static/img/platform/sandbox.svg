@@ -1,0 +1,96 @@
+<svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="sandbox1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fef3c7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fde68a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="boundary1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dbeafe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#bfdbfe;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="app1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="app2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="warning1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow4" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <rect width="140" height="100" rx="12" fill="url(#bg4)"/>
+
+  <!-- 沙盒容器 -->
+  <g transform="translate(15, 15)">
+    <rect x="0" y="0" width="110" height="70" rx="12" fill="url(#sandbox1)" filter="url(#shadow4)"/>
+
+    <!-- 安全边界 -->
+    <rect x="8" y="8" width="94" height="54" rx="8" fill="url(#boundary1)" stroke="#3b82f6" stroke-width="2" stroke-dasharray="6,6"/>
+
+    <!-- 应用1 - 安全应用 -->
+    <g transform="translate(25, 20)">
+      <rect x="0" y="0" width="25" height="25" rx="6" fill="url(#app1)" filter="url(#shadow4)"/>
+      <rect x="4" y="4" width="17" height="3" rx="1.5" fill="#ffffff" opacity="0.9"/>
+      <rect x="4" y="9" width="12" height="2" rx="1" fill="#ffffff" opacity="0.7"/>
+      <rect x="4" y="12" width="15" height="2" rx="1" fill="#ffffff" opacity="0.7"/>
+      <rect x="4" y="15" width="10" height="2" rx="1" fill="#ffffff" opacity="0.7"/>
+      <rect x="4" y="18" width="13" height="2" rx="1" fill="#ffffff" opacity="0.7"/>
+    </g>
+
+    <!-- 应用2 - 受监控应用 -->
+    <g transform="translate(55, 20)">
+      <rect x="0" y="0" width="25" height="25" rx="6" fill="url(#app2)" filter="url(#shadow4)"/>
+      <rect x="4" y="4" width="17" height="3" rx="1.5" fill="#ffffff" opacity="0.9"/>
+      <rect x="4" y="9" width="12" height="2" rx="1" fill="#ffffff" opacity="0.7"/>
+      <rect x="4" y="12" width="15" height="2" rx="1" fill="#ffffff" opacity="0.7"/>
+      <rect x="4" y="15" width="10" height="2" rx="1" fill="#ffffff" opacity="0.7"/>
+      <rect x="4" y="18" width="13" height="2" rx="1" fill="#ffffff" opacity="0.7"/>
+    </g>
+
+    <!-- 安全警告 -->
+    <g transform="translate(85, 20)">
+      <circle cx="0" cy="0" r="12" fill="url(#warning1)" filter="url(#shadow4)"/>
+      <path d="M 0 -6 L 0 2 M -3 6 L 3 6" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- 防护网 -->
+  <g transform="translate(15, 15)">
+    <path d="M 0 0 L 110 0" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,4" opacity="0.6"/>
+    <path d="M 0 70 L 110 70" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,4" opacity="0.6"/>
+    <path d="M 0 0 L 0 70" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,4" opacity="0.6"/>
+    <path d="M 110 0 L 110 70" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,4" opacity="0.6"/>
+  </g>
+
+  <!-- 安全监控指示器 -->
+  <g transform="translate(15, 90)">
+    <circle cx="0" cy="0" r="3" fill="#10b981"/>
+    <circle cx="15" cy="0" r="3" fill="#10b981"/>
+    <circle cx="30" cy="0" r="3" fill="#f59e0b"/>
+    <circle cx="45" cy="0" r="3" fill="#ef4444"/>
+    <circle cx="60" cy="0" r="3" fill="#10b981"/>
+  </g>
+
+  <!-- 隔离标识 -->
+  <g transform="translate(100, 90)">
+    <rect x="0" y="0" width="25" height="12" rx="3" fill="#f59e0b" opacity="0.8"/>
+    <text x="12.5" y="8" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#ffffff" font-weight="bold">ISO</text>
+  </g>
+
+  <!-- 安全状态指示器 -->
+  <g transform="translate(80, 90)">
+    <rect x="0" y="0" width="15" height="8" rx="2" fill="#10b981"/>
+    <text x="7.5" y="6" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#ffffff" font-weight="bold">SAFE</text>
+  </g>
+</svg>

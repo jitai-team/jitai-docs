@@ -140,17 +140,17 @@
   background: linear-gradient(90deg, #10b981, #059669, #047857);
 } */
 
-.navLinks button[data-type="link"]::after {
+/* .navLinks button[data-type="link"]::after {
   content: '↗';
   font-size: 0.8rem;
   opacity: 0.7;
   transition: all 0.3s ease;
-}
+} */
 
-.navLinks button[data-type="link"]:hover::after {
+/* .navLinks button[data-type="link"]:hover::after {
   opacity: 1;
   transform: translateX(2px) translateY(-2px);
-}
+} */
 
 .navLinks button:active {
   transform: translateY(0) scale(0.98);
@@ -262,12 +262,12 @@
   display: none;
 }
 
-.mobileNavItem:hover[data-type="section"] {
+.mobileNavItem:hover {
   color: #7c3aed;
   background: rgba(124, 58, 237, 0.05);
 }
 
-.mobileNavItem.active[data-type="section"] {
+.mobileNavItem.active {
   color: #7c3aed;
   background: rgba(124, 58, 237, 0.1);
   /* padding-left: 1rem; */

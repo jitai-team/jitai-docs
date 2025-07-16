@@ -17,7 +17,7 @@ body {
   background: linear-gradient(135deg, #f0f9ff 0%, #f5f3ff 100%);
 }
 
-/* 公共样式 - 从FeaturesSection和ProductSection提取 */
+/* 公共样式 - 从TechnologiesSection和ProductSection提取 */
 
 /* 通用section样式 */
 .sectionContent {

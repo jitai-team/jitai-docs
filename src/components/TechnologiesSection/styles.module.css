@@ -1,11 +1,11 @@
-/* Features Section 样式 */
-.featuresSection {
+/* Technologies Section 样式 */
+.technologiesSection {
   padding: 8rem 0;
   position: relative;
   overflow: hidden;
 }
 
-.featuresSection::before {
+.technologiesSection::before {
   content: '';
   position: absolute;
   top: 0;
@@ -16,7 +16,7 @@
   pointer-events: none;
 }
 
-.featuresIntro {
+.technologiesIntro {
   border-radius: 1.5rem;
   padding: 4rem 2rem;
   margin-bottom: 4rem;
@@ -25,8 +25,8 @@
   backdrop-filter: blur(10px);
 }
 
-.featuresIntro::before {
-  content: '"';
+.technologiesIntro::before {
+  content: '“';  /* 中文双引号 */
   position: absolute;
   left: 1rem;
   top: 0.5rem;
@@ -40,8 +40,8 @@
   opacity: 0.3;
 }
 
-.featuresIntro::after {
-  content: '"';
+.technologiesIntro::after {
+  content: '”';  /* 中文双引号 */
   position: absolute;
   right: 2rem;
   bottom: 0rem;
@@ -55,7 +55,7 @@
   opacity: 0.3;
 }
 
-.featuresIntroText {
+.technologiesIntroText {
   font-size: 1.2rem;
   line-height: 1.8;
   color: #374151;
@@ -64,20 +64,20 @@
   z-index: 1;
 }
 
-.featuresGrid {
+.technologiesGrid {
   display: flex;
   margin-left: -2.5rem;
   width: auto;
 }
 
-.featuresGridColumn {
+.technologiesGridColumn {
   padding-left: 2.5rem;
   background-clip: padding-box;
   display: flex;
   flex-direction: column;
 }
 
-.featureCard {
+.technologyCard {
   margin-bottom: 2.5rem;
   display: flex;
   flex-direction: column;
@@ -88,7 +88,7 @@
   height: 100%;
 }
 
-.featureCard h3 {
+.technologyCard h3 {
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
@@ -102,7 +102,7 @@
   visibility: visible;
 }
 
-.featureCard h3::before {
+.technologyCard h3::before {
   content: '';
   width: 3px;
   height: 1.5rem;
@@ -112,19 +112,19 @@
   flex-shrink: 0;
 }
 
-.featureContent {
+.technologyContent {
   display: flex;
   flex-direction: column;
   flex: 1;
   /* margin-top: 1rem; */
 }
 
-.featureSection {
+.technologySection {
   text-align: left;
   flex: 1;
 }
 
-.featureSection p {
+.technologySection p {
   font-size: 1.1rem;
   color: #475569;
   line-height: 1.8;
@@ -136,81 +136,81 @@
 
 /* 响应式设计 */
 @media (max-width: 768px) {
-  .featuresSection {
+  .technologiesSection {
     padding: 4rem 0;
   }
 
-  .featuresGrid {
+  .technologiesGrid {
     margin-left: 0;
   }
 
-  .featuresGridColumn {
+  .technologiesGridColumn {
     padding-left: 0;
   }
 
-  .featureCard {
+  .technologyCard {
     padding: 2rem 1.5rem;
     margin-bottom: 2rem;
     min-height: auto;
     height: auto;
   }
 
-  .featuresIntro {
+  .technologiesIntro {
     padding: 3rem 2rem;
     margin-bottom: 3rem;
   }
 
-  .featuresIntro::before,
-  .featuresIntro::after {
+  .technologiesIntro::before,
+  .technologiesIntro::after {
     font-size: 4rem;
   }
 
-  .featuresIntroText {
+  .technologiesIntroText {
     font-size: 1.1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .featuresSection {
+  .technologiesSection {
     padding: 3rem 0;
   }
 
-  .featureCard {
+  .technologyCard {
     padding: 1.5rem;
     min-height: auto;
     height: auto;
     margin-bottom: 1.5rem;
   }
 
-  .featureCard h3 {
+  .technologyCard h3 {
     font-size: 1.3rem;
     margin-bottom: 1rem;
     padding-bottom: 0.75rem;
   }
 
-  .featureSection p {
+  .technologySection p {
     font-size: 1rem;
     line-height: 1.6;
   }
 
-  .featuresIntro {
+  .technologiesIntro {
     padding: 2rem 1rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
   }
 
-  .featuresIntroText {
+  .technologiesIntroText {
     font-size: 1rem;
     line-height: 1.6;
   }
 
-  .featuresIntro::before {
+  .technologiesIntro::before {
     left: 0.5rem;
     top: 0.25rem;
     font-size: 3rem;
   }
 
-  .featuresIntro::after {
+  .technologiesIntro::after {
     right: 1rem;
     bottom: -0.5rem;
     font-size: 3rem;
@@ -218,10 +218,10 @@
 }
 
 @media (max-width: 900px) {
-  .featuresGrid {
+  .technologiesGrid {
     margin-left: 0;
   }
-  .featuresGridColumn {
+  .technologiesGridColumn {
     padding-left: 0;
   }
 }

@@ -10,13 +10,13 @@ const CONTENT = {
       url: '/',
       external: true
     },
-    {
-      id: 'jit-framework',
-      label: 'Jit开发框架',
-      type: 'link',
-      url: '/jit-framework',
-      external: true
-    },
+    // {
+    //   id: 'jit-framework',
+    //   label: 'Jit开发框架',
+    //   type: 'link',
+    //   url: '/jit-framework',
+    //   external: true
+    // },
     {
       id: 'guide',
       label: '开发指南',

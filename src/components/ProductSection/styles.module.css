@@ -36,12 +36,17 @@
   margin-top: 4rem;
   position: relative;
   z-index: 1;
+  align-items: stretch;
 }
 
 .card {
   padding: 2.0rem;
   animation: fadeInUp 0.6s ease-out;
   animation-fill-mode: both;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 280px;
 }
 
 .card:nth-child(1) { animation-delay: 0.1s; }
@@ -87,6 +92,7 @@
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
   transition: all 0.3s ease;
   transform: scale(1);
+  flex-shrink: 0;
 }
 
 .card:hover .cardIcon {
@@ -101,6 +107,7 @@
   color: #1e293b;
   text-align: center;
   position: relative;
+  flex-shrink: 0;
 }
 
 .card h3::after {
@@ -127,6 +134,10 @@
   font-size: 1rem;
   text-align: center;
   margin: 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* 响应式设计 */
@@ -148,6 +159,7 @@
 
   .card {
     padding: 2rem;
+    min-height: 240px;
   }
 
   .cardIcon {
@@ -171,6 +183,7 @@
 
   .card {
     padding: 1.5rem;
+    min-height: 220px;
   }
 
   .cardIcon {

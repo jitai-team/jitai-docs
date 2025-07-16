@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './styles.module.css';
 import globalStyles from '../../pages/index.module.css';
+import AnimatedSection from '../AnimatedSection';
 
 const CONTENT = {
   product: {
@@ -43,23 +44,36 @@ const CONTENT = {
 
 const ProductSection: React.FC = () => {
   return (
-    <section id="section-1" className={`${styles.productSection} ${globalStyles.gradientBackground}`}>
-      <div className={globalStyles.sectionContent}>
-        <h2 className={globalStyles.sectionTitle}>{CONTENT.product.title}</h2>
-        <p className={styles.sectionSubtitle}>
-          {CONTENT.product.subtitle}
-        </p>
-        <div className={styles.cardsGrid}>
-          {CONTENT.product.cards.map((card, index) => (
-            <div key={index} className={`${globalStyles.baseCard} ${styles.card}`}>
-              <div className={styles.cardIcon}>{card.icon}</div>
-              <h3>{card.title}</h3>
-              <p>{card.description}</p>
-            </div>
-          ))}
+    <AnimatedSection animationType="fadeInUp" duration={1000}>
+      <section id="section-1" className={`${styles.productSection} ${globalStyles.gradientBackground}`}>
+        <div className={globalStyles.sectionContent}>
+          <AnimatedSection animationType="fadeInUp" delay={200}>
+            <h2 className={globalStyles.sectionTitle}>{CONTENT.product.title}</h2>
+          </AnimatedSection>
+          <AnimatedSection animationType="fadeInUp" delay={400}>
+            <p className={styles.sectionSubtitle}>
+              {CONTENT.product.subtitle}
+            </p>
+          </AnimatedSection>
+          <div className={styles.cardsGrid}>
+            {CONTENT.product.cards.map((card, index) => (
+              <AnimatedSection
+                key={index}
+                animationType="scaleIn"
+                delay={600 + index * 80}
+                duration={600}
+              >
+                <div className={`${globalStyles.baseCard} ${styles.card} animatedChild`}>
+                  <div className={styles.cardIcon}>{card.icon}</div>
+                  <h3>{card.title}</h3>
+                  <p>{card.description}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </AnimatedSection>
   );
 };
 

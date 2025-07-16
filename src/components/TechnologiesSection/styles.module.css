@@ -26,7 +26,7 @@
 }
 
 .technologiesIntro::before {
-  content: '“';  /* 中文双引号 */
+  content: '"';  /* 中文双引号 */
   position: absolute;
   left: 1rem;
   top: 0.5rem;
@@ -41,7 +41,7 @@
 }
 
 .technologiesIntro::after {
-  content: '”';  /* 中文双引号 */
+  content: '"';  /* 中文双引号 */
   position: absolute;
   right: 2rem;
   bottom: 0rem;
@@ -65,20 +65,13 @@
 }
 
 .technologiesGrid {
-  display: flex;
-  margin-left: -2.5rem;
-  width: auto;
-}
-
-.technologiesGridColumn {
-  padding-left: 2.5rem;
-  background-clip: padding-box;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  width: 100%;
 }
 
 .technologyCard {
-  margin-bottom: 2.5rem;
   display: flex;
   flex-direction: column;
   padding: 3rem 2.5rem;
@@ -116,7 +109,6 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  /* margin-top: 1rem; */
 }
 
 .technologySection {
@@ -135,17 +127,23 @@
 }
 
 /* 响应式设计 */
+@media (max-width: 1200px) {
+  .technologiesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .technologiesGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
 @media (max-width: 768px) {
   .technologiesSection {
     padding: 4rem 0;
-  }
-
-  .technologiesGrid {
-    margin-left: 0;
-  }
-
-  .technologiesGridColumn {
-    padding-left: 0;
   }
 
   .technologyCard {
@@ -173,6 +171,10 @@
 @media (max-width: 480px) {
   .technologiesSection {
     padding: 3rem 0;
+  }
+
+  .technologiesGrid {
+    gap: 1.5rem;
   }
 
   .technologyCard {
@@ -214,14 +216,5 @@
     right: 1rem;
     bottom: -0.5rem;
     font-size: 3rem;
-  }
-}
-
-@media (max-width: 900px) {
-  .technologiesGrid {
-    margin-left: 0;
-  }
-  .technologiesGridColumn {
-    padding-left: 0;
   }
 }

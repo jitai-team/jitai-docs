@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './styles.module.css';
 import globalStyles from '../../pages/index.module.css';
+import AnimatedSection from '../AnimatedSection';
 
 const CONTENT = {
   title: 'Jit 开发框架',
-  subtitle: '基于JAAP的企业级应用开发框架，提供从基础设施到业务层组件的全栈技术底座。',
+  subtitle: '基于JAAP的企业级应用开发框架，提供从基础设施到业务层组件的全栈技术底座',
   frameworks: [
     {
       id: 'jitai',
@@ -95,41 +96,51 @@ const CONTENT = {
 
 const FrameworkSection: React.FC = () => {
   return (
-    <section id="section-framework" className={`${styles.frameworkSection} ${globalStyles.gradientBackground}`}>
-      <div className={globalStyles.sectionContent}>
-        <div className={styles.headerSection}>
-          <h2 className={globalStyles.sectionTitle}>{CONTENT.title}</h2>
-          <p className={styles.sectionSubtitle}>
-            {CONTENT.subtitle}
-          </p>
-        </div>
+    <AnimatedSection animationType="fadeInUp" duration={1000}>
+      <section id="section-framework" className={`${styles.frameworkSection} ${globalStyles.gradientBackground}`}>
+        <div className={globalStyles.sectionContent}>
+          <AnimatedSection animationType="fadeInUp" delay={200}>
+            <div className={styles.headerSection}>
+              <h2 className={globalStyles.sectionTitle}>{CONTENT.title}</h2>
+              <p className={styles.sectionSubtitle}>
+                {CONTENT.subtitle}
+              </p>
+            </div>
+          </AnimatedSection>
 
-        <div className={styles.frameworksGrid}>
-          {CONTENT.frameworks.map((framework, index) => (
-            <a
-              key={index}
-              // href={`/jit-framework#${framework.id}`}
-              className={`${globalStyles.baseCard} ${styles.frameworkCard} ${styles.frameworkLink}`}
-              style={{ '--card-color': framework.color } as React.CSSProperties}
-            >
-              <div className={styles.cardHeader}>
-                <div className={styles.cardIcon}>
-                  <span className={styles.iconEmoji}>{framework.icon}</span>
-                </div>
-                <h3 className={styles.frameworkName}>{framework.name}</h3>
-              </div>
-              <p className={styles.frameworkDescription}>{framework.description}</p>
-              <div className={styles.linkIndicator}>
-                <span>了解更多</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </div>
-            </a>
-          ))}
+          <div className={styles.frameworksGrid}>
+            {CONTENT.frameworks.map((framework, index) => (
+              <AnimatedSection
+                key={index}
+                animationType="scaleIn"
+                delay={400 + index * 80}
+                duration={600}
+              >
+                <a
+                  // href={`/jit-framework#${framework.id}`}
+                  className={`${globalStyles.baseCard} ${styles.frameworkCard} ${styles.frameworkLink} animatedChild`}
+                  style={{ '--card-color': framework.color } as React.CSSProperties}
+                >
+                  <div className={styles.cardHeader}>
+                    <div className={styles.cardIcon}>
+                      <span className={styles.iconEmoji}>{framework.icon}</span>
+                    </div>
+                    <h3 className={styles.frameworkName}>{framework.name}</h3>
+                  </div>
+                  <p className={styles.frameworkDescription}>{framework.description}</p>
+                  <div className={styles.linkIndicator}>
+                    <span>了解更多</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </div>
+                </a>
+              </AnimatedSection>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </AnimatedSection>
   );
 };
 

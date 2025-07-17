@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import ProductSection from '../components/ProductSection';
 import DevOpsSection from '../components/DevOpsSection';
+import IDESection from '../components/IDESection';
 import PlatformSection from '../components/PlatformSection';
 import FrameworkSection from '../components/FrameworkSection';
 import TechnologiesSection from '../components/TechnologiesSection';
@@ -54,6 +55,7 @@ const HomePage: React.FC = () => {
         <TechnologiesSection />
         <PlatformSection />
         <FrameworkSection />
+        <IDESection />
         <DevOpsSection />
       </div>
     </LayoutComponent>

@@ -1,0 +1,314 @@
+/* IDE Section 样式 */
+.ideSection {
+  padding: 8rem 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.ideSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e2e8f0' fill-opacity='0.3'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.5;
+  pointer-events: none;
+  animation: float 20s ease-in-out infinite;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #6b7280;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* 核心特性部分 - 一排显示 */
+.coreFeatures {
+  margin-bottom: 4rem;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.featureCard {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.featureCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.featureCard:hover::before {
+  transform: scaleX(1);
+}
+
+.featureIcon {
+  margin-bottom: 1.5rem;
+}
+
+.icon {
+  font-size: 3rem;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.featureContent h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1e293b;
+}
+
+.featureContent p {
+  color: #64748b;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* 可视化开发模块部分 */
+.developmentModules {
+  margin-top: 2rem;
+}
+
+.modulesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.moduleCard {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.moduleCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.moduleCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.moduleCard:hover::before {
+  transform: scaleX(1);
+}
+
+.moduleHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.moduleTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.moduleIcon {
+  font-size: 1.5rem;
+  opacity: 0.7;
+}
+
+.moduleDescription {
+  color: #64748b;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.detailLink {
+  color: #3b82f6;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.detailLink:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .featuresGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .featureCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .modulesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .ideSection {
+    padding: 6rem 0;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .featureCard {
+    padding: 1.5rem;
+  }
+
+  .featureContent h3 {
+    font-size: 1.1rem;
+  }
+
+  .featureContent p {
+    font-size: 0.9rem;
+  }
+
+  .icon {
+    font-size: 2.5rem;
+  }
+
+  .modulesGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .moduleCard {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ideSection {
+    padding: 4rem 0;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .featureCard {
+    padding: 1rem;
+  }
+
+  .featureContent h3 {
+    font-size: 1rem;
+  }
+
+  .featureContent p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .icon {
+    font-size: 2rem;
+  }
+
+  .moduleCard {
+    padding: 1rem;
+  }
+
+  .moduleTitle {
+    font-size: 1.1rem;
+  }
+
+  .moduleDescription {
+    font-size: 0.9rem;
+  }
+}

@@ -15,8 +15,8 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   className = '',
   animationType = 'fadeInUp',
   delay = 0,
-  duration = 800,
-  threshold = 0.1
+  duration = 600, // 减少默认持续时间
+  threshold = 0.05 // 降低阈值，让动画更早触发
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -46,7 +46,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
       },
       {
         threshold,
-        rootMargin: '0px 0px -50px 0px'
+        rootMargin: '0px 0px -150px 0px' // 进一步增加触发距离，让动画更早开始
       }
     );
 
@@ -61,9 +61,9 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
     };
   }, [threshold]);
 
-  // 移动端优化：减少延迟和持续时间
-  const optimizedDelay = isMobile ? Math.max(0, delay * 0.5) : delay;
-  const optimizedDuration = isMobile ? Math.min(duration, 600) : duration;
+  // 优化延迟和持续时间：减少延迟，缩短动画时间
+  const optimizedDelay = isMobile ? Math.max(0, delay * 0.3) : delay * 0.5; // 减少延迟
+  const optimizedDuration = isMobile ? Math.min(duration, 400) : Math.min(duration, 500); // 缩短动画时间
 
   return (
     <div
@@ -72,8 +72,8 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
       style={{
         '--animation-delay': `${optimizedDelay}ms`,
         '--animation-duration': `${optimizedDuration}ms`,
-        '--animation-duration-mobile': `${Math.min(optimizedDuration, 600)}ms`,
-        '--animation-duration-mobile-small': `${Math.min(optimizedDuration, 500)}ms`
+        '--animation-duration-mobile': `${Math.min(optimizedDuration, 400)}ms`,
+        '--animation-duration-mobile-small': `${Math.min(optimizedDuration, 300)}ms`
       } as React.CSSProperties}
       data-visible={isVisible}
     >

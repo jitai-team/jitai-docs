@@ -44,13 +44,13 @@ const CONTENT = {
 
 const ProductSection: React.FC = () => {
   return (
-    <AnimatedSection animationType="fadeInUp" duration={1000}>
+    <AnimatedSection animationType="fadeInUp" duration={500}>
       <section id="section-1" className={`${styles.productSection} ${globalStyles.gradientBackground}`}>
         <div className={globalStyles.sectionContent}>
-          <AnimatedSection animationType="fadeInUp" delay={200}>
+          <AnimatedSection animationType="fadeInUp" delay={100}>
             <h2 className={globalStyles.sectionTitle}>{CONTENT.product.title}</h2>
           </AnimatedSection>
-          <AnimatedSection animationType="fadeInUp" delay={400}>
+          <AnimatedSection animationType="fadeInUp" delay={200}>
             <p className={styles.sectionSubtitle}>
               {CONTENT.product.subtitle}
             </p>
@@ -60,8 +60,8 @@ const ProductSection: React.FC = () => {
               <AnimatedSection
                 key={index}
                 animationType="scaleIn"
-                delay={600 + index * 80}
-                duration={600}
+                delay={300 + index * 50}
+                duration={400}
               >
                 <div className={`${globalStyles.baseCard} ${styles.card} animatedChild`}>
                   <div className={styles.cardIcon}>{card.icon}</div>

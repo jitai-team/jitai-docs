@@ -38,13 +38,13 @@ const CONTENT = {
 
 const DevOpsSection: React.FC = () => {
   return (
-    <AnimatedSection animationType="fadeInUp" duration={1000}>
+    <AnimatedSection animationType="fadeInUp" duration={500}>
       <section id="devops-section" className={`${styles.devopsSection} ${globalStyles.gradientBackground}`}>
         <div className={globalStyles.sectionContent}>
-          <AnimatedSection animationType="fadeInUp" delay={200}>
+          <AnimatedSection animationType="fadeInUp" delay={100}>
             <h2 className={globalStyles.sectionTitle}>{CONTENT.devops.title}</h2>
           </AnimatedSection>
-          <AnimatedSection animationType="fadeInUp" delay={400}>
+          <AnimatedSection animationType="fadeInUp" delay={200}>
             <p className={styles.sectionSubtitle}>
               {CONTENT.devops.subtitle}
             </p>
@@ -55,8 +55,8 @@ const DevOpsSection: React.FC = () => {
               <AnimatedSection
                 key={index}
                 animationType={index % 2 === 0 ? "fadeInLeft" : "fadeInRight"}
-                delay={600 + index * 200}
-                duration={800}
+                delay={300 + index * 100}
+                duration={500}
               >
                 <div className={`${styles.featureRow} ${index % 2 === 0 ? styles.featureRowLeft : styles.featureRowRight}`}>
                   <div className={styles.featureImage}>

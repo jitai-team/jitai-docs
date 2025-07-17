@@ -96,10 +96,10 @@ const CONTENT = {
 
 const FrameworkSection: React.FC = () => {
   return (
-    <AnimatedSection animationType="fadeInUp" duration={1000}>
+    <AnimatedSection animationType="fadeInUp" duration={500}>
       <section id="section-framework" className={`${styles.frameworkSection} ${globalStyles.gradientBackground}`}>
         <div className={globalStyles.sectionContent}>
-          <AnimatedSection animationType="fadeInUp" delay={200}>
+          <AnimatedSection animationType="fadeInUp" delay={100}>
             <div className={styles.headerSection}>
               <h2 className={globalStyles.sectionTitle}>{CONTENT.title}</h2>
               <p className={styles.sectionSubtitle}>
@@ -113,8 +113,8 @@ const FrameworkSection: React.FC = () => {
               <AnimatedSection
                 key={index}
                 animationType="scaleIn"
-                delay={400 + index * 80}
-                duration={600}
+                delay={200 + index * 50}
+                duration={400}
               >
                 <a
                   // href={`/jit-framework#${framework.id}`}

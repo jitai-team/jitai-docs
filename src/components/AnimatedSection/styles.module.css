@@ -1,7 +1,7 @@
 .animatedSection {
   opacity: 0;
   transform: translateY(30px);
-  transition: all var(--animation-duration, 800ms) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all var(--animation-duration, 600ms) cubic-bezier(0.25, 0.46, 0.45, 0.94); /* 使用更快的缓动函数 */
   transition-delay: var(--animation-delay, 0ms);
 }
 
@@ -67,15 +67,15 @@
 
 /* 为子元素添加延迟动画 */
 .animatedSection[data-visible="true"] .animatedChild {
-  animation: fadeInUpChild 0.6s ease-out forwards;
+  animation: fadeInUpChild 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; /* 使用更快的缓动函数 */
 }
 
-.animatedSection[data-visible="true"] .animatedChild:nth-child(1) { animation-delay: 0.1s; }
-.animatedSection[data-visible="true"] .animatedChild:nth-child(2) { animation-delay: 0.2s; }
-.animatedSection[data-visible="true"] .animatedChild:nth-child(3) { animation-delay: 0.3s; }
-.animatedSection[data-visible="true"] .animatedChild:nth-child(4) { animation-delay: 0.4s; }
-.animatedSection[data-visible="true"] .animatedChild:nth-child(5) { animation-delay: 0.5s; }
-.animatedSection[data-visible="true"] .animatedChild:nth-child(6) { animation-delay: 0.6s; }
+.animatedSection[data-visible="true"] .animatedChild:nth-child(1) { animation-delay: 0.05s; }
+.animatedSection[data-visible="true"] .animatedChild:nth-child(2) { animation-delay: 0.1s; }
+.animatedSection[data-visible="true"] .animatedChild:nth-child(3) { animation-delay: 0.15s; }
+.animatedSection[data-visible="true"] .animatedChild:nth-child(4) { animation-delay: 0.2s; }
+.animatedSection[data-visible="true"] .animatedChild:nth-child(5) { animation-delay: 0.25s; }
+.animatedSection[data-visible="true"] .animatedChild:nth-child(6) { animation-delay: 0.3s; }
 
 @keyframes fadeInUpChild {
   from {
@@ -92,7 +92,7 @@
 @media (max-width: 768px) {
   .animatedSection {
     transform: translateY(20px);
-    transition-duration: var(--animation-duration-mobile, 600ms);
+    transition-duration: var(--animation-duration-mobile, 400ms);
   }
 
   .fadeInUp {
@@ -112,12 +112,12 @@
   }
 
   /* 减少移动端动画延迟 */
-  .animatedSection[data-visible="true"] .animatedChild:nth-child(1) { animation-delay: 0.05s; }
-  .animatedSection[data-visible="true"] .animatedChild:nth-child(2) { animation-delay: 0.1s; }
-  .animatedSection[data-visible="true"] .animatedChild:nth-child(3) { animation-delay: 0.15s; }
-  .animatedSection[data-visible="true"] .animatedChild:nth-child(4) { animation-delay: 0.2s; }
-  .animatedSection[data-visible="true"] .animatedChild:nth-child(5) { animation-delay: 0.25s; }
-  .animatedSection[data-visible="true"] .animatedChild:nth-child(6) { animation-delay: 0.3s; }
+  .animatedSection[data-visible="true"] .animatedChild:nth-child(1) { animation-delay: 0.03s; }
+  .animatedSection[data-visible="true"] .animatedChild:nth-child(2) { animation-delay: 0.06s; }
+  .animatedSection[data-visible="true"] .animatedChild:nth-child(3) { animation-delay: 0.09s; }
+  .animatedSection[data-visible="true"] .animatedChild:nth-child(4) { animation-delay: 0.12s; }
+  .animatedSection[data-visible="true"] .animatedChild:nth-child(5) { animation-delay: 0.15s; }
+  .animatedSection[data-visible="true"] .animatedChild:nth-child(6) { animation-delay: 0.18s; }
 
   @keyframes fadeInUpChild {
     from {
@@ -134,7 +134,7 @@
 @media (max-width: 480px) {
   .animatedSection {
     transform: translateY(15px);
-    transition-duration: var(--animation-duration-mobile-small, 500ms);
+    transition-duration: var(--animation-duration-mobile-small, 300ms);
   }
 
   .fadeInUp {
@@ -154,12 +154,12 @@
   }
 
   /* 进一步减少小屏幕的动画延迟 */
-  .animatedSection[data-visible="true"] .animatedChild:nth-child(1) { animation-delay: 0.03s; }
-  .animatedSection[data-visible="true"] .animatedChild:nth-child(2) { animation-delay: 0.06s; }
-  .animatedSection[data-visible="true"] .animatedChild:nth-child(3) { animation-delay: 0.09s; }
-  .animatedSection[data-visible="true"] .animatedChild:nth-child(4) { animation-delay: 0.12s; }
-  .animatedSection[data-visible="true"] .animatedChild:nth-child(5) { animation-delay: 0.15s; }
-  .animatedSection[data-visible="true"] .animatedChild:nth-child(6) { animation-delay: 0.18s; }
+  .animatedSection[data-visible="true"] .animatedChild:nth-child(1) { animation-delay: 0.02s; }
+  .animatedSection[data-visible="true"] .animatedChild:nth-child(2) { animation-delay: 0.04s; }
+  .animatedSection[data-visible="true"] .animatedChild:nth-child(3) { animation-delay: 0.06s; }
+  .animatedSection[data-visible="true"] .animatedChild:nth-child(4) { animation-delay: 0.08s; }
+  .animatedSection[data-visible="true"] .animatedChild:nth-child(5) { animation-delay: 0.1s; }
+  .animatedSection[data-visible="true"] .animatedChild:nth-child(6) { animation-delay: 0.12s; }
 
   @keyframes fadeInUpChild {
     from {

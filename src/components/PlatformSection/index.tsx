@@ -62,13 +62,13 @@ const CONTENT = {
 
 const PlatformSection: React.FC = () => {
   return (
-    <AnimatedSection animationType="fadeInUp" duration={1000}>
+    <AnimatedSection animationType="fadeInUp" duration={500}>
       <section id="section-platform" className={`${styles.platformSection} ${globalStyles.gradientBackground}`}>
         <div className={globalStyles.sectionContent}>
-          <AnimatedSection animationType="fadeInUp" delay={200}>
+          <AnimatedSection animationType="fadeInUp" delay={100}>
             <h2 className={globalStyles.sectionTitle}>{CONTENT.platform.title}</h2>
           </AnimatedSection>
-          <AnimatedSection animationType="fadeInUp" delay={400}>
+          <AnimatedSection animationType="fadeInUp" delay={200}>
             <p className={styles.sectionSubtitle}>
               {CONTENT.platform.subtitle}
             </p>
@@ -78,8 +78,8 @@ const PlatformSection: React.FC = () => {
               <AnimatedSection
                 key={index}
                 animationType="scaleIn"
-                delay={600 + index * 100}
-                duration={600}
+                delay={300 + index * 60}
+                duration={400}
               >
                 <div className={`${globalStyles.baseCard} ${styles.featureCard} animatedChild`}>
                   <div className={styles.featureImage}>

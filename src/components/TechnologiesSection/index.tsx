@@ -72,13 +72,13 @@ const CONTENT = {
 
 const TechnologiesSection: React.FC = () => {
   return (
-    <AnimatedSection animationType="fadeInUp" duration={1000}>
+    <AnimatedSection animationType="fadeInUp" duration={500}>
       <section id="section-3" className={styles.technologiesSection}>
         <div className={globalStyles.sectionContent}>
-          <AnimatedSection animationType="fadeInUp" delay={200}>
+          <AnimatedSection animationType="fadeInUp" delay={100}>
             <h2 className={globalStyles.sectionTitle}>{CONTENT.technologies.title}</h2>
           </AnimatedSection>
-          <AnimatedSection animationType="fadeInUp" delay={400}>
+          <AnimatedSection animationType="fadeInUp" delay={200}>
             <div className={styles.technologiesIntro}>
               <div className={styles.technologiesIntroText}>
                 JitAi 独创的 ​JAAP 协议，赋予系统模块自描述、自加载、独立可编排的特性，打造面向 AI 的解释型架构。AI 可动态感知、调用、编排任意模块，将传统应用生态无缝融入 AI 体系。<br/><br/>
@@ -95,8 +95,8 @@ const TechnologiesSection: React.FC = () => {
               <AnimatedSection
                 key={index}
                 animationType="fadeInLeft"
-                delay={600 + index * 120}
-                duration={800}
+                delay={300 + index * 80}
+                duration={500}
               >
                 <div className={`${globalStyles.baseCard} ${styles.technologyCard} animatedChild`}>
                   <h3>{card.title}</h3>

@@ -1,0 +1,8 @@
+{
+  "label": "应用运行平台",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "JitAi应用运行平台负责解释执行JAAP应用，管理应用的运行时环境，并向开发者提供系统API，用于应用开发。"
+  }
+} 

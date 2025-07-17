@@ -1,0 +1,8 @@
+{
+  "label": "JitMessage",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "消息通知服务框架，支持短信、邮件、推送等多种消息渠道的统一管理和发送"
+  }
+} 

@@ -96,12 +96,12 @@ const config: Config = {
         //   position: 'left',
         //   label: '案例展示',
         // },
-        {
-           type: 'docSidebar',
-           sidebarId: 'communitySidebar',
-           position: 'left',
-           label: '社区',
-         },
+        //{
+        //   type: 'docSidebar',
+        //   sidebarId: 'communitySidebar',
+        //   position: 'left',
+        //   label: '社区',
+        // },
         //GitHub
         {
           href: 'https://github.com/jitai-team',
@@ -123,6 +123,10 @@ const config: Config = {
             {
               label: '快速上手',
               to: '/docs/tutorial/00快速上手/03-5分钟开发一个AI应用（智能客服）',
+            },
+            {
+              label: '企业级AI应用开发',
+              to: '/docs/tutorial/03开发指南/02开发框架/JitAi/intro',
             }
           ],
         },
@@ -158,6 +162,12 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+    },
+    mermaid: {
+      theme: {
+        light: 'neutral',
+        dark: 'dark',
+      },
     },
   } satisfies Preset.ThemeConfig,
 };

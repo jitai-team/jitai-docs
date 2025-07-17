@@ -1,0 +1,253 @@
+/* Framework Section 样式 */
+.frameworkSection {
+  padding: 8rem 0;
+  /* background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 50%, #f5f3ff 100%); */
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.frameworkSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(36, 73, 254, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(202, 75, 167, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.headerSection {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionSubtitle {
+  font-size: 1.25rem;
+  color: #666;
+  max-width: 800px;
+  margin: 1.5rem auto 0;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.frameworksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.frameworkCard {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(36, 73, 254, 0.1);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.frameworkCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--card-color) 0%, color-mix(in srgb, var(--card-color) 80%, white) 100%);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.frameworkCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(36, 73, 254, 0.15);
+  border-color: var(--card-color);
+  box-shadow: 0 20px 40px color-mix(in srgb, var(--card-color) 20%, transparent);
+}
+
+.frameworkCard:hover::before {
+  transform: scaleX(1);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cardIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  background-color: color-mix(in srgb, var(--card-color) 15%, transparent);
+}
+
+.iconEmoji {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.frameworkLink:hover .cardIcon {
+  background-color: color-mix(in srgb, var(--card-color) 25%, transparent);
+}
+
+.frameworkName {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.frameworkDescription {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+.frameworkLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+.frameworkLink:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.linkIndicator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(36, 73, 254, 0.1);
+  font-size: 0.9rem;
+  color: var(--card-color);
+  filter: brightness(0.8);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.frameworkLink:hover .linkIndicator {
+  color: var(--card-color);
+  filter: brightness(0.8);
+  transform: translateX(5px);
+}
+
+.linkIndicator svg {
+  transition: transform 0.3s ease;
+}
+
+.frameworkLink:hover .linkIndicator svg {
+  transform: translateX(3px);
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+  .frameworksGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .frameworkSection {
+    padding: 4rem 0;
+  }
+
+  .headerSection {
+    margin-bottom: 3rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+
+  .frameworksGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .frameworkCard {
+    padding: 1.75rem;
+  }
+
+  .cardHeader {
+    gap: 0.75rem;
+  }
+
+  .cardIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .iconEmoji {
+    font-size: 1.25rem;
+  }
+
+  .frameworkName {
+    font-size: 1.1rem;
+  }
+
+  .frameworkDescription {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .frameworkSection {
+    padding: 3rem 0;
+  }
+
+  .headerSection {
+    margin-bottom: 2rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .frameworksGrid {
+    padding: 0 0.5rem;
+  }
+
+  .frameworkCard {
+    padding: 1.5rem;
+  }
+
+  .cardIcon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .iconEmoji {
+    font-size: 1.1rem;
+  }
+
+  .frameworkName {
+    font-size: 1rem;
+  }
+
+  .frameworkDescription {
+    font-size: 0.85rem;
+  }
+}

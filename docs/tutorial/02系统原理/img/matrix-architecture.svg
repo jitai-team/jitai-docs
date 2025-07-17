@@ -1,0 +1,215 @@
+<svg width="900" height="500" viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 渐变定义 -->
+    <linearGradient id="metaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff6b6b" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#ff8e8e" stop-opacity="0.6"/>
+    </linearGradient>
+    <linearGradient id="typeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4ecdc4" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#6fe5dc" stop-opacity="0.6"/>
+    </linearGradient>
+    <linearGradient id="instanceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#45b7d1" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#74c4e6" stop-opacity="0.6"/>
+    </linearGradient>
+    <linearGradient id="extensibleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#95a5a6" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#bdc3c7" stop-opacity="0.6"/>
+    </linearGradient>
+    
+    <!-- 阴影滤镜 -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="1" flood-opacity="0.3"/>
+    </filter>
+    
+    <!-- 虚线样式 -->
+    <pattern id="dashed" patternUnits="userSpaceOnUse" width="4" height="4">
+      <path d="M 0,2 l 4,0" stroke="#999" stroke-width="1" stroke-dasharray="2,2"/>
+    </pattern>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="900" height="500" fill="#fafafa"/>
+  
+  <!-- 标题 -->
+  <text x="450" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#333">矩阵化元素族类-结构示意图</text>
+  
+  <!-- 坐标轴 -->
+  <!-- X轴：元素族类 -->
+  <text x="780" y="480" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#666">元素族类 (横向扩展)</text>
+  <line x1="100" y1="460" x2="850" y2="460" stroke="#999" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Y轴：元素分层 -->
+  <text x="20" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#666" transform="rotate(-90, 20, 250)">元素分层</text>
+  <line x1="100" y1="460" x2="100" y2="80" stroke="#999" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 箭头标记 -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#999"/>
+    </marker>
+  </defs>
+  
+  <!-- 网格线 -->
+  <g id="grid" opacity="0.2">
+    <!-- 垂直网格线 -->
+    <line x1="160" y1="100" x2="160" y2="440" stroke="#ccc" stroke-width="1"/>
+    <line x1="260" y1="100" x2="260" y2="440" stroke="#ccc" stroke-width="1"/>
+    <line x1="360" y1="100" x2="360" y2="440" stroke="#ccc" stroke-width="1"/>
+    <line x1="460" y1="100" x2="460" y2="440" stroke="#ccc" stroke-width="1"/>
+    <line x1="560" y1="100" x2="560" y2="440" stroke="#ccc" stroke-width="1"/>
+    <line x1="660" y1="100" x2="660" y2="440" stroke="#ccc" stroke-width="1"/>
+    <line x1="760" y1="100" x2="760" y2="440" stroke="#ccc" stroke-width="1"/>
+    
+    <!-- 水平网格线 -->
+    <line x1="100" y1="150" x2="830" y2="150" stroke="#ccc" stroke-width="1"/>
+    <line x1="100" y1="260" x2="830" y2="260" stroke="#ccc" stroke-width="1"/>
+    <line x1="100" y1="370" x2="830" y2="370" stroke="#ccc" stroke-width="1"/>
+  </g>
+  
+  <!-- 族类标题行 -->
+  <g id="family-headers">
+    <text x="160" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">AI族类</text>
+    <text x="260" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">Auth族类</text>
+    <text x="360" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">Web族类</text>
+    <text x="460" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">Data族类</text>
+    <text x="560" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">Service族类</text>
+    <text x="660" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">Message族类</text>
+    <text x="760" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">...</text>
+  </g>
+  
+  <!-- Meta层 -->
+  <g id="meta-layer">
+    <!-- 层级标签 -->
+    <text x="55" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e74c3c">Meta层</text>
+    <text x="55" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">(族类定义)</text>
+    
+    <!-- AI Meta -->
+    <rect x="130" y="160" width="60" height="30" fill="url(#metaGradient)" stroke="#e74c3c" stroke-width="2" rx="4" filter="url(#shadow)"/>
+    <text x="160" y="179" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="white">AIFamily</text>
+    
+    <!-- Auth Meta -->
+    <rect x="230" y="160" width="60" height="30" fill="url(#metaGradient)" stroke="#e74c3c" stroke-width="2" rx="4" filter="url(#shadow)"/>
+    <text x="260" y="179" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="white">AuthFamily</text>
+    
+    <!-- Web Meta -->
+    <rect x="330" y="160" width="60" height="30" fill="url(#metaGradient)" stroke="#e74c3c" stroke-width="2" rx="4" filter="url(#shadow)"/>
+    <text x="360" y="179" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="white">WebFamily</text>
+    
+    <!-- Data Meta -->
+    <rect x="430" y="160" width="60" height="30" fill="url(#metaGradient)" stroke="#e74c3c" stroke-width="2" rx="4" filter="url(#shadow)"/>
+    <text x="460" y="179" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="white">DataFamily</text>
+    
+    <!-- Service Meta -->
+    <rect x="530" y="160" width="60" height="30" fill="url(#metaGradient)" stroke="#e74c3c" stroke-width="2" rx="4" filter="url(#shadow)"/>
+    <text x="560" y="179" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="white">ServiceFamily</text>
+    
+    <!-- Message Meta -->
+    <rect x="630" y="160" width="60" height="30" fill="url(#metaGradient)" stroke="#e74c3c" stroke-width="2" rx="4" filter="url(#shadow)"/>
+    <text x="660" y="179" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="white">MessageFamily</text>
+    
+    <!-- 可扩展标识 -->
+    <rect x="730" y="160" width="60" height="30" fill="url(#extensibleGradient)" stroke="#95a5a6" stroke-width="2" rx="4" filter="url(#shadow)" stroke-dasharray="5,5"/>
+    <text x="760" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">更多族类</text>
+    <text x="760" y="182" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">可扩展</text>
+  </g>
+  
+  <!-- Type层 -->
+  <g id="type-layer">
+    <!-- 层级标签 -->
+    <text x="55" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#16a085">Type层</text>
+    <text x="55" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">(类型封装)</text>
+    
+    <!-- AI Types -->
+    <rect x="125" y="270" width="70" height="40" fill="url(#typeGradient)" stroke="#16a085" stroke-width="2" rx="4" filter="url(#shadow)"/>
+    <text x="160" y="282" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">AgentType</text>
+    <text x="160" y="293" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">ModelType</text>
+    <text x="160" y="304" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">KnowledgeType</text>
+    
+    <!-- Auth Types -->
+    <rect x="225" y="270" width="70" height="40" fill="url(#typeGradient)" stroke="#16a085" stroke-width="2" rx="4" filter="url(#shadow)"/>
+    <text x="260" y="282" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">UserType</text>
+    <text x="260" y="293" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">RoleType</text>
+    <text x="260" y="304" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">PermissionType</text>
+    
+    <!-- Web Types -->
+    <rect x="325" y="270" width="70" height="40" fill="url(#typeGradient)" stroke="#16a085" stroke-width="2" rx="4" filter="url(#shadow)"/>
+    <text x="360" y="282" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">PageType</text>
+    <text x="360" y="293" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">ComponentType</text>
+    <text x="360" y="304" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">LayoutType</text>
+    
+    <!-- Data Types -->
+    <rect x="425" y="270" width="70" height="40" fill="url(#typeGradient)" stroke="#16a085" stroke-width="2" rx="4" filter="url(#shadow)"/>
+    <text x="460" y="282" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">EntityType</text>
+    <text x="460" y="293" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">CacheType</text>
+    <text x="460" y="304" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">StorageType</text>
+    
+    <!-- Service Types -->
+    <rect x="525" y="270" width="70" height="40" fill="url(#typeGradient)" stroke="#16a085" stroke-width="2" rx="4" filter="url(#shadow)"/>
+    <text x="560" y="282" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">APIType</text>
+    <text x="560" y="293" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">TaskType</text>
+    <text x="560" y="304" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">WorkflowType</text>
+    
+    <!-- Message Types -->
+    <rect x="625" y="270" width="70" height="40" fill="url(#typeGradient)" stroke="#16a085" stroke-width="2" rx="4" filter="url(#shadow)"/>
+    <text x="660" y="282" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">EmailType</text>
+    <text x="660" y="293" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">SMSType</text>
+    <text x="660" y="304" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">NotifyType</text>
+    
+    <!-- 可扩展标识 -->
+    <rect x="725" y="270" width="70" height="40" fill="url(#extensibleGradient)" stroke="#95a5a6" stroke-width="2" rx="4" filter="url(#shadow)" stroke-dasharray="5,5"/>
+    <text x="760" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">更多类型</text>
+    <text x="760" y="297" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">持续扩展</text>
+  </g>
+  
+  <!-- Instance层 -->
+  <g id="instance-layer">
+    <!-- 层级标签 -->
+    <text x="55" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2980b9">Instance层</text>
+    <text x="55" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">(业务实例)</text>
+    
+    <!-- AI Instances -->
+    <rect x="125" y="380" width="70" height="40" fill="url(#instanceGradient)" stroke="#2980b9" stroke-width="2" rx="4" filter="url(#shadow)"/>
+    <text x="160" y="392" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">智能客服</text>
+    <text x="160" y="403" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">知识助理</text>
+    <text x="160" y="414" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">AI写作助手</text>
+    
+    <!-- Auth Instances -->
+    <rect x="225" y="380" width="70" height="40" fill="url(#instanceGradient)" stroke="#2980b9" stroke-width="2" rx="4" filter="url(#shadow)"/>
+    <text x="260" y="392" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">登录用户</text>
+    <text x="260" y="403" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">管理员</text>
+    <text x="260" y="414" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">访客</text>
+    
+    <!-- Web Instances -->
+    <rect x="325" y="380" width="70" height="40" fill="url(#instanceGradient)" stroke="#2980b9" stroke-width="2" rx="4" filter="url(#shadow)"/>
+    <text x="360" y="392" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">首页</text>
+    <text x="360" y="403" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">导航组件</text>
+    <text x="360" y="414" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">表单组件</text>
+    
+    <!-- Data Instances -->
+    <rect x="425" y="380" width="70" height="40" fill="url(#instanceGradient)" stroke="#2980b9" stroke-width="2" rx="4" filter="url(#shadow)"/>
+    <text x="460" y="392" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">用户实体</text>
+    <text x="460" y="403" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">产品缓存</text>
+    <text x="460" y="414" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">文件存储</text>
+    
+    <!-- Service Instances -->
+    <rect x="525" y="380" width="70" height="40" fill="url(#instanceGradient)" stroke="#2980b9" stroke-width="2" rx="4" filter="url(#shadow)"/>
+    <text x="560" y="392" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">订单API</text>
+    <text x="560" y="403" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">支付服务</text>
+    <text x="560" y="414" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">数据同步</text>
+    
+    <!-- Message Instances -->
+    <rect x="625" y="380" width="70" height="40" fill="url(#instanceGradient)" stroke="#2980b9" stroke-width="2" rx="4" filter="url(#shadow)"/>
+    <text x="660" y="392" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">注册邮件</text>
+    <text x="660" y="403" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">验证短信</text>
+    <text x="660" y="414" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">系统通知</text>
+    
+    <!-- 可扩展标识 -->
+    <rect x="725" y="380" width="70" height="40" fill="url(#extensibleGradient)" stroke="#95a5a6" stroke-width="2" rx="4" filter="url(#shadow)" stroke-dasharray="5,5"/>
+    <text x="760" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">更多实例</text>
+    <text x="760" y="407" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">无限扩展</text>
+  </g>
+  
+
+</svg> 

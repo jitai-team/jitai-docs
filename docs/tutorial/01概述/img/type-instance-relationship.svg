@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="400" viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="900" height="400" fill="#ffffff"/>
+  
+  <!-- 定义箭头 -->
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#666666"/>
+    </marker>
+  </defs>
+  
+  <!-- 标题 -->
+  <text x="450" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#333333">
+    JitAi 三层元素架构
+  </text>
+  
+  <!-- 实例元素层 -->
+  <g id="instance-layer">
+    <rect x="100" y="60" width="700" height="70" rx="10" fill="#f8f9fa" stroke="#28a745" stroke-width="2"/>
+    <text x="120" y="85" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#28a745">
+      实例元素 (Instance Element)
+    </text>
+    <text x="120" y="105" font-family="Arial, sans-serif" font-size="14" fill="#666666">
+      业务应用层 - 业务配置与轻量逻辑，type 指向 Type 元素
+    </text>
+    <text x="120" y="120" font-family="Arial, sans-serif" font-size="12" fill="#888888">
+      特点：通过Type元素可视化配置器生成、业务参数设置、轻量业务逻辑
+    </text>
+  </g>
+  
+  <!-- Type元素层 -->
+  <g id="type-layer">
+    <rect x="100" y="160" width="700" height="70" rx="10" fill="#f8f9fa" stroke="#007bff" stroke-width="2"/>
+    <text x="120" y="185" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#007bff">
+      Type元素 (Type Element)
+    </text>
+    <text x="120" y="205" font-family="Arial, sans-serif" font-size="14" fill="#666666">
+      技术实现层 - 技术实现与实例元素加载器，type 指向 Meta 元素
+    </text>
+    <text x="120" y="220" font-family="Arial, sans-serif" font-size="12" fill="#888888">
+      特点：技术封装、可视化配置器、实例元素加载器
+    </text>
+  </g>
+  
+  <!-- Meta元素层 -->
+  <g id="meta-layer">
+    <rect x="100" y="260" width="700" height="70" rx="10" fill="#f8f9fa" stroke="#6f42c1" stroke-width="2"/>
+    <text x="120" y="285" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#6f42c1">
+      Meta元素 (Meta Element)
+    </text>
+    <text x="120" y="305" font-family="Arial, sans-serif" font-size="14" fill="#666666">
+      元素族类根节点 - Type元素加载器，type 字段为空，直接由平台内核加载
+    </text>
+    <text x="120" y="320" font-family="Arial, sans-serif" font-size="12" fill="#888888">
+      特点：族类根节点、Type加载器实现、Python/TypeScript实现
+    </text>
+  </g>
+  
+  <!-- 层级关系箭头 -->
+  <g id="arrows">
+    <!-- 实例 -> Type -->
+    <line x1="450" y1="140" x2="450" y2="150" stroke="#666666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="460" y="147" font-family="Arial, sans-serif" font-size="12" fill="#666666">
+      type 指向
+    </text>
+    
+    <!-- Type -> Meta -->
+    <line x1="450" y1="240" x2="450" y2="250" stroke="#666666" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="460" y="247" font-family="Arial, sans-serif" font-size="12" fill="#666666">
+      type 指向
+    </text>
+  </g>
+  
+  <!-- 层级标识 -->
+  <g id="layer-labels">
+    <text x="50" y="95" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#28a745">
+      业务层
+    </text>
+    <text x="50" y="195" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#007bff">
+      技术层
+    </text>
+    <text x="50" y="295" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#6f42c1">
+      平台层
+    </text>
+  </g>
+  
+  <!-- 底部说明 -->
+  <text x="450" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#666666">
+    三层架构实现技术复杂度分离：Meta元素提供Type加载器 → Type元素提供实例加载器 → 实例元素简化业务配置
+  </text>
+  
+  <!-- 架构特性 -->
+  <text x="450" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#888888">
+    特性：高度可扩展性、分层解耦设计、代码复用性
+  </text>
+</svg> 

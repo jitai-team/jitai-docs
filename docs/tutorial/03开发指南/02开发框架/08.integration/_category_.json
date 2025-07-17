@@ -1,8 +1,0 @@
-{
-  "label": "JitIntegration",
-  "position": 8,
-  "link": {
-    "type": "generated-index",
-    "description": "JitIntegration 第三方服务集成和API管理，包括外部API、支付、短信等"
-  }
-} 

@@ -1,44 +1,59 @@
-import type {ReactNode} from 'react';
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import React, { useEffect } from 'react';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import Heading from '@theme/Heading';
-
+import Navbar from '../components/Navbar';
+import HeroSection from '../components/HeroSection';
+import ProductSection from '../components/ProductSection';
+import FrameworkSection from '../components/FrameworkSection';
+import TechnologiesSection from '../components/TechnologiesSection';
 import styles from './index.module.css';
 
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/tutorial/00快速上手/03-5分钟开发一个AI应用（智能客服）">
-            5分钟 ⏱️开发一个AI应用（智能客服）
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
 
-export default function Home(): ReactNode {
-  const {siteConfig} = useDocusaurusContext();
+const LayoutComponent = Layout as any;
+
+const HomePage: React.FC = () => {
+    useEffect(() => {
+    // 添加页面标识
+    document.body.setAttribute('data-page-id', 'home');
+
+    // 隐藏Docusaurus默认navbar
+    const hideDefaultNavbar = () => {
+      const defaultNavbars = document.querySelectorAll('.theme-layout-navbar, .navbar--fixed-top, [data-theme="light"] .navbar, [data-theme="dark"] .navbar, .navbar:not(.custom-navbar)');
+      defaultNavbars.forEach(navbar => {
+        if (navbar instanceof HTMLElement) {
+          navbar.style.display = 'none';
+          navbar.style.visibility = 'hidden';
+          navbar.style.opacity = '0';
+          navbar.style.height = '0';
+          navbar.style.overflow = 'hidden';
+        }
+      });
+    };
+
+    // 立即执行一次
+    hideDefaultNavbar();
+
+    // 监听DOM变化，确保在动态加载时也能隐藏
+    const observer = new MutationObserver(hideDefaultNavbar);
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      observer.disconnect();
+      // 清理页面标识
+      document.body.removeAttribute('data-page-id');
+    };
+  }, []);
+
   return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
-      <main>
-        <HomepageFeatures />
-      </main>
-    </Layout>
+    <LayoutComponent>
+      <div className={styles.container}>
+        <Navbar />
+        <HeroSection />
+        <ProductSection />
+        <TechnologiesSection />
+        <FrameworkSection />
+      </div>
+    </LayoutComponent>
   );
-}
+};
+
+export default HomePage;

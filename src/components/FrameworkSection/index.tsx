@@ -117,7 +117,8 @@ const FrameworkSection: React.FC = () => {
                 duration={400}
               >
                 <a
-                  // href={`/jit-framework#${framework.id}`}
+                  href={`/docs/category/${framework.id}`}
+                  target="_blank"
                   className={`${globalStyles.baseCard} ${styles.frameworkCard} ${styles.frameworkLink} animatedChild`}
                   style={{ '--card-color': framework.color } as React.CSSProperties}
                 >

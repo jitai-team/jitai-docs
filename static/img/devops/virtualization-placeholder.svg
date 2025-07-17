@@ -1,0 +1,56 @@
+<svg width="500" height="350" viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="500" height="350" fill="#f8fafc" rx="12"/>
+
+  <!-- 标题 -->
+  <text x="250" y="30" text-anchor="middle" fill="#1e293b" font-size="18" font-weight="bold">物理环境虚拟化</text>
+
+  <!-- 物理服务器层 -->
+  <rect x="30" y="50" width="440" height="60" fill="#64748b" rx="8"/>
+  <text x="250" y="85" text-anchor="middle" fill="white" font-size="16" font-weight="bold">物理服务器层</text>
+
+  <!-- 虚拟化层 -->
+  <rect x="30" y="120" width="440" height="50" fill="url(#grad1)" opacity="0.8" rx="8"/>
+  <text x="250" y="150" text-anchor="middle" fill="white" font-size="14" font-weight="bold">虚拟化层</text>
+
+  <!-- 虚拟节点1 -->
+  <rect x="50" y="190" width="100" height="60" fill="url(#grad1)" opacity="0.7" rx="6"/>
+  <text x="100" y="225" text-anchor="middle" fill="white" font-size="12" font-weight="bold">节点1</text>
+
+  <!-- 虚拟节点2 -->
+  <rect x="170" y="190" width="100" height="60" fill="url(#grad1)" opacity="0.7" rx="6"/>
+  <text x="220" y="225" text-anchor="middle" fill="white" font-size="12" font-weight="bold">节点2</text>
+
+  <!-- 虚拟节点3 -->
+  <rect x="290" y="190" width="100" height="60" fill="url(#grad1)" opacity="0.7" rx="6"/>
+  <text x="340" y="225" text-anchor="middle" fill="white" font-size="12" font-weight="bold">节点3</text>
+
+  <!-- 应用部署 -->
+  <rect x="350" y="270" width="120" height="60" fill="url(#grad2)" opacity="0.6" rx="8"/>
+  <text x="410" y="305" text-anchor="middle" fill="white" font-size="14" font-weight="bold">🚀</text>
+  <text x="410" y="320" text-anchor="middle" fill="white" font-size="10">应用部署</text>
+
+  <!-- 同步箭头 -->
+  <path d="M 100 250 L 120 250 M 115 245 L 120 250 L 115 255" stroke="#cbd5e1" stroke-width="2" fill="none"/>
+  <path d="M 220 250 L 240 250 M 235 245 L 240 250 L 235 255" stroke="#cbd5e1" stroke-width="2" fill="none"/>
+  <path d="M 340 250 L 360 250 M 355 245 L 360 250 L 355 255" stroke="#cbd5e1" stroke-width="2" fill="none"/>
+
+  <!-- 连接线 -->
+  <line x1="100" y1="250" x2="350" y2="270" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="220" y1="250" x2="350" y2="270" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="340" y1="250" x2="350" y2="270" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- 特性说明 -->
+  <text x="250" y="340" text-anchor="middle" fill="#64748b" font-size="12">环境隔离 • 资源管理 • 自动同步 • 无感部署</text>
+</svg>

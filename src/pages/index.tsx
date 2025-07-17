@@ -3,6 +3,7 @@ import Layout from '@theme/Layout';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import ProductSection from '../components/ProductSection';
+import DevOpsSection from '../components/DevOpsSection';
 import PlatformSection from '../components/PlatformSection';
 import FrameworkSection from '../components/FrameworkSection';
 import TechnologiesSection from '../components/TechnologiesSection';
@@ -53,6 +54,7 @@ const HomePage: React.FC = () => {
         <TechnologiesSection />
         <PlatformSection />
         <FrameworkSection />
+        <DevOpsSection />
       </div>
     </LayoutComponent>
   );

@@ -1,0 +1,67 @@
+<svg width="500" height="350" viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="500" height="350" fill="#f8fafc" rx="12"/>
+
+  <!-- 标题 -->
+  <text x="250" y="30" text-anchor="middle" fill="#1e293b" font-size="18" font-weight="bold">分布式集群管理</text>
+
+  <!-- 控制中心 -->
+  <circle cx="250" cy="70" r="35" fill="url(#grad1)" opacity="0.8"/>
+  <text x="250" y="80" text-anchor="middle" fill="white" font-size="20" font-weight="bold">⚙️</text>
+  <text x="250" y="110" text-anchor="middle" fill="#64748b" font-size="14" font-weight="bold">控制中心</text>
+
+  <!-- 集群节点 -->
+  <circle cx="120" cy="180" r="30" fill="url(#grad1)" opacity="0.7"/>
+  <text x="120" y="190" text-anchor="middle" fill="white" font-size="16" font-weight="bold">🖥️</text>
+  <text x="120" y="220" text-anchor="middle" fill="#64748b" font-size="12">节点1</text>
+
+  <circle cx="250" cy="180" r="30" fill="url(#grad1)" opacity="0.7"/>
+  <text x="250" y="190" text-anchor="middle" fill="white" font-size="16" font-weight="bold">🖥️</text>
+  <text x="250" y="220" text-anchor="middle" fill="#64748b" font-size="12">节点2</text>
+
+  <circle cx="380" cy="180" r="30" fill="url(#grad1)" opacity="0.7"/>
+  <text x="380" y="190" text-anchor="middle" fill="white" font-size="16" font-weight="bold">🖥️</text>
+  <text x="380" y="220" text-anchor="middle" fill="#64748b" font-size="12">节点3</text>
+
+  <!-- 连接线 -->
+  <line x1="250" y1="105" x2="120" y2="150" stroke="#cbd5e1" stroke-width="2"/>
+  <line x1="250" y1="105" x2="250" y2="150" stroke="#cbd5e1" stroke-width="2"/>
+  <line x1="250" y1="105" x2="380" y2="150" stroke="#cbd5e1" stroke-width="2"/>
+
+  <!-- 负载均衡指示 -->
+  <path d="M 120 240 L 250 240 L 380 240" stroke="#e2e8f0" stroke-width="4" fill="none"/>
+  <circle cx="120" cy="240" r="4" fill="#667eea"/>
+  <circle cx="250" cy="240" r="4" fill="#667eea"/>
+  <circle cx="380" cy="240" r="4" fill="#667eea"/>
+
+  <!-- 监控面板 -->
+  <rect x="30" y="270" width="440" height="60" fill="#e2e8f0" rx="8"/>
+  <text x="250" y="290" text-anchor="middle" fill="#64748b" font-size="14" font-weight="bold">系统监控</text>
+
+  <!-- 监控指标 -->
+  <rect x="50" y="300" width="80" height="20" fill="url(#grad2)" opacity="0.8" rx="4"/>
+  <text x="90" y="313" text-anchor="middle" fill="white" font-size="10">CPU: 45%</text>
+
+  <rect x="150" y="300" width="80" height="20" fill="url(#grad2)" opacity="0.8" rx="4"/>
+  <text x="190" y="313" text-anchor="middle" fill="white" font-size="10">内存: 62%</text>
+
+  <rect x="250" y="300" width="80" height="20" fill="url(#grad2)" opacity="0.8" rx="4"/>
+  <text x="290" y="313" text-anchor="middle" fill="white" font-size="10">网络: 78%</text>
+
+  <rect x="350" y="300" width="80" height="20" fill="url(#grad2)" opacity="0.8" rx="4"/>
+  <text x="390" y="313" text-anchor="middle" fill="white" font-size="10">磁盘: 33%</text>
+
+  <!-- 特性说明 -->
+  <text x="250" y="340" text-anchor="middle" fill="#64748b" font-size="12">负载均衡 • 自动扩展 • 故障转移 • 7×24监控</text>
+</svg>

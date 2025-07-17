@@ -1,0 +1,72 @@
+<svg width="500" height="350" viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="500" height="350" fill="#f8fafc" rx="12"/>
+
+  <!-- 标题 -->
+  <text x="250" y="30" text-anchor="middle" fill="#1e293b" font-size="18" font-weight="bold">多环境多版本管理</text>
+
+  <!-- 开发环境 -->
+  <rect x="30" y="50" width="130" height="80" fill="url(#grad1)" opacity="0.9" rx="8"/>
+  <text x="95" y="85" text-anchor="middle" fill="white" font-size="14" font-weight="bold">开发环境</text>
+  <text x="95" y="105" text-anchor="middle" fill="white" font-size="12">Development</text>
+
+  <!-- 测试环境 -->
+  <rect x="185" y="50" width="130" height="80" fill="url(#grad1)" opacity="0.7" rx="8"/>
+  <text x="250" y="85" text-anchor="middle" fill="white" font-size="14" font-weight="bold">测试环境</text>
+  <text x="250" y="105" text-anchor="middle" fill="white" font-size="12">Testing</text>
+
+  <!-- 生产环境 -->
+  <rect x="340" y="50" width="130" height="80" fill="url(#grad1)" opacity="0.5" rx="8"/>
+  <text x="405" y="85" text-anchor="middle" fill="white" font-size="14" font-weight="bold">生产环境</text>
+  <text x="405" y="105" text-anchor="middle" fill="white" font-size="12">Production</text>
+
+  <!-- 版本管理区域 -->
+  <rect x="30" y="150" width="440" height="180" fill="#e2e8f0" rx="8"/>
+  <text x="250" y="175" text-anchor="middle" fill="#64748b" font-size="16" font-weight="bold">版本管理</text>
+
+  <!-- 版本标签 -->
+  <rect x="50" y="190" width="80" height="40" fill="url(#grad2)" opacity="0.8" rx="6"/>
+  <text x="90" y="215" text-anchor="middle" fill="white" font-size="12" font-weight="bold">v1.0.0</text>
+
+  <rect x="150" y="190" width="80" height="40" fill="url(#grad2)" opacity="0.8" rx="6"/>
+  <text x="190" y="215" text-anchor="middle" fill="white" font-size="12" font-weight="bold">v1.1.0</text>
+
+  <rect x="250" y="190" width="80" height="40" fill="url(#grad2)" opacity="0.8" rx="6"/>
+  <text x="290" y="215" text-anchor="middle" fill="white" font-size="12" font-weight="bold">v1.2.0</text>
+
+  <rect x="350" y="190" width="80" height="40" fill="url(#grad2)" opacity="0.8" rx="6"/>
+  <text x="390" y="215" text-anchor="middle" fill="white" font-size="12" font-weight="bold">v2.0.0</text>
+
+  <!-- 环境映射 -->
+  <rect x="50" y="250" width="80" height="30" fill="#cbd5e1" rx="4"/>
+  <text x="90" y="270" text-anchor="middle" fill="#64748b" font-size="10">开发</text>
+
+  <rect x="150" y="250" width="80" height="30" fill="#cbd5e1" rx="4"/>
+  <text x="190" y="270" text-anchor="middle" fill="#64748b" font-size="10">测试</text>
+
+  <rect x="250" y="250" width="80" height="30" fill="#cbd5e1" rx="4"/>
+  <text x="290" y="270" text-anchor="middle" fill="#64748b" font-size="10">测试</text>
+
+  <rect x="350" y="250" width="80" height="30" fill="#cbd5e1" rx="4"/>
+  <text x="390" y="270" text-anchor="middle" fill="#64748b" font-size="10">生产</text>
+
+  <!-- 连接线 -->
+  <line x1="95" y1="130" x2="90" y2="190" stroke="#cbd5e1" stroke-width="2"/>
+  <line x1="250" y1="130" x2="190" y2="190" stroke="#cbd5e1" stroke-width="2"/>
+  <line x1="250" y1="130" x2="290" y2="190" stroke="#cbd5e1" stroke-width="2"/>
+  <line x1="405" y1="130" x2="390" y2="190" stroke="#cbd5e1" stroke-width="2"/>
+
+  <!-- 特性说明 -->
+  <text x="250" y="310" text-anchor="middle" fill="#64748b" font-size="12">环境隔离 • 版本控制 • 配置管理</text>
+</svg>

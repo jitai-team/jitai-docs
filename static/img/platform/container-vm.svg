@@ -1,112 +1,160 @@
 <svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+    <!-- 背景渐变 -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f1f5f9;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="host1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#64748b;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#475569;stop-opacity:1" />
+    
+    <!-- 主机系统 - 浅灰色 -->
+    <linearGradient id="hostGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#718096;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#4a5568;stop-opacity:0.8" />
     </linearGradient>
-    <linearGradient id="container1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    
+    <!-- 容器1 - 浅蓝色 -->
+    <linearGradient id="container1Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#718096;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#4a5568;stop-opacity:0.8" />
     </linearGradient>
-    <linearGradient id="container2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    
+    <!-- 容器2 - 浅绿色 -->
+    <linearGradient id="container2Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d3748;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#1a202c;stop-opacity:0.8" />
     </linearGradient>
-    <linearGradient id="container3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    
+    <!-- 容器3 - 浅黄色 -->
+    <linearGradient id="container3Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a5568;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#2d3748;stop-opacity:0.8" />
     </linearGradient>
-    <linearGradient id="container4" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    
+    <!-- 容器4 - 浅紫色 -->
+    <linearGradient id="container4Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#718096;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#4a5568;stop-opacity:0.8" />
     </linearGradient>
-    <linearGradient id="docker1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#2496ed;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    
+    <!-- Docker标志 - 浅蓝色 -->
+    <linearGradient id="dockerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a5568;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#4a5568;stop-opacity:0.8" />
     </linearGradient>
-    <filter id="shadow3" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.15"/>
+    
+    <!-- 阴影效果 -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.08"/>
     </filter>
   </defs>
 
-  <rect width="140" height="100" rx="12" fill="url(#bg3)"/>
+  <!-- 背景 -->
+  <rect width="140" height="100" rx="12" fill="url(#bgGradient)" stroke="#e2e8f0" stroke-width="1"/>
 
   <!-- 主机系统 -->
   <g transform="translate(10, 15)">
-    <rect x="0" y="0" width="120" height="50" rx="10" fill="url(#host1)" filter="url(#shadow3)"/>
+    <rect x="0" y="0" width="120" height="50" rx="10" fill="url(#hostGradient)" filter="url(#shadow)" stroke="#718096" stroke-width="1">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
+    </rect>
 
     <!-- 容器1 - 蓝色 -->
     <g transform="translate(8, 8)">
-      <rect x="0" y="0" width="25" height="34" rx="6" fill="url(#container1)" filter="url(#shadow3)"/>
-      <rect x="4" y="6" width="17" height="4" rx="2" fill="#ffffff" opacity="0.9"/>
-      <rect x="4" y="12" width="12" height="3" rx="1.5" fill="#ffffff" opacity="0.7"/>
-      <rect x="4" y="17" width="15" height="3" rx="1.5" fill="#ffffff" opacity="0.7"/>
-      <rect x="4" y="22" width="10" height="3" rx="1.5" fill="#ffffff" opacity="0.7"/>
-      <rect x="4" y="27" width="13" height="3" rx="1.5" fill="#ffffff" opacity="0.7"/>
+      <rect x="0" y="0" width="25" height="34" rx="6" fill="url(#container1Gradient)" filter="url(#shadow)" stroke="#718096" stroke-width="1">
+        <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="4" y="6" width="17" height="4" rx="2" fill="white" opacity="0.8"/>
+      <rect x="4" y="12" width="12" height="3" rx="1.5" fill="white" opacity="0.6"/>
+      <rect x="4" y="17" width="15" height="3" rx="1.5" fill="white" opacity="0.6"/>
+      <rect x="4" y="22" width="10" height="3" rx="1.5" fill="white" opacity="0.6"/>
+      <rect x="4" y="27" width="13" height="3" rx="1.5" fill="white" opacity="0.6"/>
     </g>
 
     <!-- 容器2 - 绿色 -->
     <g transform="translate(38, 8)">
-      <rect x="0" y="0" width="25" height="34" rx="6" fill="url(#container2)" filter="url(#shadow3)"/>
-      <rect x="4" y="6" width="17" height="4" rx="2" fill="#ffffff" opacity="0.9"/>
-      <rect x="4" y="12" width="12" height="3" rx="1.5" fill="#ffffff" opacity="0.7"/>
-      <rect x="4" y="17" width="15" height="3" rx="1.5" fill="#ffffff" opacity="0.7"/>
-      <rect x="4" y="22" width="10" height="3" rx="1.5" fill="#ffffff" opacity="0.7"/>
-      <rect x="4" y="27" width="13" height="3" rx="1.5" fill="#ffffff" opacity="0.7"/>
+      <rect x="0" y="0" width="25" height="34" rx="6" fill="url(#container2Gradient)" filter="url(#shadow)" stroke="#2d3748" stroke-width="1">
+        <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+      </rect>
+      <rect x="4" y="6" width="17" height="4" rx="2" fill="white" opacity="0.8"/>
+      <rect x="4" y="12" width="12" height="3" rx="1.5" fill="white" opacity="0.6"/>
+      <rect x="4" y="17" width="15" height="3" rx="1.5" fill="white" opacity="0.6"/>
+      <rect x="4" y="22" width="10" height="3" rx="1.5" fill="white" opacity="0.6"/>
+      <rect x="4" y="27" width="13" height="3" rx="1.5" fill="white" opacity="0.6"/>
     </g>
 
     <!-- 容器3 - 橙色 -->
     <g transform="translate(68, 8)">
-      <rect x="0" y="0" width="25" height="34" rx="6" fill="url(#container3)" filter="url(#shadow3)"/>
-      <rect x="4" y="6" width="17" height="4" rx="2" fill="#ffffff" opacity="0.9"/>
-      <rect x="4" y="12" width="12" height="3" rx="1.5" fill="#ffffff" opacity="0.7"/>
-      <rect x="4" y="17" width="15" height="3" rx="1.5" fill="#ffffff" opacity="0.7"/>
-      <rect x="4" y="22" width="10" height="3" rx="1.5" fill="#ffffff" opacity="0.7"/>
-      <rect x="4" y="27" width="13" height="3" rx="1.5" fill="#ffffff" opacity="0.7"/>
+      <rect x="0" y="0" width="25" height="34" rx="6" fill="url(#container3Gradient)" filter="url(#shadow)" stroke="#4a5568" stroke-width="1">
+        <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" begin="1s"/>
+      </rect>
+      <rect x="4" y="6" width="17" height="4" rx="2" fill="white" opacity="0.8"/>
+      <rect x="4" y="12" width="12" height="3" rx="1.5" fill="white" opacity="0.6"/>
+      <rect x="4" y="17" width="15" height="3" rx="1.5" fill="white" opacity="0.6"/>
+      <rect x="4" y="22" width="10" height="3" rx="1.5" fill="white" opacity="0.6"/>
+      <rect x="4" y="27" width="13" height="3" rx="1.5" fill="white" opacity="0.6"/>
     </g>
 
     <!-- 容器4 - 紫色 -->
     <g transform="translate(98, 8)">
-      <rect x="0" y="0" width="25" height="34" rx="6" fill="url(#container4)" filter="url(#shadow3)"/>
-      <rect x="4" y="6" width="17" height="4" rx="2" fill="#ffffff" opacity="0.9"/>
-      <rect x="4" y="12" width="12" height="3" rx="1.5" fill="#ffffff" opacity="0.7"/>
-      <rect x="4" y="17" width="15" height="3" rx="1.5" fill="#ffffff" opacity="0.7"/>
-      <rect x="4" y="22" width="10" height="3" rx="1.5" fill="#ffffff" opacity="0.7"/>
-      <rect x="4" y="27" width="13" height="3" rx="1.5" fill="#ffffff" opacity="0.7"/>
+      <rect x="0" y="0" width="25" height="34" rx="6" fill="url(#container4Gradient)" filter="url(#shadow)" stroke="#718096" stroke-width="1">
+        <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+      </rect>
+      <rect x="4" y="6" width="17" height="4" rx="2" fill="white" opacity="0.8"/>
+      <rect x="4" y="12" width="12" height="3" rx="1.5" fill="white" opacity="0.6"/>
+      <rect x="4" y="17" width="15" height="3" rx="1.5" fill="white" opacity="0.6"/>
+      <rect x="4" y="22" width="10" height="3" rx="1.5" fill="white" opacity="0.6"/>
+      <rect x="4" y="27" width="13" height="3" rx="1.5" fill="white" opacity="0.6"/>
     </g>
   </g>
 
   <!-- Docker 标志 -->
   <g transform="translate(110, 20)">
-    <circle cx="0" cy="0" r="15" fill="url(#docker1)" filter="url(#shadow3)"/>
-    <path d="M -6 0 L 0 -6 L 6 0 L 0 6 Z" fill="#ffffff"/>
+    <circle cx="0" cy="0" r="15" fill="url(#dockerGradient)" filter="url(#shadow)" stroke="#4a5568" stroke-width="1">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" begin="2s"/>
+    </circle>
+    <path d="M -6 0 L 0 -6 L 6 0 L 0 6 Z" fill="white" opacity="0.8"/>
   </g>
 
   <!-- 虚拟化层指示器 -->
   <g transform="translate(15, 70)">
     <rect x="0" y="0" width="110" height="8" rx="4" fill="#e2e8f0"/>
-    <rect x="2" y="2" width="20" height="4" rx="2" fill="#3b82f6"/>
-    <rect x="25" y="2" width="20" height="4" rx="2" fill="#10b981"/>
-    <rect x="50" y="2" width="20" height="4" rx="2" fill="#f59e0b"/>
-    <rect x="75" y="2" width="20" height="4" rx="2" fill="#8b5cf6"/>
-    <rect x="100" y="2" width="8" height="4" rx="2" fill="#ef4444"/>
+    <rect x="2" y="2" width="20" height="4" rx="2" fill="#718096" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="25" y="2" width="20" height="4" rx="2" fill="#2d3748" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+    </rect>
+    <rect x="50" y="2" width="20" height="4" rx="2" fill="#4a5568" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+    </rect>
+    <rect x="75" y="2" width="20" height="4" rx="2" fill="#718096" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" begin="0.9s"/>
+    </rect>
+    <rect x="100" y="2" width="8" height="4" rx="2" fill="#718096" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" begin="1.2s"/>
+    </rect>
   </g>
 
   <!-- 资源监控 -->
   <g transform="translate(20, 85)">
-    <circle cx="0" cy="0" r="3" fill="#10b981"/>
-    <circle cx="15" cy="0" r="3" fill="#10b981"/>
-    <circle cx="30" cy="0" r="3" fill="#f59e0b"/>
-    <circle cx="45" cy="0" r="3" fill="#10b981"/>
+    <circle cx="0" cy="0" r="3" fill="#2d3748" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="15" cy="0" r="3" fill="#2d3748" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+    </circle>
+    <circle cx="30" cy="0" r="3" fill="#4a5568" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+    </circle>
+    <circle cx="45" cy="0" r="3" fill="#2d3748" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" begin="0.9s"/>
+    </circle>
   </g>
 
   <!-- 容器标识 -->
   <g transform="translate(100, 85)">
-    <rect x="0" y="0" width="25" height="12" rx="3" fill="#2496ed" opacity="0.8"/>
-    <text x="12.5" y="8" text-anchor="middle" font-family="Arial, sans-serif" font-size="7" fill="#ffffff" font-weight="bold">VM</text>
+    <rect x="0" y="0" width="25" height="12" rx="3" fill="url(#dockerGradient)" opacity="0.8" stroke="#4a5568" stroke-width="0.5">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <text x="12.5" y="8" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="white" font-weight="600">VM</text>
   </g>
 </svg>

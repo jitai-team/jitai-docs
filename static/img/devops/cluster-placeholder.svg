@@ -1,67 +1,148 @@
 <svg width="500" height="350" viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    <!-- 主渐变 - 黑白灰 -->
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a5568;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d3748;stop-opacity:1" />
     </linearGradient>
-    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    
+    <!-- 次要渐变 - 浅灰 -->
+    <linearGradient id="secondaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#718096;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4a5568;stop-opacity:1" />
     </linearGradient>
+    
+    <!-- 成功渐变 - 深灰 -->
+    <linearGradient id="successGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d3748;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a202c;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 箭头标记 -->
+    <marker id="flowArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L6,3 z" fill="#4a5568"/>
+    </marker>
   </defs>
 
   <!-- 背景 -->
-  <rect width="500" height="350" fill="#f8fafc" rx="12"/>
+  <rect width="500" height="350" fill="#f7fafc" rx="12" stroke="#e2e8f0" stroke-width="1"/>
 
-  <!-- 标题 -->
-  <text x="250" y="30" text-anchor="middle" fill="#1e293b" font-size="18" font-weight="bold">分布式集群管理</text>
+
 
   <!-- 控制中心 -->
-  <circle cx="250" cy="70" r="35" fill="url(#grad1)" opacity="0.8"/>
-  <text x="250" y="80" text-anchor="middle" fill="white" font-size="20" font-weight="bold">⚙️</text>
-  <text x="250" y="110" text-anchor="middle" fill="#64748b" font-size="14" font-weight="bold">控制中心</text>
+  <g transform="translate(250, 70)">
+    <circle cx="0" cy="0" r="35" fill="url(#primaryGradient)" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;1;0.9" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- 控制中心图标 -->
+    <g stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="0" cy="0" r="12"/>
+      <circle cx="0" cy="0" r="6"/>
+      <path d="M-8,0 L8,0 M0,-8 L0,8 M-6,-6 L6,6 M6,-6 L-6,6"/>
+    </g>
+    
+    <animateTransform attributeName="transform" type="rotate" values="0;360" dur="8s" repeatCount="indefinite"/>
+  </g>
+  
+  <text x="250" y="120" text-anchor="middle" fill="#4a5568" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">控制中心</text>
 
   <!-- 集群节点 -->
-  <circle cx="120" cy="180" r="30" fill="url(#grad1)" opacity="0.7"/>
-  <text x="120" y="190" text-anchor="middle" fill="white" font-size="16" font-weight="bold">🖥️</text>
-  <text x="120" y="220" text-anchor="middle" fill="#64748b" font-size="12">节点1</text>
+  <g transform="translate(120, 180)">
+    <circle cx="0" cy="0" r="30" fill="url(#secondaryGradient)" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    
+    <!-- 服务器图标 -->
+    <rect x="-8" y="-6" width="16" height="12" rx="2" fill="white" opacity="0.9"/>
+    <rect x="-6" y="-4" width="12" height="2" rx="1" fill="#4a5568"/>
+    <rect x="-6" y="-1" width="8" height="1" rx="0.5" fill="#4a5568"/>
+    <rect x="-6" y="1" width="10" height="1" rx="0.5" fill="#4a5568"/>
+    <rect x="-6" y="3" width="6" height="1" rx="0.5" fill="#4a5568"/>
+  </g>
+  
+  <text x="120" y="220" text-anchor="middle" fill="#4a5568" font-size="12" font-weight="500" font-family="system-ui, -apple-system, sans-serif">节点1</text>
 
-  <circle cx="250" cy="180" r="30" fill="url(#grad1)" opacity="0.7"/>
-  <text x="250" y="190" text-anchor="middle" fill="white" font-size="16" font-weight="bold">🖥️</text>
-  <text x="250" y="220" text-anchor="middle" fill="#64748b" font-size="12">节点2</text>
+  <g transform="translate(250, 180)">
+    <circle cx="0" cy="0" r="30" fill="url(#secondaryGradient)" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    
+    <!-- 服务器图标 -->
+    <rect x="-8" y="-6" width="16" height="12" rx="2" fill="white" opacity="0.9"/>
+    <rect x="-6" y="-4" width="12" height="2" rx="1" fill="#4a5568"/>
+    <rect x="-6" y="-1" width="8" height="1" rx="0.5" fill="#4a5568"/>
+    <rect x="-6" y="1" width="10" height="1" rx="0.5" fill="#4a5568"/>
+    <rect x="-6" y="3" width="6" height="1" rx="0.5" fill="#4a5568"/>
+  </g>
+  
+  <text x="250" y="220" text-anchor="middle" fill="#4a5568" font-size="12" font-weight="500" font-family="system-ui, -apple-system, sans-serif">节点2</text>
 
-  <circle cx="380" cy="180" r="30" fill="url(#grad1)" opacity="0.7"/>
-  <text x="380" y="190" text-anchor="middle" fill="white" font-size="16" font-weight="bold">🖥️</text>
-  <text x="380" y="220" text-anchor="middle" fill="#64748b" font-size="12">节点3</text>
+  <g transform="translate(380, 180)">
+    <circle cx="0" cy="0" r="30" fill="url(#secondaryGradient)" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+    
+    <!-- 服务器图标 -->
+    <rect x="-8" y="-6" width="16" height="12" rx="2" fill="white" opacity="0.9"/>
+    <rect x="-6" y="-4" width="12" height="2" rx="1" fill="#4a5568"/>
+    <rect x="-6" y="-1" width="8" height="1" rx="0.5" fill="#4a5568"/>
+    <rect x="-6" y="1" width="10" height="1" rx="0.5" fill="#4a5568"/>
+    <rect x="-6" y="3" width="6" height="1" rx="0.5" fill="#4a5568"/>
+  </g>
+  
+  <text x="380" y="220" text-anchor="middle" fill="#4a5568" font-size="12" font-weight="500" font-family="system-ui, -apple-system, sans-serif">节点3</text>
 
   <!-- 连接线 -->
-  <line x1="250" y1="105" x2="120" y2="150" stroke="#cbd5e1" stroke-width="2"/>
-  <line x1="250" y1="105" x2="250" y2="150" stroke="#cbd5e1" stroke-width="2"/>
-  <line x1="250" y1="105" x2="380" y2="150" stroke="#cbd5e1" stroke-width="2"/>
+  <g stroke="#cbd5e1" stroke-width="2" fill="none" marker-end="url(#flowArrow)">
+    <line x1="250" y1="105" x2="120" y2="150">
+      <animate attributeName="stroke-dasharray" values="0,50;25,50" dur="2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="250" y1="105" x2="250" y2="150">
+      <animate attributeName="stroke-dasharray" values="0,50;25,50" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+    </line>
+    <line x1="250" y1="105" x2="380" y2="150">
+      <animate attributeName="stroke-dasharray" values="0,50;25,50" dur="2s" repeatCount="indefinite" begin="1s"/>
+    </line>
+  </g>
 
   <!-- 负载均衡指示 -->
-  <path d="M 120 240 L 250 240 L 380 240" stroke="#e2e8f0" stroke-width="4" fill="none"/>
-  <circle cx="120" cy="240" r="4" fill="#667eea"/>
-  <circle cx="250" cy="240" r="4" fill="#667eea"/>
-  <circle cx="380" cy="240" r="4" fill="#667eea"/>
+  <path d="M 120 240 L 250 240 L 380 240" stroke="#e2e8f0" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="120" cy="240" r="4" fill="url(#successGradient)">
+    <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="250" cy="240" r="4" fill="url(#successGradient)">
+    <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+  </circle>
+  <circle cx="380" cy="240" r="4" fill="url(#successGradient)">
+    <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" begin="1s"/>
+  </circle>
 
   <!-- 监控面板 -->
-  <rect x="30" y="270" width="440" height="60" fill="#e2e8f0" rx="8"/>
-  <text x="250" y="290" text-anchor="middle" fill="#64748b" font-size="14" font-weight="bold">系统监控</text>
+  <rect x="30" y="270" width="440" height="60" fill="#f1f5f9" rx="8" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="250" y="290" text-anchor="middle" fill="#4a5568" font-size="14" font-weight="600" font-family="system-ui, -apple-system, sans-serif">系统监控</text>
 
   <!-- 监控指标 -->
-  <rect x="50" y="300" width="80" height="20" fill="url(#grad2)" opacity="0.8" rx="4"/>
-  <text x="90" y="313" text-anchor="middle" fill="white" font-size="10">CPU: 45%</text>
+  <g transform="translate(50, 300)">
+    <rect x="0" y="0" width="80" height="20" fill="url(#successGradient)" opacity="0.8" rx="4"/>
+    <text x="40" y="13" text-anchor="middle" fill="white" font-size="10" font-weight="500" font-family="system-ui, -apple-system, sans-serif">CPU: 45%</text>
+  </g>
 
-  <rect x="150" y="300" width="80" height="20" fill="url(#grad2)" opacity="0.8" rx="4"/>
-  <text x="190" y="313" text-anchor="middle" fill="white" font-size="10">内存: 62%</text>
+  <g transform="translate(150, 300)">
+    <rect x="0" y="0" width="80" height="20" fill="url(#secondaryGradient)" opacity="0.8" rx="4"/>
+    <text x="40" y="13" text-anchor="middle" fill="white" font-size="10" font-weight="500" font-family="system-ui, -apple-system, sans-serif">内存: 62%</text>
+  </g>
 
-  <rect x="250" y="300" width="80" height="20" fill="url(#grad2)" opacity="0.8" rx="4"/>
-  <text x="290" y="313" text-anchor="middle" fill="white" font-size="10">网络: 78%</text>
+  <g transform="translate(250, 300)">
+    <rect x="0" y="0" width="80" height="20" fill="url(#primaryGradient)" opacity="0.8" rx="4"/>
+    <text x="40" y="13" text-anchor="middle" fill="white" font-size="10" font-weight="500" font-family="system-ui, -apple-system, sans-serif">网络: 78%</text>
+  </g>
 
-  <rect x="350" y="300" width="80" height="20" fill="url(#grad2)" opacity="0.8" rx="4"/>
-  <text x="390" y="313" text-anchor="middle" fill="white" font-size="10">磁盘: 33%</text>
+  <g transform="translate(350, 300)">
+    <rect x="0" y="0" width="80" height="20" fill="url(#successGradient)" opacity="0.8" rx="4"/>
+    <text x="40" y="13" text-anchor="middle" fill="white" font-size="10" font-weight="500" font-family="system-ui, -apple-system, sans-serif">磁盘: 33%</text>
+  </g>
 
   <!-- 特性说明 -->
-  <text x="250" y="340" text-anchor="middle" fill="#64748b" font-size="12">负载均衡 • 自动扩展 • 故障转移 • 7×24监控</text>
+  <text x="250" y="340" text-anchor="middle" fill="#4a5568" font-size="12" font-family="system-ui, -apple-system, sans-serif">负载均衡 • 自动扩展 • 故障转移 • 7×24监控</text>
 </svg>

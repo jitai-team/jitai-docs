@@ -1,5 +1,15 @@
 import React from 'react';
 import styles from './styles.module.css';
+import globalStyles from '../../pages/index.module.css';
+import AnimatedSection from '../AnimatedSection';
+
+const CONTENT = {
+  ide: {
+    color: '#10b981', // 添加统一的主题颜色
+    title: 'Jit 编排编程工具',
+    subtitle: '编排式定义业务模块、组合模块，编程式开发业务处理逻辑，自动生成高质量代码'
+  }
+};
 
 const IDESection: React.FC = () => {
   const features = [
@@ -110,51 +120,71 @@ const IDESection: React.FC = () => {
   ];
 
   return (
-    <section className={styles.ideSection}>
-      <div className={styles.container}>
-        <div className={styles.header}>
-          <h2 className={styles.title}>Jit 编排编程工具</h2>
-          <p className={styles.subtitle}>
-            编排式定义业务模块、组合模块，编程式开发业务处理逻辑，自动生成高质量代码
-          </p>
-        </div>
+    <AnimatedSection animationType="fadeInUp" duration={500}>
+      <section
+        className={`${styles.ideSection} ${globalStyles.gradientBackground}`}
+        style={{
+          '--section-color': CONTENT.ide.color,
+          '--card-color': CONTENT.ide.color,
+          '--card-hover-color': CONTENT.ide.color
+        } as React.CSSProperties}
+      >
+        <div className={styles.container}>
+          <AnimatedSection animationType="fadeInUp" delay={100}>
+            <div className={styles.header}>
+              <h2 className={globalStyles.sectionTitle}>{CONTENT.ide.title}</h2>
+              <p className={styles.subtitle}>
+                {CONTENT.ide.subtitle}
+              </p>
+            </div>
+          </AnimatedSection>
 
-        {/* 核心特性部分 - 一排显示 */}
-        <div className={styles.coreFeatures}>
-          <div className={styles.featuresGrid}>
-            {features.map((feature) => (
-              <div key={feature.id} className={styles.featureCard}>
-                <div className={styles.featureIcon}>
-                  <span className={styles.icon}>{feature.icon}</span>
-                </div>
-                <div className={styles.featureContent}>
-                  <h3>{feature.title}</h3>
-                  <p>{feature.description}</p>
-                </div>
+          {/* 核心特性部分 - 一排显示 */}
+          <AnimatedSection animationType="fadeInUp" delay={200}>
+            <div className={styles.coreFeatures}>
+              <div className={styles.featuresGrid}>
+                {features.map((feature) => (
+                  <div key={feature.id} className={styles.featureCard}>
+                    <div className={styles.featureIcon}>
+                      <span className={styles.icon}>{feature.icon}</span>
+                    </div>
+                    <div className={styles.featureContent}>
+                      <h3>{feature.title}</h3>
+                      <p>{feature.description}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+          </AnimatedSection>
+
+          {/* 可视化开发模块部分 */}
+          <div className={styles.developmentModules}>
+            <div className={styles.modulesGrid}>
+              {developmentModules.map((module, index) => (
+                <AnimatedSection
+                  key={module.id}
+                  animationType="scaleIn"
+                  delay={300 + index * 50}
+                  duration={400}
+                >
+                  <div className={styles.moduleCard}>
+                    <div className={styles.moduleHeader}>
+                      <h4 className={styles.moduleTitle}>{module.title}</h4>
+                      <div className={styles.moduleIcon}>{module.icon}</div>
+                    </div>
+                    <p className={styles.moduleDescription}>{module.description}</p>
+                    <a href={module.link} className={styles.detailLink}>
+                      了解更多 →
+                    </a>
+                  </div>
+                </AnimatedSection>
+              ))}
+            </div>
           </div>
         </div>
-
-        {/* 可视化开发模块部分 */}
-        <div className={styles.developmentModules}>
-          <div className={styles.modulesGrid}>
-            {developmentModules.map((module) => (
-              <div key={module.id} className={styles.moduleCard}>
-                <div className={styles.moduleHeader}>
-                  <h4 className={styles.moduleTitle}>{module.title}</h4>
-                  <div className={styles.moduleIcon}>{module.icon}</div>
-                </div>
-                <p className={styles.moduleDescription}>{module.description}</p>
-                <a href={module.link} className={styles.detailLink}>
-                  了解更多 →
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </AnimatedSection>
   );
 };
 

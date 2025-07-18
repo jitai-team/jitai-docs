@@ -4,6 +4,7 @@ import globalStyles from '../../pages/index.module.css';
 import AnimatedSection from '../AnimatedSection';
 
 const CONTENT = {
+  color: '#06b6d4', // 添加统一的主题颜色
   title: 'Jit 开发框架',
   subtitle: '基于JAAP的企业级应用开发框架，提供从基础设施到业务层组件的全栈技术底座',
   frameworks: [
@@ -97,7 +98,15 @@ const CONTENT = {
 const FrameworkSection: React.FC = () => {
   return (
     <AnimatedSection animationType="fadeInUp" duration={500}>
-      <section id="section-framework" className={`${styles.frameworkSection} ${globalStyles.gradientBackground}`}>
+      <section
+        id="section-framework"
+        className={`${styles.frameworkSection} ${globalStyles.gradientBackground}`}
+        style={{
+          '--section-color': CONTENT.color,
+          '--card-color': CONTENT.color,
+          '--card-hover-color': CONTENT.color
+        } as React.CSSProperties}
+      >
         <div className={globalStyles.sectionContent}>
           <AnimatedSection animationType="fadeInUp" delay={100}>
             <div className={styles.headerSection}>
@@ -120,7 +129,7 @@ const FrameworkSection: React.FC = () => {
                   href={`/docs/category/${framework.id}`}
                   target="_blank"
                   className={`${globalStyles.baseCard} ${styles.frameworkCard} ${styles.frameworkLink} animatedChild`}
-                  style={{ '--card-color': framework.color } as React.CSSProperties}
+                  // style={{ '--card-color': framework.color } as React.CSSProperties}
                 >
                   <div className={styles.cardHeader}>
                     <div className={styles.cardIcon}>

@@ -5,6 +5,7 @@ import AnimatedSection from '../AnimatedSection';
 
 const CONTENT = {
   devops: {
+    color: '#f59e0b', // 添加统一的主题颜色
     title: 'Jit DevOps工具',
     subtitle: '构建、发布、部署、运维全面简化轻量化',
     features: [
@@ -39,7 +40,15 @@ const CONTENT = {
 const DevOpsSection: React.FC = () => {
   return (
     <AnimatedSection animationType="fadeInUp" duration={500}>
-      <section id="devops-section" className={`${styles.devopsSection} ${globalStyles.gradientBackground}`}>
+      <section
+        id="devops-section"
+        className={`${styles.devopsSection} ${globalStyles.gradientBackground}`}
+        style={{
+          '--section-color': CONTENT.devops.color,
+          '--card-color': CONTENT.devops.color,
+          '--card-hover-color': CONTENT.devops.color
+        } as React.CSSProperties}
+      >
         <div className={globalStyles.sectionContent}>
           <AnimatedSection animationType="fadeInUp" delay={100}>
             <h2 className={globalStyles.sectionTitle}>{CONTENT.devops.title}</h2>

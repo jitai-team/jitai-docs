@@ -1,4 +1,5 @@
 /* Platform Section 样式 */
+
 .platformSection {
   padding: 8rem 0;
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
@@ -16,6 +17,10 @@
   background: radial-gradient(circle at 20% 80%, rgba(36, 73, 254, 0.03) 0%, transparent 50%),
               radial-gradient(circle at 80% 20%, rgba(202, 75, 167, 0.03) 0%, transparent 50%);
   pointer-events: none;
+}
+
+.sectionTitle {
+  color: var(--card-color) !important;
 }
 
 .sectionSubtitle {
@@ -55,8 +60,6 @@
   border-radius: 24px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --card-color: #3b82f6;
-  --card-hover-color: #3b82f6;
 }
 
 .featureCard:nth-child(1) { animation-delay: 0.1s; }

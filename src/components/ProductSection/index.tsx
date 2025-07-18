@@ -5,6 +5,7 @@ import AnimatedSection from '../AnimatedSection';
 
 const CONTENT = {
   product: {
+    color: '#3b82f6', // 添加统一的主题颜色
     title: 'JitAi 是什么？',
     subtitle: '企业级应用和 AI 智能体的开发、调测、发布、部署、更新的全栈一体化平台',
     cards: [
@@ -51,7 +52,15 @@ const CONTENT = {
 const ProductSection: React.FC = () => {
   return (
     <AnimatedSection animationType="fadeInUp" duration={500}>
-      <section id="section-1" className={`${styles.productSection} ${globalStyles.gradientBackground}`}>
+      <section
+        id="section-1"
+        className={`${styles.productSection} ${globalStyles.gradientBackground}`}
+        style={{
+          '--section-color': CONTENT.product.color,
+          '--card-color': CONTENT.product.color,
+          '--card-hover-color': CONTENT.product.color
+        } as React.CSSProperties}
+      >
         <div className={globalStyles.sectionContent}>
           <AnimatedSection animationType="fadeInUp" delay={100}>
             <h2 className={globalStyles.sectionTitle}>{CONTENT.product.title}</h2>

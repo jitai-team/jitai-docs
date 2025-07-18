@@ -1,6 +1,5 @@
 /* Navbar 样式 */
 
-
 .navbar {
   position: fixed;
   top: 0;
@@ -8,19 +7,19 @@
   right: 0;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid var(--border-color);
   z-index: 1000;
   padding: 1rem 0;
   box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 4px 6px -1px var(--shadow-color),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--transition-primary);
 }
 
 .navbar:hover {
   background: rgba(255, 255, 255, 0.98);
   box-shadow:
-    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 10px 15px -3px var(--shadow-color),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
@@ -28,7 +27,7 @@
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(20px);
   box-shadow:
-    0 8px 15px -3px rgba(0, 0, 0, 0.1),
+    0 8px 15px -3px var(--shadow-color),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
   padding: 0.75rem 0;
 }
@@ -49,11 +48,11 @@
   gap: 0.75rem;
   font-size: 1.6rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  background: linear-gradient(135deg, var(--section-accent) 0%, #8b5cf6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  transition: all 0.3s ease;
+  transition: var(--transition-primary);
   cursor: pointer;
 }
 
@@ -66,7 +65,7 @@
   height: 36px;
   width: auto;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-  transition: all 0.3s ease;
+  transition: var(--transition-primary);
 }
 
 .logo:hover img {
@@ -83,8 +82,8 @@
 .navLinks button {
   background: none;
   border: none;
-  color: #22292f; /* 深灰色，接近黑色 */
-  font-size: 1rem;
+  color: var(--text-primary);
+  font-size: var(--font-size-body);
   font-weight: 600;
   cursor: pointer;
   padding: 0.75rem 1.5rem;
@@ -106,19 +105,19 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+  background: linear-gradient(90deg, var(--section-accent), #8b5cf6, #06b6d4);
   transform: scaleX(0);
   transition: transform 0.4s ease;
 }
 
 .navLinks button:hover, .navLinks button:focus {
-  color: #7c3aed;
+  color: var(--section-accent);
   background: none;
   border: none;
 }
 
 .navLinks button.active {
-  color: #7c3aed;
+  color: var(--section-accent);
   background: none;
   border: none;
 }
@@ -176,7 +175,7 @@
 .mobileMenuButton span {
   width: 1.7rem;
   height: 0.15rem;
-  background: #565656;
+  background: var(--text-secondary);
   border-radius: 10px;
   transition: all 0.3s linear;
   position: relative;
@@ -202,60 +201,63 @@
   transform: translateY(-50%) rotate(-45deg);
 }
 
-/* 移动端导航菜单 */
+/* 移动端菜单 */
 .mobileMenu {
   position: fixed;
   top: 0;
-  right: -100%;
-  width: 280px;
-  height: 100vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(20px);
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-  transition: right 0.3s ease;
   z-index: 1000;
-  padding: 5rem 0 2rem 0;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-primary);
 }
 
 .mobileMenu.open {
-  right: 0;
+  opacity: 1;
+  visibility: visible;
 }
 
 .mobileNavLinks {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 2rem;
+  align-items: center;
 }
 
 .mobileNavItem {
   background: none;
   border: none;
-  color: #22292f;
-  font-size: 1.1rem;
+  color: var(--text-primary);
+  font-size: 1.5rem;
   font-weight: 600;
   cursor: pointer;
-  padding: 1.2rem 2rem;
-  text-align: left;
-  /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
-  transition: all 0.3s ease;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  transition: var(--transition-primary);
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 0.5rem;
 }
 
 .mobileNavItem::after {
   content: '';
-  display: block;
   position: absolute;
-  left: 2rem;
-  right: 2rem;
   bottom: 0;
-  height: 1px;
-  background: rgba(0, 0, 0, 0.1);
-  pointer-events: none;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--section-accent), #8b5cf6);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
 }
 
 .mobileNavItem:last-child::after {
@@ -263,63 +265,57 @@
 }
 
 .mobileNavItem:hover {
-  color: #7c3aed;
-  background: rgba(124, 58, 237, 0.05);
+  color: var(--section-accent);
+  transform: translateY(-2px);
 }
 
 .mobileNavItem.active {
-  color: #7c3aed;
-  background: rgba(124, 58, 237, 0.1);
-  /* padding-left: 1rem; */
+  color: var(--section-accent);
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
 }
 
-
-
-
-/* .mobileNavItem[data-type="link"]::after {
-  content: '↗';
-  font-size: 0.9rem;
-  opacity: 0.7;
-  transition: all 0.3s ease;
-} */
-
-.mobileNavItem[data-type="link"]:hover::after {
-  opacity: 1;
-  transform: translateX(2px) translateY(-2px);
+.mobileNavItem:hover::after {
+  width: 80%;
 }
 
-/* 移动端菜单遮罩 */
 .mobileOverlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  right: 0;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 999;
-  backdrop-filter: blur(2px);
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-primary);
+}
+
+.mobileOverlay.open {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* 响应式设计 */
 @media (max-width: 768px) {
   .navContent {
-    padding: 0 1rem;
+    padding: 0 1.5rem;
   }
 
   .logo {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .logo img {
     height: 32px;
   }
 
-  /* 隐藏桌面端导航 */
   .desktopNav {
     display: none;
   }
 
-  /* 显示移动端菜单按钮 */
   .mobileMenuButton {
     display: flex;
   }
@@ -331,11 +327,11 @@
 
 @media (max-width: 480px) {
   .navbar {
-    padding: 0.75rem 0;
+    padding: 0.5rem 0;
   }
 
   .logo {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
 
   .logo img {
@@ -343,17 +339,15 @@
   }
 
   .mobileMenu {
-    width: 100%;
-    right: -100%;
+    padding: 2rem;
   }
 
   .mobileNavItem {
-    font-size: 1rem;
-    padding: 1.2rem 2rem;
+    font-size: 1.25rem;
+    padding: 0.875rem 1.5rem;
   }
 }
 
-/* 桌面端保持原有样式 */
 @media (min-width: 769px) {
   .mobileMenuButton {
     display: none;

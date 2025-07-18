@@ -3,21 +3,56 @@
  * and scoped locally.
  */
 
+/* 全局样式变量 - 深邃蓝灰配色方案 */
+:root {
+  /* HeroSection - 多彩 */
+  --hero-primary: #2449fe;
+  --hero-secondary: #ca4ba7;
+  --hero-accent: #06b6d4;
+  --hero-bg: linear-gradient(135deg, #f8faff 0%, #f0f4ff 50%, #f5f3ff 100%);
+
+  /* 其他Section - 专业简约 */
+  --section-primary: #1e293b;
+  --section-secondary: #475569;
+  --section-accent: #3b82f6;
+  --section-bg: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+
+  /* 通用 */
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --border-color: rgba(30, 41, 59, 0.1);
+  --shadow-color: rgba(30, 41, 59, 0.1);
+
+  /* 字体系统 */
+  --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-size-title: 3rem;
+  --font-size-subtitle: 1.25rem;
+  --font-size-body: 1rem;
+
+  /* 间距系统 */
+  --section-padding: 8rem 0;
+  --card-padding: 2.5rem;
+  --border-radius: 1.5rem;
+
+  /* 动画系统 */
+  --transition-primary: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-fade-in: fadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* 全局样式 */
 body {
 }
 
 .container {
   min-height: 100vh;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--font-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #f0f9ff 0%, #f5f3ff 100%);
-  --section-color: #1a1a1a;
-  --card-color: #1a1a1a;
-  --card-hover-color: #1a1a1a;
+  background: var(--section-bg);
+  --section-color: var(--section-primary);
+  --card-color: var(--section-primary);
+  --card-hover-color: var(--section-accent);
 }
 
 /* 公共样式 - 从TechnologiesSection和ProductSection提取 */
@@ -30,24 +65,35 @@ body {
 }
 
 .sectionTitle {
-  font-size: 3rem;
+  font-size: var(--font-size-title);
   font-weight: 800;
   text-align: center;
   margin-bottom: 1rem;
-  color: var(--section-color, #000);
+  color: var(--section-primary);
+}
+
+.sectionSubtitle {
+  font-size: var(--font-size-subtitle);
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
 }
 
 /* 通用卡片基础样式 */
 .baseCard {
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
-  border-radius: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
   box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 4px 6px -1px var(--shadow-color),
     0 2px 4px -1px rgba(0, 0, 0, 0.06),
     0 0 0 1px rgba(255, 255, 255, 0.05);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--transition-primary);
   position: relative;
   overflow: hidden;
 }
@@ -59,7 +105,7 @@ body {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+  background: linear-gradient(90deg, var(--section-accent), #8b5cf6, #06b6d4);
   transform: scaleX(0);
   transition: transform 0.4s ease;
 }
@@ -67,7 +113,7 @@ body {
 .baseCard:hover {
   transform: translateY(-8px);
   box-shadow:
-    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 20px 25px -5px var(--shadow-color),
     0 10px 10px -5px rgba(0, 0, 0, 0.04),
     0 0 0 1px rgba(255, 255, 255, 0.1);
 }
@@ -78,7 +124,51 @@ body {
 
 /* 通用渐变背景 */
 .gradientBackground {
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  background: var(--section-bg);
+}
+
+/* 通用按钮样式 */
+.primaryButton {
+  background: linear-gradient(135deg, var(--section-accent) 0%, #8b5cf6 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition-primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+}
+
+.secondaryButton {
+  background: transparent;
+  color: var(--section-primary);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition-primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.secondaryButton:hover {
+  background: var(--section-primary);
+  color: white;
+  border-color: var(--section-primary);
 }
 
 /* 通用响应式样式 */
@@ -90,10 +180,19 @@ body {
   .sectionContent {
     align-items: center;
   }
+
+  .sectionSubtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
 }
 
 @media (max-width: 480px) {
   .sectionTitle {
     font-size: 1.8rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 0.95rem;
   }
 }

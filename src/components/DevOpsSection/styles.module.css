@@ -1,10 +1,10 @@
-/* DevOps Section 样式 */
+/* DevOps Section 样式 - 深邃蓝灰配色方案 */
 .devopsSection {
-  padding: 8rem 0;
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  padding: var(--section-padding);
+  background: var(--section-bg);
   position: relative;
   overflow: hidden;
-  color: var(--section-color);
+  color: var(--section-primary);
 }
 
 .devopsSection::before {
@@ -14,15 +14,15 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 20% 80%, rgba(36, 73, 254, 0.03) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(202, 75, 167, 0.03) 0%, transparent 50%);
+  background: radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
   pointer-events: none;
 }
 
 .sectionSubtitle {
-  font-size: 1.25rem;
+  font-size: var(--font-size-subtitle);
   text-align: center;
-  color: #6b7280;
+  color: var(--text-secondary);
   margin-bottom: 4rem;
   max-width: 800px;
   margin-left: auto;
@@ -62,16 +62,16 @@
 .imagePlaceholder {
   width: 100%;
   height: 400px;
-  background: linear-gradient(135deg, rgba(25, 25, 25, 0.44) 10%);
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.44) 10%);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(36, 73, 254, 0.1);
+  box-shadow: 0 8px 32px var(--shadow-color);
+  transition: var(--transition-primary);
+  border: 1px solid var(--border-color);
 }
 
 .imagePlaceholder:hover::before {
@@ -91,7 +91,7 @@
 }
 
 .placeholderText {
-  color: white;
+  color: rgb(195, 195, 195);
   font-size: 1.2rem;
   font-weight: 600;
   z-index: 1;
@@ -101,8 +101,8 @@
 
 .featureImage:hover .imagePlaceholder {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px color-mix(in srgb, var(--card-color, #3b82f6) 20%, transparent);
-  border-color: var(--card-color, #3b82f6);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+  border-color: var(--section-accent);
 }
 
 .featureContent {
@@ -117,7 +117,7 @@
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: var(--card-color, #3b82f6);
+  color: var(--section-primary);
   position: relative;
 }
 
@@ -128,7 +128,7 @@
   left: 0;
   width: 4rem;
   height: 3px;
-  background: linear-gradient(90deg, var(--card-color, #3b82f6) 0%, color-mix(in srgb, var(--card-color, #3b82f6) 80%, white) 100%);
+  background: linear-gradient(90deg, var(--section-accent) 0%, #8b5cf6 100%);
   border-radius: 2px;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -139,7 +139,7 @@
 }
 
 .featureContent p {
-  color: #64748b;
+  color: var(--text-secondary);
   line-height: 1.8;
   font-size: 1.1rem;
   margin: 0;
@@ -199,12 +199,11 @@
   }
 
   .featureContent h3 {
-    font-size: 1.6rem;
-    text-align: center;
+    font-size: 1.5rem;
   }
 
   .featureContent p {
-    text-align: center;
+    font-size: 0.95rem;
   }
 }
 
@@ -215,7 +214,7 @@
 
   .featureRow {
     gap: 1.5rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
   }
 
   .imagePlaceholder {
@@ -227,11 +226,10 @@
   }
 
   .featureContent h3 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .featureContent p {
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 0.9rem;
   }
 }

@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JitAi知识图谱</title>
+    <script src="https://unpkg.com/vis-network@10.0.1/dist/vis-network.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/vis-network@10.0.1/dist/vis-network.min.css">
+    <!-- 新架构文件 -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/core.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 350px;
+            background: #f8f9fa;
+            border-right: 1px solid #e9ecef;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, width 0.3s ease;
+            position: relative;
+            min-width: 300px;
+            max-width: 500px;
+            overflow: hidden;
+        }
+
+        .sidebar.collapsed {
+            transform: translateX(-100%);
+            width: 0;
+            min-width: 0;
+            max-width: 0;
+        }
+        
+        .header {
+            padding: 20px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .header p {
+            margin: 5px 0 0 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .controls {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .control-group {
+            margin-bottom: 12px;
+        }
+
+        .control-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #333;
+            font-size: 13px;
+        }
+
+        .control-buttons {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 6px 8px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            text-align: center;
+            min-width: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .btn.loading {
+            color: transparent;
+        }
+
+        .btn.loading::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 14px;
+            height: 14px;
+            margin: -7px 0 0 -7px;
+            border: 2px solid #ffffff;
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            animation: btn-spin 1s linear infinite;
+        }
+
+        @keyframes btn-spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #495057;
+            border: 1px solid #dee2e6;
+        }
+
+        .btn-secondary:hover {
+            background: #e9ecef;
+        }
+
+        .filters {
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: auto;
+            padding: 12px;
+            padding-right: 8px;
+        }
+
+        .filters::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        .filters::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+
+        .filters::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 3px;
+        }
+
+        .filters::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+
+        .filters::-webkit-scrollbar-corner {
+            background: #f1f1f1;
+        }
+
+        .tree-container {
+            padding: 5px 0;
+            min-width: 280px;
+        }
+
+        .tree-node {
+            margin-bottom: 2px;
+        }
+
+        .tree-node-header {
+            display: flex;
+            align-items: center;
+            padding: 4px 6px;
+            border-radius: 3px;
+            transition: background-color 0.2s ease;
+            cursor: pointer;
+            min-height: 24px;
+            white-space: nowrap;
+            position: relative;
+        }
+        
+        .tree-node-header:hover {
+            background-color: #f8f9fa;
+        }
+
+        .tree-node-label {
+            font-size: 12px;
+            color: #495057;
+            cursor: pointer;
+            flex: 1;
+            margin: 0;
+            font-weight: 500;
+            line-height: 1.3;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            min-width: 0;
+            max-width: none;
+            word-break: break-word;
+        }
+
+        .tree-node-label[ondblclick] {
+            position: relative;
+        }
+
+        .tree-node-label[ondblclick]:hover {
+            color: #007bff;
+            text-decoration: underline;
+        }
+
+        .tree-node-label.wrapped {
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.4;
+        }
+
+        .tree-node-count {
+            font-size: 10px;
+            color: #6c757d;
+            margin-left: 6px;
+        }
+
+        .tree-node-children {
+            display: none;
+            margin-top: 2px;
+        }
+
+        .tree-node-children.expanded {
+            display: block;
+        }
+
+        .tree-node[data-level="0"] .tree-node-label {
+            font-weight: 600;
+            color: #333;
+            font-size: 13px;
+        }
+
+        .tree-node[data-level="0"] .tree-node-header {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 4px;
+            margin-bottom: 4px;
+        }
+
+        .tree-node[data-level="1"] .tree-node-label {
+            color: #495057;
+            font-size: 11.5px;
+        }
+
+        .tree-node[data-level="2"] .tree-node-label {
+            color: #6c757d;
+            font-size: 11px;
+        }
+
+        .tree-node[data-level="3"] .tree-node-label {
+            color: #868e96;
+            font-size: 10.5px;
+        }
+
+        .tree-node-header input[type="checkbox"] {
+            margin: 0 5px 0 4px;
+            transform: scale(0.85);
+        }
+
+        .tree-expand-icon {
+            width: 12px;
+            min-width: 12px;
+            font-size: 9px;
+            margin-right: 2px;
+            color: #6c757d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .tree-node-header:hover {
+            background-color: #f1f3f4;
+        }
+
+        .tree-node-label {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: calc(100% - 60px);
+        }
+
+        /* 自适应层级缩进 - 将通过JavaScript动态设置 */
+        .tree-node {
+            position: relative;
+        }
+
+        /* 循环节点特殊样式 */
+        .tree-node.circular-node {
+            opacity: 0.7;
+            background-color: #fff3cd;
+            border-left: 3px solid #ffc107;
+            border-radius: 4px;
+            margin: 2px 0;
+        }
+        
+        .tree-node.circular-node .tree-node-header {
+            background-color: transparent;
+        }
+        
+        .tree-node.circular-node .tree-node-label {
+            color: #856404;
+            font-style: italic;
+        }
+        
+        .tree-node.circular-node input[type="checkbox"] {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* 深层级连接线 */
+        .tree-node.deep-level::before {
+            content: "";
+            position: absolute;
+            left: -8px;
+            top: 50%;
+            width: 6px;
+            height: 1px;
+            border-top: 1px dashed #ccc;
+            transform: translateY(-50%);
+        }
+
+        /* 层级指示器 */
+        .level-indicator {
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: #999;
+            margin-right: 4px;
+            opacity: 0.6;
+            flex-shrink: 0;
+        }
+
+        /* 工具提示样式 */
+        .tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            white-space: nowrap;
+            z-index: 10000;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            max-width: 300px;
+            word-wrap: break-word;
+            white-space: normal;
+            line-height: 1.4;
+        }
+
+        .tooltip.show {
+            opacity: 1;
+        }
+
+        .tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-top-color: rgba(0, 0, 0, 0.9);
+        }
+
+        /* 侧边栏宽度调整手柄 */
+        .resize-handle {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: transparent;
+            cursor: col-resize;
+            z-index: 10;
+        }
+
+        .resize-handle:hover {
+            background: #4facfe;
+        }
+
+        .resize-handle:active {
+            background: #007bff;
+        }
+
+        /* 自适应显示模式 */
+        .sidebar.adaptive-compact .tree-node-header {
+            padding: 2px 4px;
+            min-height: 18px;
+        }
+
+        .sidebar.adaptive-compact .tree-node-label {
+            font-size: 10px;
+        }
+
+        .sidebar.adaptive-compact .tree-node-count {
+            font-size: 9px;
+        }
+
+        .sidebar.adaptive-compact .tree-expand-icon {
+            font-size: 8px;
+        }
+
+        .sidebar.adaptive-ultra-compact .tree-node-header {
+            padding: 1px 2px;
+            min-height: 16px;
+        }
+
+        .sidebar.adaptive-ultra-compact .tree-node-label {
+            font-size: 9px;
+        }
+
+        .sidebar.adaptive-ultra-compact .tree-node-count {
+            display: none;
+        }
+
+        .sidebar.adaptive-ultra-compact .level-indicator {
+            width: 3px;
+            height: 3px;
+            margin-right: 2px;
+        }
+
+        .graph-container {
+            flex: 1;
+            position: relative;
+            background: #fafbfc;
+        }
+
+        #network {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .info-panel {
+            position: absolute;
+            top: 60px; /* 增加上边距 */
+            right: 20px;
+            bottom: 60px; /* 增加下边距 */
+            width: 300px;
+            max-height: calc(100vh - 120px); /* 上下各60px边距 */
+            height: auto;
+            background: white;
+            border-radius: 12px;
+            padding: 0; /* 移除内边距，由内部元素控制 */
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: translateX(100%);
+            opacity: 0;
+            /* 只对transform和opacity进行过渡，避免干扰其他属性 */
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; /* 让内部控制滚动 */
+        }
+
+        /* 响应式设计：小屏幕适配 */
+        @media (max-height: 600px) {
+            .info-panel {
+                top: 20px;
+                bottom: 20px;
+                max-height: calc(100vh - 40px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .info-panel {
+                width: calc(100vw - 40px);
+                max-width: 350px;
+                right: 20px;
+            }
+        }
+
+        .info-panel.visible {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        /* 信息面板头部区域 */
+        .info-header {
+            flex-shrink: 0; /* 头部不收缩 */
+            padding: 20px 20px 10px 20px;
+            border-bottom: 1px solid #f0f0f0;
+            background: white;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .info-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            word-wrap: break-word;
+            line-height: 1.3;
+        }
+
+        .info-type {
+            font-size: 14px;
+            color: #666;
+            background: #f8f9fa;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 0;
+        }
+
+        /* 信息面板内容区域 */
+        .info-content-container {
+            flex: 1; /* 占据剩余空间 */
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 15px 20px 20px 20px;
+            min-height: 0; /* 允许flex子项收缩 */
+        }
+
+        /* 有滚动时为底部提示留出空间 */
+        .info-panel.has-scroll .info-content-container {
+            padding-bottom: 50px; /* 为底部固定提示留出空间 */
+        }
+
+        .info-content {
+            color: #555;
+            line-height: 1.6;
+            font-size: 14px;
+            position: relative;
+        }
+
+        /* 滚动提示阴影 - 固定在面板底部 */
+        .info-panel.has-scroll::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 45px;
+            background: linear-gradient(transparent, rgba(255, 255, 255, 0.98));
+            pointer-events: none;
+            z-index: 10;
+            border-radius: 0 0 12px 12px;
+        }
+
+        /* 滚动提示文字 - 固定在面板底部 */
+        .info-panel.has-scroll::before {
+            content: "⬇ 可滚动查看更多";
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            font-size: 10px;
+            color: #666;
+            pointer-events: none;
+            z-index: 11;
+            background: rgba(255, 255, 255, 0.98);
+            padding: 4px 8px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            font-weight: 500;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        /* 确保面板是相对定位，为固定提示提供定位上下文 */
+        .info-panel.has-scroll {
+            position: relative;
+        }
+
+        /* 滚动提示的渐显动画 */
+        .info-panel.has-scroll::before,
+        .info-panel.has-scroll::after {
+            animation: fadeInScrollHint 0.3s ease-in-out;
+        }
+
+        @keyframes fadeInScrollHint {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .info-content ul {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+
+        .info-content li {
+            margin-bottom: 6px;
+        }
+
+        .info-content hr {
+            margin: 15px 0;
+            border: none;
+            border-top: 1px solid #eee;
+        }
+
+        .info-content ul {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+
+        .info-content li strong {
+            color: #4facfe;
+        }
+
+        .info-content li strong a {
+            color: #4facfe;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .info-content li strong a:hover {
+            color: #FF6B6B;
+            text-decoration: underline;
+        }
+
+        /* 信息面板滚动条样式 */
+        .info-content-container::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .info-content-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+
+        .info-content-container::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 3px;
+        }
+
+        .info-content-container::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+
+        /* 滚动条在有提示时避免被遮挡 */
+        .info-panel.has-scroll .info-content-container::-webkit-scrollbar-track {
+            margin-bottom: 45px; /* 为底部提示留空间 */
+        }
+
+        .temp-message {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #4facfe;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            font-size: 14px;
+            font-weight: 500;
+            z-index: 2000;
+            opacity: 0;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+        
+        .temp-message.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(10px);
+        }
+        
+        .temp-message.warning {
+            background: #ff9500;
+        }
+        
+        .temp-message.error {
+            background: #ff4757;
+        }
+        
+        .temp-message.success {
+            background: #2ed573;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: #999;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+
+        .close-btn:hover {
+            background: #f0f0f0;
+            color: #666;
+        }
+
+        .collapse-btn {
+            position: fixed;
+            top: 20px;
+            left: 350px;
+            width: 30px;
+            height: 60px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border: none;
+            border-radius: 0 8px 8px 0;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+        }
+
+        .collapse-btn:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            transform: translateX(3px);
+        }
+
+        .sidebar.collapsed .collapse-btn {
+            left: 0;
+        }
+
+        .floating-search {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: none;
+            min-width: 300px;
+        }
+
+        .floating-search.visible {
+            display: block;
+        }
+
+        .floating-search input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 12px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .floating-search input:focus {
+            outline: none;
+            border-color: #4facfe;
+            box-shadow: 0 0 0 2px rgba(79, 172, 254, 0.2);
+        }
+
+        .floating-search .search-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .floating-search .btn {
+            padding: 6px 12px;
+            font-size: 11px;
+        }
+
+        /* 加载状态 */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3000;
+            font-size: 18px;
+            font-weight: 600;
+            color: #4facfe;
+        }
+
+        .loading-overlay.hidden {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 加载状态覆盖层 -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div>
+            <div>🔄 正在加载知识图谱数据...</div>
+            <div style="font-size: 14px; margin-top: 10px; opacity: 0.7;">请稍候</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="sidebar" id="sidebar">
+            <div class="resize-handle" id="resizeHandle"></div>
+            <button class="collapse-btn" id="collapseBtn" onclick="toggleSidebar()">
+                <span id="collapseIcon">◁</span>
+            </button>
+            
+            <div class="header">
+                <h1>JitAi知识图谱</h1>
+                <p>技术体系可视化导航</p>
+            </div>
+    
+            <div class="controls">
+                <div class="control-group">
+                    <label>节点搜索</label>
+                    <div style="display: flex; gap: 6px;">
+                        <input type="text" id="nodeSearchInput" placeholder="搜索节点..." style="flex: 1; padding: 5px 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 11px;">
+                        <button class="btn btn-primary" onclick="searchAndHighlightNode()" style="min-width: 45px;">搜索</button>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label>布局控制</label>
+                    <div class="control-buttons">
+                        <button class="btn btn-secondary" onclick="restabilizeNetwork()">重新稳定</button>
+                        <button class="btn btn-secondary" onclick="optimizeView()">最佳视图</button>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>快速操作</label>
+                    <div class="control-buttons">
+                        <button class="btn btn-secondary" onclick="expandAllLayers()">展开全部</button>
+                        <button class="btn btn-secondary" onclick="collapseAllLayers()">收起全部</button>
+                        <button class="btn btn-secondary" onclick="selectAllFilters()">全选</button>
+                        <button class="btn btn-secondary" onclick="deselectAllFilters()">全不选</button>
+                    </div>
+                </div>
+
+
+            </div>
+            
+            <div class="filters" id="filterContainer">
+                <!-- 树形过滤器将由JavaScript动态生成 -->
+            </div>
+        </div>
+        
+        <div class="graph-container">
+            <div id="network"></div>
+            
+            <!-- 悬浮搜索框 -->
+            <div class="floating-search" id="floatingSearch">
+                <div style="font-weight: 600; color: #333; margin-bottom: 8px; font-size: 13px;">🔍 快速搜索</div>
+                <input type="text" id="floatingSearchInput" placeholder="搜索节点...">
+                <div class="search-buttons">
+                    <button class="btn btn-primary" onclick="searchFromFloating()">搜索</button>
+                    <button class="btn btn-secondary" onclick="expandSidebar()">展开面板</button>
+                </div>
+            </div>
+            
+                <div class="info-panel" id="infoPanel">
+        <div class="info-header">
+            <button class="close-btn" onclick="hideInfoPanel()">×</button>
+            <div class="info-title" id="infoTitle">节点信息</div>
+            <div class="info-type" id="infoType">类型</div>
+        </div>
+        <div class="info-content-container">
+            <div class="info-content" id="infoContent">详细信息</div>
+        </div>
+    </div>
+        </div>
+    </div>
+
+    <!-- 临时消息提示 -->
+    <div id="tempMessage" class="temp-message"></div>
+    
+    <!-- 工具提示 -->
+    <div id="tooltip" class="tooltip"></div>
+
+        <script src="assets/js/main.js"></script>
+</body>
+</html> 

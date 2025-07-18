@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.css';
 import globalStyles from '../../pages/index.module.css';
-import AnimatedSection from '../AnimatedSection';
+import ScrollAnimation from '../ScrollAnimation';
 
 const CONTENT = {
   ide: {
@@ -102,26 +102,26 @@ const IDESection: React.FC = () => {
   ];
 
   return (
-    <AnimatedSection animationType="fadeInUp" duration={500}>
+    <ScrollAnimation animationType="fadeInUp" duration={500}>
       <section
         className={`${styles.ideSection} ${globalStyles.gradientBackground}`}
       >
         <div className={styles.container}>
-          <AnimatedSection animationType="fadeInUp" delay={100}>
+          <ScrollAnimation animationType="fadeInUp" delay={100}>
             <div className={styles.header}>
               <h2 className={globalStyles.sectionTitle}>{CONTENT.ide.title}</h2>
               <p className={styles.subtitle}>
                 {CONTENT.ide.subtitle}
               </p>
             </div>
-          </AnimatedSection>
+          </ScrollAnimation>
 
           {/* 核心特性部分 - 优化展示效果 */}
-          <AnimatedSection animationType="fadeInUp" delay={200}>
+          <ScrollAnimation animationType="fadeInUp" delay={200}>
             <div className={styles.coreFeatures}>
               <div className={styles.coreFeaturesGrid}>
                 {coreFeatures.map((feature, index) => (
-                  <AnimatedSection
+                  <ScrollAnimation
                     key={feature.id}
                     animationType="fadeInUp"
                     delay={300 + index * 200}
@@ -138,18 +138,18 @@ const IDESection: React.FC = () => {
                         <p className={styles.coreFeatureDescription}>{feature.description}</p>
                       </div>
                     </div>
-                  </AnimatedSection>
+                  </ScrollAnimation>
                 ))}
               </div>
             </div>
-          </AnimatedSection>
+          </ScrollAnimation>
 
           {/* 可视化开发模块部分 - 大幅减少展示面积 */}
-          <AnimatedSection animationType="fadeInUp" delay={400}>
+          <ScrollAnimation animationType="fadeInUp" delay={400}>
             <div className={styles.developmentModules}>
               <div className={styles.modulesGrid}>
                 {developmentModules.map((module, index) => (
-                  <AnimatedSection
+                  <ScrollAnimation
                     key={module.id}
                     animationType="scaleIn"
                     delay={500 + index * 30}
@@ -161,14 +161,14 @@ const IDESection: React.FC = () => {
                         <p className={styles.moduleDescription}>{module.description}</p>
                       </div>
                     </div>
-                  </AnimatedSection>
+                  </ScrollAnimation>
                 ))}
               </div>
             </div>
-          </AnimatedSection>
+          </ScrollAnimation>
         </div>
       </section>
-    </AnimatedSection>
+    </ScrollAnimation>
   );
 };
 

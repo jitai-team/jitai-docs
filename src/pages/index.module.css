@@ -81,27 +81,6 @@ body {
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
 }
 
-/* 通用动画 */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-10px) rotate(1deg);
-  }
-}
-
 /* 通用响应式样式 */
 @media (max-width: 768px) {
   .sectionTitle {

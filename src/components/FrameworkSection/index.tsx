@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.css';
 import globalStyles from '../../pages/index.module.css';
-import AnimatedSection from '../AnimatedSection';
+import ScrollAnimation from '../ScrollAnimation';
 
 const CONTENT = {
   color: '#06b6d4', // 添加统一的主题颜色
@@ -97,7 +97,7 @@ const CONTENT = {
 
 const FrameworkSection: React.FC = () => {
   return (
-    <AnimatedSection animationType="fadeInUp" duration={500}>
+    <ScrollAnimation animationType="fadeInUp" duration={500}>
       <section
         id="section-framework"
         className={`${styles.frameworkSection} ${globalStyles.gradientBackground}`}
@@ -108,18 +108,18 @@ const FrameworkSection: React.FC = () => {
         // } as React.CSSProperties}
       >
         <div className={globalStyles.sectionContent}>
-          <AnimatedSection animationType="fadeInUp" delay={100}>
+          <ScrollAnimation animationType="fadeInUp" delay={100}>
             <div className={styles.headerSection}>
               <h2 className={globalStyles.sectionTitle}>{CONTENT.title}</h2>
               <p className={styles.sectionSubtitle}>
                 {CONTENT.subtitle}
               </p>
             </div>
-          </AnimatedSection>
+          </ScrollAnimation>
 
           <div className={styles.frameworksGrid}>
             {CONTENT.frameworks.map((framework, index) => (
-              <AnimatedSection
+              <ScrollAnimation
                 key={index}
                 animationType="scaleIn"
                 delay={200 + index * 50}
@@ -145,12 +145,12 @@ const FrameworkSection: React.FC = () => {
                     </svg>
                   </div>
                 </a>
-              </AnimatedSection>
+              </ScrollAnimation>
             ))}
           </div>
         </div>
       </section>
-    </AnimatedSection>
+    </ScrollAnimation>
   );
 };
 

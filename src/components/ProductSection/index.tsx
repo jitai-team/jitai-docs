@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.css';
 import globalStyles from '../../pages/index.module.css';
-import AnimatedSection from '../AnimatedSection';
+import ScrollAnimation from '../ScrollAnimation';
 
 const CONTENT = {
   product: {
@@ -50,52 +50,52 @@ const CONTENT = {
 
 const ProductSection: React.FC = () => {
   return (
-    <AnimatedSection animationType="fadeInUp" duration={500}>
-      <section
-        id="section-1"
-        className={`${styles.productSection} ${globalStyles.gradientBackground}`}
-        // style={{
-        //   '--section-color': CONTENT.product.color,
-        //   '--card-color': CONTENT.product.color,
-        //   '--card-hover-color': CONTENT.product.color
-        // } as React.CSSProperties}
-      >
-        <div className={globalStyles.sectionContent}>
-          <AnimatedSection animationType="fadeInUp" delay={100}>
-            <h2 className={globalStyles.sectionTitle}>{CONTENT.product.title}</h2>
-          </AnimatedSection>
-          <AnimatedSection animationType="fadeInUp" delay={200}>
-            <p className={styles.sectionSubtitle}>
-              {CONTENT.product.subtitle}
-            </p>
-          </AnimatedSection>
-          <div className={styles.cardsGrid}>
-            {CONTENT.product.cards.map((card, index) => (
-              <AnimatedSection
-                key={index}
-                animationType="scaleIn"
-                delay={300 + index * 50}
-                duration={400}
-              >
-                <div
-                  className={`${globalStyles.baseCard} ${styles.card} animatedChild`}
-                  // style={{
-                  //   '--card-color': card.color,
-                  //   '--card-hover-color': card.color
-                  // } as React.CSSProperties}
+          <ScrollAnimation animationType="fadeInUp" duration={500}>
+        <section
+          id="section-1"
+          className={`${styles.productSection} ${globalStyles.gradientBackground}`}
+          // style={{
+          //   '--section-color': CONTENT.product.color,
+          //   '--card-color': CONTENT.product.color,
+          //   '--card-hover-color': CONTENT.product.color
+          // } as React.CSSProperties}
+        >
+          <div className={globalStyles.sectionContent}>
+            <ScrollAnimation animationType="fadeInUp" delay={100}>
+              <h2 className={globalStyles.sectionTitle}>{CONTENT.product.title}</h2>
+            </ScrollAnimation>
+            <ScrollAnimation animationType="fadeInUp" delay={200}>
+              <p className={styles.sectionSubtitle}>
+                {CONTENT.product.subtitle}
+              </p>
+            </ScrollAnimation>
+            <div className={styles.cardsGrid}>
+              {CONTENT.product.cards.map((card, index) => (
+                <ScrollAnimation
+                  key={index}
+                  animationType="scaleIn"
+                  delay={300 + index * 50}
+                  duration={400}
                 >
-                  <div className={styles.cardIcon}>{card.icon}</div>
-                  <div className={styles.cardHeader}>
-                    <h3>{card.title}</h3>
+                  <div
+                    className={`${globalStyles.baseCard} ${styles.card} animatedChild`}
+                    // style={{
+                    //   '--card-color': card.color,
+                    //   '--card-hover-color': card.color
+                    // } as React.CSSProperties}
+                  >
+                    <div className={styles.cardIcon}>{card.icon}</div>
+                    <div className={styles.cardHeader}>
+                      <h3>{card.title}</h3>
+                    </div>
+                    <p className={styles.cardDescription}>{card.description}</p>
                   </div>
-                  <p className={styles.cardDescription}>{card.description}</p>
-                </div>
-              </AnimatedSection>
-            ))}
+                </ScrollAnimation>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-    </AnimatedSection>
+        </section>
+      </ScrollAnimation>
   );
 };
 

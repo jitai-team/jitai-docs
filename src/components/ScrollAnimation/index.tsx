@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './styles.module.css';
 
-interface AnimatedSectionProps {
+interface ScrollAnimationProps {
   children: React.ReactNode;
   className?: string;
   animationType?: 'fadeInUp' | 'fadeInLeft' | 'fadeInRight' | 'scaleIn' | 'slideInUp';
@@ -10,7 +10,7 @@ interface AnimatedSectionProps {
   threshold?: number;
 }
 
-const AnimatedSection: React.FC<AnimatedSectionProps> = ({
+const ScrollAnimation: React.FC<ScrollAnimationProps> = ({
   children,
   className = '',
   animationType = 'fadeInUp',
@@ -82,4 +82,4 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({
   );
 };
 
-export default AnimatedSection;
+export default ScrollAnimation;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.css';
 import globalStyles from '../../pages/index.module.css';
-import AnimatedSection from '../AnimatedSection';
+import ScrollAnimation from '../ScrollAnimation';
 
 const CONTENT = {
   devops: {
@@ -38,7 +38,7 @@ const CONTENT = {
 
 const DevOpsSection: React.FC = () => {
   return (
-    <AnimatedSection animationType="fadeInUp" duration={500}>
+    <ScrollAnimation animationType="fadeInUp" duration={500}>
       <section
         id="devops-section"
         className={`${styles.devopsSection} ${globalStyles.gradientBackground}`}
@@ -49,19 +49,19 @@ const DevOpsSection: React.FC = () => {
         // } as React.CSSProperties}
       >
         <div className={globalStyles.sectionContent}>
-          <AnimatedSection animationType="fadeInUp" delay={100}>
+          <ScrollAnimation animationType="fadeInUp" delay={100}>
             <h2 className={globalStyles.sectionTitle}>{CONTENT.devops.title}</h2>
-          </AnimatedSection>
-          <AnimatedSection animationType="fadeInUp" delay={200}>
+          </ScrollAnimation>
+          <ScrollAnimation animationType="fadeInUp" delay={200}>
             <p className={styles.sectionSubtitle}>
               {CONTENT.devops.subtitle}
             </p>
-          </AnimatedSection>
+          </ScrollAnimation>
 
           <div className={styles.featuresContainer}>
             {CONTENT.devops.features.map((feature, index) => {
               return (
-                <AnimatedSection
+                <ScrollAnimation
                   key={index}
                   animationType={index % 2 === 0 ? "fadeInLeft" : "fadeInRight"}
                   delay={300 + index * 100}
@@ -78,13 +78,13 @@ const DevOpsSection: React.FC = () => {
                       <p>{feature.description}</p>
                     </div>
                   </div>
-                </AnimatedSection>
+                </ScrollAnimation>
               );
             })}
           </div>
         </div>
       </section>
-    </AnimatedSection>
+    </ScrollAnimation>
   );
 };
 

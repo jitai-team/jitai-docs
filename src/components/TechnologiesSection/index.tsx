@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.css';
 import globalStyles from '../../pages/index.module.css';
-import AnimatedSection from '../AnimatedSection';
+import ScrollAnimation from '../ScrollAnimation';
 
 const CONTENT = {
   technologies: {
@@ -96,7 +96,7 @@ const CONTENT = {
 
 const TechnologiesSection: React.FC = () => {
   return (
-    <AnimatedSection animationType="fadeInUp" duration={500}>
+    <ScrollAnimation animationType="fadeInUp" duration={500}>
       <section
         id="section-3"
         className={`${styles.technologiesSection} ${globalStyles.gradientBackground}`}
@@ -107,10 +107,10 @@ const TechnologiesSection: React.FC = () => {
         // } as React.CSSProperties}
       >
         <div className={globalStyles.sectionContent}>
-          <AnimatedSection animationType="fadeInUp" delay={100}>
+          <ScrollAnimation animationType="fadeInUp" delay={100}>
             <h2 className={globalStyles.sectionTitle}>{CONTENT.technologies.title}</h2>
-          </AnimatedSection>
-          <AnimatedSection animationType="fadeInUp" delay={200}>
+          </ScrollAnimation>
+          <ScrollAnimation animationType="fadeInUp" delay={200}>
             <div className={styles.technologiesIntro}>
               <div className={styles.technologiesIntroText}>
                 JitAi 独创的 ​JAAP 协议，赋予系统模块自描述、自加载、独立可编排的特性，打造面向 AI 的解释型架构。AI 可动态感知、调用、编排任意模块，将传统应用生态无缝融入 AI 体系。<br/><br/>
@@ -121,10 +121,10 @@ const TechnologiesSection: React.FC = () => {
                 ​• 自动化 DevOps：​​ 构建、发布、部署、运维全面简化轻量化。<br/><br/>
               </div>
             </div>
-          </AnimatedSection>
+          </ScrollAnimation>
           <div className={styles.technologiesGrid}>
             {CONTENT.technologies.cards.map((card, index) => (
-              <AnimatedSection
+              <ScrollAnimation
                 key={index}
                 animationType="fadeInLeft"
                 delay={300 + index * 80}
@@ -152,12 +152,12 @@ const TechnologiesSection: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </AnimatedSection>
+              </ScrollAnimation>
             ))}
           </div>
         </div>
       </section>
-    </AnimatedSection>
+    </ScrollAnimation>
   );
 };
 

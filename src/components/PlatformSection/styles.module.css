@@ -113,12 +113,42 @@
   transition: all 0.3s ease;
 }
 
-.featureImage img {
+.imagePlaceholder {
   width: 100%;
-  height: auto;
-  object-fit: contain;
-  transition: all 0.3s ease;
-  display: block;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(25, 25, 25, 0.44) 10%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.imagePlaceholder:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.15) 50%, transparent 70%);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.placeholderText {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  z-index: 1;
+  position: relative;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .featureCard:hover .featureImage {
@@ -129,28 +159,8 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
-.featureCard:hover .featureImage img {
-  transform: scale(1.05);
-}
-
-.fallbackIcon {
-  font-size: 3.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, var(--card-color) 0%, color-mix(in srgb, var(--card-color) 80%, white) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-  transition: all 0.3s ease;
-}
-
-.featureCard:hover .fallbackIcon {
-  transform: scale(1.1);
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+.featureCard:hover .imagePlaceholder {
+  transform: scale(1.02);
 }
 
 .featureContent {
@@ -214,9 +224,7 @@
     margin-bottom: 1rem;
   }
 
-  .fallbackIcon {
-    font-size: 3rem;
-  }
+
 
   .featureContent h3 {
     font-size: 1.4rem;
@@ -243,9 +251,7 @@
     margin-bottom: 1rem;
   }
 
-  .fallbackIcon {
-    font-size: 2.5rem;
-  }
+
 
   .featureContent h3 {
     font-size: 1.2rem;

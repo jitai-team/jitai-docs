@@ -59,39 +59,50 @@
   position: relative;
 }
 
-.featureImage img {
+.imagePlaceholder {
   width: 100%;
-  height: auto;
+  height: 400px;
+  background: linear-gradient(135deg, rgba(25, 25, 25, 0.44) 10%);
   border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  background: white;
-  padding: 1rem;
   border: 1px solid rgba(36, 73, 254, 0.1);
 }
 
-.featureImage:hover img {
+.imagePlaceholder:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.15) 50%, transparent 70%);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.placeholderText {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  z-index: 1;
+  position: relative;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.featureImage:hover .imagePlaceholder {
   transform: translateY(-8px);
   box-shadow: 0 20px 40px color-mix(in srgb, var(--card-color, #3b82f6) 20%, transparent);
   border-color: var(--card-color, #3b82f6);
-}
-
-.fallbackIcon {
-  font-size: 8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, var(--card-color, #3b82f6) 0%, color-mix(in srgb, var(--card-color, #3b82f6) 80%, white) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
-  transition: all 0.3s ease;
-}
-
-.featureImage:hover .fallbackIcon {
-  transform: scale(1.05);
-  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.2));
 }
 
 .featureContent {
@@ -142,6 +153,10 @@
     min-height: 350px;
   }
 
+  .imagePlaceholder {
+    height: 250px;
+  }
+
   .featureContent h3 {
     font-size: 1.8rem;
   }
@@ -173,6 +188,10 @@
     flex: none;
   }
 
+  .imagePlaceholder {
+    height: 200px;
+  }
+
   .featureContent {
     order: 2;
     padding: 1.5rem;
@@ -199,6 +218,10 @@
     margin-bottom: 2.5rem;
   }
 
+  .imagePlaceholder {
+    height: 150px;
+  }
+
   .featureContent {
     padding: 1rem;
   }
@@ -210,9 +233,5 @@
   .featureContent p {
     font-size: 0.95rem;
     line-height: 1.6;
-  }
-
-  .fallbackIcon {
-    font-size: 6rem;
   }
 }

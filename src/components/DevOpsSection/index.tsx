@@ -2,11 +2,9 @@ import React from 'react';
 import styles from './styles.module.css';
 import globalStyles from '../../pages/index.module.css';
 import AnimatedSection from '../AnimatedSection';
-import { MultiEnvSVG, DistributionSVG, VirtualizationSVG, ClusterSVG } from './SvgComponents';
 
 const CONTENT = {
   devops: {
-    color: '#f59e0b',
     title: 'Jit DevOps工具',
     subtitle: '构建、发布、部署、运维全面简化轻量化',
     features: [
@@ -38,13 +36,6 @@ const CONTENT = {
   }
 };
 
-const svgMap = {
-  MultiEnvSVG: MultiEnvSVG,
-  DistributionSVG: DistributionSVG,
-  VirtualizationSVG: VirtualizationSVG,
-  ClusterSVG: ClusterSVG
-};
-
 const DevOpsSection: React.FC = () => {
   return (
     <AnimatedSection animationType="fadeInUp" duration={500}>
@@ -69,7 +60,6 @@ const DevOpsSection: React.FC = () => {
 
           <div className={styles.featuresContainer}>
             {CONTENT.devops.features.map((feature, index) => {
-              const SvgComponent = svgMap[feature.image];
               return (
                 <AnimatedSection
                   key={index}
@@ -79,7 +69,9 @@ const DevOpsSection: React.FC = () => {
                 >
                   <div className={`${styles.featureRow} ${index % 2 === 0 ? styles.featureRowLeft : styles.featureRowRight}`}>
                     <div className={styles.featureImage}>
-                      <SvgComponent style={{ width: '100%', height: 'auto', display: 'block' }} aria-label={feature.imageAlt} />
+                      <div className={styles.imagePlaceholder}>
+                        <span className={styles.placeholderText}>图片占位符</span>
+                      </div>
                     </div>
                     <div className={styles.featureContent}>
                       <h3>{feature.title}</h3>

@@ -5,7 +5,6 @@ import AnimatedSection from '../AnimatedSection';
 
 const CONTENT = {
   platform: {
-    color: '#8b5cf6',
     title: 'Jit 应用平台',
     subtitle: '全面支持 JAAP 协议，支持应用模块智能化即时识别和调用、图形化即时编排和构建',
     features: [
@@ -106,19 +105,8 @@ const PlatformSection: React.FC = () => {
                   // } as React.CSSProperties}
                 >
                   <div className={styles.featureImage}>
-                    <img
-                      src={feature.image}
-                      alt={feature.title}
-                      onError={(e) => {
-                        // 如果图片加载失败，显示默认图标
-                        const target = e.target as HTMLImageElement;
-                        target.style.display = 'none';
-                        const fallback = target.nextElementSibling as HTMLElement;
-                        if (fallback) fallback.style.display = 'block';
-                      }}
-                    />
-                    <div className={styles.fallbackIcon} style={{ display: 'none' }}>
-                      {feature.icon}
+                    <div className={styles.imagePlaceholder}>
+                      <span className={styles.placeholderText}>图片占位符</span>
                     </div>
                   </div>
                   <div className={styles.featureContent}>

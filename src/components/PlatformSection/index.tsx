@@ -11,7 +11,6 @@ const CONTENT = {
       {
         icon: '🏢',
         title: '私有化',
-        subtitle: '企业级安全部署',
         description: '企业级私有化部署，数据安全可控，支持内网环境部署',
         color: '#3b82f6',
         image: '/img/platform/private-deployment.svg'
@@ -19,7 +18,6 @@ const CONTENT = {
       {
         icon: '⚡',
         title: '自动加载/部署',
-        subtitle: '智能化应用管理',
         description: '应用自动发现、加载和部署机制，无需手动配置',
         color: '#8b5cf6',
         image: '/img/platform/auto-deploy.svg'
@@ -27,7 +25,6 @@ const CONTENT = {
       {
         icon: '🐳',
         title: '容器化虚拟机',
-        subtitle: '轻量级虚拟化',
         description: '基于容器技术的轻量级虚拟化环境，资源隔离，高效运行',
         color: '#06b6d4',
         image: '/img/platform/container-vm.svg'
@@ -35,7 +32,6 @@ const CONTENT = {
       {
         icon: '🛡️',
         title: '沙盒化运行环境',
-        subtitle: '安全隔离执行',
         description: '安全的沙盒化应用运行环境，防止恶意代码执行',
         color: '#10b981',
         image: '/img/platform/sandbox.svg'
@@ -43,7 +39,6 @@ const CONTENT = {
       {
         icon: '📱',
         title: '应用管理',
-        subtitle: '全生命周期管理',
         description: '统一的应用生命周期管理，包括开发、测试、发布、监控',
         color: '#f59e0b',
         image: '/img/platform/app-management.svg'
@@ -51,7 +46,6 @@ const CONTENT = {
       {
         icon: '🔄',
         title: '跨平台',
-        subtitle: '多平台支持',
         description: '支持 Windows、Linux、macOS 等多平台部署和运行',
         color: '#ef4444',
         image: '/img/platform/cross-platform.svg'
@@ -59,7 +53,6 @@ const CONTENT = {
       {
         icon: '💻',
         title: '全栈跨端',
-        subtitle: '一体化开发',
         description: '前后端一体化开发，支持 Web、移动端、桌面端多端部署',
         color: '#ec4899',
         image: '/img/platform/full-stack.svg'
@@ -67,7 +60,6 @@ const CONTENT = {
       {
         icon: '⚖️',
         title: '分布式/负载均衡',
-        subtitle: '智能扩展架构',
         description: '分布式架构设计，支持水平扩展和智能负载均衡',
         color: '#6366f1',
         image: '/img/platform/distributed.svg'
@@ -123,7 +115,6 @@ const PlatformSection: React.FC = () => {
                   <div className={styles.featureContent}>
                     <div className={styles.featureHeader}>
                       <h3>{feature.title}</h3>
-                      <p className={styles.featureSubtitle}>{feature.subtitle}</p>
                     </div>
                     <p className={styles.featureDescription}>{feature.description}</p>
                   </div>

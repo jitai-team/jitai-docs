@@ -1,33 +1,31 @@
 <svg width="500" height="350" viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- 主渐变 - 黑白灰 -->
+    <!-- 主渐变 - 使用currentColor -->
     <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#4a5568;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#2d3748;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:currentColor;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:currentColor;stop-opacity:0.6" />
     </linearGradient>
     
-    <!-- 次要渐变 - 浅灰 -->
+    <!-- 次要渐变 - 使用currentColor -->
     <linearGradient id="secondaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#718096;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#4a5568;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:currentColor;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:currentColor;stop-opacity:0.4" />
     </linearGradient>
     
-    <!-- 成功渐变 - 深灰 -->
+    <!-- 成功渐变 - 使用currentColor -->
     <linearGradient id="successGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#2d3748;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1a202c;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:currentColor;stop-opacity:0.7" />
+      <stop offset="100%" style="stop-color:currentColor;stop-opacity:0.5" />
     </linearGradient>
     
     <!-- 箭头标记 -->
     <marker id="flowArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L6,3 z" fill="#4a5568"/>
+      <path d="M0,0 L0,6 L6,3 z" fill="currentColor"/>
     </marker>
   </defs>
 
   <!-- 背景 -->
   <rect width="500" height="350" fill="#f7fafc" rx="12" stroke="#e2e8f0" stroke-width="1"/>
-
-
 
   <!-- 控制中心 -->
   <g transform="translate(250, 70)">
@@ -45,7 +43,7 @@
     <animateTransform attributeName="transform" type="rotate" values="0;360" dur="8s" repeatCount="indefinite"/>
   </g>
   
-  <text x="250" y="120" text-anchor="middle" fill="#4a5568" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">控制中心</text>
+  <text x="250" y="120" text-anchor="middle" fill="currentColor" font-size="14" font-weight="500" font-family="system-ui, -apple-system, sans-serif">控制中心</text>
 
   <!-- 集群节点 -->
   <g transform="translate(120, 180)">
@@ -55,13 +53,13 @@
     
     <!-- 服务器图标 -->
     <rect x="-8" y="-6" width="16" height="12" rx="2" fill="white" opacity="0.9"/>
-    <rect x="-6" y="-4" width="12" height="2" rx="1" fill="#4a5568"/>
-    <rect x="-6" y="-1" width="8" height="1" rx="0.5" fill="#4a5568"/>
-    <rect x="-6" y="1" width="10" height="1" rx="0.5" fill="#4a5568"/>
-    <rect x="-6" y="3" width="6" height="1" rx="0.5" fill="#4a5568"/>
+    <rect x="-6" y="-4" width="12" height="2" rx="1" fill="currentColor"/>
+    <rect x="-6" y="-1" width="8" height="1" rx="0.5" fill="currentColor"/>
+    <rect x="-6" y="1" width="10" height="1" rx="0.5" fill="currentColor"/>
+    <rect x="-6" y="3" width="6" height="1" rx="0.5" fill="currentColor"/>
   </g>
   
-  <text x="120" y="220" text-anchor="middle" fill="#4a5568" font-size="12" font-weight="500" font-family="system-ui, -apple-system, sans-serif">节点1</text>
+  <text x="120" y="220" text-anchor="middle" fill="currentColor" font-size="12" font-weight="500" font-family="system-ui, -apple-system, sans-serif">节点1</text>
 
   <g transform="translate(250, 180)">
     <circle cx="0" cy="0" r="30" fill="url(#secondaryGradient)" opacity="0.8">
@@ -70,13 +68,13 @@
     
     <!-- 服务器图标 -->
     <rect x="-8" y="-6" width="16" height="12" rx="2" fill="white" opacity="0.9"/>
-    <rect x="-6" y="-4" width="12" height="2" rx="1" fill="#4a5568"/>
-    <rect x="-6" y="-1" width="8" height="1" rx="0.5" fill="#4a5568"/>
-    <rect x="-6" y="1" width="10" height="1" rx="0.5" fill="#4a5568"/>
-    <rect x="-6" y="3" width="6" height="1" rx="0.5" fill="#4a5568"/>
+    <rect x="-6" y="-4" width="12" height="2" rx="1" fill="currentColor"/>
+    <rect x="-6" y="-1" width="8" height="1" rx="0.5" fill="currentColor"/>
+    <rect x="-6" y="1" width="10" height="1" rx="0.5" fill="currentColor"/>
+    <rect x="-6" y="3" width="6" height="1" rx="0.5" fill="currentColor"/>
   </g>
   
-  <text x="250" y="220" text-anchor="middle" fill="#4a5568" font-size="12" font-weight="500" font-family="system-ui, -apple-system, sans-serif">节点2</text>
+  <text x="250" y="220" text-anchor="middle" fill="currentColor" font-size="12" font-weight="500" font-family="system-ui, -apple-system, sans-serif">节点2</text>
 
   <g transform="translate(380, 180)">
     <circle cx="0" cy="0" r="30" fill="url(#secondaryGradient)" opacity="0.8">
@@ -85,16 +83,16 @@
     
     <!-- 服务器图标 -->
     <rect x="-8" y="-6" width="16" height="12" rx="2" fill="white" opacity="0.9"/>
-    <rect x="-6" y="-4" width="12" height="2" rx="1" fill="#4a5568"/>
-    <rect x="-6" y="-1" width="8" height="1" rx="0.5" fill="#4a5568"/>
-    <rect x="-6" y="1" width="10" height="1" rx="0.5" fill="#4a5568"/>
-    <rect x="-6" y="3" width="6" height="1" rx="0.5" fill="#4a5568"/>
+    <rect x="-6" y="-4" width="12" height="2" rx="1" fill="currentColor"/>
+    <rect x="-6" y="-1" width="8" height="1" rx="0.5" fill="currentColor"/>
+    <rect x="-6" y="1" width="10" height="1" rx="0.5" fill="currentColor"/>
+    <rect x="-6" y="3" width="6" height="1" rx="0.5" fill="currentColor"/>
   </g>
   
-  <text x="380" y="220" text-anchor="middle" fill="#4a5568" font-size="12" font-weight="500" font-family="system-ui, -apple-system, sans-serif">节点3</text>
+  <text x="380" y="220" text-anchor="middle" fill="currentColor" font-size="12" font-weight="500" font-family="system-ui, -apple-system, sans-serif">节点3</text>
 
   <!-- 连接线 -->
-  <g stroke="#cbd5e1" stroke-width="2" fill="none" marker-end="url(#flowArrow)">
+  <g stroke="currentColor" stroke-width="2" fill="none" marker-end="url(#flowArrow)" opacity="0.6">
     <line x1="250" y1="105" x2="120" y2="150">
       <animate attributeName="stroke-dasharray" values="0,50;25,50" dur="2s" repeatCount="indefinite"/>
     </line>
@@ -107,7 +105,7 @@
   </g>
 
   <!-- 负载均衡指示 -->
-  <path d="M 120 240 L 250 240 L 380 240" stroke="#e2e8f0" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M 120 240 L 250 240 L 380 240" stroke="currentColor" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.3"/>
   <circle cx="120" cy="240" r="4" fill="url(#successGradient)">
     <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
   </circle>
@@ -120,7 +118,7 @@
 
   <!-- 监控面板 -->
   <rect x="30" y="270" width="440" height="60" fill="#f1f5f9" rx="8" stroke="#e2e8f0" stroke-width="1"/>
-  <text x="250" y="290" text-anchor="middle" fill="#4a5568" font-size="14" font-weight="600" font-family="system-ui, -apple-system, sans-serif">系统监控</text>
+  <text x="250" y="290" text-anchor="middle" fill="currentColor" font-size="14" font-weight="600" font-family="system-ui, -apple-system, sans-serif">系统监控</text>
 
   <!-- 监控指标 -->
   <g transform="translate(50, 300)">
@@ -144,5 +142,5 @@
   </g>
 
   <!-- 特性说明 -->
-  <text x="250" y="340" text-anchor="middle" fill="#4a5568" font-size="12" font-family="system-ui, -apple-system, sans-serif">负载均衡 • 自动扩展 • 故障转移 • 7×24监控</text>
+  <text x="250" y="340" text-anchor="middle" fill="currentColor" font-size="12" font-family="system-ui, -apple-system, sans-serif">负载均衡 • 自动扩展 • 故障转移 • 7×24监控</text>
 </svg>

@@ -5,7 +5,7 @@ import AnimatedSection from '../AnimatedSection';
 
 const CONTENT = {
   technologies: {
-    color: '#3b82f6', // 添加统一的主题颜色
+    color: '#1a1a1a', // 添加统一的主题颜色
     title: 'JitAi 技术体系特性',
     cards: [
       {

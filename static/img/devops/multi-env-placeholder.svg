@@ -1,43 +1,41 @@
 <svg width="500" height="350" viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- 主渐变 - 黑白灰 -->
+    <!-- 主渐变 - 使用currentColor -->
     <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#4a5568;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#2d3748;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:currentColor;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:currentColor;stop-opacity:0.6" />
     </linearGradient>
     
-    <!-- 次要渐变 - 浅灰 -->
+    <!-- 次要渐变 - 使用currentColor -->
     <linearGradient id="secondaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#718096;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#4a5568;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:currentColor;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:currentColor;stop-opacity:0.4" />
     </linearGradient>
     
-    <!-- 成功渐变 - 深灰 -->
+    <!-- 成功渐变 - 使用currentColor -->
     <linearGradient id="successGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#2d3748;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1a202c;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:currentColor;stop-opacity:0.7" />
+      <stop offset="100%" style="stop-color:currentColor;stop-opacity:0.5" />
     </linearGradient>
     
-    <!-- 警告渐变 - 中灰 -->
+    <!-- 警告渐变 - 使用currentColor -->
     <linearGradient id="warningGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#4a5568;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#2d3748;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:currentColor;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:currentColor;stop-opacity:0.6" />
     </linearGradient>
     
     <!-- 箭头标记 -->
     <marker id="flowArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L6,3 z" fill="#4a5568"/>
+      <path d="M0,0 L0,6 L6,3 z" fill="currentColor"/>
     </marker>
   </defs>
 
   <!-- 背景 -->
   <rect width="500" height="350" fill="#f7fafc" rx="12" stroke="#e2e8f0" stroke-width="1"/>
 
-
-
   <!-- 开发环境 -->
   <g transform="translate(95, 90)">
-    <rect x="-65" y="-40" width="130" height="80" fill="url(#successGradient)" opacity="0.9" rx="8" stroke="#2d3748" stroke-width="1">
+    <rect x="-65" y="-40" width="130" height="80" fill="url(#successGradient)" opacity="0.9" rx="8" stroke="currentColor" stroke-width="1">
       <animate attributeName="opacity" values="0.9;1;0.9" dur="3s" repeatCount="indefinite"/>
     </rect>
     
@@ -55,7 +53,7 @@
 
   <!-- 测试环境 -->
   <g transform="translate(250, 90)">
-    <rect x="-65" y="-40" width="130" height="80" fill="url(#warningGradient)" opacity="0.8" rx="8" stroke="#4a5568" stroke-width="1">
+    <rect x="-65" y="-40" width="130" height="80" fill="url(#warningGradient)" opacity="0.8" rx="8" stroke="currentColor" stroke-width="1">
       <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" begin="0.5s"/>
     </rect>
     
@@ -71,7 +69,7 @@
 
   <!-- 生产环境 -->
   <g transform="translate(405, 90)">
-    <rect x="-65" y="-40" width="130" height="80" fill="url(#primaryGradient)" opacity="0.7" rx="8" stroke="#4a5568" stroke-width="1">
+    <rect x="-65" y="-40" width="130" height="80" fill="url(#primaryGradient)" opacity="0.7" rx="8" stroke="currentColor" stroke-width="1">
       <animate attributeName="opacity" values="0.7;0.9;0.7" dur="3s" repeatCount="indefinite" begin="1s"/>
     </rect>
     
@@ -88,32 +86,32 @@
 
   <!-- 版本管理区域 -->
   <rect x="30" y="150" width="440" height="180" fill="#f1f5f9" rx="8" stroke="#e2e8f0" stroke-width="1"/>
-  <text x="250" y="175" text-anchor="middle" fill="#4a5568" font-size="16" font-weight="600" font-family="system-ui, -apple-system, sans-serif">版本管理</text>
+  <text x="250" y="175" text-anchor="middle" fill="currentColor" font-size="16" font-weight="600" font-family="system-ui, -apple-system, sans-serif">版本管理</text>
 
   <!-- 版本标签 -->
   <g transform="translate(90, 210)">
-    <rect x="-40" y="-20" width="80" height="40" fill="url(#secondaryGradient)" opacity="0.9" rx="6" stroke="#4a5568" stroke-width="1">
+    <rect x="-40" y="-20" width="80" height="40" fill="url(#secondaryGradient)" opacity="0.9" rx="6" stroke="currentColor" stroke-width="1">
       <animate attributeName="opacity" values="0.9;1;0.9" dur="3s" repeatCount="indefinite"/>
     </rect>
     <text x="0" y="5" text-anchor="middle" fill="white" font-size="12" font-weight="600" font-family="system-ui, -apple-system, sans-serif">v1.0.0</text>
   </g>
 
   <g transform="translate(190, 210)">
-    <rect x="-40" y="-20" width="80" height="40" fill="url(#secondaryGradient)" opacity="0.9" rx="6" stroke="#4a5568" stroke-width="1">
+    <rect x="-40" y="-20" width="80" height="40" fill="url(#secondaryGradient)" opacity="0.9" rx="6" stroke="currentColor" stroke-width="1">
       <animate attributeName="opacity" values="0.9;1;0.9" dur="3s" repeatCount="indefinite" begin="0.5s"/>
     </rect>
     <text x="0" y="5" text-anchor="middle" fill="white" font-size="12" font-weight="600" font-family="system-ui, -apple-system, sans-serif">v1.1.0</text>
   </g>
 
   <g transform="translate(290, 210)">
-    <rect x="-40" y="-20" width="80" height="40" fill="url(#secondaryGradient)" opacity="0.9" rx="6" stroke="#4a5568" stroke-width="1">
+    <rect x="-40" y="-20" width="80" height="40" fill="url(#secondaryGradient)" opacity="0.9" rx="6" stroke="currentColor" stroke-width="1">
       <animate attributeName="opacity" values="0.9;1;0.9" dur="3s" repeatCount="indefinite" begin="1s"/>
     </rect>
     <text x="0" y="5" text-anchor="middle" fill="white" font-size="12" font-weight="600" font-family="system-ui, -apple-system, sans-serif">v1.2.0</text>
   </g>
 
   <g transform="translate(390, 210)">
-    <rect x="-40" y="-20" width="80" height="40" fill="url(#secondaryGradient)" opacity="0.9" rx="6" stroke="#4a5568" stroke-width="1">
+    <rect x="-40" y="-20" width="80" height="40" fill="url(#secondaryGradient)" opacity="0.9" rx="6" stroke="currentColor" stroke-width="1">
       <animate attributeName="opacity" values="0.9;1;0.9" dur="3s" repeatCount="indefinite" begin="1.5s"/>
     </rect>
     <text x="0" y="5" text-anchor="middle" fill="white" font-size="12" font-weight="600" font-family="system-ui, -apple-system, sans-serif">v2.0.0</text>
@@ -121,27 +119,27 @@
 
   <!-- 环境映射 -->
   <g transform="translate(90, 265)">
-    <rect x="-40" y="-15" width="80" height="30" fill="#2d3748" opacity="0.8" rx="4"/>
+    <rect x="-40" y="-15" width="80" height="30" fill="currentColor" opacity="0.8" rx="4"/>
     <text x="0" y="5" text-anchor="middle" fill="white" font-size="10" font-weight="500" font-family="system-ui, -apple-system, sans-serif">开发</text>
   </g>
 
   <g transform="translate(190, 265)">
-    <rect x="-40" y="-15" width="80" height="30" fill="#4a5568" opacity="0.8" rx="4"/>
+    <rect x="-40" y="-15" width="80" height="30" fill="currentColor" opacity="0.8" rx="4"/>
     <text x="0" y="5" text-anchor="middle" fill="white" font-size="10" font-weight="500" font-family="system-ui, -apple-system, sans-serif">测试</text>
   </g>
 
   <g transform="translate(290, 265)">
-    <rect x="-40" y="-15" width="80" height="30" fill="#4a5568" opacity="0.8" rx="4"/>
+    <rect x="-40" y="-15" width="80" height="30" fill="currentColor" opacity="0.8" rx="4"/>
     <text x="0" y="5" text-anchor="middle" fill="white" font-size="10" font-weight="500" font-family="system-ui, -apple-system, sans-serif">测试</text>
   </g>
 
   <g transform="translate(390, 265)">
-    <rect x="-40" y="-15" width="80" height="30" fill="#4a5568" opacity="0.8" rx="4"/>
+    <rect x="-40" y="-15" width="80" height="30" fill="currentColor" opacity="0.8" rx="4"/>
     <text x="0" y="5" text-anchor="middle" fill="white" font-size="10" font-weight="500" font-family="system-ui, -apple-system, sans-serif">生产</text>
   </g>
 
   <!-- 连接线 -->
-  <g stroke="#cbd5e1" stroke-width="2" fill="none" marker-end="url(#flowArrow)">
+  <g stroke="currentColor" stroke-width="2" fill="none" marker-end="url(#flowArrow)" opacity="0.6">
     <line x1="95" y1="130" x2="90" y2="190">
       <animate attributeName="stroke-dasharray" values="0,50;25,50" dur="2s" repeatCount="indefinite"/>
     </line>
@@ -157,5 +155,5 @@
   </g>
 
   <!-- 特性说明 -->
-  <text x="250" y="310" text-anchor="middle" fill="#4a5568" font-size="12" font-family="system-ui, -apple-system, sans-serif">环境隔离 • 版本控制 • 配置管理</text>
+  <text x="250" y="310" text-anchor="middle" fill="currentColor" font-size="12" font-family="system-ui, -apple-system, sans-serif">环境隔离 • 版本控制 • 配置管理</text>
 </svg>

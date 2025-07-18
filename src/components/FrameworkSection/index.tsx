@@ -101,11 +101,11 @@ const FrameworkSection: React.FC = () => {
       <section
         id="section-framework"
         className={`${styles.frameworkSection} ${globalStyles.gradientBackground}`}
-        style={{
-          '--section-color': CONTENT.color,
-          '--card-color': CONTENT.color,
-          '--card-hover-color': CONTENT.color
-        } as React.CSSProperties}
+        // style={{
+        //   '--section-color': CONTENT.color,
+        //   '--card-color': CONTENT.color,
+        //   '--card-hover-color': CONTENT.color
+        // } as React.CSSProperties}
       >
         <div className={globalStyles.sectionContent}>
           <AnimatedSection animationType="fadeInUp" delay={100}>

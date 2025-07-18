@@ -123,11 +123,11 @@ const IDESection: React.FC = () => {
     <AnimatedSection animationType="fadeInUp" duration={500}>
       <section
         className={`${styles.ideSection} ${globalStyles.gradientBackground}`}
-        style={{
-          '--section-color': CONTENT.ide.color,
-          '--card-color': CONTENT.ide.color,
-          '--card-hover-color': CONTENT.ide.color
-        } as React.CSSProperties}
+        // style={{
+        //   '--section-color': CONTENT.ide.color,
+        //   '--card-color': CONTENT.ide.color,
+        //   '--card-hover-color': CONTENT.ide.color
+        // } as React.CSSProperties}
       >
         <div className={styles.container}>
           <AnimatedSection animationType="fadeInUp" delay={100}>

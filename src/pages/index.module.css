@@ -15,6 +15,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(135deg, #f0f9ff 0%, #f5f3ff 100%);
+  --section-color: #1a1a1a;
+  --card-color: #1a1a1a;
+  --card-hover-color: #1a1a1a;
 }
 
 /* 公共样式 - 从TechnologiesSection和ProductSection提取 */

@@ -51,11 +51,11 @@ const DevOpsSection: React.FC = () => {
       <section
         id="devops-section"
         className={`${styles.devopsSection} ${globalStyles.gradientBackground}`}
-        style={{
-          '--section-color': CONTENT.devops.color,
-          '--card-color': CONTENT.devops.color,
-          '--card-hover-color': CONTENT.devops.color
-        } as React.CSSProperties}
+        // style={{
+        //   '--section-color': CONTENT.devops.color,
+        //   '--card-color': CONTENT.devops.color,
+        //   '--card-hover-color': CONTENT.devops.color
+        // } as React.CSSProperties}
       >
         <div className={globalStyles.sectionContent}>
           <AnimatedSection animationType="fadeInUp" delay={100}>

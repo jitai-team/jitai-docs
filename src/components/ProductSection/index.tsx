@@ -55,11 +55,11 @@ const ProductSection: React.FC = () => {
       <section
         id="section-1"
         className={`${styles.productSection} ${globalStyles.gradientBackground}`}
-        style={{
-          '--section-color': CONTENT.product.color,
-          '--card-color': CONTENT.product.color,
-          '--card-hover-color': CONTENT.product.color
-        } as React.CSSProperties}
+        // style={{
+        //   '--section-color': CONTENT.product.color,
+        //   '--card-color': CONTENT.product.color,
+        //   '--card-hover-color': CONTENT.product.color
+        // } as React.CSSProperties}
       >
         <div className={globalStyles.sectionContent}>
           <AnimatedSection animationType="fadeInUp" delay={100}>
@@ -80,10 +80,10 @@ const ProductSection: React.FC = () => {
               >
                 <div
                   className={`${globalStyles.baseCard} ${styles.card} animatedChild`}
-                  style={{
-                    '--card-color': card.color,
-                    '--card-hover-color': card.color
-                  } as React.CSSProperties}
+                  // style={{
+                  //   '--card-color': card.color,
+                  //   '--card-hover-color': card.color
+                  // } as React.CSSProperties}
                 >
                   <div className={styles.cardIcon}>{card.icon}</div>
                   <div className={styles.cardHeader}>

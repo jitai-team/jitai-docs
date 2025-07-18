@@ -75,11 +75,11 @@ const PlatformSection: React.FC = () => {
       <section
         id="section-platform"
         className={`${styles.platformSection} ${globalStyles.gradientBackground}`}
-        style={{
-          '--section-color': CONTENT.platform.color,
-          '--card-color': CONTENT.platform.color,
-          '--card-hover-color': CONTENT.platform.color
-        } as React.CSSProperties}
+        // style={{
+        //   '--section-color': CONTENT.platform.color,
+        //   '--card-color': CONTENT.platform.color,
+        //   '--card-hover-color': CONTENT.platform.color
+        // } as React.CSSProperties}
       >
         <div className={globalStyles.sectionContent}>
           <AnimatedSection animationType="fadeInUp" delay={100}>

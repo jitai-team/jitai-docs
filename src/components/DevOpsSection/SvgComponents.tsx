@@ -1,7 +1,8 @@
 import React from 'react';
+import styles from './styles.module.css';
 
 export const MultiEnvSVG: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <svg width="500" height="350" viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg width="500" height="350" viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg" className={styles.svgContainer} {...props}>
     <defs>
       <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
         <stop offset="0%" style={{ stopColor: 'currentColor', stopOpacity: 0.8 }} />
@@ -23,7 +24,7 @@ export const MultiEnvSVG: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
         <path d="M0,0 L0,6 L6,3 z" fill="currentColor"/>
       </marker>
     </defs>
-    <rect width="500" height="350" fill="#f7fafc" rx="12" stroke="#e2e8f0" strokeWidth="1"/>
+    <rect width="500" height="350" fill="currentColor" rx="12" stroke="currentColor" strokeWidth="1" className={styles.svgBackground}/>
     <g transform="translate(95, 90)">
       <rect x="-65" y="-40" width="130" height="80" fill="url(#successGradient)" opacity="0.9" rx="8" stroke="currentColor" strokeWidth="1">
         <animate attributeName="opacity" values="0.9;1;0.9" dur="3s" repeatCount="indefinite"/>
@@ -60,7 +61,7 @@ export const MultiEnvSVG: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
         <line x1="4" y1="-4" x2="4" y2="4"/>
       </g>
     </g>
-    <rect x="30" y="150" width="440" height="180" fill="#f1f5f9" rx="8" stroke="#e2e8f0" strokeWidth="1"/>
+    <rect x="30" y="150" width="440" height="180" fill="currentColor" rx="8" stroke="currentColor" strokeWidth="1" className={styles.svgContentArea}/>
     <text x="250" y="175" textAnchor="middle" fill="currentColor" fontSize="16" fontWeight="600" fontFamily="system-ui, -apple-system, sans-serif">版本管理</text>
     <g transform="translate(90, 210)">
       <rect x="-40" y="-20" width="80" height="40" fill="url(#secondaryGradient)" opacity="0.9" rx="6" stroke="currentColor" strokeWidth="1">
@@ -121,19 +122,19 @@ export const MultiEnvSVG: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
 );
 
 export const DistributionSVG: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <svg width="500" height="350" viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg width="500" height="350" viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg" className={styles.svgContainer} {...props}>
     {/* ...完整SVG内容同理填入... */}
   </svg>
 );
 
 export const VirtualizationSVG: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <svg width="500" height="350" viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg width="500" height="350" viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg" className={styles.svgContainer} {...props}>
     {/* ...完整SVG内容同理填入... */}
   </svg>
 );
 
 export const ClusterSVG: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-  <svg width="500" height="350" viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg width="500" height="350" viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg" className={styles.svgContainer} {...props}>
     {/* ...完整SVG内容同理填入... */}
   </svg>
 );

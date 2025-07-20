@@ -1,4 +1,4 @@
-/* Hero Section 样式 - 国际顶尖杂志级设计 */
+/* Hero Section 样式 - 深青灰配色方案 */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -43,7 +43,7 @@
   right: 15%;
   width: 200px;
   height: 200px;
-  background: linear-gradient(45deg, rgba(36, 73, 254, 0.03) 0%, rgba(202, 75, 167, 0.03) 100%);
+  background: var(--decoration-bg-1);
   border-radius: 50%;
   animation: float 6s ease-in-out infinite;
 }
@@ -54,7 +54,7 @@
   right: 25%;
   width: 150px;
   height: 150px;
-  background: linear-gradient(135deg, rgba(202, 75, 167, 0.04) 0%, rgba(36, 73, 254, 0.04) 100%);
+  background: var(--decoration-bg-2);
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   animation: float 8s ease-in-out infinite reverse;
 }
@@ -65,7 +65,7 @@
   right: 5%;
   width: 100px;
   height: 100px;
-  background: linear-gradient(225deg, rgba(36, 73, 254, 0.05) 0%, rgba(202, 75, 167, 0.05) 100%);
+  background: var(--decoration-bg-1);
   border-radius: 20% 80% 80% 20% / 20% 20% 80% 80%;
   animation: float 7s ease-in-out infinite;
 }
@@ -76,7 +76,7 @@
   right: 10%;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(36, 73, 254, 0.08) 0%, rgba(202, 75, 167, 0.08) 50%, transparent 100%);
+  background: var(--decoration-bg-2);
   border-radius: 50%;
   animation: pulse 4s ease-in-out infinite;
 }
@@ -101,60 +101,7 @@
   }
 }
 
-.brandBg {
-  position: absolute;
-  right: 8vw;
-  top: 55%;
-  transform: translateY(-50%) rotate(-4deg);
-  z-index: 0;
-  opacity: 0.08;
-  pointer-events: none;
-  user-select: none;
-  text-align: right;
-  width: 28vw;
-  min-width: 320px;
-  max-width: 40vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-}
 
-.taglineBlock {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.taglineLine1 {
-  font-size: 2.8vw;
-  color: var(--text-primary);
-  letter-spacing: 0.18em;
-  filter: blur(1.2px);
-  margin-bottom: 0.5vw;
-  text-align: right;
-  font-weight: 300;
-}
-
-.taglineLine2 {
-  font-size: 2vw;
-  color: var(--text-secondary);
-  letter-spacing: 0.32em;
-  filter: blur(1.2px);
-  line-height: 1.1;
-  text-align: right;
-  font-weight: 300;
-}
-
-.boldInitial, .boldAI {
-  font-weight: 900;
-  font-size: 2.8vw;
-  color: #600085;
-  letter-spacing: 0.05em;
-  filter: blur(0.5px);
-}
 
 /* 使用全局sectionContent样式，移除本地heroContent样式 */
 
@@ -184,8 +131,8 @@
 
 .titleBadge {
   display: inline-block;
-  background: linear-gradient(135deg, rgba(36, 73, 254, 0.1) 0%, rgba(202, 75, 167, 0.1) 100%);
-  border: 1px solid rgba(36, 73, 254, 0.2);
+  background: var(--theme-accent);
+  border: 1px solid var(--color-primary);
   border-radius: 50px;
   padding: 0.5rem 1.5rem;
   margin-bottom: 2rem;
@@ -295,8 +242,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(36, 73, 254, 0.1) 0%, rgba(202, 75, 167, 0.1) 100%);
+  /* background: var(--gradient-section); */
   flex-shrink: 0;
+}
+
+.iconSvg {
+  color: var(--hero-icon-color);
 }
 
 .subtitleTitle {
@@ -338,7 +289,7 @@
 }
 
 .primaryButton {
-  background: linear-gradient(135deg, var(--hero-primary) 0%, var(--hero-secondary) 100%);
+  background: var(--gradient-primary);
   color: white;
   border: none;
   border-radius: 12px;
@@ -372,7 +323,7 @@
 
 .primaryButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(36, 73, 254, 0.3);
+  box-shadow: var(--hover-shadow-hero);
 }
 
 .secondaryButton {

@@ -1,4 +1,4 @@
-/* IDE Section 样式 - 深邃蓝灰配色方案 */
+/* IDE Section 样式 - 深青灰配色方案 */
 .ideSection {
   padding: var(--section-padding);
   background: var(--section-bg);
@@ -13,8 +13,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
+  background: var(--decoration-bg-1), var(--decoration-bg-2);
   pointer-events: none;
 }
 
@@ -36,7 +35,7 @@
   font-weight: 700;
   color: var(--section-primary);
   margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, var(--section-accent) 0%, #8b5cf6 100%);
+  background: var(--gradient-section);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -50,7 +49,7 @@
   line-height: 1.6;
 }
 
-/* 核心特性部分 - 优化展示效果 */
+/* 核心特性部分 - 简化设计 */
 .coreFeatures {
   margin-bottom: 6rem;
 }
@@ -58,24 +57,23 @@
 .coreFeaturesGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 4rem;
+  gap: 5rem;
   margin-top: 2rem;
 }
 
 .coreFeatureCard {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: 5rem;
   align-items: center;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(20px);
-  border-radius: var(--border-radius);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
   padding: 4rem;
   border: 1px solid var(--border-color);
-  box-shadow: 0 20px 60px var(--shadow-color);
-  transition: var(--transition-primary);
+  box-shadow: 0 8px 24px rgba(31, 41, 55, 0.08);
+  transition: all 0.3s ease;
   position: relative;
-  overflow: hidden;
 }
 
 .coreFeatureCard:nth-child(even) {
@@ -86,56 +84,49 @@
   grid-template-columns: 1fr 1fr;
 }
 
-.coreFeatureCard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--section-accent) 0%, #8b5cf6 100%);
-  transform: scaleX(0);
-  transition: transform 0.4s ease;
-}
-
 .coreFeatureCard:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 30px 80px rgba(59, 130, 246, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(31, 41, 55, 0.12);
   border-color: var(--section-accent);
-}
-
-.coreFeatureCard:hover::before {
-  transform: scaleX(1);
 }
 
 .coreFeatureImage {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 350px;
+  min-height: 400px;
+  position: relative;
 }
 
 .imagePlaceholder {
   width: 100%;
-  height: 350px;
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.44) 10%);
-  border-radius: var(--border-radius);
+  height: 400px;
+  background: linear-gradient(135deg, var(--theme-primary) 0%, var(--theme-secondary) 50%, var(--theme-accent) 100%);
+  border-radius: 12px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(31, 41, 55, 0.1);
+  transition: all 0.3s ease;
 }
 
-.imagePlaceholder:hover::before {
+.imagePlaceholder::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.15) 50%, transparent 70%);
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.imagePlaceholder:hover::before {
+  opacity: 1;
   animation: shimmer 3s infinite;
 }
 
@@ -144,25 +135,31 @@
   100% { transform: translateX(100%); }
 }
 
+.placeholderIcon {
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  opacity: 0.8;
+}
+
 .placeholderText {
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 600;
   z-index: 1;
   position: relative;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .coreFeatureContent {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
   padding: 1rem 0;
 }
 
 .coreFeatureTitle {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 800;
   color: var(--section-primary);
   margin: 0;
   line-height: 1.2;
@@ -170,94 +167,149 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  position: relative;
+}
+
+.coreFeatureTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 4rem;
+  height: 3px;
+  background: var(--gradient-section);
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.coreFeatureCard:hover .coreFeatureTitle::after {
+  opacity: 1;
 }
 
 .coreFeatureDescription {
   color: var(--text-secondary);
   line-height: 1.8;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin: 0;
   font-weight: 400;
 }
 
-/* 可视化开发模块部分 - 大幅减少展示面积 */
+/* 可视化开发模块部分 - 简化设计 */
 .developmentModules {
-  margin-top: 2rem;
+  margin-top: 4rem;
+}
+
+.modulesHeader {
+  text-align: center;
+  margin-bottom: 4rem;
 }
 
 .modulesTitle {
-  font-size: 1.5rem;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
   color: var(--section-primary);
+  background: var(--gradient-section);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.modulesSubtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
 .modulesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
   margin-top: 2rem;
 }
 
 .moduleCard {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
-  padding: 2rem;
-  box-shadow: 0 8px 32px var(--shadow-color);
-  transition: var(--transition-primary);
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 12px rgba(31, 41, 55, 0.06);
+  transition: all 0.3s ease;
   position: relative;
-  overflow: hidden;
-}
-
-.moduleCard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--section-accent) 0%, #8b5cf6 100%);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .moduleCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(31, 41, 55, 0.1);
   border-color: var(--section-accent);
 }
 
-.moduleCard:hover::before {
-  transform: scaleX(1);
+.moduleIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--gradient-section);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  color: var(--section-primary);
+  transition: all 0.3s ease;
 }
 
-.moduleIcon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  text-align: center;
+.moduleCard:hover .moduleIcon {
+  transform: scale(1.05);
 }
 
 .moduleContent {
-  text-align: center;
+  text-align: left;
 }
 
 .moduleTitle {
-  font-size: 1.3rem;
-  font-weight: 600;
+  font-size: 1.4rem;
+  font-weight: 700;
   color: var(--section-primary);
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 1rem 0;
   line-height: 1.3;
+  background: linear-gradient(135deg, var(--section-primary) 0%, var(--section-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .moduleDescription {
   color: var(--text-secondary);
-  line-height: 1.6;
-  font-size: var(--font-size-body);
-  margin: 0;
+  line-height: 1.7;
+  font-size: 1rem;
+  margin: 0 0 1.5rem 0;
   font-weight: 400;
+}
+
+.moduleLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--section-accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.moduleLink:hover {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+.linkText {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 /* 响应式设计 */
@@ -267,33 +319,32 @@
   }
 
   .coreFeaturesGrid {
-    gap: 3rem;
+    gap: 4rem;
   }
 
   .coreFeatureCard {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 3rem;
     padding: 3rem;
   }
 
   .coreFeatureCard:nth-child(even) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .coreFeatureCard:nth-child(odd) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .coreFeatureImage {
-    min-height: 250px;
+    min-height: 300px;
   }
 
   .imagePlaceholder {
-    height: 250px;
+    height: 300px;
   }
 
   .coreFeatureTitle {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .coreFeatureDescription {
@@ -301,8 +352,16 @@
   }
 
   .modulesGrid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .modulesTitle {
+    font-size: 1.8rem;
+  }
+
+  .modulesSubtitle {
+    font-size: 1rem;
   }
 }
 
@@ -328,20 +387,22 @@
   }
 
   .coreFeaturesTitle {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   .coreFeaturesGrid {
-    gap: 2rem;
+    gap: 3rem;
   }
 
   .coreFeatureCard {
+    grid-template-columns: 1fr !important;
+    gap: 2rem;
     padding: 2rem;
   }
 
   .coreFeatureTitle {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   .coreFeatureDescription {
@@ -350,11 +411,11 @@
 
   .modulesGrid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   .moduleCard {
-    padding: 1.5rem;
+    padding: 2rem;
   }
 
   .moduleTitle {
@@ -366,7 +427,12 @@
   }
 
   .moduleIcon {
-    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+  }
+
+  .moduleLink {
+    font-size: 0.85rem;
   }
 }
 
@@ -384,7 +450,7 @@
   }
 
   .coreFeatureTitle {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   .coreFeatureDescription {
@@ -392,7 +458,7 @@
   }
 
   .moduleCard {
-    padding: 1.25rem;
+    padding: 1.5rem;
   }
 
   .moduleTitle {
@@ -404,6 +470,11 @@
   }
 
   .moduleIcon {
-    font-size: 1.8rem;
+    width: 36px;
+    height: 36px;
+  }
+
+  .moduleLink {
+    font-size: 0.8rem;
   }
 }

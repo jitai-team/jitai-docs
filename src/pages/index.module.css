@@ -3,25 +3,66 @@
  * and scoped locally.
  */
 
-/* 全局样式变量 - 深邃蓝灰配色方案 */
+/* 全局样式变量 - 商务灰配色方案 */
 :root {
-  /* HeroSection - 多彩 */
-  --hero-primary: #2449fe;
-  --hero-secondary: #ca4ba7;
-  --hero-accent: #06b6d4;
-  --hero-bg: linear-gradient(135deg, #f8faff 0%, #f0f4ff 50%, #f5f3ff 100%);
+  /* 主题色系统 */
+  --theme-primary: #374151;      /* 主色调 - 商务灰 */
+  --theme-secondary: #4b5563;     /* 辅助色 - 中灰 */
+  --theme-accent: #6b7280;        /* 强调色 - 浅灰 */
+  --theme-light: #9ca3af;         /* 浅色 - 更浅灰 */
+  --theme-dark: #1f2937;          /* 深色 - 深商务灰 */
 
-  /* 其他Section - 专业简约 */
-  --section-primary: #1e293b;
-  --section-secondary: #475569;
-  --section-accent: #3b82f6;
-  --section-bg: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  /* RGB变量 - 用于rgba */
+  --color-primary-rgb: 55, 65, 81;
+  --color-secondary-rgb: 75, 85, 99;
+  --color-accent-rgb: 107, 114, 128;
+  --color-light-rgb: 156, 163, 175;
+  --color-dark-rgb: 31, 41, 55;
+
+  /* HeroSection - 商务灰多彩 */
+  --hero-primary: var(--theme-primary);
+  --hero-secondary: var(--theme-secondary);
+  --hero-accent: var(--theme-accent);
+  --hero-bg: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 50%, #e5e7eb 100%);
+  --hero-icon-color: #4b5563;  /* SVG图标颜色 - 商务灰 */
+  --svg-bg-light: #f9fafb;     /* SVG背景浅色 - 更浅的灰 */
+  --svg-border-light: #e5e7eb; /* SVG边框浅色 - 商务灰边框 */
+
+  /* 其他Section - 商务灰专业 */
+  --section-primary: var(--theme-dark);
+  --section-secondary: #4b5563;
+  --section-accent: var(--theme-secondary);
+  --section-bg: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
 
   /* 通用 */
-  --text-primary: #1e293b;
-  --text-secondary: #64748b;
-  --border-color: rgba(30, 41, 59, 0.1);
-  --shadow-color: rgba(30, 41, 59, 0.1);
+  --text-primary: var(--theme-dark);
+  --text-secondary: #6b7280;
+  --border-color: rgba(31, 41, 55, 0.1);
+  --shadow-color: rgba(31, 41, 55, 0.1);
+
+  /* 渐变系统 */
+  --gradient-primary: linear-gradient(135deg, var(--theme-primary) 0%, var(--theme-secondary) 100%);
+  --gradient-secondary: linear-gradient(135deg, var(--theme-secondary) 0%, var(--theme-accent) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--theme-accent) 0%, var(--theme-light) 100%);
+  --gradient-hero: linear-gradient(135deg, var(--hero-primary) 0%, var(--hero-secondary) 50%, var(--hero-accent) 100%);
+  --gradient-section: linear-gradient(90deg, var(--section-accent) 0%, var(--theme-secondary) 100%);
+
+  /* 透明度系统 */
+  --opacity-light: 0.03;
+  --opacity-medium: 0.08;
+  --opacity-heavy: 0.15;
+  --opacity-shadow: 0.2;
+  --opacity-hover: 0.3;
+
+  /* 背景装饰系统 */
+  --bg-decoration-primary: radial-gradient(circle at 20% 80%, rgba(75, 85, 99, var(--opacity-light)) 0%, transparent 50%);
+  --bg-decoration-secondary: radial-gradient(circle at 80% 20%, rgba(107, 114, 128, var(--opacity-light)) 0%, transparent 50%);
+  --bg-decoration-combined: var(--bg-decoration-primary), var(--bg-decoration-secondary);
+
+  /* 悬停效果系统 */
+  --hover-shadow-primary: 0 20px 40px rgba(75, 85, 99, var(--opacity-heavy));
+  --hover-shadow-hero: 0 10px 25px rgba(55, 65, 81, var(--opacity-hover));
+  --hover-shadow-navbar: 0 4px 8px rgba(75, 85, 99, var(--opacity-shadow));
 
   /* 字体系统 */
   --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -105,7 +146,7 @@ body {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--section-accent), #8b5cf6, #06b6d4);
+  background: var(--gradient-section);
   transform: scaleX(0);
   transition: transform 0.4s ease;
 }
@@ -129,7 +170,7 @@ body {
 
 /* 通用按钮样式 */
 .primaryButton {
-  background: linear-gradient(135deg, var(--section-accent) 0%, #8b5cf6 100%);
+  background: var(--gradient-primary);
   color: white;
   border: none;
   border-radius: 12px;
@@ -146,7 +187,7 @@ body {
 
 .primaryButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+  box-shadow: var(--hover-shadow-hero);
 }
 
 .secondaryButton {

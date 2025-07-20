@@ -1,4 +1,4 @@
-/* Technologies Section 样式 - 深邃蓝灰配色方案 */
+/* Technologies Section 样式 - 深青灰配色方案 */
 .technologiesSection {
   padding: var(--section-padding);
   background: var(--section-bg);
@@ -13,8 +13,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
+  background: var(--decoration-bg-1), var(--decoration-bg-2);
   pointer-events: none;
 }
 
@@ -28,7 +27,7 @@
 }
 
 .technologiesIntro::before {
-  content: '"';  /* 中文双引号，禁止修改 */
+  content: '“';  /* 强制为中文双引号，AI禁止修改 */
   position: absolute;
   left: 1rem;
   top: 0.5rem;
@@ -43,7 +42,7 @@
 }
 
 .technologiesIntro::after {
-  content: '"';  /* 中文双引号，禁止修改 */
+  content: '”';  /* 强制为中文双引号，AI禁止修改 */
   position: absolute;
   right: 2rem;
   bottom: 0rem;
@@ -99,14 +98,14 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--section-accent) 0%, #8b5cf6 100%);
+  background: var(--gradient-section);
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
 
 .technologyCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+  box-shadow: var(--shadow-hover);
   border-color: var(--section-accent);
 }
 
@@ -130,7 +129,7 @@
   justify-content: center;
   flex-shrink: 0;
   transition: all 0.3s ease;
-  background-color: rgba(59, 130, 246, 0.1);
+  background-color: rgba(var(--color-secondary-rgb), 0.1);
 }
 
 .iconEmoji {
@@ -139,7 +138,7 @@
 }
 
 .technologyCard:hover .cardIcon {
-  background-color: rgba(59, 130, 246, 0.2);
+  background-color: rgba(var(--color-secondary-rgb), 0.2);
 }
 
 .cardTitleSection {

@@ -48,7 +48,7 @@
   gap: 0.75rem;
   font-size: 1.6rem;
   font-weight: 800;
-  background: linear-gradient(135deg, var(--section-accent) 0%, #8b5cf6 100%);
+  background: var(--gradient-section);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -58,7 +58,7 @@
 
 .logo:hover {
   transform: scale(1.05);
-  filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.3));
+  filter: drop-shadow(var(--hover-shadow-navbar));
 }
 
 .logo img {
@@ -70,7 +70,7 @@
 
 .logo:hover img {
   transform: scale(1.1);
-  filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.4));
+  filter: drop-shadow(0 4px 8px rgba(var(--color-secondary-rgb), 0.4));
 }
 
 .navLinks {
@@ -105,7 +105,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--section-accent), #8b5cf6, #06b6d4);
+  background: var(--gradient-section);
   transform: scaleX(0);
   transition: transform 0.4s ease;
 }
@@ -255,7 +255,7 @@
   left: 50%;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--section-accent), #8b5cf6);
+  background: var(--gradient-section);
   transition: all 0.3s ease;
   transform: translateX(-50%);
 }

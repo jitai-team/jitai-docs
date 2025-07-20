@@ -1,4 +1,4 @@
-/* Framework Section 样式 - 深邃蓝灰配色方案 */
+/* Framework Section 样式 - 深青灰配色方案 */
 .frameworkSection {
   padding: var(--section-padding);
   background: var(--section-bg);
@@ -13,8 +13,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
+  background: var(--decoration-bg-1), var(--decoration-bg-2);
   pointer-events: none;
 }
 
@@ -58,14 +57,14 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--section-accent) 0%, #8b5cf6 100%);
+  background: var(--gradient-section);
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
 
 .frameworkCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+  box-shadow: var(--shadow-hover);
   border-color: var(--section-accent);
 }
 
@@ -89,7 +88,7 @@
   justify-content: center;
   flex-shrink: 0;
   transition: all 0.3s ease;
-  background-color: rgba(59, 130, 246, 0.1);
+  background-color: rgba(var(--color-secondary-rgb), 0.1);
 }
 
 .iconEmoji {
@@ -98,7 +97,7 @@
 }
 
 .frameworkLink:hover .cardIcon {
-  background-color: rgba(59, 130, 246, 0.2);
+  background-color: rgba(var(--color-secondary-rgb), 0.2);
 }
 
 .frameworkName {

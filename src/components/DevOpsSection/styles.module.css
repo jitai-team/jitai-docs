@@ -1,4 +1,4 @@
-/* DevOps Section 样式 - 深邃蓝灰配色方案 */
+/* DevOps Section 样式 - 深青灰配色方案 */
 .devopsSection {
   padding: var(--section-padding);
   background: var(--section-bg);
@@ -14,8 +14,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
+  background: var(--decoration-bg-1), var(--decoration-bg-2);
   pointer-events: none;
 }
 
@@ -62,7 +61,7 @@
 .imagePlaceholder {
   width: 100%;
   height: 400px;
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.44) 10%);
+  background: linear-gradient(135deg, var(--color-dark) 10%, transparent 100%);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -101,7 +100,7 @@
 
 .featureImage:hover .imagePlaceholder {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 20px 40px rgba(8, 145, 178, 0.15);
   border-color: var(--section-accent);
 }
 
@@ -128,7 +127,7 @@
   left: 0;
   width: 4rem;
   height: 3px;
-  background: linear-gradient(90deg, var(--section-accent) 0%, #8b5cf6 100%);
+  background: linear-gradient(90deg, var(--section-accent) 0%, #0891b2 100%);
   border-radius: 2px;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -232,4 +231,19 @@
   .featureContent p {
     font-size: 0.9rem;
   }
+}
+
+/* SVG 样式 */
+.svgContainer {
+  color: var(--section-primary);
+}
+
+.svgBackground {
+  fill: var(--svg-bg-light);
+  stroke: var(--svg-border-light);
+}
+
+.svgContentArea {
+  fill: var(--svg-bg-light);
+  stroke: var(--svg-border-light);
 }

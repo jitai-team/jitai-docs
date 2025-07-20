@@ -1,4 +1,4 @@
-/* Platform Section 样式 - 深邃蓝灰配色方案 */
+/* Platform Section 样式 - 深青灰配色方案 */
 
 .platformSection {
   padding: var(--section-padding);
@@ -14,8 +14,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
-              radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
+  background: var(--decoration-bg-1), var(--decoration-bg-2);
   pointer-events: none;
 }
 
@@ -78,14 +77,14 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--section-accent) 0%, #8b5cf6 100%);
+  background: var(--gradient-section);
   transform: scaleX(0);
   transition: transform 0.4s ease;
 }
 
 .featureCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+  box-shadow: var(--shadow-hover);
   border-color: var(--section-accent);
 }
 
@@ -116,7 +115,7 @@
 .imagePlaceholder {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.44) 10%);
+  background: linear-gradient(135deg, var(--color-dark) 10%, transparent 100%);
   border-radius: 16px;
   display: flex;
   align-items: center;

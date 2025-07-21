@@ -7,17 +7,28 @@
     <!-- D3.js 数据可视化库 -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
     
-    <!-- 模块化样式文件 -->
-    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- 样式文件 - 按依赖顺序加载 -->
+    <link rel="stylesheet" href="/knowledge-graph/assets/css/base.css">
+    <link rel="stylesheet" href="/knowledge-graph/assets/css/layout.css">
+    <link rel="stylesheet" href="/knowledge-graph/assets/css/components.css">
+    <link rel="stylesheet" href="/knowledge-graph/assets/css/tree.css">
+    <link rel="stylesheet" href="/knowledge-graph/assets/css/animations.css">
+    <link rel="stylesheet" href="/knowledge-graph/assets/css/responsive.css">
     
-    <!-- 模块化JavaScript文件 -->
-    <script src="assets/js/config.js"></script>
-    <script src="assets/js/utils.js"></script>
-    <script src="assets/js/data-loader.js"></script>
-    <script src="assets/js/filter-manager.js"></script>
-    <script src="assets/js/ui-manager.js"></script>
-    <script src="assets/js/d3-graph.js"></script>
-    <script src="assets/js/app.js"></script>
+    <!-- JavaScript文件 - 按依赖顺序加载 -->
+    <script>
+        // 设置数据路径
+        window.DYNAMIC_PATHS = {
+            data: '/knowledge-graph/assets/data/graph-data.json'
+        };
+    </script>
+    <script src="/knowledge-graph/assets/js/config.js"></script>
+    <script src="/knowledge-graph/assets/js/utils.js"></script>
+    <script src="/knowledge-graph/assets/js/data-loader.js"></script>
+    <script src="/knowledge-graph/assets/js/filter-manager.js"></script>
+    <script src="/knowledge-graph/assets/js/ui-manager.js"></script>
+    <script src="/knowledge-graph/assets/js/d3-graph.js"></script>
+    <script src="/knowledge-graph/assets/js/app.js"></script>
 </head>
 <body>
     <!-- 加载状态覆盖层 -->
@@ -92,6 +103,5 @@
     <!-- 工具提示 -->
     <div id="tooltip" class="tooltip"></div>
 
-        <!-- 所有JavaScript已模块化，在head中引用 --></script>
 </body>
 </html> 

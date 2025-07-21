@@ -93,7 +93,7 @@ class D3NetworkGraph {
                 .strength(this.config.force.charge))
             .force("center", d3.forceCenter(this.width / 2, this.height / 2))
             .force("collision", d3.forceCollide()
-                .radius(d => (d.size || this.config.node.radius) + 5))
+                .radius(d => (d.size || this.config.node.radius) + 3))
             .velocityDecay(this.config.force.velocityDecay)
             .alpha(this.config.force.alpha)
             .alphaTarget(this.config.force.alphaTarget)
@@ -119,13 +119,22 @@ class D3NetworkGraph {
     setFullData(nodes, links) {
         this.allNodes = nodes.map(d => ({...d}));
         this.allLinks = links.map(d => ({...d}));
+        
+        // 计算并设置节点层级和大小
+        this.calculateNodeHierarchy();
     }
     
     /**
      * 设置当前显示的数据
      */
     setVisibleData(nodes, links) {
-        this.nodes = nodes.map(d => ({...d}));
+        // 确保使用包含计算属性的节点数据
+        this.nodes = nodes.map(inputNode => {
+            // 从allNodes中找到对应的完整节点数据（包含hierarchyLevel和size）
+            const fullNode = this.allNodes?.find(n => n.id === inputNode.id) || inputNode;
+            return {...fullNode};
+        });
+        
         this.links = links.map(d => ({...d}));
         
         // 绑定数据到仿真
@@ -135,6 +144,81 @@ class D3NetworkGraph {
         this.render();
         this.simulation.restart();
     }
+    
+    /**
+     * 计算节点层级并设置大小
+     */
+    calculateNodeHierarchy() {
+        if (!this.allNodes || !this.allLinks) return;
+        
+        // 层次关系类型（使用配置文件中的定义）
+        const hierarchicalRelations = window.AppConfig?.HIERARCHICAL_RELATIONS || ['包含', '支持', '管理'];
+        
+        // 构建父子关系映射
+        const childParentMap = {};
+        
+        this.allLinks.forEach(link => {
+            const relationType = link.type || link.label || '';
+            if (hierarchicalRelations.includes(relationType)) {
+                const sourceId = typeof link.source === 'object' ? link.source.id : link.source;
+                const targetId = typeof link.target === 'object' ? link.target.id : link.target;
+                childParentMap[targetId] = sourceId;
+            }
+        });
+        
+        // 计算每个节点的层级深度
+        const getNodeLevel = (nodeId, visited = new Set()) => {
+            if (visited.has(nodeId)) return 0; // 避免循环引用
+            
+            const parent = childParentMap[nodeId];
+            if (!parent) return 0; // 顶级节点
+            
+            visited.add(nodeId);
+            const parentLevel = getNodeLevel(parent, visited);
+            visited.delete(nodeId);
+            
+            return parentLevel + 1;
+        };
+        
+        // 为每个节点设置层级和对应的大小
+        let hierarchyStats = {};
+        this.allNodes.forEach(node => {
+            const level = getNodeLevel(node.id);
+            node.hierarchyLevel = level;
+            
+            // 统计层级分布
+            if (!hierarchyStats[level]) hierarchyStats[level] = 0;
+            hierarchyStats[level]++;
+            
+            // 根据层级设置节点大小：顶级最大，逐层递减
+            // 大小范围：12-30，进一步增大差异确保视觉效果明显
+            const maxRadius = 30;
+            const minRadius = 12;
+            const levelDecrement = 4;
+            
+            node.size = Math.max(minRadius, maxRadius - (level * levelDecrement));
+        });
+        
+        // 调试输出层级统计信息
+        console.log('节点层级分布:', hierarchyStats);
+        console.log('发现的层次关系数量:', Object.keys(childParentMap).length);
+        
+        // 按层级分组显示大小范围
+        const sizeByLevel = {};
+        this.allNodes.forEach(node => {
+            const level = node.hierarchyLevel;
+            if (!sizeByLevel[level]) sizeByLevel[level] = [];
+            sizeByLevel[level].push(node.size);
+        });
+        
+        Object.keys(sizeByLevel).forEach(level => {
+            const sizes = sizeByLevel[level];
+            const uniqueSizes = [...new Set(sizes)];
+            console.log(`第${level}层节点大小: ${uniqueSizes.join(', ')}`);
+        });
+    }
+    
+
     
     /**
      * 根据选中状态筛选节点
@@ -192,9 +276,19 @@ class D3NetworkGraph {
             .join("circle")
             .classed("node", true)
             .attr("r", d => d.size || this.config.node.radius)
-            .attr("fill", this.config.nodeColor)
+            .attr("fill", d => {
+                // 根据层级设置颜色：顶级更深，子级更浅
+                const level = d.hierarchyLevel || 0;
+                const baseColor = '#68bdf6';
+                const opacity = Math.max(0.6, 1 - (level * 0.1));
+                return this.adjustColorOpacity(baseColor, opacity);
+            })
             .attr("stroke", "#fff")
-            .attr("stroke-width", this.config.node.strokeWidth)
+            .attr("stroke-width", d => {
+                // 顶级节点边框更粗
+                const level = d.hierarchyLevel || 0;
+                return level === 0 ? 3 : this.config.node.strokeWidth;
+            })
             .style("cursor", "pointer")
             .call(this.createDragBehavior())
             .on("click", (event, d) => {
@@ -202,13 +296,17 @@ class D3NetworkGraph {
                 this.onNodeClick && this.onNodeClick(d);
             });
             
-        // 渲染标签 - 放在节点下方
+        // 渲染标签 - 放在节点下方，根据节点大小调整字体
         this.labelElements = this.g.selectAll(".label")
             .data(this.nodes, d => d.id)
             .join("text")
             .classed("label", true)
             .text(d => d.name || d.label)
-            .attr("font-size", this.config.node.fontSize)
+            .attr("font-size", d => {
+                // 根据节点大小动态调整字体大小
+                const nodeSize = d.size || this.config.node.radius;
+                return Math.max(10, Math.min(14, nodeSize * 0.8));
+            })
             .attr("font-family", "Arial, sans-serif")
             .attr("text-anchor", "middle")
             .attr("dy", "1.2em")
@@ -249,8 +347,8 @@ class D3NetworkGraph {
         // 更新连接线位置 - 计算节点边缘连接点
         if (this.linkElements) {
             this.linkElements.each(function(d) {
-                const sourceRadius = (d.source.size || 12) + 2; // config.node.radius + strokeWidth
-                const targetRadius = (d.target.size || 12) + 2;
+                const sourceRadius = (d.source.size || 12) + 3; // 节点半径 + 边框宽度 + 间距
+                const targetRadius = (d.target.size || 12) + 3;
                 
                 const dx = d.target.x - d.source.x;
                 const dy = d.target.y - d.source.y;
@@ -318,13 +416,23 @@ class D3NetworkGraph {
         if (this.labelElements) {
             this.labelElements
                 .attr("x", d => d.x)
-                .attr("y", d => d.y + (d.size || this.config.node.radius) + 5);
+                .attr("y", d => d.y + (d.size || this.config.node.radius) + 8);
         }
     }
     
     // 工具方法（保留以防需要）
     getColorByLabel(label, index = 0) {
         return this.config.nodeColor; // 统一返回单一颜色
+    }
+    
+    // 调整颜色透明度
+    adjustColorOpacity(color, opacity) {
+        // 将hex颜色转换为rgba
+        const hex = color.replace('#', '');
+        const r = parseInt(hex.substr(0, 2), 16);
+        const g = parseInt(hex.substr(2, 2), 16);
+        const b = parseInt(hex.substr(4, 2), 16);
+        return `rgba(${r}, ${g}, ${b}, ${opacity})`;
     }
     
     // 高亮节点
@@ -566,8 +674,16 @@ class D3NetworkGraph {
             this.nodeElements
                 .style("opacity", 1)
                 .attr("stroke", "#fff")
-                .attr("stroke-width", this.config.node.strokeWidth)
-                .attr("fill", this.config.nodeColor);
+                .attr("stroke-width", d => {
+                    const level = d.hierarchyLevel || 0;
+                    return level === 0 ? 3 : this.config.node.strokeWidth;
+                })
+                .attr("fill", d => {
+                    const level = d.hierarchyLevel || 0;
+                    const baseColor = '#68bdf6';
+                    const opacity = Math.max(0.6, 1 - (level * 0.1));
+                    return this.adjustColorOpacity(baseColor, opacity);
+                });
         }
         
         if (this.labelElements) {
@@ -814,6 +930,34 @@ class D3NetworkGraph {
     // 事件回调设置
     onNodeClick = null;
     onBackgroundClick = null;
+    
+    // 获取节点层级信息（调试用）
+    getNodeHierarchyInfo() {
+        if (!this.allNodes) return null;
+        
+        const hierarchyStats = {};
+        this.allNodes.forEach(node => {
+            const level = node.hierarchyLevel || 0;
+            if (!hierarchyStats[level]) {
+                hierarchyStats[level] = { count: 0, nodes: [], avgSize: 0 };
+            }
+            hierarchyStats[level].count++;
+            hierarchyStats[level].nodes.push({
+                id: node.id,
+                name: node.name || node.label,
+                size: node.size
+            });
+        });
+        
+        // 计算每层的平均大小
+        Object.keys(hierarchyStats).forEach(level => {
+            const levelData = hierarchyStats[level];
+            const totalSize = levelData.nodes.reduce((sum, node) => sum + node.size, 0);
+            levelData.avgSize = totalSize / levelData.count;
+        });
+        
+        return hierarchyStats;
+    }
     
     // 清理资源
     destroy() {

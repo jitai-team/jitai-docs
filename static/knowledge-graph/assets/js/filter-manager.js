@@ -76,8 +76,14 @@ class FilterManager {
     buildTreeData(hierarchyData) {
         const { parentChildMap, childParentMap } = hierarchyData;
         
-        // 找到根节点（没有父节点的节点）
-        const rootNodes = this.knowledgeGraphConfig.nodes.filter(node => !childParentMap[node.id]);
+        // 找到根节点（没有父节点的节点）并按名称排序
+        const rootNodes = this.knowledgeGraphConfig.nodes
+            .filter(node => !childParentMap[node.id])
+            .sort((a, b) => {
+                const nameA = (a.name || a.label || a.id).toLowerCase();
+                const nameB = (b.name || b.label || b.id).toLowerCase();
+                return nameA.localeCompare(nameB);
+            });
         
         // 递归构建树形结构
         const buildTreeNode = (nodeId, level = 0, visited = new Set()) => {
@@ -90,15 +96,28 @@ class FilterManager {
             newVisited.add(nodeId);
             
             const children = parentChildMap[nodeId] || [];
+            
+            // 对子节点按名称排序
+            const sortedChildren = children
+                .map(childId => {
+                    const childNode = this.knowledgeGraphConfig.nodes.find(n => n.id === childId);
+                    return {
+                        id: childId,
+                        sortKey: (childNode?.name || childNode?.label || childId).toLowerCase()
+                    };
+                })
+                .sort((a, b) => a.sortKey.localeCompare(b.sortKey))
+                .map(item => item.id);
+            
             return {
                 id: nodeId,
                 label: node.name || node.label || node.id,
                 type: node.type || 'Entity',
                 level: level,
-                children: children
+                children: sortedChildren
                     .map(childId => buildTreeNode(childId, level + 1, newVisited))
                     .filter(child => child !== null),
-                isExpanded: level < 2 // 默认展开前两级
+                isExpanded: level < 1 // 默认只展开第一层到第二层
             };
         };
         
@@ -130,6 +149,7 @@ class FilterManager {
             <div class="tree-node" data-level="${nodeData.level}" style="--tree-level: ${nodeData.level};" data-node-id="${nodeData.id}">
                 <div class="tree-node-header">
                     <span class="tree-expand-icon" 
+                          id="expand-${nodeData.id}"
                           ${hasChildren ? `onclick="toggleTreeNode('${nodeData.id}')"` : ''} 
                           ${hasChildren ? `title="展开/折叠子节点"` : ''}
                           style="${hasChildren ? 'cursor: pointer;' : 'visibility: hidden;'}">
@@ -273,7 +293,7 @@ class FilterManager {
         const expandIcon = document.getElementById(`expand-${nodeId}`);
         
         if (childrenContainer) {
-            DOMUtils.addClass(childrenContainer, CSSClasses.EXPANDED);
+            childrenContainer.classList.add('expanded');
             
             if (expandIcon) {
                 expandIcon.textContent = '▼';
@@ -289,7 +309,7 @@ class FilterManager {
         const expandIcon = document.getElementById(`expand-${nodeId}`);
         
         if (childrenContainer) {
-            DOMUtils.removeClass(childrenContainer, CSSClasses.EXPANDED);
+            childrenContainer.classList.remove('expanded');
             
             if (expandIcon) {
                 expandIcon.textContent = '▶';
@@ -304,7 +324,7 @@ class FilterManager {
         const childrenContainer = document.getElementById(`children-${nodeId}`);
         
         if (childrenContainer) {
-            const isExpanded = DOMUtils.hasClass(childrenContainer, CSSClasses.EXPANDED);
+            const isExpanded = childrenContainer.classList.contains('expanded');
             
             if (isExpanded) {
                 this.collapseTreeNode(nodeId);

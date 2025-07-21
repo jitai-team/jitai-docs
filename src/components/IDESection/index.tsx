@@ -55,48 +55,73 @@ const IDESection: React.FC = () => {
             </div>
           </ScrollAnimation>
 
-          {/* 可视化开发模块部分 - 优化网格布局 */}
-          <ScrollAnimation animationType="fadeInUp" delay={400}>
+          {/* 可视化开发模块部分 - 2行卡片自动滚动 */}
             <div className={styles.developmentModules}>
-              <div className={styles.modulesHeader}>
-                <h3 className={styles.modulesTitle}>可视化开发模块</h3>
-                <p className={styles.modulesSubtitle}>丰富的可视化开发工具，让开发更高效</p>
-              </div>
               <div className={styles.modulesGrid}>
-                {CONTENT.developmentModules.map((module, index) => (
-                  <ScrollAnimation
-                    key={index}
-                    animationType="scaleIn"
-                    delay={500 + index * 50}
-                    duration={400}
-                  >
-                    <div className={styles.moduleCard}>
-                      <div className={styles.moduleIcon}>
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                          <polyline points="14,2 14,8 20,8"/>
-                          <line x1="16" y1="13" x2="8" y2="13"/>
-                          <line x1="16" y1="17" x2="8" y2="17"/>
-                          <polyline points="10,9 9,9 8,9"/>
-                        </svg>
-                      </div>
+                                <div className={styles.modulesRow}>
+                  {CONTENT.developmentModules.slice(0, Math.ceil(CONTENT.developmentModules.length / 2)).map((module, index) => (
+                    <div key={`row1-${index}`} className={styles.moduleCard}>
                       <div className={styles.moduleContent}>
-                        <h4 className={styles.moduleTitle}>{module.title}</h4>
-                        <p className={styles.moduleDescription}>{module.description}</p>
-                        <div className={styles.moduleLink}>
-                          <span className={styles.linkText}>了解更多</span>
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <div className={styles.moduleHeader}>
+                          <h4 className={styles.moduleTitle}>{module.title}</h4>
+                          <svg className={styles.arrowIcon} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                             <line x1="7" y1="17" x2="17" y2="7"/>
                             <polyline points="7,7 17,7 17,17"/>
                           </svg>
                         </div>
+                        <p className={styles.moduleDescription}>{module.description}</p>
                       </div>
                     </div>
-                  </ScrollAnimation>
-                ))}
+                  ))}
+                  {/* 重复第一行卡片，实现无缝循环 */}
+                  {CONTENT.developmentModules.slice(0, Math.ceil(CONTENT.developmentModules.length / 2)).map((module, index) => (
+                    <div key={`row1-repeat-${index}`} className={styles.moduleCard}>
+                      <div className={styles.moduleContent}>
+                        <div className={styles.moduleHeader}>
+                          <h4 className={styles.moduleTitle}>{module.title}</h4>
+                          <svg className={styles.arrowIcon} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"/>
+                            <polyline points="7,7 17,7 17,17"/>
+                          </svg>
+                        </div>
+                        <p className={styles.moduleDescription}>{module.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className={styles.modulesRow}>
+                  {CONTENT.developmentModules.slice(Math.ceil(CONTENT.developmentModules.length / 2)).map((module, index) => (
+                    <div key={`row2-${index}`} className={styles.moduleCard}>
+                      <div className={styles.moduleContent}>
+                        <div className={styles.moduleHeader}>
+                          <h4 className={styles.moduleTitle}>{module.title}</h4>
+                          <svg className={styles.arrowIcon} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"/>
+                            <polyline points="7,7 17,7 17,17"/>
+                          </svg>
+                        </div>
+                        <p className={styles.moduleDescription}>{module.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                  {/* 重复第二行卡片，实现无缝循环 */}
+                  {CONTENT.developmentModules.slice(Math.ceil(CONTENT.developmentModules.length / 2)).map((module, index) => (
+                    <div key={`row2-repeat-${index}`} className={styles.moduleCard}>
+                      <div className={styles.moduleContent}>
+                        <div className={styles.moduleHeader}>
+                          <h4 className={styles.moduleTitle}>{module.title}</h4>
+                          <svg className={styles.arrowIcon} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <line x1="7" y1="17" x2="17" y2="7"/>
+                            <polyline points="7,7 17,7 17,17"/>
+                          </svg>
+                        </div>
+                        <p className={styles.moduleDescription}>{module.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          </ScrollAnimation>
         </div>
       </section>
     </ScrollAnimation>

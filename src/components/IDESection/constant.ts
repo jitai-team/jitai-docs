@@ -70,10 +70,10 @@ export const CONTENT = {
       description: '创建文件模板和文档生成，支持多种格式输出和批量处理',
       link: '/docs/tutorial/00快速上手/01下载安装',
     },
-    {
-      title: 'API 授权可视化开发',
-      description: '管理API接口权限，支持OAuth认证和访问令牌，保障接口安全',
-      link: '/docs/tutorial/00快速上手/01下载安装',
-    }
+    // {
+    //   title: 'API 授权可视化开发',
+    //   description: '管理API接口权限，支持OAuth认证和访问令牌，保障接口安全',
+    //   link: '/docs/tutorial/00快速上手/01下载安装',
+    // }
   ]
 };

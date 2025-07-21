@@ -59,10 +59,12 @@ class D3NetworkGraph {
         // 清空容器
         d3.select(this.container).selectAll("*").remove();
         
-        // 创建SVG
+        // 创建SVG元素
         this.svg = d3.select(this.container)
+            .append("svg")
             .attr("width", this.width)
-            .attr("height", this.height);
+            .attr("height", this.height)
+            .style("background", "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)");
             
         // 创建主绘图组
         this.g = this.svg.append("g");
@@ -157,6 +159,33 @@ class D3NetworkGraph {
             .attr("marker-end", "url(#arrowhead)")
             .style("opacity", 0.6);
             
+        // 渲染连接线标签背景
+        this.linkLabelBgElements = this.g.selectAll(".link-label-bg")
+            .data(this.links, d => d.id)
+            .join("rect")
+            .classed("link-label-bg", true)
+            .attr("fill", "rgba(255, 255, 255, 0.85)")
+            .attr("stroke", "rgba(0, 0, 0, 0.1)")
+            .attr("stroke-width", 0.5)
+            .attr("rx", 2)
+            .attr("ry", 2)
+            .style("pointer-events", "none");
+            
+        // 渲染连接线标签
+        this.linkLabelElements = this.g.selectAll(".link-label")
+            .data(this.links, d => d.id)
+            .join("text")
+            .classed("link-label", true)
+            .text(d => d.label || "")
+            .attr("font-size", "9px")
+            .attr("font-family", "Arial, sans-serif")
+            .attr("text-anchor", "middle")
+            .attr("fill", "#555")
+            .attr("dy", "0.35em")
+            .style("pointer-events", "none")
+            .style("user-select", "none")
+            .style("opacity", 0.9);
+            
         // 渲染节点
         this.nodeElements = this.g.selectAll(".node")
             .data(this.nodes, d => d.id)
@@ -178,7 +207,7 @@ class D3NetworkGraph {
             .data(this.nodes, d => d.id)
             .join("text")
             .classed("label", true)
-            .text(d => d.label)
+            .text(d => d.name || d.label)
             .attr("font-size", this.config.node.fontSize)
             .attr("font-family", "Arial, sans-serif")
             .attr("text-anchor", "middle")
@@ -236,6 +265,7 @@ class D3NetworkGraph {
                 } else {
                     const sourceX = d.source.x + (dx / distance) * sourceRadius;
                     const sourceY = d.source.y + (dy / distance) * sourceRadius;
+                    // 连线到达目标节点边缘，箭头会自动从此处开始
                     const targetX = d.target.x - (dx / distance) * targetRadius;
                     const targetY = d.target.y - (dy / distance) * targetRadius;
                     
@@ -244,6 +274,35 @@ class D3NetworkGraph {
                         .attr("y1", sourceY)
                         .attr("x2", targetX)
                         .attr("y2", targetY);
+                }
+            });
+        }
+            
+        // 更新连接线标签位置 - 放在连线中间
+        if (this.linkLabelElements) {
+            this.linkLabelElements
+                .attr("x", d => (d.source.x + d.target.x) / 2)
+                .attr("y", d => (d.source.y + d.target.y) / 2);
+        }
+        
+        // 更新连接线标签背景位置和大小
+        if (this.linkLabelBgElements && this.linkLabelElements) {
+            this.linkLabelElements.each(function(d, i) {
+                const textElement = this;
+                const bgElement = d3.select(d3.selectAll('.link-label-bg').nodes()[i]);
+                
+                if (textElement && !bgElement.empty()) {
+                    try {
+                        const bbox = textElement.getBBox();
+                        const padding = 3;
+                        bgElement
+                            .attr("x", bbox.x - padding)
+                            .attr("y", bbox.y - padding)
+                            .attr("width", bbox.width + 2 * padding)
+                            .attr("height", bbox.height + 2 * padding);
+                    } catch (e) {
+                        // getBBox可能在某些情况下失败，忽略错误
+                    }
                 }
             });
         }
@@ -286,6 +345,20 @@ class D3NetworkGraph {
             this.linkElements
                 .style("opacity", d => 
                     (d.source.id === nodeId || d.target.id === nodeId) ? 0.8 : 0.1
+                );
+        }
+        
+        if (this.linkLabelElements) {
+            this.linkLabelElements
+                .style("opacity", d => 
+                    (d.source.id === nodeId || d.target.id === nodeId) ? 1 : 0.2
+                );
+        }
+        
+        if (this.linkLabelBgElements) {
+            this.linkLabelBgElements
+                .style("opacity", d => 
+                    (d.source.id === nodeId || d.target.id === nodeId) ? 1 : 0.2
                 );
         }
     }
@@ -353,6 +426,29 @@ class D3NetworkGraph {
                     (d.source.id === nodeId || d.target.id === nodeId) ? 2 : this.config.link.strokeWidth
                 );
         }
+        
+        if (this.linkLabelElements) {
+            this.linkLabelElements
+                .style("opacity", d => 
+                    (d.source.id === nodeId || d.target.id === nodeId) ? 1 : 0.2
+                )
+                .style("font-weight", d => 
+                    (d.source.id === nodeId || d.target.id === nodeId) ? "600" : "normal"
+                )
+                .attr("fill", d => 
+                    (d.source.id === nodeId || d.target.id === nodeId) ? "#1976D2" : "#555"
+                );
+        }
+        
+        if (this.linkLabelBgElements) {
+            this.linkLabelBgElements
+                .style("opacity", d => 
+                    (d.source.id === nodeId || d.target.id === nodeId) ? 1 : 0.2
+                )
+                .attr("fill", d => 
+                    (d.source.id === nodeId || d.target.id === nodeId) ? "rgba(33, 150, 243, 0.1)" : "rgba(255, 255, 255, 0.85)"
+                );
+        }
     }
     
     // 以指定节点为中心调整视图
@@ -379,6 +475,91 @@ class D3NetworkGraph {
             .call(this.zoom.transform, d3.zoomIdentity.translate(translate[0], translate[1]).scale(scale));
     }
     
+    // 智能最佳视图：以指定节点为中心，优化显示相关节点
+    focusOnNodeWithOptimalView(nodeId) {
+        const targetNode = this.nodes.find(n => n.id === nodeId);
+        if (!targetNode) return;
+        
+        // 如果节点位置还未确定，等待仿真稳定后再尝试
+        if (!targetNode.x || !targetNode.y || targetNode.x === 0 || targetNode.y === 0) {
+            setTimeout(() => {
+                this.focusOnNodeWithOptimalView(nodeId);
+            }, 300);
+            return;
+        }
+        
+        // 找到与目标节点直接连接的所有节点
+        const connectedNodes = new Set([targetNode]);
+        this.links.forEach(link => {
+            if (link.source.id === nodeId) {
+                connectedNodes.add(link.target);
+            } else if (link.target.id === nodeId) {
+                connectedNodes.add(link.source);
+            }
+        });
+        
+        const connectedNodesArray = Array.from(connectedNodes);
+        
+        // 如果只有目标节点或相关节点很少，使用简单居中
+        if (connectedNodesArray.length <= 2) {
+            this.focusOnNode(nodeId);
+            return;
+        }
+        
+        // 计算相关节点的边界
+        const xs = connectedNodesArray.map(n => n.x).filter(x => x != null);
+        const ys = connectedNodesArray.map(n => n.y).filter(y => y != null);
+        
+        if (xs.length === 0 || ys.length === 0) {
+            this.focusOnNode(nodeId);
+            return;
+        }
+        
+        const minX = Math.min(...xs);
+        const maxX = Math.max(...xs);
+        const minY = Math.min(...ys);
+        const maxY = Math.max(...ys);
+        
+        // 添加适当的边距
+        const padding = 80;
+        const contentWidth = (maxX - minX) + padding * 2;
+        const contentHeight = (maxY - minY) + padding * 2;
+        const contentCenterX = (minX + maxX) / 2;
+        const contentCenterY = (minY + maxY) / 2;
+        
+        // 计算合适的缩放比例，确保相关节点都能显示
+        const scaleX = Math.min(this.width * 0.85 / contentWidth, 3.0);
+        const scaleY = Math.min(this.height * 0.85 / contentHeight, 3.0);
+        let scale = Math.min(scaleX, scaleY);
+        
+        // 确保最小缩放，避免过小
+        scale = Math.max(scale, 0.8);
+        
+        // 但目标节点应该尽可能在中心，做适当调整
+        const targetWeight = 0.7; // 目标节点的权重
+        const adjustedCenterX = contentCenterX * (1 - targetWeight) + targetNode.x * targetWeight;
+        const adjustedCenterY = contentCenterY * (1 - targetWeight) + targetNode.y * targetWeight;
+        
+        const translate = [
+            this.width / 2 - scale * adjustedCenterX,
+            this.height / 2 - scale * adjustedCenterY
+        ];
+        
+        this.svg.transition()
+            .duration(1000)
+            .call(this.zoom.transform, d3.zoomIdentity.translate(translate[0], translate[1]).scale(scale));
+    }
+
+    
+    // 清除节点约束
+    clearRadialLayoutConstraints() {
+        // 移除所有节点的固定位置约束
+        this.nodes.forEach(node => {
+            node.fx = null;
+            node.fy = null;
+        });
+    }
+    
     // 重置高亮
     resetHighlight() {
         if (this.nodeElements) {
@@ -401,12 +582,18 @@ class D3NetworkGraph {
                 .attr("stroke", this.config.link.color)
                 .attr("stroke-width", this.config.link.strokeWidth);
         }
-            
-        if (this.linkElements) {
-            this.linkElements
-                .style("opacity", 0.6)
-                .attr("stroke", this.config.link.color)
-                .attr("stroke-width", this.config.link.strokeWidth);
+        
+        if (this.linkLabelElements) {
+            this.linkLabelElements
+                .style("opacity", 0.9)
+                .style("font-weight", "normal")
+                .attr("fill", "#555");
+        }
+        
+        if (this.linkLabelBgElements) {
+            this.linkLabelBgElements
+                .style("opacity", 1)
+                .attr("fill", "rgba(255, 255, 255, 0.85)");
         }
     }
     
@@ -640,4 +827,5 @@ class D3NetworkGraph {
 }
 
 // 导出给主模块使用
-window.D3NetworkGraph = D3NetworkGraph; 
+window.D3NetworkGraph = D3NetworkGraph;
+window.D3Graph = D3NetworkGraph; 

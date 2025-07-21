@@ -1,11 +1,11 @@
 export const CONTENT = {
   title: 'Jit 开发框架',
-  subtitle: '基于JAAP的企业级应用开发框架，提供从基础设施到业务层组件的全栈技术底座',
+  subtitle: '基于JAAP的企业级应用开发框架，提供应用层的全栈技术框架',
   frameworks: [
     {
       id: 'jitai',
       name: 'JitAi',
-      description: '人工智能框架，提供大语言模型集成、智能代理构建、AI助手开发和知识库管理能力',
+      description: 'AI智能体、AI助理开发框架，提供大语言模型集成、智能代理构建、AI助手开发和知识库管理能力',
       icon: '🤖',
     },
     {

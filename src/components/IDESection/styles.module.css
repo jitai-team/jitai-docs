@@ -200,15 +200,47 @@
   margin-top: 4rem;
   overflow: hidden;
   position: relative;
-  padding: 0 2rem;
+  padding: 0 4rem;
   width: 100%;
+}
+
+/* 左右边界渐变遮罩 */
+.developmentModules::before,
+.developmentModules::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.developmentModules::before {
+  left: 0;
+  background: linear-gradient(to right,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.8) 20%,
+    rgba(255, 255, 255, 0.4) 60%,
+    rgba(255, 255, 255, 0.1) 85%,
+    rgba(255, 255, 255, 0) 100%);
+}
+
+.developmentModules::after {
+  right: 0;
+  background: linear-gradient(to left,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.8) 20%,
+    rgba(255, 255, 255, 0.4) 60%,
+    rgba(255, 255, 255, 0.1) 85%,
+    rgba(255, 255, 255, 0) 100%);
 }
 
 .modulesGrid {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-top: 2rem;
+  margin: 1rem 0;
   width: max-content;
 }
 
@@ -312,6 +344,14 @@
 
 /* 响应式设计 */
 @media (max-width: 1024px) {
+  .developmentModules {
+    padding: 0 3rem;
+  }
+
+  .developmentModules::before,
+  .developmentModules::after {
+    width: 3rem;
+  }
   .title {
     font-size: 2.5rem;
   }
@@ -356,7 +396,6 @@
   }
 
   .moduleCard {
-    width: 200px;
     padding: 0.8rem;
   }
 
@@ -367,6 +406,15 @@
 }
 
 @media (max-width: 768px) {
+  .developmentModules {
+    padding: 0 2rem;
+  }
+
+  .developmentModules::before,
+  .developmentModules::after {
+    width: 2rem;
+  }
+
   .ideSection {
     padding: 6rem 0;
   }
@@ -417,7 +465,6 @@
   }
 
   .moduleCard {
-    width: 160px;
     padding: 0.6rem;
   }
 
@@ -431,6 +478,15 @@
 }
 
 @media (max-width: 480px) {
+  .developmentModules {
+    padding: 0 1.5rem;
+  }
+
+  .developmentModules::before,
+  .developmentModules::after {
+    width: 1.5rem;
+  }
+
   .ideSection {
     padding: 4rem 0;
   }
@@ -454,7 +510,6 @@
 
 
   .moduleCard {
-    width: 140px;
     padding: 0.5rem;
   }
 

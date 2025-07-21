@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JitAi知识图谱</title>
-    <script src="https://unpkg.com/vis-network@10.0.1/dist/vis-network.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/vis-network@10.0.1/dist/vis-network.min.css">
+    <!-- D3.js 数据可视化库 -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <!-- 新架构文件 -->
-    <script src="assets/js/config.js"></script>
-    <script src="assets/js/core.js"></script>
+    <script src="assets/js/d3-graph.js"></script>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -157,29 +156,39 @@
 
         .filters {
             flex: 1;
+            max-width: 320px;
+            width: auto;
             overflow-y: auto;
-            overflow-x: auto;
+            overflow-x: hidden;
             padding: 12px;
             padding-right: 8px;
+            min-height: 200px;
+            max-height: calc(100vh - 320px);
         }
 
         .filters::-webkit-scrollbar {
-            width: 6px;
+            width: 8px;
             height: 6px;
         }
 
         .filters::-webkit-scrollbar-track {
             background: #f1f1f1;
-            border-radius: 3px;
+            border-radius: 4px;
+            margin: 2px;
         }
 
         .filters::-webkit-scrollbar-thumb {
             background: #c1c1c1;
-            border-radius: 3px;
+            border-radius: 4px;
+            border: 1px solid #f1f1f1;
         }
 
         .filters::-webkit-scrollbar-thumb:hover {
             background: #a8a8a8;
+        }
+
+        .filters::-webkit-scrollbar-thumb:active {
+            background: #999;
         }
 
         .filters::-webkit-scrollbar-corner {
@@ -188,7 +197,8 @@
 
         .tree-container {
             padding: 5px 0;
-            min-width: 280px;
+            width: 100%;
+            max-width: 280px;
         }
 
         .tree-node {
@@ -205,6 +215,7 @@
             min-height: 24px;
             white-space: nowrap;
             position: relative;
+            overflow: hidden;
         }
         
         .tree-node-header:hover {
@@ -310,12 +321,55 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            max-width: calc(100% - 60px);
+            flex: 1;
+            min-width: 0;
         }
 
-        /* 自适应层级缩进 - 将通过JavaScript动态设置 */
+        /* 自适应层级缩进 */
         .tree-node {
             position: relative;
+        }
+        
+        /* 层级缩进：每一级缩进12px，统一且不过度占用宽度 */
+        .tree-node[data-level="0"] .tree-node-header {
+            padding-left: 0;
+        }
+        
+        .tree-node[data-level="1"] .tree-node-header {
+            padding-left: 12px;
+        }
+        
+        .tree-node[data-level="2"] .tree-node-header {
+            padding-left: 24px;
+        }
+        
+        .tree-node[data-level="3"] .tree-node-header {
+            padding-left: 36px;
+        }
+        
+        .tree-node[data-level="4"] .tree-node-header {
+            padding-left: 48px;
+        }
+        
+        .tree-node[data-level="5"] .tree-node-header {
+            padding-left: 60px;
+        }
+        
+        /* 通用缩进规则（CSS变量） */
+        .tree-node .tree-node-header {
+            padding-left: calc(var(--tree-level, 0) * 12px);
+        }
+        
+        /* 层级连接线 */
+        .tree-node[data-level]:not([data-level="0"])::before {
+            content: "";
+            position: absolute;
+            left: calc(var(--tree-level, 0) * 12px - 6px);
+            top: 50%;
+            width: 6px;
+            height: 1px;
+            background-color: #dee2e6;
+            transform: translateY(-50%);
         }
 
         /* 循环节点特殊样式 */
@@ -560,6 +614,86 @@
             line-height: 1.6;
             font-size: 14px;
             position: relative;
+        }
+        
+        /* 节点信息面板新样式 */
+        .node-description {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .node-labels {
+            margin-bottom: 12px;
+        }
+        
+        .label-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            background: #e3f2fd;
+            color: #1976d2;
+            border-radius: 12px;
+            font-size: 11px;
+            margin-right: 6px;
+            margin-bottom: 4px;
+        }
+        
+        .node-properties {
+            margin-bottom: 12px;
+        }
+        
+        .property-item {
+            margin-bottom: 6px;
+            font-size: 13px;
+        }
+        
+        .related-nodes h4 {
+            margin: 0 0 8px 0;
+            font-size: 14px;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .relation-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 4px 0;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        
+        .relation-item:last-child {
+            border-bottom: none;
+        }
+        
+        .node-link {
+            color: #1976d2;
+            text-decoration: none;
+            font-weight: 500;
+            flex: 1;
+        }
+        
+        .node-link:hover {
+            text-decoration: underline;
+        }
+        
+        .relation-type {
+            font-size: 11px;
+            color: #666;
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 8px;
+            margin-left: 8px;
+        }
+        
+        .no-info {
+            color: #999;
+            font-style: italic;
+            text-align: center;
+            padding: 20px 0;
         }
 
         /* 滚动提示阴影 - 固定在面板底部 */
@@ -870,6 +1004,7 @@
                     <div class="control-buttons">
                         <button class="btn btn-secondary" onclick="restabilizeNetwork()">重新稳定</button>
                         <button class="btn btn-secondary" onclick="optimizeView()">最佳视图</button>
+                        <button class="btn btn-secondary" onclick="showAllNodes()">显示全部</button>
                     </div>
                 </div>
 
@@ -892,7 +1027,7 @@
         </div>
         
         <div class="graph-container">
-            <div id="network"></div>
+                            <svg id="network" style="width: 100%; height: 100%;"></svg>
             
             <!-- 悬浮搜索框 -->
             <div class="floating-search" id="floatingSearch">

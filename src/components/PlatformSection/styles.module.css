@@ -84,7 +84,7 @@
 
 .featureCard:hover {
   transform: translateY(-8px);
-  box-shadow: var(--shadow-hover);
+  box-shadow: var(--hover-shadow-card);
   border-color: var(--section-accent);
 }
 

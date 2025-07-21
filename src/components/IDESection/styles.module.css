@@ -86,7 +86,7 @@
 
 .coreFeatureCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 16px 32px rgba(31, 41, 55, 0.12);
+  box-shadow: var(--hover-shadow-card);
   border-color: var(--section-accent);
 }
 
@@ -245,7 +245,7 @@
 
 .moduleCard:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(31, 41, 55, 0.1);
+  box-shadow: var(--hover-shadow-card);
   border-color: var(--section-accent);
 }
 

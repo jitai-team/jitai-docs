@@ -63,6 +63,10 @@
   --hover-shadow-primary: 0 20px 40px rgba(75, 85, 99, var(--opacity-heavy));
   --hover-shadow-hero: 0 10px 25px rgba(55, 65, 81, var(--opacity-hover));
   --hover-shadow-navbar: 0 4px 8px rgba(75, 85, 99, var(--opacity-shadow));
+  --hover-shadow-card:
+    0 20px 40px rgba(31, 41, 55, 0.15),
+    0 8px 16px rgba(31, 41, 55, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
 
   /* 字体系统 */
   --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -153,10 +157,7 @@ body {
 
 .baseCard:hover {
   transform: translateY(-8px);
-  box-shadow:
-    0 20px 25px -5px var(--shadow-color),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04),
-    0 0 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: var(--hover-shadow-card);
 }
 
 .baseCard:hover::before {

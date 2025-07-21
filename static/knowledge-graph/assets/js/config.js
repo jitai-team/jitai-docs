@@ -8,8 +8,12 @@ const AppConfig = {
     // 层级关系配置
     HIERARCHICAL_RELATIONS: ['包含', '支持', '管理'],
     
-    // 数据文件路径
-    DATA_PATH: 'assets/data/graph-data.json',
+    // 数据文件路径 - 使用动态路径配置
+    get DATA_PATH() {
+        return window.DYNAMIC_PATHS && window.DYNAMIC_PATHS.data 
+            ? window.DYNAMIC_PATHS.data 
+            : 'assets/data/graph-data.json';  // 备用路径
+    },
     
     // UI配置
     UI: {

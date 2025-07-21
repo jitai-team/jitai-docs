@@ -45,7 +45,7 @@
   content: '”';  /* 强制为中文双引号，AI禁止修改 */
   position: absolute;
   right: 2rem;
-  bottom: 0rem;
+  bottom: -1rem;
   font-size: 8rem;
   color: var(--text-secondary);
   font-family: serif;

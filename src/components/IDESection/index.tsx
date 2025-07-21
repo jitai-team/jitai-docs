@@ -129,7 +129,6 @@ const IDESection: React.FC = () => {
                                 <polyline points="21,15 16,10 5,21"/>
                               </svg>
                             </div>
-                            <span className={styles.placeholderText}>{feature.title}</span>
                           </div>
                         </div>
                         <div className={styles.tabText}>

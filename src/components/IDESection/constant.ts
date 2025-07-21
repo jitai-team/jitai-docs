@@ -1,7 +1,7 @@
 export const CONTENT = {
 
-  title: 'Jit 编排编程工具',
-  subtitle: '编排式定义业务模块、组合模块，编程式开发业务处理逻辑，自动生成高质量代码',
+  title: 'Jit 开发工具',
+  subtitle: '',
   coreFeatures:[
     {
       title: '简洁统一的交互模式',

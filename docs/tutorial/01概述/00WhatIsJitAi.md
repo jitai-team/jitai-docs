@@ -5,9 +5,9 @@ sidebar_position: 0
 # 极态是什么？
 **JitAi = Jit + AI**，Just In Time 即时、快速构建，for AI application。
 
-**极态**，极客态度（Geek Attitude），是为AI而生的下一代应用开发技术体系，旨在加快企业级AI应用落地，开启AI应用规模化时代。
+JitAi是为AI而生的下一代应用开发技术体系，旨在加快企业级AI应用落地，开启AI应用规模化时代。
 
-JitAi通过解释型系统、矩阵型元架构、图形化编排开发、自动化运维的有机结合，建立了一套完整的AI应用开发方法论和技术体系，为企业数字化转型和AI赋能提供了标准化、工业化的技术底座，为行业降本增效。
+JitAi通过解释型系统、矩阵型元架构、图形化编排开发、自动化运维的有机结合，建立了一套完整的AI应用开发方法论和技术体系，为企业数字化转型和AI赋能提供了标准化、工业化的技术底座。
 
 ## 技术架构总览
 
@@ -17,7 +17,7 @@ JitAi构建了一个开放的三层技术架构，**以[JAAP(Jit AI Application 
 
 ## 四大核心技术组件
 
-- **[JitAi开发工具](/docs/category/开发工具)** - 符合[JAAP](/docs/tutorial/01概述/01JAAP)规范的三模（可视化、全代码、AI生成）统一的企业级AI应用开发工具，由应用运行平台解释运行，提供编排式编程体验
+- **[JitAi开发工具](/docs/category/开发工具)** - 符合[JAAP](/docs/tutorial/01概述/01JAAP)规范的双模（可视化、全代码）统一的企业级AI应用开发工具，由应用运行平台解释运行，提供编排式编程体验
 - **[JitAi开发框架](/docs/category/开发框架)** - 高度可复用、可扩展架构的模块化开发框架。提供Ai、Auth、I18N、Message、ORM、Pay、Service、Storage、Task、Web、Workflow等全栈业务开发组件，这些组件均遵循JAAP规范，在开发工具中开箱即用
 - **[JitAi运维平台](/docs/category/运维平台)** - 符合[JAAP](/docs/tutorial/01概述/01JAAP)规范的一站式自动化运维管理平台，由应用运行平台解释运行，支持应用的创建、发布、部署、运维
 - **[JitAi应用运行平台](/docs/category/应用运行平台)** - 微内核的[JAAP](/docs/tutorial/01概述/01JAAP)应用解释与运行平台，提供系统级API，开发者可搭配系统API和开发框架开发应用

@@ -343,8 +343,6 @@
 }
 
 .secondaryButton:hover {
-  background: var(--text-primary);
-  color: white;
   border-color: var(--text-primary);
 }
 

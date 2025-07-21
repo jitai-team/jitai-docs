@@ -25,7 +25,6 @@
 .sectionSubtitle {
   font-size: var(--font-size-subtitle);
   color: var(--text-secondary);
-  max-width: 800px;
   margin: 1.5rem auto 0;
   line-height: 1.6;
   font-weight: 400;

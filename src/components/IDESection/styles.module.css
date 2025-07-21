@@ -44,7 +44,6 @@
 .subtitle {
   font-size: var(--font-size-subtitle);
   color: var(--text-secondary);
-  max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
 }

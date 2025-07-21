@@ -49,58 +49,154 @@
   line-height: 1.6;
 }
 
-/* 核心特性部分 - 简化设计 */
+/* 核心特性部分 - Tabs设计 */
 .coreFeatures {
   margin-bottom: 6rem;
 }
 
-.coreFeaturesGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 5rem;
+.tabsContainer {
   margin-top: 2rem;
 }
 
-.coreFeatureCard {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  align-items: center;
+.tabsNav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.tabButton {
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
-  border-radius: 16px;
-  padding: 4rem;
   border: 1px solid var(--border-color);
-  box-shadow: 0 8px 24px rgba(31, 41, 55, 0.08);
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tabButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.tabButton:hover::before {
+  left: 100%;
+}
+
+.tabButton:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--hover-shadow-card);
+}
+
+.activeTab {
+  background: var(--gradient-section);
+  color: white;
+  border-color: var(--section-accent);
+  box-shadow: 0 4px 12px rgba(31, 41, 55, 0.15);
+  position: relative;
+}
+
+
+
+
+
+.tabsContent {
+  position: relative;
+  min-height: 800px;
+  overflow: visible;
+}
+
+.tabPanel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s ease;
+  pointer-events: none;
+  height: auto;
+}
+
+.activePanel {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* 向前切换：旧内容向上淡出，新内容从下方淡入 */
+.forwardDirection {
+  transform: translateY(30px);
+}
+
+.forwardDirection.activePanel {
+  transform: translateY(0);
+}
+
+/* 向后切换：旧内容向下淡出，新内容从上方淡入 */
+.backwardDirection {
+  transform: translateY(-30px);
+}
+
+.backwardDirection.activePanel {
+  transform: translateY(0);
+}
+
+.tabContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  /* background: rgba(255, 255, 255, 0.8); */
+  /* backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 24px rgba(31, 41, 55, 0.08); */
   transition: all 0.3s ease;
   position: relative;
 }
 
-.coreFeatureCard:nth-child(even) {
-  grid-template-columns: 1fr 1fr;
-}
-
-.coreFeatureCard:nth-child(odd) {
-  grid-template-columns: 1fr 1fr;
-}
-
-.coreFeatureCard:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--hover-shadow-card);
-  border-color: var(--section-accent);
-}
-
-.coreFeatureImage {
+.tabImage {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 400px;
   position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+.tabText {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0;
+  text-align: center;
+}
+
+.tabDescription {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1.4rem;
+  margin: 0;
+  font-weight: 400;
+  text-align: center;
 }
 
 .imagePlaceholder {
   width: 100%;
-  height: 400px;
+  height: 100%;
   background: linear-gradient(135deg, var(--theme-primary) 0%, var(--theme-secondary) 50%, var(--theme-accent) 100%);
   border-radius: 12px;
   display: flex;
@@ -148,51 +244,6 @@
   z-index: 1;
   position: relative;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-.coreFeatureContent {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-  padding: 1rem 0;
-}
-
-.coreFeatureTitle {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--section-primary);
-  margin: 0;
-  line-height: 1.2;
-  background: linear-gradient(135deg, var(--section-primary) 0%, var(--section-secondary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  position: relative;
-}
-
-.coreFeatureTitle::after {
-  content: '';
-  position: absolute;
-  bottom: -0.5rem;
-  left: 0;
-  width: 4rem;
-  height: 3px;
-  background: var(--gradient-section);
-  border-radius: 2px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.coreFeatureCard:hover .coreFeatureTitle::after {
-  opacity: 1;
-}
-
-.coreFeatureDescription {
-  color: var(--text-secondary);
-  line-height: 1.8;
-  font-size: 1.3rem;
-  margin: 0;
-  font-weight: 400;
 }
 
 /* 可视化开发模块部分 - 2行卡片自动滚动 */
@@ -356,38 +407,27 @@
     font-size: 2.5rem;
   }
 
-  .coreFeaturesGrid {
-    gap: 4rem;
+  .tabsNav {
+    gap: 0.8rem;
   }
 
-  .coreFeatureCard {
-    gap: 3rem;
+  .tabButton {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .tabContent {
+    gap: 2.5rem;
     padding: 3rem;
   }
 
-  .coreFeatureCard:nth-child(even) {
-    grid-template-columns: 1fr 1fr;
+
+
+  .tabDescription {
+    font-size: 1.2rem;
   }
 
-  .coreFeatureCard:nth-child(odd) {
-    grid-template-columns: 1fr 1fr;
-  }
 
-  .coreFeatureImage {
-    min-height: 300px;
-  }
-
-  .imagePlaceholder {
-    height: 300px;
-  }
-
-  .coreFeatureTitle {
-    font-size: 2rem;
-  }
-
-  .coreFeatureDescription {
-    font-size: 1.1rem;
-  }
 
 
 
@@ -435,28 +475,28 @@
     font-size: 1rem;
   }
 
-  .coreFeaturesTitle {
-    font-size: 1.5rem;
+  .tabsNav {
+    gap: 0.5rem;
     margin-bottom: 2rem;
   }
 
-  .coreFeaturesGrid {
-    gap: 3rem;
+  .tabButton {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
   }
 
-  .coreFeatureCard {
-    grid-template-columns: 1fr !important;
+  .tabContent {
     gap: 2rem;
     padding: 2rem;
   }
 
-  .coreFeatureTitle {
-    font-size: 1.8rem;
+
+
+  .tabDescription {
+    font-size: 1.1rem;
   }
 
-  .coreFeatureDescription {
-    font-size: 1rem;
-  }
+
 
 
 
@@ -495,17 +535,31 @@
     font-size: 1.8rem;
   }
 
-  .coreFeatureCard {
+  .tabsNav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .tabButton {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .tabContent {
     padding: 1.5rem;
+    gap: 1.5rem;
   }
 
-  .coreFeatureTitle {
-    font-size: 1.5rem;
+
+
+  .tabDescription {
+    font-size: 1rem;
   }
 
-  .coreFeatureDescription {
-    font-size: 0.95rem;
-  }
+
 
 
 

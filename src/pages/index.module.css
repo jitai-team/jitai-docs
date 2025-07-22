@@ -87,6 +87,12 @@
 
 /* 全局样式 */
 body {
+
+  h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--section-primary);
+  }
 }
 
 .container {
@@ -280,6 +286,10 @@ body {
     font-size: 1rem;
     margin-bottom: 2rem;
   }
+
+  h3 {
+    font-size: 1.4rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -289,5 +299,9 @@ body {
 
   .sectionSubtitle {
     font-size: 0.95rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
   }
 }

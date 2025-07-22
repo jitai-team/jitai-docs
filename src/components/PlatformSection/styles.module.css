@@ -1,4 +1,4 @@
-/* Platform Section 样式 - 深青灰配色方案 */
+/* Platform Section 样式 - 商务灰配色方案 */
 
 .platformSection {
   padding: var(--section-padding);
@@ -174,10 +174,7 @@
 }
 
 .featureContent h3 {
-  font-size: 1.6rem;
-  font-weight: 700;
   margin: 0;
-  color: var(--section-primary);
   text-align: center;
   position: relative;
   flex-shrink: 0;
@@ -220,10 +217,6 @@
   .featureImage {
     height: 120px;
   }
-
-  .featureContent h3 {
-    font-size: 1.4rem;
-  }
 }
 
 @media (max-width: 480px) {
@@ -243,10 +236,6 @@
 
   .featureImage {
     height: 100px;
-  }
-
-  .featureContent h3 {
-    font-size: 1.3rem;
   }
 
   .featureDescription {

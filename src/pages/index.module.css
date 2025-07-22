@@ -212,6 +212,60 @@ body {
   border-color: var(--section-primary);
 }
 
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--theme-primary) 0%, var(--theme-secondary) 50%, var(--theme-accent) 100%);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(31, 41, 55, 0.1);
+  transition: all 0.3s ease;
+}
+
+.imagePlaceholder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.imagePlaceholder:hover::before {
+  opacity: 1;
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.placeholderIcon {
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  opacity: 0.8;
+}
+
+.placeholderText {
+  color: var(--text-secondary);
+  font-size: 1.3rem;
+  font-weight: 600;
+  z-index: 1;
+  position: relative;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+
 /* 通用响应式样式 */
 @media (max-width: 768px) {
   .sectionTitle {

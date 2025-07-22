@@ -35,86 +35,75 @@
 
 .featureRow {
   display: flex;
-  align-items: center;
-  margin-bottom: 6rem;
-  gap: 4rem;
+  gap: 2rem;
+  margin-bottom: 4rem;
   min-height: 400px;
 }
 
-.featureRowLeft {
-  flex-direction: row;
-}
-
-.featureRowRight {
-  flex-direction: row-reverse;
-}
-
-.featureImage {
-  flex: 2;
+.featureCard {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.imagePlaceholder {
-  width: 100%;
-  height: 400px;
-  background: linear-gradient(135deg, var(--color-dark) 10%, transparent 100%);
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.02);
   border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 8px 32px var(--shadow-color);
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: var(--transition-primary);
-  border: 1px solid var(--border-color);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
-.imagePlaceholder:hover::before {
+.featureCard::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.15) 50%, transparent 70%);
-  animation: shimmer 3s infinite;
+  height: 4px;
+  background: var(--gradient-section);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
 }
 
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-.placeholderText {
-  color: rgb(195, 195, 195);
-  font-size: 1.2rem;
-  font-weight: 600;
-  z-index: 1;
-  position: relative;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.featureImage:hover .imagePlaceholder {
+.featureCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(8, 145, 178, 0.15);
+  box-shadow: var(--hover-shadow-card);
   border-color: var(--section-accent);
+}
+/*
+.featureCard:hover::before {
+  transform: scaleX(1);
+} */
+
+
+.wideCard {
+  flex: 9;
+}
+
+.narrowCard {
+  flex: 6;
+}
+
+.featureImage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 1.5rem;
+  min-height: 300px;
 }
 
 .featureContent {
   flex: 1;
-  padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .featureContent h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   color: var(--section-primary);
   position: relative;
 }
@@ -122,12 +111,12 @@
 .featureContent h3::after {
   content: '';
   position: absolute;
-  bottom: -0.5rem;
+  bottom: -0.3rem;
   left: 0;
-  width: 4rem;
-  height: 3px;
-  background: linear-gradient(90deg, var(--section-accent) 0%, #0891b2 100%);
-  border-radius: 2px;
+  width: 2rem;
+  height: 2px;
+  background: var(--section-accent);
+  border-radius: 1px;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -138,29 +127,33 @@
 
 .featureContent p {
   color: var(--text-secondary);
-  line-height: 1.8;
-  font-size: 1.1rem;
+  line-height: 1.6;
+  font-size: 1rem;
   margin: 0;
 }
 
 /* 响应式设计 */
 @media (max-width: 1024px) {
   .featureRow {
-    gap: 3rem;
-    margin-bottom: 4rem;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
     min-height: 350px;
   }
 
+  .featureCard {
+    padding: 1.2rem;
+  }
+
   .imagePlaceholder {
-    height: 250px;
+    height: 200px;
   }
 
   .featureContent h3 {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
   }
 
   .featureContent p {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 }
 
@@ -175,14 +168,14 @@
   }
 
   .featureRow {
-    flex-direction: column !important;
+    flex-direction: column;
     gap: 2rem;
     margin-bottom: 3rem;
     min-height: auto;
   }
 
-  .featureImage {
-    order: 1;
+  .wideCard,
+  .narrowCard {
     flex: none;
   }
 
@@ -190,14 +183,8 @@
     height: 200px;
   }
 
-  .featureContent {
-    order: 2;
-    padding: 1.5rem;
-    flex: none;
-  }
-
   .featureContent h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .featureContent p {
@@ -215,16 +202,16 @@
     margin-bottom: 2rem;
   }
 
+  .featureCard {
+    padding: 1rem;
+  }
+
   .imagePlaceholder {
     height: 150px;
   }
 
-  .featureContent {
-    padding: 1rem;
-  }
-
   .featureContent h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .featureContent p {

@@ -132,16 +132,17 @@
     flex-direction: column;
     gap: 2rem;
     margin-bottom: 3rem;
-    min-height: auto;
+  }
+
+  .featureImage {
+    min-height: 200px;
   }
 
   .wideCard,
   .narrowCard {
     flex: none;
-  }
-
-  .imagePlaceholder {
-    height: 200px;
+    width: 100%;
+    display: block;
   }
 
   .featureContent p {
@@ -159,12 +160,18 @@
     margin-bottom: 2rem;
   }
 
+  .featureImage {
+    min-height: 150px;
+  }
+
   .featureCard {
     padding: 1rem;
   }
 
-  .imagePlaceholder {
-    height: 150px;
+  .wideCard,
+  .narrowCard {
+    width: 100%;
+    display: block;
   }
 
   .featureContent p {
@@ -185,4 +192,24 @@
 .svgContentArea {
   fill: var(--svg-bg-light);
   stroke: var(--svg-border-light);
+}
+
+@media (max-width: 768px) {
+  .imagePlaceholder {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .imagePlaceholder {
+    height: 150px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

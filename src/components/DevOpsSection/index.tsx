@@ -57,7 +57,13 @@ const DevOpsSection: React.FC = () => {
                         >
                           <div className={styles.featureImage}>
                             <div className={globalStyles.imagePlaceholder}>
-                              <span className={globalStyles.placeholderText}>图片占位符</span>
+                              <div className={globalStyles.placeholderIcon}>
+                                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                                  <polyline points="21,15 16,10 5,21"/>
+                                </svg>
+                              </div>
                             </div>
                           </div>
                           <div className={styles.featureContent}>

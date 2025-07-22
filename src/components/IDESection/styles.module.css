@@ -213,7 +213,6 @@
   gap: 1rem;
   animation: slideLeft 40s linear infinite;
   width: max-content;
-  transform: translateX(0);
   will-change: transform;
 }
 

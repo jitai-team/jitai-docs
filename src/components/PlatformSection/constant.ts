@@ -13,7 +13,7 @@ export const CONTENT = {
       image: '/img/platform/auto-deploy.svg'
     },
     {
-      title: '容器化应用管理和运行',
+      title: '容器化管理/运行',
       description: '应用自动发现、部署、变更、打包、加载运行，高度自动化',
       image: '/img/platform/auto-deploy.svg'
     },

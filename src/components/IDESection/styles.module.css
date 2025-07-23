@@ -235,7 +235,7 @@
   border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 1rem;
-  box-shadow: 0 4px 12px rgba(31, 41, 55, 0.06);
+  box-shadow: 0 4px 12px var(--shadow-color);
   transition: all 0.3s ease;
   position: relative;
   cursor: pointer;
@@ -248,8 +248,8 @@
 
 .moduleCard:hover {
   transform: translateY(-4px) scale(1.02);
-  box-shadow: var(--hover-shadow-card);
-  border-color: var(--section-accent);
+  box-shadow: 0 20px 40px color-mix(in srgb, var(--card-color) 20%, transparent);
+  border-color: var(--card-color);
 }
 
 .moduleContent {
@@ -275,21 +275,26 @@
   line-height: 1.3;
   background: linear-gradient(135deg, var(--section-primary) 0%, var(--section-secondary) 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
   flex: 1;
 }
 
+
 .arrowIcon {
   color: var(--section-accent);
-  opacity: 0;
   transform: translateX(-10px);
   transition: all 0.3s ease;
+  opacity: 0;
 }
 
 .moduleCard:hover .arrowIcon {
   opacity: 1;
   transform: translateX(0);
+  color: var(--card-color);
+}
+
+.moduleCard:hover .moduleTitle {
+  color: var(--card-color);
 }
 
 .moduleDescription {

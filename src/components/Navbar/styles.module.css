@@ -111,13 +111,13 @@
 }
 
 .navLinks button:hover, .navLinks button:focus {
-  color: #2461fe;
+  color: #7c3aed;
   background: none;
   border: none;
 }
 
 .navLinks button.active {
-  color: #2461fe;
+  color: #7c3aed;
   background: none;
   border: none;
 }

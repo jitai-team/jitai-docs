@@ -146,7 +146,7 @@
 }
 
 .featureCard:hover .featureTitle {
-  color: var(--theme-primary);
+  color: var(--card-color);
 }
 
 .featureDescription {

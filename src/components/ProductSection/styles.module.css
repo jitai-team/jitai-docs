@@ -1,7 +1,7 @@
 /* Product Section 样式 - 浅色渐变背景突出多彩卡片 */
 .productSection {
   padding: var(--section-padding);
-  background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 50%, #f5f3ff 100%);
+  /* background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 50%, #f5f3ff 100%); */
   position: relative;
   overflow: hidden;
 }

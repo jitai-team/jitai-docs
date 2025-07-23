@@ -87,7 +87,7 @@ class D3NetworkGraph {
     createSimulation() {
         this.simulation = d3.forceSimulation()
             .force("link", d3.forceLink().id(d => d.id)
-                .distance(this.config.force.linkDistance)
+                .distance(link => this.calculateDynamicLinkDistance(link))
                 .strength(this.config.force.linkStrength))
             .force("charge", d3.forceManyBody()
                 .strength(this.config.force.charge))
@@ -146,7 +146,7 @@ class D3NetworkGraph {
     }
     
     /**
-     * 计算节点层级并设置大小
+     * 计算节点层级、大小和连接数
      */
     calculateNodeHierarchy() {
         if (!this.allNodes || !this.allLinks) return;
@@ -166,6 +166,20 @@ class D3NetworkGraph {
             }
         });
         
+        // 计算每个节点的连接数
+        const nodeConnections = new Map();
+        this.allNodes.forEach(node => nodeConnections.set(node.id, 0));
+        
+        this.allLinks.forEach(link => {
+            const sourceId = typeof link.source === 'object' ? link.source.id : link.source;
+            const targetId = typeof link.target === 'object' ? link.target.id : link.target;
+            nodeConnections.set(sourceId, (nodeConnections.get(sourceId) || 0) + 1);
+            nodeConnections.set(targetId, (nodeConnections.get(targetId) || 0) + 1);
+        });
+        
+        // 保存连接数信息供后续使用
+        this.nodeConnections = nodeConnections;
+        
         // 计算每个节点的层级深度
         const getNodeLevel = (nodeId, visited = new Set()) => {
             if (visited.has(nodeId)) return 0; // 避免循环引用
@@ -180,15 +194,13 @@ class D3NetworkGraph {
             return parentLevel + 1;
         };
         
-        // 为每个节点设置层级和对应的大小
-        let hierarchyStats = {};
+        // 为每个节点设置层级、大小和连接数
         this.allNodes.forEach(node => {
             const level = getNodeLevel(node.id);
-            node.hierarchyLevel = level;
+            const connections = nodeConnections.get(node.id) || 0;
             
-            // 统计层级分布
-            if (!hierarchyStats[level]) hierarchyStats[level] = 0;
-            hierarchyStats[level]++;
+            node.hierarchyLevel = level;
+            node.connections = connections;
             
             // 根据层级设置节点大小：顶级最大，逐层递减
             // 大小范围：12-30，进一步增大差异确保视觉效果明显
@@ -199,25 +211,53 @@ class D3NetworkGraph {
             node.size = Math.max(minRadius, maxRadius - (level * levelDecrement));
         });
         
-        // 调试输出层级统计信息
-        console.log('节点层级分布:', hierarchyStats);
-        console.log('发现的层次关系数量:', Object.keys(childParentMap).length);
-        
-        // 按层级分组显示大小范围
-        const sizeByLevel = {};
-        this.allNodes.forEach(node => {
-            const level = node.hierarchyLevel;
-            if (!sizeByLevel[level]) sizeByLevel[level] = [];
-            sizeByLevel[level].push(node.size);
-        });
-        
-        Object.keys(sizeByLevel).forEach(level => {
-            const sizes = sizeByLevel[level];
-            const uniqueSizes = [...new Set(sizes)];
-            console.log(`第${level}层节点大小: ${uniqueSizes.join(', ')}`);
-        });
+
     }
     
+    /**
+     * 计算动态连线距离
+     * 根据节点连接数和大小动态调整连线距离，减少高连接度节点的拥挤
+     */
+    calculateDynamicLinkDistance(link) {
+        // 获取连接的两个节点
+        const sourceNode = typeof link.source === 'object' ? link.source : 
+                          this.nodes?.find(n => n.id === link.source) || this.allNodes?.find(n => n.id === link.source);
+        const targetNode = typeof link.target === 'object' ? link.target : 
+                          this.nodes?.find(n => n.id === link.target) || this.allNodes?.find(n => n.id === link.target);
+        
+        if (!sourceNode || !targetNode) {
+            return this.config.force.linkDistance; // 回退到默认距离
+        }
+        
+        // 获取节点连接数（如果没有则从 nodeConnections 中获取或默认为1）
+        const sourceConnections = sourceNode.connections || this.nodeConnections?.get(sourceNode.id) || 1;
+        const targetConnections = targetNode.connections || this.nodeConnections?.get(targetNode.id) || 1;
+        const maxConnections = Math.max(sourceConnections, targetConnections);
+        
+        // 获取节点大小
+        const sourceSize = sourceNode.size || this.config.node.radius;
+        const targetSize = targetNode.size || this.config.node.radius;
+        const avgSize = (sourceSize + targetSize) / 2;
+        
+        // 动态距离计算
+        const baseDistance = 50;  // 基础距离（比原来的80更紧凑）
+        
+        // 连接数加成：连接越多，距离越远，但有上限避免过度分散
+        const connectionBonus = Math.min(maxConnections * 8, 80);
+        
+        // 大小加成：节点越大，距离越远
+        const sizeBonus = (avgSize - this.config.node.radius) * 1.5;
+        
+        // 层级差异加成：如果是父子关系（层级相差1），给予额外距离
+        const sourceLevelDiff = Math.abs((sourceNode.hierarchyLevel || 0) - (targetNode.hierarchyLevel || 0));
+        const hierarchyBonus = sourceLevelDiff === 1 ? 15 : 0;
+        
+        const dynamicDistance = baseDistance + connectionBonus + sizeBonus + hierarchyBonus;
+        
+        // 确保距离在合理范围内
+        return Math.max(40, Math.min(dynamicDistance, 200));
+    }
+
 
     
     /**

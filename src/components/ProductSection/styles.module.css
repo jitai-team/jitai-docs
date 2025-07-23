@@ -1,7 +1,7 @@
-/* Product Section 样式 */
+/* Product Section 样式 - 浅色渐变背景突出多彩卡片 */
 .productSection {
-  padding: 8rem 0;
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  padding: var(--section-padding);
+  /* background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 50%, #f5f3ff 100%); */
   position: relative;
   overflow: hidden;
 }
@@ -13,20 +13,20 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e2e8f0' fill-opacity='0.3'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  opacity: 0.5;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(36, 97, 254, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(202, 75, 167, 0.03) 0%, transparent 50%);
   pointer-events: none;
-  animation: float 20s ease-in-out infinite;
 }
 
 .sectionSubtitle {
-  font-size: 1.25rem;
+  font-size: var(--font-size-subtitle);
   text-align: center;
-  color: #6b7280;
+  color: var(--text-secondary);
   margin-bottom: 4rem;
-  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.6;
 }
 
 .cardsGrid {
@@ -36,12 +36,25 @@
   margin-top: 4rem;
   position: relative;
   z-index: 1;
+  align-items: stretch;
 }
 
 .card {
-  padding: 2.0rem;
+  padding: var(--card-padding);
   animation: fadeInUp 0.6s ease-out;
   animation-fill-mode: both;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 280px;
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 32px var(--shadow-color);
+  transition: var(--transition-primary);
 }
 
 .card:nth-child(1) { animation-delay: 0.1s; }
@@ -58,17 +71,15 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+  background: linear-gradient(90deg, var(--card-color) 0%, color-mix(in srgb, var(--card-color) 80%, white) 100%);
   transform: scaleX(0);
   transition: transform 0.4s ease;
 }
 
 .card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow:
-    0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04),
-    0 0 0 1px rgba(255, 255, 255, 0.9);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px color-mix(in srgb, var(--card-color) 20%, transparent);
+  border-color: var(--card-color);
 }
 
 .card:hover::before {
@@ -80,53 +91,55 @@
   margin-bottom: 1.5rem;
   display: block;
   text-align: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--card-color) 0%, color-mix(in srgb, var(--card-color) 80%, white) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
   transition: all 0.3s ease;
   transform: scale(1);
+  flex-shrink: 0;
 }
 
 .card:hover .cardIcon {
   transform: scale(1.1);
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 4px 8px rgba(8, 145, 178, 0.2));
+}
+
+.cardHeader {
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .card h3 {
   font-size: 1.6rem;
   font-weight: 700;
-  margin-bottom: 1.2rem;
-  color: #1e293b;
+  margin: 0;
+  color: var(--card-color);
   text-align: center;
   position: relative;
+  flex-shrink: 0;
 }
 
-.card h3::after {
-  content: '';
-  position: absolute;
-  bottom: -0.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 3rem;
-  height: 2px;
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-  border-radius: 1px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+.cardSubtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.3;
+  text-align: center;
 }
 
-.card:hover h3::after {
-  opacity: 1;
-}
-
-.card p {
-  color: #64748b;
+.cardDescription {
+  color: var(--text-secondary);
   line-height: 1.7;
-  font-size: 1rem;
+  font-size: var(--font-size-body);
   text-align: center;
   margin: 0;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* 响应式设计 */
@@ -148,6 +161,7 @@
 
   .card {
     padding: 2rem;
+    min-height: 240px;
   }
 
   .cardIcon {
@@ -171,6 +185,7 @@
 
   .card {
     padding: 1.5rem;
+    min-height: 220px;
   }
 
   .cardIcon {
@@ -180,11 +195,9 @@
 
   .card h3 {
     font-size: 1.3rem;
-    margin-bottom: 1rem;
   }
 
-  .card p {
-    font-size: 0.95rem;
-    line-height: 1.6;
+  .cardDescription {
+    font-size: 0.9rem;
   }
 }

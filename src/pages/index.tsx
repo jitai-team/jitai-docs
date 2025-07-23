@@ -3,6 +3,9 @@ import Layout from '@theme/Layout';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import ProductSection from '../components/ProductSection';
+import DevOpsSection from '../components/DevOpsSection';
+import IDESection from '../components/IDESection';
+import PlatformSection from '../components/PlatformSection';
 import FrameworkSection from '../components/FrameworkSection';
 import TechnologiesSection from '../components/TechnologiesSection';
 import styles from './index.module.css';
@@ -50,7 +53,10 @@ const HomePage: React.FC = () => {
         <HeroSection />
         <ProductSection />
         <TechnologiesSection />
+        <PlatformSection />
         <FrameworkSection />
+        <IDESection />
+        <DevOpsSection />
       </div>
     </LayoutComponent>
   );

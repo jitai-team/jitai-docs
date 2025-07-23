@@ -1,0 +1,149 @@
+<svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 主渐变 - 黑白灰 -->
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a5568;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d3748;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 次要渐变 - 浅灰 -->
+    <linearGradient id="secondaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#718096;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4a5568;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 成功渐变 - 深灰 -->
+    <linearGradient id="successGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d3748;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a202c;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 背景渐变 -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f1f5f9;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="140" height="100" rx="6" fill="url(#bgGradient)" stroke="#e2e8f0" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- 应用图标组 -->
+  <g transform="translate(15, 15)">
+    <!-- 应用1 -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="30" height="30" rx="3" fill="url(#primaryGradient)" stroke="#4a5568" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+        <animate attributeName="opacity" values="0.9;1;0.9" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="3" y="3" width="24" height="2" rx="1" fill="white" opacity="0.9"/>
+      <rect x="3" y="7" width="18" height="1.5" rx="0.75" fill="white" opacity="0.7"/>
+      <rect x="3" y="10" width="20" height="1.5" rx="0.75" fill="white" opacity="0.7"/>
+      <rect x="3" y="13" width="14" height="1.5" rx="0.75" fill="white" opacity="0.7"/>
+      <rect x="3" y="16" width="17" height="1.5" rx="0.75" fill="white" opacity="0.7"/>
+      <rect x="3" y="19" width="12" height="1.5" rx="0.75" fill="white" opacity="0.7"/>
+      <rect x="3" y="22" width="15" height="1.5" rx="0.75" fill="white" opacity="0.7"/>
+    </g>
+
+    <!-- 应用2 -->
+    <g transform="translate(35, 0)">
+      <rect x="0" y="0" width="30" height="30" rx="3" fill="url(#secondaryGradient)" stroke="#4a5568" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+        <animate attributeName="opacity" values="0.9;1;0.9" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+      </rect>
+      <rect x="3" y="3" width="24" height="2" rx="1" fill="white" opacity="0.9"/>
+      <rect x="3" y="7" width="18" height="1.5" rx="0.75" fill="white" opacity="0.7"/>
+      <rect x="3" y="10" width="20" height="1.5" rx="0.75" fill="white" opacity="0.7"/>
+      <rect x="3" y="13" width="14" height="1.5" rx="0.75" fill="white" opacity="0.7"/>
+      <rect x="3" y="16" width="17" height="1.5" rx="0.75" fill="white" opacity="0.7"/>
+      <rect x="3" y="19" width="12" height="1.5" rx="0.75" fill="white" opacity="0.7"/>
+      <rect x="3" y="22" width="15" height="1.5" rx="0.75" fill="white" opacity="0.7"/>
+    </g>
+
+    <!-- 应用3 -->
+    <g transform="translate(70, 0)">
+      <rect x="0" y="0" width="30" height="30" rx="3" fill="url(#successGradient)" stroke="#2d3748" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+        <animate attributeName="opacity" values="0.9;1;0.9" dur="3s" repeatCount="indefinite" begin="1s"/>
+      </rect>
+      <rect x="3" y="3" width="24" height="2" rx="1" fill="white" opacity="0.9"/>
+      <rect x="3" y="7" width="18" height="1.5" rx="0.75" fill="white" opacity="0.7"/>
+      <rect x="3" y="10" width="20" height="1.5" rx="0.75" fill="white" opacity="0.7"/>
+      <rect x="3" y="13" width="14" height="1.5" rx="0.75" fill="white" opacity="0.7"/>
+      <rect x="3" y="16" width="17" height="1.5" rx="0.75" fill="white" opacity="0.7"/>
+      <rect x="3" y="19" width="12" height="1.5" rx="0.75" fill="white" opacity="0.7"/>
+      <rect x="3" y="22" width="15" height="1.5" rx="0.75" fill="white" opacity="0.7"/>
+    </g>
+  </g>
+
+  <!-- 管理面板 -->
+  <g transform="translate(15, 50)">
+    <rect x="0" y="0" width="110" height="25" rx="4" fill="url(#primaryGradient)" stroke="#4a5568" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="6" y="5" width="98" height="3" rx="1.5" fill="white" opacity="0.9"/>
+    <rect x="6" y="10" width="70" height="2" rx="1" fill="white" opacity="0.7"/>
+    <rect x="6" y="14" width="80" height="2" rx="1" fill="white" opacity="0.7"/>
+    <rect x="6" y="18" width="60" height="2" rx="1" fill="white" opacity="0.7"/>
+  </g>
+
+  <!-- 状态指示器 -->
+  <g transform="translate(85, 60)">
+    <circle cx="0" cy="0" r="3" fill="#2d3748" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;1;0.9" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="12" cy="0" r="3" fill="#4a5568" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    <circle cx="24" cy="0" r="3" fill="#718096" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+  </g>
+
+  <!-- 连接线 -->
+  <g transform="translate(15, 50)" stroke="#4a5568" stroke-width="1" fill="none" stroke-dasharray="2,4" opacity="0.4" stroke-linecap="round">
+    <path d="M 15 15 L 15 50">
+      <animate attributeName="stroke-dasharray" values="2,4;8,4;2,4" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M 50 15 L 50 50">
+      <animate attributeName="stroke-dasharray" values="2,4;8,4;2,4" dur="3s" repeatCount="indefinite" begin="1s"/>
+    </path>
+    <path d="M 85 15 L 85 50">
+      <animate attributeName="stroke-dasharray" values="2,4;8,4;2,4" dur="3s" repeatCount="indefinite" begin="2s"/>
+    </path>
+  </g>
+
+  <!-- 生命周期流程 -->
+  <g transform="translate(15, 80)">
+    <circle cx="0" cy="0" r="3" fill="url(#successGradient)" opacity="0.9">
+      <animate attributeName="r" values="3;4;3" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="18" cy="0" r="3" fill="url(#secondaryGradient)" opacity="0.8">
+      <animate attributeName="r" values="3;4;3" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+    </circle>
+    <circle cx="36" cy="0" r="3" fill="url(#primaryGradient)" opacity="0.7">
+      <animate attributeName="r" values="3;4;3" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+    </circle>
+    <circle cx="54" cy="0" r="3" fill="url(#secondaryGradient)" opacity="0.6">
+      <animate attributeName="r" values="3;4;3" dur="2s" repeatCount="indefinite" begin="0.9s"/>
+    </circle>
+    <circle cx="72" cy="0" r="3" fill="url(#primaryGradient)" opacity="0.5">
+      <animate attributeName="r" values="3;4;3" dur="2s" repeatCount="indefinite" begin="1.2s"/>
+    </circle>
+    <circle cx="90" cy="0" r="3" fill="url(#successGradient)" opacity="0.4">
+      <animate attributeName="r" values="3;4;3" dur="2s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+
+    <!-- 连接线 -->
+    <path d="M 3 0 L 15 0" stroke="url(#successGradient)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+    <path d="M 21 0 L 33 0" stroke="url(#secondaryGradient)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+    <path d="M 39 0 L 51 0" stroke="url(#primaryGradient)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+    <path d="M 57 0 L 69 0" stroke="url(#secondaryGradient)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+    <path d="M 75 0 L 87 0" stroke="url(#primaryGradient)" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.6"/>
+  </g>
+
+  <!-- 管理标识 -->
+  <g transform="translate(100, 80)">
+    <rect x="0" y="0" width="25" height="12" rx="2" fill="url(#primaryGradient)" opacity="0.9" stroke="#4a5568" stroke-width="0.5">
+      <animate attributeName="opacity" values="0.9;1;0.9" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <text x="12.5" y="8" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="7" fill="white" font-weight="600">MGT</text>
+  </g>
+</svg>

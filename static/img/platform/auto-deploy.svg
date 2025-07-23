@@ -1,0 +1,139 @@
+<svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 主渐变 - 黑白灰 -->
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a5568;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d3748;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 次要渐变 - 浅灰 -->
+    <linearGradient id="secondaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#718096;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4a5568;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 成功渐变 - 深灰 -->
+    <linearGradient id="successGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d3748;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a202c;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 警告渐变 - 中灰 -->
+    <linearGradient id="warningGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a5568;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d3748;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 背景渐变 -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f1f5f9;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 阴影效果 -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="140" height="100" rx="12" fill="url(#bgGradient)" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- 自动化齿轮系统 -->
+  <g transform="translate(15, 20)">
+    <!-- 主齿轮 -->
+    <g transform="translate(25, 25)">
+      <circle cx="0" cy="0" r="20" fill="url(#warningGradient)" filter="url(#shadow)" stroke="#4a5568" stroke-width="1">
+        <animateTransform attributeName="transform" type="rotate" values="0;360" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="0" r="8" fill="white"/>
+
+      <!-- 齿轮齿 -->
+      <rect x="-2" y="-28" width="4" height="12" rx="2" fill="white"/>
+      <rect x="-2" y="16" width="4" height="12" rx="2" fill="white"/>
+      <rect x="-28" y="-2" width="12" height="4" rx="2" fill="white"/>
+      <rect x="16" y="-2" width="12" height="4" rx="2" fill="white"/>
+
+      <!-- 对角齿 -->
+      <rect x="-20" y="-20" width="8" height="8" rx="4" fill="white"/>
+      <rect x="12" y="-20" width="8" height="8" rx="4" fill="white"/>
+      <rect x="-20" y="12" width="8" height="8" rx="4" fill="white"/>
+      <rect x="12" y="12" width="8" height="8" rx="4" fill="white"/>
+    </g>
+
+    <!-- 智能箭头 -->
+    <g transform="translate(70, 25)">
+      <path d="M 0 0 L 25 0" stroke="url(#secondaryGradient)" stroke-width="4" fill="none" stroke-linecap="round">
+        <animate attributeName="stroke-dasharray" values="0,30;15,30" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 20 -6 L 25 0 L 20 6" stroke="url(#secondaryGradient)" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <!-- 部署目标 -->
+    <g transform="translate(100, 15)">
+      <rect x="0" y="0" width="40" height="30" rx="8" fill="url(#successGradient)" filter="url(#shadow)" stroke="#2d3748" stroke-width="1">
+        <animate attributeName="opacity" values="0.9;1;0.9" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="6" y="6" width="28" height="4" rx="2" fill="white" opacity="0.9"/>
+      <rect x="6" y="12" width="22" height="3" rx="1.5" fill="white" opacity="0.7"/>
+      <rect x="6" y="17" width="26" height="3" rx="1.5" fill="white" opacity="0.7"/>
+      <rect x="6" y="22" width="18" height="3" rx="1.5" fill="white" opacity="0.7"/>
+    </g>
+  </g>
+
+  <!-- 自动化流程指示器 -->
+  <g transform="translate(15, 65)">
+    <circle cx="0" cy="0" r="4" fill="url(#warningGradient)">
+      <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="20" cy="0" r="4" fill="url(#secondaryGradient)">
+      <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+    </circle>
+    <circle cx="40" cy="0" r="4" fill="url(#successGradient)">
+      <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+    </circle>
+    <circle cx="60" cy="0" r="4" fill="url(#primaryGradient)">
+      <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" begin="0.9s"/>
+    </circle>
+    <circle cx="80" cy="0" r="4" fill="#718096">
+      <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" begin="1.2s"/>
+    </circle>
+    <circle cx="100" cy="0" r="4" fill="#4a5568">
+      <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite" begin="1.5s"/>
+    </circle>
+
+    <!-- 连接线 -->
+    <path d="M 4 0 L 16 0" stroke="#6b7280" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+    <path d="M 24 0 L 36 0" stroke="#6b7280" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+    <path d="M 44 0 L 56 0" stroke="#6b7280" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+    <path d="M 64 0 L 76 0" stroke="#6b7280" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+    <path d="M 84 0 L 96 0" stroke="#6b7280" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.6"/>
+  </g>
+
+  <!-- 状态指示器 -->
+  <g transform="translate(20, 80)">
+    <rect x="0" y="0" width="8" height="8" rx="2" fill="url(#successGradient)">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="12" y="0" width="8" height="8" rx="2" fill="url(#successGradient)">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" begin="0.3s"/>
+    </rect>
+    <rect x="24" y="0" width="8" height="8" rx="2" fill="url(#warningGradient)">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" begin="0.6s"/>
+    </rect>
+    <rect x="36" y="0" width="8" height="8" rx="2" fill="url(#successGradient)">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" begin="0.9s"/>
+    </rect>
+    <rect x="48" y="0" width="8" height="8" rx="2" fill="url(#successGradient)">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite" begin="1.2s"/>
+    </rect>
+  </g>
+
+  <!-- 自动化标识 -->
+  <g transform="translate(100, 80)">
+    <rect x="0" y="0" width="30" height="15" rx="3" fill="url(#warningGradient)" opacity="0.9" stroke="#4a5568" stroke-width="0.5">
+      <animate attributeName="opacity" values="0.9;1;0.9" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <text x="15" y="10" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="8" fill="white" font-weight="600">AUTO</text>
+  </g>
+</svg>

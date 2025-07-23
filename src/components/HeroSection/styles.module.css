@@ -26,7 +26,7 @@
   }
 }
 
-/* 背景装饰元素 */
+/* 背景装饰元素 - 简化版本 */
 .backgroundElements {
   position: absolute;
   top: 0;
@@ -43,7 +43,7 @@
   right: 15%;
   width: 200px;
   height: 200px;
-  background: linear-gradient(45deg, rgba(36, 73, 254, 0.03) 0%, rgba(202, 75, 167, 0.03) 100%);
+  background: linear-gradient(45deg, rgba(36, 97, 254, 0.02) 0%, rgba(202, 75, 167, 0.02) 100%);
   border-radius: 50%;
   animation: float 6s ease-in-out infinite;
 }
@@ -54,7 +54,7 @@
   right: 25%;
   width: 150px;
   height: 150px;
-  background: linear-gradient(135deg, rgba(202, 75, 167, 0.04) 0%, rgba(36, 73, 254, 0.04) 100%);
+  background: linear-gradient(135deg, rgba(202, 75, 167, 0.02) 0%, rgba(36, 97, 254, 0.02) 100%);
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   animation: float 8s ease-in-out infinite reverse;
 }
@@ -65,7 +65,7 @@
   right: 5%;
   width: 100px;
   height: 100px;
-  background: linear-gradient(225deg, rgba(36, 73, 254, 0.05) 0%, rgba(202, 75, 167, 0.05) 100%);
+  background: linear-gradient(225deg, rgba(36, 97, 254, 0.02) 0%, rgba(202, 75, 167, 0.02) 100%);
   border-radius: 20% 80% 80% 20% / 20% 20% 80% 80%;
   animation: float 7s ease-in-out infinite;
 }
@@ -76,7 +76,7 @@
   right: 10%;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(36, 73, 254, 0.08) 0%, rgba(202, 75, 167, 0.08) 50%, transparent 100%);
+  background: radial-gradient(circle, rgba(36, 97, 254, 0.03) 0%, rgba(202, 75, 167, 0.03) 50%, transparent 100%);
   border-radius: 50%;
   animation: pulse 4s ease-in-out infinite;
 }
@@ -233,7 +233,62 @@
   transform: translateY(0);
 }
 
-/* 副标题区域 */
+/* 打字机效果样式 */
+.typewriterText {
+  display: inline-block;
+  position: relative;
+  background: linear-gradient(135deg, rgb(36, 73, 254) 0%, rgb(202, 75, 167) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.cursorContainer {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  position: relative;
+  vertical-align: text-bottom;
+}
+
+.cursor {
+  display: block;
+  width: 3px;
+  height: 1em;
+  background: linear-gradient(135deg, rgb(36, 73, 254) 0%, rgb(202, 75, 167) 100%);
+  animation: blink 1s infinite;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cursor.typing {
+  animation: typing 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes typing {
+  0%, 50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  51%, 100% {
+    opacity: 0.3;
+    transform: scaleY(0.8);
+  }
+}
+
+/* 副标题区域 - 白色半透明卡片样式 */
 .subtitleSection {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -242,12 +297,15 @@
 }
 
 .subtitleCard {
-  /* background: rgba(255, 255, 255, 0.8); */
-  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 24px;
   padding: 2.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.08),
+    0 4px 16px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
   transform: translateY(30px);
@@ -255,7 +313,11 @@
 
 .subtitleCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.12),
+    0 8px 24px rgba(0, 0, 0, 0.06),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .subtitleCard.cardAnimate1 {
@@ -290,16 +352,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background: rgba(36, 73, 254, 0.1); */
   border-radius: 12px;
   flex-shrink: 0;
-  color: rgb(36, 73, 254);
+  color: #2461fe;
 }
 
 .subtitleTitle {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #1f2937;
   margin: 0;
   line-height: 1.3;
 }

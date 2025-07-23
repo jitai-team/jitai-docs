@@ -47,7 +47,7 @@ const HeroSection: React.FC = () => {
             <div className={`${styles.subtitleCard} ${animateElements ? styles.cardAnimate1 : ''}`}>
               <div className={styles.cardHeader}>
                 <div className={styles.cardIcon}>
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={styles.iconSvg}>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#3349f6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={styles.iconSvg}>
                     <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4a2 2 0 0 0 1-1.73z"></path>
                     <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
                     <line x1="12" y1="22.08" x2="12" y2="12"></line>
@@ -63,9 +63,14 @@ const HeroSection: React.FC = () => {
             <div className={`${styles.subtitleCard} ${animateElements ? styles.cardAnimate2 : ''}`}>
               <div className={styles.cardHeader}>
                 <div className={styles.cardIcon}>
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={styles.iconSvg}>
-                    <path d="M9 12l2 2 4-4"></path>
-                    <circle cx="12" cy="12" r="10"></circle>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#bb4baf" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={styles.iconSvg}>
+                    {/* 简化的编排式开发技术图标 */}
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <line x1="3" y1="12" x2="9" y2="12"></line>
+                    <line x1="15" y1="12" x2="21" y2="12"></line>
+                    <line x1="12" y1="3" x2="12" y2="9"></line>
+                    <line x1="12" y1="15" x2="12" y2="21"></line>
                   </svg>
                 </div>
                 <h2 className={styles.subtitleTitle}>{CONTENT.subTitle2}</h2>

@@ -52,11 +52,13 @@ const Navbar: React.FC = () => {
   }, [isMobileMenuOpen]);
 
     const handleNavClick = (item: any) => {
-      window.location.href = item.url;
 
       // 移动端点击后关闭菜单
       if (isMobile) {
+        window.location.href = item.url;
         setIsMobileMenuOpen(false);
+      } else {
+        window.open(item.url, '_blank');
     }
   };
 

@@ -36,7 +36,7 @@ export const CONTENT = {
       icon: '🔗',
       title: 'Jit 应用级继承机制',
       description: '零依赖、无侵入、可改写、可扩展的应用复用机制，彻底解决应用系统的复用和扩展的矛盾。',
-      color: '#059669',  /* 深绿色 */
+      color: '#640404',
     }
   ]
 };

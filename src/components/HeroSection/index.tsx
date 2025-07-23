@@ -3,14 +3,80 @@ import styles from './styles.module.css';
 import globalStyles from '../../pages/index.module.css';
 import { CONTENT } from './constant';
 
+// 打字机效果组件
+const TypewriterText: React.FC<{ text: string; isVisible: boolean; speed?: number; repeat?: boolean }> = ({
+  text,
+  isVisible,
+  speed = 100,
+  repeat = false
+}) => {
+  const [displayText, setDisplayText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTyping, setIsTyping] = useState(false);
+  const [showCursor, setShowCursor] = useState(false);
+
+  useEffect(() => {
+    if (!isVisible) {
+      setDisplayText('');
+      setCurrentIndex(0);
+      setIsTyping(false);
+      setShowCursor(false);
+      return;
+    }
+
+    if (currentIndex < text.length) {
+      setIsTyping(true);
+      setShowCursor(true);
+      const timer = setTimeout(() => {
+        setDisplayText(text.slice(0, currentIndex + 1));
+        setCurrentIndex(currentIndex + 1);
+      }, speed);
+
+      return () => clearTimeout(timer);
+    } else {
+      setIsTyping(false);
+      // 如果启用重复播放，在完成后延迟重新开始
+      if (repeat) {
+        const resetTimer = setTimeout(() => {
+          setDisplayText('');
+          setCurrentIndex(0);
+        }, 3000); // 等待3秒后重新开始
+        return () => clearTimeout(resetTimer);
+      } else {
+        // 如果不重复，等待一段时间后隐藏光标
+        const hideCursorTimer = setTimeout(() => {
+          setShowCursor(false);
+        }, 3000); // 等待3秒后隐藏光标
+        return () => clearTimeout(hideCursorTimer);
+      }
+    }
+  }, [currentIndex, text, isVisible, speed, repeat]);
+
+  return (
+    <span className={styles.typewriterText}>
+      {displayText || ' '}
+      <span className={styles.cursorContainer}>
+        {showCursor && (
+          <span className={`${styles.cursor} ${isTyping ? styles.typing : ''}`}>|</span>
+        )}
+      </span>
+    </span>
+  );
+};
+
 const HeroSection: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [animateElements, setAnimateElements] = useState(false);
+  const [showTypewriter, setShowTypewriter] = useState(false);
 
   // 延迟显示，让页面先加载完成
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
+      // 延迟启动打字机效果
+      setTimeout(() => {
+        setShowTypewriter(true);
+      }, 500);
       // 延迟启动元素动画
       setTimeout(() => {
         setAnimateElements(true);
@@ -38,7 +104,12 @@ const HeroSection: React.FC = () => {
               <span className={styles.badgeText}>NEXT-GEN</span>
             </div>
             <h1 className={`${styles.heroTitle} ${animateElements ? styles.titleAnimate : ''}`}>
-              {CONTENT.mainTitle}
+              <TypewriterText
+                text={CONTENT.mainTitle}
+                isVisible={showTypewriter}
+                speed={150}
+                repeat={false}
+              />
             </h1>
           </div>
 

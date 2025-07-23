@@ -233,6 +233,61 @@
   transform: translateY(0);
 }
 
+/* 打字机效果样式 */
+.typewriterText {
+  display: inline-block;
+  position: relative;
+  background: linear-gradient(135deg, rgb(36, 73, 254) 0%, rgb(202, 75, 167) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.cursorContainer {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  position: relative;
+  vertical-align: text-bottom;
+}
+
+.cursor {
+  display: block;
+  width: 3px;
+  height: 1em;
+  background: linear-gradient(135deg, rgb(36, 73, 254) 0%, rgb(202, 75, 167) 100%);
+  animation: blink 1s infinite;
+  transition: all 0.3s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cursor.typing {
+  animation: typing 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes typing {
+  0%, 50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  51%, 100% {
+    opacity: 0.3;
+    transform: scaleY(0.8);
+  }
+}
+
 /* 副标题区域 - 白色半透明卡片样式 */
 .subtitleSection {
   display: grid;

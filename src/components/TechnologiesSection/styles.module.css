@@ -1,4 +1,4 @@
-/* Technologies Section 样式 - 商务灰配色方案 */
+/* Technologies Section 样式 -   */
 .technologiesSection {
   padding: var(--section-padding);
   background: var(--section-bg);
@@ -98,19 +98,23 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: var(--gradient-section);
+  background: linear-gradient(90deg, var(--card-color) 0%, color-mix(in srgb, var(--card-color) 80%, white) 100%);
   transform: scaleX(0);
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .technologyCard:hover {
   transform: translateY(-8px);
-  box-shadow: var(--hover-shadow-card);
-  border-color: var(--section-accent);
+  box-shadow: 0 20px 40px color-mix(in srgb, var(--card-color) 20%, transparent);
+  border-color: var(--card-color);
 }
 
 .technologyCard:hover::before {
   transform: scaleX(1);
+}
+
+.technologyCard:hover h3 {
+  color: var(--card-color);
 }
 
 .cardHeader {
@@ -129,7 +133,7 @@
   justify-content: center;
   flex-shrink: 0;
   transition: all 0.3s ease;
-  background-color: rgba(var(--color-secondary-rgb), 0.1);
+  background-color: color-mix(in srgb, var(--card-color) 15%, transparent);
 }
 
 .iconEmoji {
@@ -138,7 +142,7 @@
 }
 
 .technologyCard:hover .cardIcon {
-  background-color: rgba(var(--color-secondary-rgb), 0.2);
+  background-color: color-mix(in srgb, var(--card-color) 25%, transparent);
 }
 
 .cardTitleSection {
@@ -161,6 +165,7 @@
 .technologyCard h3::before {
   display: none;
 }
+
 
 .cardSubtitle {
   font-size: 1.1rem;

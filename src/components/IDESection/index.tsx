@@ -29,7 +29,12 @@ const ModuleCard: React.FC<ModuleCardProps> = ({ module }) => (
 const IDESection: React.FC = () => {
   return (
     <ScrollAnimation animationType="fadeInUp" duration={500}>
-      <section className={`${styles.ideSection} ${globalStyles.gradientBackground}`}>
+      <section className={`${styles.ideSection} ${globalStyles.gradientBackground}`}
+        style={{
+          '--section-color': CONTENT.color,
+          '--card-color': CONTENT.color,
+        } as React.CSSProperties}
+      >
         <div className={styles.container}>
           <ScrollAnimation animationType="fadeInUp" delay={100}>
             <div className={styles.header}>

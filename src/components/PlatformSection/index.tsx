@@ -10,11 +10,10 @@ const PlatformSection: React.FC = () => {
       <section
         id="section-platform"
         className={`${styles.platformSection} ${globalStyles.gradientBackground}`}
-        // style={{
-        //   '--section-color': CONTENT.color,
-        //   '--card-color': CONTENT.color,
-        //   '--card-hover-color': CONTENT.color
-        // } as React.CSSProperties}
+        style={{
+          '--section-color': CONTENT.color,
+          '--card-color': CONTENT.color,
+        } as React.CSSProperties}
       >
         <div className={globalStyles.sectionContent}>
           <ScrollAnimation animationType="fadeInUp" delay={100}>
@@ -35,8 +34,7 @@ const PlatformSection: React.FC = () => {
                 <div
                   className={`${globalStyles.baseCard} ${styles.featureCard} animatedChild`}
                   // style={{
-                  //   '--card-color': feature.color,
-                  //   '--card-hover-color': feature.color
+                  //   '--card-color': CONTENT.color,
                   // } as React.CSSProperties}
                 >
                   <div className={styles.featureImage}>

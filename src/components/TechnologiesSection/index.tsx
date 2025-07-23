@@ -37,10 +37,9 @@ const TechnologiesSection: React.FC = () => {
               >
                 <div
                   className={`${globalStyles.baseCard} ${styles.technologyCard} animatedChild`}
-                  // style={{
-                  //   '--card-color': card.color,
-                  //   '--card-hover-color': card.color
-                  // } as React.CSSProperties}
+                  style={{
+                    '--card-color': card.color,
+                  } as React.CSSProperties}
                 >
                   <div className={styles.cardHeader}>
                     <div className={styles.cardIcon}>

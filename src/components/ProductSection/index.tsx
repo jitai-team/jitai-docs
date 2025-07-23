@@ -35,10 +35,10 @@ const ProductSection: React.FC = () => {
                 >
                   <div
                     className={`${globalStyles.baseCard} ${styles.card} animatedChild`}
-                    // style={{
-                    //   '--card-color': card.color,
-                    //   '--card-hover-color': card.color
-                    // } as React.CSSProperties}
+                    style={{
+                      '--card-color': card.color,
+                      '--card-hover-color': card.color
+                    } as React.CSSProperties}
                   >
                     <div className={styles.cardIcon}>{card.icon}</div>
                     <div className={styles.cardHeader}>

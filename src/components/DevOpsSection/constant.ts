@@ -1,6 +1,7 @@
 export const CONTENT = {
   title: 'Jit DevOps工具',
   subtitle: '构建、发布、部署、运维全面简化轻量化',
+  color: '#b45309',
   features: [
     {
       title: '支持应用多环境、多版本',

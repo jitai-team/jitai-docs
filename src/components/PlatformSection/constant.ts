@@ -1,6 +1,7 @@
 export const CONTENT = {
   title: 'Jit 应用平台',
   subtitle: '本地部署的集成化应用运行环境',
+  color: '#6d28d9',
   features: [
     {
       title: '微内核',

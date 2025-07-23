@@ -3,7 +3,7 @@
  * and scoped locally.
  */
 
-/* 全局样式变量 - 商务灰配色方案 */
+/* 全局样式变量 -   */
 :root {
   /* 主题色系统 */
   --theme-primary: #374151;      /* 主色调 - 商务灰 */
@@ -29,10 +29,10 @@
   --svg-border-light: #e5e7eb; /* SVG边框浅色 - 商务灰边框 */
 
   /* 其他Section - 商务灰专业 */
-  --section-primary: var(--theme-dark);
+  --section-color: var(--theme-dark);
   --section-secondary: #4b5563;
   --section-accent: var(--theme-secondary);
-  --section-bg: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  --section-bg: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
 
   /* 通用 */
   --text-primary: var(--theme-dark);
@@ -45,7 +45,7 @@
   --gradient-secondary: linear-gradient(135deg, var(--theme-secondary) 0%, var(--theme-accent) 100%);
   --gradient-accent: linear-gradient(135deg, var(--theme-accent) 0%, var(--theme-light) 100%);
   --gradient-hero: linear-gradient(135deg, var(--hero-primary) 0%, var(--hero-secondary) 50%, var(--hero-accent) 100%);
-  --gradient-section: linear-gradient(90deg, var(--section-accent) 0%, var(--theme-secondary) 100%);
+  --gradient-section: linear-gradient(90deg, var(--card-color) 0%, color-mix(in srgb, var(--card-color) 80%, white) 100%);
 
   /* 透明度系统 */
   --opacity-light: 0.03;
@@ -63,10 +63,7 @@
   --hover-shadow-primary: 0 20px 40px rgba(75, 85, 99, var(--opacity-heavy));
   --hover-shadow-hero: 0 10px 25px rgba(55, 65, 81, var(--opacity-hover));
   --hover-shadow-navbar: 0 4px 8px rgba(75, 85, 99, var(--opacity-shadow));
-  --hover-shadow-card:
-    0 20px 40px rgba(31, 41, 55, 0.15),
-    0 8px 16px rgba(31, 41, 55, 0.1),
-    0 0 0 1px rgba(255, 255, 255, 0.1);
+  --hover-shadow-card: 0 20px 40px color-mix(in srgb, var(--card-color) 20%, transparent);
 
   /* 字体系统 */
   --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -91,7 +88,7 @@ body {
   h3 {
     font-size: 1.6rem;
     font-weight: 700;
-    color: var(--section-primary);
+    color: var(--section-color);
   }
 }
 
@@ -101,9 +98,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: var(--section-bg);
-  --section-color: var(--section-primary);
-  --card-color: var(--section-primary);
-  --card-hover-color: var(--section-accent);
+  --section-color: var(--section-color);
+  /* --card-color: var(--section-color); */
+  /* --card-hover-color: var(--section-accent); */
 }
 
 /* 公共样式 - 从TechnologiesSection和ProductSection提取 */
@@ -120,7 +117,7 @@ body {
   font-weight: 800;
   text-align: center;
   margin-bottom: 1rem;
-  color: var(--section-primary);
+  color: var(--section-color);
 }
 
 .sectionSubtitle {
@@ -155,7 +152,7 @@ body {
   left: 0;
   right: 0;
   height: 4px;
-  background: var(--gradient-section);
+  background: linear-gradient(90deg, var(--card-color) 0%, color-mix(in srgb, var(--card-color) 80%, white) 100%);
   transform: scaleX(0);
   transition: transform 0.4s ease;
 }
@@ -198,7 +195,7 @@ body {
 
 .secondaryButton {
   background: transparent;
-  color: var(--section-primary);
+  color: var(--section-color);
   border: 2px solid var(--border-color);
   border-radius: 12px;
   padding: 1rem 2rem;
@@ -213,9 +210,9 @@ body {
 }
 
 .secondaryButton:hover {
-  background: var(--section-primary);
+  background: var(--section-color);
   color: white;
-  border-color: var(--section-primary);
+  border-color: var(--section-color);
 }
 
 

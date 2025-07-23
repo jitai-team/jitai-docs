@@ -1,4 +1,4 @@
-/* DevOps Section 样式 - 商务灰配色方案 */
+/* DevOps Section 样式 -   */
 .devopsSection {
   padding: var(--section-padding);
   background: var(--section-bg);
@@ -59,15 +59,15 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: var(--gradient-section);
+  background: linear-gradient(90deg, var(--card-color) 0%, color-mix(in srgb, var(--card-color) 80%, white) 100%);
   transform: scaleX(0);
   transition: transform 0.4s ease;
 }
 
 .featureCard:hover {
   transform: translateY(-8px);
-  box-shadow: var(--hover-shadow-card);
-  border-color: var(--section-accent);
+  box-shadow: 0 20px 40px color-mix(in srgb, var(--card-color) 20%, transparent);
+  border-color: var(--card-color);
 }
 /*
 .featureCard:hover::before {

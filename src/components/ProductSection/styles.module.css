@@ -1,4 +1,4 @@
-/* Product Section 样式 - 商务灰配色方案 */
+/* Product Section 样式 -   */
 .productSection {
   padding: var(--section-padding);
   background: var(--section-bg);
@@ -69,15 +69,15 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: var(--gradient-section);
+  background: linear-gradient(90deg, var(--card-color) 0%, color-mix(in srgb, var(--card-color) 80%, white) 100%);
   transform: scaleX(0);
   transition: transform 0.4s ease;
 }
 
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: var(--hover-shadow-card);
-  border-color: var(--section-accent);
+  box-shadow: 0 20px 40px color-mix(in srgb, var(--card-color) 20%, transparent);
+  border-color: var(--card-color);
 }
 
 .card:hover::before {
@@ -89,7 +89,7 @@
   margin-bottom: 1.5rem;
   display: block;
   text-align: center;
-  background: linear-gradient(135deg, var(--section-primary) 0%, var(--section-accent) 100%);
+  background: linear-gradient(135deg, var(--card-color) 0%, color-mix(in srgb, var(--card-color) 80%, white) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -113,7 +113,7 @@
   font-size: 1.6rem;
   font-weight: 700;
   margin: 0;
-  color: var(--section-primary);
+  color: var(--card-color);
   text-align: center;
   position: relative;
   flex-shrink: 0;

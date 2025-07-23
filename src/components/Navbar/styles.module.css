@@ -1,31 +1,30 @@
-/* Navbar 样式 */
-
+/* Navbar 样式 - 蓝紫渐变主题 */
 
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   z-index: 1000;
   padding: 1rem 0;
   box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    0 4px 6px -1px rgba(0, 0, 0, 0.08),
+    0 2px 4px -1px rgba(0, 0, 0, 0.04);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navbar:hover {
-  background: rgba(255, 255, 255, 0.98);
+  background: rgba(255, 255, 255, 0.52);
   box-shadow:
     0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.98);
+  background: rgba(255, 255, 255, 0.52);
   backdrop-filter: blur(20px);
   box-shadow:
     0 8px 15px -3px rgba(0, 0, 0, 0.1),
@@ -49,7 +48,7 @@
   gap: 0.75rem;
   font-size: 1.6rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #2461fe 0%, #ca4ba7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -59,7 +58,7 @@
 
 .logo:hover {
   transform: scale(1.05);
-  filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.3));
+  filter: drop-shadow(0 2px 4px rgba(36, 97, 254, 0.3));
 }
 
 .logo img {
@@ -71,7 +70,7 @@
 
 .logo:hover img {
   transform: scale(1.1);
-  filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.4));
+  filter: drop-shadow(0 4px 8px rgba(36, 97, 254, 0.4));
 }
 
 .navLinks {
@@ -83,7 +82,7 @@
 .navLinks button {
   background: none;
   border: none;
-  color: #22292f; /* 深灰色，接近黑色 */
+  color: #22292f;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -106,7 +105,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+  background: linear-gradient(90deg, #2461fe, #ca4ba7);
   transform: scaleX(0);
   transition: transform 0.4s ease;
 }

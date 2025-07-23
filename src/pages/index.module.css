@@ -29,7 +29,7 @@
   --svg-border-light: #e5e7eb; /* SVG边框浅色 - 商务灰边框 */
 
   /* 其他Section - 商务灰专业 */
-  --section-color: var(--theme-dark);
+  --section-primary: var(--section-color);
   --section-secondary: #4b5563;
   --section-accent: var(--theme-secondary);
   --section-bg: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);

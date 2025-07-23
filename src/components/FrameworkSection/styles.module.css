@@ -121,7 +121,7 @@
   color: var(--text-secondary);
   line-height: 1.6;
   margin: 1rem 0;
-  font-size: 0.95rem;
+  font-size: var(--font-size-body);
   flex: 1; /* 填充剩余空间 */
 }
 
@@ -143,9 +143,9 @@
   padding-top: 1rem;
   border-top: 1px solid var(--border-color);
   font-size: 0.9rem;
-  color: var(--section-primary);
+  color: var(--text-secondary);
   filter: brightness(0.8);
-  font-weight: 500;
+  /* font-weight: 500; */
   transition: all 0.3s ease;
 }
 

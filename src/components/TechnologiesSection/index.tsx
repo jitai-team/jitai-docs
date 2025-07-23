@@ -23,7 +23,9 @@ const TechnologiesSection: React.FC = () => {
           <ScrollAnimation animationType="fadeInUp" delay={200}>
             <div className={styles.technologiesIntro}>
               <div className={styles.technologiesIntroText}>
-                <div dangerouslySetInnerHTML={{ __html: CONTENT.remark }}></div>
+                {CONTENT.remarks.map((remark, index) => (
+                  <p key={index}>{remark}</p>
+                ))}
               </div>
             </div>
           </ScrollAnimation>
@@ -52,7 +54,11 @@ const TechnologiesSection: React.FC = () => {
                   </div>
                   <div className={styles.technologyContent}>
                     <div className={styles.technologySection}>
-                      <p dangerouslySetInnerHTML={{ __html: card.sections }}></p>
+                      {card.contents.map((section, sectionIndex) => (
+                        <p key={sectionIndex}>
+                          {section}
+                        </p>
+                      ))}
                     </div>
                   </div>
                 </div>

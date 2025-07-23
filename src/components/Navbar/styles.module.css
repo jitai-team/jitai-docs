@@ -1,5 +1,4 @@
-/* Navbar 样式 */
-
+/* Navbar 样式 - 蓝紫渐变主题 */
 
 .navbar {
   position: fixed;
@@ -49,7 +48,7 @@
   gap: 0.75rem;
   font-size: 1.6rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #2461fe 0%, #ca4ba7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -59,7 +58,7 @@
 
 .logo:hover {
   transform: scale(1.05);
-  filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.3));
+  filter: drop-shadow(0 2px 4px rgba(36, 97, 254, 0.3));
 }
 
 .logo img {
@@ -71,7 +70,7 @@
 
 .logo:hover img {
   transform: scale(1.1);
-  filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.4));
+  filter: drop-shadow(0 4px 8px rgba(36, 97, 254, 0.4));
 }
 
 .navLinks {
@@ -83,7 +82,7 @@
 .navLinks button {
   background: none;
   border: none;
-  color: #22292f; /* 深灰色，接近黑色 */
+  color: #22292f;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -106,19 +105,19 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+  background: linear-gradient(90deg, #2461fe, #ca4ba7);
   transform: scaleX(0);
   transition: transform 0.4s ease;
 }
 
 .navLinks button:hover, .navLinks button:focus {
-  color: #7c3aed;
+  color: #2461fe;
   background: none;
   border: none;
 }
 
 .navLinks button.active {
-  color: #7c3aed;
+  color: #2461fe;
   background: none;
   border: none;
 }

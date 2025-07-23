@@ -1,10 +1,12 @@
-/* DevOps Section 样式 -   */
+/* DevOps Section 样式 - 橙色主题浅色渐变背景 */
 .devopsSection {
   padding: var(--section-padding);
-  background: var(--section-bg);
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--section-color) 5%, white) 0%,
+    color-mix(in srgb, var(--section-color) 3%, white) 50%,
+    color-mix(in srgb, var(--section-color) 7%, white) 100%);
   position: relative;
   overflow: hidden;
-  color: var(--section-primary);
 }
 
 .devopsSection::before {
@@ -14,7 +16,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--decoration-bg-1), var(--decoration-bg-2);
+  background:
+    radial-gradient(circle at 20% 80%, color-mix(in srgb, var(--section-color) 8%, transparent) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, color-mix(in srgb, var(--section-color) 6%, transparent) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -43,12 +47,12 @@
 .featureCard {
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
   border-radius: 12px;
   padding: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: var(--transition-primary);
-  backdrop-filter: blur(5px);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 

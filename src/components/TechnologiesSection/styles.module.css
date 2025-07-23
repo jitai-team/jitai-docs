@@ -1,7 +1,7 @@
-/* Technologies Section 样式 -   */
+/* Technologies Section 样式 - 浅色渐变背景突出多彩内容 */
 .technologiesSection {
   padding: var(--section-padding);
-  background: var(--section-bg);
+  background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 50%, #f5f3ff 100%);
   position: relative;
   overflow: hidden;
 }
@@ -13,7 +13,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--decoration-bg-1), var(--decoration-bg-2);
+  background:
+    radial-gradient(circle at 20% 80%, rgba(36, 97, 254, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(202, 75, 167, 0.03) 0%, transparent 50%);
   pointer-events: none;
 }
 

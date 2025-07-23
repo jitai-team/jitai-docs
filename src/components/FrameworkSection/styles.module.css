@@ -1,7 +1,10 @@
-/* Framework Section 样式 -   */
+/* Framework Section 样式 - 青色主题浅色渐变背景 */
 .frameworkSection {
   padding: var(--section-padding);
-  background: var(--section-bg);
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--section-color) 5%, white) 0%,
+    color-mix(in srgb, var(--section-color) 3%, white) 50%,
+    color-mix(in srgb, var(--section-color) 7%, white) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -13,7 +16,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--decoration-bg-1), var(--decoration-bg-2);
+  background:
+    radial-gradient(circle at 20% 80%, color-mix(in srgb, var(--section-color) 8%, transparent) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, color-mix(in srgb, var(--section-color) 6%, transparent) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -106,7 +111,7 @@
 .frameworkName {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--section-primary);
+  color: var(--card-color);
   margin: 0;
   line-height: 1.2;
 }

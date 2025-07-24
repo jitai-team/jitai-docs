@@ -1,8 +1,0 @@
-{
-  "label": "AI知识库",
-  "position": 2,
-  "link": {
-    "type": "generated-index",
-    "description": "AI知识库管理系统，提供文档向量化存储、智能检索和知识库版本控制"
-  }
-} 

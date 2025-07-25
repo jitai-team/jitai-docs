@@ -75,12 +75,6 @@
   gap: 2rem;
 }
 
-.featureCard:hover {
-  transform: translateY(-4px);
-  /* box-shadow: 0 8px 24px rgba(31, 41, 55, 0.12); */
-  /* border-color: rgba(55, 65, 81, 0.15); */
-}
-
 /* 偶数行卡片左右对调 */
 .reverseCard {
   flex-direction: row-reverse;
@@ -96,6 +90,7 @@
   flex: 5;
   width: 100%;
   aspect-ratio: 16/10;
+  margin: 2rem;
 }
 
 .imagePlaceholder {
@@ -131,7 +126,7 @@
 }
 
 .featureContent {
-  flex: 3;
+  flex: 2;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -155,13 +150,7 @@
   font-size: 0.95rem;
   margin: 0;
   font-weight: 400;
-  opacity: 0.8;
   transition: all 0.3s ease;
-}
-
-.featureCard:hover .featureDescription {
-  opacity: 1;
-  color: var(--text-primary);
 }
 
 /* 可视化开发模块部分 - 2行卡片自动滚动 */
@@ -436,5 +425,100 @@
 
   .moduleDescription {
     font-size: 0.7rem;
+  }
+}
+
+/* 视频组件样式 */
+.videoContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg,
+    rgba(55, 65, 81, 0.08) 0%,
+    rgba(75, 85, 99, 0.08) 100%);
+  border: 1px solid rgba(55, 65, 81, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.videoContainer:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+.videoElement {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.videoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.1) 0%,
+    rgba(118, 75, 162, 0.1) 100%
+  ); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+/* 视频错误状态 */
+.videoContainer.error {
+  background: linear-gradient(135deg,
+    rgba(239, 68, 68, 0.1) 0%,
+    rgba(220, 38, 38, 0.1) 100%);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.videoContainer.error::after {
+  content: '视频加载失败';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  text-align: center;
+  z-index: 1;
+}
+
+/* 响应式视频样式 */
+@media (max-width: 768px) {
+  .videoContainer {
+    border-radius: 8px;
+  }
+
+  .videoElement {
+    border-radius: 8px;
+  }
+
+  .playIndicator {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .playIndicator {
+    width: 36px;
+    height: 36px;
+  }
+
+  .playIndicator svg {
+    width: 20px;
+    height: 20px;
   }
 }

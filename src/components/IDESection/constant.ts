@@ -7,14 +7,17 @@ export const CONTENT = {
       {
         title: '简单、灵活、一致性的开发范式',
         description: '创建、选择、组装、配置各种规范化的元素，即可构建出各种各样的系统功能。开发者极易掌握和操作，开发工作质量高、效率高',
+        video: 'https://jit-www.oss-cn-beijing.aliyuncs.com/ide_frame.mp4',
       },
       {
         title: '自动生成高质量代码',
         description: 'JitAi图形化编排和编程工具是基于应用协议和编程框架的代码编辑技术，自动生成高质量原生代码，且与程序员编码和AI编码共同编辑同一份源代码，开发工具不对程序员编码造成限制',
+        video: 'https://jit-www.oss-cn-beijing.aliyuncs.com/ide_code.mp4',
       },
       {
         title: '可改写、可扩展',
         description: '开发者通过在自己的应用中实现元素编辑器，可以扩展和改写官方开发工具的功能特性，意味着开发者可以自定义自己的开发工具',
+        video: 'https://jit-www.oss-cn-beijing.aliyuncs.com/ide_extend.mp4',
       }
     ],
   developmentModules:[

@@ -321,6 +321,10 @@
     gap: 1rem;
   }
 
+  .featureImage {
+    margin: 0;
+  }
+
   /* 在移动端取消左右对调 */
   .reverseCard {
     flex-direction: column;
@@ -383,6 +387,10 @@
 @media (max-width: 480px) {
   .featuresGrid {
     gap: 1rem;
+  }
+
+  .featureImage {
+    margin: 0;
   }
 
   .featureCard {

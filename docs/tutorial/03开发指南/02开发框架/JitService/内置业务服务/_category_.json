@@ -1,0 +1,11 @@
+{
+  "position": 1,
+  "label": "内置业务服务",
+  "collapsible": true,
+  "collapsed": false,
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "内置业务服务"
+  }
+} 

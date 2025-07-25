@@ -1,8 +1,0 @@
-{
-  "label": "JitWorkflow",
-  "position": 12,
-  "link": {
-    "type": "generated-index",
-    "description": "工作流引擎，提供业务流程建模、审批流程管理、流程实例控制和流程监控分析"
-  }
-} 

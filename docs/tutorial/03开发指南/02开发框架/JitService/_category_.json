@@ -1,8 +1,0 @@
-{
-  "label": "JitService",
-  "position": 8,
-  "link": {
-    "type": "generated-index",
-    "description": "服务层框架，提供业务服务封装、API接口管理、外部服务集成和事件驱动架构支持"
-  }
-} 

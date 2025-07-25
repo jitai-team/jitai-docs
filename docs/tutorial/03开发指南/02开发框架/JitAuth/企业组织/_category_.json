@@ -1,0 +1,11 @@
+{
+  "position": 4,
+  "label": "企业组织",
+  "collapsible": true,
+  "collapsed": false,
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "企业组织"
+  }
+} 

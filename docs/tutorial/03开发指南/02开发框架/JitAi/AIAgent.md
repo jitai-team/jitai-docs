@@ -29,12 +29,11 @@ aiagents/
     "title": "工具测试工程师",
     "type": "aiagents.ReActType",
     "backendBundleEntry": ".",
-    "description": "专注于工具测试，擅长测试工具的使用和测试计划的制定",
     "inputArgs": [
         {
+            "name": "user_input",
             "dataType": "Stext",
-            "title": "需求",
-            "name": "input_data"
+            "title": "用户输入"
         }
     ],
     "outputArgs": [
@@ -72,11 +71,13 @@ aiagents/
 
 ```json title="aiagents/YourAgent/config.json"
 {
+    "description": "专注于工具测试，擅长测试工具的使用和测试计划的制定",
     "llmElement": "llms.LLMJitAppDevelop",
     "llmConfig": {
         "model": "qwen-max-latest",
         "temperature": 0.7
     },
+    "verbose": false,
     "tools": [
         {
             "type": "model",
@@ -100,7 +101,7 @@ aiagents/
 3. 生成测试总结报告
 
 # 输入参数
-{input_data}
+{user_input}
 ```
 
 #### 调用示例
@@ -134,7 +135,7 @@ AIAgent的元素配置文件定义了代理的基本属性和输入输出规范�
 |------|------|------|------|
 | `title` | String | 是 | 代理显示名称 |
 | `type` | String | 是 | 必须为"aiagents.ReActType" |
-| `description` | String | 否 | 代理功能描述 |
+| `backendBundleEntry` | String | 是 | 后端入口，固定为"." |
 | `inputArgs` | Array | 否 | 输入参数定义列表 |
 | `outputArgs` | Array | 否 | 输出参数定义列表 |
 
@@ -142,7 +143,7 @@ AIAgent的元素配置文件定义了代理的基本属性和输入输出规范�
 - `name` - 参数名称
 - `dataType` - 数据类型（如Stext、JitDict等）
 - `title` - 参数显示名称
-- `required` - 是否必填
+- `required` - 是否必填（可选）
 
 **outputArgs配置项：**
 - `name` - 输出字段名称
@@ -157,22 +158,29 @@ AIAgent的元素配置文件定义了代理的基本属性和输入输出规范�
 
 | 字段 | 类型 | 必填 | 说明 |
 |------|------|------|------|
+| `description` | String | 否 | 代理功能描述 |
 | `llmElement` | String | 是 | 大语言模型元素的fullName |
 | `llmConfig` | Object | 是 | LLM配置参数 |
 | `tools` | Array | 否 | 可用工具配置列表，任何声明了functionList的实例元素都可以作为工具 |
 | `saverDb` | String | 否 | 会话存储数据库，默认"databases.Default" |
 | `knowledgeRepo` | Array | 否 | 知识库配置列表 |
 | `verbose` | Boolean | 否 | 是否开启详细日志 |
+| `callbackHandler` | String | 否 | 自定义回调处理器元素的fullName |
 
 **llmConfig配置项：**
 - `model` - 模型名称
 - `temperature` - 温度参数（0.0-1.0）
-- `streaming` - 是否启用流式输出
+- `streaming` - 是否启用流式输出（可选）
 
 **tools配置项：**
 - `type` - 工具类型（model、service、ui、mcpServer等）
 - `name` - 实例元素的fullName（必须是在e.json中声明了functionList的实例元素）
 - `enableFunctionList` - 启用的功能列表及其配置
+
+**knowledgeRepo配置项：**
+- `fullName` - 知识库元素的fullName
+- `enable` - 是否启用
+- `force` - 是否强制使用
 
 **说明**：`name`字段可以是任何在e.json中声明了functionList的实例元素。
 
@@ -191,7 +199,7 @@ AIAgent的元素配置文件定义了代理的基本属性和输入输出规范�
 你是一个{role}，具有以下能力：{capabilities}
 
 # 当前任务
-{input_data}
+{user_input}
 
 # 工作要求
 1. 理解用户需求
@@ -244,7 +252,7 @@ def my_callback(data):
     if msg_type == 'REASONING_CONTENT':
         print(f"推理过程: {data['data']['content']}")
     elif msg_type == 'TOOL_CALL_START':
-        print(f"工具调用前: {data['data']['outputArgs']['value']['toolName']}")
+        print(f"工具调用开始: {data['data']['outputArgs']['value']['toolName']}")
 
 result = agent.run(
     user_input="分析客户数据",
@@ -268,12 +276,12 @@ result = agent.run(
 ### description
 
 **类型：** String  
-**说明：** 代理的功能描述，来源于e.json配置文件中的description字段。
+**说明：** 代理的功能描述，来源于config.json配置文件中的description字段。
 
 ### capabilities
 
 **类型：** String  
-**说明：** 代理的能力描述，优先级：e.json中的capabilities > description > config.json中的systemPrompt。
+**说明：** 代理的能力描述，优先级：e.json中的capabilities > config.json中的description > config.json中的systemPrompt。
 
 ## 高级特性
 
@@ -355,6 +363,21 @@ AIAgent支持多种类型工具的动态编排：
 }
 ```
 
+#### MCP服务器工具配置
+
+```json title="MCP服务器工具配置示例"
+{
+    "type": "mcpServer",
+    "config": {
+        "command": "python",
+        "args": ["-m", "mcp_server"],
+        "env": {
+            "API_KEY": "your_api_key"
+        }
+    }
+}
+```
+
 #### 其它实例元素作为工具配置
 
 ```json title="其它实例元素作为工具配置示例"
@@ -372,209 +395,204 @@ AIAgent支持多种类型工具的动态编排：
 
 ### 流式回调处理
 
-通过stream_callback参数实现实时输出处理：
+支持监听推理过程、工具调用等详细事件：
 
-```python title="流式回调处理示例"
-def stream_callback(data):
+```python title="详细流式回调示例"
+def detailed_callback(data):
     msg_type = data.get('type')
     
     if msg_type == 'REASONING_CONTENT':
-        content = data['data']['content']
-        print(f"推理过程: {content}")
+        print(f"推理过程: {data['data']['content']}")
     elif msg_type == 'TOOL_CALL_START':
         tool_info = data['data']['outputArgs']['value']
-        print(f"调用工具: {tool_info['toolName']}")
+        print(f"开始调用工具: {tool_info['toolName']}")
+    elif msg_type == 'TOOL_CALL_END':
+        print(f"工具调用完成")
+    elif msg_type == 'ERROR':
+        print(f"执行错误: {data['data']['error']}")
 
 result = agent.run(
-    user_input="请处理客户数据",
-    stream_callback=stream_callback
+    user_input="处理客户数据",
+    stream_callback=detailed_callback
 )
 ```
 
 ### 会话状态管理
 
-AIAgent支持持久化会话状态，实现连续对话：
+通过chatId实现连续对话和上下文记忆：
 
-```python title="会话管理示例"
+```python title="连续对话示例"
 # 第一轮对话
 result1 = agent.run(
-    user_input="分析客户A的数据",
+    user_input="分析客户A的销售数据",
     variables={'target': '客户A'},
     chatId="session_001"
 )
 
 # 第二轮对话（基于前一轮的上下文）
 result2 = agent.run(
-    user_input="对比客户B的数据",
-    variables={'target': '客户B', 'action': '对比分析'},
-    chatId="session_001"  # 相同的会话ID
+    user_input="对比客户B的数据，找出差异",
+    variables={'target': '客户B'},
+    chatId="session_001"  # 相同会话ID，保持上下文
+)
+
+# 第三轮对话（继续基于前面的分析）
+result3 = agent.run(
+    user_input="给出改进建议",
+    chatId="session_001"
 )
 ```
 
 ### 权限控制机制
 
-通过工具配置实现细粒度的权限控制：
+支持工具级别的细粒度权限控制：
 
-**人工确认示例：**
-```json title="人工确认配置"
+```json title="权限控制配置示例"
 {
-    "type": "model",
-    "name": "models.SensitiveData",
-    "enableFunctionList": {
-        "delete": {
-            "humanInterrupt": true
-        }
-    }
-}
-```
-
-**角色权限示例：**
-```json title="角色权限配置"
-{
-    "type": "model",
-    "name": "models.SensitiveData",
-    "enableFunctionList": {
-        "query": {
-            "roles": ["roles.admin", "roles.developer"]
-        }
-    }
-}
-```
-
-**权限配置项：**
-- `humanInterrupt` - 需要人工确认
-- `roles` - 允许调用该工具函数的角色实例元素fullName列表
-
-### 事件配置
-
-通过preEvent和postEvent配置工具调用事件：
-
-**事件配置项说明：**
-- `preEvent` - 工具调用前事件触发配置，数据为工具调用的入参数据
-- `postEvent` - 工具调用后事件触发配置，数据为工具返回的数据
-- `withData` - 是否在通过stream_callback发送事件时携带工具的入参或返回数据（默认为true）
-
-事件通过`stream_callback`回调函数发送消息，`withData`控制是否携带工具调用的入参或返回数据（默认为true）。
-
-**基础事件配置：**
-```json title="基础事件配置"
-{
-    "type": "model",
-    "name": "models.AuditModel",
-    "enableFunctionList": {
-        "save": {
-            "preEvent": {"withData": true},   // 调用前发送事件，携带入参
-            "postEvent": {"withData": false}  // 调用后发送事件，不携带返回数据
-        }
-    }
-}
-```
-
-**事件数据控制示例：**
-```json title="withData配置示例"
-{
-    "type": "model",
-    "name": "models.QueryModel",
-    "enableFunctionList": {
-        "query": {
-            "preEvent": {"withData": false},  // 不携带查询参数
-            "postEvent": {"withData": true}   // 携带查询结果
-        }
-    }
-}
-```
-
-**使用场景：** 审计日志、操作记录、数据监控、实时反馈等。
-
-### 自定义回调处理器
-
-除了通过stream_callback参数传递回调函数外，还可以创建专门的回调处理器实例元素来处理更复杂的回调逻辑。
-
-#### 创建回调处理器
-
-**目录结构：**
-```plaintext title="回调处理器目录结构"
-aiagents/
-└── CustomCallback/         # 回调处理器名称
-    ├── e.json              # 元素配置文件
-    ├── service.py          # 回调处理器实现
-    └── __init__.py         # 包初始化文件
-```
-
-**e.json配置：**
-```json title="aiagents/CustomCallback/e.json"
-{
-    "backendBundleEntry": ".",
-    "title": "自定义Agent回调",
-    "type": "services.NormalType"
-}
-```
-
-**service.py实现：**
-```python title="aiagents/CustomCallback/service.py"
-from aiagents.ReActType import CustomAgentCallbackHandler
-from typing import Any, Dict
-
-class CustomCallback(CustomAgentCallbackHandler):
-    """自定义Agent回调处理器"""
-
-    def pre_model_hook(self, state: Dict[str, Any], **kwargs) -> Dict[str, Any]:
-        """模型调用前处理"""
-        print(f"模型调用前: {state}")
-        return state
-
-    def on_llm_start(self, serialized: dict[str, Any], prompts: list[str], **kwargs) -> Any:
-        """LLM开始时的回调"""
-        print(f"LLM开始调用: {len(prompts)}个提示")
-```
-
-**__init__.py文件：**
-```python title="aiagents/CustomCallback/__init__.py"
-from .service import CustomCallback
-```
-
-#### 配置回调处理器
-
-在AIAgent的config.json中配置回调处理器：
-
-```json title="配置自定义回调处理器"
-{
-    "llmElement": "llms.LLMJitAppDevelop",
-    "callbackHandler": "aiagents.CustomCallback",
     "tools": [
         {
             "type": "model",
-            "name": "models.CustomerModel",
+            "name": "models.SensitiveData",
             "enableFunctionList": {
-                "query": {}
+                "query": {
+                    "roles": ["roles.admin", "roles.analyst"]
+                },
+                "delete": {
+                    "humanInterrupt": true,
+                    "roles": ["roles.admin"]
+                }
             }
         }
     ]
 }
 ```
 
-#### 可用的回调方法
+### 事件配置
 
-**Agent专用：**
-- `pre_model_hook(state, **kwargs)` - 模型调用前处理
-- `post_model_hook(state, **kwargs)` - 模型调用后处理
+配置工具调用前后的事件处理，用于审计和监控：
 
-**LangChain标准：**
-- `on_llm_start(serialized, prompts, **kwargs)` - LLM开始调用
-- `on_tool_start(serialized, input_str, **kwargs)` - 工具开始调用
-- `on_tool_end(output, **kwargs)` - 工具调用结束
+```json title="事件配置示例"
+{
+    "tools": [
+        {
+            "type": "model", 
+            "name": "models.AuditModel",
+            "enableFunctionList": {
+                "save": {
+                    "preEvent": {"withData": true},   # 调用前发送事件，携带入参
+                    "postEvent": {"withData": false}  # 调用后发送事件，不携带返回数据
+                },
+                "delete": {
+                    "preEvent": {"withData": false},
+                    "postEvent": {"withData": true}
+                }
+            }
+        }
+    ]
+}
+```
 
-#### 使用示例
+```python title="事件监听示例"
+def event_callback(data):
+    if data.get('type') == 'TOOL_CALL_START':
+        print(f"即将调用工具: {data['data']['outputArgs']['value']['toolName']}")
+        # 记录审计日志
+    elif data.get('type') == 'TOOL_CALL_END':
+        print(f"工具调用完成")
+        # 记录操作结果
 
-```python title="使用自定义回调处理器"
-# 获取配置了自定义回调的代理
-agent = app.getElement("aiagents.MyAgent")
-
-# 运行代理（会自动使用配置的回调处理器）
-result = agent.run(
-    user_input="处理客户数据",
-    variables={'task': '数据处理'}
+agent.run(
+    user_input="删除过期数据",
+    stream_callback=event_callback
 )
+```
 
-# 回调处理器会在相应的时机自动被调用
+### 知识库集成
+
+配置和使用知识库增强代理能力：
+
+```json title="知识库配置示例"
+{
+    "knowledgeRepo": [
+        {
+            "fullName": "rags.CompanyKnowledgeBase",
+            "enable": true,
+            "force": false
+        },
+        {
+            "fullName": "rags.TechnicalDocuments",
+            "enable": true,
+            "force": true  # 强制使用该知识库
+        }
+    ]
+}
+```
+
+#### 知识库工作机制
+
+知识库集成支持两种工作模式：
+
+**强制模式（force: true）：**
+- Agent会根据用户询问**先查询一次知识库**，将结果作为上下文的补充和增强
+- 查询到的知识会自动注入到推理过程中，为后续决策提供支撑
+- 适用于必须依赖特定知识库的场景，如技术文档查询、企业规章制度等
+
+**非强制模式（force: false）：**
+- 完全由用户提示词以及大模型决定是否需要以及在什么时机查询知识库
+- Agent会根据推理过程判断是否需要额外的知识支持
+- 提供更灵活的知识获取策略，适用于通用性较强的场景
+
+```json title="知识库模式对比示例"
+{
+    "knowledgeRepo": [
+        {
+            "fullName": "rags.TechnicalSpecs",
+            "enable": true,
+            "force": true  // 强制模式：每次都先查询技术规范
+        },
+        {
+            "fullName": "rags.GeneralKnowledge", 
+            "enable": true,
+            "force": false  // 非强制模式：按需查询通用知识
+        }
+    ]
+}
+```
+
+### 自定义回调处理器
+
+创建专门的回调处理器实例元素来处理复杂的回调逻辑：
+
+```python title="自定义回调处理器实现"
+# aiagents/CustomCallback/service.py
+from aiagents.ReActType import CustomAgentCallbackHandler
+from typing import Any, Dict
+
+class CustomCallback(CustomAgentCallbackHandler):
+    def pre_model_hook(self, state: Dict[str, Any], **kwargs) -> Dict[str, Any]:
+        # 模型调用前的自定义处理
+        print(f"模型调用前处理: {state.get('messages', [])[-1]}")
+        return state
+
+    def on_tool_start(self, serialized: dict, input_str: str, **kwargs) -> Any:
+        # 工具开始调用时的处理
+        tool_name = serialized.get('name', 'unknown')
+        print(f"开始调用工具: {tool_name}")
+
+    def on_tool_end(self, output: str, **kwargs) -> Any:
+        # 工具调用结束时的处理
+        print(f"工具调用结果: {output[:100]}...")
+```
+
+```json title="配置和使用自定义回调"
+{
+    "llmElement": "llms.LLMJitAppDevelop",
+    "callbackHandler": "aiagents.CustomCallback",
+    "tools": [...]
+}
+```
+
+使用时无需额外代码，回调处理器会自动工作：
+```python
+result = agent.run(user_input="处理数据")
 ```

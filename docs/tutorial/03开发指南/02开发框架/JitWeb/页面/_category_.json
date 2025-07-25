@@ -1,0 +1,11 @@
+{
+  "position": 4,
+  "label": "页面",
+  "collapsible": true,
+  "collapsed": false,
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "页面"
+  }
+} 

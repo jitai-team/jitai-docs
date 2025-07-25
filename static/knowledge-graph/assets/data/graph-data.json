@@ -187,7 +187,8 @@
         "AI能力组件集，包含大模型、知识库、Agent和助理四个核心模块",
         "为企业级AI应用提供完整支撑：为AI和GUI原生设计，简洁灵活高集成的开发框架",
         "AI智能体落地支撑：通过可视化开发和调测工具，让AI智能体快速在企业数字化系统中落地应用",
-        "为企业数字化转型提供AI能力的技术底座，加速AI智能化应用的规模化落地"
+        "为企业数字化转型提供AI能力的技术底座，加速AI智能化应用的规模化落地",
+        "AI智能体事件驱动机制：通过AIAgent事件和AI助理事件两大Type，实现Agent任务执行、助理交互、状态变化等核心AI业务场景的统一事件管理，支持Agent间协作、任务链式执行、多轮对话管理和智能路由决策"
       ]
     },
     {
@@ -257,7 +258,8 @@
         "JitAi平台的数据持久化框架，基于对象关系映射实现统一的数据库访问和操作",
         "支持多种数据库后端和灵活的数据模型定义，包含数据表、扩展表、聚合表、对象模型等",
         "提供丰富的数据类型和强大的查询能力，支持Q表达式和TQL查询语言",
-        "简化数据库操作和数据模型管理，提供自动建表、字段映射、关系维护等便捷功能"
+        "简化数据库操作和数据模型管理，提供自动建表、字段映射、关系维护等便捷功能",
+        "数据层事件驱动支持：通过模型事件Type实现数据操作的事件监听和处理，支持模型CRUD操作的事件触发，提供数据一致性管理和事务级别的事件处理能力"
       ]
     },
     {
@@ -277,7 +279,8 @@
         "JitAi平台的核心业务服务框架，提供API服务、外部集成、事件处理的完整后端能力",
         "包含业务服务、外部API、标准授权三大核心组件，支撑复杂业务逻辑的实现",
         "基于事件驱动架构实现服务解耦，支持模型事件、工作流事件、自定义事件的统一管理",
-        "为上层应用提供标准化的服务接口和集成能力，加速业务功能的快速实现"
+        "为上层应用提供标准化的服务接口和集成能力，加速业务功能的快速实现",
+        "提供事件驱动的基础技术实现"
       ]
     },
     {
@@ -287,7 +290,8 @@
         "企业级审批流程引擎，提供完整的工作流设计、执行和管理能力",
         "涵盖标准审批流程、审批服务、流程管理、待办中心、发起申请、审批处理等完整工作流生态",
         "支持复杂审批逻辑、代理机制、批量处理、时间限制等企业级工作流特性",
-        "简化企业审批业务的实现复杂度，提升组织协同效率和业务处理规范性"
+        "简化企业审批业务的实现复杂度，提升组织协同效率和业务处理规范性",
+        "工作流事件驱动机制：通过审批事件Type实现审批流程的事件监听和处理，支持审批状态变更、节点变更、处理完成等关键环节的事件触发，实现工作流程的智能化监控和自动化响应"
       ]
     },
     {
@@ -2013,10 +2017,10 @@
       "type": "Memory",
       "observations": [
         "企业级组织架构管理，支持多种企业平台的组织结构集成",
-        "包含5种企业组织类型，涵盖标准组织、企业微信、钉钉、极态应用等",
         "支持组织架构同步、部门管理、人员权限继承",
         "提供统一的组织API和第三方平台适配器",
-        "实现跨平台的企业身份和组织信息统一管理"
+        "实现跨平台的企业身份和组织信息统一管理",
+        "包含4种企业组织类型，涵盖标准组织、企业微信、钉钉、企业微信代开发"
       ]
     },
     {
@@ -2165,13 +2169,13 @@
       ]
     },
     {
-      "name": "corps.JitAppType(极态应用)",
+      "name": "events.AIAgentType(AIAgent事件)",
       "type": "Memory",
       "observations": [
-        "极态平台内部的组织架构管理类型",
-        "支持极态平台组织信息和用户管理",
-        "提供平台级的组织权限和身份管理",
-        "实现跨应用的统一身份认证"
+        "专用于AIAgent相关操作的事件处理Type，监听Agent的创建、执行、完成等状态变化",
+        "支持Agent任务启动、进度更新、结果回调等事件的触发和处理",
+        "与AIAgent深度集成，实现Agent执行过程的事件驱动管理",
+        "提供Agent间协作事件和任务链式执行的统一事件处理机制"
       ]
     },
     {
@@ -2239,13 +2243,14 @@
       ]
     },
     {
-      "name": "services.NormalType(业务服务)",
+      "name": "services.NormalType(自定义业务服务)",
       "type": "Memory",
       "observations": [
-        "后端业务服务的标准Type定义，为各种业务功能提供统一的服务框架",
+        "后端自定义业务服务的标准Type定义，为各种业务功能提供统一的服务框架",
         "支持自定义函数列表定义，包含参数类型、返回类型和函数描述",
         "提供后端入口点配置和端点管理能力",
-        "实现具体服务实例的统一管理和调用机制"
+        "实现具体服务实例的统一管理和调用机制",
+        "为企业自定义业务服务提供的技术封装，支持灵活的业务逻辑实现"
       ]
     },
     {
@@ -2274,8 +2279,7 @@
       "observations": [
         "专门用于数据模型操作的事件处理Type，监听模型的CRUD操作",
         "支持模型创建、更新、删除等操作的事件触发和处理",
-        "提供数据一致性管理和事务级别的事件处理能力",
-        "与JitORM框架集成，实现数据层事件的自动化管理"
+        "提供数据一致性管理和事务级别的事件处理能力"
       ]
     },
     {
@@ -2499,33 +2503,33 @@
       ]
     },
     {
-      "name": "pays.Meta(支付)",
+      "name": "events.AIAssistantType(Ai助理事件)",
       "type": "Memory",
       "observations": [
-        "支付系统的基础抽象类，定义支付流程的通用框架和接口规范",
-        "为各种具体支付方式提供统一的基础架构和核心功能",
-        "封装支付订单处理、状态管理、回调处理等通用支付逻辑",
-        "支持扩展不同的第三方支付平台，实现支付方式的标准化接入"
+        "专用于AI助理交互的事件处理Type，监听用户对话、路由决策、助理响应等事件",
+        "支持多轮对话状态管理和助理行为的事件追踪",
+        "与AI助理组件深度集成，实现智能路由和多Agent协同的事件驱动",
+        "提供用户意图识别、助理切换、会话管理等核心交互事件的处理能力"
       ]
     },
     {
       "name": "pays.WechatPayType(微信支付)",
       "type": "Memory",
       "observations": [
-        "继承pays.Meta的微信支付Type元素，实现微信支付的具体业务逻辑",
         "集成微信支付官方API，支持扫码支付、H5支付、小程序支付等多种方式",
         "提供微信生态内的无缝支付体验，支持微信用户的快速支付流程",
-        "适用于微信小程序、公众号、APP等微信生态应用场景"
+        "适用于微信小程序、公众号、APP等微信生态应用场景",
+        "JitPay微信支付Type元素，实现微信支付的具体业务逻辑"
       ]
     },
     {
       "name": "pays.AliPayType(支付宝支付)",
       "type": "Memory",
       "observations": [
-        "继承pays.Meta的支付宝支付Type元素，实现支付宝支付的具体业务逻辑",
         "集成支付宝官方API，支持扫码支付、网页支付、APP支付等多种方式",
         "提供支付宝生态内的便捷支付体验，支持花呗、余额宝等支付方式",
-        "适用于电商、O2O、生活服务等多种商业应用场景"
+        "适用于电商、O2O、生活服务等多种商业应用场景",
+        "JitPay支付宝支付Type元素，实现支付宝支付的具体业务逻辑"
       ]
     },
     {
@@ -3181,7 +3185,7 @@
       "relationType": "包含"
     },
     {
-      "source": "JitWeb",
+      "source": "组件",
       "target": "widgets.React(自定义控件)",
       "relationType": "包含"
     },
@@ -3911,8 +3915,8 @@
       "relationType": "包含"
     },
     {
-      "source": "企业组织",
-      "target": "corps.JitAppType(极态应用)",
+      "source": "JitPay",
+      "target": "pays.AliPayType(支付宝支付)",
       "relationType": "包含"
     },
     {
@@ -3926,13 +3930,13 @@
       "relationType": "包含"
     },
     {
-      "source": "JitService",
-      "target": "services.NormalType(业务服务)",
+      "source": "services.NormalType(自定义业务服务)",
+      "target": "services.TpProcessSvc(第三方流程待办服务)",
       "relationType": "包含"
     },
     {
-      "source": "JitService",
-      "target": "events.WorkflowType(审批事件)",
+      "source": "JitAi",
+      "target": "events.AIAssistantType(Ai助理事件)",
       "relationType": "包含"
     },
     {
@@ -3941,8 +3945,8 @@
       "relationType": "包含"
     },
     {
-      "source": "JitService",
-      "target": "events.ModelType(模型事件)",
+      "source": "JitAi",
+      "target": "events.AIAgentType(AIAgent事件)",
       "relationType": "包含"
     },
     {
@@ -3976,43 +3980,43 @@
       "relationType": "包含"
     },
     {
-      "source": "services.NormalType(业务服务)",
-      "target": "services.UtilsServices(工具服务)",
-      "relationType": "包含"
-    },
-    {
-      "source": "services.NormalType(业务服务)",
-      "target": "services.TpMsgSvc(三方消息通知服务)",
-      "relationType": "包含"
-    },
-    {
-      "source": "services.NormalType(业务服务)",
-      "target": "services.DataHandleSvc(数据处理服务)",
-      "relationType": "包含"
-    },
-    {
-      "source": "services.NormalType(业务服务)",
-      "target": "services.OpenMsgSvc(开放消息服务)",
-      "relationType": "包含"
-    },
-    {
-      "source": "services.NormalType(业务服务)",
-      "target": "services.ErrCodeSvc(错误码服务)",
-      "relationType": "包含"
-    },
-    {
-      "source": "services.NormalType(业务服务)",
-      "target": "services.DynamicElementSvc(动态元素服务)",
-      "relationType": "包含"
-    },
-    {
-      "source": "services.NormalType(业务服务)",
+      "source": "services.NormalType(自定义业务服务)",
       "target": "services.AuthOapiSvc(认证开放API服务)",
       "relationType": "包含"
     },
     {
-      "source": "services.NormalType(业务服务)",
-      "target": "services.TpProcessSvc(第三方流程待办服务)",
+      "source": "services.NormalType(自定义业务服务)",
+      "target": "services.DynamicElementSvc(动态元素服务)",
+      "relationType": "包含"
+    },
+    {
+      "source": "services.NormalType(自定义业务服务)",
+      "target": "services.ErrCodeSvc(错误码服务)",
+      "relationType": "包含"
+    },
+    {
+      "source": "services.NormalType(自定义业务服务)",
+      "target": "services.OpenMsgSvc(开放消息服务)",
+      "relationType": "包含"
+    },
+    {
+      "source": "services.NormalType(自定义业务服务)",
+      "target": "services.DataHandleSvc(数据处理服务)",
+      "relationType": "包含"
+    },
+    {
+      "source": "services.NormalType(自定义业务服务)",
+      "target": "services.TpMsgSvc(三方消息通知服务)",
+      "relationType": "包含"
+    },
+    {
+      "source": "services.NormalType(自定义业务服务)",
+      "target": "services.UtilsServices(工具服务)",
+      "relationType": "包含"
+    },
+    {
+      "source": "03-数据模型",
+      "target": "events.ModelType(模型事件)",
       "relationType": "包含"
     },
     {
@@ -4072,7 +4076,7 @@
     },
     {
       "source": "JitPay",
-      "target": "pays.Meta(支付)",
+      "target": "pays.WechatPayType(微信支付)",
       "relationType": "包含"
     },
     {
@@ -4081,13 +4085,13 @@
       "relationType": "包含"
     },
     {
-      "source": "pays.Meta(支付)",
-      "target": "pays.WechatPayType(微信支付)",
+      "source": "JitService",
+      "target": "services.NormalType(自定义业务服务)",
       "relationType": "包含"
     },
     {
-      "source": "pays.Meta(支付)",
-      "target": "pays.AliPayType(支付宝支付)",
+      "source": "JitWorkflow",
+      "target": "events.WorkflowType(审批事件)",
       "relationType": "包含"
     },
     {

@@ -114,63 +114,21 @@ for chunk in result:
 
 #### 基础配置
 
-```json title="基础配置示例"
-{
-  "apiKey": "{{llmApiKey}}",
-  "baseUrl": "{{llmBaseUrl}}",
-  "model": "{{llmName}}",
-  "temperature": 0.7,
-  "maxTokens": 1000,
-  "saverDb": "databases.Default",
-  "sessionTimeout": 3600,
-  "welcomeMessage": "欢迎使用AI助理",
-  "prologues": ["常见问题1", "常见问题2"]
-}
-```
-
-| 配置项 | 类型 | 说明 | 必填 |
-|-------|-----|------|------|
-| apiKey | string | LLM API密钥 | 是 |
-| baseUrl | string | LLM服务地址 | 是 |
-| model | string | 模型名称 | 是 |
-| temperature | number | 温度参数(0-1) | 否 |
-| maxTokens | number | 最大令牌数 | 否 |
-| saverDb | string | 检查点数据库 | 是 |
-| sessionTimeout | number | 会话超时(秒) | 否 |
-| welcomeMessage | string | 欢迎消息 | 否 |
-| prologues | array | 预设问题列表 | 否 |
+| 配置项 | 类型 | 对应原生类型 | 必填 | 说明 |
+|-------|-----|-----------|------|------|
+| apiKey | Stext | str | 是 | LLM API密钥 |
+| baseUrl | Stext | str | 是 | LLM服务地址 |
+| model | Stext | str | 是 | 模型名称 |
+| temperature | Numeric | float | 否 | 温度参数(0-1) |
+| maxTokens | Numeric | int | 否 | 最大令牌数 |
+| saverDb | Stext | str | 是 | 检查点数据库 |
+| sessionTimeout | Numeric | int | 否 | 会话超时(秒) |
+| welcomeMessage | Stext | str | 否 | 欢迎消息 |
+| prologues | JitList | list | 否 | 预设问题列表 |
 
 #### 节点配置
 
-```json title="节点配置示例"
-{
-  "nodes": {
-    "start": {
-      "id": "start",
-      "type": "start",
-      "title": "开始节点",
-      "position": {"x": 90, "y": 100}
-    },
-    "router_001": {
-      "id": "router_001",
-      "type": "router", 
-      "title": "路由决策",
-      "model": "{{llmName}}",
-      "temperature": 0.7,
-      "position": {"x": 280, "y": 100}
-    },
-    "aiagent_001": {
-      "id": "aiagent_001",
-      "type": "aiagent",
-      "title": "智能代理",
-      "agent": "aiagents.CustomerService",
-      "position": {"x": 470, "y": 100}
-    }
-  }
-}
-```
-
-支持的节点类型：
+**支持的节点类型：**
 - **start**: 开始节点，工作流入口
 - **router**: 路由节点，实现智能分流
 - **aiagent**: AI代理节点，执行具体任务
@@ -179,48 +137,14 @@ for chunk in result:
 
 #### 边配置
 
-```json title="边配置示例"
-{
-  "edges": {
-    "start-right@router_001-left": {
-      "id": "start-right@router_001-left",
-      "sourceNode": "start",
-      "targetNode": "router_001", 
-      "sourcePort": "start-right",
-      "targetPort": "router_001-left",
-      "argMapping": {
-        "input_data": "start.userInput"
-      }
-    }
-  }
-}
-```
-
-| 配置项 | 说明 | 必填 |
-|-------|------|------|
-| id | 边的唯一标识 | 是 |
-| sourceNode | 源节点ID | 是 |
-| targetNode | 目标节点ID | 是 |
-| sourcePort | 源端口 | 是 |
-| targetPort | 目标端口 | 是 |
-| argMapping | 参数映射关系 | 否 |
-
-#### LLM配置
-
-```json title="LLM配置示例"
-{
-  "llmElement": "llms.OpenAI",
-  "llmConfig": {
-    "model": "gpt-4",
-    "temperature": 0.8,
-    "maxTokens": 2000
-  },
-  "workflows": [
-    "aiworkflows.SimplePromptLLM",
-    "aiworkflows.ComplexReasoningLLM"
-  ]
-}
-```
+| 配置项 | 类型 | 对应原生类型 | 必填 | 说明 |
+|-------|-----|-----------|------|------|
+| id | Stext | str | 是 | 边的唯一标识 |
+| sourceNode | Stext | str | 是 | 源节点ID |
+| targetNode | Stext | str | 是 | 目标节点ID |
+| sourcePort | Stext | str | 是 | 源端口 |
+| targetPort | Stext | str | 是 | 目标端口 |
+| argMapping | JitDict | dict | 否 | 参数映射关系 |
 
 ## 方法
 

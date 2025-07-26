@@ -7,6 +7,9 @@
     color-mix(in srgb, var(--section-color) 7%, white) 100%);
   position: relative;
   overflow: hidden;
+  --image-left-ratio: 14;
+  --image-right-ratio: 10;
+  --image-height: 20;
 }
 
 .devopsSection::before {
@@ -80,18 +83,18 @@
 
 
 .wideCard {
-  flex: 3;
+  flex: var(--image-left-ratio);
 
   .imagePlaceholder {
-    aspect-ratio: 24/10;
+    aspect-ratio: var(--image-height)/var(--image-right-ratio);
   }
 }
 
 .narrowCard {
-  flex: 2;
+  flex: var(--image-right-ratio);
 
   .imagePlaceholder {
-    aspect-ratio: 24/15;
+    aspect-ratio: var(--image-height)/var(--image-left-ratio);
   }
 }
 
@@ -156,18 +159,6 @@
     display: block;
   }
 
-  .wideCard {
-    .imagePlaceholder {
-      aspect-ratio: 24/10;
-    }
-  }
-
-  .narrowCard {
-    .imagePlaceholder {
-      aspect-ratio: 24/15;
-    }
-  }
-
   .featureContent p {
     font-size: 0.95rem;
   }
@@ -195,18 +186,6 @@
   .narrowCard {
     width: 100%;
     display: block;
-  }
-
-  .wideCard {
-    .imagePlaceholder {
-      aspect-ratio: 24/10;
-    }
-  }
-
-  .narrowCard {
-    .imagePlaceholder {
-      aspect-ratio: 24/15;
-    }
   }
 
   .featureContent p {

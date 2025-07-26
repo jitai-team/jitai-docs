@@ -80,11 +80,19 @@
 
 
 .wideCard {
-  flex: 9;
+  flex: 3;
+
+  .imagePlaceholder {
+    aspect-ratio: 24/10;
+  }
 }
 
 .narrowCard {
-  flex: 6;
+  flex: 2;
+
+  .imagePlaceholder {
+    aspect-ratio: 24/15;
+  }
 }
 
 .featureImage {
@@ -94,7 +102,6 @@
   align-items: center;
   position: relative;
   margin-bottom: 1.5rem;
-  min-height: 300px;
 }
 
 .featureContent {
@@ -138,15 +145,27 @@
     margin-bottom: 3rem;
   }
 
-  .featureImage {
+  /* .featureImage {
     min-height: 200px;
-  }
+  } */
 
   .wideCard,
   .narrowCard {
     flex: none;
     width: 100%;
     display: block;
+  }
+
+  .wideCard {
+    .imagePlaceholder {
+      aspect-ratio: 24/10;
+    }
+  }
+
+  .narrowCard {
+    .imagePlaceholder {
+      aspect-ratio: 24/15;
+    }
   }
 
   .featureContent p {
@@ -164,9 +183,9 @@
     margin-bottom: 2rem;
   }
 
-  .featureImage {
+  /* .featureImage {
     min-height: 150px;
-  }
+  } */
 
   .featureCard {
     padding: 1rem;
@@ -176,6 +195,18 @@
   .narrowCard {
     width: 100%;
     display: block;
+  }
+
+  .wideCard {
+    .imagePlaceholder {
+      aspect-ratio: 24/10;
+    }
+  }
+
+  .narrowCard {
+    .imagePlaceholder {
+      aspect-ratio: 24/15;
+    }
   }
 
   .featureContent p {
@@ -200,7 +231,6 @@
 
 @media (max-width: 768px) {
   .imagePlaceholder {
-    height: 200px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -210,7 +240,6 @@
 
 @media (max-width: 480px) {
   .imagePlaceholder {
-    height: 150px;
     width: 100%;
     display: flex;
     align-items: center;

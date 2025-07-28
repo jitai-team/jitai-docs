@@ -89,6 +89,7 @@ const config: Config = {
            position: 'left',
            label: '文档',
          },
+         {href: '/knowledge-graph/', label: '知识图谱', position: 'left', target: '_blank'},
         // {to: '/blog', label: '博客', position: 'left'},
         // {
         //   type: 'docSidebar',

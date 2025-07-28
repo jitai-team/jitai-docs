@@ -7,6 +7,9 @@
     color-mix(in srgb, var(--section-color) 7%, white) 100%);
   position: relative;
   overflow: hidden;
+  --image-left-ratio: 14;
+  --image-right-ratio: 10;
+  --image-height: 20;
 }
 
 .devopsSection::before {
@@ -80,11 +83,19 @@
 
 
 .wideCard {
-  flex: 9;
+  flex: var(--image-left-ratio);
+
+  .imagePlaceholder {
+    aspect-ratio: var(--image-height)/var(--image-right-ratio);
+  }
 }
 
 .narrowCard {
-  flex: 6;
+  flex: var(--image-right-ratio);
+
+  .imagePlaceholder {
+    aspect-ratio: var(--image-height)/var(--image-left-ratio);
+  }
 }
 
 .featureImage {
@@ -94,7 +105,6 @@
   align-items: center;
   position: relative;
   margin-bottom: 1.5rem;
-  min-height: 300px;
 }
 
 .featureContent {
@@ -138,9 +148,9 @@
     margin-bottom: 3rem;
   }
 
-  .featureImage {
+  /* .featureImage {
     min-height: 200px;
-  }
+  } */
 
   .wideCard,
   .narrowCard {
@@ -164,9 +174,9 @@
     margin-bottom: 2rem;
   }
 
-  .featureImage {
+  /* .featureImage {
     min-height: 150px;
-  }
+  } */
 
   .featureCard {
     padding: 1rem;
@@ -200,7 +210,6 @@
 
 @media (max-width: 768px) {
   .imagePlaceholder {
-    height: 200px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -210,7 +219,6 @@
 
 @media (max-width: 480px) {
   .imagePlaceholder {
-    height: 150px;
     width: 100%;
     display: flex;
     align-items: center;

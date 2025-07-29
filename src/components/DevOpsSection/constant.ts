@@ -4,16 +4,16 @@ export const CONTENT = {
   color: '#047857',
   features: [
     {
+      title: '多种应用分发方式',
+      description: '线上，可上传到云端仓库、从云端仓库下载；线下，可导出源码包到本地、从本地导入源码包',
+      image: 'https://jit-www.oss-cn-beijing.aliyuncs.com/devops_fenfa.png',
+      imageAlt: '多种应用分发方式'
+    },
+    {
       title: '支持应用多环境、多版本',
       description: '应用可区分开发、测试、生产等多个环境，不同环境使用不同版本，环境隔离，提高系统稳定性',
       image: 'https://jit-www.oss-cn-beijing.aliyuncs.com/devops_multiVserion.png',
       imageAlt: '多环境多版本管理'
-    },
-    {
-      title: '多种应用分发方式',
-      description: '线上，可上传到云端仓库、从云端仓库下载；线下，可导出源码包到本地、从本地导入源码包',
-      image: 'https://jit-www.oss-cn-beijing.aliyuncs.com/devops_fenfa.png',
-      imageAlt: '应用分发方式'
     },
     {
       title: '物理环境虚拟化',

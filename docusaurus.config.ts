@@ -83,20 +83,43 @@ const config: Config = {
         src: 'img/jit.png',
       },
       items: [
+        {
+          type: 'docSidebar',
+          sidebarId: 'indexSidebar',
+          position: 'left',
+          label: '导读',
+        },
          {
            type: 'docSidebar',
            sidebarId: 'tutorialSidebar',
            position: 'left',
-           label: '文档',
+           label: '教程',
          },
-         {href: '/knowledge-graph/', label: '知识图谱', position: 'left', target: '_blank'},
+         {
+           type: 'docSidebar',
+           sidebarId: 'topicSidebar',
+           position: 'left',
+           label: '专题指南',
+         },
+         {
+           type: 'docSidebar',
+           sidebarId: 'referenceSidebar',
+           position: 'left',
+           label: '参考指南',
+         },
+         {
+           type: 'docSidebar',
+           sidebarId: 'howToSidebar',
+           position: 'left',
+           label: '操作指南',
+         },
         // {to: '/blog', label: '博客', position: 'left'},
-        // {
-        //   type: 'docSidebar',
-        //   sidebarId: 'caseSidebar',
-        //   position: 'left',
-        //   label: '案例展示',
-        // },
+         {
+           type: 'docSidebar',
+           sidebarId: 'caseSidebar',
+           position: 'left',
+           label: '案例',
+         },
         //{
         //   type: 'docSidebar',
         //   sidebarId: 'communitySidebar',
@@ -119,15 +142,15 @@ const config: Config = {
           items: [
             {
               label: '下载安装',
-              to: '/docs/tutorial/00快速上手/01下载安装',
+              to: '/docs/tutorial/下载安装',
             },
             {
               label: '快速上手',
-              to: '/docs/tutorial/00快速上手/03-5分钟开发一个AI应用（智能客服）',
+              to: '/docs/tutorial/开发第一个AI应用（智能客服）',
             },
             {
               label: '企业级AI应用开发',
-              to: '/docs/tutorial/03开发指南/02开发框架/JitAi/intro',
+              to: '/docs/reference/开发框架/JitAi/intro',
             }
           ],
         },

@@ -16,9 +16,9 @@ export const CONTENT = {
     // },
     {
       id: 'guide',
-      label: '开发指南',
+      label: '文档',
       type: 'link',
-      url: './docs/tutorial/00快速上手/01下载安装',
+      url: './docs/index/',
       external: true
     }
     //{ id: 'community', label: '社区', type: 'link', url: './docs/community/intro', external: true }

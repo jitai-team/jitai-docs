@@ -1,0 +1,9 @@
+{
+  "position": 3,
+  "label": "登录认证",
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "登录认证"
+  }
+} 

@@ -1,0 +1,9 @@
+{
+  "position": 2,
+  "label": "文件模板",
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "文件模板"
+  }
+} 

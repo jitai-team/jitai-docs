@@ -17,8 +17,6 @@
 ### GitHub 开源组织
 [![GitHub](https://img.shields.io/badge/GitHub-jitai--team-blue?style=for-the-badge&logo=github)](https://github.com/jitai-team)
 
-在 GitHub 上关注我们，获取最新的开源组件和技术更新。我们将陆续开源 JitAi 的各个组成部分，与社区共同成长。
-
 ### 💼 企微技术交流群
 扫码加入企微技术交流群，与核心开发团队和活跃开发者直接交流：
 
@@ -63,31 +61,4 @@
 - 🎉 **社区见面会** - 线下交流机会
 
 *敬请关注我们的社区公告，第一时间获取活动信息！*
-
----
-
-## ❓ 常见问题
-
-### 如何开始使用 JitAi？
-请参考我们的 [快速上手指南](../tutorial/00快速上手/01下载安装.md)，5分钟即可体验 AI 应用开发。
-
-### 遇到技术问题怎么办？
-1. 📖 首先查阅我们的 [开发者文档](https://developer.jit.pro)
-2. 🔍 在 GitHub Issues 中搜索相关问题
-3. 💬 在社区群组中寻求帮助
-4. 📧 联系我们的技术支持团队
-
-### 如何参与开源贡献？
-请参考GitHub仓库中的贡献指南，我们为不同技术水平的贡献者提供详细指导说明。
-
----
-
-<div align="center">
-
-## 🚀 为AI而生，下一代企业级智件和软件开发平台
-
-
-[立即开始](../tutorial/00快速上手/01下载安装.md) | [GitHub 仓库](https://github.com/jitai-team)
-
-</div>
 

@@ -4,6 +4,8 @@ Markdown页面是专用于Markdown文档展示的页面类型，基于Python mar
 
 Markdown页面元素分层结构为Meta（pages.Meta） → Type（pages.MarkdownPageType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建Markdown页面实例元素。
 
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的pages.MarkdownPageType元素，以实现自己的封装。
+
 ## 快速开始
 
 ### 创建实例元素

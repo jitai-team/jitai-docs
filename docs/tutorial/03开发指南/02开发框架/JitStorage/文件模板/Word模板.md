@@ -4,6 +4,8 @@ Word模板专用于生成和处理Word格式文档，基于Jinja2模板引擎实
 
 Word模板元素分层结构为Meta（fileTmpls.Meta） → Type（fileTmpls.WordType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建Word模板实例元素。
 
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的fileTmpls.WordType元素，以实现自己的封装。
+
 ## 快速开始
 
 ### 创建实例元素

@@ -8,6 +8,8 @@ AI大模型是企业级大模型服务网关，对接各个大模型厂商，提
 
 AI大模型元素分层结构为Meta（llms.Meta） → Type（llms.Bailian、llms.OpenAI等） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建AI大模型实例元素。
 
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的llms.Bailian、llms.OpenAI等元素，以实现自己的封装。
+
 **支持的大模型厂商：**
 
 | Type元素 | fullName | 厂商 | 描述 |

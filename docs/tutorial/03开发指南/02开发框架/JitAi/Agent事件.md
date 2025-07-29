@@ -8,6 +8,8 @@ Agent事件是专用于AIAgent相关操作的事件处理，它负责监听Agent
 
 Agent事件元素分层结构为Meta（events.Meta） → Type（events.AIAgentType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建Agent事件实例元素。
 
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的events.AIAgentType元素，以实现自己的封装。
+
 ## 快速开始
 
 ### 创建实例元素

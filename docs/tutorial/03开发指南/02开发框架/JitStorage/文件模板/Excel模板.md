@@ -4,6 +4,8 @@ Excel模板元素是基于文件模板框架的Excel文档生成组件，基于o
 
 Excel模板元素分层结构为Meta（fileTmpls.Meta）→ Type（fileTmpls.ExcelType）→ 实例，开发者可通过JitAi的可视化开发工具快捷地创建Excel模板实例元素。
 
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的fileTmpls.ExcelType元素，以实现自己的封装。
+
 ## 快速开始
 
 ### 创建实例元素

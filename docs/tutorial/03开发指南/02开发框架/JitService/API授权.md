@@ -4,8 +4,7 @@ API授权用于管理第三方应用对本应用API接口的访问权限，通�
 
 API授权元素分层结构为Meta（apiAuths.Meta） → Type（apiAuths.NormalType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建API授权实例元素。
 
-目前支持的类型：
-- **apiAuths.NormalType**：标准授权，提供基于签名的API访问控制
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的apiAuths.NormalType元素，以实现自己的封装。
 
 ## 快速开始
 

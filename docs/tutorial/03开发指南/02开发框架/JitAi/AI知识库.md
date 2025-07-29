@@ -8,6 +8,8 @@ AI知识库是基于RAG（检索增强生成）技术的企业级知识管理系
 
 AI知识库元素分层结构为Meta（rags.Meta） → Type（rags.NormalType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建AI知识库实例元素。
 
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的rags.NormalType元素，以实现自己的封装。
+
 **支持的Type类型：**
 - **rags.NormalType**：标准知识库类型，提供完整的文档管理和智能检索功能
 

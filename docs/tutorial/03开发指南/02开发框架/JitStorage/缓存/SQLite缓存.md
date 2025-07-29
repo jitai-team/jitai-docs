@@ -4,6 +4,8 @@ SQLite缓存是JitStorage框架提供的轻量级文件缓存解决方案，基�
 
 SQLite缓存元素分层结构为Meta（caches.Meta） → Type（caches.SqliteType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建SQLite缓存实例元素。
 
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的caches.SqliteType元素，以实现自己的封装。
+
 ## 快速开始
 
 ### 创建实例元素

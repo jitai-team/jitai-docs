@@ -4,6 +4,8 @@ EOS存储是基于中国移动云EOS（云对象存储）服务的企业级存�
 
 EOS存储元素分层结构为Meta（storages.Meta） → Type（storages.EosType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建EOS存储实例元素。
 
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的storages.EosType元素，以实现自己的封装。
+
 ## 快速开始
 
 ### 创建实例元素

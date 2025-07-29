@@ -4,6 +4,8 @@ Redis缓存是基于Redis内存数据库的高性能缓存服务，提供分布�
 
 Redis缓存元素分层结构为Meta（caches.Meta） → Type（caches.RedisType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建Redis缓存实例。
 
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的caches.RedisType元素，以实现自己的封装。
+
 ## 快速开始
 
 ### 创建实例元素

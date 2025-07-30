@@ -165,7 +165,7 @@ details>div>div {
 }
 
 
-img {
+.theme-doc-sidebar-container img {
   border-radius: 2px;
   box-shadow: var(--we_m_shadow, 0px 4px 24px 0px rgba(0, 0, 0, 0.1));
 }
@@ -212,7 +212,7 @@ img {
   .main-wrapper {
     max-width: none;
   }
-  
+
   .container {
     max-width: none;
     padding-left: 1rem;

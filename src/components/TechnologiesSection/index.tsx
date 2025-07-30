@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './styles.module.css';
 import globalStyles from '../../pages/index.module.css';
 import ScrollAnimation from '../ScrollAnimation';
-import { CONTENT, remark } from './constant';
+import { CONTENT } from './constant';
 
 const TechnologiesSection: React.FC = () => {
   return (

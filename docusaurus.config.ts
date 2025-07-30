@@ -75,12 +75,17 @@ const config: Config = {
   themes: ['@docusaurus/theme-mermaid'],
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'https://jit-www.oss-cn-beijing.aliyuncs.com/logo/logo_dark.png',
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: true, // 暂时禁用主题切换， 因为 深色模式下 logo 要调整，以及官网要强制为浅色模式
+      // respectPrefersColorScheme: false,
+    },
     navbar: {
-      title: '极态',
       logo: {
         alt: 'Jit Logo',
-        src: 'img/jit.png',
+        src: 'https://jit-www.oss-cn-beijing.aliyuncs.com/logo/logo_title.png',
+        srcDark: 'https://jit-www.oss-cn-beijing.aliyuncs.com/logo/logo_title_dark.svg',  // logo 大小待调整
       },
       items: [
         {
@@ -127,11 +132,11 @@ const config: Config = {
         //   label: '社区',
         // },
         //GitHub
-        {
-          href: 'https://github.com/jitai-team',
-          label: 'GitHub',
-          position: 'right',
-        },
+        // {
+        //   href: 'https://github.com/jitai-team',
+        //   label: 'GitHub',
+        //   position: 'right',
+        // },
       ],
     },
     footer: {
@@ -181,6 +186,13 @@ const config: Config = {
            ],
          },
       ],
+      logo: {
+        alt: '下一代AI应用开发技术体系',
+        src: 'img/logo_dark.svg',
+        href: 'https://jit.pro',
+        width: 340,
+        height: 100
+      },
       copyright: `Copyright © ${new Date().getFullYear()} Jit, Inc. Built with 万云 Co., Ltd.`,
     },
     prism: {

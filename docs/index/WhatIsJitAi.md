@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 # What is JitAi
@@ -9,24 +9,22 @@ JitAi是为AI而生的下一代应用开发技术体系，旨在加快企业级A
 
 JitAi通过解释型系统、矩阵型元架构、图形化编排开发、自动化运维的有机结合，建立了一套完整的AI应用开发方法论和技术体系，为企业数字化转型和AI赋能提供了标准化、工业化的技术底座。
 
-## 技术架构总览
+## 四个核心组件
 
-![JitAi技术架构](img/jitai-architecture.svg)
-
-JitAi构建了一个开放的三层技术架构，**以[JAAP(Jit AI Application Protocol)](/docs/topics/JAAP)为统一架构语言，实现从基础设施到业务应用的全栈整合**。
-
-## 四大核心技术组件
-
-- **[JitAi开发工具](/docs/topics/开发工具)** - 符合[JAAP](/docs/topics/JAAP)规范的双模（可视化、全代码）统一的企业级AI应用开发工具，由应用运行平台解释运行，提供编排式编程体验
+- **[JitAi开发工具](/docs/reference/开发工具)** - 符合JAAP的双模（可视化、全代码）统一的企业级AI应用开发工具，由应用运行平台解释运行，提供编排式编程体验
 - **[JitAi开发框架](/docs/category/开发框架)** - 高度可复用、可扩展架构的模块化开发框架。提供Ai、Auth、I18N、Message、ORM、Pay、Service、Storage、Task、Web、Workflow等全栈业务开发组件，这些组件均遵循JAAP规范，在开发工具中开箱即用
-- **[JitAi运维平台](/docs/howto/运维架构与管理指南)** - 符合[JAAP](/docs/topics/JAAP)规范的一站式自动化运维管理平台，由应用运行平台解释运行，支持应用的创建、发布、部署、运维
-- **[JitAi应用运行平台](/docs/category/运行平台)** - 微内核的[JAAP](/docs/topics/JAAP)应用解释与运行平台，提供系统级API，开发者可搭配系统API和开发框架开发应用
+- **[JitAi运维平台](/docs/devguide/运维架构与管理指南)** - 符合JAAP规范的一站式自动化运维管理平台，由应用运行平台解释运行，支持应用的创建、发布、部署、运维
+- **[JitAi应用运行平台](/docs/category/运行平台)** - 微内核的JAAP应用解释与运行平台，提供系统级API，开发者可搭配系统API和开发框架开发应用
 
-## 核心特性概述
+## 一个协议
+
+- **[JAAP(Jit AI Application Protocol)](/docs/reference/运行平台/JAAP)** - 结构化、文本型、AI可理解的解释型AI应用架构协议，由应用规范和元素规范组成，应用规范解释**系统的构成与接口**，元素规范解释**模块的构成与接口**
+
+## 特性概述
 
 ### 解释型系统
 
-极态开创性地提出了**解释型AI应用架构协议[JAAP](/docs/topics/JAAP)**，并提供**解释型应用运行平台**。
+极态开创性地提出了**解释型AI应用架构协议JAAP**，并提供**解释型应用运行平台**。
 
 JAAP让应用系统成为可被AI动态感知、动态调用、动态编排的解释型系统，将传统应用生态带入AI驱动和AI编排时代。
 

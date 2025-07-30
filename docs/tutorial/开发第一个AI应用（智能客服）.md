@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
 ---
 
 # 开发第一个AI应用（智能客服）
@@ -8,7 +8,7 @@ sidebar_position: 3
 本文适合新手快速上手。通过对本文的学习，你将有以下收获：
 1. 了解极态开发平台的入门使用方式。
 2. 独立开发一个智能客服智能体，并集成到业务系统页面中使用。
-3. 不支持使用SQLite数据库，请将默认数据库调整为MySQL数据库，关于数据库请参考[JitORM](/docs/reference/开发框架/JitORM/intro)。
+3. 不支持使用SQLite数据库，请将默认数据库调整为MySQL数据库，关于数据库请参考[JitORM](/docs/reference/开发框架/JitORM/)。
 :::
 
 ## 效果预览
@@ -19,7 +19,7 @@ sidebar_position: 3
 
 ## 让我们开始吧！
 ### 准备工作
-1. [下载桌面版安装包](./下载安装)（如已安装可跳过）
+1. [下载桌面版安装包](./下载安装.md)（如已安装可跳过）
 2. 准备大模型服务 API Key，需开发者自行注册申请（本案例使用[阿里云百炼平台](https://bailian.console.aliyun.com/?tab=model#/api-key)）
 3. 准备一份文档，作为知识库内容来源（支持 Word、PDF、TXT、Markdown 格式）
 
@@ -28,7 +28,7 @@ sidebar_position: 3
 ### 创建应用
 
 1. 启动桌面版 JitNode，完成激活流程
-2. 进入应用管理页面，命名为"TestJitAI"（**!!!别忘了添加JitAi应用模版!!!**）
+2. 进入应用管理页面，命名为"TestJitAI"
 3. 点击应用列表中的`开发`，进入应用开发区
 
     ![新建应用](./img/jitairobot/新建应用.png)
@@ -80,10 +80,13 @@ sidebar_position: 3
    该智能体作为咨询客服，能够回答关于极态的各类常见问题
    ```
 
-   ![配置AIAgent实例元素](./img/jitairobot/配置AIAgent实例元素.png)
+   ![AIAgent基础配置](./img/jitairobot/AIAgent基础配置.png)
 
 2. 选择之前创建的AI大模型实例元素
 3. 选择模型：qwen-max-latest
+   
+   ![AIAgent添加知识库](./img/jitairobot/AIAgent添加知识库.png)
+
 4. 添加知识库：选择之前创建的AI知识库实例元素
 5. 编写提示词
     ```markdown title="参考提示词"
@@ -133,7 +136,7 @@ sidebar_position: 3
 3. 在门户->默认门户->新建菜单->绑定已有页面，用户即可在默认门户中使用AI助理
     ![在默认门户中配置AI助理页面](./img/jitairobot/在默认门户中配置AI助理页面.png)
 
-    ![在默认门户中使用AI助理](./img/jitairobot/在默认门户中使用AI助理.png)
+    ![在默认门户中使用AI助理](./img/jitairobot/最终效果_页面内置AI助理.png)
 
 
 ---
@@ -143,7 +146,7 @@ sidebar_position: 3
 你已经学会了极态开发平台的基本使用方式，并开发了一个智能客服智能体。
 
 ## 相关文档
-- **[集成智能客服到钉钉机器人](./进阶/集成智能客服到钉钉机器人)** - 将AI助理集成到钉钉机器人
+- **[集成智能客服到钉钉机器人](./集成智能客服到钉钉机器人.md)** - 将AI助理集成到钉钉机器人
 
 
 

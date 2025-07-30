@@ -72,7 +72,7 @@ AI应用对工具的使用是高度动态的，特别是在处理不同类型的
 - **数据任务协同**：前后端工具协同处理复杂的数据和任务场景
 - **标准协议支持**：支持MCP（Model Context Protocol）等标准化工具协议
 
-**[JAAP（Jit AI Application Protocol）](/docs/topics/JAAP)** 从结构定义和过程驱动两个维度，定义了AI原生的企业级应用架构，满足AI应用开发范式。
+**[JAAP（Jit AI Application Protocol）](/docs/reference/运行平台/JAAP)** 从结构定义和过程驱动两个维度，定义了AI原生的企业级应用架构，满足AI应用开发范式。
 
 ## AI产品组件
 

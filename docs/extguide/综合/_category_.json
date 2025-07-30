@@ -1,0 +1,8 @@
+{
+  "label": "综合",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "前后端复合元素扩展、开发工具构建和框架发布指南"
+  }
+}

@@ -194,7 +194,7 @@ const config: Config = {
       ],
       logo: {
         alt: '下一代AI应用开发技术体系',
-        src: 'img/logo_dark.svg',
+        src: 'https://jit-www.oss-cn-beijing.aliyuncs.com/logo/logo_title_dark.svg',
         href: 'https://jit.pro',
         width: 340,
         height: 100

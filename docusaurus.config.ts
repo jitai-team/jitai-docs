@@ -149,19 +149,48 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: '文档',
+          title: '产品',
           items: [
             {
-              label: '下载安装',
-              to: '/docs/tutorial/下载安装',
+              label: '官网首页',
+              to: '/',
             },
             {
-              label: '快速上手',
-              to: '/docs/tutorial/开发第一个AI应用（智能客服）',
+              label: 'What is JitAi',
+              to: '/docs/index/WhatIsJitAi',
             },
             {
-              label: '企业级AI应用开发',
-              to: '/docs/reference/开发框架/JitAi/intro',
+              label: 'Why JitAi',
+              to: '/docs/index/WhyJitAi',
+            },
+            {
+              label: 'JitAi 架构与原理',
+              to: '/docs/index/体系结构与原理',
+            }
+          ],
+        },
+        {
+          title: '帮助文档',
+          items: [
+            {
+              label: '文档概览',
+              to: '/docs/index/',
+            },
+            {
+              label: '入门教程',
+              to: '/docs/tutorial/',
+            },
+            {
+              label: '应用开发指南',
+              to: '/docs/devguide/',
+            },
+            {
+              label: '框架扩展指南',
+              to: '/docs/extguide/',
+            },
+            {
+              label: '参考手册',
+              to: '/docs/reference/',
             }
           ],
         },
@@ -185,6 +214,10 @@ const config: Config = {
          {
            title: '更多',
            items: [
+            {
+              label: '社区论坛',
+              href: 'https://jitai.discourse.group/',
+            },
              {
                label: 'GitHub',
                href: 'https://github.com/jitai-team',

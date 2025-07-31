@@ -126,6 +126,7 @@ sidebar_position: -1
 
 - [API授权](./开发框架/JitService/API授权.md) - 服务授权
 - [外部API集成](./开发框架/JitService/外部API集成.md) - 系统集成
+- [拦截器](./开发框架/JitService/拦截器.md) - HTTP请求拦截处理
 - [自定义业务服务](./开发框架/JitService/自定义业务服务.md) - 业务逻辑
 - [自定义事件](./开发框架/JitService/自定义事件.md) - 事件机制
 - [自定义事件服务](./开发框架/JitService/自定义事件服务.md) - 事件服务

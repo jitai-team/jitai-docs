@@ -1,0 +1,313 @@
+/* Footer 美化样式 */
+footer.theme-layout-footer.footer {
+  /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+  color: white;
+  padding: 3rem 0 2rem;
+  position: relative;
+  overflow: hidden;
+  /* margin-top: 1400px; */
+}
+
+/* Footer 容器样式 */
+footer .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Footer 链接区域样式 */
+footer .footer__links {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* Footer 链接组样式 */
+footer .footer__col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Footer 链接组标题 */
+footer .footer__col-title {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+/* Footer 链接组标题下划线 */
+footer .footer__col-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 1px;
+}
+
+/* Footer 链接列表 */
+footer .footer__items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Footer 链接项 */
+footer .footer__item {
+  margin-bottom: 0.75rem;
+}
+
+/* Footer 链接样式 */
+footer .footer__link-item {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+/* Footer 链接悬停效果 */
+footer .footer__link-item:hover {
+  color: white;
+  transform: translateX(5px);
+}
+
+/* Footer 链接悬停下划线 */
+footer .footer__link-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+footer .footer__link-item:hover::after {
+  width: 100%;
+}
+
+/* Footer Logo 区域 */
+
+/* Footer Logo 图片 */
+footer .footer__logo img {
+  max-width: 280px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+
+footer .footer__logo img:hover {
+  transform: scale(1.05);
+}
+
+/* Footer 版权信息 */
+footer .footer__copyright {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+/* Footer 版权信息装饰 */
+footer .footer__copyright::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  footer.theme-layout-footer.footer {
+    padding: 2rem 0 1.5rem;
+  }
+
+  footer .footer__links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  footer .footer__col-title {
+    font-size: 1rem;
+  }
+
+  footer .footer__logo img {
+    max-width: 220px;
+  }
+
+  footer .footer__copyright {
+    font-size: 0.8rem;
+    padding-top: 1.5rem;
+  }
+}
+
+/* 深色模式优化 */
+[data-theme='dark'] footer.theme-layout-footer.footer {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+/* 动画效果 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+footer .footer__links {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+footer .footer__logo {
+  animation: fadeInUp 0.6s ease-out 0.2s both;
+
+  margin-top: 0 !important;
+}
+
+footer .footer__copyright {
+  animation: fadeInUp 0.6s ease-out 0.4s both;
+}
+
+/* 额外的美化效果 */
+/* 链接图标 */
+footer .footer__link-item[href*="github.com"]::before {
+  content: '';
+  margin-right: 0.5rem;
+  font-size: 1em;
+  margin-bottom: 0.2em;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z'/%3E%3C/svg%3E") no-repeat center;
+  background-size: 1em;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+footer .footer__link-item[href*="discourse"]::before {
+  content: '💬';
+  margin-right: 0.5rem;
+  font-size: 0.9em;
+}
+
+footer .footer__link-item[href^="mailto:"]::before {
+  content: '📧';
+  margin-right: 0.5rem;
+  font-size: 0.9em;
+}
+
+footer .footer__link-item[href*="blog"]::before {
+  content: '📝';
+  margin-right: 0.5rem;
+  font-size: 0.9em;
+}
+
+footer .footer__link-item[href*="releases"]::before {
+  content: '📦';
+  margin-right: 0.5rem;
+  font-size: 0.9em;
+}
+
+footer .footer__link-item[href*="issues"]::before {
+  content: '🐛';
+  margin-right: 0.5rem;
+  font-size: 0.9em;
+}
+
+/* 链接悬停时的图标动画 */
+footer .footer__link-item:hover::before {
+  /* 移除跳动动画，保持静态 */
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-3px);
+  }
+  60% {
+    transform: translateY(-1px);
+  }
+}
+
+/* 版权信息中的爱心动画 */
+footer .footer__copyright {
+  position: relative;
+}
+
+/*
+footer .footer__copyright::after {
+  content: '❤️';
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: heartbeat 2s ease-in-out infinite;
+}
+*/
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: translateY(-50%) scale(1);
+  }
+  50% {
+    transform: translateY(-50%) scale(1.1);
+  }
+}
+
+/* 移动端隐藏版权信息中的爱心 */
+@media (max-width: 768px) {
+  footer .footer__copyright::after {
+    display: none;
+  }
+}
+
+/* Footer 背景光效 */
+footer.theme-layout-footer.footer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@media (max-width: 996px) {
+  .footer__col {
+      margin-bottom: 0;
+      padding: 0 2em;
+  }
+}

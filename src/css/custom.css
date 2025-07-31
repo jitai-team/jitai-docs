@@ -4,6 +4,9 @@
  * work well for content-centric websites.
  */
 
+/* 引入 Footer 样式 */
+@import './footer.css';
+
 /* You can override the default Infima variables here. */
 @layer docusaurus.infima {
   :root {
@@ -213,7 +216,7 @@ details>div>div {
     max-width: none;
   }
 
-  .container {
+  main.container {
     max-width: none;
     padding-left: 1rem;
   }

@@ -4,25 +4,23 @@
 
 欢迎来到 JitAi 开发者社区！我们很高兴与您一起构建未来，把企业级应用开发带入AI时代，加速企业AI应用规模化。
 
-在这里，您可以：
-- 💬 与全球开发者交流技术心得
-- 🤝 分享项目经验和最佳实践
-- 🚀 获取专业技术支持和解答
-- 🌟 参与开源项目贡献
+## 🌐 官方社区论坛
 
 ---
 
-## 🌐 加入我们的社区
+[![Discourse](https://img.shields.io/badge/Discourse-论坛社区-orange?style=for-the-badge&logo=discourse)](https://jitai.discourse.group/)
 
-### GitHub 开源组织
+您可以：
+- 📝 发起技术讨论话题
+- 🔍 搜索历史问题解答
+- 🤔 提问并获得社区帮助
+- 💡 分享开发心得体会
+- 🐛 反馈问题
+
+## 🌐 GitHub 开源组织
 [![GitHub](https://img.shields.io/badge/GitHub-jitai--team-blue?style=for-the-badge&logo=github)](https://github.com/jitai-team)
 
-### 社区论坛
-欢迎加入[JitAi社区](https://jitai.discourse.group/)，与核心开发团队和活跃开发者直接交流
-
----
-
-## 📖 贡献指南
+### 📖 贡献指南
 
 我们热忱欢迎社区贡献！无论您是：
 - 🐛 发现并报告 Bug

@@ -154,7 +154,7 @@ const HeroSection: React.FC = () => {
 
           {/* 行动按钮区域 */}
           <div className={`${styles.heroButtons} ${animateElements ? styles.buttonsAnimate : ''}`}>
-            <a className={styles.primaryButton} href="./docs/tutorial/快速上手/01下载安装" target="_blank">
+            <a className={styles.primaryButton} href="./docs/tutorial/下载安装" target="_blank">
               <span className={styles.buttonText}>立即下载</span>
               <span className={styles.buttonIcon}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

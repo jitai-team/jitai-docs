@@ -311,3 +311,7 @@ footer.theme-layout-footer.footer::after {
       padding: 0 2em;
   }
 }
+
+.footer {
+  background-color: #131418;
+}

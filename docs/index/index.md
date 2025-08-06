@@ -82,7 +82,6 @@ sidebar_position: -1
 <div style={{columns: 2, columnGap: '2rem'}}>
 
 - [新增前端组件](../extguide/前端/新增前端组件.md) - 创建全新的前端组件元素
-- [继承扩展已有前端Type元素](../extguide/前端/继承扩展已有前端Type元素.md) - 基于现有组件进行定制
 - [开发前端组件元素的可视化编辑器](../extguide/前端/开发前端组件元素的可视化编辑器.md) - 定制组件的可视化编辑器
 
 </div>

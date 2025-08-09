@@ -27,6 +27,9 @@ sidebar_position: 0
 对外开放受控的 HTTP 接口（如按订单号查询订单状态），确保授权调用与安全治理。  
 [对外开放HTTP接口](/docs/devguide/应用场景/对外开放HTTP接口.md)
 
+对接第三方 HTTP 接口（如查询外部库存），集中配置域名、请求头、前置/后置处理与回调。  
+[集成外部HTTP接口](/docs/devguide/应用场景/集成外部HTTP接口.md)
+
 ## JitAi
 编辑中...
 

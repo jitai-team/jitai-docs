@@ -81,6 +81,7 @@ sidebar_position: -1
 - [系统界面设计与组件应用](../devguide/应用场景/系统界面设计与组件应用)
 - [对外开放HTTP接口](../devguide/应用场景/对外开放HTTP接口)
 - [集成外部HTTP接口](../devguide/应用场景/集成外部HTTP接口)
+- [使用拦截器实现自定义请求鉴权](../devguide/应用场景/使用拦截器实现自定义请求鉴权)
 - [在线支付功能集成](../devguide/应用场景/在线支付功能集成)
 - [定时执行自定义业务逻辑](../devguide/应用场景/定时执行自定义业务逻辑)
 - [使用模型的时间字段触发定时任务](../devguide/应用场景/使用模型的时间字段触发定时任务)
@@ -326,7 +327,8 @@ Web前端框架，提供门户系统、页面管理、UI组件库、表单控件
 
 - [API授权](../reference/开发框架/JitService/API授权.md)
 - [外部API集成](../reference/开发框架/JitService/外部API集成.md)
-- [拦截器](../reference/开发框架/JitService/拦截器.md)
+- [前端拦截器](../reference/开发框架/JitService/前端拦截器.md)
+- [后端拦截器](../reference/开发框架/JitService/后端拦截器.md)
 - [自定义业务服务](../reference/开发框架/JitService/自定义业务服务.md)
 - [自定义事件](../reference/开发框架/JitService/自定义事件.md)
 - [自定义事件服务](../reference/开发框架/JitService/自定义事件服务.md)

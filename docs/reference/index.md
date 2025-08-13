@@ -124,13 +124,13 @@ sidebar_position: -1
 #### JitService框架（业务服务）
 <div style={{columns: 2, columnGap: '2rem'}}>
 
-- [API授权](./开发框架/JitService/API授权.md) - 服务授权
-- [外部API集成](./开发框架/JitService/外部API集成.md) - 系统集成
+- [API授权](./开发框架/JitService/API授权.md) - 对外提供HTTP接口
+- [外部API集成](./开发框架/JitService/外部API集成.md) - 集成外部HTTP接口
 - [前端拦截器](./开发框架/JitService/前端拦截器.md) - 前端请求拦截
 - [后端拦截器](./开发框架/JitService/后端拦截器.md) - 后端HTTP拦截处理
-- [自定义业务服务](./开发框架/JitService/自定义业务服务.md) - 业务逻辑
-- [自定义事件](./开发框架/JitService/自定义事件.md) - 事件机制
-- [自定义事件服务](./开发框架/JitService/自定义事件服务.md) - 事件服务
+- [自定义业务服务](./开发框架/JitService/自定义业务服务.md) - 业务逻辑封装
+- [自定义事件](./开发框架/JitService/自定义事件.md) - 由开发者自由声明和触发的事件
+- [事件服务](./开发框架/JitService/事件服务.md) - 内置的事件管理服务
 
 </div>
 

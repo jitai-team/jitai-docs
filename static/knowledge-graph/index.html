@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JitAi知识图谱</title>
+    <!-- D3.js 数据可视化库 -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    
+    <!-- 样式文件 - 按依赖顺序加载 -->
+    <link rel="stylesheet" href="/knowledge-graph/assets/css/base.css">
+    <link rel="stylesheet" href="/knowledge-graph/assets/css/layout.css">
+    <link rel="stylesheet" href="/knowledge-graph/assets/css/components.css">
+    <link rel="stylesheet" href="/knowledge-graph/assets/css/tree.css">
+    <link rel="stylesheet" href="/knowledge-graph/assets/css/animations.css">
+    <link rel="stylesheet" href="/knowledge-graph/assets/css/responsive.css">
+    
+    <!-- JavaScript文件 - 按依赖顺序加载 -->
+    <script>
+        // 设置数据路径
+        window.DYNAMIC_PATHS = {
+            data: '/knowledge-graph/assets/data/graph-data.json'
+        };
+    </script>
+    <script src="/knowledge-graph/assets/js/config.js"></script>
+    <script src="/knowledge-graph/assets/js/utils.js"></script>
+    <script src="/knowledge-graph/assets/js/data-loader.js"></script>
+    <script src="/knowledge-graph/assets/js/filter-manager.js"></script>
+    <script src="/knowledge-graph/assets/js/ui-manager.js"></script>
+    <script src="/knowledge-graph/assets/js/d3-graph.js"></script>
+    <script src="/knowledge-graph/assets/js/app.js"></script>
+</head>
+<body>
+    <!-- 加载状态覆盖层 -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div>
+            <div>🔄 正在加载知识图谱数据...</div>
+            <div style="font-size: 14px; margin-top: 10px; opacity: 0.7;">请稍候</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="sidebar" id="sidebar">
+            <div class="header">
+                <h1>JitAi知识体系</h1>
+            </div>
+    
+            <div class="controls">
+                <div class="control-group">
+                    <label>节点搜索</label>
+                    <div style="display: flex; gap: 6px;">
+                        <input type="text" id="nodeSearchInput" placeholder="搜索节点... (按回车键搜索)" style="flex: 1; padding: 5px 8px; border: 1px solid #ddd; border-radius: 4px; font-size: 11px;">
+                        <button class="btn btn-primary" onclick="searchAndHighlightNode()" style="min-width: 45px;">搜索</button>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label>布局控制</label>
+                    <div class="control-buttons">
+                        <button class="btn btn-secondary" onclick="restabilizeNetwork()">重新稳定</button>
+                        <button class="btn btn-secondary" onclick="optimizeView()">最佳视图</button>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label>快速操作</label>
+                    <div class="control-buttons">
+                        <button class="btn btn-secondary" onclick="expandAllLayers()">展开全部</button>
+                        <button class="btn btn-secondary" onclick="collapseAllLayers()">收起全部</button>
+                        <button class="btn btn-secondary" onclick="selectAllFilters()">全选</button>
+                        <button class="btn btn-secondary" onclick="deselectAllFilters()">全不选</button>
+                    </div>
+                </div>
+
+
+            </div>
+            
+            <div class="filters" id="filterContainer">
+                <!-- 树形过滤器将由JavaScript动态生成 -->
+            </div>
+        </div>
+        
+        <div class="graph-container">
+            <div id="network" style="width: 100%; height: 100%;"></div>
+
+            
+                <div class="info-panel" id="infoPanel">
+        <div class="info-header">
+            <button class="close-btn" onclick="hideInfoPanel()">×</button>
+            <div class="info-title" id="infoTitle">节点信息</div>
+            <div class="info-type" id="infoType">类型</div>
+        </div>
+        <div class="info-content-container">
+            <div class="info-content" id="infoContent">详细信息</div>
+        </div>
+    </div>
+        </div>
+    </div>
+
+    <!-- 临时消息提示 -->
+    <div id="tempMessage" class="temp-message"></div>
+    
+    <!-- 工具提示 -->
+    <div id="tooltip" class="tooltip"></div>
+
+</body>
+</html> 

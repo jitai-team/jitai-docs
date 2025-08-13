@@ -75,58 +75,122 @@ const config: Config = {
   themes: ['@docusaurus/theme-mermaid'],
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'https://jit-www.oss-cn-beijing.aliyuncs.com/logo/logo_dark.png',
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: true, // 暂时禁用主题切换， 因为 深色模式下 logo 要调整，以及官网要强制为浅色模式
+      // respectPrefersColorScheme: false,
+    },
     navbar: {
-      title: '极态',
       logo: {
         alt: 'Jit Logo',
-        src: 'img/jit.png',
+        src: 'https://jit-www.oss-cn-beijing.aliyuncs.com/logo/logo_title.png',
+        srcDark: 'https://jit-www.oss-cn-beijing.aliyuncs.com/logo/logo_title_dark.svg',  // logo 大小待调整
       },
       items: [
+        {
+          type: 'docSidebar',
+          sidebarId: 'indexSidebar',
+          position: 'left',
+          label: '导读',
+        },
          {
            type: 'docSidebar',
            sidebarId: 'tutorialSidebar',
            position: 'left',
-           label: '文档',
+           label: '入门教程',
+         },
+         {
+           type: 'docSidebar',
+           sidebarId: 'devguideSidebar',
+           position: 'left',
+           label: '应用开发指南',
+         },
+         {
+           type: 'docSidebar',
+           sidebarId: 'extguideSidebar',
+           position: 'left',
+           label: '框架扩展指南',
+         },
+         {
+           type: 'docSidebar',
+           sidebarId: 'referenceSidebar',
+           position: 'left',
+           label: '参考手册',
+         },
+         {
+           type: 'docSidebar',
+           sidebarId: 'appmarketSidebar',
+           position: 'left',
+           label: '应用市场',
+         },
+         {
+           type: 'docSidebar',
+           sidebarId: 'opensourceSidebar',
+           position: 'left',
+           label: '开源',
          },
         // {to: '/blog', label: '博客', position: 'left'},
-        // {
-        //   type: 'docSidebar',
-        //   sidebarId: 'caseSidebar',
-        //   position: 'left',
-        //   label: '案例展示',
-        // },
-        //{
-        //   type: 'docSidebar',
-        //   sidebarId: 'communitySidebar',
-        //   position: 'left',
-        //   label: '社区',
-        // },
-        //GitHub
         {
-          href: 'https://github.com/jitai-team',
-          label: 'GitHub',
-          position: 'right',
-        },
+           type: 'docSidebar',
+           sidebarId: 'communitySidebar',
+           position: 'left',
+           label: '社区论坛',
+         },
+        //GitHub
+        // {
+        //   href: 'https://github.com/jitai-team',
+        //   label: 'GitHub',
+        //   position: 'right',
+        // },
       ],
     },
     footer: {
       style: 'dark',
       links: [
         {
-          title: '文档',
+          title: '产品',
           items: [
             {
-              label: '下载安装',
-              to: '/docs/tutorial/00快速上手/01下载安装',
+              label: '官网首页',
+              to: '/',
             },
             {
-              label: '快速上手',
-              to: '/docs/tutorial/00快速上手/03-5分钟开发一个AI应用（智能客服）',
+              label: 'What is JitAi',
+              to: '/docs/index/WhatIsJitAi',
             },
             {
-              label: '企业级AI应用开发',
-              to: '/docs/tutorial/03开发指南/02开发框架/JitAi/intro',
+              label: 'Why JitAi',
+              to: '/docs/index/WhyJitAi',
+            },
+            {
+              label: 'JitAi 架构与原理',
+              to: '/docs/index/体系结构与原理',
+            }
+          ],
+        },
+        {
+          title: '帮助文档',
+          items: [
+            {
+              label: '文档概览',
+              to: '/docs/index/',
+            },
+            {
+              label: '入门教程',
+              to: '/docs/tutorial/',
+            },
+            {
+              label: '应用开发指南',
+              to: '/docs/devguide/',
+            },
+            {
+              label: '框架扩展指南',
+              to: '/docs/extguide/',
+            },
+            {
+              label: '参考手册',
+              to: '/docs/reference/',
             }
           ],
         },
@@ -150,6 +214,10 @@ const config: Config = {
          {
            title: '更多',
            items: [
+            {
+              label: '社区论坛',
+              href: 'https://jitai.discourse.group/',
+            },
              {
                label: 'GitHub',
                href: 'https://github.com/jitai-team',
@@ -157,6 +225,13 @@ const config: Config = {
            ],
          },
       ],
+      logo: {
+        alt: '下一代AI应用开发技术体系',
+        src: 'https://jit-www.oss-cn-beijing.aliyuncs.com/logo/logo_title_dark.svg',
+        href: 'https://jit.pro',
+        width: 340,
+        height: 100
+      },
       copyright: `Copyright © ${new Date().getFullYear()} Jit, Inc. Built with 万云 Co., Ltd.`,
     },
     prism: {

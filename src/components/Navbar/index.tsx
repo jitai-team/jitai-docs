@@ -1,32 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './styles.module.css';
-
-const CONTENT = {
-  navItems: [
-    {
-      id: 'home',
-      label: '首页',
-      type: 'link',
-      url: '/',
-      external: true
-    },
-    // {
-    //   id: 'jit-framework',
-    //   label: 'Jit开发框架',
-    //   type: 'link',
-    //   url: '/jit-framework',
-    //   external: true
-    // },
-    {
-      id: 'guide',
-      label: '开发指南',
-      type: 'link',
-      url: './docs/tutorial/00快速上手/01下载安装',
-      external: true
-    }
-    //{ id: 'community', label: '社区', type: 'link', url: './docs/community/intro', external: true }
-  ]
-};
+import { CONTENT } from './constant';
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -78,11 +52,13 @@ const Navbar: React.FC = () => {
   }, [isMobileMenuOpen]);
 
     const handleNavClick = (item: any) => {
-      window.location.href = item.url;
 
       // 移动端点击后关闭菜单
       if (isMobile) {
+        window.location.href = item.url;
         setIsMobileMenuOpen(false);
+      } else {
+        window.open(item.url, '_blank');
     }
   };
 

@@ -1,8 +1,0 @@
-{
-  "label": "AI助理",
-  "position": 4,
-  "link": {
-    "type": "generated-index",
-    "description": "AI助理开发系统，提供对话式交互界面、上下文记忆管理和个性化配置支持"
-  }
-} 

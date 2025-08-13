@@ -1,0 +1,290 @@
+/**
+ * 树形筛选器样式 - 专用于树形组件
+ * 职责：管理树形筛选器的层级结构、交互状态、视觉效果
+ */
+
+/* 树形容器 */
+.tree-container {
+    padding: 8px 16px 8px 8px; /* 增加右侧内边距，避免内容贴边 */
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* 树形节点基础样式 */
+.tree-node {
+    margin-bottom: 2px;
+    position: relative;
+}
+
+.tree-node-header {
+    display: flex;
+    align-items: center; /* 修改为center实现垂直居中对齐 */
+    padding: 4px 6px;
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+    min-height: 24px;
+    position: relative;
+}
+
+.tree-node-header:hover {
+    background-color: #f1f3f4;
+}
+
+/* 树形节点标签 */
+.tree-node-label {
+    font-size: 12px;
+    color: #495057;
+    cursor: pointer;
+    flex: 1;
+    margin: 0;
+    font-weight: 500;
+    line-height: 1.4; /* 稍微调整行高以更好地与checkbox对齐 */
+    white-space: normal;
+    word-break: break-word;
+    min-width: 0;
+    max-width: none;
+    padding: 1px 4px; /* 减少垂直内边距，依靠flex center对齐 */
+    border-radius: 3px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center; /* 确保文字内容也垂直居中 */
+    user-select: none;
+}
+
+.tree-node-label[ondblclick] {
+    position: relative;
+}
+
+.tree-node-label[ondblclick]:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.tree-node-label.wrapped {
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: 1.4;
+}
+
+.tree-node-label:hover {
+    background-color: #e3f2fd;
+    color: #1976d2;
+    transform: translateX(2px);
+}
+
+.tree-node-label:active {
+    background-color: #bbdefb;
+    transform: translateX(1px);
+}
+
+/* 节点计数 */
+.tree-node-count {
+    font-size: 10px;
+    color: #6c757d;
+    margin-left: 6px;
+}
+
+/* 子节点容器 */
+.tree-node-children {
+    display: none;
+    margin-top: 2px;
+}
+
+.tree-node-children.expanded {
+    display: block;
+}
+
+/* 展开收起图标 */
+.tree-expand-icon {
+    width: 12px;
+    min-width: 12px;
+    font-size: 9px;
+    margin-right: 2px;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+}
+
+.tree-expand-icon:hover {
+    background-color: #e9ecef;
+    color: #495057;
+    transform: scale(1.1);
+}
+
+.tree-expand-icon:active {
+    transform: scale(0.95);
+}
+
+/* 复选框样式 */
+.tree-node-header input[type="checkbox"] {
+    margin: 0 6px 0 2px; /* 优化左右间距，确保与文字对齐 */
+    transform: scale(0.9);  /* 稍微增大checkbox大小 */
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0; /* 防止checkbox被压缩 */
+}
+
+.tree-node-header input[type="checkbox"]:hover {
+    transform: scale(0.95); /* 悬停时稍微放大，与基础0.9保持协调 */
+}
+
+/* 层级样式：不同层级的视觉区分 */
+.tree-node[data-level="0"] .tree-node-label {
+    font-weight: 600;
+    color: #333;
+    font-size: 13px;
+}
+
+.tree-node[data-level="0"] .tree-node-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 4px;
+    margin-bottom: 4px;
+}
+
+.tree-node[data-level="1"] .tree-node-label {
+    color: #495057;
+    font-size: 11.5px;
+}
+
+.tree-node[data-level="2"] .tree-node-label {
+    color: #6c757d;
+    font-size: 11px;
+}
+
+.tree-node[data-level="3"] .tree-node-label {
+    color: #868e96;
+    font-size: 10.5px;
+}
+
+/* 层级缩进：每一级缩进12px */
+.tree-node[data-level="0"] .tree-node-header {
+    padding-left: 0;
+}
+
+.tree-node[data-level="1"] .tree-node-header {
+    padding-left: 12px;
+}
+
+.tree-node[data-level="2"] .tree-node-header {
+    padding-left: 24px;
+}
+
+.tree-node[data-level="3"] .tree-node-header {
+    padding-left: 36px;
+}
+
+.tree-node[data-level="4"] .tree-node-header {
+    padding-left: 48px;
+}
+
+.tree-node[data-level="5"] .tree-node-header {
+    padding-left: 60px;
+}
+
+/* 通用缩进规则（CSS变量支持） */
+.tree-node .tree-node-header {
+    padding-left: calc(var(--tree-level, 0) * 12px);
+}
+
+/* 层级连接线 */
+.tree-node[data-level]:not([data-level="0"])::before {
+    content: "";
+    position: absolute;
+    left: calc(var(--tree-level, 0) * 12px - 6px);
+    top: 50%;
+    width: 6px;
+    height: 1px;
+    background-color: #dee2e6;
+    transform: translateY(-50%);
+}
+
+/* 循环节点特殊样式 */
+.tree-node.circular-node {
+    opacity: 0.7;
+    background-color: #fff3cd;
+    border-left: 3px solid #ffc107;
+    border-radius: 4px;
+    margin: 2px 0;
+}
+
+.tree-node.circular-node .tree-node-header {
+    background-color: transparent;
+}
+
+.tree-node.circular-node .tree-node-label {
+    color: #856404;
+    font-style: italic;
+}
+
+.tree-node.circular-node input[type="checkbox"] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* 深层级连接线 */
+.tree-node.deep-level::before {
+    content: "";
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    width: 6px;
+    height: 1px;
+    border-top: 1px dashed #ccc;
+    transform: translateY(-50%);
+}
+
+/* 层级指示器 */
+.level-indicator {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #999;
+    margin-right: 4px;
+    opacity: 0.6;
+    flex-shrink: 0;
+}
+
+/* 自适应显示模式 */
+.sidebar.adaptive-compact .tree-node-header {
+    padding: 2px 4px;
+    min-height: 18px;
+}
+
+.sidebar.adaptive-compact .tree-node-label {
+    font-size: 10px;
+}
+
+.sidebar.adaptive-compact .tree-node-count {
+    font-size: 9px;
+}
+
+.sidebar.adaptive-compact .tree-expand-icon {
+    font-size: 8px;
+}
+
+.sidebar.adaptive-ultra-compact .tree-node-header {
+    padding: 1px 2px;
+    min-height: 16px;
+}
+
+.sidebar.adaptive-ultra-compact .tree-node-label {
+    font-size: 9px;
+}
+
+.sidebar.adaptive-ultra-compact .tree-node-count {
+    display: none;
+}
+
+.sidebar.adaptive-ultra-compact .level-indicator {
+    width: 3px;
+    height: 3px;
+    margin-right: 2px;
+} 

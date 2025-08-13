@@ -1,23 +1,82 @@
 import React, { useState, useEffect } from 'react';
 import styles from './styles.module.css';
 import globalStyles from '../../pages/index.module.css';
+import { CONTENT } from './constant';
 
-const CONTENT = {
-  mainTitle: '面向AI的下一代企业级应用开发技术',
-  subTitle1: '全栈一体化的AI开发与运维平台​',
-  subDesc1: '覆盖"开发->调测->发布->部署->更新"全生命周期的一站式平台，助力开发者高效构建"AI助理软件"和"管理软件"原生一体的生产级企业AI应用，加速企业AI应用的规模化。',
-  subTitle2: '解释型、编排式的生产级AI开发范式',
-  subDesc2: '开创性的解释型应用架构、应用协议和应用运行平台，带来解释型、可编排的AI上下文环境，以及全新的应用开发新范式、新框架、新工具，引领企业级应用开发迈入AI时代。'
+// 打字机效果组件
+const TypewriterText: React.FC<{ text: string; isVisible: boolean; speed?: number; repeat?: boolean }> = ({
+  text,
+  isVisible,
+  speed = 100,
+  repeat = false
+}) => {
+  const [displayText, setDisplayText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTyping, setIsTyping] = useState(false);
+  const [showCursor, setShowCursor] = useState(false);
+
+  useEffect(() => {
+    if (!isVisible) {
+      setDisplayText('');
+      setCurrentIndex(0);
+      setIsTyping(false);
+      setShowCursor(false);
+      return;
+    }
+
+    if (currentIndex < text.length) {
+      setIsTyping(true);
+      setShowCursor(true);
+      const timer = setTimeout(() => {
+        setDisplayText(text.slice(0, currentIndex + 1));
+        setCurrentIndex(currentIndex + 1);
+      }, speed);
+
+      return () => clearTimeout(timer);
+    } else {
+      setIsTyping(false);
+      // 如果启用重复播放，在完成后延迟重新开始
+      if (repeat) {
+        const resetTimer = setTimeout(() => {
+          setDisplayText('');
+          setCurrentIndex(0);
+        }, 3000); // 等待3秒后重新开始
+        return () => clearTimeout(resetTimer);
+      } else {
+        // 如果不重复，等待一段时间后隐藏光标
+        const hideCursorTimer = setTimeout(() => {
+          setShowCursor(false);
+        }, 3000); // 等待3秒后隐藏光标
+        return () => clearTimeout(hideCursorTimer);
+      }
+    }
+  }, [currentIndex, text, isVisible, speed, repeat]);
+
+  return (
+    <span className={styles.typewriterText}>
+      {displayText || ' '}
+      <span className={styles.cursorContainer}>
+        {showCursor && (
+          <span className={`${styles.cursor} ${isTyping ? styles.typing : ''}`}>|</span>
+        )}
+      </span>
+    </span>
+  );
 };
 
 const HeroSection: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [animateElements, setAnimateElements] = useState(false);
+  const [showTypewriter, setShowTypewriter] = useState(false);
 
   // 延迟显示，让页面先加载完成
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
+      // 延迟启动打字机效果
+      setTimeout(() => {
+        setShowTypewriter(true);
+      }, 500);
       // 延迟启动元素动画
       setTimeout(() => {
         setAnimateElements(true);
@@ -45,7 +104,12 @@ const HeroSection: React.FC = () => {
               <span className={styles.badgeText}>NEXT-GEN</span>
             </div>
             <h1 className={`${styles.heroTitle} ${animateElements ? styles.titleAnimate : ''}`}>
-              {CONTENT.mainTitle}
+              <TypewriterText
+                text={CONTENT.mainTitle}
+                isVisible={showTypewriter}
+                speed={150}
+                repeat={false}
+              />
             </h1>
           </div>
 
@@ -54,7 +118,7 @@ const HeroSection: React.FC = () => {
             <div className={`${styles.subtitleCard} ${animateElements ? styles.cardAnimate1 : ''}`}>
               <div className={styles.cardHeader}>
                 <div className={styles.cardIcon}>
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2449fe" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#3349f6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={styles.iconSvg}>
                     <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4a2 2 0 0 0 1-1.73z"></path>
                     <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
                     <line x1="12" y1="22.08" x2="12" y2="12"></line>
@@ -70,9 +134,14 @@ const HeroSection: React.FC = () => {
             <div className={`${styles.subtitleCard} ${animateElements ? styles.cardAnimate2 : ''}`}>
               <div className={styles.cardHeader}>
                 <div className={styles.cardIcon}>
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2449fe" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M9 12l2 2 4-4"></path>
-                    <circle cx="12" cy="12" r="10"></circle>
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#bb4baf" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={styles.iconSvg}>
+                    {/* 简化的编排式开发技术图标 */}
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <line x1="3" y1="12" x2="9" y2="12"></line>
+                    <line x1="15" y1="12" x2="21" y2="12"></line>
+                    <line x1="12" y1="3" x2="12" y2="9"></line>
+                    <line x1="12" y1="15" x2="12" y2="21"></line>
                   </svg>
                 </div>
                 <h2 className={styles.subtitleTitle}>{CONTENT.subTitle2}</h2>
@@ -85,7 +154,7 @@ const HeroSection: React.FC = () => {
 
           {/* 行动按钮区域 */}
           <div className={`${styles.heroButtons} ${animateElements ? styles.buttonsAnimate : ''}`}>
-            <a className={styles.primaryButton} href="./docs/tutorial/00快速上手/01下载安装" target="_blank">
+            <a className={styles.primaryButton} href="./docs/tutorial/下载安装" target="_blank">
               <span className={styles.buttonText}>立即下载</span>
               <span className={styles.buttonIcon}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

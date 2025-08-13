@@ -1,0 +1,9 @@
+{
+  "label": "运维工具",
+  "position": 3,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "description": "支持自动化运维的工具，提供应用的创建、发布、部署、运维，一个个功能介绍/截图。"
+  }
+} 

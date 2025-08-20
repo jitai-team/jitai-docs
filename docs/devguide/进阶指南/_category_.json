@@ -1,0 +1,9 @@
+{
+  "label": "进阶指南",
+  "position": 6,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "description": "每一类平台特性在实际场景下的应用和开发指南"
+  }
+} 

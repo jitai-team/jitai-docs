@@ -1,0 +1,8 @@
+{
+  "label": "用户与权限",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "学习如何管理用户组织架构、配置登录认证和角色权限系统。"
+  }
+}

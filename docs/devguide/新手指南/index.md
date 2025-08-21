@@ -1,5 +1,4 @@
 ---
-draft: true
 sidebar_position: 0
 ---
 # 内容大纲
@@ -100,6 +99,8 @@ sidebar_position: 0
 *   应用基本信息配置（名称、ID、图标）
 
 *   进入应用开发界面
+
+#### 了解JitAi开发工具
 
 #### 应用配置与环境设置
 

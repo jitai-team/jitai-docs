@@ -63,6 +63,17 @@ App（即应用），每个应用在JitNode中都对应一个App对象，开发�
 
 [Element](../03元素/Element)
 
+:::tip[元素调用语法糖]
+
+```python
+# 常规的元素调用写法
+msgSvc = app.getElement("services.MsgSvc")
+msgSvc.sendMsg("Hello, World!")
+# 元素调用语法糖
+app.services.OpenMsgSvc.sendMsg("Hello, World!")
+```
+:::
+
 ### findElements
 查找元素，支持选择器语法，可能返回多个元素对象。
 

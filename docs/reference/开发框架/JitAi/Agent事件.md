@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 # Agent事件
@@ -88,10 +88,10 @@ def customFunc(eventOutData):
     """
     tool_name = eventOutData.get("toolName", "")
     stage = eventOutData.get("stage", "")
-    
+
     # 根据不同阶段执行相应处理逻辑
     log.info(f"工具 {tool_name} 在 {stage} 阶段被调用")
-    
+
     return eventOutData
 ```
 
@@ -144,7 +144,7 @@ output_args = [{
 
 node = MockEventNode()
 processed_node, processed_args, processed_kwargs = agent_event.handleNode(
-    node, 
+    node,
     output_args
 )
 
@@ -159,7 +159,7 @@ print(f"事件备注: {processed_node.remark}")
 事件触发阶段标识，决定事件在Agent工具调用的哪个时间点触发。
 
 **类型**: `str`
-**可选值**: 
+**可选值**:
 - `preEvent`: 工具调用前触发，可用于参数验证、权限检查等预处理
 - `postEvent`: 工具调用后触发，可用于结果处理、状态更新等后处理
 
@@ -196,12 +196,12 @@ Agent事件可用于实现工具调用的权限控制和安全验证：
 def customFunc(eventOutData):
     tool_name = eventOutData.get("toolName", "")
     stage = eventOutData.get("stage", "")
-    
+
     if stage == "preEvent" and tool_name == "sensitiveDataTool":
         # 敏感工具调用前的权限检查
         if not check_permission():
             raise Exception("无权限调用敏感工具")
-    
+
     return eventOutData
 
 def check_permission():
@@ -226,17 +226,17 @@ Agent事件支持多个Agent间的协作场景，通过事件机制实现Agent�
 # 协作处理逻辑
 def customFunc(eventOutData):
     tool_name = eventOutData.get("toolName", "")
-    
+
     if tool_name == "taskDistributor":
         # 任务分发完成后通知子Agent
         sub_tasks = eventOutData.get("result", {}).get("subTasks", [])
-        
+
         for task in sub_tasks:
             agent_name = task.get("assignedAgent")
             if agent_name:
                 # 触发子Agent的任务开始事件
                 notify_sub_agent(agent_name, task)
-    
+
     return eventOutData
 
 def notify_sub_agent(agent_name, task):
@@ -254,7 +254,7 @@ def notify_sub_agent(agent_name, task):
 # 配置任务链事件
 {
   "title": "任务链执行事件",
-  "type": "events.AIAgentType", 
+  "type": "events.AIAgentType",
   "sender": "aiagents.DataProcessor",
   "stage": "postEvent",
   "func": "services.taskChain.nextStep"
@@ -264,26 +264,26 @@ def notify_sub_agent(agent_name, task):
 def customFunc(eventOutData):
     current_tool = eventOutData.get("toolName", "")
     result = eventOutData.get("result", {})
-    
+
     # 定义任务链配置
     task_chain = {
         "dataCollector": "dataProcessor",
-        "dataProcessor": "dataAnalyzer", 
+        "dataProcessor": "dataAnalyzer",
         "dataAnalyzer": "reportGenerator"
     }
-    
+
     # 获取下一个任务
     next_agent_name = task_chain.get(current_tool)
-    
+
     if next_agent_name and result.get("success"):
         # 启动下一个Agent
         next_agent = app.getElement(f"aiagents.{next_agent_name}")
         if next_agent:
             # 将当前结果作为下一个Agent的输入
             next_agent.start(input_data=result.get("data"))
-            
+
             # 记录任务链执行日志
             print(f"任务链: {current_tool} -> {next_agent_name}")
-    
+
     return eventOutData
-``` 
+```

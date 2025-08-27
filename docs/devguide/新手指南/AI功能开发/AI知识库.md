@@ -126,13 +126,13 @@ AI知识库元素正是为了解决这些痛点而生。它不仅是文档的存
 
 ## AI知识库编程接口
 ### query
-智能查询AI知识库，返回与查询相关的知识内容。[API文档](../../../reference/开发框架/JitAi/AI知识库.md#query)
+智能查询AI知识库，返回与查询相关的知识内容。[API文档](/docs/reference/开发框架/JitAi/AI知识库.md#query)
 ### addDocumentByBusinessId
-按业务ID添加文档到AI知识库。[API文档](../../../reference/开发框架/JitAi/AI知识库.md#adddocumentbybusinessid)
+按业务ID添加文档到AI知识库。[API文档](/docs/reference/开发框架/JitAi/AI知识库.md#adddocumentbybusinessid)
 ### deleteDocumentByBusinessId
-按业务ID删除AI知识库文档。[API文档](../../../reference/开发框架/JitAi/AI知识库.md#deletedocumentbybusinessid)
+按业务ID删除AI知识库文档。[API文档](/docs/reference/开发框架/JitAi/AI知识库.md#deletedocumentbybusinessid)
 ### queryKeywords
-基于关键词列表查询AI知识库。[API文档](../../../reference/开发框架/JitAi/AI知识库.md#queryKeywords)
+基于关键词列表查询AI知识库。[API文档](/docs/reference/开发框架/JitAi/AI知识库.md#querykeywords)
 
 ## 原理及参数说明
 

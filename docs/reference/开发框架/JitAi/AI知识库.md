@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # AI知识库
@@ -19,7 +19,7 @@ AI知识库元素分层结构为Meta（rags.Meta） → Type（rags.NormalType�
 
 #### 目录结构
 ```
-myKnowledgeBase/           # 知识库名称（路径可自定义）  
+myKnowledgeBase/           # 知识库名称（路径可自定义）
 ├── e.json                 # 元素定义文件
 └── config.json            # 业务配置文件
 ```
@@ -41,7 +41,7 @@ myKnowledgeBase/           # 知识库名称（路径可自定义）
         "model": "text-embedding-v3"
     },
     "rerankModel": {
-        "llmElement": "llms.LLMJitAppDevelop", 
+        "llmElement": "llms.LLMJitAppDevelop",
         "model": "gte-rerank-v2"
     },
     "topK": 10,
@@ -163,6 +163,34 @@ result = knowledge_base.addDocumentByBusinessId(
 ```python title="删除文档"
 success = knowledge_base.deleteDocumentByBusinessId("product_manual_v1.0")
 print(f"删除结果: {success}")
+```
+
+### queryKeywords
+
+基于关键词列表查询知识库，支持精确匹配和相关性排序。
+
+#### 参数详解
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| keywords | list | 是 | 关键词列表，最多支持5个关键词 |
+| limit | int | 否 | 限制返回数量，默认使用配置的topN值 |
+
+#### 返回值
+- **类型**：str
+- **说明**：匹配的文档内容，用换行符连接，包含页面标签、文档标题、文档类型等元数据信息
+
+#### 使用示例
+```python title="关键词查询"
+# 单关键词查询
+result = knowledge_base.queryKeywords(["退款"])
+print(result)
+
+# 多关键词查询，限制返回3个结果
+result = knowledge_base.queryKeywords(
+    keywords=["退款", "申请", "流程"], 
+    limit=3
+)
+print(result)
 ```
 
 ## 属性

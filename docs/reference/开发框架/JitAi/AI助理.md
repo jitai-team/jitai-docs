@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # AI助理
@@ -54,7 +54,7 @@ aiassistants/
       "position": {"x": 90, "y": 100}
     },
     "aiagent_001": {
-      "id": "aiagent_001", 
+      "id": "aiagent_001",
       "type": "aiagent",
       "title": "智能客服",
       "agent": "aiagents.CustomerService",
@@ -186,7 +186,7 @@ for chunk in assistant.run(
         break
 ```
 
-```python title="非流式对话示例"  
+```python title="非流式对话示例"
 # 非流式处理
 result = assistant.run(
     message="简单查询问题",
@@ -259,7 +259,7 @@ if success:
 
 返回字符串，表示会话状态：
 - "running": 运行中
-- "terminated": 已终止  
+- "terminated": 已终止
 - "completed": 已完成
 - None: 会话不存在
 

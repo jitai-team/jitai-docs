@@ -142,8 +142,8 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="创建文档型页面，支持丰富的Markdown语法和文档展示需求。"
 >
   <LinkGrid links={[
-    { text: "创建Markdown页面", href: "应用开发基础/Markdown页面#创建markdown页面" },
-    { text: "Markdown页面开发", href: "应用开发基础/Markdown页面#markdown页面开发" }
+    { text: "创建 Markdown 页面", href: "应用开发基础/Markdown页面#创建-markdown-页面" },
+    { text: "Markdown 语法", href: "应用开发基础/Markdown页面#markdown-语法" }
   ]} />
 </IndexCard>
 
@@ -758,7 +758,19 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="文件处理/文件存储"
   description="文件上传、存储和管理系统，支持多种存储方式和文件操作。"
 >
-  <LinkGrid links={[]} />
+  <LinkGrid columns={2} links={[
+    { text: "本地存储配置", href: "文件处理/文件存储#本地存储配置" },
+    { text: "添加本地存储", href: "文件处理/文件存储#添加本地存储" },
+    { text: "指定磁盘存储目录", href: "文件处理/文件存储#指定磁盘存储目录" },
+    { text: "云存储服务配置", href: "文件处理/文件存储#云存储服务配置" },
+    { text: "阿里云OSS", href: "文件处理/文件存储#阿里云oss" },
+    { text: "移动云EOS", href: "文件处理/文件存储#移动云eos" },
+    { text: "MinIO", href: "文件处理/文件存储#minio" },
+    { text: "七牛云", href: "文件处理/文件存储#七牛云" },
+    { text: "用环境变量防止配置信息泄露", href: "文件处理/文件存储#用环境变量防止配置信息泄露" },
+    { text: "设置应用默认的存储服务", href: "文件处理/文件存储#设置应用默认的存储服务" },
+    { text: "在前端代码中调用文件上传", href: "文件处理/文件存储#在前端代码中调用文件上传" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -783,20 +795,21 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="第三方API服务集成，扩展应用功能和数据来源。"
 >
   <LinkGrid columns={2} links={[
-    { text: "外部API创建", href: "第三方集成/外部API#外部api创建" },
+    { text: "外部API创建", href: "第三方集成/外部API#外部API创建" },
     { text: "公共配置", href: "第三方集成/外部API#公共配置" },
-    { text: "API接口管理", href: "第三方集成/外部API#api接口管理" }
+    { text: "API接口管理", href: "第三方集成/外部API#API接口管理" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="支付功能"
-  href="第三方集成/支付功能"
+  title="支付服务"
+  href="第三方集成/支付服务"
   description="集成主流支付平台，实现在线支付和交易功能。"
 >
   <LinkGrid links={[
-    { text: "微信支付服务配置", href: "第三方集成/支付功能#微信支付服务配置" },
-    { text: "支付宝支付服务配置", href: "第三方集成/支付功能#支付宝支付服务配置" }
+    { text: "微信支付服务配置", href: "第三方集成/支付服务#微信支付服务配置" },
+    { text: "支付宝支付服务配置", href: "第三方集成/支付服务#支付宝支付服务配置" },
+    { text: "支付服务使用", href: "第三方集成/支付服务#支付服务使用" }
   ]} />
 </IndexCard>
 
@@ -806,7 +819,11 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="短信发送和通知服务集成，支持验证码和消息推送。"
 >
   <LinkGrid links={[
-    { text: "短信服务配置", href: "第三方集成/短信服务#短信服务配置" }
+    { text: "阿里云短信", href: "第三方集成/短信服务#阿里云短信" },
+    { text: "阿里云短信服务创建", href: "第三方集成/短信服务#阿里云短信服务创建" },
+    { text: "手机登录方式中使用短信服务", href: "第三方集成/短信服务#手机登录方式中使用短信服务" },
+    { text: "审批流程中使用短信服务", href: "第三方集成/短信服务#审批流程中使用短信服务" },
+    { text: "短信通知功能", href: "第三方集成/短信服务#短信通知功能" }
   ]} />
 </IndexCard>
 

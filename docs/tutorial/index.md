@@ -9,13 +9,13 @@ sidebar_position: -2
 ## 学习路径
 
 - [下载安装](./下载安装.md) - JitAi安装包下载和环境搭建，支持Windows、Mac和Docker部署
-- [实验项目介绍](./project.md) - 熟悉完整的应用（出题、考试、阅卷），了解系统功能和数据模型
+- [案例项目介绍](./project.md) - 熟悉完整的应用（出题、考试、阅卷），了解系统功能和数据模型
 - [创建应用](./create_app.md) - 学习如何创建应用，了解不同门户的作用
 - [开发应用](./create_app.md) - 学习如何开发应用
   - [用简易模式搭建题库管理](./dev_app/easy_mode.md) - 适合新手的快速开发方式，3步创建数据管理功能
   - [用专业模式搭建试卷管理](./dev_app/ide_mode.md) - 使用开发区门户进行专业级应用开发
   - [用大模型函数实现生成答案](./dev_app/ai_func.md) - 一句话调用AI能力
-  - [用多Agent实现AI/UI协同阅卷](./dev_app/ai_ui.md) - 实现AI与UI协同交互
+  - [用Agent实现AI/UI协同阅卷](./dev_app/ai_ui.md) - 实现AI与UI协同交互
   - [用全代码实现答卷页面](./dev_app/code.md) - 使用代码编辑器进行高级开发
   - [用应用角色实现权限控制](./dev_app/role.md) - 配置用户角色和权限管理
 - [部署运维](./publish_app.md) - 应用发布、环境配置、生产环境部署和更新维护

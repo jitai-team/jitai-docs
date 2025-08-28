@@ -46,7 +46,7 @@ const config: Config = {
     defaultLocale: 'zh-Hans',
     locales: ['zh-Hans'],
   },
-  noIndex: true, // 等文档完善后，再放开
+  noIndex: false, // 等文档完善后，再放开
 
   presets: [
     [

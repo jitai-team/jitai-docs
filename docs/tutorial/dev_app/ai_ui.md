@@ -1,8 +1,8 @@
 ---
 sidebar_position: 6
-title: 用多Agent实现AI/UI协同阅卷
+title: 用Agent实现AI/UI协同阅卷
 ---
-# 用多Agent实现AI/UI协同阅卷
+# 用Agent实现AI/UI协同阅卷
 
 ## 案例效果
 

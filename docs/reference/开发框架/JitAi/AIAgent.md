@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 # AIAgent
@@ -267,22 +267,22 @@ result = agent.run(
 
 ### initialized
 
-**类型：** Boolean  
+**类型：** Boolean
 **说明：** 代理是否已完成初始化。只有初始化成功的代理才能正常执行任务。
 
 ### title
 
-**类型：** String  
+**类型：** String
 **说明：** 代理的显示名称，来源于e.json配置文件中的title字段。
 
 ### description
 
-**类型：** String  
+**类型：** String
 **说明：** 代理的功能描述，来源于config.json配置文件中的description字段。
 
 ### capabilities
 
-**类型：** String  
+**类型：** String
 **说明：** 代理的能力描述，优先级：e.json中的capabilities > config.json中的description > config.json中的systemPrompt。
 
 ## 高级特性
@@ -402,7 +402,7 @@ AIAgent支持多种类型工具的动态编排：
 ```python title="详细流式回调示例"
 def detailed_callback(data):
     msg_type = data.get('type')
-    
+
     if msg_type == 'REASONING_CONTENT':
         print(f"推理过程: {data['data']['content']}")
     elif msg_type == 'TOOL_CALL_START':
@@ -477,7 +477,7 @@ result3 = agent.run(
 {
     "tools": [
         {
-            "type": "model", 
+            "type": "model",
             "name": "models.AuditModel",
             "enableFunctionList": {
                 "save": {
@@ -553,7 +553,7 @@ agent.run(
             "force": true  // 强制模式：每次都先查询技术规范
         },
         {
-            "fullName": "rags.GeneralKnowledge", 
+            "fullName": "rags.GeneralKnowledge",
             "enable": true,
             "force": false  // 非强制模式：按需查询通用知识
         }

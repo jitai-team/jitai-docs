@@ -13,7 +13,7 @@ interface IndexCardProps {
 const IndexCard: React.FC<IndexCardProps> = ({ title, href, description, children }) => {
   return (
     <div className={styles.card}>
-      <h3 className={styles.cardTitle}>
+      <h3 className={styles.cardTitle} id={title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-')}>
         <Link to={href} className={styles.cardTitleLink}>
           {title}
         </Link>

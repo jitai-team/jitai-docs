@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# API 授权
+# API授权
 
 API 授权（API Authorization）是控制接口（API）访问权限的过程，旨在确保只有被授权的外部调用方才能够访问特定资源或执行特定操作。
 

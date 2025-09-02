@@ -604,7 +604,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid links={[
     { text: "标准组织架构", href: "用户与权限/组织架构#标准组织" },
-    { text: "允许新注册用户加入？", href: "用户与权限/组织架构#允许新注册用户加入？" },
+    { text: "允许新注册用户加入", href: "用户与权限/组织架构#允许新注册用户加入" },
     { text: "钉钉自建组织", href: "用户与权限/组织架构#钉钉自建组织" },
     { text: "企业微信自建组织", href: "用户与权限/组织架构#企业微信自建组织" },
     { text: "通讯录管理入口", href: "用户与权限/组织架构#通讯录管理入口" },
@@ -1087,12 +1087,41 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="AIAgent开发（正在编辑中）"
+  title="AIAgent"
+  href="AI功能开发/AIAgent"
   description="自主决策AI代理开发，实现复杂的智能自动化流程。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 文档正在完善中，敬请期待...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "创建ReActAgent", href: "AI功能开发/AIAgent#创建reactagent" },
+    { text: "编写系统提示词", href: "AI功能开发/AIAgent#编写系统提示词" },
+    { text: "基于模板编写系统提示词", href: "AI功能开发/AIAgent#基于模板编写系统提示词" },
+    { text: "在提示词中使用变量", href: "AI功能开发/AIAgent#在提示词中使用变量" },
+    { text: "选择模型并配置参数", href: "AI功能开发/AIAgent#选择模型并配置参数" },
+    { text: "为Agent编写简介描述", href: "AI功能开发/AIAgent#为agent编写简介描述" },
+    { text: "配置运行状态存储仓", href: "AI功能开发/AIAgent#配置运行状态存储仓" },
+    { text: "内存存储", href: "AI功能开发/AIAgent#内存存储" },
+    { text: "数据库存储", href: "AI功能开发/AIAgent#数据库存储" },
+    { text: "配置输入变量", href: "AI功能开发/AIAgent#配置输入变量" },
+    { text: "配置输出结果", href: "AI功能开发/AIAgent#配置输出结果" },
+    { text: "为Agent添加工具", href: "AI功能开发/AIAgent#为agent添加工具" },
+    { text: "Agent调用模型函数", href: "AI功能开发/AIAgent#agent调用模型函数" },
+    { text: "Agent调用服务函数", href: "AI功能开发/AIAgent#agent调用服务函数" },
+    { text: "Agent调用MCP服务", href: "AI功能开发/AIAgent#agent调用mcp服务" },
+    { text: "将MCP配置转为环境变量", href: "AI功能开发/AIAgent#将mcp配置转为环境变量" },
+    { text: "Agent调用外部API", href: "AI功能开发/AIAgent#agent调用外部api" },
+    { text: "Agent调用页面函数", href: "AI功能开发/AIAgent#agent调用页面函数" },
+    { text: "启用/关闭工具函数", href: "AI功能开发/AIAgent#启用关闭工具函数" },
+    { text: "工具函数调用前/后事件触发", href: "AI功能开发/AIAgent#工具函数调用前后事件触发" },
+    { text: "工具函数执行前的人工确认", href: "AI功能开发/AIAgent#工具函数执行前的人工确认" },
+    { text: "限制工具函数调用的用户角色", href: "AI功能开发/AIAgent#限制工具函数调用的用户角色" },
+    { text: "集成知识库实现检索增强生成（RAG）", href: "AI功能开发/AIAgent#集成知识库实现检索增强生成rag" },
+    { text: "在前端函数中调用Agent", href: "AI功能开发/AIAgent#在前端函数中调用agent" },
+    { text: "在页面助理中测试Agent", href: "AI功能开发/AIAgent#在页面助理中测试agent" },
+    { text: "在后端服务函数中调用Agent", href: "AI功能开发/AIAgent#在后端服务函数中调用agent" },
+    { text: "源码模式修改Agent", href: "AI功能开发/AIAgent#源码模式修改agent" },
+    { text: "自定义回调处理器", href: "AI功能开发/AIAgent#自定义回调处理器" },
+    { text: "Agent的流式输出", href: "AI功能开发/AIAgent#agent的流式输出" }
+  ]} />
 </IndexCard>
 
 </div>

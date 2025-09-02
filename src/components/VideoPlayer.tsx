@@ -33,8 +33,6 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   return (
     <div className={`video-player ${className}`} style={{ width, height }}>
       <video
-        src={videoUrl}
-        type={type}
         controls={controls}
         autoPlay={autoplay}
         muted={muted}
@@ -47,6 +45,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
           maxWidth: '100%',
         }}
       >
+        <source src={videoUrl} type={type} />
         您的浏览器不支持 video 标签。
       </video>
     </div>

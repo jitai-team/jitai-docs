@@ -1,0 +1,741 @@
+/* PricingSection 样式 - 参考首页设计风格 */
+.sectionContent {
+  width: 100%;
+  max-width: 1500px;
+}
+
+.pricing {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--hero-bg);
+  color: #1a1a1a;
+  padding: 8rem 0;
+  position: relative;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.pricing.fadeIn {
+  animation: fadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 页面标题 */
+.pageHeader {
+  text-align: center;
+  margin: 4rem 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pageHeader.headerAnimate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pageTitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  background: var(--hero-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.pageSubtitle {
+  font-size: 1.25rem;
+  color: #6b7280;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+
+/* 标签页容器 */
+.tabContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0.1s;
+}
+
+.tabContainer.tabAnimate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tabGroup {
+  display: flex;
+  /* background: rgba(255, 255, 255, 0.8); */
+  backdrop-filter: blur(20px);
+  border-radius: 1rem;
+  /* padding: 0.5rem; */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1rem;
+  font-weight: 500;
+  color: #6b7280;
+  min-width: 120px;
+  justify-content: center;
+}
+
+.tab:hover {
+  color: #2461fe;
+  background: rgba(36, 97, 254, 0.05);
+}
+
+.tabActive {
+  background: var(--hero-gradient);
+  color: white;
+  box-shadow: 0 4px 12px rgba(36, 97, 254, 0.3);
+  transform: scale(1.02);
+}
+
+.tabActive:hover {
+  color: white;
+  background: var(--hero-gradient);
+}
+
+.tabIcon {
+  font-size: 1.1rem;
+}
+
+.tabText {
+  font-weight: 600;
+}
+
+/* 价格卡片网格 - 针对1400px优化 */
+.pricingCards {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(240px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 6rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0.2s;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pricingCards.cardsAnimate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 价格卡片基础样式 */
+.pricingCard {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricingCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--hero-gradient);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.pricingCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.pricingCard:hover::before {
+  transform: scaleX(1);
+}
+
+/* 推荐卡片样式 */
+.recommended {
+  transform: scale(1.05);
+  border: 2px solid rgba(36, 97, 254, 0.3);
+  box-shadow: 0 25px 50px rgba(36, 97, 254, 0.2);
+}
+
+.recommended::before {
+  transform: scaleX(1);
+}
+
+.recommendedBadge {
+  position: absolute;
+  top: -1px;
+  right: 2rem;
+  background: var(--hero-gradient);
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0 0 1rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(36, 97, 254, 0.3);
+}
+
+/* 卡片头部 */
+.cardHeader {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.cardIcon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.cardSubtitle {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* 价格部分 */
+.cardPrice {
+  margin-bottom: 1.5rem;
+  padding: 0.8rem;
+  background: rgba(36, 97, 254, 0.03);
+  border-radius: 1rem;
+  border: 1px solid rgba(36, 97, 254, 0.1);
+}
+
+.priceGroup {
+  text-align: center;
+}
+
+.priceLabel {
+  display: block;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.currency {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2461fe;
+}
+
+.amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.period {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* 功能列表 */
+.cardFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.cardFeatures .featureItem {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #374151;
+  padding: 0.25rem 0;
+  line-height: 1.4;
+}
+
+/* .cardFeatures .featureItem:before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background: #2461fe;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+} */
+
+/* 功能对比部分 */
+.comparisonSection {
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0.4s;
+}
+
+.comparisonSection.tableAnimate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.comparisonTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #1f2937;
+  margin-bottom: 2rem;
+}
+
+.tableContainer {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 2rem;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.tableHeader {
+  background: var(--hero-gradient);
+  color: white;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  border: none;
+}
+
+.tableHeader:first-child {
+  border-radius: 1rem 0 0 0;
+}
+
+.tableHeader:last-child {
+  border-radius: 0 1rem 0 0;
+}
+
+.featureCell {
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  text-align: center;
+  font-size: 0.9rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+.featureCell:first-child {
+  text-align: left;
+  font-weight: 600;
+  color: #1f2937;
+  background: rgba(36, 97, 254, 0.02);
+}
+
+.table tbody tr:last-child .featureCell {
+  border-bottom: none;
+}
+
+.table tbody tr:nth-child(even) {
+  background: rgba(248, 250, 252, 0.5);
+}
+
+/* 价格行特殊样式 */
+.priceRow {
+  background: rgba(36, 97, 254, 0.02);
+}
+
+.priceCell {
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  vertical-align: top;
+}
+
+.priceInfo {
+  text-align: center;
+}
+
+.priceType {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.priceValue {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+}
+
+.priceValue:last-child {
+  margin-bottom: 0;
+}
+
+/* 扩展能力网格 */
+.extensionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+}
+
+.extensionItem {
+  background: rgba(36, 97, 254, 0.05);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  color: #1f2937;
+  text-align: center;
+  border: 1px solid rgba(36, 97, 254, 0.1);
+}
+
+/* 特别说明 */
+.specialNote {
+  background: linear-gradient(135deg, rgba(36, 97, 254, 0.05) 0%, rgba(202, 75, 167, 0.05) 100%);
+  border: 1px solid rgba(36, 97, 254, 0.1);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0.4s;
+}
+
+.specialNote.noteAnimate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.noteIcon {
+  font-size: 3rem;
+  flex-shrink: 0;
+}
+
+.noteContent {
+  flex: 1;
+}
+
+.noteTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+}
+
+.noteText {
+  font-size: 1.1rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.noteText strong {
+  color: #2461fe;
+  font-weight: 600;
+}
+
+/* 联系我们区域 */
+.contactSection {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0.6s;
+}
+
+.contactSection.contactAnimate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contactTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.contactSubtitle {
+  font-size: 1.25rem;
+  color: #6b7280;
+  margin-bottom: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.contactButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: linear-gradient(135deg, #2461fe 0%, #ca4ba7 100%);
+  color: white;
+  padding: 1.25rem 2.5rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 25px rgba(36, 97, 254, 0.3);
+}
+
+.contactButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(36, 97, 254, 0.4);
+  text-decoration: none;
+  color: white;
+}
+
+.buttonText {
+  font-weight: 600;
+}
+
+.buttonIcon {
+  display: flex;
+  align-items: center;
+}
+
+.buttonIcon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 1600px) {
+  .pricingCards {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.25rem;
+  }
+  
+  .pricingCard {
+    padding: 1.25rem;
+    min-height: 480px;
+  }
+  
+  .cardTitle {
+    font-size: 1.125rem;
+  }
+  
+  .cardIcon {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 1400px) {
+  .pricingCards {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  
+  .pricingCard {
+    padding: 1rem;
+    min-height: 450px;
+  }
+  
+  .recommended {
+    transform: scale(1.01);
+  }
+  
+  .pageTitle {
+    font-size: 3rem;
+  }
+  
+  .comparisonTitle {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing {
+    padding: 4rem 0;
+  }
+  
+  .pageTitle {
+    font-size: 2.5rem;
+  }
+  
+  .pageSubtitle {
+    font-size: 1.1rem;
+  }
+  
+  .tabContainer {
+    margin-bottom: 2rem;
+  }
+  
+  .tab {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9rem;
+    min-width: 100px;
+  }
+  
+  .tabIcon {
+    font-size: 1rem;
+  }
+  
+  .pricingCards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+  }
+  
+  .pricingCard {
+    padding: 1.5rem;
+  }
+  
+  .recommended {
+    transform: scale(1);
+  }
+  
+  .cardIcon {
+    font-size: 2.5rem;
+  }
+  
+  .cardTitle {
+    font-size: 1.25rem;
+  }
+  
+  .amount {
+    font-size: 1.75rem;
+  }
+  
+  .comparisonTitle {
+    font-size: 1.5rem;
+  }
+  
+  .tableContainer {
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  
+  .table {
+    font-size: 0.8rem;
+  }
+  
+  .tableHeader {
+    padding: 1rem 0.5rem;
+    font-size: 0.75rem;
+  }
+  
+  .featureCell {
+    padding: 1rem 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .specialNote {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .noteIcon {
+    font-size: 2.5rem;
+  }
+  
+  .contactTitle {
+    font-size: 2rem;
+  }
+  
+  .contactButton {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageTitle {
+    font-size: 2rem;
+  }
+  
+  .pageSubtitle {
+    font-size: 1rem;
+  }
+  
+  .pricingCard {
+    padding: 1.25rem;
+  }
+  
+  .cardPrice {
+    padding: 1rem;
+  }
+  
+  .amount {
+    font-size: 1.5rem;
+  }
+  
+  .contactTitle {
+    font-size: 1.75rem;
+  }
+  
+  .contactSubtitle {
+    font-size: 1rem;
+  }
+  
+  .comparisonTitle {
+    font-size: 1.25rem;
+  }
+  
+  .tableContainer {
+    padding: 0.75rem;
+  }
+  
+  .tableHeader {
+    padding: 0.75rem 0.25rem;
+    font-size: 0.7rem;
+  }
+  
+  .featureCell {
+    padding: 0.75rem 0.25rem;
+    font-size: 0.75rem;
+  }
+  
+  .contactButton {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}

@@ -2,6 +2,9 @@ import React from 'react';
 import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
 
+// Fix TypeScript issue with Docusaurus Link component
+const DocusaurusLink = Link as any;
+
 interface LinkItem {
   text: string;
   href: string;
@@ -26,7 +29,7 @@ const LinkGrid: React.FC<LinkGridProps> = ({ links, columns = 'auto' }) => {
     <div className={styles.linkGrid} style={getGridStyle()}>
       {links.map((link, index) => (
         <div key={index} className={styles.linkItem}>
-          <Link to={link.href}>{link.text}</Link>
+          <DocusaurusLink to={link.href}>{link.text}</DocusaurusLink>
         </div>
       ))}
     </div>

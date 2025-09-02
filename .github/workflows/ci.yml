@@ -1,8 +1,3 @@
-permissions:
-  contents: read
-  pull-requests: write
-  issues: write
-
 name: CI Check
 on:
   pull_request:
@@ -12,6 +7,8 @@ jobs:
   pr-build-check:
     name: PR Build Check
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     
     steps:
       - name: Checkout code
@@ -20,7 +17,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
+          node-version: '22.x'
       
       - name: Install pnpm
         uses: pnpm/action-setup@v4
@@ -39,28 +36,10 @@ jobs:
           CI: true
         run: pnpm run build
       
-      - name: Comment PR result
+      - name: Summary
         if: success()
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: '✅ All checks passed! This PR is ready to be merged.'
-            })
+        run: echo "✅ All checks passed! This PR is ready to be merged."
       
-      - name: Comment PR failure
+      - name: Summary
         if: failure()
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: '❌ Checks failed! Please fix TypeScript errors or build issues and try again.'
-            })
+        run: echo "❌ Checks failed! Please fix TypeScript errors or build issues and try again."

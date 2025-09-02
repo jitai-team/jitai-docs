@@ -12,12 +12,12 @@ interface LinkItem {
 
 interface LinkGridProps {
   links: LinkItem[];
-  columns?: 'auto' | 2 | 'vertical';
+  columns?: 'auto' | '2' | 'vertical';
 }
 
 const LinkGrid: React.FC<LinkGridProps> = ({ links, columns = 'auto' }) => {
   const getGridStyle = () => {
-    if (columns === 2) {
+    if (columns === '2') {
       return { gridTemplateColumns: 'repeat(2, 1fr)' };
     } else if (columns === 'vertical') {
       return { gridTemplateColumns: '1fr', gap: '6px 0' };

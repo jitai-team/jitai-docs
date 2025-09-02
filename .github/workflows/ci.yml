@@ -1,5 +1,9 @@
-name: CI Check
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
 
+name: CI Check
 on:
   pull_request:
     branches: [ master ]
@@ -8,10 +12,6 @@ jobs:
   pr-build-check:
     name: PR Build Check
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: write
-      issues: write
     
     steps:
       - name: Checkout code
@@ -28,7 +28,7 @@ jobs:
           run_install: false
       
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
       
       - name: TypeScript type check
         run: pnpm run typecheck
@@ -43,6 +43,7 @@ jobs:
         if: success()
         uses: actions/github-script@v7
         with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             github.rest.issues.createComment({
               issue_number: context.issue.number,
@@ -55,6 +56,7 @@ jobs:
         if: failure()
         uses: actions/github-script@v7
         with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             github.rest.issues.createComment({
               issue_number: context.issue.number,

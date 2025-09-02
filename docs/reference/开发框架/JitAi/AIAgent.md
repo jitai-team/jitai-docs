@@ -402,21 +402,80 @@ AIAgent支持多种类型工具的动态编排：
 ```python title="详细流式回调示例"
 def detailed_callback(data):
     msg_type = data.get('type')
-
+    
     if msg_type == 'REASONING_CONTENT':
         print(f"推理过程: {data['data']['content']}")
+    elif msg_type == 'TEXT_MESSAGE_CONTENT':
+        print(f"文本消息: {data['data']['content']}")
     elif msg_type == 'TOOL_CALL_START':
         tool_info = data['data']['outputArgs']['value']
         print(f"开始调用工具: {tool_info['toolName']}")
     elif msg_type == 'TOOL_CALL_END':
         print(f"工具调用完成")
-    elif msg_type == 'ERROR':
-        print(f"执行错误: {data['data']['error']}")
 
 result = agent.run(
     user_input="处理客户数据",
     stream_callback=detailed_callback
 )
+```
+
+| msg_type                | 含义                   | 参数示例                                                                                      |
+|-------------------------|------------------------|----------------------------------------------------------------------------------------------|
+| REASONING_CONTENT       | 大模型推理过程           | `{"type": "REASONING_CONTENT", "data": {"content": "..."}}`                   |
+| TEXT_MESSAGE_CONTENT    | 大模型输出的文本消息          | `{"type": "TEXT_MESSAGE_CONTENT", "data": {"content": "..."}}`                         |
+| TOOL_CALL_START         | 工具调用开始           | `{"type": "TOOL_CALL_START", "data":{}}` |
+| TOOL_CALL_END           | 工具调用完成           | `{"type": "TOOL_CALL_END", "data": {}}`                                                      |
+
+```json title="TOOL_CALL_START"
+{
+    "type": "TOOL_CALL_START",
+    "data": {
+        "eventType": "callTool",
+        "outputArgs": {
+            "dataType": "JitDict",
+            "variableList": [
+                {"name": "toolName", "title": "Tool Name", "dataType": "Stext"},
+                {"name": "toolType", "title": "Tool Type", "dataType": "Stext"},
+                {"name": "stage", "title": "Call Stage", "dataType": "Stext"},
+                {"name": "args", "title": "Call Parameters", "dataType": "JitDict", "variableList": [{"name": "param1", "title": "Param1", "dataType": "Stext"}]}
+            ],
+            "value": {
+                "toolName": "Table1.call",
+                "toolType": "ui",
+                "stage": "preEvent",
+                "args": {
+                    "param1": "value1"
+                }
+            },
+        },
+    },
+}
+
+```
+
+```json title="TOOL_CALL_END"
+{
+    "type": "TOOL_CALL_END",
+    "data": {
+        "eventType": "callTool",
+        "outputArgs": {
+            "dataType": "JitDict",
+            "variableList": [
+                {"name": "toolName", "title": "Tool Name", "dataType": "Stext"},
+                {"name": "toolType", "title": "Tool Type", "dataType": "Stext"},
+                {"name": "stage", "title": "Call Stage", "dataType": "Stext"},
+                {"name": "args", "title": "Call Parameters", "dataType": "Ltext"}]}
+            ],
+            "value": {
+                "toolName": "Table1.call",
+                "toolType": "ui",
+                "stage": "postEvent",
+                "args": "..."
+            },
+        },
+    },
+}
+
 ```
 
 ### 会话状态管理
@@ -550,7 +609,7 @@ agent.run(
         {
             "fullName": "rags.TechnicalSpecs",
             "enable": true,
-            "force": true  // 强制模式：每次都先查询技术规范
+            "force": true  // 强制模式：请求大模型之前先查询一次知识库
         },
         {
             "fullName": "rags.GeneralKnowledge",
@@ -562,8 +621,9 @@ agent.run(
 ```
 
 ### 自定义回调处理器
+JitAi的ReActAgent基于LangGraph构建，回调处理器用于监听和处理Agent推理、工具调用等各类关键流程事件，兼容[langchain_core.callbacks.BaseCallbackHandler](https://python.langchain.com/api_reference/core/callbacks/langchain_core.callbacks.base.BaseCallbackHandler.html#langchain_core.callbacks.base.BaseCallbackHandler)中定义的全部回调方法以及pre_model_hook和post_model_hook函数（参考[LangChain官方文档](https://langchain-ai.github.io/langgraph/reference/agents/?h=create_react#langgraph.prebuilt.chat_agent_executor.create_react_agent)中pre_model_hook和post_model_hook的定义）。
 
-创建专门的回调处理器实例元素来处理复杂的回调逻辑：
+通过自定义回调处理器，开发者可以灵活介入模型推理前后、工具调用前后等环节，实现日志记录、参数校验、上下文增强等高级功能。
 
 ```python title="自定义回调处理器实现"
 # aiagents/CustomCallback/service.py
@@ -574,6 +634,11 @@ class CustomCallback(CustomAgentCallbackHandler):
     def pre_model_hook(self, state: Dict[str, Any], **kwargs) -> Dict[str, Any]:
         # 模型调用前的自定义处理
         print(f"模型调用前处理: {state.get('messages', [])[-1]}")
+        return state
+
+    def post_model_hook(self, state: Dict[str, Any], **kwargs) -> Dict[str, Any]:
+        # 模型调用后的自定义处理
+        print(f"模型调用后处理: {state.get('messages', [])[-1]}")
         return state
 
     def on_tool_start(self, serialized: dict, input_str: str, **kwargs) -> Any:

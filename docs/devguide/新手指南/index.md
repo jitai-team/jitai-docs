@@ -593,7 +593,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid links={[
     { text: "标准组织架构", href: "用户与权限/组织架构#标准组织" },
-    { text: "允许新注册用户加入？", href: "用户与权限/组织架构#允许新注册用户加入？" },
+    { text: "允许新注册用户加入", href: "用户与权限/组织架构#允许新注册用户加入" },
     { text: "钉钉自建组织", href: "用户与权限/组织架构#钉钉自建组织" },
     { text: "企业微信自建组织", href: "用户与权限/组织架构#企业微信自建组织" },
     { text: "通讯录管理入口", href: "用户与权限/组织架构#通讯录管理入口" },

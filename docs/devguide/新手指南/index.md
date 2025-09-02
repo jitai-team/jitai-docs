@@ -429,7 +429,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid columns={2} links={[
     { text: "按钮组件创建", href: "在页面中使用功能组件/按钮组件#按钮组件创建" },
-    { text: "按钮标题/图标/类型/大小配置", href: "在页面中使用功能组件/按钮组件#标题/图标/类型配置" },
+    { text: "按钮标题/图标/类型/大小配置", href: "在页面中使用功能组件/按钮组件#标题图标类型配置" },
     { text: "按钮点击后事件", href: "在页面中使用功能组件/按钮组件#点击后事件" }
   ]} />
 </IndexCard>
@@ -450,7 +450,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   <LinkGrid columns={2} links={[
     { text: "发起申请组件的创建", href: "在页面中使用功能组件/审批组件#创建发起申请组件" },
     { text: "发起申请的参数配置", href: "在页面中使用功能组件/审批组件#参数配置" },
-    { text: "发起申请的处理后/刷新后事件", href: "在页面中使用功能组件/审批组件#处理后/刷新后事件" },
+    { text: "发起申请的处理后/刷新后事件", href: "在页面中使用功能组件/审批组件#处理后刷新后事件" },
     { text: "审批处理组件创建", href: "在页面中使用功能组件/审批组件#创建审批处理组件" },
     { text: "审批处理的参数配置", href: "在页面中使用功能组件/审批组件#参数配置-1" },
     { text: "是否保留历史审批记录", href: "在页面中使用功能组件/审批组件#保留历史审批记录" },

@@ -100,7 +100,7 @@ JitAi提供了AI大模型元素、AI Agent元素、AI助理元素以及知识库
 
 ![创建阅卷Agent](./img/exam/创建阅卷Agent.png)
 
-- **大模型配置**
+- **AI大模型**
 
 ![阅卷Agent配置大模型](./img/exam/阅卷Agent配置大模型.png)
 

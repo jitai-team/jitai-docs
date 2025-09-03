@@ -3,6 +3,9 @@ import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
 import LinkGrid from './LinkGrid';
 
+// Fix TypeScript issue with Docusaurus Link component
+const DocusaurusLink = Link as any;
+
 interface IndexCardProps {
   title: string;
   href: string;
@@ -14,9 +17,9 @@ const IndexCard: React.FC<IndexCardProps> = ({ title, href, description, childre
   return (
     <div className={styles.card}>
       <h3 className={styles.cardTitle} id={title.toLowerCase().replace(/[^\w\s-]/g, '').replace(/\s+/g, '-')}>
-        <Link to={href} className={styles.cardTitleLink}>
+        <DocusaurusLink to={href} className={styles.cardTitleLink}>
           {title}
-        </Link>
+        </DocusaurusLink>
       </h3>
       <p className={styles.cardDescription}>
         {description}

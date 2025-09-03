@@ -695,7 +695,8 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "模型事件", href: "业务逻辑开发/事件处理#模型事件" },
     { text: "审批事件", href: "业务逻辑开发/事件处理#审批事件" },
     { text: "自定义事件", href: "业务逻辑开发/事件处理#自定义事件" },
-    { text: "AI相关事件", href: "业务逻辑开发/事件处理#ai相关事件" },
+    { text: "AI助理事件", href: "业务逻辑开发/事件处理#ai助理事件" },
+    { text: "Agent工具调用事件", href: "业务逻辑开发/事件处理#agent工具调用事件" },
     { text: "服务函数替换事件内函数", href: "业务逻辑开发/事件处理#服务函数替换事件内函数" },
     { text: "事件启用", href: "业务逻辑开发/事件处理#事件启用" },
     { text: "事件同步/异步执行", href: "业务逻辑开发/事件处理#事件同步异步执行" },
@@ -1078,12 +1079,38 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="AI助理（正在编辑中）"
-  description="智能对话助手开发，提供自然语言交互和任务辅助功能。"
+  title="AI助理"
+  href="AI功能开发/AI助理"
+  description="智能业务助理，通过可视化编排设计工作流程，自动执行复杂任务，实现业务智能化处理。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 文档正在完善中，敬请期待...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "什么是AI助理", href: "AI功能开发/AI助理#什么是ai助理" },
+    { text: "创建AI助理", href: "AI功能开发/AI助理#创建ai助理" },
+    { text: "可视化编排", href: "AI功能开发/AI助理#可视化编排" },
+    { text: "开始节点", href: "AI功能开发/AI助理#开始节点" },
+    { text: "路由决策", href: "AI功能开发/AI助理#路由决策" },
+    { text: "AIAgent", href: "AI功能开发/AI助理#aiagent" },
+    { text: "对话区人机交互", href: "AI功能开发/AI助理#对话区人机交互" },
+    { text: "工作区人机交互", href: "AI功能开发/AI助理#工作区人机交互" },
+    { text: "函数调用", href: "AI功能开发/AI助理#函数调用" },
+    { text: "条件分支", href: "AI功能开发/AI助理#条件分支" },
+    { text: "多任务执行", href: "AI功能开发/AI助理#多任务执行" },
+    { text: "事件类型概览", href: "AI功能开发/AI助理#事件类型概览" },
+    { text: "前端工作区事件", href: "AI功能开发/AI助理#前端工作区事件" },
+    { text: "后端业务事件", href: "AI功能开发/AI助理#后端业务事件" },
+    { text: "运行状态数据", href: "AI功能开发/AI助理#运行状态数据" },
+    { text: "运行状态存储库", href: "AI功能开发/AI助理#运行状态存储库" },
+    { text: "高级设置", href: "AI功能开发/AI助理#高级设置" },
+    { text: "使用指南", href: "AI功能开发/AI助理#使用指南" },
+    { text: "欢迎语与开场白", href: "AI功能开发/AI助理#欢迎语与开场白" },
+    { text: "消息输出", href: "AI功能开发/AI助理#消息输出" },
+    { text: "发送AI消息", href: "AI功能开发/AI助理#发送ai消息" },
+    { text: "对话记录管理", href: "AI功能开发/AI助理#对话记录管理" },
+    { text: "全代码开发", href: "AI功能开发/AI助理#全代码开发" },
+    { text: "示例演示", href: "AI功能开发/AI助理#示例演示" },
+    { text: "如何选择合适的节点类型？", href: "AI功能开发/AI助理#如何选择合适的节点类型" },
+    { text: "流程卡住常见原因和解决方法", href: "AI功能开发/AI助理#流程卡住常见原因和解决方法" }
+  ]} />
 </IndexCard>
 
 <IndexCard

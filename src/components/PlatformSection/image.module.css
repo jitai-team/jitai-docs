@@ -163,7 +163,6 @@
     width: 60px;
     height: 3px;
     background: #6d28d9;
-    top: 68px;
 }
 
 .fullstack::after {
@@ -173,7 +172,6 @@
     height: 60px;
     background: #6d28d9;
     /* left: 108px; */
-    top: 40px;
 }
 
 .fullstack .cornerDots {
@@ -184,10 +182,10 @@
     border-radius: 50%;
 }
 
-.fullstack .cornerDotsDot1 { top: 40px; left: calc(50% - 30px); }
-.fullstack .cornerDotsDot2 { top: 40px; right: calc(50% - 30px); }
-.fullstack .cornerDotsDot3 { bottom: 40px; left: calc(50% - 30px); }
-.fullstack .cornerDotsDot4 { bottom: 40px; right: calc(50% - 30px); }
+.fullstack .cornerDotsDot1 { top: calc(50% - 30px); left: calc(50% - 30px); }
+.fullstack .cornerDotsDot2 { top: calc(50% - 30px); right: calc(50% - 30px); }
+.fullstack .cornerDotsDot3 { bottom: calc(50% - 30px); left: calc(50% - 30px); }
+.fullstack .cornerDotsDot4 { bottom: calc(50% - 30px); right: calc(50% - 30px); }
 
 /* 分布式/负载均衡 */
 .distributed::before {
@@ -198,7 +196,7 @@
     background: #6d28d9;
     z-index: 2;
     border-radius: 50%;
-    top: 35px;
+    top: calc(50% - 35px);
     left: 50%;
     transform: translateX(-50%);
 }
@@ -211,7 +209,7 @@
     background: #6d28d9;
     z-index: 2;
     border-radius: 50%;
-    top: 84px;
+    top: calc(50% + 15px);
     left: calc(50% - 40px);
 }
 
@@ -222,7 +220,7 @@
     background: #6d28d9;
     z-index: 2;
     border-radius: 50%;
-    top: 84px;
+    top: calc(50% + 15px);
     right: calc(50% - 40px);
 }
 
@@ -231,7 +229,7 @@
     width: 2px;
     height: 55px;
     background: #a855f7;
-    top: 42px;
+    top: clac(50% - 28px);
     left: 50%;
     transform: translateX(-50%) rotate(35deg);
     transform-origin: top center;
@@ -242,7 +240,7 @@
     width: 2px;
     height: 55px;
     background: #a855f7;
-    top: 42px;
+    top: clac(50% - 28px);
     left: 50%;
     transform: translateX(-50%) rotate(-35deg);
     transform-origin: top center;
@@ -253,7 +251,7 @@
     width: 80px;
     height: 2px;
     background: #c084fc;
-    top: 92px;
+    top: calc(50% + 23px);
     left: 50%;
     transform: translateX(-50%);
 }

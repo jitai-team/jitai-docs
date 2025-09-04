@@ -233,73 +233,7 @@ body {
   border-color: var(--section-color);
 }
 
-/* 前3屏按钮样式 - 多彩主题 */
-.heroPrimaryButton {
-  background: linear-gradient(135deg, #2461fe 0%, #ca4ba7 100%);
-  color: white;
-  border: none;
-  border-radius: 16px;
-  padding: 1.25rem 2.5rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 8px 24px rgba(36, 97, 254, 0.25);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  position: relative;
-  overflow: hidden;
-}
 
-.heroPrimaryButton::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left 0.5s;
-}
-
-.heroPrimaryButton:hover::before {
-  left: 100%;
-}
-
-.heroPrimaryButton:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 16px 32px rgba(36, 97, 254, 0.35);
-  text-decoration: none;
-}
-
-.heroSecondaryButton {
-  background: transparent;
-  color: #2461fe;
-  border: 2px solid rgba(36, 97, 254, 0.2);
-  border-radius: 16px;
-  padding: 1.25rem 2.5rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.heroSecondaryButton:hover {
-  background: #2461fe;
-  color: white;
-  border-color: #2461fe;
-  transform: translateY(-4px);
-  box-shadow: 0 16px 32px rgba(36, 97, 254, 0.25);
-  text-decoration: none;
-}
 
 
 .imagePlaceholder {

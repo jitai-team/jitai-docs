@@ -1,5 +1,5 @@
 export const CONTENT = {
-  title: 'Jit DevOps工具',
+  title: 'Jit 运维工具',
   subtitle: '构建、发布、部署、运维全面简化轻量化',
   color: '#047857',
   features: [

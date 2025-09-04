@@ -90,6 +90,11 @@ const PricingSection: React.FC = () => {
           ))}
         </div>
 
+        {/* <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+<stripe-pricing-table pricing-table-id="prctbl_1S3SyaD4F6dqpTDMO8GCU9LR"
+publishable-key="pk_test_51S3BpQD4F6dqpTDM1FEq1rwSYa8SubHVPFUN0bShSCtVGauknzz2WmyZwN2YtlWU5Vs5DXA7NrMcIKuG5dhL2tu800KihAsWPf">
+</stripe-pricing-table> */}
+
         {/* 功能对比表格 */}
         {/* <div className={`${styles.comparisonSection} ${animateElements ? styles.tableAnimate : ''}`}>
           <h2 className={styles.comparisonTitle}>{PAGE_CONTENT.comparisonTitle}</h2>

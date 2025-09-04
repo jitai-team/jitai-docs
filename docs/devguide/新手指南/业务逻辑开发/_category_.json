@@ -1,6 +1,6 @@
 {
   "label": "业务逻辑开发",
-  "position": 6,
+  "position": 7,
   "link": {
     "type": "generated-index",
     "description": "学习如何开发业务逻辑，包括服务函数、事件处理和定时任务等。"

@@ -228,7 +228,7 @@ const config: Config = {
            items: [
             {
               label: '社区论坛',
-              href: 'https://jitai.discourse.group/',
+              href: 'https://forum.jit.pro/',
             },
              {
                label: 'GitHub',

@@ -25,7 +25,7 @@ export const CONTENT = {
       id: 'community',
       label: '社区',
       type: 'link',
-      url: 'https://jitai.discourse.group/',
+      url: 'https://forum.jit.pro/',
       external: true
     },
   ]

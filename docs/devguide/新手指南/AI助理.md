@@ -1,5 +1,5 @@
 ---
-sidebar_position: 17
+sidebar_position: 4.5
 ---
 
 # AI助理

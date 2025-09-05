@@ -117,7 +117,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="使用可视化编辑器构建页面界面，配置组件和事件，实现丰富的用户交互功能。"
 >
   <LinkGrid links={[
-    { text: "创建一个标准页面", href: "新手指南/门户与页面开发/组件化页面开发#创建一个标准页面" },
+    { text: "创建一个常规页面", href: "新手指南/门户与页面开发/组件化页面开发#创建一个常规页面" },
     { text: "可视化页面编辑器", href: "新手指南/门户与页面开发/组件化页面开发#可视化页面编辑器" },
     { text: "页面变量", href: "新手指南/门户与页面开发/组件化页面开发#页面变量" },
     { text: "页面事件", href: "新手指南/门户与页面开发/组件化页面开发#页面事件" },
@@ -136,7 +136,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "使用样式", href: "新手指南/门户与页面开发/全代码页面开发#使用样式" },
     { text: "使用本地资源", href: "新手指南/门户与页面开发/全代码页面开发#使用本地资源" },
     { text: "使用 Ant Design 的组件", href: "新手指南/门户与页面开发/全代码页面开发#使用-ant-design-的组件" },
-    { text: "内嵌已有标准页面", href: "新手指南/门户与页面开发/全代码页面开发#内嵌已有标准页面" },
+    { text: "内嵌已有常规页面", href: "新手指南/门户与页面开发/全代码页面开发#内嵌已有常规页面" },
     { text: "使用标准组件", href: "新手指南/门户与页面开发/全代码页面开发#使用标准组件" },
     { text: "调用数据模型函数", href: "新手指南/门户与页面开发/全代码页面开发#调用数据模型函数" },
     { text: "调用服务函数", href: "新手指南/门户与页面开发/全代码页面开发#调用服务函数" },
@@ -159,32 +159,32 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="数据录入页面"
-  href="新手指南/门户与页面开发/配置数据录入与管理页面"
+  href="新手指南/门户与页面开发/数据录入页面"
   description="快速创建数据录入表单，实现数据收集和提交功能。"
 >
   <LinkGrid links={[
-    { text: "创建数据录入页面", href: "新手指南/门户与页面开发/配置数据录入与管理页面#创建数据录入页面" },
-    { text: "配置允许查看和编辑的字段", href: "新手指南/门户与页面开发/配置数据录入与管理页面#配置允许查看和编辑的字段" },
-    { text: "提交后显示再次录入按钮", href: "新手指南/门户与页面开发/配置数据录入与管理页面#提交后显示再次录入按钮" },
-    { text: "提交后展示结果反馈界面", href: "新手指南/门户与页面开发/配置数据录入与管理页面#提交后展示结果反馈界面" }
+    { text: "创建数据录入页面", href: "新手指南/门户与页面开发/数据录入页面#创建数据录入页面" },
+    { text: "配置允许查看和编辑的字段", href: "新手指南/门户与页面开发/数据录入页面#配置允许查看和编辑的字段" },
+    { text: "提交后显示再次录入按钮", href: "新手指南/门户与页面开发/数据录入页面#提交后显示再次录入按钮" },
+    { text: "提交后展示结果反馈界面", href: "新手指南/门户与页面开发/数据录入页面#提交后展示结果反馈界面" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="数据管理页面"
-  href="新手指南/门户与页面开发/配置数据录入与管理页面"
-  description="创建功能完整的数据管理界面，支持查看、编辑、筛选和批量操作。"
+  title="AI数据管理页面"
+  href="新手指南/门户与页面开发/AI数据管理页面"
+  description="AI加持的AI数据管理页面，智能辅助高效完成数据浏览、筛选、编辑与批量操作。"
 >
   <LinkGrid columns={2} links={[
-    { text: "创建数据管理页面", href: "新手指南/门户与页面开发/配置数据录入与管理页面#创建数据管理页面" },
-    { text: "通过默认筛选条件限制页面表格查询的数据", href: "新手指南/门户与页面开发/配置数据录入与管理页面#通过默认筛选条件限制页面表格查询的数据" },
-    { text: "配置默认的数据排序规则", href: "新手指南/门户与页面开发/配置数据录入与管理页面#配置默认的数据排序规则" },
-    { text: "在页面表格中隐藏部分字段", href: "新手指南/门户与页面开发/配置数据录入与管理页面#在页面表格中隐藏部分字段" },
-    { text: "配置支持条件筛选的字段", href: "新手指南/门户与页面开发/配置数据录入与管理页面#配置支持条件筛选的字段" },
-    { text: "配置表单中允许查看和编辑的字段", href: "新手指南/门户与页面开发/配置数据录入与管理页面#配置表单中允许查看和编辑的字段" },
-    { text: "配置批量编辑表单中展示的字段", href: "新手指南/门户与页面开发/配置数据录入与管理页面#配置批量编辑表单中展示的字段" },
-    { text: "启用 AI 数据管理助手", href: "新手指南/门户与页面开发/配置数据录入与管理页面#启用-ai-数据管理助手" },
-    { text: "转换为标准页面进行修改", href: "新手指南/门户与页面开发/配置数据录入与管理页面#转换为标准页面进行修改" }
+    { text: "创建AI数据管理页面", href: "新手指南/门户与页面开发/AI数据管理页面#创建ai数据管理页面" },
+    { text: "通过默认筛选条件限制页面表格查询的数据", href: "新手指南/门户与页面开发/AI数据管理页面#通过默认筛选条件限制页面表格查询的数据" },
+    { text: "配置默认的数据排序规则", href: "新手指南/门户与页面开发/AI数据管理页面#配置默认的数据排序规则" },
+    { text: "在页面表格中隐藏部分字段", href: "新手指南/门户与页面开发/AI数据管理页面#在页面表格中隐藏部分字段" },
+    { text: "配置支持条件筛选的字段", href: "新手指南/门户与页面开发/AI数据管理页面#配置支持条件筛选的字段" },
+    { text: "配置表单中允许查看和编辑的字段", href: "新手指南/门户与页面开发/AI数据管理页面#配置表单中允许查看和编辑的字段" },
+    { text: "配置批量编辑表单中展示的字段", href: "新手指南/门户与页面开发/AI数据管理页面#配置批量编辑表单中展示的字段" },
+    { text: "启用AI数据管理助手", href: "新手指南/门户与页面开发/AI数据管理页面#启用-ai-数据管理助手" },
+    { text: "转换为常规页面进行修改", href: "新手指南/门户与页面开发/AI数据管理页面#转换为常规页面进行修改" }
   ]} />
 </IndexCard>
 
@@ -527,6 +527,147 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   </details>
 </div>
 
+## AI大模型
+
+接入GPT-4、Claude、通义千问等主流大模型。支持多厂商容灾和私有化部署，为应用提供智能对话、文本生成、代码辅助等AI能力。
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard>
+  <LinkGrid links={[
+    { text: "主流大模型厂商支持列表", href: "新手指南/AI大模型#主流大模型厂商支持列表" },
+    { text: "大模型厂商元素的创建", href: "新手指南/AI大模型#大模型厂商元素的创建" },
+    { text: "重试及备用API Key机制", href: "新手指南/AI大模型#重试及备用api-key机制" },
+    { text: "私有化大模型集成", href: "新手指南/AI大模型#私有化大模型集成" },
+    { text: "在页面中调用大模型", href: "新手指南/AI大模型#在页面中调用大模型" },
+    { text: "在后端函数中调用大模型", href: "新手指南/AI大模型#在后端函数中调用大模型" },
+    { text: "大模型编程接口", href: "新手指南/AI大模型#大模型编程接口" }
+  ]} />
+</IndexCard>
+
+</div>
+
+## 向量数据库
+
+企业知识的智能存储引擎。将文本转化为向量数据，实现语义级精准搜索，为智能问答和知识检索系统提供基础支撑。
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard>
+  <LinkGrid links={[
+    { text: "Chroma向量数据库", href: "新手指南/向量数据库#chroma向量数据库" },
+    { text: "本地向量数据库配置", href: "新手指南/向量数据库#本地向量数据库配置" },
+    { text: "远程向量数据库连接", href: "新手指南/向量数据库#远程向量数据库连接" },
+    { text: "向量数据库编程接口", href: "新手指南/向量数据库#向量数据库编程接口" }
+  ]} />
+</IndexCard>
+
+</div>
+
+## AI知识库
+
+将企业文档、手册、FAQ转化为智能知识库。支持文档自动处理、智能分段、语义检索，让AI基于企业知识精准回答问题。
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard>
+  <LinkGrid columns={2} links={[
+    { text: "创建AI知识库元素", href: "新手指南/AI知识库#创建ai知识库元素" },
+    { text: "AI知识库的管理", href: "新手指南/AI知识库#ai知识库的管理" },
+    { text: "文档管理", href: "新手指南/AI知识库#文档管理" },
+    { text: "AI知识库设置", href: "新手指南/AI知识库#ai知识库设置" },
+    { text: "查询测试", href: "新手指南/AI知识库#查询测试" },
+    { text: "在后端可视化编程中调用AI知识库", href: "新手指南/AI知识库#在后端可视化编程中调用ai知识库" },
+    { text: "在AIAgent中使用AI知识库", href: "新手指南/AI知识库#在aiagent中使用ai知识库" },
+    { text: "AI知识库编程接口", href: "新手指南/AI知识库#ai知识库编程接口" },
+    { text: "原理及参数说明", href: "新手指南/AI知识库#原理及参数说明" },
+    { text: "向量化配置说明", href: "新手指南/AI知识库#向量化配置说明" }
+  ]} />
+</IndexCard>
+
+</div>
+
+## AIAgent
+
+具备推理和行动能力的智能代理。通过提示词和工具配置，让AI自主分析问题、制定方案、执行任务，处理复杂业务场景。
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard>
+  <LinkGrid columns={2} links={[
+    { text: "创建ReActAgent", href: "新手指南/AIAgent#创建reactagent" },
+    { text: "编写系统提示词", href: "新手指南/AIAgent#编写系统提示词" },
+    { text: "基于模板编写系统提示词", href: "新手指南/AIAgent#基于模板编写系统提示词" },
+    { text: "在提示词中使用变量", href: "新手指南/AIAgent#在提示词中使用变量" },
+    { text: "选择模型并配置参数", href: "新手指南/AIAgent#选择模型并配置参数" },
+    { text: "为Agent编写简介描述", href: "新手指南/AIAgent#为agent编写简介描述" },
+    { text: "配置运行状态存储仓", href: "新手指南/AIAgent#配置运行状态存储仓" },
+    { text: "内存存储", href: "新手指南/AIAgent#内存存储" },
+    { text: "数据库存储", href: "新手指南/AIAgent#数据库存储" },
+    { text: "配置输入变量", href: "新手指南/AIAgent#配置输入变量" },
+    { text: "配置输出结果", href: "新手指南/AIAgent#配置输出结果" },
+    { text: "为Agent添加工具", href: "新手指南/AIAgent#为agent添加工具" },
+    { text: "Agent调用模型函数", href: "新手指南/AIAgent#agent调用模型函数" },
+    { text: "Agent调用服务函数", href: "新手指南/AIAgent#agent调用服务函数" },
+    { text: "Agent调用MCP服务", href: "新手指南/AIAgent#agent调用mcp服务" },
+    { text: "将MCP配置转为环境变量", href: "新手指南/AIAgent#将mcp配置转为环境变量" },
+    { text: "Agent调用外部API", href: "新手指南/AIAgent#agent调用外部api" },
+    { text: "Agent调用页面函数", href: "新手指南/AIAgent#agent调用页面函数" },
+    { text: "启用/关闭工具函数", href: "新手指南/AIAgent#启用关闭工具函数" },
+    { text: "工具函数调用前/后事件触发", href: "新手指南/AIAgent#工具函数调用前后事件触发" },
+    { text: "工具函数执行前的人工确认", href: "新手指南/AIAgent#工具函数执行前的人工确认" },
+    { text: "限制工具函数调用的用户角色", href: "新手指南/AIAgent#限制工具函数调用的用户角色" },
+    { text: "集成知识库实现检索增强生成（RAG）", href: "新手指南/AIAgent#集成知识库实现检索增强生成rag" },
+    { text: "在前端函数中调用Agent", href: "新手指南/AIAgent#在前端函数中调用agent" },
+    { text: "在页面助理中测试Agent", href: "新手指南/AIAgent#在页面助理中测试agent" },
+    { text: "在后端服务函数中调用Agent", href: "新手指南/AIAgent#在后端服务函数中调用agent" },
+    { text: "源码模式修改Agent", href: "新手指南/AIAgent#源码模式修改agent" },
+    { text: "自定义回调处理器", href: "新手指南/AIAgent#自定义回调处理器" },
+    { text: "Agent的流式输出", href: "新手指南/AIAgent#agent的流式输出" }
+  ]} />
+</IndexCard>
+
+</div>
+
+## AI助理
+
+可视化的智能工作流引擎。通过拖拽节点编排业务流程，结合AI决策和人机交互，实现客服、审批、数据处理等场景的智能自动化。
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard>
+  <LinkGrid columns={2} links={[
+    { text: "什么是AI助理", href: "新手指南/AI助理#什么是ai助理" },
+    { text: "创建AI助理", href: "新手指南/AI助理#创建ai助理" },
+    { text: "可视化编排", href: "新手指南/AI助理#可视化编排" },
+    { text: "开始节点", href: "新手指南/AI助理#开始节点" },
+    { text: "路由决策", href: "新手指南/AI助理#路由决策" },
+    { text: "AIAgent", href: "新手指南/AI助理#aiagent" },
+    { text: "对话区人机交互", href: "新手指南/AI助理#对话区人机交互" },
+    { text: "工作区人机交互", href: "新手指南/AI助理#工作区人机交互" },
+    { text: "函数调用", href: "新手指南/AI助理#函数调用" },
+    { text: "条件分支", href: "新手指南/AI助理#条件分支" },
+    { text: "多任务执行", href: "新手指南/AI助理#多任务执行" },
+    { text: "事件类型概览", href: "新手指南/AI助理#事件类型概览" },
+    { text: "前端工作区事件", href: "新手指南/AI助理#前端工作区事件" },
+    { text: "后端业务事件", href: "新手指南/AI助理#后端业务事件" },
+    { text: "运行状态数据", href: "新手指南/AI助理#运行状态数据" },
+    { text: "运行状态存储库", href: "新手指南/AI助理#运行状态存储库" },
+    { text: "高级设置", href: "新手指南/AI助理#高级设置" },
+    { text: "使用指南", href: "新手指南/AI助理#使用指南" },
+    { text: "欢迎语与开场白", href: "新手指南/AI助理#欢迎语与开场白" },
+    { text: "消息输出", href: "新手指南/AI助理#消息输出" },
+    { text: "发送AI消息", href: "新手指南/AI助理#发送ai消息" },
+    { text: "对话记录管理", href: "新手指南/AI助理#对话记录管理" },
+    { text: "全代码开发", href: "新手指南/AI助理#全代码开发" },
+    { text: "示例演示", href: "新手指南/AI助理#示例演示" },
+    { text: "如何选择合适的节点类型？", href: "新手指南/AI助理#如何选择合适的节点类型" },
+    { text: "流程卡住常见原因和解决方法", href: "新手指南/AI助理#流程卡住常见原因和解决方法" }
+  ]} />
+</IndexCard>
+
+</div>
+
 ## 数据建模
 
 为你的应用设计强大的数据基础。无需复杂的SQL知识，通过可视化方式创建数据表，设计字段类型，建立关联关系。让数据管理变得轻松高效。
@@ -701,7 +842,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "创建应用角色", href: "新手指南/用户与权限/角色权限#创建应用角色" },
     { text: "应用角色的权限配置", href: "新手指南/用户与权限/角色权限#应用角色的权限配置" },
     { text: "指定可访问的门户及菜单", href: "新手指南/用户与权限/角色权限#指定可访问的门户及菜单" },
-    { text: "在开发区门户中管理应用角色成员", href: "新手指南/用户与权限/角色权限#在开发区门户中管理应用角色成员" },
+    { text: "在开发者门户中管理应用角色成员", href: "新手指南/用户与权限/角色权限#在开发者门户中管理应用角色成员" },
     { text: "门户级的数据操作类型和操作范围控制", href: "新手指南/用户与权限/角色权限#门户级的数据操作类型和操作范围控制" },
     { text: "组件的按钮权限控制", href: "新手指南/用户与权限/角色权限#组件的按钮权限控制" },
     { text: "组件的数据字段读/写/统计权限控制", href: "新手指南/用户与权限/角色权限#组件的数据字段读写统计权限控制" },
@@ -1079,147 +1220,6 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </div>
 
 
-
-## AI大模型
-
-接入GPT-4、Claude、通义千问等主流大模型。支持多厂商容灾和私有化部署，为应用提供智能对话、文本生成、代码辅助等AI能力。
-
-<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
-
-<IndexCard>
-  <LinkGrid links={[
-    { text: "主流大模型厂商支持列表", href: "新手指南/AI大模型#主流大模型厂商支持列表" },
-    { text: "大模型厂商元素的创建", href: "新手指南/AI大模型#大模型厂商元素的创建" },
-    { text: "重试及备用API Key机制", href: "新手指南/AI大模型#重试及备用api-key机制" },
-    { text: "私有化大模型集成", href: "新手指南/AI大模型#私有化大模型集成" },
-    { text: "在页面中调用大模型", href: "新手指南/AI大模型#在页面中调用大模型" },
-    { text: "在后端函数中调用大模型", href: "新手指南/AI大模型#在后端函数中调用大模型" },
-    { text: "大模型编程接口", href: "新手指南/AI大模型#大模型编程接口" }
-  ]} />
-</IndexCard>
-
-</div>
-
-## 向量数据库
-
-企业知识的智能存储引擎。将文本转化为向量数据，实现语义级精准搜索，为智能问答和知识检索系统提供基础支撑。
-
-<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
-
-<IndexCard>
-  <LinkGrid links={[
-    { text: "Chroma向量数据库", href: "新手指南/向量数据库#chroma向量数据库" },
-    { text: "本地向量数据库配置", href: "新手指南/向量数据库#本地向量数据库配置" },
-    { text: "远程向量数据库连接", href: "新手指南/向量数据库#远程向量数据库连接" },
-    { text: "向量数据库编程接口", href: "新手指南/向量数据库#向量数据库编程接口" }
-  ]} />
-</IndexCard>
-
-</div>
-
-## AI知识库
-
-将企业文档、手册、FAQ转化为智能知识库。支持文档自动处理、智能分段、语义检索，让AI基于企业知识精准回答问题。
-
-<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
-
-<IndexCard>
-  <LinkGrid columns={2} links={[
-    { text: "创建AI知识库元素", href: "新手指南/AI知识库#创建ai知识库元素" },
-    { text: "AI知识库的管理", href: "新手指南/AI知识库#ai知识库的管理" },
-    { text: "文档管理", href: "新手指南/AI知识库#文档管理" },
-    { text: "AI知识库设置", href: "新手指南/AI知识库#ai知识库设置" },
-    { text: "查询测试", href: "新手指南/AI知识库#查询测试" },
-    { text: "在后端可视化编程中调用AI知识库", href: "新手指南/AI知识库#在后端可视化编程中调用ai知识库" },
-    { text: "在AIAgent中使用AI知识库", href: "新手指南/AI知识库#在aiagent中使用ai知识库" },
-    { text: "AI知识库编程接口", href: "新手指南/AI知识库#ai知识库编程接口" },
-    { text: "原理及参数说明", href: "新手指南/AI知识库#原理及参数说明" },
-    { text: "向量化配置说明", href: "新手指南/AI知识库#向量化配置说明" }
-  ]} />
-</IndexCard>
-
-</div>
-
-## AIAgent
-
-具备推理和行动能力的智能代理。通过提示词和工具配置，让AI自主分析问题、制定方案、执行任务，处理复杂业务场景。
-
-<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
-
-<IndexCard>
-  <LinkGrid columns={2} links={[
-    { text: "创建ReActAgent", href: "新手指南/AIAgent#创建reactagent" },
-    { text: "编写系统提示词", href: "新手指南/AIAgent#编写系统提示词" },
-    { text: "基于模板编写系统提示词", href: "新手指南/AIAgent#基于模板编写系统提示词" },
-    { text: "在提示词中使用变量", href: "新手指南/AIAgent#在提示词中使用变量" },
-    { text: "选择模型并配置参数", href: "新手指南/AIAgent#选择模型并配置参数" },
-    { text: "为Agent编写简介描述", href: "新手指南/AIAgent#为agent编写简介描述" },
-    { text: "配置运行状态存储仓", href: "新手指南/AIAgent#配置运行状态存储仓" },
-    { text: "内存存储", href: "新手指南/AIAgent#内存存储" },
-    { text: "数据库存储", href: "新手指南/AIAgent#数据库存储" },
-    { text: "配置输入变量", href: "新手指南/AIAgent#配置输入变量" },
-    { text: "配置输出结果", href: "新手指南/AIAgent#配置输出结果" },
-    { text: "为Agent添加工具", href: "新手指南/AIAgent#为agent添加工具" },
-    { text: "Agent调用模型函数", href: "新手指南/AIAgent#agent调用模型函数" },
-    { text: "Agent调用服务函数", href: "新手指南/AIAgent#agent调用服务函数" },
-    { text: "Agent调用MCP服务", href: "新手指南/AIAgent#agent调用mcp服务" },
-    { text: "将MCP配置转为环境变量", href: "新手指南/AIAgent#将mcp配置转为环境变量" },
-    { text: "Agent调用外部API", href: "新手指南/AIAgent#agent调用外部api" },
-    { text: "Agent调用页面函数", href: "新手指南/AIAgent#agent调用页面函数" },
-    { text: "启用/关闭工具函数", href: "新手指南/AIAgent#启用关闭工具函数" },
-    { text: "工具函数调用前/后事件触发", href: "新手指南/AIAgent#工具函数调用前后事件触发" },
-    { text: "工具函数执行前的人工确认", href: "新手指南/AIAgent#工具函数执行前的人工确认" },
-    { text: "限制工具函数调用的用户角色", href: "新手指南/AIAgent#限制工具函数调用的用户角色" },
-    { text: "集成知识库实现检索增强生成（RAG）", href: "新手指南/AIAgent#集成知识库实现检索增强生成rag" },
-    { text: "在前端函数中调用Agent", href: "新手指南/AIAgent#在前端函数中调用agent" },
-    { text: "在页面助理中测试Agent", href: "新手指南/AIAgent#在页面助理中测试agent" },
-    { text: "在后端服务函数中调用Agent", href: "新手指南/AIAgent#在后端服务函数中调用agent" },
-    { text: "源码模式修改Agent", href: "新手指南/AIAgent#源码模式修改agent" },
-    { text: "自定义回调处理器", href: "新手指南/AIAgent#自定义回调处理器" },
-    { text: "Agent的流式输出", href: "新手指南/AIAgent#agent的流式输出" }
-  ]} />
-</IndexCard>
-
-</div>
-
-## AI助理
-
-可视化的智能工作流引擎。通过拖拽节点编排业务流程，结合AI决策和人机交互，实现客服、审批、数据处理等场景的智能自动化。
-
-<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
-
-<IndexCard>
-  <LinkGrid columns={2} links={[
-    { text: "什么是AI助理", href: "新手指南/AI助理#什么是ai助理" },
-    { text: "创建AI助理", href: "新手指南/AI助理#创建ai助理" },
-    { text: "可视化编排", href: "新手指南/AI助理#可视化编排" },
-    { text: "开始节点", href: "新手指南/AI助理#开始节点" },
-    { text: "路由决策", href: "新手指南/AI助理#路由决策" },
-    { text: "AIAgent", href: "新手指南/AI助理#aiagent" },
-    { text: "对话区人机交互", href: "新手指南/AI助理#对话区人机交互" },
-    { text: "工作区人机交互", href: "新手指南/AI助理#工作区人机交互" },
-    { text: "函数调用", href: "新手指南/AI助理#函数调用" },
-    { text: "条件分支", href: "新手指南/AI助理#条件分支" },
-    { text: "多任务执行", href: "新手指南/AI助理#多任务执行" },
-    { text: "事件类型概览", href: "新手指南/AI助理#事件类型概览" },
-    { text: "前端工作区事件", href: "新手指南/AI助理#前端工作区事件" },
-    { text: "后端业务事件", href: "新手指南/AI助理#后端业务事件" },
-    { text: "运行状态数据", href: "新手指南/AI助理#运行状态数据" },
-    { text: "运行状态存储库", href: "新手指南/AI助理#运行状态存储库" },
-    { text: "高级设置", href: "新手指南/AI助理#高级设置" },
-    { text: "使用指南", href: "新手指南/AI助理#使用指南" },
-    { text: "欢迎语与开场白", href: "新手指南/AI助理#欢迎语与开场白" },
-    { text: "消息输出", href: "新手指南/AI助理#消息输出" },
-    { text: "发送AI消息", href: "新手指南/AI助理#发送ai消息" },
-    { text: "对话记录管理", href: "新手指南/AI助理#对话记录管理" },
-    { text: "全代码开发", href: "新手指南/AI助理#全代码开发" },
-    { text: "示例演示", href: "新手指南/AI助理#示例演示" },
-    { text: "如何选择合适的节点类型？", href: "新手指南/AI助理#如何选择合适的节点类型" },
-    { text: "流程卡住常见原因和解决方法", href: "新手指南/AI助理#流程卡住常见原因和解决方法" }
-  ]} />
-</IndexCard>
-
-</div>
 
 ## 场景化进阶指南
 

@@ -259,7 +259,7 @@ Web前端框架，提供门户系统、页面管理、UI组件库、表单控件
 - [常规页面](../reference/开发框架/JitWeb/页面/常规页面.md)
 - [数据录入页面](../reference/开发框架/JitWeb/页面/数据录入页面.md)
 - [AI数据管理页面](../reference/开发框架/JitWeb/页面/AI数据管理页面.md)
-- [全代码页面](../reference/开发框架/JitWeb/页面/全代码页面.md)
+- [全代码页面](../reference/开发框架/JitWeb/页面/React全代码页面.md)
 - [Vue全代码页面](../reference/开发框架/JitWeb/页面/Vue全代码页面.md)
 - [Markdown页面](../reference/开发框架/JitWeb/页面/Markdown页面.md)
 

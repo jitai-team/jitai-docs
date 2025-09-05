@@ -1,3 +1,7 @@
+---
+sidebar_position: 7
+---
+
 # Vue全代码页面
 
 Vue全代码页面是基于Vue.js技术栈的全代码页面类型，集成Element Plus UI组件库，支持Vue 3的组合式API和响应式数据系统。它为熟悉Vue的开发者提供完整的Vue开发环境，可以使用Vue生态的第三方插件和工具链，适用于需要Vue技术栈的项目或团队技术选型。

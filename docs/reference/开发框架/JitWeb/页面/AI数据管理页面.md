@@ -1,8 +1,8 @@
-# 数据管理页面
+# AI数据管理页面
 
-数据管理页面是专门用于数据增删改查操作的页面类型，基于组件化可视配置架构实现数据表格管理能力。它负责数据列表展示、数据筛选、数据编辑和数据导入导出，通过拖拽式布局快速构建数据管理界面。
+AI数据管理页面是专门用于数据增删改查操作的页面类型，基于组件化可视配置架构实现数据表格管理能力。它负责数据列表展示、数据筛选、数据编辑和数据导入导出，通过拖拽式布局快速构建数据管理界面。
 
-数据管理页面元素分层结构为Meta（pages.Meta） → Type（pages.DataManagePageType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建数据管理页面实例元素。
+AI数据管理页面元素分层结构为Meta（pages.Meta） → Type（pages.DataManagePageType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建AI数据管理页面实例元素。
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的pages.DataManagePageType元素，以实现自己的封装。
 
@@ -12,7 +12,7 @@
 
 #### 目录结构
 
-```title="数据管理页面实例目录结构"
+```title="AI数据管理页面实例目录结构"
 testDataManagementPage/          # 实例元素目录
 ├── e.json                       # 元素配置文件
 ├── scheme.json                  # 页面布局和组件配置
@@ -28,7 +28,7 @@ testDataManagementPage/          # 实例元素目录
 {
   "type": "pages.DataManagePageType",
   "resourceName": "index",
-  "title": "测试数据管理页面",
+  "title": "测试AI数据管理页面",
   "dataModel": "models.CustomerModel",
   "platform": "PC",
   "frontBundleEntry": "./index.ts",
@@ -38,7 +38,7 @@ testDataManagementPage/          # 实例元素目录
 
 #### 页面布局配置文件
 
-数据管理页面的核心配置通过`scheme.json`文件定义：
+AI数据管理页面的核心配置通过`scheme.json`文件定义：
 
 ```json title="scheme.json基本结构"
 {
@@ -337,7 +337,7 @@ scheme.json文件定义了页面的布局和组件配置：
 
 ## 方法
 
-数据管理页面继承自GridPage，拥有以下核心方法：
+AI数据管理页面继承自GridPage，拥有以下核心方法：
 
 ### init
 
@@ -683,7 +683,7 @@ await this.sendAiMessage("帮我分析这个数据表", 1);
 
 ## 属性
 
-数据管理页面具有以下核心属性：
+AI数据管理页面具有以下核心属性：
 
 ### scheme
 
@@ -780,7 +780,7 @@ AI配置信息。
 
 ## 表格组件核心属性
 
-数据管理页面中的表格组件具有以下重要属性：
+AI数据管理页面中的表格组件具有以下重要属性：
 
 ### activeRow
 
@@ -844,7 +844,7 @@ console.log("主键字段:", this.Table1.primaryKey);
 
 ## 事件系统
 
-数据管理页面支持丰富的事件系统，主要包括：
+AI数据管理页面支持丰富的事件系统，主要包括：
 
 ### 表格工具栏事件
 
@@ -960,7 +960,7 @@ bindEvent() {
 
 ### 数据模型绑定机制
 
-数据管理页面通过`dataModel`字段实现与模型的自动绑定：
+AI数据管理页面通过`dataModel`字段实现与模型的自动绑定：
 
 ```json title="数据模型绑定配置"
 {
@@ -978,7 +978,7 @@ bindEvent() {
 
 ### 页面继承机制
 
-数据管理页面支持继承其他页面的配置和组件：
+AI数据管理页面支持继承其他页面的配置和组件：
 
 ```json title="支持继承的e.json配置"
 {

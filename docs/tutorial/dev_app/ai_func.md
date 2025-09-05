@@ -17,7 +17,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/ai_func_llm.mp4" />
 
-「题库管理」页面是「数据管理页面」类型，我们需要将其转换为「标准页面」类型，灵活性更高。操作如下
+「题库管理」页面是「AI数据管理页面」类型，我们需要将其转换为「常规页面」类型，灵活性更高。操作如下
 
 <VideoPlayer relatePath="/docs/tutorial/ai_func_page_convert.mp4" />
 

@@ -88,7 +88,7 @@ portal.setBackUrl("/dashboard");
 | type | string | 是 | 元素类型，固定为"shells.SSRType" |
 | title | string | 是 | 门户标题 |
 | theme | string | 否 | 主题名称，默认为"default" |
-| default | boolean | 否 | 是否为默认门户 |
+| default | boolean | 否 | 是否为使用者门户 |
 | status | number | 否 | 门户状态，0-禁用，1-启用 |
 | hideInRole | boolean | 否 | 是否在角色中隐藏 |
 | remark | string | 否 | 备注信息 |

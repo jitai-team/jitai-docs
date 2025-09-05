@@ -1,8 +1,12 @@
-# 全代码页面
+---
+sidebar_position: 6
+---
 
-全代码页面是 JitWeb 框架中提供最大开发灵活性的页面类型，基于 React 技术栈实现完全自定义的代码开发。它负责承载复杂业务逻辑、高度定制化界面和特殊技术需求，支持 TypeScript 和 JavaScript 开发，提供完整的页面生命周期管理和事件系统。
+# React全代码页面
 
-全代码页面元素分层结构为 Meta（pages.Meta） → Type（pages.NormalType） → 实例。开发者可通过 JitAi 的可视化开发工具快捷地创建全代码页面实例元素。
+React全代码页面是 JitWeb 框架中提供最大开发灵活性的页面类型，基于 React 技术栈实现完全自定义的代码开发。它负责承载复杂业务逻辑、高度定制化界面和特殊技术需求，支持 TypeScript 和 JavaScript 开发，提供完整的页面生命周期管理和事件系统。
+
+React全代码页面元素分层结构为 Meta（pages.Meta） → Type（pages.NormalType） → 实例。开发者可通过 JitAi 的可视化开发工具快捷地创建React全代码页面实例元素。
 
 当然，开发者也可以创建自己的 Type 元素，或者在自己的 App 中改写 JitAi 官方提供的 pages.NormalType 元素，以实现自己的封装。
 
@@ -22,7 +26,7 @@ testFullCodePage/              # 页面名称（可自定义）
 
 ```json title="元素声明文件"
 {
-  "title": "测试全代码页面",
+  "title": "测试React全代码页面",
   "type": "pages.NormalType",
   "frontBundleEntry": "./index.tsx",
   "outputName": "index",
@@ -46,7 +50,7 @@ const Render = (props) => {
 
     return (
         <div style={{ padding: '20px', textAlign: 'center' }}>
-            <h1>全代码页面示例</h1>
+            <h1>React全代码页面示例</h1>
             <Button type="primary" onClick={handleClick}>
                 获取数据
             </Button>
@@ -114,7 +118,7 @@ const shellConfig = {
 
 ### 模板继承机制
 
-全代码页面支持模板继承，可以继承 Type 元素的 Render 和 PageCls 实现：
+React全代码页面支持模板继承，可以继承 Type 元素的 Render 和 PageCls 实现：
 
 ```typescript title="模板继承规则"
 // 优先级：实例自定义 > Type模板 > Meta基础实现
@@ -699,7 +703,7 @@ useUnmount(() => page?.destroy());
 
 ### 组件集成
 
-全代码页面通过 loadComponents 方法实现与子组件的自动集成。
+React全代码页面通过 loadComponents 方法实现与子组件的自动集成。
 
 #### 配置示例
 

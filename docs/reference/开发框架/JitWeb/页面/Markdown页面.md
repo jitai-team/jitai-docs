@@ -1,3 +1,7 @@
+---
+sidebar_position: 5
+---
+
 # Markdown页面
 
 Markdown页面是专用于Markdown文档展示的页面类型，基于Python markdown库实现文档渲染能力。它负责将Markdown内容转换为HTML展示、提供代码高亮和表格渲染等特性，适用于技术文档、产品说明、帮助手册、知识库等内容展示场景。

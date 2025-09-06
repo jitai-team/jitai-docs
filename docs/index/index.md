@@ -40,7 +40,7 @@ sidebar_position: -1
 - [创建应用](../tutorial/create_app.md) - 学习如何创建应用，了解不同门户的作用
 - [开发应用](../tutorial/create_app.md) - 学习如何开发应用
   - [用简易模式搭建题库管理](../tutorial/dev_app/easy_mode.md) - 适合新手的快速开发方式，3步创建数据管理功能
-  - [用专业模式搭建试卷管理](../tutorial/dev_app/ide_mode.md) - 使用开发区门户进行专业级应用开发
+  - [用专业模式搭建试卷管理](../tutorial/dev_app/ide_mode.md) - 使用开发者门户进行专业级应用开发
   - [用大模型函数实现生成答案](../tutorial/dev_app/ai_func.md) - 一句话调用AI能力
   - [用Agent实现AI/UI协同阅卷](../tutorial/dev_app/ai_ui.md) - 实现AI与UI协同交互
   - [用全代码实现答卷页面](../tutorial/dev_app/code.md) - 使用代码编辑器进行高级开发
@@ -191,7 +191,7 @@ JitAi开发框架是基于JAAP的企业级应用开发框架，提供从基础�
 身份认证与授权管理框架，支持多种认证方式、RBAC权限控制、组织架构管理和第三方身份系统集成
 
 **权限管理**
-- [标准角色](../reference/开发框架/JitAuth/标准角色.md) - 角色权限管理体系
+- [常规角色](../reference/开发框架/JitAuth/常规角色.md) - 角色权限管理体系
 
 **登录认证** - 支持多种主流登录方式：
 
@@ -246,7 +246,7 @@ Web前端框架，提供门户系统、页面管理、UI组件库、表单控件
 
 <div style={{columns: 3, columnGap: '1.5rem'}}>
 
-- [标准门户](../reference/开发框架/JitWeb/门户/标准门户.md)
+- [常规门户](../reference/开发框架/JitWeb/门户/常规门户.md)
 - [SSR门户](../reference/开发框架/JitWeb/门户/SSR门户.md)
 - [空白门户](../reference/开发框架/JitWeb/门户/空白门户.md)
 
@@ -256,10 +256,10 @@ Web前端框架，提供门户系统、页面管理、UI组件库、表单控件
 
 <div style={{columns: 2, columnGap: '2rem'}}>
 
-- [标准页面](../reference/开发框架/JitWeb/页面/标准页面.md)
+- [常规页面](../reference/开发框架/JitWeb/页面/常规页面.md)
 - [数据录入页面](../reference/开发框架/JitWeb/页面/数据录入页面.md)
-- [数据管理页面](../reference/开发框架/JitWeb/页面/数据管理页面.md)
-- [全代码页面](../reference/开发框架/JitWeb/页面/全代码页面.md)
+- [AI数据管理页面](../reference/开发框架/JitWeb/页面/AI数据管理页面.md)
+- [全代码页面](../reference/开发框架/JitWeb/页面/React全代码页面.md)
 - [Vue全代码页面](../reference/开发框架/JitWeb/页面/Vue全代码页面.md)
 - [Markdown页面](../reference/开发框架/JitWeb/页面/Markdown页面.md)
 
@@ -353,11 +353,11 @@ Web前端框架，提供门户系统、页面管理、UI组件库、表单控件
 </div>
 
 #### JitWorkflow - 企业级审批流程引擎
-企业级审批流程引擎，提供完整的工作流设计、执行和管理能力，涵盖标准审批流程、审批服务、流程管理、待办中心等完整工作流生态，支持复杂审批逻辑和代理机制
+企业级审批流程引擎，提供完整的工作流设计、执行和管理能力，涵盖常规审批流程、审批服务、流程管理、待办中心等完整工作流生态，支持复杂审批逻辑和代理机制
 
 <div style={{columns: 2, columnGap: '2rem'}}>
 
-- [标准审批](../reference/开发框架/JitWorkflow/标准审批.md)
+- [常规审批](../reference/开发框架/JitWorkflow/常规审批.md)
 - [审批事件](../reference/开发框架/JitWorkflow/审批事件.md)
 
 </div>

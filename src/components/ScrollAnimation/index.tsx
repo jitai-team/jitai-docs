@@ -65,21 +65,22 @@ const ScrollAnimation: React.FC<ScrollAnimationProps> = ({
   const optimizedDelay = isMobile ? Math.max(0, delay * 0.3) : delay * 0.5; // 减少延迟
   const optimizedDuration = isMobile ? Math.min(duration, 400) : Math.min(duration, 500); // 缩短动画时间
 
-  return (
-    <div
-      ref={ref}
-      className={`${styles.animatedSection} ${styles[animationType]} ${className}`}
-      style={{
-        '--animation-delay': `${optimizedDelay}ms`,
-        '--animation-duration': `${optimizedDuration}ms`,
-        '--animation-duration-mobile': `${Math.min(optimizedDuration, 400)}ms`,
-        '--animation-duration-mobile-small': `${Math.min(optimizedDuration, 300)}ms`
-      } as React.CSSProperties}
-      data-visible={isVisible}
-    >
-      {children}
-    </div>
-  );
+  // return (
+  //   <div
+  //     ref={ref}
+  //     className={`${styles.animatedSection} ${styles[animationType]} ${className}`}
+  //     style={{
+  //       '--animation-delay': `${optimizedDelay}ms`,
+  //       '--animation-duration': `${optimizedDuration}ms`,
+  //       '--animation-duration-mobile': `${Math.min(optimizedDuration, 400)}ms`,
+  //       '--animation-duration-mobile-small': `${Math.min(optimizedDuration, 300)}ms`
+  //     } as React.CSSProperties}
+  //     data-visible={isVisible}
+  //   >
+  //     {children}
+  //   </div>
+  // );
+  return children;
 };
 
 export default ScrollAnimation;

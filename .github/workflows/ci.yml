@@ -1,0 +1,45 @@
+name: CI Check
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  pr-build-check:
+    name: PR Build Check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+      
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+      
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+      
+      - name: TypeScript type check
+        run: pnpm run typecheck
+      
+      - name: Build project
+        env:
+          DOCUSAURUS_SSR_CONCURRENCY: 1
+          CI: true
+        run: pnpm run build
+      
+      - name: Summary
+        if: success()
+        run: echo "✅ All checks passed! This PR is ready to be merged."
+      
+      - name: Summary
+        if: failure()
+        run: echo "❌ Checks failed! Please fix TypeScript errors or build issues and try again."

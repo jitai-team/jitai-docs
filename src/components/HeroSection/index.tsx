@@ -104,12 +104,13 @@ const HeroSection: React.FC = () => {
               <span className={styles.badgeText}>NEXT-GEN</span>
             </div>
             <h1 className={`${styles.heroTitle} ${animateElements ? styles.titleAnimate : ''}`}>
-              <TypewriterText
+              {/* <TypewriterText
                 text={CONTENT.mainTitle}
                 isVisible={showTypewriter}
                 speed={150}
                 repeat={false}
-              />
+              /> */}
+              {CONTENT.mainTitle}
             </h1>
           </div>
 

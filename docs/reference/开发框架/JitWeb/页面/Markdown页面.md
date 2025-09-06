@@ -1,3 +1,7 @@
+---
+sidebar_position: 5
+---
+
 # Markdown页面
 
 Markdown页面是专用于Markdown文档展示的页面类型，基于Python markdown库实现文档渲染能力。它负责将Markdown内容转换为HTML展示、提供代码高亮和表格渲染等特性，适用于技术文档、产品说明、帮助手册、知识库等内容展示场景。
@@ -284,10 +288,10 @@ portal_config = {
 
 ### 与表格组件集成
 
-在数据管理页面中嵌入说明文档：
+在AI数据管理页面中嵌入说明文档：
 
 ```python title="表格页面集成"
-# 在数据管理页面顶部显示操作说明
+# 在AI数据管理页面顶部显示操作说明
 instruction_page = app.getElement("pages.DataInstructions")
 instruction_html = instruction_page.toHtml()
 
@@ -300,14 +304,14 @@ page_header = page.newComponent("components.Container", {
 
 ## 常见问题
 
-**Q: 什么时候使用Markdown页面而不是标准页面？**
-A: 当需要展示静态文档内容时使用Markdown页面，如帮助文档、操作指南等。需要动态交互功能请使用标准页面。
+**Q: 什么时候使用Markdown页面而不是常规页面？**
+A: 当需要展示静态文档内容时使用Markdown页面，如帮助文档、操作指南等。需要动态交互功能请使用常规页面。
 
 **Q: 如何动态更新Markdown页面内容？**
 A: Markdown页面内容来自index.md文件，需要修改文件内容并重新加载页面元素。
 
 **Q: 可以在Markdown页面中嵌入其他组件吗？**
-A: 不可以。Markdown页面只能渲染静态内容，需要动态组件请使用标准页面配合Modal展示。
+A: 不可以。Markdown页面只能渲染静态内容，需要动态组件请使用常规页面配合Modal展示。
 
 **Q: 如何在门户导航中添加Markdown页面？**
 A: 在门户配置的pages数组中添加页面元素的fullName即可。

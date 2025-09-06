@@ -68,7 +68,7 @@
         "可视化构建：直接添加和布局组件，构建页面原型",
         "双模式逻辑配置：基础场景支持可视化配置组件事件交互，复杂需求可切换源码模式全代码开发",
         "全链路控制：从界面设计到业务逻辑的完整开发流程覆盖",
-        "内置页面类型：框架内置数据管理页面和数据录入页面type及对应编辑器"
+        "内置页面类型：框架内置AI数据管理页面和数据录入页面type及对应编辑器"
       ]
     },
     {
@@ -1041,7 +1041,7 @@
         "内置页面生命周期管理、路由导航、数据状态维护等核心机制",
         "支持权限控制、主题定制、多端适配，满足企业级应用需求",
         "从简单数据展示到复杂交互逻辑，全面覆盖企业应用的界面构建需求",
-        "提供六种页面类型：pages.GridPageType(标准页面)、pages.DataManagePageType(数据管理页面)、pages.FormPageType(数据录入页面)、pages.NormalType(全代码页面)、pages.VueType(Vue全代码页面)、pages.MarkdownPageType(Markdown页面)"
+        "提供六种页面类型：pages.GridPageType(标准页面)、pages.DataManagePageType(AI数据管理页面)、pages.FormPageType(数据录入页面)、pages.NormalType(全代码页面)、pages.VueType(Vue全代码页面)、pages.MarkdownPageType(Markdown页面)"
       ]
     },
     {
@@ -1360,7 +1360,7 @@
       ]
     },
     {
-      "name": "pages.DataManagePageType(数据管理页面)",
+      "name": "pages.DataManagePageType(AI数据管理页面)",
       "type": "Memory",
       "observations": [
         "专用于数据展示和管理的页面类型，内置表格组件和数据操作功能",
@@ -3598,7 +3598,7 @@
     },
     {
       "source": "页面",
-      "target": "pages.DataManagePageType(数据管理页面)",
+      "target": "pages.DataManagePageType(AI数据管理页面)",
       "relationType": "包含"
     },
     {

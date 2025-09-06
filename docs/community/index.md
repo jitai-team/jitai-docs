@@ -8,7 +8,7 @@
 
 ---
 
-[![Discourse](https://img.shields.io/badge/Discourse-论坛社区-orange?style=for-the-badge&logo=discourse)](https://jitai.discourse.group/)
+[![Discourse](https://img.shields.io/badge/Discourse-论坛社区-orange?style=for-the-badge&logo=discourse)](https://forum.jit.pro/)
 
 您可以：
 - 📝 发起技术讨论话题

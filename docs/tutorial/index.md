@@ -13,7 +13,7 @@ sidebar_position: -2
 - [创建应用](./create_app.md) - 学习如何创建应用，了解不同门户的作用
 - [开发应用](./create_app.md) - 学习如何开发应用
   - [用简易模式搭建题库管理](./dev_app/easy_mode.md) - 适合新手的快速开发方式，3步创建数据管理功能
-  - [用专业模式搭建试卷管理](./dev_app/ide_mode.md) - 使用开发区门户进行专业级应用开发
+  - [用专业模式搭建试卷管理](./dev_app/ide_mode.md) - 使用开发者门户进行专业级应用开发
   - [用大模型函数实现生成答案](./dev_app/ai_func.md) - 一句话调用AI能力
   - [用Agent实现AI/UI协同阅卷](./dev_app/ai_ui.md) - 实现AI与UI协同交互
   - [用全代码实现答卷页面](./dev_app/code.md) - 使用代码编辑器进行高级开发

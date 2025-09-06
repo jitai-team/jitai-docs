@@ -11,7 +11,7 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
-.hero.fadeIn {
+/* .hero.fadeIn {
   animation: fadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -24,7 +24,7 @@
     opacity: 1;
     transform: translateY(0);
   }
-}
+} */
 
 /* 背景装饰元素 - 简化版本 */
 .backgroundElements {
@@ -159,7 +159,7 @@
 /* 使用全局sectionContent样式，移除本地heroContent样式 */
 
 .heroLeft {
-  animation: slideInLeft 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  /* animation: slideInLeft 1.2s cubic-bezier(0.4, 0, 0.2, 1); */
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -190,7 +190,7 @@
   padding: 0.5rem 1.5rem;
   margin-bottom: 2rem;
   backdrop-filter: blur(10px);
-  animation: badgeSlideIn 1s ease-out 0.3s both;
+  /* animation: badgeSlideIn 1s ease-out 0.3s both; */
 }
 
 @keyframes badgeSlideIn {
@@ -223,15 +223,15 @@
   -webkit-text-fill-color: transparent;
   margin: 0;
   position: relative;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  /* opacity: 0; */
+  /* transform: translateY(30px); */
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.heroTitle.titleAnimate {
+/* .heroTitle.titleAnimate {
   opacity: 1;
   transform: translateY(0);
-}
+} */
 
 /* 打字机效果样式 */
 .typewriterText {
@@ -307,12 +307,12 @@
     0 4px 16px rgba(0, 0, 0, 0.04),
     0 0 0 1px rgba(255, 255, 255, 0.1);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 0;
-  transform: translateY(30px);
+  /* opacity: 0; */
+  /* transform: translateY(30px); */
 }
 
 .subtitleCard:hover {
-  transform: translateY(-8px);
+  /* transform: translateY(-8px); */
   box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.12),
     0 8px 24px rgba(0, 0, 0, 0.06),
@@ -320,13 +320,13 @@
   border-color: rgba(255, 255, 255, 0.5);
 }
 
-.subtitleCard.cardAnimate1 {
+/* .subtitleCard.cardAnimate1 {
   animation: cardSlideIn 1s cubic-bezier(0.4, 0, 0.2, 1) 0.6s both;
 }
 
 .subtitleCard.cardAnimate2 {
   animation: cardSlideIn 1s cubic-bezier(0.4, 0, 0.2, 1) 0.9s both;
-}
+} */
 
 @keyframes cardSlideIn {
   from {
@@ -378,13 +378,13 @@
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
-  opacity: 0;
-  transform: translateY(30px);
+  /* opacity: 0; */
+  /* transform: translateY(30px); */
 }
 
-.heroButtons.buttonsAnimate {
+/* .heroButtons.buttonsAnimate {
   animation: buttonsSlideIn 1s cubic-bezier(0.4, 0, 0.2, 1) 1.2s both;
-}
+} */
 
 @keyframes buttonsSlideIn {
   from {

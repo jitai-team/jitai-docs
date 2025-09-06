@@ -111,11 +111,11 @@ API URL一般不需要修改，每个厂商的默认配置已经填写。
 
 ## 大模型编程接口
 ### runLlm
-AI大模型的核心方法，用于发送请求到大模型服务。[API文档](../../reference/开发框架/JitAi/AI大模型.md#runllm)
+AI大模型的核心方法，用于发送请求到大模型服务。[API文档](../reference/开发框架/JitAi/AI大模型.md#runllm)
 
 ### embedDocuments
-AI大模型的文档向量化方法，用于将文本列表转换为高维向量表示。[API文档](../../reference/开发框架/JitAi/AI大模型.md#embeddocuments)
+AI大模型的文档向量化方法，用于将文本列表转换为高维向量表示。[API文档](../reference/开发框架/JitAi/AI大模型.md#embeddocuments)
 
 ### rerankDocuments
-AI大模型的文档重排方法，用于基于查询文本对候选文档进行重新排序。[API文档](../../reference/开发框架/JitAi/AI大模型.md#rerankdocuments)
+AI大模型的文档重排方法，用于基于查询文本对候选文档进行重新排序。[API文档](../reference/开发框架/JitAi/AI大模型.md#rerankdocuments)
 

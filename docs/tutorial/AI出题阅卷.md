@@ -1,5 +1,5 @@
 ---
-sidebar_position: 400
+sidebar_position: 7
 draft: true
 ---
 # AI智能出题，智能阅卷

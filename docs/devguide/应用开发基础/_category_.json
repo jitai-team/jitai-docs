@@ -1,6 +1,7 @@
 {
   "label": "应用开发基础",
   "position": 1,
+  "collapsed": false,
   "link": {
     "type": "generated-index",
     "description": "掌握JitAi应用开发的基础知识，包括应用创建、开发工具的使用、门户设计、页面开发等核心概念。"

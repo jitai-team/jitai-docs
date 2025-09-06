@@ -100,12 +100,6 @@ const config: Config = {
         srcDark: 'https://jit-www.oss-cn-beijing.aliyuncs.com/logo/logo_title_dark.svg',  // logo 大小待调整
       },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'indexSidebar',
-          position: 'left',
-          label: '导读',
-        },
          {
            type: 'docSidebar',
            sidebarId: 'tutorialSidebar',
@@ -130,12 +124,12 @@ const config: Config = {
            position: 'left',
            label: '参考手册',
          },
-         {
-           type: 'docSidebar',
-           sidebarId: 'appmarketSidebar',
-           position: 'left',
-           label: '应用市场',
-         },
+         //{
+           //type: 'docSidebar',
+         //  sidebarId: 'appmarketSidebar',
+        // position: 'left',
+         //  label: '应用市场',
+         //},
          {
            type: 'docSidebar',
            sidebarId: 'opensourceSidebar',
@@ -166,28 +160,12 @@ const config: Config = {
             {
               label: '官网首页',
               to: '/',
-            },
-            {
-              label: 'What is JitAi',
-              to: '/docs/index/WhatIsJitAi',
-            },
-            {
-              label: 'Why JitAi',
-              to: '/docs/index/WhyJitAi',
-            },
-            {
-              label: 'JitAi 架构与原理',
-              to: '/docs/index/体系结构与原理',
             }
           ],
         },
         {
           title: '帮助文档',
           items: [
-            {
-              label: '文档概览',
-              to: '/docs/index/',
-            },
             {
               label: '入门教程',
               to: '/docs/tutorial/',

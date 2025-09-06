@@ -1,5 +1,5 @@
 ---
-sidebar_position: 11
+sidebar_position: 5
 title: 部署运维
 ---
 # 部署运维

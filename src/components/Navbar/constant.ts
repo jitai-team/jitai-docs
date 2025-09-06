@@ -8,14 +8,14 @@ export const CONTENT = {
       url: '/',
       external: true
     },    
-    {
-      id: 'pricing',
-      label: '价格',
-      type: 'link',
-      isNewTab: false,
-      url: '/pricing',
-      external: true
-    },
+    // {
+    //   id: 'pricing',
+    //   label: '价格',
+    //   type: 'link',
+    //   isNewTab: false,
+    //   url: '/pricing',
+    //   external: true
+    // },
     {
       id: 'download',
       label: '下载',

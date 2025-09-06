@@ -35,7 +35,7 @@ export const TABS: TabConfig[] = [
 export const PRICING_PLANS: PricingPlan[] = [
   {
     id: 'desktop',
-    title: '桌面版',
+    title: '桌面版许可证',
     subtitle: '本地开发必备',
     icon: '🖥️',
     subscriptionPrice: '7,000',
@@ -47,15 +47,13 @@ export const PRICING_PLANS: PricingPlan[] = [
       '✓ 无限应用数',
       '✓ 桌面端开发',
       '✓ 在线开发',
-      '✓ AI开发助手',
-      '✓ 智能体应用开发',
-      '✗ 多进程运行',
-      '✗ 可加入集群环境'
+      '✓ 仅单进程运行',
+      '✓ 仅单机运行'
     ]
   },
   {
     id: 'basic',
-    title: '服务器基础版',
+    title: '服务器基础版许可证',
     subtitle: '中小企业入门选择',
     icon: '🚀',
     subscriptionPrice: '35,000',
@@ -66,15 +64,13 @@ export const PRICING_PLANS: PricingPlan[] = [
         '✓ 2个组织',
         '✓ 1个应用',
         '✓ 在线开发',
-        '✓ AI开发助手',
-        '✓ 智能体应用开发',
-        '✓ 多进程运行',
-        '✗ 可加入集群环境'
+        '✓ 仅单进程运行',
+        '✓ 仅单机运行'
     ]
   },
   {
     id: 'standard',
-    title: '服务器标准版',
+    title: '服务器标准版许可证',
     subtitle: '企业标准配置',
     icon: '⭐',
     subscriptionPrice: '70,000',
@@ -90,7 +86,7 @@ export const PRICING_PLANS: PricingPlan[] = [
   },
   {
     id: 'professional',
-    title: '服务器专业版',
+    title: '服务器专业版许可证',
     subtitle: '大型企业首选',
     icon: '💎',
     subscriptionPrice: '140,000',
@@ -104,7 +100,7 @@ export const PRICING_PLANS: PricingPlan[] = [
   },
   {
     id: 'enterprise',
-    title: '服务器全能版',
+    title: '服务器全能版许可证',
     subtitle: 'SaaS服务商专享',
     icon: '🌟',
     subscriptionPrice: '700,000',
@@ -117,20 +113,3 @@ export const PRICING_PLANS: PricingPlan[] = [
     ]
   }
 ];
-
-// 页面内容配置
-export const PAGE_CONTENT = {
-  title: '价格',
-  subtitle: '为不同规模和需求的团队，JIT 提供灵活的许可证组合方案',
-  specialNote: {
-    icon: '🎁',
-    title: '特别优惠',
-    text: '每个组织可获得 3个时长为3个月的桌面版许可证，让您充分体验JitAi的强大功能！'
-  },
-  contact: {
-    title: '准备开始您的AI应用开发之旅？',
-    subtitle: '联系我们的销售团队，获取最适合您需求的许可证方案',
-    buttonText: '联系我们',
-    email: 'mailto:sales@jit.pro'
-  }
-};

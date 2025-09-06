@@ -14,9 +14,6 @@
 
 /* 响应式设计 */
 @media (max-width: 768px) {
-  .container {
-    padding: 0 1rem;
-  }
 }
 
 /* 动画定义 */
@@ -52,3 +49,4 @@
     transform: scale(1);
   }
 }
+

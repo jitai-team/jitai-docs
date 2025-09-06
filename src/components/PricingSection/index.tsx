@@ -3,10 +3,7 @@ import styles from './styles.module.css';
 import globalStyles from '../../pages/index.module.css';
 import { 
   TABS, 
-  PRICING_PLANS, 
-  COMPARISON_FEATURES, 
-  PAGE_CONTENT, 
-  TABLE_HEADERS 
+  PRICING_PLANS
 } from './constant';
 
 const PricingSection: React.FC = () => {
@@ -31,9 +28,9 @@ const PricingSection: React.FC = () => {
       <div className={`${globalStyles.sectionContent} ${styles.sectionContent}`}>
         {/* 页面标题 */}
         <div className={`${styles.pageHeader} ${animateElements ? styles.headerAnimate : ''}`}>
-          <h1 className={styles.pageTitle}>{PAGE_CONTENT.title}</h1>
+          <h1 className={styles.pageTitle}>价格</h1>
           <p className={styles.pageSubtitle}>
-            {PAGE_CONTENT.subtitle}
+            JitAi可部署在任意个人电脑或服务器上，按需购买对应终端规格的许可证即可。
           </p>
         </div>
 
@@ -71,17 +68,23 @@ const PricingSection: React.FC = () => {
               <div className={styles.cardPrice}>
                 <div className={styles.priceGroup}>
                   <div className={styles.price}>
-                    <span className={styles.currency}>¥</span>
-                    <span className={styles.amount}>
+                    {/* <span className={styles.currency}>¥</span> */}
+                    <span className={styles.amount}>¥
                       {activeTab === 'subscription' ? plan.subscriptionPrice : plan.buyoutPrice}
                     </span>
                     <span className={styles.period}>
-                      {activeTab === 'subscription' ? '元/年' : '元/永久'}
+                      {activeTab === 'subscription' ? '/个/年' : '/个/永久'}
                     </span>
                   </div>
                 </div>
               </div>
+              <div className={styles.cardAction}>
+                <button className={styles.orderButton}>
+                  {activeTab === 'subscription' ? '订阅' : '购买'}
+                </button>
+              </div>
               <div className={styles.cardFeatures}>
+                <div className={styles.packageInfo}>这包括：</div>
                 {plan.features.map((feature, index) => (
                   <div key={index} className={styles.featureItem}>{feature}</div>
                 ))}
@@ -90,64 +93,36 @@ const PricingSection: React.FC = () => {
           ))}
         </div>
 
-        {/* <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-<stripe-pricing-table pricing-table-id="prctbl_1S3SyaD4F6dqpTDMO8GCU9LR"
-publishable-key="pk_test_51S3BpQD4F6dqpTDM1FEq1rwSYa8SubHVPFUN0bShSCtVGauknzz2WmyZwN2YtlWU5Vs5DXA7NrMcIKuG5dhL2tu800KihAsWPf">
-</stripe-pricing-table> */}
-
-        {/* 功能对比表格 */}
-        {/* <div className={`${styles.comparisonSection} ${animateElements ? styles.tableAnimate : ''}`}>
-          <h2 className={styles.comparisonTitle}>{PAGE_CONTENT.comparisonTitle}</h2>
-          <div className={styles.tableContainer}>
-            <table className={styles.table}>
-              <thead>
-                <tr>
-                  {TABLE_HEADERS.map((header, index) => (
-                    <th key={index} className={styles.tableHeader}>{header}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {COMPARISON_FEATURES.map((feature, index) => (
-                  <tr key={index}>
-                    <td className={styles.featureCell}>{feature.name}</td>
-                    <td className={styles.featureCell}>{feature.desktop}</td>
-                    <td className={styles.featureCell}>{feature.basic}</td>
-                    <td className={styles.featureCell}>{feature.standard}</td>
-                    <td className={styles.featureCell}>{feature.professional}</td>
-                    <td className={styles.featureCell}>{feature.enterprise}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div> */}
-
         {/* 特别说明 */}
         <div className={`${styles.specialNote} ${animateElements ? styles.noteAnimate : ''}`}>
-          <div className={styles.noteIcon}>{PAGE_CONTENT.specialNote.icon}</div>
+          <div className={styles.noteIcon}>🎁</div>
           <div className={styles.noteContent}>
-            <h3 className={styles.noteTitle}>{PAGE_CONTENT.specialNote.title}</h3>
+            <h3 className={styles.noteTitle}>特别优惠</h3>
             <p className={styles.noteText}>
-              {PAGE_CONTENT.specialNote.text.split('3个时长为3个月的桌面版许可证').map((part, index) => (
-                index === 0 ? (
-                  <span key={index}>{part}<strong>3个时长为3个月的桌面版许可证</strong></span>
-                ) : (
-                  <span key={index}>{part}</span>
-                )
-              ))}
+              每个开发组织注册即送<strong>3个桌面版许可证</strong>（时长均为3个月），让你充分体验JitAi的强大功能！
             </p>
+            {/* <a className={styles.downloadButton} href="./docs/tutorial/下载安装" target="_blank">
+              <span className={styles.buttonText}>立即下载</span>
+              <span className={styles.buttonIcon}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                  <polyline points="7,10 12,15 17,10"/>
+                  <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+              </span>
+            </a> */}
           </div>
         </div>
 
+
         {/* 联系我们按钮 */}
         <div className={`${styles.contactSection} ${animateElements ? styles.contactAnimate : ''}`}>
-          <h2 className={styles.contactTitle}>{PAGE_CONTENT.contact.title}</h2>
+          <h2 className={styles.contactTitle}>准备开始您的AI应用开发之旅？</h2>
           <p className={styles.contactSubtitle}>
-            {PAGE_CONTENT.contact.subtitle}
+            联系我们的销售团队，获取最适合您需求的许可证方案
           </p>
-          <a href={PAGE_CONTENT.contact.email} className={styles.contactButton}>
-            <span className={styles.buttonText}>{PAGE_CONTENT.contact.buttonText}</span>
+          <a href="mailto:sales@jit.pro" className={styles.contactButton}>
+            <span className={styles.buttonText}>联系我们</span>
             <span className={styles.buttonIcon}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>

@@ -80,6 +80,10 @@
     --ifm-color-danger-lightest: rgb(253, 156, 159);
     --ifm-color-danger-contrast-background: rgb(255, 235, 236);
     --ifm-color-danger-contrast-foreground: rgb(75, 17, 19);
+
+
+    font-family: var(--fontStack-sansSerif, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji");
+
   }
 
 }
@@ -152,7 +156,7 @@ details > summary {
 details.alert.alert--info {
   background-color: transparent;
   box-shadow: none;
-  padding: 0 16px;
+  padding: 0px;
 }
 
 details>div>div {
@@ -226,4 +230,5 @@ details>div>div {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12), 0 1.5px 6px rgba(0, 0, 0, 0.08);
   border-radius: 8px;
   border: 1px solid #e5e7eb;
+  margin-bottom: var(--ifm-leading);
 }

@@ -1,15 +1,14 @@
 ---
-sidebar_position: 6
-draft: true
+sidebar_position: 1
 ---
 
-# 开发第一个AI应用（智能客服）
+# AI智能客服
 
 :::info
 本文适合新手快速上手。通过对本文的学习，你将有以下收获：
 1. 了解极态开发平台的入门使用方式。
 2. 独立开发一个智能客服智能体，并集成到业务系统页面中使用。
-3. 不支持使用SQLite数据库，请将默认数据库调整为MySQL数据库，关于数据库请参考[JitORM](/docs/reference/开发框架/JitORM/)。
+3. 不支持使用SQLite数据库，请将默认数据库调整为MySQL数据库，关于数据库请参考[JitORM](/docs/devguide/数据建模/支持的数据库厂商)。
 :::
 
 ## 效果预览
@@ -20,7 +19,7 @@ draft: true
 
 ## 让我们开始吧！
 ### 准备工作
-1. [下载桌面版安装包](./下载安装.md)（如已安装可跳过）
+1. [下载桌面版安装包](/docs/tutorial/download.md)（如已安装可跳过）
 2. 准备大模型服务 API Key，需开发者自行注册申请（本案例使用[阿里云百炼平台](https://bailian.console.aliyun.com/?tab=model#/api-key)）
 3. 准备一份文档，作为知识库内容来源（支持 Word、PDF、TXT、Markdown 格式）
 

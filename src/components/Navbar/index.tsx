@@ -58,8 +58,12 @@ const Navbar: React.FC = () => {
         window.location.href = item.url;
         setIsMobileMenuOpen(false);
       } else {
-        window.open(item.url, '_blank');
-    }
+        if (item.isNewTab) {
+          window.open(item.url, '_blank');
+        } else {
+          window.location.href = item.url;
+        }
+      }
   };
 
   const toggleMobileMenu = () => {

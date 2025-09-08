@@ -12,7 +12,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 **使用建议**：新手按顺序学习，有经验的开发者可直接查看场景化进阶指南。
 
-首先，你需要完成基本的[下载安装](../tutorial/下载安装)！
+首先，你需要完成基本的[下载安装](../tutorial/download)！
 
 
 ## 应用开发基础

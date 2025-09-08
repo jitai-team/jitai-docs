@@ -1,8 +1,12 @@
 ---
 sidebar_position: 5
-title: 部署运维
+title: 发布应用
 ---
-# 部署运维
+# 发布应用
+
+JitAi 支持多种应用分发方式，包括：桌面版、服务器版、云端版。
+* 线上分发： 最便捷的发布应用、部署应用、更新应用方式，下文将详细讲解。
+* 线下分发： 导出源码，再一个环境中导入源码。
 
 ## 发布应用
 
@@ -18,7 +22,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 ## 在生产环境上部署JIT
 
-参考 [下载安装](./下载安装.md) 在服务器上安装docker版本。
+参考 [下载安装](./download.md) 在服务器上安装docker版本。
 
 ## 部署应用
 
@@ -28,5 +32,6 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 桌面端修改代码后，再次发布。在生产环境的节点控制台，可以看到提示更新。
 
-
 <VideoPlayer relatePath="/docs/tutorial/publish_app_produce.mp4" />
+
+阅读[应用创建与管理](/docs/devguide/应用开发基础/应用创建与管理)了解更多。

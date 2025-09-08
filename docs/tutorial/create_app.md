@@ -11,6 +11,8 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/create_app.mp4" />
 
+阅读[应用创建与管理](/docs/devguide/应用开发基础/应用创建与管理)了解更多。
+
 #### 进入应用
 
 <VideoPlayer relatePath="/docs/tutorial/visit_app.mp4" />
@@ -22,9 +24,4 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 * 管理者门户: 面向应用管理员的管理界面，例如：通讯录管理、应用权限、知识库管理等，但不能开发应用。
 * 开发者门户: 面向开发人员的配置页面。例如：新增菜单、页面等。
 
-{/*
-### 扩展阅读：
-* [怎样修改默认账号的密码-todo](./)
-* [怎样修改登录方式、组织架构类型-todo](./)
-* [怎样拉其他人进入当前组织？-todo](./)
-*/}
+阅读[门户导航设计](/docs/devguide/门户与页面开发/门户导航设计)了解更多。

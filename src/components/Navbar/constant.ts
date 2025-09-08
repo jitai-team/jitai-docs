@@ -21,7 +21,7 @@ export const CONTENT = {
       label: '下载',
       type: 'link',
       isNewTab: true,
-      url: './docs/tutorial/下载安装',
+      url: './docs/tutorial/download',
       external: true
     },
     {
@@ -29,7 +29,7 @@ export const CONTENT = {
       label: '文档',
       type: 'link',
       isNewTab: true,
-      url: './docs/index/',
+      url: './docs/tutorial',
       external: true
     },
     {

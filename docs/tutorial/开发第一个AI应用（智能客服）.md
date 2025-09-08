@@ -20,7 +20,7 @@ draft: true
 
 ## 让我们开始吧！
 ### 准备工作
-1. [下载桌面版安装包](./下载安装.md)（如已安装可跳过）
+1. [下载桌面版安装包](./download.md)（如已安装可跳过）
 2. 准备大模型服务 API Key，需开发者自行注册申请（本案例使用[阿里云百炼平台](https://bailian.console.aliyun.com/?tab=model#/api-key)）
 3. 准备一份文档，作为知识库内容来源（支持 Word、PDF、TXT、Markdown 格式）
 

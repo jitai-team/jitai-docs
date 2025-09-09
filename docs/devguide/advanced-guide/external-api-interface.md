@@ -11,12 +11,10 @@ slug: external-api-interface
 
 ![创建服务函数](./img/jitservice/create-service-element-and-add-function.png)
 
-
 ## 对外授权服务函数
 在JitAi可视化开发工具中新建一个[标准授权](../../reference/framework/JitService/api-authorization)元素实例，配置AccessKey和AccessSecret，并将服务函数的授权状态打开。
 
 ![对外授权服务函数](./img/jitservice/authorize-service-function-externally.png)
-
 
 ## 调用者使用SDK访问服务函数
 - Python：从pypi获取SDK依赖包-[wanyun-JitSdk](https://pypi.org/project/wanyun-JitSdk/)

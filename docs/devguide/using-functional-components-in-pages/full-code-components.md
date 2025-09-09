@@ -13,11 +13,11 @@ import TabItem from '@theme/TabItem';
 与自定义组件类型不同的是，全代码组件的适用范围是当前页面，而自定义组件类型可以在多个页面中重复使用。全代码组件适合一些快速验证，需求灵活多变的场景。
 :::
 
-## 创建全代码组件
+## 创建全代码组件 {#create-full-code-components}
 ![全代码组件创建](./img/15/full-code-component-creation.gif)
 在可视化页面编辑器中选择全代码组件，将全代码组件拖拽到页面画布中，就生成了一个全代码组件。生成的组件文件为 `BlankComponent2.tsx`，界面上展示一个居中的“Click Me!”按钮；点击后会触发 `handleClickMe` 事件，并通过 `message.success` 弹出“so cool !!!”。
 
-## 界面渲染器 Page 与逻辑处理类
+## 界面渲染器Page与逻辑处理类 {#ui-renderer-page-logic-processing-class}
 ![源码](./img/15/source-code.png)
 
 平台已把页面装配过程封装为黑盒：`ElementRender` 会渲染页面上每个组件的渲染器（Render），并将对应的“组件逻辑实例”通过 `props.compIns` 注入。开发者只需掌握 Page、Render、逻辑类三者关系及最小代码即可上手。
@@ -190,7 +190,7 @@ sequenceDiagram
 - 平台创建 `BlankComponent2` 的逻辑实例，把它作为 `props.compIns` 传入其渲染器 `Render`。
 - `Render` 可通过 `compIns` 调用逻辑方法、发布事件；`page.ts` 的 `bindEvent()` 里可订阅这些事件实现联动。
 
-## 通过组件实例调用其他组件
+## 通过组件实例调用其他组件 {#call-other-components-via-instance}
 在全代码组件中，你可以很方便地调用同一页面中其他组件的方法。**核心思路是：页面类作为"中央调度器"，管理着所有组件实例**。
 
 调用原理：
@@ -216,10 +216,10 @@ const page = compIns.page;     // 访问页面“指挥中心”
 page.Table3.call();            // 刷新表格数据
 ```
 
-## 响应其他组件的事件
+## 响应其他组件的事件 {#respond-to-other-component-events}
 当页面上的其他组件发生事件时（比如表格行被点击、按钮被按下），你的自定义组件可以"监听"并响应这些事件。**核心思路是：在页面类的 `bindEvent()` 方法中统一订阅事件**。
 
-### 事件订阅原理
+### 事件订阅原理 {#event-subscription-principles}
 页面类不仅管理组件实例，还负责协调组件间的事件通信，就像一个“消息中转站”：
 
 ```typescript title="page.ts 中的事件订阅"
@@ -243,7 +243,7 @@ class PageCls extends Jit.GridPage {
 }
 ```
 
-### 在自定义组件中响应
+### 在自定义组件中响应 {#respond-in-custom-components}
 要让自定义组件能响应其他组件的事件，需要在组件类中添加对应的方法：
 
 ```typescript title="BlankComponent2.tsx"
@@ -266,14 +266,14 @@ export default class BlankComponent2 extends Jit.BaseComponent {
 }
 ```
 
-### 可订阅的事件
+### 可订阅的事件 {#subscribable-events}
 每个组件可订阅的事件来自 `scheme.json` 中该组件的 `eventList` 配置。例如，表格组件常用事件：
 
 - `clickRow` - 点击行事件，传递当前行数据
 - `selectedChange` - 选中行变化事件，传递选中行列表
 - 自定义组件可通过 `publishEvent()` 发布自己的事件
 
-### 双向通信示例
+### 双向通信示例 {#bidirectional-communication-example}
 ```typescript title="完整的双向通信示例"
 // 在自定义组件中发布事件
 const Render = (props) => {

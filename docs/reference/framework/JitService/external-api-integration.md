@@ -8,7 +8,7 @@ slug: external-api-integration
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的externalAPIs.NormalType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```
@@ -145,7 +145,7 @@ functionList项配置：
 }
 ```
 
-## 方法
+## 方法 
 外部API集成实例提供动态方法调用，根据apiConfig.json中配置的API自动生成对应方法。
 
 ### 动态API方法

@@ -10,7 +10,7 @@ slug: scheduled-tasks
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的tasks.NormalType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```title="推荐目录结构"
@@ -104,7 +104,7 @@ print(f"下次执行时间: {next_time}")
 | repeatType | string | 是 | 重复类型 | "year","month","week","day","hour","minute","normal" |
 | period | number | 是 | 重复周期 | 正整数 |
 
-## 方法
+## 方法 
 ### handle
 执行任务的核心方法，处理具体的业务逻辑。
 

@@ -8,7 +8,7 @@ slug: list
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.ListType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 ```typescript title="基础列表配置"
 {
@@ -105,7 +105,7 @@ const currentFilter = listComponent.filter.value;
 const isLoading = listComponent.loading.value === 1;
 ```
 
-## 方法
+## 方法 
 ### bindApp
 绑定应用实例，通常由框架自动调用。
 

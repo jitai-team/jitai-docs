@@ -10,7 +10,7 @@ Agent事件元素分层结构为Meta（events.Meta） → Type（events.AIAgentT
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的events.AIAgentType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -86,7 +86,7 @@ def customFunc(eventOutData):
     return eventOutData
 ```
 
-## 方法
+## 方法 
 ### handleNode
 事件处理的核心方法，负责解析和处理Agent工具调用事件。
 

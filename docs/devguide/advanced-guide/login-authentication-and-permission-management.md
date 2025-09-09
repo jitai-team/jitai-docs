@@ -26,6 +26,9 @@ slug: login-authentication-and-permission-management
 
 ![创建专用门户](img/jitauth/create-regular-portal.png)
 
+## 授予角色门户权限 {#grant-portal-permissions-to-roles}
+为不同角色分配对应的门户访问权限，实现精细化权限控制。
+
 ## 配置门户菜单与页面
 在门户中添加菜单并选择"新建页面"，系统会自动创建[页面](../../category/页面)，随后在页面中配置组件。
 
@@ -33,7 +36,7 @@ slug: login-authentication-and-permission-management
 
 相关文档：[系统界面设计与组件应用](./system-interface-design-and-component-application)
 
-## 为角色授予门户权限
+## 为角色授予门户权限 
 在角色管理中将相应门户授权给对应角色，使角色获得页面访问入口。
 
 ![配置角色门户权限](img/jitauth/configure-role-portal-permissions.png)

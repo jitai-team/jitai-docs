@@ -8,7 +8,7 @@ slug: built-in-cache
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的caches.BuiltinsType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -54,7 +54,7 @@ keys = cache.keys("user_*")               # 获取匹配的键列表
 | title | string | 是 | 缓存实例显示名称 |
 | type | string | 是 | 固定值"caches.BuiltinsType" |
 
-## 方法
+## 方法 
 ### get
 从缓存中获取字符串值。
 

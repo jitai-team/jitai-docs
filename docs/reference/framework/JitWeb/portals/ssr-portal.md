@@ -8,7 +8,7 @@ SSR门户元素分层结构为Meta（shells.Meta） → Type（shells.SSRType）
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的shells.SSRType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -110,7 +110,7 @@ portal.setBackUrl("/dashboard");
 | config | Object | 否 | 菜单扩展配置 |
 | args | Object | 否 | 平台特定参数配置 |
 
-## 方法
+## 方法 
 ### setExtendsFeature
 设置继承的功能配置。
 

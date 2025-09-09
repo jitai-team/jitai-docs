@@ -8,7 +8,7 @@ TongRDS缓存元素分层结构为Meta（caches.Meta） → Type（caches.TongRD
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的caches.TongRDSType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -26,6 +26,11 @@ caches/
   "type": "caches.TongRDSType"
 }
 ```
+
+## 方法接口 {#methods}
+
+### 标准缓存操作
+提供标准的缓存读写和管理方法。
 
 #### 业务配置文件
 ```json title="TongRdsCache.json"
@@ -79,7 +84,7 @@ cache.disconnect()                       # 断开连接
 | socket_timeout | Numeric | float | 否 | 套接字超时时间（秒），默认0.5 |
 | socket_connect_timeout | Numeric | float | 否 | 连接超时时间（秒），默认0.5 |
 
-## 方法
+## 方法 
 ### get
 从缓存中获取字符串值。
 

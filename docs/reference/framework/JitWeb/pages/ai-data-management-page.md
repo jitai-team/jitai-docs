@@ -10,7 +10,7 @@ AI数据管理页面元素分层结构为Meta（pages.Meta） → Type（pages.D
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的pages.DataManagePageType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```title="AI数据管理页面实例目录结构"
@@ -329,7 +329,7 @@ scheme.json文件定义了页面的布局和组件配置：
 }
 ```
 
-## 方法
+## 方法 
 AI数据管理页面继承自GridPage，拥有以下核心方法：
 
 ### init

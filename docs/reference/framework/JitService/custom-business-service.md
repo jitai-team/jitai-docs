@@ -8,7 +8,7 @@ slug: custom-business-service
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的services.NormalType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```title="服务元素目录结构"
@@ -119,7 +119,7 @@ print(f"最终金额: {result.value}")  # 输出: 最终金额: 850.0
 | title | String | 是 | 事件标题 |
 | desc | String | 否 | 事件描述 |
 
-## 方法
+## 方法 
 ### requestHandle
 处理HTTP请求，根据请求路径调用对应的服务函数。在元素规范中，任何拥有requestHandle函数的元素都可以通过HTTP请求进行调用，而服务元素常被用于HTTP请求，和[API授权](./api-authorization)元素配合提供对外API接口。
 
@@ -132,7 +132,7 @@ print(f"最终金额: {result.value}")  # 输出: 最终金额: 850.0
 - **类型**: Any
 - **说明**: 被调用函数的返回值
 
-调用示例可以参考[JAAP中关于元素调用的规范](../../runtime-platform/JAAP#在业务逻辑中调用元素)。
+调用示例可以参考[JAAP中关于元素调用的规范](../../runtime-platform/JAAP#call-elements-in-business-logic)。
 
 ## 属性
 ### __title__
@@ -182,7 +182,7 @@ def processUser(self, userId, userName):
     print(f"用户名类型: {type(userName)}")  # <class 'datatypes.Stext'>
 ```
 
-### 事件定义与使用
+### 事件定义与使用 {#event-definition-and-usage} 
 服务元素支持定义和触发自定义事件。
 
 ```json title="事件定义示例"

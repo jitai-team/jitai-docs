@@ -8,7 +8,7 @@ slug: aliyun-sms
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的SMS.Aliyun元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ````text title="推荐目录结构"
@@ -64,7 +64,7 @@ result = sms_element.sendMessage(
 | accessSecret | string | 是 | 阿里云AccessSecret |
 | verifySign | string | 是 | 短信签名，需在阿里云控制台申请 |
 
-## 方法
+## 方法 
 ### sendMessage
 发送短信接口，通过传入手机号列表、模板参数和模板代码发送短信消息。
 

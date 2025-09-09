@@ -8,7 +8,7 @@ MinIO存储元素分层结构为Meta（storages.Meta） → Type（storages.Mini
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的storages.MinioType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -74,7 +74,7 @@ storage.delete("test.txt")
 | bucketName | string | 是 | 存储桶名称 |
 | scheme | string | 否 | 协议类型，默认"http"，可选"https" |
 
-## 方法
+## 方法 
 ### uploadByFile
 上传文件到MinIO存储。
 

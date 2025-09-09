@@ -8,7 +8,7 @@ API 授权（API Authorization）是控制接口（API）访问权限的过程�
 
 目前，JitAi 支持使用 API 授权元素将系统中的服务函数对外开放。
 
-## API 授权的创建
+## API授权的创建 {#api-authorization-creation}
 ![API 授权的创建](./img/api_2025-08-26_15-21-40.png)
 
 在左侧元素树上点击`+`会打开弹窗，将鼠标移动到“更多”中，会看到“API 授权”。点击“API 授权”里面的“标准授权”，就会打开标准授权的新建弹窗页面。
@@ -24,7 +24,7 @@ accessKey 是 API 授权的密钥，是由 8-32 位字母或数字组成的字�
 
 :::
 
-## API 访问权限控制
+## API访问权限控制 {#api-access-permission-control}
 开发者可以将某些服务中的一些接口授权给调用方，调用方就可以通过调用 API 获取数据。
 
 ![授权编辑](./img/api_2025-08-26_15-38-56.png)
@@ -43,7 +43,7 @@ accessKey 是 API 授权的密钥，是由 8-32 位字母或数字组成的字�
 
 :::
 
-## API 调用监控
+## API调用监控 {#api-call-monitoring}
 当调用方发起调用时，JitAi 会生成调用记录。
 
 ![调用记录](./img/api_2025-08-26_15-50-10.gif)
@@ -52,7 +52,7 @@ accessKey 是 API 授权的密钥，是由 8-32 位字母或数字组成的字�
 
 在调用记录弹窗中可以查看接口地址、调用时间、调用 IP、调用结果等信息，还可以根据调用结果状态、调用时间进行筛选。
 
-## 使用SDK调用授权的接口
+## 使用SDK调用授权的接口 {#use-sdk-to-call-authorized-interfaces} 
 开发者配置好授权信息和授权接口后，调用方需使用 JitAi 提供的 SDK 进行使用。
 
 JitAi 提供了 Python、Nodejs、Java 三种语言的 SDK。
@@ -61,5 +61,5 @@ JitAi 提供了 Python、Nodejs、Java 三种语言的 SDK。
 
 在授权页面中点击`下载SDK`，可以查看SDK使用指南和下载地址。
 
-## 使用跨App服务元素调用授权接口
-如果调用方也是JitAi应用，则可以直接使用[跨App服务元素](../business-logic-development/encapsulating-business-service-functions#使用跨app服务元素调用授权接口)调用授权方开放的接口。
+## 使用跨App服务元素调用授权接口 {#use-cross-app-service-elements-to-call-authorized-interfaces} 
+如果调用方也是JitAi应用，则可以直接使用[跨App服务元素](../business-logic-development/encapsulating-business-service-functions#use-cross-app-service-elements-to-call-authorized-interfaces)调用授权方开放的接口。

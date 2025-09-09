@@ -8,7 +8,7 @@ slug: gallery
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.GalleryType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 ```json title="画廊基础配置"
 {
@@ -105,7 +105,7 @@ const currentFilter = gallery.filter;
 console.log('当前筛选:', currentFilter.value);
 ```
 
-## 方法
+## 方法 
 ### call
 刷新组件数据，重新加载数据源。
 

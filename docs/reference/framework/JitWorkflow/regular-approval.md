@@ -8,7 +8,7 @@ slug: regular-approval
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的workflows.NormalType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -166,7 +166,7 @@ node_config = approval.getNode("ApproveNode1")
 | modelName | Stext | str | 是 | 数据模型名称 |
 | statusMaps | JitDict | dict | 否 | 状态映射配置 |
 
-## 方法
+## 方法 
 ### doHandle
 执行审批操作，处理各种审批动作。
 

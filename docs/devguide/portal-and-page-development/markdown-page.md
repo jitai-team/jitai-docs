@@ -8,8 +8,8 @@ slug: markdown-page
 
 JitAi 提供了 Markdown 页面开发功能，开发者可以在 JitAi 开发工具中创建 Markdown 页面，并使用 Markdown 语法编写页面内容。
 
-## 创建 Markdown 页面
-![新建markdown-page](./img/markdown_2025-08-28_13-51-10.png)
+## 创建 Markdown 页面 {#create-markdown-page}
+![新建Markdown页面](./img/markdown_2025-08-28_13-51-10.png)
 
 开发者可以在创建页面时选择页面类型为 `markdown-page`，即可打开 Markdown 新建弹窗。
 

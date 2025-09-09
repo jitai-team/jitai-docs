@@ -1,14 +1,14 @@
 ---
 slug: model-events
 ---
-# 模型事件
+# 模型事件 {#model-events}
 模型事件是基于模型数据操作自动触发的事件机制，基于事件订阅发布模式实现数据变更的监听和响应。它负责监听模型的增删改操作、提供丰富的触发时机选择和支持条件筛选与字段级触发控制，支持同步和异步执行模式，适用于数据审计、业务规则执行、消息通知等场景。
 
 模型事件元素分层结构为Meta（events.Meta） → Type（events.ModelType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建模型事件实例元素。
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的events.ModelType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 ```text title="推荐目录结构"
 events/
@@ -78,7 +78,7 @@ from .inner import customFunc
 - `DeleteAfter` - 删除数据后触发
 - `FieldUpdateAfter` - 任意写操作后触发
 
-## 方法
+## 方法 
 ### getSender
 获取事件的真实发送者标识。
 

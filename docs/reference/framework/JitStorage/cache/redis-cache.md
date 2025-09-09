@@ -8,7 +8,7 @@ Redis缓存元素分层结构为Meta（caches.Meta） → Type（caches.RedisTyp
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的caches.RedisType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 ```text title="推荐目录结构"
 caches/
@@ -26,6 +26,11 @@ caches/
   "type": "caches.RedisType"
 }
 ```
+
+## 方法接口 {#methods}
+
+### 标准缓存操作
+提供标准的缓存读写和管理方法。
 
 #### 业务配置文件
 ```json title="Redis连接配置 (MyRedis.json)"
@@ -80,7 +85,7 @@ if cache.exists("user:1001"):         # 检查键是否存在
 | socket_timeout | float | float | 否 | 套接字超时时间，默认0.5秒 |
 | socket_connect_timeout | float | float | 否 | 连接超时时间，默认0.5秒 |
 
-## 方法
+## 方法 
 ### get
 获取缓存中的字符串值。
 

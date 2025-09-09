@@ -8,7 +8,7 @@ slug: language-pack
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的languages.NormalType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 ```text title="推荐目录结构"
 languages/
@@ -78,7 +78,7 @@ const currentLang = app.i18n.currentLanguage;
 | value | string | 匹配值 | - | 是 |
 | mode | 'exact' &#124; 'contains' &#124; 'startsWith' &#124; 'endsWith' &#124; 'regex' | 匹配模式 | 'exact' | 否 |
 
-## 方法
+## 方法 
 ### getInstance
 获取I18N单例实例，通常用于直接访问I18N功能。
 

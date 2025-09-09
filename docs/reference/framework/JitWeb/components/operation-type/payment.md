@@ -8,7 +8,7 @@ slug: payment
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.PaymentType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 ```typescript title="支付组件基础配置"
 {
@@ -79,7 +79,7 @@ console.log('交易流水号:', tradeNumber);
 所属页面实例，提供页面上下文。
 - **类型**：BasePage
 
-## 方法
+## 方法 
 ### call
 发起支付操作，创建订单并启动支付流程。
 

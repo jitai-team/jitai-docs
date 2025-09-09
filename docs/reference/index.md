@@ -239,12 +239,12 @@ sidebar_position: -1
 
 </div>
 
-### [dev-tools](./dev-tools/) - 可视化开发环境
+### [dev-tools](./dev-tools/programming-orchestration-dual-mode) - 可视化开发环境
 **适合人群**：应用开发者、IDE扩展开发者  
 **内容特点**：编程与编排双模式、可视化与代码开发切换
 
 #### 核心内容
-- [工具概述](./dev-tools/) - IDEApp开发环境介绍
+- [工具概述](./dev-tools/programming-orchestration-dual-mode) - IDEApp开发环境介绍
 - 编程与编排双模式设计理念
 - 可视化开发与全代码开发统一
 - Type Editor规范与扩展API

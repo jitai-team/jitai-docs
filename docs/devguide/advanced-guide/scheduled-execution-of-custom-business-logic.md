@@ -21,5 +21,3 @@ slug: scheduled-execution-of-custom-business-logic
 
 ![编写普通定时任务函数逻辑](./img/jittask/write-regular-scheduled-task-function-logic.png)
 
-
-

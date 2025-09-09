@@ -8,7 +8,7 @@ slug: import
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.ImportType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 ```json title="导入组件基础配置"
 {
@@ -61,7 +61,7 @@ slug: import
 ## 变量
 暂无
 
-## 方法
+## 方法 
 ### componentImport
 执行数据导入操作，处理Excel文件解析和数据入库。
 

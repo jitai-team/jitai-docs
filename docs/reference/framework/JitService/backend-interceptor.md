@@ -6,7 +6,7 @@ slug: backend-interceptor
 
 拦截器元素分层结构为 Meta（interceptors.Meta） → Type（interceptors.Http） → 实例，仅支持全代码方式创建。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐后端拦截器元素目录结构"
@@ -53,7 +53,7 @@ class MyInterceptor(RequestInterceptor):
         return exc
 ```
 
-## 方法
+## 方法 
 ### before
 请求处理前执行的方法，用于参数校验、权限检查等预处理逻辑。
 
@@ -100,5 +100,4 @@ API 请求日志记录（`interceptors.Logger` sort=9980）
 请求验签（`interceptors.Sign` sort=100）：当e.json的functionList中为某个函数配置了ignoreSign=true时，会忽略对该函数的验签。
 
 XML 请求体转 Dict（`interceptors.XmlParse` sort=999）
-
 

@@ -8,7 +8,7 @@ slug: form
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.FormType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 在页面的 `scheme.json` 中添加表单组件配置：
 
@@ -195,7 +195,7 @@ slug: form
 - **`{fieldName}selectedRows`**: 子表选中的多行数据，类型为 `RowList`
 - **`{fieldName}operatedRow`**: 子表操作的单行数据，类型为 `RowData`
 
-## 方法
+## 方法 
 ### call
 刷新表单数据并触发相关事件。
 
@@ -596,7 +596,7 @@ form.subscribeEvent('custName-createRelateData', () => {
 }
 ```
 
-#### 编辑规则
+#### 编辑规则 
 控制字段是否可编辑：
 
 ```json title="编辑规则配置示例"

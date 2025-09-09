@@ -1,7 +1,7 @@
 ---
 slug: wechat-work-qr-login
 ---
-# 企业微信自建扫码登录
+# 企业微信自建扫码登录 {#wechat-work-custom-qr-login}
 企业微信自建扫码登录是基于企业微信自建应用的登录认证元素，支持PC端二维码扫码登录和企业微信工作台内免密登录。它负责处理企业微信OAuth授权流程、用户身份验证和账号绑定，同时支持与企业微信组织架构的无缝集成和用户信息同步。
 
 企业微信自建扫码登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.QywxInnerType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建企业微信自建扫码登录实例元素。
@@ -12,7 +12,7 @@ slug: wechat-work-qr-login
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的auths.loginTypes.QywxInnerType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -71,7 +71,7 @@ user_info = qywx_auth.getLoginCode(authCode=auth_code)
 | agentId | string | 是 | 企业微信应用AgentID |
 | redirectUri | string | 是 | OAuth2重定向URI，用于接收授权码 |
 
-## 方法
+## 方法 
 ### getLoginConfig
 获取企业微信登录配置信息，用于前端展示登录二维码。
 

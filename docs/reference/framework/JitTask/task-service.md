@@ -8,7 +8,7 @@ slug: task-service
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的services.NormalType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 任务服务作为JitTask框架的内置实例元素，可直接通过`app.getElement()`获取使用：
 
 ```python title="基础使用示例"
@@ -28,7 +28,7 @@ result = taskSvc.createTimerTask(
 )
 ```
 
-## 方法
+## 方法 
 ### getTaskTmplList
 获取系统中所有可用的任务模板列表，支持按名称筛选。
 

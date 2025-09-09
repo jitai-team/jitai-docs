@@ -8,7 +8,7 @@ slug: parse-excel
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.ParseDataType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 ```json title="基础配置"
 {
@@ -72,7 +72,7 @@ slug: parse-excel
 - **只读**: 是
 - **说明**: 存储Excel解析后的数据，可用于后续的数据处理和导入操作
 
-## 方法
+## 方法 
 ### publishEvent
 发布组件事件。
 

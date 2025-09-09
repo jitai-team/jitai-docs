@@ -10,22 +10,22 @@ slug: portal-navigation-design
 
 用户登录系统后即可在门户选择页面看到自己可以访问的门户列表，选择一个门户后即可进入该门户并访问门户中的功能。
 
-## 应用内置3个门户
+## 应用内置3个门户 {#application-built-in-three-portals}
 JitAi会为每个新创建的应用创建三个内置的门户：开发者门户、管理者门户、使用者门户。
 
 ![IDE门户列表](./img/portal/ide-portal-list.png)
 
 以开发者门户为例，用户在任意门户中的左上角都可以进行门户切换操作。
 
-### 开发者门户
+### 开发者门户 {#developer-portal} 
 开发者门户是给应用开发者使用的，开发者进入开发者门户后即可使用[JitAi开发工具](../jitai-visual-development-tools)进行应用开发工作，例如给不同应用角色配置可访问的门户列表、搭建系统功能、配置应用信息等。
 
 除了开发者门户之外，其它所有门户的导航菜单都是由应用开发者在开发者门户中进行配置的。
 
-### 管理者门户
+### 管理者门户 {#admin-portal} 
 拥有应用管理员角色的用户可以进入管理者门户对应用进行管理，比如管理组织架构、组织架构角色及其成员。开发者也可以对管理者门户进行修改。
 
-每个应用在创建时会自动创建一个管理员账号，初始用户名：`admin123`，初始密码：`admin123`，建议开发者登录后在个人[基本信息](../jitai-visual-development-tools#个人中心)中修改。
+每个应用在创建时会自动创建一个管理员账号，初始用户名：`admin123`，初始密码：`admin123`，建议开发者登录后在个人[基本信息](../jitai-visual-development-tools#personal-center)中修改。
 
 :::tip 组织架构角色与应用角色
 组织架构角色与用户在企业组织架构中的岗位相对应，而JitAi应用中的的`应用角色`则代表用户在应用系统中的权限。组织架构角色与应用角色类似但并无严格对照关系，一个普通员工也可以被赋予应用管理员的角色，管理一个应用系统。
@@ -36,7 +36,7 @@ JitAi会为每个新创建的应用创建三个内置的门户：开发者门户
 
 使用者门户是给普通用户使用的，他们既非管理者也非开发者，只是使用开发好的应用功能在自己权限范围内开展日常工作。
 
-## 3种门户类型
+## 3种门户类型 {#three-portal-types}
 ![新建门户](./img/portal/create-portal.png)
 
 新建门户时，开发者需要选择门户类型。JitAi提供了三种门户类型：常规门户、SSR门户、空白门户。
@@ -47,10 +47,13 @@ JitAi会为每个新创建的应用创建三个内置的门户：开发者门户
 ### 空白门户
 空白门户是最小化的门户实现，提供基础的页面容器和路由框架，不包含内置的导航体系，完全由开发者自定义界面结构，适用于高度定制化的应用界面和特殊展示需求。
 
+## 在门户中集成AI助理 {#integrate-ai-assistant-in-portals}
+门户可以集成AI助理功能，为用户提供智能化的操作引导和问答支持。
+
 ### SSR门户
 SSR(Server-Side Rendering，服务端渲染)门户用于提升首屏加载性能和SEO优化，目前支持Markdown文件渲染。
 
-## 创建门户并配置菜单
+## 创建门户并配置菜单 {#create-portal-and-configure-menu}
 ![新建常规门户弹窗表单](./img/portal/create-regular-portal-popup-form.gif)
 
 开发者在元素树中找到`门户`，点击右侧`+`按钮，选择`常规门户`打开`新建常规门户`弹窗表单。开发者输入门户名称后点击`确定`，即可新建一个常规门户，并进入可视化门户编辑器。
@@ -119,7 +122,7 @@ SSR(Server-Side Rendering，服务端渲染)门户用于提升首屏加载性能
 开发者可以展开菜单项右侧的`更多`按钮，点击`页面变量赋值`按钮，在弹窗中为页面变量赋值。
 
 :::warning
-开发者需要在页面中声明[页面变量](./component-based-page-development#页面变量)，页面没有声明变量时则无法在门户中设置页面变量赋值。
+开发者需要在页面中声明[页面变量](./component-based-page-development#page-variables)，页面没有声明变量时则无法在门户中设置页面变量赋值。
 :::
 
 ### 重写菜单页面
@@ -129,7 +132,7 @@ SSR(Server-Side Rendering，服务端渲染)门户用于提升首屏加载性能
 
 点击菜单项右侧的`重写`按钮，打开`重写菜单`的弹窗，开发者可以给页面重命名、可以选择新建页面或直接绑定已有页面。
 
-## 门户布局设计
+## 门户布局设计 {#portal-layout-design}
 ### 设置左侧/顶部导航
 ![门户布局设计](./img/portal/portal-layout-design.gif)
 
@@ -160,7 +163,7 @@ SSR(Server-Side Rendering，服务端渲染)门户用于提升首屏加载性能
 ### 设置在门户列表中的顺序
 当应用包含多个门户时，开发者可以在`布局设计`中设置顺序值，从而调整每个门户在门户切换菜单中的显示顺序。
 
-## 启用或关闭常用功能入口
+## 启用或关闭常用功能入口 {#enable-disable-common-function-entries}
 每个新建的门户默认都会有一些常用功能入口：发起申请、待办中心、消息中心、个人中心、新建功能（支持简易模式下新建功能模块，开发能力弱于[可视化开发工具](../jitai-visual-development-tools)）。以上入口支持在`布局设计`中启用或禁用。
 
 ![门户常用功能入口](./img/portal/portal-common-function-entry.png)
@@ -181,7 +184,7 @@ SSR(Server-Side Rendering，服务端渲染)门户用于提升首屏加载性能
 
 ![个人中心功能](./img/portal/personal-center-functions.gif)
 
-## 在门户中集成ai-assistant
+## 在门户中集成ai-assistant {#integrate-ai-assistant-in-portal}
 JitAi支持在门户中直接集成[ai-assistant](../ai-assistant)，用户在访问门户时可以与ai-assistant进行交互。
 
 ![门户集成ai-assistant](./img/portal/portal-integrate-ai-assistant.gif)

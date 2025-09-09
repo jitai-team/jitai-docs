@@ -8,7 +8,7 @@ slug: statistical-chart
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.ChartType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 ```json title="折线图配置示例"
 {
@@ -116,7 +116,7 @@ slug: statistical-chart
 - **只读**: 是
 - **泛型**: 关联的模型类型
 
-## 方法
+## 方法 
 ### call
 刷新图表数据，根据筛选条件重新获取和渲染数据。
 

@@ -12,7 +12,7 @@ slug: global-styles
 开发者可参考 [Ant Design 定制主题文档](https://ant-design.antgroup.com/docs/react/customize-theme-cn#seedtoken) 了解更多 Design Token 的概念和用法。
 :::
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 ```json title="themes/myGlobalTheme.json"
 {
@@ -44,7 +44,7 @@ slug: global-styles
 | 边框颜色 | 定义边框颜色规范 | `colorBorder`、`colorBorderSecondary` |
 | 阴影效果 | 控制组件阴影样式 | `boxShadow`、`boxShadowSecondary` |
 
-## 方法
+## 方法 
 ### loader
 全局样式加载器，负责加载和合并主题配置。
 

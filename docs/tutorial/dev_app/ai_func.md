@@ -4,12 +4,10 @@ title: 用AI大模型函数实现生成答案
 ---
 # 用AI大模型函数实现生成答案
 
-
 ## 案例效果
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="../../../tutorial/ai_func_effect.mp4" />
-
 
 ## 实现过程
 

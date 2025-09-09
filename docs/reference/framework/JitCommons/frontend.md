@@ -435,4 +435,3 @@ worker.terminate();
 | worker.onerror | = (event: ErrorEvent) =&gt; void | - | 监听Worker错误的事件处理器 |
 | worker.terminate() | () | void | 终止Worker执行 |
 
-

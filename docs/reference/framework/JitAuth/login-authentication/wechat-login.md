@@ -10,7 +10,7 @@ slug: wechat-login
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的auths.loginTypes.WeChatType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -73,7 +73,7 @@ wechat_auth.bind("用户ID", "微信返回的code")
 | authConfig.appId | Stext | str | 是 | 微信开放平台应用ID |
 | authConfig.appSecret | Stext | str | 是 | 微信开放平台应用密钥 |
 
-## 方法
+## 方法 
 ### getLoginConfig
 获取登录配置信息，用于前端展示登录选项。
 

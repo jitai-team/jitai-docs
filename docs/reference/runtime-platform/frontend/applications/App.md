@@ -49,7 +49,7 @@ const element = app.getElement("models.UserModel");
 | theme | string | 应用主题（可选） |
 | icon | string | 应用图标（可选） |
 
-## 方法
+## 方法 
 ### getElement
 获取指定的元素实例，这是日常开发中最常用的方法。
 

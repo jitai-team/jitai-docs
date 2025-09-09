@@ -196,7 +196,7 @@ sequenceDiagram
     M-->>-P: 完成加载链
 ```
 
-### 元素目录规范
+### 元素目录规范 {#element-directory-specification} 
 每个元素遵循统一的目录结构和文件命名规范：
 
 ```plaintext title="标准元素目录结构"
@@ -418,7 +418,7 @@ config.json 是实例元素的运行时配置文件，配置的格式内容完�
 :::
 
 ### 元素的调用
-#### 在业务逻辑中调用元素
+#### 在业务逻辑中调用元素 {#call-elements-in-business-logic}
 通过标准化 API 调用元素实例：
 
 ```python title="元素调用示例"

@@ -1,15 +1,15 @@
 ---
 slug: custom-events
 ---
-# 自定义事件
+# 自定义事件 {#custom-events}
 自定义事件由开发者在服务元素中根据需要自由定义，并在业务逻辑代码中进行触发，为事件驱动型的系统开发提供足够的灵活度。
 
 自定义事件元素分层结构为Meta（events.Meta） → Type（events.NormalType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建自定义事件实例元素。
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的events.NormalType元素，以实现自己的封装。
 
-## 快速开始
-开发者需要先[在服务元素中定义事件](./custom-business-service#事件定义与使用)，然后才能创建`自定义事件`实例元素订阅服务中定义的事件，并编写事件业务逻辑代码。
+## 快速开始 
+开发者需要先[在服务元素中定义事件](./custom-business-service#event-definition-and-usage)，然后才能创建`自定义事件`实例元素订阅服务中定义的事件，并编写事件业务逻辑代码。
 
 ### 创建实例元素
 #### 目录结构
@@ -85,7 +85,7 @@ app.event.publish(sender="services.MyService.CustomEvent",args=("paramValue"))
 - **inner.py**: 包含`customFunc`函数的业务逻辑文件
 - **__init__.py**: 包初始化文件，导入业务逻辑
 
-## 方法
+## 方法 
 ### call
 执行事件处理函数，记录执行时间。
 

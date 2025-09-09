@@ -13,7 +13,7 @@ AI知识库元素分层结构为Meta（rags.Meta） → Type（rags.NormalType�
 **支持的Type类型：**
 - **rags.NormalType**：标准知识库类型，提供完整的文档管理和智能检索功能
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```
@@ -87,8 +87,8 @@ knowledge_base.addDocumentByBusinessId(
 | rerankType | Stext | str | 否 | "model" | 重排序类型：model/basic |
 | vectorstoreType | Stext | str | 否 | "chroma" | 向量存储类型 |
 
-## 方法
-### query
+## 方法 
+### query {#query}
 智能查询知识库内容，基于语义相似度检索相关文档片段。
 
 #### 参数详解

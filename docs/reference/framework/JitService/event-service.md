@@ -8,7 +8,7 @@ slug: event-service
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的events.services.EventSvc元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基本使用
 ```python title="获取并使用事件服务"
 # 获取事件服务实例
@@ -31,7 +31,7 @@ eventSvc.sendEvent(
 )
 ```
 
-## 方法
+## 方法 
 ### getEventLog
 获取指定事件的执行日志记录，支持时间范围和状态筛选。
 

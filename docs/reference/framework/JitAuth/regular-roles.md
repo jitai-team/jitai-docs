@@ -8,7 +8,7 @@ slug: regular-roles
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的roles.NormalType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -113,7 +113,7 @@ print(role_data['apiPerm'])     # API权限配置
 print(role_data['shellPerm'])   # 门户权限配置
 ```
 
-## 方法
+## 方法 
 ### getRoleData
 获取角色的完整配置数据，支持应用继承的数据合并。
 

@@ -8,7 +8,7 @@ slug: collapse-panel
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.CollapseType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 ```tsx title="推荐目录结构"
 testApp/
@@ -91,7 +91,7 @@ const currentActiveKey = collapseComponent.activeKey.value;
 console.log("当前激活面板:", currentActiveKey);
 ```
 
-## 方法
+## 方法 
 ### call
 #### 参数详解
 | 参数名 | 类型 | 说明 | 默认值 | 必填 |

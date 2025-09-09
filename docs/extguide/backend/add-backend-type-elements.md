@@ -161,7 +161,6 @@ import dingtalk_stream
 from dingtalk_stream import AckMessage
 from jit.commons.utils.logger import log as logger
 
-
 class TextHandler(dingtalk_stream.ChatbotHandler):
     def __init__(self, element, config):
         super(dingtalk_stream.ChatbotHandler, self).__init__()
@@ -366,7 +365,6 @@ from typing import Optional
 
 import dingtalk_stream
 from jit.commons.utils.logger import log as logger
-
 
 class ClientManager:
     def __init__(self, client_id: str, client_secret: str):

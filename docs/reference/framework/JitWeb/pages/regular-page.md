@@ -10,7 +10,7 @@ slug: regular-page
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的pages.GridPageType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -136,7 +136,7 @@ page.refresh();
 | functionList | Array | 否 | 页面方法配置数组 |
 | aiConfig | Object | 否 | AI配置对象 |
 
-## 方法
+## 方法 
 ### init
 初始化页面，加载配置、组件和变量，必须在页面使用前调用。
 

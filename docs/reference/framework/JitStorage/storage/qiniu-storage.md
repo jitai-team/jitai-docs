@@ -8,7 +8,7 @@ slug: qiniu-storage
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的storages.QiniuType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -79,7 +79,7 @@ storage.delete("images/example.jpg")
 | endPoint | 字符串 | 否 | upload-z2.qiniup.com | 七牛云上传域名 |
 | scheme | 字符串 | 否 | http | 请求协议，可选http或https |
 
-## 方法
+## 方法 
 ### uploadByFile
 上传文件到七牛云存储。
 

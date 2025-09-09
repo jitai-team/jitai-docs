@@ -3,16 +3,16 @@ sidebar_position: 4.1
 slug: ai-llm
 ---
 
-# ai-llm
+# AI大模型
 随着AI技术快速发展，现代应用系统正在经历智能化革命。然而，面对众多的AI服务提供商和不断更新的模型版本，开发者往往面临选择困难和集成复杂性的挑战。
 
-大模型厂商元素正是JitAi平台为解决这一问题而设计的统一AI接入方案。无论您要构建智能[ai-knowledge-base](./ai-knowledge-base)、开发ai-assistant、还是创建自主决策的Agent，它都能提供稳定可靠的大模型服务支撑。
+大模型厂商元素正是JitAi平台为解决这一问题而设计的统一AI接入方案。无论您要构建智能[ai-knowledge-base](./ai-knowledge-base)、开发AI助理、还是创建自主决策的Agent，它都能提供稳定可靠的大模型服务支撑。
 
 ![效果图](./img/1/effect-diagram.gif)
 
 以上图为例，使用大模型提取快递信息中的姓名、手机号，地址。
 
-## 主流大模型厂商支持列表
+## 主流大模型厂商支持列表 {#mainstream-llm-vendor-support-list}
 *   Anthropic
 *   阿里云百炼
 *   Deepseek
@@ -21,7 +21,8 @@ slug: ai-llm
 *   硅基流动
 *   OpenAI兼容
 
-## 大模型厂商元素的创建
+## 创建大模型厂商元素 {#creating-llm-vendor-elements}
+## 大模型厂商元素的创建 {#create-llm-vendor-element}
 ![大模型厂商创建](./img/1/large-model-creation.png)
 
 在元素目录树上点击搜索框右边的`+`按钮，在弹出的菜单中选择`ai-llm`，根据实际情况再选择对应的大模型厂商，选择完成后会弹出如下弹窗。
@@ -45,7 +46,7 @@ API URL一般不需要修改，每个厂商的默认配置已经填写。
 
 在界面上点击`开启备用密钥`-`+备用密钥`就可以添加一个密钥输入框，将你的备用没要密钥填入，然后点击`保存`即可。
 
-## 私有化大模型集成
+## 私有化大模型集成 {#private-llm-integration}
 为了信息安全，开发者可能会部署私有化模型，平台同样支持私有化模型集成。
 
 ![私有化模型](./img/1/private-model.png)
@@ -58,7 +59,7 @@ API URL一般不需要修改，每个厂商的默认配置已经填写。
 
 ![豆包兼容](./img/1/doubao-compatibility.png)
 
-## 在页面中调用大模型
+## 在页面中调用大模型 {#call-llm-in-pages}
 在页面函数及事件函数逻辑里，开发者可以使用大模型厂商元素的运行函数来调用大模型，获取大模型返回值。
 
 ![页面调用大模型](./img/1/page-call-large-model.gif)
@@ -92,7 +93,6 @@ API URL一般不需要修改，每个厂商的默认配置已经填写。
 
 ![系统控制输出的提示词](./img/1/system-control-output-prompts.png)
 
-
 :::tip
 若不配置控制输出配置项，默认输出的是文本。
 :::
@@ -104,12 +104,11 @@ API URL一般不需要修改，每个厂商的默认配置已经填写。
 若大模型返回的数据结构正确，仍然拿不到结构化数据的值，检查图中铅笔所示的位置，查看配置是否与大模型提示词`输出格式`的配置保持一致。
 :::
 
-## 在后端函数中调用大模型
+## 在后端函数中调用大模型 {#call-llm-in-backend-functions}
 大模型运行函数不仅可以在前端页面中使用，也可以在后端函数(服务函数/模型函数/事件函数/任务函数)中使用。
 
-配置参考[在页面中调用大模型](#在页面中调用大模型)
-
-## 大模型编程接口
+配置参考[在页面中调用大模型](#call-llm-in-pages)
+## 大模型编程接口 {#llm-programming-interface}
 ### runLlm
 ai-llm的核心方法，用于发送请求到大模型服务。[API文档](../reference/framework/JitAi/ai-large-models#runllm)
 

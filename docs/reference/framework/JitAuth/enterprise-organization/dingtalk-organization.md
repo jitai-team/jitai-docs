@@ -1,14 +1,14 @@
 ---
 slug: dingtalk-organization
 ---
-# 钉钉自建组织
+# 钉钉自建组织 {#dingtalk-custom-organization}
 钉钉自建组织是JitAuth框架中用于集成钉钉企业内部应用组织架构的专用组织类型，基于钉钉开放平台API实现企业组织架构自动同步和统一管理。它负责钉钉通讯录同步、部门结构获取和用户身份验证，支持与钉钉工作台的无缝集成，提供企业级权限管理和用户关系维护能力。
 
 钉钉自建组织元素分层结构为Meta（corps.Meta） → Type（corps.DDInnerType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建钉钉自建组织实例元素。
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的corps.DDInnerType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -72,7 +72,7 @@ print(f"根部门: {root_dept.name}")
 | authConfig.appKey | str | 是 | 钉钉应用的AppKey |
 | authConfig.appSecret | str | 是 | 钉钉应用的AppSecret |
 
-## 方法
+## 方法 
 ### bulkRegister
 批量注册和更新组织成员的用户绑定关系。
 

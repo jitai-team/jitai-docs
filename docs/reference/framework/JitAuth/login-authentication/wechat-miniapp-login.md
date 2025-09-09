@@ -8,7 +8,7 @@ slug: wechat-miniapp-login
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的auths.loginTypes.WeChatMiniType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -63,7 +63,7 @@ result = wechat_auth.getLoginCode("wx_code_from_miniprogram")
 | authConfig.appId | Stext | str | 是 | 微信小程序AppID |
 | authConfig.appSecret | Stext | str | 是 | 微信小程序AppSecret |
 
-## 方法
+## 方法 
 ### getLoginCode
 处理微信小程序授权登录，根据用户注册状态返回不同结果。
 

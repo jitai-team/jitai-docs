@@ -8,7 +8,7 @@ slug: row-to-column
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.TransposeType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 ```text title="推荐目录结构"
 pages/
@@ -65,7 +65,7 @@ pages/
 ### filter
 筛选条件变量，类型为QFilter。用于设置数据查询的筛选条件。
 
-## 方法
+## 方法 
 ### call
 刷新组件数据，根据筛选条件重新加载数据。
 

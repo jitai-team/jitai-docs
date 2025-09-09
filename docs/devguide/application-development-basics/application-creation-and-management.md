@@ -6,23 +6,20 @@ slug: application-creation-and-management
 # 应用创建与管理
 ![节点控制台](./img/node-console.png)
 
+[节点控制台](./runtime-environment-management#node-local-default-runtime-environment)为开发者提供了应用创建、导入、导出、发布、部署等功能入口，覆盖了从立项到运维的全生命周期。
 
-[节点控制台](./runtime-environment-management#节点的本地默认运行环境)为开发者提供了应用创建、导入、导出、发布、部署等功能入口，覆盖了从立项到运维的全生命周期。
-
-
-## 创建第一个应用
+## 创建第一个应用 {#create-first-application}
 在节点控制台中点击“新建应用”按钮，会打开新建应用弹窗。
 
 ![新建应用](./img/create-new-application.png)
 
 开发者只需要填写应用名称、ID，然后点击确定，即可快速完成一个应用的创建。
 
-## 基于已有应用快速开发
+## 基于已有应用快速开发 {#based-on-existing-application-quick-development}
 JitAi提供了两种基于已有应用快速开发的方式：继承应用、创建副本。
   
 ### 继承应用
 继承可以让一个应用拥有被继承应用的功能模块（JitAi技术体系中称之为元素），每一个新建的应用都默认继承了两个官方应用模板：JIT开发框架、JIT开发工具。前者是JitAi官方开发框架，提供丰富的开箱即用的元素，后者为应用开发过程提供可视化与全代码双模式的开发工具。除了默认继承的官方应用模板，开发者也可以继续添加其它要继承的应用。
-
 
 ![添加应用模板](./img/add-application-template.gif)
 
@@ -30,7 +27,7 @@ JitAi提供了两种基于已有应用快速开发的方式：继承应用、创
 
 :::tip
 
-被继承应用的开发者会持续发布新的版本，以修复bug、添加新功能等，开发者可以在[节点控制台](./runtime-environment-management#节点的本地默认运行环境)或[在应用设置](../jitai-visual-development-tools#应用设置)中检查新版本并更新。
+被继承应用的开发者会持续发布新的版本，以修复bug、添加新功能等，开发者可以在[节点控制台](./runtime-environment-management#node-local-default-runtime-environment)或[在应用设置](../jitai-visual-development-tools#application-settings)中检查新版本并更新。
 
 :::
 
@@ -47,7 +44,7 @@ JitAi提供了两种基于已有应用快速开发的方式：继承应用、创
 
 创建出的副本是一个全新的应用，开发者需要填写新的应用名称和ID，在副本上的任何修改不会影响原应用。
 
-## 数据存储与环境变量配置
+## 数据存储与环境变量配置 {#data-storage-and-environment-variable-configuration}
 在新建应用时，JitAi会使用本地磁盘作为应用的默认文件存储方式。桌面版本使用SQLite作为应用默认的数据库和缓存，服务器版本使用MySQL作为默认数据库以及使用Redis作为默认缓存。开发者可以在创建应用时对默认配置进行修改，连接到自己指定的OSS存储、数据库以及缓存服务。
 
 ![自定义数据库连接](./img/custom-database-connection.gif)
@@ -60,8 +57,8 @@ JitAi提供了两种基于已有应用快速开发的方式：继承应用、创
 
 开发者在开发自己的应用时也可以定义环境变量，比如用环境变量来存储数据库连接信息、API密钥等，应用导出/发布时就不会泄露敏感信息。
 
-## 应用版本管理与发布
-当应用完成开发后，开发者可以发布应用版本，并在目标[运行环境](./runtime-environment-management#在运行环境中部署应用)中部署该应用版本。
+## 应用版本管理与发布 {#application-version-management-and-publish}
+当应用完成开发后，开发者可以发布应用版本，并在目标[运行环境](./runtime-environment-management#deploy-application-in-runtime-environment)中部署该应用版本。
 
 ![发布应用版本](./img/publish-application-version.png)
 
@@ -83,7 +80,7 @@ JitAi提供了两种基于已有应用快速开发的方式：继承应用、创
 建议开发者填写有意义的更新日志，以便用户了解应用的更新内容。
 
 ### 是否包含源代码
-如果开发者选择包含源代码，则应用部署时可以以[开发模式](./runtime-environment-management#以开发模式部署)部署，否则只能以[生产模式](./runtime-environment-management#以生产模式部署)部署。
+如果开发者选择包含源代码，则应用部署时可以以[开发模式](./runtime-environment-management#deploy-in-development-mode)部署，否则只能以[生产模式](./runtime-environment-management#deploy-in-production-mode)部署。
 
 平台会对源码进行加密，保证源码不会泄露。
 
@@ -94,12 +91,12 @@ JitAi提供了两种基于已有应用快速开发的方式：继承应用、创
 
 开发者可以选择要包含初始数据的数据表模型，但初始化数据累计最多1000条，请提前规划好每个数据表的数据量并准备好数据。
 
-## 应用导出导入
+## 应用导出导入 {#application-export-import}
 ## 导出源码zip包
-在[节点控制台](./runtime-environment-management#节点的本地默认运行环境)的“应用”列表中，点击应用卡片上的“更多”-“导出应用”按钮，即可下载应用源码zip包。
+在[节点控制台](./runtime-environment-management#node-local-default-runtime-environment)的“应用”列表中，点击应用卡片上的“更多”-“导出应用”按钮，即可下载应用源码zip包。
 
 ## 导出为微信小程序
 平台支持将应用导出为微信小程序，应用源码会嵌入到微信小程序的工程目录中，便于开发者在微信小程序生态下二次开发和发布。
 
 ## 导入应用源码包
-在[节点控制台](./runtime-environment-management#节点的本地默认运行环境)中点击“导入应用”按钮，可以把应用源码zip包导入到节点的默认运行环境中，并在新节点上继续开发。
+在[节点控制台](./runtime-environment-management#node-local-default-runtime-environment)中点击“导入应用”按钮，可以把应用源码zip包导入到节点的默认运行环境中，并在新节点上继续开发。

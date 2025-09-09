@@ -44,7 +44,6 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 ![](../img/code_173517.png)
 
-
 注意：在门户中隐藏「答卷」页面，仅允许通过「我的试卷」中点击跳转过去。
 
 ![](../img/code_091249.png)

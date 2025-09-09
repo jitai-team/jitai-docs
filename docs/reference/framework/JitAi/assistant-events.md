@@ -10,7 +10,7 @@ slug: assistant-events
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的events.AIAssistantType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -83,7 +83,7 @@ def customFunc(eventOutData):
     return eventOutData
 ```
 
-## 方法
+## 方法 
 ### getSender
 获取完整的事件发送方标识，格式为"sender.operate"。
 

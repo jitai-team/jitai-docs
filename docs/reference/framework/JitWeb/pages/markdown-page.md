@@ -10,7 +10,7 @@ Markdown页面元素分层结构为Meta（pages.Meta） → Type（pages.Markdow
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的pages.MarkdownPageType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -76,7 +76,7 @@ Markdown页面适合以下业务场景：
 - **规章制度**：公司制度、流程规范
 - **知识库**：技术文档、经验分享
 
-## 方法
+## 方法 
 ### toHtml
 将Markdown内容转换为HTML格式。
 

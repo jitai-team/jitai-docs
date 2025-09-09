@@ -43,7 +43,7 @@ check_result = pay_service.check(
 )
 ```
 
-## 方法
+## 方法 
 ### create
 创建支付订单，生成本地订单记录。
 

@@ -16,7 +16,7 @@ slug: vector-database
 |----------|----------|------------|------|
 | ChromaType | vectordbs.ChromaType | Chroma | 轻量级向量数据库，支持持久化和HTTP模式，默认集成 |
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 以下是创建一个Chroma向量数据库实例元素的完整示例：
 
@@ -85,7 +85,6 @@ result = vector_db.add_vectors(
 | mode | str | 否 | "persistent" | 连接模式：persistent/http |
 | timeout | int | 否 | 30 | 连接超时时间（秒） |
 
-
 #### 持久化模式配置
 | 参数 | 类型 | 必填 | 说明 |
 |------|------|------|------|
@@ -98,8 +97,8 @@ result = vector_db.add_vectors(
 | port | int | 否 | 8000 | 数据库服务器端口 |
 | auth_token | str | 否 | - | 认证令牌 |
 
-## 方法
-### health_check
+## 方法 
+### health_check {#health_check}
 检查向量数据库的连接状态和运行健康情况，返回数据库基本信息。
 
 **方法签名**
@@ -145,7 +144,7 @@ print("数据库状态:", health['status'])
 print("集合数量:", health.get('collections_count', 0))
 ```
 
-### create_collection
+### create_collection {#create_collection}
 在向量数据库中创建新的集合，用于存储和管理相关的向量数据。
 
 **方法签名**
@@ -194,7 +193,7 @@ except Exception as e:
         raise e
 ```
 
-### add_vectors
+### add_vectors {#add_vectors}
 将向量数据及其元数据存储到指定的集合中。
 
 **方法签名**
@@ -255,7 +254,7 @@ result = vector_db.add_vectors(
 print("添加向量数量:", result['added_count'])
 ```
 
-### query_vectors
+### query_vectors {#query_vectors}
 基于查询向量在集合中搜索最相似的向量数据。
 
 **方法签名**
@@ -317,7 +316,6 @@ for item in search_results["results"]:
     print("相似度:", item.get('similarity', 'N/A'))
     print("标题:", item.get('metadata', {}).get('title', 'N/A'))
 ```
-
 
 ## 属性
 暂无

@@ -416,7 +416,6 @@ shell_name = DefaultElement.getShellName()
 | getCache() | Cache对象 | 获取默认缓存组件实例 |
 | getShellName() | str | 获取默认Shell名称 |
 
-
 ## 全局变量
 全局变量组件，提供系统级全局变量和时间相关的动态变量。
 

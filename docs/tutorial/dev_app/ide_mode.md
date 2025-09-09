@@ -27,7 +27,6 @@ Jit应用层的元素模块
 
 ![](../img/ide_mode_150059.png)
 
-
 这里先简单介绍下最核心、最基础的几个元素：
 
 * 门户，是面向一个特定场景的一组页面的集合。例如：我们可以考生创建一个「考生门户」、为老师创建一个「老师门户」。点击门户中的菜单，会打开其配置的页面。阅读[门户导航设计](../../devguide/portal-and-page-development/portal-navigation-design)了解更多。
@@ -42,7 +41,6 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/ide_mode_effect.mp4" />
 
-
 ## 实现过程
 
 ### 创建数据模型
@@ -53,11 +51,9 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/ide_mode_create_table.mp4" />
 
-
 注意：设置合理的数据标题，有利于通过「数据标题」定位到某一行数据。支持随时重新设置数据标题。
 
 ![](../img/ide_mode_model_title.gif)
-
 
 ### 创建菜单和页面
 

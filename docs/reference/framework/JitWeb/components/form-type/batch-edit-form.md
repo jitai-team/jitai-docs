@@ -8,7 +8,7 @@ slug: batch-edit-form
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.EditFormType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 ```typescript title="基础批量编辑表单配置"
 {
@@ -141,7 +141,7 @@ this.editRowList.append({
 this.editRowList.reset();
 ```
 
-## 方法
+## 方法 
 ### call
 刷新组件数据，可传入新的数据列表或刷新现有数据。
 

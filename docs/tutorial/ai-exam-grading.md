@@ -61,13 +61,11 @@ JitAi提供了AI大模型元素、AI Agent元素、AI助理元素以及知识库
 
 接下来，我们为**阅卷打分**功能页面添加AI打分/阅卷功能。
 
-
 ### 通过service调用大模型
 #### 创建大模型元素
 创建一个大模型元素，配置好API URL及API KEY。
 
 ![创建大模型元素](./img/exam/create-large-model-element.png)
-
 
 #### 创建AI打分服务
 创建**AI打分服务**，新增一个**打分**方法，该方法调用大模型元素进行单题打分，配置如下：
@@ -79,7 +77,6 @@ JitAi提供了AI大模型元素、AI Agent元素、AI助理元素以及知识库
 
 运行效果如下：
 ![页面调用AI服务](./img/exam/page-call-ai-service.gif)
-
 
 ### 直接调用Agent
 #### 创建阅卷Agent
@@ -137,7 +134,6 @@ Agent可使用的工具有：服务函数、数据模型函数、MCP服务、外
 至此，我们就完成了AI阅卷功能。看看效果吧！
 
 ![评分页面调用阅卷agent-效果](./img/exam/score-page-call-grading-agent-effect.gif)
-
 
 ### 过程观测与人机协作
 通过service调用大模型或直接调用Agent存在以下两个问题：

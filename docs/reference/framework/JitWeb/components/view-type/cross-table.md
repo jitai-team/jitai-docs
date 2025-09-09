@@ -8,7 +8,7 @@ slug: cross-table
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.CrossTableType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 ```text title="推荐目录结构"
 MyApp/
@@ -139,7 +139,7 @@ export default function DataAnalysisPage() {
 **属性**：
 - `value`: 0表示未加载，1表示加载中
 
-## 方法
+## 方法 
 ### call
 刷新交叉表数据。
 

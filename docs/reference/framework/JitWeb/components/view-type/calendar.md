@@ -8,7 +8,7 @@ slug: calendar
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.CalendarType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 ```typescript title="基础日历配置"
 {
@@ -65,7 +65,7 @@ calendar1.activeRow.subscribeEvent('change', (data) => {
 });
 ```
 
-## 方法
+## 方法 
 ### call
 刷新日历数据，重新从数据源加载并更新显示。
 

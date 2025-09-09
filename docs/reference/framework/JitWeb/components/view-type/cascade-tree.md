@@ -8,7 +8,7 @@ slug: cascade-tree
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.CascadeTreeType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 ```text title="推荐目录结构"
 pages/
@@ -61,7 +61,7 @@ pages/
 ### loading
 加载状态变量，类型为 `Numeric`，表示组件当前的加载状态。值为1时表示正在加载，0表示加载完成。
 
-## 方法
+## 方法 
 ### publishEvent
 发送组件事件消息。
 

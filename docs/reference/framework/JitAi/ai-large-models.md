@@ -22,7 +22,7 @@ AI大模型元素分层结构为Meta（llms.Meta） → Type（llms.Bailian、ll
 | Deepseek | llms.Deepseek | 深度求索 | 国内领先的大语言模型，在中文理解和代码生成方面表现优异 |
 | OpenAICompatible | llms.OpenAICompatible | OpenAI兼容 | 兼容OpenAI API协议的服务，支持私有化部署和第三方厂商 |
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 以下是创建一个阿里云百炼AI大模型实例元素的完整示例：
 
@@ -148,7 +148,7 @@ print(response)
 | api_url | Stext | str | 是 | API服务地址 |
 | spare_api_keys | JitList | list | 否 | 备用API密钥列表，用于负载均衡 |
 
-## 方法
+## 方法 
 ### runLlm
 AI大模型的核心类方法，用于发送请求到大模型服务。
 

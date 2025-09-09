@@ -27,7 +27,7 @@ slug: system-interface-design-and-component-application
       - 作业查看：常规页面（提供作业提交入口）
 
 ## 为不同角色授权门户
-参考[为角色授予门户权限](./login-authentication-and-permission-management#为角色授予门户权限)。
+参考[为角色授予门户权限](./login-authentication-and-permission-management#grant-portal-permissions-to-roles)。
 
 ## 配置页面组件
 1. 课程发布页面：筛选条件、排序规则、字段的展示/支持筛选/允许查看/允许编辑等选项，可以按需修改。
@@ -55,6 +55,4 @@ slug: system-interface-design-and-component-application
    ![配置作业查看页面](./img/jitweb/configure-assignment-view-page.png)
 
    可以在弹窗内部新增form-components，用于填写要提交的作业内容，[点击了解更多组件](../../category/组件)。
-
-
 

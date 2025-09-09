@@ -10,7 +10,7 @@ slug: data-entry-page
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的pages.FormPageType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```title="数据录入页面实例目录结构"
@@ -233,7 +233,7 @@ this.app.openPage('pages.CustomerDataEntry', {
 | isDraggable | boolean | 否 | true | 是否可拖拽 |
 | isResizable | boolean | 否 | true | 是否可调整大小 |
 
-## 方法
+## 方法 
 ### init
 初始化页面，加载配置、变量和组件。
 

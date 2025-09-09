@@ -19,7 +19,6 @@ slug: agent-prompt-writing-techniques
 - **未明确指定输出内容**
 未给出结构化输出格式，系统无法稳定联动。
 
-
 - **运行效果**
 输入“给我录入两条模拟客户信息”，运行效果如下：
 ![不佳版本运行效果](./img/prompt-edit/bad-demo.png)
@@ -31,7 +30,6 @@ slug: agent-prompt-writing-techniques
   - 输出的数据并不是新增的数据
 
 除了以上问题，即便多次输出相同的提示词，工具调用过程也可能不一致，无法稳定复现 Agent 开发者预期的效果。
-
 
 ### 改进版：
 - **精准提示词**
@@ -59,7 +57,6 @@ slug: agent-prompt-writing-techniques
 # 其他可用工具
   - 获取前端数据：`pages.clientManagement.getVariableValue`
 
-
 # 输出规范（必须遵守）
 - 操作类型(operateType)：精确从 {新增数据｜修改数据｜删除数据｜查询数据} 中选择。
 - 客户信息(output)：
@@ -81,7 +78,6 @@ slug: agent-prompt-writing-techniques
 - **运行效果**
 输入“给我录入两条模拟客户信息”，运行效果如下：
 ![good版本运行效果](./img/prompt-edit/good-demo.png)
-
 
 ## 如何写出高质量的提示词？
 ### 核心原则
@@ -108,7 +104,6 @@ slug: agent-prompt-writing-techniques
   禁止“无条件更新/删除”“擅自造字段”“输出隐私字段”等。
 - （进阶）**可计算型问题要嵌入验证闭环**  
   先“收集数据边界→分析数据→计算基线→强制验证→输出报告”，把“正确性”做成闭环。
-
 
 ## 通用提示词模板
 ```md

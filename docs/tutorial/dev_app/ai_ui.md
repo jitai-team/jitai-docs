@@ -18,7 +18,6 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 2. 同[用专业模式搭建题库管理](./ide_mode)创建页面： 答卷页面。
 3. 已经按照[用AI大模型函数实现生成答案](./ai_func) 创建了大模型厂商元素。
 
-
 ### 创建AIAgent
 
 Agent(智能体代理)具备自主决策和任务执行能力，能够根据用户输入和上下文信息，自动选择合适的工具完成复杂的业务流程。

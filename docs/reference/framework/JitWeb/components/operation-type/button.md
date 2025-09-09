@@ -8,7 +8,7 @@ slug: button
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.ButtonType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 ```text title="推荐目录结构"
 pages/
@@ -83,7 +83,7 @@ const button = app.getElement('myButton');
 console.log(button.btnTitle.value); // 输出当前按钮标题
 ```
 
-## 方法
+## 方法 
 ### edit
 修改按钮标题并更新显示。
 

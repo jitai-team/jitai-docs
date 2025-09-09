@@ -8,7 +8,7 @@ slug: sub-page
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.ContainerType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 ```text title="推荐目录结构"
 MyApp/
@@ -60,7 +60,7 @@ container.subscribeEvent('variableChange', (data) => {
 });
 ```
 
-## 方法
+## 方法 
 ### call
 异步方法，用于打开和刷新子页面。调用此方法会增加renderOnload变量的值，触发子页面重新渲染。
 

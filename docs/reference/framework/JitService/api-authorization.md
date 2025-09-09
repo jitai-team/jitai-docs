@@ -8,7 +8,7 @@ API授权元素分层结构为Meta（apiAuths.Meta） → Type（apiAuths.Normal
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的apiAuths.NormalType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -74,7 +74,7 @@ authDetails = authSvc.getDetails("your_access_key")
 | remark | string | 否 | 授权备注说明 |
 | apis | array | 是 | 允许访问的API列表，格式：服务全名.方法名 |
 
-## 方法
+## 方法 
 ### getDetails
 获取API授权的详细信息，包含所有授权的服务和方法列表。
 

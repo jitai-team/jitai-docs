@@ -8,7 +8,7 @@ EOS存储元素分层结构为Meta（storages.Meta） → Type（storages.EosTyp
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的storages.EosType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -73,7 +73,7 @@ storage.delete("documents/file.pdf")
 | bucketName | str | 是 | 存储桶名称 |
 | scheme | str | 否 | 访问协议，默认为"https" |
 
-## 方法
+## 方法 
 ### uploadByFile
 通过文件数据上传文件到EOS存储。
 

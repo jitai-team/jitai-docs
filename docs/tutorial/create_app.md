@@ -4,7 +4,6 @@ title: 创建应用
 ---
 # 创建应用
 
-
 #### 创建应用
 
 import VideoPlayer from '@site/src/components/VideoPlayer';

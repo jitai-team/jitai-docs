@@ -8,7 +8,7 @@ slug: account-password-login
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的auths.loginTypes.PasswordType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -86,7 +86,7 @@ result = auth.getLoginCode(
 | limit.requireNumber | boolean | 是否要求数字 | false |
 | limit.requireSpecialChar | boolean | 是否要求特殊字符 | false |
 
-## 方法
+## 方法 
 ### getLoginCode
 用户登录验证，返回登录凭证和用户信息。
 

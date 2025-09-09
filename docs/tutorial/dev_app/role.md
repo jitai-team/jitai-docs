@@ -4,8 +4,6 @@ title: 用应用角色实现权限控制
 ---
 # 用应用角色实现权限控制
 
-
-
 ## 效果展示
 
 import VideoPlayer from '@site/src/components/VideoPlayer';

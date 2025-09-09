@@ -8,7 +8,7 @@ slug: initiate-application
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.ApplyType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 ```json title="页面配置中的发起申请组件"
 {
@@ -65,7 +65,7 @@ slug: initiate-application
 - **访问：** 读写
 - **说明：** 刷新标志，用于触发组件重新渲染
 
-## 方法
+## 方法 
 ### call
 刷新组件数据，支持重新加载表单数据或设置新的数据值。
 

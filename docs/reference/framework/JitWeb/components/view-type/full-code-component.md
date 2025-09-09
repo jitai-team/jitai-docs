@@ -8,7 +8,7 @@ slug: full-code-component
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.BlankComponentType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 ```tsx title="BlankComponent.tsx"
 import { Jit } from 'jit';
@@ -81,7 +81,7 @@ export default class BlankComponent extends Jit.BaseComponent {
 }
 ```
 
-## 方法
+## 方法 
 ### publishEvent
 发布自定义事件，支持页面或其他组件订阅。
 

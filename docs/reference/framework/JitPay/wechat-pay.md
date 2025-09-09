@@ -10,7 +10,7 @@ slug: wechat-pay
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的pays.WechatPayType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -86,7 +86,7 @@ wechat_pay.cancel("D20231120161615000001")
 | mchId | string | 是 | 微信商户号 |
 | apiKey | string | 是 | 微信支付API密钥 |
 
-## 方法
+## 方法 
 ### create
 创建内部订单记录，生成订单号并初始化订单状态。
 

@@ -8,7 +8,7 @@ slug: custom-controls
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的widgets.ReactType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 创建一个简单的输入控件：
 
@@ -111,7 +111,7 @@ const textData = new Jit.datatypes.Stext({
 - **说明**：组件属性对象，包含外部传入的所有配置参数
 - **示例**：包含data、onChange等业务相关属性
 
-## 方法
+## 方法 
 ### getRuntimeApp()
 获取当前运行时应用实例。
 

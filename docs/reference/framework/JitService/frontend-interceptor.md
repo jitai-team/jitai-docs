@@ -6,7 +6,7 @@ slug: frontend-interceptor
 
 拦截器元素分层结构为 Meta（interceptors.Meta） → Type（interceptors.Http） → 实例，仅支持全代码方式创建。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐前端拦截器元素目录结构"
@@ -64,7 +64,7 @@ export const respInterceptor = (response: HttpResponse & Record<string, any>) =>
 };
 ```
 
-## 方法
+## 方法 
 ### reqInterceptor
 请求发出前触发。可在此读取与设置请求头、查询参数与请求体，进行序列化、埋点、签名等处理。函数需返回修改后的 `request` 对象。
 

@@ -8,7 +8,7 @@ slug: general-filter
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.GenericFilterType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 ```json title="通用筛选器基础配置"
 {
@@ -35,7 +35,7 @@ slug: general-filter
 ## 变量
 暂无
 
-## 方法
+## 方法 
 ### getFilter
 获取当前筛选器配置的筛选条件，将筛选器中的字段映射到目标模型并生成Q表达式字符串。
 

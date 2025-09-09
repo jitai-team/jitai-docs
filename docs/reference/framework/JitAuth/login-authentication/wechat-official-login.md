@@ -8,7 +8,7 @@ slug: wechat-official-login
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的auths.loginTypes.WechatPublicType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -73,7 +73,7 @@ authElement.login('https://your-domain.com/callback');
 - `snsapi_base`: 静默授权，仅获取openid
 - `snsapi_userinfo`: 用户信息授权，获取完整用户信息
 
-## 方法
+## 方法 
 ### getUserInfo
 获取微信用户信息
 

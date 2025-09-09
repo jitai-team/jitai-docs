@@ -8,7 +8,7 @@ slug: standard-organization
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的corps.NormalType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 推荐的标准组织实例元素目录结构：
@@ -79,7 +79,7 @@ print(f"组织名称: {corp_info['title']}")
 | firstMember.userId | str | 是 | 用户ID |
 | firstMember.username | str | 否 | 登录用户名 |
 
-## 方法
+## 方法 
 ### initCorp
 初始化组织架构，创建根部门并添加首个管理员用户。
 

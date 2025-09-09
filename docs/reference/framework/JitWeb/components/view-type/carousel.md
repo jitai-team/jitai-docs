@@ -8,7 +8,7 @@ slug: carousel
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.CarouselType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 ```text title="推荐目录结构"
 pages/
@@ -129,7 +129,7 @@ const carousel = app.getElement('pages.MyPage.myCarousel');
 console.log('是否正在加载：', carousel.loading.value === 1);
 ```
 
-## 方法
+## 方法 
 ### call
 刷新轮播图数据的异步方法。
 

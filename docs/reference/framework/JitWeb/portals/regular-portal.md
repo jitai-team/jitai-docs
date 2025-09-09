@@ -8,7 +8,7 @@ slug: regular-portal
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的shells.DefaultType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -131,7 +131,7 @@ feature.json文件包含门户的菜单结构和AI配置：
 | hide | Checkbox | bool | 否 | 是否隐藏 |
 | children | JitList | list | 否 | 子菜单列表 |
 
-## 方法
+## 方法 
 ### getAvailableMenu
 获取可用的菜单列表，过滤掉无权限、隐藏和无效的菜单。
 

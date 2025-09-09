@@ -8,7 +8,7 @@ slug: model-filter
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.FilterType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 ```typescript title="基本使用示例"
 {
@@ -135,7 +135,7 @@ const currentFilter = this.filter.value;
 }
 ```
 
-## 方法
+## 方法 
 ### reset
 重置筛选器所有筛选条件为初始状态。
 

@@ -8,7 +8,7 @@ Word模板元素分层结构为Meta（fileTmpls.Meta） → Type（fileTmpls.Wor
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的fileTmpls.WordType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -103,7 +103,7 @@ with open("生成的文档.docx", "wb") as f:
 | fileName | string | 是 | Word模板文件名称 |
 | url | string | 否 | 模板文件URL（兼容旧版本） |
 
-## 方法
+## 方法 
 ### render
 将数据通过Word模板渲染生成最终文档。
 

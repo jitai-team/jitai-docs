@@ -8,7 +8,7 @@ slug: approval-processing
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.TaskHandleType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 ```json title="基础审批处理配置"
 {
@@ -74,7 +74,7 @@ this.TaskHandle1.formData.onValueChange(() => {
 });
 ```
 
-## 方法
+## 方法 
 ### call
 **说明**: 刷新组件数据，重新加载当前审批任务的最新状态和数据。
 

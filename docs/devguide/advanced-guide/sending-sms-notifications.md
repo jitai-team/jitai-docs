@@ -31,4 +31,3 @@ slug: sending-sms-notifications
 
 从阿里云短信服务控制台获取实际的短信模板代码。
 
-

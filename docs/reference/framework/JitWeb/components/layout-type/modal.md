@@ -8,7 +8,7 @@ slug: modal
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.ModalType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 ```text title="推荐目录结构"
 pages/
@@ -96,7 +96,7 @@ export class MyPage extends BasePage {
 - **默认值**: 组件title属性值
 - **用法**: `modal.modalTitle.value = '新标题'`
 
-## 方法
+## 方法 
 ### call
 打开弹窗并可选择性设置标题。
 

@@ -8,7 +8,7 @@ slug: group-table
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.GroupTableType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 基础配置示例
 ```tsx title="基础分组表配置"
 const groupTableConfig = {
@@ -125,7 +125,7 @@ const groupTableConfig = {
 
 数据筛选条件，支持复杂查询条件组合。
 
-## 方法
+## 方法 
 ### bindApp
 绑定应用实例到组件。
 
@@ -423,8 +423,6 @@ groupTable.subscribeEvent('afterClickRow', async (data) => {
 groupTable.unSubscribeEvent(handleId);
 ```
 
-
-
 ## 属性
 ### app
 关联的应用实例，类型为 `App`，提供应用级别的上下文和服务。
@@ -565,5 +563,4 @@ const config = {
   // IMAGE, LINK, FILE
 }
 ```
-
 

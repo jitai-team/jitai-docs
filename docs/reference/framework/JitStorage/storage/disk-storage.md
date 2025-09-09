@@ -8,7 +8,7 @@ slug: disk-storage
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的storages.DiskType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -70,7 +70,7 @@ storage.delete("test.txt")
 - 相对路径：`appData/storages/MyStorage` → `应用目录/appData/storages/MyStorage`
 - 绝对路径：`/data/files` → 直接使用绝对路径
 
-## 方法
+## 方法 
 ### uploadByFile
 上传文件到磁盘存储。
 

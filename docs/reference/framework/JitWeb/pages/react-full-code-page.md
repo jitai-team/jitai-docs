@@ -10,7 +10,7 @@ React全代码页面元素分层结构为 Meta（pages.Meta） → Type（pages.
 
 当然，开发者也可以创建自己的 Type 元素，或者在自己的 App 中改写 JitAi 官方提供的 pages.NormalType 元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -29,6 +29,11 @@ testFullCodePage/              # 页面名称（可自定义）
   "tag": ""
 }
 ```
+
+## 方法接口 {#methods}
+
+### 页面生命周期方法
+提供React页面的生命周期管理和数据操作方法。
 
 #### 前端实现文件
 ```tsx title="页面实现示例"
@@ -116,7 +121,7 @@ const PageClass = PageCls || PageTemplate?.PageCls || Jit.BasePage;
 const PageRender = Render || PageTemplate?.Render;
 ```
 
-## 方法
+## 方法 
 ### init
 页面初始化方法，在页面加载时自动调用。
 

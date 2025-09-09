@@ -10,7 +10,7 @@ Vue全代码页面元素分层结构为Meta（pages.Meta） → Type（pages.Vue
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的pages.VueType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -166,7 +166,7 @@ await vuePageElement.page.init();
 ### 业务配置文件配置
 Vue全代码页面不需要额外的业务配置文件，所有配置都在Vue组件中通过代码实现。
 
-## 方法
+## 方法 
 ### init
 初始化页面，加载组件并绑定事件。
 

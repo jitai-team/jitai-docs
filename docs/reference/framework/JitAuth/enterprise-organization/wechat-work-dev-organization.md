@@ -8,7 +8,7 @@ slug: wechat-work-dev-organization
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的corps.QywxProxyType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 推荐在应用的`corps`目录下创建企业微信代开发组织实例：
@@ -68,7 +68,7 @@ print(f"根部门: {root_dept.name}")
 | corpId | String | 是 | - | 企业微信代开发模式下的企业ID |
 | authFullName | String | 是 | - | 对应的企业微信代开发认证元素fullName |
 
-## 方法
+## 方法 
 ### initCorp
 初始化组织架构，在企业微信代开发组织首次创建时调用，会自动触发组织架构同步。
 

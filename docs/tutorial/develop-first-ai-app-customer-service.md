@@ -100,7 +100,6 @@ slug: develop-first-ai-app-customer-service
 
 6. 保存
 
-
 ---
 
 ### 创建AI助理实例元素
@@ -133,7 +132,6 @@ slug: develop-first-ai-app-customer-service
 
     ![在使用者门户中使用AI助理](./img/jitairobot/final-effect-page-built-in-ai-assistant.png)
 
-
 ---
 
 ## 恭喜你！
@@ -141,11 +139,4 @@ slug: develop-first-ai-app-customer-service
 
 ## 相关文档
 - **[新增后端Type元素](../../extguide/后端/新增后端Type元素)** - 学习Type元素扩展开发，包含钉钉机器人集成实战案例
-
-
-
-
-
-
-
 

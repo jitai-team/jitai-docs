@@ -12,7 +12,6 @@ title: 案例介绍
 
 ![](img/project_192638.png)
 
-
 | 名称 | 账号 | 密码 | 角色 | 说明 |
 |------|------|------|------|------|
 | 管理员| admin123 | admin123 | 管理员 | 系统管理员，拥有所有权限 |
@@ -34,7 +33,6 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 ### 管理账号登录后
 
 <VideoPlayer relatePath="/docs/tutorial/project_admin.mp4" />
-
 
 ## 数据模型介绍
 * 题库表：存储所有题目信息，包括题目内容、类型、难度等

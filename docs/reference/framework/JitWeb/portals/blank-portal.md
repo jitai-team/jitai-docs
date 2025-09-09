@@ -8,7 +8,7 @@ slug: blank-portal
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的shells.BlankType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -93,7 +93,7 @@ console.log(availableMenus);  // 过滤后的菜单列表
 | children | array | ShellMenu[] | 否 | 子菜单配置 |
 | nodeType | string | string | 否 | 节点类型，可选值：group |
 
-## 方法
+## 方法 
 ### getAvailableMenu
 获取过滤后的可用菜单列表，会过滤掉无权限、隐藏、无页面或页面已删除的菜单。
 

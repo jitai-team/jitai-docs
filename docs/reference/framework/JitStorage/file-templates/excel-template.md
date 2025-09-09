@@ -8,7 +8,7 @@ Excel模板元素分层结构为Meta（fileTmpls.Meta）→ Type（fileTmpls.Exc
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的fileTmpls.ExcelType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```text title="推荐目录结构"
@@ -106,7 +106,7 @@ with open("sales_report.xlsx", "wb") as f:
 | url | string | 否 | 模板文件下载地址 |
 | fileName | string | 否 | 模板文件名称 |
 
-## 方法
+## 方法 
 ### render
 ```python
 def render(self, context, **kwargs)

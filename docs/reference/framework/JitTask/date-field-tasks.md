@@ -10,7 +10,7 @@ slug: date-field-tasks
 
 当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的tasks.DateFieldType元素，以实现自己的封装。
 
-## 快速开始
+## 快速开始 
 ### 创建实例元素
 #### 目录结构
 ```
@@ -103,7 +103,7 @@ task = app.getElement("tasks.ExampleDateTask")
 ### 业务配置文件配置
 日期字段任务不需要额外的业务配置文件，所有配置都在e.json中完成。
 
-## 方法
+## 方法 
 ### main
 任务执行的主要方法，在inner.py中定义。
 

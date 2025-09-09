@@ -1,0 +1,8 @@
+{
+  "label": "JitStorage",
+  "position": 9,
+  "link": {
+    "type": "generated-index",
+    "description": "存储管理框架，提供文件存储、缓存系统、对象存储和文件模板引擎等存储解决方案"
+  }
+} 

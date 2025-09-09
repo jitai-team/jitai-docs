@@ -101,7 +101,7 @@ const PricingSection: React.FC = () => {
             <p className={styles.noteText}>
               每个开发组织注册即送<strong>3个桌面版许可证</strong>（时长均为3个月），让你充分体验JitAi的强大功能！
             </p>
-            {/* <a className={styles.downloadButton} href="./docs/tutorial/download" target="_blank">
+            {/* <a className={styles.downloadButton} href="./docs/tutorial/download-installation" target="_blank">
               <span className={styles.buttonText}>立即下载</span>
               <span className={styles.buttonIcon}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

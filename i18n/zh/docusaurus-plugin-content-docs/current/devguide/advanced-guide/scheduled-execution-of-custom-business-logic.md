@@ -1,0 +1,23 @@
+---
+sidebar_position: 9
+slug: scheduled-execution-of-custom-business-logic
+---
+
+# 定时执行自定义业务逻辑
+定时任务常用于按固定节奏执行报表生成、数据同步、归档、结算等，本文以“每晚生成运营日报”为例，展示创建定时任务的完整流程。
+
+## 创建定时任务实例元素
+在JitAi可视化开发工具中创建一个定时任务元素实例。
+
+![创建普通定时任务](./img/jittask/create-regular-scheduled-task.png)
+
+## 配置时间规则和重复周期
+在配置页面中，配置时间规则和重复周期。
+
+![配置普通定时任务时间规则  ](./img/jittask/configure-regular-scheduled-task-time-rules.png)
+
+## 编写函数逻辑
+在函数逻辑中，编写具体的业务逻辑。
+
+![编写普通定时任务函数逻辑](./img/jittask/write-regular-scheduled-task-function-logic.png)
+

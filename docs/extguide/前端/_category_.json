@@ -1,8 +1,0 @@
-{
-  "label": "前端",
-  "position": 1,
-  "link": {
-    "type": "generated-index",
-    "description": "扩展前端Type元素，开发前端可视化编辑器，创建自定义UI组件和交互功能"
-  }
-}

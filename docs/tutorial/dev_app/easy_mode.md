@@ -15,6 +15,6 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 数据表模型，可以简单理解为 excel 表，配置每一列的标题、数据类型和配置。
 
-阅读[AI数据管理页面](/docs/devguide/门户与页面开发/AI数据管理页面)了解更多。
+阅读[AI数据管理页面](../../devguide/portal-and-page-development/ai-data-management-page)了解更多。
 
 如果需要更复杂的业务逻辑和页面交互，请阅读下一篇

@@ -18,24 +18,24 @@ JitAi提供了丰富的官方开发框架，但在实际业务场景中，你可
 
 | 你遇到的问题 | 相关文档 |
 |-------------|----------|
-| 官方框架缺少我需要的前端组件 | [新增前端组件元素](前端/新增前端组件.md) \| [开发前端组件元素的可视化编辑器](前端/开发前端组件元素的可视化编辑器.md)|
-| 想定制自己的前端Type元素可视化编辑器 | [开发前端组件元素的可视化编辑器](前端/开发前端组件元素的可视化编辑器.md) |
+| 官方框架缺少我需要的前端组件 | [新增前端组件元素](frontend/add-frontend-components) \| [开发前端组件元素的可视化编辑器](frontend/develop-frontend-component-visual-editor)|
+| 想定制自己的前端Type元素可视化编辑器 | [开发前端组件元素的可视化编辑器](frontend/develop-frontend-component-visual-editor) |
 
 ### 后端
 
 | 你遇到的问题 | 相关文档 |
 |-------------|----------|
-| 官方框架缺少我需要的后端元素 | [新增后端Type元素](后端/新增后端Type元素.md) \| [开发后端元素可视化编辑器](后端/开发后端元素可视化编辑器.md)|
-| 现有后端元素的功能与我的需要接近，但要调整 | [继承扩展已有后端Type元素](后端/继承扩展已有后端Type元素.md) |
-| 想定制自己的后端Type元素可视化编辑器 | [开发后端元素可视化编辑器](后端/开发后端元素可视化编辑器.md) |
+| 官方框架缺少我需要的后端元素 | [新增后端Type元素](backend/add-backend-type-elements) \| [开发后端元素可视化编辑器](backend/develop-backend-element-visual-editor)|
+| 现有后端元素的功能与我的需要接近，但要调整 | [继承扩展已有后端Type元素](backend/inherit-and-extend-existing-backend-type-elements) |
+| 想定制自己的后端Type元素可视化编辑器 | [开发后端元素可视化编辑器](backend/develop-backend-element-visual-editor) |
 
 ### 综合
 
 | 你遇到的问题 | 相关文档 |
 |-------------|----------|
-| 需要新增包含前后端两部分功能的Type元素 | [新增前后端复合Type元素](综合/新增前后端复合Type元素.md) |
-| 想要构建自己的可视化开发工具 | [自建开发工具](综合/自建开发工具.md) |
-| 需要发布可复用的扩展框架 | [发布自己的开发框架](综合/发布自己的开发框架.md) |
+| 需要新增包含前后端两部分功能的Type元素 | [新增前后端复合Type元素](comprehensive/add-frontend-backend-composite-type-elements) |
+| 想要构建自己的可视化开发工具 | [自建开发工具](comprehensive/build-your-own-development-tools) |
+| 需要发布可复用的扩展框架 | [发布自己的开发框架](comprehensive/publish-your-own-development-framework) |
 
 ## 扩展类型
 
@@ -50,6 +50,6 @@ JitAi提供了丰富的官方开发框架，但在实际业务场景中，你可
 - **增量修改**：在原有逻辑基础上进行局部调整，保持接口一致
 
 ## 社区支持
-- 扩展开发过程中遇到问题，可通过[社区论坛](/docs/community)获得帮助
+- 扩展开发过程中遇到问题，可通过[社区论坛](../community)获得帮助
 - 优秀的扩展实现，欢迎分享到社区供其他开发者学习
 - 具有通用价值的扩展，有机会被集成到官方框架中

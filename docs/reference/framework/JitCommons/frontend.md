@@ -1,0 +1,438 @@
+---
+slug: frontend
+---
+# 前端
+为前端开发提供统一的全局组件、公共模块、工具函数和Web Workers支持。
+
+globals.Calc是官方内置的公共模块Type元素，提供数学、逻辑、文本和日期时间计算功能。globals.Calc元素层级结构为Meta（globals.Meta） → Type（globals.Calc），开发者可以使用`app.getElement("globals.Calc")`获取并直接使用。
+
+modules.xxx系列是官方提供的前端数据处理、用户界面反馈、文件与工具、消息通信等功能的实例元素，元素层级结构为Meta（modules.Meta） → Type（modules.FrontType） → 实例，开发者可以使用`app.getElement("modules.xxx")`获取并直接使用。
+
+当然，开发者也可以创建自己的公共模块以及modules.xxx系列元素，或者在自己的App中改写JitAi官方提供的元素，以实现自己的封装。
+
+## 计算组件
+### globals.Calc
+全局计算组件，提供数学、逻辑、文本和日期时间计算功能。
+
+#### 基本用法
+```tsx title="计算组件基本使用"
+import { app } from 'jit';
+
+// 获取计算组件
+const CALC = await app.getElement('globals.Calc');
+
+// 使用计算函数
+const result = CALC.SUM(10, 20, 30);
+const text = CALC.CONCAT("Hello", "World");
+const now = CALC.NOW();
+```
+
+#### 数学计算函数
+| 函数名 | 参数 | 返回值 | 功能描述 |
+|--------|------|--------|----------|
+| SUM | (...numbers: number[]) | number | 求和多个数字 |
+| AVG | (...numbers: number[]) | number | 计算平均值 |
+| MAX | (...numbers: number[]) | number | 获取最大值 |
+| MIN | (...numbers: number[]) | number | 获取最小值 |
+| ABS | (number: number) | number | 获取绝对值 |
+| ROUND | (number: number, digits: number) | number | 四舍五入到指定小数位 |
+| TRUNCATE | (number: number, digits: number) | number | 截取小数位不四舍五入 |
+| POWER | (base: number, exponent: number) | number | 幂运算 base^exponent |
+| MOD | (dividend: number, divisor: number) | number | 取余运算 |
+| RANDOM | (min: number, max: number, decimal: number) | number | 生成指定范围和小数位的随机数 |
+| CHINESEUPPER | (number: number) | string | 数字转中文大写金额 |
+| ENGLISHUPPER | (number: number) | string | 数字转英文大写金额 |
+| TOSTRING | (value: any) | string \| null | 转换为字符串，失败返回null |
+| TONUMBER | (value: any) | number \| null | 转换为数字，失败返回null |
+
+#### 文本处理函数
+| 函数名 | 参数 | 返回值 | 功能描述 |
+|--------|------|--------|----------|
+| CONCAT | (...texts: any[]) | string | 连接多个值为文本 |
+| LEN | (text: string) | number | 获取文本长度 |
+| LEFT | (text: string, length: number) | string | 从左侧截取指定长度文本 |
+| RIGHT | (text: string, length: number) | string | 从右侧截取指定长度文本 |
+| MID | (text: string, start: number, length: number) | string | 从指定位置截取指定长度文本 |
+| TRIM | (text: string) | string | 去除首尾空格 |
+| REPLACE | (text: string, oldText: string, newText: string) | string | 全局替换文本 |
+| INSERT | (sourceText: string, start: number, length: number, replaceText: string) | string | 在指定位置替换文本 |
+| LOCATE | (searchText: string, sourceText: string) | boolean | 判断是否包含指定文本 |
+| IDCARDSEX | (idCard: string) | string | 根据身份证号获取性别（'男'/'女'/''） |
+| IDCARDBIRTHDAY | (idCard: string) | string | 根据身份证号获取生日（YYYY-MM-DD格式） |
+
+#### 日期时间函数
+| 函数名 | 参数 | 返回值 | 功能描述 |
+|--------|------|--------|----------|
+| NOW | () | string | 获取当前时间（YYYY-MM-DD HH:mm:ss格式） |
+| TODAY | () | string | 获取今天日期（YYYY-MM-DD格式） |
+| DATEADD | (date: string, number: number, unit?: string) | string \| null | 日期加减运算，unit可选：'Y'/'y'（年）、'M'/'m'（月）、'D'/'d'（日）、'H'/'h'（时）、'I'/'i'（分）、'S'/'s'（秒），默认为天 |
+| DATEDELTA | (date1: string, date2: string, unit?: string) | number \| null | 计算日期差值，unit同DATEADD，返回date1-date2的差值 |
+| EXTRACT | (date: string, unit?: string) | number \| null | 提取日期部分，unit可选：'Y'/'y'（年）、'M'/'m'（月）、'D'/'d'（日）、'H'/'h'（时）、'I'/'i'（分）、'S'/'s'（秒）、'Q'/'q'（季度），默认返回年 |
+| TIMESTAMPFORMAT | (timestamp: number) | string | 时间戳转日期时间字符串 |
+| DATESTR | (date: string) | string | 日期转YYYYMMDD格式字符串 |
+| DATE | (year: number, month: number, day: number) | string | 构造日期字符串（YYYY-MM-DD格式） |
+| MONTHDAYS | (date: string) | number \| null | 获取指定日期所在月份的天数 |
+| DAYOFYEAR | (date: string) | number \| null | 获取指定日期是当年第几天 |
+| WEEKOFYEAR | (date: string) | number | 获取指定日期是当年第几周 |
+| WEEKDAYNUM | (date: string) | number \| null | 获取星期数字（1-7，周一到周日） |
+| WEEKDAYSTR | (date: string) | string | 获取星期文本（星期一到星期日） |
+| MONTHSTART | (date: string) | string \| null | 获取指定日期所在月份的第一天 |
+| MONTHEND | (date: string) | string \| null | 获取指定日期所在月份的最后一天 |
+| NETWORKDAYS | (startDate: string, endDate: string) | number \| null | 计算两个日期间的工作日天数（排除周末和节假日） |
+| WORKDAY | (date: string, days: number, holidays?: any[]) | string | 从指定日期开始计算指定工作日后的日期 |
+
+#### 逻辑判断函数
+| 函数名 | 参数 | 返回值 | 功能描述 |
+|--------|------|--------|----------|
+| IF | (condition: any, trueValue: any, falseValue: any) | any | 条件判断，condition为真返回trueValue，否则返回falseValue |
+| IFS | (...args: any[]) | any | 多条件判断，按条件值对依次判断，返回第一个满足条件的值，最后一个参数作为默认值 |
+| AND | (...conditions: any[]) | boolean | 逻辑与运算，所有条件都为真才返回true |
+| OR | (...conditions: any[]) | boolean | 逻辑或运算，任一条件为真就返回true |
+| ISEMPTY | (value: any) | boolean | 判断值是否为空（null、undefined、空字符串、空数组、空对象） |
+| ISNOTEMPTY | (value: any) | boolean | 判断值是否非空 |
+| EMPTY | () | null | 返回空值null |
+| EMPTYSTR | () | string | 返回空字符串"" |
+| DEFAULTVALUE | (value: T, defaultValue: T) | T | 如果value为空则返回defaultValue，否则返回value |
+
+#### 常用示例
+```tsx title="计算函数常用示例"
+const CALC = await app.getElement('globals.Calc');
+
+// 数学计算
+const total = CALC.SUM(10, 20, 30);                    // 60
+const avg = CALC.AVG(1, 2, 3, 4, 5);                   // 3
+const rounded = CALC.ROUND(3.14159, 2);                // 3.14
+const random = CALC.RANDOM(1, 100, 0);                 // 1-100随机整数
+
+// 文本处理
+const fullName = CALC.CONCAT("张", "三");               // "张三"
+const length = CALC.LEN("Hello World");                // 11
+const left3 = CALC.LEFT("Hello", 3);                   // "Hel"
+const gender = CALC.IDCARDSEX("110101199001011234");    // "男"
+
+// 日期时间
+const now = CALC.NOW();                                 // "2024-01-15 14:30:25"
+const today = CALC.TODAY();                             // "2024-01-15"
+const nextWeek = CALC.DATEADD(today, 7, "D");          // "2024-01-22"
+const year = CALC.EXTRACT(today, "Y");                 // 2024
+
+// 逻辑判断
+const result = CALC.IF(total > 50, "及格", "不及格");    // "及格"
+const isEmpty = CALC.ISEMPTY("");                       // true
+const defaultName = CALC.DEFAULTVALUE(null, "匿名");    // "匿名"
+```
+
+## 变量管理
+### globals.AppVar
+应用变量配置组件，提供前端应用级别的变量配置框架。
+
+#### 基本用法
+```tsx title="应用变量基本使用"
+import { app } from 'jit';
+
+// 获取应用变量配置
+const appVar = await app.getElement('globals.AppVar');
+
+// 应用变量配置是一个JSON对象
+console.log(appVar); // 输出变量配置
+```
+
+#### 组件特性
+| 特性 | 说明 |
+|------|------|
+| 配置格式 | JSON对象格式的变量配置 |
+| 作用域 | 前端应用级别 |
+| 用途 | 提供变量定义框架和配置基础 |
+
+### globals.GlobalVar
+全局变量组件，提供预定义的时间相关变量和用户信息。
+
+#### 基本用法
+```tsx title="全局变量基本使用"
+import { app } from 'jit';
+
+const globalVar = await app.getElement('globals.GlobalVar');
+
+// 使用时间变量
+const now = globalVar.currentTime;
+const today = globalVar.today;
+const currentUser = globalVar.currentUser;
+```
+
+#### 时间相关变量
+| 变量名 | 类型 | 功能描述 |
+|--------|------|----------|
+| currentTime | Datetime | 当前时间 |
+| today | DateRange | 今天时间范围 |
+| yesterday | DateRange | 昨天时间范围 |
+| tomorrow | DateRange | 明天时间范围 |
+| thisWeek | DateRange | 本周时间范围 |
+| lastWeek | DateRange | 上周时间范围 |
+| nextWeek | DateRange | 下周时间范围 |
+| thisMonth | DateRange | 本月时间范围 |
+| lastMonth | DateRange | 上月时间范围 |
+| nextMonth | DateRange | 下月时间范围 |
+| thisQuarter | DateRange | 本季度时间范围 |
+| lastQuarter | DateRange | 上季度时间范围 |
+| nextQuarter | DateRange | 下季度时间范围 |
+| thisYear | DateRange | 今年时间范围 |
+| lastYear | DateRange | 去年时间范围 |
+| nextYear | DateRange | 明年时间范围 |
+
+#### 动态天数范围变量
+| 变量名 | 类型 | 功能描述 |
+|--------|------|----------|
+| last24Hours | DateRange | 近24小时 |
+| last2Days | DateRange | 近2天 |
+| last3Days | DateRange | 近3天 |
+| last7Days | DateRange | 近7天 |
+| last15Days | DateRange | 近15天 |
+| last30Days | DateRange | 近30天 |
+| last60Days | DateRange | 近60天 |
+| last90Days | DateRange | 近90天 |
+
+#### 用户相关变量
+| 变量名 | 类型 | 功能描述 |
+|--------|------|----------|
+| currentUser | Member | 当前登录用户信息 |
+
+## 数据处理
+### modules.DataHandler
+数据处理模块，提供数据转换、过滤器转换等功能。
+
+#### 基本用法
+```tsx title="数据处理基本使用"
+import { app } from 'jit';
+
+const { convertRowData, convertRowList, convertFilter, tableSet } = await app.getElement('modules.DataHandler');
+
+// 使用数据转换
+const rowData = convertRowData(mappingDict, sourceVal, targetModelName, sourceModelName);
+const filter = convertFilter(mappingDict, sourceVal);
+const table = tableSet(tqlConfig);
+```
+
+#### 可用方法
+| 方法名 | 参数 | 返回值 | 功能描述 |
+|--------|------|--------|----------|
+| convertRowData | (mappingDict: Record&lt;string, any&gt;, sourceVal: any, targetModelName: string, sourceModelName: string) | Record&lt;string, any&gt; \| undefined | 转换单行数据格式 |
+| convertRowList | (mappingDict: Record&lt;string, any&gt;, sourceVal: any, targetModelName: string, sourceModelName: string) | Record&lt;string, any&gt;[] \| undefined | 转换多行数据格式 |
+| convertFilter | (mappingDict: Record&lt;string, any&gt;, sourceVal?: string) | string \| null | 转换筛选条件 |
+| tableSet | (tqlConfig: ITqlInitConfig) | TableSet | 创建表数据集对象 |
+
+## 用户界面反馈
+### modules.FeedBack
+反馈组件模块，提供消息提示、确认对话框、加载状态等UI反馈。
+
+#### 基本用法
+```tsx title="反馈组件基本使用"
+import { app } from 'jit';
+
+const { globalMessage, globalConfirm, openLoading, closeLoading } = await app.getElement('modules.FeedBack');
+
+// 使用反馈功能
+globalMessage('success', '操作成功！');
+const confirmed = await globalConfirm('确定删除吗？');
+const loadingId = openLoading('处理中...');
+```
+
+#### 消息提示方法
+| 方法名 | 参数 | 返回值 | 功能描述 |
+|--------|------|--------|----------|
+| globalMessage | (type: string, content: string \| object) | void | 显示消息提示，type可选：'success'、'error'、'warn'、'info' |
+
+#### 对话框方法
+| 方法名 | 参数 | 返回值 | 功能描述 |
+|--------|------|--------|----------|
+| globalConfirm | (content: string \| Record&lt;string, any&gt;) | Promise&lt;string&gt; | 显示确认对话框，返回Promise&lt;'true'&#124;'false'&gt; |
+
+#### 加载状态方法
+| 方法名 | 参数 | 返回值 | 功能描述 |
+|--------|------|--------|----------|
+| openLoading | (text?: string) | string | 显示加载状态，返回唯一的loadingId |
+| closeLoading | (loadingId: string) | void | 关闭指定ID的加载状态 |
+
+## 文件与工具
+### modules.Util
+工具模块，提供文件处理、导出、打印等常用功能。
+
+#### 基本用法
+```tsx title="工具模块基本使用"
+import { app } from 'jit';
+
+const { exportExcel, uploadFile, printQrCode, generateJitList } = await app.getElement('modules.Util');
+
+// 使用工具功能
+await exportExcel(exportConfig);
+await uploadFile(file);
+await printQrCode(qrConfig);
+
+// 生成数字列表
+const numberList = await generateJitList(5); // 生成 [1,2,3,4,5] 的JitList
+```
+
+#### 文件处理方法
+| 方法名 | 参数 | 返回值 | 功能描述 |
+|--------|------|--------|----------|
+| uploadFile | (file: Record&lt;string, any&gt;, ...args: any[]) | Promise&lt;any&gt; | 文件上传到默认存储 |
+| generateFile | () | File | 生成文件数据类型实例 |
+| fileTmpls.download | (templateId: string) | Promise&lt;any&gt; | 下载文件模板 |
+
+#### 数据生成方法
+| 方法名 | 参数 | 返回值 | 功能描述 |
+|--------|------|--------|----------|
+| generateJitList | (len: number) | Promise&lt;JitList&gt; | 根据传入的长度生成连续的数字数组列表，返回从1到len的JitList类型数据 |
+
+#### 导出功能方法
+| 方法名 | 参数 | 返回值 | 功能描述 |
+|--------|------|--------|----------|
+| exportExcel | (exportExcelConfig: ExportConfig) | Promise&lt;void&gt; | 导出Excel文件 |
+| exportExcelType | (data: any, type: string) | void | 按指定类型导出Excel |
+
+#### 打印功能方法
+| 方法名 | 参数 | 返回值 | 功能描述 |
+|--------|------|--------|----------|
+| printQrCode | (data: QrCodeConfig) | Promise&lt;void&gt; | 打印二维码 |
+| printAttachmentsInBulk | (tmplName: Record&lt;string, any&gt;) | Promise&lt;void&gt; | 批量打印附件 |
+
+#### 页面操作方法
+| 方法名 | 参数 | 返回值 | 功能描述 |
+|--------|------|--------|----------|
+| openPage | (data: OpenPageConfig) | void | 打开新页面 |
+| log | (type: 'log' \| 'warn' \| 'error', content: string) | void | 控制台日志记录 |
+
+## 消息通信
+### modules.MessageHandler
+消息处理模块，提供短信发送和消息通知功能。
+
+#### 基本用法
+```tsx title="消息处理基本使用"
+import { app } from 'jit';
+
+const { sendMsg, sendSms } = await app.getElement('modules.MessageHandler');
+
+// 使用消息功能
+await sendSms(smsFullName, smsConfig, receiver, params);
+await sendMsg(receiver, msgData);
+```
+
+#### 可用方法
+| 方法名 | 参数 | 返回值 | 功能描述 |
+|--------|------|--------|----------|
+| sendSms | (smsFullName: string, smsConfig: Record&lt;string, any&gt;, receiver: \{receiverDict: ReceiverDict\}, params: Record&lt;string, any&gt;) | Promise&lt;void&gt; | 发送短信通知 |
+| sendMsg | (receiver: \{receiverDict: ReceiverDict\}, msgData: \{msg: MsgData\}) | Promise&lt;void&gt; | 发送消息通知 |
+
+## 审批处理
+### modules.ApproveHandle
+审批处理模块，提供审批任务相关功能。
+
+#### 基本用法
+```tsx title="审批处理基本使用"
+import { app } from 'jit';
+
+const { applyTask } = await app.getElement('modules.ApproveHandle');
+
+// 使用审批功能
+await applyTask(approveDict, workflowName, rowDataDict, modelName);
+```
+
+#### 可用方法
+| 方法名 | 参数 | 返回值 | 功能描述 |
+|--------|------|--------|----------|
+| applyTask | (approveDict: Record&lt;string, any&gt;, workflowName: string, rowDataDict: Record&lt;string, any&gt;, modelName: string) | Promise&lt;void&gt; | 发起审批流程 |
+
+## 外部集成
+### modules.ExternalApiHandle
+外部API调用模块，提供统一的外部API访问接口。
+
+#### 基本用法
+```tsx title="外部API基本使用"
+import { app } from 'jit';
+
+const { callExternalApi } = await app.getElement('modules.ExternalApiHandle');
+
+// 使用外部API
+await callExternalApi(fullName, apiName, headers, params, body);
+```
+
+#### 可用方法
+| 方法名 | 参数 | 返回值 | 功能描述 |
+|--------|------|--------|----------|
+| callExternalApi | (fullName: string, apiName: string, headers: Record&lt;string, any&gt;, params: Record&lt;string, any&gt;, body: Record&lt;string, any&gt;) | Promise&lt;void&gt; | 调用外部API接口 |
+
+## 公共工具
+### modules.common
+公共工具模块，提供通用的工具函数和组件。
+
+#### 基本用法
+```tsx title="公共工具基本使用"
+import { app } from 'jit';
+
+const { downloadFile, FilePreviewer } = await app.getElement('modules.common');
+
+// 使用公共工具
+downloadFile(url);
+FilePreviewer({ file: { url: 'fileUrl', type: 'application/pdf' } });
+```
+
+#### 工具函数
+| 函数名 | 参数 | 返回值 | 功能描述 |
+|--------|------|--------|----------|
+| downloadFile | (url: string) | void | 下载指定URL的文件 |
+
+#### 可用组件
+| 组件名 | 参数 | 返回值 | 功能描述 |
+|--------|------|--------|----------|
+| FilePreviewer | (\{file: PreviewFile, fileList?: PreviewFile[], mode?: PLATFORM\}) | void | 文件预览功能（直接调用，不返回组件） |
+
+## 异常处理
+### modules.ExceptionHandler
+异常处理模块，提供统一的错误提示和控制台输出功能。
+
+#### 基本用法
+```tsx title="异常处理基本使用"
+import { app } from 'jit';
+
+const { promptError, promptWarn, promptInfo, consoleError } = await app.getElement('modules.ExceptionHandler');
+
+// 使用异常处理
+promptError('操作失败');
+promptWarn('警告信息');
+consoleError('错误信息');
+```
+
+#### 可用方法
+| 方法名 | 参数 | 返回值 | 功能描述 |
+|--------|------|--------|----------|
+| promptError | (message: string) | void | 显示错误提示 |
+| promptWarn | (message: string) | void | 显示警告提示 |
+| promptInfo | (message: string) | void | 显示信息提示 |
+| consoleError | (message: string, responseData?: Record&lt;string, any&gt;) | void | 控制台错误输出 |
+
+## 多线程支持
+### workers.WebWorker
+Web Worker支持模块，提供多线程计算能力的基础封装。
+
+#### 基本用法
+```tsx title="WebWorker基本使用"
+import { app } from 'jit';
+
+// 获取WebWorker配置
+const webWorkerConfig = await app.getElement('workers.WebWorker');
+
+// 使用原生Web Worker API
+const worker = new Worker('/workers/calculation.js');
+worker.postMessage(data);
+worker.terminate();
+```
+
+#### 原生API使用
+| API | 参数 | 返回值 | 功能描述 |
+|-----|------|--------|----------|
+| new Worker(scriptURL) | (scriptURL: string) | Worker | 创建Web Worker实例 |
+| worker.postMessage(data) | (data: any) | void | 向Worker发送消息 |
+| worker.onmessage | = (event: MessageEvent) =&gt; void | - | 监听Worker返回消息的事件处理器 |
+| worker.onerror | = (event: ErrorEvent) =&gt; void | - | 监听Worker错误的事件处理器 |
+| worker.terminate() | () | void | 终止Worker执行 |
+
+

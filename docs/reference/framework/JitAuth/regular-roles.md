@@ -1,0 +1,209 @@
+---
+slug: regular-roles
+---
+# 常规角色
+常规角色是基于RBAC模型的权限管理组件，提供角色定义、权限分配和成员绑定的完整解决方案。它负责用户权限控制、API访问授权和门户访问管理，支持角色继承、权限组合和分级授权机制，与组织架构深度集成实现企业级权限管控。
+
+常规角色元素分层结构为Meta（`roles.Meta`） → Type（`roles.NormalType`） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建常规角色实例元素。
+
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的roles.NormalType元素，以实现自己的封装。
+
+## 快速开始
+### 创建实例元素
+#### 目录结构
+```text title="推荐目录结构"
+roles/
+├── developer/              # 角色实例目录（路径可自定义）
+│   ├── e.json              # 元素定义文件（必需）
+│   └── developer.json      # 角色配置文件（必需）
+```
+
+#### e.json文件
+```json title="e.json配置示例"
+{
+  "backendBundleEntry": ".",
+  "frontBundleEntry": "./developer.json",
+  "title": "开发者",
+  "type": "roles.NormalType"
+}
+```
+
+#### 业务配置文件
+```json title="developer.json配置示例"
+{
+  "apiPerm": {
+    "services.UserService.createUser": "allow",
+    "services.ProjectService.*": "deny"
+  },
+  "apiPermSwitch": 1,
+  "shellPerm": {
+    "shells.Admin": "all",
+    "shells.Portal": "read"
+  }
+}
+```
+
+#### 调用示例
+```python title="获取角色信息"
+# 获取角色实例
+role = app.getElement("roles.developer")
+
+# 获取角色基本信息
+role_info = role.info
+print(f"角色名称: {role_info['roleTitle']}")
+print(f"角色ID: {role_info['roleName']}")
+
+# 获取权限配置
+api_perms = role_info.get('apiPerm', {})
+shell_perms = role_info.get('shellPerm', {})
+```
+
+## 元素配置
+### e.json配置
+| 配置项 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| title | string | 是 | 角色显示名称 |
+| type | string | 是 | 固定值：`roles.NormalType` |
+| backendBundleEntry | string | 是 | 后端入口，通常为 "." |
+| frontBundleEntry | string | 是 | 前端入口，指向配置文件 |
+
+### 业务配置文件配置
+| 配置项 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| apiPerm | object | 否 | API权限配置，键为API路径，值为权限类型 |
+| apiPermSwitch | number | 否 | API权限开关，0关闭/1开启 |
+| shellPerm | object | 否 | 门户权限配置，键为门户fullName，值为权限类型 |
+
+#### API权限配置说明
+```json title="API权限配置示例"
+{
+  "apiPerm": {
+    "services.UserService.createUser": "allow",      // 明确允许
+    "services.UserService.deleteUser": "deny",       // 明确拒绝
+    "services.ProjectService.*": "allow",             // 通配符匹配
+    "models.UserModel.save": "allow"                  // 模型方法权限
+  },
+  "apiPermSwitch": 1
+}
+```
+
+#### 门户权限配置说明
+```json title="门户权限配置示例"
+{
+  "shellPerm": {
+    "shells.Admin": "all",        // 完全访问
+    "shells.Portal": "read",      // 只读访问
+    "shells.Api": "none"          // 无权访问
+  }
+}
+```
+
+## 属性
+### info
+获取角色的完整信息，包含基本配置和权限数据。
+
+```python title="使用示例"
+role = app.getElement("roles.developer")
+role_data = role.info
+
+# 访问角色信息
+print(role_data['roleName'])    # 角色fullName
+print(role_data['roleTitle'])   # 角色显示名称
+print(role_data['apiPerm'])     # API权限配置
+print(role_data['shellPerm'])   # 门户权限配置
+```
+
+## 方法
+### getRoleData
+获取角色的完整配置数据，支持应用继承的数据合并。
+
+#### 返回值
+- **类型**：`dict`
+- **说明**：包含角色完整配置的字典
+
+#### 使用示例
+```python title="获取角色数据"
+role = app.getElement("roles.developer")
+data = role.getRoleData()
+
+# 检查角色权限
+def check_api_permission(api_path):
+    api_perms = data.get('apiPerm', {})
+    
+    # 精确匹配
+    if api_path in api_perms:
+        return api_perms[api_path] == 'allow'
+    
+    # 通配符匹配
+    for perm_path, permission in api_perms.items():
+        if perm_path.endswith('*'):
+            prefix = perm_path[:-1]
+            if api_path.startswith(prefix):
+                return permission == 'allow'
+    
+    return False
+
+# 使用示例
+has_permission = check_api_permission("services.UserService.createUser")
+```
+
+## 高级特性
+### 角色继承
+常规角色支持应用级继承，子应用可以继承父应用的角色配置并进行覆盖或扩展。
+
+```json title="子应用角色配置"
+{
+  "apiPerm": {
+    "services.NewService.*": "allow"
+  },
+  "apiPermSwitch": 1,
+  "shellPerm": {
+    "shells.NewPortal": "all"
+  }
+}
+```
+
+### 权限检查集成
+在业务代码中集成权限检查逻辑：
+
+```python title="权限检查实现"
+def check_user_role_permission(user_id, api_path):
+    # 获取用户的角色列表
+    member_model = app.getElement("roles.models.AppRoleMemberModel")
+    user_roles = member_model.query(
+        filter=f"Q(authId='{user_id}')",
+        fieldList=['roleName']
+    )
+    
+    # 检查每个角色的权限
+    for role_data in user_roles['rowDatas']:
+        role = app.getElement(role_data['roleName'])
+        role_info = role.info
+        
+        api_perms = role_info.get('apiPerm', {})
+        if api_perms.get(api_path) == 'allow':
+            return True
+    
+    return False
+```
+
+### 动态权限管理
+通过修改角色配置文件实现动态权限调整：
+
+```python title="动态权限更新"
+import json
+
+def update_role_permissions(role_name, new_permissions):
+    # 获取角色节点
+    role_element = app.getElement(role_name)
+    config_file = f"{role_element._nodes[0].name}.json"
+    
+    # 读取当前配置
+    current_config = json.loads(role_element._nodes[0].getFile(config_file))
+    
+    # 更新权限
+    current_config['apiPerm'].update(new_permissions)
+    
+    # 保存配置（实际项目中需要通过管理接口）
+    print(f"新的权限配置: {current_config}")
+``` 

@@ -1,0 +1,317 @@
+---
+slug: mobile-login
+---
+# 手机号登录
+手机号登录是基于手机号码和短信验证码的认证方式，通过短信验证码验证实现用户身份认证。它负责验证码发送、验证码校验和用户登录，支持用户注册、手机号绑定/解绑、验证码有效期管理等安全功能。
+
+手机号登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.PhoneType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建手机号登录实例元素。
+
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的auths.loginTypes.PhoneType元素，以实现自己的封装。
+
+## 快速开始
+### 创建实例元素
+#### 目录结构
+```text title="推荐目录结构"
+auths/loginTypes/
+├── myPhoneLogin/
+│   ├── e.json
+│   └── phoneConfig.json
+```
+
+#### e.json文件
+```json title="e.json配置示例"
+{
+  "type": "auths.loginTypes.PhoneType",
+  "title": "手机号登录",
+  "backendBundleEntry": ".",
+  "frontBundleEntry": "./phoneConfig.json",
+  "variables": [],
+  "appId": "your.app.id",
+  "extendType": "self"
+}
+```
+
+#### 业务配置文件
+```json title="phoneConfig.json配置示例"
+{
+  "allowRegister": 1,
+  "smsFullName": "SMS.aliyunSms",
+  "smsConfig": {
+    "verifyTemplateCode": "SMS_123456789"
+  }
+}
+```
+
+#### 调用示例
+```python title="基本使用示例"
+# 获取手机号登录元素
+phone_auth = app.getElement("auths.loginTypes.myPhoneLogin")
+
+# 发送验证码
+phone_auth.sendMessage("13800138000")
+
+# 验证登录
+result = phone_auth.getLoginCode("13800138000", "123456")
+print(result)  # {"loginCode": "xxx", "corpList": [...], "userId": "xxx"}
+```
+
+## 元素配置
+### e.json配置
+| 配置项 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| title | string | 是 | 元素显示名称 |
+| type | string | 是 | 固定值：auths.loginTypes.PhoneType |
+
+### 业务配置文件配置
+配置文件名格式为`{实例名称}.json`，包含手机号登录的业务配置：
+
+| 配置项 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| allowRegister | number | 否 | 是否允许注册，0:不允许，1:允许，默认1 |
+| smsFullName | string | 是 | 短信服务元素的fullName |
+| smsConfig | object | 否 | 短信模板配置，包含verifyTemplateCode和verifySign |
+
+## 方法
+### sendMessage
+发送短信验证码到指定手机号。
+
+#### 参数详解
+| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+|--------|------|-------------|------|------|
+| phone | Stext | str | 是 | 手机号码，支持中国大陆手机号格式 |
+
+#### 返回值
+```python
+{
+    "code": 200,
+    "message": "success"
+}
+```
+
+#### 使用示例
+```python title="发送验证码示例"
+phone_auth = app.getElement("auths.loginTypes.myPhoneLogin")
+
+# 发送验证码
+try:
+    result = phone_auth.sendMessage("13800138000")
+    print("验证码发送成功")
+except Exception as e:
+    print(f"发送失败: {e}")
+```
+
+### getLoginCode
+通过手机号和验证码验证登录，获取登录码。
+
+#### 参数详解
+| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+|--------|------|-------------|------|------|
+| phone | Stext | str | 是 | 手机号码 |
+| code | Stext | str | 是 | 短信验证码 |
+
+#### 返回值
+```python
+{
+    "loginCode": "登录码",
+    "corpList": [{"corpId": "企业ID", "corpName": "企业名称"}],
+    "userId": "用户ID"
+}
+```
+
+#### 使用示例
+```python title="验证登录示例"
+phone_auth = app.getElement("auths.loginTypes.myPhoneLogin")
+
+try:
+    result = phone_auth.getLoginCode("13800138000", "123456")
+    login_code = result["loginCode"]
+    user_id = result["userId"]
+    print(f"登录成功，用户ID: {user_id}")
+except Exception as e:
+    print(f"登录失败: {e}")
+```
+
+### register
+注册新用户。
+
+#### 参数详解
+| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+|--------|------|-------------|------|------|
+| phone | Stext | str | 是 | 手机号码 |
+| code | Stext | str | 是 | 短信验证码 |
+| nick | Stext | str | 是 | 用户昵称 |
+
+#### 返回值
+返回创建的用户对象。
+
+#### 使用示例
+```python title="用户注册示例"
+phone_auth = app.getElement("auths.loginTypes.myPhoneLogin")
+
+try:
+    user = phone_auth.register("13800138000", "123456", "新用户")
+    print(f"注册成功，用户ID: {user.userId.value}")
+except Exception as e:
+    print(f"注册失败: {e}")
+```
+
+### bind
+为当前用户绑定手机号认证。
+
+#### 参数详解
+| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+|--------|------|-------------|------|------|
+| userId | Stext | str | 是 | 用户ID |
+| phone | Stext | str | 是 | 手机号码 |
+| code | Stext | str | 是 | 短信验证码 |
+
+#### 返回值
+成功返回SUCCESS_RETURN。
+
+#### 使用示例
+```python title="绑定手机号示例"
+phone_auth = app.getElement("auths.loginTypes.myPhoneLogin")
+
+try:
+    phone_auth.bind("user123", "13800138000", "123456")
+    print("手机号绑定成功")
+except Exception as e:
+    print(f"绑定失败: {e}")
+```
+
+### unbind
+解绑用户的手机号认证。
+
+#### 参数详解
+| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+|--------|------|-------------|------|------|
+| userId | Stext | str | 是 | 用户ID |
+| code | Stext | str | 是 | 手机号对应的短信验证码 |
+
+#### 返回值
+成功返回SUCCESS_RETURN。
+
+#### 使用示例
+```python title="解绑手机号示例"
+phone_auth = app.getElement("auths.loginTypes.myPhoneLogin")
+
+try:
+    phone_auth.unbind("user123", "123456")
+    print("手机号解绑成功")
+except Exception as e:
+    print(f"解绑失败: {e}")
+```
+
+### checkMyMessage
+校验当前用户的验证码，返回修改密码凭证。
+
+#### 参数详解
+| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+|--------|------|-------------|------|------|
+| code | Stext | str | 是 | 当前用户手机号的验证码 |
+
+#### 返回值
+```python
+{
+    "ticket": "有效期5分钟的凭证"
+}
+```
+
+#### 使用示例
+```python title="验证当前用户验证码示例"
+phone_auth = app.getElement("auths.loginTypes.myPhoneLogin")
+
+try:
+    result = phone_auth.checkMyMessage("123456")
+    ticket = result["ticket"]
+    print(f"验证成功，票据: {ticket}")
+except Exception as e:
+    print(f"验证失败: {e}")
+```
+
+### updatePhone
+更新用户手机号。
+
+#### 参数详解
+| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+|--------|------|-------------|------|------|
+| userId | Stext | str | 是 | 用户ID |
+| ticket | Stext | str | 是 | checkMyMessage返回的票据 |
+| newPhone | Stext | str | 是 | 新手机号 |
+| newCode | Stext | str | 是 | 新手机号的验证码 |
+
+#### 返回值
+成功返回SUCCESS_RETURN。
+
+#### 使用示例
+```python title="更新手机号示例"
+phone_auth = app.getElement("auths.loginTypes.myPhoneLogin")
+
+try:
+    # 先获取票据
+    ticket_result = phone_auth.checkMyMessage("123456")
+    ticket = ticket_result["ticket"]
+    
+    # 更新手机号
+    phone_auth.updatePhone("user123", ticket, "13900139000", "654321")
+    print("手机号更新成功")
+except Exception as e:
+    print(f"更新失败: {e}")
+```
+
+## 属性
+### allowRegister
+是否允许新用户注册。
+
+**类型**: bool  
+**说明**: 从配置文件中读取，控制是否允许通过手机号注册新用户
+
+### authConfig
+认证配置信息。
+
+**类型**: dict  
+**说明**: 包含短信服务的配置信息，如accessKey、accessSecret等
+
+## 高级特性
+### 短信服务集成
+手机号登录支持集成第三方短信服务，通过配置smsFullName指定短信服务元素。配置完成后，验证码发送将自动使用指定的短信服务，支持阿里云、腾讯云等主流短信平台。
+
+#### 使用示例
+```python title="自定义短信服务示例"
+# 创建短信服务元素
+sms_service = app.getElement("SMS.aliyunSms")
+
+# 配置手机号登录使用该短信服务
+phone_auth = app.getElement("auths.loginTypes.myPhoneLogin")
+phone_auth.sendMessage("13800138000")  # 自动使用配置的短信服务
+```
+
+### 验证码安全机制
+系统内置多重安全机制确保验证码使用安全。
+
+#### 频率限制配置
+- 单个手机号45秒内只能发送一次验证码
+- 验证码有效期为5分钟
+- 验证码验证成功后自动删除
+
+#### 安全特性示例
+```python title="验证码安全机制示例"
+phone_auth = app.getElement("auths.loginTypes.myPhoneLogin")
+
+# 发送验证码
+phone_auth.sendMessage("13800138000")
+
+# 短时间内重复发送会抛出异常
+try:
+    phone_auth.sendMessage("13800138000")  # 45秒内重复发送
+except Exception as e:
+    print("发送频率过快，请稍后再试")
+
+# 验证码过期检查
+import time
+time.sleep(300)  # 等待5分钟
+try:
+    phone_auth.getLoginCode("13800138000", "123456")  # 过期验证码
+except Exception as e:
+    print("验证码已过期")
+``` 

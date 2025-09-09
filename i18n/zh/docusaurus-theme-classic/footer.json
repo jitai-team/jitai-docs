@@ -1,0 +1,46 @@
+{
+  "link.title.产品": {
+    "message": "产品",
+    "description": "The title of the footer links column with title=产品 in the footer"
+  },
+  "link.title.帮助文档": {
+    "message": "帮助文档", 
+    "description": "The title of the footer links column with title=帮助文档 in the footer"
+  },
+  "link.title.更多": {
+    "message": "更多",
+    "description": "The title of the footer links column with title=更多 in the footer"
+  },
+  "link.item.label.官网首页": {
+    "message": "官网首页",
+    "description": "The label of footer link with label=官网首页 linking to /"
+  },
+  "link.item.label.入门教程": {
+    "message": "入门教程",
+    "description": "The label of footer link with label=入门教程 linking to /docs/tutorial/"
+  },
+  "link.item.label.应用开发指南": {
+    "message": "应用开发指南",
+    "description": "The label of footer link with label=应用开发指南 linking to /docs/devguide/"
+  },
+  "link.item.label.框架扩展指南": {
+    "message": "框架扩展指南", 
+    "description": "The label of footer link with label=框架扩展指南 linking to /docs/extguide/"
+  },
+  "link.item.label.参考手册": {
+    "message": "参考手册",
+    "description": "The label of footer link with label=参考手册 linking to /docs/reference/"
+  },
+  "link.item.label.社区论坛": {
+    "message": "社区论坛",
+    "description": "The label of footer link with label=社区论坛 linking to https://forum.jit.pro/"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/jitai-team"
+  },
+  "copyright": {
+    "message": "Copyright © 2024 Jit, Inc. Built with 万云 Co., Ltd.",
+    "description": "The footer copyright"
+  }
+}

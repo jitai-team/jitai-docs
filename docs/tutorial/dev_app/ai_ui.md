@@ -8,15 +8,15 @@ title: 用AI Agent实现AI/UI协同阅卷
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
-<VideoPlayer relatePath="/docs/tutorial/ai_ui_effect.mp4" />
+<VideoPlayer relatePath="../../../tutorial/ai_ui_effect.mp4" />
 
 ## 实现过程
 
 ### 前提
 
-1. 同[用专业模式搭建题库管理](./ide_mode.md)创建模型： 答卷表、答卷明细表。
-2. 同[用专业模式搭建题库管理](./ide_mode.md)创建页面： 答卷页面。
-3. 已经按照[用AI大模型函数实现生成答案](./ai_func.md) 创建了大模型厂商元素。
+1. 同[用专业模式搭建题库管理](./ide_mode)创建模型： 答卷表、答卷明细表。
+2. 同[用专业模式搭建题库管理](./ide_mode)创建页面： 答卷页面。
+3. 已经按照[用AI大模型函数实现生成答案](./ai_func) 创建了大模型厂商元素。
 
 
 ### 创建AIAgent
@@ -29,9 +29,9 @@ JitAi的Agent实现与应用系统原生融合、高度集成，除了支持调�
 
 本案例中，创建AIAgent及其配置操作如下: (其中就通过 页面的 `getVarableValue` 函数读取了当前答卷的详情；然后通过答卷明细中关联的题目，直接获取该题目的标准答案作为评分参考。)
 
-<VideoPlayer relatePath="/docs/tutorial/ai_ui_agent.mp4" />
+<VideoPlayer relatePath="../../../tutorial/ai_ui_agent.mp4" />
 
-阅读[AIAgent](/docs/devguide/AIAgent)了解更多。
+阅读[AIAgent](../../devguide/ai-agent)了解更多。
 
 ### 创建AI助理
 
@@ -40,9 +40,9 @@ AI Agent 相当于公司中的员工，负责完成相对明确和具体的事�
 JitAi的AI助理，还提供对话框，可以直接与用户进行交互。
 
 本案例中，创建AI助理及其配置操作如下: 
-<VideoPlayer relatePath="/docs/tutorial/ai_ui_assi.mp4" />
+<VideoPlayer relatePath="../../../tutorial/ai_ui_assi.mp4" />
 
-阅读[AI助理](/docs/devguide/AI助理)了解更多。
+阅读[AI助理](../../devguide/ai-assistant)了解更多。
 
 ### 页面中配置事件与AI助理联动
 
@@ -54,7 +54,7 @@ JitAi的AI助理，还提供对话框，可以直接与用户进行交互。
    
 操作步骤也很简单，配置页面事件如下：
 
-<VideoPlayer relatePath="/docs/tutorial/ai_ui_page.mp4" />
+<VideoPlayer relatePath="../../../tutorial/ai_ui_page.mp4" />
 
 :::warning
 必须先开启AI助理，才能看到`发送AI消息`函数。

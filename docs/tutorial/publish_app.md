@@ -10,7 +10,7 @@ JitAi 支持多种应用分发方式，包括：桌面版、服务器版、云�
 
 ## 发布应用
 
-发布前，推荐将生产环境与开发环境不同的配置设置为环境变量。例如本项目中[用大模型函数实现生成题目答案](/docs/tutorial/dev_app/ai_func)的大模型密钥，就需要配置为环境变量。
+发布前，推荐将生产环境与开发环境不同的配置设置为环境变量。例如本项目中[用大模型函数实现生成题目答案](./dev_app/ai_func)的大模型密钥，就需要配置为环境变量。
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
@@ -22,7 +22,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 ## 在生产环境上部署JIT
 
-参考 [下载安装](./download.md) 在服务器上安装docker版本。
+参考 [下载安装](./download-installation) 在服务器上安装docker版本。
 
 ## 部署应用
 
@@ -34,4 +34,4 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/publish_app_produce.mp4" />
 
-阅读[应用创建与管理](/docs/devguide/应用开发基础/应用创建与管理)了解更多。
+阅读[应用创建与管理](../devguide/application-development-basics/application-creation-and-management)了解更多。

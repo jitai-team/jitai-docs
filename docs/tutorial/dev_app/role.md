@@ -33,7 +33,7 @@ JIT应用框架中，已经内置了「开发者」、「管理者」2种角色�
 
 本应用中，我们创建「老师」部门、「学生」部门。
 
-阅读[组织架构](/docs/devguide/用户与权限/组织架构)了解更多。
+阅读[组织架构](../../devguide/user-and-permission/organizational-structure)了解更多。
 
 ### 在「管理者门户」中配置每个角色包含哪些成员
 
@@ -41,4 +41,4 @@ JIT应用框架中，已经内置了「开发者」、「管理者」2种角色�
 
 ![](../img/role_160224.png)
 
-阅读[角色权限](/docs/devguide/用户与权限/角色权限)了解更多。
+阅读[角色权限](../../devguide/user-and-permission/role-permissions)了解更多。

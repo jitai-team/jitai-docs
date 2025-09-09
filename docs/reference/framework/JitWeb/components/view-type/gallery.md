@@ -1,0 +1,483 @@
+---
+slug: gallery
+---
+# 画廊
+画廊是一个卡片视图组件，用于以网格布局展示数据列表。它基于模型数据自动渲染卡片式界面，支持字段显示配置、图片展示、操作按钮和交互事件，适用于商品展示、人员信息、图库浏览等场景。
+
+画廊元素分层结构为Meta（components.Meta） → Type（components.Gallery） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建Gallery实例元素。
+
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.GalleryType元素，以实现自己的封装。
+
+## 快速开始
+### 基础配置示例
+```json title="画廊基础配置"
+{
+  "name": "Gallery1",
+  "title": "产品画廊",
+  "type": "components.Gallery",
+  "config": {
+    "requireElements": [
+      {
+        "title": "产品模型",
+        "type": "models.Meta",
+        "name": "models.ProductModel",
+        "filter": "",
+        "orderBy": ""
+      }
+    ],
+    "showFieldList": ["name", "price", "description"],
+    "isShowFieldName": true,
+    "abstractField": ["name"],
+    "image": {
+      "fieldId": "productImage",
+      "position": "top",
+      "showType": "full"
+    },
+    "pageSize": 20,
+    "fieldDirection": "vertical",
+    "cardWidth": {
+      "type": "auto"
+    }
+  },
+  "eventList": [
+    {
+      "title": "卡片点击后",
+      "name": "clickCard",
+      "data": "activeRow"
+    }
+  ]
+}
+```
+
+### 配置属性说明
+| 属性名 | 类型 | 必填 | 默认值 | 说明 |
+|--------|------|------|--------|------|
+| requireElements | Array | 是 | - | 数据源配置，指定关联的模型元素 |
+| showFieldList | Array | 否 | [] | 要显示的字段列表，为空时显示所有字段 |
+| isShowFieldName | Boolean | 否 | true | 是否显示字段名称 |
+| abstractField | Array | 否 | [] | 摘要字段，显示为卡片标题 |
+| toolLeftBtnList | Array | 否 | [] | 工具栏左侧按钮配置 |
+| toolRightBtnList | Array | 否 | [] | 工具栏右侧按钮配置 |
+| cardBottomBtnList | Array | 否 | [] | 卡片底部按钮配置 |
+| cardRightBtnList | Array | 否 | [] | 卡片右侧按钮配置 |
+| image | Object | 否 | \{\} | 图片显示配置 |
+| image.fieldId | String | 否 | "" | 图片字段ID |
+| image.position | String | 否 | "top" | 图片位置：top/left/right/bottom |
+| image.showType | String | 否 | "full" | 显示类型：full/thumbnail |
+| pageSize | Number | 否 | 20 | 每页显示数量 |
+| defaultRender | Boolean | 否 | true | 是否使用默认渲染 |
+| fieldDirection | String | 否 | "vertical" | 字段排列方向：vertical/horizontal |
+| cardWidth | Object | 否 | \{type: "auto"\} | 卡片宽度配置 |
+| fieldAliasList | Array | 否 | [] | 字段别名配置 |
+| fieldTitle | Array | 否 | [] | 字段标题配置 |
+
+## 变量
+### displayRowList
+当前显示的数据行列表，类型为RowList。
+
+```typescript title="获取显示数据"
+// 获取当前显示的所有数据
+const rows = gallery.displayRowList;
+
+// 遍历数据行
+rows.forEach(row => {
+  console.log(row.name, row.price);
+});
+```
+
+### activeRow
+当前激活的数据行，类型为RowData。
+
+```typescript title="获取当前行数据"
+// 获取当前选中的数据行
+const currentRow = gallery.activeRow;
+if (currentRow) {
+  console.log('当前选中:', currentRow.name);
+}
+```
+
+### filter
+筛选条件变量，类型为QFilter。
+
+```typescript title="获取筛选条件"
+// 获取当前筛选条件
+const currentFilter = gallery.filter;
+console.log('当前筛选:', currentFilter.value);
+```
+
+## 方法
+### call
+刷新组件数据，重新加载数据源。
+
+#### 参数详解
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| qFilter | QFilter | 否 | 查询过滤条件 |
+
+#### 返回值
+Promise\<void\>
+
+#### 使用示例
+```typescript title="刷新数据"
+// 无条件刷新
+await gallery.call();
+
+// 带过滤条件刷新
+const filter = new Jit.datatypes.QFilter();
+filter.value = "Q(status='active')";
+await gallery.call(filter);
+```
+
+### getElement
+获取指定名称的子元素。
+
+#### 参数详解
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| name | String | 是 | 子元素名称 |
+
+#### 返回值
+BaseComponent | undefined
+
+#### 使用示例
+```typescript title="获取子元素"
+const childElement = gallery.getElement('childComponentName');
+if (childElement) {
+  // 操作子元素
+  childElement.visible = false;
+}
+```
+
+### subscribeEvent
+订阅事件处理器。
+
+#### 参数详解
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| name | String | 是 | 事件名称 |
+| callback | Function | 是 | 事件处理函数 |
+| unSubscribeExist | Boolean | 否 | 是否取消订阅已存在的同名事件，默认true |
+
+#### 返回值
+String - 事件处理器ID
+
+#### 使用示例
+```typescript title="订阅事件"
+const handlerId = gallery.subscribeEvent('clickCard', (args) => {
+  console.log('卡片被点击:', args.data);
+});
+
+// 不取消已存在的订阅
+const handlerId2 = gallery.subscribeEvent('clickCard', callback, false);
+```
+
+### unSubscribeEvent
+取消订阅事件。
+
+#### 参数详解
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| id | String | 是 | 事件处理器ID |
+
+#### 返回值
+Boolean
+
+#### 使用示例
+```typescript title="取消订阅"
+const success = gallery.unSubscribeEvent(handlerId);
+```
+
+### newVariable
+创建新的数据类型变量。
+
+#### 参数详解
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| varConfig | DataTypeConfig | 是 | 变量配置对象 |
+
+#### 返回值
+DataType实例
+
+#### 使用示例
+```typescript title="创建变量"
+const textVar = gallery.newVariable({
+  dataType: 'Stext',
+  name: 'description',
+  title: '描述',
+  value: '默认描述'
+});
+```
+
+### destroy
+销毁组件，释放资源。
+
+#### 使用示例
+```typescript title="销毁组件"
+gallery.destroy();
+```
+
+### runCode
+执行代码字符串。
+
+#### 参数详解
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| code | String | 是 | 要执行的代码 |
+
+#### 返回值
+Any
+
+#### 使用示例
+```typescript title="执行代码"
+const result = gallery.runCode('this.visible = false; return "executed";');
+```
+
+### publishEvent
+发送事件消息，触发订阅该事件的处理器。
+
+#### 参数详解
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| name | String | 是 | 事件名称 |
+| ex | Object | 否 | 附加数据 |
+
+#### 返回值
+Promise\<void\>
+
+#### 使用示例
+```typescript title="发送事件"
+// 发送简单事件
+await gallery.publishEvent('refresh');
+
+// 发送带数据的事件
+await gallery.publishEvent('dataChange', { 
+  type: 'update', 
+  data: { id: 1, name: 'test' } 
+});
+```
+
+### setConfig
+设置组件配置。
+
+#### 参数详解
+| 参数名 | 类型 | 必填 | 说明 |
+|--------|------|------|------|
+| next | Object | 是 | 新的配置对象 |
+| clean | Boolean | 否 | 是否完全替换配置，默认false（合并模式） |
+
+#### 使用示例
+```typescript title="设置配置"
+// 合并配置
+gallery.setConfig({ pageSize: 30 });
+
+// 完全替换配置
+gallery.setConfig(newConfig, true);
+```
+
+### getPermConfig
+获取当前组件的权限配置。
+
+#### 返回值
+Object | undefined
+
+#### 使用示例
+```typescript title="获取权限配置"
+const permConfig = gallery.getPermConfig();
+if (permConfig) {
+  console.log('权限配置:', permConfig);
+}
+```
+
+## 属性
+### name
+组件名称，类型为String，只读。
+
+```typescript title="获取组件名称"
+console.log(gallery.name); // "Gallery1"
+```
+
+### title
+组件标题，类型为String，只读。
+
+```typescript title="获取组件标题"
+console.log(gallery.title); // "产品画廊"
+```
+
+### visible
+组件可见性，类型为Boolean，可读写。
+
+```typescript title="控制显示隐藏"
+// 隐藏组件
+gallery.visible = false;
+
+// 显示组件
+gallery.visible = true;
+```
+
+### app
+应用实例引用，类型为App，只读。
+
+```typescript title="获取应用实例"
+const appInstance = gallery.app;
+```
+
+### page
+页面实例引用，类型为Page，只读。
+
+```typescript title="获取页面实例"
+const pageInstance = gallery.page;
+```
+
+### config
+组件配置对象，包含所有配置项，类型为Object，只读。
+
+```typescript title="获取配置信息"
+const pageSize = gallery.config.pageSize;
+const showFields = gallery.config.showFieldList;
+```
+
+### fullName
+组件全名，类型为String，只读。
+
+```typescript title="获取组件全名"
+console.log(gallery.fullName); // "components.Gallery"
+```
+
+### showTitle
+是否显示标题，类型为Boolean，可读写。
+
+```typescript title="控制标题显示"
+// 显示标题
+gallery.showTitle = true;
+
+// 隐藏标题
+gallery.showTitle = false;
+```
+
+### type
+组件类型，类型为String，只读。
+
+```typescript title="获取组件类型"
+console.log(gallery.type); // "components.Gallery"
+```
+
+### loading
+加载状态变量，类型为Numeric。
+
+```typescript title="获取加载状态"
+// 检查是否正在加载
+const isLoading = gallery.loading.value === 1;
+
+// 设置加载状态
+gallery.loading.value = 1; // 开始加载
+gallery.loading.value = 0; // 加载完成
+```
+
+### pageNumber
+当前页码，类型为Number，可读写。
+
+```typescript title="页码操作"
+// 获取当前页码
+console.log(gallery.pageNumber); // 1
+
+// 设置页码
+gallery.pageNumber = 2;
+```
+
+### pageSize
+每页显示数量，类型为Number，可读写。
+
+```typescript title="页面大小操作"
+// 获取页面大小
+console.log(gallery.pageSize); // 20
+
+// 修改页面大小
+gallery.pageSize = 30;
+```
+
+### total
+数据总数量，类型为Number，只读。
+
+```typescript title="获取总数"
+console.log(`共${gallery.total}条数据`);
+```
+
+## 事件
+### clickCard
+卡片点击事件，当用户点击画廊中的卡片时触发。
+
+#### 事件参数
+| 参数名 | 类型 | 说明 |
+|--------|------|------|
+| data | RowData | 被点击卡片对应的数据行 |
+
+#### 使用示例
+```typescript title="处理卡片点击"
+gallery.subscribeEvent('clickCard', (args) => {
+  const clickedRow = args.data;
+  console.log('点击了卡片:', clickedRow.name);
+  
+  // 可以进行页面跳转、弹窗显示等操作
+  app.goToPage('ProductDetail', { id: clickedRow.id });
+});
+```
+
+#### 配置示例
+```json title="事件配置"
+{
+  "eventList": [
+    {
+      "title": "卡片点击后",
+      "name": "clickCard",
+      "data": "activeRow"
+    }
+  ]
+}
+```
+
+### 动态按钮事件
+Gallery组件会根据配置的按钮自动生成对应的点击事件。
+
+#### 工具栏按钮事件
+当配置了`toolLeftBtnList`或`toolRightBtnList`时，会自动生成对应的点击事件。
+
+```typescript title="工具栏按钮事件"
+// 配置工具栏按钮时
+{
+  "config": {
+    "toolRightBtnList": [
+      { "id": "addBtn", "name": "新增" }
+    ]
+  }
+}
+
+// 会自动生成事件：clickAddBtn
+gallery.subscribeEvent('clickAddBtn', () => {
+  console.log('新增按钮被点击');
+});
+```
+
+#### 卡片按钮事件
+当配置了`cardBottomBtnList`或`cardRightBtnList`时，会自动生成对应的点击事件。
+
+```typescript title="卡片按钮事件"
+// 配置卡片按钮时
+{
+  "config": {
+    "cardBottomBtnList": [
+      { "id": "editBtn", "name": "编辑" }
+    ]
+  }
+}
+
+// 会自动生成事件：clickEditBtn
+gallery.subscribeEvent('clickEditBtn', (args) => {
+  console.log('编辑按钮被点击，当前行数据:', args.data);
+});
+```
+
+#### 事件命名规则
+按钮事件名称采用驼峰命名规则：`click + 按钮ID（驼峰格式）`
+
+- 按钮ID为`addBtn` → 事件名为`clickAddBtn`
+- 按钮ID为`delete_item` → 事件名为`clickDeleteItem` 

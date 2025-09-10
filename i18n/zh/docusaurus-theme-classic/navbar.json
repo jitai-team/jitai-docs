@@ -1,0 +1,30 @@
+{
+  "title": {
+    "message": "JitAi",
+    "description": "The title in the navbar"
+  },
+  "item.label.入门教程": {
+    "message": "入门教程",
+    "description": "Navbar item with label 入门教程"
+  },
+  "item.label.应用开发指南": {
+    "message": "应用开发指南", 
+    "description": "Navbar item with label 应用开发指南"
+  },
+  "item.label.框架扩展指南": {
+    "message": "框架扩展指南",
+    "description": "Navbar item with label 框架扩展指南"
+  },
+  "item.label.参考手册": {
+    "message": "参考手册",
+    "description": "Navbar item with label 参考手册"
+  },
+  "item.label.开源": {
+    "message": "开源",
+    "description": "Navbar item with label 开源"
+  },
+  "item.label.社区论坛": {
+    "message": "社区论坛",
+    "description": "Navbar item with label 社区论坛"
+  }
+}

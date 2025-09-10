@@ -36,16 +36,28 @@ const config: Config = {
   organizationName: 'jitai-team', // Usually your GitHub org/user name.
   projectName: 'jitai-docs', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',  // 断开的Markdown链接也应该导致构建失败
-  onBrokenAnchors: 'throw',        // 断开的锚点导致构建失败
+  onBrokenLinks: 'throw',              // 暂时设置为警告，待文档结构调整完成后改为throw
+  onBrokenMarkdownLinks: 'throw',   // 断开的Markdown链接设置为警告
+  onBrokenAnchors: 'throw',         // 断开的锚点设置为警告
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'zh-Hans',
-    locales: ['zh-Hans'],
+    defaultLocale: 'en',
+    locales: ['en', 'zh'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+      },
+      'zh': {
+        label: '简体中文',
+        direction: 'ltr',
+        htmlLang: 'zh-Hans',
+      },
+    },
   },
   noIndex: false, // 等文档完善后，再放开
 
@@ -149,6 +161,10 @@ const config: Config = {
         //   label: 'GitHub',
         //   position: 'right',
         // },
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        },
       ],
     },
     footer: {

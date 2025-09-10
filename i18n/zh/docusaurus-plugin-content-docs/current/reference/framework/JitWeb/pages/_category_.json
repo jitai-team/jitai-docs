@@ -1,0 +1,9 @@
+{
+  "position": 4,
+  "label": "页面",
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "页面"
+  }
+} 

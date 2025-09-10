@@ -1,0 +1,299 @@
+---
+slug: calendar
+---
+# 日历
+日历是一个用于展示和管理时间相关数据的视图组件，基于Ant Design Calendar实现日程安排、事件管理和时间规划功能。它负责数据源绑定、日程创建编辑和交互事件处理，支持拖拽操作、自定义渲染和多种视图模式。
+
+日历元素分层结构为Meta（components.Meta） → Type（components.Calendar） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建日历实例元素。
+
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.CalendarType元素，以实现自己的封装。
+
+## 快速开始 
+### 基础配置示例
+```typescript title="基础日历配置"
+{
+  "name": "calendar1",
+  "title": "项目日历",
+  "fullName": "components.Calendar",
+  "config": {
+    "requireElements": [
+      {
+        "title": "项目数据模型",
+        "type": "models.Meta",
+        "name": "models.ProjectModel",
+        "filter": "",
+        "orderBy": ""
+      }
+    ],
+    "startTime": ["startDate"],
+    "endTime": ["endDate"],
+    "title": ["projectName"],
+    "scheduleType": ["status"],
+    "createSchedule": true,
+    "dragSchedule": true,
+    "defaultRender": true
+  }
+}
+```
+
+### 配置属性说明
+| 属性名 | 类型 | 默认值 | 说明 | 示例 |
+|--------|------|--------|------|------|
+| requireElements | Array | [] | 关联数据模型配置 | 见上方示例 |
+| startTime | Array | [] | 开始时间字段映射 | ["startDate"] |
+| endTime | Array | [] | 结束时间字段映射 | ["endDate"] |
+| title | Array | [] | 标题字段映射 | ["projectName"] |
+| scheduleType | Array | [] | 日程类型字段映射 | ["status"] |
+| toolbarBtn | Array | [] | 工具栏按钮配置 | [] |
+| columnBtn | Array | [] | 列按钮配置 | [] |
+| createSchedule | Boolean | true | 是否允许创建日程 | true |
+| dragSchedule | Boolean | true | 是否允许拖拽日程 | true |
+| defaultRender | Boolean | true | 是否使用默认渲染 | true |
+
+## 变量
+### activeRow
+当前选中的行数据，包含用户点击或操作的日程信息。
+
+```typescript title="activeRow使用示例"
+// 获取当前选中行的数据
+const currentRow = calendar1.activeRow;
+console.log(currentRow.getValue());
+
+// 监听行数据变化
+calendar1.activeRow.subscribeEvent('change', (data) => {
+  console.log('选中行数据变化：', data);
+});
+```
+
+## 方法 
+### call
+刷新日历数据，重新从数据源加载并更新显示。
+
+#### 使用示例
+```typescript title="刷新日历数据"
+// 刷新日历
+await calendar1.call();
+
+// 在事件处理中使用
+async function handleDataUpdate() {
+  await calendar1.call();
+  console.log('日历数据已刷新');
+}
+```
+
+### publishEvent
+发送组件事件，用于组件间通信。
+
+#### 参数详解
+| 参数名 | 类型 | 必填 | 说明 | 示例 |
+|--------|------|------|------|------|
+| name | String | 是 | 事件名称 | "clickRow" |
+| ex | Object | 否 | 附加数据 | \{customData: "value"\} |
+
+#### 返回值
+Promise\<void\> - 异步操作完成
+
+#### 使用示例
+```typescript title="发送组件事件"
+// 发送自定义事件
+await calendar1.publishEvent('customEvent', {
+  message: '自定义数据',
+  timestamp: new Date()
+});
+```
+
+### subscribeEvent
+订阅组件事件，监听特定事件的触发。
+
+#### 参数详解
+| 参数名 | 类型 | 必填 | 说明 | 示例 |
+|--------|------|------|------|------|
+| name | String | 是 | 事件名称 | "clickRow" |
+| evtCb | Function | 是 | 回调函数 | (data) => \{...\} |
+| unSubscribeExist | Boolean | 否 | 是否取消已存在订阅 | true |
+
+#### 返回值
+String - 事件处理器ID
+
+#### 使用示例
+```typescript title="订阅组件事件"
+// 订阅行点击事件
+const handlerId = calendar1.subscribeEvent('clickRow', (data) => {
+  console.log('用户点击了行：', data);
+});
+
+// 订阅日程创建事件
+calendar1.subscribeEvent('afterCreateSchedule', async (data) => {
+  console.log('新建日程：', data);
+  // 执行后续处理逻辑
+});
+```
+
+### unSubscribeEvent
+取消事件订阅。
+
+#### 参数详解
+| 参数名 | 类型 | 必填 | 说明 | 示例 |
+|--------|------|------|------|------|
+| id | String | 是 | 事件处理器ID | "handler123" |
+
+#### 使用示例
+```typescript title="取消事件订阅"
+// 取消特定事件订阅
+calendar1.unSubscribeEvent(handlerId);
+```
+
+### setConfig
+设置组件配置，动态更新组件行为。
+
+#### 参数详解
+| 参数名 | 类型 | 必填 | 说明 | 示例 |
+|--------|------|------|------|------|
+| next | Object | 是 | 新配置对象 | \{createSchedule: false\} |
+| clean | Boolean | 否 | 是否完全替换配置 | false |
+
+#### 使用示例
+```typescript title="动态配置组件"
+// 禁用日程创建功能
+calendar1.setConfig({
+  createSchedule: false,
+  dragSchedule: false
+});
+
+// 更新数据源配置
+calendar1.setConfig({
+  requireElements: [{
+    title: "新数据模型",
+    type: "models.Meta", 
+    name: "models.NewModel"
+  }]
+});
+```
+
+### destroy
+销毁组件实例，清理资源和事件监听器。
+
+#### 使用示例
+```typescript title="销毁组件"
+// 组件销毁
+calendar1.destroy();
+```
+
+### runCode
+执行自定义代码片段，在页面上下文中运行。
+
+#### 参数详解
+| 参数名 | 类型 | 必填 | 说明 | 示例 |
+|--------|------|------|------|------|
+| code | String | 是 | 要执行的代码字符串 | "self.activeRow.getValue()" |
+
+#### 返回值
+Any - 代码执行结果
+
+#### 使用示例
+```typescript title="执行自定义代码"
+// 执行代码获取数据
+const result = calendar1.runCode('self.activeRow.getValue()');
+console.log(result);
+```
+
+### getPermConfig
+获取当前组件的权限配置。
+
+#### 返回值
+Record\<string, any\> \| undefined - 权限配置对象
+
+#### 使用示例
+```typescript title="获取权限配置"
+// 获取组件权限配置
+const permConfig = calendar1.getPermConfig();
+if (permConfig) {
+  console.log('组件权限：', permConfig);
+}
+```
+
+## 属性
+### 基础属性
+| 属性名 | 类型 | 说明 | 示例值 |
+|--------|------|------|--------|
+| name | String | 组件名称，用于标识组件实例 | "calendar1" |
+| title | String | 组件标题，显示在界面上的名称 | "项目日历" |
+| type | String | 组件类型标识 | "components.Calendar" |
+| fullName | String | 组件的完整名称标识 | "components.Calendar" |
+| showTitle | Boolean | 是否显示组件标题 | true |
+| compType | Enum | 组件类型枚举值 | 组件类型枚举值 |
+
+```typescript title="访问基础属性示例"
+// 获取组件基本信息
+console.log('组件名称: ' + calendar1.name + ', 标题: ' + calendar1.title);
+console.log('类型: ' + calendar1.type + ', 是否显示标题: ' + calendar1.showTitle);
+```
+
+### config
+组件配置对象，包含所有配置参数。
+
+```typescript title="访问组件配置"
+const config = calendar1.config;
+console.log(config.createSchedule); // true
+console.log(config.startTime); // ["startDate"]
+
+// 动态检查配置
+if (config.dragSchedule) {
+  console.log('支持拖拽功能');
+}
+```
+
+### app
+关联的应用实例，提供应用级别的功能。
+
+```typescript title="使用应用实例"
+const app = calendar1.app;
+// 获取应用元素
+const userModel = await app.getElement('models.UserModel');
+```
+
+### page
+关联的页面实例，提供页面级别的功能。
+
+```typescript title="使用页面实例"
+const page = calendar1.page;
+// 访问页面其他组件
+const otherComponent = page.getComponent('otherComponentName');
+```
+
+## 事件
+### clickRow
+行点击事件，当用户点击日历中的某一行时触发。
+
+**事件数据**：activeRow - 当前点击的行数据
+
+```typescript title="处理行点击事件"
+calendar1.subscribeEvent('clickRow', (data) => {
+  console.log('点击的行数据：', data.activeRow);
+  // 处理行点击逻辑
+});
+```
+
+### afterCreateSchedule
+新建日程后事件，当用户创建新日程后触发。
+
+**事件数据**：activeRow - 新创建的日程数据
+
+```typescript title="处理日程创建事件"
+calendar1.subscribeEvent('afterCreateSchedule', (data) => {
+  console.log('新建的日程：', data.activeRow);
+  // 发送通知或更新相关数据
+});
+```
+
+### afterDragSchedule
+拖拽日程后事件，当用户拖拽移动日程后触发。
+
+**事件数据**：activeRow - 拖拽后的日程数据
+
+```typescript title="处理日程拖拽事件"
+calendar1.subscribeEvent('afterDragSchedule', (data) => {
+  console.log('拖拽后的日程：', data.activeRow);
+  // 保存新的时间安排
+});
+```

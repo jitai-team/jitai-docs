@@ -3,28 +3,28 @@
     "message": "JitAi",
     "description": "The title in the navbar"
   },
-  "item.label.入门教程": {
+  "item.label.Tutorial": {
     "message": "入门教程",
-    "description": "Navbar item with label 入门教程"
+    "description": "Navbar item with label Tutorial"
   },
-  "item.label.应用开发指南": {
+  "item.label.Development Guide": {
     "message": "应用开发指南", 
-    "description": "Navbar item with label 应用开发指南"
+    "description": "Navbar item with label Development Guide"
   },
-  "item.label.框架扩展指南": {
+  "item.label.Extension Guide": {
     "message": "框架扩展指南",
-    "description": "Navbar item with label 框架扩展指南"
+    "description": "Navbar item with label Extension Guide"
   },
-  "item.label.参考手册": {
+  "item.label.Reference": {
     "message": "参考手册",
-    "description": "Navbar item with label 参考手册"
+    "description": "Navbar item with label Reference"
   },
-  "item.label.开源": {
+  "item.label.Open Source": {
     "message": "开源",
-    "description": "Navbar item with label 开源"
+    "description": "Navbar item with label Open Source"
   },
-  "item.label.社区论坛": {
+  "item.label.Community Forum": {
     "message": "社区论坛",
-    "description": "Navbar item with label 社区论坛"
+    "description": "Navbar item with label Community Forum"
   }
 }

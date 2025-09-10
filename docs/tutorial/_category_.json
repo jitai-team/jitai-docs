@@ -1,8 +1,8 @@
 {
-  "label": "教程",
+  "label": "Tutorial",
   "position": 1,
   "link": {
     "type": "generated-index",
-    "description": "手把手学习指南，循序渐进，注重实践，让你尽快做出有用的应用。"
+    "description": "Step-by-step learning guide, focusing on practice, helping you make useful applications quickly."
   }
 } 

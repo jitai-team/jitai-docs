@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'JitAi',
-  tagline: '为AI而生的下一代应用开发技术体系，加快AI应用进程，开启AI应用规模化时代',
+  tagline: 'Next-generation application development technology system designed for AI, accelerating AI application processes and ushering in the era of large-scale AI applications',
   favicon: 'img/jit.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -36,16 +36,28 @@ const config: Config = {
   organizationName: 'jitai-team', // Usually your GitHub org/user name.
   projectName: 'jitai-docs', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',  // 断开的Markdown链接也应该导致构建失败
-  onBrokenAnchors: 'throw',        // 断开的锚点导致构建失败
+  onBrokenLinks: 'throw',              // 暂时设置为警告，待文档结构调整完成后改为throw
+  onBrokenMarkdownLinks: 'throw',   // 断开的Markdown链接设置为警告
+  onBrokenAnchors: 'throw',         // 断开的锚点设置为警告
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'zh-Hans',
-    locales: ['zh-Hans'],
+    defaultLocale: 'en',
+    locales: ['en', 'zh'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+      },
+      'zh': {
+        label: '简体中文',
+        direction: 'ltr',
+        htmlLang: 'zh-Hans',
+      },
+    },
   },
   noIndex: false, // 等文档完善后，再放开
 
@@ -100,54 +112,48 @@ const config: Config = {
         srcDark: 'https://jit-www.oss-cn-beijing.aliyuncs.com/logo/logo_title_dark.svg',  // logo 大小待调整
       },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'indexSidebar',
-          position: 'left',
-          label: '导读',
-        },
          {
            type: 'docSidebar',
            sidebarId: 'tutorialSidebar',
            position: 'left',
-           label: '入门教程',
+           label: 'Tutorial',
          },
          {
            type: 'docSidebar',
            sidebarId: 'devguideSidebar',
            position: 'left',
-           label: '应用开发指南',
+           label: 'Development Guide',
          },
          {
            type: 'docSidebar',
            sidebarId: 'extguideSidebar',
            position: 'left',
-           label: '框架扩展指南',
+           label: 'Extension Guide',
          },
          {
            type: 'docSidebar',
            sidebarId: 'referenceSidebar',
            position: 'left',
-           label: '参考手册',
+           label: 'Reference',
          },
-         {
-           type: 'docSidebar',
-           sidebarId: 'appmarketSidebar',
-           position: 'left',
-           label: '应用市场',
-         },
+         //{
+           //type: 'docSidebar',
+         //  sidebarId: 'appmarketSidebar',
+        // position: 'left',
+         //  label: '应用市场',
+         //},
          {
            type: 'docSidebar',
            sidebarId: 'opensourceSidebar',
            position: 'left',
-           label: '开源',
+           label: 'Open Source',
          },
         // {to: '/blog', label: '博客', position: 'left'},
         {
            type: 'docSidebar',
            sidebarId: 'communitySidebar',
            position: 'left',
-           label: '社区论坛',
+           label: 'Community Forum',
          },
         //GitHub
         // {
@@ -155,53 +161,41 @@ const config: Config = {
         //   label: 'GitHub',
         //   position: 'right',
         // },
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        },
       ],
     },
     footer: {
       style: 'dark',
       links: [
         {
-          title: '产品',
+          title: 'Products',
           items: [
             {
-              label: '官网首页',
+              label: 'Home',
               to: '/',
-            },
-            {
-              label: 'What is JitAi',
-              to: '/docs/index/WhatIsJitAi',
-            },
-            {
-              label: 'Why JitAi',
-              to: '/docs/index/WhyJitAi',
-            },
-            {
-              label: 'JitAi 架构与原理',
-              to: '/docs/index/体系结构与原理',
             }
           ],
         },
         {
-          title: '帮助文档',
+          title: 'Documentation',
           items: [
             {
-              label: '文档概览',
-              to: '/docs/index/',
-            },
-            {
-              label: '入门教程',
+              label: 'Tutorial',
               to: '/docs/tutorial/',
             },
             {
-              label: '应用开发指南',
+              label: 'Development Guide',
               to: '/docs/devguide/',
             },
             {
-              label: '框架扩展指南',
+              label: 'Extension Guide',
               to: '/docs/extguide/',
             },
             {
-              label: '参考手册',
+              label: 'Reference',
               to: '/docs/reference/',
             }
           ],
@@ -224,10 +218,10 @@ const config: Config = {
         //   ],
         // },
          {
-           title: '更多',
+           title: 'More',
            items: [
             {
-              label: '社区论坛',
+              label: 'Community Forum',
               href: 'https://forum.jit.pro/',
             },
              {
@@ -238,13 +232,13 @@ const config: Config = {
          },
       ],
       logo: {
-        alt: '下一代AI应用开发技术体系',
+        alt: 'Next-generation AI application development technology system',
         src: 'https://jit-www.oss-cn-beijing.aliyuncs.com/logo/logo_title_dark.svg',
         href: 'https://jit.pro',
         width: 340,
         height: 100
       },
-      copyright: `Copyright © ${new Date().getFullYear()} Jit, Inc. Built with 万云 Co., Ltd.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Jit, Inc. Built with WanYun Co., Ltd.`,
     },
     prism: {
       theme: prismThemes.github,
@@ -256,38 +250,15 @@ const config: Config = {
         dark: 'dark',
       },
     },
-    //algolia: {
-      // The application ID provided by Algolia
-    //  appId: 'DZ5X5FUUCG',
-
-      // Public API key: it is safe to commit it
-    //  apiKey: 'a3d6338cf6bd1e789ab3c6d7064e0796',
-
-    //  indexName: 'jitai_docs',
-
-      // Optional: see doc section below
-    //  contextualSearch: true,
-
-      // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-    //  externalUrlRegex: 'external\\.com|domain\\.com',
-
-      // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
-    //  replaceSearchResultPathname: {
-      //  from: '/docs/', // or as RegExp: /\/docs\//
-      //  to: '/',
-      //},
-
-      // Optional: Algolia search parameters
-    //  searchParameters: {},
-
-      // Optional: path for search page that enabled by default (`false` to disable it)
-    //  searchPagePath: 'search',
-
-      // Optional: whether the insights feature is enabled or not on Docsearch (`false` by default)
-    //  insights: false,
-
-      //... other Algolia params
-    //},
+    algolia: {
+      appId: 'DZ5X5FUUCG',
+      apiKey: 'a3d6338cf6bd1e789ab3c6d7064e0796',
+      indexName: '应用开发指南',
+      contextualSearch: true,
+      searchParameters: {},
+      searchPagePath: 'search',
+      insights: false,
+    },
   } satisfies Preset.ThemeConfig,
 };
 

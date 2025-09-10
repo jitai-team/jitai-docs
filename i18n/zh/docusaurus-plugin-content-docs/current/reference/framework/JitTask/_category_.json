@@ -1,0 +1,8 @@
+{
+  "label": "JitTask",
+  "position": 10,
+  "link": {
+    "type": "generated-index",
+    "description": "任务调度框架，支持定时任务、异步任务、任务队列和分布式任务执行管理"
+  }
+} 

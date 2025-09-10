@@ -1,0 +1,8 @@
+{
+  "label": "JitAuth",
+  "position": 2,
+  "link": { 
+    "type": "generated-index",
+    "description": "身份认证与授权管理框架，支持多种认证方式、RBAC权限控制、组织架构管理和第三方身份系统集成"
+  }
+} 

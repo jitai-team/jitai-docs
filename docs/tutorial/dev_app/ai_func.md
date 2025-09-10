@@ -1,28 +1,32 @@
 ---
 sidebar_position: 3
-title: 用大模型函数实现生成答案
+title: Implementing Answer Generation with AI LLM Functions
+slug: ai_func
 ---
-# 用大模型函数实现生成答案
 
+# Implementing Answer Generation with AI LLM Functions
 
-## 案例效果
+## Case Effect
+
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/ai_func_effect.mp4" />
 
 
-## 实现过程
+## Implementation Process
 
-新建大模型元素
+To implement AI functionality, you first need to integrate with large language models. The LLM vendor element provides a unified integration solution for AI large model vendors, shielding API differences between different LLM vendors. Developers only need to simply configure keys to make calls.
+The JitAi development framework has integrated nearly 10 mainstream LLM vendors and supports integration with privately deployed large models.
 
+Creating a new LLM vendor element is as follows:
 <VideoPlayer relatePath="/docs/tutorial/ai_func_llm.mp4" />
 
-「题库管理」页面是「AI数据管理页面」类型，我们需要将其转换为「常规页面」类型，灵活性更高。操作如下
+The "Question Bank Management" page is an "AI Data Management Page" type. We need to convert it to a "Regular Page" type for higher flexibility. The operation is as follows:
 
 <VideoPlayer relatePath="/docs/tutorial/ai_func_page_convert.mp4" />
 
-在页面的组件事件中，调用大模型执行。
+In JitAi, calling large models is very simple, just like calling ordinary functions. It can be called directly in frontend pages or in backend service functions.
 
 <VideoPlayer relatePath="/docs/tutorial/ai_func_page_event.mp4" />
 
-也可以在服务函数中，调用大模型实例.执行，然后前端调用服务。
+Read [AI Large Language Models](../../devguide/ai-llm) for more details.

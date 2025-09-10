@@ -1,40 +1,64 @@
 ---
 sidebar_position: 6
-title: 用Agent实现AI/UI协同阅卷
+title: Implementing AI/UI Collaborative Grading with AI Agent
+slug: ai_ui
 ---
-# 用Agent实现AI/UI协同阅卷
 
-## 案例效果
+# Implementing AI/UI Collaborative Grading with AI Agent
+
+## Case Effect
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/ai_ui_effect.mp4" />
 
-## 实现过程
+## Implementation Process
 
-### 前提
+### Prerequisites
 
-1. 同[用专业模式搭建题库管理](./ide_mode.md)创建模型： 答卷表、答卷明细表。
-2. 同[用专业模式搭建题库管理](./ide_mode.md)创建页面： 答卷页面。
+1. Create models as described in [Building Question Bank Management with Professional Mode](./ide_mode): Answer Sheet Table, Answer Sheet Detail Table.
+2. Create pages as described in [Building Question Bank Management with Professional Mode](./ide_mode): Answer Sheet Page.
+3. Create LLM vendor elements as described in [Implementing Answer Generation with AI LLM Functions](./ai_func).
 
 
-### 创建AIAgent
+### Creating AI Agent
 
-AIAgent是AI应用核心执行引擎，基于ReAct架构实现推理与行动的循环决策。它负责工具编排、动态组合和调用各种业务工具和服务，维护对话上下文、任务执行状态和数据流转状态，支持复杂业务逻辑的分解和执行，并提供基于用户角色的工具访问权限管理。
+Agent (intelligent agent) has autonomous decision-making and task execution capabilities, able to automatically select appropriate tools to complete complex business processes based on user input and contextual information.
+
+The basic components of an Agent are system prompts, tools (including application system module functions), and large language models.
+
+JitAi's Agent implementation is natively integrated and highly integrated with application systems. In addition to supporting MCP service calls and knowledge base configuration, it also supports direct manipulation of data in Jit application data models, and even reading data from frontend pages and controlling component behavior on pages.
+
+In this case, creating an AI Agent and its configuration operations are as follows: (This includes reading current answer sheet details through the page's `getVarableValue` function; then directly obtaining the standard answer for that question through the questions associated in the answer sheet details as a scoring reference.)
 
 <VideoPlayer relatePath="/docs/tutorial/ai_ui_agent.mp4" />
 
-### 创建AI助理
-AI助理是AI应用与用户交互的统一界面，基于LangGraph架构实现智能路由和多Agent协同。它负责路由决策、智能对话和工作流控制，支持可视化编排、复杂业务逻辑和一键集成能力。
+Read [AI Agent](../../devguide/ai-agent) for more details.
 
+### Creating AI Assistant
+
+AI Agent is equivalent to an employee in a company, responsible for completing relatively clear and specific tasks; AI Assistant is equivalent to a project manager/supervisor in a company, responsible for coordinating multiple Agents to complete complex tasks.
+
+JitAi's AI Assistant also provides a dialog box for direct user interaction.
+
+In this case, creating an AI Assistant and its configuration operations are as follows:
 <VideoPlayer relatePath="/docs/tutorial/ai_ui_assi.mp4" />
 
-### 页面中增加按钮与助理交互
+Read [AI Assistant](../../devguide/ai-assistant) for more details.
 
-1. 开启AI助理，选择「阅卷助理」
-2. 「AI阅卷」按钮点击后，发送AI消息。
-3. 「AI助理-工作区人机交互」AI助理暂停后，回写数据到表单中。
-:::warning
-必须先开启AI助理，才能看到「发送AI消息」函数。
-:::
+### Configuring Page Events to Work with AI Assistant
+
+Frontend pages interact with AI Assistant through event configuration, achieving human-machine AI/UI collaborative task completion.
+
+In this case, we want to achieve the following objectives:
+
+1. After clicking the `AI Grading` button, send AI message to start grading.
+2. After AI completes its response, write back the score and comments to the answer sheet form on the page.
+
+The operation steps are also simple, configure page events as follows:
+
 <VideoPlayer relatePath="/docs/tutorial/ai_ui_page.mp4" />
+
+:::warning
+You must first enable AI Assistant to see the `Send AI Message` function.
+:::

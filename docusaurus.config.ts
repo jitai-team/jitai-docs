@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'JitAi',
-  tagline: '为AI而生的下一代应用开发技术体系，加快AI应用进程，开启AI应用规模化时代',
+  tagline: 'Next-generation application development technology system designed for AI, accelerating AI application processes and ushering in the era of large-scale AI applications',
   favicon: 'img/jit.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -116,25 +116,25 @@ const config: Config = {
            type: 'docSidebar',
            sidebarId: 'tutorialSidebar',
            position: 'left',
-           label: '入门教程',
+           label: 'Tutorial',
          },
          {
            type: 'docSidebar',
            sidebarId: 'devguideSidebar',
            position: 'left',
-           label: '应用开发指南',
+           label: 'Development Guide',
          },
          {
            type: 'docSidebar',
            sidebarId: 'extguideSidebar',
            position: 'left',
-           label: '框架扩展指南',
+           label: 'Extension Guide',
          },
          {
            type: 'docSidebar',
            sidebarId: 'referenceSidebar',
            position: 'left',
-           label: '参考手册',
+           label: 'Reference',
          },
          //{
            //type: 'docSidebar',
@@ -146,14 +146,14 @@ const config: Config = {
            type: 'docSidebar',
            sidebarId: 'opensourceSidebar',
            position: 'left',
-           label: '开源',
+           label: 'Open Source',
          },
         // {to: '/blog', label: '博客', position: 'left'},
         {
            type: 'docSidebar',
            sidebarId: 'communitySidebar',
            position: 'left',
-           label: '社区论坛',
+           label: 'Community Forum',
          },
         //GitHub
         // {
@@ -171,31 +171,31 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: '产品',
+          title: 'Products',
           items: [
             {
-              label: '官网首页',
+              label: 'Home',
               to: '/',
             }
           ],
         },
         {
-          title: '帮助文档',
+          title: 'Documentation',
           items: [
             {
-              label: '入门教程',
+              label: 'Tutorial',
               to: '/docs/tutorial/',
             },
             {
-              label: '应用开发指南',
+              label: 'Development Guide',
               to: '/docs/devguide/',
             },
             {
-              label: '框架扩展指南',
+              label: 'Extension Guide',
               to: '/docs/extguide/',
             },
             {
-              label: '参考手册',
+              label: 'Reference',
               to: '/docs/reference/',
             }
           ],
@@ -218,10 +218,10 @@ const config: Config = {
         //   ],
         // },
          {
-           title: '更多',
+           title: 'More',
            items: [
             {
-              label: '社区论坛',
+              label: 'Community Forum',
               href: 'https://forum.jit.pro/',
             },
              {
@@ -232,13 +232,13 @@ const config: Config = {
          },
       ],
       logo: {
-        alt: '下一代AI应用开发技术体系',
+        alt: 'Next-generation AI application development technology system',
         src: 'https://jit-www.oss-cn-beijing.aliyuncs.com/logo/logo_title_dark.svg',
         href: 'https://jit.pro',
         width: 340,
         height: 100
       },
-      copyright: `Copyright © ${new Date().getFullYear()} Jit, Inc. Built with 万云 Co., Ltd.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Jit, Inc. Built with WanYun Co., Ltd.`,
     },
     prism: {
       theme: prismThemes.github,

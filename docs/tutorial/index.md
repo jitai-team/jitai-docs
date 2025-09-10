@@ -2,28 +2,28 @@
 sidebar_position: 0
 ---
 
-# 导读
+# Guide
 
-欢迎来到JitAi入门教程！这里提供手把手的学习指南，循序渐进，注重实践，让你快速掌握JitAi应用开发，尽快做出有用的AI应用。
+Welcome to the JitAi Getting Started Tutorial! Here we provide step-by-step learning guides that are progressive and practice-oriented, helping you quickly master JitAi application development and create useful AI applications as soon as possible.
 
-## 学习路径
-- [JitAi简介](./briefintro) - 介绍JitAi是什么、有什么特点、其体系结构、与传统开发技术和零/低代码平台的对比
-- [下载安装](./download-installation) - JitAi安装包下载和环境搭建，支持Windows、Mac和Docker部署
-- [案例介绍](./project) - 熟悉案例应用的业务背景（出题、考试、阅卷），了解系统功能和数据模型
-- [创建应用](./create_app) - 学习如何创建应用，了解不同门户的作用
-- [开发应用](./create_app) - 学习如何开发应用
-  - [用简易模式搭建题库管理](./dev_app/easy_mode) - 适合新手的快速开发方式，3步创建数据管理功能
-  - [用专业模式搭建试卷管理](./dev_app/ide_mode) - 使用开发者门户进行专业级应用开发
-  - [用AI大模型函数实现生成答案](./dev_app/ai_func) - 一句话调用AI能力
-  - [用AI Agent实现AI/UI协同阅卷](./dev_app/ai_ui) - 实现AI与UI协同交互
-  - [用全代码实现答卷页面](./dev_app/code) - 使用代码编辑器进行高级开发
-  - [用应用角色实现权限控制](./dev_app/role) - 配置用户角色和权限管理
-- [发布应用](./publish_app) - 应用发布、环境配置、生产环境部署和更新维护
+## Learning Path
+- [JitAi Introduction](./briefintro) - Introduction to what JitAi is, its features, system architecture, and comparison with traditional development technologies and no-code/low-code platforms
+- [Download and Installation](./download-installation) - JitAi package download and environment setup, supporting Windows, Mac, and Docker deployment
+- [Case Study](./project) - Familiarize yourself with the business background of the case application (question creation, examination, grading), understand system functions and data models
+- [Create Application](./create_app) - Learn how to create applications and understand the role of different portals
+- [Develop Application](./create_app) - Learn how to develop applications
+  - [Build Question Bank Management with Easy Mode](./dev_app/easy_mode) - Quick development approach suitable for beginners, create data management functionality in 3 steps
+  - [Build Test Paper Management with Professional Mode](./dev_app/ide_mode) - Use developer portal for professional-level application development
+  - [Implement Answer Generation with AI LLM Functions](./dev_app/ai_func) - Call AI capabilities with a single sentence
+  - [Implement AI/UI Collaborative Grading with AI Agent](./dev_app/ai_ui) - Achieve collaborative interaction between AI and UI
+  - [Implement Answer Sheet Page with Full Code](./dev_app/code) - Use code editor for advanced development
+  - [Implement Permission Control with Application Roles](./dev_app/role) - Configure user roles and permission management
+- [Publish Application](./publish_app) - Application publishing, environment configuration, production deployment, and maintenance updates
 
-## 学习建议
+## Learning Recommendations
 
-1. **循序渐进**：建议按照学习路径顺序学习，先搭建环境，再体验项目，最后进行开发
-2. **动手实践**：每个章节都包含实际操作，建议边学边做
-3. **持续学习**：掌握基础后，推荐阅读[应用开发指南](../devguide/) 全面了解JitAi的功能
+1. **Progressive Learning**: It's recommended to follow the learning path in order - first set up the environment, then experience the project, and finally proceed with development
+2. **Hands-on Practice**: Each chapter contains practical operations, it's recommended to learn while doing
+3. **Continuous Learning**: After mastering the basics, it's recommended to read the [Application Development Guide](../devguide/) to fully understand JitAi's capabilities
 
  

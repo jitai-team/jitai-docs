@@ -1,9 +1,9 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 slug: developer-organization-management
 ---
 
-# 开发者组织管理
+# 节点激活与开发者组织
 ## 什么是开发者组织 {#what-is-developer-organization}
 开发者组织是管理开发团队和项目的基本单位，团队成员在同一个组织下能够协作开发应用，共享资源。不同组织在软硬件资源、数据、应用等方面是隔离的。每个开发者组织可以绑定多个Jit节点，每个节点只能绑定到一个组织，每个开发者可以加入多个开发者组织。
 

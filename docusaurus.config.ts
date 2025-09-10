@@ -250,38 +250,15 @@ const config: Config = {
         dark: 'dark',
       },
     },
-    //algolia: {
-      // The application ID provided by Algolia
-    //  appId: 'DZ5X5FUUCG',
-
-      // Public API key: it is safe to commit it
-    //  apiKey: 'a3d6338cf6bd1e789ab3c6d7064e0796',
-
-    //  indexName: 'jitai_docs',
-
-      // Optional: see doc section below
-    //  contextualSearch: true,
-
-      // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-    //  externalUrlRegex: 'external\\.com|domain\\.com',
-
-      // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
-    //  replaceSearchResultPathname: {
-      //  from: '/docs/', // or as RegExp: /\/docs\//
-      //  to: '/',
-      //},
-
-      // Optional: Algolia search parameters
-    //  searchParameters: {},
-
-      // Optional: path for search page that enabled by default (`false` to disable it)
-    //  searchPagePath: 'search',
-
-      // Optional: whether the insights feature is enabled or not on Docsearch (`false` by default)
-    //  insights: false,
-
-      //... other Algolia params
-    //},
+    algolia: {
+      appId: 'DZ5X5FUUCG',
+      apiKey: 'a3d6338cf6bd1e789ab3c6d7064e0796',
+      indexName: '应用开发指南',
+      contextualSearch: true,
+      searchParameters: {},
+      searchPagePath: 'search',
+      insights: false,
+    },
   } satisfies Preset.ThemeConfig,
 };
 

@@ -1,0 +1,91 @@
+<svg width="900" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; }
+      .text { font-family: Arial, sans-serif; font-size: 12px; }
+      .ai-box { fill: #4CAF50; stroke: #2E7D32; stroke-width: 2; }
+      .system-box { fill: #2196F3; stroke: #1565C0; stroke-width: 2; }
+      .protocol-box { fill: #FF9800; stroke: #E65100; stroke-width: 2; }
+      .arrow { stroke: #333; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+  
+  <!-- 标题 -->
+  <text x="450" y="30" text-anchor="middle" class="title">JAAP协议工作原理</text>
+  
+  <!-- 传统方式 -->
+  <text x="50" y="60" class="subtitle">传统方式：API接口交互</text>
+  <rect x="50" y="80" width="150" height="80" class="ai-box" rx="5"/>
+  <text x="125" y="105" text-anchor="middle" class="text" fill="white">AI应用</text>
+  <text x="125" y="125" text-anchor="middle" class="text" fill="white">通过API调用</text>
+  <text x="125" y="145" text-anchor="middle" class="text" fill="white">系统功能</text>
+  
+  <rect x="250" y="80" width="150" height="80" class="system-box" rx="5"/>
+  <text x="325" y="105" text-anchor="middle" class="text" fill="white">业务系统</text>
+  <text x="325" y="125" text-anchor="middle" class="text" fill="white">黑盒操作</text>
+  <text x="325" y="145" text-anchor="middle" class="text" fill="white">内部逻辑不可见</text>
+  
+  <line x1="200" y1="120" x2="250" y2="120" class="arrow"/>
+  <text x="225" y="115" text-anchor="middle" class="text">API调用</text>
+  
+  <!-- JAAP协议方式 -->
+  <text x="470" y="60" class="subtitle">JAAP协议：AI直接理解系统</text>
+  <rect x="470" y="80" width="150" height="80" class="ai-box" rx="5"/>
+  <text x="540" y="105" text-anchor="middle" class="text" fill="white">AI应用</text>
+  <text x="540" y="125" text-anchor="middle" class="text" fill="white">直接理解</text>
+  <text x="540" y="145" text-anchor="middle" class="text" fill="white">系统结构</text>
+  
+  <rect x="680" y="80" width="170" height="80" class="system-box" rx="5"/>
+  <text x="765" y="105" text-anchor="middle" class="text" fill="white">业务系统</text>
+  <text x="765" y="125" text-anchor="middle" class="text" fill="white">透明化结构</text>
+  <text x="765" y="145" text-anchor="middle" class="text" fill="white">内部逻辑可见</text>
+  
+  <line x1="620" y1="120" x2="680" y2="120" class="arrow"/>
+  <text x="650" y="115" text-anchor="middle" class="text">JAAP协议</text>
+  
+  <!-- JAAP协议核心组件 -->
+  <rect x="50" y="200" width="800" height="260" class="protocol-box" rx="10"/>
+  <text x="450" y="225" text-anchor="middle" class="subtitle" fill="white">JAAP协议核心组件</text>
+  
+  <!-- 结构化描述 -->
+  <rect x="80" y="250" width="160" height="90" fill="white" stroke="#333" stroke-width="1" rx="5"/>
+  <text x="175" y="275" text-anchor="middle" class="subtitle">结构化描述</text>
+  <text x="110" y="295" class="text">• 系统模块结构</text>
+  <text x="110" y="310" class="text">• 功能接口定义</text>
+  <text x="110" y="325" class="text">• 数据流描述</text>
+  
+  <!-- 动态感知 -->
+  <rect x="270" y="250" width="160" height="90" fill="white" stroke="#333" stroke-width="1" rx="5"/>
+  <text x="365" y="275" text-anchor="middle" class="subtitle">动态感知</text>
+  <text x="300" y="295" class="text">• 系统状态监控</text>
+  <text x="300" y="310" class="text">• 功能变化检测</text>
+  <text x="300" y="325" class="text">• 实时数据获取</text>
+  
+  <!-- 智能调用 -->
+  <rect x="460" y="250" width="160" height="90" fill="white" stroke="#333" stroke-width="1" rx="5"/>
+  <text x="535" y="275" text-anchor="middle" class="subtitle">智能调用</text>
+  <text x="470" y="295" class="text">• 直接调用功能</text>
+  <text x="470" y="310" class="text">• 无需API转换</text>
+  <text x="470" y="325" class="text">• 参数自动适配</text>
+  
+  <!-- 动态编排 -->
+  <rect x="650" y="250" width="160" height="90" fill="white" stroke="#333" stroke-width="1" rx="5"/>
+  <text x="735" y="275" text-anchor="middle" class="subtitle">动态编排</text>
+  <text x="670" y="295" class="text">• 功能组合</text>
+  <text x="670" y="310" class="text">• 流程编排</text>
+  <text x="670" y="325" class="text">• 智能决策</text>
+  
+  <!-- 优势对比 -->
+  <text x="450" y="370" text-anchor="middle" class="subtitle" fill="white">核心优势</text>
+  <text x="200" y="395" class="text" fill="white">✓ AI真正理解业务逻辑</text>
+  <text x="200" y="415" class="text" fill="white">✓ 人机协同工作</text>
+  <text x="200" y="435" class="text" fill="white">✓ 系统透明化</text>
+  
+  <text x="600" y="395" class="text" fill="white">✓ 直接操作系统功能</text>
+  <text x="600" y="415" class="text" fill="white">✓ 无需API转换</text>
+  <text x="600" y="435" class="text" fill="white">✓ 动态适应变化</text>
+</svg>

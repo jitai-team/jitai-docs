@@ -14,6 +14,31 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 首先，你需要完成基本的[下载安装](../tutorial/download-installation)！
 
 
+## 基础概念
+掌握JitAi平台的核心理念和架构原理。了解平台应用、元素体系、开发框架、可视化开发工具等基础概念，为后续开发工作奠定理论基础。
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard
+  title="平台架构与核心概念"
+  href="basic-concept"
+  description="了解JitAi平台架构、应用概念、JAAP协议、元素体系和开发框架，掌握平台的基础原理。"
+>
+  <LinkGrid columns={2} links={[
+    { text: "平台与应用", href: "basic-concept#platform-and-applications" },
+    { text: "DevOps工具与服务", href: "basic-concept#devops-tools-and-services" },
+    { text: "应用创建与开发", href: "basic-concept#application-creation-and-development" },
+    { text: "JAAP协议与元素", href: "basic-concept#jaap-protocol-and-elements" },
+    { text: "元素Type与元素加载", href: "basic-concept#element-type-and-element-loading" },
+    { text: "开发框架", href: "basic-concept#development-framework" },
+    { text: "业务应用与应用继承", href: "basic-concept#business-applications-and-application-inheritance" },
+    { text: "开发工具", href: "basic-concept#development-tools" },
+    { text: "扩展", href: "basic-concept#extension" }
+  ]} />
+</IndexCard>
+
+</div>
+
 ## 应用开发基础
 从零开始创建你的第一个应用。掌握开发者组织管理、运行环境配置、应用创建与管理的完整流程，为后续开发工作打下坚实基础。
 
@@ -434,7 +459,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "按钮配置", href: "using-functional-components-in-pages/time-management-components#button-configuration" },
     { text: "首次加载组件时刷新数据", href: "using-functional-components-in-pages/time-management-components#refresh-data-on-first-component-load" },
     { text: "新增日程", href: "using-functional-components-in-pages/time-management-components#new-schedule" },
-    { text: "拖拽日程", href: "using-functional-components-in-pages/time-management-components#drag-schedule" }
+    { text: "拖拽日程", href: "using-functional-components-in-pages/time-management-components#drag-agenda" }
   ]} />
 </IndexCard>
 

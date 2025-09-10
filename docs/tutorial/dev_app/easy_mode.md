@@ -1,21 +1,21 @@
 ---
 sidebar_position: 1
-title: 用简易模式搭建题库管理
+title: Building Question Bank Management with Easy Mode
 slug: easy_mode
 ---
 
-# 用简易模式搭建题库管理
+# Building Question Bank Management with Easy Mode
 
-简易模式适合新手，或快速搭建常见简单的业务场景。
+Easy mode is suitable for beginners or for quickly building common simple business scenarios.
 
-如下所示：3步即可创建一个带增删改查的AI数据管理功能。
+As shown below: Create an AI data management function with CRUD operations in 3 steps.
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/easy_questions.mp4" />
 
-数据表模型，可以简单理解为 excel 表，配置每一列的标题、数据类型和配置。
+The data table model can be simply understood as an Excel table, configuring the title, data type, and configuration for each column.
 
-阅读[AI数据管理页面](../../devguide/portal-and-page-development/ai-data-management-page)了解更多。
+Read [AI Data Management Page](../../devguide/portal-and-page-development/ai-data-management-page) for more details.
 
-如果需要更复杂的业务逻辑和页面交互，请阅读下一篇。
+If you need more complex business logic and page interactions, please read the next article.

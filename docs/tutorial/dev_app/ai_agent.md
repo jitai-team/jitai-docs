@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-title: 用单Agent实现AI出卷
+title: Implementing AI Test Paper Generation with Single Agent
 draft: true
 ---
-# 用单Agent实现AI出卷
+# Implementing AI Test Paper Generation with Single Agent

@@ -1,64 +1,64 @@
 ---
 sidebar_position: 6
-title: 用AI Agent实现AI/UI协同阅卷
+title: Implementing AI/UI Collaborative Grading with AI Agent
 slug: ai_ui
 ---
 
-# 用AI Agent实现AI/UI协同阅卷
+# Implementing AI/UI Collaborative Grading with AI Agent
 
-## 案例效果
+## Case Effect
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/ai_ui_effect.mp4" />
 
-## 实现过程
+## Implementation Process
 
-### 前提
+### Prerequisites
 
-1. 同[用专业模式搭建题库管理](./ide_mode)创建模型： 答卷表、答卷明细表。
-2. 同[用专业模式搭建题库管理](./ide_mode)创建页面： 答卷页面。
-3. 已经按照[用AI大模型函数实现生成答案](./ai_func) 创建了大模型厂商元素。
+1. Create models as described in [Building Question Bank Management with Professional Mode](./ide_mode): Answer Sheet Table, Answer Sheet Detail Table.
+2. Create pages as described in [Building Question Bank Management with Professional Mode](./ide_mode): Answer Sheet Page.
+3. Create LLM vendor elements as described in [Implementing Answer Generation with AI LLM Functions](./ai_func).
 
 
-### 创建AIAgent
+### Creating AI Agent
 
-Agent(智能体代理)具备自主决策和任务执行能力，能够根据用户输入和上下文信息，自动选择合适的工具完成复杂的业务流程。
+Agent (intelligent agent) has autonomous decision-making and task execution capabilities, able to automatically select appropriate tools to complete complex business processes based on user input and contextual information.
 
-一个Agent的基本组成是系统提示词、工具（包括应用系统的模块函数）、大模型。
+The basic components of an Agent are system prompts, tools (including application system module functions), and large language models.
 
-JitAi的Agent实现与应用系统原生融合、高度集成，除了支持调用MCP服务、配置知识库外，还支持直接操作Jit应用中的数据模型的数据，甚至读取前端页面中的数据、控制页面上的组件行为。
+JitAi's Agent implementation is natively integrated and highly integrated with application systems. In addition to supporting MCP service calls and knowledge base configuration, it also supports direct manipulation of data in Jit application data models, and even reading data from frontend pages and controlling component behavior on pages.
 
-本案例中，创建AIAgent及其配置操作如下: (其中就通过 页面的 `getVarableValue` 函数读取了当前答卷的详情；然后通过答卷明细中关联的题目，直接获取该题目的标准答案作为评分参考。)
+In this case, creating an AI Agent and its configuration operations are as follows: (This includes reading current answer sheet details through the page's `getVarableValue` function; then directly obtaining the standard answer for that question through the questions associated in the answer sheet details as a scoring reference.)
 
 <VideoPlayer relatePath="/docs/tutorial/ai_ui_agent.mp4" />
 
-阅读[AIAgent](../../devguide/ai-agent)了解更多。
+Read [AI Agent](../../devguide/ai-agent) for more details.
 
-### 创建AI助理
+### Creating AI Assistant
 
-AI Agent 相当于公司中的员工，负责完成相对明确和具体的事情；AI助理相当于公司中的项目经理/主管，负责协调多个Agent完成复杂任务。
+AI Agent is equivalent to an employee in a company, responsible for completing relatively clear and specific tasks; AI Assistant is equivalent to a project manager/supervisor in a company, responsible for coordinating multiple Agents to complete complex tasks.
 
-JitAi的AI助理，还提供对话框，可以直接与用户进行交互。
+JitAi's AI Assistant also provides a dialog box for direct user interaction.
 
-本案例中，创建AI助理及其配置操作如下:
+In this case, creating an AI Assistant and its configuration operations are as follows:
 <VideoPlayer relatePath="/docs/tutorial/ai_ui_assi.mp4" />
 
-阅读[AI助理](../../devguide/ai-assistant)了解更多。
+Read [AI Assistant](../../devguide/ai-assistant) for more details.
 
-### 页面中配置事件与AI助理联动
+### Configuring Page Events to Work with AI Assistant
 
-前端页面中通过配置事件，与AI助理进行交互，实现人机AI/UI 协同完成任务。
+Frontend pages interact with AI Assistant through event configuration, achieving human-machine AI/UI collaborative task completion.
 
-本案例中，我们要要达到以下目的：
+In this case, we want to achieve the following objectives:
 
-1. `AI阅卷`按钮点击后，发送AI消息，开始阅卷。
-2. AI回答完毕后，讲评分和评语回写到页面中的答卷表单中。
+1. After clicking the `AI Grading` button, send AI message to start grading.
+2. After AI completes its response, write back the score and comments to the answer sheet form on the page.
 
-操作步骤也很简单，配置页面事件如下：
+The operation steps are also simple, configure page events as follows:
 
 <VideoPlayer relatePath="/docs/tutorial/ai_ui_page.mp4" />
 
 :::warning
-必须先开启AI助理，才能看到`发送AI消息`函数。
+You must first enable AI Assistant to see the `Send AI Message` function.
 :::

@@ -1,47 +1,46 @@
 ---
 sidebar_position: 3
-title: 案例项目介绍
+title: Case Study
+slug: project
 ---
-# 案例项目介绍
+# Case Study
 
-本案例项目业务为：老师出试卷、考生考试、老师阅卷。
+The business scenario of this case project is: teachers create test papers, students take exams, teachers grade papers.
 
-## 怎样体验该项目和查看源码？
+## How to experience this project and view the source code?
 
-安装后环境后，直接部署该应用
+After installing the environment, deploy this application directly
 
 ![](img/project_192638.png)
 
-
-| 名称 | 账号 | 密码 | 角色 | 说明 |
+| Name | Account | Password | Role | Description |
 |------|------|------|------|------|
-| 管理员| admin123 | admin123 | 管理员 | 系统管理员，拥有所有权限 |
-|甲老师| jialaoshi | ls123456 | 老师 | 可以出试卷、阅卷 |
-|乙老师| yilaoshi| ls123456 | 老师 |可以出试卷、阅卷 |
-|考生A| kaoshenga | ks123456 | 考生 | 可以参加考试 |
-|考生B| kaoshengb| ks123456 | 考生 | 可以参加考试 |
+| Admin | admin123 | admin123 | Administrator | System administrator with all permissions |
+| Teacher A | jialaoshi | ls123456 | Teacher | Can create test papers and grade |
+| Teacher B | yilaoshi | ls123456 | Teacher | Can create test papers and grade |
+| Student A | kaoshenga | ks123456 | Student | Can take exams |
+| Student B | kaoshengb | ks123456 | Student | Can take exams |
 
-## 展示效果如下
-### 老师账号登录后
+## Demo Effects
+### After teacher account login
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/project_teacher.mp4" />
 
-### 考生账号登录后
+### After student account login
 
 <VideoPlayer relatePath="/docs/tutorial/project_student.mp4" />
 
-### 管理账号登录后
+### After admin account login
 
 <VideoPlayer relatePath="/docs/tutorial/project_admin.mp4" />
 
+## Data Model Introduction
+* Question Bank Table: Stores all question information, including question content, type, difficulty, etc.
+* Test Paper Table, Test Paper Detail Table: Store basic test paper information and configuration for each question
+* Answer Sheet Table, Answer Sheet Detail Table: Store students' answer records and score information
 
-## 数据模型介绍
-* 题库表：存储所有题目信息，包括题目内容、类型、难度等
-* 试卷表、试卷明细表：存储试卷基本信息和每道题目的配置
-* 答卷表、答卷明细表：存储考生的答题记录和成绩信息
-
-模型中具体的字段如下
+The specific fields in the model are as follows
 
 ![](img/project_102847.png)
 ![](img/project_102943.png)

@@ -1,0 +1,9 @@
+{
+  "position": 1,
+  "label": "缓存",
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "缓存"
+  }
+} 

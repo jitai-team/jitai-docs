@@ -1,0 +1,8 @@
+{
+  "label": "专题指南",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "深入理解系统设计理念，高层次概念解释，帮助你理解\"为什么\"和\"是什么\"。"
+  }
+} 

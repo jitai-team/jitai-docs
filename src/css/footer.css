@@ -307,8 +307,8 @@ footer.theme-layout-footer.footer::after {
 
 @media (max-width: 996px) {
   .footer__col {
-      margin-bottom: 0;
-      padding: 0 2em;
+    margin-bottom: 0;
+    padding: 0 2em;
   }
 }
 

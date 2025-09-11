@@ -21,7 +21,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/code_create_shell.mp4" />
 
-Read [Portal Navigation Design](../../devguide/portal-and-page-development/portal-navigation-design) for more details.
+Read [Portal Navigation Design](../../devguide/shell-and-page/portal-navigation-design) for more details.
 
 ### Implementing "Answer Sheet Page"
 
@@ -37,7 +37,7 @@ Then drag in full-code components to implement the exam page with full code.
 
 Read [Full Code Components](../../devguide/using-functional-components-in-pages/full-code-components) for more details.
 
-You can also implement the entire page using full code. Read [Full Code Page Development](../../devguide/portal-and-page-development/full-code-page-development) for more details.
+You can also implement the entire page using full code. Read [Full Code Page Development](../../devguide/shell-and-page/full-code-page-development) for more details.
 
 ### Implementing "My Test Papers" Page
 

@@ -147,109 +147,109 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
 
 <IndexCard
   title="Portal Navigation Design"
-  href="portal-and-page-development/portal-navigation-design"
+  href="shell-and-page/portal-navigation-design"
   description="Design portal interfaces for different user roles, configure navigation menus and permission controls, and create personalized user experiences."
 >
   <LinkGrid links={[
-    { text: "Application Built-in Three Portals", href: "portal-and-page-development/portal-navigation-design#application-built-in-three-portals" },
-    { text: "Three Portal Types", href: "portal-and-page-development/portal-navigation-design#three-portal-types" },
-    { text: "Create Portal and Configure Menu", href: "portal-and-page-development/portal-navigation-design#create-portal-and-configure-menu" },
-    { text: "Portal Layout Design", href: "portal-and-page-development/portal-navigation-design#portal-layout-design" },
-    { text: "Enable or Disable Common Function Entries", href: "portal-and-page-development/portal-navigation-design#enable-disable-common-function-entries" },
-    { text: "Integrate AI Assistant in Portal", href: "portal-and-page-development/portal-navigation-design#integrate-ai-assistant-in-portal" }
+    { text: "Application Built-in Three Portals", href: "shell-and-page/portal-navigation-design#application-built-in-three-portals" },
+    { text: "Three Portal Types", href: "shell-and-page/portal-navigation-design#three-portal-types" },
+    { text: "Create Portal and Configure Menu", href: "shell-and-page/portal-navigation-design#create-portal-and-configure-menu" },
+    { text: "Portal Layout Design", href: "shell-and-page/portal-navigation-design#portal-layout-design" },
+    { text: "Enable or Disable Common Function Entries", href: "shell-and-page/portal-navigation-design#enable-disable-common-function-entries" },
+    { text: "Integrate AI Assistant in Portal", href: "shell-and-page/portal-navigation-design#integrate-ai-assistant-in-portal" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Component-based Page Development"
-  href="portal-and-page-development/component-based-page-development"
+  href="shell-and-page/component-based-page-development"
   description="Use the visual editor to build page interfaces, configure components and events, and implement rich user interaction features."
 >
   <LinkGrid links={[
-    { text: "Create a Regular Page", href: "portal-and-page-development/component-based-page-development#create-a-regular-page" },
-    { text: "Visual Page Editor", href: "portal-and-page-development/component-based-page-development#visual-page-editor" },
-    { text: "Page Variables", href: "portal-and-page-development/component-based-page-development#page-variables" },
-    { text: "Page Events", href: "portal-and-page-development/component-based-page-development#page-events" },
-    { text: "Page Functions", href: "portal-and-page-development/component-based-page-development#page-functions" }
+    { text: "Create a Regular Page", href: "shell-and-page/component-based-page-development#create-a-regular-page" },
+    { text: "Visual Page Editor", href: "shell-and-page/component-based-page-development#visual-page-editor" },
+    { text: "Page Variables", href: "shell-and-page/component-based-page-development#page-variables" },
+    { text: "Page Events", href: "shell-and-page/component-based-page-development#page-events" },
+    { text: "Page Functions", href: "shell-and-page/component-based-page-development#page-functions" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="AI Data Management Page"
-  href="portal-and-page-development/ai-data-management-page"
+  href="shell-and-page/ai-data-management-page"
   description="AI-powered ai-data-management-page that intelligently assists in efficient data browsing, filtering, editing, and batch operations."
 >
   <LinkGrid columns={2} links={[
-    { text: "Create AI Data Management Page", href: "portal-and-page-development/ai-data-management-page#create-ai-data-management-page" },
-    { text: "Limit Page Table Query Data Through Default Filter Conditions", href: "portal-and-page-development/ai-data-management-page#limit-page-table-query-data-through-default-filter-conditions" },
-    { text: "Configure Default Data Sort Rules", href: "portal-and-page-development/ai-data-management-page#configure-default-data-sort-rules" },
-    { text: "Hide Some Fields in Page Table", href: "portal-and-page-development/ai-data-management-page#hide-some-fields-in-page-table" },
-    { text: "Configure Conditional Filter Fields", href: "portal-and-page-development/ai-data-management-page#configure-conditional-filter-fields" },
-    { text: "Configure Viewable and Editable Fields in Form", href: "portal-and-page-development/ai-data-management-page#configure-viewable-editable-fields-in-form" },
-    { text: "Configure Fields Displayed in Batch Edit Form", href: "portal-and-page-development/ai-data-management-page#configure-fields-displayed-in-batch-edit-form" },
-    { text: "Enable AI Data Management Assistant", href: "portal-and-page-development/ai-data-management-page#enable-ai-data-management-assistant" },
-    { text: "Convert to Regular Page for Modification", href: "portal-and-page-development/ai-data-management-page#convert-to-regular-page-for-modification" }
+    { text: "Create AI Data Management Page", href: "shell-and-page/ai-data-management-page#create-ai-data-management-page" },
+    { text: "Limit Page Table Query Data Through Default Filter Conditions", href: "shell-and-page/ai-data-management-page#limit-page-table-query-data-through-default-filter-conditions" },
+    { text: "Configure Default Data Sort Rules", href: "shell-and-page/ai-data-management-page#configure-default-data-sort-rules" },
+    { text: "Hide Some Fields in Page Table", href: "shell-and-page/ai-data-management-page#hide-some-fields-in-page-table" },
+    { text: "Configure Conditional Filter Fields", href: "shell-and-page/ai-data-management-page#configure-conditional-filter-fields" },
+    { text: "Configure Viewable and Editable Fields in Form", href: "shell-and-page/ai-data-management-page#configure-viewable-editable-fields-in-form" },
+    { text: "Configure Fields Displayed in Batch Edit Form", href: "shell-and-page/ai-data-management-page#configure-fields-displayed-in-batch-edit-form" },
+    { text: "Enable AI Data Management Assistant", href: "shell-and-page/ai-data-management-page#enable-ai-data-management-assistant" },
+    { text: "Convert to Regular Page for Modification", href: "shell-and-page/ai-data-management-page#convert-to-regular-page-for-modification" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="AI Data Analysis Page"
-  href="portal-and-page-development/ai-data-analysis-page"
+  href="shell-and-page/ai-data-analysis-page"
   description="AI automatically generates data charts through natural language descriptions of requirements, supporting users to adjust chart styles and statistical dimensions at any time."
 >
   <LinkGrid links={[
-    { text: "Create AI Data Analysis Page", href: "portal-and-page-development/ai-data-analysis-page#create-ai-data-analysis-page" },
-    { text: "Page Configuration", href: "portal-and-page-development/ai-data-analysis-page#page-configuration" },
-    { text: "Runtime Effects Demo", href: "portal-and-page-development/ai-data-analysis-page#run-effects" },
-    { text: "Full Code Development", href: "portal-and-page-development/ai-data-analysis-page#full-code-development" },
-    { text: "Quick Create", href: "portal-and-page-development/ai-data-analysis-page#quick-create" }
+    { text: "Create AI Data Analysis Page", href: "shell-and-page/ai-data-analysis-page#create-ai-data-analysis-page" },
+    { text: "Page Configuration", href: "shell-and-page/ai-data-analysis-page#page-configuration" },
+    { text: "Runtime Effects Demo", href: "shell-and-page/ai-data-analysis-page#run-effects" },
+    { text: "Full Code Development", href: "shell-and-page/ai-data-analysis-page#full-code-development" },
+    { text: "Quick Create", href: "shell-and-page/ai-data-analysis-page#quick-create" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Data Entry Page"
-  href="portal-and-page-development/data-entry-page"
+  href="shell-and-page/data-entry-page"
   description="Quickly create data entry forms to implement data collection and submission functions."
 >
   <LinkGrid links={[
-    { text: "Create Data Entry Page", href: "portal-and-page-development/data-entry-page#create-data-entry-page" },
-    { text: "Configure Viewable and Editable Fields", href: "portal-and-page-development/data-entry-page#configure-viewable-editable-fields" },
-    { text: "Show Re-entry Button After Submission", href: "portal-and-page-development/data-entry-page#show-re-entry-button-after-submission" },
-    { text: "Show Result Feedback After Submission", href: "portal-and-page-development/data-entry-page#show-result-feedback-after-submission" }
+    { text: "Create Data Entry Page", href: "shell-and-page/data-entry-page#create-data-entry-page" },
+    { text: "Configure Viewable and Editable Fields", href: "shell-and-page/data-entry-page#configure-viewable-editable-fields" },
+    { text: "Show Re-entry Button After Submission", href: "shell-and-page/data-entry-page#show-re-entry-button-after-submission" },
+    { text: "Show Result Feedback After Submission", href: "shell-and-page/data-entry-page#show-result-feedback-after-submission" }
   ]} />
 </IndexCard>
 
 
 <IndexCard
   title="Markdown Page"
-  href="portal-and-page-development/markdown-page"
+  href="shell-and-page/markdown-page"
   description="Create document-type pages with support for rich Markdown syntax and document display requirements."
 >
   <LinkGrid links={[
-    { text: "Create Markdown Page", href: "portal-and-page-development/markdown-page#create-markdown-page" },
-    { text: "Markdown Syntax", href: "portal-and-page-development/markdown-page#markdown-语法" }
+    { text: "Create Markdown Page", href: "shell-and-page/markdown-page#create-markdown-page" },
+    { text: "Markdown Syntax", href: "shell-and-page/markdown-page#markdown-语法" }
   ]} />
 </IndexCard>
 
 
 <IndexCard
   title="Full Code Page Development"
-  href="portal-and-page-development/full-code-page-development"
+  href="shell-and-page/full-code-page-development"
   description="Fully customized page development approach for advanced developers, supporting complex business logic and personalized interfaces."
 >
   <LinkGrid columns={2} links={[
-    { text: "React Full Code Page", href: "portal-and-page-development/full-code-page-development#react-full-code-page" },
-    { text: "Create React Full Code Page", href: "portal-and-page-development/full-code-page-development#create-react-full-code-page" },
-    { text: "Use Styles", href: "portal-and-page-development/full-code-page-development#use-style" },
-    { text: "Use Local Resources", href: "portal-and-page-development/full-code-page-development#use-local-resources" },
-    { text: "Use Ant Design Components", href: "portal-and-page-development/full-code-page-development#use-ant-design-components" },
-    { text: "Embed Existing Regular Page", href: "portal-and-page-development/full-code-page-development#embed-existing-regular-page" },
-    { text: "Use Standard Components", href: "portal-and-page-development/full-code-page-development#use-standard-component" },
-    { text: "Call Data Model Functions", href: "portal-and-page-development/full-code-page-development#call-data-model-function" },
-    { text: "Call Service Functions", href: "portal-and-page-development/full-code-page-development#call-service-function" },
-    { text: "Vue Full Code Page", href: "portal-and-page-development/full-code-page-development#vue-full-code-page" },
-    { text: "Use Third-party Packages", href: "portal-and-page-development/full-code-page-development#use-third-party-packages" },
-    { text: "Use Packaging Configuration", href: "portal-and-page-development/full-code-page-development#use-packaging-configuration" }
+    { text: "React Full Code Page", href: "shell-and-page/full-code-page-development#react-full-code-page" },
+    { text: "Create React Full Code Page", href: "shell-and-page/full-code-page-development#create-react-full-code-page" },
+    { text: "Use Styles", href: "shell-and-page/full-code-page-development#use-style" },
+    { text: "Use Local Resources", href: "shell-and-page/full-code-page-development#use-local-resources" },
+    { text: "Use Ant Design Components", href: "shell-and-page/full-code-page-development#use-ant-design-components" },
+    { text: "Embed Existing Regular Page", href: "shell-and-page/full-code-page-development#embed-existing-regular-page" },
+    { text: "Use Standard Components", href: "shell-and-page/full-code-page-development#use-standard-component" },
+    { text: "Call Data Model Functions", href: "shell-and-page/full-code-page-development#call-data-model-function" },
+    { text: "Call Service Functions", href: "shell-and-page/full-code-page-development#call-service-function" },
+    { text: "Vue Full Code Page", href: "shell-and-page/full-code-page-development#vue-full-code-page" },
+    { text: "Use Third-party Packages", href: "shell-and-page/full-code-page-development#use-third-party-packages" },
+    { text: "Use Packaging Configuration", href: "shell-and-page/full-code-page-development#use-packaging-configuration" }
   ]} />
 </IndexCard>
 

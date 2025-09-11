@@ -196,7 +196,7 @@
 .technologySection p {
   font-size: var(--font-size-body);
   color: var(--text-secondary);
-  line-height: 1.8;
+  line-height: var(--text-line-height);
   margin: 0;
   font-weight: 400;
   word-wrap: break-word;

@@ -31,7 +31,7 @@
     "message": "参考手册",
     "description": "The label of footer link with label=Reference linking to /docs/reference/"
   },
-  "link.item.label.Community Forum": {
+  "link.item.label.Community": {
     "message": "社区论坛",
     "description": "The label of footer link with label=Community Forum linking to https://forum.jit.pro/"
   },

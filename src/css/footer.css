@@ -76,7 +76,7 @@ footer .footer__link-item {
 /* Footer 链接悬停效果 */
 footer .footer__link-item:hover {
   color: white;
-  transform: translateX(5px);
+  /* transform: translateX(5px); */
 }
 
 /* Footer 链接悬停下划线 */
@@ -203,7 +203,7 @@ footer .footer__link-item[href*="github.com"]::before {
   vertical-align: middle;
 }
 
-footer .footer__link-item[href*="discourse"]::before {
+footer .footer__link-item[href*="forum"]::before {
   content: '💬';
   margin-right: 0.5rem;
   font-size: 0.9em;

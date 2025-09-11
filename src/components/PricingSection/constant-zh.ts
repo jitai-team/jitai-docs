@@ -4,41 +4,24 @@ export interface PricingPlan {
   title: string;
   subtitle: string;
   icon: string;
-  subscriptionPrice: string;
+  monthlyPrice: string;
+  yearlyPrice: string;
   buyoutPrice: string;
   features: string[];
   isRecommended?: boolean;
   cardType: string;
 }
 
-export interface TabConfig {
-  key: 'subscription' | 'buyout';
-  icon: string;
-  text: string;
-}
-
-// 标签页配置
-export const TABS: TabConfig[] = [
-  {
-    key: 'subscription',
-    icon: '📅',
-    text: '订阅模式'
-  },
-  {
-    key: 'buyout',
-    icon: '💎',
-    text: '买断模式'
-  }
-];
 
 // 价格方案配置
-export const PRICING_PLANS: PricingPlan[] = [
+const PRICING_PLANS: PricingPlan[] = [
   {
     id: 'desktop',
     title: '桌面版许可证',
     subtitle: '本地开发必备',
     icon: '🖥️',
-    subscriptionPrice: '7,000',
+    monthlyPrice: '700',
+    yearlyPrice: '7,000',
     buyoutPrice: '35,000',
     cardType: 'desktopCard',
     features: [
@@ -56,7 +39,8 @@ export const PRICING_PLANS: PricingPlan[] = [
     title: '服务器基础版许可证',
     subtitle: '中小企业入门选择',
     icon: '🚀',
-    subscriptionPrice: '35,000',
+    monthlyPrice: '3500',
+    yearlyPrice: '35,000',
     buyoutPrice: '175,000',
     cardType: 'basicCard',
     features: [
@@ -73,7 +57,8 @@ export const PRICING_PLANS: PricingPlan[] = [
     title: '服务器标准版许可证',
     subtitle: '企业标准配置',
     icon: '⭐',
-    subscriptionPrice: '70,000',
+    monthlyPrice: '7000',
+    yearlyPrice: '70,000',
     buyoutPrice: '350,000',
     cardType: 'standardCard',
     isRecommended: true,
@@ -89,7 +74,8 @@ export const PRICING_PLANS: PricingPlan[] = [
     title: '服务器专业版许可证',
     subtitle: '大型企业首选',
     icon: '💎',
-    subscriptionPrice: '140,000',
+    monthlyPrice: '14000',
+    yearlyPrice: '140,000',
     buyoutPrice: '700,000',
     cardType: 'professionalCard',
     features: [
@@ -100,16 +86,45 @@ export const PRICING_PLANS: PricingPlan[] = [
   },
   {
     id: 'enterprise',
-    title: '服务器全能版许可证',
-    subtitle: 'SaaS服务商专享',
+    title: '自定义组合',
+    subtitle: '批量许可证需求客户',
     icon: '🌟',
-    subscriptionPrice: '700,000',
-    buyoutPrice: '3,500,000',
+    monthlyPrice: '价格商议',
+    yearlyPrice: '价格商议',
+    buyoutPrice: '价格商议',
     cardType: 'enterpriseCard',
     features: [
-        '服务器专业版所有功能，以及',
-        '✓ 无限组织数',
-        '✓ 无限应用数',
+        '✓ 更多组织数',
+        '✓ 更多应用数',
+        '✓ 批量许可证价格优惠',
     ]
   }
 ];
+
+const CONTENT = {
+  pricingPlans: PRICING_PLANS,
+  title: '价格',
+  subtitle: 'JitAi可部署在任意个人电脑或服务器上，按需购买对应终端规格的许可证即可',
+  monthly: '按月订阅',
+  yearly: '按年订阅',
+  buyout: '一次性买断',
+  recommendedBadge: '推荐',
+  contactSales: '联系销售',
+  moneyUnit: '¥',
+  priceUnit: {
+    monthly: '个/月',
+    yearly: '个/年',
+    buyout: '个/永久',
+  },
+  subscribe: '订阅',
+  pay: '支付',
+  includes: '这包括：',
+  specialOffer: '特别优惠',
+  specialOfferDescriptions: [
+    '每个开发组织注册即送',
+    '3个桌面版许可证',
+    '（时长均为1个月），让你充分体验JitAi的强大功能！',
+  ],
+};
+
+export default CONTENT;

@@ -88,7 +88,7 @@ const config: Config = {
           onUntruncatedBlogPosts: 'warn',
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: ['./src/css/variables.css', './src/css/custom.css'],
         },
       } satisfies Preset.Options,
     ],
@@ -221,7 +221,7 @@ const config: Config = {
            title: 'More',
            items: [
             {
-              label: 'Community Forum',
+              label: 'Community',
               href: 'https://forum.jit.pro/',
             },
              {

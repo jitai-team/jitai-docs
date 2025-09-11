@@ -1,4 +1,4 @@
-export const CONTENT = {
+const CONTENT = {
   title: 'Jit 运行平台',
   subtitle: '本地部署的集成化应用运行环境',
   color: '#6d28d9',
@@ -45,3 +45,5 @@ export const CONTENT = {
     }
   ]
 };
+
+export default CONTENT;

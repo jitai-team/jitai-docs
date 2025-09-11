@@ -1,4 +1,4 @@
-export const CONTENT = {
+const CONTENT = {
 
   title: 'Jit 开发工具',
   subtitle: '编排式定义业务模块、组合模块，编程式开发业务处理逻辑，自动生成高质量代码，同时支持原生编码',
@@ -72,4 +72,6 @@ export const CONTENT = {
         link: '/docs/tutorial/快速上手/01下载安装',
       }
   ]
-}
+};
+
+export default CONTENT;

@@ -1,5 +1,4 @@
-
-export const CONTENT = {
+const CONTENT = {
   title: 'JitAi 技术体系优势',
   remarks: [
     '开创性的解释型应用协议（JAAP）和应用运行平台，使得应用系统及其模块成为可被AI动态感知、动态加载、实时编排、精确调度的解释型系统---完美的AI智能体的工作环境，把传统应用及生态带入AI驱动和实时编排时代。',
@@ -97,3 +96,5 @@ export const CONTENT = {
     },
   ]
 };
+
+export default CONTENT;

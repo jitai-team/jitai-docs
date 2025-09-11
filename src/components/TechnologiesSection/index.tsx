@@ -2,9 +2,15 @@ import React from 'react';
 import styles from './styles.module.css';
 import globalStyles from '../../pages/index.module.css';
 import ScrollAnimation from '../ScrollAnimation';
-import { CONTENT } from './constant';
+import CONTENT_EN from './constant-en';
+import CONTENT_ZH from './constant-zh';
 
-const TechnologiesSection: React.FC = () => {
+interface TechnologiesSectionProps {
+  currentLocale: string;
+}
+
+const TechnologiesSection: React.FC<TechnologiesSectionProps> = ({ currentLocale }) => {
+  const CONTENT = currentLocale === 'zh' ? CONTENT_ZH : CONTENT_EN;
   return (
     <ScrollAnimation animationType="fadeInUp" duration={500}>
       <section

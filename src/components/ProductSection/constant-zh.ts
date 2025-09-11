@@ -1,4 +1,4 @@
-export const CONTENT = {
+const CONTENT = {
   title: 'JitAi 是什么？',
   subtitle: '面向AI的下一代企业级应用开发技术体系，包括标准化应用协议、运行平台、开发框架、开发工具、运维工具',
   cards: [
@@ -40,3 +40,5 @@ export const CONTENT = {
     }
   ]
 };
+
+export default CONTENT;

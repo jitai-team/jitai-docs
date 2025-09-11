@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styles from './styles.module.css';
 import globalStyles from '../../pages/index.module.css';
-import { CONTENT } from './constant';
+import CONTENT_ZH from './constant-zh';
+import CONTENT_EN from './constant-en';
 
 // 打字机效果组件
 const TypewriterText: React.FC<{ text: string; isVisible: boolean; speed?: number; repeat?: boolean }> = ({
@@ -64,10 +65,12 @@ const TypewriterText: React.FC<{ text: string; isVisible: boolean; speed?: numbe
   );
 };
 
-const HeroSection: React.FC = () => {
+const HeroSection: React.FC<{ currentLocale: string }> = ({ currentLocale }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [animateElements, setAnimateElements] = useState(false);
   const [showTypewriter, setShowTypewriter] = useState(false);
+
+  const content = currentLocale === 'zh' ? CONTENT_ZH : CONTENT_EN;
 
   // 延迟显示，让页面先加载完成
   useEffect(() => {
@@ -104,13 +107,7 @@ const HeroSection: React.FC = () => {
               <span className={styles.badgeText}>NEXT-GEN</span>
             </div>
             <h1 className={`${styles.heroTitle} ${animateElements ? styles.titleAnimate : ''}`}>
-              {/* <TypewriterText
-                text={CONTENT.mainTitle}
-                isVisible={showTypewriter}
-                speed={150}
-                repeat={false}
-              /> */}
-              {CONTENT.mainTitle}
+              {content.mainTitle}
             </h1>
           </div>
 
@@ -125,10 +122,10 @@ const HeroSection: React.FC = () => {
                     <line x1="12" y1="22.08" x2="12" y2="12"></line>
                   </svg>
                 </div>
-                <h2 className={styles.subtitleTitle}>{CONTENT.subTitle1}</h2>
+                <h2 className={styles.subtitleTitle}>{content.subTitle1}</h2>
               </div>
               <p className={styles.subtitleText}>
-                {CONTENT.subDesc1}
+                {content.subDesc1}
               </p>
             </div>
 
@@ -145,18 +142,20 @@ const HeroSection: React.FC = () => {
                     <line x1="12" y1="15" x2="12" y2="21"></line>
                   </svg>
                 </div>
-                <h2 className={styles.subtitleTitle}>{CONTENT.subTitle2}</h2>
+                <h2 className={styles.subtitleTitle}>{content.subTitle2}</h2>
               </div>
               <p className={styles.subtitleText}>
-                {CONTENT.subDesc2}
+                {content.subDesc2}
               </p>
             </div>
           </div>
 
           {/* 行动按钮区域 */}
           <div className={`${styles.heroButtons} ${animateElements ? styles.buttonsAnimate : ''}`}>
-            <a className={styles.primaryButton} href="./docs/tutorial/download-installation" target="_blank">
-              <span className={styles.buttonText}>立即下载</span>
+            <a className={styles.primaryButton} href="/docs/tutorial/download-installation" target="_blank">
+              <span className={styles.buttonText}>
+                {content.buttonDownload}
+              </span>
               <span className={styles.buttonIcon}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
@@ -164,7 +163,9 @@ const HeroSection: React.FC = () => {
               </span>
             </a>
             <a className={`${styles.secondaryButton} ${styles.hideOnMobile}`} href="https://demo.jit.pro" target="_blank">
-              <span className={styles.buttonText}>在线体验</span>
+              <span className={styles.buttonText}>
+                {content.buttonDemo}
+              </span>
               <span className={styles.buttonIcon}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>

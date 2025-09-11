@@ -2,7 +2,8 @@ import React from 'react';
 import styles from './styles.module.css';
 import globalStyles from '../../pages/index.module.css';
 import ScrollAnimation from '../ScrollAnimation';
-import { CONTENT } from './constant';
+import CONTENT_EN from './constant-en';
+import CONTENT_ZH from './constant-zh';
 
 interface ModuleCardProps {
   module: {
@@ -26,7 +27,13 @@ const ModuleCard: React.FC<ModuleCardProps> = ({ module }) => (
   </div>
 );
 
-const IDESection: React.FC = () => {
+interface IDESectionProps {
+  currentLocale: string;
+}
+
+const IDESection: React.FC<IDESectionProps> = ({ currentLocale }) => {
+  const CONTENT = currentLocale === 'zh' ? CONTENT_ZH : CONTENT_EN;
+
   return (
     <ScrollAnimation animationType="fadeInUp" duration={500}>
       <section className={`${styles.ideSection} ${globalStyles.gradientBackground}`}

@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import styles from './styles.module.css';
 import globalStyles from '../../pages/index.module.css';
-import { 
-  TABS, 
-  PRICING_PLANS
-} from './constant';
+import CONTENT_EN from './constant-en';
+import CONTENT_ZH from './constant-zh';
 
-const PricingSection: React.FC = () => {
+interface PricingSectionProps {
+  currentLocale: string;
+}
+
+const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
+  const CONTENT = currentLocale === 'zh' ? CONTENT_ZH : CONTENT_EN;
+
   const [isVisible, setIsVisible] = useState(false);
   const [animateElements, setAnimateElements] = useState(false);
-  const [activeTab, setActiveTab] = useState<'subscription' | 'buyout'>('subscription');
+  const [activeTab, setActiveTab] = useState<'yearly' | 'monthly' | 'buyout'>('yearly');
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -28,37 +32,51 @@ const PricingSection: React.FC = () => {
       <div className={`${globalStyles.sectionContent} ${styles.sectionContent}`}>
         {/* 页面标题 */}
         <div className={`${styles.pageHeader} ${animateElements ? styles.headerAnimate : ''}`}>
-          <h1 className={styles.pageTitle}>价格</h1>
+          <h1 className={styles.pageTitle}>{CONTENT.title}</h1>
           <p className={styles.pageSubtitle}>
-            JitAi可部署在任意个人电脑或服务器上，按需购买对应终端规格的许可证即可。
+            {CONTENT.subtitle}
           </p>
         </div>
 
         {/* 价格模式切换标签 */}
         <div className={`${styles.tabContainer} ${animateElements ? styles.tabAnimate : ''}`}>
           <div className={styles.tabGroup}>
-            {TABS.map((tab) => (
-              <button
-                key={tab.key}
-                className={`${styles.tab} ${activeTab === tab.key ? styles.tabActive : ''}`}
-                onClick={() => setActiveTab(tab.key)}
+            <button
+                key='monthly'
+                className={`${styles.tab} ${activeTab === 'monthly' ? styles.tabActive : ''}`}
+                onClick={() => setActiveTab('monthly')}
               >
-                <span className={styles.tabIcon}>{tab.icon}</span>
-                <span className={styles.tabText}>{tab.text}</span>
-              </button>
-            ))}
+                <span className={styles.tabIcon}>📅</span>
+                <span className={styles.tabText}>{CONTENT.monthly}</span>
+            </button>
+            <button
+                key='yearly'
+                className={`${styles.tab} ${activeTab === 'yearly' ? styles.tabActive : ''}`}
+                onClick={() => setActiveTab('yearly')}
+              >
+                <span className={styles.tabIcon}>📅</span>
+                <span className={styles.tabText}>{CONTENT.yearly}</span>
+            </button>
+            <button
+                key='buyout'
+                className={`${styles.tab} ${activeTab === 'buyout' ? styles.tabActive : ''}`}
+                onClick={() => setActiveTab('buyout')}
+              >
+                <span className={styles.tabIcon}>🏷️</span>
+                <span className={styles.tabText}>{CONTENT.buyout}</span>
+            </button>
           </div>
         </div>
 
         {/* 许可证方案卡片 */}
         <div className={`${styles.pricingCards} ${animateElements ? styles.cardsAnimate : ''}`}>
-          {PRICING_PLANS.map((plan) => (
+          {CONTENT.pricingPlans.map((plan) => (
             <div 
               key={plan.id} 
               className={`${styles.pricingCard} ${styles[plan.cardType]} ${plan.isRecommended ? styles.recommended : ''}`}
             >
               {plan.isRecommended && (
-                <div className={styles.recommendedBadge}>推荐</div>
+                <div className={styles.recommendedBadge}>{CONTENT.recommendedBadge}</div>
               )}
               <div className={styles.cardHeader}>
                 {/* <div className={styles.cardIcon}>{plan.icon}</div> */}
@@ -69,22 +87,22 @@ const PricingSection: React.FC = () => {
                 <div className={styles.priceGroup}>
                   <div className={styles.price}>
                     {/* <span className={styles.currency}>¥</span> */}
-                    <span className={styles.amount}>¥
-                      {activeTab === 'subscription' ? plan.subscriptionPrice : plan.buyoutPrice}
+                    <span className={styles.amount}>{plan.id === 'enterprise' ? '' : CONTENT.moneyUnit}
+                     {plan[activeTab+'Price']}
                     </span>
                     <span className={styles.period}>
-                      {activeTab === 'subscription' ? '/个/年' : '/个/永久'}
+                      {plan.id === 'enterprise' ? '' : CONTENT.priceUnit[activeTab]}
                     </span>
                   </div>
                 </div>
               </div>
               <div className={styles.cardAction}>
                 <button className={styles.orderButton}>
-                  {activeTab === 'subscription' ? '订阅' : '购买'}
+                  {plan.id === 'enterprise' ? CONTENT.contactSales : (activeTab === 'buyout' ? CONTENT.pay : CONTENT.subscribe)}
                 </button>
               </div>
               <div className={styles.cardFeatures}>
-                <div className={styles.packageInfo}>这包括：</div>
+                <div className={styles.packageInfo}>{CONTENT.includes}</div>
                 {plan.features.map((feature, index) => (
                   <div key={index} className={styles.featureItem}>{feature}</div>
                 ))}
@@ -97,9 +115,11 @@ const PricingSection: React.FC = () => {
         <div className={`${styles.specialNote} ${animateElements ? styles.noteAnimate : ''}`}>
           <div className={styles.noteIcon}>🎁</div>
           <div className={styles.noteContent}>
-            <h3 className={styles.noteTitle}>特别优惠</h3>
+            <h3 className={styles.noteTitle}>{CONTENT.specialOffer}</h3>
             <p className={styles.noteText}>
-              每个开发组织注册即送<strong>3个桌面版许可证</strong>（时长均为3个月），让你充分体验JitAi的强大功能！
+              {CONTENT.specialOfferDescriptions[0]}
+              <strong>{CONTENT.specialOfferDescriptions[1]}</strong>
+              {CONTENT.specialOfferDescriptions[2]}
             </p>
             {/* <a className={styles.downloadButton} href="./docs/tutorial/download-installation" target="_blank">
               <span className={styles.buttonText}>立即下载</span>
@@ -115,22 +135,6 @@ const PricingSection: React.FC = () => {
         </div>
 
 
-        {/* 联系我们按钮 */}
-        <div className={`${styles.contactSection} ${animateElements ? styles.contactAnimate : ''}`}>
-          <h2 className={styles.contactTitle}>准备开始您的AI应用开发之旅？</h2>
-          <p className={styles.contactSubtitle}>
-            联系我们的销售团队，获取最适合您需求的许可证方案
-          </p>
-          <a href="mailto:sales@jit.pro" className={styles.contactButton}>
-            <span className={styles.buttonText}>联系我们</span>
-            <span className={styles.buttonIcon}>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
-              </svg>
-            </span>
-          </a>
-        </div>
       </div>
     </section>
   );

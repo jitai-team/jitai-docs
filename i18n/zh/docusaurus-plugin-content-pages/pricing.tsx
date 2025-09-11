@@ -1,20 +1,19 @@
 import React, { useEffect } from 'react';
 import Layout from '@theme/Layout';
-import Navbar from '../components/Navbar';
-import PricingSection from '../components/PricingSection';
-import PricingFAQSection from '../components/PricingFAQSection';
-import PricingContactSection from '../components/PricingContactSection';
+import Navbar from '../../../src/components/Navbar';
+import PricingSection from '../../../src/components/PricingSection';
+import PricingContactSection from '../../../src/components/PricingContactSection';
+import PricingFAQSection from '../../../src/components/PricingFAQSection';
 import styles from './pricing.module.css';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 const LayoutComponent = Layout as any;
 
 const PricingPage: React.FC = () => {
-  
   const { i18n } = useDocusaurusContext();
   useEffect(() => {
     document.documentElement.setAttribute('data-locale', i18n.currentLocale);
-  }, [i18n.currentLocale]);
+  }, []);
   
   return (
     <LayoutComponent>

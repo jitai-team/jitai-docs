@@ -34,7 +34,7 @@ Reviewing the previous step [Building Question Bank Management with Easy Mode](.
 
 Here's a brief introduction to the most core and fundamental elements:
 
-* Portal is a collection of pages oriented towards a specific scenario. For example: we can create a "Student Portal" for students and a "Teacher Portal" for teachers. Clicking menus in the portal will open their configured pages. Read [Portal Navigation Design](../../devguide/portal-and-page-development/portal-navigation-design) for more details.
+* Portal is a collection of pages oriented towards a specific scenario. For example: we can create a "Student Portal" for students and a "Teacher Portal" for teachers. Clicking menus in the portal will open their configured pages. Read [Portal Navigation Design](../../devguide/shell-and-page/portal-navigation-design) for more details.
 * Page is the interface that the frontend sees and operates.
 * Data Model is similar to Excel tables and has built-in CRUD interfaces, making it convenient for pages to directly read and write data. Read [Data Modeling](../../devguide/data-modeling/data-table-model) for more details.
 * Service is a set of interfaces oriented towards a specific business scenario. When the built-in CRUD interfaces of data models cannot meet requirements, services can be used to extend other interfaces. Read [Encapsulating Business Service Functions](../../devguide/business-logic-development/encapsulating-business-service-functions) for more details.
@@ -72,7 +72,7 @@ Now use a more flexible page type (Regular Page) to create the "Test Paper Manag
 Pages are composed of components, allowing flexible adjustment of component layouts for overall interface layout freedom.
 Components connecting to data models already have built-in data read/write capabilities for models, achieving local customization freedom through component detail configuration.
 Components can configure component events and call functions of other components, thus achieving interactive linkage freedom between components.
-Read [Component-based Page Development](../../devguide/portal-and-page-development/component-based-page-development) for more details.
+Read [Component-based Page Development](../../devguide/shell-and-page/component-based-page-development) for more details.
 
 ![](../img/ide_mode_143959.png)
 

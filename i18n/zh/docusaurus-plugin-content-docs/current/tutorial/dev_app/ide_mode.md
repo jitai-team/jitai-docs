@@ -34,7 +34,7 @@ Jit应用层的元素模块
 
 这里先简单介绍下最核心、最基础的几个元素：
 
-* 门户，是面向一个特定场景的一组页面的集合。例如：我们可以考生创建一个「考生门户」、为老师创建一个「老师门户」。点击门户中的菜单，会打开其配置的页面。阅读[门户导航设计](../../devguide/portal-and-page-development/portal-navigation-design)了解更多。
+* 门户，是面向一个特定场景的一组页面的集合。例如：我们可以考生创建一个「考生门户」、为老师创建一个「老师门户」。点击门户中的菜单，会打开其配置的页面。阅读[门户导航设计](../../devguide/shell-and-page/portal-navigation-design)了解更多。
 * 页面，即前端看到和操作的界面。
 * 数据模型，类似于Excel表，且内置了增删改查的接口，方便页面直接读写数据。阅读[数据建模](../../devguide/data-modeling/data-table-model)了解更多。
 * 服务，是面向一个特定业务场景的一组接口。当数据模型内置的增删改查接口满足不了需求时，就可以通过服务来扩展其他接口。阅读[封装业务服务函数](../../devguide/business-logic-development/encapsulating-business-service-functions)了解更多。
@@ -72,7 +72,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 页面由组件组成，可灵活调整组件布局，实现整体界面排版自由。
 组件对接数据模型已经内置好对模型的数据读写，通过组件详情配置实现局部的定制自由。
 组件之间可以配置组件事件、调用其他组件的函数，从而实现组件之间的交互联动自由。
-阅读[组件化页面开发](../../devguide/portal-and-page-development/component-based-page-development)了解更多。
+阅读[组件化页面开发](../../devguide/shell-and-page/component-based-page-development)了解更多。
 
 ![](../img/ide_mode_143959.png)
 

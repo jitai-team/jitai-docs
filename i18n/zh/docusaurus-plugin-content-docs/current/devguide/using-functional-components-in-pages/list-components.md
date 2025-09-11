@@ -9,7 +9,7 @@ slug: list-components
 ![](./img/4/2025-09-02-15-55-18.png)
 
 ## 配置列表标题 {#configure-list-title}
-在[页面编辑器](../portal-and-page-development/component-based-page-development#visual-page-editor)中拖入列表组件后，会默认使用数据表模型中的第一个字段作为字段标题。用户可以按照下面操作修改标题：
+在[页面编辑器](../shell-and-page/component-based-page-development#visual-page-editor)中拖入列表组件后，会默认使用数据表模型中的第一个字段作为字段标题。用户可以按照下面操作修改标题：
 
 ![](./img/4/2025-09-02_16-16-41.gif)
 

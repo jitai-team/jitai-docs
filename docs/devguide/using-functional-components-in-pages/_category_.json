@@ -1,8 +1,9 @@
 {
-  "label": "在页面中使用功能组件",
+  "label": "Use Components in Pages",
   "position": 4,
   "link": {
     "type": "generated-index",
+    "title": "在页面中使用功能组件",
     "description": "学习如何在页面中使用各种功能组件，包括表单、表格、图表等组件的配置和使用方法。"
   }
 }

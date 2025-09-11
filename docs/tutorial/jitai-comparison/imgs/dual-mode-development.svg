@@ -1,0 +1,84 @@
+<svg width="800" height="620" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css">
+      .title { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; }
+      .text { font-family: Arial, sans-serif; font-size: 12px; }
+      .visual-box { fill: #4CAF50; stroke: #2E7D32; stroke-width: 2; }
+      .code-box { fill: #2196F3; stroke: #1565C0; stroke-width: 2; }
+      .process-box { fill: #FF9800; stroke: #E65100; stroke-width: 2; }
+      .arrow { stroke: #333; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .dashed-arrow { stroke: #666; stroke-width: 2; fill: none; stroke-dasharray: 5,5; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" class="title">JitAi Dual-Mode Development Process</text>
+  
+  <!-- Development Mode Selection -->
+  <rect x="50" y="60" width="700" height="80" fill="#F5F5F5" stroke="#333" stroke-width="2" rx="10"/>
+  <text x="400" y="85" text-anchor="middle" class="subtitle">Select Development Mode</text>
+  <text x="400" y="105" text-anchor="middle" class="text">Choose the most suitable development approach based on project needs and team skills</text>
+  <text x="400" y="125" text-anchor="middle" class="text">Two modes can be switched at any time, flexible combination</text>
+  
+  <!-- Visual Development Branch -->
+  <rect x="50" y="180" width="300" height="280" class="visual-box" rx="10"/>
+  <text x="200" y="205" text-anchor="middle" class="subtitle" fill="white">Visual Development</text>
+  <text x="200" y="225" text-anchor="middle" class="text" fill="white">Drag &amp; Drop + Visual Orchestration</text>
+  
+  <!-- Visual Development Steps -->
+  <rect x="80" y="250" width="240" height="40" fill="white" stroke="#333" stroke-width="1" rx="5"/>
+  <text x="200" y="270" text-anchor="middle" class="text">1. Drag Elements to Canvas</text>
+  
+  <rect x="80" y="300" width="240" height="40" fill="white" stroke="#333" stroke-width="1" rx="5"/>
+  <text x="200" y="320" text-anchor="middle" class="text">2. Configure Element Properties</text>
+  
+  <rect x="80" y="350" width="240" height="40" fill="white" stroke="#333" stroke-width="1" rx="5"/>
+  <text x="200" y="370" text-anchor="middle" class="text">3. Connect Element Relationships</text>
+  
+  <rect x="80" y="400" width="240" height="40" fill="white" stroke="#333" stroke-width="1" rx="5"/>
+  <text x="200" y="420" text-anchor="middle" class="text">4. Real-time Preview Effect</text>
+  
+  <!-- Code Development Branch -->
+  <rect x="450" y="180" width="300" height="280" class="code-box" rx="10"/>
+  <text x="600" y="205" text-anchor="middle" class="subtitle" fill="white">Code Development</text>
+  <text x="600" y="225" text-anchor="middle" class="text" fill="white">Full Code + Deep Customization</text>
+  
+  <!-- Code Development Steps -->
+  <rect x="480" y="250" width="240" height="40" fill="white" stroke="#333" stroke-width="1" rx="5"/>
+  <text x="600" y="270" text-anchor="middle" class="text">1. Write Business Logic Code</text>
+  
+  <rect x="480" y="300" width="240" height="40" fill="white" stroke="#333" stroke-width="1" rx="5"/>
+  <text x="600" y="320" text-anchor="middle" class="text">2. Call JitAi API</text>
+  
+  <rect x="480" y="350" width="240" height="40" fill="white" stroke="#333" stroke-width="1" rx="5"/>
+  <text x="600" y="370" text-anchor="middle" class="text">3. Integrate Existing Systems</text>
+  
+  <rect x="480" y="400" width="240" height="40" fill="white" stroke="#333" stroke-width="1" rx="5"/>
+  <text x="600" y="420" text-anchor="middle" class="text">4. Deep Customization Features</text>
+  
+  <!-- Code Generation -->
+  <rect x="200" y="480" width="400" height="60" class="process-box" rx="10"/>
+  <text x="400" y="505" text-anchor="middle" class="subtitle" fill="white">Code Generation &amp; Compilation</text>
+  <text x="400" y="525" text-anchor="middle" class="text" fill="white">Generate Real Native Code (JS/TS/Python)</text>
+  
+  <!-- Connection Lines -->
+  <line x1="200" y1="140" x2="200" y2="180" class="arrow"/>
+  <line x1="600" y1="140" x2="600" y2="180" class="arrow"/>
+  <line x1="200" y1="460" x2="400" y2="480" class="arrow"/>
+  <line x1="600" y1="460" x2="400" y2="480" class="arrow"/>
+  
+  <!-- Switch Arrow -->
+  <line x1="350" y1="320" x2="450" y2="320" class="dashed-arrow"/>
+  <text x="400" y="315" text-anchor="middle" class="text">Switch Anytime</text>
+  
+  <!-- Core Advantages -->
+  <text x="400" y="570" text-anchor="middle" class="subtitle">Core Advantages</text>
+  <text x="120" y="590" text-anchor="middle" class="text">✓ Rapid Prototype Development</text>
+  <text x="330" y="590" text-anchor="middle" class="text">✓ Deep Customization Capability</text>
+  <text x="520" y="590" text-anchor="middle" class="text">✓ Generate Native Code</text>
+  <text x="690" y="590" text-anchor="middle" class="text">✓ Flexible Mode Switching</text>
+</svg>

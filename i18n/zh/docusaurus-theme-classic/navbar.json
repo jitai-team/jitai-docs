@@ -23,7 +23,7 @@
     "message": "开源",
     "description": "Navbar item with label Open Source"
   },
-  "item.label.Community Forum": {
+  "item.label.Community": {
     "message": "社区论坛",
     "description": "Navbar item with label Community Forum"
   }

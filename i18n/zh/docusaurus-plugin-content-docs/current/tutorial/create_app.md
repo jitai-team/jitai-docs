@@ -24,4 +24,4 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 * 管理者门户: 面向应用管理员的管理界面，例如：通讯录管理、应用权限、知识库管理等，但不能开发应用。
 * 开发者门户: 面向开发人员的配置页面。例如：新增菜单、页面等。
 
-阅读[门户导航设计](../devguide/portal-and-page-development/portal-navigation-design)了解更多。
+阅读[门户导航设计](../devguide/shell-and-page/portal-navigation-design)了解更多。

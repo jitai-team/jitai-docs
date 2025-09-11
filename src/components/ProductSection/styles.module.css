@@ -132,7 +132,7 @@
 
 .cardDescription {
   color: var(--text-secondary);
-  line-height: 1.7;
+  line-height: var(--text-line-height);
   font-size: var(--font-size-body);
   text-align: center;
   margin: 0;

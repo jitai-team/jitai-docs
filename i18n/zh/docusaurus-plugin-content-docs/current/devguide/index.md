@@ -14,8 +14,77 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 首先，你需要完成基本的[下载安装](../tutorial/download-installation)！
 
 
+## 基础概念
+掌握JitAi平台的核心理念和架构原理。了解平台应用、元素体系、开发框架、可视化开发工具等基础概念，为后续开发工作奠定理论基础。
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard
+  title="平台架构与核心概念"
+  href="basic-concept"
+  description="了解JitAi平台架构、应用概念、JAAP协议、元素体系和开发框架，掌握平台的基础原理。"
+>
+  <LinkGrid columns={2} links={[
+    { text: "平台与应用", href: "basic-concept#platform-and-applications" },
+    { text: "DevOps工具与服务", href: "basic-concept#devops-tools-and-services" },
+    { text: "应用创建与开发", href: "basic-concept#application-creation-and-development" },
+    { text: "JAAP协议与元素", href: "basic-concept#jaap-protocol-and-elements" },
+    { text: "元素Type与元素加载", href: "basic-concept#element-type-and-element-loading" },
+    { text: "开发框架", href: "basic-concept#development-framework" },
+    { text: "业务应用与应用继承", href: "basic-concept#business-applications-and-application-inheritance" },
+    { text: "开发工具", href: "basic-concept#development-tools" },
+    { text: "扩展", href: "basic-concept#extension" }
+  ]} />
+</IndexCard>
+
+</div>
+
+## 平台安装与节点激活
+完成平台安装和节点激活流程。学习下载安装方法、节点激活流程、开发者组织管理等，建立开发环境基础。
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard
+  title="下载与安装"
+  href="installation-activation/download-installation"
+  description="学习如何下载和安装JitAi平台，包括桌面版和服务器版的不同部署场景。"
+>
+  <LinkGrid links={[
+    { text: "详细安装步骤", href: "installation-activation/download-installation#detailed-installation-steps" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="节点激活与开发者组织"
+  href="installation-activation/developer-organization-management"
+  description="了解如何激活节点和管理开发者组织，包括组织绑定、成员管理等核心操作。"
+>
+  <LinkGrid links={[
+    { text: "什么是开发者组织", href: "installation-activation/developer-organization-management#what-is-developer-organization" },
+    { text: "在激活节点时创建新的开发组织", href: "installation-activation/developer-organization-management#create-new-development-organization-when-activating-node" },
+    { text: "在激活节点时将节点绑定到自己已加入的组织", href: "installation-activation/developer-organization-management#bind-node-to-joined-organization-when-activating" },
+    { text: "在激活节点时使用组织绑定码加入组织并绑定", href: "installation-activation/developer-organization-management#use-organization-bind-code-to-join-and-bind-when-activating-node" },
+    { text: "在登录已有节点时通过组织绑定码加入组织", href: "installation-activation/developer-organization-management#join-organization-via-bind-code-when-logging-into-existing-node" },
+    { text: "查看和刷新组织绑定码", href: "installation-activation/developer-organization-management#view-and-refresh-organization-bind-code" },
+    { text: "移除组织成员", href: "installation-activation/developer-organization-management#remove-organization-member" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="平台节点的更新升级"
+  href="installation-activation/platform-node-updates-upgrades"
+  description="学习如何更新和升级平台节点，保持系统稳定性和功能更新。"
+>
+  <LinkGrid links={[
+    { text: "更新流程", href: "installation-activation/platform-node-updates-upgrades" },
+    { text: "升级方法", href: "installation-activation/platform-node-updates-upgrades" }
+  ]} />
+</IndexCard>
+
+</div>
+
 ## 应用开发基础
-从零开始创建你的第一个应用。掌握开发者组织管理、运行环境配置、应用创建与管理的完整流程，为后续开发工作打下坚实基础。
+从零开始创建你的第一个应用。掌握应用创建与管理、运行环境配置的完整流程，为后续开发工作打下坚实基础。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
@@ -30,22 +99,6 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "数据存储与环境变量配置", href: "application-development-basics/application-creation-and-management#data-storage-and-environment-variable-configuration" },
     { text: "应用版本管理与发布", href: "application-development-basics/application-creation-and-management#application-version-management-and-publish" },
     { text: "应用导出导入", href: "application-development-basics/application-creation-and-management#application-export-import" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="开发者组织管理"
-  href="application-development-basics/developer-organization-management"
-  description="了解如何创建和管理开发者组织，包括节点激活、组织绑定、成员管理等核心操作。"
->
-  <LinkGrid links={[
-    { text: "什么是开发者组织", href: "application-development-basics/developer-organization-management#what-is-developer-organization" },
-    { text: "在激活节点时创建新的开发组织", href: "application-development-basics/developer-organization-management#create-new-development-organization-when-activating-node" },
-    { text: "在激活节点时将节点绑定到自己已加入的组织", href: "application-development-basics/developer-organization-management#bind-node-to-joined-organization-when-activating" },
-    { text: "在激活节点时使用组织绑定码加入组织并绑定", href: "application-development-basics/developer-organization-management#use-organization-bind-code-to-join-and-bind-when-activating-node" },
-    { text: "在登录已有节点时通过组织绑定码加入组织", href: "application-development-basics/developer-organization-management#join-organization-via-bind-code-when-logging-into-existing-node" },
-    { text: "查看和刷新组织绑定码", href: "application-development-basics/developer-organization-management#view-and-refresh-organization-bind-code" },
-    { text: "移除组织成员", href: "application-development-basics/developer-organization-management#remove-organization-member" }
   ]} />
 </IndexCard>
 
@@ -94,109 +147,109 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="门户导航设计"
-  href="portal-and-page-development/portal-navigation-design"
+  href="shell-and-page/portal-navigation-design"
   description="设计不同用户角色的门户界面，配置导航菜单和权限控制，创建个性化用户体验。"
 >
   <LinkGrid links={[
-    { text: "应用内置3个门户", href: "portal-and-page-development/portal-navigation-design#application-built-in-three-portals" },
-    { text: "3种门户类型", href: "portal-and-page-development/portal-navigation-design#three-portal-types" },
-    { text: "创建门户并配置菜单", href: "portal-and-page-development/portal-navigation-design#create-portal-and-configure-menu" },
-    { text: "门户布局设计", href: "portal-and-page-development/portal-navigation-design#portal-layout-design" },
-    { text: "启用或关闭常用功能入口", href: "portal-and-page-development/portal-navigation-design#enable-disable-common-function-entries" },
-    { text: "在门户中集成AI助理", href: "portal-and-page-development/portal-navigation-design#integrate-ai-assistant-in-portal" }
+    { text: "应用内置3个门户", href: "shell-and-page/portal-navigation-design#application-built-in-three-portals" },
+    { text: "3种门户类型", href: "shell-and-page/portal-navigation-design#three-portal-types" },
+    { text: "创建门户并配置菜单", href: "shell-and-page/portal-navigation-design#create-portal-and-configure-menu" },
+    { text: "门户布局设计", href: "shell-and-page/portal-navigation-design#portal-layout-design" },
+    { text: "启用或关闭常用功能入口", href: "shell-and-page/portal-navigation-design#enable-disable-common-function-entries" },
+    { text: "在门户中集成AI助理", href: "shell-and-page/portal-navigation-design#integrate-ai-assistant-in-portal" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="组件化页面开发"
-  href="portal-and-page-development/component-based-page-development"
+  href="shell-and-page/component-based-page-development"
   description="使用可视化编辑器构建页面界面，配置组件和事件，实现丰富的用户交互功能。"
 >
   <LinkGrid links={[
-    { text: "创建一个常规页面", href: "portal-and-page-development/component-based-page-development#create-a-regular-page" },
-    { text: "可视化页面编辑器", href: "portal-and-page-development/component-based-page-development#visual-page-editor" },
-    { text: "页面变量", href: "portal-and-page-development/component-based-page-development#page-variables" },
-    { text: "页面事件", href: "portal-and-page-development/component-based-page-development#page-events" },
-    { text: "页面函数", href: "portal-and-page-development/component-based-page-development#page-functions" }
+    { text: "创建一个常规页面", href: "shell-and-page/component-based-page-development#create-a-regular-page" },
+    { text: "可视化页面编辑器", href: "shell-and-page/component-based-page-development#visual-page-editor" },
+    { text: "页面变量", href: "shell-and-page/component-based-page-development#page-variables" },
+    { text: "页面事件", href: "shell-and-page/component-based-page-development#page-events" },
+    { text: "页面函数", href: "shell-and-page/component-based-page-development#page-functions" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="ai-data-management-page"
-  href="portal-and-page-development/ai-data-management-page"
+  href="shell-and-page/ai-data-management-page"
   description="AI加持的ai-data-management-page，智能辅助高效完成数据浏览、筛选、编辑与批量操作。"
 >
   <LinkGrid columns={2} links={[
-    { text: "创建ai-data-management-page", href: "portal-and-page-development/ai-data-management-page#create-ai-data-management-page" },
-    { text: "通过默认筛选条件限制页面表格查询的数据", href: "portal-and-page-development/ai-data-management-page#limit-page-table-query-data-through-default-filter-conditions" },
-    { text: "配置默认的数据排序规则", href: "portal-and-page-development/ai-data-management-page#configure-default-data-sort-rules" },
-    { text: "在页面表格中隐藏部分字段", href: "portal-and-page-development/ai-data-management-page#hide-some-fields-in-page-table" },
-    { text: "配置支持条件筛选的字段", href: "portal-and-page-development/ai-data-management-page#configure-conditional-filter-fields" },
-    { text: "配置表单中允许查看和编辑的字段", href: "portal-and-page-development/ai-data-management-page#configure-viewable-editable-fields-in-form" },
-    { text: "配置批量编辑表单中展示的字段", href: "portal-and-page-development/ai-data-management-page#configure-fields-displayed-in-batch-edit-form" },
-    { text: "启用AI数据管理助手", href: "portal-and-page-development/ai-data-management-page#enable-ai-data-management-assistant" },
-    { text: "转换为常规页面进行修改", href: "portal-and-page-development/ai-data-management-page#convert-to-regular-page-for-modification" }
+    { text: "创建ai-data-management-page", href: "shell-and-page/ai-data-management-page#create-ai-data-management-page" },
+    { text: "通过默认筛选条件限制页面表格查询的数据", href: "shell-and-page/ai-data-management-page#limit-page-table-query-data-through-default-filter-conditions" },
+    { text: "配置默认的数据排序规则", href: "shell-and-page/ai-data-management-page#configure-default-data-sort-rules" },
+    { text: "在页面表格中隐藏部分字段", href: "shell-and-page/ai-data-management-page#hide-some-fields-in-page-table" },
+    { text: "配置支持条件筛选的字段", href: "shell-and-page/ai-data-management-page#configure-conditional-filter-fields" },
+    { text: "配置表单中允许查看和编辑的字段", href: "shell-and-page/ai-data-management-page#configure-viewable-editable-fields-in-form" },
+    { text: "配置批量编辑表单中展示的字段", href: "shell-and-page/ai-data-management-page#configure-fields-displayed-in-batch-edit-form" },
+    { text: "启用AI数据管理助手", href: "shell-and-page/ai-data-management-page#enable-ai-data-management-assistant" },
+    { text: "转换为常规页面进行修改", href: "shell-and-page/ai-data-management-page#convert-to-regular-page-for-modification" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="AI数据分析页面"
-  href="portal-and-page-development/ai-data-analysis-page"
+  href="shell-and-page/ai-data-analysis-page"
   description="通过自然语言描述需求，AI自动生成数据图表，支持用户随时调整图表样式和统计维度。"
 >
   <LinkGrid links={[
-    { text: "创建AI数据分析页面", href: "portal-and-page-development/ai-data-analysis-page#create-ai-data-analysis-page" },
-    { text: "页面配置", href: "portal-and-page-development/ai-data-analysis-page#page-configuration" },
-    { text: "运行效果演示", href: "portal-and-page-development/ai-data-analysis-page#run-effects" },
-    { text: "全代码开发", href: "portal-and-page-development/ai-data-analysis-page#full-code-development" },
-    { text: "快捷创建", href: "portal-and-page-development/ai-data-analysis-page#quick-create" }
+    { text: "创建AI数据分析页面", href: "shell-and-page/ai-data-analysis-page#create-ai-data-analysis-page" },
+    { text: "页面配置", href: "shell-and-page/ai-data-analysis-page#page-configuration" },
+    { text: "运行效果演示", href: "shell-and-page/ai-data-analysis-page#run-effects" },
+    { text: "全代码开发", href: "shell-and-page/ai-data-analysis-page#full-code-development" },
+    { text: "快捷创建", href: "shell-and-page/ai-data-analysis-page#quick-create" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="数据录入页面"
-  href="portal-and-page-development/data-entry-page"
+  href="shell-and-page/data-entry-page"
   description="快速创建数据录入表单，实现数据收集和提交功能。"
 >
   <LinkGrid links={[
-    { text: "创建数据录入页面", href: "portal-and-page-development/data-entry-page#create-data-entry-page" },
-    { text: "配置允许查看和编辑的字段", href: "portal-and-page-development/data-entry-page#configure-viewable-editable-fields" },
-    { text: "提交后显示再次录入按钮", href: "portal-and-page-development/data-entry-page#show-re-entry-button-after-submission" },
-    { text: "提交后展示结果反馈界面", href: "portal-and-page-development/data-entry-page#show-result-feedback-after-submission" }
+    { text: "创建数据录入页面", href: "shell-and-page/data-entry-page#create-data-entry-page" },
+    { text: "配置允许查看和编辑的字段", href: "shell-and-page/data-entry-page#configure-viewable-editable-fields" },
+    { text: "提交后显示再次录入按钮", href: "shell-and-page/data-entry-page#show-re-entry-button-after-submission" },
+    { text: "提交后展示结果反馈界面", href: "shell-and-page/data-entry-page#show-result-feedback-after-submission" }
   ]} />
 </IndexCard>
 
 
 <IndexCard
   title="Markdown页面"
-  href="portal-and-page-development/markdown-page"
+  href="shell-and-page/markdown-page"
   description="创建文档型页面，支持丰富的Markdown语法和文档展示需求。"
 >
   <LinkGrid links={[
-    { text: "创建Markdown页面", href: "portal-and-page-development/markdown-page#create-markdown-page" },
-    { text: "Markdown 语法", href: "portal-and-page-development/markdown-page#markdown-语法" }
+    { text: "创建Markdown页面", href: "shell-and-page/markdown-page#create-markdown-page" },
+    { text: "Markdown 语法", href: "shell-and-page/markdown-page#markdown-语法" }
   ]} />
 </IndexCard>
 
 
 <IndexCard
   title="全代码页面开发"
-  href="portal-and-page-development/full-code-page-development"
+  href="shell-and-page/full-code-page-development"
   description="面向高级开发者的完全自定义页面开发方式，支持复杂业务逻辑和个性化界面。"
 >
   <LinkGrid columns={2} links={[
-    { text: "React全代码页面", href: "portal-and-page-development/full-code-page-development#react-full-code-page" },
-    { text: "创建 React 全代码页面", href: "portal-and-page-development/full-code-page-development#create-react-full-code-page" },
-    { text: "使用样式", href: "portal-and-page-development/full-code-page-development#use-style" },
-    { text: "使用本地资源", href: "portal-and-page-development/full-code-page-development#use-local-resources" },
-    { text: "使用 Ant Design 的组件", href: "portal-and-page-development/full-code-page-development#use-ant-design-components" },
-    { text: "内嵌已有常规页面", href: "portal-and-page-development/full-code-page-development#embed-existing-regular-page" },
-    { text: "使用标准组件", href: "portal-and-page-development/full-code-page-development#use-standard-component" },
-    { text: "调用数据模型函数", href: "portal-and-page-development/full-code-page-development#call-data-model-function" },
-    { text: "调用服务函数", href: "portal-and-page-development/full-code-page-development#call-service-function" },
-    { text: "Vue全代码页面", href: "portal-and-page-development/full-code-page-development#vue-full-code-page" },
-    { text: "使用第三方包", href: "portal-and-page-development/full-code-page-development#use-third-party-packages" },
-    { text: "打包配置的使用", href: "portal-and-page-development/full-code-page-development#use-packaging-configuration" }
+    { text: "React全代码页面", href: "shell-and-page/full-code-page-development#react-full-code-page" },
+    { text: "创建 React 全代码页面", href: "shell-and-page/full-code-page-development#create-react-full-code-page" },
+    { text: "使用样式", href: "shell-and-page/full-code-page-development#use-style" },
+    { text: "使用本地资源", href: "shell-and-page/full-code-page-development#use-local-resources" },
+    { text: "使用 Ant Design 的组件", href: "shell-and-page/full-code-page-development#use-ant-design-components" },
+    { text: "内嵌已有常规页面", href: "shell-and-page/full-code-page-development#embed-existing-regular-page" },
+    { text: "使用标准组件", href: "shell-and-page/full-code-page-development#use-standard-component" },
+    { text: "调用数据模型函数", href: "shell-and-page/full-code-page-development#call-data-model-function" },
+    { text: "调用服务函数", href: "shell-and-page/full-code-page-development#call-service-function" },
+    { text: "Vue全代码页面", href: "shell-and-page/full-code-page-development#vue-full-code-page" },
+    { text: "使用第三方包", href: "shell-and-page/full-code-page-development#use-third-party-packages" },
+    { text: "打包配置的使用", href: "shell-and-page/full-code-page-development#use-packaging-configuration" }
   ]} />
 </IndexCard>
 
@@ -434,7 +487,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "按钮配置", href: "using-functional-components-in-pages/time-management-components#button-configuration" },
     { text: "首次加载组件时刷新数据", href: "using-functional-components-in-pages/time-management-components#refresh-data-on-first-component-load" },
     { text: "新增日程", href: "using-functional-components-in-pages/time-management-components#new-schedule" },
-    { text: "拖拽日程", href: "using-functional-components-in-pages/time-management-components#drag-schedule" }
+    { text: "拖拽日程", href: "using-functional-components-in-pages/time-management-components#drag-agenda" }
   ]} />
 </IndexCard>
 

@@ -1,5 +1,4 @@
 ---
-draft: true
 sidebar_position: 7
 slug: statistical-charts
 ---

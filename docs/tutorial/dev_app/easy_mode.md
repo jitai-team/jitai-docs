@@ -16,6 +16,6 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 The data table model can be simply understood as an Excel table, configuring the title, data type, and configuration for each column.
 
-Read [AI Data Management Page](../../devguide/portal-and-page-development/ai-data-management-page) for more details.
+Read [AI Data Management Page](../../devguide/shell-and-page/ai-data-management-page) for more details.
 
 If you need more complex business logic and page interactions, please read the next article.

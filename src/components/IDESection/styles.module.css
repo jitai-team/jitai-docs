@@ -1,4 +1,15 @@
 /* IDE Section 样式 - 绿色主题浅色渐变背景 */
+
+:root {
+  --module-card-width: 320px;
+  --module-desc-line-clamp: 3;
+}
+
+[data-locale="zh"] {
+  --module-card-width: 250px;
+  --module-desc-line-clamp: 2;
+}
+
 .ideSection {
   padding: var(--section-padding);
   background: linear-gradient(135deg,
@@ -234,7 +245,7 @@
   position: relative;
   cursor: pointer;
   flex: 0 0 auto;
-  width: 250px;
+  width: var(--module-card-width);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -293,14 +304,14 @@
 
 .moduleDescription {
   color: var(--text-secondary);
-  line-height: 1.5;
+  line-height: var(--text-line-height);
   font-size: 0.8rem;
   margin: 0;
   font-weight: 400;
   flex-grow: 1;
   display: -webkit-box;
-  line-clamp: 2;
-  -webkit-line-clamp: 2;
+  line-clamp: var(--module-desc-line-clamp);
+  -webkit-line-clamp: var(--module-desc-line-clamp);
   -webkit-box-orient: vertical;
   overflow: hidden;
 }

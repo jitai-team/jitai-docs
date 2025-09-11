@@ -1,5 +1,4 @@
 ---
-draft: true
 sidebar_position: 8
 slug: card-and-media-display
 ---

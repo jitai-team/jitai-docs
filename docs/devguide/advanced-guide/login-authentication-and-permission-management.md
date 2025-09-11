@@ -30,7 +30,7 @@ slug: login-authentication-and-permission-management
 为不同角色分配对应的门户访问权限，实现精细化权限控制。
 
 ## 配置门户菜单与页面
-在门户中添加菜单并选择"新建页面"，系统会自动创建[页面](../../category/页面)，随后在页面中配置组件。
+在门户中添加菜单并选择"新建页面"，系统会自动创建[页面](../../reference/framework/JitWeb/pages)，随后在页面中配置组件。
 
 ![配置门户菜单](img/jitauth/configure-portal-menu.png)
 

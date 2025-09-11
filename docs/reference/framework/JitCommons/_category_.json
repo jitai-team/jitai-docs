@@ -3,6 +3,6 @@
   "position": 3,
   "link": {
     "type": "generated-index",
-    "description": "通用工具库，提供常用的工具类、辅助函数和公共组件，提升开发效率"
+    "description": "Common utility library providing frequently used utility classes, helper functions, and public components to improve development efficiency"
   }
 } 

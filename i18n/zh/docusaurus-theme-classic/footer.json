@@ -4,7 +4,7 @@
     "description": "The title of the footer links column with title=Products in the footer"
   },
   "link.title.Documentation": {
-    "message": "帮助文档", 
+    "message": "文档",
     "description": "The title of the footer links column with title=Documentation in the footer"
   },
   "link.title.More": {
@@ -12,7 +12,7 @@
     "description": "The title of the footer links column with title=More in the footer"
   },
   "link.item.label.Home": {
-    "message": "官网首页",
+    "message": "主页",
     "description": "The label of footer link with label=Home linking to /"
   },
   "link.item.label.Tutorial": {
@@ -24,7 +24,7 @@
     "description": "The label of footer link with label=Development Guide linking to /docs/devguide/"
   },
   "link.item.label.Extension Guide": {
-    "message": "框架扩展指南", 
+    "message": "框架扩展指南",
     "description": "The label of footer link with label=Extension Guide linking to /docs/extguide/"
   },
   "link.item.label.Reference": {
@@ -32,15 +32,19 @@
     "description": "The label of footer link with label=Reference linking to /docs/reference/"
   },
   "link.item.label.Community": {
-    "message": "社区论坛",
-    "description": "The label of footer link with label=Community Forum linking to https://forum.jit.pro/"
+    "message": "社区",
+    "description": "The label of footer link with label=Community linking to https://forum.jit.pro/"
   },
   "link.item.label.GitHub": {
     "message": "GitHub",
     "description": "The label of footer link with label=GitHub linking to https://github.com/jitai-team"
   },
   "copyright": {
-    "message": "Copyright © 2024 Jit, Inc. Built with 万云 Co., Ltd.",
+    "message": "Copyright © 2025 Jit, Inc. Built with WanYun Co., Ltd.",
     "description": "The footer copyright"
+  },
+  "logo.alt": {
+    "message": "下一代AI应用开发技术体系",
+    "description": "The alt text of footer logo"
   }
 }

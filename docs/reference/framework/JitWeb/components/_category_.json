@@ -1,9 +1,11 @@
 {
   "position": 5,
-  "label": "组件",
+  "label": "Components",
   "className": "red",
   "link": {
     "type": "generated-index",
-    "title": "组件"
+    "slug": "/reference/framework/JitWeb/components",
+    "title": "Components",
+    "description": "UI component management APIs for creating, configuring, and managing reusable UI components across different categories."
   }
 } 

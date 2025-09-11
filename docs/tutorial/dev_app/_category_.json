@@ -3,6 +3,7 @@
   "position": 5,
   "collapsed": false,
   "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "description": "Detailed application development tutorials from basic to advanced, including data modeling, page design, business logic and complete application development workflow."
   }
 } 

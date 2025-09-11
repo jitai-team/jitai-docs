@@ -1,8 +1,8 @@
 {
-  "label": "文件处理",
+  "label": "File Processing",
   "position": 9,
   "link": {
     "type": "generated-index",
-    "description": "学习如何处理文件存储和文件模板功能。"
+    "description": "Learn how to handle file storage and file template functions."
   }
 }

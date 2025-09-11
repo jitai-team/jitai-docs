@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 4
 slug: runtime-environment-management
 ---
 
@@ -12,24 +12,24 @@ slug: runtime-environment-management
 ## 节点的本地默认运行环境 {#node-local-default-runtime-environment}
 节点激活时会自动创建一个本地默认运行环境，它在运行环境管理界面中不可见，用于在该节点上运行JitAi内置的运维管理平台。用户访问节点时，会自动跳转到该节点的本地默认运行环境管理页面，即节点控制台。
 
-![节点控制台](./img/node-console.png)
+![节点控制台](./img/4/node-console.png)
 
 在节点控制台中，用户可以修改节点名称、查看节点规格授权信息、下载当前节点运行日志、更新继承应用。
 
-用户还可以进行应用创建、导入、导出、发布、部署、删除、修改继承应用、配置环境变量、生成副本、进入应用开发界面等操作，关于这些操作的详细介绍请查看[应用创建与管理](./application-creation-and-management)。
+用户还可以进行应用创建、导入、导出、发布、部署、删除、修改继承应用、配置环境变量、生成副本、进入应用开发界面等操作，关于这些操作的详细介绍请查看[应用创建与管理](../app-creation-and-publishing/creating-and-deploying-applications)。
 
 ## 创建新的运行环境 {#createnewrunenvironment}
-运行环境的管理需要在组织管理控制台中进行，用户在节点控制台界面右上角点击“管理”按钮，即可进入组织管理控制台。反之，在组织管理控制台界面的右上角，点击“管理当前节点”按钮，则可切换回当前节点的节点控制台。
+运行环境的管理需要在组织管理控制台中进行，用户在节点控制台界面右上角点击"管理"按钮，即可进入组织管理控制台。反之，在组织管理控制台界面的右上角，点击"管理当前节点"按钮，则可切换回当前节点的节点控制台。
 
-![组织管理控制台](./img/organization-management-console.png)
+![组织管理控制台](./img/4/organization-management-console.png)
 
-切换到运行环境管理页面，点击”新建运行环境“按钮，输入运行环境名称，点击”创建“按钮即可创建一个运行环境。
+切换到运行环境管理页面，点击"新建运行环境"按钮，输入运行环境名称，点击"创建"按钮即可创建一个运行环境。
 
-![新建运行环境](./img/create-runtime-environment.png)
+![新建运行环境](./img/4/create-runtime-environment.png)
 
 用户可以按照测试、生产的维度创建多个运行环境，也可以按照其它自定义维度创建不同的运行环境。每个运行环境可以添加一个或多个专用访问入口地址，用于访问运行环境中的应用。
 
-![配置专用访问入口](./img/configure-dedicated-access-entry.png)
+![配置专用访问入口](./img/4/configure-dedicated-access-entry.png)
 
 :::tip 注意
 
@@ -50,7 +50,7 @@ slug: runtime-environment-management
 ## 使用运行环境管理节点集群 {#use-runtime-environment-to-manage-node-clusters}
 当一个运行环境添加了多个节点后，即形成了由多个节点构成的集群，集群可以提供横向扩缩容能力，保证服务可用性和性能。目前仅支持添加服务器版本节点到运行环境中。
 
-![添加节点](./img/add-node.png)
+![添加节点](./img/4/add-node.png)
 
 节点列表中会展示每个节点的名称、ID、节点地址、节点状态、激活时间、部署的应用数量，用户也可以对集群中的节点进行移除操作。
 
@@ -58,12 +58,12 @@ slug: runtime-environment-management
 运行环境访问入口地址指向的节点会通过集群内其它节点的地址进行请求转发和负载均衡，节点激活时会自动取内网IP作为节点地址，用户可以手动修改节点地址。
 
 ### 节点状态
-当节点并未启动Jit进程或网络异常与极态云失联时，节点状态显示为“异常”，当节点Jit进程处于运行状态时，节点状态显示为“正常”。
+当节点并未启动Jit进程或网络异常与极态云失联时，节点状态显示为"异常"，当节点Jit进程处于运行状态时，节点状态显示为"正常"。
 
 ## 在运行环境中部署应用 {#deploy-application-in-runtime-environment}
 用户可以将应用部署到运行环境下的一个或多个节点，一个运行环境中也可以部署多个应用。
 
-![部署应用到指定节点](./img/deploy-application-to-specified-node.png)
+![部署应用到指定节点](./img/4/deploy-application-to-specified-node.png)
 
 用户在部署时可以设置应用在不同节点上的访问权重并按需配置环境变量值，支持随时修改以及删除部署记录。
 

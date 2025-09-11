@@ -11,7 +11,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/create_app.mp4" />
 
-阅读[应用创建与管理](../devguide/application-development-basics/application-creation-and-management)了解更多。
+阅读[应用创建与管理](../devguide/app-creation-and-publishing/creating-and-deploying-applications)了解更多。
 
 #### 进入应用
 

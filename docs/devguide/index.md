@@ -83,62 +83,107 @@ Complete the platform installation and node activation process. Learn download a
 
 </div>
 
-## Application Development Fundamentals
-Create your first application from scratch. Master the complete process of application creation and management, runtime environment configuration to build a solid foundation for subsequent development work.
+## Development Tools and Publishing Services
+Powerful toolchain for efficient development. Master visual development environments, DevOps management tools, and cloud publishing services to achieve complete toolchain support from development to deployment.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Application Creation and Management"
-  href="application-development-basics/application-creation-and-management"
-  description="Learn application creation, inheritance, version management, and publishing processes to master the complete application lifecycle management."
+  title="JitAi Visual Development Tools"
+  href="development-tool-and-publish-service/jitai-visual-development-tools"
+  description="Master the powerful visual development environment, familiarize yourself with IDE functional areas, and learn to switch between visual and source code modes."
 >
   <LinkGrid links={[
-    { text: "Create Your First Application", href: "application-development-basics/application-creation-and-management#create-first-application" },
-    { text: "Quick Development Based on Existing Applications", href: "application-development-basics/application-creation-and-management#based-on-existing-application-quick-development" },
-    { text: "Data Storage and Environment Variable Configuration", href: "application-development-basics/application-creation-and-management#data-storage-and-environment-variable-configuration" },
-    { text: "Application Version Management and Publishing", href: "application-development-basics/application-creation-and-management#application-version-management-and-publish" },
-    { text: "Application Export and Import", href: "application-development-basics/application-creation-and-management#application-export-import" }
+    { text: "Element Directory Tree", href: "development-tool-and-publish-service/jitai-visual-development-tools#element-directory-tree" },
+    { text: "Add Element", href: "development-tool-and-publish-service/jitai-visual-development-tools#add-element" },
+    { text: "Visual Editor", href: "development-tool-and-publish-service/jitai-visual-development-tools#visual-editor" },
+    { text: "Source Code Editor", href: "development-tool-and-publish-service/jitai-visual-development-tools#source-code-editor" },
+    { text: "Source Code File Tree", href: "development-tool-and-publish-service/jitai-visual-development-tools#source-code-file-tree" },
+    { text: "Application Settings", href: "development-tool-and-publish-service/jitai-visual-development-tools#application-settings" },
+    { text: "Portal Switching", href: "development-tool-and-publish-service/jitai-visual-development-tools#portal-switching" },
+    { text: "Personal Center", href: "development-tool-and-publish-service/jitai-visual-development-tools#personal-center" },
+    { text: "Language Switch", href: "development-tool-and-publish-service/jitai-visual-development-tools#language-switch" },
+    { text: "Navigation Tabs", href: "development-tool-and-publish-service/jitai-visual-development-tools#navigation-tabs" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="DevOps Management Tool"
+  href="development-tool-and-publish-service/devops-management-tool"
+  description="Comprehensive DevOps management solution providing system monitoring, log management, performance analysis and more."
+>
+  Coming soon...
+</IndexCard>
+
+<IndexCard
+  title="JCS Cloud Publishing Service"
+  href="development-tool-and-publish-service/jcs-cloud-publishing-service"
+  description="Convenient cloud application publishing platform supporting one-click publishing, version management, and global distribution."
+>
+  Coming soon...
+</IndexCard>
+
+</div>
+
+## Application Creation and Publishing
+Complete workflow from application creation to distributed deployment. Master application creation, source code management, version publishing, runtime environment configuration, and building infinitely horizontally scalable distributed cluster architectures.
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard
+  title="Creating and Deploying Applications"
+  href="app-creation-and-publishing/creating-and-deploying-applications"
+  description="Learn application creation, inheritance, version management, and release processes. Master the complete application lifecycle management."
+>
+  <LinkGrid links={[
+    { text: "Create First Application", href: "app-creation-and-publishing/creating-and-deploying-applications#create-first-application" },
+    { text: "Rapid Development Based on Existing Apps", href: "app-creation-and-publishing/creating-and-deploying-applications#based-on-existing-application-quick-development" },
+    { text: "Data Storage and Environment Variables", href: "app-creation-and-publishing/creating-and-deploying-applications#data-storage-and-environment-variable-configuration" },
+    { text: "Version Management and Publishing", href: "app-creation-and-publishing/creating-and-deploying-applications#application-version-management-and-publish" },
+    { text: "Application Export and Import", href: "app-creation-and-publishing/creating-and-deploying-applications#application-export-import" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Application Directory and Element Source Code"
+  href="app-creation-and-publishing/application-directory-and-element-source-code"
+  description="Deep dive into JitAi application directory structure, element organization, and source code management mechanisms."
+>
+  Coming soon...
+</IndexCard>
+
+<IndexCard
+  title="Application Publishing and Updates"
+  href="app-creation-and-publishing/application-publishing-and-updates"
+  description="Master application version release strategies, automatic update mechanisms, and release process management."
+>
+  Coming soon...
 </IndexCard>
 
 <IndexCard
   title="Runtime Environment Management"
-  href="application-development-basics/runtime-environment-management"
+  href="app-creation-and-publishing/runtime-environment-management"
   description="Master the creation, configuration, and management of runtime environments, and learn how to use node clusters and application deployment."
 >
   <LinkGrid links={[
-    { text: "What is Runtime Environment", href: "application-development-basics/runtime-environment-management#what-is-runtime-environment" },
-    { text: "Local Default Runtime Environment", href: "application-development-basics/runtime-environment-management#node-local-default-runtime-environment" },
-    { text: "Create New Runtime Environment", href: "application-development-basics/runtime-environment-management#createnewrunenvironment" },
-    { text: "Use Runtime Environment to Manage Node Clusters", href: "application-development-basics/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
-    { text: "Deploy Application in Runtime Environment", href: "application-development-basics/runtime-environment-management#deploy-application-in-runtime-environment" }
+    { text: "What is Runtime Environment", href: "app-creation-and-publishing/runtime-environment-management#what-is-runtime-environment" },
+    { text: "Local Default Runtime Environment", href: "app-creation-and-publishing/runtime-environment-management#node-local-default-runtime-environment" },
+    { text: "Create New Runtime Environment", href: "app-creation-and-publishing/runtime-environment-management#createnewrunenvironment" },
+    { text: "Use Runtime Environment to Manage Node Clusters", href: "app-creation-and-publishing/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
+    { text: "Deploy Application in Runtime Environment", href: "app-creation-and-publishing/runtime-environment-management#deploy-application-in-runtime-environment" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="Distributed Cluster Architecture"
+  href="app-creation-and-publishing/distributed-cluster-architecture"
+  description="Learn how to build and manage infinitely horizontally scalable distributed cluster architectures for high availability and performance."
+>
+  Coming soon...
 </IndexCard>
 
 </div>
 
-## JitAi Visual Development Tools
-Master the powerful visual development environment. Familiarize yourself with the various functional areas of the IDE, learn to switch freely between visual and source code dual modes, and efficiently complete application development tasks.
-
-<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
-
-<IndexCard>
-  <LinkGrid links={[
-    { text: "Element Directory Tree", href: "jitai-visual-development-tools#element-directory-tree" },
-    { text: "Add Element", href: "jitai-visual-development-tools#add-element" },
-    { text: "Visual Editor", href: "jitai-visual-development-tools#visual-editor" },
-    { text: "Source Code Editor", href: "jitai-visual-development-tools#source-code-editor" },
-    { text: "Source Code File Tree", href: "jitai-visual-development-tools#source-code-file-tree" },
-    { text: "Application Settings", href: "jitai-visual-development-tools#application-settings" },
-    { text: "Portal Switching", href: "jitai-visual-development-tools#portal-switching" },
-    { text: "Personal Center", href: "jitai-visual-development-tools#personal-center" },
-    { text: "Language Switch", href: "jitai-visual-development-tools#language-switch" },
-    { text: "Navigation Tabs", href: "jitai-visual-development-tools#navigation-tabs" }
-  ]} />
-</IndexCard>
-
-</div>
 
 ## Portal and Page Development
 Design beautiful user interfaces and interactive experiences. From portal navigation to page construction, from component layout to data management, create complete, user-friendly application interfaces.

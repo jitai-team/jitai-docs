@@ -253,9 +253,8 @@ const config: Config = {
     algolia: {
       appId: 'DZ5X5FUUCG',
       apiKey: 'a3d6338cf6bd1e789ab3c6d7064e0796',
-      indexName: '应用开发指南',
-      contextualSearch: true,
-      searchParameters: {},
+      indexName: 'crawler_doc_spider',
+      contextualSearch: false,  // 禁用上下文搜索以避免过度过滤
       searchPagePath: 'search',
       insights: false,
     },

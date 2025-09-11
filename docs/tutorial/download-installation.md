@@ -21,7 +21,7 @@ Installation steps:
 
 1. [Click here to download](https://apk.jit.pro/latest/windows/jit.exe) the installation package.
 2. Double-click the exe file to install.
-3. Follow the on-screen activation process. Read [Developer Organization Management](../devguide/application-development-basics/developer-organization-management) for more details.
+3. Follow the on-screen activation process. Read [Developer Organization Management](../devguide/installation-activation/developer-organization-management) for more details.
 
 ### Mac
 
@@ -31,7 +31,7 @@ Installation steps:
 
 1. Download the installation package: [Intel chip installation package](https://apk.jit.pro/latest/darwin/x64/jit.dmg), [Apple chip installation package](https://apk.jit.pro/latest/darwin/arm/jit.dmg).
 2. Double-click the dmg file to install.
-3. Follow the on-screen activation process. Read [Developer Organization Management](../devguide/application-development-basics/developer-organization-management) for more details.
+3. Follow the on-screen activation process. Read [Developer Organization Management](../devguide/installation-activation/developer-organization-management) for more details.
 
 :::warning
 If security issues are prompted, click the "Done" button, go to System Settings -> Privacy & Security -> Security, set "Allow apps downloaded from" to "App Store and identified developers", and click `Open Anyway`.
@@ -59,7 +59,7 @@ Used for deploying application systems on servers (multi-process, cluster suppor
    ```
    Please replace /your/local/path with the actual host machine path, for example: /Users/username/JitNode or /opt/jitnode
 
-3. Access `http://{server-IP-address}:80` in your browser and follow the on-screen activation process. Read [Developer Organization Management](../devguide/application-development-basics/developer-organization-management) for more details.
+3. Access `http://{server-IP-address}:80` in your browser and follow the on-screen activation process. Read [Developer Organization Management](../devguide/installation-activation/developer-organization-management) for more details.
 
 
 ### Container Parameter Description

@@ -39,8 +39,52 @@ Master the core concepts and architecture principles of the JitAi platform. Unde
 
 </div>
 
+## Platform Installation and Node Activation
+Complete the platform installation and node activation process. Learn download and installation methods, node activation procedures, and developer organization management to establish a development environment foundation.
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard
+  title="Download and Installation"
+  href="installation-activation/download-installation"
+  description="Learn how to download and install JitAi platform, including desktop and server versions for different deployment scenarios."
+>
+  <LinkGrid links={[
+    { text: "Detailed Installation Steps", href: "installation-activation/download-installation#detailed-installation-steps" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Node Activation and Developer Organizations"
+  href="installation-activation/developer-organization-management"
+  description="Learn how to activate nodes and manage developer organizations, including organization binding, member management and other core operations."
+>
+  <LinkGrid links={[
+    { text: "What is Developer Organization", href: "installation-activation/developer-organization-management#what-is-developer-organization" },
+    { text: "Create New Development Organization When Activating Node", href: "installation-activation/developer-organization-management#create-new-development-organization-when-activating-node" },
+    { text: "Bind Node to Joined Organization When Activating", href: "installation-activation/developer-organization-management#bind-node-to-joined-organization-when-activating" },
+    { text: "Use Organization Bind Code to Join and Bind When Activating Node", href: "installation-activation/developer-organization-management#use-organization-bind-code-to-join-and-bind-when-activating-node" },
+    { text: "Join Organization via Bind Code When Logging into Existing Node", href: "installation-activation/developer-organization-management#join-organization-via-bind-code-when-logging-into-existing-node" },
+    { text: "View and Refresh Organization Bind Code", href: "installation-activation/developer-organization-management#view-and-refresh-organization-bind-code" },
+    { text: "Remove Organization Member", href: "installation-activation/developer-organization-management#remove-organization-member" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Platform Node Updates and Upgrades"
+  href="installation-activation/platform-node-updates-upgrades"
+  description="Learn how to update and upgrade platform nodes to maintain system stability and feature updates."
+>
+  <LinkGrid links={[
+    { text: "Update Procedures", href: "installation-activation/platform-node-updates-upgrades" },
+    { text: "Upgrade Methods", href: "installation-activation/platform-node-updates-upgrades" }
+  ]} />
+</IndexCard>
+
+</div>
+
 ## Application Development Fundamentals
-Create your first application from scratch. Master the complete process of developer organization management, runtime environment configuration, and application creation and management to build a solid foundation for subsequent development work.
+Create your first application from scratch. Master the complete process of application creation and management, runtime environment configuration to build a solid foundation for subsequent development work.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
@@ -55,22 +99,6 @@ Create your first application from scratch. Master the complete process of devel
     { text: "Data Storage and Environment Variable Configuration", href: "application-development-basics/application-creation-and-management#data-storage-and-environment-variable-configuration" },
     { text: "Application Version Management and Publishing", href: "application-development-basics/application-creation-and-management#application-version-management-and-publish" },
     { text: "Application Export and Import", href: "application-development-basics/application-creation-and-management#application-export-import" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="Developer Organization Management"
-  href="application-development-basics/developer-organization-management"
-  description="Learn how to create and manage developer organizations, including node activation, organization binding, member management and other core operations."
->
-  <LinkGrid links={[
-    { text: "What is Developer Organization", href: "application-development-basics/developer-organization-management#what-is-developer-organization" },
-    { text: "Create New Development Organization When Activating Node", href: "application-development-basics/developer-organization-management#create-new-development-organization-when-activating-node" },
-    { text: "Bind Node to Joined Organization When Activating", href: "application-development-basics/developer-organization-management#bind-node-to-joined-organization-when-activating" },
-    { text: "Use Organization Bind Code to Join and Bind When Activating Node", href: "application-development-basics/developer-organization-management#use-organization-bind-code-to-join-and-bind-when-activating-node" },
-    { text: "Join Organization via Bind Code When Logging into Existing Node", href: "application-development-basics/developer-organization-management#join-organization-via-bind-code-when-logging-into-existing-node" },
-    { text: "View and Refresh Organization Bind Code", href: "application-development-basics/developer-organization-management#view-and-refresh-organization-bind-code" },
-    { text: "Remove Organization Member", href: "application-development-basics/developer-organization-management#remove-organization-member" }
   ]} />
 </IndexCard>
 

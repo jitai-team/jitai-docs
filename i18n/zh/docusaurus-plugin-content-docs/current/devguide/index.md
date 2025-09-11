@@ -39,8 +39,52 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
+## 平台安装与节点激活
+完成平台安装和节点激活流程。学习下载安装方法、节点激活流程、开发者组织管理等，建立开发环境基础。
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard
+  title="下载与安装"
+  href="installation-activation/download-installation"
+  description="学习如何下载和安装JitAi平台，包括桌面版和服务器版的不同部署场景。"
+>
+  <LinkGrid links={[
+    { text: "详细安装步骤", href: "installation-activation/download-installation#detailed-installation-steps" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="节点激活与开发者组织"
+  href="installation-activation/developer-organization-management"
+  description="了解如何激活节点和管理开发者组织，包括组织绑定、成员管理等核心操作。"
+>
+  <LinkGrid links={[
+    { text: "什么是开发者组织", href: "installation-activation/developer-organization-management#what-is-developer-organization" },
+    { text: "在激活节点时创建新的开发组织", href: "installation-activation/developer-organization-management#create-new-development-organization-when-activating-node" },
+    { text: "在激活节点时将节点绑定到自己已加入的组织", href: "installation-activation/developer-organization-management#bind-node-to-joined-organization-when-activating" },
+    { text: "在激活节点时使用组织绑定码加入组织并绑定", href: "installation-activation/developer-organization-management#use-organization-bind-code-to-join-and-bind-when-activating-node" },
+    { text: "在登录已有节点时通过组织绑定码加入组织", href: "installation-activation/developer-organization-management#join-organization-via-bind-code-when-logging-into-existing-node" },
+    { text: "查看和刷新组织绑定码", href: "installation-activation/developer-organization-management#view-and-refresh-organization-bind-code" },
+    { text: "移除组织成员", href: "installation-activation/developer-organization-management#remove-organization-member" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="平台节点的更新升级"
+  href="installation-activation/platform-node-updates-upgrades"
+  description="学习如何更新和升级平台节点，保持系统稳定性和功能更新。"
+>
+  <LinkGrid links={[
+    { text: "更新流程", href: "installation-activation/platform-node-updates-upgrades" },
+    { text: "升级方法", href: "installation-activation/platform-node-updates-upgrades" }
+  ]} />
+</IndexCard>
+
+</div>
+
 ## 应用开发基础
-从零开始创建你的第一个应用。掌握开发者组织管理、运行环境配置、应用创建与管理的完整流程，为后续开发工作打下坚实基础。
+从零开始创建你的第一个应用。掌握应用创建与管理、运行环境配置的完整流程，为后续开发工作打下坚实基础。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
@@ -55,22 +99,6 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "数据存储与环境变量配置", href: "application-development-basics/application-creation-and-management#data-storage-and-environment-variable-configuration" },
     { text: "应用版本管理与发布", href: "application-development-basics/application-creation-and-management#application-version-management-and-publish" },
     { text: "应用导出导入", href: "application-development-basics/application-creation-and-management#application-export-import" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="开发者组织管理"
-  href="application-development-basics/developer-organization-management"
-  description="了解如何创建和管理开发者组织，包括节点激活、组织绑定、成员管理等核心操作。"
->
-  <LinkGrid links={[
-    { text: "什么是开发者组织", href: "application-development-basics/developer-organization-management#what-is-developer-organization" },
-    { text: "在激活节点时创建新的开发组织", href: "application-development-basics/developer-organization-management#create-new-development-organization-when-activating-node" },
-    { text: "在激活节点时将节点绑定到自己已加入的组织", href: "application-development-basics/developer-organization-management#bind-node-to-joined-organization-when-activating" },
-    { text: "在激活节点时使用组织绑定码加入组织并绑定", href: "application-development-basics/developer-organization-management#use-organization-bind-code-to-join-and-bind-when-activating-node" },
-    { text: "在登录已有节点时通过组织绑定码加入组织", href: "application-development-basics/developer-organization-management#join-organization-via-bind-code-when-logging-into-existing-node" },
-    { text: "查看和刷新组织绑定码", href: "application-development-basics/developer-organization-management#view-and-refresh-organization-bind-code" },
-    { text: "移除组织成员", href: "application-development-basics/developer-organization-management#remove-organization-member" }
   ]} />
 </IndexCard>
 

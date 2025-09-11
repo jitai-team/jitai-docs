@@ -39,7 +39,7 @@ JitAi支持开发者在一个服务元素中创建多个服务函数。
 开发者需要将元素目录树切换到`源码`视图，找到`requirements.txt`文件并在文件中添加新的依赖库，点击`保存`按钮即可在服务函数中可以直接导入这些依赖库中的包。
 
 ## 服务函数在哪里使用 {#where-service-functions-are-used}
-在[页面函数](../portal-and-page-development/component-based-page-development#page-functions)、[页面事件](../portal-and-page-development/component-based-page-development#page-events)、[前端组件事件函数](../portal-and-page-development/component-based-page-development#event-panel)、[任务函数](./background-tasks#task-execution-function-development)、[模型事件](./event-handling#model-events)、[审批事件](./event-handling#approval-events)、[自定义事件](./event-handling#custom-events)、[ai-assistant事件](./event-handling#ai-assistant-events)、[Agent工具调用事件](./event-handling#agent-tool-call-events)以及其它服务函数等所有可以编写函数逻辑的地方，开发者都可以调用服务函数。
+在[页面函数](../shell-and-page/component-based-page-development#page-functions)、[页面事件](../shell-and-page/component-based-page-development#page-events)、[前端组件事件函数](../shell-and-page/component-based-page-development#event-panel)、[任务函数](./background-tasks#task-execution-function-development)、[模型事件](./event-handling#model-events)、[审批事件](./event-handling#approval-events)、[自定义事件](./event-handling#custom-events)、[ai-assistant事件](./event-handling#ai-assistant-events)、[Agent工具调用事件](./event-handling#agent-tool-call-events)以及其它服务函数等所有可以编写函数逻辑的地方，开发者都可以调用服务函数。
 
 服务函数还可以[作为ai-agent的工具](../ai-agent#agent-calling-service-functions)被大模型调用、在[ai-assistant的函数调用节点](../ai-assistant#function-call)被调用、在[API授权元素](../api-open/api-authorization)中开放给第三方调用。
 

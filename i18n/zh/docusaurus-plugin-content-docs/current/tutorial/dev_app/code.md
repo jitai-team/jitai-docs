@@ -21,7 +21,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/code_create_shell.mp4" />
 
-阅读[门户导航设计](../../devguide/portal-and-page-development/portal-navigation-design)了解更多。
+阅读[门户导航设计](../../devguide/shell-and-page/portal-navigation-design)了解更多。
 
 ### 实现「答卷页面」
 
@@ -37,7 +37,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 阅读[全代码组件](../../devguide/using-functional-components-in-pages/full-code-components)了解更多。
 
-也可以直接整个页面，都使用全代码实现。 阅读[全代码页面开发](../../devguide/portal-and-page-development/full-code-page-development)了解更多。
+也可以直接整个页面，都使用全代码实现。 阅读[全代码页面开发](../../devguide/shell-and-page/full-code-page-development)了解更多。
 
 ### 实现「我的试卷」页面
 

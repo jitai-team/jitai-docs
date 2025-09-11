@@ -2,25 +2,7 @@
 .faqSection {
   margin: 8rem 0;
   background: var(--section-bg);
-  opacity: 0;
   transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.fadeIn {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.faqContent {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.faqAnimate {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .faqTitle {

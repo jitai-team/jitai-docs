@@ -119,7 +119,7 @@
 
 .frameworkDescription {
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: var(--text-line-height);
   margin: 1rem 0;
   font-size: var(--font-size-body);
   flex: 1; /* 填充剩余空间 */

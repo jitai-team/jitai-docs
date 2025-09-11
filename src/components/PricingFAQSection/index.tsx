@@ -1,9 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import globalStyles from '../../pages/index.module.css';
 import styles from './styles.module.css';
-import { FAQ_DATA } from './constant';
+import CONTENT_EN from './constant-en';
+import CONTENT_ZH from './constant-zh';
 
-const PricingFAQSection: React.FC = () => {
+interface PricingFAQSectionProps {
+  currentLocale: string;
+}
+
+const PricingFAQSection: React.FC<PricingFAQSectionProps> = ({ currentLocale }) => {
+  const CONTENT = currentLocale === 'zh' ? CONTENT_ZH : CONTENT_EN;
+
   const [isVisible, setIsVisible] = useState(false);
   const [animateElements, setAnimateElements] = useState(false);
   const [openFAQ, setOpenFAQ] = useState<string | null>(null);
@@ -23,9 +30,9 @@ const PricingFAQSection: React.FC = () => {
     <section className={`${styles.faqSection} ${isVisible ? styles.fadeIn : ''}`}>
         {/* 常见问题 */}
         <div className={`${globalStyles.sectionContent} ${animateElements ? styles.faqAnimate : ''}`}>
-          <h2 className={`${globalStyles.sectionTitle} ${styles.faqTitle}`}>常见问题</h2>
+          <h2 className={`${globalStyles.sectionTitle} ${styles.faqTitle}`}>{CONTENT.title}</h2>
           <div className={styles.faqContainer}>
-            {FAQ_DATA.map((faq) => (
+            {CONTENT.faqData.map((faq) => (
               <div key={faq.question} className={styles.faqItem}>
                 <button 
                   className={`${styles.faqQuestion} ${openFAQ === faq.question ? styles.faqQuestionActive : ''}`}

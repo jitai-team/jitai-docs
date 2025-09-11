@@ -4,7 +4,7 @@
 
 <img src="static/img/jit.png" alt="JitAi Logo" width="200" />
 
-**Born for AI, Next-Generation Enterprise-Level AI Application Development Platform**
+**Born for AI, Next-Gen Enterprise-Level AI Application Development Platform**
 
 [![GitHub stars](https://img.shields.io/github/stars/jitai-team/jitai-docs?style=social)](https://github.com/jitai-team/jitai-docs/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/jitai-team/jitai-docs?style=social)](https://github.com/jitai-team/jitai-docs/network/members)

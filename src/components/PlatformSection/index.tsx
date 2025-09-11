@@ -1,14 +1,19 @@
 import React from 'react';
 import styles from './styles.module.css';
 import globalStyles from '../../pages/index.module.css';
-import ScrollAnimation from '../ScrollAnimation';
-import { CONTENT } from './constant';
 import ImageComponent from './ImageComponents';
+import ScrollAnimation from '../ScrollAnimation';
+import CONTENT_EN from './constant-en';
+import CONTENT_ZH from './constant-zh';
 
 
+interface PlatformSectionProps {
+  currentLocale: string;
+}
 
+const PlatformSection: React.FC<PlatformSectionProps> = ({ currentLocale }) => {
+  const CONTENT = currentLocale === 'zh' ? CONTENT_ZH : CONTENT_EN;
 
-const PlatformSection: React.FC = () => {
   return (
     <ScrollAnimation animationType="fadeInUp" duration={500}>
       <section

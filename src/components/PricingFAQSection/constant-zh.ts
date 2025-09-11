@@ -4,7 +4,7 @@ export interface FAQ {
   answer: string;
 }
 
-export const FAQ_DATA: FAQ[] = [
+const FAQ_DATA: FAQ[] = [
   {
     question: '一个许可证可以同时在多台服务器上使用吗？',
     answer: '每个许可证同一时刻只能绑定一个终端上的一个运行环境。如需在多台服务器部署，需要购买相应数量的许可证。'
@@ -30,3 +30,10 @@ export const FAQ_DATA: FAQ[] = [
     answer: '暂不支持。'
   }
 ];
+
+const CONTENT = {
+  faqData: FAQ_DATA,
+  title: '常见问题',
+};
+
+export default CONTENT;

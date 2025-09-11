@@ -1,22 +1,91 @@
 /**
- * 价格页面样式文件
+ * Pricing page styles - English version
+ * Optimized for English text and typography
  */
 
-/* 价格页面样式文件 - 参考首页设计风格 */
-
-/* 页面容器 */
+/* Pricing page container */
 .container {
   min-height: 100vh;
   background: var(--pricing-bg);
-  font-family: var(--font-primary);
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   color: var(--text-primary);
+  letter-spacing: -0.01em;  /* Better English readability */
 }
 
-/* 响应式设计 */
+/* English-specific typography adjustments */
+.container h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.container h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.container h3 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.container p {
+  line-height: 1.7;  /* Improved line height for English text */
+  letter-spacing: -0.005em;
+}
+
+/* Button text adjustments for English */
+.container button,
+.container .button {
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+/* Responsive design for English content */
 @media (max-width: 768px) {
+  .container h1 {
+    font-size: 2.4rem;
+  }
+  
+  .container h2 {
+    font-size: 1.8rem;
+  }
+  
+  .container h3 {
+    font-size: 1.4rem;
+  }
+  
+  .container p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
 }
 
-/* 动画定义 */
+@media (max-width: 480px) {
+  .container h1 {
+    font-size: 2rem;
+  }
+  
+  .container h2 {
+    font-size: 1.6rem;
+  }
+  
+  .container h3 {
+    font-size: 1.3rem;
+  }
+  
+  .container p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Animation definitions */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -49,4 +118,3 @@
     transform: scale(1);
   }
 }
-

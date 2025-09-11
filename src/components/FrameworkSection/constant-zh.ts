@@ -1,7 +1,8 @@
-export const CONTENT = {
+const CONTENT = {
   title: 'Jit 开发框架',
   subtitle: '基于JAAP的企业级应用开发框架，提供应用层的全栈技术框架',
   color: '#0e7490',
+  learnMore: '了解更多',
   frameworks: [
     {
       id: 'jitai',
@@ -77,3 +78,5 @@ export const CONTENT = {
     }
   ]
 };
+
+export default CONTENT;

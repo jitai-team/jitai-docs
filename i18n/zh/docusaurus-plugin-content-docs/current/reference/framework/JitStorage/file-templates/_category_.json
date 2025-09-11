@@ -4,6 +4,7 @@
   "className": "red",
   "link": {
     "type": "generated-index",
-    "title": "文件模板"
+    "title": "文件模板",
+    "description": "JitStorage的文件模板元素，包括Excel、Word等文档模板的定义和使用。支持动态文档生成和企业级报表输出。"
   }
 } 

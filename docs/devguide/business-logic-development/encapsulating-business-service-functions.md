@@ -27,7 +27,7 @@ JitAi支持开发者在一个服务元素中创建多个服务函数。
 
 ![源码模式编辑服务函数](./img/source-code-mode-edit-service-function.png)
 
-开发者点击服务元素可视化编辑器右上角的`</>`按钮即可切换到代码模式进行开发。在编写服务函数时，开发者不仅可以使用原生的 import 语法导入所需的依赖包，还可以调用[平台API](../../category/后端api)访问应用内的其它元素（如模型函数、其他服务函数等）、资源。
+开发者点击服务元素可视化编辑器右上角的`</>`按钮即可切换到代码模式进行开发。在编写服务函数时，开发者不仅可以使用原生的 import 语法导入所需的依赖包，还可以调用[平台API](../../reference/runtime-platform/backend)访问应用内的其它元素（如模型函数、其他服务函数等）、资源。
 
 关于服务元素的详细内部结构，可以查看[自定义业务服务](../../reference/framework/JitService/custom-business-service)的参考文档。
 

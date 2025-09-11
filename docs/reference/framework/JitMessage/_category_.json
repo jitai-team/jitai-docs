@@ -3,6 +3,6 @@
   "position": 5,
   "link": {
     "type": "generated-index",
-    "description": "企业级消息通知服务框架，提供统一的短信、邮件、推送等多种通知渠道集成，简化企业应用中的消息通知集成复杂度，提升用户体验和运维效率"
+    "description": "Enterprise-level message notification service framework providing unified integration of multiple notification channels including SMS, email, and push notifications, simplifying message notification integration complexity in enterprise applications and improving user experience and operational efficiency"
   }
 } 

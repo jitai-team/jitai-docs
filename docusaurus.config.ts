@@ -55,7 +55,7 @@ const config: Config = {
       'zh': {
         label: '简体中文',
         direction: 'ltr',
-        htmlLang: 'zh-Hans',
+        htmlLang: 'zh-CN',
       },
     },
   },

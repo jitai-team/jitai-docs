@@ -1,9 +1,10 @@
 {
   "position": 3,
-  "label": "门户",
+  "label": "Portals",
   "className": "red",
   "link": {
     "type": "generated-index",
-    "title": "门户"
+    "title": "Portals",
+    "description": "Portal management APIs for creating and managing application portals, navigation structures, and portal configurations."
   }
 } 

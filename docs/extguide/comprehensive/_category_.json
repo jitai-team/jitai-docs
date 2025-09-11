@@ -1,8 +1,8 @@
 {
-  "label": "综合",
+  "label": "Comprehensive",
   "position": 3,
   "link": {
     "type": "generated-index",
-    "description": "前后端复合元素扩展、dev-tools构建和框架发布指南"
+    "description": "Frontend-backend composite element extensions, dev-tools construction, and framework release guides"
   }
 }

@@ -2,6 +2,7 @@
   "label": "应用",
   "position": 1,
   "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "description": "前端应用API文档，用于前端应用的管理、配置和操作。"
   }
 } 

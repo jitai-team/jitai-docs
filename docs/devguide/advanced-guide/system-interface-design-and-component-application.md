@@ -15,14 +15,14 @@ slug: system-interface-design-and-component-application
 
    ![配置教师门户](./img/jitweb/configure-portal-menu.png)
    
-   配置菜单时选择“新建页面”，[页面类型](../../category/页面)如下：
-     - 课程发布：ai-data-management-page
-     - 作业管理：ai-data-management-page
-     - 作业批改：ai-data-management-page
+   配置菜单时选择"新建页面"，[页面类型](../../reference/framework/JitWeb/pages)如下：
+     - 课程发布：AI数据管理页面
+     - 作业管理：AI数据管理页面
+     - 作业批改：AI数据管理页面
 
 2. 创建学员门户并新建课程查看、作业查看两个菜单。
 
-   配置菜单时选择“新建页面”，[页面类型](../../category/页面)如下：
+   配置菜单时选择"新建页面"，[页面类型](../../reference/framework/JitWeb/pages)如下：
       - 课程查看：常规页面
       - 作业查看：常规页面（提供作业提交入口）
 
@@ -54,5 +54,5 @@ slug: system-interface-design-and-component-application
 
    ![配置作业查看页面](./img/jitweb/configure-assignment-view-page.png)
 
-   可以在弹窗内部新增form-components，用于填写要提交的作业内容，[点击了解更多组件](../../category/组件)。
+   可以在弹窗内部新增form-components，用于填写要提交的作业内容，[点击了解更多组件](../../reference/framework/JitWeb/components)。
 

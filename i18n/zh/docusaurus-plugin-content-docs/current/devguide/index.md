@@ -83,62 +83,107 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-## 应用开发基础
-从零开始创建你的第一个应用。掌握应用创建与管理、运行环境配置的完整流程，为后续开发工作打下坚实基础。
+## 开发工具与发布服务
+强大的工具链助力高效开发。掌握可视化开发环境、运维管理工具和云端发布服务，实现从开发到部署的完整工具链支持。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="应用创建与管理"
-  href="application-development-basics/application-creation-and-management"
+  title="JitAi可视化开发工具"
+  href="development-tool-and-publish-service/jitai-visual-development-tools"
+  description="掌握强大的可视化开发环境，熟悉IDE的各个功能区域，学会在可视化和源码双模式之间自由切换。"
+>
+  <LinkGrid links={[
+    { text: "元素目录树", href: "development-tool-and-publish-service/jitai-visual-development-tools#element-directory-tree" },
+    { text: "添加元素", href: "development-tool-and-publish-service/jitai-visual-development-tools#add-element" },
+    { text: "可视化编辑器", href: "development-tool-and-publish-service/jitai-visual-development-tools#visual-editor" },
+    { text: "源码编辑器", href: "development-tool-and-publish-service/jitai-visual-development-tools#source-code-editor" },
+    { text: "源码文件树", href: "development-tool-and-publish-service/jitai-visual-development-tools#source-code-file-tree" },
+    { text: "应用设置", href: "development-tool-and-publish-service/jitai-visual-development-tools#application-settings" },
+    { text: "门户切换", href: "development-tool-and-publish-service/jitai-visual-development-tools#portal-switching" },
+    { text: "个人中心", href: "development-tool-and-publish-service/jitai-visual-development-tools#personal-center" },
+    { text: "语言切换", href: "development-tool-and-publish-service/jitai-visual-development-tools#language-switch" },
+    { text: "导航标签", href: "development-tool-and-publish-service/jitai-visual-development-tools#navigation-tabs" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="运维管理工具"
+  href="development-tool-and-publish-service/devops-management-tool"
+  description="全面的运维管理解决方案，提供系统监控、日志管理、性能分析等运维功能。"
+>
+  敬请期待...
+</IndexCard>
+
+<IndexCard
+  title="JCS云端应用发布服务"
+  href="development-tool-and-publish-service/jcs-cloud-publishing-service"
+  description="便捷的云端应用发布平台，支持一键发布、版本管理和全球分发。"
+>
+  敬请期待...
+</IndexCard>
+
+</div>
+
+## 应用创建与发布
+从应用创建到分布式部署的完整流程。掌握应用创建、源码管理、版本发布、运行环境配置，以及如何构建无限横向扩展的分布式集群架构。
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard
+  title="创建和部署应用"
+  href="app-creation-and-publishing/creating-and-deploying-applications"
   description="学习应用的创建、继承、版本管理和发布流程，掌握应用全生命周期管理。"
 >
   <LinkGrid links={[
-    { text: "创建第一个应用", href: "application-development-basics/application-creation-and-management#create-first-application" },
-    { text: "基于已有应用快速开发", href: "application-development-basics/application-creation-and-management#based-on-existing-application-quick-development" },
-    { text: "数据存储与环境变量配置", href: "application-development-basics/application-creation-and-management#data-storage-and-environment-variable-configuration" },
-    { text: "应用版本管理与发布", href: "application-development-basics/application-creation-and-management#application-version-management-and-publish" },
-    { text: "应用导出导入", href: "application-development-basics/application-creation-and-management#application-export-import" }
+    { text: "创建第一个应用", href: "app-creation-and-publishing/creating-and-deploying-applications#create-first-application" },
+    { text: "基于已有应用快速开发", href: "app-creation-and-publishing/creating-and-deploying-applications#based-on-existing-application-quick-development" },
+    { text: "数据存储与环境变量配置", href: "app-creation-and-publishing/creating-and-deploying-applications#data-storage-and-environment-variable-configuration" },
+    { text: "应用版本管理与发布", href: "app-creation-and-publishing/creating-and-deploying-applications#application-version-management-and-publish" },
+    { text: "应用导出导入", href: "app-creation-and-publishing/creating-and-deploying-applications#application-export-import" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="应用目录和元素源码"
+  href="app-creation-and-publishing/application-directory-and-element-source-code"
+  description="深入了解JitAi应用的目录结构、元素组织方式和源码管理机制。"
+>
+  敬请期待...
+</IndexCard>
+
+<IndexCard
+  title="应用发布与更新"
+  href="app-creation-and-publishing/application-publishing-and-updates"
+  description="掌握应用版本发布策略、自动更新机制和发布流程管理。"
+>
+  敬请期待...
 </IndexCard>
 
 <IndexCard
   title="运行环境管理"
-  href="application-development-basics/runtime-environment-management"
+  href="app-creation-and-publishing/runtime-environment-management"
   description="掌握运行环境的创建、配置和管理，学习如何使用节点集群和应用部署。"
 >
   <LinkGrid links={[
-    { text: "什么是运行环境", href: "application-development-basics/runtime-environment-management#what-is-runtime-environment" },
-    { text: "节点的本地默认运行环境", href: "application-development-basics/runtime-environment-management#node-local-default-runtime-environment" },
-    { text: "创建新的运行环境", href: "application-development-basics/runtime-environment-management#createnewrunenvironment" },
-    { text: "使用运行环境管理节点集群", href: "application-development-basics/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
-    { text: "在运行环境中部署应用", href: "application-development-basics/runtime-environment-management#deploy-application-in-runtime-environment" }
+    { text: "什么是运行环境", href: "app-creation-and-publishing/runtime-environment-management#what-is-runtime-environment" },
+    { text: "节点的本地默认运行环境", href: "app-creation-and-publishing/runtime-environment-management#node-local-default-runtime-environment" },
+    { text: "创建新的运行环境", href: "app-creation-and-publishing/runtime-environment-management#createnewrunenvironment" },
+    { text: "使用运行环境管理节点集群", href: "app-creation-and-publishing/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
+    { text: "在运行环境中部署应用", href: "app-creation-and-publishing/runtime-environment-management#deploy-application-in-runtime-environment" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="分布式集群架构"
+  href="app-creation-and-publishing/distributed-cluster-architecture"
+  description="学习如何构建和管理无限横向扩展的分布式集群架构，实现高可用和高性能部署。"
+>
+  敬请期待...
 </IndexCard>
 
 </div>
 
-## JitAi可视化开发工具
-掌握强大的可视化开发环境。熟悉IDE的各个功能区域，学会在可视化和源码双模式之间自由切换，高效完成应用开发工作。
-
-<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
-
-<IndexCard>
-  <LinkGrid links={[
-    { text: "元素目录树", href: "jitai-visual-development-tools#element-directory-tree" },
-    { text: "添加元素", href: "jitai-visual-development-tools#add-element" },
-    { text: "可视化编辑器", href: "jitai-visual-development-tools#visual-editor" },
-    { text: "源码编辑器", href: "jitai-visual-development-tools#source-code-editor" },
-    { text: "源码文件树", href: "jitai-visual-development-tools#source-code-file-tree" },
-    { text: "应用设置", href: "jitai-visual-development-tools#application-settings" },
-    { text: "门户切换", href: "jitai-visual-development-tools#portal-switching" },
-    { text: "个人中心", href: "jitai-visual-development-tools#personal-center" },
-    { text: "语言切换", href: "jitai-visual-development-tools#language-switch" },
-    { text: "导航标签", href: "jitai-visual-development-tools#navigation-tabs" }
-  ]} />
-</IndexCard>
-
-</div>
 
 ## 门户与页面开发
 设计精美的用户界面和交互体验。从门户导航到页面构建，从组件布局到数据管理，打造功能完整、用户友好的应用界面。
@@ -175,12 +220,12 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="ai-data-management-page"
+  title="AI数据管理页面"
   href="shell-and-page/ai-data-management-page"
   description="AI加持的ai-data-management-page，智能辅助高效完成数据浏览、筛选、编辑与批量操作。"
 >
   <LinkGrid columns={2} links={[
-    { text: "创建ai-data-management-page", href: "shell-and-page/ai-data-management-page#create-ai-data-management-page" },
+    { text: "创建AI数据管理页面", href: "shell-and-page/ai-data-management-page#create-ai-data-management-page" },
     { text: "通过默认筛选条件限制页面表格查询的数据", href: "shell-and-page/ai-data-management-page#limit-page-table-query-data-through-default-filter-conditions" },
     { text: "配置默认的数据排序规则", href: "shell-and-page/ai-data-management-page#configure-default-data-sort-rules" },
     { text: "在页面表格中隐藏部分字段", href: "shell-and-page/ai-data-management-page#hide-some-fields-in-page-table" },

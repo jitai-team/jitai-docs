@@ -10,7 +10,7 @@ sidebar_position: 2
 ## 创建组件化页面 {#create-a-regular-page}
 在[门户导航设计](../portal-navigation-design)中，如果开发者选择创建菜单的同时创建页面，则页面会自动生成，可以在元素目录树中找到自动生成的页面并进行编辑。
 
-开发者也可以手动创建页面，JitAi提供了常规页面、ai-data-management-page、ai-data-analysis-page、data-entry-page、React全代码页面、Vue全代码页面、markdown-page一共7种页面类型。其中ai-data-management-page、ai-data-analysis-page、data-entry-page都是以常规页面为基础封装的，本文使用常规页面讲解**如何进行组件化的页面开发**。
+开发者也可以手动创建页面，JitAi提供了常规页面、AI数据管理页面、AI数据分析页面、数据录入页面、React全代码页面、Vue全代码页面、markdown-page一共7种页面类型。其中AI数据管理页面、AI数据分析页面、数据录入页面都是以常规页面为基础封装的，本文使用常规页面讲解**如何进行组件化的页面开发**。
 
 ![创建页面时选择类型](./imgs/create-regular-page.gif)
 

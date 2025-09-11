@@ -30,5 +30,9 @@
   "sidebar.communitySidebar.category.community": {
     "message": "社区论坛",
     "description": "The label for category community in sidebar communitySidebar"
+  },
+  "sidebar.devguideSidebar.category.Frontend Portal and Pages": {
+    "message": "前端门户与页面",
+    "description": "The label for category Frontend Portal and Pages in sidebar devguideSidebar"
   }
 }

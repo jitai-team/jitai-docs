@@ -1,9 +1,9 @@
 {
-  "label": "参考手册",
+  "label": "Reference",
   "position": 3,
   "collapsed": false,
   "link": {
     "type": "generated-index",
-    "description": "完整的API文档和技术规范，便于开发时快速查找技术细节。"
+    "description": "Complete API documentation and technical specifications for quick reference during development."
   }
 } 

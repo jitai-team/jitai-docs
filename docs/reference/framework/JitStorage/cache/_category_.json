@@ -1,9 +1,10 @@
 {
   "position": 1,
-  "label": "缓存",
+  "label": "Cache",
   "className": "red",
   "link": {
     "type": "generated-index",
-    "title": "缓存"
+    "title": "Cache",
+    "description": "Cache management and data caching APIs for improving application performance and reducing database load."
   }
 } 

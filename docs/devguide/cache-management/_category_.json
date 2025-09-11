@@ -1,8 +1,8 @@
 {
-  "label": "缓存管理",
+  "label": "Cache Management",
   "position": 11,
   "link": {
     "type": "generated-index",
-    "description": "学习如何配置和使用缓存服务。"
+    "description": "Learn how to configure and use cache services."
   }
 }

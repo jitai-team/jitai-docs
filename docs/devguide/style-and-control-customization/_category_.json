@@ -1,8 +1,8 @@
 {
-  "label": "样式与控件定制",
+  "label": "Style and Control Customization",
   "position": 13,
   "link": {
     "type": "generated-index",
-    "description": "学习如何定制应用样式和开发自定义控件。"
+    "description": "Learn how to customize application styles and develop custom controls."
   }
 }

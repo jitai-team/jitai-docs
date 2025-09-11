@@ -1,9 +1,9 @@
 {
-  "label": "开发工具",
+  "label": "Development Tools",
   "position": 2,
   "collapsed": false,
   "link": {
     "type": "generated-index",
-    "description": "IDEApp主界面框架、IDEApp的 API、Type Editor扩展API/规范"
+    "description": "IDEApp main interface framework, IDEApp APIs, and Type Editor extension API/specifications"
   }
 } 

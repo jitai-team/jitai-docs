@@ -1,9 +1,10 @@
 {
   "position": 3,
-  "label": "存储",
+  "label": "Storage",
   "className": "red",
   "link": {
     "type": "generated-index",
-    "title": "存储"
+    "title": "Storage",
+    "description": "File and object storage management APIs for handling uploads, downloads, and storage operations."
   }
 } 

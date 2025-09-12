@@ -660,16 +660,40 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
-<IndexCard>
+<IndexCard
+  title="创建AI大模型元素"
+  href="ai-llm/create-ai-llm"
+  description="学习如何集成主流大语言模型，配置API密钥，实现重试机制，并在应用中调用大模型函数。"
+>
   <LinkGrid links={[
-    { text: "主流大模型厂商支持列表", href: "ai-llm#mainstream-llm-vendor-support-list" },
-    { text: "大模型厂商元素的创建", href: "ai-llm#create-llm-vendor-element" },
-    { text: "重试及备用API Key机制", href: "ai-llm#重试及备用api-key机制" },
-    { text: "私有化大模型集成", href: "ai-llm#private-llm-integration" },
-    { text: "在页面中调用大模型", href: "ai-llm#call-llm-in-pages" },
-    { text: "在后端函数中调用大模型", href: "ai-llm#call-llm-in-backend-functions" },
-    { text: "大模型编程接口", href: "ai-llm#llm-programming-interface" }
+    { text: "主流大模型厂商支持列表", href: "ai-llm/create-ai-llm#mainstream-llm-vendor-support-list" },
+    { text: "大模型厂商元素的创建", href: "ai-llm/create-ai-llm#create-llm-vendor-element" },
+    { text: "重试及备用API Key机制", href: "ai-llm/create-ai-llm#retry-backup-api-key-mechanism" },
+    { text: "私有化大模型集成", href: "ai-llm/create-ai-llm#private-llm-integration" },
+    { text: "在页面中调用大模型", href: "ai-llm/create-ai-llm#call-llm-in-pages" },
+    { text: "在后端函数中调用大模型", href: "ai-llm/create-ai-llm#call-llm-in-backend-functions" },
+    { text: "大模型编程接口", href: "ai-llm/create-ai-llm#llm-programming-interface" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="大模型输入与输出"
+  href="ai-llm/llm-input-output"
+  description="了解大语言模型的输入输出配置，实现最优的集成与性能表现。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="使用大模型函数实现多模态AIGC"
+  href="ai-llm/implement-multimodal-aigc"
+  description="探索如何利用大模型函数创建包含文本、图像等多种媒体类型的多模态AI生成内容。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
 </IndexCard>
 
 </div>

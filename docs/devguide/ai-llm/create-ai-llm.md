@@ -1,12 +1,12 @@
 ---
-sidebar_position: 4.1
-slug: ai-llm
+sidebar_position: 1
+slug: create-ai-llm
 ---
 
-# AI大模型
+# Create AI Large Language Model Element
 随着AI技术快速发展，现代应用系统正在经历智能化革命。然而，面对众多的AI服务提供商和不断更新的模型版本，开发者往往面临选择困难和集成复杂性的挑战。
 
-大模型厂商元素正是JitAi平台为解决这一问题而设计的统一AI接入方案。无论您要构建智能[ai-knowledge-base](./ai-knowledge-base)、开发AI助理、还是创建自主决策的Agent，它都能提供稳定可靠的大模型服务支撑。
+大模型厂商元素正是JitAi平台为解决这一问题而设计的统一AI接入方案。无论您要构建智能[AI知识库](../ai-knowledge-base)、开发AI助理、还是创建自主决策的Agent，它都能提供稳定可靠的大模型服务支撑。
 
 ![效果图](./img/1/effect-diagram.gif)
 
@@ -25,7 +25,7 @@ slug: ai-llm
 ## 大模型厂商元素的创建 {#create-llm-vendor-element}
 ![大模型厂商创建](./img/1/large-model-creation.png)
 
-在元素目录树上点击搜索框右边的`+`按钮，在弹出的菜单中选择`ai-llm`，根据实际情况再选择对应的大模型厂商，选择完成后会弹出如下弹窗。
+在元素目录树上点击搜索框右边的`+`按钮，在弹出的菜单中选择`AI大模型`，根据实际情况再选择对应的大模型厂商，选择完成后会弹出如下弹窗。
 
 ![大模型创建弹窗](./img/1/large-model-create-popup.png)
 
@@ -39,7 +39,7 @@ API URL一般不需要修改，每个厂商的默认配置已经填写。
 
 创建完成后会在左侧元素树中显示。
 
-## 重试及备用API Key机制
+## 重试及备用API Key机制 {#retry-backup-api-key-mechanism}
 为了避免单个密钥速率限制、请求过多等限制导致模型调用失败，我们提供了重试及多密钥机制。最大重试3次，每次重试的等待时间分别为1秒、2秒、4秒。如果配置了多个API Key，每次重试都会轮询到备用的API Key。这意味着系统不会在同一个失效的Key上反复尝试，而是智能地切换到备用Key来提高成功率。如果只有一个API Key，系统将会在这个Key上尝试4次(1次调用 + 3次重试)。
 
 ![多密钥](./img/1/multi-keys.png)
@@ -136,11 +136,11 @@ API URL一般不需要修改，每个厂商的默认配置已经填写。
 配置参考[在页面中调用大模型](#call-llm-in-pages)
 ## 大模型编程接口 {#llm-programming-interface}
 ### runLlm
-ai-llm的核心方法，用于发送请求到大模型服务。[API文档](../reference/framework/JitAi/ai-large-models#runllm)
+ai-llm的核心方法，用于发送请求到大模型服务。[API文档](../../reference/framework/JitAi/ai-large-models#runllm)
 
 ### embedDocuments
-ai-llm的文档向量化方法，用于将文本列表转换为高维向量表示。[API文档](../reference/framework/JitAi/ai-large-models#embeddocuments)
+ai-llm的文档向量化方法，用于将文本列表转换为高维向量表示。[API文档](../../reference/framework/JitAi/ai-large-models#embeddocuments)
 
 ### rerankDocuments
-ai-llm的文档重排方法，用于基于查询文本对候选文档进行重新排序。[API文档](../reference/framework/JitAi/ai-large-models#rerankdocuments)
+ai-llm的文档重排方法，用于基于查询文本对候选文档进行重新排序。[API文档](../../reference/framework/JitAi/ai-large-models#rerankdocuments)
 

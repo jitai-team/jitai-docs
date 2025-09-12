@@ -22,7 +22,7 @@ We provide visual development tools that allow developers to create an ai-data-a
 Specify the data tables and data conditions that can be analyzed. This configuration controls the data allowed for analysis on this page, thereby controlling the data range that users can statistically analyze.
 
 ### Configure Large Language Model
-We have built-in a specialized [ai-assistant](../../ai-assistant) for data analysis in this page. This assistant needs to access the system database and call functions on the page to draw charts during runtime. We need to configure a [large language model](../../ai-llm) that supports tool calling. We recommend using qwen-max-latest from Alibaba Cloud Bailian platform.<a href="https://bailian.console.aliyun.com/?tab=model#/api-key" target="_blank">Apply for API Key</a>
+We have built-in a specialized [ai-assistant](../../ai-assistant) for data analysis in this page. This assistant needs to access the system database and call functions on the page to draw charts during runtime. We need to configure a [large language model](../../ai-llm/create-ai-llm) that supports tool calling. We recommend using qwen-max-latest from Alibaba Cloud Bailian platform.<a href="https://bailian.console.aliyun.com/?tab=model#/api-key" target="_blank">Apply for API Key</a>
 
 ### ai-assistant Advanced Configuration
 - Support custom [welcome message and opening](../../ai-assistant#welcome-message-and-opening)

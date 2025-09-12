@@ -68,17 +68,17 @@ AI助理的可视化编排工具让您能够通过直观的拖拽操作设计复
 从其他节点连线到路由决策节点时会自动弹出输入配置窗口，后续也可以通过点击连线上的` → `按钮打开。你可以把助理"记忆"中的变量传给它。
 ### AIAgent {#ai-agent}
 AIAgent节点就是调用具体的AIAgent来处理特定任务。
-我们需要在这个节点上绑定一个[AIAgent](ai-agent)，配置方法如下：
+我们需要在这个节点上绑定一个[AIAgent](./ai-agent/create-ai-agent)，配置方法如下：
 
 ![节点配置-AIAgent-绑定Agent](./img/assistant/aiagent-bindagent.png)
 
-**输入参数配置**：节点运行时会调用Agent，并传入[Agent需要的参数](ai-agent#configure-input-variables)。
+**输入参数配置**：节点运行时会调用Agent，并传入[Agent需要的参数](./ai-agent/create-ai-agent#configure-input-variables)。
 我们需要给这些参数赋值，配置方法如下：
 
 ![节点配置-AIAgent-输入参数](./img/assistant/aiagent-input.png)
 
 点击连线上的` → `按钮打开输入参数配置窗口。左边是Agent需要的变量，右边选择[运行状态数据](#runtime-state-data)中的数据给Agent的变量赋值。
-这个节点运行完成后会把[Agent的输出结果](ai-agent#configure-output-results)存储到运行状态中，供其他节点使用。
+这个节点运行完成后会把[Agent的输出结果](./ai-agent/create-ai-agent#configure-output-results)存储到运行状态中，供其他节点使用。
 
 ### 对话区人机交互 {#dialog-human-machine-interaction}
 **什么是对话区**：对话区就是一个AI对话框，是用户和助理聊天的地方。
@@ -183,7 +183,7 @@ AI Agent节点、函数调用节点、条件分支节点及多任务执行节点
 ![AI助理-工作区事件-订阅](./img/assistant/assistant-workspace-event-args.png)
 
 #### 工具调用事件
-对于AI Agent节点，在Agent运行过程中如果会用到工具，那么在工具调用前和工具调用后也会触发工作区事件。前提需要Agent[开启工具触发事件](ai-agent#tool-function-call-pre-post-event-triggering)。
+对于AI Agent节点，在Agent运行过程中如果会用到工具，那么在工具调用前和工具调用后也会触发工作区事件。前提需要Agent[开启工具触发事件](./ai-agent/create-ai-agent#tool-function-call-pre-post-event-triggering)。
 
 ![AI助理-工具调用事件-订阅](./img/assistant/assistant-workspace-tool-event.png)
 
@@ -226,7 +226,7 @@ AI Agent节点、函数调用节点、条件分支节点及多任务执行节点
 后端如何订阅节点运行事件，参考：[AI助理事件](business-logic-development/event-handling#ai-assistant-events)
 
 #### 工具调用事件
-对于AI Agent节点，在Agent运行过程中如果会用到工具，那么在工具调用前和工具调用后也会触发后端事件。前提是工具需要开启[触发事件](ai-agent#tool-function-call-pre-post-event-triggering)。
+对于AI Agent节点，在Agent运行过程中如果会用到工具，那么在工具调用前和工具调用后也会触发后端事件。前提是工具需要开启[触发事件](./ai-agent/create-ai-agent#tool-function-call-pre-post-event-triggering)。
 
 后端如何订阅工具调用事件，参考：[Agent工具调用事件](business-logic-development/event-handling#agent-tool-call-events)
 

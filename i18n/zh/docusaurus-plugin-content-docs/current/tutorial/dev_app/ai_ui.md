@@ -33,7 +33,7 @@ JitAi的Agent实现与应用系统原生融合、高度集成，除了支持调�
 
 <VideoPlayer relatePath="/docs/tutorial/ai_ui_agent.mp4" />
 
-阅读[AIAgent](../../devguide/ai-agent)了解更多。
+阅读[AIAgent](../../devguide/ai-agent/create-ai-agent)了解更多。
 
 ### 创建AI助理
 

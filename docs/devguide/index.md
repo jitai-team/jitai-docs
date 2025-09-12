@@ -717,38 +717,82 @@ Intelligent agents with reasoning and action capabilities. Through prompts and t
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
-<IndexCard>
+<IndexCard
+  title="AIAgent"
+  href="ai-agent/create-ai-agent"
+  description="Learn how to create ReActAgent, configure system prompts, large model parameters, input/output variables, and runtime state storage."
+>
   <LinkGrid columns={2} links={[
-    { text: "Create ReAct Agent", href: "ai-agent#create-react-agent" },
-    { text: "Write System Prompt", href: "ai-agent#write-system-prompt" },
-    { text: "Write System Prompt Based on Template", href: "ai-agent#write-system-prompt-based-on-template" },
-    { text: "Use Variables in Prompt", href: "ai-agent#use-variables-in-prompt" },
-    { text: "Select Model and Configure Parameters", href: "ai-agent#select-model-and-configure-parameters" },
-    { text: "Write Agent Description", href: "ai-agent#write-agent-description" },
-    { text: "Configure Runtime State Storage", href: "ai-agent#configure-runtime-state-storage" },
-    { text: "Memory Storage", href: "ai-agent#memory-storage" },
-    { text: "Database Storage", href: "ai-agent#database-storage" },
-    { text: "Configure Input Variables", href: "ai-agent#configure-input-variables" },
-    { text: "Configure Output Results", href: "ai-agent#configure-output-results" },
-    { text: "Add Tools to Agent", href: "ai-agent#add-tools-to-agent" },
-    { text: "Agent Call Model Functions", href: "ai-agent#agent-call-model-functions" },
-    { text: "Agent Calling Service Functions", href: "ai-agent#agent-calling-service-functions" },
-    { text: "Agent Call MCP Service", href: "ai-agent#agent-call-mcp-service" },
-    { text: "Convert MCP Config to Environment Variables", href: "ai-agent#convert-mcp-config-to-environment-variables" },
-    { text: "Agent Call External API", href: "ai-agent#agent-call-external-api" },
-    { text: "Agent Call Page Functions", href: "ai-agent#agent-call-page-functions" },
-    { text: "Enable/Disable Tool Functions", href: "ai-agent#enable-disable-tool-functions" },
-    { text: "Tool Function Call Pre/Post Event Triggering", href: "ai-agent#tool-function-call-pre-post-event-triggering" },
-    { text: "Manual Confirmation Before Tool Execution", href: "ai-agent#manual-confirmation-before-tool-execution" },
-    { text: "Restrict User Roles for Tool Calls", href: "ai-agent#restrict-user-roles-for-tool-calls" },
-    { text: "Integrate Knowledge Base for RAG", href: "ai-agent#integrate-knowledge-base-rag" },
-    { text: "Call Agent in Frontend Functions", href: "ai-agent#call-agent-in-frontend-functions" },
-    { text: "Test Agent in Page Assistant", href: "ai-agent#test-agent-in-page-assistant" },
-    { text: "Call Agent in Backend Service Functions", href: "ai-agent#call-agent-in-backend-service-functions" },
-    { text: "Modify Agent in Source Code Mode", href: "ai-agent#modify-agent-in-source-code-mode" },
-    { text: "Custom Callback Processor", href: "ai-agent#custom-callback-processor" },
-    { text: "Agent Streaming Output", href: "ai-agent#agent-streaming-output" }
+    { text: "Create ReAct Agent", href: "ai-agent/create-ai-agent#create-react-agent" },
+    { text: "Write System Prompt", href: "ai-agent/create-ai-agent#write-system-prompt" },
+    { text: "Write System Prompt Based on Template", href: "ai-agent/create-ai-agent#write-system-prompt-based-on-template" },
+    { text: "Use Variables in Prompt", href: "ai-agent/create-ai-agent#use-variables-in-prompt" },
+    { text: "Select Model and Configure Parameters", href: "ai-agent/create-ai-agent#select-model-and-configure-parameters" },
+    { text: "Write Agent Description", href: "ai-agent/create-ai-agent#write-agent-description" },
+    { text: "Configure Runtime State Storage", href: "ai-agent/create-ai-agent#configure-runtime-state-storage" },
+    { text: "Memory Storage", href: "ai-agent/create-ai-agent#memory-storage" },
+    { text: "Database Storage", href: "ai-agent/create-ai-agent#database-storage" },
+    { text: "Configure Input Variables", href: "ai-agent/create-ai-agent#configure-input-variables" },
+    { text: "Configure Output Results", href: "ai-agent/create-ai-agent#configure-output-results" },
+    { text: "Add Tools to Agent", href: "ai-agent/create-ai-agent#add-tools-to-agent" },
+    { text: "Agent Call Model Functions", href: "ai-agent/create-ai-agent#agent-call-model-functions" },
+    { text: "Agent Calling Service Functions", href: "ai-agent/create-ai-agent#agent-calling-service-functions" },
+    { text: "Agent Call MCP Service", href: "ai-agent/create-ai-agent#agent-call-mcp-service" },
+    { text: "Convert MCP Config to Environment Variables", href: "ai-agent/create-ai-agent#convert-mcp-config-to-environment-variables" },
+    { text: "Agent Call External API", href: "ai-agent/create-ai-agent#agent-call-external-api" },
+    { text: "Agent Call Page Functions", href: "ai-agent/create-ai-agent#agent-call-page-functions" },
+    { text: "Enable/Disable Tool Functions", href: "ai-agent/create-ai-agent#enable-disable-tool-functions" },
+    { text: "Tool Function Call Pre/Post Event Triggering", href: "ai-agent/create-ai-agent#tool-function-call-pre-post-event-triggering" },
+    { text: "Manual Confirmation Before Tool Execution", href: "ai-agent/create-ai-agent#manual-confirmation-before-tool-execution" },
+    { text: "Restrict User Roles for Tool Calls", href: "ai-agent/create-ai-agent#restrict-user-roles-for-tool-calls" },
+    { text: "Integrate Knowledge Base for RAG", href: "ai-agent/create-ai-agent#integrate-knowledge-base-rag" },
+    { text: "Call Agent in Frontend Functions", href: "ai-agent/create-ai-agent#call-agent-in-frontend-functions" },
+    { text: "Test Agent in Page Assistant", href: "ai-agent/create-ai-agent#test-agent-in-page-assistant" },
+    { text: "Call Agent in Backend Service Functions", href: "ai-agent/create-ai-agent#call-agent-in-backend-service-functions" },
+    { text: "Modify Agent in Source Code Mode", href: "ai-agent/create-ai-agent#modify-agent-in-source-code-mode" },
+    { text: "Custom Callback Processor", href: "ai-agent/create-ai-agent#custom-callback-processor" },
+    { text: "Agent Streaming Output", href: "ai-agent/create-ai-agent#agent-streaming-output" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="Tools in Agent"
+  href="ai-agent/agent-tools"
+  description="Deep dive into the usage and best practices of various tools in Agent."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Agent Input and Output"
+  href="ai-agent/agent-input-output"
+  description="Detailed understanding of Agent's input and output configuration and data processing methods."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Single-Task Intelligent Agent Implementation"
+  href="ai-agent/single-task-intelligent-agent"
+  description="Learn how to use Agent to implement specialized single-task intelligent agents for optimized business scenario handling."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Agent API Integration"
+  href="ai-agent/agent-api-integration"
+  description="Expose Agent capabilities through API interfaces for external system integration."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
 </IndexCard>
 
 </div>

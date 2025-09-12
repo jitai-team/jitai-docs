@@ -33,7 +33,7 @@ In this case, creating an AI Agent and its configuration operations are as follo
 
 <VideoPlayer relatePath="/docs/tutorial/ai_ui_agent.mp4" />
 
-Read [AI Agent](../../devguide/ai-agent) for more details.
+Read [AI Agent](../../devguide/ai-agent/create-ai-agent) for more details.
 
 ### Creating AI Assistant
 

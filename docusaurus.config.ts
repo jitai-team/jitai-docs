@@ -230,6 +230,23 @@ const config: Config = {
              },
            ],
          },
+         {
+           title: 'Social',
+           items: [
+             {
+               label: 'X (Twitter)',
+               href: '#',
+             },
+             {
+               label: 'Facebook',
+               href: '#',
+             },
+             {
+               label: 'LinkedIn',
+               href: '#',
+             },
+           ],
+         },
       ],
       logo: {
         alt: 'Next-generation AI application development technology system',

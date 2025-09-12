@@ -3,7 +3,7 @@ sidebar_position: 1
 slug: create-ai-agent
 ---
 
-# 创建AIAgent
+# Create AI Agent
 Agent(智能体代理)具备自主决策和任务执行能力，能够根据用户输入和上下文信息，自动选择合适的工具完成复杂的业务流程。
 
 JitAi的Agent实现与应用系统原生融合，高度集成。一个Agent的基本组成是系统提示词、工具（包括应用系统的模块函数）、大模型。在企业级场景中还需要对输入和输出参数及其格式进行设置、对接知识库实现检索增强生成（Retrieval-Augmented Generation, RAG）、将Agent作为应用模块在程序逻辑中进行调用。
@@ -43,7 +43,7 @@ Agent可视化编辑器的整个左侧区域都用于提示词编写，开发者
 
 ![配置大模型及其参数](./img/agent/configure-large-model-and-parameters.gif)
 
-JitAi提供了[ai-llm元素](../ai-llm)用于对接市面上主流的大模型服务，而且支持私有化大模型服务的集成。在ReActAgent的基础配置中，从已经创建的大模型实例中选择并配置其参数即可。
+JitAi提供了[ai-llm元素](../ai-llm/create-ai-llm)用于对接市面上主流的大模型服务，而且支持私有化大模型服务的集成。在ReActAgent的基础配置中，从已经创建的大模型实例中选择并配置其参数即可。
 
 :::tip
 开发者需要先完成大模型实例元素的创建，才能在ReActAgent中选择使用。如果需要调用工具，则对应的模型必须支持Function Calling。

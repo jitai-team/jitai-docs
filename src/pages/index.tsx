@@ -24,14 +24,16 @@ const HomePage: React.FC = () => {
 
   return (
     <LayoutComponent>
-      <Head>
-        <title>{homeTitle}</title>
-        <meta name="description" content={homeDesc} />
-        <meta property="og:title" content={homeTitle} />
-        <meta property="og:description" content={homeDesc} />
-        <meta name="twitter:title" content={homeTitle} />
-        <meta name="twitter:description" content={homeDesc} />
-      </Head>
+      <Head children={
+        <>
+          <title>{homeTitle}</title>
+          <meta name="description" content={homeDesc} />
+          <meta property="og:title" content={homeTitle} />
+          <meta property="og:description" content={homeDesc} />
+          <meta name="twitter:title" content={homeTitle} />
+          <meta name="twitter:description" content={homeDesc} />
+        </>
+      } />
       <div className={styles.container}>
         <Navbar currentLocale={i18n.currentLocale}/>
         <HeroSection currentLocale={i18n.currentLocale}/>

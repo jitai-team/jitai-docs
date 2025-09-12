@@ -12,7 +12,7 @@ import TechnologiesSection from '../components/TechnologiesSection';
 import styles from './index.module.css';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-const LayoutComponent = Layout as any;
+const LayoutComponent = Layout as unknown as React.ComponentType<any>;
 
 const HomePage: React.FC = () => {
   const { i18n } = useDocusaurusContext();

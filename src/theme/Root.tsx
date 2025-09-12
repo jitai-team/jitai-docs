@@ -2,7 +2,9 @@ import React from 'react';
 import Head from '@docusaurus/Head';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-export default function Root({children}: {children: React.ReactNode}) {
+type RootProps = { children?: React.ReactNode };
+
+export default function Root({children}: RootProps) {
   const {i18n} = useDocusaurusContext();
   const isZh = i18n.currentLocale.startsWith('zh');
 

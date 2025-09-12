@@ -35,4 +35,4 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/publish_app_produce.mp4" />
 
-阅读[应用创建与管理](../devguide/application-development-basics/application-creation-and-management)了解更多。
+阅读[应用创建与管理](../devguide/app-creation-and-publishing/creating-and-deploying-applications)了解更多。

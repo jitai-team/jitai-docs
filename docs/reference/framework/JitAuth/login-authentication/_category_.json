@@ -1,9 +1,10 @@
 {
   "position": 3,
-  "label": "登录认证",
+  "label": "Login Authentication",
   "className": "red",
   "link": {
     "type": "generated-index",
-    "title": "登录认证"
+    "title": "Login Authentication",
+    "description": "User authentication and login management APIs including login verification, session management, and authentication protocols."
   }
 } 

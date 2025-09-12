@@ -520,7 +520,7 @@
   }
 
   .heroTitle {
-    font-size: 2rem;
+    font-size: 2rem !important;
     line-height: 1.2;
   }
 
@@ -580,7 +580,7 @@
   }
 
   .heroTitle {
-    font-size: 1.75rem;
+    font-size: 1.75rem !important;
     line-height: 1.2;
   }
 

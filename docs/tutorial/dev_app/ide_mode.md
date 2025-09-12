@@ -21,7 +21,7 @@ So the developer portal displays the element tree and editors for each element (
 
 ![](../img/ide_mode_111641.png)
 
-Read [JitAi Visual Development Tools](../../devguide/jitai-visual-development-tools) for more details.
+Read [JitAi Visual Development Tools](../../devguide/development-tool-and-publish-service/jitai-visual-development-tools) for more details.
 
 Reviewing the previous step [Building Question Bank Management with Easy Mode](./easy_mode), after switching to professional mode, the following can be found in the "Developer Portal":
 

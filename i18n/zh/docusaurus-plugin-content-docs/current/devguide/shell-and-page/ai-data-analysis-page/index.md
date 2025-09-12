@@ -4,14 +4,14 @@ sidebar_position: 4
 
 # AI数据分析页面 {#data-range-allowed-for-ai-analysis}
 ## 功能概述
-传统开发模式下，统计图表由开发者预先设计，用户无法修改图表类型和统计方式。JitAI的ai-data-analysis-page让用户通过自然语言描述需求，AI自动生成对应的数据图表，并支持用户随时调整图表样式和统计维度。
+传统开发模式下，统计图表由开发者预先设计，用户无法修改图表类型和统计方式。JitAI的AI数据分析页面让用户通过自然语言描述需求，AI自动生成对应的数据图表，并支持用户随时调整图表样式和统计维度。
 
 ## 创建AI数据分析页面 {#create-ai-data-analysis-page}
 在开发者门户中按以下操作创建：
 
 ![新建ai-data-analysis-page-创建](./imgs/create.png)
 
-开发者可以在创建页面时选择页面类型为 `ai-data-analysis-page`，打开新建弹窗，输入名称即可。
+开发者可以在创建页面时选择页面类型为 `AI数据分析页面`，打开新建弹窗，输入名称即可。
 
 ## 页面配置 {#page-configuration}
 我们提供了可视化开发工具，开发者只需要做一些简单的配置，即可得到一个ai-data-analysis-page。配置如下：
@@ -50,7 +50,7 @@ AI生成的图表，用户还可以做以下调整：
 内容如下：
 - **aiConfig**: AI相关配置项
  - **useAi**: 启用AI，固定为1
- - **aiAssistant**: 页面绑定的ai-assistant，当前固定为`pages.DataAnalysisType.GeneralAssistant`；后续会支持由开发者替换成自定义的ai-assistant。
+ - **aiAssistant**: 页面绑定的AI助理，当前固定为`pages.DataAnalysisType.GeneralAssistant`；后续会支持由开发者替换成自定义的AI助理。
  - **inputArgs**: 助理运行时的输入配置；**llmElement**是配置的大模型元素id，**llmConfig**是大模型的参数配置
  - **welcomeMessage**: 欢迎语，如果不填写，则默认为空
  - **prologues**: 助理中的开场白

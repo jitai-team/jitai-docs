@@ -3,6 +3,6 @@
   "position": 12,
   "link": {
     "type": "generated-index",
-    "description": "企业级审批流程引擎，提供完整的工作流设计、执行和管理能力，涵盖常规审批流程、审批服务、流程管理、待办中心等完整工作流生态，支持复杂审批逻辑和代理机制"
+    "description": "Enterprise-level approval workflow engine providing complete workflow design, execution, and management capabilities, covering regular approval processes, approval services, process management, todo centers, and complete workflow ecosystem supporting complex approval logic and delegation mechanisms"
   }
 } 

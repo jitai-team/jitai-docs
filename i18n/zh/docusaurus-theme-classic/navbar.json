@@ -1,14 +1,14 @@
 {
-  "title": {
-    "message": "JitAi",
-    "description": "The title in the navbar"
+  "logo.alt": {
+    "message": "JitAi Logo",
+    "description": "The alt text of navbar logo"
   },
   "item.label.Tutorial": {
     "message": "入门教程",
     "description": "Navbar item with label Tutorial"
   },
   "item.label.Development Guide": {
-    "message": "应用开发指南", 
+    "message": "应用开发指南",
     "description": "Navbar item with label Development Guide"
   },
   "item.label.Extension Guide": {
@@ -23,7 +23,7 @@
     "message": "开源",
     "description": "Navbar item with label Open Source"
   },
-  "item.label.Community": {
+  "item.label.Community Forum": {
     "message": "社区论坛",
     "description": "Navbar item with label Community Forum"
   }

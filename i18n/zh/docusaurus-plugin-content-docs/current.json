@@ -1,34 +1,462 @@
 {
   "version.label": {
-    "message": "当前版本",
+    "message": "最新版",
     "description": "The label for version current"
   },
-  "sidebar.tutorialSidebar.category.tutorial": {
-    "message": "入门教程",
-    "description": "The label for category tutorial in sidebar tutorialSidebar"
+  "sidebar.tutorialSidebar.category.Develop Application": {
+    "message": "开发应用",
+    "description": "The label for category Develop Application in sidebar tutorialSidebar"
   },
-  "sidebar.devguideSidebar.category.devguide": {
-    "message": "应用开发指南",
-    "description": "The label for category devguide in sidebar devguideSidebar"  
+  "sidebar.tutorialSidebar.category.Develop Application.link.generated-index.description": {
+    "message": "详细的应用开发教程，从基础到高级，包括数据建模、页面设计、业务逻辑等完整应用开发流程。",
+    "description": "The generated-index page description for category Develop Application in sidebar tutorialSidebar"
   },
-  "sidebar.extguideSidebar.category.extguide": {
-    "message": "框架扩展指南",
-    "description": "The label for category extguide in sidebar extguideSidebar"
+  "sidebar.devguideSidebar.category.Platform Installation and Node Activation": {
+    "message": "平台安装与节点激活",
+    "description": "The label for category Platform Installation and Node Activation in sidebar devguideSidebar"
   },
-  "sidebar.referenceSidebar.category.reference": {
-    "message": "参考手册", 
-    "description": "The label for category reference in sidebar referenceSidebar"
+  "sidebar.devguideSidebar.category.Platform Installation and Node Activation.link.generated-index.description": {
+    "message": "JitAi平台安装、节点激活、开发者组织管理和平台更新的完整指南。学习如何从安装到组织绑定搭建开发环境。",
+    "description": "The generated-index page description for category Platform Installation and Node Activation in sidebar devguideSidebar"
   },
-  "sidebar.opensourceSidebar.category.opensource": {
-    "message": "开源",
-    "description": "The label for category opensource in sidebar opensourceSidebar"
+  "sidebar.devguideSidebar.category.Development Tools and Publishing Services": {
+    "message": "开发工具与发布服务",
+    "description": "The label for category Development Tools and Publishing Services in sidebar devguideSidebar"
   },
-  "sidebar.appmarketSidebar.category.appmarket": {
-    "message": "应用市场",
-    "description": "The label for category appmarket in sidebar appmarketSidebar"
+  "sidebar.devguideSidebar.category.Development Tools and Publishing Services.link.generated-index.description": {
+    "message": "JitAi可视化开发工具、运维管理工具以及云端应用发布服务。",
+    "description": "The generated-index page description for category Development Tools and Publishing Services in sidebar devguideSidebar"
   },
-  "sidebar.communitySidebar.category.community": {
-    "message": "社区论坛",
-    "description": "The label for category community in sidebar communitySidebar"
+  "sidebar.devguideSidebar.category.App Creation and Publishing": {
+    "message": "应用创建与发布",
+    "description": "The label for category App Creation and Publishing in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.App Creation and Publishing.link.generated-index.description": {
+    "message": "学习如何创建、部署、发布和管理JitAi应用，包括运行时环境配置和分布式集群架构。",
+    "description": "The generated-index page description for category App Creation and Publishing in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Use Components in Pages": {
+    "message": "在页面中使用功能组件",
+    "description": "The label for category Use Components in Pages in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Use Components in Pages.link.generated-index.description": {
+    "message": "学习如何在页面中使用各种功能组件，包括表单、表格、图表等组件的配置和使用方法。",
+    "description": "The generated-index page description for category Use Components in Pages in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Data Modeling": {
+    "message": "数据建模",
+    "description": "The label for category Data Modeling in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Data Modeling.link.generated-index.description": {
+    "message": "学习如何在JitAi中进行数据建模，包括数据库连接、数据表设计、扩展表和聚合表等。",
+    "description": "The generated-index page description for category Data Modeling in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Frontend Portal and Pages": {
+    "message": "前端门户与页面",
+    "description": "The label for category Frontend Portal and Pages in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Frontend Portal and Pages.link.generated-index.description": {
+    "message": "掌握JitAi门户和页面开发的基本原理，包括门户设计和页面开发等核心概念。",
+    "description": "The generated-index page description for category Frontend Portal and Pages in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.User and Permission": {
+    "message": "用户与权限",
+    "description": "The label for category User and Permission in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.User and Permission.link.generated-index.description": {
+    "message": "学习如何管理用户组织架构、配置登录认证和角色权限系统。",
+    "description": "The generated-index page description for category User and Permission in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Business Logic Development": {
+    "message": "业务逻辑开发",
+    "description": "The label for category Business Logic Development in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Business Logic Development.link.generated-index.description": {
+    "message": "学习如何开发业务逻辑，包括服务函数、事件处理和定时任务等。",
+    "description": "The generated-index page description for category Business Logic Development in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Approval Process": {
+    "message": "审批流程",
+    "description": "The label for category Approval Process in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Approval Process.link.generated-index.description": {
+    "message": "学习如何设计和配置审批工作流，包括节点配置、权限控制和页面定制。",
+    "description": "The generated-index page description for category Approval Process in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.File Processing": {
+    "message": "文件处理",
+    "description": "The label for category File Processing in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.File Processing.link.generated-index.description": {
+    "message": "学习如何处理文件存储和文件模板功能。",
+    "description": "The generated-index page description for category File Processing in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Third-Party Integration": {
+    "message": "第三方集成",
+    "description": "The label for category Third-Party Integration in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Third-Party Integration.link.generated-index.description": {
+    "message": "学习如何集成外部API、支付功能和短信服务。",
+    "description": "The generated-index page description for category Third-Party Integration in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Cache Management": {
+    "message": "缓存管理",
+    "description": "The label for category Cache Management in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Cache Management.link.generated-index.description": {
+    "message": "学习如何配置和使用缓存服务。",
+    "description": "The generated-index page description for category Cache Management in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Open API": {
+    "message": "API开放",
+    "description": "The label for category Open API in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Open API.link.generated-index.description": {
+    "message": "学习如何对外暴露API接口供第三方调用。",
+    "description": "The generated-index page description for category Open API in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Style and Control Customization": {
+    "message": "样式与控件定制",
+    "description": "The label for category Style and Control Customization in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Style and Control Customization.link.generated-index.description": {
+    "message": "学习如何定制应用样式和开发自定义控件。",
+    "description": "The generated-index page description for category Style and Control Customization in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Advanced Guide": {
+    "message": "进阶指南",
+    "description": "The label for category Advanced Guide in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Advanced Guide.link.generated-index.description": {
+    "message": "真实场景下各类平台功能的应用和开发指南。",
+    "description": "The generated-index page description for category Advanced Guide in sidebar devguideSidebar"
+  },
+  "sidebar.extguideSidebar.category.Frontend": {
+    "message": "前端",
+    "description": "The label for category Frontend in sidebar extguideSidebar"
+  },
+  "sidebar.extguideSidebar.category.Frontend.link.generated-index.description": {
+    "message": "扩展前端Type元素，开发前端可视化编辑器，创建自定义UI组件和交互功能。",
+    "description": "The generated-index page description for category Frontend in sidebar extguideSidebar"
+  },
+  "sidebar.extguideSidebar.category.Backend": {
+    "message": "后端",
+    "description": "The label for category Backend in sidebar extguideSidebar"
+  },
+  "sidebar.extguideSidebar.category.Backend.link.generated-index.description": {
+    "message": "扩展后端Type元素，开发后端可视化编辑器，实现自定义业务逻辑和数据处理。",
+    "description": "The generated-index page description for category Backend in sidebar extguideSidebar"
+  },
+  "sidebar.extguideSidebar.category.Comprehensive": {
+    "message": "综合",
+    "description": "The label for category Comprehensive in sidebar extguideSidebar"
+  },
+  "sidebar.extguideSidebar.category.Comprehensive.link.generated-index.description": {
+    "message": "前后端复合元素扩展、dev-tools构建和框架发布指南。",
+    "description": "The generated-index page description for category Comprehensive in sidebar extguideSidebar"
+  },
+  "sidebar.referenceSidebar.category.Development Framework": {
+    "message": "开发框架",
+    "description": "The label for category Development Framework in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Development Framework.link.generated-index.description": {
+    "message": "JitAi框架是基于JAAP的企业级应用框架，提供从基础设施到业务层组件的全栈技术底座。",
+    "description": "The generated-index page description for category Development Framework in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.JitAi": {
+    "message": "JitAi",
+    "description": "The label for category JitAi in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.JitAi.link.generated-index.description": {
+    "message": "人工智能框架，提供大语言模型集成、智能代理构建、AI助手开发和知识库管理能力。",
+    "description": "The generated-index page description for category JitAi in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.JitAuth": {
+    "message": "JitAuth",
+    "description": "The label for category JitAuth in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.JitAuth.link.generated-index.description": {
+    "message": "身份认证与授权管理框架，支持多种认证方式、RBAC权限控制、组织架构管理和第三方身份系统集成。",
+    "description": "The generated-index page description for category JitAuth in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Login Authentication": {
+    "message": "登录认证",
+    "description": "The label for category Login Authentication in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Login Authentication.link.generated-index.title": {
+    "message": "登录认证",
+    "description": "The generated-index page title for category Login Authentication in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Login Authentication.link.generated-index.description": {
+    "message": "用户认证和登录管理API，包括登录验证、会话管理和认证协议。",
+    "description": "The generated-index page description for category Login Authentication in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Enterprise Organization": {
+    "message": "企业组织",
+    "description": "The label for category Enterprise Organization in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Enterprise Organization.link.generated-index.title": {
+    "message": "企业组织",
+    "description": "The generated-index page title for category Enterprise Organization in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Enterprise Organization.link.generated-index.description": {
+    "message": "企业组织架构管理API，包括部门、角色、层级结构和组织关系管理。",
+    "description": "The generated-index page description for category Enterprise Organization in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.JitCommons": {
+    "message": "JitCommons",
+    "description": "The label for category JitCommons in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.JitCommons.link.generated-index.description": {
+    "message": "通用工具库，提供常用的工具类、辅助函数和公共组件，提升开发效率。",
+    "description": "The generated-index page description for category JitCommons in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.JitI18N": {
+    "message": "JitI18N",
+    "description": "The label for category JitI18N in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.JitI18N.link.generated-index.description": {
+    "message": "国际化与本地化框架，支持多语言翻译、区域化设置和动态语言包管理。",
+    "description": "The generated-index page description for category JitI18N in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.JitMessage": {
+    "message": "JitMessage",
+    "description": "The label for category JitMessage in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.JitMessage.link.generated-index.description": {
+    "message": "企业级消息通知服务框架，提供统一的短信、邮件、推送等多种通知渠道集成，简化企业应用中的消息通知集成复杂度，提升用户体验和运维效率。",
+    "description": "The generated-index page description for category JitMessage in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.JitORM": {
+    "message": "JitORM",
+    "description": "The label for category JitORM in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.JitORM.link.generated-index.description": {
+    "message": "对象关系映射框架，提供数据库抽象层、数据模型定义、查询构建器和数据类型系统。",
+    "description": "The generated-index page description for category JitORM in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.JitPay": {
+    "message": "JitPay",
+    "description": "The label for category JitPay in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.JitPay.link.generated-index.description": {
+    "message": "支付处理框架，为应用提供统一的第三方支付集成能力，涵盖主流支付渠道接入、支付流程管理、订单状态跟踪等完整支付生态，支持PC端和移动端多场景。",
+    "description": "The generated-index page description for category JitPay in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.JitService": {
+    "message": "JitService",
+    "description": "The label for category JitService in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.JitService.link.generated-index.description": {
+    "message": "核心业务服务框架，提供API服务、外部集成、事件处理、拦截器等完整后端能力。基于事件驱动架构实现服务解耦，集成拦截器组件实现横切关注点的统一管理，支持权限验证、参数校验、日志记录等自动化处理，为上层应用提供标准化的服务接口和集成能力。",
+    "description": "The generated-index page description for category JitService in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.JitStorage": {
+    "message": "JitStorage",
+    "description": "The label for category JitStorage in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.JitStorage.link.generated-index.description": {
+    "message": "存储管理框架，提供文件存储、缓存系统、对象存储和文件模板引擎等存储解决方案。",
+    "description": "The generated-index page description for category JitStorage in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Cache": {
+    "message": "缓存",
+    "description": "The label for category Cache in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Cache.link.generated-index.title": {
+    "message": "缓存",
+    "description": "The generated-index page title for category Cache in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Cache.link.generated-index.description": {
+    "message": "缓存管理和数据缓存API，用于提高应用性能和减少数据库负载。",
+    "description": "The generated-index page description for category Cache in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.File Templates": {
+    "message": "文件模板",
+    "description": "The label for category File Templates in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.File Templates.link.generated-index.description": {
+    "message": "JitStorage的文件模板元素，包括Excel、Word等文档模板的定义和使用。支持动态文档生成和企业级报表输出。",
+    "description": "The generated-index page description for category File Templates in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Storage": {
+    "message": "存储",
+    "description": "The label for category Storage in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Storage.link.generated-index.title": {
+    "message": "存储",
+    "description": "The generated-index page title for category Storage in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Storage.link.generated-index.description": {
+    "message": "文件和对象存储管理API，用于处理上传、下载和存储操作。",
+    "description": "The generated-index page description for category Storage in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.JitTask": {
+    "message": "JitTask",
+    "description": "The label for category JitTask in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.JitTask.link.generated-index.description": {
+    "message": "任务调度框架，支持定时任务、异步任务、任务队列和分布式任务执行管理。",
+    "description": "The generated-index page description for category JitTask in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.JitWeb": {
+    "message": "JitWeb",
+    "description": "The label for category JitWeb in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.JitWeb.link.generated-index.description": {
+    "message": "Web前端框架，提供门户系统、页面管理、UI组件库、表单控件和样式系统。",
+    "description": "The generated-index page description for category JitWeb in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Portals": {
+    "message": "门户",
+    "description": "The label for category Portals in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Portals.link.generated-index.title": {
+    "message": "门户",
+    "description": "The generated-index page title for category Portals in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Portals.link.generated-index.description": {
+    "message": "门户管理API，用于创建和管理应用门户、导航结构和门户配置。",
+    "description": "The generated-index page description for category Portals in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Pages": {
+    "message": "页面",
+    "description": "The label for category Pages in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Pages.link.generated-index.title": {
+    "message": "页面",
+    "description": "The generated-index page title for category Pages in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Pages.link.generated-index.description": {
+    "message": "页面管理API，用于创建、配置和管理应用页面以及页面生命周期操作。",
+    "description": "The generated-index page description for category Pages in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Components": {
+    "message": "组件",
+    "description": "The label for category Components in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Components.link.generated-index.title": {
+    "message": "组件",
+    "description": "The generated-index page title for category Components in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Components.link.generated-index.description": {
+    "message": "UI组件管理API，用于创建、配置和管理可重用的UI组件，覆盖不同类别的组件功能。",
+    "description": "The generated-index page description for category Components in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.View Components": {
+    "message": "视图类",
+    "description": "The label for category View Components in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.View Components.link.generated-index.description": {
+    "message": "用于数据展示和可视化的显示组件，包括图表、表格、媒体元素等多种格式的数据呈现组件。",
+    "description": "The generated-index page description for category View Components in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Operation Components": {
+    "message": "操作类",
+    "description": "The label for category Operation Components in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Operation Components.link.generated-index.description": {
+    "message": "用户交互操作组件，包括按钮、菜单、工具栏和控制元素等用户操作相关的交互组件。",
+    "description": "The generated-index page description for category Operation Components in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Form Components": {
+    "message": "表单类",
+    "description": "The label for category Form Components in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Form Components.link.generated-index.description": {
+    "message": "表单输入和数据收集组件，包括文本字段、选择器、复选框和验证元素等表单相关组件。",
+    "description": "The generated-index page description for category Form Components in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Layout Components": {
+    "message": "布局类",
+    "description": "The label for category Layout Components in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Layout Components.link.generated-index.description": {
+    "message": "用于组织和排列内容的结构化布局组件，包括容器、网格、面板和导航元素等布局控制组件。",
+    "description": "The generated-index page description for category Layout Components in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Approval Components": {
+    "message": "审批类",
+    "description": "The label for category Approval Components in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Approval Components.link.generated-index.description": {
+    "message": "工作流审批组件，用于管理审批流程，包括审批状态、决策控制和工作流可视化。",
+    "description": "The generated-index page description for category Approval Components in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.JitWorkflow": {
+    "message": "JitWorkflow",
+    "description": "The label for category JitWorkflow in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.JitWorkflow.link.generated-index.description": {
+    "message": "企业级审批流程引擎，提供完整的工作流设计、执行和管理能力，涵盖常规审批流程、审批服务、流程管理、待办中心等完整工作流生态，支持复杂审批逻辑和代理机制。",
+    "description": "The generated-index page description for category JitWorkflow in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Runtime Platform": {
+    "message": "运行平台",
+    "description": "The label for category Runtime Platform in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Runtime Platform.link.generated-index.description": {
+    "message": "向开发者提供系统API，用于应用开发。",
+    "description": "The generated-index page description for category Runtime Platform in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Backend API": {
+    "message": "后端API",
+    "description": "The label for category Backend API in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Backend API.link.generated-index.description": {
+    "message": "后端平台API，用于服务器端操作和数据管理。",
+    "description": "The generated-index page description for category Backend API in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Applications": {
+    "message": "应用",
+    "description": "The label for category Applications in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Applications.link.generated-index.description": {
+    "message": "前端应用API文档，用于应用管理、配置和操作。",
+    "description": "The generated-index page description for category Applications in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Runtime Environment": {
+    "message": "运行环境",
+    "description": "The label for category Runtime Environment in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Runtime Environment.link.generated-index.description": {
+    "message": "JitNode运行环境API文档，用于环境配置和管理。",
+    "description": "The generated-index page description for category Runtime Environment in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Elements": {
+    "message": "元素",
+    "description": "The label for category Elements in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Elements.link.generated-index.description": {
+    "message": "前端元素API文档，包括各种前端组件和元素的接口定义和使用方法。",
+    "description": "The generated-index page description for category Elements in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.JitNodes": {
+    "message": "Jit节点",
+    "description": "The label for category JitNodes in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.JitNodes.link.generated-index.description": {
+    "message": "JitNode API文档，用于节点管理和操作。",
+    "description": "The generated-index page description for category JitNodes in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Frontend API": {
+    "message": "前端API",
+    "description": "The label for category Frontend API in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Frontend API.link.generated-index.description": {
+    "message": "前端平台API，用于客户端操作和用户界面交互。",
+    "description": "The generated-index page description for category Frontend API in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Development Tools": {
+    "message": "开发工具",
+    "description": "The label for category Development Tools in sidebar referenceSidebar"
+  },
+  "sidebar.referenceSidebar.category.Development Tools.link.generated-index.description": {
+    "message": "IDEApp主界面框架、IDEApp的API、Type Editor扩展API/规范。",
+    "description": "The generated-index page description for category Development Tools in sidebar referenceSidebar"
+  },
+  "sidebar.devguideSidebar.category.Frontend Portal and Pages": {
+    "message": "前端门户与页面",
+    "description": "The label for category Frontend Portal and Pages in sidebar devguideSidebar"
   }
 }

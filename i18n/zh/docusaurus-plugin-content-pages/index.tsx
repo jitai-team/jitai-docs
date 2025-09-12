@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Head from '@docusaurus/Head';
 import Layout from '@theme/Layout';
 import Navbar from '../../../src/components/Navbar';
 import HeroSection from '../../../src/components/HeroSection';
@@ -51,10 +52,18 @@ const HomePage: React.FC = () => {
   useEffect(() => {
     document.documentElement.setAttribute('data-locale', i18n.currentLocale);
   }, []);
-  
+
 
   return (
     <LayoutComponent>
+      <Head>
+        <title>下一代AI应用开发技术体系</title>
+        <meta name="description" content="JitAI全球首创解释型应用架构，让AI智能体实时感知与编排系统，开发效率提升10倍！立即体验智能开发新时代。" />
+        <meta property="og:title" content="下一代AI应用开发技术体系" />
+        <meta property="og:description" content="JitAI全球首创解释型应用架构，让AI智能体实时感知与编排系统，开发效率提升10倍！立即体验智能开发新时代。" />
+        <meta name="twitter:title" content="下一代AI应用开发技术体系" />
+        <meta name="twitter:description" content="JitAI全球首创解释型应用架构，让AI智能体实时感知与编排系统，开发效率提升10倍！立即体验智能开发新时代。" />
+      </Head>
       <div className={styles.container}>
         <Navbar currentLocale={i18n.currentLocale}/>
         <HeroSection currentLocale={i18n.currentLocale}/>

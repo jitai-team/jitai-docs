@@ -10,7 +10,7 @@ AI知识库元素正是为了解决这些痛点而生。它不仅是文档的存
 
 ## 创建AI知识库元素 {#create-ai-knowledge-base-element}
 :::tip
-建议先完成[大模型厂商](./ai-llm#creating-llm-vendor-elements)和[向量数据库](./vector-database)的创建，再创建AI知识库，以便在创建流程中直接选择对应元素。大模型厂商推荐`阿里百炼`和`硅基流动`，他们有比较丰富的向量和重排模型供开发者选择。
+建议先完成[大模型厂商](./ai-llm/create-ai-llm#create-llm-vendor-element)和[向量数据库](./vector-database)的创建，再创建AI知识库，以便在创建流程中直接选择对应元素。大模型厂商推荐`阿里百炼`和`硅基流动`，他们有比较丰富的向量和重排模型供开发者选择。
 :::
 
 ![创建AI知识库元素](./img/3/create-ai-knowledge-base-element.png)

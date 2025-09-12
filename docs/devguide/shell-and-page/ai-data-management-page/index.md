@@ -72,7 +72,7 @@ This assistant is not enabled by default in the page and needs to be manually en
 Switch to `AI Assistant Configuration` at the top of the visual editor, then turn on the `Use AI Data Management Assistant` switch.
 
 ### Configure Large Language Model
-The AI data management assistant needs to access the system database and call functions on the page to draw charts during runtime. We need to configure a [Large Language Model](../../ai-llm) that supports tool calling for it. We recommend using qwen-max-latest from Alibaba Cloud Bailian platform. [Apply for API Key](https://bailian.console.aliyun.com/?tab=model#/api-key)
+The AI data management assistant needs to access the system database and call functions on the page to draw charts during runtime. We need to configure a [Large Language Model](../../ai-llm/create-ai-llm) that supports tool calling for it. We recommend using qwen-max-latest from Alibaba Cloud Bailian platform. [Apply for API Key](https://bailian.console.aliyun.com/?tab=model#/api-key)
 
 ### Assistant Advanced Configuration
 - Supports custom [Welcome Message and Opening](../../ai-assistant#welcome-message-and-opening)

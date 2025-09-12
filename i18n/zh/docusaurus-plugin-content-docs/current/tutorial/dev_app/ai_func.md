@@ -29,4 +29,4 @@ JitAi开发框架中已经集成了近10种主流大模型厂商，且支持对�
 
 <VideoPlayer relatePath="/docs/tutorial/ai_func_page_event.mp4" />
 
-阅读[AI大模型](../../devguide/ai-llm)了解更多。
+阅读[AI大模型](../../devguide/ai-llm/create-ai-llm)了解更多。

@@ -1,9 +1,8 @@
 ---
-title: Agent的输入与输出
 sidebar_position: 3
 slug: agent-input-output
 ---
 
-# Agent的输入与输出
+# Agent Input and Output
 
 Coming soon...

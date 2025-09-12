@@ -29,4 +29,4 @@ In JitAi, calling large models is very simple, just like calling ordinary functi
 
 <VideoPlayer relatePath="/docs/tutorial/ai_func_page_event.mp4" />
 
-Read [AI Large Language Models](../../devguide/ai-llm) for more details.
+Read [AI Large Language Models](../../devguide/ai-llm/create-ai-llm) for more details.

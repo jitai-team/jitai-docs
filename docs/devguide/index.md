@@ -660,16 +660,40 @@ Integrate mainstream large language models such as GPT-4, Claude, and Tongyi Qia
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
-<IndexCard>
+<IndexCard
+  title="Create AI Large Language Model Element"
+  href="ai-llm/create-ai-llm"
+  description="Learn how to integrate mainstream large language models, configure API keys, implement retry mechanisms, and call LLM functions in your applications."
+>
   <LinkGrid links={[
-    { text: "Mainstream LLM Vendor Support List", href: "ai-llm#mainstream-llm-vendor-support-list" },
-    { text: "Create LLM Vendor Element", href: "ai-llm#create-llm-vendor-element" },
-    { text: "Retry and Backup API Key Mechanism", href: "ai-llm#重试及备用api-key机制" },
-    { text: "Private LLM Integration", href: "ai-llm#private-llm-integration" },
-    { text: "Call LLM in Pages", href: "ai-llm#call-llm-in-pages" },
-    { text: "Call LLM in Backend Functions", href: "ai-llm#call-llm-in-backend-functions" },
-    { text: "LLM Programming Interface", href: "ai-llm#llm-programming-interface" }
+    { text: "Mainstream LLM Vendor Support List", href: "ai-llm/create-ai-llm#mainstream-llm-vendor-support-list" },
+    { text: "Create LLM Vendor Element", href: "ai-llm/create-ai-llm#create-llm-vendor-element" },
+    { text: "Retry and Backup API Key Mechanism", href: "ai-llm/create-ai-llm#retry-backup-api-key-mechanism" },
+    { text: "Private LLM Integration", href: "ai-llm/create-ai-llm#private-llm-integration" },
+    { text: "Call LLM in Pages", href: "ai-llm/create-ai-llm#call-llm-in-pages" },
+    { text: "Call LLM in Backend Functions", href: "ai-llm/create-ai-llm#call-llm-in-backend-functions" },
+    { text: "LLM Programming Interface", href: "ai-llm/create-ai-llm#llm-programming-interface" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="LLM Input and Output"
+  href="ai-llm/llm-input-output"
+  description="Understand the input and output configurations of large language models for optimal integration and performance."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Implement multimodal AIGC using LLM functions"
+  href="ai-llm/implement-multimodal-aigc"
+  description="Discover how to leverage LLM functions to create multimodal AI-generated content with text, images, and other media types."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
 </IndexCard>
 
 </div>

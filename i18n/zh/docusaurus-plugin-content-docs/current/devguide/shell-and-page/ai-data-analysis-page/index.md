@@ -22,7 +22,7 @@ sidebar_position: 4
 指定可分析的数据表及数据条件，通过该配置项控制在该页面允许分析的数据，以此来控制用户可统计的数据范围。
 
 ### 配置大模型
-我们在该页面中内置了一个专门用于数据分析的[ai-assistant](../../ai-assistant)，该助理在运行时需要访问系统数据库及调用页面上的函数绘制图表。我们需要为其配置一个支持调用工具的[大模型](../../ai-llm)，推荐使用阿里云百炼平台的qwen-max-latest。<a href="https://bailian.console.aliyun.com/?tab=model#/api-key" target="_blank">申请API Key</a>
+我们在该页面中内置了一个专门用于数据分析的[ai-assistant](../../ai-assistant)，该助理在运行时需要访问系统数据库及调用页面上的函数绘制图表。我们需要为其配置一个支持调用工具的[大模型](../../ai-llm/create-ai-llm)，推荐使用阿里云百炼平台的qwen-max-latest。<a href="https://bailian.console.aliyun.com/?tab=model#/api-key" target="_blank">申请API Key</a>
 
 ### ai-assistant高级配置
 - 支持自定义[欢迎语与开场白](../../ai-assistant#welcome-message-and-opening)

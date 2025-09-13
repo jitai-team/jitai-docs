@@ -104,6 +104,10 @@ body {
     font-weight: 700;
     color: var(--section-color);
   }
+  
+  img {
+    border-radius: 6px;
+  }
 }
 
 .container {

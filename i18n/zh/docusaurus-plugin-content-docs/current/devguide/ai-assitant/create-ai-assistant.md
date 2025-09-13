@@ -1,9 +1,9 @@
 ---
 sidebar_position: 4.5
-slug: ai-assistant
+slug: create-ai-assistant
 ---
 
-# AI助理
+# 创建AI助理元素
 ## 什么是AI助理 {#what-is-ai-assistant}
 AI助理就像一个智能的项目经理，它能把复杂的任务拆解成一个个小步骤，然后按照你设计的流程一步步执行。你不用写复杂的业务逻辑代码，只需要设计好流程，剩下的AI助理帮你搞定。
 AI助理
@@ -59,7 +59,7 @@ AI助理的可视化编排工具让您能够通过直观的拖拽操作设计复
 
 ![节点配置-路由决策](./img/assistant/router-setting.png)
 
-在流程中点击路由决策节点，右侧会打开配置窗口；选择[大模型](ai-llm/create-ai-llm)，配置好参数就完成了。
+在流程中点击路由决策节点，右侧会打开配置窗口；选择[大模型](../ai-llm/create-ai-llm)，配置好参数就完成了。
 
 **输入消息配置**：路由决策节点有个输入参数，运行时会根据这个参数来决定下一步怎么走；我们需要给这个参数赋值。配置方法如下：
 
@@ -68,17 +68,17 @@ AI助理的可视化编排工具让您能够通过直观的拖拽操作设计复
 从其他节点连线到路由决策节点时会自动弹出输入配置窗口，后续也可以通过点击连线上的` → `按钮打开。你可以把助理"记忆"中的变量传给它。
 ### AIAgent {#ai-agent}
 AIAgent节点就是调用具体的AIAgent来处理特定任务。
-我们需要在这个节点上绑定一个[AIAgent](./ai-agent/create-ai-agent)，配置方法如下：
+我们需要在这个节点上绑定一个[AIAgent](../ai-agent/create-ai-agent)，配置方法如下：
 
 ![节点配置-AIAgent-绑定Agent](./img/assistant/aiagent-bindagent.png)
 
-**输入参数配置**：节点运行时会调用Agent，并传入[Agent需要的参数](./ai-agent/create-ai-agent#configure-input-variables)。
+**输入参数配置**：节点运行时会调用Agent，并传入[Agent需要的参数](../ai-agent/create-ai-agent#configure-input-variables)。
 我们需要给这些参数赋值，配置方法如下：
 
 ![节点配置-AIAgent-输入参数](./img/assistant/aiagent-input.png)
 
 点击连线上的` → `按钮打开输入参数配置窗口。左边是Agent需要的变量，右边选择[运行状态数据](#runtime-state-data)中的数据给Agent的变量赋值。
-这个节点运行完成后会把[Agent的输出结果](./ai-agent/create-ai-agent#configure-output-results)存储到运行状态中，供其他节点使用。
+这个节点运行完成后会把[Agent的输出结果](../ai-agent/create-ai-agent#configure-output-results)存储到运行状态中，供其他节点使用。
 
 ### 对话区人机交互 {#dialog-human-machine-interaction}
 **什么是对话区**：对话区就是一个AI对话框，是用户和助理聊天的地方。
@@ -183,7 +183,7 @@ AI Agent节点、函数调用节点、条件分支节点及多任务执行节点
 ![AI助理-工作区事件-订阅](./img/assistant/assistant-workspace-event-args.png)
 
 #### 工具调用事件
-对于AI Agent节点，在Agent运行过程中如果会用到工具，那么在工具调用前和工具调用后也会触发工作区事件。前提需要Agent[开启工具触发事件](./ai-agent/create-ai-agent#tool-function-call-pre-post-event-triggering)。
+对于AI Agent节点，在Agent运行过程中如果会用到工具，那么在工具调用前和工具调用后也会触发工作区事件。前提需要Agent[开启工具触发事件](../ai-agent/create-ai-agent#tool-function-call-pre-post-event-triggering)。
 
 ![AI助理-工具调用事件-订阅](./img/assistant/assistant-workspace-tool-event.png)
 
@@ -223,12 +223,12 @@ AI Agent节点、函数调用节点、条件分支节点及多任务执行节点
 
 ![AI助理-后端事件-配置](./img/assistant/assistant-backend-event.png)
 
-后端如何订阅节点运行事件，参考：[AI助理事件](business-logic-development/event-handling#ai-assistant-events)
+后端如何订阅节点运行事件，参考：[AI助理事件](../business-logic-development/event-handling#ai-assistant-events)
 
 #### 工具调用事件
-对于AI Agent节点，在Agent运行过程中如果会用到工具，那么在工具调用前和工具调用后也会触发后端事件。前提是工具需要开启[触发事件](./ai-agent/create-ai-agent#tool-function-call-pre-post-event-triggering)。
+对于AI Agent节点，在Agent运行过程中如果会用到工具，那么在工具调用前和工具调用后也会触发后端事件。前提是工具需要开启[触发事件](../ai-agent/create-ai-agent#tool-function-call-pre-post-event-triggering)。
 
-后端如何订阅工具调用事件，参考：[Agent工具调用事件](business-logic-development/event-handling#agent-tool-call-events)
+后端如何订阅工具调用事件，参考：[Agent工具调用事件](../business-logic-development/event-handling#agent-tool-call-events)
 
 ## 运行状态数据 {#runtime-state-data}
 运行状态数据是AI助理流程执行过程中的"记忆库"，存储了所有节点产生的数据，这些数据可以在整个流程中的任意节点使用，也可以发送到助理的对话框中展示。
@@ -287,8 +287,8 @@ AI助理中的数据流向遵循一个清晰的模式，数据在节点间传递
 
 ## 使用指南 {#usage-guide}
 ### 哪些地方可使用AI助理
-- [门户中使用AI助理](shell-and-page/portal-navigation-design#integrate-ai-assistant-in-portal)
-- [常规页面中使用AI助理](shell-and-page/component-based-page-development#integrate-ai-assistant-in-pages)
+- [门户中使用AI助理](../shell-and-page/portal-navigation-design#integrate-ai-assistant-in-portal)
+- [常规页面中使用AI助理](../shell-and-page/component-based-page-development#integrate-ai-assistant-in-pages)
 
 使用AI助理时，还需配置以下内容：
 
@@ -299,7 +299,12 @@ AI助理中的数据流向遵循一个清晰的模式，数据在节点间传递
 
 ![AI助理-欢迎语](./img/assistant/assistant-welcome.png)
 
-### 消息输出 {#message-output}
+### 输出运行过程日志 {#message-output}
+- **输出简要过程日志**：不会输出助理运行过程日志，同时Agent节点中大模型仅输出简单的运行过程日志。该模式输出内容相对简单，运行过程相对较快。
+- **输出详细过程日志**：输出助理运行过程日志，同时Agent节点中大模型会输出详细的运行过程及工具调用日志。 该模式下输出的日志可用于观测调试，运行过程相对较慢，请谨慎选择。
+- **不输出过程日志**：不会输出运行过程日志。
+
+
 **消息显示区域**：在助理对话框中，AI回复的消息有两个显示区域。
 - **日志区**：通常用于显示与结果无关的一些运行过程信息、日志等；
 - **回复区**：用于显示与运行结果相关的关键状态数据。
@@ -327,7 +332,7 @@ AI助理中的数据流向遵循一个清晰的模式，数据在节点间传递
 
 ### 输入参数 
 若AI助理配置了[自定义输入参数](#input-parameters)，使用助理时需要为这些参数配置输入值。
-配置方式参考：[门户中使用AI助理](shell-and-page/portal-navigation-design#integrate-ai-assistant-in-portal)、[常规页面中使用AI助理](shell-and-page/component-based-page-development#integrate-ai-assistant-in-pages)
+配置方式参考：[门户中使用AI助理](../shell-and-page/portal-navigation-design#integrate-ai-assistant-in-portal)、[常规页面中使用AI助理](../shell-and-page/component-based-page-development#integrate-ai-assistant-in-pages)
 
 ### 发送AI消息 {#send-ai-message} 
 在页面中使用AI助理后，页面上会有一个`发送AI消息`的函数。函数有以下入参：

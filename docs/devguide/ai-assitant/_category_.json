@@ -1,0 +1,9 @@
+{
+  "label": "AI Assistant",
+  "position": 4.5,
+  "link": {
+    "type": "generated-index",
+    "slug": "ai-assistant",
+    "description": "Visual intelligent workflow engine. Orchestrate business processes through drag-and-drop nodes, combining AI decision-making and human-machine interaction to achieve intelligent automation in scenarios such as customer service, approval, and data processing."
+  }
+}

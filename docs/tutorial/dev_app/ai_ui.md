@@ -44,7 +44,7 @@ JitAi's AI Assistant also provides a dialog box for direct user interaction.
 In this case, creating an AI Assistant and its configuration operations are as follows:
 <VideoPlayer relatePath="/docs/tutorial/ai_ui_assi.mp4" />
 
-Read [AI Assistant](../../devguide/ai-assistant) for more details.
+Read [AI Assistant](../../devguide/ai-assitant/create-ai-assistant) for more details.
 
 ### Configuring Page Events to Work with AI Assistant
 

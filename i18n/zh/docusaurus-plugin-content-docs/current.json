@@ -455,8 +455,28 @@
     "message": "IDEApp主界面框架、IDEApp的API、Type Editor扩展API/规范。",
     "description": "The generated-index page description for category Development Tools in sidebar referenceSidebar"
   },
-  "sidebar.devguideSidebar.category.Frontend Portal and Pages": {
-    "message": "前端门户与页面",
-    "description": "The label for category Frontend Portal and Pages in sidebar devguideSidebar"
+  "sidebar.devguideSidebar.category.AI Large Language Model": {
+    "message": "AI大模型",
+    "description": "The label for category AI Large Language Model in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.AI Large Language Model.link.generated-index.description": {
+    "message": "AI大语言模型集成与使用",
+    "description": "The generated-index page description for category AI Large Language Model in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.AI Agent": {
+    "message": "AIAgent",
+    "description": "The label for category AI Agent in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.AI Agent.link.generated-index.description": {
+    "message": "学习如何创建和管理AI代理，包括工具配置、输入输出处理、单任务实现以及向外部系统开放Agent API。",
+    "description": "The generated-index page description for category AI Agent in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.AI Assistant": {
+    "message": "AI助理",
+    "description": "The label for category AI Assistant in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.AI Assistant.link.generated-index.description": {
+    "message": "可视化智能工作流引擎。通过拖拽节点编排业务流程，结合AI决策与人机交互，实现客服、审批、数据处理等场景的智能化自动化。",
+    "description": "The generated-index page description for category AI Assistant in sidebar devguideSidebar"
   }
 }

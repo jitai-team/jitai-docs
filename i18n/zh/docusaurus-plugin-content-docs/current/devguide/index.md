@@ -826,35 +826,89 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
-<IndexCard>
+<IndexCard
+  title="创建AI助理元素"
+  href="ai-assitant/create-ai-assistant"
+  description="学习如何创建AI助理元素，配置工作流、节点类型和事件处理，实现智能业务流程自动化。"
+>
   <LinkGrid columns={2} links={[
-    { text: "什么是AI助理", href: "ai-assistant#what-is-ai-assistant" },
-    { text: "创建AI助理", href: "ai-assistant#create-ai-assistant" },
-    { text: "可视化编排", href: "ai-assistant#visual-orchestration" },
-    { text: "开始节点", href: "ai-assistant#start-node" },
-    { text: "路由决策", href: "ai-assistant#routing-decision" },
-    { text: "AIAgent", href: "ai-assistant#ai-agent" },
-    { text: "对话区人机交互", href: "ai-assistant#dialog-human-machine-interaction" },
-    { text: "工作区人机交互", href: "ai-assistant#workspace-human-machine-interaction" },
-    { text: "函数调用", href: "ai-assistant#function-call" },
-    { text: "条件分支", href: "ai-assistant#conditional-branch" },
-    { text: "多任务执行", href: "ai-assistant#multi-task-execution" },
-    { text: "事件类型概览", href: "ai-assistant#event-type-overview" },
-    { text: "前端工作区事件", href: "ai-assistant#frontend-workspace-events" },
-    { text: "后端业务事件", href: "ai-assistant#backend-business-events" },
-    { text: "运行状态数据", href: "ai-assistant#runtime-state-data" },
-    { text: "运行状态存储库", href: "ai-assistant#runtime-state-storage-library" },
-    { text: "高级设置", href: "ai-assistant#advancedsettings" },
-    { text: "使用指南", href: "ai-assistant#usage-guide" },
-    { text: "欢迎语与开场白", href: "ai-assistant#welcome-message-and-opening" },
-    { text: "消息输出", href: "ai-assistant#message-output" },
-    { text: "发送AI消息", href: "ai-assistant#send-ai-message" },
-    { text: "对话记录管理", href: "ai-assistant#conversation-history-management" },
-    { text: "全代码开发", href: "ai-assistant#full-code-development" },
-    { text: "示例演示", href: "ai-assistant#example-demo" },
-    { text: "如何选择合适的节点类型？", href: "ai-assistant#how-to-select-suitable-node-types" },
-    { text: "流程卡住常见原因和解决方法", href: "ai-assistant#common-causes-and-solutions-for-stuck-processes" }
+    { text: "什么是AI助理", href: "ai-assitant/create-ai-assistant#what-is-ai-assistant" },
+    { text: "创建AI助理", href: "ai-assitant/create-ai-assistant#create-ai-assistant" },
+    { text: "可视化编排", href: "ai-assitant/create-ai-assistant#visual-orchestration" },
+    { text: "开始节点", href: "ai-assitant/create-ai-assistant#start-node" },
+    { text: "路由决策", href: "ai-assitant/create-ai-assistant#routing-decision" },
+    { text: "AIAgent", href: "ai-assitant/create-ai-assistant#ai-agent" },
+    { text: "对话区人机交互", href: "ai-assitant/create-ai-assistant#dialog-human-machine-interaction" },
+    { text: "工作区人机交互", href: "ai-assitant/create-ai-assistant#workspace-human-machine-interaction" },
+    { text: "函数调用", href: "ai-assitant/create-ai-assistant#function-call" },
+    { text: "条件分支", href: "ai-assitant/create-ai-assistant#conditional-branch" },
+    { text: "多任务执行", href: "ai-assitant/create-ai-assistant#multi-task-execution" },
+    { text: "事件类型概览", href: "ai-assitant/create-ai-assistant#event-type-overview" },
+    { text: "前端工作区事件", href: "ai-assitant/create-ai-assistant#frontend-workspace-events" },
+    { text: "后端业务事件", href: "ai-assitant/create-ai-assistant#backend-business-events" },
+    { text: "运行状态数据", href: "ai-assitant/create-ai-assistant#runtime-state-data" },
+    { text: "运行状态存储库", href: "ai-assitant/create-ai-assistant#runtime-state-storage-library" },
+    { text: "高级设置", href: "ai-assitant/create-ai-assistant#advancedsettings" },
+    { text: "使用指南", href: "ai-assitant/create-ai-assistant#usage-guide" },
+    { text: "欢迎语与开场白", href: "ai-assitant/create-ai-assistant#welcome-message-and-opening" },
+    { text: "消息输出", href: "ai-assitant/create-ai-assistant#message-output" },
+    { text: "发送AI消息", href: "ai-assitant/create-ai-assistant#send-ai-message" },
+    { text: "对话记录管理", href: "ai-assitant/create-ai-assistant#conversation-history-management" },
+    { text: "全代码开发", href: "ai-assitant/create-ai-assistant#full-code-development" },
+    { text: "示例演示", href: "ai-assitant/create-ai-assistant#example-demo" },
+    { text: "如何选择合适的节点类型？", href: "ai-assitant/create-ai-assistant#how-to-select-suitable-node-types" },
+    { text: "流程卡住常见原因和解决方法", href: "ai-assitant/create-ai-assistant#common-causes-and-solutions-for-stuck-processes" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="流程编排与节点配置"
+  href="ai-assitant/process-orchestration-node-configuration"
+  description="深入了解AI助理流程编排技术和详细的节点配置方法。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="AI助理的输入与输出"
+  href="ai-assitant/ai-assistant-input-output"
+  description="理解AI助理的输入输出配置和数据处理方法。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="开发流程化多任务的对话式AI助理"
+  href="ai-assitant/develop-conversational-multi-task-ai-assistant"
+  description="学习如何开发面向复杂业务场景的流程化多任务对话式AI助理。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="开发与UI页面协作的人机协作式企业级AI助理应用"
+  href="ai-assitant/develop-human-ai-collaboration-enterprise-assistant"
+  description="构建与UI页面协作的企业级AI助理应用，实现人机协作交互。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="AI助理的API开放"
+  href="ai-assitant/ai-assistant-api-integration"
+  description="通过API接口开放AI助理能力，实现与外部系统的集成。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
 </IndexCard>
 
 </div>

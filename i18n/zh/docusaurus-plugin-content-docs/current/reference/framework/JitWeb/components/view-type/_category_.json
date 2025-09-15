@@ -2,6 +2,7 @@
   "label": "视图类",
   "position": 1,
   "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "description": "用于数据展示和可视化的显示组件，包括图表、表格、媒体元素等多种格式的数据呈现组件。"
   }
 } 

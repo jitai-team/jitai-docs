@@ -1,8 +1,8 @@
 {
-  "label": "元素",
+  "label": "Elements",
   "position": 4,
   "link": {
     "type": "generated-index",
-    "description": "JitNode 元素API文档"
+    "description": "Backend element API documentation including element definitions and usage methods"
   }
 } 

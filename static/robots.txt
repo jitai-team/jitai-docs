@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /search
+
+# Sitemap
+Sitemap: https://jit.pro/sitemap.xml
+
+# Allow all other content for SEO
+# This includes documentation, tutorials, and main site pages

@@ -33,7 +33,7 @@ JitAi的Agent实现与应用系统原生融合、高度集成，除了支持调�
 
 <VideoPlayer relatePath="/docs/tutorial/ai_ui_agent.mp4" />
 
-阅读[AIAgent](../../devguide/ai-agent)了解更多。
+阅读[AIAgent](../../devguide/ai-agent/create-ai-agent)了解更多。
 
 ### 创建AI助理
 
@@ -44,7 +44,7 @@ JitAi的AI助理，还提供对话框，可以直接与用户进行交互。
 本案例中，创建AI助理及其配置操作如下:
 <VideoPlayer relatePath="/docs/tutorial/ai_ui_assi.mp4" />
 
-阅读[AI助理](../../devguide/ai-assistant)了解更多。
+阅读[AI助理](../../devguide/ai-assitant/create-ai-assistant)了解更多。
 
 ### 页面中配置事件与AI助理联动
 

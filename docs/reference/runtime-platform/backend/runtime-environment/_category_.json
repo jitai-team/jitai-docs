@@ -1,8 +1,8 @@
 {
-  "label": "运行环境",
+  "label": "Runtime Environment",
   "position": 3,
   "link": {
     "type": "generated-index",
-    "description": "JitNode 运行环境API文档"
+    "description": "JitNode runtime environment API documentation for environment configuration and management"
   }
 } 

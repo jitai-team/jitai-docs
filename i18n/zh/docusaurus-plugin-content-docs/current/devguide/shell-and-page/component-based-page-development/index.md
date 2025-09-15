@@ -10,7 +10,7 @@ sidebar_position: 2
 ## 创建组件化页面 {#create-a-regular-page}
 在[门户导航设计](../portal-navigation-design)中，如果开发者选择创建菜单的同时创建页面，则页面会自动生成，可以在元素目录树中找到自动生成的页面并进行编辑。
 
-开发者也可以手动创建页面，JitAi提供了常规页面、ai-data-management-page、ai-data-analysis-page、data-entry-page、React全代码页面、Vue全代码页面、markdown-page一共7种页面类型。其中ai-data-management-page、ai-data-analysis-page、data-entry-page都是以常规页面为基础封装的，本文使用常规页面讲解**如何进行组件化的页面开发**。
+开发者也可以手动创建页面，JitAi提供了常规页面、AI数据管理页面、AI数据分析页面、数据录入页面、React全代码页面、Vue全代码页面、markdown-page一共7种页面类型。其中AI数据管理页面、AI数据分析页面、数据录入页面都是以常规页面为基础封装的，本文使用常规页面讲解**如何进行组件化的页面开发**。
 
 ![创建页面时选择类型](./imgs/create-regular-page.gif)
 
@@ -277,8 +277,8 @@ JitAi已经内置了对移动端的适配，可以在移动端页面编辑器中
 移动端页面编辑器和PC端页面编辑器在功能上没有区别，配置/事件/函数/页面变量等操作和PC端页面编辑器完全一致。
 
 ## 在页面中集成ai-assistant 
-JitAi支持在页面中直接集成[ai-assistant](../../ai-assistant)，用户在访问页面时可以与ai-assistant进行交互。
+JitAi支持在页面中直接集成[ai-assistant](../../ai-assitant/create-ai-assistant)，用户在访问页面时可以与ai-assistant进行交互。
 
 ![在页面中添加ai-assistant](./imgs/add-ai-assistant-to-page.gif)
 
-开发者在页面编辑器顶部打开`ai-assistant`开关，在弹出的列表中选择一个[ai-assistant](../../ai-assistant)，即可在页面中集成ai-assistant。
+开发者在页面编辑器顶部打开`ai-assistant`开关，在弹出的列表中选择一个[ai-assistant](../../ai-assitant/create-ai-assistant)，即可在页面中集成ai-assistant。

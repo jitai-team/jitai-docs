@@ -4,6 +4,7 @@
   "className": "red",
   "link": {
     "type": "generated-index",
-    "title": "企业组织"
+    "title": "企业组织",
+    "description": "企业组织架构管理API，包括部门、角色、层级结构和组织关系管理。"
   }
 } 

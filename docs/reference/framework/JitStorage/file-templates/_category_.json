@@ -1,9 +1,9 @@
 {
   "position": 2,
-  "label": "文件模板",
+  "label": "File Templates",
   "className": "red",
   "link": {
     "type": "generated-index",
-    "title": "文件模板"
+    "description": "File template elements for JitStorage, including definitions and usage of Excel, Word, and other document templates. Supports dynamic document generation and enterprise-level report output."
   }
 } 

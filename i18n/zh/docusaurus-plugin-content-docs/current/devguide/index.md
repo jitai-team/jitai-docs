@@ -83,62 +83,107 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-## 应用开发基础
-从零开始创建你的第一个应用。掌握应用创建与管理、运行环境配置的完整流程，为后续开发工作打下坚实基础。
+## 开发工具与发布服务
+强大的工具链助力高效开发。掌握可视化开发环境、运维管理工具和云端发布服务，实现从开发到部署的完整工具链支持。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="应用创建与管理"
-  href="application-development-basics/application-creation-and-management"
+  title="JitAi可视化开发工具"
+  href="development-tool-and-publish-service/jitai-visual-development-tools"
+  description="掌握强大的可视化开发环境，熟悉IDE的各个功能区域，学会在可视化和源码双模式之间自由切换。"
+>
+  <LinkGrid links={[
+    { text: "元素目录树", href: "development-tool-and-publish-service/jitai-visual-development-tools#element-directory-tree" },
+    { text: "添加元素", href: "development-tool-and-publish-service/jitai-visual-development-tools#add-element" },
+    { text: "可视化编辑器", href: "development-tool-and-publish-service/jitai-visual-development-tools#visual-editor" },
+    { text: "源码编辑器", href: "development-tool-and-publish-service/jitai-visual-development-tools#source-code-editor" },
+    { text: "源码文件树", href: "development-tool-and-publish-service/jitai-visual-development-tools#source-code-file-tree" },
+    { text: "应用设置", href: "development-tool-and-publish-service/jitai-visual-development-tools#application-settings" },
+    { text: "门户切换", href: "development-tool-and-publish-service/jitai-visual-development-tools#portal-switching" },
+    { text: "个人中心", href: "development-tool-and-publish-service/jitai-visual-development-tools#personal-center" },
+    { text: "语言切换", href: "development-tool-and-publish-service/jitai-visual-development-tools#language-switch" },
+    { text: "导航标签", href: "development-tool-and-publish-service/jitai-visual-development-tools#navigation-tabs" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="运维管理工具"
+  href="development-tool-and-publish-service/devops-management-tool"
+  description="全面的运维管理解决方案，提供系统监控、日志管理、性能分析等运维功能。"
+>
+  敬请期待...
+</IndexCard>
+
+<IndexCard
+  title="JCS云端应用发布服务"
+  href="development-tool-and-publish-service/jcs-cloud-publishing-service"
+  description="便捷的云端应用发布平台，支持一键发布、版本管理和全球分发。"
+>
+  敬请期待...
+</IndexCard>
+
+</div>
+
+## 应用创建与发布
+从应用创建到分布式部署的完整流程。掌握应用创建、源码管理、版本发布、运行环境配置，以及如何构建无限横向扩展的分布式集群架构。
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard
+  title="创建和部署应用"
+  href="app-creation-and-publishing/creating-and-deploying-applications"
   description="学习应用的创建、继承、版本管理和发布流程，掌握应用全生命周期管理。"
 >
   <LinkGrid links={[
-    { text: "创建第一个应用", href: "application-development-basics/application-creation-and-management#create-first-application" },
-    { text: "基于已有应用快速开发", href: "application-development-basics/application-creation-and-management#based-on-existing-application-quick-development" },
-    { text: "数据存储与环境变量配置", href: "application-development-basics/application-creation-and-management#data-storage-and-environment-variable-configuration" },
-    { text: "应用版本管理与发布", href: "application-development-basics/application-creation-and-management#application-version-management-and-publish" },
-    { text: "应用导出导入", href: "application-development-basics/application-creation-and-management#application-export-import" }
+    { text: "创建第一个应用", href: "app-creation-and-publishing/creating-and-deploying-applications#create-first-application" },
+    { text: "基于已有应用快速开发", href: "app-creation-and-publishing/creating-and-deploying-applications#based-on-existing-application-quick-development" },
+    { text: "数据存储与环境变量配置", href: "app-creation-and-publishing/creating-and-deploying-applications#data-storage-and-environment-variable-configuration" },
+    { text: "应用版本管理与发布", href: "app-creation-and-publishing/creating-and-deploying-applications#application-version-management-and-publish" },
+    { text: "应用导出导入", href: "app-creation-and-publishing/creating-and-deploying-applications#application-export-import" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="应用目录和元素源码"
+  href="app-creation-and-publishing/application-directory-and-element-source-code"
+  description="深入了解JitAi应用的目录结构、元素组织方式和源码管理机制。"
+>
+  敬请期待...
+</IndexCard>
+
+<IndexCard
+  title="应用发布与更新"
+  href="app-creation-and-publishing/application-publishing-and-updates"
+  description="掌握应用版本发布策略、自动更新机制和发布流程管理。"
+>
+  敬请期待...
 </IndexCard>
 
 <IndexCard
   title="运行环境管理"
-  href="application-development-basics/runtime-environment-management"
+  href="app-creation-and-publishing/runtime-environment-management"
   description="掌握运行环境的创建、配置和管理，学习如何使用节点集群和应用部署。"
 >
   <LinkGrid links={[
-    { text: "什么是运行环境", href: "application-development-basics/runtime-environment-management#what-is-runtime-environment" },
-    { text: "节点的本地默认运行环境", href: "application-development-basics/runtime-environment-management#node-local-default-runtime-environment" },
-    { text: "创建新的运行环境", href: "application-development-basics/runtime-environment-management#createnewrunenvironment" },
-    { text: "使用运行环境管理节点集群", href: "application-development-basics/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
-    { text: "在运行环境中部署应用", href: "application-development-basics/runtime-environment-management#deploy-application-in-runtime-environment" }
+    { text: "什么是运行环境", href: "app-creation-and-publishing/runtime-environment-management#what-is-runtime-environment" },
+    { text: "节点的本地默认运行环境", href: "app-creation-and-publishing/runtime-environment-management#node-local-default-runtime-environment" },
+    { text: "创建新的运行环境", href: "app-creation-and-publishing/runtime-environment-management#createnewrunenvironment" },
+    { text: "使用运行环境管理节点集群", href: "app-creation-and-publishing/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
+    { text: "在运行环境中部署应用", href: "app-creation-and-publishing/runtime-environment-management#deploy-application-in-runtime-environment" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="分布式集群架构"
+  href="app-creation-and-publishing/distributed-cluster-architecture"
+  description="学习如何构建和管理无限横向扩展的分布式集群架构，实现高可用和高性能部署。"
+>
+  敬请期待...
 </IndexCard>
 
 </div>
 
-## JitAi可视化开发工具
-掌握强大的可视化开发环境。熟悉IDE的各个功能区域，学会在可视化和源码双模式之间自由切换，高效完成应用开发工作。
-
-<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
-
-<IndexCard>
-  <LinkGrid links={[
-    { text: "元素目录树", href: "jitai-visual-development-tools#element-directory-tree" },
-    { text: "添加元素", href: "jitai-visual-development-tools#add-element" },
-    { text: "可视化编辑器", href: "jitai-visual-development-tools#visual-editor" },
-    { text: "源码编辑器", href: "jitai-visual-development-tools#source-code-editor" },
-    { text: "源码文件树", href: "jitai-visual-development-tools#source-code-file-tree" },
-    { text: "应用设置", href: "jitai-visual-development-tools#application-settings" },
-    { text: "门户切换", href: "jitai-visual-development-tools#portal-switching" },
-    { text: "个人中心", href: "jitai-visual-development-tools#personal-center" },
-    { text: "语言切换", href: "jitai-visual-development-tools#language-switch" },
-    { text: "导航标签", href: "jitai-visual-development-tools#navigation-tabs" }
-  ]} />
-</IndexCard>
-
-</div>
 
 ## 门户与页面开发
 设计精美的用户界面和交互体验。从门户导航到页面构建，从组件布局到数据管理，打造功能完整、用户友好的应用界面。
@@ -175,12 +220,12 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="ai-data-management-page"
+  title="AI数据管理页面"
   href="shell-and-page/ai-data-management-page"
   description="AI加持的ai-data-management-page，智能辅助高效完成数据浏览、筛选、编辑与批量操作。"
 >
   <LinkGrid columns={2} links={[
-    { text: "创建ai-data-management-page", href: "shell-and-page/ai-data-management-page#create-ai-data-management-page" },
+    { text: "创建AI数据管理页面", href: "shell-and-page/ai-data-management-page#create-ai-data-management-page" },
     { text: "通过默认筛选条件限制页面表格查询的数据", href: "shell-and-page/ai-data-management-page#limit-page-table-query-data-through-default-filter-conditions" },
     { text: "配置默认的数据排序规则", href: "shell-and-page/ai-data-management-page#configure-default-data-sort-rules" },
     { text: "在页面表格中隐藏部分字段", href: "shell-and-page/ai-data-management-page#hide-some-fields-in-page-table" },
@@ -615,16 +660,40 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
-<IndexCard>
+<IndexCard
+  title="创建AI大模型元素"
+  href="ai-llm/create-ai-llm"
+  description="学习如何集成主流大语言模型，配置API密钥，实现重试机制，并在应用中调用大模型函数。"
+>
   <LinkGrid links={[
-    { text: "主流大模型厂商支持列表", href: "ai-llm#mainstream-llm-vendor-support-list" },
-    { text: "大模型厂商元素的创建", href: "ai-llm#create-llm-vendor-element" },
-    { text: "重试及备用API Key机制", href: "ai-llm#重试及备用api-key机制" },
-    { text: "私有化大模型集成", href: "ai-llm#private-llm-integration" },
-    { text: "在页面中调用大模型", href: "ai-llm#call-llm-in-pages" },
-    { text: "在后端函数中调用大模型", href: "ai-llm#call-llm-in-backend-functions" },
-    { text: "大模型编程接口", href: "ai-llm#llm-programming-interface" }
+    { text: "主流大模型厂商支持列表", href: "ai-llm/create-ai-llm#mainstream-llm-vendor-support-list" },
+    { text: "大模型厂商元素的创建", href: "ai-llm/create-ai-llm#create-llm-vendor-element" },
+    { text: "重试及备用API Key机制", href: "ai-llm/create-ai-llm#retry-backup-api-key-mechanism" },
+    { text: "私有化大模型集成", href: "ai-llm/create-ai-llm#private-llm-integration" },
+    { text: "在页面中调用大模型", href: "ai-llm/create-ai-llm#call-llm-in-pages" },
+    { text: "在后端函数中调用大模型", href: "ai-llm/create-ai-llm#call-llm-in-backend-functions" },
+    { text: "大模型编程接口", href: "ai-llm/create-ai-llm#llm-programming-interface" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="大模型输入与输出"
+  href="ai-llm/llm-input-output"
+  description="了解大语言模型的输入输出配置，实现最优的集成与性能表现。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="使用大模型函数实现多模态AIGC"
+  href="ai-llm/implement-multimodal-aigc"
+  description="探索如何利用大模型函数创建包含文本、图像等多种媒体类型的多模态AI生成内容。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
 </IndexCard>
 
 </div>
@@ -672,38 +741,82 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
-<IndexCard>
+<IndexCard
+  title="AIAgent"
+  href="ai-agent/create-ai-agent"
+  description="学习如何创建ReActAgent，配置系统提示词、大模型参数、输入输出变量，以及运行状态存储等基础配置。"
+>
   <LinkGrid columns={2} links={[
-    { text: "创建ReActAgent", href: "ai-agent#create-react-agent" },
-    { text: "编写系统提示词", href: "ai-agent#write-system-prompt" },
-    { text: "基于模板编写系统提示词", href: "ai-agent#write-system-prompt-based-on-template" },
-    { text: "在提示词中使用变量", href: "ai-agent#use-variables-in-prompt" },
-    { text: "选择模型并配置参数", href: "ai-agent#select-model-and-configure-parameters" },
-    { text: "为Agent编写简介描述", href: "ai-agent#write-agent-description" },
-    { text: "配置运行状态存储仓", href: "ai-agent#configure-runtime-state-storage" },
-    { text: "内存存储", href: "ai-agent#memory-storage" },
-    { text: "数据库存储", href: "ai-agent#database-storage" },
-    { text: "配置输入变量", href: "ai-agent#configure-input-variables" },
-    { text: "配置输出结果", href: "ai-agent#configure-output-results" },
-    { text: "为Agent添加工具", href: "ai-agent#add-tools-to-agent" },
-    { text: "Agent调用模型函数", href: "ai-agent#agent-call-model-functions" },
-    { text: "Agent调用服务函数", href: "ai-agent#agent-calling-service-functions" },
-    { text: "Agent调用MCP服务", href: "ai-agent#agent-call-mcp-service" },
-    { text: "将MCP配置转为环境变量", href: "ai-agent#convert-mcp-config-to-environment-variables" },
-    { text: "Agent调用外部API", href: "ai-agent#agent-call-external-api" },
-    { text: "Agent调用页面函数", href: "ai-agent#agent-call-page-functions" },
-    { text: "启用/关闭工具函数", href: "ai-agent#enable-disable-tool-functions" },
-    { text: "工具函数调用前/后事件触发", href: "ai-agent#tool-function-call-pre-post-event-triggering" },
-    { text: "工具函数执行前的人工确认", href: "ai-agent#manual-confirmation-before-tool-execution" },
-    { text: "限制工具函数调用的用户角色", href: "ai-agent#restrict-user-roles-for-tool-calls" },
-    { text: "集成知识库实现检索增强生成（RAG）", href: "ai-agent#integrate-knowledge-base-rag" },
-    { text: "在前端函数中调用Agent", href: "ai-agent#call-agent-in-frontend-functions" },
-    { text: "在页面助理中测试Agent", href: "ai-agent#test-agent-in-page-assistant" },
-    { text: "在后端服务函数中调用Agent", href: "ai-agent#call-agent-in-backend-service-functions" },
-    { text: "源码模式修改Agent", href: "ai-agent#modify-agent-in-source-code-mode" },
-    { text: "自定义回调处理器", href: "ai-agent#custom-callback-processor" },
-    { text: "Agent的流式输出", href: "ai-agent#agent-streaming-output" }
+    { text: "创建ReActAgent", href: "ai-agent/create-ai-agent#create-react-agent" },
+    { text: "编写系统提示词", href: "ai-agent/create-ai-agent#write-system-prompt" },
+    { text: "基于模板编写系统提示词", href: "ai-agent/create-ai-agent#write-system-prompt-based-on-template" },
+    { text: "在提示词中使用变量", href: "ai-agent/create-ai-agent#use-variables-in-prompt" },
+    { text: "选择模型并配置参数", href: "ai-agent/create-ai-agent#select-model-and-configure-parameters" },
+    { text: "为Agent编写简介描述", href: "ai-agent/create-ai-agent#write-agent-description" },
+    { text: "配置运行状态存储仓", href: "ai-agent/create-ai-agent#configure-runtime-state-storage" },
+    { text: "内存存储", href: "ai-agent/create-ai-agent#memory-storage" },
+    { text: "数据库存储", href: "ai-agent/create-ai-agent#database-storage" },
+    { text: "配置输入变量", href: "ai-agent/create-ai-agent#configure-input-variables" },
+    { text: "配置输出结果", href: "ai-agent/create-ai-agent#configure-output-results" },
+    { text: "为Agent添加工具", href: "ai-agent/create-ai-agent#add-tools-to-agent" },
+    { text: "Agent调用模型函数", href: "ai-agent/create-ai-agent#agent-call-model-functions" },
+    { text: "Agent调用服务函数", href: "ai-agent/create-ai-agent#agent-calling-service-functions" },
+    { text: "Agent调用MCP服务", href: "ai-agent/create-ai-agent#agent-call-mcp-service" },
+    { text: "将MCP配置转为环境变量", href: "ai-agent/create-ai-agent#convert-mcp-config-to-environment-variables" },
+    { text: "Agent调用外部API", href: "ai-agent/create-ai-agent#agent-call-external-api" },
+    { text: "Agent调用页面函数", href: "ai-agent/create-ai-agent#agent-call-page-functions" },
+    { text: "启用/关闭工具函数", href: "ai-agent/create-ai-agent#enable-disable-tool-functions" },
+    { text: "工具函数调用前/后事件触发", href: "ai-agent/create-ai-agent#tool-function-call-pre-post-event-triggering" },
+    { text: "工具函数执行前的人工确认", href: "ai-agent/create-ai-agent#manual-confirmation-before-tool-execution" },
+    { text: "限制工具函数调用的用户角色", href: "ai-agent/create-ai-agent#restrict-user-roles-for-tool-calls" },
+    { text: "集成知识库实现检索增强生成（RAG）", href: "ai-agent/create-ai-agent#integrate-knowledge-base-rag" },
+    { text: "在前端函数中调用Agent", href: "ai-agent/create-ai-agent#call-agent-in-frontend-functions" },
+    { text: "在页面助理中测试Agent", href: "ai-agent/create-ai-agent#test-agent-in-page-assistant" },
+    { text: "在后端服务函数中调用Agent", href: "ai-agent/create-ai-agent#call-agent-in-backend-service-functions" },
+    { text: "源码模式修改Agent", href: "ai-agent/create-ai-agent#modify-agent-in-source-code-mode" },
+    { text: "自定义回调处理器", href: "ai-agent/create-ai-agent#custom-callback-processor" },
+    { text: "Agent的流式输出", href: "ai-agent/create-ai-agent#agent-streaming-output" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="Agent中的工具"
+  href="ai-agent/agent-tools"
+  description="深入了解Agent中各种工具的使用方法和最佳实践。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Agent的输入与输出"
+  href="ai-agent/agent-input-output"
+  description="详细了解Agent的输入输出配置和数据处理方式。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="使用Agent实现单任务智能体"
+  href="ai-agent/single-task-intelligent-agent"
+  description="学习如何使用Agent实现专门的单任务智能体，优化特定业务场景的处理效果。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Agent的API开放"
+  href="ai-agent/agent-api-integration"
+  description="将Agent能力通过API形式开放给外部系统调用。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
 </IndexCard>
 
 </div>
@@ -713,35 +826,89 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
-<IndexCard>
+<IndexCard
+  title="创建AI助理元素"
+  href="ai-assitant/create-ai-assistant"
+  description="学习如何创建AI助理元素，配置工作流、节点类型和事件处理，实现智能业务流程自动化。"
+>
   <LinkGrid columns={2} links={[
-    { text: "什么是AI助理", href: "ai-assistant#what-is-ai-assistant" },
-    { text: "创建AI助理", href: "ai-assistant#create-ai-assistant" },
-    { text: "可视化编排", href: "ai-assistant#visual-orchestration" },
-    { text: "开始节点", href: "ai-assistant#start-node" },
-    { text: "路由决策", href: "ai-assistant#routing-decision" },
-    { text: "AIAgent", href: "ai-assistant#ai-agent" },
-    { text: "对话区人机交互", href: "ai-assistant#dialog-human-machine-interaction" },
-    { text: "工作区人机交互", href: "ai-assistant#workspace-human-machine-interaction" },
-    { text: "函数调用", href: "ai-assistant#function-call" },
-    { text: "条件分支", href: "ai-assistant#conditional-branch" },
-    { text: "多任务执行", href: "ai-assistant#multi-task-execution" },
-    { text: "事件类型概览", href: "ai-assistant#event-type-overview" },
-    { text: "前端工作区事件", href: "ai-assistant#frontend-workspace-events" },
-    { text: "后端业务事件", href: "ai-assistant#backend-business-events" },
-    { text: "运行状态数据", href: "ai-assistant#runtime-state-data" },
-    { text: "运行状态存储库", href: "ai-assistant#runtime-state-storage-library" },
-    { text: "高级设置", href: "ai-assistant#advancedsettings" },
-    { text: "使用指南", href: "ai-assistant#usage-guide" },
-    { text: "欢迎语与开场白", href: "ai-assistant#welcome-message-and-opening" },
-    { text: "消息输出", href: "ai-assistant#message-output" },
-    { text: "发送AI消息", href: "ai-assistant#send-ai-message" },
-    { text: "对话记录管理", href: "ai-assistant#conversation-history-management" },
-    { text: "全代码开发", href: "ai-assistant#full-code-development" },
-    { text: "示例演示", href: "ai-assistant#example-demo" },
-    { text: "如何选择合适的节点类型？", href: "ai-assistant#how-to-select-suitable-node-types" },
-    { text: "流程卡住常见原因和解决方法", href: "ai-assistant#common-causes-and-solutions-for-stuck-processes" }
+    { text: "什么是AI助理", href: "ai-assitant/create-ai-assistant#what-is-ai-assistant" },
+    { text: "创建AI助理", href: "ai-assitant/create-ai-assistant#create-ai-assistant" },
+    { text: "可视化编排", href: "ai-assitant/create-ai-assistant#visual-orchestration" },
+    { text: "开始节点", href: "ai-assitant/create-ai-assistant#start-node" },
+    { text: "路由决策", href: "ai-assitant/create-ai-assistant#routing-decision" },
+    { text: "AIAgent", href: "ai-assitant/create-ai-assistant#ai-agent" },
+    { text: "对话区人机交互", href: "ai-assitant/create-ai-assistant#dialog-human-machine-interaction" },
+    { text: "工作区人机交互", href: "ai-assitant/create-ai-assistant#workspace-human-machine-interaction" },
+    { text: "函数调用", href: "ai-assitant/create-ai-assistant#function-call" },
+    { text: "条件分支", href: "ai-assitant/create-ai-assistant#conditional-branch" },
+    { text: "多任务执行", href: "ai-assitant/create-ai-assistant#multi-task-execution" },
+    { text: "事件类型概览", href: "ai-assitant/create-ai-assistant#event-type-overview" },
+    { text: "前端工作区事件", href: "ai-assitant/create-ai-assistant#frontend-workspace-events" },
+    { text: "后端业务事件", href: "ai-assitant/create-ai-assistant#backend-business-events" },
+    { text: "运行状态数据", href: "ai-assitant/create-ai-assistant#runtime-state-data" },
+    { text: "运行状态存储库", href: "ai-assitant/create-ai-assistant#runtime-state-storage-library" },
+    { text: "高级设置", href: "ai-assitant/create-ai-assistant#advancedsettings" },
+    { text: "使用指南", href: "ai-assitant/create-ai-assistant#usage-guide" },
+    { text: "欢迎语与开场白", href: "ai-assitant/create-ai-assistant#welcome-message-and-opening" },
+    { text: "消息输出", href: "ai-assitant/create-ai-assistant#message-output" },
+    { text: "发送AI消息", href: "ai-assitant/create-ai-assistant#send-ai-message" },
+    { text: "对话记录管理", href: "ai-assitant/create-ai-assistant#conversation-history-management" },
+    { text: "全代码开发", href: "ai-assitant/create-ai-assistant#full-code-development" },
+    { text: "示例演示", href: "ai-assitant/create-ai-assistant#example-demo" },
+    { text: "如何选择合适的节点类型？", href: "ai-assitant/create-ai-assistant#how-to-select-suitable-node-types" },
+    { text: "流程卡住常见原因和解决方法", href: "ai-assitant/create-ai-assistant#common-causes-and-solutions-for-stuck-processes" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="流程编排与节点配置"
+  href="ai-assitant/process-orchestration-node-configuration"
+  description="深入了解AI助理流程编排技术和详细的节点配置方法。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="AI助理的输入与输出"
+  href="ai-assitant/ai-assistant-input-output"
+  description="理解AI助理的输入输出配置和数据处理方法。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="开发流程化多任务的对话式AI助理"
+  href="ai-assitant/develop-conversational-multi-task-ai-assistant"
+  description="学习如何开发面向复杂业务场景的流程化多任务对话式AI助理。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="开发与UI页面协作的人机协作式企业级AI助理应用"
+  href="ai-assitant/develop-human-ai-collaboration-enterprise-assistant"
+  description="构建与UI页面协作的企业级AI助理应用，实现人机协作交互。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="AI助理的API开放"
+  href="ai-assitant/ai-assistant-api-integration"
+  description="通过API接口开放AI助理能力，实现与外部系统的集成。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
 </IndexCard>
 
 </div>
@@ -751,6 +918,30 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
+<IndexCard
+  title="管理数据库连接"
+  href="data-modeling/manage-database-connections"
+  description="配置和管理多个数据库连接，支持多数据源应用开发。"
+>
+  <LinkGrid links={[
+    { text: "创建数据库连接", href: "data-modeling/manage-database-connections#create-database-connection" },
+    { text: "多数据库连接管理", href: "data-modeling/manage-database-connections#multi-database-connection-management" },
+    { text: "数据库连接安全配置", href: "data-modeling/manage-database-connections#database-connection-security-configuration" },
+    { text: "连接测试与故障排查", href: "data-modeling/manage-database-connections#connection-test-and-troubleshooting" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="支持的数据库厂商"
+  href="data-modeling/supported-database-vendors"
+  description="了解JitAi支持的各种数据库类型和连接配置。"
+>
+  <LinkGrid links={[
+    { text: "场景选择建议", href: "data-modeling/supported-database-vendors#scenario-selection-suggestions" },
+    { text: "与云厂商的兼容性说明", href: "data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
+    { text: "数据库元素使用", href: "data-modeling/supported-database-vendors#database-element-usage" }
+  ]} />
+</IndexCard>
 <IndexCard
   title="数据表模型"
   href="data-modeling/data-table-model"
@@ -763,6 +954,36 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "使用内置数据管理功能", href: "data-modeling/data-table-model#use-built-in-data-management-function" },
     { text: "扩展模型功能", href: "data-modeling/data-table-model#extend-model-function" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="从已有数据库模式创建数据表"
+  href="data-modeling/create-data-table-from-existing-tables"
+  description="从现有数据库表快速创建数据表元素，支持快速模型生成。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="内置数据管理工具"
+  href="data-modeling/built-in-data-management-tools"
+  description="利用内置数据管理工具进行高效的数据操作和管理。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="创建数据模型函数"
+  href="data-modeling/create-data-model-functions"
+  description="设计和实现自定义数据模型函数，扩展数据处理能力。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
 </IndexCard>
 
 <IndexCard
@@ -780,6 +1001,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "先筛选后聚合（推荐）", href: "data-modeling/aggregate-table-model#aggregate-then-filter" }
   ]} />
 </IndexCard>
+
 <IndexCard
   title="扩展表模型"
   href="data-modeling/extended-table-model"
@@ -796,14 +1018,24 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "修改字段别名", href: "data-modeling/extended-table-model#modify-field-alias" },
     { text: "函数设计", href: "data-modeling/extended-table-model#function-design" },
     { text: "新建函数", href: "data-modeling/extended-table-model#create-function" },
-    { text: "源码查看编辑", href: "data-modeling/extended-table-model#source-code-view-edit" }
+    { text: "源代码查看编辑", href: "data-modeling/extended-table-model#source-code-view-edit" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="在页面和函数中使用数据模型"
+  href="data-modeling/calling-data-models-in-pages-and-functions"
+  description="学习如何在前端页面和后端函数逻辑中有效使用数据模型进行数据操作。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
 </IndexCard>
 
 <IndexCard
   title="数据对象模型"
   href="data-modeling/data-object-model"
-  description="专为全代码开发设计的数据结构，类似DTO，用于业务逻辑中的数据结构化表达和传递。"
+  description="专为全代码开发模式设计的数据结构，类似于DTO，用于业务逻辑中的数据结构化表达与传递。"
 >
   <LinkGrid links={[
     { text: "数据对象模型创建", href: "data-modeling/data-object-model#data-object-model-creation" },
@@ -815,29 +1047,15 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="支持的数据库厂商"
-  href="data-modeling/supported-database-vendors"
-  description="了解JitAi支持的各种数据库类型和连接配置。"
+  title="将数据模型集成到AI Agent"
+  href="data-modeling/calling-data-models-in-ai-agent"
+  description="将数据模型与AI Agent系统集成，实现智能数据处理和决策。"
 >
-  <LinkGrid links={[
-    { text: "场景选择建议", href: "data-modeling/supported-database-vendors#scenario-selection-suggestions" },
-    { text: "与云厂商的兼容性说明", href: "data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
-    { text: "数据库元素使用", href: "data-modeling/supported-database-vendors#database-element-usage" }
-  ]} />
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
 </IndexCard>
 
-<IndexCard
-  title="管理数据库连接"
-  href="data-modeling/manage-database-connections"
-  description="配置和管理多个数据库连接，支持多数据源应用开发。"
->
-  <LinkGrid links={[
-    { text: "创建数据库连接", href: "data-modeling/manage-database-connections#create-database-connection" },
-    { text: "多数据库连接管理", href: "data-modeling/manage-database-connections#multi-database-connection-management" },
-    { text: "数据库连接安全配置", href: "data-modeling/manage-database-connections#database-connection-security-configuration" },
-    { text: "连接测试与故障排查", href: "data-modeling/manage-database-connections#connection-test-and-troubleshooting" }
-  ]} />
-</IndexCard>
 
 <IndexCard
   title="事务管理"
@@ -846,7 +1064,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid links={[
     { text: "默认事务管理机制", href: "data-modeling/transaction-management#default-transaction-management-mechanism" },
-    { text: "手动控制事务提交/回滚", href: "data-modeling/transaction-management#manual-transaction-commit-rollback" },
+    { text: "手动事务提交/回滚", href: "data-modeling/transaction-management#manual-transaction-commit-rollback" },
     { text: "事务装饰器", href: "data-modeling/transaction-management#transaction-decorator" }
   ]} />
 </IndexCard>

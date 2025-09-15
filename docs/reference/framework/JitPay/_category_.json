@@ -3,6 +3,6 @@
   "position": 7,
   "link": {
     "type": "generated-index",
-    "description": "支付处理框架，为应用提供统一的第三方支付集成能力，涵盖主流支付渠道接入、支付流程管理、订单状态跟踪等完整支付生态，支持PC端和移动端多场景"
+    "description": "Payment processing framework providing unified third-party payment integration capabilities for applications, covering mainstream payment channel access, payment process management, order status tracking, and complete payment ecosystem supporting both PC and mobile scenarios"
   }
 } 

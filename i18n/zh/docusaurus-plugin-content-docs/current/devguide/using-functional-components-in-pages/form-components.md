@@ -3,7 +3,7 @@ sidebar_position: 2
 slug: form-components
 ---
 
-# form-components
+# 表单组件
 表单，作为应用开发中最常用的组件。传统的表单只能用于收集、验证和提交用户输入的数据，而 JitAi 的form-components不仅涵盖传统表单的功能，还提供了可视化设计、数据模型绑定、权限控制、业务规则配置等强大功能。只需拖拽操作，即可构建出具备复杂交互逻辑和数据处理能力的企业级表单应用。
 
 ## 基础配置与配置项管理 {#basic-configuration-and-item-management}

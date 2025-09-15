@@ -3,6 +3,6 @@
   "position": 8,
   "link": {
     "type": "generated-index",
-    "description": "核心业务服务框架，提供API服务、外部集成、事件处理、拦截器等完整后端能力。基于事件驱动架构实现服务解耦，集成拦截器组件实现横切关注点的统一管理，支持权限验证、参数校验、日志记录等自动化处理，为上层应用提供标准化的服务接口和集成能力"
+    "description": "Core business service framework providing complete backend capabilities including API services, external integration, event handling, and interceptors. Based on event-driven architecture for service decoupling, integrates interceptor components for unified management of cross-cutting concerns, supports automated processing of permission verification, parameter validation, logging, and provides standardized service interfaces and integration capabilities for upper-layer applications"
   }
 }

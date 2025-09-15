@@ -83,62 +83,107 @@ Complete the platform installation and node activation process. Learn download a
 
 </div>
 
-## Application Development Fundamentals
-Create your first application from scratch. Master the complete process of application creation and management, runtime environment configuration to build a solid foundation for subsequent development work.
+## Development Tools and Publishing Services
+Powerful toolchain for efficient development. Master visual development environments, DevOps management tools, and cloud publishing services to achieve complete toolchain support from development to deployment.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Application Creation and Management"
-  href="application-development-basics/application-creation-and-management"
-  description="Learn application creation, inheritance, version management, and publishing processes to master the complete application lifecycle management."
+  title="JitAi Visual Development Tools"
+  href="development-tool-and-publish-service/jitai-visual-development-tools"
+  description="Master the powerful visual development environment, familiarize yourself with IDE functional areas, and learn to switch between visual and source code modes."
 >
   <LinkGrid links={[
-    { text: "Create Your First Application", href: "application-development-basics/application-creation-and-management#create-first-application" },
-    { text: "Quick Development Based on Existing Applications", href: "application-development-basics/application-creation-and-management#based-on-existing-application-quick-development" },
-    { text: "Data Storage and Environment Variable Configuration", href: "application-development-basics/application-creation-and-management#data-storage-and-environment-variable-configuration" },
-    { text: "Application Version Management and Publishing", href: "application-development-basics/application-creation-and-management#application-version-management-and-publish" },
-    { text: "Application Export and Import", href: "application-development-basics/application-creation-and-management#application-export-import" }
+    { text: "Element Directory Tree", href: "development-tool-and-publish-service/jitai-visual-development-tools#element-directory-tree" },
+    { text: "Add Element", href: "development-tool-and-publish-service/jitai-visual-development-tools#add-element" },
+    { text: "Visual Editor", href: "development-tool-and-publish-service/jitai-visual-development-tools#visual-editor" },
+    { text: "Source Code Editor", href: "development-tool-and-publish-service/jitai-visual-development-tools#source-code-editor" },
+    { text: "Source Code File Tree", href: "development-tool-and-publish-service/jitai-visual-development-tools#source-code-file-tree" },
+    { text: "Application Settings", href: "development-tool-and-publish-service/jitai-visual-development-tools#application-settings" },
+    { text: "Portal Switching", href: "development-tool-and-publish-service/jitai-visual-development-tools#portal-switching" },
+    { text: "Personal Center", href: "development-tool-and-publish-service/jitai-visual-development-tools#personal-center" },
+    { text: "Language Switch", href: "development-tool-and-publish-service/jitai-visual-development-tools#language-switch" },
+    { text: "Navigation Tabs", href: "development-tool-and-publish-service/jitai-visual-development-tools#navigation-tabs" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="DevOps Management Tool"
+  href="development-tool-and-publish-service/devops-management-tool"
+  description="Comprehensive DevOps management solution providing system monitoring, log management, performance analysis and more."
+>
+  Coming soon...
+</IndexCard>
+
+<IndexCard
+  title="JCS Cloud Publishing Service"
+  href="development-tool-and-publish-service/jcs-cloud-publishing-service"
+  description="Convenient cloud application publishing platform supporting one-click publishing, version management, and global distribution."
+>
+  Coming soon...
+</IndexCard>
+
+</div>
+
+## Application Creation and Publishing
+Complete workflow from application creation to distributed deployment. Master application creation, source code management, version publishing, runtime environment configuration, and building infinitely horizontally scalable distributed cluster architectures.
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard
+  title="Creating and Deploying Applications"
+  href="app-creation-and-publishing/creating-and-deploying-applications"
+  description="Learn application creation, inheritance, version management, and release processes. Master the complete application lifecycle management."
+>
+  <LinkGrid links={[
+    { text: "Create First Application", href: "app-creation-and-publishing/creating-and-deploying-applications#create-first-application" },
+    { text: "Rapid Development Based on Existing Apps", href: "app-creation-and-publishing/creating-and-deploying-applications#based-on-existing-application-quick-development" },
+    { text: "Data Storage and Environment Variables", href: "app-creation-and-publishing/creating-and-deploying-applications#data-storage-and-environment-variable-configuration" },
+    { text: "Version Management and Publishing", href: "app-creation-and-publishing/creating-and-deploying-applications#application-version-management-and-publish" },
+    { text: "Application Export and Import", href: "app-creation-and-publishing/creating-and-deploying-applications#application-export-import" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Application Directory and Element Source Code"
+  href="app-creation-and-publishing/application-directory-and-element-source-code"
+  description="Deep dive into JitAi application directory structure, element organization, and source code management mechanisms."
+>
+  Coming soon...
+</IndexCard>
+
+<IndexCard
+  title="Application Publishing and Updates"
+  href="app-creation-and-publishing/application-publishing-and-updates"
+  description="Master application version release strategies, automatic update mechanisms, and release process management."
+>
+  Coming soon...
 </IndexCard>
 
 <IndexCard
   title="Runtime Environment Management"
-  href="application-development-basics/runtime-environment-management"
+  href="app-creation-and-publishing/runtime-environment-management"
   description="Master the creation, configuration, and management of runtime environments, and learn how to use node clusters and application deployment."
 >
   <LinkGrid links={[
-    { text: "What is Runtime Environment", href: "application-development-basics/runtime-environment-management#what-is-runtime-environment" },
-    { text: "Local Default Runtime Environment", href: "application-development-basics/runtime-environment-management#node-local-default-runtime-environment" },
-    { text: "Create New Runtime Environment", href: "application-development-basics/runtime-environment-management#createnewrunenvironment" },
-    { text: "Use Runtime Environment to Manage Node Clusters", href: "application-development-basics/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
-    { text: "Deploy Application in Runtime Environment", href: "application-development-basics/runtime-environment-management#deploy-application-in-runtime-environment" }
+    { text: "What is Runtime Environment", href: "app-creation-and-publishing/runtime-environment-management#what-is-runtime-environment" },
+    { text: "Local Default Runtime Environment", href: "app-creation-and-publishing/runtime-environment-management#node-local-default-runtime-environment" },
+    { text: "Create New Runtime Environment", href: "app-creation-and-publishing/runtime-environment-management#createnewrunenvironment" },
+    { text: "Use Runtime Environment to Manage Node Clusters", href: "app-creation-and-publishing/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
+    { text: "Deploy Application in Runtime Environment", href: "app-creation-and-publishing/runtime-environment-management#deploy-application-in-runtime-environment" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="Distributed Cluster Architecture"
+  href="app-creation-and-publishing/distributed-cluster-architecture"
+  description="Learn how to build and manage infinitely horizontally scalable distributed cluster architectures for high availability and performance."
+>
+  Coming soon...
 </IndexCard>
 
 </div>
 
-## JitAi Visual Development Tools
-Master the powerful visual development environment. Familiarize yourself with the various functional areas of the IDE, learn to switch freely between visual and source code dual modes, and efficiently complete application development tasks.
-
-<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
-
-<IndexCard>
-  <LinkGrid links={[
-    { text: "Element Directory Tree", href: "jitai-visual-development-tools#element-directory-tree" },
-    { text: "Add Element", href: "jitai-visual-development-tools#add-element" },
-    { text: "Visual Editor", href: "jitai-visual-development-tools#visual-editor" },
-    { text: "Source Code Editor", href: "jitai-visual-development-tools#source-code-editor" },
-    { text: "Source Code File Tree", href: "jitai-visual-development-tools#source-code-file-tree" },
-    { text: "Application Settings", href: "jitai-visual-development-tools#application-settings" },
-    { text: "Portal Switching", href: "jitai-visual-development-tools#portal-switching" },
-    { text: "Personal Center", href: "jitai-visual-development-tools#personal-center" },
-    { text: "Language Switch", href: "jitai-visual-development-tools#language-switch" },
-    { text: "Navigation Tabs", href: "jitai-visual-development-tools#navigation-tabs" }
-  ]} />
-</IndexCard>
-
-</div>
 
 ## Portal and Page Development
 Design beautiful user interfaces and interactive experiences. From portal navigation to page construction, from component layout to data management, create complete, user-friendly application interfaces.
@@ -615,16 +660,40 @@ Integrate mainstream large language models such as GPT-4, Claude, and Tongyi Qia
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
-<IndexCard>
+<IndexCard
+  title="Create AI Large Language Model Element"
+  href="ai-llm/create-ai-llm"
+  description="Learn how to integrate mainstream large language models, configure API keys, implement retry mechanisms, and call LLM functions in your applications."
+>
   <LinkGrid links={[
-    { text: "Mainstream LLM Vendor Support List", href: "ai-llm#mainstream-llm-vendor-support-list" },
-    { text: "Create LLM Vendor Element", href: "ai-llm#create-llm-vendor-element" },
-    { text: "Retry and Backup API Key Mechanism", href: "ai-llm#重试及备用api-key机制" },
-    { text: "Private LLM Integration", href: "ai-llm#private-llm-integration" },
-    { text: "Call LLM in Pages", href: "ai-llm#call-llm-in-pages" },
-    { text: "Call LLM in Backend Functions", href: "ai-llm#call-llm-in-backend-functions" },
-    { text: "LLM Programming Interface", href: "ai-llm#llm-programming-interface" }
+    { text: "Mainstream LLM Vendor Support List", href: "ai-llm/create-ai-llm#mainstream-llm-vendor-support-list" },
+    { text: "Create LLM Vendor Element", href: "ai-llm/create-ai-llm#create-llm-vendor-element" },
+    { text: "Retry and Backup API Key Mechanism", href: "ai-llm/create-ai-llm#retry-backup-api-key-mechanism" },
+    { text: "Private LLM Integration", href: "ai-llm/create-ai-llm#private-llm-integration" },
+    { text: "Call LLM in Pages", href: "ai-llm/create-ai-llm#call-llm-in-pages" },
+    { text: "Call LLM in Backend Functions", href: "ai-llm/create-ai-llm#call-llm-in-backend-functions" },
+    { text: "LLM Programming Interface", href: "ai-llm/create-ai-llm#llm-programming-interface" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="LLM Input and Output"
+  href="ai-llm/llm-input-output"
+  description="Understand the input and output configurations of large language models for optimal integration and performance."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Implement multimodal AIGC using LLM functions"
+  href="ai-llm/implement-multimodal-aigc"
+  description="Discover how to leverage LLM functions to create multimodal AI-generated content with text, images, and other media types."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
 </IndexCard>
 
 </div>
@@ -672,38 +741,82 @@ Intelligent agents with reasoning and action capabilities. Through prompts and t
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
-<IndexCard>
+<IndexCard
+  title="AIAgent"
+  href="ai-agent/create-ai-agent"
+  description="Learn how to create ReActAgent, configure system prompts, large model parameters, input/output variables, and runtime state storage."
+>
   <LinkGrid columns={2} links={[
-    { text: "Create ReAct Agent", href: "ai-agent#create-react-agent" },
-    { text: "Write System Prompt", href: "ai-agent#write-system-prompt" },
-    { text: "Write System Prompt Based on Template", href: "ai-agent#write-system-prompt-based-on-template" },
-    { text: "Use Variables in Prompt", href: "ai-agent#use-variables-in-prompt" },
-    { text: "Select Model and Configure Parameters", href: "ai-agent#select-model-and-configure-parameters" },
-    { text: "Write Agent Description", href: "ai-agent#write-agent-description" },
-    { text: "Configure Runtime State Storage", href: "ai-agent#configure-runtime-state-storage" },
-    { text: "Memory Storage", href: "ai-agent#memory-storage" },
-    { text: "Database Storage", href: "ai-agent#database-storage" },
-    { text: "Configure Input Variables", href: "ai-agent#configure-input-variables" },
-    { text: "Configure Output Results", href: "ai-agent#configure-output-results" },
-    { text: "Add Tools to Agent", href: "ai-agent#add-tools-to-agent" },
-    { text: "Agent Call Model Functions", href: "ai-agent#agent-call-model-functions" },
-    { text: "Agent Calling Service Functions", href: "ai-agent#agent-calling-service-functions" },
-    { text: "Agent Call MCP Service", href: "ai-agent#agent-call-mcp-service" },
-    { text: "Convert MCP Config to Environment Variables", href: "ai-agent#convert-mcp-config-to-environment-variables" },
-    { text: "Agent Call External API", href: "ai-agent#agent-call-external-api" },
-    { text: "Agent Call Page Functions", href: "ai-agent#agent-call-page-functions" },
-    { text: "Enable/Disable Tool Functions", href: "ai-agent#enable-disable-tool-functions" },
-    { text: "Tool Function Call Pre/Post Event Triggering", href: "ai-agent#tool-function-call-pre-post-event-triggering" },
-    { text: "Manual Confirmation Before Tool Execution", href: "ai-agent#manual-confirmation-before-tool-execution" },
-    { text: "Restrict User Roles for Tool Calls", href: "ai-agent#restrict-user-roles-for-tool-calls" },
-    { text: "Integrate Knowledge Base for RAG", href: "ai-agent#integrate-knowledge-base-rag" },
-    { text: "Call Agent in Frontend Functions", href: "ai-agent#call-agent-in-frontend-functions" },
-    { text: "Test Agent in Page Assistant", href: "ai-agent#test-agent-in-page-assistant" },
-    { text: "Call Agent in Backend Service Functions", href: "ai-agent#call-agent-in-backend-service-functions" },
-    { text: "Modify Agent in Source Code Mode", href: "ai-agent#modify-agent-in-source-code-mode" },
-    { text: "Custom Callback Processor", href: "ai-agent#custom-callback-processor" },
-    { text: "Agent Streaming Output", href: "ai-agent#agent-streaming-output" }
+    { text: "Create ReAct Agent", href: "ai-agent/create-ai-agent#create-react-agent" },
+    { text: "Write System Prompt", href: "ai-agent/create-ai-agent#write-system-prompt" },
+    { text: "Write System Prompt Based on Template", href: "ai-agent/create-ai-agent#write-system-prompt-based-on-template" },
+    { text: "Use Variables in Prompt", href: "ai-agent/create-ai-agent#use-variables-in-prompt" },
+    { text: "Select Model and Configure Parameters", href: "ai-agent/create-ai-agent#select-model-and-configure-parameters" },
+    { text: "Write Agent Description", href: "ai-agent/create-ai-agent#write-agent-description" },
+    { text: "Configure Runtime State Storage", href: "ai-agent/create-ai-agent#configure-runtime-state-storage" },
+    { text: "Memory Storage", href: "ai-agent/create-ai-agent#memory-storage" },
+    { text: "Database Storage", href: "ai-agent/create-ai-agent#database-storage" },
+    { text: "Configure Input Variables", href: "ai-agent/create-ai-agent#configure-input-variables" },
+    { text: "Configure Output Results", href: "ai-agent/create-ai-agent#configure-output-results" },
+    { text: "Add Tools to Agent", href: "ai-agent/create-ai-agent#add-tools-to-agent" },
+    { text: "Agent Call Model Functions", href: "ai-agent/create-ai-agent#agent-call-model-functions" },
+    { text: "Agent Calling Service Functions", href: "ai-agent/create-ai-agent#agent-calling-service-functions" },
+    { text: "Agent Call MCP Service", href: "ai-agent/create-ai-agent#agent-call-mcp-service" },
+    { text: "Convert MCP Config to Environment Variables", href: "ai-agent/create-ai-agent#convert-mcp-config-to-environment-variables" },
+    { text: "Agent Call External API", href: "ai-agent/create-ai-agent#agent-call-external-api" },
+    { text: "Agent Call Page Functions", href: "ai-agent/create-ai-agent#agent-call-page-functions" },
+    { text: "Enable/Disable Tool Functions", href: "ai-agent/create-ai-agent#enable-disable-tool-functions" },
+    { text: "Tool Function Call Pre/Post Event Triggering", href: "ai-agent/create-ai-agent#tool-function-call-pre-post-event-triggering" },
+    { text: "Manual Confirmation Before Tool Execution", href: "ai-agent/create-ai-agent#manual-confirmation-before-tool-execution" },
+    { text: "Restrict User Roles for Tool Calls", href: "ai-agent/create-ai-agent#restrict-user-roles-for-tool-calls" },
+    { text: "Integrate Knowledge Base for RAG", href: "ai-agent/create-ai-agent#integrate-knowledge-base-rag" },
+    { text: "Call Agent in Frontend Functions", href: "ai-agent/create-ai-agent#call-agent-in-frontend-functions" },
+    { text: "Test Agent in Page Assistant", href: "ai-agent/create-ai-agent#test-agent-in-page-assistant" },
+    { text: "Call Agent in Backend Service Functions", href: "ai-agent/create-ai-agent#call-agent-in-backend-service-functions" },
+    { text: "Modify Agent in Source Code Mode", href: "ai-agent/create-ai-agent#modify-agent-in-source-code-mode" },
+    { text: "Custom Callback Processor", href: "ai-agent/create-ai-agent#custom-callback-processor" },
+    { text: "Agent Streaming Output", href: "ai-agent/create-ai-agent#agent-streaming-output" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="Tools in Agent"
+  href="ai-agent/agent-tools"
+  description="Deep dive into the usage and best practices of various tools in Agent."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Agent Input and Output"
+  href="ai-agent/agent-input-output"
+  description="Detailed understanding of Agent's input and output configuration and data processing methods."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Single-Task Intelligent Agent Implementation"
+  href="ai-agent/single-task-intelligent-agent"
+  description="Learn how to use Agent to implement specialized single-task intelligent agents for optimized business scenario handling."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Agent API Exposure"
+  href="ai-agent/agent-api-integration"
+  description="Expose Agent capabilities through API interfaces for external system integration."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
 </IndexCard>
 
 </div>
@@ -713,35 +826,89 @@ Visual intelligent workflow engine. Orchestrate business processes through drag-
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
-<IndexCard>
+<IndexCard
+  title="Create AI Assistant Element"
+  href="ai-assitant/create-ai-assistant"
+  description="Learn how to create AI assistant elements, configure workflows, node types, and event handling for intelligent business process automation."
+>
   <LinkGrid columns={2} links={[
-    { text: "What is AI Assistant", href: "ai-assistant#what-is-ai-assistant" },
-    { text: "Create AI Assistant", href: "ai-assistant#create-ai-assistant" },
-    { text: "Visual Orchestration", href: "ai-assistant#visual-orchestration" },
-    { text: "Start Node", href: "ai-assistant#start-node" },
-    { text: "Routing Decision", href: "ai-assistant#routing-decision" },
-    { text: "AI Agent", href: "ai-assistant#ai-agent" },
-    { text: "Dialog Human-Machine Interaction", href: "ai-assistant#dialog-human-machine-interaction" },
-    { text: "Workspace Human-Machine Interaction", href: "ai-assistant#workspace-human-machine-interaction" },
-    { text: "Function Call", href: "ai-assistant#function-call" },
-    { text: "Conditional Branch", href: "ai-assistant#conditional-branch" },
-    { text: "Multi-task Execution", href: "ai-assistant#multi-task-execution" },
-    { text: "Event Type Overview", href: "ai-assistant#event-type-overview" },
-    { text: "Frontend Workspace Events", href: "ai-assistant#frontend-workspace-events" },
-    { text: "Backend Business Events", href: "ai-assistant#backend-business-events" },
-    { text: "Runtime State Data", href: "ai-assistant#runtime-state-data" },
-    { text: "Runtime State Storage Library", href: "ai-assistant#runtime-state-storage-library" },
-    { text: "Advanced Settings", href: "ai-assistant#advancedsettings" },
-    { text: "Usage Guide", href: "ai-assistant#usage-guide" },
-    { text: "Welcome Message and Opening", href: "ai-assistant#welcome-message-and-opening" },
-    { text: "Message Output", href: "ai-assistant#message-output" },
-    { text: "Send AI Message", href: "ai-assistant#send-ai-message" },
-    { text: "Conversation History Management", href: "ai-assistant#conversation-history-management" },
-    { text: "Full Code Development", href: "ai-assistant#full-code-development" },
-    { text: "Example Demo", href: "ai-assistant#example-demo" },
-    { text: "How to Select Suitable Node Types?", href: "ai-assistant#how-to-select-suitable-node-types" },
-    { text: "Common Causes and Solutions for Stuck Processes", href: "ai-assistant#common-causes-and-solutions-for-stuck-processes" }
+    { text: "What is AI Assistant", href: "ai-assitant/create-ai-assistant#what-is-ai-assistant" },
+    { text: "Create AI Assistant", href: "ai-assitant/create-ai-assistant#create-ai-assistant" },
+    { text: "Visual Orchestration", href: "ai-assitant/create-ai-assistant#visual-orchestration" },
+    { text: "Start Node", href: "ai-assitant/create-ai-assistant#start-node" },
+    { text: "Routing Decision", href: "ai-assitant/create-ai-assistant#routing-decision" },
+    { text: "AI Agent", href: "ai-assitant/create-ai-assistant#ai-agent" },
+    { text: "Dialog Human-Machine Interaction", href: "ai-assitant/create-ai-assistant#dialog-human-machine-interaction" },
+    { text: "Workspace Human-Machine Interaction", href: "ai-assitant/create-ai-assistant#workspace-human-machine-interaction" },
+    { text: "Function Call", href: "ai-assitant/create-ai-assistant#function-call" },
+    { text: "Conditional Branch", href: "ai-assitant/create-ai-assistant#conditional-branch" },
+    { text: "Multi-task Execution", href: "ai-assitant/create-ai-assistant#multi-task-execution" },
+    { text: "Event Type Overview", href: "ai-assitant/create-ai-assistant#event-type-overview" },
+    { text: "Frontend Workspace Events", href: "ai-assitant/create-ai-assistant#frontend-workspace-events" },
+    { text: "Backend Business Events", href: "ai-assitant/create-ai-assistant#backend-business-events" },
+    { text: "Runtime State Data", href: "ai-assitant/create-ai-assistant#runtime-state-data" },
+    { text: "Runtime State Storage Library", href: "ai-assitant/create-ai-assistant#runtime-state-storage-library" },
+    { text: "Advanced Settings", href: "ai-assitant/create-ai-assistant#advancedsettings" },
+    { text: "Usage Guide", href: "ai-assitant/create-ai-assistant#usage-guide" },
+    { text: "Welcome Message and Opening", href: "ai-assitant/create-ai-assistant#welcome-message-and-opening" },
+    { text: "Message Output", href: "ai-assitant/create-ai-assistant#message-output" },
+    { text: "Send AI Message", href: "ai-assitant/create-ai-assistant#send-ai-message" },
+    { text: "Conversation History Management", href: "ai-assitant/create-ai-assistant#conversation-history-management" },
+    { text: "Full Code Development", href: "ai-assitant/create-ai-assistant#full-code-development" },
+    { text: "Example Demo", href: "ai-assitant/create-ai-assistant#example-demo" },
+    { text: "How to Select Suitable Node Types?", href: "ai-assitant/create-ai-assistant#how-to-select-suitable-node-types" },
+    { text: "Common Causes and Solutions for Stuck Processes", href: "ai-assitant/create-ai-assistant#common-causes-and-solutions-for-stuck-processes" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="Process Orchestration and Node Configuration"
+  href="ai-assitant/process-orchestration-node-configuration"
+  description="Deep dive into AI assistant process orchestration techniques and detailed node configuration methods."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="AI Assistant Input and Output"
+  href="ai-assitant/ai-assistant-input-output"
+  description="Understand AI assistant input and output configuration and data processing methods."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Develop Conversational Multi-Task AI Assistant"
+  href="ai-assitant/develop-conversational-multi-task-ai-assistant"
+  description="Learn how to develop process-oriented multi-task conversational AI assistants for complex business scenarios."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Develop Human-AI Collaboration Enterprise Assistant"
+  href="ai-assitant/develop-human-ai-collaboration-enterprise-assistant"
+  description="Build enterprise-level AI assistant applications that collaborate with UI pages for human-AI interaction."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="AI Assistant API Integration"
+  href="ai-assitant/ai-assistant-api-integration"
+  description="Expose AI assistant capabilities through API interfaces for external system integration."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
 </IndexCard>
 
 </div>
@@ -750,6 +917,31 @@ Visual intelligent workflow engine. Orchestrate business processes through drag-
 Design a powerful data foundation for your application. Create data tables, design field types, and establish relationships through visual methods without complex SQL knowledge. Make data management easy and efficient.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard
+  title="Managing Database Connections"
+  href="data-modeling/manage-database-connections"
+  description="Configure and manage multiple database connections, supporting multi-data source application development."
+>
+  <LinkGrid links={[
+    { text: "Create Database Connection", href: "data-modeling/manage-database-connections#create-database-connection" },
+    { text: "Multi-database Connection Management", href: "data-modeling/manage-database-connections#multi-database-connection-management" },
+    { text: "Database Connection Security Configuration", href: "data-modeling/manage-database-connections#database-connection-security-configuration" },
+    { text: "Connection Test and Troubleshooting", href: "data-modeling/manage-database-connections#connection-test-and-troubleshooting" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Supported Database Vendors"
+  href="data-modeling/supported-database-vendors"
+  description="Learn about various database types and connection configurations supported by JitAi."
+>
+  <LinkGrid links={[
+    { text: "Scenario Selection Suggestions", href: "data-modeling/supported-database-vendors#scenario-selection-suggestions" },
+    { text: "Cloud Vendor Compatibility", href: "data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
+    { text: "Database Element Usage", href: "data-modeling/supported-database-vendors#database-element-usage" }
+  ]} />
+</IndexCard>
 
 <IndexCard
   title="Data Table Model"
@@ -763,6 +955,36 @@ Design a powerful data foundation for your application. Create data tables, desi
     { text: "Use Built-in Data Management Function", href: "data-modeling/data-table-model#use-built-in-data-management-function" },
     { text: "Extend Model Function", href: "data-modeling/data-table-model#extend-model-function" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="Creating Tables from Existing Database Schema"
+  href="data-modeling/create-data-table-from-existing-tables"
+  description="Quickly create data table elements from existing database tables, supporting rapid model generation."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Built-in Data Management Tools"
+  href="data-modeling/built-in-data-management-tools"
+  description="Utilize built-in data management tools for efficient data operations and administration."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Creating Data Model Functions"
+  href="data-modeling/create-data-model-functions"
+  description="Design and implement custom data model functions to extend data processing capabilities."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
 </IndexCard>
 
 <IndexCard
@@ -780,6 +1002,7 @@ Design a powerful data foundation for your application. Create data tables, desi
     { text: "Filter Then Aggregate (Recommended)", href: "data-modeling/aggregate-table-model#aggregate-then-filter" }
   ]} />
 </IndexCard>
+
 <IndexCard
   title="Extended Table Model"
   href="data-modeling/extended-table-model"
@@ -801,6 +1024,16 @@ Design a powerful data foundation for your application. Create data tables, desi
 </IndexCard>
 
 <IndexCard
+  title="Using Data Models in Pages and Functions"
+  href="data-modeling/calling-data-models-in-pages-and-functions"
+  description="Learn how to effectively use data models in frontend pages and backend function logic for data operations."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
   title="Data Object Model"
   href="data-modeling/data-object-model"
   description="Data structure designed specifically for full-code development, similar to DTO, used for structured data expression and transmission in business logic."
@@ -815,28 +1048,13 @@ Design a powerful data foundation for your application. Create data tables, desi
 </IndexCard>
 
 <IndexCard
-  title="Supported Database Vendors"
-  href="data-modeling/supported-database-vendors"
-  description="Learn about various database types and connection configurations supported by JitAi."
+  title="Integrating Data Models with AI Agents"
+  href="data-modeling/calling-data-models-in-ai-agent"
+  description="Integrate data models with AI Agent systems to enable intelligent data processing and decision making."
 >
-  <LinkGrid links={[
-    { text: "Scenario Selection Suggestions", href: "data-modeling/supported-database-vendors#scenario-selection-suggestions" },
-    { text: "Cloud Vendor Compatibility", href: "data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
-    { text: "Database Element Usage", href: "data-modeling/supported-database-vendors#database-element-usage" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="Manage Database Connections"
-  href="data-modeling/manage-database-connections"
-  description="Configure and manage multiple database connections, supporting multi-data source application development."
->
-  <LinkGrid links={[
-    { text: "Create Database Connection", href: "data-modeling/manage-database-connections#create-database-connection" },
-    { text: "Multi-database Connection Management", href: "data-modeling/manage-database-connections#multi-database-connection-management" },
-    { text: "Database Connection Security Configuration", href: "data-modeling/manage-database-connections#database-connection-security-configuration" },
-    { text: "Connection Test and Troubleshooting", href: "data-modeling/manage-database-connections#connection-test-and-troubleshooting" }
-  ]} />
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
 </IndexCard>
 
 <IndexCard

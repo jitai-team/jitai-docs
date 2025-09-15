@@ -1,7 +1,8 @@
 {
-  "label": "表单类",
+  "label": "Form Components",
   "position": 3,
   "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "description": "Form input and data collection components including text fields, selectors, checkboxes, and validation elements."
   }
 } 

@@ -37,7 +37,7 @@ const config: Config = {
   projectName: 'jitai-docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',              // 暂时设置为警告，待文档结构调整完成后改为throw
-  onBrokenMarkdownLinks: 'throw',   // 断开的Markdown链接设置为警告
+  onBrokenMarkdownLinks: 'throw',   // 断开的Markdown链接设置为警告y
   onBrokenAnchors: 'throw',         // 断开的锚点设置为警告
 
   // Even if you don't use internationalization, you can use this field to set
@@ -55,7 +55,7 @@ const config: Config = {
       'zh': {
         label: '简体中文',
         direction: 'ltr',
-        htmlLang: 'zh-Hans',
+        htmlLang: 'zh-CN',
       },
     },
   },
@@ -149,18 +149,24 @@ const config: Config = {
            label: 'Open Source',
          },
         // {to: '/blog', label: '博客', position: 'left'},
-        {
-           type: 'docSidebar',
-           sidebarId: 'communitySidebar',
+        //{
+        //  type: 'docSidebar',
+        //  sidebarId: 'appmarketSidebar',
+        //  position: 'left',
+        // label: 'App Market',
+        //},
+        // {to: '/blog', label: '博客', position: 'left'},
+         {
+           href: 'https://forum.jit.pro',
            position: 'left',
            label: 'Community Forum',
          },
         //GitHub
-        // {
-        //   href: 'https://github.com/jitai-team',
-        //   label: 'GitHub',
-        //   position: 'right',
-        // },
+         {
+           href: 'https://github.com/jitai-team',
+           label: 'GitHub',
+           position: 'right',
+         },
         {
           type: 'localeDropdown',
           position: 'right',
@@ -222,11 +228,28 @@ const config: Config = {
            items: [
             {
               label: 'Community',
-              href: 'https://forum.jit.pro/',
+              href: 'https://forum.jit.pro',
             },
              {
                label: 'GitHub',
                href: 'https://github.com/jitai-team',
+             },
+           ],
+         },
+         {
+           title: 'Social',
+           items: [
+             {
+               label: 'X (Twitter)',
+               href: '#',
+             },
+             {
+               label: 'Facebook',
+               href: '#',
+             },
+             {
+               label: 'LinkedIn',
+               href: '#',
              },
            ],
          },
@@ -253,9 +276,8 @@ const config: Config = {
     algolia: {
       appId: 'DZ5X5FUUCG',
       apiKey: 'a3d6338cf6bd1e789ab3c6d7064e0796',
-      indexName: '应用开发指南',
-      contextualSearch: true,
-      searchParameters: {},
+      indexName: 'crawler_doc_spider',
+      contextualSearch: false,  // 禁用上下文搜索以避免过度过滤
       searchPagePath: 'search',
       insights: false,
     },

@@ -106,9 +106,9 @@ body {
   }
 
   
-  nav:has(+ div) {
+  /* nav:has(+ div) {
     display: none;
-  }
+  } */
   
 }
 

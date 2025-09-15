@@ -109,9 +109,9 @@ body {
     border-radius: 6px;
   }
 
-  nav:has(+ div) {
+  /* nav:has(+ div) {
     display: none;
-  }
+  } */
 }
 
 .container {

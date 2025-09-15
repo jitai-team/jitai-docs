@@ -727,10 +727,10 @@ The intelligent storage engine for enterprise knowledge. Convert text into vecto
 
 <IndexCard>
   <LinkGrid links={[
-    { text: "Chroma Vector Database", href: "vector-database#chroma-vector-database" },
-    { text: "Local Vector Database Configuration", href: "vector-database#local-vector-database-config" },
-    { text: "Remote Vector Database Connection", href: "vector-database#remote-vector-database-connection" },
-    { text: "Vector Database Programming Interface", href: "vector-database#vector-database-programming-interface" }
+    { text: "Chroma Vector Database", href: "knowledge-base/vector-database-standalone-deployment#chroma-vector-database" },
+    { text: "Local Vector Database Configuration", href: "knowledge-base/vector-database-standalone-deployment#local-vector-database-config" },
+    { text: "Remote Vector Database Connection", href: "knowledge-base/vector-database-standalone-deployment#remote-vector-database-connection" },
+    { text: "Vector Database Programming Interface", href: "knowledge-base/vector-database-standalone-deployment#vector-database-programming-interface" }
   ]} />
 </IndexCard>
 
@@ -741,18 +741,62 @@ Transform enterprise documents, manuals, and FAQs into intelligent knowledge bas
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
-<IndexCard>
+<IndexCard
+  title="Create AI Knowledge Base Element"
+  href="knowledge-base/create-knowledge-elements"
+  description="Learn how to create the AI Knowledge Base element and understand the principles."
+>
+  <LinkGrid links={[
+    { text: "Create AI Knowledge Base Element", href: "knowledge-base/create-knowledge-elements#create-ai-knowledge-base-element" },
+    { text: "Principle Description", href: "knowledge-base/create-knowledge-elements#principle-description" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Document Management and Settings"
+  href="knowledge-base/knowledge-base-document-management"
+  description="Manage documents, configure knowledge base settings, run query tests, and tune vectorization."
+>
   <LinkGrid columns={2} links={[
-    { text: "Create AI Knowledge Base Element", href: "ai-knowledge-base#create-ai-knowledge-base-element" },
-    { text: "AI Knowledge Base Management", href: "ai-knowledge-base#ai-knowledge-base-management" },
-    { text: "Document Management", href: "ai-knowledge-base#document-management" },
-    { text: "AI Knowledge Base Settings", href: "ai-knowledge-base#ai-knowledge-base-settings" },
-    { text: "Query Testing", href: "ai-knowledge-base#query-testing" },
-    { text: "Call AI Knowledge Base in Backend Visual Programming", href: "ai-knowledge-base#call-ai-knowledge-base-in-backend-visual-programming" },
-    { text: "Use AI Knowledge Base in AI Agent", href: "ai-knowledge-base#use-ai-knowledge-base-in-ai-agent" },
-    { text: "AI Knowledge Base Programming Interface", href: "ai-knowledge-base#ai-knowledge-base-programming-interface" },
-    { text: "Principles and Parameter Description", href: "ai-knowledge-base#vectorization-configuration-description" },
-    { text: "Vectorization Configuration Description", href: "ai-knowledge-base#ai-knowledge-base-settings" }
+    { text: "Document Management", href: "knowledge-base/knowledge-base-document-management" },
+    { text: "AI Knowledge Base Settings", href: "knowledge-base/knowledge-base-document-management#ai-knowledge-base-settings" },
+    { text: "Query Testing", href: "knowledge-base/knowledge-base-document-management#query-testing" },
+    { text: "Vectorization Configuration Description", href: "knowledge-base/knowledge-base-document-management#vectorization-configuration-description" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Full-text and Semantic Search"
+  href="knowledge-base/full-text-and-semantic-search"
+  description="Understand how settings participate in the query flow and how to call the knowledge base in backend visual programming."
+>
+  <LinkGrid links={[
+    { text: "How Settings Participate in Query Flow", href: "knowledge-base/full-text-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow" },
+    { text: "Call in Backend Visual Programming", href: "knowledge-base/full-text-and-semantic-search#call-ai-knowledge-base-in-backend-visual-programming" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Use AI Knowledge Base in AI Agent"
+  href="knowledge-base/integrate-knowledge-base-into-agent"
+  description="Integrate the AI Knowledge Base into Agent for RAG."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="AI Knowledge Base API"
+  href="knowledge-base/ai-knowledge-base-api"
+  description="Programmatic access to the AI Knowledge Base."
+>
+  <LinkGrid links={[
+    { text: "Programming Interface Overview", href: "knowledge-base/ai-knowledge-base-api#ai-knowledge-base-programming-interface" },
+    { text: "query", href: "knowledge-base/ai-knowledge-base-api#query-testing" },
+    { text: "addDocumentByBusinessId", href: "knowledge-base/ai-knowledge-base-api#adddocumentbybusinessid" },
+    { text: "deleteDocumentByBusinessId", href: "knowledge-base/ai-knowledge-base-api#deletedocumentbybusinessid" },
+    { text: "queryKeywords", href: "knowledge-base/ai-knowledge-base-api#querykeywords" }
   ]} />
 </IndexCard>
 

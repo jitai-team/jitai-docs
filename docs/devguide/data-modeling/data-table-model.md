@@ -3,7 +3,7 @@ sidebar_position: 3
 slug: data-table-model
 ---
 
-# 数据表模型
+# Data Table Model
 数据表模型是JitAi应用的数据基础，一个数据表模型就对应着数据库里面的一张表，用于定义业务数据的结构、类型和约束规则。
 
 ## 创建数据表模型 {#create-data-table-model}

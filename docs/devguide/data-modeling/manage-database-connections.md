@@ -1,9 +1,9 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 slug: manage-database-connections
 ---
 
-# 管理数据库连接
+# Managing Database Connections
 在极态云中，数据库通过“数据库”元素统一管理。你可以在同一应用里创建多个数据库实例，并且分别配置、切换和使用，满足开发、测试、生产或多系统对接等不同场景。
 
 ## 创建数据库连接 {#create-database-connection}

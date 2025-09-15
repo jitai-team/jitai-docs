@@ -919,6 +919,31 @@ Design a powerful data foundation for your application. Create data tables, desi
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
+  title="Managing Database Connections"
+  href="data-modeling/manage-database-connections"
+  description="Configure and manage multiple database connections, supporting multi-data source application development."
+>
+  <LinkGrid links={[
+    { text: "Create Database Connection", href: "data-modeling/manage-database-connections#create-database-connection" },
+    { text: "Multi-database Connection Management", href: "data-modeling/manage-database-connections#multi-database-connection-management" },
+    { text: "Database Connection Security Configuration", href: "data-modeling/manage-database-connections#database-connection-security-configuration" },
+    { text: "Connection Test and Troubleshooting", href: "data-modeling/manage-database-connections#connection-test-and-troubleshooting" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Supported Database Vendors"
+  href="data-modeling/supported-database-vendors"
+  description="Learn about various database types and connection configurations supported by JitAi."
+>
+  <LinkGrid links={[
+    { text: "Scenario Selection Suggestions", href: "data-modeling/supported-database-vendors#scenario-selection-suggestions" },
+    { text: "Cloud Vendor Compatibility", href: "data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
+    { text: "Database Element Usage", href: "data-modeling/supported-database-vendors#database-element-usage" }
+  ]} />
+</IndexCard>
+
+<IndexCard
   title="Data Table Model"
   href="data-modeling/data-table-model"
   description="Basic structure of application data, learn how to create and configure data tables, design field types and constraints."
@@ -930,6 +955,36 @@ Design a powerful data foundation for your application. Create data tables, desi
     { text: "Use Built-in Data Management Function", href: "data-modeling/data-table-model#use-built-in-data-management-function" },
     { text: "Extend Model Function", href: "data-modeling/data-table-model#extend-model-function" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="Creating Tables from Existing Database Schema"
+  href="data-modeling/create-data-table-from-existing-tables"
+  description="Quickly create data table elements from existing database tables, supporting rapid model generation."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Built-in Data Management Tools"
+  href="data-modeling/built-in-data-management-tools"
+  description="Utilize built-in data management tools for efficient data operations and administration."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Creating Data Model Functions"
+  href="data-modeling/create-data-model-functions"
+  description="Design and implement custom data model functions to extend data processing capabilities."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
 </IndexCard>
 
 <IndexCard
@@ -947,6 +1002,7 @@ Design a powerful data foundation for your application. Create data tables, desi
     { text: "Filter Then Aggregate (Recommended)", href: "data-modeling/aggregate-table-model#aggregate-then-filter" }
   ]} />
 </IndexCard>
+
 <IndexCard
   title="Extended Table Model"
   href="data-modeling/extended-table-model"
@@ -968,6 +1024,16 @@ Design a powerful data foundation for your application. Create data tables, desi
 </IndexCard>
 
 <IndexCard
+  title="Using Data Models in Pages and Functions"
+  href="data-modeling/calling-data-models-in-pages-and-functions"
+  description="Learn how to effectively use data models in frontend pages and backend function logic for data operations."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
   title="Data Object Model"
   href="data-modeling/data-object-model"
   description="Data structure designed specifically for full-code development, similar to DTO, used for structured data expression and transmission in business logic."
@@ -982,28 +1048,13 @@ Design a powerful data foundation for your application. Create data tables, desi
 </IndexCard>
 
 <IndexCard
-  title="Supported Database Vendors"
-  href="data-modeling/supported-database-vendors"
-  description="Learn about various database types and connection configurations supported by JitAi."
+  title="Integrating Data Models with AI Agents"
+  href="data-modeling/calling-data-models-in-ai-agent"
+  description="Integrate data models with AI Agent systems to enable intelligent data processing and decision making."
 >
-  <LinkGrid links={[
-    { text: "Scenario Selection Suggestions", href: "data-modeling/supported-database-vendors#scenario-selection-suggestions" },
-    { text: "Cloud Vendor Compatibility", href: "data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
-    { text: "Database Element Usage", href: "data-modeling/supported-database-vendors#database-element-usage" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="Manage Database Connections"
-  href="data-modeling/manage-database-connections"
-  description="Configure and manage multiple database connections, supporting multi-data source application development."
->
-  <LinkGrid links={[
-    { text: "Create Database Connection", href: "data-modeling/manage-database-connections#create-database-connection" },
-    { text: "Multi-database Connection Management", href: "data-modeling/manage-database-connections#multi-database-connection-management" },
-    { text: "Database Connection Security Configuration", href: "data-modeling/manage-database-connections#database-connection-security-configuration" },
-    { text: "Connection Test and Troubleshooting", href: "data-modeling/manage-database-connections#connection-test-and-troubleshooting" }
-  ]} />
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
 </IndexCard>
 
 <IndexCard

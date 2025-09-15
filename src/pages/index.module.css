@@ -108,6 +108,10 @@ body {
   img {
     border-radius: 6px;
   }
+
+  nav:has(+ div) {
+    display: none;
+  }
 }
 
 .container {

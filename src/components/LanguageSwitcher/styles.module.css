@@ -63,43 +63,6 @@
   color: inherit;
 }
 
-/* 深色模式支持 */
-@media (prefers-color-scheme: dark) {
-  .switchButton {
-    background: #141414;
-    border-color: #434343;
-  }
-  
-  .switchButton:hover {
-    color: #40a9ff;
-    border-color: #40a9ff;
-  }
-  
-  .switchButton:active {
-    color: #1890ff;
-    border-color: #1890ff;
-  }
-  
-  .globeIcon {
-    color: rgba(255, 255, 255, 0.65);
-  }
-  
-  .currentLang {
-    color: rgba(255, 255, 255, 0.85);
-  }
-  
-  .switchButton:hover .globeIcon,
-  .switchButton:hover .currentLang {
-    color: inherit;
-  }
-  
-  .switchButton:focus-visible {
-    color: #40a9ff;
-    border-color: #40a9ff;
-    box-shadow: 0 0 0 2px rgba(64, 169, 255, 0.2);
-  }
-}
-
 /* 响应式设计 */
 @media (max-width: 768px) {
   .switchButton {

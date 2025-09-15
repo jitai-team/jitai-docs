@@ -2,9 +2,16 @@ import React from 'react';
 import styles from './styles.module.css';
 import globalStyles from '../../pages/index.module.css';
 import ScrollAnimation from '../ScrollAnimation';
-import { CONTENT } from './constant';
+import CONTENT_EN from './constant-en';
+import CONTENT_ZH from './constant-zh';
 
-const FrameworkSection: React.FC = () => {
+interface FrameworkSectionProps {
+  currentLocale: string;
+}
+
+const FrameworkSection: React.FC<FrameworkSectionProps> = ({ currentLocale }) => {
+  const CONTENT = currentLocale === 'zh' ? CONTENT_ZH : CONTENT_EN;
+
   return (
     <ScrollAnimation animationType="fadeInUp" duration={500}>
       <section
@@ -47,7 +54,7 @@ const FrameworkSection: React.FC = () => {
                   </div>
                   <p className={styles.frameworkDescription}>{framework.description}</p>
                   <div className={styles.linkIndicator}>
-                    <span>了解更多</span>
+                    <span>{CONTENT.learnMore}</span>
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>

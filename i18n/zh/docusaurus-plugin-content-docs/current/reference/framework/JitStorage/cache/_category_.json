@@ -1,0 +1,10 @@
+{
+  "position": 1,
+  "label": "缓存",
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "缓存",
+    "description": "缓存管理和数据缓存API，用于提高应用性能和减少数据库负载。"
+  }
+} 

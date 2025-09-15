@@ -1,0 +1,8 @@
+{
+  "label": "前端API",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "前端平台API，用于客户端操作和用户界面交互。"
+  }
+} 

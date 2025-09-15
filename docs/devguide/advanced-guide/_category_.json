@@ -1,0 +1,9 @@
+{
+  "label": "Advanced Guide",
+  "position": 99,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "description": "Application and development guides for each type of platform feature in real-world scenarios"
+  }
+}

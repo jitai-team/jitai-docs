@@ -1,0 +1,10 @@
+{
+  "position": 3,
+  "label": "Storage",
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "Storage",
+    "description": "File and object storage management APIs for handling uploads, downloads, and storage operations."
+  }
+} 

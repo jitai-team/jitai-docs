@@ -1,0 +1,325 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+/* 全局样式变量 - 多彩主题架构 */
+:root {
+  /* 基础色彩系统 */
+  --color-primary: #2461fe;      /* 主色调 - 蓝色 */
+  --color-secondary: #ca4ba7;     /* 辅助色 - 紫色 */
+  --color-accent: #6b7280;        /* 强调色 - 灰色 */
+  --color-light: #9ca3af;         /* 浅色 */
+  --color-dark: #1f2937;          /* 深色 */
+
+  /* RGB变量 - 用于rgba */
+  --color-primary-rgb: 36, 97, 254;
+  --color-secondary-rgb: 202, 75, 167;
+  --color-accent-rgb: 107, 114, 128;
+  --color-light-rgb: 156, 163, 175;
+  --color-dark-rgb: 31, 41, 55;
+
+  /* 前3屏 - 多彩介绍屏色彩系统 */
+  --hero-primary: #2461fe;        /* HeroSection主色 - 蓝色 */
+  --hero-secondary: #ca4ba7;      /* HeroSection辅助色 - 紫色 */
+  --hero-gradient: linear-gradient(135deg, #2461fe 0%, #ca4ba7 100%);
+  --hero-bg: linear-gradient(135deg, #f8faff 0%, #f0f4ff 50%, #f5f3ff 100%);
+
+  /* ProductSection - 多彩卡片色彩（优化顺序） */
+  --product-card-1: #6d28d9;      /* 紫色 - Jit 解释型应用平台 */
+  --product-card-2: #0e7490;      /* 青色 - Jit 编排式开发框架 */
+  --product-card-3: #047857;      /* 绿色 - Jit 编排式开发工具 */
+  --product-card-4: #b45309;      /* 橙色 - Jit DevOps运维管理工具 */
+  --product-card-5: #1d4ed8;      /* 蓝色 - Jit AI应用协议 */
+  --product-card-6: #059669;      /* 深绿色 - Jit 应用级继承机制 */
+
+  /* TechnologiesSection - 多彩技术优势色彩（优化顺序） */
+  --tech-card-1: #7c3aed;        /* 深紫色 - 支持企业级AI应用 */
+  --tech-card-2: #0e7490;        /* 青色 - 支持生产级AI应用 */
+  --tech-card-3: #059669;        /* 绿色 - 全栈AI上下文工程架构 */
+  --tech-card-4: #1d4ed8;        /* 蓝色 - 无缝集成 */
+  --tech-card-5: #dc2626;        /* 红色 - 应用层技术精简革命 */
+  --tech-card-6: #6d28d9;        /* 紫色 - 图形化编排与编程 */
+  --tech-card-7: #b45309;        /* 橙色 - 极简部署与更新 */
+  --tech-card-8: #047857;        /* 绿色 - 无限扩展 */
+
+  /* 后4屏 - 单色详情屏色彩系统（对应ProductSection卡片） */
+  --platform-color: #6d28d9;     /* 平台屏 - 对应ProductSection卡片1 */
+  --framework-color: #0e7490;    /* 框架屏 - 对应ProductSection卡片2 */
+  --ide-color: #047857;          /* IDE屏 - 对应ProductSection卡片3 */
+  --devops-color: #b45309;       /* DevOps屏 - 对应ProductSection卡片4 */
+
+  /* 通用色彩 */
+  --text-primary: var(--color-dark);
+  --text-secondary: #6b7280;
+  --border-color: rgba(31, 41, 55, 0.1);
+  --shadow-color: rgba(31, 41, 55, 0.1);
+
+  /* 渐变系统 */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  --gradient-secondary: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--color-accent) 0%, var(--color-light) 100%);
+  --gradient-hero: linear-gradient(135deg, var(--hero-primary) 0%, var(--hero-secondary) 100%);
+
+  /* 透明度系统 */
+  --opacity-light: 0.03;
+  --opacity-medium: 0.08;
+  --opacity-heavy: 0.15;
+  --opacity-shadow: 0.2;
+  --opacity-hover: 0.3;
+
+  /* 背景装饰系统 */
+  --bg-decoration-primary: radial-gradient(circle at 20% 80%, rgba(36, 97, 254, var(--opacity-light)) 0%, transparent 50%);
+  --bg-decoration-secondary: radial-gradient(circle at 80% 20%, rgba(202, 75, 167, var(--opacity-light)) 0%, transparent 50%);
+  --bg-decoration-combined: var(--bg-decoration-primary), var(--bg-decoration-secondary);
+
+  /* 悬停效果系统 */
+  --hover-shadow-primary: 0 20px 40px rgba(36, 97, 254, var(--opacity-heavy));
+  --hover-shadow-hero: 0 10px 25px rgba(36, 97, 254, var(--opacity-hover));
+  --hover-shadow-navbar: 0 4px 8px rgba(36, 97, 254, var(--opacity-shadow));
+  --hover-shadow-card: 0 20px 40px color-mix(in srgb, var(--card-color) 20%, transparent);
+
+  /* 字体系统 */
+  --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-size-title: 3rem;
+  --font-size-subtitle: 1.25rem;
+  --font-size-body: 1rem;
+
+  /* 间距系统 */
+  --section-padding: 8rem 0;
+  --card-padding: 2.5rem;
+  --border-radius: 1.5rem;
+
+  /* 动画系统 */
+  --transition-primary: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-fade-in: fadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 全局样式 */
+body {
+
+  h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--section-color);
+  }
+}
+
+.container {
+  min-height: 100vh;
+  font-family: var(--font-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--section-bg);
+  --section-color: var(--section-color);
+  /* --card-color: var(--section-color); */
+  /* --card-hover-color: var(--section-accent); */
+}
+
+/* 公共样式 - 从TechnologiesSection和ProductSection提取 */
+
+/* 通用section样式 */
+.sectionContent {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.sectionTitle {
+  font-size: var(--font-size-title);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--section-color);
+}
+
+.sectionSubtitle {
+  font-size: var(--font-size-subtitle);
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 4rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* 通用卡片基础样式 - 白色半透明效果 */
+.baseCard {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.08),
+    0 4px 16px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  transition: var(--transition-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.baseCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--card-color) 0%, color-mix(in srgb, var(--card-color) 80%, white) 100%);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.baseCard:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.12),
+    0 8px 24px rgba(0, 0, 0, 0.06),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.baseCard:hover::before {
+  transform: scaleX(1);
+}
+
+/* 通用渐变背景 */
+.gradientBackground {
+  background: var(--section-bg);
+}
+
+/* 通用按钮样式系统 */
+.primaryButton {
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition-primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--hover-shadow-hero);
+}
+
+.secondaryButton {
+  background: transparent;
+  color: var(--section-color);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition-primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.secondaryButton:hover {
+  background: var(--section-color);
+  color: white;
+  border-color: var(--section-color);
+}
+
+
+
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  background: #d3d3d36b;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  /* box-shadow: 0 8px 16px rgba(31, 41, 55, 0.1); */
+  transition: all 0.3s ease;
+}
+
+.imagePlaceholder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.imagePlaceholder:hover::before {
+  opacity: 1;
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.placeholderIcon {
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  opacity: 0.3;
+  display: none;
+}
+
+.placeholderText {
+  color: var(--text-secondary);
+  font-size: 1.3rem;
+  font-weight: 600;
+  z-index: 1;
+  position: relative;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+/* 通用响应式样式 */
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .sectionContent {
+    align-items: center;
+  }
+
+  .sectionSubtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 0.95rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+}

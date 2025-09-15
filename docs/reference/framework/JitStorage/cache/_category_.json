@@ -1,0 +1,10 @@
+{
+  "position": 1,
+  "label": "Cache",
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "Cache",
+    "description": "Cache management and data caching APIs for improving application performance and reducing database load."
+  }
+} 

@@ -1,0 +1,8 @@
+{
+  "label": "JitService",
+  "position": 8,
+  "link": {
+    "type": "generated-index",
+    "description": "Core business service framework providing complete backend capabilities including API services, external integration, event handling, and interceptors. Based on event-driven architecture for service decoupling, integrates interceptor components for unified management of cross-cutting concerns, supports automated processing of permission verification, parameter validation, logging, and provides standardized service interfaces and integration capabilities for upper-layer applications"
+  }
+}

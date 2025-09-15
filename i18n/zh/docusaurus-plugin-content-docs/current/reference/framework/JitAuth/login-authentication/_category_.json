@@ -1,0 +1,10 @@
+{
+  "position": 3,
+  "label": "登录认证",
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "登录认证",
+    "description": "用户认证和登录管理API，包括登录验证、会话管理和认证协议。"
+  }
+} 

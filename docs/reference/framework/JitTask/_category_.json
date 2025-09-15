@@ -1,0 +1,8 @@
+{
+  "label": "JitTask",
+  "position": 10,
+  "link": {
+    "type": "generated-index",
+    "description": "Task scheduling framework supporting scheduled tasks, asynchronous tasks, task queues, and distributed task execution management"
+  }
+} 

@@ -1,0 +1,11 @@
+{
+  "position": 4,
+  "label": "Pages",
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/framework/JitWeb/pages",
+    "title": "Pages",
+    "description": "Page management APIs for creating, configuring, and managing application pages and page lifecycle operations."
+  }
+} 

@@ -1,12 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import styles from './styles.module.css';
-import { CONTENT } from './constant';
+import LanguageSwitcher from '../LanguageSwitcher';
+import CONTENT_EN from './constant-en';
+import CONTENT_ZH from './constant-zh';
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  currentLocale: string;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
   const [scrolled, setScrolled] = useState(false);
   const [activeNavItem, setActiveNavItem] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  
+  const CONTENT = currentLocale === 'zh' ? CONTENT_ZH : CONTENT_EN;
 
   useEffect(() => {
     const checkMobile = () => {
@@ -58,8 +66,12 @@ const Navbar: React.FC = () => {
         window.location.href = item.url;
         setIsMobileMenuOpen(false);
       } else {
-        window.open(item.url, '_blank');
-    }
+        if (item.isNewTab) {
+          window.open(item.url, '_blank');
+        } else {
+          window.location.href = item.url;
+        }
+      }
   };
 
   const toggleMobileMenu = () => {
@@ -89,6 +101,7 @@ const Navbar: React.FC = () => {
               </button>
             );
           })}
+          <LanguageSwitcher className={styles.languageSwitcher} />
         </div>
 
         {/* 移动端汉堡菜单按钮 */}
@@ -119,6 +132,9 @@ const Navbar: React.FC = () => {
                 </button>
               );
             })}
+            <div className={styles.mobileLanguageSwitcher}>
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
 

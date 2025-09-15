@@ -1,9 +1,0 @@
-{
-  "position": 3,
-  "label": "门户",
-  "className": "red",
-  "link": {
-    "type": "generated-index",
-    "title": "门户"
-  }
-} 

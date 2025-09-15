@@ -1,0 +1,9 @@
+{
+  "label": "在页面中使用功能组件",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "slug": "/devguide/using-functional-components-in-pages",
+    "description": "学习如何在页面中使用各种功能组件，包括表单、表格、图表等组件的配置和使用方法。"
+  }
+}

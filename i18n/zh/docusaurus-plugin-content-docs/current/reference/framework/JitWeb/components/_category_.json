@@ -1,0 +1,11 @@
+{
+  "position": 5,
+  "label": "组件",
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/framework/JitWeb/components",
+    "title": "组件",
+    "description": "UI组件管理API，用于创建、配置和管理可重用的UI组件，覆盖不同类别的组件功能。"
+  }
+} 

@@ -2,9 +2,16 @@ import React from 'react';
 import styles from './styles.module.css';
 import globalStyles from '../../pages/index.module.css';
 import ScrollAnimation from '../ScrollAnimation';
-import { CONTENT } from './constant';
+import CONTENT_EN from './constant-en';
+import CONTENT_ZH from './constant-zh';
 
-const DevOpsSection: React.FC = () => {
+interface DevOpsSectionProps {
+  currentLocale: string;
+}
+
+const DevOpsSection: React.FC<DevOpsSectionProps> = ({ currentLocale }) => {
+  const CONTENT = currentLocale === 'zh' ? CONTENT_ZH : CONTENT_EN;
+
   // 将features重新组织为每行2个卡片的布局
   const featuresRows = [];
   for (let i = 0; i < CONTENT.features.length; i += 2) {

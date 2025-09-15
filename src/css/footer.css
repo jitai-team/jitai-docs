@@ -76,7 +76,7 @@ footer .footer__link-item {
 /* Footer 链接悬停效果 */
 footer .footer__link-item:hover {
   color: white;
-  transform: translateX(5px);
+  /* transform: translateX(5px); */
 }
 
 /* Footer 链接悬停下划线 */
@@ -203,7 +203,7 @@ footer .footer__link-item[href*="github.com"]::before {
   vertical-align: middle;
 }
 
-footer .footer__link-item[href*="discourse"]::before {
+footer .footer__link-item[href*="forum"]::before {
   content: '💬';
   margin-right: 0.5rem;
   font-size: 0.9em;
@@ -231,6 +231,43 @@ footer .footer__link-item[href*="issues"]::before {
   content: '🐛';
   margin-right: 0.5rem;
   font-size: 0.9em;
+}
+
+/* Social icons for X, Facebook, LinkedIn (based on column and item order) */
+/* X (Twitter) */
+footer .footer__links > .footer__col:nth-child(4) .footer__items .footer__item:nth-child(1) .footer__link-item::before {
+  content: '';
+  margin-right: 0.5rem;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M18.146.75h3.686L14.78 10.307l8.052 12.943h-6.3l-4.934-7.22-5.64 7.22H2.271l7.588-9.72L1.999.75h6.457l4.463 6.705L18.146.75Zm-1.29 20.106h2.041L7.238 3.1H5.07l11.786 17.756Z'/%3E%3C/svg%3E") no-repeat center;
+  background-size: 1em;
+}
+
+/* Facebook */
+footer .footer__links > .footer__col:nth-child(4) .footer__items .footer__item:nth-child(2) .footer__link-item::before {
+  content: '';
+  margin-right: 0.5rem;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.691V11.41h3.129V8.797c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.794.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.765v2.316h3.587l-.467 3.296h-3.12V24h6.116C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z'/%3E%3C/svg%3E") no-repeat center;
+  background-size: 1em;
+}
+
+/* LinkedIn */
+footer .footer__links > .footer__col:nth-child(4) .footer__items .footer__item:nth-child(3) .footer__link-item::before {
+  content: '';
+  margin-right: 0.5rem;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M20.447 20.452h-3.554V14.83c0-1.344-.027-3.072-1.871-3.072-1.872 0-2.159 1.462-2.159 2.973v5.721H9.309V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.37-1.852 3.603 0 4.267 2.372 4.267 5.455v6.289zM5.337 7.433c-1.144 0-2.067-.926-2.067-2.067 0-1.143.923-2.066 2.067-2.066 1.142 0 2.066.923 2.066 2.066 0 1.141-.924 2.067-2.066 2.067zM6.815 20.452H3.861V9h2.954v11.452z'/%3E%3C/svg%3E") no-repeat center;
+  background-size: 1em;
 }
 
 /* 链接悬停时的图标动画 */
@@ -307,8 +344,8 @@ footer.theme-layout-footer.footer::after {
 
 @media (max-width: 996px) {
   .footer__col {
-      margin-bottom: 0;
-      padding: 0 2em;
+    margin-bottom: 0;
+    padding: 0 2em;
   }
 }
 

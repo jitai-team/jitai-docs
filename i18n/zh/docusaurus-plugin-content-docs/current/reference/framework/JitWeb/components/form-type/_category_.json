@@ -1,0 +1,8 @@
+{
+  "label": "表单类",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "表单输入和数据收集组件，包括文本字段、选择器、复选框和验证元素等表单相关组件。"
+  }
+} 

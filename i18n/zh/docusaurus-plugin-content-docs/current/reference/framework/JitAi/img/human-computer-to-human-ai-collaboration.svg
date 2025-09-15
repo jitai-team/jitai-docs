@@ -1,0 +1,150 @@
+<svg width="900" height="590" viewBox="0 0 900 590" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 现代化渐变定义 -->
+    <linearGradient id="traditionalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#357ABD;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="aiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#50E3C2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4DD0E1;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="humanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7B68EE;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#9C88FF;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="businessGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF8E8E;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="dataGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFB347;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFCC5C;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="agentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF9500;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA726;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="backgroundGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F8F9FA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E9ECEF;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 现代化阴影滤镜 -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#00000015"/>
+    </filter>
+    
+    <filter id="strongShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#00000020"/>
+    </filter>
+    
+    <!-- 现代化箭头标记 - 精细尺寸 -->
+    <marker id="arrow" markerWidth="4" markerHeight="3" refX="3.5" refY="1.5" orient="auto">
+      <polygon points="0 0, 4 1.5, 0 3" fill="#495057" />
+    </marker>
+    
+    <marker id="aiArrow" markerWidth="4" markerHeight="3" refX="3.5" refY="1.5" orient="auto">
+      <polygon points="0 0, 4 1.5, 0 3" fill="#20C997" />
+    </marker>
+    
+    <marker id="highlightArrow" markerWidth="4" markerHeight="3" refX="3.5" refY="1.5" orient="auto">
+      <polygon points="0 0, 4 1.5, 0 3" fill="#FF6B6B" />
+    </marker>
+  </defs>
+  
+  <!-- 标题区域背景 -->
+  <rect x="0" y="0" width="900" height="80" fill="white" filter="url(#shadow)" />
+  
+  <!-- 总标题 -->
+  <text x="450" y="35" text-anchor="middle" font-size="28" font-weight="bold" fill="#212529">人机交互到人智协同</text>
+  <text x="450" y="55" text-anchor="middle" font-size="14" fill="#6C757D">From Human-Computer Interaction to Human-AI Collaboration</text>
+  
+  <!-- 中央分隔线 -->
+  <line x1="450" y1="100" x2="450" y2="570" stroke="#DEE2E6" stroke-width="2" />
+  
+  <!-- ============ 左侧：传统应用 ============ -->
+  <rect x="50" y="100" width="320" height="430" rx="20" fill="white" stroke="#4A90E2" stroke-width="2" filter="url(#shadow)" />
+  <text x="210" y="130" text-anchor="middle" fill="#4A90E2" font-size="20" font-weight="bold">传统应用</text>
+  <text x="210" y="148" text-anchor="middle" fill="#6C757D" font-size="12">Traditional Application</text>
+  
+  <!-- 人 - 优化设计 -->
+  <rect x="155" y="170" width="110" height="55" rx="15" fill="url(#humanGrad)" filter="url(#shadow)" />
+  <text x="210" y="202" text-anchor="middle" fill="white" font-size="18" font-weight="bold">人</text>
+  <text x="210" y="218" text-anchor="middle" fill="white" font-size="11">Human</text>
+  
+  <!-- 流程箭头 - 延长到UI上边框 -->
+  <path d="M 210 225 L 210 260" stroke="#495057" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+  
+  <!-- UI组件 - 优化设计 -->
+  <rect x="155" y="260" width="110" height="55" rx="15" fill="url(#traditionalGrad)" filter="url(#shadow)" />
+  <text x="210" y="292" text-anchor="middle" fill="white" font-size="18" font-weight="bold">UI</text>
+  <text x="210" y="308" text-anchor="middle" fill="white" font-size="11">User Interface</text>
+  
+  <!-- 流程箭头 - 延长到业务逻辑上边框 -->
+  <path d="M 210 315 L 210 350" stroke="#495057" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+  
+  <!-- 业务逻辑 - 优化设计 -->
+  <rect x="155" y="350" width="110" height="55" rx="15" fill="url(#businessGrad)" filter="url(#shadow)" />
+  <text x="210" y="382" text-anchor="middle" fill="white" font-size="18" font-weight="bold">业务逻辑</text>
+  <text x="210" y="398" text-anchor="middle" fill="white" font-size="11">Business Logic</text>
+  
+  <!-- 流程箭头 - 延长到数据上边框 -->
+  <path d="M 210 405 L 210 440" stroke="#495057" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+  
+  <!-- 数据 - 优化设计 -->
+  <rect x="155" y="440" width="110" height="55" rx="15" fill="url(#dataGrad)" filter="url(#shadow)" />
+  <text x="210" y="472" text-anchor="middle" fill="white" font-size="18" font-weight="bold">数据</text>
+  <text x="210" y="488" text-anchor="middle" fill="white" font-size="11">Data Storage</text>
+  
+  <!-- ============ 右侧：AI应用 ============ -->
+  <rect x="530" y="100" width="320" height="430" rx="20" fill="white" stroke="#20C997" stroke-width="2" filter="url(#shadow)" />
+  <text x="690" y="130" text-anchor="middle" fill="#20C997" font-size="20" font-weight="bold">AI应用</text>
+  <text x="690" y="148" text-anchor="middle" fill="#6C757D" font-size="12">AI Application</text>
+  
+  <!-- 人 - 与UI垂直对齐 -->
+  <rect x="555" y="170" width="110" height="55" rx="15" fill="url(#humanGrad)" filter="url(#shadow)" />
+  <text x="610" y="202" text-anchor="middle" fill="white" font-size="18" font-weight="bold">人</text>
+  <text x="610" y="218" text-anchor="middle" fill="white" font-size="11">Human</text>
+  
+  <!-- 人到UI的直线 -->
+  <path d="M 610 225 L 610 260" stroke="#495057" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+  
+  <!-- 人到AI助理到数据的完整路径 - 调整为垂直对齐 -->
+  <!-- 第一段：从人的右边框垂直中点水平向右，然后圆角转弯垂直向下到AI助理上边框水平中点 -->
+  <path d="M 665 198 L 760 198 Q 770 198 770 208 L 770 260" stroke="#20C997" stroke-width="2" fill="none" marker-end="url(#aiArrow)" />
+  <!-- 第二段：从AI助理下边框水平中点到数据右边框垂直中点，圆角转弯 -->
+  <path d="M 770 315 L 770 447 Q 770 467 750 467 L 665 467" stroke="#20C997" stroke-width="2" fill="none" marker-end="url(#aiArrow)" />
+  
+  <!-- UI组件 - 大幅左移 -->
+  <rect x="555" y="260" width="110" height="55" rx="15" fill="url(#traditionalGrad)" filter="url(#shadow)" />
+  <text x="610" y="292" text-anchor="middle" fill="white" font-size="18" font-weight="bold">UI</text>
+  <text x="610" y="308" text-anchor="middle" fill="white" font-size="11">User Interface</text>
+  
+  <!-- AI助理作为旁路 - 大幅调整位置 -->
+  <rect x="715" y="260" width="110" height="55" rx="15" fill="url(#aiGrad)" filter="url(#strongShadow)" />
+  <text x="770" y="292" text-anchor="middle" fill="white" font-size="18" font-weight="bold">AI助理</text>
+  <text x="770" y="308" text-anchor="middle" fill="white" font-size="11">AI Assistant</text>
+  
+  <!-- UI到业务逻辑 -->
+  <path d="M 610 315 L 610 350" stroke="#495057" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+  
+  <!-- 业务逻辑 - 与UI垂直对齐 -->
+  <rect x="555" y="350" width="110" height="55" rx="15" fill="url(#businessGrad)" filter="url(#shadow)" />
+  <text x="610" y="382" text-anchor="middle" fill="white" font-size="18" font-weight="bold">业务逻辑</text>
+  <text x="610" y="398" text-anchor="middle" fill="white" font-size="11">Business Logic</text>
+  
+  <!-- 流程箭头 -->
+  <path d="M 610 405 L 610 440" stroke="#495057" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+  
+  <!-- 数据 - 与UI垂直对齐 -->
+  <rect x="555" y="440" width="110" height="55" rx="15" fill="url(#dataGrad)" filter="url(#shadow)" />
+  <text x="610" y="472" text-anchor="middle" fill="white" font-size="18" font-weight="bold">数据</text>
+  <text x="610" y="488" text-anchor="middle" fill="white" font-size="11">Data Storage</text>
+</svg> 

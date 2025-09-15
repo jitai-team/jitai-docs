@@ -1,0 +1,10 @@
+{
+  "position": 3,
+  "label": "Portals",
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "Portals",
+    "description": "Portal management APIs for creating and managing application portals, navigation structures, and portal configurations."
+  }
+} 

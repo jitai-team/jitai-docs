@@ -1,0 +1,8 @@
+{
+  "label": "Frontend API",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Frontend platform APIs for client-side operations and user interface interactions"
+  }
+} 

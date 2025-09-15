@@ -1,0 +1,8 @@
+{
+  "label": "审批类",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "工作流审批组件，用于管理审批流程，包括审批状态、决策控制和工作流可视化。"
+  }
+} 

@@ -1,0 +1,118 @@
+<svg width="1000" height="640" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: 'Arial', sans-serif; font-size: 24px; font-weight: bold; fill: #2c3e50; }
+      .subtitle { font-family: 'Arial', sans-serif; font-size: 18px; font-weight: bold; fill: #ffffff; }
+      .subtitle-1 { font-family: 'Arial', sans-serif; font-size: 18px; font-weight: bold; fill: #2c3e50; }
+      .text { font-family: 'Arial', sans-serif; font-size: 14px; fill: #ffffff; }
+      .small-text { font-family: 'Arial', sans-serif; font-size: 12px; fill: #ffffff; }
+      .code-block { fill: #2c3e50; stroke: #34495e; stroke-width: 1; }
+      .compiler { fill: #e74c3c; stroke: #c0392b; stroke-width: 2; }
+      .runtime { fill: #27ae60; stroke: #2ecc71; stroke-width: 2; }
+      .arrow { stroke: #2c3e50; stroke-width: 1; fill: none; marker-end: url(#arrowhead); }
+      .highlight { fill: #f39c12; stroke: #e67e22; stroke-width: 3; }
+      .pulse { animation: pulse 2s infinite; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2c3e50" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="500" y="40" text-anchor="middle" class="title">JitAi Real-time Compilation Engine Architecture</text>
+
+  <!-- Development Environment -->
+  <rect x="50" y="100" width="350" height="180" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2" rx="10"/>
+  <text x="225" y="130" text-anchor="middle" class="subtitle-1">Development Environment</text>
+
+  <!-- Code Editor -->
+  <rect x="80" y="150" width="290" height="120" fill="#2c3e50" stroke="#34495e" stroke-width="1" rx="5"/>
+  <text x="225" y="175" text-anchor="middle" class="text" fill="white">Code Editor</text>
+  <text x="90" y="195" class="small-text" fill="#ecf0f1">// Modify business logic</text>
+  <text x="90" y="210" class="small-text" fill="#ecf0f1">function updateUser() {</text>
+  <text x="90" y="225" class="small-text" fill="#ecf0f1">  // Real-time compilation...</text>
+  <text x="90" y="240" class="small-text" fill="#ecf0f1">}</text>
+
+  <!-- Real-time Compilation Engine -->
+  <rect x="450" y="100" width="280" height="180" fill="#e74c3c" stroke="#c0392b" stroke-width="2" rx="10"/>
+  <text x="590" y="130" text-anchor="middle" class="subtitle" fill="white">Real-time Compilation Engine</text>
+  <text x="575" y="155" text-anchor="middle" class="text" fill="white">Code While Using</text>
+  <text x="575" y="175" text-anchor="middle" class="text" fill="white">Dynamic Adjustment</text>
+  <text x="575" y="195" text-anchor="middle" class="text" fill="white">Instant Effect</text>
+  <text x="575" y="215" text-anchor="middle" class="text" fill="white">No Restart Required</text>
+  <text x="575" y="235" text-anchor="middle" class="text" fill="white">Real-time Feedback</text>
+
+  <!-- 编译箭头 -->
+  <path d="M 400 190 Q 425 190 450 190" class="arrow"/>
+
+  <!-- Runtime Environment -->
+  <rect x="780" y="100" width="150" height="180" fill="#27ae60" stroke="#2ecc71" stroke-width="2" rx="10"/>
+  <text x="850" y="130" text-anchor="middle" class="subtitle" fill="white">Runtime</text>
+  <text x="850" y="155" text-anchor="middle" class="text" fill="white">Hot Update</text>
+  <text x="850" y="175" text-anchor="middle" class="text" fill="white">Zero Downtime</text>
+  <text x="850" y="195" text-anchor="middle" class="text" fill="white">Instant Effect</text>
+  <text x="850" y="215" text-anchor="middle" class="text" fill="white">State Preservation</text>
+  <text x="850" y="235" text-anchor="middle" class="text" fill="white">Seamless Switch</text>
+
+  <!-- 编译箭头 -->
+  <path d="M 730 190 Q 725 190 780 190" class="arrow"/>
+
+  <!-- Compilation Process -->
+  <rect x="50" y="320" width="880" height="140" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2" rx="10"/>
+  <text x="475" y="350" text-anchor="middle" class="subtitle-1">Real-time Compilation Process</text>
+
+  <!-- Compilation Steps -->
+  <rect x="80" y="370" width="150" height="70" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="5"/>
+  <text x="155" y="395" text-anchor="middle" class="text" fill="white">1. Code Change</text>
+  <text x="155" y="415" text-anchor="middle" class="small-text" fill="white">Detect Changes</text>
+  <text x="155" y="430" text-anchor="middle" class="small-text" fill="white">Trigger Compilation</text>
+
+  <rect x="250" y="370" width="150" height="70" fill="#e74c3c" stroke="#c0392b" stroke-width="2" rx="5"/>
+  <text x="325" y="395" text-anchor="middle" class="text" fill="white">2. Incremental Compile</text>
+  <text x="325" y="415" text-anchor="middle" class="small-text" fill="white">Compile Changes Only</text>
+  <text x="325" y="430" text-anchor="middle" class="small-text" fill="white">Fast Build</text>
+
+  <rect x="420" y="370" width="150" height="70" fill="#f39c12" stroke="#e67e22" stroke-width="2" rx="5"/>
+  <text x="495" y="395" text-anchor="middle" class="text" fill="white">3. Hot Replacement</text>
+  <text x="495" y="415" text-anchor="middle" class="small-text" fill="white">Dynamic Loading</text>
+  <text x="495" y="430" text-anchor="middle" class="small-text" fill="white">Seamless Update</text>
+
+  <rect x="590" y="370" width="150" height="70" fill="#27ae60" stroke="#2ecc71" stroke-width="2" rx="5"/>
+  <text x="665" y="395" text-anchor="middle" class="text" fill="white">4. Instant Effect</text>
+  <text x="665" y="415" text-anchor="middle" class="small-text" fill="white">Real-time Feedback</text>
+  <text x="665" y="430" text-anchor="middle" class="small-text" fill="white">User Visible</text>
+
+  <rect x="760" y="370" width="150" height="70" fill="#9b59b6" stroke="#8e44ad" stroke-width="2" rx="5"/>
+  <text x="835" y="395" text-anchor="middle" class="text" fill="white">5. State Preservation</text>
+  <text x="835" y="415" text-anchor="middle" class="small-text" fill="white">No Data Loss</text>
+  <text x="835" y="430" text-anchor="middle" class="small-text" fill="white">Session Continues</text>
+
+  <!-- 流程箭头 -->
+  <path d="M 230 405 Q 240 405 250 405" class="arrow"/>
+  <path d="M 400 405 Q 410 405 420 405" class="arrow"/>
+  <path d="M 570 405 Q 580 405 590 405" class="arrow"/>
+  <path d="M 740 405 Q 750 405 760 405" class="arrow"/>
+
+  <!-- Advantages Display -->
+  <rect x="50" y="480" width="880" height="120" fill="#e8f5e8" stroke="#4caf50" stroke-width="2" rx="10"/>
+  <text x="475" y="510" text-anchor="middle" class="subtitle-1">Real-time Compilation Advantages</text>
+
+  <rect x="80" y="530" width="180" height="50" fill="#2ecc71" stroke="#27ae60" stroke-width="2" rx="5"/>
+  <text x="170" y="555" text-anchor="middle" class="text" fill="white">Development Efficiency</text>
+  <text x="170" y="570" text-anchor="middle" class="small-text" fill="white">Code While Using</text>
+
+  <rect x="290" y="530" width="180" height="50" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="5"/>
+  <text x="380" y="555" text-anchor="middle" class="text" fill="white">Zero Downtime Update</text>
+  <text x="380" y="570" text-anchor="middle" class="small-text" fill="white">Business Uninterrupted</text>
+
+  <rect x="500" y="530" width="180" height="50" fill="#e74c3c" stroke="#c0392b" stroke-width="2" rx="5"/>
+  <text x="590" y="555" text-anchor="middle" class="text" fill="white">Instant Feedback</text>
+  <text x="590" y="570" text-anchor="middle" class="small-text" fill="white">Real-time Results</text>
+
+  <rect x="710" y="530" width="180" height="50" fill="#f39c12" stroke="#e67e22" stroke-width="2" rx="5"/>
+  <text x="800" y="555" text-anchor="middle" class="text" fill="white">State Preservation</text>
+  <text x="800" y="570" text-anchor="middle" class="small-text" fill="white">No Data Loss</text>
+
+  <!-- Bottom Description -->
+  <text x="500" y="650" text-anchor="middle" class="small-text">Dynamic adjustment takes effect immediately: supports code-while-using development mode, see modification effects in real-time</text>
+</svg>

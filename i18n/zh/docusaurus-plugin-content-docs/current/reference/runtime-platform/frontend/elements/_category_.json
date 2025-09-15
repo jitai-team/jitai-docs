@@ -1,0 +1,8 @@
+{
+  "label": "元素",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "前端元素API文档，包括各种前端组件和元素的接口定义和使用方法。"
+  }
+} 

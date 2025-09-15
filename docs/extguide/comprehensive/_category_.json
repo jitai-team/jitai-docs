@@ -1,0 +1,8 @@
+{
+  "label": "Comprehensive",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Frontend-backend composite element extensions, dev-tools construction, and framework release guides"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "label": "JitI18N",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Internationalization and localization framework supporting multi-language translation, regional settings, and dynamic language pack management"
+  }
+} 

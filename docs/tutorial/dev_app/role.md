@@ -1,41 +1,43 @@
 ---
 sidebar_position: 10
-title: 用应用角色实现权限控制
+title: Implementing Permission Control with Application Roles
+slug: role
 ---
-# 用应用角色实现权限控制
+# Implementing Permission Control with Application Roles
 
-
-
-## 效果展示
+## Demo Effect
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/role_effect.mp4" />
 
-## 实现过程
+## Implementation Process
 
-JIT应用框架中，已经内置了「开发者」、「管理者」2种角色，并分别对应「开发者门户」、「管理者门户」。
+The JIT application framework already has built-in "Developer" and "Administrator" roles, corresponding to "Developer Portal" and "Administrator Portal" respectively.
 
-在本项目中，有2种角色： 老师、考生。
-因为前面我们已经针对这2种角色分别创建了「老师门户」、「考生门户」，所以接下来权限配置就很简单。
+In this project, there are 2 types of roles: Teacher and Student.
+Since we have already created "Teacher Portal" and "Student Portal" for these 2 roles, the permission configuration is now very simple.
 
-### 在「开发者门户」中创建应用角色和管理权限范围
+### Creating Application Roles and Managing Permission Scope in "Developer Portal"
 
 ![](../img/role_150631.png)
 
-也可以针对每个菜单，点击右边「配置」，进一步配置每个组件的权限，可以精准控制每个按钮、每个字段、读写权限等等。
+You can also click "Configure" on the right for each menu to further configure permissions for each component, allowing precise control over each button, each field, read/write permissions, etc.
 
 ![](../img/role_150729.png)
 
-### 在「管理者门户」中管理组织、配置人员
+### Managing Organizations and Configuring Personnel in "Administrator Portal"
+
 ![](../img/role_155400.png)
 
-本应用中，我们创建「老师」部门、「学生」部门。
+In this application, we create "Teacher" department and "Student" department.
 
-### 在「管理者门户」中配置每个角色包含哪些成员
+Read [Organizational Structure](../../devguide/user-and-permission/organizational-structure) for more details.
 
-在「老师」角色下成员配置里面添加「老师」部门；在「考生」角色下成员配置里面添加「考生」部门
+### Configuring Which Members Each Role Contains in "Administrator Portal"
+
+Add the "Teacher" department to the member configuration under the "Teacher" role; add the "Student" department to the member configuration under the "Student" role
 
 ![](../img/role_160224.png)
 
-
+Read [Role Permissions](../../devguide/user-and-permission/role-permissions) for more details.

@@ -1,0 +1,83 @@
+<svg width="800" height="250" viewBox="0 0 800 250" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f0f9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e0f2fe;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+  </defs>
+  
+  <rect width="800" height="250" fill="url(#bgGradient)" rx="10"/>
+  
+  <!-- 开发节点 -->
+  <g id="server-flow">
+    <rect x="50" y="70" width="120" height="60" rx="8" fill="#8b5cf6" filter="url(#shadow)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <text x="110" y="95" text-anchor="middle" fill="white" font-size="12" font-weight="bold">开发节点</text>
+    <text x="110" y="110" text-anchor="middle" fill="white" font-size="10">服务器版</text>
+    <text x="110" y="150" text-anchor="middle" fill="#374151" font-size="10">共享开发环境</text>
+    
+    <!-- 多人开发 -->
+    <g id="developers">
+      <circle cx="250" cy="80" r="20" fill="#06b6d4" filter="url(#shadow)">
+        <animate attributeName="cy" values="80;75;80" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <text x="250" y="85" text-anchor="middle" fill="white" font-size="10">模块A</text>
+      
+      <circle cx="250" cy="120" r="20" fill="#06b6d4" filter="url(#shadow)">
+        <animate attributeName="cy" values="120;115;120" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+      </circle>
+      <text x="250" y="125" text-anchor="middle" fill="white" font-size="10">模块B</text>
+      
+      <circle cx="250" cy="160" r="20" fill="#06b6d4" filter="url(#shadow)">
+        <animate attributeName="cy" values="160;155;160" dur="2s" begin="1s" repeatCount="indefinite"/>
+      </circle>
+      <text x="250" y="165" text-anchor="middle" fill="white" font-size="10">模块C</text>
+    </g>
+    <text x="250" y="190" text-anchor="middle" fill="#374151" font-size="12" font-weight="bold">多人协作开发</text>
+    
+    <!-- 集成测试 -->
+    <rect x="400" y="70" width="120" height="60" rx="8" fill="#f59e0b" filter="url(#shadow)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" begin="1s" repeatCount="indefinite"/>
+    </rect>
+    <text x="460" y="95" text-anchor="middle" fill="white" font-size="12" font-weight="bold">集成测试</text>
+    <text x="460" y="110" text-anchor="middle" fill="white" font-size="10">边开发边测试</text>
+    <text x="460" y="150" text-anchor="middle" fill="#374151" font-size="10">或专门测试环境</text>
+    
+    <!-- 生产发布 -->
+    <rect x="600" y="70" width="120" height="60" rx="8" fill="#ef4444" filter="url(#shadow)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" begin="2s" repeatCount="indefinite"/>
+    </rect>
+    <text x="660" y="95" text-anchor="middle" fill="white" font-size="12" font-weight="bold">生产发布</text>
+    <text x="660" y="110" text-anchor="middle" fill="white" font-size="10">部署到生产</text>
+    <text x="660" y="150" text-anchor="middle" fill="#374151" font-size="10">生产环境</text>
+  </g>
+  
+  <!-- 连接线和箭头 -->
+  <g stroke="#6b7280" stroke-width="2" fill="none" marker-end="url(#arrowhead)">
+    <!-- 开发节点到多人开发 -->
+    <path d="M 170 100 L 220 100">
+      <animate attributeName="stroke-dasharray" values="0,50;50,0" dur="2s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- 多人开发到集成测试 -->
+    <path d="M 280 100 L 400 100">
+      <animate attributeName="stroke-dasharray" values="0,120;120,0" dur="2s" begin="1s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- 集成测试到生产发布 -->
+    <path d="M 520 100 L 600 100">
+      <animate attributeName="stroke-dasharray" values="0,80;80,0" dur="2s" begin="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- 标题 -->
+  <text x="400" y="30" text-anchor="middle" fill="#1f2937" font-size="16" font-weight="bold">服务器版协作流程</text>
+</svg> 

@@ -1,0 +1,9 @@
+{
+  "label": "Development Tools",
+  "position": 2,
+  "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "description": "IDEApp main interface framework, IDEApp APIs, and Type Editor extension API/specifications"
+  }
+} 

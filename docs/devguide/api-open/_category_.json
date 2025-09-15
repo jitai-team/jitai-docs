@@ -1,0 +1,8 @@
+{
+  "label": "Open API",
+  "position": 12,
+  "link": {
+    "type": "generated-index",
+    "description": "Learn how to expose API interfaces for third-party calls."
+  }
+}

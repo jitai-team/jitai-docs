@@ -442,11 +442,33 @@ The rich component library is your super toolkit. Drag and drop a table to displ
 </IndexCard>
 
 <IndexCard
-  title="Tree Component (Editing in Progress)"
-  description="Hierarchical data display component supporting tree structure display, selection and operations."
+  title="Tree Components"
+  description="Display hierarchical data structures with node expand/collapse and selection operations, providing clear data navigation experience."
+  link="/docs/devguide/using-functional-components-in-pages/tree-components"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Documentation is being improved, please stay tuned...
+  <div style={{padding: '20px'}}>
+    <p style={{marginBottom: '15px', color: '#666'}}>
+      <strong>Primary Use:</strong> Hierarchical data display for file directories, organizational structures, product categories, etc.
+    </p>
+    <div style={{marginBottom: '15px'}}>
+      <strong style={{color: '#333'}}>Component Types:</strong>
+      <ul style={{marginTop: '8px', paddingLeft: '20px'}}>
+        <li><strong>Tree Component:</strong> Multi-level data display with progressive loading</li>
+        <li><strong>Cascade Tree:</strong> Hierarchical data display based on self-relational fields</li>
+      </ul>
+    </div>
+    <div style={{marginBottom: '15px'}}>
+      <strong style={{color: '#333'}}>Core Features:</strong>
+      <ul style={{marginTop: '8px', paddingLeft: '20px'}}>
+        <li>Node expand/collapse operations</li>
+        <li>Single/multiple selection modes</li>
+        <li>Node click event handling</li>
+        <li>Interactive updates with other components</li>
+      </ul>
+    </div>
+    <p style={{color: '#007acc', fontWeight: '500'}}>
+      💡 Use Cases: Organizational management, file systems, product categorization, permission trees, etc.
+    </p>
   </div>
 </IndexCard>
 

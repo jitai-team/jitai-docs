@@ -1,5 +1,6 @@
 ---
 sidebar_position: 5
+slug: tree-components
 ---
 
 # 树组件

@@ -37,7 +37,7 @@ const config: Config = {
   projectName: 'jitai-docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',              // 暂时设置为警告，待文档结构调整完成后改为throw
-  onBrokenMarkdownLinks: 'throw',   // 断开的Markdown链接设置为警告
+  onBrokenMarkdownLinks: 'throw',   // 断开的Markdown链接设置为警告y
   onBrokenAnchors: 'throw',         // 断开的锚点设置为警告
 
   // Even if you don't use internationalization, you can use this field to set
@@ -149,18 +149,24 @@ const config: Config = {
            label: 'Open Source',
          },
         // {to: '/blog', label: '博客', position: 'left'},
-        {
-           type: 'docSidebar',
-           sidebarId: 'communitySidebar',
+        //{
+        //  type: 'docSidebar',
+        //  sidebarId: 'appmarketSidebar',
+        //  position: 'left',
+        // label: 'App Market',
+        //},
+        // {to: '/blog', label: '博客', position: 'left'},
+         {
+           href: 'https://forum.jit.pro',
            position: 'left',
            label: 'Community Forum',
          },
         //GitHub
-        // {
-        //   href: 'https://github.com/jitai-team',
-        //   label: 'GitHub',
-        //   position: 'right',
-        // },
+         {
+           href: 'https://github.com/jitai-team',
+           label: 'GitHub',
+           position: 'right',
+         },
         {
           type: 'localeDropdown',
           position: 'right',
@@ -222,7 +228,7 @@ const config: Config = {
            items: [
             {
               label: 'Community',
-              href: 'https://forum.jit.pro/',
+              href: 'https://forum.jit.pro',
             },
              {
                label: 'GitHub',

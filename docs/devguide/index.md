@@ -810,7 +810,7 @@ Intelligent agents with reasoning and action capabilities. Through prompts and t
 </IndexCard>
 
 <IndexCard
-  title="Agent API Integration"
+  title="Agent API Exposure"
   href="ai-agent/agent-api-integration"
   description="Expose Agent capabilities through API interfaces for external system integration."
 >
@@ -826,35 +826,89 @@ Visual intelligent workflow engine. Orchestrate business processes through drag-
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
-<IndexCard>
+<IndexCard
+  title="Create AI Assistant Element"
+  href="ai-assitant/create-ai-assistant"
+  description="Learn how to create AI assistant elements, configure workflows, node types, and event handling for intelligent business process automation."
+>
   <LinkGrid columns={2} links={[
-    { text: "What is AI Assistant", href: "ai-assistant#what-is-ai-assistant" },
-    { text: "Create AI Assistant", href: "ai-assistant#create-ai-assistant" },
-    { text: "Visual Orchestration", href: "ai-assistant#visual-orchestration" },
-    { text: "Start Node", href: "ai-assistant#start-node" },
-    { text: "Routing Decision", href: "ai-assistant#routing-decision" },
-    { text: "AI Agent", href: "ai-assistant#ai-agent" },
-    { text: "Dialog Human-Machine Interaction", href: "ai-assistant#dialog-human-machine-interaction" },
-    { text: "Workspace Human-Machine Interaction", href: "ai-assistant#workspace-human-machine-interaction" },
-    { text: "Function Call", href: "ai-assistant#function-call" },
-    { text: "Conditional Branch", href: "ai-assistant#conditional-branch" },
-    { text: "Multi-task Execution", href: "ai-assistant#multi-task-execution" },
-    { text: "Event Type Overview", href: "ai-assistant#event-type-overview" },
-    { text: "Frontend Workspace Events", href: "ai-assistant#frontend-workspace-events" },
-    { text: "Backend Business Events", href: "ai-assistant#backend-business-events" },
-    { text: "Runtime State Data", href: "ai-assistant#runtime-state-data" },
-    { text: "Runtime State Storage Library", href: "ai-assistant#runtime-state-storage-library" },
-    { text: "Advanced Settings", href: "ai-assistant#advancedsettings" },
-    { text: "Usage Guide", href: "ai-assistant#usage-guide" },
-    { text: "Welcome Message and Opening", href: "ai-assistant#welcome-message-and-opening" },
-    { text: "Message Output", href: "ai-assistant#message-output" },
-    { text: "Send AI Message", href: "ai-assistant#send-ai-message" },
-    { text: "Conversation History Management", href: "ai-assistant#conversation-history-management" },
-    { text: "Full Code Development", href: "ai-assistant#full-code-development" },
-    { text: "Example Demo", href: "ai-assistant#example-demo" },
-    { text: "How to Select Suitable Node Types?", href: "ai-assistant#how-to-select-suitable-node-types" },
-    { text: "Common Causes and Solutions for Stuck Processes", href: "ai-assistant#common-causes-and-solutions-for-stuck-processes" }
+    { text: "What is AI Assistant", href: "ai-assitant/create-ai-assistant#what-is-ai-assistant" },
+    { text: "Create AI Assistant", href: "ai-assitant/create-ai-assistant#create-ai-assistant" },
+    { text: "Visual Orchestration", href: "ai-assitant/create-ai-assistant#visual-orchestration" },
+    { text: "Start Node", href: "ai-assitant/create-ai-assistant#start-node" },
+    { text: "Routing Decision", href: "ai-assitant/create-ai-assistant#routing-decision" },
+    { text: "AI Agent", href: "ai-assitant/create-ai-assistant#ai-agent" },
+    { text: "Dialog Human-Machine Interaction", href: "ai-assitant/create-ai-assistant#dialog-human-machine-interaction" },
+    { text: "Workspace Human-Machine Interaction", href: "ai-assitant/create-ai-assistant#workspace-human-machine-interaction" },
+    { text: "Function Call", href: "ai-assitant/create-ai-assistant#function-call" },
+    { text: "Conditional Branch", href: "ai-assitant/create-ai-assistant#conditional-branch" },
+    { text: "Multi-task Execution", href: "ai-assitant/create-ai-assistant#multi-task-execution" },
+    { text: "Event Type Overview", href: "ai-assitant/create-ai-assistant#event-type-overview" },
+    { text: "Frontend Workspace Events", href: "ai-assitant/create-ai-assistant#frontend-workspace-events" },
+    { text: "Backend Business Events", href: "ai-assitant/create-ai-assistant#backend-business-events" },
+    { text: "Runtime State Data", href: "ai-assitant/create-ai-assistant#runtime-state-data" },
+    { text: "Runtime State Storage Library", href: "ai-assitant/create-ai-assistant#runtime-state-storage-library" },
+    { text: "Advanced Settings", href: "ai-assitant/create-ai-assistant#advancedsettings" },
+    { text: "Usage Guide", href: "ai-assitant/create-ai-assistant#usage-guide" },
+    { text: "Welcome Message and Opening", href: "ai-assitant/create-ai-assistant#welcome-message-and-opening" },
+    { text: "Message Output", href: "ai-assitant/create-ai-assistant#message-output" },
+    { text: "Send AI Message", href: "ai-assitant/create-ai-assistant#send-ai-message" },
+    { text: "Conversation History Management", href: "ai-assitant/create-ai-assistant#conversation-history-management" },
+    { text: "Full Code Development", href: "ai-assitant/create-ai-assistant#full-code-development" },
+    { text: "Example Demo", href: "ai-assitant/create-ai-assistant#example-demo" },
+    { text: "How to Select Suitable Node Types?", href: "ai-assitant/create-ai-assistant#how-to-select-suitable-node-types" },
+    { text: "Common Causes and Solutions for Stuck Processes", href: "ai-assitant/create-ai-assistant#common-causes-and-solutions-for-stuck-processes" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="Process Orchestration and Node Configuration"
+  href="ai-assitant/process-orchestration-node-configuration"
+  description="Deep dive into AI assistant process orchestration techniques and detailed node configuration methods."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="AI Assistant Input and Output"
+  href="ai-assitant/ai-assistant-input-output"
+  description="Understand AI assistant input and output configuration and data processing methods."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Develop Conversational Multi-Task AI Assistant"
+  href="ai-assitant/develop-conversational-multi-task-ai-assistant"
+  description="Learn how to develop process-oriented multi-task conversational AI assistants for complex business scenarios."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Develop Human-AI Collaboration Enterprise Assistant"
+  href="ai-assitant/develop-human-ai-collaboration-enterprise-assistant"
+  description="Build enterprise-level AI assistant applications that collaborate with UI pages for human-AI interaction."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="AI Assistant API Integration"
+  href="ai-assitant/ai-assistant-api-integration"
+  description="Expose AI assistant capabilities through API interfaces for external system integration."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
 </IndexCard>
 
 </div>
@@ -863,6 +917,31 @@ Visual intelligent workflow engine. Orchestrate business processes through drag-
 Design a powerful data foundation for your application. Create data tables, design field types, and establish relationships through visual methods without complex SQL knowledge. Make data management easy and efficient.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard
+  title="Managing Database Connections"
+  href="data-modeling/manage-database-connections"
+  description="Configure and manage multiple database connections, supporting multi-data source application development."
+>
+  <LinkGrid links={[
+    { text: "Create Database Connection", href: "data-modeling/manage-database-connections#create-database-connection" },
+    { text: "Multi-database Connection Management", href: "data-modeling/manage-database-connections#multi-database-connection-management" },
+    { text: "Database Connection Security Configuration", href: "data-modeling/manage-database-connections#database-connection-security-configuration" },
+    { text: "Connection Test and Troubleshooting", href: "data-modeling/manage-database-connections#connection-test-and-troubleshooting" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Supported Database Vendors"
+  href="data-modeling/supported-database-vendors"
+  description="Learn about various database types and connection configurations supported by JitAi."
+>
+  <LinkGrid links={[
+    { text: "Scenario Selection Suggestions", href: "data-modeling/supported-database-vendors#scenario-selection-suggestions" },
+    { text: "Cloud Vendor Compatibility", href: "data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
+    { text: "Database Element Usage", href: "data-modeling/supported-database-vendors#database-element-usage" }
+  ]} />
+</IndexCard>
 
 <IndexCard
   title="Data Table Model"
@@ -876,6 +955,36 @@ Design a powerful data foundation for your application. Create data tables, desi
     { text: "Use Built-in Data Management Function", href: "data-modeling/data-table-model#use-built-in-data-management-function" },
     { text: "Extend Model Function", href: "data-modeling/data-table-model#extend-model-function" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="Creating Tables from Existing Database Schema"
+  href="data-modeling/create-data-table-from-existing-tables"
+  description="Quickly create data table elements from existing database tables, supporting rapid model generation."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Built-in Data Management Tools"
+  href="data-modeling/built-in-data-management-tools"
+  description="Utilize built-in data management tools for efficient data operations and administration."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Creating Data Model Functions"
+  href="data-modeling/create-data-model-functions"
+  description="Design and implement custom data model functions to extend data processing capabilities."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
 </IndexCard>
 
 <IndexCard
@@ -893,6 +1002,7 @@ Design a powerful data foundation for your application. Create data tables, desi
     { text: "Filter Then Aggregate (Recommended)", href: "data-modeling/aggregate-table-model#aggregate-then-filter" }
   ]} />
 </IndexCard>
+
 <IndexCard
   title="Extended Table Model"
   href="data-modeling/extended-table-model"
@@ -914,6 +1024,16 @@ Design a powerful data foundation for your application. Create data tables, desi
 </IndexCard>
 
 <IndexCard
+  title="Using Data Models in Pages and Functions"
+  href="data-modeling/calling-data-models-in-pages-and-functions"
+  description="Learn how to effectively use data models in frontend pages and backend function logic for data operations."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
   title="Data Object Model"
   href="data-modeling/data-object-model"
   description="Data structure designed specifically for full-code development, similar to DTO, used for structured data expression and transmission in business logic."
@@ -928,28 +1048,13 @@ Design a powerful data foundation for your application. Create data tables, desi
 </IndexCard>
 
 <IndexCard
-  title="Supported Database Vendors"
-  href="data-modeling/supported-database-vendors"
-  description="Learn about various database types and connection configurations supported by JitAi."
+  title="Integrating Data Models with AI Agents"
+  href="data-modeling/calling-data-models-in-ai-agent"
+  description="Integrate data models with AI Agent systems to enable intelligent data processing and decision making."
 >
-  <LinkGrid links={[
-    { text: "Scenario Selection Suggestions", href: "data-modeling/supported-database-vendors#scenario-selection-suggestions" },
-    { text: "Cloud Vendor Compatibility", href: "data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
-    { text: "Database Element Usage", href: "data-modeling/supported-database-vendors#database-element-usage" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="Manage Database Connections"
-  href="data-modeling/manage-database-connections"
-  description="Configure and manage multiple database connections, supporting multi-data source application development."
->
-  <LinkGrid links={[
-    { text: "Create Database Connection", href: "data-modeling/manage-database-connections#create-database-connection" },
-    { text: "Multi-database Connection Management", href: "data-modeling/manage-database-connections#multi-database-connection-management" },
-    { text: "Database Connection Security Configuration", href: "data-modeling/manage-database-connections#database-connection-security-configuration" },
-    { text: "Connection Test and Troubleshooting", href: "data-modeling/manage-database-connections#connection-test-and-troubleshooting" }
-  ]} />
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
 </IndexCard>
 
 <IndexCard

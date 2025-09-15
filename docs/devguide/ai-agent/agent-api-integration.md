@@ -3,6 +3,6 @@ sidebar_position: 5
 slug: agent-api-integration
 ---
 
-# Agent API Integration
+# AI Agent API Exposure
 
 Coming soon...

@@ -277,8 +277,8 @@ JitAi已经内置了对移动端的适配，可以在移动端页面编辑器中
 移动端页面编辑器和PC端页面编辑器在功能上没有区别，配置/事件/函数/页面变量等操作和PC端页面编辑器完全一致。
 
 ## 在页面中集成ai-assistant 
-JitAi支持在页面中直接集成[ai-assistant](../../ai-assistant)，用户在访问页面时可以与ai-assistant进行交互。
+JitAi支持在页面中直接集成[ai-assistant](../../ai-assitant/create-ai-assistant)，用户在访问页面时可以与ai-assistant进行交互。
 
 ![在页面中添加ai-assistant](./imgs/add-ai-assistant-to-page.gif)
 
-开发者在页面编辑器顶部打开`ai-assistant`开关，在弹出的列表中选择一个[ai-assistant](../../ai-assistant)，即可在页面中集成ai-assistant。
+开发者在页面编辑器顶部打开`ai-assistant`开关，在弹出的列表中选择一个[ai-assistant](../../ai-assitant/create-ai-assistant)，即可在页面中集成ai-assistant。

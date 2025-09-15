@@ -3,7 +3,7 @@ sidebar_position: 1
 slug: create-ai-agent
 ---
 
-# 创建AI Agent
+# 创建AI Agent元素
 Agent(智能体代理)具备自主决策和任务执行能力，能够根据用户输入和上下文信息，自动选择合适的工具完成复杂的业务流程。
 
 JitAi的Agent实现与应用系统原生融合，高度集成。一个Agent的基本组成是系统提示词、工具（包括应用系统的模块函数）、大模型。在企业级场景中还需要对输入和输出参数及其格式进行设置、对接知识库实现检索增强生成（Retrieval-Augmented Generation, RAG）、将Agent作为应用模块在程序逻辑中进行调用。
@@ -233,7 +233,7 @@ Agent的运行通常需要一定时间，若用户等待过久会影响体验。
 ## 在页面助理中测试Agent {#test-agent-in-page-assistant} 
 在Agent开发过程中，需要频繁进行调试。开发者可以创建一个简单的AI助理，该助理内部编排为直接调用目标Agent，然后将助理集成到页面中即可。在AI助理的对话框中我们可以看到Agent的运行过程和输出结果。
 
-[如何在AI助理中调用Agent?](../ai-assistant#quick-start)
+[如何在AI助理中调用Agent?](../ai-assitant/create-ai-assistant#quick-start)
 
 [如何在页面中集成AI助理？](../shell-and-page/component-based-page-development#integrate-ai-assistant-in-pages)
 

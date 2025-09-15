@@ -1,9 +1,9 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 slug: supported-database-vendors
 ---
 
-# 支持的数据库厂商
+# Supported Database Vendors
 极态云内置多种关系型数据库适配，提供统一的连接管理与访问接口，支持在同一应用内对接多个数据库实例
 
 下列数据库均已在平台内置支持：

@@ -963,6 +963,30 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
+  title="管理数据库连接"
+  href="data-modeling/manage-database-connections"
+  description="配置和管理多个数据库连接，支持多数据源应用开发。"
+>
+  <LinkGrid links={[
+    { text: "创建数据库连接", href: "data-modeling/manage-database-connections#create-database-connection" },
+    { text: "多数据库连接管理", href: "data-modeling/manage-database-connections#multi-database-connection-management" },
+    { text: "数据库连接安全配置", href: "data-modeling/manage-database-connections#database-connection-security-configuration" },
+    { text: "连接测试与故障排查", href: "data-modeling/manage-database-connections#connection-test-and-troubleshooting" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="支持的数据库厂商"
+  href="data-modeling/supported-database-vendors"
+  description="了解JitAi支持的各种数据库类型和连接配置。"
+>
+  <LinkGrid links={[
+    { text: "场景选择建议", href: "data-modeling/supported-database-vendors#scenario-selection-suggestions" },
+    { text: "与云厂商的兼容性说明", href: "data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
+    { text: "数据库元素使用", href: "data-modeling/supported-database-vendors#database-element-usage" }
+  ]} />
+</IndexCard>
+<IndexCard
   title="数据表模型"
   href="data-modeling/data-table-model"
   description="应用数据的基础结构，学习如何创建和配置数据表，设计字段类型和约束。"
@@ -974,6 +998,36 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "使用内置数据管理功能", href: "data-modeling/data-table-model#use-built-in-data-management-function" },
     { text: "扩展模型功能", href: "data-modeling/data-table-model#extend-model-function" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="从已有数据库模式创建数据表"
+  href="data-modeling/create-data-table-from-existing-tables"
+  description="从现有数据库表快速创建数据表元素，支持快速模型生成。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="内置数据管理工具"
+  href="data-modeling/built-in-data-management-tools"
+  description="利用内置数据管理工具进行高效的数据操作和管理。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="创建数据模型函数"
+  href="data-modeling/create-data-model-functions"
+  description="设计和实现自定义数据模型函数，扩展数据处理能力。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
 </IndexCard>
 
 <IndexCard
@@ -991,6 +1045,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "先筛选后聚合（推荐）", href: "data-modeling/aggregate-table-model#aggregate-then-filter" }
   ]} />
 </IndexCard>
+
 <IndexCard
   title="扩展表模型"
   href="data-modeling/extended-table-model"
@@ -1007,14 +1062,24 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "修改字段别名", href: "data-modeling/extended-table-model#modify-field-alias" },
     { text: "函数设计", href: "data-modeling/extended-table-model#function-design" },
     { text: "新建函数", href: "data-modeling/extended-table-model#create-function" },
-    { text: "源码查看编辑", href: "data-modeling/extended-table-model#source-code-view-edit" }
+    { text: "源代码查看编辑", href: "data-modeling/extended-table-model#source-code-view-edit" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="在页面和函数中使用数据模型"
+  href="data-modeling/calling-data-models-in-pages-and-functions"
+  description="学习如何在前端页面和后端函数逻辑中有效使用数据模型进行数据操作。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
 </IndexCard>
 
 <IndexCard
   title="数据对象模型"
   href="data-modeling/data-object-model"
-  description="专为全代码开发设计的数据结构，类似DTO，用于业务逻辑中的数据结构化表达和传递。"
+  description="专为全代码开发模式设计的数据结构，类似于DTO，用于业务逻辑中的数据结构化表达与传递。"
 >
   <LinkGrid links={[
     { text: "数据对象模型创建", href: "data-modeling/data-object-model#data-object-model-creation" },
@@ -1026,29 +1091,15 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="支持的数据库厂商"
-  href="data-modeling/supported-database-vendors"
-  description="了解JitAi支持的各种数据库类型和连接配置。"
+  title="将数据模型集成到AI Agent"
+  href="data-modeling/calling-data-models-in-ai-agent"
+  description="将数据模型与AI Agent系统集成，实现智能数据处理和决策。"
 >
-  <LinkGrid links={[
-    { text: "场景选择建议", href: "data-modeling/supported-database-vendors#scenario-selection-suggestions" },
-    { text: "与云厂商的兼容性说明", href: "data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
-    { text: "数据库元素使用", href: "data-modeling/supported-database-vendors#database-element-usage" }
-  ]} />
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
 </IndexCard>
 
-<IndexCard
-  title="管理数据库连接"
-  href="data-modeling/manage-database-connections"
-  description="配置和管理多个数据库连接，支持多数据源应用开发。"
->
-  <LinkGrid links={[
-    { text: "创建数据库连接", href: "data-modeling/manage-database-connections#create-database-connection" },
-    { text: "多数据库连接管理", href: "data-modeling/manage-database-connections#multi-database-connection-management" },
-    { text: "数据库连接安全配置", href: "data-modeling/manage-database-connections#database-connection-security-configuration" },
-    { text: "连接测试与故障排查", href: "data-modeling/manage-database-connections#connection-test-and-troubleshooting" }
-  ]} />
-</IndexCard>
 
 <IndexCard
   title="事务管理"
@@ -1057,7 +1108,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid links={[
     { text: "默认事务管理机制", href: "data-modeling/transaction-management#default-transaction-management-mechanism" },
-    { text: "手动控制事务提交/回滚", href: "data-modeling/transaction-management#manual-transaction-commit-rollback" },
+    { text: "手动事务提交/回滚", href: "data-modeling/transaction-management#manual-transaction-commit-rollback" },
     { text: "事务装饰器", href: "data-modeling/transaction-management#transaction-decorator" }
   ]} />
 </IndexCard>

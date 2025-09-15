@@ -300,6 +300,117 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
+## 在门户和页面中集成AI元素
+通过智能AI元素提升用户体验。将AI助理、智能体和其他AI组件集成到门户和页面中，创建智能、交互式的应用程序，提供个性化帮助和自动化工作流程。
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard
+  title="在门户中集成AI助理"
+  href="ai-integration-in-portals-and-pages/integrating-ai-assistants-in-portals"
+  description="学习如何将AI助理集成到门户界面中，为用户在整个工作流程中提供智能帮助和指导。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="在组件化页面中集成AI助理"
+  href="ai-integration-in-portals-and-pages/integrating-ai-assistants-in-component-pages"
+  description="将AI助理嵌入到基于组件的页面中，增强用户交互并为特定任务提供上下文帮助。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="在页面中调用AI元素"
+  href="ai-integration-in-portals-and-pages/calling-ai-elements-in-pages"
+  description="掌握从页面调用AI元素的技巧，包括AI智能体、LLM服务和知识库，用于动态内容生成。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+</div>
+
+## 在页面中调用业务元素
+将页面连接到强大的业务逻辑和数据操作。学习如何从页面调用服务函数和数据模型函数，创建动态的、数据驱动的用户界面，具备实时业务处理能力。
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard
+  title="在页面中调用服务函数"
+  href="calling-business-elements-in-pages/calling-service-functions-in-pages"
+  description="学习如何从页面调用服务函数来执行业务逻辑、处理数据并与外部系统集成，实现动态内容生成。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="在页面中调用数据模型函数"
+  href="calling-business-elements-in-pages/calling-data-model-functions-in-pages"
+  description="掌握从页面调用数据模型函数的技巧，执行CRUD操作、数据查询和数据库交互，实现实时数据显示。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+</div>
+
+## 页面中的全代码自定义UI组件
+创建具有完全编程控制的高级自定义UI组件。构建复杂的交互元素，与页面逻辑无缝集成，处理复杂事件，提供超越标准组件的丰富用户体验。
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard
+  title="UI组件的接口规范"
+  href="fullcode-ui-components-in-pages/ui-component-interface-specifications"
+  description="学习创建全代码UI组件的接口规范和标准，包括属性、状态管理和生命周期方法。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="在全代码组件中调用页面的函数及其它组件的函数"
+  href="fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components"
+  description="掌握在全代码组件内调用页面函数和其他组件函数的技巧，实现无缝集成。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="发出事件"
+  href="fullcode-ui-components-in-pages/emitting-events"
+  description="学习如何从全代码组件发出自定义事件，与父页面和其他组件进行有效通信。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="在页面代码中调用全代码组件的函数"
+  href="fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code"
+  description="了解如何从页面代码调用全代码组件暴露的函数，控制组件行为和数据流。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+</div>
+
 ## 在页面中使用功能组件
 丰富的组件库是你的超级工具箱。拖拽一个表格展示数据，添加表单收集信息，插入图表让数据可视化。让复杂的前端开发变得简单直观。
 
@@ -698,22 +809,6 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-## 向量数据库
-企业知识的智能存储引擎。将文本转化为向量数据，实现语义级精准搜索，为智能问答和知识检索系统提供基础支撑。
-
-<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
-
-<IndexCard>
-  <LinkGrid links={[
-    { text: "Chroma向量数据库", href: "knowledge-base/vector-database-standalone-deployment#chroma-vector-database" },
-    { text: "本地向量数据库配置", href: "knowledge-base/vector-database-standalone-deployment#local-vector-database-config" },
-    { text: "远程向量数据库连接", href: "knowledge-base/vector-database-standalone-deployment#remote-vector-database-connection" },
-    { text: "向量数据库编程接口", href: "knowledge-base/vector-database-standalone-deployment#vector-database-programming-interface" }
-  ]} />
-</IndexCard>
-
-</div>
-
 ## AI知识库
 将企业文档、手册、FAQ转化为智能知识库。支持文档自动处理、智能分段、语义检索，让AI基于企业知识精准回答问题。
 
@@ -775,6 +870,19 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "addDocumentByBusinessId", href: "knowledge-base/ai-knowledge-base-api#adddocumentbybusinessid" },
     { text: "deleteDocumentByBusinessId", href: "knowledge-base/ai-knowledge-base-api#deletedocumentbybusinessid" },
     { text: "queryKeywords", href: "knowledge-base/ai-knowledge-base-api#querykeywords" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="向量数据库独立部署"
+  href="knowledge-base/vector-database-standalone-deployment"
+  description="企业知识的智能存储引擎。将文本转化为向量数据，实现语义级精准搜索。"
+>
+  <LinkGrid links={[
+    { text: "Chroma向量数据库", href: "knowledge-base/vector-database-standalone-deployment#chroma-vector-database" },
+    { text: "本地向量数据库配置", href: "knowledge-base/vector-database-standalone-deployment#local-vector-database-config" },
+    { text: "远程向量数据库连接", href: "knowledge-base/vector-database-standalone-deployment#remote-vector-database-connection" },
+    { text: "向量数据库编程接口", href: "knowledge-base/vector-database-standalone-deployment#vector-database-programming-interface" }
   ]} />
 </IndexCard>
 
@@ -1101,15 +1209,18 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 
-<IndexCard
-  title="事务管理"
-  href="data-modeling/transaction-management"
-  description="数据库事务控制和一致性管理，确保数据操作的可靠性。"
->
+</div>
+
+## 事务管理
+确保复杂业务操作中的数据一致性和可靠性。掌握数据库事务控制机制，实现原子操作，有效处理并发访问场景。
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard>
   <LinkGrid links={[
-    { text: "默认事务管理机制", href: "data-modeling/transaction-management#default-transaction-management-mechanism" },
-    { text: "手动事务提交/回滚", href: "data-modeling/transaction-management#manual-transaction-commit-rollback" },
-    { text: "事务装饰器", href: "data-modeling/transaction-management#transaction-decorator" }
+    { text: "默认事务管理机制", href: "transaction-management#default-transaction-management-mechanism" },
+    { text: "手动事务提交/回滚", href: "transaction-management#manual-transaction-commit-rollback" },
+    { text: "事务装饰器", href: "transaction-management#transaction-decorator" }
   ]} />
 </IndexCard>
 
@@ -1167,27 +1278,47 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="角色权限"
-  href="user-and-permission/role-permissions"
+  title="Role and Portal Menu Permissions"
+  href="user-and-permission/role-portal-menu-permissions"
   description="应用角色定义和权限分配，实现细粒度的访问控制。"
 >
   <LinkGrid columns={2} links={[
-    { text: "内置的3种应用角色", href: "user-and-permission/role-permissions#built-in-three-application-roles" },
-    { text: "匿名用户", href: "user-and-permission/role-permissions#anonymous-user" },
-    { text: "开发者", href: "user-and-permission/role-permissions#developer" },
-    { text: "管理员", href: "user-and-permission/role-permissions#administrator" },
-    { text: "创建应用角色", href: "user-and-permission/role-permissions#create-application-role" },
-    { text: "应用角色的权限配置", href: "user-and-permission/role-permissions#application-role-permission-configuration" },
-    { text: "指定可访问的门户及菜单", href: "user-and-permission/role-permissions#specify-accessible-portals-and-menus" },
-    { text: "在开发者门户中管理应用角色成员", href: "user-and-permission/role-permissions#manage-application-role-members-in-developer-portal" },
-    { text: "门户级的数据操作类型和操作范围控制", href: "user-and-permission/role-permissions#portal-level-data-operation-type-and-scope-control" },
-    { text: "组件的按钮权限控制", href: "user-and-permission/role-permissions#component-button-permission-control" },
-    { text: "组件的数据字段读/写/统计权限控制", href: "user-and-permission/role-permissions#component-data-field-access-control" },
-    { text: "多应用角色的分级管理", href: "user-and-permission/role-permissions#hierarchical-management-of-multiple-application-roles" },
-    { text: "应用角色成员的管理", href: "user-and-permission/role-permissions#application-role-member-management" },
-    { text: "成员的添加/删除", href: "user-and-permission/role-permissions#member-addition-and-removal" },
-    { text: "成员在组织架构中的管理范围设置", href: "user-and-permission/role-permissions#member-management-scope-settings-in-org-structure" }
+    { text: "内置的3种应用角色", href: "user-and-permission/role-portal-menu-permissions#built-in-three-application-roles" },
+    { text: "匿名用户", href: "user-and-permission/role-portal-menu-permissions#anonymous-user" },
+    { text: "开发者", href: "user-and-permission/role-portal-menu-permissions#developer" },
+    { text: "管理员", href: "user-and-permission/role-portal-menu-permissions#administrator" },
+    { text: "创建应用角色", href: "user-and-permission/role-portal-menu-permissions#create-application-role" },
+    { text: "应用角色的权限配置", href: "user-and-permission/role-portal-menu-permissions#application-role-permission-configuration" },
+    { text: "指定可访问的门户及菜单", href: "user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus" },
+    { text: "在开发者门户中管理应用角色成员", href: "user-and-permission/role-portal-menu-permissions#manage-application-role-members-in-developer-portal" },
+    { text: "门户级的数据操作类型和操作范围控制", href: "user-and-permission/role-portal-menu-permissions#portal-level-data-operation-type-and-scope-control" },
+    { text: "组件的按钮权限控制", href: "user-and-permission/role-portal-menu-permissions#component-button-permission-control" },
+    { text: "组件的数据字段读/写/统计权限控制", href: "user-and-permission/role-portal-menu-permissions#component-data-field-access-control" },
+    { text: "多应用角色的分级管理", href: "user-and-permission/role-portal-menu-permissions#hierarchical-management-of-multiple-application-roles" },
+    { text: "应用角色成员的管理", href: "user-and-permission/role-portal-menu-permissions#application-role-member-management" },
+    { text: "成员的添加/删除", href: "user-and-permission/role-portal-menu-permissions#member-addition-and-removal" },
+    { text: "成员在组织架构中的管理范围设置", href: "user-and-permission/role-portal-menu-permissions#member-management-scope-settings-in-org-structure" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="Roles and Business Element Permissions"
+  href="user-and-permission/roles-and-business-element-permissions"
+  description="业务元素的高级基于角色的权限控制，包括数据模型和功能组件的权限管理。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Agent Tool Permission Control"
+  href="user-and-permission/agent-tool-permission-control"
+  description="配置和管理AI Agent工具的权限控制，确保代理操作的安全性和可控性。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
 </IndexCard>
 
 </div>
@@ -1198,20 +1329,56 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="封装业务服务函数"
-  href="business-logic-development/encapsulating-business-service-functions"
+  title="Creating Service Elements"
+  href="business-logic-development/creating-service-elements"
   description="后端业务逻辑实现，通过服务元素封装可复用的业务函数，提供API接口和数据处理服务。"
 >
   <LinkGrid columns={2} links={[
-    { text: "创建服务元素", href: "business-logic-development/encapsulating-business-service-functions#create-service-elements" },
-    { text: "创建服务函数", href: "business-logic-development/encapsulating-business-service-functions#create-service-functions" },
-    { text: "源码模式编辑服务函数", href: "business-logic-development/encapsulating-business-service-functions#edit-service-functions-source-code-mode" },
-    { text: "添加新的依赖库", href: "business-logic-development/encapsulating-business-service-functions#add-new-dependency-library" },
-    { text: "服务函数在哪里使用", href: "business-logic-development/encapsulating-business-service-functions#where-service-functions-are-used" },
-    { text: "让AI更准确地理解服务函数", href: "business-logic-development/encapsulating-business-service-functions#help-ai-understand-service-functions" },
-    { text: "使用跨App服务元素调用授权接口", href: "business-logic-development/encapsulating-business-service-functions#use-cross-app-service-elements-to-call-authorized-interfaces" },
-    { text: "创建跨App服务元素", href: "business-logic-development/encapsulating-business-service-functions#create-cross-app-service-elements" },
-    { text: "在函数逻辑中使用跨App服务元素", href: "business-logic-development/encapsulating-business-service-functions#use-cross-app-service-elements-in-functions" }
+    { text: "创建服务元素", href: "business-logic-development/creating-service-elements#create-service-elements" },
+    { text: "创建服务函数", href: "business-logic-development/creating-service-elements#create-service-functions" },
+    { text: "源码模式编辑服务函数", href: "business-logic-development/creating-service-elements#edit-service-functions-source-code-mode" },
+    { text: "添加新的依赖库", href: "business-logic-development/creating-service-elements#add-new-dependency-library" },
+    { text: "服务函数在哪里使用", href: "business-logic-development/creating-service-elements#where-service-functions-are-used" },
+    { text: "让AI更准确地理解服务函数", href: "business-logic-development/creating-service-elements#help-ai-understand-service-functions" },
+    { text: "使用跨App服务元素调用授权接口", href: "business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-interfaces" },
+    { text: "创建跨App服务元素", href: "business-logic-development/creating-service-elements#create-cross-app-service-elements" },
+    { text: "在函数逻辑中使用跨App服务元素", href: "business-logic-development/creating-service-elements#use-cross-app-service-elements-in-functions" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Calling Other Elements in Service Functions"
+  href="business-logic-development/calling-other-elements-in-service-functions"
+  description="学习如何在服务函数中调用其他元素，包括模型、其他服务、外部API和系统组件，实现全面的业务逻辑实现。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Service Elements Usage Scenarios"
+  href="business-logic-development/service-elements-usage-scenarios"
+  description="探索服务元素在不同业务场景和应用架构中的实际使用场景和最佳实践。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="后台任务"
+  href="business-logic-development/background-tasks"
+  description="定时任务和异步处理，支持复杂的后台业务流程。"
+>
+  <LinkGrid columns={2} links={[
+    { text: "任务创建", href: "business-logic-development/background-tasks#task-creation" },
+    { text: "定时任务", href: "business-logic-development/background-tasks#scheduled-tasks" },
+    { text: "日期字段任务", href: "business-logic-development/background-tasks#date-field-tasks" },
+    { text: "通用配置项", href: "business-logic-development/background-tasks#general-configuration-items" },
+    { text: "任务执行函数开发", href: "business-logic-development/background-tasks#task-execution-function-development" },
+    { text: "执行记录查看", href: "business-logic-development/background-tasks#execution-record-view" },
+    { text: "源码模式", href: "business-logic-development/background-tasks#source-code-mode" }
   ]} />
 </IndexCard>
 
@@ -1232,22 +1399,6 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "事件同步/异步执行", href: "business-logic-development/event-handling#event-sync-async-execution" },
     { text: "事件执行记录", href: "business-logic-development/event-handling#event-execution-records" },
     { text: "全代码查看/编辑", href: "business-logic-development/event-handling#full-code-view-edit" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="后台任务"
-  href="business-logic-development/background-tasks"
-  description="定时任务和异步处理，支持复杂的后台业务流程。"
->
-  <LinkGrid columns={2} links={[
-    { text: "任务创建", href: "business-logic-development/background-tasks#task-creation" },
-    { text: "定时任务", href: "business-logic-development/background-tasks#scheduled-tasks" },
-    { text: "日期字段任务", href: "business-logic-development/background-tasks#date-field-tasks" },
-    { text: "通用配置项", href: "business-logic-development/background-tasks#general-configuration-items" },
-    { text: "任务执行函数开发", href: "business-logic-development/background-tasks#task-execution-function-development" },
-    { text: "执行记录查看", href: "business-logic-development/background-tasks#execution-record-view" },
-    { text: "源码模式", href: "business-logic-development/background-tasks#source-code-mode" }
   ]} />
 </IndexCard>
 
@@ -1371,6 +1522,26 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   ]} />
 </IndexCard>
 
+<IndexCard
+  title="Calling Business Logic Elements in Approval Process"
+  href="approval-process/calling-business-logic-elements-in-approval-process"
+  description="学习如何在审批流程中调用业务逻辑元素，实现复杂业务规则和自动化决策。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Integrating AI in Approval Process"
+  href="approval-process/integrating-ai-in-approval-process"
+  description="将人工智能能力集成到审批流程中，实现智能路由、自动审查和智能决策。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
+</IndexCard>
+
 </div>
 
 ## 文件处理
@@ -1422,15 +1593,25 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   ]} />
 </IndexCard>
 
+<IndexCard
+  title="用文件模板生成和打印文件"
+  href="file-processing/generating-and-printing-files-using-file-templates"
+  description="学习如何使用文件模板程序化生成和打印文档，包括动态内容填充和输出格式化。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
 </div>
 
-## 第三方集成
+## 外部API集成
 让你的应用连接更广阔的世界。轻松接入第三方API，集成微信支付、支付宝支付，配置短信通知服务。扩展应用能力边界，满足更多业务场景。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="外部API"
+  title="创建通用的外部API元素"
   href="third-party-integration/external-api"
   description="第三方API服务集成，扩展应用功能和数据来源。"
 >
@@ -1449,7 +1630,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="支付服务"
+  title="内置的支付服务"
   href="third-party-integration/payment-service"
   description="集成主流支付平台，实现在线支付和交易功能。"
 >
@@ -1461,7 +1642,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="短信服务"
+  title="内置的短信服务"
   href="third-party-integration/sms-service"
   description="短信发送和通知服务集成，支持验证码和消息推送。"
 >
@@ -1474,7 +1655,35 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   ]} />
 </IndexCard>
 
-</div>
+<IndexCard
+  title="各类元素的API暴露示例"
+  href="api-exposure/api-exposure-examples-for-various-elements"
+  description="全面展示如何将不同类型的元素暴露为API的示例，包括数据模型、服务和自定义函数。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Using SDK to Call Authorized Element APIs"
+  href="api-exposure/using-sdk-to-call-authorized-element-apis"
+  description="学习如何使用官方SDK调用被授权的元素API，包括身份验证、请求处理和错误管理。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Using Cross-App Service Elements to Call Authorized APIs"
+  href="api-exposure/using-cross-app-service-elements-to-call-authorized-apis"
+  description="使用服务元素实现跨应用API调用，实现不同JitAi应用之间的无缝集成。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
+</IndexCard>
 
 ## 缓存管理
 让应用跑得更快更稳定。配置智能缓存策略，优化数据访问速度，提升用户体验。确保应用在高并发访问时依然流畅运行。
@@ -1483,67 +1692,137 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="缓存配置与使用"
-  href="cache-management/cache-configuration-and-usage"
+  href="cache-management"
   description="应用缓存策略配置，提升系统性能和响应速度。"
 >
   <LinkGrid links={[
-    { text: "缓存服务配置", href: "cache-management/cache-configuration-and-usage#cache-service-configuration" },
-    { text: "多缓存服务管理", href: "cache-management/cache-configuration-and-usage#multi-cache-service-management" },
-    { text: "缓存编程接口使用", href: "cache-management/cache-configuration-and-usage#cache-programming-interface-usage" }
+    { text: "缓存服务配置", href: "cache-management#cache-service-configuration" },
+    { text: "多缓存服务管理", href: "cache-management#multi-cache-service-management" },
+    { text: "缓存编程接口使用", href: "cache-management#cache-programming-interface-usage" }
   ]} />
 </IndexCard>
 
 </div>
 
-## API开放
-将应用能力开放给外部系统调用。一键生成标准API接口，管理调用权限，监控使用情况。让你的应用成为数据和服务的提供者。
+## 内部API开放
+将应用能力暴露给外部系统调用。一键生成标准API接口，管理调用权限，监控使用情况。让你的应用成为数据和服务的提供者。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
   title="API授权"
-  href="api-open/api-authorization"
+  href="api-exposure/api-authorization"
   description="API接口的权限控制和访问授权管理。"
 >
   <LinkGrid links={[
-    { text: "API授权的创建", href: "api-open/api-authorization#api-authorization-creation" },
-    { text: "API访问权限控制", href: "api-open/api-authorization#api-access-permission-control" },
-    { text: "API调用监控", href: "api-open/api-authorization#api-call-monitoring" },
-    { text: "使用SDK调用授权的接口", href: "api-open/api-authorization#use-sdk-to-call-authorized-interfaces" },
-    { text: "使用跨App服务元素调用授权接口", href: "api-open/api-authorization#use-cross-app-service-elements-to-call-authorized-interfaces" }
+    { text: "API授权的创建", href: "api-exposure/api-authorization#api-authorization-creation" },
+    { text: "API访问权限控制", href: "api-exposure/api-authorization#api-access-permission-control" },
+    { text: "API调用监控", href: "api-exposure/api-authorization#api-call-monitoring" },
+    { text: "使用SDK调用授权的接口", href: "api-exposure/api-authorization#use-sdk-to-call-authorized-interfaces" },
+    { text: "使用跨App服务元素调用授权接口", href: "api-exposure/api-authorization#use-cross-app-service-elements-to-call-authorized-interfaces" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="组件定制"
+  href="frontend-ui-customization/component-customization"
+  description="定制单个组件以满足特定设计要求，增强应用程序中用户界面的一致性。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="页面定制"
+  href="frontend-ui-customization/page-customization"
+  description="定制整个页面布局、主题和视觉元素，创建连贯的品牌化用户体验。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="门户定制"
+  href="frontend-ui-customization/portal-customization"
+  description="定制门户界面和导航元素，提供个性化和基于角色的用户体验。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
 </IndexCard>
 
 </div>
 
-## 样式与控件定制
+## 国际化
+让你的应用面向全球用户。支持多语言、区域设置和动态语言切换，打造真正的国际化应用程序。
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard
+  title="创建语言包"
+  href="internationalization/creating-language-packages"
+  description="学习如何为应用程序创建自定义语言包，包括结构定义和内容组织。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="扩展系统内置的语言包"
+  href="internationalization/extending-system-builtin-language-packages"
+  description="扩展和自定义现有系统语言包，以满足特定业务需求和区域需要。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="如何翻译页面中的词条"
+  href="internationalization/how-to-translate-page-terms"
+  description="掌握页面内容翻译技巧，包括动态文本替换和上下文感知翻译。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+</div>
+
+</div>
+
+## 前端UI定制
 打造独特的视觉体验和品牌形象。自定义应用主题色彩，开发专属UI组件，让应用界面更符合企业品牌调性，提升用户体验和辨识度。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
   title="全局样式"
-  href="style-and-control-customization/global-styles"
+  href="frontend-ui-customization/global-styles"
   description="应用整体样式和主题配置，统一界面风格和用户体验。"
 >
   <LinkGrid links={[
-    { text: "创建全局样式元素", href: "style-and-control-customization/global-styles#create-global-style-element" },
-    { text: "修改全局样式", href: "style-and-control-customization/global-styles#modify-global-style" },
-    { text: "更多样式变量", href: "style-and-control-customization/global-styles#more-style-variables" },
-    { text: "调试主题", href: "style-and-control-customization/global-styles#debug-theme" }
+    { text: "创建全局样式元素", href: "frontend-ui-customization/global-styles#create-global-style-element" },
+    { text: "修改全局样式", href: "frontend-ui-customization/global-styles#modify-global-style" },
+    { text: "更多样式变量", href: "frontend-ui-customization/global-styles#more-style-variables" },
+    { text: "调试主题", href: "frontend-ui-customization/global-styles#debug-theme" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="自定义控件"
+  href="frontend-ui-customization/custom-controls"
   description="开发个性化UI组件，满足特殊业务需求和交互要求。"
 >
   <LinkGrid links={[
-    { text: "创建自定义控件", href: "style-and-control-customization/custom-controls#create-custom-control-element" },
-    { text: "修改自定义控件", href: "style-and-control-customization/custom-controls#modify-custom-control" },
-    { text: "表单中使用自定义控件", href: "style-and-control-customization/custom-controls#use-custom-control-in-form" },
-    { text: "表格中使用自定义控件", href: "style-and-control-customization/custom-controls#use-custom-control-in-table" },
-    { text: "自定义控件参数", href: "style-and-control-customization/custom-controls#custom-control-parameters" }
+    { text: "创建自定义控件", href: "frontend-ui-customization/custom-controls#create-custom-control-element" },
+    { text: "修改自定义控件", href: "frontend-ui-customization/custom-controls#modify-custom-control" },
+    { text: "表单中使用自定义控件", href: "frontend-ui-customization/custom-controls#use-custom-control-in-form" },
+    { text: "表格中使用自定义控件", href: "frontend-ui-customization/custom-controls#use-custom-control-in-table" },
+    { text: "自定义控件参数", href: "frontend-ui-customization/custom-controls#custom-control-parameters" }
   ]} />
 </IndexCard>
 

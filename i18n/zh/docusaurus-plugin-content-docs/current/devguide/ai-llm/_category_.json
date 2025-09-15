@@ -1,6 +1,6 @@
 {
   "label": "AI大模型",
-  "position": 4.1,
+  "position": 8,
   "link": {
     "type": "generated-index",
     "slug": "ai-llm",

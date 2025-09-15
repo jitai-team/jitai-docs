@@ -66,5 +66,5 @@ In addition to creating in the developer portal, you can also quickly create in 
 This operation will create a new ai-data-analysis-page and simultaneously create a menu in the portal and bind it to the newly added page.
 
 :::tip Tip
-You need to be granted [quick create permissions](../../user-and-permission/role-permissions#specify-accessible-portals-and-menus) to see the quick create entry.
+You need to be granted [quick create permissions](../../user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus) to see the quick create entry.
 :::

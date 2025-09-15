@@ -66,5 +66,5 @@ AI生成的图表，用户还可以做以下调整：
 该操作会新建一个AI数据分析页面，同时在门户中创建一个菜单并绑定新增的页面。
 
 :::tip 提示
-需要被授予[快捷创建权限](../../user-and-permission/role-permissions#specify-accessible-portals-and-menus)，才能看到快捷创建的入口。
+需要被授予[快捷创建权限](../../user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus)，才能看到快捷创建的入口。
 :::

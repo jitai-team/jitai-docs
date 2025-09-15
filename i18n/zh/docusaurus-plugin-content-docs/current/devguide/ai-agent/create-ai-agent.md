@@ -204,7 +204,7 @@ Agent的每一次工具调用都可以产生两个后端事件：调用前事件
 
 ![设置工具函数执行权限](./img/agent/set-tool-function-execution-permissions.gif)
 
-开发者在工具函数右侧可以看到`设置权限`按钮，点击后在弹窗中选择[应用角色](../user-and-permission/role-permissions)即可，支持选择多个应用角色。
+开发者在工具函数右侧可以看到`设置权限`按钮，点击后在弹窗中选择[应用角色](../user-and-permission/role-portal-menu-permissions)即可，支持选择多个应用角色。
 
 没有配置任何角色时，所有使用Agent的用户都能正常调用该工具函数。当配置了角色后，只有拥有这些角色的用户才能调用该工具函数。
 

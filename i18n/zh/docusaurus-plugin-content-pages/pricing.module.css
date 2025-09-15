@@ -4,6 +4,13 @@
 
 /* 价格页面样式文件 - 参考首页设计风格 */
 
+body {
+
+  /* nav:has(+ div) {
+    display: none;
+  } */
+}
+
 /* 页面容器 */
 .container {
   min-height: 100vh;

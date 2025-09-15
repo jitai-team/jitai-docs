@@ -104,6 +104,12 @@ body {
     font-weight: 700;
     color: var(--section-color);
   }
+
+  
+  nav:has(+ div) {
+    display: none;
+  }
+  
 }
 
 .container {

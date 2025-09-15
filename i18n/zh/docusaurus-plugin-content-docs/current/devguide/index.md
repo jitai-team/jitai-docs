@@ -705,10 +705,10 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard>
   <LinkGrid links={[
-    { text: "Chroma向量数据库", href: "vector-database#chroma-vector-database" },
-    { text: "本地向量数据库配置", href: "vector-database#local-vector-database-config" },
-    { text: "远程向量数据库连接", href: "vector-database#remote-vector-database-connection" },
-    { text: "向量数据库编程接口", href: "vector-database#vector-database-programming-interface" }
+    { text: "Chroma向量数据库", href: "knowledge-base/vector-database-standalone-deployment#chroma-vector-database" },
+    { text: "本地向量数据库配置", href: "knowledge-base/vector-database-standalone-deployment#local-vector-database-config" },
+    { text: "远程向量数据库连接", href: "knowledge-base/vector-database-standalone-deployment#remote-vector-database-connection" },
+    { text: "向量数据库编程接口", href: "knowledge-base/vector-database-standalone-deployment#vector-database-programming-interface" }
   ]} />
 </IndexCard>
 
@@ -719,18 +719,62 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
-<IndexCard>
+<IndexCard
+  title="创建AI知识库元素"
+  href="knowledge-base/create-knowledge-elements"
+  description="学习如何创建AI知识库元素，并了解其工作原理。"
+>
+  <LinkGrid links={[
+    { text: "创建AI知识库元素", href: "knowledge-base/create-knowledge-elements#create-ai-knowledge-base-element" },
+    { text: "原理说明", href: "knowledge-base/create-knowledge-elements#principle-description" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="文档管理与设置"
+  href="knowledge-base/knowledge-base-document-management"
+  description="管理知识库文档，配置知识库参数，进行查询测试与向量化调优。"
+>
   <LinkGrid columns={2} links={[
-    { text: "创建AI知识库元素", href: "ai-knowledge-base#create-ai-knowledge-base-element" },
-    { text: "AI知识库的管理", href: "ai-knowledge-base#ai-knowledge-base-management" },
-    { text: "文档管理", href: "ai-knowledge-base#document-management" },
-    { text: "AI知识库设置", href: "ai-knowledge-base#ai-knowledge-base-settings" },
-    { text: "查询测试", href: "ai-knowledge-base#query-testing" },
-    { text: "在后端可视化编程中调用AI知识库", href: "ai-knowledge-base#call-ai-knowledge-base-in-backend-visual-programming" },
-    { text: "在AIAgent中使用AI知识库", href: "ai-knowledge-base#use-ai-knowledge-base-in-ai-agent" },
-    { text: "AI知识库编程接口", href: "ai-knowledge-base#ai-knowledge-base-programming-interface" },
-    { text: "原理及参数说明", href: "ai-knowledge-base#vectorization-configuration-description" },
-    { text: "向量化配置说明", href: "ai-knowledge-base#ai-knowledge-base-settings" }
+    { text: "文档管理", href: "knowledge-base/knowledge-base-document-management" },
+    { text: "知识库设置", href: "knowledge-base/knowledge-base-document-management#ai-knowledge-base-settings" },
+    { text: "查询测试", href: "knowledge-base/knowledge-base-document-management#query-testing" },
+    { text: "向量化配置说明", href: "knowledge-base/knowledge-base-document-management#vectorization-configuration-description" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="全文与语义检索"
+  href="knowledge-base/full-text-and-semantic-search"
+  description="理解配置项如何参与查询流程，并在后端可视化编程中调用知识库。"
+>
+  <LinkGrid links={[
+    { text: "知识库设置如何参与查询流程", href: "knowledge-base/full-text-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow" },
+    { text: "在后端可视化编程中调用", href: "knowledge-base/full-text-and-semantic-search#call-ai-knowledge-base-in-backend-visual-programming" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="在AIAgent中使用知识库"
+  href="knowledge-base/integrate-knowledge-base-into-agent"
+  description="在Agent中集成知识库实现RAG。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 文档正在完善中，敬请期待...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="AI知识库API"
+  href="knowledge-base/ai-knowledge-base-api"
+  description="以编程方式访问AI知识库。"
+>
+  <LinkGrid links={[
+    { text: "编程接口概览", href: "knowledge-base/ai-knowledge-base-api#ai-knowledge-base-programming-interface" },
+    { text: "query", href: "knowledge-base/ai-knowledge-base-api#query-testing" },
+    { text: "addDocumentByBusinessId", href: "knowledge-base/ai-knowledge-base-api#adddocumentbybusinessid" },
+    { text: "deleteDocumentByBusinessId", href: "knowledge-base/ai-knowledge-base-api#deletedocumentbybusinessid" },
+    { text: "queryKeywords", href: "knowledge-base/ai-knowledge-base-api#querykeywords" }
   ]} />
 </IndexCard>
 

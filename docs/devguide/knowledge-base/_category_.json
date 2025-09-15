@@ -1,0 +1,10 @@
+{
+  "label": "Knowledge Base",
+  "position": 4.6,
+  "link": {
+    "type": "generated-index",
+    "slug": "knowledge-base",
+    "description": "Knowledge base elements, document management, search, agent integration, vector DB deployment, and APIs."
+  }
+}
+

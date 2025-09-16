@@ -879,9 +879,9 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="企业知识的智能存储引擎。将文本转化为向量数据，实现语义级精准搜索。"
 >
   <LinkGrid links={[
-    { text: "Chroma向量数据库", href: "knowledge-base/vector-database-standalone-deployment#chroma-vector-database" },
-    { text: "本地向量数据库配置", href: "knowledge-base/vector-database-standalone-deployment#local-vector-database-config" },
-    { text: "远程向量数据库连接", href: "knowledge-base/vector-database-standalone-deployment#remote-vector-database-connection" },
+    { text: "Chroma向量数据库", href: "knowledge-base/vector-database-standalone-deployment#chroma-standalone-deployment" },
+    { text: "本地向量数据库配置", href: "knowledge-base/vector-database-standalone-deployment#local-development-config" },
+    { text: "远程向量数据库连接", href: "knowledge-base/vector-database-standalone-deployment#connect-to-standalone-chroma" },
     { text: "向量数据库编程接口", href: "knowledge-base/vector-database-standalone-deployment#vector-database-programming-interface" }
   ]} />
 </IndexCard>

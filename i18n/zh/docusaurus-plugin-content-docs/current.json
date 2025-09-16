@@ -27,13 +27,13 @@
     "message": "JitAi可视化开发工具、运维管理工具以及云端应用发布服务。",
     "description": "The generated-index page description for category Development Tools and Publishing Services in sidebar devguideSidebar"
   },
-  "sidebar.devguideSidebar.category.App Creation and Publishing": {
-    "message": "应用创建与发布",
-    "description": "The label for category App Creation and Publishing in sidebar devguideSidebar"
+  "sidebar.devguideSidebar.category.Create and Publish App": {
+    "message": "创建和发布应用",
+    "description": "The label for category Create and Publish App in sidebar devguideSidebar"
   },
-  "sidebar.devguideSidebar.category.App Creation and Publishing.link.generated-index.description": {
+  "sidebar.devguideSidebar.category.Create and Publish App.link.generated-index.description": {
     "message": "学习如何创建、部署、发布和管理JitAi应用，包括运行时环境配置和分布式集群架构。",
-    "description": "The generated-index page description for category App Creation and Publishing in sidebar devguideSidebar"
+    "description": "The generated-index page description for category Create and Publish App in sidebar devguideSidebar"
   },
   "sidebar.devguideSidebar.category.Use Components in Pages": {
     "message": "在页面中使用功能组件",
@@ -75,53 +75,13 @@
     "message": "学习如何开发业务逻辑，包括服务函数、事件处理和定时任务等。",
     "description": "The generated-index page description for category Business Logic Development in sidebar devguideSidebar"
   },
-  "sidebar.devguideSidebar.category.Approval Process": {
+  "sidebar.devguideSidebar.category.Approval Workflow": {
     "message": "审批流程",
-    "description": "The label for category Approval Process in sidebar devguideSidebar"
+    "description": "The label for category Approval Workflow in sidebar devguideSidebar"
   },
-  "sidebar.devguideSidebar.category.Approval Process.link.generated-index.description": {
+  "sidebar.devguideSidebar.category.Approval Workflow.link.generated-index.description": {
     "message": "学习如何设计和配置审批工作流，包括节点配置、权限控制和页面定制。",
-    "description": "The generated-index page description for category Approval Process in sidebar devguideSidebar"
-  },
-  "sidebar.devguideSidebar.category.File Processing": {
-    "message": "文件处理",
-    "description": "The label for category File Processing in sidebar devguideSidebar"
-  },
-  "sidebar.devguideSidebar.category.File Processing.link.generated-index.description": {
-    "message": "学习如何处理文件存储和文件模板功能。",
-    "description": "The generated-index page description for category File Processing in sidebar devguideSidebar"
-  },
-  "sidebar.devguideSidebar.category.Third-Party Integration": {
-    "message": "第三方集成",
-    "description": "The label for category Third-Party Integration in sidebar devguideSidebar"
-  },
-  "sidebar.devguideSidebar.category.Third-Party Integration.link.generated-index.description": {
-    "message": "学习如何集成外部API、支付功能和短信服务。",
-    "description": "The generated-index page description for category Third-Party Integration in sidebar devguideSidebar"
-  },
-  "sidebar.devguideSidebar.category.Cache Management": {
-    "message": "缓存管理",
-    "description": "The label for category Cache Management in sidebar devguideSidebar"
-  },
-  "sidebar.devguideSidebar.category.Cache Management.link.generated-index.description": {
-    "message": "学习如何配置和使用缓存服务。",
-    "description": "The generated-index page description for category Cache Management in sidebar devguideSidebar"
-  },
-  "sidebar.devguideSidebar.category.Open API": {
-    "message": "API开放",
-    "description": "The label for category Open API in sidebar devguideSidebar"
-  },
-  "sidebar.devguideSidebar.category.Open API.link.generated-index.description": {
-    "message": "学习如何对外暴露API接口供第三方调用。",
-    "description": "The generated-index page description for category Open API in sidebar devguideSidebar"
-  },
-  "sidebar.devguideSidebar.category.Style and Control Customization": {
-    "message": "样式与控件定制",
-    "description": "The label for category Style and Control Customization in sidebar devguideSidebar"
-  },
-  "sidebar.devguideSidebar.category.Style and Control Customization.link.generated-index.description": {
-    "message": "学习如何定制应用样式和开发自定义控件。",
-    "description": "The generated-index page description for category Style and Control Customization in sidebar devguideSidebar"
+    "description": "The generated-index page description for category Approval Workflow in sidebar devguideSidebar"
   },
   "sidebar.devguideSidebar.category.Advanced Guide": {
     "message": "进阶指南",
@@ -478,5 +438,85 @@
   "sidebar.devguideSidebar.category.AI Assistant.link.generated-index.description": {
     "message": "可视化智能工作流引擎。通过拖拽节点编排业务流程，结合AI决策与人机交互，实现客服、审批、数据处理等场景的智能化自动化。",
     "description": "The generated-index page description for category AI Assistant in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Using AI in Portals and Pages": {
+    "message": "在门户和页面中使用AI",
+    "description": "The label for category Using AI in Portals and Pages in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Using AI in Portals and Pages.link.generated-index.description": {
+    "message": "学习如何在门户和页面中使用AI元素，包括AI助理、AI智能体和其他AI组件，以提升用户体验。",
+    "description": "The generated-index page description for category Using AI in Portals and Pages in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Calling Business Elements in Pages": {
+    "message": "在页面中调用业务元素",
+    "description": "The label for category Calling Business Elements in Pages in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Calling Business Elements in Pages.link.generated-index.description": {
+    "message": "学习如何在页面中调用和集成业务元素，包括服务函数和数据模型函数，用于动态内容和业务逻辑执行。",
+    "description": "The generated-index page description for category Calling Business Elements in Pages in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Knowledge Base": {
+    "message": "AI知识库",
+    "description": "The label for category Knowledge Base in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Knowledge Base.link.generated-index.description": {
+    "message": "AI知识库元素、文档管理、搜索、智能体集成、向量数据库部署和API。",
+    "description": "The generated-index page description for category Knowledge Base in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Full-Code UI Components in Pages": {
+    "message": "页面中的全代码自定义UI组件",
+    "description": "The label for category Full-Code UI Components in Pages in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Full-Code UI Components in Pages.link.generated-index.description": {
+    "message": "学习如何在页面中创建和集成全代码自定义UI组件，包括接口规范、函数调用、事件处理和组件通信。",
+    "description": "The generated-index page description for category Full-Code UI Components in Pages in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Internal API Exposure": {
+    "message": "内部API暴露",
+    "description": "The label for category Internal API Exposure in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Internal API Exposure.link.generated-index.description": {
+    "message": "学习如何暴露API接口供第三方调用和与外部系统集成。",
+    "description": "The generated-index page description for category Internal API Exposure in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.External API Integration": {
+    "message": "外部API集成",
+    "description": "The label for category External API Integration in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.External API Integration.link.generated-index.description": {
+    "message": "学习如何集成外部API、支付功能和短信服务。",
+    "description": "The generated-index page description for category External API Integration in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Frontend UI Customization": {
+    "message": "前端UI定制",
+    "description": "The label for category Frontend UI Customization in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Frontend UI Customization.link.generated-index.description": {
+    "message": "学习如何定制前端UI元素，包括组件、页面和门户，创建独特的视觉体验和品牌标识。",
+    "description": "The generated-index page description for category Frontend UI Customization in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.File Storage & Templates": {
+    "message": "文件存储与模板",
+    "description": "The label for category File Storage & Templates in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.File Storage & Templates.link.generated-index.description": {
+    "message": "学习如何处理文件存储和文件模板功能。",
+    "description": "The generated-index page description for category File Storage & Templates in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Internationalization": {
+    "message": "国际化",
+    "description": "The label for category Internationalization in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Internationalization.link.generated-index.description": {
+    "message": "学习如何国际化你的应用程序，包括多语言支持、区域设置和动态语言包管理。",
+    "description": "The generated-index page description for category Internationalization in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.AI Knowledge Base": {
+    "message": "AI知识库",
+    "description": "The label for category AI Knowledge Base in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.AI Knowledge Base.link.generated-index.description": {
+    "message": "AI 知识库元素、文档管理、搜索、智能体集成、向量数据库部署和 API。",
+    "description": "The generated-index page description for category AI Knowledge Base in sidebar devguideSidebar"
   }
 }

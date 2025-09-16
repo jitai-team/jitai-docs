@@ -554,33 +554,26 @@ The rich component library is your super toolkit. Drag and drop a table to displ
 
 <IndexCard
   title="Tree Components"
+  href="using-functional-components-in-pages/tree-components"
   description="Display hierarchical data structures with node expand/collapse and selection operations, providing clear data navigation experience."
-  link="/docs/devguide/using-functional-components-in-pages/tree-components"
 >
-  <div style={{padding: '20px'}}>
-    <p style={{marginBottom: '15px', color: '#666'}}>
-      <strong>Primary Use:</strong> Hierarchical data display for file directories, organizational structures, product categories, etc.
-    </p>
-    <div style={{marginBottom: '15px'}}>
-      <strong style={{color: '#333'}}>Component Types:</strong>
-      <ul style={{marginTop: '8px', paddingLeft: '20px'}}>
-        <li><strong>Tree Component:</strong> Multi-level data display with progressive loading</li>
-        <li><strong>Cascade Tree:</strong> Hierarchical data display based on self-relational fields</li>
-      </ul>
-    </div>
-    <div style={{marginBottom: '15px'}}>
-      <strong style={{color: '#333'}}>Core Features:</strong>
-      <ul style={{marginTop: '8px', paddingLeft: '20px'}}>
-        <li>Node expand/collapse operations</li>
-        <li>Single/multiple selection modes</li>
-        <li>Node click event handling</li>
-        <li>Interactive updates with other components</li>
-      </ul>
-    </div>
-    <p style={{color: '#007acc', fontWeight: '500'}}>
-      💡 Use Cases: Organizational management, file systems, product categorization, permission trees, etc.
-    </p>
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "Create Tree Component", href: "using-functional-components-in-pages/tree-components#create-tree-component" },
+    { text: "Configure Data Source", href: "using-functional-components-in-pages/tree-components#configure-data-source" },
+    { text: "Set Hierarchical Relationship Fields", href: "using-functional-components-in-pages/tree-components#set-hierarchical-relationship-fields" },
+    { text: "Node Display Configuration", href: "using-functional-components-in-pages/tree-components#node-display-configuration" },
+    { text: "Expand/Collapse Configuration", href: "using-functional-components-in-pages/tree-components#expand-collapse-configuration" },
+    { text: "Single/Multiple Selection Mode", href: "using-functional-components-in-pages/tree-components#single-multiple-selection-mode" },
+    { text: "Node Icon and Style", href: "using-functional-components-in-pages/tree-components#node-icon-and-style" },
+    { text: "Cascade Tree Configuration", href: "using-functional-components-in-pages/tree-components#cascade-tree-configuration" },
+    { text: "Progressive Loading", href: "using-functional-components-in-pages/tree-components#progressive-loading" },
+    { text: "Search and Filter", href: "using-functional-components-in-pages/tree-components#search-and-filter" },
+    { text: "Node Click Events", href: "using-functional-components-in-pages/tree-components#node-click-events" },
+    { text: "Checkbox Selection Events", href: "using-functional-components-in-pages/tree-components#checkbox-selection-events" },
+    { text: "Tree Component Variables", href: "using-functional-components-in-pages/tree-components#tree-component-variables" },
+    { text: "Interactive with Other Components", href: "using-functional-components-in-pages/tree-components#interactive-with-other-components" },
+    { text: "Refresh Tree Data", href: "using-functional-components-in-pages/tree-components#refresh-tree-data" }
+  ]} />
 </IndexCard>
 
 <IndexCard

@@ -27,13 +27,13 @@
     "message": "JitAi可视化开发工具、运维管理工具以及云端应用发布服务。",
     "description": "The generated-index page description for category Development Tools and Publishing Services in sidebar devguideSidebar"
   },
-  "sidebar.devguideSidebar.category.App Creation and Publishing": {
-    "message": "应用创建与发布",
-    "description": "The label for category App Creation and Publishing in sidebar devguideSidebar"
+  "sidebar.devguideSidebar.category.Create and Publish App": {
+    "message": "创建和发布应用",
+    "description": "The label for category Create and Publish App in sidebar devguideSidebar"
   },
-  "sidebar.devguideSidebar.category.App Creation and Publishing.link.generated-index.description": {
+  "sidebar.devguideSidebar.category.Create and Publish App.link.generated-index.description": {
     "message": "学习如何创建、部署、发布和管理JitAi应用，包括运行时环境配置和分布式集群架构。",
-    "description": "The generated-index page description for category App Creation and Publishing in sidebar devguideSidebar"
+    "description": "The generated-index page description for category Create and Publish App in sidebar devguideSidebar"
   },
   "sidebar.devguideSidebar.category.Use Components in Pages": {
     "message": "在页面中使用功能组件",
@@ -75,13 +75,13 @@
     "message": "学习如何开发业务逻辑，包括服务函数、事件处理和定时任务等。",
     "description": "The generated-index page description for category Business Logic Development in sidebar devguideSidebar"
   },
-  "sidebar.devguideSidebar.category.Approval Process": {
+  "sidebar.devguideSidebar.category.Approval Workflow": {
     "message": "审批流程",
-    "description": "The label for category Approval Process in sidebar devguideSidebar"
+    "description": "The label for category Approval Workflow in sidebar devguideSidebar"
   },
-  "sidebar.devguideSidebar.category.Approval Process.link.generated-index.description": {
+  "sidebar.devguideSidebar.category.Approval Workflow.link.generated-index.description": {
     "message": "学习如何设计和配置审批工作流，包括节点配置、权限控制和页面定制。",
-    "description": "The generated-index page description for category Approval Process in sidebar devguideSidebar"
+    "description": "The generated-index page description for category Approval Workflow in sidebar devguideSidebar"
   },
   "sidebar.devguideSidebar.category.Advanced Guide": {
     "message": "进阶指南",
@@ -439,13 +439,13 @@
     "message": "可视化智能工作流引擎。通过拖拽节点编排业务流程，结合AI决策与人机交互，实现客服、审批、数据处理等场景的智能化自动化。",
     "description": "The generated-index page description for category AI Assistant in sidebar devguideSidebar"
   },
-  "sidebar.devguideSidebar.category.AI Integration in Portals and Pages": {
-    "message": "在门户和页面中集成AI元素",
-    "description": "The label for category AI Integration in Portals and Pages in sidebar devguideSidebar"
+  "sidebar.devguideSidebar.category.Using AI in Portals and Pages": {
+    "message": "在门户和页面中使用AI",
+    "description": "The label for category Using AI in Portals and Pages in sidebar devguideSidebar"
   },
-  "sidebar.devguideSidebar.category.AI Integration in Portals and Pages.link.generated-index.description": {
-    "message": "学习如何在门户和页面中集成AI元素，包括AI助理、AI智能体和其他AI组件，以提升用户体验。",
-    "description": "The generated-index page description for category AI Integration in Portals and Pages in sidebar devguideSidebar"
+  "sidebar.devguideSidebar.category.Using AI in Portals and Pages.link.generated-index.description": {
+    "message": "学习如何在门户和页面中使用AI元素，包括AI助理、AI智能体和其他AI组件，以提升用户体验。",
+    "description": "The generated-index page description for category Using AI in Portals and Pages in sidebar devguideSidebar"
   },
   "sidebar.devguideSidebar.category.Calling Business Elements in Pages": {
     "message": "在页面中调用业务元素",
@@ -510,5 +510,13 @@
   "sidebar.devguideSidebar.category.Internationalization.link.generated-index.description": {
     "message": "学习如何国际化你的应用程序，包括多语言支持、区域设置和动态语言包管理。",
     "description": "The generated-index page description for category Internationalization in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.AI Knowledge Base": {
+    "message": "AI知识库",
+    "description": "The label for category AI Knowledge Base in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.AI Knowledge Base.link.generated-index.description": {
+    "message": "AI 知识库元素、文档管理、搜索、智能体集成、向量数据库部署和 API。",
+    "description": "The generated-index page description for category AI Knowledge Base in sidebar devguideSidebar"
   }
 }

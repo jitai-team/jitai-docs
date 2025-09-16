@@ -13,14 +13,14 @@ slug: approval-components
 在页面可视化编辑器中点击`插入组件`，将“发起申请”组件拖拽到页面中。然后在右侧配置面板中配置发起申请组件参数。
 
 ### 参数配置 {#parameter-configuration-1}
-使用发起申请组件时，需要指定使用的[审批流程实例元素](../approval-process/approval-process-basic-configuration)。
+使用发起申请组件时，需要指定使用的[审批流程实例元素](../approval-workflow/approval-workflow-basic-configuration)。
 
 ![发起申请组件参数](./img/13/wf_2025-08-29_16-13-23.png)
 
 在可视化编辑器中，点击发起申请组件后，可以看到发起申请组件的参数配置面板。在配置面板中，选择对应的审批流程实例元素。另外，开发者可以选择是否显示审批流程记录。
 
 :::warning 注意
-一般情况下，在创建发起申请组件之前，需要提前创建好审批流程，具体请参考[审批流程](../approval-process/approval-process-basic-configuration)。
+一般情况下，在创建发起申请组件之前，需要提前创建好审批流程，具体请参考[审批流程](../approval-workflow/approval-workflow-basic-configuration)。
 
 开发者也可以点击下拉框中的`新建常规审批`进行创建审批流程。
 
@@ -46,13 +46,13 @@ slug: approval-components
 ## 审批处理组件
 审批处理是工作流审批任务的核心操作组件，基于工作流引擎实现审批任务的处理、查看和状态管理。它负责加载指定工作流的待处理任务、展示审批历史记录和处理用户的审批操作。
 
-### 创建审批处理组件 {#create-approval-process-component}
+### 创建审批处理组件 {#create-approval-workflow-component}
 ![审批处理组件创建](./img/13/wf_2025-08-29_16-45-56.png)
 
 在页面可视化编辑器中点击`插入组件`，将“审批处理”组件拖拽到页面中。然后在右侧配置面板中配置审批处理组件参数。
 
 ### 参数配置 {#parameter-configuration-1}
-使用审批处理组件时，也需要指定使用的[审批流程实例元素](../approval-process/approval-process-basic-configuration)。除了配置审批流程外，审批处理组件还可以选择是否显示审批流程以及是否保留历史审批记录。
+使用审批处理组件时，也需要指定使用的[审批流程实例元素](../approval-workflow/approval-workflow-basic-configuration)。除了配置审批流程外，审批处理组件还可以选择是否显示审批流程以及是否保留历史审批记录。
 
 ![审批处理组件参数](./img/13/wf_2025-08-29_16-48-56.png)
 
@@ -63,7 +63,7 @@ slug: approval-components
 ![不保留历史审批记录](./img/13/wf_2025-08-29_16-56-15.png)
 
 :::warning 注意
-一般情况下，在创建审批处理组件之前，需要提前创建好审批流程，具体请参考[审批流程](../approval-process/approval-process-basic-configuration)。
+一般情况下，在创建审批处理组件之前，需要提前创建好审批流程，具体请参考[审批流程](../approval-workflow/approval-workflow-basic-configuration)。
 
 审批组件在开发区是无法预览的，需要到使用区才能查看。
 

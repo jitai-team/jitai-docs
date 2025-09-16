@@ -1,94 +1,95 @@
 ---
 sidebar_position: 2
 slug: jitai-visual-development-tools
+title: JitAi Visual Development Tools
 ---
 
-# JitAi可视化开发工具
+# JitAi Visual Development Tools
 
-JitAi为开发者提供了可视化和全代码双模式的应用开发工具(后续简称IDE)，在[节点控制台](../app-creation-and-publishing/runtime-environment-management#node-local-default-runtime-environment)中点击`开发`按钮或在应用内切换到`开发者门户`均可进入应用开发界面，IDE会自动加载所有应用模块的源码，开发者可以同时进行可视化编辑和源码编辑，这些应用模块在JitAi技术体系中叫做"元素"。
+JitAi provides developers with dual-mode application development tools that support both visual and full-code development, combining programming and orchestration capabilities (hereinafter referred to as IDE). Developers can access the application development interface by clicking the `Develop` button in the [Node Console](../create-and-publish-app/runtime-environment-management#node-local-default-runtime-environment) of the DevOps management tool or by switching to the `Developer Portal` within the application. The IDE automatically loads the source code of all application modules, allowing developers to perform both visual editing and source code editing simultaneously.
 
-![IDE首页](./img/ide/ide-homepage.png)
+![IDE Homepage](./img/ide/ide-homepage.png "IDE Homepage")
 
-## 元素目录树 {#element-directory-tree}
-进入IDE后，左侧元素目录树展示常用的元素类型，展开后可以看到已经添加到当前应用的元素。
+## Element Directory Tree {#element-directory-tree}
+After entering the IDE, the left-side element directory tree displays commonly used element types. When expanded, you can see the elements that have been added to the current application.
 
-![元素树中的功能](./img/ide/element-tree-functions.png)
+![Functions in Element Tree](./img/ide/element-tree-functions.png "Functions in Element Tree")
 
-在目录树中，开发者可以进行元素的搜索、修改元素标题、复制元素ID、导出元素源码、删除元素、生成副本、使用标签进行分组、显示/隐藏继承应用元素。
+In the directory tree, developers can search for elements, modify element titles, copy element IDs, export element source code, delete elements, create copies, group using tags, and show/hide inherited application elements.
 
-## 添加元素 {#add-element}
-![添加元素的入口](./img/ide/element-add-entry.png)
+## Adding Elements {#add-element}
+![Element Addition Entry](./img/ide/element-add-entry.png "Element Addition Entry")
 
-开发者点击`+`按钮添加元素时，需要依次选择元素的Meta和Type。Meta是最顶级的应用模块分类，例如：门户、页面、数据模型等。Type是Meta下的细分类型，例如页面Meta下的常规页面、ai-data-management-page、全代码页面等。
+When developers click the `+` button to add elements, they need to select the element's Meta and Type in sequence. Meta is the top-level application module classification, such as portals, pages, data models, etc. Type is the subcategory under Meta, such as regular pages, ai-data-management-page, full-code pages, etc. under the page Meta.
 
-![元素添加弹窗](./img/ide/element-add-popup.gif)
+![Element Addition Popup](./img/ide/element-add-popup.gif "Element Addition Popup")
 
-选定元素Type后，在弹窗中填写元素基本信息（如：名称），点击确定，元素会自动添加到目录树中并打开可视化编辑器。
+After selecting the element Type, fill in the basic element information (such as name) in the popup, click confirm, and the element will be automatically added to the directory tree and open the visual editor.
 
-## 可视化编辑器 {#visual-editor}
-添加元素后，或在元素目录树中点击某个元素，都可以在IDE右侧打开可视化编辑器。以下图为例，开发者在页面编辑器中添加各类标准组件，配置业务功能，且可以实时预览效果。
+## Visual Editor {#visual-editor}
+After adding an element or clicking on an element in the element directory tree, you can open the visual editor on the right side of the IDE. As shown in the following example, developers add various standard components in the page editor, configure business functions, and can preview effects in real-time.
 
-![IDE可视化编辑区域](./img/ide/ide-visual-editing-area.gif)
+![IDE Visual Editing Area](./img/ide/ide-visual-editing-area.gif "IDE Visual Editing Area")
 
-可视化编辑器是由元素的Type提供的，元素Type的开发者根据业务配置的需要而设计并开发可视化编辑器。官方元素编辑器都支持开发者点击右上角切换按钮，从而在可视化编辑和源码编辑两种模式下随时切换。
+The visual editor is provided by the element's Type. Element Type developers design and develop visual editors based on business configuration needs. All official element editors support developers clicking the toggle button in the upper right corner to switch between visual editing and source code editing modes at any time.
 
-## 源码编辑器 {#source-code-editor}
-当可视化编辑器无法满足高度定制化的编辑需求时，开发者可以切换到源码编辑器进行编辑。
+## Source Code Editor {#source-code-editor}
+When the visual editor cannot meet highly customized editing needs, developers can switch to the source code editor for editing.
 
-![IDE源码编辑器](./img/ide/ide-source-code-editor.png)
+![IDE Source Code Editor](./img/ide/ide-source-code-editor.png "IDE Source Code Editor")
 
-源码编辑器支持语法高亮、自动格式化、侧边预览、文件的新建/删除/重命名/内容编辑/保存等常用功能。
+The source code editor supports common functions such as syntax highlighting, automatic formatting, side preview, and file creation/deletion/renaming/content editing/saving.
 
-## 源码文件树 {#source-code-file-tree}
-在IDE的左侧区域点击“源码”标签页，即可打开源码文件树。
+## Source Code File Tree {#source-code-file-tree}
+Click the "Source Code" tab in the left area of the IDE to open the source code file tree.
 
-![IDE源码文件树](./img/ide/ide-source-code-file-tree.png)
+![IDE Source Code File Tree](./img/ide/ide-source-code-file-tree.png "IDE Source Code File Tree")
 
-源码文件树中，开发者可以进行文件搜索、内容查找与替换、新建文件、新建文件夹、导入文件夹、文件夹的重命名/复制/移动/导出/删除、文件的重命名/删除、导出应用源码等操作。
+In the source code file tree, developers can perform file search, content find and replace, create new files, create new folders, import folders, folder renaming/copying/moving/exporting/deleting, file renaming/deleting, export application source code, and other operations.
 
-在源码文件树视图下，开发者可以非常便捷地将其它应用导出的元素源码目录导入到当前应用中，实现复用。
+Under the source code file tree view, developers can very conveniently import element source code directories exported from other applications into the current application for reuse.
 
-## 应用设置 {#application-settings}
-在IDE的左侧区域点击“设置”标签页，即可打开应用设置。
+## Application Settings {#application-settings}
+Click the "Settings" tab in the left area of the IDE to open application settings.
 
-![设置应用基本信息](./img/ide/set-app-basic-info.png)
+![Set Application Basic Information](./img/ide/set-app-basic-info.png "Set Application Basic Information")
 
-在应用基本信息中，开发者可以设置应用的标题、logo、继承的应用以及版本、检查继承应用版本更新。
+In application basic information, developers can set the application's title, logo, inherited applications and versions, and check for inherited application version updates.
 
-![设置应用默认元素](./img/ide/set-app-default-element.gif)
+![Set Application Default Elements](./img/ide/set-app-default-element.gif "Set Application Default Elements")
 
-在应用默认元素中，开发者可以设置应用的默认元素（门户、全局样式、数据库、缓存、文件存储、登录页）。
+In application default elements, developers can set the application's default elements (portal, global styles, database, cache, file storage, login page).
 
-开发者可以在设置的同时创建新的默认元素，例如：创建一个新的文件存储元素并设置为默认使用的文件存储。
+Developers can create new default elements while setting them, for example: creating a new file storage element and setting it as the default file storage to use.
 
-![设置应用环境变量值](./img/ide/set-app-environment-variables.png)
+![Set Application Environment Variable Values](./img/ide/set-app-environment-variables.png "Set Application Environment Variable Values")
 
-在应用环境变量中，开发者可以设置应用的环境变量值，设置后即可在当前运行环境下生效。
+In application environment variables, developers can set the application's environment variable values, which take effect in the current runtime environment after setting.
 
-## 门户切换 {#portal-switching}
-应用通过给不同角色的人群分配不同的门户，从而提供不同的功能入口和导航界面。IDE支持开发者在开发过程中随时切换到不同的门户，验证门户的配置是否满足预期。
+## Portal Switching {#portal-switching}
+Applications provide different functional entries and navigation interfaces by assigning different portals to different user roles. The IDE supports developers switching to different portals at any time during development to verify whether the portal configuration meets expectations.
 
-![在IDE中切换门户](./img/ide/switch-portal-in-ide.gif)
+![Switch Portal in IDE](./img/ide/switch-portal-in-ide.gif "Switch Portal in IDE")
 
-点击IDE左上角的下三角图标，即可点选切换门户。
+Click the down triangle icon in the upper left corner of the IDE to select and switch portals.
 
-## 个人中心 {#personal-center}
-开发者可以在个人中心修改个人昵称、账号、密码。
+## Personal Center {#personal-center}
+Developers can modify their personal nickname, account, and password in the personal center.
 
-![打开个人中心](./img/ide/open-personal-center.gif)
+![Open Personal Center](./img/ide/open-personal-center.gif "Open Personal Center")
 
-点击IDE左下角的下三角图标，点击`基本信息`，即可打开个人中心。
+Click the down triangle icon in the lower left corner of the IDE, then click `Basic Information` to open the personal center.
 
-## 语言切换 {#language-switch}
-点击IDE左下角的语言文案（English、简体中文等），即可切换界面语言。
+## Language Switch {#language-switch}
+Click the language text in the lower left corner of the IDE (English, Simplified Chinese, etc.) to switch the interface language.
 
-![切换界面显示语言](./img/ide/switch-interface-display-language.png)
+![Switch Interface Display Language](./img/ide/switch-interface-display-language.png "Switch Interface Display Language")
 
-多语言是JitAi开发框架提供的元素之一，不仅用于IDE的国际化，同样可以用于任意其它应用的国际化。
+Multi-language is one of the elements provided by the JitAi development framework, used not only for IDE internationalization but also for internationalization of any other applications.
 
-## 导航标签 {#navigation-tabs}
-IDEApp中打开的所有界面都会显示为导航标签。
+## Navigation Tabs {#navigation-tabs}
+All interfaces opened in the IDEApp are displayed as navigation tabs.
 
-![导航标签](./img/ide/navigation-tabs.gif)
+![Navigation Tabs](./img/ide/navigation-tabs.gif "Navigation Tabs")
 
-开发者可以快速切换标签，对指定标签执行关闭左侧、关闭右侧、关闭其它、关闭全部、刷新操作。
+Developers can quickly switch tabs and perform operations such as close left, close right, close others, close all, and refresh on specified tabs.

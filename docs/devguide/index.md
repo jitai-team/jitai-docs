@@ -111,17 +111,32 @@ Powerful toolchain for efficient development. Master visual development environm
 <IndexCard
   title="DevOps Management Tool"
   href="development-tool-and-publish-service/devops-management-tool"
-  description="Comprehensive DevOps management solution providing system monitoring, log management, performance analysis and more."
+  description="Comprehensive DevOps management solution with dual-console architecture, providing complete application lifecycle management from development to deployment."
 >
-  Coming soon...
+  <LinkGrid links={[
+    { text: "Dual Console Architecture", href: "development-tool-and-publish-service/devops-management-tool#dual-console-architecture" },
+    { text: "Local Node Console", href: "development-tool-and-publish-service/devops-management-tool#local-node-console" },
+    { text: "Organization Management Console", href: "development-tool-and-publish-service/devops-management-tool#organization-management-console" },
+    { text: "Application Lifecycle Management", href: "development-tool-and-publish-service/devops-management-tool#application-lifecycle-management" },
+    { text: "Runtime Environment Management", href: "development-tool-and-publish-service/devops-management-tool#runtime-environment-management" },
+    { text: "Node Cluster Management", href: "development-tool-and-publish-service/devops-management-tool#node-cluster-management" },
+    { text: "Flexible Configuration Management", href: "development-tool-and-publish-service/devops-management-tool#flexible-configuration-management" },
+    { text: "Version Release and Deployment", href: "development-tool-and-publish-service/devops-management-tool#version-release-and-deployment" },
+    { text: "Multi-platform Export", href: "development-tool-and-publish-service/devops-management-tool#multi-platform-export" },
+    { text: "Application Template Ecosystem", href: "development-tool-and-publish-service/devops-management-tool#application-template-ecosystem" }
+  ]} />
 </IndexCard>
 
 <IndexCard
-  title="JCS Cloud Publishing Service"
+  title="JCS Cloud Application Publishing Service"
   href="development-tool-and-publish-service/jcs-cloud-publishing-service"
-  description="Convenient cloud application publishing platform supporting one-click publishing, version management, and global distribution."
+  description="Official cloud application publishing service providing centralized application repository, version management, and seamless deployment across JitNodes."
 >
-  Coming soon...
+  <LinkGrid links={[
+    { text: "Synchronizing Runtime Environment Configuration", href: "development-tool-and-publish-service/jcs-cloud-publishing-service#synchronizing-runtime-environment-configuration" },
+    { text: "Retrieving Version Update Information", href: "development-tool-and-publish-service/jcs-cloud-publishing-service#retrieving-version-update-information" },
+    { text: "Accessing Cloud Application Repository", href: "development-tool-and-publish-service/jcs-cloud-publishing-service#accessing-cloud-application-repository" }
+  ]} />
 </IndexCard>
 
 </div>
@@ -133,21 +148,21 @@ Complete workflow from application creation to distributed deployment. Master ap
 
 <IndexCard
   title="Creating and Deploying Applications"
-  href="app-creation-and-publishing/creating-and-deploying-applications"
+  href="create-and-publish-app/creating-and-deploying-applications"
   description="Learn application creation, inheritance, version management, and release processes. Master the complete application lifecycle management."
 >
   <LinkGrid links={[
-    { text: "Create First Application", href: "app-creation-and-publishing/creating-and-deploying-applications#create-first-application" },
-    { text: "Rapid Development Based on Existing Apps", href: "app-creation-and-publishing/creating-and-deploying-applications#based-on-existing-application-quick-development" },
-    { text: "Data Storage and Environment Variables", href: "app-creation-and-publishing/creating-and-deploying-applications#data-storage-and-environment-variable-configuration" },
-    { text: "Version Management and Publishing", href: "app-creation-and-publishing/creating-and-deploying-applications#application-version-management-and-publish" },
-    { text: "Application Export and Import", href: "app-creation-and-publishing/creating-and-deploying-applications#application-export-import" }
+    { text: "Create First Application", href: "create-and-publish-app/creating-and-deploying-applications#create-first-application" },
+    { text: "Rapid Development Based on Existing Apps", href: "create-and-publish-app/creating-and-deploying-applications#based-on-existing-application-quick-development" },
+    { text: "Data Storage and Environment Variables", href: "create-and-publish-app/creating-and-deploying-applications#data-storage-and-environment-variable-configuration" },
+    { text: "Version Management and Publishing", href: "create-and-publish-app/creating-and-deploying-applications#application-version-management-and-publish" },
+    { text: "Application Export and Import", href: "create-and-publish-app/creating-and-deploying-applications#application-export-import" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Application Directory and Element Source Code"
-  href="app-creation-and-publishing/application-directory-and-element-source-code"
+  href="create-and-publish-app/application-directory-and-element-source-code"
   description="Deep dive into JitAi application directory structure, element organization, and source code management mechanisms."
 >
   Coming soon...
@@ -155,7 +170,7 @@ Complete workflow from application creation to distributed deployment. Master ap
 
 <IndexCard
   title="Application Publishing and Updates"
-  href="app-creation-and-publishing/application-publishing-and-updates"
+  href="create-and-publish-app/application-publishing-and-updates"
   description="Master application version release strategies, automatic update mechanisms, and release process management."
 >
   Coming soon...
@@ -163,21 +178,21 @@ Complete workflow from application creation to distributed deployment. Master ap
 
 <IndexCard
   title="Runtime Environment Management"
-  href="app-creation-and-publishing/runtime-environment-management"
+  href="create-and-publish-app/runtime-environment-management"
   description="Master the creation, configuration, and management of runtime environments, and learn how to use node clusters and application deployment."
 >
   <LinkGrid links={[
-    { text: "What is Runtime Environment", href: "app-creation-and-publishing/runtime-environment-management#what-is-runtime-environment" },
-    { text: "Local Default Runtime Environment", href: "app-creation-and-publishing/runtime-environment-management#node-local-default-runtime-environment" },
-    { text: "Create New Runtime Environment", href: "app-creation-and-publishing/runtime-environment-management#createnewrunenvironment" },
-    { text: "Use Runtime Environment to Manage Node Clusters", href: "app-creation-and-publishing/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
-    { text: "Deploy Application in Runtime Environment", href: "app-creation-and-publishing/runtime-environment-management#deploy-application-in-runtime-environment" }
+    { text: "What is Runtime Environment", href: "create-and-publish-app/runtime-environment-management#what-is-runtime-environment" },
+    { text: "Local Default Runtime Environment", href: "create-and-publish-app/runtime-environment-management#node-local-default-runtime-environment" },
+    { text: "Create New Runtime Environment", href: "create-and-publish-app/runtime-environment-management#createnewrunenvironment" },
+    { text: "Use Runtime Environment to Manage Node Clusters", href: "create-and-publish-app/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
+    { text: "Deploy Application in Runtime Environment", href: "create-and-publish-app/runtime-environment-management#deploy-application-in-runtime-environment" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Distributed Cluster Architecture"
-  href="app-creation-and-publishing/distributed-cluster-architecture"
+  href="create-and-publish-app/distributed-cluster-architecture"
   description="Learn how to build and manage infinitely horizontally scalable distributed cluster architectures for high availability and performance."
 >
   Coming soon...
@@ -307,8 +322,8 @@ Enhance user experience with intelligent AI elements. Integrate AI assistants, a
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Integrating AI Assistants in Portals"
-  href="ai-integration-in-portals-and-pages/integrating-ai-assistants-in-portals"
+  title="Using AI Assistants in Portals"
+  href="using-ai-in-portals-and-pages/using-ai-assistants-in-portals"
   description="Learn how to integrate AI assistants into portal interfaces, providing users with intelligent help and guidance throughout their workflow."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -317,8 +332,8 @@ Enhance user experience with intelligent AI elements. Integrate AI assistants, a
 </IndexCard>
 
 <IndexCard
-  title="Integrating AI Assistants in Component Pages"
-  href="ai-integration-in-portals-and-pages/integrating-ai-assistants-in-component-pages"
+  title="Using AI Assistants in Component Pages"
+  href="using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages"
   description="Embed AI assistants into component-based pages to enhance user interactions and provide contextual assistance for specific tasks."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -327,8 +342,8 @@ Enhance user experience with intelligent AI elements. Integrate AI assistants, a
 </IndexCard>
 
 <IndexCard
-  title="Calling AI Elements in Pages"
-  href="ai-integration-in-portals-and-pages/calling-ai-elements-in-pages"
+  title="Using AI Elements in Pages"
+  href="using-ai-in-portals-and-pages/using-ai-elements-in-pages"
   description="Master the techniques for invoking AI elements from pages, including AI agents, LLM services, and knowledge bases for dynamic content generation."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -734,7 +749,7 @@ The rich component library is your super toolkit. Drag and drop a table to displ
     { text: "Create Initiate Application Component", href: "using-functional-components-in-pages/approval-components#create-initiate-application-component" },
     { text: "Parameter Configuration for Initiate Application", href: "using-functional-components-in-pages/approval-components#parameter-configuration-1" },
     { text: "Post-processing/Refresh Event for Initiate Application", href: "using-functional-components-in-pages/approval-components#post-processing-refresh-event" },
-    { text: "Create Approval Process Component", href: "using-functional-components-in-pages/approval-components#create-approval-process-component" },
+    { text: "Create Approval Process Component", href: "using-functional-components-in-pages/approval-components#create-approval-workflow-component" },
     { text: "Parameter Configuration for Approval Processing", href: "using-functional-components-in-pages/approval-components#parameter-configuration-1" },
     { text: "Keep Historical Approval Records", href: "using-functional-components-in-pages/approval-components#keep-historical-approval-records" },
     { text: "Post-processing/Refresh Event for Approval Processing", href: "using-functional-components-in-pages/approval-components#post-processing-refresh-event-1" }
@@ -902,9 +917,9 @@ Transform enterprise documents, manuals, and FAQs into intelligent knowledge bas
   description="The intelligent storage engine for enterprise knowledge. Convert text into vector data to achieve semantic-level precise search."
 >
   <LinkGrid links={[
-    { text: "Chroma Vector Database", href: "knowledge-base/vector-database-standalone-deployment#chroma-vector-database" },
-    { text: "Local Vector Database Configuration", href: "knowledge-base/vector-database-standalone-deployment#local-vector-database-config" },
-    { text: "Remote Vector Database Connection", href: "knowledge-base/vector-database-standalone-deployment#remote-vector-database-connection" },
+    { text: "Chroma Vector Database", href: "knowledge-base/vector-database-standalone-deployment#chroma-standalone-deployment" },
+    { text: "Local Vector Database Configuration", href: "knowledge-base/vector-database-standalone-deployment#local-development-config" },
+    { text: "Remote Vector Database Connection", href: "knowledge-base/vector-database-standalone-deployment#connect-to-standalone-chroma" },
     { text: "Vector Database Programming Interface", href: "knowledge-base/vector-database-standalone-deployment#vector-database-programming-interface" }
   ]} />
 </IndexCard>
@@ -1437,120 +1452,120 @@ Make enterprise approval processes efficient and orderly. Design flowcharts thro
 
 <IndexCard
   title="Approval Process Basic Configuration"
-  href="approval-process/approval-process-basic-configuration"
+  href="approval-workflow/approval-workflow-basic-configuration"
   description="Creation and basic settings of approval processes, including process node configuration and path design."
 >
   <LinkGrid columns={2} links={[
-    { text: "Create Process", href: "approval-process/approval-process-basic-configuration#create-process" },
-    { text: "Drag Process Node", href: "approval-process/approval-process-basic-configuration#drag-process-node" },
-    { text: "Approval Process Default Page", href: "approval-process/approval-process-basic-configuration#approval-process-default-page" },
-    { text: "Other Process Configuration", href: "approval-process/approval-process-basic-configuration#other-process-configuration" },
-    { text: "Sync Approval Info to Data Table Model", href: "approval-process/approval-process-basic-configuration#sync-approval-info-to-data-table-model" },
-    { text: "Sync to Third-party Approval Todo", href: "approval-process/approval-process-basic-configuration#sync-to-third-party-approval-todo" },
-    { text: "Comment Function", href: "approval-process/approval-process-basic-configuration#comment-function" },
-    { text: "Share", href: "approval-process/approval-process-basic-configuration#share" },
-    { text: "Print Approval Form", href: "approval-process/approval-process-basic-configuration#print-approval-form" },
-    { text: "Reuse Other Approval Processes", href: "approval-process/approval-process-basic-configuration#reuse-other-approval-processes" }
+    { text: "Create Process", href: "approval-workflow/approval-workflow-basic-configuration#create-process" },
+    { text: "Drag Process Node", href: "approval-workflow/approval-workflow-basic-configuration#drag-process-node" },
+    { text: "Approval Process Default Page", href: "approval-workflow/approval-workflow-basic-configuration#approval-workflow-default-page" },
+    { text: "Other Process Configuration", href: "approval-workflow/approval-workflow-basic-configuration#other-process-configuration" },
+    { text: "Sync Approval Info to Data Table Model", href: "approval-workflow/approval-workflow-basic-configuration#sync-approval-info-to-data-table-model" },
+    { text: "Sync to Third-party Approval Todo", href: "approval-workflow/approval-workflow-basic-configuration#sync-to-third-party-approval-todo" },
+    { text: "Comment Function", href: "approval-workflow/approval-workflow-basic-configuration#comment-function" },
+    { text: "Share", href: "approval-workflow/approval-workflow-basic-configuration#share" },
+    { text: "Print Approval Form", href: "approval-workflow/approval-workflow-basic-configuration#print-approval-form" },
+    { text: "Reuse Other Approval Processes", href: "approval-workflow/approval-workflow-basic-configuration#reuse-other-approval-workflowes" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Start Node Configuration"
-  href="approval-process/start-node-configuration"
+  href="approval-workflow/start-node-configuration"
   description="Configuration of approval process start node, defining conditions and rules for application initiation."
 >
   <LinkGrid columns={2} links={[
-    { text: "Process Cancellation Function", href: "approval-process/start-node-configuration#process-cancellation-function" },
-    { text: "Approval Reminder", href: "approval-process/start-node-configuration#approval-reminder" },
-    { text: "Approval Draft", href: "approval-process/start-node-configuration#approval-draft" },
-    { text: "Message Notification", href: "approval-process/start-node-configuration#anchor-414" },
-    { text: "Pages Used by Current Node", href: "approval-process/start-node-configuration#pages-used-by-current-node" },
-    { text: "Summary Display", href: "approval-process/start-node-configuration#summary-display" },
-    { text: "Field View Edit Permissions", href: "approval-process/start-node-configuration#field-view-edit-permissions" },
-    { text: "Layout Control Permissions", href: "approval-process/start-node-configuration#layout-control-permissions" }
+    { text: "Process Cancellation Function", href: "approval-workflow/start-node-configuration#process-cancellation-function" },
+    { text: "Approval Reminder", href: "approval-workflow/start-node-configuration#approval-reminder" },
+    { text: "Approval Draft", href: "approval-workflow/start-node-configuration#approval-draft" },
+    { text: "Message Notification", href: "approval-workflow/start-node-configuration#anchor-414" },
+    { text: "Pages Used by Current Node", href: "approval-workflow/start-node-configuration#pages-used-by-current-node" },
+    { text: "Summary Display", href: "approval-workflow/start-node-configuration#summary-display" },
+    { text: "Field View Edit Permissions", href: "approval-workflow/start-node-configuration#field-view-edit-permissions" },
+    { text: "Layout Control Permissions", href: "approval-workflow/start-node-configuration#layout-control-permissions" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Approval Node Configuration"
-  href="approval-process/approval-node-configuration"
+  href="approval-workflow/approval-node-configuration"
   description="Detailed configuration of approval links, including approver settings and approval rules."
 >
   <LinkGrid columns={2} links={[
-    { text: "Approver Settings", href: "approval-process/approval-node-configuration#approver-settings" },
-    { text: "Approval Flow Rules", href: "approval-process/approval-node-configuration#approval-flow-rules" },
-    { text: "Approval Process Rules", href: "approval-process/approval-node-configuration#approval-process-rules" },
-    { text: "Approval Extended Function Configuration", href: "approval-process/approval-node-configuration#approval-extended-function-configuration" },
-    { text: "Deduplication Approval", href: "approval-process/approval-node-configuration#deduplication-approval" },
-    { text: "Time-limited Processing", href: "approval-process/approval-node-configuration#time-limited-processing" },
-    { text: "Approval Draft", href: "approval-process/approval-node-configuration#approval-draft" },
-    { text: "Approval Feedback", href: "approval-process/approval-node-configuration#approval-feedback" },
-    { text: "Handwritten Signature", href: "approval-process/approval-node-configuration#handwritten-signature" },
-    { text: "Allow Batch Approval", href: "approval-process/approval-node-configuration#allow-batch-approval" },
-    { text: "Message Notification", href: "approval-process/approval-node-configuration#message-notification" },
-    { text: "SMS Notification", href: "approval-process/approval-node-configuration#sms-notification" },
-    { text: "Approval Page and Permission Control", href: "approval-process/approval-node-configuration#approval-page-permission-control" },
-    { text: "Pages Used by Current Node", href: "approval-process/approval-node-configuration#pages-used-by-current-node" },
-    { text: "Summary Display", href: "approval-process/approval-node-configuration#summary-display" },
-    { text: "Field Permission", href: "approval-process/approval-node-configuration#fieldpermission" },
-    { text: "Layout Control Permissions", href: "approval-process/approval-node-configuration#layout-control-permissions" }
+    { text: "Approver Settings", href: "approval-workflow/approval-node-configuration#approver-settings" },
+    { text: "Approval Flow Rules", href: "approval-workflow/approval-node-configuration#approval-flow-rules" },
+    { text: "Approval Process Rules", href: "approval-workflow/approval-node-configuration#approval-workflow-rules" },
+    { text: "Approval Extended Function Configuration", href: "approval-workflow/approval-node-configuration#approval-extended-function-configuration" },
+    { text: "Deduplication Approval", href: "approval-workflow/approval-node-configuration#deduplication-approval" },
+    { text: "Time-limited Processing", href: "approval-workflow/approval-node-configuration#time-limited-processing" },
+    { text: "Approval Draft", href: "approval-workflow/approval-node-configuration#approval-draft" },
+    { text: "Approval Feedback", href: "approval-workflow/approval-node-configuration#approval-feedback" },
+    { text: "Handwritten Signature", href: "approval-workflow/approval-node-configuration#handwritten-signature" },
+    { text: "Allow Batch Approval", href: "approval-workflow/approval-node-configuration#allow-batch-approval" },
+    { text: "Message Notification", href: "approval-workflow/approval-node-configuration#message-notification" },
+    { text: "SMS Notification", href: "approval-workflow/approval-node-configuration#sms-notification" },
+    { text: "Approval Page and Permission Control", href: "approval-workflow/approval-node-configuration#approval-page-permission-control" },
+    { text: "Pages Used by Current Node", href: "approval-workflow/approval-node-configuration#pages-used-by-current-node" },
+    { text: "Summary Display", href: "approval-workflow/approval-node-configuration#summary-display" },
+    { text: "Field Permission", href: "approval-workflow/approval-node-configuration#fieldpermission" },
+    { text: "Layout Control Permissions", href: "approval-workflow/approval-node-configuration#layout-control-permissions" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Special Node Configuration"
-  href="approval-process/special-node-configuration"
+  href="approval-workflow/special-node-configuration"
   description="Configuration methods for special process nodes such as condition nodes and parallel nodes."
 >
   <LinkGrid columns={2} links={[
-    { text: "CC Node", href: "approval-process/special-node-configuration#cc-node" },
-    { text: "CC Recipients", href: "approval-process/special-node-configuration#sms-notification" },
-    { text: "SMS Notification", href: "approval-process/special-node-configuration#sms-notification" },
-    { text: "Pages Used by Current Node", href: "approval-process/special-node-configuration#pages-used-by-current-node" },
-    { text: "Field Permission", href: "approval-process/special-node-configuration#fieldpermission" },
-    { text: "Layout Control Permissions", href: "approval-process/special-node-configuration#layout-control-permissions" },
-    { text: "Branch Node", href: "approval-process/special-node-configuration#branch-node" },
-    { text: "Parallel Node", href: "approval-process/special-node-configuration#parallel-node" },
-    { text: "Sub-process Node", href: "approval-process/special-node-configuration#sub-process-node" },
-    { text: "Sub-process Name", href: "approval-process/special-node-configuration#sub-process-name" },
-    { text: "Sub-process Initiator", href: "approval-process/special-node-configuration#sub-process-initiator" },
-    { text: "Sub-process Flow Rules", href: "approval-process/special-node-configuration#sub-process-flow-rules" },
-    { text: "When Main Process Flows to Sub-process", href: "approval-process/special-node-configuration#when-main-process-flows-to-sub-process" },
-    { text: "Sub-process Post-flow Function Design", href: "approval-process/special-node-configuration#sub-process-post-flow-function-design" },
-    { text: "Update Main Process Data When Single Sub-process Ends", href: "approval-process/special-node-configuration#update-main-process-data-single-sub-process-end" },
-    { text: "Update Main Process Data When All Sub-processes End", href: "approval-process/special-node-configuration#update-main-process-data-all-sub-processes-end" }
+    { text: "CC Node", href: "approval-workflow/special-node-configuration#cc-node" },
+    { text: "CC Recipients", href: "approval-workflow/special-node-configuration#sms-notification" },
+    { text: "SMS Notification", href: "approval-workflow/special-node-configuration#sms-notification" },
+    { text: "Pages Used by Current Node", href: "approval-workflow/special-node-configuration#pages-used-by-current-node" },
+    { text: "Field Permission", href: "approval-workflow/special-node-configuration#fieldpermission" },
+    { text: "Layout Control Permissions", href: "approval-workflow/special-node-configuration#layout-control-permissions" },
+    { text: "Branch Node", href: "approval-workflow/special-node-configuration#branch-node" },
+    { text: "Parallel Node", href: "approval-workflow/special-node-configuration#parallel-node" },
+    { text: "Sub-process Node", href: "approval-workflow/special-node-configuration#sub-process-node" },
+    { text: "Sub-process Name", href: "approval-workflow/special-node-configuration#sub-process-name" },
+    { text: "Sub-process Initiator", href: "approval-workflow/special-node-configuration#sub-process-initiator" },
+    { text: "Sub-process Flow Rules", href: "approval-workflow/special-node-configuration#sub-process-flow-rules" },
+    { text: "When Main Process Flows to Sub-process", href: "approval-workflow/special-node-configuration#when-main-process-flows-to-sub-process" },
+    { text: "Sub-process Post-flow Function Design", href: "approval-workflow/special-node-configuration#sub-process-post-flow-function-design" },
+    { text: "Update Main Process Data When Single Sub-process Ends", href: "approval-workflow/special-node-configuration#update-main-process-data-single-sub-process-end" },
+    { text: "Update Main Process Data When All Sub-processes End", href: "approval-workflow/special-node-configuration#update-main-process-data-all-sub-processes-end" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Approval Page Customization"
-  href="approval-process/approval-page-customization"
+  href="approval-workflow/approval-page-customization"
   description="Customize approval interface and user experience to improve approval efficiency."
 >
   <LinkGrid links={[
-    { text: "Approval Page Advanced Customization", href: "approval-process/approval-page-customization#approval-page-advanced-customization" },
-    { text: "Approval Page Types", href: "approval-process/approval-page-customization#approval-page-types" },
-    { text: "Custom Page Creation Method", href: "approval-process/approval-page-customization#custom-page-creation-method" }
+    { text: "Approval Page Advanced Customization", href: "approval-workflow/approval-page-customization#approval-page-advanced-customization" },
+    { text: "Approval Page Types", href: "approval-workflow/approval-page-customization#approval-page-types" },
+    { text: "Custom Page Creation Method", href: "approval-workflow/approval-page-customization#custom-page-creation-method" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Approval Process Usage"
-  href="approval-process/approval-process-usage"
+  href="approval-workflow/approval-workflow-usage"
   description="Practical application and operation guide of approval process, including initiating and processing approvals."
 >
   <LinkGrid links={[
-    { text: "Initiate Application", href: "approval-process/approval-process-usage#initiate-application" },
-    { text: "Todo Center", href: "approval-process/approval-process-usage#todo-center" },
-    { text: "Detail Page", href: "approval-process/approval-process-usage#detail-page" },
-    { text: "Delegate to Others Processing", href: "approval-process/approval-process-usage#delegate-to-others-processing" },
-    { text: "Approval Process Management Page", href: "approval-process/approval-process-usage#approval-process-management-page" }
+    { text: "Initiate Application", href: "approval-workflow/approval-workflow-usage#initiate-application" },
+    { text: "Todo Center", href: "approval-workflow/approval-workflow-usage#todo-center" },
+    { text: "Detail Page", href: "approval-workflow/approval-workflow-usage#detail-page" },
+    { text: "Delegate to Others Processing", href: "approval-workflow/approval-workflow-usage#delegate-to-others-processing" },
+    { text: "Approval Process Management Page", href: "approval-workflow/approval-workflow-usage#approval-workflow-management-page" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Calling Business Logic Elements in Approval Process"
-  href="approval-process/calling-business-logic-elements-in-approval-process"
+  href="approval-workflow/calling-business-logic-elements-in-approval-workflow"
   description="Learn how to call business logic elements within approval processes to implement complex business rules and automated decisions."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1560,7 +1575,7 @@ Make enterprise approval processes efficient and orderly. Design flowcharts thro
 
 <IndexCard
   title="Integrating AI in Approval Process"
-  href="approval-process/integrating-ai-in-approval-process"
+  href="approval-workflow/integrating-ai-in-approval-workflow"
   description="Integrate artificial intelligence capabilities into approval processes to achieve intelligent routing, automated review, and smart decision making."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1676,7 +1691,7 @@ Connect your application to the broader world. Easily integrate third-party APIs
     { text: "Alibaba Cloud SMS", href: "third-party-integration/sms-service#aliyun-sms" },
     { text: "Alibaba Cloud SMS Service Creation", href: "third-party-integration/sms-service#aliyun-sms-service-creation" },
     { text: "Use SMS Service in Mobile Login", href: "third-party-integration/sms-service#use-sms-service-in-mobile-login" },
-    { text: "Use SMS Service in Approval Process", href: "third-party-integration/sms-service#use-sms-service-in-approval-process" },
+    { text: "Use SMS Service in Approval Process", href: "third-party-integration/sms-service#use-sms-service-in-approval-workflow" },
     { text: "SMS Notification Function", href: "third-party-integration/sms-service#sms-notification-function" }
   ]} />
 </IndexCard>
@@ -1918,11 +1933,11 @@ In-depth practical guides based on real business scenarios to help developers ma
 
 <IndexCard
   title="Workflow Management"
-  href="advanced-guide/approval-process-orchestration-and-custom-approval-events"
+  href="advanced-guide/approval-workflow-orchestration-and-custom-approval-events"
   description="Implement approval process orchestration, scheduled task execution and business process automation based on JitWorkflow and JitTask."
 >
   <LinkGrid links={[
-    { text: "Approval Process Orchestration and Custom Approval Events", href: "advanced-guide/approval-process-orchestration-and-custom-approval-events" },
+    { text: "Approval Process Orchestration and Custom Approval Events", href: "advanced-guide/approval-workflow-orchestration-and-custom-approval-events" },
     { text: "Scheduled Execution of Custom Business Logic", href: "advanced-guide/scheduled-execution-of-custom-business-logic" },
     { text: "Use Database Table Time Fields to Trigger Scheduled Tasks", href: "advanced-guide/using-database-table-time-fields-to-trigger-scheduled-tasks" }
   ]} />

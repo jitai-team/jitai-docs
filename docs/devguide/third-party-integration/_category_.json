@@ -1,6 +1,6 @@
 {
-  "label": "Third-Party Integration",
-  "position": 10,
+  "label": "External API Integration",
+  "position": 19,
   "link": {
     "type": "generated-index",
     "description": "Learn how to integrate external APIs, payment functions, and SMS services."

@@ -1,9 +1,9 @@
 ---
 sidebar_position: 1
-slug: encapsulating-business-service-functions
+slug: creating-service-elements
 ---
 
-# 封装业务服务函数
+# Creating Service Elements
 无论是在面向对象还是面向过程开发中，封装函数都可以让代码可复用、更易维护。通过封装函数可以把常用或复杂的业务逻辑独立出来，方便调用和管理。JitAi以服务元素的方式支持开发者自定义业务服务函数。
 
 服务元素是基于Python的后端元素。在服务元素中，开发者可以灵活地声明多个服务函数，通过对服务函数的合理分类，有效组织和管理复杂的业务逻辑代码。
@@ -39,9 +39,9 @@ JitAi支持开发者在一个服务元素中创建多个服务函数。
 开发者需要将元素目录树切换到`源码`视图，找到`requirements.txt`文件并在文件中添加新的依赖库，点击`保存`按钮即可在服务函数中可以直接导入这些依赖库中的包。
 
 ## 服务函数在哪里使用 {#where-service-functions-are-used}
-在[页面函数](../shell-and-page/component-based-page-development#page-functions)、[页面事件](../shell-and-page/component-based-page-development#page-events)、[前端组件事件函数](../shell-and-page/component-based-page-development#event-panel)、[任务函数](./background-tasks#task-execution-function-development)、[模型事件](./event-handling#model-events)、[审批事件](./event-handling#approval-events)、[自定义事件](./event-handling#custom-events)、[ai-assistant事件](./event-handling#ai-assistant-events)、[Agent工具调用事件](./event-handling#agent-tool-call-events)以及其它服务函数等所有可以编写函数逻辑的地方，开发者都可以调用服务函数。
+在[页面函数](../shell-and-page/component-based-page-development#page-functions)、[页面事件](../shell-and-page/component-based-page-development#page-events)、[前端组件事件函数](../shell-and-page/component-based-page-development#event-panel)、[任务函数](./background-tasks#task-execution-function-development)、[模型事件](./event-handling#model-events)、[审批事件](./event-handling#approval-events)、[自定义事件](./event-handling#custom-events)、[AI助理事件](./event-handling#ai-assistant-events)、[Agent工具调用事件](./event-handling#agent-tool-call-events)以及其它服务函数等所有可以编写函数逻辑的地方，开发者都可以调用服务函数。
 
-服务函数还可以[作为ai-agent的工具](../ai-agent/create-ai-agent#agent-calling-service-functions)被大模型调用、在[ai-assistant的函数调用节点](../ai-assitant/create-ai-assistant#function-call)被调用、在[API授权元素](../api-open/api-authorization)中开放给第三方调用。
+服务函数还可以[作为AI Agent的工具](../ai-agent/create-ai-agent#agent-calling-service-functions)被大模型调用、在[AI助理的函数调用节点](../ai-assitant/create-ai-assistant#function-call)被调用、在[API授权元素](../api-exposure/api-authorization)中开放给第三方调用。
 
 ## 让AI更准确地理解服务函数 {#help-ai-understand-service-functions}
 每个服务函数都在服务元素e.json中存在一个函数声明，即functionList中的一个函数定义。functionList可以让函数被IDE可视化编辑器识别从而支持可视化逻辑编排、让函数能够被正常调用、让函数被AI理解和使用。
@@ -57,7 +57,7 @@ JitAi支持开发者在一个服务元素中创建多个服务函数。
 :::
 
 ## 使用跨App服务元素调用授权接口 {#use-cross-app-service-elements-to-call-authorized-interfaces} 
-当一个JitAi应用使用[API授权元素](../api-open/api-authorization)对外开放了服务函数，另一个JitAi应用可以使用`跨APP服务`元素访问该授权函数，实现跨应用服务函数调用。这种调用方式仅限于在JitAi应用之间进行，调用方不是JitAi应用则依然需要使用[API授权元素SDK调用方式](../api-open/api-authorization#use-sdk-to-call-authorized-interfaces)。
+当一个JitAi应用使用[API授权元素](../api-exposure/api-authorization)对外开放了服务函数，另一个JitAi应用可以使用`跨APP服务`元素访问该授权函数，实现跨应用服务函数调用。这种调用方式仅限于在JitAi应用之间进行，调用方不是JitAi应用则依然需要使用[API授权元素SDK调用方式](../api-exposure/api-authorization#use-sdk-to-call-authorized-interfaces)。
 
 ### 创建跨App服务元素 {#create-cross-app-service-elements}
 ![创建跨App服务](./img/create-cross-app-service.gif)

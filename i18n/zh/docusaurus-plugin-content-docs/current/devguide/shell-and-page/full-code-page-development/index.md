@@ -153,7 +153,7 @@ import './styles.scss';
 </Tabs>
 
 :::tip
-使用 CSS‑in‑JS 时，可直接消费 antd 的主题 token，与平台默认样式自然对齐；同时也能读取并复用你在平台的“全局样式”中定义的自定义变量，实现品牌色、圆角、阴影等统一管理与一处生效。参考《[全局样式](../../style-and-control-customization/global-styles)》。
+使用 CSS‑in‑JS 时，可直接消费 antd 的主题 token，与平台默认样式自然对齐；同时也能读取并复用你在平台的"全局样式"中定义的自定义变量，实现品牌色、圆角、阴影等统一管理与一处生效。参考《[全局样式](../../frontend-ui-customization/global-styles)》。
 :::
 
 ### 使用本地资源 {#use-local-resources}

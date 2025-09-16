@@ -3,7 +3,7 @@ sidebar_position: 6
 slug: approval-process-usage
 ---
 
-# 审批流程的使用
+# 门户中的审批发起和待办
 在门户中，用户可以通过“发起申请”和“待办中心”两个功能模块，对流程进行发起申请和查看处理等操作。
 
 ## 发起申请 {#initiate-application}

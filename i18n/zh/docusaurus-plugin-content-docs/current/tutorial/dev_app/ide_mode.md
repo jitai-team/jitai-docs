@@ -37,7 +37,7 @@ Jit应用层的元素模块
 * 门户，是面向一个特定场景的一组页面的集合。例如：我们可以考生创建一个「考生门户」、为老师创建一个「老师门户」。点击门户中的菜单，会打开其配置的页面。阅读[门户导航设计](../../devguide/shell-and-page/portal-navigation-design)了解更多。
 * 页面，即前端看到和操作的界面。
 * 数据模型，类似于Excel表，且内置了增删改查的接口，方便页面直接读写数据。阅读[数据建模](../../devguide/data-modeling/data-table-model)了解更多。
-* 服务，是面向一个特定业务场景的一组接口。当数据模型内置的增删改查接口满足不了需求时，就可以通过服务来扩展其他接口。阅读[封装业务服务函数](../../devguide/business-logic-development/encapsulating-business-service-functions)了解更多。
+* 服务，是面向一个特定业务场景的一组接口。当数据模型内置的增删改查接口满足不了需求时，就可以通过服务来扩展其他接口。阅读[创建服务元素](../../devguide/business-logic-development/creating-service-elements)了解更多。
 * 后端事件，通过后端事件触发，实现多个模型业务之间的数据流转。例如：创建试卷后，为每个考生自动创建一份答卷。阅读[事件处理](../../devguide/business-logic-development/event-handling)了解更多。
 
 ## 案例效果

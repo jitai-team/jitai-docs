@@ -115,7 +115,7 @@ JitAi作为企业级AI应用开发平台，自描述的应用模块可以被大�
 
 默认情况下会把模型所有函数都添加为工具，开发者应按照实际需要将不需要的函数关闭。界面上提供了一键全选/取消全选按钮，方便开发者快速操作。
 
-### Agent调用服务函数 {#agent-calling-service-functions} 
+### Agent调用服务函数 {#agent-calling-service-functions}
 开发者通常使用服务函数来封装复杂的业务逻辑处理过程，当服务函数被添加为工具后，Agent就可以直接调用这些函数。这意味着可以通过定义服务函数来让Agent完成复杂业务逻辑处理，**为Agent提供强有力的工具，是优化Agent执行能力、准确度的重要手段**。
 
 ![Agent添加服务函数工具](./img/agent/agent-add-service-function-tool.gif)
@@ -179,7 +179,7 @@ JitAi支持开发者通过[外部API](../third-party-integration/external-api)�
 不要简单粗暴地启用全部函数，要根据实际需要针对性启用函数，否则会增加不必要的Token消耗、给大模型带来理解负担、引入不必要的操作风险。
 :::
 
-### 工具函数调用前/后事件触发 {#tool-function-call-pre-post-event-triggering} 
+### 工具函数调用前/后事件触发 {#tool-function-call-pre-post-event-triggering}
 Agent的每一次工具调用都可以产生两个后端事件：调用前事件和调用后事件。开发者可以启用或关闭其中一个或全部事件，也可以针对每个事件配置是否携带事件参数。利用事件机制，开发者可以在工具调用前/后执行自定义的业务逻辑，延伸Agent的能力。
 
 ![Agent工具事件](./img/agent/agent-tool-events.gif)
@@ -204,7 +204,7 @@ Agent的每一次工具调用都可以产生两个后端事件：调用前事件
 
 ![设置工具函数执行权限](./img/agent/set-tool-function-execution-permissions.gif)
 
-开发者在工具函数右侧可以看到`设置权限`按钮，点击后在弹窗中选择[应用角色](../user-and-permission/role-permissions)即可，支持选择多个应用角色。
+开发者在工具函数右侧可以看到`设置权限`按钮，点击后在弹窗中选择[应用角色](../user-and-permission/role-portal-menu-permissions)即可，支持选择多个应用角色。
 
 没有配置任何角色时，所有使用Agent的用户都能正常调用该工具函数。当配置了角色后，只有拥有这些角色的用户才能调用该工具函数。
 
@@ -217,7 +217,7 @@ RAG（Retrieval-Augmented Generation，检索增强生成）是一种结合了�
 
 还有一个`由大模型决策是否使用`开关，默认是开启状态，开启时为非强制模式，关闭时为强制模式。强制模式下，Agent在首次请求大模型之前会使用用户输入的内容先查询一次知识库，将结果作为上下文的补充和增强。如果开发者将其关闭，则由大模型自行决策是否查询以及如何查询知识库。无论`由大模型决策是否使用`是开启还是关闭，开发者都可以在系统提示词中去设计知识库的使用策略，指导大模型对知识库的使用。
 
-关于知识库的创建，请参考[ai-knowledge-base](../ai-knowledge-base)。
+关于知识库的创建，请参考[AI知识库](../knowledge-base/create-knowledge-elements#create-ai-knowledge-base-element)。
 
 ## 在前端函数中调用Agent {#call-agent-in-frontend-functions}
 在实际业务场景中，常常需要根据用户在页面上的操作（如点击按钮、填写表单、切换选项等）实时调用AI能力，实现智能推荐、自动补全、智能问答等功能。为满足这些需求，平台支持在前端函数逻辑（页面函数、页面事件函数、组件事件函数）中直接调用Agent，并灵活传递参数，使AI能力能够无缝集成到各类前端交互中，提升用户体验和业务智能化水平。
@@ -230,7 +230,7 @@ RAG（Retrieval-Augmented Generation，检索增强生成）是一种结合了�
 Agent的运行通常需要一定时间，若用户等待过久会影响体验。建议结合AI助理，优化交互流程，实现AI与用户的持续互动，提升整体使用感受。
 :::
 
-## 在页面助理中测试Agent {#test-agent-in-page-assistant} 
+## 在页面助理中测试Agent {#test-agent-in-page-assistant}
 在Agent开发过程中，需要频繁进行调试。开发者可以创建一个简单的AI助理，该助理内部编排为直接调用目标Agent，然后将助理集成到页面中即可。在AI助理的对话框中我们可以看到Agent的运行过程和输出结果。
 
 [如何在AI助理中调用Agent?](../ai-assitant/create-ai-assistant#quick-start)

@@ -49,13 +49,17 @@ AI生成的图表，用户还可以做以下调整：
 
 内容如下：
 - **aiConfig**: AI相关配置项
- - **useAi**: 启用AI，固定为1
- - **aiAssistant**: 页面绑定的AI助理，当前固定为`pages.DataAnalysisType.GeneralAssistant`；后续会支持由开发者替换成自定义的AI助理。
- - **inputArgs**: 助理运行时的输入配置；**llmElement**是配置的大模型元素id，**llmConfig**是大模型的参数配置
- - **welcomeMessage**: 欢迎语，如果不填写，则默认为空
- - **prologues**: 助理中的开场白
- - **logOutput**: 助理对话框日志区输出的消息内容
- - **replayOutput**: 助理对话框回复区输出的消息内容
+  - **useAi**: 启用AI功能，固定值为 `1`
+  - **aiAssistant**: 页面绑定的AI助理，当前固定为 `pages.DataAnalysisType.GeneralAssistant`，后续版本将支持开发者自定义AI助理
+  - **inputArgs**: 助理运行时输入配置
+  - **llmElement**: 大模型元素ID
+  - **llmConfig**: 大模型参数配置
+  - **welcomeMessage**: 欢迎语（可选，默认为空）
+  - **prologues**: 开场白内容
+  - **logContent**: 运行过程输出级别（可选，默认为 `LLM_CONCISE_LOG`）
+    - `NOT_OUTPUT`: 不输出运行过程
+    - `LLM_CONCISE_LOG`: 输出简要运行过程
+    - `DETAIL_LOG`: 输出详细运行过程
 - **dataSources**: 允许AI分析的数据表及数据条件
 
 ## 快捷创建 {#quick-create}

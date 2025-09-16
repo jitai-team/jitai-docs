@@ -4,6 +4,10 @@ slug: developer-organization-management
 ---
 
 # Node Activation and Developer Organizations
+
+## What is a Node {#what-is-jitnode}
+A JitNode is an application that runs on an operating system, available as both a desktop installation and a Docker image. It serves as the runtime engine for JitAi applications, providing a virtualized environment and interpreting JitAi apps. JitNode form the foundational infrastructure layer of the JitAi technology stack.
+
 ## What is a Developer Organization {#what-is-developer-organization}
 A developer organization is the basic unit for managing development teams and projects. Team members within the same organization can collaborate on application development and share resources. Different organizations are isolated in terms of hardware and software resources, data, applications, etc. Each developer organization can bind multiple Jit nodes, each node can only be bound to one organization, and each developer can join multiple developer organizations.
 

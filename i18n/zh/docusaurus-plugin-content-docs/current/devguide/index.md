@@ -60,6 +60,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="了解如何激活节点和管理开发者组织，包括组织绑定、成员管理等核心操作。"
 >
   <LinkGrid links={[
+    { text: "什么是节点", href: "installation-activation/developer-organization-management#what-is-jitnode" },
     { text: "什么是开发者组织", href: "installation-activation/developer-organization-management#what-is-developer-organization" },
     { text: "在激活节点时创建新的开发组织", href: "installation-activation/developer-organization-management#create-new-development-organization-when-activating-node" },
     { text: "在激活节点时将节点绑定到自己已加入的组织", href: "installation-activation/developer-organization-management#bind-node-to-joined-organization-when-activating" },

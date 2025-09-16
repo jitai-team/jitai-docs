@@ -60,6 +60,7 @@ Complete the platform installation and node activation process. Learn download a
   description="Learn how to activate nodes and manage developer organizations, including organization binding, member management and other core operations."
 >
   <LinkGrid links={[
+    { text: "What is Node", href: "installation-activation/developer-organization-management#what-is-jitnode" },
     { text: "What is Developer Organization", href: "installation-activation/developer-organization-management#what-is-developer-organization" },
     { text: "Create New Development Organization When Activating Node", href: "installation-activation/developer-organization-management#create-new-development-organization-when-activating-node" },
     { text: "Bind Node to Joined Organization When Activating", href: "installation-activation/developer-organization-management#bind-node-to-joined-organization-when-activating" },

@@ -26,5 +26,9 @@
   "item.label.Community Forum": {
     "message": "社区论坛",
     "description": "Navbar item with label Community Forum"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
   }
 }

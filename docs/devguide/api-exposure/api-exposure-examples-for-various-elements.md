@@ -19,7 +19,7 @@ Each function in the service can be authorized independently by turning on the `
 
 Coming soon...
 
-## API Authorization for Large Model Functions {#large-model-function-api-authorization}
+## API Authorization for Large Language Model Functions {#large-language-model-function-api-authorization}
 
 
 Coming soon...

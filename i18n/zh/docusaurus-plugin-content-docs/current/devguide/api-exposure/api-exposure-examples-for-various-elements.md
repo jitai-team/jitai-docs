@@ -19,7 +19,7 @@ slug: api-exposure-examples-for-various-elements
 
 敬请期待...
 
-## 大模型函数的API授权 {#large-model-function-api-authorization}
+## 大模型函数的API授权 {#large-language-model-function-api-authorization}
 
 
 敬请期待...

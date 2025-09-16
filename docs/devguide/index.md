@@ -1695,6 +1695,42 @@ Connect your application to the broader world. Easily integrate third-party APIs
     { text: "SMS Notification Function", href: "third-party-integration/sms-service#sms-notification-function" }
   ]} />
 </IndexCard>
+</div>
+
+## Cache Management
+Make applications run faster and more stable. Configure intelligent caching strategies, optimize data access speed, and enhance user experience. Ensure applications run smoothly even under high concurrent access.
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard
+  title="Cache Configuration and Usage"
+  href="cache-management"
+  description="Application cache strategy configuration to improve system performance and response speed."
+>
+  <LinkGrid links={[
+    { text: "Cache Service Configuration", href: "cache-management#cache-service-configuration" },
+    { text: "Multi-cache Service Management", href: "cache-management#multi-cache-service-management" },
+    { text: "Cache Programming Interface Usage", href: "cache-management#cache-programming-interface-usage" }
+  ]} />
+</IndexCard>
+</div>
+
+## Internal API Exposure
+Expose application capabilities for external system calls. Generate standard API interfaces with one click, manage call permissions, and monitor usage. Make your application a provider of data and services.
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard
+  title="API Authorization"
+  href="api-exposure/api-authorization"
+  description="Permission control and access authorization management for API interfaces."
+>
+  <LinkGrid links={[
+    { text: "API Authorization Creation", href: "api-exposure/api-authorization#api-authorization-creation" },
+    { text: "API Authorization Detail", href: "api-exposure/api-authorization#api-authorization-detail" },
+    { text: "Call Records", href: "api-exposure/api-authorization#call-records" }
+  ]} />
+</IndexCard>
 
 <IndexCard
   title="API Exposure Examples for Various Elements"
@@ -1705,7 +1741,7 @@ Connect your application to the broader world. Easily integrate third-party APIs
     <LinkGrid links={[
         { text: "API Authorization for Service Functions", href: "api-exposure/api-exposure-examples-for-various-elements#service-function-api-authorization" },
         { text: "API Authorization for Data Models", href: "api-exposure/api-exposure-examples-for-various-elements#data-model-api-authorization" },
-        { text: "API Authorization for Large Model Functions", href: "api-exposure/api-exposure-examples-for-various-elements#large-model-function-api-authorization" },
+        { text: "API Authorization for Large Language Model Functions", href: "api-exposure/api-exposure-examples-for-various-elements#large-language-model-function-api-authorization" },
         { text: "API Authorization for AI Agents", href: "api-exposure/api-exposure-examples-for-various-elements#agent-api-authorization" },
         { text: "API Authorization for AI Assistants", href: "api-exposure/api-exposure-examples-for-various-elements#ai-assistant-api-authorization" },
         { text: "API Authorization for Approval Processes", href: "api-exposure/api-exposure-examples-for-various-elements#approval-process-api-authorization" }
@@ -1739,53 +1775,6 @@ Connect your application to the broader world. Easily integrate third-party APIs
   </div>
 </IndexCard>
 
-## Cache Management
-Make applications run faster and more stable. Configure intelligent caching strategies, optimize data access speed, and enhance user experience. Ensure applications run smoothly even under high concurrent access.
-
-<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
-
-<IndexCard
-  title="Cache Configuration and Usage"
-  href="cache-management"
-  description="Application cache strategy configuration to improve system performance and response speed."
->
-  <LinkGrid links={[
-    { text: "Cache Service Configuration", href: "cache-management#cache-service-configuration" },
-    { text: "Multi-cache Service Management", href: "cache-management#multi-cache-service-management" },
-    { text: "Cache Programming Interface Usage", href: "cache-management#cache-programming-interface-usage" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="Component Customization"
-  href="frontend-ui-customization/component-customization"
-  description="Customize individual components to match specific design requirements and enhance user interface consistency across the application."
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
-</IndexCard>
-
-<IndexCard
-  title="Page Customization"
-  href="frontend-ui-customization/page-customization"
-  description="Customize entire page layouts, themes, and visual elements to create cohesive and branded user experiences."
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
-</IndexCard>
-
-<IndexCard
-  title="Portal Customization"
-  href="frontend-ui-customization/portal-customization"
-  description="Customize portal interfaces and navigation elements to provide personalized and role-based user experiences."
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
-</IndexCard>
-
 </div>
 
 ## Internationalization
@@ -1802,25 +1791,6 @@ Make your application accessible to global users. Support multiple languages, re
     📝 Coming soon...
   </div>
 </IndexCard>
-
-## Internal API Exposure
-Expose application capabilities for external system calls. Generate standard API interfaces with one click, manage call permissions, and monitor usage. Make your application a provider of data and services.
-
-<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
-
-<IndexCard
-  title="API Authorization"
-  href="api-exposure/api-authorization"
-  description="Permission control and access authorization management for API interfaces."
->
-  <LinkGrid links={[
-    { text: "API Authorization Creation", href: "api-exposure/api-authorization#api-authorization-creation" },
-    { text: "API Authorization Detail", href: "api-exposure/api-authorization#api-authorization-detail" },
-    { text: "Call Records", href: "api-exposure/api-authorization#call-records" }
-  ]} />
-</IndexCard>
-
-</div>
 
 <IndexCard
   title="Extending System Builtin Language Packages"
@@ -1844,7 +1814,6 @@ Expose application capabilities for external system calls. Generate standard API
 
 </div>
 
-</div>
 
 ## Frontend UI Customization
 Create unique visual experiences and brand identity. Customize application theme colors, develop exclusive UI components, and make application interfaces better align with corporate brand tone while enhancing user experience and recognition.
@@ -1878,6 +1847,35 @@ Create unique visual experiences and brand identity. Customize application theme
   ]} />
 </IndexCard>
 
+<IndexCard
+  title="Component Customization"
+  href="frontend-ui-customization/component-customization"
+  description="Customize individual components to match specific design requirements and enhance user interface consistency across the application."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Page Customization"
+  href="frontend-ui-customization/page-customization"
+  description="Customize entire page layouts, themes, and visual elements to create cohesive and branded user experiences."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Portal Customization"
+  href="frontend-ui-customization/portal-customization"
+  description="Customize portal interfaces and navigation elements to provide personalized and role-based user experiences."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
 </div>
 
 ## Scenario-based Advanced Guide

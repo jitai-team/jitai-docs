@@ -13,7 +13,7 @@ In the authorization details page, click `Download SDK` to view the SDK usage gu
 
 JitAi provides SDKs for three languages: Python, Node.js, and Java.
 
-## Using Python SDK
+## Using Python SDK {#using-python-sdk}
 As a Python developer, you can use the Python SDK to call interfaces exposed by the authorization party.
 
 ![Python SDK](./img/api_2025-09-16_14-22-10.png)
@@ -41,7 +41,7 @@ resp = req.execute(authApi)
 print(resp.data) 
 ```
 
-## Using Node.js SDK
+## Using Node.js SDK {#using-nodejs-sdk}
 As a Node.js developer, you can use the Node.js SDK to call interfaces exposed by the authorization party.
 
 ![Nodejs SDK](./img/api_2025-09-16_14-33-46.png)
@@ -69,7 +69,7 @@ After successful SDK installation, you can import the SDK in the corresponding p
 
 ```
 
-## Using Java SDK
+## Using Java SDK {#using-java-sdk}
 As a Java developer, you can use the Java SDK to call interfaces exposed by the authorization party.
 
 ![Java SDK](./img/api_2025-09-16_14-36-54.png)

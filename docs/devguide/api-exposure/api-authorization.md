@@ -38,7 +38,7 @@ On the authorization page, developers can modify the accessKey. After modifying 
 
 :::
 
-## Call Records
+## Call Records {#call-records}
 
 When callers initiate calls, JitAi will generate call records.
 

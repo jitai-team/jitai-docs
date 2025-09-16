@@ -21,7 +21,7 @@ Master the core concepts and architecture principles of the JitAi platform. Unde
 
 <IndexCard
   title="Platform Architecture and Core Concepts"
-  href="basic-concept"
+  href="devguide/basic-concept"
   description="Understand JitAi platform architecture, application concepts, JAAP protocol, element systems, and development frameworks to master the fundamental principles of the platform."
 >
   <LinkGrid columns={2} links={[

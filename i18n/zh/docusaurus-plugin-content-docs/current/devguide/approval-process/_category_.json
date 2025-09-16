@@ -1,6 +1,6 @@
 {
   "label": "审批流程",
-  "position": 8,
+  "position": 17,
   "link": {
     "type": "generated-index",
     "description": "学习如何设计和配置审批流程，包括节点配置、权限控制和页面定制。"

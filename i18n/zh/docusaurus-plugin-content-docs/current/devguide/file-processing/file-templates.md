@@ -3,7 +3,7 @@ sidebar_position: 2
 slug: file-templates
 ---
 
-# 文件模板
+# 创建文件模板
 文件模板是一种文档生成工具，通过预设变量实现动态内容填充，可用于动态生成销售合同、生产工单、发票单据。
 JitAi支持Word模板和Excel模板。
 

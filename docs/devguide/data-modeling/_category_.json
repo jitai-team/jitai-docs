@@ -1,6 +1,6 @@
 {
   "label": "Data Modeling",
-  "position": 5,
+  "position": 14,
   "link": {
     "type": "generated-index",
     "description": "Learn how to perform data modeling in JitAi, including database connections, data table design, extended tables, and aggregated tables."

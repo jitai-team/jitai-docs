@@ -3,7 +3,7 @@ sidebar_position: 1
 slug: external-api
 ---
 
-# 外部API
+# 创建通用的外部API元素
 外部 API 集成是用于调用第三方 HTTP 接口的元素，基于 requests 库实现 RESTful API 的统一调用管理。它负责 HTTP 请求封装、参数处理和响应解析，支持 GET、POST、PUT、DELETE 等标准 HTTP 方法，提供请求前后处理和回调机制。
 
 ## 外部API创建

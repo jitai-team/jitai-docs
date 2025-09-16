@@ -1,0 +1,8 @@
+{
+  "label": "Internationalization",
+  "position": 24,
+  "link": {
+    "type": "generated-index",
+    "description": "Learn how to internationalize your application, including multi-language support, regional settings, and dynamic language pack management."
+  }
+} 

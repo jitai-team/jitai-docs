@@ -1,0 +1,8 @@
+{
+  "label": "Calling Business Elements in Pages",
+  "position": 7,
+  "link": {
+    "type": "generated-index",
+    "description": "Learn how to call and integrate business elements within pages, including service functions and data model functions for dynamic content and business logic execution."
+  }
+}

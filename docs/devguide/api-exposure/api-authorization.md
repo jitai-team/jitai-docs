@@ -1,0 +1,65 @@
+---
+sidebar_position: 1
+slug: api-authorization
+---
+
+# 创建API授权元素
+API 授权（API Authorization）是控制接口（API）访问权限的过程，旨在确保只有被授权的外部调用方才能够访问特定资源或执行特定操作。
+
+目前，JitAi 支持使用 API 授权元素将系统中的服务函数对外开放。
+
+## API授权的创建 {#api-authorization-creation}
+![API 授权的创建](./img/api_2025-08-26_15-21-40.png)
+
+在左侧元素树上点击`+`会打开弹窗，将鼠标移动到“更多”中，会看到“API 授权”。点击“API 授权”里面的“标准授权”，就会打开标准授权的新建弹窗页面。
+
+![API 新建弹窗](./img/api_2025-08-26_15-26-59.png)
+
+在标准授权的新建弹窗页面中，填写 API 授权名称和 accessKey 后，点击`保存`即可创建一个新的 API 授权。
+
+:::tip 提示
+accessKey 是 API 授权的密钥，是由 8-32 位字母或数字组成的字符串，不能包含特殊字符。
+
+在创建 API 授权之前，系统会先根据 accessKey 生成 accessSecret。accessKey 和 accessSecret 是 API 授权访问的凭证。
+
+:::
+
+## API访问权限控制 {#api-access-permission-control}
+开发者可以将某些服务中的一些接口授权给调用方，调用方就可以通过调用 API 获取数据。
+
+![授权编辑](./img/api_2025-08-26_15-38-56.png)
+
+在开发者在新建 API 授权弹窗里点击`确认`后，页面会跳转到授权列表页面，并显示刚创建的授权信息。
+
+在授权信息中的`调用url`就是授权接口的调用地址，调用方可以通过该 url 进行调用。
+
+![授权列表](./img/api_2025-08-26_15-44-40.png)
+
+服务中的各个函数可以独立授权，在对应的接口名称前面打开`授权状态`开关即可，也可以点击右上角的`全部授权`将所有函数开放。
+
+:::warning 注意
+
+在授权页面，开发者可以修改 accessKey。修改完 accessKey 后，请务必重新生成新的 accessSecret，否则校验将无法通过。
+
+:::
+
+## API调用监控 {#api-call-monitoring}
+当调用方发起调用时，JitAi 会生成调用记录。
+
+![调用记录](./img/api_2025-08-26_15-50-10.gif)
+
+在授权 API 的可视化编辑器中，点击右上角的`调用记录`，打开调用记录弹窗。
+
+在调用记录弹窗中可以查看接口地址、调用时间、调用 IP、调用结果等信息，还可以根据调用结果状态、调用时间进行筛选。
+
+## 使用SDK调用授权的接口 {#use-sdk-to-call-authorized-interfaces} 
+开发者配置好授权信息和授权接口后，调用方需使用 JitAi 提供的 SDK 进行使用。
+
+JitAi 提供了 Python、Nodejs、Java 三种语言的 SDK。
+
+![SDK 集成](./img/api_2025-08-26_15-55-36.gif)
+
+在授权页面中点击`下载SDK`，可以查看SDK使用指南和下载地址。
+
+## 使用跨App服务元素调用授权接口 {#use-cross-app-service-elements-to-call-authorized-interfaces} 
+如果调用方也是JitAi应用，则可以直接使用[跨App服务元素](../business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-interfaces)调用授权方开放的接口。

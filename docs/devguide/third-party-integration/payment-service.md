@@ -3,7 +3,7 @@ sidebar_position: 2
 slug: payment-service
 ---
 
-# 支付服务
+# 内置的支付服务
 支付服务是 JitAi 基于微信支付和支付宝支付服务开发的支付服务模块，负责支付订单创建、支付链接获取、订单状态查询、支付确认和回调处理等功能。它提供了标准化的支付业务接口，封装了与第三方支付平台的复杂交互逻辑。
 
 ## 微信支付服务配置 {#wechat-payment-service-configuration}

@@ -40,4 +40,4 @@ Add the "Teacher" department to the member configuration under the "Teacher" rol
 
 ![](../img/role_160224.png)
 
-Read [Role Permissions](../../devguide/user-and-permission/role-permissions) for more details.
+Read [Role and Portal Menu Permissions](../../devguide/user-and-permission/role-portal-menu-permissions) for more details.

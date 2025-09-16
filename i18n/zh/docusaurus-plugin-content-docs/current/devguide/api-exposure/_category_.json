@@ -1,0 +1,8 @@
+{
+  "label": "内部API暴露",
+  "position": 18,
+  "link": {
+    "type": "generated-index",
+    "description": "学习如何暴露API接口供第三方调用和与外部系统集成。"
+  }
+}

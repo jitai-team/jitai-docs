@@ -1,0 +1,8 @@
+{
+  "label": "页面中的全代码自定义UI组件",
+  "position": 13,
+  "link": {
+    "type": "generated-index",
+    "description": "学习如何在页面中创建和集成全代码自定义UI组件，包括接口规范、函数调用、事件处理和组件通信。"
+  }
+}

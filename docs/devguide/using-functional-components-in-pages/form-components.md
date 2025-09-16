@@ -385,7 +385,7 @@ slug: form-components
 ## 使用自定义控件渲染字段 {#use-custom-controls-to-render-fields}
 **字段渲染器**
 
-    当表单使用[自定义控件](../style-and-control-customization/custom-controls)作为字段渲染器时，所设计的自定义控件必须支持以下属性：
+    当表单使用[自定义控件](../frontend-ui-customization/custom-controls)作为字段渲染器时，所设计的自定义控件必须支持以下属性：
 
     fieldConfig：当前字段在表单配置中的配置信息
 
@@ -395,7 +395,7 @@ slug: form-components
 
 **字段编辑器**
 
-    当表单使用[自定义控件](../style-and-control-customization/custom-controls)作为字段编辑器时，同自定义渲染器一样，也要支持以下属性：
+    当表单使用[自定义控件](../frontend-ui-customization/custom-controls)作为字段编辑器时，同自定义渲染器一样，也要支持以下属性：
 
     fieldConfig：当前字段在表单配置中的配置信息
 

@@ -70,10 +70,10 @@ For AI-generated charts, users can also make the following adjustments:
 ## Quick Create {#quick-create}
 In addition to creating in the developer portal, you can also quickly create in the regular portal. The creation method is as follows:
 
-![Create AI Data Analysis Page - Source Code](./imgs/quickly.png)
+![Create AI Data Analysis Page - quickly](./imgs/quickly.png)
 
 Click **Create New** → **AI Data Analysis Functions**.This operation will create a new AI data analysis page and simultaneously create a menu in the portal and bind it to the newly added page.
 
 :::tip Tip
-You need to be granted [Quick Create Permission](../../user-and-permission/role-permissions#specify-accessible-portals-and-menus) to see the quick create entry.
+You need to be granted [quick create permissions](../../user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus) to see the quick create entry.
 :::

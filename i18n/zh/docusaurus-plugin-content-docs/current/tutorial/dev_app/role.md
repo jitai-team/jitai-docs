@@ -40,4 +40,4 @@ JIT应用框架中，已经内置了「开发者」、「管理者」2种角色�
 
 ![](../img/role_160224.png)
 
-阅读[角色权限](../../devguide/user-and-permission/role-permissions)了解更多。
+阅读[角色与门户菜单权限](../../devguide/user-and-permission/role-portal-menu-permissions)了解更多。

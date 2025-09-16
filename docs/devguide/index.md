@@ -300,6 +300,117 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
 
 </div>
 
+## AI Integration in Portals and Pages
+Enhance user experience with intelligent AI elements. Integrate AI assistants, agents, and other AI components into portals and pages to create smart, interactive applications that provide personalized assistance and automated workflows.
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard
+  title="Integrating AI Assistants in Portals"
+  href="ai-integration-in-portals-and-pages/integrating-ai-assistants-in-portals"
+  description="Learn how to integrate AI assistants into portal interfaces, providing users with intelligent help and guidance throughout their workflow."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Integrating AI Assistants in Component Pages"
+  href="ai-integration-in-portals-and-pages/integrating-ai-assistants-in-component-pages"
+  description="Embed AI assistants into component-based pages to enhance user interactions and provide contextual assistance for specific tasks."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Calling AI Elements in Pages"
+  href="ai-integration-in-portals-and-pages/calling-ai-elements-in-pages"
+  description="Master the techniques for invoking AI elements from pages, including AI agents, LLM services, and knowledge bases for dynamic content generation."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+</div>
+
+## Calling Business Elements in Pages
+Connect your pages to powerful business logic and data operations. Learn how to invoke service functions and data model functions from pages to create dynamic, data-driven user interfaces with real-time business processing capabilities.
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard
+  title="Calling Service Functions in Pages"
+  href="calling-business-elements-in-pages/calling-service-functions-in-pages"
+  description="Learn how to invoke service functions from pages to execute business logic, process data, and integrate with external systems for dynamic content generation."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Calling Data Model Functions in Pages"
+  href="calling-business-elements-in-pages/calling-data-model-functions-in-pages"
+  description="Master the techniques for calling data model functions from pages to perform CRUD operations, data queries, and database interactions for real-time data display."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+</div>
+
+## Full-Code UI Components in Pages
+Create advanced custom UI components with full programming control. Build sophisticated interactive elements that seamlessly integrate with page logic, handle complex events, and provide rich user experiences beyond standard components.
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard
+  title="UI Component Interface Specifications"
+  href="fullcode-ui-components-in-pages/ui-component-interface-specifications"
+  description="Learn the interface specifications and standards for creating full-code UI components, including props, state management, and lifecycle methods."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Calling Page and Component Functions in Full-Code Components"
+  href="fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components"
+  description="Master techniques for invoking page functions and other component functions from within full-code components for seamless integration."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Emitting Events"
+  href="fullcode-ui-components-in-pages/emitting-events"
+  description="Learn how to emit custom events from full-code components to communicate with parent pages and other components effectively."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Calling Full-Code Component Functions in Page Code"
+  href="fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code"
+  description="Understand how to call functions exposed by full-code components from page code to control component behavior and data flow."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+</div>
+
 ## Using Functional Components in Pages
 The rich component library is your super toolkit. Drag and drop a table to display data, add forms to collect information, and insert charts for data visualization. Make complex frontend development simple and intuitive.
 
@@ -442,11 +553,33 @@ The rich component library is your super toolkit. Drag and drop a table to displ
 </IndexCard>
 
 <IndexCard
-  title="Tree Component (Editing in Progress)"
-  description="Hierarchical data display component supporting tree structure display, selection and operations."
+  title="Tree Components"
+  description="Display hierarchical data structures with node expand/collapse and selection operations, providing clear data navigation experience."
+  link="/docs/devguide/using-functional-components-in-pages/tree-components"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Documentation is being improved, please stay tuned...
+  <div style={{padding: '20px'}}>
+    <p style={{marginBottom: '15px', color: '#666'}}>
+      <strong>Primary Use:</strong> Hierarchical data display for file directories, organizational structures, product categories, etc.
+    </p>
+    <div style={{marginBottom: '15px'}}>
+      <strong style={{color: '#333'}}>Component Types:</strong>
+      <ul style={{marginTop: '8px', paddingLeft: '20px'}}>
+        <li><strong>Tree Component:</strong> Multi-level data display with progressive loading</li>
+        <li><strong>Cascade Tree:</strong> Hierarchical data display based on self-relational fields</li>
+      </ul>
+    </div>
+    <div style={{marginBottom: '15px'}}>
+      <strong style={{color: '#333'}}>Core Features:</strong>
+      <ul style={{marginTop: '8px', paddingLeft: '20px'}}>
+        <li>Node expand/collapse operations</li>
+        <li>Single/multiple selection modes</li>
+        <li>Node click event handling</li>
+        <li>Interactive updates with other components</li>
+      </ul>
+    </div>
+    <p style={{color: '#007acc', fontWeight: '500'}}>
+      💡 Use Cases: Organizational management, file systems, product categorization, permission trees, etc.
+    </p>
   </div>
 </IndexCard>
 
@@ -698,39 +831,80 @@ Integrate mainstream large language models such as GPT-4, Claude, and Tongyi Qia
 
 </div>
 
-## Vector Database
-The intelligent storage engine for enterprise knowledge. Convert text into vector data to achieve semantic-level precise search, providing fundamental support for intelligent Q&A and knowledge retrieval systems.
-
-<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
-
-<IndexCard>
-  <LinkGrid links={[
-    { text: "Chroma Vector Database", href: "vector-database#chroma-vector-database" },
-    { text: "Local Vector Database Configuration", href: "vector-database#local-vector-database-config" },
-    { text: "Remote Vector Database Connection", href: "vector-database#remote-vector-database-connection" },
-    { text: "Vector Database Programming Interface", href: "vector-database#vector-database-programming-interface" }
-  ]} />
-</IndexCard>
-
-</div>
-
 ## AI Knowledge Base
 Transform enterprise documents, manuals, and FAQs into intelligent knowledge bases. Support automatic document processing, intelligent segmentation, and semantic retrieval to enable AI to answer questions accurately based on enterprise knowledge.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
-<IndexCard>
+<IndexCard
+  title="Create AI Knowledge Base Element"
+  href="knowledge-base/create-knowledge-elements"
+  description="Learn how to create the AI Knowledge Base element and understand the principles."
+>
+  <LinkGrid links={[
+    { text: "Create AI Knowledge Base Element", href: "knowledge-base/create-knowledge-elements#create-ai-knowledge-base-element" },
+    { text: "Principle Description", href: "knowledge-base/create-knowledge-elements#principle-description" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Document Management and Settings"
+  href="knowledge-base/knowledge-base-document-management"
+  description="Manage documents, configure knowledge base settings, run query tests, and tune vectorization."
+>
   <LinkGrid columns={2} links={[
-    { text: "Create AI Knowledge Base Element", href: "ai-knowledge-base#create-ai-knowledge-base-element" },
-    { text: "AI Knowledge Base Management", href: "ai-knowledge-base#ai-knowledge-base-management" },
-    { text: "Document Management", href: "ai-knowledge-base#document-management" },
-    { text: "AI Knowledge Base Settings", href: "ai-knowledge-base#ai-knowledge-base-settings" },
-    { text: "Query Testing", href: "ai-knowledge-base#query-testing" },
-    { text: "Call AI Knowledge Base in Backend Visual Programming", href: "ai-knowledge-base#call-ai-knowledge-base-in-backend-visual-programming" },
-    { text: "Use AI Knowledge Base in AI Agent", href: "ai-knowledge-base#use-ai-knowledge-base-in-ai-agent" },
-    { text: "AI Knowledge Base Programming Interface", href: "ai-knowledge-base#ai-knowledge-base-programming-interface" },
-    { text: "Principles and Parameter Description", href: "ai-knowledge-base#vectorization-configuration-description" },
-    { text: "Vectorization Configuration Description", href: "ai-knowledge-base#ai-knowledge-base-settings" }
+    { text: "Document Management", href: "knowledge-base/knowledge-base-document-management" },
+    { text: "AI Knowledge Base Settings", href: "knowledge-base/knowledge-base-document-management#ai-knowledge-base-settings" },
+    { text: "Query Testing", href: "knowledge-base/knowledge-base-document-management#query-testing" },
+    { text: "Vectorization Configuration Description", href: "knowledge-base/knowledge-base-document-management#vectorization-configuration-description" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Full-text and Semantic Search"
+  href="knowledge-base/full-text-and-semantic-search"
+  description="Understand how settings participate in the query flow and how to call the knowledge base in backend visual programming."
+>
+  <LinkGrid links={[
+    { text: "How Settings Participate in Query Flow", href: "knowledge-base/full-text-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow" },
+    { text: "Call in Backend Visual Programming", href: "knowledge-base/full-text-and-semantic-search#call-ai-knowledge-base-in-backend-visual-programming" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Use AI Knowledge Base in AI Agent"
+  href="knowledge-base/integrate-knowledge-base-into-agent"
+  description="Integrate the AI Knowledge Base into Agent for RAG."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="AI Knowledge Base API"
+  href="knowledge-base/ai-knowledge-base-api"
+  description="Programmatic access to the AI Knowledge Base."
+>
+  <LinkGrid links={[
+    { text: "Programming Interface Overview", href: "knowledge-base/ai-knowledge-base-api#ai-knowledge-base-programming-interface" },
+    { text: "query", href: "knowledge-base/ai-knowledge-base-api#query-testing" },
+    { text: "addDocumentByBusinessId", href: "knowledge-base/ai-knowledge-base-api#adddocumentbybusinessid" },
+    { text: "deleteDocumentByBusinessId", href: "knowledge-base/ai-knowledge-base-api#deletedocumentbybusinessid" },
+    { text: "queryKeywords", href: "knowledge-base/ai-knowledge-base-api#querykeywords" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Vector Database Standalone Deployment"
+  href="knowledge-base/vector-database-standalone-deployment"
+  description="The intelligent storage engine for enterprise knowledge. Convert text into vector data to achieve semantic-level precise search."
+>
+  <LinkGrid links={[
+    { text: "Chroma Vector Database", href: "knowledge-base/vector-database-standalone-deployment#chroma-vector-database" },
+    { text: "Local Vector Database Configuration", href: "knowledge-base/vector-database-standalone-deployment#local-vector-database-config" },
+    { text: "Remote Vector Database Connection", href: "knowledge-base/vector-database-standalone-deployment#remote-vector-database-connection" },
+    { text: "Vector Database Programming Interface", href: "knowledge-base/vector-database-standalone-deployment#vector-database-programming-interface" }
   ]} />
 </IndexCard>
 
@@ -902,7 +1076,7 @@ Visual intelligent workflow engine. Orchestrate business processes through drag-
 </IndexCard>
 
 <IndexCard
-  title="AI Assistant API Integration"
+  title="AI Assistant API Exposure"
   href="ai-assitant/ai-assistant-api-integration"
   description="Expose AI assistant capabilities through API interfaces for external system integration."
 >
@@ -918,8 +1092,7 @@ Design a powerful data foundation for your application. Create data tables, desi
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
-<IndexCard
-  title="Managing Database Connections"
+<IndexCard  title="Managing Database Connections"
   href="data-modeling/manage-database-connections"
   description="Configure and manage multiple database connections, supporting multi-data source application development."
 >
@@ -1057,15 +1230,22 @@ Design a powerful data foundation for your application. Create data tables, desi
   </div>
 </IndexCard>
 
+</div>
+
+## Transaction Management
+Ensure data consistency and reliability in complex business operations. Master database transaction control mechanisms, implement atomic operations, and handle concurrent access scenarios effectively.
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
 <IndexCard
   title="Transaction Management"
-  href="data-modeling/transaction-management"
+  href="transaction-management"
   description="Database transaction control and consistency management to ensure reliability of data operations."
 >
   <LinkGrid links={[
-    { text: "Default Transaction Management Mechanism", href: "data-modeling/transaction-management#default-transaction-management-mechanism" },
-    { text: "Manual Transaction Commit/Rollback", href: "data-modeling/transaction-management#manual-transaction-commit-rollback" },
-    { text: "Transaction Decorator", href: "data-modeling/transaction-management#transaction-decorator" }
+    { text: "Default Transaction Management Mechanism", href: "transaction-management#default-transaction-management-mechanism" },
+    { text: "Manual Transaction Commit/Rollback", href: "transaction-management#manual-transaction-commit-rollback" },
+    { text: "Transaction Decorator", href: "transaction-management#transaction-decorator" }
   ]} />
 </IndexCard>
 
@@ -1123,27 +1303,47 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
 </IndexCard>
 
 <IndexCard
-  title="Role Permissions"
-  href="user-and-permission/role-permissions"
+  title="Role and Portal Menu Permissions"
+  href="user-and-permission/role-portal-menu-permissions"
   description="Application role definition and permission allocation, implementing fine-grained access control."
 >
   <LinkGrid columns={2} links={[
-    { text: "Built-in Three Application Roles", href: "user-and-permission/role-permissions#built-in-three-application-roles" },
-    { text: "Anonymous User", href: "user-and-permission/role-permissions#anonymous-user" },
-    { text: "Developer", href: "user-and-permission/role-permissions#developer" },
-    { text: "Administrator", href: "user-and-permission/role-permissions#administrator" },
-    { text: "Create Application Role", href: "user-and-permission/role-permissions#create-application-role" },
-    { text: "Application Role Permission Configuration", href: "user-and-permission/role-permissions#application-role-permission-configuration" },
-    { text: "Specify Accessible Portals and Menus", href: "user-and-permission/role-permissions#specify-accessible-portals-and-menus" },
-    { text: "Manage Application Role Members in Developer Portal", href: "user-and-permission/role-permissions#manage-application-role-members-in-developer-portal" },
-    { text: "Portal-level Data Operation Type and Scope Control", href: "user-and-permission/role-permissions#portal-level-data-operation-type-and-scope-control" },
-    { text: "Component Button Permission Control", href: "user-and-permission/role-permissions#component-button-permission-control" },
-    { text: "Component Data Field Access Control", href: "user-and-permission/role-permissions#component-data-field-access-control" },
-    { text: "Hierarchical Management of Multiple Application Roles", href: "user-and-permission/role-permissions#hierarchical-management-of-multiple-application-roles" },
-    { text: "Application Role Member Management", href: "user-and-permission/role-permissions#application-role-member-management" },
-    { text: "Member Addition and Removal", href: "user-and-permission/role-permissions#member-addition-and-removal" },
-    { text: "Member Management Scope Settings in Org Structure", href: "user-and-permission/role-permissions#member-management-scope-settings-in-org-structure" }
+    { text: "Built-in Three Application Roles", href: "user-and-permission/role-portal-menu-permissions#built-in-three-application-roles" },
+    { text: "Anonymous User", href: "user-and-permission/role-portal-menu-permissions#anonymous-user" },
+    { text: "Developer", href: "user-and-permission/role-portal-menu-permissions#developer" },
+    { text: "Administrator", href: "user-and-permission/role-portal-menu-permissions#administrator" },
+    { text: "Create Application Role", href: "user-and-permission/role-portal-menu-permissions#create-application-role" },
+    { text: "Application Role Permission Configuration", href: "user-and-permission/role-portal-menu-permissions#application-role-permission-configuration" },
+    { text: "Specify Accessible Portals and Menus", href: "user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus" },
+    { text: "Manage Application Role Members in Developer Portal", href: "user-and-permission/role-portal-menu-permissions#manage-application-role-members-in-developer-portal" },
+    { text: "Portal-level Data Operation Type and Scope Control", href: "user-and-permission/role-portal-menu-permissions#portal-level-data-operation-type-and-scope-control" },
+    { text: "Component Button Permission Control", href: "user-and-permission/role-portal-menu-permissions#component-button-permission-control" },
+    { text: "Component Data Field Access Control", href: "user-and-permission/role-portal-menu-permissions#component-data-field-access-control" },
+    { text: "Hierarchical Management of Multiple Application Roles", href: "user-and-permission/role-portal-menu-permissions#hierarchical-management-of-multiple-application-roles" },
+    { text: "Application Role Member Management", href: "user-and-permission/role-portal-menu-permissions#application-role-member-management" },
+    { text: "Member Addition and Removal", href: "user-and-permission/role-portal-menu-permissions#member-addition-and-removal" },
+    { text: "Member Management Scope Settings in Org Structure", href: "user-and-permission/role-portal-menu-permissions#member-management-scope-settings-in-org-structure" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="Roles and Business Element Permissions"
+  href="user-and-permission/roles-and-business-element-permissions"
+  description="Advanced role-based permission control for business elements, data models, and functional components."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Agent Tool Permission Control"
+  href="user-and-permission/agent-tool-permission-control"
+  description="Configure and manage permission control for AI Agent tools, ensuring secure and controlled agent operations."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
 </IndexCard>
 
 </div>
@@ -1154,20 +1354,56 @@ Empower applications with powerful business processing capabilities. Handle comp
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Encapsulating Business Service Functions"
-  href="business-logic-development/encapsulating-business-service-functions"
+  title="Creating Service Elements"
+  href="business-logic-development/creating-service-elements"
   description="Backend business logic implementation, encapsulating reusable business functions through service elements, providing API interfaces and data processing services."
 >
   <LinkGrid columns={2} links={[
-    { text: "Create Service Elements", href: "business-logic-development/encapsulating-business-service-functions#create-service-elements" },
-    { text: "Create Service Functions", href: "business-logic-development/encapsulating-business-service-functions#create-service-functions" },
-    { text: "Edit Service Functions in Source Code Mode", href: "business-logic-development/encapsulating-business-service-functions#edit-service-functions-source-code-mode" },
-    { text: "Add New Dependency Library", href: "business-logic-development/encapsulating-business-service-functions#add-new-dependency-library" },
-    { text: "Where Service Functions Are Used", href: "business-logic-development/encapsulating-business-service-functions#where-service-functions-are-used" },
-    { text: "Help AI Understand Service Functions", href: "business-logic-development/encapsulating-business-service-functions#help-ai-understand-service-functions" },
-    { text: "Use Cross-App Service Elements to Call Authorized Interfaces", href: "business-logic-development/encapsulating-business-service-functions#use-cross-app-service-elements-to-call-authorized-interfaces" },
-    { text: "Create Cross-App Service Elements", href: "business-logic-development/encapsulating-business-service-functions#create-cross-app-service-elements" },
-    { text: "Use Cross-App Service Elements in Functions", href: "business-logic-development/encapsulating-business-service-functions#use-cross-app-service-elements-in-functions" }
+    { text: "Create Service Elements", href: "business-logic-development/creating-service-elements#create-service-elements" },
+    { text: "Create Service Functions", href: "business-logic-development/creating-service-elements#create-service-functions" },
+    { text: "Edit Service Functions in Source Code Mode", href: "business-logic-development/creating-service-elements#edit-service-functions-source-code-mode" },
+    { text: "Add New Dependency Library", href: "business-logic-development/creating-service-elements#add-new-dependency-library" },
+    { text: "Where Service Functions Are Used", href: "business-logic-development/creating-service-elements#where-service-functions-are-used" },
+    { text: "Help AI Understand Service Functions", href: "business-logic-development/creating-service-elements#help-ai-understand-service-functions" },
+    { text: "Use Cross-App Service Elements to Call Authorized Interfaces", href: "business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-interfaces" },
+    { text: "Create Cross-App Service Elements", href: "business-logic-development/creating-service-elements#create-cross-app-service-elements" },
+    { text: "Use Cross-App Service Elements in Functions", href: "business-logic-development/creating-service-elements#use-cross-app-service-elements-in-functions" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Calling Other Elements in Service Functions"
+  href="business-logic-development/calling-other-elements-in-service-functions"
+  description="Learn how to call other elements from service functions, including models, other services, external APIs, and system components for comprehensive business logic implementation."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Service Elements Usage Scenarios"
+  href="business-logic-development/service-elements-usage-scenarios"
+  description="Explore practical usage scenarios and best practices for service elements across different business contexts and application architectures."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Background Tasks"
+  href="business-logic-development/background-tasks"
+  description="Scheduled tasks and asynchronous processing, supporting complex background business processes."
+>
+  <LinkGrid columns={2} links={[
+    { text: "Task Creation", href: "business-logic-development/background-tasks#task-creation" },
+    { text: "Scheduled Tasks", href: "business-logic-development/background-tasks#scheduled-tasks" },
+    { text: "Date Field Tasks", href: "business-logic-development/background-tasks#date-field-tasks" },
+    { text: "General Configuration Items", href: "business-logic-development/background-tasks#general-configuration-items" },
+    { text: "Task Execution Function Development", href: "business-logic-development/background-tasks#task-execution-function-development" },
+    { text: "Execution Record View", href: "business-logic-development/background-tasks#execution-record-view" },
+    { text: "Source Code Mode", href: "business-logic-development/background-tasks#source-code-mode" }
   ]} />
 </IndexCard>
 
@@ -1188,22 +1424,6 @@ Empower applications with powerful business processing capabilities. Handle comp
     { text: "Event Sync/Async Execution", href: "business-logic-development/event-handling#event-sync-async-execution" },
     { text: "Event Execution Records", href: "business-logic-development/event-handling#event-execution-records" },
     { text: "Full Code View/Edit", href: "business-logic-development/event-handling#full-code-view-edit" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="Background Tasks"
-  href="business-logic-development/background-tasks"
-  description="Scheduled tasks and asynchronous processing, supporting complex background business processes."
->
-  <LinkGrid columns={2} links={[
-    { text: "Task Creation", href: "business-logic-development/background-tasks#task-creation" },
-    { text: "Scheduled Tasks", href: "business-logic-development/background-tasks#scheduled-tasks" },
-    { text: "Date Field Tasks", href: "business-logic-development/background-tasks#date-field-tasks" },
-    { text: "General Configuration Items", href: "business-logic-development/background-tasks#general-configuration-items" },
-    { text: "Task Execution Function Development", href: "business-logic-development/background-tasks#task-execution-function-development" },
-    { text: "Execution Record View", href: "business-logic-development/background-tasks#execution-record-view" },
-    { text: "Source Code Mode", href: "business-logic-development/background-tasks#source-code-mode" }
   ]} />
 </IndexCard>
 
@@ -1327,6 +1547,26 @@ Make enterprise approval processes efficient and orderly. Design flowcharts thro
   ]} />
 </IndexCard>
 
+<IndexCard
+  title="Calling Business Logic Elements in Approval Process"
+  href="approval-process/calling-business-logic-elements-in-approval-process"
+  description="Learn how to call business logic elements within approval processes to implement complex business rules and automated decisions."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Integrating AI in Approval Process"
+  href="approval-process/integrating-ai-in-approval-process"
+  description="Integrate artificial intelligence capabilities into approval processes to achieve intelligent routing, automated review, and smart decision making."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
 </div>
 
 ## File Processing
@@ -1378,15 +1618,25 @@ Easily handle various file requirements in applications. Support file upload and
   ]} />
 </IndexCard>
 
+<IndexCard
+  title="Generating and Printing Files Using File Templates"
+  href="file-processing/generating-and-printing-files-using-file-templates"
+  description="Learn how to use file templates to generate and print documents programmatically, including dynamic content population and output formatting."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
 </div>
 
-## Third-party Integration
+## External API Integration
 Connect your application to the broader world. Easily integrate third-party APIs, integrate WeChat Pay and Alipay, and configure SMS notification services. Expand application capability boundaries to meet more business scenarios.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="External API"
+  title="Creating Universal External API Elements"
   href="third-party-integration/external-api"
   description="Third-party API service integration, expanding application functionality and data sources."
 >
@@ -1405,7 +1655,7 @@ Connect your application to the broader world. Easily integrate third-party APIs
 </IndexCard>
 
 <IndexCard
-  title="Payment Service"
+  title="Built-in Payment Service"
   href="third-party-integration/payment-service"
   description="Integrate mainstream payment platforms to implement online payment and transaction functions."
 >
@@ -1417,7 +1667,7 @@ Connect your application to the broader world. Easily integrate third-party APIs
 </IndexCard>
 
 <IndexCard
-  title="SMS Service"
+  title="Built-in SMS Service"
   href="third-party-integration/sms-service"
   description="SMS sending and notification service integration, supporting verification codes and message push."
 >
@@ -1430,7 +1680,35 @@ Connect your application to the broader world. Easily integrate third-party APIs
   ]} />
 </IndexCard>
 
-</div>
+<IndexCard
+  title="API Exposure Examples for Various Elements"
+  href="api-exposure/api-exposure-examples-for-various-elements"
+  description="Comprehensive examples demonstrating how to expose different types of elements as APIs, including data models, services, and custom functions."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Using SDK to Call Authorized Element APIs"
+  href="api-exposure/using-sdk-to-call-authorized-element-apis"
+  description="Learn how to use official SDKs to call authorized element APIs, including authentication, request handling, and error management."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Using Cross-App Service Elements to Call Authorized APIs"
+  href="api-exposure/using-cross-app-service-elements-to-call-authorized-apis"
+  description="Implement cross-application API calls using service elements, enabling seamless integration between different JitAi applications."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
 
 ## Cache Management
 Make applications run faster and more stable. Configure intelligent caching strategies, optimize data access speed, and enhance user experience. Ensure applications run smoothly even under high concurrent access.
@@ -1439,67 +1717,137 @@ Make applications run faster and more stable. Configure intelligent caching stra
 
 <IndexCard
   title="Cache Configuration and Usage"
-  href="cache-management/cache-configuration-and-usage"
+  href="cache-management"
   description="Application cache strategy configuration to improve system performance and response speed."
 >
   <LinkGrid links={[
-    { text: "Cache Service Configuration", href: "cache-management/cache-configuration-and-usage#cache-service-configuration" },
-    { text: "Multi-cache Service Management", href: "cache-management/cache-configuration-and-usage#multi-cache-service-management" },
-    { text: "Cache Programming Interface Usage", href: "cache-management/cache-configuration-and-usage#cache-programming-interface-usage" }
+    { text: "Cache Service Configuration", href: "cache-management#cache-service-configuration" },
+    { text: "Multi-cache Service Management", href: "cache-management#multi-cache-service-management" },
+    { text: "Cache Programming Interface Usage", href: "cache-management#cache-programming-interface-usage" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="Component Customization"
+  href="frontend-ui-customization/component-customization"
+  description="Customize individual components to match specific design requirements and enhance user interface consistency across the application."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Page Customization"
+  href="frontend-ui-customization/page-customization"
+  description="Customize entire page layouts, themes, and visual elements to create cohesive and branded user experiences."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Portal Customization"
+  href="frontend-ui-customization/portal-customization"
+  description="Customize portal interfaces and navigation elements to provide personalized and role-based user experiences."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
 </IndexCard>
 
 </div>
 
-## API Access
-Open application capabilities for external system calls. Generate standard API interfaces with one click, manage call permissions, and monitor usage. Make your application a provider of data and services.
+## Internationalization
+Make your application accessible to global users. Support multiple languages, regional settings, and dynamic language switching to create truly international applications.
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
+
+<IndexCard
+  title="Creating Language Packages"
+  href="internationalization/creating-language-packages"
+  description="Learn how to create custom language packages for your application, including structure definition and content organization."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+## Internal API Exposure
+Expose application capabilities for external system calls. Generate standard API interfaces with one click, manage call permissions, and monitor usage. Make your application a provider of data and services.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
   title="API Authorization"
-  href="api-open/api-authorization"
+  href="api-exposure/api-authorization"
   description="Permission control and access authorization management for API interfaces."
 >
   <LinkGrid links={[
-    { text: "API Authorization Creation", href: "api-open/api-authorization#api-authorization-creation" },
-    { text: "API Access Permission Control", href: "api-open/api-authorization#api-access-permission-control" },
-    { text: "API Call Monitoring", href: "api-open/api-authorization#api-call-monitoring" },
-    { text: "Use SDK to Call Authorized Interfaces", href: "api-open/api-authorization#use-sdk-to-call-authorized-interfaces" },
-    { text: "Use Cross-App Service Elements to Call Authorized Interfaces", href: "api-open/api-authorization#use-cross-app-service-elements-to-call-authorized-interfaces" }
+    { text: "API Authorization Creation", href: "api-exposure/api-authorization#api-authorization-creation" },
+    { text: "API Access Permission Control", href: "api-exposure/api-authorization#api-access-permission-control" },
+    { text: "API Call Monitoring", href: "api-exposure/api-authorization#api-call-monitoring" },
+    { text: "Use SDK to Call Authorized Interfaces", href: "api-exposure/api-authorization#use-sdk-to-call-authorized-interfaces" },
+    { text: "Use Cross-App Service Elements to Call Authorized Interfaces", href: "api-exposure/api-authorization#use-cross-app-service-elements-to-call-authorized-interfaces" }
   ]} />
 </IndexCard>
 
 </div>
 
-## Style and Control Customization
+<IndexCard
+  title="Extending System Builtin Language Packages"
+  href="internationalization/extending-system-builtin-language-packages"
+  description="Extend and customize existing system language packages to meet specific business requirements and regional needs."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="How to Translate Page Terms"
+  href="internationalization/how-to-translate-page-terms"
+  description="Master the techniques for translating page content, including dynamic text replacement and context-aware translations."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+</div>
+
+</div>
+
+## Frontend UI Customization
 Create unique visual experiences and brand identity. Customize application theme colors, develop exclusive UI components, and make application interfaces better align with corporate brand tone while enhancing user experience and recognition.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
   title="Global Styles"
-  href="style-and-control-customization/global-styles"
+  href="frontend-ui-customization/global-styles"
   description="Application overall style and theme configuration, unifying interface style and user experience."
 >
   <LinkGrid links={[
-    { text: "Create Global Style Element", href: "style-and-control-customization/global-styles#create-global-style-element" },
-    { text: "Modify Global Style", href: "style-and-control-customization/global-styles#modify-global-style" },
-    { text: "More Style Variables", href: "style-and-control-customization/global-styles#more-style-variables" },
-    { text: "Debug Theme", href: "style-and-control-customization/global-styles#debug-theme" }
+    { text: "Create Global Style Element", href: "frontend-ui-customization/global-styles#create-global-style-element" },
+    { text: "Modify Global Style", href: "frontend-ui-customization/global-styles#modify-global-style" },
+    { text: "More Style Variables", href: "frontend-ui-customization/global-styles#more-style-variables" },
+    { text: "Debug Theme", href: "frontend-ui-customization/global-styles#debug-theme" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Custom Controls"
+  href="frontend-ui-customization/custom-controls"
   description="Develop personalized UI components to meet special business needs and interaction requirements."
 >
   <LinkGrid links={[
-    { text: "Create Custom Control Element", href: "style-and-control-customization/custom-controls#create-custom-control-element" },
-    { text: "Modify Custom Control", href: "style-and-control-customization/custom-controls#modify-custom-control" },
-    { text: "Use Custom Control in Form", href: "style-and-control-customization/custom-controls#use-custom-control-in-form" },
-    { text: "Use Custom Control in Table", href: "style-and-control-customization/custom-controls#use-custom-control-in-table" },
-    { text: "Custom Control Parameters", href: "style-and-control-customization/custom-controls#custom-control-parameters" }
+    { text: "Create Custom Control Element", href: "frontend-ui-customization/custom-controls#create-custom-control-element" },
+    { text: "Modify Custom Control", href: "frontend-ui-customization/custom-controls#modify-custom-control" },
+    { text: "Use Custom Control in Form", href: "frontend-ui-customization/custom-controls#use-custom-control-in-form" },
+    { text: "Use Custom Control in Table", href: "frontend-ui-customization/custom-controls#use-custom-control-in-table" },
+    { text: "Custom Control Parameters", href: "frontend-ui-customization/custom-controls#custom-control-parameters" }
   ]} />
 </IndexCard>
 

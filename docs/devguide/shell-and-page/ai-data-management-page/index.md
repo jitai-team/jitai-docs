@@ -95,3 +95,15 @@ Developers can click the <span style={{ display: "inline-block", verticalAlign: 
 :::warning
 After converting to a regular page, it cannot be restored to the original `AI Data Management Page` type.
 :::
+
+## Quick Create {#quick-create}
+In addition to creating in the developer portal, you can also quickly create in the regular portal. The creation method is as follows:
+
+![Create AI Data Management Page - quickly](./imgs/quickly.png)
+
+Click **Create New** → **AI Data Management Functions**.This operation will create a new AI data Management page and simultaneously create a menu in the portal and bind it to the newly added page.
+
+:::tip Tip
+You need to be granted [quick create permissions](../../user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus) to see the quick create entry.
+:::
+

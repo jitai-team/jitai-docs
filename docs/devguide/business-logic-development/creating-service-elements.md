@@ -57,7 +57,7 @@ JitAi支持开发者在一个服务元素中创建多个服务函数。
 :::
 
 ## 使用跨App服务元素调用授权接口 {#use-cross-app-service-elements-to-call-authorized-interfaces} 
-当一个JitAi应用使用[API授权元素](../api-exposure/api-authorization)对外开放了服务函数，另一个JitAi应用可以使用`跨APP服务`元素访问该授权函数，实现跨应用服务函数调用。这种调用方式仅限于在JitAi应用之间进行，调用方不是JitAi应用则依然需要使用[API授权元素SDK调用方式](../api-exposure/api-authorization#use-sdk-to-call-authorized-interfaces)。
+当一个JitAi应用使用[API授权元素](../api-exposure/api-authorization)对外开放了服务函数，另一个JitAi应用可以使用`跨APP服务`元素访问该授权函数，实现跨应用服务函数调用。这种调用方式仅限于在JitAi应用之间进行，调用方不是JitAi应用则依然需要使用[API授权元素SDK调用方式](../api-exposure/using-sdk-to-call-authorized-element-apis.md)。
 
 ### 创建跨App服务元素 {#create-cross-app-service-elements}
 ![创建跨App服务](./img/create-cross-app-service.gif)
@@ -80,3 +80,4 @@ JitAi支持开发者在一个服务元素中创建多个服务函数。
 ![调用跨App服务函数](./img/call-cross-app-service-function.gif)
 
 如上图所示，在按钮的点击事件逻辑中发起对跨App服务元素中的函数调用，并使用前端全局提示工具显示函数返回的内容。这里仅仅是用按钮事件函数举例，开发者可以在任意函数逻辑中调用，参考[服务函数在哪里使用](#where-service-functions-are-used)。
+

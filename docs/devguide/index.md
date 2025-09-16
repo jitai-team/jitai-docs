@@ -901,9 +901,9 @@ Transform enterprise documents, manuals, and FAQs into intelligent knowledge bas
   description="The intelligent storage engine for enterprise knowledge. Convert text into vector data to achieve semantic-level precise search."
 >
   <LinkGrid links={[
-    { text: "Chroma Vector Database", href: "knowledge-base/vector-database-standalone-deployment#chroma-vector-database" },
-    { text: "Local Vector Database Configuration", href: "knowledge-base/vector-database-standalone-deployment#local-vector-database-config" },
-    { text: "Remote Vector Database Connection", href: "knowledge-base/vector-database-standalone-deployment#remote-vector-database-connection" },
+    { text: "Chroma Vector Database", href: "knowledge-base/vector-database-standalone-deployment#chroma-standalone-deployment" },
+    { text: "Local Vector Database Configuration", href: "knowledge-base/vector-database-standalone-deployment#local-development-config" },
+    { text: "Remote Vector Database Connection", href: "knowledge-base/vector-database-standalone-deployment#connect-to-standalone-chroma" },
     { text: "Vector Database Programming Interface", href: "knowledge-base/vector-database-standalone-deployment#vector-database-programming-interface" }
   ]} />
 </IndexCard>

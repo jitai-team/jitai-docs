@@ -38,7 +38,7 @@ slug: approval-node-configuration
 
 有两种流转规则：或签（只要有一个人审批了就会流转到下个审批节点）和会签（所有审批人必须都审批了才会流转到下个审批节点），默认是或签。
 
-## 审批流程处理规则 {#approval-process-rules}
+## 审批流程处理规则 {#approval-workflow-rules}
 审批人在处理审批单时，会选择是流程同意、拒绝、回退还是转交。这些操作都会触发流程处理规则。
 
 ![流程处理规则](./img/workflow_2025-08-25_11-40-31.png)
@@ -144,7 +144,7 @@ slug: approval-node-configuration
 
 ![短信通知](./img/workflow_2025-08-25_14-38-31.png)
 
-注意：在配置短信通知功能前，需要配置短信服务以及短信模板代码（如何配置短信服务？，请参照[短信服务](../third-party-integration/sms-service#using-sms-service-in-approval-process)）。
+注意：在配置短信通知功能前，需要配置短信服务以及短信模板代码（如何配置短信服务？，请参照[短信服务](../third-party-integration/sms-service#using-sms-service-in-approval-workflow)）。
 
 ## 审批页面与权限控制 {#approval-page-permission-control}
 每个审批节点都可以对展现的页面进行权限控制，比如给某个审批节点进行定制页面，配置字段的查看编辑等。

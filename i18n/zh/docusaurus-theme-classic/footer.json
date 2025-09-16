@@ -33,7 +33,7 @@
   },
   "link.item.label.Community": {
     "message": "社区",
-    "description": "The label of footer link with label=Community linking to https://forum.jit.pro/"
+    "description": "The label of footer link with label=Community linking to https://forum.jit.pro"
   },
   "link.item.label.GitHub": {
     "message": "GitHub",

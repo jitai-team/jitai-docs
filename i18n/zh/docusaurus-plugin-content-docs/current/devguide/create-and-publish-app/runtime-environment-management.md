@@ -16,7 +16,7 @@ slug: runtime-environment-management
 
 在节点控制台中，用户可以修改节点名称、查看节点规格授权信息、下载当前节点运行日志、更新继承应用。
 
-用户还可以进行应用创建、导入、导出、发布、部署、删除、修改继承应用、配置环境变量、生成副本、进入应用开发界面等操作，关于这些操作的详细介绍请查看[应用创建与管理](../app-creation-and-publishing/creating-and-deploying-applications)。
+用户还可以进行应用创建、导入、导出、发布、部署、删除、修改继承应用、配置环境变量、生成副本、进入应用开发界面等操作，关于这些操作的详细介绍请查看[应用创建与管理](../create-and-publish-app/creating-and-deploying-applications)。
 
 ## 创建新的运行环境 {#createnewrunenvironment}
 运行环境的管理需要在组织管理控制台中进行，用户在节点控制台界面右上角点击"管理"按钮，即可进入组织管理控制台。反之，在组织管理控制台界面的右上角，点击"管理当前节点"按钮，则可切换回当前节点的节点控制台。

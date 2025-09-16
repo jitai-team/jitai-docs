@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-slug: approval-process-basic-configuration
+slug: approval-workflow-basic-configuration
 ---
 
 # 审批流程基础配置
@@ -46,7 +46,7 @@ JitAi 为开发者提供了可视化的流程配置界面，通过拖拽节点�
 ## 预测功能 {#prediction-feature}
 AI预测和智能推荐功能，基于历史审批数据提供流程优化建议。
 
-## 审批流程默认页面 {#approval-process-default-page}
+## 审批流程默认页面 {#approval-workflow-default-page}
 每个审批流程都有一个默认页面。当用户在进行发起申请、查看审批等操作时，就会进入该页面。
 
 ![默认页面](./img/workflow_2025-08-26_11-01-13.png)
@@ -157,7 +157,7 @@ AI预测和智能推荐功能，基于历史审批数据提供流程优化建议
 
 当用户打开“允许打印审批单”后，审批流程在每个审批节点都会显示一个打印按钮，点击`打印`按钮可打印当前审批单。
 
-## 复用其他审批流程 {#reuse-other-approval-processes}
+## 复用其他审批流程 {#reuse-other-approval-workflowes}
 如果想基于原有审批流程进行创建新的审批流程，新的审批流程会随着原有审批流程的更新而更新，可以使用审批流程的复用功能。
 
 ![复用审批流程](./img/workflow_2025-08-26_11-10-51.png)

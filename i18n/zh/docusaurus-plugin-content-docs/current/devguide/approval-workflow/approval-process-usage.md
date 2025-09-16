@@ -1,6 +1,6 @@
 ---
 sidebar_position: 6
-slug: approval-process-usage
+slug: approval-workflow-usage
 ---
 
 # 门户中的审批发起和待办
@@ -84,7 +84,7 @@ slug: approval-process-usage
 委托人发起委托后，对于委托期间尚未完成审批的数据，如果超过委托结束时间，也不会返还给委托人，仍然由代理人进行处理。
 :::
 
-## 审批流程管理页面 {#approval-process-management-page}
+## 审批流程管理页面 {#approval-workflow-management-page}
 ![审批流程管理页面](./img/workflow_2025-08-26_14-40-48.png)
 
 当管理员进入管理者门户后，可以看到审批流程管理页面。

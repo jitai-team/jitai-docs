@@ -7,7 +7,7 @@ slug: creating-and-deploying-applications
 
 ![节点控制台](./img/1/node-console.png)
 
-[节点控制台](../app-creation-and-publishing/runtime-environment-management#node-local-default-runtime-environment)为开发者提供了应用创建、导入、导出、发布、部署等功能入口，覆盖了从立项到运维的全生命周期。
+[节点控制台](../create-and-publish-app/runtime-environment-management#node-local-default-runtime-environment)为开发者提供了应用创建、导入、导出、发布、部署等功能入口，覆盖了从立项到运维的全生命周期。
 
 ## 创建第一个应用 {#create-first-application}
 在节点控制台中点击“新建应用”按钮，会打开新建应用弹窗。
@@ -28,7 +28,7 @@ JitAi提供了两种基于已有应用快速开发的方式：继承应用、创
 
 :::tip
 
-被继承应用的开发者会持续发布新的版本，以修复bug、添加新功能等，开发者可以在[节点控制台](../app-creation-and-publishing/runtime-environment-management#node-local-default-runtime-environment)或[在应用设置](../development-tool-and-publish-service/jitai-visual-development-tools#application-settings)中检查新版本并更新。
+被继承应用的开发者会持续发布新的版本，以修复bug、添加新功能等，开发者可以在[节点控制台](../create-and-publish-app/runtime-environment-management#node-local-default-runtime-environment)或[在应用设置](../development-tool-and-publish-service/jitai-visual-development-tools#application-settings)中检查新版本并更新。
 
 :::
 
@@ -59,7 +59,7 @@ JitAi提供了两种基于已有应用快速开发的方式：继承应用、创
 开发者在开发自己的应用时也可以定义环境变量，比如用环境变量来存储数据库连接信息、API密钥等，应用导出/发布时就不会泄露敏感信息。
 
 ## 应用版本管理与发布 {#application-version-management-and-publish}
-当应用完成开发后，开发者可以发布应用版本，并在目标[运行环境](../app-creation-and-publishing/runtime-environment-management#deploy-application-in-runtime-environment)中部署该应用版本。
+当应用完成开发后，开发者可以发布应用版本，并在目标[运行环境](../create-and-publish-app/runtime-environment-management#deploy-application-in-runtime-environment)中部署该应用版本。
 
 ![发布应用版本](./img/1/publish-application-version.png)
 
@@ -81,7 +81,7 @@ JitAi提供了两种基于已有应用快速开发的方式：继承应用、创
 建议开发者填写有意义的更新日志，以便用户了解应用的更新内容。
 
 ### 是否包含源代码
-如果开发者选择包含源代码，则应用部署时可以以[开发模式](../app-creation-and-publishing/runtime-environment-management#deploy-in-development-mode)部署，否则只能以[生产模式](../app-creation-and-publishing/runtime-environment-management#deploy-in-production-mode)部署。
+如果开发者选择包含源代码，则应用部署时可以以[开发模式](../create-and-publish-app/runtime-environment-management#deploy-in-development-mode)部署，否则只能以[生产模式](../create-and-publish-app/runtime-environment-management#deploy-in-production-mode)部署。
 
 平台会对源码进行加密，保证源码不会泄露。
 
@@ -94,10 +94,10 @@ JitAi提供了两种基于已有应用快速开发的方式：继承应用、创
 
 ## 应用导出导入 {#application-export-import}
 ## 导出源码zip包
-在[节点控制台](../app-creation-and-publishing/runtime-environment-management#node-local-default-runtime-environment)的“应用”列表中，点击应用卡片上的“更多”-“导出应用”按钮，即可下载应用源码zip包。
+在[节点控制台](../create-and-publish-app/runtime-environment-management#node-local-default-runtime-environment)的“应用”列表中，点击应用卡片上的“更多”-“导出应用”按钮，即可下载应用源码zip包。
 
 ## 导出为微信小程序
 平台支持将应用导出为微信小程序，应用源码会嵌入到微信小程序的工程目录中，便于开发者在微信小程序生态下二次开发和发布。
 
 ## 导入应用源码包
-在[节点控制台](../app-creation-and-publishing/runtime-environment-management#node-local-default-runtime-environment)中点击“导入应用”按钮，可以把应用源码zip包导入到节点的默认运行环境中，并在新节点上继续开发。
+在[节点控制台](../create-and-publish-app/runtime-environment-management#node-local-default-runtime-environment)中点击“导入应用”按钮，可以把应用源码zip包导入到节点的默认运行环境中，并在新节点上继续开发。

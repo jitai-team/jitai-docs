@@ -1,8 +1,0 @@
-{
-  "label": "Approval Process",
-  "position": 17,
-  "link": {
-    "type": "generated-index",
-    "description": "Learn how to design and configure approval workflows, including node configuration, permission control, and page customization."
-  }
-}

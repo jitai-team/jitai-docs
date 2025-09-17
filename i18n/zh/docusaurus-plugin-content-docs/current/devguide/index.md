@@ -60,6 +60,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="了解如何激活节点和管理开发者组织，包括组织绑定、成员管理等核心操作。"
 >
   <LinkGrid links={[
+    { text: "什么是节点", href: "installation-activation/developer-organization-management#what-is-jitnode" },
     { text: "什么是开发者组织", href: "installation-activation/developer-organization-management#what-is-developer-organization" },
     { text: "在激活节点时创建新的开发组织", href: "installation-activation/developer-organization-management#create-new-development-organization-when-activating-node" },
     { text: "在激活节点时将节点绑定到自己已加入的组织", href: "installation-activation/developer-organization-management#bind-node-to-joined-organization-when-activating" },
@@ -110,17 +111,32 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <IndexCard
   title="运维管理工具"
   href="development-tool-and-publish-service/devops-management-tool"
-  description="全面的运维管理解决方案，提供系统监控、日志管理、性能分析等运维功能。"
+  description="双控制台架构的全面运维管理解决方案，提供从开发到部署的完整应用生命周期管理。"
 >
-  敬请期待...
+  <LinkGrid links={[
+    { text: "双控制台", href: "development-tool-and-publish-service/devops-management-tool#dual-console-architecture" },
+    { text: "本地节点控制台", href: "development-tool-and-publish-service/devops-management-tool#local-node-console" },
+    { text: "组织管理控制台", href: "development-tool-and-publish-service/devops-management-tool#organization-management-console" },
+    { text: "应用生命周期管理", href: "development-tool-and-publish-service/devops-management-tool#application-lifecycle-management" },
+    { text: "运行环境管理", href: "development-tool-and-publish-service/devops-management-tool#runtime-environment-management" },
+    { text: "节点集群管理", href: "development-tool-and-publish-service/devops-management-tool#node-cluster-management" },
+    { text: "灵活的配置管理", href: "development-tool-and-publish-service/devops-management-tool#flexible-configuration-management" },
+    { text: "版本发布与部署", href: "development-tool-and-publish-service/devops-management-tool#version-release-and-deployment" },
+    { text: "多平台导出", href: "development-tool-and-publish-service/devops-management-tool#multi-platform-export" },
+    { text: "应用模板生态", href: "development-tool-and-publish-service/devops-management-tool#application-template-ecosystem" }
+  ]} />
 </IndexCard>
 
 <IndexCard
   title="JCS云端应用发布服务"
   href="development-tool-and-publish-service/jcs-cloud-publishing-service"
-  description="便捷的云端应用发布平台，支持一键发布、版本管理和全球分发。"
+  description="官方云端应用发布服务，提供中心化应用仓库、版本管理和JitNode间的无缝部署。"
 >
-  敬请期待...
+  <LinkGrid links={[
+    { text: "从JCS同步运行环境配置", href: "development-tool-and-publish-service/jcs-cloud-publishing-service#synchronizing-runtime-environment-configuration" },
+    { text: "从JCS获取版本更新信息", href: "development-tool-and-publish-service/jcs-cloud-publishing-service#retrieving-version-update-information" },
+    { text: "通过JCS访问云端应用仓库", href: "development-tool-and-publish-service/jcs-cloud-publishing-service#accessing-cloud-application-repository" }
+  ]} />
 </IndexCard>
 
 </div>
@@ -132,54 +148,78 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="创建和部署应用"
-  href="app-creation-and-publishing/creating-and-deploying-applications"
-  description="学习应用的创建、继承、版本管理和发布流程，掌握应用全生命周期管理。"
+  href="creating-and-publishing-applications/creating-and-deploying-applications"
+  description="学习应用的创建、继承、数据配置和部署流程，掌握应用开发的基础工作流程。"
 >
   <LinkGrid links={[
-    { text: "创建第一个应用", href: "app-creation-and-publishing/creating-and-deploying-applications#create-first-application" },
-    { text: "基于已有应用快速开发", href: "app-creation-and-publishing/creating-and-deploying-applications#based-on-existing-application-quick-development" },
-    { text: "数据存储与环境变量配置", href: "app-creation-and-publishing/creating-and-deploying-applications#data-storage-and-environment-variable-configuration" },
-    { text: "应用版本管理与发布", href: "app-creation-and-publishing/creating-and-deploying-applications#application-version-management-and-publish" },
-    { text: "应用导出导入", href: "app-creation-and-publishing/creating-and-deploying-applications#application-export-import" }
+    { text: "创建第一个应用", href: "creating-and-publishing-applications/creating-and-deploying-applications#create-first-application" },
+    { text: "基于已有应用快速开发", href: "creating-and-publishing-applications/creating-and-deploying-applications#based-on-existing-application-quick-development" },
+    { text: "数据存储与环境变量配置", href: "creating-and-publishing-applications/creating-and-deploying-applications#data-storage-and-environment-variable-configuration" },
+    { text: "应用部署", href: "creating-and-publishing-applications/creating-and-deploying-applications#application-deployment" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="应用目录和元素源码"
-  href="app-creation-and-publishing/application-directory-and-element-source-code"
-  description="深入了解JitAi应用的目录结构、元素组织方式和源码管理机制。"
->
-  敬请期待...
-</IndexCard>
-
-<IndexCard
-  title="应用发布与更新"
-  href="app-creation-and-publishing/application-publishing-and-updates"
-  description="掌握应用版本发布策略、自动更新机制和发布流程管理。"
->
-  敬请期待...
-</IndexCard>
-
-<IndexCard
-  title="运行环境管理"
-  href="app-creation-and-publishing/runtime-environment-management"
-  description="掌握运行环境的创建、配置和管理，学习如何使用节点集群和应用部署。"
+  href="creating-and-publishing-applications/application-directory-and-element-source-code"
+  description="基于JAAP协议的应用目录结构和元素源码管理，包括应用导出导入功能。"
 >
   <LinkGrid links={[
-    { text: "什么是运行环境", href: "app-creation-and-publishing/runtime-environment-management#what-is-runtime-environment" },
-    { text: "节点的本地默认运行环境", href: "app-creation-and-publishing/runtime-environment-management#node-local-default-runtime-environment" },
-    { text: "创建新的运行环境", href: "app-creation-and-publishing/runtime-environment-management#createnewrunenvironment" },
-    { text: "使用运行环境管理节点集群", href: "app-creation-and-publishing/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
-    { text: "在运行环境中部署应用", href: "app-creation-and-publishing/runtime-environment-management#deploy-application-in-runtime-environment" }
+    { text: "应用目录结构", href: "creating-and-publishing-applications/application-directory-and-element-source-code#application-directory-structure" },
+    { text: "元素代码目录结构", href: "creating-and-publishing-applications/application-directory-and-element-source-code#element-code-directory-structure" },
+    { text: "应用源码导出导入", href: "creating-and-publishing-applications/application-directory-and-element-source-code#application-export-import" },
+    { text: "导出源码zip包", href: "creating-and-publishing-applications/application-directory-and-element-source-code#export-source-code-zip" },
+    { text: "导出为微信小程序", href: "creating-and-publishing-applications/application-directory-and-element-source-code#export-to-wechat-miniprogram" },
+    { text: "导入应用源码包", href: "creating-and-publishing-applications/application-directory-and-element-source-code#import-application-source-code" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="分布式集群架构"
-  href="app-creation-and-publishing/distributed-cluster-architecture"
+  title="发布与更新应用"
+  href="creating-and-publishing-applications/publishing-and-updating-applications"
+  description="掌握应用版本管理、发布工作流程和更新策略，学习语义化版本控制和部署配置。"
+>
+  <LinkGrid links={[
+    { text: "应用版本管理与发布", href: "creating-and-publishing-applications/publishing-and-updating-applications#application-version-management-and-publish" },
+    { text: "语义化版本号", href: "creating-and-publishing-applications/publishing-and-updating-applications#semantic-versioning" },
+    { text: "自动更新配置", href: "creating-and-publishing-applications/publishing-and-updating-applications#force-auto-update" },
+    { text: "源代码和初始化数据", href: "creating-and-publishing-applications/publishing-and-updating-applications#include-source-code" },
+    { text: "应用版本更新", href: "creating-and-publishing-applications/publishing-and-updating-applications#application-version-updates" },
+    { text: "应用部署策略", href: "creating-and-publishing-applications/publishing-and-updating-applications#application-deployment-strategies" }
+  ]} />
+</IndexCard>
+
+
+<IndexCard
+  title="运行环境管理"
+  href="creating-and-publishing-applications/runtime-environment-management"
+  description="掌握运行环境的创建、配置和管理，学习如何使用节点集群和应用部署。"
+>
+  <LinkGrid links={[
+    { text: "什么是运行环境", href: "creating-and-publishing-applications/runtime-environment-management#what-is-runtime-environment" },
+    { text: "节点的本地默认运行环境", href: "creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment" },
+    { text: "创建新的运行环境", href: "creating-and-publishing-applications/runtime-environment-management#createnewrunenvironment" },
+    { text: "使用运行环境管理节点集群", href: "creating-and-publishing-applications/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
+    { text: "在运行环境中部署应用", href: "creating-and-publishing-applications/runtime-environment-management#deploy-application-in-runtime-environment" },
+    { text: "开发模式部署", href: "creating-and-publishing-applications/runtime-environment-management#deploy-in-development-mode" },
+    { text: "生产模式部署", href: "creating-and-publishing-applications/runtime-environment-management#deploy-in-production-mode" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="实现无限横向扩展的分布式集群架构"
+  href="creating-and-publishing-applications/distributed-cluster-architecture"
   description="学习如何构建和管理无限横向扩展的分布式集群架构，实现高可用和高性能部署。"
 >
-  敬请期待...
+  <LinkGrid links={[
+    { text: "四层架构模型", href: "creating-and-publishing-applications/distributed-cluster-architecture#four-layer-architecture" },
+    { text: "典型部署拓扑", href: "creating-and-publishing-applications/distributed-cluster-architecture#typical-deployment-topology" },
+    { text: "企业级集群部署架构", href: "creating-and-publishing-applications/distributed-cluster-architecture#enterprise-cluster-deployment" },
+    { text: "多维度环境划分", href: "creating-and-publishing-applications/distributed-cluster-architecture#multi-dimensional-environment-division" },
+    { text: "集群扩展策略", href: "creating-and-publishing-applications/distributed-cluster-architecture#cluster-scaling-strategies" },
+    { text: "负载均衡与容错", href: "creating-and-publishing-applications/distributed-cluster-architecture#load-balancing-fault-tolerance" },
+    { text: "架构约束与最佳实践", href: "creating-and-publishing-applications/distributed-cluster-architecture#architecture-constraints-best-practices" }
+  ]} />
 </IndexCard>
 
 </div>
@@ -306,8 +346,8 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="在门户中集成AI助理"
-  href="ai-integration-in-portals-and-pages/integrating-ai-assistants-in-portals"
+  title="在门户中使用AI助理"
+  href="using-ai-in-portals-and-pages/using-ai-assistants-in-portals"
   description="学习如何将AI助理集成到门户界面中，为用户在整个工作流程中提供智能帮助和指导。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -316,8 +356,8 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="在组件化页面中集成AI助理"
-  href="ai-integration-in-portals-and-pages/integrating-ai-assistants-in-component-pages"
+  title="在组件化页面中使用AI助理"
+  href="using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages"
   description="将AI助理嵌入到基于组件的页面中，增强用户交互并为特定任务提供上下文帮助。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -326,8 +366,8 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="在页面中调用AI元素"
-  href="ai-integration-in-portals-and-pages/calling-ai-elements-in-pages"
+  title="在页面中使用AI元素"
+  href="using-ai-in-portals-and-pages/using-ai-elements-in-pages"
   description="掌握从页面调用AI元素的技巧，包括AI智能体、LLM服务和知识库，用于动态内容生成。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -711,7 +751,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "发起申请组件的创建", href: "using-functional-components-in-pages/approval-components#create-initiate-application-component" },
     { text: "发起申请的参数配置", href: "using-functional-components-in-pages/approval-components#parameter-configuration-1" },
     { text: "发起申请的处理后/刷新后事件", href: "using-functional-components-in-pages/approval-components#post-processing-refresh-event" },
-    { text: "审批处理组件创建", href: "using-functional-components-in-pages/approval-components#create-approval-process-component" },
+    { text: "审批处理组件创建", href: "using-functional-components-in-pages/approval-components#create-approval-workflow-component" },
     { text: "审批处理的参数配置", href: "using-functional-components-in-pages/approval-components#parameter-configuration-1" },
     { text: "是否保留历史审批记录", href: "using-functional-components-in-pages/approval-components#keep-historical-approval-records" },
     { text: "审批处理的处理后/刷新后事件", href: "using-functional-components-in-pages/approval-components#post-processing-refresh-event-1" }
@@ -1411,120 +1451,120 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="审批流程基础配置"
-  href="approval-process/approval-process-basic-configuration"
+  href="approval-workflow/approval-workflow-basic-configuration"
   description="审批流程的创建和基础设置，包括流程节点配置和路径设计。"
 >
   <LinkGrid columns={2} links={[
-    { text: "创建流程", href: "approval-process/approval-process-basic-configuration#create-process" },
-    { text: "拖拽流程节点", href: "approval-process/approval-process-basic-configuration#drag-process-node" },
-    { text: "审批流程默认页面", href: "approval-process/approval-process-basic-configuration#approval-process-default-page" },
-    { text: "其他流程配置", href: "approval-process/approval-process-basic-configuration#other-process-configuration" },
-    { text: "同步审批信息到数据表模型", href: "approval-process/approval-process-basic-configuration#sync-approval-info-to-data-table-model" },
-    { text: "同步到第三方审批待办", href: "approval-process/approval-process-basic-configuration#sync-to-third-party-approval-todo" },
-    { text: "评论功能", href: "approval-process/approval-process-basic-configuration#comment-function" },
-    { text: "分享", href: "approval-process/approval-process-basic-configuration#share" },
-    { text: "打印审批单", href: "approval-process/approval-process-basic-configuration#print-approval-form" },
-    { text: "复用其他审批流程", href: "approval-process/approval-process-basic-configuration#reuse-other-approval-processes" }
+    { text: "创建流程", href: "approval-workflow/approval-workflow-basic-configuration#create-process" },
+    { text: "拖拽流程节点", href: "approval-workflow/approval-workflow-basic-configuration#drag-process-node" },
+    { text: "审批流程默认页面", href: "approval-workflow/approval-workflow-basic-configuration#approval-workflow-default-page" },
+    { text: "其他流程配置", href: "approval-workflow/approval-workflow-basic-configuration#other-process-configuration" },
+    { text: "同步审批信息到数据表模型", href: "approval-workflow/approval-workflow-basic-configuration#sync-approval-info-to-data-table-model" },
+    { text: "同步到第三方审批待办", href: "approval-workflow/approval-workflow-basic-configuration#sync-to-third-party-approval-todo" },
+    { text: "评论功能", href: "approval-workflow/approval-workflow-basic-configuration#comment-function" },
+    { text: "分享", href: "approval-workflow/approval-workflow-basic-configuration#share" },
+    { text: "打印审批单", href: "approval-workflow/approval-workflow-basic-configuration#print-approval-form" },
+    { text: "复用其他审批流程", href: "approval-workflow/approval-workflow-basic-configuration#reuse-other-approval-workflowes" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="发起节点配置"
-  href="approval-process/start-node-configuration"
+  href="approval-workflow/start-node-configuration"
   description="审批流程起始节点的配置，定义申请发起的条件和规则。"
 >
   <LinkGrid columns={2} links={[
-    { text: "流程撤销功能", href: "approval-process/start-node-configuration#process-cancellation-function" },
-    { text: "审批催办", href: "approval-process/start-node-configuration#approval-reminder" },
-    { text: "审批暂存", href: "approval-process/start-node-configuration#approval-draft" },
-    { text: "消息通知", href: "approval-process/start-node-configuration#anchor-414" },
-    { text: "当前节点用到的页面", href: "approval-process/start-node-configuration#pages-used-by-current-node" },
-    { text: "摘要信息显示", href: "approval-process/start-node-configuration#summary-display" },
-    { text: "字段的查看编辑权限", href: "approval-process/start-node-configuration#field-view-edit-permissions" },
-    { text: "布局控件权限", href: "approval-process/start-node-configuration#layout-control-permissions" }
+    { text: "流程撤销功能", href: "approval-workflow/start-node-configuration#process-cancellation-function" },
+    { text: "审批催办", href: "approval-workflow/start-node-configuration#approval-reminder" },
+    { text: "审批暂存", href: "approval-workflow/start-node-configuration#approval-draft" },
+    { text: "消息通知", href: "approval-workflow/start-node-configuration#anchor-414" },
+    { text: "当前节点用到的页面", href: "approval-workflow/start-node-configuration#pages-used-by-current-node" },
+    { text: "摘要信息显示", href: "approval-workflow/start-node-configuration#summary-display" },
+    { text: "字段的查看编辑权限", href: "approval-workflow/start-node-configuration#field-view-edit-permissions" },
+    { text: "布局控件权限", href: "approval-workflow/start-node-configuration#layout-control-permissions" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="审批节点配置"
-  href="approval-process/approval-node-configuration"
+  href="approval-workflow/approval-node-configuration"
   description="审批环节的详细配置，包括审批人设置和审批规则。"
 >
   <LinkGrid columns={2} links={[
-    { text: "审批人设置", href: "approval-process/approval-node-configuration#approver-settings" },
-    { text: "审批流转规则", href: "approval-process/approval-node-configuration#approval-flow-rules" },
-    { text: "审批流程处理规则", href: "approval-process/approval-node-configuration#approval-process-rules" },
-    { text: "审批扩展功能配置", href: "approval-process/approval-node-configuration#approval-extended-function-configuration" },
-    { text: "去重审批", href: "approval-process/approval-node-configuration#deduplication-approval" },
-    { text: "限时处理", href: "approval-process/approval-node-configuration#time-limited-processing" },
-    { text: "审批暂存", href: "approval-process/approval-node-configuration#approval-draft" },
-    { text: "审批意见反馈", href: "approval-process/approval-node-configuration#approval-feedback" },
-    { text: "手写签名", href: "approval-process/approval-node-configuration#handwritten-signature" },
-    { text: "允许批量审批", href: "approval-process/approval-node-configuration#allow-batch-approval" },
-    { text: "消息通知", href: "approval-process/approval-node-configuration#message-notification" },
-    { text: "短信通知", href: "approval-process/approval-node-configuration#sms-notification" },
-    { text: "审批页面与权限控制", href: "approval-process/approval-node-configuration#approval-page-permission-control" },
-    { text: "当前节点用到的页面", href: "approval-process/approval-node-configuration#pages-used-by-current-node" },
-    { text: "摘要信息显示", href: "approval-process/approval-node-configuration#summary-display" },
-    { text: "字段权限", href: "approval-process/approval-node-configuration#fieldpermission" },
-    { text: "布局控件权限", href: "approval-process/approval-node-configuration#layout-control-permissions" }
+    { text: "审批人设置", href: "approval-workflow/approval-node-configuration#approver-settings" },
+    { text: "审批流转规则", href: "approval-workflow/approval-node-configuration#approval-flow-rules" },
+    { text: "审批流程处理规则", href: "approval-workflow/approval-node-configuration#approval-workflow-rules" },
+    { text: "审批扩展功能配置", href: "approval-workflow/approval-node-configuration#approval-extended-function-configuration" },
+    { text: "去重审批", href: "approval-workflow/approval-node-configuration#deduplication-approval" },
+    { text: "限时处理", href: "approval-workflow/approval-node-configuration#time-limited-processing" },
+    { text: "审批暂存", href: "approval-workflow/approval-node-configuration#approval-draft" },
+    { text: "审批意见反馈", href: "approval-workflow/approval-node-configuration#approval-feedback" },
+    { text: "手写签名", href: "approval-workflow/approval-node-configuration#handwritten-signature" },
+    { text: "允许批量审批", href: "approval-workflow/approval-node-configuration#allow-batch-approval" },
+    { text: "消息通知", href: "approval-workflow/approval-node-configuration#message-notification" },
+    { text: "短信通知", href: "approval-workflow/approval-node-configuration#sms-notification" },
+    { text: "审批页面与权限控制", href: "approval-workflow/approval-node-configuration#approval-page-permission-control" },
+    { text: "当前节点用到的页面", href: "approval-workflow/approval-node-configuration#pages-used-by-current-node" },
+    { text: "摘要信息显示", href: "approval-workflow/approval-node-configuration#summary-display" },
+    { text: "字段权限", href: "approval-workflow/approval-node-configuration#fieldpermission" },
+    { text: "布局控件权限", href: "approval-workflow/approval-node-configuration#layout-control-permissions" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="特殊节点配置"
-  href="approval-process/special-node-configuration"
+  href="approval-workflow/special-node-configuration"
   description="条件节点、并行节点等特殊流程节点的配置方法。"
 >
   <LinkGrid columns={2} links={[
-    { text: "抄送节点", href: "approval-process/special-node-configuration#cc-node" },
-    { text: "抄送人", href: "approval-process/special-node-configuration#sms-notification" },
-    { text: "短信通知", href: "approval-process/special-node-configuration#sms-notification" },
-    { text: "当前节点用到的页面", href: "approval-process/special-node-configuration#pages-used-by-current-node" },
-    { text: "字段权限", href: "approval-process/special-node-configuration#fieldpermission" },
-    { text: "布局控件权限", href: "approval-process/special-node-configuration#layout-control-permissions" },
-    { text: "分支节点", href: "approval-process/special-node-configuration#branch-node" },
-    { text: "并行节点", href: "approval-process/special-node-configuration#parallel-node" },
-    { text: "子流程节点", href: "approval-process/special-node-configuration#sub-process-node" },
-    { text: "子流程名称", href: "approval-process/special-node-configuration#sub-process-name" },
-    { text: "子流程发起人", href: "approval-process/special-node-configuration#sub-process-initiator" },
-    { text: "子流程流转规则", href: "approval-process/special-node-configuration#sub-process-flow-rules" },
-    { text: "当主流程流转至子流程", href: "approval-process/special-node-configuration#when-main-process-flows-to-sub-process" },
-    { text: "子流程流转后函数设计", href: "approval-process/special-node-configuration#sub-process-post-flow-function-design" },
-    { text: "单个子流程结束时更新主流程数据", href: "approval-process/special-node-configuration#update-main-process-data-single-sub-process-end" },
-    { text: "所有子流程结束时更新主流程数据", href: "approval-process/special-node-configuration#update-main-process-data-all-sub-processes-end" }
+    { text: "抄送节点", href: "approval-workflow/special-node-configuration#cc-node" },
+    { text: "抄送人", href: "approval-workflow/special-node-configuration#sms-notification" },
+    { text: "短信通知", href: "approval-workflow/special-node-configuration#sms-notification" },
+    { text: "当前节点用到的页面", href: "approval-workflow/special-node-configuration#pages-used-by-current-node" },
+    { text: "字段权限", href: "approval-workflow/special-node-configuration#fieldpermission" },
+    { text: "布局控件权限", href: "approval-workflow/special-node-configuration#layout-control-permissions" },
+    { text: "分支节点", href: "approval-workflow/special-node-configuration#branch-node" },
+    { text: "并行节点", href: "approval-workflow/special-node-configuration#parallel-node" },
+    { text: "子流程节点", href: "approval-workflow/special-node-configuration#sub-process-node" },
+    { text: "子流程名称", href: "approval-workflow/special-node-configuration#sub-process-name" },
+    { text: "子流程发起人", href: "approval-workflow/special-node-configuration#sub-process-initiator" },
+    { text: "子流程流转规则", href: "approval-workflow/special-node-configuration#sub-process-flow-rules" },
+    { text: "当主流程流转至子流程", href: "approval-workflow/special-node-configuration#when-main-process-flows-to-sub-process" },
+    { text: "子流程流转后函数设计", href: "approval-workflow/special-node-configuration#sub-process-post-flow-function-design" },
+    { text: "单个子流程结束时更新主流程数据", href: "approval-workflow/special-node-configuration#update-main-process-data-single-sub-process-end" },
+    { text: "所有子流程结束时更新主流程数据", href: "approval-workflow/special-node-configuration#update-main-process-data-all-sub-processes-end" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="审批页面定制"
-  href="approval-process/approval-page-customization"
+  href="approval-workflow/approval-page-customization"
   description="自定义审批界面和用户体验，提升审批效率。"
 >
   <LinkGrid links={[
-    { text: "审批页面高级定制", href: "approval-process/approval-page-customization#approval-page-advanced-customization" },
-    { text: "审批页面类型", href: "approval-process/approval-page-customization#approval-page-types" },
-    { text: "自定义页面创建方式", href: "approval-process/approval-page-customization#custom-page-creation-method" }
+    { text: "审批页面高级定制", href: "approval-workflow/approval-page-customization#approval-page-advanced-customization" },
+    { text: "审批页面类型", href: "approval-workflow/approval-page-customization#approval-page-types" },
+    { text: "自定义页面创建方式", href: "approval-workflow/approval-page-customization#custom-page-creation-method" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="审批流程的使用"
-  href="approval-process/approval-process-usage"
+  href="approval-workflow/approval-workflow-usage"
   description="审批流程的实际应用和操作指南，包括发起和处理审批。"
 >
   <LinkGrid links={[
-    { text: "发起申请", href: "approval-process/approval-process-usage#initiate-application" },
-    { text: "待办中心", href: "approval-process/approval-process-usage#todo-center" },
-    { text: "详情页面", href: "approval-process/approval-process-usage#detail-page" },
-    { text: "委托他人处理", href: "approval-process/approval-process-usage#delegate-to-others-processing" },
-    { text: "审批流程管理页面", href: "approval-process/approval-process-usage#approval-process-management-page" }
+    { text: "发起申请", href: "approval-workflow/approval-workflow-usage#initiate-application" },
+    { text: "待办中心", href: "approval-workflow/approval-workflow-usage#todo-center" },
+    { text: "详情页面", href: "approval-workflow/approval-workflow-usage#detail-page" },
+    { text: "委托他人处理", href: "approval-workflow/approval-workflow-usage#delegate-to-others-processing" },
+    { text: "审批流程管理页面", href: "approval-workflow/approval-workflow-usage#approval-workflow-management-page" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Calling Business Logic Elements in Approval Process"
-  href="approval-process/calling-business-logic-elements-in-approval-process"
+  href="approval-workflow/calling-business-logic-elements-in-approval-workflow"
   description="学习如何在审批流程中调用业务逻辑元素，实现复杂业务规则和自动化决策。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1534,7 +1574,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="Integrating AI in Approval Process"
-  href="approval-process/integrating-ai-in-approval-process"
+  href="approval-workflow/integrating-ai-in-approval-workflow"
   description="将人工智能能力集成到审批流程中，实现智能路由、自动审查和智能决策。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1650,40 +1690,11 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "阿里云短信", href: "third-party-integration/sms-service#aliyun-sms" },
     { text: "阿里云短信服务创建", href: "third-party-integration/sms-service#aliyun-sms-service-creation" },
     { text: "手机登录方式中使用短信服务", href: "third-party-integration/sms-service#use-sms-service-in-mobile-login" },
-    { text: "审批流程中使用短信服务", href: "third-party-integration/sms-service#use-sms-service-in-approval-process" },
+    { text: "审批流程中使用短信服务", href: "third-party-integration/sms-service#use-sms-service-in-approval-workflow" },
     { text: "短信通知功能", href: "third-party-integration/sms-service#sms-notification-function" }
   ]} />
 </IndexCard>
-
-<IndexCard
-  title="各类元素的API暴露示例"
-  href="api-exposure/api-exposure-examples-for-various-elements"
-  description="全面展示如何将不同类型的元素暴露为API的示例，包括数据模型、服务和自定义函数。"
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
-</IndexCard>
-
-<IndexCard
-  title="Using SDK to Call Authorized Element APIs"
-  href="api-exposure/using-sdk-to-call-authorized-element-apis"
-  description="学习如何使用官方SDK调用被授权的元素API，包括身份验证、请求处理和错误管理。"
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
-</IndexCard>
-
-<IndexCard
-  title="Using Cross-App Service Elements to Call Authorized APIs"
-  href="api-exposure/using-cross-app-service-elements-to-call-authorized-apis"
-  description="使用服务元素实现跨应用API调用，实现不同JitAi应用之间的无缝集成。"
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
-</IndexCard>
+</div>
 
 ## 缓存管理
 让应用跑得更快更稳定。配置智能缓存策略，优化数据访问速度，提升用户体验。确保应用在高并发访问时依然流畅运行。
@@ -1716,43 +1727,52 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid links={[
     { text: "API授权的创建", href: "api-exposure/api-authorization#api-authorization-creation" },
-    { text: "API访问权限控制", href: "api-exposure/api-authorization#api-access-permission-control" },
-    { text: "API调用监控", href: "api-exposure/api-authorization#api-call-monitoring" },
-    { text: "使用SDK调用授权的接口", href: "api-exposure/api-authorization#use-sdk-to-call-authorized-interfaces" },
-    { text: "使用跨App服务元素调用授权接口", href: "api-exposure/api-authorization#use-cross-app-service-elements-to-call-authorized-interfaces" }
+    { text: "API授权详情", href: "api-exposure/api-authorization#api-authorization-detail" },
+    { text: "API调用监控", href: "api-exposure/api-authorization#call-records" }
   ]} />
 </IndexCard>
-
 <IndexCard
-  title="组件定制"
-  href="frontend-ui-customization/component-customization"
-  description="定制单个组件以满足特定设计要求，增强应用程序中用户界面的一致性。"
+  title="各类元素的API暴露示例"
+  href="api-exposure/api-exposure-examples-for-various-elements"
+  description="全面展示如何将不同类型的元素暴露为API的示例，包括数据模型、服务和自定义函数。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
+    <LinkGrid links={[
+        { text: "服务函数的API授权", href: "api-exposure/api-exposure-examples-for-various-elements#service-function-api-authorization" },
+        { text: "数据模型的API授权", href: "api-exposure/api-exposure-examples-for-various-elements#data-model-api-authorization" },
+        { text: "大模型函数的API授权", href: "api-exposure/api-exposure-examples-for-various-elements#large-language-model-function-api-authorization" },
+        { text: "AI Agent的API授权", href: "api-exposure/api-exposure-examples-for-various-elements#agent-api-authorization" },
+        { text: "AI助理的API授权", href: "api-exposure/api-exposure-examples-for-various-elements#ai-assistant-api-authorization" },
+        { text: "审批流程的API授权", href: "api-exposure/api-exposure-examples-for-various-elements#approval-process-api-authorization" }
+    ]} />
   </div>
 </IndexCard>
 
 <IndexCard
-  title="页面定制"
-  href="frontend-ui-customization/page-customization"
-  description="定制整个页面布局、主题和视觉元素，创建连贯的品牌化用户体验。"
+  title="使用SDK调用被授权元素的API"
+  href="api-exposure/using-sdk-to-call-authorized-element-apis"
+  description="学习如何使用官方SDK调用被授权的元素API，包括身份验证、请求处理和错误管理。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
+    <LinkGrid links={[
+        { text: "使用Python SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-python-sdk" },
+        { text: "使用Nodejs SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-nodejs-sdk" },
+        { text: "使用Java SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-java-sdk" }
+    ]} />
   </div>
 </IndexCard>
 
 <IndexCard
-  title="门户定制"
-  href="frontend-ui-customization/portal-customization"
-  description="定制门户界面和导航元素，提供个性化和基于角色的用户体验。"
+  title="使用跨App服务元素调用被授权元素的API"
+  href="api-exposure/using-cross-app-service-elements-to-call-authorized-apis"
+  description="使用服务元素实现跨应用API调用，实现不同JitAi应用之间的无缝集成。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
+    <LinkGrid links={[
+        { text: "使用跨App服务元素", href: "api-exposure/using-cross-app-service-elements-to-call-authorized-apis#using-cross-app-service-elements" }
+    ]} />
   </div>
 </IndexCard>
-
 </div>
 
 ## 国际化
@@ -1792,8 +1812,6 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-</div>
-
 ## 前端UI定制
 打造独特的视觉体验和品牌形象。自定义应用主题色彩，开发专属UI组件，让应用界面更符合企业品牌调性，提升用户体验和辨识度。
 
@@ -1826,6 +1844,36 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   ]} />
 </IndexCard>
 
+<IndexCard
+  title="组件定制"
+  href="frontend-ui-customization/component-customization"
+  description="定制单个组件以满足特定设计要求，增强应用程序中用户界面的一致性。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="页面定制"
+  href="frontend-ui-customization/page-customization"
+  description="定制整个页面布局、主题和视觉元素，创建连贯的品牌化用户体验。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="门户定制"
+  href="frontend-ui-customization/portal-customization"
+  description="定制门户界面和导航元素，提供个性化和基于角色的用户体验。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
 </div>
 
 ## 场景化进阶指南
@@ -1842,8 +1890,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "本地开发与调试", href: "advanced-guide/local-development-and-debugging" },
     { text: "团队协作开发", href: "advanced-guide/team-collaborative-development" },
     { text: "Agent提示词编写技巧", href: "advanced-guide/agent-prompt-writing-techniques" },
-    { text: "应用层稳定性保障", href: "advanced-guide/application-layer-stability-guarantee" },
-    { text: "运维架构与管理指南", href: "advanced-guide/devops-architecture-and-management-guide" }
+    { text: "应用层稳定性保障", href: "advanced-guide/application-layer-stability-guarantee" }
   ]} />
 </IndexCard>
 
@@ -1892,11 +1939,11 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="工作流程管理"
-  href="advanced-guide/approval-process-orchestration-and-custom-approval-events"
+  href="advanced-guide/approval-workflow-orchestration-and-custom-approval-events"
   description="基于JitWorkflow和JitTask实现审批流程编排、定时任务执行和业务流程自动化。"
 >
   <LinkGrid links={[
-    { text: "审批流程编排与自定义审批事件", href: "advanced-guide/approval-process-orchestration-and-custom-approval-events" },
+    { text: "审批流程编排与自定义审批事件", href: "advanced-guide/approval-workflow-orchestration-and-custom-approval-events" },
     { text: "定时执行自定义业务逻辑", href: "advanced-guide/scheduled-execution-of-custom-business-logic" },
     { text: "使用数据库表的时间字段触发定时任务", href: "advanced-guide/using-database-table-time-fields-to-trigger-scheduled-tasks" }
   ]} />

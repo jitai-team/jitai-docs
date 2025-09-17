@@ -1,0 +1,9 @@
+{
+  "label": "Creating and Publishing Applications",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "slug": "devguide/creating-and-publishing-applications",
+    "description": "Complete guide from application creation to production deployment. Includes application creation and deployment, directory structure and source code management, version publishing and updates, runtime environment management, and distributed cluster architecture implementation."
+  }
+}

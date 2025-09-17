@@ -60,6 +60,7 @@ Complete the platform installation and node activation process. Learn download a
   description="Learn how to activate nodes and manage developer organizations, including organization binding, member management and other core operations."
 >
   <LinkGrid links={[
+    { text: "What is Node", href: "installation-activation/developer-organization-management#what-is-jitnode" },
     { text: "What is Developer Organization", href: "installation-activation/developer-organization-management#what-is-developer-organization" },
     { text: "Create New Development Organization When Activating Node", href: "installation-activation/developer-organization-management#create-new-development-organization-when-activating-node" },
     { text: "Bind Node to Joined Organization When Activating", href: "installation-activation/developer-organization-management#bind-node-to-joined-organization-when-activating" },
@@ -110,17 +111,32 @@ Powerful toolchain for efficient development. Master visual development environm
 <IndexCard
   title="DevOps Management Tool"
   href="development-tool-and-publish-service/devops-management-tool"
-  description="Comprehensive DevOps management solution providing system monitoring, log management, performance analysis and more."
+  description="Comprehensive DevOps management solution with dual-console architecture, providing complete application lifecycle management from development to deployment."
 >
-  Coming soon...
+  <LinkGrid links={[
+    { text: "Dual Console Architecture", href: "development-tool-and-publish-service/devops-management-tool#dual-console-architecture" },
+    { text: "Local Node Console", href: "development-tool-and-publish-service/devops-management-tool#local-node-console" },
+    { text: "Organization Management Console", href: "development-tool-and-publish-service/devops-management-tool#organization-management-console" },
+    { text: "Application Lifecycle Management", href: "development-tool-and-publish-service/devops-management-tool#application-lifecycle-management" },
+    { text: "Runtime Environment Management", href: "development-tool-and-publish-service/devops-management-tool#runtime-environment-management" },
+    { text: "Node Cluster Management", href: "development-tool-and-publish-service/devops-management-tool#node-cluster-management" },
+    { text: "Flexible Configuration Management", href: "development-tool-and-publish-service/devops-management-tool#flexible-configuration-management" },
+    { text: "Version Release and Deployment", href: "development-tool-and-publish-service/devops-management-tool#version-release-and-deployment" },
+    { text: "Multi-platform Export", href: "development-tool-and-publish-service/devops-management-tool#multi-platform-export" },
+    { text: "Application Template Ecosystem", href: "development-tool-and-publish-service/devops-management-tool#application-template-ecosystem" }
+  ]} />
 </IndexCard>
 
 <IndexCard
-  title="JCS Cloud Publishing Service"
+  title="JCS Cloud Application Publishing Service"
   href="development-tool-and-publish-service/jcs-cloud-publishing-service"
-  description="Convenient cloud application publishing platform supporting one-click publishing, version management, and global distribution."
+  description="Official cloud application publishing service providing centralized application repository, version management, and seamless deployment across JitNodes."
 >
-  Coming soon...
+  <LinkGrid links={[
+    { text: "Synchronizing Runtime Environment Configuration", href: "development-tool-and-publish-service/jcs-cloud-publishing-service#synchronizing-runtime-environment-configuration" },
+    { text: "Retrieving Version Update Information", href: "development-tool-and-publish-service/jcs-cloud-publishing-service#retrieving-version-update-information" },
+    { text: "Accessing Cloud Application Repository", href: "development-tool-and-publish-service/jcs-cloud-publishing-service#accessing-cloud-application-repository" }
+  ]} />
 </IndexCard>
 
 </div>
@@ -132,54 +148,78 @@ Complete workflow from application creation to distributed deployment. Master ap
 
 <IndexCard
   title="Creating and Deploying Applications"
-  href="app-creation-and-publishing/creating-and-deploying-applications"
-  description="Learn application creation, inheritance, version management, and release processes. Master the complete application lifecycle management."
+  href="creating-and-publishing-applications/creating-and-deploying-applications"
+  description="Learn application creation, inheritance, data configuration, and deployment. Master the fundamentals of application development workflow."
 >
   <LinkGrid links={[
-    { text: "Create First Application", href: "app-creation-and-publishing/creating-and-deploying-applications#create-first-application" },
-    { text: "Rapid Development Based on Existing Apps", href: "app-creation-and-publishing/creating-and-deploying-applications#based-on-existing-application-quick-development" },
-    { text: "Data Storage and Environment Variables", href: "app-creation-and-publishing/creating-and-deploying-applications#data-storage-and-environment-variable-configuration" },
-    { text: "Version Management and Publishing", href: "app-creation-and-publishing/creating-and-deploying-applications#application-version-management-and-publish" },
-    { text: "Application Export and Import", href: "app-creation-and-publishing/creating-and-deploying-applications#application-export-import" }
+    { text: "Create First Application", href: "creating-and-publishing-applications/creating-and-deploying-applications#create-first-application" },
+    { text: "Rapid Development Based on Existing Apps", href: "creating-and-publishing-applications/creating-and-deploying-applications#based-on-existing-application-quick-development" },
+    { text: "Data Storage and Environment Variables", href: "creating-and-publishing-applications/creating-and-deploying-applications#data-storage-and-environment-variable-configuration" },
+    { text: "Application Deployment", href: "creating-and-publishing-applications/creating-and-deploying-applications#application-deployment" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Application Directory and Element Source Code"
-  href="app-creation-and-publishing/application-directory-and-element-source-code"
-  description="Deep dive into JitAi application directory structure, element organization, and source code management mechanisms."
->
-  Coming soon...
-</IndexCard>
-
-<IndexCard
-  title="Application Publishing and Updates"
-  href="app-creation-and-publishing/application-publishing-and-updates"
-  description="Master application version release strategies, automatic update mechanisms, and release process management."
->
-  Coming soon...
-</IndexCard>
-
-<IndexCard
-  title="Runtime Environment Management"
-  href="app-creation-and-publishing/runtime-environment-management"
-  description="Master the creation, configuration, and management of runtime environments, and learn how to use node clusters and application deployment."
+  href="creating-and-publishing-applications/application-directory-and-element-source-code"
+  description="Understand JitAi application directory structure based on JAAP protocol, element code organization, and source code export/import mechanisms."
 >
   <LinkGrid links={[
-    { text: "What is Runtime Environment", href: "app-creation-and-publishing/runtime-environment-management#what-is-runtime-environment" },
-    { text: "Local Default Runtime Environment", href: "app-creation-and-publishing/runtime-environment-management#node-local-default-runtime-environment" },
-    { text: "Create New Runtime Environment", href: "app-creation-and-publishing/runtime-environment-management#createnewrunenvironment" },
-    { text: "Use Runtime Environment to Manage Node Clusters", href: "app-creation-and-publishing/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
-    { text: "Deploy Application in Runtime Environment", href: "app-creation-and-publishing/runtime-environment-management#deploy-application-in-runtime-environment" }
+    { text: "Application Directory Structure", href: "creating-and-publishing-applications/application-directory-and-element-source-code#application-directory-structure" },
+    { text: "Element Code Directory Structure", href: "creating-and-publishing-applications/application-directory-and-element-source-code#element-code-directory-structure" },
+    { text: "Application Source Code Export/Import", href: "creating-and-publishing-applications/application-directory-and-element-source-code#application-export-import" },
+    { text: "Export Source Code Zip", href: "creating-and-publishing-applications/application-directory-and-element-source-code#export-source-code-zip" },
+    { text: "Export to WeChat MiniProgram", href: "creating-and-publishing-applications/application-directory-and-element-source-code#export-to-wechat-miniprogram" },
+    { text: "Import Application Source Code", href: "creating-and-publishing-applications/application-directory-and-element-source-code#import-application-source-code" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="Distributed Cluster Architecture"
-  href="app-creation-and-publishing/distributed-cluster-architecture"
+  title="Publishing and Updating Applications"
+  href="creating-and-publishing-applications/publishing-and-updating-applications"
+  description="Master application version management, publishing workflows, and update strategies. Learn semantic versioning and deployment configurations."
+>
+  <LinkGrid links={[
+    { text: "Version Management and Publishing", href: "creating-and-publishing-applications/publishing-and-updating-applications#application-version-management-and-publish" },
+    { text: "Semantic Versioning", href: "creating-and-publishing-applications/publishing-and-updating-applications#semantic-versioning" },
+    { text: "Auto-Update Configuration", href: "creating-and-publishing-applications/publishing-and-updating-applications#force-auto-update" },
+    { text: "Source Code and Initialization Data", href: "creating-and-publishing-applications/publishing-and-updating-applications#include-source-code" },
+    { text: "Application Version Updates", href: "creating-and-publishing-applications/publishing-and-updating-applications#application-version-updates" },
+    { text: "Deployment Strategies", href: "creating-and-publishing-applications/publishing-and-updating-applications#application-deployment-strategies" }
+  ]} />
+</IndexCard>
+
+
+<IndexCard
+  title="Runtime Environment Management"
+  href="creating-and-publishing-applications/runtime-environment-management"
+  description="Master the creation, configuration, and management of runtime environments, and learn how to use node clusters and application deployment."
+>
+  <LinkGrid links={[
+    { text: "What is Runtime Environment", href: "creating-and-publishing-applications/runtime-environment-management#what-is-runtime-environment" },
+    { text: "Local Default Runtime Environment", href: "creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment" },
+    { text: "Create New Runtime Environment", href: "creating-and-publishing-applications/runtime-environment-management#createnewrunenvironment" },
+    { text: "Development Mode Deployment", href: "creating-and-publishing-applications/runtime-environment-management#deploy-in-development-mode" },
+    { text: "Production Mode Deployment", href: "creating-and-publishing-applications/runtime-environment-management#deploy-in-production-mode" },
+    { text: "Use Runtime Environment to Manage Node Clusters", href: "creating-and-publishing-applications/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
+    { text: "Deploy Application in Runtime Environment", href: "creating-and-publishing-applications/runtime-environment-management#deploy-application-in-runtime-environment" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Distributed Cluster Architecture for Unlimited Horizontal Scaling"
+  href="creating-and-publishing-applications/distributed-cluster-architecture"
   description="Learn how to build and manage infinitely horizontally scalable distributed cluster architectures for high availability and performance."
 >
-  Coming soon...
+  <LinkGrid links={[
+    { text: "Four-Layer Architecture Model", href: "creating-and-publishing-applications/distributed-cluster-architecture#four-layer-architecture" },
+    { text: "Typical Deployment Topology", href: "creating-and-publishing-applications/distributed-cluster-architecture#typical-deployment-topology" },
+    { text: "Enterprise Cluster Deployment", href: "creating-and-publishing-applications/distributed-cluster-architecture#enterprise-cluster-deployment" },
+    { text: "Multi-Dimensional Environment Division", href: "creating-and-publishing-applications/distributed-cluster-architecture#multi-dimensional-environment-division" },
+    { text: "Cluster Scaling Strategies", href: "creating-and-publishing-applications/distributed-cluster-architecture#cluster-scaling-strategies" },
+    { text: "Load Balancing & Fault Tolerance", href: "creating-and-publishing-applications/distributed-cluster-architecture#load-balancing-fault-tolerance" },
+    { text: "Architecture Constraints & Best Practices", href: "creating-and-publishing-applications/distributed-cluster-architecture#architecture-constraints-best-practices" }
+  ]} />
 </IndexCard>
 
 </div>
@@ -306,8 +346,8 @@ Enhance user experience with intelligent AI elements. Integrate AI assistants, a
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Integrating AI Assistants in Portals"
-  href="ai-integration-in-portals-and-pages/integrating-ai-assistants-in-portals"
+  title="Using AI Assistants in Portals"
+  href="using-ai-in-portals-and-pages/using-ai-assistants-in-portals"
   description="Learn how to integrate AI assistants into portal interfaces, providing users with intelligent help and guidance throughout their workflow."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -316,8 +356,8 @@ Enhance user experience with intelligent AI elements. Integrate AI assistants, a
 </IndexCard>
 
 <IndexCard
-  title="Integrating AI Assistants in Component Pages"
-  href="ai-integration-in-portals-and-pages/integrating-ai-assistants-in-component-pages"
+  title="Using AI Assistants in Component Pages"
+  href="using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages"
   description="Embed AI assistants into component-based pages to enhance user interactions and provide contextual assistance for specific tasks."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -326,8 +366,8 @@ Enhance user experience with intelligent AI elements. Integrate AI assistants, a
 </IndexCard>
 
 <IndexCard
-  title="Calling AI Elements in Pages"
-  href="ai-integration-in-portals-and-pages/calling-ai-elements-in-pages"
+  title="Using AI Elements in Pages"
+  href="using-ai-in-portals-and-pages/using-ai-elements-in-pages"
   description="Master the techniques for invoking AI elements from pages, including AI agents, LLM services, and knowledge bases for dynamic content generation."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -733,7 +773,7 @@ The rich component library is your super toolkit. Drag and drop a table to displ
     { text: "Create Initiate Application Component", href: "using-functional-components-in-pages/approval-components#create-initiate-application-component" },
     { text: "Parameter Configuration for Initiate Application", href: "using-functional-components-in-pages/approval-components#parameter-configuration-1" },
     { text: "Post-processing/Refresh Event for Initiate Application", href: "using-functional-components-in-pages/approval-components#post-processing-refresh-event" },
-    { text: "Create Approval Process Component", href: "using-functional-components-in-pages/approval-components#create-approval-process-component" },
+    { text: "Create Approval Process Component", href: "using-functional-components-in-pages/approval-components#create-approval-workflow-component" },
     { text: "Parameter Configuration for Approval Processing", href: "using-functional-components-in-pages/approval-components#parameter-configuration-1" },
     { text: "Keep Historical Approval Records", href: "using-functional-components-in-pages/approval-components#keep-historical-approval-records" },
     { text: "Post-processing/Refresh Event for Approval Processing", href: "using-functional-components-in-pages/approval-components#post-processing-refresh-event-1" }
@@ -1436,120 +1476,120 @@ Make enterprise approval processes efficient and orderly. Design flowcharts thro
 
 <IndexCard
   title="Approval Process Basic Configuration"
-  href="approval-process/approval-process-basic-configuration"
+  href="approval-workflow/approval-workflow-basic-configuration"
   description="Creation and basic settings of approval processes, including process node configuration and path design."
 >
   <LinkGrid columns={2} links={[
-    { text: "Create Process", href: "approval-process/approval-process-basic-configuration#create-process" },
-    { text: "Drag Process Node", href: "approval-process/approval-process-basic-configuration#drag-process-node" },
-    { text: "Approval Process Default Page", href: "approval-process/approval-process-basic-configuration#approval-process-default-page" },
-    { text: "Other Process Configuration", href: "approval-process/approval-process-basic-configuration#other-process-configuration" },
-    { text: "Sync Approval Info to Data Table Model", href: "approval-process/approval-process-basic-configuration#sync-approval-info-to-data-table-model" },
-    { text: "Sync to Third-party Approval Todo", href: "approval-process/approval-process-basic-configuration#sync-to-third-party-approval-todo" },
-    { text: "Comment Function", href: "approval-process/approval-process-basic-configuration#comment-function" },
-    { text: "Share", href: "approval-process/approval-process-basic-configuration#share" },
-    { text: "Print Approval Form", href: "approval-process/approval-process-basic-configuration#print-approval-form" },
-    { text: "Reuse Other Approval Processes", href: "approval-process/approval-process-basic-configuration#reuse-other-approval-processes" }
+    { text: "Create Process", href: "approval-workflow/approval-workflow-basic-configuration#create-process" },
+    { text: "Drag Process Node", href: "approval-workflow/approval-workflow-basic-configuration#drag-process-node" },
+    { text: "Approval Process Default Page", href: "approval-workflow/approval-workflow-basic-configuration#approval-workflow-default-page" },
+    { text: "Other Process Configuration", href: "approval-workflow/approval-workflow-basic-configuration#other-process-configuration" },
+    { text: "Sync Approval Info to Data Table Model", href: "approval-workflow/approval-workflow-basic-configuration#sync-approval-info-to-data-table-model" },
+    { text: "Sync to Third-party Approval Todo", href: "approval-workflow/approval-workflow-basic-configuration#sync-to-third-party-approval-todo" },
+    { text: "Comment Function", href: "approval-workflow/approval-workflow-basic-configuration#comment-function" },
+    { text: "Share", href: "approval-workflow/approval-workflow-basic-configuration#share" },
+    { text: "Print Approval Form", href: "approval-workflow/approval-workflow-basic-configuration#print-approval-form" },
+    { text: "Reuse Other Approval Processes", href: "approval-workflow/approval-workflow-basic-configuration#reuse-other-approval-workflowes" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Start Node Configuration"
-  href="approval-process/start-node-configuration"
+  href="approval-workflow/start-node-configuration"
   description="Configuration of approval process start node, defining conditions and rules for application initiation."
 >
   <LinkGrid columns={2} links={[
-    { text: "Process Cancellation Function", href: "approval-process/start-node-configuration#process-cancellation-function" },
-    { text: "Approval Reminder", href: "approval-process/start-node-configuration#approval-reminder" },
-    { text: "Approval Draft", href: "approval-process/start-node-configuration#approval-draft" },
-    { text: "Message Notification", href: "approval-process/start-node-configuration#anchor-414" },
-    { text: "Pages Used by Current Node", href: "approval-process/start-node-configuration#pages-used-by-current-node" },
-    { text: "Summary Display", href: "approval-process/start-node-configuration#summary-display" },
-    { text: "Field View Edit Permissions", href: "approval-process/start-node-configuration#field-view-edit-permissions" },
-    { text: "Layout Control Permissions", href: "approval-process/start-node-configuration#layout-control-permissions" }
+    { text: "Process Cancellation Function", href: "approval-workflow/start-node-configuration#process-cancellation-function" },
+    { text: "Approval Reminder", href: "approval-workflow/start-node-configuration#approval-reminder" },
+    { text: "Approval Draft", href: "approval-workflow/start-node-configuration#approval-draft" },
+    { text: "Message Notification", href: "approval-workflow/start-node-configuration#anchor-414" },
+    { text: "Pages Used by Current Node", href: "approval-workflow/start-node-configuration#pages-used-by-current-node" },
+    { text: "Summary Display", href: "approval-workflow/start-node-configuration#summary-display" },
+    { text: "Field View Edit Permissions", href: "approval-workflow/start-node-configuration#field-view-edit-permissions" },
+    { text: "Layout Control Permissions", href: "approval-workflow/start-node-configuration#layout-control-permissions" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Approval Node Configuration"
-  href="approval-process/approval-node-configuration"
+  href="approval-workflow/approval-node-configuration"
   description="Detailed configuration of approval links, including approver settings and approval rules."
 >
   <LinkGrid columns={2} links={[
-    { text: "Approver Settings", href: "approval-process/approval-node-configuration#approver-settings" },
-    { text: "Approval Flow Rules", href: "approval-process/approval-node-configuration#approval-flow-rules" },
-    { text: "Approval Process Rules", href: "approval-process/approval-node-configuration#approval-process-rules" },
-    { text: "Approval Extended Function Configuration", href: "approval-process/approval-node-configuration#approval-extended-function-configuration" },
-    { text: "Deduplication Approval", href: "approval-process/approval-node-configuration#deduplication-approval" },
-    { text: "Time-limited Processing", href: "approval-process/approval-node-configuration#time-limited-processing" },
-    { text: "Approval Draft", href: "approval-process/approval-node-configuration#approval-draft" },
-    { text: "Approval Feedback", href: "approval-process/approval-node-configuration#approval-feedback" },
-    { text: "Handwritten Signature", href: "approval-process/approval-node-configuration#handwritten-signature" },
-    { text: "Allow Batch Approval", href: "approval-process/approval-node-configuration#allow-batch-approval" },
-    { text: "Message Notification", href: "approval-process/approval-node-configuration#message-notification" },
-    { text: "SMS Notification", href: "approval-process/approval-node-configuration#sms-notification" },
-    { text: "Approval Page and Permission Control", href: "approval-process/approval-node-configuration#approval-page-permission-control" },
-    { text: "Pages Used by Current Node", href: "approval-process/approval-node-configuration#pages-used-by-current-node" },
-    { text: "Summary Display", href: "approval-process/approval-node-configuration#summary-display" },
-    { text: "Field Permission", href: "approval-process/approval-node-configuration#fieldpermission" },
-    { text: "Layout Control Permissions", href: "approval-process/approval-node-configuration#layout-control-permissions" }
+    { text: "Approver Settings", href: "approval-workflow/approval-node-configuration#approver-settings" },
+    { text: "Approval Flow Rules", href: "approval-workflow/approval-node-configuration#approval-flow-rules" },
+    { text: "Approval Process Rules", href: "approval-workflow/approval-node-configuration#approval-workflow-rules" },
+    { text: "Approval Extended Function Configuration", href: "approval-workflow/approval-node-configuration#approval-extended-function-configuration" },
+    { text: "Deduplication Approval", href: "approval-workflow/approval-node-configuration#deduplication-approval" },
+    { text: "Time-limited Processing", href: "approval-workflow/approval-node-configuration#time-limited-processing" },
+    { text: "Approval Draft", href: "approval-workflow/approval-node-configuration#approval-draft" },
+    { text: "Approval Feedback", href: "approval-workflow/approval-node-configuration#approval-feedback" },
+    { text: "Handwritten Signature", href: "approval-workflow/approval-node-configuration#handwritten-signature" },
+    { text: "Allow Batch Approval", href: "approval-workflow/approval-node-configuration#allow-batch-approval" },
+    { text: "Message Notification", href: "approval-workflow/approval-node-configuration#message-notification" },
+    { text: "SMS Notification", href: "approval-workflow/approval-node-configuration#sms-notification" },
+    { text: "Approval Page and Permission Control", href: "approval-workflow/approval-node-configuration#approval-page-permission-control" },
+    { text: "Pages Used by Current Node", href: "approval-workflow/approval-node-configuration#pages-used-by-current-node" },
+    { text: "Summary Display", href: "approval-workflow/approval-node-configuration#summary-display" },
+    { text: "Field Permission", href: "approval-workflow/approval-node-configuration#fieldpermission" },
+    { text: "Layout Control Permissions", href: "approval-workflow/approval-node-configuration#layout-control-permissions" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Special Node Configuration"
-  href="approval-process/special-node-configuration"
+  href="approval-workflow/special-node-configuration"
   description="Configuration methods for special process nodes such as condition nodes and parallel nodes."
 >
   <LinkGrid columns={2} links={[
-    { text: "CC Node", href: "approval-process/special-node-configuration#cc-node" },
-    { text: "CC Recipients", href: "approval-process/special-node-configuration#sms-notification" },
-    { text: "SMS Notification", href: "approval-process/special-node-configuration#sms-notification" },
-    { text: "Pages Used by Current Node", href: "approval-process/special-node-configuration#pages-used-by-current-node" },
-    { text: "Field Permission", href: "approval-process/special-node-configuration#fieldpermission" },
-    { text: "Layout Control Permissions", href: "approval-process/special-node-configuration#layout-control-permissions" },
-    { text: "Branch Node", href: "approval-process/special-node-configuration#branch-node" },
-    { text: "Parallel Node", href: "approval-process/special-node-configuration#parallel-node" },
-    { text: "Sub-process Node", href: "approval-process/special-node-configuration#sub-process-node" },
-    { text: "Sub-process Name", href: "approval-process/special-node-configuration#sub-process-name" },
-    { text: "Sub-process Initiator", href: "approval-process/special-node-configuration#sub-process-initiator" },
-    { text: "Sub-process Flow Rules", href: "approval-process/special-node-configuration#sub-process-flow-rules" },
-    { text: "When Main Process Flows to Sub-process", href: "approval-process/special-node-configuration#when-main-process-flows-to-sub-process" },
-    { text: "Sub-process Post-flow Function Design", href: "approval-process/special-node-configuration#sub-process-post-flow-function-design" },
-    { text: "Update Main Process Data When Single Sub-process Ends", href: "approval-process/special-node-configuration#update-main-process-data-single-sub-process-end" },
-    { text: "Update Main Process Data When All Sub-processes End", href: "approval-process/special-node-configuration#update-main-process-data-all-sub-processes-end" }
+    { text: "CC Node", href: "approval-workflow/special-node-configuration#cc-node" },
+    { text: "CC Recipients", href: "approval-workflow/special-node-configuration#sms-notification" },
+    { text: "SMS Notification", href: "approval-workflow/special-node-configuration#sms-notification" },
+    { text: "Pages Used by Current Node", href: "approval-workflow/special-node-configuration#pages-used-by-current-node" },
+    { text: "Field Permission", href: "approval-workflow/special-node-configuration#fieldpermission" },
+    { text: "Layout Control Permissions", href: "approval-workflow/special-node-configuration#layout-control-permissions" },
+    { text: "Branch Node", href: "approval-workflow/special-node-configuration#branch-node" },
+    { text: "Parallel Node", href: "approval-workflow/special-node-configuration#parallel-node" },
+    { text: "Sub-process Node", href: "approval-workflow/special-node-configuration#sub-process-node" },
+    { text: "Sub-process Name", href: "approval-workflow/special-node-configuration#sub-process-name" },
+    { text: "Sub-process Initiator", href: "approval-workflow/special-node-configuration#sub-process-initiator" },
+    { text: "Sub-process Flow Rules", href: "approval-workflow/special-node-configuration#sub-process-flow-rules" },
+    { text: "When Main Process Flows to Sub-process", href: "approval-workflow/special-node-configuration#when-main-process-flows-to-sub-process" },
+    { text: "Sub-process Post-flow Function Design", href: "approval-workflow/special-node-configuration#sub-process-post-flow-function-design" },
+    { text: "Update Main Process Data When Single Sub-process Ends", href: "approval-workflow/special-node-configuration#update-main-process-data-single-sub-process-end" },
+    { text: "Update Main Process Data When All Sub-processes End", href: "approval-workflow/special-node-configuration#update-main-process-data-all-sub-processes-end" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Approval Page Customization"
-  href="approval-process/approval-page-customization"
+  href="approval-workflow/approval-page-customization"
   description="Customize approval interface and user experience to improve approval efficiency."
 >
   <LinkGrid links={[
-    { text: "Approval Page Advanced Customization", href: "approval-process/approval-page-customization#approval-page-advanced-customization" },
-    { text: "Approval Page Types", href: "approval-process/approval-page-customization#approval-page-types" },
-    { text: "Custom Page Creation Method", href: "approval-process/approval-page-customization#custom-page-creation-method" }
+    { text: "Approval Page Advanced Customization", href: "approval-workflow/approval-page-customization#approval-page-advanced-customization" },
+    { text: "Approval Page Types", href: "approval-workflow/approval-page-customization#approval-page-types" },
+    { text: "Custom Page Creation Method", href: "approval-workflow/approval-page-customization#custom-page-creation-method" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Approval Process Usage"
-  href="approval-process/approval-process-usage"
+  href="approval-workflow/approval-workflow-usage"
   description="Practical application and operation guide of approval process, including initiating and processing approvals."
 >
   <LinkGrid links={[
-    { text: "Initiate Application", href: "approval-process/approval-process-usage#initiate-application" },
-    { text: "Todo Center", href: "approval-process/approval-process-usage#todo-center" },
-    { text: "Detail Page", href: "approval-process/approval-process-usage#detail-page" },
-    { text: "Delegate to Others Processing", href: "approval-process/approval-process-usage#delegate-to-others-processing" },
-    { text: "Approval Process Management Page", href: "approval-process/approval-process-usage#approval-process-management-page" }
+    { text: "Initiate Application", href: "approval-workflow/approval-workflow-usage#initiate-application" },
+    { text: "Todo Center", href: "approval-workflow/approval-workflow-usage#todo-center" },
+    { text: "Detail Page", href: "approval-workflow/approval-workflow-usage#detail-page" },
+    { text: "Delegate to Others Processing", href: "approval-workflow/approval-workflow-usage#delegate-to-others-processing" },
+    { text: "Approval Process Management Page", href: "approval-workflow/approval-workflow-usage#approval-workflow-management-page" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Calling Business Logic Elements in Approval Process"
-  href="approval-process/calling-business-logic-elements-in-approval-process"
+  href="approval-workflow/calling-business-logic-elements-in-approval-workflow"
   description="Learn how to call business logic elements within approval processes to implement complex business rules and automated decisions."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1559,7 +1599,7 @@ Make enterprise approval processes efficient and orderly. Design flowcharts thro
 
 <IndexCard
   title="Integrating AI in Approval Process"
-  href="approval-process/integrating-ai-in-approval-process"
+  href="approval-workflow/integrating-ai-in-approval-workflow"
   description="Integrate artificial intelligence capabilities into approval processes to achieve intelligent routing, automated review, and smart decision making."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1675,40 +1715,11 @@ Connect your application to the broader world. Easily integrate third-party APIs
     { text: "Alibaba Cloud SMS", href: "third-party-integration/sms-service#aliyun-sms" },
     { text: "Alibaba Cloud SMS Service Creation", href: "third-party-integration/sms-service#aliyun-sms-service-creation" },
     { text: "Use SMS Service in Mobile Login", href: "third-party-integration/sms-service#use-sms-service-in-mobile-login" },
-    { text: "Use SMS Service in Approval Process", href: "third-party-integration/sms-service#use-sms-service-in-approval-process" },
+    { text: "Use SMS Service in Approval Process", href: "third-party-integration/sms-service#use-sms-service-in-approval-workflow" },
     { text: "SMS Notification Function", href: "third-party-integration/sms-service#sms-notification-function" }
   ]} />
 </IndexCard>
-
-<IndexCard
-  title="API Exposure Examples for Various Elements"
-  href="api-exposure/api-exposure-examples-for-various-elements"
-  description="Comprehensive examples demonstrating how to expose different types of elements as APIs, including data models, services, and custom functions."
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
-</IndexCard>
-
-<IndexCard
-  title="Using SDK to Call Authorized Element APIs"
-  href="api-exposure/using-sdk-to-call-authorized-element-apis"
-  description="Learn how to use official SDKs to call authorized element APIs, including authentication, request handling, and error management."
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
-</IndexCard>
-
-<IndexCard
-  title="Using Cross-App Service Elements to Call Authorized APIs"
-  href="api-exposure/using-cross-app-service-elements-to-call-authorized-apis"
-  description="Implement cross-application API calls using service elements, enabling seamless integration between different JitAi applications."
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
-</IndexCard>
+</div>
 
 ## Cache Management
 Make applications run faster and more stable. Configure intelligent caching strategies, optimize data access speed, and enhance user experience. Ensure applications run smoothly even under high concurrent access.
@@ -1726,34 +1737,65 @@ Make applications run faster and more stable. Configure intelligent caching stra
     { text: "Cache Programming Interface Usage", href: "cache-management#cache-programming-interface-usage" }
   ]} />
 </IndexCard>
+</div>
+
+## Internal API Exposure
+Expose application capabilities for external system calls. Generate standard API interfaces with one click, manage call permissions, and monitor usage. Make your application a provider of data and services.
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Component Customization"
-  href="frontend-ui-customization/component-customization"
-  description="Customize individual components to match specific design requirements and enhance user interface consistency across the application."
+  title="API Authorization"
+  href="api-exposure/api-authorization"
+  description="Permission control and access authorization management for API interfaces."
+>
+  <LinkGrid links={[
+    { text: "API Authorization Creation", href: "api-exposure/api-authorization#api-authorization-creation" },
+    { text: "API Authorization Detail", href: "api-exposure/api-authorization#api-authorization-detail" },
+    { text: "Call Records", href: "api-exposure/api-authorization#call-records" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="API Exposure Examples for Various Elements"
+  href="api-exposure/api-exposure-examples-for-various-elements"
+  description="Comprehensive examples demonstrating how to expose different types of elements as APIs, including data models, services, and custom functions."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
+    <LinkGrid links={[
+        { text: "API Authorization for Service Functions", href: "api-exposure/api-exposure-examples-for-various-elements#service-function-api-authorization" },
+        { text: "API Authorization for Data Models", href: "api-exposure/api-exposure-examples-for-various-elements#data-model-api-authorization" },
+        { text: "API Authorization for Large Language Model Functions", href: "api-exposure/api-exposure-examples-for-various-elements#large-language-model-function-api-authorization" },
+        { text: "API Authorization for AI Agents", href: "api-exposure/api-exposure-examples-for-various-elements#agent-api-authorization" },
+        { text: "API Authorization for AI Assistants", href: "api-exposure/api-exposure-examples-for-various-elements#ai-assistant-api-authorization" },
+        { text: "API Authorization for Approval Processes", href: "api-exposure/api-exposure-examples-for-various-elements#approval-process-api-authorization" }
+    ]} />
   </div>
 </IndexCard>
 
 <IndexCard
-  title="Page Customization"
-  href="frontend-ui-customization/page-customization"
-  description="Customize entire page layouts, themes, and visual elements to create cohesive and branded user experiences."
+  title="Using SDK to Call Authorized Element APIs"
+  href="api-exposure/using-sdk-to-call-authorized-element-apis"
+  description="Learn how to use official SDKs to call authorized element APIs, including authentication, request handling, and error management."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
+    <LinkGrid links={[
+        { text: "Using Python SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-python-sdk" },
+        { text: "Using Node.js SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-nodejs-sdk" },
+        { text: "Using Java SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-java-sdk" }
+    ]} />
   </div>
 </IndexCard>
 
 <IndexCard
-  title="Portal Customization"
-  href="frontend-ui-customization/portal-customization"
-  description="Customize portal interfaces and navigation elements to provide personalized and role-based user experiences."
+  title="Using Cross-App Service Elements to Call Authorized APIs"
+  href="api-exposure/using-cross-app-service-elements-to-call-authorized-apis"
+  description="Implement cross-application API calls using service elements, enabling seamless integration between different JitAi applications."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
+    <LinkGrid links={[
+        { text: "Using Cross-App Service Elements", href: "api-exposure/using-cross-app-service-elements-to-call-authorized-apis#using-cross-app-service-elements" }
+    ]} />
   </div>
 </IndexCard>
 
@@ -1773,27 +1815,6 @@ Make your application accessible to global users. Support multiple languages, re
     📝 Coming soon...
   </div>
 </IndexCard>
-
-## Internal API Exposure
-Expose application capabilities for external system calls. Generate standard API interfaces with one click, manage call permissions, and monitor usage. Make your application a provider of data and services.
-
-<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
-
-<IndexCard
-  title="API Authorization"
-  href="api-exposure/api-authorization"
-  description="Permission control and access authorization management for API interfaces."
->
-  <LinkGrid links={[
-    { text: "API Authorization Creation", href: "api-exposure/api-authorization#api-authorization-creation" },
-    { text: "API Access Permission Control", href: "api-exposure/api-authorization#api-access-permission-control" },
-    { text: "API Call Monitoring", href: "api-exposure/api-authorization#api-call-monitoring" },
-    { text: "Use SDK to Call Authorized Interfaces", href: "api-exposure/api-authorization#use-sdk-to-call-authorized-interfaces" },
-    { text: "Use Cross-App Service Elements to Call Authorized Interfaces", href: "api-exposure/api-authorization#use-cross-app-service-elements-to-call-authorized-interfaces" }
-  ]} />
-</IndexCard>
-
-</div>
 
 <IndexCard
   title="Extending System Builtin Language Packages"
@@ -1817,7 +1838,6 @@ Expose application capabilities for external system calls. Generate standard API
 
 </div>
 
-</div>
 
 ## Frontend UI Customization
 Create unique visual experiences and brand identity. Customize application theme colors, develop exclusive UI components, and make application interfaces better align with corporate brand tone while enhancing user experience and recognition.
@@ -1851,6 +1871,35 @@ Create unique visual experiences and brand identity. Customize application theme
   ]} />
 </IndexCard>
 
+<IndexCard
+  title="Component Customization"
+  href="frontend-ui-customization/component-customization"
+  description="Customize individual components to match specific design requirements and enhance user interface consistency across the application."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Page Customization"
+  href="frontend-ui-customization/page-customization"
+  description="Customize entire page layouts, themes, and visual elements to create cohesive and branded user experiences."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Portal Customization"
+  href="frontend-ui-customization/portal-customization"
+  description="Customize portal interfaces and navigation elements to provide personalized and role-based user experiences."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
 </div>
 
 ## Scenario-based Advanced Guide
@@ -1867,8 +1916,7 @@ In-depth practical guides based on real business scenarios to help developers ma
     { text: "Local Development and Debugging", href: "advanced-guide/local-development-and-debugging" },
     { text: "Team Collaborative Development", href: "advanced-guide/team-collaborative-development" },
     { text: "Agent Prompt Writing Techniques", href: "advanced-guide/agent-prompt-writing-techniques" },
-    { text: "Application Layer Stability Guarantee", href: "advanced-guide/application-layer-stability-guarantee" },
-    { text: "DevOps Architecture and Management Guide", href: "advanced-guide/devops-architecture-and-management-guide" }
+    { text: "Application Layer Stability Guarantee", href: "advanced-guide/application-layer-stability-guarantee" }
   ]} />
 </IndexCard>
 
@@ -1917,11 +1965,11 @@ In-depth practical guides based on real business scenarios to help developers ma
 
 <IndexCard
   title="Workflow Management"
-  href="advanced-guide/approval-process-orchestration-and-custom-approval-events"
+  href="advanced-guide/approval-workflow-orchestration-and-custom-approval-events"
   description="Implement approval process orchestration, scheduled task execution and business process automation based on JitWorkflow and JitTask."
 >
   <LinkGrid links={[
-    { text: "Approval Process Orchestration and Custom Approval Events", href: "advanced-guide/approval-process-orchestration-and-custom-approval-events" },
+    { text: "Approval Process Orchestration and Custom Approval Events", href: "advanced-guide/approval-workflow-orchestration-and-custom-approval-events" },
     { text: "Scheduled Execution of Custom Business Logic", href: "advanced-guide/scheduled-execution-of-custom-business-logic" },
     { text: "Use Database Table Time Fields to Trigger Scheduled Tasks", href: "advanced-guide/using-database-table-time-fields-to-trigger-scheduled-tasks" }
   ]} />

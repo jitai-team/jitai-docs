@@ -27,7 +27,7 @@ accessKey、accessSecret 和 verifySign 签名都是创建阿里云短信服务�
 
 这三个参数都是由阿里云提供，需要用户到[阿里云短信服务平台](https://help.aliyun.com/zh/sms/)进行申请。
 
-## 在审批流程中使用短信服务 {#using-sms-service-in-approval-process}
+## 在审批流程中使用短信服务 {#using-sms-service-in-approval-workflow}
 短信服务可以集成到审批流程中，实现审批通知和提醒功能。
 :::
 
@@ -52,7 +52,7 @@ accessKey、accessSecret 和 verifySign 签名都是创建阿里云短信服务�
 对已经创建好的手机登录方式，可以在手机登录方式的配置页面修改短信服务和模板代码。
 :::
 
-### 审批流程中使用短信服务 {#use-sms-service-in-approval-process}
+### 审批流程中使用短信服务 {#use-sms-service-in-approval-workflow}
 审批节点/抄送节点支持配置短信服务，当开发者配置短信服务后，如果有对应的审批流转到该节点，系统就会发送短信给审批人/抄送人。
 
 ![审批使用短信服务](./img/3/sms_2025-08-28_10-56-19.png)

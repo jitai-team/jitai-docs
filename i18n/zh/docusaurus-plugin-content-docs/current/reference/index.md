@@ -115,7 +115,7 @@ sidebar_position: -1
 
 **审批组件：**
 - [发起申请](./framework/JitWeb/components/approval-type/initiate-application) - 申请发起
-- [审批处理](./framework/JitWeb/components/approval-type/approval-processing) - 审批操作
+- [审批处理](./framework/JitWeb/components/approval-type/approval-workflowing) - 审批操作
 
 **扩展组件：**
 - [自定义控件](./framework/JitWeb/custom-controls) - 自定义开发

@@ -2,182 +2,182 @@
 sidebar_position: 5
 ---
 
-# 树组件
+# Tree Components {#tree-components}
 
-树组件主要用于展示具有层次结构的数据，如文件目录、组织架构、商品分类等。它能直观地显示父子关系，支持节点展开收起、选择操作，为用户提供清晰的数据导航体验。JitAi的树组件分为树形组件和级联树组件。
+Tree components are primarily used to display hierarchical data structures, such as file directories, organizational structures, and product categories. They provide an intuitive visualization of parent-child relationships, supporting node expansion/collapse and selection operations, offering users a clear data navigation experience. JitAi's tree components are divided into tree form components and cascade tree components.
 
-## 树形组件
+## Tree Form Component {#tree-form-component}
 
-树形组件为最常用的树组件，可用于展示多级数据，树形组件默认只展示第一级数据，点击`>`图标后，会查询下一级数据：
+The tree form component is the most commonly used tree component, suitable for displaying multi-level data. By default, the tree form component only displays first-level data, and clicking the `>` icon will query the next level of data:
 
 ![](./img/5/2025-09-06_14-57-03.gif)
 
 
-如下图所示，树形组件的各层级字段均来自同一数据表模型的不同字段。
+As shown in the figure below, the hierarchical fields of the tree form component all come from different fields of the same data table model.
 
 ![](./img/5/2025-09-06-14-47-25.png)
 
-### 创建树形组件
+### Creating Tree Form Component {#create-tree-form-component}
 
-在页面编辑器中拖入树形组件后，在预览区会显示配置出错，这是因为`基础配置`中的层级字段配置不全。当开发者选择完层级字段后，就会按照配置正确的渲染出树形组件。
+After dragging the tree form component into the page editor, the preview area will display a configuration error. This is because the hierarchical field configuration in `Basic Configuration` is incomplete. Once developers select the hierarchical fields, the tree form component will render correctly according to the configuration.
 
  ![](./img/5/2025-09-06-14-51-30.png)
 
-### 配置层级字段
+### Configuring Hierarchical Fields {#configure-hierarchy-fields}
 
 ![](./img/5/2025-09-06_14-53-29.gif)
 
-鼠标点击`一级字段`下的`请选择`，在下拉框中选择一级字段。然后按照同样的操作配置其他层级的字段。树形组件要求最少配置两级字段。最多可配置5级。
+Click on `Please Select` under `First Level Field`, then choose the first level field from the dropdown. Follow the same operation to configure fields for other levels. The tree form component requires at least two levels of fields to be configured, with a maximum of 5 levels.
 
-使用效果：
+Usage effect:
 
 ![](./img/5/2025-09-06_14-57-03.gif)
 
-### 树形组件首次加载组件时刷新数据
+### Tree Form Component Refresh Data on First Load {#tree-form-refresh-on-first-load}
 
-本配置项是指在页面上树形组件加载完毕后，是否立即调用接口获取数据，默认情况下会勾选本选项。当需要其他组件加载完再加载树形时，可以不勾选本选项。下面是点击按钮后手动加载树形组件数据的示例：
+This configuration option determines whether the tree form component immediately calls the API to fetch data after loading on the page. By default, this option is checked. When you need other components to load before the tree form, you can uncheck this option. Below is an example of manually loading tree form component data after clicking a button:
 
 ![](./img/5/2025-09-06-15-06-12.png)
 
 ![](./img/5/2025-09-06-15-04-21.png)
 
-使用效果：
+Usage effect:
 
 ![](./img/5/2025-09-06_15-06-58.gif)
 
-### 默认展开第一个节点
+### Default Expand First Node {#default-expand-first-node}
 
-在默认情况下，树形组件渲染后所有节点都是闭合状态，勾选本选项后，会在组件渲染完后默认展开第一个节点，并展示第一个节点的下级节点：
+By default, all nodes in the tree form component are in a collapsed state after rendering. After checking this option, the first node will be expanded by default after component rendering, displaying the child nodes of the first node:
 
 ![](./img/5/2025-09-06_15-10-08.gif)
 
-### 点击节点后事件
+### Click Node Event {#click-node-event}
 
-点击树组件任一层级的节点时会触发此事件，可用于更新其他组件的数据。常见应用场景：使用树形组件展示层级关系，使用表格展示详细数据，点击树节点时联动更新表格内容。此场景下，树形组件与表格需使用相同的数据表模型：
+This event is triggered when clicking on any level of node in the tree component, which can be used to update data in other components. Common application scenarios: using tree form components to display hierarchical relationships, using tables to display detailed data, and updating table content when clicking tree nodes. In this scenario, the tree form component and table need to use the same data table model:
 
  ![](./img/5/2025-09-06-15-28-22.png)
 
-配置步骤如下：
+Configuration steps:
 
 ![](./img/5/2025-09-06_15-35-09.gif)
 
-1. 在树形组件的事件配置区的`点击节点后`事件编辑区，点击`请选择`,在弹框中选择`表格`的`刷新`方法。
-2. 点击`设置筛选条件`右边的`设置`按钮（看起来像三条横线），然后选择变量值。
-3. 点击`请选择`，在弹窗中选择树形的`节点的筛选条件`的`值`。
+1. In the tree form component's event configuration area, in the `Click Node` event editing area, click `Please Select`, then choose the table's `Refresh` method in the popup.
+2. Click the `Settings` button (which looks like three horizontal lines) to the right of `Set Filter Conditions`, then select variable values.
+3. Click `Please Select`, then choose the `Value` of the tree's `Node Filter Conditions` in the popup.
  
-使用效果如下图：
+Usage effect as shown below:
 
 ![](./img/5/2025-09-06_15-42-11.gif)
 
 
-## 级联树
+## Cascade Tree {#cascade-tree}
 
-级联树组件与树形组件类似，也用来展示具有层级关系的数据。与树形组件不同的是使用的数据结构不同，如下图所示，数据模型中需要有一个自关联字段。
+The cascade tree component is similar to the tree form component and is also used to display hierarchical data. The difference from the tree form component is the data structure used. As shown in the figure below, the data model needs to have a self-relation field.
 
-### 自关联字段 {#self-relation-field}
+### Self-Relation Field {#self-relation-field}
 
-关联单选字段，`目标数据模型`和字段所处的数据表模型是同一个。
+A relation single-select field where the `Target Data Model` and the data table model where the field is located are the same.
 
 ![](./img/5/2025-09-06-16-03-37.png)
 
 
-本示例所用数据如下图，每一层的数据通过`上一层级`字段关联其他数据，最顶层的数据的`上一层级`字段为空。
+The data used in this example is shown in the figure below. Each level of data is associated with other data through the `Previous Level` field, and the `Previous Level` field of the top-level data is empty.
 
 ![](./img/5/2025-09-06-16-06-10.png)
 
-配置好后效果：
+Configuration effect:
 
 ![](./img/5/2025-09-06-16-07-37.png)
 
-### 新建级联树
+### Creating Cascade Tree {#create-cascade-tree}
 
-在页面编辑器中拖入级联树后，组件会默认选择非主键id的第一个字段作为标题字段，选择第一个[自关联字段](#self-relation-field)为上级节点。
+After dragging the cascade tree into the page editor, the component will default to selecting the first field that is not the primary key ID as the title field, and selecting the first [self-relation field](#self-relation-field) as the parent node.
 
 ![](./img/5/2025-09-06-16-11-06.png)
 
 
-在使用级联树的时候，默认只查询第一层级的数据，当点击层级前面的`>`按钮后，会展示下一层级的数据。
+When using the cascade tree, only the first level of data is queried by default. When clicking the `>` button in front of the level, the next level of data will be displayed.
 
 ![](./img/5/2025-09-06_16-16-39.gif)
 
-### 配置节点标题
+### Configuring Node Title {#configure-node-title}
 
-当组件默认选择的节点标题不符合用户需求时，开发者可自行修改：
+When the component's default selected node title doesn't meet user requirements, developers can modify it:
 
 ![](./img/5/2025-09-06_16-19-36.gif)
 
-点击`节点标题`下面的标题字段的名称，在下拉框中选择新的节点标题。
+Click on the title field name under `Node Title`, then select a new node title from the dropdown.
 
-### 设置上级节点
+### Setting Parent Node {#set-parent-node}
 
-当数据表模型中有多个自关联字段时，用户可根据实际需求修改上级节点字段。
+When there are multiple self-relation fields in the data table model, users can modify the parent node field according to actual needs.
 
 ![](./img/5/2025-09-06-16-24-14.png)
  
-点击`上级节点`下的字段名称，在下拉框中选择新的`上级节点`字段。
+Click on the field name under `Parent Node`, then select a new `Parent Node` field from the dropdown.
 
-### 节点单选/多选
+### Node Single/Multiple Selection {#node-selection-mode}
 
-组件默认为单选模式，用户可根据需求设置为多选模式。
+The component defaults to single selection mode, and users can set it to multiple selection mode according to their needs.
 
 ![](./img/5/2025-09-06_16-26-04.gif)
 
-用户点击`模式`下的`单选`或`多选`进行切换。
+Users can click `Single Selection` or `Multiple Selection` under `Mode` to switch.
 
-### 级联树首次加载组件时刷新数据
+### Cascade Tree Refresh Data on First Load {#cascade-tree-refresh-on-first-load}
 
-本配置项是指在页面上级联树组件加载完毕后，是否立即调用接口获取数据，默认情况下会勾选本选项，使用方法与树形组件的[首次加载组件时刷新数据](#树形组件首次加载组件时刷新数据)相同，在此不再赘述。
+This configuration option determines whether the cascade tree component immediately calls the API to fetch data after loading on the page. By default, this option is checked. The usage method is the same as the tree form component's [Refresh Data on First Load](#tree-form-refresh-on-first-load), and will not be repeated here.
 
-### 级联树点击节点后事件
+### Cascade Tree Click Node Event {#cascade-tree-click-node-event}
 
-当用户点击级联树节点后，会触发本事件。在事件编辑区，可以获取到当前点击节点的详细数据。
+This event is triggered when users click on cascade tree nodes. In the event editing area, detailed data of the currently clicked node can be obtained.
 
 ![](./img/5/2025-09-06-16-37-11.png)
 
-可以通过如下配置在点击节点后，页面提示节点的值：
+You can configure the following to prompt the node value after clicking:
 
 ![](./img/5/2025-09-06_16-41-41.gif)
 
-配置步骤如下：
+Configuration steps:
 
-1. 选中级联树组件，在右侧事件配置区找到`点击节点后`事件编辑区。
-2. 点击`请选择`，在弹窗中选择`反馈提醒`下的`全局提醒`。
-3. 点击`设置消息内容`右边的`设置`按钮，选择变量值。
-4. 在弹窗中选择级联树的`操作的单行数据`中的相应字段值（如负责人的值）。
+1. Select the cascade tree component, find the `Click Node` event editing area in the right event configuration area.
+2. Click `Please Select`, then choose `Global Reminder` under `Feedback Reminder` in the popup.
+3. Click the `Settings` button to the right of `Set Message Content`, then select variable values.
+4. In the popup, select the corresponding field value (such as the person in charge) from the cascade tree's `Operation Single Row Data`.
 
 
-### 级联树选中节点后事件
+### Cascade Tree Select Node Event {#cascade-tree-select-node-event}
 
-当用户把`模式`设置为`多选`后，点击级联树中的选择框时触发本事件。
+This event is triggered when users set `Mode` to `Multiple Selection` and click the selection box in the cascade tree.
 
 ![](./img/5/2025-09-06-16-51-14.png)
 
-下面是一个简单的示例，可在节点勾选后全局提示勾选的负责人信息：
+Below is a simple example that can globally prompt the selected person in charge information after node selection:
 
 ![](./img/5/2025-09-06_16-55-09.gif)
 
-配置详细步骤如下：
+Detailed configuration steps:
 
 ![](./img/5/2025-09-06-17-01-17.png)
 
-在事件配置区找到`选中节点后`事件，点击循环遍历语句。
+Find the `Select Node` event in the event configuration area, click on the loop traversal statement.
 
 ![](./img/5/2025-09-06-17-01-58.png)
 
-点击`请选择循环的变量`。
+Click `Please Select Loop Variable`.
 
  ![](./img/5/2025-09-06-17-02-29.png)
 
-选择级联树下的`选中的多行数据`的负责人。
+Select the person in charge from the cascade tree's `Selected Multiple Row Data`.
 
 ![](./img/5/2025-09-06-17-02-57.png)
 
-点击循环语句内的`请选择`按钮。 
+Click the `Please Select` button inside the loop statement. 
 
 ![](./img/5/2025-09-06-17-03-32.png)
 
-选择`反馈提醒`下的`全局提醒`。
+Select `Global Reminder` under `Feedback Reminder`.
 
 ![](./img/5/2025-09-06_17-05-14.gif)
 
-最后，设置变量值为`遍历项`的值。
+Finally, set the variable value to the value of `Loop Item`.

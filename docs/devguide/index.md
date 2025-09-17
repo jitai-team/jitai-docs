@@ -588,21 +588,19 @@ The rich component library is your super toolkit. Drag and drop a table to displ
   description="Display hierarchical data structures with node expand/collapse and selection operations, providing clear data navigation experience."
 >
   <LinkGrid columns={2} links={[
-    { text: "Create Tree Component", href: "using-functional-components-in-pages/tree-components#create-tree-component" },
-    { text: "Configure Data Source", href: "using-functional-components-in-pages/tree-components#configure-data-source" },
-    { text: "Set Hierarchical Relationship Fields", href: "using-functional-components-in-pages/tree-components#set-hierarchical-relationship-fields" },
-    { text: "Node Display Configuration", href: "using-functional-components-in-pages/tree-components#node-display-configuration" },
-    { text: "Expand/Collapse Configuration", href: "using-functional-components-in-pages/tree-components#expand-collapse-configuration" },
-    { text: "Single/Multiple Selection Mode", href: "using-functional-components-in-pages/tree-components#single-multiple-selection-mode" },
-    { text: "Node Icon and Style", href: "using-functional-components-in-pages/tree-components#node-icon-and-style" },
-    { text: "Cascade Tree Configuration", href: "using-functional-components-in-pages/tree-components#cascade-tree-configuration" },
-    { text: "Progressive Loading", href: "using-functional-components-in-pages/tree-components#progressive-loading" },
-    { text: "Search and Filter", href: "using-functional-components-in-pages/tree-components#search-and-filter" },
-    { text: "Node Click Events", href: "using-functional-components-in-pages/tree-components#node-click-events" },
-    { text: "Checkbox Selection Events", href: "using-functional-components-in-pages/tree-components#checkbox-selection-events" },
-    { text: "Tree Component Variables", href: "using-functional-components-in-pages/tree-components#tree-component-variables" },
-    { text: "Interactive with Other Components", href: "using-functional-components-in-pages/tree-components#interactive-with-other-components" },
-    { text: "Refresh Tree Data", href: "using-functional-components-in-pages/tree-components#refresh-tree-data" }
+    { text: "Create Tree Component", href: "using-functional-components-in-pages/tree-components#create-tree-form-component" },
+    { text: "Configure Hierarchical Fields", href: "using-functional-components-in-pages/tree-components#configure-hierarchy-fields" },
+    { text: "Refresh Data on First Load", href: "using-functional-components-in-pages/tree-components#tree-form-refresh-on-first-load" },
+    { text: "Default Expand First Node", href: "using-functional-components-in-pages/tree-components#default-expand-first-node" },
+    { text: "Node Click Events", href: "using-functional-components-in-pages/tree-components#click-node-event" },
+    { text: "Cascade Tree", href: "using-functional-components-in-pages/tree-components#cascade-tree" },
+    { text: "Create Cascade Tree", href: "using-functional-components-in-pages/tree-components#create-cascade-tree" },
+    { text: "Configure Node Title", href: "using-functional-components-in-pages/tree-components#configure-node-title" },
+    { text: "Set Parent Node", href: "using-functional-components-in-pages/tree-components#set-parent-node" },
+    { text: "Single/Multiple Selection Mode", href: "using-functional-components-in-pages/tree-components#node-selection-mode" },
+    { text: "Cascade Tree Refresh Data on First Load", href: "using-functional-components-in-pages/tree-components#cascade-tree-refresh-on-first-load" },
+    { text: "Cascade Tree Node Click Events", href: "using-functional-components-in-pages/tree-components#cascade-tree-click-node-event" },
+    { text: "Cascade Tree Node Selection Events", href: "using-functional-components-in-pages/tree-components#cascade-tree-select-node-event" }
   ]} />
 </IndexCard>
 

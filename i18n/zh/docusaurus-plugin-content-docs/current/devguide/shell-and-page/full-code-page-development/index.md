@@ -5,31 +5,12 @@ sidebar_position: 7
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# 全代码页面
+# 创建全代码页面
 在真实业务交付中，会存在复杂交互与高度个性化的场景：组件行为难以完全自定义、依赖与版本受限、团队既有前端资产难以复用，调试与性能优化也常被框架边界所束缚。为解决这些痛点，我们推出“全代码页面”能力，让你以原生前端的方式开发页面，同时无缝对接平台能力加速交付。你可以使用熟悉的 React 或 Vue（完整生命周期）自由组织代码，通过网络导包或配置第三方依赖掌控技术栈，并直接使用平台提供的数据模型读写与后端服务调用；在不牺牲自由度的前提下，获得统一鉴权、上下文与运维支撑，让复杂页面既能做得出来，也能长期稳定维护和快速演进。
 
-## React 全代码页面 {#react-full-code-page}
+## 创建 React 全代码页面 {#create-react-full-code-page}
 平台使用React构建，React全代码页面能最大程度与平台融合。
 
-## 导入打包插件 {#import-packaging-plugins}
-支持导入各种打包插件和依赖包。
-
-## 默认加载器映射 {#default-loader-mapping}
-系统提供默认的加载器映射配置。
-
-## 使用打包配置 {#using-packaging-configuration}
-如何配置和使用打包相关功能。
-
-## 内置包概述 {#built-in-packages-overview}
-平台提供的内置包和组件库。
-
-## 调用数据模型函数 {#call-data-model-functions}
-如何在全代码页面中调用数据模型的函数。
-
-## 调用服务函数 {#call-service-functions}
-如何在全代码页面中调用后端服务函数。
-
-### 创建 React 全代码页面 {#create-react-full-code-page}
 ![React全代码页面创建](./imgs/create.png)
 
 在元素目录树点击搜索框右侧的`+`按钮，选择`页面`-`全代码页面`。随后弹出创建全代码页面元素的弹窗。
@@ -46,10 +27,6 @@ import TabItem from '@theme/TabItem';
 
 默认生成两个文件：一个 `index.tsx`，一个 `e.json`。`e.json` 是页面元素的定义；重点关注 `index.tsx`。`index.tsx` 会导出两个核心模块：Render 函数（当前全代码页面的主渲染函数）和 PageCls（一个页面类，继承自 `BasePage`）。PageCls 会在页面渲染前由系统进行实例化，并传入到 Render 的 props 中。
 
-## 全代码中使用模型函数 {#full-code-using-model-functions}
-在全代码页面中调用数据模型函数进行数据操作。
-
-PageCls 继承自 BasePage。关于 BasePage，参考[React全代码页面](../../../reference/framework/JitWeb/pages/react-full-code-page#methods)。
 ### 使用样式 {#use-style}
 在全代码页面中，你可以按需选择样式方案：内联样式（CSS inline）、CSS‑in‑JS、CSS 开箱即用，无需额外的打包配置；而采用原生 LESS 或 SCSS 时，需要在项目中启用对应的打包配置后方可生效。
 
@@ -167,7 +144,7 @@ export const Render = () =>{
 }
 ```
 
-更多资源的解析能力，请查看[默认loader映射](#default-loader-mapping)，你也可以通过[打包配置的使用](#using-packaging-configuration)来扩展loader映射。
+更多资源的解析能力，请查看[默认loader映射](#default-loader-mapping)，你也可以通过[打包配置的使用](#use-packaging-configuration)来扩展loader映射。
 
 ### 使用 Ant Design 的组件 {#use-ant-design-components}
 平台基于 React 框架，内置了 Ant Design UI 组件库，可以直接使用所有 Ant Design 组件；移动端可使用 Ant Design Mobile 组件库。
@@ -562,9 +539,9 @@ export { Render, PageCls };
 调用模型函数的方法类似： this.app.models.[模型名称].[方法名称]([参数1], [参数2], ...)
 
 ### 调用服务函数 {#call-service-function}
-参考[调用数据模型函数](#call-data-model-functions)，只是调用的方法是服务函数，类似： this.app.services.[服务名称].[方法名称]([参数1], [参数2], ...)
+参考[调用数据模型函数](#call-data-model-function)，只是调用的方法是服务函数，类似： this.app.services.[服务名称].[方法名称]([参数1], [参数2], ...)
 
-## Vue全代码页面 {#vue-full-code-page}
+## 创建Vue全代码页面 {#vue-full-code-page}
 对于不熟悉React的开发者，平台也提供了Vue全代码页面。
 
 ![Vue全代码页面创建](./imgs/vue-create.png)
@@ -586,7 +563,7 @@ Vue全代码页面由四个核心文件组成：
   <TabItem value="app" label="App.vue" default>
 
 ```html
-<script setup> {#call-data-model-functions}
+<script setup>
 import { ref } from 'vue'
 
 const message = ref('Hello JIT!');
@@ -742,7 +719,7 @@ const pageTitle = props.page.title;
 ```
 
 :::tip
-Vue全代码页面专注于原生Vue开发体验，完整支持[数据模型函数](#call-data-model-functions)、[服务函数](#call-service-functions)调用以及[本地资源](#use-local-resources)引用等核心功能，让你充分发挥Vue生态优势的同时享受平台提供的能力。
+Vue全代码页面专注于原生Vue开发体验，完整支持[数据模型函数](#call-data-model-function)、[服务函数](#call-service-function)调用以及[本地资源](#use-local-resources)引用等核心功能，让你充分发挥Vue生态优势的同时享受平台提供的能力。
 :::
 
 # 相关资料
@@ -755,7 +732,7 @@ Vue全代码页面专注于原生Vue开发体验，完整支持[数据模型函�
 
 在常规页面的事件面板中，点击函数面板中空白语句上的`请选择`文案，在面板中选择`数据模型`-`【模型名称】`，可看到多个模型操作函数，以查询接口为例，选择`获取一条数据`。
 
-### 全代码使用模型函数 
+### 全代码使用模型函数 {#full-code-using-model-functions}
 模型函数的参数较多。考虑到参数的复杂度，开发者可以按以下方式可视化配置参数，并迅速定位到函数代码，直接拷贝到全代码页面中即可。
 
 ![进入函数](./imgs/enter-function.png)
@@ -776,6 +753,7 @@ const app = getRuntimeApp();
 
 ### 全代码调用服务函数
 参考[全代码使用模型函数](#full-code-using-model-functions)
+
 ## 使用第三方包 {#use-third-party-packages}
 在full-code-page-development中，你可以灵活引入第三方 npm 包来扩展功能。在编辑器的源码模式中修改 `package.json` 文件，添加所需的依赖包到 `dependencies` 字段，然后点击“保存”按钮。系统会自动在后端运行 `pnpm install` 来安装新添加的依赖包，安装完成后即可在代码中正常导入使用。
 
@@ -807,7 +785,7 @@ esm.sh 还提供了一些优化参数，比如使用 `?bundle` 可以将多个 E
 开发环境可开启 `jit.config.ts` 的 `sourcemap` 选项；生产环境建议设置为 `false`，以显著减少产物体积。
 :::
 
-### 引入打包插件 
+### 引入打包插件 {#import-packaging-plugins}
 以引入 Less、SCSS 解析插件为例，这两个插件已经集成在平台的打包器 `jit-builder` 中。可按照[使用第三方包](#use-third-party-packages)的方式在 package.json 中引入 `jit-builder`。
 
 ![less支持](./imgs/less-support.png)
@@ -822,7 +800,7 @@ esm.sh 还提供了一些优化参数，比如使用 `?bundle` 可以将多个 E
 上述方法适用于所有 esbuild 插件。如何找到对应的插件，参考 [esbuild 插件](https://esbuild.github.io/plugins/)
 :::
 
-## 系统内置包一览表 
+## 系统内置包一览表 {#built-in-packages-overview}
 平台预置了常用的第三方库，可以直接在代码中导入使用，无需在 package.json 中声明：
 
 | 包名 | 版本 | 全局变量名 | 说明 |
@@ -865,7 +843,7 @@ esm.sh 还提供了一些优化参数，比如使用 `?bundle` 可以将多个 E
 这些库无需安装即可直接导入使用，例如：`import { useState } from 'react'`、`import { Button } from 'antd'` 等。
 :::
 
-## 默认loader映射 
+## 默认loader映射 {#default-loader-mapping}
 平台基于 esbuild 构建，以下是系统默认的文件类型处理器配置：
 
 | 文件类型 | Loader | 说明 |
@@ -885,4 +863,4 @@ esm.sh 还提供了一些优化参数，比如使用 `?bundle` 可以将多个 E
 
 ## 相关阅读
 ### 全代码组件
-了解在页面中使用全代码组件开发，参考：[全代码组件](../../using-functional-components-in-pages/full-code-components)
+了解在页面中使用全代码组件开发，参考：[全代码组件](../../fullcode-ui-components-in-pages/ui-component-interface-specifications)

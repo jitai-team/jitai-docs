@@ -12,8 +12,6 @@ import TabItem from '@theme/TabItem';
 ## 🛠️ 环境准备
 :::info 
 确保您已经完成了基础安装和配置。如果还未安装，请参考 [下载安装](../../tutorial/download-installation) 章节。
-
-关于DevOps最佳实践，请参考[运维架构与管理指南](./devops-architecture-and-management-guide)。
 :::
 
 支持多种主流IDE进行本地开发调试，您可以根据个人偏好选择：

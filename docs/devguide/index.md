@@ -141,61 +141,85 @@ Powerful toolchain for efficient development. Master visual development environm
 
 </div>
 
-## Application Creation and Publishing
+## Creating and Publishing Applications
 Complete workflow from application creation to distributed deployment. Master application creation, source code management, version publishing, runtime environment configuration, and building infinitely horizontally scalable distributed cluster architectures.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
   title="Creating and Deploying Applications"
-  href="create-and-publish-app/creating-and-deploying-applications"
-  description="Learn application creation, inheritance, version management, and release processes. Master the complete application lifecycle management."
+  href="creating-and-publishing-applications/creating-and-deploying-applications"
+  description="Learn application creation, inheritance, data configuration, and deployment. Master the fundamentals of application development workflow."
 >
   <LinkGrid links={[
-    { text: "Create First Application", href: "create-and-publish-app/creating-and-deploying-applications#create-first-application" },
-    { text: "Rapid Development Based on Existing Apps", href: "create-and-publish-app/creating-and-deploying-applications#based-on-existing-application-quick-development" },
-    { text: "Data Storage and Environment Variables", href: "create-and-publish-app/creating-and-deploying-applications#data-storage-and-environment-variable-configuration" },
-    { text: "Version Management and Publishing", href: "create-and-publish-app/creating-and-deploying-applications#application-version-management-and-publish" },
-    { text: "Application Export and Import", href: "create-and-publish-app/creating-and-deploying-applications#application-export-import" }
+    { text: "Create First Application", href: "creating-and-publishing-applications/creating-and-deploying-applications#create-first-application" },
+    { text: "Rapid Development Based on Existing Apps", href: "creating-and-publishing-applications/creating-and-deploying-applications#based-on-existing-application-quick-development" },
+    { text: "Data Storage and Environment Variables", href: "creating-and-publishing-applications/creating-and-deploying-applications#data-storage-and-environment-variable-configuration" },
+    { text: "Application Deployment", href: "creating-and-publishing-applications/creating-and-deploying-applications#application-deployment" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Application Directory and Element Source Code"
-  href="create-and-publish-app/application-directory-and-element-source-code"
-  description="Deep dive into JitAi application directory structure, element organization, and source code management mechanisms."
->
-  Coming soon...
-</IndexCard>
-
-<IndexCard
-  title="Application Publishing and Updates"
-  href="create-and-publish-app/application-publishing-and-updates"
-  description="Master application version release strategies, automatic update mechanisms, and release process management."
->
-  Coming soon...
-</IndexCard>
-
-<IndexCard
-  title="Runtime Environment Management"
-  href="create-and-publish-app/runtime-environment-management"
-  description="Master the creation, configuration, and management of runtime environments, and learn how to use node clusters and application deployment."
+  href="creating-and-publishing-applications/application-directory-and-element-source-code"
+  description="Understand JitAi application directory structure based on JAAP protocol, element code organization, and source code export/import mechanisms."
 >
   <LinkGrid links={[
-    { text: "What is Runtime Environment", href: "create-and-publish-app/runtime-environment-management#what-is-runtime-environment" },
-    { text: "Local Default Runtime Environment", href: "create-and-publish-app/runtime-environment-management#node-local-default-runtime-environment" },
-    { text: "Create New Runtime Environment", href: "create-and-publish-app/runtime-environment-management#createnewrunenvironment" },
-    { text: "Use Runtime Environment to Manage Node Clusters", href: "create-and-publish-app/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
-    { text: "Deploy Application in Runtime Environment", href: "create-and-publish-app/runtime-environment-management#deploy-application-in-runtime-environment" }
+    { text: "Application Directory Structure", href: "creating-and-publishing-applications/application-directory-and-element-source-code#application-directory-structure" },
+    { text: "Element Code Directory Structure", href: "creating-and-publishing-applications/application-directory-and-element-source-code#element-code-directory-structure" },
+    { text: "Application Source Code Export/Import", href: "creating-and-publishing-applications/application-directory-and-element-source-code#application-export-import" },
+    { text: "Export Source Code Zip", href: "creating-and-publishing-applications/application-directory-and-element-source-code#export-source-code-zip" },
+    { text: "Export to WeChat MiniProgram", href: "creating-and-publishing-applications/application-directory-and-element-source-code#export-to-wechat-miniprogram" },
+    { text: "Import Application Source Code", href: "creating-and-publishing-applications/application-directory-and-element-source-code#import-application-source-code" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="Distributed Cluster Architecture"
-  href="create-and-publish-app/distributed-cluster-architecture"
+  title="Publishing and Updating Applications"
+  href="creating-and-publishing-applications/publishing-and-updating-applications"
+  description="Master application version management, publishing workflows, and update strategies. Learn semantic versioning and deployment configurations."
+>
+  <LinkGrid links={[
+    { text: "Version Management and Publishing", href: "creating-and-publishing-applications/publishing-and-updating-applications#application-version-management-and-publish" },
+    { text: "Semantic Versioning", href: "creating-and-publishing-applications/publishing-and-updating-applications#semantic-versioning" },
+    { text: "Auto-Update Configuration", href: "creating-and-publishing-applications/publishing-and-updating-applications#force-auto-update" },
+    { text: "Source Code and Initialization Data", href: "creating-and-publishing-applications/publishing-and-updating-applications#include-source-code" },
+    { text: "Application Version Updates", href: "creating-and-publishing-applications/publishing-and-updating-applications#application-version-updates" },
+    { text: "Deployment Strategies", href: "creating-and-publishing-applications/publishing-and-updating-applications#application-deployment-strategies" }
+  ]} />
+</IndexCard>
+
+
+<IndexCard
+  title="Runtime Environment Management"
+  href="creating-and-publishing-applications/runtime-environment-management"
+  description="Master the creation, configuration, and management of runtime environments, and learn how to use node clusters and application deployment."
+>
+  <LinkGrid links={[
+    { text: "What is Runtime Environment", href: "creating-and-publishing-applications/runtime-environment-management#what-is-runtime-environment" },
+    { text: "Local Default Runtime Environment", href: "creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment" },
+    { text: "Create New Runtime Environment", href: "creating-and-publishing-applications/runtime-environment-management#createnewrunenvironment" },
+    { text: "Development Mode Deployment", href: "creating-and-publishing-applications/runtime-environment-management#deploy-in-development-mode" },
+    { text: "Production Mode Deployment", href: "creating-and-publishing-applications/runtime-environment-management#deploy-in-production-mode" },
+    { text: "Use Runtime Environment to Manage Node Clusters", href: "creating-and-publishing-applications/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
+    { text: "Deploy Application in Runtime Environment", href: "creating-and-publishing-applications/runtime-environment-management#deploy-application-in-runtime-environment" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Distributed Cluster Architecture for Unlimited Horizontal Scaling"
+  href="creating-and-publishing-applications/distributed-cluster-architecture"
   description="Learn how to build and manage infinitely horizontally scalable distributed cluster architectures for high availability and performance."
 >
-  Coming soon...
+  <LinkGrid links={[
+    { text: "Four-Layer Architecture Model", href: "creating-and-publishing-applications/distributed-cluster-architecture#four-layer-architecture" },
+    { text: "Typical Deployment Topology", href: "creating-and-publishing-applications/distributed-cluster-architecture#typical-deployment-topology" },
+    { text: "Enterprise Cluster Deployment", href: "creating-and-publishing-applications/distributed-cluster-architecture#enterprise-cluster-deployment" },
+    { text: "Multi-Dimensional Environment Division", href: "creating-and-publishing-applications/distributed-cluster-architecture#multi-dimensional-environment-division" },
+    { text: "Cluster Scaling Strategies", href: "creating-and-publishing-applications/distributed-cluster-architecture#cluster-scaling-strategies" },
+    { text: "Load Balancing & Fault Tolerance", href: "creating-and-publishing-applications/distributed-cluster-architecture#load-balancing-fault-tolerance" },
+    { text: "Architecture Constraints & Best Practices", href: "creating-and-publishing-applications/distributed-cluster-architecture#architecture-constraints-best-practices" }
+  ]} />
 </IndexCard>
 
 </div>
@@ -299,18 +323,8 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
   description="Fully customized page development approach for advanced developers, supporting complex business logic and personalized interfaces."
 >
   <LinkGrid columns={2} links={[
-    { text: "React Full Code Page", href: "shell-and-page/full-code-page-development#react-full-code-page" },
     { text: "Create React Full Code Page", href: "shell-and-page/full-code-page-development#create-react-full-code-page" },
-    { text: "Use Styles", href: "shell-and-page/full-code-page-development#use-style" },
-    { text: "Use Local Resources", href: "shell-and-page/full-code-page-development#use-local-resources" },
-    { text: "Use Ant Design Components", href: "shell-and-page/full-code-page-development#use-ant-design-components" },
-    { text: "Embed Existing Regular Page", href: "shell-and-page/full-code-page-development#embed-existing-regular-page" },
-    { text: "Use Standard Components", href: "shell-and-page/full-code-page-development#use-standard-component" },
-    { text: "Call Data Model Functions", href: "shell-and-page/full-code-page-development#call-data-model-function" },
-    { text: "Call Service Functions", href: "shell-and-page/full-code-page-development#call-service-function" },
-    { text: "Vue Full Code Page", href: "shell-and-page/full-code-page-development#vue-full-code-page" },
-    { text: "Use Third-party Packages", href: "shell-and-page/full-code-page-development#use-third-party-packages" },
-    { text: "Use Packaging Configuration", href: "shell-and-page/full-code-page-development#use-packaging-configuration" }
+    { text: "Vue Full Code Page", href: "shell-and-page/full-code-page-development#vue-full-code-page" }
   ]} />
 </IndexCard>
 
@@ -780,18 +794,18 @@ The rich component library is your super toolkit. Drag and drop a table to displ
 
 <IndexCard
   title="Full Code Components"
-  href="using-functional-components-in-pages/full-code-components"
+  href="fullcode-ui-components-in-pages/ui-component-interface-specifications"
   description="Fully customized code components supporting highly personalized function implementation."
 >
   <LinkGrid columns={2} links={[
-    { text: "Create Full Code Components", href: "using-functional-components-in-pages/full-code-components#create-full-code-components" },
-    { text: "UI Renderer Page and Logic Processing Class", href: "using-functional-components-in-pages/full-code-components#ui-renderer-page-logic-processing-class" },
-    { text: "Call Other Components via Component Instance", href: "using-functional-components-in-pages/full-code-components#call-other-components-via-instance" },
-    { text: "Respond to Other Component Events", href: "using-functional-components-in-pages/full-code-components#respond-to-other-component-events" },
-    { text: "Event Subscription Principles", href: "using-functional-components-in-pages/full-code-components#event-subscription-principles" },
-    { text: "Respond in Custom Components", href: "using-functional-components-in-pages/full-code-components#respond-in-custom-components" },
-    { text: "Subscribable Events", href: "using-functional-components-in-pages/full-code-components#subscribable-events" },
-    { text: "Bidirectional Communication Example", href: "using-functional-components-in-pages/full-code-components#bidirectional-communication-example" }
+    { text: "Component Interface Specifications", href: "fullcode-ui-components-in-pages/ui-component-interface-specifications" },
+    { text: "Component Interface Architecture", href: "fullcode-ui-components-in-pages/ui-component-interface-specifications#component-interface-architecture" },
+    { text: "Core Interface Definitions", href: "fullcode-ui-components-in-pages/ui-component-interface-specifications#core-interface-definitions" },
+    { text: "Calling Page and Component Functions", href: "fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components" },
+    { text: "Emitting Events", href: "fullcode-ui-components-in-pages/emitting-events" },
+    { text: "Event Subscription Principles", href: "fullcode-ui-components-in-pages/emitting-events#event-subscription-principles" },
+    { text: "Bidirectional Communication", href: "fullcode-ui-components-in-pages/emitting-events#bidirectional-communication-example" },
+    { text: "Calling Component Functions in Page Code", href: "fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code" }
   ]} />
 </IndexCard>
 
@@ -818,10 +832,7 @@ Integrate mainstream large language models such as GPT-4, Claude, and Tongyi Qia
     { text: "Mainstream LLM Vendor Support List", href: "ai-llm/create-ai-llm#mainstream-llm-vendor-support-list" },
     { text: "Create LLM Vendor Element", href: "ai-llm/create-ai-llm#create-llm-vendor-element" },
     { text: "Retry and Backup API Key Mechanism", href: "ai-llm/create-ai-llm#retry-backup-api-key-mechanism" },
-    { text: "Private LLM Integration", href: "ai-llm/create-ai-llm#private-llm-integration" },
-    { text: "Call LLM in Pages", href: "ai-llm/create-ai-llm#call-llm-in-pages" },
-    { text: "Call LLM in Backend Functions", href: "ai-llm/create-ai-llm#call-llm-in-backend-functions" },
-    { text: "LLM Programming Interface", href: "ai-llm/create-ai-llm#llm-programming-interface" }
+    { text: "Private LLM Integration", href: "ai-llm/create-ai-llm#private-llm-integration" }
   ]} />
 </IndexCard>
 
@@ -1695,36 +1706,7 @@ Connect your application to the broader world. Easily integrate third-party APIs
     { text: "SMS Notification Function", href: "third-party-integration/sms-service#sms-notification-function" }
   ]} />
 </IndexCard>
-
-<IndexCard
-  title="API Exposure Examples for Various Elements"
-  href="api-exposure/api-exposure-examples-for-various-elements"
-  description="Comprehensive examples demonstrating how to expose different types of elements as APIs, including data models, services, and custom functions."
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
-</IndexCard>
-
-<IndexCard
-  title="Using SDK to Call Authorized Element APIs"
-  href="api-exposure/using-sdk-to-call-authorized-element-apis"
-  description="Learn how to use official SDKs to call authorized element APIs, including authentication, request handling, and error management."
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
-</IndexCard>
-
-<IndexCard
-  title="Using Cross-App Service Elements to Call Authorized APIs"
-  href="api-exposure/using-cross-app-service-elements-to-call-authorized-apis"
-  description="Implement cross-application API calls using service elements, enabling seamless integration between different JitAi applications."
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
-</IndexCard>
+</div>
 
 ## Cache Management
 Make applications run faster and more stable. Configure intelligent caching strategies, optimize data access speed, and enhance user experience. Ensure applications run smoothly even under high concurrent access.
@@ -1742,34 +1724,65 @@ Make applications run faster and more stable. Configure intelligent caching stra
     { text: "Cache Programming Interface Usage", href: "cache-management#cache-programming-interface-usage" }
   ]} />
 </IndexCard>
+</div>
+
+## Internal API Exposure
+Expose application capabilities for external system calls. Generate standard API interfaces with one click, manage call permissions, and monitor usage. Make your application a provider of data and services.
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Component Customization"
-  href="frontend-ui-customization/component-customization"
-  description="Customize individual components to match specific design requirements and enhance user interface consistency across the application."
+  title="API Authorization"
+  href="api-exposure/api-authorization"
+  description="Permission control and access authorization management for API interfaces."
+>
+  <LinkGrid links={[
+    { text: "API Authorization Creation", href: "api-exposure/api-authorization#api-authorization-creation" },
+    { text: "API Authorization Detail", href: "api-exposure/api-authorization#api-authorization-detail" },
+    { text: "Call Records", href: "api-exposure/api-authorization#call-records" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="API Exposure Examples for Various Elements"
+  href="api-exposure/api-exposure-examples-for-various-elements"
+  description="Comprehensive examples demonstrating how to expose different types of elements as APIs, including data models, services, and custom functions."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
+    <LinkGrid links={[
+        { text: "API Authorization for Service Functions", href: "api-exposure/api-exposure-examples-for-various-elements#service-function-api-authorization" },
+        { text: "API Authorization for Data Models", href: "api-exposure/api-exposure-examples-for-various-elements#data-model-api-authorization" },
+        { text: "API Authorization for Large Language Model Functions", href: "api-exposure/api-exposure-examples-for-various-elements#large-language-model-function-api-authorization" },
+        { text: "API Authorization for AI Agents", href: "api-exposure/api-exposure-examples-for-various-elements#agent-api-authorization" },
+        { text: "API Authorization for AI Assistants", href: "api-exposure/api-exposure-examples-for-various-elements#ai-assistant-api-authorization" },
+        { text: "API Authorization for Approval Processes", href: "api-exposure/api-exposure-examples-for-various-elements#approval-process-api-authorization" }
+    ]} />
   </div>
 </IndexCard>
 
 <IndexCard
-  title="Page Customization"
-  href="frontend-ui-customization/page-customization"
-  description="Customize entire page layouts, themes, and visual elements to create cohesive and branded user experiences."
+  title="Using SDK to Call Authorized Element APIs"
+  href="api-exposure/using-sdk-to-call-authorized-element-apis"
+  description="Learn how to use official SDKs to call authorized element APIs, including authentication, request handling, and error management."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
+    <LinkGrid links={[
+        { text: "Using Python SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-python-sdk" },
+        { text: "Using Node.js SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-nodejs-sdk" },
+        { text: "Using Java SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-java-sdk" }
+    ]} />
   </div>
 </IndexCard>
 
 <IndexCard
-  title="Portal Customization"
-  href="frontend-ui-customization/portal-customization"
-  description="Customize portal interfaces and navigation elements to provide personalized and role-based user experiences."
+  title="Using Cross-App Service Elements to Call Authorized APIs"
+  href="api-exposure/using-cross-app-service-elements-to-call-authorized-apis"
+  description="Implement cross-application API calls using service elements, enabling seamless integration between different JitAi applications."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
+    <LinkGrid links={[
+        { text: "Using Cross-App Service Elements", href: "api-exposure/using-cross-app-service-elements-to-call-authorized-apis#using-cross-app-service-elements" }
+    ]} />
   </div>
 </IndexCard>
 
@@ -1789,27 +1802,6 @@ Make your application accessible to global users. Support multiple languages, re
     📝 Coming soon...
   </div>
 </IndexCard>
-
-## Internal API Exposure
-Expose application capabilities for external system calls. Generate standard API interfaces with one click, manage call permissions, and monitor usage. Make your application a provider of data and services.
-
-<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
-
-<IndexCard
-  title="API Authorization"
-  href="api-exposure/api-authorization"
-  description="Permission control and access authorization management for API interfaces."
->
-  <LinkGrid links={[
-    { text: "API Authorization Creation", href: "api-exposure/api-authorization#api-authorization-creation" },
-    { text: "API Access Permission Control", href: "api-exposure/api-authorization#api-access-permission-control" },
-    { text: "API Call Monitoring", href: "api-exposure/api-authorization#api-call-monitoring" },
-    { text: "Use SDK to Call Authorized Interfaces", href: "api-exposure/api-authorization#use-sdk-to-call-authorized-interfaces" },
-    { text: "Use Cross-App Service Elements to Call Authorized Interfaces", href: "api-exposure/api-authorization#use-cross-app-service-elements-to-call-authorized-interfaces" }
-  ]} />
-</IndexCard>
-
-</div>
 
 <IndexCard
   title="Extending System Builtin Language Packages"
@@ -1833,7 +1825,6 @@ Expose application capabilities for external system calls. Generate standard API
 
 </div>
 
-</div>
 
 ## Frontend UI Customization
 Create unique visual experiences and brand identity. Customize application theme colors, develop exclusive UI components, and make application interfaces better align with corporate brand tone while enhancing user experience and recognition.
@@ -1867,6 +1858,35 @@ Create unique visual experiences and brand identity. Customize application theme
   ]} />
 </IndexCard>
 
+<IndexCard
+  title="Component Customization"
+  href="frontend-ui-customization/component-customization"
+  description="Customize individual components to match specific design requirements and enhance user interface consistency across the application."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Page Customization"
+  href="frontend-ui-customization/page-customization"
+  description="Customize entire page layouts, themes, and visual elements to create cohesive and branded user experiences."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Portal Customization"
+  href="frontend-ui-customization/portal-customization"
+  description="Customize portal interfaces and navigation elements to provide personalized and role-based user experiences."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
 </div>
 
 ## Scenario-based Advanced Guide
@@ -1883,8 +1903,7 @@ In-depth practical guides based on real business scenarios to help developers ma
     { text: "Local Development and Debugging", href: "advanced-guide/local-development-and-debugging" },
     { text: "Team Collaborative Development", href: "advanced-guide/team-collaborative-development" },
     { text: "Agent Prompt Writing Techniques", href: "advanced-guide/agent-prompt-writing-techniques" },
-    { text: "Application Layer Stability Guarantee", href: "advanced-guide/application-layer-stability-guarantee" },
-    { text: "DevOps Architecture and Management Guide", href: "advanced-guide/devops-architecture-and-management-guide" }
+    { text: "Application Layer Stability Guarantee", href: "advanced-guide/application-layer-stability-guarantee" }
   ]} />
 </IndexCard>
 

@@ -8,6 +8,7 @@
     "start:zh": "docusaurus start --locale zh",
     "start:en": "docusaurus start --locale en",
     "build": "docusaurus build",
+    "build:low-cpu": "UV_THREADPOOL_SIZE=1 NODE_OPTIONS='--max-old-space-size=1024' docusaurus build",
     "build:zh": "docusaurus build --locale zh",
     "build:en": "docusaurus build --locale en",
     "swizzle": "docusaurus swizzle",

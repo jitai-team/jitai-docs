@@ -10,7 +10,7 @@ Every JitNode has a built-in DevOps management tool (AdminApp) that provides dev
 
 AdminApp adopts a dual-console architecture, providing both a local node console and an organization management console, targeting single-node application management and enterprise-level cluster management needs respectively. When developers access the node entry address, they will automatically be redirected to the node console.
 
-The [Create and Publish App](../create-and-publish-app/creating-and-deploying-applications) section will provide detailed instructions on AdminApp functionality usage. Here we provide a high-level overview of AdminApp's capabilities.
+The [Creating and Publishing Applications](../creating-and-publishing-applications) section will provide detailed instructions on AdminApp functionality usage. Here we provide a high-level overview of AdminApp's capabilities.
 
 ## Dual Console Architecture {#dual-console-architecture}
 

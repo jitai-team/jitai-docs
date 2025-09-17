@@ -1,8 +1,0 @@
-{
-  "label": "创建和发布应用",
-  "position": 4,
-  "link": {
-    "type": "generated-index",
-    "description": "学习如何创建、部署、发布和管理JitAi应用，包括运行时环境配置和分布式集群架构。"
-  }
-}

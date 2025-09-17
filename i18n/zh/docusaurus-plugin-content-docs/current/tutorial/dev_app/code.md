@@ -35,7 +35,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/code_component.mp4" />
 
-阅读[全代码组件](../../devguide/using-functional-components-in-pages/full-code-components)了解更多。
+阅读[全代码组件](../../devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications)了解更多。
 
 也可以直接整个页面，都使用全代码实现。 阅读[全代码页面开发](../../devguide/shell-and-page/full-code-page-development)了解更多。
 

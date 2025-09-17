@@ -141,7 +141,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-## 应用创建与发布
+## 创建与发布应用
 从应用创建到分布式部署的完整流程。掌握应用创建、源码管理、版本发布、运行环境配置，以及如何构建无限横向扩展的分布式集群架构。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>

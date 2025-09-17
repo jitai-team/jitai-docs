@@ -141,7 +141,7 @@ Powerful toolchain for efficient development. Master visual development environm
 
 </div>
 
-## Application Creation and Publishing
+## Creating and Publishing Applications
 Complete workflow from application creation to distributed deployment. Master application creation, source code management, version publishing, runtime environment configuration, and building infinitely horizontally scalable distributed cluster architectures.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>

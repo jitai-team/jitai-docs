@@ -1719,36 +1719,7 @@ Connect your application to the broader world. Easily integrate third-party APIs
     { text: "SMS Notification Function", href: "third-party-integration/sms-service#sms-notification-function" }
   ]} />
 </IndexCard>
-
-<IndexCard
-  title="API Exposure Examples for Various Elements"
-  href="api-exposure/api-exposure-examples-for-various-elements"
-  description="Comprehensive examples demonstrating how to expose different types of elements as APIs, including data models, services, and custom functions."
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
-</IndexCard>
-
-<IndexCard
-  title="Using SDK to Call Authorized Element APIs"
-  href="api-exposure/using-sdk-to-call-authorized-element-apis"
-  description="Learn how to use official SDKs to call authorized element APIs, including authentication, request handling, and error management."
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
-</IndexCard>
-
-<IndexCard
-  title="Using Cross-App Service Elements to Call Authorized APIs"
-  href="api-exposure/using-cross-app-service-elements-to-call-authorized-apis"
-  description="Implement cross-application API calls using service elements, enabling seamless integration between different JitAi applications."
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
-</IndexCard>
+</div>
 
 ## Cache Management
 Make applications run faster and more stable. Configure intelligent caching strategies, optimize data access speed, and enhance user experience. Ensure applications run smoothly even under high concurrent access.
@@ -1766,34 +1737,65 @@ Make applications run faster and more stable. Configure intelligent caching stra
     { text: "Cache Programming Interface Usage", href: "cache-management#cache-programming-interface-usage" }
   ]} />
 </IndexCard>
+</div>
+
+## Internal API Exposure
+Expose application capabilities for external system calls. Generate standard API interfaces with one click, manage call permissions, and monitor usage. Make your application a provider of data and services.
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Component Customization"
-  href="frontend-ui-customization/component-customization"
-  description="Customize individual components to match specific design requirements and enhance user interface consistency across the application."
+  title="API Authorization"
+  href="api-exposure/api-authorization"
+  description="Permission control and access authorization management for API interfaces."
+>
+  <LinkGrid links={[
+    { text: "API Authorization Creation", href: "api-exposure/api-authorization#api-authorization-creation" },
+    { text: "API Authorization Detail", href: "api-exposure/api-authorization#api-authorization-detail" },
+    { text: "Call Records", href: "api-exposure/api-authorization#call-records" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="API Exposure Examples for Various Elements"
+  href="api-exposure/api-exposure-examples-for-various-elements"
+  description="Comprehensive examples demonstrating how to expose different types of elements as APIs, including data models, services, and custom functions."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
+    <LinkGrid links={[
+        { text: "API Authorization for Service Functions", href: "api-exposure/api-exposure-examples-for-various-elements#service-function-api-authorization" },
+        { text: "API Authorization for Data Models", href: "api-exposure/api-exposure-examples-for-various-elements#data-model-api-authorization" },
+        { text: "API Authorization for Large Language Model Functions", href: "api-exposure/api-exposure-examples-for-various-elements#large-language-model-function-api-authorization" },
+        { text: "API Authorization for AI Agents", href: "api-exposure/api-exposure-examples-for-various-elements#agent-api-authorization" },
+        { text: "API Authorization for AI Assistants", href: "api-exposure/api-exposure-examples-for-various-elements#ai-assistant-api-authorization" },
+        { text: "API Authorization for Approval Processes", href: "api-exposure/api-exposure-examples-for-various-elements#approval-process-api-authorization" }
+    ]} />
   </div>
 </IndexCard>
 
 <IndexCard
-  title="Page Customization"
-  href="frontend-ui-customization/page-customization"
-  description="Customize entire page layouts, themes, and visual elements to create cohesive and branded user experiences."
+  title="Using SDK to Call Authorized Element APIs"
+  href="api-exposure/using-sdk-to-call-authorized-element-apis"
+  description="Learn how to use official SDKs to call authorized element APIs, including authentication, request handling, and error management."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
+    <LinkGrid links={[
+        { text: "Using Python SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-python-sdk" },
+        { text: "Using Node.js SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-nodejs-sdk" },
+        { text: "Using Java SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-java-sdk" }
+    ]} />
   </div>
 </IndexCard>
 
 <IndexCard
-  title="Portal Customization"
-  href="frontend-ui-customization/portal-customization"
-  description="Customize portal interfaces and navigation elements to provide personalized and role-based user experiences."
+  title="Using Cross-App Service Elements to Call Authorized APIs"
+  href="api-exposure/using-cross-app-service-elements-to-call-authorized-apis"
+  description="Implement cross-application API calls using service elements, enabling seamless integration between different JitAi applications."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
+    <LinkGrid links={[
+        { text: "Using Cross-App Service Elements", href: "api-exposure/using-cross-app-service-elements-to-call-authorized-apis#using-cross-app-service-elements" }
+    ]} />
   </div>
 </IndexCard>
 
@@ -1813,27 +1815,6 @@ Make your application accessible to global users. Support multiple languages, re
     📝 Coming soon...
   </div>
 </IndexCard>
-
-## Internal API Exposure
-Expose application capabilities for external system calls. Generate standard API interfaces with one click, manage call permissions, and monitor usage. Make your application a provider of data and services.
-
-<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
-
-<IndexCard
-  title="API Authorization"
-  href="api-exposure/api-authorization"
-  description="Permission control and access authorization management for API interfaces."
->
-  <LinkGrid links={[
-    { text: "API Authorization Creation", href: "api-exposure/api-authorization#api-authorization-creation" },
-    { text: "API Access Permission Control", href: "api-exposure/api-authorization#api-access-permission-control" },
-    { text: "API Call Monitoring", href: "api-exposure/api-authorization#api-call-monitoring" },
-    { text: "Use SDK to Call Authorized Interfaces", href: "api-exposure/api-authorization#use-sdk-to-call-authorized-interfaces" },
-    { text: "Use Cross-App Service Elements to Call Authorized Interfaces", href: "api-exposure/api-authorization#use-cross-app-service-elements-to-call-authorized-interfaces" }
-  ]} />
-</IndexCard>
-
-</div>
 
 <IndexCard
   title="Extending System Builtin Language Packages"
@@ -1857,7 +1838,6 @@ Expose application capabilities for external system calls. Generate standard API
 
 </div>
 
-</div>
 
 ## Frontend UI Customization
 Create unique visual experiences and brand identity. Customize application theme colors, develop exclusive UI components, and make application interfaces better align with corporate brand tone while enhancing user experience and recognition.
@@ -1891,6 +1871,35 @@ Create unique visual experiences and brand identity. Customize application theme
   ]} />
 </IndexCard>
 
+<IndexCard
+  title="Component Customization"
+  href="frontend-ui-customization/component-customization"
+  description="Customize individual components to match specific design requirements and enhance user interface consistency across the application."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Page Customization"
+  href="frontend-ui-customization/page-customization"
+  description="Customize entire page layouts, themes, and visual elements to create cohesive and branded user experiences."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="Portal Customization"
+  href="frontend-ui-customization/portal-customization"
+  description="Customize portal interfaces and navigation elements to provide personalized and role-based user experiences."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
 </div>
 
 ## Scenario-based Advanced Guide

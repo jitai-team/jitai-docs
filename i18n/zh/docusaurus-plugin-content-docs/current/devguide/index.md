@@ -1694,36 +1694,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "短信通知功能", href: "third-party-integration/sms-service#sms-notification-function" }
   ]} />
 </IndexCard>
-
-<IndexCard
-  title="各类元素的API暴露示例"
-  href="api-exposure/api-exposure-examples-for-various-elements"
-  description="全面展示如何将不同类型的元素暴露为API的示例，包括数据模型、服务和自定义函数。"
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
-</IndexCard>
-
-<IndexCard
-  title="Using SDK to Call Authorized Element APIs"
-  href="api-exposure/using-sdk-to-call-authorized-element-apis"
-  description="学习如何使用官方SDK调用被授权的元素API，包括身份验证、请求处理和错误管理。"
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
-</IndexCard>
-
-<IndexCard
-  title="Using Cross-App Service Elements to Call Authorized APIs"
-  href="api-exposure/using-cross-app-service-elements-to-call-authorized-apis"
-  description="使用服务元素实现跨应用API调用，实现不同JitAi应用之间的无缝集成。"
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
-</IndexCard>
+</div>
 
 ## 缓存管理
 让应用跑得更快更稳定。配置智能缓存策略，优化数据访问速度，提升用户体验。确保应用在高并发访问时依然流畅运行。
@@ -1756,43 +1727,52 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid links={[
     { text: "API授权的创建", href: "api-exposure/api-authorization#api-authorization-creation" },
-    { text: "API访问权限控制", href: "api-exposure/api-authorization#api-access-permission-control" },
-    { text: "API调用监控", href: "api-exposure/api-authorization#api-call-monitoring" },
-    { text: "使用SDK调用授权的接口", href: "api-exposure/api-authorization#use-sdk-to-call-authorized-interfaces" },
-    { text: "使用跨App服务元素调用授权接口", href: "api-exposure/api-authorization#use-cross-app-service-elements-to-call-authorized-interfaces" }
+    { text: "API授权详情", href: "api-exposure/api-authorization#api-authorization-detail" },
+    { text: "API调用监控", href: "api-exposure/api-authorization#call-records" }
   ]} />
 </IndexCard>
-
 <IndexCard
-  title="组件定制"
-  href="frontend-ui-customization/component-customization"
-  description="定制单个组件以满足特定设计要求，增强应用程序中用户界面的一致性。"
+  title="各类元素的API暴露示例"
+  href="api-exposure/api-exposure-examples-for-various-elements"
+  description="全面展示如何将不同类型的元素暴露为API的示例，包括数据模型、服务和自定义函数。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
+    <LinkGrid links={[
+        { text: "服务函数的API授权", href: "api-exposure/api-exposure-examples-for-various-elements#service-function-api-authorization" },
+        { text: "数据模型的API授权", href: "api-exposure/api-exposure-examples-for-various-elements#data-model-api-authorization" },
+        { text: "大模型函数的API授权", href: "api-exposure/api-exposure-examples-for-various-elements#large-language-model-function-api-authorization" },
+        { text: "AI Agent的API授权", href: "api-exposure/api-exposure-examples-for-various-elements#agent-api-authorization" },
+        { text: "AI助理的API授权", href: "api-exposure/api-exposure-examples-for-various-elements#ai-assistant-api-authorization" },
+        { text: "审批流程的API授权", href: "api-exposure/api-exposure-examples-for-various-elements#approval-process-api-authorization" }
+    ]} />
   </div>
 </IndexCard>
 
 <IndexCard
-  title="页面定制"
-  href="frontend-ui-customization/page-customization"
-  description="定制整个页面布局、主题和视觉元素，创建连贯的品牌化用户体验。"
+  title="使用SDK调用被授权元素的API"
+  href="api-exposure/using-sdk-to-call-authorized-element-apis"
+  description="学习如何使用官方SDK调用被授权的元素API，包括身份验证、请求处理和错误管理。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
+    <LinkGrid links={[
+        { text: "使用Python SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-python-sdk" },
+        { text: "使用Nodejs SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-nodejs-sdk" },
+        { text: "使用Java SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-java-sdk" }
+    ]} />
   </div>
 </IndexCard>
 
 <IndexCard
-  title="门户定制"
-  href="frontend-ui-customization/portal-customization"
-  description="定制门户界面和导航元素，提供个性化和基于角色的用户体验。"
+  title="使用跨App服务元素调用被授权元素的API"
+  href="api-exposure/using-cross-app-service-elements-to-call-authorized-apis"
+  description="使用服务元素实现跨应用API调用，实现不同JitAi应用之间的无缝集成。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
+    <LinkGrid links={[
+        { text: "使用跨App服务元素", href: "api-exposure/using-cross-app-service-elements-to-call-authorized-apis#using-cross-app-service-elements" }
+    ]} />
   </div>
 </IndexCard>
-
 </div>
 
 ## 国际化
@@ -1832,8 +1812,6 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-</div>
-
 ## 前端UI定制
 打造独特的视觉体验和品牌形象。自定义应用主题色彩，开发专属UI组件，让应用界面更符合企业品牌调性，提升用户体验和辨识度。
 
@@ -1864,6 +1842,36 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "表格中使用自定义控件", href: "frontend-ui-customization/custom-controls#use-custom-control-in-table" },
     { text: "自定义控件参数", href: "frontend-ui-customization/custom-controls#custom-control-parameters" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="组件定制"
+  href="frontend-ui-customization/component-customization"
+  description="定制单个组件以满足特定设计要求，增强应用程序中用户界面的一致性。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="页面定制"
+  href="frontend-ui-customization/page-customization"
+  description="定制整个页面布局、主题和视觉元素，创建连贯的品牌化用户体验。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="门户定制"
+  href="frontend-ui-customization/portal-customization"
+  description="定制门户界面和导航元素，提供个性化和基于角色的用户体验。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
 </IndexCard>
 
 </div>

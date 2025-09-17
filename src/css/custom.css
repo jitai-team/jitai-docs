@@ -206,10 +206,10 @@ details>div>div {
   --doc-sidebar-width: 280px; /* 减少侧边栏宽度，给文章更多空间 */
 }
 
-/* 整体居中容器 */
+/* 整体居中容器 - 仅应用于有侧边栏的文档页面 */
 @media (min-width: 997px) {
-  /* 主包装器居中并设置最大宽度 */
-  .main-wrapper {
+  /* 有侧边栏的页面主包装器居中 */
+  .main-wrapper:has(.theme-doc-sidebar-container) {
     max-width: 1600px; /* 增加整体最大宽度，给文章更多空间 */
     margin: 0 auto; /* 水平居中 */
     display: flex;
@@ -228,8 +228,8 @@ details>div>div {
     padding-right: 0 !important;
   }
 
-  /* 主内容容器 - 紧贴侧边栏 */
-  main.container {
+  /* 有侧边栏页面的主内容容器 - 紧贴侧边栏 */
+  .main-wrapper:has(.theme-doc-sidebar-container) main.container {
     max-width: none !important;
     padding-left: 0 !important;
     margin-left: 0 !important;
@@ -249,16 +249,16 @@ details>div>div {
   }
 }
 
-/* 中等屏幕适配 */
+/* 中等屏幕适配 - 仅有侧边栏的文档页面 */
 @media (min-width: 997px) and (max-width: 1440px) {
-  .main-wrapper {
+  .main-wrapper:has(.theme-doc-sidebar-container) {
     padding: 0 1rem; /* 较小的两侧留白 */
   }
 }
 
-/* 超大屏幕优化 */
+/* 超大屏幕优化 - 仅有侧边栏的文档页面 */
 @media (min-width: 1600px) {
-  .main-wrapper {
+  .main-wrapper:has(.theme-doc-sidebar-container) {
     max-width: 1800px; /* 超大屏幕下进一步增加宽度 */
   }
   
@@ -268,10 +268,10 @@ details>div>div {
   }
 }
 
-/* 小屏幕和移动端适配 */
+/* 小屏幕和移动端适配 - 仅有侧边栏的文档页面 */
 @media (max-width: 996px) {
   /* 移动端保持默认布局，不应用居中样式 */
-  .main-wrapper {
+  .main-wrapper:has(.theme-doc-sidebar-container) {
     max-width: none !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -283,7 +283,7 @@ details>div>div {
     padding-left: 0 !important;
   }
 
-  main.container {
+  .main-wrapper:has(.theme-doc-sidebar-container) main.container {
     padding-left: var(--ifm-spacing-horizontal) !important;
     margin-left: 0 !important;
   }

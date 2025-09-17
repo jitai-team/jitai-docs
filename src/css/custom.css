@@ -194,6 +194,8 @@ details>div>div {
   font-weight: normal !important;
 }
 
+/* 整体居中布局 - 消除sidebar和文章间距，空白在sidebar和屏幕边缘 */
+
 /* 移除侧边栏右侧边框 */
 .theme-doc-sidebar-container {
   border-right: none !important;
@@ -201,28 +203,94 @@ details>div>div {
 
 /* 调整侧边栏宽度 */
 .main-wrapper {
-  --doc-sidebar-width: 320px;
+  --doc-sidebar-width: 280px; /* 减少侧边栏宽度，给文章更多空间 */
 }
 
-/* 调整侧边栏内容间距 */
-.theme-doc-sidebar-container .sidebar_ {
-  padding-right: 1rem;
-}
-
-/* 调整主内容区域的左边距 */
-.docMainContainer_gTbr {
-  margin-left: 1.5rem;
-}
-
-/* 进一步优化间距 */
+/* 整体居中容器 - 仅应用于有侧边栏的文档页面 */
 @media (min-width: 997px) {
-  .main-wrapper {
-    max-width: none;
+  /* 有侧边栏的页面主包装器居中 */
+  .main-wrapper:has(.theme-doc-sidebar-container) {
+    max-width: 1600px; /* 增加整体最大宽度，给文章更多空间 */
+    margin: 0 auto; /* 水平居中 */
+    display: flex;
+    padding: 0 2rem; /* 两侧留白 */
   }
 
-  main.container {
-    max-width: none;
-    padding-left: 1rem;
+  /* 侧边栏容器 - 紧贴左侧 */
+  .theme-doc-sidebar-container {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    flex-shrink: 0;
+  }
+
+  /* 侧边栏内容 - 移除右侧padding */
+  .theme-doc-sidebar-container .sidebar_ {
+    padding-right: 0 !important;
+  }
+
+  /* 有侧边栏页面的主内容容器 - 紧贴侧边栏 */
+  .main-wrapper:has(.theme-doc-sidebar-container) main.container {
+    max-width: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    flex: 1;
+  }
+
+  /* 文档主容器 - 紧贴侧边栏 */
+  .docMainContainer_gTbr {
+    margin-left: 0 !important;
+    padding-left: 2rem; /* 内容与侧边栏的间距 */
+    padding-right: 2rem; /* 右侧内边距 */
+  }
+
+  /* 文档内容区域最大宽度优化 */
+  .theme-doc-markdown {
+    max-width: none; /* 移除内容区域的最大宽度限制 */
+  }
+}
+
+/* 中等屏幕适配 - 仅有侧边栏的文档页面 */
+@media (min-width: 997px) and (max-width: 1440px) {
+  .main-wrapper:has(.theme-doc-sidebar-container) {
+    padding: 0 1rem; /* 较小的两侧留白 */
+  }
+}
+
+/* 超大屏幕优化 - 仅有侧边栏的文档页面 */
+@media (min-width: 1600px) {
+  .main-wrapper:has(.theme-doc-sidebar-container) {
+    max-width: 1800px; /* 超大屏幕下进一步增加宽度 */
+  }
+  
+  .docMainContainer_gTbr {
+    padding-left: 3rem; /* 超大屏幕下增加左右间距 */
+    padding-right: 3rem;
+  }
+}
+
+/* 小屏幕和移动端适配 - 仅有侧边栏的文档页面 */
+@media (max-width: 996px) {
+  /* 移动端保持默认布局，不应用居中样式 */
+  .main-wrapper:has(.theme-doc-sidebar-container) {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+  }
+
+  .theme-doc-sidebar-container {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .main-wrapper:has(.theme-doc-sidebar-container) main.container {
+    padding-left: var(--ifm-spacing-horizontal) !important;
+    margin-left: 0 !important;
+  }
+
+  .docMainContainer_gTbr {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
   }
 }
 

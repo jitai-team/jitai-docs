@@ -457,7 +457,7 @@ slug: form-components
     勾选后，若该数据表模型关联审批流程，在页面的右侧将会显示审批记录。
     
     :::tip 注意
-    默认情况下，审批记录会将[审批预测结果](../approval-process/approval-process-basic-configuration#prediction-feature)一并显示
+    默认情况下，审批记录会将[审批预测结果](../approval-workflow/approval-workflow-basic-configuration#prediction-feature)一并显示
 
     如果某个审批流程关闭了预测功能，则该流程将不会显示预测结果
     :::

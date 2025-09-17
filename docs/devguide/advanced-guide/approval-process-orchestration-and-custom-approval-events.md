@@ -1,6 +1,6 @@
 ---
 sidebar_position: 8
-slug: approval-process-orchestration-and-custom-approval-events
+slug: approval-workflow-orchestration-and-custom-approval-events
 ---
 
 # 审批流程编排与自定义审批事件

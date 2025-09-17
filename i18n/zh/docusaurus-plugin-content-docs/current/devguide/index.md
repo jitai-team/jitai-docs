@@ -148,54 +148,78 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="创建和部署应用"
-  href="create-and-publish-app/creating-and-deploying-applications"
-  description="学习应用的创建、继承、版本管理和发布流程，掌握应用全生命周期管理。"
+  href="creating-and-publishing-applications/creating-and-deploying-applications"
+  description="学习应用的创建、继承、数据配置和部署流程，掌握应用开发的基础工作流程。"
 >
   <LinkGrid links={[
-    { text: "创建第一个应用", href: "create-and-publish-app/creating-and-deploying-applications#create-first-application" },
-    { text: "基于已有应用快速开发", href: "create-and-publish-app/creating-and-deploying-applications#based-on-existing-application-quick-development" },
-    { text: "数据存储与环境变量配置", href: "create-and-publish-app/creating-and-deploying-applications#data-storage-and-environment-variable-configuration" },
-    { text: "应用版本管理与发布", href: "create-and-publish-app/creating-and-deploying-applications#application-version-management-and-publish" },
-    { text: "应用导出导入", href: "create-and-publish-app/creating-and-deploying-applications#application-export-import" }
+    { text: "创建第一个应用", href: "creating-and-publishing-applications/creating-and-deploying-applications#create-first-application" },
+    { text: "基于已有应用快速开发", href: "creating-and-publishing-applications/creating-and-deploying-applications#based-on-existing-application-quick-development" },
+    { text: "数据存储与环境变量配置", href: "creating-and-publishing-applications/creating-and-deploying-applications#data-storage-and-environment-variable-configuration" },
+    { text: "应用部署", href: "creating-and-publishing-applications/creating-and-deploying-applications#application-deployment" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="应用目录和元素源码"
-  href="create-and-publish-app/application-directory-and-element-source-code"
-  description="深入了解JitAi应用的目录结构、元素组织方式和源码管理机制。"
->
-  敬请期待...
-</IndexCard>
-
-<IndexCard
-  title="应用发布与更新"
-  href="create-and-publish-app/application-publishing-and-updates"
-  description="掌握应用版本发布策略、自动更新机制和发布流程管理。"
->
-  敬请期待...
-</IndexCard>
-
-<IndexCard
-  title="运行环境管理"
-  href="create-and-publish-app/runtime-environment-management"
-  description="掌握运行环境的创建、配置和管理，学习如何使用节点集群和应用部署。"
+  href="creating-and-publishing-applications/application-directory-and-element-source-code"
+  description="基于JAAP协议的应用目录结构和元素源码管理，包括应用导出导入功能。"
 >
   <LinkGrid links={[
-    { text: "什么是运行环境", href: "create-and-publish-app/runtime-environment-management#what-is-runtime-environment" },
-    { text: "节点的本地默认运行环境", href: "create-and-publish-app/runtime-environment-management#node-local-default-runtime-environment" },
-    { text: "创建新的运行环境", href: "create-and-publish-app/runtime-environment-management#createnewrunenvironment" },
-    { text: "使用运行环境管理节点集群", href: "create-and-publish-app/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
-    { text: "在运行环境中部署应用", href: "create-and-publish-app/runtime-environment-management#deploy-application-in-runtime-environment" }
+    { text: "应用目录结构", href: "creating-and-publishing-applications/application-directory-and-element-source-code#application-directory-structure" },
+    { text: "元素代码目录结构", href: "creating-and-publishing-applications/application-directory-and-element-source-code#element-code-directory-structure" },
+    { text: "应用源码导出导入", href: "creating-and-publishing-applications/application-directory-and-element-source-code#application-export-import" },
+    { text: "导出源码zip包", href: "creating-and-publishing-applications/application-directory-and-element-source-code#export-source-code-zip" },
+    { text: "导出为微信小程序", href: "creating-and-publishing-applications/application-directory-and-element-source-code#export-to-wechat-miniprogram" },
+    { text: "导入应用源码包", href: "creating-and-publishing-applications/application-directory-and-element-source-code#import-application-source-code" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="分布式集群架构"
-  href="create-and-publish-app/distributed-cluster-architecture"
+  title="发布与更新应用"
+  href="creating-and-publishing-applications/publishing-and-updating-applications"
+  description="掌握应用版本管理、发布工作流程和更新策略，学习语义化版本控制和部署配置。"
+>
+  <LinkGrid links={[
+    { text: "应用版本管理与发布", href: "creating-and-publishing-applications/publishing-and-updating-applications#application-version-management-and-publish" },
+    { text: "语义化版本号", href: "creating-and-publishing-applications/publishing-and-updating-applications#semantic-versioning" },
+    { text: "自动更新配置", href: "creating-and-publishing-applications/publishing-and-updating-applications#force-auto-update" },
+    { text: "源代码和初始化数据", href: "creating-and-publishing-applications/publishing-and-updating-applications#include-source-code" },
+    { text: "应用版本更新", href: "creating-and-publishing-applications/publishing-and-updating-applications#application-version-updates" },
+    { text: "应用部署策略", href: "creating-and-publishing-applications/publishing-and-updating-applications#application-deployment-strategies" }
+  ]} />
+</IndexCard>
+
+
+<IndexCard
+  title="运行环境管理"
+  href="creating-and-publishing-applications/runtime-environment-management"
+  description="掌握运行环境的创建、配置和管理，学习如何使用节点集群和应用部署。"
+>
+  <LinkGrid links={[
+    { text: "什么是运行环境", href: "creating-and-publishing-applications/runtime-environment-management#what-is-runtime-environment" },
+    { text: "节点的本地默认运行环境", href: "creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment" },
+    { text: "创建新的运行环境", href: "creating-and-publishing-applications/runtime-environment-management#createnewrunenvironment" },
+    { text: "使用运行环境管理节点集群", href: "creating-and-publishing-applications/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
+    { text: "在运行环境中部署应用", href: "creating-and-publishing-applications/runtime-environment-management#deploy-application-in-runtime-environment" },
+    { text: "开发模式部署", href: "creating-and-publishing-applications/runtime-environment-management#deploy-in-development-mode" },
+    { text: "生产模式部署", href: "creating-and-publishing-applications/runtime-environment-management#deploy-in-production-mode" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="实现无限横向扩展的分布式集群架构"
+  href="creating-and-publishing-applications/distributed-cluster-architecture"
   description="学习如何构建和管理无限横向扩展的分布式集群架构，实现高可用和高性能部署。"
 >
-  敬请期待...
+  <LinkGrid links={[
+    { text: "四层架构模型", href: "creating-and-publishing-applications/distributed-cluster-architecture#four-layer-architecture" },
+    { text: "典型部署拓扑", href: "creating-and-publishing-applications/distributed-cluster-architecture#typical-deployment-topology" },
+    { text: "企业级集群部署架构", href: "creating-and-publishing-applications/distributed-cluster-architecture#enterprise-cluster-deployment" },
+    { text: "多维度环境划分", href: "creating-and-publishing-applications/distributed-cluster-architecture#multi-dimensional-environment-division" },
+    { text: "集群扩展策略", href: "creating-and-publishing-applications/distributed-cluster-architecture#cluster-scaling-strategies" },
+    { text: "负载均衡与容错", href: "creating-and-publishing-applications/distributed-cluster-architecture#load-balancing-fault-tolerance" },
+    { text: "架构约束与最佳实践", href: "creating-and-publishing-applications/distributed-cluster-architecture#architecture-constraints-best-practices" }
+  ]} />
 </IndexCard>
 
 </div>
@@ -1858,8 +1882,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "本地开发与调试", href: "advanced-guide/local-development-and-debugging" },
     { text: "团队协作开发", href: "advanced-guide/team-collaborative-development" },
     { text: "Agent提示词编写技巧", href: "advanced-guide/agent-prompt-writing-techniques" },
-    { text: "应用层稳定性保障", href: "advanced-guide/application-layer-stability-guarantee" },
-    { text: "运维架构与管理指南", href: "advanced-guide/devops-architecture-and-management-guide" }
+    { text: "应用层稳定性保障", href: "advanced-guide/application-layer-stability-guarantee" }
   ]} />
 </IndexCard>
 

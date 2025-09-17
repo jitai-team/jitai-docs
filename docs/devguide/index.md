@@ -148,54 +148,78 @@ Complete workflow from application creation to distributed deployment. Master ap
 
 <IndexCard
   title="Creating and Deploying Applications"
-  href="create-and-publish-app/creating-and-deploying-applications"
-  description="Learn application creation, inheritance, version management, and release processes. Master the complete application lifecycle management."
+  href="creating-and-publishing-applications/creating-and-deploying-applications"
+  description="Learn application creation, inheritance, data configuration, and deployment. Master the fundamentals of application development workflow."
 >
   <LinkGrid links={[
-    { text: "Create First Application", href: "create-and-publish-app/creating-and-deploying-applications#create-first-application" },
-    { text: "Rapid Development Based on Existing Apps", href: "create-and-publish-app/creating-and-deploying-applications#based-on-existing-application-quick-development" },
-    { text: "Data Storage and Environment Variables", href: "create-and-publish-app/creating-and-deploying-applications#data-storage-and-environment-variable-configuration" },
-    { text: "Version Management and Publishing", href: "create-and-publish-app/creating-and-deploying-applications#application-version-management-and-publish" },
-    { text: "Application Export and Import", href: "create-and-publish-app/creating-and-deploying-applications#application-export-import" }
+    { text: "Create First Application", href: "creating-and-publishing-applications/creating-and-deploying-applications#create-first-application" },
+    { text: "Rapid Development Based on Existing Apps", href: "creating-and-publishing-applications/creating-and-deploying-applications#based-on-existing-application-quick-development" },
+    { text: "Data Storage and Environment Variables", href: "creating-and-publishing-applications/creating-and-deploying-applications#data-storage-and-environment-variable-configuration" },
+    { text: "Application Deployment", href: "creating-and-publishing-applications/creating-and-deploying-applications#application-deployment" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Application Directory and Element Source Code"
-  href="create-and-publish-app/application-directory-and-element-source-code"
-  description="Deep dive into JitAi application directory structure, element organization, and source code management mechanisms."
->
-  Coming soon...
-</IndexCard>
-
-<IndexCard
-  title="Application Publishing and Updates"
-  href="create-and-publish-app/application-publishing-and-updates"
-  description="Master application version release strategies, automatic update mechanisms, and release process management."
->
-  Coming soon...
-</IndexCard>
-
-<IndexCard
-  title="Runtime Environment Management"
-  href="create-and-publish-app/runtime-environment-management"
-  description="Master the creation, configuration, and management of runtime environments, and learn how to use node clusters and application deployment."
+  href="creating-and-publishing-applications/application-directory-and-element-source-code"
+  description="Understand JitAi application directory structure based on JAAP protocol, element code organization, and source code export/import mechanisms."
 >
   <LinkGrid links={[
-    { text: "What is Runtime Environment", href: "create-and-publish-app/runtime-environment-management#what-is-runtime-environment" },
-    { text: "Local Default Runtime Environment", href: "create-and-publish-app/runtime-environment-management#node-local-default-runtime-environment" },
-    { text: "Create New Runtime Environment", href: "create-and-publish-app/runtime-environment-management#createnewrunenvironment" },
-    { text: "Use Runtime Environment to Manage Node Clusters", href: "create-and-publish-app/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
-    { text: "Deploy Application in Runtime Environment", href: "create-and-publish-app/runtime-environment-management#deploy-application-in-runtime-environment" }
+    { text: "Application Directory Structure", href: "creating-and-publishing-applications/application-directory-and-element-source-code#application-directory-structure" },
+    { text: "Element Code Directory Structure", href: "creating-and-publishing-applications/application-directory-and-element-source-code#element-code-directory-structure" },
+    { text: "Application Source Code Export/Import", href: "creating-and-publishing-applications/application-directory-and-element-source-code#application-export-import" },
+    { text: "Export Source Code Zip", href: "creating-and-publishing-applications/application-directory-and-element-source-code#export-source-code-zip" },
+    { text: "Export to WeChat MiniProgram", href: "creating-and-publishing-applications/application-directory-and-element-source-code#export-to-wechat-miniprogram" },
+    { text: "Import Application Source Code", href: "creating-and-publishing-applications/application-directory-and-element-source-code#import-application-source-code" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="Distributed Cluster Architecture"
-  href="create-and-publish-app/distributed-cluster-architecture"
+  title="Publishing and Updating Applications"
+  href="creating-and-publishing-applications/publishing-and-updating-applications"
+  description="Master application version management, publishing workflows, and update strategies. Learn semantic versioning and deployment configurations."
+>
+  <LinkGrid links={[
+    { text: "Version Management and Publishing", href: "creating-and-publishing-applications/publishing-and-updating-applications#application-version-management-and-publish" },
+    { text: "Semantic Versioning", href: "creating-and-publishing-applications/publishing-and-updating-applications#semantic-versioning" },
+    { text: "Auto-Update Configuration", href: "creating-and-publishing-applications/publishing-and-updating-applications#force-auto-update" },
+    { text: "Source Code and Initialization Data", href: "creating-and-publishing-applications/publishing-and-updating-applications#include-source-code" },
+    { text: "Application Version Updates", href: "creating-and-publishing-applications/publishing-and-updating-applications#application-version-updates" },
+    { text: "Deployment Strategies", href: "creating-and-publishing-applications/publishing-and-updating-applications#application-deployment-strategies" }
+  ]} />
+</IndexCard>
+
+
+<IndexCard
+  title="Runtime Environment Management"
+  href="creating-and-publishing-applications/runtime-environment-management"
+  description="Master the creation, configuration, and management of runtime environments, and learn how to use node clusters and application deployment."
+>
+  <LinkGrid links={[
+    { text: "What is Runtime Environment", href: "creating-and-publishing-applications/runtime-environment-management#what-is-runtime-environment" },
+    { text: "Local Default Runtime Environment", href: "creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment" },
+    { text: "Create New Runtime Environment", href: "creating-and-publishing-applications/runtime-environment-management#createnewrunenvironment" },
+    { text: "Development Mode Deployment", href: "creating-and-publishing-applications/runtime-environment-management#deploy-in-development-mode" },
+    { text: "Production Mode Deployment", href: "creating-and-publishing-applications/runtime-environment-management#deploy-in-production-mode" },
+    { text: "Use Runtime Environment to Manage Node Clusters", href: "creating-and-publishing-applications/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
+    { text: "Deploy Application in Runtime Environment", href: "creating-and-publishing-applications/runtime-environment-management#deploy-application-in-runtime-environment" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Distributed Cluster Architecture for Unlimited Horizontal Scaling"
+  href="creating-and-publishing-applications/distributed-cluster-architecture"
   description="Learn how to build and manage infinitely horizontally scalable distributed cluster architectures for high availability and performance."
 >
-  Coming soon...
+  <LinkGrid links={[
+    { text: "Four-Layer Architecture Model", href: "creating-and-publishing-applications/distributed-cluster-architecture#four-layer-architecture" },
+    { text: "Typical Deployment Topology", href: "creating-and-publishing-applications/distributed-cluster-architecture#typical-deployment-topology" },
+    { text: "Enterprise Cluster Deployment", href: "creating-and-publishing-applications/distributed-cluster-architecture#enterprise-cluster-deployment" },
+    { text: "Multi-Dimensional Environment Division", href: "creating-and-publishing-applications/distributed-cluster-architecture#multi-dimensional-environment-division" },
+    { text: "Cluster Scaling Strategies", href: "creating-and-publishing-applications/distributed-cluster-architecture#cluster-scaling-strategies" },
+    { text: "Load Balancing & Fault Tolerance", href: "creating-and-publishing-applications/distributed-cluster-architecture#load-balancing-fault-tolerance" },
+    { text: "Architecture Constraints & Best Practices", href: "creating-and-publishing-applications/distributed-cluster-architecture#architecture-constraints-best-practices" }
+  ]} />
 </IndexCard>
 
 </div>
@@ -1883,8 +1907,7 @@ In-depth practical guides based on real business scenarios to help developers ma
     { text: "Local Development and Debugging", href: "advanced-guide/local-development-and-debugging" },
     { text: "Team Collaborative Development", href: "advanced-guide/team-collaborative-development" },
     { text: "Agent Prompt Writing Techniques", href: "advanced-guide/agent-prompt-writing-techniques" },
-    { text: "Application Layer Stability Guarantee", href: "advanced-guide/application-layer-stability-guarantee" },
-    { text: "DevOps Architecture and Management Guide", href: "advanced-guide/devops-architecture-and-management-guide" }
+    { text: "Application Layer Stability Guarantee", href: "advanced-guide/application-layer-stability-guarantee" }
   ]} />
 </IndexCard>
 

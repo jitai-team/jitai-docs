@@ -11,7 +11,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/create_app.mp4" />
 
-Read [Application Creation and Management](../devguide/create-and-publish-app/creating-and-deploying-applications) for more details.
+Read [Application Creation and Management](../devguide/creating-and-publishing-applications/creating-and-deploying-applications) for more details.
 
 #### Access Application
 

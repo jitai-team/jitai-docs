@@ -79,7 +79,7 @@ export const Render: FC<{
 :::tip 提示
 自定义控件的实现原理是针对数据类型的渲染器或编辑器，使用React语法，将数据渲染成特定的样式和交互效果。
 
-在开发自定义控件时，需要用到全代码进行开发。如何使用全代码开发，可参考[full-code-page-development](../shell-and-page/full-code-page-development#react-full-code-page)。
+在开发自定义控件时，需要用到全代码进行开发。如何使用全代码开发，可参考[full-code-page-development](../shell-and-page/full-code-page-development#create-react-full-code-page)。
 :::
 
 ### 表单中使用自定义控件 {#use-custom-control-in-form}

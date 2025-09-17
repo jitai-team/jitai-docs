@@ -1017,90 +1017,44 @@ Visual intelligent workflow engine. Orchestrate business processes through drag-
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Create AI Assistant Element"
+  title="创建AI助理元素"
   href="ai-assitant/create-ai-assistant"
-  description="Learn how to create AI assistant elements, configure workflows, node types, and event handling for intelligent business process automation."
+  description="学习如何创建AI助理元素，配置工作流、节点类型和事件处理，实现智能业务流程自动化。"
 >
-  <LinkGrid columns={2} links={[
-    { text: "What is AI Assistant", href: "ai-assitant/create-ai-assistant#what-is-ai-assistant" },
-    { text: "Create AI Assistant", href: "ai-assitant/create-ai-assistant#create-ai-assistant" },
-    { text: "Visual Orchestration", href: "ai-assitant/create-ai-assistant#visual-orchestration" },
-    { text: "Start Node", href: "ai-assitant/create-ai-assistant#start-node" },
-    { text: "Routing Decision", href: "ai-assitant/create-ai-assistant#routing-decision" },
-    { text: "AI Agent", href: "ai-assitant/create-ai-assistant#ai-agent" },
-    { text: "Dialog Human-Machine Interaction", href: "ai-assitant/create-ai-assistant#dialog-human-machine-interaction" },
-    { text: "Workspace Human-Machine Interaction", href: "ai-assitant/create-ai-assistant#workspace-human-machine-interaction" },
-    { text: "Function Call", href: "ai-assitant/create-ai-assistant#function-call" },
-    { text: "Conditional Branch", href: "ai-assitant/create-ai-assistant#conditional-branch" },
-    { text: "Multi-task Execution", href: "ai-assitant/create-ai-assistant#multi-task-execution" },
-    { text: "Event Type Overview", href: "ai-assitant/create-ai-assistant#event-type-overview" },
-    { text: "Frontend Workspace Events", href: "ai-assitant/create-ai-assistant#frontend-workspace-events" },
-    { text: "Backend Business Events", href: "ai-assitant/create-ai-assistant#backend-business-events" },
-    { text: "Runtime State Data", href: "ai-assitant/create-ai-assistant#runtime-state-data" },
-    { text: "Runtime State Storage Library", href: "ai-assitant/create-ai-assistant#runtime-state-storage-library" },
-    { text: "Advanced Settings", href: "ai-assitant/create-ai-assistant#advancedsettings" },
-    { text: "Usage Guide", href: "ai-assitant/create-ai-assistant#usage-guide" },
-    { text: "Welcome Message and Opening", href: "ai-assitant/create-ai-assistant#welcome-message-and-opening" },
-    { text: "Message Output", href: "ai-assitant/create-ai-assistant#message-output" },
-    { text: "Send AI Message", href: "ai-assitant/create-ai-assistant#send-ai-message" },
-    { text: "Conversation History Management", href: "ai-assitant/create-ai-assistant#conversation-history-management" },
-    { text: "Full Code Development", href: "ai-assitant/create-ai-assistant#full-code-development" },
-    { text: "Example Demo", href: "ai-assitant/create-ai-assistant#example-demo" },
-    { text: "How to Select Suitable Node Types?", href: "ai-assitant/create-ai-assistant#how-to-select-suitable-node-types" },
-    { text: "Common Causes and Solutions for Stuck Processes", href: "ai-assitant/create-ai-assistant#common-causes-and-solutions-for-stuck-processes" }
-  ]} />
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
 </IndexCard>
 
 <IndexCard
-  title="Process Orchestration and Node Configuration"
+  title="流程编排与节点配置"
   href="ai-assitant/process-orchestration-node-configuration"
-  description="Deep dive into AI assistant process orchestration techniques and detailed node configuration methods."
+  description="深入了解AI助理流程编排技术和详细的节点配置方法。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
+    📝 敬请期待...
   </div>
 </IndexCard>
 
 <IndexCard
-  title="AI Assistant Input and Output"
+  title="AI助理的输入与输出"
   href="ai-assitant/ai-assistant-input-output"
-  description="Understand AI assistant input and output configuration and data processing methods."
+  description="理解AI助理的输入输出配置和数据处理方法。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
+    📝 敬请期待...
   </div>
 </IndexCard>
 
 <IndexCard
-  title="Develop Conversational Multi-Task AI Assistant"
-  href="ai-assitant/develop-conversational-multi-task-ai-assistant"
-  description="Learn how to develop process-oriented multi-task conversational AI assistants for complex business scenarios."
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
-</IndexCard>
-
-<IndexCard
-  title="Develop Human-AI Collaboration Enterprise Assistant"
-  href="ai-assitant/develop-human-ai-collaboration-enterprise-assistant"
-  description="Build enterprise-level AI assistant applications that collaborate with UI pages for human-AI interaction."
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
-</IndexCard>
-
-<IndexCard
-  title="AI Assistant API Exposure"
+  title="AI助理的API开放"
   href="ai-assitant/ai-assistant-api-integration"
-  description="Expose AI assistant capabilities through API interfaces for external system integration."
+  description="通过API接口开放AI助理能力，实现与外部系统的集成。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
+    📝 敬请期待...
   </div>
 </IndexCard>
-
 </div>
 
 ## Data Modeling

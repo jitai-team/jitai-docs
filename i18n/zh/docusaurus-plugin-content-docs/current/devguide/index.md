@@ -593,12 +593,25 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="树组件（正在编辑中）"
+  title="树组件"
+  href="using-functional-components-in-pages/tree-components"
   description="层次化数据展示组件，支持树形结构的展示、选择和操作。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 文档正在完善中，敬请期待...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "创建树形组件", href: "using-functional-components-in-pages/tree-components#create-tree-form-component" },
+    { text: "配置层级字段", href: "using-functional-components-in-pages/tree-components#configure-hierarchy-fields" },
+    { text: "首次加载组件时刷新数据", href: "using-functional-components-in-pages/tree-components#tree-form-refresh-on-first-load" },
+    { text: "默认展开第一个节点", href: "using-functional-components-in-pages/tree-components#default-expand-first-node" },
+    { text: "点击节点后事件", href: "using-functional-components-in-pages/tree-components#click-node-event" },
+    { text: "级联树", href: "using-functional-components-in-pages/tree-components#cascade-tree" },
+    { text: "新建级联树", href: "using-functional-components-in-pages/tree-components#create-cascade-tree" },
+    { text: "配置节点标题", href: "using-functional-components-in-pages/tree-components#configure-node-title" },
+    { text: "设置上级节点", href: "using-functional-components-in-pages/tree-components#set-parent-node" },
+    { text: "节点单选/多选", href: "using-functional-components-in-pages/tree-components#node-selection-mode" },
+    { text: "级联树首次加载组件时刷新数据", href: "using-functional-components-in-pages/tree-components#cascade-tree-refresh-on-first-load" },
+    { text: "级联树点击节点后事件", href: "using-functional-components-in-pages/tree-components#cascade-tree-click-node-event" },
+    { text: "级联树选中节点后事件", href: "using-functional-components-in-pages/tree-components#cascade-tree-select-node-event" }
+  ]} />
 </IndexCard>
 
 <IndexCard

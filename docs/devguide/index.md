@@ -588,19 +588,19 @@ The rich component library is your super toolkit. Drag and drop a table to displ
   description="Display hierarchical data structures with node expand/collapse and selection operations, providing clear data navigation experience."
 >
   <LinkGrid columns={2} links={[
-    { text: "Create Tree Component", href: "using-functional-components-in-pages/tree-components#创建树形组件" },
-    { text: "Configure Hierarchical Fields", href: "using-functional-components-in-pages/tree-components#配置层级字段" },
-    { text: "Refresh Data on First Load", href: "using-functional-components-in-pages/tree-components#树形组件首次加载组件时刷新数据" },
-    { text: "Default Expand First Node", href: "using-functional-components-in-pages/tree-components#默认展开第一个节点" },
-    { text: "Node Click Events", href: "using-functional-components-in-pages/tree-components#点击节点后事件" },
-    { text: "Cascade Tree", href: "using-functional-components-in-pages/tree-components#级联树" },
-    { text: "Create Cascade Tree", href: "using-functional-components-in-pages/tree-components#新建级联树" },
-    { text: "Configure Node Title", href: "using-functional-components-in-pages/tree-components#配置节点标题" },
-    { text: "Set Parent Node", href: "using-functional-components-in-pages/tree-components#设置上级节点" },
-    { text: "Single/Multiple Selection Mode", href: "using-functional-components-in-pages/tree-components#节点单选多选" },
-    { text: "Cascade Tree Refresh Data on First Load", href: "using-functional-components-in-pages/tree-components#级联树首次加载组件时刷新数据" },
-    { text: "Cascade Tree Node Click Events", href: "using-functional-components-in-pages/tree-components#级联树点击节点后事件" },
-    { text: "Cascade Tree Node Selection Events", href: "using-functional-components-in-pages/tree-components#级联树选中节点后事件" }
+    { text: "Create Tree Component", href: "using-functional-components-in-pages/tree-components#create-tree-form-component" },
+    { text: "Configure Hierarchical Fields", href: "using-functional-components-in-pages/tree-components#configure-hierarchy-fields" },
+    { text: "Refresh Data on First Load", href: "using-functional-components-in-pages/tree-components#tree-form-refresh-on-first-load" },
+    { text: "Default Expand First Node", href: "using-functional-components-in-pages/tree-components#default-expand-first-node" },
+    { text: "Node Click Events", href: "using-functional-components-in-pages/tree-components#click-node-event" },
+    { text: "Cascade Tree", href: "using-functional-components-in-pages/tree-components#cascade-tree" },
+    { text: "Create Cascade Tree", href: "using-functional-components-in-pages/tree-components#create-cascade-tree" },
+    { text: "Configure Node Title", href: "using-functional-components-in-pages/tree-components#configure-node-title" },
+    { text: "Set Parent Node", href: "using-functional-components-in-pages/tree-components#set-parent-node" },
+    { text: "Single/Multiple Selection Mode", href: "using-functional-components-in-pages/tree-components#node-selection-mode" },
+    { text: "Cascade Tree Refresh Data on First Load", href: "using-functional-components-in-pages/tree-components#cascade-tree-refresh-on-first-load" },
+    { text: "Cascade Tree Node Click Events", href: "using-functional-components-in-pages/tree-components#cascade-tree-click-node-event" },
+    { text: "Cascade Tree Node Selection Events", href: "using-functional-components-in-pages/tree-components#cascade-tree-select-node-event" }
   ]} />
 </IndexCard>
 

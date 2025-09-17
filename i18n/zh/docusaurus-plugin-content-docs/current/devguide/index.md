@@ -323,7 +323,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="面向高级开发者的完全自定义页面开发方式，支持复杂业务逻辑和个性化界面。"
 >
   <LinkGrid columns={2} links={[
-    { text: "React全代码页面", href: "shell-and-page/full-code-page-development#react-full-code-page" },
+    { text: "React全代码页面", href: "shell-and-page/full-code-page-development#create-react-full-code-page" },
     { text: "创建 React 全代码页面", href: "shell-and-page/full-code-page-development#create-react-full-code-page" },
     { text: "使用样式", href: "shell-and-page/full-code-page-development#use-style" },
     { text: "使用本地资源", href: "shell-and-page/full-code-page-development#use-local-resources" },
@@ -782,18 +782,12 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="全代码组件"
-  href="using-functional-components-in-pages/full-code-components"
+  href="fullcode-ui-components-in-pages/ui-component-interface-specifications"
   description="完全自定义的代码组件，支持高度个性化的功能实现。"
 >
   <LinkGrid columns={2} links={[
-    { text: "创建全代码组件", href: "using-functional-components-in-pages/full-code-components#create-full-code-components" },
-    { text: "界面渲染器 Page 与逻辑处理类", href: "using-functional-components-in-pages/full-code-components#ui-renderer-page-logic-processing-class" },
-    { text: "通过组件实例调用其他组件", href: "using-functional-components-in-pages/full-code-components#call-other-components-via-instance" },
-    { text: "响应其他组件的事件", href: "using-functional-components-in-pages/full-code-components#respond-to-other-component-events" },
-    { text: "事件订阅原理", href: "using-functional-components-in-pages/full-code-components#event-subscription-principles" },
-    { text: "在自定义组件中响应", href: "using-functional-components-in-pages/full-code-components#respond-in-custom-components" },
-    { text: "可订阅的事件", href: "using-functional-components-in-pages/full-code-components#subscribable-events" },
-    { text: "双向通信示例", href: "using-functional-components-in-pages/full-code-components#bidirectional-communication-example" }
+    { text: "创建全代码组件", href: "fullcode-ui-components-in-pages/ui-component-interface-specifications" },
+    { text: "界面渲染器 Page 与逻辑处理类", href: "fullcode-ui-components-in-pages/ui-component-interface-specifications" }
   ]} />
 </IndexCard>
 

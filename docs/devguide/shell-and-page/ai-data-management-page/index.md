@@ -11,7 +11,7 @@ Enter the developer portal and create it by following these steps:
 
 ![ai-data-management-page-create](./imgs/create-page.png)
 
-Click <span style={{ background:"#3d65fd", display: "inline-block", borderRadius: "8px", textAlign: "center", lineHeight: "100%", color: "#ffffff", fontSize: "24px", padding: "0px 10px 5px" }}>+</span>  → **Page** → **AI Data Management Page**, open the page information form, and click the `Confirm` button after filling out the form to create the page.
+Click <span style={{ background:"#3d65fd", display: "inline-block", borderRadius: "8px", textAlign: "center", lineHeight: "100%", color: "#ffffff", fontSize: "24px", padding: "0px 10px 5px" }}>+</span>  → **UI Pages** → **AI Data Management Page**, open the page information form, and click the `Confirm` button after filling out the form to create the page.
 
 ![ai-data-management-page-create](./imgs/create-page-form.png)
 
@@ -75,11 +75,10 @@ Switch to `AI Assistant Configuration` at the top of the visual editor, then tur
 The AI data management assistant needs to access the system database and call functions on the page to draw charts during runtime. We need to configure a [Large Language Model](../../ai-llm/create-ai-llm) that supports tool calling for it. We recommend using qwen-max-latest from Alibaba Cloud Bailian platform. [Apply for API Key](https://bailian.console.aliyun.com/?tab=model#/api-key)
 
 ### Assistant Advanced Configuration
-- Supports custom [Welcome Message and Opening](../../ai-assitant/create-ai-assistant#welcome-message-and-opening)
-- Supports custom [Message Output](../../ai-assitant/create-ai-assistant#message-output), which outputs brief process logs by default.
+- Supports custom [Welcome Message and Opening](../../ai-assitant/welcome-message-and-opening)
+- Supports custom [Output Process Log](../../ai-assitant/ai-assistant-input-output#message-output), which outputs brief process logs by default.
 
-
-For more information about AI assistants, please read the [AI Assistant](../../ai-assitant/create-ai-assistant) related documentation.
+For more information about AI assistants, please read the [AI Assistant](../../ai-assistant) related documentation.
 
 ## Runtime Effect
 
@@ -93,5 +92,17 @@ The AI data management page is a built-in page type provided by JitAI out of the
 Developers can click the <span style={{ display: "inline-block", verticalAlign: "middle", margin: "0 4px", height: '30px' }}>![Convert Button](./imgs/trans-type.png)</span> button in the top right corner of the page editor to convert the page to a regular page. For regular page development methods, refer to [Component-based Page Development](../component-based-page-development).
 
 :::warning
-After converting to a regular page, it cannot be restored to the original `AI Data Management Function` type.
+After converting to a regular page, it cannot be restored to the original `AI Data Management Page` type.
 :::
+
+## Quick Create {#quick-create}
+In addition to creating in the developer portal, you can also quickly create in the regular portal. The creation method is as follows:
+
+![Create AI Data Management Page - quickly](./imgs/quickly.png)
+
+Click **Create New** → **AI Data Management Functions**.This operation will create a new AI data Management page and simultaneously create a menu in the portal and bind it to the newly added page.
+
+:::tip Tip
+You need to be granted [quick create permissions](../../user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus) to see the quick create entry.
+:::
+

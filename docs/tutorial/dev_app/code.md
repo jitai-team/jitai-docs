@@ -35,7 +35,7 @@ Then drag in full-code components to implement the exam page with full code.
 
 <VideoPlayer relatePath="/docs/tutorial/code_component.mp4" />
 
-Read [Full Code Components](../../devguide/using-functional-components-in-pages/full-code-components) for more details.
+Read [Full Code Components](../../devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications) for more details.
 
 You can also implement the entire page using full code. Read [Full Code Page Development](../../devguide/shell-and-page/full-code-page-development) for more details.
 

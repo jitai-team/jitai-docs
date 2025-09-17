@@ -585,33 +585,24 @@ The rich component library is your super toolkit. Drag and drop a table to displ
 
 <IndexCard
   title="Tree Components"
+  href="using-functional-components-in-pages/tree-components"
   description="Display hierarchical data structures with node expand/collapse and selection operations, providing clear data navigation experience."
-  link="/docs/devguide/using-functional-components-in-pages/tree-components"
 >
-  <div style={{padding: '20px'}}>
-    <p style={{marginBottom: '15px', color: '#666'}}>
-      <strong>Primary Use:</strong> Hierarchical data display for file directories, organizational structures, product categories, etc.
-    </p>
-    <div style={{marginBottom: '15px'}}>
-      <strong style={{color: '#333'}}>Component Types:</strong>
-      <ul style={{marginTop: '8px', paddingLeft: '20px'}}>
-        <li><strong>Tree Component:</strong> Multi-level data display with progressive loading</li>
-        <li><strong>Cascade Tree:</strong> Hierarchical data display based on self-relational fields</li>
-      </ul>
-    </div>
-    <div style={{marginBottom: '15px'}}>
-      <strong style={{color: '#333'}}>Core Features:</strong>
-      <ul style={{marginTop: '8px', paddingLeft: '20px'}}>
-        <li>Node expand/collapse operations</li>
-        <li>Single/multiple selection modes</li>
-        <li>Node click event handling</li>
-        <li>Interactive updates with other components</li>
-      </ul>
-    </div>
-    <p style={{color: '#007acc', fontWeight: '500'}}>
-      💡 Use Cases: Organizational management, file systems, product categorization, permission trees, etc.
-    </p>
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "Create Tree Component", href: "using-functional-components-in-pages/tree-components#create-tree-form-component" },
+    { text: "Configure Hierarchical Fields", href: "using-functional-components-in-pages/tree-components#configure-hierarchy-fields" },
+    { text: "Refresh Data on First Load", href: "using-functional-components-in-pages/tree-components#tree-form-refresh-on-first-load" },
+    { text: "Default Expand First Node", href: "using-functional-components-in-pages/tree-components#default-expand-first-node" },
+    { text: "Node Click Events", href: "using-functional-components-in-pages/tree-components#click-node-event" },
+    { text: "Cascade Tree", href: "using-functional-components-in-pages/tree-components#cascade-tree" },
+    { text: "Create Cascade Tree", href: "using-functional-components-in-pages/tree-components#create-cascade-tree" },
+    { text: "Configure Node Title", href: "using-functional-components-in-pages/tree-components#configure-node-title" },
+    { text: "Set Parent Node", href: "using-functional-components-in-pages/tree-components#set-parent-node" },
+    { text: "Single/Multiple Selection Mode", href: "using-functional-components-in-pages/tree-components#node-selection-mode" },
+    { text: "Cascade Tree Refresh Data on First Load", href: "using-functional-components-in-pages/tree-components#cascade-tree-refresh-on-first-load" },
+    { text: "Cascade Tree Node Click Events", href: "using-functional-components-in-pages/tree-components#cascade-tree-click-node-event" },
+    { text: "Cascade Tree Node Selection Events", href: "using-functional-components-in-pages/tree-components#cascade-tree-select-node-event" }
+  ]} />
 </IndexCard>
 
 <IndexCard

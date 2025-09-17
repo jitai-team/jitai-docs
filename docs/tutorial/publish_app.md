@@ -35,4 +35,4 @@ After modifying code on the desktop, publish again. In the node console of the p
 
 <VideoPlayer relatePath="/docs/tutorial/publish_app_produce.mp4" />
 
-Read [Application Creation and Management](../devguide/create-and-publish-app/creating-and-deploying-applications) for more details.
+Read [Creating and Deploying Applications](../devguide/creating-and-publishing-applications/creating-and-deploying-applications) for more details.

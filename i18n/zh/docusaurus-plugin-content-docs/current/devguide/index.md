@@ -148,54 +148,78 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="创建和部署应用"
-  href="create-and-publish-app/creating-and-deploying-applications"
-  description="学习应用的创建、继承、版本管理和发布流程，掌握应用全生命周期管理。"
+  href="creating-and-publishing-applications/creating-and-deploying-applications"
+  description="学习应用的创建、继承、数据配置和部署流程，掌握应用开发的基础工作流程。"
 >
   <LinkGrid links={[
-    { text: "创建第一个应用", href: "create-and-publish-app/creating-and-deploying-applications#create-first-application" },
-    { text: "基于已有应用快速开发", href: "create-and-publish-app/creating-and-deploying-applications#based-on-existing-application-quick-development" },
-    { text: "数据存储与环境变量配置", href: "create-and-publish-app/creating-and-deploying-applications#data-storage-and-environment-variable-configuration" },
-    { text: "应用版本管理与发布", href: "create-and-publish-app/creating-and-deploying-applications#application-version-management-and-publish" },
-    { text: "应用导出导入", href: "create-and-publish-app/creating-and-deploying-applications#application-export-import" }
+    { text: "创建第一个应用", href: "creating-and-publishing-applications/creating-and-deploying-applications#create-first-application" },
+    { text: "基于已有应用快速开发", href: "creating-and-publishing-applications/creating-and-deploying-applications#based-on-existing-application-quick-development" },
+    { text: "数据存储与环境变量配置", href: "creating-and-publishing-applications/creating-and-deploying-applications#data-storage-and-environment-variable-configuration" },
+    { text: "应用部署", href: "creating-and-publishing-applications/creating-and-deploying-applications#application-deployment" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="应用目录和元素源码"
-  href="create-and-publish-app/application-directory-and-element-source-code"
-  description="深入了解JitAi应用的目录结构、元素组织方式和源码管理机制。"
->
-  敬请期待...
-</IndexCard>
-
-<IndexCard
-  title="应用发布与更新"
-  href="create-and-publish-app/application-publishing-and-updates"
-  description="掌握应用版本发布策略、自动更新机制和发布流程管理。"
->
-  敬请期待...
-</IndexCard>
-
-<IndexCard
-  title="运行环境管理"
-  href="create-and-publish-app/runtime-environment-management"
-  description="掌握运行环境的创建、配置和管理，学习如何使用节点集群和应用部署。"
+  href="creating-and-publishing-applications/application-directory-and-element-source-code"
+  description="基于JAAP协议的应用目录结构和元素源码管理，包括应用导出导入功能。"
 >
   <LinkGrid links={[
-    { text: "什么是运行环境", href: "create-and-publish-app/runtime-environment-management#what-is-runtime-environment" },
-    { text: "节点的本地默认运行环境", href: "create-and-publish-app/runtime-environment-management#node-local-default-runtime-environment" },
-    { text: "创建新的运行环境", href: "create-and-publish-app/runtime-environment-management#createnewrunenvironment" },
-    { text: "使用运行环境管理节点集群", href: "create-and-publish-app/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
-    { text: "在运行环境中部署应用", href: "create-and-publish-app/runtime-environment-management#deploy-application-in-runtime-environment" }
+    { text: "应用目录结构", href: "creating-and-publishing-applications/application-directory-and-element-source-code#application-directory-structure" },
+    { text: "元素代码目录结构", href: "creating-and-publishing-applications/application-directory-and-element-source-code#element-code-directory-structure" },
+    { text: "应用源码导出导入", href: "creating-and-publishing-applications/application-directory-and-element-source-code#application-export-import" },
+    { text: "导出源码zip包", href: "creating-and-publishing-applications/application-directory-and-element-source-code#export-source-code-zip" },
+    { text: "导出为微信小程序", href: "creating-and-publishing-applications/application-directory-and-element-source-code#export-to-wechat-miniprogram" },
+    { text: "导入应用源码包", href: "creating-and-publishing-applications/application-directory-and-element-source-code#import-application-source-code" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="分布式集群架构"
-  href="create-and-publish-app/distributed-cluster-architecture"
+  title="发布与更新应用"
+  href="creating-and-publishing-applications/publishing-and-updating-applications"
+  description="掌握应用版本管理、发布工作流程和更新策略，学习语义化版本控制和部署配置。"
+>
+  <LinkGrid links={[
+    { text: "应用版本管理与发布", href: "creating-and-publishing-applications/publishing-and-updating-applications#application-version-management-and-publish" },
+    { text: "语义化版本号", href: "creating-and-publishing-applications/publishing-and-updating-applications#semantic-versioning" },
+    { text: "自动更新配置", href: "creating-and-publishing-applications/publishing-and-updating-applications#force-auto-update" },
+    { text: "源代码和初始化数据", href: "creating-and-publishing-applications/publishing-and-updating-applications#include-source-code" },
+    { text: "应用版本更新", href: "creating-and-publishing-applications/publishing-and-updating-applications#application-version-updates" },
+    { text: "应用部署策略", href: "creating-and-publishing-applications/publishing-and-updating-applications#application-deployment-strategies" }
+  ]} />
+</IndexCard>
+
+
+<IndexCard
+  title="运行环境管理"
+  href="creating-and-publishing-applications/runtime-environment-management"
+  description="掌握运行环境的创建、配置和管理，学习如何使用节点集群和应用部署。"
+>
+  <LinkGrid links={[
+    { text: "什么是运行环境", href: "creating-and-publishing-applications/runtime-environment-management#what-is-runtime-environment" },
+    { text: "节点的本地默认运行环境", href: "creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment" },
+    { text: "创建新的运行环境", href: "creating-and-publishing-applications/runtime-environment-management#createnewrunenvironment" },
+    { text: "使用运行环境管理节点集群", href: "creating-and-publishing-applications/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
+    { text: "在运行环境中部署应用", href: "creating-and-publishing-applications/runtime-environment-management#deploy-application-in-runtime-environment" },
+    { text: "开发模式部署", href: "creating-and-publishing-applications/runtime-environment-management#deploy-in-development-mode" },
+    { text: "生产模式部署", href: "creating-and-publishing-applications/runtime-environment-management#deploy-in-production-mode" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="实现无限横向扩展的分布式集群架构"
+  href="creating-and-publishing-applications/distributed-cluster-architecture"
   description="学习如何构建和管理无限横向扩展的分布式集群架构，实现高可用和高性能部署。"
 >
-  敬请期待...
+  <LinkGrid links={[
+    { text: "四层架构模型", href: "creating-and-publishing-applications/distributed-cluster-architecture#four-layer-architecture" },
+    { text: "典型部署拓扑", href: "creating-and-publishing-applications/distributed-cluster-architecture#typical-deployment-topology" },
+    { text: "企业级集群部署架构", href: "creating-and-publishing-applications/distributed-cluster-architecture#enterprise-cluster-deployment" },
+    { text: "多维度环境划分", href: "creating-and-publishing-applications/distributed-cluster-architecture#multi-dimensional-environment-division" },
+    { text: "集群扩展策略", href: "creating-and-publishing-applications/distributed-cluster-architecture#cluster-scaling-strategies" },
+    { text: "负载均衡与容错", href: "creating-and-publishing-applications/distributed-cluster-architecture#load-balancing-fault-tolerance" },
+    { text: "架构约束与最佳实践", href: "creating-and-publishing-applications/distributed-cluster-architecture#architecture-constraints-best-practices" }
+  ]} />
 </IndexCard>
 
 </div>
@@ -1670,36 +1694,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "短信通知功能", href: "third-party-integration/sms-service#sms-notification-function" }
   ]} />
 </IndexCard>
-
-<IndexCard
-  title="各类元素的API暴露示例"
-  href="api-exposure/api-exposure-examples-for-various-elements"
-  description="全面展示如何将不同类型的元素暴露为API的示例，包括数据模型、服务和自定义函数。"
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
-</IndexCard>
-
-<IndexCard
-  title="Using SDK to Call Authorized Element APIs"
-  href="api-exposure/using-sdk-to-call-authorized-element-apis"
-  description="学习如何使用官方SDK调用被授权的元素API，包括身份验证、请求处理和错误管理。"
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
-</IndexCard>
-
-<IndexCard
-  title="Using Cross-App Service Elements to Call Authorized APIs"
-  href="api-exposure/using-cross-app-service-elements-to-call-authorized-apis"
-  description="使用服务元素实现跨应用API调用，实现不同JitAi应用之间的无缝集成。"
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
-</IndexCard>
+</div>
 
 ## 缓存管理
 让应用跑得更快更稳定。配置智能缓存策略，优化数据访问速度，提升用户体验。确保应用在高并发访问时依然流畅运行。
@@ -1732,43 +1727,52 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid links={[
     { text: "API授权的创建", href: "api-exposure/api-authorization#api-authorization-creation" },
-    { text: "API访问权限控制", href: "api-exposure/api-authorization#api-access-permission-control" },
-    { text: "API调用监控", href: "api-exposure/api-authorization#api-call-monitoring" },
-    { text: "使用SDK调用授权的接口", href: "api-exposure/api-authorization#use-sdk-to-call-authorized-interfaces" },
-    { text: "使用跨App服务元素调用授权接口", href: "api-exposure/api-authorization#use-cross-app-service-elements-to-call-authorized-interfaces" }
+    { text: "API授权详情", href: "api-exposure/api-authorization#api-authorization-detail" },
+    { text: "API调用监控", href: "api-exposure/api-authorization#call-records" }
   ]} />
 </IndexCard>
-
 <IndexCard
-  title="组件定制"
-  href="frontend-ui-customization/component-customization"
-  description="定制单个组件以满足特定设计要求，增强应用程序中用户界面的一致性。"
+  title="各类元素的API暴露示例"
+  href="api-exposure/api-exposure-examples-for-various-elements"
+  description="全面展示如何将不同类型的元素暴露为API的示例，包括数据模型、服务和自定义函数。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
+    <LinkGrid links={[
+        { text: "服务函数的API授权", href: "api-exposure/api-exposure-examples-for-various-elements#service-function-api-authorization" },
+        { text: "数据模型的API授权", href: "api-exposure/api-exposure-examples-for-various-elements#data-model-api-authorization" },
+        { text: "大模型函数的API授权", href: "api-exposure/api-exposure-examples-for-various-elements#large-language-model-function-api-authorization" },
+        { text: "AI Agent的API授权", href: "api-exposure/api-exposure-examples-for-various-elements#agent-api-authorization" },
+        { text: "AI助理的API授权", href: "api-exposure/api-exposure-examples-for-various-elements#ai-assistant-api-authorization" },
+        { text: "审批流程的API授权", href: "api-exposure/api-exposure-examples-for-various-elements#approval-process-api-authorization" }
+    ]} />
   </div>
 </IndexCard>
 
 <IndexCard
-  title="页面定制"
-  href="frontend-ui-customization/page-customization"
-  description="定制整个页面布局、主题和视觉元素，创建连贯的品牌化用户体验。"
+  title="使用SDK调用被授权元素的API"
+  href="api-exposure/using-sdk-to-call-authorized-element-apis"
+  description="学习如何使用官方SDK调用被授权的元素API，包括身份验证、请求处理和错误管理。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
+    <LinkGrid links={[
+        { text: "使用Python SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-python-sdk" },
+        { text: "使用Nodejs SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-nodejs-sdk" },
+        { text: "使用Java SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-java-sdk" }
+    ]} />
   </div>
 </IndexCard>
 
 <IndexCard
-  title="门户定制"
-  href="frontend-ui-customization/portal-customization"
-  description="定制门户界面和导航元素，提供个性化和基于角色的用户体验。"
+  title="使用跨App服务元素调用被授权元素的API"
+  href="api-exposure/using-cross-app-service-elements-to-call-authorized-apis"
+  description="使用服务元素实现跨应用API调用，实现不同JitAi应用之间的无缝集成。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
+    <LinkGrid links={[
+        { text: "使用跨App服务元素", href: "api-exposure/using-cross-app-service-elements-to-call-authorized-apis#using-cross-app-service-elements" }
+    ]} />
   </div>
 </IndexCard>
-
 </div>
 
 ## 国际化
@@ -1808,8 +1812,6 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-</div>
-
 ## 前端UI定制
 打造独特的视觉体验和品牌形象。自定义应用主题色彩，开发专属UI组件，让应用界面更符合企业品牌调性，提升用户体验和辨识度。
 
@@ -1842,6 +1844,36 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   ]} />
 </IndexCard>
 
+<IndexCard
+  title="组件定制"
+  href="frontend-ui-customization/component-customization"
+  description="定制单个组件以满足特定设计要求，增强应用程序中用户界面的一致性。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="页面定制"
+  href="frontend-ui-customization/page-customization"
+  description="定制整个页面布局、主题和视觉元素，创建连贯的品牌化用户体验。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
+<IndexCard
+  title="门户定制"
+  href="frontend-ui-customization/portal-customization"
+  description="定制门户界面和导航元素，提供个性化和基于角色的用户体验。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
+</IndexCard>
+
 </div>
 
 ## 场景化进阶指南
@@ -1858,8 +1890,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "本地开发与调试", href: "advanced-guide/local-development-and-debugging" },
     { text: "团队协作开发", href: "advanced-guide/team-collaborative-development" },
     { text: "Agent提示词编写技巧", href: "advanced-guide/agent-prompt-writing-techniques" },
-    { text: "应用层稳定性保障", href: "advanced-guide/application-layer-stability-guarantee" },
-    { text: "运维架构与管理指南", href: "advanced-guide/devops-architecture-and-management-guide" }
+    { text: "应用层稳定性保障", href: "advanced-guide/application-layer-stability-guarantee" }
   ]} />
 </IndexCard>
 

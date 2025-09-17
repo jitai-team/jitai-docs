@@ -283,18 +283,8 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
   description="Fully customized page development approach for advanced developers, supporting complex business logic and personalized interfaces."
 >
   <LinkGrid columns={2} links={[
-    { text: "React Full Code Page", href: "shell-and-page/full-code-page-development#react-full-code-page" },
     { text: "Create React Full Code Page", href: "shell-and-page/full-code-page-development#create-react-full-code-page" },
-    { text: "Use Styles", href: "shell-and-page/full-code-page-development#use-style" },
-    { text: "Use Local Resources", href: "shell-and-page/full-code-page-development#use-local-resources" },
-    { text: "Use Ant Design Components", href: "shell-and-page/full-code-page-development#use-ant-design-components" },
-    { text: "Embed Existing Regular Page", href: "shell-and-page/full-code-page-development#embed-existing-regular-page" },
-    { text: "Use Standard Components", href: "shell-and-page/full-code-page-development#use-standard-component" },
-    { text: "Call Data Model Functions", href: "shell-and-page/full-code-page-development#call-data-model-function" },
-    { text: "Call Service Functions", href: "shell-and-page/full-code-page-development#call-service-function" },
-    { text: "Vue Full Code Page", href: "shell-and-page/full-code-page-development#vue-full-code-page" },
-    { text: "Use Third-party Packages", href: "shell-and-page/full-code-page-development#use-third-party-packages" },
-    { text: "Use Packaging Configuration", href: "shell-and-page/full-code-page-development#use-packaging-configuration" }
+    { text: "Vue Full Code Page", href: "shell-and-page/full-code-page-development#vue-full-code-page" }
   ]} />
 </IndexCard>
 
@@ -764,18 +754,18 @@ The rich component library is your super toolkit. Drag and drop a table to displ
 
 <IndexCard
   title="Full Code Components"
-  href="using-functional-components-in-pages/full-code-components"
+  href="fullcode-ui-components-in-pages/ui-component-interface-specifications"
   description="Fully customized code components supporting highly personalized function implementation."
 >
   <LinkGrid columns={2} links={[
-    { text: "Create Full Code Components", href: "using-functional-components-in-pages/full-code-components#create-full-code-components" },
-    { text: "UI Renderer Page and Logic Processing Class", href: "using-functional-components-in-pages/full-code-components#ui-renderer-page-logic-processing-class" },
-    { text: "Call Other Components via Component Instance", href: "using-functional-components-in-pages/full-code-components#call-other-components-via-instance" },
-    { text: "Respond to Other Component Events", href: "using-functional-components-in-pages/full-code-components#respond-to-other-component-events" },
-    { text: "Event Subscription Principles", href: "using-functional-components-in-pages/full-code-components#event-subscription-principles" },
-    { text: "Respond in Custom Components", href: "using-functional-components-in-pages/full-code-components#respond-in-custom-components" },
-    { text: "Subscribable Events", href: "using-functional-components-in-pages/full-code-components#subscribable-events" },
-    { text: "Bidirectional Communication Example", href: "using-functional-components-in-pages/full-code-components#bidirectional-communication-example" }
+    { text: "Component Interface Specifications", href: "fullcode-ui-components-in-pages/ui-component-interface-specifications" },
+    { text: "Component Interface Architecture", href: "fullcode-ui-components-in-pages/ui-component-interface-specifications#component-interface-architecture" },
+    { text: "Core Interface Definitions", href: "fullcode-ui-components-in-pages/ui-component-interface-specifications#core-interface-definitions" },
+    { text: "Calling Page and Component Functions", href: "fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components" },
+    { text: "Emitting Events", href: "fullcode-ui-components-in-pages/emitting-events" },
+    { text: "Event Subscription Principles", href: "fullcode-ui-components-in-pages/emitting-events#event-subscription-principles" },
+    { text: "Bidirectional Communication", href: "fullcode-ui-components-in-pages/emitting-events#bidirectional-communication-example" },
+    { text: "Calling Component Functions in Page Code", href: "fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code" }
   ]} />
 </IndexCard>
 
@@ -802,10 +792,7 @@ Integrate mainstream large language models such as GPT-4, Claude, and Tongyi Qia
     { text: "Mainstream LLM Vendor Support List", href: "ai-llm/create-ai-llm#mainstream-llm-vendor-support-list" },
     { text: "Create LLM Vendor Element", href: "ai-llm/create-ai-llm#create-llm-vendor-element" },
     { text: "Retry and Backup API Key Mechanism", href: "ai-llm/create-ai-llm#retry-backup-api-key-mechanism" },
-    { text: "Private LLM Integration", href: "ai-llm/create-ai-llm#private-llm-integration" },
-    { text: "Call LLM in Pages", href: "ai-llm/create-ai-llm#call-llm-in-pages" },
-    { text: "Call LLM in Backend Functions", href: "ai-llm/create-ai-llm#call-llm-in-backend-functions" },
-    { text: "LLM Programming Interface", href: "ai-llm/create-ai-llm#llm-programming-interface" }
+    { text: "Private LLM Integration", href: "ai-llm/create-ai-llm#private-llm-integration" }
   ]} />
 </IndexCard>
 

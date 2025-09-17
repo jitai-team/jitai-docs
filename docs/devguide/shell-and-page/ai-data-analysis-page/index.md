@@ -26,11 +26,13 @@ We provide visual development tools, and developers only need to make some simpl
 Specify the data tables and data conditions that can be analyzed. This configuration item controls the data allowed for analysis on this page, thereby controlling the data range that users can statistically analyze.
 
 ### Configure LLM for AI Data Analysis Assistant
-We have built-in a specialized [AI Assistant](../../ai-assitant/create-ai-assistant) for data analysis on this page. This assistant needs to access the system database and call functions on the page to draw charts during runtime. We need to configure a [Large Language Model](../../ai-llm/create-ai-llm) that supports tool calling. We recommend using qwen-max-latest from Alibaba Cloud Bailian platform.<a href="https://bailian.console.aliyun.com/?tab=model#/api-key" target="_blank">Apply for API Key</a>
+We have built-in a specialized AI Assistant for data analysis on this page. This assistant needs to access the system database and call functions on the page to draw charts during runtime. We need to configure a [Large Language Model](../../ai-llm/create-ai-llm) that supports tool calling. We recommend using qwen-max-latest from Alibaba Cloud Bailian platform.<a href="https://bailian.console.aliyun.com/?tab=model#/api-key" target="_blank">Apply for API Key</a>
 
 ### AI Assistant Advanced Configuration
-- Support custom [Welcome Message and Opening](../../ai-assitant/create-ai-assistant#welcome-message-and-opening)
-- Support custom [Output Process Log](../../ai-assitant/create-ai-assistant#message-output)
+- Support custom [Welcome Message and Opening](../../ai-assitant/welcome-message-and-opening)
+- Support custom [Output Process Log](../../ai-assitant/ai-assistant-input-output#message-output)
+
+For more information about AI assistants, please read the [AI Assistant](../../ai-assistant) related documentation.
 
 ## Full Code Development {#full-code-development}
 Click the <span style={{ display: "inline-block", verticalAlign: "middle", margin: "0 4px", height: '30px', marginTop: "-15px" }}>![Full Code Button](./imgs/code.png)</span> button in the upper right corner of the page editor to switch to source code editing mode.

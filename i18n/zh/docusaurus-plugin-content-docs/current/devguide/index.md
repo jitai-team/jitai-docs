@@ -225,13 +225,13 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </div>
 
 
-## 门户与页面开发
+## 前端门户与页面
 设计精美的用户界面和交互体验。从门户导航到页面构建，从组件布局到数据管理，打造功能完整、用户友好的应用界面。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="门户导航设计"
+  title="创建门户"
   href="shell-and-page/portal-navigation-design"
   description="设计不同用户角色的门户界面，配置导航菜单和权限控制，创建个性化用户体验。"
 >
@@ -241,17 +241,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "创建门户并配置菜单", href: "shell-and-page/portal-navigation-design#create-portal-and-configure-menu" },
     { text: "门户布局设计", href: "shell-and-page/portal-navigation-design#portal-layout-design" },
     { text: "启用或关闭常用功能入口", href: "shell-and-page/portal-navigation-design#enable-disable-common-function-entries" },
-    { text: "在门户中集成AI助理", href: "shell-and-page/portal-navigation-design#integrate-ai-assistant-in-portal" }
+    { text: "在门户中使用AI助理", href: "shell-and-page/portal-navigation-design#using-ai-assistant-in-portal" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="组件化页面开发"
+  title="创建组件化页面"
   href="shell-and-page/component-based-page-development"
   description="使用可视化编辑器构建页面界面，配置组件和事件，实现丰富的用户交互功能。"
 >
   <LinkGrid links={[
-    { text: "创建一个常规页面", href: "shell-and-page/component-based-page-development#create-a-regular-page" },
+    { text: "新建常规页面", href: "shell-and-page/component-based-page-development#create-a-regular-page" },
     { text: "可视化页面编辑器", href: "shell-and-page/component-based-page-development#visual-page-editor" },
     { text: "页面变量", href: "shell-and-page/component-based-page-development#page-variables" },
     { text: "页面事件", href: "shell-and-page/component-based-page-development#page-events" },
@@ -300,7 +300,8 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "创建数据录入页面", href: "shell-and-page/data-entry-page#create-data-entry-page" },
     { text: "配置允许查看和编辑的字段", href: "shell-and-page/data-entry-page#configure-viewable-editable-fields" },
     { text: "提交后显示再次录入按钮", href: "shell-and-page/data-entry-page#show-re-entry-button-after-submission" },
-    { text: "提交后展示结果反馈界面", href: "shell-and-page/data-entry-page#show-result-feedback-after-submission" }
+    { text: "提交后展示结果反馈界面", href: "shell-and-page/data-entry-page#show-result-feedback-after-submission" },
+    { text: "转换为常规页面进行修改", href: "shell-and-page/data-entry-page#convert-to-regular-page-for-modification" }
   ]} />
 </IndexCard>
 
@@ -312,7 +313,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid links={[
     { text: "创建Markdown页面", href: "shell-and-page/markdown-page#create-markdown-page" },
-    { text: "Markdown 语法", href: "shell-and-page/markdown-page#markdown-语法" }
+    { text: "Markdown 语法", href: "shell-and-page/markdown-page#markdown-syntax" }
   ]} />
 </IndexCard>
 
@@ -323,7 +324,6 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="面向高级开发者的完全自定义页面开发方式，支持复杂业务逻辑和个性化界面。"
 >
   <LinkGrid columns={2} links={[
-    { text: "React全代码页面", href: "shell-and-page/full-code-page-development#create-react-full-code-page" },
     { text: "创建 React 全代码页面", href: "shell-and-page/full-code-page-development#create-react-full-code-page" },
     { text: "使用样式", href: "shell-and-page/full-code-page-development#use-style" },
     { text: "使用本地资源", href: "shell-and-page/full-code-page-development#use-local-resources" },
@@ -332,7 +332,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "使用标准组件", href: "shell-and-page/full-code-page-development#use-standard-component" },
     { text: "调用数据模型函数", href: "shell-and-page/full-code-page-development#call-data-model-function" },
     { text: "调用服务函数", href: "shell-and-page/full-code-page-development#call-service-function" },
-    { text: "Vue全代码页面", href: "shell-and-page/full-code-page-development#vue-full-code-page" },
+    { text: "创建Vue全代码页面", href: "shell-and-page/full-code-page-development#vue-full-code-page" },
     { text: "使用第三方包", href: "shell-and-page/full-code-page-development#use-third-party-packages" },
     { text: "打包配置的使用", href: "shell-and-page/full-code-page-development#use-packaging-configuration" }
   ]} />
@@ -1594,7 +1594,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "指定磁盘存储目录", href: "file-processing/file-storage#specify-disk-storage-directory" },
     { text: "云存储服务配置", href: "file-processing/file-storage#cloud-storage-service-configuration" },
     { text: "阿里云OSS", href: "file-processing/file-storage#aliyun-oss" },
-    { text: "移动云EOS", href: "file-processing/file-storage#移动云eos" },
+    { text: "移动云EOS", href: "file-processing/file-storage#china-mobile-cloud-eos" },
     { text: "MinIO", href: "file-processing/file-storage#minio" },
     { text: "七牛云", href: "file-processing/file-storage#aliyun-oss" },
     { text: "用环境变量防止配置信息泄露", href: "file-processing/file-storage#prevent-config-info-leak-with-env-variables" },

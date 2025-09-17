@@ -287,7 +287,7 @@ AI助理中的数据流向遵循一个清晰的模式，数据在节点间传递
 
 ## 使用指南 {#usage-guide}
 ### 哪些地方可使用AI助理
-- [门户中使用AI助理](../shell-and-page/portal-navigation-design#integrate-ai-assistant-in-portal)
+- [门户中使用AI助理](../shell-and-page/portal-navigation-design#using-ai-assistant-in-portal)
 - [常规页面中使用AI助理](../shell-and-page/component-based-page-development#integrate-ai-assistant-in-pages)
 
 使用AI助理时，还需配置以下内容：
@@ -332,7 +332,7 @@ AI助理中的数据流向遵循一个清晰的模式，数据在节点间传递
 
 ### 输入参数 
 若AI助理配置了[自定义输入参数](#input-parameters)，使用助理时需要为这些参数配置输入值。
-配置方式参考：[门户中使用AI助理](../shell-and-page/portal-navigation-design#integrate-ai-assistant-in-portal)、[常规页面中使用AI助理](../shell-and-page/component-based-page-development#integrate-ai-assistant-in-pages)
+配置方式参考：[门户中使用AI助理](../shell-and-page/portal-navigation-design#using-ai-assistant-in-portal)、[常规页面中使用AI助理](../shell-and-page/component-based-page-development#integrate-ai-assistant-in-pages)
 
 ### 发送AI消息 {#send-ai-message} 
 在页面中使用AI助理后，页面上会有一个`发送AI消息`的函数。函数有以下入参：

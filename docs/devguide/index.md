@@ -225,13 +225,13 @@ Complete workflow from application creation to distributed deployment. Master ap
 </div>
 
 
-## Portal and Page Development
+## Frontend Portals and Pages
 Design beautiful user interfaces and interactive experiences. From portal navigation to page construction, from component layout to data management, create complete, user-friendly application interfaces.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
-
+  
 <IndexCard
-  title="Portal Navigation Design"
+  title="Creating Portals"
   href="shell-and-page/portal-navigation-design"
   description="Design portal interfaces for different user roles, configure navigation menus and permission controls, and create personalized user experiences."
 >
@@ -241,7 +241,7 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
     { text: "Create Portal and Configure Menu", href: "shell-and-page/portal-navigation-design#create-portal-and-configure-menu" },
     { text: "Portal Layout Design", href: "shell-and-page/portal-navigation-design#portal-layout-design" },
     { text: "Enable or Disable Common Function Entries", href: "shell-and-page/portal-navigation-design#enable-disable-common-function-entries" },
-    { text: "Integrate AI Assistant in Portal", href: "shell-and-page/portal-navigation-design#integrate-ai-assistant-in-portal" }
+    { text: "Using AI Assistant in Portal", href: "shell-and-page/portal-navigation-design#using-ai-assistant-in-portal" }
   ]} />
 </IndexCard>
 
@@ -297,10 +297,11 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
   description="Quickly create data entry forms to implement data collection and submission functions."
 >
   <LinkGrid links={[
-    { text: "Create Data Entry Page", href: "shell-and-page/data-entry-page#create-data-entry-page" },
-    { text: "Configure Viewable and Editable Fields", href: "shell-and-page/data-entry-page#configure-viewable-editable-fields" },
-    { text: "Show Re-entry Button After Submission", href: "shell-and-page/data-entry-page#show-re-entry-button-after-submission" },
-    { text: "Show Result Feedback After Submission", href: "shell-and-page/data-entry-page#show-result-feedback-after-submission" }
+    { text: "创建数据录入页面", href: "shell-and-page/data-entry-page#create-data-entry-page" },
+    { text: "配置允许查看和编辑的字段", href: "shell-and-page/data-entry-page#configure-viewable-editable-fields" },
+    { text: "提交后显示再次录入按钮", href: "shell-and-page/data-entry-page#show-re-entry-button-after-submission" },
+    { text: "提交后展示结果反馈界面", href: "shell-and-page/data-entry-page#show-result-feedback-after-submission" },
+    { text: "转换为常规页面进行修改", href: "shell-and-page/data-entry-page#convert-to-regular-page-for-modification" }
   ]} />
 </IndexCard>
 
@@ -311,8 +312,8 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
   description="Create document-type pages with support for rich Markdown syntax and document display requirements."
 >
   <LinkGrid links={[
-    { text: "Create Markdown Page", href: "shell-and-page/markdown-page#create-markdown-page" },
-    { text: "Markdown Syntax", href: "shell-and-page/markdown-page#markdown-语法" }
+    { text: "创建 Markdown 页面", href: "shell-and-page/markdown-page#create-markdown-page" },
+    { text: "Markdown 语法", href: "shell-and-page/markdown-page#markdown-syntax" }
   ]} />
 </IndexCard>
 
@@ -323,14 +324,14 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
   description="Fully customized page development approach for advanced developers, supporting complex business logic and personalized interfaces."
 >
   <LinkGrid columns={2} links={[
-    { text: "Create React Full Code Page", href: "shell-and-page/full-code-page-development#create-react-full-code-page" },
-    { text: "Vue Full Code Page", href: "shell-and-page/full-code-page-development#vue-full-code-page" }
+    { text: "创建 React 全代码页面", href: "shell-and-page/full-code-page-development#create-react-full-code-page" },
+    { text: "创建Vue全代码页面", href: "shell-and-page/full-code-page-development#vue-full-code-page" }
   ]} />
 </IndexCard>
 
 </div>
 
-## AI Integration in Portals and Pages
+## Using AI in Portals and Pages
 Enhance user experience with intelligent AI elements. Integrate AI assistants, agents, and other AI components into portals and pages to create smart, interactive applications that provide personalized assistance and automated workflows.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -338,7 +339,7 @@ Enhance user experience with intelligent AI elements. Integrate AI assistants, a
 <IndexCard
   title="Using AI Assistants in Portals"
   href="using-ai-in-portals-and-pages/using-ai-assistants-in-portals"
-  description="Learn how to integrate AI assistants into portal interfaces, providing users with intelligent help and guidance throughout their workflow."
+  description="Learn how to use AI assistants into portal interfaces, providing users with intelligent help and guidance throughout their workflow."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     📝 Coming soon...
@@ -1612,7 +1613,7 @@ Easily handle various file requirements in applications. Support file upload and
     { text: "Specify Disk Storage Directory", href: "file-processing/file-storage#specify-disk-storage-directory" },
     { text: "Cloud Storage Service Configuration", href: "file-processing/file-storage#cloud-storage-service-configuration" },
     { text: "Alibaba Cloud OSS", href: "file-processing/file-storage#aliyun-oss" },
-    { text: "China Mobile Cloud EOS", href: "file-processing/file-storage#移动云eos" },
+    { text: "China Mobile Cloud EOS", href: "file-processing/file-storage#china-mobile-cloud-eos" },
     { text: "MinIO", href: "file-processing/file-storage#minio" },
     { text: "Qiniu Cloud", href: "file-processing/file-storage#aliyun-oss" },
     { text: "Use Environment Variables to Prevent Config Info Leak", href: "file-processing/file-storage#prevent-config-info-leak-with-env-variables" },

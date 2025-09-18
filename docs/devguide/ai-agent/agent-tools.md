@@ -10,7 +10,7 @@ Tools extend Agent's executable capabilities, enabling it to not only understand
 Applications built on JitAi's interpretive system architecture have self-describing elements that can be accurately understood by large language models, becoming tools available to Agent. Developers can add model functions, service functions, MCP services, external APIs, and page functions in the `Tools` section of the Agent visual editor, enabling AI to call full-stack elements across frontend and backend.
 
 ## Agent Call Model Functions {#agent-call-model-functions}
-[Data models](../../reference/framework/JitORM/data-models#model-built-in-functions) come with common CRUD functions, and developers can also [customize model functions](../data-modeling/data-table-model#model-function-configuration) according to actual business needs. After adding data model functions as tools to Agent, Agent can implement data create, read, update, delete operations through these functions, meeting diverse data processing scenarios.
+[Data models](../../reference/framework/JitORM/data-models#model-built-in-functions) come with common CRUD functions, and developers can also [customize model functions](../data-modeling/create-data-model-functions) according to actual business needs. After adding data model functions as tools to Agent, Agent can implement data create, read, update, delete operations through these functions, meeting diverse data processing scenarios.
 
 ![Agent Add Model Function Tools](./img/agent/agent-add-model-function-tool.gif)
 

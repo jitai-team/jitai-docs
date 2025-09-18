@@ -3,181 +3,181 @@ sidebar_position: 3
 slug: approval-node-configuration
 ---
 
-# 审批节点配置
-审批节点是最常用的节点类型，用于指定审批人员对当前审批流程进行审阅。它的节点配置主要包括审批人设置、审批流转规则、审批流程处理规则、审批扩展功能配置、页面与权限控制等。
+# Approval Node Configuration
+Approval nodes are the most commonly used node type, used to designate approvers to review the current approval workflow. Their node configuration mainly includes approver settings, approval flow rules, approval workflow processing rules, approval extended function configuration, page and permission control, etc.
 
-![审批节点配置](./img/workflow_2025-08-25_10-51-45.gif)
+![Approval Node Configuration](./img/workflow_2025-08-25_10-51-45.gif)
 
-从“审批配置面板”点击对应的审批节点，就会打开该节点的配置面板。
+Click the corresponding approval node from the "Approval Configuration Panel" to open the configuration panel for that node.
 
-## 审批人设置 {#approver-settings}
-每个审批流程都必须指定一个或多个审批人进行审批，可以在选人面板进行设置。
+## Approver Settings {#approver-settings}
+Every approval workflow must specify one or more approvers for approval, which can be set in the people selection panel.
 
-![审批人设置](./img/workflow_2025-08-25_11-14-02.png)
+![Approver Settings](./img/workflow_2025-08-25_11-14-02.png)
 
-在审批节点的配置面板，打开“选择审批人”弹窗面板。选人面板支持多种选择方式，如：选成员、选部门、选角色、选成员字段、选部门字段、选主管、选自己。
+In the approval node configuration panel, open the "Select Approvers" popup panel. The people selection panel supports multiple selection methods, such as: select members, select departments, select roles, select member fields, select department fields, select supervisors, select yourself.
 
-**选成员：** 可以选择一个或多个指定的位于组织架构中的成员。
+**Select Members:** You can select one or more specified members located in the organizational structure.
 
-**选部门：** 可以选择一个或多个指定的隶属于组织架构中的部门。
+**Select Departments:** You can select one or more specified departments belonging to the organizational structure.
 
-**选角色：** 可以选择一个或多个指定的角色。注意：这里的角色是在组织架构中定义的角色（即在通讯里展示的角色），而不是应用角色
+**Select Roles:** You can select one or more specified roles. Note: The roles here are roles defined in the organizational structure (i.e., roles displayed in communications), not application roles.
 
-**选成员字段：** 从审批表单中选择成员单选或成员多选字段。注意：如果该审批节点的审批人是发起人，那么可以在这里选择“发起人”字段。
+**Select Member Fields:** Select member single-select or member multi-select fields from the approval form. Note: If the approver of this approval node is the initiator, you can select the "Initiator" field here.
 
-**选部门字段：** 从审批表单中选择部门单选或部门多选字段。
+**Select Department Fields:** Select department single-select or department multi-select fields from the approval form.
 
-**选主管：** 这里会列出审批表单中所有成员单选、成员单选、部门单选、部门多选字段以及发起人的向上一到五级主管。
+**Select Supervisors:** This will list all member single-select, member single-select, department single-select, department multi-select fields in the approval form, as well as the first to fifth level supervisors of the initiator.
 
-**选自己：** 指的是当前设置审批流程的用户。注意：这里不是指发起审批的用户。
+**Select Yourself:** This refers to the user currently setting up the approval workflow. Note: This does not refer to the user initiating the approval.
 
-## 审批流转规则 {#approval-flow-rules}
-审批流转规则是指当前审批节点如果存在多个审批人处理，审批单在这些人之间应该如何流转。
+## Approval Flow Rules {#approval-flow-rules}
+Approval flow rules refer to how approval documents should flow among multiple approvers when the current approval node has multiple approvers for processing.
 
-![流程规则](./img/workflow_2025-08-25_11-36-26.png)
+![Workflow Rules](./img/workflow_2025-08-25_11-36-26.png)
 
-有两种流转规则：或签（只要有一个人审批了就会流转到下个审批节点）和会签（所有审批人必须都审批了才会流转到下个审批节点），默认是或签。
+There are two flow rules: OR signing (the approval will flow to the next approval node as long as one person approves) and AND signing (all approvers must approve before flowing to the next approval node). The default is OR signing.
 
-## 审批流程处理规则 {#approval-workflow-rules}
-审批人在处理审批单时，会选择是流程同意、拒绝、回退还是转交。这些操作都会触发流程处理规则。
+## Approval Workflow Processing Rules {#approval-workflow-rules}
+When approvers process approval documents, they will choose whether to approve, reject, return, or transfer the workflow. These operations will all trigger workflow processing rules.
 
-![流程处理规则](./img/workflow_2025-08-25_11-40-31.png)
+![Workflow Processing Rules](./img/workflow_2025-08-25_11-40-31.png)
 
-默认情况下只有“审批同意”，即在页面上只展示`同意`按钮。开发者可以根据实际情况配置流程`拒绝`、`回退`、`转交`按钮。
+By default, there is only "Approval Consent", meaning only the `Approve` button is displayed on the page. Developers can configure workflow `Reject`, `Return`, and `Transfer` buttons according to actual situations.
 
-当配置`流程同意`后，审批人点击`同意`按钮，流程会自动进入下一个审批节点。
+When `Workflow Consent` is configured, after the approver clicks the `Approve` button, the workflow will automatically proceed to the next approval node.
 
-当配置`流程拒绝`后，审批人点击`拒绝`按钮，流程会自动终止。
+When `Workflow Rejection` is configured, after the approver clicks the `Reject` button, the workflow will automatically terminate.
 
-当配置`流程回退`后，审批人点击`回退`按钮，流程会自动回退到指定节点。
+When `Workflow Return` is configured, after the approver clicks the `Return` button, the workflow will automatically return to the specified node.
 
-当配置`流程转交`后，审批人点击`转交`按钮，流程会自动转交给指定审批人。
+When `Workflow Transfer` is configured, after the approver clicks the `Transfer` button, the workflow will automatically transfer to the specified approver.
 
-![流程回退规则](./img/workflow_2025-08-25_11-48-00.png)
+![Workflow Return Rules](./img/workflow_2025-08-25_11-48-00.png)
 
-在配置流程回退时，需要提前配置好是回退到上一个节点，还是回退到指定节点。如果需要在审批过程中才确定回退到哪个节点，可以配置“审批人自选某个节点”。
+When configuring workflow return, you need to configure in advance whether to return to the previous node or return to a specified node. If you need to determine which node to return to during the approval process, you can configure "Approver selects a specific node".
 
-![找不到审批人](./img/workflow_2025-08-25_11-48-59.png)
+![Approver Not Found](./img/workflow_2025-08-25_11-48-59.png)
 
-如果当前审批人已经被踢出当前组织，找不到审批人的时候，开发者也可以选择是流程暂停、流程自动通过还是转交给管理员进行审批。
+If the current approver has been removed from the current organization and the approver cannot be found, developers can also choose whether to pause the workflow, automatically pass the workflow, or transfer it to an administrator for approval.
 
-## 审批扩展功能配置 {#approval-extended-function-configuration}
-审批节点的扩展功能包括去重审批、限时处理、审批暂存、意见反馈、手写签名、是否允许批量审批、消息通知、短信通知等，为审批节点提供丰富的功能。
+## Approval Extended Function Configuration {#approval-extended-function-configuration}
+The extended functions of approval nodes include deduplication approval, time-limited processing, approval draft, feedback, handwritten signature, whether to allow batch approval, message notification, SMS notification, etc., providing rich functionality for approval nodes.
 
-![配置审批扩展功能](./img/workflow_2025-08-25_11-53-32.png)
+![Configure Approval Extended Functions](./img/workflow_2025-08-25_11-53-32.png)
 
-### 去重审批 {#deduplication-approval}
-如果在一个审批流程中，出现同一人需要在多个节点进行审批。那么可以开启去重审批功能，会进行自动去重，只进行一次审批即可。
+### Deduplication Approval {#deduplication-approval}
+If the same person needs to approve at multiple nodes in an approval workflow, you can enable the deduplication approval function, which will automatically deduplicate and only require one approval.
 
-如果当前节点流转规则是“或签”，那么节点会被视为自动通过；如果是“会签”，那么会对重复审批人进行去重。
+If the current node flow rule is "OR signing", the node will be considered automatically passed; if it is "AND signing", duplicate approvers will be deduplicated.
 
-### 限时处理 {#time-limited-processing}
-对审批单进行限时设置，比如设置审批单到达该节点后，该节点审批人超过 5 天未处理，则进行通知提醒等。
+### Time-Limited Processing {#time-limited-processing}
+Set time limits for approval documents, for example, setting that if the approver at this node does not process the approval document for more than 5 days after it arrives at this node, notification reminders will be sent.
 
-![限时处理](./img/workflow_2025-08-25_12-00-45.png)
+![Time-Limited Processing](./img/workflow_2025-08-25_12-00-45.png)
 
-“限时处理”功能开启后，开发者可以根据具体情况开启多个限时处理规则。注意：如果当前审批单有多个审批人审批，仅有限时处理设置的提醒功能才会生效。
+After the "Time-Limited Processing" function is enabled, developers can enable multiple time-limited processing rules according to specific situations. Note: If the current approval document has multiple approvers, only the reminder function set by time-limited processing will take effect.
 
-### 审批暂存 {#approval-draft}
-当审批人在审批过程中，需要暂离，可以通过`暂存`功能保存审批人的填写内容，待填写完成后，再进行审批流程的处理。
+### Approval Draft {#approval-draft}
+When approvers need to temporarily leave during the approval process, they can use the `Draft` function to save the approver's filled content, and then process the approval workflow after completing the filling.
 
-![暂存](./img/workflow_2025-08-25_14-01-06.gif)
+![Draft](./img/workflow_2025-08-25_14-01-06.gif)
 
-当审批人开启“审批暂存”功能后，在对应的审批页面中会出现`暂存`按钮。点击`暂存`后，审批数据存为草稿，整个审批流程暂留在本节点。审批人再次打开该审批单，数据会自动填充。
+After the approver enables the "Approval Draft" function, a `Draft` button will appear on the corresponding approval page. After clicking `Draft`, the approval data is saved as a draft, and the entire approval workflow remains at this node. When the approver opens the approval document again, the data will be automatically filled.
 
-### 审批意见反馈 {#approval-feedback}
-当审批人对审批单进行审批时，需要对审批单进行反馈，此时可以使用审批意见反馈功能。
+### Approval Feedback {#approval-feedback}
+When approvers need to provide feedback on approval documents during the approval process, they can use the approval feedback function.
 
-![意见反馈](./img/workflow_2025-08-25_14-07-08.png)
+![Feedback](./img/workflow_2025-08-25_14-07-08.png)
 
-开发者可以对同意、拒绝、回退情况下选择是否需要填写审批意见。每一种都可以选择“不填”、“必填”还是“选填”。
+Developers can choose whether to fill in approval comments for approval, rejection, and return situations. Each can choose "No Fill", "Required", or "Optional".
 
-![审批意见](./img/workflow_2025-08-25_14-11-14.png)
+![Approval Comments](./img/workflow_2025-08-25_14-11-14.png)
 
-当开发者设定为选填或者必填时，每当用户流程处理后，会出现一个填写审批意见的弹窗。
+When developers set it as optional or required, a popup for filling in approval comments will appear after each user workflow processing.
 
-:::tip 提示
+:::tip Tip
 
-开发者必须在“流程处理规则”那里开启同意，这里才会出现“同意”的意见反馈设置；拒绝、回退同理。
+Developers must enable approval in "Workflow Processing Rules" for the "Approval" feedback setting to appear here; the same applies to rejection and return.
 
-如果意见反馈设为必填，在审批处理的时候未填写意见将不允许提交。
+If feedback is set as required, approval processing will not be allowed to submit without filling in comments.
 :::
 
-### 手写签名 {#handwritten-signature}
-当用户处理某个审批单时如果需要手写签名，那么就可以在节点设置中进行配置。
+### Handwritten Signature {#handwritten-signature}
+When users need handwritten signatures when processing certain approval documents, this can be configured in the node settings.
 
-![手写签名](./img/workflow_2025-08-25_14-15-56.png)
+![Handwritten Signature](./img/workflow_2025-08-25_14-15-56.png)
 
-开发者可以选择“使用上次签名”还是“每次重新签名”。
+Developers can choose "Use Last Signature" or "Re-sign Each Time".
 
-![使用上次签名](./img/workflow_2025-08-25_14-24-03.png)
+![Use Last Signature](./img/workflow_2025-08-25_14-24-03.png)
 
-当选择“使用上次签名”时，点击`同意`按钮后会出现签名弹窗，在签名弹窗左下角会出现“使用上次签名”按钮。
+When "Use Last Signature" is selected, a signature popup will appear after clicking the `Approve` button, and a "Use Last Signature" button will appear in the lower left corner of the signature popup.
 
-:::warning 注意
-如果点击“使用上次签名”按钮，签名面板没有变化，应该是系统内没有对应的签名数据（也就是说用户之前没有进行过签名）。
+:::warning Note
+If clicking the "Use Last Signature" button does not change the signature panel, it should be because there is no corresponding signature data in the system (meaning the user has not signed before).
 :::
 
-### 允许批量审批 {#allow-batch-approval}
-当用户想对某一批审批单进行批量审批时，可以在审批节点配置“允许批量审批”。
+### Allow Batch Approval {#allow-batch-approval}
+When users want to batch approve a group of approval documents, they can configure "Allow Batch Approval" in the approval node.
 
-![批量审批](./img/workflow_2025-08-25_14-30-54.png)
+![Batch Approval](./img/workflow_2025-08-25_14-30-54.png)
 
-开启批量审批功能后，在“待办中心”页面可以看到每个审批单前面有个复选框，在顶部还有个“批量审批”按钮。
+After enabling the batch approval function, you can see a checkbox in front of each approval document on the "To-Do Center" page, and there is also a "Batch Approval" button at the top.
 
-:::warning 注意
+:::warning Note
 
-只有“批量审批”功能，没有“批量拒绝”等功能。即，对于多个审批单，只能选择全部同意操作。
+There is only a "Batch Approval" function, no "Batch Rejection" and other functions. That is, for multiple approval documents, you can only choose to approve all operations.
 
-使用“批量审批”功能时，会忽略表单中的校验规则、必填规则，关于手写签名、审批意见反馈的配置也不会生效
+When using the "Batch Approval" function, validation rules and required rules in the form will be ignored, and configurations for handwritten signatures and approval feedback will not take effect.
 :::
 
-### 消息通知 {#message-notification}
-当审批人开启“消息通知”功能后，系统会向审批人发送消息提醒。
+### Message Notification {#message-notification}
+After approvers enable the "Message Notification" function, the system will send message reminders to approvers.
 
-![消息通知](./img/workflow_2025-08-25_14-34-54.png)
+![Message Notification](./img/workflow_2025-08-25_14-34-54.png)
 
-每当有相应的审批单需要处理时，系统会向审批人发送消息提醒。
+Whenever there are corresponding approval documents that need to be processed, the system will send message reminders to approvers.
 
-### 短信通知 {#sms-notification}
-当用户开启“短信通知”功能时，每当有相应的审批单需要处理时，系统会向用户发送短信提醒。
+### SMS Notification {#sms-notification}
+When users enable the "SMS Notification" function, whenever there are corresponding approval documents that need to be processed, the system will send SMS reminders to users.
 
-![短信通知](./img/workflow_2025-08-25_14-38-31.png)
+![SMS Notification](./img/workflow_2025-08-25_14-38-31.png)
 
-注意：在配置短信通知功能前，需要配置短信服务以及短信模板代码（如何配置短信服务？，请参照[短信服务](../third-party-integration/sms-service#using-sms-service-in-approval-workflow)）。
+Note: Before configuring the SMS notification function, you need to configure SMS service and SMS template code (How to configure SMS service? Please refer to [SMS Service](../third-party-integration/sms-service#using-sms-service-in-approval-workflow)).
 
-## 审批页面与权限控制 {#approval-page-permission-control}
-每个审批节点都可以对展现的页面进行权限控制，比如给某个审批节点进行定制页面，配置字段的查看编辑等。
+## Approval Page and Permission Control {#approval-page-permission-control}
+Each approval node can control permissions for the displayed pages, such as customizing pages for specific approval nodes, configuring field viewing and editing permissions, etc.
 
-### 当前节点用到的页面 {#pages-used-by-current-node}
-默认情况下，所有的审批节点都使用审批流程的默认页面，如果需要自定义页面，可以在节点配置中设置节点的页面。如何创建自定义页面，请参考[审批页面定制](./approval-page-customization)。
+### Pages Used by Current Node {#pages-used-by-current-node}
+By default, all approval nodes use the default page of the approval workflow. If you need to customize pages, you can set the node's page in the node configuration. For how to create custom pages, please refer to [Approval Page Customization](./approval-page-customization).
 
-### 摘要信息显示 {#summary-display}
-摘要字段主要是用于“待办中心”的“待办”和“已办”审批列表展示。
+### Summary Information Display {#summary-display}
+Summary fields are mainly used for displaying "To-Do" and "Done" approval lists in the "To-Do Center".
 
-![摘要](./img/workflow_2025-08-25_15-17-52.png)
+![Summary](./img/workflow_2025-08-25_15-17-52.png)
 
-审批节点与发起节点一样，只能配置五个。在“待办中心”的展示情况也和发起节点一样。
+Like the initiation node, approval nodes can only configure five fields. The display in the "To-Do Center" is also the same as the initiation node.
 
-### 字段权限 {#fieldpermission}
-开发者可通过字段权限控制“待办”页面和“已办”页面上的审批表单字段的查看和编辑权限。默认情况下，所有字段仅处于可查看状态。
+### Field Permissions {#fieldpermission}
+Developers can control the viewing and editing permissions of approval form fields on "To-Do" and "Done" pages through field permissions. By default, all fields are only in a viewable state.
 
-![字段权限](./img/workflow_2025-08-25_15-20-14.png)
+![Field Permissions](./img/workflow_2025-08-25_15-20-14.png)
 
-:::warning 注意
+:::warning Note
 
-字段权限仅针对于当前节点下的“待办”和“已办”页面有效。
+Field permissions are only effective for "To-Do" and "Done" pages under the current node.
 
-“已办”页面下所有的字段都处于可查看状态，就算这里配置了编辑权限也不会生效。
+All fields on the "Done" page are in a viewable state, even if editing permissions are configured here, they will not take effect.
 
-审批表单字段最终展示是同时受审批节点上字段权限控制和表单本身权限的影响。表单权限如何配置，参照[表单权限](../using-functional-components-in-pages/form-components#field-operation-permissions)。
+The final display of approval form fields is affected by both the field permission control on the approval node and the form's own permissions. For how to configure form permissions, refer to [Form Permissions](../using-functional-components-in-pages/form-components#field-operation-permissions).
 
-当数据表新增某个字段后，需要先为其添加权限，再去对应的页面进行配置。
+When a new field is added to a data table, you need to add permissions for it first, then configure it on the corresponding page.
 :::
 
-### 布局控件权限 {#layout-control-permissions}
-有些情况下，对于不同的节点，所展示的页面中某些布局控件可能不需要展示，此时可以使用布局控件权限进行权限控制。
+### Layout Control Permissions {#layout-control-permissions}
+In some cases, for different nodes, certain layout controls in the displayed pages may not need to be shown. In this case, layout control permissions can be used for permission control.
 
-![布局控件](./img/workflow_2025-08-25_15-22-30.png)
+![Layout Controls](./img/workflow_2025-08-25_15-22-30.png)
 
-用户可以控制当前节点下页面展示时的布局控件是否显示。默认情况下，对应的页面没有添加布局控件，需要先到对应的页面添加布局控件后才能进行权限控制。
+Users can control whether layout controls are displayed when pages are shown under the current node. By default, the corresponding pages do not have layout controls added, so you need to add layout controls to the corresponding pages first before you can perform permission control.

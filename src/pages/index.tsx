@@ -34,7 +34,7 @@ const HomePage: React.FC = () => {
           <meta name="twitter:description" content={homeDesc} />
         </>
       } />
-      <div className={styles.container}>
+      <div className={`${styles.container} custom-page`}>
         <Navbar currentLocale={i18n.currentLocale}/>
         <HeroSection currentLocale={i18n.currentLocale}/>
         <ProductSection currentLocale={i18n.currentLocale}/>

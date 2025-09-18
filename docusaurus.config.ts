@@ -102,6 +102,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       } satisfies Preset.Options,
     ],
   ],
+  // 添加客户端模块
+  clientModules: ['./src/clientModules/readingProgress.js'],
   markdown: {
     mermaid: true,
   },

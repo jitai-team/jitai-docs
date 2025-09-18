@@ -28,7 +28,7 @@ JitAi 提供了 Markdown 页面开发功能，开发者可以在 JitAi 开发工
 如果用户想在使用区展示 Markdown 页面，需要将创建的 Markdown 页面设置绑定到 SSR 门户下的某个菜单上。
 :::
 
-## Markdown 语法
+## Markdown 语法 {#markdown-syntax}
 JitAi 集成了 Markdown 的常用语法，开发者可以在可视化编辑器中编写 Markdown 页面。
 
 常用的 Markdown 语法有

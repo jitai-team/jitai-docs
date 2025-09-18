@@ -225,13 +225,13 @@ Complete workflow from application creation to distributed deployment. Master ap
 </div>
 
 
-## Portal and Page Development
+## Frontend Portals and Pages
 Design beautiful user interfaces and interactive experiences. From portal navigation to page construction, from component layout to data management, create complete, user-friendly application interfaces.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
-
+  
 <IndexCard
-  title="Portal Navigation Design"
+  title="Creating Portals"
   href="shell-and-page/portal-navigation-design"
   description="Design portal interfaces for different user roles, configure navigation menus and permission controls, and create personalized user experiences."
 >
@@ -241,7 +241,7 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
     { text: "Create Portal and Configure Menu", href: "shell-and-page/portal-navigation-design#create-portal-and-configure-menu" },
     { text: "Portal Layout Design", href: "shell-and-page/portal-navigation-design#portal-layout-design" },
     { text: "Enable or Disable Common Function Entries", href: "shell-and-page/portal-navigation-design#enable-disable-common-function-entries" },
-    { text: "Integrate AI Assistant in Portal", href: "shell-and-page/portal-navigation-design#integrate-ai-assistant-in-portal" }
+    { text: "Using AI Assistant in Portal", href: "shell-and-page/portal-navigation-design#using-ai-assistant-in-portal" }
   ]} />
 </IndexCard>
 
@@ -297,10 +297,11 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
   description="Quickly create data entry forms to implement data collection and submission functions."
 >
   <LinkGrid links={[
-    { text: "Create Data Entry Page", href: "shell-and-page/data-entry-page#create-data-entry-page" },
-    { text: "Configure Viewable and Editable Fields", href: "shell-and-page/data-entry-page#configure-viewable-editable-fields" },
-    { text: "Show Re-entry Button After Submission", href: "shell-and-page/data-entry-page#show-re-entry-button-after-submission" },
-    { text: "Show Result Feedback After Submission", href: "shell-and-page/data-entry-page#show-result-feedback-after-submission" }
+    { text: "创建数据录入页面", href: "shell-and-page/data-entry-page#create-data-entry-page" },
+    { text: "配置允许查看和编辑的字段", href: "shell-and-page/data-entry-page#configure-viewable-editable-fields" },
+    { text: "提交后显示再次录入按钮", href: "shell-and-page/data-entry-page#show-re-entry-button-after-submission" },
+    { text: "提交后展示结果反馈界面", href: "shell-and-page/data-entry-page#show-result-feedback-after-submission" },
+    { text: "转换为常规页面进行修改", href: "shell-and-page/data-entry-page#convert-to-regular-page-for-modification" }
   ]} />
 </IndexCard>
 
@@ -311,8 +312,8 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
   description="Create document-type pages with support for rich Markdown syntax and document display requirements."
 >
   <LinkGrid links={[
-    { text: "Create Markdown Page", href: "shell-and-page/markdown-page#create-markdown-page" },
-    { text: "Markdown Syntax", href: "shell-and-page/markdown-page#markdown-语法" }
+    { text: "创建 Markdown 页面", href: "shell-and-page/markdown-page#create-markdown-page" },
+    { text: "Markdown 语法", href: "shell-and-page/markdown-page#markdown-syntax" }
   ]} />
 </IndexCard>
 
@@ -323,14 +324,14 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
   description="Fully customized page development approach for advanced developers, supporting complex business logic and personalized interfaces."
 >
   <LinkGrid columns={2} links={[
-    { text: "Create React Full Code Page", href: "shell-and-page/full-code-page-development#create-react-full-code-page" },
-    { text: "Vue Full Code Page", href: "shell-and-page/full-code-page-development#vue-full-code-page" }
+    { text: "创建 React 全代码页面", href: "shell-and-page/full-code-page-development#create-react-full-code-page" },
+    { text: "创建Vue全代码页面", href: "shell-and-page/full-code-page-development#vue-full-code-page" }
   ]} />
 </IndexCard>
 
 </div>
 
-## AI Integration in Portals and Pages
+## Using AI in Portals and Pages
 Enhance user experience with intelligent AI elements. Integrate AI assistants, agents, and other AI components into portals and pages to create smart, interactive applications that provide personalized assistance and automated workflows.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -338,7 +339,7 @@ Enhance user experience with intelligent AI elements. Integrate AI assistants, a
 <IndexCard
   title="Using AI Assistants in Portals"
   href="using-ai-in-portals-and-pages/using-ai-assistants-in-portals"
-  description="Learn how to integrate AI assistants into portal interfaces, providing users with intelligent help and guidance throughout their workflow."
+  description="Learn how to use AI assistants into portal interfaces, providing users with intelligent help and guidance throughout their workflow."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     📝 Coming soon...
@@ -584,33 +585,24 @@ The rich component library is your super toolkit. Drag and drop a table to displ
 
 <IndexCard
   title="Tree Components"
+  href="using-functional-components-in-pages/tree-components"
   description="Display hierarchical data structures with node expand/collapse and selection operations, providing clear data navigation experience."
-  link="/docs/devguide/using-functional-components-in-pages/tree-components"
 >
-  <div style={{padding: '20px'}}>
-    <p style={{marginBottom: '15px', color: '#666'}}>
-      <strong>Primary Use:</strong> Hierarchical data display for file directories, organizational structures, product categories, etc.
-    </p>
-    <div style={{marginBottom: '15px'}}>
-      <strong style={{color: '#333'}}>Component Types:</strong>
-      <ul style={{marginTop: '8px', paddingLeft: '20px'}}>
-        <li><strong>Tree Component:</strong> Multi-level data display with progressive loading</li>
-        <li><strong>Cascade Tree:</strong> Hierarchical data display based on self-relational fields</li>
-      </ul>
-    </div>
-    <div style={{marginBottom: '15px'}}>
-      <strong style={{color: '#333'}}>Core Features:</strong>
-      <ul style={{marginTop: '8px', paddingLeft: '20px'}}>
-        <li>Node expand/collapse operations</li>
-        <li>Single/multiple selection modes</li>
-        <li>Node click event handling</li>
-        <li>Interactive updates with other components</li>
-      </ul>
-    </div>
-    <p style={{color: '#007acc', fontWeight: '500'}}>
-      💡 Use Cases: Organizational management, file systems, product categorization, permission trees, etc.
-    </p>
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "Create Tree Component", href: "using-functional-components-in-pages/tree-components#create-tree-form-component" },
+    { text: "Configure Hierarchical Fields", href: "using-functional-components-in-pages/tree-components#configure-hierarchy-fields" },
+    { text: "Refresh Data on First Load", href: "using-functional-components-in-pages/tree-components#tree-form-refresh-on-first-load" },
+    { text: "Default Expand First Node", href: "using-functional-components-in-pages/tree-components#default-expand-first-node" },
+    { text: "Node Click Events", href: "using-functional-components-in-pages/tree-components#click-node-event" },
+    { text: "Cascade Tree", href: "using-functional-components-in-pages/tree-components#cascade-tree" },
+    { text: "Create Cascade Tree", href: "using-functional-components-in-pages/tree-components#create-cascade-tree" },
+    { text: "Configure Node Title", href: "using-functional-components-in-pages/tree-components#configure-node-title" },
+    { text: "Set Parent Node", href: "using-functional-components-in-pages/tree-components#set-parent-node" },
+    { text: "Single/Multiple Selection Mode", href: "using-functional-components-in-pages/tree-components#node-selection-mode" },
+    { text: "Cascade Tree Refresh Data on First Load", href: "using-functional-components-in-pages/tree-components#cascade-tree-refresh-on-first-load" },
+    { text: "Cascade Tree Node Click Events", href: "using-functional-components-in-pages/tree-components#cascade-tree-click-node-event" },
+    { text: "Cascade Tree Node Selection Events", href: "using-functional-components-in-pages/tree-components#cascade-tree-select-node-event" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1028,90 +1020,44 @@ Visual intelligent workflow engine. Orchestrate business processes through drag-
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Create AI Assistant Element"
+  title="创建AI助理元素"
   href="ai-assitant/create-ai-assistant"
-  description="Learn how to create AI assistant elements, configure workflows, node types, and event handling for intelligent business process automation."
+  description="学习如何创建AI助理元素，配置工作流、节点类型和事件处理，实现智能业务流程自动化。"
 >
-  <LinkGrid columns={2} links={[
-    { text: "What is AI Assistant", href: "ai-assitant/create-ai-assistant#what-is-ai-assistant" },
-    { text: "Create AI Assistant", href: "ai-assitant/create-ai-assistant#create-ai-assistant" },
-    { text: "Visual Orchestration", href: "ai-assitant/create-ai-assistant#visual-orchestration" },
-    { text: "Start Node", href: "ai-assitant/create-ai-assistant#start-node" },
-    { text: "Routing Decision", href: "ai-assitant/create-ai-assistant#routing-decision" },
-    { text: "AI Agent", href: "ai-assitant/create-ai-assistant#ai-agent" },
-    { text: "Dialog Human-Machine Interaction", href: "ai-assitant/create-ai-assistant#dialog-human-machine-interaction" },
-    { text: "Workspace Human-Machine Interaction", href: "ai-assitant/create-ai-assistant#workspace-human-machine-interaction" },
-    { text: "Function Call", href: "ai-assitant/create-ai-assistant#function-call" },
-    { text: "Conditional Branch", href: "ai-assitant/create-ai-assistant#conditional-branch" },
-    { text: "Multi-task Execution", href: "ai-assitant/create-ai-assistant#multi-task-execution" },
-    { text: "Event Type Overview", href: "ai-assitant/create-ai-assistant#event-type-overview" },
-    { text: "Frontend Workspace Events", href: "ai-assitant/create-ai-assistant#frontend-workspace-events" },
-    { text: "Backend Business Events", href: "ai-assitant/create-ai-assistant#backend-business-events" },
-    { text: "Runtime State Data", href: "ai-assitant/create-ai-assistant#runtime-state-data" },
-    { text: "Runtime State Storage Library", href: "ai-assitant/create-ai-assistant#runtime-state-storage-library" },
-    { text: "Advanced Settings", href: "ai-assitant/create-ai-assistant#advancedsettings" },
-    { text: "Usage Guide", href: "ai-assitant/create-ai-assistant#usage-guide" },
-    { text: "Welcome Message and Opening", href: "ai-assitant/create-ai-assistant#welcome-message-and-opening" },
-    { text: "Message Output", href: "ai-assitant/create-ai-assistant#message-output" },
-    { text: "Send AI Message", href: "ai-assitant/create-ai-assistant#send-ai-message" },
-    { text: "Conversation History Management", href: "ai-assitant/create-ai-assistant#conversation-history-management" },
-    { text: "Full Code Development", href: "ai-assitant/create-ai-assistant#full-code-development" },
-    { text: "Example Demo", href: "ai-assitant/create-ai-assistant#example-demo" },
-    { text: "How to Select Suitable Node Types?", href: "ai-assitant/create-ai-assistant#how-to-select-suitable-node-types" },
-    { text: "Common Causes and Solutions for Stuck Processes", href: "ai-assitant/create-ai-assistant#common-causes-and-solutions-for-stuck-processes" }
-  ]} />
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
 </IndexCard>
 
 <IndexCard
-  title="Process Orchestration and Node Configuration"
+  title="流程编排与节点配置"
   href="ai-assitant/process-orchestration-node-configuration"
-  description="Deep dive into AI assistant process orchestration techniques and detailed node configuration methods."
+  description="深入了解AI助理流程编排技术和详细的节点配置方法。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
+    📝 敬请期待...
   </div>
 </IndexCard>
 
 <IndexCard
-  title="AI Assistant Input and Output"
+  title="AI助理的输入与输出"
   href="ai-assitant/ai-assistant-input-output"
-  description="Understand AI assistant input and output configuration and data processing methods."
+  description="理解AI助理的输入输出配置和数据处理方法。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
+    📝 敬请期待...
   </div>
 </IndexCard>
 
 <IndexCard
-  title="Develop Conversational Multi-Task AI Assistant"
-  href="ai-assitant/develop-conversational-multi-task-ai-assistant"
-  description="Learn how to develop process-oriented multi-task conversational AI assistants for complex business scenarios."
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
-</IndexCard>
-
-<IndexCard
-  title="Develop Human-AI Collaboration Enterprise Assistant"
-  href="ai-assitant/develop-human-ai-collaboration-enterprise-assistant"
-  description="Build enterprise-level AI assistant applications that collaborate with UI pages for human-AI interaction."
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
-</IndexCard>
-
-<IndexCard
-  title="AI Assistant API Exposure"
+  title="AI助理的API开放"
   href="ai-assitant/ai-assistant-api-integration"
-  description="Expose AI assistant capabilities through API interfaces for external system integration."
+  description="通过API接口开放AI助理能力，实现与外部系统的集成。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
+    📝 敬请期待...
   </div>
 </IndexCard>
-
 </div>
 
 ## Data Modeling
@@ -1579,9 +1525,10 @@ Make enterprise approval processes efficient and orderly. Design flowcharts thro
   href="approval-workflow/calling-business-logic-elements-in-approval-workflow"
   description="Learn how to call business logic elements within approval processes to implement complex business rules and automated decisions."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Calling Business Logic Through Approval Events", href: "approval-workflow/calling-business-logic-elements-in-approval-workflow#calling-business-logic-through-approval-events" },
+    { text: "Function Processing in Subprocesses", href: "approval-workflow/calling-business-logic-elements-in-approval-workflow#function-processing-in-subprocesses" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1612,7 +1559,7 @@ Easily handle various file requirements in applications. Support file upload and
     { text: "Specify Disk Storage Directory", href: "file-processing/file-storage#specify-disk-storage-directory" },
     { text: "Cloud Storage Service Configuration", href: "file-processing/file-storage#cloud-storage-service-configuration" },
     { text: "Alibaba Cloud OSS", href: "file-processing/file-storage#aliyun-oss" },
-    { text: "China Mobile Cloud EOS", href: "file-processing/file-storage#移动云eos" },
+    { text: "China Mobile Cloud EOS", href: "file-processing/file-storage#china-mobile-cloud-eos" },
     { text: "MinIO", href: "file-processing/file-storage#minio" },
     { text: "Qiniu Cloud", href: "file-processing/file-storage#aliyun-oss" },
     { text: "Use Environment Variables to Prevent Config Info Leak", href: "file-processing/file-storage#prevent-config-info-leak-with-env-variables" },
@@ -1748,7 +1695,6 @@ Expose application capabilities for external system calls. Generate standard API
   href="api-exposure/api-exposure-examples-for-various-elements"
   description="Comprehensive examples demonstrating how to expose different types of elements as APIs, including data models, services, and custom functions."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     <LinkGrid links={[
         { text: "API Authorization for Service Functions", href: "api-exposure/api-exposure-examples-for-various-elements#service-function-api-authorization" },
         { text: "API Authorization for Data Models", href: "api-exposure/api-exposure-examples-for-various-elements#data-model-api-authorization" },
@@ -1757,7 +1703,6 @@ Expose application capabilities for external system calls. Generate standard API
         { text: "API Authorization for AI Assistants", href: "api-exposure/api-exposure-examples-for-various-elements#ai-assistant-api-authorization" },
         { text: "API Authorization for Approval Processes", href: "api-exposure/api-exposure-examples-for-various-elements#approval-process-api-authorization" }
     ]} />
-  </div>
 </IndexCard>
 
 <IndexCard
@@ -1765,13 +1710,11 @@ Expose application capabilities for external system calls. Generate standard API
   href="api-exposure/using-sdk-to-call-authorized-element-apis"
   description="Learn how to use official SDKs to call authorized element APIs, including authentication, request handling, and error management."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     <LinkGrid links={[
         { text: "Using Python SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-python-sdk" },
         { text: "Using Node.js SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-nodejs-sdk" },
         { text: "Using Java SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-java-sdk" }
     ]} />
-  </div>
 </IndexCard>
 
 <IndexCard
@@ -1779,11 +1722,9 @@ Expose application capabilities for external system calls. Generate standard API
   href="api-exposure/using-cross-app-service-elements-to-call-authorized-apis"
   description="Implement cross-application API calls using service elements, enabling seamless integration between different JitAi applications."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     <LinkGrid links={[
         { text: "Using Cross-App Service Elements", href: "api-exposure/using-cross-app-service-elements-to-call-authorized-apis#using-cross-app-service-elements" }
     ]} />
-  </div>
 </IndexCard>
 
 </div>

@@ -57,7 +57,7 @@ JitAi支持在以下两个地方添加存储服务：
 
 在阿里云OSS配置面板中，配置文件名、元素路径、accessKeyId、accessKeySecret、endPoint、bucketName等参数。
 
-### 移动云EOS
+### 移动云EOS {#china-mobile-cloud-eos}
 触发移动云EOS配置面板的方式和阿里云OSS一样，配置参数也一样，可参考 [阿里云OSS](#aliyun-oss)
 
 ![](./img/1/2025-08-28-15-24-50.png)

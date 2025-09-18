@@ -133,13 +133,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
            type: 'docSidebar',
            sidebarId: 'devguideSidebar',
            position: 'left',
-           label: 'Development Guide',
+           label: 'Developer Guide',
          },
          {
            type: 'docSidebar',
            sidebarId: 'extguideSidebar',
            position: 'left',
-           label: 'Extension Guide',
+           label: 'Extending',
          },
          {
            type: 'docSidebar',
@@ -204,11 +204,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               to: '/docs/tutorial/',
             },
             {
-              label: 'Development Guide',
+              label: 'Developer Guide',
               to: '/docs/devguide/',
             },
             {
-              label: 'Extension Guide',
+              label: 'Extending',
               to: '/docs/extguide/',
             },
             {

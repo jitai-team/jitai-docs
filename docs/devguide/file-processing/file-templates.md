@@ -3,238 +3,208 @@ sidebar_position: 2
 slug: file-templates
 ---
 
-# 创建文件模板
-文件模板是一种文档生成工具，通过预设变量实现动态内容填充，可用于动态生成销售合同、生产工单、发票单据。
-JitAi支持Word模板和Excel模板。
+# Creating File Templates {#file-template}
+File templates are document generation tools that achieve dynamic content filling through preset variables, and can be used to dynamically generate sales contracts, production work orders, and invoice documents.
+JitAi supports Word templates and Excel templates.
 
-## Word模板 {#word-template}
-采销人员为不同客户准备合同时，合同格式固定但客户信息和订单内容不同。通过Word模板设置客户姓名、产品名称、数量、金额等变量，快速生成个性化合同文档。
+## Word Templates {#word-template}
+When procurement and sales staff prepare contracts for different customers, the contract format is fixed but customer information and order content vary. Through Word templates, you can set variables such as customer names, product names, quantities, and amounts to quickly generate personalized contract documents.
 
 ![](./img/2/2025-08-29-09-40-12.png)
  
-创建好的Word模板包括以下2个组成部分：
-1. 模板变量，在变量中设定变量名称，[数据类型](../../reference/framework/JitORM/data-types)和[数据表模型](../data-modeling/data-table-model)。
-2. Word文档，在Word文档中使用模板变量，在调用打印服务时，根据Word文档中的模板变量名称进行数据替换。
+A created Word template consists of the following 2 components:
+1. Template variables, where variable names, [data types](../../reference/framework/JitORM/data-types), and [data table models](../data-modeling/data-table-model) are set in the variables.
+2. Word document, where template variables are used in the Word document, and data replacement is performed according to the template variable names in the Word document when calling the print service.
 
-本文档中使用的原始数据：
+Original data used in this document:
 
 ![](./img/2/2025-08-29-17-24-59.png)
 
-配置好模板变量的Word文档：
+Word document configured with template variables:
 
 ![](./img/2/2025-08-29-10-48-20.png)
 
-打印效果展示：
+Print effect display:
 
 ![](./img/2/2025-08-29-11-14-13.png)
 
-### 创建Word模板 {#create-word-template}
+### Creating Word Templates {#create-word-template}
 ![](./img/2/2025-08-29-09-07-21.png)
 
-鼠标放到`+`按钮上，在“更多”选项，“文件模板”子选项中选中Word模板。
+Place the mouse over the `+` button, select Word template in the "More" option, "File Templates" sub-option.
 
 ![](./img/2/2025-08-29-09-08-03.png)
 
-在新建Word模板对话框填写模板名称后，点击`确定`。
+Fill in the template name in the New Word Template dialog box, then click `Confirm`.
 
-### 创建Word模板变量 {#create-word-template-variables}
+### Creating Word Template Variables {#create-word-template-variables}
 ![](./img/2/2025-08-29_10-20-43.gif)
 
-点击`+ 添加模板变量`按钮，在弹出的对话框中填写变量名称和 [数据类型](../../reference/framework/JitORM/data-types)。
+Click the `+ Add Template Variable` button, and fill in the variable name and [data types](../../reference/framework/JitORM/data-types) in the popup dialog.
 
 :::tip
-    高级数据类型，如单行数据，多行数据，需要配置目标数据模型
+Advanced data types, such as single-row data and multi-row data, require configuring the target data model.
 :::
 
-配置好后的模板变量如下：
+The configured template variables are as follows:
 
 ![](./img/2/2025-09-01_10-32-43.gif)
 
-### 在Word文档中使用模板变量 {#use-template-variables-in-word}
-在Word文档中使用模板变量，需要以下三步：
+### Using Template Variables in Word Documents {#use-template-variables-in-word}
+Using template variables in Word documents requires the following three steps:
 
-在本地电脑上创建Word文档（目前JitAi仅支持.docx格式文件），将变量代码复制到Word文档中并完成布局排版设计，将设计好的Word文档上传到平台。
+Create a Word document on your local computer (currently JitAi only supports .docx format files), copy variable codes to the Word document and complete layout design, then upload the designed Word document to the platform.
 
 ![](./img/2/2025-08-29-10-32-15.png)
 
-#### 从JitAi平台复制模板变量
+#### Copying Template Variables from JitAi Platform {#copy-template-variables-in-word}
 ![](./img/2/2025-08-29_10-35-49.gif)
 
-鼠标放到变量名称上，点击复制复制变量代码，在下拉面板中选择“值”选项的”展示单行文本”。
+Place the mouse over the variable name, click copy to copy the variable code, and select "Display Single-line Text" in the "Value" option of the dropdown panel.
 
 :::tip
-“展示单行文本”是模板变量的一种常用展示样式，变量的值在文档中以单行文本形式展示。
+"Display Single-line Text" is a commonly used display style for template variables, where the variable's value is displayed as single-line text in the document.
 
-JitAi支持**30+种模板变量样式**，包括文本处理、数值计算、日期格式化、列表操作等，帮助您实现各种复杂的数据展示需求。详细用法请参考：[模板变量样式说明](#template-variable-style-description)。
+JitAi supports **30+ template variable styles**, including text processing, numerical calculations, date formatting, list operations, etc., helping you achieve various complex data display requirements. For detailed usage, please refer to: [Template Variable Style Description](#template-variable-style-description).
 :::
 
-#### 在Word文档中使用变量：
+#### Using Variables in Word Documents: {#use-variables-in-word}
 ![](./img/2/2025-08-29-10-41-50.png)
 
-复制、粘贴其他变量：
+Copy and paste other variables:
 
 ![](./img/2/2025-08-29_10-50-13.gif)
 
 ![](./img/2/2025-08-29-10-45-29.png)
 
-最终Word文档内容：
+Final Word document content:
 
 ![](./img/2/2025-08-29-10-48-20.png)
 
-#### 上传配置好的Word文档。
+#### Upload the Configured Word Document. {#upload-configured-word-document}
 ![](./img/2/2025-08-29-17-07-50.png)
 
-### 打印Word模板 {#print-word-template}
-![](./img/2/2025-08-29-17-09-46.png)
+:::info Generating and Printing Files
+After template creation is complete, for detailed instructions on how to generate and print files, please refer to: [Generating and Printing Files Using File Templates](./generating-and-printing-files-using-file-templates)
+:::
 
-调用打印服务的组件的**数据模型**需要与模板变量的**目标数据表**保持一致。
 
-一般在**按钮**事件中调用打印服务：
+## Excel Templates {#excel-template}
+When the finance department creates monthly sales reports, the report format is fixed but data needs to be dynamically filled. Through Excel templates, you can set variables such as sales personnel, product categories, sales quantities, and amounts to quickly generate standardized sales analysis reports.
 
-![](./img/2/2025-08-29_11-03-18.gif)
-
-1. 在事件编辑区，点击语句中的”请选择“，在弹出窗中选择”工具函数“下的”打印文件模板“选项，会生成工具函数.打印文件模板。
-2. 点击工具函数.打印文件模板的`设置参数`按钮，在弹出的对话框中设置模板类型、文件模板，并给模板变量赋值。
-
-配置好的参数如下图：
-
-![](./img/2/2025-08-29-11-05-36.png)
-
-使用效果如下图：
-
-![](./img/2/2025-08-29_11-10-51.gif)
-
-## Excel模板 {#excel-template}
-财务部门制作月度销售报表时，报表格式固定但数据需要动态填充。通过Excel模板设置销售人员、产品类别、销售数量、金额等变量，快速生成标准化销售分析报表。
-
-本文档中使用的原始数据：
+Original data used in this document:
 
 ![](./img/2/2025-08-29-17-24-59.png)
 
-配置好模板变量的Excel文档
+Excel document configured with template variables:
 
 ![](./img/2/2025-09-01-10-58-16.png)
 
-打印效果
+:::info Generating and Printing Files
+After template creation is complete, for detailed instructions on how to generate and print files, please refer to: [Generating and Printing Files Using File Templates](./generating-and-printing-files-using-file-templates)
+:::
 
-![](./img/2/2025-09-01-10-59-19.png)
-
-### 创建Excel模板 {#create-excel-template}
-Excel模板的创建方式和Word模板创建方式一样。
+### Creating Excel Templates {#create-excel-template}
+Creating Excel templates is the same as creating Word templates.
 
 ![](./img/2/2025-08-29_13-58-35.gif)
 
-鼠标放到`+`按钮上，在"更多"选项，"文件模板"子选项中选中Excel模板。
+Place the mouse over the `+` button, select Excel template in the "More" option, "File Templates" sub-option.
 
 ![](./img/2/2025-09-01-11-48-18.png)
 
-创建好的Excel模板包括以下2个组成部分：
-1. 模板变量，在变量中设定变量名称，[数据类型](../../reference/framework/JitORM/data-types)和[数据表模型](../data-modeling/data-table-model)。
-2. Excel文档，在Excel文档中使用模板变量，在调用打印服务时，根据Excel文档中的模板变量名称进行数据替换。
+A created Excel template consists of the following 2 components:
+1. Template variables, where variable names, [data types](../../reference/framework/JitORM/data-types), and [data table models](../data-modeling/data-table-model) are set in the variables.
+2. Excel document, where template variables are used in the Excel document, and data replacement is performed according to the template variable names in the Excel document when calling the print service.
 
-### 创建Excel模板变量 {#create-excel-template-variables}
+### Creating Excel Template Variables {#create-excel-template-variables}
 ![](./img/2/2025-08-29_14-13-11.gif)
 
-点击`+ 添加模板变量`按钮，在弹出的对话框中填写变量名称和 [数据类型](../../reference/framework/JitORM/data-types)。
+Click the `+ Add Template Variable` button, and fill in the variable name and [data types](../../reference/framework/JitORM/data-types) in the popup dialog.
 
-配置好的变量如下图：
+The configured variables are shown below:
 
 ![](./img/2/2025-08-29-16-24-44.png)
 
-### 在Excel文档中使用模板变量 {#use-template-variables-in-excel}
-在Excel文档中使用模板变量，需要以下三步：
-在本地电脑上创建Excel文档（目前JitAi仅支持.xlsx格式文件），将变量代码复制到Excel文档中并完成布局排版设计，将设计好的Excel文档上传到平台。
+### Using Template Variables in Excel Documents {#use-template-variables-in-excel}
+Using template variables in Excel documents requires the following three steps:
+Create an Excel document on your local computer (currently JitAi only supports .xlsx format files), copy variable codes to the Excel document and complete layout design, then upload the designed Excel document to the platform.
 
-#### 从JitAi平台复制模板变量
+#### Copying Template Variables from JitAi Platform {#copy-template-variables-in-excel}
 ![](./img/2/2025-09-01_11-36-45.gif)
 
-鼠标放到变量名称上，点击复制复制变量代码，在下拉面板中选择“值”选项的“展示多行数据”。
+Place the mouse over the variable name, click copy to copy the variable code, and select "Display Multi-row Data" in the "Value" option of the dropdown panel.
 
 :::tip
-“展示多行数据”，是将值在文档中通过循环语句展示成多行多列。
+"Display Multi-row Data" displays values in the document through loop statements to show multiple rows and columns.
 
-JitAi支持**30+种模板变量样式**，包括文本处理、数值计算、日期格式化、列表操作等，帮助您实现各种复杂的数据展示需求。详细用法请参考：[模板变量样式说明](#template-variable-style-description)。
+JitAi supports **30+ template variable styles**, including text processing, numerical calculations, date formatting, list operations, etc., helping you achieve various complex data display requirements. For detailed usage, please refer to: [Template Variable Style Description](#template-variable-style-description).
 :::
 
  
-#### 在Excel文档中粘贴变量
+#### Pasting Variables in Excel Documents {#paste-variables-in-excel}
 ![](./img/2/2025-08-29-16-19-46.png)
 
-在Excel文件中粘贴刚才复制的变量，调整第二行的变量顺序与表头对应。第二行的变量名跟目标表模型中的表字段名称对应。
+Paste the variables just copied in the Excel file, and adjust the variable order in the second row to correspond with the table headers. The variable names in the second row correspond to the table field names in the target table model.
 
 :::tip
-1. 如果需要横向打印，在Excel文件中直接调整纸张方向。设置好变量后可以先使用打印预览功能预览最终打印效果。
-2. 针对部分特定样式，如展示图片/超链接/多行数据，要注意检查对应的变量输出能否满足数据要求。
-3. 在进行模板代码布局排版时，要结合预计输出的数据预留足够的单元格大小，如多行文本/图片。
+1. If landscape printing is needed, adjust the paper orientation directly in the Excel file. After setting variables, you can first use the print preview function to preview the final print effect.
+2. For specific styles such as displaying images/hyperlinks/multi-row data, pay attention to checking whether the corresponding variable output can meet the data requirements.
+3. When performing template code layout design, reserve sufficient cell size for expected output data such as multi-line text/images.
 :::
 
-目标表模型变量名称：
+Target table model variable names:
 
 ![](./img/2/2025-08-29-16-30-16.png)
 
-#### 上传调整好的Excel文档
+#### Upload the Adjusted Excel Document {#upload-configured-excel-document}
 ![](./img/2/2025-08-29-14-22-04.png)
 
-### 打印Excel模板 {#print-excel-template}
-在需要调用模板打印的组件中创建按钮。
 
-![](./img/2/2025-08-29-16-35-09.png)
+## Template Variable Style Description {#template-variable-style-description}
+### Text Styles {#text-style}
+| Type | Title | Function Name | Notes | Template Code |
+|------|-------|--------------|--------|--------------|
+| Text | Display Single-line Text | ToString | Display corresponding input as single-line text | `{{a.value.ToString}}` |
+| Text | Display Multi-line Text | ToLine | Convert to multi-line text display based on line breaks in input | `{{a.value.ToLine}}` |
+| Text | Display Image | ToPicture | Convert corresponding input to image display | `{{a.value.ToPicture}}` |
+| Text | Display Hyperlink | ToLink | Convert corresponding input to hyperlink display | `{{a.value.ToLink}}` |
+| Text | Display Dropdown Value | ToSelect | Convert corresponding input to dropdown display | `{{a.value.ToSelect}}` |
+| Text | Equal Width Line Break | ToEquallyLine(int) | Line break corresponding input according to specified length, no line break by default | `{{a.value.ToEquallyLine(int)}}` |
+| Text | Left Truncate Specified Length | ToTrimLeft(int) | Truncate corresponding input to specified length for display, no truncation by default | `{{a.value.ToTrimLeft(int)}}` |
+| Text | Right Truncate Specified Length | ToTrimRight(int) | Truncate corresponding input to specified length for display, no truncation by default | `{{a.value.ToTrimRight(int)}}` |
+| Text | Generate QR Code | genQrCode() | Generate QR code based on text content | `{{a.value.genQrCode()}}` |
+| Text | Generate Barcode | genBarcode() | Generate barcode based on text content, requires barcode type (codeType) | `{{a.value.genBarcode(codeType="EAN13")}}` |
 
-配置按钮事件：
+### Numeric Styles {#numeric-style}
+| Type | Title | Function Name | Notes | Template Code |
+|------|-------|--------------|--------|--------------|
+| Numeric | Display Number | ToNum | Display input number directly | `{{a.value.ToNum}}` |
+| Numeric | Keep Specified Decimal Places | ToRound(int) | Keep specified digits of input number (round), default no retention means keep all | `{{a.value.ToRound(int)}}` |
+| Numeric | Truncate Specified Digits | ToTruncate(int) | Keep specified digits of input number (truncate), default no retention means no truncation | `{{a.value.ToTruncate(int)}}` |
+| Numeric | Take Absolute Value | ToAbs | Take absolute value of input number | `{{a.value.ToAbs}}` |
 
-![](./img/2/2025-08-29_16-36-33.gif)
+### Date-Time Styles {#date-time-style}
+| Type | Title | Function Name | Notes | Template Code |
+|------|-------|--------------|--------|--------------|
+| Date-Time | Display Date-Time Format | ToDatetime | Display in year-month-day hour-minute-second YYYMMDDthhmmss format | `{{a.value.ToDatetime}}` |
+| Date-Time | Display Date Format | ToDate | Display in year-month-day YYYYMMDD format | `{{a.value.ToDate}}` |
+| Date-Time | Display Time Format | ToTime | Display in hour-minute-second thhmmss format | `{{a.value.ToTime}}` |
 
-1. 在事件编辑区，点击语句中的”请选择“，在弹出窗中选择”工具函数“下的”打印文件模板“选项，会生成工具函数.打印文件模板。
-2. 点击工具函数.打印文件模板的`设置参数`按钮，在弹出框中设置模板类型、文件模板，并给模板变量赋值。
-
-最后，检验模板打印效果：
-
-![](./img/2/2025-08-29_16-43-13.gif)
-
-## 模板变量样式说明 {#template-variable-style-description}
-### 文本样式 {#text-style}
-| 类型 | 标题 | 函数名 | 备注 | 模板代码 |
-|------|------|--------|------|----------|
-| 文本类 | 展示单行文本 | ToString | 将对应输入以单行文本形式展示 | `{{a.value.ToString}}` |
-| 文本类 | 展示多行文本 | ToLine | 依据输入中的回车转换为多行文本展示 | `{{a.value.ToLine}}` |
-| 文本类 | 展示图片 | ToPicture | 将对应输入转换为图片展示； | `{{a.value.ToPicture}}` |
-| 文本类 | 展示超链接 | ToLink | 将对应输入转换为超链接展示； | `{{a.value.ToLink}}` |
-| 文本类 | 展示下拉值 | ToSelect | 将对应输入转换为下拉框展示； | `{{a.value.ToSelect}}` |
-| 文本类 | 等宽换行 | ToEquallyLine(int) | 将对应输入按照指定长度切换行，默认不换行 | `{{a.value.ToEquallyLine(int)}}` |
-| 文本类 | 左截断指定长度 | ToTrimLeft(int) | 将对应输入截断指定长度展示，默认不截断 | `{{a.value.ToTrimLeft(int)}}` |
-| 文本类 | 右截断指定长度 | ToTrimRight(int) | 将对应输入截断指定长度展示，默认不截断 | `{{a.value.ToTrimRight(int)}}` |
-| 文本类 | 生成二维码 | genQrCode() | 基于文本内容生成二维码。 | `{{a.value.genQrCode()}}` |
-| 文本类 | 生成条形码 | genBarcode() | 基于文本内容生成条形码，需传入二维码类型(codeType) | `{{a.value.genBarcode(codeType="EAN13")}}` |
-
-### 数值类样式 {#numeric-style}
-| 类型 | 标题 | 函数名 | 备注 | 模板代码 |
-|------|------|--------|------|----------|
-| 数值类 | 展示数值 | ToNum | 将输入的数值直接展示 | `{{a.value.ToNum}}` |
-| 数值类 | 保留指定小数位 | ToRound(int) | 将输入的数值保留指定位数（四舍五入），默认不保留表示都保留 | `{{a.value.ToRound(int)}}` |
-| 数值类 | 截断指定位数 | ToTruncate(int) | 将输入的数值保留指定位数（截断），默认不保留表示不截断 | `{{a.value.ToTruncate(int)}}` |
-| 数值类 | 取绝对值 | ToAbs | 将输入的数值取绝对值 | `{{a.value.ToAbs}}` |
-
-### 日期时间类样式 {#date-time-style}
-| 类型 | 标题 | 函数名 | 备注 | 模板代码 |
-|------|------|--------|------|----------|
-| 日期时间类 | 展示日期时间格式 | ToDatetime | 获取年月日时分秒YYYMMDDthhmmss形式展示 | `{{a.value.ToDatetime}}` |
-| 日期时间类 | 展示日期格式 | ToDate | 获取年月日YYYYMMDD形式展示； | `{{a.value.ToDate}}` |
-| 日期时间类 | 展示时间格式 | ToTime | 获取时分秒thhmmss形式展示； | `{{a.value.ToTime}}` |
-
-### 多值类样式（复杂类型） {#multi-value-complex-types}
-| 类型 | 标题 | 函数名 | 备注 | 模板代码 |
-|------|------|--------|------|----------|
-| 列表 | 展示多行数据 | ToDataSet | 获取对应输入以数据集合展示（多行模板，字典不区分横向/纵向，多行多列展示） | `{% for each in data.value.ToDataSet %} {{each.name}} {{each.age}} {% endfor %}` |
-| 列表 | 横向展示列表 | ToList | 获取数据集横向展示（对应多格适应）（默认获取文本值展示） | `{% for each in data.value.ToList %} {{each}} {% endfor %}` |
-| 列表 | 纵向展示列表 | ToList | 获取数据集纵向展示（对应多格适应）（默认获取文本值展示） | `{% for each in data.value.ToList %} {{each}} {% endfor %}` |
-| 列表 | 横向展示图片列表 | ToListPicture | 获取图片数据集横向展示 | `{{a.value.ToListPicture}}` |
-| 列表 | 纵向展示图片列表 | ToListColumnPicture | 获取图片数据集纵向展示 | `{{a.value.ToListColumnPicture}}` |
-| 列表 | 展示列表首个数据 | ToFirst | 获取对应输入集合中第一个对象展示；(默认获取文本值展示) | `{{a.value.ToFirst}}` |
-| 列表 | 展示列表首张图片 | ToFirstPicture | 获取对应输入集合中第一个对象展示；(使用图片渲染) | `{{a.value.ToFirstPicture}}` |
-| 列表 | 展示列表最大值 | ToMax | 获取对应输入集合最大值 | `{{a.value.ToMax}}` |
-| 列表 | 展示列表最小值 | ToMin | 获取对应输入集合最小值 | `{{a.value.ToMin}}` |
-| 列表 | 展示列表平均值 | ToAvg | 获取对应输入集合平均值 | `{{a.value.ToAvg}}` |
-| 列表 | 展示列表总和 | ToSum | 获取对应输入集合之和 | `{{a.value.ToSum}}` |
-| 列表 | 展示列表个数 | ToCount | 获取对应输入集合个数 | `{{a.value.ToCount}}` |
-| 字典 | 横向展示字典 | ToDictionary | 获取字典数据横向展示 | `{{a.value.ToDictionary.key}}` |
-| 字典 | 纵向展示字典 | ToDictionary | 获取字典数据纵向展示 | `{{a.value.ToDictionary.key}}` |
+### Multi-Value Styles (Complex Types) {#multi-value-complex-types}
+| Type | Title | Function Name | Notes | Template Code |
+|------|-------|--------------|--------|--------------|
+| List | Display Multi-row Data | ToDataSet | Display corresponding input as data set (multi-row template, dictionary regardless of horizontal/vertical, multi-row multi-column display) | `{% for each in data.value.ToDataSet %} {{each.name}} {{each.age}} {% endfor %}` |
+| List | Display List Horizontally | ToList | Display data set horizontally (multi-cell adaptation) (default text value display) | `{% for each in data.value.ToList %} {{each}} {% endfor %}` |
+| List | Display List Vertically | ToList | Display data set vertically (multi-cell adaptation) (default text value display) | `{% for each in data.value.ToList %} {{each}} {% endfor %}` |
+| List | Display Image List Horizontally | ToListPicture | Display image data set horizontally | `{{a.value.ToListPicture}}` |
+| List | Display Image List Vertically | ToListColumnPicture | Display image data set vertically | `{{a.value.ToListColumnPicture}}` |
+| List | Display First Data of List | ToFirst | Display the first object in corresponding input collection (default text value display) | `{{a.value.ToFirst}}` |
+| List | Display First Image of List | ToFirstPicture | Display the first object in corresponding input collection (using image rendering) | `{{a.value.ToFirstPicture}}` |
+| List | Display List Maximum Value | ToMax | Get maximum value of corresponding input collection | `{{a.value.ToMax}}` |
+| List | Display List Minimum Value | ToMin | Get minimum value of corresponding input collection | `{{a.value.ToMin}}` |
+| List | Display List Average Value | ToAvg | Get average value of corresponding input collection | `{{a.value.ToAvg}}` |
+| List | Display List Sum | ToSum | Get sum of corresponding input collection | `{{a.value.ToSum}}` |
+| List | Display List Count | ToCount | Get count of corresponding input collection | `{{a.value.ToCount}}` |
+| Dictionary | Display Dictionary Horizontally | ToDictionary | Display dictionary data horizontally | `{{a.value.ToDictionary.key}}` |
+| Dictionary | Display Dictionary Vertically | ToDictionary | Display dictionary data vertically | `{{a.value.ToDictionary.key}}` |

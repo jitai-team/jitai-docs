@@ -3,56 +3,56 @@ sidebar_position: 9
 slug: data-object-model
 ---
 
-# Data Object Model
-数据对象模型（Data Object Model）是一种专为全代码开发模式设计的数据结构，类似于 DTO（Data Transfer Object，数据传输对象），又称`无表模型`。它由开发者根据具体业务需求自定义，不直接映射或关联任何数据库表。数据对象模型主要用于在服务函数、事件处理、流程编排等业务逻辑中，进行数据的结构化表达、传递与转换。通过数据对象模型，开发者可以灵活定义多层嵌套、复杂组合的数据结构，实现不同模块间的数据标准化交互，提升代码的可维护性、复用性和业务解耦能力。数据对象模型非常适合处理复杂业务逻辑、多层数据交互、临时数据封装等场景。
+# Data Object Model {#data-object-model}
+The Data Object Model is a data structure specifically designed for full-code development mode, similar to DTO (Data Transfer Object), also known as `Table-less Model`. It is customized by developers according to specific business requirements and does not directly map or associate with any database tables. Data object models are mainly used in business logic such as service functions, event handling, and workflow orchestration for structured expression, transmission, and transformation of data. Through data object models, developers can flexibly define multi-layered nested and complex combined data structures, enabling standardized data interaction between different modules, and improving code maintainability, reusability, and business decoupling capabilities. Data object models are very suitable for handling complex business logic, multi-layer data interaction, temporary data encapsulation, and other scenarios.
 
-## 数据对象模型创建 {#data-object-model-creation}
-JitAi支持可视化创建对象模型，字段和函数仅支持全代码编辑。
+## Data Object Model Creation {#data-object-model-creation}
+JitAi supports visual creation of object models, with fields and functions only supporting full-code editing.
 
-![新建数据对象模型](./img/create-data-object-model.png)
+![Create Data Object Model](./img/create-data-object-model.png)
 
-在开发区的元素树中，点击数据模型右侧的`+`按钮，在弹出的列表中选择`数据对象模型`，即可打开`新建数据对象模型`弹窗。
+In the element tree of the development area, click the `+` button on the right side of Data Models, select `Data Object Model` from the popup list to open the `New Data Object Model` dialog.
 
-![数据对象模型弹窗](./img/data-object-model-popup.png)
+![Data Object Model Dialog](./img/data-object-model-popup.png)
 
-在`新建数据对象模型`弹窗中，填写模型名称（系统会自动生成英文名），点击`确定`即可完成创建，并自动进入数据对象模型的全代码编辑界面。
+In the `New Data Object Model` dialog, fill in the model name (the system will automatically generate the English name), click `Confirm` to complete the creation, and automatically enter the full-code editing interface of the data object model.
 
-## 数据对象模型使用 {#data-object-model-usage}
-数据对象模型的使用非常灵活，适用于服务函数、事件处理等业务逻辑中，作为输入参数或输出结果的数据载体，实现不同模块间的数据标准化传递。在实际开发过程中，数据对象模型常用于表达和转换复杂的数据结构，避免直接操作数据库表，从而提升代码的可维护性和复用性。同时，数据对象模型支持多层嵌套和组合，能够满足复杂业务场景下的数据组织需求。
+## Data Object Model Usage {#data-object-model-usage}
+The usage of data object models is very flexible, suitable for business logic such as service functions and event handling, serving as data carriers for input parameters or output results, and enabling standardized data transmission between different modules. In actual development processes, data object models are commonly used to express and transform complex data structures, avoiding direct database table operations, thereby improving code maintainability and reusability. Additionally, data object models support multi-layered nesting and composition, meeting data organization requirements in complex business scenarios.
 
-![数据对象模型全代码](./img/data-object-model-full-code.png)
+![Data Object Model Full Code](./img/data-object-model-full-code.png)
 
-在全代码编辑界面中，开发者可以通过点击左侧文件列表中的 `model.py` 文件，便捷地查看和编辑数据对象模型的具体实现。数据对象模型需继承平台提供的基类，并可根据业务需求灵活定义属性（字段）和方法。
+In the full-code editing interface, developers can conveniently view and edit the specific implementation of data object models by clicking the `model.py` file in the left file list. Data object models need to inherit from the base class provided by the platform and can flexibly define properties (fields) and methods according to business requirements.
 
-以下是一个数据对象模型的典型使用流程：
+The following is a typical usage flow of a data object model:
 
-## 自定义字段 {#custom-field}
-在对象模型的 `model.py` 文件中，开发者可以根据业务需求自定义所需的字段。下图展示了对象模型字段的定义界面：
+## Custom Fields {#custom-field}
+In the `model.py` file of the object model, developers can customize the required fields according to business needs. The following figure shows the field definition interface of the object model:
 
-![对象模型字段定义](./img/object-model-field-definition.png)
+![Object Model Field Definition](./img/object-model-field-definition.png)
 
-完成字段定义后，字段的详细配置方式可参考[数据表模型](./data-table-model#source-code-mode)。
+After completing field definition, detailed field configuration methods can be referenced in [Data Table Model](./data-table-model#source-code-mode).
 
-:::tip 注意
-自定义字段配置后检查是否导入`datatypes`包。
+:::tip Note
+After configuring custom fields, check whether the `datatypes` package is imported.
 :::
 
-## 模型函数重写 {#model-function-override}
-为了实现自定义的数据查询逻辑，通常需要重写模型增删查改方法，这里以重写`query`查询方法为例。下图为对象模型方法重写的界面示例：
+## Model Function Override {#model-function-override}
+To implement custom data query logic, it is usually necessary to override model CRUD methods. Here we take overriding the `query` method as an example. The following figure shows an interface example of object model method override:
 
-![对象模型方法重写](./img/object-model-method-override.png)
+![Object Model Method Override](./img/object-model-method-override.png)
 
-在完成方法重写后，`query` 方法即可为表格组件等提供自定义的数据查询能力。
+After completing method override, the `query` method can provide custom data query capabilities for table components and other elements.
 
-![对象模型表格展示](./img/object-model-table-display.png)
+![Object Model Table Display](./img/object-model-table-display.png)
 
-最后，在页面中添加表格组件，并将数据对象模型设置为数据源，即可展示 `query` 方法返回的数据内容。
+Finally, add a table component to the page and set the data object model as the data source to display the data content returned by the `query` method.
 
-除了可以重写 `query`（数据查询）方法，还可以根据业务需求重写如 `create`（新增数据）、`updateByPK`（根据主键更新）、`deleteByPK`（根据主键删除）等方法，实现自定义的数据处理逻辑。例如，你可以在 `create` 方法中实现新增数据的校验和加工，在 `updateByPK` 方法中处理数据更新前后的业务校验和转换，在 `deleteByPK` 方法中进行权限校验或级联处理。除此之外，还可以扩展自定义方法，用于复杂的数据转换、聚合或校验等业务需求。通过重写和扩展这些方法，开发者能够灵活控制数据对象模型的行为，满足多样化的业务场景。
+Besides overriding the `query` (data query) method, you can also override methods such as `create` (add data), `updateByPK` (update by primary key), `deleteByPK` (delete by primary key) according to business needs to implement custom data processing logic. For example, you can implement validation and processing of new data in the `create` method, handle business validation and transformation before and after data updates in the `updateByPK` method, and perform permission validation or cascading processing in the `deleteByPK` method. Additionally, you can extend custom methods for complex data transformation, aggregation, or validation business requirements. Through overriding and extending these methods, developers can flexibly control the behavior of data object models to meet diverse business scenarios.
 
-## 定义新函数 {#define-new-function}
-在数据对象模型的 `model.py` 文件中，开发者不仅可以自定义字段，还可以根据实际业务需求灵活添加自定义函数。自定义函数可用于实现复杂的数据处理、业务逻辑封装、数据校验、格式转换等操作，显著提升模型的扩展性、灵活性和代码复用能力。
+## Defining New Functions {#define-new-function}
+In the `model.py` file of the data object model, developers can not only customize fields but also flexibly add custom functions according to actual business needs. Custom functions can be used to implement complex data processing, business logic encapsulation, data validation, format conversion, and other operations, significantly improving model extensibility, flexibility, and code reusability.
 
-![新增函数](./img/data-object-model-add-function.gif)
+![Add New Function](./img/data-object-model-add-function.gif)
 
-添加自定义函数时，建议参考已有方法的实现方式，在 `model.py` 文件中编写函数代码。为确保平台能够正确识别和调用新定义的方法，需要在 `e.json` 文件的 `functionList` 中进行函数声明。只有在 `functionList` 中声明的自定义函数，才能在页面、服务函数等场景中被正常引用和调用。继承自基类并重写的方法，无需在每个对象模型中重复声明。具体的函数声明配置可参考[元素目录规范](../../reference/runtime-platform/JAAP#element-directory-specification)。
+When adding custom functions, it is recommended to reference the implementation methods of existing methods and write function code in the `model.py` file. To ensure that the platform can correctly identify and call newly defined methods, function declarations need to be made in the `functionList` of the `e.json` file. Only custom functions declared in `functionList` can be properly referenced and called in scenarios such as pages and service functions. Methods inherited from base classes and overridden do not need to be repeatedly declared in each object model. For specific function declaration configuration, please refer to [Element Directory Specification](../../reference/runtime-platform/JAAP#element-directory-specification).

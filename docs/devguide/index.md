@@ -935,65 +935,71 @@ Intelligent agents with reasoning and action capabilities. Through prompts and t
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="AIAgent"
+  title="Creating AI Agent"
   href="ai-agent/create-ai-agent"
-  description="Learn how to create ReActAgent, configure system prompts, large model parameters, input/output variables, and runtime state storage."
+  description="Learn how to create ReActAgent, configure system prompts, select large language models, write descriptions, and configure runtime state storage."
 >
   <LinkGrid columns={2} links={[
-    { text: "Create ReAct Agent", href: "ai-agent/create-ai-agent#create-react-agent" },
+    { text: "Creating ReActAgent", href: "ai-agent/create-ai-agent#create-react-agent" },
     { text: "Write System Prompt", href: "ai-agent/create-ai-agent#write-system-prompt" },
-    { text: "Write System Prompt Based on Template", href: "ai-agent/create-ai-agent#write-system-prompt-based-on-template" },
-    { text: "Use Variables in Prompt", href: "ai-agent/create-ai-agent#use-variables-in-prompt" },
     { text: "Select Model and Configure Parameters", href: "ai-agent/create-ai-agent#select-model-and-configure-parameters" },
     { text: "Write Agent Description", href: "ai-agent/create-ai-agent#write-agent-description" },
     { text: "Configure Runtime State Storage", href: "ai-agent/create-ai-agent#configure-runtime-state-storage" },
     { text: "Memory Storage", href: "ai-agent/create-ai-agent#memory-storage" },
     { text: "Database Storage", href: "ai-agent/create-ai-agent#database-storage" },
-    { text: "Configure Input Variables", href: "ai-agent/create-ai-agent#configure-input-variables" },
-    { text: "Configure Output Results", href: "ai-agent/create-ai-agent#configure-output-results" },
-    { text: "Add Tools to Agent", href: "ai-agent/create-ai-agent#add-tools-to-agent" },
-    { text: "Agent Call Model Functions", href: "ai-agent/create-ai-agent#agent-call-model-functions" },
-    { text: "Agent Calling Service Functions", href: "ai-agent/create-ai-agent#agent-calling-service-functions" },
-    { text: "Agent Call MCP Service", href: "ai-agent/create-ai-agent#agent-call-mcp-service" },
-    { text: "Convert MCP Config to Environment Variables", href: "ai-agent/create-ai-agent#convert-mcp-config-to-environment-variables" },
-    { text: "Agent Call External API", href: "ai-agent/create-ai-agent#agent-call-external-api" },
-    { text: "Agent Call Page Functions", href: "ai-agent/create-ai-agent#agent-call-page-functions" },
-    { text: "Enable/Disable Tool Functions", href: "ai-agent/create-ai-agent#enable-disable-tool-functions" },
-    { text: "Tool Function Call Pre/Post Event Triggering", href: "ai-agent/create-ai-agent#tool-function-call-pre-post-event-triggering" },
-    { text: "Manual Confirmation Before Tool Execution", href: "ai-agent/create-ai-agent#manual-confirmation-before-tool-execution" },
-    { text: "Restrict User Roles for Tool Calls", href: "ai-agent/create-ai-agent#restrict-user-roles-for-tool-calls" },
-    { text: "Integrate Knowledge Base for RAG", href: "ai-agent/create-ai-agent#integrate-knowledge-base-rag" },
-    { text: "Call Agent in Frontend Functions", href: "ai-agent/create-ai-agent#call-agent-in-frontend-functions" },
-    { text: "Test Agent in Page Assistant", href: "ai-agent/create-ai-agent#test-agent-in-page-assistant" },
-    { text: "Call Agent in Backend Service Functions", href: "ai-agent/create-ai-agent#call-agent-in-backend-service-functions" },
     { text: "Modify Agent in Source Code Mode", href: "ai-agent/create-ai-agent#modify-agent-in-source-code-mode" },
-    { text: "Custom Callback Processor", href: "ai-agent/create-ai-agent#custom-callback-processor" },
-    { text: "Agent Streaming Output", href: "ai-agent/create-ai-agent#agent-streaming-output" }
+    { text: "Custom Callback Processor", href: "ai-agent/create-ai-agent#custom-callback-processor" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Tools in Agent"
   href="ai-agent/agent-tools"
-  description="Deep dive into the usage and best practices of various tools in Agent."
+  description="Learn how to add and manage various tools in Agent, including model functions, service functions, MCP services, external APIs, and page functions."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "Agent Call Model Functions", href: "ai-agent/agent-tools#agent-call-model-functions" },
+    { text: "Agent Call Service Functions", href: "ai-agent/agent-tools#agent-calling-service-functions" },
+    { text: "Agent Call MCP Services", href: "ai-agent/agent-tools#agent-call-mcp-service" },
+    { text: "Convert MCP Config to Environment Variables", href: "ai-agent/agent-tools#convert-mcp-config-to-environment-variables" },
+    { text: "Agent Call External APIs", href: "ai-agent/agent-tools#agent-call-external-api" },
+    { text: "Agent Call Page Functions", href: "ai-agent/agent-tools#agent-call-page-functions" },
+    { text: "Tool Function Management", href: "ai-agent/agent-tools#tool-function-management" },
+    { text: "Enable/Disable Tool Functions", href: "ai-agent/agent-tools#enable-disable-tool-functions" },
+    { text: "Tool Function Call Pre/Post Event Triggering", href: "ai-agent/agent-tools#tool-function-call-pre-post-event-triggering" },
+    { text: "Manual Confirmation Before Tool Execution", href: "ai-agent/agent-tools#manual-confirmation-before-tool-execution" },
+    { text: "Restrict User Roles for Tool Calls", href: "ai-agent/agent-tools#restrict-user-roles-for-tool-calls" }
+  ]} />
 </IndexCard>
 
 <IndexCard
   title="Agent Input and Output"
   href="ai-agent/agent-input-output"
-  description="Detailed understanding of Agent's input and output configuration and data processing methods."
+  description="Master Agent's input variable configuration, output result settings, streaming output, and various calling methods."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "Configure Input Variables", href: "ai-agent/agent-input-output#configure-input-variables" },
+    { text: "Use Variables in Prompts", href: "ai-agent/agent-input-output#use-variables-in-prompt" },
+    { text: "Configure Output Results", href: "ai-agent/agent-input-output#configure-output-results" },
+    { text: "Agent Streaming Output", href: "ai-agent/agent-input-output#agent-streaming-output" },
+    { text: "Call Agent in Frontend Functions", href: "ai-agent/agent-input-output#call-agent-in-frontend-functions" },
+    { text: "Call Agent in Backend Service Functions", href: "ai-agent/agent-input-output#call-agent-in-backend-service-functions" },
+    { text: "Test Agent in Page Assistant", href: "ai-agent/agent-input-output#test-agent-in-page-assistant" }
+  ]} />
 </IndexCard>
 
 <IndexCard
-  title="Single-Task Intelligent Agent Implementation"
+  title="Using Knowledge Base for Retrieval-Augmented Generation (RAG)"
+  href="ai-agent/agent-knowledge-base"
+  description="Learn how to integrate knowledge bases with Agent to implement RAG functionality for enhanced response accuracy."
+>
+  <LinkGrid links={[
+    { text: "Adding Knowledge Bases in Agent", href: "ai-agent/agent-knowledge-base#integrate-knowledge-base-rag" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Implement Single-Task Intelligent Agent with Agent"
   href="ai-agent/single-task-intelligent-agent"
   description="Learn how to use Agent to implement specialized single-task intelligent agents for optimized business scenario handling."
 >
@@ -1004,7 +1010,7 @@ Intelligent agents with reasoning and action capabilities. Through prompts and t
 
 <IndexCard
   title="Agent API Exposure"
-  href="ai-agent/agent-api-integration"
+  href="ai-agent/agent-api-exposure"
   description="Expose Agent capabilities through API interfaces for external system integration."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1095,11 +1101,9 @@ Design a powerful data foundation for your application. Create data tables, desi
   description="Basic structure of application data, learn how to create and configure data tables, design field types and constraints."
 >
   <LinkGrid links={[
-    { text: "Create Data Table Model", href: "data-modeling/data-table-model#create-data-table-model" },
+    { text: "Create Data Table Model", href: "data-modeling/data-table-model" },
     { text: "Design Table Fields and Data Types", href: "data-modeling/data-table-model#design-table-fields-and-data-types" },
-    { text: "Configure Table Index Optimization", href: "data-modeling/data-table-model#configure-table-index-optimization" },
-    { text: "Use Built-in Data Management Function", href: "data-modeling/data-table-model#use-built-in-data-management-function" },
-    { text: "Extend Model Function", href: "data-modeling/data-table-model#extend-model-function" }
+    { text: "Configure Table Index Optimization", href: "data-modeling/data-table-model#configure-table-index-optimization" }
   ]} />
 </IndexCard>
 
@@ -1108,9 +1112,9 @@ Design a powerful data foundation for your application. Create data tables, desi
   href="data-modeling/create-data-table-from-existing-tables"
   description="Quickly create data table elements from existing database tables, supporting rapid model generation."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Creating Tables from Existing Database Schema", href: "data-modeling/create-data-table-from-existing-tables" },
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1118,9 +1122,9 @@ Design a powerful data foundation for your application. Create data tables, desi
   href="data-modeling/built-in-data-management-tools"
   description="Utilize built-in data management tools for efficient data operations and administration."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Built-in Data Management Tools", href: "data-modeling/built-in-data-management-tools" },
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1128,9 +1132,9 @@ Design a powerful data foundation for your application. Create data tables, desi
   href="data-modeling/create-data-model-functions"
   description="Design and implement custom data model functions to extend data processing capabilities."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Creating Data Model Functions", href: "data-modeling/create-data-model-functions" },
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1139,7 +1143,7 @@ Design a powerful data foundation for your application. Create data tables, desi
   description="Multi-table data integration and statistical analysis, supporting complex data aggregation and calculation functions."
 >
   <LinkGrid columns={2} links={[
-    { text: "Create Aggregate Table Model", href: "data-modeling/aggregate-table-model#create-aggregate-table-model" },
+    { text: "Create Aggregate Table Model", href: "data-modeling/aggregate-table-model" },
     { text: "Multi-table Data Merge", href: "data-modeling/aggregate-table-model#multi-table-data-merge" },
     { text: "Multi-table Horizontal Connection", href: "data-modeling/aggregate-table-model#multi-table-horizontal-connection" },
     { text: "Group Aggregate Statistics", href: "data-modeling/aggregate-table-model#group-aggregate-statistics" },
@@ -1155,7 +1159,7 @@ Design a powerful data foundation for your application. Create data tables, desi
   description="Data extension based on existing tables, implementing business field extension and multi-table data integration through association with other data tables."
 >
   <LinkGrid columns={2} links={[
-    { text: "Extended Table Creation", href: "data-modeling/extended-table-model#extended-table-creation" },
+    { text: "Extended Table Creation", href: "data-modeling/extended-table-model" },
     { text: "Connection Design", href: "data-modeling/extended-table-model#connection-design" },
     { text: "Set Baseline Table Filter Conditions", href: "data-modeling/extended-table-model#set-baseline-table-filter-conditions" },
     { text: "Add Data Table", href: "data-modeling/extended-table-model#add-data-table" },
@@ -1174,9 +1178,11 @@ Design a powerful data foundation for your application. Create data tables, desi
   href="data-modeling/calling-data-models-in-pages-and-functions"
   description="Learn how to effectively use data models in frontend pages and backend function logic for data operations."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "Built-in Model Functions", href: "data-modeling/calling-data-models-in-pages-and-functions#built-in-model-functions" },
+    { text: "Calling Data Models in Pages", href: "data-modeling/calling-data-models-in-pages-and-functions#calling-data-models-in-pages" },
+    { text: "Calling Data Models in Functions", href: "data-modeling/calling-data-models-in-pages-and-functions#calling-data-models-in-functions" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1578,12 +1584,10 @@ Easily handle various file requirements in applications. Support file upload and
     { text: "Create Word Template", href: "file-processing/file-templates#create-word-template" },
     { text: "Create Word Template Variables", href: "file-processing/file-templates#create-word-template-variables" },
     { text: "Use Template Variables in Word", href: "file-processing/file-templates#use-template-variables-in-word" },
-    { text: "Print Word Template", href: "file-processing/file-templates#print-word-template" },
     { text: "Excel Template", href: "file-processing/file-templates#excel-template" },
     { text: "Create Excel Template", href: "file-processing/file-templates#create-excel-template" },
     { text: "Create Excel Template Variables", href: "file-processing/file-templates#create-excel-template-variables" },
     { text: "Use Template Variables in Excel", href: "file-processing/file-templates#use-template-variables-in-excel" },
-    { text: "Print Excel Template", href: "file-processing/file-templates#print-excel-template" },
     { text: "Template Variable Style Description", href: "file-processing/file-templates#template-variable-style-description" },
     { text: "Text Style", href: "file-processing/file-templates#text-style" },
     { text: "Numeric Style", href: "file-processing/file-templates#numeric-style" },

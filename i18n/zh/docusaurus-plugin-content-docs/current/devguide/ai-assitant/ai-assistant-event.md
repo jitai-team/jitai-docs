@@ -26,7 +26,7 @@ AI Agent节点、函数调用节点、条件分支节点及多任务执行节点
 
 
 ### 工具调用事件 {#agent-call-tool-events}
-对于AI Agent节点，在Agent运行过程中如果会用到工具，那么在工具调用前和工具调用后也会触发工作区事件。前提需要Agent[开启工具触发事件](../ai-agent/create-ai-agent#tool-function-call-pre-post-event-triggering)。
+对于AI Agent节点，在Agent运行过程中如果会用到工具，那么在工具调用前和工具调用后也会触发工作区事件。前提需要Agent[开启工具触发事件](../ai-agent/agent-tools#tool-function-call-pre-post-event-triggering)。
 
 工具调用事件携带的参数是字典(JitDict)类型，有以下属性：
 - **toolName**：工具名称，如："services.ASvc.func1"。在事件处理逻辑中，开发者需要根据工具名称来做对应的处理。
@@ -60,6 +60,6 @@ AI Agent节点、函数调用节点、条件分支节点及多任务执行节点
 后端如何订阅节点运行事件，参考：[AI助理事件](../business-logic-development/event-handling#ai-assistant-events)
 
 ### 工具调用事件
-对于AI Agent节点，在Agent运行过程中如果会用到工具，那么在工具调用前和工具调用后也会触发后端事件。前提是工具需要开启[触发事件](../ai-agent/create-ai-agent#tool-function-call-pre-post-event-triggering)。
+对于AI Agent节点，在Agent运行过程中如果会用到工具，那么在工具调用前和工具调用后也会触发后端事件。前提是工具需要开启[触发事件](../ai-agent/agent-tools#tool-function-call-pre-post-event-triggering)。
 
 后端如何订阅工具调用事件，参考：[Agent工具调用事件](../business-logic-development/event-handling#agent-tool-call-events)

@@ -1105,7 +1105,6 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "创建数据表模型", href: "data-modeling/data-table-model#create-data-table-model" },
     { text: "设计表字段与数据类型", href: "data-modeling/data-table-model#design-table-fields-and-data-types" },
     { text: "配置表索引优化查询", href: "data-modeling/data-table-model#configure-table-index-optimization" },
-    { text: "使用内置数据管理功能", href: "data-modeling/data-table-model#use-built-in-data-management-function" },
     { text: "扩展模型功能", href: "data-modeling/data-table-model#extend-model-function" }
   ]} />
 </IndexCard>
@@ -1115,9 +1114,9 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="data-modeling/create-data-table-from-existing-tables"
   description="从现有数据库表快速创建数据表元素，支持快速模型生成。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "从已有数据表中创建数据表", href: "data-modeling/create-data-table-from-existing-tables" },
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1125,9 +1124,9 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="data-modeling/built-in-data-management-tools"
   description="利用内置数据管理工具进行高效的数据操作和管理。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "内置数据管理工具", href: "data-modeling/built-in-data-management-tools" },
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1135,9 +1134,9 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="data-modeling/create-data-model-functions"
   description="设计和实现自定义数据模型函数，扩展数据处理能力。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "创建数据模型函数", href: "data-modeling/create-data-model-functions" },
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1181,9 +1180,11 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="data-modeling/calling-data-models-in-pages-and-functions"
   description="学习如何在前端页面和后端函数逻辑中有效使用数据模型进行数据操作。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "模型内置函数", href: "data-modeling/calling-data-models-in-pages-and-functions#built-in-model-functions" },
+    { text: "在页面中调用数据模型", href: "data-modeling/calling-data-models-in-pages-and-functions#calling-data-models-in-pages" },
+    { text: "在函数中调用数据模型", href: "data-modeling/calling-data-models-in-pages-and-functions#calling-data-models-in-functions" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1245,6 +1246,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "通讯录管理入口", href: "user-and-permission/organizational-structure#contact-management-entry" },
     { text: "钉钉自建组织", href: "user-and-permission/organizational-structure#dingtalk-custom-organization" },
     { text: "企业微信自建组织", href: "user-and-permission/organizational-structure#wechat-work-custom-organization" },
+    { text: "Microsoft Teams", href: "user-and-permission/organizational-structure#microsoft-teams" },
     { text: "部门成员搜索", href: "user-and-permission/organizational-structure#department-member-search" },
     { text: "设置组织负责人", href: "user-and-permission/organizational-structure#set-organization-leader" },
     { text: "新建部门", href: "user-and-permission/organizational-structure#create-department" },
@@ -1269,6 +1271,9 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "登录方式创建", href: "user-and-permission/login-authentication#login-method-creation" },
     { text: "账号密码登录", href: "user-and-permission/login-authentication#account-password-login" },
     { text: "手机号登录", href: "user-and-permission/login-authentication#mobile-phone-login" },
+    { text: "阿里云短信", href: "user-and-permission/login-authentication#aliyun-sms" },
+    { text: "AWS SNS短信", href: "user-and-permission/login-authentication#aws-sns" },
+    { text: "Twilio短信", href: "user-and-permission/login-authentication#twilio" },
     { text: "钉钉自建扫码登录", href: "user-and-permission/login-authentication#dingtalk-custom-qr-login" },
     { text: "企业微信自建扫码登录", href: "user-and-permission/login-authentication#wechat-work-custom-qr-login" },
     { text: "微信登录", href: "user-and-permission/login-authentication#wechat-login" },
@@ -1565,6 +1570,8 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "移动云EOS", href: "file-processing/file-storage#china-mobile-cloud-eos" },
     { text: "MinIO", href: "file-processing/file-storage#minio" },
     { text: "七牛云", href: "file-processing/file-storage#aliyun-oss" },
+    { text: "AWS S3", href: "file-processing/file-storage#aws-s3" },
+    { text: "Cloudflare R2", href: "file-processing/file-storage#cloudflare-r2" },
     { text: "用环境变量防止配置信息泄露", href: "file-processing/file-storage#prevent-config-info-leak-with-env-variables" },
     { text: "设置应用默认的存储服务", href: "file-processing/file-storage#set-application-default-storage-service" },
     { text: "在前端代码中调用文件上传", href: "file-processing/file-storage#call-file-upload-in-frontend-code" }
@@ -1581,12 +1588,10 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "创建Word模板", href: "file-processing/file-templates#create-word-template" },
     { text: "创建Word模板变量", href: "file-processing/file-templates#create-word-template-variables" },
     { text: "在Word文档中使用模板变量", href: "file-processing/file-templates#use-template-variables-in-word" },
-    { text: "打印Word模板", href: "file-processing/file-templates#print-word-template" },
     { text: "Excel模板", href: "file-processing/file-templates#excel-template" },
     { text: "创建Excel模板", href: "file-processing/file-templates#create-excel-template" },
     { text: "创建Excel模板变量", href: "file-processing/file-templates#create-excel-template-variables" },
     { text: "在Excel文档中使用模板变量", href: "file-processing/file-templates#use-template-variables-in-excel" },
-    { text: "打印Excel模板", href: "file-processing/file-templates#print-excel-template" },
     { text: "模板变量样式说明", href: "file-processing/file-templates#template-variable-style-description" },
     { text: "文本样式", href: "file-processing/file-templates#text-style" },
     { text: "数值类样式", href: "file-processing/file-templates#numeric-style" },
@@ -1600,9 +1605,10 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="file-processing/generating-and-printing-files-using-file-templates"
   description="学习如何使用文件模板程序化生成和打印文档，包括动态内容填充和输出格式化。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "打印Word模板", href: "file-processing/generating-and-printing-files-using-file-templates#print-word-template" },
+    { text: "打印Excel模板", href: "file-processing/generating-and-printing-files-using-file-templates#print-excel-template" }
+  ]} />
 </IndexCard>
 
 </div>

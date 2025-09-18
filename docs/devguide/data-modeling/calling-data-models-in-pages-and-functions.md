@@ -25,6 +25,8 @@ The JitAi platform has built-in a series of commonly used data operation functio
 
 These built-in functions greatly simplify the data operation process. Developers only need to call the corresponding methods in page or function logic and pass the required parameters to complete complex data processing tasks.
 
+For more detailed usage, please refer to: [Calling Data Model Functions in Pages (including full-code pages)](../calling-business-elements-in-pages/calling-data-model-functions-in-pages.md)
+
 ## Calling Data Models in Pages {#calling-data-models-in-pages}
 
 In the JitAi platform, pages are not only used for display and interaction, but can also be directly integrated with data models to achieve dynamic data operations. By calling data model functions in page events, developers can easily implement data reading, writing, updating, and deleting functions.

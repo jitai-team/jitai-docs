@@ -10,7 +10,7 @@ After file templates are created, you can generate and print files by calling th
 ## Printing Word Templates {#print-word-template}
 ![](./img/2/2025-08-29-17-09-46.png)
 
-The **data model** of the component calling the print service must be consistent with the **target data table** of the template variables.
+The **data model** used by the print service function must be consistent with the **target data table** of the template variables.
 
 Print services are generally called in **button** events:
 

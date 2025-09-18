@@ -3,7 +3,7 @@ sidebar_position: 5
 slug: built-in-data-management-tools
 ---
 
-# 内置数据管理工具
+# 内置数据管理工具 {#built-in-data-management-tools}
 
 JitAi为数据表模型提供了数据管理功能，无需编写代码即可对数据表进行CRUD操作，在开发区也能对数据进行管理。
 

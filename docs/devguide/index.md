@@ -1108,9 +1108,9 @@ Design a powerful data foundation for your application. Create data tables, desi
   href="data-modeling/create-data-table-from-existing-tables"
   description="Quickly create data table elements from existing database tables, supporting rapid model generation."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Creating Tables from Existing Database Schema", href: "data-modeling/create-data-table-from-existing-tables" },
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1118,9 +1118,9 @@ Design a powerful data foundation for your application. Create data tables, desi
   href="data-modeling/built-in-data-management-tools"
   description="Utilize built-in data management tools for efficient data operations and administration."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Built-in Data Management Tools", href: "data-modeling/built-in-data-management-tools" },
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1128,9 +1128,9 @@ Design a powerful data foundation for your application. Create data tables, desi
   href="data-modeling/create-data-model-functions"
   description="Design and implement custom data model functions to extend data processing capabilities."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Creating Data Model Functions", href: "data-modeling/create-data-model-functions" },
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1174,9 +1174,11 @@ Design a powerful data foundation for your application. Create data tables, desi
   href="data-modeling/calling-data-models-in-pages-and-functions"
   description="Learn how to effectively use data models in frontend pages and backend function logic for data operations."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "Built-in Model Functions", href: "data-modeling/calling-data-models-in-pages-and-functions#built-in-model-functions" },
+    { text: "Calling Data Models in Pages", href: "data-modeling/calling-data-models-in-pages-and-functions#calling-data-models-in-pages" },
+    { text: "Calling Data Models in Functions", href: "data-modeling/calling-data-models-in-pages-and-functions#calling-data-models-in-functions" }
+  ]} />
 </IndexCard>
 
 <IndexCard

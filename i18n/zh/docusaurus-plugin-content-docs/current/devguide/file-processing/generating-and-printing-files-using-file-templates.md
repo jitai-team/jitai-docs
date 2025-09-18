@@ -3,14 +3,14 @@ sidebar_position: 3
 slug: generating-and-printing-files-using-file-templates
 ---
 
-# 用文件模板生成和打印文件
+# 用文件模板生成和打印文件 {#generating-and-printing-files-using-file-templates}
 
 文件模板创建完成后，可以通过调用打印服务来生成和打印文件。本文档介绍如何使用已创建的文件模板来生成和打印Word文档和Excel文档。
 
 ## 打印Word模板 {#print-word-template}
 ![](./img/2/2025-08-29-17-09-46.png)
 
-调用打印服务的组件的**数据模型**需要与模板变量的**目标数据表**保持一致。
+调用打印服务函数的**数据模型**需要与模板变量的**目标数据表**保持一致。
 
 一般在**按钮**事件中调用打印服务：
 

@@ -211,61 +211,71 @@ details>div>div {
 @media (min-width: 997px) {
   /* 有侧边栏的页面主包装器居中 */
   .main-wrapper:has(.theme-doc-sidebar-container) {
-    max-width: 1600px; /* 增加整体最大宽度，给文章更多空间 */
+    max-width: 1400px; /* 固定整体最大宽度 */
     margin: 0 auto; /* 水平居中 */
     display: flex;
-    padding: 0 2rem; /* 两侧留白 */
+    padding: 0 1rem; /* 两侧留白 */
+    gap: 16px; /* 侧边栏和主内容之间的间距 */
   }
 
-  /* 侧边栏容器 - 紧贴左侧 */
+  /* 侧边栏容器 - 固定宽度 */
   .theme-doc-sidebar-container {
+    width: 280px !important;
+    min-width: 280px !important;
+    max-width: 280px !important;
     margin-left: 0 !important;
     padding-left: 0 !important;
     flex-shrink: 0;
   }
 
-  /* 侧边栏内容 - 移除右侧padding */
+  /* 侧边栏内容 - 移除右侧间距（使用gap代替） */
   .theme-doc-sidebar-container .sidebar_ {
     padding-right: 0 !important;
   }
 
-  /* 有侧边栏页面的主内容容器 - 紧贴侧边栏 */
-  .main-wrapper:has(.theme-doc-sidebar-container) main.container {
-    max-width: none !important;
-    padding-left: 0 !important;
-    margin-left: 0 !important;
-    flex: 1;
-  }
-
-  /* 文档主容器 - 紧贴侧边栏 */
+  /* 文档主容器 - 固定宽度居中 */
   .docMainContainer_gTbr {
-    margin-left: 0 !important;
-    padding-left: 2rem; /* 内容与侧边栏的间距 */
-    padding-right: 2rem; /* 右侧内边距 */
+    width: 900px !important;
+    max-width: 900px !important;
+    margin: 0 auto !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box !important;
   }
 
-  /* 文档内容区域最大宽度优化 */
+  /* 文档内容区域 - 保持固定宽度 */
   .theme-doc-markdown {
-    max-width: none; /* 移除内容区域的最大宽度限制 */
+    width: 800px !important;
+    max-width: 800px !important;
+    margin: 0 auto !important;
   }
 }
 
 /* 中等屏幕适配 - 仅有侧边栏的文档页面 */
 @media (min-width: 997px) and (max-width: 1440px) {
   .main-wrapper:has(.theme-doc-sidebar-container) {
-    padding: 0 1rem; /* 较小的两侧留白 */
+    padding: 0 0.5rem; /* 较小的两侧留白 */
+    gap: 12px; /* 稍小的间距 */
   }
 }
 
 /* 超大屏幕优化 - 仅有侧边栏的文档页面 */
 @media (min-width: 1600px) {
   .main-wrapper:has(.theme-doc-sidebar-container) {
-    max-width: 1800px; /* 超大屏幕下进一步增加宽度 */
+    max-width: 1600px; /* 超大屏幕下保持固定宽度 */
+    gap: 24px; /* 超大屏幕下增加间距 */
   }
   
   .docMainContainer_gTbr {
-    padding-left: 3rem; /* 超大屏幕下增加左右间距 */
-    padding-right: 3rem;
+    width: 900px !important;
+    max-width: 900px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  
+  .theme-doc-markdown {
+    width: 800px !important;
+    max-width: 800px !important;
   }
 }
 
@@ -280,18 +290,34 @@ details>div>div {
   }
 
   .theme-doc-sidebar-container {
+    width: auto !important;
+    min-width: auto !important;
+    max-width: none !important;
     margin-left: 0 !important;
     padding-left: 0 !important;
   }
 
   .main-wrapper:has(.theme-doc-sidebar-container) main.container {
+    min-width: auto !important;
+    width: 100% !important;
     padding-left: var(--ifm-spacing-horizontal) !important;
     margin-left: 0 !important;
+    display: block !important;
+    justify-content: normal !important;
   }
 
   .docMainContainer_gTbr {
-    margin-left: 0 !important;
-    padding-left: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding-left: var(--ifm-spacing-horizontal) !important;
+    padding-right: var(--ifm-spacing-horizontal) !important;
+  }
+
+  .theme-doc-markdown {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
   }
 }
 
@@ -505,13 +531,67 @@ details>div>div {
 
 /* ===== 文档阅读体验优化 ===== */
 
-/* 文档内容区域整体优化 */
+/* 文档内容区域整体优化 - 固定宽度防止跳动 */
 .theme-doc-markdown {
   line-height: 1.7 !important;
   color: #374151 !important;
   font-size: 16px !important;
+  width: 800px !important;
   max-width: 800px !important;
   margin: 0 auto !important;
+  box-sizing: border-box !important;
+}
+
+/* 文档主容器固定宽度 */
+.docMainContainer_gTbr {
+  width: 100% !important;
+  max-width: 900px !important;
+  margin: 0 auto !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+  box-sizing: border-box !important;
+}
+
+/* 确保文档页面容器有固定的最小宽度 */
+.main-wrapper:has(.theme-doc-sidebar-container) main.container {
+  min-width: 900px !important;
+  width: 100% !important;
+  max-width: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  flex: 1;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+/* 防止内容溢出和布局跳动 */
+.theme-doc-markdown * {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* 确保代码块不会超出容器宽度 */
+.theme-doc-markdown pre {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* 确保表格不会超出容器宽度 */
+.theme-doc-markdown table {
+  width: 100% !important;
+  max-width: 100% !important;
+  table-layout: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* 确保图片不会超出容器宽度 */
+.theme-doc-markdown img {
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+  box-sizing: border-box !important;
 }
 
 /* 段落间距优化 */
@@ -731,6 +811,7 @@ details>div>div {
   box-shadow: var(--fastgpt-shadow-sm) !important;
   position: sticky !important;
   top: 2rem !important;
+  margin-left: 16px !important;
 }
 
 .table-of-contents__link {
@@ -813,8 +894,11 @@ details>div>div {
   }
   
   .theme-doc-markdown {
+    width: 100% !important;
+    max-width: 100% !important;
     font-size: 15px !important;
     padding: 0 1rem !important;
+    margin: 0 !important;
   }
   
   .theme-doc-markdown h1 {
@@ -855,7 +939,10 @@ details>div>div {
   }
   
   .theme-doc-markdown {
+    width: 100% !important;
+    max-width: 100% !important;
     font-size: 14px !important;
+    margin: 0 !important;
   }
   
   .theme-doc-markdown h1 {

@@ -3,52 +3,52 @@ sidebar_position: 5
 slug: approval-page-customization
 ---
 
-# 审批页面定制
-在创建审批流程的时候，系统会默认创建一个审批页面。但某些情况下，用户需要针对不同的审批节点展现不同的页面，那么需要针对特定的审批节点进行页面定制。
+# Approval Page Customization
+When creating an approval workflow, the system will create a default approval page by default. However, in some cases, users need to display different pages for different approval nodes, which requires page customization for specific approval nodes.
 
-## 审批页面高级定制 {#approval-page-advanced-customization}
-默认情况下，审批流程只有一个默认的审批页面。用户可以针对不同的审批节点进行页面定制，从而实现不同的审批页面。
+## Advanced Approval Page Customization {#approval-page-advanced-customization}
+By default, an approval workflow only has one default approval page. Users can customize pages for different approval nodes to achieve different approval pages.
 
-### 审批页面类型 {#approval-page-types}
-审批页面分为默认审批页面和自定义审批页面。
+### Approval Page Types {#approval-page-types}
+Approval pages are divided into default approval pages and custom approval pages.
 
-![审批页面高级定制](./img/workflow_2025-08-25_17-22-15.png)
+![Advanced Approval Page Customization](./img/workflow_2025-08-25_17-22-15.png)
 
-在节点的配置面板中，开发者点击“当前节点用到的页面”区域内的下拉框，可以选择使用“审批默认页面”还是“自定义页面”。
+In the node configuration panel, developers can click the dropdown box in the "Pages Used by Current Node" area to choose between using the "Default Approval Page" or "Custom Page".
 
-![自定义页面](./img/workflow_2025-08-25_17-30-46.png)
+![Custom Page](./img/workflow_2025-08-25_17-30-46.png)
 
-选择“自定义页面后”，系统会默认选中当前审批流程所有自定义页面中的第一个页面，开发者也可以选择创建新的页面。
+After selecting "Custom Page", the system will default to selecting the first page among all custom pages in the current approval workflow, and developers can also choose to create a new page.
 
-### 自定义页面创建方式 {#custom-page-creation-method}
-创建自定义页面时，系统有两个创建方式：创建新页面和基于已有页面进行创建。
+### Custom Page Creation Methods {#custom-page-creation-method}
+When creating custom pages, the system has two creation methods: creating a new page and creating based on an existing page.
 
-![自定义新建页面](./img/workflow_2025-08-25_17-34-20.png)
+![Create Custom New Page](./img/workflow_2025-08-25_17-34-20.png)
 
-点击`+ 新建页面`后打开新建页面弹窗。在“创建方式”那里可以选择是“创建新页面”还是“基于已有页面创建”。
+After clicking `+ New Page`, the new page creation popup opens. In the "Creation Method" section, you can choose between "Create New Page" or "Create Based on Existing Page".
 
-![新建页面弹窗](./img/workflow_2025-08-25_17-36-48.png)
+![New Page Creation Popup](./img/workflow_2025-08-25_17-36-48.png)
 
-如果选择“基于已有页面创建”时，会弹窗“选择页面”的选项。所有信息填写完之后，点击“确定”按钮，就会创建一个新的含有审批表单的页面。
+If you select "Create Based on Existing Page", a "Select Page" option will pop up. After filling in all the information, click the "Confirm" button to create a new page containing an approval form.
 
-![编辑页面](./img/workflow_2025-08-25_17-41-11.png)
+![Edit Page](./img/workflow_2025-08-25_17-41-11.png)
 
-对于已经创建的页面，可以点击下拉框右侧的“编辑”按钮，进入页面进行编辑。
+For pages that have already been created, you can click the "Edit" button on the right side of the dropdown box to enter the page for editing.
 
-:::warning 注意
+:::warning Note
 
-在审批流程中创建的页面，属于审批流程独有的。
+Pages created in approval workflows are exclusive to the approval workflow.
 
-每一个审批流程创建的页面只能在当前审批流程中使用，其他审批流程不能使用。
+Pages created by each approval workflow can only be used in the current approval workflow and cannot be used by other approval workflows.
 
-仅开始节点、审批节点和抄送节点才能进行页面定制。
+Only start nodes, approval nodes, and CC nodes can perform page customization.
 
-无论哪个节点创建的页面，都可以被其他节点引用。
+Pages created by any node can be referenced by other nodes.
 
-使用“基于已有页面创建”功能时，只能选择与当前审批流程有关的页面。
+When using the "Create Based on Existing Page" function, you can only select pages related to the current approval workflow.
 
-创建页面时生成的表单不可被删除，否则会导致页面无法使用。
+The form generated when creating a page cannot be deleted, otherwise it will cause the page to be unusable.
 
-页面中的表单配置，参照[form-components](../using-functional-components-in-pages/form-components)。
+For form configuration in pages, refer to [form-components](../using-functional-components-in-pages/form-components).
 
 :::

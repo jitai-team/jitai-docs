@@ -1525,17 +1525,18 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="Calling Business Logic Elements in Approval Process"
+  title="在审批流程中调用业务逻辑元素"
   href="approval-workflow/calling-business-logic-elements-in-approval-workflow"
   description="学习如何在审批流程中调用业务逻辑元素，实现复杂业务规则和自动化决策。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "通过审批事件调用业务逻辑", href: "approval-workflow/calling-business-logic-elements-in-approval-workflow#calling-business-logic-through-approval-events" },
+    { text: "子流程中函数处理", href: "approval-workflow/calling-business-logic-elements-in-approval-workflow#function-processing-in-subprocesses" }
+  ]} />
 </IndexCard>
 
 <IndexCard
-  title="Integrating AI in Approval Process"
+  title="在审批流程中集成AI元素"
   href="approval-workflow/integrating-ai-in-approval-workflow"
   description="将人工智能能力集成到审批流程中，实现智能路由、自动审查和智能决策。"
 >
@@ -1698,7 +1699,6 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="api-exposure/api-exposure-examples-for-various-elements"
   description="全面展示如何将不同类型的元素暴露为API的示例，包括数据模型、服务和自定义函数。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     <LinkGrid links={[
         { text: "服务函数的API授权", href: "api-exposure/api-exposure-examples-for-various-elements#service-function-api-authorization" },
         { text: "数据模型的API授权", href: "api-exposure/api-exposure-examples-for-various-elements#data-model-api-authorization" },
@@ -1707,7 +1707,6 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
         { text: "AI助理的API授权", href: "api-exposure/api-exposure-examples-for-various-elements#ai-assistant-api-authorization" },
         { text: "审批流程的API授权", href: "api-exposure/api-exposure-examples-for-various-elements#approval-process-api-authorization" }
     ]} />
-  </div>
 </IndexCard>
 
 <IndexCard
@@ -1715,13 +1714,11 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="api-exposure/using-sdk-to-call-authorized-element-apis"
   description="学习如何使用官方SDK调用被授权的元素API，包括身份验证、请求处理和错误管理。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     <LinkGrid links={[
         { text: "使用Python SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-python-sdk" },
         { text: "使用Nodejs SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-nodejs-sdk" },
         { text: "使用Java SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-java-sdk" }
     ]} />
-  </div>
 </IndexCard>
 
 <IndexCard
@@ -1729,11 +1726,9 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="api-exposure/using-cross-app-service-elements-to-call-authorized-apis"
   description="使用服务元素实现跨应用API调用，实现不同JitAi应用之间的无缝集成。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     <LinkGrid links={[
         { text: "使用跨App服务元素", href: "api-exposure/using-cross-app-service-elements-to-call-authorized-apis#using-cross-app-service-elements" }
     ]} />
-  </div>
 </IndexCard>
 </div>
 

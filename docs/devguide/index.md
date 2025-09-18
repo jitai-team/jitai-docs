@@ -1525,9 +1525,10 @@ Make enterprise approval processes efficient and orderly. Design flowcharts thro
   href="approval-workflow/calling-business-logic-elements-in-approval-workflow"
   description="Learn how to call business logic elements within approval processes to implement complex business rules and automated decisions."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Calling Business Logic Through Approval Events", href: "approval-workflow/calling-business-logic-elements-in-approval-workflow#calling-business-logic-through-approval-events" },
+    { text: "Function Processing in Subprocesses", href: "approval-workflow/calling-business-logic-elements-in-approval-workflow#function-processing-in-subprocesses" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1694,7 +1695,6 @@ Expose application capabilities for external system calls. Generate standard API
   href="api-exposure/api-exposure-examples-for-various-elements"
   description="Comprehensive examples demonstrating how to expose different types of elements as APIs, including data models, services, and custom functions."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     <LinkGrid links={[
         { text: "API Authorization for Service Functions", href: "api-exposure/api-exposure-examples-for-various-elements#service-function-api-authorization" },
         { text: "API Authorization for Data Models", href: "api-exposure/api-exposure-examples-for-various-elements#data-model-api-authorization" },
@@ -1703,7 +1703,6 @@ Expose application capabilities for external system calls. Generate standard API
         { text: "API Authorization for AI Assistants", href: "api-exposure/api-exposure-examples-for-various-elements#ai-assistant-api-authorization" },
         { text: "API Authorization for Approval Processes", href: "api-exposure/api-exposure-examples-for-various-elements#approval-process-api-authorization" }
     ]} />
-  </div>
 </IndexCard>
 
 <IndexCard
@@ -1711,13 +1710,11 @@ Expose application capabilities for external system calls. Generate standard API
   href="api-exposure/using-sdk-to-call-authorized-element-apis"
   description="Learn how to use official SDKs to call authorized element APIs, including authentication, request handling, and error management."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     <LinkGrid links={[
         { text: "Using Python SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-python-sdk" },
         { text: "Using Node.js SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-nodejs-sdk" },
         { text: "Using Java SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-java-sdk" }
     ]} />
-  </div>
 </IndexCard>
 
 <IndexCard
@@ -1725,11 +1722,9 @@ Expose application capabilities for external system calls. Generate standard API
   href="api-exposure/using-cross-app-service-elements-to-call-authorized-apis"
   description="Implement cross-application API calls using service elements, enabling seamless integration between different JitAi applications."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     <LinkGrid links={[
         { text: "Using Cross-App Service Elements", href: "api-exposure/using-cross-app-service-elements-to-call-authorized-apis#using-cross-app-service-elements" }
     ]} />
-  </div>
 </IndexCard>
 
 </div>

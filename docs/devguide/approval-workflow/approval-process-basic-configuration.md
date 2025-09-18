@@ -3,178 +3,179 @@ sidebar_position: 1
 slug: approval-workflow-basic-configuration
 ---
 
-# 审批流程基础配置
-审批流程通常是指在组织内部中，对特定事项请求进行审查和决定的一系列步骤。审批引擎通过预定义的规则、工作流和条件，从而去处理各种审批请求，如财务报销、请假申请、采购申请等。
+# Approval Workflow Basic Configuration
 
-JitAi 基于广泛的企业通用规律，实现企业审批流程的可视化构建。它集成了丰富的功能点定制选项，涵盖规则引擎、条件分支、并行分支及子流程审批流设计等高级特性。
+An approval workflow typically refers to a series of steps within an organization for reviewing and making decisions on specific requests. The approval engine processes various approval requests such as financial reimbursements, leave applications, purchase requests, etc., through predefined rules, workflows, and conditions.
 
-## 创建流程 {#create-process}
-审批流程一般是根据某个业务场景来创建的，比如请假流程、报销流程、采购流程等，需要将对应的业务数据存储到某个数据表模型中。因此在创建审批流程时，需要选择关联的数据模型。
+JitAi implements visual construction of enterprise approval workflows based on extensive enterprise universal patterns. It integrates rich customization options for functionality, covering advanced features such as rule engines, conditional branches, parallel branches, and subprocess approval flow design.
 
-![创建审批流程](./img/workflow_2025-08-23_10-41-35.png)
+## Create Process {#create-process}
+Approval workflows are generally created based on specific business scenarios, such as leave processes, reimbursement processes, purchase processes, etc., which require storing corresponding business data in a data table model. Therefore, when creating an approval workflow, you need to select an associated data model.
 
-在左侧元素树上通过“审批”右侧的`+`按钮，打开新建审批流程的弹窗，填写审批流程名称和关联的数据模型，点击`保存`就创建了一个审批流程。
+![Create Approval Workflow](./img/workflow_2025-08-23_10-41-35.png)
 
-## 拖拽流程节点 {#drag-process-node}
-JitAi 为开发者提供了可视化的流程配置界面，通过拖拽节点，可以快速创建流程。
+Click the `+` button next to "Approval" in the left element tree to open the new approval workflow popup, fill in the approval workflow name and associated data model, then click `Save` to create an approval workflow.
 
-![审批配置面板](./img/workflow_2025-08-23_11-41-38.png)
+## Drag Process Nodes {#drag-process-node}
+JitAi provides developers with a visual process configuration interface where processes can be quickly created by dragging nodes.
 
-审批流程有很多审批节点，每个节点都有不同的功能。如：
+![Approval Configuration Panel](./img/workflow_2025-08-23_11-41-38.png)
 
-**开始节点**：表示一个审批流程的开始，每个审批流程有且仅有一个开始节点。可以配置用户“发起申请”的一些配置信息。
+Approval workflows have many approval nodes, each with different functions, such as:
 
-**结束节点**：表示一个审批流程的结束，每个审批流程有且仅有一个结束节点。表示整个流程全部执行完毕。
+**Start Node**: Represents the beginning of an approval workflow. Each approval workflow has one and only one start node. You can configure some configuration information for users to "initiate requests".
 
-**审批节点**：用于指定审批人员对当前审批流程进行审阅，在审批节点需要配置审批人，以及审批节点相关配置信息。
+**End Node**: Represents the end of an approval workflow. Each approval workflow has one and only one end node. It indicates that the entire process has been completed.
 
-**抄送节点**：用于指定抄送人员对当前审批流程进行抄送，在抄送节点需要配置抄送人，以及抄送节点相关配置信息。
+**Approval Node**: Used to designate approvers to review the current approval workflow. In approval nodes, you need to configure approvers and related configuration information for approval nodes.
 
-**分支节点**：用于分支判断，审批流程会根据条件返回结果流转到指定的分支路线。
+**CC Node**: Used to designate CC recipients for the current approval workflow. In CC nodes, you need to configure CC recipients and related configuration information for CC nodes.
 
-**并行开始/并行结束**：用于流程的并行处理。审批流程到达并行开始节点后，会对所有的并行节点同时流转。
+**Branch Node**: Used for branch judgment. The approval workflow will flow to specified branch routes based on condition return results.
 
-**子流程**：审批流程进入子流程后，会根据子流程的逻辑运行，处理完之后再返回到父流程。
+**Parallel Start/Parallel End**: Used for parallel processing of workflows. After the approval workflow reaches the parallel start node, it will flow to all parallel nodes simultaneously.
 
-:::tip 提示
+**Subprocess**: After the approval workflow enters a subprocess, it will run according to the subprocess logic and return to the parent process after completion.
 
-一个完整的审批流程，除了开始节点和结束节点外，至少还有一个审批节点。
+:::tip Tip
 
-并行开始和并行结束节点，必须是成双成对的。
+A complete approval workflow must have at least one approval node in addition to the start and end nodes.
+
+Parallel start and parallel end nodes must come in pairs.
 :::
 
-## 预测功能 {#prediction-feature}
-AI预测和智能推荐功能，基于历史审批数据提供流程优化建议。
+## Prediction Feature {#prediction-feature}
+AI prediction and intelligent recommendation features provide process optimization suggestions based on historical approval data.
 
-## 审批流程默认页面 {#approval-workflow-default-page}
-每个审批流程都有一个默认页面。当用户在进行发起申请、查看审批等操作时，就会进入该页面。
+## Approval Workflow Default Page {#approval-workflow-default-page}
+Each approval workflow has a default page. When users perform operations such as initiating requests or viewing approvals, they will enter this page.
 
-![默认页面](./img/workflow_2025-08-26_11-01-13.png)
+![Default Page](./img/workflow_2025-08-26_11-01-13.png)
 
-在流程配置面板中，点击左上角的`审批默认页面`，就会打开默认页面的配置面板。
+In the process configuration panel, click `Approval Default Page` in the upper left corner to open the default page configuration panel.
 
-![默认页面配置面板](./img/workflow_2025-08-26_16-52-02.png)
+![Default Page Configuration Panel](./img/workflow_2025-08-26_16-52-02.png)
 
-默认页面的配置面板中，可以对审批表单进行设置。
+In the default page configuration panel, you can set up the approval form.
 
-:::tip 提示
+:::tip Tip
 
-流程默认页面，默认情况下，所有节点都使用这个页面。因此，如果修改流程默认页面，那么在所有节点看到的页面都会改变。
+For the process default page, by default, all nodes use this page. Therefore, if you modify the process default page, the page seen at all nodes will change.
 
-开始节点、审批节点和抄送节点可以对页面进行定制。
+Start nodes, approval nodes, and CC nodes can customize pages.
 
-审批流程默认页面生成的表单不可删除，如何操作表单，参考[form-components](../using-functional-components-in-pages/form-components)
+The form generated by the approval workflow default page cannot be deleted. For how to operate forms, refer to [form-components](../using-functional-components-in-pages/form-components)
 
 :::
 
-## 其他流程配置 {#other-process-configuration}
-审批流程除了在页面上配置节点、页面调整外，还有其他一些配置。
+## Other Process Configuration {#other-process-configuration}
+In addition to configuring nodes and page adjustments on the page, approval workflows have other configurations.
 
-![流程配置](./img/workflow_2025-08-23_11-57-59.png)
+![Process Configuration](./img/workflow_2025-08-23_11-57-59.png)
 
-在流程配置面板中，点击右上角的`审批配置`，打开审批配置弹窗。
+In the process configuration panel, click `Approval Configuration` in the upper right corner to open the approval configuration popup.
 
-在配置弹窗中，我们可以查看关联数据模型、同步审批信息到对应的数据模型中、设置审批图标、是否开启审批预测功能、是否开启评论功能、是否允许分享、是否允许打印审批单等功能。
+In the configuration popup, we can view associated data models, synchronize approval information to corresponding data models, set approval icons, enable approval prediction features, enable comment features, allow sharing, allow printing approval forms, and other functions.
 
-### 同步审批信息到数据表模型 {#sync-approval-info-to-data-table-model}
-为了方便用户将审批相关信息（如：发起人、发起时间、审批状态等）与业务数据结合使用、统计、分析，JitAi 允许将审批过程信息同步到开发者指定的数据表模型中。
+### Sync Approval Information to Data Table Model {#sync-approval-info-to-data-table-model}
+To facilitate users in combining approval-related information (such as initiator, initiation time, approval status, etc.) with business data for use, statistics, and analysis, JitAi allows synchronizing approval process information to data table models specified by developers.
 
-![数据表模型](./img/workflow_2025-08-23_13-57-55.png)
+![Data Table Model](./img/workflow_2025-08-23_13-57-55.png)
 
-默认情况下`同步审批信息到数据表模型`呈现关闭状态，此时产生的审批信息会保存到系统自带的“审批流程实例”数据表中。如果用户想使用该功能，必须提前在数据表模型中准备好对应的字段以便存储审批相关信息，字段类型如下：
+By default, `Sync Approval Information to Data Table Model` is in a closed state. At this time, the generated approval information will be saved to the system's built-in "Approval Workflow Instance" data table. If users want to use this function, they must prepare corresponding fields in the data table model in advance to store approval-related information. The field types are as follows:
 
-|   审批信息   |          数据表模型接收的数据类型          | 存储到模型中的时机 |
+|   Approval Information   |          Data Table Model Accepted Data Types          | Timing of Storage in Model |
 | :----------: | :----------------------------------------: | :----------------: |
-|    发起人    |                  成员单选                  |     发起审批时     |
-|   发起时间   |                  日期时间                  |     发起审批时     |
-|   结束时间   |                  日期时间                  |     审批结束时     |
-| 审批流程标题 | 单行文本、多行文本、选项组单选、下拉框单选 |     发起审批时     |
-| 审批流程 id  |                  单行文本                  |     发起审批时     |
-| 审批实例 id  |                    数字                    |     发起审批时     |
-| 当前节点标题 | 单行文本、多行文本、选项组单选、下拉框单选 |     审批处理后     |
-| 当前节点 id  |                  单行文本                  |     审批处理后     |
-|  当前审批人  |             成员单选、成员多选             |     审批处理后     |
-|   审批状态   | 单行文本、多行文本、选项组单选、下拉框单选 |   审批状态变更后   |
+|    Initiator    |                  Member Single Select                  |     When Initiating Approval     |
+|   Initiation Time   |                  Date Time                  |     When Initiating Approval     |
+|   End Time   |                  Date Time                  |     When Approval Ends     |
+| Approval Workflow Title | Single Line Text, Multi-line Text, Option Group Single Select, Dropdown Single Select |     When Initiating Approval     |
+| Approval Workflow ID  |                  Single Line Text                  |     When Initiating Approval     |
+| Approval Instance ID  |                    Number                    |     When Initiating Approval     |
+| Current Node Title | Single Line Text, Multi-line Text, Option Group Single Select, Dropdown Single Select |     After Approval Processing     |
+| Current Node ID  |                  Single Line Text                  |     After Approval Processing     |
+|  Current Approver  |             Member Single Select, Member Multi-select             |     After Approval Processing     |
+|   Approval Status   | Single Line Text, Multi-line Text, Option Group Single Select, Dropdown Single Select |   After Approval Status Change   |
 
-### 同步到第三方审批待办 {#sync-to-third-party-approval-todo}
-当用户创建的应用接入了钉钉组织架构后，希望能将系统中的待办消息同步到钉钉的待办事项中。就可以在审批设置中开启`同步到第三方审批待办`功能。
+### Sync to Third-Party Approval To-Do {#sync-to-third-party-approval-todo}
+When a user-created application has integrated with DingTalk organizational structure and wants to synchronize to-do messages in the system to DingTalk's to-do items, they can enable the `Sync to Third-Party Approval To-Do` function in approval settings.
 
-当用户勾选该选项后，发起的审批就会通过钉钉的待办给对应的审批人进行同步。
+When users check this option, initiated approvals will be synchronized to corresponding approvers through DingTalk's to-do items.
 
-:::tip 注意
-该功能仅适用于钉钉组织架构接入的审批应用。若未接入钉钉组织架构，则看不到该选项。
+:::tip Note
+This function is only applicable to approval applications that have integrated with DingTalk organizational structure. If DingTalk organizational structure is not integrated, this option will not be visible.
 :::
 
-### 预测功能 
-当用户在发起审批或处理审批时，想知道后续流程节点的审批人，可以开启预测功能。
+### Prediction Function {#prediction-function} 
+When users want to know the approvers of subsequent workflow nodes when initiating or processing approvals, they can enable the prediction function.
 
-![预测功能](./img/workflow_2025-09-06_10-00-07.png)
+![Prediction Function](./img/workflow_2025-09-06_10-00-07.png)
 
-![预测功能效果](./img/workflow_2025-09-06_10-02-12.png)
+![Prediction Function Effect](./img/workflow_2025-09-06_10-02-12.png)
 
-当预测功能开发后，用户在发起审批或处理审批时，都会看到后续节点的审批人。
+After the prediction function is enabled, users will see the approvers of subsequent nodes when initiating or processing approvals.
 
-:::warning 注意
-系统默认开启预测功能。
+:::warning Note
+The system enables the prediction function by default.
 
-审批预测数据也是展示在右侧的审批记录中。其中，已经流转过的节点边框为实线，且含有具体时间。未流转的节点边框为虚线，且无具体时间。
+Approval prediction data is also displayed in the approval records on the right side. Among them, nodes that have already been processed have solid borders and contain specific times. Nodes that have not been processed have dashed borders and no specific times.
 
-如果关闭预测功能，申请节点则不显示审批记录，审批处理节点只会显示已流转的审批记录。
+If the prediction function is disabled, the application node will not display approval records, and approval processing nodes will only display approval records that have been processed.
 :::
 
-### 评论功能 {#comment-function}
-当用户发起审批后，审批参与者可在审批时进行评论，且能看到其他人的评论。评论支持上传图片，并支持图片的预览。
+### Comment Function {#comment-function}
+After users initiate approvals, approval participants can comment during approval and can see comments from others. Comments support uploading images and support image preview.
 
-![评论功能](./img/workflow_2025-08-23_14-50-33.png)
+![Comment Function](./img/workflow_2025-08-23_14-50-33.png)
 
-:::tip 注意
-评论功能不是针对每个审批节点，而是针对整个审批流程。即只要是在同一个审批流程中，无论在哪个审批节点，用户都可以进行评论。
+:::tip Note
+The comment function is not for each approval node, but for the entire approval workflow. That is, as long as it is in the same approval workflow, users can comment regardless of which approval node they are at.
 :::
 
-### 分享 {#share}
-当用户需要对审批流程进行分享时，可以通过分享功能实现。
+### Share {#share}
+When users need to share approval workflows, this can be achieved through the sharing function.
 
-![分享功能](./img/workflow_2025-08-26_14-21-13.png)
+![Share Function](./img/workflow_2025-08-26_14-21-13.png)
 
-在“审批配置”弹窗中打开“允许分享”功能，那么与该审批流程相关的待办、已办、已发起、抄送的详情界面都会出现“分享”按钮。
+Enable the "Allow Sharing" function in the "Approval Configuration" popup, and "Share" buttons will appear in the detail interfaces of to-do, done, initiated, and CC items related to this approval workflow.
 
-### 打印审批单 {#print-approval-form}
-有些用户在某些场景下需要打印审批单，此时可以通过打印功能实现。
+### Print Approval Form {#print-approval-form}
+Some users need to print approval forms in certain scenarios, which can be achieved through the printing function.
 
-![默认打印模板](./img/workflow_2025-08-23_15-02-42.png)
+![Default Print Template](./img/workflow_2025-08-23_15-02-42.png)
 
-每个审批流程都有一张默认的审批单打印模板，用户可以下载默认模板进行查看。另外，用户也可以自定义打印模板，并保存为模板。
+Each approval workflow has a default approval form print template, and users can download the default template for viewing. Additionally, users can also customize print templates and save them as templates.
 
-![自定义打印模板](./img/workflow_2025-08-23_15-06-19.png)
+![Custom Print Template](./img/workflow_2025-08-23_15-06-19.png)
 
-:::warning 注意
-“打印审批单”也是针对整个审批流程的，即所有审批节点的审批单都使用同一套打印模板。但是不同审批节点展现的数据不同，比如节点名称、节点处理人、节点处理结果、节点处理意见、节点处理时间等等。
+:::warning Note
+"Print Approval Form" is also for the entire approval workflow, meaning all approval nodes' approval forms use the same set of print templates. However, different approval nodes display different data, such as node names, node processors, node processing results, node processing comments, node processing times, etc.
 
-使用自定义打印模板，会有一些必须的参数，所设计的模板必须包含这些参数
+When using custom print templates, there are some required parameters, and the designed template must include these parameters.
 :::
 
-![打印按钮](./img/workflow_2025-08-23_15-10-32.png)
+![Print Button](./img/workflow_2025-08-23_15-10-32.png)
 
-当用户打开“允许打印审批单”后，审批流程在每个审批节点都会显示一个打印按钮，点击`打印`按钮可打印当前审批单。
+After users enable "Allow Print Approval Form", the approval workflow will display a print button at each approval node. Click the `Print` button to print the current approval form.
 
-## 复用其他审批流程 {#reuse-other-approval-workflowes}
-如果想基于原有审批流程进行创建新的审批流程，新的审批流程会随着原有审批流程的更新而更新，可以使用审批流程的复用功能。
+## Reuse Other Approval Workflows {#reuse-other-approval-workflowes}
+If you want to create a new approval workflow based on an existing approval workflow, where the new approval workflow will update with the original approval workflow updates, you can use the approval workflow reuse function.
 
-![复用审批流程](./img/workflow_2025-08-26_11-10-51.png)
+![Reuse Approval Workflow](./img/workflow_2025-08-26_11-10-51.png)
 
-使用复用功能时必须保证当前审批流程的数据模型与复用审批流程的数据模型一致。
+When using the reuse function, you must ensure that the data model of the current approval workflow is consistent with the data model of the reused approval workflow.
 
-对于流转路径，默认情况下是跟随复用审批流程变更。若当前流程改变了路径（增删流程节点或调整节点连接），不再随复用流程变化而变化。
+For flow paths, by default, they follow changes in the reused approval workflow. If the current workflow changes the path (adding/deleting workflow nodes or adjusting node connections), it will no longer change with the reused workflow.
 
-对于流程节点的配置，默认也是跟随复用审批流程的配置。如果当前流程节点配置发生变化，会将变化的配置重新存起来，而未修改的配置会随复用审批流程变化。
+For workflow node configurations, by default, they also follow the configuration of the reused approval workflow. If the current workflow node configuration changes, the changed configuration will be stored again, while unmodified configurations will change with the reused approval workflow.
 
-对于审批页面，当前审批流程会自动创建一个审批页面，但该页面继承复用审批流程的审批页面，支持局部修改，未修改的部分会随继承的页面自动更新。
+For approval pages, the current approval workflow will automatically create an approval page, but this page inherits the approval page of the reused approval workflow, supports partial modifications, and unmodified parts will automatically update with the inherited page.
 
-:::warning 注意
+:::warning Note
 
-如果想基于原有审批流程创建新的审批流程，但不想继承原有审批流程，可以使用审批流程的复制功能。
+If you want to create a new approval workflow based on an existing approval workflow but don't want to inherit the original approval workflow, you can use the approval workflow copy function.
 
-![审批复制](./img/workflow_2025-08-23_11-30-47.png)
+![Approval Copy](./img/workflow_2025-08-23_11-30-47.png)
 
-在左侧元素树中点击“生成副本”按钮，即可实现审批流程的复制功能。
+Click the "Generate Copy" button in the left element tree to implement the approval workflow copy function.
 :::

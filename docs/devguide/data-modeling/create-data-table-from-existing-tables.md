@@ -3,6 +3,18 @@ sidebar_position: 4
 slug: create-data-table-from-existing-tables
 ---
 
-# Creating Tables from Existing Database Schema
+# Creating Data Table Elements from Existing Database Tables {#from-existing-data-table}
 
-Coming soon...
+This approach is suitable for scenarios where database tables already exist and corresponding models need to be quickly created in JitAi applications.
+
+![Creating Model Based on Database Table](./img/based-on-existing-data-model.png)
+
+Developers fill in the model name in the `New Model` dialog, select `Create Model Based on Existing Table` as the creation method, and choose an existing database. The database defaults to the built-in database.
+
+![Select Data Table](./img/select-data-table.png)
+
+Click the `Select Database Table` input box to display all tables in the database.
+
+![Field Mapping](./img/field-mapping.png)
+
+After selecting a database table, click `OK` to enter the field configuration page. Click `Generate Data Model Fields from Associated Database Table`, then map the database fields to corresponding data types.

@@ -107,7 +107,7 @@ Agent运行完成后默认会输出一个字典，字典中仅包括一个`outpu
 JitAi作为企业级AI应用开发平台，自描述的应用模块可以被大模型准确理解并调用，成为Agent可用的工具。开发者可以在Agent可视化编辑器的`工具`中添加模型函数、服务函数、MCP服务、外部API、页面函数。
 
 ### Agent调用模型函数 {#agent-call-model-functions}
-[数据模型](../../reference/framework/JitORM/data-models#model-built-in-functions)自带常用的增删改查函数，开发者还可以根据实际业务需求[自定义模型函数](../data-modeling/data-table-model#model-function-configuration)。将数据模型函数作为工具添加到Agent后，Agent便能够通过这些函数实现对数据的增、删、改、查等操作，满足多样化的数据处理场景。
+[数据模型](../../reference/framework/JitORM/data-models#model-built-in-functions)自带常用的增删改查函数，开发者还可以根据实际业务需求[自定义模型函数](../data-modeling/create-data-model-functions)。将数据模型函数作为工具添加到Agent后，Agent便能够通过这些函数实现对数据的增、删、改、查等操作，满足多样化的数据处理场景。
 
 ![Agent添加模型函数工具](./img/agent/agent-add-model-function-tool.gif)
 

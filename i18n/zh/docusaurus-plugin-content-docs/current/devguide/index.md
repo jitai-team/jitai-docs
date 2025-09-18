@@ -141,73 +141,97 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-## 应用创建与发布
+## 创建与发布应用
 从应用创建到分布式部署的完整流程。掌握应用创建、源码管理、版本发布、运行环境配置，以及如何构建无限横向扩展的分布式集群架构。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
   title="创建和部署应用"
-  href="create-and-publish-app/creating-and-deploying-applications"
-  description="学习应用的创建、继承、版本管理和发布流程，掌握应用全生命周期管理。"
+  href="creating-and-publishing-applications/creating-and-deploying-applications"
+  description="学习应用的创建、继承、数据配置和部署流程，掌握应用开发的基础工作流程。"
 >
   <LinkGrid links={[
-    { text: "创建第一个应用", href: "create-and-publish-app/creating-and-deploying-applications#create-first-application" },
-    { text: "基于已有应用快速开发", href: "create-and-publish-app/creating-and-deploying-applications#based-on-existing-application-quick-development" },
-    { text: "数据存储与环境变量配置", href: "create-and-publish-app/creating-and-deploying-applications#data-storage-and-environment-variable-configuration" },
-    { text: "应用版本管理与发布", href: "create-and-publish-app/creating-and-deploying-applications#application-version-management-and-publish" },
-    { text: "应用导出导入", href: "create-and-publish-app/creating-and-deploying-applications#application-export-import" }
+    { text: "创建第一个应用", href: "creating-and-publishing-applications/creating-and-deploying-applications#create-first-application" },
+    { text: "基于已有应用快速开发", href: "creating-and-publishing-applications/creating-and-deploying-applications#based-on-existing-application-quick-development" },
+    { text: "数据存储与环境变量配置", href: "creating-and-publishing-applications/creating-and-deploying-applications#data-storage-and-environment-variable-configuration" },
+    { text: "应用部署", href: "creating-and-publishing-applications/creating-and-deploying-applications#application-deployment" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="应用目录和元素源码"
-  href="create-and-publish-app/application-directory-and-element-source-code"
-  description="深入了解JitAi应用的目录结构、元素组织方式和源码管理机制。"
->
-  敬请期待...
-</IndexCard>
-
-<IndexCard
-  title="应用发布与更新"
-  href="create-and-publish-app/application-publishing-and-updates"
-  description="掌握应用版本发布策略、自动更新机制和发布流程管理。"
->
-  敬请期待...
-</IndexCard>
-
-<IndexCard
-  title="运行环境管理"
-  href="create-and-publish-app/runtime-environment-management"
-  description="掌握运行环境的创建、配置和管理，学习如何使用节点集群和应用部署。"
+  href="creating-and-publishing-applications/application-directory-and-element-source-code"
+  description="基于JAAP协议的应用目录结构和元素源码管理，包括应用导出导入功能。"
 >
   <LinkGrid links={[
-    { text: "什么是运行环境", href: "create-and-publish-app/runtime-environment-management#what-is-runtime-environment" },
-    { text: "节点的本地默认运行环境", href: "create-and-publish-app/runtime-environment-management#node-local-default-runtime-environment" },
-    { text: "创建新的运行环境", href: "create-and-publish-app/runtime-environment-management#createnewrunenvironment" },
-    { text: "使用运行环境管理节点集群", href: "create-and-publish-app/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
-    { text: "在运行环境中部署应用", href: "create-and-publish-app/runtime-environment-management#deploy-application-in-runtime-environment" }
+    { text: "应用目录结构", href: "creating-and-publishing-applications/application-directory-and-element-source-code#application-directory-structure" },
+    { text: "元素代码目录结构", href: "creating-and-publishing-applications/application-directory-and-element-source-code#element-code-directory-structure" },
+    { text: "应用源码导出导入", href: "creating-and-publishing-applications/application-directory-and-element-source-code#application-export-import" },
+    { text: "导出源码zip包", href: "creating-and-publishing-applications/application-directory-and-element-source-code#export-source-code-zip" },
+    { text: "导出为微信小程序", href: "creating-and-publishing-applications/application-directory-and-element-source-code#export-to-wechat-miniprogram" },
+    { text: "导入应用源码包", href: "creating-and-publishing-applications/application-directory-and-element-source-code#import-application-source-code" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="分布式集群架构"
-  href="create-and-publish-app/distributed-cluster-architecture"
+  title="发布与更新应用"
+  href="creating-and-publishing-applications/publishing-and-updating-applications"
+  description="掌握应用版本管理、发布工作流程和更新策略，学习语义化版本控制和部署配置。"
+>
+  <LinkGrid links={[
+    { text: "应用版本管理与发布", href: "creating-and-publishing-applications/publishing-and-updating-applications#application-version-management-and-publish" },
+    { text: "语义化版本号", href: "creating-and-publishing-applications/publishing-and-updating-applications#semantic-versioning" },
+    { text: "自动更新配置", href: "creating-and-publishing-applications/publishing-and-updating-applications#force-auto-update" },
+    { text: "源代码和初始化数据", href: "creating-and-publishing-applications/publishing-and-updating-applications#include-source-code" },
+    { text: "应用版本更新", href: "creating-and-publishing-applications/publishing-and-updating-applications#application-version-updates" },
+    { text: "应用部署策略", href: "creating-and-publishing-applications/publishing-and-updating-applications#application-deployment-strategies" }
+  ]} />
+</IndexCard>
+
+
+<IndexCard
+  title="运行环境管理"
+  href="creating-and-publishing-applications/runtime-environment-management"
+  description="掌握运行环境的创建、配置和管理，学习如何使用节点集群和应用部署。"
+>
+  <LinkGrid links={[
+    { text: "什么是运行环境", href: "creating-and-publishing-applications/runtime-environment-management#what-is-runtime-environment" },
+    { text: "节点的本地默认运行环境", href: "creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment" },
+    { text: "创建新的运行环境", href: "creating-and-publishing-applications/runtime-environment-management#createnewrunenvironment" },
+    { text: "使用运行环境管理节点集群", href: "creating-and-publishing-applications/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
+    { text: "在运行环境中部署应用", href: "creating-and-publishing-applications/runtime-environment-management#deploy-application-in-runtime-environment" },
+    { text: "开发模式部署", href: "creating-and-publishing-applications/runtime-environment-management#deploy-in-development-mode" },
+    { text: "生产模式部署", href: "creating-and-publishing-applications/runtime-environment-management#deploy-in-production-mode" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="实现无限横向扩展的分布式集群架构"
+  href="creating-and-publishing-applications/distributed-cluster-architecture"
   description="学习如何构建和管理无限横向扩展的分布式集群架构，实现高可用和高性能部署。"
 >
-  敬请期待...
+  <LinkGrid links={[
+    { text: "四层架构模型", href: "creating-and-publishing-applications/distributed-cluster-architecture#four-layer-architecture" },
+    { text: "典型部署拓扑", href: "creating-and-publishing-applications/distributed-cluster-architecture#typical-deployment-topology" },
+    { text: "企业级集群部署架构", href: "creating-and-publishing-applications/distributed-cluster-architecture#enterprise-cluster-deployment" },
+    { text: "多维度环境划分", href: "creating-and-publishing-applications/distributed-cluster-architecture#multi-dimensional-environment-division" },
+    { text: "集群扩展策略", href: "creating-and-publishing-applications/distributed-cluster-architecture#cluster-scaling-strategies" },
+    { text: "负载均衡与容错", href: "creating-and-publishing-applications/distributed-cluster-architecture#load-balancing-fault-tolerance" },
+    { text: "架构约束与最佳实践", href: "creating-and-publishing-applications/distributed-cluster-architecture#architecture-constraints-best-practices" }
+  ]} />
 </IndexCard>
 
 </div>
 
 
-## 门户与页面开发
+## 前端门户与页面
 设计精美的用户界面和交互体验。从门户导航到页面构建，从组件布局到数据管理，打造功能完整、用户友好的应用界面。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="门户导航设计"
+  title="创建门户"
   href="shell-and-page/portal-navigation-design"
   description="设计不同用户角色的门户界面，配置导航菜单和权限控制，创建个性化用户体验。"
 >
@@ -217,17 +241,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "创建门户并配置菜单", href: "shell-and-page/portal-navigation-design#create-portal-and-configure-menu" },
     { text: "门户布局设计", href: "shell-and-page/portal-navigation-design#portal-layout-design" },
     { text: "启用或关闭常用功能入口", href: "shell-and-page/portal-navigation-design#enable-disable-common-function-entries" },
-    { text: "在门户中集成AI助理", href: "shell-and-page/portal-navigation-design#integrate-ai-assistant-in-portal" }
+    { text: "在门户中使用AI助理", href: "shell-and-page/portal-navigation-design#using-ai-assistant-in-portal" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="组件化页面开发"
+  title="创建组件化页面"
   href="shell-and-page/component-based-page-development"
   description="使用可视化编辑器构建页面界面，配置组件和事件，实现丰富的用户交互功能。"
 >
   <LinkGrid links={[
-    { text: "创建一个常规页面", href: "shell-and-page/component-based-page-development#create-a-regular-page" },
+    { text: "新建常规页面", href: "shell-and-page/component-based-page-development#create-a-regular-page" },
     { text: "可视化页面编辑器", href: "shell-and-page/component-based-page-development#visual-page-editor" },
     { text: "页面变量", href: "shell-and-page/component-based-page-development#page-variables" },
     { text: "页面事件", href: "shell-and-page/component-based-page-development#page-events" },
@@ -276,7 +300,8 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "创建数据录入页面", href: "shell-and-page/data-entry-page#create-data-entry-page" },
     { text: "配置允许查看和编辑的字段", href: "shell-and-page/data-entry-page#configure-viewable-editable-fields" },
     { text: "提交后显示再次录入按钮", href: "shell-and-page/data-entry-page#show-re-entry-button-after-submission" },
-    { text: "提交后展示结果反馈界面", href: "shell-and-page/data-entry-page#show-result-feedback-after-submission" }
+    { text: "提交后展示结果反馈界面", href: "shell-and-page/data-entry-page#show-result-feedback-after-submission" },
+    { text: "转换为常规页面进行修改", href: "shell-and-page/data-entry-page#convert-to-regular-page-for-modification" }
   ]} />
 </IndexCard>
 
@@ -288,7 +313,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid links={[
     { text: "创建Markdown页面", href: "shell-and-page/markdown-page#create-markdown-page" },
-    { text: "Markdown 语法", href: "shell-and-page/markdown-page#markdown-语法" }
+    { text: "Markdown 语法", href: "shell-and-page/markdown-page#markdown-syntax" }
   ]} />
 </IndexCard>
 
@@ -299,7 +324,6 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="面向高级开发者的完全自定义页面开发方式，支持复杂业务逻辑和个性化界面。"
 >
   <LinkGrid columns={2} links={[
-    { text: "React全代码页面", href: "shell-and-page/full-code-page-development#react-full-code-page" },
     { text: "创建 React 全代码页面", href: "shell-and-page/full-code-page-development#create-react-full-code-page" },
     { text: "使用样式", href: "shell-and-page/full-code-page-development#use-style" },
     { text: "使用本地资源", href: "shell-and-page/full-code-page-development#use-local-resources" },
@@ -308,7 +332,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "使用标准组件", href: "shell-and-page/full-code-page-development#use-standard-component" },
     { text: "调用数据模型函数", href: "shell-and-page/full-code-page-development#call-data-model-function" },
     { text: "调用服务函数", href: "shell-and-page/full-code-page-development#call-service-function" },
-    { text: "Vue全代码页面", href: "shell-and-page/full-code-page-development#vue-full-code-page" },
+    { text: "创建Vue全代码页面", href: "shell-and-page/full-code-page-development#vue-full-code-page" },
     { text: "使用第三方包", href: "shell-and-page/full-code-page-development#use-third-party-packages" },
     { text: "打包配置的使用", href: "shell-and-page/full-code-page-development#use-packaging-configuration" }
   ]} />
@@ -569,12 +593,25 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="树组件（正在编辑中）"
+  title="树组件"
+  href="using-functional-components-in-pages/tree-components"
   description="层次化数据展示组件，支持树形结构的展示、选择和操作。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 文档正在完善中，敬请期待...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "创建树形组件", href: "using-functional-components-in-pages/tree-components#create-tree-form-component" },
+    { text: "配置层级字段", href: "using-functional-components-in-pages/tree-components#configure-hierarchy-fields" },
+    { text: "首次加载组件时刷新数据", href: "using-functional-components-in-pages/tree-components#tree-form-refresh-on-first-load" },
+    { text: "默认展开第一个节点", href: "using-functional-components-in-pages/tree-components#default-expand-first-node" },
+    { text: "点击节点后事件", href: "using-functional-components-in-pages/tree-components#click-node-event" },
+    { text: "级联树", href: "using-functional-components-in-pages/tree-components#cascade-tree" },
+    { text: "新建级联树", href: "using-functional-components-in-pages/tree-components#create-cascade-tree" },
+    { text: "配置节点标题", href: "using-functional-components-in-pages/tree-components#configure-node-title" },
+    { text: "设置上级节点", href: "using-functional-components-in-pages/tree-components#set-parent-node" },
+    { text: "节点单选/多选", href: "using-functional-components-in-pages/tree-components#node-selection-mode" },
+    { text: "级联树首次加载组件时刷新数据", href: "using-functional-components-in-pages/tree-components#cascade-tree-refresh-on-first-load" },
+    { text: "级联树点击节点后事件", href: "using-functional-components-in-pages/tree-components#cascade-tree-click-node-event" },
+    { text: "级联树选中节点后事件", href: "using-functional-components-in-pages/tree-components#cascade-tree-select-node-event" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -758,18 +795,12 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="全代码组件"
-  href="using-functional-components-in-pages/full-code-components"
+  href="fullcode-ui-components-in-pages/ui-component-interface-specifications"
   description="完全自定义的代码组件，支持高度个性化的功能实现。"
 >
   <LinkGrid columns={2} links={[
-    { text: "创建全代码组件", href: "using-functional-components-in-pages/full-code-components#create-full-code-components" },
-    { text: "界面渲染器 Page 与逻辑处理类", href: "using-functional-components-in-pages/full-code-components#ui-renderer-page-logic-processing-class" },
-    { text: "通过组件实例调用其他组件", href: "using-functional-components-in-pages/full-code-components#call-other-components-via-instance" },
-    { text: "响应其他组件的事件", href: "using-functional-components-in-pages/full-code-components#respond-to-other-component-events" },
-    { text: "事件订阅原理", href: "using-functional-components-in-pages/full-code-components#event-subscription-principles" },
-    { text: "在自定义组件中响应", href: "using-functional-components-in-pages/full-code-components#respond-in-custom-components" },
-    { text: "可订阅的事件", href: "using-functional-components-in-pages/full-code-components#subscribable-events" },
-    { text: "双向通信示例", href: "using-functional-components-in-pages/full-code-components#bidirectional-communication-example" }
+    { text: "创建全代码组件", href: "fullcode-ui-components-in-pages/ui-component-interface-specifications" },
+    { text: "界面渲染器 Page 与逻辑处理类", href: "fullcode-ui-components-in-pages/ui-component-interface-specifications" }
   ]} />
 </IndexCard>
 
@@ -999,34 +1030,9 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="ai-assitant/create-ai-assistant"
   description="学习如何创建AI助理元素，配置工作流、节点类型和事件处理，实现智能业务流程自动化。"
 >
-  <LinkGrid columns={2} links={[
-    { text: "什么是AI助理", href: "ai-assitant/create-ai-assistant#what-is-ai-assistant" },
-    { text: "创建AI助理", href: "ai-assitant/create-ai-assistant#create-ai-assistant" },
-    { text: "可视化编排", href: "ai-assitant/create-ai-assistant#visual-orchestration" },
-    { text: "开始节点", href: "ai-assitant/create-ai-assistant#start-node" },
-    { text: "路由决策", href: "ai-assitant/create-ai-assistant#routing-decision" },
-    { text: "AIAgent", href: "ai-assitant/create-ai-assistant#ai-agent" },
-    { text: "对话区人机交互", href: "ai-assitant/create-ai-assistant#dialog-human-machine-interaction" },
-    { text: "工作区人机交互", href: "ai-assitant/create-ai-assistant#workspace-human-machine-interaction" },
-    { text: "函数调用", href: "ai-assitant/create-ai-assistant#function-call" },
-    { text: "条件分支", href: "ai-assitant/create-ai-assistant#conditional-branch" },
-    { text: "多任务执行", href: "ai-assitant/create-ai-assistant#multi-task-execution" },
-    { text: "事件类型概览", href: "ai-assitant/create-ai-assistant#event-type-overview" },
-    { text: "前端工作区事件", href: "ai-assitant/create-ai-assistant#frontend-workspace-events" },
-    { text: "后端业务事件", href: "ai-assitant/create-ai-assistant#backend-business-events" },
-    { text: "运行状态数据", href: "ai-assitant/create-ai-assistant#runtime-state-data" },
-    { text: "运行状态存储库", href: "ai-assitant/create-ai-assistant#runtime-state-storage-library" },
-    { text: "高级设置", href: "ai-assitant/create-ai-assistant#advancedsettings" },
-    { text: "使用指南", href: "ai-assitant/create-ai-assistant#usage-guide" },
-    { text: "欢迎语与开场白", href: "ai-assitant/create-ai-assistant#welcome-message-and-opening" },
-    { text: "消息输出", href: "ai-assitant/create-ai-assistant#message-output" },
-    { text: "发送AI消息", href: "ai-assitant/create-ai-assistant#send-ai-message" },
-    { text: "对话记录管理", href: "ai-assitant/create-ai-assistant#conversation-history-management" },
-    { text: "全代码开发", href: "ai-assitant/create-ai-assistant#full-code-development" },
-    { text: "示例演示", href: "ai-assitant/create-ai-assistant#example-demo" },
-    { text: "如何选择合适的节点类型？", href: "ai-assitant/create-ai-assistant#how-to-select-suitable-node-types" },
-    { text: "流程卡住常见原因和解决方法", href: "ai-assitant/create-ai-assistant#common-causes-and-solutions-for-stuck-processes" }
-  ]} />
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
 </IndexCard>
 
 <IndexCard
@@ -1043,26 +1049,6 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   title="AI助理的输入与输出"
   href="ai-assitant/ai-assistant-input-output"
   description="理解AI助理的输入输出配置和数据处理方法。"
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
-</IndexCard>
-
-<IndexCard
-  title="开发流程化多任务的对话式AI助理"
-  href="ai-assitant/develop-conversational-multi-task-ai-assistant"
-  description="学习如何开发面向复杂业务场景的流程化多任务对话式AI助理。"
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
-</IndexCard>
-
-<IndexCard
-  title="开发与UI页面协作的人机协作式企业级AI助理应用"
-  href="ai-assitant/develop-human-ai-collaboration-enterprise-assistant"
-  description="构建与UI页面协作的企业级AI助理应用，实现人机协作交互。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     📝 敬请期待...
@@ -1577,7 +1563,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "指定磁盘存储目录", href: "file-processing/file-storage#specify-disk-storage-directory" },
     { text: "云存储服务配置", href: "file-processing/file-storage#cloud-storage-service-configuration" },
     { text: "阿里云OSS", href: "file-processing/file-storage#aliyun-oss" },
-    { text: "移动云EOS", href: "file-processing/file-storage#移动云eos" },
+    { text: "移动云EOS", href: "file-processing/file-storage#china-mobile-cloud-eos" },
     { text: "MinIO", href: "file-processing/file-storage#minio" },
     { text: "七牛云", href: "file-processing/file-storage#aliyun-oss" },
     { text: "用环境变量防止配置信息泄露", href: "file-processing/file-storage#prevent-config-info-leak-with-env-variables" },
@@ -1861,8 +1847,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "本地开发与调试", href: "advanced-guide/local-development-and-debugging" },
     { text: "团队协作开发", href: "advanced-guide/team-collaborative-development" },
     { text: "Agent提示词编写技巧", href: "advanced-guide/agent-prompt-writing-techniques" },
-    { text: "应用层稳定性保障", href: "advanced-guide/application-layer-stability-guarantee" },
-    { text: "运维架构与管理指南", href: "advanced-guide/devops-architecture-and-management-guide" }
+    { text: "应用层稳定性保障", href: "advanced-guide/application-layer-stability-guarantee" }
   ]} />
 </IndexCard>
 

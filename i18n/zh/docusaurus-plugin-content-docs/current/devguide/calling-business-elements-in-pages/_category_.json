@@ -3,6 +3,7 @@
   "position": 7,
   "link": {
     "type": "generated-index",
+    "slug": "devguide/calling-business-elements-in-pages",
     "description": "学习如何在页面中调用和集成业务元素，包括服务函数和数据模型函数，用于动态内容和业务逻辑执行。"
   }
 }

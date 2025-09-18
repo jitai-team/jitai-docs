@@ -27,13 +27,13 @@
     "message": "JitAi可视化开发工具、运维管理工具以及云端应用发布服务。",
     "description": "The generated-index page description for category Development Tools and Publishing Services in sidebar devguideSidebar"
   },
-  "sidebar.devguideSidebar.category.Create and Publish App": {
+  "sidebar.devguideSidebar.category.Creating and Publishing Applications": {
     "message": "创建和发布应用",
-    "description": "The label for category Create and Publish App in sidebar devguideSidebar"
+    "description": "The label for category Creating and Publishing Applications in sidebar devguideSidebar"
   },
-  "sidebar.devguideSidebar.category.Create and Publish App.link.generated-index.description": {
+  "sidebar.devguideSidebar.category.Creating and Publishing Applications.link.generated-index.description": {
     "message": "学习如何创建、部署、发布和管理JitAi应用，包括运行时环境配置和分布式集群架构。",
-    "description": "The generated-index page description for category Create and Publish App in sidebar devguideSidebar"
+    "description": "The generated-index page description for category Creating and Publishing Applications in sidebar devguideSidebar"
   },
   "sidebar.devguideSidebar.category.Use Components in Pages": {
     "message": "在页面中使用功能组件",
@@ -50,14 +50,6 @@
   "sidebar.devguideSidebar.category.Data Modeling.link.generated-index.description": {
     "message": "学习如何在JitAi中进行数据建模，包括数据库连接、数据表设计、扩展表和聚合表等。",
     "description": "The generated-index page description for category Data Modeling in sidebar devguideSidebar"
-  },
-  "sidebar.devguideSidebar.category.Frontend Portal and Pages": {
-    "message": "前端门户与页面",
-    "description": "The label for category Frontend Portal and Pages in sidebar devguideSidebar"
-  },
-  "sidebar.devguideSidebar.category.Frontend Portal and Pages.link.generated-index.description": {
-    "message": "掌握JitAi门户和页面开发的基本原理，包括门户设计和页面开发等核心概念。",
-    "description": "The generated-index page description for category Frontend Portal and Pages in sidebar devguideSidebar"
   },
   "sidebar.devguideSidebar.category.User and Permission": {
     "message": "用户与权限",
@@ -455,14 +447,6 @@
     "message": "学习如何在页面中调用和集成业务元素，包括服务函数和数据模型函数，用于动态内容和业务逻辑执行。",
     "description": "The generated-index page description for category Calling Business Elements in Pages in sidebar devguideSidebar"
   },
-  "sidebar.devguideSidebar.category.Knowledge Base": {
-    "message": "AI知识库",
-    "description": "The label for category Knowledge Base in sidebar devguideSidebar"
-  },
-  "sidebar.devguideSidebar.category.Knowledge Base.link.generated-index.description": {
-    "message": "AI知识库元素、文档管理、搜索、智能体集成、向量数据库部署和API。",
-    "description": "The generated-index page description for category Knowledge Base in sidebar devguideSidebar"
-  },
   "sidebar.devguideSidebar.category.Full-Code UI Components in Pages": {
     "message": "页面中的全代码自定义UI组件",
     "description": "The label for category Full-Code UI Components in Pages in sidebar devguideSidebar"
@@ -518,5 +502,13 @@
   "sidebar.devguideSidebar.category.AI Knowledge Base.link.generated-index.description": {
     "message": "AI 知识库元素、文档管理、搜索、智能体集成、向量数据库部署和 API。",
     "description": "The generated-index page description for category AI Knowledge Base in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Frontend Portals and Pages": {
+    "message": "前端门户与页面",
+    "description": "The label for category Frontend Portals and Pages in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Frontend Portals and Pages.link.generated-index.description": {
+    "message": "掌握JitAi门户和页面开发的基本原理，包括门户设计和页面开发等核心概念。",
+    "description": "The generated-index page description for category Frontend Portals and Pages in sidebar devguideSidebar"
   }
 }

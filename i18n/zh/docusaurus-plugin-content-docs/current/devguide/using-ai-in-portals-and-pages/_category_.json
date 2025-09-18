@@ -1,8 +1,9 @@
 {
-  "label": "在门户和页面中使用AI",
+  "label": "Using AI in Portals and Pages",
   "position": 6,
   "link": {
     "type": "generated-index",
+    "slug": "devguide/using-ai-in-portals-and-pages",
     "description": "学习如何在门户和页面中使用AI元素，包括AI助理、AI智能体和其他AI组件，以提升用户体验。"
   }
 }

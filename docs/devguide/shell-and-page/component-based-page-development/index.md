@@ -2,283 +2,283 @@
 sidebar_position: 2
 ---
 
-# 组件化页面
-页面是用户与应用系统交互的主要场所，由不同的前端功能[组件](../../using-functional-components-in-pages)构成，为用户提供数据展示界面以及交互操作入口。
+# Component-based Page Development {#component-based-page-development}
+Pages are the main places where users interact with application systems, composed of different frontend functional [components](../../using-functional-components-in-pages), providing users with data display interfaces and interactive operation entries. Developers plan the navigation menus in each portal when [creating portals](../portal-navigation-design), and each menu item corresponds to the PC and mobile versions of a page.
 
-开发者在[门户导航设计](../portal-navigation-design)中规划每个门户中的导航菜单，而每个菜单项则对应一个页面的PC端和移动端。
+In a component-based page, page function logic, page event function logic, and component event function logic used in the page can all call other business elements, including but not limited to services, data models, AI large models, AI Agents, AI assistants, etc. For detailed content about calling business elements, please refer to [Calling Frontend and Backend Tools and Services in Function Logic](../../calling-business-elements-in-pages).
 
-## 创建组件化页面 {#create-a-regular-page}
-在[门户导航设计](../portal-navigation-design)中，如果开发者选择创建菜单的同时创建页面，则页面会自动生成，可以在元素目录树中找到自动生成的页面并进行编辑。
+## Create Regular Page {#create-a-regular-page}
+In [creating portals](../portal-navigation-design), if developers choose to create pages while creating menus, pages will be automatically generated and can be found in the element directory tree for editing.
 
-开发者也可以手动创建页面，JitAi提供了常规页面、AI数据管理页面、AI数据分析页面、数据录入页面、React全代码页面、Vue全代码页面、markdown-page一共7种页面类型。其中AI数据管理页面、AI数据分析页面、数据录入页面都是以常规页面为基础封装的，本文使用常规页面讲解**如何进行组件化的页面开发**。
+Developers can also manually create pages. JitAi provides 7 page types: Regular Page, AI Data Management Page, AI Data Analysis Page, Data Entry Page, React Full-code Page, Vue Full-code Page, and Markdown Page. Among them, AI Data Management Pages, AI Data Analysis Pages, and Data Entry Pages are all encapsulated based on regular pages. This article uses regular pages to explain **how to perform component-based page development**.
 
-![创建页面时选择类型](./imgs/create-regular-page.gif)
+![Create Page Type Selection](./imgs/create-regular-page.gif "Create Page Type Selection")
 
-开发者在元素目录树中找到`页面`，点击`+`后选择`常规页面`，在弹出的`新建常规页面`表单弹窗中填写页面名称，点击`确定`后即可完成页面创建并自动进入[可视化页面编辑器](#visual-page-editor)。
+Developers find `Pages` in the element directory tree, click `+` and select `Regular Page`, fill in the page name in the popup `Create Regular Page` form, and click `Confirm` to complete page creation and automatically enter the [Visual Page Editor](#visual-page-editor).
 
-### 页面继承
-如果想复用某个已存在的页面，开发者可以在填写页面名称的同时，在高级配置中选择要继承的页面。
+### Page Inheritance {#page-inheritance}
+If developers want to reuse an existing page, they can select the page to inherit in advanced configuration while filling in the page name.
 
-新页面将拥有被继承页面的所有组件配置（不包含事件逻辑），开发者可以在新页面中进行编辑。
+The new page will have all component configurations of the inherited page (excluding event logic), and developers can edit in the new page.
 
-## 可视化页面编辑器 {#visual-page-editor}
-JitAi为页面元素提供了可视化拖拽式的页面编辑器，开发者可以在页面编辑器中拖拽功能组件到画布中，并进行组件的配置和事件逻辑的编写。
+## Visual Page Editor {#visual-page-editor}
+JitAi provides a visual drag-and-drop page editor for page elements. Developers can drag functional components to the canvas in the page editor and configure components and write event logic.
 
-![页面编辑器总体布局](./imgs/page-editor-overall-layout.png)
+![Page Editor Overall Layout](./imgs/page-editor-overall-layout.png "Page Editor Overall Layout")
 
-页面编辑器总体布局分为四个区域：工具栏、画布、组件配置面板、事件面板。
+The overall layout of the page editor is divided into four areas: toolbar, canvas, component configuration panel, and event panel.
 
-JitAi开发框架提供了丰富的组件库，每种组件的配置项和事件各有不同，开发者可以参考[在页面中使用功能组件](../../using-functional-components-in-pages)，了解每种组件详细用法。
+The JitAi development framework provides a rich component library. Each component has different configuration items and events. Developers can refer to [Using Functional Components in Pages](../../using-functional-components-in-pages) to understand the detailed usage of each component.
 
-## 在页面中集成AI助理 {#integrate-ai-assistant-in-pages}
-页面支持集成AI助理，提供智能对话和辅助功能，增强用户体验。
+## Integrate AI Assistant in Pages {#integrate-ai-assistant-in-pages}
+Pages support integrating AI assistants, providing intelligent dialogue and auxiliary functions to enhance user experience.
 
-### 工具栏
-工具栏是页面编辑器中用于快速操作的区域，开发者可以点击工具栏中的按钮添加组件、切换页面紧凑/宽松模式、开启ai-assistant、打开/折叠收起元素目录树、打开/折叠事件面板、打开/折叠组件配置区、预览页面、在页面可视化模式和源代码模式间切换、保存对页面的修改。
+### Toolbar {#toolbar}
+The toolbar is the area in the page editor for quick operations. Developers can click buttons in the toolbar to add components, switch between compact/loose page modes, enable AI assistant, open/collapse the element directory tree, open/collapse the event panel, open/collapse the component configuration area, preview pages, switch between page visual mode and source code mode, and save modifications to pages.
 
-:::tip 实时预览
-开发者在开发过程中，可以随时点击工具栏中的预览按钮，实时预览页面效果。
+:::tip Real-time Preview
+During development, developers can click the preview button in the toolbar at any time to preview page effects in real-time.
 :::
 
-### 画布
-开发者通过向画布中拖拽组件进行页面布局。
+### Canvas {#canvas}
+Developers perform page layout by dragging components into the canvas.
 
-![页面添加组件](./imgs/page-add-component.gif)
+![Page Add Component](./imgs/page-add-component.gif "Page Add Component")
 
-开发者点击工具栏最左侧的`+ 插入组件`按钮，在弹窗中找到所需组件（支持搜索），按住鼠标左键将组件拖拽到画布中。画布中可以放置多个组件，通过拖拽调整组件相对位置、组件尺寸大小。
+Developers click the `+ Insert Component` button on the leftmost side of the toolbar, find the required component in the popup (supports search), hold down the left mouse button to drag the component to the canvas. Multiple components can be placed in the canvas, and component relative positions and component sizes can be adjusted by dragging.
 
-![组件在画布中的通用操作](./imgs/component-common-operations-on-canvas.png)
+![Component Common Operations on Canvas](./imgs/component-common-operations-on-canvas.png "Component Common Operations on Canvas")
 
-每一个组件的右上角都有一个`事件`按钮和`...`按钮。点击`事件`按钮可以在事件面板中显示当前组件的事件，点击`...`按钮可以打开组件的通用操作菜单，包括隐藏标题、设置尺寸、移动、生成副本、复制配置、粘贴配置、删除。
+Each component has an `Event` button and a `...` button in the upper right corner. Clicking the `Event` button can display the current component's events in the event panel, and clicking the `...` button can open the component's common operation menu, including hide title, set size, move, generate copy, copy configuration, paste configuration, and delete.
 
-### 组件配置区
-组件配置区用于配置组件的显示标题、属性、样式、规则、按钮等。
+### Component Configuration Area {#component-config-area}
+The component configuration area is used to configure component display titles, properties, styles, rules, buttons, etc.
 
-![表格组件配置总览](./imgs/table-component-config-overview.png)
+![Table Component Configuration Overview](./imgs/table-component-config-overview.png "Table Component Configuration Overview")
 
-开发者在工具栏中打开组件配置，即可看到当前选中组件的配置项，例如表格的`数据源`、`字段`、`工具栏按钮`、`操作列按钮`、`显示模式`、`无数据时的文案`等。开发者在画布中点击其它组件即可切换到对应组件的配置区。
+Developers open component configuration in the toolbar to see the configuration items of the currently selected component, such as the table's `Data Source`, `Fields`, `Toolbar Buttons`, `Action Column Buttons`, `Display Mode`, `No Data Text`, etc. Developers can click other components in the canvas to switch to the corresponding component's configuration area.
 
-### 事件面板  {#event-panel}
-事件面板是页面编辑器中用于编写组件事件逻辑的区域。
+### Event Panel {#event-panel}
+The event panel is the area in the page editor for writing component event logic.
 
-![打开事件面板](./imgs/open-event-panel.gif)
+![Open Event Panel](./imgs/open-event-panel.gif "Open Event Panel")
 
-开发者在工具栏中打开事件面板，即可看到当前选中组件的可配置事件，例如表格的`点击行`和`选中行后`事件。在画布中点击其它组件或者在事件面板左侧的列表中切换其它组件，即可配置对应组件的事件逻辑。
+Developers open the event panel in the toolbar to see the configurable events of the currently selected component, such as the table's `Click Row` and `After Row Selection` events. Clicking other components in the canvas or switching to other components in the list on the left side of the event panel allows configuring the corresponding component's event logic.
 
-![编辑事件逻辑](./imgs/edit-event-logic.gif)
+![Edit Event Logic](./imgs/edit-event-logic.gif "Edit Event Logic")
 
-开发者可以用可视化的方式编写事件逻辑，事件逻辑中支持使用基础语句、变量声明及赋值语句、循环遍历语句、条件判断语句、返回值、断点等语句。开发者可以对语句进行删除、复制、切换到源码模式编辑，且源码编辑和可视化编辑是双向同步的。
+Developers can write event logic in a visual way. Event logic supports using basic statements, variable declaration and assignment statements, loop iteration statements, conditional judgment statements, return values, breakpoints, and other statements. Developers can delete, copy, and switch to source code mode for editing statements, and source code editing and visual editing are bidirectionally synchronized.
 
-:::tip 插入断点进行调试
-事件逻辑中支持插入断点，开发者可以在断点处暂停执行，并查看当前变量值、调用堆栈等信息，帮助开发者进行调试。
+:::tip Insert Breakpoints for Debugging
+Event logic supports inserting breakpoints. Developers can pause execution at breakpoints and view current variable values, call stacks, and other information to help with debugging.
 :::
 
-## 组件通用操作
-### 生成副本
-如果页面中需要使用多个同类组件且配置较为雷同，则可以通过生成副本的方式快速添加组件。
+## Component Common Operations {#component-common-operations}
+### Generate Copy {#generate-copy}
+If a page needs to use multiple components of the same type with similar configurations, components can be quickly added by generating copies.
 
-![生成副本](./imgs/generate-copy.gif)
+![Generate Copy](./imgs/generate-copy.gif "Generate Copy")
 
-开发者点击组件右上角的`...`按钮，在弹出的菜单中点击`生成副本`按钮即可快速创建一个副本，副本组件的配置与原组件相同，开发者可以在副本上再进行个性化的修改。
+Developers click the `...` button in the upper right corner of the component, and click the `Generate Copy` button in the popup menu to quickly create a copy. The copy component has the same configuration as the original component, and developers can make personalized modifications on the copy.
 
 :::tip
-创建组件副本只会复制组件的配置，不会复制组件的事件逻辑。
+Creating component copies only copies the component's configuration, not the component's event logic.
 :::
 
-### 标题显隐
-每个组件的标题可以单独设置为显示或隐藏。
+### Title Show/Hide {#title-show-hide}
+Each component's title can be individually set to show or hide.
 
-![标题显隐](./imgs/title-show-hide.gif)
+![Title Show Hide](./imgs/title-show-hide.gif "Title Show Hide")
 
-当标题被隐藏后，`隐藏标题`按钮会自动变为`显示标题`按钮，点击`显示标题`按钮即可恢复标题的显示。
+When the title is hidden, the `Hide Title` button automatically becomes the `Show Title` button. Clicking the `Show Title` button restores the title display.
 
-### 自定义尺寸或自适应  {#custom-size-or-adaptive}
-组件的尺寸大小不仅可以通过拖拽组件边缘的方式进行调整，也可以进行精确设置。
+### Custom Size or Adaptive {#custom-size-or-adaptive}
+Component sizes can be adjusted not only by dragging component edges, but also by precise settings.
 
-![设置组件尺寸](./imgs/set-component-size.gif)
+![Set Component Size](./imgs/set-component-size.gif "Set Component Size")
 
-当选择按比例自适应时，组件会根据页面在浏览器中的显示宽度自动调整组件的宽度，保持组件的宽高比不变。当选择自定义尺寸时，开发者可以设置组件宽高的像素值。
+When proportional adaptation is selected, components automatically adjust their width based on the page's display width in the browser, keeping the component's aspect ratio unchanged. When custom size is selected, developers can set the pixel values for component width and height.
 
-### 复制和粘贴配置
-当前页面中、当前应用跨不同页面以及不同应用跨页面存在两个或多个同类组件，而且有复用配置的需求，则可以使用复制配置和粘贴配置的方式快速复用。
+### Copy and Paste Configuration {#copy-paste-config}
+When there are two or more components of the same type in the current page, across different pages in the current application, or across pages in different applications, and there is a need to reuse configurations, copy configuration and paste configuration can be used for quick reuse.
 
-![复制和粘贴配置](./imgs/copy-and-paste-configuration.gif)
+![Copy and Paste Configuration](./imgs/copy-and-paste-configuration.gif "Copy and Paste Configuration")
 
-开发者点击组件右上角的`...`按钮，在弹出的菜单中点击`复制配置`按钮，然后点击另一个组件的`粘贴配置`按钮，即可完成复制。
+Developers click the `...` button in the upper right corner of the component, click the `Copy Configuration` button in the popup menu, then click the `Paste Configuration` button of another component to complete the copy.
 
 :::tip 
-和生成副本类似，复制和粘贴配置只会复制组件的配置，不会复制组件的事件逻辑。和生成副本不同的是，这种复用方式支持跨页面。
+Similar to generating copies, copy and paste configuration only copies the component's configuration, not the component's event logic. Unlike generating copies, this reuse method supports cross-page operations.
 :::
 
-### 移动到其它布局组件中
-当页面中有弹窗、标签页、折叠面板这些布局组件时，开发者可以快速将其它组件移动到这些布局组件中。
+### Move to Other Layout Components {#move-to-layout-component}
+When there are layout components such as popups, tabs, and collapse panels in the page, developers can quickly move other components into these layout components.
 
-![组件移动](./imgs/move-component-to-other-layout-component.gif)
+![Move Component to Other Layout Component](./imgs/move-component-to-other-layout-component.gif "Move Component to Other Layout Component")
 
-开发者点击组件右上角的`...`按钮，在弹出的菜单中点击`移动`按钮，在弹窗中选择目标布局组件，即可完成移动。
+Developers click the `...` button in the upper right corner of the component, click the `Move` button in the popup menu, select the target layout component in the popup, and complete the move.
 
-### 从页面中删除
-![删除组件](./imgs/delete-component.gif)
+### Delete from Page {#delete-from-page}
+![Delete Component](./imgs/delete-component.gif "Delete Component")
 
-当页面中不再需要某个组件时，开发者点击组件右上角的`...`按钮，在弹出的菜单中点击`删除`按钮，即可从页面中移除组件。
+When a component is no longer needed in the page, developers click the `...` button in the upper right corner of the component, click the `Delete` button in the popup menu, and remove the component from the page.
 
-## 页面变量 {#page-variables}
-页面变量可以用于存储临时数据，函数逻辑中可以基于页面变量进行逻辑控制，页面自身的函数以及页面中其它组件的函数都可以访问当前页面的变量。
+## Page Variables {#page-variables}
+Page variables can be used to store temporary data. Function logic can perform logic control based on page variables, and both the page's own functions and functions of other components in the page can access the current page's variables.
 
-### 变量声明
-开发者可以根据需要声明一个或多个页面变量，变量类型支持单行文本、多行文本、日期时间等全部JitAi[数据类型](../../../reference/framework/JitORM/data-types)。
+### Variable Declaration {#variable-declaration}
+Developers can declare one or more page variables as needed. Variable types support all JitAi [data types](../../../reference/framework/JitORM/data-types) including single-line text, multi-line text, date and time, etc.
 
-![页面变量声明](./imgs/page-variable-declaration.gif)
+![Page Variable Declaration](./imgs/page-variable-declaration.gif "Page Variable Declaration")
 
-开发者在画布顶部点击`主页面`按钮打开主页面的事件面板，并在事件面板左上角的列表中选择`页面变量`，在弹出的列表中以此点选`主页面`-`页面变量`，即可以可视化的方式声明变量。
+Developers click the `Main Page` button at the top of the canvas to open the main page's event panel, select `Page Variables` in the list at the upper left corner of the event panel, and click `Main Page` - `Page Variables` in the popup list to declare variables visually.
 
-在页面变量的配置界面，开发者可以点击`声明页面变量`按钮，在弹出的表单中填写变量名称、选择数据类型，点击`确定`即可完成变量声明。开发者也可以点击每个变量标题右侧的按钮，在弹窗中修改已有变量的名称以及参数配置。
+In the page variable configuration interface, developers can click the `Declare Page Variable` button, fill in the variable name and select the data type in the popup form, and click `Confirm` to complete variable declaration. Developers can also click the button on the right side of each variable title to modify the name and parameter configuration of existing variables in the popup.
 
-不同数据类型的变量支持的配置参数也有所不同，例如Stext、Ltext等文本类型支持配置限制的字数。
+Different data types of variables support different configuration parameters. For example, text types like Stext and Ltext support configuring character limits.
 
-### 从请求链接中获取页面变量值 {#page-variables}
-JitAi支持从用户访问页面的请求链接中获取变量值。开发者在声明变量后，在`选择通过Url参数赋值的变量`下拉列表中选择对应的变量即可，支持多选。
-## 页面函数 {#page-functions}
-页面函数是开发者根据业务需要自行封装的程序逻辑，可以被页面中各类组件的函数、事件调用。
+### Get Variable Values from Request URL {#get-variables-from-url}
+JitAi supports getting variable values from the request URL when users access pages. After declaring variables, developers can select the corresponding variables in the `Select Variables to Assign via URL Parameters` dropdown list, supporting multiple selections.
+## Page Functions {#page-functions}
+Page functions are program logic encapsulated by developers according to business needs, which can be called by functions and events of various components in the page.
 
-### 函数声明
-开发者可以在事件面板中新建页面函数，并实现函数逻辑。
+### Function Declaration {#function-declaration}
+Developers can create new page functions in the event panel and implement function logic.
 
-![声明页面函数](./imgs/declare-page-function.gif)
+![Declare Page Function](./imgs/declare-page-function.gif "Declare Page Function")
 
-点击事件面板左上角的小箭头按钮，从列表中选择`页面函数`后点击`+ 新建函数`按钮，在弹窗中输入函数名称，点击`确定`即可创建一个页面函数。
+Click the small arrow button in the upper left corner of the event panel, select `Page Functions` from the list, then click the `+ New Function` button, enter the function name in the popup, and click `Confirm` to create a page function.
 
 :::tip
-平台会根据开发者输入的中文函数名称自动生成英文名称，开发者也可以手动修改函数名称。
+The platform automatically generates English names based on the Chinese function names entered by developers, and developers can also manually modify function names.
 :::
 
-页面函数创建后，开发者可以填写函数说明、设置参数列表、设置返回值类型，并通过可视化或切换到全代码模式编写函数逻辑。
+After creating a page function, developers can fill in function descriptions, set parameter lists, set return value types, and write function logic through visualization or by switching to full-code mode.
 
-### 函数重命名/生成副本/删除
-对于已经创建的页面函数，可以对其进行重命名、生成副本、删除操作。重命名只能修改函数中文标题，修改函数英文名称则需要切换到全代码模式下进行修改。使用生成副本功能可以快速复用已有函数，并在副本上进行个性化修改。
+### Function Rename/Generate Copy/Delete {#function-rename-copy-delete}
+For already created page functions, rename, generate copy, and delete operations can be performed. Renaming can only modify the Chinese title of the function; modifying the English name of the function requires switching to full-code mode. Using the generate copy function can quickly reuse existing functions and make personalized modifications on the copy.
 
-![页面函数的更多操作按钮](./imgs/page-function-more-operation-buttons.gif)
+![Page Function More Operation Buttons](./imgs/page-function-more-operation-buttons.gif "Page Function More Operation Buttons")
 
-开发者将鼠标放在每个页面函数标题右侧的按钮上，即可看到`重命名`、`生成副本`、`删除`三个操作按钮。
+Developers hover the mouse over the button on the right side of each page function title to see three operation buttons: `Rename`, `Generate Copy`, and `Delete`.
 
-### 在页面函数中使用页面变量和调用其它函数 {#page-variables}
-页面函数可以调用当前页面的其它页面函数，也可以访问页面变量。
+### Use Page Variables and Call Other Functions in Page Functions {#use-variables-functions-in-page-function}
+Page functions can call other page functions of the current page and can also access page variables.
 
-![页面函数调用](./imgs/page-function-and-variable-call.gif)
+![Page Function and Variable Call](./imgs/page-function-and-variable-call.gif "Page Function and Variable Call")
 
-在上图示例中，`echo`函数调用了`说你好`函数，并将`变量1`页面变量的值作为入参传递给了`说你好`函数。
+In the above example, the `echo` function calls the `Say Hello` function and passes the value of the `Variable 1` page variable as an input parameter to the `Say Hello` function.
 
-## 页面事件 {#page-events}
-### 页面加载后
-当一个页面完成加载时，会自动触发`页面加载后`事件，开发者可以利用这个事件在页面加载后执行一些初始化操作，例如获取页面变量值、调用页面函数、弹出一些提示信息等。
+## Page Events {#page-events}
+### After Page Load {#page-after-load}
+When a page completes loading, the `After Page Load` event is automatically triggered. Developers can use this event to perform some initialization operations after page loading, such as getting page variable values, calling page functions, popping up some prompt information, etc.
 
-![页面加载后事件](./imgs/page-after-load-event.gif)
+![Page After Load Event](./imgs/page-after-load-event.gif "Page After Load Event")
 
-开发者在`主页面`事件面板的左上角切换到`页面事件`，即可在右侧看到当前页面的事件列表。点击`页面加载后`页签，即可在下方编辑`页面加载后`的事件逻辑。
+Developers switch to `Page Events` in the upper left corner of the `Main Page` event panel to see the current page's event list on the right side. Click the `After Page Load` tab to edit the `After Page Load` event logic below.
 
-### 页面聚焦后
-当浏览器页签切换到当前页面以及平台导航页签切换到当前页面时，都会触发`页面聚焦后`事件。开发者可以利用这个事件在页面聚焦后执行一些操作。
+### After Page Focus {#page-after-focus}
+When browser tabs switch to the current page or platform navigation tabs switch to the current page, the `After Page Focus` event is triggered. Developers can use this event to perform some operations after page focus.
 
-![页面聚焦后事件](./imgs/page-focus-after-event.png)
+![Page Focus After Event](./imgs/page-focus-after-event.png "Page Focus After Event")
 
-开发者在`主页面`事件面板的左上角切换到`页面事件`，即可在右侧看到当前页面的事件列表。点击`页面聚焦后`页签，即可在下方编辑`页面聚焦后`的事件逻辑。
+Developers switch to `Page Events` in the upper left corner of the `Main Page` event panel to see the current page's event list on the right side. Click the `After Page Focus` tab to edit the `After Page Focus` event logic below.
 
-### 页面变量值改变后 {#page-variables}
-每个页面变量都会自动生成一个`变量值改变后`事件，当页面变量值改变时，会自动触发该事件。例如变量`访问类型`，对应生成的事件名称为`页面变量(访问类型)改变后`。
+### After Page Variable Value Changed {#page-variable-value-changed}
+Each page variable automatically generates an `After Variable Value Changed` event. When a page variable value changes, this event is automatically triggered. For example, for the variable `Access Type`, the corresponding generated event name is `After Page Variable (Access Type) Changed`.
 
-![变量值改变后事件](./imgs/variable-value-change-after-event.png)
+![Variable Value Change After Event](./imgs/variable-value-change-after-event.png "Variable Value Change After Event")
 
-开发者可以在事件面板中编辑`页面变量(访问类型)改变后`的事件逻辑。
+Developers can edit the event logic of `After Page Variable (Access Type) Changed` in the event panel.
 
-### 在事件逻辑中使用页面变量和函数 {#page-variables}
-在事件逻辑中，开发者可以访问当前页面的页面变量和页面函数。
+### Use Page Variables and Functions in Event Logic {#use-variables-functions-in-event-logic}
+In event logic, developers can access the current page's page variables and page functions.
 
-![在事件逻辑中使用页面变量和函数](./imgs/use-page-variables-and-functions-in-event-logic.png)
+![Use Page Variables and Functions in Event Logic](./imgs/use-page-variables-and-functions-in-event-logic.png "Use Page Variables and Functions in Event Logic")
 
-在上图示例中，`页面变量(访问类型)改变后`事件中调用了`sayHello`函数，并将`访问类型`页面变量的值作为入参传递给了`sayHello`函数。
+In the above example, the `After Page Variable (Access Type) Changed` event calls the `sayHello` function and passes the value of the `Access Type` page variable as an input parameter to the `sayHello` function.
 
-## 函数编辑时的快捷操作
-### 清空语句
-当某个页面函数逻辑需要全部重写时，JitAi支持一键清空函数语句。
+## Function Editing Shortcuts {#function-edit-shortcuts}
+### Clear Statements {#clear-statements}
+When a page function logic needs to be completely rewritten, JitAi supports one-click clearing of function statements.
 
-![页面函数清空语句](./imgs/page-function-clear-statements.gif)
+![Page Function Clear Statements](./imgs/page-function-clear-statements.gif "Page Function Clear Statements")
 
-开发者可以点击函数编辑界面下方的`清空语句`按钮，并在弹出的提示框中点击`确定`即可清空当前函数中的所有语句。
+Developers can click the `Clear Statements` button at the bottom of the function editing interface and click `Confirm` in the popup prompt to clear all statements in the current function.
 
-使用快捷键`Ctrl/Command+Z`可以撤销清空操作。
+Using the shortcut key `Ctrl/Command+Z` can undo the clear operation.
 
-### 复制语句
-需要复用一条已存在的语句并进行修改时，可以使用复制语句功能。
+### Copy Statement {#copy-statement}
+When you need to reuse an existing statement and modify it, you can use the copy statement function.
 
-![复制语句](./imgs/copy-statement.gif)
+![Copy Statement](./imgs/copy-statement.gif "Copy Statement")
 
-开发者点击语句右侧的复制按钮，就可以在当前语句下方复制出一条相同的语句，然后在新语句上进行修改。
+Developers click the copy button on the right side of the statement to copy an identical statement below the current statement, then modify the new statement.
 
-### 拖拽语句调整其所在行
-当需要快速调整多条语句的执行顺序时，可以使用拖拽的方式进行调整。
+### Drag Statement to Adjust Its Line Position {#drag-statement}
+When you need to quickly adjust the execution order of multiple statements, you can use dragging to adjust.
 
-![拖拽移动函数语句](./imgs/drag-move-function-statement.gif)
+![Drag Move Function Statement](./imgs/drag-move-function-statement.gif "Drag Move Function Statement")
 
-开发者将鼠标放在目标语句行上，当鼠标变成小手图案时，按住鼠标左键上下拖拽语句行，即可调整其所在行。
+Developers place the mouse on the target statement line, and when the mouse becomes a hand icon, hold down the left mouse button and drag the statement line up and down to adjust its line position.
 
-### 删除语句
-当某条语句的逻辑不再被需要时，可以使用删除语句功能。
+### Delete Statement {#delete-statement}
+When the logic of a statement is no longer needed, you can use the delete statement function.
 
-![删除语句](./imgs/delete-statement.gif)
+![Delete Statement](./imgs/delete-statement.gif "Delete Statement")
 
-开发者点击语句右侧的删除按钮，即可删除当前语句。
+Developers click the delete button on the right side of the statement to delete the current statement.
 
-### 切换到源码并定位到当前语句
-通过可视化编辑器编辑函数逻辑的同时，平台会自动生成对应的源代码，开发者可以随时在可视化编辑器和源代码编辑器之间切换。
+### Switch to Source Code and Locate Current Statement {#switch-to-source-code}
+While editing function logic through the visual editor, the platform automatically generates corresponding source code. Developers can switch between the visual editor and source code editor at any time.
 
-![切换并定位语句源代码](./imgs/switch-to-function-statement-source-view.gif)
+![Switch and Locate Statement Source Code](./imgs/switch-to-function-statement-source-view.gif "Switch and Locate Statement Source Code")
 
-开发者点击语句右侧的`</>`按钮，即可切换到源代码模式，编辑器自动定位到当前语句。在源代码模式下，开发者可以随意修改函数逻辑，也可以随时点击右上角的切换按钮切换回可视化编辑模式。
+Developers click the `</>` button on the right side of the statement to switch to source code mode, and the editor automatically locates to the current statement. In source code mode, developers can freely modify function logic and can also click the switch button in the upper right corner at any time to switch back to visual editing mode.
 
-### 快捷键
-JitAi支持使用快捷键快速完成函数编辑，已支持的快捷键包括：全选（Ctrl/Command + A）、选中多条语句（Ctrl/Command + 选中语句）、复制（Ctrl/Command + C）、剪切（Ctrl/Command + X）、粘贴（Ctrl/Command + V）、生成副本（Ctrl/Command + D）、撤销（Ctrl/Command + Z）、重做（Ctrl/Command + Y）、删除（Delete）、快速添加基础语句（选中语句 + Enter）。
+### Keyboard Shortcuts {#keyboard-shortcuts}
+JitAi supports using keyboard shortcuts to quickly complete function editing. Supported shortcuts include: Select All (Ctrl/Command + A), Select Multiple Statements (Ctrl/Command + Select Statement), Copy (Ctrl/Command + C), Cut (Ctrl/Command + X), Paste (Ctrl/Command + V), Generate Copy (Ctrl/Command + D), Undo (Ctrl/Command + Z), Redo (Ctrl/Command + Y), Delete (Delete), Quick Add Basic Statement (Select Statement + Enter).
 
-![页面函数编辑快捷键](./imgs/page-function-edit-shortcuts.gif)
+![Page Function Edit Shortcuts](./imgs/page-function-edit-shortcuts.gif "Page Function Edit Shortcuts")
 
-开发者在函数编辑界面中，将鼠标放在底部右侧的`快捷键`按钮上即可看到当前支持的快捷键说明。
+In the function editing interface, developers can hover the mouse over the `Shortcuts` button at the bottom right to see the currently supported shortcut key descriptions.
 
-## 在函数逻辑中调用前后端工具和服务
-在前端页面函数、组件事件函数逻辑中，开发者可以直接调用后端模型的增删改查函数以及服务函数。开发者自定义的模型和服务函数以及从父应用继承而来的模型和服务函数，都可以被调用。
+## Call Frontend and Backend Tools and Services in Function Logic {#call-frontend-backend-services}
+In frontend page functions and component event function logic, developers can directly call backend model CRUD functions and service functions. Developer-defined model and service functions, as well as model and service functions inherited from parent applications, can all be called.
 
-![页面函数中调用前后端工具和服务](./imgs/call-frontend-backend-tools-services-in-page-function.gif)
+![Call Frontend Backend Tools Services in Page Function](./imgs/call-frontend-backend-tools-services-in-page-function.gif "Call Frontend Backend Tools Services in Page Function")
 
-在上图的列表中可以看到变量、后端服务、后端数据模型、ai-assistant、页面函数、前端的反馈提醒/数据处理/工具函数/异常处理等多种可调用目标，开发者按需选择即可。
+In the list shown above, you can see variables, backend services, backend data models, AI assistants, page functions, frontend feedback reminders/data processing/utility functions/exception handling and other callable targets. Developers can select as needed.
 
-### 调用后端模型/服务
-数据模型封装了对数据库表的增删改查，服务函数封装了自定义的业务逻辑，JitAi支持开发者以点选的方式完成后端接口调用，而不需要编写任何HTTP接口调用代码。
+### Call Backend Model/Service {#call-backend-model-service}
+Data models encapsulate CRUD operations on database tables, and service functions encapsulate custom business logic. JitAi supports developers to complete backend interface calls through point-and-click selection without writing any HTTP interface call code.
 
-![函数中调用模型](./imgs/call-model-in-function.png)
+![Call Model in Function](./imgs/call-model-in-function.png "Call Model in Function")
 
-开发者点击`基于语句`按钮，在新插入的空白语句中中点击`请选择`文案，即可弹出可调用目标的列表。
+Developers click the `Based on Statement` button, click the `Please Select` text in the newly inserted blank statement, and a list of callable targets will pop up.
 
-以上图为例，依次选中`数据模型`-`部门模型`-`获取一条数据`即可完成查询一条部门数据的功能。
+Taking the above figure as an example, sequentially selecting `Data Model` - `Department Model` - `Get One Record` completes the function of querying one department data record.
 
-### 调用前端服务
-在前端的业务功能开发中，开发者通常需要实现弹窗确认、反馈提醒、loading、消息提示(错误/警告/普通)、日志打印等常见功能，JitAi将这些功能内置到了前端服务中，开发者可以直接使用。
+### Call Frontend Service {#call-frontend-service}
+In frontend business function development, developers usually need to implement common functions such as popup confirmation, feedback reminders, loading, message prompts (error/warning/normal), and log printing. JitAi has built these functions into frontend services that developers can use directly.
 
-![函数中调用前端服务](./imgs/call-frontend-service-in-function.png)
+![Call Frontend Service in Function](./imgs/call-frontend-service-in-function.png "Call Frontend Service in Function")
 
-开发者点击`基于语句`按钮，在新插入的空白语句中中点击`请选择`文案，在弹出的列表中依次选中`反馈提醒`-`确认框`，平台会自动插入一条语句，在参数输入框内输入文案即可。
+Developers click the `Based on Statement` button, click the `Please Select` text in the newly inserted blank statement, sequentially select `Feedback Reminder` - `Confirmation Box` in the popup list, and the platform will automatically insert a statement. Enter the text in the parameter input box.
 
-## 移动端页面编辑器
-JitAi已经内置了对移动端的适配，可以在移动端页面编辑器中像开发PC端页面一样开发移动端页面。
+## Mobile Page Editor {#mobile-page-editor}
+JitAi has built-in mobile adaptation and can develop mobile pages in the mobile page editor just like developing PC pages.
 
-![创建移动端页面](./imgs/create-mobile-page.png)
+![Create Mobile Page](./imgs/create-mobile-page.png "Create Mobile Page")
 
-开发者在创建页面时可以选择页面的终端类型为`移动端`（默认是PC端）。
+Developers can select the page terminal type as `Mobile` when creating pages (default is PC).
 
-![移动端页面编辑器](./imgs/mobile-page-editor.png)
+![Mobile Page Editor](./imgs/mobile-page-editor.png "Mobile Page Editor")
 
-移动端页面编辑器和PC端页面编辑器在功能上没有区别，配置/事件/函数/页面变量等操作和PC端页面编辑器完全一致。
+The mobile page editor has no functional difference from the PC page editor. Configuration/events/functions/page variables and other operations are completely consistent with the PC page editor.
 
-## 在页面中集成ai-assistant 
-JitAi支持在页面中直接集成[ai-assistant](../../ai-assitant/create-ai-assistant)，用户在访问页面时可以与ai-assistant进行交互。
+## Integrate AI Assistant in Page {#integrate-ai-assistant-in-page}
+JitAi supports directly integrating [AI Assistant](../../ai-assitant/create-ai-assistant) in pages, allowing users to interact with AI assistants when accessing pages.
 
-![在页面中添加ai-assistant](./imgs/add-ai-assistant-to-page.gif)
+![Add AI Assistant to Page](./imgs/add-ai-assistant-to-page.gif "Add AI Assistant to Page")
 
-开发者在页面编辑器顶部打开`ai-assistant`开关，在弹出的列表中选择一个[ai-assistant](../../ai-assitant/create-ai-assistant)，即可在页面中集成ai-assistant。
+Developers turn on the `AI Assistant` switch at the top of the page editor, select an [AI Assistant](../../ai-assitant/create-ai-assistant) from the popup list, and integrate the AI assistant into the page.

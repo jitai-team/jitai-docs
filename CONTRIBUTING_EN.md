@@ -82,8 +82,8 @@ We welcome various forms of contributions:
 
 Ensure your development environment meets the following requirements:
 
-- **Node.js**: >= 18.0.0
-- **Yarn**: >= 1.22.0 (recommended) or npm >= 8.0.0
+- **Node.js**: >= 22.x
+- **npm**: >= 8.0.0
 - **Git**: Latest stable version
 
 ### Code Standards
@@ -112,13 +112,13 @@ git remote add upstream https://github.com/jitai-team/jitai-docs.git
 ### 2. Install Dependencies
 
 ```bash
-yarn install
+npm install
 ```
 
 ### 3. Start Development Server
 
 ```bash
-yarn start
+npm start
 ```
 
 ### 4. Create Feature Branch
@@ -128,29 +128,6 @@ git checkout -b feature/your-feature-name
 ```
 
 ## 📝 Documentation Contribution Guide
-
-### Documentation Structure
-
-```
-docs/
-├── tutorial/              # Tutorial documentation
-│   ├── 00快速上手/       # Getting started guide
-│   ├── 01概述/           # System overview
-│   ├── 02实例教程/       # Practical cases
-│   ├── 03指南/           # Detailed guides
-│   └── 04进阶指南/       # Advanced topics
-├── cases/                # Case studies
-└── community/            # Community documentation
-```
-
-### Docusaurus Specific Files
-
-- **`docusaurus.config.ts`**: Main website configuration file
-- **`sidebars.ts`**: Sidebar configuration, defines documentation navigation structure
-- **`src/`**: Custom pages and components
-- **`static/`**: Static asset files (images, fonts, etc.)
-- **`blog/`**: Blog posts directory
-- **`_category_.json`**: Category configuration (in subdirectories)
 
 ### Documentation Writing Standards
 
@@ -181,7 +158,7 @@ This is explanatory text introducing the usage of a feature.
 
 ```bash
 # This is a code example
-yarn start
+npm start
 ```
 
 :::tip Tip
@@ -266,8 +243,8 @@ git checkout -b feature/your-feature-name
 # ...
 
 # Test your changes
-yarn build
-yarn start
+npm run build
+npm start
 
 # Commit changes
 git add .

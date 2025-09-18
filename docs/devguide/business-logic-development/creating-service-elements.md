@@ -41,7 +41,7 @@ JitAi支持开发者在一个服务元素中创建多个服务函数。
 ## 服务函数在哪里使用 {#where-service-functions-are-used}
 在[页面函数](../shell-and-page/component-based-page-development#page-functions)、[页面事件](../shell-and-page/component-based-page-development#page-events)、[前端组件事件函数](../shell-and-page/component-based-page-development#event-panel)、[任务函数](./background-tasks#task-execution-function-development)、[模型事件](./event-handling#model-events)、[审批事件](./event-handling#approval-events)、[自定义事件](./event-handling#custom-events)、[ai-assistant事件](./event-handling#ai-assistant-events)、[Agent工具调用事件](./event-handling#agent-tool-call-events)以及其它服务函数等所有可以编写函数逻辑的地方，开发者都可以调用服务函数。
 
-服务函数还可以[作为ai-agent的工具](../ai-agent/create-ai-agent#agent-calling-service-functions)被大模型调用、在[ai-assistant的函数调用节点](../ai-assitant/create-ai-assistant#function-call)被调用、在[API授权元素](../api-exposure/api-authorization)中开放给第三方调用。
+服务函数还可以[作为ai-agent的工具](../ai-agent/create-ai-agent#agent-calling-service-functions)被大模型调用、在[ai-assistant的函数调用节点](../ai-assitant/process-orchestration-node-configuration#function-call)被调用、在[API授权元素](../api-exposure/api-authorization)中开放给第三方调用。
 
 ## 让AI更准确地理解服务函数 {#help-ai-understand-service-functions}
 每个服务函数都在服务元素e.json中存在一个函数声明，即functionList中的一个函数定义。functionList可以让函数被IDE可视化编辑器识别从而支持可视化逻辑编排、让函数能够被正常调用、让函数被AI理解和使用。
@@ -57,7 +57,7 @@ JitAi支持开发者在一个服务元素中创建多个服务函数。
 :::
 
 ## 使用跨App服务元素调用授权接口 {#use-cross-app-service-elements-to-call-authorized-interfaces} 
-当一个JitAi应用使用[API授权元素](../api-exposure/api-authorization)对外开放了服务函数，另一个JitAi应用可以使用`跨APP服务`元素访问该授权函数，实现跨应用服务函数调用。这种调用方式仅限于在JitAi应用之间进行，调用方不是JitAi应用则依然需要使用[API授权元素SDK调用方式](../api-exposure/api-authorization#use-sdk-to-call-authorized-interfaces)。
+当一个JitAi应用使用[API授权元素](../api-exposure/api-authorization)对外开放了服务函数，另一个JitAi应用可以使用`跨APP服务`元素访问该授权函数，实现跨应用服务函数调用。这种调用方式仅限于在JitAi应用之间进行，调用方不是JitAi应用则依然需要使用[API授权元素SDK调用方式](../api-exposure/using-sdk-to-call-authorized-element-apis.md)。
 
 ### 创建跨App服务元素 {#create-cross-app-service-elements}
 ![创建跨App服务](./img/create-cross-app-service.gif)
@@ -80,3 +80,4 @@ JitAi支持开发者在一个服务元素中创建多个服务函数。
 ![调用跨App服务函数](./img/call-cross-app-service-function.gif)
 
 如上图所示，在按钮的点击事件逻辑中发起对跨App服务元素中的函数调用，并使用前端全局提示工具显示函数返回的内容。这里仅仅是用按钮事件函数举例，开发者可以在任意函数逻辑中调用，参考[服务函数在哪里使用](#where-service-functions-are-used)。
+

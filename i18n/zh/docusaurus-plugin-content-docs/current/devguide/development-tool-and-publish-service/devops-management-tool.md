@@ -9,7 +9,7 @@ slug: devops-management-tool
 
 AdminApp采用双控制台架构，提供本地节点控制台和组织管理控制台两个管理界面，分别面向单节点应用管理和企业级集群管理需求。开发者在访问节点入口地址时，会自动跳转到节点控制台。
 
-在[创建和发布应用](../create-and-publish-app/creating-and-deploying-applications)部分，会详细介绍AdminApp中的功能用法，在这里先对AdminApp的能力进行宏观概述。
+在[创建和发布应用](../creating-and-publishing-applications)部分，会详细介绍AdminApp中的功能用法，在这里先对AdminApp的能力进行宏观概述。
 
 ## 双控制台 {#dual-console-architecture}
 

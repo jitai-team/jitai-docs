@@ -1,8 +1,0 @@
-{
-  "label": "Create and Publish App",
-  "position": 4,
-  "link": {
-    "type": "generated-index",
-    "description": "Create applications, manage app directories and element source code, handle app publishing and updates, runtime environment management, and implement horizontally scalable distributed architectures using runtime environments."
-  }
-}

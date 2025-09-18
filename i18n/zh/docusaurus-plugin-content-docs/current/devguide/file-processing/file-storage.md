@@ -3,8 +3,9 @@ sidebar_position: 1
 slug: file-storage
 ---
 
-# 文件存储 {#file-storage}
+# 配置自己的文件存储服务 {#configuring-your-own-file-storage-service}
 文件上传与使用是Web应用的核心功能，广泛应用于附件上传、头像管理、图片预览等场景。JitAi为开发者提供了完整的文件存储解决方案，支持阿里云OSS、移动云EOS、MinIO、七牛云存储、AWS S3、Cloudflare R2以及本地磁盘存储共7种存储方式。
+
 
 ## 本地存储配置 {#local-storage-configuration}
 本地磁盘存储将文件资源保存在服务器本地磁盘中。系统会自动为上传的图片生成30×30像素、300×300像素的缩略图以及保留原始尺寸图片。JitAi会根据不同使用场景智能选择合适的图片尺寸，有效节约网络带宽并提升页面加载速度。

@@ -3,106 +3,106 @@ sidebar_position: 6
 slug: approval-workflow-usage
 ---
 
-# 审批流程的使用
-在门户中，用户可以通过“发起申请”和“待办中心”两个功能模块，对流程进行发起申请和查看处理等操作。
+# Approval Initiation and To-Do in Portal
+In the portal, users can initiate applications and view processing operations through two functional modules: "Initiate Application" and "To-Do Center".
 
-## 发起申请 {#initiate-application}
-在开发区创建的所有审批流程，在这里都会展示。
+## Initiate Application {#initiate-application}
+All approval workflows created in the development area will be displayed here.
 
-![发起申请](./img/workflow_2025-08-26_11-25-20.png)
+![Initiate Application](./img/workflow_2025-08-26_11-25-20.png)
 
-当发起人选择其中一个审批流程后，就会进入对应的发起申请页面。
+When the initiator selects one of the approval workflows, they will enter the corresponding application initiation page.
 
-![发起申请页面](./img/workflow_2025-08-26_11-28-21.png)
+![Application Initiation Page](./img/workflow_2025-08-26_11-28-21.png)
 
-发起申请页面由审批表单和流程数据组成。页面右侧的审批流程是预测数据，因此都显示的是“未到达”状态。在发起申请页面填写好表单后，点击提交按钮，就会进入审批流程。
+The application initiation page consists of an approval form and process data. The approval workflow on the right side of the page is prediction data, so it all displays "Not Reached" status. After filling out the form on the application initiation page, click the submit button to enter the approval workflow.
 
-:::tip 注意
-审批流程预测数据是根据当前审批流程的配置生成的。因此，如果配置不发生变化，预测数据不会发生变化。
+:::tip Note
+Approval workflow prediction data is generated based on the current approval workflow configuration. Therefore, if the configuration does not change, the prediction data will not change.
 
-如果当前审批流程有分支节点，预测数据会根据表单中填写的数据决定显示哪个分支。
+If the current approval workflow has branch nodes, the prediction data will determine which branch to display based on the data filled in the form.
 :::
 
-## 待办中心 {#todo-center}
-待办中心是处理审批流程的入口，用户可以在待办中心查看与当自己相关的审批任务。
+## To-Do Center {#todo-center}
+The To-Do Center is the entry point for processing approval workflows, where users can view approval tasks related to themselves.
 
-![待办中心](./img/workflow_2025-08-26_11-55-05.png)
+![To-Do Center](./img/workflow_2025-08-26_11-55-05.png)
 
-待办中心包括四个标签：待办、已办、已发起、抄送。每个标签都会展示当前状态下的审批任务，以摘要的形式展示。点击对应的审批任务，可以进入审批详情页面。
+The To-Do Center includes four tabs: To-Do, Done, Initiated, and CC. Each tab displays approval tasks in the current status in summary form. Click on the corresponding approval task to enter the approval details page.
 
-![列表模式](./img/workflow_2025-08-26_13-43-18.png)
+![List Mode](./img/workflow_2025-08-26_13-43-18.png)
 
-待办中心有两种展现模式：列表模式和卡片模式，默认显示列表模式。在列表模式下，每个审批任务最多显示 5 个摘要信息。
+The To-Do Center has two display modes: list mode and card mode, with list mode displayed by default. In list mode, each approval task displays a maximum of 5 summary information items.
 
-![卡片模式](./img/workflow_2025-08-26_13-45-29.png)
+![Card Mode](./img/workflow_2025-08-26_13-45-29.png)
 
-点击切换图标切换成卡片模式后，每个审批任务最多只展现 3 个摘要信息。
+After clicking the switch icon to switch to card mode, each approval task displays a maximum of only 3 summary information items.
 
-### 详情页面 {#detail-page}
-在待办标签页下看到的审批任务都是待办任务。点击每一个待办任务，就可以打开对应的待办详情；同理，在已办标签下打开的是已办详情，在已发起标签下打开的是已发起详情，在抄送标签下打开的是抄送详情。
+### Detail Page {#detail-page}
+The approval tasks seen under the To-Do tab are all to-do tasks. Click on each to-do task to open the corresponding to-do details; similarly, under the Done tab opens done details, under the Initiated tab opens initiated details, and under the CC tab opens CC details.
 
-![待办详情](./img/workflow_2025-08-26_14-06-21.png)
+![To-Do Details](./img/workflow_2025-08-26_14-06-21.png)
 
-所有的详情页面分为左右结构，左边是审批表单页面，右边显示审批流程。
+All detail pages are divided into left and right structures, with the approval form page on the left and the approval workflow displayed on the right.
 
-:::tip 提示
+:::tip Tip
 
-已办详情页面和抄送详情页面底部不会有操作按钮。
+Done detail pages and CC detail pages will not have action buttons at the bottom.
 
-如果发起节点打开“撤销流程”功能，在已发起详情页面中，会显示`撤销流程`按钮。
+If the initiation node enables the "Revoke Workflow" function, a `Revoke Workflow` button will be displayed in the initiated detail page.
 
-如果在审批节点打开“拒绝”、“回退”等功能，在待办详情页面中就会显示`拒绝`、`回退`按钮。
+If "Reject", "Return" and other functions are enabled in approval nodes, `Reject` and `Return` buttons will be displayed in the to-do detail page.
 
-如果在“审批配置”打开“分享”、“打印”等功能，在该审批的所有详情页面中就会显示`分享`、`打印`等按钮。
+If "Share", "Print" and other functions are enabled in "Approval Configuration", `Share`, `Print` and other buttons will be displayed in all detail pages of this approval.
 
-如果开启“评论”功能，在该审批所有详情页面的右侧会显示“评论”标签。
+If the "Comment" function is enabled, a "Comment" tab will be displayed on the right side of all detail pages of this approval.
 
 :::
 
-### 委托他人处理 {#delegate-to-others-processing}
-用户可能因为各种原因导致较长一段时间无法处理审批，这时可以通过委托功能，将审批委托给其他用户处理。
+### Delegate to Others Processing {#delegate-to-others-processing}
+Users may be unable to process approvals for an extended period due to various reasons. In this case, they can use the delegation function to delegate approvals to other users for processing.
 
-![委托](./img/workflow_2025-08-26_14-24-56.png)
+![Delegation](./img/workflow_2025-08-26_14-24-56.png)
 
-在待办中心的右上角点击`委托`，即可进入委托页面进行设置。
+Click `Delegate` in the upper right corner of the To-Do Center to enter the delegation page for settings.
 
-委托页面包括三个部分：发起委托、委托管理和代理记录。
+The delegation page includes three parts: Initiate Delegation, Delegation Management, and Proxy Records.
 
-![发起委托](./img/workflow_2025-08-26_14-27-51.png)
+![Initiate Delegation](./img/workflow_2025-08-26_14-27-51.png)
 
-在发起委托页面，需填写代理人、代理开始时间、代理结束时间、委托审批范围以及需要委托的审批流程。填写完毕之后，点击`发起委托`后，委托功能就会生效。
+On the initiate delegation page, you need to fill in the proxy person, proxy start time, proxy end time, delegation approval scope, and the approval workflows that need to be delegated. After completing the information, click `Initiate Delegation` to activate the delegation function.
 
-![委托管理](./img/workflow_2025-08-26_14-29-37.png)
+![Delegation Management](./img/workflow_2025-08-26_14-29-37.png)
 
-委托管理中可以查看当前已发起的委托列表，查看代理人、时间、流程等信息，并可以提前结束或删除已结束的委托。
+In delegation management, you can view the list of currently initiated delegations, view information such as proxy persons, time, processes, and can end early or delete completed delegations.
 
-![代理记录](./img/workflow_2025-08-26_14-30-14.png)
+![Proxy Records](./img/workflow_2025-08-26_14-30-14.png)
 
-代理记录中也可以查看在委托时间内代理人经手并操作的所有代理信息。
+In proxy records, you can also view all proxy information handled and operated by the proxy person during the delegation period.
 
-:::warning 注意
-委托人发起委托后，对于委托期间尚未完成审批的数据，如果超过委托结束时间，也不会返还给委托人，仍然由代理人进行处理。
+:::warning Note
+After the delegator initiates delegation, for data that has not completed approval during the delegation period, even if it exceeds the delegation end time, it will not be returned to the delegator and will still be processed by the proxy person.
 :::
 
-## 审批流程管理页面 {#approval-workflow-management-page}
-![审批流程管理页面](./img/workflow_2025-08-26_14-40-48.png)
+## Approval Workflow Management Page {#approval-workflow-management-page}
+![Approval Workflow Management Page](./img/workflow_2025-08-26_14-40-48.png)
 
-当管理员进入管理者门户后，可以看到审批流程管理页面。
+When administrators enter the administrator portal, they can see the approval workflow management page.
 
-![分组管理](./img/workflow_2025-08-26_14-47-03.png)
+![Group Management](./img/workflow_2025-08-26_14-47-03.png)
 
-在审批流程管理页面中，可以新建分组，然后将审批流程移动到分组中。
+In the approval workflow management page, you can create new groups and then move approval workflows into groups.
 
-![节点管理](./img/workflow_2025-08-26_14-48-32.png)
+![Node Management](./img/workflow_2025-08-26_14-48-32.png)
 
-另外，对于每个审批流程，管理员可以重新配置各个节点的参数。
+Additionally, for each approval workflow, administrators can reconfigure the parameters of each node.
 
-:::warning 注意
+:::warning Note
 
-审批流程管理区只能对审批流程进行分组和节点配置，不能删除审批流程。
+The approval workflow management area can only group approval workflows and configure nodes, but cannot delete approval workflows.
 
-如果删除分组，系统会将分组下的所有审批流程移动到“未分组”中。
+If a group is deleted, the system will move all approval workflows under the group to "Ungrouped".
 
-如果某个审批流程配置被修改，它将覆盖在开发区中的配置。
+If an approval workflow configuration is modified, it will override the configuration in the development area.
 
 :::

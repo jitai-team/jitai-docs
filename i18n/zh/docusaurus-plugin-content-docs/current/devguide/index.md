@@ -1102,10 +1102,9 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="应用数据的基础结构，学习如何创建和配置数据表，设计字段类型和约束。"
 >
   <LinkGrid links={[
-    { text: "创建数据表模型", href: "data-modeling/data-table-model#create-data-table-model" },
+    { text: "创建数据表模型", href: "data-modeling/data-table-model" },
     { text: "设计表字段与数据类型", href: "data-modeling/data-table-model#design-table-fields-and-data-types" },
-    { text: "配置表索引优化查询", href: "data-modeling/data-table-model#configure-table-index-optimization" },
-    { text: "扩展模型功能", href: "data-modeling/data-table-model#extend-model-function" }
+    { text: "配置表索引优化查询", href: "data-modeling/data-table-model#configure-table-index-optimization" }
   ]} />
 </IndexCard>
 
@@ -1145,7 +1144,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="多表数据整合和统计分析，支持复杂的数据聚合和计算功能。"
 >
   <LinkGrid columns={2} links={[
-    { text: "新建聚合表模型", href: "data-modeling/aggregate-table-model#create-aggregate-table-model" },
+    { text: "新建聚合表模型", href: "data-modeling/aggregate-table-model" },
     { text: "多表数据合并", href: "data-modeling/aggregate-table-model#multi-table-data-merge" },
     { text: "多表横向连接", href: "data-modeling/aggregate-table-model#multi-table-horizontal-connection" },
     { text: "分组聚合统计", href: "data-modeling/aggregate-table-model#group-aggregate-statistics" },
@@ -1161,7 +1160,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="基于现有表的数据扩展，通过关联其他数据表实现业务字段扩展和多表数据整合。"
 >
   <LinkGrid columns={2} links={[
-    { text: "扩展表创建", href: "data-modeling/extended-table-model#extended-table-creation" },
+    { text: "扩展表创建", href: "data-modeling/extended-table-model" },
     { text: "连接设计", href: "data-modeling/extended-table-model#connection-design" },
     { text: "设置基准表筛选条件", href: "data-modeling/extended-table-model#set-baseline-table-filter-conditions" },
     { text: "添加数据表", href: "data-modeling/extended-table-model#add-data-table" },

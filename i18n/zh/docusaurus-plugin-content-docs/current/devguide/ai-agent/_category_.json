@@ -3,7 +3,7 @@
   "position": 9,
   "link": {
     "type": "generated-index",
-    "slug": "ai-agent",
-    "description": "学习如何创建和管理AI智能体，包括工具使用、输入输出处理、单任务实现和向外部系统开放Agent接口。"
+    "slug": "devguide/ai-agent",
+    "description": "学习如何创建和管理AI智能体，包括工具配置、输入输出处理、单任务实现，以及将Agent API开放给外部系统。"
   }
 }

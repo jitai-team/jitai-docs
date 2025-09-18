@@ -941,61 +941,66 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="AIAgent"
+  title="创建AI Agent"
   href="ai-agent/create-ai-agent"
   description="学习如何创建ReActAgent，配置系统提示词、大模型参数、输入输出变量，以及运行状态存储等基础配置。"
 >
   <LinkGrid columns={2} links={[
     { text: "创建ReActAgent", href: "ai-agent/create-ai-agent#create-react-agent" },
     { text: "编写系统提示词", href: "ai-agent/create-ai-agent#write-system-prompt" },
-    { text: "基于模板编写系统提示词", href: "ai-agent/create-ai-agent#write-system-prompt-based-on-template" },
-    { text: "在提示词中使用变量", href: "ai-agent/create-ai-agent#use-variables-in-prompt" },
     { text: "选择模型并配置参数", href: "ai-agent/create-ai-agent#select-model-and-configure-parameters" },
     { text: "为Agent编写简介描述", href: "ai-agent/create-ai-agent#write-agent-description" },
     { text: "配置运行状态存储仓", href: "ai-agent/create-ai-agent#configure-runtime-state-storage" },
     { text: "内存存储", href: "ai-agent/create-ai-agent#memory-storage" },
     { text: "数据库存储", href: "ai-agent/create-ai-agent#database-storage" },
-    { text: "配置输入变量", href: "ai-agent/create-ai-agent#configure-input-variables" },
-    { text: "配置输出结果", href: "ai-agent/create-ai-agent#configure-output-results" },
-    { text: "为Agent添加工具", href: "ai-agent/create-ai-agent#add-tools-to-agent" },
-    { text: "Agent调用模型函数", href: "ai-agent/create-ai-agent#agent-call-model-functions" },
-    { text: "Agent调用服务函数", href: "ai-agent/create-ai-agent#agent-calling-service-functions" },
-    { text: "Agent调用MCP服务", href: "ai-agent/create-ai-agent#agent-call-mcp-service" },
-    { text: "将MCP配置转为环境变量", href: "ai-agent/create-ai-agent#convert-mcp-config-to-environment-variables" },
-    { text: "Agent调用外部API", href: "ai-agent/create-ai-agent#agent-call-external-api" },
-    { text: "Agent调用页面函数", href: "ai-agent/create-ai-agent#agent-call-page-functions" },
-    { text: "启用/关闭工具函数", href: "ai-agent/create-ai-agent#enable-disable-tool-functions" },
-    { text: "工具函数调用前/后事件触发", href: "ai-agent/create-ai-agent#tool-function-call-pre-post-event-triggering" },
-    { text: "工具函数执行前的人工确认", href: "ai-agent/create-ai-agent#manual-confirmation-before-tool-execution" },
-    { text: "限制工具函数调用的用户角色", href: "ai-agent/create-ai-agent#restrict-user-roles-for-tool-calls" },
-    { text: "集成知识库实现检索增强生成（RAG）", href: "ai-agent/create-ai-agent#integrate-knowledge-base-rag" },
-    { text: "在前端函数中调用Agent", href: "ai-agent/create-ai-agent#call-agent-in-frontend-functions" },
-    { text: "在页面助理中测试Agent", href: "ai-agent/create-ai-agent#test-agent-in-page-assistant" },
-    { text: "在后端服务函数中调用Agent", href: "ai-agent/create-ai-agent#call-agent-in-backend-service-functions" },
     { text: "源码模式修改Agent", href: "ai-agent/create-ai-agent#modify-agent-in-source-code-mode" },
-    { text: "自定义回调处理器", href: "ai-agent/create-ai-agent#custom-callback-processor" },
-    { text: "Agent的流式输出", href: "ai-agent/create-ai-agent#agent-streaming-output" }
+    { text: "自定义回调处理器", href: "ai-agent/create-ai-agent#custom-callback-processor" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Agent中的工具"
   href="ai-agent/agent-tools"
-  description="深入了解Agent中各种工具的使用方法和最佳实践。"
+  description="深入了解Agent中各种工具的使用方法和最佳实践，包括模型函数、服务函数、MCP服务、外部API和页面函数。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "Agent调用模型函数", href: "ai-agent/agent-tools#agent-call-model-functions" },
+    { text: "Agent调用服务函数", href: "ai-agent/agent-tools#agent-calling-service-functions" },
+    { text: "Agent调用MCP服务", href: "ai-agent/agent-tools#agent-call-mcp-service" },
+    { text: "将MCP配置转为环境变量", href: "ai-agent/agent-tools#convert-mcp-config-to-environment-variables" },
+    { text: "Agent调用外部API", href: "ai-agent/agent-tools#agent-call-external-api" },
+    { text: "Agent调用页面函数", href: "ai-agent/agent-tools#agent-call-page-functions" },
+    { text: "启用/关闭工具函数", href: "ai-agent/agent-tools#enable-disable-tool-functions" },
+    { text: "工具函数调用前/后事件触发", href: "ai-agent/agent-tools#tool-function-call-pre-post-event-triggering" },
+    { text: "工具函数执行前的人工确认", href: "ai-agent/agent-tools#manual-confirmation-before-tool-execution" },
+    { text: "限制工具函数调用的用户角色", href: "ai-agent/agent-tools#restrict-user-roles-for-tool-calls" }
+  ]} />
 </IndexCard>
 
 <IndexCard
   title="Agent的输入与输出"
   href="ai-agent/agent-input-output"
-  description="详细了解Agent的输入输出配置和数据处理方式。"
+  description="详细了解Agent的输入输出配置和数据处理方式，包括变量配置、流式输出和调用方法。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "配置输入变量", href: "ai-agent/agent-input-output#configure-input-variables" },
+    { text: "在提示词中使用变量", href: "ai-agent/agent-input-output#use-variables-in-prompt" },
+    { text: "配置输出结果", href: "ai-agent/agent-input-output#configure-output-results" },
+    { text: "Agent的流式输出", href: "ai-agent/agent-input-output#agent-streaming-output" },
+    { text: "在前端函数中调用Agent", href: "ai-agent/agent-input-output#call-agent-in-frontend-functions" },
+    { text: "在后端服务函数中调用Agent", href: "ai-agent/agent-input-output#call-agent-in-backend-service-functions" },
+    { text: "在页面助理中测试Agent", href: "ai-agent/agent-input-output#test-agent-in-page-assistant" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="使用知识库实现检索增强生成（RAG）"
+  href="ai-agent/agent-knowledge-base"
+  description="学习如何为Agent集成知识库，实现检索增强生成，提升回答的准确性和时效性。"
+>
+  <LinkGrid links={[
+    { text: "集成知识库实现检索增强生成（RAG）", href: "ai-agent/agent-knowledge-base#integrate-knowledge-base-rag" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1010,7 +1015,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="Agent的API开放"
-  href="ai-agent/agent-api-integration"
+  href="ai-agent/agent-api-exposure"
   description="将Agent能力通过API形式开放给外部系统调用。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>

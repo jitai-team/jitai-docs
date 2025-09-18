@@ -3,8 +3,9 @@ sidebar_position: 1
 slug: file-storage
 ---
 
-# 配置自己的文件存储服务
-文件上传与使用是Web应用的核心功能，广泛应用于附件上传、头像管理、图片预览等场景。JitAi为开发者提供了完整的文件存储解决方案，支持阿里云OSS、移动云EOS、MinIO、七牛云存储以及本地磁盘存储共5种存储方式。
+# 配置自己的文件存储服务 {#configuring-your-own-file-storage-service}
+文件上传与使用是Web应用的核心功能，广泛应用于附件上传、头像管理、图片预览等场景。JitAi为开发者提供了完整的文件存储解决方案，支持阿里云OSS、移动云EOS、MinIO、七牛云存储、AWS S3、Cloudflare R2以及本地磁盘存储共7种存储方式。
+
 
 ## 本地存储配置 {#local-storage-configuration}
 本地磁盘存储将文件资源保存在服务器本地磁盘中。系统会自动为上传的图片生成30×30像素、300×300像素的缩略图以及保留原始尺寸图片。JitAi会根据不同使用场景智能选择合适的图片尺寸，有效节约网络带宽并提升页面加载速度。
@@ -62,7 +63,7 @@ JitAi支持在以下两个地方添加存储服务：
 
 ![](./img/1/2025-08-28-15-24-50.png)
 
-### MinIO
+### MinIO {#minio}
 触发MinIO配置面板的方式和阿里云OSS一样，配置参数基本一样，只是多了scheme参数，可参考 [阿里云OSS](#aliyun-oss)
 
 ![](./img/1/2025-08-28-15-30-20.png)
@@ -70,6 +71,18 @@ JitAi支持在以下两个地方添加存储服务：
 触发七牛云配置面板的方式和阿里云OSS一样，配置参数基本一样，只是多了scheme参数，可参考 [阿里云OSS](#aliyun-oss)
 
 ![](./img/1/2025-08-28-15-31-17.png)
+
+### AWS S3 {#aws-s3}
+
+触发 AWS S3 配置面板的方式与阿里云 OSS 类似。配置参数包括 accessKeyId、accessKeySecret、endPoint、bucketName、region 等。请根据实际 AWS S3 控制台信息填写相关参数。可参考 [阿里云OSS](#aliyun-oss)
+
+![](./img/1/awss3.png)
+
+### Cloudflare R2 {#cloudflare-r2}
+
+Cloudflare R2 的配置方式与 AWS S3 基本一致。需要填写 accessKeyId、accessKeySecret、endPoint、bucketName、region 等参数。建议参考 Cloudflare R2 官方文档获取详细配置信息。可参考 [阿里云OSS](#aliyun-oss)
+
+![](./img/1/cloudflareR2.png)
 
 ### 用环境变量防止配置信息泄露 {#prevent-config-info-leak-with-env-variables}
 为了提高安全性，建议将云服务配置参数（如accessKeyId、accessKeySecret等）转换为环境变量，避免在代码中暴露敏感信息。JitAi支持一键转换云服务参数为环境变量。

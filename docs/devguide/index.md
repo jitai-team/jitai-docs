@@ -1101,11 +1101,9 @@ Design a powerful data foundation for your application. Create data tables, desi
   description="Basic structure of application data, learn how to create and configure data tables, design field types and constraints."
 >
   <LinkGrid links={[
-    { text: "Create Data Table Model", href: "data-modeling/data-table-model#create-data-table-model" },
+    { text: "Create Data Table Model", href: "data-modeling/data-table-model" },
     { text: "Design Table Fields and Data Types", href: "data-modeling/data-table-model#design-table-fields-and-data-types" },
-    { text: "Configure Table Index Optimization", href: "data-modeling/data-table-model#configure-table-index-optimization" },
-    { text: "Use Built-in Data Management Function", href: "data-modeling/data-table-model#use-built-in-data-management-function" },
-    { text: "Extend Model Function", href: "data-modeling/data-table-model#extend-model-function" }
+    { text: "Configure Table Index Optimization", href: "data-modeling/data-table-model#configure-table-index-optimization" }
   ]} />
 </IndexCard>
 
@@ -1114,9 +1112,9 @@ Design a powerful data foundation for your application. Create data tables, desi
   href="data-modeling/create-data-table-from-existing-tables"
   description="Quickly create data table elements from existing database tables, supporting rapid model generation."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Creating Tables from Existing Database Schema", href: "data-modeling/create-data-table-from-existing-tables" },
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1124,9 +1122,9 @@ Design a powerful data foundation for your application. Create data tables, desi
   href="data-modeling/built-in-data-management-tools"
   description="Utilize built-in data management tools for efficient data operations and administration."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Built-in Data Management Tools", href: "data-modeling/built-in-data-management-tools" },
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1134,9 +1132,9 @@ Design a powerful data foundation for your application. Create data tables, desi
   href="data-modeling/create-data-model-functions"
   description="Design and implement custom data model functions to extend data processing capabilities."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Creating Data Model Functions", href: "data-modeling/create-data-model-functions" },
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1145,7 +1143,7 @@ Design a powerful data foundation for your application. Create data tables, desi
   description="Multi-table data integration and statistical analysis, supporting complex data aggregation and calculation functions."
 >
   <LinkGrid columns={2} links={[
-    { text: "Create Aggregate Table Model", href: "data-modeling/aggregate-table-model#create-aggregate-table-model" },
+    { text: "Create Aggregate Table Model", href: "data-modeling/aggregate-table-model" },
     { text: "Multi-table Data Merge", href: "data-modeling/aggregate-table-model#multi-table-data-merge" },
     { text: "Multi-table Horizontal Connection", href: "data-modeling/aggregate-table-model#multi-table-horizontal-connection" },
     { text: "Group Aggregate Statistics", href: "data-modeling/aggregate-table-model#group-aggregate-statistics" },
@@ -1161,7 +1159,7 @@ Design a powerful data foundation for your application. Create data tables, desi
   description="Data extension based on existing tables, implementing business field extension and multi-table data integration through association with other data tables."
 >
   <LinkGrid columns={2} links={[
-    { text: "Extended Table Creation", href: "data-modeling/extended-table-model#extended-table-creation" },
+    { text: "Extended Table Creation", href: "data-modeling/extended-table-model" },
     { text: "Connection Design", href: "data-modeling/extended-table-model#connection-design" },
     { text: "Set Baseline Table Filter Conditions", href: "data-modeling/extended-table-model#set-baseline-table-filter-conditions" },
     { text: "Add Data Table", href: "data-modeling/extended-table-model#add-data-table" },
@@ -1180,9 +1178,11 @@ Design a powerful data foundation for your application. Create data tables, desi
   href="data-modeling/calling-data-models-in-pages-and-functions"
   description="Learn how to effectively use data models in frontend pages and backend function logic for data operations."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "Built-in Model Functions", href: "data-modeling/calling-data-models-in-pages-and-functions#built-in-model-functions" },
+    { text: "Calling Data Models in Pages", href: "data-modeling/calling-data-models-in-pages-and-functions#calling-data-models-in-pages" },
+    { text: "Calling Data Models in Functions", href: "data-modeling/calling-data-models-in-pages-and-functions#calling-data-models-in-functions" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1584,12 +1584,10 @@ Easily handle various file requirements in applications. Support file upload and
     { text: "Create Word Template", href: "file-processing/file-templates#create-word-template" },
     { text: "Create Word Template Variables", href: "file-processing/file-templates#create-word-template-variables" },
     { text: "Use Template Variables in Word", href: "file-processing/file-templates#use-template-variables-in-word" },
-    { text: "Print Word Template", href: "file-processing/file-templates#print-word-template" },
     { text: "Excel Template", href: "file-processing/file-templates#excel-template" },
     { text: "Create Excel Template", href: "file-processing/file-templates#create-excel-template" },
     { text: "Create Excel Template Variables", href: "file-processing/file-templates#create-excel-template-variables" },
     { text: "Use Template Variables in Excel", href: "file-processing/file-templates#use-template-variables-in-excel" },
-    { text: "Print Excel Template", href: "file-processing/file-templates#print-excel-template" },
     { text: "Template Variable Style Description", href: "file-processing/file-templates#template-variable-style-description" },
     { text: "Text Style", href: "file-processing/file-templates#text-style" },
     { text: "Numeric Style", href: "file-processing/file-templates#numeric-style" },

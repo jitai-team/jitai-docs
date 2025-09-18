@@ -3,189 +3,189 @@ sidebar_position: 5
 slug: event-handling
 ---
 
-# 事件处理
-事件处理是JitAi应用中的自动化机制，当特定情况发生时（如数据变化、审批状态变更等），系统会自动执行预设的业务逻辑。简单来说，就是"当...时，自动做..."的响应机制，帮助开发者构建事件驱动的应用系统。
+# Event Handling
+Event handling is an automation mechanism in JitAi applications. When specific situations occur (such as data changes, approval status changes, etc.), the system automatically executes preset business logic. Simply put, it's a "when...then automatically do..." response mechanism that helps developers build event-driven application systems.
 
-JitAi支持`模型事件`、`审批事件`、`自定义事件`和`AI相关事件`等多种类型，可在函数逻辑、数据变化、审批流转、ai-assistant/Agent运行时触发，满足不同业务场景的自动化需求。
+JitAi supports multiple types including `Model Events`, `Approval Events`, `Custom Events`, and `AI-related Events`, which can be triggered during function logic execution, data changes, approval workflows, and ai-assistant/Agent runtime to meet different business scenario automation needs.
 
-## 事件创建 {#event-create}
-在JitAi开发环境中创建事件非常简单，系统提供了可视化的创建方式帮助开发者快速配置各种事件。
+## Event Creation {#event-create}
+Creating events in the JitAi development environment is very simple. The system provides a visual creation approach to help developers quickly configure various events.
 
-![事件创建](./img/event-creation.png)
+![Event Creation](./img/event-creation.png)
 
-在开发区元素树中点击搜索框旁的 `+` 按钮，选择 `事件` 并根据业务需求选择具体事件类型（如模型事件、审批事件、自定义事件或AI相关事件），填写事件基本信息并完成相关配置即可创建事件。
+In the development area element tree, click the `+` button next to the search box, select `Event` and choose the specific event type based on business requirements (such as Model Events, Approval Events, Custom Events, or AI-related Events), fill in the basic event information and complete the relevant configuration to create the event.
 
-## 模型事件 {#model-events}
-模型事件是最常用的事件类型，当数据表中的数据发生变化（新增、修改、删除）时，系统会自动执行预设的业务逻辑。比如用户信息更新后自动发送通知、订单状态改变后更新库存等，让数据变化能够自动触发相关的业务处理。
+## Model Events {#model-events}
+Model events are the most commonly used event type. When data in a data table changes (create, update, delete), the system automatically executes preset business logic. For example, automatically sending notifications after user information updates, updating inventory after order status changes, etc., allowing data changes to automatically trigger related business processing.
 
-### 7种触发时机
-JitAi支持7种模型事件触发时机，开发者可根据业务需求选择最适合的时机。
+### 7 Trigger Timings {#7-trigger-timings}
+JitAi supports 7 model event trigger timings, and developers can choose the most suitable timing based on business requirements.
 
-- **新增数据之前**：在数据写入数据库前执行。常用于数据预处理、字段自动填充、数据验证等场景，确保数据合规后再入库。
-- **新增数据之后**：在数据成功写入数据库后执行。适用于消息通知、统计更新、关联数据同步等场景，实现数据新增后的自动响应。
-- **更新数据之前**：在数据更新操作执行前触发。可用于变更记录、数据备份、权限校验等，保障数据安全和合规。
-- **更新数据之后**：在数据成功更新后执行。常见于状态通知、缓存刷新、触发后续流程等场景，确保数据变更后的业务处理及时到位。
-- **删除数据之前**：在数据删除操作执行前触发。适用于关联数据清理、删除权限检查、数据备份等，防止误删和数据丢失。
-- **删除数据之后**：在数据成功删除后执行。可用于清理缓存、通知相关用户、统计数据更新等，保证数据删除后的系统一致性。
-- **任意写操作后**：在任何增、删、改操作完成后都会触发。适合用于通用的数据变更监控、审计日志等场景，实现对所有数据变动的统一追踪和记录。
+- **Before Data Creation**: Executed before data is written to the database. Commonly used for data preprocessing, automatic field filling, data validation, etc., ensuring data compliance before entering the database.
+- **After Data Creation**: Executed after data is successfully written to the database. Suitable for message notifications, statistics updates, associated data synchronization, etc., implementing automatic responses after data creation.
+- **Before Data Update**: Triggered before data update operations are executed. Can be used for change records, data backup, permission verification, etc., ensuring data security and compliance.
+- **After Data Update**: Executed after data is successfully updated. Common in scenarios like status notifications, cache refresh, triggering subsequent processes, etc., ensuring timely business processing after data changes.
+- **Before Data Deletion**: Triggered before data deletion operations are executed. Suitable for associated data cleanup, deletion permission checks, data backup, etc., preventing accidental deletion and data loss.
+- **After Data Deletion**: Executed after data is successfully deleted. Can be used for cache cleanup, notifying related users, statistics data updates, etc., ensuring system consistency after data deletion.
+- **After Any Write Operation**: Triggered after any create, delete, or update operation is completed. Suitable for general data change monitoring, audit logs, etc., implementing unified tracking and recording of all data changes.
 
-### 任意/指定字段触发
-JitAi提供两种触发字段配置方式，开发者可根据实际业务场景灵活选择：
+### Any/Specific Field Triggers {#any-specific-field-triggers}
+JitAi provides two trigger field configuration methods, and developers can flexibly choose based on actual business scenarios:
 
-- **所有字段**：只要模型中任意字段发生变更，事件都会被触发。适用于需要对所有数据变动进行响应的场景。
-- **指定字段**：仅当所选字段发生变更时才会触发事件。适合只需关注特定字段变更的业务需求，能有效减少无关事件的触发，提高系统效率。
+- **All Fields**: The event will be triggered as long as any field in the model changes. Suitable for scenarios that need to respond to all data changes.
+- **Specific Fields**: The event will only be triggered when the selected fields change. Suitable for business requirements that only need to focus on specific field changes, effectively reducing irrelevant event triggers and improving system efficiency.
 
-### 满足筛选条件时触发
-支持为事件设置筛选条件。仅当变更数据满足设定的筛选条件时，事件才会被触发。若未设置筛选条件，则默认所有数据变更均会触发事件。通过合理配置筛选条件，可以精准控制事件的触发范围，提升系统性能和业务灵活性。
+### Trigger When Filter Conditions Are Met {#trigger-when-filter-conditions-are-met}
+Supports setting filter conditions for events. Events will only be triggered when the changed data meets the set filter conditions. If no filter conditions are set, all data changes will trigger events by default. Through reasonable configuration of filter conditions, you can precisely control the trigger scope of events and improve system performance and business flexibility.
 
-### 配置过程演示
-![模型事件创建](./img/model-event-creation.gif)
+### Configuration Process Demonstration {#configuration-process-demonstration-model}
+![Model Event Creation](./img/model-event-creation.gif)
 
-在`新建模型事件`弹窗中，依次配置事件名称、目标数据模型、触发时机、触发字段、筛选条件、执行函数和异步设置等参数，完成配置后即可创建事件并进入可视化编辑器。
+In the `New Model Event` dialog, configure parameters such as event name, target data model, trigger timing, trigger fields, filter conditions, execution function, and async settings in sequence. After completing the configuration, you can create the event and enter the visual editor.
 
-![模型事件函数配置](./img/model-event-function-configuration.png)
+![Model Event Function Configuration](./img/model-event-function-configuration.png)
 
-在可视化编辑器下方编辑事件内执行函数。例如当模型A新增数据后，希望可以推送消息通知，就可以参考下面配置。
+Edit the execution function within the event in the visual editor below. For example, when you want to push message notifications after model A adds data, you can refer to the configuration below.
 
-![事件触发消息通知](./img/event-trigger-message-notification.png)
+![Event Trigger Message Notification](./img/event-trigger-message-notification.png)
 
-添加一条基础语句，点击找到`服务`，在右侧列表中找到`消息服务`，在二级列表中选择`消息通知`，设置参数。
+Add a basic statement, click to find `Service`, find `Message Service` in the right list, select `Message Notification` in the secondary list, and set parameters.
 
-## 审批事件 {#approval-events}
-审批事件专门用于审批流程的自动化处理，当审批状态发生变化时（如提交、通过、拒绝、转交等），系统会自动执行相应的业务逻辑。比如审批通过后自动发放权限、审批拒绝后通知申请人等，让审批流程更加智能和高效。
+## Approval Events {#approval-events}
+Approval events are specifically designed for automated processing of approval workflows. When approval status changes (such as submission, approval, rejection, transfer, etc.), the system automatically executes corresponding business logic. For example, automatically granting permissions after approval passes, notifying applicants after approval rejection, etc., making approval workflows more intelligent and efficient.
 
-### 3种触发时机
-JitAi为审批事件提供了3种触发时机，开发者可根据审批流程的业务需求选择适合的触发点：
+### 3 Trigger Timings {#3-trigger-timings}
+JitAi provides 3 trigger timings for approval events, and developers can choose suitable trigger points based on the business requirements of approval workflows:
 
-- **审批状态变更**：当审批记录的整体状态发生改变时触发（如从"待审批"变为"已通过"或"已拒绝"）。适用于需要跟踪审批最终结果的业务场景，如状态同步、结果通知、后续流程启动等。
+- **Approval Status Change**: Triggered when the overall status of an approval record changes (such as from "Pending Approval" to "Approved" or "Rejected"). Suitable for business scenarios that need to track final approval results, such as status synchronization, result notifications, subsequent process initiation, etc.
 
-- **审批节点变更**：当审批流程在不同审批节点之间流转时触发（如从第一级审批人流转到第二级审批人）。适合需要监控审批进度的场景，如节点到达提醒、审批人变更通知、流程进度追踪等。
+- **Approval Node Change**: Triggered when the approval workflow flows between different approval nodes (such as from first-level approver to second-level approver). Suitable for scenarios that need to monitor approval progress, such as node arrival reminders, approver change notifications, workflow progress tracking, etc.
 
-- **审批处理后触发**：在每次审批操作完成后立即触发（包括通过、拒绝、转交等任何审批动作）。适用于需要实时响应每个审批动作的场景，如操作日志记录、即时消息推送、数据同步等。
+- **After Approval Processing**: Triggered immediately after each approval operation is completed (including any approval actions such as approval, rejection, transfer, etc.). Suitable for scenarios that need real-time response to each approval action, such as operation log recording, instant message pushing, data synchronization, etc.
 
-### 配置过程演示
-![审批事件创建](./img/approval-event-creation.gif)
+### Configuration Process Demonstration {#configuration-process-demonstration-approval}
+![Approval Event Creation](./img/approval-event-creation.gif)
 
-在`新建审批事件`弹窗中，依次配置事件名称、目标审批流程、触发时机、执行函数和异步设置等参数，完成配置后即可创建事件并进入详细配置页面。
+In the `New Approval Event` dialog, configure parameters such as event name, target approval workflow, trigger timing, execution function, and async settings in sequence. After completing the configuration, you can create the event and enter the detailed configuration page.
 
-![审批事件配置](./img/approval-event-configuration.png)
+![Approval Event Configuration](./img/approval-event-configuration.png)
 
-在可视化编辑器中，如果设置审批状态变更触发消息通知，可以参照上述配置。
+In the visual editor, if you want to set approval status change to trigger message notifications, you can refer to the above configuration.
 
-## 自定义事件 {#custom-events}
-自定义事件提供了最大的灵活性，允许开发者根据特定业务需求声明自己的事件。不像模型事件和审批事件有固定的触发条件，自定义事件可以在任何函数逻辑中触发，适用于复杂的业务场景编排和模块间的通信。
+## Custom Events {#custom-events}
+Custom events provide maximum flexibility, allowing developers to declare their own events based on specific business requirements. Unlike model events and approval events that have fixed trigger conditions, custom events can be triggered in any function logic, suitable for complex business scenario orchestration and inter-module communication.
 
-### 事件声明配置
-自定义事件的使用流程如下：首先需要在服务元素中声明事件，随后通过事件元素进行订阅和执行。
+### Event Declaration Configuration {#event-declaration-configuration}
+The usage flow for custom events is as follows: first, you need to declare events in service elements, then subscribe and execute through event elements.
 
-![进入源码1](./img/enter-source-code-1.png)
+![Enter Source Code 1](./img/enter-source-code-1.png)
 
-开发者需先创建一个服务元素，并在其中编写相关的业务函数（例如在A表中新增一条数据）。
-点击右上角的切换图标，进入代码编辑页面。
+Developers need to first create a service element and write related business functions in it (for example, adding a record to table A).
+Click the switch icon in the upper right corner to enter the code editing page.
 
-![源码添加事件声明](./img/source-code-add-event-declaration.png)
+![Source Code Add Event Declaration](./img/source-code-add-event-declaration.png)
 
-在服务的`e.json`配置文件中，添加事件声明列表`eventDescs`。每个事件需包含`name`（事件名称）、`title`（标题）、`desc`（描述）属性。
+In the service's `e.json` configuration file, add the event declaration list `eventDescs`. Each event needs to include `name` (event name), `title` (title), and `desc` (description) attributes.
 
-### 在函数逻辑中触发事件
-在函数逻辑中需要添加语句触发自定义事件。
+### Triggering Events in Function Logic {#triggering-events-in-function-logic}
+You need to add statements in function logic to trigger custom events.
 
-![自定义事件触发](./img/custom-event-trigger.png)
+![Custom Event Trigger](./img/custom-event-trigger.png)
 
-在服务的`service.py`函数逻辑中，使用`app.event.publish` 触发事件，其中参数`sender`表示事件的发送者，通常sender为函数路径，`args`用于传递参数。
+In the service's `service.py` function logic, use `app.event.publish` to trigger events, where the parameter `sender` represents the event sender (usually the function path), and `args` is used to pass parameters.
 
-### 订阅事件
-需要创建一个自定义事件元素去订阅服务函数中声明的事件。
+### Subscribing to Events {#subscribing-to-custom-events}
+You need to create a custom event element to subscribe to events declared in service functions.
 
-![自定义事件创建](./img/custom-event-creation.gif)
+![Custom Event Creation](./img/custom-event-creation.gif)
 
-在`新建自定义事件`弹窗中，选择已声明的事件，配置执行函数和异步设置等参数，完成创建后进入详细配置页面。
+In the `New Custom Event` dialog, select the declared event, configure parameters such as execution function and async settings, and enter the detailed configuration page after creation.
 
-![自定义事件配置](./img/custom-event-configuration.png)
+![Custom Event Configuration](./img/custom-event-configuration.png)
 
-## ai-assistant事件 {#ai-assistant-events}
-ai-assistant的各节点运行时可触发一些事件，我们可以通过订阅该事件在助理运行过程的关键环节中插入一些业务处理逻辑。
+## AI-Assistant Events {#ai-assistant-events}
+Various nodes in ai-assistant can trigger some events during runtime. We can subscribe to these events to insert business processing logic at key points during assistant execution.
 
-### 触发时机
-- **助理运行前**：助理开始运行前触发，携带的参数是用户输入。
-- **助理运行后**：助理运行完成后触发，没有参数。
-- **到达节点时**：AI Agent节点、函数调用节点、条件分支节点及多任务执行节点在到达节点时触发。前提是需要节点[开启触发后端事件](../ai-assitant/ai-assistant-event#backend-node-events)。携带的参数是节点上配置的`到达节点事件输出参数`。
-- **节点执行后**：事件类型是：afterNodeRun；AI Agent节点、函数调用节点、条件分支节点及多任务执行节点执行后触发。前提是需要节点开启触发后端事件。携带的参数是节点上配置的`节点执行后输出参数`。
+### Trigger Timings {#ai-assistant-trigger-timings}
+- **Before Assistant Run**: Triggered before the assistant starts running, with user input as the parameter.
+- **After Assistant Run**: Triggered after the assistant completes running, with no parameters.
+- **Node Arrival**: Triggered when AI Agent nodes, function call nodes, conditional branch nodes, and multi-task execution nodes are reached. The prerequisite is that the node needs to enable backend event triggering. For enabling method, see: <a href="../ai-assitant/create-ai-assistant#node-runtime-events" target="_blank">Node Runtime Events</a>. The parameter carried is the `Node Arrival Event Output Parameter` configured on the node.
+- **After Node Execution**: Event type is: afterNodeRun; triggered after AI Agent nodes, function call nodes, conditional branch nodes, and multi-task execution nodes complete execution. The prerequisite is that the node needs to enable backend event triggering. The parameter carried is the `After Node Execution Output Parameter` configured on the node.
 
-### 订阅事件
-需要创建一个ai-assistant事件元素去订阅。
+### Subscribing to Events {#subscribing-to-ai-assistant-events}
+You need to create an ai-assistant event element to subscribe.
 
-![创建ai-assistant事件订阅](./img/ai/assistant-event-create.png)
+![Create AI-Assistant Event Subscription](./img/ai/assistant-event-create.png)
 
-在IDE中点击 `+` -> `事件` -> `ai-assistant事件`，打开事件配置窗口，填写事件配置信息。
+In the IDE, click `+` -> `Event` -> `ai-assistant Event`, open the event configuration window, and fill in the event configuration information.
 
-![ai-assistant事件配置](./img/ai/assistant-event-config.png)
+![AI-Assistant Event Configuration](./img/ai/assistant-event-config.png)
 
-## Agent工具调用事件 {#agent-tool-call-events}
-AI Agent在调用工具时，我们可以通过订阅该事件在Agent运行过程中插入一些业务处理逻辑。前提是工具需要开启<a href="../ai-agent#ai-agent-tool-configuration">触发事件</a>。
+## Agent Tool Call Events {#agent-tool-call-events}
+When AI Agent calls tools, we can subscribe to this event to insert business processing logic during Agent execution. The prerequisite is that the tool needs to enable <a href="../ai-agent#ai-agent-tool-configuration">trigger events</a>.
 
-### 触发时机
-- **工具调用前**：在工具调用前触发。
-- **工具调用后**：在工具调用后触发。
+### Trigger Timings {#agent-tool-trigger-timings}
+- **Before Tool Call**: Triggered before tool call.
+- **After Tool Call**: Triggered after tool call.
 
-事件携带的参数是字典(JitDict)类型，有以下属性：
-- **toolName**：工具名称，如："services.ASvc.func1"。在事件处理逻辑中，开发者需要根据工具名称来做对应的处理。
-- **args**：参数，如果是工具调用前事件，且开启了`事件消息中包含数据`，args的值就是调用工具的入参；如果是工具调用后事件，且开启了`事件消息中包含数据`，args的值就是工具的返回值。
+The parameters carried by the event are of dictionary (JitDict) type with the following attributes:
+- **toolName**: Tool name, such as: "services.ASvc.func1". In event processing logic, developers need to perform corresponding processing based on the tool name.
+- **args**: Parameters. If it's a before tool call event and `Include data in event message` is enabled, the args value is the input parameters for calling the tool; if it's an after tool call event and `Include data in event message` is enabled, the args value is the return value of the tool.
 
-### 订阅事件
-需要创建一个Agent工具事件元素去订阅。
+### Subscribing to Events {#subscribing-to-agent-tool-events}
+You need to create an Agent tool event element to subscribe.
 
-![创建agent工具事件订阅](./img/ai/agent-event-create.png)
+![Create Agent Tool Event Subscription](./img/ai/agent-event-create.png)
 
-在IDE中点击 `+` -> `事件` -> `Agent工具事件`，打开事件配置窗口，填写事件配置信息。
+In the IDE, click `+` -> `Event` -> `Agent Tool Event`, open the event configuration window, and fill in the event configuration information.
 
-![Agent工具事件配置](./img/ai/agent-event-config.png)
+![Agent Tool Event Configuration](./img/ai/agent-event-config.png)
 
-## 服务函数替换事件内函数 {#service-function-replace-event-internal-function}
-创建事件时默认执行函数是事件内函数，函数逻辑位于事件元素的代码中，JitAi也支持用服务函数封装事件的执行函数逻辑。
+## Service Function Replacing Event Internal Function {#service-function-replace-event-internal-function}
+When creating events, the default execution function is the event internal function, with function logic located in the event element's code. JitAi also supports using service functions to encapsulate event execution function logic.
 
-![服务函数事件](./img/service-function-events.gif)
+![Service Function Events](./img/service-function-events.gif)
 
-在事件的可视化编辑器中，切换执行函数为`服务函数`，可以选择自定义的服务函数，前提是函数的参数结构满足下面的参数说明。
+In the event's visual editor, switch the execution function to `Service Function`, and you can select custom service functions, provided that the function's parameter structure meets the parameter specifications below.
 
-## 事件启用 {#event-enable}
-事件创建后需要手动开启才能正常工作，通过开关控制可以灵活管理事件的启用状态。
+## Event Enabling {#event-enable}
+Events need to be manually enabled after creation to work properly, and the enable status can be flexibly managed through switch controls.
 
-![事件开关](./img/event-switch.png)
+![Event Switch](./img/event-switch.png)
 
-所有事件在创建后默认处于关闭状态，开发者需要在事件详情页面手动打开开关按钮，事件才能正常触发执行。当事件开关处于关闭状态时，即使满足触发条件，事件也不会被执行。
+All events are in a disabled state by default after creation. Developers need to manually turn on the switch button on the event details page for the event to trigger and execute normally. When the event switch is in the off state, the event will not be executed even if trigger conditions are met.
 
-## 事件同步/异步执行 {#event-sync-async-execution}
-JitAi支持同步和异步两种事件执行模式，开发者可根据业务场景和性能需求灵活选择。
+## Event Synchronous/Asynchronous Execution {#event-sync-async-execution}
+JitAi supports both synchronous and asynchronous event execution modes, and developers can flexibly choose based on business scenarios and performance requirements.
 
-![事件异步同步](./img/event-async-sync.png)
+![Event Async Sync](./img/event-async-sync.png)
 
-**同步执行（默认）**：事件函数在触发操作的主流程中执行，如果事件执行失败会影响主业务流程。适用于必须确保完成的关键业务逻辑。
+**Synchronous Execution (Default)**: Event functions execute in the main flow of the triggering operation. If event execution fails, it will affect the main business flow. Suitable for critical business logic that must be ensured to complete.
 
-**异步执行**：事件函数在后台独立执行，不会阻塞主业务流程，即使事件执行失败也不会影响触发操作的正常完成。适用于消息通知、日志记录、统计更新等耗时或非关键性操作。
+**Asynchronous Execution**: Event functions execute independently in the background without blocking the main business flow. Even if event execution fails, it will not affect the normal completion of the triggering operation. Suitable for time-consuming or non-critical operations such as message notifications, log recording, statistics updates, etc.
 
-:::tip 性能优化建议
-对于耗时较长的事件处理（如发送邮件、调用外部API、大数据量计算等），建议开启异步执行模式，以避免影响用户体验和系统响应速度。
+:::tip Performance Optimization Recommendations
+For time-consuming event processing (such as sending emails, calling external APIs, large data volume calculations, etc.), it is recommended to enable asynchronous execution mode to avoid affecting user experience and system response speed.
 :::
 
-## 事件执行记录 {#event-execution-records}
-JitAi提供完善的事件执行监控和调试功能，帮助开发者快速定位和解决事件执行过程中的问题。
+## Event Execution Records {#event-execution-records}
+JitAi provides comprehensive event execution monitoring and debugging functions to help developers quickly locate and resolve issues during event execution.
 
-![执行记录1](./img/execution-record-1.png)
+![Execution Record 1](./img/execution-record-1.png)
 
-在事件详情页面点击右上方的`执行记录`按钮，可以查看该事件的所有历史执行。
+Click the `Execution Records` button in the upper right corner of the event details page to view all historical executions of the event.
 
-![执行记录3](./img/execution-record-3.gif)
+![Execution Record 3](./img/execution-record-3.gif)
 
-执行记录页面提供了丰富的筛选功能，支持按执行状态（成功、失败、执行中）和时间范围过滤记录，方便开发者快速定位特定的执行情况。
+The execution records page provides rich filtering functions, supporting filtering records by execution status (success, failure, executing) and time range, making it convenient for developers to quickly locate specific execution situations.
 
-![执行记录4](./img/execution-record-4.gif)
+![Execution Record 4](./img/execution-record-4.gif)
 
-点击单条记录的`执行路径`按钮，可以查看详细的执行日志和调用链路，包括每个步骤的执行状态、耗时信息和错误详情，帮助开发者快速诊断和解决问题。
+Click the `Execution Path` button for individual records to view detailed execution logs and call chains, including execution status, timing information, and error details for each step, helping developers quickly diagnose and resolve issues.
 
-## 全代码查看/编辑 {#full-code-view-edit}
-事件函数可以在全代码模式下查看和编辑，与可视化编辑实时同步。
+## Full Code View/Edit {#full-code-view-edit}
+Event functions can be viewed and edited in full code mode, with real-time synchronization with visual editing.
 
-![全代码查看](./img/full-code-view.gif)
+![Full Code View](./img/full-code-view.gif)
 
-在事件的可视化编辑器中，点击右上角的切换按钮，即可进入到代码区域查看，也可以编辑代码，完成后点击右上角`保存`即可生效。
+In the event's visual editor, click the switch button in the upper right corner to enter the code area for viewing. You can also edit the code, and after completion, click `Save` in the upper right corner to take effect.

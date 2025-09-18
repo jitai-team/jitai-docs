@@ -82,7 +82,7 @@
     --ifm-color-danger-contrast-foreground: rgb(75, 17, 19);
 
 
-    /* FastGPT 风格的字体系统 */
+    /* 自定义字体系统 */
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
   }
@@ -99,7 +99,7 @@
 
   /* 防止移动端缩放 */
   input, textarea, select {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   /* 优化滚动体验 */
@@ -172,7 +172,6 @@ details>div>div {
   }
 }
 
-
 .theme-doc-sidebar-container img {
   border-radius: 2px;
   box-shadow: var(--we_m_shadow, 0px 4px 24px 0px rgba(0, 0, 0, 0.1));
@@ -215,7 +214,7 @@ details>div>div {
     margin: 0 auto; /* 水平居中 */
     display: flex;
     padding: 0 1rem; /* 两侧留白 */
-    gap: 16px; /* 侧边栏和主内容之间的间距 */
+    gap: 8px; /* 侧边栏和主内容之间的间距 */
   }
 
   /* 侧边栏容器 - 固定宽度 */
@@ -238,8 +237,8 @@ details>div>div {
     width: 900px !important;
     max-width: 900px !important;
     margin: 0 auto !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
     box-sizing: border-box !important;
   }
 
@@ -269,8 +268,8 @@ details>div>div {
   .docMainContainer_gTbr {
     width: 900px !important;
     max-width: 900px !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
   }
   
   .theme-doc-markdown {
@@ -328,71 +327,72 @@ details>div>div {
   margin-bottom: var(--ifm-leading);
 }
 
-/* ===== FastGPT 风格样式覆盖 ===== */
+/* ===== 自定义样式覆盖 ===== */
 
-/* FastGPT 配色变量 */
+/* 自定义配色变量 */
 :root {
-  --fastgpt-primary: #326DFF;
-  --fastgpt-primary-light: #8EAEFF;
-  --fastgpt-secondary: #6b7280;
-  --fastgpt-muted: #9ca3af;
-  --fastgpt-border: rgba(31, 41, 55, 0.1);
-  --fastgpt-background: rgba(255, 255, 255, 0.8);
-  --fastgpt-accent: rgba(50, 109, 255, 0.1);
-  --fastgpt-accent-hover: rgba(50, 109, 255, 0.2);
-  --fastgpt-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --fastgpt-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --fastgpt-transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --primary-color: #326DFF;
+  --primary-light: #8EAEFF;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  --border-color: rgba(31, 41, 55, 0.1);
+  --bg-translucent: rgba(255, 255, 255, 0.8);
+  --accent-bg: rgba(50, 109, 255, 0.1);
+  --accent-hover: rgba(50, 109, 255, 0.2);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* 导航栏毛玻璃效果 */
 .navbar {
-  background: var(--fastgpt-background) !important;
+  background: var(--bg-translucent) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--fastgpt-border) !important;
-  box-shadow: var(--fastgpt-shadow-sm) !important;
-  transition: var(--fastgpt-transition);
+  border-bottom: 1px solid var(--border-color) !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: var(--transition);
 }
 
 /* 导航栏链接样式 */
 .navbar__link {
   font-weight: 500 !important;
   font-size: 0.875rem !important;
-  color: var(--fastgpt-secondary) !important;
-  transition: var(--fastgpt-transition) !important;
+  color: var(--text-secondary) !important;
+  transition: var(--transition) !important;
   border-radius: 0.5rem !important;
   padding: 0.5rem 1rem !important;
 }
 
 .navbar__link:hover,
 .navbar__link--active {
-  color: var(--fastgpt-primary) !important;
-  background-color: var(--fastgpt-accent) !important;
+  color: var(--primary-color) !important;
+  background-color: var(--accent-bg) !important;
   text-decoration: none !important;
 }
 
 /* 搜索框样式 */
 .DocSearch-Button {
   background: rgba(255, 255, 255, 0.95) !important;
-  border: 1px solid var(--fastgpt-border) !important;
+  border: 1px solid var(--border-color) !important;
   border-radius: 0.75rem !important;
-  box-shadow: var(--fastgpt-shadow-sm) !important;
-  transition: var(--fastgpt-transition) !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: var(--transition) !important;
   font-size: 0.875rem !important;
-  color: var(--fastgpt-muted) !important;
+  color: var(--text-muted) !important;
   max-width: 320px;
 }
 
 .DocSearch-Button:hover {
-  background: var(--fastgpt-accent) !important;
-  border-color: var(--fastgpt-primary) !important;
-  box-shadow: var(--fastgpt-shadow-md) !important;
+  background: var(--accent-bg) !important;
+  border-color: var(--primary-color) !important;
+  box-shadow: var(--shadow-md) !important;
 }
 
 .DocSearch-Button-Placeholder {
   font-size: 0.875rem !important;
-  color: var(--fastgpt-muted) !important;
+  color: var(--text-muted) !important;
 }
 
 .DocSearch-Button-Keys {
@@ -401,40 +401,40 @@ details>div>div {
 }
 
 .DocSearch-Button-Key {
-  background: var(--fastgpt-background) !important;
-  border: 1px solid var(--fastgpt-border) !important;
+  background: var(--bg-translucent) !important;
+  border: 1px solid var(--border-color) !important;
   border-radius: 0.25rem !important;
   padding: 0.125rem 0.375rem !important;
   font-size: 0.75rem !important;
   font-weight: 500 !important;
-  color: var(--fastgpt-secondary) !important;
+  color: var(--text-secondary) !important;
 }
 
 /* 侧边栏样式优化 */
 .theme-doc-sidebar-container {
-  border-right: 1px solid var(--fastgpt-border) !important;
+  border-right: 1px solid var(--border-color) !important;
 }
 
 /* 侧边栏菜单项 */
 .menu__link {
   font-size: 0.875rem !important;
   font-weight: 500 !important;
-  color: var(--fastgpt-secondary) !important;
+  color: var(--text-secondary) !important;
   border-radius: 0.5rem !important;
   padding: 0.5rem 0.75rem !important;
-  transition: var(--fastgpt-transition) !important;
+  transition: var(--transition) !important;
   margin: 0.125rem 0 !important;
 }
 
 .menu__link:hover {
-  background-color: var(--fastgpt-accent) !important;
-  color: var(--fastgpt-primary) !important;
+  background-color: var(--accent-bg) !important;
+  color: var(--primary-color) !important;
   text-decoration: none !important;
 }
 
 .menu__link--active {
-  background-color: var(--fastgpt-accent-hover) !important;
-  color: var(--fastgpt-primary) !important;
+  background-color: var(--accent-hover) !important;
+  color: var(--primary-color) !important;
   font-weight: 600 !important;
 }
 
@@ -456,10 +456,10 @@ details>div>div {
 
 /* 按钮样式 */
 .button--primary {
-  background: linear-gradient(135deg, var(--fastgpt-primary) 0%, var(--fastgpt-primary-light) 100%) !important;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%) !important;
   border: none !important;
   border-radius: 0.5rem !important;
-  transition: var(--fastgpt-transition) !important;
+  transition: var(--transition) !important;
 }
 
 .button--primary:hover {
@@ -469,40 +469,40 @@ details>div>div {
 
 .button--secondary {
   background: transparent !important;
-  border: 1px solid var(--fastgpt-border) !important;
-  color: var(--fastgpt-secondary) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-secondary) !important;
   border-radius: 0.5rem !important;
-  transition: var(--fastgpt-transition) !important;
+  transition: var(--transition) !important;
 }
 
 .button--secondary:hover {
-  background: var(--fastgpt-accent) !important;
-  border-color: var(--fastgpt-primary) !important;
-  color: var(--fastgpt-primary) !important;
+  background: var(--accent-bg) !important;
+  border-color: var(--primary-color) !important;
+  color: var(--primary-color) !important;
 }
 
 /* 卡片样式 */
 .card {
   background: rgba(255, 255, 255, 0.95) !important;
-  border: 1px solid var(--fastgpt-border) !important;
+  border: 1px solid var(--border-color) !important;
   border-radius: 0.75rem !important;
-  box-shadow: var(--fastgpt-shadow-sm) !important;
-  transition: var(--fastgpt-transition) !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: var(--transition) !important;
 }
 
 .card:hover {
-  box-shadow: var(--fastgpt-shadow-md) !important;
+  box-shadow: var(--shadow-md) !important;
   transform: translateY(-2px) !important;
 }
 
 /* 深色模式适配 */
 [data-theme='dark'] {
-  --fastgpt-secondary: #d1d5db;
-  --fastgpt-muted: #9ca3af;
-  --fastgpt-border: rgba(255, 255, 255, 0.1);
-  --fastgpt-background: rgba(0, 0, 0, 0.8);
-  --fastgpt-accent: rgba(50, 109, 255, 0.2);
-  --fastgpt-accent-hover: rgba(50, 109, 255, 0.3);
+  --text-secondary: #d1d5db;
+  --text-muted: #9ca3af;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --bg-translucent: rgba(0, 0, 0, 0.8);
+  --accent-bg: rgba(50, 109, 255, 0.2);
+  --accent-hover: rgba(50, 109, 255, 0.3);
 }
 
 /* 滚动条样式 */
@@ -515,12 +515,12 @@ details>div>div {
 }
 
 .theme-doc-sidebar-container ::-webkit-scrollbar-thumb {
-  background: var(--fastgpt-border);
+  background: var(--border-color);
   border-radius: 0.25rem;
 }
 
 .theme-doc-sidebar-container ::-webkit-scrollbar-thumb:hover {
-  background: var(--fastgpt-muted);
+  background: var(--text-muted);
 }
 
 /* 确保自定义页面不受影响 */
@@ -535,7 +535,7 @@ details>div>div {
 .theme-doc-markdown {
   line-height: 1.7 !important;
   color: #374151 !important;
-  font-size: 16px !important;
+  font-size: 14px !important;
   width: 800px !important;
   max-width: 800px !important;
   margin: 0 auto !important;
@@ -547,8 +547,8 @@ details>div>div {
   width: 100% !important;
   max-width: 900px !important;
   margin: 0 auto !important;
-  padding-left: 16px !important;
-  padding-right: 16px !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
   box-sizing: border-box !important;
 }
 
@@ -607,7 +607,7 @@ details>div>div {
   margin-top: 0 !important;
   margin-bottom: 2rem !important;
   color: #111827 !important;
-  border-bottom: 3px solid var(--fastgpt-primary) !important;
+  border-bottom: 3px solid var(--primary-color) !important;
   padding-bottom: 0.75rem !important;
 }
 
@@ -618,16 +618,17 @@ details>div>div {
   margin-bottom: 1.5rem !important;
   color: #1f2937 !important;
   position: relative !important;
+  padding-left: 1.5rem !important;
 }
 
 .theme-doc-markdown h2::before {
   content: '' !important;
   position: absolute !important;
-  left: -1rem !important;
+  left: 0 !important;
   top: 0.5rem !important;
   width: 4px !important;
   height: 1.5rem !important;
-  background: linear-gradient(135deg, var(--fastgpt-primary), var(--fastgpt-primary-light)) !important;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light)) !important;
   border-radius: 2px !important;
 }
 
@@ -650,11 +651,11 @@ details>div>div {
 /* 代码块样式优化 */
 .theme-doc-markdown pre {
   background: #f8fafc !important;
-  border: 1px solid var(--fastgpt-border) !important;
+  border: 1px solid var(--border-color) !important;
   border-radius: 0.75rem !important;
   padding: 1.5rem !important;
   margin: 1.5rem 0 !important;
-  box-shadow: var(--fastgpt-shadow-sm) !important;
+  box-shadow: var(--shadow-sm) !important;
   overflow-x: auto !important;
 }
 
@@ -680,7 +681,7 @@ details>div>div {
 /* 引用块样式 */
 .theme-doc-markdown blockquote {
   background: linear-gradient(135deg, rgba(50, 109, 255, 0.05), rgba(142, 174, 255, 0.05)) !important;
-  border-left: 4px solid var(--fastgpt-primary) !important;
+  border-left: 4px solid var(--primary-color) !important;
   border-radius: 0 0.5rem 0.5rem 0 !important;
   padding: 1.5rem !important;
   margin: 1.5rem 0 !important;
@@ -694,7 +695,7 @@ details>div>div {
   top: 0.5rem !important;
   left: 0.75rem !important;
   font-size: 2rem !important;
-  color: var(--fastgpt-primary) !important;
+  color: var(--primary-color) !important;
   opacity: 0.3 !important;
   font-weight: bold !important;
 }
@@ -718,11 +719,11 @@ details>div>div {
 }
 
 .theme-doc-markdown ul li::marker {
-  color: var(--fastgpt-primary) !important;
+  color: var(--primary-color) !important;
 }
 
 .theme-doc-markdown ol li::marker {
-  color: var(--fastgpt-primary) !important;
+  color: var(--primary-color) !important;
   font-weight: 600 !important;
 }
 
@@ -734,11 +735,11 @@ details>div>div {
   background: white !important;
   border-radius: 0.75rem !important;
   overflow: hidden !important;
-  box-shadow: var(--fastgpt-shadow-md) !important;
+  box-shadow: var(--shadow-md) !important;
 }
 
 .theme-doc-markdown th {
-  background: linear-gradient(135deg, var(--fastgpt-primary), var(--fastgpt-primary-light)) !important;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light)) !important;
   color: white !important;
   font-weight: 600 !important;
   padding: 1rem !important;
@@ -758,22 +759,22 @@ details>div>div {
 
 /* 链接样式优化 */
 .theme-doc-markdown a {
-  color: var(--fastgpt-primary) !important;
+  color: var(--primary-color) !important;
   text-decoration: none !important;
   font-weight: 500 !important;
   border-bottom: 1px solid transparent !important;
-  transition: var(--fastgpt-transition) !important;
+  transition: var(--transition) !important;
 }
 
 .theme-doc-markdown a:hover {
-  color: var(--fastgpt-primary-light) !important;
-  border-bottom-color: var(--fastgpt-primary-light) !important;
+  color: var(--primary-light) !important;
+  border-bottom-color: var(--primary-light) !important;
 }
 
 /* 图片样式优化 */
 .theme-doc-markdown img {
   border-radius: 0.75rem !important;
-  box-shadow: var(--fastgpt-shadow-lg) !important;
+  box-shadow: var(--shadow-lg) !important;
   margin: 2rem auto !important;
   display: block !important;
   max-width: 100% !important;
@@ -784,7 +785,7 @@ details>div>div {
 .theme-doc-markdown hr {
   border: none !important;
   height: 1px !important;
-  background: linear-gradient(90deg, transparent, var(--fastgpt-border), transparent) !important;
+  background: linear-gradient(90deg, transparent, var(--border-color), transparent) !important;
   margin: 3rem 0 !important;
 }
 
@@ -792,7 +793,7 @@ details>div>div {
 .theme-admonition {
   border-radius: 0.75rem !important;
   border: none !important;
-  box-shadow: var(--fastgpt-shadow-sm) !important;
+  box-shadow: var(--shadow-sm) !important;
   margin: 1.5rem 0 !important;
   overflow: hidden !important;
 }
@@ -805,28 +806,28 @@ details>div>div {
 /* 目录导航优化 */
 .table-of-contents {
   background: rgba(255, 255, 255, 0.95) !important;
-  border: 1px solid var(--fastgpt-border) !important;
+  border: 1px solid var(--border-color) !important;
   border-radius: 0.75rem !important;
-  padding: 1.5rem !important;
-  box-shadow: var(--fastgpt-shadow-sm) !important;
+  padding: 0.5rem !important;
+  box-shadow: var(--shadow-sm) !important;
   position: sticky !important;
   top: 2rem !important;
-  margin-left: 16px !important;
+  margin-left: 8px !important;
 }
 
 .table-of-contents__link {
-  color: var(--fastgpt-secondary) !important;
+  color: var(--text-secondary) !important;
   font-size: 0.875rem !important;
   line-height: 1.5 !important;
-  padding: 0.25rem 0 !important;
+  padding: 0.25rem 0.25rem !important;
   border-radius: 0.375rem !important;
-  transition: var(--fastgpt-transition) !important;
+  transition: var(--transition) !important;
 }
 
 .table-of-contents__link:hover,
 .table-of-contents__link--active {
-  color: var(--fastgpt-primary) !important;
-  background: var(--fastgpt-accent) !important;
+  color: var(--primary-color) !important;
+  background: var(--accent-bg) !important;
   text-decoration: none !important;
 }
 
@@ -838,7 +839,7 @@ details>div>div {
   left: 0 !important;
   width: var(--scroll-progress, 0%) !important;
   height: 3px !important;
-  background: linear-gradient(90deg, var(--fastgpt-primary), var(--fastgpt-primary-light)) !important;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-light)) !important;
   z-index: 1000 !important;
   transition: width 0.1s ease !important;
 }
@@ -896,7 +897,7 @@ details>div>div {
   .theme-doc-markdown {
     width: 100% !important;
     max-width: 100% !important;
-    font-size: 15px !important;
+    font-size: 14px !important;
     padding: 0 1rem !important;
     margin: 0 !important;
   }
@@ -908,10 +909,11 @@ details>div>div {
   .theme-doc-markdown h2 {
     font-size: 1.5rem !important;
     margin-top: 2rem !important;
+    padding-left: 1.25rem !important;
   }
   
   .theme-doc-markdown h2::before {
-    left: -0.75rem !important;
+    left: 0 !important;
   }
   
   .theme-doc-markdown pre {

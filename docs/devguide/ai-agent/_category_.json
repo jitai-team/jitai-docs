@@ -3,7 +3,7 @@
   "position": 9,
   "link": {
     "type": "generated-index",
-    "slug": "ai-agent",
+    "slug": "devguide/ai-agent",
     "description": "Learn how to create and manage AI agents, including tools, input/output handling, single-task implementations, and exposing Agent APIs for external systems."
   }
 }

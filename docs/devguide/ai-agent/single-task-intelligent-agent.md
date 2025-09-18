@@ -1,8 +1,9 @@
 ---
 sidebar_position: 4
 slug: single-task-intelligent-agent
+title: "Implement Single-Task Intelligent Agent with Agent"
 ---
 
-# Single-Task Intelligent Agent Implementation
+# Implement Single-Task Intelligent Agent with Agent
 
 Coming soon...

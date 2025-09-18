@@ -26,7 +26,7 @@ After binding the assistant in a page, you can subscribe to node execution event
 
 
 ### Tool Call Events {#agent-call-tool-events}
-For AI Agent nodes, if tools are used during Agent execution, workspace events will also be triggered before and after tool calls. The prerequisite is that the Agent needs to [enable tool trigger events](../ai-agent/create-ai-agent#tool-function-call-pre-post-event-triggering).
+For AI Agent nodes, if tools are used during Agent execution, workspace events will also be triggered before and after tool calls. The prerequisite is that the Agent needs to [enable tool trigger events](../ai-agent/agent-tools#tool-function-call-pre-post-event-triggering).
 
 Tool call events carry parameters of dictionary (JitDict) type with the following attributes:
 - **toolName**: Tool name, such as "services.ASvc.func1". In event handling logic, developers need to handle accordingly based on the tool name.
@@ -60,6 +60,6 @@ AI Agent nodes, function call nodes, conditional branch nodes, and multi-task ex
 For how to subscribe to node execution events in the backend, refer to: [AI Assistant Events](../business-logic-development/event-handling#ai-assistant-events)
 
 ### Tool Call Events
-For AI Agent nodes, if tools are used during Agent execution, backend events will also be triggered before and after tool calls. The prerequisite is that tools need to enable [trigger events](../ai-agent/create-ai-agent#tool-function-call-pre-post-event-triggering).
+For AI Agent nodes, if tools are used during Agent execution, backend events will also be triggered before and after tool calls. The prerequisite is that tools need to enable [trigger events](../ai-agent/agent-tools#tool-function-call-pre-post-event-triggering).
 
 For how to subscribe to tool call events in the backend, refer to: [Agent Tool Call Events](../business-logic-development/event-handling#agent-tool-call-events)

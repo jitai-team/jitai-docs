@@ -77,6 +77,6 @@ Developers can insert a `Basic Statement` in the service function editor, select
 ## Test Agent in Page Assistant {#test-agent-in-page-assistant}
 During Agent development, frequent debugging is required. Developers can create a simple AI Assistant that is internally orchestrated to directly call the target Agent, then integrate the assistant into a page. In the AI Assistant's dialog box, we can see the Agent's execution process and output results.
 
-[How to call Agent in AI Assistant?](../ai-assitant/process-orchestration-node-configuration#ai-agent)
+[How to call Agent in AI Assistant?](../ai-assistant/process-orchestration-node-configuration#ai-agent)
 
 [How to integrate AI Assistant in pages?](../shell-and-page/component-based-page-development#integrate-ai-assistant-in-pages)

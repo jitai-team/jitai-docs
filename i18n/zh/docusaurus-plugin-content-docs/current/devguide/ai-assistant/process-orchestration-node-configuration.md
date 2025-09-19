@@ -91,7 +91,7 @@ AIAgent节点就是调用具体的AIAgent来处理特定任务。
 ![AI助理-工作区](./img/assistant/human-workspace.png)
 
 工作区指的是用户工作的前端页面。
-当任务流程运行到这个节点时，流程的后端会暂停，同时向前端发送暂停事件和相关信息。在工作区可以[订阅暂停后事件](../ai-assitant/ai-assistant-event#workspace-human-machine-interaction-events)，在对应的事件处理函数中，用事件参数更新页面UI状态，然后等待用户做相关操作恢复流程继续执行。
+当任务流程运行到这个节点时，流程的后端会暂停，同时向前端发送暂停事件和相关信息。在工作区可以[订阅暂停后事件](../ai-assistant/ai-assistant-event#workspace-human-machine-interaction-events)，在对应的事件处理函数中，用事件参数更新页面UI状态，然后等待用户做相关操作恢复流程继续执行。
 
 节点配置详解：
 - **事件携带的参数**：助理向前端工作区发送暂停事件时携带的参数，这些从[运行状态数据](./ai-assistant-state#state-data-content)中选择，前端可以通过这些参数更新UI状态。

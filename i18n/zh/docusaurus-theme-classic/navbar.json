@@ -7,14 +7,6 @@
     "message": "入门教程",
     "description": "Navbar item with label Tutorial"
   },
-  "item.label.Development Guide": {
-    "message": "应用开发指南",
-    "description": "Navbar item with label Development Guide"
-  },
-  "item.label.Extension Guide": {
-    "message": "框架扩展指南",
-    "description": "Navbar item with label Extension Guide"
-  },
   "item.label.Reference": {
     "message": "参考手册",
     "description": "Navbar item with label Reference"
@@ -30,5 +22,13 @@
   "item.label.GitHub": {
     "message": "GitHub",
     "description": "Navbar item with label GitHub"
+  },
+  "item.label.Developer Guide": {
+    "message": "开发者指南",
+    "description": "Navbar item with label Developer Guide"
+  },
+  "item.label.Extending": {
+    "message": "扩展指南",
+    "description": "Navbar item with label Extending"
   }
 }

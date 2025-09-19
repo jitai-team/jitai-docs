@@ -29,8 +29,8 @@ Specify the data tables and data conditions that can be analyzed. This configura
 We have built-in a specialized AI Assistant for data analysis on this page. This assistant needs to access the system database and call functions on the page to draw charts during runtime. We need to configure a [Large Language Model](../../ai-llm/create-ai-llm) that supports tool calling. We recommend using qwen-max-latest from Alibaba Cloud Bailian platform.<a href="https://bailian.console.aliyun.com/?tab=model#/api-key" target="_blank">Apply for API Key</a>
 
 ### AI Assistant Advanced Configuration
-- Support custom [Welcome Message and Opening](../../ai-assitant/welcome-message-and-opening)
-- Support custom [Output Process Log](../../ai-assitant/ai-assistant-input-output#message-output)
+- Support custom [Welcome Message and Opening](../../ai-assistant/welcome-message-and-opening)
+- Support custom [Output Process Log](../../ai-assistant/ai-assistant-input-output#message-output)
 
 For more information about AI assistants, please read the [AI Assistant](../../ai-assistant) related documentation.
 

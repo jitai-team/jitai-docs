@@ -1027,7 +1027,7 @@ Visual intelligent workflow engine. Orchestrate business processes through drag-
 
 <IndexCard
   title="创建AI助理元素"
-  href="ai-assitant/create-ai-assistant"
+  href="ai-assistant/create-ai-assistant"
   description="学习如何创建AI助理元素，配置工作流、节点类型和事件处理，实现智能业务流程自动化。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1037,7 +1037,7 @@ Visual intelligent workflow engine. Orchestrate business processes through drag-
 
 <IndexCard
   title="流程编排与节点配置"
-  href="ai-assitant/process-orchestration-node-configuration"
+  href="ai-assistant/process-orchestration-node-configuration"
   description="深入了解AI助理流程编排技术和详细的节点配置方法。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1047,7 +1047,7 @@ Visual intelligent workflow engine. Orchestrate business processes through drag-
 
 <IndexCard
   title="AI助理的输入与输出"
-  href="ai-assitant/ai-assistant-input-output"
+  href="ai-assistant/ai-assistant-input-output"
   description="理解AI助理的输入输出配置和数据处理方法。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1057,7 +1057,7 @@ Visual intelligent workflow engine. Orchestrate business processes through drag-
 
 <IndexCard
   title="AI助理的API开放"
-  href="ai-assitant/ai-assistant-api-integration"
+  href="ai-assistant/ai-assistant-api-integration"
   description="通过API接口开放AI助理能力，实现与外部系统的集成。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1247,6 +1247,7 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
     { text: "Contact Management Entry", href: "user-and-permission/organizational-structure#contact-management-entry" },
     { text: "DingTalk Custom Organization", href: "user-and-permission/organizational-structure#dingtalk-custom-organization" },
     { text: "WeChat Work Custom Organization", href: "user-and-permission/organizational-structure#wechat-work-custom-organization" },
+    { text: "Microsoft Teams", href: "user-and-permission/organizational-structure#microsoft-teams" },
     { text: "Department Member Search", href: "user-and-permission/organizational-structure#department-member-search" },
     { text: "Set Organization Leader", href: "user-and-permission/organizational-structure#set-organization-leader" },
     { text: "Create Department", href: "user-and-permission/organizational-structure#create-department" },
@@ -1271,6 +1272,9 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
     { text: "Login Method Creation", href: "user-and-permission/login-authentication#login-method-creation" },
     { text: "Account Password Login", href: "user-and-permission/login-authentication#account-password-login" },
     { text: "Mobile Phone Login", href: "user-and-permission/login-authentication#mobile-phone-login" },
+    { text: "Alibaba Cloud SMS", href: "user-and-permission/login-authentication#aliyun-sms" },
+    { text: "Twilio", href: "user-and-permission/login-authentication#twilio" },
+    { text: "AWS SNS", href: "user-and-permission/login-authentication#aws-sns" },
     { text: "DingTalk Custom QR Login", href: "user-and-permission/login-authentication#dingtalk-custom-qr-login" },
     { text: "WeChat Work Custom QR Login", href: "user-and-permission/login-authentication#wechat-work-custom-qr-login" },
     { text: "WeChat Login", href: "user-and-permission/login-authentication#wechat-login" },
@@ -1338,15 +1342,12 @@ Empower applications with powerful business processing capabilities. Handle comp
   description="Backend business logic implementation, encapsulating reusable business functions through service elements, providing API interfaces and data processing services."
 >
   <LinkGrid columns={2} links={[
-    { text: "Create Service Elements", href: "business-logic-development/creating-service-elements#create-service-elements" },
-    { text: "Create Service Functions", href: "business-logic-development/creating-service-elements#create-service-functions" },
-    { text: "Edit Service Functions in Source Code Mode", href: "business-logic-development/creating-service-elements#edit-service-functions-source-code-mode" },
-    { text: "Add New Dependency Library", href: "business-logic-development/creating-service-elements#add-new-dependency-library" },
-    { text: "Where Service Functions Are Used", href: "business-logic-development/creating-service-elements#where-service-functions-are-used" },
-    { text: "Help AI Understand Service Functions", href: "business-logic-development/creating-service-elements#help-ai-understand-service-functions" },
-    { text: "Use Cross-App Service Elements to Call Authorized Interfaces", href: "business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-interfaces" },
-    { text: "Create Cross-App Service Elements", href: "business-logic-development/creating-service-elements#create-cross-app-service-elements" },
-    { text: "Use Cross-App Service Elements in Functions", href: "business-logic-development/creating-service-elements#use-cross-app-service-elements-in-functions" }
+    { text: "Creating Service Functions", href: "business-logic-development/creating-service-elements#create-service-functions" },
+    { text: "Editing Service Functions in Source Code Mode", href: "business-logic-development/creating-service-elements#edit-service-functions-source-code-mode" },
+    { text: "Adding New Dependency Libraries", href: "business-logic-development/creating-service-elements#add-new-dependency-library" },
+    { text: "Using Cross-App Service Elements to Call Authorized Interfaces", href: "business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-interfaces" },
+    { text: "Creating Cross-App Service Elements", href: "business-logic-development/creating-service-elements#create-cross-app-service-elements" },
+    { text: "Using Cross-App Service Elements in Function Logic", href: "business-logic-development/creating-service-elements#use-cross-app-service-elements-in-functions" }
   ]} />
 </IndexCard>
 
@@ -1355,9 +1356,14 @@ Empower applications with powerful business processing capabilities. Handle comp
   href="business-logic-development/calling-other-elements-in-service-functions"
   description="Learn how to call other elements from service functions, including models, other services, external APIs, and system components for comprehensive business logic implementation."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "Using Platform APIs to Call Other Elements", href: "business-logic-development/calling-other-elements-in-service-functions#use-platform-api-to-call-other-elements" },
+    { text: "Calling Data Model Functions", href: "business-logic-development/calling-other-elements-in-service-functions#call-data-model-function" },
+    { text: "Calling Other Service Functions", href: "business-logic-development/calling-other-elements-in-service-functions#call-other-service-functions" },
+    { text: "Calling External APIs", href: "business-logic-development/calling-other-elements-in-service-functions#call-external-api" },
+    { text: "Calling AI Large Language Models", href: "business-logic-development/calling-other-elements-in-service-functions#call-ai-llm" },
+    { text: "Calling AI Agents", href: "business-logic-development/calling-other-elements-in-service-functions#call-ai-agent" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1365,9 +1371,10 @@ Empower applications with powerful business processing capabilities. Handle comp
   href="business-logic-development/service-elements-usage-scenarios"
   description="Explore practical usage scenarios and best practices for service elements across different business contexts and application architectures."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Where Service Functions Are Used", href: "business-logic-development/service-elements-usage-scenarios#where-service-functions-are-used" },
+    { text: "Helping AI Understand Service Functions More Accurately", href: "business-logic-development/service-elements-usage-scenarios#help-ai-understand-service-functions" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1568,6 +1575,8 @@ Easily handle various file requirements in applications. Support file upload and
     { text: "China Mobile Cloud EOS", href: "file-processing/file-storage#china-mobile-cloud-eos" },
     { text: "MinIO", href: "file-processing/file-storage#minio" },
     { text: "Qiniu Cloud", href: "file-processing/file-storage#aliyun-oss" },
+    { text: "AWS S3", href: "file-processing/file-storage#aws-s3" },
+    { text: "Cloudflare R2", href: "file-processing/file-storage#cloudflare-r2" },
     { text: "Use Environment Variables to Prevent Config Info Leak", href: "file-processing/file-storage#prevent-config-info-leak-with-env-variables" },
     { text: "Set Application Default Storage Service", href: "file-processing/file-storage#set-application-default-storage-service" },
     { text: "Call File Upload in Frontend Code", href: "file-processing/file-storage#call-file-upload-in-frontend-code" }
@@ -1601,9 +1610,10 @@ Easily handle various file requirements in applications. Support file upload and
   href="file-processing/generating-and-printing-files-using-file-templates"
   description="Learn how to use file templates to generate and print documents programmatically, including dynamic content population and output formatting."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Print Word Templates", href: "file-processing/generating-and-printing-files-using-file-templates#print-word-template" },
+    { text: "Print Excel Templates", href: "file-processing/generating-and-printing-files-using-file-templates#print-excel-template" }
+  ]} />
 </IndexCard>
 
 </div>

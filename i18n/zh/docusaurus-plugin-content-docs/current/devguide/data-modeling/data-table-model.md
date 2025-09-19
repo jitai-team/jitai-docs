@@ -9,10 +9,7 @@ slug: data-table-model
 ## 数据表创建入口 {#data-table-create-entry}
 ![模型创建配置](./img/model-creation-configuration.png)
 
-在开发区的元素树中找到`数据模型`，点击右侧的 `+`，选择`数据表`，完成数据表创建流程即可创建数据模型。
-
-## 新建数据表数据模型 {#create-new-data-table-model}
-适用于全新业务需求，需要从零开始设计数据结构的场景。新建模型后会自动在数据库生成对应的表。
+在开发区的元素树中找到`数据模型`，点击右侧的 `+`，选择`数据表`，即可弹出`新建模型`弹窗。
 
 ![新建数据模型](./img/create-data-model.png)
 

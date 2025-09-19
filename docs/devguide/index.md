@@ -1241,6 +1241,7 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
     { text: "Contact Management Entry", href: "user-and-permission/organizational-structure#contact-management-entry" },
     { text: "DingTalk Custom Organization", href: "user-and-permission/organizational-structure#dingtalk-custom-organization" },
     { text: "WeChat Work Custom Organization", href: "user-and-permission/organizational-structure#wechat-work-custom-organization" },
+    { text: "Microsoft Teams", href: "user-and-permission/organizational-structure#microsoft-teams" },
     { text: "Department Member Search", href: "user-and-permission/organizational-structure#department-member-search" },
     { text: "Set Organization Leader", href: "user-and-permission/organizational-structure#set-organization-leader" },
     { text: "Create Department", href: "user-and-permission/organizational-structure#create-department" },
@@ -1265,6 +1266,9 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
     { text: "Login Method Creation", href: "user-and-permission/login-authentication#login-method-creation" },
     { text: "Account Password Login", href: "user-and-permission/login-authentication#account-password-login" },
     { text: "Mobile Phone Login", href: "user-and-permission/login-authentication#mobile-phone-login" },
+    { text: "Alibaba Cloud SMS", href: "user-and-permission/login-authentication#aliyun-sms" },
+    { text: "Twilio", href: "user-and-permission/login-authentication#twilio" },
+    { text: "AWS SNS", href: "user-and-permission/login-authentication#aws-sns" },
     { text: "DingTalk Custom QR Login", href: "user-and-permission/login-authentication#dingtalk-custom-qr-login" },
     { text: "WeChat Work Custom QR Login", href: "user-and-permission/login-authentication#wechat-work-custom-qr-login" },
     { text: "WeChat Login", href: "user-and-permission/login-authentication#wechat-login" },
@@ -1562,6 +1566,8 @@ Easily handle various file requirements in applications. Support file upload and
     { text: "China Mobile Cloud EOS", href: "file-processing/file-storage#china-mobile-cloud-eos" },
     { text: "MinIO", href: "file-processing/file-storage#minio" },
     { text: "Qiniu Cloud", href: "file-processing/file-storage#aliyun-oss" },
+    { text: "AWS S3", href: "file-processing/file-storage#aws-s3" },
+    { text: "Cloudflare R2", href: "file-processing/file-storage#cloudflare-r2" },
     { text: "Use Environment Variables to Prevent Config Info Leak", href: "file-processing/file-storage#prevent-config-info-leak-with-env-variables" },
     { text: "Set Application Default Storage Service", href: "file-processing/file-storage#set-application-default-storage-service" },
     { text: "Call File Upload in Frontend Code", href: "file-processing/file-storage#call-file-upload-in-frontend-code" }
@@ -1595,9 +1601,10 @@ Easily handle various file requirements in applications. Support file upload and
   href="file-processing/generating-and-printing-files-using-file-templates"
   description="Learn how to use file templates to generate and print documents programmatically, including dynamic content population and output formatting."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Print Word Templates", href: "file-processing/generating-and-printing-files-using-file-templates#print-word-template" },
+    { text: "Print Excel Templates", href: "file-processing/generating-and-printing-files-using-file-templates#print-excel-template" }
+  ]} />
 </IndexCard>
 
 </div>

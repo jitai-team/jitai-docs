@@ -181,13 +181,13 @@ SSR(Server-Side Rendering，服务端渲染)门户用于提升首屏加载性能
 ![个人中心功能](./imgs/personal-center-functions.gif)
 
 ## 在门户中集成AI助理 {#using-ai-assistant-in-portal}
-JitAi支持在门户中直接集成[AI助理](../../ai-assitant/create-ai-assistant)，用户在访问门户时可以与AI助理进行交互。这里做概括性介绍，详细内容请参考[在门户中集成AI助理](../../using-ai-in-portals-and-pages/using-ai-assistants-in-portals)。
+JitAi支持在门户中直接集成[AI助理](../../ai-assistant/create-ai-assistant)，用户在访问门户时可以与AI助理进行交互。这里做概括性介绍，详细内容请参考[在门户中集成AI助理](../../using-ai-in-portals-and-pages/using-ai-assistants-in-portals)。
 
 ![门户集成AI助理](./imgs/portal-integrate-ai-assistant.gif)
 
-开发者在门户配置界面中点击`AI助理`页签，在配置界面中打开开关并选择一个[AI助理](../../ai-assitant/create-ai-assistant)，即可在门户中集成AI助理。
+开发者在门户配置界面中点击`AI助理`页签，在配置界面中打开开关并选择一个[AI助理](../../ai-assistant/create-ai-assistant)，即可在门户中集成AI助理。
 
 ![AI助理在门户中的效果](./imgs/ai-assistant-effect-in-portal.png)
 
-当用户访问开启了[AI助理](../../ai-assitant/create-ai-assistant)的门户时，可以看到”AI助理“导航菜单，点击即可打开AI助理对话框并与其对话。
+当用户访问开启了[AI助理](../../ai-assistant/create-ai-assistant)的门户时，可以看到”AI助理“导航菜单，点击即可打开AI助理对话框并与其对话。
 

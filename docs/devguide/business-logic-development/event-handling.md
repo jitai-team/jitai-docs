@@ -6,7 +6,7 @@ slug: event-handling
 # Event Handling
 Event handling is an automation mechanism in JitAi applications. When specific situations occur (such as data changes, approval status changes, etc.), the system automatically executes preset business logic. Simply put, it's a "when...then automatically do..." response mechanism that helps developers build event-driven application systems.
 
-JitAi supports multiple types including `Model Events`, `Approval Events`, `Custom Events`, and `AI-related Events`, which can be triggered during function logic execution, data changes, approval workflows, and ai-assistant/Agent runtime to meet different business scenario automation needs.
+JitAi supports multiple types including `Model Events`, `Approval Events`, `Custom Events`, and `AI-related Events`, which can be triggered during function logic execution, data changes, approval workflows, and AI Assistant/Agent runtime to meet different business scenario automation needs.
 
 ## Event Creation {#event-create}
 Creating events in the JitAi development environment is very simple. The system provides a visual creation approach to help developers quickly configure various events.
@@ -103,23 +103,23 @@ In the `New Custom Event` dialog, select the declared event, configure parameter
 
 ![Custom Event Configuration](./img/custom-event-configuration.png)
 
-## AI-Assistant Events {#ai-assistant-events}
-Various nodes in ai-assistant can trigger some events during runtime. We can subscribe to these events to insert business processing logic at key points during assistant execution.
+## AI Assistant Events {#ai-assistant-events}
+Various nodes in AI Assistant can trigger some events during runtime. We can subscribe to these events to insert business processing logic at key points during assistant execution.
 
 ### Trigger Timings {#ai-assistant-trigger-timings}
 - **Before Assistant Run**: Triggered before the assistant starts running, with user input as the parameter.
 - **After Assistant Run**: Triggered after the assistant completes running, with no parameters.
-- **Node Arrival**: Triggered when AI Agent nodes, function call nodes, conditional branch nodes, and multi-task execution nodes are reached. The prerequisite is that the node needs to enable backend event triggering. For enabling method, see: <a href="../ai-assitant/create-ai-assistant#node-runtime-events" target="_blank">Node Runtime Events</a>. The parameter carried is the `Node Arrival Event Output Parameter` configured on the node.
+- **Node Arrival**: Triggered when AI Agent nodes, function call nodes, conditional branch nodes, and multi-task execution nodes are reached. The prerequisite is that the node needs to enable backend event triggering. For enabling method, see: <a href="../ai-assistant/create-ai-assistant#node-runtime-events" target="_blank">Node Runtime Events</a>. The parameter carried is the `Node Arrival Event Output Parameter` configured on the node.
 - **After Node Execution**: Event type is: afterNodeRun; triggered after AI Agent nodes, function call nodes, conditional branch nodes, and multi-task execution nodes complete execution. The prerequisite is that the node needs to enable backend event triggering. The parameter carried is the `After Node Execution Output Parameter` configured on the node.
 
 ### Subscribing to Events {#subscribing-to-ai-assistant-events}
-You need to create an ai-assistant event element to subscribe.
+You need to create an AI Assistant event element to subscribe.
 
-![Create AI-Assistant Event Subscription](./img/ai/assistant-event-create.png)
+![Create AI Assistant Event Subscription](./img/ai/assistant-event-create.png)
 
-In the IDE, click `+` -> `Event` -> `ai-assistant Event`, open the event configuration window, and fill in the event configuration information.
+In the IDE, click `+` -> `Event` -> `AI Assistant Event`, open the event configuration window, and fill in the event configuration information.
 
-![AI-Assistant Event Configuration](./img/ai/assistant-event-config.png)
+![AI Assistant Event Configuration](./img/ai/assistant-event-config.png)
 
 ## Agent Tool Call Events {#agent-tool-call-events}
 When AI Agent calls tools, we can subscribe to this event to insert business processing logic during Agent execution. The prerequisite is that the tool needs to enable <a href="../ai-agent#ai-agent-tool-configuration">trigger events</a>.

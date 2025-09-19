@@ -1032,7 +1032,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="创建AI助理元素"
-  href="ai-assitant/create-ai-assistant"
+  href="ai-assistant/create-ai-assistant"
   description="学习如何创建AI助理元素，配置工作流、节点类型和事件处理，实现智能业务流程自动化。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1042,7 +1042,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="流程编排与节点配置"
-  href="ai-assitant/process-orchestration-node-configuration"
+  href="ai-assistant/process-orchestration-node-configuration"
   description="深入了解AI助理流程编排技术和详细的节点配置方法。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1052,7 +1052,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="AI助理的输入与输出"
-  href="ai-assitant/ai-assistant-input-output"
+  href="ai-assistant/ai-assistant-input-output"
   description="理解AI助理的输入输出配置和数据处理方法。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1062,7 +1062,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="AI助理的API开放"
-  href="ai-assitant/ai-assistant-api-integration"
+  href="ai-assistant/ai-assistant-api-integration"
   description="通过API接口开放AI助理能力，实现与外部系统的集成。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1340,17 +1340,14 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Creating Service Elements"
+  title="创建服务元素"
   href="business-logic-development/creating-service-elements"
   description="后端业务逻辑实现，通过服务元素封装可复用的业务函数，提供API接口和数据处理服务。"
 >
   <LinkGrid columns={2} links={[
-    { text: "创建服务元素", href: "business-logic-development/creating-service-elements#create-service-elements" },
     { text: "创建服务函数", href: "business-logic-development/creating-service-elements#create-service-functions" },
     { text: "源码模式编辑服务函数", href: "business-logic-development/creating-service-elements#edit-service-functions-source-code-mode" },
     { text: "添加新的依赖库", href: "business-logic-development/creating-service-elements#add-new-dependency-library" },
-    { text: "服务函数在哪里使用", href: "business-logic-development/creating-service-elements#where-service-functions-are-used" },
-    { text: "让AI更准确地理解服务函数", href: "business-logic-development/creating-service-elements#help-ai-understand-service-functions" },
     { text: "使用跨App服务元素调用授权接口", href: "business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-interfaces" },
     { text: "创建跨App服务元素", href: "business-logic-development/creating-service-elements#create-cross-app-service-elements" },
     { text: "在函数逻辑中使用跨App服务元素", href: "business-logic-development/creating-service-elements#use-cross-app-service-elements-in-functions" }
@@ -1358,23 +1355,29 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="Calling Other Elements in Service Functions"
+  title="在服务函数中调用其它元素"
   href="business-logic-development/calling-other-elements-in-service-functions"
   description="学习如何在服务函数中调用其他元素，包括模型、其他服务、外部API和系统组件，实现全面的业务逻辑实现。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "使用平台API调用其它元素", href: "business-logic-development/calling-other-elements-in-service-functions#use-platform-api-to-call-other-elements" },
+    { text: "调用数据模型函数", href: "business-logic-development/calling-other-elements-in-service-functions#call-data-model-function" },
+    { text: "调用其它服务函数", href: "business-logic-development/calling-other-elements-in-service-functions#call-other-service-functions" },
+    { text: "调用外部API", href: "business-logic-development/calling-other-elements-in-service-functions#call-external-api" },
+    { text: "调用AI大模型", href: "business-logic-development/calling-other-elements-in-service-functions#call-ai-llm" },
+    { text: "调用AI Agent", href: "business-logic-development/calling-other-elements-in-service-functions#call-ai-agent" }
+  ]} />
 </IndexCard>
 
 <IndexCard
-  title="Service Elements Usage Scenarios"
+  title="服务元素使用场景"
   href="business-logic-development/service-elements-usage-scenarios"
   description="探索服务元素在不同业务场景和应用架构中的实际使用场景和最佳实践。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "服务函数在哪里使用", href: "business-logic-development/service-elements-usage-scenarios#where-service-functions-are-used" },
+    { text: "让AI更准确地理解服务函数", href: "business-logic-development/service-elements-usage-scenarios#help-ai-understand-service-functions" }
+  ]} />
 </IndexCard>
 
 <IndexCard

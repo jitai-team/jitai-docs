@@ -3,7 +3,7 @@ sidebar_position: 3
 slug: service-elements-usage-scenarios
 ---
 
-# Service Elements Usage Scenarios
+# 服务元素的使用场景
 
 ## 服务函数在哪里使用 {#where-service-functions-are-used}
 在[页面函数](../shell-and-page/component-based-page-development#page-functions)、[页面事件](../shell-and-page/component-based-page-development#page-events)、[前端组件事件函数](../shell-and-page/component-based-page-development#event-panel)、[任务函数](./background-tasks#task-execution-function-development)、[模型事件](./event-handling#model-events)、[审批事件](./event-handling#approval-events)、[自定义事件](./event-handling#custom-events)、[AI助理事件](./event-handling#ai-assistant-events)、[AI Agent工具调用事件](./event-handling#agent-tool-call-events)以及其它服务函数等所有可以编写函数逻辑的地方，开发者都可以调用服务函数。

@@ -19,9 +19,18 @@ const config: Config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
-
-  // Algolia site verification
+  // Algolia site verification and Google Tag Manager
   headTags: [
+    // Google Tag Manager
+    {
+      tagName: 'script',
+      attributes: {},
+      innerHTML: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K39JND5X');`,
+    },
     {
       tagName: 'meta',
       attributes: {
@@ -93,6 +102,8 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
+  // 添加客户端模块
+  clientModules: ['./src/clientModules/readingProgress.js'],
   markdown: {
     mermaid: true,
   },
@@ -122,13 +133,13 @@ const config: Config = {
            type: 'docSidebar',
            sidebarId: 'devguideSidebar',
            position: 'left',
-           label: 'Development Guide',
+           label: 'Developer Guide',
          },
          {
            type: 'docSidebar',
            sidebarId: 'extguideSidebar',
            position: 'left',
-           label: 'Extension Guide',
+           label: 'Extending',
          },
          {
            type: 'docSidebar',
@@ -193,11 +204,11 @@ const config: Config = {
               to: '/docs/tutorial/',
             },
             {
-              label: 'Development Guide',
+              label: 'Developer Guide',
               to: '/docs/devguide/',
             },
             {
-              label: 'Extension Guide',
+              label: 'Extending',
               to: '/docs/extguide/',
             },
             {

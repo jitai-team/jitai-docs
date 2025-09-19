@@ -18,7 +18,7 @@ const PricingPage: React.FC = () => {
   
   return (
     <LayoutComponent>
-      <div className={styles.container}>
+      <div className={`${styles.container} custom-page`}>
         <Navbar currentLocale={i18n.currentLocale}/>
         <PricingSection currentLocale={i18n.currentLocale}/>
         <PricingFAQSection currentLocale={i18n.currentLocale}/>

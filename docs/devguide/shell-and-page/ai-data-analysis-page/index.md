@@ -6,7 +6,7 @@ sidebar_position: 4
 ## Overview
 In traditional development mode, statistical charts are pre-designed by developers, and users cannot modify chart types and statistical methods. JitAI's AI data analysis page allows users to describe their requirements through natural language, with AI automatically generating corresponding data charts and supporting users to adjust chart styles and statistical dimensions at any time.
 
-## Creating AI Data Analysis Page {#create-ai-data-analysis-page}
+## Create AI Data Analysis Page {#create-ai-data-analysis-page}
 Create in the developer portal by following these steps:
 
 ![Create AI Data Analysis Page - Creation](./imgs/create.png)

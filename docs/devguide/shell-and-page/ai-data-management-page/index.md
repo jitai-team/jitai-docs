@@ -6,7 +6,7 @@ sidebar_position: 3
 
 Common data management pages typically provide CRUD (Create, Read, Update, Delete) functionality, including filter conditions, sorting, pagination, toolbar buttons, action column buttons, and other common interface elements and features. JitAI directly provides an AI data management page to help developers quickly complete data management functionality development, and supports users to perform data management tasks using AI.
 
-## Creating AI Data Management Page {#create-ai-data-management-page}
+## Create AI Data Management Page {#create-ai-data-management-page}
 Enter the developer portal and create it by following these steps:
 
 ![ai-data-management-page-create](./imgs/create-page.png)

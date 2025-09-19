@@ -75,8 +75,8 @@ Switch to `AI Assistant Configuration` at the top of the visual editor, then tur
 The AI data management assistant needs to access the system database and call functions on the page to draw charts during runtime. We need to configure a [Large Language Model](../../ai-llm/create-ai-llm) that supports tool calling for it. We recommend using qwen-max-latest from Alibaba Cloud Bailian platform. [Apply for API Key](https://bailian.console.aliyun.com/?tab=model#/api-key)
 
 ### Assistant Advanced Configuration
-- Supports custom [Welcome Message and Opening](../../ai-assitant/welcome-message-and-opening)
-- Supports custom [Output Process Log](../../ai-assitant/ai-assistant-input-output#message-output), which outputs brief process logs by default.
+- Supports custom [Welcome Message and Opening](../../ai-assistant/welcome-message-and-opening)
+- Supports custom [Output Process Log](../../ai-assistant/ai-assistant-input-output#message-output), which outputs brief process logs by default.
 
 For more information about AI assistants, please read the [AI Assistant](../../ai-assistant) related documentation.
 

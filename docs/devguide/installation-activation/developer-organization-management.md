@@ -11,12 +11,12 @@ A JitNode is an application that runs on an operating system, available as both 
 ## What is a Developer Organization {#what-is-developer-organization}
 A developer organization is the basic unit for managing development teams and projects. Team members within the same organization can collaborate on application development and share resources. Different organizations are isolated in terms of hardware and software resources, data, applications, etc. Each developer organization can bind multiple JitNodes, each node can only be bound to one organization, and each developer can join multiple developer organizations.
 
-## Creating a New Development Organization When Activating a Node {#create-new-development-organization-when-activating-node}
-After completing node installation, users will enter the node activation page on their first visit.
+## Creating a New Developer Organization When Activating a Node {#create-new-development-organization-when-activating-node}
+After completing node installation, users will enter the node activation page on their first visit. The system supports multiple activation methods: Google, Github, and WeChat.
 
-![QR Code Activation Interface](./img/qr-code-activation.png)
+![Activation Methods](./img/activation-methods.gif)
 
-After scanning the QR code with WeChat, users will enter the organization binding interface.
+After selecting the activation method, users will enter the organization binding interface.
 
 ![Select Create New Organization and Bind](./img/select-create-new-organization-and-bind.png)
 

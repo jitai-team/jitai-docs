@@ -3,7 +3,7 @@ sidebar_position: 4
 slug: background-tasks
 ---
 
-# Background Tasks
+# Background Tasks {#background-tasks}
 Background tasks are the core capability for implementing periodic and automated business processing in the JitTask framework. Through background tasks, developers can allow the system to automatically execute specific business logic on a scheduled or on-demand basis without manual intervention.
 
 JitAi provides two types of background tasks: `Scheduled Tasks` that execute at fixed time intervals, and `Date Field Tasks` that trigger based on date fields in data tables.

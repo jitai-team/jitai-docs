@@ -13,7 +13,7 @@ Developers can access the function design interface by clicking the `Function De
 
 ![Model Function 2](./img/model-function-2.png)
 
-Click `OK` to complete function creation and begin editing the function logic.
+Click `Confirm` to complete function creation and begin editing the function logic.
 
 ![Model Function 3](./img/model-function-3.png)
 

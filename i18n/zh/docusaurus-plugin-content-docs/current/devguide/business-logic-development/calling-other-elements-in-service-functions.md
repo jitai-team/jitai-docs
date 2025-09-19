@@ -3,7 +3,7 @@ sidebar_position: 2
 slug: calling-other-elements-in-service-functions
 ---
 
-# Calling Elements In Service Functions
+# 在服务函数中调用其它元素
 
 在服务元素中，每个服务函数都可以调用其它后端元素，从而组成复杂的业务处理流程。JitAi支持开发者以可视化的方式调用其它元素，也可以在服务函数中直接写代码调用其它元素。
 

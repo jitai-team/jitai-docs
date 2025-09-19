@@ -1,8 +1,8 @@
 {
-  "label": "Extension Guide",
+  "label": "Extending",
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "Extend JitAi framework capabilities, including adding new Type elements, developing visual editors, and building custom development tools"
+    "description": "Extending JitAi framework capabilities, including adding new Type elements, developing visual editors, and building custom development tools"
   }
 } 

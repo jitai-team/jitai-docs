@@ -91,7 +91,7 @@ Complementing the assistant dialog area is a **workspace**: the functional page 
 ![AI Assistant - Workspace](./img/assistant/human-workspace.png)
 
 The workspace refers to the frontend page where users work.
-When the task flow runs to this node, the backend of the flow will pause and send pause events and related information to the frontend. In the workspace, you can [subscribe to post-pause events](../ai-assitant/ai-assistant-event#workspace-human-machine-interaction-events). In the corresponding event handler function, use event parameters to update the page UI state, then wait for users to perform related operations to resume the flow.
+When the task flow runs to this node, the backend of the flow will pause and send pause events and related information to the frontend. In the workspace, you can [subscribe to post-pause events](../ai-assistant/ai-assistant-event#workspace-human-machine-interaction-events). In the corresponding event handler function, use event parameters to update the page UI state, then wait for users to perform related operations to resume the flow.
 
 Node Configuration Details:
 - **Parameters Carried by Events**: Parameters carried by the assistant when sending pause events to the frontend workspace, selected from [runtime state data](./ai-assistant-state#state-data-content), which the frontend can use to update UI state.

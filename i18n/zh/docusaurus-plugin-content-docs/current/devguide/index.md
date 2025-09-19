@@ -1032,7 +1032,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="创建AI助理元素"
-  href="ai-assitant/create-ai-assistant"
+  href="ai-assistant/create-ai-assistant"
   description="学习如何创建AI助理元素，配置工作流、节点类型和事件处理，实现智能业务流程自动化。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1042,7 +1042,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="流程编排与节点配置"
-  href="ai-assitant/process-orchestration-node-configuration"
+  href="ai-assistant/process-orchestration-node-configuration"
   description="深入了解AI助理流程编排技术和详细的节点配置方法。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1052,7 +1052,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="AI助理的输入与输出"
-  href="ai-assitant/ai-assistant-input-output"
+  href="ai-assistant/ai-assistant-input-output"
   description="理解AI助理的输入输出配置和数据处理方法。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1062,7 +1062,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="AI助理的API开放"
-  href="ai-assitant/ai-assistant-api-integration"
+  href="ai-assistant/ai-assistant-api-integration"
   description="通过API接口开放AI助理能力，实现与外部系统的集成。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>

@@ -1,24 +1,25 @@
 ---
-sidebar_position: -3
+sidebar_position: -4
 slug: team-collaborative-development
+title: Team Collaborative Development with JitAi Desktop
 ---
 
-# 团队协作开发
-## 桌面版开发流程（推荐）
-![桌面版开发流程](./img/desktop-dev-flow.svg)
+# Team Collaborative Development with JitAi Desktop
+## Desktop Development Workflow (Recommended)
+![Desktop Development Workflow](./img/desktop-dev-flow.svg)
 
-1. **本地开发** → 使用 JitNode 桌面版（Windows/Mac）进行应用开发和调试（使用Git仓库管理源码）
-2. **版本发布** → 开发完成后发布应用版本
-3. **测试部署** → 在测试环境部署对应版本进行验证
-4. **生产部署** → 测试通过后在生产环境部署该版本
+1. **Local Development** → Use JitNode Desktop (Windows/Mac) for application development and debugging (source code managed with Git repository)
+2. **Version Release** → Publish application version after development completion
+3. **Test Deployment** → Deploy the corresponding version in test environment for validation
+4. **Production Deployment** → Deploy the version to production environment after testing passes
 
-## 服务器版协作流程
-![服务器版协作流程](./img/server-collab-flow.svg)
+## Server-based Collaboration Workflow
+![Server-based Collaboration Workflow](./img/server-collab-flow.svg)
 
-1. **开发节点** → 使用服务器版节点作为共享开发环境
-2. **开发测试** → 业务人员分模块在线可视化搭建，即时生效即时测试
-3. **生产发布** → 发布版本，并在生产环境部署该版本
+1. **Development Node** → Use server-based nodes as shared development environment
+2. **Development Testing** → Business personnel build modules online visually, with immediate effect and instant testing
+3. **Production Release** → Release version and deploy it in production environment
 
-:::warning 生产环境安全
-虽然平台支持即改即生效，但强烈建议不要直接对生产环境进行修改，应严格按照开发→测试→生产的流程进行部署。
+:::warning Production Environment Security
+Although the platform supports immediate changes taking effect, it is strongly recommended not to modify the production environment directly. Strictly follow the development → testing → production deployment workflow.
 :::

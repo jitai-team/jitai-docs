@@ -55,9 +55,21 @@ JitAi安装包分为桌面版（支持Windows、Mac）和服务器版（提供Do
      -p 3306:3306 \
      --init --privileged \
      -v /your/local/path:/data/JitNode \
-     registry.cn-hangzhou.aliyuncs.com/jitpro/jit
+     jitaiplatform/jit
    ```
    请将 /your/local/path 替换为宿主机实际路径，例如：/Users/username/JitNode 或 /opt/jitnode
+
+   :::tip 中国用户提示
+   中国用户可以使用阿里云镜像以获得更快的下载速度：
+   ```bash
+   docker run -itd --name jit \
+     -p 80:80 \
+     -p 3306:3306 \
+     --init --privileged \
+     -v /your/local/path:/data/JitNode \
+     registry.cn-hangzhou.aliyuncs.com/jitpro/jit
+   ```
+   :::
 
 3. 在浏览器中访问 `http://{服务器IP地址}:80`，按页面流程激活。阅读[开发者组织管理](../devguide/installation-activation/developer-organization-management)了解更多细节。
 
@@ -81,7 +93,7 @@ docker run -itd --name jitnode \
   -e NODE_ADDRESS=http://your-server-ip:80 \
   --init --privileged \
   -v /your/local/path:/data/JitNode \
-  registry.cn-hangzhou.aliyuncs.com/jitpro/jit
+  jitaiplatform/jit
 ```
 
 ## 常见问题

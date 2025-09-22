@@ -56,19 +56,6 @@ RBAC（基于角色的访问控制）是一种常用的权限管理机制，通�
 
 开发者也可以点击`配置`按钮，设置应用角色成员在组织架构中的管理范围。但在系统日常使用中，更适合由管理员在管理者门户中进行[成员在组织架构中的管辖范围设置](#member-management-scope-settings-in-org-structure)。
 
-### 门户级的数据操作类型和操作范围控制 {#portal-level-data-operation-type-and-scope-control}
-为了实现对数据越权操作的管控，JitAi支持指定角色在特定门户中的全局数据访问权限控制，限制可访问的数据模型、模型操作函数（查询、新增、修改、删除、统计）。即便开发者在门户某个页面中提供了数据查询相关的组件以及操作按钮，用户也无法进行超出权限范围的操作和数据查看。
-
-![自定义数据模型权限](./img/role/custom-data-model-permissions.gif)
-
-开发者在应用角色的可视化编辑器中，打开右上角`自定义数据模型权限`开关，在弹出的表格中勾选每个数据模型下支持的函数类型即可。
-
-开发者还可以通过添加筛选条件，实现对每个模型下每个操作函数的数据操作范围的控制。
-
-![自定义数据模型权限-数据筛选](./img/role/custom-data-model-permissions-data-filtering.gif)
-
-开发者将鼠标放在配置表格的行上，即可看到`数据筛选`按钮，点击后可添加筛选条件。除`新增函数`和`修改函数`外，其它函数类型均支持配置`数据筛选`。
-
 ### 组件的按钮权限控制 {#component-button-permission-control}
 不同角色的用户访问同一个页面时，看到的操作按钮可能是不同的。例如，在客户管理页面，销售人员可以看到“新增”“编辑”按钮，而财务人员则只能查询数据。
 
@@ -79,7 +66,7 @@ RBAC（基于角色的访问控制）是一种常用的权限管理机制，通�
 后续新增加的按钮会被默认勾选，如需取消需要开发者手动操作。
 
 ### 组件的数据字段读/写/统计权限控制 {#component-data-field-access-control}
-大多数组件都需要绑定数据模型，开发者不仅可以进行[门户级的数据操作类型和操作范围控制](#portal-level-data-operation-type-and-scope-control)，也可以在组件上进行更进一步的数据范围/字段读写/统计权限控制，优先级高于组件在页面中的现有配置。
+大多数组件都需要绑定数据模型，开发者不仅可以进行[门户级的数据操作类型和操作范围控制](./roles-and-business-element-permissions#portal-level-data-operation-type-and-scope-control)，也可以在组件上进行更进一步的数据范围/字段读写/统计权限控制，优先级高于组件在页面中的现有配置。
 
 ![组件数据筛选和字段权限配置](./img/role/component-data-filtering-and-field-permission-config.gif)
 

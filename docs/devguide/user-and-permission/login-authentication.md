@@ -6,7 +6,7 @@ slug: login-authentication
 # Login Methods {#login-authentication}
 The JitAi platform supports multiple login authentication methods, including account password login, mobile phone login, DingTalk login, WeChat Work login, WeChat login, WeChat Official Account login, WeChat Mini Program login, GitHub login, and Google login, meeting user access and authentication needs in different scenarios, helping enterprises and individual users access applications conveniently and securely.
 
-## Login Method Creation {#login-method-creation}
+## Creating Login Method {#creating-login-method}
 JitAi supports developers in freely configuring and adding multiple login methods according to actual business needs, helping applications achieve multi-platform convenient access and unified authentication management.
 
 ![](./img/auth/login-method-creation.png)

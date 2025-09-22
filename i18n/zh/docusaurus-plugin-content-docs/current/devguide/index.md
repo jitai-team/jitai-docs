@@ -785,12 +785,27 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="数据解析与导入（正在编辑中）"
-  description="数据导入和解析工具，支持Excel等格式的数据批量导入。"
+  title="数据解析与导入"
+  href="using-functional-components-in-pages/data-parsing-and-import"
+  description="强大的数据导入和解析工具，支持Excel文件批量导入、数据清洗、条件筛选和主子表关联导入。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 文档正在完善中，敬请期待...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "页面添加导入组件", href: "using-functional-components-in-pages/data-parsing-and-import#add-import-component-to-page" },
+    { text: "导入流水号字段", href: "using-functional-components-in-pages/data-parsing-and-import#import-serial-number-fields" },
+    { text: "设置必填字段", href: "using-functional-components-in-pages/data-parsing-and-import#set-required-fields" },
+    { text: "导入子表数据", href: "using-functional-components-in-pages/data-parsing-and-import#import-subtable-data" },
+    { text: "追加导入/更新导入", href: "using-functional-components-in-pages/data-parsing-and-import#append-import-or-update-import" },
+    { text: "按条件导入数据", href: "using-functional-components-in-pages/data-parsing-and-import#import-data-by-conditions" },
+    { text: "添加导入说明文案", href: "using-functional-components-in-pages/data-parsing-and-import#add-import-description-text" },
+    { text: "导入前预处理/导入后触发函数", href: "using-functional-components-in-pages/data-parsing-and-import#pre-processing-and-post-trigger-functions" },
+    { text: "导入提示按钮点击后事件", href: "using-functional-components-in-pages/data-parsing-and-import#import-hint-button-click-event" },
+    { text: "新建解析Excel组件", href: "using-functional-components-in-pages/data-parsing-and-import#create-parse-excel-component" },
+    { text: "配置字段别名", href: "using-functional-components-in-pages/data-parsing-and-import#configure-field-aliases" },
+    { text: "调整字段顺序", href: "using-functional-components-in-pages/data-parsing-and-import#adjust-field-order" },
+    { text: "删除解析字段", href: "using-functional-components-in-pages/data-parsing-and-import#delete-parse-fields" },
+    { text: "新建自定义按钮", href: "using-functional-components-in-pages/data-parsing-and-import#create-custom-buttons" },
+    { text: "解析后事件", href: "using-functional-components-in-pages/data-parsing-and-import#post-parse-events" }
+  ]} />
 </IndexCard>
 
 <IndexCard

@@ -143,7 +143,7 @@ When this node runs, it will store two pieces of data in the runtime state:
 
 
 ## Full Code Development {#full-code-development}
-Click the `</>` button in the top right corner of the assistant editor to switch to source code editing mode.
+Click the <span style={{ display: "inline-flex", verticalAlign: "middle", margin: "0 !important", height: '30px', width: '40px', alignItems: "center" }}>![Full Code Button](./img/assistant/code.png)</span> button in the top right corner of the assistant editor to switch to source code editing mode.
 In source code mode, the left side displays source code files, and clicking on a source code file shows its content on the right side.
 - **e.json**: The assistant element declaration file, where "inputArgs" stores custom input parameter configuration
 

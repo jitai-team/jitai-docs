@@ -1197,7 +1197,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="专为全代码开发模式设计的数据结构，类似于DTO，用于业务逻辑中的数据结构化表达与传递。"
 >
   <LinkGrid links={[
-    { text: "数据对象模型创建", href: "data-modeling/data-object-model#creating-data-object-model" },
+    { text: "数据对象模型创建", href: "data-modeling/data-object-model" },
     { text: "数据对象模型使用", href: "data-modeling/data-object-model#using-data-object-model" },
     { text: "自定义字段", href: "data-modeling/data-object-model#customizing-fields" },
     { text: "模型函数重写", href: "data-modeling/data-object-model#overriding-model-functions" },

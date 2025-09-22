@@ -1,5 +1,5 @@
 ---
-sidebar_position: 100
+sidebar_position: 6
 slug: application-layer-stability-guarantee
 ---
 
@@ -212,7 +212,7 @@ graph TD
 :::
 
 ### OpenTelemetry及APM生态集成
-JitAi应用runtime-platform支持[OpenTelemetry](https://opentelemetry.io/)，这是可观测性领域的核心标准，在技术演进、生态整合和行业实践中具有不替代的地位。
+JitAi应用运行平台支持[OpenTelemetry](https://opentelemetry.io/)，这是可观测性领域的核心标准，在技术演进、生态整合和行业实践中具有不替代的地位。
 
 ```mermaid
 graph TB
@@ -223,10 +223,10 @@ graph TB
         end
         
         subgraph "开发框架层"
-            Framework[元素族类<br/>（runtime-platform不感知具体族类）]
+            Framework[元素族类<br/>(运行平台不感知具体族类)]
         end
         
-        subgraph "应用runtime-platform层"
+        subgraph "应用运行平台层"
             JAAP[JAAP协议引擎<br/>元素定义解析与生命周期管理]
             Runtime[运行时环境<br/>请求路由与沙箱环境管理]
         end
@@ -250,12 +250,12 @@ graph TB
         AlertManager[告警系统<br/>JAAP异常告警]
     end
     
-    subgraph "外部APM集成（可选）"
+    subgraph "外部APM集成(可选)"
         Skywalking[SkyWalking<br/>Python Agent]
         Others[其他APM<br/>OpenTelemetry兼容]
     end
     
-    %% runtime-platform层到OpenTelemetry的连接
+    %% 运行平台层到OpenTelemetry的连接
     App1 --> Tracer
     App2 --> Tracer
     Framework --> Tracer
@@ -295,214 +295,3 @@ graph TB
     Tracer -.-> Others
     Metrics -.-> Others
 ```
-
-### 观测指标体系
-基于JAAP协议和JitAI三层架构的OpenTelemetry规范可观测性体系：
-
-**1. Metrics（指标体系与判断标准）**
-
-**HTTP状态码分布指标**
-```yaml
-# 关键成功率指标
-http_status_metrics:
-  - status_2xx_rate: ">99.9%"        # 成功响应率（必须>99.9%）
-  - status_4xx_rate: "<0.1%"         # 客户端错误率
-  - status_5xx_rate: "0%"            # 服务端错误率（零容忍）
-  - status_404_count: "0"            # 404错误数量（应为0）
-```
-
-**应用runtime-platform核心指标**
-```yaml
-# 应用实例管理指标
-application_runtime_metrics:
-  - app_instance_start_success_rate: ">99.9%"            # 应用实例启动成功率
-  - app_runtime_availability: ">99.95%"                  # 应用运行时可用性
-  - app_environment_switch_success_rate: ">99.9%"        # 应用环境切换成功率
-  - app_instance_running_count: "当前运行应用实例数量"
-  - app_instance_uptime_duration: "应用实例运行时长分布"
-  - app_environment_switch_duration: "<1s"               # 应用环境切换耗时
-
-# 元素运行时管理指标（不感知具体族类）
-element_runtime_metrics:
-  - element_load_success_rate: ">99.99%"                 # 元素加载成功率
-  - element_instantiation_success_rate: ">99.95%"        # 元素实例化成功率
-  - element_lifecycle_completion_rate: ">99.9%"          # 元素生命周期完成率
-  - element_active_instances_count: "活跃元素实例总数"
-  - element_inheritance_resolution_success: "100%"       # 元素继承解析成功率
-
-# JAAP协议执行指标
-jaap_protocol_metrics:
-  - jaap_element_definition_validation_rate: "100%"      # 元素定义验证成功率
-  - jaap_element_config_parse_success_rate: ">99.99%"   # 元素配置解析成功率
-  - jaap_inheritance_chain_resolution_rate: "100%"       # 继承链解析成功率
-  - jaap_element_loader_invocation_duration: "<100ms"    # 元素加载器调用耗时
-```
-
-**runtime-platform请求处理指标**
-```yaml
-platform_request_metrics:
-  - request_routing_success_rate: ">99.9%"              # 请求路由成功率
-  - environment_routing_accuracy: "100%"                # 环境路由准确率
-  - request_processing_duration: "请求处理耗时分布"
-  - concurrent_request_handling_capacity: "并发请求处理能力"
-
-# 虚拟沙箱环境指标
-sandbox_environment_metrics:
-  - sandbox_creation_success_rate: ">99.95%"            # 沙箱环境创建成功率
-  - environment_isolation_effectiveness: "100%"          # 环境隔离有效性
-  - resource_isolation_integrity: "100%"                 # 资源隔离完整性
-  - environment_cleanup_success_rate: "100%"             # 环境清理成功率
-```
-
-**业务功能可用性指标**
-```yaml
-# 业务层面的关键指标
-business_metrics:
-  - page_load_success_rate: ">99.9%"        # 页面加载成功率
-  - api_endpoint_availability: ">99.95%"    # API端点可用性
-  - transaction_completion_rate: ">99.9%"   # 业务交易完成率
-  - user_session_success_rate: ">99.8%"     # 用户会话成功率
-```
-
-#### 2. Traces（分布式追踪）
-**应用runtime-platform调用链追踪**
-```json
-{
-  "platform_runtime_trace": {
-    "trace_id": "platform-trace-20241201-001",
-    "root_span": {
-      "span_id": "request-001",
-      "operation_name": "user_request_processing",
-      "tags": {
-        "platform.app_id": "wanyun.CustomerService",
-        "platform.app_version": "1.2.0", 
-        "platform.environment": "production",
-        "platform.org_id": "wanyun",
-        "platform.sandbox_id": "sandbox-abc123"
-      }
-    },
-    "platform_spans": [
-      {
-        "span_id": "routing-001",
-        "parent_span_id": "request-001",
-        "operation_name": "request_routing",
-        "tags": {
-          "platform.routing_type": "environment_routing",
-          "platform.target_environment": "production",
-          "platform.routing_success": "true"
-        }
-      },
-      {
-        "span_id": "app-loading-001",
-        "parent_span_id": "routing-001", 
-        "operation_name": "application_loading",
-        "tags": {
-          "platform.app_loading_type": "lazy_loading",
-          "platform.app_inheritance_depth": "2",
-          "platform.app_extends_from": "wanyun.BaseApp"
-        }
-      },
-      {
-        "span_id": "element-runtime-001",
-        "parent_span_id": "app-loading-001",
-        "operation_name": "element_lifecycle_management", 
-        "tags": {
-          "platform.element_type": "Instance",
-          "platform.element_id": "pages.CustomerServicePage",
-          "platform.lifecycle_event": "onCalled",
-          "platform.inheritance_resolved": "true"
-        },
-        "logs": [
-          {
-            "timestamp": "2024-12-01T10:00:00Z",
-            "fields": {
-              "event": "element_lifecycle",
-              "lifecycle_stage": "onLoad",
-              "config_validation": "success",
-              "instantiation_result": "success"
-            }
-          }
-        ]
-      }
-    ]
-  }
-}
-```
-
-**JAAP协议执行追踪**
-```json
-{
-  "jaap_protocol_trace": {
-    "trace_id": "jaap-protocol-20241201-001",
-    "protocol_spans": [
-      {
-        "span_id": "protocol-parsing-001",
-        "operation_name": "jaap_protocol_parsing",
-        "tags": {
-          "jaap.protocol_version": "1.2.0",
-          "jaap.element_definition_file": "app.jit",
-          "jaap.parsing_result": "success"
-        }
-      },
-      {
-        "span_id": "element-definition-001",
-        "parent_span_id": "protocol-parsing-001",
-        "operation_name": "element_definition_validation",
-        "tags": {
-          "jaap.element_id": "services.CustomerService",
-          "jaap.element_type": "Instance",
-          "jaap.type_reference": "services.BaseService",
-          "jaap.validation_result": "success"
-        }
-      },
-      {
-        "span_id": "inheritance-resolution-001", 
-        "parent_span_id": "element-definition-001",
-        "operation_name": "inheritance_chain_resolution",
-        "tags": {
-          "jaap.inheritance_chain": "BaseService->ServiceTemplate->CustomerService",
-          "jaap.inheritance_depth": "3",
-          "jaap.resolution_result": "success"
-        }
-      },
-      {
-        "span_id": "element-instantiation-001",
-        "parent_span_id": "inheritance-resolution-001",
-        "operation_name": "element_instantiation",
-        "tags": {
-          "jaap.instantiation_type": "lazy_loading",
-          "jaap.config_merge_result": "success",
-          "jaap.lifecycle_initialization": "success"
-        }
-      }
-    ]
-  }
-}
-```
-
-#### 3. Logs（结构化日志）
-**JAAP协议结构化日志**
-```json
-{
-  "timestamp": "2024-12-01T10:00:00.123Z",
-  "level": "INFO",
-  "logger": "jaap.protocol.engine",
-  "message": "Element lifecycle event processed",
-  "attributes": {
-    "jaap.protocol_version": "1.2.0",
-    "jaap.element_id": "services.CustomerService",
-    "jaap.element_type": "Instance", 
-    "jaap.element_family": "JitService",
-    "jaap.lifecycle_event": "onCreate",
-    "jaap.parent_type": "services.BaseService",
-    "jaap.config_hash": "sha256:abc123...",
-    "execution.duration_ms": 45,
-    "execution.success": true
-  },
-  "resource": {
-     "service.name": "jitai-application",
-     "service.version": "1.2.0",
-     "deployment.environment": "production"
-   }
- }
- ```

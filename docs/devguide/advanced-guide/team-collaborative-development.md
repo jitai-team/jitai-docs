@@ -1,7 +1,6 @@
 ---
-sidebar_position: -4
+sidebar_position: 0
 slug: team-collaborative-development
-title: Team Collaborative Development with JitAi Desktop
 ---
 
 # Team Collaborative Development with JitAi Desktop

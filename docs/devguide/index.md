@@ -1843,7 +1843,7 @@ Create unique visual experiences and brand identity. Customize application theme
 </IndexCard>
 </div>
 
-## Scenario-based Advanced Guide
+## Advanced Guide
 In-depth practical guides based on real business scenarios to help developers master complex application architecture design and best practices.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1856,18 +1856,19 @@ In-depth practical guides based on real business scenarios to help developers ma
   <LinkGrid links={[
     { text: "Local Development and Debugging", href: "advanced-guide/local-development-and-debugging" },
     { text: "Team Collaborative Development", href: "advanced-guide/team-collaborative-development" },
-    { text: "Agent Prompt Writing Techniques", href: "advanced-guide/agent-prompt-writing-techniques" },
     { text: "Application Layer Stability Guarantee", href: "advanced-guide/application-layer-stability-guarantee" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="Authentication and Permission Management"
-  href="advanced-guide/login-authentication-and-permission-management"
-  description="Build enterprise-level permission systems based on JitAuth, supporting multiple login methods and fine-grained permission control."
+  title="AI Development and Applications"
+  href="advanced-guide/ai-customer-service"
+  description="Build intelligent applications using AI agents, assistants, and advanced prompt engineering techniques for enhanced user experiences and automated workflows."
 >
   <LinkGrid links={[
-    { text: "Login Authentication and Permission Management", href: "advanced-guide/login-authentication-and-permission-management" }
+    { text: "AI Customer Service", href: "advanced-guide/ai-customer-service" },
+    { text: "AI Question Grading", href: "advanced-guide/ai-question-grading" },
+    { text: "Agent Prompt Writing Techniques", href: "advanced-guide/agent-prompt-writing-techniques" }
   ]} />
 </IndexCard>
 
@@ -1882,59 +1883,12 @@ In-depth practical guides based on real business scenarios to help developers ma
 </IndexCard>
 
 <IndexCard
-  title="Interface Design and Components"
-  href="advanced-guide/system-interface-design-and-component-application"
-  description="Build multi-entry business interfaces based on JitWeb, quickly completing system navigation and interface layout through portals, pages, and components."
->
-  <LinkGrid links={[
-    { text: "System Interface Design and Component Application", href: "advanced-guide/system-interface-design-and-component-application" }
-  ]} />
-</IndexCard>
-
-<IndexCard
   title="Business Services and API"
-  href="advanced-guide/open-api-to-third-party"
-  description="Implement API opening, third-party integration, custom authentication and event-driven business service architecture based on JitService."
+  href="advanced-guide/using-interceptors-for-custom-request-authentication"
+  description="Implement custom authentication and business service architecture based on JitService."
 >
   <LinkGrid links={[
-    { text: "Open API Interfaces to External Systems", href: "advanced-guide/open-api-to-third-party" },
-    { text: "Integrate External API Interfaces", href: "advanced-guide/integrating-external-api-interfaces" },
-    { text: "Use Interceptors for Custom Request Authentication", href: "advanced-guide/using-interceptors-for-custom-request-authentication" },
-    { text: "Custom Business Event Trigger Subscription and Handling", href: "advanced-guide/custom-business-event-trigger-subscription-and-handling" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="Workflow Management"
-  href="advanced-guide/approval-workflow-orchestration-and-custom-approval-events"
-  description="Implement approval process orchestration, scheduled task execution and business process automation based on JitWorkflow and JitTask."
->
-  <LinkGrid links={[
-    { text: "Approval Process Orchestration and Custom Approval Events", href: "advanced-guide/approval-workflow-orchestration-and-custom-approval-events" },
-    { text: "Scheduled Execution of Custom Business Logic", href: "advanced-guide/scheduled-execution-of-custom-business-logic" },
-    { text: "Use Database Table Time Fields to Trigger Scheduled Tasks", href: "advanced-guide/using-database-table-time-fields-to-trigger-scheduled-tasks" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="Payment and Message Notification"
-  href="advanced-guide/online-payment-feature-integration"
-  description="Implement payment function integration and real-time message notification based on JitPay and JitMessage to build a complete business closed loop."
->
-  <LinkGrid links={[
-    { text: "Online Payment Feature Integration", href: "advanced-guide/online-payment-feature-integration" },
-    { text: "Send SMS Notifications", href: "advanced-guide/sending-sms-notifications" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="File and Storage Management"
-  href="advanced-guide/file-management-based-on-file-storage-elements"
-  description="Implement unified file management, templated document generation and printing functions based on JitStorage to improve document processing efficiency."
->
-  <LinkGrid links={[
-    { text: "File Management Based on File Storage Elements", href: "advanced-guide/file-management-based-on-file-storage-elements" },
-    { text: "Use File Templates to Generate and Print Files", href: "advanced-guide/using-file-templates-to-generate-and-print-files" }
+    { text: "Use Interceptors for Custom Request Authentication", href: "advanced-guide/using-interceptors-for-custom-request-authentication" }
   ]} />
 </IndexCard>
 

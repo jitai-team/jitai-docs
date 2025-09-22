@@ -1,7 +1,6 @@
 ---
-sidebar_position: 0.3
+sidebar_position: 4
 slug: agent-prompt-writing-techniques
-title: Agent Prompt Writing Techniques
 ---
 
 # Agent Prompt Writing Techniques

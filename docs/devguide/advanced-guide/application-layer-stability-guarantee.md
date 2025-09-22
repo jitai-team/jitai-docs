@@ -1,129 +1,129 @@
 ---
-sidebar_position: 100
+sidebar_position: 7
 slug: application-layer-stability-guarantee
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# 应用层稳定性保障
-JitAi有能力支撑行业主流和领先的应用层稳定性保证措施。
+# Application Layer Stability Guarantee
+JitAi has the capability to support mainstream and leading application layer stability assurance measures in the industry.
 
-应用层更新具有**影响范围相对局部、更新频率较高、用户体验敏感**的特点，需要在保证稳定性的同时支持快速迭代。
+Application layer updates have the characteristics of **relatively localized impact, high update frequency, and user experience sensitivity**, requiring support for rapid iteration while ensuring stability.
 
 :::tip 
-- 🎯 **局部影响**：单个或少数应用更新，风险可控
-- ⚡ **快速迭代**：支持频繁更新，响应业务需求  
-- 👤 **用户控制**：用户可选择升级时机，降低强制升级风险
-- 🔄 **独立部署**：不影响其他应用运行，故障隔离
+- 🎯 **Localized Impact**: Single or few application updates with controllable risks
+- ⚡ **Rapid Iteration**: Support frequent updates to respond to business needs  
+- 👤 **User Control**: Users can choose upgrade timing, reducing forced upgrade risks
+- 🔄 **Independent Deployment**: Does not affect other application operations, fault isolation
 :::
 
-## 渐进式验证流程
-### 多运行环境
-在JitAi运维平台创建多个运行环境，采用**测试环境 → Beta环境 → 正式环境**的渐进式验证流程：
+## Progressive Validation Process
+### Multiple Runtime Environments
+Create multiple runtime environments in the JitAi operations platform, adopting a progressive validation process of **Test Environment → Beta Environment → Production Environment**:
 
 ```mermaid
 graph TD
-    A[应用开发完成] --> B[发布到应用仓库<br/>版本号升级]
-    B --> C[测试环境部署<br/>v1.1]
-    C --> D{测试环境验证}
-    D -->|通过| E[Beta环境部署<br/>v1.1 + 正式数据]
-    D -->|失败| F[修复问题<br/>重新发布]
+    A[Application Development Complete] --> B[Release to App Repository<br/>Version Upgrade]
+    B --> C[Test Environment Deployment<br/>v1.1]
+    C --> D{Test Environment Validation}
+    D -->|Pass| E[Beta Environment Deployment<br/>v1.1 + Production Data]
+    D -->|Fail| F[Fix Issues<br/>Re-release]
     F --> C
-    E --> G{Beta环境验证}
-    G -->|通过| H[正式环境灰度发布]
-    G -->|失败| I[问题分析<br/>数据回滚]
+    E --> G{Beta Environment Validation}
+    G -->|Pass| H[Production Environment Canary Release]
+    G -->|Fail| I[Issue Analysis<br/>Data Rollback]
     I --> F
-    H --> J[监控关键指标]
-    J --> K{稳定性评估}
-    K -->|稳定| L[扩大灰度范围]
-    K -->|异常| M[立即回滚]
-    L --> N[全量发布]
+    H --> J[Monitor Key Metrics]
+    J --> K{Stability Assessment}
+    K -->|Stable| L[Expand Canary Scope]
+    K -->|Abnormal| M[Immediate Rollback]
+    L --> N[Full Release]
 ```
 
-### 环境配置策略
+### Environment Configuration Strategy
 <Tabs>
-<TabItem value="test" label="🧪 测试环境" default>
+<TabItem value="test" label="🧪 Test Environment" default>
 
-:::info 测试环境配置
-**功能定位**：功能验证和基础性能测试
+:::info Test Environment Configuration
+**Functional Positioning**: Function validation and basic performance testing
 
-🔧 **环境特征**
-- **数据源**：模拟数据或脱敏数据
-- **流量来源**：测试团队和开发人员
-- **资源配置**：中等规模，满足功能测试需求
+🔧 **Environment Characteristics**
+- **Data Source**: Simulated data or desensitized data
+- **Traffic Source**: Testing team and developers
+- **Resource Configuration**: Medium scale, meeting functional testing requirements
 
-✅ **验证重点**
-- 业务逻辑正确性验证
-- 用户界面和交互体验测试
-- 基础性能和响应时间测试
-- 与其他系统的集成功能测试
+✅ **Validation Focus**
+- Business logic correctness validation
+- User interface and interaction experience testing
+- Basic performance and response time testing
+- Integration function testing with other systems
 :::
 
 </TabItem>
-<TabItem value="beta" label="🚀 Beta环境">
+<TabItem value="beta" label="🚀 Beta Environment">
 
-:::info Beta环境配置  
-**功能定位**：真实环境验证，连接正式环境数据
+:::info Beta Environment Configuration  
+**Functional Positioning**: Real environment validation, connected to production environment data
 
-🔧 **环境特征**
-- **数据源**：正式环境数据（只读模式或副本）
-- **流量来源**：内部用户和少量外部用户
-- **资源配置**：接近生产环境规模
+🔧 **Environment Characteristics**
+- **Data Source**: Production environment data (read-only mode or replica)
+- **Traffic Source**: Internal users and a small number of external users
+- **Resource Configuration**: Close to production environment scale
 
-✅ **验证重点**
-- 真实数据的兼容性验证
-- 生产级性能和稳定性测试
-- 完整业务流程的端到端验证
-- 数据安全性和一致性检查
+✅ **Validation Focus**
+- Real data compatibility validation
+- Production-level performance and stability testing
+- Complete business process end-to-end validation
+- Data security and consistency checks
 :::
 
 </TabItem>
-<TabItem value="prod" label="🌐 正式环境">
+<TabItem value="prod" label="🌐 Production Environment">
 
-:::info 正式环境配置
-**功能定位**：生产服务，服务真实用户
+:::info Production Environment Configuration
+**Functional Positioning**: Production service, serving real users
 
-🔧 **环境特征**
-- **数据源**：生产数据
-- **流量来源**：全量用户流量
-- **资源配置**：生产级资源配置
+🔧 **Environment Characteristics**
+- **Data Source**: Production data
+- **Traffic Source**: Full user traffic
+- **Resource Configuration**: Production-level resource configuration
 
-✅ **验证重点**
-- 系统整体稳定性监控
-- 用户体验和满意度指标
-- 业务关键指标监控
-- 7x24小时可用性保障
+✅ **Validation Focus**
+- Overall system stability monitoring
+- User experience and satisfaction metrics
+- Business key metrics monitoring
+- 7x24 hour availability assurance
 :::
 
 </TabItem>
 </Tabs>
 
-### 版本管理与发布策略
-| 发布阶段 | 版本状态 | 验证周期 | 通过标准 | 失败处理 |
+### Version Management and Release Strategy
+| Release Stage | Version Status | Validation Cycle | Pass Criteria | Failure Handling |
 |---------|---------|---------|---------|---------|
-| **应用仓库** | 开发完成版本 | 代码审查 | 代码规范 + 功能完整性 | 重新开发修复 |
-| **测试环境** | 功能测试版本 | 1-2天 | 功能正确性 + 基础性能 | 回到开发阶段 |
-| **Beta环境** | 准生产版本 | 3-5天 | 真实数据兼容 + 生产性能 | 数据问题分析 |
-| **正式环境** | 生产版本 | 持续监控 | 稳定性指标 + 用户体验 | 灰度回滚 |
+| **App Repository** | Development Complete Version | Code Review | Code Standards + Functional Completeness | Redevelopment and Fix |
+| **Test Environment** | Functional Test Version | 1-2 days | Functional Correctness + Basic Performance | Return to Development Stage |
+| **Beta Environment** | Pre-production Version | 3-5 days | Real Data Compatibility + Production Performance | Data Issue Analysis |
+| **Production Environment** | Production Version | Continuous Monitoring | Stability Metrics + User Experience | Canary Rollback |
 
-## 灰度发布机制
-### 节点级灰度发布
-在JitAi集群架构中，其中一个JitNode节点承担负载均衡器角色，负责流量分发控制。运行环境入口地址就是解析到该节点。
+## Canary Release Mechanism
+### Node-level Canary Release
+In the JitAi cluster architecture, one of the JitNode nodes acts as a load balancer, responsible for traffic distribution control. The runtime environment entry address resolves to this node.
 
 ```mermaid
 graph TB
-    subgraph "JitNode集群"
-        N1[节点1 - 入口节点<br/>负载均衡 + 流量分发]
-        N2[节点2 - 灰度节点<br/>应用v1.1<br/>流量权重: 5%]
-        N3[节点3 - 稳定节点<br/>应用v1.0<br/>流量权重: 47.5%]
-        N4[节点4 - 稳定节点<br/>应用v1.0<br/>流量权重: 47.5%]
-        N5[节点5 - 备用节点<br/>应用v1.0<br/>流量权重: 0%]
+    subgraph "JitNode Cluster"
+        N1[Node 1 - Entry Node<br/>Load Balancing + Traffic Distribution]
+        N2[Node 2 - Canary Node<br/>Application v1.1<br/>Traffic Weight: 5%]
+        N3[Node 3 - Stable Node<br/>Application v1.0<br/>Traffic Weight: 47.5%]
+        N4[Node 4 - Stable Node<br/>Application v1.0<br/>Traffic Weight: 47.5%]
+        N5[Node 5 - Standby Node<br/>Application v1.0<br/>Traffic Weight: 0%]
     end
     
-    subgraph "监控系统"
-        M1[实时指标监控]
-        M2[异常告警系统]
+    subgraph "Monitoring System"
+        M1[Real-time Metrics Monitoring]
+        M2[Anomaly Alert System]
     end
     
     N1 --> N2
@@ -139,123 +139,123 @@ graph TB
     M1 --> M2
 ```
 
-### 灰度发布流程控制
-#### 稳定性与可用性双重评估
-灰度发布需要同时评估**稳定性**和**可用性**两个维度：
+### Canary Release Process Control
+#### Dual Assessment of Stability and Availability
+Canary releases need to simultaneously assess two dimensions: **stability** and **availability**:
 
-- **稳定性**：系统运行的错误率、响应时间等技术指标
-- **可用性**：业务功能的正常服务能力、用户体验指标
+- **Stability**: Technical metrics such as system error rates and response times
+- **Availability**: Normal service capability of business functions and user experience metrics
 
-| 灰度阶段 | 灰度节点数 | 流量比例 | 观察期 | 稳定性标准 | 可用性标准 | 异常处理 |
+| Canary Stage | Canary Nodes | Traffic Ratio | Observation Period | Stability Standard | Availability Standard | Exception Handling |
 |---------|----------|---------|--------|----------|----------|----------|
-| **初始灰度** | 1个节点 | 5% | 2小时 | 错误率 &lt; 0.01% | 业务可用性 &gt; 99.9% | 流量权重设为0% |
-| **小规模扩展** | 2个节点 | 20% | 4小时 | 错误率 &lt; 0.005% | 业务可用性 &gt; 99.95% | 流量权重设为0% |
-| **中等规模** | 50%节点 | 50% | 8小时 | 错误率 &lt; 0.001% | 业务可用性 &gt; 99.98% | 立即回滚或流量设为0% |
-| **全量发布** | 全部节点 | 100% | 持续监控 | 系统稳定 | 业务正常 | 紧急回滚 |
+| **Initial Canary** | 1 node | 5% | 2 hours | Error rate &lt; 0.01% | Business availability &gt; 99.9% | Set traffic weight to 0% |
+| **Small Scale Expansion** | 2 nodes | 20% | 4 hours | Error rate &lt; 0.005% | Business availability &gt; 99.95% | Set traffic weight to 0% |
+| **Medium Scale** | 50% nodes | 50% | 8 hours | Error rate &lt; 0.001% | Business availability &gt; 99.98% | Immediate rollback or set traffic to 0% |
+| **Full Release** | All nodes | 100% | Continuous monitoring | System stable | Business normal | Emergency rollback |
 
-:::tip 灰度节点流量归零机制
-当灰度节点表现异常时，可以**立即将其流量权重设置为0%**，实现秒级故障隔离：
-- 🚨 **即时响应**：无需等待回滚部署，直接切断异常节点流量
-- 🛡️ **用户保护**：确保用户请求不会路由到异常节点
-- 🔄 **快速恢复**：问题修复后可快速恢复该节点的流量分配
-- 📊 **数据保留**：节点继续运行，便于问题分析和调试
+:::tip Canary Node Traffic Zero Mechanism
+When canary nodes exhibit abnormal behavior, you can **immediately set their traffic weight to 0%** to achieve second-level fault isolation:
+- 🚨 **Instant Response**: No need to wait for rollback deployment, directly cut off abnormal node traffic
+- 🛡️ **User Protection**: Ensure user requests are not routed to abnormal nodes
+- 🔄 **Quick Recovery**: Traffic allocation can be quickly restored after issue resolution
+- 📊 **Data Retention**: Nodes continue running for problem analysis and debugging
 :::
 
-### 灰度发布操作流程
-**标准发布流程：**
+### Canary Release Operation Process
+**Standard Release Process:**
 
-1. **选择灰度节点**：选择1个节点作为初始灰度节点
-2. **调整流量权重**：将该节点流量权重调整为5%
-3. **部署新版本**：在灰度节点上部署新版本应用
-4. **启动监控**：开启全方位监控和告警
-5. **双重评估**：同时评估稳定性和可用性指标
-6. **决策执行**：根据评估结果决定下一步操作
-7. **逐步扩展**：稳定后逐步增加灰度节点和流量比例
-8. **完成发布**：所有节点升级完成，恢复正常流量分发
+1. **Select Canary Node**: Choose 1 node as the initial canary node
+2. **Adjust Traffic Weight**: Adjust the node's traffic weight to 5%
+3. **Deploy New Version**: Deploy the new version application on the canary node
+4. **Start Monitoring**: Enable comprehensive monitoring and alerting
+5. **Dual Assessment**: Simultaneously assess stability and availability metrics
+6. **Decision Execution**: Decide next steps based on assessment results
+7. **Gradual Expansion**: Gradually increase canary nodes and traffic ratio after stabilization
+8. **Complete Release**: All nodes upgraded, restore normal traffic distribution
 
-**异常处理流程：**
+**Exception Handling Process:**
 
 ```mermaid
 graph TD
-    A[监控检测到异常] --> B{异常严重程度}
-    B -->|轻微异常| C[延长观察期]
-    B -->|中等异常| D[流量权重设为0%]
-    B -->|严重异常| E[立即回滚]
+    A[Monitoring Detects Anomaly] --> B{Anomaly Severity}
+    B -->|Minor Anomaly| C[Extend Observation Period]
+    B -->|Moderate Anomaly| D[Set Traffic Weight to 0%]
+    B -->|Severe Anomaly| E[Immediate Rollback]
     
-    C --> F[持续监控]
-    D --> G[问题分析]
-    E --> H[恢复稳定版本]
+    C --> F[Continuous Monitoring]
+    D --> G[Problem Analysis]
+    E --> H[Restore Stable Version]
     
-    F --> I{问题是否解决}
+    F --> I{Is Problem Resolved}
     G --> I
-    H --> J[总结经验教训]
+    H --> J[Summarize Lessons Learned]
     
-    I -->|是| K[恢复正常发布流程]
-    I -->|否| L[深入调查或回滚]
+    I -->|Yes| K[Resume Normal Release Process]
+    I -->|No| L[Deep Investigation or Rollback]
     
-    K --> M[继续灰度扩展]
-    L --> N[问题修复后重新发布]
+    K --> M[Continue Canary Expansion]
+    L --> N[Re-release After Problem Fix]
 ```
 
-**流量归零操作步骤：**
+**Traffic Zero Operation Steps:**
 
-1. **异常检测**：监控系统检测到稳定性或可用性指标异常
-2. **即时隔离**：将灰度节点流量权重设置为0%（耗时 &lt; 10秒）
-3. **状态确认**：确认用户流量已完全切换到稳定节点
-4. **问题诊断**：在隔离状态下进行问题分析和调试
-5. **修复验证**：问题修复后进行功能验证
-6. **流量恢复**：验证通过后逐步恢复该节点的流量分配
+1. **Anomaly Detection**: Monitoring system detects stability or availability metric anomalies
+2. **Instant Isolation**: Set canary node traffic weight to 0% (takes &lt; 10 seconds)
+3. **Status Confirmation**: Confirm user traffic has completely switched to stable nodes
+4. **Problem Diagnosis**: Perform problem analysis and debugging in isolated state
+5. **Fix Verification**: Perform functional verification after problem resolution
+6. **Traffic Recovery**: Gradually restore the node's traffic allocation after verification passes
 
-## 可观测性
+## Observability
 :::info
-可观测性相关能力正在建设中，即将上线
+Observability-related capabilities are under construction and will be launched soon
 :::
 
-### OpenTelemetry及APM生态集成
-JitAi应用runtime-platform支持[OpenTelemetry](https://opentelemetry.io/)，这是可观测性领域的核心标准，在技术演进、生态整合和行业实践中具有不替代的地位。
+### OpenTelemetry and APM Ecosystem Integration
+JitAi application Runtime Platform supports [OpenTelemetry](https://opentelemetry.io/), which is the core standard in the observability field and holds an irreplaceable position in technological evolution, ecosystem integration, and industry practices.
 
 ```mermaid
 graph TB
-    subgraph "JitAi三层架构"
-        subgraph "应用层"
-            App1[业务应用A<br/>应用实例运行]
-            App2[业务应用B<br/>应用实例运行]
+    subgraph "JitAi Three-Layer Architecture"
+        subgraph "Application Layer"
+            App1[Business Application A<br/>Application Instance Running]
+            App2[Business Application B<br/>Application Instance Running]
         end
         
-        subgraph "开发框架层"
-            Framework[元素族类<br/>（runtime-platform不感知具体族类）]
+        subgraph "Development Framework Layer"
+            Framework[Element Family Classes<br/>(Runtime Platform agnostic to specific families)]
         end
         
-        subgraph "应用runtime-platform层"
-            JAAP[JAAP协议引擎<br/>元素定义解析与生命周期管理]
-            Runtime[运行时环境<br/>请求路由与沙箱环境管理]
+        subgraph "Application Runtime Platform Layer"
+            JAAP[JAAP Protocol Engine<br/>Element Definition Parsing & Lifecycle Management]
+            Runtime[Runtime Environment<br/>Request Routing & Sandbox Environment Management]
         end
     end
     
     subgraph "OpenTelemetry SDK"
-        Tracer[分布式追踪<br/>JAAP协议Spans]
-        Metrics[架构层级指标<br/>元素生命周期计数]
-        Logs[结构化日志<br/>JAAP协议事件]
+        Tracer[Distributed Tracing<br/>JAAP Protocol Spans]
+        Metrics[Architecture-level Metrics<br/>Element Lifecycle Counting]
+        Logs[Structured Logging<br/>JAAP Protocol Events]
     end
     
-    subgraph "可观测性数据存储"
-        Jaeger[Jaeger<br/>JAAP调用链存储]
-        Prometheus[Prometheus<br/>JitAI架构指标]
-        ES[Elasticsearch<br/>元素生命周期日志]
+    subgraph "Observability Data Storage"
+        Jaeger[Jaeger<br/>JAAP Call Chain Storage]
+        Prometheus[Prometheus<br/>JitAI Architecture Metrics]
+        ES[Elasticsearch<br/>Element Lifecycle Logs]
     end
     
-    subgraph "可视化与分析"
-        Grafana[Grafana Dashboard<br/>三层架构监控]
-        JitAiConsole[极态运维平台<br/>内置APM控制台]
-        AlertManager[告警系统<br/>JAAP异常告警]
+    subgraph "Visualization and Analysis"
+        Grafana[Grafana Dashboard<br/>Three-Layer Architecture Monitoring]
+        JitAiConsole[JitAi Operations Platform<br/>Built-in APM Console]
+        AlertManager[Alert System<br/>JAAP Exception Alerts]
     end
     
-    subgraph "外部APM集成（可选）"
+    subgraph "External APM Integration (Optional)"
         Skywalking[SkyWalking<br/>Python Agent]
-        Others[其他APM<br/>OpenTelemetry兼容]
+        Others[Other APM<br/>OpenTelemetry Compatible]
     end
     
-    %% runtime-platform层到OpenTelemetry的连接
+    %% Runtime Platform layer to OpenTelemetry connections
     App1 --> Tracer
     App2 --> Tracer
     Framework --> Tracer
@@ -273,12 +273,12 @@ graph TB
     JAAP --> Logs
     Runtime --> Logs
     
-    %% OpenTelemetry到存储的连接
+    %% OpenTelemetry to storage connections
     Tracer --> Jaeger
     Metrics --> Prometheus
     Logs --> ES
     
-    %% 存储到可视化的连接
+    %% Storage to visualization connections
     Jaeger --> Grafana
     Prometheus --> Grafana
     ES --> Grafana
@@ -286,223 +286,12 @@ graph TB
     Prometheus --> JitAiConsole
     ES --> JitAiConsole
     
-    %% 告警连接
+    %% Alert connections
     Prometheus --> AlertManager
     
-    %% 外部APM集成
+    %% External APM integration
     Tracer -.-> Skywalking
     Metrics -.-> Skywalking
     Tracer -.-> Others
     Metrics -.-> Others
 ```
-
-### 观测指标体系
-基于JAAP协议和JitAI三层架构的OpenTelemetry规范可观测性体系：
-
-**1. Metrics（指标体系与判断标准）**
-
-**HTTP状态码分布指标**
-```yaml
-# 关键成功率指标
-http_status_metrics:
-  - status_2xx_rate: ">99.9%"        # 成功响应率（必须>99.9%）
-  - status_4xx_rate: "<0.1%"         # 客户端错误率
-  - status_5xx_rate: "0%"            # 服务端错误率（零容忍）
-  - status_404_count: "0"            # 404错误数量（应为0）
-```
-
-**应用runtime-platform核心指标**
-```yaml
-# 应用实例管理指标
-application_runtime_metrics:
-  - app_instance_start_success_rate: ">99.9%"            # 应用实例启动成功率
-  - app_runtime_availability: ">99.95%"                  # 应用运行时可用性
-  - app_environment_switch_success_rate: ">99.9%"        # 应用环境切换成功率
-  - app_instance_running_count: "当前运行应用实例数量"
-  - app_instance_uptime_duration: "应用实例运行时长分布"
-  - app_environment_switch_duration: "<1s"               # 应用环境切换耗时
-
-# 元素运行时管理指标（不感知具体族类）
-element_runtime_metrics:
-  - element_load_success_rate: ">99.99%"                 # 元素加载成功率
-  - element_instantiation_success_rate: ">99.95%"        # 元素实例化成功率
-  - element_lifecycle_completion_rate: ">99.9%"          # 元素生命周期完成率
-  - element_active_instances_count: "活跃元素实例总数"
-  - element_inheritance_resolution_success: "100%"       # 元素继承解析成功率
-
-# JAAP协议执行指标
-jaap_protocol_metrics:
-  - jaap_element_definition_validation_rate: "100%"      # 元素定义验证成功率
-  - jaap_element_config_parse_success_rate: ">99.99%"   # 元素配置解析成功率
-  - jaap_inheritance_chain_resolution_rate: "100%"       # 继承链解析成功率
-  - jaap_element_loader_invocation_duration: "<100ms"    # 元素加载器调用耗时
-```
-
-**runtime-platform请求处理指标**
-```yaml
-platform_request_metrics:
-  - request_routing_success_rate: ">99.9%"              # 请求路由成功率
-  - environment_routing_accuracy: "100%"                # 环境路由准确率
-  - request_processing_duration: "请求处理耗时分布"
-  - concurrent_request_handling_capacity: "并发请求处理能力"
-
-# 虚拟沙箱环境指标
-sandbox_environment_metrics:
-  - sandbox_creation_success_rate: ">99.95%"            # 沙箱环境创建成功率
-  - environment_isolation_effectiveness: "100%"          # 环境隔离有效性
-  - resource_isolation_integrity: "100%"                 # 资源隔离完整性
-  - environment_cleanup_success_rate: "100%"             # 环境清理成功率
-```
-
-**业务功能可用性指标**
-```yaml
-# 业务层面的关键指标
-business_metrics:
-  - page_load_success_rate: ">99.9%"        # 页面加载成功率
-  - api_endpoint_availability: ">99.95%"    # API端点可用性
-  - transaction_completion_rate: ">99.9%"   # 业务交易完成率
-  - user_session_success_rate: ">99.8%"     # 用户会话成功率
-```
-
-#### 2. Traces（分布式追踪）
-**应用runtime-platform调用链追踪**
-```json
-{
-  "platform_runtime_trace": {
-    "trace_id": "platform-trace-20241201-001",
-    "root_span": {
-      "span_id": "request-001",
-      "operation_name": "user_request_processing",
-      "tags": {
-        "platform.app_id": "wanyun.CustomerService",
-        "platform.app_version": "1.2.0", 
-        "platform.environment": "production",
-        "platform.org_id": "wanyun",
-        "platform.sandbox_id": "sandbox-abc123"
-      }
-    },
-    "platform_spans": [
-      {
-        "span_id": "routing-001",
-        "parent_span_id": "request-001",
-        "operation_name": "request_routing",
-        "tags": {
-          "platform.routing_type": "environment_routing",
-          "platform.target_environment": "production",
-          "platform.routing_success": "true"
-        }
-      },
-      {
-        "span_id": "app-loading-001",
-        "parent_span_id": "routing-001", 
-        "operation_name": "application_loading",
-        "tags": {
-          "platform.app_loading_type": "lazy_loading",
-          "platform.app_inheritance_depth": "2",
-          "platform.app_extends_from": "wanyun.BaseApp"
-        }
-      },
-      {
-        "span_id": "element-runtime-001",
-        "parent_span_id": "app-loading-001",
-        "operation_name": "element_lifecycle_management", 
-        "tags": {
-          "platform.element_type": "Instance",
-          "platform.element_id": "pages.CustomerServicePage",
-          "platform.lifecycle_event": "onCalled",
-          "platform.inheritance_resolved": "true"
-        },
-        "logs": [
-          {
-            "timestamp": "2024-12-01T10:00:00Z",
-            "fields": {
-              "event": "element_lifecycle",
-              "lifecycle_stage": "onLoad",
-              "config_validation": "success",
-              "instantiation_result": "success"
-            }
-          }
-        ]
-      }
-    ]
-  }
-}
-```
-
-**JAAP协议执行追踪**
-```json
-{
-  "jaap_protocol_trace": {
-    "trace_id": "jaap-protocol-20241201-001",
-    "protocol_spans": [
-      {
-        "span_id": "protocol-parsing-001",
-        "operation_name": "jaap_protocol_parsing",
-        "tags": {
-          "jaap.protocol_version": "1.2.0",
-          "jaap.element_definition_file": "app.jit",
-          "jaap.parsing_result": "success"
-        }
-      },
-      {
-        "span_id": "element-definition-001",
-        "parent_span_id": "protocol-parsing-001",
-        "operation_name": "element_definition_validation",
-        "tags": {
-          "jaap.element_id": "services.CustomerService",
-          "jaap.element_type": "Instance",
-          "jaap.type_reference": "services.BaseService",
-          "jaap.validation_result": "success"
-        }
-      },
-      {
-        "span_id": "inheritance-resolution-001", 
-        "parent_span_id": "element-definition-001",
-        "operation_name": "inheritance_chain_resolution",
-        "tags": {
-          "jaap.inheritance_chain": "BaseService->ServiceTemplate->CustomerService",
-          "jaap.inheritance_depth": "3",
-          "jaap.resolution_result": "success"
-        }
-      },
-      {
-        "span_id": "element-instantiation-001",
-        "parent_span_id": "inheritance-resolution-001",
-        "operation_name": "element_instantiation",
-        "tags": {
-          "jaap.instantiation_type": "lazy_loading",
-          "jaap.config_merge_result": "success",
-          "jaap.lifecycle_initialization": "success"
-        }
-      }
-    ]
-  }
-}
-```
-
-#### 3. Logs（结构化日志）
-**JAAP协议结构化日志**
-```json
-{
-  "timestamp": "2024-12-01T10:00:00.123Z",
-  "level": "INFO",
-  "logger": "jaap.protocol.engine",
-  "message": "Element lifecycle event processed",
-  "attributes": {
-    "jaap.protocol_version": "1.2.0",
-    "jaap.element_id": "services.CustomerService",
-    "jaap.element_type": "Instance", 
-    "jaap.element_family": "JitService",
-    "jaap.lifecycle_event": "onCreate",
-    "jaap.parent_type": "services.BaseService",
-    "jaap.config_hash": "sha256:abc123...",
-    "execution.duration_ms": 45,
-    "execution.success": true
-  },
-  "resource": {
-     "service.name": "jitai-application",
-     "service.version": "1.2.0",
-     "deployment.environment": "production"
-   }
- }
- ```

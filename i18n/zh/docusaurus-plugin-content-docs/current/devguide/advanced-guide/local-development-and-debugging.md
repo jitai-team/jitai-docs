@@ -3,11 +3,11 @@ sidebar_position: -4
 slug: local-development-and-debugging
 ---
 
-# 本地开发与调试
+# 使用VSCode或PyCharm开发与调试JitAi应用
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-本文档指导开发者使用桌面版配置本地开发调试环境，以便进行高效的开发与调试。
+本文指导开发者使用桌面版配置本地开发调试环境，以便进行高效的开发与调试。
 
 ## 🛠️ 环境准备
 :::info 

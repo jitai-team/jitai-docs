@@ -1206,13 +1206,13 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="将数据模型集成到AI Agent"
+  title="在AI Agent中调用数据模型"
   href="data-modeling/calling-data-models-in-ai-agent"
-  description="将数据模型与AI Agent系统集成，实现智能数据处理和决策。"
+  description="将数据模型函数添加为Agent工具，使AI能够智能地执行数据的创建、读取、更新、删除等操作。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "数据模型作为Agent工具", href: "data-modeling/calling-data-models-in-ai-agent#data-models-as-agent-tools" }
+  ]} />
 </IndexCard>
 
 

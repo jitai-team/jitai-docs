@@ -1200,13 +1200,13 @@ Design a powerful data foundation for your application. Create data tables, desi
 </IndexCard>
 
 <IndexCard
-  title="Integrating Data Models with AI Agents"
+  title="Calling Data Models with AI Agents"
   href="data-modeling/calling-data-models-in-ai-agent"
-  description="Integrate data models with AI Agent systems to enable intelligent data processing and decision making."
+  description="Add data model functions as Agent tools, enabling AI to execute data creation, reading, updating, and deletion operations."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Data Models as Agent Tools", href: "data-modeling/calling-data-models-in-ai-agent#data-models-as-agent-tools" }
+  ]} />
 </IndexCard>
 
 </div>

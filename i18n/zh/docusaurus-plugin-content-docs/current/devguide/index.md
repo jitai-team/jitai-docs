@@ -1206,13 +1206,13 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="将数据模型集成到AI Agent"
+  title="在AI Agent中调用数据模型"
   href="data-modeling/calling-data-models-in-ai-agent"
-  description="将数据模型与AI Agent系统集成，实现智能数据处理和决策。"
+  description="将数据模型函数添加为Agent工具，使AI能够智能地执行数据的创建、读取、更新、删除等操作。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "数据模型作为Agent工具", href: "data-modeling/calling-data-models-in-ai-agent#data-models-as-agent-tools" }
+  ]} />
 </IndexCard>
 
 
@@ -1302,9 +1302,8 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "应用角色的权限配置", href: "user-and-permission/role-portal-menu-permissions#application-role-permission-configuration" },
     { text: "指定可访问的门户及菜单", href: "user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus" },
     { text: "在开发者门户中管理应用角色成员", href: "user-and-permission/role-portal-menu-permissions#manage-application-role-members-in-developer-portal" },
-    { text: "门户级的数据操作类型和操作范围控制", href: "user-and-permission/role-portal-menu-permissions#portal-level-data-operation-type-and-scope-control" },
     { text: "组件的按钮权限控制", href: "user-and-permission/role-portal-menu-permissions#component-button-permission-control" },
-    { text: "组件的数据字段读/写/统计权限控制", href: "user-and-permission/role-portal-menu-permissions#component-data-field-access-control" },
+      { text: "组件的数据字段读/写/统计权限控制", href: "user-and-permission/role-portal-menu-permissions#component-data-field-access-control" },
     { text: "多应用角色的分级管理", href: "user-and-permission/role-portal-menu-permissions#hierarchical-management-of-multiple-application-roles" },
     { text: "应用角色成员的管理", href: "user-and-permission/role-portal-menu-permissions#application-role-member-management" },
     { text: "成员的添加/删除", href: "user-and-permission/role-portal-menu-permissions#member-addition-and-removal" },
@@ -1313,23 +1312,23 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="Roles and Business Element Permissions"
+  title="角色与业务元素权限"
   href="user-and-permission/roles-and-business-element-permissions"
   description="业务元素的高级基于角色的权限控制，包括数据模型和功能组件的权限管理。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "门户级的数据操作类型和操作范围控制", href: "user-and-permission/roles-and-business-element-permissions#portal-level-data-operation-type-and-scope-control" }
+  ]} />
 </IndexCard>
 
 <IndexCard
-  title="Agent Tool Permission Control"
+  title="Agent工具权限控制"
   href="user-and-permission/agent-tool-permission-control"
   description="配置和管理AI Agent工具的权限控制，确保代理操作的安全性和可控性。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "配置Agent的工具执行权限", href: "user-and-permission/agent-tool-permission-control#configure-agent-tool-execution-permissions" }
+  ]} />
 </IndexCard>
 
 </div>

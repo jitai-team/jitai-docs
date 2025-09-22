@@ -1200,13 +1200,13 @@ Design a powerful data foundation for your application. Create data tables, desi
 </IndexCard>
 
 <IndexCard
-  title="Integrating Data Models with AI Agents"
+  title="Calling Data Models with AI Agents"
   href="data-modeling/calling-data-models-in-ai-agent"
-  description="Integrate data models with AI Agent systems to enable intelligent data processing and decision making."
+  description="Add data model functions as Agent tools, enabling AI to execute data creation, reading, updating, and deletion operations."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Data Models as Agent Tools", href: "data-modeling/calling-data-models-in-ai-agent#data-models-as-agent-tools" }
+  ]} />
 </IndexCard>
 
 </div>
@@ -1299,7 +1299,6 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
     { text: "Application Role Permission Configuration", href: "user-and-permission/role-portal-menu-permissions#application-role-permission-configuration" },
     { text: "Specify Accessible Portals and Menus", href: "user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus" },
     { text: "Manage Application Role Members in Developer Portal", href: "user-and-permission/role-portal-menu-permissions#manage-application-role-members-in-developer-portal" },
-    { text: "Portal-level Data Operation Type and Scope Control", href: "user-and-permission/role-portal-menu-permissions#portal-level-data-operation-type-and-scope-control" },
     { text: "Component Button Permission Control", href: "user-and-permission/role-portal-menu-permissions#component-button-permission-control" },
     { text: "Component Data Field Access Control", href: "user-and-permission/role-portal-menu-permissions#component-data-field-access-control" },
     { text: "Hierarchical Management of Multiple Application Roles", href: "user-and-permission/role-portal-menu-permissions#hierarchical-management-of-multiple-application-roles" },
@@ -1314,9 +1313,9 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
   href="user-and-permission/roles-and-business-element-permissions"
   description="Advanced role-based permission control for business elements, data models, and functional components."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Portal-level Data Operation Type and Scope Control", href: "user-and-permission/roles-and-business-element-permissions#portal-level-data-operation-type-and-scope-control" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1324,9 +1323,9 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
   href="user-and-permission/agent-tool-permission-control"
   description="Configure and manage permission control for AI Agent tools, ensuring secure and controlled agent operations."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Configure Agent Tool Execution Permissions", href: "user-and-permission/agent-tool-permission-control#configure-agent-tool-execution-permissions" }
+  ]} />
 </IndexCard>
 
 </div>

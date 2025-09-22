@@ -1323,9 +1323,9 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
   href="user-and-permission/agent-tool-permission-control"
   description="Configure and manage permission control for AI Agent tools, ensuring secure and controlled agent operations."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Configure Agent Tool Execution Permissions", href: "user-and-permission/agent-tool-permission-control#configure-agent-tool-execution-permissions" }
+  ]} />
 </IndexCard>
 
 </div>

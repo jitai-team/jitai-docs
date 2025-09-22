@@ -1322,13 +1322,13 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="Agent Tool Permission Control"
+  title="Agent工具权限控制"
   href="user-and-permission/agent-tool-permission-control"
   description="配置和管理AI Agent工具的权限控制，确保代理操作的安全性和可控性。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "配置Agent的工具执行权限", href: "user-and-permission/agent-tool-permission-control#configure-agent-tool-execution-permissions" }
+  ]} />
 </IndexCard>
 
 </div>

@@ -181,13 +181,13 @@ When developers enable the `Personal Center` entry, users can view personal basi
 ![Personal Center Functions](./imgs/personal-center-functions.gif "Personal Center Functions")
 
 ## Integrating AI Assistant in Portal {#using-ai-assistant-in-portal}
-JitAi supports directly integrating [AI Assistant](../../ai-assitant/create-ai-assistant) in portals, allowing users to interact with AI assistants when accessing portals. This is a general introduction; for detailed content, please refer to [Integrating AI Assistant in Portals](../../using-ai-in-portals-and-pages/using-ai-assistants-in-portals).
+JitAi supports directly integrating [AI Assistant](../../ai-assistant/create-ai-assistant) in portals, allowing users to interact with AI assistants when accessing portals. This is a general introduction; for detailed content, please refer to [Integrating AI Assistant in Portals](../../using-ai-in-portals-and-pages/using-ai-assistants-in-portals).
 
 ![Portal Integrate AI Assistant](./imgs/portal-integrate-ai-assistant.gif "Portal Integrate AI Assistant")
 
-Developers click the `AI Assistant` tab in the portal configuration interface, turn on the switch in the configuration interface and select an [AI Assistant](../../ai-assitant/create-ai-assistant) to integrate the AI assistant in the portal.
+Developers click the `AI Assistant` tab in the portal configuration interface, turn on the switch in the configuration interface and select an [AI Assistant](../../ai-assistant/create-ai-assistant) to integrate the AI assistant in the portal.
 
 ![AI Assistant Effect in Portal](./imgs/ai-assistant-effect-in-portal.png "AI Assistant Effect in Portal")
 
-When users access a portal with [AI Assistant](../../ai-assitant/create-ai-assistant) enabled, they can see the "AI Assistant" navigation menu, click to open the AI assistant dialog and interact with it.
+When users access a portal with [AI Assistant](../../ai-assistant/create-ai-assistant) enabled, they can see the "AI Assistant" navigation menu, click to open the AI assistant dialog and interact with it.
 

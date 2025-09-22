@@ -17,4 +17,4 @@ Click the `Select Database Table` input box to display all tables in the databas
 
 ![Field Mapping](./img/field-mapping.png)
 
-After selecting a database table, click `OK` to enter the field configuration page. Click `Generate Data Model Fields from Associated Database Table`, then map the database fields to corresponding data types.
+After selecting a database table, click `Confirm` to enter the field configuration page. Click `Generate Data Model Fields from Associated Database Table`, then map the database fields to corresponding data types.

@@ -6,7 +6,7 @@ slug: service-elements-usage-scenarios
 # 服务元素的使用场景
 
 ## 服务函数在哪里使用 {#where-service-functions-are-used}
-在[页面函数](../shell-and-page/component-based-page-development#page-functions)、[页面事件](../shell-and-page/component-based-page-development#page-events)、[前端组件事件函数](../shell-and-page/component-based-page-development#event-panel)、[任务函数](./background-tasks#task-execution-function-development)、[模型事件](./event-handling#model-events)、[审批事件](./event-handling#approval-events)、[自定义事件](./event-handling#custom-events)、[AI助理事件](./event-handling#ai-assistant-events)、[AI Agent工具调用事件](./event-handling#agent-tool-call-events)以及其它服务函数等所有可以编写函数逻辑的地方，开发者都可以调用服务函数。
+在[页面函数](../shell-and-page/component-based-page-development#page-functions)、[页面事件](../shell-and-page/component-based-page-development#page-events)、[前端组件事件函数](../shell-and-page/component-based-page-development#event-panel)、[任务函数](./background-tasks#developing-task-execution-functions)、[模型事件](./event-handling#model-events)、[审批事件](./event-handling#approval-events)、[自定义事件](./event-handling#custom-events)、[AI助理事件](./event-handling#ai-assistant-events)、[AI Agent工具调用事件](./event-handling#agent-tool-call-events)以及其它服务函数等所有可以编写函数逻辑的地方，开发者都可以调用服务函数。
 
 服务函数还可以[作为AI Agent的工具](../ai-agent/agent-tools#agent-calling-service-functions)被大模型调用、在[AI助理的函数调用节点](../ai-assistant/process-orchestration-node-configuration#function-call)被调用、在[API授权元素](../api-exposure/api-authorization)中开放给第三方调用。
 

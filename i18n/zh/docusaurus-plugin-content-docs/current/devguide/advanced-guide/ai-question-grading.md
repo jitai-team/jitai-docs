@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 0.2
 slug: ai-question-grading
 ---
 # AI智能出题，智能阅卷

@@ -1,5 +1,5 @@
 ---
-sidebar_position: -2
+sidebar_position: 100
 slug: application-layer-stability-guarantee
 ---
 

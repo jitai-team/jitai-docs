@@ -8,7 +8,7 @@ slug: event-handling
 
 JitAi支持`模型事件`、`审批事件`、`自定义事件`和`AI相关事件`等多种类型，可在函数逻辑、数据变化、审批流转、AI助理/Agent运行时触发，满足不同业务场景的自动化需求。
 
-## 事件创建 {#event-create}
+## 创建事件 {#creating-events}
 在JitAi开发环境中创建事件非常简单，系统提供了可视化的创建方式帮助开发者快速配置各种事件。
 
 ![事件创建](./img/event-creation.png)
@@ -35,10 +35,10 @@ JitAi提供两种触发字段配置方式，开发者可根据实际业务场景
 - **所有字段**：只要模型中任意字段发生变更，事件都会被触发。适用于需要对所有数据变动进行响应的场景。
 - **指定字段**：仅当所选字段发生变更时才会触发事件。适合只需关注特定字段变更的业务需求，能有效减少无关事件的触发，提高系统效率。
 
-### 满足筛选条件时触发 {#trigger-when-filter-conditions-are-met}
+### 满足筛选条件时触发 {#triggering-when-filter-conditions-are-met}
 支持为事件设置筛选条件。仅当变更数据满足设定的筛选条件时，事件才会被触发。若未设置筛选条件，则默认所有数据变更均会触发事件。通过合理配置筛选条件，可以精准控制事件的触发范围，提升系统性能和业务灵活性。
 
-### 配置过程演示 {#configuration-process-demonstration-model}
+### 演示配置过程 {#demonstrating-configuration-process-model}
 ![模型事件创建](./img/model-event-creation.gif)
 
 在`新建模型事件`弹窗中，依次配置事件名称、目标数据模型、触发时机、触发字段、筛选条件、执行函数和异步设置等参数，完成配置后即可创建事件并进入可视化编辑器。
@@ -63,7 +63,7 @@ JitAi为审批事件提供了3种触发时机，开发者可根据审批流程�
 
 - **审批处理后触发**：在每次审批操作完成后立即触发（包括通过、拒绝、转交等任何审批动作）。适用于需要实时响应每个审批动作的场景，如操作日志记录、即时消息推送、数据同步等。
 
-### 配置过程演示 {#configuration-process-demonstration-approval}
+### 演示配置过程 {#demonstrating-configuration-process-approval}
 ![审批事件创建](./img/approval-event-creation.gif)
 
 在`新建审批事件`弹窗中，依次配置事件名称、目标审批流程、触发时机、执行函数和异步设置等参数，完成配置后即可创建事件并进入详细配置页面。
@@ -75,7 +75,7 @@ JitAi为审批事件提供了3种触发时机，开发者可根据审批流程�
 ## 自定义事件 {#custom-events}
 自定义事件提供了最大的灵活性，允许开发者根据特定业务需求声明自己的事件。不像模型事件和审批事件有固定的触发条件，自定义事件可以在任何函数逻辑中触发，适用于复杂的业务场景编排和模块间的通信。
 
-### 事件声明配置 {#event-declaration-configuration}
+### 配置事件声明 {#configuring-event-declaration}
 自定义事件的使用流程如下：首先需要在服务元素中声明事件，随后通过事件元素进行订阅和执行。
 
 ![进入源码1](./img/enter-source-code-1.png)
@@ -141,21 +141,21 @@ AI Agent在调用工具时，我们可以通过订阅该事件在Agent运行过�
 
 ![Agent工具事件配置](./img/ai/agent-event-config.png)
 
-## 服务函数替换事件内函数 {#service-function-replace-event-internal-function}
+## 用服务函数替换事件内函数 {#replacing-event-internal-function-with-service-function}
 创建事件时默认执行函数是事件内函数，函数逻辑位于事件元素的代码中，JitAi也支持用服务函数封装事件的执行函数逻辑。
 
 ![服务函数事件](./img/service-function-events.gif)
 
 在事件的可视化编辑器中，切换执行函数为`服务函数`，可以选择自定义的服务函数，前提是函数的参数结构满足下面的参数说明。
 
-## 事件启用 {#event-enable}
+## 启用事件 {#enabling-events}
 事件创建后需要手动开启才能正常工作，通过开关控制可以灵活管理事件的启用状态。
 
 ![事件开关](./img/event-switch.png)
 
 所有事件在创建后默认处于关闭状态，开发者需要在事件详情页面手动打开开关按钮，事件才能正常触发执行。当事件开关处于关闭状态时，即使满足触发条件，事件也不会被执行。
 
-## 事件同步/异步执行 {#event-sync-async-execution}
+## 同步/异步执行事件 {#executing-events-synchronously-asynchronously}
 JitAi支持同步和异步两种事件执行模式，开发者可根据业务场景和性能需求灵活选择。
 
 ![事件异步同步](./img/event-async-sync.png)
@@ -168,7 +168,7 @@ JitAi支持同步和异步两种事件执行模式，开发者可根据业务场
 对于耗时较长的事件处理（如发送邮件、调用外部API、大数据量计算等），建议开启异步执行模式，以避免影响用户体验和系统响应速度。
 :::
 
-## 事件执行记录 {#event-execution-records}
+## 查看事件执行记录 {#viewing-event-execution-records}
 JitAi提供完善的事件执行监控和调试功能，帮助开发者快速定位和解决事件执行过程中的问题。
 
 ![执行记录1](./img/execution-record-1.png)
@@ -183,7 +183,7 @@ JitAi提供完善的事件执行监控和调试功能，帮助开发者快速定
 
 点击单条记录的`执行路径`按钮，可以查看详细的执行日志和调用链路，包括每个步骤的执行状态、耗时信息和错误详情，帮助开发者快速诊断和解决问题。
 
-## 全代码查看/编辑 {#full-code-view-edit}
+## 查看/编辑全代码 {#viewing-editing-full-code}
 事件函数可以在全代码模式下查看和编辑，与可视化编辑实时同步。
 
 ![全代码查看](./img/full-code-view.gif)

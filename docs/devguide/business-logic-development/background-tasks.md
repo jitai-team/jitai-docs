@@ -8,7 +8,7 @@ Background tasks are the core capability for implementing periodic and automated
 
 JitAi provides two types of background tasks: `Scheduled Tasks` that execute at fixed time intervals, and `Date Field Tasks` that trigger based on date fields in data tables.
 
-## Task Creation {#task-creation}
+## Creating Tasks {#creating-tasks}
 ![Create Scheduled Task](./img/task-creation.png)
 
 In the development area element tree, click the `+` button next to the search box, select `Background Task`, then choose either `Scheduled Task` (executes at fixed intervals) or `Date Field Task` (triggers based on data) according to your requirements.
@@ -30,7 +30,7 @@ Scheduled tasks are widely used in various automation scenarios:
 
 In the "New Scheduled Task" dialog, enter the task name (the system will automatically generate an English name), set the start time (required) and end time (optional), select the task's repeat cycle and whether to skip holidays. After configuration is complete, you can create the scheduled task and enter the visual editor for subsequent operations.
 
-### Start and End Time Settings {#scheduled-task-time-settings}
+### Setting Start and End Time {#setting-start-and-end-time}
 Scheduled tasks use fixed time points to control the start and end of tasks:
 
 - **Start Time**: The time point when the task will first execute, required field.
@@ -53,10 +53,10 @@ Date field tasks play an important role in business data management:
 
 Developers need to enter the task name (English name will be automatically generated), select the data model, set filter conditions, set start time (required) and end time (optional) in the `New Date Field Task` dialog. Choose the repeat cycle. Select whether to skip holidays. After configuration is complete, you can create the date field task and enter the visual editor.
 
-### Model Selection and Data Filtering {#date-field-model-selection}
+### Selecting Models and Filtering Data {#selecting-models-and-filtering-data}
 In the **Model Selection** stage, you need to select a data table model that contains date fields. In the **Field Selection** stage, specify the date/time field used to trigger the task. Through **Filter Conditions** settings, you can add additional data filtering conditions so that only data meeting the conditions will trigger the task, thereby improving the accuracy and efficiency of task execution.
 
-### On-time/Early/Late Task Triggering {#date-field-timing-options}
+### Triggering Tasks On-time/Early/Late {#triggering-tasks-on-time-early-late}
 Supports flexibly setting automatic task triggering several days before or after the date, at specific time points, based on the value of the date field, meeting diverse business scenario requirements.
 
 #### Start Time {#date-field-start-time}
@@ -91,10 +91,10 @@ The system provides 7 repeat cycles to meet different business needs:
 - **Yearly**: Execute once per year. Suitable for annual statistics, system maintenance, etc.
 - **Custom**: Flexible configuration of execution cycles. Suitable for complex time rule scenarios.
 
-### Holiday Processing {#holiday-processing}
+### Processing Holidays {#processing-holidays}
 After enabling the **Skip Holidays** feature, tasks will automatically skip on legal holidays and execute on the next working day. This feature is particularly suitable for office tasks, financial processing, business reports, and other scenarios that need to avoid holidays.
 
-## Task Execution Function Development {#task-execution-function-development}
+## Developing Task Execution Functions {#developing-task-execution-functions}
 After task creation is complete, you need to write the specific execution logic. JitAi provides two function development approaches:
 
 ### Internal Task Functions {#internal-task-functions}
@@ -118,7 +118,7 @@ Developers can switch the execution function to `Service Function` in the task's
 - For **Date Field Tasks**, internal task functions will **automatically receive the current model row data as parameters**, so if you choose a service function as the execution function, you should also ensure that the service function's parameter signature is consistent with the internal task function, i.e., receiving the current model row data as parameters, with data type as [Single Row Data](../../reference/framework/JitORM/data-types).
 :::
 
-## Execution Record View {#execution-record-view}
+## Viewing Execution Records {#viewing-execution-records}
 The task monitoring feature provides complete execution record viewing capabilities. Developers can view task execution history, monitor task execution status and results, and analyze task execution time and performance, helping to identify and resolve issues in a timely manner.
 
 ![View Execution Records](./img/view-execution-records.png)

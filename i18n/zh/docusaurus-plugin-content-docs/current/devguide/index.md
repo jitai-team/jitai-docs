@@ -1197,11 +1197,11 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="专为全代码开发模式设计的数据结构，类似于DTO，用于业务逻辑中的数据结构化表达与传递。"
 >
   <LinkGrid links={[
-    { text: "数据对象模型创建", href: "data-modeling/data-object-model" },
-    { text: "数据对象模型使用", href: "data-modeling/data-object-model#data-object-model-usage" },
-    { text: "自定义字段", href: "data-modeling/data-object-model#custom-field" },
-    { text: "模型函数重写", href: "data-modeling/data-object-model#model-function-override" },
-    { text: "定义新函数", href: "data-modeling/data-object-model#define-new-function" }
+    { text: "数据对象模型创建", href: "data-modeling/data-object-model#creating-data-object-model" },
+    { text: "数据对象模型使用", href: "data-modeling/data-object-model#using-data-object-model" },
+    { text: "自定义字段", href: "data-modeling/data-object-model#customizing-fields" },
+    { text: "模型函数重写", href: "data-modeling/data-object-model#overriding-model-functions" },
+    { text: "定义新函数", href: "data-modeling/data-object-model#defining-new-functions" }
   ]} />
 </IndexCard>
 
@@ -1244,7 +1244,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid links={[
     { text: "标准组织架构", href: "user-and-permission/organizational-structure#standard-organization" },
-    { text: "允许新注册用户加入", href: "user-and-permission/organizational-structure#allow-new-registered-user-join" },
+    { text: "允许新注册用户加入", href: "user-and-permission/organizational-structure#allowing-new-registered-users-to-join" },
     { text: "钉钉自建组织", href: "user-and-permission/organizational-structure#dingtalk-custom-organization" },
     { text: "企业微信自建组织", href: "user-and-permission/organizational-structure#wechat-work-custom-organization" },
     { text: "通讯录管理入口", href: "user-and-permission/organizational-structure#contact-management-entry" },
@@ -1252,18 +1252,18 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "企业微信自建组织", href: "user-and-permission/organizational-structure#wechat-work-custom-organization" },
     { text: "Microsoft Teams", href: "user-and-permission/organizational-structure#microsoft-teams" },
     { text: "部门成员搜索", href: "user-and-permission/organizational-structure#department-member-search" },
-    { text: "设置组织负责人", href: "user-and-permission/organizational-structure#set-organization-leader" },
-    { text: "新建部门", href: "user-and-permission/organizational-structure#create-department" },
-    { text: "添加成员", href: "user-and-permission/organizational-structure#add-member" },
-    { text: "导入成员", href: "user-and-permission/organizational-structure#import-member" },
-    { text: "导出成员", href: "user-and-permission/organizational-structure#export-member" },
-    { text: "调整部门", href: "user-and-permission/organizational-structure#adjust-department" },
+    { text: "设置组织负责人", href: "user-and-permission/organizational-structure#setting-organization-leader" },
+    { text: "新建部门", href: "user-and-permission/organizational-structure#creating-department" },
+    { text: "添加成员", href: "user-and-permission/organizational-structure#adding-member" },
+    { text: "导入成员", href: "user-and-permission/organizational-structure#importing-members" },
+    { text: "导出成员", href: "user-and-permission/organizational-structure#exporting-members" },
+    { text: "调整部门", href: "user-and-permission/organizational-structure#adjusting-department" },
     { text: "成员转为离职", href: "user-and-permission/organizational-structure#member-resignation" },
-    { text: "新建角色", href: "user-and-permission/organizational-structure#create-role" },
-    { text: "新建角色组", href: "user-and-permission/organizational-structure#standard-organization" },
-    { text: "管理角色成员", href: "user-and-permission/organizational-structure#manage-role-member" },
-    { text: "同步钉钉组织架构", href: "user-and-permission/organizational-structure#sync-dingtalk-organization-structure" },
-    { text: "同步企业微信组织架构", href: "user-and-permission/organizational-structure#sync-wechat-work-organization-structure" },
+    { text: "新建角色", href: "user-and-permission/organizational-structure#creating-role" },
+    { text: "新建角色组", href: "user-and-permission/organizational-structure#creating-role-group" },
+    { text: "管理角色成员", href: "user-and-permission/organizational-structure#managing-role-members" },
+    { text: "同步钉钉组织架构", href: "user-and-permission/organizational-structure#syncing-dingtalk-organization-structure" },
+    { text: "同步企业微信组织架构", href: "user-and-permission/organizational-structure#syncing-wechat-work-organization-structure" },
   ]} />
 </IndexCard>
 
@@ -1272,7 +1272,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="用户身份验证和登录方式配置，支持多种认证模式。"
 >
   <LinkGrid links={[
-    { text: "登录方式创建", href: "user-and-permission/login-authentication#login-method-creation" },
+    { text: "创建登录方式", href: "user-and-permission/login-authentication#creating-login-method" },
     { text: "账号密码登录", href: "user-and-permission/login-authentication#account-password-login" },
     { text: "手机号登录", href: "user-and-permission/login-authentication#mobile-phone-login" },
     { text: "阿里云短信", href: "user-and-permission/login-authentication#aliyun-sms" },
@@ -1386,12 +1386,12 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="定时任务和异步处理，支持复杂的后台业务流程。"
 >
   <LinkGrid columns={2} links={[
-    { text: "任务创建", href: "business-logic-development/background-tasks#task-creation" },
+    { text: "创建任务", href: "business-logic-development/background-tasks#creating-tasks" },
     { text: "定时任务", href: "business-logic-development/background-tasks#scheduled-tasks" },
     { text: "日期字段任务", href: "business-logic-development/background-tasks#date-field-tasks" },
     { text: "通用配置项", href: "business-logic-development/background-tasks#general-configuration-items" },
-    { text: "任务执行函数开发", href: "business-logic-development/background-tasks#task-execution-function-development" },
-    { text: "执行记录查看", href: "business-logic-development/background-tasks#execution-record-view" },
+    { text: "开发任务执行函数", href: "business-logic-development/background-tasks#developing-task-execution-functions" },
+    { text: "查看执行记录", href: "business-logic-development/background-tasks#viewing-execution-records" },
     { text: "源码模式", href: "business-logic-development/background-tasks#source-code-mode" }
   ]} />
 </IndexCard>
@@ -1402,17 +1402,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="系统事件监听和处理机制，实现响应式业务逻辑。"
 >
   <LinkGrid columns={2} links={[
-    { text: "事件创建", href: "business-logic-development/event-handling#event-create" },
+    { text: "创建事件", href: "business-logic-development/event-handling#creating-events" },
     { text: "模型事件", href: "business-logic-development/event-handling#model-events" },
     { text: "审批事件", href: "business-logic-development/event-handling#approval-events" },
     { text: "自定义事件", href: "business-logic-development/event-handling#custom-events" },
     { text: "ai-assistant事件", href: "business-logic-development/event-handling#ai-assistant-events" },
     { text: "Agent工具调用事件", href: "business-logic-development/event-handling#agent-tool-call-events" },
-    { text: "服务函数替换事件内函数", href: "business-logic-development/event-handling#service-function-replace-event-internal-function" },
-    { text: "事件启用", href: "business-logic-development/event-handling#event-enable" },
-    { text: "事件同步/异步执行", href: "business-logic-development/event-handling#event-sync-async-execution" },
-    { text: "事件执行记录", href: "business-logic-development/event-handling#event-execution-records" },
-    { text: "全代码查看/编辑", href: "business-logic-development/event-handling#full-code-view-edit" }
+    { text: "用服务函数替换事件内函数", href: "business-logic-development/event-handling#replacing-event-internal-function-with-service-function" },
+    { text: "启用事件", href: "business-logic-development/event-handling#enabling-events" },
+    { text: "同步/异步执行事件", href: "business-logic-development/event-handling#executing-events-synchronously-asynchronously" },
+    { text: "查看事件执行记录", href: "business-logic-development/event-handling#viewing-event-execution-records" },
+    { text: "查看/编辑全代码", href: "business-logic-development/event-handling#viewing-editing-full-code" }
   ]} />
 </IndexCard>
 

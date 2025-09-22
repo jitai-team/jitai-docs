@@ -1302,9 +1302,8 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "应用角色的权限配置", href: "user-and-permission/role-portal-menu-permissions#application-role-permission-configuration" },
     { text: "指定可访问的门户及菜单", href: "user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus" },
     { text: "在开发者门户中管理应用角色成员", href: "user-and-permission/role-portal-menu-permissions#manage-application-role-members-in-developer-portal" },
-    { text: "门户级的数据操作类型和操作范围控制", href: "user-and-permission/role-portal-menu-permissions#portal-level-data-operation-type-and-scope-control" },
     { text: "组件的按钮权限控制", href: "user-and-permission/role-portal-menu-permissions#component-button-permission-control" },
-    { text: "组件的数据字段读/写/统计权限控制", href: "user-and-permission/role-portal-menu-permissions#component-data-field-access-control" },
+      { text: "组件的数据字段读/写/统计权限控制", href: "user-and-permission/role-portal-menu-permissions#component-data-field-access-control" },
     { text: "多应用角色的分级管理", href: "user-and-permission/role-portal-menu-permissions#hierarchical-management-of-multiple-application-roles" },
     { text: "应用角色成员的管理", href: "user-and-permission/role-portal-menu-permissions#application-role-member-management" },
     { text: "成员的添加/删除", href: "user-and-permission/role-portal-menu-permissions#member-addition-and-removal" },
@@ -1313,13 +1312,13 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="Roles and Business Element Permissions"
+  title="角色与业务元素权限"
   href="user-and-permission/roles-and-business-element-permissions"
   description="业务元素的高级基于角色的权限控制，包括数据模型和功能组件的权限管理。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "门户级的数据操作类型和操作范围控制", href: "user-and-permission/roles-and-business-element-permissions#portal-level-data-operation-type-and-scope-control" }
+  ]} />
 </IndexCard>
 
 <IndexCard

@@ -1299,7 +1299,6 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
     { text: "Application Role Permission Configuration", href: "user-and-permission/role-portal-menu-permissions#application-role-permission-configuration" },
     { text: "Specify Accessible Portals and Menus", href: "user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus" },
     { text: "Manage Application Role Members in Developer Portal", href: "user-and-permission/role-portal-menu-permissions#manage-application-role-members-in-developer-portal" },
-    { text: "Portal-level Data Operation Type and Scope Control", href: "user-and-permission/role-portal-menu-permissions#portal-level-data-operation-type-and-scope-control" },
     { text: "Component Button Permission Control", href: "user-and-permission/role-portal-menu-permissions#component-button-permission-control" },
     { text: "Component Data Field Access Control", href: "user-and-permission/role-portal-menu-permissions#component-data-field-access-control" },
     { text: "Hierarchical Management of Multiple Application Roles", href: "user-and-permission/role-portal-menu-permissions#hierarchical-management-of-multiple-application-roles" },
@@ -1314,9 +1313,9 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
   href="user-and-permission/roles-and-business-element-permissions"
   description="Advanced role-based permission control for business elements, data models, and functional components."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Portal-level Data Operation Type and Scope Control", href: "user-and-permission/roles-and-business-element-permissions#portal-level-data-operation-type-and-scope-control" }
+  ]} />
 </IndexCard>
 
 <IndexCard

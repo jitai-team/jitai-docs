@@ -1191,11 +1191,11 @@ Design a powerful data foundation for your application. Create data tables, desi
   description="Data structure designed specifically for full-code development, similar to DTO, used for structured data expression and transmission in business logic."
 >
   <LinkGrid links={[
-    { text: "Data Object Model Creation", href: "data-modeling/data-object-model#data-object-model-creation" },
-    { text: "Data Object Model Usage", href: "data-modeling/data-object-model#data-object-model-usage" },
-    { text: "Custom Field", href: "data-modeling/data-object-model#custom-field" },
-    { text: "Model Function Override", href: "data-modeling/data-object-model#model-function-override" },
-    { text: "Define New Function", href: "data-modeling/data-object-model#define-new-function" }
+    { text: "Creating Data Object Model", href: "data-modeling/data-object-model#creating-data-object-model" },
+    { text: "Using Data Object Model", href: "data-modeling/data-object-model#using-data-object-model" },
+    { text: "Customizing Fields", href: "data-modeling/data-object-model#customizing-fields" },
+    { text: "Overriding Model Functions", href: "data-modeling/data-object-model#overriding-model-functions" },
+    { text: "Defining New Functions", href: "data-modeling/data-object-model#defining-new-functions" }
   ]} />
 </IndexCard>
 
@@ -1241,7 +1241,7 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
 >
   <LinkGrid links={[
     { text: "Standard Organization", href: "user-and-permission/organizational-structure#standard-organization" },
-    { text: "Allow New Registered User Join", href: "user-and-permission/organizational-structure#allow-new-registered-user-join" },
+    { text: "Allowing New Registered Users to Join", href: "user-and-permission/organizational-structure#allowing-new-registered-users-to-join" },
     { text: "DingTalk Custom Organization", href: "user-and-permission/organizational-structure#dingtalk-custom-organization" },
     { text: "WeChat Work Custom Organization", href: "user-and-permission/organizational-structure#wechat-work-custom-organization" },
     { text: "Contact Management Entry", href: "user-and-permission/organizational-structure#contact-management-entry" },
@@ -1249,18 +1249,18 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
     { text: "WeChat Work Custom Organization", href: "user-and-permission/organizational-structure#wechat-work-custom-organization" },
     { text: "Microsoft Teams", href: "user-and-permission/organizational-structure#microsoft-teams" },
     { text: "Department Member Search", href: "user-and-permission/organizational-structure#department-member-search" },
-    { text: "Set Organization Leader", href: "user-and-permission/organizational-structure#set-organization-leader" },
-    { text: "Create Department", href: "user-and-permission/organizational-structure#create-department" },
-    { text: "Add Member", href: "user-and-permission/organizational-structure#add-member" },
-    { text: "Import Member", href: "user-and-permission/organizational-structure#import-member" },
-    { text: "Export Member", href: "user-and-permission/organizational-structure#export-member" },
-    { text: "Adjust Department", href: "user-and-permission/organizational-structure#adjust-department" },
+    { text: "Setting Organization Leader", href: "user-and-permission/organizational-structure#setting-organization-leader" },
+    { text: "Creating Department", href: "user-and-permission/organizational-structure#creating-department" },
+    { text: "Adding Member", href: "user-and-permission/organizational-structure#adding-member" },
+    { text: "Importing Members", href: "user-and-permission/organizational-structure#importing-members" },
+    { text: "Exporting Members", href: "user-and-permission/organizational-structure#exporting-members" },
+    { text: "Adjusting Department", href: "user-and-permission/organizational-structure#adjusting-department" },
     { text: "Member Resignation", href: "user-and-permission/organizational-structure#member-resignation" },
-    { text: "Create Role", href: "user-and-permission/organizational-structure#create-role" },
-    { text: "Create Role Group", href: "user-and-permission/organizational-structure#standard-organization" },
-    { text: "Manage Role Member", href: "user-and-permission/organizational-structure#manage-role-member" },
-    { text: "Sync DingTalk Organization Structure", href: "user-and-permission/organizational-structure#sync-dingtalk-organization-structure" },
-    { text: "Sync WeChat Work Organization Structure", href: "user-and-permission/organizational-structure#sync-wechat-work-organization-structure" },
+    { text: "Creating Role", href: "user-and-permission/organizational-structure#creating-role" },
+    { text: "Creating Role Group", href: "user-and-permission/organizational-structure#creating-role-group" },
+    { text: "Managing Role Members", href: "user-and-permission/organizational-structure#managing-role-members" },
+    { text: "Syncing DingTalk Organization Structure", href: "user-and-permission/organizational-structure#syncing-dingtalk-organization-structure" },
+    { text: "Syncing WeChat Work Organization Structure", href: "user-and-permission/organizational-structure#syncing-wechat-work-organization-structure" },
   ]} />
 </IndexCard>
 
@@ -1269,7 +1269,7 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
   description="User identity verification and login method configuration, supporting multiple authentication modes."
 >
   <LinkGrid links={[
-    { text: "Login Method Creation", href: "user-and-permission/login-authentication#login-method-creation" },
+    { text: "Creating Login Method", href: "user-and-permission/login-authentication#creating-login-method" },
     { text: "Account Password Login", href: "user-and-permission/login-authentication#account-password-login" },
     { text: "Mobile Phone Login", href: "user-and-permission/login-authentication#mobile-phone-login" },
     { text: "Alibaba Cloud SMS", href: "user-and-permission/login-authentication#aliyun-sms" },
@@ -1382,12 +1382,12 @@ Empower applications with powerful business processing capabilities. Handle comp
   description="Scheduled tasks and asynchronous processing, supporting complex background business processes."
 >
   <LinkGrid columns={2} links={[
-    { text: "Task Creation", href: "business-logic-development/background-tasks#task-creation" },
+    { text: "Creating Tasks", href: "business-logic-development/background-tasks#creating-tasks" },
     { text: "Scheduled Tasks", href: "business-logic-development/background-tasks#scheduled-tasks" },
     { text: "Date Field Tasks", href: "business-logic-development/background-tasks#date-field-tasks" },
     { text: "General Configuration Items", href: "business-logic-development/background-tasks#general-configuration-items" },
-    { text: "Task Execution Function Development", href: "business-logic-development/background-tasks#task-execution-function-development" },
-    { text: "Execution Record View", href: "business-logic-development/background-tasks#execution-record-view" },
+    { text: "Developing Task Execution Functions", href: "business-logic-development/background-tasks#developing-task-execution-functions" },
+    { text: "Viewing Execution Records", href: "business-logic-development/background-tasks#viewing-execution-records" },
     { text: "Source Code Mode", href: "business-logic-development/background-tasks#source-code-mode" }
   ]} />
 </IndexCard>
@@ -1398,17 +1398,17 @@ Empower applications with powerful business processing capabilities. Handle comp
   description="System event monitoring and processing mechanism, implementing reactive business logic."
 >
   <LinkGrid columns={2} links={[
-    { text: "Event Creation", href: "business-logic-development/event-handling#event-create" },
+    { text: "Creating Events", href: "business-logic-development/event-handling#creating-events" },
     { text: "Model Events", href: "business-logic-development/event-handling#model-events" },
     { text: "Approval Events", href: "business-logic-development/event-handling#approval-events" },
     { text: "Custom Events", href: "business-logic-development/event-handling#custom-events" },
     { text: "AI-Assistant Events", href: "business-logic-development/event-handling#ai-assistant-events" },
     { text: "Agent Tool Call Events", href: "business-logic-development/event-handling#agent-tool-call-events" },
-    { text: "Service Function Replace Event Internal Function", href: "business-logic-development/event-handling#service-function-replace-event-internal-function" },
-    { text: "Event Enable", href: "business-logic-development/event-handling#event-enable" },
-    { text: "Event Sync/Async Execution", href: "business-logic-development/event-handling#event-sync-async-execution" },
-    { text: "Event Execution Records", href: "business-logic-development/event-handling#event-execution-records" },
-    { text: "Full Code View/Edit", href: "business-logic-development/event-handling#full-code-view-edit" }
+    { text: "Replacing Event Internal Function with Service Function", href: "business-logic-development/event-handling#replacing-event-internal-function-with-service-function" },
+    { text: "Enabling Events", href: "business-logic-development/event-handling#enabling-events" },
+    { text: "Executing Events Synchronously/Asynchronously", href: "business-logic-development/event-handling#executing-events-synchronously-asynchronously" },
+    { text: "Viewing Event Execution Records", href: "business-logic-development/event-handling#viewing-event-execution-records" },
+    { text: "Viewing/Editing Full Code", href: "business-logic-development/event-handling#viewing-editing-full-code" }
   ]} />
 </IndexCard>
 

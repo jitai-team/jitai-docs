@@ -55,9 +55,21 @@ Used for deploying application systems on servers (multi-process, cluster suppor
      -p 3306:3306 \
      --init --privileged \
      -v /your/local/path:/data/JitNode \
-     registry.cn-hangzhou.aliyuncs.com/jitpro/jit
+     jitaiplatform/jit
    ```
    Please replace /your/local/path with the actual host machine path, for example: /Users/username/JitNode or /opt/jitnode
+
+   :::tip For Chinese Users
+   Chinese users can use the Alibaba Cloud mirror for faster download speeds:
+   ```bash
+   docker run -itd --name jit \
+     -p 80:80 \
+     -p 3306:3306 \
+     --init --privileged \
+     -v /your/local/path:/data/JitNode \
+     registry.cn-hangzhou.aliyuncs.com/jitpro/jit
+   ```
+   :::
 
 3. Access `http://{server-IP-address}:80` in your browser and follow the on-screen activation process. Read [Developer Organization Management](../devguide/installation-activation/developer-organization-management) for more details.
 
@@ -81,7 +93,7 @@ docker run -itd --name jitnode \
   -e NODE_ADDRESS=http://your-server-ip:80 \
   --init --privileged \
   -v /your/local/path:/data/JitNode \
-  registry.cn-hangzhou.aliyuncs.com/jitpro/jit
+  jitaiplatform/jit
 ```
 
 ## Frequently Asked Questions

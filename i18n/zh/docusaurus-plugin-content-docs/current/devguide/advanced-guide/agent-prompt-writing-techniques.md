@@ -1,12 +1,12 @@
 ---
-sidebar_position: 0
+sidebar_position: 0.3
 slug: agent-prompt-writing-techniques
 ---
 
-# Agent 提示词编写技巧
+# Agent提示词编写技巧
 本文面向在 JitAi 中为 `Agent` 设计系统化提示词的开发者。我们通过“不佳版 vs 改进版”的对照示例，总结可直接复用的结构化模板与核对清单，帮助你写出稳定、可控、可联动的提示词。
 
-## 示例速览：改写一个“客户信息管理 Agent”提示词
+## 示例速览：改写一个“客户信息管理Agent”提示词
 ### 不佳版：
 - **提示词过于简单，笼统**
 ```Text

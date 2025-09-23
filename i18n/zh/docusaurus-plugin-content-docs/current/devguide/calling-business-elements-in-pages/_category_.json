@@ -1,9 +1,9 @@
 {
-  "label": "在页面中调用业务元素",
+  "label": "Calling Business Elements in Pages",
   "position": 7,
   "link": {
     "type": "generated-index",
     "slug": "devguide/calling-business-elements-in-pages",
-    "description": "学习如何在页面中调用和集成业务元素，包括服务函数和数据模型函数，用于动态内容和业务逻辑执行。"
+    "description": "Learn how to call and integrate business elements within pages, including service functions and data model functions for dynamic content and business logic execution."
   }
 }

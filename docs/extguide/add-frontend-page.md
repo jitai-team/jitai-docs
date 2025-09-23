@@ -3,7 +3,7 @@ sidebar_position: 3
 slug: add-frontend-page-type-complete
 ---
 
-# 开发自定义页面Type - 从零打造计时器页面
+# 开发自定义页面Type
 
 想象一下，你需要为一个在线考试系统开发倒计时页面。你打开JitAi，查看现有的页面类型：常规页面太简单，数据管理页面不合适，Markdown页面更不行...这时候你意识到，需要创建一个全新的页面类型。
 

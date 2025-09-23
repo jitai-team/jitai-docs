@@ -146,9 +146,6 @@ slug: ai-customer-service
 
 你已经学会了极态开发平台的基本使用方式，并开发了一个智能客服智能体。
 
-## 相关文档
-- **[新增后端Type元素](../../extguide/backend/add-backend-type-elements)** - 学习Type元素扩展开发，包含钉钉机器人集成实战案例
-
 
 
 

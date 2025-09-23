@@ -3,11 +3,11 @@ sidebar_position: 2
 slug: develop-backend-element-visual-editor
 ---
 
-# 开发后端元素可视化编辑器
+# 为后端Type元素开发可视化编辑器
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-当我们完成了[新增后端Type元素](./add-backend-type-elements)后，虽然可以创建实例并运行，但配置参数需要手动修改文件，这对不熟悉代码的业务开发者来说并不友好。
+当我们完成了[扩展自己的元素族类](./extend-element-family-classes)后，虽然可以创建实例并运行，但配置参数需要手动修改文件，这对不熟悉代码的业务开发者来说并不友好。
 
 本文将介绍如何为钉钉机器人开发可视化配置编辑器，实现在JitAi开发工具中像官方元素一样的图形化配置体验。
 

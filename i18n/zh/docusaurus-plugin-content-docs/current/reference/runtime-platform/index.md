@@ -1,7 +1,7 @@
 ---
 sidebar_position: -1
 ---
-# 概述
+# 运行平台概述
 [**JAAP（JitAi Application Protocol）**](./JAAP) 完成了对应用开发复杂度的抽象，使业务专家能够专注于上层业务逻辑的编排，而要让JAAP真正发挥作用，就需要一个能够理解和执行JAAP的环境——应用运行容器。
 
 ## JAAP应用运行容器

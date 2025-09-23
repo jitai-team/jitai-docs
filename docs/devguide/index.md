@@ -4,7 +4,7 @@ sidebar_position: 0
 
 import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
-# Guide
+# Developer Guide Index
 Ready to experience a revolutionary new way of application development? Start here and learn to build powerful enterprise-grade applications using the cutting-edge technology stack of the AI era.
 
 The developer guide provides a complete learning path from organizational management and application development fundamentals to business logic implementation, along with best practices for mastering complex application architecture design through real business scenarios.

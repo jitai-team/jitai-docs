@@ -1,9 +1,9 @@
 {
-  "label": "运行平台",
+  "label": "Runtime Platform",
   "position": 1,
   "collapsed": false,
   "link": {
     "slug": "reference/runtime-platform",
-    "description": "向开发者提供系统API，用于应用开发。"
+    "description": "Provides system APIs to developers for application development."
   }
 } 

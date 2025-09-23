@@ -3,6 +3,7 @@
   "position": 11,
   "link": {
     "type": "generated-index",
+    "slug": "reference/framework/JitWeb",
     "description": "Web frontend framework providing portal systems, page management, UI component libraries, form controls, and styling systems"
   }
 } 

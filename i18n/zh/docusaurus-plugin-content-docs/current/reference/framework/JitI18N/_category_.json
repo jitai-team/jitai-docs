@@ -3,6 +3,7 @@
   "position": 4,
   "link": {
     "type": "generated-index",
-    "description": "国际化与本地化框架，支持多语言翻译、区域化设置和动态语言包管理"
+    "slug": "reference/framework/JitI18N",
+    "description": "Internationalization and localization framework supporting multi-language translation, regional settings, and dynamic language pack management"
   }
 } 

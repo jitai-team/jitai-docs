@@ -1,10 +1,10 @@
 {
   "position": 3,
-  "label": "存储",
+  "label": "Storage",
   "className": "red",
   "link": {
     "type": "generated-index",
-    "title": "存储",
-    "description": "文件和对象存储管理API，用于处理上传、下载和存储操作。"
+    "slug": "reference/framework/JitStorage/storage",
+    "description": "File and object storage management APIs for handling uploads, downloads, and storage operations."
   }
 } 

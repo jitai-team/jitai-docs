@@ -1,7 +1,7 @@
 ---
 sidebar_position: -1
 ---
-# Guide
+# Extending Guide Index
 
 **Why do we need framework extensions?**
 

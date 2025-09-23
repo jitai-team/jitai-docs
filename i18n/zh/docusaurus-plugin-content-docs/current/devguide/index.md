@@ -4,7 +4,7 @@ sidebar_position: 0
 
 import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
-# 导读
+# 开发者指南导读
 准备好体验全新的应用开发方式了吗？从这里开始，你将学会使用AI时代的全新技术体系构建功能强大的企业级应用。
 
 开发指南提供从组织管理、应用开发基础到业务逻辑实现的完整学习路径，以及通过真实业务场景掌握复杂应用架构设计的最佳实践。

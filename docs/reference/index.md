@@ -15,7 +15,6 @@ sidebar_position: -1
 #### JitAi框架（AI智能）
 <div style={{columns: 2, columnGap: '2rem'}}>
 
-- [AI框架概述](./framework/JitAi/intro) - 框架总览
 - [AIAgent](./framework/JitAi/AIAgent) - 智能代理构建
 - [AI助理](./framework/JitAi/ai-assistant) - AI助手开发
 - [AI大模型](./framework/JitAi/ai-large-models) - 大语言模型集成
@@ -205,7 +204,7 @@ sidebar_position: -1
 
 </div>
 
-### [runtime-platform](./runtime-platform/) - 应用执行环境  
+### [运行平台](./runtime-platform/) - 应用执行环境  
 **适合人群**：系统架构师、平台开发者  
 **内容特点**：JAAP协议规范、运行容器机制、平台API
 
@@ -239,13 +238,4 @@ sidebar_position: -1
 
 </div>
 
-### [dev-tools](./dev-tools/programming-orchestration-dual-mode) - 可视化开发环境
-**适合人群**：应用开发者、IDE扩展开发者  
-**内容特点**：编程与编排双模式、可视化与代码开发切换
-
-#### 核心内容
-- [工具概述](./dev-tools/programming-orchestration-dual-mode) - IDEApp开发环境介绍
-- 编程与编排双模式设计理念
-- 可视化开发与全代码开发统一
-- Type Editor规范与扩展API
 

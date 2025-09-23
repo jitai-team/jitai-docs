@@ -3,7 +3,7 @@
   "position": 0,
   "collapsed": false,
   "link": {
-    "type": "generated-index",
+    "slug": "reference/framework",
     "description": "JitAiframework是基于JAAP的企业级应用framework，提供从基础设施到业务层组件的全栈技术底座。"
   }
 } 

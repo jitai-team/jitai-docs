@@ -3,7 +3,7 @@
   "position": 1,
   "collapsed": false,
   "link": {
-    "type": "generated-index",
+    "slug": "reference/runtime-platform",
     "description": "向开发者提供系统API，用于应用开发。"
   }
 } 

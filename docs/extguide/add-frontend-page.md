@@ -183,10 +183,10 @@ import { Jit } from 'jit';
 
 // 这是Type层的页面类，定义计时器页面的通用能力
 export class TimerPage extends Jit.BasePage {
-    private duration: number = 0;
-    private remaining: number = 0;
-    private timerId?: NodeJS.Timeout;
-    private status: 'idle' | 'running' | 'paused' | 'finished' = 'idle';
+    protected duration: number = 0;
+    protected remaining: number = 0;
+    protected timerId?: NodeJS.Timeout;
+    protected status: 'idle' | 'running' | 'paused' | 'finished' = 'idle';
 
     // Type定义的配置结构 - 所有实例都会遵循
     config?: {
@@ -203,7 +203,7 @@ export class TimerPage extends Jit.BasePage {
     }
 
     // 核心方法 - 供实例使用或重写
-    start() {
+    start(): void {
         if (this.status === 'finished') return;
 
         this.status = 'running';
@@ -228,7 +228,7 @@ export class TimerPage extends Jit.BasePage {
         }, 1000);
     }
 
-    pause() {
+    pause(): void {
         if (this.timerId) {
             clearInterval(this.timerId);
             this.status = 'paused';
@@ -236,7 +236,7 @@ export class TimerPage extends Jit.BasePage {
         }
     }
 
-    finish() {
+    finish(): void {
         this.pause();
         this.status = 'finished';
         this.publishEvent('TIMER_FINISHED');
@@ -244,11 +244,11 @@ export class TimerPage extends Jit.BasePage {
     }
 
     // 可被实例重写的钩子方法
-    onWarning() {
+    onWarning(): void {
         console.log('时间即将结束！');
     }
 
-    onTimeout() {
+    onTimeout(): void {
         console.log('时间到！');
     }
 
@@ -263,7 +263,18 @@ export class TimerPage extends Jit.BasePage {
         }
         return `${minutes}:${secs.toString().padStart(2, '0')}`;
     }
+
+    // 获取剩余时间和状态的方法（Render组件需要）
+    getRemaining(): number {
+        return this.remaining;
+    }
+
+    getStatus(): 'idle' | 'running' | 'paused' | 'finished' {
+        return this.status;
+    }
 }
+
+export default TimerPage;
 ```
 
 注意这里的设计思路：
@@ -277,9 +288,14 @@ export class TimerPage extends Jit.BasePage {
 ```tsx title="pages/TimerPageType/frontend/Render.tsx"
 import React, { useState, useEffect } from 'react';
 import { Progress, Button, Card, Typography } from 'antd';
-import { PlayCircleOutlined, PauseCircleOutlined, ReloadOutlined } from '@ant-design/icons';
+import { PlayCircleOutlined, PauseCircleOutlined } from '@ant-design/icons';
+import type { TimerPage } from './TimerPage';
 
-const TimerRender: React.FC<{ page: TimerPage }> = ({ page }) => {
+interface TimerRenderProps {
+    page: TimerPage;
+}
+
+const TimerRender: React.FC<TimerRenderProps> = ({ page }) => {
     const [remaining, setRemaining] = useState(page.getRemaining());
     const [percentage, setPercentage] = useState(100);
     const [status, setStatus] = useState(page.getStatus());
@@ -287,7 +303,7 @@ const TimerRender: React.FC<{ page: TimerPage }> = ({ page }) => {
     useEffect(() => {
         // 监听计时器事件
         const handlers = {
-            TIMER_TICK: (data) => {
+            TIMER_TICK: (data: { remaining: number; percentage: number }) => {
                 setRemaining(data.remaining);
                 setPercentage(data.percentage);
             },
@@ -314,7 +330,7 @@ const TimerRender: React.FC<{ page: TimerPage }> = ({ page }) => {
         };
     }, [page]);
 
-    const getThemeColor = () => {
+    const getThemeColor = (): string => {
         const theme = page.config?.theme;
         if (theme === 'exam') return '#ff4d4f';
         if (theme === 'game') return '#52c41a';
@@ -340,7 +356,10 @@ const TimerRender: React.FC<{ page: TimerPage }> = ({ page }) => {
                         type="primary"
                         size="large"
                         icon={<PlayCircleOutlined />}
-                        onClick={() => page.start()}
+                        onClick={() => {
+                            page.start();
+                            setStatus('running');
+                        }}
                     >
                         {status === 'idle' ? '开始' : '继续'}
                     </Button>
@@ -348,7 +367,10 @@ const TimerRender: React.FC<{ page: TimerPage }> = ({ page }) => {
                     <Button
                         size="large"
                         icon={<PauseCircleOutlined />}
-                        onClick={() => page.pause()}
+                        onClick={() => {
+                            page.pause();
+                            setStatus('paused');
+                        }}
                     >
                         暂停
                     </Button>
@@ -442,8 +464,9 @@ import { Jit } from 'jit';
 class ExamTimerPage extends Jit.TimerPage {
     private answers: Map<string, string> = new Map();
     private autoSaveTimer?: NodeJS.Timeout;
+    private examId: string = 'exam_001'; // 添加examId属性
 
-    constructor(options) {
+    constructor(options: any) {
         super(options);
 
         // 考试页面的特定配置
@@ -456,7 +479,7 @@ class ExamTimerPage extends Jit.TimerPage {
     }
 
     // 重写开始方法，添加自动保存
-    start() {
+    start(): void {
         super.start();
 
         // 每30秒自动保存答案
@@ -466,7 +489,7 @@ class ExamTimerPage extends Jit.TimerPage {
     }
 
     // 重写警告方法
-    onWarning() {
+    onWarning(): void {
         // 不只是console.log了
         this.app.showNotification({
             type: 'warning',
@@ -478,7 +501,7 @@ class ExamTimerPage extends Jit.TimerPage {
     }
 
     // 重写结束方法
-    onTimeout() {
+    onTimeout(): void {
         // 强制提交试卷
         this.submitExam();
 
@@ -486,17 +509,32 @@ class ExamTimerPage extends Jit.TimerPage {
         this.app.navigate('/exam/result');
     }
 
+    // 重写pause方法，停止自动保存
+    pause(): void {
+        super.pause();
+        if (this.autoSaveTimer) {
+            clearInterval(this.autoSaveTimer);
+            this.autoSaveTimer = undefined;
+        }
+    }
+
     // 考试特有的方法
-    saveAnswers() {
+    saveAnswers(): void {
         const data = Array.from(this.answers.entries());
         this.app.request('saveExamProgress', { answers: data });
     }
 
-    submitExam() {
+    submitExam(): void {
+        // 停止自动保存
+        if (this.autoSaveTimer) {
+            clearInterval(this.autoSaveTimer);
+            this.autoSaveTimer = undefined;
+        }
+
         this.saveAnswers();
         this.app.request('submitExam', {
             examId: this.examId,
-            duration: this.duration - this.remaining
+            duration: this.duration - this.remaining // 使用继承的protected属性
         });
     }
 }
@@ -529,87 +567,123 @@ export { ExamTimerPage as default, PageCls };
 
 ```tsx title="IDEAppFront/pages/TimerPageType/DefineEditor/Editor.tsx"
 import React, { useState } from 'react';
-import { Form, Input, InputNumber, Select, Switch, Divider } from 'antd';
+import { Form, Input, InputNumber, Select, Switch, Divider, Button } from 'antd';
 
-const TimerDefineEditor: React.FC = ({ onSave, onCancel }) => {
+interface TimerDefineEditorProps {
+    onSave: (data: any) => void;
+    onCancel: () => void;
+}
+
+const TimerDefineEditor: React.FC<TimerDefineEditorProps> = ({ onSave, onCancel }) => {
     const [formData, setFormData] = useState({
         name: '',
         title: '',
+        path: 'pages', // 添加默认路径
         duration: 3600,
         theme: 'work',
         autoStart: false
     });
 
+    const handleSave = () => {
+        // 验证必填字段
+        if (!formData.name || !formData.title) {
+            alert('请填写页面标识和标题');
+            return;
+        }
+        onSave(formData);
+    };
+
     return (
-        <Form layout="vertical">
-            <Divider>基本信息</Divider>
+        <div>
+            <Form layout="vertical">
+                <Divider>基本信息</Divider>
 
-            <Form.Item label="页面标识" required>
-                <Input
-                    placeholder="如：mathExamTimer"
-                    value={formData.name}
-                    onChange={e => setFormData({...formData, name: e.target.value})}
-                />
-            </Form.Item>
+                <Form.Item label="页面标识" required>
+                    <Input
+                        placeholder="如：mathExamTimer"
+                        value={formData.name}
+                        onChange={e => setFormData({...formData, name: e.target.value})}
+                    />
+                </Form.Item>
 
-            <Form.Item label="页面标题" required>
-                <Input
-                    placeholder="如：数学考试倒计时"
-                    value={formData.title}
-                    onChange={e => setFormData({...formData, title: e.target.value})}
-                />
-            </Form.Item>
+                <Form.Item label="页面标题" required>
+                    <Input
+                        placeholder="如：数学考试倒计时"
+                        value={formData.title}
+                        onChange={e => setFormData({...formData, title: e.target.value})}
+                    />
+                </Form.Item>
 
-            <Divider>计时器配置</Divider>
+                <Divider>计时器配置</Divider>
 
-            <Form.Item label="计时时长（秒）">
-                <InputNumber
-                    min={1}
-                    value={formData.duration}
-                    onChange={v => setFormData({...formData, duration: v})}
-                    style={{ width: '100%' }}
-                />
-                <div style={{ color: '#999', fontSize: 12, marginTop: 4 }}>
-                    当前设置：{Math.floor(formData.duration / 60)} 分钟
-                </div>
-            </Form.Item>
+                <Form.Item label="计时时长（秒）">
+                    <InputNumber
+                        min={1}
+                        value={formData.duration}
+                        onChange={v => setFormData({...formData, duration: v || 3600})}
+                        style={{ width: '100%' }}
+                    />
+                    <div style={{ color: '#999', fontSize: 12, marginTop: 4 }}>
+                        当前设置：{Math.floor(formData.duration / 60)} 分钟
+                    </div>
+                </Form.Item>
 
-            <Form.Item label="主题风格">
-                <Select
-                    value={formData.theme}
-                    onChange={v => setFormData({...formData, theme: v})}
-                >
-                    <Select.Option value="exam">考试（红色警示）</Select.Option>
-                    <Select.Option value="game">游戏（绿色活力）</Select.Option>
-                    <Select.Option value="work">工作（蓝色专业）</Select.Option>
-                </Select>
-            </Form.Item>
+                <Form.Item label="主题风格">
+                    <Select
+                        value={formData.theme}
+                        onChange={v => setFormData({...formData, theme: v})}
+                    >
+                        <Select.Option value="exam">考试（红色警示）</Select.Option>
+                        <Select.Option value="game">游戏（绿色活力）</Select.Option>
+                        <Select.Option value="work">工作（蓝色专业）</Select.Option>
+                    </Select>
+                </Form.Item>
 
-            <Form.Item label="自动开始">
-                <Switch
-                    checked={formData.autoStart}
-                    onChange={v => setFormData({...formData, autoStart: v})}
-                />
-                <div style={{ color: '#999', fontSize: 12, marginTop: 4 }}>
-                    页面加载后是否自动开始计时
-                </div>
-            </Form.Item>
-        </Form>
+                <Form.Item label="自动开始">
+                    <Switch
+                        checked={formData.autoStart}
+                        onChange={v => setFormData({...formData, autoStart: v})}
+                    />
+                    <div style={{ color: '#999', fontSize: 12, marginTop: 4 }}>
+                        页面加载后是否自动开始计时
+                    </div>
+                </Form.Item>
+            </Form>
+
+            <div style={{ marginTop: 24, textAlign: 'right' }}>
+                <Button onClick={onCancel} style={{ marginRight: 8 }}>取消</Button>
+                <Button type="primary" onClick={handleSave}>确定</Button>
+            </div>
+        </div>
     );
 };
+
+export default TimerDefineEditor;
 ```
 
 ### API - 生成正确的代码
 
 ```typescript title="IDEAppFront/pages/TimerPageType/Api/create.ts"
-export default async function create(formData) {
-    const { name, title, duration, theme, autoStart } = formData;
+import { getRuntimeApp } from 'jit';
 
-    // 生成页面代码
-    const code = `
-import { TimerPage } from '../TimerPageType/frontend/TimerPage';
+interface CreateFormData {
+    name: string;
+    title: string;
+    path: string;
+    duration: number;
+    theme: string;
+    autoStart: boolean;
+}
 
-class ${name}Page extends TimerPage {
+export default async function create(formData: CreateFormData) {
+    const app = getRuntimeApp();
+    const { name, title, path, duration, theme, autoStart } = formData;
+    const fullName = `${path}.${name}`;
+
+    // 生成页面代码 - 注意使用Jit.TimerPage而不是import
+    const code = `import { Jit } from 'jit';
+
+class ${name}Page extends Jit.TimerPage {
     constructor(options) {
         super(options);
         this.config = {
@@ -624,62 +698,74 @@ const PageCls = ${name}Page;
 export { ${name}Page as default, PageCls };
 `;
 
+    // 生成e.json配置
+    const eJsonContent = {
+        title,
+        type: 'pages.TimerPageType',
+        frontBundleEntry: './index.ts'
+    };
+
     // 保存到文件系统
     await app.saveElement([{
-        ePath: `pages/${name}/e.json`,
-        define: {
-            title,
-            type: 'pages.TimerPageType',
-            frontBundleEntry: './index.ts'
-        },
+        ePath: `${fullName.split('.').join('/')}/e.json`,
+        define: eJsonContent,
         resources: {
-            'index.ts': code
+            'index.ts': code,
+            'e.json': JSON.stringify(eJsonContent, null, 2)
         }
     }]);
+
+    return {
+        fullName,
+        title,
+        name,
+        type: 'pages.TimerPageType'
+    };
 }
 ```
 
 ### Editor - 让修改更方便
 
-编辑器让开发者可以进一步定制生成的代码，添加业务逻辑。
+编辑器是IDE中最复杂的部分，它提供了完整的源码编辑能力。开发者可以根据自己页面Type的特点设计专门的编辑界面。
+
+#### 编辑器核心API
+
+JitAi提供了两个核心API来支持编辑器开发：
+
+**1. 获取源码**
+```typescript
+// 获取元素的所有源码文件
+const resources = await app.services.ElementSvc.getElementResource(
+    fullName,    // 元素完整名称
+    [],          // 忽略的文件列表
+    [],          // 指定获取的文件列表（空数组表示获取所有）
+    true         // 是否需要扩展信息
+);
+// 返回格式：{ 'index.ts': '文件内容', 'config.json': '配置内容', ... }
+```
+
+**2. 保存源码**
+```typescript
+// 保存修改后的源码文件
+await app.saveElementResource(
+    fullName,      // 元素完整名称
+    elementFiles   // 文件内容对象：{ '文件名': '文件内容' }
+);
+```
+
+#### 编辑器设计建议
+
+- **多文件支持**：使用Tabs组件支持多个文件的编辑
+- **语法高亮**：根据文件扩展名选择合适的语言模式
+- **保存检测**：比较原始内容和当前内容，提示未保存的变更
+- **错误处理**：优雅处理加载和保存过程中的错误
+- **用户体验**：提供刷新、撤销等常用功能
+
+具体的编辑器界面设计完全由开发者根据页面Type的特点自主决定。
 
 ## 更多应用场景
 
 除了计时器页面，JitAi的页面Type机制还可以支持许多其他场景：
-
-### 技术栈支持类型
-
-| Type名称 | 适用场景 | 核心特性 | 自定义Loader |
-|---------|---------|---------|-------------|
-| **VueType** | Vue团队项目 | 在React中嵌入Vue | ✅ 传递DOM元素 |
-| **NormalType** | 纯React开发 | 简化加载流程 | ✅ 简化HOC |
-| **GridPageType** | 低代码开发 | 拖拽式配置 | ❌ 使用Meta loader |
-| **MarkdownType** | 文档展示 | Markdown渲染 | ❌ 使用Meta loader |
-
-### 业务场景特化类型
-
-```typescript
-// 数据大屏页面
-class DashboardPage extends Jit.BasePage {
-    charts: ChartConfig[];
-    refreshInterval: number;
-    dataSource: DataSource;
-}
-
-// 表单页面
-class FormPage extends Jit.BasePage {
-    fields: FormField[];
-    validation: ValidationRules;
-    submitHandler: SubmitFunction;
-}
-
-// 游戏页面
-class GamePage extends Jit.BasePage {
-    gameEngine: GameEngine;
-    renderLoop: AnimationLoop;
-    inputHandler: InputController;
-}
-```
 
 ### 特殊需求类型
 
@@ -687,73 +773,3 @@ class GamePage extends Jit.BasePage {
 - **实时协作页面**：集成WebSocket或WebRTC
 - **移动页面**：针对移动端优化的交互
 - **打印页面**：专门用于打印输出
-
-## 系统设计的巧思
-
-让我们回过头来，欣赏一下JitAi设计的巧妙之处。
-
-### 1. Loader机制 - 灵活性的基石
-
-还记得开头的loader查找链吗？这个设计让：
-- **VueType** 可以改变渲染方式，在React中嵌入Vue
-- **NormalType** 可以简化加载流程，去除不需要的功能
-- **GridPageType** 可以注入配置解析逻辑
-
-每个Type都可以定制自己的加载方式，而不影响其他Type。
-
-### 2. 三层架构 - 关注点分离
-
-```
-Meta元素：我提供基础设施（BasePage、生命周期、事件系统）
-Type元素：我定义页面类型（计时器应该有哪些功能）
-实例元素：我实现具体业务（这是一个数学考试计时器）
-```
-
-每一层都有明确的职责，修改一层不会影响其他层。
-
-### 3. 事件驱动 - 解耦的艺术
-
-```typescript
-// 页面逻辑不关心UI如何展示
-page.publishEvent('TIMER_TICK', { remaining: 59 });
-
-// UI不关心逻辑如何计算
-page.on('TIMER_TICK', (data) => {
-    updateDisplay(data.remaining);
-});
-```
-
-通过事件，逻辑和展示完全解耦，可以独立演化。
-
-### 4. 配置与代码分离
-
-```typescript
-// Type定义配置结构
-config?: {
-    duration: number;
-    theme: string;
-}
-
-// 实例提供配置数据
-this.config = {
-    duration: 7200,
-    theme: 'exam'
-}
-
-// 渲染根据配置展示
-<div className={config.theme}>
-```
-
-配置驱动让同一个Type可以适应不同场景。
-
-配置驱动让同一个Type可以适应不同场景。
-
-通过开发计时器页面Type，我们见证了JitAi设计的精妙：
-- **Loader机制**让不同技术栈和谐共存
-- **动态继承**让代码组织更加灵活
-- **事件系统**让逻辑和UI优雅分离
-- **三层架构**让复杂系统井然有序
-
-现在，你的TimerPage已经成为了JitAi生态的一部分，其他开发者可以通过`Jit.TimerPage`使用它，就像使用内置的`Jit.BasePage`一样自然。
-
-**好的框架不是限制你能做什么，而是帮助你更容易地做任何事。**

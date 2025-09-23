@@ -8,10 +8,6 @@ slug: create-ai-llm
 
 大模型厂商元素正是JitAi平台为解决这一问题而设计的统一AI接入方案。无论您要构建智能[AI知识库](../knowledge-base/create-knowledge-elements)、开发AI助理、还是创建自主决策的Agent，它都能提供稳定可靠的大模型服务支撑。
 
-![效果图](./img/1/effect-diagram.gif)
-
-以上图为例，使用大模型提取快递信息中的姓名、手机号，地址。
-
 ## 主流大模型厂商支持列表 {#mainstream-llm-vendor-support-list}
 *   Anthropic
 *   阿里云百炼
@@ -22,7 +18,6 @@ slug: create-ai-llm
 *   OpenAI兼容
 
 ## 创建大模型厂商元素 {#creating-llm-vendor-elements}
-## 大模型厂商元素的创建 {#create-llm-vendor-element}
 ![大模型厂商创建](./img/1/large-model-creation.png)
 
 在元素目录树上点击搜索框右边的`+`按钮，在弹出的菜单中选择`AI大模型`，根据实际情况再选择对应的大模型厂商，选择完成后会弹出如下弹窗。

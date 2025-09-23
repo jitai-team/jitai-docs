@@ -1,8 +1,9 @@
 {
-  "label": "框架扩展指南",
+  "label": "Extending",
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "扩展JitAi框架能力，包括新增Type元素、开发可视化编辑器、构建自定义开发工具"
+    "slug": "extguide",
+    "description": "Extending JitAi framework capabilities, including adding new Type elements, developing visual editors."
   }
 } 

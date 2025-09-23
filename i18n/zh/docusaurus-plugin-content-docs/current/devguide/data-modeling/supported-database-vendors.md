@@ -20,7 +20,7 @@ slug: supported-database-vendors
 - 通用 OLTP 业务：MySQL 或 PostgreSQL（社区与云托管方案齐全，生态成熟）。
 - 既有存量系统：Oracle 或 SQL Server（与存量库集成、渐进迁移）。
 - 国产化/信创：达梦（DM）优先；
-- 其它数据库可自定义元素类型接入，参考： [新增后端Type元素](../../extguide/backend/add-backend-type-elements) | [开发后端元素可视化编辑器](../../extguide/backend/develop-backend-element-visual-editor)。
+- 其它数据库可自定义元素类型接入，参考： [新增后端Type元素](../../extguide/extend-element-family-classes) | [开发后端元素可视化编辑器](../../extguide/develop-backend-element-visual-editor)。
 
 ## 与云厂商的兼容性说明 {#cloud-vendor-compatibility}
 平台采用标准驱动方式连接数据库，常见云数据库产品（示例）均可直接以“自建实例”的方式接入：

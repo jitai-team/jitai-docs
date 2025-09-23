@@ -1,9 +1,9 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 slug: add-frontend-components
 ---
 
-# 新增前端组件
+# 扩展自己的UI组件Type元素
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -390,4 +390,4 @@ static getEventList(): Array<{
 
 怎样像官方组件一样，在可视化界面中配置计数器组件的参数呢？
 
-请参考 [开发前端组件元素的可视化编辑器](./develop-frontend-component-visual-editor)。
+请参考 [为UI组件Type元素开发可视化编辑器](./develop-frontend-component-visual-editor)。

@@ -1,13 +1,13 @@
 ---
-sidebar_position: 2
+sidebar_position: 4
 slug: develop-frontend-component-visual-editor
 ---
 
-# 开发前端组件元素的可视化编辑器
+# 为UI组件Type元素开发可视化编辑器
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-当我们完成了[新增前端组件](./add-frontend-components)后，组件虽然可以在页面中使用，但配置参数需要手动修改`scheme.json`文件，这对不擅长编码的业务专家来说并不友好。
+当我们完成了[扩展自己的UI组件Type元素](./add-frontend-components)后，组件虽然可以在页面中使用，但配置参数需要手动修改`scheme.json`文件，这对不擅长编码的业务专家来说并不友好。
 
 本文将介绍如何为计数器组件开发可视化配置编辑器，实现在JitAi开发工具中像官方组件一样的图形化配置体验。
 

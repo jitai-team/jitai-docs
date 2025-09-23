@@ -1,36 +1,37 @@
 ---
 sidebar_position: 1
-slug: add-backend-type-elements
+slug: extend-element-family-classes
 ---
 
-# 新增后端Type元素
-当JitAi开发框架中现有的Type元素无法满足特定业务需求时，开发者可以通过两种方式扩展功能：
-1. 复用现有Meta，创建新的Type元素：适合在已有族类内扩展功能。比如在消息服务框架下增加微信企业号通知、邮件通知，在支付服务框架下集成PayPal支付，在存储服务框架下对接腾讯云COS。以上都是指向已有Meta的新Type元素。
-2. 创建全新元素族类：适合全新业务领域的扩展，自成体系的新元素族类。比如IoT集成，需要支持MQTT、Modbus等多种不同的协议。
+# Extend Your Own Element Families
 
-本文将采用方式2，通过实战案例，一步步指导开发者完成智能客服和钉钉机器人的集成。
+When existing Type elements in the JitAi development framework cannot meet specific business requirements, developers can extend functionality through two approaches:
+1. Reuse existing Meta and create new Type elements: Suitable for extending functionality within existing families. For example, adding email notifications under the messaging service framework, or integrating PayPal payments under the payment service framework. These are all new Type elements pointing to existing Meta.
+2. Create entirely new element families: Suitable for extensions in completely new business domains, forming self-contained new element families. For example, IoT integration that needs to support various protocols like MQTT, Modbus, etc.
 
-:::tip 你已经完成入门教程了吗？
-如果你还没有完成[桌面版安装](../../tutorial/download-installation)和[入门教程导读](../../tutorial)，请先完成这些入门教程。
+This article will adopt approach 2, using practical examples to guide developers step by step through integrating intelligent customer service with DingTalk robots.
+
+:::tip Have you completed the getting started tutorials?
+If you haven't completed the [Desktop Editon Installation](../tutorial/download-installation) and [Getting Started](../tutorial), please complete these tutorials first.
 :::
 
-## 实战指南：将智能客服集成到钉钉机器人
-我们将`钉钉机器人`放到`IM机器人`这个顶级分类中，因此`IM机器人`就是Meta，`钉钉机器人`就是该分类下的Type之一，微信、企微、飞书等各类IM机器人都可以成为该分类下的新Type。
+## Integrating Intelligent Customer Service with DingTalk Robots
+We place `DingTalk Robot` under the top-level category `IM Robot`, so `IM Robot` is the Meta, and `DingTalk Robot` is one of the Types under this category. WeChat, Enterprise WeChat, Feishu, and other IM robots can all become new Types under this category.
 
-### 效果预览
-完成后的钉钉机器人效果：用户在钉钉群中@机器人发送问题，机器人会调用配置的智能客服Agent，实现流式回复。
+### Effect Preview
+The final DingTalk robot effect: Users @mention the robot in DingTalk groups to send questions, and the robot calls the configured intelligent customer service Agent to provide streaming replies.
 
-![钉钉机器人最终效果](./img/jitairobot/final-effect-dingtalk.png)
+![DingTalk Robot Final Effect](./img/jitairobot/final-effect-dingtalk.png)
 
-### 元素族类设计
-| 元素层次 | fullName | 主要职责 |
+### Element Family Design
+| Element Level | fullName | Main Responsibilities |
 |---------|----------|----------|
-| **Meta元素** | `imRobots.Meta` | 定义IM机器人族类，统一管理各平台机器人 |
-| **Type元素** | `imRobots.dingTalkStreamType` | 封装钉钉SDK，处理消息收发和Stream连接等技术复杂度，开发配置项 |
-| **实例元素** | `imRobots.dingTalkDemo` | 配置具体的钉钉应用参数和智能体 |
+| **Meta Element** | `imRobots.Meta` | Define IM robot family, unified management of robots across platforms |
+| **Type Element** | `imRobots.dingTalkStreamType` | Encapsulate DingTalk SDK, handle message sending/receiving and Stream connection technical complexity, develop configuration options |
+| **Instance Element** | `imRobots.dingTalkDemo` | Configure specific DingTalk application parameters and intelligent agents |
 
-#### 目录结构
-```shell title="imRobots元素族类在App中的子目录结构"
+#### Directory Structure
+```shell title="imRobots element family subdirectory structure in App"
 ├── imRobots/
 │   ├── Meta/
 │   │   ├── e.json
@@ -49,16 +50,16 @@ slug: add-backend-type-elements
 └── ...
 ```
 
-:::tip 第三方依赖
-需要在App根目录下的`requirements.txt`中添加依赖：
+:::tip Third-party Dependencies
+Add dependencies to `requirements.txt` in the App root directory:
 ```text title="requirements.txt"
 dingtalk-stream==0.24.2
 python-socks==2.7.1
 ```
 :::
 
-### 元素族类实现
-#### Meta元素
+### Element Family Implementation
+#### Meta Element
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -68,8 +69,8 @@ import TabItem from '@theme/TabItem';
 ```json title="imRobots/Meta/e.json"
 {
   "backendBundleEntry": ".",
-  "description": "IM机器人元素族类",
-  "title": "IM机器人",
+  "description": "IM Robot element family",
+  "title": "IM Robot",
   "type": ""
 }
 ```
@@ -84,15 +85,15 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
-#### Type元素
+#### Type Element
 <Tabs>
   <TabItem value="ejson" label="e.json">
 
 ```json title="imRobots/dingTalkStreamType/e.json"
 {
   "backendBundleEntry": ".",
-  "description": "封装钉钉机器人对接的细节，包括消息发送、接收、处理等，将配置参数开放",
-  "title": "钉钉机器人",
+  "description": "Encapsulate DingTalk robot integration details, including message sending, receiving, processing, etc., exposing configuration parameters",
+  "title": "DingTalk Robot",
   "type": "imRobots.Meta"
 }
 ```
@@ -131,18 +132,18 @@ class Loader(object):
         return self.start_client(clientId, clientSecret, config)
 
     def start_client(self, client_id: str, client_secret: str, config: dict):
-        """c
-        启动钉钉流式客户端
+        """
+        Start DingTalk streaming client
 
         Args:
-            client_id: 钉钉应用的 Client ID
-            client_secret: 钉钉应用的 Client Secret
-            logger: 日志记录器
+            client_id: DingTalk application Client ID
+            client_secret: DingTalk application Client Secret
+            logger: Logger instance
         """
-        # 创建消息处理器
+        # Create message handler
         message_handler = TextHandler(self.nodes[0], config)
 
-        # 创建并启动客户端管理器
+        # Create and start client manager
         client_manager = ClientManager(client_id, client_secret)
         client_manager.start(message_handler)
 
@@ -169,21 +170,21 @@ class TextHandler(dingtalk_stream.ChatbotHandler):
         self.config = config
 
     def _create_initial_card(self, question: str) -> dict:
-        """创建初始思考中的卡片"""
+        """Create initial thinking card"""
         return {
             "config": {"autoLayout": True, "enableForward": True},
             "header": {"title": {"type": "text", "text": question}},
             "contents": [
                 {
                     "type": "markdown",
-                    "text": "[思考]正在分析您的问题，请稍候...",
+                    "text": "[Thinking] Analyzing your question, please wait...",
                     "id": f"thinking_{int(time.time() * 1000)}",
                 }
             ],
         }
 
     def _create_streaming_card(self, content: str, question: str) -> dict:
-        """创建流式更新时的卡片"""
+        """Create streaming update card"""
         current_time = int(time.time() * 1000)
 
         return {
@@ -193,7 +194,7 @@ class TextHandler(dingtalk_stream.ChatbotHandler):
         }
 
     def _create_final_card(self, response: str, incoming_message: dingtalk_stream.ChatbotMessage, text: str) -> dict:
-        """创建最终带按钮的卡片"""
+        """Create final card with buttons"""
         return {
             "config": {"autoLayout": True, "enableForward": True},
             "header": {"title": {"type": "text", "text": text}},
@@ -207,7 +208,7 @@ class TextHandler(dingtalk_stream.ChatbotHandler):
                             "type": "button",
                             "label": {
                                 "type": "text",
-                                "text": "😄 非常有帮助",
+                                "text": "😄 Very Helpful",
                                 "id": f"text_helpful_{int(time.time() * 1000)}",
                             },
                             "actionType": "request",
@@ -228,7 +229,7 @@ class TextHandler(dingtalk_stream.ChatbotHandler):
                             "type": "button",
                             "label": {
                                 "type": "text",
-                                "text": "😊 有帮助",
+                                "text": "😊 Helpful",
                                 "id": f"text_helpful_{int(time.time() * 1000)}",
                             },
                             "actionType": "request",
@@ -249,7 +250,7 @@ class TextHandler(dingtalk_stream.ChatbotHandler):
                             "type": "button",
                             "label": {
                                 "type": "text",
-                                "text": "🙂 帮助不大",
+                                "text": "🙂 Somewhat Helpful",
                                 "id": f"text_unhelpful_{int(time.time() * 1000)}",
                             },
                             "actionType": "request",
@@ -270,7 +271,7 @@ class TextHandler(dingtalk_stream.ChatbotHandler):
                             "type": "button",
                             "label": {
                                 "type": "text",
-                                "text": "😅 没帮助",
+                                "text": "😅 Not Helpful",
                                 "id": f"text_unhelpful_{int(time.time() * 1000)}",
                             },
                             "actionType": "request",
@@ -295,16 +296,16 @@ class TextHandler(dingtalk_stream.ChatbotHandler):
 
     async def process(self, callback: dingtalk_stream.CallbackMessage):
         """
-        处理钉钉消息
+        Process DingTalk messages
         """
         incoming_message = dingtalk_stream.ChatbotMessage.from_dict(callback.data)
         senderStuffId = incoming_message.sender_staff_id
         text = incoming_message.text.content.strip()
-        # 发送初始卡片
+        # Send initial card
         initial_card_data = self._create_initial_card(text)
         card_biz_id = self.reply_card(card_data=initial_card_data, incoming_message=incoming_message, at_sender=True)
 
-        # 流式回调
+        # Streaming callback
         def create_stream_callback(card_biz_id: str, question: str) -> callable:
             full_response = []
             update_count = 0
@@ -321,11 +322,11 @@ class TextHandler(dingtalk_stream.ChatbotHandler):
                         pending_updates += 1
                         current_time = time.time()
 
-                        # 检查是否需要更新卡片
+                        # Check if card update is needed
                         should_update = (
-                            # 更新次数限制
-                            update_count < MAX_UPDATES - 1  # 预留最后一次更新
-                            # 时间间隔或消息数量条件
+                            # Update count limit
+                            update_count < MAX_UPDATES - 1  # Reserve last update
+                            # Time interval or message count conditions
                             and (current_time - last_update_time >= 2 or pending_updates >= 5)
                         )
 
@@ -349,7 +350,7 @@ class TextHandler(dingtalk_stream.ChatbotHandler):
                 stream_callback=create_stream_callback(card_biz_id, text),
             )
 
-        # 更新最终卡片
+        # Update final card
         final_card_data = self._create_final_card(response, incoming_message, text)
         self.update_card(card_biz_id, final_card_data)
         return AckMessage.STATUS_OK, "OK"
@@ -369,11 +370,11 @@ from jit.commons.utils.logger import log as logger
 class ClientManager:
     def __init__(self, client_id: str, client_secret: str):
         """
-        初始化 ClientManager
+        Initialize ClientManager
 
         Args:
-            client_id: 钉钉应用的 Client ID
-            client_secret: 钉钉应用的 Client Secret
+            client_id: DingTalk application Client ID
+            client_secret: DingTalk application Client Secret
         """
         self.client_id = client_id
         self.client_secret = client_secret
@@ -384,46 +385,46 @@ class ClientManager:
 
     def start(self, message_handler):
         """
-        启动客户端并在单独的线程中运行
+        Start client and run in separate thread
 
         Args:
-            message_handler: 消息处理器实例
+            message_handler: Message handler instance
         """
         if self._thread and self._thread.is_alive():
             logger.warning("Client is already running")
             return
 
-        # 创建凭证和客户端
+        # Create credentials and client
         credential = dingtalk_stream.Credential(self.client_id, self.client_secret)
         self.client = dingtalk_stream.DingTalkStreamClient(credential)
 
-        # 注册消息处理器
+        # Register message handler
         self.client.register_callback_handler(dingtalk_stream.chatbot.ChatbotMessage.TOPIC, message_handler)
 
-        # 创建并启动线程
+        # Create and start thread
         self._thread = threading.Thread(target=self._run_client, daemon=True)
         self._thread.start()
         logger.info("Client started in background thread")
 
     def _run_client(self):
-        """在线程中运行客户端"""
+        """Run client in thread"""
         try:
-            # 尝试获取当前事件循环
+            # Try to get current event loop
             try:
                 loop = asyncio.get_running_loop()
                 logger.info("Found existing event loop")
             except RuntimeError:
-                # 如果没有运行中的事件循环，创建一个新的
+                # If no running event loop, create a new one
                 loop = asyncio.new_event_loop()
                 asyncio.set_event_loop(loop)
                 logger.info("Created new event loop for client thread")
 
             self._loop = loop
 
-            # 设置超时时间（秒）
-            timeout = 300  # 5分钟超时
+            # Set timeout (seconds)
+            timeout = 300  # 5 minute timeout
 
-            # 如果当前事件循环正在运行，使用asyncio.run_coroutine_threadsafe
+            # If current event loop is running, use asyncio.run_coroutine_threadsafe
             if loop.is_running():
                 logger.info("Using run_coroutine_threadsafe for running event loop")
                 future = asyncio.run_coroutine_threadsafe(self.client.start_forever(), loop)
@@ -436,7 +437,7 @@ class ClientManager:
                     logger.exception(f"Error occurred while running client: {str(e)}")
                     return
             else:
-                # 如果事件循环没有运行，使用run_until_complete
+                # If event loop is not running, use run_until_complete
                 logger.info("Using run_until_complete for new event loop")
                 try:
                     loop.run_until_complete(asyncio.wait_for(self.client.start_forever(), timeout=timeout))
@@ -451,7 +452,7 @@ class ClientManager:
             logger.exception(f"Error in client thread: {str(e)}")
         finally:
             try:
-                # 清理事件循环
+                # Clean up event loop
                 if self._loop and self._loop.is_running():
                     logger.info("Stopping event loop")
                     self._loop.stop()
@@ -465,25 +466,25 @@ class ClientManager:
                 logger.info("Client thread finished")
 
     def stop(self):
-        """停止客户端"""
+        """Stop client"""
         if not self._thread or not self._thread.is_alive():
             logger.warning("Client is not running")
             return
 
         try:
             if self.client:
-                # 在事件循环中停止客户端
+                # Stop client in event loop
                 if self._loop and self._loop.is_running():
                     self._loop.call_soon_threadsafe(self.client.stop)
                 else:
                     self.client.stop()
-            self._stop_event.wait(timeout=5)  # 等待线程结束，最多等待5秒
+            self._stop_event.wait(timeout=5)  # Wait for thread to end, max 5 seconds
             logger.info("Client stopped")
         except Exception as e:
             logger.error(f"Error stopping client: {e}")
 
     def is_running(self) -> bool:
-        """检查客户端是否正在运行"""
+        """Check if client is running"""
         return self._thread is not None and self._thread.is_alive()
 
 ```
@@ -500,7 +501,7 @@ __all__ = ["Loader"]
   </TabItem>
 </Tabs>
 
-#### 实例元素
+#### Instance Element
 <Tabs>
   <TabItem value="ejson" label="e.json">
 
@@ -509,8 +510,8 @@ __all__ = ["Loader"]
   "backendBundleEntry": ".",
   "backendLoadTime": "afterAppInit",
   "type": "imRobots.dingTalkStreamType",
-  "title": "钉钉智能客服",
-  "description": "JitAi智能客服钉钉机器人实例，配置具体参数"
+  "title": "DingTalk Intelligent Customer Service",
+  "description": "JitAi intelligent customer service DingTalk robot instance, configure specific parameters"
 }
 ```
 
@@ -525,57 +526,57 @@ __all__ = ["Loader"]
 }
 ```
 
-:::tip 配置说明
-1. `agent`: 智能客服AIAgent的fullName，如`aiagents.ragTest`
-2. `clientId`/`clientSecret`: 需要从钉钉开发者平台获取，按以下步骤操作：
+:::tip Configuration Instructions
+1. `agent`: The fullName of the intelligent customer service AIAgent, such as `aiagents.ragTest`
+2. `clientId`/`clientSecret`: Need to be obtained from DingTalk Developer Platform, follow these steps:
 
-**钉钉账号与企业准备**
-1. 注册并登录钉钉账号
-2. 创建属于自己的企业
+**DingTalk Account and Enterprise Preparation**
+1. Register and log in to DingTalk account
+2. Create your own enterprise
 
-**钉钉开发平台应用创建**
-1. 登录[钉钉开发者平台](https://open-dev.dingtalk.com)
-2. 进入`应用开发` → `企业内部应用` → `钉钉应用`
-3. 点击`创建应用`，设置应用名称、应用描述
-4. 进入`应用能力` → `添加应用能力`，找到`机器人`并添加
-5. 机器人配置中的`消息接收模式`选择`Stream模式`
-6. 发布应用
-7. 创建一个企业内部群，并添加刚才创建的机器人
-8. 进入`基础信息` → `凭证与基础信息` → `应用凭证`，获取`Client ID`和`Client Secret`
+**DingTalk Developer Platform Application Creation**
+1. Log in to [DingTalk Developer Platform](https://open-dev.dingtalk.com)
+2. Go to `Application Development` → `Enterprise Internal Applications` → `DingTalk Applications`
+3. Click `Create Application`, set application name and description
+4. Go to `Application Capabilities` → `Add Application Capabilities`, find `Robot` and add it
+5. In robot configuration, select `Stream Mode` for `Message Receiving Mode`
+6. Publish the application
+7. Create an enterprise internal group and add the robot you just created
+8. Go to `Basic Information` → `Credentials and Basic Information` → `Application Credentials` to get `Client ID` and `Client Secret`
 :::
 
   </TabItem>
   <TabItem value="initpy" label="__init__.py">
 
 ```python title="imRobots/dingTalkDemo/__init__.py"
-# 实例元素通常只需要空文件
+# Instance elements usually only need empty files
 ```
   </TabItem>
 </Tabs>
 
-### 测试
-#### 使新元素族类生效
-1. **清理缓存**：删除应用目录中的`dist`目录
-2. **重启服务**：重启桌面端
-3. **触发打包**：访问应用页面，系统自动重新打包
-4. **检查日志**：观察日志，确认元素加载成功，与钉钉开发者平台的长连接是否建立成功
+### Testing
+#### Making New Element Family Effective
+1. **Clear Cache**: Delete the `dist` directory in the application directory
+2. **Restart Service**: Restart the desktop application
+3. **Trigger Packaging**: Access the application page, system automatically repackages
+4. **Check Logs**: Observe logs to confirm element loading success and whether long connection with DingTalk Developer Platform is established successfully
 
-#### 功能测试
-1. 在钉钉群中@机器人发送消息
-2. 机器人应该回复"思考中"卡片
-3. AI处理完成后更新为最终回复卡片
+#### Functional Testing
+1. @mention the robot in DingTalk group to send messages
+2. Robot should reply with "Thinking" card
+3. After AI processing completes, update to final reply card
 
-## 总结回顾
-通过钉钉机器人这个实战案例，我们完整学习了Type元素扩展开发的全流程：
+## Summary and Review
+Through this DingTalk robot practical case, we have completely learned the full process of Type element extension development:
 
-1. **设计决策**：如何选择扩展方式（复用vs新建）
-2. **架构设计**：Meta、Type、实例三层架构的职责划分
-3. **技术实现封装**：第三方SDK集成、异步处理、参数配置等技术复杂度统统封装到Type元素中
-4. **实例元素**：实例元素负责配置具体运行参数
+1. **Design Decisions**: How to choose extension approach (reuse vs new creation)
+2. **Architecture Design**: Responsibility division of Meta, Type, and Instance three-layer architecture
+3. **Technical Implementation Encapsulation**: Third-party SDK integration, asynchronous processing, parameter configuration and other technical complexities are all encapsulated in Type elements
+4. **Instance Elements**: Instance elements are responsible for configuring specific runtime parameters
 
-开发者应发散思维，将上述思路应用到其他业务场景中。
+Developers should think divergently and apply the above approach to other business scenarios.
 
-## 进阶思考
-手动创建实例元素目录虽然可行，但却繁琐。怎样像官方元素一样，在可视化界面中一键添加和配置新的钉钉机器人实例元素呢？
+## Advanced Thinking
+While manually creating instance element directories is feasible, it is cumbersome. How can we add and configure new DingTalk robot instance elements with one click in the visual interface like official elements?
 
-请参考 [开发后端元素可视化编辑器](./develop-backend-element-visual-editor)。
+Please refer to [Develop Visual Editors for Backend Type Elements](./develop-backend-element-visual-editor).

@@ -83,30 +83,6 @@
     "message": "真实场景下各类平台功能的应用和开发指南。",
     "description": "The generated-index page description for category Advanced Guide in sidebar devguideSidebar"
   },
-  "sidebar.extguideSidebar.category.Frontend": {
-    "message": "前端",
-    "description": "The label for category Frontend in sidebar extguideSidebar"
-  },
-  "sidebar.extguideSidebar.category.Frontend.link.generated-index.description": {
-    "message": "扩展前端Type元素，开发前端可视化编辑器，创建自定义UI组件和交互功能。",
-    "description": "The generated-index page description for category Frontend in sidebar extguideSidebar"
-  },
-  "sidebar.extguideSidebar.category.Backend": {
-    "message": "后端",
-    "description": "The label for category Backend in sidebar extguideSidebar"
-  },
-  "sidebar.extguideSidebar.category.Backend.link.generated-index.description": {
-    "message": "扩展后端Type元素，开发后端可视化编辑器，实现自定义业务逻辑和数据处理。",
-    "description": "The generated-index page description for category Backend in sidebar extguideSidebar"
-  },
-  "sidebar.extguideSidebar.category.Comprehensive": {
-    "message": "综合",
-    "description": "The label for category Comprehensive in sidebar extguideSidebar"
-  },
-  "sidebar.extguideSidebar.category.Comprehensive.link.generated-index.description": {
-    "message": "前后端复合元素扩展、dev-tools构建和框架发布指南。",
-    "description": "The generated-index page description for category Comprehensive in sidebar extguideSidebar"
-  },
   "sidebar.referenceSidebar.category.Development Framework": {
     "message": "开发框架",
     "description": "The label for category Development Framework in sidebar referenceSidebar"

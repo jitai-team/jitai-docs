@@ -118,7 +118,7 @@ export default async (elements) => {
 
 现在我们理解了原理，让我们开始开发一个计时器页面Type。这个过程会让你真正体会到JitAi的强大。然我们先看看效果：
 
-![实例展示](./img/3/实例展示.png)
+![实例展示](./img/5/实例展示.png)
 
 ### 页面Type的完整组成
 
@@ -563,7 +563,7 @@ export { ExamTimerPage as default, PageCls };
 
 你的TimerPage也成为了这个家族的一员：`Jit.TimerPage`！
 
-![在可视化编辑器中可以看到](./img/3/完成后可以在页面中看到.png)
+![在可视化编辑器中可以看到](./img/5/完成后可以在页面中看到.png)
 
 经过上面的步骤，你可以在可视化编辑器中看到新建的页面类型了。
 
@@ -575,7 +575,7 @@ export { ExamTimerPage as default, PageCls };
 
 DefineEditor是为页面Type提供可视化创建界面的元素。可视化编辑器中点击创建会唤起这个组件，效果如下：
 
-![定义编辑器](./img/3/定义编辑器.png)
+![定义编辑器](./img/5/定义编辑器.png)
 
 它需要特殊的e.json配置：
 ```json title="pages/TimerPageType/DefineEditor/e.json"
@@ -793,7 +793,7 @@ export { ${name}Page as default, PageCls };
 
 编辑器元素是可选的。如果您没有为您的页面Type定义专门的编辑器，系统会自动使用通用的代码编辑器作为兜底。通用编辑器提供了基本的源码编辑功能，包括语法高亮、代码提示和文件管理等。效果如下：
 
-![默认编辑器效果](./img/3/兜底的编辑器.png)]
+![默认编辑器效果](./img/5/兜底的编辑器.png)
 
 当然，如果您希望为用户提供更专业的编辑体验，可以根据自己页面Type的特点设计专门的编辑界面。
 

@@ -325,16 +325,16 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid columns={2} links={[
     { text: "创建 React 全代码页面", href: "shell-and-page/full-code-page-development#create-react-full-code-page" },
-    { text: "使用样式", href: "shell-and-page/full-code-page-development#use-style" },
-    { text: "使用本地资源", href: "shell-and-page/full-code-page-development#use-local-resources" },
-    { text: "使用 Ant Design 的组件", href: "shell-and-page/full-code-page-development#use-ant-design-components" },
-    { text: "内嵌已有常规页面", href: "shell-and-page/full-code-page-development#embed-existing-regular-page" },
-    { text: "使用标准组件", href: "shell-and-page/full-code-page-development#use-standard-component" },
-    { text: "调用数据模型函数", href: "shell-and-page/full-code-page-development#call-data-model-function" },
-    { text: "调用服务函数", href: "shell-and-page/full-code-page-development#call-service-function" },
+    { text: "使用样式", href: "frontend-ui-customization/page-customization#use-style" },
+    { text: "使用本地资源", href: "frontend-ui-customization/page-customization#use-local-resources" },
+    { text: "使用 Ant Design 的组件", href: "frontend-ui-customization/page-customization#use-ant-design-components" },
+    { text: "内嵌已有常规页面", href: "frontend-ui-customization/page-customization#embed-existing-regular-page" },
+    { text: "使用标准组件", href: "frontend-ui-customization/page-customization#use-standard-component" },
+    { text: "调用数据模型函数", href: "frontend-ui-customization/page-customization#call-data-model-function" },
+    { text: "调用服务函数", href: "frontend-ui-customization/page-customization#call-service-function" },
     { text: "创建Vue全代码页面", href: "shell-and-page/full-code-page-development#vue-full-code-page" },
-    { text: "使用第三方包", href: "shell-and-page/full-code-page-development#use-third-party-packages" },
-    { text: "打包配置的使用", href: "shell-and-page/full-code-page-development#use-packaging-configuration" }
+    { text: "使用第三方包", href: "frontend-ui-customization/page-customization#use-third-party-packages" },
+    { text: "打包配置的使用", href: "frontend-ui-customization/page-customization#use-packaging-configuration" }
   ]} />
 </IndexCard>
 
@@ -840,12 +840,12 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid links={[
     { text: "主流大模型厂商支持列表", href: "ai-llm/create-ai-llm#mainstream-llm-vendor-support-list" },
-    { text: "大模型厂商元素的创建", href: "ai-llm/create-ai-llm#create-llm-vendor-element" },
+    { text: "大模型厂商元素的创建", href: "ai-llm/create-ai-llm#creating-llm-vendor-elements" },
     { text: "重试及备用API Key机制", href: "ai-llm/create-ai-llm#retry-backup-api-key-mechanism" },
     { text: "私有化大模型集成", href: "ai-llm/create-ai-llm#private-llm-integration" },
-    { text: "在页面中调用大模型", href: "ai-llm/create-ai-llm#call-llm-in-pages" },
-    { text: "在后端函数中调用大模型", href: "ai-llm/create-ai-llm#call-llm-in-backend-functions" },
-    { text: "大模型编程接口", href: "ai-llm/create-ai-llm#llm-programming-interface" }
+    { text: "在页面中调用大模型", href: "ai-llm/llm-input-output#call-llm-in-pages" },
+    { text: "在后端函数中调用大模型", href: "ai-llm/llm-input-output#call-llm-in-backend-functions" },
+    { text: "大模型编程接口", href: "ai-llm/llm-input-output#llm-programming-interface" }
   ]} />
 </IndexCard>
 

@@ -1,9 +1,9 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 slug: ai-customer-service
 ---
 
-# AI智能客服
+# AI Customer Service Agent
 
 :::info
 本文适合新手快速上手。通过对本文的学习，你将有以下收获：

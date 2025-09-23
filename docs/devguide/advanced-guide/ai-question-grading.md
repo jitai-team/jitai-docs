@@ -1,8 +1,8 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 slug: ai-question-grading
 ---
-# AI智能出题，智能阅卷
+# AI-Powered Question Generation and Grading
 
 ## 行业背景
 

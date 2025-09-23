@@ -1,61 +1,61 @@
 ---
-sidebar_position: 2
+sidebar_position: 5
 slug: business-entity-modeling-and-data-analysis
 ---
 
-# 业务实体建模与数据分析
-构建销售数据分析系统，管理客户、门店、销售员、产品、订单等实体，支持多数据库配置（历史数据归档到单独的数据库实例中）、客户信息中扩展常用统计字段、多维度聚合分析，以及数据变更时的业务规则自动化处理。
+# Business Entity Modeling and Data Analysis
+Build a sales data analysis system that manages entities such as customers, stores, sales representatives, products, and orders. Support multi-database configuration (historical data archived to separate database instances), extended statistical fields in customer information, multi-dimensional aggregation analysis, and automated business rule processing when data changes.
 
-## 创建数据库实例
-创建主业务数据库与历史数据库（可选），支持可映射已有库表。
+## Creating Database Instances
+Create primary business database and historical database (optional), supporting mapping to existing database tables.
 
-1. 创建主业务数据库：配置MySQL数据库实例，用于系统运行时的业务数据存储
+1. Create primary business database: Configure MySQL database instance for business data storage during system runtime
    
-    ![创建主业务数据库](./img/jitorm/create-database-element.png)
+    ![Create Primary Business Database](./img/jitorm/create-database-element.png)
    
-2. 创建历史数据库（可选）：配置MySQL数据库实例，用于分析归档后的历史数据
+2. Create historical database (optional): Configure MySQL database instance for analyzing archived historical data
 
-## 建模业务实体与数据类型
-实体：客户、订单、订单明细、产品、门店、销售员。
+## Modeling Business Entities and Data Types
+Entities: Customer, Order, Order Detail, Product, Store, Sales Representative.
 
-关系：客户/门店/销售员 → 订单（一对多），订单 → 订单明细（一对多），产品 → 订单明细（一对多）。
+Relationships: Customer/Store/Sales Representative → Order (one-to-many), Order → Order Detail (one-to-many), Product → Order Detail (one-to-many).
 
-1. 创建客户数据表模型：姓名(单行文本)、公司名称(单行文本)、详细描述(多行文本)、联系电话(手机号)、地址(地址)、身份证号(身份证号)、客户类型(选项组单选)、合作状态(检查框)
+1. Create Customer data table model: Name (Single Line Text), Company Name (Single Line Text), Detailed Description (Multi-line Text), Contact Phone (Mobile Number), Address (Address), ID Number (ID Number), Customer Type (Option Group Single Select), Cooperation Status (Checkbox)
    
-   ![创建数据表模型](./img/jitorm/create-data-table-model.png)
+   ![Create Data Table Model](./img/jitorm/create-data-table-model.png)
 
-   ![配置模型字段](./img/jitorm/configure-model-fields.png)
+   ![Configure Model Fields](./img/jitorm/configure-model-fields.png)
 
-2. 创建门店数据表模型：门店名称(单行文本)、地址(地址)、联系方式(手机号)、门店分类(选项组单选)、营业状态(检查框)
-3. 创建销售员数据表模型：员工姓名(单行文本)、工号(单行文本)、联系电话(手机号)、关联门店(关联数据单选)、在职状态(检查框)
-4. 创建产品数据表模型：产品名称(单行文本)、产品分类(选项组单选)、价格(金额)、库存数量(数字)、产品图片(图片)、规格参数(富文本)、上架状态(检查框)
-5. 创建订单数据表模型：订单编号(流水号)、销售金额(金额)、订单日期(日期时间)、支付状态(选项组单选)、关联客户(关联数据单选)、关联门店(关联数据单选)、关联销售员(关联数据单选)
-6. 创建订单明细数据表模型：关联客户(关联数据单选)、关联订单(关联数据单选)、关联产品(关联数据单选)、购买数量(数字)、单价(金额)、小计金额(金额)
+2. Create Store data table model: Store Name (Single Line Text), Address (Address), Contact Information (Mobile Number), Store Category (Option Group Single Select), Business Status (Checkbox)
+3. Create Sales Representative data table model: Employee Name (Single Line Text), Employee ID (Single Line Text), Contact Phone (Mobile Number), Associated Store (Related Data Single Select), Employment Status (Checkbox)
+4. Create Product data table model: Product Name (Single Line Text), Product Category (Option Group Single Select), Price (Currency), Inventory Quantity (Number), Product Image (Image), Specification Parameters (Rich Text), Listing Status (Checkbox)
+5. Create Order data table model: Order Number (Serial Number), Sales Amount (Currency), Order Date (Date Time), Payment Status (Option Group Single Select), Associated Customer (Related Data Single Select), Associated Store (Related Data Single Select), Associated Sales Representative (Related Data Single Select)
+6. Create Order Detail data table model: Associated Customer (Related Data Single Select), Associated Order (Related Data Single Select), Associated Product (Related Data Single Select), Purchase Quantity (Number), Unit Price (Currency), Subtotal Amount (Currency)
 
-在创建模型时需要选择正确的数据库实例元素。
+When creating models, you need to select the correct database instance element.
 
-## 配置客户信息扩展表
-在不改动客户模型结构的前提下，关联订单数据，生成统计字段。以客户为基础，关联订单；扩展累计消费金额(求和)与购买次数(计数)
+## Configuring Customer Information Extension Table
+Without modifying the customer model structure, associate order data to generate statistical fields. Based on customers, associate orders; extend cumulative consumption amount (sum) and purchase count (count).
 
-1. 创建客户购买统计扩展表：以客户模型为基础模型
+1. Create customer purchase statistics extension table: Use customer model as base model
    
-   ![配置扩展表](./img/jitorm/configure-extended-table.png)
+   ![Configure Extension Table](./img/jitorm/configure-extended-table.png)
 
-2. 添加关联的数据表：通过客户模型的主键ID字段与订单模型的关联客户字段建立关联，在添加关联关系时可以配置对订单模型的筛选条件，如支付状态为已付款等。
-3. 配置扩展字段：对销售金额字段求和，作为新的"累计消费金额"字段；对订单记录计数，作为新的"购买次数"字段。
+2. Add associated data tables: Establish association through the primary key ID field of the customer model and the associated customer field of the order model. When adding associations, you can configure filter conditions for the order model, such as payment status being paid.
+3. Configure extension fields: Sum the sales amount field as a new "Cumulative Consumption Amount" field; count order records as a new "Purchase Count" field.
 
-## 配置聚合表（分组与汇总）
-按年、季度、月、周分组，统计销售金额(SUM)、订单数量(COUNT)。利用地址字段的province、city解析功能，按地区分组统计销售业绩。基于产品分类字段分组，分析各品类销售表现和占比。
+## Configuring Aggregate Tables (Grouping and Summarization)
+Group by year, quarter, month, and week to calculate sales amount (SUM) and order quantity (COUNT). Utilize the province and city parsing functionality of address fields to group and calculate sales performance by region. Group based on product category fields to analyze sales performance and proportion of each category.
 
-1. 创建时间维度聚合表：以订单模型为数据源，筛选已支付订单，基于订单日期字段按年、季度、月、周分组，配置销售金额(对销售金额求和)、订单数(对订单ID计数)聚合
-2. 创建地区维度聚合表：以客户模型为数据源，利用地址字段的province、city解析功能分组，关联订单模型统计销售金额、订单数、客户数
-3. 创建产品分类聚合表：以产品模型为数据源，基于产品分类字段分组，关联订单明细模型配置购买数量(SUM)、小计金额(SUM)聚合
+1. Create time dimension aggregate table: Use order model as data source, filter paid orders, group by order date field by year, quarter, month, and week, configure sales amount (sum of sales amount) and order count (count of order ID) aggregation
+2. Create regional dimension aggregate table: Use customer model as data source, utilize province and city parsing functionality of address fields for grouping, associate order model to calculate sales amount, order count, and customer count
+3. Create product category aggregate table: Use product model as data source, group based on product category field, associate order detail model to configure purchase quantity (SUM) and subtotal amount (SUM) aggregation
 
-![配置聚合表](./img/jitorm/configure-aggregate-table.png)
+![Configure Aggregate Table](./img/jitorm/configure-aggregate-table.png)
 
-## 配置模型事件（业务规则自动化）
-新建模型事件
+## Configuring Model Events (Business Rule Automation)
+Create new model events
 
-![配置模型事件](./img/jitorm/configure-model-events.png)
+![Configure Model Events](./img/jitorm/configure-model-events.png)
 
-根据订单明细表中的购买数量变化，自动更新产品库存数量。
+Automatically update product inventory quantity based on purchase quantity changes in the order detail table.

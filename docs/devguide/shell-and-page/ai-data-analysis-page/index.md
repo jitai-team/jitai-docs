@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# AI Data Analysis Page {#data-range-allowed-for-ai-analysis}
+# AI Data Analysis Page
 ## Overview
 In traditional development mode, statistical charts are pre-designed by developers, and users cannot modify chart types and statistical methods. JitAI's AI data analysis page allows users to describe their requirements through natural language, with AI automatically generating corresponding data charts and supporting users to adjust chart styles and statistical dimensions at any time.
 
@@ -35,7 +35,7 @@ We have built-in a specialized AI Assistant for data analysis on this page. This
 For more information about AI assistants, please read the [AI Assistant](../../ai-assistant) related documentation.
 
 ## Full Code Development {#full-code-development}
-Click the <span style={{ display: "inline-block", verticalAlign: "middle", margin: "0 4px", height: '30px', marginTop: "-15px" }}>![Full Code Button](./imgs/code.png)</span> button in the upper right corner of the page editor to switch to source code editing mode.
+Click the <span style={{ display: "inline-flex", verticalAlign: "middle", margin: "0 !important", height: '30px', width: '40px', alignItems: "center" }}>![Full Code Button](./imgs/code.png)</span> button in the upper right corner of the page editor to switch to source code editing mode.
 In source code mode, the left side displays source code files. After clicking on a source code file, the right side shows the source code content. The core source code is `schema.json`.
 
 ![Create AI Data Analysis Page - Source Code](./imgs/schema.png)

@@ -9,7 +9,7 @@ slug: ai-assistant-input-output
 Each assistant has a fixed input parameter: user input (userInput). In addition, you can customize other input parameters. These parameters need to be assigned values when using the assistant.
 The setup steps are as follows:
 
-![AI助理-高级设置](./img/assistant/assistant-state.png)
+![AI助理-高级设置](./img/assistant/assistant-input.png)
 
 Click the `Settings` button in the upper right corner of the process editor to open the settings window and add input parameters.
 

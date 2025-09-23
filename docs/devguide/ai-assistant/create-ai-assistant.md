@@ -12,7 +12,7 @@ AI Assistant is an intelligent workflow system based on visual process orchestra
 The creation method is as follows:
 
 ![创建AI助理-入口](./img/assistant/create-assistant.png)
-Click <span style={{ background:"#3d65fd", display: "inline-block", borderRadius: "8px", textAlign: "center", lineHeight: "100%", color: "#ffffff", fontSize: "24px", padding: "0px 10px 5px" }}>+</span>  → **AI Assistant** → **Regular AI Assistant**, open the assistant information form, fill out the form and click the `Confirm` button to create the assistant.
+Click <span style={{ background:"#3d65fd", display: "inline-block", borderRadius: "8px", textAlign: "center", lineHeight: "100%", color: "#ffffff", fontSize: "24px", padding: "0px 10px 5px" }}>+</span>  → **AI Assistants** → **Generic AI Assistant**, open the assistant information form, fill out the form and click the `Confirm` button to create the assistant.
 
 ![创建AI助理-表单](./img/assistant/create-form.png)
 

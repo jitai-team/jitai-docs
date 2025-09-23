@@ -9,7 +9,7 @@ slug: ai-assistant-input-output
 每个助理有一个固定的输入参数：用户输入(userInput)。除此之外，你还可以自定义其他输入参数。在使用助理时需要为这些参数赋值。
 设置步骤如下：
 
-![AI助理-高级设置](./img/assistant/assistant-state.png)
+![AI助理-高级设置](./img/assistant/assistant-input.png)
 
 点击流程编辑器右上方的`设置`按钮，打开设置窗口，添加输入参数。
 

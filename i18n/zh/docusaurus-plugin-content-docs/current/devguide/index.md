@@ -785,12 +785,27 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="数据解析与导入（正在编辑中）"
-  description="数据导入和解析工具，支持Excel等格式的数据批量导入。"
+  title="数据解析与导入"
+  href="using-functional-components-in-pages/data-parsing-and-import"
+  description="强大的数据导入和解析工具，支持Excel文件批量导入、数据清洗、条件筛选和主子表关联导入。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 文档正在完善中，敬请期待...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "页面添加导入组件", href: "using-functional-components-in-pages/data-parsing-and-import#add-import-component-to-page" },
+    { text: "导入流水号字段", href: "using-functional-components-in-pages/data-parsing-and-import#import-serial-number-fields" },
+    { text: "设置必填字段", href: "using-functional-components-in-pages/data-parsing-and-import#set-required-fields" },
+    { text: "导入子表数据", href: "using-functional-components-in-pages/data-parsing-and-import#import-subtable-data" },
+    { text: "追加导入/更新导入", href: "using-functional-components-in-pages/data-parsing-and-import#append-import-or-update-import" },
+    { text: "按条件导入数据", href: "using-functional-components-in-pages/data-parsing-and-import#import-data-by-conditions" },
+    { text: "添加导入说明文案", href: "using-functional-components-in-pages/data-parsing-and-import#add-import-description-text" },
+    { text: "导入前预处理/导入后触发函数", href: "using-functional-components-in-pages/data-parsing-and-import#pre-processing-and-post-trigger-functions" },
+    { text: "导入提示按钮点击后事件", href: "using-functional-components-in-pages/data-parsing-and-import#import-hint-button-click-event" },
+    { text: "新建解析Excel组件", href: "using-functional-components-in-pages/data-parsing-and-import#create-parse-excel-component" },
+    { text: "配置字段别名", href: "using-functional-components-in-pages/data-parsing-and-import#configure-field-aliases" },
+    { text: "调整字段顺序", href: "using-functional-components-in-pages/data-parsing-and-import#adjust-field-order" },
+    { text: "删除解析字段", href: "using-functional-components-in-pages/data-parsing-and-import#delete-parse-fields" },
+    { text: "新建自定义按钮", href: "using-functional-components-in-pages/data-parsing-and-import#create-custom-buttons" },
+    { text: "解析后事件", href: "using-functional-components-in-pages/data-parsing-and-import#post-parse-events" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1852,30 +1867,28 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="开发与运维流程"
-  href="advanced-guide/local-development-and-debugging"
   description="掌握高效的开发流程、调试技巧和生产环境部署管理，确保应用稳定性和团队协作效率。"
 >
   <LinkGrid links={[
     { text: "本地开发与调试", href: "advanced-guide/local-development-and-debugging" },
     { text: "团队协作开发", href: "advanced-guide/team-collaborative-development" },
-    { text: "Agent提示词编写技巧", href: "advanced-guide/agent-prompt-writing-techniques" },
     { text: "应用层稳定性保障", href: "advanced-guide/application-layer-stability-guarantee" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="认证与权限管理"
-  href="advanced-guide/login-authentication-and-permission-management"
-  description="基于JitAuth构建企业级权限体系，支持多种登录方式和细粒度权限控制。"
+  title="AI开发与应用"
+  description="使用AI智能体、助理和高级提示词工程技术构建智能应用，实现增强用户体验和自动化工作流程。"
 >
   <LinkGrid links={[
-    { text: "登录认证与权限管理", href: "advanced-guide/login-authentication-and-permission-management" }
+    { text: "AI客服", href: "advanced-guide/ai-customer-service" },
+    { text: "AI问题评分", href: "advanced-guide/ai-question-grading" },
+    { text: "Agent提示词编写技巧", href: "advanced-guide/agent-prompt-writing-techniques" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="数据建模与分析"
-  href="advanced-guide/business-entity-modeling-and-data-analysis"
   description="基于JitORM构建销售数据分析系统，实现多维度聚合分析和业务规则自动化。"
 >
   <LinkGrid links={[
@@ -1884,59 +1897,11 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="界面设计与组件"
-  href="advanced-guide/system-interface-design-and-component-application"
-  description="基于JitWeb构建多入口业务界面，通过门户、页面与组件快速完成系统导航与界面布局。"
->
-  <LinkGrid links={[
-    { text: "系统界面设计与组件应用", href: "advanced-guide/system-interface-design-and-component-application" }
-  ]} />
-</IndexCard>
-
-<IndexCard
   title="业务服务与API"
-  href="advanced-guide/open-api-to-third-party"
-  description="基于JitService实现API开放、第三方集成、自定义鉴权和事件驱动的业务服务架构。"
+  description="基于JitService实现自定义鉴权和业务服务架构。"
 >
   <LinkGrid links={[
-    { text: "对外开放API接口", href: "advanced-guide/open-api-to-third-party" },
-    { text: "集成外部API接口", href: "advanced-guide/integrating-external-api-interfaces" },
-    { text: "使用拦截器实现自定义请求鉴权", href: "advanced-guide/using-interceptors-for-custom-request-authentication" },
-    { text: "自定义业务事件的触发订阅与处理", href: "advanced-guide/custom-business-event-trigger-subscription-and-handling" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="工作流程管理"
-  href="advanced-guide/approval-workflow-orchestration-and-custom-approval-events"
-  description="基于JitWorkflow和JitTask实现审批流程编排、定时任务执行和业务流程自动化。"
->
-  <LinkGrid links={[
-    { text: "审批流程编排与自定义审批事件", href: "advanced-guide/approval-workflow-orchestration-and-custom-approval-events" },
-    { text: "定时执行自定义业务逻辑", href: "advanced-guide/scheduled-execution-of-custom-business-logic" },
-    { text: "使用数据库表的时间字段触发定时任务", href: "advanced-guide/using-database-table-time-fields-to-trigger-scheduled-tasks" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="支付与消息通知"
-  href="advanced-guide/online-payment-feature-integration"
-  description="基于JitPay和JitMessage实现支付功能集成和实时消息通知，构建完整的业务闭环。"
->
-  <LinkGrid links={[
-    { text: "在线支付功能集成", href: "advanced-guide/online-payment-feature-integration" },
-    { text: "发送短信通知", href: "advanced-guide/sending-sms-notifications" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="文件与存储管理"
-  href="advanced-guide/file-management-based-on-file-storage-elements"
-  description="基于JitStorage实现文件统一管理、模板化文档生成和打印功能，提升文档处理效率。"
->
-  <LinkGrid links={[
-    { text: "基于文件存储元素实现文件管理", href: "advanced-guide/file-management-based-on-file-storage-elements" },
-    { text: "使用文件模版生成和打印文件", href: "advanced-guide/using-file-templates-to-generate-and-print-files" }
+    { text: "使用拦截器实现自定义请求鉴权", href: "advanced-guide/using-interceptors-for-custom-request-authentication" }
   ]} />
 </IndexCard>
 

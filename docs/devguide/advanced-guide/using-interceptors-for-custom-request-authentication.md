@@ -1,15 +1,15 @@
 ---
-sidebar_position: 13
+sidebar_position: 6
 slug: using-interceptors-for-custom-request-authentication
 ---
 
-# 使用拦截器实现自定义请求鉴权
-当系统需要为外部合作方提供API时，常需要进行鉴权，限制非授权调用。JitAi的API授权元素可以实现[对外开放API接口](./open-api-to-third-party)（推荐使用方式），但需要调用方使用JitAi提供的客户端SDK。当调用方无法使用SDK时，可以使用[后端拦截器](../../reference/framework/JitService/backend-interceptor)实现自定义的鉴权方式，以适配调用方的调用方式，本文以自定义Bearer Token鉴权为例。
+# Using Interceptors for Custom Request Authentication
+When systems need to provide APIs for external partners, authentication is often required to restrict unauthorized access. JitAi's API authorization elements can implement exposing API interfaces to third parties (recommended approach), but this requires callers to use the client SDK provided by JitAi. When callers cannot use the SDK, you can use [backend interceptors](../../reference/framework/JitService/backend-interceptor) to implement custom authentication methods to accommodate different calling patterns. This document uses custom Bearer Token authentication as an example.
 
-## 创建拦截器实例元素目录
-拦截器元素暂不支持在可视化开发工具中创建，请开发者使用桌面版进行[本地开发与调试](./local-development-and-debugging)，在应用目录中手动创建元素目录。
+## Creating Interceptor Instance Element Directory
+Interceptor elements are not currently supported for creation in the visual development tool. Developers should use the desktop version for [local development and debugging](./local-development-and-debugging) and manually create the element directory in the application directory.
 
-```text title="拦截器元素目录结构"
+```text title="Interceptor Element Directory Structure"
 interceptors/
 └── BearerToken/
     ├── e.json
@@ -17,32 +17,32 @@ interceptors/
     └── interceptor.py
 ```
 
-### 实现拦截逻辑
-继承`RequestInterceptor`，在before方法中实现鉴权逻辑：仅当目标服务函数在白名单内时才执行校验，否则放过。
+### Implementing Interceptor Logic
+Inherit from `RequestInterceptor` and implement authentication logic in the before method: only perform validation when the target service function is in the whitelist, otherwise allow it to pass through.
 
 ```python title="interceptors/BearerToken/interceptor.py"
 from interceptors.Http import RequestInterceptor
 
 class BearerToken(RequestInterceptor):
-    # 可配置：允许的 Bearer Token 清单（生产可改为从配置元素或数据模型读取）
+    # Configurable: List of allowed Bearer Tokens (can be changed to read from configuration elements or data models in production)
     ALLOWED_TOKENS = {
         "testtoken123": "demoapp"
     }
 
-    # 可配置：启用鉴权的接口函数白名单（元素全名, 函数名）
+    # Configurable: Whitelist of interface functions that enable authentication (element full name, function name)
     WHITELISTED_FUNCS = {
         ("services.OrderSvc", "query"),
-        # ("元素全名", "函数名"),
+        # ("element_full_name", "function_name"),
     }
 
     def _getElemAndFunc(self, request):
-        """解析请求路径，得到元素全名与函数名"""
+        """Parse request path to get element full name and function name"""
         path = request.path.replace("/api", "", 1).strip("/").replace("/", ".")
         element, func = path.replace(app.appId, "").strip(".").rsplit(".", maxsplit=1)
         return element, func
 
     def before(self):
-        # 若无法解析到函数定义，直接放过
+        # If function definition cannot be resolved, allow it to pass through
         function_define = self.functionDefine
         if not function_define:
             return
@@ -57,28 +57,28 @@ class BearerToken(RequestInterceptor):
         headers = getattr(self.request, 'headers', {}) or {}
         auth = headers.get('Authorization') or headers.get('authorization')
         if not auth or not isinstance(auth, str):
-            raise PermissionError("鉴权失败")
+            raise PermissionError("Authentication failed")
 
         scheme, _, credential = auth.partition(' ')
         if scheme.lower() != 'bearer' or not credential:
-            raise PermissionError("鉴权失败")
+            raise PermissionError("Authentication failed")
 
         token = credential.strip()
         if token not in self.ALLOWED_TOKENS:
-            raise PermissionError("鉴权失败")
+            raise PermissionError("Authentication failed")
     
 ```
 
-### 导出拦截器的类
+### Exporting the Interceptor Class
 ```python title="interceptors/BearerToken/__init__.py"
-#导出的类名必须与元素目录名一致
+# The exported class name must match the element directory name
 from .interceptor import BearerToken
 ```
 
-### 编辑`e.json`
+### Editing `e.json`
 ```json title="interceptors/BearerToken/e.json"
 {
-  "title": "BearerToken鉴权",
+  "title": "BearerToken Authentication",
   "type": "interceptors.Http",
   "backendBundleEntry": ".",
   "icon": "lanjieqi1",
@@ -86,12 +86,12 @@ from .interceptor import BearerToken
 }
 ```
 
-## 创建服务函数
-开发者可以借助JitAi可视化开发工具快速创建服务元素以及函数。
+## Creating Service Functions
+Developers can use JitAi's visual development tool to quickly create service elements and functions.
 
-![可视化创建订单查询函数](./img/jitservice/visual-create-order-query-service-function.png)
+![Visual Creation of Order Query Function](./img/jitservice/visual-create-order-query-service-function.png)
 
-```text title="服务元素目录结构"
+```text title="Service Element Directory Structure"
 services/
 └── OrderSvc/
     ├── e.json
@@ -99,7 +99,7 @@ services/
     └── service.py
 ```
 
-### 实现函数逻辑
+### Implementing Function Logic
 ```python title="services/OrderSvc/service.py"
 
 from services.NormalType import NormalService
@@ -119,26 +119,26 @@ from .service import OrderSvc
 
 ```
 
-### 编辑e.json
+### Editing e.json
 ```json title="services/OrderSvc/e.json"
 {
-    "title": "订单服务",
+    "title": "Order Service",
     "type": "services.NormalType",
     "backendBundleEntry": ".",
     "functionList": [
         {
             "name": "query",
-            "title": "订单查询",
+            "title": "Order Query",
             "args": [
                 {
-                    "title": "订单ID",
+                    "title": "Order ID",
                     "name": "orderId",
                     "dataType": "Stext"
                 }
             ],
             "returnType": "JitDict",
             "argsToDatatype": true,
-            "desc": "查询订单状态",
+            "desc": "Query order status",
             "ignoreSign": true,
             "loginRequired": false
         }
@@ -146,18 +146,18 @@ from .service import OrderSvc
 }
 ```
 
-注意：
-1. 声明 `ignoreSign: true` ，使函数跳过平台默认验签。
-2. 声明 `loginRequired: false` ，使函数跳过平台默认登录状态校验。
+Note:
+1. Declare `ignoreSign: true` to make the function skip the platform's default signature verification.
+2. Declare `loginRequired: false` to make the function skip the platform's default login status validation.
 
-上述两个配置需要切换到全代码模式进行修改。
+The above two configurations need to be modified by switching to full-code mode.
 
-![全代码模式修改e.json](./img/jitservice/full-code-mode-modify-element-definition-file.png)
+![Full-code Mode Modification of e.json](./img/jitservice/full-code-mode-modify-element-definition-file.png)
 
-## 测试验证
-先删除应用目录下的dist目录，重新启动Jit，然后使用curl命令测试。
+## Testing and Verification
+First delete the dist directory under the application directory, restart Jit, and then test using curl commands.
 
-```shell title="测试curl命令"
+```shell title="Test curl Command"
 curl -X POST \
      -H "Authorization: Bearer testtoken123" \
      -H "Content-Type: application/json" \
@@ -165,7 +165,7 @@ curl -X POST \
      "http://localhost:8080/api/whwy/testjitai/services/OrderSvc/query"
 ```
 
-```json title="成功响应"
+```json title="Success Response"
 {
     "errcode": 0,
     "errmsg": null,
@@ -188,10 +188,10 @@ curl -X POST \
 }
 ```
 
-```json title="失败响应"
+```json title="Failure Response"
 {
     "errcode": 20005,
-    "errmsg": "interceptors.BearerToken【BearerToken鉴权】元素异常,请检查元素代码或参数。错误信息：鉴权失败",
+    "errmsg": "interceptors.BearerToken【BearerToken Authentication】Element exception, please check element code or parameters. Error message: Authentication failed",
     "requestId": "92a83ecb785e41fa8c97e88ecf87545a",
     "sysTime": 1754983556693,
     "duration": 388,
@@ -204,7 +204,7 @@ curl -X POST \
             "filePath": ".home.environs.JED_c1tqsCN7Q5.whwy.testjitai.0_0_0.interceptors.BearerToken.interceptor.py",
             "lineNumber": 50,
             "funcName": "before",
-            "errorMsg": "鉴权失败"
+            "errorMsg": "Authentication failed"
         },
         {
             "filePath": ".system.jit.elements.element.py",

@@ -3,29 +3,29 @@ sidebar_position: 1
 slug: using-ai-assistants-in-portals
 ---
 
-# 在常规门户中使用AI助理
+# Using AI Assistants in Regular Portals
 
-## 配置AI助理
+## Configuring AI Assistants
 
-在常规门户的可视化开发界面中，切换到**AI助理**页签，进入AI助理配置界面：
+In the visual development interface of regular portals, switch to the **AI Assistant** tab to enter the AI assistant configuration interface:
 
 ![Portals - Bind AI Assistant](./img/portal-assistant-config.png)
 
-启用AI助理开关后，需要配置以下参数：
-- **AI助理**：从现有[AI助理](../ai-assistant)中选择一个
-- **欢迎语与开场白**：自定义[欢迎语与开场白](../ai-assistant/welcome-message-and-opening)内容
-- **输出运行过程日志**：配置助理运行时[运行过程日志](../ai-assistant/ai-assistant-input-output#message-output)的输出内容
+After enabling the AI assistant switch, you need to configure the following parameters:
+- **AI Assistant**: Select one from existing [AI Assistants](../ai-assistant)
+- **Welcome Message and Opening**: Customize the [Welcome Message and Opening](../ai-assistant/welcome-message-and-opening) content
+- **Output Runtime Logs**: Configure the output content of [Runtime Logs](../ai-assistant/ai-assistant-input-output#message-output) during assistant execution
 
-## 运行效果
+## Runtime Effects
 
-门户启用AI助理后，导航栏将显示"AI助理"功能入口：
+After enabling AI assistant in the portal, the navigation bar will display the "AI Assistant" function entry:
 
 ![Portals - AI Assistant Menu](./img/portal-assistant-menu.png)
 
 ![Portals - AI Example](./img/portal-assistant-openmenu.gif)
 
-AI助理界面采用左右分栏布局：左侧显示历史[对话记录](../ai-assistant/ai-chat-history)，右侧为助理对话区域。
+The AI assistant interface adopts a left-right split layout: the left side displays historical [Chat History](../ai-assistant/ai-chat-history), and the right side is the assistant conversation area.
 
-## 功能特点
+## Feature Highlights
 
-JitAi框架已实现AI助理与门户页面的深度集成。前面的示例中简单演示了使用AI助理打开功能页面。实际情况中，门户中的AI助理通常为子系统级别，其功能能力完全由开发者自定义配置。
+The JitAi framework has achieved deep integration between AI assistants and portal pages. The previous example briefly demonstrated using AI assistants to open functional pages. In actual scenarios, AI assistants in portals are typically at the subsystem level, with their functional capabilities completely customizable by developers.

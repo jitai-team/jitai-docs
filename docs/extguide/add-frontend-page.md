@@ -121,7 +121,7 @@ export default async (elements) => {
 
 | 组成部分 | 运行环境 | 主要职责 | 文件位置 |
 |---------|----------|----------|----------|
-| **Type元素本体** | 使用区 | 定义页面类(PageCls)和渲染组件(Render) | `pages/TimerPageType/frontend/` |
+| **Type元素本体** | 使用区 | 定义页面类(PageCls)和渲染组件(Render) | `pages/TimerPageType/` |
 | **元素定义配置器** | IDE | 提供创建页面的可视化表单 | `IDEAppFront/pages/TimerPageType/DefineEditor/` |
 | **增删改API** | IDE | 根据配置生成页面实例代码 | `IDEAppFront/pages/TimerPageType/Api/` |
 | **元素编辑器** | IDE | 提供代码编辑界面 | `IDEAppFront/pages/TimerPageType/Editor/` |
@@ -138,11 +138,10 @@ export default async (elements) => {
 # 使用区：页面运行时文件
 pages/
 └── TimerPageType/
-    └── frontend/
-        ├── e.json           # 元素定义，标记loadTime: "startUp"
-        ├── index.ts         # 入口文件，导出PageCls和Render
-        ├── TimerPage.ts     # 页面类，继承Jit.BasePage
-        └── Render.tsx       # 渲染组件
+    ├── e.json           # 元素定义，标记loadTime: "startUp"
+    ├── index.ts         # 入口文件，导出PageCls和Render
+    ├── TimerPage.ts     # 页面类，继承Jit.BasePage
+    └── Render.tsx       # 渲染组件
 
 # IDE端：开发工具文件
 IDEAppFront/pages/TimerPageType/
@@ -178,7 +177,7 @@ timerPage.getRemaining(); // 获取剩余时间
 
 现在，让我们创建TimerPageType。由于我们没有自定义loader，将使用Meta的loader，这意味着我们必须遵循Meta的规范：导出`PageCls`和`Render`。
 
-```typescript title="pages/TimerPageType/frontend/TimerPage.ts"
+```typescript title="pages/TimerPageType/TimerPage.ts"
 import { Jit } from 'jit';
 
 // 这是Type层的页面类，定义计时器页面的通用能力
@@ -285,7 +284,7 @@ export default TimerPage;
 
 ### 第四步：创建渲染组件
 
-```tsx title="pages/TimerPageType/frontend/Render.tsx"
+```tsx title="pages/TimerPageType/Render.tsx"
 import React, { useState, useEffect } from 'react';
 import { Progress, Button, Card, Typography } from 'antd';
 import { PlayCircleOutlined, PauseCircleOutlined } from '@ant-design/icons';
@@ -389,7 +388,7 @@ export default TimerRender;
 
 现在让我们创建Type的入口文件，遵循Meta loader的规范：
 
-```typescript title="pages/TimerPageType/frontend/index.ts"
+```typescript title="pages/TimerPageType/index.ts"
 import TimerPage from './TimerPage';
 import Render from './Render';
 
@@ -405,7 +404,7 @@ export {
 
 同时，我们需要在e.json中标记这个Type为启动时加载：
 
-```json title="pages/TimerPageType/frontend/e.json"
+```json title="pages/TimerPageType/e.json"
 {
     "title": "计时器页面类型",
     "type": "pages.Meta",

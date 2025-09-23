@@ -42,7 +42,7 @@ const app = getRuntimeApp();
 对于参数较为复杂的服务函数，建议先在可视化界面（如事件面板）中配置好参数，然后复制生成的代码到全代码页面中使用，这样可以避免手动编写复杂参数时出错。
 :::
 
-服务函数为页面提供了强大的后端能力扩展，通过简单的语法即可实现各种定制业务场景。如需了解如何创建服务函数，请查看[创建服务函数](../advanced-guide/custom-business-event-trigger-subscription-and-handling.md)。
+服务函数为页面提供了强大的后端能力扩展，通过简单的语法即可实现各种定制业务场景。如需了解如何创建服务函数，请查看[创建服务函数](../business-logic-development/creating-service-elements.md)。
 
 ## 相关文档
 

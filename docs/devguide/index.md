@@ -776,12 +776,29 @@ The rich component library is your super toolkit. Drag and drop a table to displ
 </IndexCard>
 
 <IndexCard
-  title="Data Parsing and Import (Editing in Progress)"
-  description="Data import and parsing tools supporting batch import of data in Excel and other formats."
+  title="Data Parsing and Import"
+  href="using-functional-components-in-pages/data-parsing-and-import"
+  description="Powerful data import and parsing tools supporting Excel file batch import, data cleaning, conditional filtering, and master-detail table association import."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Documentation is being improved, please stay tuned...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "Import Component", href: "using-functional-components-in-pages/data-parsing-and-import#import-component" },
+    { text: "Adding Import Component to Page", href: "using-functional-components-in-pages/data-parsing-and-import#add-import-component-to-page" },
+    { text: "Import Serial Number Fields", href: "using-functional-components-in-pages/data-parsing-and-import#import-serial-number-fields" },
+    { text: "Set Required Fields", href: "using-functional-components-in-pages/data-parsing-and-import#set-required-fields" },
+    { text: "Import Subtable Data", href: "using-functional-components-in-pages/data-parsing-and-import#import-subtable-data" },
+    { text: "Append Import/Update Import", href: "using-functional-components-in-pages/data-parsing-and-import#append-import-or-update-import" },
+    { text: "Import Data by Conditions", href: "using-functional-components-in-pages/data-parsing-and-import#import-data-by-conditions" },
+    { text: "Add Import Description Text", href: "using-functional-components-in-pages/data-parsing-and-import#add-import-description-text" },
+    { text: "Pre-processing/Post-trigger Functions", href: "using-functional-components-in-pages/data-parsing-and-import#pre-processing-and-post-trigger-functions" },
+    { text: "Import Hint Button Click Event", href: "using-functional-components-in-pages/data-parsing-and-import#import-hint-button-click-event" },
+    { text: "Parse Excel", href: "using-functional-components-in-pages/data-parsing-and-import#parse-excel" },
+    { text: "Create Parse Excel Component", href: "using-functional-components-in-pages/data-parsing-and-import#create-parse-excel-component" },
+    { text: "Configure Field Aliases", href: "using-functional-components-in-pages/data-parsing-and-import#configure-field-aliases" },
+    { text: "Adjust Field Order", href: "using-functional-components-in-pages/data-parsing-and-import#adjust-field-order" },
+    { text: "Delete Parse Fields", href: "using-functional-components-in-pages/data-parsing-and-import#delete-parse-fields" },
+    { text: "Create Custom Buttons", href: "using-functional-components-in-pages/data-parsing-and-import#create-custom-buttons" },
+    { text: "Post-parse Events", href: "using-functional-components-in-pages/data-parsing-and-import#post-parse-events" }
+  ]} />
 </IndexCard>
 
 <IndexCard

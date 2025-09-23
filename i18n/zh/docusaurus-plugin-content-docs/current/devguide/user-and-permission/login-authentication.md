@@ -6,7 +6,7 @@ slug: login-authentication
 # 登录方式 {#login-authentication}
 JitAi平台支持多种登录认证方式，包括账号密码登录、手机号登录、钉钉登录、企业微信登录、微信登录、微信公众号登录、微信小程序登录、Github登录和Google登录，满足不同场景下用户的接入和认证需求，助力企业和个人用户便捷、安全地访问应用。
 
-## 登录方式创建 {#login-method-creation}
+## 创建登录方式 {#creating-login-method}
 JitAi支持开发者根据实际业务需求，自由配置和新增多种登录方式，帮助应用实现多端便捷接入与统一认证管理。
 
 ![登录方式创建](./img/auth/login-method-creation.png)

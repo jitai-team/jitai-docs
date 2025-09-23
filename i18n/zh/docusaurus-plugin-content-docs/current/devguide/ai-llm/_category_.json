@@ -3,7 +3,7 @@
   "position": 8,
   "link": {
     "type": "generated-index",
-    "slug": "ai-llm",
+    "slug": "/devguide/ai-llm",
     "description": "AI大语言模型集成与使用"
   }
 }

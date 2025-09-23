@@ -776,12 +776,29 @@ The rich component library is your super toolkit. Drag and drop a table to displ
 </IndexCard>
 
 <IndexCard
-  title="Data Parsing and Import (Editing in Progress)"
-  description="Data import and parsing tools supporting batch import of data in Excel and other formats."
+  title="Data Parsing and Import"
+  href="using-functional-components-in-pages/data-parsing-and-import"
+  description="Powerful data import and parsing tools supporting Excel file batch import, data cleaning, conditional filtering, and master-detail table association import."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Documentation is being improved, please stay tuned...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "Import Component", href: "using-functional-components-in-pages/data-parsing-and-import#import-component" },
+    { text: "Adding Import Component to Page", href: "using-functional-components-in-pages/data-parsing-and-import#add-import-component-to-page" },
+    { text: "Import Serial Number Fields", href: "using-functional-components-in-pages/data-parsing-and-import#import-serial-number-fields" },
+    { text: "Set Required Fields", href: "using-functional-components-in-pages/data-parsing-and-import#set-required-fields" },
+    { text: "Import Subtable Data", href: "using-functional-components-in-pages/data-parsing-and-import#import-subtable-data" },
+    { text: "Append Import/Update Import", href: "using-functional-components-in-pages/data-parsing-and-import#append-import-or-update-import" },
+    { text: "Import Data by Conditions", href: "using-functional-components-in-pages/data-parsing-and-import#import-data-by-conditions" },
+    { text: "Add Import Description Text", href: "using-functional-components-in-pages/data-parsing-and-import#add-import-description-text" },
+    { text: "Pre-processing/Post-trigger Functions", href: "using-functional-components-in-pages/data-parsing-and-import#pre-processing-and-post-trigger-functions" },
+    { text: "Import Hint Button Click Event", href: "using-functional-components-in-pages/data-parsing-and-import#import-hint-button-click-event" },
+    { text: "Parse Excel", href: "using-functional-components-in-pages/data-parsing-and-import#parse-excel" },
+    { text: "Create Parse Excel Component", href: "using-functional-components-in-pages/data-parsing-and-import#create-parse-excel-component" },
+    { text: "Configure Field Aliases", href: "using-functional-components-in-pages/data-parsing-and-import#configure-field-aliases" },
+    { text: "Adjust Field Order", href: "using-functional-components-in-pages/data-parsing-and-import#adjust-field-order" },
+    { text: "Delete Parse Fields", href: "using-functional-components-in-pages/data-parsing-and-import#delete-parse-fields" },
+    { text: "Create Custom Buttons", href: "using-functional-components-in-pages/data-parsing-and-import#create-custom-buttons" },
+    { text: "Post-parse Events", href: "using-functional-components-in-pages/data-parsing-and-import#post-parse-events" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1027,7 +1044,7 @@ Visual intelligent workflow engine. Orchestrate business processes through drag-
 
 <IndexCard
   title="创建AI助理元素"
-  href="ai-assitant/create-ai-assistant"
+  href="ai-assistant/create-ai-assistant"
   description="学习如何创建AI助理元素，配置工作流、节点类型和事件处理，实现智能业务流程自动化。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1037,7 +1054,7 @@ Visual intelligent workflow engine. Orchestrate business processes through drag-
 
 <IndexCard
   title="流程编排与节点配置"
-  href="ai-assitant/process-orchestration-node-configuration"
+  href="ai-assistant/process-orchestration-node-configuration"
   description="深入了解AI助理流程编排技术和详细的节点配置方法。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1047,7 +1064,7 @@ Visual intelligent workflow engine. Orchestrate business processes through drag-
 
 <IndexCard
   title="AI助理的输入与输出"
-  href="ai-assitant/ai-assistant-input-output"
+  href="ai-assistant/ai-assistant-input-output"
   description="理解AI助理的输入输出配置和数据处理方法。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1057,7 +1074,7 @@ Visual intelligent workflow engine. Orchestrate business processes through drag-
 
 <IndexCard
   title="AI助理的API开放"
-  href="ai-assitant/ai-assistant-api-integration"
+  href="ai-assistant/ai-assistant-api-integration"
   description="通过API接口开放AI助理能力，实现与外部系统的集成。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1191,22 +1208,22 @@ Design a powerful data foundation for your application. Create data tables, desi
   description="Data structure designed specifically for full-code development, similar to DTO, used for structured data expression and transmission in business logic."
 >
   <LinkGrid links={[
-    { text: "Data Object Model Creation", href: "data-modeling/data-object-model#data-object-model-creation" },
-    { text: "Data Object Model Usage", href: "data-modeling/data-object-model#data-object-model-usage" },
-    { text: "Custom Field", href: "data-modeling/data-object-model#custom-field" },
-    { text: "Model Function Override", href: "data-modeling/data-object-model#model-function-override" },
-    { text: "Define New Function", href: "data-modeling/data-object-model#define-new-function" }
+    { text: "Creating Data Object Model", href: "data-modeling/data-object-model#creating-data-object-model" },
+    { text: "Using Data Object Model", href: "data-modeling/data-object-model#using-data-object-model" },
+    { text: "Customizing Fields", href: "data-modeling/data-object-model#customizing-fields" },
+    { text: "Overriding Model Functions", href: "data-modeling/data-object-model#overriding-model-functions" },
+    { text: "Defining New Functions", href: "data-modeling/data-object-model#defining-new-functions" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="Integrating Data Models with AI Agents"
+  title="Calling Data Models with AI Agents"
   href="data-modeling/calling-data-models-in-ai-agent"
-  description="Integrate data models with AI Agent systems to enable intelligent data processing and decision making."
+  description="Add data model functions as Agent tools, enabling AI to execute data creation, reading, updating, and deletion operations."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Data Models as Agent Tools", href: "data-modeling/calling-data-models-in-ai-agent#data-models-as-agent-tools" }
+  ]} />
 </IndexCard>
 
 </div>
@@ -1241,25 +1258,26 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
 >
   <LinkGrid links={[
     { text: "Standard Organization", href: "user-and-permission/organizational-structure#standard-organization" },
-    { text: "Allow New Registered User Join", href: "user-and-permission/organizational-structure#allow-new-registered-user-join" },
+    { text: "Allowing New Registered Users to Join", href: "user-and-permission/organizational-structure#allowing-new-registered-users-to-join" },
     { text: "DingTalk Custom Organization", href: "user-and-permission/organizational-structure#dingtalk-custom-organization" },
     { text: "WeChat Work Custom Organization", href: "user-and-permission/organizational-structure#wechat-work-custom-organization" },
     { text: "Contact Management Entry", href: "user-and-permission/organizational-structure#contact-management-entry" },
     { text: "DingTalk Custom Organization", href: "user-and-permission/organizational-structure#dingtalk-custom-organization" },
     { text: "WeChat Work Custom Organization", href: "user-and-permission/organizational-structure#wechat-work-custom-organization" },
+    { text: "Microsoft Teams", href: "user-and-permission/organizational-structure#microsoft-teams" },
     { text: "Department Member Search", href: "user-and-permission/organizational-structure#department-member-search" },
-    { text: "Set Organization Leader", href: "user-and-permission/organizational-structure#set-organization-leader" },
-    { text: "Create Department", href: "user-and-permission/organizational-structure#create-department" },
-    { text: "Add Member", href: "user-and-permission/organizational-structure#add-member" },
-    { text: "Import Member", href: "user-and-permission/organizational-structure#import-member" },
-    { text: "Export Member", href: "user-and-permission/organizational-structure#export-member" },
-    { text: "Adjust Department", href: "user-and-permission/organizational-structure#adjust-department" },
+    { text: "Setting Organization Leader", href: "user-and-permission/organizational-structure#setting-organization-leader" },
+    { text: "Creating Department", href: "user-and-permission/organizational-structure#creating-department" },
+    { text: "Adding Member", href: "user-and-permission/organizational-structure#adding-member" },
+    { text: "Importing Members", href: "user-and-permission/organizational-structure#importing-members" },
+    { text: "Exporting Members", href: "user-and-permission/organizational-structure#exporting-members" },
+    { text: "Adjusting Department", href: "user-and-permission/organizational-structure#adjusting-department" },
     { text: "Member Resignation", href: "user-and-permission/organizational-structure#member-resignation" },
-    { text: "Create Role", href: "user-and-permission/organizational-structure#create-role" },
-    { text: "Create Role Group", href: "user-and-permission/organizational-structure#standard-organization" },
-    { text: "Manage Role Member", href: "user-and-permission/organizational-structure#manage-role-member" },
-    { text: "Sync DingTalk Organization Structure", href: "user-and-permission/organizational-structure#sync-dingtalk-organization-structure" },
-    { text: "Sync WeChat Work Organization Structure", href: "user-and-permission/organizational-structure#sync-wechat-work-organization-structure" },
+    { text: "Creating Role", href: "user-and-permission/organizational-structure#creating-role" },
+    { text: "Creating Role Group", href: "user-and-permission/organizational-structure#creating-role-group" },
+    { text: "Managing Role Members", href: "user-and-permission/organizational-structure#managing-role-members" },
+    { text: "Syncing DingTalk Organization Structure", href: "user-and-permission/organizational-structure#syncing-dingtalk-organization-structure" },
+    { text: "Syncing WeChat Work Organization Structure", href: "user-and-permission/organizational-structure#syncing-wechat-work-organization-structure" },
   ]} />
 </IndexCard>
 
@@ -1268,9 +1286,12 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
   description="User identity verification and login method configuration, supporting multiple authentication modes."
 >
   <LinkGrid links={[
-    { text: "Login Method Creation", href: "user-and-permission/login-authentication#login-method-creation" },
+    { text: "Creating Login Method", href: "user-and-permission/login-authentication#creating-login-method" },
     { text: "Account Password Login", href: "user-and-permission/login-authentication#account-password-login" },
     { text: "Mobile Phone Login", href: "user-and-permission/login-authentication#mobile-phone-login" },
+    { text: "Alibaba Cloud SMS", href: "user-and-permission/login-authentication#aliyun-sms" },
+    { text: "Twilio", href: "user-and-permission/login-authentication#twilio" },
+    { text: "AWS SNS", href: "user-and-permission/login-authentication#aws-sns" },
     { text: "DingTalk Custom QR Login", href: "user-and-permission/login-authentication#dingtalk-custom-qr-login" },
     { text: "WeChat Work Custom QR Login", href: "user-and-permission/login-authentication#wechat-work-custom-qr-login" },
     { text: "WeChat Login", href: "user-and-permission/login-authentication#wechat-login" },
@@ -1295,7 +1316,6 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
     { text: "Application Role Permission Configuration", href: "user-and-permission/role-portal-menu-permissions#application-role-permission-configuration" },
     { text: "Specify Accessible Portals and Menus", href: "user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus" },
     { text: "Manage Application Role Members in Developer Portal", href: "user-and-permission/role-portal-menu-permissions#manage-application-role-members-in-developer-portal" },
-    { text: "Portal-level Data Operation Type and Scope Control", href: "user-and-permission/role-portal-menu-permissions#portal-level-data-operation-type-and-scope-control" },
     { text: "Component Button Permission Control", href: "user-and-permission/role-portal-menu-permissions#component-button-permission-control" },
     { text: "Component Data Field Access Control", href: "user-and-permission/role-portal-menu-permissions#component-data-field-access-control" },
     { text: "Hierarchical Management of Multiple Application Roles", href: "user-and-permission/role-portal-menu-permissions#hierarchical-management-of-multiple-application-roles" },
@@ -1310,9 +1330,9 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
   href="user-and-permission/roles-and-business-element-permissions"
   description="Advanced role-based permission control for business elements, data models, and functional components."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Portal-level Data Operation Type and Scope Control", href: "user-and-permission/roles-and-business-element-permissions#portal-level-data-operation-type-and-scope-control" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1320,9 +1340,9 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
   href="user-and-permission/agent-tool-permission-control"
   description="Configure and manage permission control for AI Agent tools, ensuring secure and controlled agent operations."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Configure Agent Tool Execution Permissions", href: "user-and-permission/agent-tool-permission-control#configure-agent-tool-execution-permissions" }
+  ]} />
 </IndexCard>
 
 </div>
@@ -1338,15 +1358,12 @@ Empower applications with powerful business processing capabilities. Handle comp
   description="Backend business logic implementation, encapsulating reusable business functions through service elements, providing API interfaces and data processing services."
 >
   <LinkGrid columns={2} links={[
-    { text: "Create Service Elements", href: "business-logic-development/creating-service-elements#create-service-elements" },
-    { text: "Create Service Functions", href: "business-logic-development/creating-service-elements#create-service-functions" },
-    { text: "Edit Service Functions in Source Code Mode", href: "business-logic-development/creating-service-elements#edit-service-functions-source-code-mode" },
-    { text: "Add New Dependency Library", href: "business-logic-development/creating-service-elements#add-new-dependency-library" },
-    { text: "Where Service Functions Are Used", href: "business-logic-development/creating-service-elements#where-service-functions-are-used" },
-    { text: "Help AI Understand Service Functions", href: "business-logic-development/creating-service-elements#help-ai-understand-service-functions" },
-    { text: "Use Cross-App Service Elements to Call Authorized Interfaces", href: "business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-interfaces" },
-    { text: "Create Cross-App Service Elements", href: "business-logic-development/creating-service-elements#create-cross-app-service-elements" },
-    { text: "Use Cross-App Service Elements in Functions", href: "business-logic-development/creating-service-elements#use-cross-app-service-elements-in-functions" }
+    { text: "Creating Service Functions", href: "business-logic-development/creating-service-elements#create-service-functions" },
+    { text: "Editing Service Functions in Source Code Mode", href: "business-logic-development/creating-service-elements#edit-service-functions-source-code-mode" },
+    { text: "Adding New Dependency Libraries", href: "business-logic-development/creating-service-elements#add-new-dependency-library" },
+    { text: "Using Cross-App Service Elements to Call Authorized Interfaces", href: "business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-interfaces" },
+    { text: "Creating Cross-App Service Elements", href: "business-logic-development/creating-service-elements#create-cross-app-service-elements" },
+    { text: "Using Cross-App Service Elements in Function Logic", href: "business-logic-development/creating-service-elements#use-cross-app-service-elements-in-functions" }
   ]} />
 </IndexCard>
 
@@ -1355,9 +1372,14 @@ Empower applications with powerful business processing capabilities. Handle comp
   href="business-logic-development/calling-other-elements-in-service-functions"
   description="Learn how to call other elements from service functions, including models, other services, external APIs, and system components for comprehensive business logic implementation."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "Using Platform APIs to Call Other Elements", href: "business-logic-development/calling-other-elements-in-service-functions#use-platform-api-to-call-other-elements" },
+    { text: "Calling Data Model Functions", href: "business-logic-development/calling-other-elements-in-service-functions#call-data-model-function" },
+    { text: "Calling Other Service Functions", href: "business-logic-development/calling-other-elements-in-service-functions#call-other-service-functions" },
+    { text: "Calling External APIs", href: "business-logic-development/calling-other-elements-in-service-functions#call-external-api" },
+    { text: "Calling AI Large Language Models", href: "business-logic-development/calling-other-elements-in-service-functions#call-ai-llm" },
+    { text: "Calling AI Agents", href: "business-logic-development/calling-other-elements-in-service-functions#call-ai-agent" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1365,9 +1387,10 @@ Empower applications with powerful business processing capabilities. Handle comp
   href="business-logic-development/service-elements-usage-scenarios"
   description="Explore practical usage scenarios and best practices for service elements across different business contexts and application architectures."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Where Service Functions Are Used", href: "business-logic-development/service-elements-usage-scenarios#where-service-functions-are-used" },
+    { text: "Helping AI Understand Service Functions More Accurately", href: "business-logic-development/service-elements-usage-scenarios#help-ai-understand-service-functions" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1376,12 +1399,12 @@ Empower applications with powerful business processing capabilities. Handle comp
   description="Scheduled tasks and asynchronous processing, supporting complex background business processes."
 >
   <LinkGrid columns={2} links={[
-    { text: "Task Creation", href: "business-logic-development/background-tasks#task-creation" },
+    { text: "Creating Tasks", href: "business-logic-development/background-tasks#creating-tasks" },
     { text: "Scheduled Tasks", href: "business-logic-development/background-tasks#scheduled-tasks" },
     { text: "Date Field Tasks", href: "business-logic-development/background-tasks#date-field-tasks" },
     { text: "General Configuration Items", href: "business-logic-development/background-tasks#general-configuration-items" },
-    { text: "Task Execution Function Development", href: "business-logic-development/background-tasks#task-execution-function-development" },
-    { text: "Execution Record View", href: "business-logic-development/background-tasks#execution-record-view" },
+    { text: "Developing Task Execution Functions", href: "business-logic-development/background-tasks#developing-task-execution-functions" },
+    { text: "Viewing Execution Records", href: "business-logic-development/background-tasks#viewing-execution-records" },
     { text: "Source Code Mode", href: "business-logic-development/background-tasks#source-code-mode" }
   ]} />
 </IndexCard>
@@ -1392,17 +1415,17 @@ Empower applications with powerful business processing capabilities. Handle comp
   description="System event monitoring and processing mechanism, implementing reactive business logic."
 >
   <LinkGrid columns={2} links={[
-    { text: "Event Creation", href: "business-logic-development/event-handling#event-create" },
+    { text: "Creating Events", href: "business-logic-development/event-handling#creating-events" },
     { text: "Model Events", href: "business-logic-development/event-handling#model-events" },
     { text: "Approval Events", href: "business-logic-development/event-handling#approval-events" },
     { text: "Custom Events", href: "business-logic-development/event-handling#custom-events" },
     { text: "AI-Assistant Events", href: "business-logic-development/event-handling#ai-assistant-events" },
     { text: "Agent Tool Call Events", href: "business-logic-development/event-handling#agent-tool-call-events" },
-    { text: "Service Function Replace Event Internal Function", href: "business-logic-development/event-handling#service-function-replace-event-internal-function" },
-    { text: "Event Enable", href: "business-logic-development/event-handling#event-enable" },
-    { text: "Event Sync/Async Execution", href: "business-logic-development/event-handling#event-sync-async-execution" },
-    { text: "Event Execution Records", href: "business-logic-development/event-handling#event-execution-records" },
-    { text: "Full Code View/Edit", href: "business-logic-development/event-handling#full-code-view-edit" }
+    { text: "Replacing Event Internal Function with Service Function", href: "business-logic-development/event-handling#replacing-event-internal-function-with-service-function" },
+    { text: "Enabling Events", href: "business-logic-development/event-handling#enabling-events" },
+    { text: "Executing Events Synchronously/Asynchronously", href: "business-logic-development/event-handling#executing-events-synchronously-asynchronously" },
+    { text: "Viewing Event Execution Records", href: "business-logic-development/event-handling#viewing-event-execution-records" },
+    { text: "Viewing/Editing Full Code", href: "business-logic-development/event-handling#viewing-editing-full-code" }
   ]} />
 </IndexCard>
 
@@ -1568,6 +1591,8 @@ Easily handle various file requirements in applications. Support file upload and
     { text: "China Mobile Cloud EOS", href: "file-processing/file-storage#china-mobile-cloud-eos" },
     { text: "MinIO", href: "file-processing/file-storage#minio" },
     { text: "Qiniu Cloud", href: "file-processing/file-storage#aliyun-oss" },
+    { text: "AWS S3", href: "file-processing/file-storage#aws-s3" },
+    { text: "Cloudflare R2", href: "file-processing/file-storage#cloudflare-r2" },
     { text: "Use Environment Variables to Prevent Config Info Leak", href: "file-processing/file-storage#prevent-config-info-leak-with-env-variables" },
     { text: "Set Application Default Storage Service", href: "file-processing/file-storage#set-application-default-storage-service" },
     { text: "Call File Upload in Frontend Code", href: "file-processing/file-storage#call-file-upload-in-frontend-code" }
@@ -1601,9 +1626,10 @@ Easily handle various file requirements in applications. Support file upload and
   href="file-processing/generating-and-printing-files-using-file-templates"
   description="Learn how to use file templates to generate and print documents programmatically, including dynamic content population and output formatting."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Print Word Templates", href: "file-processing/generating-and-printing-files-using-file-templates#print-word-template" },
+    { text: "Print Excel Templates", href: "file-processing/generating-and-printing-files-using-file-templates#print-excel-template" }
+  ]} />
 </IndexCard>
 
 </div>

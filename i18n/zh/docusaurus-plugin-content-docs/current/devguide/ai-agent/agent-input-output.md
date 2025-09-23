@@ -77,7 +77,7 @@ Agent的运行通常需要一定时间，若用户等待过久会影响体验。
 ## 在页面助理中测试Agent {#test-agent-in-page-assistant}
 在Agent开发过程中，需要频繁进行调试。开发者可以创建一个简单的AI助理，该助理内部编排为直接调用目标Agent，然后将助理集成到页面中即可。在AI助理的对话框中我们可以看到Agent的运行过程和输出结果。
 
-[如何在AI助理中调用Agent?](../ai-assitant/process-orchestration-node-configuration#ai-agent)
+[如何在AI助理中调用Agent?](../ai-assistant/process-orchestration-node-configuration#ai-agent)
 
 [如何在页面中集成AI助理？](../shell-and-page/component-based-page-development#integrate-ai-assistant-in-pages)
 

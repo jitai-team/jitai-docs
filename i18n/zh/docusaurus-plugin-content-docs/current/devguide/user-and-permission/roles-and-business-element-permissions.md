@@ -3,6 +3,20 @@ sidebar_position: 4
 slug: roles-and-business-element-permissions
 ---
 
-# Roles and Business Element Permissions
+# 角色与业务元素权限
 
-Coming soon...
+RBAC（基于角色的访问控制）不仅可以控制用户对门户和页面的访问权限，还可以深入到业务元素层面，对数据模型、服务函数等核心业务组件进行精细化的权限管控。
+
+## 门户级的数据操作类型和操作范围控制 {#portal-level-data-operation-type-and-scope-control}
+
+为了实现对数据越权操作的管控，JitAi支持指定角色在特定门户中的全局数据访问权限控制，限制可访问的数据模型、模型操作函数（查询、新增、修改、删除、统计）。即便开发者在门户某个页面中提供了数据查询相关的组件以及操作按钮，用户也无法进行超出权限范围的操作和数据查看。
+
+![自定义数据模型权限](./img/role/custom-data-model-permissions.gif)
+
+开发者在应用角色的可视化编辑器中，打开右上角`自定义数据模型权限`开关，在弹出的表格中勾选每个数据模型下支持的函数类型即可。
+
+开发者还可以通过添加筛选条件，实现对每个模型下每个操作函数的数据操作范围的控制。
+
+![自定义数据模型权限-数据筛选](./img/role/custom-data-model-permissions-data-filtering.gif)
+
+开发者将鼠标放在配置表格的行上，即可看到`数据筛选`按钮，点击后可添加筛选条件。除`新增函数`和`修改函数`外，其它函数类型均支持配置`数据筛选`。

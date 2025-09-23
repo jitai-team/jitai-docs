@@ -69,7 +69,6 @@ Agent在执行过程中需要保存和更新状态信息，以便在对话中保
 可以参考[管理数据库连接](../data-modeling/manage-database-connections)。
 :::
 
-
 ## 源码模式修改Agent {#modify-agent-in-source-code-mode}
 在Agent可视化编辑器中的所有配置都会生成对应的源码文件，开发者可以切换到源码模式进行修改，与可视化编辑器中修改的效果相同。
 

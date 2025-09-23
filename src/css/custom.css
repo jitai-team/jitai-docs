@@ -194,6 +194,10 @@ details>div>div {
   font-weight: normal !important;
 }
 
+.menu__list .menu__list{
+  padding-left: 1.5rem !important;
+}
+
 /* 整体居中布局 - 消除sidebar和文章间距，空白在sidebar和屏幕边缘 */
 
 /* 移除侧边栏右侧边框 */
@@ -441,25 +445,26 @@ details>div>div {
 
 /* 侧边栏菜单项 */
 .menu__link {
-  font-size: 0.875rem !important;
+  font-size: 0.84rem !important;
   font-weight: 500 !important;
   color: var(--text-secondary) !important;
-  border-radius: 0.5rem !important;
-  padding: 0.5rem 0.75rem !important;
+  border-radius: 0.2rem !important;
+  padding: 0.2rem 0.75rem !important;
   transition: var(--transition) !important;
   margin: 0.125rem 0 !important;
+  line-height: 14px;
 }
 
 .menu__link:hover {
-  background-color: var(--accent-bg) !important;
+  background-color: transparent !important;
   color: var(--primary-color) !important;
   text-decoration: none !important;
 }
 
 .menu__link--active {
-  background-color: var(--accent-hover) !important;
+  background-color: transparent !important;
   color: var(--primary-color) !important;
-  font-weight: 600 !important;
+
 }
 
 /* 内容区域标题样式 */
@@ -631,7 +636,6 @@ details>div>div {
   margin-top: 0 !important;
   margin-bottom: 2rem !important;
   color: #111827 !important;
-  border-bottom: 3px solid var(--primary-color) !important;
   padding-bottom: 0.75rem !important;
 }
 
@@ -841,9 +845,9 @@ details>div>div {
 
 .table-of-contents__link {
   color: var(--text-secondary) !important;
-  font-size: 0.875rem !important;
+  font-size: 0.84rem !important;
   line-height: 1.5 !important;
-  padding: 0.5rem 0.5rem !important;
+  padding: 0.25rem 0.25rem !important;
   border-radius: 0.375rem !important;
   transition: var(--transition) !important;
 }
@@ -983,4 +987,12 @@ details>div>div {
   .theme-doc-markdown td {
     padding: 0.5rem !important;
   }
+}
+
+.menu__list-item:not(:first-child){
+  margin-top: 0;
+}
+
+.table-of-contents li{
+  margin: 0;
 }

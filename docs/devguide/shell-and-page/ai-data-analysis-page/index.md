@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# AI Data Analysis Page {#data-range-allowed-for-ai-analysis}
+# AI Data Analysis Page
 ## Overview
 In traditional development mode, statistical charts are pre-designed by developers, and users cannot modify chart types and statistical methods. JitAI's AI data analysis page allows users to describe their requirements through natural language, with AI automatically generating corresponding data charts and supporting users to adjust chart styles and statistical dimensions at any time.
 
@@ -29,13 +29,13 @@ Specify the data tables and data conditions that can be analyzed. This configura
 We have built-in a specialized AI Assistant for data analysis on this page. This assistant needs to access the system database and call functions on the page to draw charts during runtime. We need to configure a [Large Language Model](../../ai-llm/create-ai-llm) that supports tool calling. We recommend using qwen-max-latest from Alibaba Cloud Bailian platform.<a href="https://bailian.console.aliyun.com/?tab=model#/api-key" target="_blank">Apply for API Key</a>
 
 ### AI Assistant Advanced Configuration
-- Support custom [Welcome Message and Opening](../../ai-assitant/welcome-message-and-opening)
-- Support custom [Output Process Log](../../ai-assitant/ai-assistant-input-output#message-output)
+- Support custom [Welcome Message and Opening](../../ai-assistant/welcome-message-and-opening)
+- Support custom [Output Process Log](../../ai-assistant/ai-assistant-input-output#message-output)
 
 For more information about AI assistants, please read the [AI Assistant](../../ai-assistant) related documentation.
 
 ## Full Code Development {#full-code-development}
-Click the <span style={{ display: "inline-block", verticalAlign: "middle", margin: "0 4px", height: '30px', marginTop: "-15px" }}>![Full Code Button](./imgs/code.png)</span> button in the upper right corner of the page editor to switch to source code editing mode.
+Click the <span style={{ display: "inline-flex", verticalAlign: "middle", margin: "0 !important", height: '30px', width: '40px', alignItems: "center" }}>![Full Code Button](./imgs/code.png)</span> button in the upper right corner of the page editor to switch to source code editing mode.
 In source code mode, the left side displays source code files. After clicking on a source code file, the right side shows the source code content. The core source code is `schema.json`.
 
 ![Create AI Data Analysis Page - Source Code](./imgs/schema.png)

@@ -3,101 +3,54 @@ sidebar_position: 3
 slug: data-table-model
 ---
 
-# Data Table Model
-数据表模型是JitAi应用的数据基础，一个数据表模型就对应着数据库里面的一张表，用于定义业务数据的结构、类型和约束规则。
+# Creating Data Tables {#data-table-model}
+Data table models are the data foundation of JitAi applications. Each data table model corresponds to a table in the database, used to define the structure, types, and constraint rules of business data. In JitAi, you can create data table models in two ways: first, create a brand new data table model, suitable for designing business data structures from scratch; second, quickly generate models based on existing database tables, convenient for managing and extending existing data tables.
 
-## 创建数据表模型 {#create-data-table-model}
-在JitAi中，您可以通过两种方式创建数据表模型：一是全新创建数据表模型，适用于从零设计业务数据结构的场景；二是基于已有数据库表快速生成模型，便于对现有数据表进行管理和扩展。
+## Data Table Creation Entry {#data-table-create-entry}
+![Model Creation Configuration](./img/model-creation-configuration.png)
 
-### 数据表创建入口
-![模型创建配置](./img/model-creation-configuration.png)
+In the element tree of the development area, find `Data Models`, click the `+` button on the right side, select `Data Table`, and the `Create New Model` dialog will pop up.
 
-在开发区的元素树中找到`数据模型`，点击右侧的 `+`，选择`数据表`，完成数据表创建流程即可创建数据模型。
+![Create New Data Model](./img/create-data-model.png)
 
-### 新建数据表数据模型
-适用于全新业务需求，需要从零开始设计数据结构的场景。新建模型后会自动在数据库生成对应的表。
+Developers fill in the model name in the `Create New Model` dialog, select `Create New Data Table Model` as the creation method. The database and data table names will be automatically generated, or you can select existing database elements and edit the database table name.
 
-![新建数据模型](./img/create-data-model.png)
-
-开发者在`新建模型`弹窗中填写模型名称，创建方式选择`新建数据表数据模型`，数据库和数据表名会自动生成，也可以选择已有数据库元素，编辑数据库表名。
-
-## 源代码模式 {#source-code-mode}
-数据表模型支持源代码模式编辑，开发者可以通过编写代码定义字段和配置。
-
-### 基于已有数据表创建模型
-适用于数据库中已有数据表，需要在JitAi应用中快速创建对应模型的场景。
-
-![基于数据库表创建模型](./img/based-on-existing-data-model.png)
-
-开发者在`新建模型`弹窗中填写模型名称，创建方式选择`基于已有表创建模型`，选择已有数据库，数据库默认为内置数据库。
-
-![选择数据表](./img/select-data-table.png)
-
-点击`选择数据库表`的输入框即可弹出该数据库所有表。
-
-![字段映射](./img/field-mapping.png)
-
-选择一个数据库表后，点击`确定`，进入到字段配置页面，点击`从关联的数据库表中生成数据模型字段`，然后将数据库字段映射成对应数据类型。
+:::tip 
+For creating models based on existing tables, refer to [Creating Data Table Elements from Existing Tables](./create-data-table-from-existing-tables.md)
+:::
  
 
-## 设计表字段与数据类型 {#design-table-fields-and-data-types}
-JitAi应用中有`单行文本`、`多行文本`、`富文本`、`数字`、`金额`等多种数据类型可以用作数据库表字段。
+## Designing Table Fields and Data Types {#design-table-fields-and-data-types}
+JitAi applications have various data types such as `Single Line Text`, `Multi-line Text`, `Rich Text`, `Number`, `Amount`, etc., which can be used as database table fields.
 
-![字段配置](./img/field-configuration.png)
+![Field Configuration](./img/field-configuration.png)
 
-在创建数据表时，应根据具体业务需求选择合适的字段类型。
+When creating data tables, appropriate field types should be selected based on specific business requirements.
 
-每种数据类型都有各自的配置选项，以**单行文本**为例：
+Each data type has its own configuration options. Taking **Single Line Text** as an example:
 
-![单行文本配置](./img/single-line-text-configuration.png)
-单行文本数据类型应用广泛，是数据建模中最基础、最常用的字段类型之一。主要特点包括：仅支持单行文本内容且不允许换行，系统会自动生成字段名称（如 `f5f6`）方便数据库操作，默认最大可存储255个字符。该类型字段支持多种个性化设置和约束条件，可以设置提示文字，限制最大文本长度，还可通过唯一性控制确保字段值不重复，并支持创建数据库索引以优化查询性能。此外，单行文本字段还支持设置计算公式实现动态计算，以及预设默认值等高级功能，满足不同业务场景下的灵活需求。
+![Single Line Text Configuration](./img/single-line-text-configuration.png)
+The single-line text data type is widely used and is one of the most basic and commonly used field types in data modeling. Its main characteristics include: supporting only single-line text content without line breaks, automatically generating field names (such as `f5f6`) for convenient database operations, and storing a maximum of 255 characters by default. This field type supports various personalized settings and constraint conditions, allowing you to set placeholder text, limit maximum text length, ensure field value uniqueness through uniqueness control, and support creating database indexes to optimize query performance. In addition, single-line text fields also support setting calculation formulas for dynamic calculations and preset default values, meeting flexible requirements in different business scenarios.
 
-单行文本字段适用于存储如下类型的数据：姓名、用户名、标题、简短描述及其他不需要换行的简短文本信息。
+Single-line text fields are suitable for storing the following types of data: names, usernames, titles, brief descriptions, and other short text information that does not require line breaks.
 
-## 配置表索引优化查询 {#configure-table-index-optimization}
-在高级配置中，可以为数据表添加`多列联合唯一`和`组合索引`来优化查询性能和保证数据完整性。
+## Configuring Table Indexes for Query Optimization {#configure-table-index-optimization}
+In advanced configuration, you can add `Multi-column Composite Unique` and `Composite Index` to data tables to optimize query performance and ensure data integrity.
 
-![联合索引](./img/joint-index.png)
-### 多列联合唯一
-通过选择多个字段创建联合唯一约束，确保这些字段的组合值在整个表中唯一。例如，可以将`产品名称`和`规格`字段设置为联合唯一，防止相同规格的产品出现重复。
+![Composite Index](./img/joint-index.png)
+### Multi-column Composite Unique {#multi-column-composite-unique}
+Create composite unique constraints by selecting multiple fields to ensure that the combined values of these fields are unique throughout the table. For example, you can set the `Product Name` and `Specification` fields as composite unique to prevent duplicate products with the same specifications.
 
-### 组合索引
-选择多个字段创建组合索引，根据这些字段同时筛选可显著提升查询性能。
+### Composite Index {#composite-index}
+Create composite indexes by selecting multiple fields. Filtering based on these fields simultaneously can significantly improve query performance.
 
-:::warning 警告
-合理配置索引能有效提升查询速度，但过多的索引会影响数据写入性能，需要根据实际业务场景平衡。
+:::warning Warning
+Proper index configuration can effectively improve query speed, but too many indexes will affect data write performance. Balance is needed according to actual business scenarios.
 :::
 
-## 使用内置数据管理功能 {#use-built-in-data-management-function}
-JitAi为数据表模型提供了数据管理功能，无需编写代码即可对数据表进行CRUD操作，在开发区也能对数据进行管理。
+## Source Code Mode {#source-code-mode}
+In addition to visual configuration, it also supports directly modifying model source code in code mode, providing greater flexibility for advanced developers.
 
-![数据管理1](./img/data-management-1.png)
+![View Source Code](./img/view-source-code.png)
 
-点击`数据管理`，就可以进入到数据管理可视化页面。
-
-![数据管理2](./img/data-management-2.png)
-
-数据管理功能包括数据筛选查询、新增、编辑、删除、批量修改、批量删除、清空重置数据和导入导出等，用户可以直观地管理数据表中的所有记录。
-
-## 扩展模型功能 {#extend-model-function}
-### 模型函数配置 {#model-function-configuration}
-在面向对象开发中，可以为类封装函数来实现特定业务逻辑，JitAi的数据模型也支持自定义函数，为数据模型扩展业务逻辑处理能力。
-
-![模型函数1](./img/model-function-1.png)
-
-开发者在模型编辑器页面，点击`函数设计`页签，即可进入函数设计页面，点击`新建函数`，在弹框内输入函数名称（英文名称自动生成，开发者可以自定义修改）。
-
-![模型函数2](./img/model-function-2.png)
-
-点击`确定`即可完成函数创建并开始编辑函数逻辑。
-
-![模型函数3](./img/model-function-3.png)
-
-模型函数支持新建、编辑、删除，参数和返回值类型可自定义，内置可视化代码编辑器便于快速插入常用语句。
-
-### 源码模式 
-除了可视化配置外，还支持在代码模式下直接修改模型源码，为高级开发者提供更大的灵活性。
-
-![查看源码](./img/view-source-code.png)
-
-切换到源码模式下，可以看到模型定义，模型函数等整个模型的源代码。
+Switching to source code mode, you can see the entire model's source code including model definitions, model functions, etc.

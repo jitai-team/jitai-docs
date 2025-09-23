@@ -2,191 +2,192 @@
 sidebar_position: 1
 ---
 
-# 门户导航设计
-在企业级应用中，通常不同应用角色的用户因权限或负责业务范围不同，看到的系统功能入口有所区分。JitAi使用门户实现这种区分，不同应用角色的用户能看到的门户列表不同，每个门户中的导航菜单也不同。
+# Creating Portals
+In enterprise applications, users with different application roles typically see different system function entries based on their permissions or business scope responsibilities. JitAi uses portals to implement this differentiation, where users with different application roles see different portal lists, and each portal contains different navigation menus.
 
-![门户选择页面](./imgs/portal-select-page.gif)
+![Portal Selection Page](./imgs/portal-select-page.gif "Portal Selection Page")
 
-用户登录系统后即可在门户选择页面看到自己可以访问的门户列表，选择一个门户后即可进入该门户并访问门户中的功能。
+After logging into the system, users can see the list of portals they can access on the portal selection page. After selecting a portal, they can enter it and access the functions within the portal.
 
-## 应用内置3个门户 {#application-built-in-three-portals}
-JitAi会为每个新创建的应用创建三个内置的门户：开发者门户、管理者门户、使用者门户。
+## Application Built-in Three Portals {#application-built-in-three-portals}
+JitAi creates three built-in portals for each newly created application: Developer Portal, Administrator Portal, and User Portal.
 
-![IDE门户列表](./imgs/ide-portal-list.png)
+![IDE Portal List](./imgs/ide-portal-list.png "IDE Portal List")
 
-以开发者门户为例，用户在任意门户中的左上角都可以进行门户切换操作。
+Taking the Developer Portal as an example, users can switch between portals in the upper left corner of any portal.
 
-### 开发者门户 {#developer-portal} 
-开发者门户是给应用开发者使用的，开发者进入开发者门户后即可使用[JitAi开发工具](../../development-tool-and-publish-service/jitai-visual-development-tools)进行应用开发工作，例如给不同应用角色配置可访问的门户列表、搭建系统功能、配置应用信息等。
+### Developer Portal {#developer-portal} 
+The Developer Portal is designed for application developers. After entering the Developer Portal, developers can use [JitAi Development Tools](../../development-tool-and-publish-service/jitai-visual-development-tools) for application development work, such as configuring accessible portal lists for different application roles, building system functions, and configuring application information.
 
-除了开发者门户之外，其它所有门户的导航菜单都是由应用开发者在开发者门户中进行配置的。
+Except for the Developer Portal, the navigation menus of all other portals are configured by application developers within the Developer Portal.
 
-### 管理者门户 {#admin-portal} 
-拥有应用管理员角色的用户可以进入管理者门户对应用进行管理，比如管理组织架构、组织架构角色及其成员。开发者也可以对管理者门户进行修改。
+### Administrator Portal {#admin-portal} 
+Users with application administrator roles can enter the Administrator Portal to manage applications, such as managing organizational structure, organizational roles, and their members. Developers can also modify the Administrator Portal.
 
-每个应用在创建时会自动创建一个管理员账号，初始用户名：`admin123`，初始密码：`admin123`，建议开发者登录后在个人[基本信息](../../development-tool-and-publish-service/jitai-visual-development-tools#personal-center)中修改。
+Each application automatically creates an administrator account upon creation, with initial username: `admin123` and initial password: `admin123`. It is recommended that developers modify these credentials in the personal [basic information](../../development-tool-and-publish-service/jitai-visual-development-tools#personal-center) after logging in.
 
-:::tip 组织架构角色与应用角色
-组织架构角色与用户在企业组织架构中的岗位相对应，而JitAi应用中的的`应用角色`则代表用户在应用系统中的权限。组织架构角色与应用角色类似但并无严格对照关系，一个普通员工也可以被赋予应用管理员的角色，管理一个应用系统。
+:::tip Organizational Roles vs Application Roles
+Organizational roles correspond to users' positions within the enterprise organizational structure, while `Application Roles` in JitAi applications represent users' permissions within the application system. Organizational roles and application roles are similar but do not have a strict correspondence relationship. An ordinary employee can also be assigned an application administrator role to manage an application system.
 :::
 
-### 使用者门户
-开发者门户和管理者门户都是应用系统中必须的基础门户，前者用于应用开发，后者用于应用管理。
+### User Portal {#user-portal}
+Both the Developer Portal and Administrator Portal are essential basic portals in application systems, with the former used for application development and the latter for application management.
 
-使用者门户是给普通用户使用的，他们既非管理者也非开发者，只是使用开发好的应用功能在自己权限范围内开展日常工作。
+The User Portal is designed for regular users who are neither administrators nor developers, but simply use the developed application functions to carry out daily work within their permission scope.
 
-## 3种门户类型 {#three-portal-types}
-![新建门户](./imgs/create-portal.png)
+## Three Portal Types {#three-portal-types}
+![Create Portal](./imgs/create-portal.png "Create Portal")
 
-新建门户时，开发者需要选择门户类型。JitAi提供了三种门户类型：常规门户、SSR门户、空白门户。
+When creating a new portal, developers need to select the portal type. JitAi provides three portal types: Regular Portal, SSR Portal, and Blank Portal.
 
-### 常规门户
-常规门户是最为常用的门户类型，内置了左侧导航、顶部导航、用户信息展示等完整门户组件，同时支持PC端和移动端的响应式适配。
+### Regular Portal {#regular-portal}
+The Regular Portal is the most commonly used portal type, with built-in complete portal components such as left navigation, top navigation, and user information display, while supporting responsive adaptation for both PC and mobile devices.
 
-### 空白门户
-空白门户是最小化的门户实现，提供基础的页面容器和路由框架，不包含内置的导航体系，完全由开发者自定义界面结构，适用于高度定制化的应用界面和特殊展示需求。
+### Blank Portal {#blank-portal}
+The Blank Portal is a minimalist portal implementation that provides basic page containers and routing framework without built-in navigation systems. The interface structure is completely customized by developers, suitable for highly customized application interfaces and special display requirements.
 
-### SSR门户
-SSR(Server-Side Rendering，服务端渲染)门户用于提升首屏加载性能和SEO优化，目前支持Markdown文件渲染。
+### SSR Portal {#ssr-portal}
+SSR (Server-Side Rendering) portals are used to improve first-screen loading performance and SEO optimization, currently supporting Markdown file rendering.
 
-## 创建门户并配置菜单 {#create-portal-and-configure-menu}
-![新建常规门户弹窗表单](./imgs/create-regular-portal-popup-form.gif)
+## Create Portal and Configure Menu {#create-portal-and-configure-menu}
+![Create Regular Portal Popup Form](./imgs/create-regular-portal-popup-form.gif "Create Regular Portal Popup Form")
 
-开发者在元素树中找到`门户`，点击右侧`+`按钮，选择`常规门户`打开`新建常规门户`弹窗表单。开发者输入门户名称后点击`确定`，即可新建一个常规门户，并进入可视化门户编辑器。
+Developers find `Portal` in the element tree, click the `+` button on the right, select `Regular Portal` to open the `Create Regular Portal` popup form. After entering the portal name and clicking `Confirm`, developers can create a new regular portal and enter the visual portal editor.
 
-![常规门户编辑器](./imgs/regular-portal-editor.png)
+![Regular Portal Editor](./imgs/regular-portal-editor.png "Regular Portal Editor")
 
-在常规门户编辑器中，开发者可以进行门户的菜单设计、布局设计、配置ai-assistant。
+In the regular portal editor, developers can perform portal menu design, layout design, and configure AI assistants.
 
-### 新建/删除/隐藏菜单
-![新建菜单](./imgs/create-menu.png)
+### Create/Delete/Hide Menu {#create-delete-hide-menu}
+![Create Menu](./imgs/create-menu.png "Create Menu")
 
-开发者按需在门户中新建若干菜单，每个菜单在创建时支持指定名称、图标、图标配色。菜单创建时可以绑定已有的PC以及移动端页面，也可以在创建菜单的同时自动新建页面（需要选择一种页面类型）。
+Developers can create multiple menus in the portal as needed. Each menu supports specifying name, icon, and icon color when created. When creating a menu, you can bind existing PC and mobile pages, or automatically create new pages while creating the menu (requires selecting a page type).
 
-如需删除菜单，可以点击菜单项右侧的`删除`按钮，在弹窗中选择是否连页面一起删除，点击`确定`后即可删除菜单。
+To delete a menu, click the `Delete` button on the right side of the menu item, choose whether to delete the page together in the popup, and click `Confirm` to delete the menu.
 
-在菜单项右侧还有`隐藏`按钮，当菜单被隐藏时，用户在访问门户时则看不到被隐藏的菜单入口。
+There is also a `Hide` button on the right side of menu items. When a menu is hidden, users will not see the hidden menu entry when accessing the portal.
 
-### 拖拽菜单排序
-开发者可以拖拽任意菜单项到目标位置，从而调整菜单项的顺序。
+### Drag Menu Sorting {#drag-menu-sort}
+Developers can drag any menu item to the target position to adjust the order of menu items.
 
-![门户菜单拖拽排序](./imgs/portal-menu-drag-sort.gif)
+![Portal Menu Drag Sort](./imgs/portal-menu-drag-sort.gif "Portal Menu Drag Sort")
 
-开发者将鼠标放在目标菜单项上，当鼠标变成小手图案时，按住鼠标左键上下拖拽菜单项，即可调整其所在行。
+Developers place the mouse on the target menu item, and when the mouse cursor changes to a hand icon, hold down the left mouse button and drag the menu item up and down to adjust its position.
 
-### 对菜单进行分组
-当菜单项较多时，开发者可以创建分组，并将菜单项分类移动到分组中，从而使门户导航结构更加清晰。当然，也可以提前创建好分组，直接在分组下新建菜单。
+### Menu Grouping {#menu-grouping}
+When there are many menu items, developers can create groups and categorically move menu items into groups to make the portal navigation structure clearer. Of course, you can also create groups in advance and directly create new menus under the groups.
 
-如何新建门户菜单分组？
+How to create a new portal menu group?
 
-![新建门户菜单分组](./imgs/create-portal-menu-group.gif)
+![Create Portal Menu Group](./imgs/create-portal-menu-group.gif "Create Portal Menu Group")
 
-开发者点击`+ 新建分组`按钮，在`新建分组`弹窗中输入分组标题，点击`确定`后即可创建一个分组。开发者可以在创建分组的同时设置分组展开和收起图标以及图标配色，也可以在创建完成后点击分组标题右侧的`铅笔`按钮进行再次编辑。
+Developers click the `+ New Group` button, enter the group title in the `New Group` popup, and click `Confirm` to create a group. Developers can set group expand and collapse icons and icon colors while creating the group, or click the `pencil` button on the right side of the group title after creation to edit again.
 
-如何将菜单移动到分组中？
+How to move menus into groups?
 
-![门户菜单分组](./imgs/portal-menu-grouping.gif)
+![Portal Menu Grouping](./imgs/portal-menu-grouping.gif "Portal Menu Grouping")
 
-在每个菜单的右侧有`移动到`按钮，点击该按钮后在弹窗中选择要移动到的目标分组，即可将菜单项移动到该分组中。想将菜单从分组中移出或移动到其它分组，再次使用`移动到`按钮并选择目标门户/分组即可。
+Each menu has a `Move to` button on the right side. Click this button and select the target group in the popup to move the menu item into that group. To move a menu out of a group or to another group, use the `Move to` button again and select the target portal/group.
 
-门户菜单的分组支持嵌套，开发者点击分组标题右侧的`+`按钮，就可以在分组下创建子分组，实现嵌套结构。
+Portal menu grouping supports nesting. Developers can click the `+` button on the right side of the group title to create sub-groups under the group, implementing a nested structure.
 
-和菜单类似，分组也支持移动操作。
+Similar to menus, groups also support move operations.
 
-![移动门户菜单分组](./imgs/move-portal-menu-group.gif)
+![Move Portal Menu Group](./imgs/move-portal-menu-group.gif "Move Portal Menu Group")
 
-开发者点击分组标题右侧的`...`按钮，在弹出中选择目标位置后点击`确定`即可完成移动。
+Developers click the `...` button on the right side of the group title, select the target position in the popup, and click `Confirm` to complete the move.
 
-### PC端和移动端菜单页面
-创建菜单时如果选择新建页面，平台会自动创建PC端和移动端两种页面并出现在元素目录树中，开发者需要在页面的可视化编辑器中进行页面开发。
+### PC and Mobile Menu Pages {#pc-mobile-menu-pages}
+When creating a menu and selecting to create a new page, the platform will automatically create both PC and mobile pages that appear in the element directory tree. Developers need to perform page development in the visual editor of the pages.
 
-创建菜单时如果选择绑定已有页面，开发者可以指定要绑定的PC端和移动端页面，二者选其一或全选都可以。
+When creating a menu and selecting to bind existing pages, developers can specify the PC and mobile pages to bind, choosing either one or both.
 
-![新建菜单并绑定已有页面](./imgs/create-menu-and-bind-existing-page.gif)
+![Create Menu and Bind Existing Page](./imgs/create-menu-and-bind-existing-page.gif "Create Menu and Bind Existing Page")
 
-若菜单没有启用移动端页面，开发者可以一键启用，还可以进行PC端和移动端页面的同步、将页面从菜单中移除。
+If a menu does not have mobile pages enabled, developers can enable them with one click, and can also synchronize PC and mobile pages or remove pages from the menu.
 
-![门户菜单更多按钮](./imgs/portal-menu-more-buttons.gif)
+![Portal Menu More Buttons](./imgs/portal-menu-more-buttons.gif "Portal Menu More Buttons")
 
-开发者点击菜单项右侧的`更多`按钮，在弹出的列表中点击`开启移动端页面`按钮即可快速启用移动端页面。PC端页面和移动端页面之间支持快速同步，点击`同步PC端页面`或`同步移动端页面`按钮即可完成设计同步。如果想把PC端或者移动端页面从菜单中移除，点击`移除`按钮即可。
+Developers click the `More` button on the right side of the menu item, and click the `Enable Mobile Page` button in the popup list to quickly enable mobile pages. PC and mobile pages support quick synchronization. Click the `Sync PC Page` or `Sync Mobile Page` button to complete design synchronization. To remove PC or mobile pages from the menu, click the `Remove` button.
 
-### 使用页面变量赋值控制页面逻辑
-同一个页面可能会被不同的门户菜单使用，从不同门户菜单访问时，页面需要展示不同的内容/执行不同的逻辑，此时可以利用页面变量赋值实现。
+### Using Page Variable Assignment to Control Page Logic {#page-variable-assignment}
+The same page may be used by different portal menus. When accessed from different portal menus, the page needs to display different content or execute different logic. This can be achieved using page variable assignment.
 
-![门户菜单页面变量赋值](./imgs/portal-menu-page-variable-assignment.gif)
+![Portal Menu Page Variable Assignment](./imgs/portal-menu-page-variable-assignment.gif "Portal Menu Page Variable Assignment")
 
-开发者可以展开菜单项右侧的`更多`按钮，点击`页面变量赋值`按钮，在弹窗中为页面变量赋值。
+Developers can expand the `More` button on the right side of the menu item, click the `Page Variable Assignment` button, and assign values to page variables in the popup.
 
 :::warning
-开发者需要在页面中声明[页面变量](../component-based-page-development#page-variables)，页面没有声明变量时则无法在门户中设置页面变量赋值。
+Developers need to declare [page variables](../component-based-page-development#page-variables) in the page. If no variables are declared in the page, page variable assignment cannot be set in the portal.
 :::
 
-### 重写菜单页面
-门户也可以从被继承应用中继承，但并不是门户中所有菜单的页面都符合当前应用需求，开发者可以重写门户中的菜单页面。
+### Rewrite Menu Page {#rewrite-menu-page}
+Portals can also be inherited from inherited applications, but not all menu pages in the portal meet the current application requirements. Developers can rewrite menu pages in the portal.
 
-![重写菜单](./imgs/rewrite-menu.png)
+![Rewrite Menu](./imgs/rewrite-menu.png "Rewrite Menu")
 
-点击菜单项右侧的`重写`按钮，打开`重写菜单`的弹窗，开发者可以给页面重命名、可以选择新建页面或直接绑定已有页面。
+Click the `Rewrite` button on the right side of the menu item to open the `Rewrite Menu` popup. Developers can rename the page, choose to create a new page, or directly bind an existing page.
 
-## 门户布局设计 {#portal-layout-design}
-### 设置左侧/顶部导航
-![门户布局设计](./imgs/portal-layout-design.gif)
+## Portal Layout Design {#portal-layout-design}
+### Set Left/Top Navigation {#set-left-top-navigation}
+![Portal Layout Design](./imgs/portal-layout-design.gif "Portal Layout Design")
 
-开发者可以修改导航栏的显示位置，支持左侧导航、顶部导航。
+Developers can modify the display position of the navigation bar, supporting left navigation and top navigation.
 
-![门户左侧导航](./imgs/portal-left-navigation.png)
+![Portal Left Navigation](./imgs/portal-left-navigation.png "Portal Left Navigation")
 
-以上是设置为左侧导航后的效果，所有导航菜单显示在系统界面的左侧。
+The above shows the effect after setting to left navigation, with all navigation menus displayed on the left side of the system interface.
 
-![门户顶部导航](./imgs/portal-top-navigation.png)
+![Portal Top Navigation](./imgs/portal-top-navigation.png "Portal Top Navigation")
 
-以上是设置为顶部导航后的效果，所有导航菜单显示在系统界面的顶部。
+The above shows the effect after setting to top navigation, with all navigation menus displayed at the top of the system interface.
 
-### 多标签页
-开发者在门户的`布局设计`中启用或禁用`多标签页浏览`。
+### Multi-tabs {#multi-tabs}
+Developers can enable or disable `Multi-tab Browsing` in the portal's `Layout Design`.
 
-![门户导航多标签页](./imgs/portal-navigation-multi-tabs.gif)
+![Portal Navigation Multi-tabs](./imgs/portal-navigation-multi-tabs.gif "Portal Navigation Multi-tabs")
 
-开启多标签页时，每一个被访问的菜单页面都会出现在标签页列表中，用户可以点击标签页切换页面。
+When multi-tabs are enabled, each accessed menu page will appear in the tab list, and users can click tabs to switch between pages.
 
-![禁用多标签页](./imgs/disable-multi-tabs.gif)
+![Disable Multi-tabs](./imgs/disable-multi-tabs.gif "Disable Multi-tabs")
 
-禁用多标签页时，页面不会显示标签页列表，用户只能在导航菜单中切换页面。
+When multi-tabs are disabled, the page will not display the tab list, and users can only switch pages through the navigation menu.
 
-### 是否显示在门户切换列表中
-当开发者在`布局设计`中关闭了`在门户切换菜单中显示`开关时，用户在门户左上角的门户切换菜单中将看不到该门户。
+### Show in Portal Switch List {#show-in-portal-switch-list}
+When developers turn off the `Show in Portal Switch Menu` switch in `Layout Design`, users will not see this portal in the portal switch menu at the upper left corner of the portal.
 
-### 设置在门户列表中的顺序
-当应用包含多个门户时，开发者可以在`布局设计`中设置顺序值，从而调整每个门户在门户切换菜单中的显示顺序。
+### Set Order in Portal List {#set-portal-list-order}
+When an application contains multiple portals, developers can set order values in `Layout Design` to adjust the display order of each portal in the portal switch menu.
 
-## 启用或关闭常用功能入口 {#enable-disable-common-function-entries}
-每个新建的门户默认都会有一些常用功能入口：发起申请、待办中心、消息中心、个人中心、新建功能（支持简易模式下新建功能模块，开发能力弱于[可视化开发工具](../../development-tool-and-publish-service/jitai-visual-development-tools)）。以上入口支持在`布局设计`中启用或禁用。
+## Enable or Disable Common Function Entries {#enable-disable-common-function-entries}
+Each newly created portal has some common function entries by default: Initiate Application, To-do Center, Message Center, Personal Center, and New Function (supports creating function modules in simple mode, with weaker development capabilities than [Visual Development Tools](../../development-tool-and-publish-service/jitai-visual-development-tools)). These entries can be enabled or disabled in `Layout Design`.
 
-![门户常用功能入口](./imgs/portal-common-function-entry.png)
+![Portal Common Function Entry](./imgs/portal-common-function-entry.png "Portal Common Function Entry")
 
-开发者在`布局设计`-`常用导航功能`区域勾选或取消勾选，即可将对应的功能入口启用或禁用。
+Developers can check or uncheck in the `Layout Design` - `Common Navigation Functions` area to enable or disable the corresponding function entries.
 
-![门户常用功能入口显示](./imgs/portal-common-function-entry-display.png)
+![Portal Common Function Entry Display](./imgs/portal-common-function-entry-display.png "Portal Common Function Entry Display")
 
-上图是启用所有常用功能入口后的效果。
+The above image shows the effect after enabling all common function entries.
 
-### 发起申请/待办/消息中心入口
-当开发者开启`发起申请`+`待办中心`+`消息中心`入口时，用户可以在访问门户时发起审批流程、查看待办审批事项、查看消息通知。
+### Initiate Application/To-do/Message Center Entry {#application-todo-message-entry}
+When developers enable the `Initiate Application` + `To-do Center` + `Message Center` entries, users can initiate approval processes, view pending approval items, and view message notifications when accessing the portal.
 
-![发起申请/待办/消息中心入口](./imgs/initiate-application-todo-message-center-entry.gif)
+![Initiate Application/To-do/Message Center Entry](./imgs/initiate-application-todo-message-center-entry.gif "Initiate Application/To-do/Message Center Entry")
 
-### 个人中心入口
-当开发者开启`个人中心`入口时，用户在访问门户时可以查看个人基本信息以及修改昵称、密码，也可以切换[组织架构](../../user-and-permission/organizational-structure)、退出登录。
+### Personal Center Entry {#personal-center-entry}
+When developers enable the `Personal Center` entry, users can view personal basic information and modify nicknames and passwords when accessing the portal, and can also switch [organizational structure](../../user-and-permission/organizational-structure) and log out.
 
-![个人中心功能](./imgs/personal-center-functions.gif)
+![Personal Center Functions](./imgs/personal-center-functions.gif "Personal Center Functions")
 
-## 在门户中集成AI助理 {#integrate-ai-assistant-in-portal}
-JitAi支持在门户中直接集成[AI助理](../../ai-assitant/create-ai-assistant)，用户在访问门户时可以与AI助理进行交互。
+## Integrating AI Assistant in Portal {#using-ai-assistant-in-portal}
+JitAi supports directly integrating [AI Assistant](../../ai-assistant/create-ai-assistant) in portals, allowing users to interact with AI assistants when accessing portals. This is a general introduction; for detailed content, please refer to [Integrating AI Assistant in Portals](../../using-ai-in-portals-and-pages/using-ai-assistants-in-portals).
 
-![门户集成ai-assistant](./imgs/portal-integrate-ai-assistant.gif)
+![Portal Integrate AI Assistant](./imgs/portal-integrate-ai-assistant.gif "Portal Integrate AI Assistant")
 
-开发者在门户配置界面中点击`AI助理`页签，在配置界面中打开开关并选择一个[AI助理](../../ai-assitant/create-ai-assistant)，即可在门户中集成AI助理。
+Developers click the `AI Assistant` tab in the portal configuration interface, turn on the switch in the configuration interface and select an [AI Assistant](../../ai-assistant/create-ai-assistant) to integrate the AI assistant in the portal.
 
-![AI助理在门户中的效果](./imgs/ai-assistant-effect-in-portal.png)
+![AI Assistant Effect in Portal](./imgs/ai-assistant-effect-in-portal.png "AI Assistant Effect in Portal")
 
-当用户访问开启了[AI助理](../../ai-assitant/create-ai-assistant)的门户时，可以看到”AI助理“导航菜单，点击即可打开AI助理对话框并与其对话。
+When users access a portal with [AI Assistant](../../ai-assistant/create-ai-assistant) enabled, they can see the "AI Assistant" navigation menu, click to open the AI assistant dialog and interact with it.
+

@@ -81,7 +81,7 @@ class CustomerModel(NormalModel):
 from .model import CustomerModel
 ```
 
-## 模型内置函数 
+## 模型内置函数 {#model-built-in-functions}
 JitORM数据模型提供了丰富的内置函数，涵盖数据的创建、读取、更新、删除等操作。这些函数支持单条和批量操作，并提供了灵活的查询和聚合功能。
 
 ### 基础数据操作 

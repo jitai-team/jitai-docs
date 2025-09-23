@@ -4,7 +4,7 @@ slug: organizational-structure
 ---
 
 # 组织架构 {#organizational-structure}
-JitAi平台提供了灵活的组织架构元素，支持标准组织、钉钉自建组织和企业微信自建组织三种类型。用户可以根据实际管理需求和系统基础，选择合适的组织架构类型，实现高效的成员与部门管理。平台支持成员、部门的灵活配置与管理，并可与第三方平台进行无缝集成，满足企业多样化的组织管理需求。
+JitAi平台提供灵活多样的组织架构能力，支持标准组织、钉钉自建组织、企业微信自建组织及 Microsoft Teams 四种类型。用户可根据实际管理需求和系统基础，灵活选择合适的组织架构，实现高效的成员与部门管理。平台不仅支持成员和部门的灵活配置，还可无缝集成第三方平台，全面满足企业多元化的组织管理场景。
 
 ## 默认组织架构 {#default-organizational-structure}
 在创建应用时，JitAi会自动为你生成一个默认的组织架构。
@@ -31,7 +31,7 @@ JitAi 支持在同一个应用中创建和管理多个组织架构，满足企�
 
 填完配置信息后，点击`确定`即可进入到可视化编辑器中查看。
 
-### 允许新注册用户加入 {#allow-new-registered-user-join}
+### 允许新注册用户加入 {#allowing-new-registered-users-to-join}
 在创建标准组织架构时，系统会显示`允许新注册用户加入`勾选框，且默认已勾选。勾选后，新的注册用户可直接加入该组织架构，便于成员快速扩展和管理。
 
 ## 钉钉自建组织 {#dingtalk-custom-organization}
@@ -86,6 +86,21 @@ AgentID、AppKey、AppSecret等应用参数需在钉钉开放平台的自建应�
 进行企业微信组织同步前，请确保已在企业微信管理后台为自建应用分配了通讯录相关的权限（如`读取成员`、`读取部门`等），以保障数据同步的顺利进行。
 :::
 
+## Microsoft Teams {#microsoft-teams}
+
+Microsoft Teams 组织架构集成是为使用 Microsoft Teams 作为企业协作平台的企业提供的组织架构对接能力。通过集成，企业可以实现与 Teams 平台的组织架构、成员信息的自动同步，便于在 JitAi 平台内统一管理部门、成员及权限，提升跨平台协作效率。
+
+![microsoftTeams创建](./img/corp/microsoft-teams-config.gif)
+
+创建组织架构时，选择 Microsoft Teams 作为组织类型，系统会自动弹出配置窗口。请依次填写组织名称（英文名会自动生成）、租户ID（Tenant ID）、客户端ID（Client ID）、客户端密钥（Client Secret）等 Microsoft Teams 应用相关凭证信息。完成配置后，系统将自动同步 Microsoft Teams 平台中的组织架构、部门及成员信息，实现统一的身份认证和权限管理，提升企业跨平台协作效率。
+
+**Microsoft Teams 配置信息获取指引：可参考 [Microsoft Teams 官方文档](https://learn.microsoft.com/zh-cn/microsoftteams/platform/)**
+
+:::tip 注意
+进行 Microsoft Teams 组织同步前，请确保已在 Azure 管理后台为应用分配了读取组织架构和成员信息的相关权限，以保障数据同步的顺利进行。
+:::
+
+
 ## 通讯录管理入口 {#contact-management-entry}
 JitAi提供了通讯录管理页面，可以实时查看部门、成员及角色信息。
 
@@ -93,7 +108,7 @@ JitAi提供了通讯录管理页面，可以实时查看部门、成员及角色
 
 开发者进入管理区，在左侧列表中点击`通讯录`即可在右侧看到组织架构管理面板。
 
-### 设置组织负责人 {#set-organization-leader}
+### 设置组织负责人 {#setting-organization-leader}
 在组织架构管理中，您可以为每个组织设置负责人，明确管理职责。设置负责人有助于在通讯录、审批等场景中快速定位主要联系人，提升组织管理效率。
 
 ![设置组织负责人](./img/corp/set-organization-manager.gif)
@@ -112,19 +127,19 @@ JitAi提供了通讯录管理页面，可以实时查看部门、成员及角色
 
 ![标准组织操作](./img/corp/standard-organization-operations.gif)
 
-### 新建部门 {#create-department}
+### 新建部门 {#creating-department}
 在标准组织的`组织架构`标签页中，开发者可以根据实际业务需求新建部门，灵活搭建企业的多级组织层级结构。支持为每个部门设置名称、上级部门等信息，便于后续的管理和调整。
 
-### 添加成员 {#add-member}
+### 添加成员 {#adding-member}
 支持在指定部门下添加新成员。添加时可填写成员的姓名、工号、联系方式、职位等详细信息，方便企业对成员进行统一管理和后续维护。
 
-### 导入成员 {#import-member}
+### 导入成员 {#importing-members}
 支持通过批量导入功能一次性录入大量成员信息。可下载模板文件，按要求填写后上传，系统会自动校验并导入数据，大幅提升成员录入效率，适合企业初次搭建或大规模成员变动场景。
 
-### 导出成员 {#export-member}
+### 导出成员 {#exporting-members}
 支持将当前部门或全组织的成员信息导出为Excel等文件格式，便于数据备份、分析统计或对接第三方系统。可按需选择导出全部成员或部分成员。
 
-### 调整部门 {#adjust-department}
+### 调整部门 {#adjusting-department}
 支持对部门进行多种调整操作，包括部门重命名、移动到其他上级部门、合并多个部门等，满足企业组织架构动态变化的需求。所有调整操作均会实时同步到通讯录，保障数据一致性。
 
 ### 成员转为离职 {#member-resignation}
@@ -132,13 +147,13 @@ JitAi提供了通讯录管理页面，可以实时查看部门、成员及角色
 
 ![标准组织角色操作](./img/corp/standard-organization-role-operations.gif)
 
-### 新建角色 {#create-role}
+### 新建角色 {#creating-role}
 在角色管理面板中，开发者可以根据企业组织架构部门岗位划分创建新的角色，用于细分成员的职责。比如研发主管、采购专员等。
 
-### 新建角色组 {#create-role-group}
+### 新建角色组 {#creating-role-group}
 支持新建角色组，将多个相关角色进行分组管理，统一管理同类角色。
 
-### 管理角色成员 {#manage-role-member}
+### 管理角色成员 {#managing-role-members}
 可在角色中灵活添加或移除成员，支持批量操作，便于企业根据岗位变动及时调整成员的角色。
 
 ## 钉钉自建组织通讯录 {#dingtalk-organization-contacts}
@@ -148,10 +163,10 @@ JitAi提供了通讯录管理页面，可以实时查看部门、成员及角色
 
 在管理者门户的通讯录面板中，切换到`组织架构`标签后，开发者可以进行以下操作：
 
-### 同步钉钉组织架构 {#sync-dingtalk-organization-structure}
+### 同步钉钉组织架构 {#syncing-dingtalk-organization-structure}
 点击`同步`按钮，可将钉钉后台的最新部门、成员等组织信息一键同步到JitAi平台，确保平台上的组织架构与钉钉保持一致。同步过程中，系统会自动校验并更新已有数据，避免重复和遗漏，保障数据的实时性和准确性。
 
-### 导出成员
+### 导出成员 {#exporting-members-dingtalk}
 支持将当前组织成员信息导出为Excel等常用文件格式，便于数据备份、分析统计或对接第三方系统。可按需选择导出全部成员或部分成员，满足不同场景下的数据处理需求。
 
 :::tip
@@ -165,10 +180,10 @@ JitAi提供了通讯录管理页面，可以实时查看部门、成员及角色
 
 在管理者门户的通讯录面板中，切换到`组织架构`标签后，开发者可以进行以下操作：
 
-### 同步企业微信组织架构 {#sync-wechat-work-organization-structure}
+### 同步企业微信组织架构 {#syncing-wechat-work-organization-structure}
 点击`同步`按钮，可将企业微信后台的最新部门、成员等组织信息一键同步到JitAi平台，确保平台上的组织架构与企业微信保持一致。同步过程中，系统会自动校验并更新已有数据，避免重复和遗漏，保障数据的实时性和准确性。 
 
-### 导出成员 
+### 导出成员 {#exporting-members-wechat-work}
 支持将当前组织成员信息导出为Excel等常用文件格式，便于数据备份、分析统计或对接第三方系统。可按需选择导出全部成员或部分成员，满足不同场景下的数据处理需求。若勾选了成员，则仅导出所选成员；未勾选时则导出全部成员信息。 
 
 :::tip 

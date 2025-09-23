@@ -12,11 +12,11 @@ Jit节点（即JitNode）是运行在操作系统上的一个应用程序（支�
 开发者组织是管理开发团队和项目的基本单位，团队成员在同一个组织下能够协作开发应用，共享资源。不同组织在软硬件资源、数据、应用等方面是隔离的。每个开发者组织可以绑定多个Jit节点，每个节点只能绑定到一个组织，每个开发者可以加入多个开发者组织。
 
 ## 在激活节点时创建新的开发组织 {#create-new-development-organization-when-activating-node}
-用户完成节点安装后，首次访问会进入节点激活页面。
+用户完成节点安装后，首次访问会进入节点激活页面。系统支持多种激活方式：Google、Github、微信。
 
-![扫码激活界面](./img/qr-code-activation.png)
+![激活方式](./img/activation-methods.gif)
 
-用户使用微信扫码后进入到绑定组织界面
+用户选择激活方式后进入到绑定组织界面
 
 ![选择创建新组织并绑定](./img/select-create-new-organization-and-bind.png)
 

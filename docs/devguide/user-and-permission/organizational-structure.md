@@ -3,174 +3,188 @@ sidebar_position: 1
 slug: organizational-structure
 ---
 
-# 组织架构 {#organizational-structure}
-JitAi平台提供了灵活的组织架构元素，支持标准组织、钉钉自建组织和企业微信自建组织三种类型。用户可以根据实际管理需求和系统基础，选择合适的组织架构类型，实现高效的成员与部门管理。平台支持成员、部门的灵活配置与管理，并可与第三方平台进行无缝集成，满足企业多样化的组织管理需求。
+# Organizational Structure {#organizational-structure}
+JitAi provides flexible and diverse organizational structure capabilities, supporting four types: Standard Organization, DingTalk Custom Organization, WeChat Work Custom Organization and Microsoft Teams. Users can flexibly choose the appropriate organizational structure according to actual management needs and system foundation, achieving efficient management of members and departments. The platform not only supports flexible configuration of members and departments, but also seamless integration with third-party platforms, fully meeting the diversified organizational management scenarios of enterprises.
 
-## 默认组织架构 {#default-organizational-structure}
-在创建应用时，JitAi会自动为你生成一个默认的组织架构。
+## Default Organizational Structure {#default-organizational-structure}
+When creating an application, JitAi will automatically generate a default organizational structure for you.
 
-![默认组织架构](./img/corp/default-organizational-structure.png)
+![](./img/corp/default-organizational-structure.png)
 
-在开发区的元素树中，找到并展开`组织架构`，即可看到系统自动生成的`默认组织架构`。点击该项后，右侧会显示详细的配置信息，支持编辑组织架构名称、设置组织负责人，以及配置是否允许新用户注册加入组织。应用创建人会自动成为组织的负责人并拥有管理员角色。关于角色权限，参考[角色与门户菜单权限指南](./role-portal-menu-permissions)。
+In the element tree of the development area, find and expand `Organizational Structure` to see the system-generated `Default Organizational Structure`. After clicking on it, detailed configuration information will be displayed on the right side, supporting editing of the organizational structure name, setting the organization leader, and configuring whether to allow new users to register and join the organization. The application creator will automatically become the organization leader and have administrator role. For role permissions, refer to the [Role and Portal Menu Permissions Guide](./role-portal-menu-permissions).
 
-## 组织架构创建 {#organizational-structure-creation}
-JitAi 支持在同一个应用中创建和管理多个组织架构，满足企业多业务线、跨部门或多子公司的复杂管理需求。开发者可以根据实际场景，灵活选择标准组织、钉钉自建组织或企业微信自建组织等类型，分别配置不同的组织结构、成员、部门及权限体系。每个组织架构相互独立，支持单独的成员管理、部门设置和权限分配，便于实现多租户或多团队协作。通过多组织架构能力，企业可以高效应对组织扩展、业务调整和多平台集成等挑战，提升整体管理效率和系统灵活性。
+## Organizational Structure Creation {#organizational-structure-creation}
+JitAi supports creating and managing multiple organizational structures within the same application, meeting complex management needs of enterprises with multiple business lines, cross-departments, or multiple subsidiaries. Developers can flexibly choose types such as Standard Organization, DingTalk Custom Organization, or WeChat Work Custom Organization based on actual scenarios, configuring different organizational structures, members, departments, and permission systems respectively. Each organizational structure is independent, supporting separate member management, department settings, and permission allocation, facilitating multi-tenant or multi-team collaboration. Through multi-organizational structure capabilities, enterprises can efficiently address challenges such as organizational expansion, business adjustments, and multi-platform integration, improving overall management efficiency and system flexibility.
 
-![组织架构创建](./img/corp/organizational-structure-creation.png)
+![](./img/corp/organizational-structure-creation.png)
 
-在开发区的元素树中，点击`组织架构`右侧的 `+` 按钮，选择创建标准组织、钉钉自建组织或企业微信自建组织，并填写相关配置信息，完成组织架构的创建。
+In the element tree of the development area, click the `+` button on the right side of `Organizational Structure`, select to create a Standard Organization, DingTalk Custom Organization, or WeChat Work Custom Organization, fill in the relevant configuration information, and complete the creation of the organizational structure.
 
-## 标准组织 {#standard-organization}
-标准组织是组织架构元素中最基础的一种，用户可在JitAi中自行维护通讯录信息，不依赖第三方，适用于没有使用第三方通讯办公平台的企业。
+## Standard Organization {#standard-organization}
+Standard Organization is the most basic type of organizational structure element. Users can maintain contact information independently in JitAi without relying on third parties, suitable for enterprises that do not use third-party communication and office platforms.
 
-![标准组织创建](./img/corp/standard-organization-creation.gif)
+![](./img/corp/standard-organization-creation.gif)
 
-在创建组织架构时，选择标准组织架构，即可出现`新建标准组织`弹窗，输入组织名称(英文名会自动生成)，输入组织负责人姓名，手机号（非必填），账号密码（默认**admin123**），是否允许新注册用户加入。
+When creating an organizational structure, select Standard Organization to bring up the `Create Standard Organization` dialog. Enter the organization name (English name will be automatically generated), organization leader's name, phone number (optional), account password (default **admin123**), and whether to allow new registered users to join.
 
-![标准组织1](./img/corp/standard-organization-1.png)
+![](./img/corp/standard-organization-1.png)
 
-填完配置信息后，点击`确定`即可进入到可视化编辑器中查看。
+After filling in the configuration information, click `Confirm` to enter the visual editor for viewing.
 
-### 允许新注册用户加入 {#allow-new-registered-user-join}
-在创建标准组织架构时，系统会显示`允许新注册用户加入`勾选框，且默认已勾选。勾选后，新的注册用户可直接加入该组织架构，便于成员快速扩展和管理。
+### Allowing New Registered Users to Join {#allowing-new-registered-users-to-join}
+When creating a standard organizational structure, the system will display the `Allow New Registered Users to Join` checkbox, which is checked by default. When checked, new registered users can directly join the organizational structure, facilitating rapid member expansion and management.
 
-## 钉钉自建组织 {#dingtalk-custom-organization}
-钉钉自建组织是专门为使用钉钉办公平台的企业设计的组织架构元素。通过该类型，可以实现与钉钉平台的深度集成，自动同步钉钉中的部门结构、成员信息等数据，避免重复维护通讯录的工作负担。
+## DingTalk Custom Organization {#dingtalk-custom-organization}
+DingTalk Custom Organization is an organizational structure element specifically designed for enterprises using the DingTalk office platform. Through this type, deep integration with the DingTalk platform can be achieved, automatically synchronizing department structures, member information, and other data from DingTalk, avoiding the burden of redundantly maintaining contact lists.
 
-![钉钉自建组织创建](./img/corp/dingtalk-custom-org-creation.gif)
+![](./img/corp/dingtalk-custom-org-creation.gif)
 
-在创建组织架构时，选择钉钉自建组织，即可出现`新建钉钉自建组织`弹窗。需要填写组织名称（英文名会自动生成）、企业ID（CorpID）、AgentID、AppKey、AppSecret等钉钉应用配置信息。这些配置信息用于建立与钉钉平台的安全连接，确保数据同步的准确性和安全性。
+When creating an organizational structure, select DingTalk Custom Organization to bring up the `Create DingTalk Custom Organization` dialog. You need to fill in the organization name (English name will be automatically generated), Enterprise ID (CorpID), AgentID, AppKey, AppSecret, and other DingTalk application configuration information. This configuration information is used to establish a secure connection with the DingTalk platform, ensuring the accuracy and security of data synchronization.
 
-![钉钉自建1](./img/corp/dingtalk-custom-1.png)
+![](./img/corp/dingtalk-custom-1.png)
 
-配置完成后，系统将自动从钉钉平台同步组织架构、部门信息和成员数据，实现统一的身份认证和权限管理。
+After configuration is complete, the system will automatically synchronize organizational structure, department information, and member data from the DingTalk platform, achieving unified identity authentication and permission management.
 
-**钉钉配置信息获取指引：可参考[钉钉开放平台文档](https://open-dev.dingtalk.com)**
+**DingTalk Configuration Information Acquisition Guide: Please refer to [DingTalk Open Platform Documentation](https://open-dev.dingtalk.com)**
 
-![钉钉企业ID获取示例](./img/corp/dingtalk-enterprise-id.png)
+![](./img/corp/dingtalk-enterprise-id.png)
 
-企业ID（CorpID）可在钉钉开放平台的企业信息页面中获取。
+The Enterprise ID (CorpID) can be obtained from the enterprise information page of the DingTalk Open Platform.
 
-![钉钉应用配置信息示例](./img/corp/dingtalk-configuration-info.png)
+![](./img/corp/dingtalk-configuration-info.png)
 
-AgentID、AppKey、AppSecret等应用参数需在钉钉开放平台的自建应用详情页中获取。
+Application parameters such as AgentID, AppKey, and AppSecret need to be obtained from the custom application details page of the DingTalk Open Platform.
 
-组织架构创建完成后，JitAi将自动为该组织配置[钉钉自建扫码登录方式](./login-authentication#dingtalk-custom-qr-login)，无需手动设置，便于成员通过钉钉扫码快捷登录系统。
+After the organizational structure is created, JitAi will automatically configure [DingTalk Custom QR Code Login](./login-authentication#dingtalk-custom-qr-login) for the organization without manual setup, facilitating members to quickly log in to the system through DingTalk QR code scanning.
 
-:::tip 注意
-进行钉钉组织同步前，请确保已在应用基础信息的权限管理中开启以下权限：`通讯录部门信息读权限`、`成员信息读权限`、`通讯录部门成员读权限`，以保障数据同步的顺利进行。
+:::tip Note
+Before performing DingTalk organization synchronization, please ensure that the following permissions have been enabled in the application's basic information permission management: `Address Book Department Information Read Permission`, `Member Information Read Permission`, `Address Book Department Member Read Permission`, to ensure smooth data synchronization.
 :::
 
-## 企业微信自建组织 {#wechat-work-custom-organization}
-企业微信自建组织是为使用企业微信办公平台的企业量身定制的组织架构元素。该类型可以与企业微信无缝对接，实现组织架构、通讯录信息的自动同步，充分利用企业微信的成熟生态，为企业提供一体化的办公解决方案。
+## WeChat Work Custom Organization {#wechat-work-custom-organization}
+WeChat Work Custom Organization is an organizational structure element tailored for enterprises using the WeChat Work office platform. This type can seamlessly integrate with WeChat Work, achieving automatic synchronization of organizational structure and contact information, fully leveraging the mature ecosystem of WeChat Work to provide enterprises with integrated office solutions.
 
-![企微自建组织创建](./img/corp/wechat-work-custom-org-creation.gif)
+![](./img/corp/wechat-work-custom-org-creation.gif)
 
-在创建组织架构时，选择企业微信自建组织，系统将显示`新建企业微信自建组织`配置弹窗。需要输入组织名称（英文名自动生成）、企业ID（CorpId）、AgentID、应用Secret等企业微信应用凭证信息。这些参数确保了与企业微信API的正确对接和数据传输的安全性。
+When creating an organizational structure, select WeChat Work Custom Organization, and the system will display the `Create WeChat Work Custom Organization` configuration dialog. You need to enter the organization name (English name automatically generated), Enterprise ID (CorpId), AgentID, Application Secret, and other WeChat Work application credential information. These parameters ensure proper integration with WeChat Work APIs and data transmission security.
 
-![企微自建1](./img/corp/wechat-work-organization-1.png)
+![](./img/corp/wechat-work-organization-1.png)
 
-完成配置后，系统会自动拉取企业微信中的组织架构数据，包括部门层级、成员信息、职位信息等，实现与企业微信生态的深度融合和统一管理。
+After completing the configuration, the system will automatically pull organizational structure data from WeChat Work, including department hierarchy, member information, position information, etc., achieving deep integration and unified management with the WeChat Work ecosystem.
 
-**企业微信配置信息获取指引：可参考[企业微信官方文档](https://work.weixin.qq.com)**
+**WeChat Work Configuration Information Acquisition Guide: Please refer to [WeChat Work Official Documentation](https://work.weixin.qq.com)**
 
-![企业ID获取示例](./img/corp/wechat-work-id.png)
-企业ID（CorpId）可在企业微信管理后台的企业信息页面中获取。
+![](./img/corp/wechat-work-id.png)
+The Enterprise ID (CorpId) can be obtained from the enterprise information page in the WeChat Work management backend.
 
-![应用配置信息示例](./img/corp/wechat-work-config-2.png)
-应用的相关配置信息可在企业微信自建应用的详情页面中查看。
+![](./img/corp/wechat-work-config-2.png)
+Application-related configuration information can be viewed on the details page of the WeChat Work custom application.
 
-组织架构创建完成后，JitAi将自动为该组织配置[企业微信自建扫码登录方式](./login-authentication#wechat-work-custom-qr-login)，无需手动设置，便于成员通过企业微信扫码快捷登录系统。
+After the organizational structure is created, JitAi will automatically configure [WeChat Work Custom QR Code Login](./login-authentication#wechat-work-custom-qr-login) for the organization without manual setup, facilitating members to quickly log in to the system through WeChat Work QR code scanning.
 
-:::tip 注意
-进行企业微信组织同步前，请确保已在企业微信管理后台为自建应用分配了通讯录相关的权限（如`读取成员`、`读取部门`等），以保障数据同步的顺利进行。
+:::tip Note
+Before performing WeChat Work organization synchronization, please ensure that contact-related permissions (such as `Read Members`, `Read Departments`, etc.) have been assigned to the custom application in the WeChat Work management backend to ensure smooth data synchronization.
 :::
 
-## 通讯录管理入口 {#contact-management-entry}
-JitAi提供了通讯录管理页面，可以实时查看部门、成员及角色信息。
+## Microsoft Teams {#microsoft-teams}
 
-![管理区通讯录](./img/corp/management-area-contacts.png)
+Microsoft Teams organizational structure integration provides organizational docking capabilities for enterprises using Microsoft Teams as their enterprise collaboration platform. Through integration, enterprises can achieve automatic synchronization of organizational structure and member information with the Teams platform, facilitating unified management of departments, members, and permissions within the JitAi platform, thereby improving cross-platform collaboration efficiency.
 
-开发者进入管理区，在左侧列表中点击`通讯录`即可在右侧看到组织架构管理面板。
+![](./img/corp/microsoft-teams-config.gif)
 
-### 设置组织负责人 {#set-organization-leader}
-在组织架构管理中，您可以为每个组织设置负责人，明确管理职责。设置负责人有助于在通讯录、审批等场景中快速定位主要联系人，提升组织管理效率。
+When creating an organizational structure, select Microsoft Teams as the organization type, and the system will automatically display a configuration window. Please fill in the organization name (English name will be automatically generated), Tenant ID, Client ID, Client Secret, and other Microsoft Teams application-related credential information in sequence. After completing the configuration, the system will automatically synchronize organizational structure, department, and member information from the Microsoft Teams platform, achieving unified identity authentication and permission management, improving enterprise cross-platform collaboration efficiency.
 
-![设置组织负责人](./img/corp/set-organization-manager.gif)
+**Microsoft Teams Configuration Information Acquisition Guide: Please refer to [Microsoft Teams Official Documentation](https://learn.microsoft.com/zh-cn/microsoftteams/platform/)**
 
-每个组织架构均支持设置负责人。点击`设置组织负责人`按钮后，将弹出`选择用户`窗口。您可以从全部成员中筛选，也可按部门、角色进行选择，或直接快捷选择自己作为负责人。
+:::tip Note
+Before performing Microsoft Teams organization synchronization, please ensure that permissions to read organizational structure and member information have been assigned to the application in the Azure management backend to ensure smooth data synchronization.
+:::
 
-### 部门成员搜索 {#department-member-search}
-为了便于高效管理和定位成员，系统支持在组织架构中快速搜索指定的部门或成员。无论成员数量多少，都能迅速查找目标对象。
+## Contact Management Entry {#contact-management-entry}
+JitAi provides a contact management page where you can view department, member, and role information in real-time.
 
-![搜索成员部门](./img/corp/search-members-departments.png)
+![](./img/corp/management-area-contacts.png)
 
-在组织架构页面顶部的搜索框输入部门名称或成员姓名，系统会自动筛选并高亮显示匹配结果。点击搜索结果可跳转至对应详情页面。
+Developers can enter the management area and click `Contacts` in the left sidebar to see the organizational structure management panel on the right side.
 
-## 标准组织通讯录 {#standard-organization-contacts}
-标准组织通讯录用于集中展示和管理企业的部门、成员、角色等信息，方便开发者进行组织架构调整、成员维护和权限分配。
+### Setting Organization Leader {#setting-organization-leader}
+In organizational structure management, you can set a leader for each organization to clarify management responsibilities. Setting a leader helps quickly locate key contacts in scenarios such as contact management and approvals, improving organizational management efficiency.
 
-![标准组织操作](./img/corp/standard-organization-operations.gif)
+![](./img/corp/set-organization-manager.gif)
 
-### 新建部门 {#create-department}
-在标准组织的`组织架构`标签页中，开发者可以根据实际业务需求新建部门，灵活搭建企业的多级组织层级结构。支持为每个部门设置名称、上级部门等信息，便于后续的管理和调整。
+Each organizational structure supports setting a leader. After clicking the `Set Organization Leader` button, a `Select User` window will pop up. You can filter from all members, select by department or role, or directly choose yourself as the leader for quick selection.
 
-### 添加成员 {#add-member}
-支持在指定部门下添加新成员。添加时可填写成员的姓名、工号、联系方式、职位等详细信息，方便企业对成员进行统一管理和后续维护。
+### Department Member Search {#department-member-search}
+To facilitate efficient management and member location, the system supports quick search for specific departments or members within the organizational structure. Regardless of the number of members, target objects can be quickly found.
 
-### 导入成员 {#import-member}
-支持通过批量导入功能一次性录入大量成员信息。可下载模板文件，按要求填写后上传，系统会自动校验并导入数据，大幅提升成员录入效率，适合企业初次搭建或大规模成员变动场景。
+![](./img/corp/search-members-departments.png)
 
-### 导出成员 {#export-member}
-支持将当前部门或全组织的成员信息导出为Excel等文件格式，便于数据备份、分析统计或对接第三方系统。可按需选择导出全部成员或部分成员。
+Enter department names or member names in the search box at the top of the organizational structure page, and the system will automatically filter and highlight matching results. Click on search results to jump to the corresponding details page.
 
-### 调整部门 {#adjust-department}
-支持对部门进行多种调整操作，包括部门重命名、移动到其他上级部门、合并多个部门等，满足企业组织架构动态变化的需求。所有调整操作均会实时同步到通讯录，保障数据一致性。
+## Standard Organization Contacts {#standard-organization-contacts}
+Standard Organization Contacts is used to centrally display and manage enterprise departments, members, roles, and other information, facilitating developers in organizational structure adjustments, member maintenance, and permission allocation.
 
-### 成员转为离职 {#member-resignation}
-可将成员状态设置为离职，离职成员将自动从通讯录和相关权限中移除，保障组织成员信息的准确性和系统安全性。支持批量操作，便于企业集中处理离职成员。
+![](./img/corp/standard-organization-operations.gif)
 
-![标准组织角色操作](./img/corp/standard-organization-role-operations.gif)
+### Creating Department {#creating-department}
+In the `Organizational Structure` tab of Standard Organization, developers can create new departments based on actual business needs, flexibly building multi-level organizational hierarchy structures for enterprises. Support setting names, parent departments, and other information for each department, facilitating subsequent management and adjustments.
 
-### 新建角色 {#create-role}
-在角色管理面板中，开发者可以根据企业组织架构部门岗位划分创建新的角色，用于细分成员的职责。比如研发主管、采购专员等。
+### Adding Member {#adding-member}
+Supports adding new members under specified departments. When adding, you can fill in detailed information such as member names, employee IDs, contact information, positions, etc., facilitating unified member management and subsequent maintenance for enterprises.
 
-### 新建角色组 {#create-role-group}
-支持新建角色组，将多个相关角色进行分组管理，统一管理同类角色。
+### Importing Members {#importing-members}
+Supports batch import functionality for one-time entry of large amounts of member information. You can download template files, fill them out as required and upload them. The system will automatically validate and import data, significantly improving member entry efficiency, suitable for initial enterprise setup or large-scale member change scenarios.
 
-### 管理角色成员 {#manage-role-member}
-可在角色中灵活添加或移除成员，支持批量操作，便于企业根据岗位变动及时调整成员的角色。
+### Exporting Members {#exporting-members}
+Supports exporting current department or entire organization member information to Excel and other file formats, facilitating data backup, analysis statistics, or integration with third-party systems. You can choose to export all members or selected members as needed.
 
-## 钉钉自建组织通讯录 {#dingtalk-organization-contacts}
-在企业日常管理中，许多公司会选择在钉钉平台维护和管理自己的组织架构。为了方便开发者在JitAi平台中统一查看和管理企业通讯录，系统提供了钉钉自建组织通讯录的同步与展示页面。该页面旨在帮助企业实现组织架构的实时同步，确保成员、部门等信息的准确性和一致性。
+### Adjusting Department {#adjusting-department}
+Supports various department adjustment operations, including department renaming, moving to other parent departments, merging multiple departments, etc., meeting the needs of dynamic changes in enterprise organizational structure. All adjustment operations will be synchronized to the contacts in real-time, ensuring data consistency.
 
-![钉钉自建操作](./img/corp/dingtalk-custom-operations.png)
+### Member Resignation {#member-resignation}
+Member status can be set to resigned. Resigned members will be automatically removed from contacts and related permissions, ensuring the accuracy of organizational member information and system security. Supports batch operations, facilitating centralized processing of resigned members for enterprises.
 
-在管理者门户的通讯录面板中，切换到`组织架构`标签后，开发者可以进行以下操作：
+![](./img/corp/standard-organization-role-operations.gif)
 
-### 同步钉钉组织架构 {#sync-dingtalk-organization-structure}
-点击`同步`按钮，可将钉钉后台的最新部门、成员等组织信息一键同步到JitAi平台，确保平台上的组织架构与钉钉保持一致。同步过程中，系统会自动校验并更新已有数据，避免重复和遗漏，保障数据的实时性和准确性。
+### Creating Role {#creating-role}
+In the role management panel, developers can create new roles based on enterprise organizational structure department positions to subdivide member responsibilities. For example, R&D Manager, Procurement Specialist, etc.
 
-### 导出成员
-支持将当前组织成员信息导出为Excel等常用文件格式，便于数据备份、分析统计或对接第三方系统。可按需选择导出全部成员或部分成员，满足不同场景下的数据处理需求。
+### Creating Role Group {#creating-role-group}
+Supports creating new role groups to manage multiple related roles in groups, providing unified management of similar roles.
+
+### Managing Role Members {#managing-role-members}
+Members can be flexibly added to or removed from roles, with batch operation support, facilitating enterprises to timely adjust member roles based on position changes.
+
+## DingTalk Organization Contacts {#dingtalk-organization-contacts}
+In daily enterprise management, many companies choose to maintain and manage their organizational structure on the DingTalk platform. To facilitate developers in unified viewing and management of enterprise contacts on the JitAi platform, the system provides a synchronization and display page for DingTalk Custom Organization contacts. This page aims to help enterprises achieve real-time synchronization of organizational structure, ensuring the accuracy and consistency of member and department information.
+
+![](./img/corp/dingtalk-custom-operations.png)
+
+In the contacts panel of the administrator portal, after switching to the `Organizational Structure` tab, developers can perform the following operations:
+
+### Syncing DingTalk Organization Structure {#syncing-dingtalk-organization-structure}
+Click the `Sync` button to synchronize the latest department, member, and other organizational information from the DingTalk backend to the JitAi platform with one click, ensuring that the organizational structure on the platform remains consistent with DingTalk. During synchronization, the system will automatically validate and update existing data, avoiding duplication and omission, ensuring data timeliness and accuracy.
+
+### Exporting Members {#exporting-members-dingtalk}
+Supports exporting current organization member information to Excel and other common file formats, facilitating data backup, analysis statistics, or integration with third-party systems. You can choose to export all members or selected members as needed, meeting data processing requirements in different scenarios.
 
 :::tip
-部门及成员信息不可在JitAi平台直接编辑，需在钉钉后台完成编辑后，再通过同步功能实时更新到平台。
+Department and member information cannot be directly edited on the JitAi platform. Editing must be completed in the DingTalk backend first, then synchronized to the platform in real-time through the sync function.
 :::
 
-## 企业微信自建组织通讯录 {#wechat-work-organization-contacts}
-许多企业也会选择在企业微信平台维护组织架构。JitAi同样提供了企业微信自建组织通讯录的同步与管理页面，帮助企业实现跨平台的组织信息统一管理。
+## WeChat Work Organization Contacts {#wechat-work-organization-contacts}
+Many enterprises also choose to maintain organizational structure on the WeChat Work platform. JitAi similarly provides synchronization and management pages for WeChat Work Custom Organization contacts, helping enterprises achieve unified management of organizational information across platforms.
 
-![企业微信通讯录管理](./img/corp/wechat-work-contacts-management.png)
+![](./img/corp/wechat-work-contacts-management.png)
 
-在管理者门户的通讯录面板中，切换到`组织架构`标签后，开发者可以进行以下操作：
+In the contacts panel of the administrator portal, after switching to the `Organizational Structure` tab, developers can perform the following operations:
 
-### 同步企业微信组织架构 {#sync-wechat-work-organization-structure}
-点击`同步`按钮，可将企业微信后台的最新部门、成员等组织信息一键同步到JitAi平台，确保平台上的组织架构与企业微信保持一致。同步过程中，系统会自动校验并更新已有数据，避免重复和遗漏，保障数据的实时性和准确性。 
+### Syncing WeChat Work Organization Structure {#syncing-wechat-work-organization-structure}
+Click the `Sync` button to synchronize the latest department, member, and other organizational information from the WeChat Work backend to the JitAi platform with one click, ensuring that the organizational structure on the platform remains consistent with WeChat Work. During synchronization, the system will automatically validate and update existing data, avoiding duplication and omission, ensuring data timeliness and accuracy. 
 
-### 导出成员 
-支持将当前组织成员信息导出为Excel等常用文件格式，便于数据备份、分析统计或对接第三方系统。可按需选择导出全部成员或部分成员，满足不同场景下的数据处理需求。若勾选了成员，则仅导出所选成员；未勾选时则导出全部成员信息。 
+### Exporting Members {#exporting-members-wechat-work}
+Supports exporting current organization member information to Excel and other common file formats, facilitating data backup, analysis statistics, or integration with third-party systems. You can choose to export all members or selected members as needed, meeting data processing requirements in different scenarios. If members are selected, only the selected members will be exported; if no members are selected, all member information will be exported. 
 
-:::tip 
-部门及成员信息同样不可在JitAi平台直接编辑，需在企业微信后台完成编辑后，通过同步功能实时更新到平台。 
+:::tip
+Department and member information similarly cannot be directly edited on the JitAi platform. Editing must be completed in the WeChat Work backend first, then synchronized to the platform in real-time through the sync function.
 ::: 

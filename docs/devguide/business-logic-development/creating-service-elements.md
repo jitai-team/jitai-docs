@@ -3,81 +3,60 @@ sidebar_position: 1
 slug: creating-service-elements
 ---
 
-# Creating Service Elements
-无论是在面向对象还是面向过程开发中，封装函数都可以让代码可复用、更易维护。通过封装函数可以把常用或复杂的业务逻辑独立出来，方便调用和管理。JitAi以服务元素的方式支持开发者自定义业务服务函数。
+# Creating Service Elements {#create-service-elements}
+Whether in object-oriented or procedural development, encapsulating functions makes code reusable and more maintainable. Through function encapsulation, commonly used or complex business logic can be isolated for convenient invocation and management. JitAi supports developers in defining custom business service functions through service elements.
 
-服务元素是基于Python的后端元素。在服务元素中，开发者可以灵活地声明多个服务函数，通过对服务函数的合理分类，有效组织和管理复杂的业务逻辑代码。
+Service elements are Python-based backend elements. Within service elements, developers can flexibly declare multiple service functions and effectively organize and manage complex business logic code through proper categorization of service functions. Developers can create multiple service elements in applications following the principles of high cohesion and low coupling, managing different service functions by category. For example: user services, order services, payment services, etc.
 
-## 创建服务元素 {#create-service-elements}
-开发者可以按照高内聚低耦合的原则，在应用中创建多个服务元素，分类管理不同的服务函数。例如：用户服务、订单服务、支付服务等。
+![Create Standard Service Element](./img/create-standard-service-element.gif)
 
-![创建标准服务元素](./img/create-standard-service-element.gif)
+Developers locate `Services` in the element directory tree, click the `+` button on the right side, select `Standard Service`, fill in the service name in the popup dialog, and click `Confirm` to complete service creation and automatically enter the visual editor.
 
-开发者在元素目录树上找到`服务`，点击还右侧`+`按钮，选择`标准服务`，在弹窗中填写服务名称，点击`确定`后即可完成服务创建并自动进入可视化编辑器。
+## Creating Service Functions {#create-service-functions}
+JitAi supports developers in creating multiple service functions within a single service element.
 
-## 创建服务函数 {#create-service-functions}
-JitAi支持开发者在一个服务元素中创建多个服务函数。
+![Create Service Function](./img/create-service-function.gif)
 
-![创建服务函数](./img/create-service-function.gif)
+Developers click the `+ New Function` button on the left side of the service element editor, fill in the function name in the popup dialog, and click `Confirm` to complete function creation and automatically navigate to the function editor.
 
-开发者点击服务元素编辑器左侧的`+ 新建函数`按钮，在弹窗中填写函数名称，点击`确定`后即可完成函数创建并自动跳转到函数编辑器。
+## Editing Service Functions in Source Code Mode {#edit-service-functions-source-code-mode}
+When the visual editor cannot meet the needs of complex business logic orchestration, developers can switch to source code mode. For example: when needing to import dependency libraries, encapsulate helper utility functions, or use syntax and features not yet supported by the visual editor, source code mode provides greater flexibility and extensibility.
 
-## 源码模式编辑服务函数 {#edit-service-functions-source-code-mode}
-当可视化编辑器无法满足复杂业务逻辑编排需要时，开发者可以切换到源码模式。例如：需要导入依赖库、封装一个辅助工具函数、使用可视化编辑器暂未支持的语法和特性，源码模式能提供更高的灵活性和扩展性。
+![Edit Service Functions in Source Code Mode](./img/source-code-mode-edit-service-function.png)
 
-![源码模式编辑服务函数](./img/source-code-mode-edit-service-function.png)
+Developers can click the `</>` button in the upper right corner of the service element visual editor to switch to code mode for development. When writing service functions, developers can not only use native import syntax to import required dependency packages, but also call [platform APIs](../../reference/runtime-platform/backend) to access other elements (such as model functions, other service functions, etc.) and resources within the application.
 
-开发者点击服务元素可视化编辑器右上角的`</>`按钮即可切换到代码模式进行开发。在编写服务函数时，开发者不仅可以使用原生的 import 语法导入所需的依赖包，还可以调用[平台API](../../reference/runtime-platform/backend)访问应用内的其它元素（如模型函数、其他服务函数等）、资源。
+For detailed internal structure of service elements, refer to the [Custom Business Services](../../reference/framework/JitService/custom-business-service) reference documentation.
 
-关于服务元素的详细内部结构，可以查看[自定义业务服务](../../reference/framework/JitService/custom-business-service)的参考文档。
+## Adding New Dependency Libraries {#add-new-dependency-library}
+Developers sometimes need to use mature third-party libraries to improve development efficiency and code quality. JitAi supports developers in modifying the `requirements.txt` file to add new dependency libraries.
 
-## 添加新的依赖库 {#add-new-dependency-library}
-开发者有时会需要使用成熟的第三方库来提升开发效率和代码质量。JitAi支持开发者修改`requirements.txt`文件，添加新的依赖库。
+![Add Third-Party Dependencies](./img/add-third-party-dependencies.gif)
 
-![添加三方依赖库](./img/add-third-party-dependencies.gif)
+Developers need to switch the element directory tree to `Source Code` view, locate the `requirements.txt` file and add new dependency libraries to the file, then click the `Save` button to directly import packages from these dependency libraries in service functions.
 
-开发者需要将元素目录树切换到`源码`视图，找到`requirements.txt`文件并在文件中添加新的依赖库，点击`保存`按钮即可在服务函数中可以直接导入这些依赖库中的包。
+## Using Cross-App Service Elements to Call Authorized Interfaces {#use-cross-app-service-elements-to-call-authorized-interfaces} 
+When a JitAi application uses [API authorization elements](../api-exposure/api-authorization) to expose service functions externally, another JitAi application can use `Cross-App Service` elements to access those authorized functions, enabling cross-application service function calls. This calling method is limited to between JitAi applications; if the caller is not a JitAi application, it still needs to use the [API authorization element SDK calling method](../api-exposure/using-sdk-to-call-authorized-element-apis.md).
 
-## 服务函数在哪里使用 {#where-service-functions-are-used}
-在[页面函数](../shell-and-page/component-based-page-development#page-functions)、[页面事件](../shell-and-page/component-based-page-development#page-events)、[前端组件事件函数](../shell-and-page/component-based-page-development#event-panel)、[任务函数](./background-tasks#task-execution-function-development)、[模型事件](./event-handling#model-events)、[审批事件](./event-handling#approval-events)、[自定义事件](./event-handling#custom-events)、[ai-assistant事件](./event-handling#ai-assistant-events)、[Agent工具调用事件](./event-handling#agent-tool-call-events)以及其它服务函数等所有可以编写函数逻辑的地方，开发者都可以调用服务函数。
+### Creating Cross-App Service Elements {#create-cross-app-service-elements}
+![Create Cross-App Service](./img/create-cross-app-service.gif)
 
-服务函数还可以[作为ai-agent的工具](../ai-agent/create-ai-agent#agent-calling-service-functions)被大模型调用、在[ai-assistant的函数调用节点](../ai-assitant/create-ai-assistant#function-call)被调用、在[API授权元素](../api-exposure/api-authorization)中开放给第三方调用。
+Developers locate `Services` in the element directory tree, click the `+` button on the right side, select `Cross-App Service`, fill in the service name, API authorization element's call URL, accessKey, and accessSecret in the popup dialog, then click `Confirm` to complete creation and navigate to the visual editor.
 
-## 让AI更准确地理解服务函数 {#help-ai-understand-service-functions}
-每个服务函数都在服务元素e.json中存在一个函数声明，即functionList中的一个函数定义。functionList可以让函数被IDE可视化编辑器识别从而支持可视化逻辑编排、让函数能够被正常调用、让函数被AI理解和使用。
+![Cross-App Service Visual Editor](./img/cross-app-service-visual-editor.png)
 
-完整的准确的函数名称、入参和出参名称、函数描述可以让AI更准确地理解函数功能和用法，从而更准确地调用服务函数。
+In the cross-app service element's visual editor, developers can modify the element name, accessKey, and accessSecret, but the call URL is read-only and cannot be modified.
 
-![服务元素定义文件](./img/service-element-definition-file.png)
+The editor lists in groups the interface names and descriptions of each function under each service authorized by the service provider. Selected functions can be called in the current application. All functions are selected by default, and developers can modify as needed. In the operation column, you can click the `View Details` button to open the API details popup.
 
-借助可视化编辑器，开发者可以方便地填写函数名称、定义入参和出参、函数描述，functionList会自动生成到服务元素的e.json文件中。
+![Cross-App Service Function Details](./img/cross-app-service-function-details.png)
 
-:::tip
-在[JAAP规范](../../reference/runtime-platform/JAAP)中，包括服务元素在内的任何元素都可以定义自己的functionList。
-:::
+In the API details, developers can view detailed function information, including service name, interface name, interface path, call URL, parameter list, and return value type. A `Copy` button is provided to the right of the `Call URL`, allowing developers to copy the URL with one click.
 
-## 使用跨App服务元素调用授权接口 {#use-cross-app-service-elements-to-call-authorized-interfaces} 
-当一个JitAi应用使用[API授权元素](../api-exposure/api-authorization)对外开放了服务函数，另一个JitAi应用可以使用`跨APP服务`元素访问该授权函数，实现跨应用服务函数调用。这种调用方式仅限于在JitAi应用之间进行，调用方不是JitAi应用则依然需要使用[API授权元素SDK调用方式](../api-exposure/using-sdk-to-call-authorized-element-apis.md)。
+### Using Cross-App Service Elements in Function Logic {#use-cross-app-service-elements-in-functions}
+Developers can call functions in cross-app service elements within function logic just like using regular service functions.
 
-### 创建跨App服务元素 {#create-cross-app-service-elements}
-![创建跨App服务](./img/create-cross-app-service.gif)
+![Call Cross-App Service Function](./img/call-cross-app-service-function.gif)
 
-开发者在元素目录树上找到`服务`，点击右侧`+`按钮，选择`跨APP服务`，在弹窗中填写服务名称、API授权元素的调用url、accessKey、accessSecret，点击`确定`后即可完成创建并跳转到可视化编辑器。
-
-![跨App服务可视化编辑器](./img/cross-app-service-visual-editor.png)
-
-在跨App服务元素的可视化编辑器中，开发者可以修改元素名称、accessKey、accessSecret，但调用url是只读的，不能修改。
-
-编辑器中分组列出了服务提供方授权的每个服务下每个函数的接口名称和接口描述，被勾选的函数可以在当前应用中调用。默认是全部选中状态，开发者可以按需修改。在操作列中可以点击`查看详情`按钮打开API详情弹窗。
-
-![跨App服务函数详情](./img/cross-app-service-function-details.png)
-
-开发者在API详情中可以查看函数的详细信息，包括服务名称、接口名称、接口路径、调用URL、参数列表以及返回值类型。在`调用URL`的右侧提供了`复制`按钮，开发者可以一键复制URL。
-
-### 在函数逻辑中使用跨App服务元素 {#use-cross-app-service-elements-in-functions}
-开发者可以像使用普通服务函数一样在函数逻辑中调用跨App服务元素中的函数。
-
-![调用跨App服务函数](./img/call-cross-app-service-function.gif)
-
-如上图所示，在按钮的点击事件逻辑中发起对跨App服务元素中的函数调用，并使用前端全局提示工具显示函数返回的内容。这里仅仅是用按钮事件函数举例，开发者可以在任意函数逻辑中调用，参考[服务函数在哪里使用](#where-service-functions-are-used)。
+As shown in the figure above, a call to a function in a cross-app service element is initiated in the button click event logic, and the frontend global notification tool is used to display the content returned by the function. This is just an example using a button event function; developers can call it in any function logic. Refer to [Where Service Functions Are Used](./service-elements-usage-scenarios#where-service-functions-are-used).
 

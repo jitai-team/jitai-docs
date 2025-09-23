@@ -3,6 +3,6 @@ sidebar_position: 8
 slug: integrating-ai-in-approval-workflow
 ---
 
-# Integrating AI in Approval Process
+# 在审批流程中集成AI元素
 
-Coming soon...
+敬请期待...

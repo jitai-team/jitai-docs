@@ -225,13 +225,13 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </div>
 
 
-## 门户与页面开发
+## 前端门户与页面
 设计精美的用户界面和交互体验。从门户导航到页面构建，从组件布局到数据管理，打造功能完整、用户友好的应用界面。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="门户导航设计"
+  title="创建门户"
   href="shell-and-page/portal-navigation-design"
   description="设计不同用户角色的门户界面，配置导航菜单和权限控制，创建个性化用户体验。"
 >
@@ -241,17 +241,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "创建门户并配置菜单", href: "shell-and-page/portal-navigation-design#create-portal-and-configure-menu" },
     { text: "门户布局设计", href: "shell-and-page/portal-navigation-design#portal-layout-design" },
     { text: "启用或关闭常用功能入口", href: "shell-and-page/portal-navigation-design#enable-disable-common-function-entries" },
-    { text: "在门户中集成AI助理", href: "shell-and-page/portal-navigation-design#integrate-ai-assistant-in-portal" }
+    { text: "在门户中使用AI助理", href: "shell-and-page/portal-navigation-design#using-ai-assistant-in-portal" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="组件化页面开发"
+  title="创建组件化页面"
   href="shell-and-page/component-based-page-development"
   description="使用可视化编辑器构建页面界面，配置组件和事件，实现丰富的用户交互功能。"
 >
   <LinkGrid links={[
-    { text: "创建一个常规页面", href: "shell-and-page/component-based-page-development#create-a-regular-page" },
+    { text: "新建常规页面", href: "shell-and-page/component-based-page-development#create-a-regular-page" },
     { text: "可视化页面编辑器", href: "shell-and-page/component-based-page-development#visual-page-editor" },
     { text: "页面变量", href: "shell-and-page/component-based-page-development#page-variables" },
     { text: "页面事件", href: "shell-and-page/component-based-page-development#page-events" },
@@ -300,7 +300,8 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "创建数据录入页面", href: "shell-and-page/data-entry-page#create-data-entry-page" },
     { text: "配置允许查看和编辑的字段", href: "shell-and-page/data-entry-page#configure-viewable-editable-fields" },
     { text: "提交后显示再次录入按钮", href: "shell-and-page/data-entry-page#show-re-entry-button-after-submission" },
-    { text: "提交后展示结果反馈界面", href: "shell-and-page/data-entry-page#show-result-feedback-after-submission" }
+    { text: "提交后展示结果反馈界面", href: "shell-and-page/data-entry-page#show-result-feedback-after-submission" },
+    { text: "转换为常规页面进行修改", href: "shell-and-page/data-entry-page#convert-to-regular-page-for-modification" }
   ]} />
 </IndexCard>
 
@@ -312,7 +313,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid links={[
     { text: "创建Markdown页面", href: "shell-and-page/markdown-page#create-markdown-page" },
-    { text: "Markdown 语法", href: "shell-and-page/markdown-page#markdown-语法" }
+    { text: "Markdown 语法", href: "shell-and-page/markdown-page#markdown-syntax" }
   ]} />
 </IndexCard>
 
@@ -323,7 +324,6 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="面向高级开发者的完全自定义页面开发方式，支持复杂业务逻辑和个性化界面。"
 >
   <LinkGrid columns={2} links={[
-    { text: "React全代码页面", href: "shell-and-page/full-code-page-development#create-react-full-code-page" },
     { text: "创建 React 全代码页面", href: "shell-and-page/full-code-page-development#create-react-full-code-page" },
     { text: "使用样式", href: "shell-and-page/full-code-page-development#use-style" },
     { text: "使用本地资源", href: "shell-and-page/full-code-page-development#use-local-resources" },
@@ -332,7 +332,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "使用标准组件", href: "shell-and-page/full-code-page-development#use-standard-component" },
     { text: "调用数据模型函数", href: "shell-and-page/full-code-page-development#call-data-model-function" },
     { text: "调用服务函数", href: "shell-and-page/full-code-page-development#call-service-function" },
-    { text: "Vue全代码页面", href: "shell-and-page/full-code-page-development#vue-full-code-page" },
+    { text: "创建Vue全代码页面", href: "shell-and-page/full-code-page-development#vue-full-code-page" },
     { text: "使用第三方包", href: "shell-and-page/full-code-page-development#use-third-party-packages" },
     { text: "打包配置的使用", href: "shell-and-page/full-code-page-development#use-packaging-configuration" }
   ]} />
@@ -593,12 +593,25 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="树组件（正在编辑中）"
+  title="树组件"
+  href="using-functional-components-in-pages/tree-components"
   description="层次化数据展示组件，支持树形结构的展示、选择和操作。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 文档正在完善中，敬请期待...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "创建树形组件", href: "using-functional-components-in-pages/tree-components#create-tree-form-component" },
+    { text: "配置层级字段", href: "using-functional-components-in-pages/tree-components#configure-hierarchy-fields" },
+    { text: "首次加载组件时刷新数据", href: "using-functional-components-in-pages/tree-components#tree-form-refresh-on-first-load" },
+    { text: "默认展开第一个节点", href: "using-functional-components-in-pages/tree-components#default-expand-first-node" },
+    { text: "点击节点后事件", href: "using-functional-components-in-pages/tree-components#click-node-event" },
+    { text: "级联树", href: "using-functional-components-in-pages/tree-components#cascade-tree" },
+    { text: "新建级联树", href: "using-functional-components-in-pages/tree-components#create-cascade-tree" },
+    { text: "配置节点标题", href: "using-functional-components-in-pages/tree-components#configure-node-title" },
+    { text: "设置上级节点", href: "using-functional-components-in-pages/tree-components#set-parent-node" },
+    { text: "节点单选/多选", href: "using-functional-components-in-pages/tree-components#node-selection-mode" },
+    { text: "级联树首次加载组件时刷新数据", href: "using-functional-components-in-pages/tree-components#cascade-tree-refresh-on-first-load" },
+    { text: "级联树点击节点后事件", href: "using-functional-components-in-pages/tree-components#cascade-tree-click-node-event" },
+    { text: "级联树选中节点后事件", href: "using-functional-components-in-pages/tree-components#cascade-tree-select-node-event" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -772,12 +785,27 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="数据解析与导入（正在编辑中）"
-  description="数据导入和解析工具，支持Excel等格式的数据批量导入。"
+  title="数据解析与导入"
+  href="using-functional-components-in-pages/data-parsing-and-import"
+  description="强大的数据导入和解析工具，支持Excel文件批量导入、数据清洗、条件筛选和主子表关联导入。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 文档正在完善中，敬请期待...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "页面添加导入组件", href: "using-functional-components-in-pages/data-parsing-and-import#add-import-component-to-page" },
+    { text: "导入流水号字段", href: "using-functional-components-in-pages/data-parsing-and-import#import-serial-number-fields" },
+    { text: "设置必填字段", href: "using-functional-components-in-pages/data-parsing-and-import#set-required-fields" },
+    { text: "导入子表数据", href: "using-functional-components-in-pages/data-parsing-and-import#import-subtable-data" },
+    { text: "追加导入/更新导入", href: "using-functional-components-in-pages/data-parsing-and-import#append-import-or-update-import" },
+    { text: "按条件导入数据", href: "using-functional-components-in-pages/data-parsing-and-import#import-data-by-conditions" },
+    { text: "添加导入说明文案", href: "using-functional-components-in-pages/data-parsing-and-import#add-import-description-text" },
+    { text: "导入前预处理/导入后触发函数", href: "using-functional-components-in-pages/data-parsing-and-import#pre-processing-and-post-trigger-functions" },
+    { text: "导入提示按钮点击后事件", href: "using-functional-components-in-pages/data-parsing-and-import#import-hint-button-click-event" },
+    { text: "新建解析Excel组件", href: "using-functional-components-in-pages/data-parsing-and-import#create-parse-excel-component" },
+    { text: "配置字段别名", href: "using-functional-components-in-pages/data-parsing-and-import#configure-field-aliases" },
+    { text: "调整字段顺序", href: "using-functional-components-in-pages/data-parsing-and-import#adjust-field-order" },
+    { text: "删除解析字段", href: "using-functional-components-in-pages/data-parsing-and-import#delete-parse-fields" },
+    { text: "新建自定义按钮", href: "using-functional-components-in-pages/data-parsing-and-import#create-custom-buttons" },
+    { text: "解析后事件", href: "using-functional-components-in-pages/data-parsing-and-import#post-parse-events" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -928,61 +956,66 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="AIAgent"
+  title="创建AI Agent"
   href="ai-agent/create-ai-agent"
   description="学习如何创建ReActAgent，配置系统提示词、大模型参数、输入输出变量，以及运行状态存储等基础配置。"
 >
   <LinkGrid columns={2} links={[
     { text: "创建ReActAgent", href: "ai-agent/create-ai-agent#create-react-agent" },
     { text: "编写系统提示词", href: "ai-agent/create-ai-agent#write-system-prompt" },
-    { text: "基于模板编写系统提示词", href: "ai-agent/create-ai-agent#write-system-prompt-based-on-template" },
-    { text: "在提示词中使用变量", href: "ai-agent/create-ai-agent#use-variables-in-prompt" },
     { text: "选择模型并配置参数", href: "ai-agent/create-ai-agent#select-model-and-configure-parameters" },
     { text: "为Agent编写简介描述", href: "ai-agent/create-ai-agent#write-agent-description" },
     { text: "配置运行状态存储仓", href: "ai-agent/create-ai-agent#configure-runtime-state-storage" },
     { text: "内存存储", href: "ai-agent/create-ai-agent#memory-storage" },
     { text: "数据库存储", href: "ai-agent/create-ai-agent#database-storage" },
-    { text: "配置输入变量", href: "ai-agent/create-ai-agent#configure-input-variables" },
-    { text: "配置输出结果", href: "ai-agent/create-ai-agent#configure-output-results" },
-    { text: "为Agent添加工具", href: "ai-agent/create-ai-agent#add-tools-to-agent" },
-    { text: "Agent调用模型函数", href: "ai-agent/create-ai-agent#agent-call-model-functions" },
-    { text: "Agent调用服务函数", href: "ai-agent/create-ai-agent#agent-calling-service-functions" },
-    { text: "Agent调用MCP服务", href: "ai-agent/create-ai-agent#agent-call-mcp-service" },
-    { text: "将MCP配置转为环境变量", href: "ai-agent/create-ai-agent#convert-mcp-config-to-environment-variables" },
-    { text: "Agent调用外部API", href: "ai-agent/create-ai-agent#agent-call-external-api" },
-    { text: "Agent调用页面函数", href: "ai-agent/create-ai-agent#agent-call-page-functions" },
-    { text: "启用/关闭工具函数", href: "ai-agent/create-ai-agent#enable-disable-tool-functions" },
-    { text: "工具函数调用前/后事件触发", href: "ai-agent/create-ai-agent#tool-function-call-pre-post-event-triggering" },
-    { text: "工具函数执行前的人工确认", href: "ai-agent/create-ai-agent#manual-confirmation-before-tool-execution" },
-    { text: "限制工具函数调用的用户角色", href: "ai-agent/create-ai-agent#restrict-user-roles-for-tool-calls" },
-    { text: "集成知识库实现检索增强生成（RAG）", href: "ai-agent/create-ai-agent#integrate-knowledge-base-rag" },
-    { text: "在前端函数中调用Agent", href: "ai-agent/create-ai-agent#call-agent-in-frontend-functions" },
-    { text: "在页面助理中测试Agent", href: "ai-agent/create-ai-agent#test-agent-in-page-assistant" },
-    { text: "在后端服务函数中调用Agent", href: "ai-agent/create-ai-agent#call-agent-in-backend-service-functions" },
     { text: "源码模式修改Agent", href: "ai-agent/create-ai-agent#modify-agent-in-source-code-mode" },
-    { text: "自定义回调处理器", href: "ai-agent/create-ai-agent#custom-callback-processor" },
-    { text: "Agent的流式输出", href: "ai-agent/create-ai-agent#agent-streaming-output" }
+    { text: "自定义回调处理器", href: "ai-agent/create-ai-agent#custom-callback-processor" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Agent中的工具"
   href="ai-agent/agent-tools"
-  description="深入了解Agent中各种工具的使用方法和最佳实践。"
+  description="深入了解Agent中各种工具的使用方法和最佳实践，包括模型函数、服务函数、MCP服务、外部API和页面函数。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "Agent调用模型函数", href: "ai-agent/agent-tools#agent-call-model-functions" },
+    { text: "Agent调用服务函数", href: "ai-agent/agent-tools#agent-calling-service-functions" },
+    { text: "Agent调用MCP服务", href: "ai-agent/agent-tools#agent-call-mcp-service" },
+    { text: "将MCP配置转为环境变量", href: "ai-agent/agent-tools#convert-mcp-config-to-environment-variables" },
+    { text: "Agent调用外部API", href: "ai-agent/agent-tools#agent-call-external-api" },
+    { text: "Agent调用页面函数", href: "ai-agent/agent-tools#agent-call-page-functions" },
+    { text: "启用/关闭工具函数", href: "ai-agent/agent-tools#enable-disable-tool-functions" },
+    { text: "工具函数调用前/后事件触发", href: "ai-agent/agent-tools#tool-function-call-pre-post-event-triggering" },
+    { text: "工具函数执行前的人工确认", href: "ai-agent/agent-tools#manual-confirmation-before-tool-execution" },
+    { text: "限制工具函数调用的用户角色", href: "ai-agent/agent-tools#restrict-user-roles-for-tool-calls" }
+  ]} />
 </IndexCard>
 
 <IndexCard
   title="Agent的输入与输出"
   href="ai-agent/agent-input-output"
-  description="详细了解Agent的输入输出配置和数据处理方式。"
+  description="详细了解Agent的输入输出配置和数据处理方式，包括变量配置、流式输出和调用方法。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "配置输入变量", href: "ai-agent/agent-input-output#configure-input-variables" },
+    { text: "在提示词中使用变量", href: "ai-agent/agent-input-output#use-variables-in-prompt" },
+    { text: "配置输出结果", href: "ai-agent/agent-input-output#configure-output-results" },
+    { text: "Agent的流式输出", href: "ai-agent/agent-input-output#agent-streaming-output" },
+    { text: "在前端函数中调用Agent", href: "ai-agent/agent-input-output#call-agent-in-frontend-functions" },
+    { text: "在后端服务函数中调用Agent", href: "ai-agent/agent-input-output#call-agent-in-backend-service-functions" },
+    { text: "在页面助理中测试Agent", href: "ai-agent/agent-input-output#test-agent-in-page-assistant" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="使用知识库实现检索增强生成（RAG）"
+  href="ai-agent/agent-knowledge-base"
+  description="学习如何为Agent集成知识库，实现检索增强生成，提升回答的准确性和时效性。"
+>
+  <LinkGrid links={[
+    { text: "集成知识库实现检索增强生成（RAG）", href: "ai-agent/agent-knowledge-base#integrate-knowledge-base-rag" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -997,7 +1030,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="Agent的API开放"
-  href="ai-agent/agent-api-integration"
+  href="ai-agent/agent-api-exposure"
   description="将Agent能力通过API形式开放给外部系统调用。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1014,42 +1047,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="创建AI助理元素"
-  href="ai-assitant/create-ai-assistant"
+  href="ai-assistant/create-ai-assistant"
   description="学习如何创建AI助理元素，配置工作流、节点类型和事件处理，实现智能业务流程自动化。"
 >
-  <LinkGrid columns={2} links={[
-    { text: "什么是AI助理", href: "ai-assitant/create-ai-assistant#what-is-ai-assistant" },
-    { text: "创建AI助理", href: "ai-assitant/create-ai-assistant#create-ai-assistant" },
-    { text: "可视化编排", href: "ai-assitant/create-ai-assistant#visual-orchestration" },
-    { text: "开始节点", href: "ai-assitant/create-ai-assistant#start-node" },
-    { text: "路由决策", href: "ai-assitant/create-ai-assistant#routing-decision" },
-    { text: "AIAgent", href: "ai-assitant/create-ai-assistant#ai-agent" },
-    { text: "对话区人机交互", href: "ai-assitant/create-ai-assistant#dialog-human-machine-interaction" },
-    { text: "工作区人机交互", href: "ai-assitant/create-ai-assistant#workspace-human-machine-interaction" },
-    { text: "函数调用", href: "ai-assitant/create-ai-assistant#function-call" },
-    { text: "条件分支", href: "ai-assitant/create-ai-assistant#conditional-branch" },
-    { text: "多任务执行", href: "ai-assitant/create-ai-assistant#multi-task-execution" },
-    { text: "事件类型概览", href: "ai-assitant/create-ai-assistant#event-type-overview" },
-    { text: "前端工作区事件", href: "ai-assitant/create-ai-assistant#frontend-workspace-events" },
-    { text: "后端业务事件", href: "ai-assitant/create-ai-assistant#backend-business-events" },
-    { text: "运行状态数据", href: "ai-assitant/create-ai-assistant#runtime-state-data" },
-    { text: "运行状态存储库", href: "ai-assitant/create-ai-assistant#runtime-state-storage-library" },
-    { text: "高级设置", href: "ai-assitant/create-ai-assistant#advancedsettings" },
-    { text: "使用指南", href: "ai-assitant/create-ai-assistant#usage-guide" },
-    { text: "欢迎语与开场白", href: "ai-assitant/create-ai-assistant#welcome-message-and-opening" },
-    { text: "消息输出", href: "ai-assitant/create-ai-assistant#message-output" },
-    { text: "发送AI消息", href: "ai-assitant/create-ai-assistant#send-ai-message" },
-    { text: "对话记录管理", href: "ai-assitant/create-ai-assistant#conversation-history-management" },
-    { text: "全代码开发", href: "ai-assitant/create-ai-assistant#full-code-development" },
-    { text: "示例演示", href: "ai-assitant/create-ai-assistant#example-demo" },
-    { text: "如何选择合适的节点类型？", href: "ai-assitant/create-ai-assistant#how-to-select-suitable-node-types" },
-    { text: "流程卡住常见原因和解决方法", href: "ai-assitant/create-ai-assistant#common-causes-and-solutions-for-stuck-processes" }
-  ]} />
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 敬请期待...
+  </div>
 </IndexCard>
 
 <IndexCard
   title="流程编排与节点配置"
-  href="ai-assitant/process-orchestration-node-configuration"
+  href="ai-assistant/process-orchestration-node-configuration"
   description="深入了解AI助理流程编排技术和详细的节点配置方法。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1059,7 +1067,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="AI助理的输入与输出"
-  href="ai-assitant/ai-assistant-input-output"
+  href="ai-assistant/ai-assistant-input-output"
   description="理解AI助理的输入输出配置和数据处理方法。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1068,28 +1076,8 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="开发流程化多任务的对话式AI助理"
-  href="ai-assitant/develop-conversational-multi-task-ai-assistant"
-  description="学习如何开发面向复杂业务场景的流程化多任务对话式AI助理。"
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
-</IndexCard>
-
-<IndexCard
-  title="开发与UI页面协作的人机协作式企业级AI助理应用"
-  href="ai-assitant/develop-human-ai-collaboration-enterprise-assistant"
-  description="构建与UI页面协作的企业级AI助理应用，实现人机协作交互。"
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
-</IndexCard>
-
-<IndexCard
   title="AI助理的API开放"
-  href="ai-assitant/ai-assistant-api-integration"
+  href="ai-assistant/ai-assistant-api-integration"
   description="通过API接口开放AI助理能力，实现与外部系统的集成。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1134,11 +1122,9 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="应用数据的基础结构，学习如何创建和配置数据表，设计字段类型和约束。"
 >
   <LinkGrid links={[
-    { text: "创建数据表模型", href: "data-modeling/data-table-model#create-data-table-model" },
+    { text: "创建数据表模型", href: "data-modeling/data-table-model" },
     { text: "设计表字段与数据类型", href: "data-modeling/data-table-model#design-table-fields-and-data-types" },
-    { text: "配置表索引优化查询", href: "data-modeling/data-table-model#configure-table-index-optimization" },
-    { text: "使用内置数据管理功能", href: "data-modeling/data-table-model#use-built-in-data-management-function" },
-    { text: "扩展模型功能", href: "data-modeling/data-table-model#extend-model-function" }
+    { text: "配置表索引优化查询", href: "data-modeling/data-table-model#configure-table-index-optimization" }
   ]} />
 </IndexCard>
 
@@ -1147,9 +1133,9 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="data-modeling/create-data-table-from-existing-tables"
   description="从现有数据库表快速创建数据表元素，支持快速模型生成。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "从已有数据表中创建数据表", href: "data-modeling/create-data-table-from-existing-tables" },
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1157,9 +1143,9 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="data-modeling/built-in-data-management-tools"
   description="利用内置数据管理工具进行高效的数据操作和管理。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "内置数据管理工具", href: "data-modeling/built-in-data-management-tools" },
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1167,9 +1153,9 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="data-modeling/create-data-model-functions"
   description="设计和实现自定义数据模型函数，扩展数据处理能力。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "创建数据模型函数", href: "data-modeling/create-data-model-functions" },
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1178,7 +1164,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="多表数据整合和统计分析，支持复杂的数据聚合和计算功能。"
 >
   <LinkGrid columns={2} links={[
-    { text: "新建聚合表模型", href: "data-modeling/aggregate-table-model#create-aggregate-table-model" },
+    { text: "新建聚合表模型", href: "data-modeling/aggregate-table-model" },
     { text: "多表数据合并", href: "data-modeling/aggregate-table-model#multi-table-data-merge" },
     { text: "多表横向连接", href: "data-modeling/aggregate-table-model#multi-table-horizontal-connection" },
     { text: "分组聚合统计", href: "data-modeling/aggregate-table-model#group-aggregate-statistics" },
@@ -1194,7 +1180,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="基于现有表的数据扩展，通过关联其他数据表实现业务字段扩展和多表数据整合。"
 >
   <LinkGrid columns={2} links={[
-    { text: "扩展表创建", href: "data-modeling/extended-table-model#extended-table-creation" },
+    { text: "扩展表创建", href: "data-modeling/extended-table-model" },
     { text: "连接设计", href: "data-modeling/extended-table-model#connection-design" },
     { text: "设置基准表筛选条件", href: "data-modeling/extended-table-model#set-baseline-table-filter-conditions" },
     { text: "添加数据表", href: "data-modeling/extended-table-model#add-data-table" },
@@ -1213,9 +1199,11 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="data-modeling/calling-data-models-in-pages-and-functions"
   description="学习如何在前端页面和后端函数逻辑中有效使用数据模型进行数据操作。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "模型内置函数", href: "data-modeling/calling-data-models-in-pages-and-functions#built-in-model-functions" },
+    { text: "在页面中调用数据模型", href: "data-modeling/calling-data-models-in-pages-and-functions#calling-data-models-in-pages" },
+    { text: "在函数中调用数据模型", href: "data-modeling/calling-data-models-in-pages-and-functions#calling-data-models-in-functions" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1224,22 +1212,22 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="专为全代码开发模式设计的数据结构，类似于DTO，用于业务逻辑中的数据结构化表达与传递。"
 >
   <LinkGrid links={[
-    { text: "数据对象模型创建", href: "data-modeling/data-object-model#data-object-model-creation" },
-    { text: "数据对象模型使用", href: "data-modeling/data-object-model#data-object-model-usage" },
-    { text: "自定义字段", href: "data-modeling/data-object-model#custom-field" },
-    { text: "模型函数重写", href: "data-modeling/data-object-model#model-function-override" },
-    { text: "定义新函数", href: "data-modeling/data-object-model#define-new-function" }
+    { text: "数据对象模型创建", href: "data-modeling/data-object-model" },
+    { text: "数据对象模型使用", href: "data-modeling/data-object-model#using-data-object-model" },
+    { text: "自定义字段", href: "data-modeling/data-object-model#customizing-fields" },
+    { text: "模型函数重写", href: "data-modeling/data-object-model#overriding-model-functions" },
+    { text: "定义新函数", href: "data-modeling/data-object-model#defining-new-functions" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="将数据模型集成到AI Agent"
+  title="在AI Agent中调用数据模型"
   href="data-modeling/calling-data-models-in-ai-agent"
-  description="将数据模型与AI Agent系统集成，实现智能数据处理和决策。"
+  description="将数据模型函数添加为Agent工具，使AI能够智能地执行数据的创建、读取、更新、删除等操作。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "数据模型作为Agent工具", href: "data-modeling/calling-data-models-in-ai-agent#data-models-as-agent-tools" }
+  ]} />
 </IndexCard>
 
 
@@ -1271,25 +1259,26 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid links={[
     { text: "标准组织架构", href: "user-and-permission/organizational-structure#standard-organization" },
-    { text: "允许新注册用户加入", href: "user-and-permission/organizational-structure#allow-new-registered-user-join" },
+    { text: "允许新注册用户加入", href: "user-and-permission/organizational-structure#allowing-new-registered-users-to-join" },
     { text: "钉钉自建组织", href: "user-and-permission/organizational-structure#dingtalk-custom-organization" },
     { text: "企业微信自建组织", href: "user-and-permission/organizational-structure#wechat-work-custom-organization" },
     { text: "通讯录管理入口", href: "user-and-permission/organizational-structure#contact-management-entry" },
     { text: "钉钉自建组织", href: "user-and-permission/organizational-structure#dingtalk-custom-organization" },
     { text: "企业微信自建组织", href: "user-and-permission/organizational-structure#wechat-work-custom-organization" },
+    { text: "Microsoft Teams", href: "user-and-permission/organizational-structure#microsoft-teams" },
     { text: "部门成员搜索", href: "user-and-permission/organizational-structure#department-member-search" },
-    { text: "设置组织负责人", href: "user-and-permission/organizational-structure#set-organization-leader" },
-    { text: "新建部门", href: "user-and-permission/organizational-structure#create-department" },
-    { text: "添加成员", href: "user-and-permission/organizational-structure#add-member" },
-    { text: "导入成员", href: "user-and-permission/organizational-structure#import-member" },
-    { text: "导出成员", href: "user-and-permission/organizational-structure#export-member" },
-    { text: "调整部门", href: "user-and-permission/organizational-structure#adjust-department" },
+    { text: "设置组织负责人", href: "user-and-permission/organizational-structure#setting-organization-leader" },
+    { text: "新建部门", href: "user-and-permission/organizational-structure#creating-department" },
+    { text: "添加成员", href: "user-and-permission/organizational-structure#adding-member" },
+    { text: "导入成员", href: "user-and-permission/organizational-structure#importing-members" },
+    { text: "导出成员", href: "user-and-permission/organizational-structure#exporting-members" },
+    { text: "调整部门", href: "user-and-permission/organizational-structure#adjusting-department" },
     { text: "成员转为离职", href: "user-and-permission/organizational-structure#member-resignation" },
-    { text: "新建角色", href: "user-and-permission/organizational-structure#create-role" },
-    { text: "新建角色组", href: "user-and-permission/organizational-structure#standard-organization" },
-    { text: "管理角色成员", href: "user-and-permission/organizational-structure#manage-role-member" },
-    { text: "同步钉钉组织架构", href: "user-and-permission/organizational-structure#sync-dingtalk-organization-structure" },
-    { text: "同步企业微信组织架构", href: "user-and-permission/organizational-structure#sync-wechat-work-organization-structure" },
+    { text: "新建角色", href: "user-and-permission/organizational-structure#creating-role" },
+    { text: "新建角色组", href: "user-and-permission/organizational-structure#creating-role-group" },
+    { text: "管理角色成员", href: "user-and-permission/organizational-structure#managing-role-members" },
+    { text: "同步钉钉组织架构", href: "user-and-permission/organizational-structure#syncing-dingtalk-organization-structure" },
+    { text: "同步企业微信组织架构", href: "user-and-permission/organizational-structure#syncing-wechat-work-organization-structure" },
   ]} />
 </IndexCard>
 
@@ -1298,9 +1287,12 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="用户身份验证和登录方式配置，支持多种认证模式。"
 >
   <LinkGrid links={[
-    { text: "登录方式创建", href: "user-and-permission/login-authentication#login-method-creation" },
+    { text: "创建登录方式", href: "user-and-permission/login-authentication#creating-login-method" },
     { text: "账号密码登录", href: "user-and-permission/login-authentication#account-password-login" },
     { text: "手机号登录", href: "user-and-permission/login-authentication#mobile-phone-login" },
+    { text: "阿里云短信", href: "user-and-permission/login-authentication#aliyun-sms" },
+    { text: "AWS SNS短信", href: "user-and-permission/login-authentication#aws-sns" },
+    { text: "Twilio短信", href: "user-and-permission/login-authentication#twilio" },
     { text: "钉钉自建扫码登录", href: "user-and-permission/login-authentication#dingtalk-custom-qr-login" },
     { text: "企业微信自建扫码登录", href: "user-and-permission/login-authentication#wechat-work-custom-qr-login" },
     { text: "微信登录", href: "user-and-permission/login-authentication#wechat-login" },
@@ -1325,9 +1317,8 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "应用角色的权限配置", href: "user-and-permission/role-portal-menu-permissions#application-role-permission-configuration" },
     { text: "指定可访问的门户及菜单", href: "user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus" },
     { text: "在开发者门户中管理应用角色成员", href: "user-and-permission/role-portal-menu-permissions#manage-application-role-members-in-developer-portal" },
-    { text: "门户级的数据操作类型和操作范围控制", href: "user-and-permission/role-portal-menu-permissions#portal-level-data-operation-type-and-scope-control" },
     { text: "组件的按钮权限控制", href: "user-and-permission/role-portal-menu-permissions#component-button-permission-control" },
-    { text: "组件的数据字段读/写/统计权限控制", href: "user-and-permission/role-portal-menu-permissions#component-data-field-access-control" },
+      { text: "组件的数据字段读/写/统计权限控制", href: "user-and-permission/role-portal-menu-permissions#component-data-field-access-control" },
     { text: "多应用角色的分级管理", href: "user-and-permission/role-portal-menu-permissions#hierarchical-management-of-multiple-application-roles" },
     { text: "应用角色成员的管理", href: "user-and-permission/role-portal-menu-permissions#application-role-member-management" },
     { text: "成员的添加/删除", href: "user-and-permission/role-portal-menu-permissions#member-addition-and-removal" },
@@ -1336,23 +1327,23 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="Roles and Business Element Permissions"
+  title="角色与业务元素权限"
   href="user-and-permission/roles-and-business-element-permissions"
   description="业务元素的高级基于角色的权限控制，包括数据模型和功能组件的权限管理。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "门户级的数据操作类型和操作范围控制", href: "user-and-permission/roles-and-business-element-permissions#portal-level-data-operation-type-and-scope-control" }
+  ]} />
 </IndexCard>
 
 <IndexCard
-  title="Agent Tool Permission Control"
+  title="Agent工具权限控制"
   href="user-and-permission/agent-tool-permission-control"
   description="配置和管理AI Agent工具的权限控制，确保代理操作的安全性和可控性。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "配置Agent的工具执行权限", href: "user-and-permission/agent-tool-permission-control#configure-agent-tool-execution-permissions" }
+  ]} />
 </IndexCard>
 
 </div>
@@ -1363,17 +1354,14 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Creating Service Elements"
+  title="创建服务元素"
   href="business-logic-development/creating-service-elements"
   description="后端业务逻辑实现，通过服务元素封装可复用的业务函数，提供API接口和数据处理服务。"
 >
   <LinkGrid columns={2} links={[
-    { text: "创建服务元素", href: "business-logic-development/creating-service-elements#create-service-elements" },
     { text: "创建服务函数", href: "business-logic-development/creating-service-elements#create-service-functions" },
     { text: "源码模式编辑服务函数", href: "business-logic-development/creating-service-elements#edit-service-functions-source-code-mode" },
     { text: "添加新的依赖库", href: "business-logic-development/creating-service-elements#add-new-dependency-library" },
-    { text: "服务函数在哪里使用", href: "business-logic-development/creating-service-elements#where-service-functions-are-used" },
-    { text: "让AI更准确地理解服务函数", href: "business-logic-development/creating-service-elements#help-ai-understand-service-functions" },
     { text: "使用跨App服务元素调用授权接口", href: "business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-interfaces" },
     { text: "创建跨App服务元素", href: "business-logic-development/creating-service-elements#create-cross-app-service-elements" },
     { text: "在函数逻辑中使用跨App服务元素", href: "business-logic-development/creating-service-elements#use-cross-app-service-elements-in-functions" }
@@ -1381,23 +1369,29 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="Calling Other Elements in Service Functions"
+  title="在服务函数中调用其它元素"
   href="business-logic-development/calling-other-elements-in-service-functions"
   description="学习如何在服务函数中调用其他元素，包括模型、其他服务、外部API和系统组件，实现全面的业务逻辑实现。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "使用平台API调用其它元素", href: "business-logic-development/calling-other-elements-in-service-functions#use-platform-api-to-call-other-elements" },
+    { text: "调用数据模型函数", href: "business-logic-development/calling-other-elements-in-service-functions#call-data-model-function" },
+    { text: "调用其它服务函数", href: "business-logic-development/calling-other-elements-in-service-functions#call-other-service-functions" },
+    { text: "调用外部API", href: "business-logic-development/calling-other-elements-in-service-functions#call-external-api" },
+    { text: "调用AI大模型", href: "business-logic-development/calling-other-elements-in-service-functions#call-ai-llm" },
+    { text: "调用AI Agent", href: "business-logic-development/calling-other-elements-in-service-functions#call-ai-agent" }
+  ]} />
 </IndexCard>
 
 <IndexCard
-  title="Service Elements Usage Scenarios"
+  title="服务元素使用场景"
   href="business-logic-development/service-elements-usage-scenarios"
   description="探索服务元素在不同业务场景和应用架构中的实际使用场景和最佳实践。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "服务函数在哪里使用", href: "business-logic-development/service-elements-usage-scenarios#where-service-functions-are-used" },
+    { text: "让AI更准确地理解服务函数", href: "business-logic-development/service-elements-usage-scenarios#help-ai-understand-service-functions" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1406,12 +1400,12 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="定时任务和异步处理，支持复杂的后台业务流程。"
 >
   <LinkGrid columns={2} links={[
-    { text: "任务创建", href: "business-logic-development/background-tasks#task-creation" },
+    { text: "创建任务", href: "business-logic-development/background-tasks#creating-tasks" },
     { text: "定时任务", href: "business-logic-development/background-tasks#scheduled-tasks" },
     { text: "日期字段任务", href: "business-logic-development/background-tasks#date-field-tasks" },
     { text: "通用配置项", href: "business-logic-development/background-tasks#general-configuration-items" },
-    { text: "任务执行函数开发", href: "business-logic-development/background-tasks#task-execution-function-development" },
-    { text: "执行记录查看", href: "business-logic-development/background-tasks#execution-record-view" },
+    { text: "开发任务执行函数", href: "business-logic-development/background-tasks#developing-task-execution-functions" },
+    { text: "查看执行记录", href: "business-logic-development/background-tasks#viewing-execution-records" },
     { text: "源码模式", href: "business-logic-development/background-tasks#source-code-mode" }
   ]} />
 </IndexCard>
@@ -1422,17 +1416,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="系统事件监听和处理机制，实现响应式业务逻辑。"
 >
   <LinkGrid columns={2} links={[
-    { text: "事件创建", href: "business-logic-development/event-handling#event-create" },
+    { text: "创建事件", href: "business-logic-development/event-handling#creating-events" },
     { text: "模型事件", href: "business-logic-development/event-handling#model-events" },
     { text: "审批事件", href: "business-logic-development/event-handling#approval-events" },
     { text: "自定义事件", href: "business-logic-development/event-handling#custom-events" },
     { text: "ai-assistant事件", href: "business-logic-development/event-handling#ai-assistant-events" },
     { text: "Agent工具调用事件", href: "business-logic-development/event-handling#agent-tool-call-events" },
-    { text: "服务函数替换事件内函数", href: "business-logic-development/event-handling#service-function-replace-event-internal-function" },
-    { text: "事件启用", href: "business-logic-development/event-handling#event-enable" },
-    { text: "事件同步/异步执行", href: "business-logic-development/event-handling#event-sync-async-execution" },
-    { text: "事件执行记录", href: "business-logic-development/event-handling#event-execution-records" },
-    { text: "全代码查看/编辑", href: "business-logic-development/event-handling#full-code-view-edit" }
+    { text: "用服务函数替换事件内函数", href: "business-logic-development/event-handling#replacing-event-internal-function-with-service-function" },
+    { text: "启用事件", href: "business-logic-development/event-handling#enabling-events" },
+    { text: "同步/异步执行事件", href: "business-logic-development/event-handling#executing-events-synchronously-asynchronously" },
+    { text: "查看事件执行记录", href: "business-logic-development/event-handling#viewing-event-execution-records" },
+    { text: "查看/编辑全代码", href: "business-logic-development/event-handling#viewing-editing-full-code" }
   ]} />
 </IndexCard>
 
@@ -1557,17 +1551,18 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="Calling Business Logic Elements in Approval Process"
+  title="在审批流程中调用业务逻辑元素"
   href="approval-workflow/calling-business-logic-elements-in-approval-workflow"
   description="学习如何在审批流程中调用业务逻辑元素，实现复杂业务规则和自动化决策。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "通过审批事件调用业务逻辑", href: "approval-workflow/calling-business-logic-elements-in-approval-workflow#calling-business-logic-through-approval-events" },
+    { text: "子流程中函数处理", href: "approval-workflow/calling-business-logic-elements-in-approval-workflow#function-processing-in-subprocesses" }
+  ]} />
 </IndexCard>
 
 <IndexCard
-  title="Integrating AI in Approval Process"
+  title="在审批流程中集成AI元素"
   href="approval-workflow/integrating-ai-in-approval-workflow"
   description="将人工智能能力集成到审批流程中，实现智能路由、自动审查和智能决策。"
 >
@@ -1594,9 +1589,11 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "指定磁盘存储目录", href: "file-processing/file-storage#specify-disk-storage-directory" },
     { text: "云存储服务配置", href: "file-processing/file-storage#cloud-storage-service-configuration" },
     { text: "阿里云OSS", href: "file-processing/file-storage#aliyun-oss" },
-    { text: "移动云EOS", href: "file-processing/file-storage#移动云eos" },
+    { text: "移动云EOS", href: "file-processing/file-storage#china-mobile-cloud-eos" },
     { text: "MinIO", href: "file-processing/file-storage#minio" },
     { text: "七牛云", href: "file-processing/file-storage#aliyun-oss" },
+    { text: "AWS S3", href: "file-processing/file-storage#aws-s3" },
+    { text: "Cloudflare R2", href: "file-processing/file-storage#cloudflare-r2" },
     { text: "用环境变量防止配置信息泄露", href: "file-processing/file-storage#prevent-config-info-leak-with-env-variables" },
     { text: "设置应用默认的存储服务", href: "file-processing/file-storage#set-application-default-storage-service" },
     { text: "在前端代码中调用文件上传", href: "file-processing/file-storage#call-file-upload-in-frontend-code" }
@@ -1613,12 +1610,10 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "创建Word模板", href: "file-processing/file-templates#create-word-template" },
     { text: "创建Word模板变量", href: "file-processing/file-templates#create-word-template-variables" },
     { text: "在Word文档中使用模板变量", href: "file-processing/file-templates#use-template-variables-in-word" },
-    { text: "打印Word模板", href: "file-processing/file-templates#print-word-template" },
     { text: "Excel模板", href: "file-processing/file-templates#excel-template" },
     { text: "创建Excel模板", href: "file-processing/file-templates#create-excel-template" },
     { text: "创建Excel模板变量", href: "file-processing/file-templates#create-excel-template-variables" },
     { text: "在Excel文档中使用模板变量", href: "file-processing/file-templates#use-template-variables-in-excel" },
-    { text: "打印Excel模板", href: "file-processing/file-templates#print-excel-template" },
     { text: "模板变量样式说明", href: "file-processing/file-templates#template-variable-style-description" },
     { text: "文本样式", href: "file-processing/file-templates#text-style" },
     { text: "数值类样式", href: "file-processing/file-templates#numeric-style" },
@@ -1632,9 +1627,10 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="file-processing/generating-and-printing-files-using-file-templates"
   description="学习如何使用文件模板程序化生成和打印文档，包括动态内容填充和输出格式化。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "打印Word模板", href: "file-processing/generating-and-printing-files-using-file-templates#print-word-template" },
+    { text: "打印Excel模板", href: "file-processing/generating-and-printing-files-using-file-templates#print-excel-template" }
+  ]} />
 </IndexCard>
 
 </div>
@@ -1730,7 +1726,6 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="api-exposure/api-exposure-examples-for-various-elements"
   description="全面展示如何将不同类型的元素暴露为API的示例，包括数据模型、服务和自定义函数。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     <LinkGrid links={[
         { text: "服务函数的API授权", href: "api-exposure/api-exposure-examples-for-various-elements#service-function-api-authorization" },
         { text: "数据模型的API授权", href: "api-exposure/api-exposure-examples-for-various-elements#data-model-api-authorization" },
@@ -1739,7 +1734,6 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
         { text: "AI助理的API授权", href: "api-exposure/api-exposure-examples-for-various-elements#ai-assistant-api-authorization" },
         { text: "审批流程的API授权", href: "api-exposure/api-exposure-examples-for-various-elements#approval-process-api-authorization" }
     ]} />
-  </div>
 </IndexCard>
 
 <IndexCard
@@ -1747,13 +1741,11 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="api-exposure/using-sdk-to-call-authorized-element-apis"
   description="学习如何使用官方SDK调用被授权的元素API，包括身份验证、请求处理和错误管理。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     <LinkGrid links={[
         { text: "使用Python SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-python-sdk" },
         { text: "使用Nodejs SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-nodejs-sdk" },
         { text: "使用Java SDK", href: "api-exposure/using-sdk-to-call-authorized-element-apis#using-java-sdk" }
     ]} />
-  </div>
 </IndexCard>
 
 <IndexCard
@@ -1761,11 +1753,9 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="api-exposure/using-cross-app-service-elements-to-call-authorized-apis"
   description="使用服务元素实现跨应用API调用，实现不同JitAi应用之间的无缝集成。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     <LinkGrid links={[
         { text: "使用跨App服务元素", href: "api-exposure/using-cross-app-service-elements-to-call-authorized-apis#using-cross-app-service-elements" }
     ]} />
-  </div>
 </IndexCard>
 </div>
 

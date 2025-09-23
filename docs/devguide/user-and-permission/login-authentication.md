@@ -4,154 +4,156 @@ slug: login-authentication
 ---
 
 # Login Methods {#login-authentication}
-JitAi平台支持多种登录认证方式，包括账号密码登录、手机号登录、钉钉登录、企业微信登录、微信登录、微信公众号登录、微信小程序登录、Github登录和Google登录，满足不同场景下用户的接入和认证需求，助力企业和个人用户便捷、安全地访问应用。
+The JitAi platform supports multiple login authentication methods, including account password login, mobile phone login, DingTalk login, WeChat Work login, WeChat login, WeChat Official Account login, WeChat Mini Program login, GitHub login, and Google login, meeting user access and authentication needs in different scenarios, helping enterprises and individual users access applications conveniently and securely.
 
-## 登录方式创建 {#login-method-creation}
-JitAi支持开发者根据实际业务需求，自由配置和新增多种登录方式，帮助应用实现多端便捷接入与统一认证管理。
+## Creating Login Method {#creating-login-method}
+JitAi supports developers in freely configuring and adding multiple login methods according to actual business needs, helping applications achieve multi-platform convenient access and unified authentication management.
 
-![登录方式创建](./img/auth/login-method-creation.png)
+![](./img/auth/login-method-creation.png)
 
-在开发区的元素树中，找到`登录方式`，点击右侧的`+`按钮，即可弹出登录方式选择列表。开发者可根据业务场景，选择并配置所需的登录方式，快速完成接入。
+In the element tree of the development area, find `Login Methods`, click the `+` button on the right to bring up the login method selection list. Developers can select and configure the required login methods according to business scenarios, quickly completing the integration.
 
-## 账号密码登录 {#account-password-login}
-账号密码登录是最常用且基础的登录方式，允许用户通过输入账号和密码安全地访问应用，在创建JitAi应用时会自动创建一个账号密码登录方式。
+## Account Password Login {#account-password-login}
+Account password login is the most commonly used and basic login method, allowing users to securely access applications by entering their account and password. When creating a JitAi application, an account password login method is automatically created.
 
-![账号密码创建](./img/auth/account-password-creation.png)
+![](./img/auth/account-password-creation.png)
 
-当开发者选择创建`账号密码登录`时，将弹出`新建账号密码登录`窗口。在该窗口中，需填写登录方式名称（英文名自动生成），设置密码长度（默认8-32位，需包含数字和字母）。点击`确定`后，即可完成创建并进入详细配置页面。
+When developers choose to create `Account Password Login`, a `Create Account Password Login` window will pop up. In this window, you need to fill in the login method name (English name is automatically generated) and set the password length (default 8-32 characters, must include numbers and letters). After clicking `Confirm`, the creation is completed and you can enter the detailed configuration page.
 
-![账密配置](./img/auth/account-password-config.png)
+![](./img/auth/account-password-config.png)
 
-在右侧的详情配置页面，开发者可灵活调整登录方式名称、密码长度及密码强度要求。
+On the detailed configuration page on the right, developers can flexibly adjust the login method name, password length, and password strength requirements.
 
-密码强度规则支持灵活组合以下五种类型的字符要求：数字、字母、小写字母、大写字母、特殊字符。开发者可根据实际安全需求，自由配置这些类型的组合，有效提升账户安全性，满足不同等级的业务场景。
+Password strength rules support flexible combinations of the following five types of character requirements: numbers, letters, lowercase letters, uppercase letters, and special characters. Developers can freely configure combinations of these types according to actual security requirements, effectively improving account security and meeting business scenarios of different levels.
 
-## 手机号登录 {#mobile-phone-login}
-手机号登录是一种便捷且安全的登录方式，用户可通过输入手机号并接收短信验证码完成身份验证，适用于移动端和需要快速注册/登录的场景。
+## Mobile Phone Login {#mobile-phone-login}
+Mobile phone login is a convenient and secure login method. Users can complete identity verification by entering their mobile phone number and receiving SMS verification codes, suitable for mobile applications and scenarios requiring quick registration/login.
 
-![手机号创建](./img/auth/phone-number-creation.png)
+![](./img/auth/phone-number-creation.png)
 
-当开发者选择创建`手机号登录`时，将弹出`新建手机号登录`窗口。在该窗口中，需填写登录方式名称（英文名自动生成），并选择短信服务及短信模板代码用于发送验证码。下面有个勾选框`登录时支持用户注册`（默认勾选）。
+When developers choose to create `Mobile Phone Login`, a `Create Mobile Phone Login` window will pop up. In this window, you need to fill in the login method name (English name is automatically generated), select SMS service and SMS template code for sending verification codes. Below there is a checkbox `Support user registration during login` (checked by default).
 
-![新建阿里云短信](./img/auth/create-aliyun-sms.png)
+![](./img/auth/create-sms.png)
 
-点击短信服务选择框，下拉菜单中可点击``新建阿里云短信``按钮，弹出`新建阿里云短信`配置窗口。
+In the SMS service selection box, you can choose configured SMS services from the dropdown menu, or click the `+New` button to add a new SMS service. The platform currently supports mainstream SMS service providers such as Alibaba Cloud SMS, Twilio, and AWS SNS, meeting the needs of different business scenarios.
 
-![阿里云短信配置](./img/auth/aliyun-sms-config.png)
+### Alibaba Cloud SMS {#aliyun-sms}
 
-在`新建阿里云短信`窗口中，需填写短信服务名称（英文名自动生成）、AccessKey、AccessSecret 及短信签名（verifySign）。
+Alibaba Cloud SMS service is a leading SMS communication platform in China, providing high-concurrency, stable and reliable SMS sending capabilities. Its services cover the global scope, with comprehensive review mechanisms and rich application scenario support, particularly suitable for domestic enterprises and applications targeting Chinese users.
 
-完成配置后，系统将自动集成短信服务，实现验证码的发送与校验。
+![](./img/auth/aliyun-sms-config.png)
 
-**阿里云短信相关配置获取方式如下**：
+In the `Create Alibaba Cloud SMS` window, you need to fill in SMS service name (English name is automatically generated), AccessKey, AccessSecret, and SMS signature (verifySign) and other Alibaba Cloud account credential information. Related credentials can be created and managed on the Access Control page of [Alibaba Cloud Console](https://ram.console.aliyun.com/).
 
-![accessKey查看](./img/auth/access-key-view.png)
+### Twilio {#twilio}
 
-在阿里云控制台，点击右上角头像，选择`权限与安全`下的`AccessKey`即可查看和管理AccessKey信息。您也可以进入`访问控制`，选择对应用户后创建新的AccessKey。
+Twilio is a leading global cloud communication platform that provides programmable SMS, voice and video communication services. Its SMS service covers more than 200 countries and regions worldwide, with high availability and flexible API interfaces, particularly suitable for international applications and overseas business scenarios.
 
-![verifySign查看](./img/auth/verify-sign-view.png)
+![](./img/auth/twilio-sms-config.png)
 
-短信签名（verifySign）可在阿里云短信服务的签名管理页面进行查看和申请。
+In the `Create Twilio SMS` window, you need to fill in SMS service name (English name is automatically generated), Account SID, Auth Token and other Twilio account credential information. This information can be obtained from the account settings page of [Twilio Console](https://console.twilio.com/).
 
-![模板code](./img/auth/template-code.png)
+### AWS SNS {#aws-sns}
 
-短信模板代码可在阿里云短信服务的模板管理页面获取，用于指定发送的短信内容模板。
+Amazon Simple Notification Service (SNS) is a fully managed publish/subscribe messaging and mobile notification service provided by Amazon Web Services. AWS SNS SMS service has high scalability and reliability, supports SMS sending worldwide, and is suitable for enterprise applications that already use the AWS ecosystem.
 
-**更多阿里云短信服务介绍参考**：[阿里云短信服务](https://help.aliyun.com/zh/sms/)
+![](./img/auth/aws-sns-config.png)
 
-## 钉钉自建扫码登录 {#dingtalk-custom-qr-login}
-钉钉自建扫码登录是一种基于钉钉平台的企业级身份认证方式，用户可通过钉钉客户端扫码授权，安全便捷地登录系统。该方式适用于企业内部员工统一身份认证、无密码登录等场景，能够有效提升登录体验与安全性。在创建钉钉自建组织架构时，系统会自动为该组织架构生成一个钉钉自建扫码登录方式，开发者也可根据实际需求，单独新增钉钉自建扫码登录方式。
+In the `Create AWS SNS SMS` window, you need to fill in SMS service name (English name is automatically generated), Access Key ID, Secret Access Key, Region and other AWS account credential information. Related credentials can be created and managed in the IAM service of [AWS Console](https://console.aws.amazon.com/).
 
-![钉钉扫码](./img/auth/dingtalk-qr-scan.gif)
+## DingTalk Custom QR Code Login {#dingtalk-custom-qr-login}
+DingTalk Custom QR Code Login is an enterprise-level identity authentication method based on the DingTalk platform. Users can securely and conveniently log in to the system through DingTalk client QR code authorization. This method is suitable for enterprise internal employee unified identity authentication, passwordless login and other scenarios, effectively improving login experience and security. When creating a DingTalk custom organizational structure, the system will automatically generate a DingTalk custom QR code login method for the organizational structure. Developers can also independently add DingTalk custom QR code login methods according to actual needs.
 
-当开发者选择创建`钉钉自建扫码登录`时，将弹出`新建钉钉自建扫码登录`配置窗口。在该窗口中，需填写登录方式名称（英文名自动生成），并配置钉钉自建应用的凭证信息，包括`CorpId`（企业ID）、`AgentID`、`appKey`、`appSecret`。相关配置信息的获取方式可参考[组织架构文档](./organizational-structure#dingtalk-custom-organization)。
+![](./img/auth/dingtalk-qr-scan.gif)
 
-![钉钉登录配置](./img/auth/dingtalk-login-config.png)
+When developers choose to create `DingTalk Custom QR Code Login`, a `Create DingTalk Custom QR Code Login` configuration window will pop up. In this window, you need to fill in the login method name (English name is automatically generated) and configure the credential information of DingTalk custom application, including `CorpId` (Enterprise ID), `AgentID`, `appKey`, and `appSecret`. For how to obtain related configuration information, please refer to [Organizational Structure Documentation](./organizational-structure#dingtalk-custom-organization).
 
-完成相关配置后，系统将自动创建钉钉扫码登录方式，并跳转至登录方式配置页面，方便您进行后续查看与管理。
+![](./img/auth/dingtalk-login-config.png)
 
-:::tip
-钉钉自建扫码登录方式需与[钉钉自建组织架构](./organizational-structure#dingtalk-custom-organization)配套使用。创建钉钉自建组织架构时，系统会自动同步生成对应的扫码登录方式，无需单独配置。
-:::
-
-## 企业微信自建扫码登录 {#wechat-work-custom-qr-login}
-企业微信自建扫码登录是一种基于企业微信平台的企业级扫码认证方式，用户可通过企业微信客户端扫码授权，快速、安全地登录系统。该方式适用于企业微信生态下的员工统一认证、无密码登录等场景。在创建企业微信自建组织架构时，系统会自动生成一个企业微信自建扫码登录方式，开发者也可根据实际业务需求，单独新增企业微信自建扫码登录方式。
-
-![企微扫码](./img/auth/wechat-work-qr-scan.gif)
-
-当开发者选择创建`企业微信自建扫码登录`时，将弹出`新建企业微信自建扫码登录`配置窗口。在该窗口中，需填写登录方式名称（英文名自动生成），并配置企业微信自建应用的凭证信息，包括`CorpId`（企业ID）、`AgentID`、`Secret`。相关配置信息的获取方式可参考[组织架构文档](./organizational-structure#wechat-work-custom-organization)。
-
-![企微登录配置](./img/auth/wechat-work-login-config.png)
-
-配置完成后，系统会自动生成企业微信扫码登录方式，并跳转至登录方式配置页面，便于您后续的查看与管理。
+After completing the relevant configuration, the system will automatically create a DingTalk QR code login method and jump to the login method configuration page for your subsequent viewing and management.
 
 :::tip
-企业微信自建扫码登录方式需与[企业微信自建组织架构](./organizational-structure#wechat-work-custom-organization)配套使用。创建企业微信自建组织架构时，系统会自动同步生成对应的扫码登录方式，无需单独配置。
+DingTalk Custom QR Code Login method needs to be used in conjunction with [DingTalk Custom Organizational Structure](./organizational-structure#dingtalk-custom-organization). When creating a DingTalk custom organizational structure, the system will automatically synchronize and generate the corresponding QR code login method without separate configuration.
 :::
 
-## 微信登录 {#wechat-login}
-微信登录是一种基于微信开放平台的第三方登录方式，允许用户通过微信账号授权，快速、安全地登录系统。该方式适用于面向C端用户的应用场景，能够极大提升用户注册和登录的便捷性，降低用户流失率，同时支持微信生态下的用户信息获取与管理。
+## WeChat Work Custom QR Code Login {#wechat-work-custom-qr-login}
+WeChat Work Custom QR Code Login is an enterprise-level QR code authentication method based on the WeChat Work platform. Users can quickly and securely log in to the system through WeChat Work client QR code authorization. This method is suitable for employee unified authentication and passwordless login scenarios under the WeChat Work ecosystem. When creating a WeChat Work custom organizational structure, the system will automatically generate a WeChat Work custom QR code login method. Developers can also independently add WeChat Work custom QR code login methods according to actual business needs.
 
-![微信登录创建](./img/auth/wechat-login-creation.png)
+![](./img/auth/wechat-work-qr-scan.gif)
 
-当开发者选择创建`微信登录`方式时，系统会弹出`新建微信登录`配置窗口。在该窗口中，需填写登录方式名称（英文名自动生成），并配置微信开放平台的相关凭证信息，包括`AppID`和`AppSecret`。
+When developers choose to create `WeChat Work Custom QR Code Login`, a `Create WeChat Work Custom QR Code Login` configuration window will pop up. In this window, you need to fill in the login method name (English name is automatically generated) and configure the credential information of WeChat Work custom application, including `CorpId` (Enterprise ID), `AgentID`, and `Secret`. For how to obtain related configuration information, please refer to [Organizational Structure Documentation](./organizational-structure#wechat-work-custom-organization).
 
-**微信凭证获取**：
+![](./img/auth/wechat-work-login-config.png)
 
-![微信应用创建](./img/auth/wechat-app-creation.png)
-
-1. 登录[微信开放平台](https://open.weixin.qq.com/)。
-2. 在`管理中心`中`网站应用`标签页选择`创建网站应用`，按照指引填写应用信息并提交审核。
-3. 审核通过后，在应用详情页即可获取到该应用的`AppID`和`AppSecret`，用于系统的微信登录集成配置。
-
-如需详细操作指引，可参考[微信开放平台官方文档](https://open.weixin.qq.com/)。
-
-:::tip 注意
-微信应用的 AppSecret 仅在创建时展示一次，请务必妥善保存，后续无法再次查看。
-:::
-
-## 微信公众号登录 {#wechat-official-account-login}
-微信公众号登录是指用户通过微信扫描二维码并授权后，使用其微信身份登录系统的一种方式。用户需关注指定的微信公众号，并在微信中完成授权，即可实现安全、便捷的身份认证。该登录方式适合需要与用户建立长期联系、推送消息或搭建会员体系的场景，常见于企业服务、内容分发、O2O等应用领域。
-
-![微信公众号创建](./img/auth/wechat-official-account-creation.gif)
-
-当开发者选择创建`微信公众号登录`方式时，系统会弹出`新建微信公众号登录`配置窗口。在该窗口中，需填写登录方式名称（英文名会自动生成），并输入微信公众号的相关凭证信息，包括`AppID`和`AppSecret`。此外，可选择是否勾选`登录时支持用户注册`（默认勾选）。若勾选，系统将显示`用户注册时自动加入的组织架构`选择框，需从已有组织架构中进行选择。
-
-**公众号凭证获取**：
-
-![微信号查看](./img/auth/wechat-id-view.png)
-如上图所示，登录[微信公众平台](https://mp.weixin.qq.com/)，在左侧菜单栏点击`设置与开发`-`公众号设置`，即可查看并复制公众号的原始ID、微信号等基础信息。
-
-![公众号配置查看](./img/auth/official-account-config-view.png)
-如上图所示，进入`设置与开发`-`开发接口管理`-`基本配置`页面，可以获取到AppID（应用ID）和AppSecret（应用密钥）。
-
-:::tip 注意
-AppSecret（开发者密码）仅在创建时展示一次，请务必妥善保存，后续无法再次查看。
-:::
-
-## 微信小程序登录 {#wechat-mini-program-login}
-微信小程序登录是一种基于微信小程序平台的第三方登录方式，用户可通过微信小程序授权，实现快速、安全的身份认证。该方式适用于移动端应用、轻量级服务、工具类产品等场景，能够提升用户体验，降低注册和登录门槛。
-
-![微信小程序登录](./img/auth/wechat-miniapp-login.gif)
-
-当开发者选择创建`微信小程序登录`方式时，系统会弹出`新建微信小程序登录`配置窗口。在该窗口中，需填写登录方式名称（英文名会自动生成），并配置微信小程序的相关凭证信息，包括`AppID`和`AppSecret`。此外，还可选择是否勾选`登录时支持用户注册`（默认勾选）。
-
-如需了解微信小程序的开发流程，可参考[微信官方开发文档](https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/getstart.html#%E7%94%B3%E8%AF%B7%E8%B4%A6%E5%8F%B7)。
-
-## Github登录 {#github-login}
-Github 登录基于 Github 开放平台，用户可通过 Github 账号授权，安全便捷地登录系统。该方式非常适合开发者社区、技术类产品及开源项目管理等场景，帮助用户统一管理身份信息。
-
-![github登录](./img/auth/github-login.gif)
-
-创建`Github 登录`时，系统会弹出配置窗口。请填写登录方式名称（英文名自动生成），并输入 Github 的`ClientID`和`ClientSecret`。这些信息可在 [Github 开发者中心](https://github.com/settings/developers) 的 OAuth Apps 中获取。配置完成后，系统会自动生成 Github 登录方式，并跳转至登录方式配置页面，便于后续管理。
-
-## Google登录 {#google-login}
-Google 登录基于 Google 开放平台，用户可通过 Google 账号授权，快速、安全地登录系统。该方式适用于面向国际用户的应用、SaaS 平台、教育类产品等，能够提升用户体验，简化注册流程。
-
-![google登录](./img/auth/google-login.gif)
-
-创建`Google 登录`时，系统会弹出配置窗口。请填写登录方式名称（英文名自动生成），并输入 Google 的`ClientID`和`ClientSecret`。相关信息可在 [Google Cloud Console](https://console.cloud.google.com/apis/credentials) 的 OAuth 2.0 凭据中获取。配置完成后，系统会自动生成 Google 登录方式，并跳转至登录方式配置页面，方便后续查看与管理。
+After configuration is completed, the system will automatically generate a WeChat Work QR code login method and jump to the login method configuration page for your subsequent viewing and management.
 
 :::tip
-在谷歌云平台创建谷歌登录应用，且需要使用国际服务器。
+WeChat Work Custom QR Code Login method needs to be used in conjunction with [WeChat Work Custom Organizational Structure](./organizational-structure#wechat-work-custom-organization). When creating a WeChat Work custom organizational structure, the system will automatically synchronize and generate the corresponding QR code login method without separate configuration.
+:::
+
+## WeChat Login {#wechat-login}
+WeChat Login is a third-party login method based on the WeChat Open Platform, allowing users to quickly and securely log in to the system through WeChat account authorization. This method is suitable for C-end user application scenarios, greatly improving user registration and login convenience, reducing user churn rates, while supporting user information acquisition and management within the WeChat ecosystem.
+
+![](./img/auth/wechat-login-creation.png)
+
+When developers choose to create a `WeChat Login` method, the system will pop up a `Create WeChat Login` configuration window. In this window, you need to fill in the login method name (English name is automatically generated) and configure the relevant credential information of WeChat Open Platform, including `AppID` and `AppSecret`.
+
+**WeChat Credential Acquisition**:
+
+![](./img/auth/wechat-app-creation.png)
+
+1. Log in to [WeChat Open Platform](https://open.weixin.qq.com/).
+2. In the `Management Center`, select `Create Website Application` in the `Website Applications` tab, fill in the application information according to the guide and submit for review.
+3. After approval, you can obtain the `AppID` and `AppSecret` of the application on the application details page for WeChat login integration configuration in the system.
+
+For detailed operation guides, please refer to [WeChat Open Platform Official Documentation](https://open.weixin.qq.com/).
+
+:::tip Note
+The AppSecret of WeChat applications is only displayed once during creation. Please keep it safe as it cannot be viewed again later.
+:::
+
+## WeChat Official Account Login {#wechat-official-account-login}
+WeChat Official Account Login refers to a method where users log into the system using their WeChat identity after scanning a QR code with WeChat and authorizing. Users need to follow the designated WeChat Official Account and complete authorization in WeChat to achieve secure and convenient identity authentication. This login method is suitable for scenarios that require establishing long-term relationships with users, pushing messages, or building membership systems, commonly used in enterprise services, content distribution, O2O and other application domains.
+
+![](./img/auth/wechat-official-account-creation.gif)
+
+When developers choose to create a `WeChat Official Account Login` method, the system will pop up a `Create WeChat Official Account Login` configuration window. In this window, you need to fill in the login method name (English name will be automatically generated) and enter the relevant credential information of the WeChat Official Account, including `AppID` and `AppSecret`. Additionally, you can choose whether to check `Support user registration during login` (checked by default). If checked, the system will display an `Organizational structure for automatic user registration` selection box, requiring selection from existing organizational structures.
+
+**Official Account Credential Acquisition**:
+
+![](./img/auth/wechat-id-view.png)
+As shown in the figure above, log in to [WeChat Public Platform](https://mp.weixin.qq.com/), click `Settings & Development` - `Official Account Settings` in the left menu to view and copy basic information such as the Original ID and WeChat ID of the Official Account.
+
+![](./img/auth/official-account-config-view.png)
+As shown in the figure above, enter the `Settings & Development` - `Development Interface Management` - `Basic Configuration` page to obtain AppID (Application ID) and AppSecret (Application Secret).
+
+:::tip Note
+AppSecret (Developer Password) is only displayed once during creation. Please keep it safe as it cannot be viewed again later.
+:::
+
+## WeChat Mini Program Login {#wechat-mini-program-login}
+WeChat Mini Program Login is a third-party login method based on the WeChat Mini Program platform. Users can achieve fast and secure identity authentication through WeChat Mini Program authorization. This method is suitable for mobile applications, lightweight services, tool-type products and other scenarios, improving user experience and lowering registration and login barriers.
+
+![](./img/auth/wechat-miniapp-login.gif)
+
+When developers choose to create a `WeChat Mini Program Login` method, the system will pop up a `Create WeChat Mini Program Login` configuration window. In this window, you need to fill in the login method name (English name will be automatically generated) and configure the relevant credential information of the WeChat Mini Program, including `AppID` and `AppSecret`. Additionally, you can choose whether to check `Support user registration during login` (checked by default).
+
+To learn about the WeChat Mini Program development process, please refer to [WeChat Official Development Documentation](https://developers.weixin.qq.com/miniprogram/dev/framework/quickstart/getstart.html#%E7%94%B3%E8%AF%B7%E8%B4%A6%E5%8F%B7).
+
+## GitHub Login {#github-login}
+GitHub Login is based on the GitHub Open Platform. Users can securely and conveniently log in to the system through GitHub account authorization. This method is particularly suitable for developer communities, technical products, and open source project management scenarios, helping users unify identity information management.
+
+![](./img/auth/github-login.gif)
+
+When creating `GitHub Login`, the system will pop up a configuration window. Please fill in the login method name (English name is automatically generated) and enter GitHub's `ClientID` and `ClientSecret`. This information can be obtained in OAuth Apps of [GitHub Developer Center](https://github.com/settings/developers). After configuration is completed, the system will automatically generate a GitHub login method and jump to the login method configuration page for subsequent management.
+
+## Google Login {#google-login}
+Google Login is based on the Google Open Platform. Users can quickly and securely log in to the system through Google account authorization. This method is suitable for applications targeting international users, SaaS platforms, educational products, etc., improving user experience and simplifying the registration process.
+
+![](./img/auth/google-login.gif)
+
+When creating `Google Login`, the system will pop up a configuration window. Please fill in the login method name (English name is automatically generated) and enter Google's `ClientID` and `ClientSecret`. Related information can be obtained in OAuth 2.0 credentials of [Google Cloud Console](https://console.cloud.google.com/apis/credentials). After configuration is completed, the system will automatically generate a Google login method and jump to the login method configuration page for subsequent viewing and management.
+
+:::tip
+Create Google login applications on Google Cloud Platform, and international servers are required.
 ::: 

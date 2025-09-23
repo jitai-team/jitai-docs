@@ -4,92 +4,91 @@ slug: extended-table-model
 ---
 
 # Extended Table Model
-扩展表模型是一种在不改变原有基础数据表结构的前提下，通过灵活关联其他数据表，实现业务字段扩展和多表数据整合的建模方式。
+The extended table model is a modeling approach that achieves business field extension and multi-table data integration through flexible association with other data tables without changing the original basic data table structure.
 
-以`员工信息表`为例，原本仅用于存储员工的基础资料。随着业务发展，可能需要在`员工信息表`中统计每位员工的年度销售额和参与项目数量等维度数据，而这些信息并未直接包含在`员工信息表`中。此时，可以借助扩展表模型，将`员工信息表`与`销售记录表`、`项目参与表`等相关数据表进行灵活关联，动态扩展出`年度销售额`、`项目数`等统计字段。通过这种方式，无需变更原有表结构，即可在扩展表中集中展示和分析员工的多维业务数据，满足复杂的数据整合与分析需求。
+Taking the `Employee Information Table` as an example, it was originally only used to store basic employee information. As business develops, you may need to count dimensional data such as annual sales and number of projects participated by each employee in the `Employee Information Table`, but this information is not directly contained in the `Employee Information Table`. At this time, you can use the extended table model to flexibly associate the `Employee Information Table` with related data tables such as `Sales Records Table` and `Project Participation Table`, dynamically extending statistical fields like `Annual Sales` and `Project Count`. Through this approach, you can centrally display and analyze employees' multi-dimensional business data in the extended table without changing the original table structure, meeting complex data integration and analysis requirements.
 
-## 扩展表创建 {#extended-table-creation}
-系统在开发区为开发者提供了便捷的扩展表创建入口，支持一站式新建、配置和实时编辑扩展表。通过可视化操作，开发者可以快速完成扩展表的创建、字段设置及关联关系配置，极大提升了建模效率和灵活性。所有配置变更均可实时预览。
+The system provides developers with a convenient extended table creation entry in the development area, supporting one-stop creation, configuration, and real-time editing of extended tables. Through visual operations, developers can quickly complete the creation of extended tables, field settings, and association relationship configuration, greatly improving modeling efficiency and flexibility. All configuration changes can be previewed in real-time.
 
-![扩展表创建](./img/extended-table-create.png)
+![Extended Table Creation](./img/extended-table-create.png)
 
-在开发区的元素树中，定位到`数据模型`，点击右侧的`+`按钮，在弹出的列表中选择`扩展表`，即可打开`新建扩展表`弹窗。
+In the element tree of the development area, locate `Data Models`, click the `+` button on the right side, select `Extended Table` from the popup list to open the `New Extended Table` dialog.
 
-![扩展表弹窗](./img/extended-table-popup.png)
+![Extended Table Dialog](./img/extended-table-popup.png)
 
-在`新建扩展表`弹窗中，填写扩展表名称（系统会自动生成英文名），选择一个基准表，点击`确定`即可完成扩展表的创建，并自动进入扩展表的可视化编辑界面。
+In the `New Extended Table` dialog, fill in the extended table name (the system will automatically generate the English name), select a baseline table, and click `Confirm` to complete the creation of the extended table and automatically enter the visual editing interface of the extended table.
 
-![扩展表可视化](./img/extended-table-visualization.png)
+![Extended Table Visualization](./img/extended-table-visualization.png)
 
-在扩展表可视化编辑器中，开发者不仅可以灵活配置扩展表的结构和字段，还能实时预览数据效果，便于快速验证和调整设计。
+In the extended table visual editor, developers can not only flexibly configure the structure and fields of the extended table, but also preview data effects in real-time, facilitating quick validation and design adjustments.
 
-## 连接设计 {#connection-design}
-在扩展表的可视化编辑页面，切换至`连接设计`标签页，可灵活配置扩展表与基准表及其他数据表的关联关系。你可以直接选择基准表，设置筛选条件以限定数据范围；也可以添加其他关联表，配置匹配条件、数据筛选及排序规则。所有已建立的表连接均支持随时调整或删除。合理设计连接关系后，扩展表能够高效整合多表数据，满足多维度分析与建模需求。每一次连接配置的变更，右侧数据预览窗口都会实时反映最新效果，助你直观验证配置结果。
+## Connection Design {#connection-design}
+On the visual editing page of the extended table, switch to the `Connection Design` tab to flexibly configure the association relationships between the extended table and the baseline table as well as other data tables. You can directly select the baseline table and set filter conditions to limit the data range; you can also add other associated tables and configure matching conditions, data filtering, and sorting rules. All established table connections support adjustment or deletion at any time. After properly designing connection relationships, the extended table can efficiently integrate multi-table data to meet multi-dimensional analysis and modeling requirements. Each change in connection configuration will be reflected in real-time in the data preview window on the right, helping you intuitively verify configuration results.
 
-### 设置基准表筛选条件 {#set-baseline-table-filter-conditions}
-在实际业务场景中，往往需要对扩展表所关联的基准表数据进行筛选，例如只关注某一类状态的数据、某个时间段内的记录，或是特定部门的数据等。通过设置基准表筛选条件，可以让扩展表只聚焦于业务所需的数据子集，提升数据分析的针对性和效率。
+### Setting Baseline Table Filter Conditions {#set-baseline-table-filter-conditions}
+In actual business scenarios, it is often necessary to filter the baseline table data associated with the extended table, such as focusing only on data of a certain status, records within a specific time period, or data from specific departments. By setting baseline table filter conditions, the extended table can focus only on the data subset required by the business, improving the targeting and efficiency of data analysis.
 
-![数据筛选](./img/data-filtering.gif)
+![Data Filtering](./img/data-filtering.gif)
 
-在扩展表的`连接设计`标签页中，开发者可以通过点击基准表右侧的`设置筛选`按钮，进入筛选条件配置界面。此处可根据实际业务需求，灵活添加多个筛选条件，例如按状态、时间区间、部门等字段进行过滤。配置完成后，点击保存即可生效，扩展表将仅展示符合条件的数据。设置完成后，按钮名称会变为`修改筛选`，后续如需调整筛选规则，可随时点击进行修改，所有变更均会实时反映在数据预览中，便于开发者直观验证筛选效果。
+In the `Connection Design` tab of the extended table, developers can click the `Set Filter` button on the right side of the baseline table to enter the filter condition configuration interface. Here, you can flexibly add multiple filter conditions according to actual business needs, such as filtering by status, time interval, department, and other fields. After configuration is complete, click save to take effect, and the extended table will only display data that meets the conditions. After setup is complete, the button name will change to `Modify Filter`. If you need to adjust filtering rules later, you can click to modify at any time, and all changes will be reflected in real-time in the data preview, making it easy for developers to intuitively verify filtering effects.
 
-### 添加数据表 {#add-data-table}
-在扩展表模型中，常常需要将多个相关的数据表进行关联，以实现数据的整合与统计。例如，主表与子表、主表与统计表的多表关联，适用于需要跨表汇总、分析或补充业务信息的场景。数据表添加后会出现在连接配置中，形成统计表。
+### Adding Data Tables {#add-data-table}
+In extended table models, it is often necessary to associate multiple related data tables to achieve data integration and statistics. For example, multi-table associations between main tables and sub-tables, or main tables and statistical tables, are suitable for scenarios that require cross-table aggregation, analysis, or supplementing business information. After data tables are added, they will appear in the connection configuration, forming statistical tables.
 
-![添加数据表](./img/add-related-table.gif)
+![Add Related Table](./img/add-related-table.gif)
 
-在扩展表的连接配置界面，点击右侧的`添加数据表`按钮，选择需要关联的目标数据表。设置好`匹配条件`、`数据筛选`和`数据排序`后，点击`确定`即可完成关联，实现多表数据的灵活整合。
-关联成功后，所添加的数据表将出现在连接配置列表下方。你可以灵活勾选需要统计的字段，并为其选择合适的统计方式，右侧会实时预览前50条数据，帮助你直观验证配置效果。
+In the connection configuration interface of the extended table, click the `Add Data Table` button on the right side and select the target data table to be associated. After setting up `Matching Conditions`, `Data Filtering`, and `Data Sorting`, click `Confirm` to complete the association and achieve flexible integration of multi-table data.
+After successful association, the added data table will appear below the connection configuration list. You can flexibly select the fields that need to be counted and choose appropriate statistical methods for them. The right side will preview the first 50 data records in real-time, helping you intuitively verify the configuration effects.
 
-:::tip 注意
-扩展表仅支持添加数据表的统计字段，如需展示原始字段值，请使用[聚合表](./aggregate-table-model#multi-table-horizontal-connection)。
+:::tip Note
+Extended tables only support adding statistical fields from data tables. If you need to display original field values, please use [Aggregate Tables](./aggregate-table-model#multi-table-horizontal-connection).
 :::
 
-### 实时编辑统计表配置 {#real-time-edit-statistics-table-configuration}
-在成功添加数据表后，系统支持对已添加的统计表进行实时编辑和删除操作。你可以根据业务需求，灵活调整统计表的配置，确保数据整合的准确性和灵活性。下图展示了如何在扩展表中对统计表进行编辑和删除。
+### Real-time Editing of Statistics Table Configuration {#real-time-edit-statistics-table-configuration}
+After successfully adding data tables, the system supports real-time editing and deletion operations on the added statistics tables. You can flexibly adjust the configuration of statistics tables according to business needs, ensuring the accuracy and flexibility of data integration. The following figure shows how to edit and delete statistics tables in extended tables.
 
-![编辑统计表](./img/edit-statistics-table.gif)
+![Edit Statistics Table](./img/edit-statistics-table.gif)
 
-开发者将鼠标移动到需要编辑的统计表名称所在行，右侧会自动显示`更多操作`按钮（三个点图标）。点击该按钮后，会弹出`编辑`和`删除`选项。选择`编辑`可以进入统计表的详细配置页面，修改匹配条件、筛选规则等内容，保存后立即生效。选择`删除`则可以将该统计表从扩展表的连接配置中移除，操作前请确认无误。
+When developers move the mouse to the row where the statistics table name that needs to be edited is located, a `More Actions` button (three dots icon) will automatically appear on the right side. After clicking this button, `Edit` and `Delete` options will pop up. Selecting `Edit` allows you to enter the detailed configuration page of the statistics table, modify matching conditions, filtering rules, and other content, which takes effect immediately after saving. Selecting `Delete` removes the statistics table from the connection configuration of the extended table. Please confirm before operating.
 
-### 字段统计 {#field-statistics}
-在扩展表的字段统计功能中，开发者可以根据业务需求，对不同类型的字段进行灵活的统计和汇总，帮助快速获得关键数据指标。
+### Field Statistics {#field-statistics}
+In the field statistics function of extended tables, developers can flexibly perform statistics and aggregation on different types of fields according to business needs, helping to quickly obtain key data indicators.
 
-![字段统计](./img/extended-table-field-statistics.gif)
+![Field Statistics](./img/extended-table-field-statistics.gif)
 
-使用时，首先在扩展表的连接配置界面，选择已关联的统计表。然后在字段列表中，勾选需要参与统计的字段，并为每个字段选择合适的统计方式。不同类型的字段支持的统计方式各不相同：数字类字段可以选择求和、平均值、最大值、最小值等统计方式；文本类字段可以进行计数或去重计数；日期类字段则支持最大日期、最小日期等操作。配置完成后，右侧会实时展示统计结果的预览，方便开发者直观验证统计配置的效果。
+When using this feature, first select the associated statistics table in the connection configuration interface of the extended table. Then in the field list, check the fields that need to participate in statistics and select appropriate statistical methods for each field. Different types of fields support different statistical methods: numeric fields can choose sum, average, maximum, minimum and other statistical methods; text fields can perform count or distinct count; date fields support operations such as maximum date and minimum date. After configuration is complete, the right side will display a real-time preview of statistical results, making it convenient for developers to intuitively verify the effects of statistical configuration.
 
-### 添加公式字段 {#add-formula-field}
-在扩展表中，开发者可以通过添加公式字段，实现对已有字段的灵活计算与数据加工，满足业务中的统计、转换、条件判断等多样化需求。公式字段支持多种内置函数和表达式，能够动态生成新的数据列，极大提升数据分析的灵活性。
+### Adding Formula Fields {#add-formula-field}
+In extended tables, developers can add formula fields to achieve flexible calculation and data processing of existing fields, meeting diverse needs such as statistics, conversion, and conditional judgment in business scenarios. Formula fields support various built-in functions and expressions, enabling dynamic generation of new data columns and greatly enhancing the flexibility of data analysis.
 
-![扩展表添加计算公式](./img/extended-table-add-calculation-formula.gif)
+![Extended Table Add Calculation Formula](./img/extended-table-add-calculation-formula.gif)
 
-在扩展表的可视化编辑界面，点击`添加字段`，选择`公式字段`。在弹窗中填写公式名称，输入所需的计算表达式，保存后即可在表结构中新增该公式字段，并可实时预览其计算结果。
+In the visual editing interface of the extended table, click `Add Field` and select `Formula Field`. Fill in the formula name in the popup, enter the required calculation expression, and after saving, you can add this formula field to the table structure and preview its calculation results in real-time.
 
-### 修改字段别名 {#modify-field-alias}
-在扩展表中，开发者可以根据实际业务需求，对字段的显示名称（别名）进行自定义修改，使数据表结构更贴合业务语境，提升可读性和易用性。
+### Modifying Field Aliases {#modify-field-alias}
+In extended tables, developers can customize and modify the display names (aliases) of fields according to actual business needs, making the data table structure more aligned with business context and improving readability and usability.
 
-![扩展表修改字段](./img/extended-table-modify-fields.gif)
+![Extended Table Modify Fields](./img/extended-table-modify-fields.gif)
 
-在扩展表的可视化编辑界面，点击右上角的`修改字段`按钮，弹出`修改字段`面板后，可直接编辑并保存字段的显示别名。你还可以通过搜索框快速查找目标字段，便捷定位并修改。保存后，新的字段别名会即时在表格中更新显示，提升数据表的可读性和业务贴合度。
+In the visual editing interface of the extended table, click the `Modify Fields` button in the upper right corner. After the `Modify Fields` panel pops up, you can directly edit and save the display aliases of fields. You can also quickly find target fields through the search box for convenient positioning and modification. After saving, the new field aliases will be immediately updated and displayed in the table, improving the readability and business alignment of the data table.
 
-## 函数设计 {#function-design}
-扩展表支持灵活的函数设计，帮助开发者实现复杂的数据处理、业务逻辑计算和自定义数据输出。通过为扩展表编写函数，可以对表内数据进行批量处理、条件判断、数据转换、聚合统计等操作，极大提升数据建模的能力和自动化水平。
+## Function Design {#function-design}
+Extended tables support flexible function design, helping developers implement complex data processing, business logic calculation, and custom data output. By writing functions for extended tables, you can perform batch processing, conditional judgment, data transformation, aggregation statistics, and other operations on data within the table, greatly enhancing data modeling capabilities and automation levels.
 
-![扩展表函数设计](./img/extended-table-function-design.png)
+![Extended Table Function Design](./img/extended-table-function-design.png)
 
-在扩展表的可视化编辑器中，开发者可以切换到`函数设计`标签页，进入函数设计面板。
+In the visual editor of the extended table, developers can switch to the `Function Design` tab to enter the function design panel.
 
-### 新建函数 {#create-function}
-在扩展表的函数设计面板中，开发者可以便捷地创建自定义函数，用于实现复杂的数据处理和业务逻辑。
+### Creating Functions {#create-function}
+In the function design panel of extended tables, developers can conveniently create custom functions for implementing complex data processing and business logic.
 
-![扩展表新建函数](./img/extended-table-create-function.gif)
+![Extended Table Create Function](./img/extended-table-create-function.gif)
 
-点击函数设计面板左侧的`新建函数`按钮后，系统会弹出`新建函数`窗口。此时只需输入函数名称（英文名会自动生成），点击`确定`即可完成函数的创建，并自动跳转到函数设计页面。此处的函数示例主要演示了对当前模型行数据的保存操作，开发者可根据实际需求进一步完善函数逻辑。
+After clicking the `New Function` button on the left side of the function design panel, the system will pop up a `New Function` window. At this time, you only need to enter the function name (the English name will be automatically generated), click `Confirm` to complete the function creation, and automatically jump to the function design page. The function example here mainly demonstrates the save operation on current model row data, and developers can further improve the function logic according to actual needs.
 
-### 源码查看编辑 {#source-code-view-edit}
-扩展表支持源码模式，开发者可以直接查看和编辑扩展表的底层配置源码，满足高级自定义和批量修改的需求。
+### Source Code Viewing and Editing {#source-code-view-edit}
+Extended tables support source code mode, allowing developers to directly view and edit the underlying configuration source code of extended tables, meeting the needs for advanced customization and batch modifications.
 
-![扩展表源码查看](./img/extended-table-view-source-code.gif)
+![Extended Table View Source Code](./img/extended-table-view-source-code.gif)
 
-在扩展表的函数设计面板右上角，点击`</>`按钮即可进入源码编辑模式。此时你可以直接查看和编辑扩展表的全部配置源码，修改后保存即可立即生效。
+In the upper right corner of the function design panel of the extended table, click the `</>` button to enter source code editing mode. At this time, you can directly view and edit all configuration source code of the extended table, and modifications will take effect immediately after saving.

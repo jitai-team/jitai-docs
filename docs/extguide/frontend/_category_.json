@@ -1,9 +1,0 @@
-{
-  "label": "Frontend",
-  "position": 1,
-  "link": {
-    "type": "generated-index",
-    "slug": "frontend",
-    "description": "Extend frontend Type elements, develop frontend visual editors, create custom UI components and interactive features"
-  }
-}

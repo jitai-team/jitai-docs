@@ -172,7 +172,7 @@ In terms of performance, JitAi directly generates native code without depending 
 
 As shown in the figure below, different development technologies exhibit distinctly different efficiency change trends as system scale and complexity grow:
 
-![Efficiency Curve Comparison](img/briefintro/efficiency-curve-comparison.png)
+![Efficiency Curve Comparison](img/briefintro/development-efficiency-comparison.svg)
 
 JitAi technology, based on AI development and visual development modes, requires no handling of infrastructure and technical details, enabling development of business functionality from day one with extremely high early-stage efficiency. The WYSIWYG (What You See Is What You Get) characteristics enable timely communication and confirmation with requirement stakeholders, greatly reducing rework risks.
 

@@ -776,12 +776,29 @@ The rich component library is your super toolkit. Drag and drop a table to displ
 </IndexCard>
 
 <IndexCard
-  title="Data Parsing and Import (Editing in Progress)"
-  description="Data import and parsing tools supporting batch import of data in Excel and other formats."
+  title="Data Parsing and Import"
+  href="using-functional-components-in-pages/data-parsing-and-import"
+  description="Powerful data import and parsing tools supporting Excel file batch import, data cleaning, conditional filtering, and master-detail table association import."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Documentation is being improved, please stay tuned...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "Import Component", href: "using-functional-components-in-pages/data-parsing-and-import#import-component" },
+    { text: "Adding Import Component to Page", href: "using-functional-components-in-pages/data-parsing-and-import#add-import-component-to-page" },
+    { text: "Import Serial Number Fields", href: "using-functional-components-in-pages/data-parsing-and-import#import-serial-number-fields" },
+    { text: "Set Required Fields", href: "using-functional-components-in-pages/data-parsing-and-import#set-required-fields" },
+    { text: "Import Subtable Data", href: "using-functional-components-in-pages/data-parsing-and-import#import-subtable-data" },
+    { text: "Append Import/Update Import", href: "using-functional-components-in-pages/data-parsing-and-import#append-import-or-update-import" },
+    { text: "Import Data by Conditions", href: "using-functional-components-in-pages/data-parsing-and-import#import-data-by-conditions" },
+    { text: "Add Import Description Text", href: "using-functional-components-in-pages/data-parsing-and-import#add-import-description-text" },
+    { text: "Pre-processing/Post-trigger Functions", href: "using-functional-components-in-pages/data-parsing-and-import#pre-processing-and-post-trigger-functions" },
+    { text: "Import Hint Button Click Event", href: "using-functional-components-in-pages/data-parsing-and-import#import-hint-button-click-event" },
+    { text: "Parse Excel", href: "using-functional-components-in-pages/data-parsing-and-import#parse-excel" },
+    { text: "Create Parse Excel Component", href: "using-functional-components-in-pages/data-parsing-and-import#create-parse-excel-component" },
+    { text: "Configure Field Aliases", href: "using-functional-components-in-pages/data-parsing-and-import#configure-field-aliases" },
+    { text: "Adjust Field Order", href: "using-functional-components-in-pages/data-parsing-and-import#adjust-field-order" },
+    { text: "Delete Parse Fields", href: "using-functional-components-in-pages/data-parsing-and-import#delete-parse-fields" },
+    { text: "Create Custom Buttons", href: "using-functional-components-in-pages/data-parsing-and-import#create-custom-buttons" },
+    { text: "Post-parse Events", href: "using-functional-components-in-pages/data-parsing-and-import#post-parse-events" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -822,7 +839,7 @@ Integrate mainstream large language models such as GPT-4, Claude, and Tongyi Qia
 >
   <LinkGrid links={[
     { text: "Mainstream LLM Vendor Support List", href: "ai-llm/create-ai-llm#mainstream-llm-vendor-support-list" },
-    { text: "Create LLM Vendor Element", href: "ai-llm/create-ai-llm#create-llm-vendor-element" },
+    { text: "Create LLM Vendor Element", href: "ai-llm/create-ai-llm#creating-llm-vendor-elements" },
     { text: "Retry and Backup API Key Mechanism", href: "ai-llm/create-ai-llm#retry-backup-api-key-mechanism" },
     { text: "Private LLM Integration", href: "ai-llm/create-ai-llm#private-llm-integration" }
   ]} />
@@ -1843,7 +1860,7 @@ Create unique visual experiences and brand identity. Customize application theme
 </IndexCard>
 </div>
 
-## Scenario-based Advanced Guide
+## Advanced Guide
 In-depth practical guides based on real business scenarios to help developers master complex application architecture design and best practices.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1856,18 +1873,19 @@ In-depth practical guides based on real business scenarios to help developers ma
   <LinkGrid links={[
     { text: "Local Development and Debugging", href: "advanced-guide/local-development-and-debugging" },
     { text: "Team Collaborative Development", href: "advanced-guide/team-collaborative-development" },
-    { text: "Agent Prompt Writing Techniques", href: "advanced-guide/agent-prompt-writing-techniques" },
     { text: "Application Layer Stability Guarantee", href: "advanced-guide/application-layer-stability-guarantee" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="Authentication and Permission Management"
-  href="advanced-guide/login-authentication-and-permission-management"
-  description="Build enterprise-level permission systems based on JitAuth, supporting multiple login methods and fine-grained permission control."
+  title="AI Development and Applications"
+  href="advanced-guide/ai-customer-service"
+  description="Build intelligent applications using AI agents, assistants, and advanced prompt engineering techniques for enhanced user experiences and automated workflows."
 >
   <LinkGrid links={[
-    { text: "Login Authentication and Permission Management", href: "advanced-guide/login-authentication-and-permission-management" }
+    { text: "AI Customer Service", href: "advanced-guide/ai-customer-service" },
+    { text: "AI Question Grading", href: "advanced-guide/ai-question-grading" },
+    { text: "Agent Prompt Writing Techniques", href: "advanced-guide/agent-prompt-writing-techniques" }
   ]} />
 </IndexCard>
 
@@ -1882,59 +1900,12 @@ In-depth practical guides based on real business scenarios to help developers ma
 </IndexCard>
 
 <IndexCard
-  title="Interface Design and Components"
-  href="advanced-guide/system-interface-design-and-component-application"
-  description="Build multi-entry business interfaces based on JitWeb, quickly completing system navigation and interface layout through portals, pages, and components."
->
-  <LinkGrid links={[
-    { text: "System Interface Design and Component Application", href: "advanced-guide/system-interface-design-and-component-application" }
-  ]} />
-</IndexCard>
-
-<IndexCard
   title="Business Services and API"
-  href="advanced-guide/open-api-to-third-party"
-  description="Implement API opening, third-party integration, custom authentication and event-driven business service architecture based on JitService."
+  href="advanced-guide/using-interceptors-for-custom-request-authentication"
+  description="Implement custom authentication and business service architecture based on JitService."
 >
   <LinkGrid links={[
-    { text: "Open API Interfaces to External Systems", href: "advanced-guide/open-api-to-third-party" },
-    { text: "Integrate External API Interfaces", href: "advanced-guide/integrating-external-api-interfaces" },
-    { text: "Use Interceptors for Custom Request Authentication", href: "advanced-guide/using-interceptors-for-custom-request-authentication" },
-    { text: "Custom Business Event Trigger Subscription and Handling", href: "advanced-guide/custom-business-event-trigger-subscription-and-handling" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="Workflow Management"
-  href="advanced-guide/approval-workflow-orchestration-and-custom-approval-events"
-  description="Implement approval process orchestration, scheduled task execution and business process automation based on JitWorkflow and JitTask."
->
-  <LinkGrid links={[
-    { text: "Approval Process Orchestration and Custom Approval Events", href: "advanced-guide/approval-workflow-orchestration-and-custom-approval-events" },
-    { text: "Scheduled Execution of Custom Business Logic", href: "advanced-guide/scheduled-execution-of-custom-business-logic" },
-    { text: "Use Database Table Time Fields to Trigger Scheduled Tasks", href: "advanced-guide/using-database-table-time-fields-to-trigger-scheduled-tasks" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="Payment and Message Notification"
-  href="advanced-guide/online-payment-feature-integration"
-  description="Implement payment function integration and real-time message notification based on JitPay and JitMessage to build a complete business closed loop."
->
-  <LinkGrid links={[
-    { text: "Online Payment Feature Integration", href: "advanced-guide/online-payment-feature-integration" },
-    { text: "Send SMS Notifications", href: "advanced-guide/sending-sms-notifications" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="File and Storage Management"
-  href="advanced-guide/file-management-based-on-file-storage-elements"
-  description="Implement unified file management, templated document generation and printing functions based on JitStorage to improve document processing efficiency."
->
-  <LinkGrid links={[
-    { text: "File Management Based on File Storage Elements", href: "advanced-guide/file-management-based-on-file-storage-elements" },
-    { text: "Use File Templates to Generate and Print Files", href: "advanced-guide/using-file-templates-to-generate-and-print-files" }
+    { text: "Use Interceptors for Custom Request Authentication", href: "advanced-guide/using-interceptors-for-custom-request-authentication" }
   ]} />
 </IndexCard>
 

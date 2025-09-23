@@ -1,9 +1,9 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 slug: ai-customer-service
 ---
 
-# AI智能客服
+# AI Customer Service Agent
 
 :::info
 本文适合新手快速上手。通过对本文的学习，你将有以下收获：
@@ -145,9 +145,6 @@ slug: ai-customer-service
 ## 恭喜你！
 
 你已经学会了极态开发平台的基本使用方式，并开发了一个智能客服智能体。
-
-## 相关文档
-- **[新增后端Type元素](../../extguide/backend/add-backend-type-elements)** - 学习Type元素扩展开发，包含钉钉机器人集成实战案例
 
 
 

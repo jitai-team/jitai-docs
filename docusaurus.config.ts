@@ -179,6 +179,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         //    position: 'right',
         //  },
         {
+          href: 'https://demo.jit.pro',
+          position: 'left',
+          label: 'Try Online',
+        },
+        {
+          type: 'search',
+          position: 'right',
+        },
+        {
           type: 'localeDropdown',
           position: 'right',
         },

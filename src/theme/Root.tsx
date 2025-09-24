@@ -27,10 +27,10 @@ export default function Root({children}: RootProps) {
       }
 
       // 检查是否在根路径（默认语言页面）
-      const currentPath = window.location.pathname;
-      if (currentPath !== '/' && currentPath !== '') {
-        return; // 不在根路径，不进行检测
-      }
+      // const currentPath = window.location.pathname;
+      // if (currentPath !== '/' && currentPath !== '') {
+      //   return; // 不在根路径，不进行检测
+      // }
 
       // 检测浏览器语言
       const browserLang = navigator.language || (navigator.languages && navigator.languages[0]) || 'en';

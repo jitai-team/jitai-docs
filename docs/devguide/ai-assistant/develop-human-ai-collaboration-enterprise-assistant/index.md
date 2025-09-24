@@ -1,7 +1,6 @@
 ---
 sidebar_position: 17
 slug: develop-human-ai-collaboration-enterprise-assistant
-draft: true
 ---
 
 # Developing Human-AI Collaborative Enterprise Assistant Applications with UI Page Integration

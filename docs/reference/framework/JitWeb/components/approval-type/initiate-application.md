@@ -1,91 +1,92 @@
 ---
 slug: initiate-application
 ---
-# 发起申请
-发起申请是审批流程的入口组件，基于表单数据模型实现审批申请的发起和管理功能。它负责收集用户填写的表单数据、启动审批流程和展示审批历史记录，支持数据刷新和事件通知机制。
+# Initiate Application
 
-发起申请元素分层结构为Meta（components.Meta） → Type（components.Apply） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建发起申请实例元素。
+Initiate Application is the entry component for approval processes, implemented based on form data models to provide application initiation and management functionality. It is responsible for collecting user-filled form data, starting approval processes, and displaying approval history records, supporting data refresh and event notification mechanisms.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.ApplyType元素，以实现自己的封装。
+The Initiate Application element has a hierarchical structure of Meta (components.Meta) → Type (components.Apply) → Instance. Developers can quickly create initiate application instance elements through JitAI's visual development tools.
 
-## 快速开始 
-### 基础配置示例
-```json title="页面配置中的发起申请组件"
+Of course, developers can also create their own Type elements or modify the official components.ApplyType element provided by JitAi in their own App to implement their own encapsulation.
+
+## Quick Start
+### Basic Configuration Example
+```json title="Initiate Application Component in Page Configuration"
 {
   "fullName": "components.Apply",
   "type": "components.Apply", 
   "name": "Apply32",
-  "title": "发起申请32",
+  "title": "Initiate Application 32",
   "config": {
     "requireElements": [
       {
         "name": "models.LeaveRequestModel",
-        "title": "请假申请模型",
+        "title": "Leave Request Model",
         "type": "models.NormalType"
       }
     ],
-    "workflowName": "请假审批流程",
+    "workflowName": "Leave Approval Process",
     "isShowHistory": true
   },
   "showTitle": true
 }
 ```
 
-### 配置属性说明
-| 属性名 | 类型 | 必填 | 默认值 | 说明 |
+### Configuration Properties
+| Property Name | Type | Required | Default Value | Description |
 |--------|------|------|--------|------|
-| requireElements | Array | 是 | - | 关联的数据模型配置，指定表单数据的来源模型 |
-| workflowName | String | 否 | "" | 审批流程名称，用于指定启动的审批流程 |
-| isShowHistory | Boolean | 否 | true | 是否显示审批历史记录面板 |
+| requireElements | Array | Yes | - | Associated data model configuration, specifies source model for form data |
+| workflowName | String | No | "" | Approval process name, used to specify the approval process to start |
+| isShowHistory | Boolean | No | true | Whether to display approval history panel |
 
-**requireElements 配置项：**
+**requireElements Configuration Items:**
 
-| 属性名 | 类型 | 必填 | 说明 |
+| Property Name | Type | Required | Description |
 |--------|------|------|------|
-| name | String | 是 | 数据模型的完整名称，如"models.LeaveRequestModel" |
-| title | String | 是 | 模型的显示标题 |
-| type | String | 是 | 固定值"models.NormalType" |
+| name | String | Yes | Complete name of data model, such as "models.LeaveRequestModel" |
+| title | String | Yes | Display title of model |
+| type | String | Yes | Fixed value "models.NormalType" |
 
-## 变量
-组件自动创建以下变量，可在页面逻辑中直接使用：
+## Variables
+The component automatically creates the following variables that can be used directly in page logic:
 
 ### applyInstanceId
-- **类型：** Numeric
-- **访问：** 只读
-- **说明：** 当前审批流程的实例ID，用于跟踪审批状态
+- **Type:** Numeric
+- **Access:** Read-only
+- **Description:** Instance ID of current approval process, used to track approval status
 
 ### applyFormKey
-- **类型：** RowData
-- **访问：** 读写
-- **说明：** 表单数据对象，包含用户填写的所有申请信息
-- **泛型：** 绑定到配置的requireElements模型
+- **Type:** RowData
+- **Access:** Read-write
+- **Description:** Form data object, containing all application information filled by user
+- **Generic:** Bound to configured requireElements model
 
 ### refreshFlag
-- **类型：** Numeric
-- **访问：** 读写
-- **说明：** 刷新标志，用于触发组件重新渲染
+- **Type:** Numeric
+- **Access:** Read-write
+- **Description:** Refresh flag, used to trigger component re-rendering
 
-## 方法 
+## Methods
 ### call
-刷新组件数据，支持重新加载表单数据或设置新的数据值。
+Refresh component data, supports reloading form data or setting new data values.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| v | RowData | 否 | 要设置的单行数据，为空时从数据库重新加载 |
+| v | RowData | No | Single row data to set, reloads from database when empty |
 
-#### 返回值
-无返回值
+#### Return Value
+No return value
 
-#### 使用示例
-```typescript title="刷新组件数据"
-// 重新从数据库加载数据
+#### Usage Example
+```typescript title="Refresh Component Data"
+// Reload data from database
 apply.call();
 
-// 设置新的表单数据
+// Set new form data
 const newData = {
   id: 1,
-  requestType: "年假",
+  requestType: "Annual Leave",
   startDate: "2024-01-15",
   endDate: "2024-01-20"
 };
@@ -93,195 +94,195 @@ apply.call(newData);
 ```
 
 ### setConfig
-动态设置组件配置，支持增量更新或完整替换配置。
+Dynamically set component configuration, supports incremental updates or complete configuration replacement.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| next | Object | 是 | 新的配置对象 |
-| clean | Boolean | 否 | 是否完整替换配置，默认false（增量更新） |
+| next | Object | Yes | New configuration object |
+| clean | Boolean | No | Whether to completely replace configuration, default false (incremental update) |
 
-#### 返回值
-无返回值
+#### Return Value
+No return value
 
-#### 使用示例
-```typescript title="动态配置组件"
-// 增量更新配置
+#### Usage Example
+```typescript title="Dynamically Configure Component"
+// Incremental update configuration
 apply.setConfig({
-  workflowName: "新的审批流程",
+  workflowName: "New Approval Process",
   isShowHistory: false
 });
 
-// 完整替换配置
+// Complete configuration replacement
 apply.setConfig({
   requireElements: [{
     name: "models.NewModel",
-    title: "新模型",
+    title: "New Model",
     type: "models.NormalType"
   }],
-  workflowName: "完全新的流程"
+  workflowName: "Completely New Process"
 }, true);
 ```
 
 ### publishEvent
-发送组件事件通知，触发绑定的事件处理器。
+Send component event notifications, trigger bound event handlers.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| name | String | 是 | 事件名称 |
-| ex | Object | 否 | 附加的事件数据 |
+| name | String | Yes | Event name |
+| ex | Object | No | Additional event data |
 
-#### 返回值
+#### Return Value
 Promise\<void>
 
 ### subscribeEvent
-订阅组件事件，注册事件处理回调函数。
+Subscribe to component events, register event handling callback functions.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| name | String | 是 | 要订阅的事件名称 |
-| evtCb | Function | 是 | 事件回调函数 |
-| unSubscribeExist | Boolean | 否 | 是否取消已存在的订阅，默认true |
+| name | String | Yes | Event name to subscribe to |
+| evtCb | Function | Yes | Event callback function |
+| unSubscribeExist | Boolean | No | Whether to cancel existing subscriptions, default true |
 
-#### 返回值
-String - 订阅句柄ID
+#### Return Value
+String - Subscription handle ID
 
 ### unSubscribeEvent
-取消事件订阅。
+Cancel event subscription.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| id | String | 是 | 订阅句柄ID |
+| id | String | Yes | Subscription handle ID |
 
-#### 返回值
-Boolean - 取消结果
+#### Return Value
+Boolean - Cancellation result
 
 ### newVariable
-创建新的数据类型变量实例。
+Create new data type variable instance.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| varConfig | DataTypeConfig | 是 | 变量配置对象 |
+| varConfig | DataTypeConfig | Yes | Variable configuration object |
 
-#### 返回值
-BaseDataType - 数据类型实例
+#### Return Value
+BaseDataType - Data type instance
 
 ### destroy
-销毁组件，释放相关资源。
+Destroy component, release related resources.
 
 ### runCode
-执行代码字符串，在页面上下文中运行。
+Execute code string, run in page context.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| code | String | 是 | 要执行的代码字符串 |
+| code | String | Yes | Code string to execute |
 
-#### 返回值
-Any - 代码执行结果
+#### Return Value
+Any - Code execution result
 
-## 属性
+## Attributes
 ### name
-- **类型：** String
-- **访问：** 只读  
-- **说明：** 组件实例名称
+- **Type:** String
+- **Access:** Read-only  
+- **Description:** Component instance name
 
 ### title
-- **类型：** String
-- **访问：** 只读
-- **说明：** 组件显示标题
+- **Type:** String
+- **Access:** Read-only
+- **Description:** Component display title
 
 ### fullName
-- **类型：** String
-- **访问：** 只读
-- **说明：** 组件完整名称，如"components.Apply"
+- **Type:** String
+- **Access:** Read-only
+- **Description:** Complete component name, such as "components.Apply"
 
 ### type
-- **类型：** String  
-- **访问：** 只读
-- **说明：** 组件类型标识，值为"components.Apply"
+- **Type:** String  
+- **Access:** Read-only
+- **Description:** Component type identifier, value is "components.Apply"
 
 ### config
-- **类型：** Object
-- **访问：** 读写
-- **说明：** 组件配置对象，包含requireElements等配置信息
+- **Type:** Object
+- **Access:** Read-write
+- **Description:** Component configuration object, containing requireElements and other configuration information
 
 ### compType
-- **类型：** String
-- **访问：** 只读
-- **说明：** 组件类型枚举值
+- **Type:** String
+- **Access:** Read-only
+- **Description:** Component type enumeration value
 
 ### showTitle
-- **类型：** Boolean
-- **访问：** 只读
-- **说明：** 是否显示组件标题
+- **Type:** Boolean
+- **Access:** Read-only
+- **Description:** Whether to display component title
 
 ### dataTypeList
-- **类型：** Array
-- **访问：** 只读
-- **说明：** 组件变量定义列表，包含所有自动创建的变量配置
+- **Type:** Array
+- **Access:** Read-only
+- **Description:** Component variable definition list, containing all automatically created variable configurations
 
 ### app
-- **类型：** App
-- **访问：** 只读
-- **说明：** 当前应用实例引用
+- **Type:** App
+- **Access:** Read-only
+- **Description:** Current application instance reference
 
 ### page
-- **类型：** BasePage
-- **访问：** 只读
-- **说明：** 当前页面实例引用
+- **Type:** BasePage
+- **Access:** Read-only
+- **Description:** Current page instance reference
 
-## 事件
+## Events
 ### afterExecute
-审批处理完成后触发的事件，在用户提交申请后调用。
+Event triggered after approval processing completion, called after user submits application.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Description |
 |--------|------|------|
-| formData | RowData | 提交的表单数据对象 |
+| formData | RowData | Submitted form data object |
 
-#### 使用示例
-```typescript title="处理申请提交事件"
-// 订阅处理后事件
+#### Usage Example
+```typescript title="Handle Application Submission Event"
+// Subscribe to post-processing event
 const handleId = apply.subscribeEvent('afterExecute', async (data) => {
   const formData = data.formData;
-  console.log('申请已提交:', formData);
+  console.log('Application submitted:', formData);
   
-  // 显示成功提示
+  // Show success notification
   notification.success({
-    message: '申请提交成功',
-    description: '您的申请已进入审批流程'
+    message: 'Application Submitted Successfully',
+    description: 'Your application has entered the approval process'
   });
   
-  // 跳转到申请列表页面
+  // Navigate to application list page
   page.navigate('pages.RequestListPage');
 });
 
-// 手动触发事件（通常由组件内部调用）
+// Manually trigger event (usually called internally by component)
 await apply.publishEvent('afterExecute', { 
   formData: apply.applyFormKey.value 
 });
 ```
 
 ### afterCall
-组件刷新完成后触发的事件，在调用call方法后执行。
+Event triggered after component refresh completion, executed after calling call method.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Description |
 |--------|------|------|
-| formData | RowData | 刷新后的表单数据对象 |
+| formData | RowData | Form data object after refresh |
 
-#### 使用示例
-```typescript title="处理数据刷新事件"  
+#### Usage Example
+```typescript title="Handle Data Refresh Event"  
 apply.subscribeEvent('afterCall', async (data) => {
   const formData = data.formData;
-  console.log('数据已刷新:', formData);
+  console.log('Data refreshed:', formData);
   
-  // 更新相关组件状态
+  // Update related component status
   if (formData.status === 'draft') {
     submitButton.setEnabled(true);
   }

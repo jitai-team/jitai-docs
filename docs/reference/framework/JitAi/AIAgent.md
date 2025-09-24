@@ -4,59 +4,59 @@ slug: AIAgent
 ---
 
 # AIAgent
-AIAgent是AI应用核心执行引擎，基于ReAct架构实现推理与行动的循环决策。它负责工具编排、动态组合和调用各种业务工具和服务，维护对话上下文、任务执行状态和数据流转状态，支持复杂业务逻辑的分解和执行，并提供基于用户角色的工具访问权限管理。
+AIAgent is the core execution engine for AI applications, implementing reasoning and action loop decision-making based on the ReAct architecture. It is responsible for tool orchestration, dynamic composition and invocation of various business tools and services, maintaining dialogue context, task execution state and data flow state, supporting decomposition and execution of complex business logic, and providing role-based tool access permission management.
 
-AIAgent元素分层结构为Meta（aiagents.Meta） → Type（aiagents.ReActType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建AIAgent实例元素。
+The AIAgent element hierarchical structure is Meta (aiagents.Meta) → Type (aiagents.ReActType) → Instance. Developers can quickly create AIAgent instance elements through JitAi's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的aiagents.ReActType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements, or override the official aiagents.ReActType element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```plaintext title="推荐的目录结构"
+## Quick Start 
+### Creating Instance Elements
+#### Directory Structure
+```plaintext title="Recommended Directory Structure"
 aiagents/
-└── YourAgent/              # 代理名称（可自定义）
-    ├── e.json              # 元素配置文件
-    ├── config.json         # 业务配置文件
-    └── prompt.md           # 提示词模板文件
+└── YourAgent/              # Agent name (customizable)
+    ├── e.json              # Element configuration file
+    ├── config.json         # Business configuration file
+    └── prompt.md           # Prompt template file
 ```
 
-#### e.json文件
+#### e.json File
 ```json title="aiagents/YourAgent/e.json"
 {
-    "title": "工具测试工程师",
+    "title": "Tool Testing Engineer",
     "type": "aiagents.ReActType",
     "backendBundleEntry": ".",
     "inputArgs": [
         {
             "name": "user_input",
             "dataType": "Stext",
-            "title": "用户输入"
+            "title": "User Input"
         }
     ],
     "outputArgs": [
         {
             "name": "summary",
             "dataType": "Ltext",
-            "title": "测试结果总结"
+            "title": "Test Result Summary"
         },
         {
             "name": "cases",
             "dataType": "JitList",
-            "title": "测试用例列表",
+            "title": "Test Case List",
             "variableConfig": {
                 "dataType": "JitDict",
-                "title": "测试用例详情",
+                "title": "Test Case Details",
                 "variableList": [
                     {
                         "name": "name",
                         "dataType": "Stext",
-                        "title": "用例名称"
+                        "title": "Case Name"
                     },
                     {
                         "name": "status",
                         "dataType": "Stext",
-                        "title": "用例状态(PASS/FAIL)"
+                        "title": "Case Status (PASS/FAIL)"
                     }
                 ]
             }
@@ -65,10 +65,10 @@ aiagents/
 }
 ```
 
-#### config.json文件
+#### config.json File
 ```json title="aiagents/YourAgent/config.json"
 {
-    "description": "专注于工具测试，擅长测试工具的使用和测试计划的制定",
+    "description": "Specialized in tool testing, proficient in tool usage and test plan development",
     "llmElement": "llms.LLMJitAppDevelop",
     "llmConfig": {
         "model": "qwen-max-latest",
@@ -87,201 +87,201 @@ aiagents/
 }
 ```
 
-#### prompt.md文件
+#### prompt.md File
 ```markdown title="aiagents/YourAgent/prompt.md"
-你是一个测试工程师，用基本的冒烟测试确保工具能够被正常调用
+You are a test engineer who uses basic smoke testing to ensure tools can be called normally
 
-# 任务
-1. 理解目前可用的工具，制定测试计划，每个工具只需要测一个最简单的正常case即可
-2. 按照测试计划执行测试，记录测试结果
-3. 生成测试总结报告
+# Tasks
+1. Understand currently available tools, develop test plans, each tool only needs to test one simplest normal case
+2. Execute tests according to the test plan, record test results
+3. Generate test summary report
 
-# 输入参数 
+# Input Parameters 
 {user_input}
 ```
 
-#### 调用示例
-```python title="调用AIAgent示例"
-# 获取AIAgent实例
+#### Usage Example
+```python title="AIAgent Usage Example"
+# Get AIAgent instance
 agent = app.getElement("aiagents.YourAgent")
 
-# 定义流式回调函数（可选）
+# Define streaming callback function (optional)
 def stream_callback(data):
-    print(f"流式输出: {data}")
+    print(f"Streaming output: {data}")
 
-# 运行代理
+# Run agent
 result = agent.run(
-    user_input="请测试客户模型的查询功能",
-    variables={'input_data': "测试客户模型查询功能"},
+    user_input="Please test the customer model query function",
+    variables={'input_data': "Test customer model query function"},
     chatId="session_001",
     stream_callback=stream_callback
 )
 
-print("执行结果:", result)
+print("Execution result:", result)
 ```
 
-## 元素配置
-### e.json配置
-AIAgent的元素配置文件定义了代理的基本属性和输入输出规范。
+## Element Configuration
+### e.json Configuration
+The AIAgent element configuration file defines the basic properties and input/output specifications of the agent.
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 |------|------|------|------|
-| `title` | String | 是 | 代理显示名称 |
-| `type` | String | 是 | 必须为"aiagents.ReActType" |
-| `backendBundleEntry` | String | 是 | 后端入口，固定为"." |
-| `inputArgs` | Array | 否 | 输入参数定义列表 |
-| `outputArgs` | Array | 否 | 输出参数定义列表 |
+| `title` | String | Yes | Agent display name |
+| `type` | String | Yes | Must be "aiagents.ReActType" |
+| `backendBundleEntry` | String | Yes | Backend entry, fixed as "." |
+| `inputArgs` | Array | No | Input parameter definition list |
+| `outputArgs` | Array | No | Output parameter definition list |
 
-**inputArgs配置项：**
-- `name` - 参数名称
-- `dataType` - 数据类型（如Stext、JitDict等）
-- `title` - 参数显示名称
-- `required` - 是否必填（可选）
+**inputArgs Configuration Items:**
+- `name` - Parameter name
+- `dataType` - Data type (such as Stext, JitDict, etc.)
+- `title` - Parameter display name
+- `required` - Whether required (optional)
 
-**outputArgs配置项：**
-- `name` - 输出字段名称
-- `dataType` - 数据类型
-- `title` - 字段显示名称
-- `variableConfig` - 复合类型的内部结构定义
-- `generic` - 关联模型的fullName（适用于RowData、RowList类型）
+**outputArgs Configuration Items:**
+- `name` - Output field name
+- `dataType` - Data type
+- `title` - Field display name
+- `variableConfig` - Internal structure definition for complex types
+- `generic` - Associated model's fullName (applicable to RowData, RowList types)
 
-### config.json配置
-业务配置文件定义了代理的运行时参数和工具配置。
+### config.json Configuration
+The business configuration file defines the agent's runtime parameters and tool configuration.
 
-| 字段 | 类型 | 必填 | 说明 |
+| Field | Type | Required | Description |
 |------|------|------|------|
-| `description` | String | 否 | 代理功能描述 |
-| `llmElement` | String | 是 | 大语言模型元素的fullName |
-| `llmConfig` | Object | 是 | LLM配置参数 |
-| `tools` | Array | 否 | 可用工具配置列表，任何声明了functionList的实例元素都可以作为工具 |
-| `saverDb` | String | 否 | 会话存储数据库，默认"databases.Default" |
-| `knowledgeRepo` | Array | 否 | 知识库配置列表 |
-| `verbose` | Boolean | 否 | 是否开启详细日志 |
-| `callbackHandler` | String | 否 | 自定义回调处理器元素的fullName |
+| `description` | String | No | Agent functionality description |
+| `llmElement` | String | Yes | Large language model element's fullName |
+| `llmConfig` | Object | Yes | LLM configuration parameters |
+| `tools` | Array | No | Available tool configuration list, any instance element that declares functionList can be used as a tool |
+| `saverDb` | String | No | Session storage database, default "databases.Default" |
+| `knowledgeRepo` | Array | No | Knowledge base configuration list |
+| `verbose` | Boolean | No | Whether to enable detailed logging |
+| `callbackHandler` | String | No | Custom callback handler element's fullName |
 
-**llmConfig配置项：**
-- `model` - 模型名称
-- `temperature` - 温度参数（0.0-1.0）
-- `streaming` - 是否启用流式输出（可选）
+**llmConfig Configuration Items:**
+- `model` - Model name
+- `temperature` - Temperature parameter (0.0-1.0)
+- `streaming` - Whether to enable streaming output (optional)
 
-**tools配置项：**
-- `type` - 工具类型（model、service、ui、mcpServer等）
-- `name` - 实例元素的fullName（必须是在e.json中声明了functionList的实例元素）
-- `enableFunctionList` - 启用的功能列表及其配置
+**tools Configuration Items:**
+- `type` - Tool type (model, service, ui, mcpServer, etc.)
+- `name` - Instance element's fullName (must be an instance element that declares functionList in e.json)
+- `enableFunctionList` - Enabled function list and its configuration
 
-**knowledgeRepo配置项：**
-- `fullName` - 知识库元素的fullName
-- `enable` - 是否启用
-- `force` - 是否强制使用
+**knowledgeRepo Configuration Items:**
+- `fullName` - Knowledge base element's fullName
+- `enable` - Whether to enable
+- `force` - Whether to force use
 
-**说明**：`name`字段可以是任何在e.json中声明了functionList的实例元素。
+**Note**: The `name` field can be any instance element that declares functionList in e.json.
 
-### prompt.md配置
-提示词模板文件定义了代理的系统提示词，支持变量插值。
+### prompt.md Configuration
+The prompt template file defines the agent's system prompt, supporting variable interpolation.
 
-**变量插值语法：**
+**Variable Interpolation Syntax:**
 ```markdown
-# 在prompt.md中使用变量
+# Using variables in prompt.md
 {variable_name}
 ```
 
-**模板示例：**
+**Template Example:**
 ```markdown
-你是一个{role}，具有以下能力：{capabilities}
+You are a {role} with the following capabilities: {capabilities}
 
-# 当前任务
+# Current Task
 {user_input}
 
-# 工作要求
-1. 理解用户需求
-2. 制定执行计划
-3. 使用可用工具完成任务
-4. 输出结构化结果
+# Work Requirements
+1. Understand user requirements
+2. Develop execution plan
+3. Use available tools to complete tasks
+4. Output structured results
 ```
 
-## 方法 
+## Methods 
 ### run
-运行AI代理，执行用户指定的任务。
+Run the AI agent to execute user-specified tasks.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter | Type | Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| `user_input` | Stext | str | 是 | 用户输入内容 |
-| `variables` | JitDict | dict | 否 | 变量数据字典 |
-| `chatId` | Stext | str | 否 | 会话ID，用于会话管理 |
-| `stream_callback` | - | function | 否 | 流式回调函数（Python原生函数类型） |
+| `user_input` | Stext | str | Yes | User input content |
+| `variables` | JitDict | dict | No | Variable data dictionary |
+| `chatId` | Stext | str | No | Session ID for session management |
+| `stream_callback` | - | function | No | Streaming callback function (Python native function type) |
 
-#### 返回值
-返回类型：`JitList`
+#### Return Value
+Return Type: `JitList`
 
-包含代理执行过程中的所有消息和最终结果。列表中的每个元素都是一个包含消息类型、内容和元数据的字典结构。
+Contains all messages and final results during agent execution. Each element in the list is a dictionary structure containing message type, content, and metadata.
 
-#### 使用示例
-```python title="基础调用示例"
-# 获取代理实例
+#### Usage Examples
+```python title="Basic Usage Example"
+# Get agent instance
 agent = app.getElement("aiagents.TestAgent")
 
-# 执行代理
+# Execute agent
 result = agent.run(
-    user_input="分析客户数据",
+    user_input="Analyze customer data",
     variables={
-        'task': '数据分析',
-        'target': '客户表'
+        'task': 'Data analysis',
+        'target': 'Customer table'
     },
     chatId="session_123"
 )
 ```
 
-```python title="带流式回调的示例"
+```python title="Example with Streaming Callback"
 def my_callback(data):
     msg_type = data.get('type')
     if msg_type == 'REASONING_CONTENT':
-        print(f"推理过程: {data['data']['content']}")
+        print(f"Reasoning process: {data['data']['content']}")
     elif msg_type == 'TOOL_CALL_START':
-        print(f"工具调用开始: {data['data']['outputArgs']['value']['toolName']}")
+        print(f"Tool call started: {data['data']['outputArgs']['value']['toolName']}")
 
 result = agent.run(
-    user_input="分析客户数据",
-    variables={'task': '数据分析'},
+    user_input="Analyze customer data",
+    variables={'task': 'Data analysis'},
     stream_callback=my_callback
 )
 ```
 
-## 属性
+## Properties
 ### initialized
-**类型：** Boolean
-**说明：** 代理是否已完成初始化。只有初始化成功的代理才能正常执行任务。
+**Type:** Boolean
+**Description:** Whether the agent has completed initialization. Only successfully initialized agents can execute tasks normally.
 
 ### title
-**类型：** String
-**说明：** 代理的显示名称，来源于e.json配置文件中的title字段。
+**Type:** String
+**Description:** The agent's display name, sourced from the title field in the e.json configuration file.
 
 ### description
-**类型：** String
-**说明：** 代理的功能描述，来源于config.json配置文件中的description字段。
+**Type:** String
+**Description:** The agent's functionality description, sourced from the description field in the config.json configuration file.
 
 ### capabilities
-**类型：** String
-**说明：** 代理的能力描述，优先级：e.json中的capabilities > config.json中的description > config.json中的systemPrompt。
+**Type:** String
+**Description:** The agent's capability description, with priority: capabilities in e.json > description in config.json > systemPrompt in config.json.
 
-## 高级特性
-### 内置输出格式控制
-AIAgent根据e.json中的`outputArgs`配置自动生成JSONSchema，指导大语言模型输出结构化数据，开发者无需在提示词中描述输出格式。
+## Advanced Features
+### Built-in Output Format Control
+AIAgent automatically generates JSONSchema based on the `outputArgs` configuration in e.json, guiding the large language model to output structured data. Developers don't need to describe output formats in prompts.
 
-### 工具编排配置
-**重要原则：任何在e.json中声明了functionList的实例元素都可以作为AIAgent的工具被调用。**
+### Tool Orchestration Configuration
+**Important Principle: Any instance element that declares functionList in e.json can be called as an AIAgent tool.**
 
-这意味着您可以将以下类型的实例元素配置为AIAgent的工具：
-- **模型实例元素（models）**：具有内置数据操作函数（如query、save等）
-- **服务实例元素（services）**：自定义业务逻辑函数
-- **页面实例元素（pages）**：前端交互功能
-- **其他任何实例元素**：只要在e.json中声明了functionList就可以被调用
+This means you can configure the following types of instance elements as AIAgent tools:
+- **Model Instance Elements (models)**: Have built-in data operation functions (such as query, save, etc.)
+- **Service Instance Elements (services)**: Custom business logic functions
+- **Page Instance Elements (pages)**: Frontend interaction functionality
+- **Any Other Instance Elements**: As long as functionList is declared in e.json, they can be called
 
-AIAgent支持多种类型工具的动态编排：
+AIAgent supports dynamic orchestration of multiple types of tools:
 
-#### 基础工具配置
-**最简配置：**
-```json title="基础模型工具配置"
+#### Basic Tool Configuration
+**Minimal Configuration:**
+```json title="Basic Model Tool Configuration"
 {
     "type": "model",
     "name": "models.CustomerModel",
@@ -291,8 +291,8 @@ AIAgent支持多种类型工具的动态编排：
 }
 ```
 
-**带权限配置：**
-```json title="带权限的工具配置"
+**Configuration with Permissions:**
+```json title="Tool Configuration with Permissions"
 {
     "type": "model",
     "name": "models.CustomerModel",
@@ -305,8 +305,8 @@ AIAgent支持多种类型工具的动态编排：
 }
 ```
 
-#### 服务工具配置
-```json title="服务工具配置示例"
+#### Service Tool Configuration
+```json title="Service Tool Configuration Example"
 {
     "type": "service",
     "name": "services.CustomerService",
@@ -317,17 +317,17 @@ AIAgent支持多种类型工具的动态编排：
 }
 ```
 
-#### UI工具配置
-```json title="UI工具配置示例"
+#### UI Tool Configuration
+```json title="UI Tool Configuration Example"
 {
     "type": "ui",
     "name": "pages.CustomerPage",
     "functionList": [
         {
             "name": "showForm",
-            "title": "显示表单",
+            "title": "Show Form",
             "args": [
-                {"name": "formData", "dataType": "JitDict", "title": "表单数据"}
+                {"name": "formData", "dataType": "JitDict", "title": "Form Data"}
             ],
             "returnType": "JitDict"
         }
@@ -338,8 +338,8 @@ AIAgent支持多种类型工具的动态编排：
 }
 ```
 
-#### MCP服务器工具配置
-```json title="MCP服务器工具配置示例"
+#### MCP Server Tool Configuration
+```json title="MCP Server Tool Configuration Example"
 {
     "type": "mcpServer",
     "config": {
@@ -352,8 +352,8 @@ AIAgent支持多种类型工具的动态编排：
 }
 ```
 
-#### 其它实例元素作为工具配置
-```json title="其它实例元素作为工具配置示例"
+#### Other Instance Elements as Tool Configuration
+```json title="Other Instance Elements as Tool Configuration Example"
 {
     "type": "custom",
     "name": "processors.DataProcessor",
@@ -364,37 +364,37 @@ AIAgent支持多种类型工具的动态编排：
 }
 ```
 
-只要`processors.DataProcessor`这个实例元素在其e.json中声明了包含`processData`和`validateData`函数的functionList，就可以被AIAgent调用。
+As long as the `processors.DataProcessor` instance element declares a functionList containing `processData` and `validateData` functions in its e.json, it can be called by AIAgent.
 
-### 流式回调处理 
-支持监听推理过程、工具调用等详细事件：
+### Streaming Callback Processing 
+Supports listening to detailed events such as reasoning processes and tool calls:
 
-```python title="详细流式回调示例"
+```python title="Detailed Streaming Callback Example"
 def detailed_callback(data):
     msg_type = data.get('type')
     
     if msg_type == 'REASONING_CONTENT':
-        print(f"推理过程: {data['data']['content']}")
+        print(f"Reasoning process: {data['data']['content']}")
     elif msg_type == 'TEXT_MESSAGE_CONTENT':
-        print(f"文本消息: {data['data']['content']}")
+        print(f"Text message: {data['data']['content']}")
     elif msg_type == 'TOOL_CALL_START':
         tool_info = data['data']['outputArgs']['value']
-        print(f"开始调用工具: {tool_info['toolName']}")
+        print(f"Starting tool call: {tool_info['toolName']}")
     elif msg_type == 'TOOL_CALL_END':
-        print(f"工具调用完成")
+        print(f"Tool call completed")
 
 result = agent.run(
-    user_input="处理客户数据",
+    user_input="Process customer data",
     stream_callback=detailed_callback
 )
 ```
 
-| msg_type                | 含义                   | 参数示例                                                                                      |
+| msg_type                | Meaning                   | Parameter Example                                                                                      |
 |-------------------------|------------------------|----------------------------------------------------------------------------------------------|
-| REASONING_CONTENT       | 大模型推理过程           | `{"type": "REASONING_CONTENT", "data": {"content": "..."}}`                   |
-| TEXT_MESSAGE_CONTENT    | 大模型输出的文本消息          | `{"type": "TEXT_MESSAGE_CONTENT", "data": {"content": "..."}}`                         |
-| TOOL_CALL_START         | 工具调用开始           | `{"type": "TOOL_CALL_START", "data":{}}` |
-| TOOL_CALL_END           | 工具调用完成           | `{"type": "TOOL_CALL_END", "data": {}}`                                                      |
+| REASONING_CONTENT       | Large model reasoning process           | `{"type": "REASONING_CONTENT", "data": {"content": "..."}}`                   |
+| TEXT_MESSAGE_CONTENT    | Large model output text message          | `{"type": "TEXT_MESSAGE_CONTENT", "data": {"content": "..."}}`                         |
+| TOOL_CALL_START         | Tool call started           | `{"type": "TOOL_CALL_START", "data":{}}` |
+| TOOL_CALL_END           | Tool call completed           | `{"type": "TOOL_CALL_END", "data": {}}`                                                      |
 
 ```json title="TOOL_CALL_START"
 {
@@ -448,35 +448,35 @@ result = agent.run(
 
 ```
 
-### 会话状态管理
-通过chatId实现连续对话和上下文记忆：
+### Session State Management
+Implements continuous dialogue and context memory through chatId:
 
-```python title="连续对话示例"
-# 第一轮对话
+```python title="Continuous Dialogue Example"
+# First round of dialogue
 result1 = agent.run(
-    user_input="分析客户A的销售数据",
-    variables={'target': '客户A'},
+    user_input="Analyze customer A's sales data",
+    variables={'target': 'Customer A'},
     chatId="session_001"
 )
 
-# 第二轮对话（基于前一轮的上下文）
+# Second round of dialogue (based on previous context)
 result2 = agent.run(
-    user_input="对比客户B的数据，找出差异",
-    variables={'target': '客户B'},
-    chatId="session_001"  # 相同会话ID，保持上下文
+    user_input="Compare customer B's data and find differences",
+    variables={'target': 'Customer B'},
+    chatId="session_001"  # Same session ID, maintain context
 )
 
-# 第三轮对话（继续基于前面的分析）
+# Third round of dialogue (continue based on previous analysis)
 result3 = agent.run(
-    user_input="给出改进建议",
+    user_input="Provide improvement suggestions",
     chatId="session_001"
 )
 ```
 
-### 权限控制机制
-支持工具级别的细粒度权限控制：
+### Permission Control Mechanism
+Supports fine-grained permission control at the tool level:
 
-```json title="权限控制配置示例"
+```json title="Permission Control Configuration Example"
 {
     "tools": [
         {
@@ -496,10 +496,10 @@ result3 = agent.run(
 }
 ```
 
-### 事件配置
-配置工具调用前后的事件处理，用于审计和监控：
+### Event Configuration
+Configure event handling before and after tool calls for auditing and monitoring:
 
-```json title="事件配置示例"
+```json title="Event Configuration Example"
 {
     "tools": [
         {
@@ -507,8 +507,8 @@ result3 = agent.run(
             "name": "models.AuditModel",
             "enableFunctionList": {
                 "save": {
-                    "preEvent": {"withData": true},   # 调用前发送事件，携带入参
-                    "postEvent": {"withData": false}  # 调用后发送事件，不携带返回数据
+                    "preEvent": {"withData": true},   # Send event before call, with input parameters
+                    "postEvent": {"withData": false}  # Send event after call, without return data
                 },
                 "delete": {
                     "preEvent": {"withData": false},
@@ -520,27 +520,27 @@ result3 = agent.run(
 }
 ```
 
-### 流式回调处理 {#streaming-callback-processing}
+### Streaming Callback Processing {#streaming-callback-processing}
 
-```python title="事件监听示例"
+```python title="Event Monitoring Example"
 def event_callback(data):
     if data.get('type') == 'TOOL_CALL_START':
-        print(f"即将调用工具: {data['data']['outputArgs']['value']['toolName']}")
-        # 记录审计日志
+        print(f"About to call tool: {data['data']['outputArgs']['value']['toolName']}")
+        # Record audit log
     elif data.get('type') == 'TOOL_CALL_END':
-        print(f"工具调用完成")
-        # 记录操作结果
+        print(f"Tool call completed")
+        # Record operation result
 
 agent.run(
-    user_input="删除过期数据",
+    user_input="Delete expired data",
     stream_callback=event_callback
 )
 ```
 
-### 知识库集成
-配置和使用知识库增强代理能力：
+### Knowledge Base Integration
+Configure and use knowledge bases to enhance agent capabilities:
 
-```json title="知识库配置示例"
+```json title="Knowledge Base Configuration Example"
 {
     "knowledgeRepo": [
         {
@@ -551,75 +551,75 @@ agent.run(
         {
             "fullName": "rags.TechnicalDocuments",
             "enable": true,
-            "force": true  # 强制使用该知识库
+            "force": true  # Force use this knowledge base
         }
     ]
 }
 ```
 
-#### 知识库工作机制
-知识库集成支持两种工作模式：
+#### Knowledge Base Working Mechanism
+Knowledge base integration supports two working modes:
 
-**强制模式（force: true）：**
-- Agent会根据用户询问**先查询一次知识库**，将结果作为上下文的补充和增强
-- 查询到的知识会自动注入到推理过程中，为后续决策提供支撑
-- 适用于必须依赖特定知识库的场景，如技术文档查询、企业规章制度等
+**Force Mode (force: true):**
+- Agent will **query the knowledge base first** based on user inquiries, using the results as context supplementation and enhancement
+- Retrieved knowledge will be automatically injected into the reasoning process to provide support for subsequent decisions
+- Suitable for scenarios that must rely on specific knowledge bases, such as technical documentation queries, enterprise rules and regulations, etc.
 
-**非强制模式（force: false）：**
-- 完全由用户提示词以及大模型决定是否需要以及在什么时机查询知识库
-- Agent会根据推理过程判断是否需要额外的知识支持
-- 提供更灵活的知识获取策略，适用于通用性较强的场景
+**Non-force Mode (force: false):**
+- Completely determined by user prompts and the large model whether and when to query the knowledge base
+- Agent will determine whether additional knowledge support is needed based on the reasoning process
+- Provides more flexible knowledge acquisition strategies, suitable for more general scenarios
 
-```json title="知识库模式对比示例"
+```json title="Knowledge Base Mode Comparison Example"
 {
     "knowledgeRepo": [
         {
             "fullName": "rags.TechnicalSpecs",
             "enable": true,
-            "force": true  // 强制模式：请求大模型之前先查询一次知识库
+            "force": true  // Force mode: query knowledge base once before requesting large model
         },
         {
             "fullName": "rags.GeneralKnowledge",
             "enable": true,
-            "force": false  // 非强制模式：按需查询通用知识
+            "force": false  // Non-force mode: query general knowledge on demand
         }
     ]
 }
 ```
 
-### 自定义回调处理器 {#custom-callback-handlers}
+### Custom Callback Handlers {#custom-callback-handlers}
 
-JitAi的ReActAgent基于LangGraph构建，回调处理器用于监听和处理Agent推理、工具调用等各类关键流程事件，兼容[langchain_core.callbacks.BaseCallbackHandler](https://python.langchain.com/api_reference/core/callbacks/langchain_core.callbacks.base.BaseCallbackHandler.html#langchain_core.callbacks.base.BaseCallbackHandler)中定义的全部回调方法以及pre_model_hook和post_model_hook函数（参考[LangChain官方文档](https://langchain-ai.github.io/langgraph/reference/agents/?h=create_react#langgraph.prebuilt.chat_agent_executor.create_react_agent)中pre_model_hook和post_model_hook的定义）。
+JitAi's ReActAgent is built on LangGraph, and callback handlers are used to monitor and handle various key process events such as Agent reasoning and tool calls. It is compatible with all callback methods defined in [langchain_core.callbacks.BaseCallbackHandler](https://python.langchain.com/api_reference/core/callbacks/langchain_core.callbacks.base.BaseCallbackHandler.html#langchain_core.callbacks.base.BaseCallbackHandler) as well as pre_model_hook and post_model_hook functions (refer to the definitions of pre_model_hook and post_model_hook in [LangChain official documentation](https://langchain-ai.github.io/langgraph/reference/agents/?h=create_react#langgraph.prebuilt.chat_agent_executor.create_react_agent)).
 
-通过自定义回调处理器，开发者可以灵活介入模型推理前后、工具调用前后等环节，实现日志记录、参数校验、上下文增强等高级功能。
+Through custom callback handlers, developers can flexibly intervene in various stages such as before and after model reasoning, before and after tool calls, etc., to implement advanced features such as logging, parameter validation, and context enhancement.
 
-```python title="自定义回调处理器实现"
+```python title="Custom Callback Handler Implementation"
 # aiagents/CustomCallback/service.py
 from aiagents.ReActType import CustomAgentCallbackHandler
 from typing import Any, Dict
 
 class CustomCallback(CustomAgentCallbackHandler):
     def pre_model_hook(self, state: Dict[str, Any], **kwargs) -> Dict[str, Any]:
-        # 模型调用前的自定义处理
-        print(f"模型调用前处理: {state.get('messages', [])[-1]}")
+        # Custom processing before model call
+        print(f"Pre-model processing: {state.get('messages', [])[-1]}")
         return state
 
     def post_model_hook(self, state: Dict[str, Any], **kwargs) -> Dict[str, Any]:
-        # 模型调用后的自定义处理
-        print(f"模型调用后处理: {state.get('messages', [])[-1]}")
+        # Custom processing after model call
+        print(f"Post-model processing: {state.get('messages', [])[-1]}")
         return state
 
     def on_tool_start(self, serialized: dict, input_str: str, **kwargs) -> Any:
-        # 工具开始调用时的处理
+        # Processing when tool call starts
         tool_name = serialized.get('name', 'unknown')
-        print(f"开始调用工具: {tool_name}")
+        print(f"Starting tool call: {tool_name}")
 
     def on_tool_end(self, output: str, **kwargs) -> Any:
-        # 工具调用结束时的处理
-        print(f"工具调用结果: {output[:100]}...")
+        # Processing when tool call ends
+        print(f"Tool call result: {output[:100]}...")
 ```
 
-```json title="配置和使用自定义回调"
+```json title="Configure and Use Custom Callback"
 {
     "llmElement": "llms.LLMJitAppDevelop",
     "callbackHandler": "aiagents.CustomCallback",
@@ -627,7 +627,7 @@ class CustomCallback(CustomAgentCallbackHandler):
 }
 ```
 
-使用时无需额外代码，回调处理器会自动工作：
+No additional code is needed when using, the callback handler will work automatically:
 ```python
-result = agent.run(user_input="处理数据")
+result = agent.run(user_input="Process data")
 ```

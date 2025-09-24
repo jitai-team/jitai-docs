@@ -4,7 +4,7 @@
   "className": "red",
   "link": {
     "type": "generated-index",
-    "title": "Storage",
+    "slug": "reference/framework/JitStorage/storage",
     "description": "File and object storage management APIs for handling uploads, downloads, and storage operations."
   }
 } 

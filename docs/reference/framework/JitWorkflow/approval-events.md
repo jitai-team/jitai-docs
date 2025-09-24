@@ -1,27 +1,27 @@
 ---
 slug: approval-events
 ---
-# 审批事件 {#approval-events}
-审批事件是极态平台中专门处理审批流程状态变更和节点操作的事件处理器，基于事件驱动机制实现审批流程的自动化响应。它负责监听审批状态变更、节点变更和节点处理等关键时机，并自动执行预定义的业务逻辑，支持复杂的审批流程自动化场景。
+# Approval Events {#approval-events}
+Approval Events are event handlers specifically designed to process approval workflow status changes and node operations in the JitAI platform, implementing automated responses to approval processes based on event-driven mechanisms. They are responsible for listening to critical moments such as approval status changes, node changes, and node processing, and automatically executing predefined business logic, supporting complex approval workflow automation scenarios.
 
-审批事件元素分层结构为Meta（events.Meta） → Type（events.WorkflowType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建审批事件实例元素。
+The Approval Events element hierarchy is Meta (events.Meta) → Type (events.WorkflowType) → Instance. Developers can quickly create Approval Events instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的events.WorkflowType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official events.WorkflowType element provided by JitAI in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="审批事件实例元素目录结构"
+## Quick Start
+### Create Instance Element
+#### Directory Structure
+```text title="Approval Events Instance Element Directory Structure"
 events/
-└── myApprovalEvent/           # 事件元素名称，路径可自定义
-    ├── e.json                 # 元素配置文件
-    └── inner.py               # 事件处理逻辑（可选）
+└── myApprovalEvent/           # Event element name, path can be customized
+    ├── e.json                 # Element configuration file
+    └── inner.py               # Event handling logic (optional)
 ```
 
-#### e.json文件
-```json title="基础配置示例"
+#### e.json File
+```json title="Basic Configuration Example"
 {
-  "title": "订单审批事件",
+  "title": "Order Approval Event",
   "type": "events.WorkflowType",
   "backendBundleEntry": ".",
   "model": "models.OrderModel",
@@ -31,75 +31,75 @@ events/
 }
 ```
 
-#### 业务逻辑代码
-```python title="inner.py事件处理逻辑"
+#### Business Logic Code
+```python title="inner.py Event Handling Logic"
 from jit.commons.utils.logger import log
 
 def handleOrderApproval(eventOutData):
     """
-    处理订单审批事件
+    Handle order approval event
     
-    参数:
-        eventOutData: 事件输出数据，包含row(审批行数据)和status(审批状态)
+    Parameters:
+        eventOutData: Event output data, containing row (approval row data) and status (approval status)
     """
     try:
         row = eventOutData.row
         status = eventOutData.status.value
         
-        log.info(f"订单{row.orderNo.value}审批状态变更为: {status}")
+        log.info(f"Order {row.orderNo.value} approval status changed to: {status}")
         
-        # 根据审批状态执行不同逻辑
+        # Execute different logic based on approval status
         if status == "approved":
-            # 审批通过后的业务逻辑
+            # Business logic after approval
             processApprovedOrder(row)
         elif status == "rejected":
-            # 审批拒绝后的业务逻辑
+            # Business logic after rejection
             processRejectedOrder(row)
             
     except Exception as e:
-        log.exception(f"处理订单审批事件异常: {e}")
+        log.exception(f"Exception handling order approval event: {e}")
         raise
 
 def processApprovedOrder(row):
-    """处理审批通过的订单"""
-    # 更新订单状态
+    """Process approved order"""
+    # Update order status
     row.status.value = "processing"
     row.save()
 
 def processRejectedOrder(row):
-    """处理审批拒绝的订单"""
-    # 更新订单状态
+    """Process rejected order"""
+    # Update order status
     row.status.value = "cancelled"
     row.save()
 ```
 
-#### 调用示例
-```python title="事件自动触发示例"
-# 审批事件通过审批流程自动触发，无需手动调用
-# 当审批状态发生变更时，系统会自动执行配置的事件处理逻辑
-# 获取事件元素（用于配置管理）
+#### Usage Example
+```python title="Event Auto-trigger Example"
+# Approval events are automatically triggered by approval workflows, no manual invocation needed
+# When approval status changes, the system automatically executes configured event handling logic
+# Get event element (for configuration management)
 approvalEvent = app.getElement("events.myApprovalEvent")
 ```
 
-## 元素配置
-### e.json配置
-| 参数 | 类型 | 必需 | 默认值 | 说明 |
-|------|------|------|--------|------|
-| title | String | 是 | - | 事件标题 |
-| type | String | 是 | - | 固定值: events.WorkflowType |
-| backendBundleEntry | String | 是 | - | 后端入口路径，通常为"." |
-| model | String | 是 | - | 关联的模型fullName |
-| operate | String | 是 | - | 操作类型: Process/NodeChange/NodeHandled |
-| func | String | 是 | - | 事件处理函数 |
-| funcType | String | 是 | - | 函数类型: inner/global |
-| triggerNode | List | 否 | [] | 触发节点列表（NodeChange时使用） |
-| handleType | String/List | 否 | - | 处理类型（NodeHandled时使用） |
-| handleNode | String | 否 | - | 处理节点（NodeHandled时使用） |
+## Element Configuration
+### e.json Configuration
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| title | String | Yes | - | Event title |
+| type | String | Yes | - | Fixed value: events.WorkflowType |
+| backendBundleEntry | String | Yes | - | Backend entry path, usually "." |
+| model | String | Yes | - | Associated model fullName |
+| operate | String | Yes | - | Operation type: Process/NodeChange/NodeHandled |
+| func | String | Yes | - | Event handling function |
+| funcType | String | Yes | - | Function type: inner/global |
+| triggerNode | List | No | [] | Trigger node list (used for NodeChange) |
+| handleType | String/List | No | - | Handle type (used for NodeHandled) |
+| handleNode | String | No | - | Handle node (used for NodeHandled) |
 
-### 操作类型详解
-```json title="审批状态变更事件配置"
+### Operation Type Details
+```json title="Approval Status Change Event Configuration"
 {
-  "title": "审批状态变更事件",
+  "title": "Approval Status Change Event",
   "type": "events.WorkflowType",
   "model": "models.OrderModel", 
   "operate": "Process",
@@ -108,9 +108,9 @@ approvalEvent = app.getElement("events.myApprovalEvent")
 }
 ```
 
-```json title="节点变更事件配置"
+```json title="Node Change Event Configuration"
 {
-  "title": "节点变更事件",
+  "title": "Node Change Event",
   "type": "events.WorkflowType",
   "model": "models.OrderModel",
   "operate": "NodeChange", 
@@ -120,9 +120,9 @@ approvalEvent = app.getElement("events.myApprovalEvent")
 }
 ```
 
-```json title="节点处理事件配置"
+```json title="Node Handled Event Configuration"
 {
-  "title": "节点处理事件", 
+  "title": "Node Handled Event", 
   "type": "events.WorkflowType",
   "model": "models.OrderModel",
   "operate": "NodeHandled",
@@ -133,106 +133,106 @@ approvalEvent = app.getElement("events.myApprovalEvent")
 }
 ```
 
-## 方法 
+## Methods
 ### getSender
-获取事件发送者信息。
+Get event sender information.
 
-#### 返回值
-| 类型 | 说明 |
-|------|------|
-| Any | 事件发送者对象 |
+#### Return Value
+| Type | Description |
+|------|-------------|
+| Any | Event sender object |
 
-#### 使用示例
-```python title="获取事件发送者"
+#### Usage Example
+```python title="Get Event Sender"
 def handleApprovalEvent(eventOutData):
     event = app.getElement("events.myApprovalEvent")
     sender = event.getSender()
-    log.info(f"事件发送者: {sender}")
+    log.info(f"Event sender: {sender}")
 ```
 
 ### isValid
-验证事件是否符合触发条件。
+Validate whether the event meets trigger conditions.
 
-#### 参数详解
-| 参数名 | 类型 | 必需 | 说明 |
-|--------|------|------|------|
-| *args | Tuple | 是 | 事件参数元组 |
-| **kwargs | Dict | 否 | 事件关键字参数 |
+#### Parameters
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| *args | Tuple | Yes | Event parameter tuple |
+| **kwargs | Dict | No | Event keyword parameters |
 
-#### 返回值
-| 类型 | 说明 |
-|------|------|
-| Boolean | True表示事件有效，False表示无效 |
+#### Return Value
+| Type | Description |
+|------|-------------|
+| Boolean | True indicates event is valid, False indicates invalid |
 
-#### 使用示例
-```python title="验证事件有效性"
+#### Usage Example
+```python title="Validate Event Validity"
 def customEventHandler(eventOutData, *args):
     event = app.getElement("events.myApprovalEvent") 
     if event.isValid(eventOutData, *args):
-        # 执行事件处理逻辑
+        # Execute event handling logic
         processEvent(eventOutData)
 ```
 
 ### handleNode
-处理事件节点，设置节点信息和调整参数。
+Handle event node, set node information and adjust parameters.
 
-#### 参数详解
-| 参数名 | 类型 | 必需 | 说明 |
-|--------|------|------|------|
-| node | Object | 是 | 事件节点对象 |
-| *args | Tuple | 是 | 事件参数 |
-| **kwargs | Dict | 否 | 关键字参数 |
+#### Parameters
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| node | Object | Yes | Event node object |
+| *args | Tuple | Yes | Event parameters |
+| **kwargs | Dict | No | Keyword parameters |
 
-#### 返回值
-| 类型 | 说明 |
-|------|------|
-| Tuple | 返回(node, args, kwargs)元组 |
+#### Return Value
+| Type | Description |
+|------|-------------|
+| Tuple | Returns (node, args, kwargs) tuple |
 
 ### buildTaskParams
-构建任务参数，用于异步任务处理。
+Build task parameters for asynchronous task processing.
 
-#### 参数详解
-| 参数名 | 类型 | 必需 | 说明 |
-|--------|------|------|------|
-| *args | Tuple | 是 | 事件参数 |
-| **kwargs | Dict | 否 | 关键字参数 |
+#### Parameters
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| *args | Tuple | Yes | Event parameters |
+| **kwargs | Dict | No | Keyword parameters |
 
-#### 返回值
-| 类型 | 说明 |
-|------|------|
-| Dict | 任务参数字典，包含row、status、modelFullName |
+#### Return Value
+| Type | Description |
+|------|-------------|
+| Dict | Task parameter dictionary containing row, status, modelFullName |
 
 ### recoverTaskParams
-从任务参数恢复事件参数。
+Recover event parameters from task parameters.
 
-#### 参数详解
-| 参数名 | 类型 | 必需 | 说明 |
-|--------|------|------|------|
-| taskParams | Dict | 是 | 任务参数字典 |
+#### Parameters
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| taskParams | Dict | Yes | Task parameter dictionary |
 
-#### 返回值
-| 类型 | 说明 |
-|------|------|
-| Tuple | 返回(args, kwargs)元组 |
+#### Return Value
+| Type | Description |
+|------|-------------|
+| Tuple | Returns (args, kwargs) tuple |
 
-## 属性
+## Properties
 ### operate
-事件操作类型，定义事件的触发条件和处理方式。
+Event operation type that defines event trigger conditions and handling methods.
 
-| 值 | 说明 |
-|----|------|
-| Process | 审批状态变更时触发 |
-| NodeChange | 审批节点变更时触发 |
-| NodeHandled | 审批节点处理完成时触发 |
+| Value | Description |
+|-------|-------------|
+| Process | Triggered when approval status changes |
+| NodeChange | Triggered when approval node changes |
+| NodeHandled | Triggered when approval node processing completes |
 
 ### config
-事件配置信息，包含e.json中定义的所有配置参数。
+Event configuration information containing all configuration parameters defined in e.json.
 
-## 高级特性
-### 多节点触发配置
-```json title="配置多个触发节点"
+## Advanced Features
+### Multi-Node Trigger Configuration
+```json title="Configure Multiple Trigger Nodes"
 {
-  "title": "多节点触发事件",
+  "title": "Multi-Node Trigger Event",
   "type": "events.WorkflowType", 
   "model": "models.ContractModel",
   "operate": "NodeChange",
@@ -242,30 +242,30 @@ def customEventHandler(eventOutData, *args):
 }
 ```
 
-```python title="多节点事件处理"
+```python title="Multi-Node Event Handling"
 def handleMultiNodeChange(eventOutData, triggerNode):
     """
-    处理多节点变更事件
+    Handle multi-node change event
     
-    参数:
-        eventOutData: 事件数据
-        triggerNode: 触发的节点ID
+    Parameters:
+        eventOutData: Event data
+        triggerNode: Triggered node ID
     """
     if triggerNode == "deptApproval":
-        # 部门审批节点逻辑
+        # Department approval node logic
         handleDeptApproval(eventOutData)
     elif triggerNode == "managerApproval": 
-        # 经理审批节点逻辑
+        # Manager approval node logic
         handleManagerApproval(eventOutData)
     elif triggerNode == "directorApproval":
-        # 总监审批节点逻辑
+        # Director approval node logic
         handleDirectorApproval(eventOutData)
 ```
 
-### 多处理类型配置
-```json title="配置多种处理类型"
+### Multi-Handle Type Configuration
+```json title="Configure Multiple Handle Types"
 {
-  "title": "多处理类型事件",
+  "title": "Multi-Handle Type Event",
   "type": "events.WorkflowType",
   "model": "models.LeaveModel", 
   "operate": "NodeHandled",
@@ -276,34 +276,34 @@ def handleMultiNodeChange(eventOutData, triggerNode):
 }
 ```
 
-```python title="多处理类型事件处理"
+```python title="Multi-Handle Type Event Processing"
 def handleMultipleActions(eventOutData, handleType, nodeId, nodeTitle):
     """
-    处理多种处理类型事件
+    Handle multiple handle type events
     
-    参数:
-        eventOutData: 事件数据
-        handleType: 处理类型
-        nodeId: 节点ID
-        nodeTitle: 节点标题
+    Parameters:
+        eventOutData: Event data
+        handleType: Handle type
+        nodeId: Node ID
+        nodeTitle: Node title
     """
     row = eventOutData.row
     
     if handleType == HandleTypeEnum.agree:
-        # 同意处理逻辑
+        # Agree handling logic
         processApproval(row, "approved")
     elif handleType == HandleTypeEnum.reject:
-        # 拒绝处理逻辑  
+        # Reject handling logic  
         processApproval(row, "rejected")
     elif handleType == HandleTypeEnum.transfer:
-        # 转办处理逻辑
+        # Transfer handling logic
         processTransfer(row, nodeTitle)
 ```
 
-### 全局函数调用配置
-```json title="调用全局服务函数"
+### Global Function Call Configuration
+```json title="Call Global Service Function"
 {
-  "title": "全局函数事件",
+  "title": "Global Function Event",
   "type": "events.WorkflowType",
   "model": "models.InvoiceModel",
   "operate": "Process", 

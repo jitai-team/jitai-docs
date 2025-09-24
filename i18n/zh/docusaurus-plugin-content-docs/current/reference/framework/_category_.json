@@ -1,9 +1,9 @@
 {
-  "label": "开发框架",
+  "label": "Development Framework",
   "position": 0,
   "collapsed": false,
   "link": {
-    "type": "generated-index",
-    "description": "JitAiframework是基于JAAP的企业级应用framework，提供从基础设施到业务层组件的全栈技术底座。"
+    "slug": "reference/framework",
+    "description": "JitAi framework is an enterprise-grade application framework based on JAAP, providing a full-stack technology foundation from infrastructure to business-layer components."
   }
 } 

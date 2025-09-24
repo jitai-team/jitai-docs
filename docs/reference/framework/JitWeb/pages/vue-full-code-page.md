@@ -3,38 +3,38 @@ sidebar_position: 7
 slug: vue-full-code-page
 ---
 
-# Vue全代码页面
-Vue全代码页面是基于Vue.js技术栈的全代码页面类型，集成Element Plus UI组件库，支持Vue 3的组合式API和响应式数据系统。它为熟悉Vue的开发者提供完整的Vue开发环境，可以使用Vue生态的第三方插件和工具链，适用于需要Vue技术栈的项目或团队技术选型。
+# Vue Full Code Page
+Vue Full Code Page is a full code page type based on the Vue.js technology stack, integrating the Element Plus UI component library, supporting Vue 3's Composition API and reactive data system. It provides a complete Vue development environment for developers familiar with Vue, allowing the use of third-party plugins and toolchains from the Vue ecosystem, suitable for projects or teams that require Vue technology stack selection.
 
-Vue全代码页面元素分层结构为Meta（pages.Meta） → Type（pages.VueType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建Vue全代码页面实例元素。
+The Vue Full Code Page element hierarchy is Meta (pages.Meta) → Type (pages.VueType) → Instance. Developers can quickly create Vue Full Code Page instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的pages.VueType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official pages.VueType element provided by JitAI in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
-testVue/                    # Vue页面元素名称（可自定义）
-├── e.json                  # 元素配置文件
-├── index.ts                # 入口文件，导出Render和PageCls
-├── page.ts                 # 页面逻辑类文件（可选）
-└── App.vue                 # Vue组件文件
+## Quick Start
+### Create Instance Element
+#### Directory Structure
+```text title="Recommended Directory Structure"
+testVue/                    # Vue page element name (customizable)
+├── e.json                  # Element configuration file
+├── index.ts                # Entry file, exports Render and PageCls
+├── page.ts                 # Page logic class file (optional)
+└── App.vue                 # Vue component file
 ```
 
-#### e.json文件
-```json title="元素配置文件"
+#### e.json File
+```json title="Element Configuration File"
 {
-  "title": "测试vue",
+  "title": "Test Vue",
   "type": "pages.VueType",
   "frontBundleEntry": "./index.ts",
   "outputName": "index"
 }
 ```
 
-#### 业务逻辑代码
-页面逻辑类文件（page.ts）：
+#### Business Logic Code
+Page logic class file (page.ts):
 
-```typescript title="页面逻辑类实现"
+```typescript title="Page Logic Class Implementation"
 import { Jit } from 'jit';
 
 export default class extends Jit.BasePage {
@@ -45,40 +45,40 @@ export default class extends Jit.BasePage {
     }
     
     async loadComponents() {
-        // 加载页面组件
-        console.log('加载页面组件');
+        // Load page components
+        console.log('Loading page components');
     }
     
     bindEvent() {
-        // 绑定事件
-        console.log('绑定页面事件');
+        // Bind events
+        console.log('Binding page events');
     }
     
     onLoaded() {
-        console.log('页面加载完成');
+        console.log('Page loaded');
     }
     
     async onUnload() {
-        console.log('页面卸载');
+        console.log('Page unloaded');
     }
     
     refresh() {
-        console.log('页面刷新');
+        console.log('Page refreshed');
     }
 }
 ```
 
-Vue组件文件（App.vue）：
+Vue component file (App.vue):
 
-```javascript title="Vue组件实现"
+```javascript title="Vue Component Implementation"
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
-      当前时间: {{ currentTime }}
+      Current time: {{ currentTime }}
     </p>
-    <el-button @click="updateTime">更新时间</el-button>
-    <el-button @click="sendMessage">发送事件</el-button>
+    <el-button @click="updateTime">Update Time</el-button>
+    <el-button @click="sendMessage">Send Event</el-button>
   </div>
 </template>
 
@@ -94,7 +94,7 @@ const updateTime = () => {
 };
 
 const sendMessage = () => {
-  // 通过页面实例发布事件
+  // Publish event through page instance
   if (instance?.appContext.app.config.globalProperties.$page) {
     instance.appContext.app.config.globalProperties.$page.publishEvent('TIME_UPDATE', {
       time: currentTime.value
@@ -118,9 +118,9 @@ h1 {
 </style>
 ```
 
-入口文件（index.ts）：
+Entry file (index.ts):
 
-```typescript title="入口文件"
+```typescript title="Entry File"
 import PageCls from './page';
 
 async function Render(props: any) {
@@ -131,7 +131,7 @@ async function Render(props: any) {
     const app = createApp(App);
     app.use(ElementPlus);
     
-    // 将页面实例注入到Vue应用中
+    // Inject page instance into Vue application
     app.config.globalProperties.$page = props.page;
     app.config.globalProperties.$app = props.page.app;
     
@@ -141,49 +141,49 @@ async function Render(props: any) {
 export { Render, PageCls };
 ```
 
-#### 调用示例
-在门户或其他页面中调用Vue页面：
+#### Usage Example
+Call Vue page in portal or other pages:
 
-```typescript title="页面调用示例"
-// 通过应用获取页面元素
+```typescript title="Page Usage Example"
+// Get page element through application
 const vuePageElement = await app.getElement('pages.testVue');
 
-// 调用页面方法
+// Call page methods
 await vuePageElement.page.init();
 ```
 
-## 元素配置
-### e.json配置
-| 字段 | 类型 | 必填 | 默认值 | 说明 |
-|------|------|------|--------|------|
-| title | string | 是 | - | 页面标题 |
-| type | string | 是 | pages.VueType | 页面类型，固定值 |
-| frontBundleEntry | string | 是 | ./index.ts | 前端入口文件路径 |
-| outputName | string | 否 | index | 输出文件名 |
-| extend | string | 否 | - | 继承的页面fullName |
-| aiConfig | object | 否 | - | AI配置选项 |
+## Element Configuration
+### e.json Configuration
+| Field | Type | Required | Default | Description |
+|-------|------|----------|---------|-------------|
+| title | string | Yes | - | Page title |
+| type | string | Yes | pages.VueType | Page type, fixed value |
+| frontBundleEntry | string | Yes | ./index.ts | Frontend entry file path |
+| outputName | string | No | index | Output file name |
+| extend | string | No | - | Inherited page fullName |
+| aiConfig | object | No | - | AI configuration options |
 
-### 业务配置文件配置
-Vue全代码页面不需要额外的业务配置文件，所有配置都在Vue组件中通过代码实现。
+### Business Configuration File Configuration
+Vue Full Code Page does not require additional business configuration files, all configurations are implemented through code in Vue components.
 
-## 方法 
+## Methods
 ### init
-初始化页面，加载组件并绑定事件。
+Initialize the page, load components and bind events.
 
-```typescript title="init使用示例"
+```typescript title="init Usage Example"
 export default class extends Jit.BasePage {
     async init() {
         await this.loadComponents();
         this.bindEvent();
-        console.log('页面初始化完成');
+        console.log('Page initialization completed');
     }
 }
 ```
 
 ### loadComponents
-加载页面相关的组件实例。
+Load page-related component instances.
 
-```typescript title="loadComponents使用示例"
+```typescript title="loadComponents Usage Example"
 export default class extends Jit.BasePage {
     async loadComponents() {
         const data = await this.app.findElementByTlPath(this.ePath);
@@ -210,61 +210,61 @@ export default class extends Jit.BasePage {
 ```
 
 ### bindEvent
-绑定页面事件处理器。
+Bind page event handlers.
 
-```typescript title="bindEvent使用示例"
+```typescript title="bindEvent Usage Example"
 export default class extends Jit.BasePage {
     bindEvent() {
-        // 订阅时间更新事件
+        // Subscribe to time update events
         this.subscribeEvent('TIME_UPDATE', (e) => {
-            console.log('收到时间更新事件:', e.time);
+            console.log('Received time update event:', e.time);
         });
     }
 }
 ```
 
 ### subscribeEvent
-订阅事件消息。
+Subscribe to event messages.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| messageName | string &#124; symbol | 是 | - | 事件名称 |
-| callback | Handler&lt;T&gt; | 是 | - | 事件回调函数 |
+#### Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| messageName | string &#124; symbol | Yes | - | Event name |
+| callback | Handler&lt;T&gt; | Yes | - | Event callback function |
 
-#### 返回值
-返回类型：`string`（事件处理器ID）
+#### Return Value
+Return type: `string` (Event handler ID)
 
-#### 使用示例
-```typescript title="subscribeEvent使用示例"
+#### Usage Example
+```typescript title="subscribeEvent Usage Example"
 export default class extends Jit.BasePage {
     onLoaded() {
-        // 订阅用户登录事件
+        // Subscribe to user login events
         const handlerId = this.subscribeEvent('USER_LOGIN', (e) => {
-            console.log('用户登录:', e.userData);
+            console.log('User logged in:', e.userData);
             this.refresh();
         });
         
-        // 保存处理器ID以便后续取消订阅
+        // Save handler ID for subsequent unsubscription
         this.loginHandlerId = handlerId;
     }
 }
 ```
 
 ### publishEvent
-发布事件消息。
+Publish event messages.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| messageName | string &#124; symbol | 是 | - | 事件名称 |
-| ex | Record&lt;string, any&gt; | 否 | {} | 附加数据 |
+#### Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| messageName | string &#124; symbol | Yes | - | Event name |
+| ex | Record&lt;string, any&gt; | No | {} | Additional data |
 
-#### 返回值
-返回类型：`Promise&lt;void&gt;`
+#### Return Value
+Return type: `Promise&lt;void&gt;`
 
-#### 使用示例
-```typescript title="publishEvent使用示例"
+#### Usage Example
+```typescript title="publishEvent Usage Example"
 export default class extends Jit.BasePage {
     async notifyDataChange() {
         await this.publishEvent('DATA_CHANGED', {
@@ -276,18 +276,18 @@ export default class extends Jit.BasePage {
 ```
 
 ### unSubscribeEvent
-取消订阅事件。
+Unsubscribe from events.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| handlerId | string | 是 | - | 事件处理器ID |
+#### Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| handlerId | string | Yes | - | Event handler ID |
 
-#### 使用示例
-```typescript title="unSubscribeEvent使用示例"
+#### Usage Example
+```typescript title="unSubscribeEvent Usage Example"
 export default class extends Jit.BasePage {
     async onUnload() {
-        // 取消订阅事件
+        // Unsubscribe from events
         if (this.loginHandlerId) {
             this.unSubscribeEvent(this.loginHandlerId);
         }
@@ -296,24 +296,24 @@ export default class extends Jit.BasePage {
 ```
 
 ### newComponent
-创建组件实例。
+Create component instances.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| type | string | 是 | - | 组件类型 |
-| createCompConfig | any | 是 | - | 组件配置 |
+#### Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| type | string | Yes | - | Component type |
+| createCompConfig | any | Yes | - | Component configuration |
 
-#### 返回值
-返回类型：`Promise&lt;any&gt;`
+#### Return Value
+Return type: `Promise&lt;any&gt;`
 
-#### 使用示例
-```typescript title="newComponent使用示例"
+#### Usage Example
+```typescript title="newComponent Usage Example"
 export default class extends Jit.BasePage {
     async createButton() {
         const buttonComp = await this.newComponent('components.Button', {
-            title: '动态按钮',
-            onClick: () => console.log('按钮被点击')
+            title: 'Dynamic Button',
+            onClick: () => console.log('Button clicked')
         });
         return buttonComp;
     }
@@ -321,145 +321,145 @@ export default class extends Jit.BasePage {
 ```
 
 ### newVariable
-创建数据类型变量。
+Create data type variables.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| varConfig | DataTypeConfig | 是 | - | 变量配置 |
-| value | any | 否 | undefined | 初始值 |
+#### Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| varConfig | DataTypeConfig | Yes | - | Variable configuration |
+| value | any | No | undefined | Initial value |
 
-#### 返回值
-返回类型：数据类型实例
+#### Return Value
+Return type: Data type instance
 
-#### 使用示例
-```typescript title="newVariable使用示例"
+#### Usage Example
+```typescript title="newVariable Usage Example"
 export default class extends Jit.BasePage {
     createVariables() {
-        // 创建文本变量
+        // Create text variable
         this.nameVar = this.newVariable({
             dataType: 'Stext',
             name: 'name',
-            title: '姓名'
-        }, '张三');
+            title: 'Name'
+        }, 'John');
         
-        // 创建数字变量
+        // Create numeric variable
         this.ageVar = this.newVariable({
             dataType: 'Numeric',
             name: 'age',
-            title: '年龄'
+            title: 'Age'
         }, 25);
     }
 }
 ```
 
 ### getVariableValue
-获取变量的值。
+Get variable values.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| varName | string &#124; DataType | 是 | - | 变量名或变量实例 |
+#### Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| varName | string &#124; DataType | Yes | - | Variable name or variable instance |
 
-#### 返回值
-返回类型：`any`
+#### Return Value
+Return type: `any`
 
-#### 使用示例
-```typescript title="getVariableValue使用示例"
+#### Usage Example
+```typescript title="getVariableValue Usage Example"
 export default class extends Jit.BasePage {
     checkValues() {
-        // 获取简单变量值
+        // Get simple variable value
         const name = this.getVariableValue('nameVar');
         
-        // 获取组件内变量值
+        // Get component variable value
         const buttonText = this.getVariableValue('myButton.text');
         
-        console.log('姓名:', name, '按钮文本:', buttonText);
+        console.log('Name:', name, 'Button text:', buttonText);
     }
 }
 ```
 
 ### parseVariableInQ
-解析Q表达式中的变量。
+Parse variables in Q expressions.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| str | string | 是 | - | Q表达式字符串 |
+#### Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| str | string | Yes | - | Q expression string |
 
-#### 返回值
-返回类型：`string`
+#### Return Value
+Return type: `string`
 
-#### 使用示例
-```typescript title="parseVariableInQ使用示例"
+#### Usage Example
+```typescript title="parseVariableInQ Usage Example"
 export default class extends Jit.BasePage {
     buildQuery() {
         const queryStr = "Q(name='{nameVar}', age__gt={ageVar})";
         const parsedQuery = this.parseVariableInQ(queryStr);
-        console.log('解析后的查询:', parsedQuery);
+        console.log('Parsed query:', parsedQuery);
     }
 }
 ```
 
 ### sendAiMessage
-发送AI消息。
+Send AI messages.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| message | string | 是 | - | 消息内容 |
-| inNewChat | number | 否 | 0 | 是否在新对话中发送 |
+#### Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| message | string | Yes | - | Message content |
+| inNewChat | number | No | 0 | Whether to send in new chat |
 
-#### 使用示例
-```typescript title="sendAiMessage使用示例"
+#### Usage Example
+```typescript title="sendAiMessage Usage Example"
 export default class extends Jit.BasePage {
     async askAI() {
         if (this.aiConfig?.useAi) {
-            await this.sendAiMessage('帮我分析当前数据', 1);
+            await this.sendAiMessage('Help me analyze current data', 1);
         }
     }
 }
 ```
 
 ### getUIContext
-获取UI上下文信息。
+Get UI context information.
 
-#### 返回值
-返回类型：`{ functionList: FuncDefine[], variables: DataTypeConfig[] }`
+#### Return Value
+Return type: `{ functionList: FuncDefine[], variables: DataTypeConfig[] }`
 
-#### 使用示例
-```typescript title="getUIContext使用示例"
+#### Usage Example
+```typescript title="getUIContext Usage Example"
 export default class extends Jit.BasePage {
     getContext() {
         const context = this.getUIContext();
-        console.log('可用函数:', context.functionList);
-        console.log('可用变量:', context.variables);
+        console.log('Available functions:', context.functionList);
+        console.log('Available variables:', context.variables);
     }
 }
 ```
 
 ### destroy
-销毁页面实例，清理资源。
+Destroy page instance, clean up resources.
 
-```typescript title="destroy使用示例"
+```typescript title="destroy Usage Example"
 export default class extends Jit.BasePage {
     cleanup() {
-        // 页面销毁时会自动调用，也可手动调用
+        // Automatically called when page is destroyed, can also be called manually
         this.destroy();
     }
 }
 ```
 
 ### off
-移除事件处理器。
+Remove event handlers.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| handlerId | string | 是 | - | 事件处理器ID |
+#### Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| handlerId | string | Yes | - | Event handler ID |
 
-#### 使用示例
-```typescript title="off使用示例"
+#### Usage Example
+```typescript title="off Usage Example"
 export default class extends Jit.BasePage {
     removeHandler() {
         if (this.someHandlerId) {
@@ -469,48 +469,48 @@ export default class extends Jit.BasePage {
 }
 ```
 
-## 属性
+## Properties
 ### name
-页面名称。
+Page name.
 
 ### title
-页面标题。
+Page title.
 
 ### fullName
-页面完整名称。
+Complete page name.
 
 ### ePath
-页面元素路径。
+Page element path.
 
 ### app
-应用实例，提供全局应用功能访问。
+Application instance, providing global application functionality access.
 
-| 方法 | 返回类型 | 说明 |
-|------|----------|------|
-| getElement(fullName) | Promise&lt;any&gt; | 获取元素实例 |
-| findElement(fullName) | Element[] | 查找元素 |
-| findElementByTlPath(path) | Promise&lt;Element[]&gt; | 按路径查找元素 |
-| on(callback, filter) | string | 绑定事件监听器 |
-| emit(event) | Promise&lt;void&gt; | 发送事件 |
-| off(handlerId) | void | 移除事件监听器 |
+| Method | Return Type | Description |
+|--------|-------------|-------------|
+| getElement(fullName) | Promise&lt;any&gt; | Get element instance |
+| findElement(fullName) | Element[] | Find element |
+| findElementByTlPath(path) | Promise&lt;Element[]&gt; | Find element by path |
+| on(callback, filter) | string | Bind event listener |
+| emit(event) | Promise&lt;void&gt; | Send event |
+| off(handlerId) | void | Remove event listener |
 
 ### aiConfig
-AI配置信息。
+AI configuration information.
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
-| useAi | 1 &#124; 0 | 是否启用AI |
-| aiAssistant | string | AI助手名称 |
+| Property | Type | Description |
+|----------|------|-------------|
+| useAi | 1 &#124; 0 | Whether AI is enabled |
+| aiAssistant | string | AI assistant name |
 
 ### pagePerm
-页面权限配置。
+Page permission configuration.
 
-## 高级特性
-### Vue生态集成
-Vue全代码页面完全支持Vue生态系统，可以使用Vue Router、Vuex/Pinia、Vue插件等。
+## Advanced Features
+### Vue Ecosystem Integration
+Vue Full Code Page fully supports the Vue ecosystem, allowing the use of Vue Router, Vuex/Pinia, Vue plugins, etc.
 
-#### 使用Vue Router
-```typescript title="Vue Router集成示例"
+#### Using Vue Router
+```typescript title="Vue Router Integration Example"
 async function Render(props: any) {
     const { createApp } = await import('vue');
     const { createRouter, createWebHistory } = await import('vue-router');
@@ -531,8 +531,8 @@ async function Render(props: any) {
 }
 ```
 
-#### 使用Pinia状态管理
-```typescript title="Pinia集成示例"
+#### Using Pinia State Management
+```typescript title="Pinia Integration Example"
 async function Render(props: any) {
     const { createApp } = await import('vue');
     const { createPinia } = await import('pinia');
@@ -546,14 +546,14 @@ async function Render(props: any) {
 }
 ```
 
-### 与JitAi系统集成
-Vue页面可以直接调用JitAi的服务和模型。
+### JitAI System Integration
+Vue pages can directly call JitAI services and models.
 
-#### 调用JitAi服务
-```vue title="调用服务示例"
+#### Calling JitAI Services
+```vue title="Service Call Example"
 <template>
   <div>
-    <el-button @click="callService">调用服务</el-button>
+    <el-button @click="callService">Call Service</el-button>
     <div>{{ result }}</div>
   </div>
 </template>
@@ -571,19 +571,19 @@ const callService = async () => {
     const data = await service.getUserList();
     result.value = JSON.stringify(data);
   } catch (error) {
-    console.error('调用服务失败:', error);
+    console.error('Service call failed:', error);
   }
 };
 </script>
 ```
 
-#### 访问模型数据
-```vue title="访问模型示例"
+#### Accessing Model Data
+```vue title="Model Access Example"
 <template>
   <div>
     <el-table :data="userList">
-      <el-table-column prop="name" label="姓名" />
-      <el-table-column prop="email" label="邮箱" />
+      <el-table-column prop="name" label="Name" />
+      <el-table-column prop="email" label="Email" />
     </el-table>
   </div>
 </template>
@@ -601,28 +601,28 @@ onMounted(async () => {
     const data = await userModel.query();
     userList.value = data.rowDatas;
   } catch (error) {
-    console.error('获取用户数据失败:', error);
+    console.error('Failed to get user data:', error);
   }
 });
 </script>
 ```
 
-### 事件系统集成
-Vue页面支持完整的事件订阅和发布机制。
+### Event System Integration
+Vue pages support complete event subscription and publishing mechanisms.
 
-#### 页面间通信
-```typescript title="页面间通信示例"
+#### Inter-page Communication
+```typescript title="Inter-page Communication Example"
 export default class extends Jit.BasePage {
     onLoaded() {
-        // 订阅其他页面的事件
+        // Subscribe to events from other pages
         this.subscribeEvent('DATA_REFRESH', (e) => {
-            console.log('收到数据刷新通知:', e);
+            console.log('Received data refresh notification:', e);
             this.reloadData();
         });
     }
     
     async updateData() {
-        // 更新数据后通知其他页面
+        // Notify other pages after data update
         await this.publishEvent('DATA_CHANGED', {
             source: this.fullName,
             timestamp: Date.now()
@@ -631,47 +631,47 @@ export default class extends Jit.BasePage {
 }
 ```
 
-### 组件动态加载
-支持动态创建和加载组件。
+### Dynamic Component Loading
+Supports dynamic creation and loading of components.
 
-#### 动态组件创建
-```typescript title="动态组件示例"
+#### Dynamic Component Creation
+```typescript title="Dynamic Component Example"
 export default class extends Jit.BasePage {
     async createDynamicComponents() {
-        // 创建表格组件
+        // Create table component
         const tableComp = await this.newComponent('components.Table', {
             dataSource: 'models.UserModel',
             columns: [
-                { title: '姓名', field: 'name' },
-                { title: '邮箱', field: 'email' }
+                { title: 'Name', field: 'name' },
+                { title: 'Email', field: 'email' }
             ]
         });
         
-        // 创建按钮组件
+        // Create button component
         const buttonComp = await this.newComponent('components.Button', {
-            title: '新增用户',
+            title: 'Add User',
             onClick: this.addUser.bind(this)
         });
         
-        // 将组件实例保存到页面
+        // Save component instances to page
         this.userTable = tableComp;
         this.addButton = buttonComp;
     }
     
     async addUser() {
-        // 添加用户逻辑
-        console.log('添加新用户');
+        // Add user logic
+        console.log('Adding new user');
     }
 }
 ```
 
-### AI功能集成
-支持AI助手集成和智能交互。
+### AI Function Integration
+Supports AI assistant integration and intelligent interaction.
 
-#### AI配置和使用
-```json title="AI配置示例"
+#### AI Configuration and Usage
+```json title="AI Configuration Example"
 {
-  "title": "智能页面",
+  "title": "Smart Page",
   "type": "pages.VueType",
   "frontBundleEntry": "./index.ts",
   "aiConfig": {
@@ -681,60 +681,60 @@ export default class extends Jit.BasePage {
 }
 ```
 
-```typescript title="AI功能使用"
+```typescript title="AI Function Usage"
 export default class extends Jit.BasePage {
     async analyzeData() {
         if (this.aiConfig?.useAi) {
             const data = await this.getUserData();
-            await this.sendAiMessage(`分析以下用户数据：${JSON.stringify(data)}`, 1);
+            await this.sendAiMessage(`Analyze the following user data: ${JSON.stringify(data)}`, 1);
         }
     }
     
     onLoaded() {
-        // 监听AI消息响应
+        // Listen to AI message responses
         this.subscribeEvent('AI_RESPONSE', (e) => {
-            console.log('AI分析结果:', e.message);
+            console.log('AI analysis result:', e.message);
             this.displayAIResult(e.message);
         });
     }
 }
 ```
 
-### 页面继承
-Vue页面支持继承机制，可以继承其他页面的逻辑和配置。
+### Page Inheritance
+Vue pages support inheritance mechanism, allowing inheritance of logic and configuration from other pages.
 
-#### 继承配置
-```json title="继承页面配置"
+#### Inheritance Configuration
+```json title="Inheritance Page Configuration"
 {
-  "title": "子页面",
+  "title": "Child Page",
   "type": "pages.VueType",
   "frontBundleEntry": "./index.ts",
   "extend": "pages.basePage"
 }
 ```
 
-#### 继承实现
-```typescript title="继承页面逻辑"
-// 继承父页面的PageCls
+#### Inheritance Implementation
+```typescript title="Inheritance Page Logic"
+// Inherit parent page's PageCls
 const ParentPageCls = Jit.Pages['pages.basePage'];
 
 export default class extends ParentPageCls {
     async init() {
-        await super.init(); // 调用父类初始化
-        await this.customInit(); // 子页面特有初始化
+        await super.init(); // Call parent class initialization
+        await this.customInit(); // Child page specific initialization
     }
     
     async customInit() {
-        // 子页面特有逻辑
-        console.log('子页面自定义初始化');
+        // Child page specific logic
+        console.log('Child page custom initialization');
     }
     
     bindEvent() {
-        super.bindEvent(); // 继承父页面事件绑定
+        super.bindEvent(); // Inherit parent page event binding
         
-        // 添加子页面特有事件
+        // Add child page specific events
         this.subscribeEvent('CHILD_EVENT', (e) => {
-            console.log('子页面事件:', e);
+            console.log('Child page event:', e);
         });
     }
 }

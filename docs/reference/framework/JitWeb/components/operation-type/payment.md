@@ -1,21 +1,21 @@
 ---
 slug: payment
 ---
-# 支付
-一个支付操作组件，基于统一的支付接口实现多平台支付功能。它负责订单创建、支付流程管理和状态监控，支持支付宝和微信支付平台，提供完整的支付生命周期管理。
+# Payment
+A payment operation component that implements multi-platform payment functionality based on unified payment interfaces. It handles order creation, payment process management, and status monitoring, supporting Alipay and WeChat Pay platforms, providing complete payment lifecycle management.
 
-支付元素分层结构为Meta（components.Meta） → Type（components.Payment） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建支付实例元素。
+The Payment element has a hierarchical structure of Meta (components.Meta) → Type (components.Payment) → Instance. Developers can quickly create Payment instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.PaymentType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official components.PaymentType element provided by JitAI in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基础配置示例
-```typescript title="支付组件基础配置"
+## Quick Start
+### Basic Configuration Example
+```typescript title="Payment Component Basic Configuration"
 {
   "fullName": "components.Payment",
   "type": "components.Payment", 
   "name": "Payment1",
-  "title": "支付组件",
+  "title": "Payment Component",
   "config": {
     "requireElements": [],
     "aliPay": true,
@@ -25,236 +25,236 @@ slug: payment
 }
 ```
 
-### 配置属性说明
-| 属性名 | 类型 | 默认值 | 说明 | 示例值 |
-|--------|------|--------|------|--------|
-| aliPay | boolean | false | 是否启用支付宝支付 | true |
-| weChatPay | boolean | false | 是否启用微信支付 | true |
-| requireElements | array | [] | 依赖的元素配置 | [] |
-| aliPayFullName | string | - | 支付宝支付元素全名 | "pays.AliPay" |
-| weChatPayFullName | string | - | 微信支付元素全名 | "pays.WeChatPay" |
+### Configuration Properties
+| Property Name | Type | Default Value | Description | Example Value |
+|---------------|------|---------------|-------------|---------------|
+| aliPay | boolean | false | Whether to enable Alipay | true |
+| weChatPay | boolean | false | Whether to enable WeChat Pay | true |
+| requireElements | array | [] | Dependent element configuration | [] |
+| aliPayFullName | string | - | Alipay element full name | "pays.AliPay" |
+| weChatPayFullName | string | - | WeChat Pay element full name | "pays.WeChatPay" |
 
-## 变量
+## Variables
 ### tradeNo
-- **类型**：Stext
-- **权限**：只读
-- **说明**：支付成功后生成的交易流水号
+- **Type**: Stext
+- **Permission**: Read-only
+- **Description**: Transaction serial number generated after successful payment
 
-```typescript title="获取交易流水号"
-// 获取支付后的交易流水号
+```typescript title="Get Transaction Serial Number"
+// Get transaction serial number after payment
 const tradeNumber = Payment1.tradeNo.value;
-console.log('交易流水号:', tradeNumber);
+console.log('Transaction Serial Number:', tradeNumber);
 ```
 
-## 属性
+## Attributes
 ### name
-组件实例名称，在页面中的唯一标识。
-- **类型**：string
+Component instance name, unique identifier in the page.
+- **Type**: string
 
 ### title
-组件显示标题。
-- **类型**：string
+Component display title.
+- **Type**: string
 
 ### config
-组件配置对象，包含支付相关设置。
-- **类型**：PaymentCompConfig & \{requireElements: requireElement[]\}
+Component configuration object, containing payment-related settings.
+- **Type**: `PaymentCompConfig & {requireElements: requireElement[]}`
 
 ### showTitle
-是否在界面中显示组件标题。
-- **类型**：boolean
+Whether to display component title in the interface.
+- **Type**: boolean
 
 ### type
-组件类型标识，固定为"components.Payment"。
-- **类型**：string
+Component type identifier, fixed as "components.Payment".
+- **Type**: string
 
 ### fullName
-组件的完整名称路径。
-- **类型**：string
+Component's complete name path.
+- **Type**: string
 
 ### app
-当前应用实例，提供全局应用上下文。
-- **类型**：App
+Current application instance, providing global application context.
+- **Type**: App
 
 ### page
-所属页面实例，提供页面上下文。
-- **类型**：BasePage
+Parent page instance, providing page context.
+- **Type**: BasePage
 
-## 方法 
+## Methods
 ### call
-发起支付操作，创建订单并启动支付流程。
+Initiate payment operation, create order and start payment process.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 | 示例值 |
-|--------|------|------|------|--------|
-| outTradeNo | Stext | 是 | 商户订单号，为空时自动生成 | "ORDER20241201001" |
-| subject | Stext | 是 | 订单标题描述 | "商品购买" |
-| totalAmount | Money | 是 | 订单金额，单位为元 | 99.99 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description | Example Value |
+|----------------|------|----------|-------------|---------------|
+| outTradeNo | Stext | Yes | Merchant order number, auto-generated if empty | "ORDER20241201001" |
+| subject | Stext | Yes | Order title description | "Product Purchase" |
+| totalAmount | Money | Yes | Order amount in yuan | 99.99 |
 
-#### 返回值
-无返回值，支付结果通过事件回调获取。
+#### Return Value
+No return value, payment results are obtained through event callbacks.
 
-```typescript title="发起支付示例"
-// 发起支付
-await Payment1.call("ORDER20241201001", "商品购买", 99.99);
+```typescript title="Initiate Payment Example"
+// Initiate payment
+await Payment1.call("ORDER20241201001", "Product Purchase", 99.99);
 
-// 使用自动生成订单号
-await Payment1.call("", "VIP会员充值", 199.00);
+// Use auto-generated order number
+await Payment1.call("", "VIP Membership Recharge", 199.00);
 ```
 
 ### createOrderId
-生成唯一的订单ID，格式为D+年月日时分秒+6位随机数。
+Generate unique order ID, format: D+YYYYMMDDHHMMSS+6-digit random number.
 
-#### 返回值
-string - 生成的订单ID
+#### Return Value
+string - Generated order ID
 
-```typescript title="生成订单ID"
+```typescript title="Generate Order ID"
 const orderId = Payment1.createOrderId();
-console.log(orderId); // 示例：D20241201123456789012
+console.log(orderId); // Example: D20241201123456789012
 ```
 
 ### poll
-启动支付状态轮询，定期检查支付结果。
+Start payment status polling, periodically check payment results.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 | 示例值 |
-|--------|------|------|------|--------|
-| request | Function | 是 | 查询支付状态的请求函数 | () => Promise\<Record\<string, any\>\> |
-| interval | number | 是 | 轮询间隔时间（毫秒） | 4000 |
-| maxAttempts | number | 是 | 最大轮询次数 | 75 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description | Example Value |
+|----------------|------|----------|-------------|---------------|
+| request | Function | Yes | Function to query payment status | `() => Promise<Record<string, any>>` |
+| interval | number | Yes | Polling interval in milliseconds | 4000 |
+| maxAttempts | number | Yes | Maximum polling attempts | 75 |
 
-```typescript title="支付状态轮询"
+```typescript title="Payment Status Polling"
 const queryPayStatus = async () => {
   return await app.services.PayService.queryOrderStatus(orderId);
 };
 
-Payment1.poll(queryPayStatus, 4000, 75); // 每4秒查询一次，最多75次
+Payment1.poll(queryPayStatus, 4000, 75); // Query every 4 seconds, max 75 times
 ```
 
 ### publishEvent
-发布组件事件，通知订阅者。继承自BaseComponent。
+Publish component event, notify subscribers. Inherited from BaseComponent.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 | 示例值 |
-|--------|------|------|------|--------|
-| name | string | 是 | 事件名称 | "onSuccess" |
-| ex | Record\<string, any\> | 否 | 附加数据 | \{orderId: "123"\} |
+#### Parameter Details
+| Parameter Name | Type | Required | Description | Example Value |
+|----------------|------|----------|-------------|---------------|
+| name | string | Yes | Event name | "onSuccess" |
+| ex | `Record<string, any>` | No | Additional data | `{orderId: "123"}` |
 
-```typescript title="发布自定义事件"
+```typescript title="Publish Custom Event"
 await Payment1.publishEvent('onSuccess', { orderId: 'ORDER001' });
 ```
 
 ### subscribeEvent
-订阅组件事件，设置事件回调处理函数。继承自BaseComponent。
+Subscribe to component event, set event callback handler. Inherited from BaseComponent.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 | 示例值 |
-|--------|------|------|------|--------|
-| name | string | 是 | 事件名称 | "onSuccess" |
-| evtCb | Function | 是 | 事件回调函数 | (data) => \{...\} |
-| unSubscribeExist | boolean | 否 | 是否取消现有订阅 | true |
+#### Parameter Details
+| Parameter Name | Type | Required | Description | Example Value |
+|----------------|------|----------|-------------|---------------|
+| name | string | Yes | Event name | "onSuccess" |
+| evtCb | Function | Yes | Event callback function | `(data) => {...}` |
+| unSubscribeExist | boolean | No | Whether to cancel existing subscription | true |
 
-#### 返回值
-string - 事件处理器ID
+#### Return Value
+string - Event handler ID
 
-```typescript title="订阅支付事件"
+```typescript title="Subscribe to Payment Event"
 const handlerId = Payment1.subscribeEvent('onSuccess', async (data) => {
-  console.log('支付成功，交易流水号:', data.tradeNo);
+  console.log('Payment successful, transaction serial number:', data.tradeNo);
 });
 ```
 
 ### unSubscribeEvent
-取消事件订阅。继承自BaseComponent。
+Cancel event subscription. Inherited from BaseComponent.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 | 示例值 |
-|--------|------|------|------|--------|
-| id | string | 是 | 事件处理器ID | "handler_123" |
+#### Parameter Details
+| Parameter Name | Type | Required | Description | Example Value |
+|----------------|------|----------|-------------|---------------|
+| id | string | Yes | Event handler ID | "handler_123" |
 
-#### 返回值
-boolean - 是否成功取消
+#### Return Value
+boolean - Whether successfully cancelled
 
-```typescript title="取消事件订阅"
+```typescript title="Cancel Event Subscription"
 const handlerId = Payment1.subscribeEvent('onSuccess', callback);
-// 取消订阅
+// Cancel subscription
 Payment1.unSubscribeEvent(handlerId);
 ```
 
 ### setConfig
-动态设置组件配置。继承自BaseComponent。
+Dynamically set component configuration. Inherited from BaseComponent.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 | 示例值 |
-|--------|------|------|------|--------|
-| next | Partial\<PaymentCompConfig\> | 是 | 新的配置对象 | \{aliPay: true\} |
-| clean | boolean | 否 | 是否完全替换配置 | false |
+#### Parameter Details
+| Parameter Name | Type | Required | Description | Example Value |
+|----------------|------|----------|-------------|---------------|
+| next | `Partial<PaymentCompConfig>` | Yes | New configuration object | `{aliPay: true}` |
+| clean | boolean | No | Whether to completely replace configuration | false |
 
-```typescript title="动态配置支付方式"
-// 启用支付宝支付
+```typescript title="Dynamic Payment Method Configuration"
+// Enable Alipay
 Payment1.setConfig({ aliPay: true });
 
-// 完全替换配置
+// Completely replace configuration
 Payment1.setConfig({ aliPay: true, weChatPay: false }, true);
 ```
 
 ### newVariable
-创建新的数据类型变量实例。继承自BaseComponent。
+Create new data type variable instance. Inherited from BaseComponent.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 | 示例值 |
-|--------|------|------|------|--------|
-| varConfig | DataTypeConfig | 是 | 变量配置对象 | \{name: "amount", dataType: "Money"\} |
+#### Parameter Details
+| Parameter Name | Type | Required | Description | Example Value |
+|----------------|------|----------|-------------|---------------|
+| varConfig | DataTypeConfig | Yes | Variable configuration object | `{name: "amount", dataType: "Money"}` |
 
-```typescript title="创建支付相关变量"
+```typescript title="Create Payment-Related Variables"
 const payAmount = Payment1.newVariable({
   name: 'payAmount',
   dataType: 'Money',
-  title: '支付金额',
+  title: 'Payment Amount',
   decimal: 2
 });
 ```
 
 ### destroy
-销毁组件实例，清理所有资源和事件监听。继承自BaseComponent。
+Destroy component instance, clean up all resources and event listeners. Inherited from BaseComponent.
 
-```typescript title="销毁组件"
+```typescript title="Destroy Component"
 Payment1.destroy();
 ```
 
 ### runCode
-执行代码字符串，在页面上下文中运行。继承自BaseComponent。
+Execute code string, run in page context. Inherited from BaseComponent.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 | 示例值 |
-|--------|------|------|------|--------|
-| code | string | 是 | 要执行的代码字符串 | "this.Payment1.tradeNo.value" |
+#### Parameter Details
+| Parameter Name | Type | Required | Description | Example Value |
+|----------------|------|----------|-------------|---------------|
+| code | string | Yes | Code string to execute | "this.Payment1.tradeNo.value" |
 
-#### 返回值
-any - 代码执行结果
+#### Return Value
+any - Code execution result
 
-```typescript title="执行代码"
+```typescript title="Execute Code"
 const result = Payment1.runCode('this.Payment1.tradeNo.value');
 ```
 
 ### getPermConfig
-获取组件权限配置。继承自BaseComponent。
+Get component permission configuration. Inherited from BaseComponent.
 
-#### 返回值
-Record\<string, any\> | undefined - 权限配置对象
+#### Return Value
+`Record<string, any> | undefined` - Permission configuration object
 
-```typescript title="获取权限配置"
+```typescript title="Get Permission Configuration"
 const permConfig = Payment1.getPermConfig();
-console.log('权限配置:', permConfig);
+console.log('Permission Configuration:', permConfig);
 ```
 
-## 事件
+## Events
 ### onSuccess
-支付成功后触发，返回交易流水号。
+Triggered after successful payment, returns transaction serial number.
 
-**事件数据**：tradeNo（交易流水号）
+**Event Data**: tradeNo (transaction serial number)
 
-```typescript title="支付成功处理"
+```typescript title="Payment Success Handling"
 Payment1.subscribeEvent('onSuccess', async (data) => {
-  console.log('支付成功，流水号:', data.tradeNo);
+  console.log('Payment successful, serial number:', data.tradeNo);
   await OrderModel.updateByPK([orderId], { 
     status: 'paid',
     tradeNo: data.tradeNo 
@@ -263,35 +263,35 @@ Payment1.subscribeEvent('onSuccess', async (data) => {
 ```
 
 ### onFailed
-支付失败后触发，无返回数据。
+Triggered after payment failure, no return data.
 
-```typescript title="支付失败处理"
+```typescript title="Payment Failure Handling"
 Payment1.subscribeEvent('onFailed', async () => {
-  console.log('支付失败');
-  await showErrorMessage('支付失败，请检查网络或重试');
+  console.log('Payment failed');
+  await showErrorMessage('Payment failed, please check network or retry');
 });
 ```
 
-## 高级特性
-### 完整支付流程
-```typescript title="完整支付流程示例"
+## Advanced Features
+### Complete Payment Process
+```typescript title="Complete Payment Process Example"
 class PaymentManager {
   private handlerIds: string[] = [];
 
   async initPayment() {
-    // 订阅事件
+    // Subscribe to events
     const successId = Payment1.subscribeEvent('onSuccess', this.onPaySuccess.bind(this));
     const failedId = Payment1.subscribeEvent('onFailed', this.onPayFailed.bind(this));
     this.handlerIds.push(successId, failedId);
 
-    // 配置支付方式
+    // Configure payment methods
     Payment1.setConfig({ aliPay: true, weChatPay: true });
 
-    // 发起支付
+    // Initiate payment
     const orderId = Payment1.createOrderId();
-    await Payment1.call(orderId, '商品购买', 99.99);
+    await Payment1.call(orderId, 'Product Purchase', 99.99);
 
-    // 启动状态监控
+    // Start status monitoring
     Payment1.poll(this.queryPayStatus.bind(this), 4000, 75);
   }
 
@@ -310,8 +310,8 @@ class PaymentManager {
   }
 
   cleanup() {
-    // 清理事件订阅
+    // Clean up event subscriptions
     this.handlerIds.forEach(id => Payment1.unSubscribeEvent(id));
     this.handlerIds = [];
   }
-} 
+}

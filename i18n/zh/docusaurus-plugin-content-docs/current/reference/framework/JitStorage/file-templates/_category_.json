@@ -1,10 +1,10 @@
 {
   "position": 2,
-  "label": "文件模板",
+  "label": "File Templates",
   "className": "red",
   "link": {
     "type": "generated-index",
-    "title": "文件模板",
-    "description": "JitStorage的文件模板元素，包括Excel、Word等文档模板的定义和使用。支持动态文档生成和企业级报表输出。"
+    "slug": "reference/framework/JitStorage/file-templates",
+    "description": "File template elements for JitStorage, including definitions and usage of Excel, Word, and other document templates. Supports dynamic document generation and enterprise-level report output."
   }
 } 

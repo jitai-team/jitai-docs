@@ -1,19 +1,19 @@
 ---
 slug: general-filter
 ---
-# 通用筛选器
-通用筛选器是数据查询筛选组件，基于可配置的筛选字段和条件实现灵活的数据过滤功能。它负责筛选条件的构建、字段映射处理和Q表达式生成，支持多种数据类型的筛选操作和自定义筛选逻辑配置。
+# General Filter
+The general filter is a data query filtering component that implements flexible data filtering functionality based on configurable filter fields and conditions. It handles filter condition construction, field mapping processing, and Q-expression generation, supporting filtering operations for multiple data types and custom filter logic configuration.
 
-通用筛选器元素分层结构为Meta（components.Meta） → Type（components.GenericFilter） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建通用筛选器实例元素。
+The general filter element has a hierarchical structure of Meta (components.Meta) → Type (components.GenericFilter) → Instance. Developers can quickly create general filter instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.GenericFilterType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `components.GenericFilterType` element provided by JitAI in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基础配置示例
-```json title="通用筛选器基础配置"
+## Quick Start
+### Basic Configuration Example
+```json title="General Filter Basic Configuration"
 {
   "name": "GenericFilter1",
-  "title": "订单筛选器",
+  "title": "Order Filter",
   "type": "components.GenericFilter",
   "config": {
     "requireElements": []
@@ -22,36 +22,36 @@ slug: general-filter
 }
 ```
 
-### 配置属性说明
-| 属性 | 类型 | 默认值 | 必填 | 说明 |
-|------|------|--------|------|------|
-| name | string | - | 是 | 组件实例名称 |
-| title | string | - | 是 | 组件显示标题 |
-| type | string | components.GenericFilter | 是 | 组件类型标识 |
-| config | object | \{\} | 否 | 组件配置对象 |
-| config.requireElements | array | [] | 否 | 依赖元素配置 |
-| showTitle | boolean | true | 否 | 是否显示组件标题 |
+### Configuration Properties
+| Property | Type | Default Value | Required | Description |
+|----------|------|---------------|----------|-------------|
+| name | string | - | Yes | Component instance name |
+| title | string | - | Yes | Component display title |
+| type | string | components.GenericFilter | Yes | Component type identifier |
+| config | object | \{\} | No | Component configuration object |
+| config.requireElements | array | [] | No | Dependent element configuration |
+| showTitle | boolean | true | No | Whether to show component title |
 
-## 变量
-暂无
+## Variables
+None
 
-## 方法 
+## Methods
 ### getFilter
-获取当前筛选器配置的筛选条件，将筛选器中的字段映射到目标模型并生成Q表达式字符串。
+Get current filter configuration's filter conditions, map fields in the filter to target model and generate Q-expression string.
 
-#### 参数详解
-| 参数名 | 类型 | 默认值 | 必填 | 说明 |
-|--------|------|--------|------|------|
-| modelName | string | - | 是 | 目标数据模型名称（当前版本中此参数暂未使用） |
-| mappingDict | object | - | 是 | 字段映射字典，key为筛选器字段ID，value为目标模型字段名 |
+#### Parameter Details
+| Parameter Name | Type | Default Value | Required | Description |
+|----------------|------|---------------|----------|-------------|
+| modelName | string | - | Yes | Target data model name (this parameter is currently unused in current version) |
+| mappingDict | object | - | Yes | Field mapping dictionary, key is filter field ID, value is target model field name |
 
-#### 返回值
-- **类型**：QFilter（筛选条件字符串）
-- **说明**：返回转换后的Q表达式字符串，可直接用于数据模型查询。当字段映射不完整或无筛选条件时返回空字符串
+#### Return Value
+- **Type**: QFilter (filter condition string)
+- **Description**: Returns converted Q-expression string that can be directly used for data model queries. Returns empty string when field mapping is incomplete or no filter conditions exist
 
-#### 使用示例
-```typescript title="获取筛选条件"
-// 设置字段映射并获取筛选条件
+#### Usage Example
+```typescript title="Get Filter Conditions"
+// Set field mapping and get filter conditions
 const mappingDict = {
   "status": "orderStatus",
   "createTime": "createdAt", 
@@ -60,7 +60,7 @@ const mappingDict = {
 
 const filter = genericFilter.getFilter("models.OrderModel", mappingDict);
 
-// 使用筛选条件查询数据
+// Use filter conditions to query data
 if (filter) {
   const orderModel = app.getElement("models.OrderModel");
   const result = await orderModel.query({
@@ -72,39 +72,39 @@ if (filter) {
 ```
 
 ### setConfig
-设置组件配置信息。
+Set component configuration information.
 
-#### 参数详解
-| 参数名 | 类型 | 默认值 | 必填 | 说明 |
-|--------|------|--------|------|------|
-| next | object | - | 是 | 新的配置对象 |
-| clean | boolean | false | 否 | 是否完全替换配置，true为替换，false为合并 |
+#### Parameter Details
+| Parameter Name | Type | Default Value | Required | Description |
+|----------------|------|---------------|----------|-------------|
+| next | object | - | Yes | New configuration object |
+| clean | boolean | false | No | Whether to completely replace configuration, true for replace, false for merge |
 
-#### 使用示例
-```typescript title="设置组件配置"
-// 合并配置
+#### Usage Example
+```typescript title="Set Component Configuration"
+// Merge configuration
 genericFilter.setConfig({
   requireElements: ["models.OrderModel"]
 });
 
-// 完全替换配置  
+// Completely replace configuration  
 genericFilter.setConfig({
   requireElements: []
 }, true);
 ```
 
 ### publishEvent
-发布组件事件，触发注册的事件处理器。
+Publish component events, trigger registered event handlers.
 
-#### 参数详解
-| 参数名 | 类型 | 默认值 | 必填 | 说明 |
-|--------|------|--------|------|------|
-| name | string | - | 是 | 事件名称 |
-| ex | object | - | 否 | 事件参数对象 |
+#### Parameter Details
+| Parameter Name | Type | Default Value | Required | Description |
+|----------------|------|---------------|----------|-------------|
+| name | string | - | Yes | Event name |
+| ex | object | - | No | Event parameter object |
 
-#### 使用示例
-```typescript title="发布事件"
-// 发布筛选完成事件
+#### Usage Example
+```typescript title="Publish Event"
+// Publish filter completion event
 await genericFilter.publishEvent('afterFilter', {
   filterCount: 3,
   timestamp: Date.now()
@@ -112,195 +112,195 @@ await genericFilter.publishEvent('afterFilter', {
 ```
 
 ### subscribeEvent
-订阅组件事件，注册事件处理器。
+Subscribe to component events, register event handlers.
 
-#### 参数详解
-| 参数名 | 类型 | 默认值 | 必填 | 说明 |
-|--------|------|--------|------|------|
-| name | string | - | 是 | 事件名称 |
-| evtCb | function | - | 是 | 事件回调函数，支持同步和异步函数 |
-| unSubscribeExist | boolean | true | 否 | 是否取消已存在的同名订阅 |
+#### Parameter Details
+| Parameter Name | Type | Default Value | Required | Description |
+|----------------|------|---------------|----------|-------------|
+| name | string | - | Yes | Event name |
+| evtCb | function | - | Yes | Event callback function, supports sync and async functions |
+| unSubscribeExist | boolean | true | No | Whether to cancel existing subscriptions with same name |
 
-#### 返回值
-- **类型**：string
-- **说明**：返回事件处理器ID，用于取消订阅
+#### Return Value
+- **Type**: string
+- **Description**: Returns event handler ID for unsubscribing
 
-#### 使用示例
-```typescript title="订阅事件"
-// 订阅筛选完成事件
+#### Usage Example
+```typescript title="Subscribe to Event"
+// Subscribe to filter completion event
 const handlerId = genericFilter.subscribeEvent('afterFilter', (data) => {
-  console.log('筛选完成:', data);
-  // 刷新关联的数据表格
+  console.log('Filter completed:', data);
+  // Refresh associated data table
   this.table1.refresh();
 });
 
-// 订阅异步事件处理
+// Subscribe to async event handling
 const asyncHandlerId = genericFilter.subscribeEvent('afterFilter', async (data) => {
   await updateDataDisplay(data);
 });
 ```
 
 ### unSubscribeEvent
-取消事件订阅，移除指定的事件处理器。
+Cancel event subscription, remove specified event handler.
 
-#### 参数详解
-| 参数名 | 类型 | 默认值 | 必填 | 说明 |
-|--------|------|--------|------|------|
-| id | string | - | 是 | 事件处理器ID |
+#### Parameter Details
+| Parameter Name | Type | Default Value | Required | Description |
+|----------------|------|---------------|----------|-------------|
+| id | string | - | Yes | Event handler ID |
 
-#### 使用示例
-```typescript title="取消事件订阅"
-// 取消特定事件订阅
+#### Usage Example
+```typescript title="Cancel Event Subscription"
+// Cancel specific event subscription
 genericFilter.unSubscribeEvent(handlerId);
 ```
 
 ### destroy
-销毁组件实例，清理所有资源、事件监听和变量引用。
+Destroy component instance, clean up all resources, event listeners, and variable references.
 
-#### 使用示例
-```typescript title="销毁组件"
-// 组件销毁时清理资源
+#### Usage Example
+```typescript title="Destroy Component"
+// Clean up resources when component is destroyed
 genericFilter.destroy();
 ```
 
 ### runCode
-在页面上下文中执行JavaScript代码字符串。
+Execute JavaScript code string in page context.
 
-#### 参数详解
-| 参数名 | 类型 | 默认值 | 必填 | 说明 |
-|--------|------|--------|------|------|
-| code | string | - | 是 | 要执行的JavaScript代码字符串 |
+#### Parameter Details
+| Parameter Name | Type | Default Value | Required | Description |
+|----------------|------|---------------|----------|-------------|
+| code | string | - | Yes | JavaScript code string to execute |
 
-#### 返回值
-- **类型**：any
-- **说明**：返回代码执行结果，执行失败时返回undefined
+#### Return Value
+- **Type**: any
+- **Description**: Returns code execution result, returns undefined when execution fails
 
-#### 使用示例
-```typescript title="执行代码"
-// 执行页面方法
+#### Usage Example
+```typescript title="Execute Code"
+// Execute page method
 const result = genericFilter.runCode('this.table1.refresh()');
 
-// 执行表达式
+// Execute expression
 const value = genericFilter.runCode('this.orderStatus.value');
 ```
 
 ### getPermConfig
-获取组件的权限配置信息。
+Get component's permission configuration information.
 
-#### 返回值
-- **类型**：object | undefined  
-- **说明**：返回组件权限配置对象，如果无权限限制则返回undefined
+#### Return Value
+- **Type**: object | undefined  
+- **Description**: Returns component permission configuration object, returns undefined if no permission restrictions
 
-#### 使用示例
-```typescript title="获取权限配置"
-// 检查组件权限
+#### Usage Example
+```typescript title="Get Permission Configuration"
+// Check component permissions
 const permConfig = genericFilter.getPermConfig();
 if (permConfig) {
-  console.log('组件权限配置:', permConfig);
+  console.log('Component permission configuration:', permConfig);
 }
 ```
 
 ### getEventKey
-获取组件事件的完整键名，用于事件系统内部标识。
+Get component event's complete key name, used for internal event system identification.
 
-#### 参数详解
-| 参数名 | 类型 | 默认值 | 必填 | 说明 |
-|--------|------|--------|------|------|
-| eventName | string | - | 是 | 事件名称 |
+#### Parameter Details
+| Parameter Name | Type | Default Value | Required | Description |
+|----------------|------|---------------|----------|-------------|
+| eventName | string | - | Yes | Event name |
 
-#### 返回值
-- **类型**：string
-- **说明**：返回格式为 `{uuid}.{componentName}.{eventName}` 的事件键名
+#### Return Value
+- **Type**: string
+- **Description**: Returns event key name in format `{uuid}.{componentName}.{eventName}`
 
-#### 使用示例
-```typescript title="获取事件键名"
-// 获取afterFilter事件的完整键名
+#### Usage Example
+```typescript title="Get Event Key Name"
+// Get complete key name for afterFilter event
 const eventKey = genericFilter.getEventKey('afterFilter');
-console.log(eventKey); // 输出: "uuid.GenericFilter1.afterFilter"
+console.log(eventKey); // Output: "uuid.GenericFilter1.afterFilter"
 ```
 
-## 属性
-| 属性名 | 类型 | 说明 |
-|--------|------|------|
-| name | string | 组件实例名称 |
-| title | string | 组件显示标题 |
-| fullName | string | 组件完整名称，格式为`{元素类型}.{实例名}` |
-| config | object | 组件配置信息 |
-| showTitle | boolean | 是否显示标题 |
-| type | string | 组件类型标识 |
-| compType | string | 组件类型枚举值 |
-| dataTypeList | array | 组件变量定义列表 |
-| app | App | 关联的应用实例 |
-| page | BasePage | 关联的页面实例 |
-| filterList | IFilter[] | 当前筛选条件列表，内部维护的筛选状态 |
+## Properties
+| Property Name | Type | Description |
+|---------------|------|-------------|
+| name | string | Component instance name |
+| title | string | Component display title |
+| fullName | string | Component full name, format `{elementType}.{instanceName}` |
+| config | object | Component configuration information |
+| showTitle | boolean | Whether to show title |
+| type | string | Component type identifier |
+| compType | string | Component type enumeration value |
+| dataTypeList | array | Component variable definition list |
+| app | App | Associated application instance |
+| page | BasePage | Associated page instance |
+| filterList | IFilter[] | Current filter condition list, internally maintained filter state |
 
-## 事件
+## Events
 ### afterFilter
-用户完成筛选操作后触发的事件，可用于响应筛选状态变化。
+Event triggered after user completes filter operation, can be used to respond to filter state changes.
 
-#### 使用示例
-```typescript title="afterFilter事件处理"
-// 监听筛选完成事件
+#### Usage Example
+```typescript title="afterFilter Event Handling"
+// Listen to filter completion event
 genericFilter.subscribeEvent('afterFilter', () => {
-  console.log('用户完成了筛选操作');
-  // 执行后续逻辑，如刷新数据表格
+  console.log('User completed filter operation');
+  // Execute subsequent logic, such as refreshing data table
   this.table1.refresh();
 });
 
-// 带参数的事件处理
+// Event handling with parameters
 genericFilter.subscribeEvent('afterFilter', (eventData) => {
-  console.log('筛选事件数据:', eventData);
-  // 根据筛选结果更新页面状态
+  console.log('Filter event data:', eventData);
+  // Update page state based on filter results
   this.updatePageState(eventData);
 });
 ```
 
-## 高级特性
-### 字段映射机制
-通用筛选器通过字段映射实现筛选器字段与目标模型字段的灵活关联，支持不同命名规范的字段映射：
+## Advanced Features
+### Field Mapping Mechanism
+The general filter implements flexible association between filter fields and target model fields through field mapping, supporting field mapping for different naming conventions:
 
-```typescript title="字段映射配置"
-// 筛选器字段ID与目标模型字段的映射关系
+```typescript title="Field Mapping Configuration"
+// Mapping relationship between filter field IDs and target model fields
 const mappingDict = {
-  "orderNo": "orderNumber",      // 订单号字段映射
-  "customerName": "customer",    // 客户名称字段映射
-  "orderDate": "createdAt",      // 订单日期字段映射
-  "orderType": "type"            // 订单类型字段映射
+  "orderNo": "orderNumber",      // Order number field mapping
+  "customerName": "customer",    // Customer name field mapping
+  "orderDate": "createdAt",      // Order date field mapping
+  "orderType": "type"            // Order type field mapping
 };
 
 const filter = genericFilter.getFilter("models.OrderModel", mappingDict);
 ```
 
-### 筛选条件验证
-组件内置完整性验证机制，确保所有筛选器配置的字段都能正确映射到目标模型：
+### Filter Condition Validation
+Component has built-in integrity validation mechanism to ensure all fields configured in the filter can be correctly mapped to target model:
 
-```typescript title="筛选条件验证机制"
-// 当字段映射不完整时的处理
+```typescript title="Filter Condition Validation Mechanism"
+// Handling when field mapping is incomplete
 const incompleteMapping = {
   "status": "orderStatus"
-  // 缺少筛选器中其他字段的映射
+  // Missing mappings for other fields in filter
 };
 
 const filter = genericFilter.getFilter("models.OrderModel", incompleteMapping);
-// 映射不完整时会：
-// 1. 显示错误提示："{组件标题}设置的字段给到目标数据模型时映射不完整"  
-// 2. 返回空字符串，避免错误查询
+// When mapping is incomplete:
+// 1. Show error message: "Fields set by {component title} are incompletely mapped to target data model"  
+// 2. Return empty string to avoid erroneous queries
 ```
 
-### 筛选条件构建
-组件内部使用IFilter结构维护筛选条件，支持单项筛选和分组筛选，最终生成标准的QFilter格式：
+### Filter Condition Construction
+Component internally uses IFilter structure to maintain filter conditions, supporting single item filtering and group filtering, ultimately generating standard QFilter format:
 
-```typescript title="筛选条件结构"
-// filterList中包含的筛选项类型：
-// 1. item类型：单个筛选条件
-// 2. group类型：分组筛选条件
+```typescript title="Filter Condition Structure"
+// Filter item types contained in filterList:
+// 1. item type: single filter condition
+// 2. group type: group filter condition
 
-// 最终生成的QFilter结构
+// Final generated QFilter structure
 const QFilter = {
   type: 'group',
   uid: 'group-uuid',
   filterList: [
-    // 映射处理后的筛选条件列表
+    // List of filter conditions after mapping processing
   ]
 };
-``` 
+```

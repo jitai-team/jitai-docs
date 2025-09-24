@@ -1,29 +1,29 @@
 ---
 slug: ssr-portal
 ---
-# SSR门户
-SSR门户是支持服务端渲染的门户类型，用于提升首屏加载性能和SEO优化，支持主题定制和多模板切换。
+# SSR Portal
+SSR Portal is a portal type that supports server-side rendering, used to improve first-screen loading performance and SEO optimization, supporting theme customization and multi-template switching.
 
-SSR门户元素分层结构为Meta（shells.Meta） → Type（shells.SSRType） → 实例，开发者可通过可视化开发工具创建实例元素。
+The SSR Portal element hierarchy is Meta (shells.Meta) → Type (shells.SSRType) → Instance. Developers can create instance elements through visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的shells.SSRType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official shells.SSRType element provided by JitAI in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+## Quick Start
+### Create Instance Element
+#### Directory Structure
+```text title="Recommended Directory Structure"
 shells/
-└── MySSRPortal/            # 门户元素目录（可自定义）
-    ├── e.json              # 元素配置文件
-    └── feature.json        # 门户功能配置文件
+└── MySSRPortal/            # Portal element directory (customizable)
+    ├── e.json              # Element configuration file
+    └── feature.json        # Portal function configuration file
 ```
 
-#### e.json文件
-```json title="基础配置示例"
+#### e.json File
+```json title="Basic Configuration Example"
 {
   "type": "shells.SSRType",
   "theme": "default",
-  "title": "我的SSR门户",
+  "title": "My SSR Portal",
   "default": true,
   "status": 1,
   "frontBundleEntry": "./feature.json",
@@ -31,13 +31,13 @@ shells/
 }
 ```
 
-#### 业务配置文件
-```json title="feature.json示例"
+#### Business Configuration File
+```json title="feature.json Example"
 {
   "menus": [
     {
       "name": "dashboard",
-      "title": "数据看板",
+      "title": "Data Dashboard",
       "icon": "dashboard",
       "page": "pages.Dashboard",
       "mobilePage": "pages.MobileDashboard",
@@ -45,13 +45,13 @@ shells/
     },
     {
       "name": "userGroup",
-      "title": "用户管理",
+      "title": "User Management",
       "icon": "user",
       "nodeType": "group",
       "children": [
         {
           "name": "userList",
-          "title": "用户列表",
+          "title": "User List",
           "page": "pages.UserList",
           "nodeType": "menu"
         }
@@ -61,75 +61,75 @@ shells/
 }
 ```
 
-#### 调用示例
-```javascript title="获取门户实例"
-// 获取SSR门户实例
+#### Usage Example
+```javascript title="Get Portal Instance"
+// Get SSR portal instance
 const portal = await app.getElement("shells.MySSRPortal");
 
-// 获取门户菜单
+// Get portal menus
 const menus = portal.menuTree;
 const originMenus = portal.originMenus;
 const extendsMenus = portal.extendsMenus;
 
-// 设置后端返回URL
+// Set backend return URL
 portal.setBackUrl("/dashboard");
 ```
 
-## 元素配置
-### e.json配置
-| 配置项 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
-| type | string | 是 | 元素类型，固定为"shells.SSRType" |
-| title | string | 是 | 门户标题 |
-| theme | string | 否 | 主题名称，默认为"default" |
-| default | boolean | 否 | 是否为使用者门户 |
-| status | number | 否 | 门户状态，0-禁用，1-启用 |
-| hideInRole | boolean | 否 | 是否在角色中隐藏 |
-| remark | string | 否 | 备注信息 |
-| frontBundleEntry | string | 是 | 前端资源入口路径 |
-| backendBundleEntry | string | 是 | 后端资源入口路径 |
+## Element Configuration
+### e.json Configuration
+| Configuration | Type | Required | Description |
+|---------------|------|----------|-------------|
+| type | string | Yes | Element type, fixed as "shells.SSRType" |
+| title | string | Yes | Portal title |
+| theme | string | No | Theme name, defaults to "default" |
+| default | boolean | No | Whether it's the user portal |
+| status | number | No | Portal status, 0-disabled, 1-enabled |
+| hideInRole | boolean | No | Whether to hide in role |
+| remark | string | No | Remark information |
+| frontBundleEntry | string | Yes | Frontend resource entry path |
+| backendBundleEntry | string | Yes | Backend resource entry path |
 
-### 业务配置文件配置
-| 配置项 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
-| menus | Array | 是 | 菜单配置数组 |
-| aiConfig | Object | 否 | AI助理配置 |
+### Business Configuration File Configuration
+| Configuration | Type | Required | Description |
+|---------------|------|----------|-------------|
+| menus | Array | Yes | Menu configuration array |
+| aiConfig | Object | No | AI assistant configuration |
 
-**菜单配置项：**
+**Menu Configuration Items:**
 
-| 配置项 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
-| name | string | 是 | 菜单唯一标识 |
-| title | string | 是 | 菜单显示标题 |
-| icon | string | 否 | 菜单图标 |
-| page | string | 否 | PC端页面fullName |
-| mobilePage | string | 否 | 移动端页面fullName |
-| nodeType | string | 是 | 节点类型："menu"或"group" |
-| children | Array | 否 | 子菜单数组（group类型时使用） |
-| hide | boolean | 否 | 是否隐藏菜单项 |
-| config | Object | 否 | 菜单扩展配置 |
-| args | Object | 否 | 平台特定参数配置 |
+| Configuration | Type | Required | Description |
+|---------------|------|----------|-------------|
+| name | string | Yes | Menu unique identifier |
+| title | string | Yes | Menu display title |
+| icon | string | No | Menu icon |
+| page | string | No | PC page fullName |
+| mobilePage | string | No | Mobile page fullName |
+| nodeType | string | Yes | Node type: "menu" or "group" |
+| children | Array | No | Submenu array (used for group type) |
+| hide | boolean | No | Whether to hide menu item |
+| config | Object | No | Menu extension configuration |
+| args | Object | No | Platform-specific parameter configuration |
 
-## 方法 
+## Methods
 ### setExtendsFeature
-设置继承的功能配置。
+Set inherited function configuration.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| feature | Array | array | 是 | 继承的功能配置数组 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| feature | Array | array | Yes | Inherited function configuration array |
 
-#### 返回值
-无返回值
+#### Return Value
+No return value
 
-#### 使用示例
-```javascript title="设置继承功能"
+#### Usage Example
+```javascript title="Set Inherited Functions"
 const extendsFeatures = [
     {
         menus: [
             {
                 name: "baseMenu",
-                title: "基础菜单",
+                title: "Base Menu",
                 page: "pages.BasePage",
                 nodeType: "menu"
             }
@@ -145,20 +145,20 @@ portal.setExtendsFeature(extendsFeatures);
 ```
 
 ### setOriginFeature
-设置原始功能配置。
+Set original function configuration.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| feature | Object | object | 是 | 原始功能配置对象 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| feature | Object | object | Yes | Original function configuration object |
 
-#### 使用示例
-```javascript title="设置原始功能"
+#### Usage Example
+```javascript title="Set Original Functions"
 const originFeature = {
     menus: [
         {
             name: "mainMenu",
-            title: "主菜单",
+            title: "Main Menu",
             page: "pages.MainPage",
             nodeType: "menu"
         }
@@ -169,215 +169,215 @@ portal.setOriginFeature(originFeature);
 ```
 
 ### setBackUrl
-设置门户的返回URL地址。
+Set the portal's return URL address.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| backUrl | string | string | 是 | 返回的URL地址 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| backUrl | string | string | Yes | Return URL address |
 
-#### 使用示例
-```javascript title="设置返回URL"
+#### Usage Example
+```javascript title="Set Return URL"
 portal.setBackUrl("/dashboard/overview");
 ```
 
 ### getAvailableMenu
-获取可用的菜单列表，过滤掉无权限、隐藏或无效的菜单。
+Get available menu list, filtering out menus without permissions, hidden menus, or invalid menus.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| menuTree | Array | array | 否 | 菜单树数据，默认使用当前门户菜单 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| menuTree | Array | array | No | Menu tree data, defaults to current portal menu |
 
-#### 返回值
-返回过滤后的可用菜单列表（Array类型）
+#### Return Value
+Returns filtered available menu list (Array type)
 
-#### 使用示例
-```javascript title="获取可用菜单"
-// 获取默认可用菜单
+#### Usage Example
+```javascript title="Get Available Menus"
+// Get default available menus
 const availableMenus = portal.getAvailableMenu();
 
-// 获取指定菜单树的可用菜单
+// Get available menus for specified menu tree
 const customMenus = portal.getAvailableMenu(customMenuTree);
 ```
 
 ### getPermMenu
-获取有权限的菜单列表。
+Get menu list with permissions.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| menuTree | Array | array | 否 | 菜单树数据，默认使用当前门户菜单 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| menuTree | Array | array | No | Menu tree data, defaults to current portal menu |
 
-#### 返回值
-返回有权限的菜单列表（Array类型）
+#### Return Value
+Returns menu list with permissions (Array type)
 
-#### 使用示例
-```javascript title="获取权限菜单"
+#### Usage Example
+```javascript title="Get Permission Menus"
 const permMenus = portal.getPermMenu();
 ```
 
 ### flatFeatureMenuItem
-将层级菜单平铺为一维数组。
+Flatten hierarchical menu into a one-dimensional array.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| menus | Array | array | 否 | 菜单数组，默认使用当前门户菜单 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| menus | Array | array | No | Menu array, defaults to current portal menu |
 
-#### 返回值
-返回平铺后的菜单列表（Array类型）
+#### Return Value
+Returns flattened menu list (Array type)
 
-#### 使用示例
-```javascript title="菜单平铺"
+#### Usage Example
+```javascript title="Flatten Menu"
 const flatMenus = portal.flatFeatureMenuItem();
 ```
 
 ### getPermConfig
-异步获取指定角色的权限配置。
+Asynchronously get permission configuration for specified role.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| roleName | string | string | 是 | 角色名称 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| roleName | string | string | Yes | Role name |
 
-#### 返回值
-无返回值（异步方法，会更新permConfig属性）
+#### Return Value
+No return value (async method, updates permConfig property)
 
-#### 使用示例
-```javascript title="获取角色权限"
+#### Usage Example
+```javascript title="Get Role Permissions"
 await portal.getPermConfig("roles.admin");
 ```
 
 ### mergeMenus
-合并多个菜单列表，前面的菜单会覆盖后面的同名菜单。
+Merge multiple menu lists, with earlier menus overriding later menus with the same name.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| menusLists | Array | array | 是 | 二维菜单数组，包含多个菜单列表 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| menusLists | Array | array | Yes | Two-dimensional menu array containing multiple menu lists |
 
-#### 返回值
-返回合并后的菜单列表（Array类型）
+#### Return Value
+Returns merged menu list (Array type)
 
-#### 使用示例
-```javascript title="合并菜单"
+#### Usage Example
+```javascript title="Merge Menus"
 const menuLists = [baseMenus, extendMenus, customMenus];
 const mergedMenus = portal.mergeMenus(menuLists);
 ```
 
-## 属性
+## Properties
 ### menuTree
-当前门户的菜单树结构，包含合并后的完整菜单配置。
+Current portal's menu tree structure, containing merged complete menu configuration.
 
-**类型：** Array  
-**访问：** 只读
+**Type:** Array  
+**Access:** Read-only
 
 ### originMenus
-原始功能配置中的菜单列表。
+Menu list from original function configuration.
 
-**类型：** Array  
-**访问：** 只读
+**Type:** Array  
+**Access:** Read-only
 
 ### extendsMenus
-所有继承功能配置中的菜单列表数组。
+Menu list array from all inherited function configurations.
 
-**类型：** Array  
-**访问：** 只读
+**Type:** Array  
+**Access:** Read-only
 
 ### permConfig
-权限配置对象，控制菜单的访问权限。
+Permission configuration object that controls menu access permissions.
 
-**类型：** Object | string  
-**访问：** 可读写  
-**默认值：** "all"
+**Type:** Object | string  
+**Access:** Read-write  
+**Default Value:** "all"
 
 ### allowAccess
-判断当前门户是否允许访问。
+Determines whether the current portal allows access.
 
-**类型：** boolean  
-**访问：** 只读
+**Type:** boolean  
+**Access:** Read-only
 
 ### shellConfig
-门户的扩展配置信息。
+Portal's extended configuration information.
 
-**类型：** Object  
-**访问：** 可读写
+**Type:** Object  
+**Access:** Read-write
 
 ### routePath
-门户的路由路径。
+Portal's route path.
 
-**类型：** string  
-**访问：** 只读
+**Type:** string  
+**Access:** Read-only
 
 ### backUrl
-门户的返回URL地址。
+Portal's return URL address.
 
-**类型：** string  
-**访问：** 可读写
+**Type:** string  
+**Access:** Read-write
 
 ### extendsFeature
-继承的功能配置列表。
+List of inherited function configurations.
 
-**类型：** Array  
-**访问：** 只读
+**Type:** Array  
+**Access:** Read-only
 
 ### originFeature
-原始功能配置对象。
+Original function configuration object.
 
-**类型：** Object  
-**访问：** 只读
+**Type:** Object  
+**Access:** Read-only
 
-## 高级特性
-### 主题定制
-SSR门户支持多套主题模板，可通过主题配置实现界面风格的动态切换。
+## Advanced Features
+### Theme Customization
+SSR Portal supports multiple theme templates, enabling dynamic interface style switching through theme configuration.
 
-#### 配置示例
-```json title="主题配置"
+#### Configuration Example
+```json title="Theme Configuration"
 {
   "type": "shells.SSRType",
   "theme": "custom",
-  "title": "自定义主题门户"
+  "title": "Custom Theme Portal"
 }
 ```
 
-每个主题包含独立的HTML模板文件，位于`backend/themes/{themeName}/`目录下：
+Each theme contains independent HTML template files located in the `backend/themes/{themeName}/` directory:
 
-```text title="主题目录结构"
+```text title="Theme Directory Structure"
 backend/
 └── themes/
     ├── default/
-    │   ├── index.html      # 主页面模板
-    │   └── page.html       # 子页面模板
+    │   ├── index.html      # Main page template
+    │   └── page.html       # Sub-page template
     └── custom/
         ├── index.html
         └── page.html
 ```
 
-### 服务端渲染配置
-SSR门户通过后端模板实现服务端预渲染，支持SEO优化和首屏性能提升。
+### Server-Side Rendering Configuration
+SSR Portal implements server-side pre-rendering through backend templates, supporting SEO optimization and first-screen performance improvement.
 
-#### 模板变量
-后端HTML模板支持以下预定义变量：
+#### Template Variables
+Backend HTML templates support the following predefined variables:
 
-- `{{shellTitle}}`：门户标题
-- `{{shellFullName}}`：门户完整名称
-- `{{shellName}}`：门户名称
-- `{{shellMenus}}`：门户菜单JSON数据
+- `{{shellTitle}}`: Portal title
+- `{{shellFullName}}`: Portal full name
+- `{{shellName}}`: Portal name
+- `{{shellMenus}}`: Portal menu JSON data
 
-#### 使用示例
-```html title="自定义HTML模板"
+#### Usage Example
+```html title="Custom HTML Template"
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{shellTitle}}</title>
-    <meta name="description" content="基于{{shellName}}的企业级应用门户">
+    <meta name="description" content="Enterprise application portal based on {{shellName}}">
 </head>
 <body>
     <div id="app" data-shell="{{shellFullName}}">
-        <!-- 服务端渲染内容 -->
+        <!-- Server-side rendered content -->
     </div>
     <script>
         window.SHELL_CONFIG = {
@@ -389,26 +389,26 @@ SSR门户通过后端模板实现服务端预渲染，支持SEO优化和首屏�
 </html>
 ```
 
-### 权限集成
-结合角色管理系统实现细粒度的菜单权限控制。
+### Permission Integration
+Implement fine-grained menu permission control combined with role management system.
 
-#### 配置示例
-```javascript title="权限配置"
-// 异步获取角色权限配置
+#### Configuration Example
+```javascript title="Permission Configuration"
+// Asynchronously get role permission configuration
 await portal.getPermConfig("roles.admin");
 
-// 设置特定菜单权限
+// Set specific menu permissions
 portal.permConfig = {
     dashboard: true,
     userList: true,
     systemSettings: false
 };
 
-// 获取当前用户有权限的菜单
+// Get menus with permissions for current user
 const userMenus = portal.getPermMenu();
 
-// 检查门户访问权限
+// Check portal access permissions
 if (portal.allowAccess) {
-    console.log("允许访问此门户");
+    console.log("Access to this portal is allowed");
 }
 ``` 

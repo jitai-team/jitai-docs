@@ -1,16 +1,16 @@
 ---
 slug: language-pack
 ---
-# 语言包
-语言包是JitI18N国际化框架的核心组件，负责提供多语言翻译配置和自动化翻译处理。它基于DOM监听和文本替换机制实现页面内容的实时国际化，支持文本节点翻译、属性翻译、动态内容监听和语言切换等功能。
+# Language Pack
+Language pack is the core component of the JitI18N internationalization framework, responsible for providing multi-language translation configuration and automated translation processing. It implements real-time internationalization of page content based on DOM monitoring and text replacement mechanisms, supporting text node translation, attribute translation, dynamic content monitoring, and language switching functions.
 
-语言包元素分层结构为Meta（languages.Meta） → Type（languages.NormalType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建语言包实例元素。
+The hierarchical structure of language pack elements is Meta (languages.Meta) → Type (languages.NormalType) → Instance. Developers can quickly create language pack instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的languages.NormalType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `languages.NormalType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基础配置示例
-```text title="推荐目录结构"
+## Quick Start
+### Basic Configuration Example
+```text title="Recommended Directory Structure"
 languages/
 ├── EN/
 │   ├── e.json
@@ -51,42 +51,42 @@ languages/
 }
 ```
 
-```tsx title="使用语言包"
-// 初始化语言包
+```tsx title="Using Language Pack"
+// Initialize language pack
 const app = getRuntimeApp();
 await app.i18n.init('languages.EN');
 
-// 切换语言
+// Switch language
 await app.i18n.switchLanguage('languages.zhCN');
 
-// 获取当前语言
+// Get current language
 const currentLang = app.i18n.currentLanguage;
 ```
 
-### 配置属性说明
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+### Configuration Properties Description
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| entries | Record&lt;string, string&gt; | 翻译词条映射表，键为原文，值为译文 | `{}` | 是 |
-| ignoreRules | IgnoreRule[] | 忽略翻译的规则配置数组 | `[]` | 否 |
-| translateAttributes | string[] | 需要翻译的HTML属性名称列表 | `[]` | 否 |
+| entries | Record&lt;string, string&gt; | Translation entry mapping table, key is original text, value is translated text | `{}` | Yes |
+| ignoreRules | IgnoreRule[] | Array of rules for ignoring translation | `[]` | No |
+| translateAttributes | string[] | List of HTML attribute names to be translated | `[]` | No |
 
-**IgnoreRule 配置：**
+**IgnoreRule Configuration:**
 
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| type | 'class' &#124; 'id' &#124; 'attribute' &#124; 'selector' | 忽略规则类型 | - | 是 |
-| value | string | 匹配值 | - | 是 |
-| mode | 'exact' &#124; 'contains' &#124; 'startsWith' &#124; 'endsWith' &#124; 'regex' | 匹配模式 | 'exact' | 否 |
+| type | 'class' &#124; 'id' &#124; 'attribute' &#124; 'selector' | Ignore rule type | - | Yes |
+| value | string | Match value | - | Yes |
+| mode | 'exact' &#124; 'contains' &#124; 'startsWith' &#124; 'endsWith' &#124; 'regex' | Match mode | 'exact' | No |
 
-## 方法 
+## Methods
 ### getInstance
-获取I18N单例实例，通常用于直接访问I18N功能。
+Get I18N singleton instance, usually used for direct access to I18N functionality.
 
-#### 返回值
-I18N - I18N单例实例
+#### Return Value
+I18N - I18N singleton instance
 
-#### 使用示例
-```tsx title="获取I18N实例"
+#### Usage Example
+```tsx title="Get I18N Instance"
 import I18N from 'languages.Meta';
 
 const i18n = I18N.getInstance();
@@ -94,63 +94,63 @@ await i18n.init('languages.EN');
 ```
 
 ### init
-初始化指定语言包并启动自动翻译功能。
+Initialize specified language pack and start automatic translation functionality.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| lang | string | 语言包元素的fullName | - | 是 |
+| lang | string | Language pack element's fullName | - | Yes |
 
-#### 返回值
+#### Return Value
 Promise&lt;void&gt;
 
-#### 使用示例
-```tsx title="初始化语言包"
+#### Usage Example
+```tsx title="Initialize Language Pack"
 await app.i18n.init('languages.EN');
 ```
 
 ### switchLanguage
-切换到指定语言包，会先还原当前翻译内容再应用新语言包。
+Switch to specified language pack, will restore current translation content first then apply new language pack.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| lang | string | 目标语言包的fullName | - | 是 |
-| force | boolean | 是否强制切换（即使是相同语言） | true | 否 |
+| lang | string | Target language pack's fullName | - | Yes |
+| force | boolean | Whether to force switch (even if same language) | true | No |
 
-#### 返回值
+#### Return Value
 Promise&lt;void&gt;
 
-#### 使用示例
-```tsx title="语言切换"
-// 切换到中文
+#### Usage Example
+```tsx title="Language Switching"
+// Switch to Chinese
 await app.i18n.switchLanguage('languages.zhCN');
 
-// 强制刷新当前语言
+// Force refresh current language
 await app.i18n.switchLanguage('languages.EN', true);
 ```
 
 ### destroy
-销毁I18N实例，停止监听并清除所有缓存。
+Destroy I18N instance, stop monitoring and clear all cache.
 
-#### 使用示例
-```tsx title="销毁实例"
+#### Usage Example
+```tsx title="Destroy Instance"
 app.i18n.destroy();
 ```
 
-## 属性
+## Properties
 ### currentLanguage
-当前激活的语言包fullName，只读属性。
+Current active language pack fullName, read-only property.
 
-```tsx title="获取当前语言"
+```tsx title="Get Current Language"
 const lang = app.i18n.currentLanguage; // 'languages.EN'
 ```
 
-## 高级特性
-### 忽略规则配置
-通过ignoreRules可以灵活控制哪些元素不进行翻译。
+## Advanced Features
+### Ignore Rules Configuration
+Through ignoreRules, you can flexibly control which elements should not be translated.
 
-```json title="多种忽略规则示例"
+```json title="Multiple Ignore Rules Example"
 {
     "ignoreRules": [
         {
@@ -184,10 +184,10 @@ const lang = app.i18n.currentLanguage; // 'languages.EN'
 }
 ```
 
-### 自定义属性翻译
-除了默认的 placeholder、title、alt、aria-label 属性外，可以配置额外的属性进行翻译。
+### Custom Attribute Translation
+In addition to default placeholder, title, alt, aria-label attributes, you can configure additional attributes for translation.
 
-```json title="属性翻译配置"
+```json title="Attribute Translation Configuration"
 {
     "translateAttributes": [
         "data-tooltip",
@@ -198,27 +198,27 @@ const lang = app.i18n.currentLanguage; // 'languages.EN'
 }
 ```
 
-### 动态内容处理
-语言包会自动监听DOM变化，对动态添加的内容进行实时翻译，特别优化了弹窗、提示等动态组件的翻译效果。
+### Dynamic Content Processing
+Language pack automatically monitors DOM changes and performs real-time translation on dynamically added content, with special optimization for translation effects of dynamic components like popups and prompts.
 
-```tsx title="动态内容翻译示例"
-// 动态添加的元素会自动翻译
+```tsx title="Dynamic Content Translation Example"
+// Dynamically added elements will be automatically translated
 const div = document.createElement('div');
 div.textContent = '确定';
-document.body.appendChild(div); // 会自动翻译为 "Confirm"
+document.body.appendChild(div); // Will automatically translate to "Confirm"
 
-// Antd组件动态内容也会被翻译
+// Antd component dynamic content will also be translated
 Modal.confirm({
-    title: '确认删除', // 自动翻译
-    content: '此操作不可恢复', // 自动翻译
+    title: '确认删除', // Auto translate
+    content: '此操作不可恢复', // Auto translate
 });
 ```
 
-### 多语言包合并
-当应用继承多个包含语言包的父应用时，会自动合并所有语言包的配置。
+### Multi-language Pack Merging
+When an application inherits multiple parent applications containing language packs, all language pack configurations will be automatically merged.
 
-```tsx title="检查合并效果"
-// 获取最终合并的语言配置
+```tsx title="Check Merge Effect"
+// Get final merged language configuration
 const langElement = await app.getElement('languages.EN');
-console.log(langElement.entries); // 包含所有继承的翻译条目
-``` 
+console.log(langElement.entries); // Contains all inherited translation entries
+```

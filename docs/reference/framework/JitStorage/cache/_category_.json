@@ -4,7 +4,7 @@
   "className": "red",
   "link": {
     "type": "generated-index",
-    "title": "Cache",
+    "slug": "reference/framework/JitStorage/cache",
     "description": "Cache management and data caching APIs for improving application performance and reducing database load."
   }
 } 

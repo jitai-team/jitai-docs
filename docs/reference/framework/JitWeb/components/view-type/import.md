@@ -1,32 +1,32 @@
 ---
 slug: import
 ---
-# 导入
-导入是用于Excel文件数据导入的视图组件，基于分步骤引导式界面实现文件上传、字段映射、数据预览和批量导入功能。它负责处理Excel文件解析、字段验证映射和数据入库操作，支持追加和替换两种导入模式，具备进度监控和错误处理能力。
+# Import
+Import is a view component for Excel file data import, implemented with a step-by-step guided interface to provide file upload, field mapping, data preview, and batch import functionality. It handles Excel file parsing, field validation mapping, and data insertion operations, supporting both append and replace import modes with progress monitoring and error handling capabilities.
 
-导入元素分层结构为Meta（components.Meta） → Type（components.Import） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建导入实例元素。
+The import element has a hierarchical structure of Meta (components.Meta) → Type (components.Import) → Instance. Developers can quickly create import instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.ImportType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `components.ImportType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基础配置示例
-```json title="导入组件基础配置"
+## Quick Start 
+### Basic Configuration Example
+```json title="Import Component Basic Configuration"
 {
   "type": "components.Import",
   "name": "Import1",
-  "title": "客户数据导入",
+  "title": "Customer Data Import",
   "config": {
     "requireElements": [
       {
         "name": "models.CustomerModel",
-        "title": "客户模型",
+        "title": "Customer Model",
         "type": "models.Meta"
       }
     ],
     "fieldIdList": ["custName", "phone", "email"],
     "fieldAliasList": [
       {
-        "aliasName": "客户姓名",
+        "aliasName": "Customer Name",
         "fieldId": "custName",
         "fieldName": "custName",
         "fieldType": "Stext",
@@ -37,44 +37,44 @@ slug: import
     "importType": 1,
     "importDesc": {
       "check": true,
-      "desc": "请按照模板格式填写数据"
+      "desc": "Please fill in data according to template format"
     }
   }
 }
 ```
 
-### 配置属性说明
-| 属性名 | 类型 | 必填 | 默认值 | 说明 |
+### Configuration Properties
+| Property Name | Type | Required | Default Value | Description |
 |---------|------|------|--------|------|
-| requireElements | Array | 是 | - | 关联的数据模型配置 |
-| fieldIdList | Array\<string\> | 是 | [] | 可导入的字段ID列表 |
-| fieldAliasList | Array\<Object\> | 是 | [] | 字段别名映射配置 |
-| importType | number | 否 | 1 | 导入方式：1-追加，2-替换 |
-| importDesc | Object | 否 | - | 导入说明配置 |
-| requiredFieldList | Array\<string\> | 否 | [] | 必填字段列表 |
-| importSerial | boolean | 否 | false | 是否导入序列号 |
-| replaceFiled | Array\<string\> | 否 | [] | 替换字段数组 |
-| filter | string | 否 | "" | 过滤条件 |
-| triggerBeforeFunc | string | 否 | "" | 导入前触发函数 |
-| triggerAfterFunc | string | 否 | "" | 导入后触发函数 |
+| requireElements | Array | Yes | - | Associated data model configuration |
+| fieldIdList | Array\<string\> | Yes | [] | List of importable field IDs |
+| fieldAliasList | Array\<Object\> | Yes | [] | Field alias mapping configuration |
+| importType | number | No | 1 | Import mode: 1-append, 2-replace |
+| importDesc | Object | No | - | Import description configuration |
+| requiredFieldList | Array\<string\> | No | [] | Required field list |
+| importSerial | boolean | No | false | Whether to import serial numbers |
+| replaceFiled | Array\<string\> | No | [] | Replace field array |
+| filter | string | No | "" | Filter conditions |
+| triggerBeforeFunc | string | No | "" | Pre-import trigger function |
+| triggerAfterFunc | string | No | "" | Post-import trigger function |
 
-## 变量
-暂无
+## Variables
+None
 
-## 方法 
+## Methods 
 ### componentImport
-执行数据导入操作，处理Excel文件解析和数据入库。
+Execute data import operation, handle Excel file parsing and data insertion.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |---------|------|------|------|
-| importConfig | string | 是 | 导入配置的JSON字符串 |
+| importConfig | string | Yes | JSON string of import configuration |
 
-#### 返回值
-返回 `JitDict` 类型，包含导入结果信息。
+#### Return Value
+Returns `JitDict` type, containing import result information.
 
-#### 使用示例
-```typescript title="调用导入方法"
+#### Usage Example
+```typescript title="Call Import Method"
 const importResult = await this.Import1.componentImport(JSON.stringify({
   modelFullName: "models.CustomerModel",
   importType: 1,
@@ -84,36 +84,36 @@ const importResult = await this.Import1.componentImport(JSON.stringify({
 ```
 
 ### getImportStatus
-获取导入任务的进度状态，用于异步导入的进度监控。
+Get import task progress status, used for asynchronous import progress monitoring.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |---------|------|------|------|
-| mainModelFullName | string | 是 | 主模型的完整名称 |
+| mainModelFullName | string | Yes | Full name of the main model |
 
-#### 返回值
-返回 `JitDict` 类型，包含导入状态和进度信息。
+#### Return Value
+Returns `JitDict` type, containing import status and progress information.
 
-#### 使用示例
-```typescript title="获取导入状态"
+#### Usage Example
+```typescript title="Get Import Status"
 const status = await this.Import1.getImportStatus("models.CustomerModel");
 console.log(status.value);
 ```
 
 ### publishEvent
-发布组件事件，通知其他组件或页面。
+Publish component event, notify other components or pages.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |---------|------|------|------|
-| name | string | 是 | 事件名称 |
-| ex | Record\<string, any\> | 否 | 事件附加数据 |
+| name | string | Yes | Event name |
+| ex | Record\<string, any\> | No | Event additional data |
 
-#### 返回值
-返回 `Promise<void>`。
+#### Return Value
+Returns `Promise<void>`.
 
-#### 使用示例
-```typescript title="发布事件"
+#### Usage Example
+```typescript title="Publish Event"
 await this.Import1.publishEvent('importCompleted', {
   successCount: 100,
   errorCount: 2
@@ -121,238 +121,238 @@ await this.Import1.publishEvent('importCompleted', {
 ```
 
 ### subscribeEvent
-订阅组件事件，处理事件回调。
+Subscribe to component event, handle event callbacks.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |---------|------|------|------|
-| name | string | 是 | 事件名称 |
-| evtCb | Function | 是 | 事件回调函数 |
-| unSubscribeExist | boolean | 否 | 是否取消已存在的订阅 |
+| name | string | Yes | Event name |
+| evtCb | Function | Yes | Event callback function |
+| unSubscribeExist | boolean | No | Whether to cancel existing subscriptions |
 
-#### 返回值
-返回订阅句柄字符串。
+#### Return Value
+Returns subscription handle string.
 
-#### 使用示例
-```typescript title="订阅事件"
+#### Usage Example
+```typescript title="Subscribe to Event"
 const handleId = this.Import1.subscribeEvent('clickFinishBtn', (data) => {
-  console.log('导入操作完成', data);
+  console.log('Import operation completed', data);
 });
 ```
 
 ### unSubscribeEvent
-取消事件订阅。
+Cancel event subscription.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |---------|------|------|------|
-| id | string | 是 | 订阅句柄ID |
+| id | string | Yes | Subscription handle ID |
 
-#### 返回值
-返回布尔值表示取消结果。
+#### Return Value
+Returns boolean value indicating cancellation result.
 
-#### 使用示例
-```typescript title="取消订阅"
+#### Usage Example
+```typescript title="Cancel Subscription"
 const success = this.Import1.unSubscribeEvent(handleId);
 ```
 
 ### setConfig
-更新组件配置。
+Update component configuration.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |---------|------|------|------|
-| next | Object | 是 | 新的配置对象 |
-| clean | boolean | 否 | 是否完全替换配置 |
+| next | Object | Yes | New configuration object |
+| clean | boolean | No | Whether to completely replace configuration |
 
-#### 使用示例
-```typescript title="更新配置"
+#### Usage Example
+```typescript title="Update Configuration"
 this.Import1.setConfig({
   fieldIdList: ["custName", "phone", "email", "address"]
 });
 ```
 
 ### runCode
-执行自定义代码片段。
+Execute custom code snippet.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |---------|------|------|------|
-| code | string | 是 | 要执行的代码字符串 |
+| code | string | Yes | Code string to execute |
 
-#### 使用示例
-```typescript title="执行代码"
+#### Usage Example
+```typescript title="Execute Code"
 const result = this.Import1.runCode(`
   return this.config.fieldIdList.length > 0;
 `);
 ```
 
 ### destroy
-销毁组件实例，清理资源。
+Destroy component instance, clean up resources.
 
-#### 使用示例
-```typescript title="销毁组件"
+#### Usage Example
+```typescript title="Destroy Component"
 this.Import1.destroy();
 ```
 
 ### bindApp
-绑定应用实例到组件。
+Bind application instance to component.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |---------|------|------|------|
-| app | App | 是 | 应用实例 |
+| app | App | Yes | Application instance |
 
 ### bindPage
-绑定页面实例到组件。
+Bind page instance to component.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |---------|------|------|------|
-| page | BasePage | 是 | 页面实例 |
+| page | BasePage | Yes | Page instance |
 
 ### getEventKey
-获取组件事件的唯一键名。
+Get unique key name for component event.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |---------|------|------|------|
-| eventName | string | 是 | 事件名称 |
+| eventName | string | Yes | Event name |
 
-#### 返回值
-返回格式为 `${uuid}.${name}.${eventName}` 的字符串。
+#### Return Value
+Returns string in format `${uuid}.${name}.${eventName}`.
 
 ### initVariables
-初始化组件变量。
+Initialize component variables.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |---------|------|------|------|
-| dataTypeList | Array\<BaseDataType\> | 是 | 数据类型定义列表 |
+| dataTypeList | Array\<BaseDataType\> | Yes | Data type definition list |
 
 ### newVariable
-创建新的变量实例。
+Create new variable instance.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |---------|------|------|------|
-| varConfig | DataTypeConfig | 是 | 变量配置对象 |
+| varConfig | DataTypeConfig | Yes | Variable configuration object |
 
-#### 返回值
-返回创建的变量实例。
+#### Return Value
+Returns created variable instance.
 
 ### getPermConfig
-获取组件权限配置。
+Get component permission configuration.
 
-#### 返回值
-返回权限配置对象或 `undefined`。
+#### Return Value
+Returns permission configuration object or `undefined`.
 
-## 属性
+## Properties
 ### name
-组件名称，用于标识组件实例。
+Component name, used to identify component instance.
 
-- **类型**: `string`
-- **访问**: 只读
+- **Type**: `string`
+- **Access**: Read-only
 
 ### title
-组件标题，用于显示。
+Component title, used for display.
 
-- **类型**: `string`
-- **访问**: 只读
+- **Type**: `string`
+- **Access**: Read-only
 
 ### config
-组件配置对象，包含所有配置参数。
+Component configuration object, containing all configuration parameters.
 
-- **类型**: `ImportCompConfig & { requireElements: requireElement[] }`
-- **访问**: 读写
+- **Type**: `ImportCompConfig & { requireElements: requireElement[] }`
+- **Access**: Read-write
 
 ### type
-组件类型标识。
+Component type identifier.
 
-- **类型**: `string`
-- **访问**: 只读
-- **值**: `"components.Import"`
+- **Type**: `string`
+- **Access**: Read-only
+- **Value**: `"components.Import"`
 
 ### showTitle
-是否显示组件标题。
+Whether to show component title.
 
-- **类型**: `boolean`
-- **访问**: 读写
+- **Type**: `boolean`
+- **Access**: Read-write
 
 ### app
-当前应用实例。
+Current application instance.
 
-- **类型**: `App`
-- **访问**: 只读
+- **Type**: `App`
+- **Access**: Read-only
 
 ### page
-当前页面实例。
+Current page instance.
 
-- **类型**: `BasePage`
-- **访问**: 只读
+- **Type**: `BasePage`
+- **Access**: Read-only
 
 ### ModelClass
-关联的数据模型类。
+Associated data model class.
 
-- **类型**: `ModelClass`
-- **访问**: 只读
+- **Type**: `ModelClass`
+- **Access**: Read-only
 
 ### fieldDefineList
-模型字段定义列表。
+Model field definition list.
 
-- **类型**: `Array<DataTypeConfig>`
-- **访问**: 只读
+- **Type**: `Array<DataTypeConfig>`
+- **Access**: Read-only
 
 ### allFieldDict
-所有字段定义字典。
+All field definition dictionary.
 
-- **类型**: `Record<string, any>`
-- **访问**: 只读
+- **Type**: `Record<string, any>`
+- **Access**: Read-only
 
 ### primaryKey
-主键字段名。
+Primary key field name.
 
-- **类型**: `string`
-- **访问**: 只读
+- **Type**: `string`
+- **Access**: Read-only
 
 ### fullName
-组件完整名称标识。
+Component complete name identifier.
 
-- **类型**: `string`
-- **访问**: 只读
+- **Type**: `string`
+- **Access**: Read-only
 
 ### dataTypeList
-组件变量的数据类型定义列表。
+Component variable data type definition list.
 
-- **类型**: `Array<BaseDataType>`
-- **访问**: 只读
+- **Type**: `Array<BaseDataType>`
+- **Access**: Read-only
 
 ### compType
-组件类型枚举值。
+Component type enumeration value.
 
-- **类型**: `COMPONENT_TYPE`
-- **访问**: 只读
+- **Type**: `COMPONENT_TYPE`
+- **Access**: Read-only
 
-## 事件
+## Events
 ### clickFinishBtn
-导入提示按钮点击后触发的事件。
+Event triggered after clicking the import prompt button.
 
-**使用示例**：
+**Usage Example**:
 
-```typescript title="处理完成按钮事件"
+```typescript title="Handle Finish Button Event"
 this.Import1.subscribeEvent('clickFinishBtn', () => {
-  console.log('用户点击了完成按钮');
+  console.log('User clicked the finish button');
 });
 ```
 
-### 动态按钮事件
-根据 `footerBtnList` 配置动态生成的按钮点击事件，事件名为 `click${btnId}`（驼峰命名）。
+### Dynamic Button Events
+Button click events dynamically generated based on `footerBtnList` configuration, with event names in format `click${btnId}` (camelCase naming).
 
-**使用示例**：
+**Usage Example**:
 
-```typescript title="处理动态按钮事件"
-// 假设配置了ID为'export'的按钮
+```typescript title="Handle Dynamic Button Events"
+// Assuming a button with ID 'export' is configured
 this.Import1.subscribeEvent('clickExport', (data) => {
-  console.log('导出按钮被点击', data.rowDataList);
+  console.log('Export button clicked', data.rowDataList);
 });
 ``` 

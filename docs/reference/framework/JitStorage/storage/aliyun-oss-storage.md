@@ -1,35 +1,36 @@
 ---
 slug: aliyun-oss-storage
 ---
-# 阿里云OSS存储
-阿里云OSS存储是面向企业级云存储的Type元素，基于阿里云对象存储服务实现海量数据存储、全球CDN加速和企业级安全管控。它提供标准化的文件上传、下载、删除操作，集成阿里云生态的访问控制和权限管理，支持多种存储类型和数据备份策略，确保数据安全性和高可用性。
+# Aliyun OSS Storage
 
-阿里云OSS存储元素分层结构为Meta（storages.Meta） → Type（storages.OssType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建阿里云OSS存储实例元素。
+Aliyun OSS Storage is a Type element for enterprise-level cloud storage, implemented based on Alibaba Cloud Object Storage Service for massive data storage, global CDN acceleration, and enterprise-level security control. It provides standardized file upload, download, and delete operations, integrates with Alibaba Cloud ecosystem's access control and permission management, supports multiple storage types and data backup strategies, ensuring data security and high availability.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的storages.OssType元素，以实现自己的封装。
+The Aliyun OSS Storage element has a hierarchical structure of Meta (storages.Meta) → Type (storages.OssType) → Instance. Developers can quickly create Aliyun OSS storage instance elements through JitAi's visual development tools.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+Of course, developers can also create their own Type elements or modify the official storages.OssType element provided by JitAi in their own App to implement their own encapsulation.
+
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 storages/
-├── MyOss/                     # 自定义实例元素名称
-│   ├── e.json                 # 元素声明文件
-│   └── MyOss.json            # 阿里云OSS配置文件
+├── MyOss/                     # Custom instance element name
+│   ├── e.json                 # Element declaration file
+│   └── MyOss.json            # Aliyun OSS configuration file
 ```
 
-#### e.json文件
-```json title="基础配置"
+#### e.json File
+```json title="Basic Configuration"
 {
-  "title": "我的阿里云OSS存储",
+  "title": "My Aliyun OSS Storage",
   "type": "storages.OssType",
   "backendBundleEntry": ".",
   "variables": []
 }
 ```
 
-#### 业务配置文件
-```json title="阿里云OSS连接配置"
+#### Business Configuration File
+```json title="Aliyun OSS Connection Configuration"
 {
   "accessKeyId": "your_access_key_id",
   "accessKeySecret": "your_access_key_secret", 
@@ -38,161 +39,161 @@ storages/
 }
 ```
 
-#### 调用示例
-```python title="基本使用"
-# 获取阿里云OSS存储实例
+#### Usage Example
+```python title="Basic Usage"
+# Get Aliyun OSS storage instance
 oss = app.getElement("storages.MyOss")
 
-# 上传文件
+# Upload file
 with open("example.txt", "rb") as file:
     result = oss.uploadByFile("folder/example.txt", file.read(), "text/plain")
-    print(f"上传成功，URL: {result['url']}")
+    print(f"Upload successful, URL: {result['url']}")
 
-# 下载文件
+# Download file
 file_data = oss.download("folder/example.txt")
 
-# 删除文件
+# Delete file
 oss.delete("folder/example.txt")
 ```
 
-## 元素配置
-### e.json配置
-| 配置项 | 类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| title | string | 是 | 存储元素显示名称 |
-| type | string | 是 | 固定值：storages.OssType |
-| backendBundleEntry | string | 是 | 固定值："." |
-| variables | array | 否 | 自定义变量配置，一般为空数组 |
+| title | string | Yes | Storage element display name |
+| type | string | Yes | Fixed value: storages.OssType |
+| backendBundleEntry | string | Yes | Fixed value: "." |
+| variables | array | No | Custom variable configuration, usually empty array |
 
-### 业务配置文件配置
-| 配置项 | 类型 | 必填 | 说明 |
+### Business Configuration File Configuration
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| accessKeyId | string | 是 | 阿里云访问密钥ID |
-| accessKeySecret | string | 是 | 阿里云访问密钥Secret |
-| endPoint | string | 是 | OSS服务访问域名，如：oss-cn-hangzhou.aliyuncs.com |
-| bucketName | string | 是 | OSS存储桶名称 |
+| accessKeyId | string | Yes | Alibaba Cloud access key ID |
+| accessKeySecret | string | Yes | Alibaba Cloud access key secret |
+| endPoint | string | Yes | OSS service access domain, e.g.: oss-cn-hangzhou.aliyuncs.com |
+| bucketName | string | Yes | OSS bucket name |
 
-## 方法 
+## Methods
 ### uploadByFile
-上传文件到阿里云OSS存储。
+Upload file to Aliyun OSS storage.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 存储文件的路径名称 |
-| data | - | bytes | 是 | 文件二进制数据 |
-| contentType | Stext | str | 否 | 文件MIME类型，默认为"application/octet-stream" |
+| name | Stext | str | Yes | Storage file path name |
+| data | - | bytes | Yes | File binary data |
+| contentType | Stext | str | No | File MIME type, defaults to "application/octet-stream" |
 
-#### 返回值
-返回包含上传结果的字典，包含url字段表示文件访问地址。
+#### Return Value
+Returns a dictionary containing upload results, including url field representing file access address.
 
-#### 使用示例
-```python title="文件上传"
-# 上传图片文件
+#### Usage Example
+```python title="File Upload"
+# Upload image file
 with open("avatar.jpg", "rb") as file:
     result = oss.uploadByFile("users/avatar.jpg", file.read(), "image/jpeg")
     avatar_url = result["url"]
 
-# 上传文档文件
+# Upload document file
 with open("document.pdf", "rb") as file:
     result = oss.uploadByFile("docs/document.pdf", file.read(), "application/pdf")
 ```
 
 ### getSignUrl
-获取文件的预签名访问URL，用于临时访问权限控制。
+Get pre-signed access URL for file, used for temporary access permission control.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| file | Stext | str | 是 | 文件路径名称 |
-| contentType | Stext | str | 是 | 文件MIME类型 |
-| expires | Numeric | int | 否 | 过期时间(秒)，默认300秒 |
+| file | Stext | str | Yes | File path name |
+| contentType | Stext | str | Yes | File MIME type |
+| expires | Numeric | int | No | Expiration time (seconds), defaults to 300 seconds |
 
-#### 返回值
-返回预签名URL字符串。
+#### Return Value
+Returns pre-signed URL string.
 
-#### 使用示例
-```python title="获取预签名URL"
-# 获取图片的临时访问URL
+#### Usage Example
+```python title="Get Pre-signed URL"
+# Get temporary access URL for image
 temp_url = oss.getSignUrl("users/avatar.jpg", "image/jpeg", 600)
 
-# 获取文档的临时下载URL
+# Get temporary download URL for document
 download_url = oss.getSignUrl("docs/document.pdf", "application/pdf")
 ```
 
 ### download
-下载文件数据。
+Download file data.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 要下载的文件路径名称 |
+| name | Stext | str | Yes | File path name to download |
 
-#### 返回值
-返回文件的二进制数据。
+#### Return Value
+Returns file binary data.
 
-#### 使用示例
-```python title="文件下载"
-# 下载文件
+#### Usage Example
+```python title="File Download"
+# Download file
 file_data = oss.download("docs/document.pdf")
 
-# 保存到本地
+# Save to local
 with open("downloaded_document.pdf", "wb") as file:
     file.write(file_data)
 ```
 
 ### getObject
-获取文件对象信息。
+Get file object information.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 文件路径名称 |
+| name | Stext | str | Yes | File path name |
 
-#### 返回值
-返回文件对象信息。
+#### Return Value
+Returns file object information.
 
-#### 使用示例
-```python title="获取文件信息"
-# 获取文件对象
+#### Usage Example
+```python title="Get File Information"
+# Get file object
 file_obj = oss.getObject("users/avatar.jpg")
 ```
 
 ### delete
-删除指定文件。
+Delete specified file.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 要删除的文件路径名称 |
+| name | Stext | str | Yes | File path name to delete |
 
-#### 返回值
-返回删除操作结果。
+#### Return Value
+Returns delete operation result.
 
-#### 使用示例
-```python title="文件删除"
-# 删除用户头像
+#### Usage Example
+```python title="File Delete"
+# Delete user avatar
 oss.delete("users/avatar.jpg")
 
-# 删除临时文件
+# Delete temporary file
 oss.delete("temp/upload_cache.tmp")
 ```
 
-## 高级特性
-### 异常处理机制
-阿里云OSS存储内置了完善的异常处理机制，所有方法都会自动捕获和转换异常。
+## Advanced Features
+### Exception Handling Mechanism
+Aliyun OSS Storage has built-in comprehensive exception handling mechanism, all methods automatically catch and convert exceptions.
 
-```python title="异常处理示例"
+```python title="Exception Handling Example"
 try:
     oss.uploadByFile("test.txt", b"test data", "text/plain")
 except Exception as e:
-    # 异常会包含详细的错误信息，包括存储类型、元素名称等
-    print(f"上传失败: {e}")
+    # Exception will contain detailed error information, including storage type, element name, etc.
+    print(f"Upload failed: {e}")
 ```
 
-### 批量操作
-```python title="批量文件管理"
-# 批量上传文件
+### Batch Operations
+```python title="Batch File Management"
+# Batch upload files
 files = [
     ("file1.txt", b"content1", "text/plain"),
     ("file2.txt", b"content2", "text/plain")
@@ -201,19 +202,19 @@ files = [
 for name, data, content_type in files:
     try:
         result = oss.uploadByFile(f"batch/{name}", data, content_type)
-        print(f"上传成功: {name}")
+        print(f"Upload successful: {name}")
     except Exception as e:
-        print(f"上传失败 {name}: {e}")
+        print(f"Upload failed {name}: {e}")
 ```
 
-### 大文件处理
-```python title="大文件上传"
-# 分块读取大文件
+### Large File Processing
+```python title="Large File Upload"
+# Read large file in chunks
 def upload_large_file(file_path, remote_path):
     with open(file_path, "rb") as file:
         file_data = file.read()
         return oss.uploadByFile(remote_path, file_data, "application/octet-stream")
 
-# 使用示例
+# Usage example
 result = upload_large_file("large_video.mp4", "videos/large_video.mp4")
-``` 
+```

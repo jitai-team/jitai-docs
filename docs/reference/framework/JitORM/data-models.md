@@ -3,123 +3,123 @@ sidebar_position: 3
 slug: data-models
 ---
 
-# 数据模型
-模型即业务实体对象，且数据模型内置了业务层常用的数据操作接口。JitORM基于丰富的数据类型，提供面向对象的数据模型定义方式。开发者使用JitAi开发工具的可视化界面编辑模型元素，也可以使用全代码方式。
+# Data Models
+Models are business entity objects, and data models have built-in data operation interfaces commonly used in the business layer. JitORM provides object-oriented data model definition methods based on rich data types. Developers can use the visual interface of JitAi development tools to edit model elements, or use full-code approach.
 
-数据模型元素的分层结构为Meta（models.Meta） → Type（models.NormalType） → 实例，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的models.NormalType元素，以实现自己的封装。
+The hierarchical structure of data model elements is Meta (models.Meta) → Type (models.NormalType) → Instance. Developers can also create their own Type elements or modify the official `models.NormalType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 模型分类
-数据模型包括普通数据模型、聚合表模型、扩展表模型、数据对象模型（无表模型）。
+## Model Classification
+Data models include regular data models, aggregation table models, extension table models, and data object models (tableless models).
 
-### 普通数据模型
-最常见的数据模型，每个实例都对应指定数据库中的一张表。对模型字段的变更会自动同步到数据库中，开发人员无需手动维护数据库表。
+### Regular Data Models
+The most common data model, where each instance corresponds to a table in the specified database. Changes to model fields are automatically synchronized to the database, and developers don't need to manually maintain database tables.
 
-### 聚合表模型
-聚合表用于多数据模型关联的复杂数据分析场景，支持分组汇总、追加合并、横向连接，且三者可以嵌套组合。
+### Aggregation Table Models
+Aggregation tables are used for complex data analysis scenarios involving multiple data model associations, supporting group aggregation, append merge, horizontal join, and all three can be nested and combined.
 
-- **分组汇总**：针对一个数据模型，对指定字段进行聚合统计（GROUP BY）
-- **追加合并**：将多个数据模型关联在一起，并追加合并为一个数据模型(UNION)
-- **横向连接**：将多个数据模型关联在一起，并横向连接为一个数据模型(JOIN)
+- **Group Aggregation**: For a data model, perform aggregation statistics on specified fields (GROUP BY)
+- **Append Merge**: Associate multiple data models together and append merge into one data model (UNION)
+- **Horizontal Join**: Associate multiple data models together and horizontally join into one data model (JOIN)
 
-### 扩展表模型
-扩展表是将一个`普通数据模型`作为基础模型，通过字段关联规则链式地关联(LEFT JOIN)若干个其它数据模型，可以在不修改原始模型的前提下扩展新的字段，并对被关联模型的字段进行聚合统计(求和、计数、平均值、最大值等)。一对一关联时，支持通过扩展表直接对被关联字段进行修改。
+### Extension Table Models
+Extension tables use a `regular data model` as the base model, chain-associate (LEFT JOIN) several other data models through field association rules, can extend new fields without modifying the original model, and perform aggregation statistics (sum, count, average, maximum, etc.) on fields of the associated models. For one-to-one associations, direct modification of associated fields through extension tables is supported.
 
-复杂的统计分析建议使用聚合表模型。
+Complex statistical analysis is recommended to use aggregation table models.
 
-### 数据对象模型（无表模型）
-当前仅支持全代码方式使用，可类比为DTO（Data Transfer Object），完全由开发者按需定义，并在业务逻辑流转中使用，不与数据库关联。
+### Data Object Models (Tableless Models)
+Currently only supports full-code usage, can be compared to DTO (Data Transfer Object), completely defined by developers as needed, and used in business logic flow without database association.
 
-## 普通数据模型示例
-### 元素目录结构
-每个模型元素使用独立的文件夹，路径规则：`[应用根目录]/models/[模型名称]`
+## Regular Data Model Example
+### Element Directory Structure
+Each model element uses an independent folder, path rule: `[Application Root]/models/[Model Name]`
 
 ```plaintext
-[应用根目录]/models/CustomerModel/
-├── model.py      # 模型元素的实现文件
-├── e.json        # 模型元素的定义文件
-└── __init__.py   # 模型元素所在包的初始化文件
+[Application Root]/models/CustomerModel/
+├── model.py      # Model element implementation file
+├── e.json        # Model element definition file
+└── __init__.py   # Model element package initialization file
 ```
 
-### e.json 配置文件
+### e.json Configuration File
 ```json title="e.json"
 {
   "backendBundleEntry": ".",
   "db": "databases.Default",
-  "title": "客户表模型",
+  "title": "Customer Table Model",
   "type": "models.NormalType"
 }
 ```
 
-### model.py 实现文件
+### model.py Implementation File
 ```python title="model.py"
 from datatypes.Meta import datatypes
 from models.NormalType import NormalModel
 
 class CustomerModel(NormalModel):
-    # 必需字段
+    # Required fields
     id = datatypes.AutoInt(name="id", title="id", primaryKey=True, readOnly=1)
-    createdAt = datatypes.Datetime(name="createdAt", title="创建时间")
-    updatedAt = datatypes.Datetime(name="updatedAt", title="更新时间")
+    createdAt = datatypes.Datetime(name="createdAt", title="Created Time")
+    updatedAt = datatypes.Datetime(name="updatedAt", title="Updated Time")
     
-    # 业务字段
-    name = datatypes.Stext(name="name", title="姓名")
-    phone = datatypes.Phone(name="phone", title="电话")
-    email = datatypes.Stext(name="email", title="邮箱")
-    address = datatypes.Address(name="address", title="地址")
+    # Business fields
+    name = datatypes.Stext(name="name", title="Name")
+    phone = datatypes.Phone(name="phone", title="Phone")
+    email = datatypes.Stext(name="email", title="Email")
+    address = datatypes.Address(name="address", title="Address")
 
     class Meta:
         modelType = "NormalType"
-        db = "databases.Default"  # 数据库元素的fullName
+        db = "databases.Default"  # Database element's fullName
         dataTitle = None
-        dbTable = "CustomerModel"  # 与模型名称对应
-        name = "CustomerModel"     # 与模型名称对应
-        title = "客户表模型"
+        dbTable = "CustomerModel"  # Corresponds to model name
+        name = "CustomerModel"     # Corresponds to model name
+        title = "Customer Table Model"
 ```
 
-### __init__.py 初始化文件
+### __init__.py Initialization File
 ```python title="__init__.py"
 from .model import CustomerModel
 ```
 
-## 模型内置函数 {#model-built-in-functions}
-JitORM数据模型提供了丰富的内置函数，涵盖数据的创建、读取、更新、删除等操作。这些函数支持单条和批量操作，并提供了灵活的查询和聚合功能。
+## Model Built-in Functions {#model-built-in-functions}
+JitORM data models provide rich built-in functions covering data creation, reading, updating, deletion, and other operations. These functions support single and batch operations and provide flexible query and aggregation capabilities.
 
-### 基础数据操作 
-用于处理单条数据的基本CRUD操作。
+### Basic Data Operations
+Used for basic CRUD operations on single data records.
 
-#### create - 创建数据
+#### create - Create Data
 ```python
 @classmethod
 def create(cls, rowData, triggerEvent=1) -> RowData
 ```
 
-创建一条新的数据记录。
+Create a new data record.
 
-**参数说明：**
-- `rowData`: 要创建的数据字典
-- `triggerEvent`: 是否触发事件（默认触发）
+**Parameter Description:**
+- `rowData`: Data dictionary to create
+- `triggerEvent`: Whether to trigger events (default trigger)
 
-**使用示例：**
+**Usage Example:**
 ```python
-# 获取模型元素并创建新用户
+# Get model element and create new user
 UserModel = app.getElement("models.UserModel")
 user_data = {"name": "张三", "email": "zhangsan@example.com"}
 new_user = UserModel.create(user_data)
 ```
 
-#### save - 保存数据
+#### save - Save Data
 ```python
 def save(self, triggerEvent=1) -> RowData
 ```
 
-保存当前数据实例，自动判断是新增还是更新。
+Save current data instance, automatically determine whether to add or update.
 
-**参数说明：**
-- `triggerEvent`: 是否触发事件（默认触发）
+**Parameter Description:**
+- `triggerEvent`: Whether to trigger events (default trigger)
 
-**使用示例：**
+**Usage Example:**
 ```python
-# 获取模型元素，修改用户信息并保存
+# Get model element, modify user information and save
 UserModel = app.getElement("models.UserModel")
 user = UserModel.get("Q(id=1)", orderList=[])
 user["name"] = "李四"
@@ -127,42 +127,42 @@ UserModel=UserModel(**user)
 UserModel.save()
 ```
 
-#### delete - 删除数据
+#### delete - Delete Data
 ```python
 def delete(self, triggerEvent=1) -> Dict[str, Any]
 ```
 
-删除当前数据记录。
+Delete current data record.
 
-**参数说明：**
-- `triggerEvent`: 是否触发事件（默认触发）
+**Parameter Description:**
+- `triggerEvent`: Whether to trigger events (default trigger)
 
-**使用示例：**
+**Usage Example:**
 ```python
-# 获取模型元素并删除用户
+# Get model element and delete user
 UserModel = app.getElement("models.UserModel")
 user = UserModel.get("Q(id=1)", [])
 UserModel(**user).delete()
 ```
 
-#### updateOrAdd - 条件更新或添加
+#### updateOrAdd - Conditional Update or Add
 ```python
 @classmethod
 def updateOrAdd(cls, filter, orderList, updateData, addData, triggerEvent=1) -> RowData
 ```
 
-根据条件查找数据，存在则更新，不存在则添加。
+Find data based on conditions, update if exists, add if not exists.
 
-**参数说明：**
-- `filter`: Q表达式筛选条件
-- `orderList`: 排序规则 例如： [["name",1],["age",-1]] 1升序，-1降序
-- `updateData`: 更新时的数据
-- `addData`: 添加时的数据
-- `triggerEvent`: 是否触发事件（默认触发）
+**Parameter Description:**
+- `filter`: Q expression filter conditions
+- `orderList`: Sort rules, e.g.: [["name",1],["age",-1]] 1 ascending, -1 descending
+- `updateData`: Data when updating
+- `addData`: Data when adding
+- `triggerEvent`: Whether to trigger events (default trigger)
 
-**使用示例：**
+**Usage Example:**
 ```python
-# 获取模型元素，根据邮箱更新或添加用户
+# Get model element, update or add user based on email
 UserModel = app.getElement("models.UserModel")
 UserModel.updateOrAdd(
     "Q(email='test@example.com')", 
@@ -172,24 +172,24 @@ UserModel.updateOrAdd(
 )
 ```
 
-### 批量数据操作
-用于高效处理大量数据的批量操作函数。
+### Batch Data Operations
+Used for efficient batch operations on large amounts of data.
 
-#### createOrUpdateMany - 批量创建或更新
+#### createOrUpdateMany - Batch Create or Update
 ```python
 @classmethod
 def createOrUpdateMany(cls, rowDataList, triggerEvent=1) -> List[RowData]
 ```
 
-批量处理多条数据，自动判断新增还是更新。
+Batch process multiple data records, automatically determine whether to add or update.
 
-**参数说明：**
-- `rowDataList`: 要处理的数据列表
-- `triggerEvent`: 是否触发事件（默认触发）
+**Parameter Description:**
+- `rowDataList`: List of data to process
+- `triggerEvent`: Whether to trigger events (default trigger)
 
-**使用示例：**
+**Usage Example:**
 ```python
-# 获取模型元素，批量导入用户数据
+# Get model element, batch import user data
 UserModel = app.getElement("models.UserModel")
 users_data = [
     {"name": "用户1", "email": "user1@example.com"},
@@ -198,166 +198,166 @@ users_data = [
 UserModel.createOrUpdateMany(users_data)
 ```
 
-#### updateByPK - 按主键批量更新
+#### updateByPK - Batch Update by Primary Key
 ```python
 @classmethod
 def updateByPK(cls, pkList, updateData, triggerEvent=1) -> List[RowData]
 ```
 
-根据主键列表批量更新数据。
+Batch update data based on primary key list.
 
-**参数说明：**
-- `pkList`: 主键ID列表
-- `updateData`: 要更新的数据
-- `triggerEvent`: 是否触发事件（默认触发）
+**Parameter Description:**
+- `pkList`: Primary key ID list
+- `updateData`: Data to update
+- `triggerEvent`: Whether to trigger events (default trigger)
 
-**使用示例：**
+**Usage Example:**
 ```python
-# 获取模型元素，批量激活多个用户
+# Get model element, batch activate multiple users
 UserModel = app.getElement("models.UserModel")
 UserModel.updateByPK([1, 2, 3], {"status": "active"})
 ```
 
-#### deleteByPK - 按主键批量删除
+#### deleteByPK - Batch Delete by Primary Key
 ```python
 @classmethod
 def deleteByPK(cls, pkList, triggerEvent=1)
 ```
 
-根据主键列表批量删除数据。
+Batch delete data based on primary key list.
 
-**参数说明：**
-- `pkList`: 主键ID列表
-- `triggerEvent`: 是否触发事件（默认触发）
+**Parameter Description:**
+- `pkList`: Primary key ID list
+- `triggerEvent`: Whether to trigger events (default trigger)
 
-**使用示例：**
+**Usage Example:**
 ```python
-# 获取模型元素，批量删除指定用户
+# Get model element, batch delete specified users
 UserModel = app.getElement("models.UserModel")
 UserModel.deleteByPK([1, 2, 3])
 ```
 
-#### updateByFilter - 按条件批量更新
+#### updateByFilter - Batch Update by Condition
 ```python
 @classmethod
 def updateByFilter(cls, filter, updateData)
 ```
 
-根据筛选条件批量更新数据。
+Batch update data based on filter conditions.
 
-**参数说明：**
-- `filter`: Q表达式筛选条件
-- `updateData`: 要更新的数据
+**Parameter Description:**
+- `filter`: Q expression filter conditions
+- `updateData`: Data to update
 
-**使用示例：**
+**Usage Example:**
 ```python
-# 获取模型元素，将所有未激活用户设为过期状态
+# Get model element, set all inactive users to expired status
 UserModel = app.getElement("models.UserModel")
 UserModel.updateByFilter("Q(status='inactive')", {"status": "expired"})
 ```
 
-#### deleteByFilter - 按条件批量删除
+#### deleteByFilter - Batch Delete by Condition
 ```python
 @classmethod
 def deleteByFilter(cls, filter)
 ```
 
-根据筛选条件批量删除数据。
+Batch delete data based on filter conditions.
 
-**参数说明：**
-- `filter`: Q表达式筛选条件
+**Parameter Description:**
+- `filter`: Q expression filter conditions
 
-**使用示例：**
+**Usage Example:**
 ```python
-# 获取模型元素，删除所有过期用户
+# Get model element, delete all expired users
 UserModel = app.getElement("models.UserModel")
 UserModel.deleteByFilter("Q(status='expired')")
 ```
 
-### 数据查询
-用于检索和查找数据的核心函数，支持分页、排序、筛选等功能。
+### Data Query
+Core functions for retrieving and finding data, supporting pagination, sorting, filtering, and other features.
 
-#### query - 分页查询
+#### query - Paginated Query
 ```python
 @classmethod
 def query(cls, filter=None, fieldList=None, orderList=None, page=None, size=None, level=2)
 ```
 
-分页查询数据，是最常用的查询方法。
+Paginated query data, the most commonly used query method.
 
-**参数说明：**
-- `filter`: Q表达式筛选条件（可选）
-- `fieldList`: 指定查询的字段（可选，默认查询所有字段）
-- `orderList`: 排序规则，例如： [["name",1],["age",-1]] 1升序，-1降序
-- `page`: 页码（从1开始）
-- `size`: 每页记录数
-- `level`: 关联数据层级（默认2层）
+**Parameter Description:**
+- `filter`: Q expression filter conditions (optional)
+- `fieldList`: Specify fields to query (optional, default query all fields)
+- `orderList`: Sort rules, e.g.: [["name",1],["age",-1]] 1 ascending, -1 descending
+- `page`: Page number (starting from 1)
+- `size`: Records per page
+- `level`: Association data level (default 2 levels)
 
-**返回数据：**
-- `rowDatas`: 查询结果列表
-- `totalCount`: 总记录数
+**Return Data:**
+- `rowDatas`: Query result list
+- `totalCount`: Total record count
 
-**使用示例：**
+**Usage Example:**
 ```python
-# 获取模型元素，基础分页查询
+# Get model element, basic paginated query
 UserModel = app.getElement("models.UserModel")
 result = UserModel.query(page=1, size=10)
 users = result["rowDatas"]
 total = result["totalCount"]
 
-# 带条件和排序的查询
+# Query with conditions and sorting
 result = UserModel.query(
     filter="Q(status='active')",
-    orderList=[["createdAt", -1]],  # 按创建时间倒序
+    orderList=[["createdAt", -1]],  # Sort by creation time descending
     page=1, 
     size=20
 )
 ```
 
-#### get - 获取单条数据
+#### get - Get Single Data
 ```python
 @classmethod
 def get(cls, filter, orderList=None, level=2) -> RowData
 ```
 
-获取满足条件的第一条数据。
+Get the first data record that meets the conditions.
 
-**参数说明：**
-- `filter`: Q表达式筛选条件
-- `orderList`: 排序规则，例如： [["name",1],["age",-1]] 1升序，-1降序
-- `level`: 关联数据层级（默认2层）
+**Parameter Description:**
+- `filter`: Q expression filter conditions
+- `orderList`: Sort rules, e.g.: [["name",1],["age",-1]] 1 ascending, -1 descending
+- `level`: Association data level (default 2 levels)
 
-**使用示例：**
+**Usage Example:**
 ```python
-# 获取模型元素，根据ID获取用户
+# Get model element, get user by ID
 UserModel = app.getElement("models.UserModel")
 user = UserModel.get("Q(id=1)", [])
 
-# 获取最新的活跃用户
+# Get latest active user
 user = UserModel.get(
     "Q(status='active')", 
     [["createdAt", 1]]
 )
 ```
 
-#### groupBy - 分组统计
+#### groupBy - Group Statistics
 ```python
 @classmethod
 def groupBy(cls, filter, fieldList, orderList=None, page=None, size=None)
 ```
 
-按指定字段分组统计数据。
+Group and count data by specified fields.
 
-**参数说明：**
-- `filter`: Q表达式筛选条件
-- `fieldList`: 分组字段列表
-- `orderList`: 排序规则（可选），例如： [["name",1],["age",-1]] 1升序，-1降序
-- `page`: 页码（可选）
-- `size`: 每页记录数（可选）
+**Parameter Description:**
+- `filter`: Q expression filter conditions
+- `fieldList`: Group field list
+- `orderList`: Sort rules (optional), e.g.: [["name",1],["age",-1]] 1 ascending, -1 descending
+- `page`: Page number (optional)
+- `size`: Records per page (optional)
 
-**使用示例：**
+**Usage Example:**
 ```python
-# 获取模型元素，按状态分组统计用户数量
+# Get model element, group count users by status
 UserModel = app.getElement("models.UserModel")
 result = UserModel.groupBy(
     filter="", 
@@ -365,26 +365,26 @@ result = UserModel.groupBy(
 )
 ```
 
-#### getFieldData - 获取字段值列表
+#### getFieldData - Get Field Value List
 ```python
 @classmethod
 def getFieldData(cls, fieldId, filter, orderList=None) -> List
 ```
 
-获取指定字段的所有值，常用于构建下拉选项。
+Get all values of specified field, commonly used for building dropdown options.
 
-**参数说明：**
-- `fieldId`: 字段名称
-- `filter`: Q表达式筛选条件
-- `orderList`: 排序规则，例如： [["name",1],["age",-1]] 1升序，-1降序
+**Parameter Description:**
+- `fieldId`: Field name
+- `filter`: Q expression filter conditions
+- `orderList`: Sort rules, e.g.: [["name",1],["age",-1]] 1 ascending, -1 descending
 
-**使用示例：**
+**Usage Example:**
 ```python
-# 获取模型元素，获取所有部门名称列表
+# Get model element, get all department name list
 UserModel = app.getElement("models.UserModel")
 departments = UserModel.getFieldData("department", "", [])
 
-# 获取活跃用户的邮箱列表
+# Get email list of active users
 emails = UserModel.getFieldData(
     "email", 
     "Q(status='active')", 
@@ -392,21 +392,21 @@ emails = UserModel.getFieldData(
 )
 ```
 
-#### statisticFieldData - 字段统计
+#### statisticFieldData - Field Statistics
 ```python
 @classmethod
 def statisticFieldData(cls, filter, fieldAggrMap)
 ```
 
-对指定字段进行聚合统计。
+Perform aggregation statistics on specified fields.
 
-**参数说明：**
-- `filter`: Q表达式筛选条件
-- `fieldAggrMap`: 字段聚合映射，如：`{"age": "AVG", "salary": "SUM"}`
+**Parameter Description:**
+- `filter`: Q expression filter conditions
+- `fieldAggrMap`: Field aggregation mapping, e.g.: `{"age": "AVG", "salary": "SUM"}`
 
-**使用示例：**
+**Usage Example:**
 ```python
-# 获取模型元素，统计用户平均年龄和总薪资
+# Get model element, calculate average age and total salary of users
 UserModel = app.getElement("models.UserModel")
 stats = UserModel.statisticFieldData(
     "Q(status='active')",
@@ -414,32 +414,32 @@ stats = UserModel.statisticFieldData(
 )
 ```
 
-### 模型内置函数 {#model-built-in-functions}
-模型元素提供了丰富的内置函数，用于数据的创建、查询、更新、删除等操作。
+### Model Built-in Functions {#model-built-in-functions}
+Model elements provide rich built-in functions for data creation, query, update, deletion, and other operations.
 
-### 基础数据操作 {#basic-data-operations}
-提供标准的CRUD操作和数据查询功能。
+### Basic Data Operations {#basic-data-operations}
+Provide standard CRUD operations and data query functionality.
 
-### 数据导入导出
-用于数据导出和批量数据处理的工具函数。
+### Data Import Export
+Tool functions for data export and batch data processing.
 
-#### getExportData - 导出数据
+#### getExportData - Export Data
 ```python
 @classmethod
 def getExportData(cls, filter, fieldList, page, size)
 ```
 
-获取符合条件的数据用于导出，支持分页处理大量数据。
+Get data that meets conditions for export, supporting pagination for large amounts of data.
 
-**参数说明：**
-- `filter`: Q表达式筛选条件
-- `fieldList`: 要导出的字段列表
-- `page`: 页码
-- `size`: 每页记录数
+**Parameter Description:**
+- `filter`: Q expression filter conditions
+- `fieldList`: List of fields to export
+- `page`: Page number
+- `size`: Records per page
 
-**使用示例：**
+**Usage Example:**
 ```python
-# 获取模型元素，导出活跃用户的基本信息
+# Get model element, export basic information of active users
 UserModel = app.getElement("models.UserModel")
 export_data = UserModel.getExportData(
     filter="Q(status='active')",
@@ -449,23 +449,23 @@ export_data = UserModel.getExportData(
 )
 ```
 
-### 高级功能
-提供更高级的数据操作和管理功能。
+### Advanced Features
+Provide more advanced data operation and management functionality.
 
-#### queryTQL - TQL查询
+#### queryTQL - TQL Query
 ```python
 @classmethod
 def queryTQL(cls, tqlStr)
 ```
 
-使用TQL（Table Query Language）语句进行复杂查询。
+Use TQL (Table Query Language) statements for complex queries.
 
-**参数说明：**
-- `tqlStr`: TQL查询语句
+**Parameter Description:**
+- `tqlStr`: TQL query statement
 
-**使用示例：**
+**Usage Example:**
 ```python
-# 获取模型元素，使用TQL进行复杂联表查询
+# Get model element, use TQL for complex join table query
 UserModel = app.getElement("models.UserModel")
 tql = """
 Select(
@@ -478,81 +478,81 @@ Select(
 result = UserModel.queryTQL(tql)
 ```
 
-#### aggregate - 聚合计算
+#### aggregate - Aggregation Calculation
 ```python
 @classmethod
 def aggregate(cls, filter, aggrField, aggrType)
 ```
 
-对指定字段进行聚合计算。
+Perform aggregation calculation on specified field.
 
-**参数说明：**
-- `filter`: Q表达式筛选条件
-- `aggrField`: 聚合字段名
-- `aggrType`: 聚合类型（SUM、AVG、COUNT、MAX、MIN）
+**Parameter Description:**
+- `filter`: Q expression filter conditions
+- `aggrField`: Aggregation field name
+- `aggrType`: Aggregation type (SUM, AVG, COUNT, MAX, MIN)
 
-**使用示例：**
+**Usage Example:**
 ```python
-# 获取模型元素，计算活跃用户的平均年龄
+# Get model element, calculate average age of active users
 UserModel = app.getElement("models.UserModel")
 avg_age = UserModel.aggregate("Q(status='active')", "age", "AVG")
 
-# 统计总用户数
+# Count total users
 user_count = UserModel.aggregate("", "id", "COUNT")
 ```
 
-#### resetModelData - 清空数据
+#### resetModelData - Clear Data
 ```python
 @classmethod
 def resetModelData(cls)
 ```
 
-清空模型对应表的所有数据，**谨慎使用**。
+Clear all data in the model's corresponding table, **use with caution**.
 
-**使用示例：**
+**Usage Example:**
 ```python
-# 获取模型元素，清空测试数据（生产环境请谨慎使用）
+# Get model element, clear test data (use with caution in production)
 TestModel = app.getElement("models.TestModel")
 TestModel.resetModelData()
 ```
 
-### 数据验证
-用于数据校验和条件判断的辅助函数。
+### Data Validation
+Auxiliary functions for data validation and condition checking.
 
-#### getCompareResult - 数据比较
+#### getCompareResult - Data Comparison
 ```python
 @classmethod
 def getCompareResult(cls, q, bizRow)
 ```
 
-根据Q表达式条件判断业务数据是否满足条件。
+Check whether business data meets conditions based on Q expression conditions.
 
-**参数说明：**
-- `q`: Q表达式比较条件
-- `bizRow`: 要验证的业务数据
+**Parameter Description:**
+- `q`: Q expression comparison conditions
+- `bizRow`: Business data to validate
 
-**使用示例：**
+**Usage Example:**
 ```python
-# 获取模型元素，验证用户数据是否满足条件
+# Get model element, validate whether user data meets conditions
 UserModel = app.getElement("models.UserModel")
 user_data = {"age": 25, "status": "active"}
 is_valid = UserModel.getCompareResult("Q(age__gte=18) & Q(status='active')", user_data)
 
 if is_valid:
-    print("用户数据符合条件")
+    print("User data meets conditions")
 ```
 
 ---
 
-:::tip 使用建议
-- 对于频繁的数据操作，建议使用批量函数提高性能
-- 查询时合理使用`fieldList`参数只获取需要的字段
-- 使用`triggerEvent=0`可以跳过事件触发，提高批量操作性能
-- TQL查询适用于复杂的跨表查询场景
+:::tip Usage Recommendations
+- For frequent data operations, recommend using batch functions to improve performance
+- When querying, reasonably use `fieldList` parameter to only get needed fields
+- Using `triggerEvent=0` can skip event triggering and improve batch operation performance
+- TQL queries are suitable for complex cross-table query scenarios
 :::
 
-:::warning 注意事项
-- `resetModelData`会清空表的所有数据，生产环境请谨慎使用
-- 批量删除操作无法撤销，请确认筛选条件正确
-- 大数据量操作建议分批处理，避免内存溢出
+:::warning Notes
+- `resetModelData` will clear all data in the table, use with caution in production
+- Batch delete operations cannot be undone, please confirm filter conditions are correct
+- Large data operations recommend batch processing to avoid memory overflow
 :::

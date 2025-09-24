@@ -1,28 +1,28 @@
 ---
 slug: tabs
 ---
-# 标签页
-标签页是布局类组件，用于在有限空间内切换显示多个内容面板。它基于React技术栈实现组件化布局，支持线条型和卡片型两种视觉风格，可在顶部、底部、左侧、右侧四个位置放置。标签页负责多内容面板的组织管理、标签切换交互和动态显示控制，支持权限过滤、动态别名设置和事件驱动的交互响应。
+# Tabs
+Tabs is a layout component used to switch between multiple content panels within limited space. It implements componentized layout based on React technology stack, supporting line and card visual styles, and can be placed in four positions: top, bottom, left, and right. Tabs handle organization and management of multiple content panels, tab switching interaction, and dynamic display control, supporting permission filtering, dynamic alias settings, and event-driven interactive responses.
 
-标签页元素分层结构为Meta（`components.Meta`） → Type（`components.Tab`） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建标签页实例元素。
+The tabs element has a hierarchical structure of Meta (`components.Meta`) → Type (`components.Tab`) → Instance. Developers can quickly create tabs instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.TabType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `components.TabType` element provided by JitAI in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基础配置示例
-```text title="推荐目录结构"
+## Quick Start
+### Basic Configuration Example
+```text title="Recommended Directory Structure"
 pages/
 ├── UserManage/
 │   ├── e.json
-│   ├── scheme.json    # 页面布局配置
+│   ├── scheme.json    # Page layout configuration
 │   └── index.tsx
 ```
 
-```json title="标签页组件配置 - scheme.json"
+```json title="Tabs Component Configuration - scheme.json"
 {
   "name": "userTabs",
   "type": "components.Tab",
-  "title": "用户管理标签页",
+  "title": "User Management Tabs",
   "config": {
     "position": "top",
     "size": "middle",
@@ -30,12 +30,12 @@ pages/
     "layoutList": [
       {
         "name": "basicInfo",
-        "title": "基础信息",
+        "title": "Basic Information",
         "layout": []
       },
       {
         "name": "permissions",
-        "title": "权限设置",
+        "title": "Permission Settings",
         "layout": []
       }
     ]
@@ -43,14 +43,14 @@ pages/
 }
 ```
 
-```tsx title="页面中调用标签页"
-// 获取标签页组件实例
+```tsx title="Call Tabs in Page"
+// Get tabs component instance
 const tabComponent = app.getElement('pages.UserManage.userTabs');
 
-// 切换到权限设置标签
+// Switch to permission settings tab
 await tabComponent.call('permissions', '');
 
-// 根据条件显示不同标签
+// Show different tabs based on conditions
 if (userRole === 'admin') {
   tabComponent.setDisplayTabs('basicInfo,permissions');
 } else {
@@ -58,65 +58,65 @@ if (userRole === 'admin') {
 }
 ```
 
-### 配置属性说明
-| 属性 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| position | `"top"` &#124; `"bottom"` &#124; `"left"` &#124; `"right"` | 标签位置 | "top" | 否 |
-| size | `"large"` &#124; `"middle"` &#124; `"small"` | 标签尺寸 | "middle" | 否 |
-| type | `"line"` &#124; `"card"` | 标签类型：线条型或卡片型 | "line" | 否 |
-| layoutList | `ITabProps[]` | 标签页列表配置 | [] | 是 |
+### Configuration Properties
+| Property | Type | Description | Default Value | Required |
+|----------|------|-------------|---------------|----------|
+| position | `"top"` &#124; `"bottom"` &#124; `"left"` &#124; `"right"` | Tab position | "top" | No |
+| size | `"large"` &#124; `"middle"` &#124; `"small"` | Tab size | "middle" | No |
+| type | `"line"` &#124; `"card"` | Tab type: line or card | "line" | No |
+| layoutList | `ITabProps[]` | Tab list configuration | [] | Yes |
 
-**ITabProps 结构：**
+**ITabProps Structure:**
 
-| 属性 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| name | string | 标签页唯一标识 | - | 是 |
-| title | string | 标签页显示名称 | - | 是 |
-| layout | Layout[] | 标签页内组件布局配置 | [] | 否 |
+| Property | Type | Description | Default Value | Required |
+|----------|------|-------------|---------------|----------|
+| name | string | Tab unique identifier | - | Yes |
+| title | string | Tab display name | - | Yes |
+| layout | Layout[] | Tab component layout configuration | [] | No |
 
-## 变量
+## Variables
 ### tab
-当前点击的标签页信息，包含标签页名称或别名。
+Currently clicked tab information, containing tab name or alias.
 
-**类型：** `Dropdown`  
-**访问方式：** `tabComponent.tab.value`
+**Type:** `Dropdown`  
+**Access Method:** `tabComponent.tab.value`
 
-## 方法 
+## Methods
 ### call
-打开指定标签页并可设置自定义别名。
+Open specified tab and set custom alias.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| tabName | string | 目标标签页的name | - | 是 |
-| tabAlias | string | 标签页别名（显示用） | - | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| tabName | string | Target tab's name | - | Yes |
+| tabAlias | string | Tab alias (for display) | - | No |
 
-#### 返回值
+#### Return Value
 Promise&lt;void&gt;
 
-#### 使用示例
-```tsx title="打开指定标签页"
-// 打开名为permissions的标签页
+#### Usage Example
+```tsx title="Open Specified Tab"
+// Open tab named permissions
 await tabComponent.call("permissions", "");
 
-// 打开标签页并设置别名
-await tabComponent.call("permissions", "权限设置(3项待处理)");
+// Open tab and set alias
+await tabComponent.call("permissions", "Permission Settings (3 pending)");
 ```
 
 ### setDisplayTabs
-设定显示的标签页，隐藏其他标签页。调用后会触发内部刷新事件。
+Set displayed tabs, hide other tabs. Triggers internal refresh event after calling.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| showTabNames | string | 要显示的标签页名称，多个用逗号分隔 | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| showTabNames | string | Tab names to display, multiple separated by commas | - | Yes |
 
-#### 使用示例
-```tsx title="动态控制标签显示"
-// 只显示基础信息和权限设置标签
+#### Usage Example
+```tsx title="Dynamically Control Tab Display"
+// Only show basic information and permission settings tabs
 tabComponent.setDisplayTabs("basicInfo,permissions");
 
-// 根据权限动态显示
+// Dynamically display based on permissions
 if (hasAdvancedPermission) {
   tabComponent.setDisplayTabs("basicInfo,permissions,advanced");
 } else {
@@ -125,17 +125,17 @@ if (hasAdvancedPermission) {
 ```
 
 ### setConfig
-更新组件配置。
+Update component configuration.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| next | Partial&lt;TabComponentConfig &amp; `{ requireElements: requireElement[] }`&gt; | 新的配置项 | - | 是 |
-| clean | boolean | 是否完全替换配置 | false | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| next | Partial&lt;TabComponentConfig &amp; `{ requireElements: requireElement[] }`&gt; | New configuration items | - | Yes |
+| clean | boolean | Whether to completely replace configuration | false | No |
 
-#### 使用示例
-```tsx title="更新组件配置"
-// 更改标签位置和样式
+#### Usage Example
+```tsx title="Update Component Configuration"
+// Change tab position and style
 tabComponent.setConfig({
   position: "bottom",
   type: "card"
@@ -143,19 +143,19 @@ tabComponent.setConfig({
 ```
 
 ### publishEvent
-发布组件事件。
+Publish component events.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| name | string | 事件名称 | - | 是 |
-| ex | Record&lt;string, any&gt; | 事件携带的额外数据 | - | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| name | string | Event name | - | Yes |
+| ex | Record&lt;string, any&gt; | Additional data carried by event | - | No |
 
-#### 返回值
+#### Return Value
 Promise&lt;void&gt;
 
-#### 使用示例
-```tsx title="发布自定义事件"
+#### Usage Example
+```tsx title="Publish Custom Event"
 await tabComponent.publishEvent("customRefresh", {
   activeTab: "basicInfo",
   timestamp: Date.now()
@@ -163,220 +163,220 @@ await tabComponent.publishEvent("customRefresh", {
 ```
 
 ### subscribeEvent
-订阅组件事件。
+Subscribe to component events.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| name | string | 事件名称 | - | 是 |
-| evtCb | (data: any) =&gt; Promise&lt;void&gt; &#124; void | 事件回调函数 | - | 是 |
-| unSubscribeExist | boolean | 是否取消已存在的订阅 | true | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| name | string | Event name | - | Yes |
+| evtCb | (data: any) =&gt; Promise&lt;void&gt; &#124; void | Event callback function | - | Yes |
+| unSubscribeExist | boolean | Whether to cancel existing subscriptions | true | No |
 
-#### 返回值
-string - 事件处理器ID
+#### Return Value
+string - Event handler ID
 
-#### 使用示例
-```tsx title="订阅标签切换事件"
+#### Usage Example
+```tsx title="Subscribe to Tab Switch Event"
 const handlerId = tabComponent.subscribeEvent("clickbasicInfo", async (data) => {
-  console.log("基础信息标签被点击");
-  // 执行相应业务逻辑
+  console.log("Basic information tab clicked");
+  // Execute corresponding business logic
 });
 ```
 
 ### unSubscribeEvent
-取消事件订阅。
+Cancel event subscription.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| id | string | 事件处理器ID | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| id | string | Event handler ID | - | Yes |
 
 ### runCode
-在页面上下文中执行JavaScript代码字符串。
+Execute JavaScript code string in page context.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| code | string | 要执行的JavaScript代码 | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| code | string | JavaScript code to execute | - | Yes |
 
-#### 返回值
-any - 代码执行结果
+#### Return Value
+any - Code execution result
 
-#### 使用示例
-```tsx title="执行动态代码"
+#### Usage Example
+```tsx title="Execute Dynamic Code"
 const result = tabComponent.runCode("this.fullName");
-console.log("当前页面:", result);
+console.log("Current page:", result);
 ```
 
 ### destroy
-销毁组件实例，清理事件监听和资源。
+Destroy component instance, clean up event listeners and resources.
 
-#### 使用示例
-```tsx title="组件销毁"
+#### Usage Example
+```tsx title="Component Destruction"
 tabComponent.destroy();
 ```
 
 ### getPermConfig
-获取当前组件的权限配置信息。
+Get current component's permission configuration information.
 
-#### 返回值
-Record&lt;string, any&gt; &#124; undefined - 权限配置对象，如果没有权限限制则返回undefined
+#### Return Value
+Record&lt;string, any&gt; &#124; undefined - Permission configuration object, returns undefined if no permission restrictions
 
-#### 使用示例
-```tsx title="获取权限配置"
+#### Usage Example
+```tsx title="Get Permission Configuration"
 const permConfig = tabComponent.getPermConfig();
 if (permConfig?.permitLayout) {
-  console.log("允许显示的标签:", permConfig.permitLayout);
+  console.log("Allowed tabs:", permConfig.permitLayout);
 }
 ```
 
 ### bindApp
-绑定应用实例。
+Bind application instance.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| app | App | 应用实例 | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| app | App | Application instance | - | Yes |
 
 ### bindPage
-绑定页面实例。
+Bind page instance.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| page | BasePage | 页面实例 | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| page | BasePage | Page instance | - | Yes |
 
-## 属性
+## Properties
 ### name
-组件实例名称。
+Component instance name.
 
-**类型：** `string`  
-**只读：** 是
+**Type:** `string`  
+**Read-only:** Yes
 
 ### title
-组件显示标题。
+Component display title.
 
-**类型：** `string`  
-**只读：** 是
+**Type:** `string`  
+**Read-only:** Yes
 
 ### config
-组件配置对象，包含position、size、type、layoutList等配置项。
+Component configuration object, containing position, size, type, layoutList and other configuration items.
 
-**类型：** `TabComponentConfig & { requireElements: requireElement[] }`  
-**只读：** 否
+**Type:** `TabComponentConfig & { requireElements: requireElement[] }`  
+**Read-only:** No
 
 ### compType
-组件类型枚举值。
+Component type enumeration value.
 
-**类型：** `COMPONENT_TYPE`  
-**只读：** 是
+**Type:** `COMPONENT_TYPE`  
+**Read-only:** Yes
 
 ### showTitle
-是否显示组件标题。
+Whether to show component title.
 
-**类型：** `boolean`  
-**只读：** 是
+**Type:** `boolean`  
+**Read-only:** Yes
 
 ### type
-组件类型标识。
+Component type identifier.
 
-**类型：** `string`  
-**只读：** 是
+**Type:** `string`  
+**Read-only:** Yes
 
 ### fullName
-组件完整名称，包含页面路径和组件名称。
+Component full name, containing page path and component name.
 
-**类型：** `string`  
-**只读：** 是
+**Type:** `string`  
+**Read-only:** Yes
 
-组件完整名称，包含页面路径和组件名称。
+Component full name, containing page path and component name.
 
-**类型：** `string`  
-**只读：** 是
+**Type:** `string`  
+**Read-only:** Yes
 
 ### app
-当前应用实例的访问器。
+Current application instance accessor.
 
-**类型：** `App`  
-**只读：** 是
+**Type:** `App`  
+**Read-only:** Yes
 
 ### page
-当前页面实例的访问器。
+Current page instance accessor.
 
-**类型：** `BasePage`  
-**只读：** 是
+**Type:** `BasePage`  
+**Read-only:** Yes
 
 ### showLayoutList
-当前实际显示的标签页列表（经过权限过滤和setDisplayTabs方法处理后的结果）。
+Current actually displayed tab list (result after permission filtering and setDisplayTabs method processing).
 
-**类型：** `ITabProps[]`  
-**只读：** 是
+**Type:** `ITabProps[]`  
+**Read-only:** Yes
 
 ### defaultActivatedTabStatus
-默认激活标签的状态信息，包含标签别名和激活的标签名称。
+Default activated tab status information, containing tab alias and activated tab name.
 
-**类型：** `Ltext`  
-**只读：** 是
+**Type:** `Ltext`  
+**Read-only:** Yes
 
 ### activatedTabStatus
-当前激活标签的状态。
+Current activated tab status.
 
-**类型：** `Stext`  
-**只读：** 是
+**Type:** `Stext`  
+**Read-only:** Yes
 
 ### dataTypeList
-组件变量类型列表。
+Component variable type list.
 
-**类型：** `BaseDataType[]`  
-**只读：** 是
+**Type:** `BaseDataType[]`  
+**Read-only:** Yes
 
-## 事件
-标签页组件为每个标签页动态生成对应的点击事件。
+## Events
+The tabs component dynamically generates corresponding click events for each tab.
 
-### click[标签页name]
-当指定标签页被点击时触发。事件名称根据标签页的name动态生成，如标签页name为"basicInfo"，则事件名为"clickbasicInfo"。
+### click[tab name]
+Triggered when specified tab is clicked. Event name is dynamically generated based on tab's name, e.g., if tab name is "basicInfo", event name is "clickbasicInfo".
 
-#### 参数详解
-事件触发时，组件的tab变量会自动更新为被点击标签的信息。
+#### Parameter Details
+When event is triggered, component's tab variable is automatically updated with clicked tab information.
 
-#### 使用示例
-```tsx title="监听标签页点击事件"
-// 监听基础信息标签点击
+#### Usage Example
+```tsx title="Listen to Tab Click Event"
+// Listen to basic information tab click
 tabComponent.subscribeEvent("clickbasicInfo", async () => {
-  console.log("基础信息标签被点击");
-  console.log("当前标签值:", tabComponent.tab.value);
+  console.log("Basic information tab clicked");
+  console.log("Current tab value:", tabComponent.tab.value);
 });
 
-// 监听权限设置标签点击
+// Listen to permission settings tab click
 tabComponent.subscribeEvent("clickpermissions", async () => {
-  console.log("权限设置标签被点击");
-  // 可在此处加载权限数据
+  console.log("Permission settings tab clicked");
+  // Can load permission data here
   await loadPermissionData();
 });
 ```
 
-## 高级特性
-### 权限控制
-标签页支持基于RBAC权限配置动态显示/隐藏特定标签页。组件会自动调用`setPermConfig`方法过滤layoutList。
+## Advanced Features
+### Permission Control
+Tabs support dynamic show/hide of specific tabs based on RBAC permission configuration. Component automatically calls `setPermConfig` method to filter layoutList.
 
-#### 配置示例
-```tsx title="权限配置应用"
-// 权限配置会在组件初始化时自动应用
-// 组件会根据permitLayout自动过滤可显示的标签页
+#### Configuration Example
+```tsx title="Permission Configuration Application"
+// Permission configuration is automatically applied during component initialization
+// Component automatically filters displayable tabs based on permitLayout
 const permConfig = {
-  permitLayout: ["basicInfo", "permissions"] // 只允许显示这两个标签
+  permitLayout: ["basicInfo", "permissions"] // Only allow these two tabs
 };
 
-// 组件内部会自动执行权限过滤
-tabComponent.setPermConfig(); // 内部调用，开发者无需手动调用
+// Component internally automatically executes permission filtering
+tabComponent.setPermConfig(); // Internal call, developers don't need to call manually
 ```
 
-### 动态标签管理
-结合`setDisplayTabs`方法和权限控制实现灵活的标签页管理策略。
+### Dynamic Tab Management
+Combine `setDisplayTabs` method with permission control to implement flexible tab management strategies.
 
-#### 配置示例
-```tsx title="智能标签显示策略"
-// 根据用户角色和数据状态动态显示
+#### Configuration Example
+```tsx title="Smart Tab Display Strategy"
+// Dynamically display based on user role and data status
 const userRole = await getCurrentUserRole();
 const dataStatus = await getDataStatus();
 
@@ -393,31 +393,31 @@ if (userRole === "admin") {
 }
 ```
 
-### 动态别名与状态指示
-使用`call`方法的tabAlias参数实现标签页标题的实时更新。
+### Dynamic Alias and Status Indication
+Use `call` method's tabAlias parameter to implement real-time tab title updates.
 
-#### 配置示例
-```tsx title="智能标签别名"
-// 监听数据变化，更新标签名称
+#### Configuration Example
+```tsx title="Smart Tab Alias"
+// Listen to data changes, update tab names
 async function updateTabAlias() {
   const pendingCount = await getPendingApprovalCount();
   const errorCount = await getErrorCount();
   
-  // 根据待处理数量更新审批标签
+  // Update approval tab based on pending count
   if (pendingCount > 0) {
-    await tabComponent.call("approval", `审批管理(${pendingCount})`);
+    await tabComponent.call("approval", `Approval Management (${pendingCount})`);
   } else {
-    await tabComponent.call("approval", "审批管理");
+    await tabComponent.call("approval", "Approval Management");
   }
   
-  // 根据错误状态更新系统标签
+  // Update system tab based on error status
   if (errorCount > 0) {
-    await tabComponent.call("system", `系统设置 ⚠️`);
+    await tabComponent.call("system", `System Settings ⚠️`);
   } else {
-    await tabComponent.call("system", "系统设置");
+    await tabComponent.call("system", "System Settings");
   }
 }
 
-// 定期更新或响应特定事件时更新
-setInterval(updateTabAlias, 30000); // 30秒更新一次
-``` 
+// Update periodically or when responding to specific events
+setInterval(updateTabAlias, 30000); // Update every 30 seconds
+```

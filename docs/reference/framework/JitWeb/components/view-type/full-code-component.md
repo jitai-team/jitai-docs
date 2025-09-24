@@ -1,28 +1,28 @@
 ---
 slug: full-code-component
 ---
-# 全代码组件
-全代码组件是JitAi开发框架中的通用自定义组件，支持开发者使用React和JavaScript编写完全自定义的组件实现。它提供完整的组件生命周期管理、事件发布订阅、变量管理和配置管理能力，同时集成错误边界保护确保组件渲染稳定性。
+# Full Code Component
+Full code component is a universal custom component in the JitAi development framework that supports developers using React and JavaScript to write completely custom component implementations. It provides complete component lifecycle management, event publishing and subscription, variable management, and configuration management capabilities, while integrating error boundary protection to ensure component rendering stability.
 
-全代码组件元素分层结构为Meta（components.Meta） → Type（components.BlankComponent） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建全代码组件实例元素。
+The full code component element has a hierarchical structure of Meta (components.Meta) → Type (components.BlankComponent) → Instance. Developers can quickly create full code component instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.BlankComponentType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `components.BlankComponentType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基础配置示例
+## Quick Start 
+### Basic Configuration Example
 ```tsx title="BlankComponent.tsx"
 import { Jit } from 'jit';
 import { Button, message } from 'antd';
 
-// 自定义渲染器 - React组件
+// Custom renderer - React component
 const Render = (props) => {
     const compIns = props.compIns;
 
     const handleClick = () => {
-        // 调用组件方法
+        // Call component method
         message.success(compIns.getData());
         
-        // 触发自定义事件
+        // Trigger custom event
         compIns.publishEvent('handleClickMe');
     };
 
@@ -35,13 +35,13 @@ const Render = (props) => {
     );
 };
 
-// 组件逻辑处理类
+// Component logic handling class
 export default class BlankComponent extends Jit.BaseComponent {
-    // 挂载渲染器
+    // Mount renderer
     Render = Render;
 
     /**
-     * 获取数据的自定义方法
+     * Custom method to get data
      */
     getData() {
         return 'Hello from BlankComponent!';
@@ -49,30 +49,30 @@ export default class BlankComponent extends Jit.BaseComponent {
 }
 ```
 
-### 配置属性说明
-| 属性名 | 类型 | 必填 | 默认值 | 说明 |
+### Configuration Properties
+| Property Name | Type | Required | Default Value | Description |
 |--------|------|------|--------|------|
-| name | string | 是 | - | 组件实例名称，页面内唯一 |
-| title | string | 否 | "" | 组件显示标题 |
-| showTitle | boolean | 否 | false | 是否显示组件标题 |
-| config.requireElements | array | 否 | [] | 组件依赖的元素配置 |
+| name | string | Yes | - | Component instance name, unique within page |
+| title | string | No | "" | Component display title |
+| showTitle | boolean | No | false | Whether to show component title |
+| config.requireElements | array | No | [] | Component dependent element configuration |
 
-## 变量
-全代码组件支持通过重写静态方法`getVariableList()`来定义组件变量，变量会自动初始化并绑定到组件实例。
+## Variables
+Full code components support defining component variables by overriding the static method `getVariableList()`. Variables are automatically initialized and bound to the component instance.
 
-```tsx title="定义组件变量"
+```tsx title="Define Component Variables"
 export default class BlankComponent extends Jit.BaseComponent {
     static getVariableList(config) {
         return [
             {
                 name: 'userInput',
-                title: '用户输入',
+                title: 'User Input',
                 dataType: 'Stext',
                 value: ''
             },
             {
                 name: 'counter', 
-                title: '计数器',
+                title: 'Counter',
                 dataType: 'Numeric',
                 value: 0
             }
@@ -81,25 +81,25 @@ export default class BlankComponent extends Jit.BaseComponent {
 }
 ```
 
-## 方法 
+## Methods 
 ### publishEvent
-发布自定义事件，支持页面或其他组件订阅。
+Publish custom events, supporting subscription by pages or other components.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| name | string | 是 | 事件名称 |
-| ex | Record\<string, any\> | 否 | 事件数据 |
+| name | string | Yes | Event name |
+| ex | Record\<string, any\> | No | Event data |
 
-#### 返回值
+#### Return Value
 Promise\<void\>
 
-#### 使用示例
-```tsx title="发布事件"
-// 发布简单事件
+#### Usage Example
+```tsx title="Publish Event"
+// Publish simple event
 this.publishEvent('dataChanged');
 
-// 发布带数据的事件
+// Publish event with data
 this.publishEvent('userSelected', {
     userId: 123,
     userName: 'Alice'
@@ -107,65 +107,65 @@ this.publishEvent('userSelected', {
 ```
 
 ### subscribeEvent
-订阅事件，接收其他组件或页面发布的事件。
+Subscribe to events, receiving events published by other components or pages.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| name | string | 是 | 事件名称 |
-| evtCb | (data: any) => Promise\<void\> \| void | 是 | 事件回调函数 |
-| unSubscribeExist | boolean | 否 | 是否取消已存在的订阅，默认true |
+| name | string | Yes | Event name |
+| evtCb | (data: any) => Promise\<void\> \| void | Yes | Event callback function |
+| unSubscribeExist | boolean | No | Whether to cancel existing subscription, default true |
 
-#### 返回值
-string - 订阅处理器ID
+#### Return Value
+string - Subscription handler ID
 
-#### 使用示例
-```tsx title="订阅事件"
-// 订阅事件
+#### Usage Example
+```tsx title="Subscribe to Event"
+// Subscribe to event
 const handlerId = this.subscribeEvent('dataChanged', async (data) => {
-    console.log('接收到数据变更:', data);
-    // 处理事件逻辑
+    console.log('Received data change:', data);
+    // Handle event logic
 });
 
-// 同步事件处理
+// Synchronous event handling
 this.subscribeEvent('userClicked', (data) => {
     this.setState({ selectedUser: data.userId });
 });
 ```
 
 ### unSubscribeEvent
-取消事件订阅。
+Cancel event subscription.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| id | string | 是 | 订阅处理器ID |
+| id | string | Yes | Subscription handler ID |
 
-#### 使用示例
-```tsx title="取消订阅"
+#### Usage Example
+```tsx title="Unsubscribe"
 const handlerId = this.subscribeEvent('myEvent', handler);
-// 取消订阅
+// Cancel subscription
 this.unSubscribeEvent(handlerId);
 ```
 
 ### setConfig
-更新组件配置。
+Update component configuration.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| next | Partial\<T & \{requireElements: requireElement[]\}\> | 是 | 新配置 |
-| clean | boolean | 否 | 是否完全替换配置，默认false |
+| next | Partial\<T & \{requireElements: requireElement[]\}\> | Yes | New configuration |
+| clean | boolean | No | Whether to completely replace configuration, default false |
 
-#### 使用示例
-```tsx title="更新配置"
-// 部分更新配置
+#### Usage Example
+```tsx title="Update Configuration"
+// Partial configuration update
 this.setConfig({
-    title: '新标题',
+    title: 'New Title',
     showTitle: true
 });
 
-// 完全替换配置
+// Complete configuration replacement
 this.setConfig({
     requireElements: [],
     customOption: 'value'
@@ -173,114 +173,114 @@ this.setConfig({
 ```
 
 ### newVariable
-创建新的数据类型变量实例。
+Create new data type variable instance.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| varConfig | DataTypeConfig | 是 | 变量配置对象 |
+| varConfig | DataTypeConfig | Yes | Variable configuration object |
 
-#### 使用示例
-```tsx title="创建变量"
+#### Usage Example
+```tsx title="Create Variable"
 const textVar = this.newVariable({
     name: 'dynamicText',
-    title: '动态文本',
+    title: 'Dynamic Text',
     dataType: 'Stext',
     value: 'initial value'
 });
 ```
 
 ### runCode
-在页面上下文中执行代码字符串。
+Execute code string in page context.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| code | string | 是 | 要执行的代码字符串 |
+| code | string | Yes | Code string to execute |
 
-#### 使用示例
-```tsx title="执行代码"
-// 执行简单表达式
+#### Usage Example
+```tsx title="Execute Code"
+// Execute simple expression
 const result = this.runCode('1 + 2');
 
-// 执行复杂逻辑
+// Execute complex logic
 this.runCode(`
     if (self.dataList.length > 0) {
-        self.showMessage('数据已加载');
+        self.showMessage('Data loaded');
     }
 `);
 ```
 
 ### getPermConfig
-获取组件的权限配置。
+Get component's permission configuration.
 
-#### 返回值
+#### Return Value
 Record\<string, any\> | undefined
 
-#### 使用示例
-```tsx title="权限检查"
+#### Usage Example
+```tsx title="Permission Check"
 const permConfig = this.getPermConfig();
 if (permConfig?.visible !== false) {
-    // 组件可见时的逻辑
+    // Logic when component is visible
 }
 ```
 
 ### bindApp
-绑定应用实例到组件。
+Bind application instance to component.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| app | App | 是 | 应用实例 |
+| app | App | Yes | Application instance |
 
-#### 使用示例
-```tsx title="绑定应用"
-// 手动绑定应用实例
+#### Usage Example
+```tsx title="Bind Application"
+// Manually bind application instance
 this.bindApp(app);
 ```
 
 ### bindPage
-绑定页面实例到组件，同时为组件变量绑定页面上下文。
+Bind page instance to component, while binding component variables to page context.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| page | BasePage | 是 | 页面实例 |
+| page | BasePage | Yes | Page instance |
 
-#### 使用示例
-```tsx title="绑定页面"
-// 手动绑定页面实例
+#### Usage Example
+```tsx title="Bind Page"
+// Manually bind page instance
 this.bindPage(page);
 ```
 
 ### getEventKey
-获取组件事件的唯一标识键。
+Get unique identifier key for component events.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| eventName | string | 是 | 事件名称 |
+| eventName | string | Yes | Event name |
 
-#### 返回值
-string - 事件唯一标识键
+#### Return Value
+string - Event unique identifier key
 
-#### 使用示例
-```tsx title="获取事件键"
+#### Usage Example
+```tsx title="Get Event Key"
 const eventKey = this.getEventKey('dataChanged');
-// 返回格式: "{uuid}.{componentName}.{eventName}"
+// Return format: "{uuid}.{componentName}.{eventName}"
 ```
 
 ### initVariables
-根据变量配置列表初始化组件变量。
+Initialize component variables based on variable configuration list.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| dataTypeList | BaseDataType[] | 是 | 数据类型配置列表 |
+| dataTypeList | BaseDataType[] | Yes | Data type configuration list |
 
-#### 使用示例
-```tsx title="初始化变量"
-// 通常在构造函数中自动调用
+#### Usage Example
+```tsx title="Initialize Variables"
+// Usually called automatically in constructor
 const variables = [
     { name: 'userInput', dataType: 'Stext', value: '' }
 ];
@@ -288,102 +288,102 @@ this.initVariables(variables);
 ```
 
 ### destroy
-销毁组件，清理资源和事件监听器。
+Destroy component, clean up resources and event listeners.
 
-#### 使用示例
-```tsx title="组件销毁"
-// 组件卸载时自动调用
+#### Usage Example
+```tsx title="Component Destruction"
+// Called automatically when component unmounts
 componentWillUnmount() {
     this.destroy();
 }
 ```
 
-## 属性
+## Properties
 ### name
-组件实例名称。
+Component instance name.
 
-- **类型**: string
-- **只读**: 是
+- **Type**: string
+- **Read-only**: Yes
 
 ### title
-组件显示标题。
+Component display title.
 
-- **类型**: string  
-- **只读**: 否
+- **Type**: string  
+- **Read-only**: No
 
 ### config
-组件配置对象。
+Component configuration object.
 
-- **类型**: T & \{requireElements: requireElement[]\}
-- **只读**: 否
+- **Type**: T & \{requireElements: requireElement[]\}
+- **Read-only**: No
 
 ### showTitle
-是否显示组件标题。
+Whether to show component title.
 
-- **类型**: boolean
-- **只读**: 否
+- **Type**: boolean
+- **Read-only**: No
 
 ### type
-组件类型标识。
+Component type identifier.
 
-- **类型**: string
-- **只读**: 是
+- **Type**: string
+- **Read-only**: Yes
 
 ### app
-当前应用实例。
+Current application instance.
 
-- **类型**: App
-- **只读**: 是
+- **Type**: App
+- **Read-only**: Yes
 
 ### page
-所属页面实例。
+Associated page instance.
 
-- **类型**: BasePage
-- **只读**: 是
+- **Type**: BasePage
+- **Read-only**: Yes
 
 ### compType
-组件类型枚举值。
+Component type enumeration value.
 
-- **类型**: COMPONENT_TYPE
-- **只读**: 是
-- **可能值**: NORMAL, LAYOUT, REFERENCE
+- **Type**: COMPONENT_TYPE
+- **Read-only**: Yes
+- **Possible Values**: NORMAL, LAYOUT, REFERENCE
 
 ### fullName
-组件的完整名称标识。
+Component's complete name identifier.
 
-- **类型**: string
-- **只读**: 是
+- **Type**: string
+- **Read-only**: Yes
 
 ### dataTypeList
-组件的数据类型配置列表。
+Component's data type configuration list.
 
-- **类型**: BaseDataType[]
-- **只读**: 是
+- **Type**: BaseDataType[]
+- **Read-only**: Yes
 
-## 事件
-全代码组件支持通过重写静态方法`getEventList()`来定义组件支持的事件类型。
+## Events
+Full code components support defining component event types by overriding the static method `getEventList()`.
 
-```tsx title="定义组件事件"
+```tsx title="Define Component Events"
 export default class BlankComponent extends Jit.BaseComponent {
     static getEventList() {
         return [
             {
                 name: 'dataLoaded',
-                title: '数据加载完成'
+                title: 'Data Loaded'
             },
             {
                 name: 'userAction',
-                title: '用户操作'
+                title: 'User Action'
             }
         ];
     }
 
-    // 组件方法定义
+    // Component method definition
     static getFuncList() {
         return [
             {
                 name: 'getData',
-                title: '获取数据',
+                title: 'Get Data',
                 args: [],
                 returnType: 'string'
             }
@@ -392,49 +392,49 @@ export default class BlankComponent extends Jit.BaseComponent {
 }
 ```
 
-## 高级特性
-### 错误边界保护
-全代码组件自动集成React错误边界，当自定义代码发生渲染错误时显示友好的错误提示。
+## Advanced Features
+### Error Boundary Protection
+Full code components automatically integrate React error boundaries, displaying friendly error messages when custom code encounters rendering errors.
 
-```tsx title="错误处理"
-// 组件渲染错误时自动显示
-<Alert.ErrorBoundary message="自定义代码渲染失败">
+```tsx title="Error Handling"
+// Automatically displayed when component rendering errors occur
+<Alert.ErrorBoundary message="Custom code rendering failed">
     <compIns.Render compIns={compIns} />
 </Alert.ErrorBoundary>
 ```
 
-### 生命周期集成
-全代码组件完全集成到极态平台的组件生命周期管理中。
+### Lifecycle Integration
+Full code components are fully integrated into the JitAi platform's component lifecycle management.
 
-```tsx title="生命周期处理"
+```tsx title="Lifecycle Handling"
 export default class BlankComponent extends Jit.BaseComponent {
     constructor(componentInfo) {
         super(componentInfo);
-        // 组件初始化逻辑
+        // Component initialization logic
     }
 
     componentDidMount() {
-        // 组件挂载后的逻辑
+        // Logic after component mounting
         this.bindApp(this.app);
         this.bindPage(this.page);
     }
 
     componentWillUnmount() {
-        // 组件卸载前的清理
+        // Cleanup before component unmounting
         this.destroy();
     }
 }
 ```
 
-### 权限控制集成
-全代码组件支持极态平台的权限控制体系。
+### Permission Control Integration
+Full code components support the JitAi platform's permission control system.
 
-```tsx title="权限控制"
+```tsx title="Permission Control"
 const Render = (props) => {
     const { compIns } = props;
     const permConfig = compIns.getPermConfig();
     
-    // 根据权限配置控制显示
+    // Control display based on permission configuration
     if (permConfig?.visible === false) {
         return null;
     }
@@ -445,7 +445,7 @@ const Render = (props) => {
                 disabled={permConfig?.editable === false}
                 onClick={compIns.handleAction}
             >
-                操作按钮
+                Action Button
             </Button>
         </div>
     );

@@ -1,172 +1,172 @@
 ---
 slug: blank-portal
 ---
-# 空白门户
-空白门户是最小化的门户实现，提供基础的页面容器和路由框架。它不包含内置导航体系，完全由开发者自定义界面结构，适用于高度定制化的应用界面和特殊展示需求。空白门户仅支持前端实现，通过自定义渲染逻辑实现纯净的门户基础。
+# Blank Portal
+Blank Portal is a minimal portal implementation that provides basic page containers and routing framework. It does not include built-in navigation systems, allowing developers to completely customize the interface structure, suitable for highly customized application interfaces and special display requirements. Blank Portal only supports frontend implementation, achieving a clean portal foundation through custom rendering logic.
 
-空白门户元素分层结构为Meta（shells.Meta） → Type（shells.BlankType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建空白门户实例元素。
+The Blank Portal element hierarchy is Meta (shells.Meta) → Type (shells.BlankType) → Instance. Developers can quickly create Blank Portal instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的shells.BlankType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official shells.BlankType element provided by JitAI in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+## Quick Start
+### Create Instance Element
+#### Directory Structure
+```text title="Recommended Directory Structure"
 shells/
 └── MyBlankShell/
     ├── e.json
     └── feature.json
 ```
 
-#### e.json文件
-```json title="基础配置"
+#### e.json File
+```json title="Basic Configuration"
 {
   "type": "shells.BlankType",
-  "title": "我的空白门户",
+  "title": "My Blank Portal",
   "default": false,
   "frontBundleEntry": "./feature.json"
 }
 ```
 
-#### feature.json文件
-```json title="菜单配置"
+#### feature.json File
+```json title="Menu Configuration"
 {
   "menus": [
     {
       "name": "dashboard",
-      "title": "仪表板",
+      "title": "Dashboard",
       "page": "pages.Dashboard"
     },
     {
       "name": "settings", 
-      "title": "设置",
+      "title": "Settings",
       "page": "pages.Settings"
     }
   ]
 }
 ```
 
-#### 调用示例
-```typescript title="获取门户实例"
+#### Usage Example
+```typescript title="Get Portal Instance"
 import { getRuntimeApp } from 'jit';
 
-// 获取门户元素
+// Get portal element
 const app = getRuntimeApp();
 const shell = await app.getElement("shells.MyBlankShell");
 
-// 访问门户属性
-console.log(shell.title);  // "我的空白门户"
+// Access portal properties
+console.log(shell.title);  // "My Blank Portal"
 console.log(shell.routePath);  // "/MyBlankShell"
-console.log(shell.menuTree);  // 菜单列表
+console.log(shell.menuTree);  // Menu list
 
-// 获取可用菜单
+// Get available menus
 const availableMenus = shell.getAvailableMenu();
-console.log(availableMenus);  // 过滤后的菜单列表
+console.log(availableMenus);  // Filtered menu list
 ```
 
-## 元素配置
-### e.json配置
-| 配置项 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| type | string | string | 是 | 固定值：`shells.BlankType` |
-| title | string | string | 是 | 门户标题 |
-| default | boolean | boolean | 否 | 是否为使用者门户，默认false |
-| frontBundleEntry | string | string | 是 | 前端配置入口，通常为`./feature.json` |
-| hideInRole | boolean | boolean | 否 | 是否在角色中隐藏，默认false |
-| status | number | number | 否 | 门户状态，0表示正常 |
+## Element Configuration
+### e.json Configuration
+| Configuration | Type | Native Type | Required | Description |
+|---------------|------|-------------|----------|-------------|
+| type | string | string | Yes | Fixed value: `shells.BlankType` |
+| title | string | string | Yes | Portal title |
+| default | boolean | boolean | No | Whether it's the user portal, default false |
+| frontBundleEntry | string | string | Yes | Frontend configuration entry, usually `./feature.json` |
+| hideInRole | boolean | boolean | No | Whether to hide in role, default false |
+| status | number | number | No | Portal status, 0 indicates normal |
 
-### feature.json配置
-| 配置项 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| menus | array | ShellMenu[] | 是 | 菜单配置数组 |
-| aiConfig | object | object | 否 | AI助理配置 |
+### feature.json Configuration
+| Configuration | Type | Native Type | Required | Description |
+|---------------|------|-------------|----------|-------------|
+| menus | array | ShellMenu[] | Yes | Menu configuration array |
+| aiConfig | object | object | No | AI assistant configuration |
 
-#### 菜单项配置
-| 配置项 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| name | string | string | 是 | 菜单唯一标识 |
-| title | string | string | 是 | 菜单显示名称 |
-| page | string | string | 否 | PC端页面fullName |
-| mobilePage | string | string | 否 | 移动端页面fullName |
-| icon | string | string | 否 | 菜单图标 |
-| hide | boolean | boolean | 否 | 是否隐藏菜单 |
-| children | array | ShellMenu[] | 否 | 子菜单配置 |
-| nodeType | string | string | 否 | 节点类型，可选值：group |
+#### Menu Item Configuration
+| Configuration | Type | Native Type | Required | Description |
+|---------------|------|-------------|----------|-------------|
+| name | string | string | Yes | Menu unique identifier |
+| title | string | string | Yes | Menu display name |
+| page | string | string | No | PC page fullName |
+| mobilePage | string | string | No | Mobile page fullName |
+| icon | string | string | No | Menu icon |
+| hide | boolean | boolean | No | Whether to hide menu |
+| children | array | ShellMenu[] | No | Submenu configuration |
+| nodeType | string | string | No | Node type, optional values: group |
 
-## 方法 
+## Methods
 ### getAvailableMenu
-获取过滤后的可用菜单列表，会过滤掉无权限、隐藏、无页面或页面已删除的菜单。
+Get filtered available menu list, filtering out menus without permissions, hidden menus, menus without pages, or menus with deleted pages.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| menuTree | array | ShellMenu[] | 否 | 要过滤的菜单树，默认使用当前门户的菜单 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| menuTree | array | ShellMenu[] | No | Menu tree to filter, defaults to current portal's menu |
 
-#### 返回值
-返回过滤后的菜单列表，类型为ShellMenu[]。
+#### Return Value
+Returns filtered menu list, type ShellMenu[].
 
-#### 使用示例
-```typescript title="获取可用菜单"
-// 获取默认可用菜单
+#### Usage Example
+```typescript title="Get Available Menus"
+// Get default available menus
 const availableMenus = shell.getAvailableMenu();
 
-// 获取指定菜单树的可用菜单
+// Get available menus for specified menu tree
 const customMenus = [
-    {name: "page1", title: "页面1", page: "pages.Page1"},
-    {name: "page2", title: "页面2", page: "pages.Page2", hide: true}
+    {name: "page1", title: "Page 1", page: "pages.Page1"},
+    {name: "page2", title: "Page 2", page: "pages.Page2", hide: true}
 ];
 const filteredMenus = shell.getAvailableMenu(customMenus);
 ```
 
 ### getPermMenu
-获取当前用户有权限访问的菜单列表。
+Get menu list that current user has permission to access.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| menuTree | array | ShellMenu[] | 否 | 要检查权限的菜单树，默认使用当前门户的菜单 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| menuTree | array | ShellMenu[] | No | Menu tree to check permissions, defaults to current portal's menu |
 
-#### 返回值
-返回有权限的菜单列表，类型为ShellMenu[]。
+#### Return Value
+Returns menu list with permissions, type ShellMenu[].
 
-#### 使用示例
-```typescript title="获取权限菜单"
-// 获取当前用户有权限的菜单
+#### Usage Example
+```typescript title="Get Permission Menus"
+// Get menus with permissions for current user
 const permMenus = shell.getPermMenu();
 
-// 检查指定菜单的权限
+// Check permissions for specified menus
 const customMenus = [
-    {name: "admin", title: "管理页面", page: "pages.Admin"},
-    {name: "user", title: "用户页面", page: "pages.User"}
+    {name: "admin", title: "Admin Page", page: "pages.Admin"},
+    {name: "user", title: "User Page", page: "pages.User"}
 ];
 const allowedMenus = shell.getPermMenu(customMenus);
 ```
 
 ### flatFeatureMenuItem
-将层级菜单结构平铺为一维数组。
+Flatten hierarchical menu structure into a one-dimensional array.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| menus | array | ShellMenu[] | 否 | 要平铺的菜单树，默认使用当前门户的菜单 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| menus | array | ShellMenu[] | No | Menu tree to flatten, defaults to current portal's menu |
 
-#### 返回值
-返回平铺后的菜单列表，类型为ShellMenu[]。
+#### Return Value
+Returns flattened menu list, type ShellMenu[].
 
-#### 使用示例
-```typescript title="平铺菜单结构"
-// 平铺默认菜单
+#### Usage Example
+```typescript title="Flatten Menu Structure"
+// Flatten default menu
 const flatMenus = shell.flatFeatureMenuItem();
 
-// 平铺指定菜单
+// Flatten specified menu
 const nestedMenus = [
     {
         name: "group1",
-        title: "分组1",
+        title: "Group 1",
         nodeType: "group",
         children: [
-            {name: "page1", title: "页面1", page: "pages.Page1"},
-            {name: "page2", title: "页面2", page: "pages.Page2"}
+            {name: "page1", title: "Page 1", page: "pages.Page1"},
+            {name: "page2", title: "Page 2", page: "pages.Page2"}
         ]
     }
 ];
@@ -174,68 +174,68 @@ const flatResult = shell.flatFeatureMenuItem(nestedMenus);
 ```
 
 ### mergeMenus
-合并多个菜单列表，前面的菜单会覆盖后面同名的菜单。
+Merge multiple menu lists, with earlier menus overriding later menus with the same name.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| menusLists | array | ShellMenu[][] | 是 | 要合并的菜单列表数组 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| menusLists | array | ShellMenu[][] | Yes | Array of menu lists to merge |
 
-#### 返回值
-返回合并后的菜单列表，类型为ShellMenu[]。
+#### Return Value
+Returns merged menu list, type ShellMenu[].
 
-#### 使用示例
-```typescript title="合并菜单列表"
+#### Usage Example
+```typescript title="Merge Menu Lists"
 const menuList1 = [
-    {name: "home", title: "首页", page: "pages.Home"}
+    {name: "home", title: "Home", page: "pages.Home"}
 ];
 const menuList2 = [
-    {name: "about", title: "关于", page: "pages.About"}
+    {name: "about", title: "About", page: "pages.About"}
 ];
 const menuList3 = [
-    {name: "home", title: "主页", page: "pages.NewHome"}  // 会覆盖第一个
+    {name: "home", title: "Homepage", page: "pages.NewHome"}  // Will override the first one
 ];
 
 const mergedMenus = shell.mergeMenus([menuList1, menuList2, menuList3]);
 ```
 
 ### setBackUrl
-设置门户的返回URL。
+Set the portal's return URL.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| backUrl | string | string | 是 | 返回URL地址 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| backUrl | string | string | Yes | Return URL address |
 
-#### 返回值
-无返回值（void）。
+#### Return Value
+No return value (void).
 
-#### 使用示例
-```typescript title="设置返回URL"
-// 设置返回到主页
+#### Usage Example
+```typescript title="Set Return URL"
+// Set return to home page
 shell.setBackUrl("/home");
 
-// 设置返回到上级页面
+// Set return to parent page
 shell.setBackUrl("/parent");
 ```
 
 ### setExtendsFeature
-设置继承的菜单特性配置。
+Set inherited menu feature configuration.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| feature | array | ShellFeature[] | 是 | 继承特性配置列表 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| feature | array | ShellFeature[] | Yes | Inherited feature configuration list |
 
-#### 返回值
-无返回值（void）。
+#### Return Value
+No return value (void).
 
-#### 使用示例
-```typescript title="设置继承特性"
+#### Usage Example
+```typescript title="Set Inherited Features"
 const extendsConfig = [
     {
         menus: [
-            {name: "inherited1", title: "继承页面1", page: "pages.Inherited1"}
+            {name: "inherited1", title: "Inherited Page 1", page: "pages.Inherited1"}
         ],
         aiConfig: {useAi: 1, aiAssistant: "aiassistants.DefaultAI"}
     }
@@ -244,21 +244,21 @@ shell.setExtendsFeature(extendsConfig);
 ```
 
 ### setOriginFeature
-设置原始菜单特性配置。
+Set original menu feature configuration.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| feature | object | ShellFeature | 是 | 原始特性配置 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| feature | object | ShellFeature | Yes | Original feature configuration |
 
-#### 返回值
-无返回值（void）。
+#### Return Value
+No return value (void).
 
-#### 使用示例
-```typescript title="设置原始特性"
+#### Usage Example
+```typescript title="Set Original Features"
 const originConfig = {
     menus: [
-        {name: "origin1", title: "原始页面1", page: "pages.Origin1"}
+        {name: "origin1", title: "Original Page 1", page: "pages.Origin1"}
     ],
     aiConfig: {useAi: 0}
 };
@@ -266,93 +266,93 @@ shell.setOriginFeature(originConfig);
 ```
 
 ### getPermConfig
-获取指定角色的权限配置。
+Get permission configuration for specified role.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| roleName | string | string | 是 | 角色名称 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| roleName | string | string | Yes | Role name |
 
-#### 返回值
-返回Promise，无具体返回值，执行后会更新门户的permConfig属性。
+#### Return Value
+Returns Promise, no specific return value, updates portal's permConfig property after execution.
 
-#### 使用示例
-```typescript title="获取角色权限"
-// 获取管理员角色权限
+#### Usage Example
+```typescript title="Get Role Permissions"
+// Get admin role permissions
 await shell.getPermConfig("roles.Admin");
 
-// 获取普通用户权限
+// Get regular user permissions
 await shell.getPermConfig("roles.User");
 ```
 
-## 属性
+## Properties
 ### routePath
-门户的路由路径，只读属性。格式为`/{门户名称}`。
+Portal's route path, read-only property. Format: `/{portal_name}`.
 
 ### menuTree
-合并后的菜单树结构，包含所有可访问的菜单项。
+Merged menu tree structure, containing all accessible menu items.
 
 ### permConfig
-当前的权限配置，可能为字符串"all"或权限对象。
+Current permission configuration, may be string "all" or permission object.
 
 ### shellConfig
-门户的自定义配置对象。
+Portal's custom configuration object.
 
 ### backUrl
-返回URL地址，可读写属性。
+Return URL address, read-write property.
 
 ### originMenus
-原始菜单配置，只读属性，来自originFeature。
+Original menu configuration, read-only property, from originFeature.
 
 ### extendsMenus
-继承的菜单配置列表，只读属性，来自extendsFeature。
+Inherited menu configuration list, read-only property, from extendsFeature.
 
 ### allowAccess
-是否允许访问当前门户，只读属性，基于权限配置计算。
+Whether access to current portal is allowed, read-only property, calculated based on permission configuration.
 
-## 高级特性
-### 自定义渲染逻辑
-空白门户通过自定义shellRender实现特殊的渲染需求：
+## Advanced Features
+### Custom Rendering Logic
+Blank Portal implements special rendering requirements through custom shellRender:
 
-```json title="自定义渲染配置"
+```json title="Custom Rendering Configuration"
 {
   "type": "shells.BlankType",
-  "title": "自定义渲染门户",
+  "title": "Custom Rendering Portal",
   "frontBundleEntry": "./custom-render.json"
 }
 ```
 
-### 菜单权限控制
-结合角色管理实现精细化菜单权限控制：
+### Menu Permission Control
+Implement fine-grained menu permission control combined with role management:
 
-```typescript title="权限控制示例"
-// 检查门户访问权限
+```typescript title="Permission Control Example"
+// Check portal access permissions
 if (shell.allowAccess) {
-    // 获取当前用户可见菜单
+    // Get current user's visible menus
     const visibleMenus = shell.getAvailableMenu();
     
-    // 进一步过滤权限菜单
+    // Further filter permission menus
     const permMenus = shell.getPermMenu(visibleMenus);
     
-    console.log(`用户可访问菜单数量: ${permMenus.length}`);
+    console.log(`User accessible menu count: ${permMenus.length}`);
 }
 ```
 
-### 菜单继承与合并
-利用菜单继承机制实现基础菜单的扩展：
+### Menu Inheritance and Merging
+Utilize menu inheritance mechanism to extend base menus:
 
-```typescript title="菜单继承示例"
-// 设置基础菜单
+```typescript title="Menu Inheritance Example"
+// Set base menus
 const baseMenus = [
-    {name: "home", title: "首页", page: "pages.Home"},
-    {name: "profile", title: "个人中心", page: "pages.Profile"}
+    {name: "home", title: "Home", page: "pages.Home"},
+    {name: "profile", title: "Profile", page: "pages.Profile"}
 ];
 
-// 设置扩展菜单
+// Set extended menus
 const extendMenus = [
-    {name: "admin", title: "管理面板", page: "pages.Admin"}
+    {name: "admin", title: "Admin Panel", page: "pages.Admin"}
 ];
 
-// 合并菜单
+// Merge menus
 const finalMenus = shell.mergeMenus([baseMenus, extendMenus]);
 ``` 

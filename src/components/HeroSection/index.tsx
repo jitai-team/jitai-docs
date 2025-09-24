@@ -69,8 +69,23 @@ const HeroSection: React.FC<{ currentLocale: string }> = ({ currentLocale }) => 
   const [isVisible, setIsVisible] = useState(false);
   const [animateElements, setAnimateElements] = useState(false);
   const [showTypewriter, setShowTypewriter] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const content = currentLocale === 'zh' ? CONTENT_ZH : CONTENT_EN;
+
+  // 检测移动端
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, []);
 
   // 延迟显示，让页面先加载完成
   useEffect(() => {
@@ -152,9 +167,9 @@ const HeroSection: React.FC<{ currentLocale: string }> = ({ currentLocale }) => 
 
           {/* 行动按钮区域 */}
           <div className={`${styles.heroButtons} ${animateElements ? styles.buttonsAnimate : ''}`}>
-            <a className={styles.primaryButton} href="https://demo.jit.pro" target="_blank">
+            <a className={styles.primaryButton} href={isMobile ? "./docs/tutorial" : "https://demo.jit.pro"} target="_blank">
               <span className={styles.buttonText}>
-                {content.buttonDemo}
+                {isMobile ? content.buttonGetStart : content.buttonDemo}
               </span>
               <span className={styles.buttonIcon}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

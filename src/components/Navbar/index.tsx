@@ -108,6 +108,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
 
         {/* 右侧区域：语言切换器和 Try Online 按钮 */}
         <div className={styles.rightSection}>
+          <LanguageSwitcher className={styles.languageSwitcher} />
           <button
             className={styles.tryOnlineButton}
             onClick={() => handleNavClick(CONTENT.tryOnlineButton)}
@@ -115,7 +116,6 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
           >
             {CONTENT.tryOnlineButton.label}
           </button>
-          <LanguageSwitcher className={styles.languageSwitcher} />
         </div>
 
         {/* 移动端汉堡菜单按钮 */}

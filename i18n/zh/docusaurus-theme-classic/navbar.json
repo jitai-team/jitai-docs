@@ -16,8 +16,12 @@
     "description": "Navbar item with label Open Source"
   },
   "item.label.Community": {
-    "message": "社区论坛",
+    "message": "社区",
     "description": "Navbar item with label Community"
+  },
+  "item.label.Try Online": {
+    "message": "在线试用",
+    "description": "Navbar item with label Try Online"
   },
   "item.label.GitHub": {
     "message": "GitHub",

@@ -3,7 +3,7 @@ sidebar_position: 0
 ---
 
 # JitORM Overview
-JitORM (JitAi Object-Relational Mapping) is an object-relational mapping framework composed of [Database Elements](./database), [Data Type Elements](./data-types), and [Model Elements](./data-models) as core components, while also providing auxiliary data query and operation tools such as [Q Expressions](./q-expressions) and [TQL](./TQL).
+JitORM (JitAi Object-Relational Mapping) is an object-relational mapping framework composed of [Database Elements](/docs/reference/framework/JitORM/database), [Data Type Elements](/docs/reference/framework/JitORM/data-types), and [Model Elements](/docs/reference/framework/JitORM/data-models) as core components, while also providing auxiliary data query and operation tools such as [Q Expressions](/docs/reference/framework/JitORM/q-expressions) and [TQL](/docs/reference/framework/JitORM/TQL).
 
 ## Database
 Database elements encapsulate extensive technical implementations for database integration, automatically managing database connections, supporting the following multiple databases:

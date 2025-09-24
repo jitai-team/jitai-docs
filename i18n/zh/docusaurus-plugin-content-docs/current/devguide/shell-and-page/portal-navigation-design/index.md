@@ -17,14 +17,14 @@ JitAi会为每个新创建的应用创建三个内置的门户：开发者门户
 以开发者门户为例，用户在任意门户中的左上角都可以进行门户切换操作。
 
 ### 开发者门户 {#developer-portal} 
-开发者门户是给应用开发者使用的，开发者进入开发者门户后即可使用[JitAi开发工具](../../development-tool-and-publish-service/jitai-visual-development-tools)进行应用开发工作，例如给不同应用角色配置可访问的门户列表、搭建系统功能、配置应用信息等。
+开发者门户是给应用开发者使用的，开发者进入开发者门户后即可使用[JitAi开发工具](/docs/devguide/development-tool-and-publish-service/jitai-visual-development-tools)进行应用开发工作，例如给不同应用角色配置可访问的门户列表、搭建系统功能、配置应用信息等。
 
 除了开发者门户之外，其它所有门户的导航菜单都是由应用开发者在开发者门户中进行配置的。
 
 ### 管理者门户 {#admin-portal} 
 拥有应用管理员角色的用户可以进入管理者门户对应用进行管理，比如管理组织架构、组织架构角色及其成员。开发者也可以对管理者门户进行修改。
 
-每个应用在创建时会自动创建一个管理员账号，初始用户名：`admin123`，初始密码：`admin123`，建议开发者登录后在个人[基本信息](../../development-tool-and-publish-service/jitai-visual-development-tools#personal-center)中修改。
+每个应用在创建时会自动创建一个管理员账号，初始用户名：`admin123`，初始密码：`admin123`，建议开发者登录后在个人[基本信息](/docs/devguide/development-tool-and-publish-service/jitai-visual-development-tools#personal-center)中修改。
 
 :::tip 组织架构角色与应用角色
 组织架构角色与用户在企业组织架构中的岗位相对应，而JitAi应用中的的`应用角色`则代表用户在应用系统中的权限。组织架构角色与应用角色类似但并无严格对照关系，一个普通员工也可以被赋予应用管理员的角色，管理一个应用系统。
@@ -118,7 +118,7 @@ SSR(Server-Side Rendering，服务端渲染)门户用于提升首屏加载性能
 开发者可以展开菜单项右侧的`更多`按钮，点击`页面变量赋值`按钮，在弹窗中为页面变量赋值。
 
 :::warning
-开发者需要在页面中声明[页面变量](../component-based-page-development#page-variables)，页面没有声明变量时则无法在门户中设置页面变量赋值。
+开发者需要在页面中声明[页面变量](/docs/devguide/shell-and-page/component-based-page-development#page-variables)，页面没有声明变量时则无法在门户中设置页面变量赋值。
 :::
 
 ### 重写菜单页面 {#rewrite-menu-page}
@@ -160,7 +160,7 @@ SSR(Server-Side Rendering，服务端渲染)门户用于提升首屏加载性能
 当应用包含多个门户时，开发者可以在`布局设计`中设置顺序值，从而调整每个门户在门户切换菜单中的显示顺序。
 
 ## 启用或关闭常用功能入口 {#enable-disable-common-function-entries}
-每个新建的门户默认都会有一些常用功能入口：发起申请、待办中心、消息中心、个人中心、新建功能（支持简易模式下新建功能模块，开发能力弱于[可视化开发工具](../../development-tool-and-publish-service/jitai-visual-development-tools)）。以上入口支持在`布局设计`中启用或禁用。
+每个新建的门户默认都会有一些常用功能入口：发起申请、待办中心、消息中心、个人中心、新建功能（支持简易模式下新建功能模块，开发能力弱于[可视化开发工具](/docs/devguide/development-tool-and-publish-service/jitai-visual-development-tools)）。以上入口支持在`布局设计`中启用或禁用。
 
 ![门户常用功能入口](./imgs/portal-common-function-entry.png)
 
@@ -176,18 +176,18 @@ SSR(Server-Side Rendering，服务端渲染)门户用于提升首屏加载性能
 ![发起申请/待办/消息中心入口](./imgs/initiate-application-todo-message-center-entry.gif)
 
 ### 个人中心入口 {#personal-center-entry}
-当开发者开启`个人中心`入口时，用户在访问门户时可以查看个人基本信息以及修改昵称、密码，也可以切换[组织架构](../../user-and-permission/organizational-structure)、退出登录。
+当开发者开启`个人中心`入口时，用户在访问门户时可以查看个人基本信息以及修改昵称、密码，也可以切换[组织架构](/docs/devguide/user-and-permission/organizational-structure)、退出登录。
 
 ![个人中心功能](./imgs/personal-center-functions.gif)
 
 ## 在门户中集成AI助理 {#using-ai-assistant-in-portal}
-JitAi支持在门户中直接集成[AI助理](../../ai-assistant/create-ai-assistant)，用户在访问门户时可以与AI助理进行交互。这里做概括性介绍，详细内容请参考[在门户中集成AI助理](../../using-ai-in-portals-and-pages/using-ai-assistants-in-portals)。
+JitAi支持在门户中直接集成[AI助理](/docs/devguide/ai-assistant/create-ai-assistant)，用户在访问门户时可以与AI助理进行交互。这里做概括性介绍，详细内容请参考[在门户中集成AI助理](/docs/devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals)。
 
 ![门户集成AI助理](./imgs/portal-integrate-ai-assistant.gif)
 
-开发者在门户配置界面中点击`AI助理`页签，在配置界面中打开开关并选择一个[AI助理](../../ai-assistant/create-ai-assistant)，即可在门户中集成AI助理。
+开发者在门户配置界面中点击`AI助理`页签，在配置界面中打开开关并选择一个[AI助理](/docs/devguide/ai-assistant/create-ai-assistant)，即可在门户中集成AI助理。
 
 ![AI助理在门户中的效果](./imgs/ai-assistant-effect-in-portal.png)
 
-当用户访问开启了[AI助理](../../ai-assistant/create-ai-assistant)的门户时，可以看到”AI助理“导航菜单，点击即可打开AI助理对话框并与其对话。
+当用户访问开启了[AI助理](/docs/devguide/ai-assistant/create-ai-assistant)的门户时，可以看到”AI助理“导航菜单，点击即可打开AI助理对话框并与其对话。
 

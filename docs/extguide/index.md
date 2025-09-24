@@ -16,22 +16,22 @@ Framework extensions are designed to solve these problems, enabling you to build
 
 The prerequisite for developers to extend the JitAi development framework is a deep understanding of the specifications in JAAP (JitAi AI Application Protocol), especially the concepts of Meta, Type, and Instance elements and the relationships between them. If you need to override and rewrite the official framework, you also need to understand the principles of inheritance and overriding.
 
-[Click here to learn JAAP](../reference/runtime-platform/JAAP)
+[Click here to learn JAAP](reference/runtime-platform/JAAP)
 
 ## Problem-Oriented Guide
 
 | What You Want to Achieve | Related Documentation |
 |-------------|----------|
-| Add a custom chart component that's not available in JitAi | [Extend Your Own UI Component Type Elements](add-frontend-components) |
-| Make my custom components configurable through drag-and-drop interface | [Develop Visual Editors for UI Component Type Elements](develop-frontend-component-visual-editor) |
-| Integrate third-party services like Slack bots or IoT devices | [Extend Your Own Element Families](extend-element-family-classes) |
-| Create user-friendly configuration panels for my backend integrations | [Develop Visual Editors for Backend Type Elements](develop-backend-element-visual-editor) |
-| Build custom page templates with specific layouts and behaviors | [Extend Your Own Page Type and Editor](extend-page-type-editor) |
-| Connect to proprietary databases or data sources | [Extend Your Own Database Type Elements](extend-database-type-elements) |
-| Work with custom data formats or business objects | [Extend Your Own Data Model Type Elements](extend-data-model-type-elements) |
-| Integrate specialized AI models or custom LLM workflows | [Extend Your Own AI Agent Type Elements](extend-ai-agent-type-elements) |
-| Create domain-specific AI assistants for your business | [Extend Your Own AI Assistant Type Elements](extend-ai-assistant-type-elements) |
-| Add support for regional payment gateways or custom billing | [Extend Your Own Payment Type Elements](extend-payment-type-elements) |
+| Add a custom chart component that's not available in JitAi | [Extend Your Own UI Component Type Elements](extguide/add-frontend-components) |
+| Make my custom components configurable through drag-and-drop interface | [Develop Visual Editors for UI Component Type Elements](extguide/develop-frontend-component-visual-editor) |
+| Integrate third-party services like Slack bots or IoT devices | [Extend Your Own Element Families](extguide/extend-element-family-classes) |
+| Create user-friendly configuration panels for my backend integrations | [Develop Visual Editors for Backend Type Elements](extguide/develop-backend-element-visual-editor) |
+| Build custom page templates with specific layouts and behaviors | [Extend Your Own Page Type and Editor](extguide/extend-page-type-editor) |
+| Connect to proprietary databases or data sources | [Extend Your Own Database Type Elements](extguide/extend-database-type-elements) |
+| Work with custom data formats or business objects | [Extend Your Own Data Model Type Elements](extguide/extend-data-model-type-elements) |
+| Integrate specialized AI models or custom LLM workflows | [Extend Your Own AI Agent Type Elements](extguide/extend-ai-agent-type-elements) |
+| Create domain-specific AI assistants for your business | [Extend Your Own AI Assistant Type Elements](extguide/extend-ai-assistant-type-elements) |
+| Add support for regional payment gateways or custom billing | [Extend Your Own Payment Type Elements](extguide/extend-payment-type-elements) |
 
 ## Extension Types
 

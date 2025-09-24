@@ -6,8 +6,8 @@
 
 /* 切换按钮 - 模仿 Ant Design 样式 */
 .switchButton {
-  background: #ffffff;
-  border: 1px solid #d9d9d9;
+  background: transparent;
+  border: none;
   cursor: pointer;
   padding: 4px 8px;
   border-radius: 6px;
@@ -19,7 +19,7 @@
   justify-content: center;
   gap: 6px;
   min-width: 32px;
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
+  /* box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02); */
 }
 
 .switchButton:hover {

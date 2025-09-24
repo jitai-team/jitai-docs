@@ -2,7 +2,6 @@
   "label": "教程",
   "position": 1,
   "link": {
-    "type": "generated-index",
-    "description": "JitAi与主流AI应用平台的能力对比。"
+    "description": "手把手学习指南，循序渐进，注重实践，让你尽快做出有用的应用。"
   }
 } 

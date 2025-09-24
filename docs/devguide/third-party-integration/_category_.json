@@ -3,6 +3,7 @@
   "position": 19,
   "link": {
     "type": "generated-index",
+    "slug": "devguide/third-party-integration",
     "description": "Learn how to integrate external APIs, payment functions, and SMS services."
   }
 }

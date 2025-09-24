@@ -1,5 +1,5 @@
 ---
-sidebar_position: 22
+sidebar_position: 24.5
 ---
 
 # Cache Configuration and Usage
@@ -15,7 +15,7 @@ sidebar_position: 22
 
 ![参数配置](./img/parameter-configuration.png)
 
-弹出参数配置面板，按提示填写连接信息并保存。生产环境建议将连接参数通过环境变量注入，避免把密码等敏感信息写入仓库，参考：[数据库连接安全配置](../data-modeling/manage-database-connections#database-connection-security-configuration)。
+弹出参数配置面板，按提示填写连接信息并保存。生产环境建议将连接参数通过环境变量注入，避免把密码等敏感信息写入仓库，参考：[数据库连接安全配置](/docs/devguide/data-modeling/manage-database-connections#database-connection-security-configuration)。
 
 ![测试连接](./img/test-connection.png)
 
@@ -63,9 +63,9 @@ alive = cache.ping()  # True 表示连接正常
 
 更详细接口参考：
 
-[Redis缓存](../../reference/framework/JitStorage/cache/redis-cache#methods)
+[Redis缓存](/docs/reference/framework/JitStorage/cache/redis-cache#methods)
 
-[SQLite缓存](../../reference/framework/JitStorage/cache/sqlite-cache#methods)
+[SQLite缓存](/docs/reference/framework/JitStorage/cache/sqlite-cache#methods)
 
-[TongRDS缓存](../../reference/framework/JitStorage/cache/tongrds-cache#methods)
+[TongRDS缓存](/docs/reference/framework/JitStorage/cache/tongrds-cache#methods)
 

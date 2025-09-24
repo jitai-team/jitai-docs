@@ -13,7 +13,7 @@ const config: Config = {
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
-
+  trailingSlash: false,
   // Set the production url of your site here
   url: 'https://jit.pro',
   // Set the /<baseUrl>/ pathname under which your site is served
@@ -45,9 +45,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   organizationName: 'jitai-team', // Usually your GitHub org/user name.
   projectName: 'jitai-docs', // Usually your repo name.
 
-  onBrokenLinks: 'throw',              // 暂时设置为警告，待文档结构调整完成后改为throw
-  onBrokenMarkdownLinks: 'throw',   // 断开的Markdown链接设置为警告y
-  onBrokenAnchors: 'throw',         // 断开的锚点设置为警告
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'throw',
+  onBrokenAnchors: 'throw',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you

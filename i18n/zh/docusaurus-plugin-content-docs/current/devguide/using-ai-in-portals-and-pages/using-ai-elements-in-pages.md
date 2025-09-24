@@ -3,9 +3,9 @@ sidebar_position: 3
 slug: using-ai-elements-in-pages
 ---
 
-# Using AI Elements in Pages
+# 在页面中使用AI元素
 
-## 在页面中使用
+## 在页面中使用AI助理
 
 [AI助理元素](../ai-assistant)提供了一个**运行**函数，页面中可直接调用该函数。有两种调用方式：**可视化调用**和**全代码调用**。
 

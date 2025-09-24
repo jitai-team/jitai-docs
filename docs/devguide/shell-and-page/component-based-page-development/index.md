@@ -3,12 +3,12 @@ sidebar_position: 2
 ---
 
 # Component-based Page Development {#component-based-page-development}
-Pages are the main places where users interact with application systems, composed of different frontend functional [components](../../using-functional-components-in-pages), providing users with data display interfaces and interactive operation entries. Developers plan the navigation menus in each portal when [creating portals](../portal-navigation-design), and each menu item corresponds to the PC and mobile versions of a page.
+Pages are the main places where users interact with application systems, composed of different frontend functional [components](/docs/devguide/using-functional-components-in-pages), providing users with data display interfaces and interactive operation entries. Developers plan the navigation menus in each portal when [creating portals](/docs/devguide/shell-and-page/portal-navigation-design), and each menu item corresponds to the PC and mobile versions of a page.
 
-In a component-based page, page function logic, page event function logic, and component event function logic used in the page can all call other business elements, including but not limited to services, data models, AI large models, AI Agents, AI assistants, etc. For detailed content about calling business elements, please refer to [Calling Frontend and Backend Tools and Services in Function Logic](../../calling-business-elements-in-pages).
+In a component-based page, page function logic, page event function logic, and component event function logic used in the page can all call other business elements, including but not limited to services, data models, AI large models, AI Agents, AI assistants, etc. For detailed content about calling business elements, please refer to [Calling Frontend and Backend Tools and Services in Function Logic](/docs/devguide/calling-business-elements-in-pages).
 
 ## Create Regular Page {#create-a-regular-page}
-In [creating portals](../portal-navigation-design), if developers choose to create pages while creating menus, pages will be automatically generated and can be found in the element directory tree for editing.
+In [creating portals](/docs/devguide/shell-and-page/portal-navigation-design), if developers choose to create pages while creating menus, pages will be automatically generated and can be found in the element directory tree for editing.
 
 Developers can also manually create pages. JitAi provides 7 page types: Regular Page, AI Data Management Page, AI Data Analysis Page, Data Entry Page, React Full-code Page, Vue Full-code Page, and Markdown Page. Among them, AI Data Management Pages, AI Data Analysis Pages, and Data Entry Pages are all encapsulated based on regular pages. This article uses regular pages to explain **how to perform component-based page development**.
 
@@ -28,7 +28,7 @@ JitAi provides a visual drag-and-drop page editor for page elements. Developers 
 
 The overall layout of the page editor is divided into four areas: toolbar, canvas, component configuration panel, and event panel.
 
-The JitAi development framework provides a rich component library. Each component has different configuration items and events. Developers can refer to [Using Functional Components in Pages](../../using-functional-components-in-pages) to understand the detailed usage of each component.
+The JitAi development framework provides a rich component library. Each component has different configuration items and events. Developers can refer to [Using Functional Components in Pages](/docs/devguide/using-functional-components-in-pages) to understand the detailed usage of each component.
 
 ## Integrate AI Assistant in Pages {#integrate-ai-assistant-in-pages}
 Pages support integrating AI assistants, providing intelligent dialogue and auxiliary functions to enhance user experience.
@@ -126,7 +126,7 @@ When a component is no longer needed in the page, developers click the `...` but
 Page variables can be used to store temporary data. Function logic can perform logic control based on page variables, and both the page's own functions and functions of other components in the page can access the current page's variables.
 
 ### Variable Declaration {#variable-declaration}
-Developers can declare one or more page variables as needed. Variable types support all JitAi [data types](../../../reference/framework/JitORM/data-types) including single-line text, multi-line text, date and time, etc.
+Developers can declare one or more page variables as needed. Variable types support all JitAi [data types](/docs/reference/framework/JitORM/data-types) including single-line text, multi-line text, date and time, etc.
 
 ![Page Variable Declaration](./imgs/page-variable-declaration.gif "Page Variable Declaration")
 
@@ -277,8 +277,8 @@ Developers can select the page terminal type as `Mobile` when creating pages (de
 The mobile page editor has no functional difference from the PC page editor. Configuration/events/functions/page variables and other operations are completely consistent with the PC page editor.
 
 ## Integrate AI Assistant in Page {#integrate-ai-assistant-in-page}
-JitAi supports directly integrating [AI Assistant](../../ai-assistant/create-ai-assistant) in pages, allowing users to interact with AI assistants when accessing pages.
+JitAi supports directly integrating [AI Assistant](/docs/devguide/ai-assistant/create-ai-assistant) in pages, allowing users to interact with AI assistants when accessing pages.
 
 ![Add AI Assistant to Page](./imgs/add-ai-assistant-to-page.gif "Add AI Assistant to Page")
 
-Developers turn on the `AI Assistant` switch at the top of the page editor, select an [AI Assistant](../../ai-assistant/create-ai-assistant) from the popup list, and integrate the AI assistant into the page.
+Developers turn on the `AI Assistant` switch at the top of the page editor, select an [AI Assistant](/docs/devguide/ai-assistant/create-ai-assistant) from the popup list, and integrate the AI assistant into the page.

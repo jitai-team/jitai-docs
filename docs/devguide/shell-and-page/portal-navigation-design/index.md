@@ -17,14 +17,14 @@ JitAi creates three built-in portals for each newly created application: Develop
 Taking the Developer Portal as an example, users can switch between portals in the upper left corner of any portal.
 
 ### Developer Portal {#developer-portal} 
-The Developer Portal is designed for application developers. After entering the Developer Portal, developers can use [JitAi Development Tools](../../development-tool-and-publish-service/jitai-visual-development-tools) for application development work, such as configuring accessible portal lists for different application roles, building system functions, and configuring application information.
+The Developer Portal is designed for application developers. After entering the Developer Portal, developers can use [JitAi Development Tools](/docs/devguide/development-tool-and-publish-service/jitai-visual-development-tools) for application development work, such as configuring accessible portal lists for different application roles, building system functions, and configuring application information.
 
 Except for the Developer Portal, the navigation menus of all other portals are configured by application developers within the Developer Portal.
 
 ### Administrator Portal {#admin-portal} 
 Users with application administrator roles can enter the Administrator Portal to manage applications, such as managing organizational structure, organizational roles, and their members. Developers can also modify the Administrator Portal.
 
-Each application automatically creates an administrator account upon creation, with initial username: `admin123` and initial password: `admin123`. It is recommended that developers modify these credentials in the personal [basic information](../../development-tool-and-publish-service/jitai-visual-development-tools#personal-center) after logging in.
+Each application automatically creates an administrator account upon creation, with initial username: `admin123` and initial password: `admin123`. It is recommended that developers modify these credentials in the personal [basic information](/docs/devguide/development-tool-and-publish-service/jitai-visual-development-tools#personal-center) after logging in.
 
 :::tip Organizational Roles vs Application Roles
 Organizational roles correspond to users' positions within the enterprise organizational structure, while `Application Roles` in JitAi applications represent users' permissions within the application system. Organizational roles and application roles are similar but do not have a strict correspondence relationship. An ordinary employee can also be assigned an application administrator role to manage an application system.
@@ -118,7 +118,7 @@ The same page may be used by different portal menus. When accessed from differen
 Developers can expand the `More` button on the right side of the menu item, click the `Page Variable Assignment` button, and assign values to page variables in the popup.
 
 :::warning
-Developers need to declare [page variables](../component-based-page-development#page-variables) in the page. If no variables are declared in the page, page variable assignment cannot be set in the portal.
+Developers need to declare [page variables](/docs/devguide/shell-and-page/component-based-page-development#page-variables) in the page. If no variables are declared in the page, page variable assignment cannot be set in the portal.
 :::
 
 ### Rewrite Menu Page {#rewrite-menu-page}
@@ -160,7 +160,7 @@ When developers turn off the `Show in Portal Switch Menu` switch in `Layout Desi
 When an application contains multiple portals, developers can set order values in `Layout Design` to adjust the display order of each portal in the portal switch menu.
 
 ## Enable or Disable Common Function Entries {#enable-disable-common-function-entries}
-Each newly created portal has some common function entries by default: Initiate Application, To-do Center, Message Center, Personal Center, and New Function (supports creating function modules in simple mode, with weaker development capabilities than [Visual Development Tools](../../development-tool-and-publish-service/jitai-visual-development-tools)). These entries can be enabled or disabled in `Layout Design`.
+Each newly created portal has some common function entries by default: Initiate Application, To-do Center, Message Center, Personal Center, and New Function (supports creating function modules in simple mode, with weaker development capabilities than [Visual Development Tools](/docs/devguide/development-tool-and-publish-service/jitai-visual-development-tools)). These entries can be enabled or disabled in `Layout Design`.
 
 ![Portal Common Function Entry](./imgs/portal-common-function-entry.png "Portal Common Function Entry")
 
@@ -176,18 +176,18 @@ When developers enable the `Initiate Application` + `To-do Center` + `Message Ce
 ![Initiate Application/To-do/Message Center Entry](./imgs/initiate-application-todo-message-center-entry.gif "Initiate Application/To-do/Message Center Entry")
 
 ### Personal Center Entry {#personal-center-entry}
-When developers enable the `Personal Center` entry, users can view personal basic information and modify nicknames and passwords when accessing the portal, and can also switch [organizational structure](../../user-and-permission/organizational-structure) and log out.
+When developers enable the `Personal Center` entry, users can view personal basic information and modify nicknames and passwords when accessing the portal, and can also switch [organizational structure](/docs/devguide/user-and-permission/organizational-structure) and log out.
 
 ![Personal Center Functions](./imgs/personal-center-functions.gif "Personal Center Functions")
 
 ## Integrating AI Assistant in Portal {#using-ai-assistant-in-portal}
-JitAi supports directly integrating [AI Assistant](../../ai-assistant/create-ai-assistant) in portals, allowing users to interact with AI assistants when accessing portals. This is a general introduction; for detailed content, please refer to [Integrating AI Assistant in Portals](../../using-ai-in-portals-and-pages/using-ai-assistants-in-portals).
+JitAi supports directly integrating [AI Assistant](/docs/devguide/ai-assistant/create-ai-assistant) in portals, allowing users to interact with AI assistants when accessing portals. This is a general introduction; for detailed content, please refer to [Integrating AI Assistant in Portals](/docs/devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals).
 
 ![Portal Integrate AI Assistant](./imgs/portal-integrate-ai-assistant.gif "Portal Integrate AI Assistant")
 
-Developers click the `AI Assistant` tab in the portal configuration interface, turn on the switch in the configuration interface and select an [AI Assistant](../../ai-assistant/create-ai-assistant) to integrate the AI assistant in the portal.
+Developers click the `AI Assistant` tab in the portal configuration interface, turn on the switch in the configuration interface and select an [AI Assistant](/docs/devguide/ai-assistant/create-ai-assistant) to integrate the AI assistant in the portal.
 
 ![AI Assistant Effect in Portal](./imgs/ai-assistant-effect-in-portal.png "AI Assistant Effect in Portal")
 
-When users access a portal with [AI Assistant](../../ai-assistant/create-ai-assistant) enabled, they can see the "AI Assistant" navigation menu, click to open the AI assistant dialog and interact with it.
+When users access a portal with [AI Assistant](/docs/devguide/ai-assistant/create-ai-assistant) enabled, they can see the "AI Assistant" navigation menu, click to open the AI assistant dialog and interact with it.
 

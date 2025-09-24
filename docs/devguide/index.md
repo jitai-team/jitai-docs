@@ -839,7 +839,7 @@ Integrate mainstream large language models such as GPT-4, Claude, and Tongyi Qia
 >
   <LinkGrid links={[
     { text: "Mainstream LLM Vendor Support List", href: "ai-llm/create-ai-llm#mainstream-llm-vendor-support-list" },
-    { text: "Create LLM Vendor Element", href: "ai-llm/create-ai-llm#create-llm-vendor-element" },
+    { text: "Create LLM Vendor Element", href: "ai-llm/create-ai-llm#creating-llm-vendor-elements" },
     { text: "Retry and Backup API Key Mechanism", href: "ai-llm/create-ai-llm#retry-backup-api-key-mechanism" },
     { text: "Private LLM Integration", href: "ai-llm/create-ai-llm#private-llm-integration" }
   ]} />

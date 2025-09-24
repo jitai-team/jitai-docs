@@ -218,19 +218,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           items: [
             {
               label: 'Tutorial',
-              to: '/docs/tutorial/',
+              to: '/docs/tutorial',
             },
             {
               label: 'Developer Guide',
-              to: '/docs/devguide/',
+              to: '/docs/devguide',
             },
             {
               label: 'Extending',
-              to: '/docs/extguide/',
+              to: '/docs/extguide',
             },
             {
               label: 'Reference',
-              to: '/docs/reference/',
+              to: '/docs/reference',
             }
           ],
         },

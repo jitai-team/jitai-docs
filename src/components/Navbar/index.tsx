@@ -81,26 +81,40 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''} custom-navbar`}>
       <div className={styles.navContent}>
-        <div className={styles.logo} onClick={() => handleNavClick(CONTENT.navItems[0])}>
-          <span>JitAi</span>
+        {/* Logo 和导航菜单在左侧 */}
+        <div className={styles.leftSection}>
+          <div className={styles.logo} onClick={() => handleNavClick(CONTENT.navItems[0])}>
+            <span>JitAi</span>
+          </div>
+
+          {/* 桌面端导航 */}
+          <div className={`${styles.navLinks} ${styles.desktopNav}`}>
+            {CONTENT.navItems.map((item, index) => {
+              const isActive = item.id === activeNavItem;
+
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => handleNavClick(item)}
+                  className={isActive ? styles.active : ''}
+                  data-type={item.type}
+                >
+                  {item.label}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
-        {/* 桌面端导航 */}
-        <div className={`${styles.navLinks} ${styles.desktopNav}`}>
-          {CONTENT.navItems.map((item, index) => {
-            const isActive = item.id === activeNavItem;
-
-            return (
-              <button
-                key={item.id}
-                onClick={() => handleNavClick(item)}
-                className={isActive ? styles.active : ''}
-                data-type={item.type}
-              >
-                {item.label}
-              </button>
-            );
-          })}
+        {/* 右侧区域：语言切换器和 Try Online 按钮 */}
+        <div className={styles.rightSection}>
+          <button
+            className={styles.tryOnlineButton}
+            onClick={() => handleNavClick(CONTENT.tryOnlineButton)}
+            data-type={CONTENT.tryOnlineButton.type}
+          >
+            {CONTENT.tryOnlineButton.label}
+          </button>
           <LanguageSwitcher className={styles.languageSwitcher} />
         </div>
 
@@ -132,6 +146,13 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                 </button>
               );
             })}
+            <button
+              className={`${styles.mobileNavItem} ${styles.mobileTryOnlineButton}`}
+              onClick={() => handleNavClick(CONTENT.tryOnlineButton)}
+              data-type={CONTENT.tryOnlineButton.type}
+            >
+              {CONTENT.tryOnlineButton.label}
+            </button>
             <div className={styles.mobileLanguageSwitcher}>
               <LanguageSwitcher />
             </div>

@@ -1,41 +1,41 @@
 ---
 slug: api-authorization
 ---
-# API授权
-API授权用于管理第三方应用对本应用API接口的访问权限，通过accessKey/accessSecret密钥对控制哪些外部应用可以调用哪些API。它基于签名验证机制确保调用安全，自动记录所有API访问日志，为应用提供标准化的API开放能力。
+# API Authorization
+API authorization is used to manage third-party applications' access permissions to this application's API interfaces, controlling which external applications can call which APIs through accessKey/accessSecret key pairs. It ensures call security through signature verification mechanisms, automatically records all API access logs, and provides standardized API open capabilities for applications.
 
-API授权元素分层结构为Meta（apiAuths.Meta） → Type（apiAuths.NormalType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建API授权实例元素。
+The hierarchical structure of API authorization elements is Meta (apiAuths.Meta) → Type (apiAuths.NormalType) → Instance. Developers can quickly create API authorization instance elements through JitAi's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的apiAuths.NormalType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `apiAuths.NormalType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 apiAuths/
 └── myApiAuth/
     ├── e.json
     └── myApiAuth.json
 ```
 
-路径可自定义，示例仅为推荐做法。
+The path can be customized, the example is just a recommended practice.
 
-#### e.json文件
-```json title="元素声明文件"
+#### e.json File
+```json title="Element Declaration File"
 {
-  "title": "我的API授权",
+  "title": "My API Authorization",
   "type": "apiAuths.NormalType",
   "accessKey": "your_access_key",
   "backendBundleEntry": "."
 }
 ```
 
-#### 业务配置文件
-```json title="业务配置文件（myApiAuth.json）"
+#### Business Configuration File
+```json title="Business Configuration File (myApiAuth.json)"
 {
   "accessKey": "your_access_key",
   "accessSecret": "generated_secret",
-  "remark": "API授权说明",
+  "remark": "API authorization description",
   "apis": [
     "services.UserSvc.getUserInfo",
     "services.OrderSvc.getOrderList"
@@ -43,162 +43,162 @@ apiAuths/
 }
 ```
 
-#### 调用示例
-```python title="获取API授权元素"
-# 获取API授权实例
+#### Usage Example
+```python title="Get API Authorization Element"
+# Get API authorization instance
 apiAuth = app.getElement("apiAuths.myApiAuth")
 
-# 获取授权详情
+# Get authorization details
 details = apiAuth.getDetails()
-print(f"授权API列表: {details}")
+print(f"Authorized API list: {details}")
 
-# 通过服务获取授权信息
+# Get authorization information through service
 authSvc = app.getElement("apiAuths.services.ApiAuthSvc")
 authDetails = authSvc.getDetails("your_access_key")
 ```
 
-## 元素配置
-### e.json配置
-| 参数名 | 类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| title | string | 是 | 授权名称 |
-| type | string | 是 | 固定值：apiAuths.NormalType |
-| accessKey | string | 是 | 访问密钥标识 |
-| backendBundleEntry | string | 是 | 后端入口，通常为"." |
+| title | string | Yes | Authorization name |
+| type | string | Yes | Fixed value: apiAuths.NormalType |
+| accessKey | string | Yes | Access key identifier |
+| backendBundleEntry | string | Yes | Backend entry, usually "." |
 
-### 业务配置文件配置
-| 参数名 | 类型 | 必填 | 说明 |
+### Business Configuration File
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| accessKey | string | 是 | 访问密钥，用于身份识别 |
-| accessSecret | string | 是 | 访问密文，用于签名验证 |
-| remark | string | 否 | 授权备注说明 |
-| apis | array | 是 | 允许访问的API列表，格式：服务全名.方法名 |
+| accessKey | string | Yes | Access key for identity identification |
+| accessSecret | string | Yes | Access secret for signature verification |
+| remark | string | No | Authorization remark description |
+| apis | array | Yes | List of allowed APIs, format: service full name.method name |
 
-## 方法 
+## Methods
 ### getDetails
-获取API授权的详细信息，包含所有授权的服务和方法列表。
+Get detailed information of API authorization, containing all authorized service and method lists.
 
-#### 返回值
-返回包含授权详情的列表，每个服务包含title、fullName和functionList信息。
+#### Return Value
+Returns list containing authorization details, each service contains title, fullName and functionList information.
 
-#### 使用示例
-```python title="获取授权详情"
+#### Usage Example
+```python title="Get Authorization Details"
 apiAuth = app.getElement("apiAuths.myApiAuth")
 details = apiAuth.getDetails()
 
-# 输出示例
+# Output example
 for service in details:
-    print(f"服务: {service['title']} ({service['fullName']})")
+    print(f"Service: {service['title']} ({service['fullName']})")
     for func in service['functionList']:
         print(f"  - {func['title']}: {func['name']}")
 ```
 
 ### before
-请求前置拦截处理，执行权限校验和签名验证。
+Request pre-processing interceptor, executes permission verification and signature validation.
 
-#### 使用示例
-```python title="拦截器使用"
-# 在API请求处理前自动调用
-# 1. 检查API是否在授权列表中
-# 2. 验证请求头中的timestamp和accessSign
-# 3. 进行签名校验
+#### Usage Example
+```python title="Interceptor Usage"
+# Automatically called before API request processing
+# 1. Check if API is in authorization list
+# 2. Verify timestamp and accessSign in request headers
+# 3. Perform signature verification
 ```
 
 ### after
-请求后置处理，对响应数据进行签名并记录调用日志。
+Request post-processing, signs response data and records call logs.
 
-#### 使用示例
-```python title="响应处理"
-# 在API请求处理后自动调用
-# 1. 对响应数据进行签名
-# 2. 添加timestamp和accessSign到响应
-# 3. 保存调用记录到数据库
+#### Usage Example
+```python title="Response Processing"
+# Automatically called after API request processing
+# 1. Sign response data
+# 2. Add timestamp and accessSign to response
+# 3. Save call record to database
 ```
 
 ### saveLog
-保存API调用记录到数据库，记录请求详情、耗时、错误信息等。
+Save API call record to database, recording request details, duration, error information, etc.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| respData | JitDict | dict | 是 | 响应数据 |
+| respData | JitDict | dict | Yes | Response data |
 
-#### 使用示例
-```python title="手动保存日志"
+#### Usage Example
+```python title="Manually Save Log"
 apiAuth = app.getElement("apiAuths.myApiAuth")
 respData = {"status": "success", "data": "result"}
 apiAuth.saveLog(respData)
 ```
 
-## 属性
+## Properties
 ### accessKey
-访问密钥标识，用于身份识别和权限查找。
+Access key identifier, used for identity identification and permission lookup.
 
 ### accessSecret
-访问密文，用于请求签名的生成和验证。
+Access secret, used for generating and verifying request signatures.
 
 ### apis
-授权的API列表，包含允许访问的服务方法全名。
+List of authorized APIs, containing full names of allowed service methods.
 
 ### currApi
-当前请求的API路径，基于请求URL解析得出。
+Current request API path, parsed from request URL.
 
 ### request
-当前HTTP请求对象，包含请求的所有信息。
+Current HTTP request object, containing all request information.
 
-## 高级特性
-### 签名验证机制
-API授权使用时间戳+数据签名的双重验证机制：
+## Advanced Features
+### Signature Verification Mechanism
+API authorization uses dual verification mechanism of timestamp + data signature:
 
-```python title="签名验证流程"
-# 客户端生成签名
+```python title="Signature Verification Process"
+# Client generates signature
 timestamp = int(time.time() * 1000)
 data = {"param1": "value1", "param2": "value2"}
 sign_data = {"timestamp": timestamp, "accessSign": generated_sign, **data}
 
-# 服务端验证签名
-# 1. 检查时间戳是否超时
-# 2. 使用相同算法重新计算签名
-# 3. 比较签名是否一致
+# Server verifies signature
+# 1. Check if timestamp is expired
+# 2. Recalculate signature using same algorithm
+# 3. Compare if signatures match
 ```
 
-### 调用记录追踪
-系统自动记录所有API调用的详细信息：
+### Call Record Tracking
+System automatically records detailed information of all API calls:
 
-```python title="调用记录字段"
+```python title="Call Record Fields"
 {
-    "accessKey": "访问密钥",
-    "requestId": "请求ID", 
-    "timestamp": "请求时间戳",
-    "ip": "客户端IP",
-    "domain": "请求域名",
-    "path": "请求路径",
-    "element": "服务元素名",
-    "funcName": "方法名",
-    "duration": "耗时(毫秒)",
-    "errcode": "错误码",
-    "errmsg": "错误信息"
+    "accessKey": "Access key",
+    "requestId": "Request ID", 
+    "timestamp": "Request timestamp",
+    "ip": "Client IP",
+    "domain": "Request domain",
+    "path": "Request path",
+    "element": "Service element name",
+    "funcName": "Method name",
+    "duration": "Duration (milliseconds)",
+    "errcode": "Error code",
+    "errmsg": "Error message"
 }
 ```
 
-### 权限动态管理
-支持运行时动态更新授权配置：
+### Dynamic Permission Management
+Supports runtime dynamic update of authorization configuration:
 
-```python title="动态权限管理"
-# 通过ApiAuthSvc服务管理权限
+```python title="Dynamic Permission Management"
+# Manage permissions through ApiAuthSvc service
 authSvc = app.getElement("apiAuths.services.ApiAuthSvc")
 
-# 生成新的访问密文
+# Generate new access secret
 result = authSvc.genAccessSecret("new_access_key")
 new_secret = result["accessSecret"]
 
-# 验证访问密文
+# Verify access secret
 authSvc.checkAccessSecret("access_key", "access_secret")
 
-# 获取远程授权详情
+# Get remote authorization details
 remote_details = authSvc.getAuthDetails(
     "https://domain.com/org/app", 
     "access_key", 
     "access_secret"
 )
-``` 
+```

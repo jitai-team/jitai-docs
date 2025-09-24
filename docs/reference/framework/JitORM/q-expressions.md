@@ -3,182 +3,182 @@ sidebar_position: 4
 slug: q-expressions
 ---
 
-# Q表达式
-Q表达式即Query Expression，用于构建面向数据模型的查询条件语法。Q表达式以一种简洁、直观的字符串方式来表达复杂的查询逻辑，支持多种操作符和逻辑组合。
+# Q Expressions
+Q expressions, also known as Query Expressions, are used to build query condition syntax for data models. Q expressions express complex query logic in a concise and intuitive string format, supporting multiple operators and logical combinations.
 
-## 基础查询
-### 支持的操作符
-#### 比较操作符
-| 操作符 | 说明 | 示例 |
+## Basic Queries
+### Supported Operators
+#### Comparison Operators
+| Operator | Description | Example |
 |--------|------|------|
-| `=` (EQ) | 等于 | Q(name='John') |
-| != (NE) | 不等于 | Q(age__ne=20) |
-| `>` (GT) | 大于 | Q(age__gt=18) |
-| `>=` (GTE) | 大于等于 | Q(age__gte=18) |
-| `<` (LT) | 小于 | Q(age__lt=30) |
-| `<=` (LTE) | 小于等于 | Q(age__lte=30) |
+| `=` (EQ) | Equal to | Q(name='John') |
+| != (NE) | Not equal to | Q(age__ne=20) |
+| `>` (GT) | Greater than | Q(age__gt=18) |
+| `>=` (GTE) | Greater than or equal to | Q(age__gte=18) |
+| `<` (LT) | Less than | Q(age__lt=30) |
+| `<=` (LTE) | Less than or equal to | Q(age__lte=30) |
 
-#### 包含操作符
-| 操作符 | 说明 | 示例 |
+#### Inclusion Operators
+| Operator | Description | Example |
 |--------|------|------|
-| in (IN) | 在列表中 | Q(status__in=['active', 'pending']) |
-| nin (NIN) | 不在列表中 | Q(status__nin=['deleted', 'blocked']) |
+| in (IN) | In list | Q(status__in=['active', 'pending']) |
+| nin (NIN) | Not in list | Q(status__nin=['deleted', 'blocked']) |
 
-#### 模糊匹配
-| 操作符 | 说明 | 示例 |
+#### Fuzzy Matching
+| Operator | Description | Example |
 |--------|------|------|
-| like (LIKE) | 包含 | Q(name__like='%John%') |
-| nlike (NLIKE) | 不包含 | Q(name__nlike='%test%') |
-| likeany (LIKEANY) | 包含任一关键词 | Q(name__likeany=['John', 'Jane']) |
-| nlikeany (NLIKEANY) | 不包含任一关键词 | Q(name__nlikeany=['test', 'demo']) |
-| startswith (STARTSWITH) | 以指定内容开头 | Q(name__startswith='A') |
-| endswith (ENDSWITH) | 以指定内容结尾 | Q(name__endswith='ing') |
+| like (LIKE) | Contains | Q(name__like='%John%') |
+| nlike (NLIKE) | Does not contain | Q(name__nlike='%test%') |
+| likeany (LIKEANY) | Contains any keyword | Q(name__likeany=['John', 'Jane']) |
+| nlikeany (NLIKEANY) | Does not contain any keyword | Q(name__nlikeany=['test', 'demo']) |
+| startswith (STARTSWITH) | Starts with specified content | Q(name__startswith='A') |
+| endswith (ENDSWITH) | Ends with specified content | Q(name__endswith='ing') |
 
-#### 空值判断
-| 操作符 | 说明 | 示例 |
+#### Null Value Check
+| Operator | Description | Example |
 |--------|------|------|
-| isnull (ISNULL) | 是否为空 | Q(remark__isnull=True) |
+| isnull (ISNULL) | Is null | Q(remark__isnull=True) |
 
-#### 范围判断
-| 操作符 | 说明 | 示例 |
+#### Range Check
+| Operator | Description | Example |
 |--------|------|------|
-| range (RANGE) | 范围查询 | Q(age__range=(18, 30)) |
+| range (RANGE) | Range query | Q(age__range=(18, 30)) |
 
-#### 特殊操作符
-| 操作符 | 说明 | 应用场景 |
+#### Special Operators
+| Operator | Description | Application Scenario |
 |--------|------|---------|
-| belong (BELONG) | 归属关系判断 | 部门归属、地区归属等 |
-| nbelong (NBELONG) | 非归属关系判断 | belong的反向判断 |
-| year | 年份匹配 | 时间字段的年份查询 |
-| month | 月份匹配 | 时间字段的月份查询 |
-| week | 周匹配 | 时间字段的周查询 |
-| day | 日期匹配 | 时间字段的日期查询 |
-| province | 省份匹配 | 地址字段的省份查询 |
-| city | 城市匹配 | 地址字段的城市查询 |
-| district | 区县匹配 | 地址字段的区县查询 |
+| belong (BELONG) | Belonging relationship check | Department belonging, region belonging, etc. |
+| nbelong (NBELONG) | Non-belonging relationship check | Reverse check of belong |
+| year | Year matching | Year query for time fields |
+| month | Month matching | Month query for time fields |
+| week | Week matching | Week query for time fields |
+| day | Day matching | Day query for time fields |
+| province | Province matching | Province query for address fields |
+| city | City matching | City query for address fields |
+| district | District matching | District query for address fields |
 
-### 表达式示例
-#### 精确匹配
+### Expression Examples
+#### Exact Matching
 ```plaintext
-"Q(name='John')"               # 字段等于某个值
-"Q(status='active')"           # 状态为活跃
+"Q(name='John')"               # Field equals a value
+"Q(status='active')"           # Status is active
 ```
 
-#### 比较操作
+#### Comparison Operations
 ```plaintext
-"Q(age__gt=18)"                # 年龄大于18
-"Q(age__gte=18)"               # 年龄大于等于18
-"Q(age__lt=30)"                # 年龄小于30
-"Q(age__lte=30)"               # 年龄小于等于30
-"Q(age__ne=20)"                # 年龄不等于20
+"Q(age__gt=18)"                # Age greater than 18
+"Q(age__gte=18)"               # Age greater than or equal to 18
+"Q(age__lt=30)"                # Age less than 30
+"Q(age__lte=30)"               # Age less than or equal to 30
+"Q(age__ne=20)"                # Age not equal to 20
 ```
 
-#### 包含判断
+#### Inclusion Check
 ```plaintext
-"Q(status__in=['active', 'pending'])"     # 状态在指定列表中
-"Q(status__nin=['deleted', 'blocked'])"   # 状态不在指定列表中
+"Q(status__in=['active', 'pending'])"     # Status in specified list
+"Q(status__nin=['deleted', 'blocked'])"   # Status not in specified list
 ```
 
-#### 模糊匹配
+#### Fuzzy Matching
 ```plaintext
-"Q(name__like='%John%')"       # 姓名包含John
-"Q(name__nlike='%test%')"      # 姓名不包含test
-"Q(name__startswith='A')"      # 姓名以A开头
-"Q(name__endswith='ing')"      # 姓名以ing结尾
+"Q(name__like='%John%')"       # Name contains John
+"Q(name__nlike='%test%')"      # Name does not contain test
+"Q(name__startswith='A')"      # Name starts with A
+"Q(name__endswith='ing')"      # Name ends with ing
 ```
 
-#### 空值判断
+#### Null Value Check
 ```plaintext
-"Q(remark__isnull=True)"       # 备注字段为空
-"Q(remark__isnull=False)"      # 备注字段不为空
+"Q(remark__isnull=True)"       # Remark field is null
+"Q(remark__isnull=False)"      # Remark field is not null
 ```
 
-#### 范围判断
+#### Range Check
 ```plaintext
-"Q(age__range=(18, 30))"       # 年龄在18到30之间
-"Q(salary__range=(5000, 10000))" # 薪资在5000到10000之间
+"Q(age__range=(18, 30))"       # Age between 18 and 30
+"Q(salary__range=(5000, 10000))" # Salary between 5000 and 10000
 ```
 
-### 组合条件
-#### AND 组合
+### Combined Conditions
+#### AND Combination
 ```plaintext
-"Q(age__gt=18) & Q(age__lt=30)"  # 年龄大于18且小于30
-"Q(status='active') & Q(department='IT')"  # 状态为活跃且部门为IT
+"Q(age__gt=18) & Q(age__lt=30)"  # Age greater than 18 and less than 30
+"Q(status='active') & Q(department='IT')"  # Status is active and department is IT
 ```
 
-#### OR 组合
+#### OR Combination
 ```plaintext
-"Q(status='active') | Q(status='pending')"  # 状态是active或pending
-"Q(department='IT') | Q(department='HR')"   # 部门是IT或HR
+"Q(status='active') | Q(status='pending')"  # Status is active or pending
+"Q(department='IT') | Q(department='HR')"   # Department is IT or HR
 ```
 
-#### 取反 (NOT)
+#### Negation (NOT)
 ```plaintext
-"~Q(status='inactive')"          # 状态不是inactive
-"~Q(is_deleted=True)"            # 未被删除的记录
+"~Q(status='inactive')"          # Status is not inactive
+"~Q(is_deleted=True)"            # Records not deleted
 ```
 
-#### 复杂组合
+#### Complex Combination
 ```plaintext
-"(Q(age__gt=18) & Q(age__lt=30)) | Q(vip=True)"  # (18<年龄<30) 或 是VIP
-"Q(department='IT') & (Q(role='admin') | Q(role='manager'))"  # IT部门的管理员或经理
+"(Q(age__gt=18) & Q(age__lt=30)) | Q(vip=True)"  # (18<age<30) or is VIP
+"Q(department='IT') & (Q(role='admin') | Q(role='manager'))"  # IT department admin or manager
 ```
 
-## 高级特性
-### 条件取反
+## Advanced Features
+### Condition Negation
 ```plaintext
-# 不是特定状态的记录
+# Records not in specific status
 "~Q(status='inactive')"
 
-# 复合条件的取反
+# Negation of complex conditions
 "~(Q(status='deleted') | Q(is_hidden=True))"
 ```
 
-### 嵌套条件
+### Nested Conditions
 ```plaintext
-# 复杂的嵌套逻辑
+# Complex nested logic
 "Q(Q(age__gt=18) & (Q(status='active') | Q(status='pending')))"
 
-# 多层嵌套
+# Multi-level nesting
 "Q((Q(department='IT') | Q(department='Dev')) & Q(level__gte=3))"
 ```
 
-### 时间相关查询
+### Time-related Queries
 ```plaintext
-# 按年份查询
+# Query by year
 "Q(create_time__year=2024)"
 
-# 按月份查询
+# Query by month
 "Q(create_time__month=3)"
 
-# 按星期查询
+# Query by week
 "Q(create_time__week=12)"
 
-# 按日期查询
+# Query by day
 "Q(create_time__day=15)"
 ```
 
-### 地理位置查询
+### Geographic Location Queries
 ```plaintext
-# 按省份查询
+# Query by province
 "Q(address__province='广东')"
 
-# 按城市查询
+# Query by city
 "Q(address__city='深圳')"
 
-# 按区县查询
+# Query by district
 "Q(address__district='南山区')"
 ```
 
-## 实际使用示例
-在JitAi应用中，Q表达式通常与模型的查询方法配合使用。以下是一些实际场景的完整示例：
+## Practical Usage Examples
+In JitAi applications, Q expressions are typically used in conjunction with model query methods. Here are some complete examples for real-world scenarios:
 
-### 基础查询示例
+### Basic Query Examples
 ```python
-# 获取用户模型元素
+# Get user model element
 UserModel = app.getElement("models.UserModel")
 
-# 使用Q表达式进行条件查询
+# Use Q expressions for conditional queries
 result = UserModel.query(
     filter="Q(status='active') & Q(age__gte=18)",
     orderList=[["createdAt", -1]],
@@ -186,33 +186,33 @@ result = UserModel.query(
     size=20
 )
 
-# 获取单个用户
+# Get single user
 user = UserModel.get("Q(email='user@example.com')", [])
 ```
 
-### 复杂条件查询
+### Complex Condition Queries
 ```python
-# 获取订单模型元素
+# Get order model element
 OrderModel = app.getElement("models.OrderModel")
 
-# 复杂的业务条件查询
+# Complex business condition queries
 orders = OrderModel.query(
     filter="(Q(status='pending') | Q(status='processing')) & Q(amount__gt=100) & Q(create_time__gte='2024-01-01')",
     orderList=[["amount", -1], ["create_time", -1]]
 )
 ```
 
-### 批量操作示例
+### Batch Operation Examples
 ```python
-# 获取产品模型元素
+# Get product model element
 ProductModel = app.getElement("models.ProductModel")
 
-# 批量更新特定条件的产品
+# Batch update products with specific conditions
 ProductModel.updateByFilter(
     "Q(category='electronics') & Q(stock__lt=10)",
     {"status": "low_stock"}
 )
 
-# 删除过期产品
+# Delete expired products
 ProductModel.deleteByFilter("Q(expire_date__lt='2024-01-01')")
 ```

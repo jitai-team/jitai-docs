@@ -3,7 +3,7 @@ sidebar_position: 7
 title: Comparison between JitAi and mainstream AI application platforms
 ---
 
-# JitAi: Making AI Truly Understand Your Business and Become Your Intelligent Work Partner
+# Making AI Truly Understand Your Business and Become Your Intelligent Work Partner
 
 ## Why Choose JitAi?
 
@@ -150,6 +150,7 @@ JitAi is like an intelligent construction company with complete qualifications:
 ### Core Difference: From "Using AI" to "Collaborating with AI"
 
 **Traditional Way**: You → Tell AI what to do → AI executes → You check results
+
 **JitAi Way**: You ↔ AI ↔ Business System, three-way real-time collaboration
 
 Transforming from "tool usage" to "intelligent collaboration." AI is no longer a cold tool, but a true intelligent partner that understands your business and can collaborate deeply.

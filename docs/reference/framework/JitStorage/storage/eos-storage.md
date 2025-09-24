@@ -1,35 +1,36 @@
 ---
 slug: eos-storage
 ---
-# EOS存储
-EOS存储是基于中国移动云EOS（云对象存储）服务的企业级存储解决方案，提供高性能、高可用性的云存储能力。它支持大规模数据存储和高并发访问，专为企业核心业务系统的文件存储需求而设计。
+# EOS Storage
 
-EOS存储元素分层结构为Meta（storages.Meta） → Type（storages.EosType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建EOS存储实例元素。
+EOS Storage is an enterprise-level storage solution based on China Mobile Cloud EOS (Cloud Object Storage) service, providing high-performance and high-availability cloud storage capabilities. It supports large-scale data storage and high-concurrency access, specifically designed for file storage requirements of enterprise core business systems.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的storages.EosType元素，以实现自己的封装。
+The EOS Storage element has a hierarchical structure of Meta (storages.Meta) → Type (storages.EosType) → Instance. Developers can quickly create EOS storage instance elements through JitAi's visual development tools.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+Of course, developers can also create their own Type elements or modify the official storages.EosType element provided by JitAi in their own App to implement their own encapsulation.
+
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 storages/
 └── myEosStorage/
-    ├── e.json                    # 元素定义文件
-    └── myEosStorage.json         # EOS配置文件
+    ├── e.json                    # Element definition file
+    └── myEosStorage.json         # EOS configuration file
 ```
 
-#### e.json文件
-```json title="e.json配置示例"
+#### e.json File
+```json title="e.json Configuration Example"
 {
-  "title": "我的EOS存储",
+  "title": "My EOS Storage",
   "type": "storages.EosType",
   "backendBundleEntry": ".",
   "variables": []
 }
 ```
 
-#### 业务配置文件
-```json title="myEosStorage.json配置示例"
+#### Business Configuration File
+```json title="myEosStorage.json Configuration Example"
 {
   "accessKeyId": "your_access_key_id",
   "accessKeySecret": "your_access_key_secret", 
@@ -38,178 +39,178 @@ storages/
 }
 ```
 
-#### 调用示例
-```python title="基础使用示例"
-# 获取EOS存储实例
+#### Usage Example
+```python title="Basic Usage Example"
+# Get EOS storage instance
 storage = app.getElement("storages.myEosStorage")
 
-# 上传文件
+# Upload file
 with open("/path/to/file.pdf", "rb") as f:
     file_data = f.read()
 result = storage.uploadByFile("documents/file.pdf", file_data, "application/pdf")
 
-# 下载文件
+# Download file
 file_content = storage.download("documents/file.pdf")
 
-# 删除文件
+# Delete file
 storage.delete("documents/file.pdf")
 ```
 
-## 元素配置
-### e.json配置
-| 参数名 | 类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| title | str | 是 | 存储实例的显示名称 |
-| type | str | 是 | 固定值：storages.EosType |
-| backendBundleEntry | str | 是 | 固定值："." |
-| variables | list | 否 | 变量配置，通常为空列表 |
+| title | str | Yes | Display name of storage instance |
+| type | str | Yes | Fixed value: storages.EosType |
+| backendBundleEntry | str | Yes | Fixed value: "." |
+| variables | list | No | Variable configuration, usually empty list |
 
-### 业务配置文件配置
-| 参数名 | 类型 | 必填 | 说明 |
+### Business Configuration File Configuration
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| accessKeyId | str | 是 | EOS访问密钥ID |
-| accessKeySecret | str | 是 | EOS访问密钥Secret |
-| endPoint | str | 是 | EOS服务端点地址 |
-| bucketName | str | 是 | 存储桶名称 |
-| scheme | str | 否 | 访问协议，默认为"https" |
+| accessKeyId | str | Yes | EOS access key ID |
+| accessKeySecret | str | Yes | EOS access key secret |
+| endPoint | str | Yes | EOS service endpoint address |
+| bucketName | str | Yes | Bucket name |
+| scheme | str | No | Access protocol, defaults to "https" |
 
-## 方法 
+## Methods
 ### uploadByFile
-通过文件数据上传文件到EOS存储。
+Upload file to EOS storage through file data.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 文件在存储中的路径名称 |
-| data | - | bytes | 是 | 文件二进制数据 |
-| contentType | Stext | str | 否 | MIME类型，默认为"application/octet-stream" |
+| name | Stext | str | Yes | File path name in storage |
+| data | - | bytes | Yes | File binary data |
+| contentType | Stext | str | No | MIME type, defaults to "application/octet-stream" |
 
-#### 返回值
-返回上传结果信息
+#### Return Value
+Returns upload result information
 
-#### 使用示例
-```python title="文件上传示例"
+#### Usage Example
+```python title="File Upload Example"
 storage = app.getElement("storages.myEosStorage")
 
-# 上传PDF文件
+# Upload PDF file
 with open("/path/to/document.pdf", "rb") as f:
     pdf_data = f.read()
 result = storage.uploadByFile("docs/document.pdf", pdf_data, "application/pdf")
 
-# 上传图片文件
+# Upload image file
 with open("/path/to/image.jpg", "rb") as f:
     img_data = f.read()
 result = storage.uploadByFile("images/photo.jpg", img_data, "image/jpeg")
 ```
 
 ### getSignUrl
-获取文件的预签名URL，用于临时访问。
+Get pre-signed URL for file, used for temporary access.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| file | Stext | str | 是 | 文件路径 |
-| contentType | Stext | str | 是 | 文件MIME类型 |
-| expires | Numeric | int | 否 | 过期时间(秒)，默认300秒 |
+| file | Stext | str | Yes | File path |
+| contentType | Stext | str | Yes | File MIME type |
+| expires | Numeric | int | No | Expiration time (seconds), defaults to 300 seconds |
 
-#### 返回值
-返回预签名URL字符串
+#### Return Value
+Returns pre-signed URL string
 
-#### 使用示例
-```python title="获取签名URL示例"
+#### Usage Example
+```python title="Get Signed URL Example"
 storage = app.getElement("storages.myEosStorage")
 
-# 获取5分钟有效期的下载链接
+# Get download link with 5-minute validity
 url = storage.getSignUrl("docs/document.pdf", "application/pdf")
 
-# 获取自定义有效期的下载链接(1小时)
+# Get download link with custom validity (1 hour)
 url = storage.getSignUrl("images/photo.jpg", "image/jpeg", 3600)
 ```
 
 ### download
-下载文件内容。
+Download file content.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 要下载的文件路径 |
+| name | Stext | str | Yes | File path to download |
 
-#### 返回值
-返回文件的二进制数据
+#### Return Value
+Returns file binary data
 
-#### 使用示例
-```python title="文件下载示例"
+#### Usage Example
+```python title="File Download Example"
 storage = app.getElement("storages.myEosStorage")
 
-# 下载文件
+# Download file
 file_data = storage.download("docs/document.pdf")
 
-# 保存到本地
+# Save to local
 with open("/local/path/document.pdf", "wb") as f:
     f.write(file_data)
 ```
 
 ### getObject
-获取文件对象信息。
+Get file object information.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 文件路径 |
+| name | Stext | str | Yes | File path |
 
-#### 返回值
-返回文件对象信息
+#### Return Value
+Returns file object information
 
-#### 使用示例
-```python title="获取对象信息示例"
+#### Usage Example
+```python title="Get Object Information Example"
 storage = app.getElement("storages.myEosStorage")
 
-# 获取文件对象信息
+# Get file object information
 obj_info = storage.getObject("docs/document.pdf")
 ```
 
 ### delete
-删除指定文件。
+Delete specified file.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 要删除的文件路径 |
+| name | Stext | str | Yes | File path to delete |
 
-#### 返回值
-返回删除操作结果
+#### Return Value
+Returns delete operation result
 
-#### 使用示例
-```python title="文件删除示例"
+#### Usage Example
+```python title="File Delete Example"
 storage = app.getElement("storages.myEosStorage")
 
-# 删除单个文件
+# Delete single file
 result = storage.delete("docs/old_document.pdf")
 
-# 批量删除文件
+# Batch delete files
 files_to_delete = ["temp/file1.txt", "temp/file2.txt", "temp/file3.txt"]
 for file_path in files_to_delete:
     storage.delete(file_path)
 ```
 
-## 属性
+## Attributes
 ### SIGN_EXPIRES
-默认签名URL过期时间，固定值为300秒。
+Default signed URL expiration time, fixed value of 300 seconds.
 
 ### config
-存储配置信息，包含accessKeyId、accessKeySecret、endPoint、bucketName等配置参数。
+Storage configuration information, containing configuration parameters such as accessKeyId, accessKeySecret, endPoint, bucketName.
 
 ### name
-存储实例的fullName标识。
+FullName identifier of storage instance.
 
 ### client
-EOS客户端实例，用于与EOS服务进行交互。
+EOS client instance, used for interacting with EOS service.
 
-## 高级特性
-### 异常处理机制
-EOS存储内置了完善的异常处理机制，所有操作方法都通过`@exceptHandler`装饰器进行异常捕获和转换，将底层异常转换为统一的存储错误码。
+## Advanced Features
+### Exception Handling Mechanism
+EOS Storage has built-in comprehensive exception handling mechanism. All operation methods use `@exceptHandler` decorator for exception capture and conversion, transforming underlying exceptions into unified storage error codes.
 
-```python title="异常处理示例"
+```python title="Exception Handling Example"
 from jit.errcode import Code
 
 storage = app.getElement("storages.myEosStorage")
@@ -217,17 +218,17 @@ storage = app.getElement("storages.myEosStorage")
 try:
     storage.uploadByFile("test.txt", b"test content", "text/plain")
 except Code as e:
-    # 处理业务错误码
-    print(f"存储操作失败: {e}")
+    # Handle business error codes
+    print(f"Storage operation failed: {e}")
 except Exception as e:
-    # 处理其他异常
-    print(f"未知错误: {e}")
+    # Handle other exceptions
+    print(f"Unknown error: {e}")
 ```
 
-### 环境变量支持
-配置文件支持使用环境变量进行动态配置，适用于不同部署环境：
+### Environment Variable Support
+Configuration files support using environment variables for dynamic configuration, suitable for different deployment environments:
 
-```json title="使用环境变量的配置示例"
+```json title="Configuration Example Using Environment Variables"
 {
   "accessKeyId": "${EOS_ACCESS_KEY_ID}",
   "accessKeySecret": "${EOS_ACCESS_KEY_SECRET}",
@@ -236,19 +237,19 @@ except Exception as e:
 }
 ```
 
-### 文件路径管理
-建议采用规范的文件路径命名，便于文件组织和管理：
+### File Path Management
+It is recommended to use standardized file path naming for easy file organization and management:
 
-```python title="文件路径管理示例"
+```python title="File Path Management Example"
 storage = app.getElement("storages.myEosStorage")
 
-# 按业务模块组织文件
+# Organize files by business module
 storage.uploadByFile("user/avatars/user123.jpg", avatar_data, "image/jpeg")
 storage.uploadByFile("documents/contracts/contract001.pdf", contract_data, "application/pdf")
 storage.uploadByFile("exports/reports/monthly_report_2024_01.xlsx", report_data, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
 
-# 按日期组织文件
+# Organize files by date
 from datetime import datetime
 date_path = datetime.now().strftime("%Y/%m/%d")
 storage.uploadByFile(f"uploads/{date_path}/file.txt", file_data, "text/plain")
-``` 
+```

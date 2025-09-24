@@ -1,8 +1,9 @@
 {
-  "label": "Jit节点",
+  "label": "JitNodes",
   "position": 5,
   "link": {
     "type": "generated-index",
-    "description": "JitNodeAPI文档"
+    "slug": "reference/runtime-platform/backend/jit-nodes",
+    "description": "JitNode API documentation for node management and operations"
   }
 } 

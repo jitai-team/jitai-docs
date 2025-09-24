@@ -1,10 +1,10 @@
 {
   "position": 3,
-  "label": "门户",
+  "label": "Portals",
   "className": "red",
   "link": {
     "type": "generated-index",
-    "title": "门户",
-    "description": "门户管理API，用于创建和管理应用门户、导航结构和门户配置。"
+    "slug": "reference/framework/JitWeb/portals",
+    "description": "Portal management APIs for creating and managing application portals, navigation structures, and portal configurations."
   }
 } 

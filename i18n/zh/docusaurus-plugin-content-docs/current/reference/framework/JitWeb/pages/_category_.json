@@ -1,11 +1,10 @@
 {
   "position": 4,
-  "label": "页面",
+  "label": "Pages",
   "className": "red",
   "link": {
     "type": "generated-index",
     "slug": "/reference/framework/JitWeb/pages",
-    "title": "页面",
-    "description": "页面管理API，用于创建、配置和管理应用页面以及页面生命周期操作。"
+    "description": "Page management APIs for creating, configuring, and managing application pages and page lifecycle operations."
   }
 } 

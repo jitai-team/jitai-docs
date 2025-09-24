@@ -85,64 +85,63 @@
   <rect width="1000" height="950" fill="#F8FAFC"/>
   
   <!-- 标题 -->
-  <text x="500" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#1E293B">JitAi 技术架构</text>
+  <text x="500" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#1E293B">JitAi Technical Architecture</text>
   
   <!-- 第四层：应用层 -->
   <rect x="60" y="140" width="880" height="200" rx="15" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2" filter="url(#shadow)"/>
-  <text x="500" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#1E293B">应用层</text>
-  <text x="500" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#64748B">遵循JAAP构建的开放应用生态</text>
+  <text x="500" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#1E293B">Application Layer</text>
+  <text x="500" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#64748B">Open Application Ecosystem Built on JAAP</text>
   
   <!-- 应用层内部三个区域 -->
   <!-- 官方应用区域 -->
   <rect x="80" y="210" width="260" height="110" rx="10" fill="url(#appToolGradient)" filter="url(#shadow)"/>
-  <text x="210" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">官方应用</text>
-  <text x="210" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">默认实现・开箱即用</text>
-  <text x="210" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">开发工具 | 运维平台</text>
-  <text x="210" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">基础应用 | 示例应用</text>
+  <text x="210" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">Official Applications</text>
+  <text x="210" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Default Implementation • Out-of-the-Box</text>
+  <text x="210" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">Dev Tools | DevOps Platform</text>
+  <text x="210" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">Base Apps | Sample Apps</text>
   <text x="210" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">...</text>
   
   <!-- 业务应用区域 -->
   <rect x="370" y="210" width="260" height="110" rx="10" fill="url(#appBusinessGradient)" filter="url(#shadow)"/>
-  <text x="500" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">常见业务应用</text>
-  <text x="500" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">各类企业级业务系统</text>
-  <text x="500" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">智能客服 | CRM系统</text>
+  <text x="500" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">Business Applications</text>
+  <text x="500" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Enterprise Business Systems</text>
+  <text x="500" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">AI Customer Service | CRM</text>
   <text x="500" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">ERP | MES | OA</text>
-  <text x="500" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">数据分析 | 业务管理</text>
+  <text x="500" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">Data Analytics | Business Mgmt</text>
   
   <!-- 应用生态区域 -->
   <rect x="660" y="210" width="260" height="110" rx="10" fill="url(#appEcoGradient)" filter="url(#shadow)"/>
-  <text x="790" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">应用生态</text>
-  <text x="790" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">开放创新・无限扩展</text>
-  <text x="790" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">更多行业应用 | 标品模版</text>
-  <text x="790" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">解决方案 | 定制创新</text>
-  <text x="790" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">等等 | 无限扩展</text>
+  <text x="790" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">Application Ecosystem</text>
+  <text x="790" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Open Innovation • Unlimited Extension</text>
+  <text x="790" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">Industry Apps | Standard Templates</text>
+  <text x="790" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">Solutions | Custom Innovation</text>
+  <text x="790" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">And More | Unlimited Extension</text>
   
   <!-- 第三层：开发框架层 -->
   <rect x="60" y="400" width="880" height="140" rx="15" fill="url(#frameworkGradient)" filter="url(#shadow)"/>
-  <text x="500" y="435" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="white">开发框架层</text>
-  <text x="500" y="460" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="white">矩阵型元架构 - 全栈支撑应用开发</text>
-  <text x="500" y="485" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="white">Ai | Auth | I18N | Message | ORM | Pay | Service | Storage | Task | Web | Workflow</text>
-  <text x="500" y="510" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">高度可复用・可扩展・软件模块・无静态依赖</text>
-  <text x="500" y="525" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-style="italic" fill="#D1FAE5">遵循JAAP规范・开箱即用</text>
+  <text x="500" y="435" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="white">Development Framework Layer</text>
+  <text x="500" y="460" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="white">Matrix Meta-Architecture - Full-Stack Application Development Support</text>
+  <text x="500" y="485" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="white">AI | Auth | I18N | Message | ORM | Pay | Service | Storage | Task | Web | Workflow</text>
+  <text x="500" y="510" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">Highly Reusable • Extensible • Software Modules • No Static Dependencies</text>
+  <text x="500" y="525" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-style="italic" fill="#D1FAE5">JAAP Compliant • Out-of-the-Box</text>
   
   <!-- 第二层：应用运行平台层（合并JAAP和运行平台） -->
   <rect x="60" y="600" width="880" height="195" rx="15" fill="url(#runtimeGradient)" filter="url(#shadow)"/>
-  <text x="500" y="630" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="white">应用运行平台层</text>
+  <text x="500" y="630" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="white">Application Runtime Platform Layer</text>
   
   <!-- JAAP协议规范部分 -->
   <rect x="80" y="650" width="840" height="50" rx="8" fill="url(#jaapGradient)" stroke="#F59E0B" stroke-width="2" stroke-dasharray="6,4"/>
   <text x="500" y="670" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">JAAP</text>
-  <text x="500" y="690" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">Jit AI Application Protocol - 统一架构语言</text>
+  <text x="500" y="690" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">Jit AI Application Protocol - Unified Architecture Language</text>
   
   <!-- 微内核+解释器部分 -->
   <rect x="80" y="710" width="840" height="70" rx="8" fill="rgba(255,255,255,0.15)"/>
-  <text x="500" y="730" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">微内核 + JAAP解释器</text>
-  <text x="500" y="750" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">实时增量编译构建 | 模块级热更新 | 系统API | 虚拟化沙箱运行环境</text>
-  <text x="500" y="770" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-style="italic" fill="#E2E8F0">解释执行JAAP・提供运行环境</text>
+  <text x="500" y="730" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">Microkernel + JAAP Interpreter</text>
+  <text x="500" y="750" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">Real-time Incremental Compilation | Module-level Hot Updates | System APIs | Virtualized Sandbox Runtime</text>
+  <text x="500" y="770" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-style="italic" fill="#E2E8F0">Interprets &amp; Executes JAAP • Provides Runtime Environment</text>
   
   <!-- 第一层：操作系统层 -->
   <rect x="60" y="855" width="880" height="60" rx="15" fill="url(#osGradient)" filter="url(#shadow)"/>
-
   
   <!-- Windows图标 -->
   <rect x="167" y="877" width="6" height="6" rx="1" fill="white"/>
@@ -192,29 +191,29 @@
   
   <!-- 操作系统 → 应用运行平台 -->
   <polygon points="470,825 530,825 530,815 500,800 470,815" fill="url(#osToPlatformGradient)" filter="url(#shadow)"/>
-  <text x="500" y="840" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#0891B2">跨平台部署</text>
+  <text x="500" y="840" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#0891B2">Cross-Platform Deployment</text>
   
   <!-- 应用运行平台 → 开发框架 -->
   <polygon points="470,570 530,570 530,560 500,545 470,560" fill="url(#platformToFrameworkGradient)" filter="url(#shadow)"/>
-  <text x="500" y="585" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#7C3AED">解释执行</text>
+  <text x="500" y="585" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#7C3AED">Interpretation &amp; Execution</text>
   
   <!-- 应用层 → 开发框架 -->
   <polygon points="420,370 480,370 480,380 450,395 420,380" fill="url(#appToFrameworkGradient)" filter="url(#shadow)"/>
-  <text x="450" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#4F46E5">共性沉淀</text>
+  <text x="450" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#4F46E5">Common Abstractions</text>
   
   <!-- 开发框架 → 应用层 -->
   <polygon points="520,370 580,370 580,360 550,345 520,360" fill="url(#frameworkToAppGradient)" filter="url(#shadow)"/>
-  <text x="550" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#059669">框架支撑</text>
+  <text x="550" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#059669">Framework Support</text>
   
 
   
   <!-- 核心特性说明 -->
   <rect x="60" y="70" width="880" height="35" rx="8" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
 
-  <text x="180" y="90" font-family="Arial, sans-serif" font-size="11" fill="#475569">• 解释型系统</text>
-  <text x="320" y="90" font-family="Arial, sans-serif" font-size="11" fill="#475569">• 矩阵型元架构</text>
-  <text x="460" y="90" font-family="Arial, sans-serif" font-size="11" fill="#475569">• 图形化编排开发</text>
-  <text x="600" y="90" font-family="Arial, sans-serif" font-size="11" fill="#475569">• 自动化运维</text>
-  <text x="740" y="90" font-family="Arial, sans-serif" font-size="11" fill="#475569">• 开放的应用生态</text>
+  <text x="180" y="90" font-family="Arial, sans-serif" font-size="11" fill="#475569">• Interpretive System</text>
+  <text x="320" y="90" font-family="Arial, sans-serif" font-size="11" fill="#475569">• Matrix Meta-Architecture</text>
+  <text x="460" y="90" font-family="Arial, sans-serif" font-size="11" fill="#475569">• Visual Development</text>
+  <text x="600" y="90" font-family="Arial, sans-serif" font-size="11" fill="#475569">• Automated DevOps</text>
+  <text x="740" y="90" font-family="Arial, sans-serif" font-size="11" fill="#475569">• Open App Ecosystem</text>
   
 </svg> 

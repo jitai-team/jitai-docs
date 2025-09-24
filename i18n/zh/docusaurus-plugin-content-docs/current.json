@@ -83,37 +83,9 @@
     "message": "真实场景下各类平台功能的应用和开发指南。",
     "description": "The generated-index page description for category Advanced Guide in sidebar devguideSidebar"
   },
-  "sidebar.extguideSidebar.category.Frontend": {
-    "message": "前端",
-    "description": "The label for category Frontend in sidebar extguideSidebar"
-  },
-  "sidebar.extguideSidebar.category.Frontend.link.generated-index.description": {
-    "message": "扩展前端Type元素，开发前端可视化编辑器，创建自定义UI组件和交互功能。",
-    "description": "The generated-index page description for category Frontend in sidebar extguideSidebar"
-  },
-  "sidebar.extguideSidebar.category.Backend": {
-    "message": "后端",
-    "description": "The label for category Backend in sidebar extguideSidebar"
-  },
-  "sidebar.extguideSidebar.category.Backend.link.generated-index.description": {
-    "message": "扩展后端Type元素，开发后端可视化编辑器，实现自定义业务逻辑和数据处理。",
-    "description": "The generated-index page description for category Backend in sidebar extguideSidebar"
-  },
-  "sidebar.extguideSidebar.category.Comprehensive": {
-    "message": "综合",
-    "description": "The label for category Comprehensive in sidebar extguideSidebar"
-  },
-  "sidebar.extguideSidebar.category.Comprehensive.link.generated-index.description": {
-    "message": "前后端复合元素扩展、dev-tools构建和框架发布指南。",
-    "description": "The generated-index page description for category Comprehensive in sidebar extguideSidebar"
-  },
   "sidebar.referenceSidebar.category.Development Framework": {
     "message": "开发框架",
     "description": "The label for category Development Framework in sidebar referenceSidebar"
-  },
-  "sidebar.referenceSidebar.category.Development Framework.link.generated-index.description": {
-    "message": "JitAi框架是基于JAAP的企业级应用框架，提供从基础设施到业务层组件的全栈技术底座。",
-    "description": "The generated-index page description for category Development Framework in sidebar referenceSidebar"
   },
   "sidebar.referenceSidebar.category.JitAi": {
     "message": "JitAi",
@@ -215,10 +187,6 @@
     "message": "缓存",
     "description": "The label for category Cache in sidebar referenceSidebar"
   },
-  "sidebar.referenceSidebar.category.Cache.link.generated-index.title": {
-    "message": "缓存",
-    "description": "The generated-index page title for category Cache in sidebar referenceSidebar"
-  },
   "sidebar.referenceSidebar.category.Cache.link.generated-index.description": {
     "message": "缓存管理和数据缓存API，用于提高应用性能和减少数据库负载。",
     "description": "The generated-index page description for category Cache in sidebar referenceSidebar"
@@ -234,10 +202,6 @@
   "sidebar.referenceSidebar.category.Storage": {
     "message": "存储",
     "description": "The label for category Storage in sidebar referenceSidebar"
-  },
-  "sidebar.referenceSidebar.category.Storage.link.generated-index.title": {
-    "message": "存储",
-    "description": "The generated-index page title for category Storage in sidebar referenceSidebar"
   },
   "sidebar.referenceSidebar.category.Storage.link.generated-index.description": {
     "message": "文件和对象存储管理API，用于处理上传、下载和存储操作。",
@@ -263,10 +227,6 @@
     "message": "门户",
     "description": "The label for category Portals in sidebar referenceSidebar"
   },
-  "sidebar.referenceSidebar.category.Portals.link.generated-index.title": {
-    "message": "门户",
-    "description": "The generated-index page title for category Portals in sidebar referenceSidebar"
-  },
   "sidebar.referenceSidebar.category.Portals.link.generated-index.description": {
     "message": "门户管理API，用于创建和管理应用门户、导航结构和门户配置。",
     "description": "The generated-index page description for category Portals in sidebar referenceSidebar"
@@ -275,10 +235,6 @@
     "message": "页面",
     "description": "The label for category Pages in sidebar referenceSidebar"
   },
-  "sidebar.referenceSidebar.category.Pages.link.generated-index.title": {
-    "message": "页面",
-    "description": "The generated-index page title for category Pages in sidebar referenceSidebar"
-  },
   "sidebar.referenceSidebar.category.Pages.link.generated-index.description": {
     "message": "页面管理API，用于创建、配置和管理应用页面以及页面生命周期操作。",
     "description": "The generated-index page description for category Pages in sidebar referenceSidebar"
@@ -286,10 +242,6 @@
   "sidebar.referenceSidebar.category.Components": {
     "message": "组件",
     "description": "The label for category Components in sidebar referenceSidebar"
-  },
-  "sidebar.referenceSidebar.category.Components.link.generated-index.title": {
-    "message": "组件",
-    "description": "The generated-index page title for category Components in sidebar referenceSidebar"
   },
   "sidebar.referenceSidebar.category.Components.link.generated-index.description": {
     "message": "UI组件管理API，用于创建、配置和管理可重用的UI组件，覆盖不同类别的组件功能。",
@@ -347,10 +299,6 @@
     "message": "运行平台",
     "description": "The label for category Runtime Platform in sidebar referenceSidebar"
   },
-  "sidebar.referenceSidebar.category.Runtime Platform.link.generated-index.description": {
-    "message": "向开发者提供系统API，用于应用开发。",
-    "description": "The generated-index page description for category Runtime Platform in sidebar referenceSidebar"
-  },
   "sidebar.referenceSidebar.category.Backend API": {
     "message": "后端API",
     "description": "The label for category Backend API in sidebar referenceSidebar"
@@ -398,14 +346,6 @@
   "sidebar.referenceSidebar.category.Frontend API.link.generated-index.description": {
     "message": "前端平台API，用于客户端操作和用户界面交互。",
     "description": "The generated-index page description for category Frontend API in sidebar referenceSidebar"
-  },
-  "sidebar.referenceSidebar.category.Development Tools": {
-    "message": "开发工具",
-    "description": "The label for category Development Tools in sidebar referenceSidebar"
-  },
-  "sidebar.referenceSidebar.category.Development Tools.link.generated-index.description": {
-    "message": "IDEApp主界面框架、IDEApp的API、Type Editor扩展API/规范。",
-    "description": "The generated-index page description for category Development Tools in sidebar referenceSidebar"
   },
   "sidebar.devguideSidebar.category.AI Large Language Model": {
     "message": "AI大模型",

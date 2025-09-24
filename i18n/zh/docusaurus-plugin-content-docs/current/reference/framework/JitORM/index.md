@@ -2,7 +2,7 @@
 sidebar_position: 0
 ---
 
-# 概述
+# JitORM概述
 JitORM（JitAi Object-Relational Mapping）是以[数据库元素](./database)、[数据类型元素](./data-types)、[模型元素](./data-models)为核心组成的对象关系映射框架，同时还提供了辅助数据查询以及操作的[Q表达式](./q-expressions)、[TQL](./TQL)。
 
 ## 数据库

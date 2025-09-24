@@ -1,26 +1,27 @@
 ---
 slug: approval-workflowing
 ---
-# 审批处理
-审批处理是工作流审批任务的核心操作组件，基于工作流引擎实现审批任务的处理、查看和状态管理。它负责加载指定工作流的待处理任务、展示审批历史记录和处理用户的审批操作，支持移动端和PC端的自适应渲染。
+# Approval Processing
 
-审批处理元素分层结构为Meta（components.Meta）→ Type（components.TaskHandle）→ 实例，开发者可通过JitAI的可视化开发工具快捷地创建审批处理实例元素。
+Approval Processing is the core operation component for workflow approval tasks, implemented based on workflow engine for handling, viewing, and status management of approval tasks. It is responsible for loading pending tasks of specified workflows, displaying approval history records, and handling user approval operations, supporting adaptive rendering for both mobile and PC platforms.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.TaskHandleType元素，以实现自己的封装。
+The Approval Processing element has a hierarchical structure of Meta (components.Meta) → Type (components.TaskHandle) → Instance. Developers can quickly create approval processing instance elements through JitAI's visual development tools.
 
-## 快速开始 
-### 基础配置示例
-```json title="基础审批处理配置"
+Of course, developers can also create their own Type elements or modify the official components.TaskHandleType element provided by JitAi in their own App to implement their own encapsulation.
+
+## Quick Start
+### Basic Configuration Example
+```json title="Basic Approval Processing Configuration"
 {
     "fullName": "components.TaskHandle",
     "type": "components.TaskHandle",
     "name": "TaskHandle1",
-    "title": "审批处理",
+    "title": "Approval Processing",
     "config": {
         "requireElements": [
             {
                 "name": "ApplyModel",
-                "title": "申请数据模型",
+                "title": "Application Data Model",
                 "type": "models.NormalType"
             }
         ],
@@ -32,171 +33,171 @@ slug: approval-workflowing
 }
 ```
 
-### 配置属性说明
-| 属性名 | 类型 | 必填 | 默认值 | 说明 |
+### Configuration Properties
+| Property Name | Type | Required | Default Value | Description |
 |--------|------|------|--------|------|
-| workflowName | String | 是 | "" | 关联的工作流名称，指定要处理的审批流程 |
-| isShowHistory | Boolean | 否 | true | 是否显示审批历史记录面板 |
-| isShowAllHistory | Boolean | 否 | true | 是否显示完整的历史记录，为false时仅显示关键节点 |
-| requireElements | Array | 是 | [] | 关联的数据模型配置，用于获取审批相关的业务数据 |
+| workflowName | String | Yes | "" | Associated workflow name, specifies the approval process to handle |
+| isShowHistory | Boolean | No | true | Whether to display approval history panel |
+| isShowAllHistory | Boolean | No | true | Whether to display complete history records, when false only shows key nodes |
+| requireElements | Array | Yes | [] | Associated data model configuration, used to get business data related to approval |
 
-## 变量
+## Variables
 ### instanceId
-**类型**: `Numeric`  
-**访问**: 只读  
-**说明**: 当前审批流程实例的唯一标识，用于追踪和管理审批状态。
+**Type**: `Numeric`  
+**Access**: Read-only  
+**Description**: Unique identifier of current approval process instance, used for tracking and managing approval status.
 
-```typescript title="获取审批流程实例ID"
-// 在页面代码中访问
+```typescript title="Get Approval Process Instance ID"
+// Access in page code
 const instanceId = this.TaskHandle1.instanceId.value;
-console.log('当前审批实例ID:', instanceId);
+console.log('Current approval instance ID:', instanceId);
 ```
 
 ### formData
-**类型**: `RowData<T>`  
-**访问**: 可读写  
-**泛型**: 关联模型类型  
-**说明**: 审批关联的表单数据模型，包含待审批的业务数据记录。当该变量值变化时，组件会自动重新加载对应的审批任务。
+**Type**: `RowData<T>`  
+**Access**: Read-write  
+**Generic**: Associated model type  
+**Description**: Form data model associated with approval, containing business data records to be approved. When this variable value changes, the component automatically reloads corresponding approval tasks.
 
-```typescript title="操作表单数据"
-// 设置表单数据
+```typescript title="Operate Form Data"
+// Set form data
 this.TaskHandle1.formData.value = {
     id: 1,
     applyUserId: "user123",
-    leaveType: "年假",
+    leaveType: "Annual Leave",
     startDate: "2024-01-15",
     endDate: "2024-01-17"
 };
 
-// 监听数据变化
+// Listen to data changes
 this.TaskHandle1.formData.onValueChange(() => {
-    console.log('表单数据已更新:', this.TaskHandle1.formData.value);
+    console.log('Form data updated:', this.TaskHandle1.formData.value);
 });
 ```
 
-## 方法 
+## Methods
 ### call
-**说明**: 刷新组件数据，重新加载当前审批任务的最新状态和数据。
+**Description**: Refresh component data, reload latest status and data of current approval task.
 
-#### 返回值
-**类型**: `Promise<void>`
+#### Return Value
+**Type**: `Promise<void>`
 
-#### 使用示例
-```typescript title="刷新审批数据"
-// 手动刷新审批组件
+#### Usage Example
+```typescript title="Refresh Approval Data"
+// Manually refresh approval component
 await this.TaskHandle1.call();
 
-// 在按钮点击事件中刷新
+// Refresh in button click event
 async function onRefreshClick() {
     try {
         await this.TaskHandle1.call();
-        console.log('审批数据刷新成功');
+        console.log('Approval data refresh successful');
     } catch (error) {
-        console.error('刷新失败:', error);
+        console.error('Refresh failed:', error);
     }
 }
 ```
 
 ### publishEvent
-**说明**: 发布组件事件，用于触发自定义事件通知。
+**Description**: Publish component events, used to trigger custom event notifications.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|------|--------|------|
-| name | String | 是 | - | 事件名称 |
-| ex | Object | 否 | - | 附加的事件数据 |
+| name | String | Yes | - | Event name |
+| ex | Object | No | - | Additional event data |
 
-#### 返回值
-**类型**: `Promise<void>`
+#### Return Value
+**Type**: `Promise<void>`
 
-#### 使用示例
-```typescript title="发布自定义事件"
-// 发布自定义事件
+#### Usage Example
+```typescript title="Publish Custom Event"
+// Publish custom event
 await this.TaskHandle1.publishEvent('customEvent', {
-    message: '自定义处理完成',
+    message: 'Custom processing completed',
     timestamp: Date.now()
 });
 ```
 
 ### subscribeEvent
-**说明**: 订阅组件事件，监听指定事件的触发。
+**Description**: Subscribe to component events, listen for specified event triggers.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|------|--------|------|
-| name | String | 是 | - | 要订阅的事件名称 |
-| evtCb | Function | 是 | - | 事件回调函数 |
-| unSubscribeExist | Boolean | 否 | true | 是否取消已存在的订阅 |
+| name | String | Yes | - | Event name to subscribe to |
+| evtCb | Function | Yes | - | Event callback function |
+| unSubscribeExist | Boolean | No | true | Whether to cancel existing subscriptions |
 
-#### 返回值
-**类型**: `String` - 订阅ID，用于后续取消订阅
+#### Return Value
+**Type**: `String` - Subscription ID, used for subsequent unsubscription
 
-#### 使用示例
-```typescript title="订阅组件事件"
-// 订阅审批处理完成事件
+#### Usage Example
+```typescript title="Subscribe to Component Events"
+// Subscribe to approval processing completion event
 const subscriptionId = this.TaskHandle1.subscribeEvent('afterExecute', (data) => {
-    console.log('收到审批处理事件:', data);
+    console.log('Received approval processing event:', data);
 });
 ```
 
 ### unSubscribeEvent
-**说明**: 取消事件订阅。
+**Description**: Cancel event subscription.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|------|--------|------|
-| id | String | 是 | - | 订阅ID |
+| id | String | Yes | - | Subscription ID |
 
-#### 返回值
-**类型**: `Boolean` - 取消订阅是否成功
+#### Return Value
+**Type**: `Boolean` - Whether unsubscription was successful
 
-#### 使用示例
-```typescript title="取消事件订阅"
-// 取消之前的订阅
+#### Usage Example
+```typescript title="Cancel Event Subscription"
+// Cancel previous subscription
 this.TaskHandle1.unSubscribeEvent(subscriptionId);
 ```
 
 ### setConfig
-**说明**: 动态设置组件配置。
+**Description**: Dynamically set component configuration.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|------|--------|------|
-| next | Object | 是 | - | 新的配置对象 |
-| clean | Boolean | 否 | false | 是否完全替换配置（true）还是合并配置（false） |
+| next | Object | Yes | - | New configuration object |
+| clean | Boolean | No | false | Whether to completely replace configuration (true) or merge configuration (false) |
 
-#### 使用示例
-```typescript title="动态更新配置"
-// 合并更新配置
+#### Usage Example
+```typescript title="Dynamically Update Configuration"
+// Merge update configuration
 this.TaskHandle1.setConfig({
     workflowName: 'NewWorkflow',
     isShowHistory: false
 });
 
-// 完全替换配置
+// Completely replace configuration
 this.TaskHandle1.setConfig({
-    requireElements: [/* 新配置 */],
+    requireElements: [/* new configuration */],
     workflowName: 'CompleteNewWorkflow'
 }, true);
 ```
 
 ### runCode
-**说明**: 在页面上下文中执行JavaScript代码。
+**Description**: Execute JavaScript code in page context.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|------|--------|------|
-| code | String | 是 | - | 要执行的JavaScript代码字符串 |
+| code | String | Yes | - | JavaScript code string to execute |
 
-#### 返回值
-**类型**: `Any` - 代码执行结果
+#### Return Value
+**Type**: `Any` - Code execution result
 
-#### 使用示例
-```typescript title="执行动态代码"
-// 执行简单代码
+#### Usage Example
+```typescript title="Execute Dynamic Code"
+// Execute simple code
 const result = this.TaskHandle1.runCode('return this.somePageVariable + 1');
 
-// 执行复杂逻辑
+// Execute complex logic
 this.TaskHandle1.runCode(`
     if (this.currentUser.role === 'admin') {
         this.showAdminPanel();
@@ -205,129 +206,129 @@ this.TaskHandle1.runCode(`
 ```
 
 ### getPermConfig
-**说明**: 获取组件的权限配置信息。
+**Description**: Get component permission configuration information.
 
-#### 返回值
-**类型**: `Object | undefined` - 权限配置对象，如果没有权限限制则返回undefined
+#### Return Value
+**Type**: `Object | undefined` - Permission configuration object, returns undefined if no permission restrictions
 
-#### 使用示例
-```typescript title="检查组件权限"
-// 获取权限配置
+#### Usage Example
+```typescript title="Check Component Permissions"
+// Get permission configuration
 const permConfig = this.TaskHandle1.getPermConfig();
 if (permConfig) {
-    console.log('组件权限配置:', permConfig);
-    // 根据权限配置调整组件行为
+    console.log('Component permission configuration:', permConfig);
+    // Adjust component behavior based on permission configuration
 } else {
-    console.log('组件无权限限制');
+    console.log('Component has no permission restrictions');
 }
 ```
 
-## 属性
+## Attributes
 ### taskRowData
-**类型**: `ITaskDataProp`  
-**访问**: 只读  
-**说明**: 当前审批任务的完整数据对象，包含任务节点信息、业务数据和工作流状态。
+**Type**: `ITaskDataProp`  
+**Access**: Read-only  
+**Description**: Complete data object of current approval task, containing task node information, business data, and workflow status.
 
-```typescript title="访问任务数据"
+```typescript title="Access Task Data"
 const taskData = this.TaskHandle1.taskRowData;
-console.log('任务节点ID:', taskData.nodeId);
-console.log('工作流名称:', taskData.workflowName);
-console.log('任务类型:', taskData.taskType);
-console.log('业务数据:', taskData.rowData);
+console.log('Task node ID:', taskData.nodeId);
+console.log('Workflow name:', taskData.workflowName);
+console.log('Task type:', taskData.taskType);
+console.log('Business data:', taskData.rowData);
 ```
 
 ### taskId
-**类型**: `String | Number`  
-**访问**: 只读  
-**说明**: 当前审批任务的唯一标识符。
+**Type**: `String | Number`  
+**Access**: Read-only  
+**Description**: Unique identifier of current approval task.
 
 ### loading
-**类型**: `Numeric`  
-**访问**: 只读  
-**说明**: 组件加载状态标识，值为1时表示正在加载数据，值为0时表示加载完成。
+**Type**: `Numeric`  
+**Access**: Read-only  
+**Description**: Component loading status identifier, value 1 indicates loading data, value 0 indicates loading completed.
 
-```typescript title="检查加载状态"
-// 监听加载状态变化
+```typescript title="Check Loading Status"
+// Listen to loading status changes
 this.TaskHandle1.loading.onValueChange(() => {
     if (this.TaskHandle1.loading.value === 1) {
-        console.log('正在加载审批数据...');
+        console.log('Loading approval data...');
     } else {
-        console.log('审批数据加载完成');
+        console.log('Approval data loading completed');
     }
 });
 ```
 
 ### compType
-**类型**: `COMPONENT_TYPE`  
-**访问**: 只读  
-**说明**: 组件类型标识，标识当前组件的分类类型。
+**Type**: `COMPONENT_TYPE`  
+**Access**: Read-only  
+**Description**: Component type identifier, identifies the classification type of current component.
 
 ### type
-**类型**: `String`  
-**访问**: 只读  
-**说明**: 组件的元素类型标识，值为"components.TaskHandle"。
+**Type**: `String`  
+**Access**: Read-only  
+**Description**: Component element type identifier, value is "components.TaskHandle".
 
 ### fullName
-**类型**: `String`  
-**访问**: 只读  
-**说明**: 组件的完整元素标识名称。
+**Type**: `String`  
+**Access**: Read-only  
+**Description**: Complete element identifier name of component.
 
 ### dataTypeList
-**类型**: `Array`  
-**访问**: 只读  
-**说明**: 组件的变量类型定义列表，包含组件所有变量的配置信息。
+**Type**: `Array`  
+**Access**: Read-only  
+**Description**: Component variable type definition list, containing configuration information of all component variables.
 
 ### name
-**类型**: `String`  
-**访问**: 只读  
-**说明**: 组件实例的唯一名称标识。
+**Type**: `String`  
+**Access**: Read-only  
+**Description**: Unique name identifier of component instance.
 
 ### title
-**类型**: `String`  
-**访问**: 只读  
-**说明**: 组件的显示标题。
+**Type**: `String`  
+**Access**: Read-only  
+**Description**: Display title of component.
 
 ### config
-**类型**: `ITaskHandleFormConfig`  
-**访问**: 只读  
-**说明**: 组件的配置对象，包含工作流名称和历史记录显示选项。
+**Type**: `ITaskHandleFormConfig`  
+**Access**: Read-only  
+**Description**: Component configuration object, containing workflow name and history display options.
 
 ### showTitle
-**类型**: `Boolean`  
-**访问**: 只读  
-**说明**: 是否显示组件标题。
+**Type**: `Boolean`  
+**Access**: Read-only  
+**Description**: Whether to display component title.
 
 ### app
-**类型**: `App`  
-**访问**: 只读  
-**说明**: 当前应用实例的引用。
+**Type**: `App`  
+**Access**: Read-only  
+**Description**: Reference to current application instance.
 
 ### page
-**类型**: `BasePage`  
-**访问**: 只读  
-**说明**: 当前页面实例的引用。
+**Type**: `BasePage`  
+**Access**: Read-only  
+**Description**: Reference to current page instance.
 
-## 事件
+## Events
 ### afterExecute
-**触发时机**: 用户完成审批处理操作后  
-**事件数据**: `formData` - 审批处理后的表单数据  
-**说明**: 当用户点击同意、拒绝或其他审批操作按钮并完成处理后触发。
+**Trigger Timing**: After user completes approval processing operation  
+**Event Data**: `formData` - Form data after approval processing  
+**Description**: Triggered when user clicks approve, reject, or other approval operation buttons and completes processing.
 
-```typescript title="监听审批处理完成"
+```typescript title="Listen to Approval Processing Completion"
 this.TaskHandle1.subscribeEvent('afterExecute', (data) => {
-    console.log('审批处理完成:', data.formData);
-    // 可以在此处执行后续操作，如页面跳转、数据更新等
+    console.log('Approval processing completed:', data.formData);
+    // Can execute subsequent operations here, such as page navigation, data updates, etc.
 });
 ```
 
 ### afterCall
-**触发时机**: 调用call方法刷新数据完成后  
-**事件数据**: `formData` - 刷新后的表单数据  
-**说明**: 当调用组件的call方法完成数据刷新后触发。
+**Trigger Timing**: After calling call method to refresh data  
+**Event Data**: `formData` - Form data after refresh  
+**Description**: Triggered when calling component's call method completes data refresh.
 
-```typescript title="监听数据刷新完成"
+```typescript title="Listen to Data Refresh Completion"
 this.TaskHandle1.subscribeEvent('afterCall', (data) => {
-    console.log('数据刷新完成:', data.formData);
-    // 可以在此处更新相关UI或执行其他逻辑
+    console.log('Data refresh completed:', data.formData);
+    // Can update related UI or execute other logic here
 });
 ```

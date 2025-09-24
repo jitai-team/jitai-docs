@@ -3,26 +3,26 @@ sidebar_position: 6
 slug: react-full-code-page
 ---
 
-# React全代码页面
-React全代码页面是 JitWeb 框架中提供最大开发灵活性的页面类型，基于 React 技术栈实现完全自定义的代码开发。它负责承载复杂业务逻辑、高度定制化界面和特殊技术需求，支持 TypeScript 和 JavaScript 开发，提供完整的页面生命周期管理和事件系统。
+# React Full Code Page
+React Full Code Page is the page type that provides maximum development flexibility in the JitWeb framework, implementing fully customized code development based on the React technology stack. It is responsible for carrying complex business logic, highly customized interfaces, and special technical requirements, supporting TypeScript and JavaScript development, providing complete page lifecycle management and event system.
 
-React全代码页面元素分层结构为 Meta（pages.Meta） → Type（pages.NormalType） → 实例。开发者可通过 JitAi 的可视化开发工具快捷地创建React全代码页面实例元素。
+The React Full Code Page element hierarchy is Meta (pages.Meta) → Type (pages.NormalType) → Instance. Developers can quickly create React Full Code Page instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的 Type 元素，或者在自己的 App 中改写 JitAi 官方提供的 pages.NormalType 元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official pages.NormalType element provided by JitAI in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
-testFullCodePage/              # 页面名称（可自定义）
-├── e.json                     # 元素声明文件
-└── index.tsx                  # 前端实现文件
+## Quick Start
+### Create Instance Element
+#### Directory Structure
+```text title="Recommended Directory Structure"
+testFullCodePage/              # Page name (customizable)
+├── e.json                     # Element declaration file
+└── index.tsx                  # Frontend implementation file
 ```
 
-#### e.json 文件
-```json title="元素声明文件"
+#### e.json File
+```json title="Element Declaration File"
 {
-  "title": "测试React全代码页面",
+  "title": "Test React Full Code Page",
   "type": "pages.NormalType",
   "frontBundleEntry": "./index.tsx",
   "outputName": "index",
@@ -30,17 +30,17 @@ testFullCodePage/              # 页面名称（可自定义）
 }
 ```
 
-## 方法接口 {#methods}
+## Method Interface {#methods}
 
-### 页面生命周期方法
-提供React页面的生命周期管理和数据操作方法。
+### Page Lifecycle Methods
+Provides lifecycle management and data operation methods for React pages.
 
-#### 前端实现文件
-```tsx title="页面实现示例"
+#### Frontend Implementation File
+```tsx title="Page Implementation Example"
 import { Button, message } from 'antd';
 import { Jit } from 'jit';
 
-// Render 是页面的渲染器，UI 部分在这里实现，它是一个 React 组件
+// Render is the page renderer, UI part is implemented here, it's a React component
 const Render = (props) => {
     const page = props.page;
 
@@ -50,32 +50,32 @@ const Render = (props) => {
 
     return (
         <div style={{ padding: '20px', textAlign: 'center' }}>
-            <h1>React全代码页面示例</h1>
+            <h1>React Full Code Page Example</h1>
             <Button type="primary" onClick={handleClick}>
-                获取数据
+                Get Data
             </Button>
         </div>
     );
 };
 
-// PageCls 是页面逻辑处理类，继承自 Jit.BasePage
+// PageCls is the page logic processing class, inherits from Jit.BasePage
 class PageCls extends Jit.BasePage {
     async init() {
-        console.log('页面初始化');
+        console.log('Page initialization');
         await this.loadComponents();
         this.bindEvent();
     }
 
     getData() {
-        return '页面数据获取成功！';
+        return 'Page data retrieved successfully!';
     }
 
     bindEvent() {
-        // 绑定页面事件
+        // Bind page events
     }
 
     destroy() {
-        console.log('页面销毁');
+        console.log('Page destruction');
         super.destroy();
     }
 }
@@ -83,9 +83,9 @@ class PageCls extends Jit.BasePage {
 export { Render, PageCls };
 ```
 
-#### 调用示例
-```javascript title="门户中引用页面"
-// 在门户配置中引用页面
+#### Usage Example
+```javascript title="Portal Page Reference"
+// Reference page in portal configuration
 const shellConfig = {
     pages: [
         {
@@ -96,56 +96,56 @@ const shellConfig = {
 };
 ```
 
-## 元素配置
-### e.json 配置
-| 配置项 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| title | string | 是 | - | 页面标题，用于显示和识别 |
-| type | string | 是 | - | 页面类型，固定为 "pages.NormalType" |
-| frontBundleEntry | string | 是 | - | 前端入口文件路径，相对于页面目录 |
-| outputName | string | 是 | - | 输出文件名，通常为 "index" |
-| tag | string | 否 | "" | 页面标签，用于分类管理 |
+## Element Configuration
+### e.json Configuration
+| Configuration Item | Type | Required | Default | Description |
+|-------------------|------|----------|---------|-------------|
+| title | string | Yes | - | Page title for display and identification |
+| type | string | Yes | - | Page type, fixed as "pages.NormalType" |
+| frontBundleEntry | string | Yes | - | Frontend entry file path, relative to page directory |
+| outputName | string | Yes | - | Output file name, usually "index" |
+| tag | string | No | "" | Page tag for categorization |
 
-### 前端实现文件配置
-前端实现文件必须导出两个核心组件：
+### Frontend Implementation File Configuration
+The frontend implementation file must export two core components:
 
-- **Render**: React 函数组件，负责页面 UI 渲染，接收 `{ page }` 作为 props
-- **PageCls**: 页面逻辑类，继承自 Jit.BasePage，负责业务逻辑处理
+- **Render**: React function component responsible for page UI rendering, receives `{ page }` as props
+- **PageCls**: Page logic class, inherits from Jit.BasePage, responsible for business logic processing
 
-### 模板继承机制
-React全代码页面支持模板继承，可以继承 Type 元素的 Render 和 PageCls 实现：
+### Template Inheritance Mechanism
+React Full Code Page supports template inheritance, can inherit Render and PageCls implementations from Type elements:
 
-```typescript title="模板继承规则"
-// 优先级：实例自定义 > Type模板 > Meta基础实现
+```typescript title="Template Inheritance Rules"
+// Priority: Instance custom > Type template > Meta base implementation
 const PageClass = PageCls || PageTemplate?.PageCls || Jit.BasePage;
 const PageRender = Render || PageTemplate?.Render;
 ```
 
-## 方法 
+## Methods
 ### init
-页面初始化方法，在页面加载时自动调用。
+Page initialization method, automatically called when the page loads.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| 无参数 | - | - | - | - |
+#### Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| No parameters | - | - | - | - |
 
-#### 返回值
-| 类型 | 说明 |
-|------|------|
-| Promise&lt;void&gt; | 异步初始化完成 |
+#### Return Value
+| Type | Description |
+|------|-------------|
+| Promise&lt;void&gt; | Asynchronous initialization completion |
 
-#### 使用示例
-```typescript title="页面初始化"
+#### Usage Example
+```typescript title="Page Initialization"
 class PageCls extends Jit.BasePage {
     async init() {
-        // 加载页面组件
+        // Load page components
         await this.loadComponents();
         
-        // 绑定事件监听
+        // Bind event listeners
         this.bindEvent();
         
-        // 加载页面数据
+        // Load page data
         await this.loadData();
     }
     
@@ -154,30 +154,30 @@ class PageCls extends Jit.BasePage {
             const data = await this.app.request('/api/page-data');
             this.publishEvent('dataLoaded', { data });
         } catch (error) {
-            console.error('数据加载失败:', error);
+            console.error('Data loading failed:', error);
         }
     }
 }
 ```
 
 ### loadComponents
-自动加载页面下的所有组件实例，这是 NormalType 页面的核心特性。
+Automatically load all component instances under the page, which is a core feature of NormalType pages.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| 无参数 | - | - | - | - |
+#### Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| No parameters | - | - | - | - |
 
-#### 返回值
-| 类型 | 说明 |
-|------|------|
-| Promise&lt;void&gt; | 组件加载完成 |
+#### Return Value
+| Type | Description |
+|------|-------------|
+| Promise&lt;void&gt; | Component loading completion |
 
-#### 使用示例
-```typescript title="组件自动加载"
+#### Usage Example
+```typescript title="Automatic Component Loading"
 class PageCls extends Jit.BasePage {
     async loadComponents() {
-        // 获取页面下的所有组件元素
+        // Get all component elements under the page
         const data = await this.app.findElementByTlPath(this.ePath);
         const componentList = data.filter(
             (n) =>
@@ -185,7 +185,7 @@ class PageCls extends Jit.BasePage {
                 n.define.fullName.startsWith(`${this.fullName}.components`)
         );
         
-        // 逐一实例化组件并绑定到页面
+        // Instantiate components one by one and bind to page
         for (const component of componentList) {
             const compName = component.define.fullName.split('.').pop();
             const { ComponentCls, compConfig } = await this.app.getElement(
@@ -200,7 +200,7 @@ class PageCls extends Jit.BasePage {
             compIns.bindApp(this.app);
             compIns.bindPage(this);
             
-            // 将组件实例挂载到页面
+            // Mount component instance to page
             this[compName] = compIns;
         }
     }
@@ -208,123 +208,123 @@ class PageCls extends Jit.BasePage {
 ```
 
 ### bindEvent
-绑定页面事件，在 init 方法中调用。
+Bind page events, called in the init method.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| 无参数 | - | - | - | - |
+#### Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| No parameters | - | - | - | - |
 
-#### 返回值
-| 类型 | 说明 |
-|------|------|
-| void | 同步执行完成 |
+#### Return Value
+| Type | Description |
+|------|-------------|
+| void | Synchronous execution completion |
 
-#### 使用示例
-```typescript title="事件绑定"
+#### Usage Example
+```typescript title="Event Binding"
 class PageCls extends Jit.BasePage {
     bindEvent() {
-        // 绑定组件间交互事件
+        // Bind inter-component interaction events
         if (this.searchForm && this.dataTable) {
             this.searchForm.on('search', (params) => {
                 this.dataTable.query(params);
             });
         }
         
-        // 绑定页面级事件
+        // Bind page-level events
         this.subscribeEvent('globalRefresh', this.handleGlobalRefresh.bind(this));
     }
     
     handleGlobalRefresh() {
-        // 刷新页面数据
+        // Refresh page data
         this.refreshAllData();
     }
 }
 ```
 
 ### destroy
-页面销毁方法，在页面卸载时自动调用，用于清理资源。
+Page destruction method, automatically called when the page is unloaded, used for resource cleanup.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| 无参数 | - | - | - | - |
+#### Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| No parameters | - | - | - | - |
 
-#### 返回值
-| 类型 | 说明 |
-|------|------|
-| void | 同步执行完成 |
+#### Return Value
+| Type | Description |
+|------|-------------|
+| void | Synchronous execution completion |
 
-#### 使用示例
-```typescript title="资源清理"
+#### Usage Example
+```typescript title="Resource Cleanup"
 class PageCls extends Jit.BasePage {
     destroy() {
-        // 清理定时器
+        // Clear timers
         if (this.timer) {
             clearInterval(this.timer);
         }
         
-        // 移除事件监听
+        // Remove event listeners
         this._eventHandleMap?.clear();
         
-        // 调用父类销毁方法
+        // Call parent class destruction method
         super.destroy();
     }
 }
 ```
 
 ### subscribeEvent
-订阅页面级全局事件。
+Subscribe to page-level global events.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| messageName | string &#124; symbol | 是 | - | 事件名称 |
-| callback | Handler&lt;T&gt; | 是 | - | 事件回调函数 |
+#### Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| messageName | string &#124; symbol | Yes | - | Event name |
+| callback | Handler&lt;T&gt; | Yes | - | Event callback function |
 
-#### 返回值
-| 类型 | 说明 |
-|------|------|
-| string | 事件处理器 ID，用于取消订阅 |
+#### Return Value
+| Type | Description |
+|------|-------------|
+| string | Event handler ID for unsubscribing |
 
-#### 使用示例
-```typescript title="事件订阅"
+#### Usage Example
+```typescript title="Event Subscription"
 class PageCls extends Jit.BasePage {
     async init() {
-        // 订阅数据变更事件
+        // Subscribe to data change events
         const handlerId = this.subscribeEvent('dataChanged', (event) => {
-            console.log('数据已变更:', event.data);
+            console.log('Data has changed:', event.data);
             this.refreshView();
         });
         
-        // 保存handlerId用于后续取消订阅
+        // Save handlerId for subsequent unsubscription
         this.dataChangeHandlerId = handlerId;
     }
 }
 ```
 
 ### publishEvent
-发布页面级全局事件。
+Publish page-level global events.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| messageName | string &#124; symbol | 是 | - | 事件名称 |
-| ex | Record&lt;string, any&gt; | 否 | - | 事件附加数据 |
+#### Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| messageName | string &#124; symbol | Yes | - | Event name |
+| ex | Record&lt;string, any&gt; | No | - | Event additional data |
 
-#### 返回值
-| 类型 | 说明 |
-|------|------|
-| Promise&lt;any&gt; | 事件发布结果 |
+#### Return Value
+| Type | Description |
+|------|-------------|
+| Promise&lt;any&gt; | Event publication result |
 
-#### 使用示例
-```typescript title="事件发布"
+#### Usage Example
+```typescript title="Event Publishing"
 class PageCls extends Jit.BasePage {
     async saveData(data) {
         try {
             await this.app.request('/api/save', { data });
             
-            // 发布数据保存成功事件
+            // Publish data save success event
             await this.publishEvent('dataSaved', {
                 data,
                 timestamp: new Date().toISOString()
@@ -337,23 +337,23 @@ class PageCls extends Jit.BasePage {
 ```
 
 ### unSubscribeEvent
-取消事件订阅。
+Unsubscribe from events.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| handlerId | string | 是 | - | 事件处理器 ID |
+#### Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| handlerId | string | Yes | - | Event handler ID |
 
-#### 返回值
-| 类型 | 说明 |
-|------|------|
-| boolean | 取消订阅是否成功 |
+#### Return Value
+| Type | Description |
+|------|-------------|
+| boolean | Whether unsubscription was successful |
 
-#### 使用示例
-```typescript title="取消事件订阅"
+#### Usage Example
+```typescript title="Event Unsubscription"
 class PageCls extends Jit.BasePage {
     destroy() {
-        // 取消事件订阅
+        // Unsubscribe from events
         if (this.dataChangeHandlerId) {
             this.unSubscribeEvent(this.dataChangeHandlerId);
         }
@@ -364,23 +364,23 @@ class PageCls extends Jit.BasePage {
 ```
 
 ### off
-直接取消事件监听。
+Directly cancel event listening.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| handlerId | string | 是 | - | 事件处理器ID |
+#### Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| handlerId | string | Yes | - | Event handler ID |
 
-#### 返回值
-| 类型 | 说明 |
-|------|------|
-| boolean | 取消监听是否成功 |
+#### Return Value
+| Type | Description |
+|------|-------------|
+| boolean | Whether canceling listening was successful |
 
-#### 使用示例
-```typescript title="取消事件监听"
+#### Usage Example
+```typescript title="Cancel Event Listening"
 class PageCls extends Jit.BasePage {
     cleanup() {
-        // 直接取消事件监听
+        // Directly cancel event listening
         if (this.eventHandlerId) {
             this.off(this.eventHandlerId);
         }
@@ -389,35 +389,35 @@ class PageCls extends Jit.BasePage {
 ```
 
 ### newVariable
-创建新的数据类型变量实例。
+Create new data type variable instances.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| varConfig | DataTypeConfig | 是 | - | 变量配置对象 |
-| value | any | 否 | - | 初始值 |
+#### Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| varConfig | DataTypeConfig | Yes | - | Variable configuration object |
+| value | any | No | - | Initial value |
 
-#### 返回值
-| 类型 | 说明 |
-|------|------|
-| DataType | 数据类型实例 |
+#### Return Value
+| Type | Description |
+|------|-------------|
+| DataType | Data type instance |
 
-#### 使用示例
-```typescript title="创建变量"
+#### Usage Example
+```typescript title="Create Variables"
 class PageCls extends Jit.BasePage {
     initVariables() {
-        // 创建文本变量
+        // Create text variable
         this.userName = this.newVariable({
             dataType: 'Stext',
             name: 'userName',
-            title: '用户名'
-        }, '张三');
+            title: 'Username'
+        }, 'John');
         
-        // 创建数字变量
+        // Create numeric variable
         this.userAge = this.newVariable({
             dataType: 'Numeric',
             name: 'userAge',
-            title: '年龄',
+            title: 'Age',
             decimal: 0
         }, 25);
     }
@@ -425,30 +425,30 @@ class PageCls extends Jit.BasePage {
 ```
 
 ### newComponent
-创建新的组件实例。
+Create new component instances.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| type | string | 是 | - | 组件类型标识 |
-| createCompConfig | any | 是 | - | 组件创建配置 |
+#### Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| type | string | Yes | - | Component type identifier |
+| createCompConfig | any | Yes | - | Component creation configuration |
 
-#### 返回值
-| 类型 | 说明 |
-|------|------|
-| Promise&lt;Component&gt; | 组件实例 |
+#### Return Value
+| Type | Description |
+|------|-------------|
+| Promise&lt;Component&gt; | Component instance |
 
-#### 使用示例
-```typescript title="创建组件"
+#### Usage Example
+```typescript title="Create Components"
 class PageCls extends Jit.BasePage {
     async createDynamicTable() {
-        // 动态创建表格组件
+        // Dynamically create table component
         const tableComp = await this.newComponent('components.Table', {
             name: 'dynamicTable',
-            title: '动态表格',
+            title: 'Dynamic Table',
             columns: [
-                { key: 'name', title: '姓名' },
-                { key: 'age', title: '年龄' }
+                { key: 'name', title: 'Name' },
+                { key: 'age', title: 'Age' }
             ]
         });
         
@@ -459,38 +459,38 @@ class PageCls extends Jit.BasePage {
 ```
 
 ### getUIContext
-获取页面 UI 上下文信息，包含函数列表和变量列表。
+Get page UI context information, including function list and variable list.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| 无参数 | - | - | - | - |
+#### Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| No parameters | - | - | - | - |
 
-#### 返回值
-| 类型 | 说明 |
-|------|------|
-| Object | 包含 functionList 和 variables 的上下文对象 |
+#### Return Value
+| Type | Description |
+|------|-------------|
+| Object | Context object containing functionList and variables |
 
-#### 使用示例
-```typescript title="获取UI上下文"
+#### Usage Example
+```typescript title="Get UI Context"
 class PageCls extends Jit.BasePage {
     getPageContext() {
         const context = this.getUIContext();
-        console.log('页面函数列表:', context.functionList);
-        console.log('页面变量列表:', context.variables);
+        console.log('Page function list:', context.functionList);
+        console.log('Page variable list:', context.variables);
         return context;
     }
     
-    // 扩展UI上下文
+    // Extend UI context
     getUIContext() {
         return {
             functionList: [
-                { name: 'saveData', title: '保存数据' },
-                { name: 'loadData', title: '加载数据' }
+                { name: 'saveData', title: 'Save Data' },
+                { name: 'loadData', title: 'Load Data' }
             ],
             variables: [
-                { dataType: 'Stext', name: 'userName', title: '用户名' },
-                { dataType: 'Numeric', name: 'userAge', title: '年龄' }
+                { dataType: 'Stext', name: 'userName', title: 'Username' },
+                { dataType: 'Numeric', name: 'userAge', title: 'Age' }
             ]
         };
     }
@@ -498,50 +498,50 @@ class PageCls extends Jit.BasePage {
 ```
 
 ### sendAiMessage
-发送AI消息（需要配置AI助手）。
+Send AI messages (requires AI assistant configuration).
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| message | string | 是 | - | 发送的消息内容 |
-| inNewChat | number | 否 | 0 | 是否在新对话中发送 |
+#### Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| message | string | Yes | - | Message content to send |
+| inNewChat | number | No | 0 | Whether to send in a new chat |
 
-#### 返回值
-| 类型 | 说明 |
-|------|------|
-| void | 无返回值 |
+#### Return Value
+| Type | Description |
+|------|-------------|
+| void | No return value |
 
-#### 使用示例
-```typescript title="AI消息发送"
+#### Usage Example
+```typescript title="AI Message Sending"
 class PageCls extends Jit.BasePage {
     async requestAiHelp() {
-        // 向AI助手发送消息
-        await this.sendAiMessage('请帮我分析这个页面的数据趋势', 1);
+        // Send message to AI assistant
+        await this.sendAiMessage('Please help me analyze the data trends on this page', 1);
     }
 }
 ```
 
 ### getVariableValue
-获取变量值。
+Get variable value.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| varName | string &#124; DataType | 是 | - | 变量名或变量实例 |
+#### Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| varName | string &#124; DataType | Yes | - | Variable name or variable instance |
 
-#### 返回值
-| 类型 | 说明 |
-|------|------|
-| any | 变量值 |
+#### Return Value
+| Type | Description |
+|------|-------------|
+| any | Variable value |
 
-#### 使用示例
-```typescript title="获取变量值"
+#### Usage Example
+```typescript title="Get Variable Value"
 class PageCls extends Jit.BasePage {
     getData() {
-        // 获取页面变量值
+        // Get page variable value
         const userName = this.getVariableValue('userName');
         
-        // 获取组件变量值
+        // Get component variable value
         const tableData = this.getVariableValue('dataTable.selectedRows');
         
         return { userName, tableData };
@@ -549,14 +549,14 @@ class PageCls extends Jit.BasePage {
 }
 ```
 
-## 属性
+## Properties
 ### app
-当前应用实例，提供应用级别的方法和数据访问。
+Current application instance, providing application-level methods and data access.
 
-```typescript title="应用实例使用"
+```typescript title="Application Instance Usage"
 class PageCls extends Jit.BasePage {
     async fetchUserData() {
-        // 通过app获取服务元素
+        // Get service element through app
         const userService = await this.app.getElement('services.UserService');
         return await userService.getUserList();
     }
@@ -564,30 +564,30 @@ class PageCls extends Jit.BasePage {
 ```
 
 ### fullName
-页面元素的完整名称标识。
+Complete name identifier of the page element.
 
-```typescript title="获取页面标识"
+```typescript title="Get Page Identifier"
 class PageCls extends Jit.BasePage {
     getPageInfo() {
-        console.log('当前页面:', this.fullName);
+        console.log('Current page:', this.fullName);
         return this.fullName;
     }
 }
 ```
 
 ### title
-页面标题。
+Page title.
 
 ### name
-页面名称。
+Page name.
 
 ### ePath
-页面元素的路径信息。
+Path information of the page element.
 
 ### pagePerm
-页面权限信息，用于权限控制。
+Page permission information for permission control.
 
-```typescript title="权限检查"
+```typescript title="Permission Check"
 class PageCls extends Jit.BasePage {
     checkPermission(action: string) {
         return this.pagePerm?.[action] === true;
@@ -597,15 +597,15 @@ class PageCls extends Jit.BasePage {
         if (!this.checkPermission('edit')) {
             return null;
         }
-        return <Button>编辑</Button>;
+        return <Button>Edit</Button>;
     }
 }
 ```
 
 ### aiConfig
-AI配置信息，包含AI助手设置。
+AI configuration information, including AI assistant settings.
 
-```typescript title="AI配置检查"
+```typescript title="AI Configuration Check"
 class PageCls extends Jit.BasePage {
     isAiEnabled() {
         return this.aiConfig?.useAi === 1;
@@ -613,30 +613,30 @@ class PageCls extends Jit.BasePage {
 }
 ```
 
-## 高级特性
-### 生命周期管理
-页面具有完整的生命周期管理机制，由 PageWrapper 自动处理。
+## Advanced Features
+### Lifecycle Management
+Pages have complete lifecycle management mechanisms, automatically handled by PageWrapper.
 
-#### 配置示例
-```typescript title="生命周期流程"
-// 1. 页面实例化
+#### Configuration Example
+```typescript title="Lifecycle Flow"
+// 1. Page instantiation
 const page = new PageCls(pageDefine);
 
-// 2. 自动调用init方法
+// 2. Automatically call init method
 await page.init();
 
-// 3. 渲染页面
+// 3. Render page
 <PageRender page={page} />
 
-// 4. 页面卸载时自动调用destroy
+// 4. Automatically call destroy when page unloads
 useUnmount(() => page?.destroy());
 ```
 
-### 组件集成
-React全代码页面通过 loadComponents 方法实现与子组件的自动集成。
+### Component Integration
+React Full Code Page implements automatic integration with child components through the loadComponents method.
 
-#### 配置示例
-```text title="页面目录结构"
+#### Configuration Example
+```text title="Page Directory Structure"
 testPage/
 ├── e.json
 ├── index.tsx
@@ -647,11 +647,11 @@ testPage/
         └── e.json
 ```
 
-```typescript title="组件使用"
+```typescript title="Component Usage"
 const Render = ({ page }) => {
     return (
         <div>
-            {/* 使用自动加载的组件 */}
+            {/* Use automatically loaded components */}
             {page.searchForm?.render()}
             {page.dataTable?.render()}
         </div>
@@ -660,7 +660,7 @@ const Render = ({ page }) => {
 
 class PageCls extends Jit.BasePage {
     bindEvent() {
-        // 配置组件间交互
+        // Configure inter-component interaction
         if (this.searchForm && this.dataTable) {
             this.searchForm.on('search', (params) => {
                 this.dataTable.query(params);
@@ -670,11 +670,11 @@ class PageCls extends Jit.BasePage {
 }
 ```
 
-### 状态管理
-基于事件系统实现页面级状态管理。
+### State Management
+Implement page-level state management based on event system.
 
-#### 配置示例
-```typescript title="状态管理"
+#### Configuration Example
+```typescript title="State Management"
 class PageCls extends Jit.BasePage {
     async init() {
         this.state = {
@@ -683,7 +683,7 @@ class PageCls extends Jit.BasePage {
             selectedItems: []
         };
         
-        // 订阅状态变更事件
+        // Subscribe to state change events
         this.subscribeEvent('stateChange', this.handleStateChange.bind(this));
         
         await super.init();
@@ -695,7 +695,7 @@ class PageCls extends Jit.BasePage {
     }
     
     handleStateChange(event) {
-        // 触发UI重新渲染
+        // Trigger UI re-rendering
         this.publishEvent('uiUpdate', event.state);
     }
 }
@@ -719,33 +719,33 @@ const Render = ({ page }) => {
 };
 ```
 
-### 变量系统
-利用 newVariable 方法创建类型化变量，实现数据验证和处理。
+### Variable System
+Use the newVariable method to create typed variables for data validation and processing.
 
-#### 配置示例
-```typescript title="变量系统"
+#### Configuration Example
+```typescript title="Variable System"
 class PageCls extends Jit.BasePage {
     async init() {
-        // 创建表单变量
+        // Create form variables
         this.formData = this.newVariable({
             dataType: 'JitDict',
             name: 'formData',
-            title: '表单数据',
+            title: 'Form Data',
             variableList: [
-                { dataType: 'Stext', name: 'userName', title: '用户名' },
-                { dataType: 'Numeric', name: 'age', title: '年龄' },
-                { dataType: 'Phone', name: 'phone', title: '手机号' }
+                { dataType: 'Stext', name: 'userName', title: 'Username' },
+                { dataType: 'Numeric', name: 'age', title: 'Age' },
+                { dataType: 'Phone', name: 'phone', title: 'Phone Number' }
             ]
         });
         
-        // 监听变量值变化
+        // Listen to variable value changes
         this.formData.on('valueChange', this.handleFormChange.bind(this));
         
         await super.init();
     }
     
     handleFormChange(event) {
-        // 表单数据验证
+        // Form data validation
         const isValid = this.validateForm(event.value);
         this.publishEvent('formValidation', { isValid, data: event.value });
     }

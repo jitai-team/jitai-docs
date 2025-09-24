@@ -3,6 +3,7 @@
   "position": 3,
   "link": {
     "type": "generated-index",
+    "slug": "reference/runtime-platform/backend/runtime-environment",
     "description": "JitNode runtime environment API documentation for environment configuration and management"
   }
 } 

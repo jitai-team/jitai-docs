@@ -4,54 +4,54 @@ slug: 01Environ
 ---
 
 # Environ
-Environ（运行环境对象），用于管理和控制应用的运行环境。在同一个运行环境中，每个AppId只能运行一个版本在App容器中。一个App在多个运行环境中都存在时，版本号可以相同，也可以不同。
+Environ (Runtime Environment Object) is used to manage and control the application's runtime environment. Within the same runtime environment, each AppId can only run one version in the App container. When an App exists in multiple runtime environments, the version numbers can be the same or different.
 
-可通过`app.env`访问当前应用所属的运行环境对象。
+The runtime environment object that the current application belongs to can be accessed through `app.env`.
 
-## 属性
-| 名称 | 类型 | 说明 |
+## Properties
+| Name | Type | Description |
 |------|------|------|
-| envId | str | 运行环境ID，例如：`JRE_MWcVmUZjEq` |
-| orgId | str | 组织ID，例如：`wanyun` |
-| title | str | 运行环境标题 |
-| remark | str | 运行环境备注 |
-| rootPath | str | 运行环境根路径 |
-| updateTime | int | 运行环境配置的更新时间戳 |
-| entry | str | 当前使用的入口地址 |
+| envId | str | Runtime environment ID, e.g.: `JRE_MWcVmUZjEq` |
+| orgId | str | Organization ID, e.g.: `wanyun` |
+| title | str | Runtime environment title |
+| remark | str | Runtime environment remarks |
+| rootPath | str | Runtime environment root path |
+| updateTime | int | Update timestamp of runtime environment configuration |
+| entry | str | Currently used entry address |
 
-:::danger[危险]
-开发者可以读取以上属性，但不要强行修改以上属性值，可能会导致不可预知的错误。
+:::danger[Danger]
+Developers can read the above properties, but should not forcibly modify these property values, as it may cause unpredictable errors.
 :::
 
-## 方法 
+## Methods 
 ### getApp
-获取一个已部署的App对象。
+Get a deployed App object.
 
-**参数：**
+**Parameters:**
 
-* **appId** (str): 应用ID
-* **version** (str, 可选): 应用版本
-* **initApp** (bool, 可选): 是否初始化应用，默认为False
+* **appId** (str): Application ID
+* **version** (str, optional): Application version
+* **initApp** (bool, optional): Whether to initialize the application, defaults to False
 
-**返回值：** 
+**Return Value:** 
 
-应用对象
+Application object
 
-**返回值类型：** 
+**Return Type:** 
 
-[App](../applications/App) 或 None
+[App](../applications/App) or None
 
-:::warning[注意]
-该方法要求应用必须在部署记录中存在。
+:::warning[Note]
+This method requires that the application must exist in the deployment records.
 :::
 
 ### getAppIgnoreRule
-获取应用对象，不要求存在部署记录。
+Get an application object without requiring deployment records to exist.
 
-**参数：**
+**Parameters:**
 
-* **appId** (str): 应用ID
-* **version** (str): 应用版本
+* **appId** (str): Application ID
+* **version** (str): Application version
 
 **返回值：** 
 
@@ -60,65 +60,65 @@ Environ（运行环境对象），用于管理和控制应用的运行环境。�
 [App](../applications/App) 或 None
 
 ### getAppPath
-获取应用在运行环境根目录下的相对路径。
+Get the relative path of the application under the runtime environment root directory.
 
-**参数：**
+**Parameters:**
 
-* **appId** (str): 应用ID
+* **appId** (str): Application ID
 
-**返回值：** 
+**Return Value:** 
 
-应用路径。
+Application path.
 
-**返回值类型：** 
+**Return Type:** 
 
 str
 
 ### getAppDistPath
-获取应用的dist目录在运行环境根目录下的相对路径。
+Get the relative path of the application's dist directory under the runtime environment root directory.
 
-**参数：**
+**Parameters:**
 
-* **appId** (str): 应用ID
+* **appId** (str): Application ID
 
-**返回值：** 
+**Return Value:** 
 
-应用dist路径。
+Application dist path.
 
-**返回值类型：** 
+**Return Type:** 
 
 str
 
 ### getAppDistAbsolutePath
-获取应用的dist目录绝对路径，磁盘上的路径。
+Get the absolute path of the application's dist directory, the path on disk.
 
-**参数：**
+**Parameters:**
 
-* **appId** (str): 应用ID
+* **appId** (str): Application ID
 
-**返回值：** 
+**Return Value:** 
 
-应用dist目录绝对路径。
+Absolute path of the application's dist directory.
 
-**返回值类型：** 
+**Return Type:** 
 
 str
 
-## 使用示例
+## Usage Example
 ```python
-# 获取当前应用的运行环境
+# Get the runtime environment of the current application
 env = app.env
 
-# 获取已部署的应用
+# Get a deployed application
 myApp = env.getApp("wanyun.MyApp")
 
-# 获取应用路径
+# Get application path
 appPath = env.getAppPath("wanyun.MyApp")
-print(f"应用路径: {appPath}")
+print(f"Application path: {appPath}")
 
-# 获取应用部署规则
+# Get application deployment rules
 rule = env.getRuleByAppId("wanyun.MyApp")
 if rule:
-    print(f"应用版本: {rule.version}")
-    print(f"调试模式: {rule.debug}")
+    print(f"Application version: {rule.version}")
+    print(f"Debug mode: {rule.debug}")
 ```

@@ -3,46 +3,46 @@ sidebar_position: 1
 slug: ai-large-models
 ---
 
-# AI大模型
-AI大模型是企业级大模型服务网关，对接各个大模型厂商，提供统一的模型调用接口，屏蔽不同大模型厂商的API差异。它负责API密钥管理、负载均衡、故障转移和重试机制，支持结构化输出和多轮对话。
+# AI Large Language Models(LLM)
+AI LLMs is an enterprise-level large model service gateway that connects to various large model vendors, providing a unified model calling interface that shields API differences between different large model vendors. It handles API key management, load balancing, failover and retry mechanisms, supporting structured output and multi-turn conversations.
 
-AI大模型元素分层结构为Meta（llms.Meta） → Type（llms.Bailian、llms.OpenAI等） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建AI大模型实例元素。
+The AI LLMs element has a hierarchical structure of Meta (llms.Meta) → Type (llms.Bailian, llms.OpenAI, etc.) → Instance. Developers can quickly create AI LLMs instance elements through JitAi's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的llms.Bailian、llms.OpenAI等元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `llms.Bailian`, `llms.OpenAI` and other elements provided by JitAi in their own App to implement their own encapsulation.
 
-**支持的大模型厂商：**
+**Supported LLMs Vendors:**
 
-| Type元素 | fullName | 厂商 | 描述 |
+| Type Element | fullName | Vendor | Description |
 |----------|----------|------|------|
-| Bailian | llms.Bailian | 阿里云 | 阿里云百炼平台，集成多种国内外主流大模型 |
-| OpenAI | llms.OpenAI | OpenAI | GPT系列模型，支持GPT-4、GPT-3.5-turbo等 |
-| Anthropic | llms.Anthropic | Anthropic | Claude系列模型，擅长长文本处理和复杂问题分析 |
-| Gemini | llms.Gemini | 谷歌 | 谷歌的多模态AI模型，支持文本、图像和代码理解 |
-| Siliconflow | llms.Siliconflow | 硅基流动 | 专业的AI推理加速平台，提供高效的大模型推理服务 |
-| Deepseek | llms.Deepseek | 深度求索 | 国内领先的大语言模型，在中文理解和代码生成方面表现优异 |
-| OpenAICompatible | llms.OpenAICompatible | OpenAI兼容 | 兼容OpenAI API协议的服务，支持私有化部署和第三方厂商 |
+| Bailian | llms.Bailian | Alibaba Cloud | Alibaba Cloud Bailian platform, integrating various mainstream LLMs from domestic and international sources |
+| OpenAI | llms.OpenAI | OpenAI | GPT series models, supporting GPT-4, GPT-3.5-turbo, etc. |
+| Anthropic | llms.Anthropic | Anthropic | Claude series models, excelling at long text processing and complex problem analysis |
+| Gemini | llms.Gemini | Google | Google's multimodal AI model, supporting text, image and code understanding |
+| Siliconflow | llms.Siliconflow | Siliconflow | Professional AI inference acceleration platform, providing efficient large model inference services |
+| Deepseek | llms.Deepseek | DeepSeek | Leading domestic large language model, excellent performance in Chinese understanding and code generation |
+| OpenAICompatible | llms.OpenAICompatible | OpenAI Compatible | Services compatible with OpenAI API protocol, supporting private deployment and third-party vendors |
 
-## 快速开始 
-### 创建实例元素
-以下是创建一个阿里云百炼AI大模型实例元素的完整示例：
+## Quick Start 
+### Creating Instance Elements
+The following is a complete example of creating an Alibaba Cloud Bailian AI Large Model instance element:
 
-#### 目录结构
+#### Directory Structure
 ```
 myapp/llms/MyBailianLLM/
 ├── e.json
 └── config.json
 ```
 
-#### e.json文件
+#### e.json File
 ```json title="myapp/llms/MyBailianLLM/e.json"
 {
-  "title": "我的百炼模型",
+  "title": "My Bailian Model",
   "type": "llms.Bailian",
   "backendBundleEntry": "."
 }
 ```
 
-#### config.json文件
+#### config.json File
 ```json title="myapp/llms/MyBailianLLM/config.json"
 {
   "api_key": "xxx",
@@ -51,16 +51,16 @@ myapp/llms/MyBailianLLM/
 }
 ```
 
-#### 调用示例
+#### Usage Example
 ```python
-# 获取AI大模型元素
+# Get AI large model element
 LLMProvider = app.getElement("llms.MyBailianLLM")
 
-# 调用AI大模型
+# Call AI large model
 response = LLMProvider.runLlm({
     "dataType": "Ltext",
     "promptList": [
-        {"role": "user", "prompt": "你好，请介绍一下你自己", "id": "user-1"}
+        {"role": "user", "prompt": "Hello, please introduce yourself", "id": "user-1"}
     ],
     "llmConfig": {"model": "qwen-plus"}
 }, locals())
@@ -68,26 +68,26 @@ response = LLMProvider.runLlm({
 print(response)
 ```
 
-### OpenAI兼容实例元素
-以下是创建一个OpenAI兼容AI大模型实例元素的完整示例，适用于Ollama、豆包等支持OpenAI API协议的服务：
+### OpenAI Compatible Instance Elements
+The following is a complete example of creating an OpenAI compatible AI large model instance element, suitable for services like Ollama, Doubao, etc. that support the OpenAI API protocol:
 
-#### 目录结构
+#### Directory Structure
 ```
 myapp/llms/MyOpenAICompatibleLLM/
 ├── e.json
 └── config.json
 ```
 
-#### e.json文件
+#### e.json File
 ```json title="myapp/llms/MyOpenAICompatibleLLM/e.json"
 {
-  "title": "我的OpenAI兼容模型",
+  "title": "My OpenAI Compatible Model",
   "type": "llms.OpenAICompatible",
   "backendBundleEntry": "."
 }
 ```
 
-#### config.json文件
+#### config.json File
 ```json title="myapp/llms/MyOpenAICompatibleLLM/config.json"
 {
   "api_key": "ollama",
@@ -96,250 +96,250 @@ myapp/llms/MyOpenAICompatibleLLM/
 }
 ```
 
-#### 调用示例
+#### Usage Example
 ```python
-# 获取AI大模型元素
+# Get AI large model element
 LLMProvider = app.getElement("llms.MyOpenAICompatibleLLM")
 
-# 调用AI大模型
+# Call AI large model
 response = LLMProvider.runLlm({
     "dataType": "Ltext",
     "promptList": [
-        {"role": "user", "prompt": "你好，请介绍一下你自己", "id": "user-1"}
+        {"role": "user", "prompt": "Hello, please introduce yourself", "id": "user-1"}
     ],
-    "llmConfig": {"model": "llama3.1"}  # 使用完整的模型名称
+    "llmConfig": {"model": "llama3.1"}  # Use complete model name
 }, locals())
 
 print(response)
 ```
 
-**注意事项：**
-- OpenAI兼容模式支持私有化部署的模型服务，如Ollama、vLLM等
-- `api_key`可以设置为任意值，某些服务（如Ollama）不验证密钥
-- `api_url`需要指向支持OpenAI API协议的服务端点
-- `model`参数需要使用服务支持的完整模型名称
+**Notes:**
+- OpenAI compatible mode supports privately deployed model services like Ollama, vLLM, etc.
+- `api_key` can be set to any value, some services (like Ollama) don't validate keys
+- `api_url` needs to point to a service endpoint that supports the OpenAI API protocol
+- `model` parameter needs to use the complete model name supported by the service
 
-## 元素配置
-### e.json配置
-| 参数 | 类型 | 对应原生类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Parameter | Type | Native Type | Required | Description |
 |------|------|-------------|------|------|
-| title | Stext | str | 是 | 实例元素显示名称 |
-| type | Stext | str | 是 | 指向Type元素fullName，如`llms.Bailian` |
-| backendBundleEntry | Stext | str | 是 | 固定为`"."` |
-| variables | JitList | list | 否 | 变量定义列表，用于API密钥等敏感信息 |
+| title | Stext | str | Yes | Instance element display name |
+| type | Stext | str | Yes | Points to Type element fullName, such as `llms.Bailian` |
+| backendBundleEntry | Stext | str | Yes | Fixed as `"."` |
+| variables | JitList | list | No | Variable definition list, used for sensitive information like API keys |
 
-#### variables配置（可选）
-当需要通过变量替换管理API密钥时使用：
+#### variables Configuration (Optional)
+Used when API key management through variable substitution is needed:
 
-| 参数 | 类型 | 对应原生类型 | 必填 | 说明 |
+| Parameter | Type | Native Type | Required | Description |
 |------|------|-------------|------|------|
-| name | Stext | str | 是 | 变量名称 |
-| title | Stext | str | 是 | 变量显示名称 |
-| value | Stext | str | 是 | 变量值 |
-| required | Numeric | int | 是 | 是否必填，1为必填，0为可选 |
-| endpoint | Stext | str | 是 | 固定为`"backend"` |
+| name | Stext | str | Yes | Variable name |
+| title | Stext | str | Yes | Variable display name |
+| value | Stext | str | Yes | Variable value |
+| required | Numeric | int | Yes | Whether required, 1 for required, 0 for optional |
+| endpoint | Stext | str | Yes | Fixed as `"backend"` |
 
-**注意**：也可以在config.json中直接配置API密钥，无需使用variables。
+**Note**: API keys can also be configured directly in config.json without using variables.
 
-### config.json配置
-| 参数 | 类型 | 对应原生类型 | 必填 | 说明 |
+### config.json Configuration
+| Parameter | Type | Native Type | Required | Description |
 |------|------|-------------|------|------|
-| api_key | Stext | str | 是 | API密钥，支持变量替换`{{variableName}}` |
-| api_url | Stext | str | 是 | API服务地址 |
-| spare_api_keys | JitList | list | 否 | 备用API密钥列表，用于负载均衡 |
+| api_key | Stext | str | Yes | API key, supports variable substitution `{{variableName}}` |
+| api_url | Stext | str | Yes | API service address |
+| spare_api_keys | JitList | list | No | Backup API key list, used for load balancing |
 
-## 方法 
+## Methods 
 ### runLlm
-AI大模型的核心类方法，用于发送请求到大模型服务。
+Core class method of AI large model, used to send requests to large model services.
 
-**方法签名**
+**Method Signature**
 ```python
 @classmethod
 def runLlm(cls, config: Dict[str, Any], context: Dict[str, Any]) -> str
 ```
 
-#### 参数详解
-**config参数（配置字典）**
+#### Parameter Details
+**config parameter (configuration dictionary)**
 
-| 参数 | 类型 | 对应原生类型 | 必填 | 说明 |
+| Parameter | Type | Native Type | Required | Description |
 |------|------|-------------|------|------|
-| dataType | Stext | str | 是 | 数据类型，如`Ltext`、`Stext`等 |
-| promptList | JitList | list | 是 | 提示列表，包含role、prompt、id字段 |
-| llmConfig | JitDict | dict | 否 | LLM配置，包含model等参数 |
-| dataTypeConfig | JitDict | dict | 否 | 数据类型配置 |
-| outputArgs | JitList | list | 否 | 输出参数配置，用于结构化输出 |
+| dataType | Stext | str | Yes | Data type, such as `Ltext`, `Stext`, etc. |
+| promptList | JitList | list | Yes | Prompt list, containing role, prompt, id fields |
+| llmConfig | JitDict | dict | No | LLM configuration, containing model and other parameters |
+| dataTypeConfig | JitDict | dict | No | Data type configuration |
+| outputArgs | JitList | list | No | Output parameter configuration, used for structured output |
 
-**context参数**
-上下文变量字典，用于变量替换，通常传入`locals()`
+**context parameter**
+Context variable dictionary, used for variable substitution, usually pass `locals()`
 
-##### outputArgs配置
-outputArgs用于定义结构化输出格式，系统会自动生成JSON Schema并引导模型返回指定格式的数据。
+##### outputArgs Configuration
+outputArgs is used to define structured output format, the system will automatically generate JSON Schema and guide the model to return data in the specified format.
 
-**基本格式**
+**Basic Format**
 ```python
 "outputArgs": [
     {
-        "name": "参数名",
-        "title": "参数描述",
-        "dataType": "数据类型"
+        "name": "parameter_name",
+        "title": "parameter_description",
+        "dataType": "data_type"
     }
 ]
 ```
 
-**支持的数据类型**
+**Supported Data Types**
 
-| 数据类型 | 说明 | 示例 |
+| Data Type | Description | Example |
 |---------|------|------|
-| Stext | 单行文本 | `{"name": "summary", "title": "摘要", "dataType": "Stext"}` |
-| Ltext | 多行文本 | `{"name": "content", "title": "详细内容", "dataType": "Ltext"}` |
-| Numeric | 数字 | `{"name": "score", "title": "评分", "dataType": "Numeric"}` |
-| Integer | 整数 | `{"name": "count", "title": "数量", "dataType": "Integer"}` |
-| Date | 日期 | `{"name": "deadline", "title": "截止日期", "dataType": "Date"}` |
-| DateTime | 日期时间 | `{"name": "createdAt", "title": "创建时间", "dataType": "DateTime"}` |
+| Stext | Single line text | `{"name": "summary", "title": "Summary", "dataType": "Stext"}` |
+| Ltext | Multi-line text | `{"name": "content", "title": "Detailed content", "dataType": "Ltext"}` |
+| Numeric | Number | `{"name": "score", "title": "Score", "dataType": "Numeric"}` |
+| Integer | Integer | `{"name": "count", "title": "Count", "dataType": "Integer"}` |
+| Date | Date | `{"name": "deadline", "title": "Deadline", "dataType": "Date"}` |
+| DateTime | Date time | `{"name": "createdAt", "title": "Creation time", "dataType": "DateTime"}` |
 
-**复杂数据类型示例**
+**Complex Data Type Examples**
 
-- **JitDict**：`{"name": "userInfo", "dataType": "JitDict", "variableList": [字段定义]}`
-- **JitList**：`{"name": "tags", "dataType": "JitList", "variableConfig": {"dataType": "Stext"}}`
-- **RowData**：`{"name": "user", "dataType": "RowData", "generic": "models.UserModel"}`
-- **RowList**：`{"name": "users", "dataType": "RowList", "generic": "models.UserModel"}`
+- **JitDict**: `{"name": "userInfo", "dataType": "JitDict", "variableList": [field definitions]}`
+- **JitList**: `{"name": "tags", "dataType": "JitList", "variableConfig": {"dataType": "Stext"}}`
+- **RowData**: `{"name": "user", "dataType": "RowData", "generic": "models.UserModel"}`
+- **RowList**: `{"name": "users", "dataType": "RowList", "generic": "models.UserModel"}`
 
-**promptList格式**：包含role（system/user/assistant）、prompt（消息内容）、id（消息标识）的字典列表。
+**promptList format**: Dictionary list containing role (system/user/assistant), prompt (message content), id (message identifier).
 
-**llmConfig格式**：包含model（模型名称）、max_tokens、temperature等配置的字典。
+**llmConfig format**: Dictionary containing model (model name), max_tokens, temperature and other configurations.
 
-**注意**：各厂商支持的llmConfig参数可能不同，具体请参考各厂商官方API文档。
+**Note**: Different vendors may support different llmConfig parameters, please refer to each vendor's official API documentation.
 
-#### 返回值
-**返回类型**：无outputArgs时返回字符串，有outputArgs时返回解析后的结构化数据字典。
+#### Return Value
+**Return Type**: Returns string when no outputArgs, returns parsed structured data dictionary when outputArgs is present.
 
-#### 使用示例
-**结构化输出**
+#### Usage Examples
+**Structured Output**
 ```python
 LLMProvider = app.getElement("llms.MyBailianLLM")
 
 response = LLMProvider.runLlm({
     "dataType": "JitDict",
     "promptList": [
-        {"role": "user", "prompt": "分析这个句子的情感：'今天天气真好'", "id": "user-1"}
+        {"role": "user", "prompt": "Analyze the sentiment of this sentence: 'The weather is really nice today'", "id": "user-1"}
     ],
     "llmConfig": {"model": "qwen-plus"},
     "outputArgs": [
-        {"name": "emotion", "dataType": "Stext", "title": "情感类型"},
-        {"name": "confidence", "dataType": "Numeric", "title": "置信度"}
+        {"name": "emotion", "dataType": "Stext", "title": "Emotion type"},
+        {"name": "confidence", "dataType": "Numeric", "title": "Confidence"}
     ]
 }, locals())
 ```
 
-**变量替换**
+**Variable Substitution**
 ```python
-userName = "张三"
+userName = "John"
 response = LLMProvider.runLlm({
     "dataType": "Ltext",
     "promptList": [
-        {"role": "user", "prompt": "你好{userName}，请介绍一下你自己", "id": "user-1"}
+        {"role": "user", "prompt": "Hello {userName}, please introduce yourself", "id": "user-1"}
     ],
     "llmConfig": {"model": "qwen-plus"}
 }, locals())
 ```
 
 ### embedDocuments
-AI大模型的文档向量化类方法，用于将文本列表转换为高维向量表示。
+Document vectorization class method of AI large model, used to convert text lists to high-dimensional vector representations.
 
-**方法签名**
+**Method Signature**
 ```python
 @classmethod
 def embedDocuments(cls, config: Dict[str, Any]) -> List[List[float]]
 ```
 
-#### 参数详解
-**config参数（配置字典）**
+#### Parameter Details
+**config parameter (configuration dictionary)**
 
-| 参数 | 类型 | 对应原生类型 | 必填 | 说明 |
+| Parameter | Type | Native Type | Required | Description |
 |------|------|-------------|------|------|
-| texts | JitList | list | 是 | 要向量化的文本列表 |
-| model | Stext | str | 是 | 向量化模型名称，如`text-embedding-v3` |
+| texts | JitList | list | Yes | List of texts to be vectorized |
+| model | Stext | str | Yes | Vectorization model name, such as `text-embedding-v3` |
 
-#### 返回值
-**返回类型**：List[List[float]]，向量化结果列表，每个文档对应一个向量。
+#### Return Value
+**Return Type**: List[List[float]], vectorization result list, each document corresponds to one vector.
 
-#### 使用示例
-**向量化**
+#### Usage Example
+**Vectorization**
 ```python
 LLMProvider = app.getElement("llms.MyBailianLLM")
 
 response = LLMProvider.embedDocuments({
-    "texts": ["这是第一个文档", "这是第二个文档"],
+    "texts": ["This is the first document", "This is the second document"],
     "model": "text-embedding-v3"
 })
 ```
 
 ### rerankDocuments
-AI大模型的文档重排类方法，用于基于查询文本对候选文档进行重新排序。
+Document reranking class method of AI large model, used to reorder candidate documents based on query text.
 
-**方法签名**
+**Method Signature**
 ```python
 @classmethod
 def rerankDocuments(cls, config: Dict[str, Any]) -> List[Dict]
 ```
 
-#### 参数详解
-**config参数（配置字典）**
+#### Parameter Details
+**config parameter (configuration dictionary)**
 
-| 参数 | 类型 | 对应原生类型 | 必填 | 说明 |
+| Parameter | Type | Native Type | Required | Description |
 |------|------|-------------|------|------|
-| query | Stext | str | 是 | 查询文本，用于与文档进行相关性比较 |
-| documents | JitList | list | 是 | 要重排的文档文本列表 |
-| model | Stext | str | 是 | 重排模型名称，如`gte-rerank-v2` |
+| query | Stext | str | Yes | Query text, used for relevance comparison with documents |
+| documents | JitList | list | Yes | List of document texts to be reranked |
+| model | Stext | str | Yes | Reranking model name, such as `gte-rerank-v2` |
 
-#### 返回值
-**返回类型**：List[Dict]，重排结果列表，每个字典包含：
-- `index`: 原始文档索引 (int)
-- `score`: 相关性分数 (float)
-- `document`: 文档内容 (str, 可选)
+#### Return Value
+**Return Type**: List[Dict], reranking result list, each dictionary contains:
+- `index`: Original document index (int)
+- `score`: Relevance score (float)
+- `document`: Document content (str, optional)
 
-#### 使用示例
-**基础重排**
+#### Usage Examples
+**Basic Reranking**
 ```python
 LLMProvider = app.getElement("llms.MyBailianLLM")
 
 response = LLMProvider.rerankDocuments({
-    "query": "什么是人工智能？",
+    "query": "What is artificial intelligence?",
     "documents": [
-        "人工智能是计算机科学的一个分支",
-        "机器学习是人工智能的重要组成部分",
-        "深度学习是机器学习的子领域"
+        "Artificial intelligence is a branch of computer science",
+        "Machine learning is an important component of artificial intelligence",
+        "Deep learning is a subfield of machine learning"
     ],
     "model": "gte-rerank"
 })
 ```
 
-**结合搜索场景**
+**Combined with Search Scenarios**
 ```python
 search_results = [
-    "文档1：AI技术发展历程",
-    "文档2：机器学习算法介绍",
-    "文档3：深度学习框架对比",
-    "文档4：自然语言处理应用"
+    "Document 1: AI Technology Development History",
+    "Document 2: Machine Learning Algorithm Introduction",
+    "Document 3: Deep Learning Framework Comparison",
+    "Document 4: Natural Language Processing Applications"
 ]
 
 response = LLMProvider.rerankDocuments({
-    "query": "深度学习相关技术",
+    "query": "Deep learning related technologies",
     "documents": search_results,
     "model": "gte-rerank-v2"
 })
 ```
 
-## 属性
-暂无
+## Properties
+None
 
-## 高级特性
-### API密钥管理
-支持主密钥和备用密钥配置，系统自动实现负载均衡和故障转移。
+## Advanced Features
+### API Key Management
+Supports primary and backup key configuration, system automatically implements load balancing and failover.
 
-### 重试机制
-内置指数退避重试策略，自动处理临时性错误。
+### Retry Mechanism
+Built-in exponential backoff retry strategy, automatically handles temporary errors.
 
-### 错误处理
-提供标准化错误码，包括API密钥无效、配额超限、请求频率限制等常见错误类型。
+### Error Handling
+Provides standardized error codes, including invalid API keys, quota exceeded, request rate limiting and other common error types.
 

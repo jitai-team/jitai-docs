@@ -1,104 +1,104 @@
 ---
 slug: aliyun-sms
 ---
-# 阿里云短信
-阿里云短信是基于阿里云SMS API的企业级短信通知服务，通过标准的sendMessage接口实现验证码发送、通知提醒等短信业务场景。它集成阿里云SMS API，支持AccessKey认证和签名验证机制，提供完整的错误处理和日志监控，确保消息发送的可靠性。
+# Alibaba Cloud SMS
+Alibaba Cloud SMS is an enterprise-level SMS notification service based on Alibaba Cloud SMS API, implementing SMS business scenarios such as verification code sending and notification reminders through the standard sendMessage interface. It integrates Alibaba Cloud SMS API, supports AccessKey authentication and signature verification mechanisms, provides complete error handling and log monitoring, ensuring message delivery reliability.
 
-阿里云短信元素分层结构为Meta（SMS.Meta） → Type（SMS.Aliyun） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建阿里云短信实例元素。
+The hierarchical structure of Alibaba Cloud SMS elements is Meta (SMS.Meta) → Type (SMS.Aliyun) → Instance. Developers can quickly create Alibaba Cloud SMS instance elements through JitAi's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的SMS.Aliyun元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `SMS.Aliyun` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-````text title="推荐目录结构"
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 SMS/
-└── YourSmsName/          # 自定义短信实例名称
-    ├── e.json            # 元素声明文件
-    └── sms.json          # 阿里云短信配置文件
-````
+└── YourSmsName/          # Custom SMS instance name
+    ├── e.json            # Element declaration file
+    └── sms.json          # Alibaba Cloud SMS configuration file
+```
 
-#### e.json文件
-````json title="元素声明文件"
+#### e.json File
+```json title="Element Declaration File"
 {
-  "title": "我的阿里云短信",
+  "title": "My Alibaba Cloud SMS",
   "type": "SMS.Aliyun",
   "backendBundleEntry": "."
 }
-````
+```
 
-#### 业务配置文件
-````json title="sms.json配置文件"
+#### Business Configuration File
+```json title="sms.json Configuration File"
 {
   "accessKey": "your_access_key",
   "accessSecret": "your_access_secret", 
   "verifySign": "your_signature"
 }
-````
+```
 
-#### 调用示例
-````python title="发送短信示例"
-# 获取短信元素实例
+#### Usage Example
+```python title="Send SMS Example"
+# Get SMS element instance
 sms_element = app.getElement("SMS.YourSmsName")
 
-# 发送短信
+# Send SMS
 result = sms_element.sendMessage(
     phoneList=["13800138000", "13900139000"],
     params={"code": "123456"},
     verifyTemplateCode="SMS_123456789"
 )
-````
+```
 
-## 元素配置
-### e.json配置
-| 配置项 | 类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| title | string | 是 | 元素显示名称 |
-| type | string | 是 | 固定值"SMS.Aliyun" |
-| backendBundleEntry | string | 是 | 固定值"." |
+| title | string | Yes | Element display name |
+| type | string | Yes | Fixed value "SMS.Aliyun" |
+| backendBundleEntry | string | Yes | Fixed value "." |
 
-### 业务配置文件配置
-| 配置项 | 类型 | 必填 | 说明 |
+### Business Configuration File
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| accessKey | string | 是 | 阿里云AccessKey |
-| accessSecret | string | 是 | 阿里云AccessSecret |
-| verifySign | string | 是 | 短信签名，需在阿里云控制台申请 |
+| accessKey | string | Yes | Alibaba Cloud AccessKey |
+| accessSecret | string | Yes | Alibaba Cloud AccessSecret |
+| verifySign | string | Yes | SMS signature, needs to be applied in Alibaba Cloud console |
 
-## 方法 
+## Methods
 ### sendMessage
-发送短信接口，通过传入手机号列表、模板参数和模板代码发送短信消息。
+Send SMS interface, sends SMS messages by passing phone number list, template parameters, and template code.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| phoneList | JitList | list | 是 | 手机号列表，每个手机号为字符串格式 |
-| params | JitDict | dict | 是 | 短信模板参数，键值对格式 |
-| verifyTemplateCode | Stext | str | 是 | 阿里云短信模板代码，需在extend参数中传入 |
+| phoneList | JitList | list | Yes | Phone number list, each phone number in string format |
+| params | JitDict | dict | Yes | SMS template parameters, key-value pair format |
+| verifyTemplateCode | Stext | str | Yes | Alibaba Cloud SMS template code, needs to be passed in extend parameter |
 
-#### 返回值
-返回阿里云SMS API的响应结果对象，包含发送状态和相关信息。
+#### Return Value
+Returns Alibaba Cloud SMS API response result object, containing sending status and related information.
 
-#### 使用示例
-````python title="基础发送示例"
-# 发送验证码短信
+#### Usage Example
+```python title="Basic Sending Example"
+# Send verification code SMS
 result = sms_element.sendMessage(
     phoneList=["13800138000"],
     params={"code": "6789"},
     verifyTemplateCode="SMS_123456789"
 )
-````
+```
 
-````python title="批量发送示例"
-# 批量发送通知短信
+```python title="Batch Sending Example"
+# Batch send notification SMS
 result = sms_element.sendMessage(
     phoneList=["13800138000", "13900139000", "13700137000"],
     params={"name": "张三", "event": "系统维护"},
     verifyTemplateCode="SMS_987654321"
 )
-````
+```
 
-````python title="多参数模板示例"
-# 复杂模板参数
+```python title="Multi-parameter Template Example"
+# Complex template parameters
 result = sms_element.sendMessage(
     phoneList=["13800138000"],
     params={
@@ -108,16 +108,16 @@ result = sms_element.sendMessage(
     },
     verifyTemplateCode="SMS_ORDER_NOTIFY"
 )
-````
+```
 
-## 属性
-暂无
+## Properties
+None
 
-## 高级特性
-### 错误处理
-阿里云短信元素提供完整的错误处理机制，包含以下预定义错误码：
+## Advanced Features
+### Error Handling
+Alibaba Cloud SMS element provides complete error handling mechanism, including the following predefined error codes:
 
-````python title="错误处理示例"
+```python title="Error Handling Example"
 try:
     result = sms_element.sendMessage(
         phoneList=["13800138000"],
@@ -125,26 +125,26 @@ try:
         verifyTemplateCode="SMS_123456789"
     )
 except Exception as e:
-    # 错误码：46001 - 参数缺失或手机号列表为空
-    # 错误码：46002 - 发送短信失败，阿里云API返回错误
-    # 错误码：46003 - 短信发送请求失败
-    log.error(f"短信发送失败: {e}")
-````
+    # Error code: 46001 - Parameter missing or phone number list empty
+    # Error code: 46002 - SMS sending failed, Alibaba Cloud API returned error
+    # Error code: 46003 - SMS sending request failed
+    log.error(f"SMS sending failed: {e}")
+```
 
-### 模板管理
-在使用前需要在阿里云短信服务控制台创建短信模板和签名：
+### Template Management
+Before use, you need to create SMS templates and signatures in Alibaba Cloud SMS service console:
 
-````python title="模板配置说明"
-# 1. 在阿里云控制台创建短信签名，获取verifySign
-# 2. 创建短信模板，获取模板代码
-# 3. 模板示例：
-#    验证码模板：验证码${code}，5分钟内有效。
-#    通知模板：亲爱的${name}，${event}将于${time}进行。
+```python title="Template Configuration Description"
+# 1. Create SMS signature in Alibaba Cloud console, get verifySign
+# 2. Create SMS template, get template code
+# 3. Template examples:
+#    Verification code template: Verification code ${code}, valid for 5 minutes.
+#    Notification template: Dear ${name}, ${event} will be conducted at ${time}.
 
-# 使用时传入对应的模板代码和参数
+# Use corresponding template code and parameters when sending
 result = sms_element.sendMessage(
     phoneList=["13800138000"],
-    params={"code": "123456"},  # 对应模板中的${code}
-    verifyTemplateCode="SMS_123456789"  # 阿里云分配的模板代码
+    params={"code": "123456"},  # Corresponds to ${code} in template
+    verifyTemplateCode="SMS_123456789"  # Template code assigned by Alibaba Cloud
 )
-```` 
+```

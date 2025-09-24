@@ -1,28 +1,28 @@
 ---
 sidebar_position: -1
 ---
-# 运行平台概述
-[**JAAP（JitAi Application Protocol）**](./JAAP) 完成了对应用开发复杂度的抽象，使业务专家能够专注于上层业务逻辑的编排，而要让JAAP真正发挥作用，就需要一个能够理解和执行JAAP的环境——应用运行容器。
+# Runtime Platform Overview
+[**JAAP (JitAi Application Protocol)**](./JAAP) abstracts the complexity of application development, enabling business experts to focus on orchestrating high-level business logic. To make JAAP truly effective, an environment that can understand and execute JAAP is needed—the application runtime container.
 
-## JAAP应用运行容器
-应用运行容器即JitAi应用运行平台，内置在安装包中，随JitNode节点的启动而加载。JitAi应用运行平台是跨平台的，支持在Windows、MacOS、Linux操作系统上运行。
+## JAAP Application Runtime Container
+The application runtime container is the JitAi application runtime platform, built into the installation package and loaded when the JitNode starts. The JitAi application runtime platform is cross-platform, supporting operation on Windows, MacOS, and Linux operating systems.
 
-我们对照JVM、Docker来理解JAAP应用运行容器:
+We can understand the JAAP application runtime container by comparing it to JVM and Docker:
 
-| 类比对象 | 解释对象 | 执行结果 | JitAi应用运行平台 |
+| Analogy | Interpretation Object | Execution Result | JitAi Application Runtime Platform |
 |---------|----------|----------|------------|
-| **JVM** | Java字节码 | 跨平台运行Java程序 | 解释JAAP配置，跨平台运行JitAi应用 |
-| **Docker** | Dockerfile | 构建和运行容器 | 解释JAAP配置，构建和运行应用 |
+| **JVM** | Java bytecode | Cross-platform Java program execution | Interprets JAAP configuration, runs JitAi applications cross-platform |
+| **Docker** | Dockerfile | Build and run containers | Interprets JAAP configuration, builds and runs applications |
 
-## 特性概览
-### 跨平台运行
-支持在Windows、MacOS、Linux操作系统上运行。
+## Feature Overview
+### Cross-Platform Execution
+Supports operation on Windows, MacOS, and Linux operating systems.
 
-### 前后端全栈支持
-支持前后端全栈元素的开发、调试，自动构建、部署、运行、更新。
+### Full-Stack Frontend and Backend Support
+Supports development and debugging of full-stack frontend and backend elements, with automatic building, deployment, execution, and updates.
 
-### 环境虚拟化
-仅受硬件资源限制的运行环境虚拟化，支持创建任意数量的运行环境。
+### Environment Virtualization
+Runtime environment virtualization limited only by hardware resources, supporting the creation of any number of runtime environments.
 
-### 平台API
-平台为应用开发者提供了一套系统API，开发者可以在元素逻辑中使用这些API操作应用、环境、元素等核心对象。
+### Platform API
+The platform provides application developers with a set of system APIs that can be used in element logic to operate core objects such as applications, environments, and elements.

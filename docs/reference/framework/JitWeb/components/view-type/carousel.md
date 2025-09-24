@@ -1,16 +1,16 @@
 ---
 slug: carousel
 ---
-# 轮播图
-轮播图是展示图片和内容的视图组件，基于数据源实现图片轮播展示、内容切换和用户交互。它负责数据加载、图片渲染和事件处理，支持自动播放、手动切换、点击交互等功能，同时提供丰富的样式配置选项。
+# Carousel
+Carousel is a view component for displaying images and content, implementing image carousel display, content switching, and user interaction based on data sources. It handles data loading, image rendering, and event processing, supporting autoplay, manual switching, click interaction, and other features, while providing rich style configuration options.
 
-轮播图元素分层结构为Meta（components.Meta） → Type（components.Carousel） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建轮播图实例元素。
+The Carousel element has a hierarchical structure of Meta (components.Meta) → Type (components.Carousel) → Instance. Developers can quickly create Carousel instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.CarouselType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official components.CarouselType element provided by JitAI in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基础配置示例
-```text title="推荐目录结构"
+## Quick Start
+### Basic Configuration Example
+```text title="Recommended Directory Structure"
 pages/
 └── MyPage/
     ├── e.json
@@ -18,18 +18,18 @@ pages/
     └── page.ts
 ```
 
-```json title="scheme.json - 轮播图配置"
+```json title="scheme.json - Carousel Configuration"
 {
   "componentList": [
     {
       "fullName": "components.Carousel",
       "type": "components.Carousel", 
       "name": "myCarousel",
-      "title": "我的轮播图",
+      "title": "My Carousel",
       "config": {
         "requireElements": [
           {
-            "title": "轮播图的数据源",
+            "title": "Carousel Data Source",
             "type": "models.Meta",
             "name": "models.ProductModel",
             "filter": "",
@@ -53,102 +53,102 @@ pages/
 }
 ```
 
-```tsx title="调用示例"
-// 获取轮播图组件实例
+```tsx title="Usage Example"
+// Get carousel component instance
 const carousel = app.getElement('pages.MyPage.myCarousel');
 
-// 监听点击事件
+// Listen for click events
 carousel.subscribeEvent('clickRow', async (data) => {
-  console.log('点击的数据：', data.activeRow);
+  console.log('Clicked data:', data.activeRow);
 });
 
-// 刷新数据
+// Refresh data
 await carousel.call();
 ```
 
-### 配置属性说明
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| requireElements | requireElement[] | 数据源配置，需要指定模型元素 | - | 是 |
-| fieldTitle | string[] | 标题字段列表 | `[]` | 否 |
-| abstract | string[] | 摘要字段列表 | `[]` | 否 |
-| image | string[] | 图片字段列表 | `[]` | 是 |
-| imageNum | number | 最大显示图片数量 | 5 | 否 |
-| style | CarouselStyle | 样式配置对象 | - | 否 |
-| defaultRender | boolean | 是否默认渲染 | true | 否 |
+### Configuration Properties
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| requireElements | requireElement[] | Data source configuration, need to specify model element | - | Yes |
+| fieldTitle | string[] | Title field list | `[]` | No |
+| abstract | string[] | Abstract field list | `[]` | No |
+| image | string[] | Image field list | `[]` | Yes |
+| imageNum | number | Maximum display image count | 5 | No |
+| style | CarouselStyle | Style configuration object | - | No |
+| defaultRender | boolean | Whether to use default rendering | true | No |
 
-**CarouselStyle配置：**
+**CarouselStyle Configuration:**
 
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| autoplaySpeed | number | 自动播放速度（毫秒） | 3000 | 否 |
-| dotPosition | 'top' &#124; 'bottom' &#124; 'left' &#124; 'right' | 指示点位置 | 'bottom' | 否 |
-| effect | 'scrollx' &#124; 'fade' | 切换动画效果 | 'scrollx' | 否 |
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| autoplaySpeed | number | Autoplay speed (milliseconds) | 3000 | No |
+| dotPosition | 'top' \| 'bottom' \| 'left' \| 'right' | Dot position | 'bottom' | No |
+| effect | 'scrollx' \| 'fade' | Transition animation effect | 'scrollx' | No |
 
-## 变量
+## Variables
 ### displayRowList
-展示的多行数据，类型为 `RowList<T>`，只读属性。
+Displayed multi-row data, type `RowList<T>`, read-only property.
 
-包含根据配置筛选和处理后的数据列表，用于轮播图渲染。
+Contains filtered and processed data list based on configuration, used for carousel rendering.
 
-```tsx title="获取展示数据"
+```tsx title="Get Display Data"
 const carousel = app.getElement('pages.MyPage.myCarousel');
 const dataList = carousel.displayRowList.value;
-console.log('轮播图数据：', dataList);
+console.log('Carousel data:', dataList);
 ```
 
 ### activeRow
-操作的单行数据，类型为 `RowData<T>`，只读属性。
+Operated single-row data, type `RowData<T>`, read-only property.
 
-当前被点击或操作的数据行，在点击事件中会自动更新。
+Currently clicked or operated data row, automatically updated in click events.
 
-```tsx title="获取当前操作数据"
+```tsx title="Get Current Operation Data"
 const carousel = app.getElement('pages.MyPage.myCarousel');
 carousel.subscribeEvent('clickRow', (data) => {
-  console.log('当前操作的数据：', carousel.activeRow.value);
+  console.log('Current operation data:', carousel.activeRow.value);
 });
 ```
 
 ### filter
-筛选条件，类型为 `QFilter<T>`，只读属性。
+Filter condition, type `QFilter<T>`, read-only property.
 
-当前应用的数据筛选条件，包含配置的过滤器和运行时传入的条件。
+Currently applied data filter condition, containing configured filters and runtime conditions.
 
-```tsx title="获取筛选条件"
+```tsx title="Get Filter Condition"
 const carousel = app.getElement('pages.MyPage.myCarousel');
-console.log('当前筛选条件：', carousel.filter.value);
+console.log('Current filter condition:', carousel.filter.value);
 ```
 
 ### loading
-加载状态，类型为 `Numeric`，只读属性。
+Loading state, type `Numeric`, read-only property.
 
-表示数据加载状态，0表示未加载，1表示加载中。
+Represents data loading state, 0 means not loaded, 1 means loading.
 
-```tsx title="检查加载状态"
+```tsx title="Check Loading State"
 const carousel = app.getElement('pages.MyPage.myCarousel');
-console.log('是否正在加载：', carousel.loading.value === 1);
+console.log('Is loading:', carousel.loading.value === 1);
 ```
 
-## 方法 
+## Methods
 ### call
-刷新轮播图数据的异步方法。
+Asynchronous method to refresh carousel data.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| qFilter | QFilter&lt;T&gt; | 筛选条件对象 | - | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| qFilter | `QFilter<T>` | Filter condition object | - | No |
 
-#### 返回值
-返回 `Promise<void>`
+#### Return Value
+Returns `Promise<void>`
 
-#### 使用示例
-```tsx title="刷新数据"
+#### Usage Example
+```tsx title="Refresh Data"
 const carousel = app.getElement('pages.MyPage.myCarousel');
 
-// 无条件刷新
+// Refresh without conditions
 await carousel.call();
 
-// 带筛选条件刷新
+// Refresh with filter conditions
 const filter = new app.datatypes.QFilter({
   value: "Q(status='active')"
 });
@@ -156,33 +156,33 @@ await carousel.call(filter);
 ```
 
 ### destroy
-销毁组件实例的方法。
+Method to destroy component instance.
 
-#### 返回值
-无返回值
+#### Return Value
+No return value
 
-#### 使用示例
-```tsx title="销毁组件"
+#### Usage Example
+```tsx title="Destroy Component"
 const carousel = app.getElement('pages.MyPage.myCarousel');
 
-// 销毁组件，清理事件监听和资源
+// Destroy component, clean up event listeners and resources
 carousel.destroy();
 ```
 
 ### publishEvent
-发送组件事件的异步方法。
+Asynchronous method to send component events.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| name | string | 事件名称 | - | 是 |
-| ex | Record&lt;string, any&gt; | 附加数据 | - | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| name | string | Event name | - | Yes |
+| ex | `Record<string, any>` | Additional data | - | No |
 
-#### 返回值
-返回 `Promise<void>`
+#### Return Value
+Returns `Promise<void>`
 
-#### 使用示例
-```tsx title="发送自定义事件"
+#### Usage Example
+```tsx title="Send Custom Event"
 const carousel = app.getElement('pages.MyPage.myCarousel');
 
 await carousel.publishEvent('customEvent', {
@@ -191,83 +191,83 @@ await carousel.publishEvent('customEvent', {
 ```
 
 ### runCode
-执行代码片段的方法。
+Method to execute code snippets.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| code | string | 要执行的代码字符串 | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| code | string | Code string to execute | - | Yes |
 
-#### 返回值
-返回代码执行结果
+#### Return Value
+Returns code execution result
 
-#### 使用示例
-```tsx title="执行代码"
+#### Usage Example
+```tsx title="Execute Code"
 const carousel = app.getElement('pages.MyPage.myCarousel');
 
-// 执行代码片段
+// Execute code snippet
 const result = carousel.runCode('this.displayRowList.value.length');
-console.log('数据数量：', result);
+console.log('Data count:', result);
 ```
 
 ### setConfig
-设置组件配置的方法。
+Method to set component configuration.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| next | Partial&lt;T&gt; | 新的配置对象 | - | 是 |
-| clean | boolean | 是否清空原配置 | false | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| next | `Partial<T>` | New configuration object | - | Yes |
+| clean | boolean | Whether to clear original configuration | false | No |
 
-#### 返回值
-无返回值
+#### Return Value
+No return value
 
-#### 使用示例
-```tsx title="设置配置"
+#### Usage Example
+```tsx title="Set Configuration"
 const carousel = app.getElement('pages.MyPage.myCarousel');
 
-// 合并配置
+// Merge configuration
 carousel.setConfig({ imageNum: 8 });
 
-// 替换全部配置
+// Replace all configuration
 carousel.setConfig({ imageNum: 8, style: { autoplaySpeed: 2000 } }, true);
 ```
 
 ### subscribeEvent
-订阅组件事件的方法。
+Method to subscribe to component events.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| name | string | 事件名称 | - | 是 |
-| evtCb | Function | 事件回调函数 | - | 是 |
-| unSubscribeExist | boolean | 是否取消已存在的订阅 | true | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| name | string | Event name | - | Yes |
+| evtCb | Function | Event callback function | - | Yes |
+| unSubscribeExist | boolean | Whether to cancel existing subscription | true | No |
 
-#### 返回值
-返回订阅ID字符串
+#### Return Value
+Returns subscription ID string
 
-#### 使用示例
-```tsx title="订阅事件"
+#### Usage Example
+```tsx title="Subscribe to Event"
 const carousel = app.getElement('pages.MyPage.myCarousel');
 
 const subscriptionId = carousel.subscribeEvent('clickRow', async (data) => {
-  console.log('轮播图被点击：', data);
+  console.log('Carousel clicked:', data);
 });
 ```
 
 ### unSubscribeEvent
-取消事件订阅的方法。
+Method to cancel event subscription.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| id | string | 订阅ID | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| id | string | Subscription ID | - | Yes |
 
-#### 返回值
-无返回值
+#### Return Value
+No return value
 
-#### 使用示例
-```tsx title="取消订阅"
+#### Usage Example
+```tsx title="Cancel Subscription"
 const carousel = app.getElement('pages.MyPage.myCarousel');
 
 const subscriptionId = carousel.subscribeEvent('clickRow', callback);
@@ -275,18 +275,18 @@ carousel.unSubscribeEvent(subscriptionId);
 ```
 
 ### updateConfig
-更新组件配置的方法。
+Method to update component configuration.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| config | ComponentConfig | 新的配置对象 | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| config | ComponentConfig | New configuration object | - | Yes |
 
-#### 返回值
-无返回值
+#### Return Value
+No return value
 
-#### 使用示例
-```tsx title="更新配置"
+#### Usage Example
+```tsx title="Update Configuration"
 const carousel = app.getElement('pages.MyPage.myCarousel');
 
 carousel.updateConfig({
@@ -300,112 +300,112 @@ carousel.updateConfig({
 });
 ```
 
-## 属性
+## Attributes
 ### config
-组件配置对象，类型为 `CarouselCompConfig & { requireElements: requireElement[] }`，可读写。
+Component configuration object, type `CarouselCompConfig & { requireElements: requireElement[] }`, readable and writable.
 
-包含轮播图的完整配置信息，可以通过updateConfig方法进行更新。
+Contains complete carousel configuration information, can be updated through updateConfig method.
 
-```tsx title="访问配置"
+```tsx title="Access Configuration"
 const carousel = app.getElement('pages.MyPage.myCarousel');
-console.log('当前配置：', carousel.config);
-console.log('图片数量：', carousel.config.imageNum);
+console.log('Current configuration:', carousel.config);
+console.log('Image count:', carousel.config.imageNum);
 ```
 
 ### app
-应用实例，类型为 `App`，只读属性。
+Application instance, type `App`, read-only property.
 
-当前运行的应用实例引用。
+Reference to currently running application instance.
 
-```tsx title="访问应用实例"
+```tsx title="Access Application Instance"
 const carousel = app.getElement('pages.MyPage.myCarousel');
-console.log('应用实例：', carousel.app);
+console.log('Application instance:', carousel.app);
 ```
 
 ### compType
-组件类型枚举，类型为 `COMPONENT_TYPE`，只读属性。
+Component type enum, type `COMPONENT_TYPE`, read-only property.
 
-组件的类型分类。
+Component type classification.
 
 ### name
-组件名称，类型为 `string`，只读属性。
+Component name, type `string`, read-only property.
 
-在页面中的唯一标识符。
+Unique identifier in the page.
 
-```tsx title="获取组件名称"
+```tsx title="Get Component Name"
 const carousel = app.getElement('pages.MyPage.myCarousel');
-console.log('组件名称：', carousel.name);
+console.log('Component name:', carousel.name);
 ```
 
 ### page
-页面实例，类型为 `BasePage`，只读属性。
+Page instance, type `BasePage`, read-only property.
 
-当前页面实例引用。
+Reference to current page instance.
 
-```tsx title="访问页面实例"
+```tsx title="Access Page Instance"
 const carousel = app.getElement('pages.MyPage.myCarousel');
-console.log('页面实例：', carousel.page);
+console.log('Page instance:', carousel.page);
 ```
 
 ### showTitle
-是否显示标题，类型为 `boolean`，只读属性。
+Whether to show title, type `boolean`, read-only property.
 
-控制组件标题的显示状态。
+Controls component title display state.
 
-```tsx title="检查标题显示状态"
+```tsx title="Check Title Display State"
 const carousel = app.getElement('pages.MyPage.myCarousel');
-console.log('是否显示标题：', carousel.showTitle);
+console.log('Show title:', carousel.showTitle);
 ```
 
 ### title
-组件标题，类型为 `string`，只读属性。
+Component title, type `string`, read-only property.
 
-组件的显示标题。
+Component display title.
 
-```tsx title="获取组件标题"
+```tsx title="Get Component Title"
 const carousel = app.getElement('pages.MyPage.myCarousel');
-console.log('组件标题：', carousel.title);
+console.log('Component title:', carousel.title);
 ```
 
 ### type
-组件类型标识，类型为 `string`，只读属性。
+Component type identifier, type `string`, read-only property.
 
-组件的Type元素标识。
+Component's Type element identifier.
 
-```tsx title="获取组件类型"
+```tsx title="Get Component Type"
 const carousel = app.getElement('pages.MyPage.myCarousel');
-console.log('组件类型：', carousel.type); // "components.Carousel"
+console.log('Component type:', carousel.type); // "components.Carousel"
 ```
 
-## 事件
+## Events
 ### clickRow
-轮播图项目点击事件。
+Carousel item click event.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| activeRow | RowData&lt;T&gt; | 被点击的数据行 | - | - |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| activeRow | `RowData<T>` | Clicked data row | - | - |
 
-#### 使用示例
-```tsx title="处理点击事件"
+#### Usage Example
+```tsx title="Handle Click Event"
 const carousel = app.getElement('pages.MyPage.myCarousel');
 
 carousel.subscribeEvent('clickRow', async (data) => {
   const clickedItem = data.activeRow;
-  console.log('点击的商品：', clickedItem.value);
+  console.log('Clicked product:', clickedItem.value);
   
-  // 跳转到详情页
+  // Navigate to detail page
   await app.navigate('pages.ProductDetail', {
     productId: clickedItem.value.id
   });
 });
 ```
 
-## 高级特性
-### 响应式配置
-轮播图支持移动端和PC端不同的渲染方式，通过e.json中的frontBundleEntry和frontMobileBundleEntry分别指定不同入口文件。
+## Advanced Features
+### Responsive Configuration
+Carousel supports different rendering methods for mobile and PC, specified through frontBundleEntry and frontMobileBundleEntry in e.json respectively.
 
-```json title="移动端适配配置"
+```json title="Mobile Adaptation Configuration"
 {
   "config": {
     "style": {
@@ -418,18 +418,18 @@ carousel.subscribeEvent('clickRow', async (data) => {
 }
 ```
 
-### 组件生命周期管理
-组件提供完整的生命周期管理，支持动态创建、配置更新和资源清理。
+### Component Lifecycle Management
+Component provides complete lifecycle management, supporting dynamic creation, configuration updates, and resource cleanup.
 
-```tsx title="完整生命周期示例"
-// 创建并配置组件
+```tsx title="Complete Lifecycle Example"
+// Create and configure component
 const carousel = app.getElement('pages.MyPage.myCarousel');
 
-// 更新配置
+// Update configuration
 carousel.updateConfig({
   config: { imageNum: 10 }
 });
 
-// 使用完毕后清理资源
+// Clean up resources after use
 carousel.destroy();
-``` 
+```

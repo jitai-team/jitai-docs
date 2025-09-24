@@ -1,16 +1,16 @@
 ---
 slug: tree
 ---
-# 树形
-树形是用于展示层级结构数据的视图组件，基于数据模型字段构建多层级的树形导航。它负责数据加载、层级展示和节点交互，支持单选和多选模式，提供节点点击事件和筛选条件输出。
+# Tree
+Tree is a view component for displaying hierarchical structure data, building multi-level tree navigation based on data model fields. It is responsible for data loading, hierarchical display and node interaction, supporting single and multiple selection modes, providing node click events and filter condition output.
 
-树形元素分层结构为Meta（components.Meta） → Type（components.Tree） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建树形实例元素。
+The tree element hierarchy is Meta (components.Meta) → Type (components.Tree) → Instance. Developers can quickly create tree instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.TreeType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official components.TreeType element provided by JitAI in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基础配置示例
-```typescript title="基础树形配置"
+## Quick Start
+### Basic Configuration Example
+```typescript title="Basic Tree Configuration"
 {
   "firstLevel": ["department"],
   "secondLevel": ["position"], 
@@ -27,172 +27,172 @@ slug: tree
 }
 ```
 
-### 配置属性说明
-| 属性名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| firstLevel | string[] | 是 | [] | 第一层级字段数组 |
-| secondLevel | string[] | 是 | [] | 第二层级字段数组 |
-| thirdLevel | string[] | 否 | [] | 第三层级字段数组 |
-| forthLevel | string[] | 否 | [] | 第四层级字段数组 |
-| fifthLevel | string[] | 否 | [] | 第五层级字段数组 |
-| mode | 'single' \| 'multiple' | 否 | 'single' | 选择模式：单选或多选 |
-| defaultRender | boolean | 否 | true | 是否默认渲染数据 |
-| defaultFirstSelected | boolean | 否 | false | 是否默认选中第一个节点 |
+### Configuration Properties
+| Property | Type | Required | Default | Description |
+|----------|------|----------|---------|-------------|
+| firstLevel | string[] | Yes | [] | First level field array |
+| secondLevel | string[] | Yes | [] | Second level field array |
+| thirdLevel | string[] | No | [] | Third level field array |
+| forthLevel | string[] | No | [] | Fourth level field array |
+| fifthLevel | string[] | No | [] | Fifth level field array |
+| mode | 'single' \| 'multiple' | No | 'single' | Selection mode: single or multiple |
+| defaultRender | boolean | No | true | Whether to render data by default |
+| defaultFirstSelected | boolean | No | false | Whether to select the first node by default |
 
-## 变量
+## Variables
 ### filter
-筛选条件变量，用于限制树形数据的查询范围。
+Filter condition variable used to limit the query scope of tree data.
 
-- **类型**：QFilter
-- **只读**：是
-- **说明**：基于关联数据模型的筛选条件，支持Q表达式语法
+- **Type**: QFilter
+- **Read-only**: Yes
+- **Description**: Filter conditions based on associated data models, supporting Q expression syntax
 
 ### clickNodeFilter
-节点点击后的筛选条件变量，包含当前选中节点的筛选信息。
+Filter condition variable after node click, containing filter information of currently selected nodes.
 
-- **类型**：QFilter
-- **只读**：是
-- **说明**：点击节点时自动更新，可用于关联其他组件的数据筛选
+- **Type**: QFilter
+- **Read-only**: Yes
+- **Description**: Automatically updated when clicking nodes, can be used for data filtering of associated components
 
-## 方法 
+## Methods
 ### call
-刷新树形数据，重新加载根节点列表。
+Refresh tree data and reload the root node list.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
-| qFilter | QFilter | 否 | 筛选条件，用于过滤数据 |
+#### Parameters
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| qFilter | QFilter | No | Filter conditions for data filtering |
 
-#### 返回值
-无返回值（异步方法）
+#### Return Value
+No return value (async method)
 
-#### 使用示例
-```typescript title="调用刷新方法"
-// 无条件刷新
+#### Usage Example
+```typescript title="Call Refresh Method"
+// Refresh without conditions
 await treeComponent.call();
 
-// 带筛选条件刷新
+// Refresh with filter conditions
 const filter = Q("status", "=", "active");
 await treeComponent.call(filter);
 ```
 
 ### getRootNodeList
-获取根节点数据列表。
+Get root node data list.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
-| filterValue | string | 否 | 过滤值字符串 |
+#### Parameters
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| filterValue | string | No | Filter value string |
 
-#### 返回值
-无返回值（异步方法，结果更新到treeData属性）
+#### Return Value
+No return value (async method, result updates to treeData property)
 
-#### 使用示例
-```typescript title="获取根节点"
+#### Usage Example
+```typescript title="Get Root Nodes"
 await treeComponent.getRootNodeList({
   filterValue: "Q(department='IT')"
 });
 ```
 
 ### getSubNodeList
-获取子节点数据列表，用于展开树形节点时动态加载下级数据。
+Get child node data list, used for dynamically loading sub-level data when expanding tree nodes.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
-| treeNode | TreeDataItem | 是 | 要展开的树形节点对象 |
+#### Parameters
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| treeNode | TreeDataItem | Yes | Tree node object to expand |
 
-#### 返回值
-无返回值（异步方法，结果更新到treeData属性）
+#### Return Value
+No return value (async method, result updates to treeData property)
 
-#### 使用示例
-```typescript title="获取子节点"
+#### Usage Example
+```typescript title="Get Child Nodes"
 const parentNode = {
   key: "dept=IT",
-  title: "IT部门",
+  title: "IT Department",
   nextField: "position"
 };
 await treeComponent.getSubNodeList(parentNode);
 ```
 
 ### publishEvent
-发布组件事件，触发事件处理器执行。
+Publish component events to trigger event handler execution.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
-| name | string | 是 | 事件名称 |
-| ex | Record\<string, any\> | 否 | 额外参数对象 |
+#### Parameters
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| name | string | Yes | Event name |
+| ex | Record\<string, any\> | No | Additional parameter object |
 
-#### 返回值
+#### Return Value
 Promise\<void\>
 
-#### 使用示例
-```typescript title="发布事件"
-// 发布点击节点事件
+#### Usage Example
+```typescript title="Publish Events"
+// Publish click node event
 await treeComponent.publishEvent('clickNode');
 
-// 发布刷新事件
+// Publish refresh event
 await treeComponent.publishEvent('refresh');
 ```
 
 ### subscribeEvent
-订阅组件事件，注册事件处理回调函数。
+Subscribe to component events and register event handling callback functions.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
-| name | string | 是 | 事件名称 |
-| evtCb | Function | 是 | 事件回调函数 |
-| unSubscribeExist | boolean | 否 | 是否取消已存在的订阅，默认true |
+#### Parameters
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| name | string | Yes | Event name |
+| evtCb | Function | Yes | Event callback function |
+| unSubscribeExist | boolean | No | Whether to cancel existing subscriptions, default true |
 
-#### 返回值
-string - 事件处理器ID
+#### Return Value
+string - Event handler ID
 
-#### 使用示例
-```typescript title="订阅事件"
+#### Usage Example
+```typescript title="Subscribe to Events"
 const handleId = treeComponent.subscribeEvent('clickNode', async (data) => {
-  console.log('节点点击:', data);
+  console.log('Node clicked:', data);
 });
 ```
 
 ### unSubscribeEvent
-取消事件订阅，移除指定的事件处理器。
+Cancel event subscription and remove specified event handler.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
-| id | string | 是 | 事件处理器ID |
+#### Parameters
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| id | string | Yes | Event handler ID |
 
-#### 返回值
+#### Return Value
 void
 
-#### 使用示例
-```typescript title="取消订阅"
+#### Usage Example
+```typescript title="Unsubscribe"
 treeComponent.unSubscribeEvent(handleId);
 ```
 
 ### setConfig
-设置组件配置，更新组件的配置参数。
+Set component configuration and update component configuration parameters.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
-| next | Partial\<TreeCompConfig\> | 是 | 新的配置对象 |
-| clean | boolean | 否 | 是否清空原配置，默认false |
+#### Parameters
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| next | Partial\<TreeCompConfig\> | Yes | New configuration object |
+| clean | boolean | No | Whether to clear original configuration, default false |
 
-#### 返回值
+#### Return Value
 void
 
-#### 使用示例
-```typescript title="设置配置"
-// 合并配置
+#### Usage Example
+```typescript title="Set Configuration"
+// Merge configuration
 treeComponent.setConfig({
   mode: 'multiple',
   defaultFirstSelected: true
 });
 
-// 替换配置
+// Replace configuration
 treeComponent.setConfig({
   firstLevel: ['newField'],
   mode: 'single'
@@ -200,233 +200,233 @@ treeComponent.setConfig({
 ```
 
 ### bindApp
-绑定应用实例到组件。
+Bind application instance to component.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| app | App | 是 | - | 应用实例对象 |
+#### Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| app | App | Yes | - | Application instance object |
 
-#### 返回值
+#### Return Value
 void
 
-#### 使用示例
-```typescript title="绑定应用"
+#### Usage Example
+```typescript title="Bind Application"
 treeComponent.bindApp(app);
 ```
 
 ### bindPage
-绑定页面实例到组件，同时为组件变量绑定页面。
+Bind page instance to component and bind page to component variables.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| page | BasePage | 是 | - | 页面实例对象 |
+#### Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| page | BasePage | Yes | - | Page instance object |
 
-#### 返回值
+#### Return Value
 void
 
-#### 使用示例
-```typescript title="绑定页面"
+#### Usage Example
+```typescript title="Bind Page"
 treeComponent.bindPage(page);
 ```
 
 ### getEventKey
-获取组件事件的唯一键值。
+Get the unique key value for component events.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| eventName | string | 是 | - | 事件名称 |
+#### Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| eventName | string | Yes | - | Event name |
 
-#### 返回值
-string - 格式为 `${uuid}.${name}.${eventName}` 的唯一键值
+#### Return Value
+string - Unique key value in format `${uuid}.${name}.${eventName}`
 
-#### 使用示例
-```typescript title="获取事件键值"
+#### Usage Example
+```typescript title="Get Event Key"
 const eventKey = treeComponent.getEventKey('clickNode');
 ```
 
 ### runCode
-在页面上下文中运行代码字符串。
+Run code string in page context.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| code | string | 是 | - | 要执行的代码字符串 |
+#### Parameters
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| code | string | Yes | - | Code string to execute |
 
-#### 返回值
-any - 代码执行结果
+#### Return Value
+any - Code execution result
 
-#### 使用示例
-```typescript title="运行代码"
+#### Usage Example
+```typescript title="Run Code"
 const result = treeComponent.runCode('self.treeData.length');
 ```
 
 ### getPermConfig
-获取组件的权限配置信息。
+Get component's permission configuration information.
 
-#### 返回值
-Record\<string, any\> | undefined - 权限配置对象
+#### Return Value
+Record\<string, any\> | undefined - Permission configuration object
 
-#### 使用示例
-```typescript title="获取权限配置"
+#### Usage Example
+```typescript title="Get Permission Configuration"
 const permConfig = treeComponent.getPermConfig();
 ```
 
 ### destroy
-销毁组件实例，清理所有事件监听器和变量。
+Destroy component instance and clean up all event listeners and variables.
 
-#### 使用示例
-```typescript title="销毁组件"
+#### Usage Example
+```typescript title="Destroy Component"
 treeComponent.destroy();
 ```
 
-## 属性
+## Properties
 ### treeData
-当前树形数据数组，包含所有层级的节点信息。
+Current tree data array containing node information for all levels.
 
-- **类型**：TreeData (TreeDataItem[])
-- **只读**：否
-- **说明**：树形节点数据结构，包含key、title、children等属性
+- **Type**: TreeData (TreeDataItem[])
+- **Read-only**: No
+- **Description**: Tree node data structure containing key, title, children and other properties
 
 ### primaryKey
-数据模型的主键字段名。
+Primary key field name of the data model.
 
-- **类型**：string
-- **只读**：否
-- **默认值**：'id'
+- **Type**: string
+- **Read-only**: No
+- **Default**: 'id'
 
 ### fieldDefineList
-字段定义列表，包含关联数据模型的所有字段配置。
+Field definition list containing all field configurations of the associated data model.
 
-- **类型**：DataTypeConfig[]
-- **只读**：否
+- **Type**: DataTypeConfig[]
+- **Read-only**: No
 
 ### allFieldDict
-所有字段的字典映射，以字段名为键，字段配置为值。
+Dictionary mapping of all fields with field names as keys and field configurations as values.
 
-- **类型**：Record\<string, DataTypeConfig\>
-- **只读**：否
+- **Type**: Record\<string, DataTypeConfig\>
+- **Read-only**: No
 
 ### treeField
-树形层级字段数组，按层级顺序排列的字段名列表。
+Tree level field array, list of field names arranged in level order.
 
-- **类型**：string[]
-- **只读**：否
+- **Type**: string[]
+- **Read-only**: No
 
 ### loading
-加载状态变量，表示数据是否正在加载中。
+Loading state variable indicating whether data is currently loading.
 
-- **类型**：Numeric
-- **只读**：否
-- **说明**：0表示未加载，非0表示加载中
+- **Type**: Numeric
+- **Read-only**: No
+- **Description**: 0 indicates not loaded, non-zero indicates loading
 
 ### name
-组件实例名称。
+Component instance name.
 
-- **类型**：string
-- **只读**：否
+- **Type**: string
+- **Read-only**: No
 
 ### title
-组件显示标题。
+Component display title.
 
-- **类型**：string
-- **只读**：否
+- **Type**: string
+- **Read-only**: No
 
 ### config
-组件配置对象，包含所有配置参数和关联元素。
+Component configuration object containing all configuration parameters and associated elements.
 
-- **类型**：TreeCompConfig & \{requireElements: requireElement[]\}
-- **只读**：否
+- **Type**: TreeCompConfig & \{requireElements: requireElement[]\}
+- **Read-only**: No
 
 ### type
-组件类型标识。
+Component type identifier.
 
-- **类型**：string
-- **只读**：否
+- **Type**: string
+- **Read-only**: No
 
 ### showTitle
-是否显示组件标题。
+Whether to display component title.
 
-- **类型**：boolean
-- **只读**：否
+- **Type**: boolean
+- **Read-only**: No
 
 ### app
-当前绑定的应用实例。
+Currently bound application instance.
 
-- **类型**：App
-- **只读**：是
-- **说明**：通过getter访问，优先返回绑定的应用实例，否则返回运行时应用
+- **Type**: App
+- **Read-only**: Yes
+- **Description**: Accessed through getter, prioritizes returning bound application instance, otherwise returns runtime application
 
 ### page
-当前绑定的页面实例。
+Currently bound page instance.
 
-- **类型**：BasePage | undefined
-- **只读**：是
-- **说明**：通过getter访问，返回组件所属的页面实例
+- **Type**: BasePage | undefined
+- **Read-only**: Yes
+- **Description**: Accessed through getter, returns the page instance to which the component belongs
 
 ### compType
-组件类型标识符。
+Component type identifier.
 
-- **类型**：COMPONENT_TYPE
-- **只读**：否
-- **说明**：标识组件的具体类型
+- **Type**: COMPONENT_TYPE
+- **Read-only**: No
+- **Description**: Identifies the specific type of the component
 
 ### fullName
-组件的完整名称标识。
+Complete name identifier of the component.
 
-- **类型**：string
-- **只读**：否
-- **说明**：组件在系统中的唯一标识路径
+- **Type**: string
+- **Read-only**: No
+- **Description**: Unique identifier path of the component in the system
 
 ### dataTypeList
-组件关联的数据类型列表。
+Data type list associated with the component.
 
-- **类型**：BaseDataType[]
-- **只读**：否
-- **说明**：包含组件所有变量的数据类型配置
+- **Type**: BaseDataType[]
+- **Read-only**: No
+- **Description**: Contains data type configurations for all variables of the component
 
-## 事件
+## Events
 ### clickNode
-点击树形节点时触发的事件。
+Event triggered when clicking tree nodes.
 
-- **触发时机**：用户点击树形节点后
-- **数据变量**：clickNodeFilter
-- **说明**：事件触发时会更新clickNodeFilter变量，包含选中节点的筛选条件
+- **Trigger Timing**: After user clicks tree node
+- **Data Variable**: clickNodeFilter
+- **Description**: When event is triggered, clickNodeFilter variable is updated, containing filter conditions of selected nodes
 
-#### 使用示例
-```typescript title="订阅节点点击事件"
-// 订阅点击节点事件
+#### Usage Example
+```typescript title="Subscribe to Node Click Events"
+// Subscribe to click node event
 const handleId = treeComponent.subscribeEvent('clickNode', async (eventData) => {
-  // 获取选中节点的筛选条件
+  // Get filter conditions of selected node
   const filter = treeComponent.clickNodeFilter.value;
-  console.log('节点筛选条件:', filter);
+  console.log('Node filter conditions:', filter);
   
-  // 根据选中节点更新其他组件
+  // Update other components based on selected node
   if (filter) {
-    // 例如：刷新关联的表格组件
+    // For example: refresh associated table component
     await tableComponent.call(filter);
   }
 });
 
-// 手动触发点击节点事件
+// Manually trigger click node event
 await treeComponent.publishEvent('clickNode', {
   nodeKey: 'dept=IT',
-  nodeTitle: 'IT部门'
+  nodeTitle: 'IT Department'
 });
 ```
 
-```typescript title="处理多选模式的节点事件"
-// 多选模式下的事件处理
+```typescript title="Handle Node Events in Multiple Selection Mode"
+// Event handling in multiple selection mode
 treeComponent.subscribeEvent('clickNode', async (eventData) => {
   const filter = treeComponent.clickNodeFilter.value;
   
   if (filter) {
-    // 处理多个选中节点的筛选条件
-    console.log('多选节点筛选:', filter);
+    // Handle filter conditions for multiple selected nodes
+    console.log('Multiple selection node filter:', filter);
     
-    // 更新相关联的组件数据
+    // Update data of associated components
     await Promise.all([
       chartComponent.call(filter),
       listComponent.call(filter)
@@ -435,21 +435,21 @@ treeComponent.subscribeEvent('clickNode', async (eventData) => {
 });
 ```
 
-```typescript title="结合权限控制的事件处理"
-// 带权限检查的事件处理
+```typescript title="Event Handling with Permission Control"
+// Event handling with permission checks
 treeComponent.subscribeEvent('clickNode', async (eventData) => {
-  // 获取权限配置
+  // Get permission configuration
   const permConfig = treeComponent.getPermConfig();
   
   if (permConfig?.permitFilter) {
-    // 结合权限筛选条件
+    // Combine with permission filter conditions
     const userFilter = treeComponent.clickNodeFilter.value;
     const combinedFilter = Q.combine([
       Q.from(permConfig.permitFilter),
       userFilter
     ]);
     
-    // 使用组合后的筛选条件
+    // Use combined filter conditions
     await relatedComponent.call(combinedFilter);
   }
 });

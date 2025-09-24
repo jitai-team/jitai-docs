@@ -1,112 +1,112 @@
 ---
 slug: sub-page
 ---
-# 子页面
-子页面是用于在当前页面中嵌入其他页面的布局容器组件，基于引用机制实现复杂界面的模块化构建。它负责子页面的动态加载、数据传递和状态管理，支持父子页面间的通信机制，适用于大型应用的页面分割和模块化开发。
+# Sub Page
+The sub page is a layout container component used to embed other pages within the current page, implementing modular construction of complex interfaces through reference mechanisms. It handles dynamic loading of sub-pages, data passing, and state management, supporting communication mechanisms between parent and child pages, suitable for page segmentation and modular development of large applications.
 
-子页面元素分层结构为Meta（components.Meta） → Type（components.Container） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建子页面实例元素。
+The sub page element has a hierarchical structure of Meta (components.Meta) → Type (components.Container) → Instance. Developers can quickly create sub page instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.ContainerType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `components.ContainerType` element provided by JitAI in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基础配置示例
-```text title="推荐目录结构"
+## Quick Start
+### Basic Configuration Example
+```text title="Recommended Directory Structure"
 MyApp/
 ├── pages/
-│   ├── MainPage/           # 主页面
+│   ├── MainPage/           # Main page
 │   │   ├── scheme.json
 │   │   └── e.json
-│   └── SubPage/            # 子页面
+│   └── SubPage/            # Sub page
 │       ├── scheme.json
 │       └── e.json
 ```
 
-```tsx title="子页面基础使用"
-// 在主页面中使用子页面组件
+```tsx title="Sub Page Basic Usage"
+// Use sub page component in main page
 const container = app.getElement('components.Container.MyContainer');
 
-// 配置要引用的页面
+// Configure page to reference
 container.setConfig({
-    pageName: 'pages.SubPage',  // 要嵌入的页面fullName
-    renderOnload: true,         // 启用渲染加载
+    pageName: 'pages.SubPage',  // fullName of page to embed
+    renderOnload: true,         // Enable render loading
     requireElements: []
 });
 
-// 调用子页面
+// Call sub page
 await container.call();
 ```
 
-### 配置属性说明
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| pageName | string | 要引用的页面fullName | - | 是 |
-| renderOnload | boolean | 是否启用渲染加载 | false | 否 |
-| featureTitleList | string[] | 特性标题列表 | `[]` | 否 |
-| featureNameList | string[] | 特性名称列表 | `[]` | 否 |
-| requireElements | requireElement[] | 依赖元素配置 | `[]` | 否 |
+### Configuration Properties
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| pageName | string | fullName of page to reference | - | Yes |
+| renderOnload | boolean | Whether to enable render loading | false | No |
+| featureTitleList | string[] | Feature title list | `[]` | No |
+| featureNameList | string[] | Feature name list | `[]` | No |
+| requireElements | requireElement[] | Dependent element configuration | `[]` | No |
 
-## 变量
+## Variables
 ### renderOnload
-内置的复选框类型变量，用于控制子页面的渲染状态。每次调用 `call()` 方法时会自动递增其值，触发子页面重新渲染。
+Built-in checkbox type variable, used to control sub page rendering state. Each time the `call()` method is called, its value is automatically incremented, triggering sub page re-rendering.
 
-```tsx title="renderOnload变量使用"
+```tsx title="renderOnload Variable Usage"
 const container = app.getElement('components.Container.MyContainer');
 
-// 监听renderOnload变化
+// Listen to renderOnload changes
 container.subscribeEvent('variableChange', (data) => {
     if (data.variableName === 'renderOnload') {
-        console.log('子页面重新渲染:', data.value);
+        console.log('Sub page re-rendered:', data.value);
     }
 });
 ```
 
-## 方法 
+## Methods
 ### call
-异步方法，用于打开和刷新子页面。调用此方法会增加renderOnload变量的值，触发子页面重新渲染。
+Asynchronous method, used to open and refresh sub pages. Calling this method will increment the renderOnload variable value, triggering sub page re-rendering.
 
-#### 返回值
-| 类型 | 说明 |
-|------|------|
-| Promise&lt;void&gt; | 当子页面加载完成后resolve |
+#### Return Value
+| Type | Description |
+|------|-------------|
+| Promise&lt;void&gt; | Resolves when sub page loading is complete |
 
-#### 使用示例
-```tsx title="call方法使用"
+#### Usage Example
+```tsx title="call Method Usage"
 const container = app.getElement('components.Container.MyContainer');
 
-// 基础调用
+// Basic call
 await container.call();
 
-// 在事件处理中使用
+// Use in event handler
 container.subscribeEvent('click', async () => {
     try {
         await container.call();
-        console.log('子页面加载完成');
+        console.log('Sub page loaded');
     } catch (error) {
-        console.error('子页面加载失败:', error);
+        console.error('Sub page loading failed:', error);
     }
 });
 ```
 
 ### setConfig
-设置组件配置，用于动态更改子页面引用和显示选项。
+Set component configuration, used to dynamically change sub page references and display options.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| config | Partial&lt;ContainerConfig&gt; | 配置对象 | - | 是 |
-| clean | boolean | 是否清空现有配置 | false | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| config | Partial&lt;ContainerConfig&gt; | Configuration object | - | Yes |
+| clean | boolean | Whether to clear existing configuration | false | No |
 
-#### 使用示例
-```tsx title="setConfig方法使用"
+#### Usage Example
+```tsx title="setConfig Method Usage"
 const container = app.getElement('components.Container.MyContainer');
 
-// 设置子页面引用
+// Set sub page reference
 container.setConfig({
     pageName: 'pages.UserProfile',
     renderOnload: true
 });
 
-// 完全替换配置
+// Completely replace configuration
 container.setConfig({
     pageName: 'pages.Settings',
     renderOnload: true,
@@ -115,24 +115,24 @@ container.setConfig({
 ```
 
 ### publishEvent
-发布组件事件，用于父子页面间的通信。
+Publish component events, used for communication between parent and child pages.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| name | string | 事件名称 | - | 是 |
-| data | Record&lt;string, any&gt; | 事件数据 | - | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| name | string | Event name | - | Yes |
+| data | Record&lt;string, any&gt; | Event data | - | No |
 
-#### 返回值
-| 类型 | 说明 |
-|------|------|
-| Promise&lt;void&gt; | 事件发布完成 |
+#### Return Value
+| Type | Description |
+|------|-------------|
+| Promise&lt;void&gt; | Event publishing complete |
 
-#### 使用示例
-```tsx title="publishEvent使用"
+#### Usage Example
+```tsx title="publishEvent Usage"
 const container = app.getElement('components.Container.MyContainer');
 
-// 向子页面发送数据
+// Send data to sub page
 await container.publishEvent('dataUpdate', {
     userId: 123,
     action: 'refresh'
@@ -140,126 +140,126 @@ await container.publishEvent('dataUpdate', {
 ```
 
 ### subscribeEvent
-订阅组件事件，监听子页面或其他组件的消息。
+Subscribe to component events, listen to messages from sub pages or other components.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| name | string | 事件名称 | - | 是 |
-| callback | (data: any) =&gt; void &#124; Promise&lt;void&gt; | 回调函数 | - | 是 |
-| unSubscribeExist | boolean | 是否取消现有订阅 | true | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| name | string | Event name | - | Yes |
+| callback | (data: any) =&gt; void &#124; Promise&lt;void&gt; | Callback function | - | Yes |
+| unSubscribeExist | boolean | Whether to cancel existing subscriptions | true | No |
 
-#### 返回值
-| 类型 | 说明 |
-|------|------|
-| string | 订阅句柄ID |
+#### Return Value
+| Type | Description |
+|------|-------------|
+| string | Subscription handle ID |
 
-#### 使用示例
-```tsx title="subscribeEvent使用"
+#### Usage Example
+```tsx title="subscribeEvent Usage"
 const container = app.getElement('components.Container.MyContainer');
 
-// 监听子页面事件
+// Listen to sub page events
 const handleId = container.subscribeEvent('pageReady', (data) => {
-    console.log('子页面就绪:', data);
+    console.log('Sub page ready:', data);
 });
 
-// 异步事件处理
+// Asynchronous event handling
 container.subscribeEvent('dataChanged', async (data) => {
     await processData(data);
-    console.log('数据处理完成');
+    console.log('Data processing complete');
 });
 ```
 
 ### unSubscribeEvent
-取消事件订阅。
+Cancel event subscription.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| handleId | string | 订阅句柄ID | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| handleId | string | Subscription handle ID | - | Yes |
 
-#### 使用示例
-```tsx title="unSubscribeEvent使用"
+#### Usage Example
+```tsx title="unSubscribeEvent Usage"
 const container = app.getElement('components.Container.MyContainer');
 
 const handleId = container.subscribeEvent('test', () => {});
-// 取消订阅
+// Cancel subscription
 container.unSubscribeEvent(handleId);
 ```
 
 ### bindApp
-绑定应用实例，建立组件与应用的关联关系。
+Bind application instance, establish association between component and application.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| app | App | 应用实例 | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| app | App | Application instance | - | Yes |
 
-#### 使用示例
-```tsx title="bindApp使用"
+#### Usage Example
+```tsx title="bindApp Usage"
 const container = app.getElement('components.Container.MyContainer');
 container.bindApp(app);
 ```
 
 ### bindPage
-绑定页面实例，建立组件与页面的关联关系。
+Bind page instance, establish association between component and page.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| page | BasePage | 页面实例 | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| page | BasePage | Page instance | - | Yes |
 
-#### 使用示例
-```tsx title="bindPage使用"
+#### Usage Example
+```tsx title="bindPage Usage"
 const container = app.getElement('components.Container.MyContainer');
 const page = app.getElement('pages.MainPage');
 container.bindPage(page);
 ```
 
 ### runCode
-执行代码字符串，在页面上下文中运行。
+Execute code string, run in page context.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| code | string | 要执行的代码字符串 | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| code | string | Code string to execute | - | Yes |
 
-#### 返回值
-| 类型 | 说明 |
-|------|------|
-| any | 代码执行结果 |
+#### Return Value
+| Type | Description |
+|------|-------------|
+| any | Code execution result |
 
-#### 使用示例
-```tsx title="runCode使用"
+#### Usage Example
+```tsx title="runCode Usage"
 const container = app.getElement('components.Container.MyContainer');
 
-// 执行简单计算
+// Execute simple calculation
 const result = container.runCode('1 + 2');
 console.log(result); // 3
 
-// 访问页面变量
+// Access page variables
 const pageData = container.runCode('this.userData.value');
 
-// 调用页面方法
+// Call page methods
 container.runCode('this.refreshData()');
 ```
 
 ### getPermConfig
-获取当前组件的权限配置。
+Get current component's permission configuration.
 
-#### 返回值
-| 类型 | 说明 |
-|------|------|
-| Record&lt;string, any&gt; &#124; undefined | 权限配置对象，如果无配置则返回undefined |
+#### Return Value
+| Type | Description |
+|------|-------------|
+| Record&lt;string, any&gt; &#124; undefined | Permission configuration object, returns undefined if no configuration |
 
-#### 使用示例
-```tsx title="getPermConfig使用"
+#### Usage Example
+```tsx title="getPermConfig Usage"
 const container = app.getElement('components.Container.MyContainer');
 
 const permConfig = container.getPermConfig();
 if (permConfig) {
-    console.log('组件权限配置:', permConfig);
-    // 根据权限配置控制组件行为
+    console.log('Component permission configuration:', permConfig);
+    // Control component behavior based on permission configuration
     if (permConfig.visible === false) {
         container.style.display = 'none';
     }
@@ -267,129 +267,129 @@ if (permConfig) {
 ```
 
 ### destroy
-销毁组件，清理资源和事件监听。
+Destroy component, clean up resources and event listeners.
 
-#### 使用示例
-```tsx title="destroy使用"
+#### Usage Example
+```tsx title="destroy Usage"
 const container = app.getElement('components.Container.MyContainer');
-// 页面卸载时销毁组件
+// Destroy component when page unloads
 container.destroy();
 ```
 
-## 属性
+## Properties
 ### subPage
-只读属性，获取当前加载的子页面实例。
+Read-only property, get currently loaded sub page instance.
 
-```tsx title="subPage属性使用"
+```tsx title="subPage Property Usage"
 const container = app.getElement('components.Container.MyContainer');
 
-// 在子页面加载完成后访问
+// Access after sub page loading is complete
 await container.call();
 if (container.subPage) {
-    console.log('子页面实例:', container.subPage);
-    // 调用子页面方法
+    console.log('Sub page instance:', container.subPage);
+    // Call sub page methods
     container.subPage.someMethod();
 }
 ```
 
 ### name
-只读属性，获取组件名称。
+Read-only property, get component name.
 
-```tsx title="name属性使用"
+```tsx title="name Property Usage"
 const container = app.getElement('components.Container.MyContainer');
-console.log('组件名称:', container.name); // "MyContainer"
+console.log('Component name:', container.name); // "MyContainer"
 ```
 
 ### title
-读写属性，组件显示标题。
+Read-write property, component display title.
 
-```tsx title="title属性使用"
+```tsx title="title Property Usage"
 const container = app.getElement('components.Container.MyContainer');
-console.log('组件标题:', container.title);
-container.title = '新的子页面标题';
+console.log('Component title:', container.title);
+container.title = 'New Sub Page Title';
 ```
 
 ### config
-只读属性，获取当前组件配置。
+Read-only property, get current component configuration.
 
-```tsx title="config属性使用"
+```tsx title="config Property Usage"
 const container = app.getElement('components.Container.MyContainer');
-console.log('当前配置:', container.config);
-console.log('引用页面:', container.config.pageName);
+console.log('Current configuration:', container.config);
+console.log('Referenced page:', container.config.pageName);
 ```
 
 ### showTitle
-读写属性，控制是否显示组件标题。
+Read-write property, control whether to show component title.
 
-```tsx title="showTitle属性使用"
+```tsx title="showTitle Property Usage"
 const container = app.getElement('components.Container.MyContainer');
-container.showTitle = true; // 显示标题
+container.showTitle = true; // Show title
 ```
 
 ### app
-只读属性，获取关联的应用实例。
+Read-only property, get associated application instance.
 
-```tsx title="app属性使用"
+```tsx title="app Property Usage"
 const container = app.getElement('components.Container.MyContainer');
-console.log('关联应用:', container.app);
+console.log('Associated application:', container.app);
 ```
 
 ### page
-只读属性，获取关联的页面实例。
+Read-only property, get associated page instance.
 
-```tsx title="page属性使用"
+```tsx title="page Property Usage"
 const container = app.getElement('components.Container.MyContainer');
-console.log('关联页面:', container.page);
+console.log('Associated page:', container.page);
 ```
 
 ### fullName
-只读属性，获取组件完整名称标识。
+Read-only property, get component full name identifier.
 
-```tsx title="fullName属性使用"
+```tsx title="fullName Property Usage"
 const container = app.getElement('components.Container.MyContainer');
-console.log('组件完整名称:', container.fullName); // "components.Container"
+console.log('Component full name:', container.fullName); // "components.Container"
 ```
 
 ### type
-只读属性，获取组件类型字符串。
+Read-only property, get component type string.
 
-```tsx title="type属性使用"
+```tsx title="type Property Usage"
 const container = app.getElement('components.Container.MyContainer');
-console.log('组件类型:', container.type); // "components.Container"
+console.log('Component type:', container.type); // "components.Container"
 ```
 
 ### compType
-只读属性，获取组件类型枚举值。
+Read-only property, get component type enumeration value.
 
-```tsx title="compType属性使用"
+```tsx title="compType Property Usage"
 const container = app.getElement('components.Container.MyContainer');
-console.log('组件类型枚举:', container.compType); // COMPONENT_TYPE.REFERENCE
+console.log('Component type enumeration:', container.compType); // COMPONENT_TYPE.REFERENCE
 ```
 
 ### dataTypeList
-只读属性，获取组件的数据类型列表。
+Read-only property, get component's data type list.
 
-```tsx title="dataTypeList属性使用"
+```tsx title="dataTypeList Property Usage"
 const container = app.getElement('components.Container.MyContainer');
-console.log('组件数据类型:', container.dataTypeList);
-// 访问具体的数据类型变量
+console.log('Component data types:', container.dataTypeList);
+// Access specific data type variables
 container.dataTypeList.forEach(dataType => {
-    console.log('数据类型名称:', dataType.name);
+    console.log('Data type name:', dataType.name);
 });
 ```
 
-## 事件
-子页面组件支持自定义事件系统，但没有预定义的特定事件。开发者可以通过 `publishEvent` 和 `subscribeEvent` 方法实现自定义事件通信。
+## Events
+The sub page component supports custom event system, but has no predefined specific events. Developers can implement custom event communication through `publishEvent` and `subscribeEvent` methods.
 
-## 高级特性
-### 父子页面通信
-子页面组件提供了完整的父子页面通信机制，支持数据传递和状态同步。
+## Advanced Features
+### Parent-Child Page Communication
+The sub page component provides complete parent-child page communication mechanism, supporting data passing and state synchronization.
 
-```tsx title="父子页面通信示例"
-// 父页面
+```tsx title="Parent-Child Page Communication Example"
+// Parent page
 const container = app.getElement('components.Container.MyContainer');
 
-// 配置并加载子页面
+// Configure and load sub page
 container.setConfig({
     pageName: 'pages.UserDetail',
     renderOnload: true
@@ -397,42 +397,42 @@ container.setConfig({
 
 await container.call();
 
-// 向子页面发送数据
+// Send data to sub page
 await container.publishEvent('updateUser', {
     userId: 123,
-    userData: { name: '张三', age: 25 }
+    userData: { name: 'Zhang San', age: 25 }
 });
 
-// 监听子页面事件
+// Listen to sub page events
 container.subscribeEvent('userUpdated', (data) => {
-    console.log('用户更新:', data);
-    // 刷新父页面数据
+    console.log('User updated:', data);
+    // Refresh parent page data
     refreshParentData();
 });
 
-// 子页面中 (pages.UserDetail)
+// In sub page (pages.UserDetail)
 const page = app.getCurrentPage();
 
-// 监听父页面消息
+// Listen to parent page messages
 page.subscribeEvent('updateUser', (data) => {
-    // 更新子页面UI
+    // Update sub page UI
     updateUserInterface(data.userData);
 });
 
-// 向父页面发送确认
+// Send confirmation to parent page
 page.publishEvent('userUpdated', {
     success: true,
-    message: '用户信息已更新'
+    message: 'User information updated'
 });
 ```
 
-### 动态页面切换
-支持在运行时动态切换子页面内容，实现灵活的页面组合。
+### Dynamic Page Switching
+Supports dynamically switching sub page content at runtime, implementing flexible page composition.
 
-```tsx title="动态页面切换"
+```tsx title="Dynamic Page Switching"
 const container = app.getElement('components.Container.MyContainer');
 
-// 切换到不同的子页面
+// Switch to different sub pages
 const switchToPage = async (pageName: string) => {
     container.setConfig({
         pageName: pageName,
@@ -442,25 +442,25 @@ const switchToPage = async (pageName: string) => {
     await container.call();
 };
 
-// 使用示例
-await switchToPage('pages.UserList');    // 切换到用户列表
-await switchToPage('pages.UserProfile'); // 切换到用户资料
-await switchToPage('pages.Settings');    // 切换到设置页面
+// Usage example
+await switchToPage('pages.UserList');    // Switch to user list
+await switchToPage('pages.UserProfile'); // Switch to user profile
+await switchToPage('pages.Settings');    // Switch to settings page
 ```
 
-### 条件渲染控制
-通过renderOnload属性控制子页面的渲染时机，实现按需加载。
+### Conditional Rendering Control
+Control sub page rendering timing through renderOnload property, implementing on-demand loading.
 
-```tsx title="条件渲染控制"
+```tsx title="Conditional Rendering Control"
 const container = app.getElement('components.Container.MyContainer');
 
-// 初始配置不渲染
+// Initial configuration without rendering
 container.setConfig({
     pageName: 'pages.HeavyPage',
-    renderOnload: false  // 不立即渲染
+    renderOnload: false  // Don't render immediately
 });
 
-// 在特定条件下才加载子页面
+// Load sub page only under specific conditions
 const loadSubPageIfNeeded = async () => {
     const userPermission = await checkUserPermission();
     
@@ -471,4 +471,4 @@ const loadSubPageIfNeeded = async () => {
         await container.call();
     }
 };
-``` 
+```

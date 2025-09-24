@@ -1,24 +1,24 @@
 ---
 slug: gallery
 ---
-# 画廊
-画廊是一个卡片视图组件，用于以网格布局展示数据列表。它基于模型数据自动渲染卡片式界面，支持字段显示配置、图片展示、操作按钮和交互事件，适用于商品展示、人员信息、图库浏览等场景。
+# Gallery
+Gallery is a card view component used to display data lists in a grid layout. It automatically renders card-based interfaces based on model data, supporting field display configuration, image display, action buttons, and interactive events. It is suitable for scenarios such as product display, personnel information, and image gallery browsing.
 
-画廊元素分层结构为Meta（components.Meta） → Type（components.Gallery） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建Gallery实例元素。
+The gallery element has a hierarchical structure of Meta (components.Meta) → Type (components.Gallery) → Instance. Developers can quickly create Gallery instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.GalleryType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `components.GalleryType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基础配置示例
-```json title="画廊基础配置"
+## Quick Start 
+### Basic Configuration Example
+```json title="Gallery Basic Configuration"
 {
   "name": "Gallery1",
-  "title": "产品画廊",
+  "title": "Product Gallery",
   "type": "components.Gallery",
   "config": {
     "requireElements": [
       {
-        "title": "产品模型",
+        "title": "Product Model",
         "type": "models.Meta",
         "name": "models.ProductModel",
         "filter": "",
@@ -41,7 +41,7 @@ slug: gallery
   },
   "eventList": [
     {
-      "title": "卡片点击后",
+      "title": "After Card Click",
       "name": "clickCard",
       "data": "activeRow"
     }
@@ -49,207 +49,207 @@ slug: gallery
 }
 ```
 
-### 配置属性说明
-| 属性名 | 类型 | 必填 | 默认值 | 说明 |
+### Configuration Properties
+| Property Name | Type | Required | Default Value | Description |
 |--------|------|------|--------|------|
-| requireElements | Array | 是 | - | 数据源配置，指定关联的模型元素 |
-| showFieldList | Array | 否 | [] | 要显示的字段列表，为空时显示所有字段 |
-| isShowFieldName | Boolean | 否 | true | 是否显示字段名称 |
-| abstractField | Array | 否 | [] | 摘要字段，显示为卡片标题 |
-| toolLeftBtnList | Array | 否 | [] | 工具栏左侧按钮配置 |
-| toolRightBtnList | Array | 否 | [] | 工具栏右侧按钮配置 |
-| cardBottomBtnList | Array | 否 | [] | 卡片底部按钮配置 |
-| cardRightBtnList | Array | 否 | [] | 卡片右侧按钮配置 |
-| image | Object | 否 | \{\} | 图片显示配置 |
-| image.fieldId | String | 否 | "" | 图片字段ID |
-| image.position | String | 否 | "top" | 图片位置：top/left/right/bottom |
-| image.showType | String | 否 | "full" | 显示类型：full/thumbnail |
-| pageSize | Number | 否 | 20 | 每页显示数量 |
-| defaultRender | Boolean | 否 | true | 是否使用默认渲染 |
-| fieldDirection | String | 否 | "vertical" | 字段排列方向：vertical/horizontal |
-| cardWidth | Object | 否 | \{type: "auto"\} | 卡片宽度配置 |
-| fieldAliasList | Array | 否 | [] | 字段别名配置 |
-| fieldTitle | Array | 否 | [] | 字段标题配置 |
+| requireElements | Array | Yes | - | Data source configuration, specifying associated model elements |
+| showFieldList | Array | No | [] | List of fields to display, shows all fields when empty |
+| isShowFieldName | Boolean | No | true | Whether to show field names |
+| abstractField | Array | No | [] | Abstract fields, displayed as card titles |
+| toolLeftBtnList | Array | No | [] | Toolbar left button configuration |
+| toolRightBtnList | Array | No | [] | Toolbar right button configuration |
+| cardBottomBtnList | Array | No | [] | Card bottom button configuration |
+| cardRightBtnList | Array | No | [] | Card right button configuration |
+| image | Object | No | \{\} | Image display configuration |
+| image.fieldId | String | No | "" | Image field ID |
+| image.position | String | No | "top" | Image position: top/left/right/bottom |
+| image.showType | String | No | "full" | Display type: full/thumbnail |
+| pageSize | Number | No | 20 | Number of items per page |
+| defaultRender | Boolean | No | true | Whether to use default rendering |
+| fieldDirection | String | No | "vertical" | Field arrangement direction: vertical/horizontal |
+| cardWidth | Object | No | \{type: "auto"\} | Card width configuration |
+| fieldAliasList | Array | No | [] | Field alias configuration |
+| fieldTitle | Array | No | [] | Field title configuration |
 
-## 变量
+## Variables
 ### displayRowList
-当前显示的数据行列表，类型为RowList。
+Currently displayed data row list, type RowList.
 
-```typescript title="获取显示数据"
-// 获取当前显示的所有数据
+```typescript title="Get Display Data"
+// Get all currently displayed data
 const rows = gallery.displayRowList;
 
-// 遍历数据行
+// Iterate through data rows
 rows.forEach(row => {
   console.log(row.name, row.price);
 });
 ```
 
 ### activeRow
-当前激活的数据行，类型为RowData。
+Currently active data row, type RowData.
 
-```typescript title="获取当前行数据"
-// 获取当前选中的数据行
+```typescript title="Get Current Row Data"
+// Get currently selected data row
 const currentRow = gallery.activeRow;
 if (currentRow) {
-  console.log('当前选中:', currentRow.name);
+  console.log('Currently selected:', currentRow.name);
 }
 ```
 
 ### filter
-筛选条件变量，类型为QFilter。
+Filter condition variable, type QFilter.
 
-```typescript title="获取筛选条件"
-// 获取当前筛选条件
+```typescript title="Get Filter Conditions"
+// Get current filter conditions
 const currentFilter = gallery.filter;
-console.log('当前筛选:', currentFilter.value);
+console.log('Current filter:', currentFilter.value);
 ```
 
-## 方法 
+## Methods 
 ### call
-刷新组件数据，重新加载数据源。
+Refresh component data, reload data source.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| qFilter | QFilter | 否 | 查询过滤条件 |
+| qFilter | QFilter | No | Query filter conditions |
 
-#### 返回值
+#### Return Value
 Promise\<void\>
 
-#### 使用示例
-```typescript title="刷新数据"
-// 无条件刷新
+#### Usage Example
+```typescript title="Refresh Data"
+// Refresh without conditions
 await gallery.call();
 
-// 带过滤条件刷新
+// Refresh with filter conditions
 const filter = new Jit.datatypes.QFilter();
 filter.value = "Q(status='active')";
 await gallery.call(filter);
 ```
 
 ### getElement
-获取指定名称的子元素。
+Get child element with specified name.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| name | String | 是 | 子元素名称 |
+| name | String | Yes | Child element name |
 
-#### 返回值
+#### Return Value
 BaseComponent | undefined
 
-#### 使用示例
-```typescript title="获取子元素"
+#### Usage Example
+```typescript title="Get Child Element"
 const childElement = gallery.getElement('childComponentName');
 if (childElement) {
-  // 操作子元素
+  // Operate on child element
   childElement.visible = false;
 }
 ```
 
 ### subscribeEvent
-订阅事件处理器。
+Subscribe to event handler.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| name | String | 是 | 事件名称 |
-| callback | Function | 是 | 事件处理函数 |
-| unSubscribeExist | Boolean | 否 | 是否取消订阅已存在的同名事件，默认true |
+| name | String | Yes | Event name |
+| callback | Function | Yes | Event handler function |
+| unSubscribeExist | Boolean | No | Whether to unsubscribe existing events with same name, default true |
 
-#### 返回值
-String - 事件处理器ID
+#### Return Value
+String - Event handler ID
 
-#### 使用示例
-```typescript title="订阅事件"
+#### Usage Example
+```typescript title="Subscribe to Event"
 const handlerId = gallery.subscribeEvent('clickCard', (args) => {
-  console.log('卡片被点击:', args.data);
+  console.log('Card clicked:', args.data);
 });
 
-// 不取消已存在的订阅
+// Don't unsubscribe existing subscriptions
 const handlerId2 = gallery.subscribeEvent('clickCard', callback, false);
 ```
 
 ### unSubscribeEvent
-取消订阅事件。
+Unsubscribe from event.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| id | String | 是 | 事件处理器ID |
+| id | String | Yes | Event handler ID |
 
-#### 返回值
+#### Return Value
 Boolean
 
-#### 使用示例
-```typescript title="取消订阅"
+#### Usage Example
+```typescript title="Unsubscribe"
 const success = gallery.unSubscribeEvent(handlerId);
 ```
 
 ### newVariable
-创建新的数据类型变量。
+Create new data type variable.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| varConfig | DataTypeConfig | 是 | 变量配置对象 |
+| varConfig | DataTypeConfig | Yes | Variable configuration object |
 
-#### 返回值
-DataType实例
+#### Return Value
+DataType instance
 
-#### 使用示例
-```typescript title="创建变量"
+#### Usage Example
+```typescript title="Create Variable"
 const textVar = gallery.newVariable({
   dataType: 'Stext',
   name: 'description',
-  title: '描述',
-  value: '默认描述'
+  title: 'Description',
+  value: 'Default description'
 });
 ```
 
 ### destroy
-销毁组件，释放资源。
+Destroy component, release resources.
 
-#### 使用示例
-```typescript title="销毁组件"
+#### Usage Example
+```typescript title="Destroy Component"
 gallery.destroy();
 ```
 
 ### runCode
-执行代码字符串。
+Execute code string.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| code | String | 是 | 要执行的代码 |
+| code | String | Yes | Code to execute |
 
-#### 返回值
+#### Return Value
 Any
 
-#### 使用示例
-```typescript title="执行代码"
+#### Usage Example
+```typescript title="Execute Code"
 const result = gallery.runCode('this.visible = false; return "executed";');
 ```
 
 ### publishEvent
-发送事件消息，触发订阅该事件的处理器。
+Send event message, trigger handlers subscribed to the event.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| name | String | 是 | 事件名称 |
-| ex | Object | 否 | 附加数据 |
+| name | String | Yes | Event name |
+| ex | Object | No | Additional data |
 
-#### 返回值
+#### Return Value
 Promise\<void\>
 
-#### 使用示例
-```typescript title="发送事件"
-// 发送简单事件
+#### Usage Example
+```typescript title="Send Event"
+// Send simple event
 await gallery.publishEvent('refresh');
 
-// 发送带数据的事件
+// Send event with data
 await gallery.publishEvent('dataChange', { 
   type: 'update', 
   data: { id: 1, name: 'test' } 
@@ -257,177 +257,177 @@ await gallery.publishEvent('dataChange', {
 ```
 
 ### setConfig
-设置组件配置。
+Set component configuration.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| next | Object | 是 | 新的配置对象 |
-| clean | Boolean | 否 | 是否完全替换配置，默认false（合并模式） |
+| next | Object | Yes | New configuration object |
+| clean | Boolean | No | Whether to completely replace configuration, default false (merge mode) |
 
-#### 使用示例
-```typescript title="设置配置"
-// 合并配置
+#### Usage Example
+```typescript title="Set Configuration"
+// Merge configuration
 gallery.setConfig({ pageSize: 30 });
 
-// 完全替换配置
+// Completely replace configuration
 gallery.setConfig(newConfig, true);
 ```
 
 ### getPermConfig
-获取当前组件的权限配置。
+Get current component's permission configuration.
 
-#### 返回值
+#### Return Value
 Object | undefined
 
-#### 使用示例
-```typescript title="获取权限配置"
+#### Usage Example
+```typescript title="Get Permission Configuration"
 const permConfig = gallery.getPermConfig();
 if (permConfig) {
-  console.log('权限配置:', permConfig);
+  console.log('Permission configuration:', permConfig);
 }
 ```
 
-## 属性
+## Properties
 ### name
-组件名称，类型为String，只读。
+Component name, type String, read-only.
 
-```typescript title="获取组件名称"
+```typescript title="Get Component Name"
 console.log(gallery.name); // "Gallery1"
 ```
 
 ### title
-组件标题，类型为String，只读。
+Component title, type String, read-only.
 
-```typescript title="获取组件标题"
-console.log(gallery.title); // "产品画廊"
+```typescript title="Get Component Title"
+console.log(gallery.title); // "Product Gallery"
 ```
 
 ### visible
-组件可见性，类型为Boolean，可读写。
+Component visibility, type Boolean, read-write.
 
-```typescript title="控制显示隐藏"
-// 隐藏组件
+```typescript title="Control Show/Hide"
+// Hide component
 gallery.visible = false;
 
-// 显示组件
+// Show component
 gallery.visible = true;
 ```
 
 ### app
-应用实例引用，类型为App，只读。
+Application instance reference, type App, read-only.
 
-```typescript title="获取应用实例"
+```typescript title="Get Application Instance"
 const appInstance = gallery.app;
 ```
 
 ### page
-页面实例引用，类型为Page，只读。
+Page instance reference, type Page, read-only.
 
-```typescript title="获取页面实例"
+```typescript title="Get Page Instance"
 const pageInstance = gallery.page;
 ```
 
 ### config
-组件配置对象，包含所有配置项，类型为Object，只读。
+Component configuration object, containing all configuration items, type Object, read-only.
 
-```typescript title="获取配置信息"
+```typescript title="Get Configuration Information"
 const pageSize = gallery.config.pageSize;
 const showFields = gallery.config.showFieldList;
 ```
 
 ### fullName
-组件全名，类型为String，只读。
+Component full name, type String, read-only.
 
-```typescript title="获取组件全名"
+```typescript title="Get Component Full Name"
 console.log(gallery.fullName); // "components.Gallery"
 ```
 
 ### showTitle
-是否显示标题，类型为Boolean，可读写。
+Whether to show title, type Boolean, read-write.
 
-```typescript title="控制标题显示"
-// 显示标题
+```typescript title="Control Title Display"
+// Show title
 gallery.showTitle = true;
 
-// 隐藏标题
+// Hide title
 gallery.showTitle = false;
 ```
 
 ### type
-组件类型，类型为String，只读。
+Component type, type String, read-only.
 
-```typescript title="获取组件类型"
+```typescript title="Get Component Type"
 console.log(gallery.type); // "components.Gallery"
 ```
 
 ### loading
-加载状态变量，类型为Numeric。
+Loading state variable, type Numeric.
 
-```typescript title="获取加载状态"
-// 检查是否正在加载
+```typescript title="Get Loading State"
+// Check if currently loading
 const isLoading = gallery.loading.value === 1;
 
-// 设置加载状态
-gallery.loading.value = 1; // 开始加载
-gallery.loading.value = 0; // 加载完成
+// Set loading state
+gallery.loading.value = 1; // Start loading
+gallery.loading.value = 0; // Loading complete
 ```
 
 ### pageNumber
-当前页码，类型为Number，可读写。
+Current page number, type Number, read-write.
 
-```typescript title="页码操作"
-// 获取当前页码
+```typescript title="Page Number Operations"
+// Get current page number
 console.log(gallery.pageNumber); // 1
 
-// 设置页码
+// Set page number
 gallery.pageNumber = 2;
 ```
 
 ### pageSize
-每页显示数量，类型为Number，可读写。
+Number of items per page, type Number, read-write.
 
-```typescript title="页面大小操作"
-// 获取页面大小
+```typescript title="Page Size Operations"
+// Get page size
 console.log(gallery.pageSize); // 20
 
-// 修改页面大小
+// Modify page size
 gallery.pageSize = 30;
 ```
 
 ### total
-数据总数量，类型为Number，只读。
+Total number of data items, type Number, read-only.
 
-```typescript title="获取总数"
-console.log(`共${gallery.total}条数据`);
+```typescript title="Get Total Count"
+console.log(`Total ${gallery.total} data items`);
 ```
 
-## 事件
+## Events
 ### clickCard
-卡片点击事件，当用户点击画廊中的卡片时触发。
+Card click event, triggered when user clicks a card in the gallery.
 
-#### 事件参数
-| 参数名 | 类型 | 说明 |
+#### Event Parameters
+| Parameter Name | Type | Description |
 |--------|------|------|
-| data | RowData | 被点击卡片对应的数据行 |
+| data | RowData | Data row corresponding to the clicked card |
 
-#### 使用示例
-```typescript title="处理卡片点击"
+#### Usage Example
+```typescript title="Handle Card Click"
 gallery.subscribeEvent('clickCard', (args) => {
   const clickedRow = args.data;
-  console.log('点击了卡片:', clickedRow.name);
+  console.log('Card clicked:', clickedRow.name);
   
-  // 可以进行页面跳转、弹窗显示等操作
+  // Can perform page navigation, modal display, etc.
   app.goToPage('ProductDetail', { id: clickedRow.id });
 });
 ```
 
-#### 配置示例
-```json title="事件配置"
+#### Configuration Example
+```json title="Event Configuration"
 {
   "eventList": [
     {
-      "title": "卡片点击后",
+      "title": "After Card Click",
       "name": "clickCard",
       "data": "activeRow"
     }
@@ -435,49 +435,49 @@ gallery.subscribeEvent('clickCard', (args) => {
 }
 ```
 
-### 动态按钮事件
-Gallery组件会根据配置的按钮自动生成对应的点击事件。
+### Dynamic Button Events
+Gallery component automatically generates corresponding click events based on configured buttons.
 
-#### 工具栏按钮事件
-当配置了`toolLeftBtnList`或`toolRightBtnList`时，会自动生成对应的点击事件。
+#### Toolbar Button Events
+When `toolLeftBtnList` or `toolRightBtnList` is configured, corresponding click events are automatically generated.
 
-```typescript title="工具栏按钮事件"
-// 配置工具栏按钮时
+```typescript title="Toolbar Button Events"
+// When configuring toolbar buttons
 {
   "config": {
     "toolRightBtnList": [
-      { "id": "addBtn", "name": "新增" }
+      { "id": "addBtn", "name": "Add" }
     ]
   }
 }
 
-// 会自动生成事件：clickAddBtn
+// Automatically generates event: clickAddBtn
 gallery.subscribeEvent('clickAddBtn', () => {
-  console.log('新增按钮被点击');
+  console.log('Add button clicked');
 });
 ```
 
-#### 卡片按钮事件
-当配置了`cardBottomBtnList`或`cardRightBtnList`时，会自动生成对应的点击事件。
+#### Card Button Events
+When `cardBottomBtnList` or `cardRightBtnList` is configured, corresponding click events are automatically generated.
 
-```typescript title="卡片按钮事件"
-// 配置卡片按钮时
+```typescript title="Card Button Events"
+// When configuring card buttons
 {
   "config": {
     "cardBottomBtnList": [
-      { "id": "editBtn", "name": "编辑" }
+      { "id": "editBtn", "name": "Edit" }
     ]
   }
 }
 
-// 会自动生成事件：clickEditBtn
+// Automatically generates event: clickEditBtn
 gallery.subscribeEvent('clickEditBtn', (args) => {
-  console.log('编辑按钮被点击，当前行数据:', args.data);
+  console.log('Edit button clicked, current row data:', args.data);
 });
 ```
 
-#### 事件命名规则
-按钮事件名称采用驼峰命名规则：`click + 按钮ID（驼峰格式）`
+#### Event Naming Rules
+Button event names use camelCase naming convention: `click + ButtonID (camelCase format)`
 
-- 按钮ID为`addBtn` → 事件名为`clickAddBtn`
-- 按钮ID为`delete_item` → 事件名为`clickDeleteItem` 
+- Button ID `addBtn` → Event name `clickAddBtn`
+- Button ID `delete_item` → Event name `clickDeleteItem` 

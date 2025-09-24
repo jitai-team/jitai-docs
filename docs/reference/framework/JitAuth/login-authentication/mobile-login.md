@@ -1,28 +1,28 @@
 ---
 slug: mobile-login
 ---
-# 手机号登录
-手机号登录是基于手机号码和短信验证码的认证方式，通过短信验证码验证实现用户身份认证。它负责验证码发送、验证码校验和用户登录，支持用户注册、手机号绑定/解绑、验证码有效期管理等安全功能。
+# Mobile Number Login
+Mobile number login is an authentication method based on mobile phone numbers and SMS verification codes, implementing user identity authentication through SMS verification code validation. It handles verification code sending, verification code validation, and user login, supporting user registration, mobile number binding/unbinding, verification code validity period management, and other security features.
 
-手机号登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.PhoneType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建手机号登录实例元素。
+The hierarchical structure of mobile number login elements is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.PhoneType) → Instance. Developers can quickly create mobile number login instance elements through JitAi's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的auths.loginTypes.PhoneType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `auths.loginTypes.PhoneType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 auths/loginTypes/
 ├── myPhoneLogin/
 │   ├── e.json
 │   └── phoneConfig.json
 ```
 
-#### e.json文件
-```json title="e.json配置示例"
+#### e.json File
+```json title="e.json Configuration Example"
 {
   "type": "auths.loginTypes.PhoneType",
-  "title": "手机号登录",
+  "title": "Mobile Number Login",
   "backendBundleEntry": ".",
   "frontBundleEntry": "./phoneConfig.json",
   "variables": [],
@@ -31,8 +31,8 @@ auths/loginTypes/
 }
 ```
 
-#### 业务配置文件
-```json title="phoneConfig.json配置示例"
+#### Business Configuration File
+```json title="phoneConfig.json Configuration Example"
 {
   "allowRegister": 1,
   "smsFullName": "SMS.aliyunSms",
@@ -42,45 +42,45 @@ auths/loginTypes/
 }
 ```
 
-#### 调用示例
-```python title="基本使用示例"
-# 获取手机号登录元素
+#### Usage Example
+```python title="Basic Usage Example"
+# Get mobile number login element
 phone_auth = app.getElement("auths.loginTypes.myPhoneLogin")
 
-# 发送验证码
+# Send verification code
 phone_auth.sendMessage("13800138000")
 
-# 验证登录
+# Verify login
 result = phone_auth.getLoginCode("13800138000", "123456")
 print(result)  # {"loginCode": "xxx", "corpList": [...], "userId": "xxx"}
 ```
 
-## 元素配置
-### e.json配置
-| 配置项 | 类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| title | string | 是 | 元素显示名称 |
-| type | string | 是 | 固定值：auths.loginTypes.PhoneType |
+| title | string | Yes | Element display name |
+| type | string | Yes | Fixed value: auths.loginTypes.PhoneType |
 
-### 业务配置文件配置
-配置文件名格式为`{实例名称}.json`，包含手机号登录的业务配置：
+### Business Configuration File
+Configuration file name format is `{instance_name}.json`, containing business configuration for mobile number login:
 
-| 配置项 | 类型 | 必填 | 说明 |
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| allowRegister | number | 否 | 是否允许注册，0:不允许，1:允许，默认1 |
-| smsFullName | string | 是 | 短信服务元素的fullName |
-| smsConfig | object | 否 | 短信模板配置，包含verifyTemplateCode和verifySign |
+| allowRegister | number | No | Whether to allow registration, 0: not allow, 1: allow, default 1 |
+| smsFullName | string | Yes | SMS service element fullName |
+| smsConfig | object | No | SMS template configuration, containing verifyTemplateCode and verifySign |
 
-## 方法 
+## Methods
 ### sendMessage
-发送短信验证码到指定手机号。
+Send SMS verification code to specified mobile number.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| phone | Stext | str | 是 | 手机号码，支持中国大陆手机号格式 |
+| phone | Stext | str | Yes | Mobile number, supports Chinese mainland mobile number format |
 
-#### 返回值
+#### Return Value
 ```python
 {
     "code": 200,
@@ -88,230 +88,230 @@ print(result)  # {"loginCode": "xxx", "corpList": [...], "userId": "xxx"}
 }
 ```
 
-#### 使用示例
-```python title="发送验证码示例"
+#### Usage Example
+```python title="Send Verification Code Example"
 phone_auth = app.getElement("auths.loginTypes.myPhoneLogin")
 
-# 发送验证码
+# Send verification code
 try:
     result = phone_auth.sendMessage("13800138000")
-    print("验证码发送成功")
+    print("Verification code sent successfully")
 except Exception as e:
-    print(f"发送失败: {e}")
+    print(f"Send failed: {e}")
 ```
 
 ### getLoginCode
-通过手机号和验证码验证登录，获取登录码。
+Verify login through mobile number and verification code, get login code.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| phone | Stext | str | 是 | 手机号码 |
-| code | Stext | str | 是 | 短信验证码 |
+| phone | Stext | str | Yes | Mobile number |
+| code | Stext | str | Yes | SMS verification code |
 
-#### 返回值
+#### Return Value
 ```python
 {
-    "loginCode": "登录码",
-    "corpList": [{"corpId": "企业ID", "corpName": "企业名称"}],
-    "userId": "用户ID"
+    "loginCode": "Login code",
+    "corpList": [{"corpId": "Enterprise ID", "corpName": "Enterprise Name"}],
+    "userId": "User ID"
 }
 ```
 
-#### 使用示例
-```python title="验证登录示例"
+#### Usage Example
+```python title="Verify Login Example"
 phone_auth = app.getElement("auths.loginTypes.myPhoneLogin")
 
 try:
     result = phone_auth.getLoginCode("13800138000", "123456")
     login_code = result["loginCode"]
     user_id = result["userId"]
-    print(f"登录成功，用户ID: {user_id}")
+    print(f"Login successful, User ID: {user_id}")
 except Exception as e:
-    print(f"登录失败: {e}")
+    print(f"Login failed: {e}")
 ```
 
 ### register
-注册新用户。
+Register new user.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| phone | Stext | str | 是 | 手机号码 |
-| code | Stext | str | 是 | 短信验证码 |
-| nick | Stext | str | 是 | 用户昵称 |
+| phone | Stext | str | Yes | Mobile number |
+| code | Stext | str | Yes | SMS verification code |
+| nick | Stext | str | Yes | User nickname |
 
-#### 返回值
-返回创建的用户对象。
+#### Return Value
+Returns created user object.
 
-#### 使用示例
-```python title="用户注册示例"
+#### Usage Example
+```python title="User Registration Example"
 phone_auth = app.getElement("auths.loginTypes.myPhoneLogin")
 
 try:
-    user = phone_auth.register("13800138000", "123456", "新用户")
-    print(f"注册成功，用户ID: {user.userId.value}")
+    user = phone_auth.register("13800138000", "123456", "New User")
+    print(f"Registration successful, User ID: {user.userId.value}")
 except Exception as e:
-    print(f"注册失败: {e}")
+    print(f"Registration failed: {e}")
 ```
 
 ### bind
-为当前用户绑定手机号认证。
+Bind mobile number authentication for current user.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| userId | Stext | str | 是 | 用户ID |
-| phone | Stext | str | 是 | 手机号码 |
-| code | Stext | str | 是 | 短信验证码 |
+| userId | Stext | str | Yes | User ID |
+| phone | Stext | str | Yes | Mobile number |
+| code | Stext | str | Yes | SMS verification code |
 
-#### 返回值
-成功返回SUCCESS_RETURN。
+#### Return Value
+Success returns SUCCESS_RETURN.
 
-#### 使用示例
-```python title="绑定手机号示例"
+#### Usage Example
+```python title="Bind Mobile Number Example"
 phone_auth = app.getElement("auths.loginTypes.myPhoneLogin")
 
 try:
     phone_auth.bind("user123", "13800138000", "123456")
-    print("手机号绑定成功")
+    print("Mobile number bound successfully")
 except Exception as e:
-    print(f"绑定失败: {e}")
+    print(f"Binding failed: {e}")
 ```
 
 ### unbind
-解绑用户的手机号认证。
+Unbind user's mobile number authentication.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| userId | Stext | str | 是 | 用户ID |
-| code | Stext | str | 是 | 手机号对应的短信验证码 |
+| userId | Stext | str | Yes | User ID |
+| code | Stext | str | Yes | SMS verification code corresponding to mobile number |
 
-#### 返回值
-成功返回SUCCESS_RETURN。
+#### Return Value
+Success returns SUCCESS_RETURN.
 
-#### 使用示例
-```python title="解绑手机号示例"
+#### Usage Example
+```python title="Unbind Mobile Number Example"
 phone_auth = app.getElement("auths.loginTypes.myPhoneLogin")
 
 try:
     phone_auth.unbind("user123", "123456")
-    print("手机号解绑成功")
+    print("Mobile number unbound successfully")
 except Exception as e:
-    print(f"解绑失败: {e}")
+    print(f"Unbinding failed: {e}")
 ```
 
 ### checkMyMessage
-校验当前用户的验证码，返回修改密码凭证。
+Verify current user's verification code, return password modification credential.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| code | Stext | str | 是 | 当前用户手机号的验证码 |
+| code | Stext | str | Yes | Verification code for current user's mobile number |
 
-#### 返回值
+#### Return Value
 ```python
 {
-    "ticket": "有效期5分钟的凭证"
+    "ticket": "Credential valid for 5 minutes"
 }
 ```
 
-#### 使用示例
-```python title="验证当前用户验证码示例"
+#### Usage Example
+```python title="Verify Current User Verification Code Example"
 phone_auth = app.getElement("auths.loginTypes.myPhoneLogin")
 
 try:
     result = phone_auth.checkMyMessage("123456")
     ticket = result["ticket"]
-    print(f"验证成功，票据: {ticket}")
+    print(f"Verification successful, Ticket: {ticket}")
 except Exception as e:
-    print(f"验证失败: {e}")
+    print(f"Verification failed: {e}")
 ```
 
 ### updatePhone
-更新用户手机号。
+Update user's mobile number.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| userId | Stext | str | 是 | 用户ID |
-| ticket | Stext | str | 是 | checkMyMessage返回的票据 |
-| newPhone | Stext | str | 是 | 新手机号 |
-| newCode | Stext | str | 是 | 新手机号的验证码 |
+| userId | Stext | str | Yes | User ID |
+| ticket | Stext | str | Yes | Ticket returned by checkMyMessage |
+| newPhone | Stext | str | Yes | New mobile number |
+| newCode | Stext | str | Yes | Verification code for new mobile number |
 
-#### 返回值
-成功返回SUCCESS_RETURN。
+#### Return Value
+Success returns SUCCESS_RETURN.
 
-#### 使用示例
-```python title="更新手机号示例"
+#### Usage Example
+```python title="Update Mobile Number Example"
 phone_auth = app.getElement("auths.loginTypes.myPhoneLogin")
 
 try:
-    # 先获取票据
+    # First get ticket
     ticket_result = phone_auth.checkMyMessage("123456")
     ticket = ticket_result["ticket"]
     
-    # 更新手机号
+    # Update mobile number
     phone_auth.updatePhone("user123", ticket, "13900139000", "654321")
-    print("手机号更新成功")
+    print("Mobile number updated successfully")
 except Exception as e:
-    print(f"更新失败: {e}")
+    print(f"Update failed: {e}")
 ```
 
-## 属性
+## Properties
 ### allowRegister
-是否允许新用户注册。
+Whether to allow new user registration.
 
-**类型**: bool  
-**说明**: 从配置文件中读取，控制是否允许通过手机号注册新用户
+**Type**: bool  
+**Description**: Read from configuration file, controls whether to allow new user registration through mobile number
 
 ### authConfig
-认证配置信息。
+Authentication configuration information.
 
-**类型**: dict  
-**说明**: 包含短信服务的配置信息，如accessKey、accessSecret等
+**Type**: dict  
+**Description**: Contains SMS service configuration information, such as accessKey, accessSecret, etc.
 
-## 高级特性
-### 短信服务集成
-手机号登录支持集成第三方短信服务，通过配置smsFullName指定短信服务元素。配置完成后，验证码发送将自动使用指定的短信服务，支持阿里云、腾讯云等主流短信平台。
+## Advanced Features
+### SMS Service Integration
+Mobile number login supports integration with third-party SMS services by configuring smsFullName to specify SMS service element. After configuration, verification code sending will automatically use the specified SMS service, supporting mainstream SMS platforms like Alibaba Cloud, Tencent Cloud, etc.
 
-#### 使用示例
-```python title="自定义短信服务示例"
-# 创建短信服务元素
+#### Usage Example
+```python title="Custom SMS Service Example"
+# Create SMS service element
 sms_service = app.getElement("SMS.aliyunSms")
 
-# 配置手机号登录使用该短信服务
+# Configure mobile number login to use this SMS service
 phone_auth = app.getElement("auths.loginTypes.myPhoneLogin")
-phone_auth.sendMessage("13800138000")  # 自动使用配置的短信服务
+phone_auth.sendMessage("13800138000")  # Automatically uses configured SMS service
 ```
 
-### 验证码安全机制
-系统内置多重安全机制确保验证码使用安全。
+### Verification Code Security Mechanism
+System has built-in multiple security mechanisms to ensure verification code usage security.
 
-#### 频率限制配置
-- 单个手机号45秒内只能发送一次验证码
-- 验证码有效期为5分钟
-- 验证码验证成功后自动删除
+#### Frequency Limit Configuration
+- Single mobile number can only send verification code once within 45 seconds
+- Verification code valid for 5 minutes
+- Verification code automatically deleted after successful verification
 
-#### 安全特性示例
-```python title="验证码安全机制示例"
+#### Security Features Example
+```python title="Verification Code Security Mechanism Example"
 phone_auth = app.getElement("auths.loginTypes.myPhoneLogin")
 
-# 发送验证码
+# Send verification code
 phone_auth.sendMessage("13800138000")
 
-# 短时间内重复发送会抛出异常
+# Repeated sending within short time will throw exception
 try:
-    phone_auth.sendMessage("13800138000")  # 45秒内重复发送
+    phone_auth.sendMessage("13800138000")  # Repeated sending within 45 seconds
 except Exception as e:
-    print("发送频率过快，请稍后再试")
+    print("Sending frequency too high, please try again later")
 
-# 验证码过期检查
+# Verification code expiration check
 import time
-time.sleep(300)  # 等待5分钟
+time.sleep(300)  # Wait 5 minutes
 try:
-    phone_auth.getLoginCode("13800138000", "123456")  # 过期验证码
+    phone_auth.getLoginCode("13800138000", "123456")  # Expired verification code
 except Exception as e:
-    print("验证码已过期")
-``` 
+    print("Verification code has expired")
+```

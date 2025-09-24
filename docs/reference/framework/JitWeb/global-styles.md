@@ -1,19 +1,20 @@
 ---
 slug: global-styles
 ---
-# 全局样式
-全局样式是基于Ant Design Design Token体系的样式配置系统，负责统一管理应用的视觉设计规范。它通过标准化的设计令牌（Design Token）控制字体、颜色、圆角、阴影等视觉元素，确保整个应用界面的一致性和可维护性。
+# Global Styles
 
-全局样式元素分层结构为Meta（themes.Meta） → Type（themes.NormalType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建全局样式实例元素。
+Global Styles is a style configuration system based on Ant Design Design Token system, responsible for unified management of application visual design standards. It controls visual elements such as fonts, colors, border radius, shadows, etc. through standardized design tokens (Design Token), ensuring consistency and maintainability of the entire application interface.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的themes.NormalType元素，以实现自己的封装。
+The Global Styles element has a hierarchical structure of Meta (themes.Meta) → Type (themes.NormalType) → Instance. Developers can quickly create global styles instance elements through JitAI's visual development tools.
 
-:::tip 参考文档
-开发者可参考 [Ant Design 定制主题文档](https://ant-design.antgroup.com/docs/react/customize-theme-cn#seedtoken) 了解更多 Design Token 的概念和用法。
+Of course, developers can also create their own Type elements or modify the official themes.NormalType element provided by JitAi in their own App to implement their own encapsulation.
+
+:::tip Reference Documentation
+Developers can refer to [Ant Design Customize Theme Documentation](https://ant-design.antgroup.com/docs/react/customize-theme-cn#seedtoken) to learn more about Design Token concepts and usage.
 :::
 
-## 快速开始 
-### 基础配置示例
+## Quick Start
+### Basic Configuration Example
 ```json title="themes/myGlobalTheme.json"
 {
   "fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial",
@@ -31,248 +32,248 @@ slug: global-styles
 }
 ```
 
-### 配置属性说明
-全局样式通过JSON配置文件定义设计令牌，支持以下几类属性配置：
+### Configuration Properties
+Global styles define design tokens through JSON configuration files, supporting the following categories of property configurations:
 
-| 属性类型 | 说明 | 主要属性 |
+| Property Type | Description | Main Properties |
 |---------|------|---------|
-| 字体配置 | 控制字体家族和各级标题字号 | `fontFamily`、`fontSizeHeading1-5` |
-| 圆角配置 | 定义组件圆角大小规范 | `borderRadius`、`borderRadiusXS/SM/LG` |
-| 主题色彩 | 控制品牌色和功能色 | `colorPrimary`、`colorSuccess`、`colorWarning`、`colorError` |
-| 背景填充 | 定义各级背景和填充色 | `colorBgBase`、`colorFill`系列 |
-| 文本颜色 | 控制文本层级颜色 | `colorText`系列 |
-| 边框颜色 | 定义边框颜色规范 | `colorBorder`、`colorBorderSecondary` |
-| 阴影效果 | 控制组件阴影样式 | `boxShadow`、`boxShadowSecondary` |
+| Font Configuration | Controls font family and heading font sizes | `fontFamily`, `fontSizeHeading1-5` |
+| Border Radius Configuration | Defines component border radius size standards | `borderRadius`, `borderRadiusXS/SM/LG` |
+| Theme Colors | Controls brand colors and functional colors | `colorPrimary`, `colorSuccess`, `colorWarning`, `colorError` |
+| Background Fill | Defines various background and fill colors | `colorBgBase`, `colorFill` series |
+| Text Colors | Controls text hierarchy colors | `colorText` series |
+| Border Colors | Defines border color standards | `colorBorder`, `colorBorderSecondary` |
+| Shadow Effects | Controls component shadow styles | `boxShadow`, `boxShadowSecondary` |
 
-## 方法 
+## Methods
 ### loader
-全局样式加载器，负责加载和合并主题配置。
+Global styles loader, responsible for loading and merging theme configurations.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| elements | Array&lt;Element&gt; | 是 | 主题元素数组 |
+| elements | Array&lt;Element&gt; | Yes | Theme element array |
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |------|------|
-| object | 合并后的主题配置对象 |
+| object | Merged theme configuration object |
 
-#### 使用示例
-```typescript title="主题加载示例"
-// 加载器会自动合并多个主题配置
+#### Usage Example
+```typescript title="Theme Loading Example"
+// Loader automatically merges multiple theme configurations
 const themeConfig = await loader([
   customThemeElement,
   baseThemeElement
 ]);
 
-// 返回合并后的主题配置
+// Returns merged theme configuration
 console.log(themeConfig.colorPrimary); // '#1677ff'
 ```
 
-## 属性
-### 字体属性
+## Attributes
+### Font Properties
 #### fontFamily
-- **类型**: `string`
-- **说明**: 字体家族，优先使用系统默认界面字体，提供备用字体库
-- **默认值**: `"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto"`
+- **Type**: `string`
+- **Description**: Font family, prioritizes system default interface fonts, provides fallback font libraries
+- **Default Value**: `"-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto"`
 
 #### fontSizeXL
-- **类型**: `number` 
-- **说明**: 超大号字体大小
+- **Type**: `number` 
+- **Description**: Extra large font size
 
 #### fontSizeHeading1
-- **类型**: `number`
-- **说明**: 一级标题字号，H1标签使用
-- **默认值**: `38`
+- **Type**: `number`
+- **Description**: First-level heading font size, used for H1 tags
+- **Default Value**: `38`
 
 #### fontSizeHeading2
-- **类型**: `number`
-- **说明**: 二级标题字号，H2标签使用
-- **默认值**: `30`
+- **Type**: `number`
+- **Description**: Second-level heading font size, used for H2 tags
+- **Default Value**: `30`
 
 #### fontSizeHeading3
-- **类型**: `number`
-- **说明**: 三级标题字号，H3标签使用
-- **默认值**: `24`
+- **Type**: `number`
+- **Description**: Third-level heading font size, used for H3 tags
+- **Default Value**: `24`
 
 #### fontSizeHeading4
-- **类型**: `number`
-- **说明**: 四级标题字号，H4标签使用
-- **默认值**: `20`
+- **Type**: `number`
+- **Description**: Fourth-level heading font size, used for H4 tags
+- **Default Value**: `20`
 
 #### fontSizeHeading5
-- **类型**: `number`
-- **说明**: 五级标题字号，H5标签使用
-- **默认值**: `16`
+- **Type**: `number`
+- **Description**: Fifth-level heading font size, used for H5 tags
+- **Default Value**: `16`
 
-### 圆角属性
+### Border Radius Properties
 #### borderRadius
-- **类型**: `number`
-- **说明**: 基础圆角大小，用于按钮、输入框、卡片等基础组件
+- **Type**: `number`
+- **Description**: Base border radius size, used for basic components like buttons, input fields, cards
 
 #### borderRadiusXS
-- **类型**: `number`
-- **说明**: XS号圆角，用于Segmented、Arrow等小圆角组件
-- **默认值**: `2`
+- **Type**: `number`
+- **Description**: XS border radius, used for small border radius components like Segmented, Arrow
+- **Default Value**: `2`
 
 #### borderRadiusSM
-- **类型**: `number`
-- **说明**: SM号圆角，用于小尺寸组件如small size的Button、Input、Select
-- **默认值**: `4`
+- **Type**: `number`
+- **Description**: SM border radius, used for small-sized components like small size Button, Input, Select
+- **Default Value**: `4`
 
 #### borderRadiusLG
-- **类型**: `number`
-- **说明**: LG号圆角，用于Card、Modal等大圆角组件
-- **默认值**: `8`
+- **Type**: `number`
+- **Description**: LG border radius, used for large border radius components like Card, Modal
+- **Default Value**: `8`
 
-### 颜色属性
+### Color Properties
 #### colorPrimary
-- **类型**: `string`
-- **说明**: 品牌主色，体现产品特性的核心视觉元素
+- **Type**: `string`
+- **Description**: Brand primary color, core visual element reflecting product characteristics
 
 #### colorPrimaryBg
-- **类型**: `string`
-- **说明**: 主色浅色背景色，用于视觉层级较弱的选中状态
+- **Type**: `string`
+- **Description**: Primary color light background, used for visually weaker selected states
 
 #### colorSuccess
-- **类型**: `string`
-- **说明**: 成功色，用于Result、Progress等组件
+- **Type**: `string`
+- **Description**: Success color, used for Result, Progress and other components
 
 #### colorSuccessTextActive
-- **类型**: `string`
-- **说明**: 成功色文本激活态
+- **Type**: `string`
+- **Description**: Success color text active state
 
 #### colorWarning
-- **类型**: `string`
-- **说明**: 警戒色，用于Notification、Alert等警告类组件
+- **Type**: `string`
+- **Description**: Warning color, used for warning-type components like Notification, Alert
 
 #### colorError
-- **类型**: `string`
-- **说明**: 错误色，表示错误状态
+- **Type**: `string`
+- **Description**: Error color, represents error state
 
 #### colorInfo
-- **类型**: `string`
-- **说明**: 信息色
+- **Type**: `string`
+- **Description**: Info color
 
 #### colorBgBase
-- **类型**: `string`
-- **说明**: 基础背景色，用于派生背景色梯度的基础变量
+- **Type**: `string`
+- **Description**: Base background color, base variable for deriving background color gradients
 
 #### colorBorder
-- **类型**: `string`
-- **说明**: 一级边框色，默认边框颜色，用于分割不同元素
+- **Type**: `string`
+- **Description**: Primary border color, default border color, used for separating different elements
 
 #### colorBorderSecondary
-- **类型**: `string`
-- **说明**: 二级边框色，比默认边框色浅一级
+- **Type**: `string`
+- **Description**: Secondary border color, one level lighter than default border color
 
 #### colorFill
-- **类型**: `string`
-- **说明**: 一级填充色，最深的填充色，用于Slider的hover效果
+- **Type**: `string`
+- **Description**: Primary fill color, deepest fill color, used for Slider hover effects
 
 #### colorFillSecondary
-- **类型**: `string`
-- **说明**: 二级填充色，用于Rate、Skeleton等组件，也可作为Table等的hover状态
+- **Type**: `string`
+- **Description**: Secondary fill color, used for Rate, Skeleton and other components, can also be used as Table hover state
 
 #### colorFillTertiary
-- **类型**: `string`
-- **说明**: 三级填充色，用于Slider、Segmented等组件的默认填色
+- **Type**: `string`
+- **Description**: Tertiary fill color, used for default fill color of Slider, Segmented and other components
 
 #### colorFillQuaternary
-- **类型**: `string`
-- **说明**: 四级填充色，最弱填充色，适用于斑马纹、区分边界等场景
+- **Type**: `string`
+- **Description**: Quaternary fill color, weakest fill color, suitable for zebra stripes, boundary distinction and other scenarios
 
 #### colorText
-- **类型**: `string`
-- **说明**: 一级文本色，符合W3C标准的默认文本颜色
+- **Type**: `string`
+- **Description**: Primary text color, default text color conforming to W3C standards
 
 #### colorTextSecondary
-- **类型**: `string`
-- **说明**: 二级文本色，用于Label文本、Menu文本选中态等场景
+- **Type**: `string`
+- **Description**: Secondary text color, used for Label text, Menu text selected state and other scenarios
 
 #### colorTextTertiary
-- **类型**: `string`
-- **说明**: 三级文本色，用于描述性文本，如表单补充说明、列表描述等
+- **Type**: `string`
+- **Description**: Tertiary text color, used for descriptive text, such as form supplementary descriptions, list descriptions
 
 #### colorTextQuaternary
-- **类型**: `string`
-- **说明**: 四级文本色，最浅文本色，用于输入提示文本、禁用文本等
+- **Type**: `string`
+- **Description**: Quaternary text color, lightest text color, used for input hint text, disabled text
 
-### 阴影属性
+### Shadow Properties
 #### boxShadow
-- **类型**: `string`
-- **说明**: 一级阴影，控制元素阴影样式
+- **Type**: `string`
+- **Description**: Primary shadow, controls element shadow styles
 
 #### boxShadowSecondary
-- **类型**: `string`
-- **说明**: 二级阴影，控制元素二级阴影样式
+- **Type**: `string`
+- **Description**: Secondary shadow, controls element secondary shadow styles
 
-### 风格属性
+### Style Properties
 #### wireframe
-- **类型**: `boolean`
-- **说明**: 线框风格，用于将组件视觉效果变为线框化，启用V4效果
-- **默认值**: `false`
+- **Type**: `boolean`
+- **Description**: Wireframe style, used to change component visual effects to wireframe, enables V4 effects
+- **Default Value**: `false`
 
-## 事件
-暂无
+## Events
+None
 
-## 高级特性
-### 主题合并机制
-全局样式支持多层主题配置合并，通过loader机制实现：
+## Advanced Features
+### Theme Merging Mechanism
+Global styles support multi-layer theme configuration merging through loader mechanism:
 
-```typescript title="主题合并示例"
-// loader会按顺序合并多个主题配置
-// 后面的配置会覆盖前面的同名属性
+```typescript title="Theme Merging Example"
+// Loader merges multiple theme configurations in order
+// Later configurations override previous properties with same names
 const mergedTheme = await loader([
-  baseThemeElement,    // 基础主题
-  brandThemeElement,   // 品牌主题  
-  customThemeElement   // 自定义主题
+  baseThemeElement,    // Base theme
+  brandThemeElement,   // Brand theme  
+  customThemeElement   // Custom theme
 ]);
 ```
 
-### Design Token继承
-基于Ant Design的Design Token体系，支持从基础色彩自动生成完整色板：
+### Design Token Inheritance
+Based on Ant Design's Design Token system, supports automatic generation of complete color palette from base colors:
 
-```json title="色彩继承示例"
+```json title="Color Inheritance Example"
 {
   "colorPrimary": "#1677ff",
-  // 会自动生成：
+  // Automatically generates:
   // colorPrimaryHover, colorPrimaryActive, 
-  // colorPrimaryBg, colorPrimaryBorder 等派生色彩
+  // colorPrimaryBg, colorPrimaryBorder and other derived colors
 }
 ```
 
-### 响应式设计支持
-通过配置不同尺寸的圆角和字体，支持多屏幕适配：
+### Responsive Design Support
+Supports multi-screen adaptation by configuring different border radius and font sizes:
 
-```json title="响应式配置示例"
+```json title="Responsive Configuration Example"
 {
-  "borderRadiusXS": 2,   // 小屏幕细节
-  "borderRadiusSM": 4,   // 中等屏幕
-  "borderRadius": 6,     // 标准圆角
-  "borderRadiusLG": 8,   // 大屏幕组件
+  "borderRadiusXS": 2,   // Small screen details
+  "borderRadiusSM": 4,   // Medium screen
+  "borderRadius": 6,     // Standard border radius
+  "borderRadiusLG": 8,   // Large screen components
   
-  "fontSizeHeading5": 16, // 移动端标题
-  "fontSizeHeading1": 38  // 桌面端大标题
+  "fontSizeHeading5": 16, // Mobile headings
+  "fontSizeHeading1": 38  // Desktop large headings
 }
 ```
 
-### 品牌定制化
-支持完整的品牌色彩体系定制：
+### Brand Customization
+Supports complete brand color system customization:
 
-```json title="品牌定制示例"
+```json title="Brand Customization Example"
 {
-  // 品牌主色定制
+  // Brand primary color customization
   "colorPrimary": "#8B5CF6",
   "colorSuccess": "#10B981", 
   "colorWarning": "#F59E0B",
   "colorError": "#EF4444",
   
-  // 字体品牌化
+  // Font branding
   "fontFamily": "Inter, -apple-system, BlinkMacSystemFont",
   
-  // 圆角风格
-  "borderRadius": 12  // 更现代的圆角风格
+  // Border radius style
+  "borderRadius": 12  // More modern border radius style
 }
-``` 
+```

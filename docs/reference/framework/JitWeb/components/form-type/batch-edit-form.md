@@ -1,28 +1,28 @@
 ---
 slug: batch-edit-form
 ---
-# 批量编辑表单
-批量编辑表单是用于对多条数据进行统一编辑操作的表单组件，基于数据模型和字段配置实现批量数据修改能力。它负责表单数据管理、字段编辑控制和批量提交处理，支持灵活的字段配置、布局自定义和权限控制。
+# Batch Edit Form
+The batch edit form is a form component used for unified editing operations on multiple data records, implementing batch data modification capabilities based on data models and field configurations. It handles form data management, field edit control, and batch submission processing, supporting flexible field configuration, layout customization, and permission control.
 
-批量编辑表单元素分层结构为Meta（components.Meta） → Type（components.EditForm） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建批量编辑表单实例元素。
+The batch edit form element has a hierarchical structure of Meta (components.Meta) → Type (components.EditForm) → Instance. Developers can quickly create batch edit form instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.EditFormType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `components.EditFormType` element provided by JitAI in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基础配置示例
-```typescript title="基础批量编辑表单配置"
+## Quick Start
+### Basic Configuration Example
+```typescript title="Basic Batch Edit Form Configuration"
 {
   "fullName": "components.EditForm",
   "type": "components.EditForm", 
   "name": "EditForm24",
-  "title": "批量编辑表单",
+  "title": "Batch Edit Form",
   "config": {
     "requireElements": [
       {
         "name": "models.CustomerModel",
         "filter": "",
         "orderBy": [],
-        "title": "客户模型",
+        "title": "Customer Model",
         "type": "models.Meta"
       }
     ],
@@ -33,7 +33,7 @@ slug: batch-edit-form
         "key": "custName",
         "type": "field",
         "name": "custName", 
-        "title": "客户名称",
+        "title": "Customer Name",
         "visibleMode": "shown",
         "editMode": "editable",
         "showTitle": true,
@@ -45,7 +45,7 @@ slug: batch-edit-form
         "key": "phone",
         "type": "field",
         "name": "phone",
-        "title": "电话",
+        "title": "Phone",
         "visibleMode": "shown", 
         "editMode": "editable",
         "showTitle": true,
@@ -58,209 +58,209 @@ slug: batch-edit-form
 }
 ```
 
-### 配置属性说明
-| 属性名 | 类型 | 默认值 | 说明 | 示例值 |
-|--------|------|---------|------|---------|
-| requireElements | RequireElement[] | [] | 依赖的数据模型配置 | 见上例 |
-| topLayoutJustify | FormLayoutJustifyEnum | "flex-start" | 顶部布局对齐方式 | "flex-start", "center", "flex-end" |
-| bottomLayoutJustify | FormLayoutJustifyEnum | "center" | 底部布局对齐方式 | "flex-start", "center", "flex-end" |
-| layoutPercent | number | - | 布局百分比 | 50 |
-| componentDict | Record&lt;string, IEditFormComponentDefine&gt; | \{\} | 字段组件配置字典 | 见上例 |
-| layoutDict | Record&lt;string, IFormLayoutDefine&gt; | \{\} | 布局配置字典 | \{\} |
-| ruleDict | Record&lt;string, IFormRuleDefine&gt; | \{\} | 规则配置字典 | \{\} |
-| buttonRuleDict | Record&lt;string, Object&gt; | \{\} | 按钮规则配置字典 | \{\} |
-| fillMode | EditFormFillModeEnum | - | 填充模式 | "auto", "manual" |
-| isHorizontalLayout | boolean | false | 是否水平布局 | true, false |
+### Configuration Properties
+| Property Name | Type | Default Value | Description | Example Value |
+|---------------|------|---------------|-------------|---------------|
+| requireElements | RequireElement[] | [] | Dependent data model configuration | See example above |
+| topLayoutJustify | FormLayoutJustifyEnum | "flex-start" | Top layout alignment | "flex-start", "center", "flex-end" |
+| bottomLayoutJustify | FormLayoutJustifyEnum | "center" | Bottom layout alignment | "flex-start", "center", "flex-end" |
+| layoutPercent | number | - | Layout percentage | 50 |
+| componentDict | Record&lt;string, IEditFormComponentDefine&gt; | \{\} | Field component configuration dictionary | See example above |
+| layoutDict | Record&lt;string, IFormLayoutDefine&gt; | \{\} | Layout configuration dictionary | \{\} |
+| ruleDict | Record&lt;string, IFormRuleDefine&gt; | \{\} | Rule configuration dictionary | \{\} |
+| buttonRuleDict | Record&lt;string, Object&gt; | \{\} | Button rule configuration dictionary | \{\} |
+| fillMode | EditFormFillModeEnum | - | Fill mode | "auto", "manual" |
+| isHorizontalLayout | boolean | false | Whether to use horizontal layout | true, false |
 
-#### 字段配置属性（IEditFormFieldDefine）
-| 属性名 | 类型 | 默认值 | 说明 | 示例值 |
-|--------|------|---------|------|---------|
-| key | string | - | 字段唯一标识 | "custName" |
-| name | string | - | 字段名称 | "custName" |
-| title | string | - | 字段显示标题 | "客户名称" |
-| type | "field" | "field" | 组件类型 | "field" |
-| index | number | - | 字段排序索引 | 1 |
-| showTitle | boolean | true | 是否显示标题 | true, false |
-| isRequired | boolean | false | 是否必填 | true, false |
-| visibleMode | FormFieldVISIBLEEnum | "shown" | 可见模式 | "shown", "hidden" |
-| editMode | FormFieldModeEnum | "editable" | 编辑模式 | "editable", "readonly" |
-| descDisplayMode | "bottom" \| "hover" | "bottom" | 描述显示模式 | "bottom", "hover" |
-| hasClickOutput | boolean | false | 是否有点击输出事件 | true, false |
-| hasChangeOutput | boolean | false | 是否有值改变输出事件 | true, false |
-| varConfig | IEditOtherConfigDefine | - | 变量配置 | \{inFormViewOnlyShowMode: 1\} |
-| isManualAdd | boolean | false | 是否手动添加 | true, false |
-| fuzzySearch | boolean | false | 是否模糊搜索 | true, false |
-| fuzzyFilter | string | - | 模糊过滤条件 | "name LIKE '%value%'" |
-| hasScanCode | boolean | false | 是否支持扫码 | true, false |
-| isCameraOnly | boolean | false | 是否仅支持拍照 | true, false |
+#### Field Configuration Properties (IEditFormFieldDefine)
+| Property Name | Type | Default Value | Description | Example Value |
+|---------------|------|---------------|-------------|---------------|
+| key | string | - | Field unique identifier | "custName" |
+| name | string | - | Field name | "custName" |
+| title | string | - | Field display title | "Customer Name" |
+| type | "field" | "field" | Component type | "field" |
+| index | number | - | Field sort index | 1 |
+| showTitle | boolean | true | Whether to show title | true, false |
+| isRequired | boolean | false | Whether required | true, false |
+| visibleMode | FormFieldVISIBLEEnum | "shown" | Visibility mode | "shown", "hidden" |
+| editMode | FormFieldModeEnum | "editable" | Edit mode | "editable", "readonly" |
+| descDisplayMode | "bottom" \| "hover" | "bottom" | Description display mode | "bottom", "hover" |
+| hasClickOutput | boolean | false | Whether to have click output event | true, false |
+| hasChangeOutput | boolean | false | Whether to have value change output event | true, false |
+| varConfig | IEditOtherConfigDefine | - | Variable configuration | \{inFormViewOnlyShowMode: 1\} |
+| isManualAdd | boolean | false | Whether manually added | true, false |
+| fuzzySearch | boolean | false | Whether to support fuzzy search | true, false |
+| fuzzyFilter | string | - | Fuzzy filter condition | "name LIKE '%value%'" |
+| hasScanCode | boolean | false | Whether to support scan code | true, false |
+| isCameraOnly | boolean | false | Whether to support camera only | true, false |
 
-## 变量
+## Variables
 ### formData
-- **类型**: RowData
-- **说明**: 表单数据对象，存储当前编辑的单行数据
-- **泛型**: 基于requireElements中配置的数据模型
+- **Type**: RowData
+- **Description**: Form data object storing the current single row data being edited
+- **Generic**: Based on the data model configured in requireElements
 
-```typescript title="访问表单数据"
-// 获取表单数据
+```typescript title="Access Form Data"
+// Get form data
 const formData = this.formData.value;
 
-// 更新表单数据
+// Update form data
 this.formData.update({
-  custName: "新客户名称",
+  custName: "New Customer Name",
   phone: "13800138000"
 });
 
-// 重置表单数据
+// Reset form data
 this.formData.reset();
 
-// 刷新表单数据
+// Refresh form data
 this.formData.refresh();
 ```
 
 ### editRowList
-- **类型**: RowList  
-- **说明**: 要批量操作的多行数据列表
-- **泛型**: 基于requireElements中配置的数据模型
+- **Type**: RowList  
+- **Description**: List of multiple row data to be batch operated
+- **Generic**: Based on the data model configured in requireElements
 
-```typescript title="操作多行数据"
-// 设置要编辑的数据列表
+```typescript title="Operate Multiple Row Data"
+// Set the data list to be edited
 this.editRowList.value = [
-  {id: 1, custName: "客户1", phone: "13800138001"},
-  {id: 2, custName: "客户2", phone: "13800138002"}
+  {id: 1, custName: "Customer 1", phone: "13800138001"},
+  {id: 2, custName: "Customer 2", phone: "13800138002"}
 ];
 
-// 获取数据列表
+// Get data list
 const dataList = this.editRowList.value;
 
-// 追加数据
+// Append data
 this.editRowList.append({
-  id: 3, custName: "客户3", phone: "13800138003"
+  id: 3, custName: "Customer 3", phone: "13800138003"
 });
 
-// 重置数据列表
+// Reset data list
 this.editRowList.reset();
 ```
 
-## 方法 
+## Methods
 ### call
-刷新组件数据，可传入新的数据列表或刷新现有数据。
+Refresh component data, can pass in new data list or refresh existing data.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 | 示例值 |
-|--------|------|------|------|---------|
-| dataList | RowList | 否 | 要批量操作的多行数据 | [\{id: 1, name: "test"\}] |
+#### Parameter Details
+| Parameter Name | Type | Required | Description | Example Value |
+|----------------|------|----------|-------------|---------------|
+| dataList | RowList | No | Multiple row data to be batch operated | [\{id: 1, name: "test"\}] |
 
-#### 返回值
-无返回值
+#### Return Value
+No return value
 
-#### 使用示例
-```typescript title="刷新表单数据"
-// 刷新现有数据
+#### Usage Example
+```typescript title="Refresh Form Data"
+// Refresh existing data
 await this.EditForm24.call();
 
-// 设置新的数据列表
+// Set new data list
 await this.EditForm24.call([
-  {id: 1, custName: "客户1", phone: "13800138001"},
-  {id: 2, custName: "客户2", phone: "13800138002"}
+  {id: 1, custName: "Customer 1", phone: "13800138001"},
+  {id: 2, custName: "Customer 2", phone: "13800138002"}
 ]);
 
-// 清空数据列表
+// Clear data list
 await this.EditForm24.call(null);
 ```
 
 ### publishEvent
-发布组件事件，继承自BaseComponent。
+Publish component events, inherited from BaseComponent.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 | 示例值 |
-|--------|------|------|------|---------|
-| name | string | 是 | 事件名称 | "afterSubmit" |
-| ex | Record&lt;string, any&gt; | 否 | 附加数据 | \{success: true\} |
+#### Parameter Details
+| Parameter Name | Type | Required | Description | Example Value |
+|----------------|------|----------|-------------|---------------|
+| name | string | Yes | Event name | "afterSubmit" |
+| ex | Record&lt;string, any&gt; | No | Additional data | \{success: true\} |
 
-#### 返回值
-Promise - 异步操作，无返回值
+#### Return Value
+Promise - Asynchronous operation, no return value
 
-#### 使用示例
-```typescript title="发布自定义事件"
-// 发布提交成功事件
+#### Usage Example
+```typescript title="Publish Custom Events"
+// Publish submit success event
 await this.publishEvent("afterSubmit", {
   success: true,
   data: this.formData.value
 });
 
-// 发布字段值改变事件
+// Publish field value change event
 await this.publishEvent("change-custName", {
-  oldValue: "旧值",
-  newValue: "新值"
+  oldValue: "Old Value",
+  newValue: "New Value"
 });
 ```
 
 ### subscribeEvent
-订阅组件事件，继承自BaseComponent。
+Subscribe to component events, inherited from BaseComponent.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 | 示例值 |
-|--------|------|------|------|---------|
-| name | string | 是 | 事件名称 | "afterSubmit" |
-| evtCb | Function | 是 | 事件回调函数 | (data) => \{\} |
-| unSubscribeExist | boolean | 否 | 是否取消订阅已存在的事件 | true |
+#### Parameter Details
+| Parameter Name | Type | Required | Description | Example Value |
+|----------------|------|----------|-------------|---------------|
+| name | string | Yes | Event name | "afterSubmit" |
+| evtCb | Function | Yes | Event callback function | (data) => \{\} |
+| unSubscribeExist | boolean | No | Whether to unsubscribe existing events | true |
 
-#### 返回值
-string - 事件处理器ID
+#### Return Value
+string - Event handler ID
 
-#### 使用示例
-```typescript title="订阅表单事件"
-// 订阅提交后事件
+#### Usage Example
+```typescript title="Subscribe to Form Events"
+// Subscribe to after submit event
 const handlerId = this.subscribeEvent("afterSubmit", async (data) => {
-  console.log("表单提交成功:", data);
-  // 处理提交后逻辑
+  console.log("Form submitted successfully:", data);
+  // Handle post-submit logic
 });
 
-// 订阅字段值改变事件
+// Subscribe to field value change event
 this.subscribeEvent("change-custName", (data) => {
-  console.log("客户名称发生改变:", data);
+  console.log("Customer name changed:", data);
 });
 ```
 
 ### unSubscribeEvent
-取消订阅事件，继承自BaseComponent。
+Unsubscribe from events, inherited from BaseComponent.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 | 示例值 |
-|--------|------|------|------|---------|
-| id | string | 是 | 事件处理器ID | "handler-id-123" |
+#### Parameter Details
+| Parameter Name | Type | Required | Description | Example Value |
+|----------------|------|----------|-------------|---------------|
+| id | string | Yes | Event handler ID | "handler-id-123" |
 
-#### 返回值
+#### Return Value
 boolean
 
-#### 使用示例
-```typescript title="取消事件订阅"
-// 取消指定事件订阅
+#### Usage Example
+```typescript title="Unsubscribe from Events"
+// Unsubscribe from specific event
 const success = this.unSubscribeEvent(handlerId);
-console.log("取消订阅结果:", success);
+console.log("Unsubscribe result:", success);
 ```
 
 ### setConfig
-更新组件配置，支持动态修改表单设置，继承自BaseComponent。
+Update component configuration, supports dynamic modification of form settings, inherited from BaseComponent.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 | 示例值 |
-|--------|------|------|------|---------|
-| next | Partial&lt;IEditFormConfig&gt; | 是 | 要更新的配置对象 | \{topLayoutJustify: "center"\} |
-| clean | boolean | 否 | 是否完全替换配置 | false |
+#### Parameter Details
+| Parameter Name | Type | Required | Description | Example Value |
+|----------------|------|----------|-------------|---------------|
+| next | Partial&lt;IEditFormConfig&gt; | Yes | Configuration object to update | \{topLayoutJustify: "center"\} |
+| clean | boolean | No | Whether to completely replace configuration | false |
 
-#### 返回值
-无返回值
+#### Return Value
+No return value
 
-#### 使用示例
-```typescript title="动态更新配置"
-// 更新布局配置
+#### Usage Example
+```typescript title="Dynamic Configuration Update"
+// Update layout configuration
 this.setConfig({
   topLayoutJustify: "center",
   bottomLayoutJustify: "flex-end"
 });
 
-// 添加新字段配置
+// Add new field configuration
 this.setConfig({
   componentDict: {
     ...this.config.componentDict,
@@ -268,7 +268,7 @@ this.setConfig({
       key: "newField",
       type: "field",
       name: "newField",
-      title: "新字段",
+      title: "New Field",
       visibleMode: "shown",
       editMode: "editable",
       showTitle: true,
@@ -281,23 +281,23 @@ this.setConfig({
 ```
 
 ### runCode
-执行自定义JavaScript代码，继承自BaseComponent。
+Execute custom JavaScript code, inherited from BaseComponent.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 | 示例值 |
-|--------|------|------|------|---------|
-| code | string | 是 | 要执行的JavaScript代码字符串 | "return this.formData.value.custName" |
+#### Parameter Details
+| Parameter Name | Type | Required | Description | Example Value |
+|----------------|------|----------|-------------|---------------|
+| code | string | Yes | JavaScript code string to execute | "return this.formData.value.custName" |
 
-#### 返回值
-any - 代码执行结果
+#### Return Value
+any - Code execution result
 
-#### 使用示例
-```typescript title="执行自定义代码"
-// 获取表单中的客户名称
+#### Usage Example
+```typescript title="Execute Custom Code"
+// Get customer name from form
 const custName = this.runCode("return this.formData.value.custName");
-console.log("客户名称:", custName);
+console.log("Customer name:", custName);
 
-// 执行复杂逻辑
+// Execute complex logic
 const result = this.runCode(`
   const data = this.formData.value;
   return data.custName + ' - ' + data.phone;
@@ -305,211 +305,211 @@ const result = this.runCode(`
 ```
 
 ### getPermConfig
-获取当前组件的权限配置，继承自BaseComponent。
+Get current component's permission configuration, inherited from BaseComponent.
 
-#### 返回值
-Object | undefined - 权限配置对象或undefined
+#### Return Value
+Object | undefined - Permission configuration object or undefined
 
-#### 使用示例
-```typescript title="获取权限配置"
-// 获取权限配置
+#### Usage Example
+```typescript title="Get Permission Configuration"
+// Get permission configuration
 const permConfig = this.getPermConfig();
 if (permConfig) {
-  console.log("组件权限配置:", permConfig);
-  // 根据权限配置调整组件行为
+  console.log("Component permission configuration:", permConfig);
+  // Adjust component behavior based on permission configuration
 }
 ```
 
 ### destroy
-销毁组件，清理资源，继承自BaseComponent。
+Destroy component and clean up resources, inherited from BaseComponent.
 
-#### 使用示例
-```typescript title="销毁组件"
-// 组件销毁时自动调用
+#### Usage Example
+```typescript title="Destroy Component"
+// Automatically called when component is destroyed
 this.destroy();
 ```
 
 ### getVariableList
-获取组件变量列表的静态方法，框架内部使用。
+Static method to get component variable list, used internally by framework.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 | 示例值 |
-|--------|------|------|------|---------|
-| compConfig | Record&lt;string, any&gt; | 是 | 组件配置对象 | \{requireElements: [...]\} |
+#### Parameter Details
+| Parameter Name | Type | Required | Description | Example Value |
+|----------------|------|----------|-------------|---------------|
+| compConfig | Record&lt;string, any&gt; | Yes | Component configuration object | \{requireElements: [...]\} |
 
-#### 返回值
-Array - 变量配置数组
+#### Return Value
+Array - Variable configuration array
 
-#### 使用示例
-```typescript title="获取变量列表"
-// 框架内部调用
+#### Usage Example
+```typescript title="Get Variable List"
+// Internal framework call
 const variables = EditFormComponent.getVariableList(config);
-console.log("组件变量:", variables);
+console.log("Component variables:", variables);
 ```
 
 ### getFuncList
-获取组件函数列表的静态方法，框架内部使用。
+Static method to get component function list, used internally by framework.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 | 示例值 |
-|--------|------|------|------|---------|
-| compConfig | Record&lt;string, any&gt; | 是 | 组件配置对象 | \{requireElements: [...]\} |
+#### Parameter Details
+| Parameter Name | Type | Required | Description | Example Value |
+|----------------|------|----------|-------------|---------------|
+| compConfig | Record&lt;string, any&gt; | Yes | Component configuration object | \{requireElements: [...]\} |
 
-#### 返回值
-Array - 函数配置数组
+#### Return Value
+Array - Function configuration array
 
-#### 使用示例
-```typescript title="获取函数列表"
-// 框架内部调用
+#### Usage Example
+```typescript title="Get Function List"
+// Internal framework call
 const functions = EditFormComponent.getFuncList(config);
-console.log("组件函数:", functions);
+console.log("Component functions:", functions);
 ```
 
 ### getEventList
-获取组件事件列表的静态方法，框架内部使用。
+Static method to get component event list, used internally by framework.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 | 示例值 |
-|--------|------|------|------|---------|
-| compConfig | Record&lt;string, any&gt; | 是 | 组件配置对象 | \{requireElements: [...]\} |
+#### Parameter Details
+| Parameter Name | Type | Required | Description | Example Value |
+|----------------|------|----------|-------------|---------------|
+| compConfig | Record&lt;string, any&gt; | Yes | Component configuration object | \{requireElements: [...]\} |
 
-#### 返回值
-Array | null - 事件配置数组或null
+#### Return Value
+Array | null - Event configuration array or null
 
-#### 使用示例
-```typescript title="获取事件列表"
-// 框架内部调用
+#### Usage Example
+```typescript title="Get Event List"
+// Internal framework call
 const events = EditFormComponent.getEventList(config);
-console.log("组件事件:", events);
+console.log("Component events:", events);
 ```
 
-## 属性
+## Properties
 ### name
-- **类型**: string
-- **说明**: 组件名称，继承自BaseComponent
-- **示例**: "EditForm24"
+- **Type**: string
+- **Description**: Component name, inherited from BaseComponent
+- **Example**: "EditForm24"
 
 ### title
-- **类型**: string  
-- **说明**: 组件标题，继承自BaseComponent
-- **示例**: "批量编辑表单"
+- **Type**: string  
+- **Description**: Component title, inherited from BaseComponent
+- **Example**: "Batch Edit Form"
 
 ### config
-- **类型**: IEditFormConfig &amp; \{requireElements: requireElement[]\}
-- **说明**: 组件配置对象，包含所有配置属性
-- **示例**: 见基础配置示例
+- **Type**: IEditFormConfig &amp; \{requireElements: requireElement[]\}
+- **Description**: Component configuration object containing all configuration properties
+- **Example**: See basic configuration example
 
 ### type
-- **类型**: string
-- **说明**: 组件类型标识，继承自BaseComponent
-- **示例**: "components.EditForm"
+- **Type**: string
+- **Description**: Component type identifier, inherited from BaseComponent
+- **Example**: "components.EditForm"
 
 ### fullName
-- **类型**: string
-- **说明**: 组件完整名称，继承自BaseComponent  
-- **示例**: "components.EditForm"
+- **Type**: string
+- **Description**: Component full name, inherited from BaseComponent  
+- **Example**: "components.EditForm"
 
 ### app
-- **类型**: App
-- **说明**: 应用实例对象，继承自BaseComponent
-- **只读**: 是
+- **Type**: App
+- **Description**: Application instance object, inherited from BaseComponent
+- **Read-only**: Yes
 
 ### page
-- **类型**: BasePage
-- **说明**: 页面实例对象，继承自BaseComponent
-- **只读**: 是
+- **Type**: BasePage
+- **Description**: Page instance object, inherited from BaseComponent
+- **Read-only**: Yes
 
 ### showTitle
-- **类型**: boolean
-- **说明**: 是否显示标题，继承自BaseComponent
-- **默认值**: false
+- **Type**: boolean
+- **Description**: Whether to show title, inherited from BaseComponent
+- **Default Value**: false
 
 ### compType
-- **类型**: COMPONENT_TYPE
-- **说明**: 组件类型枚举，继承自BaseComponent
+- **Type**: COMPONENT_TYPE
+- **Description**: Component type enumeration, inherited from BaseComponent
 
 ### dataTypeList
-- **类型**: BaseDataType[]
-- **说明**: 组件变量定义列表，继承自BaseComponent
-- **只读**: 是
+- **Type**: BaseDataType[]
+- **Description**: Component variable definition list, inherited from BaseComponent
+- **Read-only**: Yes
 
-## 事件
+## Events
 ### afterCall
-刷新后触发的事件。
+Event triggered after refresh.
 
-**数据**: formData - 表单数据对象
+**Data**: formData - Form data object
 
-```typescript title="监听刷新后事件"
+```typescript title="Listen to After Refresh Event"
 this.subscribeEvent("afterCall", (data) => {
-  console.log("表单刷新完成:", data.formData);
-  // 处理刷新后逻辑
+  console.log("Form refresh completed:", data.formData);
+  // Handle post-refresh logic
 });
 ```
 
 ### afterSubmit
-表单提交后触发的事件。
+Event triggered after form submission.
 
-**数据**: formData - 表单数据对象
+**Data**: formData - Form data object
 
-```typescript title="监听提交后事件" 
+```typescript title="Listen to After Submit Event" 
 this.subscribeEvent("afterSubmit", (data) => {
-  console.log("表单提交成功:", data.formData);
-  // 处理提交成功逻辑
+  console.log("Form submitted successfully:", data.formData);
+  // Handle submit success logic
 });
 ```
 
 ### beforeSubmit
-表单提交前触发的事件。
+Event triggered before form submission.
 
-**数据**: formData - 表单数据对象
+**Data**: formData - Form data object
 
-```typescript title="监听提交前事件"
+```typescript title="Listen to Before Submit Event"
 this.subscribeEvent("beforeSubmit", (data) => {
-  console.log("即将提交表单:", data.formData);
-  // 提交前验证逻辑
-  return true; // 返回false可阻止提交
+  console.log("About to submit form:", data.formData);
+  // Pre-submit validation logic
+  return true; // Return false to prevent submission
 });
 ```
 
-### 字段点击事件
-当字段配置了hasClickOutput为true时，点击字段触发的事件。
+### Field Click Event
+Event triggered when clicking a field that has hasClickOutput configured as true.
 
-**事件名格式**: `click-{fieldName}`
-**数据**: formData - 表单数据对象
+**Event Name Format**: `click-{fieldName}`
+**Data**: formData - Form data object
 
-```typescript title="监听字段点击事件"
+```typescript title="Listen to Field Click Event"
 this.subscribeEvent("click-custName", (data) => {
-  console.log("客户名称字段被点击:", data.formData);
+  console.log("Customer name field clicked:", data.formData);
 });
 ```
 
-### 字段值改变事件
-当字段配置了hasChangeOutput为true时，字段值改变触发的事件。
+### Field Value Change Event
+Event triggered when a field value changes and hasChangeOutput is configured as true.
 
-**事件名格式**: `change-{fieldName}`  
-**数据**: formData - 表单数据对象
+**Event Name Format**: `change-{fieldName}`  
+**Data**: formData - Form data object
 
-```typescript title="监听字段值改变事件"
+```typescript title="Listen to Field Value Change Event"
 this.subscribeEvent("change-phone", (data) => {
-  console.log("电话字段值发生改变:", data.formData);
+  console.log("Phone field value changed:", data.formData);
 });
 ```
 
-## 高级特性
-### 字段权限控制
-```typescript title="字段权限配置"
+## Advanced Features
+### Field Permission Control
+```typescript title="Field Permission Configuration"
 {
   "componentDict": {
     "custName": {
-      "editMode": "readonly", // 只读模式
-      "visibleMode": "hidden" // 隐藏字段
+      "editMode": "readonly", // Read-only mode
+      "visibleMode": "hidden" // Hide field
     }
   }
 }
 ```
 
-### 关联字段配置
-```typescript title="关联字段设置"
+### Related Field Configuration
+```typescript title="Related Field Settings"
 {
   "componentDict": {
     "relatedField": {
@@ -519,7 +519,7 @@ this.subscribeEvent("change-phone", (data) => {
         "relateBtn": {
           "checked": true,
           "config": {
-            "title": "选择关联数据"
+            "title": "Select Related Data"
           }
         }
       }
@@ -528,32 +528,32 @@ this.subscribeEvent("change-phone", (data) => {
 }
 ```
 
-### 动态字段控制
-```typescript title="动态显示控制"
-// 根据条件动态显示字段
+### Dynamic Field Control
+```typescript title="Dynamic Display Control"
+// Dynamically show fields based on conditions
 if (this.formData.custType === "VIP") {
   this.config.componentDict.vipLevel.visibleMode = "shown";
 } else {
   this.config.componentDict.vipLevel.visibleMode = "hidden";
 }
 
-// 动态设置字段必填
+// Dynamically set field as required
 this.config.componentDict.phone.isRequired = true;
 ```
 
-### 批量数据处理
-```typescript title="批量操作示例"
-// 批量设置相同值
+### Batch Data Processing
+```typescript title="Batch Operation Example"
+// Batch set same values
 const updateData = {
   status: "active",
   updateTime: new Date().toISOString()
 };
 
-// 对所有选中数据应用相同修改
+// Apply same modifications to all selected data
 this.editRowList.value.forEach(row => {
   Object.assign(row, updateData);
 });
 
-// 触发批量保存
+// Trigger batch save
 await this.publishEvent("beforeSubmit");
-``` 
+```

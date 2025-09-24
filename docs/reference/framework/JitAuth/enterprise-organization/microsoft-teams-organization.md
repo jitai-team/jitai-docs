@@ -66,7 +66,7 @@ print(f"根部门: {root_dept.name}")
 ### 业务配置文件配置
 | 配置项 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
-| authConfig.tenantId | str | 是 | Microsoft Azure租户ID，从Azure管理后台获取 |
+| authConfig.corpId | str | 是 | Microsoft Azure租户ID，从Azure管理后台获取 |
 | authConfig.clientId | str | 是 | Azure应用程序的客户端ID |
 | authConfig.clientSecret | str | 是 | Azure应用程序的客户端密钥 |
 

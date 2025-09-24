@@ -59,28 +59,28 @@ JitAi支持在以下两个地方添加存储服务：
 在阿里云OSS配置面板中，配置文件名、元素路径、accessKeyId、accessKeySecret、endPoint、bucketName等参数。
 
 ### 移动云EOS {#china-mobile-cloud-eos}
-触发移动云EOS配置面板的方式和阿里云OSS一样，配置参数也一样，可参考 [阿里云OSS](#aliyun-oss)
+触发移动云EOS配置面板的方式和阿里云OSS一样，配置参数也一样。
 
 ![](./img/1/2025-08-28-15-24-50.png)
 
 ### MinIO {#minio}
-触发MinIO配置面板的方式和阿里云OSS一样，配置参数基本一样，只是多了scheme参数，可参考 [阿里云OSS](#aliyun-oss)
+触发MinIO配置面板的方式和阿里云OSS一样，配置参数基本一样，只是多了scheme参数。
 
 ![](./img/1/2025-08-28-15-30-20.png)
 ### 七牛云 {#qiniu-cloud}
-触发七牛云配置面板的方式和阿里云OSS一样，配置参数基本一样，只是多了scheme参数，可参考 [阿里云OSS](#aliyun-oss)
+触发七牛云配置面板的方式和阿里云OSS一样，配置参数基本一样，只是多了scheme参数。
 
 ![](./img/1/2025-08-28-15-31-17.png)
 
 ### AWS S3 {#aws-s3}
 
-触发 AWS S3 配置面板的方式与阿里云 OSS 类似。配置参数包括 accessKeyId、accessKeySecret、endPoint、bucketName、region 等。请根据实际 AWS S3 控制台信息填写相关参数。可参考 [阿里云OSS](#aliyun-oss)
+触发 AWS S3 配置面板的方式与阿里云 OSS 类似。配置参数包括 accessKeyId、accessKeySecret、endPoint、bucketName、region 等。请根据实际 AWS S3 控制台信息填写相关参数。
 
 ![](./img/1/awss3.png)
 
 ### Cloudflare R2 {#cloudflare-r2}
 
-Cloudflare R2 的配置方式与 AWS S3 基本一致。需要填写 accessKeyId、accessKeySecret、endPoint、bucketName、region 等参数。建议参考 Cloudflare R2 官方文档获取详细配置信息。可参考 [阿里云OSS](#aliyun-oss)
+Cloudflare R2 的配置方式与 AWS S3 基本一致。需要填写 accessKeyId、accessKeySecret、endPoint、bucketName、region 等参数。建议参考 Cloudflare R2 官方文档获取详细配置信息。
 
 ![](./img/1/cloudflareR2.png)
 

@@ -1,7 +1,7 @@
 ---
 slug: microsoft-teams-login
 ---
-# Microsoft Teams 登录 {#microsoft-teams-login}
+# Microsoft Teams 登录
 Microsoft Teams 登录（MicrosoftTeamsType）是基于 Microsoft Teams 应用的登录认证元素，支持PC端和移动端的OAuth授权登录。它负责处理Microsoft Teams OAuth授权流程、用户身份验证和账号绑定，同时支持与Microsoft Teams企业组织架构的无缝集成和用户信息同步。
 
 Microsoft Teams 登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.MicrosoftTeamsType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建Microsoft Teams登录实例元素。

@@ -58,28 +58,29 @@ Place the mouse on the "File Storage" menu, then place the mouse on the `+` butt
 In the Alibaba Cloud OSS configuration panel, configure parameters such as filename, element path, accessKeyId, accessKeySecret, endPoint, and bucketName.
 
 ### China Mobile Cloud EOS {#china-mobile-cloud-eos}
-The method to trigger the China Mobile Cloud EOS configuration panel is the same as Alibaba Cloud OSS, and the configuration parameters are also the same. Please refer to [Alibaba Cloud OSS](#aliyun-oss).
+The method to trigger the China Mobile Cloud EOS configuration panel is the same as Alibaba Cloud OSS, and the configuration parameters are also the same.
 
 ![](./img/1/2025-08-28-15-24-50.png)
 
 ### MinIO {#minio}
-The method to trigger the MinIO configuration panel is the same as Alibaba Cloud OSS, and the configuration parameters are basically the same, except for an additional scheme parameter. Please refer to [Alibaba Cloud OSS](#aliyun-oss).
+The method to trigger the MinIO configuration panel is the same as Alibaba Cloud OSS, and the configuration parameters are basically the same, except for an additional scheme parameter.
 
 ![](./img/1/2025-08-28-15-30-20.png)
+
 ### Qiniu Cloud {#qiniu-cloud}
-The method to trigger the Qiniu Cloud configuration panel is the same as Alibaba Cloud OSS, and the configuration parameters are basically the same, except for an additional scheme parameter. Please refer to [Alibaba Cloud OSS](#aliyun-oss).
+The method to trigger the Qiniu Cloud configuration panel is the same as Alibaba Cloud OSS, and the configuration parameters are basically the same, except for an additional scheme parameter. 
 
 ![](./img/1/2025-08-28-15-31-17.png)
 
 ### AWS S3 {#aws-s3}
 
-The method to trigger the AWS S3 configuration panel is similar to Alibaba Cloud OSS. Configuration parameters include accessKeyId, accessKeySecret, endPoint, bucketName, region, etc. Please fill in the relevant parameters according to the actual AWS S3 console information. Please refer to [Alibaba Cloud OSS](#aliyun-oss).
+The method to trigger the AWS S3 configuration panel is similar to Alibaba Cloud OSS. Configuration parameters include accessKeyId, accessKeySecret, endPoint, bucketName, region, etc. Please fill in the relevant parameters according to the actual AWS S3 console information.
 
 ![](./img/1/awss3.png)
 
 ### Cloudflare R2 {#cloudflare-r2}
 
-The configuration method for Cloudflare R2 is basically the same as AWS S3. You need to fill in parameters such as accessKeyId, accessKeySecret, endPoint, bucketName, region, etc. It is recommended to refer to the official Cloudflare R2 documentation for detailed configuration information. Please refer to [Alibaba Cloud OSS](#aliyun-oss).
+The configuration method for Cloudflare R2 is basically the same as AWS S3. You need to fill in parameters such as accessKeyId, accessKeySecret, endPoint, bucketName, region, etc. It is recommended to refer to the official Cloudflare R2 documentation for detailed configuration information.
 
 ![](./img/1/cloudflareR2.png)
 

@@ -3,7 +3,7 @@ sidebar_position: 7
 title: Comparison between JitAi and mainstream AI application platforms
 ---
 
-# Making AI Truly Understand Your Business and Become Your Intelligent Work Partner
+# Comparison between JitAi and mainstream AI application platforms
 
 ## Why Choose JitAi?
 

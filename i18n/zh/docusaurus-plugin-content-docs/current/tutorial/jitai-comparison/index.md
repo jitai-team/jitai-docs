@@ -1,8 +1,9 @@
 ---
 sidebar_position: 7
+title: 对比JitAi与主流AI应用平台
 ---
 
-# 让AI真正懂你的业务，做你的智能工作伙伴
+# 对比JitAi与主流AI应用平台
 
 ## 为什么选择JitAi？
 

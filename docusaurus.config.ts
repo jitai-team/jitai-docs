@@ -172,12 +172,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
            position: 'left',
            label: 'Community',
          },
-        //GitHub
-         {
-           href: 'https://github.com/jitai-team',
-           label: 'GitHub',
-           position: 'right',
-         },
+        //GitHub  目前GitHub上没有开源项目，而且当前菜单中有 「开源」菜单，为节省菜单空间，这里先隐藏
+        //  {
+        //    href: 'https://github.com/jitai-team',
+        //    label: 'GitHub',
+        //    position: 'right',
+        //  },
         {
           type: 'localeDropdown',
           position: 'right',

@@ -3,6 +3,7 @@
   "position": 19,
   "link": {
     "type": "generated-index",
+    "slug": "devguide/third-party-integration",
     "description": "学习如何集成外部API、支付功能和短信服务。"
   }
 }

@@ -3,6 +3,7 @@
   "position": 16,
   "link": {
     "type": "generated-index",
+    "slug": "devguide/user-and-permission",
     "description": "Learn how to manage user organization structure, configure login authentication, and role permission systems."
   }
 }

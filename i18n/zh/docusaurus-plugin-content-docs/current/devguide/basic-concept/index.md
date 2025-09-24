@@ -17,7 +17,7 @@ JitAi提供的可视化开发工具、可视化运维工具以及应用管理仓
 
 ## JAAP协议与元素 {#jaap-protocol-and-elements}
 
-[JAAP协议](../../reference/runtime-platform/JAAP)（JitAi Ai Application Protocol）是JitAi应用的构成规范协议。JitAi应用是由元素构成（可类比传统开发中的模块），开发JitAi应用，就是新增、删除、修改各个元素的源代码。JitAi应用的元素是遵从JAAP协议的代码模块，元素声明文件中定义了元素的name、type、title、desc等基本信息，元素的实现文件中实现了元素的主体代码。
+[JAAP协议](/docs/reference/runtime-platform/JAAP)（JitAi Ai Application Protocol）是JitAi应用的构成规范协议。JitAi应用是由元素构成（可类比传统开发中的模块），开发JitAi应用，就是新增、删除、修改各个元素的源代码。JitAi应用的元素是遵从JAAP协议的代码模块，元素声明文件中定义了元素的name、type、title、desc等基本信息，元素的实现文件中实现了元素的主体代码。
 
 ## 元素Type与元素加载 {#element-type-and-element-loading}
 

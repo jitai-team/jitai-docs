@@ -17,7 +17,7 @@ Developers can develop applications based on traditional development tools (such
 
 ## JAAP Protocol and Elements {#jaap-protocol-and-elements}
 
-The [JAAP Protocol](../../reference/runtime-platform/JAAP) (JitAi Application Protocol) is the compositional specification protocol for JitAi applications. JitAi applications are composed of elements (comparable to modules in traditional development), and developing JitAi applications involves adding, deleting, and modifying the source code of various elements. Elements in JitAi applications are code modules that comply with the JAAP protocol. Element declaration files define basic information of elements such as name, type, title, desc, while element implementation files contain the main code logic of elements.
+The [JAAP Protocol](/docs/reference/runtime-platform/JAAP) (JitAi Application Protocol) is the compositional specification protocol for JitAi applications. JitAi applications are composed of elements (comparable to modules in traditional development), and developing JitAi applications involves adding, deleting, and modifying the source code of various elements. Elements in JitAi applications are code modules that comply with the JAAP protocol. Element declaration files define basic information of elements such as name, type, title, desc, while element implementation files contain the main code logic of elements.
 
 ## Element Type and Element Loading {#element-type-and-element-loading}
 

@@ -6,11 +6,11 @@ sidebar_position: 5
 In business scenarios such as personnel information registration, vehicle information registration, and equipment information registration, users need to fill out form data and submit it to the backend for processing. JitAi directly provides data entry pages to help developers quickly complete the development of form data collection functionality.
 
 ## Create Data Entry Page {#create-data-entry-page}
-The creation process of data entry pages is basically the same as [the creation process of regular pages](../component-based-page-development#create-a-regular-page), except that data entry pages need to bind a [data table model](../../data-modeling/data-table-model) to store the data entered by users.
+The creation process of data entry pages is basically the same as [the creation process of regular pages](/docs/devguide/shell-and-page/component-based-page-development#create-a-regular-page), except that data entry pages need to bind a [data table model](/docs/devguide/data-modeling/data-table-model) to store the data entered by users.
 
 ![Create Data Entry Page](./imgs/create-data-entry-page.png "Create Data Entry Page")
 
-Developers can select the page type as `Data Entry Page` when creating a page, and select the [data table model](../../data-modeling/data-table-model) for data entry at `Select Data Table`. After clicking the `Confirm` button, it will automatically enter the visual editor.
+Developers can select the page type as `Data Entry Page` when creating a page, and select the [data table model](/docs/devguide/data-modeling/data-table-model) for data entry at `Select Data Table`. After clicking the `Confirm` button, it will automatically enter the visual editor.
 
 ## Configure Viewable and Editable Fields {#configure-viewable-editable-fields}
 When developers don't want to expose certain fields to users, they can configure the fields that users can view. When developers only want users to see field values but not modify them, they can configure the fields that users can edit.
@@ -40,7 +40,7 @@ Data entry pages are out-of-the-box built-in page types provided by JitAi that d
 
 ![Convert to Regular Page](./imgs/convert-to-regular-page.gif "Convert to Regular Page")
 
-Developers can click the `Convert to Regular Page` button in the upper right corner of the page editor to convert the page to a regular page. For development methods of regular pages, refer to [Component-based Page Development](../component-based-page-development).
+Developers can click the `Convert to Regular Page` button in the upper right corner of the page editor to convert the page to a regular page. For development methods of regular pages, refer to [Component-based Page Development](/docs/devguide/shell-and-page/component-based-page-development).
 
 :::warning
 After converting to a regular page, it cannot be restored to the original `Data Entry Page` type.

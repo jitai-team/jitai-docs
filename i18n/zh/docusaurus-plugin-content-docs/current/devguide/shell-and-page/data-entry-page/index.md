@@ -6,11 +6,11 @@ sidebar_position: 5
 人员信息登记、车辆信息登记、设备信息登记等业务场景中，需要用户填写表单数据，并提交到后台进行处理。JitAi 直接提供了数据录入页面，帮助开发者快速完成表单数据收集功能的开发。
 
 ## 创建数据录入页面 {#create-data-entry-page}
-数据录入页面的创建过程和[常规页面的创建过程](../component-based-page-development#create-a-regular-page)基本一致，不同的是数据录入页面需要绑定一个[数据表模型](../../data-modeling/data-table-model)，用于存储用户录入的数据。
+数据录入页面的创建过程和[常规页面的创建过程](/docs/devguide/shell-and-page/component-based-page-development#create-a-regular-page)基本一致，不同的是数据录入页面需要绑定一个[数据表模型](/docs/devguide/data-modeling/data-table-model)，用于存储用户录入的数据。
 
 ![创建数据录入页面](./imgs/create-data-entry-page.png)
 
-开发者可以在创建页面时选择页面类型为`数据录入页面`，并在`选择数据表`处选择要录入数据的[数据表模型](../../data-modeling/data-table-model)，点击`确定`按钮后会自动进入可视化编辑器。
+开发者可以在创建页面时选择页面类型为`数据录入页面`，并在`选择数据表`处选择要录入数据的[数据表模型](/docs/devguide/data-modeling/data-table-model)，点击`确定`按钮后会自动进入可视化编辑器。
 
 ## 配置允许查看和编辑的字段 {#configure-viewable-editable-fields}
 当不想向用户暴露个别字段时，开发者可以配置用户可查看的字段。当只想让用户看到字段值，但又不想让用户修改时，开发者可以配置用户可编辑的字段。
@@ -40,7 +40,7 @@ sidebar_position: 5
 
 ![转换为常规页面](./imgs/convert-to-regular-page.gif)
 
-开发者可以在页面编辑器中点击右上角的`转为常规页面`按钮，即可将页面转换为常规页面。关于常规页面的开发方法参考[组件化页面开发](../component-based-page-development)。
+开发者可以在页面编辑器中点击右上角的`转为常规页面`按钮，即可将页面转换为常规页面。关于常规页面的开发方法参考[组件化页面开发](/docs/devguide/shell-and-page/component-based-page-development)。
 
 :::warning
 转换为常规页面后无法再恢复为原来的`数据录入页面`类型。

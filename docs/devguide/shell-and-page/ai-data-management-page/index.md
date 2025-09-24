@@ -24,7 +24,7 @@ Developers typically don't need to perform any additional configuration, and the
 ## Manageable Data Scope {#limit-page-table-query-data-through-default-filter-conditions}
 In actual business scenarios, it may be necessary to limit the data that can be queried and displayed in the page table. For example, only displaying data from the past year. By setting data filter conditions, data security can be effectively ensured, user efficiency can be improved, and irrelevant data interference with business operations can be avoided.
 
-Limit the data queried by the page table through default filter conditions. JitAI's [Filter](../../using-functional-components-in-pages/filter-components) supports various filter condition settings for different types of fields such as text, numbers, date and time, which can meet almost all filtering requirements.
+Limit the data queried by the page table through default filter conditions. JitAI's [Filter](/docs/devguide/using-functional-components-in-pages/filter-components) supports various filter condition settings for different types of fields such as text, numbers, date and time, which can meet almost all filtering requirements.
 
 Developers can configure **Data Filtering** in the page editor, and click the plus button on the right side of each filter condition to add multiple conditions.
 
@@ -72,13 +72,13 @@ This assistant is not enabled by default in the page and needs to be manually en
 Switch to `AI Assistant Configuration` at the top of the visual editor, then turn on the `Use AI Data Management Assistant` switch.
 
 ### Configure Large Language Model
-The AI data management assistant needs to access the system database and call functions on the page to draw charts during runtime. We need to configure a [Large Language Model](../../ai-llm/create-ai-llm) that supports tool calling for it. We recommend using qwen-max-latest from Alibaba Cloud Bailian platform. [Apply for API Key](https://bailian.console.aliyun.com/?tab=model#/api-key)
+The AI data management assistant needs to access the system database and call functions on the page to draw charts during runtime. We need to configure a [Large Language Model](/docs/devguide/ai-llm/create-ai-llm) that supports tool calling for it. We recommend using qwen-max-latest from Alibaba Cloud Bailian platform. [Apply for API Key](https://bailian.console.aliyun.com/?tab=model#/api-key)
 
 ### Assistant Advanced Configuration
-- Supports custom [Welcome Message and Opening](../../ai-assistant/welcome-message-and-opening)
-- Supports custom [Output Process Log](../../ai-assistant/ai-assistant-input-output#message-output), which outputs brief process logs by default.
+- Supports custom [Welcome Message and Opening](/docs/devguide/ai-assistant/welcome-message-and-opening)
+- Supports custom [Output Process Log](/docs/devguide/ai-assistant/ai-assistant-input-output#message-output), which outputs brief process logs by default.
 
-For more information about AI assistants, please read the [AI Assistant](../../ai-assistant) related documentation.
+For more information about AI assistants, please read the [AI Assistant](/docs/devguide/ai-assistant) related documentation.
 
 ## Runtime Effect
 
@@ -89,7 +89,7 @@ When users access the page, they will see a fully functional data management int
 
 ## Convert to Regular Page for Modification {#convert-to-regular-page-for-modification}
 The AI data management page is a built-in page type provided by JitAI out of the box, which developers can quickly create and use. When developers want to make more refined custom modifications based on the default implementation, they can convert the page to a regular page for unlimited modification.<br/>
-Developers can click the <span style={{ display: "inline-block", verticalAlign: "middle", margin: "0 4px", height: '30px' }}>![Convert Button](./imgs/trans-type.png)</span> button in the top right corner of the page editor to convert the page to a regular page. For regular page development methods, refer to [Component-based Page Development](../component-based-page-development).
+Developers can click the <span style={{ display: "inline-block", verticalAlign: "middle", margin: "0 4px", height: '30px' }}>![Convert Button](./imgs/trans-type.png)</span> button in the top right corner of the page editor to convert the page to a regular page. For regular page development methods, refer to [Component-based Page Development](/docs/devguide/shell-and-page/component-based-page-development).
 
 :::warning
 After converting to a regular page, it cannot be restored to the original `AI Data Management Page` type.
@@ -103,6 +103,6 @@ In addition to creating in the developer portal, you can also quickly create in 
 Click **Create New** → **AI Data Management Functions**.This operation will create a new AI data Management page and simultaneously create a menu in the portal and bind it to the newly added page.
 
 :::tip Tip
-You need to be granted [quick create permissions](../../user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus) to see the quick create entry.
+You need to be granted [quick create permissions](/docs/devguide/user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus) to see the quick create entry.
 :::
 

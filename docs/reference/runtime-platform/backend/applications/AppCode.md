@@ -4,234 +4,234 @@ slug: AppCode
 ---
 
 # AppCode
-AppCode（应用源码管理器），用于管理和操作应用的源代码文件。AppCode仅在应用具有本地源码时可用（即存在app.json文件），通常用于开发调试场景。
+AppCode (Application Source Code Manager) is used to manage and operate application source code files. AppCode is only available when the application has local source code (i.e., when an app.json file exists), typically used in development and debugging scenarios.
 
-可通过`app.code`访问当前应用的AppCode对象。
+The AppCode object for the current application can be accessed through `app.code`.
 
-## 属性
-| 名称 | 类型 | 说明 |
+## Properties
+| Name | Type | Description |
 |------|------|------|
-| envId | str | 运行环境ID，例如：`JRE_MWcVmUZjEq` |
-| appId | str | 应用ID，例如：`wanyun.MyApp` |
-| version | str | 应用版本，例如：`1.0.0` |
-| env | [Environ](../runtime-environment/01Environ) | 应用所属的运行环境对象 |
-| app | [App](../applications/App) | 应用对象 |
-| enable | bool | 是否可用，必须要本地有源码才能使用|
+| envId | str | Runtime environment ID, e.g., `JRE_MWcVmUZjEq` |
+| appId | str | Application ID, e.g., `wanyun.MyApp` |
+| version | str | Application version, e.g., `1.0.0` |
+| env | [Environ](../runtime-environment/01Environ) | Runtime environment object that the application belongs to |
+| app | [App](../applications/App) | Application object |
+| enable | bool | Whether it is available, requires local source code to be usable |
 
-:::danger[危险]
-开发者可以读取以上属性，但不要强行修改以上属性值，可能会导致不可预知的错误。
+:::danger[Danger]
+Developers can read the above properties, but should not forcibly modify these property values, as it may cause unpredictable errors.
 :::
 
-## 方法 
+## Methods 
 ### exists
-检查指定路径的文件或目录是否存在。
+Checks whether a file or directory at the specified path exists.
 
-**参数：**
+**Parameters:**
 
-* **path** (str): 相对于应用根目录的路径
+* **path** (str): Path relative to the application root directory
 
-**返回值：** 
+**Return Value:** 
 
-文件或目录是否存在。
+Whether the file or directory exists.
 
-**返回值类型：** 
+**Return Type:** 
 
 bool
 
 ### isdir
-检查指定路径是否为目录。
+Checks whether the specified path is a directory.
 
-**参数：**
+**Parameters:**
 
-* **path** (str): 相对于应用根目录的路径
+* **path** (str): Path relative to the application root directory
 
-**返回值：** 
+**Return Value:** 
 
-是否为目录。
+Whether it is a directory.
 
-**返回值类型：** 
+**Return Type:** 
 
 bool
 
 ### isfile
-检查指定路径是否为文件。
+Checks whether the specified path is a file.
 
-**参数：**
+**Parameters:**
 
-* **path** (str): 相对于应用根目录的路径
+* **path** (str): Path relative to the application root directory
 
-**返回值：** 
+**Return Value:** 
 
-是否为文件。
+Whether it is a file.
 
-**返回值类型：** 
+**Return Type:** 
 
 bool
 
 ### read
-读取指定文件的内容。
+Reads the content of the specified file.
 
-**参数：**
+**Parameters:**
 
-* **path** (str): 相对于应用根目录的文件路径
-* **binary** (bool, 可选): 是否以二进制模式读取，默认为False
+* **path** (str): File path relative to the application root directory
+* **binary** (bool, optional): Whether to read in binary mode, defaults to False
 
-**返回值：** 
+**Return Value:** 
 
-文件内容。
+File content.
 
-**返回值类型：** 
+**Return Type:** 
 
-str 或 bytes
+str or bytes
 
 ### write
-写入内容到指定文件。
+Writes content to the specified file.
 
-**参数：**
+**Parameters:**
 
-* **path** (str): 相对于应用根目录的文件路径
-* **content** (str): 要写入的内容
+* **path** (str): File path relative to the application root directory
+* **content** (str): Content to be written
 
-**返回值：** 
+**Return Value:** 
 
-写入操作的结果。
+Result of the write operation.
 
-:::warning[注意]
-写入操作会覆盖原有文件内容。
+:::warning[Note]
+Write operations will overwrite existing file content.
 :::
 
 ### writeElement
-写入元素文件。
+Writes element files.
 
-**参数：**
+**Parameters:**
 
-* **fullName** (str): 元素的fullName
-* **files** (Dict[str, str]): 文件字典，key为文件路径，value为文件内容
+* **fullName** (str): The fullName of the element
+* **files** (Dict[str, str]): File dictionary, where key is the file path and value is the file content
 
-**返回值：** 
+**Return Value:** 
 
-写入操作的结果。
+Result of the write operation.
 
 ### parseElementByPath
-根据文件路径解析元素的fullName。
+Parses the element's fullName based on the file path.
 
-**参数：**
+**Parameters:**
 
-* **path** (str): 文件路径，例如：`models/AModel/model.py`
+* **path** (str): File path, e.g., `models/AModel/model.py`
 
-**返回值：** 
+**Return Value:** 
 
-元素的fullName，如果未找到则返回None。
+The element's fullName, returns None if not found.
 
-**返回值类型：** 
+**Return Type:** 
 
-str 或 None
+str or None
 
 ### listdir
-列出指定目录下的文件和子目录。
+Lists files and subdirectories in the specified directory.
 
-**参数：**
+**Parameters:**
 
-* **path** (str): 相对于应用根目录的目录路径
+* **path** (str): Directory path relative to the application root directory
 
-**返回值：** 
+**Return Value:** 
 
-目录内容列表。
+List of directory contents.
 
-**返回值类型：** 
+**Return Type:** 
 
 List[str]
 
 ### deleteDir
-删除指定目录及其内容。
+Deletes the specified directory and its contents.
 
-**参数：**
+**Parameters:**
 
-* **path** (str): 相对于应用根目录的目录路径
+* **path** (str): Directory path relative to the application root directory
 
-**返回值：** 
+**Return Value:** 
 
-删除操作的结果。
+Result of the delete operation.
 
-:::danger[危险]
-删除操作不可逆，请谨慎使用。
+:::danger[Danger]
+Delete operations are irreversible, please use with caution.
 :::
 
 ### createDir
-创建目录。
+Creates a directory.
 
-**参数：**
+**Parameters:**
 
-* **path** (str): 相对于应用根目录的目录路径
+* **path** (str): Directory path relative to the application root directory
 
-**返回值：** 
+**Return Value:** 
 
-创建操作的结果。
+Result of the create operation.
 
 ### copyDir
-复制目录及其内容。
+Copies a directory and its contents.
 
-**参数：**
+**Parameters:**
 
-* **sourceDir** (str): 源目录路径，相对于应用根目录
-* **targetDir** (str): 目标目录路径，相对于应用根目录
+* **sourceDir** (str): Source directory path, relative to the application root directory
+* **targetDir** (str): Target directory path, relative to the application root directory
 
-**返回值：** 
+**Return Value:** 
 
-复制操作的结果。
+Result of the copy operation.
 
 ### deleteFile
-删除指定文件。
+Deletes the specified file.
 
-**参数：**
+**Parameters:**
 
-* **path** (str): 相对于应用根目录的文件路径
+* **path** (str): File path relative to the application root directory
 
-**返回值：** 
+**Return Value:** 
 
-删除操作的结果。
+Result of the delete operation.
 
-:::danger[危险]
-删除操作不可逆，请谨慎使用。
+:::danger[Danger]
+Delete operations are irreversible, please use with caution.
 :::
 
 ### rename
-重命名文件或目录。
+Renames a file or directory.
 
-**参数：**
+**Parameters:**
 
-* **sourcePath** (str): 源路径，相对于应用根目录
-* **targetPath** (str): 目标路径，相对于应用根目录
+* **sourcePath** (str): Source path, relative to the application root directory
+* **targetPath** (str): Target path, relative to the application root directory
 
-**返回值：** 
+**Return Value:** 
 
-重命名操作的结果。
+Result of the rename operation.
 
-## 使用示例
+## Usage Examples
 ```python
-# 检查文件是否存在
+# Check if file exists
 if app.code.exists("models/UserModel/model.py"):
-    print("文件存在")
+    print("File exists")
 
-# 读取文件内容
+# Read file content
 content = app.code.read("app.json")
 print(content)
 
-# 写入文件
+# Write file
 app.code.write("test.txt", "Hello World")
 
-# 创建目录
+# Create directory
 app.code.createDir("new_folder")
 
-# 列出目录内容
+# List directory contents
 files = app.code.listdir("models")
 print(files)
 
-# 解析元素路径
+# Parse element path
 fullName = app.code.parseElementByPath("models/UserModel/model.py")
-print(fullName)  # 输出: models.UserModel
+print(fullName)  # Output: models.UserModel
 ```
 
-:::tip[提示]
-AppCode主要用于开发模式下的源码操作，仅适用于有源码的情况，在生产模式中通常使用[AppResource](AppResource)来操作运行时应用资源。
+:::tip[Tip]
+AppCode is primarily used for source code operations in development mode, only applicable when source code is available. In production mode, [AppResource](AppResource) is typically used to operate runtime application resources.
 :::

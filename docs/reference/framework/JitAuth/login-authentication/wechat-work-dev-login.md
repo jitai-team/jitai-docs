@@ -1,40 +1,40 @@
 ---
 slug: wechat-work-dev-login
 ---
-# 企业微信代开发登录
-企业微信代开发登录是极态框架提供的登录认证Type元素，基于企业微信第三方应用代开发模式实现企业级单点登录。它负责处理企业微信OAuth授权流程、用户身份验证和多企业代理管理，支持工作台内免密登录、扫码登录和回调事件处理。
+# WeChat Work Proxy Development Login
+WeChat Work proxy development login is a login authentication Type element provided by the JitAi framework, implementing enterprise-level single sign-on based on WeChat Work third-party application proxy development mode. It handles WeChat Work OAuth authorization flow, user identity authentication, and multi-enterprise proxy management, supporting password-free login within workspace, QR code login, and callback event handling.
 
-企业微信代开发登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.QywxProxyType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建企业微信代开发登录实例元素。
+The hierarchical structure of WeChat Work proxy development login elements is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.QywxProxyType) → Instance. Developers can quickly create WeChat Work proxy development login instance elements through JitAi's visual development tools.
 
-**支持的登录方式**：
-- 企业微信工作台登录 - 用户在企业微信工作台中点击应用直接登录
-- 扫码登录 - 通过企业微信扫描二维码进行登录
-- 回调处理 - 处理企业微信的OAuth回调和事件通知
+**Supported Login Methods**:
+- WeChat Work workspace login - Users click application directly in WeChat Work workspace to login
+- QR code login - Login through WeChat Work QR code scanning
+- Callback handling - Handle WeChat Work OAuth callbacks and event notifications
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的auths.loginTypes.QywxProxyType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `auths.loginTypes.QywxProxyType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 auths/
-└── QywxProxyTemp/           # 登录实例元素名称
-    ├── e.json              # 元素配置文件
-    └── QywxProxyTemp.json  # 业务配置文件
+└── QywxProxyTemp/           # Login instance element name
+    ├── e.json              # Element configuration file
+    └── QywxProxyTemp.json  # Business configuration file
 ```
 
-#### e.json文件
-```json title="元素配置文件"
+#### e.json File
+```json title="Element Configuration File"
 {
-  "title": "企业微信代开发登录配置",
+  "title": "WeChat Work Proxy Development Login Configuration",
   "type": "auths.loginTypes.QywxProxyType"
 }
 ```
 
-#### 业务配置文件
-创建与实例元素同名的业务配置文件 `QywxProxyTemp.json`：
+#### Business Configuration File
+Create business configuration file with same name as instance element `QywxProxyTemp.json`:
 
-```json title="业务配置文件"
+```json title="Business Configuration File"
 {
   "authConfig": {
     "suiteId": "tj1234567890abcdef",
@@ -47,99 +47,99 @@ auths/
 }
 ```
 
-#### 调用示例
-```python title="基本调用示例"
-# 获取登录实例
+#### Usage Example
+```python title="Basic Usage Example"
+# Get login instance
 auth_instance = app.getElement("auths.QywxProxyTemp")
 
-# 获取登录配置
+# Get login configuration
 config = auth_instance.getLoginConfig()
 
-# 获取登录码
+# Get login code
 login_result = auth_instance.getLoginCode(
     corpId="ww1234567890abcdef",
     code="auth_code_from_qywx"
 )
 
-# 获取服务实例
+# Get service instance
 auth_service = app.getElement("auths.loginTypes.QywxProxyType.services.QywxProxyAuthService")
 ```
 
-## 元素配置
-### e.json配置
-| 字段 | 类型 | 对应原生类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Field | Type | Corresponding Native Type | Required | Description |
 |------|------|-------------|------|------|
-| title | string | str | 是 | 元素显示名称 |
-| type | string | str | 是 | 固定值：auths.loginTypes.QywxProxyType |
+| title | string | str | Yes | Element display name |
+| type | string | str | Yes | Fixed value: auths.loginTypes.QywxProxyType |
 
-### 业务配置文件配置
-| 字段 | 类型 | 对应原生类型 | 必填 | 说明 |
+### Business Configuration File
+| Field | Type | Corresponding Native Type | Required | Description |
 |------|------|-------------|------|------|
-| authConfig | object | dict | 是 | 认证配置对象 |
-| authConfig.suiteId | string | str | 是 | 第三方应用套件ID |
-| authConfig.suiteSecret | string | str | 是 | 第三方应用套件密钥 |
-| authConfig.encodingAESKey | string | str | 是 | 用于加密回调数据的AES密钥 |
-| authConfig.token | string | str | 是 | 用于验证回调请求的token |
-| isActive | boolean | bool | 否 | 是否启用该登录方式，默认true |
-| corpId | string | str | 否 | 企业微信企业ID |
+| authConfig | object | dict | Yes | Authentication configuration object |
+| authConfig.suiteId | string | str | Yes | Third-party application suite ID |
+| authConfig.suiteSecret | string | str | Yes | Third-party application suite secret |
+| authConfig.encodingAESKey | string | str | Yes | AES key for encrypting callback data |
+| authConfig.token | string | str | Yes | Token for verifying callback requests |
+| isActive | boolean | bool | No | Whether to enable this login method, default true |
+| corpId | string | str | No | WeChat Work enterprise ID |
 
-## 方法 
+## Methods
 ### getLoginConfig
-返回登录需要的参数配置。
+Return parameter configuration needed for login.
 
-#### 参数详解
-无参数。
+#### Parameter Details
+No parameters.
 
-#### 返回值
-返回包含suiteId的配置信息字典。
+#### Return Value
+Return configuration information dictionary containing suiteId.
 
-#### 使用示例
-```python title="获取登录配置"
+#### Usage Example
+```python title="Get Login Configuration"
 auth_instance = app.getElement("auths.QywxProxyTemp")
 config = auth_instance.getLoginConfig()
-print(f"套件ID: {config['suiteId']}")
+print(f"Suite ID: {config['suiteId']}")
 ```
 
 ### getLoginCode
-获取登录码，用于扫码登录和工作台登录。
+Get login code for QR code login and workspace login.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| corpId | Stext | str | 是 | 企业微信企业ID |
-| code | Stext | str | 是 | 企业微信授权码 |
-| loginType | Stext | str | 否 | 登录类型，qr为扫码登录，workbench为工作台登录 |
+| corpId | Stext | str | Yes | WeChat Work enterprise ID |
+| code | Stext | str | Yes | WeChat Work authorization code |
+| loginType | Stext | str | No | Login type, qr for QR code login, workbench for workspace login |
 
-#### 返回值
-返回包含loginCode、corpList和userId的结果字典。
+#### Return Value
+Return result dictionary containing loginCode, corpList, and userId.
 
-#### 使用示例
-```python title="获取登录码"
+#### Usage Example
+```python title="Get Login Code"
 auth_instance = app.getElement("auths.QywxProxyTemp")
 result = auth_instance.getLoginCode(
     corpId="ww1234567890abcdef",
     code="auth_code_from_qywx",
     loginType="workbench"
 )
-print(f"登录码: {result['loginCode']}")
-print(f"用户ID: {result['userId']}")
+print(f"Login Code: {result['loginCode']}")
+print(f"User ID: {result['userId']}")
 ```
 
 ### loginByWorkbench
-执行企业微信工作台登录，返回包含token的登录信息。
+Execute WeChat Work workspace login, return login information containing token.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| corpId | Stext | str | 是 | 企业微信代开发授权的corpId |
-| code | Stext | str | 是 | 企业微信免登码 |
-| platform | - | LoginPlatformEnum | 否 | 平台类型，默认为app |
+| corpId | Stext | str | Yes | WeChat Work proxy development authorized corpId |
+| code | Stext | str | Yes | WeChat Work password-free code |
+| platform | - | LoginPlatformEnum | No | Platform type, default app |
 
-#### 返回值
-返回登录结果信息，包含用户信息和token。
+#### Return Value
+Return login result information, containing user information and token.
 
-#### 使用示例
-```python title="工作台登录示例"
+#### Usage Example
+```python title="Workspace Login Example"
 auth_service = app.getElement("auths.loginTypes.QywxProxyType.services.QywxProxyAuthService")
 result = auth_service.loginByWorkbench(
     corpId="ww1234567890abcdef",
@@ -148,21 +148,21 @@ result = auth_service.loginByWorkbench(
 ```
 
 ### notify
-接收企业微信后台请求，用于处理回调通知。
+Receive WeChat Work backend requests for handling callback notifications.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| nonce | Stext | str | 是 | 企业微信后台生成的随机数 |
-| msg_signature | Stext | str | 是 | 企业微信后台生成的签名 |
-| timestamp | Stext | str | 是 | 企业微信后台生成的时间戳 |
-| echostr | Stext | str | 否 | 企业微信后台生成的回执字符串（GET请求时使用） |
+| nonce | Stext | str | Yes | Random number generated by WeChat Work backend |
+| msg_signature | Stext | str | Yes | Signature generated by WeChat Work backend |
+| timestamp | Stext | str | Yes | Timestamp generated by WeChat Work backend |
+| echostr | Stext | str | No | Receipt string generated by WeChat Work backend (used for GET requests) |
 
-#### 返回值
-返回Flask Response对象，用于响应企业微信后台请求。
+#### Return Value
+Return Flask Response object for responding to WeChat Work backend requests.
 
-#### 使用示例
-```python title="处理回调通知示例"
+#### Usage Example
+```python title="Handle Callback Notification Example"
 response = auth_service.notify(
     nonce="random_nonce",
     msg_signature="signature_value",
@@ -172,19 +172,19 @@ response = auth_service.notify(
 ```
 
 ### setCode
-设置组织代号，用于生成企业微信代开发登录的二维码。
+Set organization code for generating WeChat Work proxy development login QR code.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| corpId | Stext | str | 是 | 企业微信企业ID |
-| code | Stext | str | 是 | 组织代号 |
+| corpId | Stext | str | Yes | WeChat Work enterprise ID |
+| code | Stext | str | Yes | Organization code |
 
-#### 返回值
-无返回值。
+#### Return Value
+No return value.
 
-#### 使用示例
-```python title="设置组织代号示例"
+#### Usage Example
+```python title="Set Organization Code Example"
 auth_service.setCode(
     corpId="ww1234567890abcdef",
     code="org_code_123"
@@ -192,92 +192,92 @@ auth_service.setCode(
 ```
 
 ### getLoginConfigByCode
-通过组织代码获取二维码登录信息。
+Get QR code login information through organization code.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| code | Stext | str | 是 | 组织代码 |
+| code | Stext | str | Yes | Organization code |
 
-#### 返回值
-返回包含corpId和agentId的配置信息字典。
+#### Return Value
+Return configuration information dictionary containing corpId and agentId.
 
-#### 使用示例
-```python title="获取登录配置示例"
+#### Usage Example
+```python title="Get Login Configuration Example"
 config = auth_service.getLoginConfig(code="org_code_123")
-print(f"企业ID: {config['corpId']}")
-print(f"应用ID: {config['agentId']}")
+print(f"Enterprise ID: {config['corpId']}")
+print(f"Application ID: {config['agentId']}")
 ```
 
 ### retryCallBack
-重试回调处理。
+Retry callback handling.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| recordId | Numeric | int | 是 | 回调记录ID |
+| recordId | Numeric | int | Yes | Callback record ID |
 
-#### 返回值
-无返回值。
+#### Return Value
+No return value.
 
-#### 使用示例
-```python title="重试回调示例"
+#### Usage Example
+```python title="Retry Callback Example"
 auth_service.retryCallBack(recordId=123)
 ```
 
-## 属性
+## Properties
 ### authConfig
-获取当前认证配置信息。
+Get current authentication configuration information.
 
-**类型：** `dict`
+**Type:** `dict`
 
-**说明：** 包含suiteId、suiteSecret等配置信息，敏感信息已脱敏。
+**Description:** Contains configuration information like suiteId, suiteSecret, etc., sensitive information has been desensitized.
 
-```python title="获取认证配置"
+```python title="Get Authentication Configuration"
 auth_instance = app.getElement("auths.QywxProxyTemp")
 config = auth_instance.authConfig
-print(f"套件ID: {config['suiteId']}")
+print(f"Suite ID: {config['suiteId']}")
 ```
 
 ### authType
-获取认证类型标识。
+Get authentication type identifier.
 
-**类型：** `str`
+**Type:** `str`
 
-**说明：** 固定值为"auths.loginTypes.QywxProxyType"。
+**Description:** Fixed value is "auths.loginTypes.QywxProxyType".
 
 ### authModelElemName
-获取认证模型元素名称。
+Get authentication model element name.
 
-**类型：** `str`
+**Type:** `str`
 
-**说明：** 固定值为"auths.loginTypes.QywxProxyType.QywxProxyAuthModel"。
+**Description:** Fixed value is "auths.loginTypes.QywxProxyType.QywxProxyAuthModel".
 
-## 高级特性
-### 多企业代理
-在代开发场景中，同一个第三方应用可以为多个企业提供服务。通过创建多个实例元素支持多企业：
+## Advanced Features
+### Multi-Enterprise Proxy
+In proxy development scenarios, the same third-party application can provide services for multiple enterprises. Support multiple enterprises by creating multiple instance elements:
 
-```text title="多企业配置示例"
+```text title="Multi-Enterprise Configuration Example"
 auths/
-├── QywxProxyCompanyA/      # 企业A的登录配置
+├── QywxProxyCompanyA/      # Enterprise A login configuration
 │   ├── e.json
 │   └── QywxProxyCompanyA.json
-├── QywxProxyCompanyB/      # 企业B的登录配置
+├── QywxProxyCompanyB/      # Enterprise B login configuration
 │   ├── e.json
 │   └── QywxProxyCompanyB.json
-└── QywxProxyDefault/       # 默认登录配置
+└── QywxProxyDefault/       # Default login configuration
     ├── e.json
     └── QywxProxyDefault.json
 ```
 
-### 事件处理
-企业微信代开发模式支持多种事件类型的自动处理：suite_ticket推送、企业授权成功、企业授权变更、企业授权取消。所有事件都通过notify方法统一处理，框架会自动识别事件类型并执行相应的处理逻辑。
+### Event Handling
+WeChat Work proxy development mode supports automatic handling of multiple event types: suite_ticket push, enterprise authorization success, enterprise authorization change, enterprise authorization cancellation. All events are handled uniformly through the notify method, and the framework automatically identifies event types and executes corresponding handling logic.
 
-```python title="事件处理示例"
-# 框架自动处理所有回调事件
+```python title="Event Handling Example"
+# Framework automatically handles all callback events
 def handle_qywx_callback():
-    # 所有企业微信事件通过notify方法统一处理
-    # 包括suite_ticket更新、企业授权变更等
+    # All WeChat Work events handled uniformly through notify method
+    # Including suite_ticket updates, enterprise authorization changes, etc.
     response = auth_service.notify(
         nonce=request.args.get('nonce'),
         msg_signature=request.args.get('msg_signature'),

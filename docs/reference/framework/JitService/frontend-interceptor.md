@@ -1,25 +1,25 @@
 ---
 slug: frontend-interceptor
 ---
-# 前端拦截器
-基于前端网络请求拦截机制（如 Axios 拦截器），在请求发出前与响应返回后统一处理客户端逻辑，例如添加请求头、参数签名、响应解包、错误处理与令牌刷新等。
+# Frontend Interceptor
+Based on frontend network request interception mechanisms (such as Axios interceptors), uniformly handle client-side logic before requests are sent and after responses are returned, such as adding request headers, parameter signing, response unpacking, error handling, and token refresh.
 
-拦截器元素分层结构为 Meta（interceptors.Meta） → Type（interceptors.Http） → 实例，仅支持全代码方式创建。
+The hierarchical structure of interceptor elements is Meta (interceptors.Meta) → Type (interceptors.Http) → Instance, supporting only full-code creation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐前端拦截器元素目录结构"
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Frontend Interceptor Element Directory Structure"
 interceptors/
 └── MyInterceptor/
     ├── index.ts
     ├── e.json
 ```
 
-#### e.json 文件
-```json title="前端拦截器 e.json 示例"
+#### e.json File
+```json title="Frontend Interceptor e.json Example"
 {
-  "title": "自定义拦截器",
+  "title": "Custom Interceptor",
   "type": "interceptors.Http",
   "frontBundleEntry": "./index.ts",
   "icon": "lanjieqi1",
@@ -27,69 +27,69 @@ interceptors/
 }
 ```
 
-#### 编写代码
-需要导出reqInterceptor和respInterceptor两个方法。
+#### Writing Code
+Need to export two methods: reqInterceptor and respInterceptor.
 
-```typescript title="index.ts（模板）"
+```typescript title="index.ts (Template)"
 import type { InternalAxiosRequestConfig } from 'axios';
 import type { HttpResponse } from 'jit';
 
-// 请求拦截：在这里读取/设置请求头、参数等；最后返回 request
+// Request interceptor: read/set request headers, parameters, etc. here; finally return request
 export const reqInterceptor = (request: InternalAxiosRequestConfig) => {
-  // 可自定义：读取已有头
+  // Customizable: read existing headers
   // const auth = request.headers['Authorization'];
 
-  // 可自定义：设置自定义头或修改请求
+  // Customizable: set custom headers or modify request
   // request.headers['X-Custom-Header'] = 'value';
   // request.params = { ...(request.params || {}), traceId: '...' };
-  // request.data = request.data; // 也可在此序列化/变换
+  // request.data = request.data; // Can also serialize/transform here
 
   return request;
 };
 
-// 响应拦截：在这里统一处理响应数据、错误码、令牌刷新等；最后返回 response
+// Response interceptor: uniformly handle response data, error codes, token refresh, etc. here; finally return response
 export const respInterceptor = (response: HttpResponse & Record<string, any>) => {
-  // 可自定义：统一解包或数据转换
+  // Customizable: uniform unpacking or data transformation
   // const { data } = response;
   // if (data && data.payload) {
   //   response.data = data.payload;
   // }
 
-  // 可自定义：通用状态处理/错误抛出
+  // Customizable: common status handling/error throwing
   // if (data && data.code !== 0) {
-  //   // throw 或标准化错误
+  //   // throw or standardize error
   // }
 
   return response;
 };
 ```
 
-## 方法 
+## Methods
 ### reqInterceptor
-请求发出前触发。可在此读取与设置请求头、查询参数与请求体，进行序列化、埋点、签名等处理。函数需返回修改后的 `request` 对象。
+Triggered before request is sent. Can read and set request headers, query parameters, and request body here, perform serialization, tracking, signing, etc. Function must return the modified `request` object.
 
 ### respInterceptor
-响应返回后触发。可在此统一解包、数据转换、错误码处理、令牌刷新等。函数需返回（或抛出）处理过的 `response` 对象。
+Triggered after response is returned. Can uniformly unpack, transform data, handle error codes, refresh tokens, etc. here. Function must return (or throw) the processed `response` object.
 
-## 高级特性
-### 执行顺序
-通过 `e.json` 中的 `sort` 字段控制拦截器执行顺序。
+## Advanced Features
+### Execution Order
+Control interceptor execution order through `sort` field in `e.json`.
 
-```json title="设置执行顺序"
+```json title="Set Execution Order"
 {
-  "title": "高优先级拦截器",
+  "title": "High Priority Interceptor",
   "type": "interceptors.Http",
   "sort": 10
 }
 ```
 
-同时存在多个拦截器？
-- 在请求发出前，按照 `sort` 升序执行 `reqInterceptor`
-- 在响应返回后，按照 `sort` 降序执行 `respInterceptor`
+When multiple interceptors exist:
+- Before request is sent, execute `reqInterceptor` in ascending `sort` order
+- After response is returned, execute `respInterceptor` in descending `sort` order
 
-### 平台内置拦截器
-请求加签 `interceptors.encryptor`
+### Platform Built-in Interceptors
+Request signing `interceptors.encryptor`
 
-JitNode校验信息获取 `interceptors.JitNodeValid`
+JitNode validation information retrieval `interceptors.JitNodeValid`
 
-接口异常信息获取 `interceptors.exception`
+Interface exception information retrieval `interceptors.exception`

@@ -3,6 +3,7 @@
   "position": 9,
   "link": {
     "type": "generated-index",
+    "slug": "reference/framework/JitStorage",
     "description": "Storage management framework providing file storage, cache systems, object storage, and file template engine storage solutions"
   }
 } 

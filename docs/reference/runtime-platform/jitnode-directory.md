@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 slug: jitnode-directory
 ---
 
@@ -7,146 +7,146 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import Details from '@theme/Details';
 
-# JitNode目录
-JitNode 采用清晰的目录结构来组织执行程序和运行时数据，开发者应对JitNode的目录结构有基本的了解，以便更好地进行后续开发、管理、调试工作。
+# JitNode Directory
+JitNode uses a clear directory structure to organize executable programs and runtime data. Developers should have a basic understanding of JitNode's directory structure for better subsequent development, management, and debugging work.
 
-在桌面版中，JitNode目录位于安装目录中：
-```shell title="MacOS中的路径"
+In the desktop edition, the JitNode directory is located in the installation directory:
+```shell title="Path in MacOS"
 /Applications/Jit.app/Contents/Resources/app.asar.unpacked/JitNode
 ```
 
-```shell title="Windows中的路径"
+```shell title="Path in Windows"
 C:\Program Files\jit\resources\app.asar.unpacked\JitNode
 ```
 
-在服务器版中，JitNode目录位于Docker容器中：
+In the server edition, the JitNode directory is located in the Docker container:
 
-```shell title="Docker容器中的路径"
+```shell title="Path in Docker Container"
 /data/JitNode
 ```
-通常在部署容器时会将JitNode目录挂载到宿主机中，开发者在宿主机对应目录下也可以找到JitNode目录
+Typically, when deploying containers, the JitNode directory is mounted to the host machine, and developers can also find the JitNode directory in the corresponding directory on the host machine
 
-## 目录总览
+## Directory Overview
 <Tabs>
-  <TabItem value="overview" label="总览" default>
+  <TabItem value="overview" label="Overview" default>
 
 ```
 JitNode/
-├── runJitNode.cmd/command    # 桌面版一键启动脚本
-├── home/                     # 运行时数据目录
-│   ├── version.json          # 版本信息
-│   ├── node.json             # 配置文件
-│   ├── environs/             # 运行环境
-│   └── logs/                 # 运行日志
-└── system/                   # 执行程序目录
+├── runJitNode.cmd/command    # desktop edition one-click startup script
+├── home/                     # Runtime data directory
+│   ├── version.json          # Version information
+│   ├── node.json             # Configuration file
+│   ├── environs/             # Runtime environments
+│   └── logs/                 # Runtime logs
+└── system/                   # Executable program directory
 ```
   </TabItem>
   
-  <TabItem value="home" label="home/ 目录">
+  <TabItem value="home" label="home/ Directory">
 
-## home/ - 运行时数据
-在桌面版中，用户首次运行时可以自定义路径。
-<Details summary="📋 ./ - 配置文件" open>
+## home/ - Runtime Data
+In the desktop edition, users can customize the path when running for the first time.
+<Details summary="📋 ./ - Configuration Files" open>
 
 ```
 home/
-├── version.json              # 安装包以及依赖项版本信息
-├── node.json                 # JitNode节点配置文件
+├── version.json              # Installation package and dependency version information
+├── node.json                 # JitNode node configuration file
 ```
 
 </Details>
 
-<Details summary="🌍 environs/ - 运行环境" open>
+<Details summary="🌍 environs/ - Runtime Environments" open>
 
 ```
 home/environs/
-├── JED_xxx1.json            # 节点默认运行环境配置
-├── JED_xxx1/                # 节点默认运行环境的应用目录
-│   └── xxxOrg1/             # 开发组织ID
-│       └── xxxApp/          # 应用ID
-│           └── 1_0_0/       # 应用版本号
-│               ├── [源码]   # 应用源代码（开发模式下有源码）
-│               ├── appData/ # 应用数据
-│               └── dist/    # 构建产物
+├── JED_xxx1.json            # Node default runtime environment configuration
+├── JED_xxx1/                # Application directory for node default runtime environment
+│   └── xxxOrg1/             # Development organization ID
+│       └── xxxApp/          # Application ID
+│           └── 1_0_0/       # Application version number
+│               ├── [Source Code]   # Application source code (source code available in development mode)
+│               ├── appData/ # Application data
+│               └── dist/    # Build artifacts
 └── ...
 ```
 
-:::tip 环境组织结构
-采用四级目录结构：**运行环境** → **开发组织** → **应用** → **版本**
+:::tip Environment Organization Structure
+Adopts a four-level directory structure: **Runtime Environment** → **Development Organization** → **Application** → **Version**
 :::
 
 </Details>
 
-<Details summary="📝 logs/ - 运行日志" open>
+<Details summary="📝 logs/ - Runtime Logs" open>
 
 ```
 home/logs/
-├── upgrade.log             # 自动更新日志
-├── server.log              # 服务运行日志
-└── ...                     # 其他日志文件
+├── upgrade.log             # Automatic update logs
+├── server.log              # Service runtime logs
+└── ...                     # Other log files
 ```
 
 </Details>
 
-:::warning Docker 专用目录
-以下目录仅在 Docker 容器中存在：
+:::warning Docker-Specific Directories
+The following directories only exist in Docker containers:
 :::
 
-<Details summary="🗄️ databases/ - 内置数据库的文件" open>
+<Details summary="🗄️ databases/ - Built-in Database Files" open>
 
 ```
 home/databases/
 ├── redis/
-│   ├── redis.config         # Redis 配置文件
-│   ├── redis.db            # Redis 数据文件
-│   └── redis.log           # Redis 日志文件
+│   ├── redis.config         # Redis configuration file
+│   ├── redis.db            # Redis data file
+│   └── redis.log           # Redis log file
 └── mysql/
-    ├── mysql.config        # MySQL 配置文件
-    ├── mysql.db           # MySQL 数据文件
-    └── mysql.log          # MySQL 日志文件
+    ├── mysql.config        # MySQL configuration file
+    ├── mysql.db           # MySQL data file
+    └── mysql.log          # MySQL log file
 ```
 
 </Details>
 
   </TabItem>
   
-  <TabItem value="system" label="system/ 目录">
+  <TabItem value="system" label="system/ Directory">
 
-## system/ - 执行程序
-<Details summary="🔧 bin/ - 第三方程序" open>
+## system/ - Executable Programs
+<Details summary="🔧 bin/ - Third-party Programs" open>
 
 ```
 system/bin/
 ├── node/                   # Node.js
 ├── python/                 # Python
-└── ...                     # 其他依赖程序
+└── ...                     # Other dependency programs
 ```
 
 </Details>
 
-<Details summary="📚 pyLibraris/ - 各应用的Python依赖库" open>
+<Details summary="📚 pyLibraris/ - Python Dependency Libraries for Each Application" open>
 
 ```
 system/pyLibraris/
-└── [按运行环境/开发组织/应用/版本组织]
-    └── 各应用版本的Python依赖库
+└── [Organized by Runtime Environment/Development Organization/Application/Version]
+    └── Python dependency libraries for each application version
 ```
 
-:::note 依赖隔离
-每个应用版本都有独立的Python依赖库，避免版本冲突。
+:::note Dependency Isolation
+Each application version has independent Python dependency libraries, avoiding version conflicts.
 :::
 
 </Details>
 
-<Details summary="🐛 调试工具 (仅桌面版)" open>
+<Details summary="🐛 Debugging Tools (Desktop Editon Only)" open>
 
 ```
 system/
-└── jitDebuger.py           # 全代码调试入口
+└── jitDebuger.py           # Full code debugging entry point
 ```
 
-:::tip 调试功能
-桌面版提供完整的代码调试功能，支持断点、变量监控等，详细使用方法参考[本地开发与调试](../../devguide/advanced-guide/local-development-and-debugging)。
+:::tip Debugging Features
+The desktop edition provides complete code debugging functionality, supporting breakpoints, variable monitoring, etc. For detailed usage methods, refer to [Local Development and Debugging](../../devguide/advanced-guide/local-development-and-debugging).
 :::
 
 </Details>
@@ -154,9 +154,8 @@ system/
   </TabItem>
 </Tabs>
 
-## 快速导航
-- **部署应用**: 将应用放在 `home/environs/[环境ID]/[组织ID]/[应用ID]/[版本]/` 目录下
-- **查看日志**: 可在 `home/logs/` 目录查看运行日志
-- **调试代码**: 桌面版使用 `system/jitDebuger.py` 进行调试，详细使用方法参考[本地开发与调试](../../devguide/advanced-guide/local-development-and-debugging)。
-- **配置修改**: 编辑 `home/node.json` 修改JitNode配置
-
+## Quick Navigation
+- **Deploy Applications**: Place applications in the `home/environs/[Environment ID]/[Organization ID]/[Application ID]/[Version]/` directory
+- **View Logs**: Check runtime logs in the `home/logs/` directory
+- **Debug Code**: Desktop edition uses `system/jitDebuger.py` for debugging. For detailed usage methods, refer to [Local Development and Debugging](../../devguide/advanced-guide/local-development-and-debugging).
+- **Configuration Modification**: Edit `home/node.json` to modify JitNode configuration

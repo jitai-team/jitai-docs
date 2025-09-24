@@ -4,225 +4,225 @@ slug: AppResource
 ---
 
 # AppResource
-AppResource（应用资源管理器），用于管理和操作应用的已打包资源文件。AppResource用于运行时环境，负责从内存中读取应用的打包资源，包括元素资源、公共资源等。
+AppResource (Application Resource Manager) is used to manage and operate application packaged resource files. AppResource is used in runtime environments and is responsible for reading application packaged resources from memory, including element resources, common resources, etc.
 
-可通过`app.resource`访问当前应用的AppResource对象。
+The AppResource object for the current application can be accessed through `app.resource`.
 
-## 属性
-| 名称 | 类型 | 说明 |
+## Properties
+| Name | Type | Description |
 |------|------|------|
-| envId | str | 运行环境ID，例如：`JRE_MWcVmUZjEq` |
-| appId | str | 应用ID，例如：`wanyun.MyApp` |
-| version | str | 应用版本，例如：`1.0.0` |
-| env | [Environ](../runtime-environment/01Environ) | 应用所属的运行环境对象 |
-| app | [App](../applications/App) | 应用对象 |
-| marks | Set[str] | 已向运行环境获取过的资源标记集合 |
-| files | Dict[str, str] | 文件资源缓存，key为文件路径，value为文件内容 |
+| envId | str | Runtime environment ID, e.g., `JRE_MWcVmUZjEq` |
+| appId | str | Application ID, e.g., `wanyun.MyApp` |
+| version | str | Application version, e.g., `1.0.0` |
+| env | [Environ](../runtime-environment/01Environ) | Runtime environment object that the application belongs to |
+| app | [App](../applications/App) | Application object |
+| marks | Set[str] | Set of resource marks that have been retrieved from the runtime environment |
+| files | Dict[str, str] | File resource cache, where key is the file path and value is the file content |
 
-:::danger[危险]
-开发者可以读取以上属性，但不要强行修改以上属性值，可能会导致不可预知的错误。
+:::danger[Danger]
+Developers can read the above properties, but should not forcibly modify these property values, as it may cause unpredictable errors.
 :::
 
-## 方法 
+## Methods 
 ### exists
-检查指定路径的资源是否存在。
+Checks whether a resource at the specified path exists.
 
-**参数：**
+**Parameters:**
 
-* **path** (str): 相对于应用根目录的资源路径
+* **path** (str): Resource path relative to the application root directory
 
-**返回值：** 
+**Return Value:** 
 
-资源是否存在。
+Whether the resource exists.
 
-**返回值类型：** 
+**Return Type:** 
 
 bool
 
-:::tip[提示]
-该方法会自动处理路径分隔符的兼容性，支持Windows和Unix风格的路径。
+:::tip[Tip]
+This method automatically handles path separator compatibility, supporting both Windows and Unix-style paths.
 :::
 
 ### read
-读取指定资源的内容。
+Reads the content of the specified resource.
 
-**参数：**
+**Parameters:**
 
-* **path** (str): 相对于应用根目录的资源路径
+* **path** (str): Resource path relative to the application root directory
 
-**返回值：** 
+**Return Value:** 
 
-资源内容。
+Resource content.
 
-**返回值类型：** 
+**Return Type:** 
 
 str
 
-:::info[资源读取顺序]
-1. 首先检查内存缓存中是否已有该资源
-2. 如果是公共代码包资源，则读取公共资源
-3. 如果是元素资源，则根据路径解析元素并读取
-4. 最后尝试读取应用资源
+:::info[Resource Reading Order]
+1. First check if the resource is already in memory cache
+2. If it's a common code package resource, read the common resource
+3. If it's an element resource, parse the element based on the path and read it
+4. Finally attempt to read the application resource
 :::
 
 ### clear
-清理所有资源缓存。
+Clears all resource cache.
 
-**返回值：** 
+**Return Value:** 
 
-无返回值。
+No return value.
 
 ### clearByElement
-按元素清理资源缓存。
+Clears resource cache by element.
 
-**参数：**
+**Parameters:**
 
-* **fullName** (str): 元素的fullName
+* **fullName** (str): The fullName of the element
 
-**返回值：** 
+**Return Value:** 
 
-无返回值。
+No return value.
 
-:::warning[注意]
-清理缓存后，下次访问该元素的资源时会重新从运行环境加载。
+:::warning[Note]
+After clearing the cache, the next access to the element's resources will reload from the runtime environment.
 :::
 
 ### readElementResource
-读取指定元素的所有资源文件。
+Reads all resource files for the specified element.
 
-**参数：**
+**Parameters:**
 
-* **fullName** (str): 元素的fullName
-* **forceLoad** (bool, 可选): 是否强制重新加载，默认为False
+* **fullName** (str): The fullName of the element
+* **forceLoad** (bool, optional): Whether to force reload, defaults to False
 
-**返回值：** 
+**Return Value:** 
 
-元素资源内容。
+Element resource content.
 
-**返回值类型：** 
+**Return Type:** 
 
-Dict 或 None
+Dict or None
 
-:::info[自动处理]
-该方法会自动添加必要的`__init__.py`文件，确保Python包结构的完整性。
+:::info[Automatic Processing]
+This method automatically adds necessary `__init__.py` files to ensure the integrity of Python package structure.
 :::
 
 ### readCommonsResource
-读取公共代码包资源。
+Reads common code package resources.
 
-**参数：**
+**Parameters:**
 
-* **forceLoad** (bool, 可选): 是否强制重新加载，默认为False
+* **forceLoad** (bool, optional): Whether to force reload, defaults to False
 
-**返回值：** 
+**Return Value:** 
 
-公共资源内容。
+Common resource content.
 
-**返回值类型：** 
+**Return Type:** 
 
-Dict 或 None
+Dict or None
 
 ### parseElementByPath
-根据资源路径解析元素的fullName。
+Parses the element's fullName based on the resource path.
 
-**参数：**
+**Parameters:**
 
-* **path** (str): 资源路径，例如：`models/AModel/model.py`
+* **path** (str): Resource path, e.g., `models/AModel/model.py`
 
-**返回值：** 
+**Return Value:** 
 
-元素的fullName，如果未找到则返回None。
+The element's fullName, returns None if not found.
 
-**返回值类型：** 
+**Return Type:** 
 
-str 或 None
+str or None
 
 ### getAppJit
-获取应用的配置信息。
+Gets the application configuration information.
 
-**返回值：** 
+**Return Value:** 
 
-应用配置信息。
+Application configuration information.
 
-**返回值类型：** 
+**Return Type:** 
 
 Dict[str, Any]
 
 ### saveAppJit
-保存应用配置信息。
+Saves the application configuration information.
 
-**参数：**
+**Parameters:**
 
-* **appJit** (Dict[str, Any]): 应用配置信息
+* **appJit** (Dict[str, Any]): Application configuration information
 
-**返回值：** 
+**Return Value:** 
 
-保存操作的结果。
+Result of the save operation.
 
 ### getInitData
-获取应用的初始化数据。
+Gets the application initialization data.
 
-**返回值：** 
+**Return Value:** 
 
-初始化数据，如果不存在则返回None。
+Initialization data, returns None if it doesn't exist.
 
-**返回值类型：** 
+**Return Type:** 
 
-Dict[str, Any] 或 None
+Dict[str, Any] or None
 
-:::info[数据获取策略]
-1. 首先尝试从运行环境的资源管理器获取
-2. 如果失败，则尝试直接读取`initData.json`文件
-3. 如果都失败，返回None
+:::info[Data Retrieval Strategy]
+1. First attempt to get from the runtime environment's resource manager
+2. If that fails, try to read the `initData.json` file directly
+3. If both fail, return None
 :::
 
-## 使用示例
+## Usage Examples
 ```python
-# 检查资源是否存在
+# Check if resource exists
 if app.resource.exists("models/UserModel/model.py"):
-    print("资源存在")
+    print("Resource exists")
 
-# 读取资源内容
+# Read resource content
 content = app.resource.read("app.jit")
 print(content)
 
-# 获取应用配置
+# Get application configuration
 appJit = app.resource.getAppJit()
 print(appJit.get("title"))
 
-# 获取初始化数据
+# Get initialization data
 initData = app.resource.getInitData()
 if initData:
-    print("初始化数据:", initData)
+    print("Initialization data:", initData)
 
-# 解析元素路径
+# Parse element path
 fullName = app.resource.parseElementByPath("models/UserModel/model.py")
-print(fullName)  # 输出: models.UserModel
+print(fullName)  # Output: models.UserModel
 
-# 读取元素资源
+# Read element resource
 elementResource = app.resource.readElementResource("models.UserModel")
 if elementResource:
-    print("元素资源加载成功")
+    print("Element resource loaded successfully")
 
-# 清理特定元素的缓存
+# Clear cache for specific element
 app.resource.clearByElement("models.UserModel")
 ```
 
-## 缓存机制
-AppResource采用了多层缓存机制来提高性能：
+## Caching Mechanism
+AppResource employs a multi-layer caching mechanism to improve performance:
 
-1. **文件级缓存**：`files`字典缓存所有已读取的文件内容
-2. **元素级标记**：`marks`集合记录已加载的元素，避免重复加载
-3. **进程级共享**：在同一进程中的多次请求共享缓存数据
+1. **File-level Cache**: The `files` dictionary caches all read file contents
+2. **Element-level Marking**: The `marks` set records loaded elements to avoid duplicate loading
+3. **Process-level Sharing**: Multiple requests within the same process share cached data
 
-:::tip[性能优化]
-- 资源在首次访问时从运行环境加载并缓存到内存
-- 相同资源的后续访问直接从内存缓存读取
-- 使用clearByElement方法可以清理特定元素的缓存，实现资源的热更新
+:::tip[Performance Optimization]
+- Resources are loaded from the runtime environment and cached in memory on first access
+- Subsequent accesses to the same resource read directly from memory cache
+- Use the clearByElement method to clear cache for specific elements, enabling hot updates of resources
 :::
 
-:::info[与AppCode的区别]
-- **AppCode**：用于开发模式，直接操作源代码文件
-- **AppResource**：用于生产模式，操作打包后的内存资源
-- 开发者可以通过`app.debug`属性判断当前模式
+:::info[Difference from AppCode]
+- **AppCode**: Used in development mode, directly operates on source code files
+- **AppResource**: Used in production mode, operates on packaged memory resources
+- Developers can determine the current mode through the `app.debug` property
 :::

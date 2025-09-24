@@ -3,1104 +3,1104 @@ sidebar_position: 2
 slug: data-types
 ---
 
-# 数据类型
-JitAi的数据类型Type元素是对编程语言原生数据类型（如：字符串、数字、列表、字典等）的封装，并提供了一些额外的功能和特性，高频用于定义[数据模型](./data-models)字段的类型。
+# Data Types
+JitAi's data type Type elements are encapsulations of programming language native data types (such as: strings, numbers, lists, dictionaries, etc.), providing additional functionality and features, frequently used to define field types for [Data Models](./data-models).
 
-数据类型元素的分层结构为Meta（datatypes.Meta） → Type（datatypes.xxx），开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的数据类型，以实现自己的封装。
+The hierarchical structure of data type elements is Meta (datatypes.Meta) → Type (datatypes.xxx). Developers can also create their own Type elements or modify the official data types provided by JitAi in their own App to implement their own encapsulation.
 
-:::info 关于数据类型对象的构造参数
-- **init参数**：构造某种数据类型的对象时，构造函数中可以使用的参数
-- **继承关系**：子数据类型会继承父数据类型的所有init参数
-- **参数重写**：子数据类型可以重写父数据类型的init参数
-- **参数扩展**：子数据类型可以添加自己特有的init参数
-- **公共参数**：所有数据类型默认都拥有公共init参数
+:::info About Data Type Object Constructor Parameters
+- **init parameters**: Parameters that can be used in the constructor when constructing objects of a certain data type
+- **Inheritance relationship**: Child data types inherit all init parameters from parent data types
+- **Parameter override**: Child data types can override init parameters from parent data types
+- **Parameter extension**: Child data types can add their own unique init parameters
+- **Common parameters**: All data types have common init parameters by default
 :::
 
 ---
 
-## 类型特定参数 {#type-specific-parameters}
-每种数据类型都有其特定的参数配置项和使用方式。
+## Type-Specific Parameters {#type-specific-parameters}
+Each data type has its specific parameter configuration items and usage methods.
 
-## 公共init参数
-### 基础参数
-| 参数名 | 类型 | 默认值 | 说明 |
+## Common init Parameters
+### Basic Parameters
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| name | String |  | 字段名称，用于标识字段 |
-| title | String |  | 字段标题，用于显示 |
-| parentDt | Object |  | 上级变量，如 rowData.f1 中f1的上级变量就是rowData |
-| description | String |  | 字段描述 |
-| placeholder | String |  | 提示文字 |
-| value | Any |  | 初始字段值 |
+| name | String |  | Field name, used to identify field |
+| title | String |  | Field title, used for display |
+| parentDt | Object |  | Parent variable, e.g., in rowData.f1, the parent variable of f1 is rowData |
+| description | String |  | Field description |
+| placeholder | String |  | Hint text |
+| value | Any |  | Initial field value |
 
-### 数据库相关参数
-| 参数名 | 类型 | 默认值 | 说明 |
+### Database Related Parameters
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| dbIndex | Boolean | False | 是否创建数据库索引 |
-| primaryKey | Boolean | False | 是否主键 |
-| unique | Integer | 0 | 是否唯一（1：唯一，0：非唯一） |
+| dbIndex | Boolean | False | Whether to create database index |
+| primaryKey | Boolean | False | Whether primary key |
+| unique | Integer | 0 | Whether unique (1: unique, 0: not unique) |
 
-### 权限控制参数
-| 参数名 | 类型 | 默认值 | 说明 |
+### Permission Control Parameters
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| readOnly | Integer | 0 | 是否只读（1：只读，0：可读写） |
-| isExtend | Boolean | False | 是否继承 |
+| readOnly | Integer | 0 | Whether read-only (1: read-only, 0: read-write) |
+| isExtend | Boolean | False | Whether to inherit |
 
-### 计算公式参数
-| 参数名 | 类型 | 默认值 | 说明 |
+### Formula Calculation Parameters
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| formula | String |  | 计算公式 |
+| formula | String |  | Calculation formula |
 
 ---
 
-## 各类型特有参数 
-### Stext（单行文本）
-| 参数名 | 类型 | 默认值 | 说明 |
+## Type-Specific Parameters 
+### Stext (Single-line Text)
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| limit | Boolean | False | 是否限制长度 |
-| maxLen | Integer | 255 | 最大长度 |
-| minLen | Integer | 0 | 最小长度 |
+| limit | Boolean | False | Whether to limit length |
+| maxLen | Integer | 255 | Maximum length |
+| minLen | Integer | 0 | Minimum length |
 
 ---
 
-### Ltext（多行文本）
-| 参数名 | 类型 | 默认值 | 说明 |
+### Ltext (Multi-line Text)
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| limit | Boolean | False | 是否限制长度 |
-| maxLen | Integer | 1024 | 最大长度 |
-| minLen | Integer | 0 | 最小长度 |
+| limit | Boolean | False | Whether to limit length |
+| maxLen | Integer | 1024 | Maximum length |
+| minLen | Integer | 0 | Minimum length |
 
 ---
 
-### Numeric（数字）
-| 参数名 | 类型 | 默认值 | 说明 |
+### Numeric (Number)
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| unit | String | None | 单位 |
-| decimal | Integer | 0 | 小数位数 |
-| maxDigits | Integer | 18 | 最大位数 |
+| unit | String | None | Unit |
+| decimal | Integer | 0 | Decimal places |
+| maxDigits | Integer | 18 | Maximum digits |
 
 ---
 
-### Money（金额）
-**继承：** `Numeric`
+### Money (Amount)
+**Inherits:** `Numeric`
 
-**特有参数：** 无
+**Specific Parameters:** None
 
 ---
 
-### Percent（百分比）
-**继承：** `Numeric`
+### Percent (Percentage)
+**Inherits:** `Numeric`
 
-**参数重写：**
+**Parameter Override:**
 
-| 参数名 | 类型 | 默认值 | 说明 |
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| unit | String | "%" | 重写了父数据类型的unit参数默认值 |
+| unit | String | "%" | Overrides the default value of the parent data type's unit parameter |
 
 ---
 
-### RichText（富文本）
-**特有参数：** 无
+### RichText (Rich Text)
+**Specific Parameters:** None
 
 ---
 
-### AutoInt（编号，自增，通常用作主键）
-**继承：** `Numeric`
+### AutoInt (Auto-increment Integer, usually used as primary key)
+**Inherits:** `Numeric`
 
-**特有参数：** 无
+**Specific Parameters:** None
 
 ---
 
-### Serial（流水号）
-**继承：** `Stext`
+### Serial (Serial Number)
+**Inherits:** `Stext`
 
-| 参数名 | 类型 | 默认值 | 说明 |
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| prefix | String |  | 前缀 |
-| connector | String |  | 连接符，位于前缀和后续其它字符之间 |
-| dateTimeFormat | String | "YYYYMMDD" | 日期时间格式 |
-| incNum | Integer | 2 | 递增数字位数 |
-| startNumber | Integer | 1 | 起始数字（位数不足incNum时，用0补齐） |
-| fieldId | String |  | 关联字段ID（当前模型的指定字段值作为前缀的一部分） |
+| prefix | String |  | Prefix |
+| connector | String |  | Connector, located between prefix and subsequent characters |
+| dateTimeFormat | String | "YYYYMMDD" | Date time format |
+| incNum | Integer | 2 | Increment number digits |
+| startNumber | Integer | 1 | Starting number (padded with 0 when digits are less than incNum) |
+| fieldId | String |  | Related field ID (specified field value of current model as part of prefix) |
 
-**格式示例：** `<前缀><字段值><连接符><日期时间><递增数字>`
+**Format Example:** `<prefix><field_value><connector><date_time><increment_number>`
 
 ---
 
-### Radio（选项组单选）
-**继承：** `Stext`
+### Radio (Single Selection)
+**Inherits:** `Stext`
 
-| 参数名 | 类型 | 默认值 | 说明 |
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| color | Boolean | True | 是否显示颜色 |
-| options | List[Dict] | [] | 选项列表，格式为`[{"label": "显示文本", "value": "值", "style": {"backgroundColor": "颜色值", "color": "颜色值"}}]` |
-| selectionWay | String | "custom" | 选择方式（custom：自定义选择，field：从数据表中选择字段） |
-| allowManualInput | Boolean | False | 是否允许手动输入 |
-| mulLevelSelectionConfig | Dict | {} | 当selectionWay为field时，该配置可用：`{"dataSourceModel": "<数据来源模型的fullName>", "matchFieldName": "<取值字段>", "sortFieldName": "<排序字段>", "sortBy": "<排序方式 0：降序 1：升序>", "filterValue": "<过滤条件>"}` |
+| color | Boolean | True | Whether to display color |
+| options | List[Dict] | [] | Options list, format: `[{"label": "Display text", "value": "value", "style": {"backgroundColor": "color value", "color": "color value"}}]` |
+| selectionWay | String | "custom" | Selection method (custom: custom selection, field: select field from data table) |
+| allowManualInput | Boolean | False | Whether to allow manual input |
+| mulLevelSelectionConfig | Dict | {} | Available when selectionWay is field: `{"dataSourceModel": "<fullName of data source model>", "matchFieldName": "<value field>", "sortFieldName": "<sort field>", "sortBy": "<sort method 0: descending 1: ascending>", "filterValue": "<filter condition>"}` |
 
 ---
 
-### MultiRadio（选项组多选）
-**继承：** `Radio`
+### MultiRadio (Multiple Selection)
+**Inherits:** `Radio`
 
-| 参数名 | 类型 | 默认值 | 说明 |
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| maxCount | Integer | None | 最大选择数量 |
+| maxCount | Integer | None | Maximum selection count |
 
 ---
 
-### Dropdown（下拉选择）
-**继承：** `Radio`
+### Dropdown (Dropdown Selection)
+**Inherits:** `Radio`
 
-**特有参数：** 无
+**Specific Parameters:** None
 
 ---
 
-### MultiDropdown（多选下拉）
-**继承：** `MultiRadio`
+### MultiDropdown (Multiple Dropdown Selection)
+**Inherits:** `MultiRadio`
 
-| 参数名 | 类型 | 默认值 | 说明 |
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| limit | Boolean | False | 是否限制最多可选择数，limit=True时，maxCount有效 |
+| limit | Boolean | False | Whether to limit maximum selectable count, maxCount is effective when limit=True |
 
 ---
 
-### Checkbox（检查框）
-| 参数名 | 类型 | 默认值 | 说明 |
+### Checkbox (Checkbox)
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| isEnableDescription | Boolean | False | 是否启用描述 |
-| checkboxDescription | String |  | 复选框描述 |
-| default | Integer | 0 | 是否默认选中（1：默认选中，0：不默认选中） |
+| isEnableDescription | Boolean | False | Whether to enable description |
+| checkboxDescription | String |  | Checkbox description |
+| default | Integer | 0 | Whether selected by default (1: selected by default, 0: not selected by default) |
 
 ---
 
-### Date（日期）
-| 参数名 | 类型 | 默认值 | 说明 |
+### Date (Date)
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| dateTimeType | String |  | 日期类型，支持：YEAR(年), YEAR_QUARTER(年-季度), HALF_YEAR(半年), YEAR_MONTH(年-月), TRUNC_FULLWEEK(年-周跨年), YEAR_WEEK(年-周不跨年), YEAR_MONTH_DAY(年月日), YEAR_MONTH_DAY_ONE(年月日), QUARTER(季度), MONTH(月), WEEK(周), DAYOFWEEK(星期), DAY(日) |
-| dateTimeFormat | String | null | 日期格式，例如：YYYY-MM-DD |
-| createDefault | Boolean | false | 创建时是否使用默认值 |
-| updateDefault | Boolean | false | 更新时是否使用默认值 |
-| autoAssign | String | null | 自动赋值规则 |
+| dateTimeType | String |  | Date type, supports: YEAR(year), YEAR_QUARTER(year-quarter), HALF_YEAR(half-year), YEAR_MONTH(year-month), TRUNC_FULLWEEK(year-week-cross-year), YEAR_WEEK(year-week-no-cross-year), YEAR_MONTH_DAY(year-month-day), YEAR_MONTH_DAY_ONE(year-month-day), QUARTER(quarter), MONTH(month), WEEK(week), DAYOFWEEK(day-of-week), DAY(day) |
+| dateTimeFormat | String | null | Date format, e.g.: YYYY-MM-DD |
+| createDefault | Boolean | false | Whether to use default value when creating |
+| updateDefault | Boolean | false | Whether to use default value when updating |
+| autoAssign | String | null | Auto assignment rules |
 
 ---
 
-### Datetime（日期时间）
-**继承：** `Date`
+### Datetime (Date Time)
+**Inherits:** `Date`
 
-| 参数名 | 类型 | 默认值 | 说明 |
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| dateTimeType | String |  | 日期时间类型，支持：HOUR(小时), MINUTES(分钟), SECOND(秒) |
-| dateTimeFormat | String | null | 日期时间格式，例如：YYYY/MM/DD HH:mm:ss |
+| dateTimeType | String |  | Date time type, supports: HOUR(hour), MINUTES(minute), SECOND(second) |
+| dateTimeFormat | String | null | Date time format, e.g.: YYYY/MM/DD HH:mm:ss |
 
 ---
 
-### Time（时间）
-**继承：** `Datetime`
+### Time (Time)
+**Inherits:** `Datetime`
 
-| 参数名 | 类型 | 默认值 | 说明 |
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| dateTimeFormat | String | null | 仅包含时分秒的时间格式，例如：HH:mm:ss |
+| dateTimeFormat | String | null | Time format containing only hours, minutes, seconds, e.g.: HH:mm:ss |
 
 ---
 
-### File（附件）
-**继承：** `JitList`
+### File (Attachment)
+**Inherits:** `JitList`
 
-| 参数名 | 类型 | 默认值 | 说明 |
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| maxCount | Integer | 5 | 最大文件数量 |
-| maxSize | Integer | 20 | 最大文件大小(MB) |
-| minSize | Integer | 0 | 最小文件大小(MB) |
-| acceptTypes | String |  | 可接受的文件类型 |
-| selectedDown | Boolean | False | 是否允许下载 |
-| selectedDelete | Boolean | False | 是否允许删除 |
+| maxCount | Integer | 5 | Maximum file count |
+| maxSize | Integer | 20 | Maximum file size (MB) |
+| minSize | Integer | 0 | Minimum file size (MB) |
+| acceptTypes | String |  | Acceptable file types |
+| selectedDown | Boolean | False | Whether download is allowed |
+| selectedDelete | Boolean | False | Whether deletion is allowed |
 
 ---
 
-### Image（图片）
-**继承：** `JitList`
+### Image (Image)
+**Inherits:** `JitList`
 
-| 参数名 | 类型 | 默认值 | 说明 |
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| imgType | String | "png" | 图片类型 |
-| size | String | "medium" | 图片尺寸（big：大图，medium：中等图，small：小图，inlined：内联图，subTable：子表） |
-| maxCount | Integer | 5 | 最大图片数量 |
-| maxSize | Integer | 20 | 最大图片大小(MB) |
-| isAddWatermark | Boolean | false | 是否添加水印 |
-| isCameraOnly | Boolean | false | 是否仅允许拍照 |
+| imgType | String | "png" | Image type |
+| size | String | "medium" | Image size (big: large image, medium: medium image, small: small image, inlined: inline image, subTable: sub-table) |
+| maxCount | Integer | 5 | Maximum image count |
+| maxSize | Integer | 20 | Maximum image size (MB) |
+| isAddWatermark | Boolean | false | Whether to add watermark |
+| isCameraOnly | Boolean | false | Whether camera only |
 
 ---
 
-### Signature（手写签名）
-| 参数名 | 类型 | 默认值 | 说明 |
+### Signature (Handwritten Signature)
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| mode | String | "new" | 签名模式（new：每次重新签名，prev：使用上次签名） |
+| mode | String | "new" | Signature mode (new: sign again each time, prev: use previous signature) |
 
 ---
 
-### Dept（部门单选）
-**继承：** `Stext`
+### Dept (Department Single Selection)
+**Inherits:** `Stext`
 
-| 参数名 | 类型 | 默认值 | 说明 |
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| selectionWay | String | custom | 选择方式（custom：自定义选择，field：从数据表中选择字段，currentOrg：仅能选择当前组织） |
-| availableDeptId | String |  | 可用部门ID |
-| mulLevelSelectionConfig | Dict | {} | 级联选择配置`{"dataSourceModel": "<数据来源模型的fullName>", "matchFieldName": "<取值字段>", "sortFieldName": "<排序字段>", "sortBy": "<排序方式 0：降序 1：升序>", "filterValue": "<过滤条件>"}` |
-| availableParentDeptId | String |  | 可用父部门ID |
-| level | Integer |  | 部门层级限制 |
+| selectionWay | String | custom | Selection method (custom: custom selection, field: select field from data table, currentOrg: can only select current organization) |
+| availableDeptId | String |  | Available department ID |
+| mulLevelSelectionConfig | Dict | {} | Cascade selection configuration `{"dataSourceModel": "<fullName of data source model>", "matchFieldName": "<value field>", "sortFieldName": "<sort field>", "sortBy": "<sort method 0: descending 1: ascending>", "filterValue": "<filter condition>"}` |
+| availableParentDeptId | String |  | Available parent department ID |
+| level | Integer |  | Department level limit |
 
 ---
 
-### MultiDept（部门多选）
-**继承：** `Dept`
+### MultiDept (Department Multiple Selection)
+**Inherits:** `Dept`
 
-**特有参数：** 无
+**Specific Parameters:** None
 
 ---
 
-### Member（成员单选）
-**继承：** `Stext`
+### Member (Member Single Selection)
+**Inherits:** `Stext`
 
-| 参数名 | 类型 | 默认值 | 说明 |
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| selectionWay | String | custom | 选择方式（custom：自定义选择，field：从数据表中选择字段，currentOrg：仅能选择当前组织） |
-| availableUser | Dict | {} | 可选用户设置`{"deptIdList": [], "memberIdList": [], "roleIdList": []}` |
-| allowLeave | Integer | 0 | 是否允许选择离职成员 |
-| mulLevelSelectionConfig | Dict | {} | 级联选择配置`{"dataSourceModel": "<数据来源模型的fullName>", "matchFieldName": "<取值字段>", "sortFieldName": "<排序字段>", "sortBy": "<排序方式 0：降序 1：升序>", "filterValue": "<过滤条件>"}` |
-| createDefault | Boolean | False | 新增数据时，自动将字段值设置为当前用户 |
-| updateDefault | Boolean | False | 更新数据时，自动将字段值设置为当前用户 |
+| selectionWay | String | custom | Selection method (custom: custom selection, field: select field from data table, currentOrg: can only select current organization) |
+| availableUser | Dict | {} | Available user settings `{"deptIdList": [], "memberIdList": [], "roleIdList": []}` |
+| allowLeave | Integer | 0 | Whether to allow selecting resigned members |
+| mulLevelSelectionConfig | Dict | {} | Cascade selection configuration `{"dataSourceModel": "<fullName of data source model>", "matchFieldName": "<value field>", "sortFieldName": "<sort field>", "sortBy": "<sort method 0: descending 1: ascending>", "filterValue": "<filter condition>"}` |
+| createDefault | Boolean | False | When adding data, automatically set field value to current user |
+| updateDefault | Boolean | False | When updating data, automatically set field value to current user |
 
 ---
 
-### MultiMember（成员多选）
-**继承：** `Member`
+### MultiMember (Member Multiple Selection)
+**Inherits:** `Member`
 
-**特有参数：** 无
+**Specific Parameters:** None
 
 ---
 
-### Address（地址）
-**继承：** `JitDict`
+### Address (Address)
+**Inherits:** `JitDict`
 
-| 参数名 | 类型 | 默认值 | 说明 |
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| addressFormat | String | "pca" | 城市精度（pca：省-市-区，pc：省-市，p：省） |
-| detail | Boolean | True | 是否显示详细地址 |
+| addressFormat | String | "pca" | City precision (pca: province-city-district, pc: province-city, p: province) |
+| detail | Boolean | True | Whether to display detailed address |
 
 ---
 
-### Identify（身份证号）
-**继承：** `Stext`
+### Identify (ID Card Number)
+**Inherits:** `Stext`
 
-**特有参数：** 无
+**Specific Parameters:** None
 
 ---
 
-### LicensePlate（车牌号）
-**继承：** `Stext`
+### LicensePlate (License Plate Number)
+**Inherits:** `Stext`
 
-| 参数名 | 类型 | 默认值 | 说明 |
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| maxLen | Integer | 12 | 最大长度 |
+| maxLen | Integer | 12 | Maximum length |
 
 ---
 
-### Phone（手机号）
-**继承：** `Stext`
+### Phone (Phone Number)
+**Inherits:** `Stext`
 
-| 参数名 | 类型 | 默认值 | 说明 |
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| rules | String | "eleven" | 电话号码规则（eleven：11位，eight：8到11位，tel：座机号，mobileOrTel：手机号或座机号） |
+| rules | String | "eleven" | Phone number rules (eleven: 11 digits, eight: 8 to 11 digits, tel: landline number, mobileOrTel: mobile or landline number) |
 
 ---
 
-### Position（定位）
-**继承：** `Address`
+### Position (Location)
+**Inherits:** `Address`
 
-| 参数名 | 类型 | 默认值 | 说明 |
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| adjustRange | Integer | 0 | 调整范围 |
-| adjustment | Boolean | False | 是否允许调整 |
-| limitPositionRange | Boolean | False | 是否限制位置范围 |
-| showPc | Boolean | False | 是否显示省市区 |
-| saveLimitPosition | List | [] | 保存限制位置列表 |
+| adjustRange | Integer | 0 | Adjustment range |
+| adjustment | Boolean | False | Whether adjustment is allowed |
+| limitPositionRange | Boolean | False | Whether to limit position range |
+| showPc | Boolean | False | Whether to show province-city-district |
+| saveLimitPosition | List | [] | Save limit position list |
 
 ---
 
-### Link（超链接）
-**继承：** `JitDict`
+### Link (Hyperlink)
+**Inherits:** `JitDict`
 
-**特有参数：** 无
+**Specific Parameters:** None
 
 ---
 
-### SubTable（子表）
-**继承：** `RowList`
+### SubTable (Sub Table)
+**Inherits:** `RowList`
 
-| 参数名 | 类型 | 默认值 | 说明 |
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| relateType | String | "sub" | 关联类型，默认为"sub" |
-| relateField | String |  | 关联字段 |
-| relateFieldTitle | String |  | 关联字段标题 |
-| relateFieldType | String |  | 关联字段类型，只在目标表需要创建字段时才需要 |
+| relateType | String | "sub" | Relation type, defaults to "sub" |
+| relateField | String |  | Relation field |
+| relateFieldTitle | String |  | Relation field title |
+| relateFieldType | String |  | Relation field type, only needed when target table needs to create field |
 
 ---
 
-### JitDict（字典）
+### JitDict (Dictionary)
 :::warning
-不适用于模型字段
+Not applicable to model fields
 :::
 
-| 参数名 | 类型 | 默认值 | 说明 |
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| variableList | List | [] | 变量列表，用于定义字典中的字段配置 |
+| variableList | List | [] | Variable list, used to define field configuration in dictionary |
 
 ---
 
-### JitList（列表）
+### JitList (List)
 :::warning
-不适用于模型字段
+Not applicable to model fields
 :::
 
-| 参数名 | 类型 | 默认值 | 说明 |
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| variableConfig | Dict | {} | 变量配置，用于定义列表元素的类型，例如：`{dataType: "Stext"}` |
-| generic | String |  | 泛型类型，用于指定关联的模型fullName |
+| variableConfig | Dict | {} | Variable configuration, used to define type of list elements, e.g.: `{dataType: "Stext"}` |
+| generic | String |  | Generic type, used to specify associated model fullName |
 
 ---
 
-### JitMap（映射）
+### JitMap (Mapping)
 :::warning
-不适用于模型字段
+Not applicable to model fields
 :::
 
-| 参数名 | 类型 | 默认值 | 说明 |
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| valueConfig | Dict | {} | 值配置，用于定义映射值的类型 |
+| valueConfig | Dict | {} | Value configuration, used to define type of mapping values |
 
 ---
 
-### RowData（单行数据）
+### RowData (Single Row Data)
 :::warning
-不适用于模型字段
+Not applicable to model fields
 :::
 
-| 参数名 | 类型 | 默认值 | 说明 |
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| generic | String |  | 泛型类型，用于指定关联的模型fullName |
+| generic | String |  | Generic type, used to specify associated model fullName |
 
 ---
 
-### RowList（多行数据）
+### RowList (Multiple Row Data)
 :::warning
-不适用于模型字段
+Not applicable to model fields
 :::
 
-| 参数名 | 类型 | 默认值 | 说明 |
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| generic | String |  | 泛型类型，用于指定关联的模型fullName |
+| generic | String |  | Generic type, used to specify associated model fullName |
 
 ---
 
-### RelateData（关联单选）
-**继承：** `RowData`
+### RelateData (Related Single Selection)
+**Inherits:** `RowData`
 
-| 参数名 | 类型 | 默认值 | 说明 |
+| Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| relateType | String |  | 关联类型 |
-| relateField | String |  | 关联字段 |
-| relateFieldTitle | String |  | 关联字段标题 |
-| generic | String |  | 用于指定关联的模型fullName |
-| relateFieldType | String |  | 关联字段类型，只在目标表需要创建字段时才需要 |
+| relateType | String |  | Relation type |
+| relateField | String |  | Relation field |
+| relateFieldTitle | String |  | Relation field title |
+| generic | String |  | Used to specify associated model fullName |
+| relateFieldType | String |  | Relation field type, only needed when target table needs to create field |
 
 ---
 
-### MultiRelateData（关联多选）
-**继承：** `RowList`、`RelateData`
+### MultiRelateData (Related Multiple Selection)
+**Inherits:** `RowList`, `RelateData`
 
-**特有参数：** 无
+**Specific Parameters:** None
 
 ---
-### QFilter（筛选条件）
+### QFilter (Filter Condition)
 :::warning
-不适用于模型字段
+Not applicable to model fields
 :::
 
-**特有参数：** 无
+**Specific Parameters:** None
 
 ---
 
-## 各类型对象的属性与函数
-:::info 公共属性
-所有数据类型对象都拥有以下公共属性：
-- `value`: 编程语言原生类型的数据值，可读写
+## Properties and Functions of Each Type Object
+:::info Common Properties
+All data type objects have the following common properties:
+- `value`: Data value of programming language native type, read-write
 :::
 
-### Stext（单行文本）
-**属性：**
-- `length`: 文本长度，只读
+### Stext (Single-line Text)
+**Properties:**
+- `length`: Text length, read-only
 
-**函数：**
-- `append(value)`: 追加文本
-- `remove(value)`: 移除子文本
-- `genQrCode()`: 生成二维码，返回二维码字符串
-- `genBarcode()`: 生成条形码，返回条形码字符串
-- `cnin(value)`: 判断是否包含子文本，返回布尔值
-- `ncnin(value)`: 判断是否不包含子文本，返回布尔值
-- `cninList(valueList)`: 判断是否包含任意一个子文本，返回布尔值
-- `ncninList(valueList)`: 判断是否不包含任意一个子文本，返回布尔值
-- `sw(value)`: 判断是否以value开头，返回布尔值
-- `ew(value)`: 判断是否以value结尾，返回布尔值
-
----
-
-### Ltext（长文本）
-**继承：** `Stext`
-
-**函数：**
-- `getDisplayValue()`: 获取显示值，超过200字符截断，返回字符串
-- `getFirstValue()`: 获取按/t分割后的第一个值，返回字符串
-- `getLastValue()`: 获取按/t分割后的最后一个值，返回字符串
-- `getList()`: 获取按/t分割后的值列表，返回字符串列表
+**Functions:**
+- `append(value)`: Append text
+- `remove(value)`: Remove substring
+- `genQrCode()`: Generate QR code, returns QR code string
+- `genBarcode()`: Generate barcode, returns barcode string
+- `cnin(value)`: Check if contains substring, returns boolean
+- `ncnin(value)`: Check if does not contain substring, returns boolean
+- `cninList(valueList)`: Check if contains any substring, returns boolean
+- `ncninList(valueList)`: Check if does not contain any substring, returns boolean
+- `sw(value)`: Check if starts with value, returns boolean
+- `ew(value)`: Check if ends with value, returns boolean
 
 ---
 
-### Numeric（数字）
-**属性：**
-- `unit`: 单位，只读
-- `realDecimal`: 实际设置的小数位数，只读
-- `decimal`: 小数位数，只读，值为None时返回0
+### Ltext (Long Text)
+**Inherits:** `Stext`
 
-**函数：**
-- `formatData(data)`: 格式化数据，返回整数或保留指定小数位数的浮点数
-- `formatDbData(data)`: 格式化数据库数据
-- `getPrivateJson()`: 获取变量私有属性，返回包含maxDigits、decimal和unit的字典
-- `add(num)`: 数字增加
-- `reduce(num)`: 数字减少
-- `range(rangeList)`: 判断数字是否在范围内，rangeList: [最小值, 最大值]
-- `gt(value)`: 判断是否大于value，返回布尔值
-- `lt(value)`: 判断是否小于value，返回布尔值
-- `gte(value)`: 判断是否大于等于value，返回布尔值
-- `lte(value)`: 判断是否小于等于value，返回布尔值
-- `getDisplayValue()`: 获取带单位的显示值，返回字符串
+**Functions:**
+- `getDisplayValue()`: Get display value, truncated after 200 characters, returns string
+- `getFirstValue()`: Get first value after splitting by /t, returns string
+- `getLastValue()`: Get last value after splitting by /t, returns string
+- `getList()`: Get value list after splitting by /t, returns string list
 
 ---
 
-### Money（金额）
-**继承：** `Numeric`
+### Numeric (Number)
+**Properties:**
+- `unit`: Unit, read-only
+- `realDecimal`: Actually set decimal places, read-only
+- `decimal`: Decimal places, read-only, returns 0 when value is None
 
-**属性：**
-- `unit`: 单位，只读
-- `realDecimal`: 实际设置的小数位数，只读
-- `decimal`: 小数位数，只读，值为None时返回0
-
-**函数：**
-- `formatData(data)`: 格式化数据，返回整数或保留指定小数位数的浮点数
-- `formatDbData(data)`: 格式化数据库数据
-- `getPrivateJson()`: 获取变量私有属性，返回包含maxDigits、decimal和unit的字典
-- `add(num)`: 数字增加
-- `reduce(num)`: 数字减少
-- `range(rangeList)`: 判断数字是否在范围内，rangeList: [最小值, 最大值]
-- `gt(value)`: 判断是否大于value，返回布尔值
-- `lt(value)`: 判断是否小于value，返回布尔值
-- `gte(value)`: 判断是否大于等于value，返回布尔值
-- `lte(value)`: 判断是否小于等于value，返回布尔值
-- `getDisplayValue()`: 获取带单位的显示值，返回字符串
+**Functions:**
+- `formatData(data)`: Format data, returns integer or float with specified decimal places
+- `formatDbData(data)`: Format database data
+- `getPrivateJson()`: Get variable private properties, returns dictionary containing maxDigits, decimal and unit
+- `add(num)`: Add number
+- `reduce(num)`: Subtract number
+- `range(rangeList)`: Check if number is within range, rangeList: [min_value, max_value]
+- `gt(value)`: Check if greater than value, returns boolean
+- `lt(value)`: Check if less than value, returns boolean
+- `gte(value)`: Check if greater than or equal to value, returns boolean
+- `lte(value)`: Check if less than or equal to value, returns boolean
+- `getDisplayValue()`: Get display value with unit, returns string
 
 ---
 
-### Percent（百分比）
-**继承：** `Numeric`
+### Money (Amount)
+**Inherits:** `Numeric`
 
-**属性：**
-- `unit`: 单位，只读，默认为%
-- `realDecimal`: 实际设置的小数位数+2，只读
-- `decimal`: 小数位数，只读，值为None时返回0
-- `textValue`: 文本值，只读，返回带百分号的显示值
+**Properties:**
+- `unit`: Unit, read-only
+- `realDecimal`: Actually set decimal places, read-only
+- `decimal`: Decimal places, read-only, returns 0 when value is None
 
-**函数：**
-- `formatData(data)`: 格式化数据，返回整数或保留指定小数位数的浮点数
-- `formatDbData(data)`: 格式化数据库数据
-- `getPrivateJson()`: 获取变量私有属性，返回包含maxDigits、decimal和unit的字典
-- `add(num)`: 数字增加
-- `reduce(num)`: 数字减少
-- `range(rangeList)`: 判断数字是否在范围内，rangeList: [最小值, 最大值]
-- `gt(value)`: 判断是否大于value，返回布尔值
-- `lt(value)`: 判断是否小于value，返回布尔值
-- `gte(value)`: 判断是否大于等于value，返回布尔值
-- `lte(value)`: 判断是否小于等于value，返回布尔值
-- `getDisplayValue()`: 获取带百分号的显示值，返回字符串
-- `toJson()`: 变量转json配置，返回json数据
+**Functions:**
+- `formatData(data)`: Format data, returns integer or float with specified decimal places
+- `formatDbData(data)`: Format database data
+- `getPrivateJson()`: Get variable private properties, returns dictionary containing maxDigits, decimal and unit
+- `add(num)`: Add number
+- `reduce(num)`: Subtract number
+- `range(rangeList)`: Check if number is within range, rangeList: [min_value, max_value]
+- `gt(value)`: Check if greater than value, returns boolean
+- `lt(value)`: Check if less than value, returns boolean
+- `gte(value)`: Check if greater than or equal to value, returns boolean
+- `lte(value)`: Check if less than or equal to value, returns boolean
+- `getDisplayValue()`: Get display value with unit, returns string
 
 ---
 
-### RichText（富文本）
-**继承：** `Stext`
+### Percent (Percentage)
+**Inherits:** `Numeric`
 
-**属性：**
-- `textValue`: 纯文本值，只读，去除HTML标签后的文本内容
+**Properties:**
+- `unit`: Unit, read-only, defaults to %
+- `realDecimal`: Actually set decimal places + 2, read-only
+- `decimal`: Decimal places, read-only, returns 0 when value is None
+- `textValue`: Text value, read-only, returns display value with percent sign
 
-**函数：**
-- `getDisplayValue()`: 获取纯文本显示值，返回字符串
-
----
-
-### AutoInt（自增整数）
-**继承：** `Numeric`
-
-**函数：**
-- `getCache()`: 获取默认元素的缓存，返回缓存对象
-- `getPkValue()`: 获取下一个主键值，返回整数
-- `getMaxId()`: 获取数据库中的最大ID，返回整数
-- `getAutoIntId(count)`: 获取指定数量的自增ID，返回整数列表
-- `doFormat(bizRow)`: 格式化行数据
-- `clearCache()`: 清除主键缓存
-
----
-
-### Serial（流水号）
-**继承：** `Stext`
-
-**函数：**
-- `getPrivateJson()`: 获取变量私有属性，返回包含prefix、connector等属性的字典
-- `doFormat(bizRow)`: 格式化行数据
-- `getSerialKey(fieldValue)`: 获取缓存的外层key，返回字符串
-- `getDbValueKey(fieldValue)`: 获取数据库值key，返回字符串
-- `getInnerKey(dateFmt)`: 获取hash的key，返回字符串
-- `getMaxSerial(key)`: 获取最大流水号，返回字符串
-- `getNumber(key, fieldValue, startNumber)`: 获取流水号缓存的数字，返回整数
-- `newSerialNumber(data)`: 生成流水号，返回字符串
-- `getSerialNumber(data)`: 获取流水号，返回字符串
-- `bulkGetSerialNumber(dataList)`: 批量生成流水号，返回字符串列表
-- `getSerialNumberList(dataList)`: 获取流水号列表，返回字符串列表
-- `clearCache()`: 清除流水号缓存
+**Functions:**
+- `formatData(data)`: Format data, returns integer or float with specified decimal places
+- `formatDbData(data)`: Format database data
+- `getPrivateJson()`: Get variable private properties, returns dictionary containing maxDigits, decimal and unit
+- `add(num)`: Add number
+- `reduce(num)`: Subtract number
+- `range(rangeList)`: Check if number is within range, rangeList: [min_value, max_value]
+- `gt(value)`: Check if greater than value, returns boolean
+- `lt(value)`: Check if less than value, returns boolean
+- `gte(value)`: Check if greater than or equal to value, returns boolean
+- `lte(value)`: Check if less than or equal to value, returns boolean
+- `getDisplayValue()`: Get display value with percent sign, returns string
+- `toJson()`: Convert variable to json configuration, returns json data
 
 ---
 
-### Radio（单选）
-**继承：** `Stext`
+### RichText (Rich Text)
+**Inherits:** `Stext`
 
-**函数：**
-- `getPrivateJson()`: 获取变量私有属性，返回包含color、options等属性的字典
-- `formatDbData(value)`: 格式化数据库数据，返回字符串
-- `getDisplayValue()`: 获取显示值，返回字符串
+**Properties:**
+- `textValue`: Plain text value, read-only, text content after removing HTML tags
 
----
-
-### Dropdown（下拉选择）
-**继承：** `Radio`
-
-**属性：**
-- `color`: 是否显示颜色，只读
-- `options`: 选项列表，只读
-- `selectionWay`: 选择方式，只读
-- `allowManualInput`: 是否允许手动输入，只读
-- `mulLevelSelectionConfig`: 多级选择配置，只读
+**Functions:**
+- `getDisplayValue()`: Get plain text display value, returns string
 
 ---
 
-### MultiRadio（多选单选）
-**继承：** `Radio`
+### AutoInt (Auto-increment Integer)
+**Inherits:** `Numeric`
 
-**属性：**
-- `maxCount`: 最大选择数量，只读
-- `color`: 是否显示颜色，只读
-- `options`: 选项列表，只读
-- `selectionWay`: 选择方式，只读
-- `allowManualInput`: 是否允许手动输入，只读
-- `mulLevelSelectionConfig`: 多级选择配置，只读
-
-**函数：**
-- `getPrivateJson()`: 获取变量私有属性，返回包含maxCount、color、options等属性的字典
-- `generateSubConfig()`: 生成子配置，返回包含name、title和dataType的字典
-- `append(value)`: 追加选项
-- `formatDbData(value)`: 格式化数据库数据，返回字符串
-- `getDisplayValue()`: 获取显示值，返回字符串
+**Functions:**
+- `getCache()`: Get default element cache, returns cache object
+- `getPkValue()`: Get next primary key value, returns integer
+- `getMaxId()`: Get maximum ID in database, returns integer
+- `getAutoIntId(count)`: Get specified number of auto-increment IDs, returns integer list
+- `doFormat(bizRow)`: Format row data
+- `clearCache()`: Clear primary key cache
 
 ---
 
-### MultiDropdown（多选下拉）
-**继承：** `MultiRadio`
+### Serial (Serial Number)
+**Inherits:** `Stext`
 
-**属性：**
-- `limit`: 是否限制选择，只读
-- `maxCount`: 最大选择数量，只读
-- `color`: 是否显示颜色，只读
-- `options`: 选项列表，只读
-- `selectionWay`: 选择方式，只读
-- `allowManualInput`: 是否允许手动输入，只读
-- `mulLevelSelectionConfig`: 多级选择配置，只读
-
-**函数：**
-- `getPrivateJson()`: 获取变量私有属性，返回包含limit、maxCount、color等属性的字典
-- `generateSubConfig()`: 生成子配置，返回包含name、title和dataType的字典
-- `append(value)`: 追加选项
-
----
-
-### Checkbox（复选框）
-**属性：**
-- `isEnableDescription`: 是否启用描述，只读
-- `checkboxDescription`: 复选框描述，只读
-
-**函数：**
-- `getPrivateJson()`: 获取变量私有属性，返回包含checkboxDescription和isEnableDescription的字典
-- `formatData(data)`: 格式化数据，返回1或None
-- `formatDbData(data)`: 格式化数据库数据，返回1或None
+**Functions:**
+- `getPrivateJson()`: Get variable private properties, returns dictionary containing prefix, connector and other properties
+- `doFormat(bizRow)`: Format row data
+- `getSerialKey(fieldValue)`: Get outer cache key, returns string
+- `getDbValueKey(fieldValue)`: Get database value key, returns string
+- `getInnerKey(dateFmt)`: Get hash key, returns string
+- `getMaxSerial(key)`: Get maximum serial number, returns string
+- `getNumber(key, fieldValue, startNumber)`: Get serial number cache number, returns integer
+- `newSerialNumber(data)`: Generate serial number, returns string
+- `getSerialNumber(data)`: Get serial number, returns string
+- `bulkGetSerialNumber(dataList)`: Batch generate serial numbers, returns string list
+- `getSerialNumberList(dataList)`: Get serial number list, returns string list
+- `clearCache()`: Clear serial number cache
 
 ---
 
-### Date（日期）
-**属性：**
-- `dateTimeType`: 日期类型，只读
-- `dateTimeFormat`: 日期格式，只读
-- `createDefault`: 创建时默认值，只读
-- `updateDefault`: 更新时默认值，只读
-- `autoAssign`: 自动赋值，只读
-- `dt`: "%Y-%m-%d"格式的字符串，可读写
-- `year`: 年份，只读
-- `quarter`: 季度，只读
-- `month`: 月份，只读
-- `weekOfYear`: 年周，只读
-- `day`: 日，只读
-- `weekDay`: 星期几，只读
+### Radio (Single Selection)
+**Inherits:** `Stext`
 
-**函数：**
-- `getPrivateJson()`: 获取变量私有属性，返回包含dateTimeType、dateTimeFormat等属性的字典
-- `formatDbData(data)`: 格式化数据库数据，返回字符串
-- `doFormat(bizRow)`: 格式化业务数据
-- `fillBizValue(bizRow, isCreate)`: 填充业务值
-- `getDefaultTime()`: 获取默认时间，返回字符串
-- `getValue()`: 获取值，返回字符串
-- `addYear(n)`: 增加年
-- `addMonth(n)`: 增加月
-- `addQuarter(n)`: 增加季度
-- `addWeek(n)`: 增加周
-- `addWeekOfYear(n)`: 增加年周
-- `addDay(n)`: 增加日
-- `reduceYear(n)`: 减少年
-- `reduceMonth(n)`: 减少月
-- `reduceQuarter(n)`: 减少季度
-- `reduceWeek(n)`: 减少周
-- `reduceWeekOfYear(n)`: 减少年周
-- `reduceDay(n)`: 减少日
-- `getDisplayValue()`: 获取显示值，返回字符串
-- `range(rangeList)`: 判断是否在范围内，rangeList: [最小值, 最大值]
-- `gt(value)`: 判断是否大于value，返回布尔值
-- `lt(value)`: 判断是否小于value，返回布尔值
-- `gte(value)`: 判断是否大于等于value，返回布尔值
-- `lte(value)`: 判断是否小于等于value，返回布尔值
-- `getCompareValue(tql, operator, value)`: 获取比较值
+**Functions:**
+- `getPrivateJson()`: Get variable private properties, returns dictionary containing color, options and other properties
+- `formatDbData(value)`: Format database data, returns string
+- `getDisplayValue()`: Get display value, returns string
 
 ---
 
-### Datetime（日期时间）
-**继承：** `Date`
+### Dropdown (Dropdown Selection)
+**Inherits:** `Radio`
 
-**属性：**
-- `dateTimeType`: 日期时间类型，只读
-- `dateTimeFormat`: 日期时间格式，只读
-- `createDefault`: 创建时是否使用默认值，只读
-- `updateDefault`: 更新时是否使用默认值，只读
-- `autoAssign`: 自动赋值规则，只读
-- `hour`: 小时，只读
-- `minute`: 分钟，只读
-- `second`: 秒，只读
-- `date`: 日期部分，只读
+**Properties:**
+- `color`: Whether to display color, read-only
+- `options`: Options list, read-only
+- `selectionWay`: Selection method, read-only
+- `allowManualInput`: Whether to allow manual input, read-only
+- `mulLevelSelectionConfig`: Multi-level selection configuration, read-only
 
 ---
 
-### Time（时间）
-**继承：** `Datetime`
+### MultiRadio (Multiple Selection)
+**Inherits:** `Radio`
 
-**函数：**
-- `doRead(dbRow)`: 读取数据库行数据，返回字符串
+**Properties:**
+- `maxCount`: Maximum selection count, read-only
+- `color`: Whether to display color, read-only
+- `options`: Options list, read-only
+- `selectionWay`: Selection method, read-only
+- `allowManualInput`: Whether to allow manual input, read-only
+- `mulLevelSelectionConfig`: Multi-level selection configuration, read-only
 
----
-
-### File（附件）
-**继承：** `JitList`
-
-**属性：**
-- `maxCount`: 最大文件数量，只读
-- `maxSize`: 最大文件大小(MB)，只读
-- `minSize`: 最小文件大小(MB)，只读
-- `acceptTypes`: 可接受的文件类型，只读
-- `selectedDown`: 是否允许下载，只读
-- `selectedDelete`: 是否允许删除，只读
-- `selectedDownUser`: 允许下载的用户，只读
-- `selectedDeleteUser`: 允许删除的用户，只读
-- `size`: 文件总大小，只读
-- `count`: 文件数量，只读
-
-**函数：**
-- `getPrivateJson()`: 获取变量私有属性，返回包含maxCount、maxSize等属性的字典
-- `append(imageValue)`: 追加文件
-- `getDisplayValue()`: 获取显示值，返回字符串
-- `getFirstValue()`: 获取第一个值，返回字符串
-- `getLastValue()`: 获取最后一个值，返回字符串
-- `getList()`: 获取值列表，返回字符串列表
+**Functions:**
+- `getPrivateJson()`: Get variable private properties, returns dictionary containing maxCount, color, options and other properties
+- `generateSubConfig()`: Generate sub configuration, returns dictionary containing name, title and dataType
+- `append(value)`: Append option
+- `formatDbData(value)`: Format database data, returns string
+- `getDisplayValue()`: Get display value, returns string
 
 ---
 
-### Image（图片）
-**继承：** `JitList`
+### MultiDropdown (Multiple Dropdown Selection)
+**Inherits:** `MultiRadio`
 
-**属性：**
-- `imgType`: 图片类型，只读
-- `size`: 图片尺寸，只读
-- `maxCount`: 最大图片数量，只读
-- `maxSize`: 最大图片大小(MB)，只读
-- `isAddWatermark`: 是否添加水印，只读
-- `isCameraOnly`: 是否仅允许拍照，只读
-- `imageSize`: 图片总大小，只读
-- `imageName`: 图片名称列表，只读
-- `imageType`: 图片类型列表，只读
-- `count`: 图片数量，只读
+**Properties:**
+- `limit`: Whether to limit selection, read-only
+- `maxCount`: Maximum selection count, read-only
+- `color`: Whether to display color, read-only
+- `options`: Options list, read-only
+- `selectionWay`: Selection method, read-only
+- `allowManualInput`: Whether to allow manual input, read-only
+- `mulLevelSelectionConfig`: Multi-level selection configuration, read-only
 
-**函数：**
-- `getPrivateJson()`: 获取变量私有属性，返回包含imgType、size等属性的字典
-- `append(imageValue)`: 追加图片
-- `getDisplayValue()`: 获取显示值，返回字符串
-- `getFirstValue()`: 获取第一个值，返回字符串
-- `getLastValue()`: 获取最后一个值，返回字符串
-- `getList()`: 获取值列表，返回字符串列表
+**Functions:**
+- `getPrivateJson()`: Get variable private properties, returns dictionary containing limit, maxCount, color and other properties
+- `generateSubConfig()`: Generate sub configuration, returns dictionary containing name, title and dataType
+- `append(value)`: Append option
 
 ---
 
-### Signature（手写签名）
-**属性：**
-- `mode`: 签名模式，只读（new：每次重新签名，prev：使用上次签名）
+### Checkbox (Checkbox)
+**Properties:**
+- `isEnableDescription`: Whether to enable description, read-only
+- `checkboxDescription`: Checkbox description, read-only
 
-**函数：**
-- `getPrivateJson()`: 获取变量私有属性，返回包含mode的字典
-
----
-
-### Dept（部门）
-**继承：** `Stext`
-
-**属性：**
-- `selectionWay`: 部门范围选择方式，只读
-- `availableDeptId`: 可用部门ID，只读
-- `mulLevelSelectionConfig`: 多级选择配置，只读
-- `availableParentDeptId`: 可用父部门ID，只读
-
-**函数：**
-- `getPrivateJson()`: 获取变量私有属性，返回包含selectionWay、availableDeptId等属性的字典
-- `getName()`: 通过部门id列表获取部门名称，返回字符串
-- `getDisplayValue()`: 获取文本值，返回字符串
-- `getLeader()`: 获取主管，返回字符串
-- `getDirectDept()`: 获取上级部门，返回字符串
-- `getDeptPath()`: 获取部门路径，返回字符串
-- `getRankDpt(rank)`: 获取层级主管，返回字符串
-- `getFirstDept()`: 获取一级部门，返回字符串
-- `getSecondDept()`: 获取二级部门，返回字符串
-- `getThirdDept()`: 获取三级部门，返回字符串
-- `getFourthDept()`: 获取四级部门，返回字符串
-- `getFifthDept()`: 获取五级部门，返回字符串
-- `belong(value)`: 判断是否是自身父级部门，返回布尔值
-- `notBelong(value)`: 判断是否不是自身父级部门，返回布尔值
-- `getCompareValue(tql, operator, value)`: 获取比较值
+**Functions:**
+- `getPrivateJson()`: Get variable private properties, returns dictionary containing checkboxDescription and isEnableDescription
+- `formatData(data)`: Format data, returns 1 or None
+- `formatDbData(data)`: Format database data, returns 1 or None
 
 ---
 
-### MultiDept（多选部门）
-**继承：** `Dept`
+### Date (Date)
+**Properties:**
+- `dateTimeType`: Date type, read-only
+- `dateTimeFormat`: Date format, read-only
+- `createDefault`: Default value when creating, read-only
+- `updateDefault`: Default value when updating, read-only
+- `autoAssign`: Auto assignment, read-only
+- `dt`: String in "%Y-%m-%d" format, read-write
+- `year`: Year, read-only
+- `quarter`: Quarter, read-only
+- `month`: Month, read-only
+- `weekOfYear`: Week of year, read-only
+- `day`: Day, read-only
+- `weekDay`: Day of week, read-only
 
-**函数：**
-- `generateSubConfig()`: 多选迭代生成的变量配置，返回包含name、title和dataType的字典
-- `append(value)`: 追加部门
-
----
-
-### Member（成员）
-**继承：** `Stext`
-
-**属性：**
-- `selectionWay`: 选择方式，只读
-- `availableUser`: 可用用户，只读
-- `allowLeave`: 是否允许离职，只读
-- `mulLevelSelectionConfig`: 多级选择配置，只读
-- `createDefault`: 创建时默认值，只读
-- `updateDefault`: 更新时默认值，只读
-
-**函数：**
-- `getPrivateJson()`: 获取变量私有属性
-- `fillBizValue(bizRow, isCreate)`: 填充业务值
-- `getDisplayValue()`: 获取显示值，返回字符串
-- `getName()`: 获取成员名称，返回字符串
-- `getRankDept(level)`: 获取层级部门，返回字符串
-- `getRankLeader(level)`: 获取层级主管，返回字符串
-- `getMemberStatus()`: 获取成员状态，返回"在职"或"离职"
-- `getDirectDept()`: 获取直接部门，返回字符串
-- `getFirstDept()`: 获取一级部门，返回字符串
-- `getSecondDept()`: 获取二级部门，返回字符串
-- `getThirdDept()`: 获取三级部门，返回字符串
-- `getFourthDept()`: 获取四级部门，返回字符串
-- `getFifthDept()`: 获取五级部门，返回字符串
-- `getDirectLeader()`: 获取直接主管，返回字符串
-- `getFirstLeader()`: 获取一级主管，返回字符串
-- `getSecondLeader()`: 获取二级主管，返回字符串
-- `getThirdLeader()`: 获取三级主管，返回字符串
-- `getFourthLeader()`: 获取四级主管，返回字符串
-- `getFifthLeader()`: 获取五级主管，返回字符串
-- `getAllRankLeader(level)`: 获取所有父级层级主管，返回字符串列表
-- `belong(value)`: 判断是否是自身父级主管，返回布尔值
-- `notBelong(value)`: 判断是否不是自身父级主管，返回布尔值
+**Functions:**
+- `getPrivateJson()`: Get variable private properties, returns dictionary containing dateTimeType, dateTimeFormat and other properties
+- `formatDbData(data)`: Format database data, returns string
+- `doFormat(bizRow)`: Format business data
+- `fillBizValue(bizRow, isCreate)`: Fill business value
+- `getDefaultTime()`: Get default time, returns string
+- `getValue()`: Get value, returns string
+- `addYear(n)`: Add years
+- `addMonth(n)`: Add months
+- `addQuarter(n)`: Add quarters
+- `addWeek(n)`: Add weeks
+- `addWeekOfYear(n)`: Add weeks of year
+- `addDay(n)`: Add days
+- `reduceYear(n)`: Subtract years
+- `reduceMonth(n)`: Subtract months
+- `reduceQuarter(n)`: Subtract quarters
+- `reduceWeek(n)`: Subtract weeks
+- `reduceWeekOfYear(n)`: Subtract weeks of year
+- `reduceDay(n)`: Subtract days
+- `getDisplayValue()`: Get display value, returns string
+- `range(rangeList)`: Check if within range, rangeList: [min_value, max_value]
+- `gt(value)`: Check if greater than value, returns boolean
+- `lt(value)`: Check if less than value, returns boolean
+- `gte(value)`: Check if greater than or equal to value, returns boolean
+- `lte(value)`: Check if less than or equal to value, returns boolean
+- `getCompareValue(tql, operator, value)`: Get comparison value
 
 ---
 
-### MultiMember（多选成员）
-**继承：** `Member`
+### Datetime (Date Time)
+**Inherits:** `Date`
 
-**函数：**
-- `generateSubConfig()`: 生成子配置，返回包含name、title和dataType的字典
-- `append(value)`: 追加成员
-
----
-
-### Address（地址）
-**继承：** `JitDict`
-
-**属性：**
-- `addressFormat`: 地址格式，只读
-- `detail`: 是否显示详细地址，只读
-- `province`: 省份，只读
-- `city`: 城市，只读
-- `district`: 区县，只读
-
-**函数：**
-- `getPrivateJson()`: 获取变量私有属性，返回包含addressFormat和detail的字典
-- `belong(address)`: 判断是否属于指定地址，返回布尔值
-- `notBelong(address)`: 判断是否不属于指定地址，返回布尔值
-- `getDisplayValue()`: 获取显示值，返回字符串
-- `getCompareValue(tql, operator, value)`: 获取比较值
+**Properties:**
+- `dateTimeType`: Date time type, read-only
+- `dateTimeFormat`: Date time format, read-only
+- `createDefault`: Whether to use default value when creating, read-only
+- `updateDefault`: Whether to use default value when updating, read-only
+- `autoAssign`: Auto assignment rules, read-only
+- `hour`: Hour, read-only
+- `minute`: Minute, read-only
+- `second`: Second, read-only
+- `date`: Date part, read-only
 
 ---
 
-### Identify（身份证号）
-**继承：** `Stext`
+### Time (Time)
+**Inherits:** `Datetime`
 
-**属性：**
-- `address`: 地址，只读，返回省份名称
-- `birthday`: 生日，只读，返回日期对象
-- `age`: 年龄，只读，返回整数
-- `gender`: 性别，只读，返回"男"或"女"
+**Functions:**
+- `doRead(dbRow)`: Read database row data, returns string
 
 ---
 
-### LicensePlate（车牌号）
-**继承：** `Stext`
+### File (Attachment)
+**Inherits:** `JitList`
 
-**属性：**
-- `maxLen`: 最大长度，只读，默认为12
+**Properties:**
+- `maxCount`: Maximum file count, read-only
+- `maxSize`: Maximum file size (MB), read-only
+- `minSize`: Minimum file size (MB), read-only
+- `acceptTypes`: Acceptable file types, read-only
+- `selectedDown`: Whether download is allowed, read-only
+- `selectedDelete`: Whether deletion is allowed, read-only
+- `selectedDownUser`: Users allowed to download, read-only
+- `selectedDeleteUser`: Users allowed to delete, read-only
+- `size`: Total file size, read-only
+- `count`: File count, read-only
 
-**函数：**
-- `getPrivateJson()`: 获取变量私有属性，返回包含maxLen的字典
-- `provinceCode()`: 获取省份简称，返回字符串
-
----
-
-### Phone（手机号）
-**继承：** `Stext`
-
-**属性：**
-- `rules`: 电话号码规则，只读
-- `maxLen`: 最大长度，只读，默认为11
-
-**函数：**
-- `getPrivateJson()`: 获取变量私有属性，返回包含rules的字典
-
----
-
-### Position（定位）
-**继承：** `Address`
-
-**属性：**
-- `address`: 地址，只读
-- `lng`: 经度，只读
-- `lat`: 纬度，只读
-- `adjustRange`: 调整范围，只读
-- `adjustment`: 是否可调整，只读
-- `limitPositionRange`: 是否限制位置范围，只读
-- `showPc`: 是否显示PC端，只读
-- `saveLimitPosition`: 保存限制位置列表，只读
-
-**函数：**
-- `getPrivateJson()`: 获取变量私有属性
-- `getDisplayValue()`: 获取显示值，返回字符串
+**Functions:**
+- `getPrivateJson()`: Get variable private properties, returns dictionary containing maxCount, maxSize and other properties
+- `append(imageValue)`: Append file
+- `getDisplayValue()`: Get display value, returns string
+- `getFirstValue()`: Get first value, returns string
+- `getLastValue()`: Get last value, returns string
+- `getList()`: Get value list, returns string list
 
 ---
 
-### Link（超链接）
-**继承：** `JitDict`
+### Image (Image)
+**Inherits:** `JitList`
 
-**属性：**
-- `linkTitle`: 链接标题，可读写
-- `url`: 链接地址，可读写
+**Properties:**
+- `imgType`: Image type, read-only
+- `size`: Image size, read-only
+- `maxCount`: Maximum image count, read-only
+- `maxSize`: Maximum image size (MB), read-only
+- `isAddWatermark`: Whether to add watermark, read-only
+- `isCameraOnly`: Whether camera only, read-only
+- `imageSize`: Total image size, read-only
+- `imageName`: Image name list, read-only
+- `imageType`: Image type list, read-only
+- `count`: Image count, read-only
 
-**函数：**
-- `getDisplayValue()`: 获取显示值，返回链接标题或URL
-
----
-
-### SubTable（子表）
-**继承：** `RowList`
-
-**属性：**
-- `relateField`: 关联字段，只读
-- `relateType`: 关联类型，只读
-- `relateFieldType`: 关联字段类型，只读
-- `relateFieldTitle`: 关联字段标题，只读
-- `firstRow`: 第一条数据，只读
-- `lastRow`: 最后一条数据，只读
-
-**函数：**
-- `getPrivateJson()`: 获取变量私有属性
-- `resetFilter()`: 重置筛选条件，返回自身
-- `get(*args, **kwargs)`: 根据筛选条件获取第一条数据，返回数据对象
-- `orderBy(*key)`: 子表数据排序，返回自身
-- `slice(start, end)`: 切片，包头包尾，返回自身
-- `toDict()`: 转变量json配置，返回数据列表
-- `formatData(value)`: 底层数据转上层数据，返回格式化后的数据
-- `doFormat(_)`: 格式化数据，返回None
-- `doWrite(bizRow)`: 写入数据，返回子表值
-- `getRelateData(rowDataList, level=2)`: 获取关联数据，无返回值
+**Functions:**
+- `getPrivateJson()`: Get variable private properties, returns dictionary containing imgType, size and other properties
+- `append(imageValue)`: Append image
+- `getDisplayValue()`: Get display value, returns string
+- `getFirstValue()`: Get first value, returns string
+- `getLastValue()`: Get last value, returns string
+- `getList()`: Get value list, returns string list
 
 ---
 
-### JitDict（字典）
-**属性：**
-- `KVCount`: 键值对个数，只读
-- `value`: 变量返回值，可读写
+### Signature (Handwritten Signature)
+**Properties:**
+- `mode`: Signature mode, read-only (new: sign again each time, prev: use previous signature)
 
-**函数：**
-- `reset()`: 重置字典
-- `toDict()`: 转成数据dict，返回字典
-- `formatDbData(value)`: 底层数据转上层数据，返回字符串
-- `formatData(value)`: 底层数据转上层数据，返回字典
-- `getPrivateJson()`: 获取变量私有属性，返回包含variableList的字典
-- `parseSubTableData(dt)`: 处理子表变量数据，返回数据列表
-- `parseRelateData(dt)`: 处理关联变量数据，返回字典
+**Functions:**
+- `getPrivateJson()`: Get variable private properties, returns dictionary containing mode
 
 ---
 
-### JitList（列表）
-**属性：**
-- `calculable`: 是否可进行求和或平均数计算，只读
-- `comparable`: 是否可比较，只读
-- `value`: 变量返回值，可读写
-- `listCount`: 列表元素个数，只读
-- `distinctListCount`: 列表元素去重计数，只读
-- `sum`: 列表元素求和，只读
-- `average`: 列表元素平均值，只读
-- `max`: 列表元素最大值，只读
-- `min`: 列表元素最小值，只读
+### Dept (Department)
+**Inherits:** `Stext`
 
-**函数：**
-- `append(value)`: 追加元素，value可以是dict或list
-- `distinctAppend(value)`: 去重追加元素，value可以是dict或list
-- `getValueByIndex(index)`: 通过位置获取值，返回元素值
-- `updateValueByIndex(index, value)`: 通过位置修改值
-- `remove(value)`: 移除列表中某个元素
-- `reset()`: 列表重置
-- `generateSubConfig()`: 迭代生成的变量配置，返回变量配置
-- `formatDbData(value)`: 底层数据转上层数据，返回字符串
-- `formatData(value)`: 底层数据转上层数据，返回列表
-- `getFirstValue()`: 获取第一个值，返回元素值
-- `getLastValue()`: 获取最后一个值，返回元素值
-- `getList()`: 获取值列表，返回列表
-- `getPrivateJson()`: 获取变量私有属性，返回包含variableConfig和generic的字典
+**Properties:**
+- `selectionWay`: Department scope selection method, read-only
+- `availableDeptId`: Available department ID, read-only
+- `mulLevelSelectionConfig`: Multi-level selection configuration, read-only
+- `availableParentDeptId`: Available parent department ID, read-only
 
----
-
-### JitMap（映射）
-**属性：**
-- `value`: 变量值，可读写
-- `keys`: 键列表，只读
-- `values`: 值列表，只读
-
-**函数：**
-- `getPrivateJson()`: 获取变量私有属性，返回包含valueConfig的字典
-- `clear()`: 清空映射
-- `get(key)`: 获取指定键的值，返回值
-- `set(key, value)`: 设置键值对
+**Functions:**
+- `getPrivateJson()`: Get variable private properties, returns dictionary containing selectionWay, availableDeptId and other properties
+- `getName()`: Get department name through department id list, returns string
+- `getDisplayValue()`: Get text value, returns string
+- `getLeader()`: Get leader, returns string
+- `getDirectDept()`: Get parent department, returns string
+- `getDeptPath()`: Get department path, returns string
+- `getRankDpt(rank)`: Get rank leader, returns string
+- `getFirstDept()`: Get first level department, returns string
+- `getSecondDept()`: Get second level department, returns string
+- `getThirdDept()`: Get third level department, returns string
+- `getFourthDept()`: Get fourth level department, returns string
+- `getFifthDept()`: Get fifth level department, returns string
+- `belong(value)`: Check if is parent department, returns boolean
+- `notBelong(value)`: Check if is not parent department, returns boolean
+- `getCompareValue(tql, operator, value)`: Get comparison value
 
 ---
 
-### RowData（单行数据）
-**属性：**
-- `value`: 变量值，可读写
-- `pkData`: 主键数据，只读
+### MultiDept (Multiple Department Selection)
+**Inherits:** `Dept`
 
-**函数：**
-- `toDict()`: 转成数据dict，返回字典
-- `update(**kwargs)`: 单行数据更新
-- `reset()`: 单行数据重置，返回自身
-- `refresh()`: 刷新数据，从数据库重新加载
+**Functions:**
+- `generateSubConfig()`: Generate variable configuration through multiple selection iteration, returns dictionary containing name, title and dataType
+- `append(value)`: Append department
 
 ---
 
-### RowList（多行数据）
-**属性：**
-- `Model`: 对应的模型类，只读
-- `value`: 变量值，可读写
-- `length`: 数据长度，只读
-- `firstRow`: 第一条数据，只读
+### Member (Member)
+**Inherits:** `Stext`
 
-**函数：**
-- `save(triggerEvent=1)`: 多行数据保存到数据库
-- `delete(triggerEvent=1)`: 从数据库中删除数据
-- `update(filter, updateDict)`: 更新数据，返回更新后的数据列表
-- `append(data)`: 追加单行或多行数据
-- `reset()`: 多行数据重置，返回自身
-- `filter(q)`: 多行数据筛选，返回筛选后的数据列表
-- `aggregate(filter, fieldId, aggrFunc)`: 多行数据列统计，返回统计结果
-- `getMax(valueList, fieldId)`: 多行数据求列最大值，返回最大值
-- `getMin(valueList, fieldId)`: 多行数据求列最小值，返回最小值
-- `getAvg(valueList, fieldId)`: 多行数据求列平均值，返回平均值
-- `getSum(valueList, fieldId)`: 多行数据求列和，返回和
-- `getNullCount(valueList, fieldId)`: 多行数据求列为空计数，返回空值数量
-- `getNotNullCount(valueList, fieldId)`: 多行数据求列非空计数，返回非空值数量
-- `getDistinctCount(valueList, fieldId)`: 多行数据求列去重计数，返回去重后的数量
-- `generateSubConfig()`: 变量迭代生成的变量配置，返回包含name、title、dataType和generic的字典
-- `getFirstValue()`: 获取第一个值，返回数据对象
-- `getLastValue()`: 获取最后一个值，返回数据对象
-- `getList()`: 获取值列表，返回数据列表
-- `transToJitMap(fieldId)`: 转换为JitMap类型，返回JitMap对象
+**Properties:**
+- `selectionWay`: Selection method, read-only
+- `availableUser`: Available user, read-only
+- `allowLeave`: Whether to allow resignation, read-only
+- `mulLevelSelectionConfig`: Multi-level selection configuration, read-only
+- `createDefault`: Default value when creating, read-only
+- `updateDefault`: Default value when updating, read-only
 
----
-
-### RelateData（关联单选）
-**继承：** `RowData`
-
-**属性：**
-- `value`: 变量值，可读写
-- `relateRowData`: 关联行数据，只读
-- `cascade`: 级联配置，只读，默认为value。（可选值 delete：删除主表数据时删除关联数据、protect：不允许删除主表数据、value：删除主表数据时，将关联表数据置为指定值、nothing：不做任何处理）
-- `dbFieldType`: 数据库字段类型，只读，根据relateFieldType返回IntField或CharField
-- `dbConfig`: 数据库配置，只读，返回包含maxLen的字典
-
-**函数：**
-- `getPrivateJson()`: 获取变量私有属性
-- `save(triggerEvent=1)`: 保存到数据库，返回保存后的数据
-- `delete(**kwargs)`: 从数据库中删除数据，返回删除结果
-- `formatDbData(value)`: 上层数据转底层sql格式，返回格式化后的数据
-- `doFormat(rowData)`: 格式化行数据，返回格式化后的数据
-- `getDisplayValue()`: 获取显示值，返回字符串
-- `getRelateData(rowDataList, level=2)`: 获取关联数据，无返回值
+**Functions:**
+- `getPrivateJson()`: Get variable private properties
+- `fillBizValue(bizRow, isCreate)`: Fill business value
+- `getDisplayValue()`: Get display value, returns string
+- `getName()`: Get member name, returns string
+- `getRankDept(level)`: Get rank department, returns string
+- `getRankLeader(level)`: Get rank leader, returns string
+- `getMemberStatus()`: Get member status, returns "在职" or "离职"
+- `getDirectDept()`: Get direct department, returns string
+- `getFirstDept()`: Get first level department, returns string
+- `getSecondDept()`: Get second level department, returns string
+- `getThirdDept()`: Get third level department, returns string
+- `getFourthDept()`: Get fourth level department, returns string
+- `getFifthDept()`: Get fifth level department, returns string
+- `getDirectLeader()`: Get direct leader, returns string
+- `getFirstLeader()`: Get first level leader, returns string
+- `getSecondLeader()`: Get second level leader, returns string
+- `getThirdLeader()`: Get third level leader, returns string
+- `getFourthLeader()`: Get fourth level leader, returns string
+- `getFifthLeader()`: Get fifth level leader, returns string
+- `getAllRankLeader(level)`: Get all parent rank leaders, returns string list
+- `belong(value)`: Check if is parent leader, returns boolean
+- `notBelong(value)`: Check if is not parent leader, returns boolean
 
 ---
 
-### MultiRelateData（关联多选）
-**继承：** `RowList`、`RelateData`
+### MultiMember (Multiple Member Selection)
+**Inherits:** `Member`
+
+**Functions:**
+- `generateSubConfig()`: Generate sub configuration, returns dictionary containing name, title and dataType
+- `append(value)`: Append member
 
 ---
-### QFilter（查询过滤器）
-**属性：**
-- `value`: 变量值，可读写
 
-**函数：**
-- `append(q)`: 追加查询条件，q为用[Q表达式](./q-expressions)构建的查询条件
+### Address (Address)
+**Inherits:** `JitDict`
+
+**Properties:**
+- `addressFormat`: Address format, read-only
+- `detail`: Whether to display detailed address, read-only
+- `province`: Province, read-only
+- `city`: City, read-only
+- `district`: District, read-only
+
+**Functions:**
+- `getPrivateJson()`: Get variable private properties, returns dictionary containing addressFormat and detail
+- `belong(address)`: Check if belongs to specified address, returns boolean
+- `notBelong(address)`: Check if does not belong to specified address, returns boolean
+- `getDisplayValue()`: Get display value, returns string
+- `getCompareValue(tql, operator, value)`: Get comparison value
+
+---
+
+### Identify (ID Card Number)
+**Inherits:** `Stext`
+
+**Properties:**
+- `address`: Address, read-only, returns province name
+- `birthday`: Birthday, read-only, returns date object
+- `age`: Age, read-only, returns integer
+- `gender`: Gender, read-only, returns "男" or "女"
+
+---
+
+### LicensePlate (License Plate Number)
+**Inherits:** `Stext`
+
+**Properties:**
+- `maxLen`: Maximum length, read-only, defaults to 12
+
+**Functions:**
+- `getPrivateJson()`: Get variable private properties, returns dictionary containing maxLen
+- `provinceCode()`: Get province abbreviation, returns string
+
+---
+
+### Phone (Phone Number)
+**Inherits:** `Stext`
+
+**Properties:**
+- `rules`: Phone number rules, read-only
+- `maxLen`: Maximum length, read-only, defaults to 11
+
+**Functions:**
+- `getPrivateJson()`: Get variable private properties, returns dictionary containing rules
+
+---
+
+### Position (Location)
+**Inherits:** `Address`
+
+**Properties:**
+- `address`: Address, read-only
+- `lng`: Longitude, read-only
+- `lat`: Latitude, read-only
+- `adjustRange`: Adjustment range, read-only
+- `adjustment`: Whether adjustable, read-only
+- `limitPositionRange`: Whether to limit position range, read-only
+- `showPc`: Whether to show PC side, read-only
+- `saveLimitPosition`: Save limit position list, read-only
+
+**Functions:**
+- `getPrivateJson()`: Get variable private properties
+- `getDisplayValue()`: Get display value, returns string
+
+---
+
+### Link (Hyperlink)
+**Inherits:** `JitDict`
+
+**Properties:**
+- `linkTitle`: Link title, read-write
+- `url`: Link address, read-write
+
+**Functions:**
+- `getDisplayValue()`: Get display value, returns link title or URL
+
+---
+
+### SubTable (Sub Table)
+**Inherits:** `RowList`
+
+**Properties:**
+- `relateField`: Relation field, read-only
+- `relateType`: Relation type, read-only
+- `relateFieldType`: Relation field type, read-only
+- `relateFieldTitle`: Relation field title, read-only
+- `firstRow`: First row data, read-only
+- `lastRow`: Last row data, read-only
+
+**Functions:**
+- `getPrivateJson()`: Get variable private properties
+- `resetFilter()`: Reset filter conditions, returns self
+- `get(*args, **kwargs)`: Get first data based on filter conditions, returns data object
+- `orderBy(*key)`: Sort sub-table data, returns self
+- `slice(start, end)`: Slice, inclusive start and end, returns self
+- `toDict()`: Convert to variable json configuration, returns data list
+- `formatData(value)`: Convert lower-level data to upper-level data, returns formatted data
+- `doFormat(_)`: Format data, returns None
+- `doWrite(bizRow)`: Write data, returns sub-table value
+- `getRelateData(rowDataList, level=2)`: Get related data, no return value
+
+---
+
+### JitDict (Dictionary)
+**Properties:**
+- `KVCount`: Key-value pair count, read-only
+- `value`: Variable return value, read-write
+
+**Functions:**
+- `reset()`: Reset dictionary
+- `toDict()`: Convert to data dict, returns dictionary
+- `formatDbData(value)`: Convert lower-level data to upper-level data, returns string
+- `formatData(value)`: Convert lower-level data to upper-level data, returns dictionary
+- `getPrivateJson()`: Get variable private properties, returns dictionary containing variableList
+- `parseSubTableData(dt)`: Process sub-table variable data, returns data list
+- `parseRelateData(dt)`: Process related variable data, returns dictionary
+
+---
+
+### JitList (List)
+**Properties:**
+- `calculable`: Whether sum or average calculation is possible, read-only
+- `comparable`: Whether comparable, read-only
+- `value`: Variable return value, read-write
+- `listCount`: List element count, read-only
+- `distinctListCount`: List element distinct count, read-only
+- `sum`: List element sum, read-only
+- `average`: List element average, read-only
+- `max`: List element maximum, read-only
+- `min`: List element minimum, read-only
+
+**Functions:**
+- `append(value)`: Append element, value can be dict or list
+- `distinctAppend(value)`: Append element with deduplication, value can be dict or list
+- `getValueByIndex(index)`: Get value by position, returns element value
+- `updateValueByIndex(index, value)`: Modify value by position
+- `remove(value)`: Remove element from list
+- `reset()`: Reset list
+- `generateSubConfig()`: Generate iterative variable configuration, returns variable configuration
+- `formatDbData(value)`: Convert lower-level data to upper-level data, returns string
+- `formatData(value)`: Convert lower-level data to upper-level data, returns list
+- `getFirstValue()`: Get first value, returns element value
+- `getLastValue()`: Get last value, returns element value
+- `getList()`: Get value list, returns list
+- `getPrivateJson()`: Get variable private properties, returns dictionary containing variableConfig and generic
+
+---
+
+### JitMap (Mapping)
+**Properties:**
+- `value`: Variable value, read-write
+- `keys`: Key list, read-only
+- `values`: Value list, read-only
+
+**Functions:**
+- `getPrivateJson()`: Get variable private properties, returns dictionary containing valueConfig
+- `clear()`: Clear mapping
+- `get(key)`: Get value of specified key, returns value
+- `set(key, value)`: Set key-value pair
+
+---
+
+### RowData (Single Row Data)
+**Properties:**
+- `value`: Variable value, read-write
+- `pkData`: Primary key data, read-only
+
+**Functions:**
+- `toDict()`: Convert to data dict, returns dictionary
+- `update(**kwargs)`: Update single row data
+- `reset()`: Reset single row data, returns self
+- `refresh()`: Refresh data, reload from database
+
+---
+
+### RowList (Multiple Row Data)
+**Properties:**
+- `Model`: Corresponding model class, read-only
+- `value`: Variable value, read-write
+- `length`: Data length, read-only
+- `firstRow`: First row data, read-only
+
+**Functions:**
+- `save(triggerEvent=1)`: Save multiple row data to database
+- `delete(triggerEvent=1)`: Delete data from database
+- `update(filter, updateDict)`: Update data, returns updated data list
+- `append(data)`: Append single or multiple row data
+- `reset()`: Reset multiple row data, returns self
+- `filter(q)`: Filter multiple row data, returns filtered data list
+- `aggregate(filter, fieldId, aggrFunc)`: Column statistics for multiple row data, returns statistical results
+- `getMax(valueList, fieldId)`: Get column maximum value for multiple row data, returns maximum value
+- `getMin(valueList, fieldId)`: Get column minimum value for multiple row data, returns minimum value
+- `getAvg(valueList, fieldId)`: Get column average value for multiple row data, returns average value
+- `getSum(valueList, fieldId)`: Get column sum for multiple row data, returns sum
+- `getNullCount(valueList, fieldId)`: Get column null count for multiple row data, returns null value count
+- `getNotNullCount(valueList, fieldId)`: Get column non-null count for multiple row data, returns non-null value count
+- `getDistinctCount(valueList, fieldId)`: Get column distinct count for multiple row data, returns distinct count
+- `generateSubConfig()`: Generate variable configuration through variable iteration, returns dictionary containing name, title, dataType and generic
+- `getFirstValue()`: Get first value, returns data object
+- `getLastValue()`: Get last value, returns data object
+- `getList()`: Get value list, returns data list
+- `transToJitMap(fieldId)`: Convert to JitMap type, returns JitMap object
+
+---
+
+### RelateData (Related Single Selection)
+**Inherits:** `RowData`
+
+**Properties:**
+- `value`: Variable value, read-write
+- `relateRowData`: Related row data, read-only
+- `cascade`: Cascade configuration, read-only, defaults to value. (Optional values: delete: delete related data when deleting main table data, protect: not allow deleting main table data, value: set related table data to specified value when deleting main table data, nothing: do nothing)
+- `dbFieldType`: Database field type, read-only, returns IntField or CharField based on relateFieldType
+- `dbConfig`: Database configuration, read-only, returns dictionary containing maxLen
+
+**Functions:**
+- `getPrivateJson()`: Get variable private properties
+- `save(triggerEvent=1)`: Save to database, returns saved data
+- `delete(**kwargs)`: Delete data from database, returns deletion result
+- `formatDbData(value)`: Convert upper-level data to lower-level SQL format, returns formatted data
+- `doFormat(rowData)`: Format row data, returns formatted data
+- `getDisplayValue()`: Get display value, returns string
+- `getRelateData(rowDataList, level=2)`: Get related data, no return value
+
+---
+
+### MultiRelateData (Related Multiple Selection)
+**Inherits:** `RowList`, `RelateData`
+
+---
+### QFilter (Query Filter)
+**Properties:**
+- `value`: Variable value, read-write
+
+**Functions:**
+- `append(q)`: Append query condition, q is a query condition built with [Q Expression](./q-expressions)
 

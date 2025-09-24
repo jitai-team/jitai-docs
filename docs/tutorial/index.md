@@ -2,7 +2,7 @@
 sidebar_position: 0
 ---
 
-# Guide
+# Tutorial Index
 
 Welcome to the JitAi Getting Started Tutorial! Here we provide step-by-step learning guides that are progressive and practice-oriented, helping you quickly master JitAi application development and create useful AI applications as soon as possible.
 

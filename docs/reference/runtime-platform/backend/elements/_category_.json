@@ -3,6 +3,7 @@
   "position": 4,
   "link": {
     "type": "generated-index",
+    "slug": "reference/runtime-platform/backend/elements",
     "description": "Backend element API documentation including element definitions and usage methods"
   }
 } 

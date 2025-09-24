@@ -3,32 +3,32 @@ sidebar_position: 4
 slug: data-entry-page
 ---
 
-# 数据录入页面
-数据录入页面是专门用于创建表单数据录入界面的页面类型，基于网格布局架构实现可视化表单设计和数据提交功能。它负责表单组件的布局管理、数据模型绑定和用户交互处理，支持可视化配置的表单字段排列、验证规则和提交流程。
+# Data Entry Page
+Data Entry Page is a page type specifically designed for creating form data entry interfaces, implementing visual form design and data submission functionality based on a grid layout architecture. It is responsible for form component layout management, data model binding, and user interaction handling, supporting visual configuration of form field arrangement, validation rules, and submission processes.
 
-数据录入页面元素分层结构为Meta（pages.Meta） → Type（pages.FormPageType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建数据录入页面实例元素。
+The Data Entry Page element hierarchy is Meta (pages.Meta) → Type (pages.FormPageType) → Instance. Developers can quickly create data entry page instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的pages.FormPageType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official pages.FormPageType element provided by JitAI in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```title="数据录入页面实例目录结构"
+## Quick Start
+### Create Instance Element
+#### Directory Structure
+```title="Data Entry Page Instance Directory Structure"
 testDataEntryPage/
-├── e.json              # 元素配置文件
-├── scheme.json         # 页面布局和组件配置
-├── page.ts            # 页面逻辑代码
-├── PageRender.tsx     # 页面渲染组件
-├── page.style.ts      # 页面样式文件
-└── index.ts           # 入口文件
+├── e.json              # Element configuration file
+├── scheme.json         # Page layout and component configuration
+├── page.ts            # Page logic code
+├── PageRender.tsx     # Page rendering component
+├── page.style.ts      # Page style file
+└── index.ts           # Entry file
 ```
 
-#### e.json文件
-```json title="e.json配置示例"
+#### e.json File
+```json title="e.json Configuration Example"
 {
   "type": "pages.FormPageType",
   "resourceName": "index",
-  "title": "客户信息录入",
+  "title": "Customer Information Entry",
   "dataModel": "models.CustomerModel",
   "platform": "PC",
   "frontBundleEntry": "./index.ts",
@@ -36,8 +36,8 @@ testDataEntryPage/
 }
 ```
 
-#### scheme.json文件
-```json title="scheme.json配置示例"
+#### scheme.json File
+```json title="scheme.json Configuration Example"
 {
   "layout": [
     {
@@ -55,7 +55,7 @@ testDataEntryPage/
   "componentList": [
     {
       "name": "Form1",
-      "title": "表单组件",
+      "title": "Form Component",
       "type": "components.Form",
       "config": {
         "isShowAllEditField": true,
@@ -86,7 +86,7 @@ testDataEntryPage/
   "variableList": [
     {
       "name": "currentUser",
-      "title": "当前用户",
+      "title": "Current User",
       "dataType": "Stext",
       "value": ""
     }
@@ -94,11 +94,11 @@ testDataEntryPage/
   "functionList": [
     {
       "name": "validateForm",
-      "title": "表单验证",
+      "title": "Form Validation",
       "args": [
         {
           "name": "formData",
-          "title": "表单数据",
+          "title": "Form Data",
           "dataType": "JitDict"
         }
       ],
@@ -110,8 +110,8 @@ testDataEntryPage/
 }
 ```
 
-#### page.style.ts文件
-```typescript title="page.style.ts样式配置"
+#### page.style.ts File
+```typescript title="page.style.ts Style Configuration"
 import type { GlobalToken } from 'antd';
 import { css } from '@emotion/react';
 
@@ -140,8 +140,8 @@ export const pageGlobalStyle = (token: GlobalToken) => css`
 `;
 ```
 
-#### page.ts文件
-```typescript title="page.ts实现示例"
+#### page.ts File
+```typescript title="page.ts Implementation Example"
 import { Jit } from 'jit';
 import schemeJson from './scheme.json';
 
@@ -153,20 +153,20 @@ class PageCls extends Jit.GridPage {
     scheme: Record<string, any> = schemeJson;
     
     bindEvent() {
-        // 绑定表单提交事件
+        // Bind form submit event
         this.Form1.subscribeEvent("afterSubmit", async (e) => {
-            console.log("表单提交成功:", e.data);
+            console.log("Form submitted successfully:", e.data);
             this.refresh();
         });
         
-        // 绑定表单调用事件
+        // Bind form call event
         this.Form1.subscribeEvent("afterCall", async () => {
-            console.log("表单调用完成");
+            console.log("Form call completed");
         });
     }
     
     validateForm(formData: any): boolean {
-        // 自定义验证逻辑
+        // Custom validation logic
         return formData.custName && formData.phone;
     }
 }
@@ -174,96 +174,96 @@ class PageCls extends Jit.GridPage {
 export default PageCls;
 ```
 
-#### 调用示例
-```typescript title="在其他页面中调用数据录入页面"
-// 跳转到数据录入页面
+#### Usage Example
+```typescript title="Calling Data Entry Page from Other Pages"
+// Navigate to data entry page
 this.app.openPage('pages.CustomerDataEntry');
 
-// 在模态框中打开数据录入页面
+// Open data entry page in modal
 this.app.openModal({
     element: 'pages.CustomerDataEntry',
-    title: '新增客户',
+    title: 'Add Customer',
     width: 800,
     height: 600
 });
 
-// 带参数跳转
+// Navigate with parameters
 this.app.openPage('pages.CustomerDataEntry', {
     userId: '123',
     deptId: 'dept001'
 });
 ```
 
-## 元素配置
-### e.json配置
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| type | string | 是 | - | 固定值"pages.FormPageType" |
-| title | string | 是 | - | 页面标题 |
-| dataModel | string | 否 | - | 关联的数据模型fullName |
-| platform | string | 否 | "PC" | 平台类型，支持PC、Mobile |
-| resourceName | string | 否 | "index" | 资源名称 |
-| frontBundleEntry | string | 否 | "./index.ts" | 前端入口文件路径 |
-| outputName | string | 否 | "index" | 输出名称 |
+## Element Configuration
+### e.json Configuration
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| type | string | Yes | - | Fixed value "pages.FormPageType" |
+| title | string | Yes | - | Page title |
+| dataModel | string | No | - | Associated data model fullName |
+| platform | string | No | "PC" | Platform type, supports PC, Mobile |
+| resourceName | string | No | "index" | Resource name |
+| frontBundleEntry | string | No | "./index.ts" | Frontend entry file path |
+| outputName | string | No | "index" | Output name |
 
-### scheme.json配置
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| layout | Layout[] | 是 | [] | 组件布局配置数组 |
-| componentList | object[] | 是 | [] | 页面组件配置列表 |
-| variableList | object[] | 否 | [] | 页面变量列表 |
-| functionList | object[] | 否 | [] | 页面函数列表 |
-| matchUarParamsVariableNameList | string[] | 否 | [] | 匹配URL参数的变量名列表 |
-| autoIncrementId | number | 否 | 1 | 自增ID |
-| aiConfig | object | 否 | - | AI配置 |
+### scheme.json Configuration
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| layout | Layout[] | Yes | [] | Component layout configuration array |
+| componentList | object[] | Yes | [] | Page component configuration list |
+| variableList | object[] | No | [] | Page variable list |
+| functionList | object[] | No | [] | Page function list |
+| matchUarParamsVariableNameList | string[] | No | [] | Variable name list matching URL parameters |
+| autoIncrementId | number | No | 1 | Auto-increment ID |
+| aiConfig | object | No | - | AI configuration |
 
-#### Layout布局配置
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| i | string | 是 | - | 组件唯一标识 |
-| x | number | 是 | - | 水平位置（网格单位） |
-| y | number | 是 | - | 垂直位置（网格单位） |
-| w | number | 是 | - | 宽度（网格单位） |
-| h | number | 是 | - | 高度（网格单位） |
-| minW | number | 否 | - | 最小宽度 |
-| minH | number | 否 | - | 最小高度 |
-| maxW | number | 否 | - | 最大宽度 |
-| maxH | number | 否 | - | 最大高度 |
-| static | boolean | 否 | false | 是否静态（不可拖拽） |
-| isDraggable | boolean | 否 | true | 是否可拖拽 |
-| isResizable | boolean | 否 | true | 是否可调整大小 |
+#### Layout Configuration
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| i | string | Yes | - | Component unique identifier |
+| x | number | Yes | - | Horizontal position (grid units) |
+| y | number | Yes | - | Vertical position (grid units) |
+| w | number | Yes | - | Width (grid units) |
+| h | number | Yes | - | Height (grid units) |
+| minW | number | No | - | Minimum width |
+| minH | number | No | - | Minimum height |
+| maxW | number | No | - | Maximum width |
+| maxH | number | No | - | Maximum height |
+| static | boolean | No | false | Whether static (non-draggable) |
+| isDraggable | boolean | No | true | Whether draggable |
+| isResizable | boolean | No | true | Whether resizable |
 
-## 方法 
+## Methods
 ### init
-初始化页面，加载配置、变量和组件。
+Initialize page, load configuration, variables and components.
 
-#### 返回值
-| 类型 | 说明 |
-|------|------|
-| Promise&lt;void&gt; | 初始化完成Promise |
+#### Return Value
+| Type | Description |
+|------|-------------|
+| Promise&lt;void&gt; | Initialization completion Promise |
 
-#### 使用示例
-```typescript title="页面初始化"
+#### Usage Example
+```typescript title="Page Initialization"
 class PageCls extends Jit.GridPage {
     async init() {
         await super.init();
-        console.log('页面初始化完成，isReady:', this.isReady);
+        console.log('Page initialization completed, isReady:', this.isReady);
     }
 }
 ```
 
 ### bindEvent
-绑定页面事件，在页面初始化后自动调用。
+Bind page events, automatically called after page initialization.
 
-#### 使用示例
-```typescript title="事件绑定"
+#### Usage Example
+```typescript title="Event Binding"
 bindEvent() {
-    // 绑定表单提交事件
+    // Bind form submit event
     this.Form1.subscribeEvent("afterSubmit", async (e) => {
-        console.log('提交的数据:', e.data);
+        console.log('Submitted data:', e.data);
     });
     
-    // 绑定页面刷新事件
+    // Bind page refresh event
     this.subscribeEvent("PAGE_REFRESH", async () => {
         this.refresh();
     });
@@ -520,130 +520,130 @@ const formData = this.getVariableValue('Form1.formData');
 ### destroy
 销毁页面实例，清理资源。
 
-## 属性
+## Properties
 ### scheme
-页面配置方案对象。
+Page configuration scheme object.
 
-- **类型**: `IScheme`
-- **说明**: 包含layout、componentList、variableList等配置信息
+- **Type**: `IScheme`
+- **Description**: Contains configuration information such as layout, componentList, variableList, etc.
 
 ### compInsList
-组件实例列表。
+Component instance list.
 
-- **类型**: `any[]`
-- **说明**: 页面所有组件实例的数组
+- **Type**: `any[]`
+- **Description**: Array of all component instances in the page
 
 ### compInsDict
-组件实例字典。
+Component instance dictionary.
 
-- **类型**: `Record<string, any>`
-- **说明**: 以组件名为key的组件实例字典
+- **Type**: `Record<string, any>`
+- **Description**: Dictionary of component instances with component names as keys
 
 ### isReady
-页面就绪状态。
+Page ready state.
 
-- **类型**: `boolean`
-- **说明**: 标识页面是否已完成初始化
+- **Type**: `boolean`
+- **Description**: Indicates whether the page has completed initialization
 
 ### extend
-继承的页面元素名称。
+Inherited page element name.
 
-- **类型**: `string | undefined`
-- **说明**: 当前页面继承的父页面fullName
+- **Type**: `string | undefined`
+- **Description**: FullName of the parent page that the current page inherits from
 
 ### app
-应用实例。
+Application instance.
 
-- **类型**: `App`
-- **说明**: 当前运行时应用实例
+- **Type**: `App`
+- **Description**: Current runtime application instance
 
 ### name
-页面名称。
+Page name.
 
-- **类型**: `string`
-- **说明**: 页面元素名称
+- **Type**: `string`
+- **Description**: Page element name
 
 ### title
-页面标题。
+Page title.
 
-- **类型**: `string`
-- **说明**: 页面显示标题
+- **Type**: `string`
+- **Description**: Page display title
 
 ### fullName
-页面完整名称。
+Complete page name.
 
-- **类型**: `string`
-- **说明**: 页面元素的完整路径名
+- **Type**: `string`
+- **Description**: Complete path name of the page element
 
 ### ePath
-页面元素路径。
+Page element path.
 
-- **类型**: `string`
-- **说明**: 页面元素在文件系统中的路径
+- **Type**: `string`
+- **Description**: Path of the page element in the file system
 
 ### pagePerm
-页面权限配置。
+Page permission configuration.
 
-- **类型**: `Record<string, any> | undefined`
-- **说明**: 页面的权限控制配置
+- **Type**: `Record<string, any> | undefined`
+- **Description**: Permission control configuration of the page
 
 ### aiConfig
-AI配置。
+AI configuration.
 
-- **类型**: `object`
-- **说明**: 页面的AI助手配置信息
+- **Type**: `object`
+- **Description**: AI assistant configuration information of the page
 
-## 高级特性
-### 页面继承
-数据录入页面支持继承机制，可以基于已有页面创建新页面。
+## Advanced Features
+### Page Inheritance
+Data Entry Page supports inheritance mechanism, allowing creation of new pages based on existing pages.
 
-#### 配置示例
-```json title="继承配置"
+#### Configuration Example
+```json title="Inheritance Configuration"
 {
   "type": "pages.FormPageType",
-  "title": "高级客户录入页面",
+  "title": "Advanced Customer Entry Page",
   "extend": "pages.BasicCustomerForm",
   "dataModel": "models.CustomerModel"
 }
 ```
 
-#### 使用示例
-```typescript title="继承实现"
+#### Usage Example
+```typescript title="Inheritance Implementation"
 class AdvancedPageCls extends Jit.GridPage {
     constructor(info: any = {}) {
         super(info);
-        // 继承的页面会自动合并父页面的配置
+        // Inherited pages automatically merge parent page configuration
     }
     
     bindEvent() {
-        super.bindEvent?.(); // 调用父页面事件绑定
+        super.bindEvent?.(); // Call parent page event binding
         
-        // 添加新的事件绑定
+        // Add new event bindings
         this.Form1.subscribeEvent("beforeSubmit", async (e) => {
-            // 高级验证逻辑
+            // Advanced validation logic
             return this.validateAdvancedRules(e.data);
         });
     }
 }
 ```
 
-### URL参数绑定
-通过matchUarParamsVariableNameList配置，页面变量可以自动从URL参数获取值。
+### URL Parameter Binding
+Through matchUarParamsVariableNameList configuration, page variables can automatically get values from URL parameters.
 
-#### 配置示例
-```json title="URL参数绑定配置"
+#### Configuration Example
+```json title="URL Parameter Binding Configuration"
 {
   "scheme": {
     "matchUarParamsVariableNameList": ["userId", "deptId"],
     "variableList": [
       {
         "name": "userId",
-        "title": "用户ID",
+        "title": "User ID",
         "dataType": "Stext"
       },
       {
         "name": "deptId", 
-        "title": "部门ID",
+        "title": "Department ID",
         "dataType": "Stext"
       }
     ]
@@ -651,18 +651,18 @@ class AdvancedPageCls extends Jit.GridPage {
 }
 ```
 
-#### 使用示例
-```typescript title="URL参数使用"
-// 页面URL: /pages/CustomerForm?userId=123&deptId=dept001
+#### Usage Example
+```typescript title="URL Parameter Usage"
+// Page URL: /pages/CustomerForm?userId=123&deptId=dept001
 class PageCls extends Jit.GridPage {
     bindEvent() {
-        // 页面初始化时，userId和deptId自动从URL获取值
-        console.log('用户ID:', this.userId.value); // 输出: 123
-        console.log('部门ID:', this.deptId.value); // 输出: dept001
+        // When page initializes, userId and deptId automatically get values from URL
+        console.log('User ID:', this.userId.value); // Output: 123
+        console.log('Department ID:', this.deptId.value); // Output: dept001
         
-        // 监听URL变化
+        // Listen for URL changes
         this.subscribeEvent('URL_CHANGED', () => {
-            this.refreshPageVariable(); // 重新从URL获取参数
+            this.refreshPageVariable(); // Re-get parameters from URL
         });
     }
 }

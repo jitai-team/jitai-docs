@@ -3,40 +3,40 @@ sidebar_position: 2
 slug: vector-database
 ---
 
-# 向量数据库
-向量数据库是用于向量存储和检索的数据库，提供语义搜索功能。它负责向量存储、相似度检索、元数据过滤和集合管理，支持余弦相似度、欧几里得距离等多种度量算法，为AI知识库和语义搜索提供数据支撑。
+# Vector Database
+Vector database is a database for vector storage and retrieval, providing semantic search functionality. It handles vector storage, similarity retrieval, metadata filtering and collection management, supporting various metric algorithms such as cosine similarity, Euclidean distance, etc., providing data support for AI knowledge bases and semantic search.
 
-向量数据库元素分层结构为Meta（vectordbs.Meta） → Type（vectordbs.ChromaType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建向量数据库实例元素。
+The vector database element has a hierarchical structure of Meta (vectordbs.Meta) → Type (vectordbs.ChromaType) → Instance. Developers can quickly create vector database instance elements through JitAi's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的vectordbs.ChromaType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `vectordbs.ChromaType` element provided by JitAi in their own App to implement their own encapsulation.
 
-**支持的Type类型：**
+**Supported Type Types:**
 
-| Type元素 | fullName | 向量数据库 | 描述 |
+| Type Element | fullName | Vector Database | Description |
 |----------|----------|------------|------|
-| ChromaType | vectordbs.ChromaType | Chroma | 轻量级向量数据库，支持持久化和HTTP模式，默认集成 |
+| ChromaType | vectordbs.ChromaType | Chroma | Lightweight vector database, supports persistent and HTTP modes, integrated by default |
 
-## 快速开始 
-### 创建实例元素
-以下是创建一个Chroma向量数据库实例元素的完整示例：
+## Quick Start 
+### Creating Instance Elements
+The following is a complete example of creating a Chroma vector database instance element:
 
-#### 目录结构
+#### Directory Structure
 ```
 myapp/vectordbs/MyVectorDB/
 ├── e.json
 └── config.json
 ```
 
-#### e.json文件
+#### e.json File
 ```json title="myapp/vectordbs/MyVectorDB/e.json"
 {
-  "title": "我的向量数据库",
+  "title": "My Vector Database",
   "type": "vectordbs.ChromaType",
   "backendBundleEntry": "."
 }
 ```
 
-#### config.json文件
+#### config.json File
 ```json title="myapp/vectordbs/MyVectorDB/config.json"
 {
   "mode": "persistent",
@@ -45,262 +45,262 @@ myapp/vectordbs/MyVectorDB/
 }
 ```
 
-#### 调用示例
+#### Usage Example
 ```python
-# 获取向量数据库元素
+# Get vector database element
 vector_db = app.getElement("vectordbs.MyVectorDB")
 
-# 健康检查
+# Health check
 health = vector_db.health_check()
-print("数据库状态:", health['status'])
+print("Database status:", health['status'])
 
-# 创建集合
+# Create collection
 vector_db.create_collection(
     name="documents",
-    metadata={"description": "文档向量集合"},
+    metadata={"description": "Document vector collection"},
     distance_metric="cosine"
 )
 
-# 添加向量数据
+# Add vector data
 result = vector_db.add_vectors(
     collection_name="documents",
     embeddings=[[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]],
-    metadata=[{"title": "文档1"}, {"title": "文档2"}],
+    metadata=[{"title": "Document 1"}, {"title": "Document 2"}],
     ids=["doc1", "doc2"]
 )
 ```
 
-## 元素配置
-### e.json配置
-| 参数 | 类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Parameter | Type | Required | Description |
 |------|------|------|------|
-| title | str | 是 | 实例元素显示名称 |
-| type | str | 是 | 指向Type元素fullName，如`vectordbs.ChromaType` |
-| backendBundleEntry | str | 是 | 固定为`"."` |
+| title | str | Yes | Instance element display name |
+| type | str | Yes | Points to Type element fullName, such as `vectordbs.ChromaType` |
+| backendBundleEntry | str | Yes | Fixed as `"."` |
 
-### config.json配置
-#### 通用配置
-| 参数 | 类型 | 必填 | 默认值 | 说明 |
+### config.json Configuration
+#### General Configuration
+| Parameter | Type | Required | Default Value | Description |
 |------|------|------|--------|------|
-| mode | str | 否 | "persistent" | 连接模式：persistent/http |
-| timeout | int | 否 | 30 | 连接超时时间（秒） |
+| mode | str | No | "persistent" | Connection mode: persistent/http |
+| timeout | int | No | 30 | Connection timeout (seconds) |
 
-#### 持久化模式配置
-| 参数 | 类型 | 必填 | 说明 |
+#### Persistent Mode Configuration
+| Parameter | Type | Required | Description |
 |------|------|------|------|
-| persist_directory | str | 是 | 持久化存储目录路径 |
+| persist_directory | str | Yes | Persistent storage directory path |
 
-#### HTTP模式配置
-| 参数 | 类型 | 必填 | 默认值 | 说明 |
+#### HTTP Mode Configuration
+| Parameter | Type | Required | Default Value | Description |
 |------|------|------|--------|------|
-| host | str | 否 | "localhost" | 数据库服务器地址 |
-| port | int | 否 | 8000 | 数据库服务器端口 |
-| auth_token | str | 否 | - | 认证令牌 |
+| host | str | No | "localhost" | Database server address |
+| port | int | No | 8000 | Database server port |
+| auth_token | str | No | - | Authentication token |
 
-## 方法 
+## Methods 
 ### health_check {#health_check}
-检查向量数据库的连接状态和运行健康情况，返回数据库基本信息。
+Check the connection status and running health of the vector database, return basic database information.
 
-**方法签名**
+**Method Signature**
 ```python
 def health_check(self) -> Dict[str, Any]
 ```
 
-#### 参数详解
-无需参数
+#### Parameter Details
+No parameters required
 
-#### 返回值
-- **类型**：Dict
-- **说明**：包含数据库状态信息的字典
+#### Return Value
+- **Type**: Dict
+- **Description**: Dictionary containing database status information
 
-**健康状态返回字段：**
-| 字段 | 类型 | 说明 |
+**Healthy Status Return Fields:**
+| Field | Type | Description |
 |------|------|------|
-| status | str | 数据库状态：healthy/unhealthy |
-| db_type | str | 数据库类型，固定为"chroma" |
-| mode | str | 连接模式：persistent/http |
-| collections_count | int | 集合数量 |
-| heartbeat | int | 心跳检测结果 |
-| client_connected | bool | 客户端连接状态 |
-| version | str | ChromaDB版本信息 |
+| status | str | Database status: healthy/unhealthy |
+| db_type | str | Database type, fixed as "chroma" |
+| mode | str | Connection mode: persistent/http |
+| collections_count | int | Number of collections |
+| heartbeat | int | Heartbeat detection result |
+| client_connected | bool | Client connection status |
+| version | str | ChromaDB version information |
 
-**异常状态返回字段：**
-| 字段 | 类型 | 说明 |
+**Exception Status Return Fields:**
+| Field | Type | Description |
 |------|------|------|
-| status | str | 固定为"unhealthy" |
-| error | str | 错误信息描述 |
-| db_type | str | 数据库类型，固定为"chroma" |
-| mode | str | 连接模式：persistent/http |
-| client_connected | bool | 固定为False |
+| status | str | Fixed as "unhealthy" |
+| error | str | Error message description |
+| db_type | str | Database type, fixed as "chroma" |
+| mode | str | Connection mode: persistent/http |
+| client_connected | bool | Fixed as False |
 
-#### 使用示例
+#### Usage Example
 ```python
-# 获取向量数据库元素
+# Get vector database element
 vector_db = app.getElement("vectordbs.MyVectorDB")
 
-# 执行健康检查
+# Execute health check
 health = vector_db.health_check()
-print("数据库状态:", health['status'])
-print("集合数量:", health.get('collections_count', 0))
+print("Database status:", health['status'])
+print("Collections count:", health.get('collections_count', 0))
 ```
 
 ### create_collection {#create_collection}
-在向量数据库中创建新的集合，用于存储和管理相关的向量数据。
+Create a new collection in the vector database for storing and managing related vector data.
 
-**方法签名**
+**Method Signature**
 ```python
 def create_collection(self, name: str, metadata: Optional[Dict[str, Any]] = None, distance_metric: str = "cosine") -> Any
 ```
 
-#### 参数详解
-| 参数 | 类型 | 必填 | 默认值 | 说明 |
+#### Parameter Details
+| Parameter | Type | Required | Default Value | Description |
 |------|------|------|--------|------|
-| name | str | 是 | - | 集合名称，必须唯一 |
-| metadata | Dict | 否 | None | 集合元数据，可选的描述信息 |
-| distance_metric | str | 否 | "cosine" | 距离度量算法 |
+| name | str | Yes | - | Collection name, must be unique |
+| metadata | Dict | No | None | Collection metadata, optional description information |
+| distance_metric | str | No | "cosine" | Distance metric algorithm |
 
-**支持的distance_metric值：**
-- `cosine`：余弦相似度（推荐）
-- `euclidean`：欧几里得距离
-- `l2`：L2范数距离
-- `ip`：内积距离
+**Supported distance_metric values:**
+- `cosine`: Cosine similarity (recommended)
+- `euclidean`: Euclidean distance
+- `l2`: L2 norm distance
+- `ip`: Inner product distance
 
-#### 返回值
-- **类型**：Any
-- **说明**：创建的集合对象
+#### Return Value
+- **Type**: Any
+- **Description**: Created collection object
 
-#### 使用示例
+#### Usage Example
 ```python
-# 获取向量数据库元素
+# Get vector database element
 vector_db = app.getElement("vectordbs.MyVectorDB")
 
-# 配置集合参数
+# Configure collection parameters
 collection_name = "jitai_documents"
-metadata = {"description": "JitAi框架演示集合"}
+metadata = {"description": "JitAi framework demo collection"}
 
 try:
-    # 创建集合
+    # Create collection
     vector_db.create_collection(
         name=collection_name,
         metadata=metadata,
         distance_metric="cosine"
     )
-    print("集合创建成功:", collection_name)
+    print("Collection created successfully:", collection_name)
 except Exception as e:
     if "already exists" in str(e):
-        print("集合已存在:", collection_name)
+        print("Collection already exists:", collection_name)
     else:
         raise e
 ```
 
 ### add_vectors {#add_vectors}
-将向量数据及其元数据存储到指定的集合中。
+Store vector data and its metadata to the specified collection.
 
-**方法签名**
+**Method Signature**
 ```python
 def add_vectors(self, collection_name: str, embeddings: List[List[float]], metadata: Optional[List[Dict[str, Any]]] = None, ids: Optional[List[str]] = None) -> Dict[str, Any]
 ```
 
-#### 参数详解
-| 参数 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter | Type | Required | Description |
 |------|------|------|------|
-| collection_name | str | 是 | 目标集合名称 |
-| embeddings | list | 是 | 向量数据列表，每个向量为浮点数列表 |
-| metadata | list | 否 | 向量对应的元数据列表，可选 |
-| ids | list | 否 | 向量ID列表，可选，如不提供将自动生成 |
+| collection_name | str | Yes | Target collection name |
+| embeddings | list | Yes | Vector data list, each vector is a list of floats |
+| metadata | list | No | Metadata list corresponding to vectors, optional |
+| ids | list | No | Vector ID list, optional, auto-generated if not provided |
 
-#### 返回值
-- **类型**：Dict
-- **说明**：包含添加结果信息的字典
+#### Return Value
+- **Type**: Dict
+- **Description**: Dictionary containing addition result information
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 |------|------|------|
-| added_count | int | 成功添加的向量数量 |
-| failed_count | int | 添加失败的向量数量 |
-| collection_name | str | 目标集合名称 |
-| vector_dimension | int | 向量维度 |
-| batch_size_used | int | 使用的批处理大小 |
+| added_count | int | Number of successfully added vectors |
+| failed_count | int | Number of failed vector additions |
+| collection_name | str | Target collection name |
+| vector_dimension | int | Vector dimension |
+| batch_size_used | int | Batch size used |
 
-#### 使用示例
+#### Usage Example
 ```python
-# 获取向量数据库元素
+# Get vector database element
 vector_db = app.getElement("vectordbs.MyVectorDB")
 
-# 配置向量数据
+# Configure vector data
 collection_name = "jitai_documents"
 sample_embeddings = [
-    [0.1, 0.2, 0.3, 0.4, 0.5],  # 文档1的向量
-    [0.2, 0.3, 0.4, 0.5, 0.6],  # 文档2的向量
-    [0.3, 0.4, 0.5, 0.6, 0.7],  # 文档3的向量
+    [0.1, 0.2, 0.3, 0.4, 0.5],  # Document 1 vector
+    [0.2, 0.3, 0.4, 0.5, 0.6],  # Document 2 vector
+    [0.3, 0.4, 0.5, 0.6, 0.7],  # Document 3 vector
 ]
 
-# 配置元数据
+# Configure metadata
 sample_metadata = [
-    {"title": "JitAi架构文档", "category": "技术", "source": "internal"},
-    {"title": "向量数据库使用指南", "category": "教程", "source": "docs"},
-    {"title": "AI助手开发实践", "category": "技术", "source": "blog"},
+    {"title": "JitAi Architecture Documentation", "category": "Technology", "source": "internal"},
+    {"title": "Vector Database Usage Guide", "category": "Tutorial", "source": "docs"},
+    {"title": "AI Assistant Development Practice", "category": "Technology", "source": "blog"},
 ]
 
-# 配置ID
+# Configure IDs
 sample_ids = ["jitai_doc_1", "jitai_doc_2", "jitai_doc_3"]
 
-# 存储向量数据
+# Store vector data
 result = vector_db.add_vectors(
     collection_name=collection_name,
     embeddings=sample_embeddings,
     metadata=sample_metadata,
     ids=sample_ids
 )
-print("添加向量数量:", result['added_count'])
+print("Added vector count:", result['added_count'])
 ```
 
 ### query_vectors {#query_vectors}
-基于查询向量在集合中搜索最相似的向量数据。
+Search for the most similar vector data in the collection based on query vector.
 
-**方法签名**
+**Method Signature**
 ```python
 def query_vectors(self, collection_name: str, query_embedding: List[float], n_results: int = 10, where: Optional[Dict[str, Any]] = None, include: Optional[List[str]] = None) -> Dict[str, Any]
 ```
 
-#### 参数详解
-| 参数 | 类型 | 必填 | 默认值 | 说明 |
+#### Parameter Details
+| Parameter | Type | Required | Default Value | Description |
 |------|------|------|--------|------|
-| collection_name | str | 是 | - | 目标集合名称 |
-| query_embedding | list | 是 | - | 查询向量，浮点数列表 |
-| n_results | int | 否 | 10 | 返回结果数量 |
-| where | Dict | 否 | None | 元数据过滤条件，可选 |
-| include | list | 否 | ["metadatas", "distances"] | 包含的返回字段 |
+| collection_name | str | Yes | - | Target collection name |
+| query_embedding | list | Yes | - | Query vector, list of floats |
+| n_results | int | No | 10 | Number of results to return |
+| where | Dict | No | None | Metadata filter conditions, optional |
+| include | list | No | ["metadatas", "distances"] | Included return fields |
 
-**支持的include值：**
-- `"metadatas"`：包含元数据
-- `"distances"`：包含距离值
-- `"embeddings"`：包含向量数据
+**Supported include values:**
+- `"metadatas"`: Include metadata
+- `"distances"`: Include distance values
+- `"embeddings"`: Include vector data
 
-#### 返回值
-- **类型**：Dict
-- **说明**：包含搜索结果的字典
+#### Return Value
+- **Type**: Dict
+- **Description**: Dictionary containing search results
 
-| 字段 | 类型 | 说明 |
+| Field | Type | Description |
 |------|------|------|
-| results | list | 搜索结果列表 |
+| results | list | Search results list |
 
-**results中每个项目包含：**
-- `id`：向量ID
-- `distance`：距离值
-- `similarity`：相似度（0-1，1最相似）
-- `metadata`：元数据（如果包含）
+**Each item in results contains:**
+- `id`: Vector ID
+- `distance`: Distance value
+- `similarity`: Similarity (0-1, 1 is most similar)
+- `metadata`: Metadata (if included)
 
-#### 使用示例
+#### Usage Example
 ```python
-# 获取向量数据库元素
+# Get vector database element
 vector_db = app.getElement("vectordbs.MyVectorDB")
 
-# 配置查询参数
+# Configure query parameters
 collection_name = "jitai_documents"
-query_embedding = [0.15, 0.25, 0.35, 0.45, 0.55]  # 查询向量
-where_condition = {"category": "技术"}  # 过滤条件
+query_embedding = [0.15, 0.25, 0.35, 0.45, 0.55]  # Query vector
+where_condition = {"category": "Technology"}  # Filter condition
 
-# 执行相似性搜索
+# Execute similarity search
 search_results = vector_db.query_vectors(
     collection_name=collection_name,
     query_embedding=query_embedding,
@@ -309,36 +309,36 @@ search_results = vector_db.query_vectors(
     include=["metadatas", "distances"]
 )
 
-# 处理搜索结果
-print("搜索结果数量:", len(search_results["results"]))
+# Process search results
+print("Search results count:", len(search_results["results"]))
 for item in search_results["results"]:
-    print("文档ID:", item['id'])
-    print("相似度:", item.get('similarity', 'N/A'))
-    print("标题:", item.get('metadata', {}).get('title', 'N/A'))
+    print("Document ID:", item['id'])
+    print("Similarity:", item.get('similarity', 'N/A'))
+    print("Title:", item.get('metadata', {}).get('title', 'N/A'))
 ```
 
-## 属性
-暂无
+## Properties
+None
 
-## 高级特性
-### 自适应批处理
-系统根据向量维度自动调整批处理大小，优化存储性能：
-- 384维：批大小2000
-- 768维：批大小1000
-- 1536维：批大小500
-- 2048维+：批大小200
+## Advanced Features
+### Adaptive Batch Processing
+System automatically adjusts batch size based on vector dimensions to optimize storage performance:
+- 384 dimensions: batch size 2000
+- 768 dimensions: batch size 1000
+- 1536 dimensions: batch size 500
+- 2048+ dimensions: batch size 200
 
-### 距离度量算法
-支持多种距离度量算法，满足不同场景需求：
-- **余弦相似度**：适用于文本语义分析，默认推荐
-- **欧几里得距离**：适用于地理位置等空间数据
-- **L2范数**：适用于图像特征等高维数据
-- **内积**：适用于推荐系统等场景
+### Distance Metric Algorithms
+Supports multiple distance metric algorithms to meet different scenario requirements:
+- **Cosine Similarity**: Suitable for text semantic analysis, default recommendation
+- **Euclidean Distance**: Suitable for spatial data like geographic locations
+- **L2 Norm**: Suitable for high-dimensional data like image features
+- **Inner Product**: Suitable for recommendation systems and other scenarios
 
-### 智能异常处理
-内置智能异常映射机制，将底层数据库错误转换为统一的错误码，便于问题诊断和处理。
+### Intelligent Exception Handling
+Built-in intelligent exception mapping mechanism, converts underlying database errors to unified error codes for easier problem diagnosis and handling.
 
-### 连接模式灵活切换
-支持持久化模式和HTTP模式，满足不同部署需求：
-- **持久化模式**：适合单机部署，数据本地存储
-- **HTTP模式**：适合分布式部署，支持远程访问和认证
+### Flexible Connection Mode Switching
+Supports persistent mode and HTTP mode to meet different deployment requirements:
+- **Persistent Mode**: Suitable for single-machine deployment, local data storage
+- **HTTP Mode**: Suitable for distributed deployment, supports remote access and authentication

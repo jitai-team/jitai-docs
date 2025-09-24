@@ -1,16 +1,16 @@
 ---
 slug: gantt-chart
 ---
-# 甘特图
-甘特图是项目进度和时间管理可视化组件，基于VTable甘特图库实现任务时间线的直观展示。它负责任务进度跟踪、时间依赖关系显示和进度调整交互，支持拖拽修改、多时间维度切换和实时数据更新等功能，适用于项目管理、生产计划和资源调度等业务场景。
+# Gantt Chart
+Gantt chart is a project progress and time management visualization component, implemented based on VTable Gantt chart library to provide intuitive display of task timelines. It handles task progress tracking, time dependency relationship display, and progress adjustment interactions, supporting drag-and-drop modifications, multi-time dimension switching, and real-time data updates. It is suitable for business scenarios such as project management, production planning, and resource scheduling.
 
-甘特图元素分层结构为Meta（components.Meta） → Type（components.GanttChart） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建甘特图实例元素。
+The Gantt chart element has a hierarchical structure of Meta (components.Meta) → Type (components.GanttChart) → Instance. Developers can quickly create Gantt chart instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.GanttChartType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `components.GanttChartType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基础配置示例
-```text title="推荐目录结构"
+## Quick Start 
+### Basic Configuration Example
+```text title="Recommended Directory Structure"
 components/
 └── ProjectGantt/
     ├── e.json
@@ -20,7 +20,7 @@ components/
 ```json title="components/ProjectGantt/e.json"
 {
   "type": "components.GanttChart",
-  "title": "项目甘特图",
+  "title": "Project Gantt Chart",
   "config": {
     "requireElements": [
       {
@@ -42,91 +42,91 @@ components/
 }
 ```
 
-### 配置属性说明
-| 属性名 | 类型 | 说明 | 默认值 | 必填 |
+### Configuration Properties
+| Property Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| titleField | string | 任务标题字段名 | - | 是 |
-| defaultViewType | string | 默认时间视图，可选值：day/week/month/quarter/year | week | 否 |
-| startTime | string | 开始时间字段名 | - | 是 |
-| endTime | string | 结束时间字段名 | - | 是 |
-| levelRelateField | string | 层级关系字段名 | - | 否 |
-| orderRelateField | string | 先后依赖关系字段名 | - | 否 |
-| progressField | string | 进度字段名 | - | 否 |
-| listShowFields | string[] | 左侧列表显示字段 | [] | 否 |
-| floatLayerFields | string[] | 悬浮层显示字段 | [] | 否 |
-| dateDragable | boolean | 是否可拖拽调整日期 | false | 否 |
-| progressDragable | boolean | 是否可拖拽调整进度 | false | 否 |
-| orderDragable | boolean | 是否可拖拽调整顺序 | false | 否 |
-| autoLoad | boolean | 组件挂载时自动加载数据 | false | 否 |
-| toolbarBtns | ButtonProps[] | 工具栏按钮配置 | [] | 否 |
-| operateBtns | ButtonProps[] | 操作列按钮配置 | [] | 否 |
-| fieldConfig | object | 字段配置映射 | - | 否 |
-| addScheduleAble | boolean | 是否允许添加排期 | false | 否 |
+| titleField | string | Task title field name | - | Yes |
+| defaultViewType | string | Default time view, options: day/week/month/quarter/year | week | No |
+| startTime | string | Start time field name | - | Yes |
+| endTime | string | End time field name | - | Yes |
+| levelRelateField | string | Level relationship field name | - | No |
+| orderRelateField | string | Sequential dependency relationship field name | - | No |
+| progressField | string | Progress field name | - | No |
+| listShowFields | string[] | Left list display fields | [] | No |
+| floatLayerFields | string[] | Floating layer display fields | [] | No |
+| dateDragable | boolean | Whether date can be adjusted by dragging | false | No |
+| progressDragable | boolean | Whether progress can be adjusted by dragging | false | No |
+| orderDragable | boolean | Whether order can be adjusted by dragging | false | No |
+| autoLoad | boolean | Auto-load data when component mounts | false | No |
+| toolbarBtns | ButtonProps[] | Toolbar button configuration | [] | No |
+| operateBtns | ButtonProps[] | Operation column button configuration | [] | No |
+| fieldConfig | object | Field configuration mapping | - | No |
+| addScheduleAble | boolean | Whether to allow adding schedules | false | No |
 
-## 变量
+## Variables
 ### displayRowList
-只读的多行数据变量，存储当前甘特图显示的所有任务数据。
+Read-only multi-row data variable, storing all task data currently displayed in the Gantt chart.
 
-**类型**: `RowList`
+**Type**: `RowList`
 
 ### activeRow
-只读的单行数据变量，存储当前操作的任务数据，在点击行或拖拽后更新。
+Read-only single-row data variable, storing the currently operated task data, updated after clicking a row or dragging.
 
-**类型**: `RowData`
+**Type**: `RowData`
 
-## 方法 
+## Methods 
 ### call
-刷新甘特图数据，根据筛选条件重新加载并显示数据。
+Refresh Gantt chart data, reload and display data based on filter conditions.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| qFilter | QFilter/string | 数据筛选条件 | - | 否 |
+| qFilter | QFilter/string | Data filter conditions | - | No |
 
-#### 返回值
+#### Return Value
 `Promise<void>`
 
-#### 使用示例
-```tsx title="调用刷新方法"
-// 获取甘特图组件实例
+#### Usage Example
+```tsx title="Call Refresh Method"
+// Get Gantt chart component instance
 const ganttChart = app.getElement('components.ProjectGantt');
 
-// 无条件刷新
+// Refresh without conditions
 await ganttChart.call();
 
-// 按条件刷新
-await ganttChart.call("Q(status='进行中')");
+// Refresh with conditions
+await ganttChart.call("Q(status='In Progress')");
 
-// 使用QFilter对象
+// Use QFilter object
 const filter = app.getElement('components.TaskFilter').qFilter;
 await ganttChart.call(filter);
 ```
 
 ### loadDataAndExpand
-加载指定数据到甘特图并展开显示，不受原有筛选条件限制。
+Load specified data into Gantt chart and expand display, not limited by original filter conditions.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| rowDataList | RowList/Array | 要加载的数据列表 | - | 是 |
+| rowDataList | RowList/Array | Data list to load | - | Yes |
 
-#### 返回值
+#### Return Value
 `Promise<void>`
 
-#### 使用示例
-```tsx title="加载指定数据"
-// 加载特定任务数据
+#### Usage Example
+```tsx title="Load Specified Data"
+// Load specific task data
 const taskData = [
   {
     id: 1,
-    taskName: "需求分析",
+    taskName: "Requirements Analysis",
     startDate: "2024-01-01",
     endDate: "2024-01-10",
     progress: 100
   },
   {
     id: 2, 
-    taskName: "系统设计",
+    taskName: "System Design",
     startDate: "2024-01-08",
     endDate: "2024-01-20",
     progress: 80
@@ -137,268 +137,268 @@ await ganttChart.loadDataAndExpand(taskData);
 ```
 
 ### updateConfig
-更新组件配置，配置变更后自动刷新显示。
+Update component configuration, automatically refresh display after configuration changes.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| compConfig | GanttComponentConfig | 新的组件配置 | - | 是 |
+| compConfig | GanttComponentConfig | New component configuration | - | Yes |
 
-#### 返回值
+#### Return Value
 `Promise<void>`
 
 ### checkConfig
-检查当前配置是否有效，验证必填字段是否完整。
+Check if current configuration is valid, verify if required fields are complete.
 
-#### 返回值
-`boolean` - 配置有效返回true，否则返回false
+#### Return Value
+`boolean` - Returns true if configuration is valid, otherwise false
 
 ### destroy
-销毁组件实例，清理资源和事件监听。
+Destroy component instance, clean up resources and event listeners.
 
-#### 返回值
+#### Return Value
 `void`
 
 ### setConfig
-设置组件配置。
+Set component configuration.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| next | object | 配置更新内容 | - | 是 |
-| clean | boolean | 是否完全替换配置 | false | 否 |
+| next | object | Configuration update content | - | Yes |
+| clean | boolean | Whether to completely replace configuration | false | No |
 
-#### 返回值
+#### Return Value
 `void`
 
 ### publishEvent
-发布组件事件。
+Publish component event.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| name | string | 事件名称 | - | 是 |
-| ex | object | 额外参数 | - | 否 |
+| name | string | Event name | - | Yes |
+| ex | object | Additional parameters | - | No |
 
-#### 返回值
+#### Return Value
 `Promise<void>`
 
 ### subscribeEvent
-订阅组件事件。
+Subscribe to component event.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| name | string | 事件名称 | - | 是 |
-| evtCb | function | 事件回调函数 | - | 是 |
-| unSubscribeExist | boolean | 是否取消已存在的订阅 | true | 否 |
+| name | string | Event name | - | Yes |
+| evtCb | function | Event callback function | - | Yes |
+| unSubscribeExist | boolean | Whether to cancel existing subscriptions | true | No |
 
-#### 返回值
-`string` - 订阅ID
+#### Return Value
+`string` - Subscription ID
 
 ### unSubscribeEvent
-取消事件订阅。
+Cancel event subscription.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| id | string | 订阅ID | - | 是 |
+| id | string | Subscription ID | - | Yes |
 
-#### 返回值
+#### Return Value
 `boolean`
 
 ### runCode
-执行代码字符串，在页面上下文中运行。
+Execute code string, run in page context.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| code | string | 要执行的代码字符串 | - | 是 |
+| code | string | Code string to execute | - | Yes |
 
-#### 返回值
-`any` - 代码执行结果
+#### Return Value
+`any` - Code execution result
 
 ### getPermConfig
-获取当前组件的权限配置信息。
+Get current component's permission configuration information.
 
-#### 返回值
-`object` - 权限配置对象
+#### Return Value
+`object` - Permission configuration object
 
-## 属性
+## Properties
 ### name
-组件名称标识。
+Component name identifier.
 
-**类型**: `string`
+**Type**: `string`
 
 ### title
-组件显示标题。
+Component display title.
 
-**类型**: `string`
+**Type**: `string`
 
 ### config
-组件配置对象。
+Component configuration object.
 
-**类型**: `object`
+**Type**: `object`
 
 ### compType
-组件类型枚举。
+Component type enumeration.
 
-**类型**: `COMPONENT_TYPE`
+**Type**: `COMPONENT_TYPE`
 
 ### showTitle
-是否显示组件标题。
+Whether to show component title.
 
-**类型**: `boolean`
+**Type**: `boolean`
 
 ### type
-组件类型字符串。
+Component type string.
 
-**类型**: `string`
+**Type**: `string`
 
 ### app
-应用实例引用。
+Application instance reference.
 
-**类型**: `App`
+**Type**: `App`
 
 ### page
-页面实例引用。
+Page instance reference.
 
-**类型**: `BasePage`
+**Type**: `BasePage`
 
 ### store
-甘特图数据管理存储。
+Gantt chart data management storage.
 
-**类型**: `GanttStore`
+**Type**: `GanttStore`
 
 ### ModelClass
-关联的数据模型类。
+Associated data model class.
 
-**类型**: `class`
+**Type**: `class`
 
 ### fullName
-组件的完整名称标识。
+Component's complete name identifier.
 
-**类型**: `string`
+**Type**: `string`
 
 ### dataTypeList
-组件的数据类型列表，包含所有变量定义。
+Component's data type list, containing all variable definitions.
 
-**类型**: `Array`
+**Type**: `Array`
 
-## 事件
+## Events
 ### afterClickRow
-点击甘特图行后触发，包括点击左侧列表和右侧任务条。
+Triggered after clicking a Gantt chart row, including clicking the left list and right task bars.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| data | RowData | 点击的行数据，通过activeRow变量传递 | - | 是 |
+| data | RowData | Clicked row data, passed through activeRow variable | - | Yes |
 
-#### 使用示例
-```tsx title="监听行点击事件"
-// 在页面代码中监听事件
+#### Usage Example
+```tsx title="Listen to Row Click Event"
+// Listen to event in page code
 ganttChart.subscribeEvent('afterClickRow', (data) => {
-  console.log('点击的任务:', ganttChart.activeRow.value);
+  console.log('Clicked task:', ganttChart.activeRow.value);
   
-  // 可以执行其他操作，如打开详情弹窗
+  // Can perform other operations, such as opening detail modal
   const taskDetail = app.getElement('components.TaskDetailModal');
   taskDetail.call(ganttChart.activeRow.value);
 });
 ```
 
 ### afterDragDate
-拖拽调整任务日期后触发，任务数据会自动保存到数据库。
+Triggered after dragging to adjust task dates, task data is automatically saved to database.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| data | RowData | 拖拽修改后的行数据，通过activeRow变量传递 | - | 是 |
+| data | RowData | Row data after drag modification, passed through activeRow variable | - | Yes |
 
-#### 使用示例
-```tsx title="监听拖拽事件"
-// 监听任务时间调整
+#### Usage Example
+```tsx title="Listen to Drag Event"
+// Listen to task time adjustment
 ganttChart.subscribeEvent('afterDragDate', (data) => {
   const updatedTask = ganttChart.activeRow.value;
-  console.log('任务时间已更新:', {
+  console.log('Task time updated:', {
     taskName: updatedTask.taskName,
     newStartTime: updatedTask.startDate,
     newEndTime: updatedTask.endDate
   });
   
-  // 发送通知或同步到其他组件
+  // Send notification or sync to other components
   app.publishEvent('taskTimeUpdated', updatedTask);
  });
 ```
 
-### 动态按钮事件
-配置的工具栏按钮和操作按钮会自动生成对应的点击事件，事件名称格式为 `click` + 按钮ID的驼峰命名。
+### Dynamic Button Events
+Configured toolbar buttons and operation buttons automatically generate corresponding click events, with event names in the format `click` + camelCase button ID.
 
-#### 使用示例
-```tsx title="监听按钮点击事件"
-// 工具栏按钮配置
+#### Usage Example
+```tsx title="Listen to Button Click Events"
+// Toolbar button configuration
 {
   "toolbarBtns": [
     {
       "id": "export",
-      "name": "导出"
+      "name": "Export"
     },
     {
       "id": "addTask",
-      "name": "新增任务"
+      "name": "Add Task"
     }
   ]
 }
 
-// 监听对应的按钮事件
+// Listen to corresponding button events
 ganttChart.subscribeEvent('clickExport', (data) => {
-  console.log('导出按钮被点击', ganttChart.activeRow.value);
-  // 执行导出逻辑
+  console.log('Export button clicked', ganttChart.activeRow.value);
+  // Execute export logic
 });
 
 ganttChart.subscribeEvent('clickAddTask', (data) => {
-  console.log('新增任务按钮被点击');
-  // 打开新增任务弹窗
+  console.log('Add task button clicked');
+  // Open add task modal
 });
 ```
 
-## 高级特性
-### 工具栏和操作按钮配置
-甘特图支持自定义工具栏按钮和操作列按钮，可以扩展特定的业务功能。
+## Advanced Features
+### Toolbar and Operation Button Configuration
+Gantt chart supports custom toolbar buttons and operation column buttons, allowing extension of specific business functions.
 
-```json title="按钮配置示例"
+```json title="Button Configuration Example"
 {
   "toolbarBtns": [
     {
       "id": "export",
-      "name": "导出",
+      "name": "Export",
       "type": "primary",
       "beIncludeMore": false
     },
     {
       "id": "addTask", 
-      "name": "新增任务",
+      "name": "Add Task",
       "type": "default"
     }
   ],
   "operateBtns": [
     {
       "id": "edit",
-      "name": "编辑", 
-      "filterList": ["status!=已完成"]
+      "name": "Edit", 
+      "filterList": ["status!=Completed"]
     },
     {
       "id": "delete",
-      "name": "删除",
+      "name": "Delete",
       "type": "danger"
     }
   ]
 }
 ```
 
-### 层级任务和依赖关系
-通过配置`levelRelateField`和`orderRelateField`实现任务的层级结构和依赖关系显示。
+### Hierarchical Tasks and Dependencies
+Configure `levelRelateField` and `orderRelateField` to implement task hierarchical structure and dependency relationship display.
 
-```json title="层级依赖配置"
+```json title="Hierarchical Dependency Configuration"
 {
   "levelRelateField": "parentTaskId",
   "orderRelateField": "dependsOnTaskId",
@@ -406,21 +406,21 @@ ganttChart.subscribeEvent('clickAddTask', (data) => {
 }
 ```
 
-### 时间视图切换
-支持日、周、月、季、年五种时间维度，可通过配置或用户操作动态切换。
+### Time View Switching
+Supports five time dimensions: day, week, month, quarter, and year, which can be dynamically switched through configuration or user operations.
 
-```tsx title="动态切换视图"
-// 切换到月视图
+```tsx title="Dynamic View Switching"
+// Switch to month view
 await ganttChart.updateConfig({
   ...ganttChart.config,
   defaultViewType: 'month'
 });
 ```
 
-### 进度显示和拖拽
-配置进度字段可在甘特图中显示任务完成百分比，支持拖拽调整进度。
+### Progress Display and Dragging
+Configure progress field to display task completion percentage in Gantt chart, supporting drag adjustment of progress.
 
-```json title="进度配置"
+```json title="Progress Configuration"
 {
   "progressField": "completionRate",
   "progressDragable": true,

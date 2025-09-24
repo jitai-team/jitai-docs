@@ -1,29 +1,29 @@
 ---
 slug: row-to-column
 ---
-# 行转列
-行转列是数据结构转换组件，基于数据透视原理实现行列互换功能。它负责动态转置数据结构、重组数据格式和提供数据预览，适用于数据格式转换和报表生成场景。
+# Row to Column
+Row to Column is a data structure transformation component that implements row-column interchange functionality based on data pivot principles. It handles dynamic data structure transposition, data format reorganization, and provides data preview, suitable for data format conversion and report generation scenarios.
 
-行转列元素分层结构为Meta（components.Meta） → Type（components.Transpose） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建行转列实例元素。
+The row to column element has a hierarchical structure of Meta (components.Meta) → Type (components.Transpose) → Instance. Developers can quickly create row to column instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.TransposeType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `components.TransposeType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基础配置示例
-```text title="推荐目录结构"
+## Quick Start 
+### Basic Configuration Example
+```text title="Recommended Directory Structure"
 pages/
 └── MyTransposePage/
     ├── e.json
     ├── page.ts
-    └── scheme.json  # 页面布局配置
+    └── scheme.json  # Page layout configuration
 ```
 
-```json title="scheme.json - 最简配置"
+```json title="scheme.json - Minimal Configuration"
 {
   "fullName": "components.Transpose",
   "type": "components.Transpose", 
   "name": "Transpose1",
-  "title": "行转列1",
+  "title": "Row to Column 1",
   "config": {
     "requireElements": [
       {
@@ -36,66 +36,66 @@ pages/
 }
 ```
 
-### 配置属性说明
-| 属性名 | 类型 | 说明 | 默认值 | 必填 |
+### Configuration Properties
+| Property Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| requireElements | requireElement[] | 数据模型配置 | - | 是 |
-| fixedFieldIdList | string[] | 固定列字段ID列表 | `[]` | 否 |
-| groupByFieldId | string | 维度列字段ID，用于分组转置 | - | 是 |
-| showFieldId | string | 显示值字段ID | - | 是 |
-| fieldConfig | Record&lt;string, TransposeTableFieldConfig&gt; | 字段配置对象 | `{}` | 否 |
-| autoLoad | boolean | 是否自动加载数据 | true | 否 |
-| allowEdit | boolean | 是否允许编辑 | false | 否 |
-| allowExport | boolean | 是否允许导出 | false | 否 |
-| leftBtnList | TransposeButtonProps[] | 左侧按钮列表 | `[]` | 否 |
-| rightBtnList | TransposeButtonProps[] | 右侧按钮列表 | `[]` | 否 |
-| menuBtnList | TransposeButtonProps[] | 菜单按钮列表 | `[]` | 否 |
-| platform | "PC" &#124; "MOBILE" | runtime-platform | "PC" | 否 |
+| requireElements | requireElement[] | Data model configuration | - | Yes |
+| fixedFieldIdList | string[] | Fixed column field ID list | `[]` | No |
+| groupByFieldId | string | Dimension column field ID, used for grouping transpose | - | Yes |
+| showFieldId | string | Display value field ID | - | Yes |
+| fieldConfig | Record&lt;string, TransposeTableFieldConfig&gt; | Field configuration object | `{}` | No |
+| autoLoad | boolean | Whether to auto-load data | true | No |
+| allowEdit | boolean | Whether to allow editing | false | No |
+| allowExport | boolean | Whether to allow export | false | No |
+| leftBtnList | TransposeButtonProps[] | Left button list | `[]` | No |
+| rightBtnList | TransposeButtonProps[] | Right button list | `[]` | No |
+| menuBtnList | TransposeButtonProps[] | Menu button list | `[]` | No |
+| platform | "PC" &#124; "MOBILE" | Runtime platform | "PC" | No |
 
-## 变量
+## Variables
 ### displayRowList
-显示的多行数据变量，类型为RowList，只读。包含经过行转列处理后的数据结果。
+Displayed multi-row data variable, type is RowList, read-only. Contains data results after row-to-column processing.
 
 ### operateRowList
-操作的多行数据变量，类型为RowList，只读。包含用户操作的数据行记录。
+Operated multi-row data variable, type is RowList, read-only. Contains data row records operated by users.
 
 ### activeRow
-操作的单行数据变量，类型为RowData，只读。表示当前选中或操作的单行数据。
+Operated single row data variable, type is RowData, read-only. Represents the currently selected or operated single row data.
 
 ### filter
-筛选条件变量，类型为QFilter。用于设置数据查询的筛选条件。
+Filter condition variable, type is QFilter. Used to set filter conditions for data queries.
 
-## 方法 
+## Methods 
 ### call
-刷新组件数据，根据筛选条件重新加载数据。
+Refresh component data, reload data based on filter conditions.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| qFilter | QFilter | 筛选条件 | - | 否 |
+| qFilter | QFilter | Filter conditions | - | No |
 
-#### 返回值
+#### Return Value
 Promise&lt;void&gt;
 
-#### 使用示例
-```tsx title="调用刷新方法"
+#### Usage Example
+```tsx title="Call Refresh Method"
 const transposeComp = app.getElement('components.Transpose1');
 await transposeComp.call();
 ```
 
 ### updateConfig
-更新组件配置，动态修改组件的配置属性。
+Update component configuration, dynamically modify component configuration properties.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| compConfig | TransposeTableCompConfig | 新的组件配置 | - | 是 |
+| compConfig | TransposeTableCompConfig | New component configuration | - | Yes |
 
-#### 返回值
+#### Return Value
 Promise&lt;void&gt;
 
-#### 使用示例
-```tsx title="更新组件配置"
+#### Usage Example
+```tsx title="Update Component Configuration"
 const transposeComp = app.getElement('components.Transpose1');
 await transposeComp.updateConfig({
   ...transposeComp.config,
@@ -104,211 +104,211 @@ await transposeComp.updateConfig({
 ```
 
 ### run
-运行组件，初始化并渲染组件到指定的DOM容器。
+Run component, initialize and render component to specified DOM container.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| domRef | React.RefObject&lt;HTMLDivElement&gt; | DOM容器引用 | - | 是 |
+| domRef | React.RefObject&lt;HTMLDivElement&gt; | DOM container reference | - | Yes |
 
-#### 返回值
+#### Return Value
 Promise&lt;void&gt;
 
 ### checkConfig
-检查配置完整性，验证必要的配置项是否已设置。
+Check configuration completeness, verify whether necessary configuration items are set.
 
-#### 返回值
-boolean - 配置是否有效
+#### Return Value
+boolean - Whether configuration is valid
 
 ### setConfig
-设置组件配置，继承自BaseComponent。
+Set component configuration, inherited from BaseComponent.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| next | Partial&lt;TransposeTableCompConfig&gt; | 新配置 | - | 是 |
-| clean | boolean | 是否清空现有配置 | false | 否 |
+| next | Partial&lt;TransposeTableCompConfig&gt; | New configuration | - | Yes |
+| clean | boolean | Whether to clear existing configuration | false | No |
 
 ### publishEvent
-发送事件消息，继承自BaseComponent。
+Send event message, inherited from BaseComponent.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| name | string | 事件名称 | - | 是 |
-| ex | Record&lt;string, any&gt; | 额外参数 | - | 否 |
+| name | string | Event name | - | Yes |
+| ex | Record&lt;string, any&gt; | Additional parameters | - | No |
 
-#### 返回值
+#### Return Value
 Promise&lt;void&gt;
 
 ### subscribeEvent
-订阅事件消息，继承自BaseComponent。
+Subscribe to event message, inherited from BaseComponent.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| name | string | 事件名称 | - | 是 |
-| evtCb | (data: any) =&gt; Promise&lt;void&gt; &#124; void | 事件回调函数 | - | 是 |
-| unSubscribeExist | boolean | 是否取消已存在的订阅 | true | 否 |
+| name | string | Event name | - | Yes |
+| evtCb | (data: any) =&gt; Promise&lt;void&gt; &#124; void | Event callback function | - | Yes |
+| unSubscribeExist | boolean | Whether to cancel existing subscription | true | No |
 
-#### 返回值
-string - 订阅句柄ID
+#### Return Value
+string - Subscription handle ID
 
 ### unSubscribeEvent
-取消事件订阅，继承自BaseComponent。
+Cancel event subscription, inherited from BaseComponent.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| id | string | 订阅句柄ID | - | 是 |
+| id | string | Subscription handle ID | - | Yes |
 
-#### 返回值
-boolean - 是否取消成功
+#### Return Value
+boolean - Whether cancellation was successful
 
 ### destroy
-销毁组件，清理资源，继承自BaseComponent。
+Destroy component, clean up resources, inherited from BaseComponent.
 
 ### runCode
-执行代码字符串，继承自BaseComponent。
+Execute code string, inherited from BaseComponent.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| code | string | 要执行的代码字符串 | - | 是 |
+| code | string | Code string to execute | - | Yes |
 
-#### 返回值
-any - 代码执行结果
+#### Return Value
+any - Code execution result
 
 ### getPermConfig
-获取权限配置，继承自BaseComponent。
+Get permission configuration, inherited from BaseComponent.
 
-#### 返回值
-Record&lt;string, any&gt; &#124; undefined - 权限配置对象
+#### Return Value
+Record&lt;string, any&gt; &#124; undefined - Permission configuration object
 
-## 属性
+## Properties
 ### name
-组件名称，类型为string。
+Component name, type is string.
 
 ### title
-组件标题，类型为string。
+Component title, type is string.
 
 ### config
-组件配置对象，类型为TransposeTableCompConfig。
+Component configuration object, type is TransposeTableCompConfig.
 
 ### showTitle
-是否显示标题，类型为boolean。
+Whether to show title, type is boolean.
 
 ### app
-关联的应用实例，类型为App。
+Associated application instance, type is App.
 
 ### page
-关联的页面实例，类型为BasePage。
+Associated page instance, type is BasePage.
 
 ### ModelClass
-关联的数据模型类，类型为typeof Jit.BaseModel。
+Associated data model class, type is typeof Jit.BaseModel.
 
 ### primaryKey
-主键字段名，类型为string，默认为"id"。
+Primary key field name, type is string, default is "id".
 
 ### fullName
-组件的完整名称，类型为string。
+Component full name, type is string.
 
 ### compType
-组件类型，类型为COMPONENT_TYPE。
+Component type, type is COMPONENT_TYPE.
 
 ### type
-组件的类型标识，类型为string。
+Component type identifier, type is string.
 
-## 事件
+## Events
 ### afterRowClick
-值点击后事件，当用户点击数据值时触发。
+Value click event, triggered when user clicks data values.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| data | RowData | 点击的行数据 | - | 是 |
+| data | RowData | Clicked row data | - | Yes |
 
-#### 使用示例
-```tsx title="监听值点击事件"
+#### Usage Example
+```tsx title="Listen to Value Click Event"
 const transposeComp = app.getElement('components.Transpose1');
 transposeComp.subscribeEvent('afterRowClick', (data) => {
-  console.log('点击的行数据:', data.activeRow);
+  console.log('Clicked row data:', data.activeRow);
 });
 ```
 
 ### afterAddRow
-新增数据后事件，当新增数据成功后触发。
+After adding data event, triggered when data is successfully added.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| data | RowList | 操作的数据列表 | - | 是 |
+| data | RowList | Operated data list | - | Yes |
 
 ### afterDeleteRow
-删除行后事件，当删除数据成功后触发。
+After deleting row event, triggered when data is successfully deleted.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| data | RowList | 操作的数据列表 | - | 是 |
+| data | RowList | Operated data list | - | Yes |
 
 ### afterRowChange
-值变更后事件，当数据值变更后触发（仅PC端）。
+After value change event, triggered when data values change (PC only).
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| data | RowData | 变更的行数据 | - | 是 |
+| data | RowData | Changed row data | - | Yes |
 
 ### afterEditRow
-编辑行后事件，当编辑行数据后触发（仅移动端）。
+After editing row event, triggered when row data is edited (Mobile only).
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| data | RowList | 操作的数据列表 | - | 是 |
+| data | RowList | Operated data list | - | Yes |
 
-#### 使用示例
-```tsx title="监听数据变更事件"
+#### Usage Example
+```tsx title="Listen to Data Change Event"
 const transposeComp = app.getElement('components.Transpose1');
 transposeComp.subscribeEvent('afterRowChange', (data) => {
-  console.log('数据变更:', data.activeRow);
+  console.log('Data changed:', data.activeRow);
 });
 ```
 
-## 高级特性
-### 字段配置
-通过fieldConfig属性可以精细控制每个字段的显示和行为：
+## Advanced Features
+### Field Configuration
+Fine control over each field's display and behavior through fieldConfig property:
 
-```tsx title="字段配置示例"
+```tsx title="Field Configuration Example"
 {
   "fieldConfig": {
     "custName": {
-      "alias": "客户名称",
+      "alias": "Customer Name",
       "position": "center"
     }
   }
 }
 ```
 
-### 动态按钮配置
-支持在左侧、右侧和菜单区域配置自定义按钮：
+### Dynamic Button Configuration
+Support for configuring custom buttons in left, right, and menu areas:
 
-```tsx title="按钮配置示例"
+```tsx title="Button Configuration Example"
 {
   "rightBtnList": [
     {
-      "name": "导出",
+      "name": "Export",
       "outputId": "exportBtn"
     }
   ]
 }
 ```
 
-### 移动端适配
-组件支持PC和移动端双平台，通过platform配置切换：
+### Mobile Adaptation
+Component supports both PC and mobile platforms, switch through platform configuration:
 
-```tsx title="移动端配置"
+```tsx title="Mobile Configuration"
 {
   "platform": "MOBILE"
 }

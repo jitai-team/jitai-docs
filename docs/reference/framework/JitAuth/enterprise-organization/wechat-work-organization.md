@@ -1,33 +1,33 @@
 ---
 slug: wechat-work-organization
 ---
-# 企业微信自建组织 {#wechat-work-custom-organization}
-企业微信自建组织是JitAuth框架中企业级组织架构集成类型，基于企业微信自建应用API实现组织架构同步和用户管理。它负责企业微信通讯录同步、组织信息获取和用户身份验证，支持自动组织架构同步和用户权限继承。
+# WeChat Work Custom Organization {#wechat-work-custom-organization}
+WeChat Work custom organization is an enterprise-level organizational architecture integration type in the JitAuth framework, implementing organizational architecture synchronization and user management based on WeChat Work custom application API. It handles WeChat Work contact synchronization, organizational information retrieval, and user identity authentication, supporting automatic organizational architecture synchronization and user permission inheritance.
 
-企业微信自建组织元素分层结构为Meta（corps.Meta） → Type（corps.QywxInnerType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建企业微信自建组织实例元素。
+The hierarchical structure of WeChat Work custom organization elements is Meta (corps.Meta) → Type (corps.QywxInnerType) → Instance. Developers can quickly create WeChat Work custom organization instance elements through JitAi's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的corps.QywxInnerType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `corps.QywxInnerType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 corps/
 └── MyQywxCorp/
     ├── e.json
     └── MyQywxCorp.json
 ```
 
-#### e.json文件
-```json title="e.json配置"
+#### e.json File
+```json title="e.json Configuration"
 {
-  "title": "我的企业微信组织",
+  "title": "My WeChat Work Organization",
   "type": "corps.QywxInnerType"
 }
 ```
 
-#### 认证配置文件
-```json title="MyQywxCorp.json配置"
+#### Authentication Configuration File
+```json title="MyQywxCorp.json Configuration"
 {
   "corpId": "ww1234567890abcdef",
   "agentId": "1000001",
@@ -35,341 +35,341 @@ corps/
 }
 ```
 
-#### 调用示例
-```python title="基础调用示例"
-# 获取企业微信组织实例
+#### Usage Example
+```python title="Basic Usage Example"
+# Get WeChat Work organization instance
 corp = app.getElement("corps.MyQywxCorp")
 
-# 初始化组织架构
+# Initialize organizational architecture
 corp.initCorp()
 
-# 获取根部门
+# Get root department
 root_dept = corp.getRootDept()
-print(f"根部门: {root_dept.name.value}")
+print(f"Root Department: {root_dept.name.value}")
 
-# 获取管理员列表
+# Get administrator list
 admin_list = corp.getAdmin()
-print(f"管理员: {admin_list}")
+print(f"Administrators: {admin_list}")
 ```
 
-## 元素配置
-### e.json配置
-| 配置项 | 类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| title | string | 是 | 组织架构显示名称 |
-| type | string | 是 | 固定值：corps.QywxInnerType |
+| title | string | Yes | Organization architecture display name |
+| type | string | Yes | Fixed value: corps.QywxInnerType |
 
-### 认证配置（authConfig）
-| 配置项 | 类型 | 必填 | 说明 |
+### Authentication Configuration (authConfig)
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| corpId | string | 是 | 企业微信企业ID |
-| agentId | string | 是 | 企业微信应用ID |
-| secret | string | 是 | 企业微信应用Secret |
+| corpId | string | Yes | WeChat Work enterprise ID |
+| agentId | string | Yes | WeChat Work application ID |
+| secret | string | Yes | WeChat Work application Secret |
 
-## 方法 
+## Methods
 ### initCorp
-初始化组织架构，企业微信自建的组织架构初始化时会自动同步组织架构数据。
+Initialize organizational architecture, WeChat Work custom organizational architecture initialization automatically syncs organizational architecture data.
 
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| - | - | - | - | 无参数 |
+| - | - | - | - | No parameters |
 
-**返回值：** None
+**Return Value:** None
 
-```python title="初始化组织架构"
+```python title="Initialize Organizational Architecture"
 corp = app.getElement("corps.MyQywxCorp")
 corp.initCorp()
 ```
 
 ### syncCorp
-同步企业微信组织架构数据到本地，包括部门、成员、角色等信息。
+Sync WeChat Work organizational architecture data to local, including departments, members, roles, and other information.
 
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| - | - | - | - | 无参数 |
+| - | - | - | - | No parameters |
 
-**返回值：** None
+**Return Value:** None
 
-```python title="同步组织架构"
+```python title="Sync Organizational Architecture"
 corp = app.getElement("corps.MyQywxCorp")
 corp.syncCorp()
 ```
 
 ### getThirdCorpData
-获取第三方企业微信组织架构数据。
+Get third-party WeChat Work organizational architecture data.
 
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| - | - | - | - | 无参数 |
+| - | - | - | - | No parameters |
 
-**返回值：** dict - 包含企业微信组织架构的完整数据
+**Return Value:** dict - Complete data containing WeChat Work organizational architecture
 
-```python title="获取第三方组织架构数据"
+```python title="Get Third-Party Organizational Architecture Data"
 corp = app.getElement("corps.MyQywxCorp")
 corp_data = corp.getThirdCorpData()
-print(f"用户数量: {len(corp_data.get('userDict', {}))}")
+print(f"User Count: {len(corp_data.get('userDict', {}))}")
 ```
 
 ### bulkRegister
-批量注册用户到本地系统。
+Batch register users to local system.
 
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| corpData | JitDict | dict | 是 | 企业微信组织架构数据 |
+| corpData | JitDict | dict | Yes | WeChat Work organizational architecture data |
 
-**返回值：** None
+**Return Value:** None
 
-```python title="批量注册用户"
+```python title="Batch Register Users"
 corp = app.getElement("corps.MyQywxCorp")
 corp_data = corp.getThirdCorpData()
 corp.bulkRegister(corp_data)
 ```
 
 ### getLocalCorpData
-获取本地用户池和第三方企业认证信息。
+Get local user pool and third-party enterprise authentication information.
 
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| - | - | - | - | 无参数 |
+| - | - | - | - | No parameters |
 
-**返回值：** dict - 包含本地组织架构的完整数据
+**Return Value:** dict - Complete data containing local organizational architecture
 
-```python title="获取本地组织架构数据"
+```python title="Get Local Organizational Architecture Data"
 corp = app.getElement("corps.MyQywxCorp")
 local_data = corp.getLocalCorpData()
-print(f"本地用户数: {len(local_data['userList'])}")
-print(f"本地部门数: {len(local_data['deptList'])}")
+print(f"Local User Count: {len(local_data['userList'])}")
+print(f"Local Department Count: {len(local_data['deptList'])}")
 ```
 
 ### getRootDept
-获取根部门信息。
+Get root department information.
 
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| - | - | - | - | 无参数 |
+| - | - | - | - | No parameters |
 
-**返回值：** RowData - 根部门数据对象
+**Return Value:** RowData - Root department data object
 
-```python title="获取根部门"
+```python title="Get Root Department"
 corp = app.getElement("corps.MyQywxCorp")
 root_dept = corp.getRootDept()
-print(f"根部门ID: {root_dept.deptId.value}")
-print(f"根部门名称: {root_dept.name.value}")
+print(f"Root Department ID: {root_dept.deptId.value}")
+print(f"Root Department Name: {root_dept.name.value}")
 ```
 
 ### setUserRole
-设置用户角色。
+Set user roles.
 
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| memberId | Stext | str | 是 | 用户ID |
-| roleIdList | JitList | list | 是 | 角色ID列表 |
+| memberId | Stext | str | Yes | User ID |
+| roleIdList | JitList | list | Yes | Role ID list |
 
-**返回值：** list - 角色成员关系数据列表
+**Return Value:** list - Role member relationship data list
 
-```python title="设置用户角色"
+```python title="Set User Role"
 corp = app.getElement("corps.MyQywxCorp")
 result = corp.setUserRole(
     memberId="user001",
     roleIdList=["role001", "role002"]
 )
-print(f"设置角色结果: {result}")
+print(f"Role Setting Result: {result}")
 ```
 
 ### offlineMember
-将成员转为离职状态，但不影响成员在其他组织架构登录。
+Set members to resigned status, but does not affect member login in other organizational architectures.
 
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| memberIdList | JitList | list | 是 | 要离职的成员ID列表 |
+| memberIdList | JitList | list | Yes | List of member IDs to resign |
 
-**返回值：** None
+**Return Value:** None
 
-```python title="设置成员离职"
+```python title="Set Members as Resigned"
 corp = app.getElement("corps.MyQywxCorp")
 corp.offlineMember(["user001", "user002"])
 ```
 
 ### getUserSignature
-获取用户的签名。
+Get user signature.
 
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| memberId | Stext | str | 是 | 用户ID |
+| memberId | Stext | str | Yes | User ID |
 
-**返回值：** dict - 包含签名信息的字典
+**Return Value:** dict - Dictionary containing signature information
 
-```python title="获取用户签名"
+```python title="Get User Signature"
 corp = app.getElement("corps.MyQywxCorp")
 signature_info = corp.getUserSignature("user001")
-print(f"签名: {signature_info['signature']}")
+print(f"Signature: {signature_info['signature']}")
 ```
 
 ### saveUserSignature
-保存用户的签名。
+Save user signature.
 
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| memberId | Stext | str | 是 | 用户ID |
-| signature | Stext | str | 是 | 签名图片链接 |
+| memberId | Stext | str | Yes | User ID |
+| signature | Stext | str | Yes | Signature image link |
 
-**返回值：** dict - 成功返回信息
+**Return Value:** dict - Success return information
 
-```python title="保存用户签名"
+```python title="Save User Signature"
 corp = app.getElement("corps.MyQywxCorp")
 result = corp.saveUserSignature(
     memberId="user001",
     signature="https://example.com/signature.png"
 )
-print(f"保存结果: {result}")
+print(f"Save Result: {result}")
 ```
 
 ### setAdmin
-设置组织负责人，设置管理员。
+Set organization administrators, set administrators.
 
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| memberIdList | JitList | list | 是 | 管理员成员ID列表 |
+| memberIdList | JitList | list | Yes | Administrator member ID list |
 
-**返回值：** dict - 空字典
+**Return Value:** dict - Empty dictionary
 
-```python title="设置管理员"
+```python title="Set Administrators"
 corp = app.getElement("corps.MyQywxCorp")
 corp.setAdmin(["admin001", "admin002"])
 ```
 
 ### getAdmin
-获取当前组织架构的管理员ID列表。
+Get current organizational architecture administrator ID list.
 
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| - | - | - | - | 无参数 |
+| - | - | - | - | No parameters |
 
-**返回值：** list - 管理员ID列表
+**Return Value:** list - Administrator ID list
 
-```python title="获取管理员列表"
+```python title="Get Administrator List"
 corp = app.getElement("corps.MyQywxCorp")
 admin_list = corp.getAdmin()
-print(f"管理员列表: {admin_list}")
+print(f"Administrator List: {admin_list}")
 ```
 
 ### getCorpInfo
-获取组织架构信息。
+Get organizational architecture information.
 
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| - | - | - | - | 无参数 |
+| - | - | - | - | No parameters |
 
-**返回值：** dict - 组织架构配置信息
+**Return Value:** dict - Organizational architecture configuration information
 
-```python title="获取组织架构信息"
+```python title="Get Organizational Architecture Information"
 corp = app.getElement("corps.MyQywxCorp")
 corp_info = corp.getCorpInfo()
-print(f"组织架构名称: {corp_info['title']}")
-print(f"全名: {corp_info['fullName']}")
+print(f"Organizational Architecture Name: {corp_info['title']}")
+print(f"Full Name: {corp_info['fullName']}")
 ```
 
 ### getClient
-获取企业微信客户端。
+Get WeChat Work client.
 
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| - | - | - | - | 无参数 |
+| - | - | - | - | No parameters |
 
-**返回值：** object - 企业微信API客户端对象
+**Return Value:** object - WeChat Work API client object
 
-```python title="获取企业微信客户端"
+```python title="Get WeChat Work Client"
 corp = app.getElement("corps.MyQywxCorp")
 client = corp.getClient()
-# 使用client调用企业微信API
+# Use client to call WeChat Work API
 ```
 
-## 属性
+## Properties
 ### corpData
-组织架构数据，包含完整的组织架构配置信息。
+Organizational architecture data, containing complete organizational architecture configuration information.
 
-**类型：** dict  
-**访问方式：** 只读
+**Type:** dict  
+**Access:** Read-only
 
-```python title="访问组织架构数据"
+```python title="Access Organizational Architecture Data"
 corp = app.getElement("corps.MyQywxCorp")
-print(f"组织架构数据: {corp.corpData}")
+print(f"Organizational Architecture Data: {corp.corpData}")
 ```
 
 ### title
-组织架构显示标题。
+Organizational architecture display title.
 
-**类型：** str  
-**访问方式：** 只读
+**Type:** str  
+**Access:** Read-only
 
-```python title="获取组织架构标题"
+```python title="Get Organizational Architecture Title"
 corp = app.getElement("corps.MyQywxCorp")
-print(f"标题: {corp.title}")
+print(f"Title: {corp.title}")
 ```
 
 ### fullName
-组织架构全名（元素标识符）。
+Organizational architecture full name (element identifier).
 
-**类型：** str  
-**访问方式：** 只读
+**Type:** str  
+**Access:** Read-only
 
-```python title="获取组织架构全名"
+```python title="Get Organizational Architecture Full Name"
 corp = app.getElement("corps.MyQywxCorp")
-print(f"全名: {corp.fullName}")
+print(f"Full Name: {corp.fullName}")
 ```
 
 ### corpFullName
-组织架构全名的别名，与fullName相同。
+Organizational architecture full name alias, same as fullName.
 
-**类型：** str  
-**访问方式：** 只读
+**Type:** str  
+**Access:** Read-only
 
-```python title="获取组织架构全名别名"
+```python title="Get Organizational Architecture Full Name Alias"
 corp = app.getElement("corps.MyQywxCorp")
-print(f"组织架构全名: {corp.corpFullName}")
+print(f"Organizational Architecture Full Name: {corp.corpFullName}")
 ```
 
 ### authConfig
-认证配置信息，包含企业微信应用的认证参数。
+Authentication configuration information, containing WeChat Work application authentication parameters.
 
-**类型：** dict  
-**访问方式：** 只读
+**Type:** dict  
+**Access:** Read-only
 
-```python title="获取认证配置"
+```python title="Get Authentication Configuration"
 corp = app.getElement("corps.MyQywxCorp")
-print(f"企业ID: {corp.authConfig['corpId']}")
-print(f"应用ID: {corp.authConfig['agentId']}")
+print(f"Enterprise ID: {corp.authConfig['corpId']}")
+print(f"Application ID: {corp.authConfig['agentId']}")
 ```
 
-## 高级特性
-### 自动同步配置
-企业微信自建组织支持定时自动同步企业微信通讯录数据，确保本地组织架构与企业微信保持一致。
+## Advanced Features
+### Automatic Sync Configuration
+WeChat Work custom organization supports scheduled automatic synchronization of WeChat Work contact data, ensuring local organizational architecture remains consistent with WeChat Work.
 
-```python title="配置自动同步"
-# 在任务模版中配置定时同步
+```python title="Configure Automatic Sync"
+# Configure scheduled sync in task template
 corp = app.getElement("corps.MyQywxCorp")
 
-# 每小时同步一次组织架构
+# Sync organizational architecture every hour
 corp.syncCorp()
 ```
 
-### 批量操作优化
-支持批量处理用户注册和角色分配，提高大规模组织架构同步的性能。
+### Batch Operation Optimization
+Supports batch processing of user registration and role assignment, improving performance of large-scale organizational architecture synchronization.
 
-```python title="批量操作示例"
+```python title="Batch Operation Example"
 corp = app.getElement("corps.MyQywxCorp")
 
-# 获取第三方数据
+# Get third-party data
 corp_data = corp.getThirdCorpData()
 
-# 批量注册用户
+# Batch register users
 corp.bulkRegister(corp_data)
 
-# 批量设置管理员
+# Batch set administrators
 admin_ids = ["admin001", "admin002", "admin003"]
 corp.setAdmin(admin_ids)
 
-# 批量离职处理
+# Batch resignation processing
 offline_ids = ["user001", "user002"]
 corp.offlineMember(offline_ids)
-``` 
+```

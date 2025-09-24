@@ -1,16 +1,16 @@
 ---
 slug: modal
 ---
-# 弹窗
-弹窗是页面浮层容器组件，基于Ant Design的Modal和Drawer组件实现对话框和抽屉式弹窗界面。它负责承载临时内容展示、用户交互确认和复杂表单录入，支持模态和非模态两种显示模式、自定义尺寸和位置配置，以及内嵌其他组件构建复杂弹窗界面。
+# Modal
+The modal is a page overlay container component, implementing dialog and drawer modal interfaces based on Ant Design's Modal and Drawer components. It handles temporary content display, user interaction confirmation, and complex form entry, supporting both modal and non-modal display modes, custom size and position configuration, and embedding other components to build complex modal interfaces.
 
-弹窗元素分层结构为Meta（components.Meta） → Type（components.Modal） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建弹窗实例元素。
+The modal element has a hierarchical structure of Meta (components.Meta) → Type (components.Modal) → Instance. Developers can quickly create modal instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.ModalType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `components.ModalType` element provided by JitAI in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基础配置示例
-```text title="推荐目录结构"
+## Quick Start
+### Basic Configuration Example
+```text title="Recommended Directory Structure"
 pages/
 ├── MyPage/
 │   ├── e.json
@@ -19,14 +19,14 @@ pages/
 │   └── scheme.json
 ```
 
-```json title="pages/MyPage/scheme.json - 弹窗组件配置"
+```json title="pages/MyPage/scheme.json - Modal Component Configuration"
 {
   "componentList": [
     {
       "fullName": "components.Modal",
       "type": "components.Modal",
       "name": "confirmModal",
-      "title": "确认弹窗",
+      "title": "Confirmation Modal",
       "config": {
         "requireElements": [],
         "size": "normal",
@@ -37,12 +37,12 @@ pages/
         "bottomButtonList": [
           {
             "id": "confirm",
-            "name": "确认",
+            "name": "Confirm",
             "type": "primary"
           },
           {
             "id": "cancel", 
-            "name": "取消",
+            "name": "Cancel",
             "type": "default"
           }
         ],
@@ -55,125 +55,125 @@ pages/
 }
 ```
 
-```tsx title="pages/MyPage/page.ts - 调用弹窗"
+```tsx title="pages/MyPage/page.ts - Call Modal"
 import { BasePage } from 'common/type';
 
 export class MyPage extends BasePage {
   async showConfirmDialog() {
     const modal = app.getElement('confirmModal');
-    await modal.call('请确认您的操作');
+    await modal.call('Please confirm your operation');
   }
   
   async handleConfirm() {
     const modal = app.getElement('confirmModal');
-    // 处理确认逻辑
+    // Handle confirmation logic
     await modal.close();
   }
 }
 ```
 
-### 配置属性说明
-| 属性名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| size | string | 弹窗尺寸：small&#124;normal&#124;big&#124;fullWindow | normal | 否 |
-| type | string | 弹窗类型：modal&#124;drawer | modal | 否 |
-| position | string | 弹窗位置：fullscreen&#124;page | page | 否 |
-| maskClosable | boolean | 点击遮罩是否关闭 | false | 否 |
-| showCloseControl | boolean | 是否显示关闭按钮 | true | 否 |
-| bottomButtonList | ButtonProps[] | 底部按钮配置列表 | [] | 否 |
-| bottomButtonAlign | string | 底部按钮对齐：left&#124;center&#124;right | center | 否 |
-| customWidth | number | 自定义宽度（像素） | - | 否 |
-| customHeight | number | 自定义高度（像素） | - | 否 |
-| placement | string | 抽屉位置：right&#124;top&#124;bottom&#124;left | right | 否 |
-| layout | Layout[] | 内部组件布局配置 | [] | 否 |
-| requireElements | requireElement[] | 依赖元素配置 | [] | 否 |
+### Configuration Properties
+| Property Name | Type | Description | Default Value | Required |
+|---------------|------|-------------|---------------|----------|
+| size | string | Modal size: small&#124;normal&#124;big&#124;fullWindow | normal | No |
+| type | string | Modal type: modal&#124;drawer | modal | No |
+| position | string | Modal position: fullscreen&#124;page | page | No |
+| maskClosable | boolean | Whether clicking mask closes modal | false | No |
+| showCloseControl | boolean | Whether to show close button | true | No |
+| bottomButtonList | ButtonProps[] | Bottom button configuration list | [] | No |
+| bottomButtonAlign | string | Bottom button alignment: left&#124;center&#124;right | center | No |
+| customWidth | number | Custom width (pixels) | - | No |
+| customHeight | number | Custom height (pixels) | - | No |
+| placement | string | Drawer position: right&#124;top&#124;bottom&#124;left | right | No |
+| layout | Layout[] | Internal component layout configuration | [] | No |
+| requireElements | requireElement[] | Dependent element configuration | [] | No |
 
-## 变量
+## Variables
 ### modalTitle
-弹窗标题文本变量，用于动态设置弹窗的显示标题。
+Modal title text variable, used to dynamically set the modal's display title.
 
-- **类型**: Stext
-- **默认值**: 组件title属性值
-- **用法**: `modal.modalTitle.value = '新标题'`
+- **Type**: Stext
+- **Default Value**: Component title property value
+- **Usage**: `modal.modalTitle.value = 'New Title'`
 
-## 方法 
+## Methods
 ### call
-打开弹窗并可选择性设置标题。
+Open modal and optionally set title.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| modalTitle | string | 弹窗标题文本 | - | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| modalTitle | string | Modal title text | - | No |
 
-#### 返回值
-- **类型**: `Promise<void>`
+#### Return Value
+- **Type**: `Promise<void>`
 
-#### 使用示例
-```tsx title="打开弹窗示例"
-// 使用默认标题打开
+#### Usage Example
+```tsx title="Open Modal Example"
+// Open with default title
 await modal.call();
 
-// 设置标题后打开
-await modal.call('用户信息确认');
+// Set title then open
+await modal.call('User Information Confirmation');
 
-// 在事件处理中调用
+// Call in event handler
 button.subscribeEvent('onClick', async () => {
-  await modal.call('操作确认');
+  await modal.call('Operation Confirmation');
 });
 ```
 
 ### close
-关闭弹窗。
+Close modal.
 
-#### 返回值
-- **类型**: `Promise<void>`
+#### Return Value
+- **Type**: `Promise<void>`
 
-#### 使用示例
-```tsx title="关闭弹窗示例"
-// 直接关闭弹窗
+#### Usage Example
+```tsx title="Close Modal Example"
+// Directly close modal
 await modal.close();
 
-// 在按钮事件中关闭
+// Close in button event
 modal.subscribeEvent('onClickCancel', async () => {
   await modal.close();
 });
 ```
 
 ### open
-内部方法，直接设置弹窗为打开状态并触发打开后事件。
+Internal method, directly set modal to open state and trigger after-open event.
 
-#### 使用示例
-```tsx title="直接打开弹窗"
+#### Usage Example
+```tsx title="Directly Open Modal"
 modal.open();
 ```
 
 ### closeState
-内部方法，设置弹窗为关闭状态并触发关闭后事件。
+Internal method, set modal to closed state and trigger after-close event.
 
-#### 使用示例
-```tsx title="直接关闭弹窗状态"
+#### Usage Example
+```tsx title="Directly Close Modal State"
 modal.closeState();
 ```
 
 ### getButtonList
-根据权限配置过滤并设置底部按钮列表。
+Filter and set bottom button list based on permission configuration.
 
-#### 使用示例
-```tsx title="更新按钮列表"
+#### Usage Example
+```tsx title="Update Button List"
 modal.getButtonList();
 ```
 
 ### setConfig
-设置组件配置，继承自BaseComponent。
+Set component configuration, inherited from BaseComponent.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| next | object | 新的配置对象 | - | 是 |
-| clean | boolean | 是否完全替换配置 | false | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| next | object | New configuration object | - | Yes |
+| clean | boolean | Whether to completely replace configuration | false | No |
 
-#### 使用示例
-```tsx title="动态更新配置"
+#### Usage Example
+```tsx title="Dynamically Update Configuration"
 modal.setConfig({
   size: 'big',
   maskClosable: true
@@ -181,216 +181,216 @@ modal.setConfig({
 ```
 
 ### publishEvent
-发布组件事件，继承自BaseComponent。
+Publish component events, inherited from BaseComponent.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| name | string | 事件名称 | - | 是 |
-| ex | object | 附加数据 | - | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| name | string | Event name | - | Yes |
+| ex | object | Additional data | - | No |
 
-#### 使用示例
-```tsx title="发布自定义事件"
+#### Usage Example
+```tsx title="Publish Custom Event"
 await modal.publishEvent('customEvent', { data: 'value' });
 ```
 
 ### subscribeEvent
-订阅组件事件，继承自BaseComponent。
+Subscribe to component events, inherited from BaseComponent.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| name | string | 事件名称 | - | 是 |
-| evtCb | function | 事件回调函数 | - | 是 |
-| unSubscribeExist | boolean | 是否取消已有订阅 | true | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| name | string | Event name | - | Yes |
+| evtCb | function | Event callback function | - | Yes |
+| unSubscribeExist | boolean | Whether to cancel existing subscriptions | true | No |
 
-#### 返回值
-- **类型**: `string` - 订阅句柄ID
+#### Return Value
+- **Type**: `string` - Subscription handle ID
 
-#### 使用示例
-```tsx title="订阅事件示例"
+#### Usage Example
+```tsx title="Subscribe to Event Example"
 const handleId = modal.subscribeEvent('afterOpen', async (data) => {
-  console.log('弹窗已打开', data);
+  console.log('Modal opened', data);
 });
 ```
 
 ### unSubscribeEvent
-取消事件订阅，继承自BaseComponent。
+Cancel event subscription, inherited from BaseComponent.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| id | string | 订阅句柄ID | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| id | string | Subscription handle ID | - | Yes |
 
-#### 使用示例
-```tsx title="取消订阅"
+#### Usage Example
+```tsx title="Unsubscribe"
 modal.unSubscribeEvent(handleId);
 ```
 
 ### destroy
-销毁组件并清理所有资源，继承自BaseComponent。
+Destroy component and clean up all resources, inherited from BaseComponent.
 
-#### 使用示例
-```tsx title="销毁组件"
-// 手动销毁组件，清理事件监听和内部资源
+#### Usage Example
+```tsx title="Destroy Component"
+// Manually destroy component, clean up event listeners and internal resources
 modal.destroy();
 ```
 
 ### runCode
-执行动态代码，在页面上下文中运行，继承自BaseComponent。
+Execute dynamic code, run in page context, inherited from BaseComponent.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| code | string | 要执行的JavaScript代码 | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| code | string | JavaScript code to execute | - | Yes |
 
-#### 返回值
-- **类型**: `any` - 代码执行结果
+#### Return Value
+- **Type**: `any` - Code execution result
 
-#### 使用示例
-```tsx title="执行动态代码"
-// 在页面上下文中执行代码
+#### Usage Example
+```tsx title="Execute Dynamic Code"
+// Execute code in page context
 const result = modal.runCode(`
   const currentUser = this.getCurrentUser();
   return currentUser.role === 'admin';
 `);
 
 if (result) {
-  console.log('当前用户是管理员');
+  console.log('Current user is admin');
 }
 ```
 
 ### getPermConfig
-获取当前组件的权限配置，继承自BaseComponent。
+Get current component's permission configuration, inherited from BaseComponent.
 
-#### 返回值
-- **类型**: `Record<string, any> | undefined` - 权限配置对象
+#### Return Value
+- **Type**: `Record<string, any> | undefined` - Permission configuration object
 
-#### 使用示例
-```tsx title="获取权限配置"
+#### Usage Example
+```tsx title="Get Permission Configuration"
 const permConfig = modal.getPermConfig();
 if (permConfig?.button) {
-  console.log('有按钮权限:', permConfig.button);
+  console.log('Has button permission:', permConfig.button);
 }
 ```
 
-## 属性
+## Properties
 ### openState
-弹窗开关状态变量，控制弹窗的显示和隐藏。
+Modal open/close state variable, controls modal display and hide.
 
-- **类型**: Numeric
-- **值含义**: 0=关闭，1=打开
-- **用法**: `modal.openState.value = 1`
+- **Type**: Numeric
+- **Value Meaning**: 0=closed, 1=open
+- **Usage**: `modal.openState.value = 1`
 
 ### config
-组件配置对象，包含所有弹窗配置项，继承自BaseComponent。
+Component configuration object, containing all modal configuration items, inherited from BaseComponent.
 
-- **类型**: `ModalConfig & { requireElements: requireElement[] }`
-- **用法**: `modal.config.size = 'big'`
+- **Type**: `ModalConfig & { requireElements: requireElement[] }`
+- **Usage**: `modal.config.size = 'big'`
 
 ### name
-组件实例名称，继承自BaseComponent。
+Component instance name, inherited from BaseComponent.
 
-- **类型**: string
-- **用法**: `modal.name`
+- **Type**: string
+- **Usage**: `modal.name`
 
 ### title
-组件显示标题，继承自BaseComponent。
+Component display title, inherited from BaseComponent.
 
-- **类型**: string
-- **用法**: `modal.title`
+- **Type**: string
+- **Usage**: `modal.title`
 
 ### type
-组件类型标识，继承自BaseComponent。
+Component type identifier, inherited from BaseComponent.
 
-- **类型**: string
-- **值**: 'components.Modal'
+- **Type**: string
+- **Value**: 'components.Modal'
 
 ### fullName
-组件完整名称，继承自BaseComponent。
+Component full name, inherited from BaseComponent.
 
-- **类型**: string
-- **值**: 'components.Modal'
+- **Type**: string
+- **Value**: 'components.Modal'
 
 ### showTitle
-是否显示组件标题，继承自BaseComponent。
+Whether to show component title, inherited from BaseComponent.
 
-- **类型**: boolean
+- **Type**: boolean
 
 ### app
-关联的应用实例，继承自BaseComponent。
+Associated application instance, inherited from BaseComponent.
 
-- **类型**: App
-- **用法**: `modal.app`
+- **Type**: App
+- **Usage**: `modal.app`
 
 ### page
-关联的页面实例，继承自BaseComponent。
+Associated page instance, inherited from BaseComponent.
 
-- **类型**: BasePage
-- **用法**: `modal.page`
+- **Type**: BasePage
+- **Usage**: `modal.page`
 
 ### compType
-组件类型分类，继承自BaseComponent。
+Component type classification, inherited from BaseComponent.
 
-- **类型**: COMPONENT_TYPE
-- **值含义**: normal、layout、reference
-- **用法**: `modal.compType`
+- **Type**: COMPONENT_TYPE
+- **Value Meaning**: normal、layout、reference
+- **Usage**: `modal.compType`
 
 ### dataTypeList
-组件变量数据类型列表，继承自BaseComponent。
+Component variable data type list, inherited from BaseComponent.
 
-- **类型**: BaseDataType[]
-- **用法**: `modal.dataTypeList`
+- **Type**: BaseDataType[]
+- **Usage**: `modal.dataTypeList`
 
-## 事件
+## Events
 ### afterOpen
-弹窗打开后触发的事件。
+Event triggered after modal opens.
 
-#### 使用示例
-```tsx title="监听弹窗打开事件"
+#### Usage Example
+```tsx title="Listen to Modal Open Event"
 modal.subscribeEvent('afterOpen', async () => {
-  console.log('弹窗已打开');
-  // 可以在此处执行弹窗打开后的逻辑
+  console.log('Modal opened');
+  // Can execute post-open logic here
   await loadModalData();
 });
 ```
 
 ### afterClose
-弹窗关闭后触发的事件。
+Event triggered after modal closes.
 
-#### 使用示例
-```tsx title="监听弹窗关闭事件"
+#### Usage Example
+```tsx title="Listen to Modal Close Event"
 modal.subscribeEvent('afterClose', async () => {
-  console.log('弹窗已关闭');
-  // 清理弹窗数据
+  console.log('Modal closed');
+  // Clean up modal data
   await clearModalData();
 });
 ```
 
-### 动态按钮事件
-点击底部按钮后触发的动态事件，事件名格式为 `onClick` + 按钮ID，例如 `onClickConfirm`、`onClickCancel`。
+### Dynamic Button Events
+Dynamic events triggered after clicking bottom buttons, event name format is `onClick` + button ID, such as `onClickConfirm`, `onClickCancel`.
 
-#### 使用示例
-```tsx title="监听按钮点击事件"
-// 监听ID为confirm的按钮点击
+#### Usage Example
+```tsx title="Listen to Button Click Event"
+// Listen to button with ID confirm click
 modal.subscribeEvent('onClickConfirm', async () => {
-  console.log('确认按钮被点击');
+  console.log('Confirm button clicked');
   await handleConfirm();
   await modal.close();
 });
 
-// 监听ID为cancel的按钮点击  
+// Listen to button with ID cancel click  
 modal.subscribeEvent('onClickCancel', async () => {
-  console.log('取消按钮被点击');
+  console.log('Cancel button clicked');
   await modal.close();
 });
 ```
 
-## 高级特性
-### 抽屉式弹窗配置
-当需要侧边栏样式的弹窗时，可配置为抽屉类型：
+## Advanced Features
+### Drawer Modal Configuration
+When sidebar-style modal is needed, can configure as drawer type:
 
-```tsx title="抽屉弹窗配置示例"
+```tsx title="Drawer Modal Configuration Example"
 const drawerConfig = {
   type: 'drawer',
   placement: 'right',
@@ -400,13 +400,13 @@ const drawerConfig = {
 };
 
 modal.setConfig(drawerConfig);
-await modal.call('侧边栏信息');
+await modal.call('Sidebar Information');
 ```
 
-### 嵌套组件布局
-弹窗内可嵌套其他组件，通过layout配置实现复杂界面：
+### Nested Component Layout
+Modals can nest other components, implementing complex interfaces through layout configuration:
 
-```tsx title="嵌套组件配置"
+```tsx title="Nested Component Configuration"
 const layoutConfig = {
   layout: [
     { i: 'Form1', x: 0, y: 0, w: 12, h: 8 },
@@ -417,32 +417,32 @@ const layoutConfig = {
 modal.setConfig(layoutConfig);
 ```
 
-### 全屏弹窗模式
-适用于复杂表单或大量数据展示场景：
+### Fullscreen Modal Mode
+Suitable for complex forms or large data display scenarios:
 
-```tsx title="全屏弹窗配置"
+```tsx title="Fullscreen Modal Configuration"
 modal.setConfig({
   size: 'fullWindow',
   position: 'fullscreen'
 });
 ```
 
-### 自定义按钮配置
-支持多按钮配置和权限控制：
+### Custom Button Configuration
+Supports multi-button configuration and permission control:
 
-```tsx title="复杂按钮配置"
+```tsx title="Complex Button Configuration"
 const buttonConfig = {
   bottomButtonList: [
-    { id: 'save', name: '保存', type: 'primary' },
-    { id: 'saveAndContinue', name: '保存并继续', type: 'default' },
-    { id: 'cancel', name: '取消', type: 'default' }
+    { id: 'save', name: 'Save', type: 'primary' },
+    { id: 'saveAndContinue', name: 'Save and Continue', type: 'default' },
+    { id: 'cancel', name: 'Cancel', type: 'default' }
   ],
   bottomButtonAlign: 'center'
 };
 
 modal.setConfig(buttonConfig);
 
-// 分别处理各按钮事件
+// Handle each button event separately
 modal.subscribeEvent('onClickSave', async () => {
   await saveData();
   await modal.close();
@@ -452,4 +452,4 @@ modal.subscribeEvent('onClickSaveAndContinue', async () => {
   await saveData();
   await clearForm();
 });
-``` 
+```

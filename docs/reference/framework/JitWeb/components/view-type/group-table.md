@@ -1,16 +1,16 @@
 ---
 slug: group-table
 ---
-# 分组表
-分组表是一个功能强大的数据展示组件，基于antd Table实现分组聚合、行内编辑、工具栏操作等功能。它负责多维度数据的分组展示、统计计算和交互操作，支持字段级别的配置控制、权限管理和自定义样式规则。
+# Group Table
+Group table is a powerful data display component, implemented based on antd Table to provide grouping aggregation, inline editing, toolbar operations, and other functions. It handles multi-dimensional data grouping display, statistical calculations, and interactive operations, supporting field-level configuration control, permission management, and custom style rules.
 
-分组表元素分层结构为Meta（components.Meta） → Type（components.GroupTable） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建分组表实例元素。
+The group table element has a hierarchical structure of Meta (components.Meta) → Type (components.GroupTable) → Instance. Developers can quickly create group table instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.GroupTableType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `components.GroupTableType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基础配置示例
-```tsx title="基础分组表配置"
+## Quick Start 
+### Basic Configuration Example
+```tsx title="Basic Group Table Configuration"
 const groupTableConfig = {
   requireElements: [
     {
@@ -26,30 +26,30 @@ const groupTableConfig = {
   toolbarLeft: [
     {
       id: "add",
-      name: "新增",
+      name: "Add",
       type: "primary"
     }
   ],
   toolbarRight: [
     {
       id: "export", 
-      name: "导出",
+      name: "Export",
       type: "default"
     }
   ],
   actionBtn: [
     {
       id: "edit",
-      name: "编辑"
+      name: "Edit"
     },
     {
       id: "delete",
-      name: "删除"
+      name: "Delete"
     }
   ],
   fieldConfig: {
     "name": {
-      alias: "姓名",
+      alias: "Name",
       position: "left",
       freeze: false,
       columnClick: true,
@@ -59,7 +59,7 @@ const groupTableConfig = {
       sort: "asc"
     },
     "salary": {
-      alias: "薪资", 
+      alias: "Salary", 
       position: "right",
       statistic: "COLSUM",
       sort: "desc"
@@ -68,271 +68,271 @@ const groupTableConfig = {
 }
 ```
 
-### 配置属性说明
-| 属性名 | 类型 | 默认值 | 描述 |
+### Configuration Properties
+| Property Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| fieldIdList | `string[]` | `[]` | 显示的字段列表 |
-| groupFieldIdList | `string[]` | `[]` | 分组字段列表 |
-| speedMode | `boolean` | `false` | 极速模式，提升大数据量渲染性能 |
-| autoLoad | `boolean` | `true` | 是否默认自动加载数据 |
-| disableSelect | `boolean` | `false` | 是否禁用行选择功能 |
-| toolbarLeft | `GroupTableButtonProps[]` | `[]` | 工具栏左侧按钮配置 |
-| toolbarRight | `GroupTableButtonProps[]` | `[]` | 工具栏右侧按钮配置 |
-| actionBtn | `GroupTableButtonProps[]` | `[]` | 操作列按钮配置 |
-| fieldConfig | `Record<string, GroupTableFieldConfig>` | `{}` | 字段级别的详细配置 |
-| columnWidth | `Record<string, number>` | `{}` | 列宽度配置 |
-| filterStyleList | `FilterStyleItemProps[]` | `[]` | 样式规则配置 |
-| filterEditorList | `FilterEditorItemProps[]` | `[]` | 编辑规则配置 |
+| fieldIdList | `string[]` | `[]` | List of fields to display |
+| groupFieldIdList | `string[]` | `[]` | List of grouping fields |
+| speedMode | `boolean` | `false` | Speed mode, improves rendering performance for large data volumes |
+| autoLoad | `boolean` | `true` | Whether to auto-load data by default |
+| disableSelect | `boolean` | `false` | Whether to disable row selection functionality |
+| toolbarLeft | `GroupTableButtonProps[]` | `[]` | Toolbar left button configuration |
+| toolbarRight | `GroupTableButtonProps[]` | `[]` | Toolbar right button configuration |
+| actionBtn | `GroupTableButtonProps[]` | `[]` | Action column button configuration |
+| fieldConfig | `Record<string, GroupTableFieldConfig>` | `{}` | Field-level detailed configuration |
+| columnWidth | `Record<string, number>` | `{}` | Column width configuration |
+| filterStyleList | `FilterStyleItemProps[]` | `[]` | Style rule configuration |
+| filterEditorList | `FilterEditorItemProps[]` | `[]` | Edit rule configuration |
 
-## 变量
+## Variables
 ### displayRowList
-| 属性 | 值 |
+| Property | Value |
 |------|-----|
-| 类型 | `RowList` |
-| 标题 | 当前页数据 |
-| 只读 | 是 |
-| 泛型 | 关联模型的fullName |
+| Type | `RowList` |
+| Title | Current page data |
+| Read-only | Yes |
+| Generic | Associated model's fullName |
 
-当前显示的多行数据列表，包含分组聚合后的结果数据。
+Currently displayed multi-row data list, containing result data after grouping aggregation.
 
 ### selectedRowList
-| 属性 | 值 |
+| Property | Value |
 |------|-----|
-| 类型 | `RowList` |
-| 标题 | 选中的多行数据 |
-| 只读 | 是 |
-| 泛型 | 关联模型的fullName |
+| Type | `RowList` |
+| Title | Selected multi-row data |
+| Read-only | Yes |
+| Generic | Associated model's fullName |
 
-用户选中的多行数据列表，支持多选操作。
+User-selected multi-row data list, supporting multi-selection operations.
 
 ### activeRow
-| 属性 | 值 |
+| Property | Value |
 |------|-----|
-| 类型 | `RowData` |
-| 标题 | 操作的单行数据 |
-| 只读 | 是 |
-| 泛型 | 关联模型的fullName |
+| Type | `RowData` |
+| Title | Operated single-row data |
+| Read-only | Yes |
+| Generic | Associated model's fullName |
 
-当前操作的单行数据，在点击行或操作按钮时更新。
+Currently operated single-row data, updated when clicking rows or operation buttons.
 
 ### filter
-| 属性 | 值 |
+| Property | Value |
 |------|-----|
-| 类型 | `QFilter` |
-| 标题 | 筛选条件 |
-| 只读 | 否 |
-| 泛型 | 关联模型的fullName |
+| Type | `QFilter` |
+| Title | Filter conditions |
+| Read-only | No |
+| Generic | Associated model's fullName |
 
-数据筛选条件，支持复杂查询条件组合。
+Data filter conditions, supporting complex query condition combinations.
 
-## 方法 
+## Methods 
 ### bindApp
-绑定应用实例到组件。
+Bind application instance to component.
 
-#### 参数详解
-| 参数名 | 类型 | 是否必需 | 默认值 | 描述 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|----------|--------|------|
-| app | `App` | 是 | - | 应用实例 |
+| app | `App` | Yes | - | Application instance |
 
-#### 使用示例
-```tsx title="绑定应用实例"
+#### Usage Example
+```tsx title="Bind Application Instance"
 groupTable.bindApp(app);
 ```
 
 ### bindPage
-绑定页面实例到组件。
+Bind page instance to component.
 
-#### 参数详解
-| 参数名 | 类型 | 是否必需 | 默认值 | 描述 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|----------|--------|------|
-| page | `BasePage` | 是 | - | 页面实例 |
+| page | `BasePage` | Yes | - | Page instance |
 
-#### 使用示例
-```tsx title="绑定页面实例"
+#### Usage Example
+```tsx title="Bind Page Instance"
 groupTable.bindPage(page);
 ```
 
 ### call
-刷新组件数据，可传入额外的筛选条件。
+Refresh component data, can pass additional filter conditions.
 
-#### 参数详解
-| 参数名 | 类型 | 是否必需 | 默认值 | 描述 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|----------|--------|------|
-| qFilter | `QFilter` | 否 | - | 额外的筛选条件 |
+| qFilter | `QFilter` | No | - | Additional filter conditions |
 
-#### 返回值
-无返回值
+#### Return Value
+No return value
 
-#### 使用示例
-```tsx title="刷新分组表数据"
-// 无条件刷新
+#### Usage Example
+```tsx title="Refresh Group Table Data"
+// Refresh without conditions
 await groupTable.call();
 
-// 带筛选条件刷新
+// Refresh with filter conditions
 await groupTable.call("Q(status='active')");
 
-// 使用变量筛选
+// Use variable filter
 await groupTable.call(someFilter);
 ```
 
 ### checkAndGetModelExist
-检查配置中的模型是否存在并返回模型类（静态方法）。
+Check if the model in configuration exists and return the model class (static method).
 
-#### 参数详解
-| 参数名 | 类型 | 是否必需 | 默认值 | 描述 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|----------|--------|------|
-| compConfig | `GroupTableComponentConfig` | 是 | - | 组件配置对象 |
+| compConfig | `GroupTableComponentConfig` | Yes | - | Component configuration object |
 
-#### 返回值
-`typeof Jit.BaseModel | null` - 模型类或null
+#### Return Value
+`typeof Jit.BaseModel | null` - Model class or null
 
-#### 使用示例
-```tsx title="检查模型存在性"
+#### Usage Example
+```tsx title="Check Model Existence"
 const ModelClass = GroupTableComponent.checkAndGetModelExist(config);
 if (ModelClass) {
-  console.log('关联模型:', ModelClass.fullName);
+  console.log('Associated model:', ModelClass.fullName);
 } else {
-  console.error('模型不存在');
+  console.error('Model does not exist');
 }
 ```
 
 ### destroy
-销毁组件实例，清理所有资源和事件监听器。
+Destroy component instance, clean up all resources and event listeners.
 
-#### 使用示例
-```tsx title="销毁组件"
-// 手动销毁组件
+#### Usage Example
+```tsx title="Destroy Component"
+// Manually destroy component
 groupTable.destroy();
 ```
 
 ### getEventKey
-获取事件键名。
+Get event key name.
 
-#### 参数详解
-| 参数名 | 类型 | 是否必需 | 默认值 | 描述 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|----------|--------|------|
-| eventName | `string` | 是 | - | 事件名称 |
+| eventName | `string` | Yes | - | Event name |
 
-#### 返回值
-`string` - 事件键名
+#### Return Value
+`string` - Event key name
 
-#### 使用示例
-```tsx title="获取事件键名"
+#### Usage Example
+```tsx title="Get Event Key"
 const eventKey = groupTable.getEventKey('selectedChange');
 ```
 
 ### getEventList
-获取组件的事件定义列表（静态方法）。
+Get component's event definition list (static method).
 
-#### 参数详解
-| 参数名 | 类型 | 是否必需 | 默认值 | 描述 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|----------|--------|------|
-| compConfig | `GroupTableComponentConfig` | 是 | - | 组件配置对象 |
+| compConfig | `GroupTableComponentConfig` | Yes | - | Component configuration object |
 
-#### 返回值
-`Event[]` - 事件定义列表
+#### Return Value
+`Event[]` - Event definition list
 
-#### 使用示例
-```tsx title="获取事件定义"
+#### Usage Example
+```tsx title="Get Event Definitions"
 const eventList = GroupTableComponent.getEventList(config);
-console.log('组件事件:', eventList);
+console.log('Component events:', eventList);
 ```
 
 ### getFuncList
-获取组件的方法定义列表（静态方法）。
+Get component's method definition list (static method).
 
-#### 参数详解
-| 参数名 | 类型 | 是否必需 | 默认值 | 描述 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|----------|--------|------|
-| compConfig | `GroupTableComponentConfig` | 是 | - | 组件配置对象 |
+| compConfig | `GroupTableComponentConfig` | Yes | - | Component configuration object |
 
-#### 返回值
-`Function[]` - 方法定义列表
+#### Return Value
+`Function[]` - Method definition list
 
-#### 使用示例
-```tsx title="获取方法定义"
+#### Usage Example
+```tsx title="Get Method Definitions"
 const funcList = GroupTableComponent.getFuncList(config);
-console.log('组件方法:', funcList);
+console.log('Component methods:', funcList);
 ```
 
 ### getPermConfig
-获取当前组件的权限配置。
+Get current component's permission configuration.
 
-#### 返回值
-`Record<string, any> | undefined` - 权限配置对象
+#### Return Value
+`Record<string, any> | undefined` - Permission configuration object
 
-#### 使用示例
-```tsx title="获取权限配置"
+#### Usage Example
+```tsx title="Get Permission Configuration"
 const permConfig = groupTable.getPermConfig();
 if (permConfig?.canEdit) {
-  // 执行编辑操作
+  // Execute edit operation
 }
 ```
 
 ### getVariableList
-获取组件的变量定义列表（静态方法）。
+Get component's variable definition list (static method).
 
-#### 参数详解
-| 参数名 | 类型 | 是否必需 | 默认值 | 描述 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|----------|--------|------|
-| compConfig | `GroupTableComponentConfig` | 是 | - | 组件配置对象 |
+| compConfig | `GroupTableComponentConfig` | Yes | - | Component configuration object |
 
-#### 返回值
-`BaseDataType[]` - 变量定义列表
+#### Return Value
+`BaseDataType[]` - Variable definition list
 
-#### 使用示例
-```tsx title="获取变量定义"
+#### Usage Example
+```tsx title="Get Variable Definitions"
 const variableList = GroupTableComponent.getVariableList(config);
-console.log('组件变量:', variableList);
+console.log('Component variables:', variableList);
 ```
 
 ### initVariables
-初始化组件变量。
+Initialize component variables.
 
-#### 参数详解
-| 参数名 | 类型 | 是否必需 | 默认值 | 描述 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|----------|--------|------|
-| dataTypeList | `BaseDataType[]` | 是 | - | 数据类型列表 |
+| dataTypeList | `BaseDataType[]` | Yes | - | Data type list |
 
-#### 使用示例
-```tsx title="初始化变量"
+#### Usage Example
+```tsx title="Initialize Variables"
 groupTable.initVariables(dataTypeList);
 ```
 
 ### newVariable
-创建新的数据类型变量。
+Create new data type variable.
 
-#### 参数详解
-| 参数名 | 类型 | 是否必需 | 默认值 | 描述 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|----------|--------|------|
-| varConfig | `DataTypeConfig` | 是 | - | 变量配置对象 |
+| varConfig | `DataTypeConfig` | Yes | - | Variable configuration object |
 
-#### 返回值
-`BaseDataType` - 创建的变量实例
+#### Return Value
+`BaseDataType` - Created variable instance
 
-#### 使用示例
-```tsx title="创建新变量"
+#### Usage Example
+```tsx title="Create New Variable"
 const newVar = groupTable.newVariable(varConfig);
 ```
 
 ### publishEvent
-发布组件事件，触发已订阅的事件处理器。
+Publish component event, trigger subscribed event handlers.
 
-#### 参数详解
-| 参数名 | 类型 | 是否必需 | 默认值 | 描述 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|----------|--------|------|
-| name | `string` | 是 | - | 事件名称 |
-| ex | `Record<string, any>` | 否 | - | 事件附加数据 |
+| name | `string` | Yes | - | Event name |
+| ex | `Record<string, any>` | No | - | Event additional data |
 
-#### 返回值
+#### Return Value
 `Promise<void>`
 
-#### 使用示例
-```tsx title="发布自定义事件"
-// 发布简单事件
+#### Usage Example
+```tsx title="Publish Custom Event"
+// Publish simple event
 await groupTable.publishEvent('customEvent');
 
-// 发布带数据的事件
+// Publish event with data
 await groupTable.publishEvent('dataUpdated', { 
   updatedAt: new Date(),
   count: 5
@@ -340,199 +340,199 @@ await groupTable.publishEvent('dataUpdated', {
 ```
 
 ### runCode
-在页面上下文中执行代码字符串。
+Execute code string in page context.
 
-#### 参数详解
-| 参数名 | 类型 | 是否必需 | 默认值 | 描述 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|----------|--------|------|
-| code | `string` | 是 | - | 要执行的代码字符串 |
+| code | `string` | Yes | - | Code string to execute |
 
-#### 返回值
-`any` - 代码执行结果
+#### Return Value
+`any` - Code execution result
 
-#### 使用示例
-```tsx title="执行代码"
-// 执行简单代码
+#### Usage Example
+```tsx title="Execute Code"
+// Execute simple code
 const result = groupTable.runCode('return this.name + "_result"');
 ```
 
 ### setConfig
-动态设置组件配置。
+Dynamically set component configuration.
 
-#### 参数详解
-| 参数名 | 类型 | 是否必需 | 默认值 | 描述 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|----------|--------|------|
-| next | `Partial<GroupTableComponentConfig>` | 是 | - | 新的配置对象 |
-| clean | `boolean` | 否 | `false` | 是否完全替换配置 |
+| next | `Partial<GroupTableComponentConfig>` | Yes | - | New configuration object |
+| clean | `boolean` | No | `false` | Whether to completely replace configuration |
 
-#### 返回值
-无返回值
+#### Return Value
+No return value
 
-#### 使用示例
-```tsx title="动态设置配置"
-// 部分更新配置
+#### Usage Example
+```tsx title="Dynamically Set Configuration"
+// Partially update configuration
 groupTable.setConfig({
   speedMode: true,
   disableSelect: false
 });
 
-// 完全替换配置
+// Completely replace configuration
 groupTable.setConfig(newConfig, true);
 ```
 
 ### subscribeEvent
-订阅组件事件，注册事件处理器。
+Subscribe to component event, register event handler.
 
-#### 参数详解
-| 参数名 | 类型 | 是否必需 | 默认值 | 描述 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|----------|--------|------|
-| name | `string` | 是 | - | 事件名称 |
-| evtCb | `(data: any) => Promise<void> \| void` | 是 | - | 事件回调函数 |
-| unSubscribeExist | `boolean` | 否 | `true` | 是否取消已存在的订阅 |
+| name | `string` | Yes | - | Event name |
+| evtCb | `(data: any) => Promise<void> \| void` | Yes | - | Event callback function |
+| unSubscribeExist | `boolean` | No | `true` | Whether to cancel existing subscriptions |
 
-#### 返回值
-`string` - 订阅句柄ID
+#### Return Value
+`string` - Subscription handle ID
 
-#### 使用示例
-```tsx title="订阅组件事件"
-// 订阅事件
+#### Usage Example
+```tsx title="Subscribe to Component Event"
+// Subscribe to event
 const handleId = groupTable.subscribeEvent('selectedChange', (data) => {
-  console.log('选中数据变化:', data);
+  console.log('Selected data changed:', data);
 });
 
-// 异步事件处理
+// Async event handling
 groupTable.subscribeEvent('afterClickRow', async (data) => {
   await processRowData(data);
 });
 ```
 
 ### unSubscribeEvent
-取消事件订阅。
+Cancel event subscription.
 
-#### 参数详解
-| 参数名 | 类型 | 是否必需 | 默认值 | 描述 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|----------|--------|------|
-| id | `string` | 是 | - | 订阅句柄ID |
+| id | `string` | Yes | - | Subscription handle ID |
 
-#### 返回值
-无返回值
+#### Return Value
+No return value
 
-#### 使用示例
-```tsx title="取消事件订阅"
-// 取消特定订阅
+#### Usage Example
+```tsx title="Cancel Event Subscription"
+// Cancel specific subscription
 groupTable.unSubscribeEvent(handleId);
 ```
 
-## 属性
+## Properties
 ### app
-关联的应用实例，类型为 `App`，提供应用级别的上下文和服务。
+Associated application instance, type `App`, provides application-level context and services.
 
 ### config
-组件配置对象，包含所有的配置属性。类型为 `GroupTableComponentConfig & { requireElements: requireElement[] }`。
+Component configuration object, containing all configuration properties. Type is `GroupTableComponentConfig & { requireElements: requireElement[] }`.
 
 ### dataTypeList
-组件变量类型列表，类型为 `BaseDataType[]`，包含所有变量的类型定义。
+Component variable type list, type `BaseDataType[]`, containing type definitions for all variables.
 
 ### fullName
-组件完整名称，类型为 `string`，包含完整的命名空间路径。
+Component complete name, type `string`, containing complete namespace path.
 
 ### ModelClass
-关联的模型类，类型为 `typeof Jit.BaseModel`，用于数据操作和字段定义。
+Associated model class, type `typeof Jit.BaseModel`, used for data operations and field definitions.
 
 ### name
-组件实例名称，类型为 `string`，在页面中的唯一标识符。
+Component instance name, type `string`, unique identifier within the page.
 
 ### page
-关联的页面实例，类型为 `BasePage`，提供页面级别的上下文和数据。
+Associated page instance, type `BasePage`, provides page-level context and data.
 
 ### showTitle
-是否显示组件标题，类型为 `boolean`。
+Whether to show component title, type `boolean`.
 
 ### store
-组件内部状态管理器，类型为 `GroupTableStore`，负责数据加载、分组计算和状态维护。
+Component internal state manager, type `GroupTableStore`, responsible for data loading, grouping calculations, and state maintenance.
 
 ### title
-组件显示标题，类型为 `string`，用于界面展示。
+Component display title, type `string`, used for interface display.
 
 ### type
-组件类型标识，类型为 `string`，值为 `"components.GroupTable"`。
+Component type identifier, type `string`, value is `"components.GroupTable"`.
 
-## 事件
+## Events
 ### selectedChange
-| 属性 | 值 |
+| Property | Value |
 |------|-----|
-| 触发时机 | 选中行变化后 |
-| 事件数据 | selectedRowList |
-| 数据类型 | RowList |
+| Trigger Timing | After selected rows change |
+| Event Data | selectedRowList |
+| Data Type | RowList |
 
-当用户选中或取消选中行时触发。
+Triggered when user selects or deselects rows.
 
 ### afterClickRow
-| 属性 | 值 |
+| Property | Value |
 |------|-----|
-| 触发时机 | 点击行后 |
-| 事件数据 | activeRow |
-| 数据类型 | RowData |
+| Trigger Timing | After clicking row |
+| Event Data | activeRow |
+| Data Type | RowData |
 
-当用户点击表格行时触发。
+Triggered when user clicks a table row.
 
 ### afterRowChange
-| 属性 | 值 |
+| Property | Value |
 |------|-----|
-| 触发时机 | 任意字段值改变后 |
-| 事件数据 | activeRow |
-| 数据类型 | RowData |
+| Trigger Timing | After any field value changes |
+| Event Data | activeRow |
+| Data Type | RowData |
 
-当表格中任意字段值发生变化时触发。
+Triggered when any field value in the table changes.
 
-### 动态工具栏按钮事件
-根据 `toolbarLeft`、`toolbarRight` 和 `actionBtn` 配置动态生成的按钮点击事件：
+### Dynamic Toolbar Button Events
+Button click events dynamically generated based on `toolbarLeft`, `toolbarRight`, and `actionBtn` configuration:
 
-- 工具栏按钮事件名格式：`click{ButtonId}`（驼峰命名）
-- 操作按钮事件数据：activeRow
-- 工具栏按钮事件数据：无
+- Toolbar button event name format: `click{ButtonId}` (camelCase naming)
+- Action button event data: activeRow
+- Toolbar button event data: none
 
-### 动态字段事件
-根据字段配置动态生成的字段相关事件：
+### Dynamic Field Events
+Field-related events dynamically generated based on field configuration:
 
-- 列点击事件：`click{FieldId}`（当 `columnClick: true` 时）
-- 字段值变化事件：`after{FieldId}Change`（当 `inlineEdit: true` 时）
+- Column click event: `click{FieldId}` (when `columnClick: true`)
+- Field value change event: `after{FieldId}Change` (when `inlineEdit: true`)
 
-## 高级特性
-### 分组统计配置
-```tsx title="配置字段统计"
+## Advanced Features
+### Grouping Statistics Configuration
+```tsx title="Configure Field Statistics"
 const fieldConfig = {
   "salary": {
-    statistic: "COLSUM",  // 求和
-    alias: "薪资总计"
+    statistic: "COLSUM",  // Sum
+    alias: "Total Salary"
   },
   "count": {
-    statistic: "COUNT",   // 计数  
-    alias: "人数"
+    statistic: "COUNT",   // Count  
+    alias: "Person Count"
   },
   "rating": {
-    statistic: "COLAVG",  // 平均值
-    alias: "平均评分"
+    statistic: "COLAVG",  // Average
+    alias: "Average Rating"
   }
 }
 ```
 
-支持的统计类型：
-- `COUNT`：计数
-- `COLSUM`：求和  
-- `COLAVG`：平均值
-- `COLMAX`：最大值
-- `COLMIN`：最小值
-- `DISTINCT`：去重计数
-- `FILL`：已填写计数
-- `NOTFILL`：未填写计数
+Supported statistics types:
+- `COUNT`: Count
+- `COLSUM`: Sum  
+- `COLAVG`: Average
+- `COLMAX`: Maximum
+- `COLMIN`: Minimum
+- `DISTINCT`: Distinct count
+- `FILL`: Filled count
+- `NOTFILL`: Unfilled count
 
-### 样式规则配置
-```tsx title="配置条件样式"
+### Style Rule Configuration
+```tsx title="Configure Conditional Styles"
 const filterStyleList = [
   {
     id: "highSalary",
-    name: "高薪标识", 
+    name: "High Salary Indicator", 
     fieldsColor: "#ff0000",
     rowColor: "#fff2f0",
     filterList: ["Q(salary__gt=10000)"],
@@ -541,25 +541,25 @@ const filterStyleList = [
 ]
 ```
 
-### 编辑规则配置
-```tsx title="配置编辑权限"
+### Edit Rule Configuration
+```tsx title="Configure Edit Permissions"
 const filterEditorList = [
   {
     id: "managerEdit",
-    name: "经理可编辑",
+    name: "Manager Can Edit",
     filterList: ["Q(role='manager')"],
     filterEditorColumns: ["salary", "bonus"]
   }
 ]
 ```
 
-### 极速模式优化
-启用 `speedMode` 可提升大数据量场景的渲染性能，但会禁用图片、文件、链接等复杂字段类型的渲染。
+### Speed Mode Optimization
+Enabling `speedMode` can improve rendering performance for large data volume scenarios, but will disable rendering of complex field types like images, files, and links.
 
-```tsx title="启用极速模式"
+```tsx title="Enable Speed Mode"
 const config = {
   speedMode: true,
-  // 极速模式下这些字段类型会被简化渲染
+  // These field types will be simplified in speed mode
   // IMAGE, LINK, FILE
 }
 ```

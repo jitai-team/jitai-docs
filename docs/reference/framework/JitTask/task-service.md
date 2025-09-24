@@ -3,22 +3,23 @@ sidebar_position: 4
 slug: task-service
 ---
 
-# 任务服务
-任务服务是JitTask框架的核心API服务，负责任务模板管理、任务创建执行、状态控制和强制终止等功能。元素分层结构为Meta（services.Meta） → Type（services.NormalType） → 实例（services.TaskSvc），开发者可直接使用TaskSvc实例元素。
+# Task Service
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的services.NormalType元素，以实现自己的封装。
+Task Service is the core API service of the JitTask framework, responsible for task template management, task creation and execution, status control, and forced termination. The element has a hierarchical structure of Meta (services.Meta) → Type (services.NormalType) → Instance (services.TaskSvc). Developers can directly use the TaskSvc instance element.
 
-## 快速开始 
-任务服务作为JitTask框架的内置实例元素，可直接通过`app.getElement()`获取使用：
+Of course, developers can also create their own Type elements or modify the official services.NormalType element provided by JitAi in their own App to implement their own encapsulation.
 
-```python title="基础使用示例"
-# 获取任务服务实例
+## Quick Start
+Task Service, as a built-in instance element of the JitTask framework, can be directly obtained and used through `app.getElement()`:
+
+```python title="Basic Usage Example"
+# Get task service instance
 taskSvc = app.getElement("services.TaskSvc")
 
-# 获取任务模板列表
+# Get task template list
 templates = taskSvc.getTaskTmplList("")
 
-# 创建定时任务
+# Create scheduled task
 result = taskSvc.createTimerTask(
     fullName="tasks.MyTask",
     startTime="2024-01-01 10:00:00",
@@ -28,58 +29,58 @@ result = taskSvc.createTimerTask(
 )
 ```
 
-## 方法 
+## Methods
 ### getTaskTmplList
-获取系统中所有可用的任务模板列表，支持按名称筛选。
+Get all available task template lists in the system, supporting filtering by name.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| queryStr | Stext | str | 是 | 模板名称筛选条件，空字符串返回所有模板 |
+| queryStr | Stext | str | Yes | Template name filter condition, empty string returns all templates |
 
-#### 返回值
-JitList类型，包含任务模板信息列表，每个项目包含title、taskType、repeatType、fullName字段。
+#### Return Value
+JitList type, containing task template information list, each item includes title, taskType, repeatType, fullName fields.
 
-#### 使用示例
-```python title="获取任务模板列表"
+#### Usage Example
+```python title="Get Task Template List"
 taskSvc = app.getElement("services.TaskSvc")
 
-# 获取所有任务模板
+# Get all task templates
 all_templates = taskSvc.getTaskTmplList("")
 
-# 按名称筛选任务模板
-filtered_templates = taskSvc.getTaskTmplList("数据备份")
+# Filter task templates by name
+filtered_templates = taskSvc.getTaskTmplList("Data Backup")
 
-# 处理返回结果
+# Process returned results
 for template in all_templates:
-    print(f"模板名称: {template['title']}")
-    print(f"任务类型: {template['taskType']}")
-    print(f"重复类型: {template['repeatType']}")
-    print(f"完整路径: {template['fullName']}")
+    print(f"Template name: {template['title']}")
+    print(f"Task type: {template['taskType']}")
+    print(f"Repeat type: {template['repeatType']}")
+    print(f"Full path: {template['fullName']}")
 ```
 
 ### createTimerTask
-创建一个定时任务，支持指定执行时间、函数路径和参数。
+Create a scheduled task, supporting specified execution time, function path, and parameters.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| fullName | Stext | str | 是 | 任务元素的完整路径 |
-| startTime | Datetime | datetime | 是 | 任务开始执行时间 |
-| funcName | Stext | str | 是 | 要执行的函数路径 |
-| taskType | Stext | str | 是 | 任务类型，如tasks.NormalType |
-| argDict | JitDict | dict | 是 | 传递给执行函数的参数字典 |
+| fullName | Stext | str | Yes | Full path of task element |
+| startTime | Datetime | datetime | Yes | Task start execution time |
+| funcName | Stext | str | Yes | Function path to execute |
+| taskType | Stext | str | Yes | Task type, such as tasks.NormalType |
+| argDict | JitDict | dict | Yes | Parameter dictionary passed to execution function |
 
-#### 返回值
-JitDict类型，包含任务创建结果信息。
+#### Return Value
+JitDict type, containing task creation result information.
 
-#### 使用示例
-```python title="创建定时任务"
+#### Usage Example
+```python title="Create Scheduled Task"
 from datetime import datetime, timedelta
 
 taskSvc = app.getElement("services.TaskSvc")
 
-# 创建1小时后执行的任务
+# Create task to execute in 1 hour
 future_time = datetime.now() + timedelta(hours=1)
 
 result = taskSvc.createTimerTask(
@@ -94,90 +95,90 @@ result = taskSvc.createTimerTask(
     }
 )
 
-print(f"任务创建结果: {result}")
+print(f"Task creation result: {result}")
 ```
 
 ### forcedEnd
-手动强制结束指定的任务，会更新任务状态并触发后续处理。
+Manually force end specified task, will update task status and trigger subsequent processing.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| taskId | Stext | str | 是 | 要结束的任务ID |
+| taskId | Stext | str | Yes | Task ID to end |
 
-#### 返回值
-JitDict类型，操作结果信息。
+#### Return Value
+JitDict type, operation result information.
 
-#### 使用示例
-```python title="强制结束任务"
+#### Usage Example
+```python title="Force End Task"
 taskSvc = app.getElement("services.TaskSvc")
 
-# 强制结束指定任务
+# Force end specified task
 result = taskSvc.forcedEnd("task_uuid_12345")
 
-print(f"任务强制结束结果: {result}")
+print(f"Task force end result: {result}")
 ```
 
 ### saveDateFieldTask
-处理基于日期字段的任务保存回调，当模型数据的日期字段发生变化时自动触发任务调度。
+Handle date field-based task save callback, automatically trigger task scheduling when date fields in model data change.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| rowObj | RowData | dict | 是 | 包含数据变更信息的行对象 |
+| rowObj | RowData | dict | Yes | Row object containing data change information |
 
-#### 返回值
-JitDict类型，处理结果信息。
+#### Return Value
+JitDict type, processing result information.
 
-#### 使用示例
-```python title="日期字段任务保存回调"
-# 通常在模型事件中使用
+#### Usage Example
+```python title="Date Field Task Save Callback"
+# Usually used in model events
 def onModelUpdate(rowObj):
     taskSvc = app.getElement("services.TaskSvc")
     
-    # 处理日期字段任务
+    # Handle date field task
     result = taskSvc.saveDateFieldTask(rowObj)
     
     return result
 ```
 
 ### deleteDateFieldTask
-处理基于日期字段的任务删除回调，当关联的模型数据被删除时清理相关任务。
+Handle date field-based task delete callback, clean up related tasks when associated model data is deleted.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| rowObj | RowData | dict | 是 | 包含被删除数据信息的行对象 |
+| rowObj | RowData | dict | Yes | Row object containing deleted data information |
 
-#### 返回值
-JitDict类型，处理结果信息。
+#### Return Value
+JitDict type, processing result information.
 
-#### 使用示例
-```python title="日期字段任务删除回调"
-# 通常在模型事件中使用
+#### Usage Example
+```python title="Date Field Task Delete Callback"
+# Usually used in model events
 def onModelDelete(rowObj):
     taskSvc = app.getElement("services.TaskSvc")
     
-    # 清理相关任务
+    # Clean up related tasks
     result = taskSvc.deleteDateFieldTask(rowObj)
     
     return result
 ```
 
-## 属性
-任务服务继承自services.NormalType，暂无特有的公开属性。
+## Attributes
+Task Service inherits from services.NormalType, no specific public attributes.
 
-## 高级特性
-### 任务生命周期管理
-任务服务支持完整的任务生命周期管理，包括创建、执行、监控和终止：
+## Advanced Features
+### Task Lifecycle Management
+Task Service supports complete task lifecycle management, including creation, execution, monitoring, and termination:
 
-```python title="任务生命周期管理"
+```python title="Task Lifecycle Management"
 taskSvc = app.getElement("services.TaskSvc")
 
-# 1. 获取可用模板
+# 1. Get available templates
 templates = taskSvc.getTaskTmplList("")
 
-# 2. 基于模板创建任务
+# 2. Create task based on template
 if templates:
     template = templates[0]
     result = taskSvc.createTimerTask(
@@ -188,47 +189,47 @@ if templates:
         argDict={"batch_size": 100}
     )
     
-    # 3. 如需要可强制终止任务
+    # 3. Force terminate task if needed
     # taskSvc.forcedEnd("task_id")
 ```
 
-### 模型事件集成
-任务服务与模型事件深度集成，支持数据变更驱动的任务调度：
+### Model Event Integration
+Task Service is deeply integrated with model events, supporting data change-driven task scheduling:
 
-```python title="模型事件集成"
-# 在模型的生命周期函数中使用
+```python title="Model Event Integration"
+# Used in model lifecycle functions
 def afterSave(self, triggerEvent=1):
-    """模型保存后触发任务服务"""
+    """Trigger task service after model save"""
     taskSvc = app.getElement("services.TaskSvc")
     
-    # 构造行对象
+    # Construct row object
     rowObj = {
-        'postData': self,  # 更新后的数据
-        'prevData': self._original_data  # 更新前的数据（需要自行维护）
+        'postData': self,  # Updated data
+        'prevData': self._original_data  # Pre-update data (needs to be maintained manually)
     }
     
-    # 触发日期字段任务处理
+    # Trigger date field task processing
     taskSvc.saveDateFieldTask(rowObj)
 
 def afterDelete(self, triggerEvent=1):
-    """模型删除后清理相关任务"""
+    """Clean up related tasks after model delete"""
     taskSvc = app.getElement("services.TaskSvc")
     
     rowObj = {
-        'prevData': self  # 被删除的数据
+        'prevData': self  # Deleted data
     }
     
-    # 清理相关任务
+    # Clean up related tasks
     taskSvc.deleteDateFieldTask(rowObj)
 ```
 
-### 批量任务管理
-支持批量创建和管理多个关联任务：
+### Batch Task Management
+Support batch creation and management of multiple related tasks:
 
-```python title="批量任务管理"
+```python title="Batch Task Management"
 taskSvc = app.getElement("services.TaskSvc")
 
-# 批量创建一组相关任务
+# Batch create a group of related tasks
 task_configs = [
     {
         "fullName": "tasks.DataSync",
@@ -246,11 +247,11 @@ task_configs = [
     }
 ]
 
-# 批量创建任务
+# Batch create tasks
 results = []
 for config in task_configs:
     result = taskSvc.createTimerTask(**config)
     results.append(result)
 
-print(f"批量创建了 {len(results)} 个任务")
-``` 
+print(f"Batch created {len(results)} tasks")
+```

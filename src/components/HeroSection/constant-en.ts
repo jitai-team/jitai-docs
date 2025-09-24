@@ -5,7 +5,8 @@ const CONTENT = {
   subTitle2: 'Orchestrated Development',
   subDesc2: 'Orchestrated development frameworks, tools, and DevOps toolchains that dramatically simplify application complexity and accelerate development of enterprise applications with native AI assistant integration.',
   buttonDownload: 'Download',
-  buttonDemo: 'Try Online'
+  buttonDemo: 'Try Online',
+  buttonGetStart: 'Get Start'
 };
 
 export default CONTENT;

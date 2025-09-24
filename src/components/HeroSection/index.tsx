@@ -69,8 +69,23 @@ const HeroSection: React.FC<{ currentLocale: string }> = ({ currentLocale }) => 
   const [isVisible, setIsVisible] = useState(false);
   const [animateElements, setAnimateElements] = useState(false);
   const [showTypewriter, setShowTypewriter] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const content = currentLocale === 'zh' ? CONTENT_ZH : CONTENT_EN;
+
+  // 检测移动端
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, []);
 
   // 延迟显示，让页面先加载完成
   useEffect(() => {
@@ -152,24 +167,24 @@ const HeroSection: React.FC<{ currentLocale: string }> = ({ currentLocale }) => 
 
           {/* 行动按钮区域 */}
           <div className={`${styles.heroButtons} ${animateElements ? styles.buttonsAnimate : ''}`}>
-            <a className={styles.primaryButton} href="/docs/tutorial/download-installation" target="_blank">
+            <a className={styles.primaryButton} href={isMobile ? "./docs/tutorial" : "https://demo.jit.pro"} target="_blank">
+              <span className={styles.buttonText}>
+                {isMobile ? content.buttonGetStart : content.buttonDemo}
+              </span>
+              <span className={styles.buttonIcon}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                </svg>
+              </span>
+            </a>
+            <a className={`${styles.secondaryButton} ${styles.hideOnMobile}`} href="./docs/tutorial/download-installation" target="_blank">
               <span className={styles.buttonText}>
                 {content.buttonDownload}
               </span>
               <span className={styles.buttonIcon}>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
-                </svg>
-              </span>
-            </a>
-            <a className={`${styles.secondaryButton} ${styles.hideOnMobile}`} href="https://demo.jit.pro" target="_blank">
-              <span className={styles.buttonText}>
-                {content.buttonDemo}
-              </span>
-              <span className={styles.buttonIcon}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
                 </svg>
               </span>
             </a>

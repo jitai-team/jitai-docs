@@ -40,7 +40,15 @@ const CONTENT = {
       url: 'https://forum.jit.pro/',
       external: true
     },
-  ]
+  ],
+  tryOnlineButton: {
+    id: 'try-online',
+    label: 'Try Online',
+    type: 'button',
+    isNewTab: true,
+    url: 'https://demo.jit.pro/',
+    external: true
+  }
 };
 
 export default CONTENT;

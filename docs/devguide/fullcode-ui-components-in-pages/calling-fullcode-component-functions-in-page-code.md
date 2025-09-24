@@ -53,31 +53,31 @@ class PageCls extends Jit.GridPage {
     // 页面构造时（组件未完全初始化）
     constructor() {
         super();
-        // ❌ 不建议：组件可能未完全初始化
+        // 不建议：组件可能未完全初始化
         // this.CustomComponent.initialize();
     }
 
     // 页面绑定事件时（组件已初始化）
     bindEvent() {
-        // ✅ 推荐：此时组件已完全初始化
+        // 推荐：此时组件已完全初始化
         this.CustomComponent.setupEventHandlers();
 
         // 订阅其他组件事件
         this.Table1.subscribeEvent('ready', () => {
-            // ✅ 推荐：在其他组件就绪后调用
+            // 推荐：在其他组件就绪后调用
             this.CustomComponent.onTableReady();
         });
     }
 
     // 页面完全加载后
     onPageReady() {
-        // ✅ 推荐：页面完全就绪后的初始化
+        // 推荐：页面完全就绪后的初始化
         this.CustomComponent.onPageReady();
     }
 
     // 页面销毁前
     onPageDestroy() {
-        // ✅ 推荐：清理资源
+        // 推荐：清理资源
         this.CustomComponent.cleanup();
     }
 }

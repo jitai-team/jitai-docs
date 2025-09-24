@@ -3,6 +3,7 @@
   "position": 4,
   "link": {
     "type": "generated-index",
+    "slug": "reference/framework/JitWeb/components/layout-type",
     "description": "Structural layout components for organizing and arranging content including containers, grids, panels, and navigation elements."
   }
 } 

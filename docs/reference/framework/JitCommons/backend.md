@@ -1,278 +1,278 @@
 ---
 slug: backend
 ---
-# 后端
-为后端开发提供统一的公共模块、错误码体系、常量定义和全局组件支持。错误码、常量、枚举等位于官方JitCommonsApp中的commons目录，开发者可直接导包使用，开发者也可以在自己的App中创建自己的commons目录（仅后端），以实现自己的封装。
+# Backend
+Provides unified public modules, error code system, constant definitions, and global component support for backend development. Error codes, constants, enums, etc. are located in the commons directory of the official JitCommonsApp, which developers can directly import and use. Developers can also create their own commons directory in their own App (backend only) to implement their own encapsulation.
 
-globals.Calc是官方内置的公共模块元素，提供数学、逻辑、文本、日期时间、高级统计和地址处理等80+个计算函数。globals.Calc元素层级结构为Meta（globals.Meta） → Type（globals.Calc），开发者可以使用`app.getElement("globals.Calc")`获取并直接使用。
+globals.Calc is an official built-in public module element that provides 80+ calculation functions for mathematics, logic, text, date/time, advanced statistics, and address processing. The globals.Calc element hierarchical structure is Meta (globals.Meta) → Type (globals.Calc), and developers can use `app.getElement("globals.Calc")` to get and use it directly.
 
-当然，开发者也可以创建自己的公共模块元素，或者在自己的App中改写JitAi官方提供的globals.Calc元素，以实现自己的封装。后端实现应位于globals.Calc的backend子目录下。
+Of course, developers can also create their own public module elements or modify the official `globals.Calc` element provided by JitAi in their own App to implement their own encapsulation. Backend implementation should be located in the backend subdirectory of globals.Calc.
 
-## 计算组件
-### 基本用法
-```python title="计算组件基本使用"
-# 获取计算组件
+## Calculation Components
+### Basic Usage
+```python title="Basic Usage of Calculation Components"
+# Get calculation component
 calc = app.getElement("globals.Calc")
 
-# 调用计算函数
-result = calc.SUM(10, 20, 30)        # 数学计算
-text = calc.CONCAT("Hello", "World") # 文本处理
-now = calc.NOW()                     # 日期时间
+# Call calculation functions
+result = calc.SUM(10, 20, 30)        # Mathematical calculation
+text = calc.CONCAT("Hello", "World") # Text processing
+now = calc.NOW()                     # Date and time
 ```
 
-### 数学计算函数
-| 函数名 | 参数 | 功能描述 |
+### Mathematical Calculation Functions
+| Function Name | Parameters | Function Description |
 |--------|------|----------|
-| SUM | (*numbers) | 求和 |
-| AVG | (*numbers) | 平均值 |
-| MAX | (*numbers) | 最大值 |
-| MIN | (*numbers) | 最小值 |
-| ABS | (number) | 绝对值 |
-| ROUND | (number, digits) | 四舍五入 |
-| TRUNCATE | (number, digits) | 截断小数位 |
-| POWER | (base, exponent) | 幂运算 |
-| MOD | (dividend, divisor) | 取余 |
-| RANDOM | (min, max, decimal) | 生成随机数 |
-| CHINESEUPPER | (number) | 数字转中文大写 |
-| ENGLISHUPPER | (number) | 数字转英文大写 |
+| SUM | (*numbers) | Sum |
+| AVG | (*numbers) | Average |
+| MAX | (*numbers) | Maximum |
+| MIN | (*numbers) | Minimum |
+| ABS | (number) | Absolute value |
+| ROUND | (number, digits) | Round |
+| TRUNCATE | (number, digits) | Truncate decimal places |
+| POWER | (base, exponent) | Power operation |
+| MOD | (dividend, divisor) | Modulo |
+| RANDOM | (min, max, decimal) | Generate random number |
+| CHINESEUPPER | (number) | Convert number to Chinese uppercase |
+| ENGLISHUPPER | (number) | Convert number to English uppercase |
 
-### 文本处理函数
-| 函数名 | 参数 | 功能描述 |
+### Text Processing Functions
+| Function Name | Parameters | Function Description |
 |--------|------|----------|
-| CONCAT | (*texts) | 连接文本 |
-| LEN | (text) | 文本长度 |
-| LEFT | (text, length) | 左侧截取 |
-| RIGHT | (text, length) | 右侧截取 |
-| MID | (text, start, length) | 中间截取 |
-| TRIM | (text) | 去除首尾空格 |
-| REPLACE | (text, old, new) | 替换文本 |
-| INSERT | (text, position, insert_text) | 在指定位置插入文本 |
-| LOCATE | (search_text, text) | 查找文本位置 |
-| TONUMBER | (text) | 文本转数字 |
-| TOSTRING | (value) | 值转文本 |
+| CONCAT | (*texts) | Concatenate text |
+| LEN | (text) | Text length |
+| LEFT | (text, length) | Left substring |
+| RIGHT | (text, length) | Right substring |
+| MID | (text, start, length) | Middle substring |
+| TRIM | (text) | Remove leading and trailing spaces |
+| REPLACE | (text, old, new) | Replace text |
+| INSERT | (text, position, insert_text) | Insert text at specified position |
+| LOCATE | (search_text, text) | Find text position |
+| TONUMBER | (text) | Convert text to number |
+| TOSTRING | (value) | Convert value to text |
 
-### 逻辑运算函数
-| 函数名 | 参数 | 功能描述 |
+### Logical Operation Functions
+| Function Name | Parameters | Function Description |
 |--------|------|----------|
-| IF | (condition, true_val, false_val) | 条件判断 |
-| IFS | (condition1, value1, ...) | 多条件判断 |
-| AND | (*conditions) | 逻辑与 |
-| OR | (*conditions) | 逻辑或 |
-| ISEMPTY | (value) | 判断是否为空 |
-| ISNOTEMPTY | (value) | 判断是否非空 |
-| EMPTY | () | 空值 |
-| EMPTYSTR | () | 空字符串 |
-| DEFAULTVALUE | (value, default) | 默认值 |
+| IF | (condition, true_val, false_val) | Conditional judgment |
+| IFS | (condition1, value1, ...) | Multiple conditional judgment |
+| AND | (*conditions) | Logical AND |
+| OR | (*conditions) | Logical OR |
+| ISEMPTY | (value) | Check if empty |
+| ISNOTEMPTY | (value) | Check if not empty |
+| EMPTY | () | Empty value |
+| EMPTYSTR | () | Empty string |
+| DEFAULTVALUE | (value, default) | Default value |
 
-### 日期时间函数
-| 函数名 | 参数 | 功能描述 |
+### Date and Time Functions
+| Function Name | Parameters | Function Description |
 |--------|------|----------|
-| NOW | () | 当前时间 |
-| TODAY | () | 今天日期 |
-| DATEADD | (date, number, unit) | 日期加减 |
-| DATEDELTA | (date1, date2, unit) | 日期差值 |
-| YEAR | (date) | 转换为年初 |
-| YEARMONTH | (date) | 转换为月初 |
-| YEARMONTHDAY | (date) | 转换为日初 |
-| YEARQUARTER | (date) | 转换为季度初 |
-| YEARWEEK | (date) | 转换为周初 |
-| EXTRACT | (date, unit) | 提取日期部分 |
-| DATE | (year, month, day) | 创建日期 |
-| DATESTR | (date) | 日期转字符串 |
-| MONTHSTART | (date) | 月初 |
-| MONTHEND | (date) | 月末 |
-| MONTHDAYS | (date) | 该月天数 |
-| DAYOFYEAR | (date) | 一年中第几天 |
-| WEEKOFYEAR | (date) | 一年中第几周 |
-| WEEKDAYNUM | (date) | 星期几(数字) |
-| WEEKDAYSTR | (date) | 星期几(中文) |
-| WORKDAY | (date, days) | 工作日计算 |
-| NETWORKDAYS | (start_date, end_date) | 两日期间工作日数 |
-| TIMESTAMPFORMAT | (timestamp, timezone) | 时间戳格式化 |
+| NOW | () | Current time |
+| TODAY | () | Today's date |
+| DATEADD | (date, number, unit) | Date addition/subtraction |
+| DATEDELTA | (date1, date2, unit) | Date difference |
+| YEAR | (date) | Convert to year start |
+| YEARMONTH | (date) | Convert to month start |
+| YEARMONTHDAY | (date) | Convert to day start |
+| YEARQUARTER | (date) | Convert to quarter start |
+| YEARWEEK | (date) | Convert to week start |
+| EXTRACT | (date, unit) | Extract date part |
+| DATE | (year, month, day) | Create date |
+| DATESTR | (date) | Convert date to string |
+| MONTHSTART | (date) | Month start |
+| MONTHEND | (date) | Month end |
+| MONTHDAYS | (date) | Days in month |
+| DAYOFYEAR | (date) | Day of year |
+| WEEKOFYEAR | (date) | Week of year |
+| WEEKDAYNUM | (date) | Day of week (number) |
+| WEEKDAYSTR | (date) | Day of week (Chinese) |
+| WORKDAY | (date, days) | Working day calculation |
+| NETWORKDAYS | (start_date, end_date) | Working days between two dates |
+| TIMESTAMPFORMAT | (timestamp, timezone) | Timestamp formatting |
 
-### 统计分析函数
-| 函数名 | 参数 | 功能描述 |
+### Statistical Analysis Functions
+| Function Name | Parameters | Function Description |
 |--------|------|----------|
-| ACC | (*args) | 累计值 |
-| GROUPACC | (*args) | 分组累计值 |
-| RANK | (*args) | 排名 |
-| GROUPRANK | (*args) | 组内排名 |
-| MEDIAN | (*args) | 中位数 |
-| STDDEV | (*args) | 标准差 |
-| VARIANCE | (*args) | 方差 |
-| CHAINRATIO | (*args) | 环比增长率 |
-| CHAININCREASE | (*args) | 环比增长 |
-| CHAINPERIOD | (*args) | 环比期间 |
-| SAMERATIO | (*args) | 同比增长率 |
-| SAMEINCREASE | (*args) | 同比增长 |
-| SAMEPERIOD | (*args) | 同比期间 |
+| ACC | (*args) | Cumulative value |
+| GROUPACC | (*args) | Group cumulative value |
+| RANK | (*args) | Ranking |
+| GROUPRANK | (*args) | Group ranking |
+| MEDIAN | (*args) | Median |
+| STDDEV | (*args) | Standard deviation |
+| VARIANCE | (*args) | Variance |
+| CHAINRATIO | (*args) | Chain growth rate |
+| CHAININCREASE | (*args) | Chain growth |
+| CHAINPERIOD | (*args) | Chain period |
+| SAMERATIO | (*args) | Year-over-year growth rate |
+| SAMEINCREASE | (*args) | Year-over-year growth |
+| SAMEPERIOD | (*args) | Year-over-year period |
 
-### 数据处理函数
-| 函数名 | 参数 | 功能描述 |
+### Data Processing Functions
+| Function Name | Parameters | Function Description |
 |--------|------|----------|
-| COUNT | (*args) | 计数 |
-| COLAVG | (*args) | 列平均值 |
-| COLMAX | (*args) | 列最大值 |
-| COLMIN | (*args) | 列最小值 |
-| COLSUM | (*args) | 列求和 |
-| DISTINCT | (*args) | 去重 |
-| FILL | (*args) | 已填写计数 |
-| NOTFILL | (*args) | 未填写计数 |
-| SELECTED | (*args) | 选中计数 |
-| NOTSELECTED | (*args) | 未选中计数 |
-| FIRSTROW | (*args) | 首行 |
-| LASTROW | (*args) | 末行 |
-| ROWID | (*args) | 行号 |
+| COUNT | (*args) | Count |
+| COLAVG | (*args) | Column average |
+| COLMAX | (*args) | Column maximum |
+| COLMIN | (*args) | Column minimum |
+| COLSUM | (*args) | Column sum |
+| DISTINCT | (*args) | Remove duplicates |
+| FILL | (*args) | Filled count |
+| NOTFILL | (*args) | Not filled count |
+| SELECTED | (*args) | Selected count |
+| NOTSELECTED | (*args) | Not selected count |
+| FIRSTROW | (*args) | First row |
+| LASTROW | (*args) | Last row |
+| ROWID | (*args) | Row number |
 
-### 地址处理函数
-| 函数名 | 参数 | 功能描述 |
+### Address Processing Functions
+| Function Name | Parameters | Function Description |
 |--------|------|----------|
-| PROVINCE | (address) | 提取省份 |
-| PROVINCECITY | (address) | 提取省市 |
-| PROVINCECITYDISTRICT | (address) | 提取省市区 |
+| PROVINCE | (address) | Extract province |
+| PROVINCECITY | (address) | Extract province and city |
+| PROVINCECITYDISTRICT | (address) | Extract province, city, and district |
 
-### 身份证处理函数
-| 函数名 | 参数 | 功能描述 |
+### ID Card Processing Functions
+| Function Name | Parameters | Function Description |
 |--------|------|----------|
-| IDCARDBIRTHDAY | (id_card) | 从身份证提取生日 |
-| IDCARDSEX | (id_card) | 从身份证提取性别 |
+| IDCARDBIRTHDAY | (id_card) | Extract birthday from ID card |
+| IDCARDSEX | (id_card) | Extract gender from ID card |
 
-## 错误码
-错误码定义模块，提供统一的错误处理机制。
+## Error Codes
+Error code definition module providing unified error handling mechanism.
 
-### 如何定义
-```python title="错误码定义方法"
+### How to Define
+```python title="Error Code Definition Method"
 from jit.errcode import Code
 
-# 定义错误码
-CUSTOM_ERROR = Code(code=9000001, reason="自定义错误：{message}")
+# Define error code
+CUSTOM_ERROR = Code(code=9000001, reason="Custom error: {message}")
 
-# 使用错误码
+# Use error code
 try:
-    raise CUSTOM_ERROR.formatReason(message="用户ID不能为空")
+    raise CUSTOM_ERROR.formatReason(message="User ID cannot be empty")
 except Code as error:
-    print(f"错误码: {error.code}")
-    print(f"错误信息: {error.reason}")
+    print(f"Error code: {error.code}")
+    print(f"Error message: {error.reason}")
 ```
 
-## 常量定义
-常量定义模块，提供系统级常量和业务常量。
+## Constant Definitions
+Constant definition module providing system-level and business constants.
 
-当然，开发者也可以创建自己的常量定义元素，或者在自己的App中改写JitAi官方提供的commons.consts元素，以实现自己的封装。
+Of course, developers can also create their own constant definition elements or modify the official `commons.consts` element provided by JitAi in their own App to implement their own encapsulation.
 
-### 基础常量
-```python title="基础常量使用"
+### Basic Constants
+```python title="Basic Constants Usage"
 from commons.consts import TRUE, FALSE, SUCCESS_RETURN
 
-# 使用基础常量
+# Use basic constants
 status = TRUE
 result = SUCCESS_RETURN
 ```
 
-#### 可用常量表
-| 常量名 | 值 | 说明 |
+#### Available Constants Table
+| Constant Name | Value | Description |
 |--------|------|------|
-| TRUE | 1 | 布尔真值 |
-| FALSE | 0 | 布尔假值 |
-| SUCCESS_RETURN | 1 | 操作成功 |
-| FAIL_RETURN | 0 | 操作失败 |
-| SUCCESS_RESPONSE | \{"status": "ok"\} | 成功响应格式 |
+| TRUE | 1 | Boolean true value |
+| FALSE | 0 | Boolean false value |
+| SUCCESS_RETURN | 1 | Operation success |
+| FAIL_RETURN | 0 | Operation failure |
+| SUCCESS_RESPONSE | `{"status": "ok"}` | Success response format |
 
-### 业务字典常量
-```python title="业务字典使用"
+### Business Dictionary Constants
+```python title="Business Dictionary Usage"
 from commons.consts import INDUSTRY_TYPE_DICT, POSITION_TYPE_DICT
 
-# 使用业务字典
+# Use business dictionary
 industry = INDUSTRY_TYPE_DICT.get("internetOrSoftware")
 position = POSITION_TYPE_DICT.get("CEO")
 ```
 
-#### 行业类型字典
+#### Industry Type Dictionary
 | Key | Value |
 |-----|-------|
-| internetOrSoftware | 互联网/软件 |
-| consultingCorporateServices | 咨询和企业服务 |
-| industrialManufacturing | 工业制造 |
-| constructionalEngineering | 建筑工程 |
-| equipmentEngineering | 设备工程 |
-| scientificResearchInstitution | 科研机构 |
-| governmentalAgencies | 政府机构 |
-| socialOrganization | 社会组织 |
-| electronicCommerce | 电商贸易 |
-| realty | 房地产 |
-| energyMineralResource | 能源矿产 |
-| culturalMedium | 文化传媒 |
-| DurableLuxuryGoods | 耐用品和奢侈品 |
-| financialInvestment | 金融投资 |
-| transportation | 交通运输 |
-| FMCG | 快速消费品 |
-| travel | 旅游 |
-| medicalHealth | 医疗健康 |
-| educationalTraining | 教育培训 |
-| homeDecoration | 家居装饰 |
-| other | 其他 |
+| internetOrSoftware | Internet/Software |
+| consultingCorporateServices | Consulting and Corporate Services |
+| industrialManufacturing | Industrial Manufacturing |
+| constructionalEngineering | Construction Engineering |
+| equipmentEngineering | Equipment Engineering |
+| scientificResearchInstitution | Scientific Research Institution |
+| governmentalAgencies | Governmental Agencies |
+| socialOrganization | Social Organization |
+| electronicCommerce | E-commerce Trade |
+| realty | Real Estate |
+| energyMineralResource | Energy Mineral Resources |
+| culturalMedium | Cultural Media |
+| DurableLuxuryGoods | Durable and Luxury Goods |
+| financialInvestment | Financial Investment |
+| transportation | Transportation |
+| FMCG | Fast Moving Consumer Goods |
+| travel | Travel |
+| medicalHealth | Medical Health |
+| educationalTraining | Educational Training |
+| homeDecoration | Home Decoration |
+| other | Other |
 
-#### 职务类型字典
+#### Position Type Dictionary
 | Key | Value |
 |-----|-------|
-| CEO | 法人/CEO/老板 |
-| HRManager | 人事主管 |
-| FinanceManager | 财务主管 |
-| SalesManager | 销售主管 |
-| AdministrationManager | 行政主管 |
-| ITManager | IT主管 |
-| MarketingManager | 市场主管 |
-| OperationsManager | 运营主管 |
-| Employee | 普通员工 |
+| CEO | Legal Person/CEO/Boss |
+| HRManager | HR Manager |
+| FinanceManager | Finance Manager |
+| SalesManager | Sales Manager |
+| AdministrationManager | Administration Manager |
+| ITManager | IT Manager |
+| MarketingManager | Marketing Manager |
+| OperationsManager | Operations Manager |
+| Employee | Regular Employee |
 
-### 工作流模板常量
-```python title="工作流模板使用"
+### Workflow Template Constants
+```python title="Workflow Template Usage"
 from commons.consts import START_TMPL, APPROVE_TMPL, CC_TMPL
 
-# 使用工作流模板
+# Use workflow templates
 start_node = START_TMPL
 approve_node = APPROVE_TMPL
 ```
 
-#### 可用模板常量
-| 常量名 | 说明 |
+#### Available Template Constants
+| Constant Name | Description |
 |--------|------|
-| START_TMPL | 发起节点模板 |
-| APPROVE_TMPL | 审批节点模板 |
-| CC_TMPL | 抄送节点模板 |
-| SUB_TMPL | 子流程节点模板 |
-| BRANCH_TMPL | 分支节点模板 |
-| PARALLEL_START_TMPL | 并行开始节点模板 |
-| PARALLEL_END_TMPL | 并行结束节点模板 |
-| END_TMPL | 结束节点模板 |
+| START_TMPL | Start node template |
+| APPROVE_TMPL | Approval node template |
+| CC_TMPL | CC node template |
+| SUB_TMPL | Sub-process node template |
+| BRANCH_TMPL | Branch node template |
+| PARALLEL_START_TMPL | Parallel start node template |
+| PARALLEL_END_TMPL | Parallel end node template |
+| END_TMPL | End node template |
 
-### 缓存Key常量
-```python title="缓存Key使用"
+### Cache Key Constants
+```python title="Cache Key Usage"
 from commons.consts import WORKFLOW_ESIGN_KEY_FORMATTER, WORKFLOW_ESIGN_CACHE_TIME
 
-# 使用缓存Key格式化
+# Use cache key formatting
 key = WORKFLOW_ESIGN_KEY_FORMATTER.format(cacheData="user123")
 cache_time = WORKFLOW_ESIGN_CACHE_TIME
 ```
 
-#### 可用缓存Key常量
-| 常量名 | 值 | 说明 |
+#### Available Cache Key Constants
+| Constant Name | Value | Description |
 |--------|------|------|
-| WORKFLOW_ESIGN_KEY_FORMATTER | "WF_ESIGN_\{cacheData\}" | 手写签名缓存Key |
-| WORKFLOW_ESIGN_CACHE_TIME | 86400 | 手写签名缓存时间(秒) |
-| WORKFLOW_TIME_LIMIT_KEY_FORMATTER | "WF_TIME_LIMIT_\{appid\}_\{cacheData\}" | 超时处理缓存Key |
-| WORKFLOW_AGENT_TIMER_KEY_FORMATTER | "WF_AGENT_TIME_LIMIT_\{appid\}_\{cacheData\}" | 代理定时器缓存Key |
+| WORKFLOW_ESIGN_KEY_FORMATTER | `"WF_ESIGN_{cacheData}"` | Handwriting signature cache key |
+| WORKFLOW_ESIGN_CACHE_TIME | 86400 | Handwriting signature cache time (seconds) |
+| WORKFLOW_TIME_LIMIT_KEY_FORMATTER | `"WF_TIME_LIMIT_{appid}_{cacheData}"` | Timeout processing cache key |
+| WORKFLOW_AGENT_TIMER_KEY_FORMATTER | `"WF_AGENT_TIME_LIMIT_{appid}_{cacheData}"` | Agent timer cache key |
 
-### 文件类型常量
-```python title="文件类型使用"
+### File Type Constants
+```python title="File Type Usage"
 from commons.consts import FILE_SUFFIX_MIME_TYPE
 
-# 使用文件类型映射
+# Use file type mapping
 mime_type = FILE_SUFFIX_MIME_TYPE.get("xlsx")
 ```
 
-#### 文件后缀MIME类型映射
-| 文件后缀 | MIME类型 |
+#### File Suffix MIME Type Mapping
+| File Suffix | MIME Type |
 |----------|----------|
 | xlsx | application/vnd.openxmlformats-officedocument.spreadsheetml.sheet |
 | docx | application/vnd.openxmlformats-officedocument.wordprocessingml.document |
@@ -285,221 +285,221 @@ mime_type = FILE_SUFFIX_MIME_TYPE.get("xlsx")
 | mp4 | video/mp4 |
 | mp3 | audio/mpeg |
 
-### 事件常量
-```python title="事件常量使用"
+### Event Constants
+```python title="Event Constants Usage"
 from commons.consts import DELETE_MEMBER_EVENT_KEY, RESET_MODEL_EVENT_KEY
 
-# 使用系统事件Key
+# Use system event keys
 delete_event = DELETE_MEMBER_EVENT_KEY
 reset_event = RESET_MODEL_EVENT_KEY
 ```
 
-#### 系统事件Key
-| 常量名 | 值 | 说明 |
+#### System Event Keys
+| Constant Name | Value | Description |
 |--------|------|------|
-| DELETE_MEMBER_EVENT_KEY | "JIT_INNER:deleteMember" | 删除成员事件 |
-| RESET_MODEL_EVENT_KEY | "JIT_INNER:resetModelData" | 重置模型数据事件 |
+| DELETE_MEMBER_EVENT_KEY | "JIT_INNER:deleteMember" | Delete member event |
+| RESET_MODEL_EVENT_KEY | "JIT_INNER:resetModelData" | Reset model data event |
 
-### 元素名称常量
-```python title="元素名称使用"
+### Element Name Constants
+```python title="Element Name Usage"
 from commons.consts import ElemName
 
-# 使用元素全名常量
+# Use element full name constants
 storage_model = ElemName.ComponentStorageModel
 event_log = ElemName.EventLogModel
 ```
 
-#### 元素fullName常量
-| 常量名 | 值 | 说明 |
+#### Element fullName Constants
+| Constant Name | Value | Description |
 |--------|------|------|
-| ComponentStorageModel | "pages.models.ComponentStorageModel" | 组件存储模型 |
-| UpdateProcessType | "events.UpdateProcessType" | 更新流程类型 |
-| NormalType | "events.NormalType" | 普通事件类型 |
-| ModelType | "events.ModelType" | 模型事件类型 |
-| WorkflowType | "events.WorkflowType" | 工作流事件类型 |
-| EventLogModel | "events.models.EventLogModel" | 事件日志模型 |
+| ComponentStorageModel | "pages.models.ComponentStorageModel" | Component storage model |
+| UpdateProcessType | "events.UpdateProcessType" | Update process type |
+| NormalType | "events.NormalType" | Normal event type |
+| ModelType | "events.ModelType" | Model event type |
+| WorkflowType | "events.WorkflowType" | Workflow event type |
+| EventLogModel | "events.models.EventLogModel" | Event log model |
 
-## 枚举定义
-枚举定义模块，提供类型安全的枚举常量。
+## Enum Definitions
+Enum definition module providing type-safe enum constants.
 
-### 基本用法
-```python title="枚举基本使用"
+### Basic Usage
+```python title="Basic Enum Usage"
 from commons.enums import FieldType, CompareNameEnum, SortTypeEnum
 
-# 使用字段类型枚举
+# Use field type enum
 field_type = FieldType.CharField
 
-# 使用比较操作枚举
+# Use comparison operation enum
 compare_op = CompareNameEnum.EQ
 
-# 使用排序类型枚举
+# Use sort type enum
 sort_type = SortTypeEnum.asc
 ```
 
-### 基础枚举类型
-| 枚举类 | 值 | 说明 |
+### Basic Enum Types
+| Enum Class | Value | Description |
 |--------|------|------|
-| PublicEnum.no | 0 | 否 |
-| PublicEnum.yes | 1 | 是 |
-| SwitchEnum.off | 0 | 关闭 |
-| SwitchEnum.on | 1 | 开启 |
-| SpaceDeleteEnum.off | 0 | 未删除 |
-| SpaceDeleteEnum.on | 1 | 已删除 |
+| PublicEnum.no | 0 | No |
+| PublicEnum.yes | 1 | Yes |
+| SwitchEnum.off | 0 | Off |
+| SwitchEnum.on | 1 | On |
+| SpaceDeleteEnum.off | 0 | Not deleted |
+| SpaceDeleteEnum.on | 1 | Deleted |
 
-### 数据库字段类型
-| 枚举值 | 说明 |
+### Database Field Types
+| Enum Value | Description |
 |--------|------|
-| FieldType.IntField | 整数类型 |
-| FieldType.CharField | 字符类型(有长度限制) |
-| FieldType.TextField | 文本类型 |
-| FieldType.DateField | 日期类型 |
-| FieldType.DatetimeField | 日期时间类型 |
-| FieldType.TimeField | 时间类型 |
-| FieldType.DecimalField | 数字类型 |
-| FieldType.JsonField | JSON类型 |
-| FieldType.BooleanField | 布尔类型 |
+| FieldType.IntField | Integer type |
+| FieldType.CharField | Character type (with length limit) |
+| FieldType.TextField | Text type |
+| FieldType.DateField | Date type |
+| FieldType.DatetimeField | Date time type |
+| FieldType.TimeField | Time type |
+| FieldType.DecimalField | Number type |
+| FieldType.JsonField | JSON type |
+| FieldType.BooleanField | Boolean type |
 
-### 查询比较操作
-| 枚举值 | 操作符 | 说明 |
+### Query Comparison Operations
+| Enum Value | Operator | Description |
 |--------|---------|------|
-| CompareNameEnum.EQ | = | 等于 |
-| CompareNameEnum.NE | != | 不等于 |
-| CompareNameEnum.GT | &gt; | 大于 |
-| CompareNameEnum.GTE | &gt;= | 大于等于 |
-| CompareNameEnum.LT | &lt; | 小于 |
-| CompareNameEnum.LTE | &lt;= | 小于等于 |
-| CompareNameEnum.IN | in | 包含 |
-| CompareNameEnum.NIN | nin | 不包含 |
-| CompareNameEnum.LIKE | like | 模糊匹配 |
-| CompareNameEnum.NLIKE | nlike | 不匹配 |
-| CompareNameEnum.RANGE | range | 范围查询 |
-| CompareNameEnum.ISNULL | isnull | 空值判断 |
+| CompareNameEnum.EQ | = | Equal |
+| CompareNameEnum.NE | != | Not equal |
+| CompareNameEnum.GT | > | Greater than |
+| CompareNameEnum.GTE | >= | Greater than or equal |
+| CompareNameEnum.LT | &lt; | Less than |
+| CompareNameEnum.LTE | &lt;= | Less than or equal |
+| CompareNameEnum.IN | in | Contains |
+| CompareNameEnum.NIN | nin | Not contains |
+| CompareNameEnum.LIKE | like | Fuzzy match |
+| CompareNameEnum.NLIKE | nlike | Not match |
+| CompareNameEnum.RANGE | range | Range query |
+| CompareNameEnum.ISNULL | isnull | Null check |
 
-### 排序类型
-| 枚举值 | 值 | 说明 |
+### Sort Types
+| Enum Value | Value | Description |
 |--------|------|------|
-| SortTypeEnum.asc | 1 | 升序 |
-| SortTypeEnum.desc | 0 | 降序 |
-| SqlSortTypeEnum.asc | "ASC" | SQL升序 |
-| SqlSortTypeEnum.desc | "DESC" | SQL降序 |
+| SortTypeEnum.asc | 1 | Ascending |
+| SortTypeEnum.desc | 0 | Descending |
+| SqlSortTypeEnum.asc | "ASC" | SQL ascending |
+| SqlSortTypeEnum.desc | "DESC" | SQL descending |
 
-### 表连接类型
-| 枚举值 | 值 | 说明 |
+### Table Join Types
+| Enum Value | Value | Description |
 |--------|------|------|
-| JoinType.inner | "INNER_JOIN" | 内连接 |
-| JoinType.left | "LEFT_JOIN" | 左连接 |
-| JoinType.right | "RIGHT_JOIN" | 右连接 |
-| JoinType.full | "FULL_JOIN" | 全连接 |
-| JoinType.outer | "OUTER_JOIN" | 外连接 |
+| JoinType.inner | "INNER_JOIN" | Inner join |
+| JoinType.left | "LEFT_JOIN" | Left join |
+| JoinType.right | "RIGHT_JOIN" | Right join |
+| JoinType.full | "FULL_JOIN" | Full join |
+| JoinType.outer | "OUTER_JOIN" | Outer join |
 
-## 默认配置
-默认元素配置模块，提供获取默认配置、缓存和Shell的工具类。
+## Default Configuration
+Default element configuration module providing utility classes for getting default configuration, cache, and Shell.
 
-### 基本用法
-```python title="默认配置基本使用"
+### Basic Usage
+```python title="Basic Default Configuration Usage"
 from commons.default import DefaultElement
 
-# 获取默认配置
+# Get default configuration
 config = DefaultElement.getConfig()
 
-# 获取默认缓存
+# Get default cache
 cache = DefaultElement.getCache()
 
-# 获取默认Shell名称
+# Get default Shell name
 shell_name = DefaultElement.getShellName()
 ```
 
-### 可用方法
-| 方法名 | 返回值 | 功能描述 |
+### Available Methods
+| Method Name | Return Value | Function Description |
 |--------|--------|----------|
-| getConfig() | dict | 获取settings.defaultElement配置 |
-| getCache() | Cache对象 | 获取默认缓存组件实例 |
-| getShellName() | str | 获取默认Shell名称 |
+| getConfig() | dict | Get settings.defaultElement configuration |
+| getCache() | Cache object | Get default cache component instance |
+| getShellName() | str | Get default Shell name |
 
-## 全局变量
-全局变量组件，提供系统级全局变量和时间相关的动态变量。
+## Global Variables
+Global variable component providing system-level global variables and time-related dynamic variables.
 
-### 时间相关变量
-```python title="时间变量使用"
-# 获取全局变量组件
+### Time-Related Variables
+```python title="Time Variable Usage"
+# Get global variable component
 global_var = app.getElement("globals.GlobalVar")
 
-# 使用时间变量
+# Use time variables
 current_time = global_var.currentTime
 last_30_days = global_var.last30Days
 today = global_var.today
 ```
 
-#### 基础时间变量
-| 变量名 | 说明 | 返回值类型 |
+#### Basic Time Variables
+| Variable Name | Description | Return Value Type |
 |--------|------|-----------|
-| currentTime | 当前时间 | systemDate.now |
-| now | 当前时间 | 时间对象 |
-| today | 今天 | 日期对象 |
-| yesterday | 昨天 | 日期对象 |
-| tomorrow | 明天 | 日期对象 |
+| currentTime | Current time | systemDate.now |
+| now | Current time | Time object |
+| today | Today | Date object |
+| yesterday | Yesterday | Date object |
+| tomorrow | Tomorrow | Date object |
 
-#### 动态天数范围变量
-| 变量名模式 | 说明 | 示例 |
+#### Dynamic Day Range Variables
+| Variable Name Pattern | Description | Example |
 |-----------|------|------|
-| lastXDays | 最近X天 | last7Days, last30Days, last90Days |
-| last24Hours | 最近24小时 | 特殊处理的1天 |
+| lastXDays | Last X days | last7Days, last30Days, last90Days |
+| last24Hours | Last 24 hours | Special handling for 1 day |
 
-### 周期时间变量
-```python title="周期时间使用"
-# 使用周期时间变量
+### Periodic Time Variables
+```python title="Periodic Time Usage"
+# Use periodic time variables
 this_week = global_var.thisWeek
 this_month = global_var.thisMonth  
 this_year = global_var.thisYear
 ```
 
-#### 可用周期时间变量
-| 周期类型 | 本期 | 上期 | 下期 |
+#### Available Periodic Time Variables
+| Period Type | This Period | Last Period | Next Period |
 |----------|------|------|------|
-| 周 | thisWeek | lastWeek | nextWeek |
-| 月 | thisMonth | lastMonth | nextMonth |
-| 季度 | thisQuarter | lastQuarter | nextQuarter |
-| 年 | thisYear | lastYear | nextYear |
+| Week | thisWeek | lastWeek | nextWeek |
+| Month | thisMonth | lastMonth | nextMonth |
+| Quarter | thisQuarter | lastQuarter | nextQuarter |
+| Year | thisYear | lastYear | nextYear |
 
-### 用户相关变量
-```python title="用户变量使用"
+### User-Related Variables
+```python title="User Variable Usage"
 from globals.GlobalVar import currentUser
 
-# 获取当前用户
+# Get current user
 user = currentUser
 ```
 
-#### 可用用户变量
-| 变量名 | 说明 | 使用方式 |
+#### Available User Variables
+| Variable Name | Description | Usage |
 |--------|------|----------|
-| currentUser | 当前登录用户 | 直接导入使用 |
+| currentUser | Current logged-in user | Direct import usage |
 
-## 日志记录
-### 基本用法
-```python title="日志基本使用"
+## Logging
+### Basic Usage
+```python title="Basic Logging Usage"
 from jit.commons.utils.logger import log
 
-# 记录不同级别的日志
-log.debug("调试信息")
-log.info("一般信息")
-log.warning("警告信息")
-log.error("错误信息")
-log.exception("异常信息")  # 自动记录堆栈信息
+# Log different levels
+log.debug("Debug information")
+log.info("General information")
+log.warning("Warning information")
+log.error("Error information")
+log.exception("Exception information")  # Automatically log stack information
 ```
 
-### 日志级别说明
-| 级别 | 方法 | 用途 |
+### Log Level Description
+| Level | Method | Purpose |
 |------|------|------|
-| DEBUG | log.debug() | 详细调试信息 |
-| INFO | log.info() | 一般流程信息 |
-| WARNING | log.warning() | 警告信息 |
-| ERROR | log.error() | 错误信息 |
-| EXCEPTION | log.exception() | 异常信息(含堆栈) |
+| DEBUG | log.debug() | Detailed debug information |
+| INFO | log.info() | General process information |
+| WARNING | log.warning() | Warning information |
+| ERROR | log.error() | Error information |
+| EXCEPTION | log.exception() | Exception information (with stack) |
 
-### 使用场景
-| 场景 | 推荐方法 | 示例 |
+### Usage Scenarios
+| Scenario | Recommended Method | Example |
 |------|----------|------|
-| 函数开始执行 | log.info() | "开始处理用户请求" |
-| 参数验证失败 | log.error() | "参数验证失败" |
-| 捕获异常 | log.exception() | "处理过程中发生异常" |
-| 调试输出 | log.debug() | "查询结果: \{result\}" |
+| Function start execution | log.info() | "Starting to process user request" |
+| Parameter validation failure | log.error() | "Parameter validation failed" |
+| Catch exception | log.exception() | "Exception occurred during processing" |
+| Debug output | log.debug() | `"Query result: {result}"` |

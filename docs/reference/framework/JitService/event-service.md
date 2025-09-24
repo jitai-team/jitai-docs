@@ -1,20 +1,20 @@
 ---
 slug: event-service
 ---
-# 事件服务
-事件服务是JitAi平台提供的事件管理和触发服务，实现事件的查询、监控和手动触发能力。它负责事件执行日志的管理、事件状态的追踪和异步事件任务的处理，支持模型事件、工作流事件等多种事件类型的统一管理。
+# Event Service
+Event service is an event management and triggering service provided by the JitAi platform, implementing event query, monitoring, and manual triggering capabilities. It handles event execution log management, event status tracking, and asynchronous event task processing, supporting unified management of various event types including model events and workflow events.
 
-事件服务元素为内置实例（events.services.EventSvc），开发者可通过`app.getElement("events.services.EventSvc")`直接获取服务实例进行调用。
+The event service element is a built-in instance (events.services.EventSvc). Developers can directly obtain the service instance through `app.getElement("events.services.EventSvc")` for calling.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的events.services.EventSvc元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `events.services.EventSvc` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基本使用
-```python title="获取并使用事件服务"
-# 获取事件服务实例
+## Quick Start
+### Basic Usage
+```python title="Get and Use Event Service"
+# Get event service instance
 eventSvc = app.getElement("events.services.EventSvc")
 
-# 获取事件执行日志
+# Get event execution logs
 result = eventSvc.getEventLog(
     fullName="events.MyEvent",
     startTime="2024-01-01 00:00:00",
@@ -23,7 +23,7 @@ result = eventSvc.getEventLog(
     pageSize=20
 )
 
-# 手动触发事件
+# Manually trigger event
 eventSvc.sendEvent(
     sender="models.UserModel",
     kwargs={"userId": 123, "action": "login"},
@@ -31,37 +31,37 @@ eventSvc.sendEvent(
 )
 ```
 
-## 方法 
+## Methods
 ### getEventLog
-获取指定事件的执行日志记录，支持时间范围和状态筛选。
+Get execution log records for specified events, supporting time range and status filtering.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|------|--------|------|
-| fullName | Stext | 是 | - | 事件元素的完整名称 |
-| startTime | Datetime | 否 | None | 查询开始时间 |
-| endTime | Datetime | 否 | None | 查询结束时间 |
-| status | Stext | 否 | None | 筛选状态：success/fail/running/waiting |
-| page | Numeric | 否 | 1 | 页码 |
-| pageSize | Numeric | 否 | 20 | 每页记录数 |
+| fullName | Stext | Yes | - | Complete name of event element |
+| startTime | Datetime | No | None | Query start time |
+| endTime | Datetime | No | None | Query end time |
+| status | Stext | No | None | Filter status: success/fail/running/waiting |
+| page | Numeric | No | 1 | Page number |
+| pageSize | Numeric | No | 20 | Records per page |
 
-#### 返回值
-返回JitDict类型，包含以下字段：
-- `totalCount`：总记录数
-- `rowDatas`：日志记录列表，每条记录包含事件执行的详细信息
+#### Return Value
+Returns JitDict type containing the following fields:
+- `totalCount`: Total record count
+- `rowDatas`: Log record list, each record contains detailed information of event execution
 
-#### 使用示例
-```python title="查询事件执行日志"
+#### Usage Example
+```python title="Query Event Execution Logs"
 eventSvc = app.getElement("events.services.EventSvc")
 
-# 查询最近的事件日志
+# Query recent event logs
 logs = eventSvc.getEventLog(
     fullName="events.UserLoginEvent",
     page=1,
     pageSize=10
 )
 
-# 查询指定时间范围内失败的事件
+# Query failed events within specified time range
 failedLogs = eventSvc.getEventLog(
     fullName="events.DataSyncEvent",
     startTime="2024-01-01 00:00:00",
@@ -71,23 +71,23 @@ failedLogs = eventSvc.getEventLog(
 ```
 
 ### sendEvent
-手动触发事件执行，用于测试或特殊场景下的事件调用。
+Manually trigger event execution, used for testing or event calls in special scenarios.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|------|--------|------|
-| sender | Stext | 是 | - | 事件发送者标识 |
-| kwargs | JitDict | 是 | - | 事件参数字典 |
-| eventType | Stext | 否 | events.NormalType | 事件类型 |
+| sender | Stext | Yes | - | Event sender identifier |
+| kwargs | JitDict | Yes | - | Event parameter dictionary |
+| eventType | Stext | No | events.NormalType | Event type |
 
-#### 返回值
-返回JitDict类型的执行结果。
+#### Return Value
+Returns JitDict type execution result.
 
-#### 使用示例
-```python title="手动触发事件"
+#### Usage Example
+```python title="Manually Trigger Event"
 eventSvc = app.getElement("events.services.EventSvc")
 
-# 触发用户登录事件
+# Trigger user login event
 result = eventSvc.sendEvent(
     sender="models.UserModel",
     kwargs={
@@ -97,7 +97,7 @@ result = eventSvc.sendEvent(
     }
 )
 
-# 触发数据同步事件
+# Trigger data sync event
 syncResult = eventSvc.sendEvent(
     sender="services.DataService",
     kwargs={
@@ -109,68 +109,68 @@ syncResult = eventSvc.sendEvent(
 ```
 
 ### getEventLogByRequestId
-根据请求ID获取该次请求触发的所有事件日志，用于追踪完整的事件链。
+Get all event logs triggered by a request based on request ID, used for tracking complete event chains.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|------|--------|------|
-| requestId | Stext | 是 | - | 请求的唯一标识ID |
+| requestId | Stext | Yes | - | Unique identifier ID of the request |
 
-#### 返回值
-返回JitDict类型的事件日志列表。
+#### Return Value
+Returns JitDict type event log list.
 
-#### 使用示例
-```python title="根据请求ID查询事件链"
+#### Usage Example
+```python title="Query Event Chain by Request ID"
 eventSvc = app.getElement("events.services.EventSvc")
 
-# 查询某次请求的完整事件链
+# Query complete event chain for a request
 requestLogs = eventSvc.getEventLogByRequestId("req_20240115_001")
 ```
 
 ### getEventLogByNodeId
-根据请求ID和节点ID获取特定节点及其子节点的所有事件日志。
+Get all event logs for a specific node and its child nodes based on request ID and node ID.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|------|--------|------|
-| requestId | Stext | 是 | - | 请求的唯一标识ID |
-| nodeId | Stext | 是 | - | 节点的唯一标识ID |
+| requestId | Stext | Yes | - | Unique identifier ID of the request |
+| nodeId | Stext | Yes | - | Unique identifier ID of the node |
 
-#### 返回值
-返回JitDict类型的节点事件日志列表。
+#### Return Value
+Returns JitDict type node event log list.
 
-#### 使用示例
-```python title="查询特定节点的事件日志"
+#### Usage Example
+```python title="Query Event Logs for Specific Node"
 eventSvc = app.getElement("events.services.EventSvc")
 
-# 查询特定节点下的所有事件
+# Query all events under specific node
 nodeLogs = eventSvc.getEventLogByNodeId(
     requestId="req_20240115_001",
     nodeId="node_user_create_001"
 )
 ```
 
-## 属性
-自定义事件服务元素暂无公开属性。
+## Properties
+Custom event service elements have no public properties currently.
 
-## 高级特性
-### 事件状态监控
-通过事件日志查询功能实现事件状态的实时监控。
+## Advanced Features
+### Event Status Monitoring
+Implement real-time event status monitoring through event log query functionality.
 
-```python title="事件状态监控示例"
+```python title="Event Status Monitoring Example"
 eventSvc = app.getElement("events.services.EventSvc")
 
 def monitorEventStatus(eventFullName, checkInterval=300):
     """
-    监控事件执行状态
-    :param eventFullName: 事件完整名称
-    :param checkInterval: 检查间隔（秒）
+    Monitor event execution status
+    :param eventFullName: Event complete name
+    :param checkInterval: Check interval (seconds)
     """
     import time
     from datetime import datetime, timedelta
     
     while True:
-        # 查询最近5分钟的事件日志
+        # Query event logs from last 5 minutes
         endTime = datetime.now()
         startTime = endTime - timedelta(minutes=5)
         
@@ -182,22 +182,22 @@ def monitorEventStatus(eventFullName, checkInterval=300):
         )
         
         if logs["totalCount"] > 0:
-            print(f"发现{logs['totalCount']}个失败事件")
-            # 处理失败事件的逻辑
+            print(f"Found {logs['totalCount']} failed events")
+            # Logic to handle failed events
         
         time.sleep(checkInterval)
 ```
 
-### 批量事件触发
-通过循环调用实现批量事件触发。
+### Batch Event Triggering
+Implement batch event triggering through loop calls.
 
-```python title="批量事件触发示例"
+```python title="Batch Event Triggering Example"
 eventSvc = app.getElement("events.services.EventSvc")
 
 def batchTriggerEvents(eventList):
     """
-    批量触发事件
-    :param eventList: 事件配置列表
+    Batch trigger events
+    :param eventList: Event configuration list
     """
     results = []
     for eventConfig in eventList:
@@ -220,7 +220,7 @@ def batchTriggerEvents(eventList):
             })
     return results
 
-# 使用示例
+# Usage example
 events = [
     {
         "sender": "models.UserModel",
@@ -233,4 +233,4 @@ events = [
 ]
 
 batchResults = batchTriggerEvents(events)
-``` 
+```

@@ -1,17 +1,18 @@
 ---
 slug: word-template
 ---
-# Word模板
-Word模板专用于生成和处理Word格式文档，基于Jinja2模板引擎实现动态文档生成。它负责Word文档的模板化渲染、变量替换和复杂内容填充，支持文本、图片、表格、链接等多种元素的动态处理，适用于合同、报告、公文等正式文档的批量生成。
+# Word Template
 
-Word模板元素分层结构为Meta（fileTmpls.Meta） → Type（fileTmpls.WordType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建Word模板实例元素。
+Word Template is specifically designed for generating and processing Word format documents, implemented using the Jinja2 template engine for dynamic document generation. It handles Word document template rendering, variable replacement, and complex content filling, supporting dynamic processing of various elements such as text, images, tables, and links. It is suitable for batch generation of formal documents like contracts, reports, and official documents.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的fileTmpls.WordType元素，以实现自己的封装。
+The Word Template element has a hierarchical structure of Meta (fileTmpls.Meta) → Type (fileTmpls.WordType) → Instance. Developers can quickly create Word template instance elements through JitAi's visual development tools.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+Of course, developers can also create their own Type elements or modify the official fileTmpls.WordType element provided by JitAi in their own App to implement their own encapsulation.
+
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 fileTmpls/
 └── testWordTemplate/
     ├── e.json
@@ -19,178 +20,178 @@ fileTmpls/
     └── templateFile.docx
 ```
 
-#### e.json文件
-```json title="基础配置文件"
+#### e.json File
+```json title="Basic Configuration File"
 {
-  "title": "测试Word模板",
+  "title": "Test Word Template",
   "type": "fileTmpls.WordType",
   "frontBundleEntry": "testWordTemplate.json",
   "backendBundleEntry": "."
 }
 ```
 
-#### 业务配置文件
+#### Business Configuration File
 ```json title="testWordTemplate.json"
 {
   "dataList": [
     {
       "name": "name",
-      "title": "姓名",
+      "title": "Name",
       "dataType": "Stext"
     },
     {
       "name": "company",
-      "title": "公司名称", 
+      "title": "Company Name", 
       "dataType": "Stext"
     },
     {
       "name": "date",
-      "title": "签署日期",
+      "title": "Signing Date",
       "dataType": "Date"
     }
   ],
   "files": {
-    "fileName": "合同模板.docx"
+    "fileName": "contract_template.docx"
   }
 }
 ```
 
-#### 调用示例
-```python title="Word模板渲染示例"
-# 获取Word模板元素
+#### Usage Example
+```python title="Word Template Rendering Example"
+# Get Word template element
 template = app.getElement("fileTmpls.testWordTemplate")
 
-# 准备渲染数据
+# Prepare rendering data
 context = {
-    "name": "张三",
-    "company": "某某科技有限公司",
+    "name": "Zhang San",
+    "company": "ABC Technology Co., Ltd.",
     "date": "2024-01-15"
 }
 
-# 渲染生成Word文档
+# Render and generate Word document
 result = template.render(context)
 
-# result是BytesIO对象，可以保存或下载
-with open("生成的文档.docx", "wb") as f:
+# result is a BytesIO object that can be saved or downloaded
+with open("generated_document.docx", "wb") as f:
     f.write(result.getvalue())
 ```
 
-## 元素配置
-### e.json配置
-| 配置项 | 类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| title | string | 是 | 模板显示名称 |
-| type | string | 是 | 固定值"fileTmpls.WordType" |
-| frontBundleEntry | string | 是 | 业务配置文件路径 |
-| backendBundleEntry | string | 是 | 后端入口，通常为"." |
+| title | string | Yes | Template display name |
+| type | string | Yes | Fixed value "fileTmpls.WordType" |
+| frontBundleEntry | string | Yes | Business configuration file path |
+| backendBundleEntry | string | Yes | Backend entry, usually "." |
 
-### 业务配置文件配置
-| 配置项 | 类型 | 必填 | 说明 |
+### Business Configuration File Configuration
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| dataList | array | 是 | 模板变量定义列表 |
-| files | object | 是 | 模板文件配置 |
+| dataList | array | Yes | Template variable definition list |
+| files | object | Yes | Template file configuration |
 
-#### dataList配置项
-| 配置项 | 类型 | 必填 | 说明 |
+#### dataList Configuration Items
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| name | string | 是 | 变量名称 |
-| title | string | 是 | 变量显示名称 |
-| dataType | string | 是 | 数据类型（Stext、Date、Numeric等） |
+| name | string | Yes | Variable name |
+| title | string | Yes | Variable display name |
+| dataType | string | Yes | Data type (Stext, Date, Numeric, etc.) |
 
-#### files配置项
-| 配置项 | 类型 | 必填 | 说明 |
+#### files Configuration Items
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| fileName | string | 是 | Word模板文件名称 |
-| url | string | 否 | 模板文件URL（兼容旧版本） |
+| fileName | string | Yes | Word template file name |
+| url | string | No | Template file URL (compatible with old versions) |
 
-## 方法 
+## Methods
 ### render
-将数据通过Word模板渲染生成最终文档。
+Renders data through Word template to generate the final document.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| context | JitDict | dict | 是 | 渲染数据字典 |
-| elemName | Stext | str | 否 | 元素名称，用于内部处理 |
+| context | JitDict | dict | Yes | Rendering data dictionary |
+| elemName | Stext | str | No | Element name, used for internal processing |
 
-#### 返回值
-返回BytesIO对象，包含生成的Word文档二进制数据。
+#### Return Value
+Returns a BytesIO object containing the generated Word document binary data.
 
-#### 使用示例
-```python title="基础渲染示例"
+#### Usage Example
+```python title="Basic Rendering Example"
 template = app.getElement("fileTmpls.contractTemplate")
 
-# 准备上下文数据
+# Prepare context data
 context = {
-    "customerName": "张三",
+    "customerName": "Zhang San",
     "contractNo": "CT2024001",
     "amount": 100000,
     "signDate": "2024-01-15"
 }
 
-# 执行渲染
+# Execute rendering
 document = template.render(context)
 
-# 保存文档
-with open("合同.docx", "wb") as f:
+# Save document
+with open("contract.docx", "wb") as f:
     f.write(document.getvalue())
 ```
 
 ### handleContext
-处理和转换渲染上下文数据，将前端传入的数据转换为Jinja2模板可识别的格式。
+Processes and converts rendering context data, transforming frontend data into a format recognizable by Jinja2 templates.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| context | JitDict | dict | 是 | 原始上下文数据 |
-| elemName | Stext | str | 是 | 元素全名 |
+| context | JitDict | dict | Yes | Original context data |
+| elemName | Stext | str | Yes | Element full name |
 
-#### 返回值
-返回处理后的上下文数据字典。
+#### Return Value
+Returns the processed context data dictionary.
 
 ### getTemplateDt
-获取模板中定义的数据类型映射。
+Gets the data type mapping defined in the template.
 
-#### 返回值
-返回数据类型映射字典，键为变量名，值为对应的数据类型处理类。
+#### Return Value
+Returns a data type mapping dictionary where keys are variable names and values are corresponding data type processing classes.
 
-## 属性
+## Attributes
 ### templateFile
-获取模板文件的二进制流对象，支持从本地文件或URL获取。
+Gets the template file binary stream object, supporting retrieval from local files or URLs.
 
-```python title="访问模板文件"
+```python title="Access Template File"
 template = app.getElement("fileTmpls.myTemplate")
 file_stream = template.templateFile
 ```
 
 ### config
-获取模板的完整配置信息，包含dataList、files等配置项。
+Gets the complete configuration information of the template, including dataList, files, and other configuration items.
 
-```python title="访问配置信息"
+```python title="Access Configuration Information"
 template = app.getElement("fileTmpls.myTemplate")
 data_list = template.config.get("dataList", [])
 ```
 
 ### dtMap
-获取模板数据类型映射表，用于数据类型转换和验证。
+Gets the template data type mapping table, used for data type conversion and validation.
 
-## 高级特性
-### 复杂内容支持
-Word模板支持多种复杂内容的动态生成：
+## Advanced Features
+### Complex Content Support
+Word templates support dynamic generation of various complex content:
 
-```python title="复杂内容渲染示例"
+```python title="Complex Content Rendering Example"
 template = app.getElement("fileTmpls.advancedTemplate")
 
 context = {
-    "title": "项目报告",
-    "content": "这是一个包含多种元素的文档",
-    # 图片URL，模板中使用ToPictureFileTmpls:标记
+    "title": "Project Report",
+    "content": "This is a document containing various elements",
+    # Image URL, use ToPictureFileTmpls: marker in template
     "chartImage": "https://example.com/chart.png",
-    # 超链接，模板中使用ToLinkFileTmpls:标记  
-    "projectLink": "项目地址: https://github.com/project",
-    # 二维码数据，模板中使用<image:标记
+    # Hyperlink, use ToLinkFileTmpls: marker in template  
+    "projectLink": "Project URL: https://github.com/project",
+    # QR code data, use <image: marker in template
     "qrcode": {
-        "image": "base64编码的图片数据",
+        "image": "base64 encoded image data",
         "width": 3,
         "height": 3
     }
@@ -199,22 +200,22 @@ context = {
 document = template.render(context)
 ```
 
-### 表格单元格图片处理
-模板支持在表格单元格中动态插入图片，自动适应单元格尺寸：
+### Table Cell Image Processing
+Templates support dynamically inserting images in table cells, automatically adapting to cell dimensions:
 
-```json title="表格图片配置"
+```json title="Table Image Configuration"
 {
   "dataList": [
     {
       "name": "productImage",
-      "title": "产品图片",
+      "title": "Product Image",
       "dataType": "Stext"
     }
   ]
 }
 ```
 
-```python title="表格图片渲染"
+```python title="Table Image Rendering"
 context = {
     "productImage": "ToPictureFileTmpls:https://example.com/product.jpg"
 }
@@ -222,8 +223,8 @@ context = {
 document = template.render(context)
 ```
 
-### 模板文件制作建议
-1. **变量标记**：在Word模板中使用`{{变量名}}`标记需要替换的内容
-2. **图片标记**：使用`ToPictureFileTmpls:图片URL`标记图片位置
-3. **链接标记**：使用`ToLinkFileTmpls:显示文本: URL`标记超链接
-4. **保持格式**：模板制作时注意保持Word文档的原有格式和样式 
+### Template File Creation Recommendations
+1. **Variable Markers**: Use `{{variable_name}}` markers in Word templates to mark content that needs to be replaced
+2. **Image Markers**: Use `ToPictureFileTmpls:image_url` markers to mark image positions
+3. **Link Markers**: Use `ToLinkFileTmpls:display_text: URL` markers to mark hyperlinks
+4. **Preserve Formatting**: When creating templates, pay attention to maintaining the original format and styles of the Word document

@@ -1,203 +1,203 @@
 ---
 slug: wechat-work-qr-login
 ---
-# 企业微信自建扫码登录 {#wechat-work-custom-qr-login}
-企业微信自建扫码登录是基于企业微信自建应用的登录认证元素，支持PC端二维码扫码登录和企业微信工作台内免密登录。它负责处理企业微信OAuth授权流程、用户身份验证和账号绑定，同时支持与企业微信组织架构的无缝集成和用户信息同步。
+# WeChat Work Custom QR Code Login {#wechat-work-custom-qr-login}
+WeChat Work custom QR code login is a login authentication element based on WeChat Work custom applications, supporting PC-side QR code scanning login and password-free login within WeChat Work workspace. It handles WeChat Work OAuth authorization flow, user identity authentication, and account binding, while supporting seamless integration with WeChat Work organizational architecture and user information synchronization.
 
-企业微信自建扫码登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.QywxInnerType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建企业微信自建扫码登录实例元素。
+The hierarchical structure of WeChat Work custom QR code login elements is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.QywxInnerType) → Instance. Developers can quickly create WeChat Work custom QR code login instance elements through JitAi's visual development tools.
 
-**支持的登录方式**：
-- PC端二维码扫码登录 - 显示企业微信登录二维码，用户使用企业微信App扫码完成登录
-- 企业微信工作台内登录 - 在企业微信工作台内直接调用JSAPI获取免登授权码完成登录
+**Supported Login Methods**:
+- PC-side QR code scanning login - Display WeChat Work login QR code, users scan with WeChat Work App to complete login
+- WeChat Work workspace login - Directly call JSAPI within WeChat Work workspace to get password-free authorization code for login
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的auths.loginTypes.QywxInnerType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `auths.loginTypes.QywxInnerType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 auths/loginTypes/QywxInnerExample/
-├── e.json                    # 元素声明文件
-└── QywxInnerExample.json     # 企业微信配置文件
+├── e.json                    # Element declaration file
+└── QywxInnerExample.json     # WeChat Work configuration file
 ```
 
-#### e.json文件
-```json title="元素声明文件"
+#### e.json File
+```json title="Element Declaration File"
 {
-  "title": "企业微信自建扫码登录示例",
+  "title": "WeChat Work Custom QR Code Login Example",
   "type": "auths.loginTypes.QywxInnerType"
 }
 ```
 
-#### 企业微信配置文件
-企业微信配置文件名需与实例元素名称保持一致，如 `QywxInnerExample.json`：
+#### WeChat Work Configuration File
+WeChat Work configuration file name must match the instance element name, such as `QywxInnerExample.json`:
 
-```json title="企业微信配置文件"
+```json title="WeChat Work Configuration File"
 {
-  "corpId": "你的企业ID",
-  "corpSecret": "你的应用Secret",
-  "agentId": "你的应用AgentID",
+  "corpId": "Your enterprise ID",
+  "corpSecret": "Your application Secret",
+  "agentId": "Your application AgentID",
   "redirectUri": "http://your-domain.com/api/auth/qywx/callback"
 }
 ```
 
-#### 调用示例
-```python title="基本调用示例"
-# 获取登录实例
+#### Usage Example
+```python title="Basic Usage Example"
+# Get login instance
 qywx_auth = app.getElement("auths.loginTypes.QywxInnerExample")
 
-# 获取登录配置
+# Get login configuration
 login_config = qywx_auth.getLoginConfig()
 
-# 根据授权码获取用户信息
-auth_code = "从前端获取的授权码"
+# Get user information based on authorization code
+auth_code = "Authorization code obtained from frontend"
 user_info = qywx_auth.getLoginCode(authCode=auth_code)
 ```
 
-## 元素配置
-### e.json配置
-| 配置项 | 类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Configuration Item | Type | Required | Description |
 |-------|------|------|------|
-| title | string | 是 | 元素显示名称 |
-| type | string | 是 | 固定值：auths.loginTypes.QywxInnerType |
+| title | string | Yes | Element display name |
+| type | string | Yes | Fixed value: auths.loginTypes.QywxInnerType |
 
-### 业务配置文件配置
-配置文件名格式为`{实例名称}.json`，包含企业微信应用的认证信息：
+### Business Configuration File
+Configuration file name format is `{instance_name}.json`, containing WeChat Work application authentication information:
 
-| 配置项 | 类型 | 必填 | 说明 |
+| Configuration Item | Type | Required | Description |
 |-------|------|------|------|
-| corpId | string | 是 | 企业微信企业ID |
-| corpSecret | string | 是 | 企业微信应用Secret |
-| agentId | string | 是 | 企业微信应用AgentID |
-| redirectUri | string | 是 | OAuth2重定向URI，用于接收授权码 |
+| corpId | string | Yes | WeChat Work enterprise ID |
+| corpSecret | string | Yes | WeChat Work application Secret |
+| agentId | string | Yes | WeChat Work application AgentID |
+| redirectUri | string | Yes | OAuth2 redirect URI for receiving authorization code |
 
-## 方法 
+## Methods
 ### getLoginConfig
-获取企业微信登录配置信息，用于前端展示登录二维码。
+Get WeChat Work login configuration information for frontend QR code display.
 
-#### 参数详解
-该方法无需参数。
+#### Parameter Details
+This method requires no parameters.
 
-#### 返回值
-返回包含登录配置的字典，包含corpId、agentId、redirectUri和随机state值。
+#### Return Value
+Return dictionary containing login configuration, including corpId, agentId, redirectUri, and random state value.
 
-#### 使用示例
-```python title="获取登录配置示例"
+#### Usage Example
+```python title="Get Login Configuration Example"
 qywx_auth = app.getElement("auths.loginTypes.QywxInnerExample")
 config = qywx_auth.getLoginConfig()
-print(f"企业ID: {config['corpId']}")
-print(f"应用ID: {config['agentId']}")
+print(f"Enterprise ID: {config['corpId']}")
+print(f"Application ID: {config['agentId']}")
 ```
 
 ### getLoginCode
-根据企业微信授权码获取用户登录信息，完成用户身份认证。
+Get user login information based on WeChat Work authorization code, complete user identity authentication.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |-----|---|----|---|---|
-| authCode | Stext | str | 是 | 企业微信授权码，从前端扫码后获取 |
-| state | Stext | str | 否 | 状态参数，用于防止CSRF攻击 |
+| authCode | Stext | str | Yes | WeChat Work authorization code, obtained from frontend QR code scanning |
+| state | Stext | str | No | State parameter for preventing CSRF attacks |
 
-#### 返回值
-返回用户登录信息字典，包含userId、name、mobile、email、avatar、department、position、gender、status、isLeader等字段。
+#### Return Value
+Return user login information dictionary, containing fields like userId, name, mobile, email, avatar, department, position, gender, status, isLeader, etc.
 
-#### 使用示例
-```python title="用户登录认证示例"
+#### Usage Example
+```python title="User Login Authentication Example"
 qywx_auth = app.getElement("auths.loginTypes.QywxInnerExample")
 
-# 处理授权码获取用户信息
+# Handle authorization code to get user information
 try:
     user_info = qywx_auth.getLoginCode(authCode="authorization_code_from_frontend")
-    print(f"用户登录成功: {user_info['name']}")
-    print(f"用户部门: {user_info['department']}")
+    print(f"User login successful: {user_info['name']}")
+    print(f"User department: {user_info['department']}")
 except Exception as e:
-    print(f"登录失败: {e}")
+    print(f"Login failed: {e}")
 ```
 
 ### getUserInfo
-根据用户ID获取详细的用户信息。
+Get detailed user information based on user ID.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |-----|---|----|---|---|
-| userId | Stext | str | 是 | 企业微信用户ID |
+| userId | Stext | str | Yes | WeChat Work user ID |
 
-#### 返回值
-返回详细用户信息字典，包含用户基本信息、部门信息、职位信息等。
+#### Return Value
+Return detailed user information dictionary, containing user basic information, department information, position information, etc.
 
-#### 使用示例
-```python title="获取用户详细信息示例"
+#### Usage Example
+```python title="Get User Detailed Information Example"
 qywx_auth = app.getElement("auths.loginTypes.QywxInnerExample")
 user_detail = qywx_auth.getUserInfo(userId="zhangsan")
 ```
 
 ### getAccessToken
-获取企业微信访问令牌，用于调用企业微信API。
+Get WeChat Work access token for calling WeChat Work API.
 
-#### 参数详解
-该方法无需参数。
+#### Parameter Details
+This method requires no parameters.
 
-#### 返回值
-返回访问令牌字符串。
+#### Return Value
+Return access token string.
 
-#### 使用示例
-```python title="获取访问令牌示例"
+#### Usage Example
+```python title="Get Access Token Example"
 qywx_auth = app.getElement("auths.loginTypes.QywxInnerExample")
 access_token = qywx_auth.getAccessToken()
 ```
 
 ### syncUserInfo
-同步企业微信用户信息到本地系统。
+Sync WeChat Work user information to local system.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |-----|---|----|---|---|
-| userId | Stext | str | 是 | 企业微信用户ID |
-| forceUpdate | Checkbox | bool | 否 | 是否强制更新，默认False |
+| userId | Stext | str | Yes | WeChat Work user ID |
+| forceUpdate | Checkbox | bool | No | Whether to force update, default False |
 
-#### 返回值
-该方法无返回值。
+#### Return Value
+This method has no return value.
 
-#### 使用示例
-```python title="同步用户信息示例"
+#### Usage Example
+```python title="Sync User Information Example"
 qywx_auth = app.getElement("auths.loginTypes.QywxInnerExample")
 qywx_auth.syncUserInfo(userId="zhangsan", forceUpdate=True)
 ```
 
 ### syncDepartmentInfo
-同步企业微信部门信息到本地系统。
+Sync WeChat Work department information to local system.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |-----|---|----|---|---|
-| deptId | Stext | str | 否 | 部门ID，不传则同步所有部门 |
+| deptId | Stext | str | No | Department ID, sync all departments if not provided |
 
-#### 返回值
-该方法无返回值。
+#### Return Value
+This method has no return value.
 
-#### 使用示例
-```python title="同步部门信息示例"
+#### Usage Example
+```python title="Sync Department Information Example"
 qywx_auth = app.getElement("auths.loginTypes.QywxInnerExample")
-qywx_auth.syncDepartmentInfo()  # 同步所有部门
-qywx_auth.syncDepartmentInfo(deptId="2")  # 同步指定部门
+qywx_auth.syncDepartmentInfo()  # Sync all departments
+qywx_auth.syncDepartmentInfo(deptId="2")  # Sync specified department
 ```
 
-## 属性
+## Properties
 ### QywxInnerAuthModel
-企业微信自建登录的数据模型，用于存储企业微信相关的认证信息。主要字段包括id主键、userId企业微信用户ID、name用户姓名、mobile手机号、email邮箱地址、avatar头像URL、department部门信息、position职位、gender性别、status在职状态、isLeader是否为部门负责人、accessToken访问令牌、refreshToken刷新令牌、expiresAt令牌过期时间、createdAt创建时间、updatedAt更新时间等。
+WeChat Work custom login data model, used to store WeChat Work related authentication information. Main fields include id primary key, userId WeChat Work user ID, name user name, mobile phone number, email email address, avatar avatar URL, department department information, position position, gender gender, status employment status, isLeader whether department leader, accessToken access token, refreshToken refresh token, expiresAt token expiration time, createdAt creation time, updatedAt update time, etc.
 
-## 高级特性
-### 前端扫码登录集成
-前端可通过获取登录配置构建企业微信登录URL，展示二维码或跳转链接，在重定向页面处理授权码完成登录流程。
+## Advanced Features
+### Frontend QR Code Login Integration
+Frontend can build WeChat Work login URL by getting login configuration, display QR code or redirect link, handle authorization code in redirect page to complete login flow.
 
-```javascript title="前端登录流程示例"
-// 获取企业微信登录配置
+```javascript title="Frontend Login Flow Example"
+// Get WeChat Work login configuration
 const config = await api.getLoginConfig('auths.loginTypes.QywxInnerExample');
 
-// 构建企业微信登录URL
+// Build WeChat Work login URL
 const loginUrl = `https://login.work.weixin.qq.com/wwlogin/sso/login?login_type=CorpApp&appid=${config.corpId}&agentid=${config.agentId}&redirect_uri=${encodeURIComponent(config.redirectUri)}&state=${config.state}`;
 
-// 处理授权回调
+// Handle authorization callback
 const urlParams = new URLSearchParams(window.location.search);
 const authCode = urlParams.get('code');
 if (authCode) {
@@ -208,19 +208,19 @@ if (authCode) {
 }
 ```
 
-### 错误处理
-常见错误码包括40013（不合法的corpId）、40014（不合法的access_token）、42001（access_token超时）、40029（不合法的oauth_code）、60020（不合法的agentId）。
+### Error Handling
+Common error codes include 40013 (invalid corpId), 40014 (invalid access_token), 42001 (access_token timeout), 40029 (invalid oauth_code), 60020 (invalid agentId).
 
-```python title="错误处理示例"
+```python title="Error Handling Example"
 from jit.errcode import Code
 
 try:
     user_info = qywx_auth.getLoginCode(authCode=auth_code)
 except Exception as e:
     if "40013" in str(e):
-        raise Code(40013, "企业ID不正确，请检查配置")
+        raise Code(40013, "Enterprise ID is incorrect, please check configuration")
     elif "40029" in str(e):
-        raise Code(40029, "授权码无效或已过期")
+        raise Code(40029, "Authorization code is invalid or expired")
     else:
-        raise Code(50000, f"登录失败: {str(e)}")
-``` 
+        raise Code(50000, f"Login failed: {str(e)}")
+```

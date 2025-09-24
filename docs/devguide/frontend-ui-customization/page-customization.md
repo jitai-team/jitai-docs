@@ -483,6 +483,8 @@ export default ComponentRender;
 ### 调用数据模型函数 {#call-data-model-function}
 在全代码页面中，可以非常方便地调用数据模型函数，这里建议使用可视化页面将函数参数配置好后，直接复制函数代码到全代码页面中。具体如何获取函数代码，请参考[数据模型的增删改查](#crud-operations-for-data-models)。
 
+详细的数据模型函数调用方法和语法说明，请参考：[在页面中调用数据模型函数](../calling-business-elements-in-pages/calling-data-model-functions-in-pages)
+
 以获取模型中一条数据为例：
 
 ![调用模型函数](./img/call-model-function.gif)
@@ -528,7 +530,9 @@ export { Render, PageCls };
 调用模型函数的方法类似： this.app.models.[模型名称].[方法名称]([参数1], [参数2], ...)
 
 ### 调用服务函数 {#call-service-function}
-参考[调用数据模型函数](#call-data-model-function)，只是调用的方法是服务函数，类似： this.app.services.[服务名称].[方法名称]([参数1], [参数2], ...)
+服务函数的调用方式与[数据模型函数](#call-data-model-function)完全相同，调用语法为：`this.app.services.[服务名称].[方法名称]([参数1], [参数2], ...)`。
+
+详细的服务函数调用方法和示例，请参考：[在页面中调用服务函数](../calling-business-elements-in-pages/calling-service-functions-in-pages)
 
 ## 创建Vue全代码页面 {#vue-full-code-page}
 

@@ -1,16 +1,16 @@
 ---
 slug: button
 ---
-# 按钮
-按钮是基础交互组件，负责触发各种操作和事件。它基于Ant Design Button组件实现用户交互功能，支持多种按钮样式、状态显示、权限控制和条件显示，提供异步操作和加载状态反馈能力。
+# Button
+The button is a basic interactive component responsible for triggering various operations and events. It implements user interaction functionality based on Ant Design Button component, supporting multiple button styles, status display, permission control, and conditional display, providing asynchronous operation and loading state feedback capabilities.
 
-按钮元素分层结构为Meta（components.Meta） → Type（components.Button） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建按钮实例元素。
+The button element has a hierarchical structure of Meta (components.Meta) → Type (components.Button) → Instance. Developers can quickly create button instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.ButtonType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `components.ButtonType` element provided by JitAI in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基础配置示例
-```text title="推荐目录结构"
+## Quick Start
+### Basic Configuration Example
+```text title="Recommended Directory Structure"
 pages/
 └── TestPage/
     ├── e.json
@@ -18,17 +18,17 @@ pages/
     └── page.tsx
 ```
 
-```json title="pages/TestPage/scheme.json - 按钮组件配置"
+```json title="pages/TestPage/scheme.json - Button Component Configuration"
 {
   "components": [
     {
       "fullName": "components.Button",
       "type": "components.Button", 
       "name": "submitBtn",
-      "title": "提交按钮",
+      "title": "Submit Button",
       "config": {
         "requireElements": [],
-        "name": "提交",
+        "name": "Submit",
         "color": "",
         "icon": "check",
         "type": "primary",
@@ -42,316 +42,316 @@ pages/
 }
 ```
 
-```tsx title="pages/TestPage/page.tsx - 调用示例"
+```tsx title="pages/TestPage/page.tsx - Usage Example"
 import { useEffect } from 'react';
 
 export default function TestPage() {
   const submitBtn = app.getElement('submitBtn');
 
   useEffect(() => {
-    // 订阅按钮点击事件
+    // Subscribe to button click event
     submitBtn.subscribeEvent('click', async () => {
-      console.log('按钮被点击');
-      // 执行提交逻辑
+      console.log('Button clicked');
+      // Execute submit logic
     });
   }, []);
 
-  return <div>{/* 页面内容 */}</div>;
+  return <div>{/* Page content */}</div>;
 }
 ```
 
-### 配置属性说明
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| name | string | 按钮标题文本 | 按钮 | 是 |
-| color | string | 自定义颜色 | - | 否 |
-| icon | string | 图标名称 | - | 否 |
-| type | string | 按钮类型：default &#124; primary &#124; ghost &#124; dashed &#124; link &#124; solid &#124; outline &#124; none | primary | 否 |
-| size | string | 字体大小，如16px | 17px | 否 |
-| overbold | boolean | 是否加粗显示 | false | 否 |
-| showTitle | boolean | 是否显示标题 | true | 否 |
-| requireElements | requireElement[] | 依赖元素配置 | `[]` | 否 |
+### Configuration Properties
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| name | string | Button title text | Button | Yes |
+| color | string | Custom color | - | No |
+| icon | string | Icon name | - | No |
+| type | string | Button type: default &#124; primary &#124; ghost &#124; dashed &#124; link &#124; solid &#124; outline &#124; none | primary | No |
+| size | string | Font size, e.g. 16px | 17px | No |
+| overbold | boolean | Whether to display in bold | false | No |
+| showTitle | boolean | Whether to show title | true | No |
+| requireElements | requireElement[] | Dependent element configuration | `[]` | No |
 
-## 变量
-组件变量是运行时的业务数据，具有特定的数据类型，可以在代码中访问和操作。
+## Variables
+Component variables are runtime business data with specific data types that can be accessed and manipulated in code.
 
 ### btnTitle
-只读的按钮标题变量，类型为STEXT。存储当前按钮的显示文本，会与配置中的`name`字段同步。
+Read-only button title variable, type is STEXT. Stores current button's display text, synchronized with the `name` field in configuration.
 
-```tsx title="获取按钮标题"
+```tsx title="Get Button Title"
 const button = app.getElement('myButton');
-console.log(button.btnTitle.value); // 输出当前按钮标题
+console.log(button.btnTitle.value); // Output current button title
 ```
 
-## 方法 
+## Methods
 ### edit
-修改按钮标题并更新显示。
+Modify button title and update display.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| btnTitle | string | 新的按钮标题 | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| btnTitle | string | New button title | - | Yes |
 
-#### 返回值
+#### Return Value
 Promise&lt;void&gt;
 
-#### 使用示例
-```tsx title="动态修改按钮标题"
+#### Usage Example
+```tsx title="Dynamically Modify Button Title"
 const button = app.getElement('myButton');
 
-// 修改按钮标题
-await button.edit('新标题');
+// Modify button title
+await button.edit('New Title');
 ```
 
 ### publishEvent
-发送组件事件消息。
+Send component event messages.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| name | string | 事件名称 | - | 是 |
-| ex | Record&lt;string, any&gt; | 额外参数 | - | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| name | string | Event name | - | Yes |
+| ex | Record&lt;string, any&gt; | Additional parameters | - | No |
 
-#### 返回值
+#### Return Value
 Promise&lt;void&gt;
 
-#### 使用示例
-```tsx title="发送自定义事件"
+#### Usage Example
+```tsx title="Send Custom Event"
 const button = app.getElement('myButton');
 
-// 发送自定义事件
+// Send custom event
 await button.publishEvent('customEvent', { data: 'test' });
 ```
 
 ### subscribeEvent
-订阅组件事件消息。
+Subscribe to component event messages.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| name | string | 事件名称 | - | 是 |
-| evtCb | (data: any) =&gt; Promise&lt;void&gt; &#124; void | 事件回调函数 | - | 是 |
-| unSubscribeExist | boolean | 是否取消已存在的订阅 | true | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| name | string | Event name | - | Yes |
+| evtCb | (data: any) =&gt; Promise&lt;void&gt; &#124; void | Event callback function | - | Yes |
+| unSubscribeExist | boolean | Whether to cancel existing subscriptions | true | No |
 
-#### 返回值
-string - 事件处理器ID
+#### Return Value
+string - Event handler ID
 
-#### 使用示例
-```tsx title="订阅按钮事件"
+#### Usage Example
+```tsx title="Subscribe to Button Event"
 const button = app.getElement('myButton');
 
-// 订阅点击事件
+// Subscribe to click event
 const handlerId = button.subscribeEvent('click', async (data) => {
-  console.log('按钮被点击', data);
+  console.log('Button clicked', data);
 });
 ```
 
 ### unSubscribeEvent
-取消事件订阅。
+Cancel event subscription.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| id | string | 事件处理器ID | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| id | string | Event handler ID | - | Yes |
 
-#### 返回值
+#### Return Value
 boolean
 
-#### 使用示例
-```tsx title="取消事件订阅"
+#### Usage Example
+```tsx title="Cancel Event Subscription"
 const button = app.getElement('myButton');
 
 button.unSubscribeEvent(handlerId);
 ```
 
 ### setConfig
-设置组件配置。
+Set component configuration.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| next | Partial&lt;T & `{ requireElements: requireElement[] }`&gt; | 新配置对象 | - | 是 |
-| clean | boolean | 是否完全替换配置 | false | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| next | Partial&lt;T & `{ requireElements: requireElement[] }`&gt; | New configuration object | - | Yes |
+| clean | boolean | Whether to completely replace configuration | false | No |
 
-#### 返回值
+#### Return Value
 void
 
-#### 使用示例
-```tsx title="更新按钮配置"
+#### Usage Example
+```tsx title="Update Button Configuration"
 const button = app.getElement('myButton');
 
-// 部分更新配置
+// Partial configuration update
 button.setConfig({ type: 'primary', size: '18px' });
 
-// 完全替换配置
+// Completely replace configuration
 button.setConfig(newConfig, true);
 ```
 
 ### newVariable
-创建组件变量实例。
+Create component variable instance.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| varConfig | DataTypeConfig | 变量配置 | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| varConfig | DataTypeConfig | Variable configuration | - | Yes |
 
-#### 返回值
+#### Return Value
 BaseDataType
 
 ### runCode
-执行代码字符串。
+Execute code string.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| code | string | 要执行的代码 | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| code | string | Code to execute | - | Yes |
 
-#### 返回值
+#### Return Value
 any
 
 ### getPermConfig
-获取组件权限配置。
+Get component permission configuration.
 
-#### 返回值
+#### Return Value
 Record&lt;string, any&gt; &#124; undefined
 
 ### bindApp
-绑定应用实例。
+Bind application instance.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| app | App | 应用实例 | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| app | App | Application instance | - | Yes |
 
-#### 返回值
+#### Return Value
 void
 
 ### bindPage
-绑定页面实例。
+Bind page instance.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| page | BasePage | 页面实例 | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| page | BasePage | Page instance | - | Yes |
 
-#### 返回值
+#### Return Value
 void
 
 ### getEventKey
-生成组件事件的唯一键名。
+Generate unique key name for component events.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| eventName | string | 事件名称 | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| eventName | string | Event name | - | Yes |
 
-#### 返回值
+#### Return Value
 string
 
 ### initVariables
-初始化组件变量实例。
+Initialize component variable instances.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| dataTypeList | BaseDataType[] | 变量定义列表 | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| dataTypeList | BaseDataType[] | Variable definition list | - | Yes |
 
-#### 返回值
+#### Return Value
 void
 
 ### getVariableList
-获取组件变量定义列表（静态方法）。
+Get component variable definition list (static method).
 
-#### 返回值
+#### Return Value
 VariableConfig[]
 
 ### getFuncList
-获取组件方法定义列表（静态方法）。
+Get component method definition list (static method).
 
-#### 返回值
+#### Return Value
 FuncConfig[]
 
 ### getEventList
-获取组件事件定义列表（静态方法）。
+Get component event definition list (static method).
 
-#### 返回值
+#### Return Value
 EventConfig[]
 
 ### destroy
-销毁组件实例并清理资源。
+Destroy component instance and clean up resources.
 
-#### 返回值
+#### Return Value
 void
 
-## 属性
-组件属性是实例对象的基础元数据，用于标识和管理组件。
+## Properties
+Component properties are basic metadata of instance objects, used to identify and manage components.
 
 ### name
-组件实例名称，string类型。
+Component instance name, string type.
 
 ### title
-组件显示标题，string类型。
+Component display title, string type.
 
 ### config
-组件配置对象，包含所有配置参数。
+Component configuration object, containing all configuration parameters.
 
 ### compType
-组件分类类型标识。
+Component classification type identifier.
 
 ### showTitle
-是否显示组件标题，boolean类型。
+Whether to show component title, boolean type.
 
 ### type
-组件类型标识字符串。
+Component type identifier string.
 
 ### app
-当前应用实例，App类型。
+Current application instance, App type.
 
 ### page
-当前页面实例，BasePage类型。
+Current page instance, BasePage type.
 
-## 事件
+## Events
 ### click
-按钮点击后触发的事件。
+Event triggered after button click.
 
-#### 参数详解
-事件携带数据为btnTitle变量的值。
+#### Parameter Details
+Event carries data as the value of btnTitle variable.
 
-#### 使用示例
-```tsx title="处理按钮点击事件"
+#### Usage Example
+```tsx title="Handle Button Click Event"
 const button = app.getElement('myButton');
 
 button.subscribeEvent('click', async (data) => {
-  console.log('按钮标题:', data.btnTitle);
+  console.log('Button title:', data.btnTitle);
   
-  // 执行业务逻辑
+  // Execute business logic
   const result = await someBusinessAction();
   
   if (result.success) {
-    // 更新按钮状态
-    await button.edit('操作成功');
+    // Update button status
+    await button.edit('Operation Successful');
   }
 });
 ```
 
-## 高级特性
-### 权限控制
-按钮组件支持基于权限配置的显示控制。当权限配置中`permitButton`数组为空时，按钮不会显示。
+## Advanced Features
+### Permission Control
+Button component supports display control based on permission configuration. When `permitButton` array in permission configuration is empty, the button will not be displayed.
 
-```tsx title="权限控制示例"
+```tsx title="Permission Control Example"
 const button = app.getElement('myButton');
 const permConfig = button.getPermConfig();
 
-// 检查按钮权限
+// Check button permission
 if (permConfig?.permitButton?.length === 0) {
-  console.log('用户无权限查看此按钮');
+  console.log('User has no permission to view this button');
 }
 ```
 
-### 样式定制
-按钮支持多种样式类型和自定义样式配置。
+### Style Customization
+Button supports multiple style types and custom style configuration.
 
-```json title="样式配置示例"
+```json title="Style Configuration Example"
 {
   "config": {
     "type": "ghost",
@@ -363,15 +363,15 @@ if (permConfig?.permitButton?.length === 0) {
 }
 ```
 
-### 事件通信
-按钮组件支持发布订阅模式的事件通信，可以与其他组件进行数据交互。
+### Event Communication
+Button component supports publish-subscribe pattern event communication, enabling data interaction with other components.
 
-```tsx title="组件间通信示例"
+```tsx title="Inter-Component Communication Example"
 const button = app.getElement('submitButton');
 const table = app.getElement('dataTable');
 
-// 按钮点击后刷新表格
+// Refresh table after button click
 button.subscribeEvent('click', async () => {
   await table.publishEvent('refresh');
 });
-``` 
+```

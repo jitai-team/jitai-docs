@@ -1,237 +1,238 @@
 ---
 slug: disk-storage
 ---
-# 磁盘存储
-磁盘存储是基于本地文件系统的存储服务，提供高速的文件读写能力和直接的文件路径访问。它适用于小型应用、开发环境，以及对数据安全性要求较高的内部系统部署。磁盘存储支持文件上传、下载、删除、预览和缩略图生成功能，并内置了MIME类型识别和错误处理机制。
+# Disk Storage
 
-磁盘存储元素分层结构为Meta（storages.Meta） → Type（storages.DiskType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建磁盘存储实例元素。
+Disk Storage is a storage service based on the local file system, providing high-speed file read/write capabilities and direct file path access. It is suitable for small applications, development environments, and internal system deployments with high data security requirements. Disk Storage supports file upload, download, delete, preview, and thumbnail generation functions, with built-in MIME type recognition and error handling mechanisms.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的storages.DiskType元素，以实现自己的封装。
+The Disk Storage element has a hierarchical structure of Meta (storages.Meta) → Type (storages.DiskType) → Instance. Developers can quickly create disk storage instance elements through JitAi's visual development tools.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+Of course, developers can also create their own Type elements or modify the official storages.DiskType element provided by JitAi in their own App to implement their own encapsulation.
+
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 storages/
-└── MyDiskStorage/                    # 存储元素名称，可自定义
-    ├── e.json                        # 元素定义文件
-    └── MyDiskStorage.json           # 业务配置文件
+└── MyDiskStorage/                    # Storage element name, customizable
+    ├── e.json                        # Element definition file
+    └── MyDiskStorage.json           # Business configuration file
 ```
 
-#### e.json文件
-```json title="元素定义配置"
+#### e.json File
+```json title="Element Definition Configuration"
 {
-  "title": "我的磁盘存储",
+  "title": "My Disk Storage",
   "type": "storages.DiskType",
   "backendBundleEntry": "."
 }
 ```
 
-#### 业务配置文件
+#### Business Configuration File
 ```json title="MyDiskStorage.json"
 {
   "directory": "appData/storages/MyDiskStorage"
 }
 ```
 
-#### 调用示例
-```python title="基本使用示例"
-# 获取磁盘存储实例
+#### Usage Example
+```python title="Basic Usage Example"
+# Get disk storage instance
 storage = app.getElement("storages.MyDiskStorage")
 
-# 上传文件
+# Upload file
 with open("test.txt", "rb") as file:
     result = storage.uploadByFile("test.txt", file.read(), "text/plain")
-    print(result['url'])  # 返回文件访问URL
+    print(result['url'])  # Returns file access URL
 
-# 下载文件
+# Download file
 response = storage.download("test.txt")
 
-# 删除文件
+# Delete file
 storage.delete("test.txt")
 ```
 
-## 元素配置
-### e.json配置
-| 配置项 | 类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| title | 字符串 | 是 | 存储元素的显示名称 |
-| type | 字符串 | 是 | 固定值："storages.DiskType" |
-| backendBundleEntry | 字符串 | 是 | 固定值："." |
+| title | string | Yes | Storage element display name |
+| type | string | Yes | Fixed value: "storages.DiskType" |
+| backendBundleEntry | string | Yes | Fixed value: "." |
 
-### 业务配置文件配置
-业务配置文件名称必须与元素名称相同，包含以下配置项：
+### Business Configuration File Configuration
+The business configuration file name must be the same as the element name and contains the following configuration items:
 
-| 配置项 | 类型 | 必填 | 说明 |
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| directory | 字符串 | 是 | 存储目录路径。可以是相对路径（相对于应用目录）或绝对路径 |
+| directory | string | Yes | Storage directory path. Can be relative path (relative to application directory) or absolute path |
 
-**路径说明：**
-- 相对路径：`appData/storages/MyStorage` → `应用目录/appData/storages/MyStorage`
-- 绝对路径：`/data/files` → 直接使用绝对路径
+**Path Description:**
+- Relative path: `appData/storages/MyStorage` → `Application Directory/appData/storages/MyStorage`
+- Absolute path: `/data/files` → Use absolute path directly
 
-## 方法 
+## Methods
 ### uploadByFile
-上传文件到磁盘存储。
+Upload file to disk storage.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 文件名称，包含扩展名 |
-| data | - | bytes | 是 | 文件二进制数据 |
-| contentType | Stext | str | 否 | MIME类型，默认为"application/octet-stream" |
+| name | Stext | str | Yes | File name, including extension |
+| data | - | bytes | Yes | File binary data |
+| contentType | Stext | str | No | MIME type, defaults to "application/octet-stream" |
 
-#### 返回值
-返回包含文件访问URL的字典：
+#### Return Value
+Returns a dictionary containing file access URL:
 ```python
 {
     "url": "http://domain/storages/services/StorageSvc/preview?file=filename.txt"
 }
 ```
 
-#### 使用示例
-```python title="文件上传示例"
+#### Usage Example
+```python title="File Upload Example"
 storage = app.getElement("storages.MyDiskStorage")
 
-# 上传文本文件
+# Upload text file
 with open("document.txt", "rb") as file:
     result = storage.uploadByFile("document.txt", file.read(), "text/plain")
     
-# 上传图片文件
+# Upload image file
 with open("image.jpg", "rb") as file:
     result = storage.uploadByFile("image.jpg", file.read(), "image/jpeg")
 ```
 
 ### download
-下载指定的文件。
+Download specified file.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| file | Stext | str | 是 | 要下载的文件名称 |
+| file | Stext | str | Yes | File name to download |
 
-#### 返回值
-返回Flask Response对象，包含文件内容和正确的MIME类型头。
+#### Return Value
+Returns Flask Response object containing file content and correct MIME type headers.
 
-#### 使用示例
-```python title="文件下载示例"
+#### Usage Example
+```python title="File Download Example"
 storage = app.getElement("storages.MyDiskStorage")
 
-# 下载文件
+# Download file
 response = storage.download("document.txt")
-# 响应会自动设置正确的Content-Type和下载头
+# Response will automatically set correct Content-Type and download headers
 ```
 
 ### delete
-删除指定的文件。
+Delete specified file.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 要删除的文件名称 |
+| name | Stext | str | Yes | File name to delete |
 
-#### 使用示例
-```python title="文件删除示例"
+#### Usage Example
+```python title="File Delete Example"
 storage = app.getElement("storages.MyDiskStorage")
 
-# 删除文件
+# Delete file
 storage.delete("document.txt")
 ```
 
 ### preview
-预览指定的文件，支持在浏览器中直接显示。
+Preview specified file, supports direct display in browser.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| file | Stext | str | 是 | 要预览的文件名称 |
+| file | Stext | str | Yes | File name to preview |
 
-#### 返回值
-返回Flask Response对象，设置为内联显示模式。
+#### Return Value
+Returns Flask Response object set to inline display mode.
 
-#### 使用示例
-```python title="文件预览示例"
+#### Usage Example
+```python title="File Preview Example"
 storage = app.getElement("storages.MyDiskStorage")
 
-# 预览文件
+# Preview file
 response = storage.preview("image.jpg")
-# 图片将在浏览器中直接显示
+# Image will be displayed directly in browser
 ```
 
 ### previewThumbnail
-生成并返回文件的缩略图，主要用于图片文件。
+Generate and return file thumbnail, mainly for image files.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 图片文件名称 |
-| width | Numeric | int | 否 | 缩略图宽度，默认120像素 |
-| height | Numeric | int | 否 | 缩略图高度，默认120像素 |
+| name | Stext | str | Yes | Image file name |
+| width | Numeric | int | No | Thumbnail width, defaults to 120 pixels |
+| height | Numeric | int | No | Thumbnail height, defaults to 120 pixels |
 
-#### 返回值
-返回缩略图的Flask Response对象。如果缩略图不存在会自动生成并缓存。
+#### Return Value
+Returns Flask Response object of thumbnail. If thumbnail doesn't exist, it will be automatically generated and cached.
 
-#### 使用示例
-```python title="缩略图生成示例"
+#### Usage Example
+```python title="Thumbnail Generation Example"
 storage = app.getElement("storages.MyDiskStorage")
 
-# 生成默认尺寸缩略图
+# Generate default size thumbnail
 thumbnail = storage.previewThumbnail("photo.jpg")
 
-# 生成指定尺寸缩略图
+# Generate specified size thumbnail
 thumbnail = storage.previewThumbnail("photo.jpg", 200, 150)
 ```
 
-## 属性
+## Attributes
 ### rootDir
-只读属性，返回存储的根目录绝对路径。
+Read-only attribute, returns the absolute path of the storage root directory.
 
 ### name
-只读属性，返回存储元素的fullName。
+Read-only attribute, returns the fullName of the storage element.
 
-## 高级特性
-### 自动目录创建
-磁盘存储在上传文件时会自动创建所需的目录结构：
+## Advanced Features
+### Automatic Directory Creation
+Disk Storage automatically creates required directory structure when uploading files:
 
-```python title="嵌套目录文件上传"
+```python title="Nested Directory File Upload"
 storage = app.getElement("storages.MyDiskStorage")
 
-# 上传到子目录，目录会自动创建
+# Upload to subdirectory, directory will be automatically created
 with open("doc.pdf", "rb") as file:
     result = storage.uploadByFile("documents/2024/doc.pdf", file.read())
 ```
 
-### MIME类型自动识别
-系统内置了丰富的MIME类型映射，支持数百种文件格式的自动识别：
+### Automatic MIME Type Recognition
+The system has built-in rich MIME type mapping, supporting automatic recognition of hundreds of file formats:
 
-```python title="MIME类型处理"
+```python title="MIME Type Processing"
 storage = app.getElement("storages.MyDiskStorage")
 
-# 系统会根据文件扩展名自动设置正确的MIME类型
-storage.uploadByFile("video.mp4", video_data)  # 自动识别为video/mp4
-storage.uploadByFile("document.pdf", pdf_data)  # 自动识别为application/pdf
+# System will automatically set correct MIME type based on file extension
+storage.uploadByFile("video.mp4", video_data)  # Automatically recognized as video/mp4
+storage.uploadByFile("document.pdf", pdf_data)  # Automatically recognized as application/pdf
 ```
 
-### 缩略图缓存机制
-缩略图生成后会保存在磁盘上，避免重复生成：
+### Thumbnail Caching Mechanism
+Generated thumbnails are saved on disk to avoid repeated generation:
 
-```python title="缩略图缓存策略"
+```python title="Thumbnail Caching Strategy"
 storage = app.getElement("storages.MyDiskStorage")
 
-# 首次调用会生成缩略图文件：image_120_120.jpg
+# First call will generate thumbnail file: image_120_120.jpg
 thumbnail1 = storage.previewThumbnail("image.jpg", 120, 120)
 
-# 后续调用直接返回已生成的缩略图
+# Subsequent calls directly return already generated thumbnail
 thumbnail2 = storage.previewThumbnail("image.jpg", 120, 120)
 ```
 
-### 权限错误处理
-当目录权限不足时，系统会抛出友好的错误信息：
+### Permission Error Handling
+When directory permissions are insufficient, the system throws friendly error messages:
 
-```python title="权限错误处理"
+```python title="Permission Error Handling"
 try:
     storage.uploadByFile("test.txt", b"content")
 except Exception as e:
-    # 会显示相对路径而非完整的系统路径
-    print(f"权限错误: {e}")
-``` 
+    # Will display relative path instead of complete system path
+    print(f"Permission error: {e}")
+```

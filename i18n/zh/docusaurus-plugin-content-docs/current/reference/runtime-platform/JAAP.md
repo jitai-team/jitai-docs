@@ -559,5 +559,5 @@ curl -X POST https://app.example.com/api/wanyun/MyApp/services/UserService/getUs
 通过遵循JAAP，开发者可以构建标准化、可扩展、易维护的 JitAi 应用系统。协议的分层设计和标准化接口确保了应用的高质量和长期演进能力。 
 
 :::tip 进阶案例
-当你已经掌握JAAP后，可以通过进阶案例加深理解：[新增元素族类，集成智能客服到钉钉机器人](../../extguide/extend-element-family-classes)，学会自定义元素族类的实现。
+当你已经掌握JAAP后，可以通过进阶案例加深理解：[扩展自己的元素族类](../../extguide/extend-element-family-classes)，学会自定义元素族类的实现。
 :::

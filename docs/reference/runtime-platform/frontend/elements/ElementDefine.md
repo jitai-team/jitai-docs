@@ -4,21 +4,21 @@ slug: ElementDefine
 ---
 
 # ElementDefine
-ElementDefine对象中的内容和元素e.json内容一致，描述元素的定义信息。通过App对象的相关方法可以获取元素定义。
+The content in the ElementDefine object is consistent with the element's e.json content, describing the element's definition information. Element definitions can be obtained through related methods of the App object.
 
-## 获取ElementDefine对象
-ElementDefine对象通过App对象的多个方法获取：
+## Getting ElementDefine Objects
+ElementDefine objects are obtained through multiple methods of the App object:
 
 ```javascript
-// 根据类型获取元素定义
+// Get element definitions by type
 const defines = app.getDefineByType("models.NormalType");
 
-// 按元素目录获取所有元素定义
+// Get all element definitions by element directory
 const defines = app.getElementDefine("models.UserModel");
 
-// 根据类型获取所有实例元素定义
+// Get all instance element definitions by type
 const defines = app.getInsDefineByType("models.MetaType");
 
-// 获取去重后的实例元素定义
+// Get deduplicated instance element definitions
 const defines = app.getUniqInsDefineByType("models.MetaType");
 ```

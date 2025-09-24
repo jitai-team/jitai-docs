@@ -4,7 +4,7 @@ sidebar_position: 0
 
 import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
-# Guide
+# Developer Guide Index
 Ready to experience a revolutionary new way of application development? Start here and learn to build powerful enterprise-grade applications using the cutting-edge technology stack of the AI era.
 
 The developer guide provides a complete learning path from organizational management and application development fundamentals to business logic implementation, along with best practices for mastering complex application architecture design through real business scenarios.
@@ -839,7 +839,7 @@ Integrate mainstream large language models such as GPT-4, Claude, and Tongyi Qia
 >
   <LinkGrid links={[
     { text: "Mainstream LLM Vendor Support List", href: "ai-llm/create-ai-llm#mainstream-llm-vendor-support-list" },
-    { text: "Create LLM Vendor Element", href: "ai-llm/create-ai-llm#create-llm-vendor-element" },
+    { text: "Create LLM Vendor Element", href: "ai-llm/create-ai-llm#creating-llm-vendor-elements" },
     { text: "Retry and Backup API Key Mechanism", href: "ai-llm/create-ai-llm#retry-backup-api-key-mechanism" },
     { text: "Private LLM Integration", href: "ai-llm/create-ai-llm#private-llm-integration" }
   ]} />

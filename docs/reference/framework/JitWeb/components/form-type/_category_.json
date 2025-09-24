@@ -3,6 +3,7 @@
   "position": 3,
   "link": {
     "type": "generated-index",
+    "slug": "reference/framework/JitWeb/components/form-type",
     "description": "Form input and data collection components including text fields, selectors, checkboxes, and validation elements."
   }
 } 

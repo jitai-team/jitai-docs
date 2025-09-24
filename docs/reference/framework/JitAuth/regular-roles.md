@@ -1,35 +1,35 @@
 ---
 slug: regular-roles
 ---
-# 常规角色
-常规角色是基于RBAC模型的权限管理组件，提供角色定义、权限分配和成员绑定的完整解决方案。它负责用户权限控制、API访问授权和门户访问管理，支持角色继承、权限组合和分级授权机制，与组织架构深度集成实现企业级权限管控。
+# Regular Roles
+Regular roles are permission management components based on the RBAC model, providing a complete solution for role definition, permission assignment, and member binding. They handle user permission control, API access authorization, and portal access management, supporting role inheritance, permission composition, and hierarchical authorization mechanisms, with deep integration with organizational architecture to achieve enterprise-level permission control.
 
-常规角色元素分层结构为Meta（`roles.Meta`） → Type（`roles.NormalType`） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建常规角色实例元素。
+The hierarchical structure of regular role elements is Meta (`roles.Meta`) → Type (`roles.NormalType`) → Instance. Developers can quickly create regular role instance elements through JitAi's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的roles.NormalType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `roles.NormalType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 roles/
-├── developer/              # 角色实例目录（路径可自定义）
-│   ├── e.json              # 元素定义文件（必需）
-│   └── developer.json      # 角色配置文件（必需）
+├── developer/              # Role instance directory (path customizable)
+│   ├── e.json              # Element definition file (required)
+│   └── developer.json      # Role configuration file (required)
 ```
 
-#### e.json文件
-```json title="e.json配置示例"
+#### e.json File
+```json title="e.json Configuration Example"
 {
   "backendBundleEntry": ".",
   "frontBundleEntry": "./developer.json",
-  "title": "开发者",
+  "title": "Developer",
   "type": "roles.NormalType"
 }
 ```
 
-#### 业务配置文件
-```json title="developer.json配置示例"
+#### Business Configuration File
+```json title="developer.json Configuration Example"
 {
   "apiPerm": {
     "services.UserService.createUser": "allow",
@@ -43,98 +43,98 @@ roles/
 }
 ```
 
-#### 调用示例
-```python title="获取角色信息"
-# 获取角色实例
+#### Usage Example
+```python title="Getting Role Information"
+# Get role instance
 role = app.getElement("roles.developer")
 
-# 获取角色基本信息
+# Get role basic information
 role_info = role.info
-print(f"角色名称: {role_info['roleTitle']}")
-print(f"角色ID: {role_info['roleName']}")
+print(f"Role Name: {role_info['roleTitle']}")
+print(f"Role ID: {role_info['roleName']}")
 
-# 获取权限配置
+# Get permission configuration
 api_perms = role_info.get('apiPerm', {})
 shell_perms = role_info.get('shellPerm', {})
 ```
 
-## 元素配置
-### e.json配置
-| 配置项 | 类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| title | string | 是 | 角色显示名称 |
-| type | string | 是 | 固定值：`roles.NormalType` |
-| backendBundleEntry | string | 是 | 后端入口，通常为 "." |
-| frontBundleEntry | string | 是 | 前端入口，指向配置文件 |
+| title | string | Yes | Role display name |
+| type | string | Yes | Fixed value: `roles.NormalType` |
+| backendBundleEntry | string | Yes | Backend entry, usually "." |
+| frontBundleEntry | string | Yes | Frontend entry, points to configuration file |
 
-### 业务配置文件配置
-| 配置项 | 类型 | 必填 | 说明 |
+### Business Configuration File
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| apiPerm | object | 否 | API权限配置，键为API路径，值为权限类型 |
-| apiPermSwitch | number | 否 | API权限开关，0关闭/1开启 |
-| shellPerm | object | 否 | 门户权限配置，键为门户fullName，值为权限类型 |
+| apiPerm | object | No | API permission configuration, key is API path, value is permission type |
+| apiPermSwitch | number | No | API permission switch, 0 off/1 on |
+| shellPerm | object | No | Portal permission configuration, key is portal fullName, value is permission type |
 
-#### API权限配置说明
-```json title="API权限配置示例"
+#### API Permission Configuration
+```json title="API Permission Configuration Example"
 {
   "apiPerm": {
-    "services.UserService.createUser": "allow",      // 明确允许
-    "services.UserService.deleteUser": "deny",       // 明确拒绝
-    "services.ProjectService.*": "allow",             // 通配符匹配
-    "models.UserModel.save": "allow"                  // 模型方法权限
+    "services.UserService.createUser": "allow",      // Explicitly allow
+    "services.UserService.deleteUser": "deny",       // Explicitly deny
+    "services.ProjectService.*": "allow",             // Wildcard matching
+    "models.UserModel.save": "allow"                  // Model method permission
   },
   "apiPermSwitch": 1
 }
 ```
 
-#### 门户权限配置说明
-```json title="门户权限配置示例"
+#### Portal Permission Configuration
+```json title="Portal Permission Configuration Example"
 {
   "shellPerm": {
-    "shells.Admin": "all",        // 完全访问
-    "shells.Portal": "read",      // 只读访问
-    "shells.Api": "none"          // 无权访问
+    "shells.Admin": "all",        // Full access
+    "shells.Portal": "read",      // Read-only access
+    "shells.Api": "none"          // No access
   }
 }
 ```
 
-## 属性
+## Properties
 ### info
-获取角色的完整信息，包含基本配置和权限数据。
+Gets the complete information of the role, including basic configuration and permission data.
 
-```python title="使用示例"
+```python title="Usage Example"
 role = app.getElement("roles.developer")
 role_data = role.info
 
-# 访问角色信息
-print(role_data['roleName'])    # 角色fullName
-print(role_data['roleTitle'])   # 角色显示名称
-print(role_data['apiPerm'])     # API权限配置
-print(role_data['shellPerm'])   # 门户权限配置
+# Access role information
+print(role_data['roleName'])    # Role fullName
+print(role_data['roleTitle'])   # Role display name
+print(role_data['apiPerm'])     # API permission configuration
+print(role_data['shellPerm'])   # Portal permission configuration
 ```
 
-## 方法 
+## Methods
 ### getRoleData
-获取角色的完整配置数据，支持应用继承的数据合并。
+Gets the complete configuration data of the role, supporting data merging from application inheritance.
 
-#### 返回值
-- **类型**：`dict`
-- **说明**：包含角色完整配置的字典
+#### Return Value
+- **Type**: `dict`
+- **Description**: Dictionary containing complete role configuration
 
-#### 使用示例
-```python title="获取角色数据"
+#### Usage Example
+```python title="Getting Role Data"
 role = app.getElement("roles.developer")
 data = role.getRoleData()
 
-# 检查角色权限
+# Check role permissions
 def check_api_permission(api_path):
     api_perms = data.get('apiPerm', {})
     
-    # 精确匹配
+    # Exact match
     if api_path in api_perms:
         return api_perms[api_path] == 'allow'
     
-    # 通配符匹配
+    # Wildcard matching
     for perm_path, permission in api_perms.items():
         if perm_path.endswith('*'):
             prefix = perm_path[:-1]
@@ -143,15 +143,15 @@ def check_api_permission(api_path):
     
     return False
 
-# 使用示例
+# Usage example
 has_permission = check_api_permission("services.UserService.createUser")
 ```
 
-## 高级特性
-### 角色继承
-常规角色支持应用级继承，子应用可以继承父应用的角色配置并进行覆盖或扩展。
+## Advanced Features
+### Role Inheritance
+Regular roles support application-level inheritance, where child applications can inherit parent application role configurations and override or extend them.
 
-```json title="子应用角色配置"
+```json title="Child Application Role Configuration"
 {
   "apiPerm": {
     "services.NewService.*": "allow"
@@ -163,19 +163,19 @@ has_permission = check_api_permission("services.UserService.createUser")
 }
 ```
 
-### 权限检查集成
-在业务代码中集成权限检查逻辑：
+### Permission Check Integration
+Integrate permission check logic in business code:
 
-```python title="权限检查实现"
+```python title="Permission Check Implementation"
 def check_user_role_permission(user_id, api_path):
-    # 获取用户的角色列表
+    # Get user's role list
     member_model = app.getElement("roles.models.AppRoleMemberModel")
     user_roles = member_model.query(
         filter=f"Q(authId='{user_id}')",
         fieldList=['roleName']
     )
     
-    # 检查每个角色的权限
+    # Check each role's permissions
     for role_data in user_roles['rowDatas']:
         role = app.getElement(role_data['roleName'])
         role_info = role.info
@@ -187,23 +187,23 @@ def check_user_role_permission(user_id, api_path):
     return False
 ```
 
-### 动态权限管理
-通过修改角色配置文件实现动态权限调整：
+### Dynamic Permission Management
+Implement dynamic permission adjustments by modifying role configuration files:
 
-```python title="动态权限更新"
+```python title="Dynamic Permission Update"
 import json
 
 def update_role_permissions(role_name, new_permissions):
-    # 获取角色节点
+    # Get role node
     role_element = app.getElement(role_name)
     config_file = f"{role_element._nodes[0].name}.json"
     
-    # 读取当前配置
+    # Read current configuration
     current_config = json.loads(role_element._nodes[0].getFile(config_file))
     
-    # 更新权限
+    # Update permissions
     current_config['apiPerm'].update(new_permissions)
     
-    # 保存配置（实际项目中需要通过管理接口）
-    print(f"新的权限配置: {current_config}")
-``` 
+    # Save configuration (in actual projects, this needs to be done through management interface)
+    print(f"New permission configuration: {current_config}")
+```

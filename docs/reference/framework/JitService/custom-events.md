@@ -1,34 +1,34 @@
 ---
 slug: custom-events
 ---
-# 自定义事件 {#custom-events}
-自定义事件由开发者在服务元素中根据需要自由定义，并在业务逻辑代码中进行触发，为事件驱动型的系统开发提供足够的灵活度。
+# Custom Events {#custom-events}
+Custom events are freely defined by developers in service elements as needed and triggered in business logic code, providing sufficient flexibility for event-driven system development.
 
-自定义事件元素分层结构为Meta（events.Meta） → Type（events.NormalType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建自定义事件实例元素。
+The hierarchical structure of custom event elements is Meta (events.Meta) → Type (events.NormalType) → Instance. Developers can quickly create custom event instance elements through JitAi's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的events.NormalType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `events.NormalType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-开发者需要先[在服务元素中定义事件](./custom-business-service#event-definition-and-usage)，然后才能创建`自定义事件`实例元素订阅服务中定义的事件，并编写事件业务逻辑代码。
+## Quick Start
+Developers need to first [define events in service elements](./custom-business-service#event-definition-and-usage), then create `Custom Event` instance elements to subscribe to events defined in services, and write event business logic code.
 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 events/
 ├── MyCustomEvent/
 │   ├── e.json
-│   ├── inner.py（可选，当funcType为Inner时）
+│   ├── inner.py (optional, when funcType is Inner)
 │   └── __init__.py
 ```
 
-#### e.json文件
-```json title="事件元素定义文件"
+#### e.json File
+```json title="Event Element Definition File"
 {
     "type": "events.NormalType",
     "funcType": "Inner",
     "asyncType": false,
     "sender": "services.MyService.CustomEvent",
-    "title": "测试自定义事件",
+    "title": "Test Custom Event",
     "backendBundleEntry": ".",
     "returnType": "None",
     "backendEpath": "events/MyCustomEvent/element.pkg",
@@ -36,74 +36,74 @@ events/
 }
 ```
 
-sender：声明事件的服务元素的fullName.事件名
+sender: fullName of service element that declares the event.event name
 
-#### 事件逻辑代码
-当`funcType`为`Inner`时，需要创建`inner.py`文件：
+#### Event Logic Code
+When `funcType` is `Inner`, create `inner.py` file:
 
-```python title="内部事件处理函数"
+```python title="Internal Event Handler Function"
 from datatypes.Meta import datatypes
 
 def customFunc(*args, **kwargs):
     """
-    自定义事件处理函数
+    Custom event handler function
     """
-    # 业务逻辑实现
-    print("自定义事件被触发")
+    # Business logic implementation
+    print("Custom event triggered")
     return True
 
 ```
 
-#### 调用示例
-```python title="事件触发示例"
-# sender：声明事件的服务元素的fullName.事件名
+#### Usage Example
+```python title="Event Trigger Example"
+# sender: fullName of service element that declares the event.event name
 app.event.publish(sender="services.MyService.CustomEvent",args=("paramValue"))
 
 ```
 
-## 元素配置
-### e.json配置
-| 配置项 | 类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| type | String | 是 | 固定值：`events.NormalType` |
-| sender | String | 是 | 事件发送方，格式：`服务元素fullName.事件名` |
-| funcType | String | 是 | 函数类型：`Global`/`Inner`，默认`Global` |
-| func | String | 条件必填 | 当`funcType`为`Global`时指定要调用的服务函数，值为`元素fullName.函数名` |
-| asyncType | Boolean | 否 | 是否异步执行，默认`false` |
-| enable | Integer | 否 | 是否启用，1启用/0禁用，默认`0` |
-| objMode | Boolean | 否 | 对象模式，默认`false` |
-| returnType | String | 否 | 返回值类型，默认`None` |
-| title | String | 否 | 事件显示名称，默认使用`fullName` |
-| path | String | 否 | 元素所在目录相对路径（示例：`events`） |
-| backendBundleEntry | String | 否 | 后端打包入口目录，相对路径（示例：`.`） |
-| backendEpath | String | 否 | 后端元素打包路径（示例：`events/testCustomEvents/element.pkg`） |
-| extendType | String | 否 | 继承扩展类型（示例：`self`） |
+| type | String | Yes | Fixed value: `events.NormalType` |
+| sender | String | Yes | Event sender, format: `service element fullName.event name` |
+| funcType | String | Yes | Function type: `Global`/`Inner`, default `Global` |
+| func | String | Conditionally required | When `funcType` is `Global`, specify service function to call, value is `element fullName.function name` |
+| asyncType | Boolean | No | Whether to execute asynchronously, default `false` |
+| enable | Integer | No | Whether enabled, 1 enabled/0 disabled, default `0` |
+| objMode | Boolean | No | Object mode, default `false` |
+| returnType | String | No | Return value type, default `None` |
+| title | String | No | Event display name, default uses `fullName` |
+| path | String | No | Relative path of element directory (example: `events`) |
+| backendBundleEntry | String | No | Backend bundle entry directory, relative path (example: `.`) |
+| backendEpath | String | No | Backend element bundle path (example: `events/testCustomEvents/element.pkg`) |
+| extendType | String | No | Inheritance extension type (example: `self`) |
 
-### 业务配置文件配置
-当`funcType`为`Inner`时，支持创建独立的业务逻辑文件：
+### Business Configuration File
+When `funcType` is `Inner`, supports creating independent business logic files:
 
-- **inner.py**: 包含`customFunc`函数的业务逻辑文件
-- **__init__.py**: 包初始化文件，导入业务逻辑
+- **inner.py**: Business logic file containing `customFunc` function
+- **__init__.py**: Package initialization file, imports business logic
 
-## 方法 
+## Methods
 ### call
-执行事件处理函数，记录执行时间。
+Execute event handler function, record execution time.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| args | 可变参数 | tuple | 否 | 位置参数 |
-| kwargs | 关键字参数 | dict | 否 | 命名参数 |
+| args | Variable arguments | tuple | No | Positional arguments |
+| kwargs | Keyword arguments | dict | No | Named arguments |
 
-#### 返回值
-返回事件处理函数的执行结果，类型根据具体业务逻辑而定。
+#### Return Value
+Returns execution result of event handler function, type depends on specific business logic.
 
-#### 使用示例
-```python title="事件调用示例"
-# 获取事件实例
+#### Usage Example
+```python title="Event Call Example"
+# Get event instance
 event = app.getElement("events.MyCustomEvent")
 
-# 调用事件
+# Call event
 result = event.call(
     userId=123,
     action="update",
@@ -112,83 +112,83 @@ result = event.call(
 ```
 
 ### getSender
-获取事件发送方标识。
+Get event sender identifier.
 
-#### 返回值
-返回字符串类型的发送方标识，格式为：`服务元素fullName.函数名`
+#### Return Value
+Returns string type sender identifier, format: `service element fullName.function name`
 
-#### 使用示例
-```python title="获取发送方示例"
+#### Usage Example
+```python title="Get Sender Example"
 event = app.getElement("events.MyCustomEvent")
 sender = event.getSender()
-print(f"事件发送方: {sender}")
+print(f"Event sender: {sender}")
 ```
 
 ### isValid
-检查事件是否有效，可在子类中重写实现自定义验证逻辑。
+Check if event is valid, can be overridden in subclasses to implement custom validation logic.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| args | 可变参数 | tuple | 否 | 验证参数 |
-| kwargs | 关键字参数 | dict | 否 | 验证参数 |
+| args | Variable arguments | tuple | No | Validation parameters |
+| kwargs | Keyword arguments | dict | No | Validation parameters |
 
-#### 返回值
-返回布尔值，True表示事件有效，False表示无效。
+#### Return Value
+Returns boolean value, True means event is valid, False means invalid.
 
-#### 使用示例
-```python title="事件有效性检查"
+#### Usage Example
+```python title="Event Validity Check"
 event = app.getElement("events.MyCustomEvent")
 if event.isValid(userId=123):
     result = event.call(userId=123, action="process")
 ```
 
 ### handleNode
-处理事件节点，在执行事件函数之前触发，可对节点和参数进行预处理。
+Process event node, triggered before executing event function, can preprocess node and parameters.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| node | Object | object | 是 | 事件节点对象 |
-| args | 可变参数 | tuple | 否 | 原始参数 |
-| kwargs | 关键字参数 | dict | 否 | 原始参数 |
+| node | Object | object | Yes | Event node object |
+| args | Variable arguments | tuple | No | Original parameters |
+| kwargs | Keyword arguments | dict | No | Original parameters |
 
-#### 返回值
-返回包含三个元素的元组：(处理后的节点, 处理后的args, 处理后的kwargs)
+#### Return Value
+Returns tuple containing three elements: (processed node, processed args, processed kwargs)
 
-#### 使用示例
-```python title="节点处理示例"
-# 在自定义事件类中重写handleNode方法
+#### Usage Example
+```python title="Node Processing Example"
+# Override handleNode method in custom event class
 def handleNode(self, node, *args, **kwargs):
-    # 添加时间戳
+    # Add timestamp
     kwargs['timestamp'] = datetime.now()
     
-    # 日志记录
-    print(f"处理事件节点: {node}, 参数: {args}, {kwargs}")
+    # Log record
+    print(f"Process event node: {node}, parameters: {args}, {kwargs}")
     
     return node, args, kwargs
 ```
 
 ### createTask
-创建异步任务，当事件配置为异步执行时使用。
+Create asynchronous task, used when event is configured for asynchronous execution.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| taskParams | JitDict | dict | 是 | 任务参数，必须可序列化 |
-| nodeId | Stext | str | 是 | 触发事件的节点ID |
-| requestId | Stext | str | 是 | 请求ID，用于日志定位 |
+| taskParams | JitDict | dict | Yes | Task parameters, must be serializable |
+| nodeId | Stext | str | Yes | Node ID that triggered the event |
+| requestId | Stext | str | Yes | Request ID, used for log positioning |
 
-#### 使用示例
-```python title="创建异步任务示例"
-# 构造任务参数
+#### Usage Example
+```python title="Create Asynchronous Task Example"
+# Construct task parameters
 taskParams = {
     "userId": 123,
     "action": "processData",
     "data": {"key": "value"}
 }
 
-# 创建异步任务
+# Create asynchronous task
 event.createTask(
     taskParams=taskParams,
     nodeId="node_001",
@@ -196,41 +196,41 @@ event.createTask(
 )
 ```
 
-## 属性
+## Properties
 ### name
-事件的完整名称（fullName）。
+Complete name (fullName) of the event.
 
 ### sender
-事件发送方标识，格式为：`服务元素fullName.函数名`
+Event sender identifier, format: `service element fullName.function name`
 
 ### funcType
-函数类型，可选值：
-- `Global`: 调用全局服务函数
-- `Inner`: 调用内部自定义函数
+Function type, optional values:
+- `Global`: Call global service function
+- `Inner`: Call internal custom function
 
 ### func
-当funcType为Global时，指定要调用的服务函数名。
+When funcType is Global, specifies service function name to call.
 
 ### asyncType
-是否异步执行，布尔值。
+Whether to execute asynchronously, boolean value.
 
 ### enable
-事件是否启用，1表示启用，0表示禁用。
+Whether event is enabled, 1 means enabled, 0 means disabled.
 
 ### objMode
-对象模式，当为true时，事件参数将被包装在obj对象中传递。
+Object mode, when true, event parameters will be wrapped in obj object for passing.
 
 ### callTime
-事件最后一次被调用的时间，datetime类型。
+Last time the event was called, datetime type.
 
-## 高级特性
-### 异步事件处理
-配置`asyncType`为`true`可实现事件的异步执行：
+## Advanced Features
+### Asynchronous Event Processing
+Configure `asyncType` to `true` to enable asynchronous event execution:
 
-```json title="异步事件配置"
+```json title="Asynchronous Event Configuration"
 {
   "type": "events.NormalType",
-  "title": "异步处理事件",
+  "title": "Asynchronous Processing Event",
   "sender": "services.DataProcessor.asyncProcess",
   "funcType": "Global",
   "func": "handleAsyncData",
@@ -239,13 +239,13 @@ event.createTask(
 }
 ```
 
-### 对象模式参数传递
-启用`objMode`可将所有参数包装在obj对象中：
+### Object Mode Parameter Passing
+Enable `objMode` to wrap all parameters in obj object:
 
-```json title="对象模式配置"
+```json title="Object Mode Configuration"
 {
   "type": "events.NormalType",
-  "title": "对象模式事件",
+  "title": "Object Mode Event",
   "sender": "services.ObjectHandler.processObject",
   "funcType": "Inner",
   "objMode": true,
@@ -253,37 +253,37 @@ event.createTask(
 }
 ```
 
-### 事件链式调用
-通过事件引擎可实现事件的链式调用和复杂业务逻辑：
+### Event Chain Calling
+Event engine enables event chain calling and complex business logic:
 
-```python title="事件链式调用示例"
-# 获取事件服务
+```python title="Event Chain Calling Example"
+# Get event service
 eventSvc = app.getElement("events.services.EventSvc")
 
-# 触发事件链
+# Trigger event chain
 eventSvc.callEvent("events.DataValidation", data=inputData)
 eventSvc.callEvent("events.DataProcessing", data=validatedData)
 eventSvc.callEvent("events.DataStorage", data=processedData)
 ```
 
-### 自定义事件验证
-重写`isValid`方法实现自定义验证逻辑：
+### Custom Event Validation
+Override `isValid` method to implement custom validation logic:
 
-```python title="自定义验证逻辑"
+```python title="Custom Validation Logic"
 def customFunc(*args, **kwargs):
-    # 获取用户ID
+    # Get user ID
     userId = kwargs.get('userId')
     
-    # 业务验证
+    # Business validation
     if not userId or userId <= 0:
         return False
     
-    # 权限检查
+    # Permission check
     userService = app.getElement("services.UserService")
     if not userService.hasPermission(userId, "process_data"):
         return False
     
-    # 执行业务逻辑
-    print(f"用户 {userId} 触发了数据处理事件")
+    # Execute business logic
+    print(f"User {userId} triggered data processing event")
     return True
-``` 
+```

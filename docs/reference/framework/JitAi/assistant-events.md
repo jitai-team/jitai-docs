@@ -3,17 +3,17 @@ sidebar_position: 7
 slug: assistant-events
 ---
 
-# 助理事件
-助理事件是专用于AI助理交互的事件处理，它负责监听AI助理的执行过程、状态变化和用户交互，提供用户意图识别、助理切换、会话管理等核心交互事件的处理能力。
+# Assistant Events
+Assistant Events are specialized event handling for AI Assistant interactions. They are responsible for monitoring AI Assistant execution processes, state changes, and user interactions, providing processing capabilities for core interaction events such as user intent recognition, assistant switching, and session management.
 
-助理事件元素分层结构为Meta（events.Meta） → Type（events.AIAssistantType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建助理事件实例元素。
+The Assistant Events element hierarchical structure is Meta (events.Meta) → Type (events.AIAssistantType) → Instance. Developers can quickly create Assistant Events instance elements through JitAi's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的events.AIAssistantType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements, or override the official events.AIAssistantType element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+## Quick Start 
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 events/
 └── testAssistantEvents/
     ├── __init__.py
@@ -21,11 +21,11 @@ events/
     └── inner.py
 ```
 
-#### e.json文件
-```json title="e.json配置文件"
+#### e.json File
+```json title="e.json Configuration File"
 {
   "asyncType": false,
-  "title": "测试助理事件",
+  "title": "Test Assistant Events",
   "sender": "aiassistants.toolTest",
   "operate": "afterRun",
   "func": "services.standardServicesTested.sayHello",
@@ -34,115 +34,115 @@ events/
 }
 ```
 
-#### 业务逻辑代码
-```python title="inner.py文件"
+#### Business Logic Code
+```python title="inner.py File"
 # -*-coding:utf-8-*-
 from datatypes.Meta import datatypes
 
 def customFunc(eventOutData):
     """
-    自定义事件处理函数
-    :param eventOutData: 事件输出数据
+    Custom event handler function
+    :param eventOutData: Event output data
     """
-    # 处理事件数据的业务逻辑
+    # Business logic for processing event data
     pass
 ```
 
-#### 调用示例
-```python title="获取和使用助理事件"
-# 获取助理事件实例
+#### Usage Example
+```python title="Getting and Using Assistant Events"
+# Get assistant event instance
 event = app.getElement("events.testAssistantEvents")
 
-# 事件会自动在AI助理执行afterRun时触发
-# 调用指定的目标函数：services.standardServicesTested.sayHello
+# Event will automatically trigger when AI Assistant executes afterRun
+# Calls the specified target function: services.standardServicesTested.sayHello
 ```
 
-## 元素配置
-### e.json配置
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Parameter | Type | Native Type | Required | Description |
 |-----|---|----|---|---|
-| type | str | str | 是 | 固定值：events.AIAssistantType |
-| title | str | str | 是 | 事件显示名称 |
-| sender | str | str | 是 | 事件发送方，通常为AI助理的fullName |
-| operate | str | str | 是 | 事件触发时机：基础时机(beforeRun/afterRun)、节点时机(nodeId.beforeNodeRun等)、人工操作时机(nodeId.approved等) |
-| func | str | str | 是 | 事件触发时调用的目标函数 |
-| asyncType | bool | bool | 否 | 是否异步执行，默认false |
-| backendBundleEntry | str | str | 是 | 固定值："." |
+| type | str | str | Yes | Fixed value: events.AIAssistantType |
+| title | str | str | Yes | Event display name |
+| sender | str | str | Yes | Event sender, usually the fullName of AI Assistant |
+| operate | str | str | Yes | Event trigger timing: basic timing (beforeRun/afterRun), node timing (nodeId.beforeNodeRun etc.), manual operation timing (nodeId.approved etc.) |
+| func | str | str | Yes | Target function called when event is triggered |
+| asyncType | bool | bool | No | Whether to execute asynchronously, default false |
+| backendBundleEntry | str | str | Yes | Fixed value: "." |
 
-### 业务逻辑代码配置
-inner.py文件用于定义自定义的事件处理逻辑：
+### Business Logic Code Configuration
+The inner.py file is used to define custom event processing logic:
 
-```python title="自定义处理函数示例"
+```python title="Custom Handler Function Example"
 def customFunc(eventOutData):
     """
-    自定义事件处理函数
-    :param eventOutData: 事件输出的数据
+    Custom event handler function
+    :param eventOutData: Event output data
     """
-    # 处理事件数据的业务逻辑
-    print(f"助理事件触发: {eventOutData}")
+    # Business logic for processing event data
+    print(f"Assistant event triggered: {eventOutData}")
     return eventOutData
 ```
 
-## 方法 
+## Methods 
 ### getSender
-获取完整的事件发送方标识，格式为"sender.operate"。
+Get the complete event sender identifier in the format "sender.operate".
 
-#### 参数详解
-无参数
+#### Parameter Details
+No parameters
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |---|---|
-| str | 事件发送方的完整标识 |
+| str | Complete identifier of the event sender |
 
-#### 使用示例
-```python title="获取事件发送方"
+#### Usage Example
+```python title="Get Event Sender"
 event = app.getElement("events.testAssistantEvents")
 sender = event.getSender()
-print(sender)  # 输出：aiassistants.toolTest.afterRun
+print(sender)  # Output: aiassistants.toolTest.afterRun
 ```
 
 ### isValid
-验证事件是否有效，用于判断当前条件下事件是否应该触发。
+Validate whether the event is valid, used to determine if the event should be triggered under current conditions.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter | Type | Native Type | Required | Description |
 |-----|---|----|---|---|
-| rowObj | object | object | 否 | 数据行对象 |
-| args | tuple | tuple | 否 | 额外参数 |
-| kwargs | dict | dict | 否 | 关键字参数 |
+| rowObj | object | object | No | Data row object |
+| args | tuple | tuple | No | Additional parameters |
+| kwargs | dict | dict | No | Keyword parameters |
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |---|---|
-| bool | 事件是否有效 |
+| bool | Whether the event is valid |
 
-#### 使用示例
-```python title="验证事件有效性"
+#### Usage Example
+```python title="Validate Event Validity"
 event = app.getElement("events.testAssistantEvents")
 is_valid = event.isValid()
-print(is_valid)  # 输出：True
+print(is_valid)  # Output: True
 ```
 
 ### handleNode
-处理事件节点，解析事件参数并准备调用目标函数。
+Process event nodes, parse event parameters and prepare to call target functions.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter | Type | Native Type | Required | Description |
 |-----|---|----|---|---|
-| node | object | object | 是 | 事件节点对象 |
-| args | tuple | tuple | 否 | 传递给目标函数的参数 |
-| kwargs | dict | dict | 否 | 传递给目标函数的关键字参数 |
+| node | object | object | Yes | Event node object |
+| args | tuple | tuple | No | Parameters passed to target function |
+| kwargs | dict | dict | No | Keyword parameters passed to target function |
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |---|---|
-| tuple | 返回处理后的(node, args, kwargs) |
+| tuple | Returns processed (node, args, kwargs) |
 
-#### 使用示例
-```python title="处理事件节点"
+#### Usage Example
+```python title="Process Event Node"
 event = app.getElement("events.testAssistantEvents")
-# 通常由事件系统自动调用，开发者一般不需要直接使用
+# Usually called automatically by the event system, developers generally don't need to use it directly
 ```
 
 ## 属性

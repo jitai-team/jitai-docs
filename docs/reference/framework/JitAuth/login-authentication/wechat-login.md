@@ -1,226 +1,226 @@
 ---
 slug: wechat-login
 ---
-# 微信登录
-微信登录是基于微信开放平台OAuth2.0协议的第三方认证方式，通过扫码登录和用户信息获取实现与微信用户体系的无缝集成。它负责微信用户身份验证、账户绑定管理和登录状态维护，支持前后端分离架构和完整的用户认证流程。
+# WeChat Login
+WeChat login is a third-party authentication method based on WeChat Open Platform OAuth2.0 protocol, implementing seamless integration with WeChat user system through QR code login and user information retrieval. It handles WeChat user identity authentication, account binding management, and login status maintenance, supporting frontend-backend separation architecture and complete user authentication flow.
 
-微信登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.WeChatType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建微信登录实例元素。
+The hierarchical structure of WeChat login elements is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.WeChatType) → Instance. Developers can quickly create WeChat login instance elements through JitAi's visual development tools.
 
-微信登录基于标准OAuth2.0认证流程，用户通过微信客户端扫码授权后，系统获取访问令牌和用户标识，完成身份验证和账户关联。支持用户绑定、解绑操作和多应用场景的身份管理。
+WeChat login is based on standard OAuth2.0 authentication flow. After users authorize through WeChat client QR code scanning, the system obtains access tokens and user identifiers, completing identity authentication and account association. It supports user binding, unbinding operations, and identity management in multi-application scenarios.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的auths.loginTypes.WeChatType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `auths.loginTypes.WeChatType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 auths/
 └── loginTypes/
-    └── MyWeChatLogin/        # 实例元素名称，可自定义
-        ├── e.json            # 元素定义文件
-        └── MyWeChatLogin.json # 业务配置文件，文件名与实例元素名称一致
+    └── MyWeChatLogin/        # Instance element name, customizable
+        ├── e.json            # Element definition file
+        └── MyWeChatLogin.json # Business configuration file, filename matches instance element name
 ```
 
-#### e.json文件
-```json title="e.json配置示例"
+#### e.json File
+```json title="e.json Configuration Example"
 {
   "type": "auths.loginTypes.WeChatType",
-  "title": "微信登录",
-  "appSecret": "您的微信应用密钥",
+  "title": "WeChat Login",
+  "appSecret": "Your WeChat application secret",
   "backendBundleEntry": ".",
   "frontBundleEntry": "./MyWeChatLogin.json"
 }
 ```
 
-#### 业务配置文件
-```json title="MyWeChatLogin.json配置示例"
+#### Business Configuration File
+```json title="MyWeChatLogin.json Configuration Example"
 {
   "authConfig": {
-    "appId": "您的微信应用ID",
-    "appSecret": "您的微信应用密钥"
+    "appId": "Your WeChat application ID",
+    "appSecret": "Your WeChat application secret"
   }
 }
 ```
 
-#### 调用示例
-```python title="获取微信登录实例并使用"
-# 获取微信登录实例
+#### Usage Example
+```python title="Get WeChat Login Instance and Use"
+# Get WeChat login instance
 wechat_auth = app.getElement("auths.loginTypes.MyWeChatLogin")
 
-# 获取登录配置信息
+# Get login configuration information
 login_config = wechat_auth.getLoginConfig()
 
-# 处理微信扫码回调，获取登录码
-login_result = wechat_auth.getLoginCode("微信返回的code")
+# Handle WeChat QR code callback, get login code
+login_result = wechat_auth.getLoginCode("WeChat returned code")
 
-# 绑定用户微信账号
-wechat_auth.bind("用户ID", "微信返回的code")
+# Bind user WeChat account
+wechat_auth.bind("User ID", "WeChat returned code")
 ```
 
-## 元素配置
-### e.json配置
-| 配置项 | 类型 | 对应原生类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Configuration Item | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| type | Stext | str | 是 | 固定值：auths.loginTypes.WeChatType |
-| title | Stext | str | 是 | 登录方式显示名称 |
-| appSecret | Stext | str | 是 | 微信应用密钥，用于服务端验证 |
-| backendBundleEntry | Stext | str | 是 | 后端入口，固定值："." |
-| frontBundleEntry | Stext | str | 是 | 前端配置文件路径，通常为"./配置文件名.json" |
+| type | Stext | str | Yes | Fixed value: auths.loginTypes.WeChatType |
+| title | Stext | str | Yes | Login method display name |
+| appSecret | Stext | str | Yes | WeChat application secret, used for server-side verification |
+| backendBundleEntry | Stext | str | Yes | Backend entry, fixed value: "." |
+| frontBundleEntry | Stext | str | Yes | Frontend configuration file path, usually "./config_filename.json" |
 
-### 业务配置文件配置
-| 配置项 | 类型 | 对应原生类型 | 必填 | 说明 |
+### Business Configuration File
+| Configuration Item | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| authConfig.appId | Stext | str | 是 | 微信开放平台应用ID |
-| authConfig.appSecret | Stext | str | 是 | 微信开放平台应用密钥 |
+| authConfig.appId | Stext | str | Yes | WeChat Open Platform application ID |
+| authConfig.appSecret | Stext | str | Yes | WeChat Open Platform application secret |
 
-## 方法 
+## Methods
 ### getLoginConfig
-获取登录配置信息，用于前端展示登录选项。
+Get login configuration information for frontend login option display.
 
-#### 参数详解
-无参数
+#### Parameter Details
+No parameters
 
-#### 返回值
-| 字段 | 类型 | 对应原生类型 | 说明 |
+#### Return Value
+| Field | Type | Corresponding Native Type | Description |
 |------|------|-------------|------|
-| isActive | Boolean | bool | 登录方式是否启用 |
-| authType | Stext | str | 认证类型标识 |
-| authConfig.appId | Stext | str | 微信应用ID |
+| isActive | Boolean | bool | Whether login method is enabled |
+| authType | Stext | str | Authentication type identifier |
+| authConfig.appId | Stext | str | WeChat application ID |
 
-#### 使用示例
-```python title="获取登录配置"
+#### Usage Example
+```python title="Get Login Configuration"
 wechat_auth = app.getElement("auths.loginTypes.MyWeChatLogin")
 config = wechat_auth.getLoginConfig()
 print(config)
-# 输出: {"isActive": True, "authType": "WeChatType", "authConfig": {"appId": "wx123456"}}
+# Output: {"isActive": True, "authType": "WeChatType", "authConfig": {"appId": "wx123456"}}
 ```
 
 ### getLoginCode
-处理微信OAuth回调，获取系统登录码。
+Handle WeChat OAuth callback, get system login code.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| code | Stext | str | 是 | 微信OAuth回调返回的授权码 |
+| code | Stext | str | Yes | Authorization code returned by WeChat OAuth callback |
 
-#### 返回值
-| 字段 | 类型 | 对应原生类型 | 说明 |
+#### Return Value
+| Field | Type | Corresponding Native Type | Description |
 |------|------|-------------|------|
-| loginCode | Stext | str | 系统登录码 |
-| corpList | JitList | list | 用户关联的组织列表 |
+| loginCode | Stext | str | System login code |
+| corpList | JitList | list | List of organizations associated with user |
 
-#### 使用示例
-```python title="处理微信登录回调"
+#### Usage Example
+```python title="Handle WeChat Login Callback"
 wechat_auth = app.getElement("auths.loginTypes.MyWeChatLogin")
 try:
     result = wechat_auth.getLoginCode("001234567890abcdef")
-    print(f"登录码: {result['loginCode']}")
-    print(f"组织列表: {result['corpList']}")
+    print(f"Login Code: {result['loginCode']}")
+    print(f"Organization List: {result['corpList']}")
 except Exception as e:
-    print(f"登录失败: {e}")
+    print(f"Login failed: {e}")
 ```
 
 ### bind
-绑定用户微信账号。
+Bind user WeChat account.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| userId | Stext | str | 是 | 系统用户ID |
-| code | Stext | str | 是 | 微信OAuth授权码 |
+| userId | Stext | str | Yes | System user ID |
+| code | Stext | str | Yes | WeChat OAuth authorization code |
 
-#### 返回值
-| 字段 | 类型 | 对应原生类型 | 说明 |
+#### Return Value
+| Field | Type | Corresponding Native Type | Description |
 |------|------|-------------|------|
-| success | Boolean | bool | 固定返回True，表示操作成功 |
-| message | Stext | str | 固定返回"操作成功" |
+| success | Boolean | bool | Fixed return True, indicates operation success |
+| message | Stext | str | Fixed return "Operation successful" |
 
-#### 使用示例
-```python title="绑定微信账号"
+#### Usage Example
+```python title="Bind WeChat Account"
 wechat_auth = app.getElement("auths.loginTypes.MyWeChatLogin")
 try:
     result = wechat_auth.bind("user123", "001234567890abcdef")
-    print("微信账号绑定成功")
+    print("WeChat account bound successfully")
 except Exception as e:
-    print(f"绑定失败: {e}")
+    print(f"Binding failed: {e}")
 ```
 
 ### unbind
-解绑用户微信账号。
+Unbind user WeChat account.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| userId | Stext | str | 是 | 系统用户ID |
+| userId | Stext | str | Yes | System user ID |
 
-#### 返回值
-| 字段 | 类型 | 对应原生类型 | 说明 |
+#### Return Value
+| Field | Type | Corresponding Native Type | Description |
 |------|------|-------------|------|
-| success | Boolean | bool | 固定返回True，表示操作成功 |
-| message | Stext | str | 固定返回"操作成功" |
+| success | Boolean | bool | Fixed return True, indicates operation success |
+| message | Stext | str | Fixed return "Operation successful" |
 
-#### 使用示例
-```python title="解绑微信账号"
+#### Usage Example
+```python title="Unbind WeChat Account"
 wechat_auth = app.getElement("auths.loginTypes.MyWeChatLogin")
 result = wechat_auth.unbind("user123")
-print("微信账号解绑成功")
+print("WeChat account unbound successfully")
 ```
 
 ### getUserAuthInfo
-获取用户微信认证信息。
+Get user WeChat authentication information.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| authObj | RowData | dict | 是 | 微信认证数据对象 |
+| authObj | RowData | dict | Yes | WeChat authentication data object |
 
-#### 返回值
-| 字段 | 类型 | 对应原生类型 | 说明 |
+#### Return Value
+| Field | Type | Corresponding Native Type | Description |
 |------|------|-------------|------|
-| isActive | Boolean | bool | 认证是否有效 |
+| isActive | Boolean | bool | Whether authentication is valid |
 
-#### 使用示例
-```python title="获取用户认证信息"
+#### Usage Example
+```python title="Get User Authentication Information"
 wechat_auth = app.getElement("auths.loginTypes.MyWeChatLogin")
-# 从认证模型获取用户数据
+# Get user data from authentication model
 auth_model = app.getElement("auths.loginTypes.WeChatType.WeChatAuthModel")
 auth_obj = auth_model.get(filter="Q(userId='user123')", orderList=[])
 
 auth_info = wechat_auth.getUserAuthInfo(auth_obj)
-print(f"认证状态: {auth_info['isActive']}")
+print(f"Authentication Status: {auth_info['isActive']}")
 ```
 
-## 属性
+## Properties
 ### authType
-认证类型标识，固定值为"WeChatType"。
+Authentication type identifier, fixed value is "WeChatType".
 
 ### authConfig
-微信应用配置信息，包含appId和appSecret。
+WeChat application configuration information, containing appId and appSecret.
 
 ### isActive
-登录方式启用状态，布尔值类型。
+Login method enabled status, boolean type.
 
-## 高级特性
-### 自定义认证模型
-微信登录使用内置的WeChatAuthModel存储用户认证信息，包含以下字段：
+## Advanced Features
+### Custom Authentication Model
+WeChat login uses built-in WeChatAuthModel to store user authentication information, containing the following fields:
 
-```python title="WeChatAuthModel字段结构"
-# 微信认证模型字段
+```python title="WeChatAuthModel Field Structure"
+# WeChat authentication model fields
 auth_model = app.getElement("auths.loginTypes.WeChatType.WeChatAuthModel")
 
-# 主要字段说明
-# id: 主键ID (AutoInt)
-# appId: 微信应用ID (Stext)
-# userId: 系统用户ID (Stext)
-# openId: 微信用户openId (Stext)
-# unionId: 微信用户unionId (Stext)
+# Main field descriptions
+# id: Primary key ID (AutoInt)
+# appId: WeChat application ID (Stext)
+# userId: System user ID (Stext)
+# openId: WeChat user openId (Stext)
+# unionId: WeChat user unionId (Stext)
 ```
 
-### 前端登录组件集成
-微信登录Type元素提供了完整的前端登录组件，支持扫码登录界面和状态管理：
+### Frontend Login Component Integration
+WeChat login Type element provides complete frontend login components, supporting QR code login interface and status management:
 
-```python title="前端组件配置示例"
-# 获取前端登录组件配置
+```python title="Frontend Component Configuration Example"
+# Get frontend login component configuration
 wechat_auth = app.getElement("auths.loginTypes.MyWeChatLogin")
 frontend_config = {
     "componentType": "WeChatLogin",
@@ -229,11 +229,11 @@ frontend_config = {
     "scope": "snsapi_login"
 }
 
-# 在页面中使用登录组件时的配置
+# Configuration when using login component in page
 login_component_props = {
     "authType": "WeChatType", 
     "config": frontend_config,
     "onSuccess": "handleLoginSuccess",
     "onError": "handleLoginError"
 }
-``` 
+```

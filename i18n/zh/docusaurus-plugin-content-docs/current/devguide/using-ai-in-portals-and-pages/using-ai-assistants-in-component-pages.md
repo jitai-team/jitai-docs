@@ -6,7 +6,7 @@ slug: using-ai-assistants-in-component-pages
 # Using AI Assistants in Component Pages
 After using [AI Assistant](../ai-assistant) in component pages, an AI dialog box will be displayed on the right side of the page. The page can also subscribe to [AI Assistant events](../ai-assistant/ai-assistant-event) to enable interaction between the page and AI, as well as collaboration between users and AI.
 
-## Enabling AI Assistant
+## Enabling AI Assistant {#enable-ai-assistant}
 Follow these steps:
 
 ![Component Page - Bind AI Assistant](./img/component-page-bind-assistant.png)

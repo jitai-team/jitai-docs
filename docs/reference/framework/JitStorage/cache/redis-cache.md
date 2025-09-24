@@ -1,39 +1,39 @@
 ---
 slug: redis-cache
 ---
-# Redis缓存
-Redis缓存是基于Redis内存数据库的高性能缓存服务，提供分布式缓存能力和丰富的数据操作功能。它封装了Redis客户端连接管理和标准缓存操作接口，支持多种数据结构操作、过期时间控制和连接池管理，适用于高并发和低延迟要求的应用场景。
+# Redis Cache
+Redis cache is a high-performance caching service based on Redis in-memory database, providing distributed caching capabilities and rich data operation functions. It encapsulates Redis client connection management and standard cache operation interfaces, supporting multiple data structure operations, expiration time control, and connection pool management, suitable for high-concurrency and low-latency application scenarios.
 
-Redis缓存元素分层结构为Meta（caches.Meta） → Type（caches.RedisType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建Redis缓存实例。
+The hierarchical structure of Redis cache elements is Meta (caches.Meta) → Type (caches.RedisType) → Instance. Developers can quickly create Redis cache instances through JitAi's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的caches.RedisType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `caches.RedisType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-```text title="推荐目录结构"
+## Quick Start
+### Creating Instance Elements
+```text title="Recommended Directory Structure"
 caches/
-└── MyRedis/              # 缓存实例名称（路径可自定义）
-    ├── e.json            # 元素声明文件
-    ├── MyRedis.json      # Redis连接配置文件
-    └── __init__.py       # 可选的初始化文件
+└── MyRedis/              # Cache instance name (path can be customized)
+    ├── e.json            # Element declaration file
+    ├── MyRedis.json      # Redis connection configuration file
+    └── __init__.py       # Optional initialization file
 ```
 
-#### e.json文件
-```json title="元素声明配置"
+#### e.json File
+```json title="Element Declaration Configuration"
 {
   "backendBundleEntry": ".",
-  "title": "我的Redis缓存",
+  "title": "My Redis Cache",
   "type": "caches.RedisType"
 }
 ```
 
-## 方法接口 {#methods}
+## Method Interfaces {#methods}
 
-### 标准缓存操作
-提供标准的缓存读写和管理方法。
+### Standard Cache Operations
+Provides standard cache read/write and management methods.
 
-#### 业务配置文件
-```json title="Redis连接配置 (MyRedis.json)"
+#### Business Configuration File
+```json title="Redis Connection Configuration (MyRedis.json)"
 {
   "host": "127.0.0.1",
   "port": 6379,
@@ -41,303 +41,303 @@ caches/
 }
 ```
 
-#### 调用示例
-```python title="使用Redis缓存"
-# 获取缓存实例
+#### Usage Example
+```python title="Using Redis Cache"
+# Get cache instance
 cache = app.getElement("caches.MyRedis")
 
-# 基础字符串操作
-cache.set("user:1001", "张三", 3600)  # 设置用户信息，过期时间1小时
-user_name = cache.get("user:1001")   # 获取用户信息
+# Basic string operations
+cache.set("user:1001", "张三", 3600)  # Set user info, expire in 1 hour
+user_name = cache.get("user:1001")   # Get user info
 
-# 数值操作
-cache.setNumeric("visit_count", 100)      # 设置访问计数
-count = cache.getNumeric("visit_count")   # 获取访问计数
-new_count = cache.incr("visit_count", 5)  # 增加5次访问
+# Numeric operations
+cache.setNumeric("visit_count", 100)      # Set visit count
+count = cache.getNumeric("visit_count")   # Get visit count
+new_count = cache.incr("visit_count", 5)  # Increase by 5 visits
 
-# 过期时间控制
-cache.expire("session:abc123", 1800)  # 延长会话过期时间到30分钟
+# Expiration time control
+cache.expire("session:abc123", 1800)  # Extend session expiration to 30 minutes
 
-# 键管理
-if cache.exists("user:1001"):         # 检查键是否存在
-    cache.delete("user:1001")         # 删除键
+# Key management
+if cache.exists("user:1001"):         # Check if key exists
+    cache.delete("user:1001")         # Delete key
 ```
 
-## 元素配置
-### e.json配置
-| 配置项 | 类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| backendBundleEntry | str | 是 | 后端包入口，固定值"." |
-| title | str | 是 | 缓存实例的显示名称 |
-| type | str | 是 | 固定值"caches.RedisType" |
-| icon | str | 否 | 图标标识，可自定义 |
+| backendBundleEntry | str | Yes | Backend bundle entry, fixed value "." |
+| title | str | Yes | Display name of cache instance |
+| type | str | Yes | Fixed value "caches.RedisType" |
+| icon | str | No | Icon identifier, customizable |
 
-### 业务配置文件配置
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+### Business Configuration File
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| host | str | str | 是 | Redis服务器地址 |
-| port | int | int | 是 | Redis服务器端口 |
-| password | str | str | 是 | Redis连接密码 |
-| db | int | int | 否 | 数据库编号，默认1 |
-| username | str | str | 否 | 用户名，默认"default" |
-| charset | str | str | 否 | 字符编码，默认"utf-8" |
-| decode_responses | bool | bool | 否 | 是否解码响应，默认true |
-| socket_timeout | float | float | 否 | 套接字超时时间，默认0.5秒 |
-| socket_connect_timeout | float | float | 否 | 连接超时时间，默认0.5秒 |
+| host | str | str | Yes | Redis server address |
+| port | int | int | Yes | Redis server port |
+| password | str | str | Yes | Redis connection password |
+| db | int | int | No | Database number, default 1 |
+| username | str | str | No | Username, default "default" |
+| charset | str | str | No | Character encoding, default "utf-8" |
+| decode_responses | bool | bool | No | Whether to decode responses, default true |
+| socket_timeout | float | float | No | Socket timeout, default 0.5 seconds |
+| socket_connect_timeout | float | float | No | Connection timeout, default 0.5 seconds |
 
-## 方法 
+## Methods
 ### get
-获取缓存中的字符串值。
+Get string value from cache.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | str | str | 是 | 缓存键名 |
+| name | str | str | Yes | Cache key name |
 
-#### 返回值
-- 类型：str
-- 说明：键对应的字符串值，不存在时返回None
+#### Return Value
+- Type: str
+- Description: String value corresponding to key, returns None if not exists
 
-#### 使用示例
-```python title="获取缓存值"
+#### Usage Example
+```python title="Get Cache Value"
 cache = app.getElement("caches.MyRedis")
 value = cache.get("user_token")
 if value:
-    print(f"用户令牌: {value}")
+    print(f"User token: {value}")
 ```
 
 ### set
-向缓存中写入字符串数据。
+Write string data to cache.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | str | str | 是 | 缓存键名 |
-| string | str | str | 是 | 要存储的字符串值 |
-| ts | int | int | 否 | 过期时间（秒），None表示永不过期 |
+| name | str | str | Yes | Cache key name |
+| string | str | str | Yes | String value to store |
+| ts | int | int | No | Expiration time (seconds), None means never expires |
 
-#### 返回值
-- 类型：bool
-- 说明：设置成功返回True，失败返回False
+#### Return Value
+- Type: bool
+- Description: Returns True on success, False on failure
 
-#### 使用示例
-```python title="设置缓存值"
+#### Usage Example
+```python title="Set Cache Value"
 cache = app.getElement("caches.MyRedis")
 
-# 设置永久缓存
+# Set permanent cache
 success = cache.set("config:theme", "dark")
 
-# 设置带过期时间的缓存
-success = cache.set("verification_code", "123456", 300)  # 5分钟过期
+# Set cache with expiration time
+success = cache.set("verification_code", "123456", 300)  # Expires in 5 minutes
 ```
 
 ### getNumeric
-获取数值类型缓存。
+Get numeric type cache.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | str | str | 是 | 缓存键名 |
+| name | str | str | Yes | Cache key name |
 
-#### 返回值
-- 类型：int
-- 说明：键对应的数值，不存在时返回0
+#### Return Value
+- Type: int
+- Description: Numeric value corresponding to key, returns 0 if not exists
 
-#### 使用示例
-```python title="获取数值缓存"
+#### Usage Example
+```python title="Get Numeric Cache"
 cache = app.getElement("caches.MyRedis")
 count = cache.getNumeric("page_views")
-print(f"页面访问量: {count}")
+print(f"Page views: {count}")
 ```
 
 ### setNumeric
-设置数值类型缓存。
+Set numeric type cache.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | str | str | 是 | 缓存键名 |
-| n | int | int | 否 | 要设置的数值，默认0 |
-| ts | int | int | 否 | 过期时间（秒），None表示永不过期 |
+| name | str | str | Yes | Cache key name |
+| n | int | int | No | Numeric value to set, default 0 |
+| ts | int | int | No | Expiration time (seconds), None means never expires |
 
-#### 返回值
-- 类型：bool
-- 说明：设置成功返回True，失败返回False
+#### Return Value
+- Type: bool
+- Description: Returns True on success, False on failure
 
-#### 使用示例
-```python title="设置数值缓存"
+#### Usage Example
+```python title="Set Numeric Cache"
 cache = app.getElement("caches.MyRedis")
 
-# 初始化计数器
+# Initialize counter
 cache.setNumeric("download_count", 1000)
 
-# 设置带过期时间的限流计数
-cache.setNumeric("api_calls:user123", 0, 3600)  # 1小时过期
+# Set rate limiting counter with expiration time
+cache.setNumeric("api_calls:user123", 0, 3600)  # Expires in 1 hour
 ```
 
 ### incr
-对数值进行增量操作。
+Perform increment operation on numeric value.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | str | str | 是 | 缓存键名 |
-| amount | int | int | 否 | 增量值，默认1 |
+| name | str | str | Yes | Cache key name |
+| amount | int | int | No | Increment value, default 1 |
 
-#### 返回值
-- 类型：int
-- 说明：增量后的新值
+#### Return Value
+- Type: int
+- Description: New value after increment
 
-#### 使用示例
-```python title="数值增量操作"
+#### Usage Example
+```python title="Numeric Increment Operation"
 cache = app.getElement("caches.MyRedis")
 
-# 简单计数
+# Simple counting
 new_count = cache.incr("visit_count")
 
-# 批量增加
+# Batch increment
 batch_count = cache.incr("download_count", 10)
-print(f"当前下载量: {batch_count}")
+print(f"Current downloads: {batch_count}")
 ```
 
 ### expire
-更新缓存过期时间。
+Update cache expiration time.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | str | str | 是 | 缓存键名 |
-| ts | int | int | 是 | 新的过期时间（秒） |
+| name | str | str | Yes | Cache key name |
+| ts | int | int | Yes | New expiration time (seconds) |
 
-#### 返回值
-- 类型：bool
-- 说明：更新成功返回True，失败返回False
+#### Return Value
+- Type: bool
+- Description: Returns True on success, False on failure
 
-#### 使用示例
-```python title="更新过期时间"
+#### Usage Example
+```python title="Update Expiration Time"
 cache = app.getElement("caches.MyRedis")
 
-# 延长会话过期时间
+# Extend session expiration time
 if cache.exists("session:user123"):
-    cache.expire("session:user123", 7200)  # 延长到2小时
+    cache.expire("session:user123", 7200)  # Extend to 2 hours
 ```
 
 ### exists
-检查缓存键是否存在。
+Check if cache key exists.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | str | str | 是 | 缓存键名 |
+| name | str | str | Yes | Cache key name |
 
-#### 返回值
-- 类型：bool
-- 说明：键存在返回True，不存在返回False
+#### Return Value
+- Type: bool
+- Description: Returns True if key exists, False if not
 
-#### 使用示例
-```python title="检查键存在性"
+#### Usage Example
+```python title="Check Key Existence"
 cache = app.getElement("caches.MyRedis")
 
 if cache.exists("user_cache:1001"):
-    print("用户缓存存在")
+    print("User cache exists")
 else:
-    print("需要重新加载用户数据")
+    print("Need to reload user data")
 ```
 
 ### delete
-删除缓存键。
+Delete cache key.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | str | str | 是 | 要删除的缓存键名 |
+| name | str | str | Yes | Cache key name to delete |
 
-#### 返回值
-- 类型：bool
-- 说明：删除成功返回True，失败返回False
+#### Return Value
+- Type: bool
+- Description: Returns True on success, False on failure
 
-#### 使用示例
-```python title="删除缓存"
+#### Usage Example
+```python title="Delete Cache"
 cache = app.getElement("caches.MyRedis")
 
-# 清除用户会话
+# Clear user session
 success = cache.delete("session:user123")
 if success:
-    print("会话已清除")
+    print("Session cleared")
 ```
 
 ### keys
-获取匹配模式的键列表。
+Get list of keys matching pattern.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| pattern | str | str | 否 | 匹配模式，默认"*"表示所有键 |
+| pattern | str | str | No | Match pattern, default "*" means all keys |
 
-#### 返回值
-- 类型：iterator
-- 说明：返回匹配的键名迭代器
+#### Return Value
+- Type: iterator
+- Description: Returns iterator of matching key names
 
-#### 使用示例
-```python title="查找匹配的键"
+#### Usage Example
+```python title="Find Matching Keys"
 cache = app.getElement("caches.MyRedis")
 
-# 查找所有用户会话
+# Find all user sessions
 for key in cache.keys("session:*"):
-    print(f"会话键: {key}")
+    print(f"Session key: {key}")
 
-# 查找特定前缀的配置
+# Find configs with specific prefix
 config_keys = list(cache.keys("config:*"))
 ```
 
 ### ping
-测试Redis连接状态。
+Test Redis connection status.
 
-#### 使用示例
-```python title="测试连接"
+#### Usage Example
+```python title="Test Connection"
 cache = app.getElement("caches.MyRedis")
 
 if cache.ping():
-    print("Redis连接正常")
+    print("Redis connection normal")
 else:
-    print("Redis连接异常")
+    print("Redis connection abnormal")
 ```
 
 ### disconnect
-断开Redis连接。
+Disconnect Redis connection.
 
-#### 使用示例
-```python title="断开连接"
+#### Usage Example
+```python title="Disconnect"
 cache = app.getElement("caches.MyRedis")
 cache.disconnect()
 ```
 
-## 属性
-Redis缓存元素主要通过方法提供功能，暂无直接访问的公开属性。
+## Properties
+Redis cache elements mainly provide functionality through methods, with no directly accessible public properties currently.
 
-## 高级特性
-### 连接池管理
-Redis缓存自动管理连接池，相同配置的实例会复用连接，提高性能并减少资源消耗。
+## Advanced Features
+### Connection Pool Management
+Redis cache automatically manages connection pools. Instances with the same configuration will reuse connections, improving performance and reducing resource consumption.
 
-```python title="连接池复用示例"
-# 多个实例使用相同配置时会自动复用连接
+```python title="Connection Pool Reuse Example"
+# Multiple instances with same configuration will automatically reuse connections
 cache1 = app.getElement("caches.Redis1")
-cache2 = app.getElement("caches.Redis2")  # 如果配置相同，会复用连接池
+cache2 = app.getElement("caches.Redis2")  # If configuration is same, will reuse connection pool
 ```
 
-### 键名前缀自动管理
-所有缓存操作都会自动添加应用ID前缀，避免不同应用间的键名冲突。
+### Automatic Key Name Prefix Management
+All cache operations automatically add application ID prefix, avoiding key name conflicts between different applications.
 
-```python title="键名前缀机制"
-# 实际存储的键名会自动加上应用ID前缀
+```python title="Key Name Prefix Mechanism"
+# Actual stored key names automatically add application ID prefix
 cache.set("user_data", "value")
-# 实际存储为: "myapp:user_data"
+# Actually stored as: "myapp:user_data"
 ```
 
-### 环境变量配置
-配置文件支持模板字符串，可以使用环境变量进行动态配置。
+### Environment Variable Configuration
+Configuration files support template strings, allowing dynamic configuration using environment variables.
 
-```json title="使用环境变量的配置示例"
+```json title="Configuration Example Using Environment Variables"
 {
   "host": "{{REDIS_HOST}}",
   "port": "{{REDIS_PORT}}",
@@ -346,14 +346,14 @@ cache.set("user_data", "value")
 }
 ```
 
-### 异常处理
-Redis缓存提供完善的异常处理机制，连接失败和认证错误会自动转换为友好的错误信息。
+### Exception Handling
+Redis cache provides comprehensive exception handling mechanisms. Connection failures and authentication errors are automatically converted to friendly error messages.
 
-```python title="异常处理示例"
+```python title="Exception Handling Example"
 try:
     cache = app.getElement("caches.MyRedis")
     cache.set("test_key", "test_value")
 except Exception as e:
-    # 系统会自动处理连接异常，提供清晰的错误提示
-    print(f"缓存操作失败: {e}")
-``` 
+    # System automatically handles connection exceptions, providing clear error messages
+    print(f"Cache operation failed: {e}")
+```

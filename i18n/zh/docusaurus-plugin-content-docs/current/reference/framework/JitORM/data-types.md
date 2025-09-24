@@ -247,6 +247,7 @@ JitAi的数据类型Type元素是对编程语言原生数据类型（如：字�
 | availableDeptId | String |  | 可用部门ID |
 | mulLevelSelectionConfig | Dict | {} | 级联选择配置`{"dataSourceModel": "<数据来源模型的fullName>", "matchFieldName": "<取值字段>", "sortFieldName": "<排序字段>", "sortBy": "<排序方式 0：降序 1：升序>", "filterValue": "<过滤条件>"}` |
 | availableParentDeptId | String |  | 可用父部门ID |
+| level | Integer |  | 部门层级限制 |
 
 ---
 

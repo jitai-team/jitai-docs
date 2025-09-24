@@ -1,35 +1,36 @@
 ---
 slug: aws-s3-storage
+title: AWS S3 Storage
 ---
-# AWS S3存储
-AWS S3存储是面向全球化云存储的Type元素，基于Amazon Simple Storage Service实现海量数据存储、全球CDN加速和企业级安全管控。它提供标准化的文件上传、下载、删除操作，集成AWS生态的访问控制和权限管理，支持多种存储类型和数据备份策略，确保数据安全性和高可用性。
+# AWS S3 Storage {#aws-s3-storage}
+AWS S3 Storage is a Type element for global cloud storage, implementing massive data storage, global CDN acceleration, and enterprise-level security management based on Amazon Simple Storage Service. It provides standardized file upload, download, and delete operations, integrates AWS ecosystem access control and permission management, supports multiple storage types and data backup strategies, ensuring data security and high availability.
 
-AWS S3存储元素分层结构为Meta（storages.Meta） → Type（storages.AwsS3Type） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建AWS S3存储实例元素。
+The AWS S3 storage element hierarchy is Meta (storages.Meta) → Type (storages.AwsS3Type) → Instance. Developers can quickly create AWS S3 storage instance elements through JitAi's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的storages.AwsS3Type元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or override the storages.AwsS3Type element officially provided by JitAi in their own applications to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+## Quick Start 
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 storages/
-├── MyS3/                      # 自定义实例元素名称
-│   ├── e.json                 # 元素声明文件
-│   └── MyS3.json             # AWS S3配置文件
+├── MyS3/                      # Custom instance element name
+│   ├── e.json                 # Element declaration file
+│   └── MyS3.json             # AWS S3 configuration file
 ```
 
-#### e.json文件
-```json title="基础配置"
+#### e.json File
+```json title="Basic Configuration"
 {
-  "title": "我的AWS S3存储",
+  "title": "My AWS S3 Storage",
   "type": "storages.AwsS3Type",
   "backendBundleEntry": ".",
   "variables": []
 }
 ```
 
-#### 业务配置文件
-```json title="AWS S3连接配置"
+#### Business Configuration File
+```json title="AWS S3 Connection Configuration"
 {
   "accessKeyId": "your_access_key_id",
   "accessKeySecret": "your_secret_access_key", 
@@ -39,162 +40,162 @@ storages/
 }
 ```
 
-#### 调用示例
-```python title="基本使用"
-# 获取AWS S3存储实例
+#### Usage Example
+```python title="Basic Usage"
+# Get AWS S3 storage instance
 s3 = app.getElement("storages.MyS3")
 
-# 上传文件
+# Upload file
 with open("example.txt", "rb") as file:
     result = s3.uploadByFile("folder/example.txt", file.read(), "text/plain")
-    print(f"上传成功，URL: {result['url']}")
+    print(f"Upload successful, URL: {result['url']}")
 
-# 下载文件
+# Download file
 file_data = s3.download("folder/example.txt")
 
-# 删除文件
+# Delete file
 s3.delete("folder/example.txt")
 ```
 
-## 元素配置
-### e.json配置
-| 配置项 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
-| title | string | 是 | 存储元素显示名称 |
-| type | string | 是 | 固定值：storages.AwsS3Type |
-| backendBundleEntry | string | 是 | 固定值："." |
-| variables | array | 否 | 自定义变量配置，一般为空数组 |
+## Element Configuration
+### e.json Configuration
+| Configuration Item | Type | Required | Description |
+|---------------------|------|----------|-------------|
+| title | string | Yes | Storage element display name |
+| type | string | Yes | Fixed value: storages.AwsS3Type |
+| backendBundleEntry | string | Yes | Fixed value: "." |
+| variables | array | No | Custom variable configuration, usually empty array |
 
-### 业务配置文件配置
-| 配置项 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
-| accessKeyId | string | 是 | AWS访问密钥ID |
-| accessKeySecret | string | 是 | AWS访问密钥Secret |
-| endPoint | string | 是 | S3服务访问域名，如：s3.amazonaws.com |
-| bucketName | string | 是 | S3存储桶名称 |
-| region | string | 是 | AWS区域代码，如：us-east-1, us-west-2等 |
+### Business Configuration File Configuration
+| Configuration Item | Type | Required | Description |
+|---------------------|------|----------|-------------|
+| accessKeyId | string | Yes | AWS access key ID |
+| accessKeySecret | string | Yes | AWS access key secret |
+| endPoint | string | Yes | S3 service access domain, e.g.: s3.amazonaws.com |
+| bucketName | string | Yes | S3 bucket name |
+| region | string | Yes | AWS region code, e.g.: us-east-1, us-west-2, etc. |
 
-## 方法 
+## Methods 
 ### uploadByFile
-上传文件到AWS S3存储。
+Upload file to AWS S3 storage.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| name | Stext | str | 是 | 存储文件的路径名称 |
-| data | - | bytes | 是 | 文件二进制数据 |
-| contentType | Stext | str | 否 | 文件MIME类型，默认为"application/octet-stream" |
+#### Parameter Details
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| name | Stext | str | Yes | Storage file path name |
+| data | - | bytes | Yes | File binary data |
+| contentType | Stext | str | No | File MIME type, defaults to "application/octet-stream" |
 
-#### 返回值
-返回包含上传结果的字典，包含url字段表示文件访问地址。
+#### Return Value
+Returns dictionary containing upload result, with url field indicating file access address.
 
-#### 使用示例
-```python title="文件上传"
-# 上传图片文件
+#### Usage Example
+```python title="File Upload"
+# Upload image file
 with open("avatar.jpg", "rb") as file:
     result = s3.uploadByFile("users/avatar.jpg", file.read(), "image/jpeg")
     avatar_url = result["url"]
 
-# 上传文档文件
+# Upload document file
 with open("document.pdf", "rb") as file:
     result = s3.uploadByFile("docs/document.pdf", file.read(), "application/pdf")
 ```
 
 ### getSignUrl
-获取文件的预签名访问URL，用于临时访问权限控制。
+Get pre-signed access URL for files, used for temporary access permission control.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| file | Stext | str | 是 | 文件路径名称 |
-| contentType | Stext | str | 是 | 文件MIME类型 |
-| expires | Numeric | int | 否 | 过期时间(秒)，默认300秒 |
+#### Parameter Details
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| file | Stext | str | Yes | File path name |
+| contentType | Stext | str | Yes | File MIME type |
+| expires | Numeric | int | No | Expiration time (seconds), defaults to 300 seconds |
 
-#### 返回值
-返回预签名URL字符串。
+#### Return Value
+Returns pre-signed URL string.
 
-#### 使用示例
-```python title="获取预签名URL"
-# 获取图片的临时访问URL
+#### Usage Example
+```python title="Get Pre-signed URL"
+# Get temporary access URL for image
 temp_url = s3.getSignUrl("users/avatar.jpg", "image/jpeg", 600)
 
-# 获取文档的临时下载URL
+# Get temporary download URL for document
 download_url = s3.getSignUrl("docs/document.pdf", "application/pdf")
 ```
 
 ### download
-下载文件数据。
+Download file data.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| name | Stext | str | 是 | 要下载的文件路径名称 |
+#### Parameter Details
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| name | Stext | str | Yes | File path name to download |
 
-#### 返回值
-返回文件的二进制数据。
+#### Return Value
+Returns file binary data.
 
-#### 使用示例
-```python title="文件下载"
-# 下载文件
+#### Usage Example
+```python title="File Download"
+# Download file
 file_data = s3.download("docs/document.pdf")
 
-# 保存到本地
+# Save to local
 with open("downloaded_document.pdf", "wb") as file:
     file.write(file_data)
 ```
 
 ### getObject
-获取文件对象信息。
+Get file object information.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| name | Stext | str | 是 | 文件路径名称 |
+#### Parameter Details
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| name | Stext | str | Yes | File path name |
 
-#### 返回值
-返回文件对象信息。
+#### Return Value
+Returns file object information.
 
-#### 使用示例
-```python title="获取文件信息"
-# 获取文件对象
+#### Usage Example
+```python title="Get File Information"
+# Get file object
 file_obj = s3.getObject("users/avatar.jpg")
 ```
 
 ### delete
-删除指定文件。
+Delete specified file.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| name | Stext | str | 是 | 要删除的文件路径名称 |
+#### Parameter Details
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| name | Stext | str | Yes | File path name to delete |
 
-#### 返回值
-返回删除操作结果。
+#### Return Value
+Returns delete operation result.
 
-#### 使用示例
-```python title="文件删除"
-# 删除用户头像
+#### Usage Example
+```python title="File Deletion"
+# Delete user avatar
 s3.delete("users/avatar.jpg")
 
-# 删除临时文件
+# Delete temporary file
 s3.delete("temp/upload_cache.tmp")
 ```
 
-## 高级特性
-### 异常处理机制
-AWS S3存储内置了完善的异常处理机制，所有方法都会自动捕获和转换异常。
+## Advanced Features
+### Exception Handling Mechanism
+AWS S3 storage has built-in comprehensive exception handling mechanism, all methods automatically catch and convert exceptions.
 
-```python title="异常处理示例"
+```python title="Exception Handling Example"
 try:
     s3.uploadByFile("test.txt", b"test data", "text/plain")
 except Exception as e:
-    # 异常会包含详细的错误信息，包括存储类型、元素名称等
-    print(f"上传失败: {e}")
+    # Exception will contain detailed error information, including storage type, element name, etc.
+    print(f"Upload failed: {e}")
 ```
 
-### 批量操作
-```python title="批量文件管理"
-# 批量上传文件
+### Batch Operations
+```python title="Batch File Management"
+# Batch upload files
 files = [
     ("file1.txt", b"content1", "text/plain"),
     ("file2.txt", b"content2", "text/plain")
@@ -203,43 +204,43 @@ files = [
 for name, data, content_type in files:
     try:
         result = s3.uploadByFile(f"batch/{name}", data, content_type)
-        print(f"上传成功: {name}")
+        print(f"Upload successful: {name}")
     except Exception as e:
-        print(f"上传失败 {name}: {e}")
+        print(f"Upload failed {name}: {e}")
 ```
 
-### 跨区域访问
-```python title="跨区域配置"
-# AWS S3支持多区域存储，可以根据业务需求选择最佳区域
-# 配置文件中可以指定不同区域：
-# "region": "us-west-2"  # 美国西部
-# "region": "eu-west-1"  # 欧洲西部
-# "region": "ap-northeast-1"  # 亚太东北部（东京）
+### Cross-Region Access
+```python title="Cross-Region Configuration"
+# AWS S3 supports multi-region storage, you can choose the best region based on business needs
+# Different regions can be specified in the configuration file:
+# "region": "us-west-2"  # US West
+# "region": "eu-west-1"  # Europe West
+# "region": "ap-northeast-1"  # Asia Pacific Northeast (Tokyo)
 ```
 
-### 存储类型优化
-```python title="存储类型配置"
-# AWS S3提供多种存储类型，适用于不同的访问模式：
-# - Standard: 频繁访问的数据
-# - Infrequent Access (IA): 不频繁访问的数据
-# - Glacier: 归档存储
-# - Deep Archive: 深度归档
+### Storage Type Optimization
+```python title="Storage Type Configuration"
+# AWS S3 provides multiple storage types for different access patterns:
+# - Standard: Frequently accessed data
+# - Infrequent Access (IA): Infrequently accessed data
+# - Glacier: Archive storage
+# - Deep Archive: Deep archive
 
-# 可以在上传时指定存储类型
+# Storage type can be specified during upload
 def upload_with_storage_class(name, data, storage_class="STANDARD"):
-    # 实际实现中可能需要额外参数支持
+    # Actual implementation may require additional parameter support
     return s3.uploadByFile(name, data, "application/octet-stream")
 ```
 
-### 安全最佳实践
-```python title="安全配置建议"
-# 1. 使用IAM角色而不是硬编码密钥
-# 2. 启用S3存储桶版本控制
-# 3. 配置适当的存储桶策略
-# 4. 使用预签名URL进行临时访问
-# 5. 定期轮换访问密钥
+### Security Best Practices
+```python title="Security Configuration Recommendations"
+# 1. Use IAM roles instead of hardcoded keys
+# 2. Enable S3 bucket versioning
+# 3. Configure appropriate bucket policies
+# 4. Use pre-signed URLs for temporary access
+# 5. Regularly rotate access keys
 
-# 使用环境变量存储敏感信息
+# Use environment variables to store sensitive information
 import os
 config = {
     "accessKeyId": os.getenv("AWS_ACCESS_KEY_ID"),

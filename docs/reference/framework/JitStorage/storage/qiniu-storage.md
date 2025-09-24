@@ -1,35 +1,36 @@
 ---
 slug: qiniu-storage
 ---
-# 七牛云存储
-七牛云存储是基于七牛云对象存储服务的云存储解决方案，提供性价比优异的存储能力。它支持多媒体文件处理和图片视频的自动压缩优化，提供简单易用的API接口和快速集成能力，适合中小企业和创业团队的云存储需求。
+# Qiniu Cloud Storage
 
-七牛云存储元素分层结构为Meta（storages.Meta） → Type（storages.QiniuType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建七牛云存储实例元素。
+Qiniu Cloud Storage is a cloud storage solution based on Qiniu Cloud Object Storage service, providing cost-effective storage capabilities. It supports multimedia file processing and automatic compression optimization for images and videos, provides simple and easy-to-use API interfaces and rapid integration capabilities, suitable for cloud storage needs of small and medium enterprises and startup teams.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的storages.QiniuType元素，以实现自己的封装。
+The Qiniu Cloud Storage element has a hierarchical structure of Meta (storages.Meta) → Type (storages.QiniuType) → Instance. Developers can quickly create Qiniu Cloud storage instance elements through JitAi's visual development tools.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+Of course, developers can also create their own Type elements or modify the official storages.QiniuType element provided by JitAi in their own App to implement their own encapsulation.
+
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 storages/
 └── MyQiniuStorage/
-    ├── e.json                          # 元素声明文件
-    └── MyQiniuStorage.json            # 七牛云配置文件
+    ├── e.json                          # Element declaration file
+    └── MyQiniuStorage.json            # Qiniu Cloud configuration file
 ```
 
-#### e.json文件
-```json title="元素声明文件"
+#### e.json File
+```json title="Element Declaration File"
 {
-  "title": "我的七牛云存储",
+  "title": "My Qiniu Cloud Storage",
   "type": "storages.QiniuType",
   "backendBundleEntry": ".",
   "variables": []
 }
 ```
 
-#### 业务配置文件
-```json title="七牛云配置文件"
+#### Business Configuration File
+```json title="Qiniu Cloud Configuration File"
 {
   "accessKeyId": "your_access_key_id",
   "accessKeySecret": "your_access_key_secret",
@@ -39,201 +40,201 @@ storages/
 }
 ```
 
-#### 调用示例
-```python title="使用七牛云存储"
-# 获取存储实例
+#### Usage Example
+```python title="Using Qiniu Cloud Storage"
+# Get storage instance
 storage = app.getElement("storages.MyQiniuStorage")
 
-# 上传文件
+# Upload file
 with open("example.jpg", "rb") as f:
     file_data = f.read()
     result = storage.uploadByFile("images/example.jpg", file_data, "image/jpeg")
-    print(f"文件URL: {result['url']}")
+    print(f"File URL: {result['url']}")
 
-# 获取签名URL
+# Get signed URL
 sign_url = storage.getSignUrl("images/example.jpg", "image/jpeg", 3600)
-print(f"签名URL: {sign_url}")
+print(f"Signed URL: {sign_url}")
 
-# 下载文件
+# Download file
 file_content = storage.download("images/example.jpg")
 
-# 删除文件
+# Delete file
 storage.delete("images/example.jpg")
 ```
 
-## 元素配置
-### e.json配置
-| 参数名 | 类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| title | 字符串 | 是 | 存储实例显示名称 |
-| type | 字符串 | 是 | 固定值：storages.QiniuType |
-| backendBundleEntry | 字符串 | 是 | 固定值："." |
-| variables | 数组 | 否 | 元素变量配置，通常为空 |
+| title | string | Yes | Storage instance display name |
+| type | string | Yes | Fixed value: storages.QiniuType |
+| backendBundleEntry | string | Yes | Fixed value: "." |
+| variables | array | No | Element variable configuration, usually empty |
 
-### 业务配置文件配置
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+### Business Configuration File Configuration
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|------|--------|------|
-| accessKeyId | 字符串 | 是 | - | 七牛云Access Key ID |
-| accessKeySecret | 字符串 | 是 | - | 七牛云Access Key Secret |
-| bucketName | 字符串 | 是 | - | 七牛云存储空间名称 |
-| endPoint | 字符串 | 否 | upload-z2.qiniup.com | 七牛云上传域名 |
-| scheme | 字符串 | 否 | http | 请求协议，可选http或https |
+| accessKeyId | string | Yes | - | Qiniu Cloud Access Key ID |
+| accessKeySecret | string | Yes | - | Qiniu Cloud Access Key Secret |
+| bucketName | string | Yes | - | Qiniu Cloud storage space name |
+| endPoint | string | No | upload-z2.qiniup.com | Qiniu Cloud upload domain |
+| scheme | string | No | http | Request protocol, optional http or https |
 
-## 方法 
+## Methods
 ### uploadByFile
-上传文件到七牛云存储。
+Upload file to Qiniu Cloud storage.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 文件在存储中的路径名称 |
-| data | - | bytes | 是 | 文件二进制数据 |
-| contentType | Stext | str | 否 | 文件MIME类型，默认为application/octet-stream |
+| name | Stext | str | Yes | File path name in storage |
+| data | - | bytes | Yes | File binary data |
+| contentType | Stext | str | No | File MIME type, defaults to application/octet-stream |
 
-#### 返回值
-返回包含文件URL的字典，格式：`{"url": "文件访问URL"}`
+#### Return Value
+Returns a dictionary containing file URL, format: `{"url": "file access URL"}`
 
-#### 使用示例
-```python title="上传不同类型文件"
+#### Usage Example
+```python title="Upload Different Types of Files"
 storage = app.getElement("storages.MyQiniuStorage")
 
-# 上传图片文件
+# Upload image file
 with open("photo.jpg", "rb") as f:
     result = storage.uploadByFile("photos/photo.jpg", f.read(), "image/jpeg")
 
-# 上传PDF文档
+# Upload PDF document
 with open("document.pdf", "rb") as f:
     result = storage.uploadByFile("docs/document.pdf", f.read(), "application/pdf")
 
-# 上传文本文件
+# Upload text file
 text_data = "Hello, World!".encode('utf-8')
 result = storage.uploadByFile("texts/hello.txt", text_data, "text/plain")
 ```
 
 ### getSignUrl
-获取文件的访问签名URL，用于安全的文件访问。
+Get signed access URL for file, used for secure file access.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| file | Stext | str | 是 | 文件在存储中的路径 |
-| contentType | Stext | str | 是 | 文件MIME类型 |
-| expires | Numeric | int | 否 | 签名过期时间（秒），默认300秒 |
+| file | Stext | str | Yes | File path in storage |
+| contentType | Stext | str | Yes | File MIME type |
+| expires | Numeric | int | No | Signature expiration time (seconds), defaults to 300 seconds |
 
-#### 返回值
-返回文件的签名访问URL字符串。
+#### Return Value
+Returns the signed access URL string for the file.
 
-#### 使用示例
-```python title="生成签名URL"
+#### Usage Example
+```python title="Generate Signed URL"
 storage = app.getElement("storages.MyQiniuStorage")
 
-# 生成图片访问链接（默认5分钟过期）
+# Generate image access link (default 5 minutes expiration)
 url = storage.getSignUrl("photos/photo.jpg", "image/jpeg")
 
-# 生成文档访问链接（1小时过期）
+# Generate document access link (1 hour expiration)
 url = storage.getSignUrl("docs/document.pdf", "application/pdf", 3600)
 
-# 生成视频访问链接（30分钟过期）
+# Generate video access link (30 minutes expiration)
 url = storage.getSignUrl("videos/demo.mp4", "video/mp4", 1800)
 ```
 
 ### download
-下载文件内容。
+Download file content.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 文件在存储中的路径 |
+| name | Stext | str | Yes | File path in storage |
 
-#### 返回值
-返回文件的二进制数据（bytes类型）。
+#### Return Value
+Returns file binary data (bytes type).
 
-#### 使用示例
-```python title="下载文件"
+#### Usage Example
+```python title="Download File"
 storage = app.getElement("storages.MyQiniuStorage")
 
-# 下载图片文件
+# Download image file
 image_data = storage.download("photos/photo.jpg")
 with open("downloaded_photo.jpg", "wb") as f:
     f.write(image_data)
 
-# 下载文本文件并读取内容
+# Download text file and read content
 text_data = storage.download("texts/hello.txt")
 text_content = text_data.decode('utf-8')
 print(text_content)
 ```
 
 ### getObject
-获取文件对象信息和内容。
+Get file object information and content.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 文件在存储中的路径 |
+| name | Stext | str | Yes | File path in storage |
 
-#### 返回值
-返回文件对象，包含文件内容和元数据信息。
+#### Return Value
+Returns file object containing file content and metadata information.
 
-#### 使用示例
-```python title="获取文件对象"
+#### Usage Example
+```python title="Get File Object"
 storage = app.getElement("storages.MyQiniuStorage")
 
-# 获取文件对象
+# Get file object
 file_obj = storage.getObject("photos/photo.jpg")
-# 处理文件对象（具体结构依赖七牛云SDK）
+# Process file object (specific structure depends on Qiniu Cloud SDK)
 ```
 
 ### delete
-删除存储中的文件。
+Delete file from storage.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 要删除的文件路径 |
+| name | Stext | str | Yes | File path to delete |
 
-#### 返回值
-返回删除操作结果。
+#### Return Value
+Returns delete operation result.
 
-#### 使用示例
-```python title="删除文件"
+#### Usage Example
+```python title="Delete File"
 storage = app.getElement("storages.MyQiniuStorage")
 
-# 删除单个文件
+# Delete single file
 storage.delete("photos/old_photo.jpg")
 
-# 批量删除文件
+# Batch delete files
 files_to_delete = ["temp/file1.txt", "temp/file2.txt", "temp/file3.txt"]
 for file_path in files_to_delete:
     storage.delete(file_path)
 ```
 
-## 属性
-暂无
+## Attributes
+None
 
-## 高级特性
-### 文件类型处理
-七牛云存储支持多种文件类型的自动处理和优化，特别适合多媒体文件场景。
+## Advanced Features
+### File Type Processing
+Qiniu Cloud Storage supports automatic processing and optimization of various file types, especially suitable for multimedia file scenarios.
 
-```python title="多媒体文件处理"
+```python title="Multimedia File Processing"
 storage = app.getElement("storages.MyQiniuStorage")
 
-# 上传并处理图片文件
+# Upload and process image file
 with open("large_image.jpg", "rb") as f:
-    # 图片会自动进行压缩优化
+    # Images will be automatically compressed and optimized
     result = storage.uploadByFile("images/optimized.jpg", f.read(), "image/jpeg")
 
-# 上传视频文件
+# Upload video file
 with open("video.mp4", "rb") as f:
-    # 视频支持转码和缩略图生成
+    # Videos support transcoding and thumbnail generation
     result = storage.uploadByFile("videos/demo.mp4", f.read(), "video/mp4")
 ```
 
-### 批量操作
-```python title="批量文件管理"
+### Batch Operations
+```python title="Batch File Management"
 storage = app.getElement("storages.MyQiniuStorage")
 
 def batch_upload(file_list):
-    """批量上传文件"""
+    """Batch upload files"""
     results = []
     for local_path, remote_path, content_type in file_list:
         with open(local_path, "rb") as f:
@@ -241,7 +242,7 @@ def batch_upload(file_list):
             results.append(result)
     return results
 
-# 批量上传示例
+# Batch upload example
 files = [
     ("local/image1.jpg", "images/image1.jpg", "image/jpeg"),
     ("local/doc1.pdf", "documents/doc1.pdf", "application/pdf"),
@@ -250,8 +251,8 @@ files = [
 upload_results = batch_upload(files)
 ```
 
-### 错误处理
-```python title="异常处理"
+### Error Handling
+```python title="Exception Handling"
 from jit.errcode import Code
 
 storage = app.getElement("storages.MyQiniuStorage")
@@ -259,9 +260,9 @@ storage = app.getElement("storages.MyQiniuStorage")
 try:
     with open("example.jpg", "rb") as f:
         result = storage.uploadByFile("images/example.jpg", f.read(), "image/jpeg")
-        print(f"上传成功: {result['url']}")
+        print(f"Upload successful: {result['url']}")
 except Code as e:
-    print(f"业务错误: {e}")
+    print(f"Business error: {e}")
 except Exception as e:
-    print(f"系统错误: {e}")
-``` 
+    print(f"System error: {e}")
+```

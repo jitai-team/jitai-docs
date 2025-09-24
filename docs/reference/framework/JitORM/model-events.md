@@ -1,27 +1,27 @@
 ---
 slug: model-events
 ---
-# 模型事件 {#model-events}
-模型事件是基于模型数据操作自动触发的事件机制，基于事件订阅发布模式实现数据变更的监听和响应。它负责监听模型的增删改操作、提供丰富的触发时机选择和支持条件筛选与字段级触发控制，支持同步和异步执行模式，适用于数据审计、业务规则执行、消息通知等场景。
+# Model Events {#model-events}
+Model events are event mechanisms that automatically trigger based on model data operations, implementing data change monitoring and response based on event subscription-publish patterns. They are responsible for monitoring model CRUD operations, providing rich trigger timing options and supporting conditional filtering with field-level trigger control, supporting both synchronous and asynchronous execution modes, suitable for data auditing, business rule execution, message notification, and other scenarios.
 
-模型事件元素分层结构为Meta（events.Meta） → Type（events.ModelType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建模型事件实例元素。
+The hierarchical structure of model event elements is Meta (events.Meta) → Type (events.ModelType) → Instance. Developers can quickly create model event instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的events.ModelType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `events.ModelType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基础配置示例
-```text title="推荐目录结构"
+## Quick Start
+### Basic Configuration Example
+```text title="Recommended Directory Structure"
 events/
-└── UserDataAudit/           # 用户数据审计事件
-    ├── e.json              # 事件配置文件
-    ├── inner.py            # 内部函数实现（funcType为Inner时）
-    └── __init__.py         # 包初始化文件
+└── UserDataAudit/           # User data audit event
+    ├── e.json              # Event configuration file
+    ├── inner.py            # Internal function implementation (when funcType is Inner)
+    └── __init__.py         # Package initialization file
 ```
 
-```json title="e.json - 事件配置文件"
+```json title="e.json - Event Configuration File"
 {
   "type": "events.ModelType",
-  "title": "用户数据审计",
+  "title": "User Data Audit",
   "sender": "models.UserModel",
   "operate": "UpdateAfter",
   "funcType": "Inner",
@@ -33,84 +33,84 @@ events/
 }
 ```
 
-```python title="inner.py - 事件处理函数"
+```python title="inner.py - Event Handler Function"
 def customFunc(eventOutData):
     """
-    用户数据变更审计
+    User data change audit
     
     Args:
-        eventOutData: JitDict类型，包含事件相关数据
+        eventOutData: JitDict type, contains event-related data
     """
     model = eventOutData.model.value
     opt_type = eventOutData.optType.value
     prev_data = eventOutData.prevData.value
     post_data = eventOutData.postData.value
     
-    print(f"模型 {model} 发生 {opt_type} 操作")
-    print(f"变更前数据: {prev_data}")
-    print(f"变更后数据: {post_data}")
+    print(f"Model {model} performed {opt_type} operation")
+    print(f"Data before change: {prev_data}")
+    print(f"Data after change: {post_data}")
 ```
 
 ```python title="__init__.py"
 from .inner import customFunc
 ```
 
-### 配置属性说明
-| 属性名 | 类型 | 说明 | 默认值 | 必填 |
+### Configuration Properties Description
+| Property Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| type | string | 固定值 `events.ModelType` | - | 是 |
-| title | string | 事件标题 | - | 是 |
-| sender | string | 监听的模型fullName | - | 是 |
-| operate | string | 操作类型，见操作类型枚举 | - | 是 |
-| funcType | string | 函数类型：`Global` &#124; `Inner` | `Global` | 否 |
-| func | string | 全局函数路径（funcType为Global时必填） | - | 否 |
-| asyncType | boolean | 是否异步执行 | `false` | 否 |
-| filter | string | Q表达式筛选条件 | - | 否 |
-| fields | array | 触发字段列表，空则监听所有字段 | `[]` | 否 |
-| enable | number | 是否启用：1启用，0禁用 | `1` | 否 |
+| type | string | Fixed value `events.ModelType` | - | Yes |
+| title | string | Event title | - | Yes |
+| sender | string | FullName of monitored model | - | Yes |
+| operate | string | Operation type, see operation type enumeration | - | Yes |
+| funcType | string | Function type: `Global` &#124; `Inner` | `Global` | No |
+| func | string | Global function path (required when funcType is Global) | - | No |
+| asyncType | boolean | Whether to execute asynchronously | `false` | No |
+| filter | string | Q expression filter condition | - | No |
+| fields | array | Trigger field list, empty means monitor all fields | `[]` | No |
+| enable | number | Whether enabled: 1 enabled, 0 disabled | `1` | No |
 
-**操作类型枚举**：
-- `AddBefore` - 新增数据前触发
-- `AddAfter` - 新增数据后触发  
-- `UpdateBefore` - 修改数据前触发
-- `UpdateAfter` - 修改数据后触发
-- `DeleteBefore` - 删除数据前触发
-- `DeleteAfter` - 删除数据后触发
-- `FieldUpdateAfter` - 任意写操作后触发
+**Operation Type Enumeration**:
+- `AddBefore` - Trigger before adding data
+- `AddAfter` - Trigger after adding data  
+- `UpdateBefore` - Trigger before updating data
+- `UpdateAfter` - Trigger after updating data
+- `DeleteBefore` - Trigger before deleting data
+- `DeleteAfter` - Trigger after deleting data
+- `FieldUpdateAfter` - Trigger after any write operation
 
-## 方法 
+## Methods
 ### getSender
-获取事件的真实发送者标识。
+Get the real sender identifier of the event.
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |------|------|
-| string | 格式为 `{modelFullName}_{operate}` 的发送者标识 |
+| string | Sender identifier in format `{modelFullName}_{operate}` |
 
-#### 使用示例
-```python title="获取事件发送者"
-# 在事件处理函数中
+#### Usage Example
+```python title="Get Event Sender"
+# In event handler function
 user_event = app.getElement("events.UserDataAudit")
 sender = user_event.getSender()
-print(f"事件发送者: {sender}")  # 输出: models.UserModel_UpdateAfter
+print(f"Event sender: {sender}")  # Output: models.UserModel_UpdateAfter
 ```
 
 ### isValid
-检查事件是否应该触发，综合验证筛选条件和字段变更条件。
+Check whether the event should trigger, comprehensively validating filter conditions and field change conditions.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| rowObj | object | 包含prevData和postData的行数据对象 | `None` | 否 |
+| rowObj | object | Row data object containing prevData and postData | `None` | No |
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |------|------|
-| boolean | `True` 表示应该触发事件，`False` 表示不触发 |
+| boolean | `True` means should trigger event, `False` means not trigger |
 
-#### 使用示例
-```python title="事件有效性检查"
-# 模拟行数据对象
+#### Usage Example
+```python title="Event Validity Check"
+# Simulate row data object
 row_obj = type('obj', (), {
     'value': {
         'model': 'models.UserModel',
@@ -121,78 +121,78 @@ row_obj = type('obj', (), {
 
 user_event = app.getElement("events.UserDataAudit")
 is_valid = user_event.isValid(row_obj)
-print(f"事件是否触发: {is_valid}")
+print(f"Whether event triggers: {is_valid}")
 ```
 
 ### isFilterValid
-验证筛选条件是否满足。
+Validate whether filter conditions are satisfied.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| rowObj | object | 包含数据的行对象 | `None` | 否 |
+| rowObj | object | Row object containing data | `None` | No |
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |------|------|
-| boolean | 筛选条件是否满足 |
+| boolean | Whether filter conditions are satisfied |
 
 ### isFieldValid
-验证字段变更条件是否满足。
+Validate whether field change conditions are satisfied.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| rowObj | object | 包含数据的行对象 | `None` | 否 |
+| rowObj | object | Row object containing data | `None` | No |
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |------|------|
-| boolean | 字段变更条件是否满足 |
+| boolean | Whether field change conditions are satisfied |
 
 ### buildEmptyDict
-构建模型的空字典结构，包含模型所有字段且值为None。
+Build empty dictionary structure of the model, containing all model fields with None values.
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |------|------|
-| dict | 包含模型所有字段的空字典 |
+| dict | Empty dictionary containing all model fields |
 
-#### 使用示例
-```python title="构建空字典"
+#### Usage Example
+```python title="Build Empty Dictionary"
 user_event = app.getElement("events.UserDataAudit")
 empty_dict = user_event.buildEmptyDict()
 print(empty_dict)  # {'id': None, 'name': None, 'email': None, 'status': None}
 ```
 
 ### call
-执行事件函数并记录执行时间。
+Execute event function and record execution time.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| *args | any | 传递给事件函数的位置参数 | - | 否 |
-| **kwargs | any | 传递给事件函数的关键字参数 | - | 否 |
+| *args | any | Positional arguments passed to event function | - | No |
+| **kwargs | any | Keyword arguments passed to event function | - | No |
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |------|------|
-| any | 事件函数的返回值 |
+| any | Return value of event function |
 
-#### 使用示例
-```python title="手动调用事件"
+#### Usage Example
+```python title="Manually Call Event"
 user_event = app.getElement("events.UserDataAudit")
 
-# 构造事件数据
+# Construct event data
 event_data = app.newVariable({
     "name": "eventOutData",
-    "title": "事件数据",
+    "title": "Event Data",
     "dataType": "JitDict",
     "variableList": [
-        {"name": "model", "title": "模型", "dataType": "Stext"},
-        {"name": "optType", "title": "操作类型", "dataType": "Stext"},
-        {"name": "prevData", "title": "变更前数据", "dataType": "RowData"},
-        {"name": "postData", "title": "变更后数据", "dataType": "RowData"}
+        {"name": "model", "title": "Model", "dataType": "Stext"},
+        {"name": "optType", "title": "Operation Type", "dataType": "Stext"},
+        {"name": "prevData", "title": "Data Before Change", "dataType": "RowData"},
+        {"name": "postData", "title": "Data After Change", "dataType": "RowData"}
     ]
 })
 
@@ -203,107 +203,107 @@ event_data.value = {
     "postData": {"id": 1, "name": "李四"}
 }
 
-# 调用事件
+# Call event
 result = user_event.call(event_data)
 ```
 
 ### handleNode
-在执行事件函数前处理事件节点，可对节点进行定制化操作。
+Process event node before executing event function, allowing customized operations on the node.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| node | object | 事件节点对象 | - | 是 |
-| *args | any | 事件函数参数 | - | 否 |
-| **kwargs | any | 事件函数关键字参数 | - | 否 |
+| node | object | Event node object | - | Yes |
+| *args | any | Event function arguments | - | No |
+| **kwargs | any | Event function keyword arguments | - | No |
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |------|------|
-| tuple | 包含处理后的 (node, args, kwargs) 的三元组 |
+| tuple | Tuple containing processed (node, args, kwargs) |
 
 ### buildTaskParams
-构造异步任务参数，将事件参数序列化为可存储的格式。
+Construct asynchronous task parameters, serializing event parameters into storable format.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| *args | any | 事件函数参数 | - | 否 |
-| **kwargs | any | 事件函数关键字参数 | - | 否 |
+| *args | any | Event function arguments | - | No |
+| **kwargs | any | Event function keyword arguments | - | No |
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |------|------|
-| dict | 序列化后的任务参数 |
+| dict | Serialized task parameters |
 
 ### recoverTaskParams
-从任务参数恢复事件函数参数。
+Recover event function parameters from task parameters.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| taskParam | dict | 任务参数字典 | - | 是 |
+| taskParam | dict | Task parameter dictionary | - | Yes |
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |------|------|
-| tuple | 包含恢复的 (args, kwargs) 的二元组 |
+| tuple | Tuple containing recovered (args, kwargs) |
 
 ### createTask
-创建异步事件任务。
+Create asynchronous event task.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| taskParams | dict | 任务参数 | - | 是 |
-| nodeId | string | 事件节点ID | - | 是 |
-| requestId | string | 请求ID | - | 是 |
+| taskParams | dict | Task parameters | - | Yes |
+| nodeId | string | Event node ID | - | Yes |
+| requestId | string | Request ID | - | Yes |
 
-## 属性
+## Properties
 ### name
-事件的fullName标识，只读属性。
+Event fullName identifier, read-only property.
 
 ### sender
-监听的模型fullName，只读属性。
+FullName of monitored model, read-only property.
 
 ### funcType
-函数类型，可选值为 `Global` 或 `Inner`，只读属性。
+Function type, optional values are `Global` or `Inner`, read-only property.
 
 ### func
-当funcType为Global时指定的全局函数路径，只读属性。
+Global function path specified when funcType is Global, read-only property.
 
 ### type
-事件类型，固定为 `events.ModelType`，只读属性。
+Event type, fixed as `events.ModelType`, read-only property.
 
 ### enable
-是否启用事件，1为启用，0为禁用，只读属性。
+Whether event is enabled, 1 for enabled, 0 for disabled, read-only property.
 
 ### title
-事件显示标题，只读属性。
+Event display title, read-only property.
 
 ### asyncType
-是否异步执行事件，只读属性。
+Whether to execute event asynchronously, read-only property.
 
 ### callTime
-最后一次执行事件的时间，可能为None（未执行过），只读属性。
+Last execution time of event, may be None (never executed), read-only property.
 
 ### operate
-监听的操作类型，对应EventTypeEnum枚举值，只读属性。
+Monitored operation type, corresponding to EventTypeEnum enumeration value, read-only property.
 
 ### filterQ
-Q表达式筛选条件字符串，只读属性。
+Q expression filter condition string, read-only property.
 
 ### fields
-指定触发的字段列表，空列表表示监听所有字段，只读属性。
+Specified trigger field list, empty list means monitor all fields, read-only property.
 
-## 高级特性
-### 条件筛选与字段监听
-模型事件支持精确的触发控制，可通过筛选条件和字段监听实现精准的事件响应。
+## Advanced Features
+### Conditional Filtering and Field Monitoring
+Model events support precise trigger control, achieving accurate event response through filter conditions and field monitoring.
 
-```json title="高级筛选配置"
+```json title="Advanced Filter Configuration"
 {
   "type": "events.ModelType",
-  "title": "VIP用户状态变更监听",
+  "title": "VIP User Status Change Monitoring",
   "sender": "models.UserModel",
   "operate": "UpdateAfter",
   "filter": "Q(user_type='vip') & Q(status__in=['active', 'inactive'])",
@@ -314,36 +314,36 @@ Q表达式筛选条件字符串，只读属性。
 }
 ```
 
-### 异步事件处理
-对于复杂的业务逻辑或耗时操作，可启用异步执行避免阻塞主流程。
+### Asynchronous Event Processing
+For complex business logic or time-consuming operations, asynchronous execution can be enabled to avoid blocking the main process.
 
-```python title="异步事件处理函数"
+```python title="Asynchronous Event Handler Function"
 def customFunc(eventOutData):
     """
-    异步处理用户数据同步
+    Asynchronously process user data synchronization
     """
     import time
     
     user_data = eventOutData.postData.value
-    print(f"开始同步用户数据: {user_data['name']}")
+    print(f"Start synchronizing user data: {user_data['name']}")
     
-    # 模拟耗时操作
+    # Simulate time-consuming operation
     time.sleep(2)
     
-    # 调用外部API同步数据
+    # Call external API to synchronize data
     sync_service = app.getElement("services.DataSyncSvc")
     sync_service.syncUserToThirdParty(user_data)
     
-    print(f"用户数据同步完成: {user_data['name']}")
+    print(f"User data synchronization completed: {user_data['name']}")
 ```
 
-### 多模型事件协调
-通过组合多个模型事件实现复杂的业务流程控制。
+### Multi-Model Event Coordination
+Implement complex business process control by combining multiple model events.
 
-```json title="订单状态变更事件"
+```json title="Order Status Change Event"
 {
   "type": "events.ModelType", 
-  "title": "订单完成后库存更新",
+  "title": "Inventory Update After Order Completion",
   "sender": "models.OrderModel",
   "operate": "UpdateAfter",
   "filter": "Q(status='completed')",
@@ -353,10 +353,10 @@ def customFunc(eventOutData):
 }
 ```
 
-```json title="库存变更通知事件"
+```json title="Inventory Change Notification Event"
 {
   "type": "events.ModelType",
-  "title": "库存不足预警",
+  "title": "Low Stock Warning",
   "sender": "models.InventoryModel", 
   "operate": "UpdateAfter",
   "filter": "Q(quantity__lt=10)",

@@ -1,35 +1,36 @@
 ---
 slug: cloudflare-r2-storage
+title: Cloudflare R2 Storage
 ---
-# Cloudflare R2存储
-Cloudflare R2存储是面向高性能边缘云存储的Type元素，基于Cloudflare R2对象存储服务实现全球分布式数据存储、零出站费用和企业级性能优化。它提供标准化的文件上传、下载、删除操作，兼容S3 API接口，具有出色的成本效益和全球访问性能。
+# Cloudflare R2 Storage {#cloudflare-r2-storage}
+Cloudflare R2 Storage is a Type element for high-performance edge cloud storage, implementing global distributed data storage, zero egress fees, and enterprise-level performance optimization based on Cloudflare R2 object storage service. It provides standardized file upload, download, and delete operations, is compatible with S3 API interfaces, and offers excellent cost-effectiveness and global access performance.
 
-Cloudflare R2存储元素分层结构为Meta（storages.Meta） → Type（storages.CloudflareR2Type） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建Cloudflare R2存储实例元素。
+The Cloudflare R2 storage element hierarchy is Meta (storages.Meta) → Type (storages.CloudflareR2Type) → Instance. Developers can quickly create Cloudflare R2 storage instance elements through JitAi's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的storages.CloudflareR2Type元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or override the storages.CloudflareR2Type element officially provided by JitAi in their own applications to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+## Quick Start 
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 storages/
-├── MyR2/                      # 自定义实例元素名称
-│   ├── e.json                 # 元素声明文件
-│   └── MyR2.json             # Cloudflare R2配置文件
+├── MyR2/                      # Custom instance element name
+│   ├── e.json                 # Element declaration file
+│   └── MyR2.json             # Cloudflare R2 configuration file
 ```
 
-#### e.json文件
-```json title="基础配置"
+#### e.json File
+```json title="Basic Configuration"
 {
-  "title": "我的Cloudflare R2存储",
+  "title": "My Cloudflare R2 Storage",
   "type": "storages.CloudflareR2Type",
   "backendBundleEntry": ".",
   "variables": []
 }
 ```
 
-#### 业务配置文件
-```json title="Cloudflare R2连接配置"
+#### Business Configuration File
+```json title="Cloudflare R2 Connection Configuration"
 {
   "accessKeyId": "your_r2_access_key_id",
   "accessKeySecret": "your_r2_secret_access_key", 
@@ -39,162 +40,162 @@ storages/
 }
 ```
 
-#### 调用示例
-```python title="基本使用"
-# 获取Cloudflare R2存储实例
+#### Usage Example
+```python title="Basic Usage"
+# Get Cloudflare R2 storage instance
 r2 = app.getElement("storages.MyR2")
 
-# 上传文件
+# Upload file
 with open("example.txt", "rb") as file:
     result = r2.uploadByFile("folder/example.txt", file.read(), "text/plain")
-    print(f"上传成功，URL: {result['url']}")
+    print(f"Upload successful, URL: {result['url']}")
 
-# 下载文件
+# Download file
 file_data = r2.download("folder/example.txt")
 
-# 删除文件
+# Delete file
 r2.delete("folder/example.txt")
 ```
 
-## 元素配置
-### e.json配置
-| 配置项 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
-| title | string | 是 | 存储元素显示名称 |
-| type | string | 是 | 固定值：storages.CloudflareR2Type |
-| backendBundleEntry | string | 是 | 固定值："." |
-| variables | array | 否 | 自定义变量配置，一般为空数组 |
+## Element Configuration
+### e.json Configuration
+| Configuration Item | Type | Required | Description |
+|---------------------|------|----------|-------------|
+| title | string | Yes | Storage element display name |
+| type | string | Yes | Fixed value: storages.CloudflareR2Type |
+| backendBundleEntry | string | Yes | Fixed value: "." |
+| variables | array | No | Custom variable configuration, usually empty array |
 
-### 业务配置文件配置
-| 配置项 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
-| accessKeyId | string | 是 | Cloudflare R2访问密钥ID |
-| accessKeySecret | string | 是 | Cloudflare R2访问密钥Secret |
-| endPoint | string | 是 | R2服务访问域名，格式为：your-account-id.r2.cloudflarestorage.com |
-| bucketName | string | 是 | R2存储桶名称 |
-| region | string | 是 | 区域设置，通常为"auto" |
+### Business Configuration File Configuration
+| Configuration Item | Type | Required | Description |
+|---------------------|------|----------|-------------|
+| accessKeyId | string | Yes | Cloudflare R2 access key ID |
+| accessKeySecret | string | Yes | Cloudflare R2 access key secret |
+| endPoint | string | Yes | R2 service access domain, format: your-account-id.r2.cloudflarestorage.com |
+| bucketName | string | Yes | R2 bucket name |
+| region | string | Yes | Region setting, usually "auto" |
 
-## 方法 
+## Methods 
 ### uploadByFile
-上传文件到Cloudflare R2存储。
+Upload file to Cloudflare R2 storage.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| name | Stext | str | 是 | 存储文件的路径名称 |
-| data | - | bytes | 是 | 文件二进制数据 |
-| contentType | Stext | str | 否 | 文件MIME类型，默认为"application/octet-stream" |
+#### Parameter Details
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| name | Stext | str | Yes | Storage file path name |
+| data | - | bytes | Yes | File binary data |
+| contentType | Stext | str | No | File MIME type, defaults to "application/octet-stream" |
 
-#### 返回值
-返回包含上传结果的字典，包含url字段表示文件访问地址。
+#### Return Value
+Returns dictionary containing upload result, with url field indicating file access address.
 
-#### 使用示例
-```python title="文件上传"
-# 上传图片文件
+#### Usage Example
+```python title="File Upload"
+# Upload image file
 with open("avatar.jpg", "rb") as file:
     result = r2.uploadByFile("users/avatar.jpg", file.read(), "image/jpeg")
     avatar_url = result["url"]
 
-# 上传文档文件
+# Upload document file
 with open("document.pdf", "rb") as file:
     result = r2.uploadByFile("docs/document.pdf", file.read(), "application/pdf")
 ```
 
 ### getSignUrl
-获取文件的预签名访问URL，用于临时访问权限控制。
+Get pre-signed access URL for files, used for temporary access permission control.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| file | Stext | str | 是 | 文件路径名称 |
-| contentType | Stext | str | 是 | 文件MIME类型 |
-| expires | Numeric | int | 否 | 过期时间(秒)，默认300秒 |
+#### Parameter Details
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| file | Stext | str | Yes | File path name |
+| contentType | Stext | str | Yes | File MIME type |
+| expires | Numeric | int | No | Expiration time (seconds), defaults to 300 seconds |
 
-#### 返回值
-返回预签名URL字符串。
+#### Return Value
+Returns pre-signed URL string.
 
-#### 使用示例
-```python title="获取预签名URL"
-# 获取图片的临时访问URL
+#### Usage Example
+```python title="Get Pre-signed URL"
+# Get temporary access URL for image
 temp_url = r2.getSignUrl("users/avatar.jpg", "image/jpeg", 600)
 
-# 获取文档的临时下载URL
+# Get temporary download URL for document
 download_url = r2.getSignUrl("docs/document.pdf", "application/pdf")
 ```
 
 ### download
-下载文件数据。
+Download file data.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| name | Stext | str | 是 | 要下载的文件路径名称 |
+#### Parameter Details
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| name | Stext | str | Yes | File path name to download |
 
-#### 返回值
-返回文件的二进制数据。
+#### Return Value
+Returns file binary data.
 
-#### 使用示例
-```python title="文件下载"
-# 下载文件
+#### Usage Example
+```python title="File Download"
+# Download file
 file_data = r2.download("docs/document.pdf")
 
-# 保存到本地
+# Save to local
 with open("downloaded_document.pdf", "wb") as file:
     file.write(file_data)
 ```
 
 ### getObject
-获取文件对象信息。
+Get file object information.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| name | Stext | str | 是 | 文件路径名称 |
+#### Parameter Details
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| name | Stext | str | Yes | File path name |
 
-#### 返回值
-返回文件对象信息。
+#### Return Value
+Returns file object information.
 
-#### 使用示例
-```python title="获取文件信息"
-# 获取文件对象
+#### Usage Example
+```python title="Get File Information"
+# Get file object
 file_obj = r2.getObject("users/avatar.jpg")
 ```
 
 ### delete
-删除指定文件。
+Delete specified file.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| name | Stext | str | 是 | 要删除的文件路径名称 |
+#### Parameter Details
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| name | Stext | str | Yes | File path name to delete |
 
-#### 返回值
-返回删除操作结果。
+#### Return Value
+Returns delete operation result.
 
-#### 使用示例
-```python title="文件删除"
-# 删除用户头像
+#### Usage Example
+```python title="File Deletion"
+# Delete user avatar
 r2.delete("users/avatar.jpg")
 
-# 删除临时文件
+# Delete temporary file
 r2.delete("temp/upload_cache.tmp")
 ```
 
-## 高级特性
-### 异常处理机制
-Cloudflare R2存储内置了完善的异常处理机制，所有方法都会自动捕获和转换异常。
+## Advanced Features
+### Exception Handling Mechanism
+Cloudflare R2 storage has built-in comprehensive exception handling mechanism, all methods automatically catch and convert exceptions.
 
-```python title="异常处理示例"
+```python title="Exception Handling Example"
 try:
     r2.uploadByFile("test.txt", b"test data", "text/plain")
 except Exception as e:
-    # 异常会包含详细的错误信息，包括存储类型、元素名称等
-    print(f"上传失败: {e}")
+    # Exception will contain detailed error information, including storage type, element name, etc.
+    print(f"Upload failed: {e}")
 ```
 
-### 批量操作
-```python title="批量文件管理"
-# 批量上传文件
+### Batch Operations
+```python title="Batch File Management"
+# Batch upload files
 files = [
     ("file1.txt", b"content1", "text/plain"),
     ("file2.txt", b"content2", "text/plain")
@@ -203,39 +204,39 @@ files = [
 for name, data, content_type in files:
     try:
         result = r2.uploadByFile(f"batch/{name}", data, content_type)
-        print(f"上传成功: {name}")
+        print(f"Upload successful: {name}")
     except Exception as e:
-        print(f"上传失败 {name}: {e}")
+        print(f"Upload failed {name}: {e}")
 ```
 
-### 零出站费用优势
-```python title="成本优化配置"
-# Cloudflare R2的主要优势是零出站费用
-# 特别适合以下场景：
-# - 静态网站托管
-# - CDN原始内容存储
-# - 大文件分发
-# - 媒体内容交付
+### Zero Egress Fees Advantage
+```python title="Cost Optimization Configuration"
+# The main advantage of Cloudflare R2 is zero egress fees
+# Particularly suitable for the following scenarios:
+# - Static website hosting
+# - CDN origin content storage
+# - Large file distribution
+# - Media content delivery
 
-# 配置示例：与Cloudflare CDN集成
+# Configuration example: Integration with Cloudflare CDN
 def setup_cdn_integration():
     """
-    配置R2与Cloudflare CDN的集成
-    实现全球边缘加速和零出站费用
+    Configure R2 integration with Cloudflare CDN
+    Achieve global edge acceleration and zero egress fees
     """
-    # 1. 在Cloudflare控制台配置自定义域名
-    # 2. 设置Cache规则优化性能
-    # 3. 配置Worker脚本进行高级处理
+    # 1. Configure custom domain in Cloudflare console
+    # 2. Set Cache rules to optimize performance
+    # 3. Configure Worker scripts for advanced processing
     pass
 ```
 
-### S3兼容性
-```python title="S3兼容API"
-# Cloudflare R2完全兼容AWS S3 API
-# 可以直接迁移现有的S3应用
-# 支持所有标准S3操作
+### S3 Compatibility
+```python title="S3 Compatible API"
+# Cloudflare R2 is fully compatible with AWS S3 API
+# Can directly migrate existing S3 applications
+# Supports all standard S3 operations
 
-# 迁移配置示例
+# Migration configuration example
 migration_config = {
     "from_s3": {
         "endPoint": "s3.amazonaws.com",
@@ -249,45 +250,45 @@ migration_config = {
 
 def migrate_from_s3():
     """
-    从AWS S3迁移到Cloudflare R2的工具函数
+    Tool function to migrate from AWS S3 to Cloudflare R2
     """
-    # 1. 配置R2存储桶
-    # 2. 批量复制文件
-    # 3. 更新应用配置
-    # 4. 验证数据完整性
+    # 1. Configure R2 bucket
+    # 2. Batch copy files
+    # 3. Update application configuration
+    # 4. Verify data integrity
     pass
 ```
 
-### Workers集成
-```python title="Cloudflare Workers集成"
-# 利用Cloudflare Workers进行高级文件处理
-# 支持边缘计算和实时图像处理
+### Workers Integration
+```python title="Cloudflare Workers Integration"
+# Utilize Cloudflare Workers for advanced file processing
+# Support edge computing and real-time image processing
 
 def setup_worker_processing():
     """
-    配置Workers进行文件处理
+    Configure Workers for file processing
     """
-    # Workers可以实现：
-    # - 图像尺寸调整和格式转换
-    # - 视频转码和缩略图生成
-    # - 文件压缩和解压缩
-    # - 访问权限控制
-    # - 实时内容变换
+    # Workers can implement:
+    # - Image resizing and format conversion
+    # - Video transcoding and thumbnail generation
+    # - File compression and decompression
+    # - Access permission control
+    # - Real-time content transformation
     pass
 
-# 示例：动态图像处理
+# Example: Dynamic image processing
 # https://your-domain.com/image.jpg?width=300&height=200&format=webp
 ```
 
-### 安全最佳实践
-```python title="安全配置建议"
-# 1. 使用API Token而不是Global API Key
-# 2. 配置适当的CORS策略
-# 3. 启用访问日志记录
-# 4. 使用预签名URL控制访问
-# 5. 定期审计访问权限
+### Security Best Practices
+```python title="Security Configuration Recommendations"
+# 1. Use API Token instead of Global API Key
+# 2. Configure appropriate CORS policies
+# 3. Enable access logging
+# 4. Use pre-signed URLs to control access
+# 5. Regularly audit access permissions
 
-# 使用环境变量存储敏感信息
+# Use environment variables to store sensitive information
 import os
 config = {
     "accessKeyId": os.getenv("R2_ACCESS_KEY_ID"),
@@ -295,7 +296,7 @@ config = {
     "accountId": os.getenv("R2_ACCOUNT_ID")
 }
 
-# 安全配置示例
+# Security configuration example
 security_config = {
     "cors_policy": {
         "allowed_origins": ["https://yourdomain.com"],
@@ -309,22 +310,22 @@ security_config = {
 }
 ```
 
-### 性能优化
-```python title="性能优化配置"
-# Cloudflare R2的全球边缘网络优势
+### Performance Optimization
+```python title="Performance Optimization Configuration"
+# Global edge network advantages of Cloudflare R2
 def optimize_performance():
     """
-    性能优化最佳实践
+    Performance optimization best practices
     """
-    # 1. 使用自定义域名以获得更好的缓存性能
-    # 2. 配置适当的Cache-Control头
-    # 3. 启用Brotli压缩
-    # 4. 使用WebP格式优化图像
-    # 5. 实现智能缓存策略
+    # 1. Use custom domain for better cache performance
+    # 2. Configure appropriate Cache-Control headers
+    # 3. Enable Brotli compression
+    # 4. Use WebP format to optimize images
+    # 5. Implement intelligent caching strategies
     
     cache_headers = {
-        "Cache-Control": "public, max-age=31536000",  # 1年缓存
-        "Content-Encoding": "br",  # Brotli压缩
+        "Cache-Control": "public, max-age=31536000",  # 1 year cache
+        "Content-Encoding": "br",  # Brotli compression
         "Vary": "Accept-Encoding"
     }
     

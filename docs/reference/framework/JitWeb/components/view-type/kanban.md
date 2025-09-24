@@ -1,25 +1,25 @@
 ---
 slug: kanban
 ---
-# 看板
-看板是一种可视化的数据展示组件，基于分组字段将数据按列展示，支持卡片拖拽、自定义按钮和实时数据交互。它负责数据分组展示、卡片操作交互和状态流转管理，提供直观的项目管理和工作流程可视化能力。
+# Kanban
+Kanban is a visual data display component that presents data in columns based on grouping fields, supporting card dragging, custom buttons, and real-time data interaction. It handles data grouping display, card operation interaction, and status flow management, providing intuitive project management and workflow visualization capabilities.
 
-看板元素分层结构为Meta（components.Meta） → Type（components.Board） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建看板实例元素。
+The kanban element has a hierarchical structure of Meta (components.Meta) → Type (components.Board) → Instance. Developers can quickly create kanban instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.BoardType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `components.BoardType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基础配置示例
-```json title="看板组件基础配置"
+## Quick Start 
+### Basic Configuration Example
+```json title="Kanban Component Basic Configuration"
 {
   "name": "Board1",
-  "title": "项目看板",
+  "title": "Project Kanban",
   "type": "components.Board",
   "config": {
     "requireElements": [
       {
         "name": "models.ProjectModel",
-        "title": "项目数据模型",
+        "title": "Project Data Model",
         "type": "models.Meta",
         "filter": "",
         "orderBy": []
@@ -46,87 +46,87 @@ slug: kanban
 }
 ```
 
-### 配置属性说明
-| 属性名 | 类型 | 默认值 | 说明 |
+### Configuration Properties
+| Property Name | Type | Default Value | Description |
 |--------|------|--------|------|
-| requireElements | Array | [] | 数据源配置，指定模型和筛选条件 |
-| titleField | String | "" | 卡片标题字段 |
-| groupField | String | "" | 分组字段，支持下拉、单选、成员、部门、文本类型 |
-| showFieldList | Array | [] | 卡片中显示的字段列表 |
-| abstractField | String | "" | 摘要字段，显示在卡片底部 |
-| image | Object | {} | 图片配置，包含字段ID、位置和显示类型 |
-| dragCard | Boolean | false | 是否启用卡片拖拽功能 |
-| showFieldName | Boolean | true | 是否显示字段名称 |
-| showAddBottomBtn | Boolean | false | 是否显示底部添加按钮 |
-| defaultRender | Boolean | true | 是否使用默认渲染 |
-| leftBtnList | Array | [] | 左侧按钮配置列表 |
-| rightBtnList | Array | [] | 右侧按钮配置列表 |
-| menuBtnList | Array | [] | 菜单按钮配置列表 |
-| platform | String | "PC" | 平台类型，PC 或 Mobile |
-| fieldAliasList | Array | [] | 字段别名配置列表 |
+| requireElements | Array | [] | Data source configuration, specifying model and filter conditions |
+| titleField | String | "" | Card title field |
+| groupField | String | "" | Grouping field, supports dropdown, radio, member, department, text types |
+| showFieldList | Array | [] | List of fields displayed in cards |
+| abstractField | String | "" | Abstract field, displayed at the bottom of cards |
+| image | Object | {} | Image configuration, containing field ID, position, and display type |
+| dragCard | Boolean | false | Whether to enable card dragging functionality |
+| showFieldName | Boolean | true | Whether to show field names |
+| showAddBottomBtn | Boolean | false | Whether to show bottom add button |
+| defaultRender | Boolean | true | Whether to use default rendering |
+| leftBtnList | Array | [] | Left button configuration list |
+| rightBtnList | Array | [] | Right button configuration list |
+| menuBtnList | Array | [] | Menu button configuration list |
+| platform | String | "PC" | Platform type, PC or Mobile |
+| fieldAliasList | Array | [] | Field alias configuration list |
 
-## 变量
+## Variables
 ### displayRowList
-**类型**: `RowList`  
-**只读**: 是  
-**泛型**: 关联模型的fullName  
+**Type**: `RowList`  
+**Read-only**: Yes  
+**Generic**: Associated model's fullName  
 
-展示的多行数据变量，包含当前看板中所有可见的数据记录。
+Displayed multi-row data variable, containing all visible data records in the current kanban.
 
 ### activeRow
-**类型**: `RowData`  
-**只读**: 是  
-**泛型**: 关联模型的fullName  
+**Type**: `RowData`  
+**Read-only**: Yes  
+**Generic**: Associated model's fullName  
 
-当前操作的单行数据变量，在卡片点击、拖拽等交互时更新。
+Currently operated single-row data variable, updated during card clicks, drags, and other interactions.
 
 ### activeGroup
-**类型**: 根据分组字段类型确定  
-**只读**: 是  
+**Type**: Determined by grouping field type  
+**Read-only**: Yes  
 
-当前操作的分组变量，表示用户当前交互的分组值。
+Currently operated grouping variable, representing the grouping value the user is currently interacting with.
 
 ### filter
-**类型**: `QFilter`  
-**只读**: 是  
-**泛型**: 关联模型的fullName  
+**Type**: `QFilter`  
+**Read-only**: Yes  
+**Generic**: Associated model's fullName  
 
-筛选条件变量，用于控制看板显示的数据范围。
+Filter condition variable, used to control the data range displayed in the kanban.
 
-## 方法 
+## Methods 
 ### call
-刷新看板数据的异步方法。
+Asynchronous method to refresh kanban data.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| qFilter | QFilter | 否 | 筛选条件，用于过滤显示的数据 |
+| qFilter | QFilter | No | Filter conditions for filtering displayed data |
 
-#### 返回值
-无返回值，执行后更新组件数据。
+#### Return Value
+No return value, updates component data after execution.
 
-#### 使用示例
-```javascript title="刷新看板数据"
-// 无条件刷新
+#### Usage Example
+```javascript title="Refresh Kanban Data"
+// Refresh without conditions
 await boardComponent.call();
 
-// 带筛选条件刷新
+// Refresh with filter conditions
 await boardComponent.call("Q(status='active')");
 ```
 
 ### updateConfig
-更新组件配置并刷新显示。
+Update component configuration and refresh display.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| config | ComponentConfig | 是 | 新的组件配置对象 |
+| config | ComponentConfig | Yes | New component configuration object |
 
-#### 返回值
-无返回值，执行后更新配置并刷新组件。
+#### Return Value
+No return value, updates configuration and refreshes component after execution.
 
-#### 使用示例
-```javascript title="更新组件配置"
+#### Usage Example
+```javascript title="Update Component Configuration"
 const newConfig = {
   config: {
     groupField: "newStatus",
@@ -137,58 +137,58 @@ boardComponent.updateConfig(newConfig);
 ```
 
 ### setConfig
-设置组件配置对象（继承方法）。
+Set component configuration object (inherited method).
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| next | Object | 是 | 新的配置对象 |
-| clean | Boolean | 否 | 是否完全替换配置，默认合并 |
+| next | Object | Yes | New configuration object |
+| clean | Boolean | No | Whether to completely replace configuration, default merge |
 
-#### 返回值
-无返回值，更新内部配置状态。
+#### Return Value
+No return value, updates internal configuration state.
 
 ### publishEvent
-发布组件事件（继承方法）。
+Publish component event (inherited method).
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| name | String | 是 | 事件名称 |
-| ex | Object | 否 | 额外的事件数据 |
+| name | String | Yes | Event name |
+| ex | Object | No | Additional event data |
 
-#### 返回值
-返回Promise，事件发布完成后resolve。
+#### Return Value
+Returns Promise, resolves after event publishing is complete.
 
 ### subscribeEvent
-订阅组件事件（继承方法）。
+Subscribe to component event (inherited method).
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| name | String | 是 | 事件名称 |
-| evtCb | Function | 是 | 事件回调函数 |
-| unSubscribeExist | Boolean | 否 | 是否先取消已存在的订阅，默认true |
+| name | String | Yes | Event name |
+| evtCb | Function | Yes | Event callback function |
+| unSubscribeExist | Boolean | No | Whether to cancel existing subscriptions first, default true |
 
-#### 返回值
-返回订阅ID，用于后续取消订阅。
+#### Return Value
+Returns subscription ID for subsequent unsubscription.
 
 ### getAllGroupData
-获取所有分组的数据信息。
+Get data information for all groups.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| filter | Stext | 是 | 查询字符串，支持Q表达式 |
-| orderList | JitList | 是 | 排序列表 |
-| size | Numeric | 是 | 每页数量 |
+| filter | Stext | Yes | Query string, supports Q expressions |
+| orderList | JitList | Yes | Sort list |
+| size | Numeric | Yes | Items per page |
 
-#### 返回值
-**类型**: `JitDict`  
-包含所有分组信息的字典对象。
+#### Return Value
+**Type**: `JitDict`  
+Dictionary object containing all group information.
 
-#### 使用示例
-```javascript title="获取所有分组数据"
+#### Usage Example
+```javascript title="Get All Group Data"
 const result = await boardComponent.getAllGroupData(
   "Q(active=true)", 
   [], 
@@ -197,22 +197,22 @@ const result = await boardComponent.getAllGroupData(
 ```
 
 ### getGroupData
-获取指定分组的数据信息。
+Get data information for specified group.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| filter | Stext | 是 | 查询字符串，支持Q表达式 |
-| orderList | JitList | 是 | 排序列表 |
-| page | Numeric | 是 | 页数 |
-| size | Numeric | 是 | 每页数量 |
+| filter | Stext | Yes | Query string, supports Q expressions |
+| orderList | JitList | Yes | Sort list |
+| page | Numeric | Yes | Page number |
+| size | Numeric | Yes | Items per page |
 
-#### 返回值
-**类型**: `JitDict`  
-包含指定分组信息的字典对象。
+#### Return Value
+**Type**: `JitDict`  
+Dictionary object containing specified group information.
 
-#### 使用示例
-```javascript title="获取分组数据"
+#### Usage Example
+```javascript title="Get Group Data"
 const result = await boardComponent.getGroupData(
   "Q(groupKey='todo')", 
   [], 
@@ -221,80 +221,159 @@ const result = await boardComponent.getGroupData(
 );
 ```
 
-## 属性
-### 基础属性（继承）
+## Properties
+### Basic Properties (Inherited)
 ### name
-**类型**: `String`  
+**Type**: `String`  
 
-组件实例名称，在页面配置中定义。
+Component instance name, defined in page configuration.
 
 ### title
-**类型**: `String`  
+**Type**: `String`  
 
-组件显示标题。
+Component display title.
 
 ### type
-**类型**: `String`  
+**Type**: `String`  
 
-组件类型标识，值为"components.Board"。
+Component type identifier, value is "components.Board".
 
 ### config
-**类型**: `Object`  
+**Type**: `Object`  
 
-组件配置对象，包含所有配置参数。
+Component configuration object, containing all configuration parameters.
 
 ### showTitle
-**类型**: `Boolean`  
+**Type**: `Boolean`  
 
-是否显示组件标题。
+Whether to show component title.
 
 ### app
-**类型**: `App`  
+**Type**: `App`  
 
-绑定的应用实例，用于访问应用级功能。
+Bound application instance, used to access application-level functionality.
 
 ### page
-**类型**: `BasePage`  
+**Type**: `BasePage`  
 
-绑定的页面实例，用于访问页面级功能。
+Bound page instance, used to access page-level functionality.
 
-### 看板专用属性
+### Kanban-Specific Properties
 ### pageSize
-**类型**: `Number`  
-**默认值**: 20  
+**Type**: `Number`  
+**Default Value**: 20  
 
-每页显示的数据条数。
+Number of data items displayed per page.
 
 ### loading
-**类型**: `Numeric`  
-**默认值**: 0  
+**Type**: `Numeric`  
+**Default Value**: 0  
 
-加载状态标识，0表示未加载，1表示加载中。
+Loading state identifier, 0 means not loaded, 1 means loading.
 
-## 事件
+## Events
 ### clickCard
-**触发时机**: 卡片点击后  
-**数据变量**: `activeRow`  
+**Trigger**: After card click  
+**Data Variable**: `activeRow`  
 
-用户点击看板卡片时触发，activeRow包含被点击卡片的数据。
+Triggered when user clicks a kanban card, activeRow contains the data of the clicked card.
 
 ### addBottomBtnClick
-**触发时机**: 底部按钮点击后  
-**数据变量**: `activeGroup`  
-**前置条件**: showAddBottomBtn为true  
+**Trigger**: After clicking bottom button  
+**Data Variable**: `activeGroup`  
+**Prerequisite**: showAddBottomBtn is true  
 
-用户点击分组底部的添加按钮时触发，activeGroup包含当前分组信息。
+Triggered when user clicks the add button at the bottom of a group, activeGroup contains the current group information.
 
 ### afterCardDrag
-**触发时机**: 拖拽卡片后  
-**数据变量**: `activeRow`  
-**前置条件**: dragCard为true且为PC平台的标准模型  
+**Trigger**: After dragging card  
+**Data Variable**: `activeRow`  
+**Prerequisite**: dragCard is true and it's a PC platform standard model  
 
-用户拖拽卡片到新分组后触发，activeRow包含被拖拽卡片的数据。
+Triggered when user drags a card to a new group, activeRow contains the data of the dragged card.
 
-### 动态按钮事件
-根据leftBtnList、rightBtnList、menuBtnList配置动态生成：
+### Dynamic Button Events
+Generated dynamically based on leftBtnList, rightBtnList, menuBtnList configuration:
 
-- **leftBtnList按钮事件**: 命名规则为click + 按钮ID（驼峰格式），数据变量为displayRowList
-- **rightBtnList按钮事件**: 命名规则为click + 按钮ID（驼峰格式），数据变量为displayRowList  
-- **menuBtnList按钮事件**: 命名规则为click + 按钮ID（驼峰格式），数据变量为activeRow
+- **leftBtnList button events**: Naming rule is click + button ID (camelCase), data variable is displayRowList
+- **rightBtnList button events**: Naming rule is click + button ID (camelCase), data variable is displayRowList  
+- **menuBtnList button events**: Naming rule is click + button ID (camelCase), data variable is activeRow
+
+## Methods
+### loadData()
+**Description**: Load kanban data  
+**Parameters**: None  
+**Return**: None  
+
+Load data for the kanban component based on current configuration.
+
+### refreshData()
+**Description**: Refresh kanban data  
+**Parameters**: None  
+**Return**: None  
+
+Refresh the current kanban data.
+
+### getData()
+**Description**: Get current kanban data  
+**Parameters**: None  
+**Return**: `Array` - Current kanban data array  
+
+Get the current data displayed in the kanban.
+
+### setData(data)
+**Description**: Set kanban data  
+**Parameters**: 
+- `data` (Array): Data to set  
+**Return**: None  
+
+Set the data for the kanban component.
+
+### getActiveRow()
+**Description**: Get currently active row data  
+**Parameters**: None  
+**Return**: `Object` - Active row data  
+
+Get the data of the currently active/selected row.
+
+### setActiveRow(rowData)
+**Description**: Set active row  
+**Parameters**: 
+- `rowData` (Object): Row data to set as active  
+**Return**: None  
+
+Set a specific row as the active row.
+
+### publishEvent(eventName, data)
+**Description**: Publish custom event  
+**Parameters**: 
+- `eventName` (String): Event name  
+- `data` (Any): Event data  
+**Return**: None  
+
+Publish a custom event that can be listened to by other components.
+
+### subscribeEvent(eventName, callback)
+**Description**: Subscribe to custom event  
+**Parameters**: 
+- `eventName` (String): Event name to subscribe to  
+- `callback` (Function): Event callback function  
+**Return**: None  
+
+Subscribe to a custom event published by other components.
+
+## Advanced Features
+### Card Dragging
+The kanban component supports card dragging functionality, allowing users to move cards between different groups by dragging and dropping.
+
+### Dynamic Button Configuration
+Buttons can be dynamically configured through leftBtnList, rightBtnList, and menuBtnList, supporting custom button styles and event handling.
+
+### Real-time Data Updates
+The component supports real-time data updates, automatically refreshing the display when data changes.
+
+### Responsive Layout
+The kanban component adapts to different screen sizes and provides responsive layout capabilities.
+
+### Custom Card Rendering
+Developers can customize card rendering through the defaultRender configuration and custom rendering functions.

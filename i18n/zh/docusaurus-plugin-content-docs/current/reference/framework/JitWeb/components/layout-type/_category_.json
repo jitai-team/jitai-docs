@@ -1,8 +1,9 @@
 {
-  "label": "布局类",
+  "label": "Layout Components",
   "position": 4,
   "link": {
     "type": "generated-index",
-    "description": "用于组织和排列内容的结构化布局组件，包括容器、网格、面板和导航元素等布局控制组件。"
+    "slug": "reference/framework/JitWeb/components/layout-type",
+    "description": "Structural layout components for organizing and arranging content including containers, grids, panels, and navigation elements."
   }
 } 

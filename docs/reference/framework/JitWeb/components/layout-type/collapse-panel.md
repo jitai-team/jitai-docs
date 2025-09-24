@@ -1,38 +1,38 @@
 ---
 slug: collapse-panel
 ---
-# 折叠面板
-折叠面板是可展开收起的内容容器组件，支持单个和多个面板的嵌套组合。它负责内容分类组织、空间优化和交互式布局管理，提供展开折叠状态的持久化保存和灵活的面板配置能力。
+# Collapse Panel
+The collapse panel is a content container component that can be expanded and collapsed, supporting nested combinations of single and multiple panels. It handles content categorization, space optimization, and interactive layout management, providing persistent storage of expand/collapse states and flexible panel configuration capabilities.
 
-折叠面板元素分层结构为Meta（`components.Meta`） → Type（`components.Collapse`） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建折叠面板实例元素。
+The collapse panel element has a hierarchical structure of Meta (`components.Meta`) → Type (`components.Collapse`) → Instance. Developers can quickly create collapse panel instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.CollapseType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `components.CollapseType` element provided by JitAI in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基础配置示例
-```tsx title="推荐目录结构"
+## Quick Start
+### Basic Configuration Example
+```tsx title="Recommended Directory Structure"
 testApp/
 ├── pages/
 │   └── testPage/
 │       ├── e.json
-│       ├── scheme.json    # 页面配置，包含折叠面板组件
+│       ├── scheme.json    # Page configuration, including collapse panel component
 │       └── page.tsx
 ```
 
-```json title="页面配置文件（scheme.json）"
+```json title="Page Configuration File (scheme.json)"
 {
   "componentList": [
     {
       "fullName": "components.Collapse",
       "name": "collapse1",
-      "title": "产品信息面板",
+      "title": "Product Information Panel",
       "config": {
         "accordion": false,
         "ghost": false,
         "layoutList": [
           {
             "name": "basicInfo",
-            "title": "基础信息",
+            "title": "Basic Information",
             "layout": [
               {
                 "i": "Form1",
@@ -46,7 +46,7 @@ testApp/
           },
           {
             "name": "detailInfo", 
-            "title": "详细信息",
+            "title": "Detailed Information",
             "layout": [
               {
                 "i": "Table1",
@@ -65,170 +65,170 @@ testApp/
 }
 ```
 
-### 配置属性说明
-| 属性名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| accordion | boolean | 手风琴模式，只允许同时展开一个面板 | false | 否 |
-| ghost | boolean | 幽灵模式，无边框样式 | false | 否 |
-| layoutList | ICollapseProps[] | 折叠面板配置列表 | [] | 是 |
+### Configuration Properties
+| Property Name | Type | Description | Default Value | Required |
+|---------------|------|-------------|---------------|----------|
+| accordion | boolean | Accordion mode, only allows one panel to be expanded at a time | false | No |
+| ghost | boolean | Ghost mode, borderless style | false | No |
+| layoutList | ICollapseProps[] | Collapse panel configuration list | [] | Yes |
 
-**ICollapseProps 配置：**
+**ICollapseProps Configuration:**
 
-| 属性名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| name | string | 面板唯一标识 | - | 是 |
-| title | string | 面板标题 | - | 是 |
-| layout | Layout[] | 面板内组件布局配置 | [] | 是 |
-| headerColor | string | 面板头部背景色 | "rgba(250, 250, 250, 1)" | 否 |
+| Property Name | Type | Description | Default Value | Required |
+|---------------|------|-------------|---------------|----------|
+| name | string | Panel unique identifier | - | Yes |
+| title | string | Panel title | - | Yes |
+| layout | Layout[] | Panel component layout configuration | [] | Yes |
+| headerColor | string | Panel header background color | "rgba(250, 250, 250, 1)" | No |
 
-## 变量
+## Variables
 ### activeKey
-当前激活的面板标识，类型为 `datatypes.Ltext`。组件实例化时自动创建，在手风琴模式下存储单个面板名称，非手风琴模式下存储面板名称数组。
+Currently active panel identifier, type is `datatypes.Ltext`. Automatically created when component is instantiated, stores single panel name in accordion mode, stores panel name array in non-accordion mode.
 
-```tsx title="获取激活面板"
+```tsx title="Get Active Panel"
 const collapseComponent = app.getElement("components.Collapse");
 const currentActiveKey = collapseComponent.activeKey.value;
-console.log("当前激活面板:", currentActiveKey);
+console.log("Currently active panel:", currentActiveKey);
 ```
 
-## 方法 
+## Methods
 ### call
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| openPanel | string | 要打开的面板名称，多个用逗号分隔 | null | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| openPanel | string | Panel name to open, multiple separated by commas | null | No |
 
-#### 返回值
+#### Return Value
 Promise&lt;void&gt;
 
-#### 使用示例
-```tsx title="刷新并指定打开面板"
+#### Usage Example
+```tsx title="Refresh and Specify Open Panel"
 const collapseComponent = app.getElement("components.Collapse");
 
-// 打开指定面板
+// Open specified panel
 await collapseComponent.call("basicInfo");
 
-// 在非手风琴模式下打开多个面板
+// Open multiple panels in non-accordion mode
 await collapseComponent.call("basicInfo,detailInfo");
 
-// 重置为默认状态
+// Reset to default state
 await collapseComponent.call();
 ```
 
 ### setShowPanel
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| showPanelNames | string | 要显示的面板名称，多个用逗号分隔 | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| showPanelNames | string | Panel names to show, multiple separated by commas | - | Yes |
 
-#### 返回值
+#### Return Value
 void
 
-#### 使用示例
-```tsx title="动态控制面板显示"
+#### Usage Example
+```tsx title="Dynamically Control Panel Display"
 const collapseComponent = app.getElement("components.Collapse");
 
-// 只显示指定面板
+// Show only specified panels
 collapseComponent.setShowPanel("basicInfo,detailInfo");
 
-// 显示单个面板
+// Show single panel
 collapseComponent.setShowPanel("basicInfo");
 ```
 
 ### changeCollapse
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| key | string | 切换的面板标识 | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| key | string | Panel identifier to toggle | - | Yes |
 
-#### 返回值
+#### Return Value
 void
 
-#### 使用示例
-```tsx title="切换面板状态"
+#### Usage Example
+```tsx title="Toggle Panel State"
 const collapseComponent = app.getElement("components.Collapse");
 
-// 切换面板（内部方法，通常由用户交互触发）
+// Toggle panel (internal method, usually triggered by user interaction)
 collapseComponent.changeCollapse("basicInfo");
 ```
 
 ### publishEvent
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| name | string | 事件名称 | - | 是 |
-| ex | Record&lt;string, any&gt; | 附加数据 | - | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| name | string | Event name | - | Yes |
+| ex | Record&lt;string, any&gt; | Additional data | - | No |
 
-#### 返回值
+#### Return Value
 Promise&lt;void&gt;
 
-#### 使用示例
-```tsx title="发布自定义事件"
+#### Usage Example
+```tsx title="Publish Custom Event"
 const collapseComponent = app.getElement("components.Collapse");
 
-// 发布自定义事件
+// Publish custom event
 await collapseComponent.publishEvent("customEvent", { data: "test" });
 ```
 
 ### subscribeEvent
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| name | string | 事件名称 | - | 是 |
-| evtCb | (data: any) => Promise&lt;void&gt; &#124; void | 事件回调函数 | - | 是 |
-| unSubscribeExist | boolean | 是否取消已存在的订阅 | true | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| name | string | Event name | - | Yes |
+| evtCb | (data: any) => Promise&lt;void&gt; &#124; void | Event callback function | - | Yes |
+| unSubscribeExist | boolean | Whether to cancel existing subscriptions | true | No |
 
-#### 返回值
-string - 订阅句柄ID
+#### Return Value
+string - Subscription handle ID
 
-#### 使用示例
-```tsx title="订阅事件"
+#### Usage Example
+```tsx title="Subscribe to Event"
 const collapseComponent = app.getElement("components.Collapse");
 
-// 订阅面板打开事件
+// Subscribe to panel open event
 const handleId = collapseComponent.subscribeEvent("openBasicInfo", async (data) => {
-    console.log("基础信息面板被打开", data);
+    console.log("Basic information panel opened", data);
 });
 ```
 
 ### unSubscribeEvent
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| id | string | 订阅句柄ID | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| id | string | Subscription handle ID | - | Yes |
 
-#### 返回值
+#### Return Value
 boolean
 
-#### 使用示例
-```tsx title="取消订阅"
+#### Usage Example
+```tsx title="Unsubscribe"
 const collapseComponent = app.getElement("components.Collapse");
 
-// 取消事件订阅
+// Cancel event subscription
 collapseComponent.unSubscribeEvent(handleId);
 ```
 
 ### setConfig
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| next | Partial&lt;CollapseComponentConfig&gt; | 新的配置对象 | - | 是 |
-| clean | boolean | 是否完全替换配置 | false | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| next | Partial&lt;CollapseComponentConfig&gt; | New configuration object | - | Yes |
+| clean | boolean | Whether to completely replace configuration | false | No |
 
-#### 返回值
+#### Return Value
 void
 
-#### 使用示例
-```tsx title="动态更新配置"
+#### Usage Example
+```tsx title="Dynamically Update Configuration"
 const collapseComponent = app.getElement("components.Collapse");
 
-// 更新配置
+// Update configuration
 collapseComponent.setConfig({
     accordion: true,
     layoutList: [
         {
             name: "newPanel",
-            title: "新面板",
+            title: "New Panel",
             layout: [],
             headerColor: "rgba(0, 123, 255, 1)"
         }
@@ -237,118 +237,118 @@ collapseComponent.setConfig({
 ```
 
 ### destroy
-#### 返回值
+#### Return Value
 void
 
-#### 使用示例
-```tsx title="销毁组件"
+#### Usage Example
+```tsx title="Destroy Component"
 const collapseComponent = app.getElement("components.Collapse");
 
-// 销毁组件，清理所有事件订阅和变量引用
+// Destroy component, clean up all event subscriptions and variable references
 collapseComponent.destroy();
 ```
 
 ### runCode
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| code | string | 要执行的代码字符串 | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| code | string | Code string to execute | - | Yes |
 
-#### 返回值
-any - 代码执行结果
+#### Return Value
+any - Code execution result
 
-#### 使用示例
-```tsx title="执行代码"
+#### Usage Example
+```tsx title="Execute Code"
 const collapseComponent = app.getElement("components.Collapse");
 
-// 在页面上下文中执行代码
+// Execute code in page context
 const result = collapseComponent.runCode("this.userName");
 ```
 
 ### getPermConfig
-#### 返回值
-Record&lt;string, any&gt; &#124; undefined - 权限配置对象
+#### Return Value
+Record&lt;string, any&gt; &#124; undefined - Permission configuration object
 
-#### 使用示例
-```tsx title="获取权限配置"
+#### Usage Example
+```tsx title="Get Permission Configuration"
 const collapseComponent = app.getElement("components.Collapse");
 
-// 获取组件权限配置
+// Get component permission configuration
 const permConfig = collapseComponent.getPermConfig();
 if (permConfig?.visible === false) {
-    // 组件不可见
+    // Component is not visible
 }
 ```
 
-## 属性
+## Properties
 ### name
-组件实例名称，用于在页面中唯一标识该组件。
+Component instance name, used to uniquely identify the component in the page.
 
 ### title
-组件显示标题，在可视化编辑器中显示的名称。
+Component display title, name shown in the visual editor.
 
 ### fullName
-组件完整名称，包含元素类型的完整路径标识，值为 `"components.Collapse"`。
+Component full name, containing the complete path identifier of the element type, value is `"components.Collapse"`.
 
 ### type
-组件类型标识，表示该组件的Type元素类型，值为 `"components.Collapse"`。
+Component type identifier, representing the component's Type element type, value is `"components.Collapse"`.
 
 ### showTitle
-是否显示组件标题，控制在页面中是否展示组件的标题。
+Whether to show component title, controls whether to display the component title in the page.
 
 ### app
-关联的应用实例，提供对当前运行时应用的访问。
+Associated application instance, provides access to the current runtime application.
 
 ### page
-关联的页面实例，提供对当前页面的访问。
+Associated page instance, provides access to the current page.
 
 ### config
-组件配置对象，类型为 `CollapseComponentConfig`，包含完整的组件配置信息。
+Component configuration object, type is `CollapseComponentConfig`, containing complete component configuration information.
 
-```tsx title="获取组件配置"
+```tsx title="Get Component Configuration"
 const collapseComponent = app.getElement("components.Collapse");
 const config = collapseComponent.config;
-console.log("手风琴模式:", config.accordion);
-console.log("幽灵模式:", config.ghost);
-console.log("面板配置:", config.layoutList);
+console.log("Accordion mode:", config.accordion);
+console.log("Ghost mode:", config.ghost);
+console.log("Panel configuration:", config.layoutList);
 ```
 
 ### showPanelList
-当前显示的面板列表，类型为 `ICollapseProps[]`。该属性包含所有当前可见的面板配置信息。
+Current visible panel list, type is `ICollapseProps[]`. This property contains all current visible panel configuration information.
 
-```tsx title="获取显示面板信息"
+```tsx title="Get Visible Panel Information"
 const collapseComponent = app.getElement("components.Collapse");
 const visiblePanels = collapseComponent.showPanelList;
-console.log("可见面板数量:", visiblePanels.length);
-console.log("面板信息:", visiblePanels.map(panel => panel.title));
+console.log("Number of visible panels:", visiblePanels.length);
+console.log("Panel information:", visiblePanels.map(panel => panel.title));
 ```
 
-## 事件
-折叠面板的事件会根据配置的面板动态生成，每个面板对应一个打开事件。
+## Events
+Collapse panel events are dynamically generated based on configured panels, with each panel corresponding to an open event.
 
-### 动态面板事件
-#### 参数详解
-无参数
+### Dynamic Panel Events
+#### Parameter Details
+No parameters
 
-#### 使用示例
-```tsx title="监听面板打开事件"
+#### Usage Example
+```tsx title="Listen to Panel Open Event"
 const collapseComponent = app.getElement("components.Collapse");
 
-// 监听基础信息面板打开
+// Listen to basic information panel open
 collapseComponent.subscribeEvent("openBasicInfo", async () => {
-    console.log("基础信息面板已打开");
+    console.log("Basic information panel opened");
     await loadBasicData();
 });
 ```
 
-## 高级特性
-### 权限控制配置
-折叠面板支持基于权限的面板显示控制。通过权限配置可以控制特定用户角色能够看到的面板。
+## Advanced Features
+### Permission Control Configuration
+Collapse panels support permission-based panel display control. Permission configuration can control which panels specific user roles can see.
 
-```tsx title="权限控制示例"
+```tsx title="Permission Control Example"
 const collapseComponent = app.getElement("components.Collapse");
 
-// 根据用户权限动态设置可见面板
+// Dynamically set visible panels based on user permissions
 const userRole = getCurrentUserRole();
 if (userRole === "admin") {
     collapseComponent.setShowPanel("basicInfo,detailInfo,adminInfo");
@@ -357,21 +357,21 @@ if (userRole === "admin") {
 }
 ```
 
-### 样式自定义
-通过 `headerColor` 属性可以自定义每个面板的头部颜色，实现视觉区分。
+### Style Customization
+Through the `headerColor` property, you can customize the header color of each panel to achieve visual distinction.
 
-```json title="自定义面板样式"
+```json title="Custom Panel Styles"
 {
   "layoutList": [
     {
       "name": "errorPanel",
-      "title": "错误信息",
+      "title": "Error Information",
       "headerColor": "rgba(255, 77, 79, 0.1)",
       "layout": []
     },
     {
       "name": "successPanel", 
-      "title": "成功信息",
+      "title": "Success Information",
       "headerColor": "rgba(82, 196, 26, 0.1)",
       "layout": []
     }
@@ -379,13 +379,13 @@ if (userRole === "admin") {
 }
 ```
 
-### 面板状态管理
-支持状态持久化和动态状态控制，实现面板状态的保存和恢复。
+### Panel State Management
+Supports state persistence and dynamic state control, implementing panel state saving and restoration.
 
-```tsx title="状态持久化"
+```tsx title="State Persistence"
 const collapseComponent = app.getElement("components.Collapse");
 
-// 保存当前状态
+// Save current state
 const saveState = () => {
     const state = {
         activeKey: collapseComponent.activeKey.value,
@@ -394,7 +394,7 @@ const saveState = () => {
     localStorage.setItem("collapseState", JSON.stringify(state));
 };
 
-// 恢复状态  
+// Restore state  
 const restoreState = () => {
     const savedState = localStorage.getItem("collapseState");
     if (savedState) {
@@ -406,25 +406,25 @@ const restoreState = () => {
 };
 ```
 
-### 动态内容加载
-结合事件机制，可以实现面板内容的懒加载，提升页面性能。
+### Dynamic Content Loading
+Combined with event mechanisms, panel content lazy loading can be implemented to improve page performance.
 
-```tsx title="懒加载配置"
+```tsx title="Lazy Loading Configuration"
 const collapseComponent = app.getElement("components.Collapse");
 
-// 监听面板打开事件，实现懒加载
+// Listen to panel open events to implement lazy loading
 collapseComponent.subscribeEvent("openDetailInfo", async () => {
     const detailTable = app.getElement("Table1");
     if (!detailTable.hasData) {
-        // 显示加载状态
+        // Show loading state
         showLoading();
         
-        // 异步加载数据
+        // Asynchronously load data
         const data = await fetchDetailData();
         detailTable.setData(data);
         
-        // 隐藏加载状态
+        // Hide loading state
         hideLoading();
     }
 });
-``` 
+```

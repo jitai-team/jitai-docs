@@ -1,25 +1,25 @@
 ---
 slug: list
 ---
-# 列表
-列表是用于展示模型数据的视图组件，基于分页查询机制实现数据的高效加载和展示。它负责数据的筛选、分页加载和用户交互，支持自定义字段显示、排序规则和各类操作按钮，提供完整的数据列表展示解决方案。
+# List
+List is a view component for displaying model data, implemented based on pagination query mechanism to provide efficient data loading and display. It handles data filtering, pagination loading, and user interaction, supporting custom field display, sorting rules, and various operation buttons, providing a complete data list display solution.
 
-列表元素分层结构为Meta（components.Meta） → Type（components.List） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建列表实例元素。
+The list element has a hierarchical structure of Meta (components.Meta) → Type (components.List) → Instance. Developers can quickly create list instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.ListType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `components.ListType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基础配置示例
-```typescript title="基础列表配置"
+## Quick Start 
+### Basic Configuration Example
+```typescript title="Basic List Configuration"
 {
   "fullName": "components.List",
   "type": "components.List", 
   "name": "CustomerList",
-  "title": "客户列表",
+  "title": "Customer List",
   "config": {
     "requireElements": [
       {
-        "title": "客户数据模型",
+        "title": "Customer Data Model",
         "type": "models.Meta",
         "name": "models.CustomerModel",
         "filter": "",
@@ -42,200 +42,200 @@ slug: list
 }
 ```
 
-### 配置属性说明
-| 属性名 | 类型 | JitAI类型 | 说明 | 示例值 |
+### Configuration Properties
+| Property Name | Type | JitAI Type | Description | Example Value |
 |--------|------|----------|------|---------|
-| requireElements | Array | - | 必需元素配置，指定数据模型 | `[{...}]` |
-| fieldIdList | Array | List | 显示的字段列表 | `["id", "name"]` |
-| defaultRender | Boolean | Checkbox | 是否使用默认渲染 | `true` |
-| title | Array | List | 标题配置 | `[]` |
-| abstract | Array | List | 摘要字段配置 | `["custName"]` |
-| actionBtn | Array | List | 操作按钮配置 | `[{...}]` |
-| toolLeftBtn | Array | List | 左侧工具按钮 | `[{...}]` |
-| toolRightBtn | Array | List | 右侧工具按钮 | `[{...}]` |
-| bottomBtn | Array | List | 底部按钮配置 | `[{...}]` |
-| couldClickRow | Boolean | Checkbox | 是否允许点击行 | `true` |
+| requireElements | Array | - | Required elements configuration, specifies data model | `[{...}]` |
+| fieldIdList | Array | List | List of fields to display | `["id", "name"]` |
+| defaultRender | Boolean | Checkbox | Whether to use default rendering | `true` |
+| title | Array | List | Title configuration | `[]` |
+| abstract | Array | List | Abstract field configuration | `["custName"]` |
+| actionBtn | Array | List | Action button configuration | `[{...}]` |
+| toolLeftBtn | Array | List | Left toolbar buttons | `[{...}]` |
+| toolRightBtn | Array | List | Right toolbar buttons | `[{...}]` |
+| bottomBtn | Array | List | Bottom button configuration | `[{...}]` |
+| couldClickRow | Boolean | Checkbox | Whether to allow row clicking | `true` |
 
-## 变量
+## Variables
 ### displayRowList
-**类型**：`RowList<T>`  
-**说明**：展示多行的数据，只读变量，包含当前页面显示的所有数据行。
+**Type**: `RowList<T>`  
+**Description**: Data for displaying multiple rows, read-only variable, contains all data rows displayed on the current page.
 
-```typescript title="获取展示数据"
-// 获取当前显示的数据列表
+```typescript title="Get Display Data"
+// Get current displayed data list
 const dataList = listComponent.displayRowList.value;
 
-// 获取数据数量
+// Get data count
 const count = listComponent.displayRowList.length;
 
-// 获取第一行数据
+// Get first row data
 const firstRow = listComponent.displayRowList.firstRow;
 ```
 
 ### activeRow
-**类型**：`RowData<T>`  
-**说明**：操作的单行数据，只读变量，通常在点击行事件中设置。
+**Type**: `RowData<T>`  
+**Description**: Single row data for operations, read-only variable, usually set in row click events.
 
-```typescript title="访问当前行数据"
-// 获取当前操作的行数据
+```typescript title="Access Current Row Data"
+// Get current operation row data
 const currentRow = listComponent.activeRow.value;
 
-// 获取行数据的特定字段
+// Get specific field of row data
 const customerName = listComponent.activeRow.custName?.value;
 ```
 
 ### filter
-**类型**：`QFilter`  
-**说明**：筛选条件，只读变量，用于控制数据查询的过滤条件。
+**Type**: `QFilter`  
+**Description**: Filter conditions, read-only variable, used to control data query filter conditions.
 
-```typescript title="使用筛选条件"
-// 通过call方法设置筛选条件
+```typescript title="Use Filter Conditions"
+// Set filter conditions through call method
 await listComponent.call("Q(status='active')");
 
-// 获取当前筛选条件
+// Get current filter conditions
 const currentFilter = listComponent.filter.value;
 ```
 
 ### loading
-**类型**：`Numeric`  
-**说明**：加载状态标识，0表示未加载，1表示正在加载。
+**Type**: `Numeric`  
+**Description**: Loading state identifier, 0 means not loaded, 1 means loading.
 
-```typescript title="监控加载状态"
-// 检查是否正在加载
+```typescript title="Monitor Loading State"
+// Check if currently loading
 const isLoading = listComponent.loading.value === 1;
 ```
 
-## 方法 
+## Methods 
 ### bindApp
-绑定应用实例，通常由框架自动调用。
+Bind application instance, usually called automatically by the framework.
 
-#### 参数详解
-| 参数名 | 类型 | JitAI类型 | 必需 | 说明 | 示例值 |
+#### Parameter Details
+| Parameter Name | Type | JitAI Type | Required | Description | Example Value |
 |--------|------|----------|------|------|---------|
-| app | Object | - | 是 | 应用实例 | `app` |
+| app | Object | - | Yes | Application instance | `app` |
 
-#### 使用示例
-```typescript title="绑定应用实例"
-// 绑定应用实例（通常由框架自动调用）
+#### Usage Example
+```typescript title="Bind Application Instance"
+// Bind application instance (usually called automatically by framework)
 listComponent.bindApp(app);
 ```
 
 ### bindPage
-绑定页面实例，通常由框架自动调用。
+Bind page instance, usually called automatically by the framework.
 
-#### 参数详解
-| 参数名 | 类型 | JitAI类型 | 必需 | 说明 | 示例值 |
+#### Parameter Details
+| Parameter Name | Type | JitAI Type | Required | Description | Example Value |
 |--------|------|----------|------|------|---------|
-| page | Object | - | 是 | 页面实例 | `page` |
+| page | Object | - | Yes | Page instance | `page` |
 
-#### 使用示例
-```typescript title="绑定页面实例"
-// 绑定页面实例（通常由框架自动调用）
+#### Usage Example
+```typescript title="Bind Page Instance"
+// Bind page instance (usually called automatically by framework)
 listComponent.bindPage(page);
 ```
 
 ### call
-刷新列表数据，支持传入新的筛选条件。
+Refresh list data, supports passing new filter conditions.
 
-#### 参数详解
-| 参数名 | 类型 | JitAI类型 | 必需 | 说明 | 示例值 |
+#### Parameter Details
+| Parameter Name | Type | JitAI Type | Required | Description | Example Value |
 |--------|------|----------|------|------|---------|
-| qFilter | String | QFilter | 否 | 筛选条件，Q表达式字符串 | `"Q(status='active')"` |
+| qFilter | String | QFilter | No | Filter conditions, Q expression string | `"Q(status='active')"` |
 
-#### 返回值
-**类型**：`Promise<void>`  
-**说明**：异步方法，无返回值。
+#### Return Value
+**Type**: `Promise<void>`  
+**Description**: Async method, no return value.
 
-#### 使用示例
-```typescript title="刷新列表数据"
-// 无条件刷新
+#### Usage Example
+```typescript title="Refresh List Data"
+// Refresh without conditions
 await listComponent.call();
 
-// 带筛选条件刷新
+// Refresh with filter conditions
 await listComponent.call("Q(status='active')");
 
-// 复合条件筛选
+// Complex condition filtering
 await listComponent.call("Q(createTime__range=('2024-01-01', '2024-12-31')) & Q(status__in=['active', 'pending'])");
 ```
 
 ### destroy
-销毁组件实例，清理所有资源和事件监听。
+Destroy component instance, clean up all resources and event listeners.
 
-#### 使用示例
-```typescript title="销毁组件"
-// 组件销毁时调用，清理资源
+#### Usage Example
+```typescript title="Destroy Component"
+// Called when component is destroyed, clean up resources
 listComponent.destroy();
 ```
 
 ### getDataList
-获取列表数据的内部方法，支持分页和权限过滤。
+Internal method to get list data, supports pagination and permission filtering.
 
-#### 返回值
-**类型**：`Promise<void>`  
-**说明**：异步方法，内部使用，会更新displayRowList变量。
+#### Return Value
+**Type**: `Promise<void>`  
+**Description**: Async method, internal use, will update displayRowList variable.
 
-#### 使用示例
-```typescript title="手动触发数据加载"
-// 通常由框架自动调用，也可手动调用
+#### Usage Example
+```typescript title="Manually Trigger Data Loading"
+// Usually called automatically by framework, can also be called manually
 await listComponent.getDataList();
 ```
 
 ### getPermConfig
-获取组件权限配置。
+Get component permission configuration.
 
-#### 返回值
-**类型**：`Record<string, any> | undefined`  
-**说明**：返回权限配置对象，无权限时返回undefined。
+#### Return Value
+**Type**: `Record<string, any> | undefined`  
+**Description**: Returns permission configuration object, returns undefined when no permissions.
 
-#### 使用示例
-```typescript title="获取权限配置"
-// 获取当前组件的权限配置
+#### Usage Example
+```typescript title="Get Permission Configuration"
+// Get current component's permission configuration
 const permConfig = listComponent.getPermConfig();
 if (permConfig) {
-  console.log('权限配置：', permConfig);
+  console.log('Permission configuration:', permConfig);
 }
 ```
 
 ### publishEvent
-发布组件事件。
+Publish component event.
 
-#### 参数详解
-| 参数名 | 类型 | JitAI类型 | 必需 | 说明 | 示例值 |
+#### Parameter Details
+| Parameter Name | Type | JitAI Type | Required | Description | Example Value |
 |--------|------|----------|------|------|---------|
-| name | String | Stext | 是 | 事件名称 | `"refresh"` |
-| ex | Object | JitDict | 否 | 额外数据 | `{key: "value"}` |
+| name | String | Stext | Yes | Event name | `"refresh"` |
+| ex | Object | JitDict | No | Additional data | `{key: "value"}` |
 
-#### 返回值
-**类型**：`Promise<void>`  
-**说明**：异步方法，无返回值。
+#### Return Value
+**Type**: `Promise<void>`  
+**Description**: Async method, no return value.
 
-#### 使用示例
-```typescript title="发布自定义事件"
-// 发布刷新事件
+#### Usage Example
+```typescript title="Publish Custom Event"
+// Publish refresh event
 await listComponent.publishEvent('refresh');
 
-// 发布带数据的事件
+// Publish event with data
 await listComponent.publishEvent('customEvent', {data: 'test'});
 ```
 
 ### runCode
-在页面上下文中执行代码字符串。
+Execute code string in page context.
 
-#### 参数详解
-| 参数名 | 类型 | JitAI类型 | 必需 | 说明 | 示例值 |
+#### Parameter Details
+| Parameter Name | Type | JitAI Type | Required | Description | Example Value |
 |--------|------|----------|------|------|---------|
-| code | String | Stext | 是 | 要执行的代码字符串 | `"return this.app.name"` |
+| code | String | Stext | Yes | Code string to execute | `"return this.app.name"` |
 
-#### 返回值
-**类型**：`any`  
-**说明**：返回代码执行结果。
+#### Return Value
+**Type**: `any`  
+**Description**: Returns code execution result.
 
-#### 使用示例
-```typescript title="执行动态代码"
-// 执行代码获取应用信息
+#### Usage Example
+```typescript title="Execute Dynamic Code"
+// Execute code to get application information
 const appName = listComponent.runCode('return this.app.name');
 
-// 执行复杂逻辑
+// Execute complex logic
 const result = listComponent.runCode(`
   const data = this.displayRowList.value;
   return data.filter(item => item.status?.value === 'active').length;
@@ -243,245 +243,245 @@ const result = listComponent.runCode(`
 ```
 
 ### setConfig
-设置组件配置。
+Set component configuration.
 
-#### 参数详解
-| 参数名 | 类型 | JitAI类型 | 必需 | 说明 | 示例值 |
+#### Parameter Details
+| Parameter Name | Type | JitAI Type | Required | Description | Example Value |
 |--------|------|----------|------|------|---------|
-| next | Object | JitDict | 是 | 新的配置对象 | `{fieldIdList: [...]}` |
-| clean | Boolean | Checkbox | 否 | 是否完全替换配置 | `false` |
+| next | Object | JitDict | Yes | New configuration object | `{fieldIdList: [...]}` |
+| clean | Boolean | Checkbox | No | Whether to completely replace configuration | `false` |
 
-#### 返回值
-**类型**：`void`  
-**说明**：无返回值。
+#### Return Value
+**Type**: `void`  
+**Description**: No return value.
 
-#### 使用示例
-```typescript title="更新组件配置"
-// 部分更新配置
+#### Usage Example
+```typescript title="Update Component Configuration"
+// Partially update configuration
 listComponent.setConfig({
   fieldIdList: ['id', 'name', 'status']
 });
 
-// 完全替换配置
+// Completely replace configuration
 listComponent.setConfig(newConfig, true);
 ```
 
 ### subscribeEvent
-订阅组件事件。
+Subscribe to component event.
 
-#### 参数详解
-| 参数名 | 类型 | JitAI类型 | 必需 | 说明 | 示例值 |
+#### Parameter Details
+| Parameter Name | Type | JitAI Type | Required | Description | Example Value |
 |--------|------|----------|------|------|---------|
-| name | String | Stext | 是 | 事件名称 | `"clickRow"` |
-| evtCb | Function | - | 是 | 事件回调函数 | `async (data) => {}` |
-| unSubscribeExist | Boolean | Checkbox | 否 | 是否取消已存在的订阅 | `true` |
+| name | String | Stext | Yes | Event name | `"clickRow"` |
+| evtCb | Function | - | Yes | Event callback function | `async (data) => {}` |
+| unSubscribeExist | Boolean | Checkbox | No | Whether to cancel existing subscription | `true` |
 
-#### 返回值
-**类型**：`string`  
-**说明**：返回订阅句柄ID。
+#### Return Value
+**Type**: `string`  
+**Description**: Returns subscription handle ID.
 
-#### 使用示例
-```typescript title="订阅事件"
-// 订阅行点击事件
+#### Usage Example
+```typescript title="Subscribe to Event"
+// Subscribe to row click event
 const handleId = listComponent.subscribeEvent('clickRow', async (data) => {
-  console.log('行被点击', data.activeRow);
+  console.log('Row clicked', data.activeRow);
 });
 ```
 
 ### unSubscribeEvent
-取消订阅组件事件。
+Unsubscribe from component event.
 
-#### 参数详解
-| 参数名 | 类型 | JitAI类型 | 必需 | 说明 | 示例值 |
+#### Parameter Details
+| Parameter Name | Type | JitAI Type | Required | Description | Example Value |
 |--------|------|----------|------|------|---------|
-| id | String | Stext | 是 | 订阅句柄ID | `"handle-123"` |
+| id | String | Stext | Yes | Subscription handle ID | `"handle-123"` |
 
-#### 返回值
-**类型**：`void`  
-**说明**：无返回值。
+#### Return Value
+**Type**: `void`  
+**Description**: No return value.
 
-#### 使用示例
-```typescript title="取消事件订阅"
-// 取消特定订阅
+#### Usage Example
+```typescript title="Unsubscribe from Event"
+// Cancel specific subscription
 listComponent.unSubscribeEvent(handleId);
 ```
 
 ### updateConfig
-更新组件配置并触发刷新。
+Update component configuration and trigger refresh.
 
-#### 参数详解
-| 参数名 | 类型 | JitAI类型 | 必需 | 说明 | 示例值 |
+#### Parameter Details
+| Parameter Name | Type | JitAI Type | Required | Description | Example Value |
 |--------|------|----------|------|------|---------|
-| config | Object | JitDict | 是 | 新的配置对象 | `{fieldIdList: [...]}` |
+| config | Object | JitDict | Yes | New configuration object | `{fieldIdList: [...]}` |
 
-#### 返回值
-**类型**：`void`  
-**说明**：无返回值，会自动触发refresh事件。
+#### Return Value
+**Type**: `void`  
+**Description**: No return value, will automatically trigger refresh event.
 
-#### 使用示例
-```typescript title="更新配置并刷新"
-// 更新配置并自动刷新组件
+#### Usage Example
+```typescript title="Update Configuration and Refresh"
+// Update configuration and automatically refresh component
 listComponent.updateConfig({
   fieldIdList: ['id', 'custName', 'phone'],
   couldClickRow: true
 });
 ```
 
-## 属性
+## Properties
 ### allFieldDict
-**类型**：`Record<string, DataTypeConfig>`  
-**说明**：所有字段的配置字典，只读属性。
+**Type**: `Record<string, DataTypeConfig>`  
+**Description**: Configuration dictionary for all fields, read-only property.
 
-```typescript title="访问字段配置"
-// 获取特定字段配置
+```typescript title="Access Field Configuration"
+// Get specific field configuration
 const nameFieldConfig = listComponent.allFieldDict.custName;
 
-// 遍历所有字段
+// Iterate through all fields
 Object.keys(listComponent.allFieldDict).forEach(fieldName => {
   const fieldConfig = listComponent.allFieldDict[fieldName];
-  console.log(`字段：${fieldName}，标题：${fieldConfig.title}`);
+  console.log(`Field: ${fieldName}, Title: ${fieldConfig.title}`);
 });
 ```
 
 ### app
-**类型**：`App`  
-**说明**：当前应用实例。
+**Type**: `App`  
+**Description**: Current application instance.
 
 ### compType
-**类型**：`COMPONENT_TYPE`  
-**说明**：组件类型枚举。
+**Type**: `COMPONENT_TYPE`  
+**Description**: Component type enumeration.
 
 ### config
-**类型**：`ComponentConfig`  
-**说明**：组件配置对象。
+**Type**: `ComponentConfig`  
+**Description**: Component configuration object.
 
 ### count
-**类型**：`number`  
-**说明**：数据总数，只读属性。
+**Type**: `number`  
+**Description**: Total data count, read-only property.
 
-```typescript title="获取总数信息"
-// 获取数据总数
+```typescript title="Get Total Count Information"
+// Get total data count
 const totalCount = listComponent.count;
 
-// 计算总页数
+// Calculate total pages
 const totalPages = Math.ceil(totalCount / listComponent.pageSize);
 ```
 
 ### ModelClass
-**类型**：`typeof Jit.BaseModel`  
-**说明**：关联的数据模型类，只读属性。
+**Type**: `typeof Jit.BaseModel`  
+**Description**: Associated data model class, read-only property.
 
-```typescript title="访问模型类"
-// 获取模型类
+```typescript title="Access Model Class"
+// Get model class
 const ModelClass = listComponent.ModelClass;
 
-// 通过模型类进行数据操作
+// Perform data operations through model class
 const result = await ModelClass.query();
 ```
 
 ### name
-**类型**：`string`  
-**说明**：组件名称。
+**Type**: `string`  
+**Description**: Component name.
 
 ### page
-**类型**：`BasePage`  
-**说明**：当前页面实例。
+**Type**: `BasePage`  
+**Description**: Current page instance.
 
 ### pageNumber
-**类型**：`number`  
-**说明**：当前页码，从1开始，可读写属性。
+**Type**: `number`  
+**Description**: Current page number, starting from 1, read-write property.
 
-```typescript title="分页控制"
-// 获取当前页码
+```typescript title="Pagination Control"
+// Get current page number
 const currentPage = listComponent.pageNumber;
 
-// 设置页码（通常通过call方法重新加载）
+// Set page number (usually reload through call method)
 listComponent.pageNumber = 2;
 await listComponent.getDataList();
 ```
 
 ### pageSize
-**类型**：`number`  
-**说明**：每页数据量，默认为20，可读写属性。
+**Type**: `number`  
+**Description**: Data count per page, default is 20, read-write property.
 
-```typescript title="设置页面大小"
-// 设置每页显示50条数据
+```typescript title="Set Page Size"
+// Set 50 data items per page
 listComponent.pageSize = 50;
 await listComponent.call();
 ```
 
 ### primaryKey
-**类型**：`string`  
-**说明**：主键字段名，默认为"id"，只读属性。
+**Type**: `string`  
+**Description**: Primary key field name, default is "id", read-only property.
 
-```typescript title="获取主键信息"
-// 获取主键字段名
+```typescript title="Get Primary Key Information"
+// Get primary key field name
 const pkField = listComponent.primaryKey;
 ```
 
 ### showTitle
-**类型**：`boolean`  
-**说明**：是否显示组件标题。
+**Type**: `boolean`  
+**Description**: Whether to show component title.
 
-```typescript title="控制标题显示"
-// 检查是否显示标题
+```typescript title="Control Title Display"
+// Check if title is shown
 if (listComponent.showTitle) {
-  console.log('组件标题：', listComponent.title);
+  console.log('Component title:', listComponent.title);
 }
 ```
 
 ### title
-**类型**：`string`  
-**说明**：组件标题。
+**Type**: `string`  
+**Description**: Component title.
 
 ### type
-**类型**：`string`  
-**说明**：组件类型标识。
+**Type**: `string`  
+**Description**: Component type identifier.
 
-```typescript title="获取组件类型"
-// 获取组件类型
+```typescript title="Get Component Type"
+// Get component type
 const componentType = listComponent.type; // "components.List"
 ```
 
-## 事件
+## Events
 ### clickRow
-**触发时机**：用户点击列表行时触发  
-**数据**：`activeRow` - 被点击的行数据  
-**说明**：当配置中couldClickRow不为false时可用。
+**Trigger**: Triggered when user clicks a list row  
+**Data**: `activeRow` - Data of the clicked row  
+**Description**: Available when couldClickRow in configuration is not false.
 
-```typescript title="监听行点击事件"
-// 订阅行点击事件
+```typescript title="Listen to Row Click Event"
+// Subscribe to row click event
 listComponent.subscribeEvent('clickRow', async (data) => {
   const clickedRow = data.activeRow;
-  console.log('点击的行数据：', clickedRow.value);
+  console.log('Clicked row data:', clickedRow.value);
 });
 ```
 
-### 按钮点击事件
-**触发时机**：用户点击配置的按钮时触发  
-**事件名称**：动态生成，格式为`click{ButtonId}`的驼峰形式  
-**说明**：根据actionBtn、toolLeftBtn、toolRightBtn、bottomBtn配置自动生成。
+### Button Click Events
+**Trigger**: Triggered when user clicks configured buttons  
+**Event Name**: Dynamically generated, format is `click{ButtonId}` in camelCase  
+**Description**: Automatically generated based on actionBtn, toolLeftBtn, toolRightBtn, bottomBtn configuration.
 
-```typescript title="监听按钮点击事件"
-// 假设有一个id为"add"的按钮，事件名为"clickAdd"
+```typescript title="Listen to Button Click Events"
+// Assuming there's a button with id "add", event name is "clickAdd"
 listComponent.subscribeEvent('clickAdd', async () => {
-  console.log('添加按钮被点击');
+  console.log('Add button clicked');
 });
 
-// 假设有一个id为"batch-delete"的按钮，事件名为"clickBatchDelete"  
+// Assuming there's a button with id "batch-delete", event name is "clickBatchDelete"  
 listComponent.subscribeEvent('clickBatchDelete', async () => {
-  console.log('批量删除按钮被点击');
+  console.log('Batch delete button clicked');
 });
 ```
 
 ### refresh
-**触发时机**：数据刷新完成后触发  
-**数据**：无  
-**说明**：在getDataList方法执行完成后自动触发。
+**Trigger**: Triggered after data refresh is completed  
+**Data**: None  
+**Description**: Automatically triggered after getDataList method execution is completed.
 
-```typescript title="监听刷新事件"
-// 订阅刷新事件
+```typescript title="Listen to Refresh Event"
+// Subscribe to refresh event
 listComponent.subscribeEvent('refresh', async () => {
-  console.log('列表数据已刷新');
+  console.log('List data has been refreshed');
 });
 ``` 

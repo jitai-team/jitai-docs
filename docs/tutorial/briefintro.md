@@ -74,6 +74,8 @@ JitAi is a full-stack integrated platform for development, publishing, deploymen
 
 Based on JitAi, application developers can efficiently develop natively AI-integrated systems such as aiERP, aiCRM, aiOA, aiBI, and various other systems; tool developers can easily develop domain-specific AI agents, programming frameworks, and visual development tools.
 
+Related Reading: [AI-Native Enterprise Application Development Paradigm](./ai-native-enterprise-app-dev-paradigm)
+
 ### Development Tools
 
 JitAi visual development tools (also known as Jit IDEApp) are used for visually managing and developing JitAi application elements, and are themselves independent JitAi applications.
@@ -83,6 +85,8 @@ The tool supports visual management, parsing application source code directories
 The tool provides modular free combination/construction, visual development tools and AI development tools that automatically generate high-quality code, making application development extremely low-barrier, high-efficiency, and high-quality. It supports visual/AI-powered construction of various AI Agents, enabling AI agents to be quickly tested, formed, and applied within application systems.
 
 JitAi IDEApp is completely isolated from the application platform, business applications, and programming frameworks, and can be independently extended. Visual development tools can be directly extended within business layer applications without depending on the official IDEApp. Development based on IDEApp features instant saving, compilation, loading, and immediate effect. All element presentation and development follow unified view, add, edit, delete operation patterns that are simple and infinitely extensible.
+
+Related Reading: [Dual-Mode Visual Development Tool - Programming and Orchestration](./programming-orchestration-dual-mode)
 
 ### Development Framework
 
@@ -188,3 +192,4 @@ Traditional development technology has extremely low output efficiency in early 
 
 JitAi technology, with its characteristics of universal standards, ultimate reuse, flexible extension, and efficient development, is suitable for application systems of all scales and complexity levels. Whether for startup projects or large enterprise-level systems, JitAi can help teams continuously maintain development efficiency and system quality, simplify operations, reduce long-term evolution difficulty, and provide robust technical support for complex business scenarios.
 
+Related Reading: [JitAi vs. Mainstream AI Application Platforms](./jitai-comparison)

@@ -1,35 +1,36 @@
 ---
 slug: minio-storage
 ---
-# MinIO存储
-MinIO存储是开源的私有云对象存储服务，基于S3兼容API实现海量非结构化数据的高性能存储管理。它负责文件上传、下载、删除和签名URL生成，支持分布式部署和数据分片，适合需要数据本地化管理的企业私有云环境。
+# MinIO Storage
 
-MinIO存储元素分层结构为Meta（storages.Meta） → Type（storages.MinioType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建MinIO存储实例元素。
+MinIO Storage is an open-source private cloud object storage service, implemented based on S3-compatible API for high-performance storage management of massive unstructured data. It handles file upload, download, delete, and signed URL generation, supports distributed deployment and data sharding, suitable for enterprise private cloud environments requiring data localization management.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的storages.MinioType元素，以实现自己的封装。
+The MinIO Storage element has a hierarchical structure of Meta (storages.Meta) → Type (storages.MinioType) → Instance. Developers can quickly create MinIO storage instance elements through JitAi's visual development tools.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+Of course, developers can also create their own Type elements or modify the official storages.MinioType element provided by JitAi in their own App to implement their own encapsulation.
+
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 storages/
-└── MyMinioStorage/          # 存储元素名称（可自定义）
-    ├── e.json              # 元素配置文件
-    └── MyMinioStorage.json # 业务配置文件（与目录名同名）
+└── MyMinioStorage/          # Storage element name (customizable)
+    ├── e.json              # Element configuration file
+    └── MyMinioStorage.json # Business configuration file (same name as directory)
 ```
 
-#### e.json文件
-```json title="e.json配置示例"
+#### e.json File
+```json title="e.json Configuration Example"
 {
-  "title": "我的MinIO存储",
+  "title": "My MinIO Storage",
   "type": "storages.MinioType",
   "backendBundleEntry": ".",
   "variables": []
 }
 ```
 
-#### 业务配置文件
-```json title="MyMinioStorage.json配置示例"
+#### Business Configuration File
+```json title="MyMinioStorage.json Configuration Example"
 {
   "accessKeyId": "your-access-key",
   "accessKeySecret": "your-secret-key",
@@ -39,69 +40,69 @@ storages/
 }
 ```
 
-#### 调用示例
-```python title="基本使用示例"
-# 获取MinIO存储实例
+#### Usage Example
+```python title="Basic Usage Example"
+# Get MinIO storage instance
 storage = app.getElement("storages.MyMinioStorage")
 
-# 上传文件
+# Upload file
 with open("test.txt", "rb") as file:
     result = storage.uploadByFile("test.txt", file.read(), "text/plain")
-    print(f"上传成功，URL: {result['url']}")
+    print(f"Upload successful, URL: {result['url']}")
 
-# 下载文件
+# Download file
 file_data = storage.download("test.txt")
 
-# 删除文件
+# Delete file
 storage.delete("test.txt")
 ```
 
-## 元素配置
-### e.json配置
-| 属性名 | 类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Property Name | Type | Required | Description |
 |--------|------|------|------|
-| title | string | 是 | 存储元素显示名称 |
-| type | string | 是 | 固定值：storages.MinioType |
-| backendBundleEntry | string | 是 | 固定值："." |
-| variables | array | 否 | 扩展变量配置，通常为空数组 |
+| title | string | Yes | Storage element display name |
+| type | string | Yes | Fixed value: storages.MinioType |
+| backendBundleEntry | string | Yes | Fixed value: "." |
+| variables | array | No | Extended variable configuration, usually empty array |
 
-### 业务配置文件配置
-| 参数名 | 类型 | 必填 | 说明 |
+### Business Configuration File Configuration
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| accessKeyId | string | 是 | MinIO访问密钥ID |
-| accessKeySecret | string | 是 | MinIO访问密钥Secret |
-| endPoint | string | 是 | MinIO服务器地址和端口 |
-| bucketName | string | 是 | 存储桶名称 |
-| scheme | string | 否 | 协议类型，默认"http"，可选"https" |
+| accessKeyId | string | Yes | MinIO access key ID |
+| accessKeySecret | string | Yes | MinIO access key secret |
+| endPoint | string | Yes | MinIO server address and port |
+| bucketName | string | Yes | Bucket name |
+| scheme | string | No | Protocol type, defaults to "http", optional "https" |
 
-## 方法 
+## Methods
 ### uploadByFile
-上传文件到MinIO存储。
+Upload file to MinIO storage.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 文件名称 |
-| data | - | bytes | 是 | 文件二进制数据 |
-| contentType | Stext | str | 否 | 文件MIME类型，默认"application/octet-stream" |
+| name | Stext | str | Yes | File name |
+| data | - | bytes | Yes | File binary data |
+| contentType | Stext | str | No | File MIME type, defaults to "application/octet-stream" |
 
-#### 返回值
-返回包含上传结果的字典，格式：`{"url": "文件访问URL"}`
+#### Return Value
+Returns a dictionary containing upload results, format: `{"url": "file access URL"}`
 
-#### 使用示例
-```python title="文件上传示例"
+#### Usage Example
+```python title="File Upload Example"
 storage = app.getElement("storages.MyMinioStorage")
 
-# 上传文本文件
+# Upload text file
 with open("document.txt", "rb") as file:
     result = storage.uploadByFile(
         name="document.txt",
         data=file.read(),
         contentType="text/plain"
     )
-    print(f"文件URL: {result['url']}")
+    print(f"File URL: {result['url']}")
 
-# 上传图片文件
+# Upload image file
 with open("image.jpg", "rb") as file:
     result = storage.uploadByFile(
         name="image.jpg",
@@ -111,111 +112,111 @@ with open("image.jpg", "rb") as file:
 ```
 
 ### download
-从MinIO存储下载文件。
+Download file from MinIO storage.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 要下载的文件名称 |
+| name | Stext | str | Yes | File name to download |
 
-#### 返回值
-返回文件的二进制数据
+#### Return Value
+Returns file binary data
 
-#### 使用示例
-```python title="文件下载示例"
+#### Usage Example
+```python title="File Download Example"
 storage = app.getElement("storages.MyMinioStorage")
 
-# 下载文件
+# Download file
 file_data = storage.download("document.txt")
 
-# 保存到本地
+# Save to local
 with open("downloaded_document.txt", "wb") as file:
     file.write(file_data)
 ```
 
 ### delete
-删除MinIO存储中的文件。
+Delete file from MinIO storage.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 要删除的文件名称 |
+| name | Stext | str | Yes | File name to delete |
 
-#### 返回值
-删除操作的结果信息
+#### Return Value
+Delete operation result information
 
-#### 使用示例
-```python title="文件删除示例"
+#### Usage Example
+```python title="File Delete Example"
 storage = app.getElement("storages.MyMinioStorage")
 
-# 删除文件
+# Delete file
 result = storage.delete("document.txt")
-print("文件删除成功")
+print("File deleted successfully")
 ```
 
 ### getSignUrl
-生成文件的预签名上传URL。
+Generate pre-signed upload URL for file.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| file | Stext | str | 是 | 文件名称 |
-| contentType | Stext | str | 是 | 文件MIME类型 |
-| expires | Numeric | int | 否 | 签名过期时间（秒），默认300秒 |
+| file | Stext | str | Yes | File name |
+| contentType | Stext | str | Yes | File MIME type |
+| expires | Numeric | int | No | Signature expiration time (seconds), defaults to 300 seconds |
 
-#### 返回值
-返回包含预签名URL和内容类型的字典
+#### Return Value
+Returns a dictionary containing pre-signed URL and content type
 
-#### 使用示例
-```python title="预签名URL生成示例"
+#### Usage Example
+```python title="Pre-signed URL Generation Example"
 storage = app.getElement("storages.MyMinioStorage")
 
-# 生成预签名URL
+# Generate pre-signed URL
 sign_result = storage.getSignUrl(
     file="upload.pdf",
     contentType="application/pdf",
-    expires=600  # 10分钟过期
+    expires=600  # 10 minutes expiration
 )
-print(f"预签名URL: {sign_result['url']}")
+print(f"Pre-signed URL: {sign_result['url']}")
 ```
 
 ### getObject
-获取MinIO存储中的文件对象。
+Get file object from MinIO storage.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 文件名称 |
+| name | Stext | str | Yes | File name |
 
-#### 返回值
-返回文件对象
+#### Return Value
+Returns file object
 
-#### 使用示例
-```python title="获取文件对象示例"
+#### Usage Example
+```python title="Get File Object Example"
 storage = app.getElement("storages.MyMinioStorage")
 
-# 获取文件对象
+# Get file object
 file_obj = storage.getObject("document.txt")
 ```
 
-## 属性
+## Attributes
 ### config
-存储配置信息，包含accessKeyId、accessKeySecret、endPoint、bucketName、scheme等配置参数。
+Storage configuration information, containing configuration parameters such as accessKeyId, accessKeySecret, endPoint, bucketName, scheme.
 
 ### name
-存储实例的fullName标识。
+FullName identifier of storage instance.
 
 ### client
-MinIO客户端实例，用于与MinIO服务器通信。
+MinIO client instance, used for communicating with MinIO server.
 
 ### SIGN_EXPIRES
-默认签名过期时间，值为300秒。
+Default signature expiration time, value is 300 seconds.
 
-## 高级特性
-### 环境变量支持
-MinIO存储支持在配置文件中使用环境变量，实现不同环境的配置隔离：
+## Advanced Features
+### Environment Variable Support
+MinIO Storage supports using environment variables in configuration files to achieve configuration isolation for different environments:
 
-```json title="环境变量配置示例"
+```json title="Environment Variable Configuration Example"
 {
   "accessKeyId": "${MINIO_ACCESS_KEY}",
   "accessKeySecret": "${MINIO_SECRET_KEY}",
@@ -225,30 +226,30 @@ MinIO存储支持在配置文件中使用环境变量，实现不同环境的配
 }
 ```
 
-### 异常处理
-MinIO存储提供专门的异常处理机制，自动处理HTTP错误和存储操作异常：
+### Exception Handling
+MinIO Storage provides specialized exception handling mechanism, automatically handling HTTP errors and storage operation exceptions:
 
-```python title="异常处理示例"
+```python title="Exception Handling Example"
 storage = app.getElement("storages.MyMinioStorage")
 
 try:
     result = storage.uploadByFile("test.txt", data, "text/plain")
 except Exception as e:
-    # 自动处理404文件不存在、网络错误等异常
-    print(f"存储操作失败: {e}")
+    # Automatically handle 404 file not found, network errors, etc.
+    print(f"Storage operation failed: {e}")
 ```
 
-### 批量文件操作
-```python title="批量操作示例"
+### Batch File Operations
+```python title="Batch Operations Example"
 storage = app.getElement("storages.MyMinioStorage")
 
-# 批量上传文件
+# Batch upload files
 files = ["file1.txt", "file2.txt", "file3.txt"]
 for filename in files:
     with open(filename, "rb") as file:
         storage.uploadByFile(filename, file.read(), "text/plain")
 
-# 批量删除文件
+# Batch delete files
 for filename in files:
     storage.delete(filename)
-``` 
+```

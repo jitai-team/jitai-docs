@@ -1,6 +1,7 @@
 ---
 sidebar_position: 15
 slug: ai-assistant-example
+draft: true
 ---
 
 # Example Demo {#example-demo}

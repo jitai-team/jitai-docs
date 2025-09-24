@@ -1,40 +1,41 @@
 ---
 slug: microsoft-teams-login
+title: Microsoft Teams Login
 ---
-# Microsoft Teams 登录
-Microsoft Teams 登录（MicrosoftTeamsType）是基于 Microsoft Teams 应用的登录认证元素，支持PC端和移动端的OAuth授权登录。它负责处理Microsoft Teams OAuth授权流程、用户身份验证和账号绑定，同时支持与Microsoft Teams企业组织架构的无缝集成和用户信息同步。
+# Microsoft Teams Login {#microsoft-teams-login}
+Microsoft Teams Login (MicrosoftTeamsType) is a login authentication element based on Microsoft Teams applications, supporting OAuth authorization login for PC and mobile platforms. It handles Microsoft Teams OAuth authorization flows, user authentication, and account binding, while supporting seamless integration with Microsoft Teams enterprise organization structure and user information synchronization.
 
-Microsoft Teams 登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.MicrosoftTeamsType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建Microsoft Teams登录实例元素。
+The Microsoft Teams login element hierarchy is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.MicrosoftTeamsType) → Instance. Developers can quickly create Microsoft Teams login instance elements through JitAi's visual development tools.
 
-**支持的登录方式**：
-- PC端OAuth授权登录 - 跳转到Microsoft Teams登录页面完成OAuth授权登录
-- 移动端OAuth授权登录 - 在移动设备上调用Microsoft Teams应用完成授权登录
-- 企业内部单点登录 - 与Azure Active Directory集成的单点登录
+**Supported Login Methods**:
+- PC OAuth Authorization Login - Redirect to Microsoft Teams login page to complete OAuth authorization login
+- Mobile OAuth Authorization Login - Call Microsoft Teams application on mobile devices to complete authorization login
+- Enterprise Internal Single Sign-On - Single sign-on integrated with Azure Active Directory
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的auths.loginTypes.MicrosoftTeamsType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or override the auths.loginTypes.MicrosoftTeamsType element officially provided by JitAi in their own applications to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+## Quick Start 
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 your_app/
 └── auths/
     └── loginTypes/
-        └── testTeamsLogin/           # 自定义实例名称
-            ├── e.json                # 元素定义文件
-            └── testTeamsLogin.json   # Microsoft Teams应用配置文件
+        └── testTeamsLogin/           # Custom instance name
+            ├── e.json                # Element definition file
+            └── testTeamsLogin.json   # Microsoft Teams application configuration file
 ```
 
-#### e.json文件
-```json title="元素定义文件"
+#### e.json File
+```json title="Element Definition File"
 {
-  "title": "Microsoft Teams登录",
+  "title": "Microsoft Teams Login",
   "type": "auths.loginTypes.MicrosoftTeamsType"
 }
 ```
 
-#### 业务配置文件
-```json title="testTeamsLogin.json - Microsoft Teams应用配置"
+#### Business Configuration File
+```json title="testTeamsLogin.json - Microsoft Teams Application Configuration"
 {
   "authConfig": {
     "corpId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
@@ -44,95 +45,95 @@ your_app/
 }
 ```
 
-#### 调用示例
-```python title="获取和使用认证元素"
-# 获取认证元素实例
+#### Usage Example
+```python title="Getting and Using Authentication Element"
+# Get authentication element instance
 auth_element = app.getElement("auths.loginTypes.testTeamsLogin")
 
-# 获取登录配置（用于前端生成OAuth链接）
+# Get login configuration (used for frontend to generate OAuth links)
 login_config = auth_element.getLoginConfig()
 print(login_config)  # {"clientId": "your_client_id"}
 
-# 获取Microsoft Teams客户端
+# Get Microsoft Teams client
 client = auth_element.getClient()
 
-# 通过服务获取认证元素
+# Get authentication element through service
 auth_svc = app.getElement("auths.loginTypes.MicrosoftTeamsType.services.MicrosoftTeamsAuthSvc")
 auth = auth_svc.getAuthByCorpId("your_corp_id")
 ```
 
-## 元素配置
-### e.json配置
-| 配置项 | 类型 | 必填 | 说明 |
-|-------|------|------|------|
-| title | string | 是 | 元素显示名称 |
-| type | string | 是 | 固定值：auths.loginTypes.MicrosoftTeamsType |
+## Element Configuration
+### e.json Configuration
+| Configuration Item | Type | Required | Description |
+|---------------------|------|----------|-------------|
+| title | string | Yes | Element display name |
+| type | string | Yes | Fixed value: auths.loginTypes.MicrosoftTeamsType |
 
-### 业务配置文件配置
-配置文件名格式为`{实例名称}.json`，包含Microsoft Teams应用的认证信息：
+### Business Configuration File Configuration
+The configuration file name format is `{instance_name}.json`, containing Microsoft Teams application authentication information:
 
-| 配置项 | 类型 | 必填 | 说明 |
-|-------|------|------|------|
-| authConfig.corpId | string | 是 | Azure租户ID，格式为UUID |
-| authConfig.clientId | string | 是 | Azure应用程序客户端ID，格式为UUID |
-| authConfig.clientSecret | string | 是 | Azure应用程序客户端密钥 |
+| Configuration Item | Type | Required | Description |
+|---------------------|------|----------|-------------|
+| authConfig.corpId | string | Yes | Azure tenant ID in UUID format |
+| authConfig.clientId | string | Yes | Azure application client ID in UUID format |
+| authConfig.clientSecret | string | Yes | Azure application client secret |
 
-**配置获取方式**：
-1. 登录Azure管理门户（https://portal.azure.com/）
-2. 进入"Azure Active Directory" → "应用注册"
-3. 创建新的应用注册或选择现有应用
-4. 在应用详情页获取应用程序（客户端）ID
-5. 在"证书和密码"中创建客户端密码
-6. 在目录概述中获取租户ID
+**Configuration Retrieval Steps**:
+1. Log in to Azure Management Portal (https://portal.azure.com/)
+2. Navigate to "Azure Active Directory" → "App registrations"
+3. Create a new app registration or select an existing app
+4. Get the Application (client) ID from the app details page
+5. Create a client secret in "Certificates & secrets"
+6. Get the tenant ID from the directory overview
 
-## 方法 
+## Methods 
 ### getLoginConfig
-获取登录配置信息，主要用于前端生成OAuth授权链接。
+Get login configuration information, mainly used for frontend to generate OAuth authorization links.
 
-#### 返回值
-| 类型 | 对应原生类型 | 说明 |
-|-----|-------------|------|
-| JitDict | dict | 包含clientId和其他配置的字典 |
+#### Return Value
+| Type | Native Type | Description |
+|------|-------------|-------------|
+| JitDict | dict | Dictionary containing clientId and other configurations |
 
-#### 使用示例
-```python title="获取登录配置"
+#### Usage Example
+```python title="Get Login Configuration"
 auth_element = app.getElement("auths.loginTypes.testTeamsLogin")
 config = auth_element.getLoginConfig()
-# 返回: {"clientId": "12345678-1234-1234-1234-123456789012"}
+# Returns: {"clientId": "12345678-1234-1234-1234-123456789012"}
 ```
 
 ### getClient
-获取Microsoft Graph API客户端实例，用于调用Microsoft Teams相关接口。
+Get Microsoft Graph API client instance for calling Microsoft Teams related interfaces.
 
-#### 返回值
-| 类型 | 对应原生类型 | 说明 |
-|-----|-------------|------|
-| MicrosoftTeamsClient | object | Microsoft Teams客户端对象 |
+#### Return Value
+| Type | Native Type | Description |
+|------|-------------|-------------|
+| MicrosoftTeamsClient | object | Microsoft Teams client object |
 
-#### 使用示例
-```python title="获取Microsoft Teams客户端"
+#### Usage Example
+```python title="Get Microsoft Teams Client"
 auth_element = app.getElement("auths.loginTypes.testTeamsLogin")
 client = auth_element.getClient()
-# 可用于调用Microsoft Graph API
+# Can be used to call Microsoft Graph API
 ```
 
-### loginByOAuth (服务方法)
-Microsoft Teams OAuth登录，通过授权码完成用户登录。
+### loginByOAuth (Service Method)
+Microsoft Teams OAuth login, complete user login through authorization code.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|-------|------|-------------|------|------|
-| corpId | Stext | str | 是 | Azure租户ID |
-| authCode | Stext | str | 是 | OAuth授权码 |
-| platform | Stext | str | 是 | 登录平台：web/mobile |
+#### Parameter Details
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| corpId | Stext | str | Yes | Azure tenant ID |
+| authCode | Stext | str | Yes | OAuth authorization code |
+| platform | Stext | str | Yes | Login platform: web/mobile |
 
-#### 返回值
-| 类型 | 对应原生类型 | 说明 |
-|-----|-------------|------|
-| JitDict | dict | 登录结果信息 |
+#### Return Value
+| Type | Native Type | Description |
+|------|-------------|-------------|
+| JitDict | dict | Login result information |
 
-#### 使用示例
-```python title="OAuth登录"
+#### Usage Example
+```python title="OAuth Login"
 auth_svc = app.getElement("auths.loginTypes.MicrosoftTeamsType.services.MicrosoftTeamsAuthSvc")
 result = auth_svc.loginByOAuth(
     corpId="12345678-1234-1234-1234-123456789012",
@@ -141,90 +142,90 @@ result = auth_svc.loginByOAuth(
 )
 ```
 
-### getAuthByCorpId (服务方法)
-通过Azure租户ID获取对应的认证元素实例。
+### getAuthByCorpId (Service Method)
+Get the corresponding authentication element instance through Azure tenant ID.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|-------|------|-------------|------|------|
-| corpId | Stext | str | 是 | Azure租户ID |
+#### Parameter Details
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| corpId | Stext | str | Yes | Azure tenant ID |
 
-#### 返回值
-| 类型 | 对应原生类型 | 说明 |
-|-----|-------------|------|
-| Element | object | 认证元素实例，未找到时返回None |
+#### Return Value
+| Type | Native Type | Description |
+|------|-------------|-------------|
+| Element | object | Authentication element instance, returns None if not found |
 
-#### 使用示例
-```python title="通过租户ID获取认证元素"
+#### Usage Example
+```python title="Get Authentication Element by Tenant ID"
 auth_svc = app.getElement("auths.loginTypes.MicrosoftTeamsType.services.MicrosoftTeamsAuthSvc")
 auth_element = auth_svc.getAuthByCorpId("12345678-1234-1234-1234-123456789012")
 if auth_element:
-    print(f"找到认证元素: {auth_element.fullName}")
+    print(f"Found authentication element: {auth_element.fullName}")
 ```
 
-### getUserProfile (服务方法)
-获取Microsoft Teams用户的详细信息。
+### getUserProfile (Service Method)
+Get detailed information of Microsoft Teams users.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|-------|------|-------------|------|------|
-| accessToken | Stext | str | 是 | 访问令牌 |
+#### Parameter Details
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| accessToken | Stext | str | Yes | Access token |
 
-#### 返回值
-| 类型 | 对应原生类型 | 说明 |
-|-----|-------------|------|
-| JitDict | dict | 用户信息字典 |
+#### Return Value
+| Type | Native Type | Description |
+|------|-------------|-------------|
+| JitDict | dict | User information dictionary |
 
-#### 使用示例
-```python title="获取用户信息"
+#### Usage Example
+```python title="Get User Information"
 auth_svc = app.getElement("auths.loginTypes.MicrosoftTeamsType.services.MicrosoftTeamsAuthSvc")
 user_info = auth_svc.getUserProfile(access_token)
-print(f"用户信息: {user_info}")
+print(f"User information: {user_info}")
 ```
 
-## 属性
+## Properties
 ### authConfig
-Microsoft Teams应用配置信息，包含corpId、clientId、clientSecret等参数。
+Microsoft Teams application configuration information, containing parameters such as corpId, clientId, clientSecret.
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
-| corpId | str | Azure租户ID |
-| clientId | str | Azure应用程序客户端ID |
-| clientSecret | str | Azure应用程序客户端密钥 |
+| Property | Type | Description |
+|----------|------|-------------|
+| corpId | str | Azure tenant ID |
+| clientId | str | Azure application client ID |
+| clientSecret | str | Azure application client secret |
 
 ### authType
-认证类型标识，固定值为Microsoft Teams登录的类型枚举。
+Authentication type identifier, fixed value as the type enumeration for Microsoft Teams login.
 
 ### authModelElemName
-关联的认证数据模型元素名称，指向MicrosoftTeamsAuthModel。
+Associated authentication data model element name, pointing to MicrosoftTeamsAuthModel.
 
-## 高级特性
-### 数据模型扩展
-MicrosoftTeamsAuthModel存储Microsoft Teams用户认证信息，包含用户ID映射、Teams用户信息等字段：
+## Advanced Features
+### Data Model Extension
+MicrosoftTeamsAuthModel stores Microsoft Teams user authentication information, containing fields such as user ID mapping and Teams user information:
 
-```python title="认证数据模型字段"
+```python title="Authentication Data Model Fields"
 class MicrosoftTeamsAuthModel(NormalModel):
-    id = datatypes.AutoInt(name="id", title="主键ID", primaryKey=True)
-    userId = datatypes.Stext(name="userId", title="用户ID")
-    thirdCorpId = datatypes.Stext(name="thirdCorpId", title="Azure租户ID")
-    thirdUserId = datatypes.Stext(name="thirdUserId", title="Microsoft用户ID")
-    objectId = datatypes.Stext(name="objectId", title="Azure AD对象ID")
-    userPrincipalName = datatypes.Stext(name="userPrincipalName", title="用户主体名称")
-    displayName = datatypes.Stext(name="displayName", title="显示名称")
-    mail = datatypes.Stext(name="mail", title="邮箱")
-    jobTitle = datatypes.Stext(name="jobTitle", title="职务")
-    department = datatypes.Stext(name="department", title="部门")
-    photo = datatypes.Stext(name="photo", title="头像")
-    createTime = datatypes.Datetime(name="createTime", title="创建时间")
+    id = datatypes.AutoInt(name="id", title="Primary Key ID", primaryKey=True)
+    userId = datatypes.Stext(name="userId", title="User ID")
+    thirdCorpId = datatypes.Stext(name="thirdCorpId", title="Azure Tenant ID")
+    thirdUserId = datatypes.Stext(name="thirdUserId", title="Microsoft User ID")
+    objectId = datatypes.Stext(name="objectId", title="Azure AD Object ID")
+    userPrincipalName = datatypes.Stext(name="userPrincipalName", title="User Principal Name")
+    displayName = datatypes.Stext(name="displayName", title="Display Name")
+    mail = datatypes.Stext(name="mail", title="Email")
+    jobTitle = datatypes.Stext(name="jobTitle", title="Job Title")
+    department = datatypes.Stext(name="department", title="Department")
+    photo = datatypes.Stext(name="photo", title="Avatar")
+    createTime = datatypes.Datetime(name="createTime", title="Creation Time")
 ```
 
-### 前端集成
-前端需要实现OAuth授权流程：
+### Frontend Integration
+Frontend needs to implement OAuth authorization flow:
 
-```typescript title="前端登录实现"
-// PC端OAuth登录
+```typescript title="Frontend Login Implementation"
+// PC OAuth login
 const loginWithTeams = async () => {
-    const config = await getLoginConfig(); // 获取配置
+    const config = await getLoginConfig(); // Get configuration
     const authUrl = `https://login.microsoftonline.com/${config.corpId}/oauth2/v2.0/authorize?` +
         `client_id=${config.clientId}&` +
         `response_type=code&` +
@@ -232,11 +233,11 @@ const loginWithTeams = async () => {
         `scope=openid profile User.Read&` +
         `state=${generateState()}`;
     
-    // 跳转到Microsoft登录页面
+    // Redirect to Microsoft login page
     window.location.href = authUrl;
 };
 
-// 处理OAuth回调
+// Handle OAuth callback
 const handleOAuthCallback = async (code: string, state: string) => {
     try {
         const result = await authSvc.loginByOAuth({
@@ -246,48 +247,48 @@ const handleOAuthCallback = async (code: string, state: string) => {
         });
         
         if (result.success) {
-            // 登录成功，跳转到主页
+            // Login successful, redirect to dashboard
             window.location.href = '/dashboard';
         }
     } catch (error) {
-        console.error('登录失败:', error);
+        console.error('Login failed:', error);
     }
 };
 ```
 
-### 权限配置
-在Azure管理后台配置应用权限：
+### Permission Configuration
+Configure application permissions in Azure management console:
 
-```text title="所需API权限"
-Microsoft Graph API 权限:
-- User.Read (委托权限) - 读取用户基本信息
-- User.ReadBasic.All (委托权限) - 读取所有用户基本信息  
-- Directory.Read.All (应用程序权限) - 读取目录数据
-- Group.Read.All (应用程序权限) - 读取所有组信息
+```text title="Required API Permissions"
+Microsoft Graph API Permissions:
+- User.Read (Delegated permission) - Read user basic information
+- User.ReadBasic.All (Delegated permission) - Read all users' basic information  
+- Directory.Read.All (Application permission) - Read directory data
+- Group.Read.All (Application permission) - Read all group information
 ```
 
-### 错误处理
-常见错误情况及处理方式：
+### Error Handling
+Common error situations and handling methods:
 
-```python title="错误处理示例"
+```python title="Error Handling Example"
 try:
     auth_element = auth_svc.getAuthByCorpId(corpId)
     if not auth_element:
-        raise Exception("未找到对应的Microsoft Teams认证配置")
+        raise Exception("Microsoft Teams authentication configuration not found")
     
     result = auth_svc.loginByOAuth(corpId, authCode, platform)
     if not result.get('success'):
-        raise Exception(result.get('message', '登录失败'))
+        raise Exception(result.get('message', 'Login failed'))
         
 except Exception as e:
-    # 记录错误日志并返回友好提示
-    logger.error(f"Microsoft Teams登录失败: {str(e)}")
-    return {"success": False, "message": "登录失败，请重试"}
+    # Log error and return friendly message
+    logger.error(f"Microsoft Teams login failed: {str(e)}")
+    return {"success": False, "message": "Login failed, please try again"}
 ```
 
-**常见错误类型**：
-- 应用配置错误：检查clientId、clientSecret等配置
-- 租户ID不匹配：确认用户租户与配置的corpId一致
-- 授权码过期：OAuth授权码有效期10分钟，需重新获取
-- 权限不足：确保应用已获得必要的Microsoft Graph API权限
-- 网络连接问题：确保能访问Microsoft Graph API服务
+**Common Error Types**:
+- Application configuration error: Check clientId, clientSecret and other configurations
+- Tenant ID mismatch: Confirm user tenant matches configured corpId
+- Authorization code expired: OAuth authorization code valid for 10 minutes, need to obtain new one
+- Insufficient permissions: Ensure application has obtained necessary Microsoft Graph API permissions
+- Network connection issues: Ensure access to Microsoft Graph API services

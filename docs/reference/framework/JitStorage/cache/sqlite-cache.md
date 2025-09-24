@@ -1,17 +1,17 @@
 ---
 slug: sqlite-cache
 ---
-# SQLite缓存
-SQLite缓存是JitStorage框架提供的轻量级文件缓存解决方案，基于diskcache库和SQLite数据库实现高性能的键值对缓存服务。它负责提供零配置部署、跨平台兼容和SQL查询支持，无需额外的数据库服务器即可实现完整的缓存功能。
+# SQLite Cache
+SQLite cache is a lightweight file caching solution provided by the JitStorage framework, implementing high-performance key-value cache services based on diskcache library and SQLite database. It provides zero-configuration deployment, cross-platform compatibility, and SQL query support, enabling complete caching functionality without additional database servers.
 
-SQLite缓存元素分层结构为Meta（caches.Meta） → Type（caches.SqliteType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建SQLite缓存实例元素。
+The hierarchical structure of SQLite cache elements is Meta (caches.Meta) → Type (caches.SqliteType) → Instance. Developers can quickly create SQLite cache instance elements through JitAi's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的caches.SqliteType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `caches.SqliteType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 myapp/
 └── caches/
     └── DefaultCache/
@@ -19,272 +19,272 @@ myapp/
         └── DefaultCache.json
 ```
 
-#### e.json文件
-```json title="元素声明文件"
+#### e.json File
+```json title="Element Declaration File"
 {
   "backendBundleEntry": ".",
-  "title": "默认缓存",
+  "title": "Default Cache",
   "type": "caches.SqliteType"
 }
 ```
 
-## 方法接口 {#methods}
+## Method Interfaces {#methods}
 
-### 标准缓存操作
-提供标准的缓存读写和管理方法。
+### Standard Cache Operations
+Provides standard cache read/write and management methods.
 
-#### 业务配置文件
+#### Business Configuration File
 ```json title="DefaultCache.json"
 {
   "directory": "appData/caches/DefaultCache/sqlite.db"
 }
 ```
 
-#### 调用示例
-```python title="基本使用示例"
-# 获取缓存实例
+#### Usage Example
+```python title="Basic Usage Example"
+# Get cache instance
 cache = app.getElement('caches.DefaultCache')
 
-# 写入缓存
+# Write to cache
 cache.set('user:123', 'John Doe', 3600)
 
-# 读取缓存
+# Read from cache
 user_name = cache.get('user:123')
 
-# 删除缓存
+# Delete cache
 cache.delete('user:123')
 ```
 
-## 元素配置
-### e.json配置
-| 属性 | 类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Property | Type | Required | Description |
 |------|------|------|------|
-| backendBundleEntry | str | 是 | 后端入口路径，固定为"." |
-| title | str | 是 | 缓存元素的显示标题 |
-| type | str | 是 | 固定为"caches.SqliteType" |
+| backendBundleEntry | str | Yes | Backend entry path, fixed as "." |
+| title | str | Yes | Display title of cache element |
+| type | str | Yes | Fixed as "caches.SqliteType" |
 
-### 业务配置文件配置
-| 属性 | 类型 | 必填 | 说明 |
+### Business Configuration File
+| Property | Type | Required | Description |
 |------|------|------|------|
-| directory | str | 是 | SQLite数据库文件的存储路径，支持相对路径和绝对路径 |
+| directory | str | Yes | Storage path for SQLite database file, supports relative and absolute paths |
 
-**路径规则**：
-- 相对路径：相对于应用根目录，如 `appData/caches/cache.db`
-- 绝对路径：使用完整文件系统路径，如 `/var/cache/myapp/cache.db`
+**Path Rules**:
+- Relative path: Relative to application root directory, e.g., `appData/caches/cache.db`
+- Absolute path: Use complete file system path, e.g., `/var/cache/myapp/cache.db`
 
-## 方法 
+## Methods
 ### get
-从缓存中获取字符串值。
+Get string value from cache.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 缓存键名 |
+| name | Stext | str | Yes | Cache key name |
 
-#### 返回值
-str - 缓存的字符串值，不存在时返回None
+#### Return Value
+str - Cached string value, returns None if not exists
 
-#### 使用示例
-```python title="获取缓存值"
+#### Usage Example
+```python title="Get Cache Value"
 cache = app.getElement('caches.DefaultCache')
 value = cache.get('config:theme')
 if value:
-    print(f"当前主题: {value}")
+    print(f"Current theme: {value}")
 ```
 
 ### set
-写入数据到缓存中，支持字符串、数字、列表、字典等多种数据类型。
+Write data to cache, supporting strings, numbers, lists, dictionaries, and other data types.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 缓存键名 |
-| string | - | str/list/dict | 是 | 缓存值，自动序列化复杂数据类型 |
-| ts | Numeric | int | 否 | 过期时间（秒），None表示永不过期 |
+| name | Stext | str | Yes | Cache key name |
+| string | - | str/list/dict | Yes | Cache value, automatically serializes complex data types |
+| ts | Numeric | int | No | Expiration time (seconds), None means never expires |
 
-#### 返回值
-bool - 操作成功返回True，失败返回False
+#### Return Value
+bool - Returns True on success, False on failure
 
-#### 使用示例
-```python title="设置不同类型的缓存值"
+#### Usage Example
+```python title="Set Different Types of Cache Values"
 cache = app.getElement('caches.DefaultCache')
 
-# 字符串缓存
+# String cache
 cache.set('user:name', 'Alice', 3600)
 
-# 字典缓存
+# Dictionary cache
 user_data = {'id': 123, 'name': 'Alice', 'role': 'admin'}
 cache.set('user:data:123', user_data, 7200)
 
-# 列表缓存
+# List cache
 cache.set('recent:orders', [1001, 1002, 1003], 1800)
 ```
 
 ### delete
-删除指定的缓存项。
+Delete specified cache item.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 要删除的缓存键名 |
+| name | Stext | str | Yes | Cache key name to delete |
 
-#### 返回值
-bool - 删除成功返回True，键不存在也返回True
+#### Return Value
+bool - Returns True on successful deletion, also returns True if key doesn't exist
 
-#### 使用示例
-```python title="删除缓存"
+#### Usage Example
+```python title="Delete Cache"
 cache = app.getElement('caches.DefaultCache')
 success = cache.delete('temp:session:abc123')
-print(f"删除操作: {'成功' if success else '失败'}")
+print(f"Delete operation: {'Success' if success else 'Failed'}")
 ```
 
 ### expire
-更新缓存项的过期时间。
+Update cache item expiration time.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 缓存键名 |
-| ts | Numeric | int | 是 | 新的过期时间（秒） |
+| name | Stext | str | Yes | Cache key name |
+| ts | Numeric | int | Yes | New expiration time (seconds) |
 
-#### 返回值
-bool - 更新成功返回True，键不存在返回False
+#### Return Value
+bool - Returns True on success, False if key doesn't exist
 
-#### 使用示例
-```python title="延长缓存时间"
+#### Usage Example
+```python title="Extend Cache Time"
 cache = app.getElement('caches.DefaultCache')
-# 将缓存延长到1小时后过期
+# Extend cache to expire after 1 hour
 cache.expire('session:user123', 3600)
 ```
 
 ### exists
-检查缓存键是否存在。
+Check if cache key exists.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 要检查的缓存键名 |
+| name | Stext | str | Yes | Cache key name to check |
 
-#### 返回值
-bool - 存在返回True，不存在返回False
+#### Return Value
+bool - Returns True if exists, False if not
 
-#### 使用示例
-```python title="检查缓存存在性"
+#### Usage Example
+```python title="Check Cache Existence"
 cache = app.getElement('caches.DefaultCache')
 if cache.exists('user:permission:123'):
     permissions = cache.get('user:permission:123')
 else:
-    # 从数据库重新加载权限数据
+    # Reload permission data from database
     permissions = load_user_permissions(123)
     cache.set('user:permission:123', permissions, 1800)
 ```
 
 ### incr
-原子性地增加数值类型的缓存值。
+Atomically increment numeric type cache value.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 缓存键名 |
-| amount | Numeric | int | 否 | 增加的数值，默认为1 |
+| name | Stext | str | Yes | Cache key name |
+| amount | Numeric | int | No | Increment value, defaults to 1 |
 
-#### 返回值
-int - 增加后的新值
+#### Return Value
+int - New value after increment
 
-#### 使用示例
-```python title="计数器操作"
+#### Usage Example
+```python title="Counter Operations"
 cache = app.getElement('caches.DefaultCache')
 
-# 页面访问计数
+# Page view counting
 views = cache.incr('page:views:home')
-print(f"首页访问次数: {views}")
+print(f"Home page views: {views}")
 
-# 批量增加
+# Batch increment
 cache.incr('api:calls:today', 10)
 ```
 
 ### keys
-获取匹配指定模式的所有缓存键。
+Get all cache keys matching specified pattern.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| pattern | Stext | str | 否 | 匹配模式，支持通配符，默认"*" |
+| pattern | Stext | str | No | Match pattern, supports wildcards, defaults to "*" |
 
-#### 返回值
-generator - 匹配的键名生成器
+#### Return Value
+generator - Generator of matching key names
 
-#### 使用示例
-```python title="批量操作缓存键"
+#### Usage Example
+```python title="Batch Operations on Cache Keys"
 cache = app.getElement('caches.DefaultCache')
 
-# 获取所有用户缓存键
+# Get all user cache keys
 user_keys = list(cache.keys('user:*'))
-print(f"用户缓存数量: {len(user_keys)}")
+print(f"User cache count: {len(user_keys)}")
 
-# 清理临时缓存
+# Clean up temporary cache
 temp_keys = cache.keys('temp:*')
 for key in temp_keys:
     cache.delete(key)
 ```
 
 ### getNumeric
-获取数值类型的缓存值。
+Get numeric type cache value.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 缓存键名 |
+| name | Stext | str | Yes | Cache key name |
 
-#### 返回值
-int - 数值结果，不存在时返回0
+#### Return Value
+int - Numeric result, returns 0 if not exists
 
-#### 使用示例
-```python title="获取数值缓存"
+#### Usage Example
+```python title="Get Numeric Cache"
 cache = app.getElement('caches.DefaultCache')
 count = cache.getNumeric('daily:login:count')
-print(f"今日登录人数: {count}")
+print(f"Today's login count: {count}")
 ```
 
 ### setNumeric
-设置数值类型的缓存值。
+Set numeric type cache value.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 缓存键名 |
-| n | Numeric | int | 否 | 数值，默认为0 |
-| ts | Numeric | int | 否 | 过期时间（秒） |
+| name | Stext | str | Yes | Cache key name |
+| n | Numeric | int | No | Numeric value, defaults to 0 |
+| ts | Numeric | int | No | Expiration time (seconds) |
 
-#### 返回值
-bool - 设置成功返回True
+#### Return Value
+bool - Returns True on success
 
-#### 使用示例
-```python title="设置数值缓存"
+#### Usage Example
+```python title="Set Numeric Cache"
 cache = app.getElement('caches.DefaultCache')
-cache.setNumeric('system:status', 1, 300)  # 5分钟后过期
+cache.setNumeric('system:status', 1, 300)  # Expires in 5 minutes
 ```
 
-## 属性
-暂无
+## Properties
+None currently.
 
-## 高级特性
-### 键名前缀机制
-SQLite缓存自动为所有键名添加应用ID前缀，确保不同应用间的缓存隔离。
+## Advanced Features
+### Key Name Prefix Mechanism
+SQLite cache automatically adds application ID prefix to all key names, ensuring cache isolation between different applications.
 
-```python title="键名前缀示例"
-# 实际存储的键名格式: {appId}:{name}
+```python title="Key Name Prefix Example"
+# Actual stored key name format: {appId}:{name}
 cache = app.getElement('caches.DefaultCache')
-cache.set('user:123', 'data')  # 实际存储为 "myapp:user:123"
+cache.set('user:123', 'data')  # Actually stored as "myapp:user:123"
 ```
 
-### 数据序列化支持
-自动处理复杂数据类型的序列化和反序列化。
+### Data Serialization Support
+Automatically handles serialization and deserialization of complex data types.
 
-```python title="复杂数据类型缓存"
+```python title="Complex Data Type Caching"
 cache = app.getElement('caches.DefaultCache')
 
-# 嵌套数据结构
+# Nested data structure
 complex_data = {
     'users': [
         {'id': 1, 'name': 'Alice', 'roles': ['admin', 'user']},
@@ -297,20 +297,20 @@ complex_data = {
 }
 
 cache.set('report:users', complex_data, 3600)
-retrieved_data = cache.get('report:users')  # 自动反序列化为原始数据结构
+retrieved_data = cache.get('report:users')  # Automatically deserialized to original data structure
 ```
 
-### 缓存路径自动管理
-系统会自动创建缓存目录并初始化SQLite数据库文件。
+### Automatic Cache Path Management
+System automatically creates cache directories and initializes SQLite database files.
 
-```python title="多环境缓存配置"
-# 开发环境
+```python title="Multi-environment Cache Configuration"
+# Development environment
 {
     "directory": "appData/caches/dev/cache.db"
 }
 
-# 生产环境
+# Production environment
 {
     "directory": "/var/cache/myapp/prod.db"
 }
-``` 
+```

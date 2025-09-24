@@ -4,7 +4,7 @@
   "className": "red",
   "link": {
     "type": "generated-index",
-    "title": "Portals",
+    "slug": "reference/framework/JitWeb/portals",
     "description": "Portal management APIs for creating and managing application portals, navigation structures, and portal configurations."
   }
 } 

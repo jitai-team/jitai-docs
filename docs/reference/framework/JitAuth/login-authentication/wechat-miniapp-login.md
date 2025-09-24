@@ -1,35 +1,35 @@
 ---
 slug: wechat-miniapp-login
 ---
-# 微信小程序登录
-微信小程序登录是基于微信官方授权机制的认证方式，负责小程序授权登录、用户身份验证和账号绑定管理。它支持自动获取openId/unionId等微信用户标识、绑定码机制新用户注册、Session密钥安全管理和账号绑定/解绑操作，与微信小程序生态深度集成。
+# WeChat Mini Program Login
+WeChat Mini Program login is an authentication method based on WeChat official authorization mechanism, responsible for Mini Program authorization login, user identity authentication, and account binding management. It supports automatic acquisition of WeChat user identifiers like openId/unionId, binding code mechanism for new user registration, Session key security management, and account binding/unbinding operations, with deep integration into the WeChat Mini Program ecosystem.
 
-微信小程序登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.WeChatMiniType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建微信小程序登录实例元素。
+The hierarchical structure of WeChat Mini Program login elements is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.WeChatMiniType) → Instance. Developers can quickly create WeChat Mini Program login instance elements through JitAi's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的auths.loginTypes.WeChatMiniType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `auths.loginTypes.WeChatMiniType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
-myWeChatMiniLogin/                    # 实例元素名称
-├── e.json                           # 元素声明文件
-└── myWeChatMiniLogin.json           # 业务配置文件
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
+myWeChatMiniLogin/                    # Instance element name
+├── e.json                           # Element declaration file
+└── myWeChatMiniLogin.json           # Business configuration file
 ```
 
-#### e.json文件
-```json title="e.json配置示例"
+#### e.json File
+```json title="e.json Configuration Example"
 {
   "type": "auths.loginTypes.WeChatMiniType",
-  "title": "微信小程序登录",
+  "title": "WeChat Mini Program Login",
   "allowRegister": 1,
   "backendBundleEntry": ".",
   "frontBundleEntry": "./myWeChatMiniLogin.json"
 }
 ```
 
-#### 业务配置文件
-```json title="微信小程序认证配置"
+#### Business Configuration File
+```json title="WeChat Mini Program Authentication Configuration"
 {
   "authConfig": {
     "appId": "your_mini_program_app_id",
@@ -38,139 +38,139 @@ myWeChatMiniLogin/                    # 实例元素名称
 }
 ```
 
-#### 调用示例
-```python title="基础调用示例"
-# 获取实例
+#### Usage Example
+```python title="Basic Usage Example"
+# Get instance
 wechat_auth = app.getElement("auths.loginTypes.myWeChatMiniLogin")
 
-# 小程序登录
+# Mini Program login
 result = wechat_auth.getLoginCode("wx_code_from_miniprogram")
 ```
 
-## 元素配置
-### e.json配置
-| 配置项 | 类型 | 对应原生类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Configuration Item | Type | Corresponding Native Type | Required | Description |
 |-------|------|-------------|------|------|
-| type | Stext | str | 是 | 固定值：auths.loginTypes.WeChatMiniType |
-| title | Stext | str | 是 | 登录方式显示名称 |
-| allowRegister | Numeric | int | 否 | 是否允许新用户注册，1：允许，0：不允许，默认0 |
-| backendBundleEntry | Stext | str | 是 | 固定值："." |
-| frontBundleEntry | Stext | str | 是 | 业务配置文件路径 |
+| type | Stext | str | Yes | Fixed value: auths.loginTypes.WeChatMiniType |
+| title | Stext | str | Yes | Login method display name |
+| allowRegister | Numeric | int | No | Whether to allow new user registration, 1: allow, 0: not allow, default 0 |
+| backendBundleEntry | Stext | str | Yes | Fixed value: "." |
+| frontBundleEntry | Stext | str | Yes | Business configuration file path |
 
-### 业务配置文件配置
-| 配置项 | 类型 | 对应原生类型 | 必填 | 说明 |
+### Business Configuration File
+| Configuration Item | Type | Corresponding Native Type | Required | Description |
 |-------|------|-------------|------|------|
-| authConfig.appId | Stext | str | 是 | 微信小程序AppID |
-| authConfig.appSecret | Stext | str | 是 | 微信小程序AppSecret |
+| authConfig.appId | Stext | str | Yes | WeChat Mini Program AppID |
+| authConfig.appSecret | Stext | str | Yes | WeChat Mini Program AppSecret |
 
-## 方法 
+## Methods
 ### getLoginCode
-处理微信小程序授权登录，根据用户注册状态返回不同结果。
+Handle WeChat Mini Program authorization login, return different results based on user registration status.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |-------|------|-------------|------|------|
-| code | Stext | str | 是 | 微信小程序wx.login()获取的临时授权码 |
+| code | Stext | str | Yes | Temporary authorization code obtained from WeChat Mini Program wx.login() |
 
-#### 返回值
-- 已注册用户：`JitDict` 类型，包含loginCode和corpList
-- 未注册用户（allowRegister=1）：`JitDict` 类型，包含bindCode（5分钟有效期）
+#### Return Value
+- Registered user: `JitDict` type, containing loginCode and corpList
+- Unregistered user (allowRegister=1): `JitDict` type, containing bindCode (valid for 5 minutes)
 
-#### 使用示例
-```python title="登录授权处理"
+#### Usage Example
+```python title="Login Authorization Handling"
 result = wechat_auth.getLoginCode("wx_mini_code")
 
 if "loginCode" in result:
-    # 已注册用户
+    # Registered user
     login_code = result["loginCode"]
 elif "bindCode" in result:
-    # 新用户，需要注册
+    # New user, needs registration
     bind_code = result["bindCode"]
 ```
 
 ### register
-使用绑定码完成新用户注册流程。
+Complete new user registration process using binding code.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |-------|------|-------------|------|------|
-| bindCode | Stext | str | 是 | getLoginCode返回的绑定码 |
+| bindCode | Stext | str | Yes | Binding code returned by getLoginCode |
 
-#### 返回值
-- `RowData` 类型：新创建的用户对象
+#### Return Value
+- `RowData` type: Newly created user object
 
-#### 使用示例
-```python title="新用户注册"
+#### Usage Example
+```python title="New User Registration"
 user = wechat_auth.register("bind_code_from_getLoginCode")
-print(f"用户注册成功：{user.userId.value}")
+print(f"User registration successful: {user.userId.value}")
 ```
 
 ### bind
-绑定现有用户账号与微信小程序。
+Bind existing user account with WeChat Mini Program.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |-------|------|-------------|------|------|
-| userId | Numeric | int | 是 | 要绑定的用户ID |
-| code | Stext | str | 是 | 微信小程序授权码 |
+| userId | Numeric | int | Yes | User ID to bind |
+| code | Stext | str | Yes | WeChat Mini Program authorization code |
 
-#### 返回值
-- `JitDict` 类型：操作结果字典
+#### Return Value
+- `JitDict` type: Operation result dictionary
 
-#### 使用示例
-```python title="账号绑定"
+#### Usage Example
+```python title="Account Binding"
 result = wechat_auth.bind(123, "wx_mini_code")
 ```
 
 ### unbind
-解除用户账号与微信小程序的绑定关系。
+Unbind user account from WeChat Mini Program.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |-------|------|-------------|------|------|
-| userId | Numeric | int | 是 | 要解绑的用户ID |
+| userId | Numeric | int | Yes | User ID to unbind |
 
-#### 返回值
-- `JitDict` 类型：操作结果字典
+#### Return Value
+- `JitDict` type: Operation result dictionary
 
-#### 使用示例
-```python title="账号解绑"
+#### Usage Example
+```python title="Account Unbinding"
 result = wechat_auth.unbind(123)
 ```
 
-## 属性
+## Properties
 ### allowRegister
-- **类型**：Numeric (int)
-- **说明**：控制是否允许新用户注册，1：允许，0：不允许
+- **Type**: Numeric (int)
+- **Description**: Controls whether to allow new user registration, 1: allow, 0: not allow
 
 ### authConfig
-- **类型**：JitDict (dict)
-- **说明**：微信小程序认证配置，包含appId和appSecret
+- **Type**: JitDict (dict)
+- **Description**: WeChat Mini Program authentication configuration, containing appId and appSecret
 
-## 高级特性
-### 完整注册流程
-当allowRegister=1时，新用户可通过绑定码机制完成注册，该流程包含授权检查、绑定码生成和用户创建等步骤。
+## Advanced Features
+### Complete Registration Process
+When allowRegister=1, new users can complete registration through binding code mechanism, which includes authorization check, binding code generation, and user creation steps.
 
-```python title="新用户完整注册流程"
+```python title="Complete New User Registration Process"
 wechat_auth = app.getElement("auths.loginTypes.myWeChatMiniLogin")
 
-# 尝试登录获取绑定码
+# Try login to get binding code
 login_result = wechat_auth.getLoginCode("wx_mini_code")
 
 if "bindCode" in login_result:
-    # 使用绑定码完成注册
+    # Complete registration using binding code
     bind_code = login_result["bindCode"]
     new_user = wechat_auth.register(bind_code)
-    print(f"注册成功，用户ID：{new_user.userId.value}")
+    print(f"Registration successful, User ID: {new_user.userId.value}")
 ```
 
-### 账号绑定管理
-支持将微信小程序与现有用户账号进行绑定和解绑操作，便于用户账号体系整合。
+### Account Binding Management
+Supports binding and unbinding WeChat Mini Program with existing user accounts, facilitating user account system integration.
 
-```python title="账号绑定管理"
-# 绑定现有账号
+```python title="Account Binding Management"
+# Bind existing account
 bind_result = wechat_auth.bind(user_id, "wx_mini_code")
 
-# 需要时解绑账号
+# Unbind account when needed
 unbind_result = wechat_auth.unbind(user_id)
-``` 
+```

@@ -1,28 +1,28 @@
 ---
 slug: account-password-login
 ---
-# 账号密码登录
-账号密码登录是极态平台提供的基础登录认证方式，支持用户名密码验证、图形验证码防护和密码加密存储等功能。它负责用户身份认证、账号绑定管理和登录安全防护，适用于企业内部应用和需要传统认证方式的场景。
+# Account Password Login
+Account password login is a basic login authentication method provided by the JitAi platform, supporting username-password verification, graphic captcha protection, and encrypted password storage. It handles user identity authentication, account binding management, and login security protection, suitable for internal enterprise applications and scenarios requiring traditional authentication methods.
 
-账号密码登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.PasswordType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建账号密码登录实例元素。
+The hierarchical structure of account password login elements is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.PasswordType) → Instance. Developers can quickly create account password login instance elements through JitAi's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的auths.loginTypes.PasswordType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `auths.loginTypes.PasswordType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 auths/
 └── loginTypes/
     └── MyPasswordAuth/
-        ├── e.json              # 元素配置文件
-        └── Config.json         # 认证配置文件
+        ├── e.json              # Element configuration file
+        └── Config.json         # Authentication configuration file
 ```
 
-#### e.json文件
-```json title="元素配置"
+#### e.json File
+```json title="Element Configuration"
 {
-    "title": "账号密码登录",
+    "title": "Account Password Login",
     "type": "auths.loginTypes.PasswordType",
     "default": 1,
     "allowRegister": 1,
@@ -31,8 +31,8 @@ auths/
 }
 ```
 
-#### 业务配置文件
-```json title="Config.json认证配置"
+#### Business Configuration File
+```json title="Config.json Authentication Configuration"
 {
     "authConfig": {
         "salt": "your_custom_salt_32_chars_long"
@@ -47,66 +47,66 @@ auths/
 }
 ```
 
-#### 调用示例
-```python title="基本使用"
-# 获取认证实例
+#### Usage Example
+```python title="Basic Usage"
+# Get authentication instance
 auth = app.getElement("auths.loginTypes.MyPasswordAuth")
 
-# 生成验证码
+# Generate captcha
 captcha = auth.generateCaptcha()
 
-# 用户登录
+# User login
 result = auth.getLoginCode(
     username="admin",
-    password="e10adc3949ba59abbe56e057f20f883e",  # 前端MD5加密后的密码
+    password="e10adc3949ba59abbe56e057f20f883e",  # Frontend MD5 encrypted password
     captcha="A2B3",
     token=captcha["token"]
 )
 ```
 
-## 元素配置
-### e.json配置
-| 配置项 | 类型 | 说明 | 默认值 |
+## Element Configuration
+### e.json Configuration
+| Configuration Item | Type | Description | Default Value |
 |--------|------|------|--------|
-| title | string | 登录方式显示名称 | - |
-| type | string | 必须为"auths.loginTypes.PasswordType" | - |
-| default | int | 是否为默认登录方式 (1=是, 0=否) | 0 |
-| allowRegister | int | 是否允许注册 (1=允许, 0=不允许) | 0 |
-| backendBundleEntry | string | 后端入口路径 | "." |
-| frontBundleEntry | string | 前端配置文件路径 | - |
+| title | string | Login method display name | - |
+| type | string | Must be "auths.loginTypes.PasswordType" | - |
+| default | int | Whether it's the default login method (1=yes, 0=no) | 0 |
+| allowRegister | int | Whether to allow registration (1=allow, 0=not allow) | 0 |
+| backendBundleEntry | string | Backend entry path | "." |
+| frontBundleEntry | string | Frontend configuration file path | - |
 
-### 业务配置文件配置
-| 配置项 | 类型 | 说明 | 默认值 |
+### Business Configuration File
+| Configuration Item | Type | Description | Default Value |
 |--------|------|------|--------|
-| authConfig.salt | string | 密码加密盐值（32位字符） | 自动生成 |
-| isActive | boolean | 是否启用该登录方式 | true |
-| limit.minLength | int | 密码最小长度 | 6 |
-| limit.maxLength | int | 密码最大长度 | 20 |
-| limit.requireUppercase | boolean | 是否要求大写字母 | false |
-| limit.requireNumber | boolean | 是否要求数字 | false |
-| limit.requireSpecialChar | boolean | 是否要求特殊字符 | false |
+| authConfig.salt | string | Password encryption salt (32 characters) | Auto-generated |
+| isActive | boolean | Whether to enable this login method | true |
+| limit.minLength | int | Minimum password length | 6 |
+| limit.maxLength | int | Maximum password length | 20 |
+| limit.requireUppercase | boolean | Whether to require uppercase letters | false |
+| limit.requireNumber | boolean | Whether to require numbers | false |
+| limit.requireSpecialChar | boolean | Whether to require special characters | false |
 
-## 方法 
+## Methods
 ### getLoginCode
-用户登录验证，返回登录凭证和用户信息。
+User login verification, returns login credentials and user information.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| username | Stext | str | 是 | 用户名 |
-| password | Stext | str | 是 | 密码（前端MD5加密后） |
-| captcha | Stext | str | 是 | 验证码内容 |
-| token | Stext | str | 是 | 验证码token |
+| username | Stext | str | Yes | Username |
+| password | Stext | str | Yes | Password (frontend MD5 encrypted) |
+| captcha | Stext | str | Yes | Captcha content |
+| token | Stext | str | Yes | Captcha token |
 
-#### 返回值
-| 字段名 | 类型 | 说明 |
+#### Return Value
+| Field Name | Type | Description |
 |--------|------|------|
-| loginCode | string | 登录凭证 |
-| corpList | list | 组织列表 |
-| userId | string | 用户ID |
+| loginCode | string | Login credentials |
+| corpList | list | Organization list |
+| userId | string | User ID |
 
-#### 使用示例
-```python title="用户登录"
+#### Usage Example
+```python title="User Login"
 try:
     result = auth.getLoginCode(
         username="admin",
@@ -114,45 +114,45 @@ try:
         captcha="A2B3",
         token="abc123def456"
     )
-    print(f"登录成功，用户ID: {result['userId']}")
+    print(f"Login successful, User ID: {result['userId']}")
 except Exception as e:
-    print(f"登录失败: {e}")
+    print(f"Login failed: {e}")
 ```
 
 ### generateCaptcha
-生成图形验证码，返回验证码token和图片数据。
+Generate graphic captcha, returns captcha token and image data.
 
-#### 参数详解
-无参数
+#### Parameter Details
+No parameters
 
-#### 返回值
-| 字段名 | 类型 | 说明 |
+#### Return Value
+| Field Name | Type | Description |
 |--------|------|------|
-| token | string | 验证码token（5分钟有效） |
-| img | string | base64编码的验证码图片 |
+| token | string | Captcha token (valid for 5 minutes) |
+| img | string | Base64 encoded captcha image |
 
-#### 使用示例
-```python title="生成验证码"
+#### Usage Example
+```python title="Generate Captcha"
 captcha = auth.generateCaptcha()
-print(f"验证码Token: {captcha['token']}")
-# 将captcha['img']返回给前端显示
+print(f"Captcha Token: {captcha['token']}")
+# Return captcha['img'] to frontend for display
 ```
 
 ### bind
-为用户绑定账号密码认证方式。
+Bind account password authentication method for user.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| userId | Stext | str | 是 | 用户ID |
-| username | Stext | str | 是 | 用户名 |
-| password | Stext | str | 是 | 密码（前端MD5加密后） |
+| userId | Stext | str | Yes | User ID |
+| username | Stext | str | Yes | Username |
+| password | Stext | str | Yes | Password (frontend MD5 encrypted) |
 
-#### 返回值
-操作结果字典
+#### Return Value
+Operation result dictionary
 
-#### 使用示例
-```python title="绑定账号"
+#### Usage Example
+```python title="Bind Account"
 result = auth.bind(
     userId="user123",
     username="newuser", 
@@ -161,20 +161,20 @@ result = auth.bind(
 ```
 
 ### updatePassword
-修改用户密码。
+Modify user password.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| userId | Stext | str | 是 | 用户ID |
-| oldPassword | Stext | str | 是 | 原密码（前端MD5加密后） |
-| newPassword | Stext | str | 是 | 新密码（前端MD5加密后） |
+| userId | Stext | str | Yes | User ID |
+| oldPassword | Stext | str | Yes | Old password (frontend MD5 encrypted) |
+| newPassword | Stext | str | Yes | New password (frontend MD5 encrypted) |
 
-#### 返回值
-操作结果字典
+#### Return Value
+Operation result dictionary
 
-#### 使用示例
-```python title="修改密码"
+#### Usage Example
+```python title="Modify Password"
 result = auth.updatePassword(
     userId="user123",
     oldPassword="e10adc3949ba59abbe56e057f20f883e",
@@ -183,75 +183,75 @@ result = auth.updatePassword(
 ```
 
 ### checkCaptcha
-校验验证码是否正确。
+Verify if captcha is correct.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| token | Stext | str | 是 | 验证码token |
-| code | Stext | str | 是 | 验证码内容 |
+| token | Stext | str | Yes | Captcha token |
+| code | Stext | str | Yes | Captcha content |
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |------|------|
-| bool | True表示验证通过，False表示验证失败 |
+| bool | True means verification passed, False means verification failed |
 
-#### 使用示例
-```python title="验证码校验"
+#### Usage Example
+```python title="Captcha Verification"
 is_valid = auth.checkCaptcha("abc123def456", "A2B3")
 if is_valid:
-    print("验证码正确")
+    print("Captcha is correct")
 else:
-    print("验证码错误")
+    print("Captcha is incorrect")
 ```
 
 ### unbind
-为用户解绑账号密码认证方式。
+Unbind account password authentication method for user.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| userId | Stext | str | 是 | 用户ID |
+| userId | Stext | str | Yes | User ID |
 
-#### 返回值
-操作结果字典
+#### Return Value
+Operation result dictionary
 
-#### 使用示例
-```python title="解绑账号"
+#### Usage Example
+```python title="Unbind Account"
 result = auth.unbind(userId="user123")
 ```
 
 ### updateUsername
-修改用户名。
+Modify username.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| userId | Stext | str | 是 | 用户ID |
-| username | Stext | str | 是 | 新用户名 |
+| userId | Stext | str | Yes | User ID |
+| username | Stext | str | Yes | New username |
 
-#### 返回值
-操作结果字典
+#### Return Value
+Operation result dictionary
 
-#### 使用示例
-```python title="修改用户名"
+#### Usage Example
+```python title="Modify Username"
 result = auth.updateUsername(
     userId="user123",
     username="newusername"
 )
 ```
 
-## 属性
-| 属性名 | 类型 | 说明 |
+## Properties
+| Property Name | Type | Description |
 |--------|------|------|
-| authType | string | 认证类型标识 |
-| authModelElemName | string | 认证模型元素名称 |
+| authType | string | Authentication type identifier |
+| authModelElemName | string | Authentication model element name |
 
-## 高级特性
-### 密码强度策略
-配置密码复杂度要求提高安全性。
+## Advanced Features
+### Password Strength Policy
+Configure password complexity requirements to improve security.
 
-```json title="强密码策略配置"
+```json title="Strong Password Policy Configuration"
 {
     "limit": {
         "minLength": 8,
@@ -264,31 +264,31 @@ result = auth.updateUsername(
 }
 ```
 
-### 密码加密管理
-自定义盐值和批量密码刷新功能。
+### Password Encryption Management
+Custom salt value and batch password refresh functionality.
 
-```python title="密码管理功能"
-# 加密密码（用于导入导出）
+```python title="Password Management Features"
+# Encrypt password (for import/export)
 encrypted = auth.encryptPassword("user_md5_password")
 
-# 刷新数据库中所有密码（升级时使用）
+# Refresh all passwords in database (used during upgrades)
 auth.refreshDbPassword()
 ```
 
-### 错误处理
-常见错误码处理示例。
+### Error Handling
+Common error code handling examples.
 
-```python title="错误处理"
+```python title="Error Handling"
 try:
     result = auth.getLoginCode(username, password, captcha, token)
 except Exception as e:
     error_msg = str(e)
     if "USER_AUTH_MISS" in error_msg:
-        return {"error": "用户不存在"}
+        return {"error": "User does not exist"}
     elif "PASSWORD_ERROR" in error_msg:
-        return {"error": "密码错误"}
+        return {"error": "Incorrect password"}
     elif "CAPTCHA_ERROR" in error_msg:
-        return {"error": "验证码错误"}
+        return {"error": "Incorrect captcha"}
     else:
-        return {"error": "登录失败，请稍后重试"}
-``` 
+        return {"error": "Login failed, please try again later"}
+```

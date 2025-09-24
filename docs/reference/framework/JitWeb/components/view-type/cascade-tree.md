@@ -1,32 +1,32 @@
 ---
 slug: cascade-tree
 ---
-# 级联树
-级联树是用于展示具有层级关系数据的树形结构组件，基于数据模型实现父子节点的级联选择和联动关系。它负责数据的树形展示、节点选择交互和级联操作，支持单选和多选模式，适用于组织架构、分类目录、地区选择等场景。
+# Cascade Tree
+Cascade Tree is a tree structure component for displaying hierarchical relationship data, implementing parent-child node cascade selection and linkage relationships based on data models. It handles tree data display, node selection interaction, and cascade operations, supporting single-select and multi-select modes, suitable for organizational structures, category directories, region selection, and other scenarios.
 
-级联树元素分层结构为Meta（components.Meta） → Type（components.CascadeTree） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建级联树实例元素。
+The Cascade Tree element has a hierarchical structure of Meta (components.Meta) → Type (components.CascadeTree) → Instance. Developers can quickly create Cascade Tree instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.CascadeTreeType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official components.CascadeTreeType element provided by JitAI in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基础配置示例
-```text title="推荐目录结构"
+## Quick Start
+### Basic Configuration Example
+```text title="Recommended Directory Structure"
 pages/
 ├── MyPage/
 │   ├── e.json
 │   └── scheme.json
 ```
 
-```json title="页面配置示例"
+```json title="Page Configuration Example"
 {
   "fullName": "components.CascadeTree",
   "type": "components.CascadeTree", 
   "name": "CascadeTree1",
-  "title": "级联树1",
+  "title": "Cascade Tree 1",
   "config": {
     "requireElements": [
       {
-        "title": "数据模型",
+        "title": "Data Model",
         "type": "models.Meta",
         "name": "models.DeptModel",
         "filter": "",
@@ -42,116 +42,116 @@ pages/
 }
 ```
 
-### 配置属性说明
-| 属性名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|--------|------|
-| requireElements | Array&lt;Object&gt; | 关联的数据模型配置 | - | 是 |
-| nodeTile | string | 节点显示字段名 | - | 是 |
-| childNode | string | 子节点关联字段名 | - | 是 |
-| mode | number | 选择模式，1为单选，0为多选 | 1 | 否 |
-| defaultRender | boolean | 是否使用默认渲染 | true | 否 |
+### Configuration Properties
+| Property Name | Type | Description | Default Value | Required |
+|---------------|------|-------------|---------------|----------|
+| requireElements | `Array<Object>` | Associated data model configuration | - | Yes |
+| nodeTile | string | Node display field name | - | Yes |
+| childNode | string | Child node association field name | - | Yes |
+| mode | number | Selection mode, 1 for single-select, 0 for multi-select | 1 | No |
+| defaultRender | boolean | Whether to use default rendering | true | No |
 
-## 变量
+## Variables
 ### selectedRowList
-选中的多行数据变量，类型为 `RowList`，只读。存储用户选中的所有树节点对应的数据记录。
+Selected multi-row data variable, type `RowList`, read-only. Stores all data records corresponding to tree nodes selected by the user.
 
 ### clickRow
-操作的单行数据变量，类型为 `RowData`，只读。存储用户最近点击的树节点对应的数据记录。
+Operated single-row data variable, type `RowData`, read-only. Stores the data record corresponding to the tree node most recently clicked by the user.
 
 ### loading
-加载状态变量，类型为 `Numeric`，表示组件当前的加载状态。值为1时表示正在加载，0表示加载完成。
+Loading state variable, type `Numeric`, represents the current loading state of the component. Value 1 indicates loading, 0 indicates loading complete.
 
-## 方法 
+## Methods
 ### publishEvent
-发送组件事件消息。
+Send component event message.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|--------|------|
-| name | string | 事件名称 | - | 是 |
-| ex | Record&lt;string, any&gt; | 附加数据 | - | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| name | string | Event name | - | Yes |
+| ex | `Record<string, any>` | Additional data | - | No |
 
-#### 返回值
-Promise&lt;void&gt;
+#### Return Value
+`Promise<void>`
 
-#### 使用示例
-```tsx title="发送自定义事件"
+#### Usage Example
+```tsx title="Send Custom Event"
 const cascadeTree = app.getElement('components.CascadeTree.CascadeTree1');
 
-// 发送自定义事件
+// Send custom event
 await cascadeTree.publishEvent('customEvent', { 
-  message: '树数据已更新',
+  message: 'Tree data updated',
   nodeCount: 10 
 });
 ```
 
 ### subscribeEvent
-订阅组件事件消息。
+Subscribe to component event message.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|--------|------|
-| name | string | 事件名称 | - | 是 |
-| evtCb | Function | 事件回调函数 | - | 是 |
-| unSubscribeExist | boolean | 是否取消已存在的订阅 | true | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| name | string | Event name | - | Yes |
+| evtCb | Function | Event callback function | - | Yes |
+| unSubscribeExist | boolean | Whether to cancel existing subscription | true | No |
 
-#### 返回值
-string - 返回事件处理器ID
+#### Return Value
+string - Returns event handler ID
 
-#### 使用示例
-```tsx title="订阅组件事件"
+#### Usage Example
+```tsx title="Subscribe to Component Event"
 const cascadeTree = app.getElement('components.CascadeTree.CascadeTree1');
 
-// 订阅刷新事件
+// Subscribe to refresh event
 const handlerId = cascadeTree.subscribeEvent('refresh', (data) => {
-  console.log('级联树已刷新:', data);
+  console.log('Cascade tree refreshed:', data);
 });
 ```
 
 ### unSubscribeEvent
-取消订阅事件。
+Cancel event subscription.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|--------|------|
-| id | string | 事件处理器ID | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| id | string | Event handler ID | - | Yes |
 
-#### 返回值
+#### Return Value
 boolean
 
-#### 使用示例
-```tsx title="取消事件订阅"
+#### Usage Example
+```tsx title="Cancel Event Subscription"
 const cascadeTree = app.getElement('components.CascadeTree.CascadeTree1');
 
-// 取消订阅
+// Cancel subscription
 cascadeTree.unSubscribeEvent(handlerId);
 ```
 
 ### setConfig
-设置组件配置。
+Set component configuration.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|--------|------|
-| next | Object | 新的配置对象 | - | 是 |
-| clean | boolean | 是否完全替换配置 | false | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| next | Object | New configuration object | - | Yes |
+| clean | boolean | Whether to completely replace configuration | false | No |
 
-#### 返回值
-无返回值
+#### Return Value
+No return value
 
-#### 使用示例
-```tsx title="更新组件配置"
+#### Usage Example
+```tsx title="Update Component Configuration"
 const cascadeTree = app.getElement('components.CascadeTree.CascadeTree1');
 
-// 更新部分配置
+// Update partial configuration
 cascadeTree.setConfig({
-  mode: 0, // 改为多选模式
+  mode: 0, // Change to multi-select mode
   nodeTile: 'title'
 });
 
-// 完全替换配置
+// Completely replace configuration
 cascadeTree.setConfig({
-  requireElements: [/* 新的数据模型配置 */],
+  requireElements: [/* new data model configuration */],
   nodeTile: 'name',
   childNode: 'parentId',
   mode: 1
@@ -159,215 +159,215 @@ cascadeTree.setConfig({
 ```
 
 ### refresh
-刷新级联树数据，支持传入筛选条件。
+Refresh cascade tree data, supports passing in filter conditions.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|--------|------|
-| qFilter | QFilter | 筛选条件，用于过滤数据 | - | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| qFilter | QFilter | Filter condition for filtering data | - | No |
 
-#### 返回值
-无返回值
+#### Return Value
+No return value
 
-#### 使用示例
-```tsx title="刷新级联树"
+#### Usage Example
+```tsx title="Refresh Cascade Tree"
 const cascadeTree = app.getElement('components.CascadeTree.CascadeTree1');
 
-// 无条件刷新
+// Refresh without conditions
 await cascadeTree.refresh();
 
-// 带筛选条件刷新
+// Refresh with filter conditions
 const filter = Q('status', '=', 'active');
 await cascadeTree.refresh(filter);
 ```
 
 ### getRowDataList
-获取树形数据列表，支持创建和更新两种模式。
+Get tree data list, supports create and update modes.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|--------|------|
-| options | Object | 配置对象 | - | 是 |
-| options.filter | Qex &#124; null | 筛选条件 | null | 否 |
-| type | 'create' &#124; 'update' | 操作类型 | 'create' | 否 |
-| key | string | 更新时的节点key | - | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| options | Object | Configuration object | - | Yes |
+| options.filter | Qex \| null | Filter condition | null | No |
+| type | 'create' \| 'update' | Operation type | 'create' | No |
+| key | string | Node key for update | - | No |
 
-#### 返回值
-Promise&lt;void&gt;
+#### Return Value
+`Promise<void>`
 
-#### 使用示例
-```tsx title="获取数据列表"
+#### Usage Example
+```tsx title="Get Data List"
 const cascadeTree = app.getElement('components.CascadeTree.CascadeTree1');
 
-// 创建模式获取数据
+// Get data in create mode
 await cascadeTree.getRowDataList({ filter: null });
 
-// 更新模式追加数据
+// Append data in update mode
 const filter = Q('parentId', '=', '123');
 await cascadeTree.getRowDataList({ filter }, 'update', 'nodeKey123');
 ```
 
 ### updateTreeData
-更新树形数据结构，用于动态更新树节点。
+Update tree data structure, used for dynamically updating tree nodes.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|--------|------|
-| data | Record&lt;string, any&gt; | 要更新的数据 | - | 是 |
-| type | 'create' &#124; 'update' | 操作类型 | 'create' | 否 |
-| key | string | 节点key | - | 否 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| data | `Record<string, any>` | Data to update | - | Yes |
+| type | 'create' \| 'update' | Operation type | 'create' | No |
+| key | string | Node key | - | No |
 
-#### 返回值
-无返回值
+#### Return Value
+No return value
 
-#### 使用示例
-```tsx title="更新树形数据"
+#### Usage Example
+```tsx title="Update Tree Data"
 const cascadeTree = app.getElement('components.CascadeTree.CascadeTree1');
 
-// 更新指定节点的子数据
+// Update child data for specified node
 const newData = [
-  { id: '101', name: '新部门1', parentId: '100' },
-  { id: '102', name: '新部门2', parentId: '100' }
+  { id: '101', name: 'New Department 1', parentId: '100' },
+  { id: '102', name: 'New Department 2', parentId: '100' }
 ];
 cascadeTree.updateTreeData(newData, 'update', '100');
 ```
 
 ### getPermConfig
-获取组件的权限配置信息。
+Get component's permission configuration information.
 
-#### 返回值
-Record&lt;string, any&gt; &#124; undefined
+#### Return Value
+`Record<string, any>` \| undefined
 
-#### 使用示例
-```tsx title="获取权限配置"
+#### Usage Example
+```tsx title="Get Permission Configuration"
 const cascadeTree = app.getElement('components.CascadeTree.CascadeTree1');
 
 const permConfig = cascadeTree.getPermConfig();
 if (permConfig) {
-  console.log('组件权限配置:', permConfig);
+  console.log('Component permission configuration:', permConfig);
 }
 ```
 
 ### runCode
-运行自定义代码字符串。
+Run custom code string.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|--------|------|
-| code | string | 要执行的代码字符串 | - | 是 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
+|----------------|------|-------------|---------------|----------|
+| code | string | Code string to execute | - | Yes |
 
-#### 返回值
+#### Return Value
 any
 
-#### 使用示例
-```tsx title="运行自定义代码"
+#### Usage Example
+```tsx title="Run Custom Code"
 const cascadeTree = app.getElement('components.CascadeTree.CascadeTree1');
 
-// 执行自定义逻辑
+// Execute custom logic
 const result = cascadeTree.runCode(`
-  return this.selectedRowList.length > 0 ? '已选择节点' : '未选择节点';
+  return this.selectedRowList.length > 0 ? 'Nodes selected' : 'No nodes selected';
 `);
 ```
 
 ### destroy
-销毁组件实例，清理资源和事件监听。
+Destroy component instance, clean up resources and event listeners.
 
-#### 返回值
-无返回值
+#### Return Value
+No return value
 
-#### 使用示例
-```tsx title="销毁组件"
+#### Usage Example
+```tsx title="Destroy Component"
 const cascadeTree = app.getElement('components.CascadeTree.CascadeTree1');
 
-// 销毁组件
+// Destroy component
 cascadeTree.destroy();
 ```
 
-## 属性
+## Attributes
 ### app
-只读属性，类型为App，获取当前应用实例。
+Read-only property, type App, gets current application instance.
 
 ### page
-只读属性，类型为BasePage，获取当前页面实例。
+Read-only property, type BasePage, gets current page instance.
 
 ### name
-只读属性，类型为string，获取组件名称。
+Read-only property, type string, gets component name.
 
 ### title
-只读属性，类型为string，获取组件标题。
+Read-only property, type string, gets component title.
 
 ### config
-只读属性，类型为Object，获取组件配置对象。
+Read-only property, type Object, gets component configuration object.
 
 ### type
-只读属性，类型为string，获取组件类型标识。
+Read-only property, type string, gets component type identifier.
 
 ### showTitle
-只读属性，类型为boolean，获取是否显示组件标题。
+Read-only property, type boolean, gets whether to display component title.
 
 ### treeData
-只读属性，类型为 `TreeDataNode[]`，获取当前树形数据结构。每个节点包含title、key、isLeaf等属性。
+Read-only property, type `TreeDataNode[]`, gets current tree data structure. Each node contains title, key, isLeaf and other properties.
 
 ### rowDataList
-只读属性，类型为 `Record<string, any>[]`，获取当前组件的原始数据列表。
+Read-only property, type `Record<string, any>[]`, gets current component's raw data list.
 
 ### primaryKey
-只读属性，类型为string，获取数据模型的主键字段名，默认为'id'。
+Read-only property, type string, gets data model's primary key field name, defaults to 'id'.
 
 ### fieldDefineList
-只读属性，类型为 `DataTypeConfig[]`，获取关联数据模型的字段定义列表。
+Read-only property, type `DataTypeConfig[]`, gets associated data model's field definition list.
 
 ### allFieldDict
-只读属性，类型为 `Record<string, DataTypeConfig>`，获取关联数据模型的字段字典，以字段名为key。
+Read-only property, type `Record<string, DataTypeConfig>`, gets associated data model's field dictionary with field name as key.
 
-## 事件
+## Events
 ### onNodeClick
-节点点击事件，当用户点击树节点时触发。
+Node click event, triggered when user clicks a tree node.
 
-#### 参数详解
-事件回调函数接收 `clickRow` 变量作为参数，包含被点击节点的完整数据。
+#### Parameter Details
+Event callback function receives `clickRow` variable as parameter, containing complete data of the clicked node.
 
-#### 使用示例
-```tsx title="监听节点点击事件"
+#### Usage Example
+```tsx title="Listen for Node Click Event"
 const cascadeTree = app.getElement('components.CascadeTree.CascadeTree1');
 
-// 订阅节点点击事件
+// Subscribe to node click event
 cascadeTree.subscribeEvent('onNodeClick', (data) => {
-  console.log('点击的节点数据:', data);
+  console.log('Clicked node data:', data);
   const nodeId = data.id.value;
   const nodeName = data.name.value;
-  console.log(`点击了节点: ${nodeName} (ID: ${nodeId})`);
+  console.log(`Clicked node: ${nodeName} (ID: ${nodeId})`);
 });
 ```
 
 ### onSelectNode
-节点选择事件，当用户选择树节点时触发（多选模式下）。
+Node selection event, triggered when user selects tree nodes (in multi-select mode).
 
-#### 参数详解
-事件回调函数接收 `selectedRowList` 变量作为参数，包含所有选中节点的数据列表。
+#### Parameter Details
+Event callback function receives `selectedRowList` variable as parameter, containing data list of all selected nodes.
 
-#### 使用示例
-```tsx title="监听节点选择事件"
+#### Usage Example
+```tsx title="Listen for Node Selection Event"
 const cascadeTree = app.getElement('components.CascadeTree.CascadeTree1');
 
-// 订阅节点选择事件
+// Subscribe to node selection event
 cascadeTree.subscribeEvent('onSelectNode', (data) => {
-  console.log('选中的节点列表:', data);
+  console.log('Selected node list:', data);
   const selectedCount = data.length;
-  console.log(`已选择 ${selectedCount} 个节点`);
+  console.log(`${selectedCount} nodes selected`);
   
-  // 遍历选中的节点
+  // Iterate through selected nodes
   data.forEach((node, index) => {
-    console.log(`选中节点${index + 1}: ${node.name.value}`);
+    console.log(`Selected node ${index + 1}: ${node.name.value}`);
   });
 });
 ```
 
-## 高级特性
-### 级联数据加载
-级联树支持按需加载子节点数据，通过 `childNode` 字段建立父子关系。初始加载时只显示根节点（childNode字段为空的记录），点击展开时动态加载子节点。
+## Advanced Features
+### Cascade Data Loading
+Cascade tree supports on-demand loading of child node data through the `childNode` field to establish parent-child relationships. Initial loading only displays root nodes (records where childNode field is empty), dynamically loads child nodes when expanding.
 
-```tsx title="配置级联加载"
+```tsx title="Configure Cascade Loading"
 {
   "config": {
     "requireElements": [
@@ -384,19 +384,19 @@ cascadeTree.subscribeEvent('onSelectNode', (data) => {
 }
 ```
 
-### 权限控制集成
-级联树自动集成权限配置，支持基于角色的数据访问控制。
+### Permission Control Integration
+Cascade tree automatically integrates permission configuration, supporting role-based data access control.
 
-```tsx title="权限配置示例"
-// 组件会自动应用权限过滤
+```tsx title="Permission Configuration Example"
+// Component automatically applies permission filtering
 const permConfig = cascadeTree.getPermConfig();
-// 权限过滤会自动合并到查询条件中
+// Permission filtering automatically merges into query conditions
 ```
 
-### 自定义筛选和排序
-支持通过requireElements配置数据的筛选条件和排序规则。
+### Custom Filtering and Sorting
+Supports configuring data filter conditions and sorting rules through requireElements.
 
-```tsx title="配置筛选和排序"
+```tsx title="Configure Filtering and Sorting"
 {
   "requireElements": [
     {
@@ -406,4 +406,4 @@ const permConfig = cascadeTree.getPermConfig();
     }
   ]
 }
-``` 
+```

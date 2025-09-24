@@ -1,50 +1,51 @@
 ---
 slug: excel-template
 ---
-# Excel模板
-Excel模板元素是基于文件模板框架的Excel文档生成组件，基于openpyxl和Jinja2模板引擎实现动态Excel文档生成。它负责Excel模板的解析处理、数据渲染和特殊功能支持（图片嵌入、超链接、下拉框等），为企业级报表生成提供完整的Excel输出能力。
+# Excel Template
 
-Excel模板元素分层结构为Meta（fileTmpls.Meta）→ Type（fileTmpls.ExcelType）→ 实例，开发者可通过JitAi的可视化开发工具快捷地创建Excel模板实例元素。
+Excel Template element is an Excel document generation component based on the file template framework, implemented using openpyxl and Jinja2 template engine for dynamic Excel document generation. It handles Excel template parsing, data rendering, and special feature support (image embedding, hyperlinks, dropdown boxes, etc.), providing complete Excel output capabilities for enterprise-level report generation.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的fileTmpls.ExcelType元素，以实现自己的封装。
+The Excel Template element has a hierarchical structure of Meta (fileTmpls.Meta) → Type (fileTmpls.ExcelType) → Instance. Developers can quickly create Excel template instance elements through JitAi's visual development tools.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
-ExcelReport/                    # Excel模板实例元素目录
-├── e.json                      # 元素定义文件
-├── ExcelReport.json            # 业务配置文件
-└── templateFile.xlsx           # Excel模板文件（可选）
+Of course, developers can also create their own Type elements or modify the official fileTmpls.ExcelType element provided by JitAi in their own App to implement their own encapsulation.
+
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
+ExcelReport/                    # Excel template instance element directory
+├── e.json                      # Element definition file
+├── ExcelReport.json            # Business configuration file
+└── templateFile.xlsx           # Excel template file (optional)
 ```
 
-#### e.json文件
-```json title="e.json文件示例"
+#### e.json File
+```json title="e.json File Example"
 {
-  "title": "销售报表模板",
+  "title": "Sales Report Template",
   "type": "fileTmpls.ExcelType",
   "frontBundleEntry": "ExcelReport.json",
   "backendBundleEntry": "."
 }
 ```
 
-#### 业务配置文件
-```json title="ExcelReport.json示例"
+#### Business Configuration File
+```json title="ExcelReport.json Example"
 {
   "dataList": [
     {
       "name": "title",
-      "title": "报表标题",
+      "title": "Report Title",
       "dataType": "Stext"
     },
     {
       "name": "salesData",
-      "title": "销售数据",
+      "title": "Sales Data",
       "dataType": "RowList"
     },
     {
       "name": "logoImage",
-      "title": "公司Logo",
+      "title": "Company Logo",
       "dataType": "Stext"
     }
   ],
@@ -55,132 +56,132 @@ ExcelReport/                    # Excel模板实例元素目录
 }
 ```
 
-#### 调用示例
-```python title="调用示例"
-# 获取Excel模板实例
+#### Usage Example
+```python title="Usage Example"
+# Get Excel template instance
 excel_template = app.getElement("fileTmpls.ExcelReport")
 
-# 准备渲染数据
+# Prepare rendering data
 context = {
-    "title": "2024年销售报表",
+    "title": "2024 Sales Report",
     "salesData": [
-        {"product": "产品A", "sales": 10000, "region": "华东"},
-        {"product": "产品B", "sales": 15000, "region": "华南"}
+        {"product": "Product A", "sales": 10000, "region": "East China"},
+        {"product": "Product B", "sales": 15000, "region": "South China"}
     ],
     "logoImage": "https://example.com/logo.png"
 }
 
-# 渲染Excel文档
+# Render Excel document
 output_stream = excel_template.render(context, elemName="fileTmpls.ExcelReport")
 
-# 保存文件
+# Save file
 with open("sales_report.xlsx", "wb") as f:
     f.write(output_stream.read())
 ```
 
-## 元素配置
-### e.json配置
-| 配置项 | 类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| title | string | 是 | 模板显示名称 |
-| type | string | 是 | 固定为"fileTmpls.ExcelType" |
-| frontBundleEntry | string | 是 | 前端配置文件路径 |
-| backendBundleEntry | string | 是 | 后端入口路径，通常为"." |
+| title | string | Yes | Template display name |
+| type | string | Yes | Fixed as "fileTmpls.ExcelType" |
+| frontBundleEntry | string | Yes | Frontend configuration file path |
+| backendBundleEntry | string | Yes | Backend entry path, usually "." |
 
-### 业务配置文件配置
-| 配置项 | 类型 | 必填 | 说明 |
+### Business Configuration File Configuration
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| dataList | array | 是 | 数据字段定义列表 |
-| files | object | 否 | 模板文件配置 |
+| dataList | array | Yes | Data field definition list |
+| files | object | No | Template file configuration |
 
-#### dataList配置
-| 配置项 | 类型 | 必填 | 说明 |
+#### dataList Configuration
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| name | string | 是 | 字段名称，用于模板中的变量名 |
-| title | string | 是 | 字段显示标题 |
-| dataType | string | 是 | 数据类型，支持Stext、Numeric、RowList等 |
+| name | string | Yes | Field name, used as variable name in template |
+| title | string | Yes | Field display title |
+| dataType | string | Yes | Data type, supports Stext, Numeric, RowList, etc. |
 
-#### files配置
-| 配置项 | 类型 | 必填 | 说明 |
+#### files Configuration
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| url | string | 否 | 模板文件下载地址 |
-| fileName | string | 否 | 模板文件名称 |
+| url | string | No | Template file download URL |
+| fileName | string | No | Template file name |
 
-## 方法 
+## Methods
 ### render
 ```python
 def render(self, context, **kwargs)
 ```
 
-渲染Excel模板，生成包含数据的Excel文档。
+Renders the Excel template to generate an Excel document containing data.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| context | JitDict | dict | 是 | 渲染数据上下文 |
-| elemName | Stext | str | 是 | 元素fullName，通过kwargs传入 |
+| context | JitDict | dict | Yes | Rendering data context |
+| elemName | Stext | str | Yes | Element fullName, passed through kwargs |
 
-#### 返回值
-返回BytesIO对象，包含生成的Excel文件二进制数据。
+#### Return Value
+Returns a BytesIO object containing the generated Excel file binary data.
 
-#### 使用示例
-```python title="基础渲染示例"
-# 获取模板实例
+#### Usage Example
+```python title="Basic Rendering Example"
+# Get template instance
 template = app.getElement("fileTmpls.ExcelReport")
 
-# 准备数据
+# Prepare data
 data = {
-    "reportTitle": "月度销售报表",
+    "reportTitle": "Monthly Sales Report",
     "reportDate": "2024-01",
     "dataRows": [
-        {"name": "张三", "sales": 50000, "target": 60000},
-        {"name": "李四", "sales": 45000, "target": 50000}
+        {"name": "Zhang San", "sales": 50000, "target": 60000},
+        {"name": "Li Si", "sales": 45000, "target": 50000}
     ]
 }
 
-# 渲染文档
+# Render document
 result = template.render(data, elemName="fileTmpls.ExcelReport")
 ```
 
-## 属性
-Excel模板元素从基类继承以下属性：
+## Attributes
+Excel Template element inherits the following attributes from the base class:
 
 ### suffix
-Excel文件扩展名，固定为"xlsx"。
+Excel file extension, fixed as "xlsx".
 
 ### templateFile
-模板文件的二进制流对象，自动处理文件获取和格式检查。
+Template file binary stream object, automatically handles file retrieval and format checking.
 
 ### dtMap
-数据类型映射字典，根据dataList配置自动生成，用于数据类型转换。
+Data type mapping dictionary, automatically generated based on dataList configuration, used for data type conversion.
 
-## 高级特性
-### 图片嵌入功能
-Excel模板支持在单元格中嵌入图片，包括横向图片和纵向图片列表。
+## Advanced Features
+### Image Embedding Functionality
+Excel templates support embedding images in cells, including horizontal images and vertical image lists.
 
-#### 配置示例和使用示例
-```python title="图片嵌入示例"
-# 在Excel模板中使用特殊标记
-# 单元格内容：ToPictureFileTmpls:{{imageUrl}}
-# 或纵向图片：ToListColumnPictureFileTmpls:{{imageList}}
+#### Configuration Example and Usage Example
+```python title="Image Embedding Example"
+# Use special markers in Excel template
+# Cell content: ToPictureFileTmpls:{{imageUrl}}
+# Or vertical images: ToListColumnPictureFileTmpls:{{imageList}}
 
-# 渲染数据
+# Rendering data
 context = {
     "imageUrl": "https://example.com/image1.jpg,https://example.com/image2.jpg",
     "imageList": "https://example.com/img1.jpg,https://example.com/img2.jpg"
 }
 
-# 模板会自动下载图片并嵌入到指定单元格
+# Template will automatically download images and embed them in specified cells
 result = template.render(context, elemName="fileTmpls.ImageTemplate")
 ```
 
-### 超链接支持
-在Excel单元格中添加可点击的超链接。
+### Hyperlink Support
+Add clickable hyperlinks to Excel cells.
 
-#### 配置示例和使用示例
-```python title="超链接示例"
-# Excel模板单元格内容：ToLinkFileTmpls:访问官网:  https://example.com
-# 渲染时会自动为单元格添加超链接
+#### Configuration Example and Usage Example
+```python title="Hyperlink Example"
+# Excel template cell content: ToLinkFileTmpls:Visit Official Website:  https://example.com
+# Automatically adds hyperlink to cell during rendering
 context = {
     "companyUrl": "https://company.com"
 }
@@ -188,28 +189,28 @@ context = {
 result = template.render(context, elemName="fileTmpls.LinkTemplate")
 ```
 
-### 下拉框功能
-为Excel单元格添加数据验证下拉框。
+### Dropdown Box Functionality
+Add data validation dropdown boxes to Excel cells.
 
-#### 配置示例和使用示例
-```python title="下拉框示例"
-# Excel模板单元格内容：ToSelectFileTmpls:选项1,选项2,选项3
-# 渲染后单元格将包含下拉选择功能
+#### Configuration Example and Usage Example
+```python title="Dropdown Box Example"
+# Excel template cell content: ToSelectFileTmpls:Option1,Option2,Option3
+# Cell will contain dropdown selection functionality after rendering
 context = {
-    "statusOptions": "待处理,处理中,已完成"
+    "statusOptions": "Pending,Processing,Completed"
 }
 
 result = template.render(context, elemName="fileTmpls.SelectTemplate")
 ```
 
-### Base64图片支持
-直接在模板中嵌入Base64编码的图片数据。
+### Base64 Image Support
+Directly embed Base64-encoded image data in templates.
 
-#### 配置示例和使用示例
-```python title="Base64图片示例"
-# Excel模板单元格内容：<image:{"image":"base64编码数据"}>
+#### Configuration Example and Usage Example
+```python title="Base64 Image Example"
+# Excel template cell content: <image:{"image":"base64 encoded data"}>
 
-# 渲染数据
+# Rendering data
 context = {
     "chartImage": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
 }
@@ -217,38 +218,38 @@ context = {
 result = template.render(context, elemName="fileTmpls.ChartTemplate")
 ```
 
-### Jinja2模板语法支持
-Excel模板支持完整的Jinja2模板语法，可以在单元格中使用变量、循环和条件语句。
+### Jinja2 Template Syntax Support
+Excel templates support complete Jinja2 template syntax, allowing variables, loops, and conditional statements in cells.
 
-#### 配置示例和使用示例
-```python title="Jinja2语法示例"
-# Excel模板中的使用示例：
-# 单元格A1: {{title}}
-# 单元格A2: {% for item in dataList %}{{item.name}}{% endfor %}
-# 单元格A3: {% if total > 1000 %}优秀{% else %}良好{% endif %}
+#### Configuration Example and Usage Example
+```python title="Jinja2 Syntax Example"
+# Usage example in Excel template:
+# Cell A1: {{title}}
+# Cell A2: {% for item in dataList %}{{item.name}}{% endfor %}
+# Cell A3: {% if total > 1000 %}Excellent{% else %}Good{% endif %}
 
 context = {
-    "title": "销售报表",
-    "dataList": [{"name": "产品A"}, {"name": "产品B"}],
+    "title": "Sales Report",
+    "dataList": [{"name": "Product A"}, {"name": "Product B"}],
     "total": 1500
 }
 
 result = template.render(context, elemName="fileTmpls.JinjaTemplate")
 ```
 
-### 多工作表支持
-Excel模板自动处理包含多个工作表的模板文件，为每个工作表应用相同的渲染数据。
+### Multi-Worksheet Support
+Excel templates automatically handle template files containing multiple worksheets, applying the same rendering data to each worksheet.
 
-#### 配置示例和使用示例
-```python title="多工作表示例"
-# 模板文件包含多个工作表：销售数据、统计图表、明细报表
-# 每个工作表都会使用相同的context数据进行渲染
+#### Configuration Example and Usage Example
+```python title="Multi-Worksheet Example"
+# Template file contains multiple worksheets: Sales Data, Statistics Chart, Detail Report
+# Each worksheet will use the same context data for rendering
 context = {
     "year": "2024",
     "salesData": [...],
     "chartData": [...]
 }
 
-# 所有工作表都会被渲染
+# All worksheets will be rendered
 result = template.render(context, elemName="fileTmpls.MultiSheetTemplate")
-``` 
+```

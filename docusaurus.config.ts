@@ -170,7 +170,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
          {
            href: 'https://forum.jit.pro',
            position: 'left',
-           label: 'Community Forum',
+           label: 'Community',
          },
         //GitHub
          {
@@ -193,6 +193,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             {
               label: 'Home',
               to: '/',
+            },
+            {
+              label: 'Download',
+              to: '/docs/tutorial/download-installation',
+            },
+            {
+              label: 'Try Online',
+              to: 'https://demo.jit.pro',
             }
           ],
         },
@@ -217,25 +225,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
           ],
         },
-        // {
-        //   title: '社区',
-        //   items: [
-        //     {
-        //       label: 'Slack',
-        //       href: 'https://join.slack.com/t/jit-pro/shared_invite/zt-23999999999999999999999999999999',
-        //     },
-        //     {
-        //       label: 'Discord',
-        //       href: 'https://discordapp.com/invite/jitai',
-        //     },
-        //     {
-        //       label: 'X',
-        //       href: 'https://x.com/jitai',
-        //     },
-        //   ],
-        // },
          {
-           title: 'More',
+           title: 'Social',
            items: [
             {
               label: 'Community',
@@ -245,22 +236,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                label: 'GitHub',
                href: 'https://github.com/jitai-team',
              },
-           ],
-         },
-         {
-           title: 'Social',
-           items: [
              {
                label: 'X (Twitter)',
-               href: '#',
+               href: 'https://x.com/JitAi2017',
              },
              {
-               label: 'Facebook',
-               href: '#',
+               label: 'Youtube',
+               href: 'https://www.youtube.com/channel/UClvTNJPvBhek3aFuDy87RJQ',
              },
              {
-               label: 'LinkedIn',
-               href: '#',
+               label: 'Instagram',
+               href: 'https://www.instagram.com/jitai_2017',
              },
            ],
          },

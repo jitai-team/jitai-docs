@@ -1,5 +1,11 @@
 /* Navbar 样式 - 蓝紫渐变主题 */
 
+
+/* 隐藏首页的Docusaurus默认导航栏 */
+body.home-page nav.navbar--fixed-top {
+  display: none !important;
+}
+
 .navbar {
   position: fixed;
   top: 0;

@@ -20,7 +20,7 @@ const CONTENT = {
       id: 'download',
       label: 'Download',
       type: 'link',
-      isNewTab: true,
+      isNewTab: false,
       url: '/download',
       external: true
     },

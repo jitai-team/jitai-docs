@@ -20,7 +20,7 @@ const CONTENT = {
       id: 'download',
       label: '下载',
       type: 'link',
-      isNewTab: true,
+      isNewTab: false,
       url: '/zh/download',
       external: true
     },

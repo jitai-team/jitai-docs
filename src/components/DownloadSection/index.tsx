@@ -120,7 +120,7 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ currentLocale }) => {
               <p className={styles.versionDescription}>{CONTENT.server.docker.description}</p>
                      <div className={styles.codeBlock}>
                        <div className={styles.codeContent}>
-                         <span className={styles.codePrompt}>></span>
+                         <span className={styles.codePrompt}>{'>'}</span>
                          <div className={styles.codeText}>
                            <code>{CONTENT.server.docker.command}</code>
                          </div>

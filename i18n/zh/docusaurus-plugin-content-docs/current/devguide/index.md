@@ -387,9 +387,11 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="devguide/calling-business-elements-in-pages/calling-service-functions-in-pages"
   description="学习如何从页面调用服务函数来执行业务逻辑、处理数据并与外部系统集成，实现动态内容生成。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "标准页面中调用服务函数", href: "devguide/calling-business-elements-in-pages/calling-service-functions-in-pages#calling-service-functions-in-standard-pages" },
+    { text: "全代码页面中调用服务函数", href: "devguide/calling-business-elements-in-pages/calling-service-functions-in-pages#calling-service-functions-in-full-code-pages" },
+    { text: "复杂参数处理", href: "devguide/calling-business-elements-in-pages/calling-service-functions-in-pages#complex-parameter-handling" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -397,9 +399,11 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages"
   description="掌握从页面调用数据模型函数的技巧，执行CRUD操作、数据查询和数据库交互，实现实时数据显示。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "调用语法", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#calling-syntax" },
+    { text: "全代码页面中的基本语法", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#basic-syntax-in-full-code-pages" },
+    { text: "数据操作能力", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#data-operation-capabilities" }
+  ]} />
 </IndexCard>
 
 </div>
@@ -857,9 +861,11 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="devguide/ai-llm/llm-input-output"
   description="了解大语言模型的输入输出配置，实现最优的集成与性能表现。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "在页面中调用大模型", href: "devguide/ai-llm/llm-input-output#call-llm-in-pages" },
+    { text: "在后端函数中调用大模型", href: "devguide/ai-llm/llm-input-output#call-llm-in-backend-functions" },
+    { text: "大模型编程接口", href: "devguide/ai-llm/llm-input-output#llm-programming-interface" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1096,30 +1102,6 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="管理数据库连接"
-  href="devguide/data-modeling/manage-database-connections"
-  description="配置和管理多个数据库连接，支持多数据源应用开发。"
->
-  <LinkGrid links={[
-    { text: "创建数据库连接", href: "devguide/data-modeling/manage-database-connections#create-database-connection" },
-    { text: "多数据库连接管理", href: "devguide/data-modeling/manage-database-connections#multi-database-connection-management" },
-    { text: "数据库连接安全配置", href: "devguide/data-modeling/manage-database-connections#database-connection-security-configuration" },
-    { text: "连接测试与故障排查", href: "devguide/data-modeling/manage-database-connections#connection-test-and-troubleshooting" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="支持的数据库厂商"
-  href="devguide/data-modeling/supported-database-vendors"
-  description="了解JitAi支持的各种数据库类型和连接配置。"
->
-  <LinkGrid links={[
-    { text: "场景选择建议", href: "devguide/data-modeling/supported-database-vendors#scenario-selection-suggestions" },
-    { text: "与云厂商的兼容性说明", href: "devguide/data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
-    { text: "数据库元素使用", href: "devguide/data-modeling/supported-database-vendors#database-element-usage" }
-  ]} />
-</IndexCard>
-<IndexCard
   title="数据表模型"
   href="devguide/data-modeling/data-table-model"
   description="应用数据的基础结构，学习如何创建和配置数据表，设计字段类型和约束。"
@@ -1234,6 +1216,30 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 
+<IndexCard
+  title="管理数据库连接"
+  href="devguide/data-modeling/manage-database-connections"
+  description="配置和管理多个数据库连接，支持多数据源应用开发。"
+>
+  <LinkGrid links={[
+    { text: "创建数据库连接", href: "devguide/data-modeling/manage-database-connections#create-database-connection" },
+    { text: "多数据库连接管理", href: "devguide/data-modeling/manage-database-connections#multi-database-connection-management" },
+    { text: "数据库连接安全配置", href: "devguide/data-modeling/manage-database-connections#database-connection-security-configuration" },
+    { text: "连接测试与故障排查", href: "devguide/data-modeling/manage-database-connections#connection-test-and-troubleshooting" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="支持的数据库厂商"
+  href="devguide/data-modeling/supported-database-vendors"
+  description="了解JitAi支持的各种数据库类型和连接配置。"
+>
+  <LinkGrid links={[
+    { text: "场景选择建议", href: "devguide/data-modeling/supported-database-vendors#scenario-selection-suggestions" },
+    { text: "与云厂商的兼容性说明", href: "devguide/data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
+    { text: "数据库元素使用", href: "devguide/data-modeling/supported-database-vendors#database-element-usage" }
+  ]} />
+</IndexCard>
 </div>
 
 ## 事务管理

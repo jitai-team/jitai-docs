@@ -378,9 +378,11 @@ Connect your pages to powerful business logic and data operations. Learn how to 
   href="devguide/calling-business-elements-in-pages/calling-service-functions-in-pages"
   description="Learn how to invoke service functions from pages to execute business logic, process data, and integrate with external systems for dynamic content generation."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Calling Service Functions in Standard Pages", href: "devguide/calling-business-elements-in-pages/calling-service-functions-in-pages#calling-service-functions-in-standard-pages" },
+    { text: "Calling Service Functions in Full-Code Pages", href: "devguide/calling-business-elements-in-pages/calling-service-functions-in-pages#calling-service-functions-in-full-code-pages" },
+    { text: "Complex Parameter Handling", href: "devguide/calling-business-elements-in-pages/calling-service-functions-in-pages#complex-parameter-handling" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -388,9 +390,11 @@ Connect your pages to powerful business logic and data operations. Learn how to 
   href="devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages"
   description="Master the techniques for calling data model functions from pages to perform CRUD operations, data queries, and database interactions for real-time data display."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Calling Syntax", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#calling-syntax" },
+    { text: "Basic Syntax in Full-Code Pages", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#basic-syntax-in-full-code-pages" },
+    { text: "Data Operation Capabilities", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#data-operation-capabilities" }
+  ]} />
 </IndexCard>
 
 </div>
@@ -853,9 +857,11 @@ Integrate mainstream large language models such as GPT-4, Claude, and Tongyi Qia
   href="devguide/ai-llm/llm-input-output"
   description="Understand the input and output configurations of large language models for optimal integration and performance."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Calling LLM in Pages", href: "devguide/ai-llm/llm-input-output#call-llm-in-pages" },
+    { text: "Calling LLM in Backend Functions", href: "devguide/ai-llm/llm-input-output#call-llm-in-backend-functions" },
+    { text: "LLM Programming Interface", href: "devguide/ai-llm/llm-input-output#llm-programming-interface" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1092,31 +1098,6 @@ Design a powerful data foundation for your application. Create data tables, desi
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Managing Database Connections"
-  href="devguide/data-modeling/manage-database-connections"
-  description="Configure and manage multiple database connections, supporting multi-data source application development."
->
-  <LinkGrid links={[
-    { text: "Create Database Connection", href: "devguide/data-modeling/manage-database-connections#create-database-connection" },
-    { text: "Multi-database Connection Management", href: "devguide/data-modeling/manage-database-connections#multi-database-connection-management" },
-    { text: "Database Connection Security Configuration", href: "devguide/data-modeling/manage-database-connections#database-connection-security-configuration" },
-    { text: "Connection Test and Troubleshooting", href: "devguide/data-modeling/manage-database-connections#connection-test-and-troubleshooting" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="Supported Database Vendors"
-  href="devguide/data-modeling/supported-database-vendors"
-  description="Learn about various database types and connection configurations supported by JitAi."
->
-  <LinkGrid links={[
-    { text: "Scenario Selection Suggestions", href: "devguide/data-modeling/supported-database-vendors#scenario-selection-suggestions" },
-    { text: "Cloud Vendor Compatibility", href: "devguide/data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
-    { text: "Database Element Usage", href: "devguide/data-modeling/supported-database-vendors#database-element-usage" }
-  ]} />
-</IndexCard>
-
-<IndexCard
   title="Data Table Model"
   href="devguide/data-modeling/data-table-model"
   description="Basic structure of application data, learn how to create and configure data tables, design field types and constraints."
@@ -1227,6 +1208,32 @@ Design a powerful data foundation for your application. Create data tables, desi
 >
   <LinkGrid links={[
     { text: "Data Models as Agent Tools", href: "devguide/data-modeling/calling-data-models-in-ai-agent#data-models-as-agent-tools" }
+  ]} />
+</IndexCard>
+
+
+<IndexCard
+  title="Managing Database Connections"
+  href="devguide/data-modeling/manage-database-connections"
+  description="Configure and manage multiple database connections, supporting multi-data source application development."
+>
+  <LinkGrid links={[
+    { text: "Create Database Connection", href: "devguide/data-modeling/manage-database-connections#create-database-connection" },
+    { text: "Multi-database Connection Management", href: "devguide/data-modeling/manage-database-connections#multi-database-connection-management" },
+    { text: "Database Connection Security Configuration", href: "devguide/data-modeling/manage-database-connections#database-connection-security-configuration" },
+    { text: "Connection Test and Troubleshooting", href: "devguide/data-modeling/manage-database-connections#connection-test-and-troubleshooting" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Supported Database Vendors"
+  href="devguide/data-modeling/supported-database-vendors"
+  description="Learn about various database types and connection configurations supported by JitAi."
+>
+  <LinkGrid links={[
+    { text: "Scenario Selection Suggestions", href: "devguide/data-modeling/supported-database-vendors#scenario-selection-suggestions" },
+    { text: "Cloud Vendor Compatibility", href: "devguide/data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
+    { text: "Database Element Usage", href: "devguide/data-modeling/supported-database-vendors#database-element-usage" }
   ]} />
 </IndexCard>
 

@@ -19,7 +19,7 @@ The following databases are all natively supported by the platform:
 - Development/Desktop Environment: Default to SQLite (zero maintenance, file-level storage).
 - General OLTP Business: MySQL or PostgreSQL (comprehensive community and cloud hosting solutions, mature ecosystem).
 - Existing Legacy Systems: Oracle or SQL Server (integration with legacy databases, progressive migration).
-- ​Chinese-created: DM (DM8).
+- Chinese-created: DM (DM8).
 - Other databases can be integrated through custom element types, refer to: [Extend Your Own Element Families](../../extguide/extend-element-family-classes) | [Extend Your Own Database Type Elements](../../extguide/extend-database-type-elements).
 
 ## Cloud Vendor Compatibility {#cloud-vendor-compatibility}

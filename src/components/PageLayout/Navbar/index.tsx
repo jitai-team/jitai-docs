@@ -5,7 +5,7 @@ import CONTENT_EN from './constant-en';
 import CONTENT_ZH from './constant-zh';
 
 interface NavbarProps {
-  currentLocale: string;
+  currentLocale?: string;
 }
 
 const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
@@ -152,13 +152,6 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                 </button>
               );
             })}
-            <button
-              className={`${styles.mobileNavItem} ${styles.mobileTryOnlineButton}`}
-              onClick={() => handleNavClick(CONTENT.tryOnlineButton)}
-              data-type={CONTENT.tryOnlineButton.type}
-            >
-              {CONTENT.tryOnlineButton.label}
-            </button>
             <div className={styles.mobileLanguageSwitcher}>
               <LanguageSwitcher />
             </div>

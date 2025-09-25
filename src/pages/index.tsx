@@ -1,50 +1,32 @@
-import React, { useEffect } from 'react';
-import Head from '@docusaurus/Head';
-import Layout from '@theme/Layout';
-import Navbar from '../components/Navbar';
-import HeroSection from '../components/HeroSection';
-import ProductSection from '../components/ProductSection';
-import DevOpsSection from '../components/DevOpsSection';
-import IDESection from '../components/IDESection';
-import PlatformSection from '../components/PlatformSection';
-import FrameworkSection from '../components/FrameworkSection';
-import TechnologiesSection from '../components/TechnologiesSection';
+import React from 'react';
+import PageLayout from '../components/PageLayout';
+import HeroSection from '../components/home_comps/HeroSection';
+import ProductSection from '../components/home_comps/ProductSection';
+import DevOpsSection from '../components/home_comps/DevOpsSection';
+import IDESection from '../components/home_comps/IDESection';
+import PlatformSection from '../components/home_comps/PlatformSection';
+import FrameworkSection from '../components/home_comps/FrameworkSection';
+import TechnologiesSection from '../components/home_comps/TechnologiesSection';
 import styles from './index.module.css';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-
-const LayoutComponent = Layout as unknown as React.ComponentType<any>;
 
 const HomePage: React.FC = () => {
-  const { i18n } = useDocusaurusContext();
   const homeTitle = 'Next-Gen AI App Development Technology - JitAI';
   const homeDesc = "JitAI: The world's first interpreted app framework enabling AI agents to perceive and orchestrate systems in real-time, boosting development efficiency by 10x! Experience the new era of intelligent development now.";
-  useEffect(() => {
-    document.documentElement.setAttribute('data-locale', i18n.currentLocale);
-  }, [i18n.currentLocale]);
 
   return (
-    <LayoutComponent>
-      <Head children={
-        <>
-          <title>{homeTitle}</title>
-          <meta name="description" content={homeDesc} />
-          <meta property="og:title" content={homeTitle} />
-          <meta property="og:description" content={homeDesc} />
-          <meta name="twitter:title" content={homeTitle} />
-          <meta name="twitter:description" content={homeDesc} />
-        </>
-      } />
-      <div className={`${styles.container} custom-page`}>
-        <Navbar currentLocale={i18n.currentLocale}/>
-        <HeroSection currentLocale={i18n.currentLocale}/>
-        <ProductSection currentLocale={i18n.currentLocale}/>
-        <TechnologiesSection currentLocale={i18n.currentLocale}/>
-        <PlatformSection currentLocale={i18n.currentLocale}/>
-        <FrameworkSection currentLocale={i18n.currentLocale}/>
-        <IDESection currentLocale={i18n.currentLocale}/>
-        <DevOpsSection currentLocale={i18n.currentLocale}/>
-      </div>
-    </LayoutComponent>
+    <PageLayout 
+      title={homeTitle} 
+      description={homeDesc}
+      containerClassName={styles.container}
+    >
+      <HeroSection />
+      <ProductSection />
+      <TechnologiesSection />
+      <PlatformSection />
+      <FrameworkSection />
+      <IDESection />
+      <DevOpsSection />
+    </PageLayout>
   );
 };
 

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import globalStyles from '../../pages/index.module.css';
+import globalStyles from '../../../pages/index.module.css';
 import styles from './styles.module.css';
 import CONTENT_EN from './constant-en';
 import CONTENT_ZH from './constant-zh';
 
 interface PricingFAQSectionProps {
-  currentLocale: string;
+  currentLocale?: string;
 }
 
 const PricingFAQSection: React.FC<PricingFAQSectionProps> = ({ currentLocale }) => {

@@ -6,16 +6,16 @@ slug: easy_mode
 
 # Building Question Bank Management with Easy Mode
 
-Easy mode is suitable for beginners or for quickly building common simple business scenarios.
+Easy mode is ideal for beginners or rapid development of common business scenarios.
 
-As shown below: Create an AI data management function with CRUD operations in 3 steps.
+The following demonstrates creating an AI-powered data management system with CRUD operations in 3 simple steps.
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/easy_questions.mp4" />
 
-The data table model can be simply understood as an Excel table, configuring the title, data type, and configuration for each column.
+The data table model can be conceptualized as an Excel spreadsheet, where you configure the title, data type, and settings for each column.
 
-Read [AI Data Management Page](../../devguide/shell-and-page/ai-data-management-page) for more details.
+For detailed information, see [AI Data Management Page](../../devguide/shell-and-page/ai-data-management-page).
 
-If you need more complex business logic and page interactions, please read the next article.
+For more complex business logic and page interactions, proceed to the next article.

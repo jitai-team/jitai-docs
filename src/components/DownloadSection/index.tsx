@@ -5,7 +5,7 @@ import CONTENT_EN from './constant-en';
 import CONTENT_ZH from './constant-zh';
 
 interface DownloadSectionProps {
-  currentLocale: string;
+  currentLocale?: string;
 }
 
 const DownloadSection: React.FC<DownloadSectionProps> = ({ currentLocale }) => {

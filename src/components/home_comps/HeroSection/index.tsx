@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './styles.module.css';
-import globalStyles from '../../pages/index.module.css';
+import globalStyles from '../../../pages/index.module.css';
 import CONTENT_ZH from './constant-zh';
 import CONTENT_EN from './constant-en';
 
@@ -65,7 +65,7 @@ const TypewriterText: React.FC<{ text: string; isVisible: boolean; speed?: numbe
   );
 };
 
-const HeroSection: React.FC<{ currentLocale: string }> = ({ currentLocale }) => {
+const HeroSection: React.FC<{ currentLocale?: string }> = ({ currentLocale }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [animateElements, setAnimateElements] = useState(false);
   const [showTypewriter, setShowTypewriter] = useState(false);

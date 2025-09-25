@@ -5,7 +5,7 @@ import CONTENT_EN from './constant-en';
 import CONTENT_ZH from './constant-zh';
 
 interface NavbarProps {
-  currentLocale: string;
+  currentLocale?: string;
 }
 
 const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {

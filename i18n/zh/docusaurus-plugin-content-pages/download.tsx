@@ -1,7 +1,7 @@
 import React from 'react';
-import PageLayout from '../components/PageLayout';
-import DownloadSection from '../components/DownloadSection';
-import styles from './download.module.css';
+import PageLayout from '../../../src/components/PageLayout';
+import DownloadSection from '../../../src/components/DownloadSection';
+import styles from '../../../src/pages/download.module.css';
 
 const DownloadPage: React.FC = () => {
   const downloadTitle = 'JitAI 下载安装 - 桌面版与服务器版';

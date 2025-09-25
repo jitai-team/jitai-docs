@@ -21,7 +21,7 @@ const CONTENT = {
       label: '下载',
       type: 'link',
       isNewTab: true,
-      url: '/zh/docs/tutorial/download-installation',
+      url: '/zh/download',
       external: true
     },
     {

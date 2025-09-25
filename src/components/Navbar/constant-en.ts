@@ -21,7 +21,7 @@ const CONTENT = {
       label: 'Download',
       type: 'link',
       isNewTab: true,
-      url: '/docs/tutorial/download-installation',
+      url: '/download',
       external: true
     },
     {

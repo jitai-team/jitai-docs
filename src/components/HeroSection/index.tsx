@@ -178,7 +178,7 @@ const HeroSection: React.FC<{ currentLocale: string }> = ({ currentLocale }) => 
                 </svg>
               </span>
             </a>
-            <a className={`${styles.secondaryButton} ${styles.hideOnMobile}`} href="./docs/tutorial/download-installation" target="_blank">
+            <a className={`${styles.secondaryButton}`} href="./download" >
               <span className={styles.buttonText}>
                 {content.buttonDownload}
               </span>

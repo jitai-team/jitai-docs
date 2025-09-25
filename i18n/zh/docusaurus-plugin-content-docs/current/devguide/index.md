@@ -387,9 +387,11 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="devguide/calling-business-elements-in-pages/calling-service-functions-in-pages"
   description="学习如何从页面调用服务函数来执行业务逻辑、处理数据并与外部系统集成，实现动态内容生成。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "标准页面中调用服务函数", href: "devguide/calling-business-elements-in-pages/calling-service-functions-in-pages#calling-service-functions-in-standard-pages" },
+    { text: "全代码页面中调用服务函数", href: "devguide/calling-business-elements-in-pages/calling-service-functions-in-pages#calling-service-functions-in-full-code-pages" },
+    { text: "复杂参数处理", href: "devguide/calling-business-elements-in-pages/calling-service-functions-in-pages#complex-parameter-handling" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -397,9 +399,11 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages"
   description="掌握从页面调用数据模型函数的技巧，执行CRUD操作、数据查询和数据库交互，实现实时数据显示。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "调用语法", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#calling-syntax" },
+    { text: "全代码页面中的基本语法", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#basic-syntax-in-full-code-pages" },
+    { text: "数据操作能力", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#data-operation-capabilities" }
+  ]} />
 </IndexCard>
 
 </div>
@@ -414,9 +418,14 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications"
   description="学习创建全代码UI组件的接口规范和标准，包括属性、状态管理和生命周期方法。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "组件接口架构", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#component-interface-architecture" },
+    { text: "核心接口定义", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#core-interface-definitions" },
+    { text: "接口交互机制", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-interaction-mechanism" },
+    { text: "接口实现规范", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-implementation-specifications" },
+    { text: "接口运行时序", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-runtime-sequence" },
+    { text: "接口调用说明", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-invocation-explanation" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -424,9 +433,14 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components"
   description="掌握在全代码组件内调用页面函数和其他组件函数的技巧，实现无缝集成。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "调用原理", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#calling-principle" },
+    { text: "实际应用示例", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#practical-examples" },
+    { text: "基本组件调用", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#basic-component-calling" },
+    { text: "获取其他组件的数据", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#getting-data-from-other-components" },
+    { text: "常用组件调用方法", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#common-component-methods" },
+    { text: "基本调用模式", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#basic-calling-pattern" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -434,9 +448,15 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="devguide/fullcode-ui-components-in-pages/emitting-events"
   description="学习如何从全代码组件发出自定义事件，与父页面和其他组件进行有效通信。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "事件订阅原理", href: "devguide/fullcode-ui-components-in-pages/emitting-events#event-subscription-principles" },
+    { text: "在全代码组件中响应事件", href: "devguide/fullcode-ui-components-in-pages/emitting-events#respond-in-custom-components" },
+    { text: "发布自定义事件", href: "devguide/fullcode-ui-components-in-pages/emitting-events#publishing-custom-events" },
+    { text: "可订阅的事件类型", href: "devguide/fullcode-ui-components-in-pages/emitting-events#subscribable-events" },
+    { text: "标准组件事件", href: "devguide/fullcode-ui-components-in-pages/emitting-events#standard-component-events" },
+    { text: "全代码组件的自定义事件", href: "devguide/fullcode-ui-components-in-pages/emitting-events#custom-component-events" },
+    { text: "双向通信示例", href: "devguide/fullcode-ui-components-in-pages/emitting-events#bidirectional-communication-example" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -444,9 +464,10 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code"
   description="了解如何从页面代码调用全代码组件暴露的函数，控制组件行为和数据流。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "调用原理", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#calling-principle" },
+    { text: "调用时机和生命周期", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#calling-timing-and-lifecycle" }
+  ]} />
 </IndexCard>
 
 </div>
@@ -857,9 +878,11 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="devguide/ai-llm/llm-input-output"
   description="了解大语言模型的输入输出配置，实现最优的集成与性能表现。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "在页面中调用大模型", href: "devguide/ai-llm/llm-input-output#call-llm-in-pages" },
+    { text: "在后端函数中调用大模型", href: "devguide/ai-llm/llm-input-output#call-llm-in-backend-functions" },
+    { text: "大模型编程接口", href: "devguide/ai-llm/llm-input-output#llm-programming-interface" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -880,75 +903,89 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="创建AI知识库元素"
+  title="创建知识库元素"
   href="devguide/knowledge-base/create-knowledge-elements"
   description="学习如何创建AI知识库元素，并了解其工作原理。"
 >
-  <LinkGrid links={[
+  <LinkGrid columns={2} links={[
     { text: "创建AI知识库元素", href: "devguide/knowledge-base/create-knowledge-elements#create-ai-knowledge-base-element" },
-    { text: "原理说明", href: "devguide/knowledge-base/create-knowledge-elements#principle-description" }
+    { text: "原理说明", href: "devguide/knowledge-base/create-knowledge-elements#principle-description" },
+    { text: "核心构成要素", href: "devguide/knowledge-base/create-knowledge-elements#core-components" },
+    { text: "系统架构", href: "devguide/knowledge-base/create-knowledge-elements#system-architecture" },
+    { text: "技术原理", href: "devguide/knowledge-base/create-knowledge-elements#technical-principles" },
+    { text: "数据处理流程", href: "devguide/knowledge-base/create-knowledge-elements#data-processing-flow" },
+    { text: "检索机制", href: "devguide/knowledge-base/create-knowledge-elements#retrieval-mechanism" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="文档管理与设置"
+  title="知识库文档管理"
   href="devguide/knowledge-base/knowledge-base-document-management"
   description="管理知识库文档，配置知识库参数，进行查询测试与向量化调优。"
 >
   <LinkGrid columns={2} links={[
-    { text: "文档管理", href: "devguide/knowledge-base/knowledge-base-document-management" },
     { text: "知识库设置", href: "devguide/knowledge-base/knowledge-base-document-management#ai-knowledge-base-settings" },
     { text: "查询测试", href: "devguide/knowledge-base/knowledge-base-document-management#query-testing" },
-    { text: "向量化配置说明", href: "devguide/knowledge-base/knowledge-base-document-management#vectorization-configuration-description" }
+    { text: "向量化配置说明", href: "devguide/knowledge-base/knowledge-base-document-management#vectorization-configuration-description" },
+    { text: "知识库配置参数说明", href: "devguide/knowledge-base/knowledge-base-document-management#knowledge-base-configuration-parameter-description" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="全文与语义检索"
+  title="使用知识库元素实现关键词检索和语义检索"
   href="devguide/knowledge-base/full-text-and-semantic-search"
   description="理解配置项如何参与查询流程，并在后端可视化编程中调用知识库。"
 >
-  <LinkGrid links={[
-    { text: "知识库设置如何参与查询流程", href: "devguide/knowledge-base/full-text-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow" },
-    { text: "在后端可视化编程中调用", href: "devguide/knowledge-base/full-text-and-semantic-search#call-ai-knowledge-base-in-backend-visual-programming" }
+  <LinkGrid columns={2} links={[
+    { text: "在后端可视化编程中调用 AI 知识库", href: "devguide/knowledge-base/full-text-and-semantic-search#call-ai-knowledge-base-in-backend-visual-programming" },
+    { text: "语义检索", href: "devguide/knowledge-base/full-text-and-semantic-search#semantic-search" },
+    { text: "新增文档", href: "devguide/knowledge-base/full-text-and-semantic-search#adding-document" },
+    { text: "删除文档", href: "devguide/knowledge-base/full-text-and-semantic-search#deleting-document" },
+    { text: "关键词检索", href: "devguide/knowledge-base/full-text-and-semantic-search#searching-by-keywords" },
+    { text: "AI 知识库设置如何参与查询流程", href: "devguide/knowledge-base/full-text-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="在AIAgent中使用知识库"
+  title="把知识库集成到agent"
   href="devguide/knowledge-base/integrate-knowledge-base-into-agent"
   description="在Agent中集成知识库实现RAG。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 文档正在完善中，敬请期待...
-  </div>
-</IndexCard>
-
-<IndexCard
-  title="AI知识库API"
-  href="devguide/knowledge-base/ai-knowledge-base-api"
-  description="以编程方式访问AI知识库。"
->
   <LinkGrid links={[
-    { text: "编程接口概览", href: "devguide/knowledge-base/ai-knowledge-base-api#ai-knowledge-base-programming-interface" },
-    { text: "query", href: "devguide/knowledge-base/ai-knowledge-base-api#query-testing" },
-    { text: "addDocumentByBusinessId", href: "devguide/knowledge-base/ai-knowledge-base-api#adddocumentbybusinessid" },
-    { text: "deleteDocumentByBusinessId", href: "devguide/knowledge-base/ai-knowledge-base-api#deletedocumentbybusinessid" },
-    { text: "queryKeywords", href: "devguide/knowledge-base/ai-knowledge-base-api#querykeywords" }
+    { text: "知识库与Agent的关系", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#relationship-between-knowledge-base-and-agent" },
+    { text: "技术集成原理", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#technical-integration-principle" },
+    { text: "集成模式", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#integration-modes" },
+    { text: "在Agent中使用知识库", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#use-knowledge-base-in-agent" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="向量数据库独立部署"
+  title="向量数据库的独立部署"
   href="devguide/knowledge-base/vector-database-standalone-deployment"
   description="企业知识的智能存储引擎。将文本转化为向量数据，实现语义级精准搜索。"
 >
-  <LinkGrid links={[
-    { text: "Chroma向量数据库", href: "devguide/knowledge-base/vector-database-standalone-deployment#chroma-standalone-deployment" },
-    { text: "本地向量数据库配置", href: "devguide/knowledge-base/vector-database-standalone-deployment#local-development-config" },
-    { text: "远程向量数据库连接", href: "devguide/knowledge-base/vector-database-standalone-deployment#connect-to-standalone-chroma" },
-    { text: "向量数据库编程接口", href: "devguide/knowledge-base/vector-database-standalone-deployment#vector-database-programming-interface" }
+  <LinkGrid columns={2} links={[
+    { text: "独立部署方案：Chroma 向量数据库", href: "devguide/knowledge-base/vector-database-standalone-deployment#chroma-standalone-deployment" },
+    { text: "独立部署的优势", href: "devguide/knowledge-base/vector-database-standalone-deployment#advantages-of-standalone-deployment" },
+    { text: "Chroma 独立部署安装", href: "devguide/knowledge-base/vector-database-standalone-deployment#chroma-installation" },
+    { text: "连接独立部署的Chroma数据库", href: "devguide/knowledge-base/vector-database-standalone-deployment#connect-to-standalone-chroma" },
+    { text: "开发测试环境：本地化配置", href: "devguide/knowledge-base/vector-database-standalone-deployment#local-development-config" },
+    { text: "向量数据库编程接口", href: "devguide/knowledge-base/vector-database-standalone-deployment#vector-database-programming-interface" },
+    { text: "health_check", href: "devguide/knowledge-base/vector-database-standalone-deployment#health_check" },
+    { text: "create_collection", href: "devguide/knowledge-base/vector-database-standalone-deployment#create_collection" },
+    { text: "add_vectors", href: "devguide/knowledge-base/vector-database-standalone-deployment#add_vectors" },
+    { text: "query_vectors", href: "devguide/knowledge-base/vector-database-standalone-deployment#query_vectors" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="AI知识库的API开放"
+  href="devguide/knowledge-base/ai-knowledge-base-api-exposure"
+  description="通过API接口开放AI知识库能力，实现与外部系统集成。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
 </IndexCard>
 
 </div>
@@ -1096,30 +1133,6 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="管理数据库连接"
-  href="devguide/data-modeling/manage-database-connections"
-  description="配置和管理多个数据库连接，支持多数据源应用开发。"
->
-  <LinkGrid links={[
-    { text: "创建数据库连接", href: "devguide/data-modeling/manage-database-connections#create-database-connection" },
-    { text: "多数据库连接管理", href: "devguide/data-modeling/manage-database-connections#multi-database-connection-management" },
-    { text: "数据库连接安全配置", href: "devguide/data-modeling/manage-database-connections#database-connection-security-configuration" },
-    { text: "连接测试与故障排查", href: "devguide/data-modeling/manage-database-connections#connection-test-and-troubleshooting" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="支持的数据库厂商"
-  href="devguide/data-modeling/supported-database-vendors"
-  description="了解JitAi支持的各种数据库类型和连接配置。"
->
-  <LinkGrid links={[
-    { text: "场景选择建议", href: "devguide/data-modeling/supported-database-vendors#scenario-selection-suggestions" },
-    { text: "与云厂商的兼容性说明", href: "devguide/data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
-    { text: "数据库元素使用", href: "devguide/data-modeling/supported-database-vendors#database-element-usage" }
-  ]} />
-</IndexCard>
-<IndexCard
   title="数据表模型"
   href="devguide/data-modeling/data-table-model"
   description="应用数据的基础结构，学习如何创建和配置数据表，设计字段类型和约束。"
@@ -1234,6 +1247,30 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 
+<IndexCard
+  title="管理数据库连接"
+  href="devguide/data-modeling/manage-database-connections"
+  description="配置和管理多个数据库连接，支持多数据源应用开发。"
+>
+  <LinkGrid links={[
+    { text: "创建数据库连接", href: "devguide/data-modeling/manage-database-connections#create-database-connection" },
+    { text: "多数据库连接管理", href: "devguide/data-modeling/manage-database-connections#multi-database-connection-management" },
+    { text: "数据库连接安全配置", href: "devguide/data-modeling/manage-database-connections#database-connection-security-configuration" },
+    { text: "连接测试与故障排查", href: "devguide/data-modeling/manage-database-connections#connection-test-and-troubleshooting" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="支持的数据库厂商"
+  href="devguide/data-modeling/supported-database-vendors"
+  description="了解JitAi支持的各种数据库类型和连接配置。"
+>
+  <LinkGrid links={[
+    { text: "场景选择建议", href: "devguide/data-modeling/supported-database-vendors#scenario-selection-suggestions" },
+    { text: "与云厂商的兼容性说明", href: "devguide/data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
+    { text: "数据库元素使用", href: "devguide/data-modeling/supported-database-vendors#database-element-usage" }
+  ]} />
+</IndexCard>
 </div>
 
 ## 事务管理
@@ -1840,31 +1877,46 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <IndexCard
   title="组件定制"
   href="devguide/frontend-ui-customization/component-customization"
-  description="定制单个组件以满足特定设计要求，增强应用程序中用户界面的一致性。"
+  description="平台提供两种主要的组件定制方式，以满足不同的开发需求和场景。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "开发全代码组件", href: "devguide/frontend-ui-customization/component-customization#developing-full-code-components" },
+    { text: "扩展组件Type元素", href: "devguide/frontend-ui-customization/component-customization#extending-component-type-elements" }
+  ]} />
 </IndexCard>
 
 <IndexCard
   title="页面定制"
   href="devguide/frontend-ui-customization/page-customization"
-  description="定制整个页面布局、主题和视觉元素，创建连贯的品牌化用户体验。"
+  description="介绍全代码页面的具体开发技术和使用方法，包括样式处理、组件使用、资源管理、数据操作等。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "使用样式", href: "devguide/frontend-ui-customization/page-customization#use-style" },
+    { text: "使用本地资源", href: "devguide/frontend-ui-customization/page-customization#use-local-resources" },
+    { text: "使用 Ant Design 的组件", href: "devguide/frontend-ui-customization/page-customization#use-ant-design-components" },
+    { text: "内嵌已有常规页面", href: "devguide/frontend-ui-customization/page-customization#embed-existing-regular-page" },
+    { text: "使用标准组件", href: "devguide/frontend-ui-customization/page-customization#use-standard-component" },
+    { text: "调用数据模型函数", href: "devguide/frontend-ui-customization/page-customization#call-data-model-function" },
+    { text: "调用服务函数", href: "devguide/frontend-ui-customization/page-customization#call-service-function" },
+    { text: "创建Vue全代码页面", href: "devguide/frontend-ui-customization/page-customization#vue-full-code-page" },
+    { text: "使用第三方包", href: "devguide/frontend-ui-customization/page-customization#use-third-party-packages" },
+    { text: "打包配置的使用", href: "devguide/frontend-ui-customization/page-customization#use-packaging-configuration" }
+  ]} />
 </IndexCard>
 
 <IndexCard
   title="门户定制"
   href="devguide/frontend-ui-customization/portal-customization"
-  description="定制门户界面和导航元素，提供个性化和基于角色的用户体验。"
+  description="全代码自定义门户提供了灵活的解决方案，适用于导航布局调整、界面风格定制和交互方式优化等场景。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "创建自定义门户", href: "devguide/frontend-ui-customization/portal-customization#creating-custom-portal" },
+    { text: "核心文件结构", href: "devguide/frontend-ui-customization/portal-customization#core-file-structure" },
+    { text: "重要API和方法", href: "devguide/frontend-ui-customization/portal-customization#important-apis-and-methods" },
+    { text: "门户基础API", href: "devguide/frontend-ui-customization/portal-customization#portal-basic-apis" },
+    { text: "页面渲染和导航", href: "devguide/frontend-ui-customization/portal-customization#page-rendering-and-navigation" },
+    { text: "权限验证", href: "devguide/frontend-ui-customization/portal-customization#permission-verification" }
+  ]} />
 </IndexCard>
 
 </div>

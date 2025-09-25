@@ -3,70 +3,70 @@ sidebar_position: 5
 slug: vector-database-standalone-deployment
 ---
 
-# 向量数据库的独立部署
+# Vector Database Standalone Deployment
 
-在生产环境和企业级应用中，**独立部署向量数据库**是确保性能、稳定性和可扩展性的关键策略。独立部署将向量数据库从应用服务中分离出来，作为专门的数据服务运行，具备更强的并发处理能力、更好的资源隔离以及更灵活的运维管理。
+In production environments and enterprise applications, **standalone deployment of vector databases** is a key strategy to ensure performance, stability, and scalability. Standalone deployment separates vector databases from application services to run as dedicated data services, providing stronger concurrent processing capabilities, better resource isolation, and more flexible operational management.
 
-向量数据库是[AI 知识库](./create-knowledge-elements)元素的底层存储引擎，负责将文档内容转换为向量数据进行存储和检索。通过独立部署，可以为多个知识库应用提供统一的向量存储服务，实现资源共享和集中管理，同时支持水平扩展以应对大规模数据和高并发访问需求。
+Vector databases are the underlying storage engines for [AI Knowledge Base](./create-knowledge-elements) elements, responsible for converting document content into vector data for storage and retrieval. Through standalone deployment, unified vector storage services can be provided for multiple knowledge base applications, achieving resource sharing and centralized management, while supporting horizontal scaling to handle large-scale data and high-concurrency access requirements.
 
-![向量数据库创建](./img/vector-database-creation.png)
-
-:::tip
-向量数据库默认使用`余弦相似度`作为距离度量算法，该算法特别适用于文本语义相似性计算。
-:::
-
-## 独立部署方案：Chroma 向量数据库 {#chroma-standalone-deployment}
-
-Chroma 是JitAi平台推荐的向量数据库解决方案，支持独立服务部署，具有轻量级、高性能、易维护等特点。独立部署的Chroma数据库可以为多个JitAi应用实例提供统一的向量存储服务，实现企业级的数据管理和服务治理。
-
-### 独立部署的优势 {#advantages-of-standalone-deployment}
-
-- **性能隔离**：独立的计算和存储资源，避免与应用服务竞争系统资源
-- **横向扩展**：支持集群部署，轻松应对大规模数据和高并发访问
-- **数据安全**：独立的网络配置和访问控制，提供更强的安全保障
-- **运维便利**：统一的数据备份、监控和维护策略
-
-### Chroma 独立部署安装 {#chroma-installation}
-
-官方提供了多种部署方式，可根据实际需求选择：
-
-- **Docker部署**：[Chroma Docker官方文档](https://docs.trychroma.com/deployment/docker)
-- **云服务部署**：[Chroma云服务部署指南](https://docs.trychroma.com/deployment/aws)
-
-### 连接独立部署的Chroma数据库 {#connect-to-standalone-chroma}
-
-在JitAi平台中连接已独立部署的Chroma向量数据库：
-
-![远程](./img/remote.png)
-
-配置参数说明：
-- **名称**：向量数据库元素的标识名称
-- **数据库地址**：独立部署的Chroma服务器IP或域名
-- **端口**：Chroma服务监听端口（默认8000）
-- **超时时间**：连接和查询的超时设置
-- **认证令牌**：如启用了认证机制，需提供访问令牌
-
-## 开发测试环境：本地化配置 {#local-development-config}
-
-对于开发测试场景，JitAi支持本地化的向量数据库配置，无需独立部署外部服务，开箱即用：
-
-![本地化](./img/localization.png)
-
-本地化配置采用内置存储方式，数据直接保存在JitAi平台的本地环境中。只需输入"名称"，选择"持久化模式"，即可快速创建本地向量数据库，适合原型开发和功能验证。
+![Vector Database Creation](./img/vector-database-creation.png)
 
 :::tip
-生产环境建议使用独立部署方案，以获得更好的性能、可靠性和可维护性。
+Vector databases use `cosine similarity` as the default distance metric algorithm, which is particularly suitable for text semantic similarity computation.
 :::
 
-## 向量数据库编程接口 {#vector-database-programming-interface}
-### health_check
-检查向量数据库的连接状态和运行健康情况，返回数据库基本信息。[API 文档](../../reference/framework/JitAi/vector-database#health_check)
+## Standalone Deployment Solution: Chroma Vector Database {#chroma-standalone-deployment}
 
-### create_collection
-在向量数据库中创建新的集合，用于存储和管理相关的向量数据。[API 文档](../../reference/framework/JitAi/vector-database#create_collection)
+Chroma is the vector database solution recommended by the JitAi platform, supporting standalone service deployment with characteristics of being lightweight, high-performance, and easy to maintain. Standalone deployed Chroma databases can provide unified vector storage services for multiple JitAi application instances, achieving enterprise-level data management and service governance.
 
-### add_vectors
-将向量数据及其元数据存储到指定的集合中。[API 文档](../../reference/framework/JitAi/vector-database#add_vectors)
+### Advantages of Standalone Deployment {#advantages-of-standalone-deployment}
 
-### query_vectors
-基于查询向量在集合中搜索最相似的向量数据。[API 文档](../../reference/framework/JitAi/vector-database#query_vectors)
+- **Performance Isolation**: Independent computing and storage resources, avoiding competition with application services for system resources
+- **Horizontal Scaling**: Supports cluster deployment, easily handling large-scale data and high-concurrency access
+- **Data Security**: Independent network configuration and access control, providing stronger security guarantees
+- **Operational Convenience**: Unified data backup, monitoring, and maintenance strategies
+
+### Chroma Standalone Deployment Installation {#chroma-installation}
+
+Official documentation provides multiple deployment methods, choose according to actual requirements:
+
+- **Docker Deployment**: [Chroma Docker Official Documentation](https://docs.trychroma.com/deployment/docker)
+- **Cloud Service Deployment**: [Chroma Cloud Service Deployment Guide](https://docs.trychroma.com/deployment/aws)
+
+### Connecting to Standalone Chroma Database {#connect-to-standalone-chroma}
+
+Connect to standalone deployed Chroma vector database in JitAi platform:
+
+![Remote](./img/remote.png)
+
+Configuration parameter descriptions:
+- **Name**: Identifier name for the vector database element
+- **Database Address**: IP or domain name of the standalone deployed Chroma server
+- **Port**: Chroma service listening port (default 8000)
+- **Timeout**: Connection and query timeout settings
+- **Authentication Token**: Access token required if authentication mechanism is enabled
+
+## Development Testing Environment: Local Configuration {#local-development-config}
+
+For development testing scenarios, JitAi supports localized vector database configuration, requiring no standalone deployment of external services, ready to use out of the box:
+
+![Localization](./img/localization.png)
+
+Local configuration uses built-in storage methods, with data directly saved in the JitAi platform's local environment. Simply input "Name" and select "Persistence Mode" to quickly create a local vector database, suitable for prototype development and feature verification.
+
+:::tip
+Production environments recommend using standalone deployment solutions for better performance, reliability, and maintainability.
+:::
+
+## Vector Database Programming Interface {#vector-database-programming-interface}
+### health_check {#health_check}
+Check the connection status and operational health of the vector database, returning basic database information. [API Documentation](../../reference/framework/JitAi/vector-database#health_check)
+
+### create_collection {#create_collection}
+Create new collections in the vector database for storing and managing related vector data. [API Documentation](../../reference/framework/JitAi/vector-database#create_collection)
+
+### add_vectors {#add_vectors}
+Store vector data and its metadata to specified collections. [API Documentation](../../reference/framework/JitAi/vector-database#add_vectors)
+
+### query_vectors {#query_vectors}
+Search for the most similar vector data in collections based on query vectors. [API Documentation](../../reference/framework/JitAi/vector-database#query_vectors)

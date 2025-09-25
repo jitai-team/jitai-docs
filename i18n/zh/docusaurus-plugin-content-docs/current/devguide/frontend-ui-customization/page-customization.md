@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 # 页面定制
 
 :::info 前置步骤
-如果您还没有创建全代码页面，请先参考 [创建全代码页面](../shell-and-page/full-code-page-development) 了解如何创建React和Vue全代码页面。
+如果你还没有创建全代码页面，请先参考 [创建全代码页面](../shell-and-page/full-code-page-development) 了解如何创建React和Vue全代码页面。
 :::
 
 本文档介绍全代码页面的具体开发技术和使用方法，包括样式处理、组件使用、资源管理、数据操作等。

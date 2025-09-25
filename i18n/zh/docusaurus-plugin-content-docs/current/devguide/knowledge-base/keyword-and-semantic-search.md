@@ -10,12 +10,12 @@ slug: full-text-and-semantic-search
 ## 在后端可视化编程中调用 AI 知识库 {#call-ai-knowledge-base-in-backend-visual-programming}
 在后端可视化编程函数（服务函数/模型函数/任务函数/事件函数）中，知识库元素提供了“查询”“新增文档”“删除文档”“关键词查询”4 个方法。
 
-### 语义检索
+### 语义检索 {#semantic-search}
 ![语义检索](./img/query.png)
 
 在函数面板的空白语句处点击“请选择”，选择“知识库 - 【知识库名称】 - 查询”，生成 AI 知识库查询函数；可在查询函数的输入框中设置查询条件。
 
-### 新增文档
+### 新增文档 {#adding-document}
 ![新增文档语句](./img/add-document-statement.png)
 
 在函数面板选择“知识库 - 【知识库名称】 - 新增文档”，生成新增文档函数；点击函数中的“文档添加配置”打开新增文档的详细配置。
@@ -28,12 +28,12 @@ slug: full-text-and-semantic-search
 其它配置参考[向量化配置说明](./knowledge-base-document-management#vectorization-configuration-description)。
 :::
 
-### 删除文档
+### 删除文档 {#deleting-document}
 ![删除](./img/delete.png)
 
 在函数面板选择“知识库 - 【知识库名称】 - 删除文档”，生成删除文档函数；填入业务ID，运行后会删除该业务ID下的所有文档。
 
-### 关键词检索
+### 关键词检索 {#searching-by-keywords}
 ![关键词检索](./img/keyword-query.png)
 
 在函数面板选择“知识库 - 【知识库名称】 - 关键词查询”，生成关键词查询函数；配置关键词列表与查询数量后，返回对应的查询结果。

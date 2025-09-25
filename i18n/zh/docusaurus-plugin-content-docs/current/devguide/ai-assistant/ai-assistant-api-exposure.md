@@ -16,7 +16,7 @@ slug: ai-assistant-api-integration
 
 ## 应用内调用AI助理
 
-在前端页面，后端服务/模型函数中可[直接调用AI助理](../using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#call-ai-assistant)。
+在前端页面、后端服务、模型函数中可[直接调用AI助理](../using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#call-ai-assistant)。
 
 :::info 重要说明
 通过接口方式调用AI助理时，请注意以下限制：
@@ -36,7 +36,7 @@ slug: ai-assistant-api-integration
 :::
 
 
-## 外部调用AI助理
+## 应用外调用AI助理
 
 正在开发中...
 

@@ -3,94 +3,94 @@ sidebar_position: 2
 slug: llm-input-output
 ---
 
-# 大模型函数的输入输出
+# LLM Function Input and Output
 
-大语言模型的核心执行函数是 `runLlm`，它是所有大模型调用的统一入口。该函数接受两类关键输入参数：**大模型配置**（包括模型选择和参数设置）和**提示词内容**（包括系统提示词、用户提示词及变量），并通过**控制输出**配置来规范返回结果的格式和结构。
+The core execution function of large language models is `runLlm`, which serves as the unified entry point for all LLM calls. This function accepts two types of key input parameters: **LLM configuration** (including model selection and parameter settings) and **prompt content** (including system prompts, user prompts, and variables), and uses **output control** configuration to standardize the format and structure of returned results.
 
-## 在页面中调用大模型 {#call-llm-in-pages}
-在页面函数及事件函数逻辑里，开发者可以使用大模型厂商元素的运行函数来调用大模型，获取大模型返回值。这些配置最终都会作为 `runLlm` 函数的输入参数。
+## Calling LLM in Pages {#call-llm-in-pages}
+In page functions and event function logic, developers can use the runtime functions of LLM vendor elements to call LLMs and get LLM return values. These configurations will ultimately serve as input parameters for the `runLlm` function.
 
-![页面调用大模型](./img/1/page-call-large-model.gif)
+![Page Call LLM](./img/1/page-call-large-model.gif)
 
-点击组件右上角的`事件`，点击事件面板中空白语句上的`请选择`文案，在面板中选择`大模型`-`大模型厂商`，完成后会生成大模型厂商运行函数，点击`提示词配置`，会弹出大模型`提示词配置`面板。
+Click `Events` in the top right corner of the component, click the `Please Select` text on the blank statement in the event panel, select `LLM` - `LLM Vendor` in the panel. After completion, an LLM vendor runtime function will be generated. Click `Prompt Configuration` to open the LLM `Prompt Configuration` panel.
 
-### 函数输入一：设置大语言模型 {#call-llm-input}
-![大模型选择.png](./img/1/large-model-selection.png)
+### Function Input 1: Setting Large Language Model {#call-llm-input}
+![LLM Selection](./img/1/large-model-selection.png)
 
-在`提示词配置`弹窗中，首先要选择使用的大模型，点击大模型选择框，在弹出的下拉面板中选择对应的大模型即可。选择模型后会自动匹配对应模型的参数，开发者可根据具体模型的特性进行修改。这些模型配置信息将作为 `runLlm` 函数的 `config` 参数中的 `llmConfig` 部分。
+In the `Prompt Configuration` dialog, first select the LLM to use. Click the LLM selection box and choose the corresponding LLM from the dropdown panel. After selecting a model, it will automatically match the corresponding model parameters, which developers can modify according to the specific model characteristics. This model configuration information will serve as the `llmConfig` part in the `config` parameter of the `runLlm` function.
 :::tip
-不同模型支持的配置参数不同，但是一般都支持温度参数，温度参数是最重要的参数之一，开发者可根据业务情况来选择合适的温度参数从而控制模型生成的随机性。
+Different models support different configuration parameters, but generally all support temperature parameters. Temperature is one of the most important parameters, and developers can choose appropriate temperature parameters based on business needs to control the randomness of model generation.
 :::
 
-### 函数输入二：使用提示词
-提示词是决定大模型输出质量的关键，构成了 `runLlm` 函数的核心输入内容。系统提示词总是作为第一个提示词输入，一般用于定义模型的角色、行为准则、语气风格、安全限制等。用户提示词作为第二个提示词输入，一般用于描述用户意图、需求、上下文等。
+### Function Input 2: Using Prompts
+Prompts are key to determining LLM output quality and constitute the core input content of the `runLlm` function. System prompts are always input as the first prompt, generally used to define the model's role, behavioral guidelines, tone style, safety restrictions, etc. User prompts are input as the second prompt, generally used to describe user intent, requirements, context, etc.
 
-![提示词.png](./img/1/prompts.png)
+![Prompts](./img/1/prompts.png)
 
-点击`+添加消息`可以添加新的提示词输入框，左上角的下拉菜单可以切换提示词类型，系统提示词不允许修改类型，也不允许删除。开发者可根据大模型的用途自行规划提示词的内容，填入到不同类型的提示词输入框中。
-点击右上角`插入变量`按钮，可将页面变量内容插入到提示词中，变量内容可以动态改变提示词的内容，从而控制大模型输出。这些变量将作为 `runLlm` 函数的 `context` 参数传入，实现动态的变量替换。
+Click `+Add Message` to add new prompt input boxes. The dropdown menu in the top left corner can switch prompt types. System prompts cannot be modified in type or deleted. Developers can plan prompt content according to the LLM's purpose and fill it into different types of prompt input boxes.
+Click the `Insert Variable` button in the top right corner to insert page variable content into prompts. Variable content can dynamically change prompt content, thereby controlling LLM output. These variables will be passed in as the `context` parameter of the `runLlm` function to achieve dynamic variable replacement.
 
 
-#### 智能链接解析
-当您在提示词中输入包含链接的文本时，系统会自动识别并处理这些链接，将获取到的内容直接合并到提示词中发送给AI大模型。
+#### Intelligent Link Parsing
+When you input text containing links in prompts, the system will automatically recognize and process these links, directly merging the retrieved content into the prompt and sending it to the AI LLM.
 
 :::tip
-图片链接需要使用支持多模态或视觉功能的AI大模型（如qwen-vl-max-latest、GPT-4o等）才能正确识别和分析图片内容。使用纯文本模型时，图片链接将被跳过处理。
+Image links require AI LLMs that support multimodal or visual capabilities (such as qwen-vl-max-latest, GPT-4o, etc.) to correctly recognize and analyze image content. When using pure text models, image links will be skipped.
 :::
 
-#### 使用示例
-在提示词中直接输入包含链接的内容：
+#### Usage Example
+Directly input content containing links in prompts:
 
 ```
-请分析这份技术文档：https://example.com/tech-report.pdf
-同时参考这个网页的信息：https://example.com/guide.html
+Please analyze this technical document: https://example.com/tech-report.pdf
+Also refer to information from this webpage: https://example.com/guide.html
 ```
 
-系统会自动获取链接内容，将处理后的内容合并到提示词中发送给AI大模型进行分析。
+The system will automatically retrieve link content and merge the processed content into the prompt to send to the AI LLM for analysis.
 
-:::tip 支持的链接类型与限制
-- **文本文档**：纯文本、HTML网页、Markdown - 最多4096字符
-- **PDF文档**：提取前10页文本内容 - 最多4096字符
-- **图片文件**：JPEG、PNG、WebP、GIF、BMP、TIFF - 自动压缩至1024×1024像素
-- **处理限制**：单次最多5个链接，单个文件最大5MB，请求超时10秒
+:::tip Supported Link Types and Limitations
+- **Text Documents**: Plain text, HTML web pages, Markdown - up to 4096 characters
+- **PDF Documents**: Extract text content from first 10 pages - up to 4096 characters  
+- **Image Files**: JPEG, PNG, WebP, GIF, BMP, TIFF - automatically compressed to 1024×1024 pixels
+- **Processing Limits**: Maximum 5 links per request, maximum 5MB per file, 10-second request timeout
 :::
 
 
-### 函数输出：控制输出
-开发者如果想控制 `runLlm` 函数返回结果的格式，无需在提示词中描述，使用下图的`控制输出`配置即可实现。这些配置将作为 `config` 参数中的 `outputArgs` 部分，指导函数返回结构化数据。
+### Function Output: Output Control
+If developers want to control the format of `runLlm` function return results, there's no need to describe it in prompts - use the `Output Control` configuration shown below. These configurations will serve as the `outputArgs` part in the `config` parameter, guiding the function to return structured data.
 
-![控制输出.png](./img/1/control-output.gif)
+![Output Control](./img/1/control-output.gif)
 
-例如图中展示的是提取快递信息中的姓名、手机号、地址。
+For example, the figure shows extracting name, phone number, and address from express delivery information.
 
-为了控制大模型结构化输出这三个信息，可以依次点击`输出格式`，在弹出的面板中点击`添加输出结果`，再根据业务情况依次填写名称、标题和类型。注意这里填写的名称尽量和你的业务名称一致或者有关联，比如要提取`姓名`，那么就添加一个`姓名`的输出。系统会根据配置生成一份标准的`控制输出`提示词，如下图。
+To control the LLM's structured output of these three pieces of information, click `Output Format` sequentially, click `Add Output Result` in the popup panel, then fill in name, title, and type according to business needs. Note that the names filled here should be consistent with or related to your business names. For example, to extract `name`, add a `name` output. The system will generate a standard `Output Control` prompt based on the configuration, as shown below.
 
-![系统控制输出的提示词](./img/1/system-control-output-prompts.png)
+![System Output Control Prompts](./img/1/system-control-output-prompts.png)
 
 :::tip
-若不配置控制输出配置项，默认输出的是文本。
+If output control configuration is not configured, the default output is text.
 :::
-配置完成后，开发者可以使用 `runLlm` 函数返回的结构化数据在函数语句中与其他业务逻辑进行交互。
+After configuration, developers can use the structured data returned by the `runLlm` function to interact with other business logic in function statements.
 
-![结构化数据](./img/1/structured-data.png)
+![Structured Data](./img/1/structured-data.png)
 
-:::warning 注意
-若大模型返回的数据结构正确，仍然拿不到结构化数据的值，检查图中铅笔所示的位置，查看配置是否与大模型提示词`输出格式`的配置保持一致。
+:::warning Note
+If the LLM returns correct data structure but you still can't get structured data values, check the position indicated by the pencil in the figure to see if the configuration is consistent with the LLM prompt's `Output Format` configuration.
 :::
 
-## 在后端函数中调用大模型 {#call-llm-in-backend-functions}
-`runLlm` 函数不仅可以在前端页面中使用，也可以在后端函数(服务函数/模型函数/事件函数/任务函数)中使用，输入输出参数保持一致。
+## Calling LLM in Backend Functions {#call-llm-in-backend-functions}
+The `runLlm` function can be used not only in frontend pages but also in backend functions (service functions/model functions/event functions/task functions), with consistent input and output parameters.
 
-配置参考[在页面中调用大模型](#call-llm-in-pages)
+Configuration reference: [Calling LLM in Pages](#call-llm-in-pages)
 
-## 大模型编程接口 {#llm-programming-interface}
+## LLM Programming Interface {#llm-programming-interface}
 ### runLlm
-`runLlm` 是大模型模块的核心函数，接受配置参数（config）和上下文变量（context）作为输入，返回大模型的响应结果。所有通过界面配置的模型设置、提示词内容和输出格式，最终都会转换为该函数的调用参数。[API文档](../../reference/framework/JitAi/ai-large-models#runllm)
+`runLlm` is the core function of the LLM module, accepting configuration parameters (config) and context variables (context) as input and returning LLM response results. All model settings, prompt content, and output formats configured through the interface are ultimately converted to call parameters for this function. [API Documentation](../../reference/framework/JitAi/ai-large-models#runllm)
 
 ### embedDocuments
-ai-llm的文档向量化方法，用于将文本列表转换为高维向量表示。[API文档](../../reference/framework/JitAi/ai-large-models#embeddocuments)
+Document vectorization method for ai-llm, used to convert text lists into high-dimensional vector representations. [API Documentation](../../reference/framework/JitAi/ai-large-models#embeddocuments)
 
 ### rerankDocuments
-ai-llm的文档重排方法，用于基于查询文本对候选文档进行重新排序。[API文档](../../reference/framework/JitAi/ai-large-models#rerankdocuments)
+Document reranking method for ai-llm, used to reorder candidate documents based on query text. [API Documentation](../../reference/framework/JitAi/ai-large-models#rerankdocuments)
 
 

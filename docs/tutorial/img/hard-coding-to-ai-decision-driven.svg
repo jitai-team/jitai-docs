@@ -63,55 +63,47 @@
   <rect x="0" y="0" width="900" height="80" fill="white" filter="url(#shadow)" />
   
   <!-- 总标题 -->
-  <text x="450" y="35" text-anchor="middle" font-size="28" font-weight="bold" fill="#212529">硬编码驱动到AI决策驱动</text>
-  <text x="450" y="55" text-anchor="middle" font-size="14" fill="#6C757D">From Hard-coding Driven to AI Decision Driven</text>
+  <text x="450" y="45" text-anchor="middle" font-size="28" font-weight="bold" fill="#212529">From Hard-coding Driven to AI Decision Driven</text>
   
   <!-- 中央分隔线 -->
   <line x1="450" y1="100" x2="450" y2="680" stroke="#DEE2E6" stroke-width="2" />
   
   <!-- ============ 左侧：传统应用 ============ -->
   <rect x="50" y="100" width="320" height="580" rx="20" fill="white" stroke="#4A90E2" stroke-width="2" filter="url(#shadow)" />
-  <text x="210" y="130" text-anchor="middle" fill="#4A90E2" font-size="20" font-weight="bold">传统应用</text>
-  <text x="210" y="148" text-anchor="middle" fill="#6C757D" font-size="12">Traditional Application</text>
+  <text x="210" y="139" text-anchor="middle" fill="#4A90E2" font-size="20" font-weight="bold">Traditional Application</text>
   
   <!-- 人 -->
   <rect x="155" y="170" width="110" height="55" rx="15" fill="url(#humanGrad)" filter="url(#shadow)" />
-  <text x="210" y="202" text-anchor="middle" fill="white" font-size="18" font-weight="bold">人</text>
-  <text x="210" y="218" text-anchor="middle" fill="white" font-size="11">Human</text>
+  <text x="210" y="203" text-anchor="middle" fill="white" font-size="18" font-weight="bold">Human</text>
   
   <!-- 决策箭头 -->
   <path d="M 210 225 L 210 280" stroke="#495057" stroke-width="2" fill="none" marker-end="url(#arrow)" />
   
   <!-- UI -->
   <rect x="155" y="280" width="110" height="55" rx="15" fill="url(#traditionalGrad)" filter="url(#shadow)" />
-  <text x="210" y="312" text-anchor="middle" fill="white" font-size="18" font-weight="bold">UI</text>
-  <text x="210" y="328" text-anchor="middle" fill="white" font-size="11">User Interface</text>
+  <text x="210" y="313" text-anchor="middle" fill="white" font-size="18" font-weight="bold">UI</text>
   
   <!-- 直接到后端逻辑 -->
   <path d="M 210 335 L 210 480" stroke="#495057" stroke-width="2" fill="none" marker-end="url(#arrow)" />
   
   <!-- 后端逻辑 -->
   <rect x="155" y="480" width="110" height="55" rx="15" fill="url(#businessGrad)" filter="url(#shadow)" />
-  <text x="210" y="512" text-anchor="middle" fill="white" font-size="18" font-weight="bold">后端逻辑</text>
-  <text x="210" y="528" text-anchor="middle" fill="white" font-size="11">Backend Logic</text>
+  <text x="210" y="513" text-anchor="middle" fill="white" font-size="16" font-weight="bold">Backend Logic</text>
   
   <!-- 到数据层 -->
   <path d="M 210 535 L 210 580" stroke="#495057" stroke-width="2" fill="none" marker-end="url(#arrow)" />
   
   <!-- 数据存储层 -->
   <rect x="155" y="580" width="110" height="55" rx="15" fill="url(#dataGrad)" filter="url(#shadow)" />
-  <text x="210" y="612" text-anchor="middle" fill="white" font-size="18" font-weight="bold">数据存储层</text>
-  <text x="210" y="628" text-anchor="middle" fill="white" font-size="11">Data Storage</text>
+  <text x="210" y="613" text-anchor="middle" fill="white" font-size="18" font-weight="bold">Data Storage</text>
   
   <!-- ============ 右侧：AI应用 ============ -->
   <rect x="530" y="100" width="320" height="580" rx="20" fill="white" stroke="#20C997" stroke-width="2" filter="url(#shadow)" />
-  <text x="690" y="130" text-anchor="middle" fill="#20C997" font-size="20" font-weight="bold">AI应用</text>
-  <text x="690" y="148" text-anchor="middle" fill="#6C757D" font-size="12">AI Application</text>
+  <text x="690" y="139" text-anchor="middle" fill="#20C997" font-size="20" font-weight="bold">AI Application</text>
   
   <!-- 人 -->
   <rect x="555" y="170" width="110" height="55" rx="15" fill="url(#humanGrad)" filter="url(#shadow)" />
-  <text x="610" y="202" text-anchor="middle" fill="white" font-size="18" font-weight="bold">人</text>
-  <text x="610" y="218" text-anchor="middle" fill="white" font-size="11">Human</text>
+  <text x="610" y="203" text-anchor="middle" fill="white" font-size="18" font-weight="bold">Human</text>
   
   <!-- 人到UI的直线 -->
   <path d="M 610 225 L 610 280" stroke="#495057" stroke-width="2" fill="none" marker-end="url(#arrow)" />
@@ -121,21 +113,18 @@
   
   <!-- 主流程：UI -->
   <rect x="555" y="280" width="110" height="55" rx="15" fill="url(#traditionalGrad)" filter="url(#shadow)" />
-  <text x="610" y="312" text-anchor="middle" fill="white" font-size="18" font-weight="bold">UI</text>
-  <text x="610" y="328" text-anchor="middle" fill="white" font-size="11">User Interface</text>
-  
+  <text x="610" y="313" text-anchor="middle" fill="white" font-size="18" font-weight="bold">UI</text>
+
   <!-- 旁路：AI助理对话 -->
   <rect x="715" y="280" width="110" height="55" rx="15" fill="url(#aiGrad)" filter="url(#strongShadow)" />
-  <text x="770" y="312" text-anchor="middle" fill="white" font-size="18" font-weight="bold">AI助理对话</text>
-  <text x="770" y="328" text-anchor="middle" fill="white" font-size="11">AI Assistant</text>
+  <text x="770" y="313" text-anchor="middle" fill="white" font-size="16" font-weight="bold">AI Assistant</text>
   
   <!-- AI助理到AI智能决策 -->
   <path d="M 770 335 L 770 380" stroke="#20C997" stroke-width="2" fill="none" marker-end="url(#aiArrow)" />
   
   <!-- 旁路：AI智能决策核心 -->
   <rect x="715" y="380" width="110" height="55" rx="15" fill="url(#agentGrad)" filter="url(#strongShadow)" />
-  <text x="770" y="407" text-anchor="middle" fill="white" font-size="18" font-weight="bold">AI智能决策</text>
-  <text x="770" y="423" text-anchor="middle" fill="white" font-size="11">AI Decision</text>
+  <text x="770" y="413" text-anchor="middle" fill="white" font-size="16" font-weight="bold">AI Decision</text>
   
   <!-- AI智能决策到前端逻辑 -->
   <path d="M 770 435 L 770 480" stroke="#FF9500" stroke-width="2" fill="none" marker-end="url(#highlightArrow)" />
@@ -151,13 +140,11 @@
   
   <!-- 主流程：后端逻辑 -->
   <rect x="555" y="480" width="110" height="55" rx="15" fill="url(#businessGrad)" filter="url(#shadow)" />
-  <text x="610" y="512" text-anchor="middle" fill="white" font-size="18" font-weight="bold">后端逻辑</text>
-  <text x="610" y="528" text-anchor="middle" fill="white" font-size="11">Backend Logic</text>
-  
+  <text x="610" y="513" text-anchor="middle" fill="white" font-size="16" font-weight="bold">Backend Logic</text>
+
   <!-- 旁路：前端逻辑 -->
   <rect x="715" y="480" width="110" height="55" rx="15" fill="url(#traditionalGrad)" filter="url(#shadow)" />
-  <text x="770" y="512" text-anchor="middle" fill="white" font-size="18" font-weight="bold">前端逻辑</text>
-  <text x="770" y="528" text-anchor="middle" fill="white" font-size="11">Frontend Logic</text>
+  <text x="770" y="513" text-anchor="middle" fill="white" font-size="16" font-weight="bold">Frontend Logic</text>
   
   <!-- 前端逻辑到后端逻辑 -->
   <path d="M 715 507 L 665 507" stroke="#FF9500" stroke-width="2" fill="none" marker-end="url(#highlightArrow)" />
@@ -167,6 +154,5 @@
   
   <!-- 主流程：数据存储层 -->
   <rect x="555" y="580" width="110" height="55" rx="15" fill="url(#dataGrad)" filter="url(#shadow)" />
-  <text x="610" y="612" text-anchor="middle" fill="white" font-size="18" font-weight="bold">数据存储层</text>
-  <text x="610" y="628" text-anchor="middle" fill="white" font-size="11">Data Storage</text>
+  <text x="610" y="613" text-anchor="middle" fill="white" font-size="18" font-weight="bold">Data Storage</text>
 </svg> 

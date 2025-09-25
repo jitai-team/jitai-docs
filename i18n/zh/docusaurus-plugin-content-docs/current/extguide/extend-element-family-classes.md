@@ -177,7 +177,7 @@ class TextHandler(dingtalk_stream.ChatbotHandler):
             "contents": [
                 {
                     "type": "markdown",
-                    "text": "[思考]正在分析您的问题，请稍候...",
+                    "text": "[思考]正在分析你的问题，请稍候...",
                     "id": f"thinking_{int(time.time() * 1000)}",
                 }
             ],

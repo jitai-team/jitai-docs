@@ -68,7 +68,7 @@ aiassistants/
       }
     }
   },
-  "welcomeMessage": "很高兴为您服务！请问有什么可以帮您？",
+  "welcomeMessage": "很高兴为你服务！请问有什么可以帮你？",
   "prologues": [
     "什么是元素机制？",
     "极态App支持私有化部署吗？"

@@ -3,50 +3,50 @@ sidebar_position: 3
 slug: emitting-events
 ---
 
-# 发布和订阅事件
+# Publishing and Subscribing Events
 
-当页面上的其他组件发生事件时（比如表格行被点击、按钮被按下），你的自定义组件可以"监听"并响应这些事件。同时，全代码组件也可以发布自己的事件供其他组件或页面订阅。**核心思路是：在页面类的 `bindEvent()` 方法中统一订阅事件**。
+When other components on the page trigger events (such as table rows being clicked or buttons being pressed), your custom components can "listen" and respond to these events. At the same time, full-code components can also publish their own events for other components or pages to subscribe to. **The core concept is: centrally subscribe to events in the page class's `bindEvent()` method**.
 
-## 事件订阅原理 {#event-subscription-principles}
+## Event Subscription Principles {#event-subscription-principles}
 
-页面类不仅管理组件实例，还负责协调组件间的事件通信，就像一个"消息中转站"：
+The page class not only manages component instances but also coordinates event communication between components, acting like a "message relay station":
 
-```typescript title="page.ts 中的事件订阅"
+```typescript title="Event subscription in page.ts"
 class PageCls extends Jit.GridPage {
     Table3!: BaseComponent;
     BlankComponent2!: BaseComponent = new BlankComponent2();
 
     bindEvent() {
-        // 订阅表格的行点击事件
+        // Subscribe to table row click event
         this.Table3.subscribeEvent('clickRow', (data) => {
-            // 当表格行被点击时，通知自定义组件
+            // When table row is clicked, notify custom component
             this.BlankComponent2.handleTableRowClick(data);
         });
 
-        // 订阅自定义组件的事件
+        // Subscribe to custom component event
         this.BlankComponent2.subscribeEvent('handleClickMe', () => {
-            // 可以在这里执行页面级逻辑
-            console.log('收到自定义组件的点击事件');
+            // Can execute page-level logic here
+            console.log('Received click event from custom component');
         });
     }
 }
 ```
 
-## 在全代码组件中响应事件 {#respond-in-custom-components}
+## Responding to Events in Full-Code Components {#respond-in-custom-components}
 
-要让自定义组件能响应其他组件的事件，需要在组件类中添加对应的方法：
+To enable custom components to respond to events from other components, you need to add corresponding methods in the component class:
 
 ```typescript title="BlankComponent2.tsx"
 export default class BlankComponent2 extends Jit.BaseComponent {
     Render = Render;
 
-    // 响应表格行点击事件的方法
+    // Method to respond to table row click event
     handleTableRowClick(rowData) {
-        // 获取点击行的数据
+        // Get clicked row data
         const rowId = rowData?.id?.value;
-        message.info(`表格行被点击，ID：${rowId}`);
+        message.info(`Table row clicked, ID: ${rowId}`);
 
-        // 可以触发组件重新渲染或执行其他逻辑
+        // Can trigger component re-render or execute other logic
         this.setState({ selectedRowId: rowId });
     }
 
@@ -56,11 +56,11 @@ export default class BlankComponent2 extends Jit.BaseComponent {
 }
 ```
 
-## 发布自定义事件 {#publishing-custom-events}
+## Publishing Custom Events {#publishing-custom-events}
 
-全代码组件可以通过 `publishEvent()` 方法发布自己的事件：
+Full-code components can publish their own events through the `publishEvent()` method:
 
-```typescript title="在全代码组件中发布事件"
+```typescript title="Publishing events in full-code components"
 import { Jit } from 'jit';
 import { Button, Space, message } from 'antd';
 
@@ -68,24 +68,24 @@ const Render = (props) => {
   const compIns = props.compIns;
 
   const handleSimpleEvent = () => {
-    // 发布简单事件
+    // Publish simple event
     compIns.publishEvent('buttonClicked');
-    message.info('事件已发布');
+    message.info('Event published');
   };
 
   const handleEventWithData = () => {
-    // 发布带数据的事件
+    // Publish event with data
     const eventData = {
       message: 'Hello from component',
       timestamp: new Date().toISOString(),
       userId: 123
     };
     compIns.publishEvent('dataUpdated', eventData);
-    message.info('带数据的事件已发布');
+    message.info('Event with data published');
   };
 
   const handleComplexEvent = () => {
-    // 发布复杂事件
+    // Publish complex event
     const complexData = {
       action: 'userAction',
       details: {
@@ -98,19 +98,19 @@ const Render = (props) => {
       }
     };
     compIns.publishEvent('complexAction', complexData);
-    message.info('复杂事件已发布');
+    message.info('Complex event published');
   };
 
   return (
     <Space direction="vertical">
       <Button type="primary" onClick={handleSimpleEvent}>
-        发布简单事件
+        Publish Simple Event
       </Button>
       <Button onClick={handleEventWithData}>
-        发布带数据事件
+        Publish Event with Data
       </Button>
       <Button onClick={handleComplexEvent}>
-        发布复杂事件
+        Publish Complex Event
       </Button>
     </Space>
   );
@@ -121,43 +121,43 @@ export default class EventPublisher extends Jit.BaseComponent {
 }
 ```
 
-## 可订阅的事件类型 {#subscribable-events}
+## Subscribable Event Types {#subscribable-events}
 
-每个组件可订阅的事件来自 `scheme.json` 中该组件的 `eventList` 配置。
+The events that each component can subscribe to come from the `eventList` configuration of that component in `scheme.json`.
 
-### 标准组件事件 {#standard-component-events}
+### Standard Component Events {#standard-component-events}
 
-不同类型的标准组件提供了各自的事件类型。详细的组件事件列表，请参考：
+Different types of standard components provide their respective event types. For detailed component event lists, please refer to:
 
-- [JitWeb 组件参考文档](../../reference/framework/JitWeb/components/) - 查看每个组件的具体事件列表和参数说明
+- [JitWeb Component Reference Documentation](../../reference/framework/JitWeb/components/) - View specific event lists and parameter descriptions for each component
 
-### 全代码组件的自定义事件 {#custom-component-events}
+### Custom Events in Full-Code Components {#custom-component-events}
 
-全代码组件可以通过 `publishEvent()` 发布自己定义的任何事件：
+Full-code components can publish any custom events through `publishEvent()`:
 
 ```typescript
-// 在全代码组件中
+// In full-code components
 compIns.publishEvent('customEvent', eventData);
 compIns.publishEvent('dataChanged', newData);
 compIns.publishEvent('userInteraction', interactionDetails);
 ```
 
-## 双向通信示例 {#bidirectional-communication-example}
+## Bidirectional Communication Example {#bidirectional-communication-example}
 
-以下是一个完整的双向通信示例，展示了全代码组件如何与其他组件进行事件通信：
+The following is a complete bidirectional communication example that demonstrates how full-code components communicate with other components through events:
 
-```typescript title="完整的双向通信示例"
-// 全代码组件的渲染器
+```typescript title="Complete bidirectional communication example"
+// Full-code component renderer
 const Render = (props) => {
     const compIns = props.compIns;
     const [tableData, setTableData] = useState([]);
     const [selectedRowId, setSelectedRowId] = useState(null);
 
     const handleRefreshAndNotify = () => {
-        // 1) 调用其他组件方法
+        // 1) Call other component method
         compIns.page.Table3.refresh();
 
-        // 2) 发布事件给页面
+        // 2) Publish event to page
         compIns.publishEvent('refreshTriggered', {
             timestamp: Date.now(),
             triggeredBy: 'RefreshButton'
@@ -165,14 +165,14 @@ const Render = (props) => {
     };
 
     const handleDataProcess = () => {
-        // 模拟数据处理
+        // Simulate data processing
         const processedData = tableData.map(item => ({
             ...item,
             processed: true,
             processedAt: new Date().toISOString()
         }));
 
-        // 发布数据处理完成事件
+        // Publish data processing complete event
         compIns.publishEvent('dataProcessed', {
             originalCount: tableData.length,
             processedCount: processedData.length,
@@ -184,42 +184,42 @@ const Render = (props) => {
         <div>
             <Space>
                 <Button type="primary" onClick={handleRefreshAndNotify}>
-                    刷新表格并通知
+                    Refresh Table and Notify
                 </Button>
                 <Button onClick={handleDataProcess}>
-                    处理数据
+                    Process Data
                 </Button>
             </Space>
 
             {selectedRowId && (
                 <div style={{ marginTop: 16 }}>
-                    当前选中行ID: {selectedRowId}
+                    Current selected row ID: {selectedRowId}
                 </div>
             )}
         </div>
     );
 };
 
-// 全代码组件类
+// Full-code component class
 export default class InteractiveComponent extends Jit.BaseComponent {
     Render = Render;
 
-    // 响应表格行点击事件
+    // Respond to table row click event
     handleTableRowClick(rowData) {
         const rowId = rowData?.id?.value;
-        // 更新组件状态（如果使用了状态管理）
-        // 这里可以通过重新渲染或其他方式更新UI
-        message.info(`收到表格点击，行ID: ${rowId}`);
+        // Update component state (if using state management)
+        // Can update UI through re-rendering or other means
+        message.info(`Received table click, row ID: ${rowId}`);
 
-        // 可以发布二次事件
+        // Can publish secondary event
         this.publishEvent('rowSelected', { selectedId: rowId });
     }
 
-    // 响应其他组件的数据变化
+    // Respond to data changes from other components
     handleDataUpdate(newData) {
-        console.log('收到数据更新:', newData);
+        console.log('Received data update:', newData);
 
-        // 处理数据并可能发布新事件
+        // Process data and possibly publish new event
         this.publishEvent('componentDataUpdated', {
             componentName: 'InteractiveComponent',
             updatedData: newData,
@@ -229,39 +229,39 @@ export default class InteractiveComponent extends Jit.BaseComponent {
 }
 ```
 
-```typescript title="页面类中的事件订阅配置"
+```typescript title="Event subscription configuration in page class"
 class PageCls extends Jit.GridPage {
     Table3!: BaseComponent;
     InteractiveComponent!: BaseComponent = new InteractiveComponent();
 
     bindEvent() {
-        // 订阅表格事件，转发给自定义组件
+        // Subscribe to table events, forward to custom component
         this.Table3.subscribeEvent('clickRow', (data) => {
             this.InteractiveComponent.handleTableRowClick(data);
         });
 
-        // 订阅自定义组件的事件
+        // Subscribe to custom component events
         this.InteractiveComponent.subscribeEvent('refreshTriggered', (data) => {
-            console.log('收到刷新触发事件:', data);
-            // 可以执行页面级逻辑，比如更新页面标题、记录日志等
+            console.log('Received refresh trigger event:', data);
+            // Can execute page-level logic, such as updating page title, logging, etc.
         });
 
         this.InteractiveComponent.subscribeEvent('dataProcessed', (data) => {
-            console.log('数据处理完成:', data);
-            // 可以更新其他组件或执行后续操作
-            message.success(`已处理 ${data.processedCount} 条数据`);
+            console.log('Data processing complete:', data);
+            // Can update other components or execute follow-up operations
+            message.success(`Processed ${data.processedCount} records`);
         });
 
         this.InteractiveComponent.subscribeEvent('rowSelected', (data) => {
-            console.log('行被选中:', data.selectedId);
-            // 可以同步更新其他组件的状态
+            console.log('Row selected:', data.selectedId);
+            // Can synchronously update other component states
         });
     }
 }
 ```
 
-## 相关文档
+## Related Documentation
 
-- [全代码组件接口规范](./ui-component-interface-specifications) - 了解全代码组件的基本结构
-- [在全代码组件中调用页面和组件函数](./calling-page-and-component-functions-in-fullcode-components) - 了解直接调用其他组件方法的方式
-- [在页面代码中调用全代码组件函数](./calling-fullcode-component-functions-in-page-code) - 了解从页面代码调用组件函数的方式
+- [Full-Code Component Interface Specifications](./ui-component-interface-specifications) - Learn about the basic structure of full-code components
+- [Calling Page and Component Functions in Full-Code Components](./calling-page-and-component-functions-in-fullcode-components) - Learn about directly calling other component methods
+- [Calling Full-Code Component Functions in Page Code](./calling-fullcode-component-functions-in-page-code) - Learn about calling component functions from page code

@@ -98,7 +98,7 @@ docker run -itd --name jitnode \
 
 ## 常见问题
 
-安装完成后，建议您详细了解 JitAi 的目录组织架构，以便更好地进行后续开发和管理工作，请参阅 [JitNode目录](../reference/runtime-platform/jitnode-directory) 。
+安装完成后，建议你详细了解 JitAi 的目录组织架构，以便更好地进行后续开发和管理工作，请参阅 [JitNode目录](../reference/runtime-platform/jitnode-directory) 。
 
 <details>
 <summary>桌面版启动失败？</summary>

@@ -70,7 +70,7 @@ Amazon Simple Notification Service（SNS）是亚马逊云提供的全托管发�
 
 ![钉钉登录配置](./img/auth/dingtalk-login-config.png)
 
-完成相关配置后，系统将自动创建钉钉扫码登录方式，并跳转至登录方式配置页面，方便您进行后续查看与管理。
+完成相关配置后，系统将自动创建钉钉扫码登录方式，并跳转至登录方式配置页面，方便你进行后续查看与管理。
 
 :::tip
 钉钉自建扫码登录方式需与[钉钉自建组织架构](./organizational-structure#dingtalk-custom-organization)配套使用。创建钉钉自建组织架构时，系统会自动同步生成对应的扫码登录方式，无需单独配置。
@@ -85,7 +85,7 @@ Amazon Simple Notification Service（SNS）是亚马逊云提供的全托管发�
 
 ![企微登录配置](./img/auth/wechat-work-login-config.png)
 
-配置完成后，系统会自动生成企业微信扫码登录方式，并跳转至登录方式配置页面，便于您后续的查看与管理。
+配置完成后，系统会自动生成企业微信扫码登录方式，并跳转至登录方式配置页面，便于你后续的查看与管理。
 
 :::tip
 企业微信自建扫码登录方式需与[企业微信自建组织架构](./organizational-structure#wechat-work-custom-organization)配套使用。创建企业微信自建组织架构时，系统会自动同步生成对应的扫码登录方式，无需单独配置。

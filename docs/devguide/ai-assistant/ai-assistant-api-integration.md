@@ -3,7 +3,7 @@ sidebar_position: 14
 slug: ai-assistant-api-integration
 ---
 
-# AI Assistant API Integration
+# AI Assistant API Exposure
 
 ## Send AI Message Function {#send-ai-message} 
 After using an AI assistant in a page, there will be a **Send AI Message** function on the page. The function has the following parameters:
@@ -38,5 +38,5 @@ When calling AI assistants through API methods, please note the following limita
 
 ## External AI Assistant Calls
 
-Under development...
+coming soon...
 

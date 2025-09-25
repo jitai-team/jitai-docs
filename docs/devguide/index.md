@@ -378,9 +378,11 @@ Connect your pages to powerful business logic and data operations. Learn how to 
   href="devguide/calling-business-elements-in-pages/calling-service-functions-in-pages"
   description="Learn how to invoke service functions from pages to execute business logic, process data, and integrate with external systems for dynamic content generation."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Calling Service Functions in Standard Pages", href: "devguide/calling-business-elements-in-pages/calling-service-functions-in-pages#calling-service-functions-in-standard-pages" },
+    { text: "Calling Service Functions in Full-Code Pages", href: "devguide/calling-business-elements-in-pages/calling-service-functions-in-pages#calling-service-functions-in-full-code-pages" },
+    { text: "Complex Parameter Handling", href: "devguide/calling-business-elements-in-pages/calling-service-functions-in-pages#complex-parameter-handling" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -388,9 +390,11 @@ Connect your pages to powerful business logic and data operations. Learn how to 
   href="devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages"
   description="Master the techniques for calling data model functions from pages to perform CRUD operations, data queries, and database interactions for real-time data display."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Calling Syntax", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#calling-syntax" },
+    { text: "Basic Syntax in Full-Code Pages", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#basic-syntax-in-full-code-pages" },
+    { text: "Data Operation Capabilities", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#data-operation-capabilities" }
+  ]} />
 </IndexCard>
 
 </div>
@@ -405,9 +409,14 @@ Create advanced custom UI components with full programming control. Build sophis
   href="devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications"
   description="Learn the interface specifications and standards for creating full-code UI components, including props, state management, and lifecycle methods."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "Component Interface Architecture", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#component-interface-architecture" },
+    { text: "Core Interface Definitions", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#core-interface-definitions" },
+    { text: "Interface Interaction Mechanism", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-interaction-mechanism" },
+    { text: "Interface Implementation Specifications", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-implementation-specifications" },
+    { text: "Interface Runtime Sequence", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-runtime-sequence" },
+    { text: "Interface Invocation Explanation", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-invocation-explanation" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -415,9 +424,14 @@ Create advanced custom UI components with full programming control. Build sophis
   href="devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components"
   description="Master techniques for invoking page functions and other component functions from within full-code components for seamless integration."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "Calling Principle", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#calling-principle" },
+    { text: "Practical Examples", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#practical-examples" },
+    { text: "Basic Component Calling", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#basic-component-calling" },
+    { text: "Getting Data from Other Components", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#getting-data-from-other-components" },
+    { text: "Common Component Methods", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#common-component-methods" },
+    { text: "Basic Calling Pattern", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#basic-calling-pattern" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -425,9 +439,15 @@ Create advanced custom UI components with full programming control. Build sophis
   href="devguide/fullcode-ui-components-in-pages/emitting-events"
   description="Learn how to emit custom events from full-code components to communicate with parent pages and other components effectively."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "Event Subscription Principles", href: "devguide/fullcode-ui-components-in-pages/emitting-events#event-subscription-principles" },
+    { text: "Responding to Events in Full-Code Components", href: "devguide/fullcode-ui-components-in-pages/emitting-events#respond-in-custom-components" },
+    { text: "Publishing Custom Events", href: "devguide/fullcode-ui-components-in-pages/emitting-events#publishing-custom-events" },
+    { text: "Subscribable Event Types", href: "devguide/fullcode-ui-components-in-pages/emitting-events#subscribable-events" },
+    { text: "Standard Component Events", href: "devguide/fullcode-ui-components-in-pages/emitting-events#standard-component-events" },
+    { text: "Custom Events in Full-Code Components", href: "devguide/fullcode-ui-components-in-pages/emitting-events#custom-component-events" },
+    { text: "Bidirectional Communication Example", href: "devguide/fullcode-ui-components-in-pages/emitting-events#bidirectional-communication-example" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -435,9 +455,10 @@ Create advanced custom UI components with full programming control. Build sophis
   href="devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code"
   description="Understand how to call functions exposed by full-code components from page code to control component behavior and data flow."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Calling Principle", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#calling-principle" },
+    { text: "Calling Timing and Lifecycle", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#calling-timing-and-lifecycle" }
+  ]} />
 </IndexCard>
 
 </div>
@@ -853,9 +874,11 @@ Integrate mainstream large language models such as GPT-4, Claude, and Tongyi Qia
   href="devguide/ai-llm/llm-input-output"
   description="Understand the input and output configurations of large language models for optimal integration and performance."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Calling LLM in Pages", href: "devguide/ai-llm/llm-input-output#call-llm-in-pages" },
+    { text: "Calling LLM in Backend Functions", href: "devguide/ai-llm/llm-input-output#call-llm-in-backend-functions" },
+    { text: "LLM Programming Interface", href: "devguide/ai-llm/llm-input-output#llm-programming-interface" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -876,75 +899,89 @@ Transform enterprise documents, manuals, and FAQs into intelligent knowledge bas
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Create AI Knowledge Base Element"
+  title="Creating Knowledge Base Elements"
   href="devguide/knowledge-base/create-knowledge-elements"
-  description="Learn how to create the AI Knowledge Base element and understand the principles."
->
-  <LinkGrid links={[
-    { text: "Create AI Knowledge Base Element", href: "devguide/knowledge-base/create-knowledge-elements#create-ai-knowledge-base-element" },
-    { text: "Principle Description", href: "devguide/knowledge-base/create-knowledge-elements#principle-description" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="Document Management and Settings"
-  href="devguide/knowledge-base/knowledge-base-document-management"
-  description="Manage documents, configure knowledge base settings, run query tests, and tune vectorization."
+  description="Learn how to create AI Knowledge Base elements and understand their working principles."
 >
   <LinkGrid columns={2} links={[
-    { text: "Document Management", href: "devguide/knowledge-base/knowledge-base-document-management" },
+    { text: "Creating AI Knowledge Base Elements", href: "devguide/knowledge-base/create-knowledge-elements#create-ai-knowledge-base-element" },
+    { text: "Principle Description", href: "devguide/knowledge-base/create-knowledge-elements#principle-description" },
+    { text: "Core Components", href: "devguide/knowledge-base/create-knowledge-elements#core-components" },
+    { text: "System Architecture", href: "devguide/knowledge-base/create-knowledge-elements#system-architecture" },
+    { text: "Technical Principles", href: "devguide/knowledge-base/create-knowledge-elements#technical-principles" },
+    { text: "Data Processing Flow", href: "devguide/knowledge-base/create-knowledge-elements#data-processing-flow" },
+    { text: "Retrieval Mechanism", href: "devguide/knowledge-base/create-knowledge-elements#retrieval-mechanism" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Knowledge Base Document Management"
+  href="devguide/knowledge-base/knowledge-base-document-management"
+  description="Manage knowledge base documents, configure knowledge base parameters, perform query testing and vectorization tuning."
+>
+  <LinkGrid columns={2} links={[
     { text: "AI Knowledge Base Settings", href: "devguide/knowledge-base/knowledge-base-document-management#ai-knowledge-base-settings" },
     { text: "Query Testing", href: "devguide/knowledge-base/knowledge-base-document-management#query-testing" },
-    { text: "Vectorization Configuration Description", href: "devguide/knowledge-base/knowledge-base-document-management#vectorization-configuration-description" }
+    { text: "Vectorization Configuration Description", href: "devguide/knowledge-base/knowledge-base-document-management#vectorization-configuration-description" },
+    { text: "Knowledge Base Configuration Parameter Description", href: "devguide/knowledge-base/knowledge-base-document-management#knowledge-base-configuration-parameter-description" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="Full-text and Semantic Search"
+  title="Full-Text and Semantic Search Using Knowledge Base Elements"
   href="devguide/knowledge-base/full-text-and-semantic-search"
-  description="Understand how settings participate in the query flow and how to call the knowledge base in backend visual programming."
+  description="Understand how configuration items participate in query flow and call knowledge base in backend visual programming."
 >
-  <LinkGrid links={[
-    { text: "How Settings Participate in Query Flow", href: "devguide/knowledge-base/full-text-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow" },
-    { text: "Call in Backend Visual Programming", href: "devguide/knowledge-base/full-text-and-semantic-search#call-ai-knowledge-base-in-backend-visual-programming" }
+  <LinkGrid columns={2} links={[
+    { text: "Callling AI Knowledge Base in Backend Visual Programming", href: "devguide/knowledge-base/full-text-and-semantic-search#call-ai-knowledge-base-in-backend-visual-programming" },
+    { text: "Semantic Search", href: "devguide/knowledge-base/full-text-and-semantic-search#semantic-search" },
+    { text: "Adding Document", href: "devguide/knowledge-base/full-text-and-semantic-search#adding-document" },
+    { text: "Deleting Document", href: "devguide/knowledge-base/full-text-and-semantic-search#deleting-document" },
+    { text: "Searching by Keywords", href: "devguide/knowledge-base/full-text-and-semantic-search#searching-by-keywords" },
+    { text: "How AI Knowledge Base Settings Participate in Query Flow", href: "devguide/knowledge-base/full-text-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="Use AI Knowledge Base in AI Agent"
+  title="Integrating Knowledge Base into Agent"
   href="devguide/knowledge-base/integrate-knowledge-base-into-agent"
-  description="Integrate the AI Knowledge Base into Agent for RAG."
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
-</IndexCard>
-
-<IndexCard
-  title="AI Knowledge Base API"
-  href="devguide/knowledge-base/ai-knowledge-base-api"
-  description="Programmatic access to the AI Knowledge Base."
+  description="Integrate knowledge base into Agent to implement RAG."
 >
   <LinkGrid links={[
-    { text: "Programming Interface Overview", href: "devguide/knowledge-base/ai-knowledge-base-api#ai-knowledge-base-programming-interface" },
-    { text: "query", href: "devguide/knowledge-base/ai-knowledge-base-api#query-testing" },
-    { text: "addDocumentByBusinessId", href: "devguide/knowledge-base/ai-knowledge-base-api#adddocumentbybusinessid" },
-    { text: "deleteDocumentByBusinessId", href: "devguide/knowledge-base/ai-knowledge-base-api#deletedocumentbybusinessid" },
-    { text: "queryKeywords", href: "devguide/knowledge-base/ai-knowledge-base-api#querykeywords" }
+    { text: "Relationship Between Knowledge Base and Agent", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#relationship-between-knowledge-base-and-agent" },
+    { text: "Technical Integration Principle", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#technical-integration-principle" },
+    { text: "Integration Modes", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#integration-modes" },
+    { text: "Using Knowledge Base in Agent", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#use-knowledge-base-in-agent" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Vector Database Standalone Deployment"
   href="devguide/knowledge-base/vector-database-standalone-deployment"
-  description="The intelligent storage engine for enterprise knowledge. Convert text into vector data to achieve semantic-level precise search."
+  description="Intelligent storage engine for enterprise knowledge. Convert text into vector data to achieve semantic-level precise search."
 >
-  <LinkGrid links={[
-    { text: "Chroma Vector Database", href: "devguide/knowledge-base/vector-database-standalone-deployment#chroma-standalone-deployment" },
-    { text: "Local Vector Database Configuration", href: "devguide/knowledge-base/vector-database-standalone-deployment#local-development-config" },
-    { text: "Remote Vector Database Connection", href: "devguide/knowledge-base/vector-database-standalone-deployment#connect-to-standalone-chroma" },
-    { text: "Vector Database Programming Interface", href: "devguide/knowledge-base/vector-database-standalone-deployment#vector-database-programming-interface" }
+  <LinkGrid columns={2} links={[
+    { text: "Standalone Deployment Solution: Chroma Vector Database", href: "devguide/knowledge-base/vector-database-standalone-deployment#chroma-standalone-deployment" },
+    { text: "Advantages of Standalone Deployment", href: "devguide/knowledge-base/vector-database-standalone-deployment#advantages-of-standalone-deployment" },
+    { text: "Chroma Standalone Deployment Installation", href: "devguide/knowledge-base/vector-database-standalone-deployment#chroma-installation" },
+    { text: "Connecting to Standalone Chroma Database", href: "devguide/knowledge-base/vector-database-standalone-deployment#connect-to-standalone-chroma" },
+    { text: "Development Testing Environment: Local Configuration", href: "devguide/knowledge-base/vector-database-standalone-deployment#local-development-config" },
+    { text: "Vector Database Programming Interface", href: "devguide/knowledge-base/vector-database-standalone-deployment#vector-database-programming-interface" },
+    { text: "health_check", href: "devguide/knowledge-base/vector-database-standalone-deployment#health_check" },
+    { text: "create_collection", href: "devguide/knowledge-base/vector-database-standalone-deployment#create_collection" },
+    { text: "add_vectors", href: "devguide/knowledge-base/vector-database-standalone-deployment#add_vectors" },
+    { text: "query_vectors", href: "devguide/knowledge-base/vector-database-standalone-deployment#query_vectors" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="AI Knowledge Base API Exposure"
+  href="devguide/knowledge-base/ai-knowledge-base-api-exposure"
+  description="Expose AI Knowledge Base capabilities through API interfaces for external system integration."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
 </IndexCard>
 
 </div>
@@ -1092,31 +1129,6 @@ Design a powerful data foundation for your application. Create data tables, desi
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Managing Database Connections"
-  href="devguide/data-modeling/manage-database-connections"
-  description="Configure and manage multiple database connections, supporting multi-data source application development."
->
-  <LinkGrid links={[
-    { text: "Create Database Connection", href: "devguide/data-modeling/manage-database-connections#create-database-connection" },
-    { text: "Multi-database Connection Management", href: "devguide/data-modeling/manage-database-connections#multi-database-connection-management" },
-    { text: "Database Connection Security Configuration", href: "devguide/data-modeling/manage-database-connections#database-connection-security-configuration" },
-    { text: "Connection Test and Troubleshooting", href: "devguide/data-modeling/manage-database-connections#connection-test-and-troubleshooting" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="Supported Database Vendors"
-  href="devguide/data-modeling/supported-database-vendors"
-  description="Learn about various database types and connection configurations supported by JitAi."
->
-  <LinkGrid links={[
-    { text: "Scenario Selection Suggestions", href: "devguide/data-modeling/supported-database-vendors#scenario-selection-suggestions" },
-    { text: "Cloud Vendor Compatibility", href: "devguide/data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
-    { text: "Database Element Usage", href: "devguide/data-modeling/supported-database-vendors#database-element-usage" }
-  ]} />
-</IndexCard>
-
-<IndexCard
   title="Data Table Model"
   href="devguide/data-modeling/data-table-model"
   description="Basic structure of application data, learn how to create and configure data tables, design field types and constraints."
@@ -1227,6 +1239,32 @@ Design a powerful data foundation for your application. Create data tables, desi
 >
   <LinkGrid links={[
     { text: "Data Models as Agent Tools", href: "devguide/data-modeling/calling-data-models-in-ai-agent#data-models-as-agent-tools" }
+  ]} />
+</IndexCard>
+
+
+<IndexCard
+  title="Managing Database Connections"
+  href="devguide/data-modeling/manage-database-connections"
+  description="Configure and manage multiple database connections, supporting multi-data source application development."
+>
+  <LinkGrid links={[
+    { text: "Create Database Connection", href: "devguide/data-modeling/manage-database-connections#create-database-connection" },
+    { text: "Multi-database Connection Management", href: "devguide/data-modeling/manage-database-connections#multi-database-connection-management" },
+    { text: "Database Connection Security Configuration", href: "devguide/data-modeling/manage-database-connections#database-connection-security-configuration" },
+    { text: "Connection Test and Troubleshooting", href: "devguide/data-modeling/manage-database-connections#connection-test-and-troubleshooting" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Supported Database Vendors"
+  href="devguide/data-modeling/supported-database-vendors"
+  description="Learn about various database types and connection configurations supported by JitAi."
+>
+  <LinkGrid links={[
+    { text: "Scenario Selection Suggestions", href: "devguide/data-modeling/supported-database-vendors#scenario-selection-suggestions" },
+    { text: "Cloud Vendor Compatibility", href: "devguide/data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
+    { text: "Database Element Usage", href: "devguide/data-modeling/supported-database-vendors#database-element-usage" }
   ]} />
 </IndexCard>
 
@@ -1814,10 +1852,10 @@ Create unique visual experiences and brand identity. Customize application theme
   description="Application overall style and theme configuration, unifying interface style and user experience."
 >
   <LinkGrid links={[
-    { text: "Create Global Style Element", href: "devguide/frontend-ui-customization/global-styles#create-global-style-element" },
-    { text: "Modify Global Style", href: "devguide/frontend-ui-customization/global-styles#modify-global-style" },
+    { text: "Creating Global Style Element", href: "devguide/frontend-ui-customization/global-styles#create-global-style-element" },
+    { text: "Modifying Global Style", href: "devguide/frontend-ui-customization/global-styles#modify-global-style" },
     { text: "More Style Variables", href: "devguide/frontend-ui-customization/global-styles#more-style-variables" },
-    { text: "Debug Theme", href: "devguide/frontend-ui-customization/global-styles#debug-theme" }
+    { text: "Debugging Theme", href: "devguide/frontend-ui-customization/global-styles#debug-theme" }
   ]} />
 </IndexCard>
 
@@ -1827,10 +1865,10 @@ Create unique visual experiences and brand identity. Customize application theme
   description="Develop personalized UI components to meet special business needs and interaction requirements."
 >
   <LinkGrid links={[
-    { text: "Create Custom Control Element", href: "devguide/frontend-ui-customization/custom-controls#create-custom-control-element" },
-    { text: "Modify Custom Control", href: "devguide/frontend-ui-customization/custom-controls#modify-custom-control" },
-    { text: "Use Custom Control in Form", href: "devguide/frontend-ui-customization/custom-controls#use-custom-control-in-form" },
-    { text: "Use Custom Control in Table", href: "devguide/frontend-ui-customization/custom-controls#use-custom-control-in-table" },
+    { text: "Creating Custom Control Element", href: "devguide/frontend-ui-customization/custom-controls#create-custom-control-element" },
+    { text: "Modifying Custom Control", href: "devguide/frontend-ui-customization/custom-controls#modify-custom-control" },
+    { text: "Using Custom Control in Forms", href: "devguide/frontend-ui-customization/custom-controls#use-custom-control-in-form" },
+    { text: "Using Custom Control in Tables", href: "devguide/frontend-ui-customization/custom-controls#use-custom-control-in-table" },
     { text: "Custom Control Parameters", href: "devguide/frontend-ui-customization/custom-controls#custom-control-parameters" }
   ]} />
 </IndexCard>
@@ -1838,31 +1876,46 @@ Create unique visual experiences and brand identity. Customize application theme
 <IndexCard
   title="Component Customization"
   href="devguide/frontend-ui-customization/component-customization"
-  description="Customize individual components to match specific design requirements and enhance user interface consistency across the application."
+  description="Platform provides two main approaches for component customization to meet different development needs and scenarios."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Developing Full-code Components", href: "devguide/frontend-ui-customization/component-customization#developing-full-code-components" },
+    { text: "Extending Component Type Elements", href: "devguide/frontend-ui-customization/component-customization#extending-component-type-elements" }
+  ]} />
 </IndexCard>
 
 <IndexCard
   title="Page Customization"
   href="devguide/frontend-ui-customization/page-customization"
-  description="Customize entire page layouts, themes, and visual elements to create cohesive and branded user experiences."
+  description="Specific development technologies and usage methods for full-code pages, including style processing, component usage, resource management, data operations, etc."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "Using Styles", href: "devguide/frontend-ui-customization/page-customization#use-style" },
+    { text: "Using Local Resources", href: "devguide/frontend-ui-customization/page-customization#use-local-resources" },
+    { text: "Using Ant Design Components", href: "devguide/frontend-ui-customization/page-customization#use-ant-design-components" },
+    { text: "Embedding Existing Regular Pages", href: "devguide/frontend-ui-customization/page-customization#embed-existing-regular-page" },
+    { text: "Using Standard Components", href: "devguide/frontend-ui-customization/page-customization#use-standard-component" },
+    { text: "Calling Data Model Functions", href: "devguide/frontend-ui-customization/page-customization#call-data-model-function" },
+    { text: "Calling Service Functions", href: "devguide/frontend-ui-customization/page-customization#call-service-function" },
+    { text: "Creating Vue Full-code Page", href: "devguide/frontend-ui-customization/page-customization#vue-full-code-page" },
+    { text: "Using Third-party Packages", href: "devguide/frontend-ui-customization/page-customization#use-third-party-packages" },
+    { text: "Using Packaging Configuration", href: "devguide/frontend-ui-customization/page-customization#use-packaging-configuration" }
+  ]} />
 </IndexCard>
 
 <IndexCard
   title="Portal Customization"
   href="devguide/frontend-ui-customization/portal-customization"
-  description="Customize portal interfaces and navigation elements to provide personalized and role-based user experiences."
+  description="Full-code custom portals provide flexible solutions for navigation layout adjustment, interface style customization, and interaction method optimization."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Creating Custom Portal", href: "devguide/frontend-ui-customization/portal-customization#creating-custom-portal" },
+    { text: "Core File Structure", href: "devguide/frontend-ui-customization/portal-customization#core-file-structure" },
+    { text: "Important APIs and Methods", href: "devguide/frontend-ui-customization/portal-customization#important-apis-and-methods" },
+    { text: "Portal Basic APIs", href: "devguide/frontend-ui-customization/portal-customization#portal-basic-apis" },
+    { text: "Page Rendering and Navigation", href: "devguide/frontend-ui-customization/portal-customization#page-rendering-and-navigation" },
+    { text: "Permission Verification", href: "devguide/frontend-ui-customization/portal-customization#permission-verification" }
+  ]} />
 </IndexCard>
 </div>
 

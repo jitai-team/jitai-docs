@@ -4,21 +4,21 @@ slug: transaction-management
 ---
 
 # Transaction Management
-在真实业务中，我们经常需要把一组读写操作捆绑成一个“要么全部成功、要么全部失败”的原子单元，这就是事务的意义。极态云的数据访问由 JitORM 统一抽象，底层依赖所连接数据库的事务能力（如 MySQL、PostgreSQL、Oracle、SQL Server、达梦、SQLite 等），在常见的写入场景下，框架会保证原子性与一致性。
+In business applications, we often need to bundle a group of read and write operations into an atomic unit that either "succeeds completely or fails completely" - this is the essence of transactions. JitORM provides a unified abstraction for database access, relying on the transaction capabilities of the connected database at its foundation.
 
-## 默认事务管理机制 {#default-transaction-management-mechanism}
-默认事务隔离级别为可重复读（Repeatable Read，RR），平台在开启事务时以 RR 级别执行。
+## Default Transaction Management Mechanism {#default-transaction-management-mechanism}
+The default transaction isolation level is Repeatable Read (RR), and the platform executes at RR level when initiating transactions.
 
-在一次请求的上下文中，只要代码用到了数据库，平台就会从连接池里借出一个连接，进入事务语境并承载本次请求的所有数据库操作。请求正常结束时，会统一提交事务。如果过程中抛出了异常，则会在请求结束的回调里整体回滚，保证数据一致性。
+Within the context of a single request, as long as the code uses the database, the platform will borrow a connection from the connection pool, enter a transaction context, and handle all database operations for this request. When the request completes normally, the transaction will be committed uniformly. If an exception is thrown during the process, it will be rolled back entirely in the request completion callback to ensure data consistency.
 
-简单理解就是：一次请求对应一次"默认事务"，平台自动借还连接并在请求结束时提交或回滚。除开发者显式开启新的事务（使用 [事务装饰器](transaction-management#transaction-decorator)），否则本次请求内的写入都会归属于这一次默认事务。
+Simply put: one request corresponds to one "default transaction", with the platform automatically borrowing and returning connections and committing or rolling back at the end of the request. Unless developers explicitly start a new transaction (using the [Transaction Decorator](transaction-management#transaction-decorator)), all writes within this request will belong to this single default transaction.
 
-## 手动控制事务提交/回滚 {#manual-transaction-commit-rollback}
-默认情况下，请求结束时平台会统一提交或回滚本次请求内的“默认事务”。如果确有需要，开发者也可以在请求中途“手动结束事务”。
+## Manual Transaction Commit/Rollback {#manual-transaction-commit-rollback}
+By default, the platform will uniformly commit or rollback the "default transaction" within the request when it ends. If necessary, developers can also "manually end the transaction" in the middle of a request.
 
 ```python
-# 手动事务的典型用法
-fullName = "数据库元素的fullName" # 如 databases.Default
+# Typical usage of manual transactions
+fullName = "Database element fullName" # e.g., databases.Default
 db = app.getElement(fullName)
 try:
     db.commit()
@@ -27,31 +27,31 @@ except Exception:
     raise
 ```
 
-该操作会对当前请求上下文中指定数据库元素事务执行提交或回滚。
+This operation will commit or rollback the specified database element transaction in the current request context.
 
-## 事务装饰器 {#transaction-decorator}
-如果开发者希望在已有请求事务之外，强制开启一个“全新”的独立事务（即 Requires-New 语义），可以使用事务装饰器或上下文管理器。它会为本段代码从连接池再取一个新连接，独立开启事务，在退出装饰器/with 块时自动提交。一旦抛出异常则回滚。这样可以把关键写操作与外层事务隔离，避免被外层回滚牵连，或保证该段逻辑原子落库。
+## Transaction Decorator {#transaction-decorator}
+If developers want to forcefully start a "brand new" independent transaction outside of the existing request transaction (i.e., Requires-New semantics), they can use transaction decorators or context managers. This will acquire a new connection from the connection pool for this code block, independently start a transaction, and automatically commit when exiting the decorator/with block. It will rollback if an exception is thrown. This allows critical write operations to be isolated from the outer transaction, avoiding being affected by outer rollbacks, or ensuring that this logic is atomically persisted to the database.
 
-用法1 装饰器：
+Usage 1 - Decorator:
 
 ```python
 from databases.Meta import RequiresNewTransaction
 
 @RequiresNewTransaction
 def settle_order(order_id: int):
-    # 在独立的新事务中执行业务写入
+    # Execute business writes in an independent new transaction
     ...
 ```
 
-用法2 上下文管理器：
+Usage 2 - Context Manager:
 
 ```python
 from databases.Meta import RequiresNewTransaction
 
 with RequiresNewTransaction():
-    # 这里的写入在一个全新的事务中进行
+    # Writes here are performed in a brand new transaction
     ...
 ```
 
-装饰器的核心流程可以概括为：进入时开启新事务，退出时根据是否有异常来提交或回滚，结束本次事务并归还连接。
+The core flow of the decorator can be summarized as: start a new transaction upon entry, commit or rollback based on whether there are exceptions upon exit, end this transaction and return the connection.
 

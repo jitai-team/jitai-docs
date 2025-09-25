@@ -68,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       },
     },
   },
-  noIndex: false, // 等文档完善后，再放开
+  noIndex: false, 
 
   presets: [
     [
@@ -205,7 +205,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             },
             {
               label: 'Download',
-              to: '/docs/tutorial/download-installation',
+              to: '/download',
             },
             {
               label: 'Try Online',
@@ -267,7 +267,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         width: 340,
         height: 100
       },
-      copyright: `Copyright © ${new Date().getFullYear()} Jit, Inc. Built with WanYun Co., Ltd.`,
+      copyright: `Copyright © ${new Date().getFullYear()} , jitai platform LLC.`,
     },
     prism: {
       theme: prismThemes.github,

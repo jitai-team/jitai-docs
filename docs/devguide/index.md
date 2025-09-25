@@ -882,75 +882,89 @@ Transform enterprise documents, manuals, and FAQs into intelligent knowledge bas
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Create AI Knowledge Base Element"
+  title="Creating Knowledge Base Elements"
   href="devguide/knowledge-base/create-knowledge-elements"
-  description="Learn how to create the AI Knowledge Base element and understand the principles."
->
-  <LinkGrid links={[
-    { text: "Create AI Knowledge Base Element", href: "devguide/knowledge-base/create-knowledge-elements#create-ai-knowledge-base-element" },
-    { text: "Principle Description", href: "devguide/knowledge-base/create-knowledge-elements#principle-description" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="Document Management and Settings"
-  href="devguide/knowledge-base/knowledge-base-document-management"
-  description="Manage documents, configure knowledge base settings, run query tests, and tune vectorization."
+  description="Learn how to create AI Knowledge Base elements and understand their working principles."
 >
   <LinkGrid columns={2} links={[
-    { text: "Document Management", href: "devguide/knowledge-base/knowledge-base-document-management" },
+    { text: "Creating AI Knowledge Base Elements", href: "devguide/knowledge-base/create-knowledge-elements#create-ai-knowledge-base-element" },
+    { text: "Principle Description", href: "devguide/knowledge-base/create-knowledge-elements#principle-description" },
+    { text: "Core Components", href: "devguide/knowledge-base/create-knowledge-elements#core-components" },
+    { text: "System Architecture", href: "devguide/knowledge-base/create-knowledge-elements#system-architecture" },
+    { text: "Technical Principles", href: "devguide/knowledge-base/create-knowledge-elements#technical-principles" },
+    { text: "Data Processing Flow", href: "devguide/knowledge-base/create-knowledge-elements#data-processing-flow" },
+    { text: "Retrieval Mechanism", href: "devguide/knowledge-base/create-knowledge-elements#retrieval-mechanism" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Knowledge Base Document Management"
+  href="devguide/knowledge-base/knowledge-base-document-management"
+  description="Manage knowledge base documents, configure knowledge base parameters, perform query testing and vectorization tuning."
+>
+  <LinkGrid columns={2} links={[
     { text: "AI Knowledge Base Settings", href: "devguide/knowledge-base/knowledge-base-document-management#ai-knowledge-base-settings" },
     { text: "Query Testing", href: "devguide/knowledge-base/knowledge-base-document-management#query-testing" },
-    { text: "Vectorization Configuration Description", href: "devguide/knowledge-base/knowledge-base-document-management#vectorization-configuration-description" }
+    { text: "Vectorization Configuration Description", href: "devguide/knowledge-base/knowledge-base-document-management#vectorization-configuration-description" },
+    { text: "Knowledge Base Configuration Parameter Description", href: "devguide/knowledge-base/knowledge-base-document-management#knowledge-base-configuration-parameter-description" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="Full-text and Semantic Search"
+  title="Full-Text and Semantic Search Using Knowledge Base Elements"
   href="devguide/knowledge-base/full-text-and-semantic-search"
-  description="Understand how settings participate in the query flow and how to call the knowledge base in backend visual programming."
+  description="Understand how configuration items participate in query flow and call knowledge base in backend visual programming."
 >
-  <LinkGrid links={[
-    { text: "How Settings Participate in Query Flow", href: "devguide/knowledge-base/full-text-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow" },
-    { text: "Call in Backend Visual Programming", href: "devguide/knowledge-base/full-text-and-semantic-search#call-ai-knowledge-base-in-backend-visual-programming" }
+  <LinkGrid columns={2} links={[
+    { text: "Callling AI Knowledge Base in Backend Visual Programming", href: "devguide/knowledge-base/full-text-and-semantic-search#call-ai-knowledge-base-in-backend-visual-programming" },
+    { text: "Semantic Search", href: "devguide/knowledge-base/full-text-and-semantic-search#semantic-search" },
+    { text: "Adding Document", href: "devguide/knowledge-base/full-text-and-semantic-search#adding-document" },
+    { text: "Deleting Document", href: "devguide/knowledge-base/full-text-and-semantic-search#deleting-document" },
+    { text: "Searching by Keywords", href: "devguide/knowledge-base/full-text-and-semantic-search#searching-by-keywords" },
+    { text: "How AI Knowledge Base Settings Participate in Query Flow", href: "devguide/knowledge-base/full-text-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="Use AI Knowledge Base in AI Agent"
+  title="Integrating Knowledge Base into Agent"
   href="devguide/knowledge-base/integrate-knowledge-base-into-agent"
-  description="Integrate the AI Knowledge Base into Agent for RAG."
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
-</IndexCard>
-
-<IndexCard
-  title="AI Knowledge Base API"
-  href="devguide/knowledge-base/ai-knowledge-base-api"
-  description="Programmatic access to the AI Knowledge Base."
+  description="Integrate knowledge base into Agent to implement RAG."
 >
   <LinkGrid links={[
-    { text: "Programming Interface Overview", href: "devguide/knowledge-base/ai-knowledge-base-api#ai-knowledge-base-programming-interface" },
-    { text: "query", href: "devguide/knowledge-base/ai-knowledge-base-api#query-testing" },
-    { text: "addDocumentByBusinessId", href: "devguide/knowledge-base/ai-knowledge-base-api#adddocumentbybusinessid" },
-    { text: "deleteDocumentByBusinessId", href: "devguide/knowledge-base/ai-knowledge-base-api#deletedocumentbybusinessid" },
-    { text: "queryKeywords", href: "devguide/knowledge-base/ai-knowledge-base-api#querykeywords" }
+    { text: "Relationship Between Knowledge Base and Agent", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#relationship-between-knowledge-base-and-agent" },
+    { text: "Technical Integration Principle", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#technical-integration-principle" },
+    { text: "Integration Modes", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#integration-modes" },
+    { text: "Using Knowledge Base in Agent", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#use-knowledge-base-in-agent" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Vector Database Standalone Deployment"
   href="devguide/knowledge-base/vector-database-standalone-deployment"
-  description="The intelligent storage engine for enterprise knowledge. Convert text into vector data to achieve semantic-level precise search."
+  description="Intelligent storage engine for enterprise knowledge. Convert text into vector data to achieve semantic-level precise search."
 >
-  <LinkGrid links={[
-    { text: "Chroma Vector Database", href: "devguide/knowledge-base/vector-database-standalone-deployment#chroma-standalone-deployment" },
-    { text: "Local Vector Database Configuration", href: "devguide/knowledge-base/vector-database-standalone-deployment#local-development-config" },
-    { text: "Remote Vector Database Connection", href: "devguide/knowledge-base/vector-database-standalone-deployment#connect-to-standalone-chroma" },
-    { text: "Vector Database Programming Interface", href: "devguide/knowledge-base/vector-database-standalone-deployment#vector-database-programming-interface" }
+  <LinkGrid columns={2} links={[
+    { text: "Standalone Deployment Solution: Chroma Vector Database", href: "devguide/knowledge-base/vector-database-standalone-deployment#chroma-standalone-deployment" },
+    { text: "Advantages of Standalone Deployment", href: "devguide/knowledge-base/vector-database-standalone-deployment#advantages-of-standalone-deployment" },
+    { text: "Chroma Standalone Deployment Installation", href: "devguide/knowledge-base/vector-database-standalone-deployment#chroma-installation" },
+    { text: "Connecting to Standalone Chroma Database", href: "devguide/knowledge-base/vector-database-standalone-deployment#connect-to-standalone-chroma" },
+    { text: "Development Testing Environment: Local Configuration", href: "devguide/knowledge-base/vector-database-standalone-deployment#local-development-config" },
+    { text: "Vector Database Programming Interface", href: "devguide/knowledge-base/vector-database-standalone-deployment#vector-database-programming-interface" },
+    { text: "health_check", href: "devguide/knowledge-base/vector-database-standalone-deployment#health_check" },
+    { text: "create_collection", href: "devguide/knowledge-base/vector-database-standalone-deployment#create_collection" },
+    { text: "add_vectors", href: "devguide/knowledge-base/vector-database-standalone-deployment#add_vectors" },
+    { text: "query_vectors", href: "devguide/knowledge-base/vector-database-standalone-deployment#query_vectors" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="AI Knowledge Base API Exposure"
+  href="devguide/knowledge-base/ai-knowledge-base-api-exposure"
+  description="Expose AI Knowledge Base capabilities through API interfaces for external system integration."
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
 </IndexCard>
 
 </div>

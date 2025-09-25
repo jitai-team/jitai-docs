@@ -1,5 +1,5 @@
 ---
-sidebar_position: 24.5
+sidebar_position: 21.5
 ---
 
 # 缓存配置与使用

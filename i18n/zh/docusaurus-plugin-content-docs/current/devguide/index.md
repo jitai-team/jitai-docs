@@ -886,75 +886,89 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="创建AI知识库元素"
+  title="创建知识库元素"
   href="devguide/knowledge-base/create-knowledge-elements"
   description="学习如何创建AI知识库元素，并了解其工作原理。"
 >
-  <LinkGrid links={[
+  <LinkGrid columns={2} links={[
     { text: "创建AI知识库元素", href: "devguide/knowledge-base/create-knowledge-elements#create-ai-knowledge-base-element" },
-    { text: "原理说明", href: "devguide/knowledge-base/create-knowledge-elements#principle-description" }
+    { text: "原理说明", href: "devguide/knowledge-base/create-knowledge-elements#principle-description" },
+    { text: "核心构成要素", href: "devguide/knowledge-base/create-knowledge-elements#core-components" },
+    { text: "系统架构", href: "devguide/knowledge-base/create-knowledge-elements#system-architecture" },
+    { text: "技术原理", href: "devguide/knowledge-base/create-knowledge-elements#technical-principles" },
+    { text: "数据处理流程", href: "devguide/knowledge-base/create-knowledge-elements#data-processing-flow" },
+    { text: "检索机制", href: "devguide/knowledge-base/create-knowledge-elements#retrieval-mechanism" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="文档管理与设置"
+  title="知识库文档管理"
   href="devguide/knowledge-base/knowledge-base-document-management"
   description="管理知识库文档，配置知识库参数，进行查询测试与向量化调优。"
 >
   <LinkGrid columns={2} links={[
-    { text: "文档管理", href: "devguide/knowledge-base/knowledge-base-document-management" },
     { text: "知识库设置", href: "devguide/knowledge-base/knowledge-base-document-management#ai-knowledge-base-settings" },
     { text: "查询测试", href: "devguide/knowledge-base/knowledge-base-document-management#query-testing" },
-    { text: "向量化配置说明", href: "devguide/knowledge-base/knowledge-base-document-management#vectorization-configuration-description" }
+    { text: "向量化配置说明", href: "devguide/knowledge-base/knowledge-base-document-management#vectorization-configuration-description" },
+    { text: "知识库配置参数说明", href: "devguide/knowledge-base/knowledge-base-document-management#knowledge-base-configuration-parameter-description" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="全文与语义检索"
+  title="使用知识库元素实现关键词检索和语义检索"
   href="devguide/knowledge-base/full-text-and-semantic-search"
   description="理解配置项如何参与查询流程，并在后端可视化编程中调用知识库。"
 >
-  <LinkGrid links={[
-    { text: "知识库设置如何参与查询流程", href: "devguide/knowledge-base/full-text-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow" },
-    { text: "在后端可视化编程中调用", href: "devguide/knowledge-base/full-text-and-semantic-search#call-ai-knowledge-base-in-backend-visual-programming" }
+  <LinkGrid columns={2} links={[
+    { text: "在后端可视化编程中调用 AI 知识库", href: "devguide/knowledge-base/full-text-and-semantic-search#call-ai-knowledge-base-in-backend-visual-programming" },
+    { text: "语义检索", href: "devguide/knowledge-base/full-text-and-semantic-search#semantic-search" },
+    { text: "新增文档", href: "devguide/knowledge-base/full-text-and-semantic-search#adding-document" },
+    { text: "删除文档", href: "devguide/knowledge-base/full-text-and-semantic-search#deleting-document" },
+    { text: "关键词检索", href: "devguide/knowledge-base/full-text-and-semantic-search#searching-by-keywords" },
+    { text: "AI 知识库设置如何参与查询流程", href: "devguide/knowledge-base/full-text-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="在AIAgent中使用知识库"
+  title="把知识库集成到agent"
   href="devguide/knowledge-base/integrate-knowledge-base-into-agent"
   description="在Agent中集成知识库实现RAG。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 文档正在完善中，敬请期待...
-  </div>
-</IndexCard>
-
-<IndexCard
-  title="AI知识库API"
-  href="devguide/knowledge-base/ai-knowledge-base-api"
-  description="以编程方式访问AI知识库。"
->
   <LinkGrid links={[
-    { text: "编程接口概览", href: "devguide/knowledge-base/ai-knowledge-base-api#ai-knowledge-base-programming-interface" },
-    { text: "query", href: "devguide/knowledge-base/ai-knowledge-base-api#query-testing" },
-    { text: "addDocumentByBusinessId", href: "devguide/knowledge-base/ai-knowledge-base-api#adddocumentbybusinessid" },
-    { text: "deleteDocumentByBusinessId", href: "devguide/knowledge-base/ai-knowledge-base-api#deletedocumentbybusinessid" },
-    { text: "queryKeywords", href: "devguide/knowledge-base/ai-knowledge-base-api#querykeywords" }
+    { text: "知识库与Agent的关系", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#relationship-between-knowledge-base-and-agent" },
+    { text: "技术集成原理", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#technical-integration-principle" },
+    { text: "集成模式", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#integration-modes" },
+    { text: "在Agent中使用知识库", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#use-knowledge-base-in-agent" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="向量数据库独立部署"
+  title="向量数据库的独立部署"
   href="devguide/knowledge-base/vector-database-standalone-deployment"
   description="企业知识的智能存储引擎。将文本转化为向量数据，实现语义级精准搜索。"
 >
-  <LinkGrid links={[
-    { text: "Chroma向量数据库", href: "devguide/knowledge-base/vector-database-standalone-deployment#chroma-standalone-deployment" },
-    { text: "本地向量数据库配置", href: "devguide/knowledge-base/vector-database-standalone-deployment#local-development-config" },
-    { text: "远程向量数据库连接", href: "devguide/knowledge-base/vector-database-standalone-deployment#connect-to-standalone-chroma" },
-    { text: "向量数据库编程接口", href: "devguide/knowledge-base/vector-database-standalone-deployment#vector-database-programming-interface" }
+  <LinkGrid columns={2} links={[
+    { text: "独立部署方案：Chroma 向量数据库", href: "devguide/knowledge-base/vector-database-standalone-deployment#chroma-standalone-deployment" },
+    { text: "独立部署的优势", href: "devguide/knowledge-base/vector-database-standalone-deployment#advantages-of-standalone-deployment" },
+    { text: "Chroma 独立部署安装", href: "devguide/knowledge-base/vector-database-standalone-deployment#chroma-installation" },
+    { text: "连接独立部署的Chroma数据库", href: "devguide/knowledge-base/vector-database-standalone-deployment#connect-to-standalone-chroma" },
+    { text: "开发测试环境：本地化配置", href: "devguide/knowledge-base/vector-database-standalone-deployment#local-development-config" },
+    { text: "向量数据库编程接口", href: "devguide/knowledge-base/vector-database-standalone-deployment#vector-database-programming-interface" },
+    { text: "health_check", href: "devguide/knowledge-base/vector-database-standalone-deployment#health_check" },
+    { text: "create_collection", href: "devguide/knowledge-base/vector-database-standalone-deployment#create_collection" },
+    { text: "add_vectors", href: "devguide/knowledge-base/vector-database-standalone-deployment#add_vectors" },
+    { text: "query_vectors", href: "devguide/knowledge-base/vector-database-standalone-deployment#query_vectors" }
   ]} />
+</IndexCard>
+
+<IndexCard
+  title="AI知识库的API开放"
+  href="devguide/knowledge-base/ai-knowledge-base-api-exposure"
+  description="通过API接口开放AI知识库能力，实现与外部系统集成。"
+>
+  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
+    📝 Coming soon...
+  </div>
 </IndexCard>
 
 </div>

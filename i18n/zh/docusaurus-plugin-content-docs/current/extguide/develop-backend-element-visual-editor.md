@@ -309,14 +309,14 @@ export const Editor = MyEditor;
   </TabItem>
 </Tabs>
 
-## 定制您的编辑器
+## 定制你的编辑器
 ### 修改元素配置
-在 `Editor/e.json` 中，将 `targetType` 改为您的后端元素：
+在 `Editor/e.json` 中，将 `targetType` 改为你的后端元素：
 
 ```json
 {
   "targetType": ["yourOrg.YourBackendType"],
-  "title": "您的元素编辑器"
+  "title": "你的元素编辑器"
 }
 ```
 

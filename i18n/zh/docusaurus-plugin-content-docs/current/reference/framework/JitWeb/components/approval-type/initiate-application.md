@@ -254,7 +254,7 @@ const handleId = apply.subscribeEvent('afterExecute', async (data) => {
   // 显示成功提示
   notification.success({
     message: '申请提交成功',
-    description: '您的申请已进入审批流程'
+    description: '你的申请已进入审批流程'
   });
   
   // 跳转到申请列表页面

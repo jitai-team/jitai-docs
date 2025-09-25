@@ -409,9 +409,14 @@ Create advanced custom UI components with full programming control. Build sophis
   href="devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications"
   description="Learn the interface specifications and standards for creating full-code UI components, including props, state management, and lifecycle methods."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "Component Interface Architecture", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#component-interface-architecture" },
+    { text: "Core Interface Definitions", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#core-interface-definitions" },
+    { text: "Interface Interaction Mechanism", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-interaction-mechanism" },
+    { text: "Interface Implementation Specifications", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-implementation-specifications" },
+    { text: "Interface Runtime Sequence", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-runtime-sequence" },
+    { text: "Interface Invocation Explanation", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-invocation-explanation" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -419,9 +424,14 @@ Create advanced custom UI components with full programming control. Build sophis
   href="devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components"
   description="Master techniques for invoking page functions and other component functions from within full-code components for seamless integration."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "Calling Principle", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#calling-principle" },
+    { text: "Practical Examples", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#practical-examples" },
+    { text: "Basic Component Calling", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#basic-component-calling" },
+    { text: "Getting Data from Other Components", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#getting-data-from-other-components" },
+    { text: "Common Component Methods", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#common-component-methods" },
+    { text: "Basic Calling Pattern", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#basic-calling-pattern" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -429,9 +439,15 @@ Create advanced custom UI components with full programming control. Build sophis
   href="devguide/fullcode-ui-components-in-pages/emitting-events"
   description="Learn how to emit custom events from full-code components to communicate with parent pages and other components effectively."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "Event Subscription Principles", href: "devguide/fullcode-ui-components-in-pages/emitting-events#event-subscription-principles" },
+    { text: "Responding to Events in Full-Code Components", href: "devguide/fullcode-ui-components-in-pages/emitting-events#respond-in-custom-components" },
+    { text: "Publishing Custom Events", href: "devguide/fullcode-ui-components-in-pages/emitting-events#publishing-custom-events" },
+    { text: "Subscribable Event Types", href: "devguide/fullcode-ui-components-in-pages/emitting-events#subscribable-events" },
+    { text: "Standard Component Events", href: "devguide/fullcode-ui-components-in-pages/emitting-events#standard-component-events" },
+    { text: "Custom Events in Full-Code Components", href: "devguide/fullcode-ui-components-in-pages/emitting-events#custom-component-events" },
+    { text: "Bidirectional Communication Example", href: "devguide/fullcode-ui-components-in-pages/emitting-events#bidirectional-communication-example" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -439,9 +455,10 @@ Create advanced custom UI components with full programming control. Build sophis
   href="devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code"
   description="Understand how to call functions exposed by full-code components from page code to control component behavior and data flow."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Calling Principle", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#calling-principle" },
+    { text: "Calling Timing and Lifecycle", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#calling-timing-and-lifecycle" }
+  ]} />
 </IndexCard>
 
 </div>
@@ -1835,10 +1852,10 @@ Create unique visual experiences and brand identity. Customize application theme
   description="Application overall style and theme configuration, unifying interface style and user experience."
 >
   <LinkGrid links={[
-    { text: "Create Global Style Element", href: "devguide/frontend-ui-customization/global-styles#create-global-style-element" },
-    { text: "Modify Global Style", href: "devguide/frontend-ui-customization/global-styles#modify-global-style" },
+    { text: "Creating Global Style Element", href: "devguide/frontend-ui-customization/global-styles#create-global-style-element" },
+    { text: "Modifying Global Style", href: "devguide/frontend-ui-customization/global-styles#modify-global-style" },
     { text: "More Style Variables", href: "devguide/frontend-ui-customization/global-styles#more-style-variables" },
-    { text: "Debug Theme", href: "devguide/frontend-ui-customization/global-styles#debug-theme" }
+    { text: "Debugging Theme", href: "devguide/frontend-ui-customization/global-styles#debug-theme" }
   ]} />
 </IndexCard>
 
@@ -1848,10 +1865,10 @@ Create unique visual experiences and brand identity. Customize application theme
   description="Develop personalized UI components to meet special business needs and interaction requirements."
 >
   <LinkGrid links={[
-    { text: "Create Custom Control Element", href: "devguide/frontend-ui-customization/custom-controls#create-custom-control-element" },
-    { text: "Modify Custom Control", href: "devguide/frontend-ui-customization/custom-controls#modify-custom-control" },
-    { text: "Use Custom Control in Form", href: "devguide/frontend-ui-customization/custom-controls#use-custom-control-in-form" },
-    { text: "Use Custom Control in Table", href: "devguide/frontend-ui-customization/custom-controls#use-custom-control-in-table" },
+    { text: "Creating Custom Control Element", href: "devguide/frontend-ui-customization/custom-controls#create-custom-control-element" },
+    { text: "Modifying Custom Control", href: "devguide/frontend-ui-customization/custom-controls#modify-custom-control" },
+    { text: "Using Custom Control in Forms", href: "devguide/frontend-ui-customization/custom-controls#use-custom-control-in-form" },
+    { text: "Using Custom Control in Tables", href: "devguide/frontend-ui-customization/custom-controls#use-custom-control-in-table" },
     { text: "Custom Control Parameters", href: "devguide/frontend-ui-customization/custom-controls#custom-control-parameters" }
   ]} />
 </IndexCard>
@@ -1859,31 +1876,46 @@ Create unique visual experiences and brand identity. Customize application theme
 <IndexCard
   title="Component Customization"
   href="devguide/frontend-ui-customization/component-customization"
-  description="Customize individual components to match specific design requirements and enhance user interface consistency across the application."
+  description="Platform provides two main approaches for component customization to meet different development needs and scenarios."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Developing Full-code Components", href: "devguide/frontend-ui-customization/component-customization#developing-full-code-components" },
+    { text: "Extending Component Type Elements", href: "devguide/frontend-ui-customization/component-customization#extending-component-type-elements" }
+  ]} />
 </IndexCard>
 
 <IndexCard
   title="Page Customization"
   href="devguide/frontend-ui-customization/page-customization"
-  description="Customize entire page layouts, themes, and visual elements to create cohesive and branded user experiences."
+  description="Specific development technologies and usage methods for full-code pages, including style processing, component usage, resource management, data operations, etc."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid columns={2} links={[
+    { text: "Using Styles", href: "devguide/frontend-ui-customization/page-customization#use-style" },
+    { text: "Using Local Resources", href: "devguide/frontend-ui-customization/page-customization#use-local-resources" },
+    { text: "Using Ant Design Components", href: "devguide/frontend-ui-customization/page-customization#use-ant-design-components" },
+    { text: "Embedding Existing Regular Pages", href: "devguide/frontend-ui-customization/page-customization#embed-existing-regular-page" },
+    { text: "Using Standard Components", href: "devguide/frontend-ui-customization/page-customization#use-standard-component" },
+    { text: "Calling Data Model Functions", href: "devguide/frontend-ui-customization/page-customization#call-data-model-function" },
+    { text: "Calling Service Functions", href: "devguide/frontend-ui-customization/page-customization#call-service-function" },
+    { text: "Creating Vue Full-code Page", href: "devguide/frontend-ui-customization/page-customization#vue-full-code-page" },
+    { text: "Using Third-party Packages", href: "devguide/frontend-ui-customization/page-customization#use-third-party-packages" },
+    { text: "Using Packaging Configuration", href: "devguide/frontend-ui-customization/page-customization#use-packaging-configuration" }
+  ]} />
 </IndexCard>
 
 <IndexCard
   title="Portal Customization"
   href="devguide/frontend-ui-customization/portal-customization"
-  description="Customize portal interfaces and navigation elements to provide personalized and role-based user experiences."
+  description="Full-code custom portals provide flexible solutions for navigation layout adjustment, interface style customization, and interaction method optimization."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Creating Custom Portal", href: "devguide/frontend-ui-customization/portal-customization#creating-custom-portal" },
+    { text: "Core File Structure", href: "devguide/frontend-ui-customization/portal-customization#core-file-structure" },
+    { text: "Important APIs and Methods", href: "devguide/frontend-ui-customization/portal-customization#important-apis-and-methods" },
+    { text: "Portal Basic APIs", href: "devguide/frontend-ui-customization/portal-customization#portal-basic-apis" },
+    { text: "Page Rendering and Navigation", href: "devguide/frontend-ui-customization/portal-customization#page-rendering-and-navigation" },
+    { text: "Permission Verification", href: "devguide/frontend-ui-customization/portal-customization#permission-verification" }
+  ]} />
 </IndexCard>
 </div>
 

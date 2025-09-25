@@ -152,13 +152,6 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                 </button>
               );
             })}
-            <button
-              className={`${styles.mobileNavItem} ${styles.mobileTryOnlineButton}`}
-              onClick={() => handleNavClick(CONTENT.tryOnlineButton)}
-              data-type={CONTENT.tryOnlineButton.type}
-            >
-              {CONTENT.tryOnlineButton.label}
-            </button>
             <div className={styles.mobileLanguageSwitcher}>
               <LanguageSwitcher />
             </div>

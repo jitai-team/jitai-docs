@@ -58,7 +58,7 @@ const CONTENT: DownloadContent = {
   server: {
     docker: {
       title: 'Docker 镜像',
-      description: '支持Liunx\Ubuntu\CentOS等，适合部署在服务器上，作为测试或生产环境',
+      description: '支持Liunx\\Ubuntu\\CentOS等，适合部署在服务器上，作为测试或生产环境',
       command: 'docker run -itd --name jit -p 80:80 -p 3306:3306 --init --privileged -v /your/local/path:/data/JitNode jitaiplatform/jit',
       copyText: '📋 复制',
       copySuccess: '✅ 已复制'

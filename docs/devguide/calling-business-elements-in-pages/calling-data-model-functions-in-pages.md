@@ -3,34 +3,35 @@ sidebar_position: 2
 slug: calling-data-model-functions-in-pages
 ---
 
-# 在页面中调用数据模型函数
+# Calling Data Model Functions in Pages
 
-页面可以直接调用数据模型函数，实现对后端数据的增删改查操作。通过简洁的语法，无需复杂的API接口调用，即可完成数据的读取、创建、更新和删除等操作，极大简化了数据操作流程。
+Pages can directly call data model functions to perform CRUD operations on backend data. Through concise syntax, you can complete data reading, creating, updating, and deleting operations without complex API interface calls, greatly simplifying the data operation workflow.
 
-:::info 图文教程参考
-本文档主要介绍数据模型函数调用的基本语法和概念。如需查看详细的图文教程、完整示例和可视化操作步骤，请参考：
+:::info Tutorial Reference
+This document mainly introduces the basic syntax and concepts of data model function calls. For detailed illustrated tutorials, complete examples, and visual operation steps, please refer to:
 
-**[页面定制 - 调用数据模型函数](../frontend-ui-customization/page-customization#call-data-model-function)**
+**[Page Customization - Calling Data Model Functions](../frontend-ui-customization/page-customization#call-data-model-function)**
 :::
 
-## 调用语法
+## Calling Syntax {#calling-syntax}
 
-数据模型函数的调用方式与[服务函数调用](./calling-service-functions-in-pages)完全相同，都通过 `app` 对象进行调用，语法简洁统一。
+Data model functions are called in exactly the same way as [service function calls](./calling-service-functions-in-pages), both through the `app` object with concise and unified syntax.
 
-在全代码页面中调用数据模型函数的基本语法：
+### Basic Syntax in Full-Code Pages {#basic-syntax-in-full-code-pages}
 
 ```typescript
-// 在页面类的成员函数中
-this.app.models.[模型ID].[方法名称]([参数1], [参数2], ...)
+// In page class member functions
+this.app.models.[ModelID].[MethodName]([Parameter1], [Parameter2], ...)
 
-// 在其他地方调用
+// Calling from other places
 import { getRuntimeApp } from 'jit';
 const app = getRuntimeApp();
-app.models.[模型ID].[方法名称]([参数1], [参数2], ...)
+app.models.[ModelID].[MethodName]([Parameter1], [Parameter2], ...)
 ```
 
-数据模型函数为页面提供了强大的数据操作能力，通过简单统一的语法即可完成复杂的数据处理任务。如需了解如何创建和配置数据模型，请参考：[数据表模型](../data-modeling/data-table-model.md)
+### Data Operation Capabilities {#data-operation-capabilities}
+Data model functions provide pages with powerful data operation capabilities, enabling complex data processing tasks through simple unified syntax. To learn how to create and configure data models, please refer to: [Data Table Model](../data-modeling/data-table-model.md)
 
-## 相关文档
+## Related Documentation
 
-- [服务函数调用](./calling-service-functions-in-pages) - 了解服务函数的调用方式，语法与数据模型函数完全一致
+- [Calling Service Functions in Pages](./calling-service-functions-in-pages) - Learn about service function calling methods, with syntax completely consistent with data model functions.

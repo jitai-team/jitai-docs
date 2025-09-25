@@ -6,7 +6,7 @@ slug: create-ai-llm
 # 创建大模型元素 {#create-ai-llm}
 随着AI技术快速发展，现代应用系统正在经历智能化革命。然而，面对众多的AI服务提供商和不断更新的模型版本，开发者往往面临选择困难和集成复杂性的挑战。
 
-大模型厂商元素正是JitAi平台为解决这一问题而设计的统一AI接入方案。无论您要构建智能[AI知识库](../knowledge-base/create-knowledge-elements)、开发AI助理、还是创建自主决策的Agent，它都能提供稳定可靠的大模型服务支撑。
+大模型厂商元素正是JitAi平台为解决这一问题而设计的统一AI接入方案。无论你要构建智能[AI知识库](../knowledge-base/create-knowledge-elements)、开发AI助理、还是创建自主决策的Agent，它都能提供稳定可靠的大模型服务支撑。
 
 ## 主流大模型厂商支持列表 {#mainstream-llm-vendor-support-list}
 *   Anthropic

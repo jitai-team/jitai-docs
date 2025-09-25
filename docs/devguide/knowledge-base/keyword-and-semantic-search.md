@@ -3,45 +3,45 @@ sidebar_position: 3
 slug: full-text-and-semantic-search
 ---
 
-# 使用知识库元素实现关键词检索和语义检索
+# Full-Text and Semantic Search Using Knowledge Base Elements
 
-知识库支持两种检索方式：**关键词检索**基于关键词精确匹配，**语义检索**基于向量相似度理解语义含义。JitAi知识库融合了两种技术优势，既支持精确的关键词查询，也能进行智能的语义理解检索。
+Knowledge bases support two types of retrieval: **keyword search** based on precise keyword matching, and **semantic search** based on vector similarity to understand semantic meaning. JitAi knowledge bases integrate the advantages of both technologies, supporting both precise keyword queries and intelligent semantic understanding retrieval.
 
-## 在后端可视化编程中调用 AI 知识库 {#call-ai-knowledge-base-in-backend-visual-programming}
-在后端可视化编程函数（服务函数/模型函数/任务函数/事件函数）中，知识库元素提供了“查询”“新增文档”“删除文档”“关键词查询”4 个方法。
+## Callling AI Knowledge Base in Backend Visual Programming {#call-ai-knowledge-base-in-backend-visual-programming}
+In backend visual programming functions (service functions/model functions/task functions/event functions), knowledge base elements provide 4 methods: "Query", "Add Document", "Delete Document", and "Keyword Query".
 
-### 语义检索
-![语义检索](./img/query.png)
+### Semantic Search {#semantic-search}
+![Semantic Search](./img/query.png)
 
-在函数面板的空白语句处点击“请选择”，选择“知识库 - 【知识库名称】 - 查询”，生成 AI 知识库查询函数；可在查询函数的输入框中设置查询条件。
+Click "Please Select" at the blank statement in the function panel, select "Knowledge Base - [Knowledge Base Name] - Query" to generate an AI knowledge base query function; you can set query conditions in the input box of the query function.
 
-### 新增文档
-![新增文档语句](./img/add-document-statement.png)
+### Adding Document {#adding-document}
+![Adding Document Statement](./img/add-document-statement.png)
 
-在函数面板选择“知识库 - 【知识库名称】 - 新增文档”，生成新增文档函数；点击函数中的“文档添加配置”打开新增文档的详细配置。
+Select "Knowledge Base - [Knowledge Base Name] - Add Document" in the function panel to generate an add document function; click "Document Addition Configuration" in the function to open detailed configuration for adding documents.
 
-![新增文档](./img/add-document.png)
+![Adding Document](./img/add-document.png)
 
-填入“业务ID”“文档文件”及其它向量化配置后点击保存。其中“业务ID”为当前添加文档的标识（后续删除可据此定位）；“文档文件”支持附件字段中的多个文件。
-
-:::tip
-其它配置参考[向量化配置说明](./knowledge-base-document-management#vectorization-configuration-description)。
-:::
-
-### 删除文档
-![删除](./img/delete.png)
-
-在函数面板选择“知识库 - 【知识库名称】 - 删除文档”，生成删除文档函数；填入业务ID，运行后会删除该业务ID下的所有文档。
-
-### 关键词检索
-![关键词检索](./img/keyword-query.png)
-
-在函数面板选择“知识库 - 【知识库名称】 - 关键词查询”，生成关键词查询函数；配置关键词列表与查询数量后，返回对应的查询结果。
+Fill in "Business ID", "Document File", and other vectorization configurations, then click save. The "Business ID" is the identifier for the currently added document (can be used for subsequent deletion); "Document File" supports multiple files in attachment fields.
 
 :::tip
-可先用大模型从问题中提取关键词，再进行关键词查询。
+For other configurations, refer to [Vectorization Configuration Description](./knowledge-base-document-management#vectorization-configuration-description).
 :::
 
-## AI 知识库设置如何参与查询流程 {#how-ai-knowledge-base-settings-participate-in-query-flow}
+### Deleting Document {#deleting-document}
+![Delete](./img/delete.png)
 
-关于知识库查询流程的详细说明，包括向量检索、重排序机制和参数配置，请参见[创建知识库元素 - 检索机制](./create-knowledge-elements#retrieval-mechanism)。
+Select "Knowledge Base - [Knowledge Base Name] - Delete Document" in the function panel to generate a delete document function; fill in the Business ID, and after running, all documents under that Business ID will be deleted.
+
+### Searching by Keywords {#searching-by-keywords}
+![Searching by Keywords](./img/keyword-query.png)
+
+Select "Knowledge Base - [Knowledge Base Name] - Keyword Query" in the function panel to generate a keyword query function; after configuring the keyword list and query quantity, corresponding query results will be returned.
+
+:::tip
+You can first use LLM to extract keywords from questions, then perform keyword queries.
+:::
+
+## How AI Knowledge Base Settings Participate in Query Flow {#how-ai-knowledge-base-settings-participate-in-query-flow}
+
+For detailed explanation of knowledge base query flow, including vector retrieval, reranking mechanisms, and parameter configuration, please refer to [Creating Knowledge Base Elements - Retrieval Mechanism](./create-knowledge-elements#retrieval-mechanism).

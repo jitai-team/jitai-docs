@@ -26,7 +26,7 @@ auths/
 {
   "type": "auths.loginTypes.WeChatType",
   "title": "微信登录",
-  "appSecret": "您的微信应用密钥",
+  "appSecret": "你的微信应用密钥",
   "backendBundleEntry": ".",
   "frontBundleEntry": "./MyWeChatLogin.json"
 }
@@ -36,8 +36,8 @@ auths/
 ```json title="MyWeChatLogin.json配置示例"
 {
   "authConfig": {
-    "appId": "您的微信应用ID",
-    "appSecret": "您的微信应用密钥"
+    "appId": "你的微信应用ID",
+    "appSecret": "你的微信应用密钥"
   }
 }
 ```

@@ -15,7 +15,7 @@ slug: portal-customization
 
 自定义门户在保持JitAi平台数据模型、权限管理等核心功能的基础上，让开发者可以灵活调整门户的外观表现和用户交互方式。
 
-## 创建自定义门户
+## 创建自定义门户 {#creating-custom-portal}
 
 ![创建自定义门户](./img/5/start-create.png)
 
@@ -33,7 +33,7 @@ slug: portal-customization
 
 完成创建后，在元素目录树中选择`页面`-`ShellPage`-`自定义的门户名称`，可打开自定义门户页面编辑器，选择右上角的`<>`按钮，查看生成的代码实现。
 
-## 核心文件结构
+## 核心文件结构 {#core-file-structure}
 
 **根目录**
 - `index.ts` - 模块入口，导出Render组件和PageCls类
@@ -50,9 +50,9 @@ slug: portal-customization
 - `PageTabs.tsx` - 标签页控件
 - `*.style.ts` - 对应组件的样式文件
 
-## 重要API和方法
+## 重要API和方法 {#important-apis-and-methods}
 
-### 门户基础API
+### 门户基础API {#portal-basic-apis}
 
 **获取当前门户信息**
 ```typescript
@@ -74,7 +74,7 @@ findMenu(menuName: string): ShellMenu | null
 openMenu(menuName: string): void
 ```
 
-### 页面渲染和导航
+### 页面渲染和导航 {#page-rendering-and-navigation}
 
 **ElementRender组件**
 ```typescript
@@ -127,7 +127,7 @@ const navigate = useNavigate();
 navigate('/menu-path');
 ```
 
-### 权限验证
+### 权限验证 {#permission-verification}
 
 **检查门户访问权限**
 ```typescript
@@ -149,7 +149,7 @@ navigate('/menu-path');
 }
 ```
 
-### 组件间通信
+### 组件间通信 {#inter-component-communication}
 
 **使用ShellContext**
 ```typescript

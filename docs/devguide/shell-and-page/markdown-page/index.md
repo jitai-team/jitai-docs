@@ -2,90 +2,90 @@
 sidebar_position: 6
 ---
 
-# Markdown页面
-在企业应用系统中，开发者想创建一个纯文本页面，比如帮助文档、公告、协议等，那么他就可以选择使用 Markdown 语法来进行编写。
+# Markdown Pages
+In enterprise application systems, when developers want to create plain text pages such as help documentation, announcements, agreements, etc., they can choose to use Markdown syntax for writing.
 
-JitAi 提供了 Markdown 页面开发功能，开发者可以在 JitAi 开发工具中创建 Markdown 页面，并使用 Markdown 语法编写页面内容。
+JitAi provides Markdown page development functionality, allowing developers to create Markdown pages in the JitAi development tools and write page content using Markdown syntax.
 
-## 创建 Markdown 页面 {#create-markdown-page}
-![新建Markdown页面](./imgs/markdown_2025-08-28_13-51-10.png)
+## Creating Markdown Pages {#create-markdown-page}
+![Create New Markdown Page](./imgs/markdown_2025-08-28_13-51-10.png)
 
-开发者可以在创建页面时选择页面类型为 `markdown-page`，即可打开 Markdown 新建弹窗。
+Developers can select the page type as `markdown-page` when creating a page, which will open the Markdown creation popup.
 
-:::warning 注意
-开发者在新建弹窗中填写页面名称后点击`确定`，就创建了一个 Markdown 页面。
+:::warning Note
+After developers fill in the page name in the creation popup and click `OK`, a Markdown page is created.
 
-开发者可以选择从外部导入 Markdown 文件到系统中，但导入的文件大小不能超过 2M。
+Developers can choose to import Markdown files from external sources into the system, but the imported file size cannot exceed 2M.
 :::
 
-开发者通过新建弹窗创建后进入可视化编辑器中。
+After creating through the creation popup, developers enter the visual editor.
 
-![Markdown编辑器](./imgs/markdown_2025-08-28_13-59-38.png)
+![Markdown Editor](./imgs/markdown_2025-08-28_13-59-38.png)
 
-可视化编辑器分为左右两个部分，左侧是编辑区域，右侧是预览区域。用户编辑之后，在右侧预览区域中查看效果。
+The visual editor is divided into two parts: the left side is the editing area, and the right side is the preview area. After users make edits, they can view the effects in the right preview area.
 
-:::warning 注意
-如果用户想在使用区展示 Markdown 页面，需要将创建的 Markdown 页面设置绑定到 SSR 门户下的某个菜单上。
+:::warning Note
+If users want to display Markdown pages in the usage area, they need to bind the created Markdown page to a menu under the SSR portal.
 :::
 
-## Markdown 语法 {#markdown-syntax}
-JitAi 集成了 Markdown 的常用语法，开发者可以在可视化编辑器中编写 Markdown 页面。
+## Markdown Syntax {#markdown-syntax}
+JitAi integrates common Markdown syntax, allowing developers to write Markdown pages in the visual editor.
 
-常用的 Markdown 语法有
+Common Markdown syntax includes:
 
-### 标题
+### Headers
 ```markdown
-# 一级标题
-## 二级标题
-### 三级标题
-#### 四级标题
-##### 五级标题
-###### 六级标题
+# First Level Header
+## Second Level Header
+### Third Level Header
+#### Fourth Level Header
+##### Fifth Level Header
+###### Sixth Level Header
 ```
 
-### 文本格式
+### Text Formatting
 ```markdown
-**粗体文本**
-_斜体文本_
-~~删除线文本~~
-`行内代码`
+**Bold text**
+_Italic text_
+~~Strikethrough text~~
+`Inline code`
 ```
 
-效果：
+Effect:
 
--   **粗体文本**
--   _斜体文本_
--   ~~删除线文本~~
--   `行内代码`
+-   **Bold text**
+-   _Italic text_
+-   ~~Strikethrough text~~
+-   `Inline code`
 
-### 列表
-#### 无序列表
+### Lists
+#### Unordered Lists
 ```markdown
--   项目一
--   项目二
-    -   子项目一
-    -   子项目二
--   项目三
+-   Item one
+-   Item two
+    -   Sub-item one
+    -   Sub-item two
+-   Item three
 ```
 
-#### 有序列表
+#### Ordered Lists
 ```markdown
-1. 第一项
-2. 第二项
-    1. 子项目一
-    2. 子项目二
-3. 第三项
+1. First item
+2. Second item
+    1. Sub-item one
+    2. Sub-item two
+3. Third item
 ```
 
-### 链接和图片
+### Links and Images
 ```markdown
-[链接文本](http://example.com)
-[带标题的链接](http://example.com "链接标题")
-![图片描述](./imgs/image.png)
-![带标题的图片](./imgs/image.png "图片标题")
+[Link text](http://example.com)
+[Link with title](http://example.com "Link title")
+![Image description](./imgs/image.png)
+![Image with title](./imgs/image.png "Image title")
 ```
 
-### 代码块
+### Code Blocks
 ````markdown
 ```javascript
 function hello() {
@@ -94,70 +94,70 @@ function hello() {
 ```
 ````
 
-### 表格
+### Tables
 ```markdown
-| 列 1   | 列 2   | 列 3   |
-| ------ | ------ | ------ |
-| 内容 1 | 内容 2 | 内容 3 |
-| 内容 4 | 内容 5 | 内容 6 |
+| Column 1 | Column 2 | Column 3 |
+| -------- | -------- | -------- |
+| Content 1| Content 2| Content 3|
+| Content 4| Content 5| Content 6|
 ```
 
-效果：
-| 列 1 | 列 2 | 列 3 |
-|-----|-----|-----|
-| 内容 1 | 内容 2 | 内容 3 |
-| 内容 4 | 内容 5 | 内容 6 |
+Effect:
+| Column 1 | Column 2 | Column 3 |
+|----------|----------|----------|
+| Content 1| Content 2| Content 3|
+| Content 4| Content 5| Content 6|
 
-### 引用
+### Blockquotes
 ```markdown
-> 这是一个引用块
+> This is a blockquote
 >
-> 支持多行引用
+> Supports multi-line quotes
 >
-> > 嵌套引用
+> > Nested quotes
 ```
 
-效果：
+Effect:
 
-> 这是一个引用块
+> This is a blockquote
 >
-> 支持多行引用
+> Supports multi-line quotes
 >
-> > 嵌套引用
+> > Nested quotes
 
-### 分割线
+### Horizontal Rules
 ```markdown
 ---
-或
+or
 ---
 
-或
+or
 
 ---
 ```
 
-### 任务列表
+### Task Lists
 ```markdown
--   [x] 已完成的任务
--   [ ] 未完成的任务
--   [ ] 另一个未完成的任务
+-   [x] Completed task
+-   [ ] Incomplete task
+-   [ ] Another incomplete task
 ```
 
-效果：
+Effect:
 
--   [x] 已完成的任务
--   [ ] 未完成的任务
--   [ ] 另一个未完成的任务
+-   [x] Completed task
+-   [ ] Incomplete task
+-   [ ] Another incomplete task
 
-### 转义字符
-如果需要显示特殊字符，可以使用反斜杠进行转义：
+### Escape Characters
+If you need to display special characters, you can use backslashes for escaping:
 
 ```markdown
-\* 显示星号而不是斜体
-\# 显示井号而不是标题
-\` 显示反引号而不是代码
+\* Display asterisk instead of italic
+\# Display hash instead of header
+\` Display backtick instead of code
 ```
 
-:::tip 提示
-在 JitAi 的 Markdown 编辑器中，您可以实时预览效果。建议在编写时参考右侧的预览区域，确保格式正确。
+:::tip Tip
+In JitAi's Markdown editor, you can preview effects in real-time. It's recommended to refer to the preview area on the right while writing to ensure correct formatting.
 :::

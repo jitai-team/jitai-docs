@@ -6,7 +6,7 @@ slug: process-orchestration-node-configuration
 # 流程编排与节点配置
 
 ## 可视化编排 {#visual-orchestration}
-AI助理的可视化编排工具让您能够通过直观的拖拽操作设计复杂的业务流程，无需编写代码即可构建智能工作流。
+AI助理的可视化编排工具让你能够通过直观的拖拽操作设计复杂的业务流程，无需编写代码即可构建智能工作流。
 
 ![添加节点](./img/assistant/assistant-add-node-edge.gif)
 

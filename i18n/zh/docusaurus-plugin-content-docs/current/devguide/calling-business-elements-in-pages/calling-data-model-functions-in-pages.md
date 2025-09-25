@@ -13,11 +13,11 @@ slug: calling-data-model-functions-in-pages
 **[页面定制 - 调用数据模型函数](../frontend-ui-customization/page-customization#call-data-model-function)**
 :::
 
-## 调用语法
+## 调用语法 {#calling-syntax}
 
 数据模型函数的调用方式与[服务函数调用](./calling-service-functions-in-pages)完全相同，都通过 `app` 对象进行调用，语法简洁统一。
 
-在全代码页面中调用数据模型函数的基本语法：
+### 全代码页面中的基本语法 {#basic-syntax-in-full-code-pages}
 
 ```typescript
 // 在页面类的成员函数中
@@ -29,6 +29,7 @@ const app = getRuntimeApp();
 app.models.[模型ID].[方法名称]([参数1], [参数2], ...)
 ```
 
+### 数据操作能力 {#data-operation-capabilities}
 数据模型函数为页面提供了强大的数据操作能力，通过简单统一的语法即可完成复杂的数据处理任务。如需了解如何创建和配置数据模型，请参考：[数据表模型](../data-modeling/data-table-model.md)
 
 ## 相关文档

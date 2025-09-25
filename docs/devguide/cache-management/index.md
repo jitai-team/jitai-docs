@@ -3,69 +3,69 @@ sidebar_position: 24.5
 ---
 
 # Cache Configuration and Usage
-在极态云中，平台支持多种缓存类型，包括 Redis、SQLite 和 TongRDS，能够覆盖从开发测试到生产部署的不同场景。缓存适合存放读取频繁且可容忍短暂不一致的数据，比如用户会话、验证码、热点配置、列表聚合结果、限流计数等。系统会自动为不同应用加上键名前缀，避免跨应用冲突。
-内置缓存用于“开箱即用”的开发/测试环境：桌面环境默认使用 SQLite，服务器环境默认使用容器内Redis。生产环境推荐独立部署 Redis，并在应用中创建对应的缓存实例。
+JitAi supports multiple cache types, including Redis, SQLite, and TongRDS, covering different scenarios from development and testing to production deployment. Caches are suitable for storing frequently accessed data that can tolerate brief inconsistencies, such as user sessions, verification codes, hot configurations, list aggregation results, and rate limiting counters. The system automatically adds key name prefixes for different applications to avoid cross-application conflicts.
+Built-in caches are used for "out-of-the-box" development/testing environments: desktop environments default to SQLite, while server environments default to containerized Redis. For production environments, it's recommended to deploy Redis independently and create corresponding cache instances in the application.
 
 ## Cache Service Configuration {#cache-service-configuration}
-在配置缓存之前，先明确使用场景与部署环境：开发/测试可使用内置缓存快速启动，生产环境建议使用独立 Redis。
+Before configuring caches, first clarify the usage scenario and deployment environment: development/testing can use built-in caches for quick startup, while production environments should use independent Redis.
 
-![缓存类型](./img/cache-types.png)
+![Cache Types](./img/cache-types.png)
 
-打开应用的开发者门户“元素目录树”，依次点击 `+`->`更多`->`缓存存储`，选择需要的缓存类型（Redis缓存、SQLite缓存、TongRDS缓存）。
+Open the application's Developer Portal "Element Directory Tree", click `+` -> `More` -> `Cache Storage` in sequence, and select the required cache type (Redis Cache, SQLite Cache, TongRDS Cache).
 
-![参数配置](./img/parameter-configuration.png)
+![Parameter Configuration](./img/parameter-configuration.png)
 
-弹出参数配置面板，按提示填写连接信息并保存。生产环境建议将连接参数通过环境变量注入，避免把密码等敏感信息写入仓库，参考：[数据库连接安全配置](/docs/devguide/data-modeling/manage-database-connections#database-connection-security-configuration)。
+A parameter configuration panel will appear. Fill in the connection information as prompted and save. For production environments, it's recommended to inject connection parameters through environment variables to avoid writing sensitive information like passwords into the repository. Refer to: [Database Connection Security Configuration](/docs/devguide/data-modeling/manage-database-connections#database-connection-security-configuration).
 
-![测试连接](./img/test-connection.png)
+![Test Connection](./img/test-connection.png)
 
-创建后可通过右上角`测试连接`按钮快速自检。
+After creation, you can quickly self-check using the `Test Connection` button in the upper right corner.
 
-## 多缓存服务管理 {#multi-cache-service-management}
-你可以在同一应用内创建多个缓存实例，例如 `缓存A`、`缓存B`、`默认sqlite缓存` 等，用于不同业务模块需要。
+## Multi-Cache Service Management {#multi-cache-service-management}
+You can create multiple cache instances within the same application, such as `Cache A`, `Cache B`, `Default SQLite Cache`, etc., for different business module needs.
 
-![多缓存服务](./img/multi-cache-services.png)
+![Multi-Cache Services](./img/multi-cache-services.png)
 
-## 缓存编程接口使用 {#cache-programming-interface-usage}
-获取缓存实例：
+## Cache Programming Interface Usage {#cache-programming-interface-usage}
+Getting cache instance:
 ```python
-fullName = "缓存元素的fullName" # caches.MyRedis / caches.DefaultCache 等
+fullName = "Cache element fullName" # caches.MyRedis / caches.DefaultCache etc.
 cache = app.getElement(fullName)  
 ```
 
-字符串读写与过期：
+String read/write and expiration:
 ```python
-cache.set("user:1001:name", "张三", 3600)   # 写入，1小时过期
-name = cache.get("user:1001:name")           # 读取
-cache.expire("user:1001:name", 600)          # 将过期时间改为10分钟
+cache.set("user:1001:name", "John", 3600)   # Write with 1-hour expiration
+name = cache.get("user:1001:name")           # Read
+cache.expire("user:1001:name", 600)          # Change expiration to 10 minutes
 ```
 
-数值与计数：
+Numeric values and counting:
 ```python
 cache.setNumeric("visit_count", 100)
 current = cache.getNumeric("visit_count")
 next_val = cache.incr("visit_count", 5)
 ```
 
-键管理：
+Key management:
 ```python
-kesy = cache.keys()
+keys = cache.keys()
 
 exists = cache.exists("user:1001:name")
 if exists:
   cache.delete("user:1001:name")
 ```
 
-连通性检查
+Connectivity check:
 ```python
-alive = cache.ping()  # True 表示连接正常
+alive = cache.ping()  # True indicates normal connection
 ```
 
-更详细接口参考：
+For more detailed interface reference:
 
-[Redis缓存](/docs/reference/framework/JitStorage/cache/redis-cache#methods)
+[Redis Cache](/docs/reference/framework/JitStorage/cache/redis-cache#methods)
 
-[SQLite缓存](/docs/reference/framework/JitStorage/cache/sqlite-cache#methods)
+[SQLite Cache](/docs/reference/framework/JitStorage/cache/sqlite-cache#methods)
 
-[TongRDS缓存](/docs/reference/framework/JitStorage/cache/tongrds-cache#methods)
+[TongRDS Cache](/docs/reference/framework/JitStorage/cache/tongrds-cache#methods)
 

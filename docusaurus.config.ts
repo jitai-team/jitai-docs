@@ -68,7 +68,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       },
     },
   },
-  noIndex: false, // 等文档完善后，再放开
+  noIndex: false, 
 
   presets: [
     [

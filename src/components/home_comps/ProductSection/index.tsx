@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './styles.module.css';
-import globalStyles from '../../pages/index.module.css';
-import ScrollAnimation from '../ScrollAnimation';
+import globalStyles from '../../../pages/index.module.css';
+import ScrollAnimation from '../../ScrollAnimation';
 import CONTENT_EN from './constant-en';
 import CONTENT_ZH from './constant-zh';
 
 interface ProductSectionProps {
-  currentLocale: string;
+  currentLocale?: string;
 }
 
 const ProductSection: React.FC<ProductSectionProps> = ({ currentLocale }) => {

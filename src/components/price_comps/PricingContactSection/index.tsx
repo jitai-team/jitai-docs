@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './styles.module.css';
 
 interface PricingContactSectionProps {
-  currentLocale: string;
+  currentLocale?: string;
 }
 
 const PricingContactSection: React.FC<PricingContactSectionProps> = ({ currentLocale }) => {

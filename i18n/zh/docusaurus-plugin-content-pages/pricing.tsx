@@ -1,29 +1,24 @@
-import React, { useEffect } from 'react';
-import Layout from '@theme/Layout';
-import Navbar from '../../../src/components/Navbar';
-import PricingSection from '../../../src/components/PricingSection';
-import PricingContactSection from '../../../src/components/PricingContactSection';
-import PricingFAQSection from '../../../src/components/PricingFAQSection';
+import React from 'react';
+import PageLayout from '../../../src/components/PageLayout';
+import PricingSection from '../../../src/components/price_comps/PricingSection';
+import PricingContactSection from '../../../src/components/price_comps/PricingContactSection';
+import PricingFAQSection from '../../../src/components/price_comps/PricingFAQSection';
 import styles from './pricing.module.css';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-
-const LayoutComponent = Layout as any;
 
 const PricingPage: React.FC = () => {
-  const { i18n } = useDocusaurusContext();
-  useEffect(() => {
-    document.documentElement.setAttribute('data-locale', i18n.currentLocale);
-  }, []);
-  
+  const pricingTitle = 'JitAI Pricing Plans - Flexible Enterprise AI Development Platform';
+  const pricingDesc = 'Choose the JitAI pricing plan that fits your team and enjoy all features of our enterprise AI development platform. Supports pay-as-you-go and customized solutions.';
+
   return (
-    <LayoutComponent>
-      <div className={styles.container}>
-        <Navbar currentLocale={i18n.currentLocale}/>
-        <PricingSection currentLocale={i18n.currentLocale}/>
-        <PricingFAQSection currentLocale={i18n.currentLocale}/>
-        {/* <PricingContactSection currentLocale={i18n.currentLocale}/> */}
-      </div>
-    </LayoutComponent>
+    <PageLayout 
+      title={pricingTitle} 
+      description={pricingDesc}
+      containerClassName={styles.container}
+    >
+      <PricingSection />
+      <PricingFAQSection />
+      {/* <PricingContactSection /> */}
+    </PageLayout>
   );
 };
 

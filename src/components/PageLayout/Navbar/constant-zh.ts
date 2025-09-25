@@ -2,39 +2,39 @@ const CONTENT = {
   navItems: [
     {
       id: 'home',
-      label: 'Home',
+      label: '首页',
       type: 'link',
       isNewTab: false,
-      url: '/',
+      url: '/zh',
       external: true
     },    
     // {
     //   id: 'pricing',
-    //   label: 'Pricing',
+    //   label: '价格',
     //   type: 'link',
     //   isNewTab: false,
-    //   url: '/pricing',
+    //   url: '/zh/pricing',
     //   external: true
     // },
     {
       id: 'download',
-      label: 'Download',
+      label: '下载',
       type: 'link',
-      isNewTab: true,
-      url: '/docs/tutorial/download-installation',
+      isNewTab: false,
+      url: '/zh/download',
       external: true
     },
     {
       id: 'guide',
-      label: 'Docs',
+      label: '文档',
       type: 'link',
       isNewTab: true,
-      url: '/docs/tutorial',
+      url: '/zh/docs/tutorial',
       external: true
     },
     {
       id: 'community',
-      label: 'Community',
+      label: '社区',
       type: 'link',
       isNewTab: true,
       url: 'https://forum.jit.pro/',
@@ -43,10 +43,10 @@ const CONTENT = {
   ],
   tryOnlineButton: {
     id: 'try-online',
-    label: 'Try Online',
+    label: '在线试用',
     type: 'button',
     isNewTab: true,
-    url: 'https://demo.jit.pro/',
+    url: 'https://jit.pro/',
     external: true
   }
 };

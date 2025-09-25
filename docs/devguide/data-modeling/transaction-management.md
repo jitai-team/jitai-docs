@@ -1,9 +1,9 @@
 ---
-sidebar_position: 23
+sidebar_position: 14
 slug: transaction-management
 ---
 
-# 事务管理
+# Transaction Management
 在真实业务中，我们经常需要把一组读写操作捆绑成一个“要么全部成功、要么全部失败”的原子单元，这就是事务的意义。极态云的数据访问由 JitORM 统一抽象，底层依赖所连接数据库的事务能力（如 MySQL、PostgreSQL、Oracle、SQL Server、达梦、SQLite 等），在常见的写入场景下，框架会保证原子性与一致性。
 
 ## 默认事务管理机制 {#default-transaction-management-mechanism}

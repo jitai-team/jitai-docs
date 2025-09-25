@@ -21,9 +21,11 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className }) => {
   const handleLanguageSwitch = () => {
     const currentPath = window.location.pathname;
     let newPath = '';
+    let newLang = '';
     
     if (currentLang === 'en') {
       // 切换到中文
+      newLang = 'zh';
       if (currentPath === '/') {
         newPath = '/zh';
       } else {
@@ -31,12 +33,16 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className }) => {
       }
     } else {
       // 切换到英文
+      newLang = 'en';
       if (currentPath === '/zh' || currentPath === '/zh/') {
         newPath = '/';
       } else {
         newPath = currentPath.replace('/zh', '');
       }
     }
+    
+    // 保存用户的语言偏好
+    localStorage.setItem('jitai-preferred-language', newLang);
     
     window.location.href = newPath;
   };

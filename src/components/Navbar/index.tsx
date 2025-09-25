@@ -17,6 +17,12 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
   const CONTENT = currentLocale === 'zh' ? CONTENT_ZH : CONTENT_EN;
 
   useEffect(() => {
+    
+    // 为首页添加特殊类名，用于隐藏Docusaurus默认导航栏
+    setTimeout(() => {
+      document.body.classList.add('home-page');
+    }, 50);
+    
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
@@ -81,27 +87,41 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''} custom-navbar`}>
       <div className={styles.navContent}>
-        <div className={styles.logo} onClick={() => handleNavClick(CONTENT.navItems[0])}>
-          <span>JitAi</span>
+        {/* Logo 和导航菜单在左侧 */}
+        <div className={styles.leftSection}>
+          <div className={styles.logo} onClick={() => handleNavClick(CONTENT.navItems[0])}>
+            <span>JitAi</span>
+          </div>
+
+          {/* 桌面端导航 */}
+          <div className={`${styles.navLinks} ${styles.desktopNav}`}>
+            {CONTENT.navItems.map((item, index) => {
+              const isActive = item.id === activeNavItem;
+
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => handleNavClick(item)}
+                  className={isActive ? styles.active : ''}
+                  data-type={item.type}
+                >
+                  {item.label}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
-        {/* 桌面端导航 */}
-        <div className={`${styles.navLinks} ${styles.desktopNav}`}>
-          {CONTENT.navItems.map((item, index) => {
-            const isActive = item.id === activeNavItem;
-
-            return (
-              <button
-                key={item.id}
-                onClick={() => handleNavClick(item)}
-                className={isActive ? styles.active : ''}
-                data-type={item.type}
-              >
-                {item.label}
-              </button>
-            );
-          })}
+        {/* 右侧区域：语言切换器和 Try Online 按钮 */}
+        <div className={styles.rightSection}>
           <LanguageSwitcher className={styles.languageSwitcher} />
+          <button
+            className={styles.tryOnlineButton}
+            onClick={() => handleNavClick(CONTENT.tryOnlineButton)}
+            data-type={CONTENT.tryOnlineButton.type}
+          >
+            {CONTENT.tryOnlineButton.label}
+          </button>
         </div>
 
         {/* 移动端汉堡菜单按钮 */}
@@ -132,6 +152,13 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                 </button>
               );
             })}
+            <button
+              className={`${styles.mobileNavItem} ${styles.mobileTryOnlineButton}`}
+              onClick={() => handleNavClick(CONTENT.tryOnlineButton)}
+              data-type={CONTENT.tryOnlineButton.type}
+            >
+              {CONTENT.tryOnlineButton.label}
+            </button>
             <div className={styles.mobileLanguageSwitcher}>
               <LanguageSwitcher />
             </div>

@@ -3,14 +3,6 @@
  * Optimized for English text and typography
  */
 
-body {
-
-  /* nav:has(+ div) {
-    display: none;
-  } */
-}
-
-
 /* Pricing page container */
 .container {
   min-height: 100vh;

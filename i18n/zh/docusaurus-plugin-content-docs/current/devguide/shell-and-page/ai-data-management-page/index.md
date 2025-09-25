@@ -24,7 +24,7 @@ sidebar_position: 3
 ## 可管理的数据范围 {#limit-page-table-query-data-through-default-filter-conditions}
 在实际业务中，可能需要限制页面表格中能查询和展示的数据。例如，仅展示近一年的数据。通过设置数据筛选条件，可以有效保障数据安全，提升用户的使用效率，避免无关数据干扰业务操作。
 
-通过默认筛选条件限制页面表格查询的数据。JitAI 的[筛选器](../../using-functional-components-in-pages/filter-components)支持对文本、数字、日期时间等各类型字段的多种筛选条件设置，能够满足几乎所有筛选需求。
+通过默认筛选条件限制页面表格查询的数据。JitAI 的[筛选器](/docs/devguide/using-functional-components-in-pages/filter-components)支持对文本、数字、日期时间等各类型字段的多种筛选条件设置，能够满足几乎所有筛选需求。
 
 开发者可以在页面编辑器中配置**数据筛选**，点击每个筛选条件右侧的加号按钮，可以添加多个条件。
 
@@ -72,14 +72,14 @@ AI数据管理页面内置了一个通用的**AI数据管理助理**，用户可
 可视化编辑器顶部切换到`AI助理配置`，然后打开`使用AI数据管理助理`开关。
 
 ### 配置大模型
-AI数据管理助理在运行时需要访问系统数据库及调用页面上的函数绘制图表。我们需要为其配置一个支持调用工具的[大模型](../../ai-llm/create-ai-llm)，推荐使用阿里云百炼平台的 qwen-max-latest。[申请API Key](https://bailian.console.aliyun.com/?tab=model#/api-key)
+AI数据管理助理在运行时需要访问系统数据库及调用页面上的函数绘制图表。我们需要为其配置一个支持调用工具的[大模型](/docs/devguide/ai-llm/create-ai-llm)，推荐使用阿里云百炼平台的 qwen-max-latest。[申请API Key](https://bailian.console.aliyun.com/?tab=model#/api-key)
 
 ### 助理高级配置
-- 支持自定义[欢迎语与开场白](../../ai-assistant/welcome-message-and-opening)
-- 支持自定义[输出运行过程日志](../../ai-assistant/ai-assistant-input-output#message-output)，默认会输出简要过程日志。
+- 支持自定义[欢迎语与开场白](/docs/devguide/ai-assistant/welcome-message-and-opening)
+- 支持自定义[输出运行过程日志](/docs/devguide/ai-assistant/ai-assistant-input-output#message-output)，默认会输出简要过程日志。
 
 
-关于AI助理的更多信息，请阅读[AI助理](../../ai-assistant/create-ai-assistant)相关文档。
+关于AI助理的更多信息，请阅读[AI助理](/docs/devguide/ai-assistant/create-ai-assistant)相关文档。
 
 ## 运行效果
 
@@ -90,7 +90,7 @@ AI数据管理助理在运行时需要访问系统数据库及调用页面上的
 
 ## 转换为常规页面进行修改 {#convert-to-regular-page-for-modification}
 AI数据管理页面是 JitAI 提供的开箱即用的内置页面类型，开发者可以快速创建并使用。当开发者想要基于默认实现进行更精细化的定制修改时，可以将页面转换为常规页面进行无限制地修改。<br/>
-开发者可以在页面编辑器中点击右上角的 <span style={{ display: "inline-block", verticalAlign: "middle", margin: "0 4px", height: '30px' }}>![转换按钮](./imgs/trans-type.png)</span> 按钮，即可将页面转换为常规页面。关于常规页面的开发方法参考[组件化页面开发](../component-based-page-development)。
+开发者可以在页面编辑器中点击右上角的 <span style={{ display: "inline-block", verticalAlign: "middle", margin: "0 4px", height: '30px' }}>![转换按钮](./imgs/trans-type.png)</span> 按钮，即可将页面转换为常规页面。关于常规页面的开发方法参考[组件化页面开发](/docs/devguide/shell-and-page/component-based-page-development)。
 
 :::warning
 转换为常规页面后无法再恢复为原来的`AI数据管理功能`类型。

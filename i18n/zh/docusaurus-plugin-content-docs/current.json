@@ -43,14 +43,6 @@
     "message": "学习如何在页面中使用各种功能组件，包括表单、表格、图表等组件的配置和使用方法。",
     "description": "The generated-index page description for category Use Components in Pages in sidebar devguideSidebar"
   },
-  "sidebar.devguideSidebar.category.Data Modeling": {
-    "message": "数据建模",
-    "description": "The label for category Data Modeling in sidebar devguideSidebar"
-  },
-  "sidebar.devguideSidebar.category.Data Modeling.link.generated-index.description": {
-    "message": "学习如何在JitAi中进行数据建模，包括数据库连接、数据表设计、扩展表和聚合表等。",
-    "description": "The generated-index page description for category Data Modeling in sidebar devguideSidebar"
-  },
   "sidebar.devguideSidebar.category.User and Permission": {
     "message": "用户与权限",
     "description": "The label for category User and Permission in sidebar devguideSidebar"
@@ -154,10 +146,6 @@
   "sidebar.referenceSidebar.category.JitORM": {
     "message": "JitORM",
     "description": "The label for category JitORM in sidebar referenceSidebar"
-  },
-  "sidebar.referenceSidebar.category.JitORM.link.generated-index.description": {
-    "message": "对象关系映射框架，提供数据库抽象层、数据模型定义、查询构建器和数据类型系统。",
-    "description": "The generated-index page description for category JitORM in sidebar referenceSidebar"
   },
   "sidebar.referenceSidebar.category.JitPay": {
     "message": "JitPay",
@@ -371,13 +359,13 @@
     "message": "可视化智能工作流引擎。通过拖拽节点编排业务流程，结合AI决策与人机交互，实现客服、审批、数据处理等场景的智能化自动化。",
     "description": "The generated-index page description for category AI Assistant in sidebar devguideSidebar"
   },
-  "sidebar.devguideSidebar.category.Using AI in Portals and Pages": {
-    "message": "在门户和页面中使用AI",
-    "description": "The label for category Using AI in Portals and Pages in sidebar devguideSidebar"
+  "sidebar.devguideSidebar.category.Using AI Elements in Portals and Pages": {
+    "message": "在门户和页面中使用AI元素",
+    "description": "The label for category Using AI Elements in Portals and Pages in sidebar devguideSidebar"
   },
-  "sidebar.devguideSidebar.category.Using AI in Portals and Pages.link.generated-index.description": {
+  "sidebar.devguideSidebar.category.Using AI Elements in Portals and Pages.link.generated-index.description": {
     "message": "学习如何在门户和页面中使用AI元素，包括AI助理、AI智能体和其他AI组件，以提升用户体验。",
-    "description": "The generated-index page description for category Using AI in Portals and Pages in sidebar devguideSidebar"
+    "description": "The generated-index page description for category Using AI Elements in Portals and Pages in sidebar devguideSidebar"
   },
   "sidebar.devguideSidebar.category.Calling Business Elements in Pages": {
     "message": "在页面中调用业务元素",
@@ -450,5 +438,13 @@
   "sidebar.devguideSidebar.category.Frontend Portals and Pages.link.generated-index.description": {
     "message": "掌握JitAi门户和页面开发的基本原理，包括门户设计和页面开发等核心概念。",
     "description": "The generated-index page description for category Frontend Portals and Pages in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Business Data Modeling": {
+    "message": "业务数据建模",
+    "description": "The label for category Business Data Modeling in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Business Data Modeling.link.generated-index.description": {
+    "message": "学习如何在JitAi中进行业务数据建模，包括数据库连接、数据表设计、扩展表和聚合表等。",
+    "description": "The generated-index page description for category Business Data Modeling in sidebar devguideSidebar"
   }
 }

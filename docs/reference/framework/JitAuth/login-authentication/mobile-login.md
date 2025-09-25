@@ -274,7 +274,9 @@ Authentication configuration information.
 
 ## Advanced Features
 ### SMS Service Integration
-Mobile number login supports integration with third-party SMS services by configuring smsFullName to specify SMS service element. After configuration, verification code sending will automatically use the specified SMS service, supporting mainstream SMS platforms like Alibaba Cloud, Tencent Cloud, etc.
+Mobile phone login supports integration with multiple third-party SMS service providers. By configuring the `smsFullName` parameter, you can specify the corresponding SMS service element. Once configured, verification code sending will automatically invoke the specified SMS service, ensuring message delivery stability and delivery rates.
+
+The platform currently supports three SMS service providers: Alibaba Cloud SMS for domestic business scenarios, while Twilio and AWS SNS provide global SMS sending services for international business, meeting SMS verification code sending requirements across different regions.
 
 #### Usage Example
 ```python title="Custom SMS Service Example"

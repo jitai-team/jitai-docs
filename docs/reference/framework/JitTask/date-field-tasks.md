@@ -3,29 +3,30 @@ sidebar_position: 2
 slug: date-field-tasks
 ---
 
-# 日期字段任务
-日期字段任务是基于模型中日期时间字段值自动触发的定时任务，当指定的日期时间字段到达设定时间时自动执行任务逻辑。它负责监控模型数据中的日期时间字段、在字段值到期时自动触发执行和提供灵活的时间偏移配置，支持提前或延后执行的精确时间控制。
+# Date Field Tasks
 
-日期字段任务元素分层结构为Meta（tasks.Meta） → Type（tasks.DateFieldType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建日期字段任务实例元素。
+Date Field Tasks are scheduled tasks that are automatically triggered based on date-time field values in models. When the specified date-time field reaches the set time, the task logic is automatically executed. It is responsible for monitoring date-time fields in model data, automatically triggering execution when field values expire, and providing flexible time offset configuration, supporting precise time control for early or delayed execution.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的tasks.DateFieldType元素，以实现自己的封装。
+The Date Field Task element has a hierarchical structure of Meta (tasks.Meta) → Type (tasks.DateFieldType) → Instance. Developers can quickly create date field task instance elements through JitAi's visual development tools.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
+Of course, developers can also create their own Type elements or modify the official tasks.DateFieldType element provided by JitAi in their own App to implement their own encapsulation.
+
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
 ```
 tasks/
-└── ExampleDateTask/          # 任务名称，可自定义
-    ├── e.json               # 元素配置文件
-    ├── inner.py             # 任务执行逻辑（可选）
-    └── __init__.py          # 包初始化文件
+└── ExampleDateTask/          # Task name, customizable
+    ├── e.json               # Element configuration file
+    ├── inner.py             # Task execution logic (optional)
+    └── __init__.py          # Package initialization file
 ```
 
-#### e.json文件
+#### e.json File
 ```json title="e.json"
 {
   "type": "tasks.DateFieldType",
-  "title": "示例日期字段任务",
+  "title": "Example Date Field Task",
   "funcType": "Inner",
   "modelPath": "models.OrderModel",
   "timerCfg": {
@@ -47,88 +48,88 @@ tasks/
 }
 ```
 
-#### 业务逻辑代码
+#### Business Logic Code
 ```python title="inner.py"
 def main(app, taskInstance, rowData):
     """
-    任务执行主函数
+    Task execution main function
     
     Args:
-        app: 应用实例
-        taskInstance: 任务实例
-        rowData: 触发任务的数据行
+        app: Application instance
+        taskInstance: Task instance
+        rowData: Data row that triggered the task
     """
-    # 获取订单信息
+    # Get order information
     order_id = rowData.id
     delivery_time = rowData.deliveryTime
     
-    # 执行业务逻辑
-    print(f"订单 {order_id} 的交付时间 {delivery_time} 已到达")
+    # Execute business logic
+    print(f"Order {order_id} delivery time {delivery_time} has arrived")
     
-    # 可以调用其他服务进行处理
+    # Can call other services for processing
     # service = app.getElement("services.NotificationService")
     # service.sendDeliveryNotification(order_id)
 ```
 
-#### 调用示例
-```python title="使用日期字段任务"
-# 获取任务实例
+#### Usage Example
+```python title="Using Date Field Tasks"
+# Get task instance
 task = app.getElement("tasks.ExampleDateTask")
 
-# 任务会自动监控 OrderModel 中 deliveryTime 字段
-# 当字段值到达设定时间时，自动执行 inner.py 中的 main 函数
-# 系统会根据 timerCfg.startOffset 配置计算实际执行时间
+# Task will automatically monitor deliveryTime field in OrderModel
+# When field value reaches the set time, automatically execute main function in inner.py
+# System will calculate actual execution time based on timerCfg.startOffset configuration
 ```
 
-## 元素配置
-### e.json配置
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|------|--------|------|
-| title | string | 是 | - | 任务标题 |
-| type | string | 是 | - | 必须为 `tasks.DateFieldType` |
-| funcType | string | 是 | - | 函数类型，固定为 `Inner` |
-| modelPath | string | 是 | - | 目标模型的fullName |
-| timerCfg | object | 是 | - | 定时器配置对象 |
-| timerCfg.startField | string | 是 | - | 目标模型中的日期时间字段名 |
-| timerCfg.startOffset | object | 否 | - | 开始时间偏移配置 |
-| timerCfg.startOffset.offset | int | 否 | 0 | 时间偏移量，可为负数 |
-| timerCfg.startOffset.offsetUnit | string | 否 | hours | 时间偏移单位：seconds/minutes/hours/days |
-| timerCfg.startOffset.offsetType | int | 否 | 1 | 偏移类型，固定为1 |
-| timerCfg.repeat | object | 否 | - | 重复配置 |
-| timerCfg.endTimeType | int | 否 | 0 | 结束时间类型 |
-| timerCfg.skipHoliday | int | 否 | 1 | 是否跳过节假日，1跳过，0不跳过 |
-| enable | int | 否 | 1 | 是否启用，1启用，0禁用 |
-| backendBundleEntry | string | 否 | "." | 后端代码入口目录 |
+| title | string | Yes | - | Task title |
+| type | string | Yes | - | Must be `tasks.DateFieldType` |
+| funcType | string | Yes | - | Function type, fixed as `Inner` |
+| modelPath | string | Yes | - | FullName of target model |
+| timerCfg | object | Yes | - | Timer configuration object |
+| timerCfg.startField | string | Yes | - | Date-time field name in target model |
+| timerCfg.startOffset | object | No | - | Start time offset configuration |
+| timerCfg.startOffset.offset | int | No | 0 | Time offset amount, can be negative |
+| timerCfg.startOffset.offsetUnit | string | No | hours | Time offset unit: seconds/minutes/hours/days |
+| timerCfg.startOffset.offsetType | int | No | 1 | Offset type, fixed as 1 |
+| timerCfg.repeat | object | No | - | Repeat configuration |
+| timerCfg.endTimeType | int | No | 0 | End time type |
+| timerCfg.skipHoliday | int | No | 1 | Whether to skip holidays, 1 skip, 0 don't skip |
+| enable | int | No | 1 | Whether to enable, 1 enable, 0 disable |
+| backendBundleEntry | string | No | "." | Backend code entry directory |
 
-### 业务配置文件配置
-日期字段任务不需要额外的业务配置文件，所有配置都在e.json中完成。
+### Business Configuration File Configuration
+Date Field Tasks do not require additional business configuration files, all configuration is completed in e.json.
 
-## 方法 
+## Methods
 ### main
-任务执行的主要方法，在inner.py中定义。
+Main method for task execution, defined in inner.py.
 
-#### 参数详解
-| 参数名 | JitAi类型 | 原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | JitAi Type | Native Type | Required | Description |
 |--------|-----------|----------|------|------|
-| app | App | object | 是 | 应用实例，用于获取其他元素 |
-| taskInstance | TaskInstance | object | 是 | 当前任务实例 |
-| rowData | RowData | object | 是 | 触发任务的数据行对象 |
+| app | App | object | Yes | Application instance, used to get other elements |
+| taskInstance | TaskInstance | object | Yes | Current task instance |
+| rowData | RowData | object | Yes | Data row object that triggered the task |
 
-#### 返回值
-无返回值要求，函数执行完成即表示任务完成。
+#### Return Value
+No return value required, function completion indicates task completion.
 
-#### 使用示例
-```python title="处理订单交付提醒"
+#### Usage Example
+```python title="Processing Order Delivery Reminders"
 def main(app, taskInstance, rowData):
-    # 获取订单数据
+    # Get order data
     order_id = rowData.id
     customer_name = rowData.customerName
     delivery_time = rowData.deliveryTime
     
-    # 获取通知服务
+    # Get notification service
     notification_service = app.getElement("services.NotificationService")
     
-    # 发送交付提醒
+    # Send delivery reminder
     notification_service.sendNotification({
         "type": "delivery_reminder",
         "orderId": order_id,
@@ -136,29 +137,29 @@ def main(app, taskInstance, rowData):
         "deliveryTime": delivery_time
     })
     
-    # 更新订单状态
+    # Update order status
     order_model = app.getElement("models.OrderModel")
     order_model.id = order_id
     order_model.status = "notified"
     order_model.save()
 ```
 
-## 属性
+## Attributes
 ### config
-任务配置对象，包含e.json中的所有配置信息，只读属性。
+Task configuration object, containing all configuration information from e.json, read-only attribute.
 
 ### TaskModel
-任务模型实例，继承自父类，用于管理任务记录。
+Task model instance, inherited from parent class, used for managing task records.
 
 ### TaskHistoryModel
-任务历史模型实例，继承自父类，用于记录任务执行历史。
+Task history model instance, inherited from parent class, used for recording task execution history.
 
-## 高级特性
-### 时间偏移配置
-通过offset和offsetUnit参数可以实现灵活的时间偏移：
+## Advanced Features
+### Time Offset Configuration
+Flexible time offset can be achieved through offset and offsetUnit parameters:
 
-#### 提前执行配置
-```json title="提前1小时执行"
+#### Early Execution Configuration
+```json title="Execute 1 Hour Early"
 {
   "type": "tasks.DateFieldType",
   "modelPath": "models.MeetingModel",
@@ -173,8 +174,8 @@ def main(app, taskInstance, rowData):
 }
 ```
 
-#### 延后执行配置
-```json title="延后30分钟执行"
+#### Delayed Execution Configuration
+```json title="Execute 30 Minutes Later"
 {
   "type": "tasks.DateFieldType",
   "modelPath": "models.TaskModel",
@@ -189,8 +190,8 @@ def main(app, taskInstance, rowData):
 }
 ```
 
-#### 多种时间单位
-```json title="秒级偏移"
+#### Multiple Time Units
+```json title="Second-level Offset"
 {
   "timerCfg": {
     "startOffset": {
@@ -201,7 +202,7 @@ def main(app, taskInstance, rowData):
 }
 ```
 
-```json title="天级偏移"
+```json title="Day-level Offset"
 {
   "timerCfg": {
     "startOffset": {
@@ -212,41 +213,41 @@ def main(app, taskInstance, rowData):
 }
 ```
 
-### 复杂业务逻辑处理
-```python title="综合业务处理示例"
+### Complex Business Logic Processing
+```python title="Comprehensive Business Processing Example"
 def main(app, taskInstance, rowData):
-    # 获取相关服务
+    # Get related services
     email_service = app.getElement("services.EmailService")
     sms_service = app.getElement("services.SmsService")
     log_service = app.getElement("services.LogService")
     
     try:
-        # 记录任务开始
-        log_service.info(f"开始处理订单 {rowData.id} 的交付提醒")
+        # Record task start
+        log_service.info(f"Starting to process delivery reminder for order {rowData.id}")
         
-        # 检查客户偏好设置
+        # Check customer preference settings
         customer_model = app.getElement("models.CustomerModel")
         customer = customer_model.get(f"Q(id={rowData.customerId})", [])
         
-        # 根据偏好选择通知方式
+        # Choose notification method based on preference
         if customer.notificationPreference == "email":
             email_service.sendDeliveryReminder(rowData)
         elif customer.notificationPreference == "sms":
             sms_service.sendDeliveryReminder(rowData)
         else:
-            # 默认发送邮件
+            # Default to email
             email_service.sendDeliveryReminder(rowData)
         
-        # 更新通知状态
+        # Update notification status
         order_model = app.getElement("models.OrderModel")
         order_model.id = rowData.id
         order_model.notificationSent = True
         order_model.notificationTime = app.getElement("datatypes.Datetime")().getValue()
         order_model.save()
         
-        log_service.info(f"订单 {rowData.id} 交付提醒发送成功")
+        log_service.info(f"Delivery reminder for order {rowData.id} sent successfully")
         
     except Exception as e:
-        log_service.error(f"处理订单 {rowData.id} 交付提醒时发生错误: {str(e)}")
+        log_service.error(f"Error occurred while processing delivery reminder for order {rowData.id}: {str(e)}")
         raise
-``` 
+```

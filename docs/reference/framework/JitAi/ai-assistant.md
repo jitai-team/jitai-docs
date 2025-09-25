@@ -3,36 +3,36 @@ sidebar_position: 5
 slug: ai-assistant
 ---
 
-# AI助理
-AI助理是AI应用与用户交互的统一界面，基于LangGraph架构实现智能路由和多Agent协同。它负责路由决策、智能对话和工作流控制，支持可视化编排、复杂业务逻辑和一键集成能力。
+# AI Assistant
+AI Assistant is the unified interface for AI application-user interaction, implementing intelligent routing and multi-Agent collaboration based on LangGraph architecture. It is responsible for routing decisions, intelligent dialogue, and workflow control, supporting visual orchestration, complex business logic, and one-click integration capabilities.
 
-AI助理元素分层结构为Meta（aiassistants.Meta） → Type（aiassistants.NormalType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建AI助理实例元素。
+The AI Assistant element hierarchical structure is Meta (aiassistants.Meta) → Type (aiassistants.NormalType) → Instance. Developers can quickly create AI Assistant instance elements through JitAi's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的aiassistants.NormalType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements, or override the official aiassistants.NormalType element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+## Quick Start 
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 aiassistants/
 ├── myassistant/
-│   ├── e.json          # 元素定义文件
-│   └── config.json     # 业务配置文件
+│   ├── e.json          # Element definition file
+│   └── config.json     # Business configuration file
 ```
 
-#### e.json文件
+#### e.json File
 ```json title="aiassistants/myassistant/e.json"
 {
   "backendBundleEntry": ".",
   "frontBundleEntry": "./config.json",
   "icon": "AIzhushou1",
-  "title": "智能客服",
+  "title": "Intelligent Customer Service",
   "type": "aiassistants.NormalType",
   "extendType": "self"
 }
 ```
 
-#### 业务配置文件
+#### Business Configuration File
 ```json title="aiassistants/myassistant/config.json"
 {
   "apiKey": "{{llmApiKey}}",
@@ -51,7 +51,7 @@ aiassistants/
     "aiagent_001": {
       "id": "aiagent_001",
       "type": "aiagent",
-      "title": "智能客服",
+      "title": "Intelligent Customer Service",
       "agent": "aiagents.CustomerService",
       "position": {"x": 680, "y": 100}
     }
@@ -68,132 +68,132 @@ aiassistants/
       }
     }
   },
-  "welcomeMessage": "很高兴为您服务！请问有什么可以帮您？",
+  "welcomeMessage": "Happy to serve you! How can I help you?",
   "prologues": [
-    "什么是元素机制？",
-    "极态App支持私有化部署吗？"
+    "What is the element mechanism?",
+    "Does JitAi App support private deployment?"
   ]
 }
 ```
 
-#### 调用示例
-```python title="使用AI助理"
-# 获取AI助理实例
+#### Usage Example
+```python title="Using AI Assistant"
+# Get AI Assistant instance
 assistant = app.getElement("aiassistants.myassistant")
 
-# 发起对话
+# Start conversation
 result = assistant.run(
-    message="你好，我想了解产品功能",
+    message="Hello, I want to learn about product features",
     chatId="chat_001",
     streamMode=True
 )
 
-# 处理流式响应
+# Handle streaming response
 for chunk in result:
     print(chunk)
 ```
 
-## 元素配置
-### e.json配置
-| 字段 | 说明 | 必填 |
+## Element Configuration
+### e.json Configuration
+| Field | Description | Required |
 |-----|------|------|
-| backendBundleEntry | 后端入口，固定为"." | 是 |
-| frontBundleEntry | 前端入口，指向config.json | 是 |
-| type | 元素类型，固定为"aiassistants.NormalType" | 是 |
-| title | 助理显示名称 | 是 |
-| icon | 图标标识 | 否 |
-| extendType | 扩展类型，一般为"self" | 否 |
+| backendBundleEntry | Backend entry, fixed as "." | Yes |
+| frontBundleEntry | Frontend entry, points to config.json | Yes |
+| type | Element type, fixed as "aiassistants.NormalType" | Yes |
+| title | Assistant display name | Yes |
+| icon | Icon identifier | No |
+| extendType | Extension type, generally "self" | No |
 
-### config.json配置
-#### 基础配置
-| 配置项 | 类型 | 对应原生类型 | 必填 | 说明 |
+### config.json Configuration
+#### Basic Configuration
+| Configuration | Type | Native Type | Required | Description |
 |-------|-----|-----------|------|------|
-| apiKey | Stext | str | 是 | LLM API密钥 |
-| baseUrl | Stext | str | 是 | LLM服务地址 |
-| model | Stext | str | 是 | 模型名称 |
-| temperature | Numeric | float | 否 | 温度参数(0-1) |
-| maxTokens | Numeric | int | 否 | 最大令牌数 |
-| saverDb | Stext | str | 是 | 检查点数据库 |
-| sessionTimeout | Numeric | int | 否 | 会话超时(秒) |
-| welcomeMessage | Stext | str | 否 | 欢迎消息 |
-| prologues | JitList | list | 否 | 预设问题列表 |
+| apiKey | Stext | str | Yes | LLM API key |
+| baseUrl | Stext | str | Yes | LLM service address |
+| model | Stext | str | Yes | Model name |
+| temperature | Numeric | float | No | Temperature parameter (0-1) |
+| maxTokens | Numeric | int | No | Maximum token count |
+| saverDb | Stext | str | Yes | Checkpoint database |
+| sessionTimeout | Numeric | int | No | Session timeout (seconds) |
+| welcomeMessage | Stext | str | No | Welcome message |
+| prologues | JitList | list | No | Preset question list |
 
-#### 节点配置
-**支持的节点类型：**
-- **start**: 开始节点，工作流入口
-- **router**: 路由节点，实现智能分流
-- **aiagent**: AI代理节点，执行具体任务
-- **humanaction**: 人工干预节点
-- **end**: 结束节点，工作流出口
+#### Node Configuration
+**Supported Node Types:**
+- **start**: Start node, workflow entry point
+- **router**: Router node, implements intelligent routing
+- **aiagent**: AI agent node, executes specific tasks
+- **humanaction**: Human intervention node
+- **end**: End node, workflow exit point
 
-#### 边配置
-| 配置项 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Edge Configuration
+| Configuration | Type | Native Type | Required | Description |
 |-------|-----|-----------|------|------|
-| id | Stext | str | 是 | 边的唯一标识 |
-| sourceNode | Stext | str | 是 | 源节点ID |
-| targetNode | Stext | str | 是 | 目标节点ID |
-| sourcePort | Stext | str | 是 | 源端口 |
-| targetPort | Stext | str | 是 | 目标端口 |
-| argMapping | JitDict | dict | 否 | 参数映射关系 |
+| id | Stext | str | Yes | Unique identifier for the edge |
+| sourceNode | Stext | str | Yes | Source node ID |
+| targetNode | Stext | str | Yes | Target node ID |
+| sourcePort | Stext | str | Yes | Source port |
+| targetPort | Stext | str | Yes | Target port |
+| argMapping | JitDict | dict | No | Parameter mapping relationship |
 
-## 方法 
+## Methods 
 ### run
-发起AI助理对话，支持流式和非流式两种模式。
+Initiate AI Assistant conversation, supporting both streaming and non-streaming modes.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter | Type | Native Type | Required | Description |
 |-------|-----|-----------|------|------|
-| message | Ltext | str | 是 | 用户输入消息 |
-| chatId | Stext | str | 否 | 会话ID，不提供则自动生成 |
-| attachments | File | list | 否 | 附件列表 |
-| caller | Stext | str | 否 | 调用者标识 |
-| streamMode | Boolean | bool | 否 | 是否流式处理，默认True |
+| message | Ltext | str | Yes | User input message |
+| chatId | Stext | str | No | Session ID, auto-generated if not provided |
+| attachments | File | list | No | Attachment list |
+| caller | Stext | str | No | Caller identifier |
+| streamMode | Boolean | bool | No | Whether to use streaming mode, default True |
 
-#### 返回值
-- **流式模式**: 返回生成器对象，逐步输出处理结果
-- **非流式模式**: 返回最终处理结果字典
+#### Return Value
+- **Streaming Mode**: Returns generator object, outputs processing results step by step
+- **Non-streaming Mode**: Returns final processing result dictionary
 
-#### 使用示例
-```python title="流式对话示例"
+#### Usage Example
+```python title="Streaming Conversation Example"
 assistant = app.getElement("aiassistants.myassistant")
 
-# 流式处理
+# Streaming processing
 for chunk in assistant.run(
-    message="帮我分析这个问题",
+    message="Help me analyze this problem",
     chatId="chat_001",
     streamMode=True
 ):
-    print(f"输出: {chunk.get('content', '')}")
+    print(f"Output: {chunk.get('content', '')}")
     if chunk.get('finished'):
-        print("对话完成")
+        print("Conversation completed")
         break
 ```
 
-```python title="非流式对话示例"
-# 非流式处理
+```python title="Non-streaming Conversation Example"
+# Non-streaming processing
 result = assistant.run(
-    message="简单查询问题",
+    message="Simple query question",
     streamMode=False
 )
-print(f"最终结果: {result}")
+print(f"Final result: {result}")
 ```
 
 ### resume
-恢复中断的工作流执行，用于人工干预后继续处理。
+Resume interrupted workflow execution, used to continue processing after human intervention.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter | Type | Native Type | Required | Description |
 |-------|-----|-----------|------|------|
-| chatId | Stext | str | 是 | 会话ID |
-| nodeId | Stext | str | 是 | 恢复节点ID |
-| interruptResume | - | dict | 否 | 恢复数据 |
+| chatId | Stext | str | Yes | Session ID |
+| nodeId | Stext | str | Yes | Resume node ID |
+| interruptResume | - | dict | No | Resume data |
 
-#### 返回值
-返回生成器对象，逐步输出恢复后的处理结果。
+#### Return Value
+Returns generator object, outputs resumed processing results step by step.
 
-#### 使用示例
-```python title="恢复工作流示例"
-# 恢复指定节点的执行
+#### Usage Example
+```python title="Resume Workflow Example"
+# Resume execution of specified node
 for chunk in assistant.resume(
     chatId="chat_001",
     nodeId="aiagent_001",
@@ -203,54 +203,54 @@ for chunk in assistant.resume(
 ```
 
 ### terminate
-终止指定会话的工作流执行。
+Terminate workflow execution for the specified session.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter | Type | Native Type | Required | Description |
 |-------|-----|-----------|------|------|
-| chatId | Stext | str | 是 | 要终止的会话ID |
+| chatId | Stext | str | Yes | Session ID to terminate |
 
-#### 返回值
-返回布尔值，表示终止操作是否成功。
+#### Return Value
+Returns boolean value indicating whether the termination operation was successful.
 
-#### 使用示例
-```python title="终止会话示例"
+#### Usage Example
+```python title="Terminate Session Example"
 success = assistant.terminate(chatId="chat_001")
 if success:
-    print("会话已成功终止")
+    print("Session terminated successfully")
 ```
 
 ### getChatStatus
-获取指定会话的当前状态。
+Get the current status of the specified session.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter | Type | Native Type | Required | Description |
 |-------|-----|-----------|------|------|
-| chatId | Stext | str | 是 | 会话ID |
+| chatId | Stext | str | Yes | Session ID |
 
-#### 返回值
-返回字符串，表示会话状态：
-- "running": 运行中
-- "terminated": 已终止
-- "completed": 已完成
-- None: 会话不存在
+#### Return Value
+Returns string indicating session status:
+- "running": Running
+- "terminated": Terminated
+- "completed": Completed
+- None: Session does not exist
 
-#### 使用示例
-```python title="查询会话状态示例"
+#### Usage Example
+```python title="Query Session Status Example"
 status = assistant.getChatStatus(chatId="chat_001")
-print(f"会话状态: {status}")
+print(f"Session status: {status}")
 ```
 
-## 属性
-### 暂无
-AI助理元素暂未提供公开的属性访问接口。
+## Properties
+### None
+AI Assistant element does not currently provide public property access interfaces.
 
-## 高级特性
-### 流式处理
-AI助理支持实时流式输出，适合长对话和复杂推理场景。
+## Advanced Features
+### Streaming Processing
+AI Assistant supports real-time streaming output, suitable for long conversations and complex reasoning scenarios.
 
-### 会话管理
-内置会话状态管理，支持会话恢复、终止和状态查询。
+### Session Management
+Built-in session state management, supports session resumption, termination, and status queries.
 
-### 工作流控制
-基于LangGraph实现复杂工作流编排，支持条件分支、并行处理和人工干预。
+### Workflow Control
+Implements complex workflow orchestration based on LangGraph, supporting conditional branches, parallel processing, and human intervention.

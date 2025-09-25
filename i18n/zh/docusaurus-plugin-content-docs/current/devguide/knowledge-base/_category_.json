@@ -1,9 +1,9 @@
 {
-  "label": "AI知识库",
+  "label": "AI Knowledge Base",
   "position": 11,
   "link": {
     "type": "generated-index",
-    "slug": "knowledge-base",
+    "slug": "devguide/knowledge-base",
     "description": "AI 知识库元素、文档管理、搜索、智能体集成、向量数据库部署和 API。"
   }
 }

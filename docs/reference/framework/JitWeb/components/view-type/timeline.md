@@ -1,25 +1,25 @@
 ---
 slug: timeline
 ---
-# 时间轴
-时间轴是一个用于展示时间序列数据的视图组件，基于数据模型实现时间线形式的数据可视化。它负责按时间顺序展示数据记录、支持自定义时间位置和提供交互操作，可配置工具栏按钮、颜色样式和数据筛选功能。
+# Timeline
+Timeline is a view component for displaying time-series data, implementing timeline-style data visualization based on data models. It is responsible for displaying data records in chronological order, supporting custom time positioning and providing interactive operations, with configurable toolbar buttons, color styles, and data filtering functionality.
 
-时间轴元素分层结构为Meta（components.Meta） → Type（components.TimeLine） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建时间轴实例元素。
+The timeline element hierarchy is Meta (components.Meta) → Type (components.TimeLine) → Instance. Developers can quickly create timeline instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.TimeLineType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official components.TimeLineType element provided by JitAI in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基础配置示例
-```json title="时间轴基础配置"
+## Quick Start
+### Basic Configuration Example
+```json title="Timeline Basic Configuration"
 {
   "fullName": "components.TimeLine",
   "type": "components.TimeLine",
   "name": "timeLine1",
-  "title": "项目时间轴",
+  "title": "Project Timeline",
   "config": {
     "requireElements": [
       {
-        "title": "项目数据模型",
+        "title": "Project Data Model",
         "type": "models.Meta",
         "name": "models.ProjectModel",
         "filter": "",
@@ -39,87 +39,87 @@ slug: timeline
 }
 ```
 
-### 配置属性说明
-| 属性名 | 类型 | 说明 | 默认值 | 必填 |
-|--------|------|------|---------|------|
-| requireElements | Array | 绑定的数据模型配置 | [] | 是 |
-| time | string[] | 时间字段名数组 | [] | 是 |
-| abstract | string[] | 摘要内容字段名数组 | [] | 是 |
-| color | string[] | 颜色字段名数组 | [] | 否 |
-| stylesConfig.mode | string | 时间位置模式：left/center/right | "left" | 否 |
-| toolLeftBtn | Array | 左侧工具栏按钮配置 | [] | 否 |
-| toolRightBtn | Array | 右侧工具栏按钮配置 | [] | 否 |
-| defaultRender | boolean | 是否使用默认渲染 | true | 否 |
+### Configuration Properties
+| Property | Type | Description | Default | Required |
+|----------|------|-------------|---------|----------|
+| requireElements | Array | Bound data model configuration | [] | Yes |
+| time | string[] | Time field name array | [] | Yes |
+| abstract | string[] | Abstract content field name array | [] | Yes |
+| color | string[] | Color field name array | [] | No |
+| stylesConfig.mode | string | Time position mode: left/center/right | "left" | No |
+| toolLeftBtn | Array | Left toolbar button configuration | [] | No |
+| toolRightBtn | Array | Right toolbar button configuration | [] | No |
+| defaultRender | boolean | Whether to use default rendering | true | No |
 
-## 变量
+## Variables
 ### displayRowList
-- **类型**: RowList
-- **说明**: 展示的多行数据，包含当前时间轴显示的所有数据记录
-- **只读**: 是
+- **Type**: RowList
+- **Description**: Displayed multi-row data, containing all data records currently displayed in the timeline
+- **Read-only**: Yes
 
 ### activeRow
-- **类型**: RowData
-- **说明**: 当前操作的单行数据，在点击时间轴节点时更新
-- **只读**: 是
+- **Type**: RowData
+- **Description**: Currently operated single row data, updated when clicking timeline nodes
+- **Read-only**: Yes
 
 ### filter
-- **类型**: QFilter
-- **说明**: 筛选条件，用于过滤时间轴显示的数据
-- **只读**: 是
+- **Type**: QFilter
+- **Description**: Filter conditions used to filter data displayed in the timeline
+- **Read-only**: Yes
 
 ### loading
-- **类型**: Numeric
-- **说明**: 加载状态标识，0表示未加载，1表示加载中
-- **只读**: 是
+- **Type**: Numeric
+- **Description**: Loading state identifier, 0 indicates not loaded, 1 indicates loading
+- **Read-only**: Yes
 
-## 方法 
+## Methods
 ### call
-刷新时间轴数据，可传入筛选条件进行数据过滤。
+Refresh timeline data, with optional filter conditions for data filtering.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 必填 |
-|--------|------|------|------|
-| qFilter | string | Q表达式筛选条件字符串 | 否 |
+#### Parameters
+| Parameter | Type | Description | Required |
+|-----------|------|-------------|----------|
+| qFilter | string | Q expression filter condition string | No |
 
-#### 返回值
-无返回值
+#### Return Value
+No return value
 
-#### 使用示例
-```typescript title="刷新时间轴数据"
-// 无条件刷新
+#### Usage Example
+```typescript title="Refresh Timeline Data"
+// Refresh without conditions
 timeLine1.call();
 
-// 带筛选条件刷新
+// Refresh with filter conditions
 timeLine1.call("Q(status='active')");
 ```
 
 ### getDataList
-获取时间轴数据列表，支持分页加载和权限过滤。
+Get timeline data list, supporting pagination loading and permission filtering.
 
-#### 参数详解
-无参数
+#### Parameters
+No parameters
 
-#### 返回值
+#### Return Value
 Promise&lt;void&gt;
 
-#### 使用示例
-```typescript title="获取数据列表"
+#### Usage Example
+```typescript title="Get Data List"
 await timeLine1.getDataList();
 ```
 
 ### updateConfig
-更新组件配置并重新加载数据。
+Update component configuration and reload data.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 必填 |
-|--------|------|------|------|
-| config | Object | 新的组件配置对象 | 是 |
+#### Parameters
+| Parameter | Type | Description | Required |
+|-----------|------|-------------|----------|
+| config | Object | New component configuration object | Yes |
 
-#### 返回值
-无返回值
+#### Return Value
+No return value
 
-#### 使用示例
-```typescript title="更新配置"
+#### Usage Example
+```typescript title="Update Configuration"
 timeLine1.updateConfig({
   time: ["updatedTime"],
   abstract: ["newDescription"],
@@ -130,23 +130,23 @@ timeLine1.updateConfig({
 ```
 
 ### publishEvent
-发送组件事件，通知其他组件或页面。
+Send component events to notify other components or pages.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 必填 |
-|--------|------|------|------|
-| name | string | 事件名称 | 是 |
-| ex | Object | 额外数据 | 否 |
+#### Parameters
+| Parameter | Type | Description | Required |
+|-----------|------|-------------|----------|
+| name | string | Event name | Yes |
+| ex | Object | Additional data | No |
 
-#### 返回值
+#### Return Value
 Promise&lt;void&gt;
 
-#### 使用示例
-```typescript title="发送自定义事件"
-// 发送简单事件
+#### Usage Example
+```typescript title="Send Custom Event"
+// Send simple event
 await timeLine1.publishEvent('customAction');
 
-// 发送带数据的事件
+// Send event with data
 await timeLine1.publishEvent('dataChanged', {
   count: timeLine1.rowDataList.length,
   timestamp: Date.now()
@@ -154,264 +154,264 @@ await timeLine1.publishEvent('dataChanged', {
 ```
 
 ### subscribeEvent
-订阅组件事件，设置事件回调处理函数。
+Subscribe to component events and set event callback handlers.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 必填 |
-|--------|------|------|------|
-| name | string | 事件名称 | 是 |
-| evtCb | Function | 事件回调函数 | 是 |
-| unSubscribeExist | boolean | 是否取消已存在的订阅 | 否 |
+#### Parameters
+| Parameter | Type | Description | Required |
+|-----------|------|-------------|----------|
+| name | string | Event name | Yes |
+| evtCb | Function | Event callback function | Yes |
+| unSubscribeExist | boolean | Whether to cancel existing subscriptions | No |
 
-#### 返回值
-string - 订阅处理器ID
+#### Return Value
+string - Subscription handler ID
 
-#### 使用示例
-```typescript title="订阅事件"
-// 订阅数据刷新事件
+#### Usage Example
+```typescript title="Subscribe to Events"
+// Subscribe to data refresh event
 const handlerId = timeLine1.subscribeEvent('refresh', () => {
-  console.log('时间轴数据已刷新');
+  console.log('Timeline data has been refreshed');
 });
 
-// 订阅点击事件
+// Subscribe to click event
 timeLine1.subscribeEvent('clickRow', (data) => {
-  console.log('点击的行数据:', data.activeRow);
+  console.log('Clicked row data:', data.activeRow);
 });
 ```
 
 ### unSubscribeEvent
-取消事件订阅。
+Cancel event subscription.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 必填 |
-|--------|------|------|------|
-| id | string | 订阅处理器ID | 是 |
+#### Parameters
+| Parameter | Type | Description | Required |
+|-----------|------|-------------|----------|
+| id | string | Subscription handler ID | Yes |
 
-#### 返回值
-boolean - 是否成功取消
+#### Return Value
+boolean - Whether successfully cancelled
 
-#### 使用示例
-```typescript title="取消事件订阅"
+#### Usage Example
+```typescript title="Unsubscribe from Events"
 const handlerId = timeLine1.subscribeEvent('refresh', callback);
-// 取消订阅
+// Cancel subscription
 timeLine1.unSubscribeEvent(handlerId);
 ```
 
 ### setConfig
-设置组件配置，支持部分更新和完全替换。
+Set component configuration, supporting partial updates and complete replacement.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 必填 |
-|--------|------|------|------|
-| next | Object | 新配置对象 | 是 |
-| clean | boolean | 是否完全替换配置 | 否 |
+#### Parameters
+| Parameter | Type | Description | Required |
+|-----------|------|-------------|----------|
+| next | Object | New configuration object | Yes |
+| clean | boolean | Whether to completely replace configuration | No |
 
-#### 返回值
-无返回值
+#### Return Value
+No return value
 
-#### 使用示例
-```typescript title="设置配置"
-// 部分更新配置
+#### Usage Example
+```typescript title="Set Configuration"
+// Partial configuration update
 timeLine1.setConfig({
   time: ["newTimeField"]
 });
 
-// 完全替换配置
+// Complete configuration replacement
 timeLine1.setConfig(newConfig, true);
 ```
 
 ### destroy
-销毁组件，清理所有事件监听器和资源。
+Destroy component and clean up all event listeners and resources.
 
-#### 参数详解
-无参数
+#### Parameters
+No parameters
 
-#### 返回值
-无返回值
+#### Return Value
+No return value
 
-#### 使用示例
-```typescript title="销毁组件"
-// 页面卸载时销毁组件
+#### Usage Example
+```typescript title="Destroy Component"
+// Destroy component when page unloads
 timeLine1.destroy();
 ```
 
 ### runCode
-在页面上下文中运行代码字符串。
+Run code string in page context.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 必填 |
-|--------|------|------|------|
-| code | string | 要执行的代码字符串 | 是 |
+#### Parameters
+| Parameter | Type | Description | Required |
+|-----------|------|-------------|----------|
+| code | string | Code string to execute | Yes |
 
-#### 返回值
-any - 代码执行结果
+#### Return Value
+any - Code execution result
 
-#### 使用示例
-```typescript title="运行代码"
-// 执行简单表达式
+#### Usage Example
+```typescript title="Run Code"
+// Execute simple expression
 const result = timeLine1.runCode('2 + 3');
 
-// 访问页面变量
+// Access page variables
 const pageData = timeLine1.runCode('this.somePageVariable');
 ```
 
 ### getPermConfig
-获取当前组件的权限配置信息。
+Get current component's permission configuration information.
 
-#### 参数详解
-无参数
+#### Parameters
+No parameters
 
-#### 返回值
-Record&lt;string, any&gt; | undefined - 权限配置对象
+#### Return Value
+Record&lt;string, any&gt; | undefined - Permission configuration object
 
-#### 使用示例
-```typescript title="获取权限配置"
+#### Usage Example
+```typescript title="Get Permission Configuration"
 const permConfig = timeLine1.getPermConfig();
 if (permConfig) {
-  console.log('组件权限配置:', permConfig);
+  console.log('Component permission configuration:', permConfig);
 }
 ```
 
-## 属性
+## Properties
 ### rowDataList
-- **类型**: RowData[]
-- **说明**: 时间轴的数据列表，设置时会触发refresh事件
-- **只读**: 否
+- **Type**: RowData[]
+- **Description**: Timeline data list, triggers refresh event when set
+- **Read-only**: No
 
 ### ModelClass
-- **类型**: BaseModel
-- **说明**: 绑定的数据模型类
-- **只读**: 是
+- **Type**: BaseModel
+- **Description**: Bound data model class
+- **Read-only**: Yes
 
 ### allFieldDict
-- **类型**: Record&lt;string, DataTypeConfig&gt;
-- **说明**: 所有字段的字典映射
-- **只读**: 是
+- **Type**: Record&lt;string, DataTypeConfig&gt;
+- **Description**: Dictionary mapping of all fields
+- **Read-only**: Yes
 
 ### primaryKey
-- **类型**: string
-- **说明**: 主键字段名
-- **只读**: 是
+- **Type**: string
+- **Description**: Primary key field name
+- **Read-only**: Yes
 
 ### fieldDefineList
-- **类型**: DataTypeConfig[]
-- **说明**: 字段定义列表
-- **只读**: 是
+- **Type**: DataTypeConfig[]
+- **Description**: Field definition list
+- **Read-only**: Yes
 
 ### pageNumber
-- **类型**: number
-- **说明**: 当前页码
-- **只读**: 否
+- **Type**: number
+- **Description**: Current page number
+- **Read-only**: No
 
 ### pageSize
-- **类型**: number
-- **说明**: 每页数据条数
-- **只读**: 否
+- **Type**: number
+- **Description**: Number of data items per page
+- **Read-only**: No
 
 ### name
-- **类型**: string
-- **说明**: 组件名称标识
-- **只读**: 是
+- **Type**: string
+- **Description**: Component name identifier
+- **Read-only**: Yes
 
 ### title
-- **类型**: string
-- **说明**: 组件显示标题
-- **只读**: 是
+- **Type**: string
+- **Description**: Component display title
+- **Read-only**: Yes
 
 ### config
-- **类型**: Object
-- **说明**: 组件完整配置对象
-- **只读**: 否
+- **Type**: Object
+- **Description**: Complete component configuration object
+- **Read-only**: No
 
 ### type
-- **类型**: string
-- **说明**: 组件类型标识
-- **只读**: 是
+- **Type**: string
+- **Description**: Component type identifier
+- **Read-only**: Yes
 
 ### fullName
-- **类型**: string
-- **说明**: 组件完整名称路径
-- **只读**: 是
+- **Type**: string
+- **Description**: Complete component name path
+- **Read-only**: Yes
 
 ### showTitle
-- **类型**: boolean
-- **说明**: 是否显示组件标题
-- **只读**: 是
+- **Type**: boolean
+- **Description**: Whether to display component title
+- **Read-only**: Yes
 
 ### app
-- **类型**: App
-- **说明**: 绑定的应用实例
-- **只读**: 是
+- **Type**: App
+- **Description**: Bound application instance
+- **Read-only**: Yes
 
 ### page
-- **类型**: BasePage
-- **说明**: 绑定的页面实例
-- **只读**: 是
+- **Type**: BasePage
+- **Description**: Bound page instance
+- **Read-only**: Yes
 
 ### dataTypeList
-- **类型**: BaseDataType[]
-- **说明**: 组件变量定义列表
-- **只读**: 是
+- **Type**: BaseDataType[]
+- **Description**: Component variable definition list
+- **Read-only**: Yes
 
-## 事件
+## Events
 ### clickRow
-- **说明**: 点击时间轴节点时触发
-- **数据**: activeRow - 被点击的行数据
+- **Description**: Triggered when clicking timeline nodes
+- **Data**: activeRow - The clicked row data
 
 ### refresh
-- **说明**: 数据刷新时触发
-- **数据**: 无
+- **Description**: Triggered when data is refreshed
+- **Data**: None
 
-### 工具栏按钮事件
-根据配置的toolLeftBtn和toolRightBtn，会动态生成对应的点击事件，事件名为click + 按钮id的驼峰格式。
+### Toolbar Button Events
+Based on the configured toolLeftBtn and toolRightBtn, corresponding click events are dynamically generated, with event names in camelCase format of click + button id.
 
-## 高级特性
-### 时间位置模式配置
-时间轴支持三种时间位置模式：
+## Advanced Features
+### Time Position Mode Configuration
+Timeline supports three time position modes:
 
-```typescript title="时间位置模式"
-// 左侧显示时间
+```typescript title="Time Position Modes"
+// Display time on the left
 stylesConfig: {
   mode: "left"
 }
 
-// 居中交替显示
+// Center alternating display
 stylesConfig: {
-  mode: "center"  // 对应 TIME_POS_TYPES.CENTER = 'alternate'
+  mode: "center"  // Corresponds to TIME_POS_TYPES.CENTER = 'alternate'
 }
 
-// 右侧显示时间
+// Display time on the right
 stylesConfig: {
   mode: "right"
 }
 ```
 
-### 工具栏按钮配置
-```json title="工具栏按钮配置示例"
+### Toolbar Button Configuration
+```json title="Toolbar Button Configuration Example"
 {
   "toolLeftBtn": [
     {
       "id": "add",
-      "name": "新增",
+      "name": "Add",
       "type": "primary"
     }
   ],
   "toolRightBtn": [
     {
       "id": "export",
-      "name": "导出",
+      "name": "Export",
       "type": "default"
     }
   ]
 }
 ```
 
-### 数据模型绑定
-```json title="数据模型绑定配置"
+### Data Model Binding
+```json title="Data Model Binding Configuration"
 {
   "requireElements": [
     {
-      "title": "任务数据模型",
+      "title": "Task Data Model",
       "type": "models.Meta",
       "name": "models.TaskModel",
       "filter": "Q(isDeleted=false)",
@@ -421,14 +421,14 @@ stylesConfig: {
 }
 ```
 
-### 分页加载机制
-组件支持分页加载，通过pageNumber和pageSize属性控制：
+### Pagination Loading Mechanism
+The component supports pagination loading, controlled through pageNumber and pageSize properties:
 
-```typescript title="分页控制"
-// 设置每页显示条数
+```typescript title="Pagination Control"
+// Set number of items per page
 timeLine1.pageSize = 30;
 
-// 重置到第一页
+// Reset to first page
 timeLine1.pageNumber = 1;
 timeLine1.call();
 ``` 

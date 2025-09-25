@@ -3,12 +3,12 @@ sidebar_position: 2
 ---
 
 # 创建组件化页面
-页面是用户与应用系统交互的主要场所，由不同的前端功能[组件](../../using-functional-components-in-pages)构成，为用户提供数据展示界面以及交互操作入口。开发者在[创建门户](../portal-navigation-design)中规划每个门户中的导航菜单，而每个菜单项则对应一个页面的PC端和移动端。
+页面是用户与应用系统交互的主要场所，由不同的前端功能[组件](/docs/devguide/using-functional-components-in-pages)构成，为用户提供数据展示界面以及交互操作入口。开发者在[创建门户](/docs/devguide/shell-and-page/portal-navigation-design)中规划每个门户中的导航菜单，而每个菜单项则对应一个页面的PC端和移动端。
 
-在一个组件化页面中，页面函数逻辑、页面事件函数逻辑、页面中用到的组件的事件函数逻辑中都可以调用其它的业务元素，包括且不限于服务、数据模型、AI大模型、AI Agent、AI助理等。关于调用业务元素的详细内容，可以参考[在函数逻辑中调用前后端工具和服务](../../calling-business-elements-in-pages)。
+在一个组件化页面中，页面函数逻辑、页面事件函数逻辑、页面中用到的组件的事件函数逻辑中都可以调用其它的业务元素，包括且不限于服务、数据模型、AI大模型、AI Agent、AI助理等。关于调用业务元素的详细内容，可以参考[在函数逻辑中调用前后端工具和服务](/docs/devguide/calling-business-elements-in-pages)。
 
 ## 新建常规页面 {#create-a-regular-page}
-在[创建门户](../portal-navigation-design)中，如果开发者选择创建菜单的同时创建页面，则页面会自动生成，可以在元素目录树中找到自动生成的页面并进行编辑。
+在[创建门户](/docs/devguide/shell-and-page/portal-navigation-design)中，如果开发者选择创建菜单的同时创建页面，则页面会自动生成，可以在元素目录树中找到自动生成的页面并进行编辑。
 
 开发者也可以手动创建页面，JitAi提供了常规页面、AI数据管理页面、AI数据分析页面、数据录入页面、React全代码页面、Vue全代码页面、markdown-page一共7种页面类型。其中AI数据管理页面、AI数据分析页面、数据录入页面都是以常规页面为基础封装的，本文使用常规页面讲解**如何进行组件化的页面开发**。
 
@@ -28,7 +28,7 @@ JitAi为页面元素提供了可视化拖拽式的页面编辑器，开发者可
 
 页面编辑器总体布局分为四个区域：工具栏、画布、组件配置面板、事件面板。
 
-JitAi开发框架提供了丰富的组件库，每种组件的配置项和事件各有不同，开发者可以参考[在页面中使用功能组件](../../using-functional-components-in-pages)，了解每种组件详细用法。
+JitAi开发框架提供了丰富的组件库，每种组件的配置项和事件各有不同，开发者可以参考[在页面中使用功能组件](/docs/devguide/using-functional-components-in-pages)，了解每种组件详细用法。
 
 ## 在页面中集成AI助理 {#integrate-ai-assistant-in-pages}
 页面支持集成AI助理，提供智能对话和辅助功能，增强用户体验。
@@ -126,7 +126,7 @@ JitAi开发框架提供了丰富的组件库，每种组件的配置项和事件
 页面变量可以用于存储临时数据，函数逻辑中可以基于页面变量进行逻辑控制，页面自身的函数以及页面中其它组件的函数都可以访问当前页面的变量。
 
 ### 变量声明 {#variable-declaration}
-开发者可以根据需要声明一个或多个页面变量，变量类型支持单行文本、多行文本、日期时间等全部JitAi[数据类型](../../../reference/framework/JitORM/data-types)。
+开发者可以根据需要声明一个或多个页面变量，变量类型支持单行文本、多行文本、日期时间等全部JitAi[数据类型](/docs/reference/framework/JitORM/data-types)。
 
 ![页面变量声明](./imgs/page-variable-declaration.gif)
 
@@ -277,8 +277,8 @@ JitAi已经内置了对移动端的适配，可以在移动端页面编辑器中
 移动端页面编辑器和PC端页面编辑器在功能上没有区别，配置/事件/函数/页面变量等操作和PC端页面编辑器完全一致。
 
 ## 在页面中集成AI助理 {#integrate-ai-assistant-in-page} 
-JitAi支持在页面中直接集成[AI助理](../../ai-assistant/create-ai-assistant)，用户在访问页面时可以与AI助理进行交互。
+JitAi支持在页面中直接集成[AI助理](/docs/devguide/ai-assistant/create-ai-assistant)，用户在访问页面时可以与AI助理进行交互。
 
 ![在页面中添加AI助理](./imgs/add-ai-assistant-to-page.gif)
 
-开发者在页面编辑器顶部打开`AI助理`开关，在弹出的列表中选择一个[AI助理](../../ai-assistant/create-ai-assistant)，即可在页面中集成AI助理。
+开发者在页面编辑器顶部打开`AI助理`开关，在弹出的列表中选择一个[AI助理](/docs/devguide/ai-assistant/create-ai-assistant)，即可在页面中集成AI助理。

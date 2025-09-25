@@ -13,7 +13,7 @@ const config: Config = {
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
-
+  trailingSlash: false,
   // Set the production url of your site here
   url: 'https://jit.pro',
   // Set the /<baseUrl>/ pathname under which your site is served
@@ -45,9 +45,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   organizationName: 'jitai-team', // Usually your GitHub org/user name.
   projectName: 'jitai-docs', // Usually your repo name.
 
-  onBrokenLinks: 'throw',              // 暂时设置为警告，待文档结构调整完成后改为throw
-  onBrokenMarkdownLinks: 'throw',   // 断开的Markdown链接设置为警告y
-  onBrokenAnchors: 'throw',         // 断开的锚点设置为警告
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'throw',
+  onBrokenAnchors: 'throw',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -170,14 +170,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
          {
            href: 'https://forum.jit.pro',
            position: 'left',
-           label: 'Community Forum',
+           label: 'Community',
          },
-        //GitHub
-         {
-           href: 'https://github.com/jitai-team',
-           label: 'GitHub',
-           position: 'right',
-         },
+        //GitHub  目前GitHub上没有开源项目，而且当前菜单中有 「开源」菜单，为节省菜单空间，这里先隐藏
+        //  {
+        //    href: 'https://github.com/jitai-team',
+        //    label: 'GitHub',
+        //    position: 'right',
+        //  },
+        {
+          href: 'https://demo.jit.pro',
+          position: 'left',
+          label: 'Try Online',
+        },
+        {
+          type: 'search',
+          position: 'right',
+        },
         {
           type: 'localeDropdown',
           position: 'right',
@@ -193,6 +202,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             {
               label: 'Home',
               to: '/',
+            },
+            {
+              label: 'Download',
+              to: '/docs/tutorial/download-installation',
+            },
+            {
+              label: 'Try Online',
+              to: 'https://demo.jit.pro',
             }
           ],
         },
@@ -201,41 +218,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           items: [
             {
               label: 'Tutorial',
-              to: '/docs/tutorial/',
+              to: '/docs/tutorial',
             },
             {
               label: 'Developer Guide',
-              to: '/docs/devguide/',
+              to: '/docs/devguide',
             },
             {
               label: 'Extending',
-              to: '/docs/extguide/',
+              to: '/docs/extguide',
             },
             {
               label: 'Reference',
-              to: '/docs/reference/',
+              to: '/docs/reference',
             }
           ],
         },
-        // {
-        //   title: '社区',
-        //   items: [
-        //     {
-        //       label: 'Slack',
-        //       href: 'https://join.slack.com/t/jit-pro/shared_invite/zt-23999999999999999999999999999999',
-        //     },
-        //     {
-        //       label: 'Discord',
-        //       href: 'https://discordapp.com/invite/jitai',
-        //     },
-        //     {
-        //       label: 'X',
-        //       href: 'https://x.com/jitai',
-        //     },
-        //   ],
-        // },
          {
-           title: 'More',
+           title: 'Social',
            items: [
             {
               label: 'Community',
@@ -245,22 +245,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                label: 'GitHub',
                href: 'https://github.com/jitai-team',
              },
-           ],
-         },
-         {
-           title: 'Social',
-           items: [
              {
                label: 'X (Twitter)',
-               href: '#',
+               href: 'https://x.com/JitAi2017',
              },
              {
-               label: 'Facebook',
-               href: '#',
+               label: 'Youtube',
+               href: 'https://www.youtube.com/channel/UClvTNJPvBhek3aFuDy87RJQ',
              },
              {
-               label: 'LinkedIn',
-               href: '#',
+               label: 'Instagram',
+               href: 'https://www.instagram.com/jitai_2017',
              },
            ],
          },

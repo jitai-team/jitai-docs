@@ -3,17 +3,18 @@ sidebar_position: 1
 slug: scheduled-tasks
 ---
 
-# 定时任务
-定时任务是JitTask框架中用于实现周期性业务自动化的核心元素，负责任务执行逻辑处理、下次执行时间计算和任务状态管理。
+# Scheduled Tasks
 
-定时任务元素分层结构为Meta（tasks.Meta）→ Type（tasks.NormalType）→ 实例，开发者可通过可视化开发工具快捷地创建定时任务实例元素。
+Scheduled Tasks are core elements in the JitTask framework used to implement periodic business automation, responsible for task execution logic processing, next execution time calculation, and task status management.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的tasks.NormalType元素，以实现自己的封装。
+The Scheduled Task element has a hierarchical structure of Meta (tasks.Meta) → Type (tasks.NormalType) → Instance. Developers can quickly create scheduled task instance elements through visual development tools.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```title="推荐目录结构"
+Of course, developers can also create their own Type elements or modify the official tasks.NormalType element provided by JitAi in their own App to implement their own encapsulation.
+
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+```title="Recommended Directory Structure"
 tasks/
 └── TestTimeTasks/
     ├── e.json
@@ -21,12 +22,12 @@ tasks/
     └── __init__.py
 ```
 
-#### e.json文件
+#### e.json File
 ```json title="tasks/TestTimeTasks/e.json"
 {
   "type": "tasks.NormalType",
   "funcType": "Inner",
-  "title": "测试定时任务",
+  "title": "Test Scheduled Task",
   "timerCfg": {
     "startTime": "2024-01-01 09:00:00",
     "endTime": "2024-12-31 18:00:00",
@@ -41,185 +42,185 @@ tasks/
 }
 ```
 
-#### 业务逻辑代码
+#### Business Logic Code
 ```python title="tasks/TestTimeTasks/inner.py"
 from datatypes.Meta import datatypes
 from jit.commons.utils.logger import log
 
 def customFunc():
-    """定时任务执行函数"""
-    log.info("定时任务开始执行")
+    """Scheduled task execution function"""
+    log.info("Scheduled task started")
     
-    # 获取用户模型进行数据操作
+    # Get user model for data operations
     UserModel = app.getElement("models.UserModel")
     users = UserModel.query(filter="Q(status='active')")
     
     for user in users["rowDatas"]:
-        # 执行业务逻辑
-        log.info(f"处理用户: {user.name.value}")
+        # Execute business logic
+        log.info(f"Processing user: {user.name.value}")
     
-    log.info("定时任务执行完成")
+    log.info("Scheduled task completed")
     return {"status": "success", "processedCount": len(users["rowDatas"])}
 ```
 
-#### 调用示例
-```python title="获取和使用定时任务元素"
-# 获取定时任务元素
+#### Usage Example
+```python title="Get and Use Scheduled Task Element"
+# Get scheduled task element
 task_element = app.getElement("tasks.TestTimeTasks")
 
-# 创建任务实例
+# Create task instance
 from tasks.Meta import Timer
 timer = Timer({
     "startTime": "2024-01-01 09:00:00",
     "repeat": {"repeatType": "day", "period": 1}
 })
 
-# 计算下次执行时间
+# Calculate next execution time
 next_time = timer.nextTime()
-print(f"下次执行时间: {next_time}")
+print(f"Next execution time: {next_time}")
 ```
 
-## 元素配置
-### e.json配置
-| 参数名 | 类型 | 必填 | 说明 | 示例值 |
+## Element Configuration
+### e.json Configuration
+| Parameter Name | Type | Required | Description | Example Value |
 |--------|------|------|------|--------|
-| type | string | 是 | 元素类型，固定为"tasks.NormalType" | "tasks.NormalType" |
-| funcType | string | 是 | 函数类型："Inner"(内部函数)或"Global"(全局函数) | "Inner" |
-| title | string | 是 | 任务标题 | "数据同步任务" |
-| timerCfg | object | 是 | 时间配置对象 | 见timerCfg配置 |
-| enable | number | 否 | 是否启用：1启用，0禁用 | 1 |
-| backendBundleEntry | string | 是 | 后端入口，固定为"." | "." |
+| type | string | Yes | Element type, fixed as "tasks.NormalType" | "tasks.NormalType" |
+| funcType | string | Yes | Function type: "Inner" (internal function) or "Global" (global function) | "Inner" |
+| title | string | Yes | Task title | "Data Sync Task" |
+| timerCfg | object | Yes | Time configuration object | See timerCfg configuration |
+| enable | number | No | Whether to enable: 1 enable, 0 disable | 1 |
+| backendBundleEntry | string | Yes | Backend entry, fixed as "." | "." |
 
-### timerCfg配置
-| 参数名 | 类型 | 必填 | 说明 | 示例值 |
+### timerCfg Configuration
+| Parameter Name | Type | Required | Description | Example Value |
 |--------|------|------|------|--------|
-| startTime | string | 是 | 开始时间 | "2024-01-01 09:00:00" |
-| endTime | string | 否 | 结束时间 | "2024-12-31 18:00:00" |
-| repeat | object | 是 | 重复配置对象 | 见repeat配置 |
-| skipHoliday | number | 否 | 是否跳过节假日：1跳过，0不跳过 | 1 |
+| startTime | string | Yes | Start time | "2024-01-01 09:00:00" |
+| endTime | string | No | End time | "2024-12-31 18:00:00" |
+| repeat | object | Yes | Repeat configuration object | See repeat configuration |
+| skipHoliday | number | No | Whether to skip holidays: 1 skip, 0 don't skip | 1 |
 
-### repeat配置
-| 参数名 | 类型 | 必填 | 说明 | 可选值 |
+### repeat Configuration
+| Parameter Name | Type | Required | Description | Optional Values |
 |--------|------|------|------|--------|
-| repeatType | string | 是 | 重复类型 | "year","month","week","day","hour","minute","normal" |
-| period | number | 是 | 重复周期 | 正整数 |
+| repeatType | string | Yes | Repeat type | "year","month","week","day","hour","minute","normal" |
+| period | number | Yes | Repeat period | Positive integer |
 
-## 方法 
+## Methods
 ### handle
-执行任务的核心方法，处理具体的业务逻辑。
+Core method for task execution, handling specific business logic.
 
-#### 参数详解
-| 参数名 | JitAI类型 | Python类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | JitAI Type | Python Type | Required | Description |
 |--------|-----------|-------------|------|------|
-| task | RowData | object | 是 | 任务数据对象 |
+| task | RowData | object | Yes | Task data object |
 
-#### 返回值
-- **类型**: any
-- **说明**: 任务执行结果，可以是字典、字符串或其他数据类型
+#### Return Value
+- **Type**: any
+- **Description**: Task execution result, can be dictionary, string, or other data types
 
-#### 使用示例
-```python title="重写handle方法"
+#### Usage Example
+```python title="Override handle Method"
 from tasks.Meta import BaseTask
 
 class CustomTask(BaseTask):
     def handle(self, task):
-        # 获取任务参数
+        # Get task parameters
         params = task.argDict.value or {}
         
-        # 执行业务逻辑
+        # Execute business logic
         result = self.processData(params)
         
         return result
 ```
 
 ### getNextRunTime
-计算任务下次执行时间。
+Calculate next execution time for task.
 
-#### 参数详解
-| 参数名 | JitAI类型 | Python类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | JitAI Type | Python Type | Required | Description |
 |--------|-----------|-------------|------|------|
-| task | RowData | object | 是 | 任务数据对象 |
-| now | Datetime | datetime | 否 | 当前时间，用于测试 |
+| task | RowData | object | Yes | Task data object |
+| now | Datetime | datetime | No | Current time, used for testing |
 
-#### 返回值
-- **类型**: Arrow对象或None
-- **说明**: 下次执行时间，None表示无下次执行
+#### Return Value
+- **Type**: Arrow object or None
+- **Description**: Next execution time, None means no next execution
 
-#### 使用示例
-```python title="计算下次执行时间"
-# 获取定时任务元素
+#### Usage Example
+```python title="Calculate Next Execution Time"
+# Get scheduled task element
 task_element = app.getElement("tasks.TestTimeTasks")
 
-# 模拟任务对象
+# Simulate task object
 task_data = {
     "element": "tasks.TestTimeTasks",
     "startTime": "2024-01-01 09:00:00"
 }
 
-# 计算下次执行时间
+# Calculate next execution time
 next_time = task_element.getNextRunTime(task_data)
 if next_time:
-    print(f"下次执行时间: {next_time.format('YYYY-MM-DD HH:mm:ss')}")
+    print(f"Next execution time: {next_time.format('YYYY-MM-DD HH:mm:ss')}")
 ```
 
 ### afterReturn
-任务执行完成后的回调方法，用于计算下次任务。
+Callback method after task execution completion, used for calculating next task.
 
-#### 参数详解
-| 参数名 | JitAI类型 | Python类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | JitAI Type | Python Type | Required | Description |
 |--------|-----------|-------------|------|------|
-| task | RowData | object | 是 | 当前任务数据对象 |
+| task | RowData | object | Yes | Current task data object |
 
-#### 使用示例
-```python title="自定义任务完成后处理"
+#### Usage Example
+```python title="Custom Task Completion Processing"
 def afterReturn(self, task):
-    # 执行父类逻辑：创建下次任务
+    # Execute parent class logic: create next task
     super().afterReturn(task)
     
-    # 自定义后处理逻辑
+    # Custom post-processing logic
     self.sendNotification(task)
 ```
 
 ### getFunc
-获取任务执行函数。
+Get task execution function.
 
-#### 参数详解
-| 参数名 | JitAI类型 | Python类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | JitAI Type | Python Type | Required | Description |
 |--------|-----------|-------------|------|------|
-| task | RowData | object | 是 | 任务数据对象 |
+| task | RowData | object | Yes | Task data object |
 
-#### 返回值
-- **类型**: function或None
-- **说明**: 可执行的函数对象
+#### Return Value
+- **Type**: function or None
+- **Description**: Executable function object
 
-#### 使用示例
-```python title="获取执行函数"
-# 获取任务执行函数
+#### Usage Example
+```python title="Get Execution Function"
+# Get task execution function
 func = task_element.getFunc(task)
 if func:
     result = func(**task.argDict.value or {})
 ```
 
-## 属性
+## Attributes
 ### config
-任务配置信息，包含所有e.json中的配置项。
+Task configuration information, containing all configuration items from e.json.
 
 ### customFunc
-内部自定义函数，当funcType为"Inner"时使用。
+Internal custom function, used when funcType is "Inner".
 
 ### taskType
-任务类型标识，值为配置中的type字段。
+Task type identifier, value is the type field from configuration.
 
 ### TaskModel
-任务数据模型，用于数据库操作。
+Task data model, used for database operations.
 
 ### TaskHistoryModel
-任务历史记录模型，用于记录执行历史。
+Task history record model, used for recording execution history.
 
-## 高级特性
-### 复杂周期配置
-#### 按月重复配置
-```json title="每月15日执行"
+## Advanced Features
+### Complex Period Configuration
+#### Monthly Repeat Configuration
+```json title="Execute on 15th of Each Month"
 {
   "timerCfg": {
     "startTime": "2024-01-15 10:00:00",
@@ -233,8 +234,8 @@ if func:
 }
 ```
 
-#### 按周重复配置
-```json title="每周一、三、五执行"
+#### Weekly Repeat Configuration
+```json title="Execute on Monday, Wednesday, Friday"
 {
   "timerCfg": {
     "startTime": "2024-01-01 09:00:00",
@@ -247,8 +248,8 @@ if func:
 }
 ```
 
-#### 按年重复配置
-```json title="每年6月第一个周一执行"
+#### Yearly Repeat Configuration
+```json title="Execute on First Monday of June Each Year"
 {
   "timerCfg": {
     "startTime": "2024-06-01 09:00:00",
@@ -263,24 +264,24 @@ if func:
 }
 ```
 
-### 全局函数调用
-```json title="调用服务函数"
+### Global Function Call
+```json title="Call Service Function"
 {
   "funcType": "Global",
   "taskFunc": "services.DataSyncService.syncUserData"
 }
 ```
 
-### 带参数任务
-```python title="任务参数传递"
+### Parameterized Tasks
+```python title="Task Parameter Passing"
 def customFunc():
-    # 从全局变量获取任务参数
+    # Get task parameters from global variables
     task = GlobalVar.currentTask
     params = task.argDict.value
     
     batch_size = params.get("batchSize", 100)
     filter_condition = params.get("filter", "")
     
-    # 使用参数执行业务逻辑
+    # Use parameters to execute business logic
     return process_data(batch_size, filter_condition)
-``` 
+```

@@ -1,38 +1,38 @@
 ---
 slug: tongrds-cache
 ---
-# TongRDS缓存
-TongRDS缓存是基于Redis协议实现的东方通数据库缓存解决方案，专门为有国产化数据库需求的企业级应用提供高性能数据缓存服务。它采用与Redis相同的客户端接口，支持分布式部署和企业级连接管理，通过连接池机制确保高并发环境下的稳定性能。
+# TongRDS Cache
+TongRDS cache is a high-performance data caching service based on Redis protocol implementation for Oriental Tong database, specifically designed for enterprise applications with domestic database requirements. It adopts the same client interface as Redis, supports distributed deployment and enterprise-level connection management, and ensures stable performance in high-concurrency environments through connection pool mechanisms.
 
-TongRDS缓存元素分层结构为Meta（caches.Meta） → Type（caches.TongRDSType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建TongRDS缓存实例元素。
+The hierarchical structure of TongRDS cache elements is Meta (caches.Meta) → Type (caches.TongRDSType) → Instance. Developers can quickly create TongRDS cache instance elements through JitAi's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的caches.TongRDSType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `caches.TongRDSType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 caches/
-└── TongRdsCache/                    # 实例元素目录（可自定义）
-    ├── e.json                       # 元素定义文件
-    └── TongRdsCache.json           # 连接配置文件
+└── TongRdsCache/                    # Instance element directory (customizable)
+    ├── e.json                       # Element definition file
+    └── TongRdsCache.json           # Connection configuration file
 ```
 
-#### e.json文件
+#### e.json File
 ```json title="e.json"
 {
   "backendBundleEntry": ".",
-  "title": "TongRDS缓存实例",
+  "title": "TongRDS Cache Instance",
   "type": "caches.TongRDSType"
 }
 ```
 
-## 方法接口 {#methods}
+## Method Interfaces {#methods}
 
-### 标准缓存操作
-提供标准的缓存读写和管理方法。
+### Standard Cache Operations
+Provides standard cache read/write and management methods.
 
-#### 业务配置文件
+#### Business Configuration File
 ```json title="TongRdsCache.json"
 {
   "host": "192.168.1.100",
@@ -40,353 +40,353 @@ caches/
 }
 ```
 
-#### 调用示例
-```python title="使用TongRDS缓存"
-# 获取缓存实例
+#### Usage Example
+```python title="Using TongRDS Cache"
+# Get cache instance
 cache = app.getElement("caches.TongRdsCache")
 
-# 基础字符串操作
-cache.set("user_name", "张三", 3600)  # 设置带过期时间的值
-value = cache.get("user_name")       # 获取值
+# Basic string operations
+cache.set("user_name", "张三", 3600)  # Set value with expiration time
+value = cache.get("user_name")       # Get value
 
-# 数值操作
-cache.setNumeric("counter", 100, 7200)  # 设置数值
-count = cache.getNumeric("counter")      # 获取数值
-cache.incr("counter", 5)                 # 递增5
+# Numeric operations
+cache.setNumeric("counter", 100, 7200)  # Set numeric value
+count = cache.getNumeric("counter")      # Get numeric value
+cache.incr("counter", 5)                 # Increment by 5
 
-# 键管理
-exists = cache.exists("user_name")       # 检查键是否存在
-cache.expire("user_name", 1800)         # 更新过期时间
-cache.delete("user_name")               # 删除键
+# Key management
+exists = cache.exists("user_name")       # Check if key exists
+cache.expire("user_name", 1800)         # Update expiration time
+cache.delete("user_name")               # Delete key
 
-# 连接管理
-is_connected = cache.ping()              # 测试连接
-cache.disconnect()                       # 断开连接
+# Connection management
+is_connected = cache.ping()              # Test connection
+cache.disconnect()                       # Disconnect
 ```
 
-## 元素配置
-### e.json配置
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| title | Stext | str | 是 | 缓存实例显示名称 |
-| type | Stext | str | 是 | 固定为"caches.TongRDSType" |
-| backendBundleEntry | Stext | str | 是 | 后端入口路径，固定为"." |
+| title | Stext | str | Yes | Cache instance display name |
+| type | Stext | str | Yes | Fixed as "caches.TongRDSType" |
+| backendBundleEntry | Stext | str | Yes | Backend entry path, fixed as "." |
 
-### 业务配置文件配置
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+### Business Configuration File
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| host | Stext | str | 是 | TongRDS服务器地址 |
-| port | Numeric | int | 是 | TongRDS服务端口号 |
-| password | Stext | str | 否 | 认证密码，无密码时可省略 |
-| db | Numeric | int | 否 | 数据库编号，默认为1 |
-| charset | Stext | str | 否 | 字符编码，默认为"utf-8" |
-| decode_responses | Checkbox | bool | 否 | 是否解码响应，默认为true |
-| socket_timeout | Numeric | float | 否 | 套接字超时时间（秒），默认0.5 |
-| socket_connect_timeout | Numeric | float | 否 | 连接超时时间（秒），默认0.5 |
+| host | Stext | str | Yes | TongRDS server address |
+| port | Numeric | int | Yes | TongRDS service port number |
+| password | Stext | str | No | Authentication password, can be omitted if no password |
+| db | Numeric | int | No | Database number, defaults to 1 |
+| charset | Stext | str | No | Character encoding, defaults to "utf-8" |
+| decode_responses | Checkbox | bool | No | Whether to decode responses, defaults to true |
+| socket_timeout | Numeric | float | No | Socket timeout (seconds), default 0.5 |
+| socket_connect_timeout | Numeric | float | No | Connection timeout (seconds), default 0.5 |
 
-## 方法 
+## Methods
 ### get
-从缓存中获取字符串值。
+Get string value from cache.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 缓存键名 |
+| name | Stext | str | Yes | Cache key name |
 
-#### 返回值
-str: 缓存中的字符串值，键不存在时返回None
+#### Return Value
+str: String value in cache, returns None if key doesn't exist
 
-#### 使用示例
-```python title="获取缓存值"
+#### Usage Example
+```python title="Get Cache Value"
 cache = app.getElement("caches.TongRdsCache")
 
-# 获取字符串值
+# Get string value
 user_info = cache.get("user_info")
 if user_info:
-    print(f"用户信息: {user_info}")
+    print(f"User info: {user_info}")
 else:
-    print("用户信息不存在")
+    print("User info doesn't exist")
 ```
 
 ### set
-将字符串值写入缓存。
+Write string value to cache.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 缓存键名 |
-| string | Stext | str | 是 | 要存储的字符串值 |
-| ts | Numeric | int | 否 | 过期时间（秒），不设置则永不过期 |
+| name | Stext | str | Yes | Cache key name |
+| string | Stext | str | Yes | String value to store |
+| ts | Numeric | int | No | Expiration time (seconds), no expiration if not set |
 
-#### 返回值
-bool: 设置成功返回True，失败返回False
+#### Return Value
+bool: Returns True on success, False on failure
 
-#### 使用示例
-```python title="设置缓存值"
+#### Usage Example
+```python title="Set Cache Value"
 cache = app.getElement("caches.TongRdsCache")
 
-# 设置永久有效的值
+# Set permanently valid value
 success = cache.set("app_config", '{"theme": "dark", "lang": "zh"}')
 
-# 设置带过期时间的值（1小时后过期）
+# Set value with expiration time (expires in 1 hour)
 cache.set("session_token", "abc123", 3600)
 
-# 设置用户会话（30分钟后过期）
+# Set user session (expires in 30 minutes)
 cache.set("user_session", "user_data", 1800)
 ```
 
 ### getNumeric
-获取数值类型的缓存值。
+Get numeric type cache value.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 缓存键名 |
+| name | Stext | str | Yes | Cache key name |
 
-#### 返回值
-int: 缓存中的数值，键不存在时返回0
+#### Return Value
+int: Numeric value in cache, returns 0 if key doesn't exist
 
-#### 使用示例
-```python title="获取数值"
+#### Usage Example
+```python title="Get Numeric Value"
 cache = app.getElement("caches.TongRdsCache")
 
-# 获取计数器值
+# Get counter value
 count = cache.getNumeric("page_views")
-print(f"页面访问次数: {count}")
+print(f"Page views: {count}")
 
-# 获取库存数量
+# Get stock quantity
 stock = cache.getNumeric("product_stock")
 if stock > 0:
-    print(f"库存充足: {stock}件")
+    print(f"Sufficient stock: {stock} items")
 ```
 
 ### setNumeric
-设置数值类型的缓存值。
+Set numeric type cache value.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 缓存键名 |
-| n | Numeric | int | 否 | 要设置的数值，默认为0 |
-| ts | Numeric | int | 否 | 过期时间（秒），不设置则永不过期 |
+| name | Stext | str | Yes | Cache key name |
+| n | Numeric | int | No | Numeric value to set, defaults to 0 |
+| ts | Numeric | int | No | Expiration time (seconds), no expiration if not set |
 
-#### 返回值
-bool: 设置成功返回True，失败返回False
+#### Return Value
+bool: Returns True on success, False on failure
 
-#### 使用示例
-```python title="设置数值"
+#### Usage Example
+```python title="Set Numeric Value"
 cache = app.getElement("caches.TongRdsCache")
 
-# 初始化计数器
+# Initialize counter
 cache.setNumeric("daily_visits", 0)
 
-# 设置带过期时间的限流计数（5分钟过期）
+# Set rate limiting counter with expiration time (expires in 5 minutes)
 cache.setNumeric("api_rate_limit", 100, 300)
 
-# 设置商品库存
+# Set product stock
 cache.setNumeric("product_123_stock", 50)
 ```
 
 ### incr
-将指定键的数值增加指定数量。
+Increment specified key's numeric value by specified amount.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 缓存键名 |
-| amount | Numeric | int | 否 | 增加的数量，默认为1 |
+| name | Stext | str | Yes | Cache key name |
+| amount | Numeric | int | No | Increment amount, defaults to 1 |
 
-#### 返回值
-int: 增加后的数值
+#### Return Value
+int: Numeric value after increment
 
-#### 使用示例
-```python title="数值递增"
+#### Usage Example
+```python title="Numeric Increment"
 cache = app.getElement("caches.TongRdsCache")
 
-# 简单计数器递增
+# Simple counter increment
 new_count = cache.incr("page_views")
-print(f"新的访问量: {new_count}")
+print(f"New visit count: {new_count}")
 
-# 批量递增
+# Batch increment
 batch_count = cache.incr("batch_counter", 10)
 
-# 实现限流计数器
+# Implement rate limiting counter
 current_requests = cache.incr("api_requests_per_minute")
 if current_requests > 100:
-    print("请求频率超限")
+    print("Request rate exceeded")
 ```
 
 ### delete
-删除指定的缓存键。
+Delete specified cache key.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 要删除的缓存键名 |
+| name | Stext | str | Yes | Cache key name to delete |
 
-#### 返回值
-bool: 删除成功返回True，键不存在返回False
+#### Return Value
+bool: Returns True on successful deletion, False if key doesn't exist
 
-#### 使用示例
-```python title="删除缓存"
+#### Usage Example
+```python title="Delete Cache"
 cache = app.getElement("caches.TongRdsCache")
 
-# 删除用户会话
+# Delete user session
 if cache.delete("user_session_123"):
-    print("会话删除成功")
+    print("Session deleted successfully")
 
-# 清理过期的临时数据
+# Clean up expired temporary data
 cache.delete("temp_data")
 cache.delete("cache_lock")
 ```
 
 ### exists
-检查指定键是否存在。
+Check if specified key exists.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 要检查的缓存键名 |
+| name | Stext | str | Yes | Cache key name to check |
 
-#### 返回值
-bool: 键存在返回True，不存在返回False
+#### Return Value
+bool: Returns True if key exists, False if not
 
-#### 使用示例
-```python title="检查键存在性"
+#### Usage Example
+```python title="Check Key Existence"
 cache = app.getElement("caches.TongRdsCache")
 
-# 检查缓存是否存在
+# Check if cache exists
 if cache.exists("user_preferences"):
     preferences = cache.get("user_preferences")
 else:
-    # 从数据库加载并缓存
+    # Load from database and cache
     preferences = load_from_database()
     cache.set("user_preferences", preferences, 1800)
 ```
 
 ### expire
-更新指定键的过期时间。
+Update specified key's expiration time.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 缓存键名 |
-| ts | Numeric | int | 是 | 新的过期时间（秒） |
+| name | Stext | str | Yes | Cache key name |
+| ts | Numeric | int | Yes | New expiration time (seconds) |
 
-#### 返回值
-bool: 设置成功返回True，键不存在返回False
+#### Return Value
+bool: Returns True on success, False if key doesn't exist
 
-#### 使用示例
-```python title="更新过期时间"
+#### Usage Example
+```python title="Update Expiration Time"
 cache = app.getElement("caches.TongRdsCache")
 
-# 延长会话有效期（再延长30分钟）
+# Extend session validity (extend by another 30 minutes)
 if cache.expire("user_session", 1800):
-    print("会话时间延长成功")
+    print("Session time extended successfully")
 
-# 为临时数据设置过期时间
-cache.expire("temp_result", 600)  # 10分钟后过期
+# Set expiration time for temporary data
+cache.expire("temp_result", 600)  # Expires in 10 minutes
 ```
 
 ### keys
-返回匹配指定模式的键列表。
+Return list of keys matching specified pattern.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| pattern | Stext | str | 否 | 匹配模式，默认为"*"（所有键） |
+| pattern | Stext | str | No | Match pattern, defaults to "*" (all keys) |
 
-#### 返回值
-iterator: 匹配的键名迭代器
+#### Return Value
+iterator: Iterator of matching key names
 
-#### 使用示例
-```python title="查找匹配的键"
+#### Usage Example
+```python title="Find Matching Keys"
 cache = app.getElement("caches.TongRdsCache")
 
-# 获取所有用户会话键
+# Get all user session keys
 session_keys = list(cache.keys("user_session_*"))
-print(f"当前活跃会话数: {len(session_keys)}")
+print(f"Current active sessions: {len(session_keys)}")
 
-# 查找特定前缀的缓存
+# Find caches with specific prefix
 cache_keys = list(cache.keys("cache_*"))
 for key in cache_keys:
-    print(f"缓存键: {key}")
+    print(f"Cache key: {key}")
 ```
 
 ### ping
-测试与TongRDS服务的连接状态。
+Test connection status with TongRDS service.
 
-#### 返回值
-bool: 连接正常返回True，连接失败返回False
+#### Return Value
+bool: Returns True if connection is normal, False if connection fails
 
-#### 使用示例
-```python title="测试连接"
+#### Usage Example
+```python title="Test Connection"
 cache = app.getElement("caches.TongRdsCache")
 
-# 检查连接状态
+# Check connection status
 if cache.ping():
-    print("TongRDS连接正常")
+    print("TongRDS connection normal")
 else:
-    print("TongRDS连接失败，请检查网络和配置")
+    print("TongRDS connection failed, please check network and configuration")
 ```
 
 ### disconnect
-断开与TongRDS服务的连接。
+Disconnect from TongRDS service.
 
-#### 使用示例
-```python title="断开连接"
+#### Usage Example
+```python title="Disconnect"
 cache = app.getElement("caches.TongRdsCache")
 
-# 执行清理操作后断开连接
+# Perform cleanup operations then disconnect
 cache.delete("temp_lock")
 cache.disconnect()
-print("已断开TongRDS连接")
+print("TongRDS connection disconnected")
 ```
 
-## 属性
+## Properties
 ### client
-TongRDS客户端连接对象，基于Redis客户端实现。通过连接池机制管理连接，确保高并发环境下的稳定性。开发者通常不需要直接访问此属性，建议使用封装好的方法进行操作。
+TongRDS client connection object, implemented based on Redis client. Manages connections through connection pool mechanism, ensuring stability in high-concurrency environments. Developers usually don't need to access this property directly, it's recommended to use the encapsulated methods for operations.
 
-## 高级特性
-### 连接池管理
-TongRDS缓存使用内部连接池机制，根据配置参数的MD5值作为缓存键，相同配置的实例共享连接，避免重复创建连接对象。
+## Advanced Features
+### Connection Pool Management
+TongRDS cache uses internal connection pool mechanism, using MD5 value of configuration parameters as cache key. Instances with the same configuration share connections, avoiding duplicate connection object creation.
 
-```python title="连接池配置优化"
+```python title="Connection Pool Configuration Optimization"
 cache = app.getElement("caches.TongRdsCache")
 
-# 连接池会自动管理连接
-# 相同配置的多个实例会共享连接
+# Connection pool automatically manages connections
+# Multiple instances with same configuration will share connections
 for i in range(100):
     result = cache.get(f"data_{i}")
-    # 连接会被复用，无需担心连接数过多
+    # Connections will be reused, no need to worry about too many connections
 
-# 手动断开连接（释放连接池中的连接）
+# Manually disconnect (release connections in connection pool)
 cache.disconnect()
 ```
 
-### 错误处理机制
-TongRDS缓存内置错误处理，自动捕获连接错误和认证错误，返回对应的错误码。
+### Error Handling Mechanism
+TongRDS cache has built-in error handling, automatically capturing connection errors and authentication errors, returning corresponding error codes.
 
-```python title="错误处理示例"
+```python title="Error Handling Example"
 try:
     cache = app.getElement("caches.TongRdsCache")
     cache.set("test_key", "test_value")
 except Exception as e:
-    # 连接错误：IP地址或端口号错误  
-    # 认证错误：用户名或密码错误
-    print(f"缓存操作失败: {e}")
+    # Connection error: IP address or port number error  
+    # Authentication error: username or password error
+    print(f"Cache operation failed: {e}")
 ```
 
-### 键名前缀管理
-TongRDS缓存自动为所有键名添加应用ID前缀，避免不同应用间的键名冲突。实际存储的键名格式为：`{appId}:{name}`。
+### Key Name Prefix Management
+TongRDS cache automatically adds application ID prefix to all key names, avoiding key name conflicts between different applications. Actual stored key name format: `{appId}:{name}`.
 
-```python title="键名前缀处理"
+```python title="Key Name Prefix Handling"
 cache = app.getElement("caches.TongRdsCache")
 
-# 设置键 "user_123"
-cache.set("user_123", "用户数据")
+# Set key "user_123"
+cache.set("user_123", "User data")
 
-# 实际存储的键名为: "myapp:user_123"
-# 获取时无需关心前缀，直接使用原始键名
+# Actually stored key name: "myapp:user_123"
+# No need to worry about prefix when getting, use original key name directly
 user_data = cache.get("user_123")
-``` 
+```

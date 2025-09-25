@@ -4,6 +4,7 @@
   "className": "red",
   "link": {
     "type": "generated-index",
+    "slug": "reference/framework/JitStorage/file-templates",
     "description": "File template elements for JitStorage, including definitions and usage of Excel, Word, and other document templates. Supports dynamic document generation and enterprise-level report output."
   }
 } 

@@ -1,344 +1,344 @@
 ---
 slug: built-in-cache
 ---
-# 内置缓存
-内置缓存是平台提供的智能缓存解决方案，基于环境自适应机制实现开箱即用的缓存能力。它在桌面版环境下自动使用SQLite缓存，在服务器版环境下自动使用容器内置的Redis。内置缓存主要用于开发和测试阶段，为开发者提供无需配置的缓存服务。
+# Built-in Cache
+Built-in cache is an intelligent caching solution provided by the platform, implementing out-of-the-box caching capabilities based on environment adaptive mechanisms. It automatically uses SQLite cache in desktop environments and container-built-in Redis in server environments. Built-in cache is mainly used in development and testing phases, providing developers with configuration-free caching services.
 
-内置缓存元素分层结构为Meta（caches.Meta） → Type（caches.BuiltinsType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建内置缓存实例元素。
+The hierarchical structure of built-in cache elements is Meta (caches.Meta) → Type (caches.BuiltinsType) → Instance. Developers can quickly create built-in cache instance elements through JitAi's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的caches.BuiltinsType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `caches.BuiltinsType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 caches/
 └── Default/
     ├── e.json
     └── __init__.py
 ```
 
-#### e.json文件
-```json title="e.json配置示例"
+#### e.json File
+```json title="e.json Configuration Example"
 {
-  "title": "默认缓存",
+  "title": "Default Cache",
   "type": "caches.BuiltinsType"
 }
 ```
 
-#### 调用示例
-```python title="基础缓存操作"
-# 获取缓存实例
+#### Usage Example
+```python title="Basic Cache Operations"
+# Get cache instance
 cache = app.getElement("caches.Default")
 
-# 基础字符串操作
-cache.set("user_token", "abc123", 3600)  # 设置带过期时间
-value = cache.get("user_token")           # 获取值
-cache.delete("user_token")                # 删除键
+# Basic string operations
+cache.set("user_token", "abc123", 3600)  # Set with expiration time
+value = cache.get("user_token")           # Get value
+cache.delete("user_token")                # Delete key
 
-# 数值操作
-cache.setNumeric("view_count", 100)       # 设置数值
-count = cache.getNumeric("view_count")    # 获取数值
-new_count = cache.incr("view_count", 5)   # 递增操作
+# Numeric operations
+cache.setNumeric("view_count", 100)       # Set numeric value
+count = cache.getNumeric("view_count")    # Get numeric value
+new_count = cache.incr("view_count", 5)   # Increment operation
 
-# 键管理
-exists = cache.exists("user_token")       # 检查键是否存在
-cache.expire("user_token", 1800)         # 设置过期时间
-keys = cache.keys("user_*")               # 获取匹配的键列表
+# Key management
+exists = cache.exists("user_token")       # Check if key exists
+cache.expire("user_token", 1800)         # Set expiration time
+keys = cache.keys("user_*")               # Get matching key list
 ```
 
-## 元素配置
-### e.json配置
-| 配置项 | 类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| title | string | 是 | 缓存实例显示名称 |
-| type | string | 是 | 固定值"caches.BuiltinsType" |
+| title | string | Yes | Cache instance display name |
+| type | string | Yes | Fixed value "caches.BuiltinsType" |
 
-## 方法 
+## Methods
 ### get
-从缓存中获取字符串值。
+Get string value from cache.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 缓存键名 |
+| name | Stext | str | Yes | Cache key name |
 
-#### 返回值
-str - 缓存的字符串值，键不存在时返回None
+#### Return Value
+str - Cached string value, returns None when key doesn't exist
 
-#### 使用示例
-```python title="获取缓存值"
+#### Usage Example
+```python title="Get Cache Value"
 cache = app.getElement("caches.Default")
 token = cache.get("user_session_token")
 if token:
-    print(f"用户令牌: {token}")
+    print(f"User token: {token}")
 else:
-    print("令牌不存在或已过期")
+    print("Token doesn't exist or has expired")
 ```
 
 ### set
-将字符串数据写入缓存。
+Write string data to cache.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 缓存键名 |
-| string | Stext | str | 是 | 要缓存的字符串值 |
-| ts | Numeric | int | 否 | 过期时间（秒），不设置则永不过期 |
+| name | Stext | str | Yes | Cache key name |
+| string | Stext | str | Yes | String value to cache |
+| ts | Numeric | int | No | Expiration time (seconds), no expiration if not set |
 
-#### 返回值
-bool - 操作成功返回True，失败返回False
+#### Return Value
+bool - Returns True on success, False on failure
 
-#### 使用示例
-```python title="设置缓存值"
+#### Usage Example
+```python title="Set Cache Value"
 cache = app.getElement("caches.Default")
 
-# 永久缓存
+# Permanent cache
 cache.set("app_config", '{"theme": "dark", "lang": "zh-CN"}')
 
-# 带过期时间的缓存
-cache.set("verification_code", "123456", 300)  # 5分钟后过期
+# Cache with expiration time
+cache.set("verification_code", "123456", 300)  # Expires in 5 minutes
 ```
 
 ### getNumeric
-获取数值类型的缓存数据。
+Get numeric type cache data.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 缓存键名 |
+| name | Stext | str | Yes | Cache key name |
 
-#### 返回值
-int - 缓存的数值，键不存在时返回0
+#### Return Value
+int - Cached numeric value, returns 0 when key doesn't exist
 
-#### 使用示例
-```python title="获取数值"
+#### Usage Example
+```python title="Get Numeric Value"
 cache = app.getElement("caches.Default")
 current_count = cache.getNumeric("daily_visits")
-print(f"今日访问量: {current_count}")
+print(f"Today's visits: {current_count}")
 ```
 
 ### setNumeric
-设置数值类型的缓存数据。
+Set numeric type cache data.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 缓存键名 |
-| n | Numeric | int | 是 | 要缓存的数值 |
-| ts | Numeric | int | 否 | 过期时间（秒） |
+| name | Stext | str | Yes | Cache key name |
+| n | Numeric | int | Yes | Numeric value to cache |
+| ts | Numeric | int | No | Expiration time (seconds) |
 
-#### 返回值
-bool - 操作成功返回True，失败返回False
+#### Return Value
+bool - Returns True on success, False on failure
 
-#### 使用示例
-```python title="设置数值"
+#### Usage Example
+```python title="Set Numeric Value"
 cache = app.getElement("caches.Default")
 
-# 设置初始访问量
+# Set initial visit count
 cache.setNumeric("page_views", 0)
 
-# 设置带过期时间的计数器
-cache.setNumeric("login_attempts", 0, 3600)  # 1小时后重置
+# Set counter with expiration time
+cache.setNumeric("login_attempts", 0, 3600)  # Reset after 1 hour
 ```
 
 ### incr
-递增数值缓存数据。
+Increment numeric cache data.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 缓存键名 |
-| amount | Numeric | int | 否 | 递增量，默认为1 |
+| name | Stext | str | Yes | Cache key name |
+| amount | Numeric | int | No | Increment amount, defaults to 1 |
 
-#### 返回值
-int - 递增后的新值
+#### Return Value
+int - New value after increment
 
-#### 使用示例
-```python title="递增操作"
+#### Usage Example
+```python title="Increment Operation"
 cache = app.getElement("caches.Default")
 
-# 增加1
+# Increment by 1
 new_views = cache.incr("page_views")
 
-# 增加指定数量
+# Increment by specified amount
 bulk_views = cache.incr("page_views", 10)
 
-print(f"当前浏览量: {new_views}")
+print(f"Current page views: {new_views}")
 ```
 
 ### delete
-删除指定的缓存键。
+Delete specified cache key.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 要删除的缓存键名 |
+| name | Stext | str | Yes | Cache key name to delete |
 
-#### 返回值
-bool - 删除成功返回True，键不存在或删除失败返回False
+#### Return Value
+bool - Returns True on successful deletion, False if key doesn't exist or deletion fails
 
-#### 使用示例
-```python title="删除缓存"
+#### Usage Example
+```python title="Delete Cache"
 cache = app.getElement("caches.Default")
 
-# 删除用户会话
+# Delete user session
 success = cache.delete("user_session_123")
 if success:
-    print("会话已清除")
+    print("Session cleared")
 else:
-    print("会话不存在或清除失败")
+    print("Session doesn't exist or clearing failed")
 ```
 
 ### expire
-为指定键设置过期时间。
+Set expiration time for specified key.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 缓存键名 |
-| ts | Numeric | int | 是 | 过期时间（秒） |
+| name | Stext | str | Yes | Cache key name |
+| ts | Numeric | int | Yes | Expiration time (seconds) |
 
-#### 返回值
-bool - 设置成功返回True，键不存在或设置失败返回False
+#### Return Value
+bool - Returns True on success, False if key doesn't exist or setting fails
 
-#### 使用示例
-```python title="设置过期时间"
+#### Usage Example
+```python title="Set Expiration Time"
 cache = app.getElement("caches.Default")
 
-# 为现有键设置过期时间
+# Set expiration time for existing key
 cache.set("temp_data", "some_value")
-cache.expire("temp_data", 1800)  # 30分钟后过期
+cache.expire("temp_data", 1800)  # Expires in 30 minutes
 ```
 
 ### exists
-检查指定键是否存在。
+Check if specified key exists.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 要检查的缓存键名 |
+| name | Stext | str | Yes | Cache key name to check |
 
-#### 返回值
-bool - 键存在返回True，不存在返回False
+#### Return Value
+bool - Returns True if key exists, False if not
 
-#### 使用示例
-```python title="检查键存在性"
+#### Usage Example
+```python title="Check Key Existence"
 cache = app.getElement("caches.Default")
 
 if cache.exists("user_preferences"):
     preferences = cache.get("user_preferences")
-    print("找到用户偏好设置")
+    print("Found user preference settings")
 else:
-    print("用户偏好设置不存在，使用默认值")
+    print("User preference settings don't exist, using defaults")
 ```
 
 ### keys
-获取匹配指定模式的所有键。
+Get all keys matching specified pattern.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| pattern | Stext | str | 否 | 匹配模式，默认为"*"（所有键） |
+| pattern | Stext | str | No | Match pattern, defaults to "*" (all keys) |
 
-#### 返回值
-iterator - 匹配的键名迭代器
+#### Return Value
+iterator - Iterator of matching key names
 
-#### 使用示例
-```python title="获取匹配键"
+#### Usage Example
+```python title="Get Matching Keys"
 cache = app.getElement("caches.Default")
 
-# 获取所有用户会话键
+# Get all user session keys
 session_keys = list(cache.keys("session_*"))
-print(f"当前活跃会话数: {len(session_keys)}")
+print(f"Current active sessions: {len(session_keys)}")
 
-# 获取所有缓存键
+# Get all cache keys
 all_keys = list(cache.keys())
-print(f"缓存中总键数: {len(all_keys)}")
+print(f"Total keys in cache: {len(all_keys)}")
 ```
 
 ### ping
-检查缓存服务连接状态。
+Check cache service connection status.
 
-#### 返回值
-bool - 连接正常返回True，异常返回False
+#### Return Value
+bool - Returns True if connection is normal, False if abnormal
 
-#### 使用示例
-```python title="检查连接状态"
+#### Usage Example
+```python title="Check Connection Status"
 cache = app.getElement("caches.Default")
 
 if cache.ping():
-    print("缓存服务连接正常")
-    # 执行缓存操作
+    print("Cache service connection normal")
+    # Execute cache operations
     cache.set("health_check", "ok")
 else:
-    print("缓存服务连接异常，使用备用方案")
+    print("Cache service connection abnormal, using fallback")
 ```
 
-## 属性
-暂无
+## Properties
+None currently.
 
-## 高级特性
-### 智能环境适配
-内置缓存根据部署环境自动选择最适合的底层技术实现，无需手动配置。
+## Advanced Features
+### Intelligent Environment Adaptation
+Built-in cache automatically selects the most suitable underlying technology implementation based on deployment environment, requiring no manual configuration.
 
-#### 配置示例和使用示例
-```python title="环境自适应缓存"
-# 同样的代码在不同环境下使用不同的缓存技术
+#### Configuration Example and Usage Example
+```python title="Environment Adaptive Cache"
+# Same code uses different caching technologies in different environments
 cache = app.getElement("caches.Default")
 
-# 服务器环境：自动使用Redis缓存（高性能，支持分布式）
-# 桌面环境：自动使用SQLite缓存（零配置，文件存储）
-# 开发者无需关心底层实现差异
+# Server environment: automatically uses Redis cache (high performance, distributed support)
+# Desktop environment: automatically uses SQLite cache (zero configuration, file storage)
+# Developers don't need to worry about underlying implementation differences
 cache.set("business_data", json.dumps(data))
 cached_data = cache.get("business_data")
 ```
 
-### 应用级键前缀管理
-内置缓存自动为所有键添加应用标识前缀，避免不同应用间的键冲突。
+### Application-level Key Prefix Management
+Built-in cache automatically adds application identifier prefix to all keys, avoiding key conflicts between different applications.
 
-#### 配置示例和使用示例
-```python title="自动键前缀"
-# 应用ID为"MyApp"时的键管理
+#### Configuration Example and Usage Example
+```python title="Automatic Key Prefix"
+# Key management when application ID is "MyApp"
 cache = app.getElement("caches.Default")
 
-# 实际存储的键名会自动添加应用前缀
+# Actual stored key names automatically add application prefix
 cache.set("user_config", "config_data")
-# 实际键名: "MyApp:user_config"
-# 获取时无需指定前缀，自动处理
+# Actual key name: "MyApp:user_config"
+# No need to specify prefix when getting, automatically handled
 config = cache.get("user_config")
 
-# 键匹配也会自动处理前缀
+# Key matching also automatically handles prefix
 user_keys = cache.keys("user_*")
-# 实际匹配: "MyApp:user_*"
+# Actual matching: "MyApp:user_*"
 ```
 
-### 性能优化和容错处理
-内置缓存针对不同环境进行了性能优化，并提供了完善的容错机制。
+### Performance Optimization and Fault Tolerance
+Built-in cache is performance optimized for different environments and provides comprehensive fault tolerance mechanisms.
 
-#### 配置示例和使用示例
-```python title="性能优化使用"
+#### Configuration Example and Usage Example
+```python title="Performance Optimization Usage"
 cache = app.getElement("caches.Default")
 
-# 批量操作时的性能优化
+# Performance optimization during batch operations
 user_data = {
     "profile": json.dumps(user_profile),
     "preferences": json.dumps(user_prefs),
     "permissions": json.dumps(user_perms)
 }
 
-# 高效的批量写入
+# Efficient batch writing
 for key, value in user_data.items():
     cache.set(f"user_{user_id}_{key}", value, 7200)
 
-# 容错处理示例
+# Fault tolerance example
 try:
     result = cache.get("critical_data")
     if result is None:
-        # 缓存未命中，从数据库获取
+        # Cache miss, fetch from database
         result = fetch_from_database()
         cache.set("critical_data", result, 3600)
 except Exception as e:
-    # 缓存服务异常，直接使用数据库
+    # Cache service exception, use database directly
     result = fetch_from_database()
-``` 
+```

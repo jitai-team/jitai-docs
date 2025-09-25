@@ -3,6 +3,7 @@
   "position": 5,
   "link": {
     "type": "generated-index",
+    "slug": "reference/framework/JitWeb/components/approval-type",
     "description": "Workflow approval components for managing approval processes including approval status, decision controls, and workflow visualization."
   }
 } 

@@ -3,32 +3,32 @@ sidebar_position: 1
 slug: ai-data-management-page
 ---
 
-# AI数据管理页面
-AI数据管理页面是专门用于数据增删改查操作的页面类型，基于组件化可视配置架构实现数据表格管理能力。它负责数据列表展示、数据筛选、数据编辑和数据导入导出，通过拖拽式布局快速构建数据管理界面。
+# AI Data Management Page
+AI Data Management Page is a page type specifically designed for CRUD (Create, Read, Update, Delete) operations, implementing data table management capabilities based on a componentized visual configuration architecture. It is responsible for data list display, data filtering, data editing, and data import/export, quickly building data management interfaces through drag-and-drop layouts.
 
-AI数据管理页面元素分层结构为Meta（pages.Meta） → Type（pages.DataManagePageType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建AI数据管理页面实例元素。
+The AI Data Management Page element hierarchy is Meta (pages.Meta) → Type (pages.DataManagePageType) → Instance. Developers can quickly create AI data management page instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的pages.DataManagePageType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official pages.DataManagePageType element provided by JitAI in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```title="AI数据管理页面实例目录结构"
-testDataManagementPage/          # 实例元素目录
-├── e.json                       # 元素配置文件
-├── scheme.json                  # 页面布局和组件配置
-├── index.ts                     # 导出文件
-├── page.ts                      # 页面逻辑类
-├── PageRender.tsx              # React渲染组件
-└── page.style.ts               # 页面样式文件（可选）
+## Quick Start
+### Create Instance Element
+#### Directory Structure
+```title="AI Data Management Page Instance Directory Structure"
+testDataManagementPage/          # Instance element directory
+├── e.json                       # Element configuration file
+├── scheme.json                  # Page layout and component configuration
+├── index.ts                     # Export file
+├── page.ts                      # Page logic class
+├── PageRender.tsx              # React rendering component
+└── page.style.ts               # Page style file (optional)
 ```
 
-#### e.json文件
-```json title="e.json配置示例"
+#### e.json File
+```json title="e.json Configuration Example"
 {
   "type": "pages.DataManagePageType",
   "resourceName": "index",
-  "title": "测试AI数据管理页面",
+  "title": "Test AI Data Management Page",
   "dataModel": "models.CustomerModel",
   "platform": "PC",
   "frontBundleEntry": "./index.ts",
@@ -36,10 +36,10 @@ testDataManagementPage/          # 实例元素目录
 }
 ```
 
-#### 页面布局配置文件
-AI数据管理页面的核心配置通过`scheme.json`文件定义：
+#### Page Layout Configuration File
+The core configuration of the AI Data Management Page is defined through the `scheme.json` file:
 
-```json title="scheme.json基本结构"
+```json title="scheme.json Basic Structure"
 {
   "layout": [
     {
@@ -60,7 +60,7 @@ AI数据管理页面的核心配置通过`scheme.json`文件定义：
   "componentList": [
     {
       "name": "Table1",
-      "title": "表格组件",
+      "title": "Table Component",
       "type": "components.Table",
       "config": {
         "isShowAllField": true,
@@ -68,7 +68,7 @@ AI数据管理页面的核心配置通过`scheme.json`文件定义：
           {
             "type": "models.Meta",
             "name": "models.CustomerModel",
-            "title": "表格组件",
+            "title": "Table Component",
             "filter": "",
             "orderBy": []
           }
@@ -76,7 +76,7 @@ AI数据管理页面的核心配置通过`scheme.json`文件定义：
         "fieldIdList": ["id", "name", "phone"],
         "toolbarLeft": [
           {
-            "name": "新增",
+            "name": "Add",
             "id": "Add",
             "height": 32,
             "width": 60,
@@ -85,7 +85,7 @@ AI数据管理页面的核心配置通过`scheme.json`文件定义：
         ],
         "toolbarRight": [
           {
-            "name": "导入",
+            "name": "Import",
             "id": "Import",
             "height": 32,
             "width": 60,
@@ -94,7 +94,7 @@ AI数据管理页面的核心配置通过`scheme.json`文件定义：
         ],
         "actionBtn": [
           {
-            "name": "编辑",
+            "name": "Edit",
             "id": "Edit",
             "height": 32,
             "width": 60,
@@ -107,8 +107,8 @@ AI数据管理页面的核心配置通过`scheme.json`文件定义：
 }
 ```
 
-#### 页面逻辑代码
-```typescript title="page.ts实现示例"
+#### Page Logic Code
+```typescript title="page.ts Implementation Example"
 import { Jit, ComponentPageScheme } from "jit";
 import schemeJson from "./scheme.json";
 
@@ -120,24 +120,24 @@ class PageCls extends Jit.GridPage {
     scheme: ComponentPageScheme = schemeJson;
     
     bindEvent() {
-        // 新增按钮事件
+        // Add button event
         this.Table1.subscribeEvent("clickAdd", async () => {
-            this.Modal1.call("新增");
+            this.Modal1.call("Add");
             this.Form1.formData.reset();
             this.Form1.mode.value = "add";
         });
         
-        // 编辑按钮事件
+        // Edit button event
         this.Table1.subscribeEvent("clickEdit", async () => {
-            this.Modal1.call("编辑");
+            this.Modal1.call("Edit");
             this.Form1.mode.value = "edit";
             this.Form1.formData.value = this.Table1.activeRow.value;
         });
         
-        // 删除按钮事件
+        // Delete button event
         this.Table1.subscribeEvent("clickDelete", async () => {
             const result = await this.app.modules.FeedBack.globalConfirm(
-                "确定删除这条数据吗？"
+                "Are you sure you want to delete this data?"
             );
             if (result === "true") {
                 await this.Table1.activeRow.delete();
@@ -145,13 +145,13 @@ class PageCls extends Jit.GridPage {
             }
         });
         
-        // 批量删除事件
+        // Batch delete event
         this.Table1.subscribeEvent("clickBatchDelete", async () => {
             const selectedRows = this.Table1.selectedRowList.value;
             if (selectedRows.length === 0) return;
             
             const result = await this.app.modules.FeedBack.globalConfirm(
-                "确定删除选中的数据吗？"
+                "Are you sure you want to delete the selected data?"
             );
             if (result === "true") {
                 for (const row of selectedRows) {
@@ -161,24 +161,24 @@ class PageCls extends Jit.GridPage {
             }
         });
         
-        // 行点击事件
+        // Row click event
         this.Table1.subscribeEvent("clickRow", async () => {
-            this.Modal1.call("查看");
+            this.Modal1.call("View");
             this.Form1.mode.value = "read";
             this.Form1.formData.value = this.Table1.activeRow.value;
         });
         
-        // 选中状态变化事件
+        // Selection state change event
         this.Table1.subscribeEvent("selectedChange", async () => {
-            console.log("选中行数:", this.Table1.selectedRowList.value.length);
+            console.log("Selected rows:", this.Table1.selectedRowList.value.length);
         });
         
-        // 筛选事件
+        // Filter event
         this.Filter1.subscribeEvent("afterFilter", async () => {
             await this.Table1.call(this.Filter1.filter.value);
         });
         
-        // 表单提交事件
+        // Form submit event
         this.Form1.subscribeEvent("afterSubmit", async () => {
             this.Modal1.close();
             await this.Table1.call();
@@ -189,8 +189,8 @@ class PageCls extends Jit.GridPage {
 export default PageCls;
 ```
 
-#### 调用示例
-```typescript title="index.ts导出文件"
+#### Usage Example
+```typescript title="index.ts Export File"
 import PageCls from "./page";
 import Render from "./PageRender";
 
@@ -200,7 +200,7 @@ export {
 };
 ```
 
-```tsx title="PageRender.tsx渲染组件"
+```tsx title="PageRender.tsx Rendering Component"
 import { ElementRender } from 'jit-widgets';
 import { pageStyle, pageGlobalStyle } from './page.style';
 
@@ -216,39 +216,39 @@ export default (props) => {
 };
 ```
 
-## 元素配置
-### e.json配置
-| 参数 | 类型 | 必填 | 默认值 | 说明 |
-|------|------|------|--------|------|
-| type | string | 是 | - | 元素类型，固定为"pages.DataManagePageType" |
-| title | string | 是 | - | 页面标题 |
-| dataModel | string | 否 | - | 关联的数据模型fullName，用于数据绑定 |
-| platform | string | 否 | "PC" | 平台类型，支持"PC"、"Mobile" |
-| frontBundleEntry | string | 是 | "./index.ts" | 前端入口文件路径 |
-| outputName | string | 是 | "index" | 输出文件名 |
-| resourceName | string | 否 | "index" | 资源名称 |
+## Element Configuration
+### e.json Configuration
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| type | string | Yes | - | Element type, fixed as "pages.DataManagePageType" |
+| title | string | Yes | - | Page title |
+| dataModel | string | No | - | Associated data model fullName for data binding |
+| platform | string | No | "PC" | Platform type, supports "PC", "Mobile" |
+| frontBundleEntry | string | Yes | "./index.ts" | Frontend entry file path |
+| outputName | string | Yes | "index" | Output file name |
+| resourceName | string | No | "index" | Resource name |
 
-### 页面布局配置文件配置
-scheme.json文件定义了页面的布局和组件配置：
+### Page Layout Configuration File Configuration
+The scheme.json file defines the page layout and component configuration:
 
-| 参数 | 类型 | 必填 | 说明 |
-|------|------|------|------|
-| layout | Layout[] | 是 | 组件布局配置数组 |
-| componentList | ComponentConfig[] | 是 | 组件配置列表 |
-| variableList | VariableConfig[] | 否 | 页面变量配置 |
-| functionList | FunctionConfig[] | 否 | 页面函数配置 |
-| autoIncrementId | number | 否 | 自增ID计数器 |
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| layout | Layout[] | Yes | Component layout configuration array |
+| componentList | ComponentConfig[] | Yes | Component configuration list |
+| variableList | VariableConfig[] | No | Page variable configuration |
+| functionList | FunctionConfig[] | No | Page function configuration |
+| autoIncrementId | number | No | Auto-increment ID counter |
 
-**Layout配置项：**
-- `i`: 组件标识符
-- `x`: X轴位置（栅格单位）
-- `y`: Y轴位置（栅格单位） 
-- `w`: 宽度（栅格单位）
-- `h`: 高度（栅格单位）
+**Layout Configuration Items:**
+- `i`: Component identifier
+- `x`: X-axis position (grid units)
+- `y`: Y-axis position (grid units) 
+- `w`: Width (grid units)
+- `h`: Height (grid units)
 
-**表格组件配置详解：**
+**Table Component Configuration Details:**
 
-```json title="表格组件完整配置"
+```json title="Complete Table Component Configuration"
 {
   "name": "Table1",
   "type": "components.Table",
@@ -258,7 +258,7 @@ scheme.json文件定义了页面的布局和组件配置：
       {
         "type": "models.Meta",
         "name": "models.CustomerModel",
-        "title": "表格组件",
+        "title": "Table Component",
         "filter": "",
         "orderBy": []
       }
@@ -268,7 +268,7 @@ scheme.json文件定义了页面的布局和组件配置：
     "pageSize": 20,
     "toolbarLeft": [
       {
-        "name": "新增",
+        "name": "Add",
         "id": "Add",
         "height": 32,
         "width": 60,
@@ -277,7 +277,7 @@ scheme.json文件定义了页面的布局和组件配置：
     ],
     "toolbarRight": [
       {
-        "name": "导入",
+        "name": "Import",
         "id": "Import",
         "height": 32,
         "width": 60,
@@ -286,7 +286,7 @@ scheme.json文件定义了页面的布局和组件配置：
     ],
     "actionBtn": [
       {
-        "name": "编辑",
+        "name": "Edit",
         "id": "Edit",
         "height": 32,
         "width": 60,
@@ -297,9 +297,9 @@ scheme.json文件定义了页面的布局和组件配置：
 }
 ```
 
-**筛选器组件配置详解：**
+**Filter Component Configuration Details:**
 
-```json title="筛选器组件配置"
+```json title="Filter Component Configuration"
 {
   "name": "Filter1",
   "type": "components.Filter",
@@ -308,7 +308,7 @@ scheme.json文件定义了页面的布局和组件配置：
       {
         "type": "models.Meta",
         "name": "models.CustomerModel",
-        "title": "筛选器组件",
+        "title": "Filter Component",
         "filter": "",
         "orderBy": ""
       }
@@ -329,88 +329,88 @@ scheme.json文件定义了页面的布局和组件配置：
 }
 ```
 
-## 方法 
-AI数据管理页面继承自GridPage，拥有以下核心方法：
+## Methods
+AI Data Management Page inherits from GridPage and has the following core methods:
 
 ### init
-页面初始化方法，加载配置和组件。
+Page initialization method that loads configuration and components.
 
-#### 返回值
+#### Return Value
 `Promise&lt;void&gt;`
 
-#### 使用示例
-```typescript title="init方法调用"
+#### Usage Example
+```typescript title="init Method Call"
 class PageCls extends Jit.GridPage {
     async init() {
         await super.init();
-        // 自定义初始化逻辑
-        console.log("页面已初始化");
+        // Custom initialization logic
+        console.log("Page has been initialized");
     }
 }
 ```
 
 ### bindEvent
-事件绑定方法，用于定义组件间的交互逻辑。
+Event binding method used to define interaction logic between components.
 
-#### 返回值
+#### Return Value
 `void`
 
-#### 使用示例
-```typescript title="bindEvent方法实现"
+#### Usage Example
+```typescript title="bindEvent Method Implementation"
 bindEvent() {
-    // 表格新增事件
+    // Table add event
     this.Table1.subscribeEvent("clickAdd", async () => {
-        this.Modal1.call("新增");
+        this.Modal1.call("Add");
         this.Form1.formData.reset();
         this.Form1.mode.value = "add";
     });
     
-    // 表格编辑事件
+    // Table edit event
     this.Table1.subscribeEvent("clickEdit", async () => {
-        this.Modal1.call("编辑");
+        this.Modal1.call("Edit");
         this.Form1.mode.value = "edit";
         this.Form1.formData.value = this.Table1.activeRow.value;
     });
     
-    // 行选择变化事件
+    // Row selection change event
     this.Table1.subscribeEvent("selectedChange", async () => {
         const count = this.Table1.selectedRowList.value.length;
-        console.log(`已选择 ${count} 行数据`);
+        console.log(`Selected ${count} rows of data`);
     });
 }
 ```
 
 ### loadComponents
-组件加载方法，根据配置实例化页面中的所有组件。
+Component loading method that instantiates all components in the page based on configuration.
 
-#### 返回值
+#### Return Value
 `Promise&lt;void&gt;`
 
-#### 使用示例
-```typescript title="loadComponents方法调用"
+#### Usage Example
+```typescript title="loadComponents Method Call"
 async loadComponents() {
     await super.loadComponents();
-    // 组件加载完成后的自定义逻辑
+    // Custom logic after component loading is complete
     this.Table1?.bindApp(this.app);
     this.Table1?.bindPage(this);
 }
 ```
 
 ### loadVariables
-变量加载方法，根据配置创建页面变量。
+Variable loading method that creates page variables based on configuration.
 
-#### 返回值
+#### Return Value
 `void`
 
-#### 使用示例
-```typescript title="loadVariables方法调用"
+#### Usage Example
+```typescript title="loadVariables Method Call"
 loadVariables() {
     super.loadVariables();
-    // 创建自定义变量
+    // Create custom variables
     this.customVar = this.newVariable({
         name: "customVar",
         dataType: "Stext",
-        title: "自定义变量"
+        title: "Custom Variable"
     });
 }
 ```
@@ -621,148 +621,148 @@ const parsedQ = this.parseVariableInQ(qStr);
 await this.sendAiMessage("帮我分析这个数据表", 1);
 ```
 
-## 属性
-AI数据管理页面具有以下核心属性：
+## Properties
+AI Data Management Page has the following core properties:
 
 ### scheme
-页面配置方案，包含布局、组件列表、变量列表等。
+Page configuration scheme containing layout, component list, variable list, etc.
 
-**类型：** `IScheme`
+**Type:** `IScheme`
 
-**示例：**
-```typescript title="scheme属性访问"
+**Example:**
+```typescript title="scheme Property Access"
 console.log(this.scheme.componentList);
 console.log(this.scheme.layout);
 ```
 
 ### compInsList
-组件实例列表，包含页面中所有已实例化的组件。
+Component instance list containing all instantiated components in the page.
 
-**类型：** `any[]`
+**Type:** `any[]`
 
-**示例：**
-```typescript title="compInsList属性访问"
+**Example:**
+```typescript title="compInsList Property Access"
 this.compInsList.forEach(comp => {
     console.log(comp.name, comp.title);
 });
 ```
 
 ### compInsDict
-组件实例字典，以组件名为键的组件实例映射。
+Component instance dictionary mapping component names to component instances.
 
-**类型：** `Record<string, any>`
+**Type:** `Record<string, any>`
 
-**示例：**
-```typescript title="compInsDict属性访问"
+**Example:**
+```typescript title="compInsDict Property Access"
 const tableComp = this.compInsDict["Table1"];
 const filterComp = this.compInsDict["Filter1"];
 ```
 
 ### isReady
-页面是否已准备就绪的标志。
+Flag indicating whether the page is ready.
 
-**类型：** `boolean`
+**Type:** `boolean`
 
-**示例：**
-```typescript title="isReady属性访问"
+**Example:**
+```typescript title="isReady Property Access"
 if (this.isReady) {
-    // 页面已加载完成，可以执行操作
+    // Page has finished loading, operations can be performed
     await this.Table1.call();
 }
 ```
 
 ### name
-页面名称。
+Page name.
 
-**类型：** `string`
+**Type:** `string`
 
 ### title
-页面标题。
+Page title.
 
-**类型：** `string`
+**Type:** `string`
 
 ### fullName
-页面完整名称（fullName）。
+Complete page name (fullName).
 
-**类型：** `string`
+**Type:** `string`
 
 ### ePath
-页面元素路径。
+Page element path.
 
-**类型：** `string`
+**Type:** `string`
 
 ### app
-应用实例引用。
+Application instance reference.
 
-**类型：** `any`
+**Type:** `any`
 
 ### aiConfig
-AI配置信息。
+AI configuration information.
 
-**类型：** `{useAi?: 1 | 0; aiAssistant?: string} | undefined`
+**Type:** `{useAi?: 1 | 0; aiAssistant?: string} | undefined`
 
 ### extend
-继承的页面类型。
+Inherited page type.
 
-**类型：** `string | undefined`
+**Type:** `string | undefined`
 
-## 表格组件核心属性
-AI数据管理页面中的表格组件具有以下重要属性：
+## Table Component Core Properties
+The table component in AI Data Management Page has the following important properties:
 
 ### activeRow
-当前选中的行数据。
+Currently selected row data.
 
-**类型：** `BaseModel`
+**Type:** `BaseModel`
 
-**示例：**
-```typescript title="activeRow属性使用"
-// 获取当前选中行的数据
+**Example:**
+```typescript title="activeRow Property Usage"
+// Get currently selected row data
 const currentRow = this.Table1.activeRow.value;
-console.log("当前行ID:", currentRow.id);
+console.log("Current row ID:", currentRow.id);
 
-// 在编辑时使用
+// Use in editing
 this.Form1.formData.value = this.Table1.activeRow.value;
 ```
 
 ### selectedRowList
-选中的多行数据列表。
+List of selected multiple row data.
 
-**类型：** `RowList`
+**Type:** `RowList`
 
-**示例：**
-```typescript title="selectedRowList属性使用"
-// 获取选中的行数据
+**Example:**
+```typescript title="selectedRowList Property Usage"
+// Get selected row data
 const selectedRows = this.Table1.selectedRowList.value;
-console.log("选中行数:", selectedRows.length);
+console.log("Selected rows:", selectedRows.length);
 
-// 批量操作
+// Batch operations
 for (const row of selectedRows) {
     await row.delete();
 }
 ```
 
 ### filter
-表格的筛选条件。
+Table filter conditions.
 
-**类型：** `QFilter`
+**Type:** `QFilter`
 
-**示例：**
-```typescript title="filter属性使用"
-// 设置筛选条件
+**Example:**
+```typescript title="filter Property Usage"
+// Set filter conditions
 this.Table1.filter.value = "Q(status='active')";
 
-// 应用筛选
+// Apply filter
 await this.Table1.call(this.Table1.filter.value);
 ```
 
 ### primaryKey
-表格的主键字段名。
+Primary key field name of the table.
 
-**类型：** `string`
+**Type:** `string`
 
-**示例：**
-```typescript title="primaryKey属性使用"
-console.log("主键字段:", this.Table1.primaryKey);
+**Example:**
+```typescript title="primaryKey Property Usage"
+console.log("Primary key field:", this.Table1.primaryKey);
 ```
 
 ## 事件系统

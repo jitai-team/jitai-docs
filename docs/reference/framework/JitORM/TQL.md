@@ -3,32 +3,32 @@ sidebar_position: 5
 slug: TQL
 ---
 
-# TQL使用指南
-TQL即Table Query Language，用于构建面向数据模型的数据查询语法，其中查询条件使用[Q表达式](./q-expressions)。
+# TQL Usage Guide
+TQL, also known as Table Query Language, is used to build data query syntax for data models, where query conditions use [Q Expressions](./q-expressions).
 
-## 基本查询
-### 简单查询
+## Basic Queries
+### Simple Queries
 ```plaintext
-# 查询所有字段
+# Query all fields
 Select("models.UserModel")
 
-# 查询指定字段
+# Query specified fields
 Select(
     [F("t1.f1", "f1"), F("t1.f2", "f2")],
     From(["models.UserModel", "t1"])
 )
 ```
 
-### 条件查询
+### Conditional Queries
 ```plaintext
-# 单条件查询
+# Single condition query
 Select(
     [F("t1.f1", "f1")],
     From(["models.UserModel", "t1"]),
     Where(Q("f1", ">", 1))
 )
 
-# 多条件组合查询
+# Multi-condition combined query
 Select(
     [F("t1.f1", "f1")],
     From(["models.UserModel", "t1"]),
@@ -36,8 +36,8 @@ Select(
 )
 ```
 
-## 关联查询
-### 左连接
+## Join Queries
+### Left Join
 ```plaintext
 Select(
     [
@@ -52,7 +52,7 @@ Select(
 )
 ```
 
-### 多表关联
+### Multi-table Joins
 ```plaintext
 Select(
     [
@@ -70,27 +70,27 @@ Select(
 )
 ```
 
-## 排序和分页
-### 排序
+## Sorting and Pagination
+### Sorting
 ```plaintext
 Select(
     [F("t1.f1", "f1")],
     From(["models.UserModel", "t1"]),
-    OrderBy((F("f1"), 1))  # 1表示升序，-1表示降序
+    OrderBy((F("f1"), 1))  # 1 means ascending, -1 means descending
 )
 ```
 
-### 分页
+### Pagination
 ```plaintext
 Select(
     [F("t1.f1", "f1")],
     From(["models.UserModel", "t1"]),
-    Limit(0, 20)  # 从第0条开始，返回20条数据
+    Limit(0, 20)  # Start from 0th record, return 20 records
 )
 ```
 
-## 聚合查询
-### 分组查询
+## Aggregate Queries
+### Group Queries
 ```plaintext
 Select(
     [F("t1.f1", "f1"), F("COUNT(*)", "count")],
@@ -99,7 +99,7 @@ Select(
 )
 ```
 
-### 分组过滤
+### Group Filtering
 ```plaintext
 Select(
     [F("t1.f1", "f1"), F("COUNT(*)", "count")],
@@ -109,7 +109,7 @@ Select(
 )
 ```
 
-## 联合查询
+## Union Queries
 ### UNION
 ```plaintext
 Union(
@@ -134,8 +134,8 @@ UnionAll(
 )
 ```
 
-## 数据操作
-### 插入数据
+## Data Operations
+### Insert Data
 ```plaintext
 Insert(
     "models.UserModel",
@@ -146,7 +146,7 @@ Insert(
 )
 ```
 
-### 更新数据
+### Update Data
 ```plaintext
 Update(
     "models.UserModel",
@@ -155,10 +155,10 @@ Update(
 )
 ```
 
-### 删除数据
+### Delete Data
 ```plaintext
 Delete(
     "models.UserModel",
     Q("f1", "=", "value")
 )
-``` 
+```

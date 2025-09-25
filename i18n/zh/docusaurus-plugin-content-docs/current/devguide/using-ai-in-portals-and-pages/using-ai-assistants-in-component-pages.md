@@ -3,80 +3,80 @@ sidebar_position: 2
 slug: using-ai-assistants-in-component-pages
 ---
 
-# Using AI Assistants in Component Pages
-After using [AI Assistant](../ai-assistant) in component pages, an AI dialog box will be displayed on the right side of the page. The page can also subscribe to [AI Assistant events](../ai-assistant/ai-assistant-event) to enable interaction between the page and AI, as well as collaboration between users and AI.
+# 在组件化页面中使用AI助理
+在组件化页面中使用[AI助理](../ai-assistant)后，页面右侧会显示AI对话框。页面还可以订阅[AI助理事件](../ai-assistant/ai-assistant-event)，实现页面与AI的交互，以及用户与AI的协作。
 
-## Enabling AI Assistant
-Follow these steps:
+## 启用AI助理 {#enable-ai-assistant}
+按照以下步骤操作：
 
-![Component Page - Bind AI Assistant](./img/component-page-bind-assistant.png)
+![组件页面 - 绑定AI助理](./img/component-page-bind-assistant.png)
 
-Turn on the `AI Assistant` switch at the top of the page editor and select an AI assistant.
+在页面编辑器顶部打开 `AI助理` 开关并选择一个AI助理。
 
-## AI Assistant Configuration
+## AI助理配置
 
-After enabling the AI Assistant, an AI Assistant configuration panel will be displayed on the right side of the page editor with the following configuration options:
-- **AI Assistant**: Switch the AI assistant used in the page
-- **Welcome Message and Opening**: Set personalized [welcome message and opening](../ai-assistant/welcome-message-and-opening)
-- **Input Parameters**: If the assistant being used has [custom input parameters](../ai-assistant/ai-assistant-input-output#input-parameters) configured, these parameters need to be assigned values.
-- **Output Runtime Logs**: Customize the [runtime log](../ai-assistant/ai-assistant-input-output#message-output) content output by the assistant during runtime.
+启用AI助理后，页面编辑器右侧会显示AI助理配置面板，包含以下配置选项：
+- **AI助理**：切换页面中使用的AI助理
+- **欢迎语与开场白**：设置个性化的[欢迎语与开场白](../ai-assistant/welcome-message-and-opening)
+- **输入参数**：如果使用的助手配置了[自定义输入参数](../ai-assistant/ai-assistant-input-output#input-parameters)，需要为这些参数赋值
+- **输出运行时日志**：自定义助手运行时输出的[运行时日志](../ai-assistant/ai-assistant-input-output#message-output)内容
 
-![Component Page - Bind AI Assistant](./img/component-page-assistant-config.png)
+![组件页面 - 绑定AI助理](./img/component-page-assistant-config.png)
 
 
-## AI Assistant Event Subscription
+## AI助理事件订阅
 
-### Subscribe to Node Running Events {#subscribe-node-running-events}
-After enabling [triggerable workspace events](../ai-assistant/ai-assistant-event#node-running-events) for nodes in the assistant, there will be two events: **When Node is Reached** and **After Node Completion**. The page subscription method is as follows:
+### 订阅节点运行事件 {#subscribe-node-running-events}
+在助手中为节点启用[可触发的工作区事件](../ai-assistant/ai-assistant-event#node-running-events)后，会有两个事件：**到达节点时** 和 **节点完成后**。页面订阅方法如下：
 
-![AI Assistant - Workspace Event Subscription](./img/assistant-workspace-event-subscribe.png)
+![AI助理 - 工作区事件订阅](./img/assistant-workspace-event-subscribe.png)
 
-In the event handling logic, you can use the parameters output by the event:
+在事件处理逻辑中，可以使用事件输出的参数：
 
-![AI Assistant - Workspace Event Subscription](./img/assistant-workspace-event-args.png)
+![AI助理 - 工作区事件订阅](./img/assistant-workspace-event-args.png)
 
-### Subscribe to Tool Call Events {#subscribe-call-tool-events}
+### 订阅工具调用事件 {#subscribe-call-tool-events}
 
-After enabling [tool call events](../ai-assistant/ai-assistant-event#agent-call-tool-events) for AI Agent nodes in the assistant, there will be two events: **Before Tool Call** and **After Tool Call**. The page subscription method is as follows:
+在助手中为AI Agent节点启用[工具调用事件](../ai-assistant/ai-assistant-event#agent-call-tool-events)后，会有两个事件：**工具调用前** 和 **工具调用后**。页面订阅方法如下：
 
-![AI Assistant - Tool Call Event Subscription](./img/assistant-workspace-tool-event.png)
+![AI助理 - 工具调用事件订阅](./img/assistant-workspace-tool-event.png)
 
-Currently, [output parameters of tool call events](../ai-assistant/ai-assistant-event#agent-call-tool-events) cannot be used in visual tools and need to be used by developers through code writing in source code mode. The usage method is as follows:
+目前，[工具调用事件的输出参数](../ai-assistant/ai-assistant-event#agent-call-tool-events)无法在可视化工具中使用，需要开发者通过源码模式编写代码使用。使用方法如下：
 ```javascript
 this.subscribeEvent("AI:aiagents.ClientManagementagent.callTool.preEvent", async ({ data}) => {
-    // AI: Fixed prefix for AI assistant events; aiagents.ClientManagementagent: Node ID in the assistant; callTool.preEvent: Before tool call event, callTool.postEvent: After tool call event
-    // data: Parameters carried by this tool event
+    // AI: AI助理事件的固定前缀; aiagents.ClientManagementagent: 助手中的节点ID; callTool.preEvent: 工具调用前事件, callTool.postEvent: 工具调用后事件
+    // data: 此工具事件携带的参数
     if(data.toolName.value === "services.ASvc.func1"){
-        //TODO: If tool name is xxxx, do something 
+        //TODO: 如果工具名称是xxxx，执行某些操作 
     }
 });
 ```
 
-### Subscribe to Chat Area Human-Machine Interaction Node Events {#subscribe-chat-area-human-events}
-Pages can subscribe to [chat area human-machine interaction node events](../ai-assistant/ai-assistant-event#chat-area-human-machine-interaction-events).
-The subscription method is as follows:
+### 订阅聊天区域人机交互节点事件 {#subscribe-chat-area-human-events}
+页面可以订阅[聊天区域人机交互节点事件](../ai-assistant/ai-assistant-event#chat-area-human-machine-interaction-events)。
+订阅方法如下：
 
-![AI Assistant - Chat Area Human-Machine Interaction Event Subscription](./img/assistant-chat-event.png)
+![AI助理 - 聊天区域人机交互事件订阅](./img/assistant-chat-event.png)
 
-### Subscribe to Workspace Human-Machine Interaction Node Events {#subscribe-workspace-human-events}
-Pages can subscribe to [workspace human-machine interaction node events](../ai-assistant/ai-assistant-event#workspace-human-machine-interaction-events).
-The subscription method is as follows:
+### 订阅工作区人机交互节点事件 {#subscribe-workspace-human-events}
+页面可以订阅[工作区人机交互节点事件](../ai-assistant/ai-assistant-event#workspace-human-machine-interaction-events)。
+订阅方法如下：
 
-![AI Assistant - Workspace Human-Machine Interaction Event Subscription](./img/assistant-uiinterrupt-event.png)
+![AI助理 - 工作区人机交互事件订阅](./img/assistant-uiinterrupt-event.png)
 
-## Send AI Messages in Pages {#send-ai-message}
+## 在页面中发送AI消息 {#send-ai-message}
 
-After using AI Assistant in a page, there will be a **Send AI Message** function on the page. The calling method is as follows:
+在页面中使用AI助理后，页面上会有一个 **发送AI消息** 功能。调用方法如下：
 
-![AI Assistant - Send AI Message](./img/send-ai-message.png)
+![AI助理 - 发送AI消息](./img/send-ai-message.png)
 
-For function parameters, see [Send AI Message Function](../ai-assistant/ai-assistant-api-integration#send-ai-message)
+功能参数请参见[发送AI消息功能](../ai-assistant/ai-assistant-api-integration#send-ai-message)
 
 
-## Direct Call to AI Assistant {#call-ai-assistant}
+## 直接调用AI助理 {#call-ai-assistant}
 
-Additionally, pages support directly calling AI Assistant without enabling it. The AI Assistant provides a **Run** method that can be called directly. The calling method is as follows:
+此外，页面支持在不启用AI助理的情况下直接调用AI助理。AI助理提供了一个 **运行** 方法，可以直接调用。调用方法如下：
 
-![AI Assistant - Send AI Message](./img/call-assistant.png)
+![AI助理 - 发送AI消息](./img/call-assistant.png)
 
-This method can also be called in service/model function logic.
+此方法也可以在服务/模型函数逻辑中调用。

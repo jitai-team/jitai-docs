@@ -1,22 +1,22 @@
 ---
 slug: regular-approval
 ---
-# 常规审批
-常规审批是企业工作流管理的核心元素，基于JitWorkflow审批引擎实现完整的审批流程处理能力。它负责审批节点配置、审批人分配、条件分支和并行处理，支持多种审批模式和复杂审批策略，满足不同业务场景的审批需求。
+# Regular Approval
+Regular Approval is the core element of enterprise workflow management, implementing complete approval process handling capabilities based on the JitWorkflow approval engine. It is responsible for approval node configuration, approver assignment, conditional branching, and parallel processing, supporting various approval modes and complex approval strategies to meet approval requirements in different business scenarios.
 
-常规审批元素分层结构为Meta（workflows.Meta） → Type（workflows.NormalType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建常规审批实例元素。
+The Regular Approval element hierarchy is Meta (workflows.Meta) → Type (workflows.NormalType) → Instance. Developers can quickly create Regular Approval instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的workflows.NormalType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official workflows.NormalType element provided by JitAI in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
-MyApproval/                    # 审批实例名称
-├── e.json                     # 元素定义文件
-├── config.json               # 审批流程配置文件
-├── __init__.py               # 包初始化文件
-└── pages/                    # 可选：自定义审批页面
+## Quick Start
+### Create Instance Element
+#### Directory Structure
+```text title="Recommended Directory Structure"
+MyApproval/                    # Approval instance name
+├── e.json                     # Element definition file
+├── config.json               # Approval process configuration file
+├── __init__.py               # Package initialization file
+└── pages/                    # Optional: Custom approval pages
     └── NodePage/
         ├── e.json
         ├── index.ts
@@ -26,13 +26,13 @@ MyApproval/                    # 审批实例名称
         └── scheme.json
 ```
 
-#### e.json文件
-```json title="e.json配置示例"
+#### e.json File
+```json title="e.json Configuration Example"
 {
   "type": "workflows.NormalType",
   "icon": "IDEshenpi",
   "path": "workflows",
-  "title": "请假审批",
+  "title": "Leave Approval",
   "dataModel": "models.LeaveModel",
   "frontBundleEntry": "./config.json",
   "outputName": "index",
@@ -44,27 +44,27 @@ MyApproval/                    # 审批实例名称
 }
 ```
 
-#### 业务配置文件
-```json title="config.json审批流程配置"
+#### Business Configuration File
+```json title="config.json Approval Process Configuration"
 {
   "nodeList": [
     {
       "name": "StartNode",
-      "title": "发起节点",
+      "title": "Start Node",
       "type": 0,
       "zIndex": 1,
       "position": {"x": 0, "y": 0}
     },
     {
       "name": "ApproveNode1",
-      "title": "部门主管审批",
+      "title": "Department Manager Approval",
       "type": 1,
       "zIndex": 1,
       "position": {"x": 0, "y": 200}
     },
     {
       "name": "EndNode",
-      "title": "结束节点",
+      "title": "End Node",
       "type": 7,
       "zIndex": 1,
       "position": {"x": 0, "y": 400}
@@ -88,12 +88,12 @@ MyApproval/                    # 审批实例名称
   ],
   "nodeConfig": {
     "StartNode": {
-      "nodeName": "发起节点",
+      "nodeName": "Start Node",
       "nodeType": 0,
       "digest": ["applicant", "leaveType", "startDate", "endDate"],
       "handleList": [
-        {"buttonName": "提交", "checked": 1, "handleType": 0},
-        {"buttonName": "撤销流程", "checked": 0, "handleType": 16}
+        {"buttonName": "Submit", "checked": 1, "handleType": 0},
+        {"buttonName": "Cancel Process", "checked": 0, "handleType": 16}
       ],
       "fieldAccessControl": {
         "read": ["applicant", "leaveType", "startDate", "endDate", "reason"],
@@ -101,19 +101,19 @@ MyApproval/                    # 审批实例名称
       }
     },
     "ApproveNode1": {
-      "nodeName": "部门主管审批",
+      "nodeName": "Department Manager Approval",
       "nodeType": 1,
       "approver": {
         "approveType": 1,
         "userIdList": ["${directLeader}"]
       },
       "handleList": [
-        {"buttonName": "同意", "checked": 1, "handleType": 2},
-        {"buttonName": "拒绝", "checked": 1, "handleType": 3}
+        {"buttonName": "Approve", "checked": 1, "handleType": 2},
+        {"buttonName": "Reject", "checked": 1, "handleType": 3}
       ]
     },
     "EndNode": {
-      "nodeName": "结束节点",
+      "nodeName": "End Node",
       "nodeType": 7
     }
   },
@@ -122,250 +122,250 @@ MyApproval/                    # 审批实例名称
 }
 ```
 
-#### 调用示例
-```python title="获取并操作审批实例"
-# 获取审批实例
+#### Usage Example
+```python title="Get and Operate Approval Instance"
+# Get approval instance
 approval = app.getElement("workflows.MyApproval")
 
-# 发起审批
+# Initiate approval
 result = approval.doHandle(
-    handleType=0,                    # 提交操作
-    nodeId="StartNode",              # 发起节点
-    row=leave_data,                  # 审批数据
-    valueDict={"comment": "紧急请假"}  # 审批意见
+    handleType=0,                    # Submit operation
+    nodeId="StartNode",              # Start node
+    row=leave_data,                  # Approval data
+    valueDict={"comment": "Emergency leave"}  # Approval comment
 )
 
-# 获取下一个审批节点
+# Get next approval node
 next_nodes = approval.getNextNodes("StartNode")
 
-# 获取审批节点配置
+# Get approval node configuration
 node_config = approval.getNode("ApproveNode1")
 ```
 
-## 元素配置
-### e.json配置
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| type | Stext | str | 是 | 固定值：workflows.NormalType |
-| title | Stext | str | 是 | 审批流程标题 |
-| dataModel | Stext | str | 是 | 关联的数据模型fullName |
-| icon | Stext | str | 否 | 审批图标标识 |
-| platformSwitch | Numeric | int | 否 | 平台开关，0关闭1开启 |
-| commentSwitch | Numeric | int | 否 | 评论开关，0关闭1开启 |
-| allowPrint | Numeric | int | 否 | 打印权限，0不允许1允许 |
-| syncStatus | JitDict | bool | 否 | 同步状态设置 |
-| allowShare | Numeric | int | 否 | 分享权限，0不允许1允许 |
-| showPredict | Numeric | int | 否 | 预测权限，0不显示1显示 |
+## Element Configuration
+### e.json Configuration
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| type | Stext | str | Yes | Fixed value: workflows.NormalType |
+| title | Stext | str | Yes | Approval process title |
+| dataModel | Stext | str | Yes | Associated data model fullName |
+| icon | Stext | str | No | Approval icon identifier |
+| platformSwitch | Numeric | int | No | Platform switch, 0 off 1 on |
+| commentSwitch | Numeric | int | No | Comment switch, 0 off 1 on |
+| allowPrint | Numeric | int | No | Print permission, 0 not allowed 1 allowed |
+| syncStatus | JitDict | bool | No | Sync status setting |
+| allowShare | Numeric | int | No | Share permission, 0 not allowed 1 allowed |
+| showPredict | Numeric | int | No | Prediction permission, 0 not shown 1 shown |
 
-### 业务配置文件配置
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| nodeList | JitList | list | 是 | 审批节点列表配置 |
-| linkList | JitList | list | 是 | 节点连接关系配置 |
-| nodeConfig | JitDict | dict | 是 | 各节点详细配置 |
-| modelName | Stext | str | 是 | 数据模型名称 |
-| statusMaps | JitDict | dict | 否 | 状态映射配置 |
+### Business Configuration File Configuration
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| nodeList | JitList | list | Yes | Approval node list configuration |
+| linkList | JitList | list | Yes | Node connection relationship configuration |
+| nodeConfig | JitDict | dict | Yes | Detailed configuration for each node |
+| modelName | Stext | str | Yes | Data model name |
+| statusMaps | JitDict | dict | No | Status mapping configuration |
 
-## 方法 
+## Methods
 ### doHandle
-执行审批操作，处理各种审批动作。
+Execute approval operations, handling various approval actions.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| handleType | Numeric | int | 是 | 操作类型：0提交、2同意、3拒绝等 |
-| nodeId | Stext | str | 是 | 目标节点ID |
-| row | RowData | object | 是 | 审批数据行对象 |
-| valueDict | JitDict | dict | 否 | 审批操作的附加参数 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| handleType | Numeric | int | Yes | Operation type: 0 submit, 2 approve, 3 reject, etc. |
+| nodeId | Stext | str | Yes | Target node ID |
+| row | RowData | object | Yes | Approval data row object |
+| valueDict | JitDict | dict | No | Additional parameters for approval operation |
 
-#### 返回值
-无返回值，直接执行审批操作。
+#### Return Value
+No return value, directly executes approval operation.
 
-#### 使用示例
-```python title="执行审批操作"
-# 发起审批
+#### Usage Example
+```python title="Execute Approval Operations"
+# Initiate approval
 approval.doHandle(
     handleType=0,
     nodeId="StartNode", 
     row=data_row,
-    valueDict={"comment": "申请理由"}
+    valueDict={"comment": "Application reason"}
 )
 
-# 同意审批
+# Approve
 approval.doHandle(
     handleType=2,
     nodeId="ApproveNode1",
     row=data_row,
-    valueDict={"approveComment": "同意申请"}
+    valueDict={"approveComment": "Approve application"}
 )
 
-# 拒绝审批
+# Reject
 approval.doHandle(
     handleType=3,
     nodeId="ApproveNode1", 
     row=data_row,
-    valueDict={"rejectReason": "材料不全"}
+    valueDict={"rejectReason": "Incomplete materials"}
 )
 ```
 
 ### getNode
-获取指定审批节点的配置对象。
+Get the configuration object of the specified approval node.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| nodeId | Stext | str | 是 | 节点ID标识 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| nodeId | Stext | str | Yes | Node ID identifier |
 
-#### 返回值
-返回节点配置对象，包含节点的完整配置信息。
+#### Return Value
+Returns node configuration object containing complete node configuration information.
 
-#### 使用示例
-```python title="获取节点配置"
-# 获取审批节点
+#### Usage Example
+```python title="Get Node Configuration"
+# Get approval node
 node = approval.getNode("ApproveNode1")
 
-# 查看节点类型
+# Check node type
 node_type = node.nodeType
 
-# 获取审批人配置
+# Get approver configuration
 approver_config = node.approver if hasattr(node, 'approver') else None
 ```
 
 ### getNextNodes
-获取指定节点的下级流转节点列表。
+Get the list of downstream flow nodes for the specified node.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| nodeId | Stext | str | 是 | 当前节点ID |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| nodeId | Stext | str | Yes | Current node ID |
 
-#### 返回值
-返回下级节点对象列表，按流转顺序排列。
+#### Return Value
+Returns list of downstream node objects, arranged in flow order.
 
-#### 使用示例
-```python title="获取下级节点"
-# 获取发起节点的下级节点
+#### Usage Example
+```python title="Get Downstream Nodes"
+# Get downstream nodes of start node
 next_nodes = approval.getNextNodes("StartNode")
 
-# 遍历下级节点
+# Iterate through downstream nodes
 for node in next_nodes:
-    print(f"下级节点：{node.name} - {node.nodeType}")
+    print(f"Downstream node: {node.name} - {node.nodeType}")
 
-# 检查是否有下级节点
+# Check if there are downstream nodes
 if next_nodes:
     first_next = next_nodes[0]
 ```
 
 ### getStartNode
-获取审批流程的起始节点。
+Get the start node of the approval process.
 
-#### 返回值
-返回起始节点对象。
+#### Return Value
+Returns start node object.
 
-#### 使用示例
-```python title="获取起始节点"
-# 获取流程起始节点
+#### Usage Example
+```python title="Get Start Node"
+# Get process start node
 start_node = approval.getStartNode()
 
-# 查看起始节点配置
+# View start node configuration
 start_config = start_node.nodeConfigDict
 ```
 
 ### getStartNodeId
-获取审批流程的起始节点ID。
+Get the start node ID of the approval process.
 
-#### 返回值
-返回起始节点的ID字符串。
+#### Return Value
+Returns start node ID string.
 
-#### 使用示例
-```python title="获取起始节点ID"
-# 获取起始节点ID
+#### Usage Example
+```python title="Get Start Node ID"
+# Get start node ID
 start_id = approval.getStartNodeId()
 
-# 基于起始节点ID获取节点对象
+# Get node object based on start node ID
 start_node = approval.getNode(start_id)
 ```
 
 ### getApproveNodeIdList
-获取所有审批节点的ID列表。
+Get the ID list of all approval nodes.
 
-#### 返回值
-返回审批节点ID的列表。
+#### Return Value
+Returns list of approval node IDs.
 
-#### 使用示例
-```python title="获取审批节点列表"
-# 获取所有审批节点ID
+#### Usage Example
+```python title="Get Approval Node List"
+# Get all approval node IDs
 approve_ids = approval.getApproveNodeIdList()
 
-# 遍历审批节点
+# Iterate through approval nodes
 for node_id in approve_ids:
     node = approval.getNode(node_id)
-    print(f"审批节点：{node_id} - {node.name}")
+    print(f"Approval node: {node_id} - {node.name}")
 ```
 
 ### getPrevNodes
-获取指定节点的前置节点列表。
+Get the list of predecessor nodes for the specified node.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| nodeId | Stext | str | 是 | 目标节点ID |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| nodeId | Stext | str | Yes | Target node ID |
 
-#### 返回值
-返回前置节点对象列表。
+#### Return Value
+Returns list of predecessor node objects.
 
-#### 使用示例
-```python title="获取前置节点"
-# 获取指定节点的前置节点
+#### Usage Example
+```python title="Get Predecessor Nodes"
+# Get predecessor nodes of specified node
 prev_nodes = approval.getPrevNodes("EndNode")
 
-# 检查前置节点
+# Check predecessor nodes
 for node in prev_nodes:
-    print(f"前置节点：{node.name}")
+    print(f"Predecessor node: {node.name}")
 ```
 
 ### clear
-重置审批实例状态，用于同一请求内多次发起审批。
+Reset approval instance state for multiple approval initiations within the same request.
 
-#### 使用示例
-```python title="重置审批状态"
-# 在多次操作间重置状态
+#### Usage Example
+```python title="Reset Approval State"
+# Reset state between multiple operations
 approval.clear()
 
-# 重置后可以进行新的审批操作
+# Can perform new approval operations after reset
 approval.doHandle(handleType=0, nodeId="StartNode", row=new_data)
 ```
 
-## 属性
+## Properties
 ### workflowName
-当前审批流程的名称，只读属性。
+Name of the current approval process, read-only property.
 
 ### workflowTitle
-当前审批流程的显示标题，只读属性。
+Display title of the current approval process, read-only property.
 
 ### platformSwitch
-平台开关状态，只读属性。
+Platform switch state, read-only property.
 
 ### linkList
-审批流程的连接关系配置，只读属性。
+Connection relationship configuration of the approval process, read-only property.
 
 ### tableId
-关联的数据模型标识，只读属性。
+Associated data model identifier, read-only property.
 
-## 高级特性
-### 复杂审批流程配置
-对于包含条件分支、并行审批、子流程等复杂场景，可以在config.json中配置更复杂的节点类型和连接关系：
+## Advanced Features
+### Complex Approval Process Configuration
+For complex scenarios including conditional branching, parallel approval, and sub-processes, more complex node types and connection relationships can be configured in config.json:
 
-```json title="复杂流程配置示例"
+```json title="Complex Process Configuration Example"
 {
   "nodeList": [
-    {"name": "StartNode", "title": "发起", "type": 0},
-    {"name": "BranchNode", "title": "条件分支", "type": 4},
-    {"name": "ParallelStart", "title": "并行开始", "type": 5},
-    {"name": "Approve1", "title": "审批1", "type": 1},
-    {"name": "Approve2", "title": "审批2", "type": 1},
-    {"name": "ParallelEnd", "title": "并行结束", "type": 6},
-    {"name": "EndNode", "title": "结束", "type": 7}
+    {"name": "StartNode", "title": "Start", "type": 0},
+    {"name": "BranchNode", "title": "Conditional Branch", "type": 4},
+    {"name": "ParallelStart", "title": "Parallel Start", "type": 5},
+    {"name": "Approve1", "title": "Approval 1", "type": 1},
+    {"name": "Approve2", "title": "Approval 2", "type": 1},
+    {"name": "ParallelEnd", "title": "Parallel End", "type": 6},
+    {"name": "EndNode", "title": "End", "type": 7}
   ],
   "nodeConfig": {
     "BranchNode": {
@@ -388,10 +388,10 @@ approval.doHandle(handleType=0, nodeId="StartNode", row=new_data)
 }
 ```
 
-### 自定义审批页面
-通过在pages目录下创建自定义页面组件，可以实现个性化的审批界面：
+### Custom Approval Pages
+By creating custom page components in the pages directory, personalized approval interfaces can be implemented:
 
-```typescript title="自定义审批页面示例"
+```typescript title="Custom Approval Page Example"
 // pages/NodePage/PageRender.tsx
 import React from 'react';
 
@@ -401,7 +401,7 @@ export const ApprovalPageRender = (props) => {
   return (
     <div className="custom-approval-page">
       <h2>{nodeConfig.title}</h2>
-      {/* 自定义表单组件 */}
+      {/* Custom form component */}
       <CustomForm data={formData} onSubmit={onSubmit} />
     </div>
   );

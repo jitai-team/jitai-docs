@@ -21,8 +21,8 @@ const PRICING_PLANS: PricingPlan[] = [
     subtitle: '本地开发必备',
     icon: '🖥️',
     monthlyPrice: '140',
-    yearlyPrice: '14,000',
-    buyoutPrice: '70,000',
+    yearlyPrice: '14,00',
+    buyoutPrice: '70,00',
     cardType: 'desktopCard',
     features: [
       '✓ 仅用于开发环境',

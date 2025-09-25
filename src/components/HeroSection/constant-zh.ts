@@ -5,7 +5,8 @@ const CONTENT = {
   subTitle2: '编排式开发',
   subDesc2: '编排式的开发框架、开发工具、DevOps工具链，极大简化应用系统复杂度，加快"AI助理系统和传统管理系统原生一体的企业级应用"的开发迭代',
   buttonDownload: '立即下载',
-  buttonDemo: '在线体验'
+  buttonDemo: '在线试用',
+  buttonGetStart: '了解更多',
 };
 
 export default CONTENT;

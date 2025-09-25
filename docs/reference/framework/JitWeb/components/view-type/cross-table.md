@@ -1,16 +1,16 @@
 ---
 slug: cross-table
 ---
-# 交叉表
-交叉表是专门用于数据透视和交叉分析的表格组件，基于 AntV S2 实现多维数据的行列交叉展示。它负责数据的多维度分组、聚合计算和交叉分析，支持动态维度配置、数据钻取和复杂的数据可视化需求，是商业智能和数据分析场景的核心组件。
+# Cross Table
+Cross table is a specialized table component for data pivoting and cross-analysis, implemented based on AntV S2 to display multi-dimensional data in row-column intersections. It handles multi-dimensional data grouping, aggregation calculations, and cross-analysis, supporting dynamic dimension configuration, data drilling, and complex data visualization requirements. It is a core component for business intelligence and data analysis scenarios.
 
-交叉表元素分层结构为Meta（`components.Meta`）→ Type（`components.CrossTable`）→ 实例，开发者可通过JitAI的可视化开发工具快捷地创建交叉表实例元素。
+The cross table element has a hierarchical structure of Meta (`components.Meta`) → Type (`components.CrossTable`) → Instance. Developers can quickly create cross table instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.CrossTableType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `components.CrossTableType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基础配置示例
-```text title="推荐目录结构"
+## Quick Start 
+### Basic Configuration Example
+```text title="Recommended Directory Structure"
 MyApp/
 ├── models/
 │   └── SalesModel/
@@ -24,18 +24,18 @@ MyApp/
         └── scheme.json
 ```
 
-```json title="scheme.json - 交叉表配置"
+```json title="scheme.json - Cross Table Configuration"
 {
   "components": [
     {
       "fullName": "components.CrossTable",
       "type": "components.CrossTable", 
       "name": "CrossTable1",
-      "title": "销售数据交叉表",
+      "title": "Sales Data Cross Table",
       "config": {
         "requireElements": [
           {
-            "title": "销售数据模型",
+            "title": "Sales Data Model",
             "type": "models.Meta",
             "name": "models.SalesModel",
             "filter": "",
@@ -47,7 +47,7 @@ MyApp/
             {
               "type": "dimension",
               "name": "region",
-              "alias": "地区",
+              "alias": "Region",
               "fullName": "t1.region",
               "dataType": "Stext",
               "orderType": "",
@@ -58,7 +58,7 @@ MyApp/
             {
               "type": "dimension", 
               "name": "product",
-              "alias": "产品",
+              "alias": "Product",
               "fullName": "t1.product",
               "dataType": "Stext",
               "orderType": "",
@@ -69,7 +69,7 @@ MyApp/
             {
               "type": "measure",
               "name": "amount",
-              "alias": "销售额",
+              "alias": "Sales Amount",
               "fullName": "t1.amount",
               "dataType": "Money",
               "ormType": "SUM",
@@ -86,333 +86,333 @@ MyApp/
 }
 ```
 
-```tsx title="page.tsx - 页面使用"
+```tsx title="page.tsx - Page Usage"
 export default function DataAnalysisPage() {
   const crossTable = app.getElement('CrossTable1');
   
-  // 刷新数据
+  // Refresh data
   const handleRefresh = () => {
     crossTable.call();
   };
   
   return (
     &lt;div&gt;
-      &lt;h2&gt;数据分析页面&lt;/h2&gt;
-      &lt;button onClick={handleRefresh}&gt;刷新数据&lt;/button&gt;
+      &lt;h2&gt;Data Analysis Page&lt;/h2&gt;
+      &lt;button onClick={handleRefresh}&gt;Refresh Data&lt;/button&gt;
       &lt;{crossTable.name} /&gt;
     &lt;/div&gt;
   );
 }
 ```
 
-### 配置属性说明
-| 属性名 | 类型 | 说明 | 默认值 | 必填 |
+### Configuration Properties
+| Property Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| requireElements | requireElement[] | 依赖的数据模型配置 | - | 是 |
-| fieldsList | CommonFieldSelectorItem[][] | 字段配置列表，分别对应行维度、列维度、数值字段 | - | 是 |
-| sheetType | &#124; 'pivot' &#124; 'table' | 表格类型，pivot为透视表 | 'pivot' | 否 |
-| hierarchyType | 'grid' &#124; 'tree' | 层级显示类型 | 'grid' | 否 |
-| showZebraStripe | boolean | 是否显示斑马纹 | false | 否 |
-| hierarchyCollapse | boolean | 是否支持层级折叠 | false | 否 |
-| canExport | boolean | 是否支持导出 | false | 否 |
-| canRefresh | boolean | 是否支持刷新 | false | 否 |
-| themeCfg | ThemeCfg | 主题配置 | - | 否 |
+| requireElements | requireElement[] | Dependent data model configuration | - | Yes |
+| fieldsList | CommonFieldSelectorItem[][] | Field configuration list, corresponding to row dimensions, column dimensions, and value fields | - | Yes |
+| sheetType | &#124; 'pivot' &#124; 'table' | Table type, pivot for pivot table | 'pivot' | No |
+| hierarchyType | 'grid' &#124; 'tree' | Hierarchy display type | 'grid' | No |
+| showZebraStripe | boolean | Whether to show zebra stripes | false | No |
+| hierarchyCollapse | boolean | Whether to support hierarchy collapse | false | No |
+| canExport | boolean | Whether to support export | false | No |
+| canRefresh | boolean | Whether to support refresh | false | No |
+| themeCfg | ThemeCfg | Theme configuration | - | No |
 
-## 变量
+## Variables
 ### dimensionFilter
-只读变量，类型为 `datatypes.QFilter`，表示维度筛选条件。
+Read-only variable of type `datatypes.QFilter`, representing dimension filter conditions.
 
-**属性**：
-- `value`: 筛选条件值
-- 支持 Q 表达式语法构建复杂筛选条件
+**Properties**:
+- `value`: Filter condition value
+- Supports Q expression syntax for building complex filter conditions
 
 ### detailFilter
-只读变量，类型为 `datatypes.QFilter`，表示明细筛选条件。
+Read-only variable of type `datatypes.QFilter`, representing detail filter conditions.
 
-**属性**：
-- `value`: 筛选条件值  
-- 用于过滤明细数据
+**Properties**:
+- `value`: Filter condition value  
+- Used for filtering detail data
 
 ### loading
-数值类型变量，表示加载状态。
+Numeric type variable representing loading state.
 
-**属性**：
-- `value`: 0表示未加载，1表示加载中
+**Properties**:
+- `value`: 0 indicates not loaded, 1 indicates loading
 
-## 方法 
+## Methods 
 ### call
-刷新交叉表数据。
+Refresh cross table data.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| qFilter | Qex | 筛选条件对象 | - | 否 |
+| qFilter | Qex | Filter condition object | - | No |
 
-#### 返回值
-无返回值
+#### Return Value
+No return value
 
-#### 使用示例
-```tsx title="刷新数据示例"
+#### Usage Example
+```tsx title="Refresh Data Example"
 const crossTable = app.getElement('CrossTable1');
 
-// 无条件刷新
+// Refresh without conditions
 crossTable.call();
 
-// 带筛选条件刷新
-const filter = Q("region='华南'");
+// Refresh with filter conditions
+const filter = Q("region='South China'");
 crossTable.call(filter);
 ```
 
 ### getDataList
-获取表格数据列表。
+Get table data list.
 
-#### 参数详解
-无参数
+#### Parameter Details
+No parameters
 
-#### 返回值
+#### Return Value
 Promise&lt;void&gt;
 
-#### 使用示例
-```tsx title="获取数据示例"
+#### Usage Example
+```tsx title="Get Data Example"
 const crossTable = app.getElement('CrossTable1');
 
-// 获取数据
+// Get data
 await crossTable.getDataList();
 console.log(crossTable.rowDataList);
 ```
 
 ### checkConfig
-检查配置是否有效。
+Check if configuration is valid.
 
-#### 参数详解
-无参数
+#### Parameter Details
+No parameters
 
-#### 返回值
-boolean - 配置是否有效
+#### Return Value
+boolean - Whether configuration is valid
 
-#### 使用示例
-```tsx title="配置检查示例"
+#### Usage Example
+```tsx title="Configuration Check Example"
 const crossTable = app.getElement('CrossTable1');
 
 if (crossTable.checkConfig()) {
-  console.log('配置有效');
+  console.log('Configuration is valid');
 } else {
-  console.log('配置无效，请检查字段配置');
+  console.log('Configuration is invalid, please check field configuration');
 }
 ```
 
 ### publishEvent
-发布组件事件。
+Publish component event.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| name | string | 事件名称 | - | 是 |
-| ex | Record&lt;string, any&gt; | 事件数据 | - | 否 |
+| name | string | Event name | - | Yes |
+| ex | Record&lt;string, any&gt; | Event data | - | No |
 
-#### 返回值
+#### Return Value
 Promise&lt;void&gt;
 
 ### subscribeEvent
-订阅组件事件。
+Subscribe to component event.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| name | string | 事件名称 | - | 是 |
-| evtCb | (data: any) =&gt; Promise&lt;void&gt; &#124; void | 事件回调函数 | - | 是 |
-| unSubscribeExist | boolean | 是否取消已存在的订阅 | true | 否 |
+| name | string | Event name | - | Yes |
+| evtCb | (data: any) =&gt; Promise&lt;void&gt; &#124; void | Event callback function | - | Yes |
+| unSubscribeExist | boolean | Whether to cancel existing subscription | true | No |
 
-#### 返回值
-string - 事件处理器ID
+#### Return Value
+string - Event handler ID
 
 ### setConfig
-设置组件配置。
+Set component configuration.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| next | Partial&lt;CrossTableCompConfig&gt; | 新配置 | - | 是 |
-| clean | boolean | 是否完全替换配置 | false | 否 |
+| next | Partial&lt;CrossTableCompConfig&gt; | New configuration | - | Yes |
+| clean | boolean | Whether to completely replace configuration | false | No |
 
-#### 返回值
-无返回值
+#### Return Value
+No return value
 
 ### unSubscribeEvent
-取消订阅组件事件。
+Unsubscribe from component event.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| id | string | 事件处理器ID | - | 是 |
+| id | string | Event handler ID | - | Yes |
 
-#### 返回值
-boolean - 是否成功取消订阅
+#### Return Value
+boolean - Whether successfully unsubscribed
 
-#### 使用示例
-```tsx title="取消事件订阅示例"
+#### Usage Example
+```tsx title="Unsubscribe Event Example"
 const crossTable = app.getElement('CrossTable1');
 
-// 订阅事件并获取处理器ID
+// Subscribe to event and get handler ID
 const handlerId = crossTable.subscribeEvent('clickDetail', (data) => {
-  console.log('处理点击事件');
+  console.log('Handle click event');
 });
 
-// 取消订阅
+// Unsubscribe
 crossTable.unSubscribeEvent(handlerId);
 ```
 
 ### destroy
-销毁组件，清理所有资源和事件监听。
+Destroy component, clean up all resources and event listeners.
 
-#### 参数详解
-无参数
+#### Parameter Details
+No parameters
 
-#### 返回值
-无返回值
+#### Return Value
+No return value
 
-#### 使用示例
-```tsx title="销毁组件示例"
+#### Usage Example
+```tsx title="Destroy Component Example"
 const crossTable = app.getElement('CrossTable1');
 
-// 组件销毁时清理资源
+// Clean up resources when component is destroyed
 crossTable.destroy();
 ```
 
 ### runCode
-运行代码字符串，在页面上下文中执行。
+Execute code string in page context.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| code | string | 要执行的代码字符串 | - | 是 |
+| code | string | Code string to execute | - | Yes |
 
-#### 返回值
-any - 代码执行结果
+#### Return Value
+any - Code execution result
 
-#### 使用示例
-```tsx title="运行代码示例"
+#### Usage Example
+```tsx title="Run Code Example"
 const crossTable = app.getElement('CrossTable1');
 
-// 执行代码片段
+// Execute code snippet
 const result = crossTable.runCode('self.getElement("OtherComponent").call()');
 ```
 
 ### getPermConfig
-获取当前组件的权限配置。
+Get current component's permission configuration.
 
-#### 参数详解
-无参数
+#### Parameter Details
+No parameters
 
-#### 返回值
-Record&lt;string, any&gt; &#124; undefined - 权限配置对象
+#### Return Value
+Record&lt;string, any&gt; &#124; undefined - Permission configuration object
 
-#### 使用示例
-```tsx title="权限检查示例"
+#### Usage Example
+```tsx title="Permission Check Example"
 const crossTable = app.getElement('CrossTable1');
 
 const permConfig = crossTable.getPermConfig();
 if (permConfig?.canExport) {
-  // 显示导出按钮
+  // Show export button
   showExportButton();
 }
 ```
 
-## 属性
+## Properties
 ### name
-组件名称，类型为 `string`，只读。
+Component name, type `string`, read-only.
 
 ### title
-组件标题，类型为 `string`，只读。
+Component title, type `string`, read-only.
 
 ### config
-组件配置对象，类型为 `CrossTableCompConfig`，可读写。
+Component configuration object, type `CrossTableCompConfig`, read-write.
 
 ### type
-组件类型，值为 `"components.CrossTable"`，只读。
+Component type, value `"components.CrossTable"`, read-only.
 
 ### fullName
-组件完整名称，类型为 `string`，只读。
+Component full name, type `string`, read-only.
 
 ### rowDataList
-表格数据列表，类型为 `Record<string, any>[]`，只读。
+Table data list, type `Record<string, any>[]`, read-only.
 
 ### ModelClass
-关联的模型类，类型为 `typeof Jit.BaseModel`，只读。
+Associated model class, type `typeof Jit.BaseModel`, read-only.
 
 ### app
-应用实例，类型为 `App`，只读。
+Application instance, type `App`, read-only.
 
 ### page
-页面实例，类型为 `BasePage`，只读。
+Page instance, type `BasePage`, read-only.
 
 ### compType
-组件类型，类型为 `COMPONENT_TYPE`，只读。
+Component type, type `COMPONENT_TYPE`, read-only.
 
 ### showTitle
-是否显示组件标题，类型为 `boolean`，只读。
+Whether to show component title, type `boolean`, read-only.
 
 ### dataTypeList
-组件的数据类型配置列表，类型为 `BaseDataType[]`，只读。
+Component's data type configuration list, type `BaseDataType[]`, read-only.
 
-## 事件
+## Events
 ### clickDetail
-点击明细数据时触发。
+Triggered when clicking on detail data.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| data | Record&lt;string, any&gt; | 点击的数据行 | - | - |
+| data | Record&lt;string, any&gt; | Clicked data row | - | - |
 
-#### 使用示例
-```tsx title="监听明细点击事件"
+#### Usage Example
+```tsx title="Listen to Detail Click Event"
 const crossTable = app.getElement('CrossTable1');
 
 crossTable.subscribeEvent('clickDetail', (data) => {
-  console.log('点击明细数据：', data);
-  // 跳转到详情页面或显示详情弹窗
+  console.log('Clicked detail data:', data);
+  // Navigate to detail page or show detail modal
   app.getElement('DetailModal').show(data);
 });
 ```
 
 ### clickDimension
-点击维度值时触发。
+Triggered when clicking on dimension values.
 
-#### 参数详解
-| 参数名 | 类型 | 说明 | 默认值 | 必填 |
+#### Parameter Details
+| Parameter Name | Type | Description | Default Value | Required |
 |--------|------|------|---------|------|
-| data | Record&lt;string, any&gt; | 点击的维度数据 | - | - |
+| data | Record&lt;string, any&gt; | Clicked dimension data | - | - |
 
-#### 使用示例
-```tsx title="监听维度点击事件"
+#### Usage Example
+```tsx title="Listen to Dimension Click Event"
 const crossTable = app.getElement('CrossTable1');
 
 crossTable.subscribeEvent('clickDimension', (data) => {
-  console.log('点击维度：', data);
-  // 执行钻取操作
+  console.log('Clicked dimension:', data);
+  // Execute drill-down operation
   const filter = Q(`region='${data.region}'`);
   crossTable.call(filter);
 });
 ```
 
-## 高级特性
-### 多维度数据分析
-交叉表支持复杂的多维度数据透视分析，可配置多个行维度和列维度。
+## Advanced Features
+### Multi-dimensional Data Analysis
+Cross table supports complex multi-dimensional data pivot analysis, allowing configuration of multiple row and column dimensions.
 
-```json title="多维度配置示例"
+```json title="Multi-dimensional Configuration Example"
 {
   "fieldsList": [
     [
       {
         "type": "dimension",
         "name": "year",
-        "alias": "年份",
+        "alias": "Year",
         "axisType": "row"
       },
       {
         "type": "dimension", 
         "name": "quarter",
-        "alias": "季度",
+        "alias": "Quarter",
         "axisType": "row"
       }
     ],
@@ -420,13 +420,13 @@ crossTable.subscribeEvent('clickDimension', (data) => {
       {
         "type": "dimension",
         "name": "region", 
-        "alias": "地区",
+        "alias": "Region",
         "axisType": "col"
       },
       {
         "type": "dimension",
         "name": "product",
-        "alias": "产品",
+        "alias": "Product",
         "axisType": "col"
       }
     ],
@@ -434,14 +434,14 @@ crossTable.subscribeEvent('clickDimension', (data) => {
       {
         "type": "measure",
         "name": "sales",
-        "alias": "销售额",
+        "alias": "Sales Amount",
         "ormType": "SUM",
         "axisType": "value"
       },
       {
         "type": "measure", 
         "name": "profit",
-        "alias": "利润",
+        "alias": "Profit",
         "ormType": "SUM",
         "axisType": "value"
       }
@@ -450,10 +450,10 @@ crossTable.subscribeEvent('clickDimension', (data) => {
 }
 ```
 
-### 主题定制
-支持丰富的主题配置选项，可自定义表格样式。
+### Theme Customization
+Supports rich theme configuration options for customizing table styles.
 
-```tsx title="主题配置示例"
+```tsx title="Theme Configuration Example"
 const crossTable = app.getElement('CrossTable1');
 
 crossTable.setConfig({
@@ -491,24 +491,24 @@ crossTable.setConfig({
 });
 ```
 
-### 数据钻取
-利用维度点击事件实现数据钻取功能。
+### Data Drilling
+Implement data drilling functionality using dimension click events.
 
-```tsx title="数据钻取实现"
+```tsx title="Data Drilling Implementation"
 const crossTable = app.getElement('CrossTable1');
 const detailTable = app.getElement('DetailTable1');
 
 crossTable.subscribeEvent('clickDimension', async (data) => {
-  // 构建钻取筛选条件
+  // Build drill-down filter conditions
   const drillFilter = Object.entries(data)
     .filter(([key, value]) => value !== null)
     .map(([key, value]) => `${key}='${value}'`)
     .join(' AND ');
     
-  // 更新详情表格数据
+  // Update detail table data
   await detailTable.call(Q(drillFilter));
   
-  // 显示详情面板
+  // Show detail panel
   app.getElement('DrilldownPanel').show();
 });
 ```

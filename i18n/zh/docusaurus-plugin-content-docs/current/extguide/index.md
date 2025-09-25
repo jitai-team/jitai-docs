@@ -1,7 +1,7 @@
 ---
 sidebar_position: -1
 ---
-# 导读
+# 扩展指南导读
 
 **为什么需要框架扩展？**
 
@@ -16,22 +16,22 @@ JitAi提供了丰富的官方开发框架，但在实际业务场景中，你可
 
 开发者对JitAi开发框架进行扩展的认知前提是深入理解JAAP（JitAi Ai Application Protocol）中的规范，尤其是Meta、Type、Instance元素的概念和三者之间的关系。如果要对官方框架进行覆盖重写，则还需要理解继承重写的原理。
 
-[点击此处学习JAAP](../reference/runtime-platform/JAAP)
+[点击此处学习JAAP](/docs/reference/runtime-platform/JAAP)
 
 ## 问题导向指引
 
 | 你想要实现什么 | 相关文档 |
 |-------------|----------|
-| 添加JitAi中没有的自定义图表组件 | [扩展自己的UI组件Type元素](add-frontend-components) |
-| 让我的自定义组件可以通过拖拽界面进行配置 | [为UI组件Type元素开发可视化编辑器](develop-frontend-component-visual-editor) |
-| 集成第三方服务，如Slack机器人或IoT设备 | [扩展自己的元素族类](extend-element-family-classes) |
-| 为我的后端集成创建用户友好的配置面板 | [为后端Type元素开发可视化编辑器](develop-backend-element-visual-editor) |
-| 构建具有特定布局和行为的自定义页面模板 | [扩展自己的页面Type及其编辑器](extend-page-type-editor) |
-| 连接专有数据库或数据源 | [扩展自己的数据库Type元素](extend-database-type-elements) |
-| 处理自定义数据格式或业务对象 | [扩展自己的数据模型Type元素](extend-data-model-type-elements) |
-| 集成专业AI模型或自定义LLM工作流 | [扩展自己的AI Agent Type元素](extend-ai-agent-type-elements) |
-| 为你的业务创建领域特定的AI助理 | [扩展自己的AI助理Type元素](extend-ai-assistant-type-elements) |
-| 添加对区域支付网关或自定义计费的支持 | [扩展自己的支付Type元素](extend-payment-type-elements) |
+| 添加JitAi中没有的自定义图表组件 | [扩展自己的UI组件Type元素](extguide/add-frontend-components) |
+| 让我的自定义组件可以通过拖拽界面进行配置 | [为UI组件Type元素开发可视化编辑器](extguide/develop-frontend-component-visual-editor) |
+| 集成第三方服务，如Slack机器人或IoT设备 | [扩展自己的元素族类](extguide/extend-element-family-classes) |
+| 为我的后端集成创建用户友好的配置面板 | [为后端Type元素开发可视化编辑器](extguide/develop-backend-element-visual-editor) |
+| 构建具有特定布局和行为的自定义页面模板 | [扩展自己的页面Type及其编辑器](extguide/extend-page-type-editor) |
+| 连接专有数据库或数据源 | [扩展自己的数据库Type元素](extguide/extend-database-type-elements) |
+| 处理自定义数据格式或业务对象 | [扩展自己的数据模型Type元素](extguide/extend-data-model-type-elements) |
+| 集成专业AI模型或自定义LLM工作流 | [扩展自己的AI Agent Type元素](extguide/extend-ai-agent-type-elements) |
+| 为你的业务创建领域特定的AI助理 | [扩展自己的AI助理Type元素](extguide/extend-ai-assistant-type-elements) |
+| 添加对区域支付网关或自定义计费的支持 | [扩展自己的支付Type元素](extguide/extend-payment-type-elements) |
 
 ## 扩展类型
 

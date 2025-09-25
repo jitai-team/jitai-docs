@@ -43,14 +43,6 @@
     "message": "学习如何在页面中使用各种功能组件，包括表单、表格、图表等组件的配置和使用方法。",
     "description": "The generated-index page description for category Use Components in Pages in sidebar devguideSidebar"
   },
-  "sidebar.devguideSidebar.category.Data Modeling": {
-    "message": "数据建模",
-    "description": "The label for category Data Modeling in sidebar devguideSidebar"
-  },
-  "sidebar.devguideSidebar.category.Data Modeling.link.generated-index.description": {
-    "message": "学习如何在JitAi中进行数据建模，包括数据库连接、数据表设计、扩展表和聚合表等。",
-    "description": "The generated-index page description for category Data Modeling in sidebar devguideSidebar"
-  },
   "sidebar.devguideSidebar.category.User and Permission": {
     "message": "用户与权限",
     "description": "The label for category User and Permission in sidebar devguideSidebar"
@@ -86,10 +78,6 @@
   "sidebar.referenceSidebar.category.Development Framework": {
     "message": "开发框架",
     "description": "The label for category Development Framework in sidebar referenceSidebar"
-  },
-  "sidebar.referenceSidebar.category.Development Framework.link.generated-index.description": {
-    "message": "JitAi框架是基于JAAP的企业级应用框架，提供从基础设施到业务层组件的全栈技术底座。",
-    "description": "The generated-index page description for category Development Framework in sidebar referenceSidebar"
   },
   "sidebar.referenceSidebar.category.JitAi": {
     "message": "JitAi",
@@ -159,10 +147,6 @@
     "message": "JitORM",
     "description": "The label for category JitORM in sidebar referenceSidebar"
   },
-  "sidebar.referenceSidebar.category.JitORM.link.generated-index.description": {
-    "message": "对象关系映射框架，提供数据库抽象层、数据模型定义、查询构建器和数据类型系统。",
-    "description": "The generated-index page description for category JitORM in sidebar referenceSidebar"
-  },
   "sidebar.referenceSidebar.category.JitPay": {
     "message": "JitPay",
     "description": "The label for category JitPay in sidebar referenceSidebar"
@@ -191,10 +175,6 @@
     "message": "缓存",
     "description": "The label for category Cache in sidebar referenceSidebar"
   },
-  "sidebar.referenceSidebar.category.Cache.link.generated-index.title": {
-    "message": "缓存",
-    "description": "The generated-index page title for category Cache in sidebar referenceSidebar"
-  },
   "sidebar.referenceSidebar.category.Cache.link.generated-index.description": {
     "message": "缓存管理和数据缓存API，用于提高应用性能和减少数据库负载。",
     "description": "The generated-index page description for category Cache in sidebar referenceSidebar"
@@ -210,10 +190,6 @@
   "sidebar.referenceSidebar.category.Storage": {
     "message": "存储",
     "description": "The label for category Storage in sidebar referenceSidebar"
-  },
-  "sidebar.referenceSidebar.category.Storage.link.generated-index.title": {
-    "message": "存储",
-    "description": "The generated-index page title for category Storage in sidebar referenceSidebar"
   },
   "sidebar.referenceSidebar.category.Storage.link.generated-index.description": {
     "message": "文件和对象存储管理API，用于处理上传、下载和存储操作。",
@@ -239,10 +215,6 @@
     "message": "门户",
     "description": "The label for category Portals in sidebar referenceSidebar"
   },
-  "sidebar.referenceSidebar.category.Portals.link.generated-index.title": {
-    "message": "门户",
-    "description": "The generated-index page title for category Portals in sidebar referenceSidebar"
-  },
   "sidebar.referenceSidebar.category.Portals.link.generated-index.description": {
     "message": "门户管理API，用于创建和管理应用门户、导航结构和门户配置。",
     "description": "The generated-index page description for category Portals in sidebar referenceSidebar"
@@ -251,10 +223,6 @@
     "message": "页面",
     "description": "The label for category Pages in sidebar referenceSidebar"
   },
-  "sidebar.referenceSidebar.category.Pages.link.generated-index.title": {
-    "message": "页面",
-    "description": "The generated-index page title for category Pages in sidebar referenceSidebar"
-  },
   "sidebar.referenceSidebar.category.Pages.link.generated-index.description": {
     "message": "页面管理API，用于创建、配置和管理应用页面以及页面生命周期操作。",
     "description": "The generated-index page description for category Pages in sidebar referenceSidebar"
@@ -262,10 +230,6 @@
   "sidebar.referenceSidebar.category.Components": {
     "message": "组件",
     "description": "The label for category Components in sidebar referenceSidebar"
-  },
-  "sidebar.referenceSidebar.category.Components.link.generated-index.title": {
-    "message": "组件",
-    "description": "The generated-index page title for category Components in sidebar referenceSidebar"
   },
   "sidebar.referenceSidebar.category.Components.link.generated-index.description": {
     "message": "UI组件管理API，用于创建、配置和管理可重用的UI组件，覆盖不同类别的组件功能。",
@@ -323,10 +287,6 @@
     "message": "运行平台",
     "description": "The label for category Runtime Platform in sidebar referenceSidebar"
   },
-  "sidebar.referenceSidebar.category.Runtime Platform.link.generated-index.description": {
-    "message": "向开发者提供系统API，用于应用开发。",
-    "description": "The generated-index page description for category Runtime Platform in sidebar referenceSidebar"
-  },
   "sidebar.referenceSidebar.category.Backend API": {
     "message": "后端API",
     "description": "The label for category Backend API in sidebar referenceSidebar"
@@ -375,14 +335,6 @@
     "message": "前端平台API，用于客户端操作和用户界面交互。",
     "description": "The generated-index page description for category Frontend API in sidebar referenceSidebar"
   },
-  "sidebar.referenceSidebar.category.Development Tools": {
-    "message": "开发工具",
-    "description": "The label for category Development Tools in sidebar referenceSidebar"
-  },
-  "sidebar.referenceSidebar.category.Development Tools.link.generated-index.description": {
-    "message": "IDEApp主界面框架、IDEApp的API、Type Editor扩展API/规范。",
-    "description": "The generated-index page description for category Development Tools in sidebar referenceSidebar"
-  },
   "sidebar.devguideSidebar.category.AI Large Language Model": {
     "message": "AI大模型",
     "description": "The label for category AI Large Language Model in sidebar devguideSidebar"
@@ -407,13 +359,13 @@
     "message": "可视化智能工作流引擎。通过拖拽节点编排业务流程，结合AI决策与人机交互，实现客服、审批、数据处理等场景的智能化自动化。",
     "description": "The generated-index page description for category AI Assistant in sidebar devguideSidebar"
   },
-  "sidebar.devguideSidebar.category.Using AI in Portals and Pages": {
-    "message": "在门户和页面中使用AI",
-    "description": "The label for category Using AI in Portals and Pages in sidebar devguideSidebar"
+  "sidebar.devguideSidebar.category.Using AI Elements in Portals and Pages": {
+    "message": "在门户和页面中使用AI元素",
+    "description": "The label for category Using AI Elements in Portals and Pages in sidebar devguideSidebar"
   },
-  "sidebar.devguideSidebar.category.Using AI in Portals and Pages.link.generated-index.description": {
+  "sidebar.devguideSidebar.category.Using AI Elements in Portals and Pages.link.generated-index.description": {
     "message": "学习如何在门户和页面中使用AI元素，包括AI助理、AI智能体和其他AI组件，以提升用户体验。",
-    "description": "The generated-index page description for category Using AI in Portals and Pages in sidebar devguideSidebar"
+    "description": "The generated-index page description for category Using AI Elements in Portals and Pages in sidebar devguideSidebar"
   },
   "sidebar.devguideSidebar.category.Calling Business Elements in Pages": {
     "message": "在页面中调用业务元素",
@@ -486,5 +438,13 @@
   "sidebar.devguideSidebar.category.Frontend Portals and Pages.link.generated-index.description": {
     "message": "掌握JitAi门户和页面开发的基本原理，包括门户设计和页面开发等核心概念。",
     "description": "The generated-index page description for category Frontend Portals and Pages in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Business Data Modeling": {
+    "message": "业务数据建模",
+    "description": "The label for category Business Data Modeling in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Business Data Modeling.link.generated-index.description": {
+    "message": "学习如何在JitAi中进行业务数据建模，包括数据库连接、数据表设计、扩展表和聚合表等。",
+    "description": "The generated-index page description for category Business Data Modeling in sidebar devguideSidebar"
   }
 }

@@ -14,7 +14,7 @@
   <g id="system-model">
     <rect x="225" y="30" width="150" height="50" rx="25" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2"/>
     <text x="300" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#6a1b9a">
-      系统模型
+      System Model
     </text>
   </g>
   
@@ -25,7 +25,7 @@
   <g id="system">
     <rect x="225" y="130" width="150" height="50" rx="25" fill="#e8f5e8" stroke="#4caf50" stroke-width="2"/>
     <text x="300" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2e7d32">
-      系统
+      System
     </text>
   </g>
   
@@ -38,10 +38,10 @@
   <g id="structure">
     <rect x="50" y="240" width="150" height="60" rx="15" fill="#e1f5fe" stroke="#03a9f4" stroke-width="2"/>
     <text x="125" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0277bd">
-      结构
+      Structure
     </text>
     <text x="125" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0277bd">
-      编排表达
+      Orchestration Expression
     </text>
   </g>
   
@@ -49,10 +49,10 @@
   <g id="process">
     <rect x="400" y="240" width="150" height="60" rx="15" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
     <text x="475" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ef6c00">
-      过程
+      Process
     </text>
     <text x="475" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#ef6c00">
-      编程表达
+      Programming Expression
     </text>
   </g>
   
@@ -66,15 +66,15 @@
   <g id="declarative">
     <rect x="50" y="330" width="150" height="15" rx="7" fill="#b3e5fc" stroke="#0288d1" stroke-width="1"/>
     <text x="125" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#01579b">
-      声明式 - What要什么
+      Declarative - What
     </text>
   </g>
-  
+
   <!-- 命令式 -->
   <g id="imperative">
     <rect x="400" y="330" width="150" height="15" rx="7" fill="#ffe0b2" stroke="#f57c00" stroke-width="1"/>
     <text x="475" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#e65100">
-      命令式 - How如何做
+      Imperative - How
     </text>
   </g>
 </svg> 

@@ -6,7 +6,7 @@ slug: external-api
 # 创建通用的外部API元素
 外部 API 集成是用于调用第三方 HTTP 接口的元素，基于 requests 库实现 RESTful API 的统一调用管理。它负责 HTTP 请求封装、参数处理和响应解析，支持 GET、POST、PUT、DELETE 等标准 HTTP 方法，提供请求前后处理和回调机制。
 
-## 外部API创建
+## 外部API创建 {#creating-external-apis}
 ![外部API创建](./img/1/api_2025-08-26_19-18-25.png)
 
 在左侧元素树上点击`+`会打开弹窗，将鼠标移动到“更多”中，会看到“外部 API”。点击“外部 API”里面的“常规 API”，就会打开常规 API 的新建弹窗页面。
@@ -87,7 +87,7 @@ slug: external-api
 
 ![接口详情](./img/1/api_2025-08-27_14-57-20.png)
 
-#### 请求参数
+#### 请求参数 {#request-parameters}
 每个 API 接口都可以配置 Params 参数、Body 参数以及 Header 参数。
 
 ![参数配置](./img/1/api_2025-08-27_15-01-30.png)
@@ -103,21 +103,21 @@ Header 参数会放在请求头中，在请求的时候，会将公共配置中�
 
 :::
 
-#### 返回值类型
+#### 返回值类型 {#return-value-type}
 如果当前接口有返回值，那么就需要配置对应的返回值类型。通常接口返回 JSON 格式的数据，可以使用“字典”作为返回值类型，并配置字段的映射关系。
 
 ![返回值类型](./img/1/api_2025-08-27_17-13-42.gif)
 
 注意：这里的返回值类型都是 JitAi 里面定义的[数据类型](../../reference/framework/JitORM/data-types)
 
-#### 回调函数
+#### 回调函数 {#callback-function}
 JitAi 通过回调函数配置服务元素中的函数，对最终结果进行业务处理。
 
 ![回调函数](./img/1/api_2025-08-27_15-13-23.png)
 
 在设置回调函数之前，需要到标准服务中创建对应的函数。
 
-### API接口的测试及调用
+### API接口的测试及调用 {#api-interface-testing-and-calling}
 #### API接口测试 {#api-interface-testing}
 创建好一个接口后，可以测试接口是否可用。
 
@@ -130,7 +130,7 @@ JitAi 通过回调函数配置服务元素中的函数，对最终结果进行�
 使用测试功能得到的数据是完整的原始数据，没有经过数据处理。
 :::
 
-#### API调用
+#### API调用 {#api-calling}
 在常规页面或者服务中，配置相关函数，即可进行 API 接口的调用。
 
 ![API 调用](./img/1/api_2025-08-27_15-59-11.gif)

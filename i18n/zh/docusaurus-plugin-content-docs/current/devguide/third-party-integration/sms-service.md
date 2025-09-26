@@ -26,9 +26,6 @@ JitAi 接入短信服务，开发者在 IDE 门户配置短信服务参数，提
 accessKey、accessSecret 和 verifySign 签名都是创建阿里云短信服务时必须填写的参数。
 
 这三个参数都是由阿里云提供，需要用户到[阿里云短信服务平台](https://help.aliyun.com/zh/sms/)进行申请。
-
-## 在审批流程中使用短信服务 {#using-sms-service-in-approval-workflow}
-短信服务可以集成到审批流程中，实现审批通知和提醒功能。
 :::
 
 ![阿里云短信配置](./img/3/sms_2025-08-28_10-20-49.png)

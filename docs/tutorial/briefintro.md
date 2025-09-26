@@ -6,7 +6,7 @@ slug: briefintro
 
 Throughout history, breakthrough foundational technologies have consistently revolutionized their supporting applied engineering systems. Legacy engineering technologies are reconstructed, while corresponding products and industrial structures undergo fundamental transformation.
 
-## Background of Technological Transformation in the AI Era
+## Background of technological transformation in the AI era
 
 In power technology, each advancement—from human and animal power to steam engines, internal combustion engines, and eventually electrical power—has triggered profound transformations in application tools. Sickles and bows evolved into horse-drawn carriages and plows, which developed into trains and automobiles, culminating in today's electric vehicles.
 
@@ -22,7 +22,7 @@ During technological transitions, new engineering solutions emerge to address th
 
 In AI technology applications, enterprise AI application system development under old technologies faces the following problems and challenges:
 
-### Compatibility Issues Between AI and Traditional Systems
+### Compatibility issues between AI and traditional systems
 
 AI-driven assistants and autonomous decision-making applications must treat system data as knowledge and functional modules as tools, requiring real-time knowledge acquisition and understanding, plus the ability to identify, invoke, and orchestrate system modules dynamically.
 
@@ -30,7 +30,7 @@ However, traditional software systems are designed around compiled, code-based a
 
 Under these architectural constraints, AI cannot understand module functionality or usage patterns, nor can it dynamically invoke individual modules. The entire system appears as a black box to AI agents, which cannot comprehend internal structures or control individual modules and capabilities. This ultimately creates "intelligence silos."
 
-### Excessive Costs of Customized Development
+### Excessive costs of customized development
 
 Enterprises are inherently complex, each with unique products, services, market positions, business models, organizational structures, and histories. Like snowflakes or fingerprints, no two enterprises are identical. This differentiation leads to huge variations in enterprise business process management and transaction management application systems.
 
@@ -40,7 +40,7 @@ Furthermore, AI application execution systems are tightly coupled with specific 
 
 Traditional technology systems suffer from low development efficiency, high barriers to entry, extensive engineering requirements, and quality assurance challenges—creating the primary bottleneck in enterprise application development.
 
-### Excessive Costs of Tool Integration and Reuse
+### Excessive costs of tool integration and reuse
 
 AI applications require tool integration capabilities that far exceed traditional requirements, yet legacy systems lack the simple, flexible, unified architectures and specifications needed for seamless technology integration and system expansion.
 
@@ -48,7 +48,7 @@ Modern enterprise systems encompass increasingly diverse technologies—database
 
 The software industry urgently needs simpler, standardized, yet flexible and infinitely extensible system architectures to reduce the costs of tool reuse, technology integration, and application deployment.
 
-## Fundamental Challenges of Software Engineering
+## Fundamental challenges of software engineering
 
 These challenges of low development efficiency and high integration costs are not unique to the AI era. Improving development efficiency and reuse capabilities has been a continuous pursuit in software engineering. However, over the past thirty years, no fundamental breakthroughs have emerged in basic reuse mechanisms, architectural models, and development approaches.
 
@@ -76,7 +76,7 @@ Using JitAi, application developers can efficiently build natively AI-integrated
 
 Related Reading: [AI-Native Enterprise Application Development Paradigm](./ai-native-enterprise-app-dev-paradigm)
 
-### Development Tools
+### Development tools
 
 JitAi visual development tools (Jit IDEApp) provide visual management and development of JitAi application elements, and are themselves independent JitAi applications.
 
@@ -88,7 +88,7 @@ JitAi IDEApp operates independently from the application platform, business appl
 
 Related Reading: [Dual-Mode Visual Development Tool - Programming and Orchestration](./programming-orchestration-dual-mode)
 
-### Development Framework
+### Development framework
 
 The JitAi development framework is a universal system model providing deep business system coverage, high integration, high reusability, and infinite extensibility that maintains elegance and robustness as systems scale. This programming framework is specifically designed for AI and GUI development, offering simplicity, flexibility, and high integration that brings ultimate simplification to the business application layer while preserving complete extensibility and freedom.
 
@@ -98,15 +98,15 @@ The JitAi programming framework implements universal architecture through techni
 
 The framework supports application-level inheritance and extension, achieving zero-dependency, non-invasive reuse and extension that perfectly resolves conflicts between standardized products and personalized customization requirements. Framework-level capabilities are reused without loss—business applications inherit the JitAi programming framework and automatically obtain full technical capabilities without code modification. Element-level dynamic overriding enables arbitrary rewriting of technical implementation elements (components, interfaces, logic) within the framework at the business layer, naturally supporting hot swapping. Under the definition-based development paradigm, the framework layer pre-configures standard implementations of enterprise technical elements (authentication, transactions, logging, etc.) for out-of-the-box use, while the application layer only needs to declare business definition elements (domain models, process rules, UI interactions), reducing development volume by 70%.
 
-### Operations Tools
+### Operations tools
 
 JitAi operations tools (Jit AdminApp) are built-in JitAi applications within the JitAi application platform, used for managing environment configurations and applications on JitNode while supporting distributed cluster management.
 
-The operations tools are primarily responsible for developer organization, runtime environment, and application deployment management. For runtime environment management, they manage organizational cluster environments, create and delete clusters, and configure deployed applications, server nodes, traffic distribution weights, and related settings. They also provide node management functionality for remotely managing all JitAi application platform server nodes deployed within an organization. Additionally, they handle application management and developer organization management, supporting developer self-registration, organization joining, and member management within organizations.
+The operations tools are primarily responsible for developer team, runtime environment, and application deployment management. For runtime environment management, they manage organizational cluster environments, create and delete clusters, and configure deployed applications, server nodes, traffic distribution weights, and related settings. They also provide node management functionality for remotely managing all JitAi application platform server nodes deployed within an organization. Additionally, they handle application management and developer team management, supporting developer self-registration, organization joining, and member management within organizations.
 
 For deployment and updates, the platform supports automated deployment and update mechanisms. The server side achieves "automatic on-demand loading of the latest applications" similar to browser-side behavior, supporting automatic deployment and updates in private environments.
 
-### Application Runtime Platform
+### Application runtime platform
 
 The JitAi application platform (JitNode) is a locally deployed integrated application runtime environment that runs, supports, and manages applications, serving as an "operating system" for enterprise applications. The platform adopts a novel architectural model of "cross-platform operating system + cross-platform applications" through frontend and backend infrastructure platformization and runtime environment virtualization, providing applications with inherent distributed, cross-platform, cross-device, and cross-language characteristics.
 
@@ -114,13 +114,13 @@ The application platform uses a microkernel architecture, enabling infinite exte
 
 The application platform features built-in distributed cluster capabilities and, through virtualized runtime environments, abstracts applications from physical runtime environments. It supports application inheritance relationships, enabling direct reuse of parent application elements in child applications. Application compilation, packaging, publishing, deployment, and updates are fully automated.
 
-JitNode is available in three versions: Windows desktop, Mac desktop, and Docker (Linux) server versions. One-click JitNode runtime environment installation provides complete infrastructure, eliminating the technical complexity of multiple tool installations. JitNode features a GUI visual management interface for managing application creation and installation in local environments. Through the GUI management interface, you can also operate cloud-based application operations platforms to manage distributed clusters, developer organizations, and members.
+JitNode is available in three versions: Windows desktop, Mac desktop, and Docker (Linux) server versions. One-click JitNode runtime environment installation provides complete infrastructure, eliminating the technical complexity of multiple tool installations. JitNode features a GUI visual management interface for managing application creation and installation in local environments. Through the GUI management interface, you can also operate cloud-based application operations platforms to manage distributed clusters, developer teams, and members.
 
-## JitAi Features
+## JitAi features
 
 The JitAi technology system possesses numerous impressive innovative characteristics. Simply put, they can be summarized from two aspects:
 
-### Dynamic: Flexible and Dynamic
+### Dynamic: flexible and dynamic
 
 In traditional technology systems, application system modules lack "self-description" capabilities and have no "user manuals," making it difficult for AI to accurately discover and understand these modules, and impossible to dynamically select and utilize modules. Traditional tool libraries, programming frameworks, and business applications are predominantly "compiled" with "hard-coded" inter-module relationships, creating static and highly coupled dependencies. AI cannot dynamically load and invoke different modules on demand, while developers struggle to quickly orchestrate required tools for AI.
 
@@ -128,7 +128,7 @@ JitAi designed and established the JAAP protocol for standardized construction o
 
 This enables applications and modules to be dynamically perceived, invoked, and orchestrated by AI, transforming them into interpretive systems and modules that allow traditional application ecosystems to seamlessly integrate into AI technology systems for dynamic perception, utilization, and AI-driven operation. Furthermore, the self-description, self-loading, orchestrability, and high independence characteristics enable applications and modules to be intuitively and dynamically displayed, added, deleted, edited, and orchestrated graphically by JitAi development tools, delivering a visual, real-time orchestration development experience.
 
-### Agile: Lightweight and Fast
+### Agile: lightweight and fast
 
 Enterprise AI applications are more complex and challenging to plan than traditional enterprise management software, often requiring "iterative development during usage." Rapid development, feedback, and iteration become critical to system success.
 
@@ -140,7 +140,7 @@ The matrix-type meta-framework model, based on inheritance and type mechanisms, 
 
 The JitAi development framework, built on the matrix-type meta-framework model, is a universal, highly reusable, and open orchestration-based programming framework that encapsulates numerous application technology implementations, dramatically simplifying the business application layer to make it lightweight, simple, highly extensible, and orchestrable. Graphical orchestration and programming tools built on the JitAi development framework construct and orchestrate business applications through graphical interfaces, automatically generating business layer code while dramatically improving development efficiency and quality.
 
-## JitAi Architecture
+## JitAi architecture
 
 JitAi implements an open three-layer technical architecture, achieving full-stack integration from infrastructure to business applications.
 
@@ -154,7 +154,7 @@ Development tools and methods supporting graphical orchestration and programming
 
 Automated DevOps toolchains simplify the construction, publishing, deployment, and operations of AI applications, making them more lightweight.
 
-## Comparison with Traditional Development Technologies
+## Comparison with traditional development technologies
 
 Compared to traditional development technologies, JitAi offers more elegant and robust architectural design. Clear, advanced system models and architectures, combined with simple yet sophisticated specifications, enable application systems to maintain elegance and robustness as they scale from small to large.
 
@@ -164,7 +164,7 @@ In terms of extensibility, it provides greater flexibility and openness. Extensi
 
 In terms of operations, it offers greater simplicity and ease. Distributed, full-stack, autonomous microkernel application containers make system operations—deployment, updates, publishing, and horizontal scaling—simple and efficient.
 
-## Comparison with No-Code/Low-Code Platforms
+## Comparison with no-code/low-code platforms
 
 Compared to no-code/low-code platforms, JitAi offers significant advantages. It enables development of highly flexible custom pages, component interactions, and frontend-backend interactions, with support for partial full-code development. Developers can build reusable libraries and integrate third-party libraries.
 
@@ -172,7 +172,7 @@ JitAi's unique application inheritance technology enables creation of reusable a
 
 Performance-wise, JitAi directly generates native code without rule engine dependencies, eliminating rule engine constraints and performance overhead. It supports full-code development and debugging with traditional development tools (such as VSCode), code version management, and CI/CD, while providing autonomous distributed cluster deployment capabilities.
 
-## Development Efficiency Comparison and Analysis
+## Development efficiency comparison and analysis
 
 As illustrated below, different development technologies exhibit distinctly different efficiency trends as system scale and complexity increase:
 

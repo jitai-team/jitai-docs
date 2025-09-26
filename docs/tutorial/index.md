@@ -6,7 +6,7 @@ sidebar_position: 0
 
 Welcome to the JitAi Getting Started Tutorial! We provide progressive, practice-oriented step-by-step learning guides to help you quickly master JitAi application development and build powerful AI applications.
 
-## Learning Path
+## Learning path
 - [JitAi Introduction](tutorial/briefintro) - Overview of JitAi, its features, system architecture, and comparisons with traditional development technologies and no-code/low-code platforms
 - [Download and Installation](tutorial/download-installation) - JitAi package download and environment setup for Windows, Mac, and Docker deployments
 - [Case Study](tutorial/project) - Explore the business context of our case application (question creation, examination, grading) and understand system functions and data models
@@ -20,7 +20,7 @@ Welcome to the JitAi Getting Started Tutorial! We provide progressive, practice-
   - [Implement Permission Control with Application Roles](tutorial/dev_app/role) - User role configuration and permission management
 - [Publish Application](tutorial/publish_app) - Application publishing, environment configuration, production deployment, and maintenance
 
-## Learning Recommendations
+## Learning recommendations
 
 1. **Progressive Learning**: Follow the learning path sequentially—first set up the environment, then explore the project, and finally proceed with development
 2. **Hands-on Practice**: Each chapter includes practical exercises—learn by doing for best results

@@ -4,7 +4,7 @@ slug: create_app
 ---
 # Create Application
 
-## Creating Your First Application
+## Creating your first application
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
@@ -12,7 +12,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 For detailed information, see [Application Creation and Management](../devguide/creating-and-publishing-applications/creating-and-deploying-applications).
 
-## Accessing Your Application
+## Accessing your application
 
 <VideoPlayer relatePath="/docs/tutorial/visit_app.mp4" />
 

@@ -7,7 +7,7 @@ slug: project
 
 This case study demonstrates an educational assessment system where teachers create test papers, students take examinations, and teachers evaluate student responses.
 
-## Exploring the Project
+## Exploring the project
 
 After setting up your environment, you can deploy this application directly to explore its functionality.
 
@@ -21,21 +21,21 @@ After setting up your environment, you can deploy this application directly to e
 | Student A | kaoshenga | ks123456 | Student | Can take exams |
 | Student B | kaoshengb | ks123456 | Student | Can take exams |
 
-## Demo Overview
-### Teacher Portal
+## Demo overview
+### Teacher portal
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/project_teacher.mp4" />
 
-### Student Portal
+### Student portal
 
 <VideoPlayer relatePath="/docs/tutorial/project_student.mp4" />
 
-### Administrator Portal
+### Administrator portal
 
 <VideoPlayer relatePath="/docs/tutorial/project_admin.mp4" />
 
-## Data Model Overview
+## Data model overview
 * **Question Bank Table**: Stores comprehensive question information including content, type, difficulty level, and metadata
 * **Test Paper Tables**: Store test paper configurations and question associations through main and detail tables
 * **Answer Sheet Tables**: Store student responses and scoring information through main and detail tables

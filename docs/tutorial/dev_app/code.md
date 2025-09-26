@@ -5,13 +5,13 @@ slug: code
 ---
 # Implementing Answer Sheet Page with Full Code
 
-## Case Effect
+## Case effect
 
 <VideoPlayer relatePath="/docs/tutorial/code_effect.mp4" />
 
-## Implementation Process
+## Implementation process
 
-### Create Portal
+### Create portal
 
 The previous question bank, test creation, and grading functions were designed for teachers. We'll rename the "User Portal" to "Teacher Portal."
 

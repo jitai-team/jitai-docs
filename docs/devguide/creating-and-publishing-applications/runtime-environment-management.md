@@ -8,7 +8,7 @@ title: Runtime Environment Management
 ## What is Runtime Environment {#what-is-runtime-environment}
 Runtime environments are used to isolate the space for application deployment and execution, with runtime resource directories isolated between different runtime environments.
 
-Each developer organization can create multiple runtime environments. Each runtime environment can contain one or more JitNodes (except for the default runtime environment) and deploy multiple applications. Each node can simultaneously join multiple runtime environments.
+Each developer team can create multiple runtime environments. Each runtime environment can contain one or more JitNodes (except for the default runtime environment) and deploy multiple applications. Each node can simultaneously join multiple runtime environments.
 
 ## Node Local Default Runtime Environment {#node-local-default-runtime-environment}
 A local default runtime environment is automatically created when a node is activated. It is not visible in the runtime environment management interface and is used to run JitAi's built-in DevOps management platform on that node. When users access the node, they are automatically redirected to the local default runtime environment management page of that node, which is the Node Console.

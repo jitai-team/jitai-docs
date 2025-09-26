@@ -6,7 +6,7 @@ slug: ide_mode
 
 # Building Test Paper Management with Professional Mode
 
-## Professional Mode Introduction
+## Professional mode introduction
 
 Professional mode utilizes the "Developer Portal" interface.
 
@@ -40,16 +40,16 @@ Here's an overview of the most essential and fundamental elements:
 * **Service**: A collection of interfaces oriented toward specific business scenarios. When built-in CRUD interfaces of data models are insufficient, services extend additional interface capabilities. See [Creating Service Elements](../../devguide/business-logic-development/creating-service-elements) for details.
 * **Backend Event**: Triggered to facilitate data flow between multiple business models. For example, after creating a test paper, automatically generating answer sheets for each student. See [Event Handling](../../devguide/business-logic-development/event-handling) for details.
 
-## Case Effect
+## Case effect
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/ide_mode_effect.mp4" />
 
 
-## Implementation Process
+## Implementation process
 
-### Creating Data Models
+### Creating data models
 
 Begin by analyzing the business scenario, considering data structure requirements, and determining necessary data models. For example, "Test Paper Management" requires two data models: Test Paper Table and Test Paper Question Detail Table.
 
@@ -63,21 +63,21 @@ The specific implementation steps are:
 ![](../img/ide_mode_model_title.gif)
 
 
-### Creating Menus and Pages
+### Creating menus and pages
 
 Now we'll use a more flexible page type (Regular Page) to create the "Test Paper Management" page.
 
-#### Regular Page Introduction
+#### Regular page introduction
 
 Pages comprise components that allow flexible layout adjustments for complete interface design freedom. Components connected to data models include built-in data read/write capabilities, enabling local customization through detailed component configuration. Components can configure events and invoke functions from other components, achieving interactive linkage between components. See [Component-based Page Development](../../devguide/shell-and-page/component-based-page-development) for details.
 
 ![](../img/ide_mode_143959.png)
 
-#### Implementing Component Linkage
+#### Implementing component linkage
 
 <VideoPlayer relatePath="/docs/tutorial/ide_mode_page_design.mp4" />
 
-#### Implementing Calculation Logic within Forms
+#### Implementing calculation logic within forms
 
 <VideoPlayer relatePath="/docs/tutorial/ide_mode_page_form.mp4" />
 
@@ -85,13 +85,13 @@ You can also switch to source code mode for direct code development.
 
 <VideoPlayer relatePath="/docs/tutorial/ide_mode_code.mp4" />
 
-### Implementing Algorithm-based Question Generation through Service Functions
+### Implementing algorithm-based question generation through service functions
 
 This demonstrates the simplest implementation scenario. Source code mode similarly supports full-code implementation of more complex logic.
 
 <VideoPlayer relatePath="/docs/tutorial/ide_mode_func.mp4" />
 
-### Implementing Automatic Answer Sheet Creation through Backend Events
+### Implementing automatic answer sheet creation through backend events
 
 The event configuration is shown below:
 ![](../img/ide_mode_164525.png)

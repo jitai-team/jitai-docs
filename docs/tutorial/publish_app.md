@@ -10,7 +10,7 @@ JitAi supports multiple application distribution methods across desktop, server,
 * **Online Distribution**: The most convenient approach for publishing, deploying, and updating applications (detailed below)
 * **Offline Distribution**: Export and import source code between different environments
 
-## Publishing Your Application
+## Publishing your application
 
 Before publishing, configure environment-specific settings as environment variables. For example, the large model API key used in [implementing answer generation with AI LLM functions](./dev_app/ai_func) should be set as an environment variable to separate development and production configurations.
 
@@ -22,15 +22,15 @@ Once environment variables are configured, proceed with application publishing:
 
 <VideoPlayer relatePath="/docs/tutorial/publish_app_publish.mp4" />
 
-## Setting Up Production Environment
+## Setting up production environment
 
 Install the Docker version on your production server by following the [Download and Installation](./download-installation) guide.
 
-## Deploying Your Application
+## Deploying your application
 
 <VideoPlayer relatePath="/docs/tutorial/publish_app_produce.mp4" />
 
-## Updating Your Application
+## Updating your application
 
 After making code modifications in your development environment, republish the application. The production environment node console will display update notifications automatically.
 

@@ -6,14 +6,14 @@ slug: ai_func
 
 # Implementing Answer Generation with AI LLM Functions
 
-## Case Effect
+## Case effect
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/ai_func_effect.mp4" />
 
 
-## Implementation Process
+## Implementation process
 
 To implement AI functionality, you must first integrate with large language models. The LLM vendor element provides unified integration for AI large model vendors, abstracting API differences between different LLM providers. Developers need only configure API keys to enable calls.
 

@@ -6,13 +6,13 @@ slug: ai_ui
 
 # Implementing AI/UI Collaborative Grading with AI Agent
 
-## Case Effect
+## Case effect
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/ai_ui_effect.mp4" />
 
-## Implementation Process
+## Implementation process
 
 ### Prerequisites
 
@@ -21,7 +21,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 3. Create LLM vendor elements as described in [Implementing Answer Generation with AI LLM Functions](./ai_func).
 
 
-### Creating AI Agent
+### Creating AI agent
 
 An Agent (intelligent agent) possesses autonomous decision-making and task execution capabilities, automatically selecting appropriate tools to complete complex business processes based on user input and contextual information.
 

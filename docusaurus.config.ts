@@ -38,6 +38,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         content: 'E1854FDB4BA5E984',
       },
     },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'baidu-site-verification',
+        content: 'codeva-pmUJofMRgx',
+      },
+    },
   ],
 
   // GitHub pages deployment config.

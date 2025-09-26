@@ -121,7 +121,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 ![quotetion-agent](./img/quote-agent.png)
 
 - **知识库**：将**报价知识库**添加为该Agent的知识库，添加方式参考[在Agent中添加知识库](/docs/devguide/ai-agent/agent-knowledge-base)。
-![quotetion-agent-knowledge](./img/quote-agent-knowledge.png)
+![quotetion-agent-knowledge](./img/quote-agent-Knowledge.png)
 
 
 

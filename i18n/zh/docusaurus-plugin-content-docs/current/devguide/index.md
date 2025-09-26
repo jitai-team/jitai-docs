@@ -1364,7 +1364,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "指定可访问的门户及菜单", href: "devguide/user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus" },
     { text: "在开发者门户中管理应用角色成员", href: "devguide/user-and-permission/role-portal-menu-permissions#manage-application-role-members-in-developer-portal" },
     { text: "组件的按钮权限控制", href: "devguide/user-and-permission/role-portal-menu-permissions#component-button-permission-control" },
-      { text: "组件的数据字段读/写/统计权限控制", href: "devguide/user-and-permission/role-portal-menu-permissions#component-data-field-access-control" },
+    { text: "组件的数据字段读/写/统计权限控制", href: "devguide/user-and-permission/role-portal-menu-permissions#component-data-field-access-control" },
     { text: "多应用角色的分级管理", href: "devguide/user-and-permission/role-portal-menu-permissions#hierarchical-management-of-multiple-application-roles" },
     { text: "应用角色成员的管理", href: "devguide/user-and-permission/role-portal-menu-permissions#application-role-member-management" },
     { text: "成员的添加/删除", href: "devguide/user-and-permission/role-portal-menu-permissions#member-addition-and-removal" },
@@ -1689,19 +1689,24 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <IndexCard
   title="创建通用的外部API元素"
   href="devguide/third-party-integration/external-api"
-  description="第三方API服务集成，扩展应用功能和数据来源。"
+  description="无缝集成第三方HTTP接口，提供统一的RESTful API调用管理，支持标准HTTP方法和高级处理功能。"
 >
   <LinkGrid columns={2} links={[
-    { text: "外部API创建", href: "devguide/third-party-integration/external-api#api-interface-management" },
+    { text: "外部API创建", href: "devguide/third-party-integration/external-api#creating-external-apis" },
     { text: "公共配置", href: "devguide/third-party-integration/external-api#public-configuration" },
-    { text: "访问域名", href: "devguide/third-party-integration/external-api#public-configuration" },
+    { text: "访问域名", href: "devguide/third-party-integration/external-api#access-domain" },
     { text: "公共请求头", href: "devguide/third-party-integration/external-api#public-request-headers" },
     { text: "请求前置处理", href: "devguide/third-party-integration/external-api#request-preprocessing" },
     { text: "响应后置处理", href: "devguide/third-party-integration/external-api#response-postprocessing" },
     { text: "API接口管理", href: "devguide/third-party-integration/external-api#api-interface-management" },
     { text: "API接口分组", href: "devguide/third-party-integration/external-api#api-interface-grouping" },
     { text: "API接口", href: "devguide/third-party-integration/external-api#api-interface" },
-    { text: "API接口的测试及调用", href: "devguide/third-party-integration/external-api#api-interface-testing" }
+    { text: "请求参数", href: "devguide/third-party-integration/external-api#request-parameters" },
+    { text: "返回值类型", href: "devguide/third-party-integration/external-api#return-value-type" },
+    { text: "回调函数", href: "devguide/third-party-integration/external-api#callback-function" },
+    { text: "API接口的测试及调用", href: "devguide/third-party-integration/external-api#api-interface-testing-and-calling" },
+    { text: "API接口测试", href: "devguide/third-party-integration/external-api#api-interface-testing" },
+    { text: "API调用", href: "devguide/third-party-integration/external-api#api-calling" }
   ]} />
 </IndexCard>
 
@@ -1944,8 +1949,8 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="使用AI智能体、助理和高级提示词工程技术构建智能应用，实现增强用户体验和自动化工作流程。"
 >
   <LinkGrid links={[
-    { text: "AI客服", href: "devguide/advanced-guide/ai-customer-service" },
-    { text: "AI问题评分", href: "devguide/advanced-guide/ai-question-grading" },
+    { text: "AI智能客服", href: "devguide/advanced-guide/ai-customer-service" },
+    { text: "AI智能出题&阅卷", href: "devguide/advanced-guide/ai-question-grading" },
     { text: "Agent提示词编写技巧", href: "devguide/advanced-guide/agent-prompt-writing-techniques" }
   ]} />
 </IndexCard>

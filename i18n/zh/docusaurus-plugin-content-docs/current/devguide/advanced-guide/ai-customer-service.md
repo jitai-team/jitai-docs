@@ -12,21 +12,21 @@ slug: ai-customer-service
 3. 不支持使用SQLite数据库，请将默认数据库调整为MySQL数据库，关于数据库请参考[JitORM](../data-modeling/supported-database-vendors)。
 :::
 
-## 效果预览
+## 效果预览 {#preview}
 
 ![最终效果_页面内置AI助理](./img/jitairobot/final-result-embedded-ai-assistant.png)
 
 --- 
 
-## 让我们开始吧！
-### 准备工作
+## 让我们开始吧！ {#getting-started}
+### 准备工作 {#prerequisites}
 1. [下载桌面版安装包](../../tutorial/download-installation)（如已安装可跳过）
 2. 准备大模型服务 API Key，需开发者自行注册申请（本案例使用[阿里云百炼平台](https://bailian.console.aliyun.com/?tab=model#/api-key)）
 3. 准备一份文档，作为知识库内容来源（支持 Word、PDF、TXT、Markdown 格式）
 
 ---
 
-### 创建应用
+### 创建应用 {#creating-application}
 
 1. 启动桌面版 JitNode，完成激活流程
 2. 进入应用管理页面，命名为"TestJitAI"
@@ -36,7 +36,7 @@ slug: ai-customer-service
 
 ---
 
-### 创建AI大模型实例元素
+### 创建AI大模型实例元素 {#creating-ai-llm-instance}
 
 1. AI大模型->选择一家大模型厂商（本案例中使用阿里云百炼）
 2. 配置 API Key，配置备用 API Key（可选）
@@ -46,7 +46,7 @@ slug: ai-customer-service
 
 ---
 
-### 创建AI知识库实例元素
+### 创建AI知识库实例元素 {#creating-ai-knowledge-base-instance}
 1. 新建知识库实例元素
    
    ![新建AI知识库实例元素](./img/jitairobot/create-ai-knowledge-base-instance-element.png)
@@ -71,7 +71,7 @@ slug: ai-customer-service
 
 ---
 
-### 创建AIAgent实例元素
+### 创建AIAgent实例元素 {#creating-ai-agent-instance}
 
 1. 新建AIAgent实例元素，命名为`智能客服`
    
@@ -107,7 +107,7 @@ slug: ai-customer-service
 
 ---
 
-### 创建AI助理实例元素
+### 创建AI助理实例元素 {#creating-ai-assistant-instance}
 
 1. 新建AI助理实例元素，命名为`智能客服`
    
@@ -122,7 +122,7 @@ slug: ai-customer-service
 
 ---
 
-### 创建页面并启用AI助理
+### 创建页面并启用AI助理 {#creating-page-enabling-assistant}
 
 1. 新建一个`常规页面`实例元素
 
@@ -142,7 +142,7 @@ slug: ai-customer-service
 
 ---
 
-## 恭喜你！
+## 恭喜你！ {#congratulations}
 
 你已经学会了极态开发平台的基本使用方式，并开发了一个智能客服智能体。
 

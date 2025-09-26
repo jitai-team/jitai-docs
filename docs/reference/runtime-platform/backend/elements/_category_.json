@@ -1,5 +1,6 @@
 {
   "label": "Elements",
+  "key": "backend-elements",
   "position": 4,
   "link": {
     "type": "generated-index",

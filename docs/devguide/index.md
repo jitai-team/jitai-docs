@@ -1356,16 +1356,16 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
     { text: "Anonymous User", href: "devguide/user-and-permission/role-portal-menu-permissions#anonymous-user" },
     { text: "Developer", href: "devguide/user-and-permission/role-portal-menu-permissions#developer" },
     { text: "Administrator", href: "devguide/user-and-permission/role-portal-menu-permissions#administrator" },
-    { text: "Create Application Role", href: "devguide/user-and-permission/role-portal-menu-permissions#create-application-role" },
+    { text: "Creating Application Roles", href: "devguide/user-and-permission/role-portal-menu-permissions#create-application-role" },
     { text: "Application Role Permission Configuration", href: "devguide/user-and-permission/role-portal-menu-permissions#application-role-permission-configuration" },
-    { text: "Specify Accessible Portals and Menus", href: "devguide/user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus" },
-    { text: "Manage Application Role Members in Developer Portal", href: "devguide/user-and-permission/role-portal-menu-permissions#manage-application-role-members-in-developer-portal" },
+    { text: "Specifying Accessible Portals and Menus", href: "devguide/user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus" },
+    { text: "Managing Application Role Members in Developer Portal", href: "devguide/user-and-permission/role-portal-menu-permissions#manage-application-role-members-in-developer-portal" },
     { text: "Component Button Permission Control", href: "devguide/user-and-permission/role-portal-menu-permissions#component-button-permission-control" },
-    { text: "Component Data Field Access Control", href: "devguide/user-and-permission/role-portal-menu-permissions#component-data-field-access-control" },
+    { text: "Component Data Field Read/Write/Statistics Permission Control", href: "devguide/user-and-permission/role-portal-menu-permissions#component-data-field-access-control" },
     { text: "Hierarchical Management of Multiple Application Roles", href: "devguide/user-and-permission/role-portal-menu-permissions#hierarchical-management-of-multiple-application-roles" },
     { text: "Application Role Member Management", href: "devguide/user-and-permission/role-portal-menu-permissions#application-role-member-management" },
     { text: "Member Addition and Removal", href: "devguide/user-and-permission/role-portal-menu-permissions#member-addition-and-removal" },
-    { text: "Member Management Scope Settings in Org Structure", href: "devguide/user-and-permission/role-portal-menu-permissions#member-management-scope-settings-in-org-structure" }
+    { text: "Member Management Scope Settings in Organizational Structure", href: "devguide/user-and-permission/role-portal-menu-permissions#member-management-scope-settings-in-org-structure" }
   ]} />
 </IndexCard>
 
@@ -1686,31 +1686,36 @@ Connect your application to the broader world. Easily integrate third-party APIs
 <IndexCard
   title="Creating Universal External API Elements"
   href="devguide/third-party-integration/external-api"
-  description="Third-party API service integration, expanding application functionality and data sources."
+  description="Seamlessly integrate third-party HTTP interfaces with unified RESTful API call management, supporting standard HTTP methods and advanced processing capabilities."
 >
   <LinkGrid columns={2} links={[
-    { text: "External API Creation", href: "devguide/third-party-integration/external-api#api-interface-management" },
+    { text: "Creating External APIs", href: "devguide/third-party-integration/external-api#creating-external-apis" },
     { text: "Public Configuration", href: "devguide/third-party-integration/external-api#public-configuration" },
-    { text: "Access Domain", href: "devguide/third-party-integration/external-api#public-configuration" },
+    { text: "Access Domain", href: "devguide/third-party-integration/external-api#access-domain" },
     { text: "Public Request Headers", href: "devguide/third-party-integration/external-api#public-request-headers" },
     { text: "Request Preprocessing", href: "devguide/third-party-integration/external-api#request-preprocessing" },
     { text: "Response Postprocessing", href: "devguide/third-party-integration/external-api#response-postprocessing" },
     { text: "API Interface Management", href: "devguide/third-party-integration/external-api#api-interface-management" },
     { text: "API Interface Grouping", href: "devguide/third-party-integration/external-api#api-interface-grouping" },
     { text: "API Interface", href: "devguide/third-party-integration/external-api#api-interface" },
-    { text: "API Interface Testing and Calling", href: "devguide/third-party-integration/external-api#api-interface-testing" }
+    { text: "Request Parameters", href: "devguide/third-party-integration/external-api#request-parameters" },
+    { text: "Return Value Type", href: "devguide/third-party-integration/external-api#return-value-type" },
+    { text: "Callback Function", href: "devguide/third-party-integration/external-api#callback-function" },
+    { text: "API Interface Testing and Calling", href: "devguide/third-party-integration/external-api#api-interface-testing-and-calling" },
+    { text: "API Interface Testing", href: "devguide/third-party-integration/external-api#api-interface-testing" },
+    { text: "API Calling", href: "devguide/third-party-integration/external-api#api-calling" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="Built-in Payment Service"
+  title="Built-in Payment Services"
   href="devguide/third-party-integration/payment-service"
   description="Integrate mainstream payment platforms to implement online payment and transaction functions."
 >
   <LinkGrid links={[
-    { text: "WeChat Payment Service Configuration", href: "devguide/third-party-integration/payment-service#wechat-payment-service-configuration" },
-    { text: "Alipay Payment Service Configuration", href: "devguide/third-party-integration/payment-service#alipay-payment-service-configuration" },
-    { text: "Payment Service Usage", href: "devguide/third-party-integration/payment-service#payment-service-usage" }
+    { text: "Configuring WeChat Payment Service", href: "devguide/third-party-integration/payment-service#wechat-payment-service-configuration" },
+    { text: "Configuring Alipay Payment Service", href: "devguide/third-party-integration/payment-service#alipay-payment-service-configuration" },
+    { text: "Using Payment Services", href: "devguide/third-party-integration/payment-service#payment-service-usage" }
   ]} />
 </IndexCard>
 
@@ -1721,9 +1726,9 @@ Connect your application to the broader world. Easily integrate third-party APIs
 >
   <LinkGrid links={[
     { text: "Alibaba Cloud SMS", href: "devguide/third-party-integration/sms-service#aliyun-sms" },
-    { text: "Alibaba Cloud SMS Service Creation", href: "devguide/third-party-integration/sms-service#aliyun-sms-service-creation" },
-    { text: "Use SMS Service in Mobile Login", href: "devguide/third-party-integration/sms-service#use-sms-service-in-mobile-login" },
-    { text: "Use SMS Service in Approval Process", href: "devguide/third-party-integration/sms-service#use-sms-service-in-approval-workflow" },
+    { text: "Creating Alibaba Cloud SMS Service", href: "devguide/third-party-integration/sms-service#aliyun-sms-service-creation" },
+    { text: "Using SMS Service in Mobile Login", href: "devguide/third-party-integration/sms-service#use-sms-service-in-mobile-login" },
+    { text: "Using SMS Service in Approval Workflows", href: "devguide/third-party-integration/sms-service#use-sms-service-in-approval-workflow" },
     { text: "SMS Notification Function", href: "devguide/third-party-integration/sms-service#sms-notification-function" }
   ]} />
 </IndexCard>

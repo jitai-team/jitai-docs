@@ -1,48 +1,49 @@
 ---
 sidebar_position: 2
 slug: payment-service
+title: Built-in Payment Services
 ---
 
-# 内置的支付服务
-支付服务是 JitAi 基于微信支付和支付宝支付服务开发的支付服务模块，负责支付订单创建、支付链接获取、订单状态查询、支付确认和回调处理等功能。它提供了标准化的支付业务接口，封装了与第三方支付平台的复杂交互逻辑。
+# Built-in Payment Services
+The payment service is a payment processing module developed by JitAi that integrates WeChat Pay and Alipay services. It handles payment order creation, payment link generation, order status queries, payment confirmation, and callback processing. The service provides standardized payment APIs that encapsulate the complex integration logic required for third-party payment platforms.
 
-## 微信支付服务配置 {#wechat-payment-service-configuration}
-微信支付是集成微信支付官方 API 的支付处理元素，基于微信支付 V2API 实现扫码支付、H5 支付、小程序支付等多种支付方式。它适用于微信小程序、公众号、APP 等微信生态应用场景，通过标准化 API 简化支付集成复杂度。
+## Configuring WeChat Payment Service {#wechat-payment-service-configuration}
+WeChat Payment is a payment processing element that integrates the official WeChat Pay API, supporting multiple payment methods including QR code payments, H5 payments, and mini-program payments through the WeChat Pay V2 API. It is designed for WeChat ecosystem applications such as mini-programs, official accounts, and mobile apps, simplifying payment integration through standardized APIs.
 
-![微信支付服务创建](./img/2/pay_2025-08-28_14-31-11.png)
+![Creating WeChat Payment Service](./img/2/pay_2025-08-28_14-31-11.png "Creating WeChat Payment Service")
 
-在左侧元素树上点击`+`会打开弹窗，将鼠标移动到“更多”中，会看到“支付服务”。点击“支付服务”里面的“微信支付”，即可创建一个微信支付元素。
+Click the `+` button in the left element tree to open a dialog. Hover over "More" to reveal "Payment Services". Click "WeChat Pay" under "Payment Services" to create a WeChat payment element.
 
-![微信支付服务配置](./img/2/pay_2025-08-28_14-39-33.png)
+![Configuring WeChat Payment Service](./img/2/pay_2025-08-28_14-39-33.png "Configuring WeChat Payment Service")
 
-:::warning 注意
+:::warning Note
 
-一个完整的微信支付服务必须填写 appId、mchId 和 apiKey。
+A complete WeChat payment service requires appId, mchId, and apiKey.
 
-appId、mchId 和 apiKey 都是微信支付平台提供的参数，需要用户到[微信支付平台](https://pay.weixin.qq.com)申请。
-
-:::
-
-## 支付宝支付服务配置 {#alipay-payment-service-configuration}
-支付宝支付是基于支付宝官方 API 实现多种支付方式的集成。它负责支付链接生成、订单状态查询和回调通知处理，支持扫码支付、手机网站支付等方式，适用于电商、O2O、生活服务等多种商业应用场景。
-
-![支付宝支付服务创建](./img/2/pay_2025-08-28_16-11-09.png)
-
-在左侧元素树上点击`+`会打开弹窗，将鼠标移动到“更多”中，会看到“支付服务”。点击“支付服务”里面的“支付宝支付”，即可创建一个支付宝支付元素。
-
-![支付宝支付服务配置](./img/2/pay_2025-08-28_16-13-46.png)
-
-:::warning 注意
-
-一个完整的支付宝支付服务必须填写 appId、 privateKey 和 publicKey。
-
-appId、 privateKey 和 publicKey 都是支付宝平台提供的参数，需要用户到[支付宝开放平台](https://open.alipay.com/)申请。
+These parameters (appId, mchId, and apiKey) are provided by WeChat Pay and must be obtained by applying at the [WeChat Pay Platform](https://pay.weixin.qq.com).
 
 :::
 
-## 支付服务使用 {#payment-service-usage}
-创建好支付服务后，需要配合支付组件使用，具体使用方法请参考[支付组件使用](../using-functional-components-in-pages/payment-components)。
+## Configuring Alipay Payment Service {#alipay-payment-service-configuration}
+Alipay Payment is an integration that implements multiple payment methods using Alipay's official API. It manages payment link generation, order status queries, and callback notification processing, supporting QR code payments, mobile website payments, and other payment methods. It is suitable for diverse commercial scenarios including e-commerce, O2O, and lifestyle services.
 
-![支付组件使用](./img/2/pay_2025-08-28_16-34-49.png)
+![Creating Alipay Payment Service](./img/2/pay_2025-08-28_16-11-09.png "Creating Alipay Payment Service")
 
-在创建支付组件后，选择对应的支付服务，即可完成支付服务配置。
+Click the `+` button in the left element tree to open a dialog. Hover over "More" to reveal "Payment Services". Click "Alipay" under "Payment Services" to create an Alipay payment element.
+
+![Configuring Alipay Payment Service](./img/2/pay_2025-08-28_16-13-46.png "Configuring Alipay Payment Service")
+
+:::warning Note
+
+A complete Alipay payment service requires appId, privateKey, and publicKey.
+
+These parameters (appId, privateKey, and publicKey) are provided by Alipay and must be obtained by applying at the [Alipay Open Platform](https://open.alipay.com/).
+
+:::
+
+## Using Payment Services {#payment-service-usage}
+Once payment services are created, they must be used together with payment components. For detailed usage instructions, refer to [Using Payment Components](../using-functional-components-in-pages/payment-components).
+
+![Using Payment Components](./img/2/pay_2025-08-28_16-34-49.png "Using Payment Components")
+
+After creating a payment component, select the appropriate payment service to complete the configuration.

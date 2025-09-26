@@ -271,7 +271,7 @@ AIAgent根据e.json中的`outputArgs`配置自动生成JSONSchema，指导大语
 ### 工具编排配置
 **重要原则：任何在e.json中声明了functionList的实例元素都可以作为AIAgent的工具被调用。**
 
-这意味着您可以将以下类型的实例元素配置为AIAgent的工具：
+这意味着你可以将以下类型的实例元素配置为AIAgent的工具：
 - **模型实例元素（models）**：具有内置数据操作函数（如query、save等）
 - **服务实例元素（services）**：自定义业务逻辑函数
 - **页面实例元素（pages）**：前端交互功能

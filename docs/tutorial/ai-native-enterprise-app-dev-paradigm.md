@@ -3,119 +3,122 @@ sidebar_position: 9
 slug: ai-native-enterprise-app-dev-paradigm
 ---
 # AI-Native Enterprise Application Development Paradigm
-在汇编语言时代，开发者必须深度理解硬件细节，直接操作寄存器和内存地址，开发范式是"人适应机器的思维"。在高级语言时代，从FORTRAN到C语言，开发范式转向"让机器理解人的逻辑"，开发者可以用更接近人类思维的方式表达算法。在面向对象时代，Java、C++等语言引入了面向对象范式，开发方式从"过程导向"转为"对象导向"，软件架构从函数集合变为对象协作。在Web应用时代，从桌面软件到Web应用，开发范式从"单机程序"转为"分布式系统"，诞生了MVC、微服务等架构模式。
 
-每一次范式转变都带来了效率的指数级提升，但同时也要求开发者学习和适应新的思维方式。如今，我们身处开发范式的又一次重大变革中——**AI应用开发范式**。
+In the assembly language era, developers needed deep hardware knowledge, directly manipulating registers and memory addresses—a paradigm of "humans adapting to machine logic." In the high-level language era, spanning from FORTRAN to C, the paradigm shifted toward "enabling machines to interpret human logic," allowing developers to express algorithms more intuitively. In the object-oriented era, languages like Java and C++ introduced object-oriented paradigms, transforming development from "process-oriented" to "object-oriented," and software architecture evolved from collections of functions to object collaboration. In the Web application era, the shift from desktop software to Web applications changed the development paradigm from "standalone programs" to "distributed systems," giving birth to architectural patterns like MVC and microservices.
 
-## AI应用开发范式
-无论采用LangGraph、CrewAI还是其它任何开发框架构建AI应用，都无法逃离一个本质：**AI+人协同完成目标**。
+Each paradigm shift has brought exponential improvements in efficiency, while simultaneously requiring developers to learn and adapt to new ways of thinking. Today, we are in the midst of another major transformation in development paradigms—**AI application development paradigm**.
 
-### 人机交互到人智协同
-![人机交互到人智协同](./img/human-computer-to-human-ai-collaboration.svg)
+## AI Application Development Paradigm
 
-与传统应用相比，AI应用中引入AI助理，系统交互模式从人机交互进化为人智协同。
+Whether using LangGraph, CrewAI, or other development frameworks to build AI applications, all share one fundamental principle: **AI-human collaboration to achieve goals**.
 
-### 硬编码驱动到AI决策驱动
-![硬编码驱动到AI决策驱动](./img/hard-coding-to-ai-decision-driven.svg)
+### From Human-Computer Interaction to Human-AI Collaboration
+![From Human-Computer Interaction to Human-AI Collaboration](./img/human-computer-to-human-ai-collaboration.svg)
 
-在人机交互模式下，人类通过点击按钮、选择菜单等操作，触发预设的程序逻辑，系统被动响应完成用户请求处理。
+Unlike traditional applications, AI applications incorporate AI assistants, transforming the interaction model from human-computer interaction to human-AI collaboration.
 
-在人智协同模式下，人类还可以和AI助理对话，由AI助理识别意图并完成对应业务逻辑的执行。但是，这并不意味着传统人机交互要被完全摒弃——在一些不需要智能决策的简单场景中，人的操作往往更快更直接，这正是人智协同的体现。
+### From Hard-coded Driven to AI Decision-driven
+![From Hard-coded Driven to AI Decision-driven](./img/hard-coding-to-ai-decision-driven.svg)
 
-开发者在构建系统时，不再仅仅是开发一套操作界面和预设的固定逻辑，而是一个由AI助理增强的、能够覆盖前后端全栈的、在业务操作的各个环节中理解需求、智能决策、主动执行的助理应用。
+In the human-computer interaction model, users trigger predefined program logic through actions such as clicking buttons and selecting menus, while the system passively responds by processing these requests.
 
-### AI驱动的全栈工具调用流程
-![AI驱动的全栈工具调用流程](./img/ai-centered-system-interaction-flow.svg)
+In the human-AI collaboration model, humans can also converse with AI assistants, which identify intent and execute corresponding business logic. However, this doesn't mean traditional human-computer interaction should be entirely replaced—for simple scenarios that don't require intelligent decision-making, direct user operations are often faster and more efficient, which exemplifies the balanced approach of human-AI collaboration.
 
-将AI视为整个系统的智能中枢，能够根据用户意图智能选择和动态组合前后端工具，实现全栈统一调用。**关键在于，AI调用的工具本质上就是传统应用中我们通过UI界面调用的功能模块**。用户既可以通过UI界面操作，也可以与AI对话，系统自动编排工具链路完成任务并提供反馈，真正实现从"人适应系统"到"系统理解人"的转变。
+When building systems, developers are no longer simply creating operational interfaces with predefined logic, but rather developing full-stack applications enhanced by AI assistants that understand requirements, make intelligent decisions, and proactively execute business operations.
 
-## 企业级AI应用特征
-消费级AI应用追求通用性和易用性，而企业级AI应用则需要深度的业务集成和精细化管控。我们需要从架构设计、功能定制、权限管控、部署模式到数据安全等多个维度，构建与消费级AI应用截然不同的应用开发技术体系。
+### AI-Driven Full-Stack Tool Invocation Flow
+![AI-Driven Full-Stack Tool Invocation Flow](./img/ai-centered-system-interaction-flow.svg)
 
-![消费级和企业级AI应用对比](./img/consumer-vs-enterprise.svg)
+By treating AI as the intelligent hub of the entire system, it can intelligently select and dynamically combine frontend and backend tools based on user intent, achieving unified full-stack invocation. **Crucially, the tools invoked by AI are essentially the same functional modules that users access through UI interfaces in traditional applications**. Users can operate through UI interfaces or converse with AI, with the system automatically orchestrating tool chains to complete tasks and provide feedback, genuinely enabling the shift from "humans adapting to systems" to "systems adapting to humans."
 
-为了让AI应用能够高效处理企业级的数据和任务，AI应用要与传统软件系统模块深度集成，这种集成体现在"工具"层面，工具即软件模块，应具备以下特征：
+## Enterprise AI Application Characteristics
 
-### 模块自描述能力
-软件模块必须能够向AI应用清晰描述自己的功能、参数和用法：
+Consumer-grade AI applications prioritize universality and ease of use, while enterprise-grade AI applications demand deep business integration and granular control. We need to build an application development technology system that is fundamentally different from consumer-grade AI applications across multiple dimensions including architectural design, functional customization, permission control, deployment modes, and data security.
 
-- **功能描述**：模块能够清晰表达自己的核心功能和业务价值
-- **数据处理能力**：清晰描述模块能够处理哪些类型的数据和数据结构
-- **任务执行范围**：明确说明模块能够完成哪些具体任务和业务场景
-- **参数规范**：自动生成输入输出参数的详细说明和约束条件
-- **调用示例**：提供标准化的调用接口和实际使用案例
+![Consumer vs Enterprise AI Applications](./img/consumer-vs-enterprise.svg)
 
-### 模块热插拔可替换
-AI应用对工具的使用是高度动态的，特别是在处理不同类型的数据和任务时，需要支持运行时的灵活调整：
+To enable AI applications to efficiently handle enterprise-level data and tasks, AI applications must deeply integrate with traditional software system modules. This integration occurs at the tool level, where tools are software modules that must possess the following characteristics:
 
-- **动态需求**：AI应用能力迭代过程中对工具的需求不断变化
-- **数据适配**：根据不同数据类型和格式，动态选择合适的处理工具
-- **任务匹配**：根据任务复杂度和类型，动态加载匹配的执行模块
-- **实时加载**：支持运行时动态加载新的工具模块
-- **无缝替换**：支持在不停机的情况下替换和升级工具
-- **组合编排**：支持多个工具模块的动态组合和编排
+### Module Self-Description Capability
+Software modules must clearly articulate their functionality, parameters, and usage to AI applications:
 
-### 全栈模块工具化
-突破传统后端服务调用的局限，实现前后端统一的工具调用能力，让AI应用能够完整处理数据和任务：
+- **Functional Description**: Modules can articulate their core functionality and business value
+- **Data Processing Capability**: Clearly describe what types of data and data structures the module can process
+- **Task Execution Scope**: Clearly specify what specific tasks and business scenarios the module can accomplish
+- **Parameter Specifications**: Automatically generate detailed descriptions and constraints for input and output parameters
+- **Invocation Examples**: Provide standardized invocation interfaces and practical use cases
 
-- **后端数据处理**：数据服务、业务逻辑、API接口等传统后端功能
-- **前端任务交互**：UI组件、页面元素、用户交互等前端功能
-- **全栈统一接口**：AI对前后端全栈元素的统一调用能力
-- **数据任务协同**：前后端工具协同处理复杂的数据和任务场景
-- **标准协议支持**：支持MCP（Model Context Protocol）等标准化工具协议
+### Module Hot-swappable and Replaceable
+AI applications use tools in a highly dynamic manner, especially when processing different types of data and tasks, requiring support for flexible runtime adjustments:
 
-**[JAAP（Jit AI Application Protocol）](../reference/runtime-platform/JAAP)** 从结构定义和过程驱动两个维度，定义了AI原生的企业级应用架构，满足AI应用开发范式。
+- **Dynamic Requirements**: Tool requirements continuously change during AI application capability iteration
+- **Data Adaptation**: Dynamically select appropriate processing tools based on different data types and formats
+- **Task Matching**: Dynamically load matching execution modules based on task complexity and type
+- **Real-time Loading**: Support runtime dynamic loading of new tool modules
+- **Seamless Replacement**: Support replacing and upgrading tools without downtime
+- **Combination Orchestration**: Support dynamic combination and orchestration of multiple tool modules
 
-## AI产品组件
-JitAi构建了四个核心AI产品组件，共同构成企业级AI应用开发的技术底座。
+### Comprehensive Module Tooling
+Transcending traditional backend service limitations to enable unified frontend and backend tool invocation, allowing AI applications to comprehensively manage data and tasks:
 
-### AI大模型
-企业级大模型服务网关，对接各个大模型服务厂商，提供统一的模型调用接口。
+- **Backend Data Processing**: Traditional backend functions such as data services, business logic, and API interfaces
+- **Frontend Task Interaction**: Frontend functions such as UI components, page elements, and user interactions
+- **Full-Stack Unified Interface**: AI's unified invocation capability for full-stack frontend and backend elements
+- **Data Task Collaboration**: Frontend and backend tools collaboratively handle complex data and task scenarios
+- **Standard Protocol Support**: Support for standardized tool protocols such as MCP (Model Context Protocol)
 
-**核心能力**：
-- 屏蔽不同大模型厂商的API差异
-- 提供统一的调用标准和错误处理机制
-- 支持业务层按需选择模型与参数
-- 负载均衡与故障转移
+**[JAAP (Jit AI Application Protocol)](../reference/runtime-platform/JAAP)** defines AI-native enterprise application architecture through structural definition and process-driven approaches, addressing the requirements of AI application development paradigms.
 
-> 📖 详细了解：[AI大模型](../reference/framework/JitAi/ai-large-models)
+## AI Product Components
+JitAi has developed four core AI product components that collectively form the technical foundation for enterprise-level AI application development.
 
-### AI知识库
-基于RAG技术的企业知识管理系统，支持多种数据源的智能检索和知识增强。
+### AI Large Language Models
+An enterprise-grade large model service gateway that interfaces with various large model service providers, providing a unified model invocation interface.
 
-**核心能力**：
-- **RAG技术支持**：检索增强生成，提升AI回答的准确性和专业性
-- **多格式兼容**：支持文档、数据库、API等多种知识源
-- **实时更新**：知识库内容动态同步，保证信息时效性
-- **语义检索**：基于向量数据库的智能语义匹配和检索
+**Core Capabilities**:
+- Shield API differences between different large model vendors
+- Provide unified invocation standards and error handling mechanisms
+- Support business layer on-demand model and parameter selection
+- Load balancing and failover
 
-**应用场景**：
-- 企业内部文档和制度的智能问答
-- 产品手册和技术文档的自动检索
-- 客户服务知识库的智能匹配
-- 行业知识和最佳实践的智能推荐
+> 📖 Learn more: [AI Large Language Models](../devguide/ai-llm)
 
-> 📖 详细了解：[AI知识库](../reference/framework/JitAi/ai-knowledge-base)
+### AI Knowledge Base
+Enterprise knowledge management system based on RAG technology, supporting intelligent retrieval and knowledge enhancement from multiple data sources.
 
-### AIAgent
-AI应用的核心执行引擎，负责工具编排、全链路状态跟踪和任务执行。
+**Core Capabilities**:
+- **RAG Technology Support**: Retrieval Augmented Generation to improve AI response accuracy and professionalism
+- **Multi-format Compatibility**: Support for various knowledge sources including documents, databases, APIs, etc.
+- **Real-time Updates**: Dynamic synchronization of knowledge base content to ensure information timeliness
+- **Semantic Retrieval**: Intelligent semantic matching and retrieval based on vector databases
 
-**核心能力**：
-- **工具编排**：动态组合和调用各种业务工具和服务
-- **全链路状态跟踪**：维护对话上下文、任务执行状态和数据流转状态
-- **任务执行**：复杂业务逻辑的分解和执行
-- **权限控制**：基于用户角色的工具访问权限管理
+**Application Scenarios**:
+- Intelligent Q&A for enterprise internal documents and policies
+- Automatic retrieval of product manuals and technical documentation
+- Intelligent matching of customer service knowledge bases
+- Intelligent recommendation of industry knowledge and best practices
 
-> 📖 详细了解：[AIAgent](../reference/framework/JitAi/AIAgent)
+> 📖 Learn more: [AI Knowledge Base](../devguide/knowledge-base)
 
-### AI助理
-AI应用与用户交互的统一界面，这是AI应用和用户之间的交互界面。
+### AI Agent
+The core execution engine for AI applications, responsible for tool orchestration, full-chain state tracking, and task execution.
 
-**核心能力**：
-- **可视化编排**：通过可视化界面实现路由决策、AI Agent编排、人机交互设计
-- **多Agent协同**：助理中可以编排多个Agent，实现Multi Agent协作
-- **智能路由**：根据用户意图自动选择合适的Agent处理任务
-- **函数调用与条件分支**：支持复杂的业务逻辑控制和多任务执行
-- **一键集成**：以不同形态的入口集成到业务系统的各个角落
+**Core Capabilities**:
+- **Tool Orchestration**: Dynamic combination and invocation of various business tools and services
+- **Full-chain State Tracking**: Maintaining dialogue context, task execution status, and data flow status
+- **Task Execution**: Decomposition and execution of complex business logic
+- **Permission Control**: Tool access permission management based on user roles
 
-> 📖 详细了解：[AI助理](../reference/framework/JitAi/ai-assistant)
+> 📖 Learn more: [AI Agent](../devguide/ai-agent)
+
+### AI Assistant
+The unified interface for AI application-user interaction, serving as the interaction interface between AI applications and users.
+
+**Core Capabilities**:
+- **Visual Orchestration**: Implementing routing decisions, AI Agent orchestration, and human-computer interaction design through visual interfaces
+- **Multi-Agent Collaboration**: Orchestrating multiple Agents within assistants to achieve Multi-Agent cooperation
+- **Intelligent Routing**: Automatically selecting appropriate Agents to handle tasks based on user intent
+- **Function Invocation and Conditional Branching**: Supporting complex business logic control and multi-task execution
+- **One-click Integration**: Integrating into various corners of business systems through different entry forms
+
+> 📖 Learn more: [AI Assistant](../devguide/ai-assistant)

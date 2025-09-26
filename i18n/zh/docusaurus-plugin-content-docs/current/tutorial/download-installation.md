@@ -35,7 +35,7 @@ JitAi安装包分为桌面版（支持Windows、Mac）和服务器版（提供Do
 
 :::warning
 如果提示安全性问题，点击"完成"按钮，进入系统设置->隐私与安全性->安全性，将"允许以下来源的应用程序"设置为"App Store与已知开发者"，点击`仍要打开`。
-![Apple安全验证问题](./img/apple_validation.png)
+![Apple安全验证问题](./img/openanyway.gif)
 
 :::
 
@@ -98,7 +98,7 @@ docker run -itd --name jitnode \
 
 ## 常见问题
 
-安装完成后，建议您详细了解 JitAi 的目录组织架构，以便更好地进行后续开发和管理工作，请参阅 [JitNode目录](../reference/runtime-platform/jitnode-directory) 。
+安装完成后，建议你详细了解 JitAi 的目录组织架构，以便更好地进行后续开发和管理工作，请参阅 [JitNode目录](../reference/runtime-platform/jitnode-directory) 。
 
 <details>
 <summary>桌面版启动失败？</summary>

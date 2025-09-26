@@ -35,11 +35,11 @@
     "message": "学习如何创建、部署、发布和管理JitAi应用，包括运行时环境配置和分布式集群架构。",
     "description": "The generated-index page description for category Creating and Publishing Applications in sidebar devguideSidebar"
   },
-  "sidebar.devguideSidebar.category.Use Components in Pages": {
-    "message": "在页面中使用功能组件",
+  "sidebar.devguideSidebar.category.Components In Component-based Pages": {
+    "message": "组件化页面中的组件元素",
     "description": "The label for category Use Components in Pages in sidebar devguideSidebar"
   },
-  "sidebar.devguideSidebar.category.Use Components in Pages.link.generated-index.description": {
+  "sidebar.devguideSidebar.category.Components In Component-based Pages.link.generated-index.description": {
     "message": "学习如何在页面中使用各种功能组件，包括表单、表格、图表等组件的配置和使用方法。",
     "description": "The generated-index page description for category Use Components in Pages in sidebar devguideSidebar"
   },
@@ -384,7 +384,7 @@
     "description": "The generated-index page description for category Full-Code UI Components in Pages in sidebar devguideSidebar"
   },
   "sidebar.devguideSidebar.category.Internal API Exposure": {
-    "message": "内部API暴露",
+    "message": "内部API开放",
     "description": "The label for category Internal API Exposure in sidebar devguideSidebar"
   },
   "sidebar.devguideSidebar.category.Internal API Exposure.link.generated-index.description": {

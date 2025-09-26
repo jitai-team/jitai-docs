@@ -6,35 +6,35 @@ slug: page-customization
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# 页面定制
+# Page Customization
 
-:::info 前置步骤
-如果您还没有创建全代码页面，请先参考 [创建全代码页面](../shell-and-page/full-code-page-development) 了解如何创建React和Vue全代码页面。
+:::info Prerequisites
+If you haven't created a full-code page yet, please first refer to [Creating Full-code Pages](../shell-and-page/full-code-page-development) to learn how to create React and Vue full-code pages.
 :::
 
-本文档介绍全代码页面的具体开发技术和使用方法，包括样式处理、组件使用、资源管理、数据操作等。
+This document introduces the specific development technologies and usage methods for full-code pages, including style processing, component usage, resource management, data operations, etc.
 
-## 创建 React 全代码页面 {#create-react-full-code-page}
+## Creating React Full-code Page {#create-react-full-code-page}
 
-### 使用样式 {#use-style}
-在全代码页面中，你可以按需选择样式方案：内联样式（CSS inline）、CSS‑in‑JS、CSS 开箱即用，无需额外的打包配置；而采用原生 LESS 或 SCSS 时，需要在项目中启用对应的打包配置后方可生效。
+### Using Styles {#use-style}
+In full-code pages, you can choose style solutions as needed: inline styles (CSS inline), CSS-in-JS, CSS work out of the box without additional packaging configuration; while using native LESS or SCSS requires enabling corresponding packaging configuration in the project to take effect.
 
-![样式](./img/styles.png)
+![Styles](./img/styles.png)
 
-LESS 和 SCSS 的样式文件需要配置解析插件，参考[引入打包插件](#引入打包插件)
+LESS and SCSS style files require configuration of parsing plugins, refer to [Introducing Packaging Plugins](#introducing-packaging-plugins)
 
 <Tabs>
-  <TabItem value="inline" label="内联样式" default>
+  <TabItem value="inline" label="Inline Styles" default>
 
 ```jsx
-// 内联样式示例 - 直接在JSX中定义样式
-<div style={{color: "red"}}>hello world - 内联样式</div>
+// Inline style example - define styles directly in JSX
+<div style={{color: "red"}}>hello world - inline styles</div>
 ```
 
   </TabItem>
   <TabItem value="css-in-js" label="CSS-in-JS">
 
-**styles.ts 文件：**
+**styles.ts file:**
 ```typescript
 import type { GlobalToken } from 'antd';
 import { css } from '@emotion/react';
@@ -44,21 +44,21 @@ export const cssInJs = (token: GlobalToken) => css`
 `;
 ```
 
-**index.tsx 中使用：**
+**Usage in index.tsx:**
 ```jsx
 import {cssInJs} from './styles';
 import { theme } from 'antd';
 
 const { token } = theme.useToken();
 
-// CSS-in-JS 示例 - 使用 @emotion/react
+// CSS-in-JS example - using @emotion/react
 <div css={cssInJs(token)}>hello css in js - CSS-in-JS</div>
 ```
 
   </TabItem>
   <TabItem value="css" label="CSS">
 
-**styles.css 文件：**
+**styles.css file:**
 ```css
 .css-styled {
   color: #1890ff;
@@ -66,19 +66,19 @@ const { token } = theme.useToken();
 }
 ```
 
-**index.tsx 中使用：**
+**Usage in index.tsx:**
 ```jsx
-// CSS 导入方式
+// CSS import method
 import './styles.css';
 
-// CSS 样式示例
+// CSS style example
 <div className="css-styled">hello world - CSS</div>
 ```
 
   </TabItem>
   <TabItem value="less" label="Less">
 
-**styles.less 文件：**
+**styles.less file:**
 ```less
 .less-styled {
   color: #52c41a;
@@ -86,19 +86,19 @@ import './styles.css';
 }
 ```
 
-**index.tsx 中使用：**
+**Usage in index.tsx:**
 ```jsx
-// Less 导入方式
+// Less import method
 import './styles.less';
 
-// Less 样式示例
+// Less style example
 <div className="less-styled">hello world - Less</div>
 ```
 
   </TabItem>
   <TabItem value="scss" label="Scss">
 
-**styles.scss 文件：**
+**styles.scss file:**
 ```scss
 .scss-styled {
   color: #722ed1;
@@ -106,12 +106,12 @@ import './styles.less';
 }
 ```
 
-**index.tsx 中使用：**
+**Usage in index.tsx:**
 ```jsx
-// scss 导入方式
+// scss import method
 import './styles.scss';
 
-// scss 样式示例
+// scss style example
 <div className="scss-styled">hello world - Scss</div>
 ```
 
@@ -119,11 +119,11 @@ import './styles.scss';
 </Tabs>
 
 :::tip
-使用 CSS‑in‑JS 时，可直接消费 antd 的主题 token，与平台默认样式自然对齐；同时也能读取并复用你在平台的"全局样式"中定义的自定义变量，实现品牌色、圆角、阴影等统一管理与一处生效。参考《[全局样式](./global-styles)》。
+When using CSS-in-JS, you can directly consume antd's theme tokens, naturally aligning with platform default styles; you can also read and reuse custom variables defined in the platform's "Global Styles", achieving unified management of brand colors, border radius, shadows, etc. with one-place configuration. Refer to [Global Styles](./global-styles).
 :::
 
-### 使用本地资源 {#use-local-resources}
-平台提供了常用资源的解析能力，全代码中可以直接使用`import`语句将资源引入，以图片为例。
+### Using Local Resources {#use-local-resources}
+The platform provides parsing capabilities for common resources. In full-code, you can directly use `import` statements to import resources, using images as an example.
 
 ```typescript
 import logo from './logo.png';
@@ -133,29 +133,29 @@ export const Render = () =>{
 }
 ```
 
-更多资源的解析能力，请查看[默认loader映射](#默认loader映射)，你也可以通过[打包配置的使用](#use-packaging-configuration)来扩展loader映射。
+For more resource parsing capabilities, see [Default Loader Mapping](#default-loader-mapping). You can also extend loader mapping through [Using Packaging Configuration](#use-packaging-configuration).
 
-### 使用 Ant Design 的组件 {#use-ant-design-components}
-平台基于 React 框架，内置了 Ant Design UI 组件库，可以直接使用所有 Ant Design 组件；移动端可使用 Ant Design Mobile 组件库。
+### Using Ant Design Components {#use-ant-design-components}
+The platform is based on the React framework and has built-in Ant Design UI component library, allowing direct use of all Ant Design components; for mobile, you can use the Ant Design Mobile component library.
 
 ```typescript
 import { Button } from 'antd';
 
 export const Render = () =>{
- return <Button>按钮</Button />
+ return <Button>Button</Button />
 }
 ```
 
-更多内置包，请查看[系统内置包一览表](#系统内置包一览表)。
+For more built-in packages, see [System Built-in Package Overview](#system-built-in-package-overview).
 
-### 内嵌已有常规页面 {#embed-existing-regular-page}
-在全代码页面中复用已有的常规页面，可以减少重复开发，提高代码复用性。下图展示了全代码页面与内嵌常规页面的交互示例。
+### Embedding Existing Regular Pages {#embed-existing-regular-page}
+Reusing existing regular pages in full-code pages can reduce duplicate development and improve code reusability. The following figure shows an interaction example between full-code pages and embedded regular pages.
 
-![全代码页面内嵌页面](./img/full-code-page-embedded-page.gif)
+![Full-code Page Embedded Page](./img/full-code-page-embedded-page.gif)
 
-示例演示了跨页面组件交互：全代码页面的按钮控制内嵌页面表格的数据刷新，同时监听表格行点击事件，获取并显示当前行的ID信息。
+The example demonstrates cross-page component interaction: buttons in the full-code page control data refresh of the embedded page table, while listening to table row click events to get and display the current row's ID information.
 
-实现如下：
+Implementation as follows:
 
 ```typescript
 import { useRef } from "react";
@@ -163,35 +163,35 @@ import { Button, message } from "antd";
 import { Jit } from "jit";
 import { ElementRender } from "jit-widgets";
 
-// 全代码的实现包括：渲染器和逻辑处理类
-// Render是页面的渲染器，UI部分在这里实现，它是一个React组件
+// Full-code implementation includes: renderer and logic processing class
+// Render is the page renderer, UI part is implemented here, it's a React component
 const Render = (props) => {
   const embeddedPageRef = useRef(null);
 
-  // 刷新内嵌页面的表格
+  // Refresh embedded page table
   const handleRefreshTable = () => {
     if (embeddedPageRef.current?.Table1) {
       embeddedPageRef.current.Table1.call();
     }
   };
 
-  // 绑定内嵌页面实例和事件
+  // Bind embedded page instance and events
   const handlePageInit = (pageInstance) => {
     embeddedPageRef.current = pageInstance;
 
-    // 绑定表格行点击事件
+    // Bind table row click event
     pageInstance.Table1?.subscribeEvent("clickRow", () => {
       const activeRowId = pageInstance.Table1.activeRow?.id?.value;
-      message.info(`表格行被点击，ID：${activeRowId}`);
+      message.info(`Table row clicked, ID: ${activeRowId}`);
     });
   };
 
   return (
     <div>
       <Button type="primary" onClick={handleRefreshTable}>
-        刷新表格
+        Refresh Table
       </Button>
-      <h3>下面是内嵌页面；点击上面的按钮与表格交互，点击表格可触发绑定事件。</h3>
+      <h3>Below is the embedded page; click the button above to interact with the table, click the table to trigger bound events.</h3>
       <ElementRender
         elementPath="pages.embeddedPages"
         onInitAfter={handlePageInit}
@@ -199,15 +199,15 @@ const Render = (props) => {
     </div>
   );
 };
-// 这是全代码页面逻辑处理类，逻辑部分在这里实现，它是一个 JavaScript 的 class
+// This is the full-code page logic processing class, logic part is implemented here, it's a JavaScript class
 class PageCls extends Jit.BasePage {
-  // 可以在这里添加页面特有的方法
+  // You can add page-specific methods here
 }
 
 export { Render, PageCls };
 ```
 
-ElementRender 除了渲染常规页面元素，还可以渲染其他全代码页面，只需将对应元素的 `fullName` 配置到 `elementPath` 属性。若需要与内嵌页面交互，可配置 `onInitAfter` 属性；初始化完成后会将内嵌页面的 page 实例作为参数传递。内嵌页面的 page 实例示例如下：
+ElementRender can render not only regular page elements but also other full-code pages, just configure the corresponding element's `fullName` to the `elementPath` property. If you need to interact with the embedded page, you can configure the `onInitAfter` property; after initialization is complete, the embedded page's page instance will be passed as a parameter. Example of embedded page's page instance:
 
 ```typescript
 import type { ComponentPageScheme } from "jit";
@@ -224,22 +224,22 @@ class PageCls extends Jit.GridPage {
 export default PageCls;
 ```
 
-内嵌页面包含一个名为 Table1 的表格实例，全代码页面可以通过该页面的实例对其进行操作。
+The embedded page contains a table instance named Table1, and the full-code page can operate on it through the page's instance.
 
-### 使用标准组件 {#use-standard-component}
-在全代码页面中复用已有的标准组件，可以减少重复开发，提高代码复用性。下图展示了全代码页面与标准组件的交互示例。
+### Using Standard Components {#use-standard-component}
+Reusing existing standard components in full-code pages can reduce duplicate development and improve code reusability. The following figure shows an interaction example between full-code pages and standard components.
 
-![全代码页面标准组件](./img/full-code-page-standard-components.gif)
+![Full-code Page Standard Components](./img/full-code-page-standard-components.gif)
 
-示例演示了跨页面组件交互：全代码页面的按钮控制表格组件的数据刷新，同时监听表格行点击事件，获取并显示当前行的ID信息。
+The example demonstrates cross-page component interaction: buttons in the full-code page control table component data refresh, while listening to table row click events to get and display the current row's ID information.
 
-所有标准组件都是由配置驱动渲染，组件的渲染器接受一个组件实例，实例通过配置进行构造。因为组件的配置复杂，在全代码中使用标准组件时，建议开发者先创建常规页面，在常规页面添加标准组件，并配置好组件，再复制组件的配置到全代码页面中。
+All standard components are rendered by configuration, and the component renderer accepts a component instance that is constructed through configuration. Because component configuration is complex, when using standard components in full-code, it's recommended that developers first create a regular page, add standard components to the regular page, configure the components, and then copy the component configuration to the full-code page.
 
-![复制表格配置](./img/copy-table-configuration.png)
+![Copy Table Configuration](./img/copy-table-configuration.png)
 
-点击要复制组件的页面，切换到源码模式，打开`scheme.json`找到componentList配置项，将要使用的组件配置复制到全代码页面即可。
+Click on the page with the component to copy, switch to source code mode, open `scheme.json` to find the componentList configuration item, and copy the component configuration you want to use to the full-code page.
 
-示例代码如下：
+Example code as follows:
 
 <Tabs>
   <TabItem value="index" label="index.tsx" default>
@@ -251,13 +251,13 @@ import { Jit } from 'jit';
 import ComponentRender from './ComponentRender';
 import tableConfig from './tableConfig.json';
 
-// 全代码的实现包括：渲染器和逻辑处理类
-// Render是页面的渲染器，UI部分在这里实现，它是一个React组件
+// Full-code implementation includes: renderer and logic processing class
+// Render is the page renderer, UI part is implemented here, it's a React component
 const Render = (props) => {
-    // 页面渲染器接收一个page参数，page是页面逻辑处理类的示例对象
+    // Page renderer receives a page parameter, page is an instance object of the page logic processing class
     const page = props.page;
 
-    // 刷新内嵌页面的表格
+    // Refresh embedded page table
     const handleRefreshTable = () => {
         if (page[tableConfig.name]) {
             page[tableConfig.name].call();
@@ -267,22 +267,22 @@ const Render = (props) => {
     const handleComponentReady = (compIns: any) => {
         compIns.subscribeEvent('clickRow', () => {
             const activeRowId = compIns.activeRow?.id?.value;
-            message.info(`表格行被点击，ID：${activeRowId}`);
+            message.info(`Table row clicked, ID: ${activeRowId}`);
         });
     };
 
     return (
         <div>
             <Button type="primary" onClick={handleRefreshTable}>
-                刷新表格
+                Refresh Table
             </Button>
-            <h3>下面是标准组件，点击上面的按钮和表格交互</h3>
+            <h3>Below is the standard component, click the button above to interact with the table</h3>
             <ComponentRender config={tableConfig} page={page} onReady={handleComponentReady} />
         </div>
     );
 };
 
-// 这是全代码页面逻辑处理类，逻辑部分在这里实现，它是一个 JavaScript 的 class
+// This is the full-code page logic processing class, logic part is implemented here, it's a JavaScript class
 class PageCls extends Jit.BasePage {}
 
 export { Render, PageCls };
@@ -340,11 +340,11 @@ export default ComponentRender;
     "fullName": "components.Table",
     "type": "components.Table",
     "name": "Table1",
-    "title": "表格",
+    "title": "Table",
     "config": {
         "requireElements": [
             {
-                "title": "表格数据模型",
+                "title": "Table Data Model",
                 "type": "models.Meta",
                 "name": "models.cascadeTableData",
                 "filter": "",
@@ -365,12 +365,12 @@ export default ComponentRender;
     "showTitle": true,
     "eventList": [
         {
-            "title": "点击行",
+            "title": "Click Row",
             "name": "clickRow",
             "data": "activeRow"
         },
         {
-            "title": "选中行后",
+            "title": "After Row Selection",
             "name": "selectedChange",
             "data": "selectedRowList"
         }
@@ -379,19 +379,19 @@ export default ComponentRender;
         {
             "async": true,
             "name": "prevPage",
-            "title": "翻到上一页"
+            "title": "Go to Previous Page"
         },
         {
             "async": true,
             "name": "nextPage",
-            "title": "翻到下一页"
+            "title": "Go to Next Page"
         },
         {
             "args": [
                 {
                     "dataType": "Numeric",
                     "name": "pageNumber",
-                    "title": "页码",
+                    "title": "Page Number",
                     "acceptDataTypes": [
                         "Numeric",
                         "Money",
@@ -402,23 +402,23 @@ export default ComponentRender;
             ],
             "async": true,
             "name": "goPage",
-            "title": "翻到指定页"
+            "title": "Go to Specified Page"
         },
         {
-            "title": "刷新",
+            "title": "Refresh",
             "name": "call",
             "async": true,
             "args": [
                 {
                     "name": "qFilter",
-                    "title": "筛选条件",
+                    "title": "Filter Condition",
                     "dataType": "QFilter",
                     "generic": "models.cascadeTableData"
                 }
             ]
         },
         {
-            "title": "刷新当前页",
+            "title": "Refresh Current Page",
             "name": "refresh",
             "async": true,
             "args": []
@@ -427,28 +427,28 @@ export default ComponentRender;
     "variableList": [
         {
             "name": "displayRowList",
-            "title": "当前页数据",
+            "title": "Current Page Data",
             "dataType": "RowList",
             "readonly": true,
             "generic": "models.cascadeTableData"
         },
         {
             "name": "selectedRowList",
-            "title": "选中的多行数据",
+            "title": "Selected Multi-row Data",
             "dataType": "RowList",
             "readonly": true,
             "generic": "models.cascadeTableData"
         },
         {
             "name": "activeRow",
-            "title": "操作的单行数据",
+            "title": "Operating Single Row Data",
             "dataType": "RowData",
             "readonly": true,
             "generic": "models.cascadeTableData"
         },
         {
             "name": "filter",
-            "title": "筛选条件",
+            "title": "Filter Condition",
             "dataType": "QFilter",
             "generic": "models.cascadeTableData",
             "readonly": true
@@ -461,7 +461,7 @@ export default ComponentRender;
 
 ```json
 {
-  "title": "全代码使用标准组件",
+  "title": "Full-code Using Standard Components",
   "type": "pages.NormalType",
   "frontBundleEntry": "./index.tsx",
   "outputName": "index",
@@ -472,24 +472,24 @@ export default ComponentRender;
   </TabItem>
 </Tabs>
 
-**index.tsx** - 主页面组件，实现 UI 渲染和事件交互逻辑。
+**index.tsx** - Main page component, implements UI rendering and event interaction logic.
 
-**ComponentRender.tsx** - 可复用的标准组件渲染器，负责动态加载和实例化标准组件。
+**ComponentRender.tsx** - Reusable standard component renderer, responsible for dynamically loading and instantiating standard components.
 
-**tableConfig.json** - 表格组件配置示例，包含数据模型引用 `models.cascadeTableData`，实际使用需替换为项目中的真实数据模型。
+**tableConfig.json** - Table component configuration example, contains data model reference `models.cascadeTableData`, actual usage needs to be replaced with real data model in the project.
 
-**e.json** - 页面元素定义文件，type 为 "pages.NormalType"，指定 React 全代码页面类型；frontBundleEntry 指向入口文件。
+**e.json** - Page element definition file, type is "pages.NormalType", specifies React full-code page type; frontBundleEntry points to the entry file.
 
-### 调用数据模型函数 {#call-data-model-function}
-在全代码页面中，可以非常方便地调用数据模型函数，这里建议使用可视化页面将函数参数配置好后，直接复制函数代码到全代码页面中。具体如何获取函数代码，请参考[数据模型的增删改查](#crud-operations-for-data-models)。
+### Calling Data Model Functions {#call-data-model-function}
+In full-code pages, you can very conveniently call data model functions. It's recommended to use visual pages to configure function parameters first, then directly copy the function code to the full-code page. For specific instructions on how to get function code, please refer to [CRUD Operations for Data Models](#crud-operations-for-data-models).
 
-详细的数据模型函数调用方法和语法说明，请参考：[在页面中调用数据模型函数](../calling-business-elements-in-pages/calling-data-model-functions-in-pages)
+For detailed data model function calling methods and syntax descriptions, please refer to: [Calling Data Model Functions in Pages](../calling-business-elements-in-pages/calling-data-model-functions-in-pages)
 
-以获取模型中一条数据为例：
+Taking getting one piece of data from the model as an example:
 
-![调用模型函数](./img/call-model-function.gif)
+![Call Model Function](./img/call-model-function.gif)
 
-点击按钮，调用模型的获取一条数据函数，并弹出显示。示例代码如下：
+Click the button to call the model's get one data function and display it in a popup. Example code as follows:
 
 ```typescript
 import { Button, message } from 'antd';
@@ -511,7 +511,7 @@ const Render = ({ page }) => {
 
 class PageCls extends Jit.BasePage {
     /**
-     * 获取数据，页面的方法
+     * Get data, page method
      */
     async getData() {
         return JSON.stringify(
@@ -527,17 +527,17 @@ class PageCls extends Jit.BasePage {
 export { Render, PageCls };
 
 ```
-调用模型函数的方法类似： this.app.models.[模型名称].[方法名称]([参数1], [参数2], ...)
+The method to call model functions is similar: this.app.models.[model name].[method name]([parameter1], [parameter2], ...)
 
-### 调用服务函数 {#call-service-function}
-服务函数的调用方式与[数据模型函数](#call-data-model-function)完全相同，调用语法为：`this.app.services.[服务名称].[方法名称]([参数1], [参数2], ...)`。
+### Calling Service Functions {#call-service-function}
+The calling method for service functions is exactly the same as [data model functions](#call-data-model-function), with the calling syntax: `this.app.services.[service name].[method name]([parameter1], [parameter2], ...)`.
 
-详细的服务函数调用方法和示例，请参考：[在页面中调用服务函数](../calling-business-elements-in-pages/calling-service-functions-in-pages)
+For detailed service function calling methods and examples, please refer to: [Calling Service Functions in Pages](../calling-business-elements-in-pages/calling-service-functions-in-pages)
 
-## 创建Vue全代码页面 {#vue-full-code-page}
+## Creating Vue Full-code Page {#vue-full-code-page}
 
-### 基本结构
-Vue全代码页面由四个核心文件组成：
+### Basic Structure
+Vue full-code pages consist of four core files:
 
 <Tabs>
   <TabItem value="app" label="App.vue" default>
@@ -560,17 +560,17 @@ const callPageMethod = () => {
 <template>
   <div class="demo">
     <h1>{{ message }}</h1>
-    <h2>当前页面的名称是: {{props.page.title}}</h2>
+    <h2>Current page name is: {{props.page.title}}</h2>
     <el-button plain @click="dialogVisible = true">
-        element-plus 组件使用
+        element-plus component usage
     </el-button>
     <hr/>
     <el-button type="info" @click="callPageMethod">
-        调用当前 page 实例方法
+        Call current page instance method
     </el-button>
     <hr/>
     <el-button type="danger" @click="props.page.closePage">
-        关闭当前页
+        Close current page
     </el-button>
   </div>
 
@@ -582,9 +582,9 @@ const callPageMethod = () => {
     <span>hello World!</span>
     <template #footer>
       <div class="dialog-footer">
-        <el-button @click="dialogVisible = false">关闭</el-button>
+        <el-button @click="dialogVisible = false">Close</el-button>
         <el-button type="primary" @click="dialogVisible = false">
-          确认
+          Confirm
         </el-button>
       </div>
     </template>
@@ -622,13 +622,13 @@ export { Render, PageCls };
 
 ```typescript
 import { Jit } from 'jit';
-// 这是全代码页面逻辑处理类，逻辑部分在这里实现，它是一个 JavaScript 的 class
+// This is the full-code page logic processing class, logic part is implemented here, it's a JavaScript class
 class PageCls extends Jit.BasePage {
     /**
-     * 获取数据，页面的方法
+     * Get data, page method
      */
     getData() {
-        // 这里可以做更多的事情，比如请求后端接口
+        // You can do more things here, like requesting backend interfaces
         return 'so cool !!!';
     }
 
@@ -649,7 +649,7 @@ export { PageCls };
 
 ```json
 {
-  "title": "Vue 全代码",
+  "title": "Vue Full-code",
   "type": "pages.VueType",
   "frontBundleEntry": "./index.ts",
   "outputName": "index"
@@ -659,27 +659,27 @@ export { PageCls };
   </TabItem>
 </Tabs>
 
-**App.vue** - Vue 组件，使用 Composition API 语法，通过 props 接收 page 实例。
+**App.vue** - Vue component, uses Composition API syntax, receives page instance through props.
 
-**index.ts** - 渲染入口，创建 Vue 应用并使用 Element Plus，将 page 实例作为 props 传递给 App 组件。
+**index.ts** - Render entry, creates Vue application and uses Element Plus, passes page instance as props to App component.
 
-**page.ts** - 页面逻辑处理类，继承自 Jit.BasePage，可添加自定义方法供 Vue 组件调用。
+**page.ts** - Page logic processing class, inherits from Jit.BasePage, can add custom methods for Vue component calls.
 
-**e.json** - 元素定义文件，type 为 "pages.VueType"，指定 Vue 页面类型。
+**e.json** - Element definition file, type is "pages.VueType", specifies Vue page type.
 
-### 使用 Element Plus 组件
-Vue 全代码页面内置了 Element Plus UI 组件库，可以直接使用所有 Element Plus 组件：
+### Using Element Plus Components
+Vue full-code pages have built-in Element Plus UI component library, allowing direct use of all Element Plus components:
 
 ```html
 <template>
-  <el-button type="primary">主要按钮</el-button>
-  <el-dialog v-model="visible">对话框内容</el-dialog>
-  <el-table :data="tableData">表格组件</el-table>
+  <el-button type="primary">Primary Button</el-button>
+  <el-dialog v-model="visible">Dialog Content</el-dialog>
+  <el-table :data="tableData">Table Component</el-table>
 </template>
 ```
 
-### 与 page 实例交互
-Vue 组件通过 props 接收 page 实例，可以调用 page 上的方法和访问属性：
+### Interacting with page Instance
+Vue components receive the page instance through props and can call methods and access properties on the page:
 
 ```typescript
 <script setup>
@@ -687,40 +687,40 @@ const props = defineProps({
   page: Object
 });
 
-// 调用page方法
+// Call page methods
 const handleClick = () => {
   props.page.getData();
   props.page.closePage();
 };
 
-// 访问page属性
+// Access page properties
 const pageTitle = props.page.title;
 </script>
 ```
 
 :::tip
-Vue全代码页面专注于原生Vue开发体验，完整支持[数据模型函数](#call-data-model-function)、[服务函数](#call-service-function)调用以及[本地资源](#use-local-resources)引用等核心功能，让你充分发挥Vue生态优势的同时享受平台提供的能力。
+Vue full-code pages focus on native Vue development experience, fully supporting [data model functions](#call-data-model-function), [service functions](#call-service-function) calls, and [local resource](#use-local-resources) references and other core functions, allowing you to fully leverage Vue ecosystem advantages while enjoying platform-provided capabilities.
 :::
 
-# 相关资料
-## 数据模型的增删改查 {#crud-operations-for-data-models}
-后端数据模型提供了完善的增删改查功能，[API文档](/docs/reference/framework/JitORM/data-models#basic-data-operations)。
+# Related Materials
+## CRUD Operations for Data Models {#crud-operations-for-data-models}
+Backend data models provide complete CRUD functionality, [API Documentation](/docs/reference/framework/JitORM/data-models#basic-data-operations).
 
-但是后端的函数只能在后端运行时（服务函数、定时任务函数、事件函数）中才能调用。考虑到这一点，前端环境平台也提供了数据模型的操作接口，如下图：
+However, backend functions can only be called in backend runtime (service functions, scheduled task functions, event functions). Considering this, the frontend environment platform also provides data model operation interfaces, as shown below:
 
-![模型函数](./img/model-functions.png)
+![Model Functions](./img/model-functions.png)
 
-在常规页面的事件面板中，点击函数面板中空白语句上的`请选择`文案，在面板中选择`数据模型`-`【模型名称】`，可看到多个模型操作函数，以查询接口为例，选择`获取一条数据`。
+In the event panel of regular pages, click the `Please Select` text on blank statements in the function panel, select `Data Model` - `[Model Name]` in the panel to see multiple model operation functions. Taking query interface as an example, select `Get One Data`.
 
-### 全代码使用模型函数 {#full-code-using-model-functions}
-模型函数的参数较多。考虑到参数的复杂度，开发者可以按以下方式可视化配置参数，并迅速定位到函数代码，直接拷贝到全代码页面中即可。
+### Full-code Using Model Functions {#full-code-using-model-functions}
+Model functions have many parameters. Considering parameter complexity, developers can visually configure parameters in the following way and quickly locate function code, then directly copy it to the full-code page.
 
-![进入函数](./img/enter-function.png)
+![Enter Function](./img/enter-function.png)
 
-点击`参数设置`，配置好函数参数，在生成的函数语句最后，点击`</>`按钮，会跳转到源码区并定位到当前函数语句，复制函数语句`await this.app.models.CalendarTestModel.get(Q(Q("id", "=", 1)), null, 2);`到全代码中，即可。
+Click `Parameter Settings`, configure function parameters, at the end of the generated function statement, click the `</>` button, it will jump to the source code area and locate the current function statement, copy the function statement `await this.app.models.CalendarTestModel.get(Q(Q("id", "=", 1)), null, 2);` to the full-code.
 
 :::warning
-注意：页面中的数据模型函数都是以 `this.app` 开始，如果在使用的地方没有 `this.app`，请自行添加。
+Note: Data model functions in pages all start with `this.app`. If there's no `this.app` where you're using it, please add it yourself.
 ```typescript
 import { getRuntimeApp } from 'jit';
 const app = getRuntimeApp();
@@ -728,122 +728,122 @@ const app = getRuntimeApp();
 ```
 :::
 
-## 服务函数的使用
-参考[数据模型的增删改查](#crud-operations-for-data-models)
+## Using Service Functions
+Refer to [CRUD Operations for Data Models](#crud-operations-for-data-models)
 
-### 全代码调用服务函数
-参考[全代码使用模型函数](#full-code-using-model-functions)
+### Full-code Calling Service Functions
+Refer to [Full-code Using Model Functions](#full-code-using-model-functions)
 
-## 使用第三方包 {#use-third-party-packages}
-在full-code-page-development中，你可以灵活引入第三方 npm 包来扩展功能。在编辑器的源码模式中修改 `package.json` 文件，添加所需的依赖包到 `dependencies` 字段，然后点击“保存”按钮。系统会自动在后端运行 `pnpm install` 来安装新添加的依赖包，安装完成后即可在代码中正常导入使用。
+## Using Third-party Packages {#use-third-party-packages}
+In full-code-page-development, you can flexibly introduce third-party npm packages to extend functionality. In the editor's source code mode, modify the `package.json` file, add required dependency packages to the `dependencies` field, then click the "Save" button. The system will automatically run `pnpm install` on the backend to install newly added dependency packages. After installation is complete, you can normally import and use them in code.
 
-以rxjs为例，在`package.json`中添加依赖包：
+Taking rxjs as an example, add dependency package in `package.json`:
 
 ![rxjs](./img/rxjs.png)
 
-在 `package.json` 的 `dependencies` 字段添加 `rxjs` 依赖包，点击“保存”按钮，即可安装依赖。
+Add the `rxjs` dependency package to the `dependencies` field in `package.json`, click the "Save" button to install dependencies.
 
-### 使用网络资源
-系统的打包器集成了从网络导包的能力，但要求网络包是 ES Module 格式，否则会报错。推荐使用 `https://esm.sh`。如果同样要使用 rxjs，可以在页面中直接引入 `import { Observable } from 'https://esm.sh/rxjs'`；
+### Using Network Resources
+The system's bundler integrates the ability to import packages from the network, but requires network packages to be in ES Module format, otherwise it will report errors. It's recommended to use `https://esm.sh`. If you also want to use rxjs, you can directly import `import { Observable } from 'https://esm.sh/rxjs'` in the page;
 
-![网络资源](./img/network-resources.png)
+![Network Resources](./img/network-resources.png)
 
-在前端文件中引入 `import { Observable } from 'https://esm.sh/rxjs?bundle'` 后，即可直接使用第三方包。
+After importing `import { Observable } from 'https://esm.sh/rxjs?bundle'` in frontend files, you can directly use third-party packages.
 
 :::tip
-esm.sh 还提供了一些优化参数，比如使用 `?bundle` 可以将多个 ES Module 压缩成一个文件，从而减少请求次数、提高性能。esm.sh 是一个开源项目，如果用于生产环境，建议自行部署，以提高可用性和安全性。
+esm.sh also provides some optimization parameters. For example, using `?bundle` can compress multiple ES Modules into one file, thereby reducing request times and improving performance. esm.sh is an open source project. If used in production environment, it's recommended to deploy it yourself to improve availability and security.
 :::
 
-## 打包配置的使用 {#use-packaging-configuration}
-平台的前端打包器基于esbuild封装，配置项与esbuild保持一致。在应用根目录下的`jit.config.ts`文件中，你可以自定义打包参数来满足特定的构建需求。
+## Using Packaging Configuration {#use-packaging-configuration}
+The platform's frontend bundler is based on esbuild encapsulation, and configuration items are consistent with esbuild. In the `jit.config.ts` file in the application root directory, you can customize packaging parameters to meet specific build requirements.
 
-![打包配置](./img/package-configuration.png)
+![Package Configuration](./img/package-configuration.png)
 
-其中 esBuildOptions 的配置和 esbuild 一致，具体可参考 [esbuild 文档](https://esbuild.github.io)。
+The esBuildOptions configuration is consistent with esbuild. For details, refer to [esbuild documentation](https://esbuild.github.io).
 
-:::tip 使用源码调试
-开发环境可开启 `jit.config.ts` 的 `sourcemap` 选项；生产环境建议设置为 `false`，以显著减少产物体积。
+:::tip Using Source Code Debugging
+Development environment can enable the `sourcemap` option in `jit.config.ts`; production environment is recommended to set to `false` to significantly reduce bundle size.
 :::
 
-### 引入打包插件
-以引入 Less、SCSS 解析插件为例，这两个插件已经集成在平台的打包器 `jit-builder` 中。可按照[使用第三方包](#use-third-party-packages)的方式在 package.json 中引入 `jit-builder`。
+### Introducing Packaging Plugins
+Taking the introduction of Less and SCSS parsing plugins as an example, these two plugins are already integrated in the platform's bundler `jit-builder`. You can introduce `jit-builder` in package.json following the method in [Using Third-party Packages](#use-third-party-packages).
 
-![less支持](./img/less-support.png)
+![less support](./img/less-support.png)
 
-因为系统默认 package.json 中已经引入了 `jit-builder`，所以只需将 devDependencies 修改为 dependencies，然后保存。接下来修改打包配置文件 `jit.config.ts`。
+Because the system default package.json already includes `jit-builder`, you only need to change devDependencies to dependencies, then save. Next, modify the packaging configuration file `jit.config.ts`.
 
-![样式插件](./img/style-plugins.png)
+![Style Plugins](./img/style-plugins.png)
 
-在 `jit.config.ts` 中引入 `styleInJsPlugin`、`scssInJsPlugin`，然后在 `plugins` 中添加即可。
+Import `styleInJsPlugin` and `scssInJsPlugin` in `jit.config.ts`, then add them to `plugins`.
 
-:::tip 更多插件
-上述方法适用于所有 esbuild 插件。如何找到对应的插件，参考 [esbuild 插件](https://esbuild.github.io/plugins/)
+:::tip More Plugins
+The above method applies to all esbuild plugins. For how to find corresponding plugins, refer to [esbuild plugins](https://esbuild.github.io/plugins/)
 :::
 
-## 系统内置包一览表
-平台预置了常用的第三方库，可以直接在代码中导入使用，无需在 package.json 中声明：
+## System Built-in Package Overview
+The platform pre-includes commonly used third-party libraries that can be directly imported and used in code without declaration in package.json:
 
-| 包名 | 版本 | 全局变量名 | 说明 |
+| Package Name | Version | Global Variable Name | Description |
 |------|------|-----------|------|
-| **React生态** | | | |
-| `react` | 18.2.0 | `React` | React核心库 |
-| `react-dom` | 18.2.0 | `ReactDom` | React DOM 操作库 |
-| `react-dom/client` | 18.2.0 | `ReactDomClient` | React 18 客户端 API |
-| `react-dom/server` | 18.2.0 | `ReactDomServer` | React 服务端渲染 API |
-| `react-router` | 6.18.0 | `ReactRouter` | React 路由核心 |
-| `react-router-dom` | 6.18.0 | `ReactRouterDom` | React 路由 DOM 绑定 |
-| `react-dnd` | 16.0.1 | `ReactDnd` | React拖拽库 |
-| `react-dnd-html5-backend` | 16.0.1 | `ReactDndHtml5Backend` | HTML5拖拽后端 |
-| **Vue生态** | | | |
-| `vue` | 3.5.13 | `Vue` | Vue.js框架 |
-| `element-plus` | 2.8.8 | `ElementPlus` | Vue3 UI组件库 |
-| **UI组件库** | | | |
-| `antd` | 5.24.0 | `JitAntd` | Ant Design 组件库 |
-| `antd-mobile` | 5.33.0 | `antdMobile` | Ant Design 移动端组件 |
+| **React Ecosystem** | | | |
+| `react` | 18.2.0 | `React` | React core library |
+| `react-dom` | 18.2.0 | `ReactDom` | React DOM manipulation library |
+| `react-dom/client` | 18.2.0 | `ReactDomClient` | React 18 client API |
+| `react-dom/server` | 18.2.0 | `ReactDomServer` | React server-side rendering API |
+| `react-router` | 6.18.0 | `ReactRouter` | React router core |
+| `react-router-dom` | 6.18.0 | `ReactRouterDom` | React router DOM binding |
+| `react-dnd` | 16.0.1 | `ReactDnd` | React drag and drop library |
+| `react-dnd-html5-backend` | 16.0.1 | `ReactDndHtml5Backend` | HTML5 drag and drop backend |
+| **Vue Ecosystem** | | | |
+| `vue` | 3.5.13 | `Vue` | Vue.js framework |
+| `element-plus` | 2.8.8 | `ElementPlus` | Vue3 UI component library |
+| **UI Component Libraries** | | | |
+| `antd` | 5.24.0 | `JitAntd` | Ant Design component library |
+| `antd-mobile` | 5.33.0 | `antdMobile` | Ant Design mobile components |
 | `@ant-design/cssinjs` | 1.17.5 | `antCssInJs` | Ant Design CSS-in-JS |
-| **样式处理** | | | |
-| `@emotion/react` | 11.13.3 | `EmotionReact` | CSS‑in‑JS 库 |
-| `@emotion/styled` | 11.13.0 | `EmotionStyled` | Emotion 样式组件 |
-| `@emotion/cache` | 11.13.1 | `EmotionCache` | Emotion 缓存 |
-| **工具库** | | | |
-| `lodash` | 4.17.21 | `lodash` | JavaScript工具库 |
-| `lodash-es` | 4.17.21 | `lodash` | Lodash ES 模块版本 |
-| `dayjs` | 1.11.11 | `dayjs` | 轻量级日期库 |
-| `axios` | 1.6.1 | `axios` | HTTP 客户端 |
-| `ahooks` | 3.7.8 | `ahooks` | React Hooks 库 |
-| `localforage` | 1.10.0 | `localforage` | 本地存储库 |
-| `recast` | 0.23.4 | `recast` | JavaScript AST 工具 |
-| **平台专用** | | | |
-| `jit` | - | `JitCore` | JitAi 核心库 |
-| `jit-utils` | - | `JitUtils` | JitAi 工具库 |
-| `jit-ui` | - | `JitUi` | JitAi UI 组件库 |
-| `jit-widgets` | - | `JitWidgets` | JitAi控件库 |
+| **Style Processing** | | | |
+| `@emotion/react` | 11.13.3 | `EmotionReact` | CSS-in-JS library |
+| `@emotion/styled` | 11.13.0 | `EmotionStyled` | Emotion styled components |
+| `@emotion/cache` | 11.13.1 | `EmotionCache` | Emotion cache |
+| **Utility Libraries** | | | |
+| `lodash` | 4.17.21 | `lodash` | JavaScript utility library |
+| `lodash-es` | 4.17.21 | `lodash` | Lodash ES module version |
+| `dayjs` | 1.11.11 | `dayjs` | Lightweight date library |
+| `axios` | 1.6.1 | `axios` | HTTP client |
+| `ahooks` | 3.7.8 | `ahooks` | React Hooks library |
+| `localforage` | 1.10.0 | `localforage` | Local storage library |
+| `recast` | 0.23.4 | `recast` | JavaScript AST tool |
+| **Platform Specific** | | | |
+| `jit` | - | `JitCore` | JitAi core library |
+| `jit-utils` | - | `JitUtils` | JitAi utility library |
+| `jit-ui` | - | `JitUi` | JitAi UI component library |
+| `jit-widgets` | - | `JitWidgets` | JitAi widget library |
 
-:::tip 直接使用
-这些库无需安装即可直接导入使用，例如：`import { useState } from 'react'`、`import { Button } from 'antd'` 等。
+:::tip Direct Usage
+These libraries can be directly imported and used without installation, for example: `import { useState } from 'react'`, `import { Button } from 'antd'`, etc.
 :::
 
-## 默认loader映射
-平台基于 esbuild 构建，以下是系统默认的文件类型处理器配置：
+## Default Loader Mapping
+The platform is built based on esbuild. The following is the system default file type processor configuration:
 
-| 文件类型 | Loader | 说明 |
+| File Type | Loader | Description |
 |---------|--------|------|
-| `.png` | `dataurl` | PNG图片文件，转为base64内嵌 |
-| `.jpe` | `dataurl` | JPEG图片文件，转为base64内嵌 |
-| `.jpeg` | `dataurl` | JPEG图片文件，转为base64内嵌 |
-| `.gif` | `dataurl` | GIF动图文件，转为base64内嵌 |
-| `.svg` | `dataurl` | SVG矢量图文件，转为base64内嵌 |
-| `.css` | `dataurl` | CSS样式文件，转为base64内嵌 |
-| `.py` | `text` | Python脚本文件，作为文本处理 |
-| `.webp` | `dataurl` | WebP图片文件，转为base64内嵌 |
+| `.png` | `dataurl` | PNG image files, converted to base64 embedded |
+| `.jpe` | `dataurl` | JPEG image files, converted to base64 embedded |
+| `.jpeg` | `dataurl` | JPEG image files, converted to base64 embedded |
+| `.gif` | `dataurl` | GIF animation files, converted to base64 embedded |
+| `.svg` | `dataurl` | SVG vector image files, converted to base64 embedded |
+| `.css` | `dataurl` | CSS style files, converted to base64 embedded |
+| `.py` | `text` | Python script files, processed as text |
+| `.webp` | `dataurl` | WebP image files, converted to base64 embedded |
 
-:::tip 自定义 loader
-如需自定义其他文件类型的处理方式，可在 `jit.config.ts` 的 `esBuildOptions.loader` 中进行配置。
+:::tip Custom Loader
+If you need to customize processing methods for other file types, you can configure them in `esBuildOptions.loader` in `jit.config.ts`.
 :::
 
-## 相关阅读
-### 创建全代码页面
-了解如何创建React和Vue全代码页面，参考：[创建全代码页面](../shell-and-page/full-code-page-development)
+## Related Reading
+### Creating Full-code Pages
+Learn how to create React and Vue full-code pages, refer to: [Creating Full-code Pages](../shell-and-page/full-code-page-development)
 
-### 全代码组件
-了解在页面中使用全代码组件开发，参考：[全代码组件](../fullcode-ui-components-in-pages/ui-component-interface-specifications)
+### Full-code Components
+Learn about using full-code components for development in pages, refer to: [Full-code Components](../fullcode-ui-components-in-pages/ui-component-interface-specifications)

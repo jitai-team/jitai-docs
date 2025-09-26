@@ -3,53 +3,53 @@ sidebar_position: 1
 slug: create-ai-llm
 ---
 
-# 创建大模型元素 {#create-ai-llm}
-随着AI技术快速发展，现代应用系统正在经历智能化革命。然而，面对众多的AI服务提供商和不断更新的模型版本，开发者往往面临选择困难和集成复杂性的挑战。
+# Creating AI LLM Elements {#create-ai-llm}
+With the rapid advancement of AI technology, modern application systems are undergoing an intelligent revolution. However, faced with numerous AI service providers and constantly updated model versions, developers often encounter challenges of choice paralysis and integration complexity.
 
-大模型厂商元素正是JitAi平台为解决这一问题而设计的统一AI接入方案。无论您要构建智能[AI知识库](../knowledge-base/create-knowledge-elements)、开发AI助理、还是创建自主决策的Agent，它都能提供稳定可靠的大模型服务支撑。
+LLM vendor elements are JitAi platform's unified AI integration solution designed to address this problem. Whether you want to build intelligent [AI Knowledge Bases](../knowledge-base/create-knowledge-elements), develop AI assistants, or create autonomous decision-making Agents, it provides stable and reliable LLM service support.
 
-## 主流大模型厂商支持列表 {#mainstream-llm-vendor-support-list}
+## Mainstream LLM Vendor Support List {#mainstream-llm-vendor-support-list}
 *   Anthropic
-*   阿里云百炼
+*   Alibaba Cloud Bailian
 *   Deepseek
 *   Gemini
 *   OpenAI
-*   硅基流动
-*   OpenAI兼容
+*   SiliconFlow
+*   OpenAI Compatible
 
-## 创建大模型厂商元素 {#creating-llm-vendor-elements}
-![大模型厂商创建](./img/1/large-model-creation.png)
+## Creating LLM Vendor Elements {#creating-llm-vendor-elements}
+![LLM Vendor Creation](./img/1/large-model-creation.png)
 
-在元素目录树上点击搜索框右边的`+`按钮，在弹出的菜单中选择`AI大模型`，根据实际情况再选择对应的大模型厂商，选择完成后会弹出如下弹窗。
+Click the `+` button next to the search box in the element directory tree, select `AI LLM` from the popup menu, then choose the corresponding LLM vendor based on your actual needs. After selection, the following dialog will appear.
 
-![大模型创建弹窗](./img/1/large-model-create-popup.png)
+![LLM Creation Dialog](./img/1/large-model-create-popup.png)
 
-在弹窗中，填入名称，然后到对应模型厂商的配置页添加一个API Key(不知道地址的可以点击左下角的`获取API Key`)，然后再将API Key填入这里，点击`保存`按钮完成创建。
-API Key可以通过点击右上角的按钮使用环境变量，避免泄露。
+In the dialog, fill in the name, then go to the corresponding model vendor's configuration page to add an API Key (if you don't know the address, you can click `Get API Key` in the bottom left corner), then fill the API Key here and click the `Save` button to complete creation.
+API Keys can be configured using environment variables by clicking the button in the top right corner to avoid exposure.
 :::tip
-API URL一般不需要修改，每个厂商的默认配置已经填写。
+API URL generally doesn't need modification, as default configurations for each vendor are already filled in.
 :::
 
-![元素树显示](./img/1/element-tree-display.png)
+![Element Tree Display](./img/1/element-tree-display.png)
 
-创建完成后会在左侧元素树中显示。
+After creation, it will be displayed in the left element tree.
 
-## 重试及备用API Key机制 {#retry-backup-api-key-mechanism}
-为了避免单个密钥速率限制、请求过多等限制导致模型调用失败，我们提供了重试及多密钥机制。最大重试3次，每次重试的等待时间分别为1秒、2秒、4秒。如果配置了多个API Key，每次重试都会轮询到备用的API Key。这意味着系统不会在同一个失效的Key上反复尝试，而是智能地切换到备用Key来提高成功率。如果只有一个API Key，系统将会在这个Key上尝试4次(1次调用 + 3次重试)。
+## Retry and Backup API Key Mechanism {#retry-backup-api-key-mechanism}
+To avoid model call failures due to single key rate limits, excessive requests, and other limitations, we provide retry and multi-key mechanisms. Maximum of 3 retries, with waiting times of 1 second, 2 seconds, and 4 seconds respectively for each retry. If multiple API Keys are configured, each retry will rotate to backup API Keys. This means the system won't repeatedly attempt on the same failed key, but intelligently switches to backup keys to improve success rates. If there's only one API Key, the system will attempt 4 times on this key (1 call + 3 retries).
 
-![多密钥](./img/1/multi-keys.png)
+![Multiple Keys](./img/1/multi-keys.png)
 
-在界面上点击`开启备用密钥`-`+备用密钥`就可以添加一个密钥输入框，将你的备用没要密钥填入，然后点击`保存`即可。
+Click `Enable Backup Keys` - `+Backup Key` on the interface to add a key input field, fill in your backup key, then click `Save`.
 
-## 私有化大模型集成 {#private-llm-integration}
-为了信息安全，开发者可能会部署私有化模型，平台同样支持私有化模型集成。
+## Private LLM Integration {#private-llm-integration}
+For information security, developers may deploy private models, and the platform also supports private model integration.
 
-![私有化模型](./img/1/private-model.png)
+![Private Model](./img/1/private-model.png)
 
-私有化模型使用OpenAI兼容元素进行连接，以Ollama为例，默认地址为`http://127.0.0.1:11434/v1`，若有API Key则填入，需要注意的是，私有化模型要开启`开启自定义模型`配置项，并输入完整的模型名称，如：qwen3:0.6b、nomic-embed-text。
+Private models use OpenAI Compatible elements for connection. Taking Ollama as an example, the default address is `http://127.0.0.1:11434/v1`. If there's an API Key, fill it in. Note that private models need to enable the `Enable Custom Model` configuration and input the complete model name, such as: qwen3:0.6b, nomic-embed-text.
 
 :::tip
-支持OpenAI接口的厂商，都可以使用OpenAI兼容元素进行连接，下图以火山引擎的豆包为例作为参考。
+Vendors that support OpenAI interfaces can all use OpenAI Compatible elements for connection. The figure below uses Volcano Engine's Doubao as a reference example.
 :::
 
-![豆包兼容](./img/1/doubao-compatibility.png)
+![Doubao Compatibility](./img/1/doubao-compatibility.png)

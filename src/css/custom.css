@@ -7,6 +7,7 @@
 /* 引入 Footer 样式 */
 @import './footer.css';
 
+
 /* You can override the default Infima variables here. */
 @layer docusaurus.infima {
   :root {
@@ -340,7 +341,7 @@ details>div>div {
   --text-secondary: #6b7280;
   --text-muted: #9ca3af;
   --border-color: rgba(31, 41, 55, 0.1);
-  --bg-translucent: rgba(255, 255, 255, 0.8);
+  --bg-translucent: rgba(255, 255, 255, 0.95);
   --accent-bg: rgba(50, 109, 255, 0.1);
   --accent-hover: rgba(50, 109, 255, 0.2);
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -349,11 +350,9 @@ details>div>div {
   --transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 导航栏毛玻璃效果 */
+/* 导航栏样式 */
 .navbar {
   background: var(--bg-translucent) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color) !important;
   box-shadow: var(--shadow-sm) !important;
   transition: var(--transition);
@@ -365,6 +364,36 @@ details>div>div {
   max-width: 1440px !important;
   margin: 0 auto !important;
   padding: 0 2rem !important;
+}
+
+/* 隐藏首页的Docusaurus默认导航栏 */
+.home-page>#__docusaurus>nav {
+  display: none !important;
+}
+
+
+.navbar__items>a[href*="demo.jit.pro"] {
+  background: linear-gradient(135deg, rgb(36, 73, 254) 0%, rgb(202, 75, 167) 100%);
+  color: white !important;
+  margin-left: 1rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px !important;
+}
+
+.navbar__items>a[href*="demo.jit.pro"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: left 0.5s ease;
+}
+
+.navbar__items>a[href*="demo.jit.pro"]:hover::before {
+  left: 100%;
 }
 
 /* 响应式处理 */
@@ -529,7 +558,7 @@ details>div>div {
   --text-secondary: #d1d5db;
   --text-muted: #9ca3af;
   --border-color: rgba(255, 255, 255, 0.1);
-  --bg-translucent: rgba(0, 0, 0, 0.8);
+  --bg-translucent: rgba(0, 0, 0, 0.95);
   --accent-bg: rgba(50, 109, 255, 0.2);
   --accent-hover: rgba(50, 109, 255, 0.3);
 }

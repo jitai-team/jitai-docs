@@ -43,7 +43,7 @@ import TabItem from '@theme/TabItem';
 
 ## 操作指南
 ### 创建目录结构
-在您的JitAi应用根目录中，按照以下结构创建目录：
+在你的JitAi应用根目录中，按照以下结构创建目录：
 
 ```bash
 # 在应用根目录执行

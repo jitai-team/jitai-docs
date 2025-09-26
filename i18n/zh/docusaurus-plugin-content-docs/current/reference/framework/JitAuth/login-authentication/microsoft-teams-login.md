@@ -2,16 +2,16 @@
 slug: microsoft-teams-login
 ---
 # Microsoft Teams 登录 {#microsoft-teams-login}
-Microsoft Teams 登录（MSTeamsType）是基于 Microsoft Teams 应用的登录认证元素，支持PC端和移动端的OAuth授权登录。它负责处理Microsoft Teams OAuth授权流程、用户身份验证和账号绑定，同时支持与Microsoft Teams企业组织架构的无缝集成和用户信息同步。
+Microsoft Teams 登录（MicrosoftTeamsType）是基于 Microsoft Teams 应用的登录认证元素，支持PC端和移动端的OAuth授权登录。它负责处理Microsoft Teams OAuth授权流程、用户身份验证和账号绑定，同时支持与Microsoft Teams企业组织架构的无缝集成和用户信息同步。
 
-Microsoft Teams 登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.MSTeamsType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建Microsoft Teams登录实例元素。
+Microsoft Teams 登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.MicrosoftTeamsType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建Microsoft Teams登录实例元素。
 
 **支持的登录方式**：
 - PC端OAuth授权登录 - 跳转到Microsoft Teams登录页面完成OAuth授权登录
 - 移动端OAuth授权登录 - 在移动设备上调用Microsoft Teams应用完成授权登录
 - 企业内部单点登录 - 与Azure Active Directory集成的单点登录
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的auths.loginTypes.MSTeamsType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的auths.loginTypes.MicrosoftTeamsType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素
@@ -29,7 +29,7 @@ your_app/
 ```json title="元素定义文件"
 {
   "title": "Microsoft Teams登录",
-  "type": "auths.loginTypes.MSTeamsType"
+  "type": "auths.loginTypes.MicrosoftTeamsType"
 }
 ```
 
@@ -57,7 +57,7 @@ print(login_config)  # {"clientId": "your_client_id"}
 client = auth_element.getClient()
 
 # 通过服务获取认证元素
-auth_svc = app.getElement("auths.loginTypes.MSTeamsType.services.MSTeamsAuthSvc")
+auth_svc = app.getElement("auths.loginTypes.MicrosoftTeamsType.services.MicrosoftTeamsAuthSvc")
 auth = auth_svc.getAuthByCorpId("your_corp_id")
 ```
 
@@ -66,8 +66,7 @@ auth = auth_svc.getAuthByCorpId("your_corp_id")
 | 配置项 | 类型 | 必填 | 说明 |
 |-------|------|------|------|
 | title | string | 是 | 元素显示名称 |
-| type | string | 是 | 固定值：auths.loginTypes.MSTeamsType |
-
+| type | string | 是 | 固定值：auths.loginTypes.MicrosoftTeamsType |
 ### 业务配置文件配置
 配置文件名格式为`{实例名称}.json`，包含Microsoft Teams应用的认证信息：
 
@@ -107,7 +106,7 @@ config = auth_element.getLoginConfig()
 #### 返回值
 | 类型 | 对应原生类型 | 说明 |
 |-----|-------------|------|
-| MSTeamsClient | object | Microsoft Teams客户端对象 |
+| MicrosoftTeamsClient | object | Microsoft Teams客户端对象 |
 
 #### 使用示例
 ```python title="获取Microsoft Teams客户端"
@@ -133,7 +132,7 @@ Microsoft Teams OAuth登录，通过授权码完成用户登录。
 
 #### 使用示例
 ```python title="OAuth登录"
-auth_svc = app.getElement("auths.loginTypes.MSTeamsType.services.MSTeamsAuthSvc")
+auth_svc = app.getElement("auths.loginTypes.MicrosoftTeamsType.services.MicrosoftTeamsAuthSvc")
 result = auth_svc.loginByOAuth(
     corpId="12345678-1234-1234-1234-123456789012",
     authCode="auth_code_from_microsoft",
@@ -156,7 +155,7 @@ result = auth_svc.loginByOAuth(
 
 #### 使用示例
 ```python title="通过租户ID获取认证元素"
-auth_svc = app.getElement("auths.loginTypes.MSTeamsType.services.MSTeamsAuthSvc")
+auth_svc = app.getElement("auths.loginTypes.MicrosoftTeamsType.services.MicrosoftTeamsAuthSvc")
 auth_element = auth_svc.getAuthByCorpId("12345678-1234-1234-1234-123456789012")
 if auth_element:
     print(f"找到认证元素: {auth_element.fullName}")
@@ -177,7 +176,7 @@ if auth_element:
 
 #### 使用示例
 ```python title="获取用户信息"
-auth_svc = app.getElement("auths.loginTypes.MSTeamsType.services.MSTeamsAuthSvc")
+auth_svc = app.getElement("auths.loginTypes.MicrosoftTeamsType.services.MicrosoftTeamsAuthSvc")
 user_info = auth_svc.getUserProfile(access_token)
 print(f"用户信息: {user_info}")
 ```
@@ -196,14 +195,14 @@ Microsoft Teams应用配置信息，包含corpId、clientId、clientSecret等参
 认证类型标识，固定值为Microsoft Teams登录的类型枚举。
 
 ### authModelElemName
-关联的认证数据模型元素名称，指向MSTeamsAuthModel。
+关联的认证数据模型元素名称，指向MicrosoftTeamsAuthModel。
 
 ## 高级特性
 ### 数据模型扩展
-MSTeamsAuthModel存储Microsoft Teams用户认证信息，包含用户ID映射、Teams用户信息等字段：
+MicrosoftTeamsAuthModel存储Microsoft Teams用户认证信息，包含用户ID映射、Teams用户信息等字段：
 
 ```python title="认证数据模型字段"
-class MSTeamsAuthModel(NormalModel):
+class MicrosoftTeamsAuthModel(NormalModel):
     id = datatypes.AutoInt(name="id", title="主键ID", primaryKey=True)
     userId = datatypes.Stext(name="userId", title="用户ID")
     thirdCorpId = datatypes.Stext(name="thirdCorpId", title="Azure租户ID")
@@ -292,38 +291,3 @@ except Exception as e:
 - 权限不足：确保应用已获得必要的Microsoft Graph API权限
 - 网络连接问题：确保能访问Microsoft Graph API服务
 
-### 单点登录集成
-与Azure Active Directory的深度集成：
-
-```python title="SSO集成示例"
-# 检查用户的Azure AD状态
-def checkUserADStatus(user_id):
-    auth_model = app.getElement("auths.MSTeamsAuthModel")
-    user_auth = auth_model.query(userId=user_id)
-    
-    if user_auth:
-        # 用户已绑定Azure AD账号
-        return {
-            "isLinked": True,
-            "userPrincipalName": user_auth.userPrincipalName,
-            "department": user_auth.department
-        }
-    else:
-        return {"isLinked": False}
-
-# 同步用户组织信息
-def syncUserOrgInfo(access_token):
-    client = auth_element.getClient()
-    
-    # 获取用户信息
-    user_info = client.get_user_profile(access_token)
-    
-    # 获取用户组织结构
-    user_groups = client.get_user_groups(access_token)
-    
-    # 同步到本地数据库
-    return {
-        "user": user_info,
-        "groups": user_groups
-    }
-```

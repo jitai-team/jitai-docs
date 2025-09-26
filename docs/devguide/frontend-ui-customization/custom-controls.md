@@ -6,26 +6,26 @@ slug: custom-controls
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# 自定义控件
-系统对各种数据类型提供了默认的渲染方式，但对于个别定制化需求无法满足，因此需要用户使用自定义控件来完成。例如，将数字渲染成图标形式、将文本渲染某种特定样式等。
+# Custom Controls
+The system provides default rendering methods for various data types, but for specific customization requirements that cannot be met, users need to use custom controls. For example, rendering numbers as icons, rendering text in specific styles, etc.
 
-自定义控件功能允许开发者为数据类型创建专属的渲染器，通过React语法实现复杂的展示逻辑和交互效果。这些自定义渲染器可以应用在表格组件的单元格或form-components的字段中，让开发者能够灵活控制数据的展示方式，实现从简单的样式美化到复杂的数据可视化等各种展示需求。
+The custom controls feature allows developers to create dedicated renderers for data types, implementing complex display logic and interactive effects using React syntax. These custom renderers can be applied to table component cells or form component fields, enabling developers to flexibly control data display methods and achieve various display requirements from simple style beautification to complex data visualization.
 
-## 创建自定义控件元素 {#create-custom-control-element}
-![创建](./img/2/create.png)
+## Creating Custom Control Element {#create-custom-control-element}
+![Create](./img/2/create.png)
 
-在元素目录树点击搜索框右侧的`+`按钮，选择`更多`-`控件`-`React 控件`，随后弹出创建控件元素的弹窗。
+In the element directory tree, click the `+` button to the right of the search box, select `More` - `Controls` - `React Control`, then a popup for creating a control element will appear.
 
-![弹窗](./img/2/popup.png)
+![Popup](./img/2/popup.png)
 
-创建弹窗中只需填写`名称`即可，点击`确定`完成创建。
+In the creation popup, you only need to fill in the `Name`, then click `OK` to complete the creation.
 
-## 修改自定义控件 {#modify-custom-control}
-创建完成后会在左侧元素树中显示。接下来，我们通过一个示例来展示如何修改自定义控件。
+## Modifying Custom Control {#modify-custom-control}
+After creation, it will appear in the left element tree. Next, we'll demonstrate how to modify a custom control through an example.
 
-![编辑器](./img/2/editor.png)
+![Editor](./img/2/editor.png)
 
-点击元素树中创建的自定义控件元素，进入编辑器。编辑器中有两个文件`index.tsx`和`e.json`，`e.json`是元素的定义，`index.tsx`是控件渲染器的实现。现在我们进行修改`index.tsx`文件。
+Click on the created custom control element in the element tree to enter the editor. The editor contains two files: `index.tsx` and `e.json`. `e.json` is the element definition, and `index.tsx` is the control renderer implementation. Now let's modify the `index.tsx` file.
 
 ![index.tsx](./img/2/react_2025-08-29_14-01-42.png)
 
@@ -45,13 +45,13 @@ export const Render: FC<{
         onChange: (v: string) => void;
     };
 }> = ({ props: p }) => {
-    // 将表单/表格组件内字段的值传递到控件中
+    // Pass field values from form/table components to the control
     const [value, setValue] = useState(p.data.value);
 
-    // 如果传入的参数没有onChange，说明是渲染器，此时Rate组件不让修改
+    // If the passed parameter doesn't have onChange, it's a renderer, so Rate component won't allow modification
     const isEdit = useMemo(() => p.onChange, [p.onChange]);
 
-    // 当表单/表格的值发生变化，立即触发
+    // Triggered immediately when form/table values change
     useEffect(() => {
         const app = getRuntimeApp();
         const handleId = p.data.onValueChange(() => {
@@ -61,7 +61,7 @@ export const Render: FC<{
         return () => app.off(handleId);
     }, [p.data.value]);
 
-    // 控件的值改变后回调给表格/表单
+    // Callback to table/form when control value changes
     const handleChangeRate = (val: number) => {
         setValue(val);
         p.onChange && p.onChange(val);
@@ -74,37 +74,37 @@ export const Render: FC<{
   </TabItem>
 </Tabs>
 
-再将修改后的`index.tsx`文件保存，并使用该自定义控件替换表单/表格组件内字段的渲染器或编辑器。
+Save the modified `index.tsx` file and use this custom control to replace the renderer or editor for fields in form/table components.
 
-:::tip 提示
-自定义控件的实现原理是针对数据类型的渲染器或编辑器，使用React语法，将数据渲染成特定的样式和交互效果。
+:::tip Note
+The implementation principle of custom controls is to create renderers or editors for data types using React syntax, rendering data into specific styles and interactive effects.
 
-在开发自定义控件时，需要用到全代码进行开发。如何使用全代码开发，可参考[full-code-page-development](../shell-and-page/full-code-page-development#create-react-full-code-page)。
+When developing custom controls, you need to use full-code development. For how to use full-code development, please refer to [full-code-page-development](../shell-and-page/full-code-page-development#create-react-full-code-page).
 :::
 
-### 表单中使用自定义控件 {#use-custom-control-in-form}
-![form-components内使用自定义控件](./img/2/react_2025-08-29_10-22-41.png)
+### Using Custom Control in Forms {#use-custom-control-in-form}
+![Using custom controls in form components](./img/2/react_2025-08-29_10-22-41.png)
 
-在form-components内打开[字段属性面板](../using-functional-components-in-pages/form-components#basic-configuration-and-item-management)，在字段渲染器或字段编辑器中选择创建的自定义控件元素。
+In form components, open the [field properties panel](../using-functional-components-in-pages/form-components#basic-configuration-and-item-management), and select the created custom control element in the field renderer or field editor.
 
-### 表格中使用自定义控件 {#use-custom-control-in-table}
-![表格组件内使用自定义控件](./img/2/react_2025-08-29_10-32-26.png)
+### Using Custom Control in Tables {#use-custom-control-in-table}
+![Using custom controls in table components](./img/2/react_2025-08-29_10-32-26.png)
 
-在表格组件内打开[字段属性弹窗](../using-functional-components-in-pages/table-components#configure-field-attributes)，在字段渲染器或字段编辑器中选择创建的自定义控件元素。
+In table components, open the [field properties popup](../using-functional-components-in-pages/table-components#configure-field-attributes), and select the created custom control element in the field renderer or field editor.
 
-通过上面的操作，将自定义控件应用到表单/表格组件内字段后，最后展示的效果：
+After applying the custom control to form/table component fields through the above operations, the final display effect:
 
-![表格结果](./img/2/react_2025-08-29_14-04-36.png)
+![Table Result](./img/2/react_2025-08-29_14-04-36.png)
 
-![表单结果](./img/2/react_2025-08-29_14-05-20.png)
+![Form Result](./img/2/react_2025-08-29_14-05-20.png)
 
-## 自定义控件参数 {#custom-control-parameters}
-表单/表格组件内使用自定义控件时，会向自定义控件的`index.tsx`文件中的`props`传入参数。props参数包含以下字段：
-- `data`: 表单/表格组件内字段的值
-- `rowData`: 对于表格组件，表示当前行数据。对于form-components，表示当前表单的数据。
-- `fieldConfig`:  当前字段在表格/form-components中的配置项，以及该字段在数据表中的信息。
-- `onChange`：当前字段的值发生改变时，将新的值作为参数，调用该方法传递给表格/form-components。
+## Custom Control Parameters {#custom-control-parameters}
+When using custom controls in form/table components, parameters are passed to the `props` in the `index.tsx` file of the custom control. The props parameters include the following fields:
+- `data`: Field value in form/table components
+- `rowData`: For table components, represents current row data. For form components, represents current form data.
+- `fieldConfig`: Configuration items for the current field in table/form components, as well as information about this field in the data table.
+- `onChange`: When the current field value changes, call this method with the new value as a parameter to pass it to table/form components.
 
-:::tip 注意
-当自定义控件作为渲染器时，传递的参数中没有`onChange`字段。因此，我们可以使用`onChange`判断是用于组件的渲染器还是编辑器，从而实现不同的逻辑。
+:::tip Note
+When custom controls are used as renderers, the passed parameters don't include the `onChange` field. Therefore, we can use `onChange` to determine whether it's used as a component renderer or editor, enabling different logic implementations.
 :::

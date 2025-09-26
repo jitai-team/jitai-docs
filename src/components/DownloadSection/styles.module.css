@@ -1,0 +1,520 @@
+/* DownloadSection 样式 - 参考首页设计风格 */
+
+:root {
+  --page-title-line-height: 1.5;
+  --card-title-line-height: 1.3;
+}
+
+/* 中文主题变量 */
+[data-locale="zh"] {
+  --page-title-line-height: 1.4;
+  --card-title-line-height: 1.4;
+}
+
+.sectionContent {
+  width: 100%;
+  max-width: 1500px;
+}
+
+.download {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--hero-bg);
+  color: #1a1a1a;
+  padding: 8rem 0;
+  position: relative;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* 页面标题 */
+.pageHeader {
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.pageTitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  background: var(--hero-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+  line-height: var(--page-title-line-height) !important;
+}
+
+.pageSubtitle {
+  font-size: 1.25rem;
+  color: #6b7280;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+
+/* 下载内容区域 */
+.downloadContent {
+  margin: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+/* 桌面版卡片容器 */
+.desktopCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+/* Docker 卡片独立一行 */
+.dockerCard {
+  width: 100%;
+}
+
+
+.versionCard {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.versionCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.versionHeader {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.versionIcon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #667eea;
+  flex-shrink: 0;
+}
+
+.iconSvg {
+  width: 64px;
+  height: 64px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.iconWindows {
+  transform: scale(0.9);
+}
+
+.iconMac {
+  transform: scale(1.05);
+}
+
+.iconDocker {
+  transform: scale(1.0);
+}
+
+.versionTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+  background: var(--hero-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.versionDescription {
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0.5rem 0;
+}
+
+.versionInfo {
+  margin-bottom: 1.5rem;
+}
+
+.requirements {
+  margin-bottom: 1.5rem;
+}
+
+.requirementsTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.75rem;
+}
+
+.requirementsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.requirementsList li {
+  padding: 0.5rem 0;
+  color: #6b7280;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.requirementsList li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: bold;
+}
+
+/* 下载按钮 */
+.downloadActions {
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.downloadButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+  font-size: 0.9rem;
+}
+
+.downloadButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  color: white;
+  text-decoration: none;
+}
+
+.buttonText {
+  font-size: 0.9rem;
+}
+
+/* 安装步骤 */
+.installationSteps {
+  margin-bottom: 1.5rem;
+}
+
+.stepsTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.75rem;
+}
+
+.stepsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: step-counter;
+}
+
+.stepsList li {
+  padding: 0.75rem 0;
+  color: #6b7280;
+  position: relative;
+  padding-left: 2.5rem;
+  counter-increment: step-counter;
+}
+
+.stepsList li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0.75rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* 警告框 */
+.warningBox {
+  background: #fef3cd;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.warningIcon {
+  font-size: 1.25rem;
+  color: #d97706;
+}
+
+.warningContent {
+  flex: 1;
+}
+
+.warningTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #d97706;
+  margin: 0 0 0.5rem 0;
+}
+
+.warningText {
+  font-size: 0.9rem;
+  color: #92400e;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* 代码块 */
+.codeBlock {
+  background: #1a1a1a;
+  border-radius: 8px;
+  margin: 0;
+  overflow: hidden;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid #333;
+}
+
+.codeContent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: 0;
+  overflow-x: auto;
+  flex-wrap: wrap;
+  gap: 0rem;
+}
+
+.codePrompt {
+  color: #00ff88;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-weight: bold;
+  font-size: 0.85rem;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+  line-height: 1.5;
+  margin-top: 0;
+}
+
+.codeText {
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.codeContent code {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 0.85rem;
+  background: transparent;
+  color: #e0e0e0;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-all;
+  flex: 1;
+  margin-right: 1rem;
+  padding: 0;
+}
+
+.copyButton {
+  background: #333;
+  color: #e0e0e0;
+  border: 1px solid #555;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  font-weight: 500;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.copyButton:hover {
+  background: #444;
+  border-color: #666;
+  color: #fff;
+}
+
+/* 帮助链接 */
+.helpLink {
+  margin-top: 2rem;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.helpLink a {
+  color: #667eea;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.helpLink a:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+.helpLink a::after {
+  content: "→";
+  font-size: 0.8rem;
+  transition: transform 0.2s ease;
+}
+
+.helpLink a:hover::after {
+  transform: translateX(2px);
+}
+
+/* 提示框 */
+.tipBox {
+  background: #dbeafe;
+  border: 1px solid #93c5fd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+}
+
+.tipIcon {
+  font-size: 1.25rem;
+  color: #2563eb;
+}
+
+.tipContent {
+  flex: 1;
+}
+
+.tipTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2563eb;
+  margin: 0 0 0.5rem 0;
+}
+
+.tipText {
+  font-size: 0.9rem;
+  color: #1e40af;
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 2.5rem;
+  }
+  
+  .pageSubtitle {
+    font-size: 1.1rem;
+  }
+  
+  .versionTitle {
+    font-size: 1.25rem;
+  }
+  
+  .versionIcon {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .iconSvg {
+    width: 44px;
+    height: 44px;
+    display: block;
+  }
+  
+  .desktopCards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .versionCard {
+    padding: 1.5rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .versionHeader {
+    text-align: center;
+  }
+  
+  .downloadActions {
+    justify-content: center;
+  }
+  
+  .codeContent {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.75rem;
+  }
+  
+  .codeText {
+    margin-bottom: 0.75rem;
+  }
+  
+  .codeContent code {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .download {
+    padding: 4rem 0;
+  }
+  
+  .pageHeader {
+    margin: 2rem 0;
+  }
+  
+  .pageTitle {
+    font-size: 2rem;
+  }
+  
+  .platformCard {
+    padding: 1rem;
+  }
+  
+  .platformIcon {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+  }
+}

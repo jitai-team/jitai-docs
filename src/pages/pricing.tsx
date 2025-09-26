@@ -1,30 +1,24 @@
-import React, { useEffect } from 'react';
-import Layout from '@theme/Layout';
-import Navbar from '../components/Navbar';
-import PricingSection from '../components/PricingSection';
-import PricingFAQSection from '../components/PricingFAQSection';
-import PricingContactSection from '../components/PricingContactSection';
+import React from 'react';
+import PageLayout from '../components/PageLayout';
+import PricingSection from '../components/price_comps/PricingSection';
+import PricingFAQSection from '../components/price_comps/PricingFAQSection';
+import PricingContactSection from '../components/price_comps/PricingContactSection';
 import styles from './pricing.module.css';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-
-const LayoutComponent = Layout as any;
 
 const PricingPage: React.FC = () => {
-  
-  const { i18n } = useDocusaurusContext();
-  useEffect(() => {
-    document.documentElement.setAttribute('data-locale', i18n.currentLocale);
-  }, [i18n.currentLocale]);
-  
+  const pricingTitle = 'JitAI 定价方案 - 灵活的企业级 AI 开发平台';
+  const pricingDesc = '选择适合您团队的 JitAI 定价方案，享受企业级 AI 开发平台的所有功能。支持按需付费和定制化解决方案。';
+
   return (
-    <LayoutComponent>
-      <div className={`${styles.container} custom-page`}>
-        <Navbar currentLocale={i18n.currentLocale}/>
-        <PricingSection currentLocale={i18n.currentLocale}/>
-        <PricingFAQSection currentLocale={i18n.currentLocale}/>
-        {/* <PricingContactSection currentLocale={i18n.currentLocale}/> */}
-      </div>
-    </LayoutComponent>
+    <PageLayout 
+      title={pricingTitle} 
+      description={pricingDesc}
+      containerClassName={styles.container}
+    >
+      <PricingSection />
+      <PricingFAQSection />
+      {/* <PricingContactSection /> */}
+    </PageLayout>
   );
 };
 

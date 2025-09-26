@@ -59,14 +59,14 @@ Chroma 是JitAi平台推荐的向量数据库解决方案，支持独立服务�
 :::
 
 ## 向量数据库编程接口 {#vector-database-programming-interface}
-### health_check
+### health_check {#health_check}
 检查向量数据库的连接状态和运行健康情况，返回数据库基本信息。[API 文档](../../reference/framework/JitAi/vector-database#health_check)
 
-### create_collection
+### create_collection {#create_collection}
 在向量数据库中创建新的集合，用于存储和管理相关的向量数据。[API 文档](../../reference/framework/JitAi/vector-database#create_collection)
 
-### add_vectors
+### add_vectors {#add_vectors}
 将向量数据及其元数据存储到指定的集合中。[API 文档](../../reference/framework/JitAi/vector-database#add_vectors)
 
-### query_vectors
+### query_vectors {#query_vectors}
 基于查询向量在集合中搜索最相似的向量数据。[API 文档](../../reference/framework/JitAi/vector-database#query_vectors)

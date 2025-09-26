@@ -3,46 +3,45 @@ sidebar_position: 1
 slug: global-styles
 ---
 
-# 全局样式
-在传统的应用开发中，各个页面和组件的样式往往各自独立定义，导致同一个应用中出现样式不一致的问题。当需要调整品牌色或整体风格时，开发者需要逐个修改各处样式代码，维护成本极高。`全局样式`功能提供了一个集中化的样式配置中心，通过统一的配置面板，开发者可以定义应用的整体视觉风格。这些配置会应用到所有基于Ant Design的UI组件上，确保整个应用的视觉一致性。
+# Global Styles
+In traditional application development, styles for different pages and components are often defined independently, leading to inconsistent styling within the same application. When adjustments to brand colors or overall styling are needed, developers must modify style code in multiple locations, resulting in extremely high maintenance costs. The `Global Styles` feature provides a centralized style configuration center. Through a unified configuration panel, developers can define the overall visual style of their application. These configurations are applied to all Ant Design-based UI components, ensuring visual consistency throughout the entire application.
 
-## 创建全局样式元素 {#create-global-style-element}
-![创建](./img/1/create.png)
+## Creating Global Style Element {#create-global-style-element}
+![Create](./img/1/create.png)
 
-在元素目录树点击搜索框右侧的`+`按钮，选择`更多`-`全局样式`-`标准样式`，随后弹出创建全局样式元素的弹窗。
+In the element directory tree, click the `+` button to the right of the search box, select `More` - `Global Styles` - `Standard Styles`, then a popup for creating a global style element will appear.
 
-![弹窗](./img/1/popup.png)
+![Popup](./img/1/popup.png)
 
-创建弹窗中只需填写`名称`即可，点击`确定`完成创建。
+In the creation popup, you only need to fill in the `Name`, then click `OK` to complete the creation.
 
-## 修改全局样式 {#modify-global-style}
-创建完成后会在左侧元素树中显示。
+## Modifying Global Style {#modify-global-style}
+After creation, it will appear in the left element tree.
 
-![编辑器](./img/1/editor.png)
+![Editor](./img/1/editor.png)
 
-编辑器分为左侧编辑区和右侧参考区，左侧编辑格式为`JSON`，右侧为常用的样式变量说明，开发者可以从参考区复制样式，并粘贴到左侧编辑区后修改。以修改主题色为例，如下图：
+The editor is divided into a left editing area and a right reference area. The left editing format is `JSON`, and the right side contains common style variable descriptions. Developers can copy styles from the reference area and paste them into the left editing area for modification. Taking theme color modification as an example, as shown in the figure:
 
-![修改](./img/1/modify.png)
+![Modify](./img/1/modify.png)
 
-复制右侧主题色对应的变量`colorPrimary`到左侧编辑区，并修改颜色值，最后点击`保存`按钮保存。此时主题色还不能应用，需按下图设置：
+Copy the theme color variable `colorPrimary` from the right side to the left editing area, modify the color value, and finally click the `Save` button to save. At this point, the theme color cannot be applied yet and needs to be set as shown below:
 
-![使用](./img/1/usage.png)
+![Usage](./img/1/usage.png)
 
-点击`设置`标签，再点击`应用默认元素`进入默认元素编辑器，点击`默认全局样式`下拉框，选择刚创建的`全局样式元素`，点击`保存`按钮后刷新页面，即可看到主题色已应用。
+Click the `Settings` tab, then click `Application Default Elements` to enter the default element editor. Click the `Default Global Style` dropdown, select the newly created `Global Style Element`, click the `Save` button, and refresh the page to see that the theme color has been applied.
 
-## 更多样式变量 {#more-style-variables}
-样式变量可参考[样式变量](https://ant.design/docs/react/customize-theme-cn#seedtoken)。
+## More Style Variables {#more-style-variables}
+For style variables, please refer to [Style Variables](https://ant.design/docs/react/customize-theme-cn#seedtoken).
 
-## 调试主题 {#debug-theme}
-开发者可以使用Ant Design官方[样式编辑器](https://ant.design/theme-editor-cn)来生成自定义主题。
+## Debugging Theme {#debug-theme}
+Developers can use the official Ant Design [Theme Editor](https://ant.design/theme-editor-cn) to generate custom themes.
 
-在样式编辑器中调整好样式之后，点击`主题配置`。
+After adjusting the styles in the theme editor, click `Theme Configuration`.
 
-![样式编辑器](./img/1/style-editor.png)
+![Style Editor](./img/1/style-editor.png)
 
-复制主题配置弹窗中的配置。
+Copy the configuration from the theme configuration popup.
 
-![编辑器配置](./img/1/editor-configuration.png)
+![Editor Configuration](./img/1/editor-configuration.png)
 
-将配置粘贴到全局样式编辑区即可。
-
+Paste the configuration into the global style editing area.

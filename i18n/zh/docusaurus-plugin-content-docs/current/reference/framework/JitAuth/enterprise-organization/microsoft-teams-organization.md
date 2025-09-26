@@ -4,9 +4,9 @@ slug: microsoft-teams-organization
 # Microsoft Teams 组织架构 {#microsoft-teams-organization}
 Microsoft Teams 组织架构是JitAuth框架中用于集成Microsoft Teams企业内部应用组织架构的专用组织类型，基于Microsoft Graph API实现企业组织架构自动同步和统一管理。它负责Microsoft Teams通讯录同步、部门结构获取和用户身份验证，支持与Microsoft Teams工作台的无缝集成，提供企业级权限管理和用户关系维护能力。
 
-Microsoft Teams组织元素分层结构为Meta（corps.Meta） → Type（corps.MSTeamsType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建Microsoft Teams组织实例元素。
+Microsoft Teams组织元素分层结构为Meta（corps.Meta） → Type（corps.MicrosoftTeamsType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建Microsoft Teams组织实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的corps.MSTeamsType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的corps.MicrosoftTeamsType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素
@@ -22,7 +22,7 @@ corps/
 ```json title="元素配置示例"
 {
   "title": "测试Teams组织",
-  "type": "corps.MSTeamsType",
+  "type": "corps.MicrosoftTeamsType",
   "backendBundleEntry": ".",
   "frontBundleEntry": "./testTeamsOrg.json",
   "fullName": "corps.testTeamsOrg"
@@ -33,7 +33,7 @@ corps/
 ```json title="业务配置示例 - testTeamsOrg.json"
 {
   "authConfig": {
-    "tenantId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "corpId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
     "clientId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
     "clientSecret": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
   }
@@ -58,7 +58,7 @@ print(f"根部门: {root_dept.name}")
 | 配置项 | 类型 | 必填 | 说明 |
 |--------|------|------|------|
 | title | str | 是 | 组织名称，用于显示标识 |
-| type | str | 是 | 固定值"corps.MSTeamsType" |
+| type | str | 是 | 固定值"corps.MicrosoftTeamsType" |
 | backendBundleEntry | str | 是 | 后端入口点，通常为"." |
 | frontBundleEntry | str | 是 | 前端入口点，指向业务配置文件 |
 | fullName | str | 是 | 元素完整名称，格式为"corps.[实例名]" |
@@ -118,7 +118,7 @@ print(f"管理员ID列表: {admin_ids}")
 #### 返回值
 | 类型 | 对应原生类型 | 说明 |
 |------|-------------|------|
-| MSTeamsClient | object | Microsoft Graph API客户端对象 |
+| MicrosoftTeamsClient | object | Microsoft Graph API客户端对象 |
 
 #### 使用示例
 ```python title="获取Teams客户端"

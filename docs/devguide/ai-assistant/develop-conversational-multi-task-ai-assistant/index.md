@@ -126,7 +126,7 @@ Output complete quotation content, not a summary statement.
 ![quotetion-agent](./img/quote-agent.png)
 
 - **Knowledge Base**: Add **Quotation Knowledge** as the knowledge base for this Agent. For the addition method, refer to [Adding Knowledge Base to Agent](/docs/devguide/ai-agent/agent-knowledge-base).
-![quotetion-agent-knowledge](./img/quote-agent-knowledge.png)
+![quotetion-agent-knowledge](./img/quote-agent-Knowledge.png)
 
 
 

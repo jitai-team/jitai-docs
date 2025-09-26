@@ -5,34 +5,35 @@ slug: publish_app
 ---
 # Publish Application
 
-JitAi supports multiple application distribution methods, including: desktop version, server version, and cloud version.
-* Online Distribution: The most convenient way to publish, deploy, and update applications, which will be explained in detail below.
-* Offline Distribution: Export source code and import source code in another environment.
+JitAi supports multiple application distribution methods across desktop, server, and cloud environments:
 
-## Publish Application
+* **Online Distribution**: The most convenient approach for publishing, deploying, and updating applications (detailed below)
+* **Offline Distribution**: Export and import source code between different environments
 
-Before publishing, it is recommended to set configurations that differ between production and development environments as environment variables. For example, the large model key for [implementing answer generation with AI LLM functions](./dev_app/ai_func) in this project needs to be configured as an environment variable.
+## Publishing Your Application
+
+Before publishing, configure environment-specific settings as environment variables. For example, the large model API key used in [implementing answer generation with AI LLM functions](./dev_app/ai_func) should be set as an environment variable to separate development and production configurations.
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/publish_app_env.mp4" />
 
-Next, publish the application
+Once environment variables are configured, proceed with application publishing:
 
 <VideoPlayer relatePath="/docs/tutorial/publish_app_publish.mp4" />
 
-## Deploy JIT in Production Environment
+## Setting Up Production Environment
 
-Refer to [Download and Installation](./download-installation) to install the Docker version on the server.
+Install the Docker version on your production server by following the [Download and Installation](./download-installation) guide.
 
-## Deploy Application
-
-<VideoPlayer relatePath="/docs/tutorial/publish_app_produce.mp4" />
-
-## Update Application
-
-After modifying code on the desktop, publish again. In the node console of the production environment, you can see update prompts.
+## Deploying Your Application
 
 <VideoPlayer relatePath="/docs/tutorial/publish_app_produce.mp4" />
 
-Read [Creating and Deploying Applications](../devguide/creating-and-publishing-applications/creating-and-deploying-applications) for more details.
+## Updating Your Application
+
+After making code modifications in your development environment, republish the application. The production environment node console will display update notifications automatically.
+
+<VideoPlayer relatePath="/docs/tutorial/publish_app_update.mp4" />
+
+For comprehensive information, see [Creating and Deploying Applications](../devguide/creating-and-publishing-applications/creating-and-deploying-applications).

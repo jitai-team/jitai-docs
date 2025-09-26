@@ -49,9 +49,9 @@ const CONTENT: DownloadContent = {
       title: 'macOS Installer',
       description: 'Supports macOS 12.6.7+， suitable for local development and debugging',
       intelDownloadUrl: 'https://apk.jit.pro/latest/darwin/x64/jit.dmg',
-      intelDownloadText: 'Intel Chip Version',
+      intelDownloadText: 'for Intel processor',
       appleDownloadUrl: 'https://apk.jit.pro/latest/darwin/arm/jit.dmg',
-      appleDownloadText: 'Apple Chip Version'
+      appleDownloadText: 'for Apple silicon'
     }
   },
   

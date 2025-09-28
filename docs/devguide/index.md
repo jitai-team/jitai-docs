@@ -156,14 +156,10 @@ Complete workflow from application creation to distributed deployment. Master ap
   description="Learn application creation, inheritance, data configuration, and deployment. Master the fundamentals of application development workflow."
 >
   <LinkGrid links={[
-    { text: "Creating Your First Application", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#creating-first-application" },
-    { text: "Developing Applications Based on Existing Templates", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#developing-applications-based-on-existing-templates" },
-    { text: "Inheriting from Applications", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#inheriting-from-applications" },
-    { text: "Duplicating Applications", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#duplicating-applications" },
-    { text: "Configuring Data Storage and Environment Variables", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#configuring-data-storage-and-environment-variables" },
-    { text: "Deploying Applications", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#deploying-applications" },
-    { text: "Deploying Applications on Specified Nodes", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#deploying-applications-on-specified-nodes" },
-    { text: "Deploying Applications in Specified Runtime Environments", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#deploying-applications-in-specified-runtime-environments" }
+    { text: "Create First Application", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#create-first-application" },
+    { text: "Rapid Development Based on Existing Apps", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#based-on-existing-application-quick-development" },
+    { text: "Data Storage and Environment Variables", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#data-storage-and-environment-variable-configuration" },
+    { text: "Application Deployment", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#application-deployment" }
   ]} />
 </IndexCard>
 

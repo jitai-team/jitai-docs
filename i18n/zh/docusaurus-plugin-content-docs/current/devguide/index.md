@@ -29,7 +29,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "DevOps工具与服务", href: "devguide/basic-concept#devops-tools-and-services" },
     { text: "应用创建与开发", href: "devguide/basic-concept#application-creation-and-development" },
     { text: "JAAP协议与元素", href: "devguide/basic-concept#jaap-protocol-and-elements" },
-    { text: "元素Type与元素加载", href: "devguide/basic-concept#element-types-and-element-loading" },
+    { text: "元素Type与元素加载", href: "devguide/basic-concept#element-type-and-element-loading" },
     { text: "开发框架", href: "devguide/basic-concept#development-framework" },
     { text: "业务应用与应用继承", href: "devguide/basic-concept#business-applications-and-application-inheritance" },
     { text: "开发工具", href: "devguide/basic-concept#development-tools" },
@@ -1117,7 +1117,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="AI助理的API开放"
-  href="devguide/ai-assistant/ai-assistant-api-integration"
+  href="devguide/ai-assistant/ai-assistant-api-exposure"
   description="通过API接口开放AI助理能力，实现与外部系统的集成。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>

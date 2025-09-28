@@ -29,7 +29,7 @@ Master the core concepts and architecture principles of the JitAi platform. Unde
     { text: "DevOps tools and services", href: "devguide/basic-concept#devops-tools-and-services" },
     { text: "Application creation and development", href: "devguide/basic-concept#application-creation-and-development" },
     { text: "JAAP protocol and elements", href: "devguide/basic-concept#jaap-protocol-and-elements" },
-    { text: "Element types and element loading", href: "devguide/basic-concept#element-types-and-element-loading" },
+    { text: "Element types and element loading", href: "devguide/basic-concept#element-type-and-element-loading" },
     { text: "Development framework", href: "devguide/basic-concept#development-framework" },
     { text: "Business applications and application inheritance", href: "devguide/basic-concept#business-applications-and-application-inheritance" },
     { text: "Development tools", href: "devguide/basic-concept#development-tools" },
@@ -1114,7 +1114,7 @@ Visual intelligent workflow engine. Orchestrate business processes through drag-
 
 <IndexCard
   title="AI Assistant API Integration"
-  href="devguide/ai-assistant/ai-assistant-api-integration"
+  href="devguide/ai-assistant/ai-assistant-api-exposure"
   description="Expose AI assistant capabilities through API interfaces for integration with external systems."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>

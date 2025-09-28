@@ -70,7 +70,7 @@ this.subscribeEvent("AI:aiagents.ClientManagementagent.callTool.preEvent", async
 
 ![AI助理 - 发送AI消息](./img/send-ai-message.png)
 
-功能参数请参见[发送AI消息功能](../ai-assistant/ai-assistant-api-integration#send-ai-message)
+功能参数请参见[发送AI消息功能](../ai-assistant/ai-assistant-api-exposure#send-ai-message)
 
 
 ## 直接调用AI助理 {#call-ai-assistant}

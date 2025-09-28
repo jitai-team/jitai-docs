@@ -16,7 +16,7 @@ JitAi为开发者提供了可视化和全代码、编程与编排双模式的应
 
 在目录树中，开发者可以进行元素的搜索、修改元素标题、复制元素ID、导出元素源码、删除元素、生成副本、使用标签进行分组、显示/隐藏继承应用元素。
 
-## 添加元素 {#add-element}
+## 添加元素 {#adding-elements}
 ![添加元素的入口](./img/ide/element-add-entry.png)
 
 开发者点击`+`按钮添加元素时，需要依次选择元素的Meta和Type。Meta是最顶级的应用模块分类，例如：门户、页面、数据模型等。Type是Meta下的细分类型，例如页面Meta下的常规页面、ai-data-management-page、全代码页面等。
@@ -49,20 +49,23 @@ JitAi为开发者提供了可视化和全代码、编程与编排双模式的应
 在源码文件树视图下，开发者可以非常便捷地将其它应用导出的元素源码目录导入到当前应用中，实现复用。
 
 ## 应用设置 {#application-settings}
-在IDE的左侧区域点击“设置”标签页，即可打开应用设置。
+在IDE的左侧区域点击`设置`标签页，即可打开应用设置。
 
 ![设置应用基本信息](./img/ide/set-app-basic-info.png)
 
+### 基本信息 {#basic-information}
 在应用基本信息中，开发者可以设置应用的标题、logo、继承的应用以及版本、检查继承应用版本更新。
 
 ![设置应用默认元素](./img/ide/set-app-default-element.gif)
 
+### 默认元素 {#default-elements}
 在应用默认元素中，开发者可以设置应用的默认元素（门户、全局样式、数据库、缓存、文件存储、登录页）。
 
 开发者可以在设置的同时创建新的默认元素，例如：创建一个新的文件存储元素并设置为默认使用的文件存储。
 
 ![设置应用环境变量值](./img/ide/set-app-environment-variables.png)
 
+### 环境变量 {#environment-variables}
 在应用环境变量中，开发者可以设置应用的环境变量值，设置后即可在当前运行环境下生效。
 
 ## 门户切换 {#portal-switching}
@@ -79,7 +82,7 @@ JitAi为开发者提供了可视化和全代码、编程与编排双模式的应
 
 点击IDE左下角的下三角图标，点击`基本信息`，即可打开个人中心。
 
-## 语言切换 {#language-switch}
+## 语言切换 {#language-switching}
 点击IDE左下角的语言文案（English、简体中文等），即可切换界面语言。
 
 ![切换界面显示语言](./img/ide/switch-interface-display-language.png)

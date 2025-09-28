@@ -118,15 +118,16 @@ Powerful toolchain for efficient development. Master visual development environm
 >
   <LinkGrid links={[
     { text: "Dual Console Architecture", href: "devguide/development-tool-and-publish-service/devops-management-tool#dual-console-architecture" },
-    { text: "Local Node Console", href: "devguide/development-tool-and-publish-service/devops-management-tool#local-node-console" },
-    { text: "Organization Management Console", href: "devguide/development-tool-and-publish-service/devops-management-tool#organization-management-console" },
-    { text: "Application Lifecycle Management", href: "devguide/development-tool-and-publish-service/devops-management-tool#application-lifecycle-management" },
-    { text: "Runtime Environment Management", href: "devguide/development-tool-and-publish-service/devops-management-tool#runtime-environment-management" },
-    { text: "Node Cluster Management", href: "devguide/development-tool-and-publish-service/devops-management-tool#node-cluster-management" },
-    { text: "Flexible Configuration Management", href: "devguide/development-tool-and-publish-service/devops-management-tool#flexible-configuration-management" },
-    { text: "Version Release and Deployment", href: "devguide/development-tool-and-publish-service/devops-management-tool#version-release-and-deployment" },
-    { text: "Multi-platform Export", href: "devguide/development-tool-and-publish-service/devops-management-tool#multi-platform-export" },
-    { text: "Application Template Ecosystem", href: "devguide/development-tool-and-publish-service/devops-management-tool#application-template-ecosystem" }
+    { text: "Local node console", href: "devguide/development-tool-and-publish-service/devops-management-tool#local-node-console" },
+    { text: "Organization management console", href: "devguide/development-tool-and-publish-service/devops-management-tool#organization-management-console" },
+    { text: "Core Capabilities Overview", href: "devguide/development-tool-and-publish-service/devops-management-tool#core-capabilities-overview" },
+    { text: "Application lifecycle management", href: "devguide/development-tool-and-publish-service/devops-management-tool#application-lifecycle-management" },
+    { text: "Runtime environment management", href: "devguide/development-tool-and-publish-service/devops-management-tool#runtime-environment-management" },
+    { text: "Node cluster management", href: "devguide/development-tool-and-publish-service/devops-management-tool#node-cluster-management" },
+    { text: "Flexible configuration management", href: "devguide/development-tool-and-publish-service/devops-management-tool#flexible-configuration-management" },
+    { text: "Version release and deployment", href: "devguide/development-tool-and-publish-service/devops-management-tool#version-release-and-deployment" },
+    { text: "Multi-platform export", href: "devguide/development-tool-and-publish-service/devops-management-tool#multi-platform-export" },
+    { text: "Application template ecosystem", href: "devguide/development-tool-and-publish-service/devops-management-tool#application-template-ecosystem" }
   ]} />
 </IndexCard>
 

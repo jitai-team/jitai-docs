@@ -117,9 +117,10 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="双控制台架构的全面运维管理解决方案，提供从开发到部署的完整应用生命周期管理。"
 >
   <LinkGrid links={[
-    { text: "双控制台", href: "devguide/development-tool-and-publish-service/devops-management-tool#dual-console-architecture" },
+    { text: "双控制台架构", href: "devguide/development-tool-and-publish-service/devops-management-tool#dual-console-architecture" },
     { text: "本地节点控制台", href: "devguide/development-tool-and-publish-service/devops-management-tool#local-node-console" },
     { text: "组织管理控制台", href: "devguide/development-tool-and-publish-service/devops-management-tool#organization-management-console" },
+    { text: "核心能力概览", href: "devguide/development-tool-and-publish-service/devops-management-tool#core-capabilities-overview" },
     { text: "应用生命周期管理", href: "devguide/development-tool-and-publish-service/devops-management-tool#application-lifecycle-management" },
     { text: "运行环境管理", href: "devguide/development-tool-and-publish-service/devops-management-tool#runtime-environment-management" },
     { text: "节点集群管理", href: "devguide/development-tool-and-publish-service/devops-management-tool#node-cluster-management" },

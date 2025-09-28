@@ -29,7 +29,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "DevOps工具与服务", href: "devguide/basic-concept#devops-tools-and-services" },
     { text: "应用创建与开发", href: "devguide/basic-concept#application-creation-and-development" },
     { text: "JAAP协议与元素", href: "devguide/basic-concept#jaap-protocol-and-elements" },
-    { text: "元素Type与元素加载", href: "devguide/basic-concept#element-type-and-element-loading" },
+    { text: "元素Type与元素加载", href: "devguide/basic-concept#element-types-and-element-loading" },
     { text: "开发框架", href: "devguide/basic-concept#development-framework" },
     { text: "业务应用与应用继承", href: "devguide/basic-concept#business-applications-and-application-inheritance" },
     { text: "开发工具", href: "devguide/basic-concept#development-tools" },

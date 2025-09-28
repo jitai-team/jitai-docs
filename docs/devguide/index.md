@@ -25,14 +25,14 @@ Master the core concepts and architecture principles of the JitAi platform. Unde
   description="Understand JitAi platform architecture, application concepts, JAAP protocol, element systems, and development frameworks to master the fundamental principles of the platform."
 >
   <LinkGrid columns={2} links={[
-    { text: "Platform and Applications", href: "devguide/basic-concept#platform-and-applications" },
-    { text: "DevOps Tools and Services", href: "devguide/basic-concept#devops-tools-and-services" },
-    { text: "Application Creation and Development", href: "devguide/basic-concept#application-creation-and-development" },
-    { text: "JAAP Protocol and Elements", href: "devguide/basic-concept#jaap-protocol-and-elements" },
-    { text: "Element Type and Element Loading", href: "devguide/basic-concept#element-type-and-element-loading" },
-    { text: "Development Framework", href: "devguide/basic-concept#development-framework" },
-    { text: "Business Applications and Application Inheritance", href: "devguide/basic-concept#business-applications-and-application-inheritance" },
-    { text: "Development Tools", href: "devguide/basic-concept#development-tools" },
+    { text: "Platform and applications", href: "devguide/basic-concept#platform-and-applications" },
+    { text: "DevOps tools and services", href: "devguide/basic-concept#devops-tools-and-services" },
+    { text: "Application creation and development", href: "devguide/basic-concept#application-creation-and-development" },
+    { text: "JAAP protocol and elements", href: "devguide/basic-concept#jaap-protocol-and-elements" },
+    { text: "Element types and element loading", href: "devguide/basic-concept#element-types-and-element-loading" },
+    { text: "Development framework", href: "devguide/basic-concept#development-framework" },
+    { text: "Business applications and application inheritance", href: "devguide/basic-concept#business-applications-and-application-inheritance" },
+    { text: "Development tools", href: "devguide/basic-concept#development-tools" },
     { text: "Extension", href: "devguide/basic-concept#extension" }
   ]} />
 </IndexCard>

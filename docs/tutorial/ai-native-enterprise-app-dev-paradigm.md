@@ -8,16 +8,16 @@ In the assembly language era, developers needed deep hardware knowledge, directl
 
 Each paradigm shift has brought exponential improvements in efficiency, while simultaneously requiring developers to learn and adapt to new ways of thinking. Today, we are in the midst of another major transformation in development paradigms—**AI application development paradigm**.
 
-## AI Application Development Paradigm
+## AI application development paradigm
 
 Whether using LangGraph, CrewAI, or other development frameworks to build AI applications, all share one fundamental principle: **AI-human collaboration to achieve goals**.
 
-### From Human-Computer Interaction to Human-AI Collaboration
+### From human-computer interaction to human-AI collaboration
 ![From Human-Computer Interaction to Human-AI Collaboration](./img/human-computer-to-human-ai-collaboration.svg)
 
 Unlike traditional applications, AI applications incorporate AI assistants, transforming the interaction model from human-computer interaction to human-AI collaboration.
 
-### From Hard-coded Driven to AI Decision-driven
+### From hard-coded driven to AI decision-driven
 ![From Hard-coded Driven to AI Decision-driven](./img/hard-coding-to-ai-decision-driven.svg)
 
 In the human-computer interaction model, users trigger predefined program logic through actions such as clicking buttons and selecting menus, while the system passively responds by processing these requests.
@@ -26,12 +26,12 @@ In the human-AI collaboration model, humans can also converse with AI assistants
 
 When building systems, developers are no longer simply creating operational interfaces with predefined logic, but rather developing full-stack applications enhanced by AI assistants that understand requirements, make intelligent decisions, and proactively execute business operations.
 
-### AI-Driven Full-Stack Tool Invocation Flow
+### AI-driven full-stack tool invocation flow
 ![AI-Driven Full-Stack Tool Invocation Flow](./img/ai-centered-system-interaction-flow.svg)
 
 By treating AI as the intelligent hub of the entire system, it can intelligently select and dynamically combine frontend and backend tools based on user intent, achieving unified full-stack invocation. **Crucially, the tools invoked by AI are essentially the same functional modules that users access through UI interfaces in traditional applications**. Users can operate through UI interfaces or converse with AI, with the system automatically orchestrating tool chains to complete tasks and provide feedback, genuinely enabling the shift from "humans adapting to systems" to "systems adapting to humans."
 
-## Enterprise AI Application Characteristics
+## Enterprise AI application characteristics
 
 Consumer-grade AI applications prioritize universality and ease of use, while enterprise-grade AI applications demand deep business integration and granular control. We need to build an application development technology system that is fundamentally different from consumer-grade AI applications across multiple dimensions including architectural design, functional customization, permission control, deployment modes, and data security.
 
@@ -39,7 +39,7 @@ Consumer-grade AI applications prioritize universality and ease of use, while en
 
 To enable AI applications to efficiently handle enterprise-level data and tasks, AI applications must deeply integrate with traditional software system modules. This integration occurs at the tool level, where tools are software modules that must possess the following characteristics:
 
-### Module Self-Description Capability
+### Module self-description capability
 Software modules must clearly articulate their functionality, parameters, and usage to AI applications:
 
 - **Functional Description**: Modules can articulate their core functionality and business value
@@ -48,7 +48,7 @@ Software modules must clearly articulate their functionality, parameters, and us
 - **Parameter Specifications**: Automatically generate detailed descriptions and constraints for input and output parameters
 - **Invocation Examples**: Provide standardized invocation interfaces and practical use cases
 
-### Module Hot-swappable and Replaceable
+### Module hot-swappable and replaceable
 AI applications use tools in a highly dynamic manner, especially when processing different types of data and tasks, requiring support for flexible runtime adjustments:
 
 - **Dynamic Requirements**: Tool requirements continuously change during AI application capability iteration
@@ -58,7 +58,7 @@ AI applications use tools in a highly dynamic manner, especially when processing
 - **Seamless Replacement**: Support replacing and upgrading tools without downtime
 - **Combination Orchestration**: Support dynamic combination and orchestration of multiple tool modules
 
-### Comprehensive Module Tooling
+### Comprehensive module tooling
 Transcending traditional backend service limitations to enable unified frontend and backend tool invocation, allowing AI applications to comprehensively manage data and tasks:
 
 - **Backend Data Processing**: Traditional backend functions such as data services, business logic, and API interfaces
@@ -69,10 +69,10 @@ Transcending traditional backend service limitations to enable unified frontend 
 
 **[JAAP (Jit AI Application Protocol)](../reference/runtime-platform/JAAP)** defines AI-native enterprise application architecture through structural definition and process-driven approaches, addressing the requirements of AI application development paradigms.
 
-## AI Product Components
+## AI product components
 JitAi has developed four core AI product components that collectively form the technical foundation for enterprise-level AI application development.
 
-### AI Large Language Models
+### AI large language models
 An enterprise-grade large model service gateway that interfaces with various large model service providers, providing a unified model invocation interface.
 
 **Core Capabilities**:
@@ -83,7 +83,7 @@ An enterprise-grade large model service gateway that interfaces with various lar
 
 > 📖 Learn more: [AI Large Language Models](../devguide/ai-llm)
 
-### AI Knowledge Base
+### AI knowledge base
 Enterprise knowledge management system based on RAG technology, supporting intelligent retrieval and knowledge enhancement from multiple data sources.
 
 **Core Capabilities**:
@@ -100,7 +100,7 @@ Enterprise knowledge management system based on RAG technology, supporting intel
 
 > 📖 Learn more: [AI Knowledge Base](../devguide/knowledge-base)
 
-### AI Agent
+### AI agent
 The core execution engine for AI applications, responsible for tool orchestration, full-chain state tracking, and task execution.
 
 **Core Capabilities**:
@@ -111,7 +111,7 @@ The core execution engine for AI applications, responsible for tool orchestratio
 
 > 📖 Learn more: [AI Agent](../devguide/ai-agent)
 
-### AI Assistant
+### AI assistant
 The unified interface for AI application-user interaction, serving as the interaction interface between AI applications and users.
 
 **Core Capabilities**:

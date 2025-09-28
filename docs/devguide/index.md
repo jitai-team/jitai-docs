@@ -40,7 +40,7 @@ Master the core concepts and architecture principles of the JitAi platform. Unde
 </div>
 
 ## Platform Installation and Node Activation
-Complete the platform installation and node activation process. Learn download and installation methods, node activation procedures, and developer organization management to establish a development environment foundation.
+Complete the platform installation and node activation process. Learn download and installation methods, node activation procedures, and developer team management to establish a development environment foundation.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
@@ -55,19 +55,19 @@ Complete the platform installation and node activation process. Learn download a
 </IndexCard>
 
 <IndexCard
-  title="Node Activation and Developer Organizations"
-  href="devguide/installation-activation/developer-organization-management"
-  description="Learn how to activate nodes and manage developer organizations, including organization binding, member management and other core operations."
+  title="Node Activation and Developer Team"
+  href="devguide/installation-activation/developer-team-management"
+  description="Learn how to activate nodes and manage developer teams, including organization binding, member management and other core operations."
 >
   <LinkGrid links={[
-    { text: "What is Node", href: "devguide/installation-activation/developer-organization-management#what-is-jitnode" },
-    { text: "What is Developer Organization", href: "devguide/installation-activation/developer-organization-management#what-is-developer-organization" },
-    { text: "Create New Development Organization When Activating Node", href: "devguide/installation-activation/developer-organization-management#create-new-development-organization-when-activating-node" },
-    { text: "Bind Node to Joined Organization When Activating", href: "devguide/installation-activation/developer-organization-management#bind-node-to-joined-organization-when-activating" },
-    { text: "Use Organization Bind Code to Join and Bind When Activating Node", href: "devguide/installation-activation/developer-organization-management#use-organization-bind-code-to-join-and-bind-when-activating-node" },
-    { text: "Join Organization via Bind Code When Logging into Existing Node", href: "devguide/installation-activation/developer-organization-management#join-organization-via-bind-code-when-logging-into-existing-node" },
-    { text: "View and Refresh Organization Bind Code", href: "devguide/installation-activation/developer-organization-management#view-and-refresh-organization-bind-code" },
-    { text: "Remove Organization Member", href: "devguide/installation-activation/developer-organization-management#remove-organization-member" }
+    { text: "What is Node", href: "devguide/installation-activation/developer-team-management#what-is-jitnode" },
+    { text: "What is Developer Team", href: "devguide/installation-activation/developer-team-management#what-is-developer-team" },
+    { text: "Create New Development Organization When Activating Node", href: "devguide/installation-activation/developer-team-management#create-new-dev-team-when-activating-node" },
+    { text: "Bind Node to Joined Organization When Activating", href: "devguide/installation-activation/developer-team-management#bind-node-to-joined-team-when-activating" },
+    { text: "Use Organization Bind Code to Join and Bind When Activating Node", href: "devguide/installation-activation/developer-team-management#use-team-bind-code-to-join-and-bind-when-activating-node" },
+    { text: "Join Organization via Bind Code When Logging into Existing Node", href: "devguide/installation-activation/developer-team-management#join-team-via-bind-code-when-logging-into-existing-node" },
+    { text: "View and Refresh Organization Bind Code", href: "devguide/installation-activation/developer-team-management#view-and-refresh-team-bind-code" },
+    { text: "Remove Organization Member", href: "devguide/installation-activation/developer-team-management#remove-team-member" }
   ]} />
 </IndexCard>
 

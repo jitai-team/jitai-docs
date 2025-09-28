@@ -5,19 +5,19 @@ slug: role
 ---
 # Implementing Permission Control with Application Roles
 
-## Demo Effect
+## Demo effect
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/role_effect.mp4" />
 
-## Implementation Process
+## Implementation process
 
 The JitAi application framework includes built-in "Developer" and "Administrator" roles, corresponding to the "Developer Portal" and "Administrator Portal" respectively.
 
 This project requires two role types: Teacher and Student. Since we've already created "Teacher Portal" and "Student Portal" for these roles, permission configuration becomes straightforward.
 
-### Creating Application Roles and Managing Permission Scope in the "Developer Portal"
+### Creating application roles and managing permission scope in the "Developer Portal"
 
 ![](../img/role_150631.png)
 

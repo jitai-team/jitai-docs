@@ -21,7 +21,7 @@ Installation steps:
 
 1. [Download the installer](https://apk.jit.pro/latest/windows/jit.exe).
 2. Run the .exe file and follow the installation wizard.
-3. Complete the activation process as prompted. See [Developer Organization Management](../devguide/installation-activation/developer-organization-management) for detailed instructions.
+3. Complete the activation process as prompted. See [Developer Team Management](../devguide/installation-activation/developer-team-management) for detailed instructions.
 
 ### macOS
 
@@ -31,7 +31,7 @@ Installation steps:
 
 1. Download the appropriate installer: [Intel-based Macs](https://apk.jit.pro/latest/darwin/x64/jit.dmg) or [Apple Silicon Macs](https://apk.jit.pro/latest/darwin/arm/jit.dmg).
 2. Open the .dmg file and follow the installation instructions.
-3. Complete the activation process as prompted. See [Developer Organization Management](../devguide/installation-activation/developer-organization-management) for detailed instructions.
+3. Complete the activation process as prompted. See [Developer Team Management](../devguide/installation-activation/developer-team-management) for detailed instructions.
 
 :::warning
 If macOS displays a security warning, click "Done", then navigate to System Settings → Privacy & Security → Security, set "Allow apps downloaded from" to "App Store and identified developers", and click "Open Anyway".
@@ -71,7 +71,7 @@ Designed for deploying applications in server environments with multi-threaded p
    ```
    :::
 
-3. Open your browser and navigate to `http://{server-IP-address}:80`, then complete the activation process. See [Developer Organization Management](../devguide/installation-activation/developer-organization-management) for detailed instructions.
+3. Open your browser and navigate to `http://{server-IP-address}:80`, then complete the activation process. See [Developer Team Management](../devguide/installation-activation/developer-team-management) for detailed instructions.
 
 
 ### Container Parameters

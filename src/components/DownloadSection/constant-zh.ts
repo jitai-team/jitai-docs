@@ -49,9 +49,9 @@ const CONTENT: DownloadContent = {
       title: 'MacOS 安装包',
       description: '支持mac12.6.7+， 适合本地开发和调试',
       intelDownloadUrl: 'https://apk.jit.pro/latest/darwin/x64/jit.dmg',
-      intelDownloadText: 'Intel 芯片安装包',
+      intelDownloadText: 'Intel芯片安装包',
       appleDownloadUrl: 'https://apk.jit.pro/latest/darwin/arm/jit.dmg',
-      appleDownloadText: 'Apple 芯片安装包'
+      appleDownloadText: 'Apple芯片安装包'
     }
   },
   

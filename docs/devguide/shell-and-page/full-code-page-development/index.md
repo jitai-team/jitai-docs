@@ -17,11 +17,11 @@ The platform is built with React, so React full-code pages can achieve maximum i
 
 ![React Full-Code Page Creation](./imgs/create.png)
 
-Click the `+` button to the right of the search box in the element directory tree, select `Page` - `Full-Code Page`. A popup for creating a full-code page element will appear.
+Click the `+` button to the right of the search box in the element directory tree, select `UI Pages` - `React Page`. A popup for creating a full-code page element will appear.
 
 ![React Full-Code Page Creation Popup](./imgs/create-popup.png)
 
-In the creation popup, you only need to fill in the `Name`, then click `OK` to complete creation.
+In the creation popup, you only need to fill in the `Name`, then click `Confirm` to complete creation.
 
 ![Default Full-Code Page](./imgs/default-full-code-page.png)
 
@@ -36,11 +36,11 @@ For developers unfamiliar with React, the platform also provides Vue full-code p
 
 ![Vue Full-Code Page Creation](./imgs/vue-create.png)
 
-Click the `+` button to the right of the search box in the element directory tree, select `Page` - `Vue Page`. A popup for creating a Vue page element will appear.
+Click the `+` button to the right of the search box in the element directory tree, select `UI Page` - `Vue Page`. A popup for creating a Vue page element will appear.
 
 ![Vue Creation Popup](./imgs/vue-create-popup.png)
 
-In the creation popup, you only need to fill in the `Name`, then click `OK` to complete creation.
+In the creation popup, you only need to fill in the `Name`, then click `Confirm` to complete creation.
 
 ![Vue Default Page](./imgs/vue-default-page.png)
 

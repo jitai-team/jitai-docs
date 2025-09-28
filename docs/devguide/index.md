@@ -137,9 +137,9 @@ Powerful toolchain for efficient development. Master visual development environm
   description="Official cloud application publishing service providing centralized application repository, version management, and seamless deployment across JitNodes."
 >
   <LinkGrid links={[
-    { text: "Synchronizing Runtime Environment Configuration", href: "devguide/development-tool-and-publish-service/jcs-cloud-publishing-service#synchronizing-runtime-environment-configuration" },
-    { text: "Retrieving Version Update Information", href: "devguide/development-tool-and-publish-service/jcs-cloud-publishing-service#retrieving-version-update-information" },
-    { text: "Accessing Cloud Application Repository", href: "devguide/development-tool-and-publish-service/jcs-cloud-publishing-service#accessing-cloud-application-repository" }
+    { text: "Synchronizing runtime environment configuration from JCS", href: "devguide/development-tool-and-publish-service/jcs-cloud-publishing-service#synchronizing-runtime-environment-configuration" },
+    { text: "Retrieving version update information from JCS", href: "devguide/development-tool-and-publish-service/jcs-cloud-publishing-service#retrieving-version-update-information" },
+    { text: "Accessing cloud application repository through JCS", href: "devguide/development-tool-and-publish-service/jcs-cloud-publishing-service#accessing-cloud-application-repository" }
   ]} />
 </IndexCard>
 

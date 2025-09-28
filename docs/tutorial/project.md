@@ -5,11 +5,11 @@ slug: project
 ---
 # Case Study
 
-The business scenario of this case project is: teachers create test papers, students take exams, teachers grade papers.
+This case study demonstrates an educational assessment system where teachers create test papers, students take examinations, and teachers evaluate student responses.
 
-## How to experience this project and view the source code?
+## Exploring the project
 
-After installing the environment, deploy this application directly
+After setting up your environment, you can deploy this application directly to explore its functionality.
 
 ![](img/project_192638.png)
 
@@ -21,26 +21,26 @@ After installing the environment, deploy this application directly
 | Student A | kaoshenga | ks123456 | Student | Can take exams |
 | Student B | kaoshengb | ks123456 | Student | Can take exams |
 
-## Demo Effects
-### After teacher account login
+## Demo overview
+### Teacher portal
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/project_teacher.mp4" />
 
-### After student account login
+### Student portal
 
 <VideoPlayer relatePath="/docs/tutorial/project_student.mp4" />
 
-### After admin account login
+### Administrator portal
 
 <VideoPlayer relatePath="/docs/tutorial/project_admin.mp4" />
 
-## Data Model Introduction
-* Question Bank Table: Stores all question information, including question content, type, difficulty, etc.
-* Test Paper Table, Test Paper Detail Table: Store basic test paper information and configuration for each question
-* Answer Sheet Table, Answer Sheet Detail Table: Store students' answer records and score information
+## Data model overview
+* **Question Bank Table**: Stores comprehensive question information including content, type, difficulty level, and metadata
+* **Test Paper Tables**: Store test paper configurations and question associations through main and detail tables
+* **Answer Sheet Tables**: Store student responses and scoring information through main and detail tables
 
-The specific fields in the model are as follows
+The detailed field structures are illustrated below:
 
 ![](img/project_102847.png)
 ![](img/project_102943.png)

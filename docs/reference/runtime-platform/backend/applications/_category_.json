@@ -1,5 +1,6 @@
 {
   "label": "Applications",
+  "key": "backend-applications",
   "position": 2,
   "link": {
     "type": "generated-index",

@@ -21,7 +21,7 @@ JitAi安装包分为桌面版（支持Windows、Mac）和服务器版（提供Do
 
 1. [点击此处下载](https://apk.jit.pro/latest/windows/jit.exe)安装包。
 2. 双击exe文件安装。
-3. 按页面流程激活。 阅读[开发者组织管理](../devguide/installation-activation/developer-organization-management)了解更多细节。
+3. 按页面流程激活。 阅读[开发者团队管理](../devguide/installation-activation/developer-team-management)了解更多细节。
 
 ### Mac
 
@@ -31,11 +31,11 @@ JitAi安装包分为桌面版（支持Windows、Mac）和服务器版（提供Do
 
 1. 下载安装包： [Intel芯片安装包](https://apk.jit.pro/latest/darwin/x64/jit.dmg)，[Apple芯片安装包](https://apk.jit.pro/latest/darwin/arm/jit.dmg)。
 2. 双击dmg文件安装。
-3. 按页面流程激活。阅读[开发者组织管理](../devguide/installation-activation/developer-organization-management)了解更多细节。
+3. 按页面流程激活。阅读[开发者团队管理](../devguide/installation-activation/developer-team-management)了解更多细节。
 
 :::warning
 如果提示安全性问题，点击"完成"按钮，进入系统设置->隐私与安全性->安全性，将"允许以下来源的应用程序"设置为"App Store与已知开发者"，点击`仍要打开`。
-![Apple安全验证问题](./img/apple_validation.png)
+![Apple安全验证问题](./img/openanyway.gif)
 
 :::
 
@@ -71,7 +71,7 @@ JitAi安装包分为桌面版（支持Windows、Mac）和服务器版（提供Do
    ```
    :::
 
-3. 在浏览器中访问 `http://{服务器IP地址}:80`，按页面流程激活。阅读[开发者组织管理](../devguide/installation-activation/developer-organization-management)了解更多细节。
+3. 在浏览器中访问 `http://{服务器IP地址}:80`，按页面流程激活。阅读[开发者团队管理](../devguide/installation-activation/developer-team-management)了解更多细节。
 
 
 ### 容器参数说明

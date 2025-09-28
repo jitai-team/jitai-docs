@@ -144,7 +144,7 @@ When users enable the "SMS Notification" function, whenever there are correspond
 
 ![SMS Notification](./img/workflow_2025-08-25_14-38-31.png)
 
-Note: Before configuring the SMS notification function, you need to configure SMS service and SMS template code (How to configure SMS service? Please refer to [SMS Service](../third-party-integration/sms-service#using-sms-service-in-approval-workflow)).
+Note: Before configuring the SMS notification function, you need to configure SMS service and SMS template code (How to configure SMS service? Please refer to [SMS Service](../third-party-integration/sms-service#use-sms-service-in-approval-workflow)).
 
 ## Approval Page and Permission Control {#approval-page-permission-control}
 Each approval node can control permissions for the displayed pages, such as customizing pages for specific approval nodes, configuring field viewing and editing permissions, etc.

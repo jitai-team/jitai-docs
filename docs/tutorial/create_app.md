@@ -1,27 +1,26 @@
 ---
 sidebar_position: 4
-title: Create Application
 slug: create_app
 ---
 # Create Application
 
-#### Create Application
+## Creating your first application
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/create_app.mp4" />
 
-Read [Application Creation and Management](../devguide/creating-and-publishing-applications/creating-and-deploying-applications) for more details.
+For detailed information, see [Application Creation and Management](../devguide/creating-and-publishing-applications/creating-and-deploying-applications).
 
-#### Access Application
+## Accessing your application
 
 <VideoPlayer relatePath="/docs/tutorial/visit_app.mp4" />
 
-:::warning Notice
-Note: The default username and password are both admin123
+:::warning Default Credentials
+The default username and password are both `admin123`
 :::
-* User Portal: Operation interface for ordinary members, such as: entering orders, initiating applications, viewing reports, etc.
-* Admin Portal: Management interface for application administrators, such as: contact management, application permissions, knowledge base management, etc., but cannot develop applications.
-* Developer Portal: Configuration page for developers. For example: adding menus, pages, etc.
+* **User Portal**: Operational interface for end users, including order entry, application initiation, report viewing, and other daily operations
+* **Admin Portal**: Management interface for application administrators, covering contact management, application permissions, and knowledge base management (development capabilities not included)
+* **Developer Portal**: Configuration interface for developers, enabling menu creation, page management, and application development
 
-Read [Portal Navigation Design](../devguide/shell-and-page/portal-navigation-design) for more details.
+For detailed information, see [Portal Navigation Design](../devguide/shell-and-page/portal-navigation-design).

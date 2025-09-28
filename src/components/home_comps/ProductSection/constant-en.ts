@@ -1,5 +1,5 @@
 const CONTENT = {
-  title: 'What is JitAi?',
+  title: 'What is JitAi ?',
   subtitle: 'Next-generation enterprise AI application development technology stack including standardized protocols, runtime platforms, development frameworks, tools, and DevOps solutions',
   cards: [
     {

@@ -62,12 +62,12 @@ slug: creating-and-deploying-applications
 应用创建完成后，可以直接在当前运行环境中进行开发和测试。当需要发布正式版本时，请参考[应用发布与更新](../creating-and-publishing-applications/publishing-and-updating-applications)。发布应用版本后，就可以被其它节点和运行环境部署。
 
 ### 在指定节点上部署应用
-当开发者组织只有少量节点、仅使用节点的默认运行环境时，可以直接通过每个节点的节点控制台来部署应用。
+当开发者团队只有少量节点、仅使用节点的默认运行环境时，可以直接通过每个节点的节点控制台来部署应用。
 
 在[节点控制台](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment)中，点击`部署应用`按钮，会打开部署应用弹窗，开发者需选择应用、版本、部署方式，点击`确定`按钮即可完成部署。
 
 ### 在指定运行环境中部署应用
-当开发者组织管理多个Jit节点、多个运行环境时，则需要在[组织管理控制台](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment)中为特定运行环境下的多个节点部署应用。
+当开发者团队管理多个Jit节点、多个运行环境时，则需要在[组织管理控制台](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment)中为特定运行环境下的多个节点部署应用。
 
 在[组织管理控制台](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment)中，选中目标运行环境，点击`部署应用`按钮，会打开部署应用弹窗，开发者需选择应用、版本、部署方式、目标节点，点击`确定`按钮即可完成部署。
 

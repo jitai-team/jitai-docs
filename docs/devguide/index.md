@@ -95,16 +95,19 @@ Powerful toolchain for efficient development. Master visual development environm
   description="Master the powerful visual development environment, familiarize yourself with IDE functional areas, and learn to switch between visual and source code modes."
 >
   <LinkGrid links={[
-    { text: "Element Directory Tree", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#element-directory-tree" },
-    { text: "Add Element", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#add-element" },
-    { text: "Visual Editor", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#visual-editor" },
-    { text: "Source Code Editor", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#source-code-editor" },
-    { text: "Source Code File Tree", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#source-code-file-tree" },
-    { text: "Application Settings", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#application-settings" },
-    { text: "Portal Switching", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#portal-switching" },
-    { text: "Personal Center", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#personal-center" },
-    { text: "Language Switch", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#language-switch" },
-    { text: "Navigation Tabs", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#navigation-tabs" }
+    { text: "Element directory tree", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#element-directory-tree" },
+    { text: "Adding elements", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#adding-elements" },
+    { text: "Visual editor", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#visual-editor" },
+    { text: "Source code editor", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#source-code-editor" },
+    { text: "Source code file tree", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#source-code-file-tree" },
+    { text: "Application settings", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#application-settings" },
+    { text: "Basic information", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#basic-information" },
+    { text: "Default elements", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#default-elements" },
+    { text: "Environment variables", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#environment-variables" },
+    { text: "Portal switching", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#portal-switching" },
+    { text: "Personal center", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#personal-center" },
+    { text: "Language switching", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#language-switching" },
+    { text: "Navigation tabs", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#navigation-tabs" }
   ]} />
 </IndexCard>
 

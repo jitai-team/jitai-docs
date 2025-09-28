@@ -40,7 +40,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </div>
 
 ## 平台安装与节点激活
-完成平台安装和节点激活流程。学习下载安装方法、节点激活流程、开发者组织管理等，建立开发环境基础。
+完成平台安装和节点激活流程。学习下载安装方法、节点激活流程、开发者团队管理等，建立开发环境基础。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
@@ -55,19 +55,19 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="节点激活与开发者组织"
-  href="devguide/installation-activation/developer-organization-management"
-  description="了解如何激活节点和管理开发者组织，包括组织绑定、成员管理等核心操作。"
+  title="节点激活与开发者团队"
+  href="devguide/installation-activation/developer-team-management"
+  description="了解如何激活节点和管理开发者团队，包括组织绑定、成员管理等核心操作。"
 >
   <LinkGrid links={[
-    { text: "什么是节点", href: "devguide/installation-activation/developer-organization-management#what-is-jitnode" },
-    { text: "什么是开发者组织", href: "devguide/installation-activation/developer-organization-management#what-is-developer-organization" },
-    { text: "在激活节点时创建新的开发组织", href: "devguide/installation-activation/developer-organization-management#create-new-development-organization-when-activating-node" },
-    { text: "在激活节点时将节点绑定到自己已加入的组织", href: "devguide/installation-activation/developer-organization-management#bind-node-to-joined-organization-when-activating" },
-    { text: "在激活节点时使用组织绑定码加入组织并绑定", href: "devguide/installation-activation/developer-organization-management#use-organization-bind-code-to-join-and-bind-when-activating-node" },
-    { text: "在登录已有节点时通过组织绑定码加入组织", href: "devguide/installation-activation/developer-organization-management#join-organization-via-bind-code-when-logging-into-existing-node" },
-    { text: "查看和刷新组织绑定码", href: "devguide/installation-activation/developer-organization-management#view-and-refresh-organization-bind-code" },
-    { text: "移除组织成员", href: "devguide/installation-activation/developer-organization-management#remove-organization-member" }
+    { text: "什么是节点", href: "devguide/installation-activation/developer-team-management#what-is-jitnode" },
+    { text: "什么是开发者团队", href: "devguide/installation-activation/developer-team-management#what-is-developer-team" },
+    { text: "在激活节点时创建新的开发组织", href: "devguide/installation-activation/developer-team-management#create-new-dev-team-when-activating-node" },
+    { text: "在激活节点时将节点绑定到自己已加入的组织", href: "devguide/installation-activation/developer-team-management#bind-node-to-joined-team-when-activating" },
+    { text: "在激活节点时使用组织绑定码加入组织并绑定", href: "devguide/installation-activation/developer-team-management#use-team-bind-code-to-join-and-bind-when-activating-node" },
+    { text: "在登录已有节点时通过组织绑定码加入组织", href: "devguide/installation-activation/developer-team-management#join-team-via-bind-code-when-logging-into-existing-node" },
+    { text: "查看和刷新组织绑定码", href: "devguide/installation-activation/developer-team-management#view-and-refresh-team-bind-code" },
+    { text: "移除组织成员", href: "devguide/installation-activation/developer-team-management#remove-team-member" }
   ]} />
 </IndexCard>
 
@@ -96,14 +96,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid links={[
     { text: "元素目录树", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#element-directory-tree" },
-    { text: "添加元素", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#add-element" },
+    { text: "添加元素", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#adding-elements" },
     { text: "可视化编辑器", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#visual-editor" },
     { text: "源码编辑器", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#source-code-editor" },
     { text: "源码文件树", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#source-code-file-tree" },
     { text: "应用设置", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#application-settings" },
+    { text: "基本信息", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#basic-information" },
+    { text: "默认元素", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#default-elements" },
+    { text: "环境变量", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#environment-variables" },
     { text: "门户切换", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#portal-switching" },
     { text: "个人中心", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#personal-center" },
-    { text: "语言切换", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#language-switch" },
+    { text: "语言切换", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#language-switching" },
     { text: "导航标签", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#navigation-tabs" }
   ]} />
 </IndexCard>
@@ -114,9 +117,10 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="双控制台架构的全面运维管理解决方案，提供从开发到部署的完整应用生命周期管理。"
 >
   <LinkGrid links={[
-    { text: "双控制台", href: "devguide/development-tool-and-publish-service/devops-management-tool#dual-console-architecture" },
+    { text: "双控制台架构", href: "devguide/development-tool-and-publish-service/devops-management-tool#dual-console-architecture" },
     { text: "本地节点控制台", href: "devguide/development-tool-and-publish-service/devops-management-tool#local-node-console" },
     { text: "组织管理控制台", href: "devguide/development-tool-and-publish-service/devops-management-tool#organization-management-console" },
+    { text: "核心能力概览", href: "devguide/development-tool-and-publish-service/devops-management-tool#core-capabilities-overview" },
     { text: "应用生命周期管理", href: "devguide/development-tool-and-publish-service/devops-management-tool#application-lifecycle-management" },
     { text: "运行环境管理", href: "devguide/development-tool-and-publish-service/devops-management-tool#runtime-environment-management" },
     { text: "节点集群管理", href: "devguide/development-tool-and-publish-service/devops-management-tool#node-cluster-management" },
@@ -1117,7 +1121,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="AI助理的API开放"
-  href="devguide/ai-assistant/ai-assistant-api-integration"
+  href="devguide/ai-assistant/ai-assistant-api-exposure"
   description="通过API接口开放AI助理能力，实现与外部系统的集成。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>

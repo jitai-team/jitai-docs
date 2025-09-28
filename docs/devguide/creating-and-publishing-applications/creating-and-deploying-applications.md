@@ -63,12 +63,12 @@ Developers can also define environment variables when developing their own appli
 After application creation is complete, you can directly develop and test in the current runtime environment. When you need to publish an official version, please refer to [Application Publishing and Updates](../creating-and-publishing-applications/publishing-and-updating-applications). After publishing an application version, it can be deployed by other nodes and runtime environments.
 
 ### Deploy Application on Specified Node
-When a developer organization has only a few nodes and uses only the default runtime environment of nodes, applications can be deployed directly through each node's Node Console.
+When a developer team has only a few nodes and uses only the default runtime environment of nodes, applications can be deployed directly through each node's Node Console.
 
 In the [Node Console](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment), click the `Deploy Application` button to open the deploy application dialog. Developers need to select the application, version, and deployment method, then click the `Confirm` button to complete deployment.
 
 ### Deploy Application in Specified Runtime Environment
-When a developer organization manages multiple JitNodes and multiple runtime environments, applications need to be deployed for multiple nodes under specific runtime environments in the [Organization Management Console](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment).
+When a developer team manages multiple JitNodes and multiple runtime environments, applications need to be deployed for multiple nodes under specific runtime environments in the [Organization Management Console](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment).
 
 In the [Organization Management Console](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment), select the target runtime environment and click the `Deploy Application` button to open the deploy application dialog. Developers need to select the application, version, deployment method, and target nodes, then click the `Confirm` button to complete deployment.
 

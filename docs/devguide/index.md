@@ -25,14 +25,14 @@ Master the core concepts and architecture principles of the JitAi platform. Unde
   description="Understand JitAi platform architecture, application concepts, JAAP protocol, element systems, and development frameworks to master the fundamental principles of the platform."
 >
   <LinkGrid columns={2} links={[
-    { text: "Platform and Applications", href: "devguide/basic-concept#platform-and-applications" },
-    { text: "DevOps Tools and Services", href: "devguide/basic-concept#devops-tools-and-services" },
-    { text: "Application Creation and Development", href: "devguide/basic-concept#application-creation-and-development" },
-    { text: "JAAP Protocol and Elements", href: "devguide/basic-concept#jaap-protocol-and-elements" },
-    { text: "Element Type and Element Loading", href: "devguide/basic-concept#element-type-and-element-loading" },
-    { text: "Development Framework", href: "devguide/basic-concept#development-framework" },
-    { text: "Business Applications and Application Inheritance", href: "devguide/basic-concept#business-applications-and-application-inheritance" },
-    { text: "Development Tools", href: "devguide/basic-concept#development-tools" },
+    { text: "Platform and applications", href: "devguide/basic-concept#platform-and-applications" },
+    { text: "DevOps tools and services", href: "devguide/basic-concept#devops-tools-and-services" },
+    { text: "Application creation and development", href: "devguide/basic-concept#application-creation-and-development" },
+    { text: "JAAP protocol and elements", href: "devguide/basic-concept#jaap-protocol-and-elements" },
+    { text: "Element types and element loading", href: "devguide/basic-concept#element-type-and-element-loading" },
+    { text: "Development framework", href: "devguide/basic-concept#development-framework" },
+    { text: "Business applications and application inheritance", href: "devguide/basic-concept#business-applications-and-application-inheritance" },
+    { text: "Development tools", href: "devguide/basic-concept#development-tools" },
     { text: "Extension", href: "devguide/basic-concept#extension" }
   ]} />
 </IndexCard>
@@ -40,7 +40,7 @@ Master the core concepts and architecture principles of the JitAi platform. Unde
 </div>
 
 ## Platform Installation and Node Activation
-Complete the platform installation and node activation process. Learn download and installation methods, node activation procedures, and developer organization management to establish a development environment foundation.
+Complete the platform installation and node activation process. Learn download and installation methods, node activation procedures, and developer team management to establish a development environment foundation.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
@@ -55,19 +55,19 @@ Complete the platform installation and node activation process. Learn download a
 </IndexCard>
 
 <IndexCard
-  title="Node Activation and Developer Organizations"
-  href="devguide/installation-activation/developer-organization-management"
-  description="Learn how to activate nodes and manage developer organizations, including organization binding, member management and other core operations."
+  title="Node Activation and Developer Team"
+  href="devguide/installation-activation/developer-team-management"
+  description="Learn how to activate nodes and manage developer teams, including organization binding, member management and other core operations."
 >
   <LinkGrid links={[
-    { text: "What is Node", href: "devguide/installation-activation/developer-organization-management#what-is-jitnode" },
-    { text: "What is Developer Organization", href: "devguide/installation-activation/developer-organization-management#what-is-developer-organization" },
-    { text: "Create New Development Organization When Activating Node", href: "devguide/installation-activation/developer-organization-management#create-new-development-organization-when-activating-node" },
-    { text: "Bind Node to Joined Organization When Activating", href: "devguide/installation-activation/developer-organization-management#bind-node-to-joined-organization-when-activating" },
-    { text: "Use Organization Bind Code to Join and Bind When Activating Node", href: "devguide/installation-activation/developer-organization-management#use-organization-bind-code-to-join-and-bind-when-activating-node" },
-    { text: "Join Organization via Bind Code When Logging into Existing Node", href: "devguide/installation-activation/developer-organization-management#join-organization-via-bind-code-when-logging-into-existing-node" },
-    { text: "View and Refresh Organization Bind Code", href: "devguide/installation-activation/developer-organization-management#view-and-refresh-organization-bind-code" },
-    { text: "Remove Organization Member", href: "devguide/installation-activation/developer-organization-management#remove-organization-member" }
+    { text: "What is Node", href: "devguide/installation-activation/developer-team-management#what-is-jitnode" },
+    { text: "What is Developer Team", href: "devguide/installation-activation/developer-team-management#what-is-developer-team" },
+    { text: "Create New Development Organization When Activating Node", href: "devguide/installation-activation/developer-team-management#create-new-dev-team-when-activating-node" },
+    { text: "Bind Node to Joined Organization When Activating", href: "devguide/installation-activation/developer-team-management#bind-node-to-joined-team-when-activating" },
+    { text: "Use Organization Bind Code to Join and Bind When Activating Node", href: "devguide/installation-activation/developer-team-management#use-team-bind-code-to-join-and-bind-when-activating-node" },
+    { text: "Join Organization via Bind Code When Logging into Existing Node", href: "devguide/installation-activation/developer-team-management#join-team-via-bind-code-when-logging-into-existing-node" },
+    { text: "View and Refresh Organization Bind Code", href: "devguide/installation-activation/developer-team-management#view-and-refresh-team-bind-code" },
+    { text: "Remove Organization Member", href: "devguide/installation-activation/developer-team-management#remove-team-member" }
   ]} />
 </IndexCard>
 
@@ -95,16 +95,19 @@ Powerful toolchain for efficient development. Master visual development environm
   description="Master the powerful visual development environment, familiarize yourself with IDE functional areas, and learn to switch between visual and source code modes."
 >
   <LinkGrid links={[
-    { text: "Element Directory Tree", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#element-directory-tree" },
-    { text: "Add Element", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#add-element" },
-    { text: "Visual Editor", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#visual-editor" },
-    { text: "Source Code Editor", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#source-code-editor" },
-    { text: "Source Code File Tree", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#source-code-file-tree" },
-    { text: "Application Settings", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#application-settings" },
-    { text: "Portal Switching", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#portal-switching" },
-    { text: "Personal Center", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#personal-center" },
-    { text: "Language Switch", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#language-switch" },
-    { text: "Navigation Tabs", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#navigation-tabs" }
+    { text: "Element directory tree", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#element-directory-tree" },
+    { text: "Adding elements", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#adding-elements" },
+    { text: "Visual editor", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#visual-editor" },
+    { text: "Source code editor", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#source-code-editor" },
+    { text: "Source code file tree", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#source-code-file-tree" },
+    { text: "Application settings", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#application-settings" },
+    { text: "Basic information", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#basic-information" },
+    { text: "Default elements", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#default-elements" },
+    { text: "Environment variables", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#environment-variables" },
+    { text: "Portal switching", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#portal-switching" },
+    { text: "Personal center", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#personal-center" },
+    { text: "Language switching", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#language-switching" },
+    { text: "Navigation tabs", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#navigation-tabs" }
   ]} />
 </IndexCard>
 
@@ -115,15 +118,16 @@ Powerful toolchain for efficient development. Master visual development environm
 >
   <LinkGrid links={[
     { text: "Dual Console Architecture", href: "devguide/development-tool-and-publish-service/devops-management-tool#dual-console-architecture" },
-    { text: "Local Node Console", href: "devguide/development-tool-and-publish-service/devops-management-tool#local-node-console" },
-    { text: "Organization Management Console", href: "devguide/development-tool-and-publish-service/devops-management-tool#organization-management-console" },
-    { text: "Application Lifecycle Management", href: "devguide/development-tool-and-publish-service/devops-management-tool#application-lifecycle-management" },
-    { text: "Runtime Environment Management", href: "devguide/development-tool-and-publish-service/devops-management-tool#runtime-environment-management" },
-    { text: "Node Cluster Management", href: "devguide/development-tool-and-publish-service/devops-management-tool#node-cluster-management" },
-    { text: "Flexible Configuration Management", href: "devguide/development-tool-and-publish-service/devops-management-tool#flexible-configuration-management" },
-    { text: "Version Release and Deployment", href: "devguide/development-tool-and-publish-service/devops-management-tool#version-release-and-deployment" },
-    { text: "Multi-platform Export", href: "devguide/development-tool-and-publish-service/devops-management-tool#multi-platform-export" },
-    { text: "Application Template Ecosystem", href: "devguide/development-tool-and-publish-service/devops-management-tool#application-template-ecosystem" }
+    { text: "Local node console", href: "devguide/development-tool-and-publish-service/devops-management-tool#local-node-console" },
+    { text: "Organization management console", href: "devguide/development-tool-and-publish-service/devops-management-tool#organization-management-console" },
+    { text: "Core Capabilities Overview", href: "devguide/development-tool-and-publish-service/devops-management-tool#core-capabilities-overview" },
+    { text: "Application lifecycle management", href: "devguide/development-tool-and-publish-service/devops-management-tool#application-lifecycle-management" },
+    { text: "Runtime environment management", href: "devguide/development-tool-and-publish-service/devops-management-tool#runtime-environment-management" },
+    { text: "Node cluster management", href: "devguide/development-tool-and-publish-service/devops-management-tool#node-cluster-management" },
+    { text: "Flexible configuration management", href: "devguide/development-tool-and-publish-service/devops-management-tool#flexible-configuration-management" },
+    { text: "Version release and deployment", href: "devguide/development-tool-and-publish-service/devops-management-tool#version-release-and-deployment" },
+    { text: "Multi-platform export", href: "devguide/development-tool-and-publish-service/devops-management-tool#multi-platform-export" },
+    { text: "Application template ecosystem", href: "devguide/development-tool-and-publish-service/devops-management-tool#application-template-ecosystem" }
   ]} />
 </IndexCard>
 
@@ -133,9 +137,9 @@ Powerful toolchain for efficient development. Master visual development environm
   description="Official cloud application publishing service providing centralized application repository, version management, and seamless deployment across JitNodes."
 >
   <LinkGrid links={[
-    { text: "Synchronizing Runtime Environment Configuration", href: "devguide/development-tool-and-publish-service/jcs-cloud-publishing-service#synchronizing-runtime-environment-configuration" },
-    { text: "Retrieving Version Update Information", href: "devguide/development-tool-and-publish-service/jcs-cloud-publishing-service#retrieving-version-update-information" },
-    { text: "Accessing Cloud Application Repository", href: "devguide/development-tool-and-publish-service/jcs-cloud-publishing-service#accessing-cloud-application-repository" }
+    { text: "Synchronizing runtime environment configuration from JCS", href: "devguide/development-tool-and-publish-service/jcs-cloud-publishing-service#synchronizing-runtime-environment-configuration" },
+    { text: "Retrieving version update information from JCS", href: "devguide/development-tool-and-publish-service/jcs-cloud-publishing-service#retrieving-version-update-information" },
+    { text: "Accessing cloud application repository through JCS", href: "devguide/development-tool-and-publish-service/jcs-cloud-publishing-service#accessing-cloud-application-repository" }
   ]} />
 </IndexCard>
 
@@ -1114,7 +1118,7 @@ Visual intelligent workflow engine. Orchestrate business processes through drag-
 
 <IndexCard
   title="AI Assistant API Integration"
-  href="devguide/ai-assistant/ai-assistant-api-integration"
+  href="devguide/ai-assistant/ai-assistant-api-exposure"
   description="Expose AI assistant capabilities through API interfaces for integration with external systems."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>

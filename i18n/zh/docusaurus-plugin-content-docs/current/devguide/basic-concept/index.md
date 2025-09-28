@@ -5,11 +5,11 @@ sidebar_position: 0.5
 
 ## 平台与应用 {#platform-and-applications}
 
-JitAi是一个全新的应用运行平台和技术体系（平台、协议、开发框架、开发工具、运维工具、云端发布服务）。在应用运行平台上，可以运行应用、开发应用、管理应用。JitAi应用是基于JAAP协议编写的跨语言（Python、Java、JS/TS/CSS等）的全栈程序包。
+JitAi是一个全新的应用运行平台和技术体系（平台、协议、开发框架、开发工具、运维工具、云端发布服务）。在应用运行平台上，可以运行应用、开发应用、管理应用。JitAi应用是基于[JAAP](#jaap-protocol-and-elements)编写的跨语言（Python、Java、JS/TS/CSS等）的全栈程序包。
 
 ## DevOps工具与服务 {#devops-tools-and-services}
 
-JitAi提供的可视化开发工具、可视化运维工具以及应用管理仓库云服务，都是JitAi应用。开发者只需要手动安装运行平台，即可在平台上安装和运行其他所有工具。安装平台节点后，平台节点服务器会连接应用仓库云服务，开发者为创建的节点创建或关联"开发者组织"账号，然后就可以进入应用管理工具（运维工具），在平台节点上创建或部署应用。
+JitAi提供的可视化开发工具、可视化运维工具以及应用管理仓库云服务，都是JitAi应用。开发者只需要手动安装运行平台，即可在平台上安装和运行其他所有工具。安装平台节点后，平台节点服务器会连接应用仓库云服务，开发者为安装的节点创建或关联`开发者团队`，然后就可以进入应用管理工具（运维工具），在平台节点上创建或部署应用。
 
 ## 应用创建与开发 {#application-creation-and-development}
 
@@ -17,7 +17,7 @@ JitAi提供的可视化开发工具、可视化运维工具以及应用管理仓
 
 ## JAAP协议与元素 {#jaap-protocol-and-elements}
 
-[JAAP协议](/docs/reference/runtime-platform/JAAP)（JitAi Ai Application Protocol）是JitAi应用的构成规范协议。JitAi应用是由元素构成（可类比传统开发中的模块），开发JitAi应用，就是新增、删除、修改各个元素的源代码。JitAi应用的元素是遵从JAAP协议的代码模块，元素声明文件中定义了元素的name、type、title、desc等基本信息，元素的实现文件中实现了元素的主体代码。
+[JAAP协议](/docs/reference/runtime-platform/JAAP)（JitAi Ai Application Protocol）是JitAi应用的构成规范协议。JitAi应用是由元素构成（可类比传统开发中的模块），开发JitAi应用，就是新增、删除、修改各个元素的源代码。JitAi应用的元素是遵从JAAP的代码模块，元素声明文件中定义了元素的name、type、title、desc等基本信息，元素的实现文件中实现了元素的主体代码。
 
 ## 元素Type与元素加载 {#element-type-and-element-loading}
 

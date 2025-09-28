@@ -161,26 +161,6 @@ if auth_element:
     print(f"找到认证元素: {auth_element.fullName}")
 ```
 
-### getUserProfile (服务方法)
-获取Microsoft Teams用户的详细信息。
-
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|-------|------|-------------|------|------|
-| accessToken | Stext | str | 是 | 访问令牌 |
-
-#### 返回值
-| 类型 | 对应原生类型 | 说明 |
-|-----|-------------|------|
-| JitDict | dict | 用户信息字典 |
-
-#### 使用示例
-```python title="获取用户信息"
-auth_svc = app.getElement("auths.loginTypes.MicrosoftTeamsType.services.MicrosoftTeamsAuthSvc")
-user_info = auth_svc.getUserProfile(access_token)
-print(f"用户信息: {user_info}")
-```
-
 ## 属性
 ### authConfig
 Microsoft Teams应用配置信息，包含corpId、clientId、clientSecret等参数。

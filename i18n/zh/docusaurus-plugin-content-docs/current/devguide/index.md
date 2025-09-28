@@ -156,10 +156,14 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="学习应用的创建、继承、数据配置和部署流程，掌握应用开发的基础工作流程。"
 >
   <LinkGrid links={[
-    { text: "创建第一个应用", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#create-first-application" },
-    { text: "基于已有应用快速开发", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#based-on-existing-application-quick-development" },
-    { text: "数据存储与环境变量配置", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#data-storage-and-environment-variable-configuration" },
-    { text: "应用部署", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#application-deployment" }
+    { text: "创建第一个应用", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#creating-first-application" },
+    { text: "基于已有应用快速开发", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#developing-applications-based-on-existing-templates" },
+    { text: "继承应用", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#inheriting-from-applications" },
+    { text: "创建副本", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#duplicating-applications" },
+    { text: "数据存储与环境变量配置", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#configuring-data-storage-and-environment-variables" },
+    { text: "应用部署", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#deploying-applications" },
+    { text: "在指定节点上部署应用", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#deploying-applications-on-specified-nodes" },
+    { text: "在指定运行环境中部署应用", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#deploying-applications-in-specified-runtime-environments" }
   ]} />
 </IndexCard>
 

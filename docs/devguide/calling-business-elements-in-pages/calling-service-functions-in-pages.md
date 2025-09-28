@@ -15,7 +15,7 @@ In the visual page editor, select the component you want to add service function
 
 ![Choose Service Functions](./img/choose-services.png)
 
-In the event panel, add a blank statement, then select `Service` - `Service Function`.
+In the event panel, add a blank statement, then select `Services` - `Service Function`.
 
 ![Code View](./img/code-view.png)
 

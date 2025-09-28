@@ -20,7 +20,7 @@ LLM vendor elements are JitAi platform's unified AI integration solution designe
 ## Creating LLM Vendor Elements {#creating-llm-vendor-elements}
 ![LLM Vendor Creation](./img/1/large-model-creation.png)
 
-Click the `+` button next to the search box in the element directory tree, select `AI LLM` from the popup menu, then choose the corresponding LLM vendor based on your actual needs. After selection, the following dialog will appear.
+Click the `+` button next to the search box in the element directory tree, select `AI LLMs` from the popup menu, then choose the corresponding LLM vendor based on your actual needs. After selection, the following dialog will appear.
 
 ![LLM Creation Dialog](./img/1/large-model-create-popup.png)
 
@@ -46,7 +46,7 @@ For information security, developers may deploy private models, and the platform
 
 ![Private Model](./img/1/private-model.png)
 
-Private models use OpenAI Compatible elements for connection. Taking Ollama as an example, the default address is `http://127.0.0.1:11434/v1`. If there's an API Key, fill it in. Note that private models need to enable the `Enable Custom Model` configuration and input the complete model name, such as: qwen3:0.6b, nomic-embed-text.
+Private models use OpenAI Compatible elements for connection. Taking Ollama as an example, the default address is `http://localhost:11434/v1`. If there's an API Key, fill it in. Note that private models need to enable the `Enable Custom Model` configuration and input the complete model name, such as: qwen3:0.6b, nomic-embed-text.
 
 :::tip
 Vendors that support OpenAI interfaces can all use OpenAI Compatible elements for connection. The figure below uses Volcano Engine's Doubao as a reference example.

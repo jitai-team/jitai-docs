@@ -4,376 +4,376 @@ slug: ai-question-grading
 ---
 # AI-Powered Question Generation and Grading
 
-## 行业背景
+## Industry Background {#industry-background}
 
-在企业级AI应用开发中，我们经常遇到两个关键问题：AI需要与人类协作，以及AI需要与用户界面深度结合。
+In enterprise-level AI application development, we frequently encounter two critical challenges: AI needs to collaborate with humans, and AI needs to be deeply integrated with user interfaces.
 
-**人机协作问题**：很多业务场景需要人工确认，比如合同审批、支付授权、数据核验等敏感操作。还有一些复杂的业务逻辑，AI无法完全处理，需要人工判断和介入。AI和人类需要在同一个工作流程中实时交互。
+**Human-AI Collaboration Challenge**: Many business scenarios require human confirmation, such as contract approvals, payment authorizations, data verification, and other sensitive operations. There are also complex business logic scenarios where AI cannot fully handle the processing and requires human judgment and intervention. AI and humans need to interact in real-time within the same workflow.
 
-**界面融合问题**：AI需要能够获取用户在页面上的操作状态，比如表单输入了什么内容、表格筛选了什么条件，然后根据这些信息做出相应的决策。AI的行为也需要根据用户的操作动态调整。
+**Interface Integration Challenge**: AI needs to be able to capture user operation states on pages, such as what content has been entered in forms, what filtering conditions have been applied to tables, and then make corresponding decisions based on this information. AI behavior also needs to dynamically adjust according to user operations.
 
-**现有平台的不足**：目前主流的AI开发平台（如Coze、Dify等）虽然让AI应用开发变得简单，但在实际使用中还有很多限制。比如AI只能在服务器端运行，无法直接操作用户界面，也无法获取用户在页面上实时输入的数据。当需要人工确认某个操作时，这些平台也无法提供相应的机制。
+**Limitations of Existing Platforms**: While mainstream AI development platforms (such as Coze, Dify, etc.) have made AI application development simpler, they still have many limitations in practical use. For example, AI can only run on the server side, cannot directly operate user interfaces, and cannot access real-time data input by users on pages. When human confirmation is needed for certain operations, these platforms also cannot provide corresponding mechanisms.
 
-## JitAi：全栈式企业级AI应用开发框架
+## JitAi: Full-Stack Enterprise AI Application Development Framework {#jitai-framework}
 
-### 框架定位
+### Framework Positioning {#framework-positioning}
 
-JitAi 专为生产级 AI 应用而生，为开发者提供**低门槛、突破性**的企业级 AI 开发体验。
+JitAi is purpose-built for production-grade AI applications, providing developers with a **low-barrier, breakthrough** enterprise AI development experience.
 
-### 核心特性
+### Core Features {#core-features}
 
-#### 🚀 零代码可视化编排
-- **拖拽式开发**：通过可视化界面零代码编排复杂的多 Agent 协作流程
-- **灵活配置**：自由设计 Agent 的提示词、输入输出参数及工具链
+#### 🚀 Zero-Code Visual Orchestration {#zero-code-visual-orchestration}
+- **Drag-and-Drop Development**: Zero-code orchestration of complex multi-Agent collaboration workflows through visual interfaces
+- **Flexible Configuration**: Freely design Agent prompts, input/output parameters, and tool chains
 
-#### 🔧 全域工具集成
-- **全技术栈覆盖**：一键接入数据模型、服务函数、外部 API、前端页面函数等
-- **前后端打通**：突破传统 Agent 的后端限制，实现全栈 AI 能力
+#### 🔧 Comprehensive Tool Integration {#comprehensive-tool-integration}
+- **Full Technology Stack Coverage**: One-click integration with data models, service functions, external APIs, frontend page functions, and more
+- **Frontend-Backend Integration**: Break through traditional Agent backend limitations to achieve full-stack AI capabilities
 
-#### 📊 深度可观测性
-- **全链路监控**：实时监控 Agent 执行状态、工具调用日志、流程节点输出
-- **运行透明**：精细配置事件处理逻辑，全程可观测
+#### 📊 Deep Observability {#deep-observability}
+- **End-to-End Monitoring**: Real-time monitoring of Agent execution status, tool invocation logs, and workflow node outputs
+- **Runtime Transparency**: Fine-grained configuration of event handling logic with complete observability
 
-#### 🤝 人机协作
-- **UI-Agent 交互**：独创的界面与 AI 交互设计能力
-- **开箱即用**：为需要人类协同的生产场景提供完整解决方案
+#### 🤝 Human-AI Collaboration {#human-ai-collaboration}
+- **UI-Agent Interaction**: Innovative interface and AI interaction design capabilities
+- **Ready-to-Use Solutions**: Complete solutions for production scenarios requiring human collaboration
 
-JitAi 让复杂的 AI 应用开发从实验室走向真实业务场景，为企业级 AI 应用提供完整的技术解决方案。
+JitAi enables complex AI application development to transition from laboratory environments to real business scenarios, providing comprehensive technical solutions for enterprise-grade AI applications.
 
-### 框架组成
+### Framework Components {#framework-components}
 
-JitAi提供了AI大模型元素、AI Agent元素、AI助理元素以及知识库元素。
+JitAi provides AI Large Language Model elements, AI Agent elements, AI Assistant elements, and Knowledge Base elements.
 
-- **AI大模型元素**：实现了对市面上大模型调用的API封装，开发者通过填写API地址及API_KEY即可完成对一个大模型调用的配置。大模型元素可以作为函数被服务/模型元素调用。
-- **AIAgent元素**：是一个原子化的AI应用单元，通过配置大模型元素、输入参数、输出结果、工具及知识库实现一个单一的AI功能。AI Agent可以像函数调用一样被独立调用，也可以被助理元素调用。
-- **AI助理元素**：用于实现复杂的任务，通过可视化流程编排，多节点、多Agent的组合实现一个复杂的服务端业务流程。在前端则提供了一个对话框，该对话框可嵌入到页面中并可与页面进行交互。
-- **知识库元素**：用于实现对RAG知识库的封装，开发者通过上传文档即可构建自己的知识库，知识库可被Agent调用。
+- **AI Large Language Model Elements**: Implement API encapsulation for mainstream large language models on the market. Developers can configure large language model calls by simply filling in API addresses and API_KEYs. Large language model elements can be called as functions by service/model elements.
+- **AI Agent Elements**: Atomic AI application units that implement single AI functionalities through configuration of large language model elements, input parameters, output results, tools, and knowledge bases. AI Agents can be called independently like function calls or be invoked by assistant elements.
+- **AI Assistant Elements**: Used to implement complex tasks through visual workflow orchestration, combining multiple nodes and multiple Agents to achieve complex server-side business processes. On the frontend, they provide a dialog box that can be embedded into pages and interact with the pages.
+- **Knowledge Base Elements**: Used to implement RAG knowledge base encapsulation. Developers can build their own knowledge bases by uploading documents, and these knowledge bases can be called by Agents.
 
-## 案例
+## Case Study {#case-study}
 
-下面以一个考试系统中的阅卷功能为例，演示如何通过 JitAi 开发框架开发一个AI阅卷/打分功能。
+The following demonstrates how to develop an AI grading/scoring functionality using the JitAi development framework, taking the grading feature in an examination system as an example.
 
-### 前置准备
+### Prerequisites {#prerequisites}
 
-该系统包含6个核心数据模型：
+This system contains 6 core data models:
 
-1. **题库模型**（QuestionModel）：categoryOfTopics（题目类型）、problem（问题）、standardAnswers（标准答案）
-2. **试卷模型**（ExamPaperModel）：paperName（试卷名称）、questions（题目列表）、total（总分）
-3. **试卷题目明细模型**（ExamQuestionModel）：examPaper（关联试卷）、question（关联题目）、fractionalValue（分值）
-4. **考试计划模型**（ExamPlanModel）：scheduleName（计划名称）、examPaper（关联试卷）、examiners（考核人员）
-5. **考生考卷模型**（ExaminerExamPaperModel）：examPlan（关联考试计划）、examiner（考核人）、dateOfExamination（考核日期）、examPaper（关联试卷）、questionAndAnswers（答题明细）、score（得分）、comments（评语）
-6. **考生答题明细模型**（ExaminerAnswerModel）：examinerPaper（关联考生考卷）、question（关联题目）、fractionalValue（分值）、answer（考生回答）、score（得分）、rationale（评分理由）
+1. **Question Bank Model** (QuestionModel): categoryOfTopics (question type), problem (question), standardAnswers (standard answers)
+2. **Exam Paper Model** (ExamPaperModel): paperName (paper name), questions (question list), total (total score)
+3. **Exam Question Detail Model** (ExamQuestionModel): examPaper (associated paper), question (associated question), fractionalValue (score value)
+4. **Exam Plan Model** (ExamPlanModel): scheduleName (plan name), examPaper (associated paper), examiners (examination personnel)
+5. **Examinee Paper Model** (ExaminerExamPaperModel): examPlan (associated exam plan), examiner (examinee), dateOfExamination (examination date), examPaper (associated paper), questionAndAnswers (answer details), score (score), comments (comments)
+6. **Examinee Answer Detail Model** (ExaminerAnswerModel): examinerPaper (associated examinee paper), question (associated question), fractionalValue (score value), answer (examinee answer), score (score), rationale (grading rationale)
 
-前端实现**阅卷打分**功能页面：左侧展示未打分考卷列表，右侧为评分表单。点击考卷后显示答题明细，可逐题打分并写评分理由。
+The frontend implements a **grading and scoring** functionality page: the left side displays a list of ungraded papers, and the right side contains a scoring form. After clicking on a paper, answer details are displayed, allowing for question-by-question scoring and writing of grading rationales.
 
-接下来，我们为**阅卷打分**功能页面添加AI打分/阅卷功能。
-
-
-### 通过service调用大模型
-
-#### 创建大模型元素
-
-创建一个大模型元素，配置好API URL及API KEY。
-
-![创建大模型元素](./img/exam/create-llm-element.png)
+Next, we will add AI scoring/grading functionality to the **grading and scoring** feature page.
 
 
-#### 创建AI打分服务
+### Calling Large Language Models through Services {#calling-llm-through-services}
 
-创建**AI打分服务**，新增一个**打分**方法，该方法调用大模型元素进行单题打分，配置如下：
-![服务调用大模型](./img/exam/service-call-llm.png)
+#### Creating Large Language Model Elements {#creating-llm-elements}
 
-#### 打分页面调用打分服务
+Create a large language model element and configure the API URL and API KEY.
 
-在**评分表单**的**题目及结果**列表中添加一个操作列按钮**打分**，事件逻辑如下：
-![打分页面调用AI服务](./img/exam/scoring-page-call-ai-service.png)
-
-运行效果如下：
-![页面调用AI服务](./img/exam/page-call-ai-service.gif)
+![Creating Large Language Model Elements](./img/exam/create-llm-element.png)
 
 
-### 直接调用Agent
+#### Creating AI Scoring Service {#creating-ai-scoring-service}
 
-#### 创建阅卷Agent
+Create an **AI Scoring Service** and add a **scoring** method that calls the large language model element for single-question scoring. The configuration is as follows:
+![Service Calling Large Language Model](./img/exam/service-call-llm.png)
 
-创建一个Agent元素，配置大模型、输出结果及工具。
+#### Scoring Page Calling Scoring Service {#scoring-page-calling-service}
 
-![创建阅卷Agent](./img/exam/create-grading-agent.png)
+Add an operation column button **Score** in the **Questions and Results** list of the **Scoring Form**, with the following event logic:
+![Scoring Page Calling AI Service](./img/exam/scoring-page-call-ai-service.png)
 
-- **AI大模型**
+The running effect is as follows:
+![Page Calling AI Service](./img/exam/page-call-ai-service.gif)
 
-![阅卷Agent配置大模型](./img/exam/grading-agent-config-llm.png)
 
-- **提示词设置**
+### Directly Calling Agent {#directly-calling-agent}
+
+#### Creating Grading Agent {#creating-grading-agent}
+
+Create an Agent element and configure the large language model, output results, and tools.
+
+![Creating Grading Agent](./img/exam/create-grading-agent.png)
+
+- **AI Large Language Model**
+
+![Grading Agent Configuring Large Language Model](./img/exam/grading-agent-config-llm.png)
+
+- **Prompt Configuration**
 
 ```markdown
-# 角色：阅卷专家
+# Role: Grading Expert
 
-# 核心任务
-对考生答卷逐题打分，每一题都要打分并给出理由，若未答题，该题得0分。所有题目打分完成后写一个总评语。
+# Core Task
+Grade the student's answer sheet question by question, providing scores and rationales for each question. If a question is unanswered, assign 0 points. After grading all questions, write an overall evaluation comment.
 
-# 工作流程
-1. 根据用户提供的考卷编号，调用models.ExaminerAnswerModel.query工具获取考卷答题明细
-2. 对第1步获取的答题明细逐条打分并给出理由。打分方式：对比 `题目标准答案` 分析 `考生的回答`，结合 `题目分值` 给出一个公正客观的得分，并给出评分理由。
-3. 根据所有题目的答题情况给出一个总结评语
+# Workflow
+1. Based on the exam paper number provided by the user, call the models.ExaminerAnswerModel.query tool to retrieve the exam answer details
+2. Grade each answer detail obtained in step 1 and provide rationales. Grading method: Compare the `standard answer` with the `student's answer`, and considering the `question score value`, provide a fair and objective score with grading rationale.
+3. Provide an overall evaluation comment based on all question responses
 
-# 重要约束
-若任意一题的回答违背下列几种情况，所有题目分数一律为0，即使其他题目回答非常准确，得分也是0：
-1. 销售话术需要有礼貌，尊重客户，秉承客户至上的原则；严禁出现内涵、辱骂客户的回答
-2. 弘扬正确的价值观，回复内容避免出现敏感和违背社会主义核心价值观的内容
-3. 态度积极，有耐心，避免情绪化
+# Important Constraints
+If any question's answer violates the following conditions, all questions will receive 0 points, even if other questions are answered very accurately:
+1. Sales scripts must be polite, respectful to customers, and uphold customer-first principles; answers containing implications or insults to customers are strictly prohibited
+2. Promote correct values; response content should avoid sensitive content that violates core socialist values
+3. Maintain a positive attitude with patience, avoiding emotional responses
 
-# 输出结果的特殊要求
-- 要求数据在满足要求的情况下尽量简单
-- question字段的值只需要id和problem属性
-- examinerPaper字段只需要id属性
+# Special Requirements for Output Results
+- Data should be as simple as possible while meeting requirements
+- The question field value should only include id and problem attributes
+- The examinerPaper field should only include the id attribute
 ```
 
-- **工具配置**：
-Agent可使用的工具有：服务函数、数据模型函数、MCP服务、外部API以及页面函数等。此示例中，我们选择**考生答题明细模型**函数作为Agent的工具，选择**query-查询数据**方法。
+- **Tool Configuration**:
+Tools available to the Agent include: service functions, data model functions, MCP services, external APIs, and page functions. In this example, we select the **Examinee Answer Detail Model** function as the Agent's tool, choosing the **query-data query** method.
 
-![添加模型工具](./img/exam/add-model-tool.png)
+![Adding Model Tool](./img/exam/add-model-tool.png)
 
-![添加模型工具-query](./img/exam/add-model-tool-query.png)
+![Adding Model Tool - Query](./img/exam/add-model-tool-query.png)
 
-- **输出结果**：
-将 Agent 输出结果参数类型修改为 **多行数据**，模型选择 **考生答题明细**，参数标题设置为 **答题情况**；
-新增一个输出结果：评语（comments），多行文本类型。
+- **Output Results**:
+Change the Agent output result parameter type to **multi-row data**, select **Examinee Answer Details** as the model, and set the parameter title to **Answer Situation**;
+Add a new output result: comments, multi-line text type.
 
-![阅卷agent-输出参数配置](./img/exam/grading-agent-output-param-config.png)
+![Grading Agent - Output Parameter Configuration](./img/exam/grading-agent-output-param-config.png)
 
-- **页面调用阅卷Agent**
-阅卷表单中新增 **AI阅卷** 按钮，并配置按钮事件，调用 **Agent.阅卷Agent.运行**方法，参数设置为公式值：
-`CONCAT("给编号为",评分表单.表单模型.主键ID.值,"的考卷打分")`，将agent返回结果填充到表单模型字段中，并更新总分。
+- **Page Calling Grading Agent**
+Add an **AI Grading** button to the grading form and configure the button event to call the **Agent.GradingAgent.Run** method with the parameter set to formula value:
+`CONCAT("Grade the exam paper with ID ",ScoringForm.FormModel.PrimaryKeyID.Value)`, fill the agent return results into the form model fields, and update the total score.
 
-![评分页面调用阅卷agent](./img/exam/scoring-page-call-grading-agent.png)
+![Scoring Page Calling Grading Agent](./img/exam/scoring-page-call-grading-agent.png)
 
-至此，我们就完成了AI阅卷功能。看看效果吧！
+At this point, we have completed the AI grading functionality. Let's see the effect!
 
-![评分页面调用阅卷agent-效果](./img/exam/scoring-page-call-grading-agent-effect.gif)
+![Scoring Page Calling Grading Agent - Effect](./img/exam/scoring-page-call-grading-agent-effect.gif)
 
 
-### 过程观测与人机协作
+### Process Monitoring and Human-AI Collaboration {#process-monitoring-human-ai-collaboration}
 
-通过service调用大模型或直接调用Agent存在以下两个问题：
-- 用户无法了解AI执行进度，长时间等待无反馈
-- Agent运行结果直接更新页面，缺乏人工审核环节
+Calling large language models through services or directly calling Agents has the following two issues:
+- Users cannot understand AI execution progress, resulting in long waits without feedback
+- Agent execution results directly update pages, lacking human review processes
 
-下面演示如何在页面中使用AI助理，实现过程观测和人工确认。
+The following demonstrates how to use AI assistants in pages to achieve process monitoring and human confirmation.
 
-#### 创建助理元素
+#### Creating Assistant Elements {#creating-assistant-elements}
 
-创建一个名为**阅卷助理**的助理元素。
+Create an assistant element named **Grading Assistant**.
 
-![创建阅卷助理](./img/exam/create-grading-assistant.png)
+![Creating Grading Assistant](./img/exam/create-grading-assistant.png)
 
-在助理流程中添加两个节点（从顶部拖拽节点到画布中），并依次连接：
+Add two nodes to the assistant workflow (drag nodes from the top to the canvas) and connect them in sequence:
 
-- **阅卷Agent**：AI Agent 类型，配置如下：
+- **Grading Agent**: AI Agent type, configured as follows:
 
-![阅卷Agent节点配置](./img/exam/grading-assistant-grading-agent-config.png)
+![Grading Agent Node Configuration](./img/exam/grading-assistant-grading-agent-config.png)
 
-- **人工确认是否采纳评分结果**：工作区人机交互节点，配置如下：
+- **Human Confirmation for Adopting Grading Results**: Workspace human-AI interaction node, configured as follows:
 
-![阅卷-人工确定是否采纳](./img/exam/grading-assistant-human-confirm-adopt.png)
+![Grading - Human Confirmation for Adoption](./img/exam/grading-assistant-human-confirm-adopt.png)
 
-助理设置需要在对话框中输出的内容，这些内容用于观测AI运行过程。
+Configure the assistant to output content in the dialog box, which is used to monitor the AI execution process.
 
-![阅卷助理设置输出内容](./img/exam/grading-assistant-set-output-content.png)
+![Grading Assistant Setting Output Content](./img/exam/grading-assistant-set-output-content.png)
 
-#### 评分页面使用AI助理
+#### Using AI Assistant in Scoring Page {#using-ai-assistant-in-scoring-page}
 
-- 阅卷评分页面中开启AI助理，并绑定**阅卷助理**
+- Enable the AI assistant in the grading scoring page and bind the **Grading Assistant**
 
-![评分页面绑定阅卷助理](./img/exam/scoring-page-bind-grading-assistant.png)
+![Scoring Page Binding Grading Assistant](./img/exam/scoring-page-bind-grading-assistant.png)
 
-- 页面订阅 **AI助理-人工确认是否采纳评分结果** 的 **同意后** 事件，将评分结果更新到评分表单中。事件处理逻辑如下：
+- Subscribe the page to the **Agree** event of **AI Assistant - Human Confirmation for Adopting Grading Results**, and update the grading results to the scoring form. The event handling logic is as follows:
 
-![阅卷评分页面-采纳评分结果](./img/exam/grading-scoring-page-adopt-results.png)
+![Grading Scoring Page - Adopting Grading Results](./img/exam/grading-scoring-page-adopt-results.png)
 
-- 修改**AI阅卷** 按钮事件，调用 **发送AI消息**方法，参数设置为公式值：`CONCAT("给编号为",评分表单.表单模型.主键ID.值,"的考卷打分")`
+- Modify the **AI Grading** button event to call the **Send AI Message** method with the parameter set to formula value: `CONCAT("Grade the exam paper with ID ",ScoringForm.FormModel.PrimaryKeyID.Value)`
 
-![评分表单发送AI消息](./img/exam/scoring-form-send-ai-message.png)
+![Scoring Form Sending AI Message](./img/exam/scoring-form-send-ai-message.png)
 
-至此，已完成开发，看看效果吧。
+Development is now complete. Let's see the effect!
 
-![阅卷过程日志及人机交互](./img/exam/grading-process-log-human-interaction.gif)
+![Grading Process Log and Human-AI Interaction](./img/exam/grading-process-log-human-interaction.gif)
 
-### AI与前端深度融合
+### Deep Integration of AI and Frontend {#deep-integration-ai-frontend}
 
-AI与前端的深度融合体现在：
-- 页面函数可作为Agent工具，页面数据可作为Agent上下文
-- 用户页面操作可动态调整AI行为
+The deep integration of AI and frontend is reflected in:
+- Page functions can serve as Agent tools, and page data can serve as Agent context
+- User page operations can dynamically adjust AI behavior
 
-下面展示AI如何与前端深度融合。
+The following demonstrates how AI achieves deep integration with the frontend.
 
-#### 调整阅卷Agent
+#### Adjusting Grading Agent {#adjusting-grading-agent}
 
-- 修改提示词工作流程第1步，如下：
+- Modify step 1 of the prompt workflow as follows:
 
 ```markdown
 ...
-# 工作流程
-1. 调用 pages.bookRating.getVariableValue 工具，获取 `评分表单.表单模型` 的值，该值就是`考生答卷信息`，其中 `questionAndAnswers` 字段是考生答题明细。<**注意：**pages.bookRating 需要替换成你自己的页面id；`评分表单.表单模型` 需要替换成你实际的表单名称>
+# Workflow
+1. Call the pages.bookRating.getVariableValue tool to get the value of `ScoringForm.FormModel`, which is the `examinee paper information`, where the `questionAndAnswers` field contains the examinee's answer details. <**Note:** pages.bookRating needs to be replaced with your own page ID; `ScoringForm.FormModel` needs to be replaced with your actual form name>
 ...
 ```
 
-- 调整调用工具，选择页面函数-阅卷评分页面-getVariableValue。该函数用于获取页面数据，Agent调用此工具获取页面数据作为上下文。
+- Adjust the calling tools, select Page Functions - Grading Scoring Page - getVariableValue. This function is used to get page data, and the Agent calls this tool to obtain page data as context.
 
-![阅卷助理使用页面函数](./img/exam/grading-assistant-use-page-function.png)
+![Grading Assistant Using Page Functions](./img/exam/grading-assistant-use-page-function.png)
 
-![阅卷助理获取前端数据](./img/exam/grading-assistant-get-frontend-data.png)
+![Grading Assistant Getting Frontend Data](./img/exam/grading-assistant-get-frontend-data.png)
 
-#### 调整阅卷助理
+#### Adjusting Grading Assistant {#adjusting-grading-assistant}
 
-- 移除**人工确认是否采纳评分结果**节点，新增**工作区人机交互**节点到**阅卷Agent**节点后面，配置如下：
+- Remove the **Human Confirmation for Adopting Grading Results** node and add a **Workspace Human-AI Interaction** node after the **Grading Agent** node, configured as follows:
 
-![阅卷助理工作区人机交互](./img/exam/grading-assistant-workspace-human-interaction.png)
+![Grading Assistant Workspace Human-AI Interaction](./img/exam/grading-assistant-workspace-human-interaction.png)
 
-- 在**工作区人机交互**节点之后新增**条件判断**节点，判断工作区人机交互恢复时的回复内容是否为空。
+- Add a **Condition Judgment** node after the **Workspace Human-AI Interaction** node to determine whether the reply content when the workspace human-AI interaction resumes is empty.
 
-![阅卷助理条件判断节点](./img/exam/grading-assistant-condition-judgment-node.png)
+![Grading Assistant Condition Judgment Node](./img/exam/grading-assistant-condition-judgment-node.png)
 
-- 若**工作区人机交互**节点回复内容不为空，则继续交由**阅卷Agent**节点处理，并输入回复内容
+- If the **Workspace Human-AI Interaction** node reply content is not empty, continue to have the **Grading Agent** node process it and input the reply content
 
-![阅卷助理回复](./img/exam/grading-assistant-reply.png)
+![Grading Assistant Reply](./img/exam/grading-assistant-reply.png)
 
-#### 调整评分页面
+#### Adjusting Scoring Page {#adjusting-scoring-page}
 
-- **AI阅卷**按钮事件调整，**发送AI消息**参数内容调整为固定值`给当前考卷评分`
+- Adjust the **AI Grading** button event, change the **Send AI Message** parameter content to the fixed value `Grade current exam paper`
 
-- 订阅**工作区人机交互**节点的**AI助理暂停后**事件，事件逻辑如下：
+- Subscribe to the **AI Assistant Paused** event of the **Workspace Human-AI Interaction** node, with the following event logic:
 
-![阅卷助理暂停后事件](./img/exam/grading-assistant-after-pause-event.png)
+![Grading Assistant After Pause Event](./img/exam/grading-assistant-after-pause-event.png)
 
-- 为评分表单中的**题目及结果**添加工具栏按钮"重新评分"，事件逻辑设置如下：
+- Add a toolbar button "Re-score" to the **Questions and Results** in the scoring form, with the following event logic settings:
 
-![阅卷助理重新评分](./img/exam/grading-assistant-re-scoring.png)
+![Grading Assistant Re-scoring](./img/exam/grading-assistant-re-scoring.png)
 
-至此，已完成AI与前端的融合。 Agent可调用前端函数，可使用前端数据；前端页面可控制AI行为。
+At this point, the integration of AI and frontend is complete. Agents can call frontend functions and use frontend data; frontend pages can control AI behavior.
 
-![阅卷助理工作区人机交互恢复流程](./img/exam/grading-assistant-workspace-human-interaction-recovery.gif)
+![Grading Assistant Workspace Human-AI Interaction Recovery Process](./img/exam/grading-assistant-workspace-human-interaction-recovery.gif)
 
-### 多Agent协作
+### Multi-Agent Collaboration {#multi-agent-collaboration}
 
-该示例将展示如何在AI助理中使用多个Agent协作完成复杂任务。
+This example demonstrates how to use multiple Agents in AI assistants to collaborate on complex tasks.
 
-工作流程如下：
-1. **用户输入需求**：用户发送出题需求到AI助理
-2. **出题Agent处理**：出题Agent接收问题并生成问题及答案
-3. **人工确认**：通过对话区人机交互节点，将生成的问题及答案交由人工确认
-4. **流程暂停**：此时流程会暂停，对话区显示问题及答案，等待人工确认
-5. **人工确认后**：人工确认后，流程恢复执行
-6. **题库Agent处理**：进入题库Agent，将问题及答案转换为题库模型数据, 去重保存
-7. **结果输出**：输出新增的题目，并发送到对话框中显示
+The workflow is as follows:
+1. **User Input Requirements**: User sends question generation requirements to the AI assistant
+2. **Question Generation Agent Processing**: The question generation Agent receives the request and generates questions and answers
+3. **Human Confirmation**: Through the dialog area human-AI interaction node, the generated questions and answers are submitted for human confirmation
+4. **Workflow Pause**: At this point, the workflow pauses, displaying questions and answers in the dialog area, waiting for human confirmation
+5. **After Human Confirmation**: After human confirmation, the workflow resumes execution
+6. **Question Bank Agent Processing**: Enter the question bank Agent, convert questions and answers into question bank model data, deduplicate and save
+7. **Result Output**: Output the newly added questions and send them to the dialog box for display
 
-#### 设置出题Agent
+#### Setting Up Question Generation Agent {#setting-up-question-generation-agent}
 
-新增一个名为 **出题Agent** 的Agent元素；配置好大模型及提示词。
+Add an Agent element named **Question Generation Agent** and configure the large language model and prompts.
 
-提示词内容如下：
+The prompt content is as follows:
 
 ```markdown
-# 角色：出题专家
+# Role: Question Generation Expert
 
-## 目标：
-结合已有知识，根据用户的描述生成销售话术相关的问题、题目类别及标准答案。
-有以下问题类型可供选择：<列出你题库模型中题目类型>
+## Objective:
+Based on existing knowledge and user descriptions, generate sales script-related questions, question categories, and standard answers.
+Available question types: <List the question types in your question bank model>
 
-## 输出要求：
-- 问题及答案（output）是一个 markdown 格式的字符串
-- 问题及答案（output）是所有问题及答案的汇总输出，不是一句总结性的陈述
+## Output Requirements:
+- Questions and answers (output) should be a markdown format string
+- Questions and answers (output) should be a comprehensive output of all questions and answers, not a summary statement
 
-## output 值的示例：
+## Example of output value:
 
-用户问题：给我10个电商代运营服务常用的销售话术。
+User question: Give me 10 commonly used sales scripts for e-commerce agency services.
 
-正确 output 值示例：
+Correct output value example:
 \`\`\`markdown
-### 需求挖掘类
-#### 问题1
-**询问**：xxxxx？
-**回答**：xxxxx。
+### Requirement Discovery Category
+#### Question 1
+**Question**: xxxxx?
+**Answer**: xxxxx.
 
-#### 问题2
-**询问**：xxxxx？
-**回答**：xxxxx。
+#### Question 2
+**Question**: xxxxx?
+**Answer**: xxxxx.
 
-### 竞品对比类
-#### 问题3
-**询问**：xxxxx？
-**回答**：xxxxx。
+### Competitor Comparison Category
+#### Question 3
+**Question**: xxxxx?
+**Answer**: xxxxx.
 
-#### 问题4
-**询问**：xxxxx？
-**回答**：xxxxx。
+#### Question 4
+**Question**: xxxxx?
+**Answer**: xxxxx.
 \`\`\`
 
-错误 output 值示例：
-"以上内容包含了10个电商代运营服务中常用的销售话术，全面覆盖了客户可能关心的问题及专业解答。"
+Incorrect output value example:
+"The above content contains 10 commonly used sales scripts for e-commerce agency services, comprehensively covering questions that customers may be concerned about and professional answers."
 ```
 
-![出题Agent](./img/exam/question-generation.png)
+![Question Generation Agent](./img/exam/question-generation.png)
 
-#### 设置题库管理Agent
+#### Setting Up Question Bank Management Agent {#setting-up-question-bank-management-agent}
 
-新增一个名为 **题库管理Agent** 的Agent元素。
+Add an Agent element named **Question Bank Management Agent**.
 
-- **提示词设置**：
+- **Prompt Configuration**:
 
 ```markdown
-# 角色：题库管理专家
+# Role: Question Bank Management Expert
 
-## 目标：
-分析用户的输入，转换为题库中的题目
+## Objective:
+Analyze user input and convert it into questions in the question bank
 
-## 工作流：
-- **第1步：把问题及话术转换为题目**
-- **第2步：与题库对比去重**：调用 models.QuestionModel.query 工具根据第1步生成的所有题目及问题查询数据库，检查数据库中是否已存在你生成的问题，若已存在，则需去重处理。注意调用查询工具时一次性查所有的题目，不要一条一条查询。
-- **第3步：题目保存到题库**：调用 models.QuestionModel.createOrUpdateMany 工具将新增的题目保存到数据库
-- **第4步：输出新增题目**：第3步会得到新增题目的编号 id，更新到题目中，得到最终的新增题目 - questions
+## Workflow:
+- **Step 1: Convert questions and scripts into questions**
+- **Step 2: Compare with question bank for deduplication**: Call the models.QuestionModel.query tool to query the database based on all questions generated in step 1, check if the questions you generated already exist in the database, and if they exist, perform deduplication processing. Note that when calling the query tool, query all questions at once, do not query one by one.
+- **Step 3: Save questions to question bank**: Call the models.QuestionModel.createOrUpdateMany tool to save new questions to the database
+- **Step 4: Output new questions**: Step 3 will get the ID numbers of the new questions, update them into the questions to get the final new questions - questions
 ```
 
-- **输出结果**：
-将 Agent 输出结果参数类型修改为 **多行数据**，模型选择 **题库**，参数标题设置为 **新增题目**
+- **Output Results**:
+Change the Agent output result parameter type to **multi-row data**, select **Question Bank** as the model, and set the parameter title to **New Questions**
 
-![题库Agent](./img/exam/question-bank-management-agent-set-output.png)
+![Question Bank Agent](./img/exam/question-bank-management-agent-set-output.png)
 
-- **工具配置**：
-将 **题库模型** 添加为 Agent 的可调用工具，开启 **createOrUpdateMany-新增多行数据** 和 **query-查询** 工具
+- **Tool Configuration**:
+Add **Question Bank Model** as a callable tool for the Agent, enable **createOrUpdateMany-Add Multi-row Data** and **query-Query** tools
 
-![题库Agent](./img/exam/question-bank-management-agent-tool-config.png)
+![Question Bank Agent](./img/exam/question-bank-management-agent-tool-config.png)
 
-#### 设置题库助理
+#### Setting Up Question Bank Assistant {#setting-up-question-bank-assistant}
 
-新增一个名为 **题库助理** 的AI助理元素，依次添加三个节点：
+Add an AI assistant element named **Question Bank Assistant** and add three nodes in sequence:
 
-- **出题Agent**：AI Agent 类型，配置如下：
+- **Question Generation Agent**: AI Agent type, configured as follows:
 
-![出题Agent节点配置](./img/exam/question-bank-assistant-question-agent.png)
+![Question Generation Agent Node Configuration](./img/exam/question-bank-assistant-question-agent.png)
 
-- **题目确认**：对话区人机交互类型，配置如下：
+- **Question Confirmation**: Dialog area human-AI interaction type, configured as follows:
 
-![题目确认节点配置](./img/exam/question-bank-assistant-question-confirm.png)
+![Question Confirmation Node Configuration](./img/exam/question-bank-assistant-question-confirm.png)
 
-- **题库Agent**：AI Agent 类型，配置如下：
+- **Question Bank Agent**: AI Agent type, configured as follows:
 
-![题库Agent节点配置](./img/exam/question-bank-assistant-qbank-agent.png)
+![Question Bank Agent Node Configuration](./img/exam/question-bank-assistant-qbank-agent.png)
 
-**题目确认**`同意`后连到**题库Agent**，将入参设置为`出题Agent.输出数据`
+After **Question Confirmation** `Agree`, connect to **Question Bank Agent** and set the input parameter to `Question Generation Agent.Output Data`
 
-![题库Agent入参配置](./img/exam/question-assistant-qbank-agent-param-config.png)
+![Question Bank Agent Input Parameter Configuration](./img/exam/question-assistant-qbank-agent-param-config.png)
 
-#### 题库管理页面使用题库助理
+#### Using Question Bank Assistant in Question Bank Management Page {#using-question-bank-assistant}
 
-在 **题库管理页面** 中开启 AI 助理，选择 **题库助理** 元素
+Enable the AI assistant in the **Question Bank Management Page** and select the **Question Bank Assistant** element
 
-![题库管理页面配置AI助理](./img/exam/question-bank-management-set-ai-assistant.png)
+![Question Bank Management Page Configuring AI Assistant](./img/exam/question-bank-management-set-ai-assistant.png)
 
-页面订阅 **AI助理-题库Agent** 的 **节点完成后** 事件，捕获到该事件后刷新题库列表
+Subscribe the page to the **Node Completed** event of **AI Assistant - Question Bank Agent**, and refresh the question bank list after capturing this event
 
-![题库管理页面刷新题库列表](./img/exam/question-bank-management-refresh-table.png)
+![Question Bank Management Page Refreshing Question Bank List](./img/exam/question-bank-management-refresh-table.png)
 
-至此，我们就完成了AI出题功能。看看效果吧！
+At this point, we have completed the AI question generation functionality. Let's see the effect!
 
-![AI出题助理运行效果](./img/exam/question-generation.gif)
+![AI Question Generation Assistant Running Effect](./img/exam/question-generation.gif)

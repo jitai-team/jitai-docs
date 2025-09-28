@@ -4,7 +4,7 @@ slug: ai-question-grading
 ---
 # AI智能出题&阅卷
 
-## 行业背景
+## 行业背景 {#industry-background}
 
 在企业级AI应用开发中，我们经常遇到两个关键问题：AI需要与人类协作，以及AI需要与用户界面深度结合。
 
@@ -14,33 +14,33 @@ slug: ai-question-grading
 
 **现有平台的不足**：目前主流的AI开发平台（如Coze、Dify等）虽然让AI应用开发变得简单，但在实际使用中还有很多限制。比如AI只能在服务器端运行，无法直接操作用户界面，也无法获取用户在页面上实时输入的数据。当需要人工确认某个操作时，这些平台也无法提供相应的机制。
 
-## JitAi：全栈式企业级AI应用开发框架
+## JitAi：全栈式企业级AI应用开发框架 {#jitai-framework}
 
-### 框架定位
+### 框架定位 {#framework-positioning}
 
 JitAi 专为生产级 AI 应用而生，为开发者提供**低门槛、突破性**的企业级 AI 开发体验。
 
-### 核心特性
+### 核心特性 {#core-features}
 
-#### 🚀 零代码可视化编排
+#### 🚀 零代码可视化编排 {#zero-code-visual-orchestration}
 - **拖拽式开发**：通过可视化界面零代码编排复杂的多 Agent 协作流程
 - **灵活配置**：自由设计 Agent 的提示词、输入输出参数及工具链
 
-#### 🔧 全域工具集成
+#### 🔧 全域工具集成 {#comprehensive-tool-integration}
 - **全技术栈覆盖**：一键接入数据模型、服务函数、外部 API、前端页面函数等
 - **前后端打通**：突破传统 Agent 的后端限制，实现全栈 AI 能力
 
-#### 📊 深度可观测性
+#### 📊 深度可观测性 {#deep-observability}
 - **全链路监控**：实时监控 Agent 执行状态、工具调用日志、流程节点输出
 - **运行透明**：精细配置事件处理逻辑，全程可观测
 
-#### 🤝 人机协作
+#### 🤝 人机协作 {#human-ai-collaboration}
 - **UI-Agent 交互**：独创的界面与 AI 交互设计能力
 - **开箱即用**：为需要人类协同的生产场景提供完整解决方案
 
 JitAi 让复杂的 AI 应用开发从实验室走向真实业务场景，为企业级 AI 应用提供完整的技术解决方案。
 
-### 框架组成
+### 框架组成 {#framework-components}
 
 JitAi提供了AI大模型元素、AI Agent元素、AI助理元素以及知识库元素。
 
@@ -49,11 +49,11 @@ JitAi提供了AI大模型元素、AI Agent元素、AI助理元素以及知识库
 - **AI助理元素**：用于实现复杂的任务，通过可视化流程编排，多节点、多Agent的组合实现一个复杂的服务端业务流程。在前端则提供了一个对话框，该对话框可嵌入到页面中并可与页面进行交互。
 - **知识库元素**：用于实现对RAG知识库的封装，开发者通过上传文档即可构建自己的知识库，知识库可被Agent调用。
 
-## 案例
+## 案例 {#case-study}
 
 下面以一个考试系统中的阅卷功能为例，演示如何通过 JitAi 开发框架开发一个AI阅卷/打分功能。
 
-### 前置准备
+### 前置准备 {#prerequisites}
 
 该系统包含6个核心数据模型：
 
@@ -69,21 +69,21 @@ JitAi提供了AI大模型元素、AI Agent元素、AI助理元素以及知识库
 接下来，我们为**阅卷打分**功能页面添加AI打分/阅卷功能。
 
 
-### 通过service调用大模型
+### 通过service调用大模型 {#calling-llm-through-services}
 
-#### 创建大模型元素
+#### 创建大模型元素 {#creating-llm-elements}
 
 创建一个大模型元素，配置好API URL及API KEY。
 
 ![创建大模型元素](./img/exam/create-llm-element.png)
 
 
-#### 创建AI打分服务
+#### 创建AI打分服务 {#creating-ai-scoring-service}
 
 创建**AI打分服务**，新增一个**打分**方法，该方法调用大模型元素进行单题打分，配置如下：
 ![服务调用大模型](./img/exam/service-call-llm.png)
 
-#### 打分页面调用打分服务
+#### 打分页面调用打分服务 {#scoring-page-calling-service}
 
 在**评分表单**的**题目及结果**列表中添加一个操作列按钮**打分**，事件逻辑如下：
 ![打分页面调用AI服务](./img/exam/scoring-page-call-ai-service.png)
@@ -92,9 +92,9 @@ JitAi提供了AI大模型元素、AI Agent元素、AI助理元素以及知识库
 ![页面调用AI服务](./img/exam/page-call-ai-service.gif)
 
 
-### 直接调用Agent
+### 直接调用Agent {#directly-calling-agent}
 
-#### 创建阅卷Agent
+#### 创建阅卷Agent {#creating-grading-agent}
 
 创建一个Agent元素，配置大模型、输出结果及工具。
 
@@ -153,7 +153,7 @@ Agent可使用的工具有：服务函数、数据模型函数、MCP服务、外
 ![评分页面调用阅卷agent-效果](./img/exam/scoring-page-call-grading-agent-effect.gif)
 
 
-### 过程观测与人机协作
+### 过程观测与人机协作 {#process-monitoring-human-ai-collaboration}
 
 通过service调用大模型或直接调用Agent存在以下两个问题：
 - 用户无法了解AI执行进度，长时间等待无反馈
@@ -161,7 +161,7 @@ Agent可使用的工具有：服务函数、数据模型函数、MCP服务、外
 
 下面演示如何在页面中使用AI助理，实现过程观测和人工确认。
 
-#### 创建助理元素
+#### 创建助理元素 {#creating-assistant-elements}
 
 创建一个名为**阅卷助理**的助理元素。
 
@@ -181,7 +181,7 @@ Agent可使用的工具有：服务函数、数据模型函数、MCP服务、外
 
 ![阅卷助理设置输出内容](./img/exam/grading-assistant-set-output-content.png)
 
-#### 评分页面使用AI助理
+#### 评分页面使用AI助理 {#using-ai-assistant-in-scoring-page}
 
 - 阅卷评分页面中开启AI助理，并绑定**阅卷助理**
 
@@ -199,7 +199,7 @@ Agent可使用的工具有：服务函数、数据模型函数、MCP服务、外
 
 ![阅卷过程日志及人机交互](./img/exam/grading-process-log-human-interaction.gif)
 
-### AI与前端深度融合
+### AI与前端深度融合 {#deep-integration-ai-frontend}
 
 AI与前端的深度融合体现在：
 - 页面函数可作为Agent工具，页面数据可作为Agent上下文
@@ -207,7 +207,7 @@ AI与前端的深度融合体现在：
 
 下面展示AI如何与前端深度融合。
 
-#### 调整阅卷Agent
+#### 调整阅卷Agent {#adjusting-grading-agent}
 
 - 修改提示词工作流程第1步，如下：
 
@@ -224,7 +224,7 @@ AI与前端的深度融合体现在：
 
 ![阅卷助理获取前端数据](./img/exam/grading-assistant-get-frontend-data.png)
 
-#### 调整阅卷助理
+#### 调整阅卷助理 {#adjusting-grading-assistant}
 
 - 移除**人工确认是否采纳评分结果**节点，新增**工作区人机交互**节点到**阅卷Agent**节点后面，配置如下：
 
@@ -238,7 +238,7 @@ AI与前端的深度融合体现在：
 
 ![阅卷助理回复](./img/exam/grading-assistant-reply.png)
 
-#### 调整评分页面
+#### 调整评分页面 {#adjusting-scoring-page}
 
 - **AI阅卷**按钮事件调整，**发送AI消息**参数内容调整为固定值`给当前考卷评分`
 
@@ -254,7 +254,7 @@ AI与前端的深度融合体现在：
 
 ![阅卷助理工作区人机交互恢复流程](./img/exam/grading-assistant-workspace-human-interaction-recovery.gif)
 
-### 多Agent协作
+### 多Agent协作 {#multi-agent-collaboration}
 
 该示例将展示如何在AI助理中使用多个Agent协作完成复杂任务。
 
@@ -267,7 +267,7 @@ AI与前端的深度融合体现在：
 6. **题库Agent处理**：进入题库Agent，将问题及答案转换为题库模型数据, 去重保存
 7. **结果输出**：输出新增的题目，并发送到对话框中显示
 
-#### 设置出题Agent
+#### 设置出题Agent {#setting-up-question-generation-agent}
 
 新增一个名为 **出题Agent** 的Agent元素；配置好大模型及提示词。
 
@@ -315,7 +315,7 @@ AI与前端的深度融合体现在：
 
 ![出题Agent](./img/exam/question-generation.png)
 
-#### 设置题库管理Agent
+#### 设置题库管理Agent {#setting-up-question-bank-management-agent}
 
 新增一个名为 **题库管理Agent** 的Agent元素。
 
@@ -344,7 +344,7 @@ AI与前端的深度融合体现在：
 
 ![题库Agent](./img/exam/question-bank-management-agent-tool-config.png)
 
-#### 设置题库助理
+#### 设置题库助理 {#setting-up-question-bank-assistant}
 
 新增一个名为 **题库助理** 的AI助理元素，依次添加三个节点：
 
@@ -364,7 +364,7 @@ AI与前端的深度融合体现在：
 
 ![题库Agent入参配置](./img/exam/question-assistant-qbank-agent-param-config.png)
 
-#### 题库管理页面使用题库助理
+#### 题库管理页面使用题库助理 {#using-question-bank-assistant}
 
 在 **题库管理页面** 中开启 AI 助理，选择 **题库助理** 元素
 

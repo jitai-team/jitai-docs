@@ -67,7 +67,6 @@ auth = auth_svc.getAuthByCorpId("your_corp_id")
 |-------|------|------|------|
 | title | string | 是 | 元素显示名称 |
 | type | string | 是 | 固定值：auths.loginTypes.MicrosoftTeamsType |
-
 ### 业务配置文件配置
 配置文件名格式为`{实例名称}.json`，包含Microsoft Teams应用的认证信息：
 
@@ -162,26 +161,6 @@ if auth_element:
     print(f"找到认证元素: {auth_element.fullName}")
 ```
 
-### getUserProfile (服务方法)
-获取Microsoft Teams用户的详细信息。
-
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|-------|------|-------------|------|------|
-| accessToken | Stext | str | 是 | 访问令牌 |
-
-#### 返回值
-| 类型 | 对应原生类型 | 说明 |
-|-----|-------------|------|
-| JitDict | dict | 用户信息字典 |
-
-#### 使用示例
-```python title="获取用户信息"
-auth_svc = app.getElement("auths.loginTypes.MicrosoftTeamsType.services.MicrosoftTeamsAuthSvc")
-user_info = auth_svc.getUserProfile(access_token)
-print(f"用户信息: {user_info}")
-```
-
 ## 属性
 ### authConfig
 Microsoft Teams应用配置信息，包含corpId、clientId、clientSecret等参数。
@@ -265,29 +244,3 @@ Microsoft Graph API 权限:
 - Directory.Read.All (应用程序权限) - 读取目录数据
 - Group.Read.All (应用程序权限) - 读取所有组信息
 ```
-
-### 错误处理
-常见错误情况及处理方式：
-
-```python title="错误处理示例"
-try:
-    auth_element = auth_svc.getAuthByCorpId(corpId)
-    if not auth_element:
-        raise Exception("未找到对应的Microsoft Teams认证配置")
-    
-    result = auth_svc.loginByOAuth(corpId, authCode, platform)
-    if not result.get('success'):
-        raise Exception(result.get('message', '登录失败'))
-        
-except Exception as e:
-    # 记录错误日志并返回友好提示
-    logger.error(f"Microsoft Teams登录失败: {str(e)}")
-    return {"success": False, "message": "登录失败，请重试"}
-```
-
-**常见错误类型**：
-- 应用配置错误：检查clientId、clientSecret等配置
-- 租户ID不匹配：确认用户租户与配置的corpId一致
-- 授权码过期：OAuth授权码有效期10分钟，需重新获取
-- 权限不足：确保应用已获得必要的Microsoft Graph API权限
-- 网络连接问题：确保能访问Microsoft Graph API服务

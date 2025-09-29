@@ -3,7 +3,7 @@ sidebar_position: 2
 slug: extending-system-builtin-language-packages
 ---
 
-# 扩展平台内置语言包
+# 扩展平台内置语言包 {#extending-system-builtin-language-packages}
 
 平台内置 **简体中文(zhCN)** 和 **English(EN)** 两种语言包。
 

@@ -173,12 +173,12 @@ Complete workflow from application creation to distributed deployment. Master ap
   description="Understand JitAi application directory structure based on JAAP protocol, element code organization, and source code export/import mechanisms."
 >
   <LinkGrid links={[
-    { text: "Application Directory Structure", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#application-directory-structure" },
-    { text: "Element Code Directory Structure", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#element-code-directory-structure" },
-    { text: "Application Source Code Export/Import", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#application-export-import" },
-    { text: "Export Source Code Zip", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#export-source-code-zip" },
-    { text: "Export to WeChat MiniProgram", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#export-to-wechat-miniprogram" },
-    { text: "Import Application Source Code", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#import-application-source-code" }
+    { text: "Understanding application directory structure", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#application-directory-structure" },
+    { text: "Understanding element code directory structure", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#element-code-directory-structure" },
+    { text: "Exporting and importing application source code", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#application-export-import" },
+    { text: "Exporting source code zip packages", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#export-source-code-zip" },
+    { text: "Exporting to WeChat MiniProgram", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#export-to-wechat-miniprogram" },
+    { text: "Importing application source code packages", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#import-application-source-code" }
   ]} />
 </IndexCard>
 

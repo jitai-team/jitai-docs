@@ -302,11 +302,11 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
   description="AI automatically generates data charts through natural language descriptions of requirements, supporting users to adjust chart styles and statistical dimensions at any time."
 >
   <LinkGrid links={[
-    { text: "Create AI Data Analysis Page", href: "devguide/shell-and-page/ai-data-analysis-page#create-ai-data-analysis-page" },
-    { text: "Page Configuration", href: "devguide/shell-and-page/ai-data-analysis-page#page-configuration" },
-    { text: "Runtime Effects Demo", href: "devguide/shell-and-page/ai-data-analysis-page#run-effects" },
-    { text: "Full Code Development", href: "devguide/shell-and-page/ai-data-analysis-page#full-code-development" },
-    { text: "Quick Create", href: "devguide/shell-and-page/ai-data-analysis-page#quick-create" }
+    { text: "Create AI data analysis page", href: "devguide/shell-and-page/ai-data-analysis-page#create-ai-data-analysis-page" },
+    { text: "Page configuration", href: "devguide/shell-and-page/ai-data-analysis-page#page-configuration" },
+    { text: "Runtime effects demo", href: "devguide/shell-and-page/ai-data-analysis-page#runtime-effects" },
+    { text: "Full code development", href: "devguide/shell-and-page/ai-data-analysis-page#full-code-development" },
+    { text: "Quick create", href: "devguide/shell-and-page/ai-data-analysis-page#quick-create" }
   ]} />
 </IndexCard>
 
@@ -356,7 +356,7 @@ Enhance user experience with intelligent AI elements. Integrate AI assistants, a
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Using AI Assistants in Portals"
+  title="Using AI Assistant in Portals"
   href="devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals"
   description="Learn how to use AI assistants into portal interfaces, providing users with intelligent help and guidance throughout their workflow."
 >
@@ -366,7 +366,7 @@ Enhance user experience with intelligent AI elements. Integrate AI assistants, a
 </IndexCard>
 
 <IndexCard
-  title="Using AI Assistants in Component Pages"
+  title="Using AI Assistant in Component Pages"
   href="devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages"
   description="Embed AI assistants into component-based pages to enhance user interactions and provide contextual assistance for specific tasks."
 >

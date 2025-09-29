@@ -154,7 +154,7 @@ Develop an AI assistant with the following process design:
    - **Solution Agent**: Analyze requirements and generate quotation content. Node binds Solution Agent.
 ![quote-agent-setting](./img/quote-agent-setting.png)
 
-3. **Solution Agent** → **Confirm Quotation** ([Dialog Human-Machine Interaction Node](/docs/devguide/ai-assistant/process-orchestration-node-configuration#dialog-human-machine-interaction)): Wait for manual confirmation after quotation completion.
+3. **Solution Agent** → **Confirm Quotation** ([Dialog Human-Machine Interaction Node](/docs/devguide/ai-assistant/process-orchestration-node-configuration#action-in-conversation)): Wait for manual confirmation after quotation completion.
 The Confirm Quotation node displays the quotation file content output by the Solution Agent, using Markdown control for rendering.
 ![quotetion-agent](./img/quote-confirm.png)
 
@@ -443,7 +443,7 @@ class SolutionSvc(NormalService):
 
 ```
 
-At this point, all components of the assistant have been developed. We can use this assistant in portals. For configuration method, refer to: [Using AI Assistants in Portals](/docs/devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals).
+At this point, all components of the assistant have been developed. We can use this assistant in portals. For configuration method, refer to: [Using AI Assistant in Portals](/docs/devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals).
 
 :::tip Tip
 An AI assistant can handle multiple different types of tasks. It is recommended to enable independent conversation processing flows for each task type.

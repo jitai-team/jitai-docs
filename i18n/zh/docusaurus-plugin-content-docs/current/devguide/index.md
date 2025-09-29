@@ -304,7 +304,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   <LinkGrid links={[
     { text: "创建AI数据分析页面", href: "devguide/shell-and-page/ai-data-analysis-page#create-ai-data-analysis-page" },
     { text: "页面配置", href: "devguide/shell-and-page/ai-data-analysis-page#page-configuration" },
-    { text: "运行效果演示", href: "devguide/shell-and-page/ai-data-analysis-page#run-effects" },
+    { text: "运行效果演示", href: "devguide/shell-and-page/ai-data-analysis-page#runtime-effects" },
     { text: "全代码开发", href: "devguide/shell-and-page/ai-data-analysis-page#full-code-development" },
     { text: "快捷创建", href: "devguide/shell-and-page/ai-data-analysis-page#quick-create" }
   ]} />

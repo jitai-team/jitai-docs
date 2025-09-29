@@ -14,7 +14,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 首先，你需要完成基本的[下载安装](tutorial/download-installation)！
 
 
-## 基础概念
+## 基础概念 {#basic-concepts}
 掌握JitAi平台的核心理念和架构原理。了解平台应用、元素体系、开发框架、可视化开发工具等基础概念，为后续开发工作奠定理论基础。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -39,7 +39,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-## 平台安装与节点激活
+## 平台安装与节点激活 {#platform-installation-node-activation}
 完成平台安装和节点激活流程。学习下载安装方法、节点激活流程、开发者团队管理等，建立开发环境基础。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -84,7 +84,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-## 开发工具与发布服务
+## 开发工具与发布服务 {#development-tools-publishing-services}
 强大的工具链助力高效开发。掌握可视化开发环境、运维管理工具和云端发布服务，实现从开发到部署的完整工具链支持。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -145,7 +145,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-## 创建与发布应用
+## 创建与发布应用 {#creating-publishing-applications}
 从应用创建到分布式部署的完整流程。掌握应用创建、源码管理、版本发布、运行环境配置，以及如何构建无限横向扩展的分布式集群架构。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -244,7 +244,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </div>
 
 
-## 前端门户与页面
+## 前端门户与页面 {#frontend-portals-pages}
 设计精美的用户界面和交互体验。从门户导航到页面构建，从组件布局到数据管理，打造功能完整、用户友好的应用界面。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -255,12 +255,32 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="设计不同用户角色的门户界面，配置导航菜单和权限控制，创建个性化用户体验。"
 >
   <LinkGrid links={[
-    { text: "应用内置3个门户", href: "devguide/shell-and-page/portal-navigation-design#application-built-in-three-portals" },
-    { text: "3种门户类型", href: "devguide/shell-and-page/portal-navigation-design#three-portal-types" },
-    { text: "创建门户并配置菜单", href: "devguide/shell-and-page/portal-navigation-design#create-portal-and-configure-menu" },
+    { text: "应用内置3个门户", href: "devguide/shell-and-page/portal-navigation-design#application-built-in-portals" },
+    { text: "开发者门户", href: "devguide/shell-and-page/portal-navigation-design#developer-portal" },
+    { text: "管理者门户", href: "devguide/shell-and-page/portal-navigation-design#manager-portal" },
+    { text: "使用者门户", href: "devguide/shell-and-page/portal-navigation-design#user-portal" },
+    { text: "3种门户类型", href: "devguide/shell-and-page/portal-navigation-design#portal-types" },
+    { text: "常规门户", href: "devguide/shell-and-page/portal-navigation-design#generic-portal" },
+    { text: "空白门户", href: "devguide/shell-and-page/portal-navigation-design#blank-portal" },
+    { text: "SSR门户", href: "devguide/shell-and-page/portal-navigation-design#ssr-portal" },
+    { text: "创建门户并配置菜单", href: "devguide/shell-and-page/portal-navigation-design#creating-portals-and-configuring-menus" },
+    { text: "新建/删除/隐藏菜单", href: "devguide/shell-and-page/portal-navigation-design#creating-deleting-hiding-menus" },
+    { text: "拖拽菜单排序", href: "devguide/shell-and-page/portal-navigation-design#sorting-menus-by-dragging" },
+    { text: "对菜单进行分组", href: "devguide/shell-and-page/portal-navigation-design#menu-grouping" },
+    { text: "如何新建门户菜单分组？", href: "devguide/shell-and-page/portal-navigation-design#creating-portal-menu-groups" },
+    { text: "如何将菜单移动到分组中？", href: "devguide/shell-and-page/portal-navigation-design#moving-menus-into-groups" },
+    { text: "PC端和移动端菜单页面", href: "devguide/shell-and-page/portal-navigation-design#pc-and-mobile-menu-pages" },
+    { text: "使用页面变量赋值控制页面逻辑", href: "devguide/shell-and-page/portal-navigation-design#controlling-page-logic-with-variable-assignment" },
+    { text: "重写菜单页面", href: "devguide/shell-and-page/portal-navigation-design#rewriting-menu-pages" },
     { text: "门户布局设计", href: "devguide/shell-and-page/portal-navigation-design#portal-layout-design" },
-    { text: "启用或关闭常用功能入口", href: "devguide/shell-and-page/portal-navigation-design#enable-disable-common-function-entries" },
-    { text: "在门户中使用AI助理", href: "devguide/shell-and-page/portal-navigation-design#using-ai-assistant-in-portal" }
+    { text: "设置左侧/顶部导航", href: "devguide/shell-and-page/portal-navigation-design#configuring-navigation-layout" },
+    { text: "多标签页", href: "devguide/shell-and-page/portal-navigation-design#multi-tab-functionality" },
+    { text: "是否显示在门户切换列表中", href: "devguide/shell-and-page/portal-navigation-design#portal-visibility-settings" },
+    { text: "设置在门户列表中的顺序", href: "devguide/shell-and-page/portal-navigation-design#portal-ordering" },
+    { text: "启用或关闭常用功能入口", href: "devguide/shell-and-page/portal-navigation-design#managing-common-function-entries" },
+    { text: "发起申请/待办/消息中心入口", href: "devguide/shell-and-page/portal-navigation-design#application-and-workflow-entries" },
+    { text: "个人中心入口", href: "devguide/shell-and-page/portal-navigation-design#personal-center-entry" },
+    { text: "在门户中集成AI助理", href: "devguide/shell-and-page/portal-navigation-design#integrating-ai-assistants" }
   ]} />
 </IndexCard>
 
@@ -270,11 +290,14 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="使用可视化编辑器构建页面界面，配置组件和事件，实现丰富的用户交互功能。"
 >
   <LinkGrid links={[
-    { text: "新建常规页面", href: "devguide/shell-and-page/component-based-page-development#create-a-regular-page" },
+    { text: "新建常规页面", href: "devguide/shell-and-page/component-based-page-development#creating-regular-pages" },
     { text: "可视化页面编辑器", href: "devguide/shell-and-page/component-based-page-development#visual-page-editor" },
+    { text: "组件通用操作", href: "devguide/shell-and-page/component-based-page-development#component-common-operations" },
     { text: "页面变量", href: "devguide/shell-and-page/component-based-page-development#page-variables" },
+    { text: "页面函数", href: "devguide/shell-and-page/component-based-page-development#page-functions" },
     { text: "页面事件", href: "devguide/shell-and-page/component-based-page-development#page-events" },
-    { text: "页面函数", href: "devguide/shell-and-page/component-based-page-development#page-functions" }
+    { text: "快捷操作", href: "devguide/shell-and-page/component-based-page-development#shortcuts" },
+    { text: "为页面启用AI助理", href: "devguide/shell-and-page/component-based-page-development#enabling-ai-assistant" }
   ]} />
 </IndexCard>
 
@@ -359,7 +382,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-## 在门户和页面中集成AI元素
+## 在门户和页面中集成AI元素 {#using-ai-portals-pages}
 通过智能AI元素提升用户体验。将AI助理、智能体和其他AI组件集成到门户和页面中，创建智能、交互式的应用程序，提供个性化帮助和自动化工作流程。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -396,7 +419,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-## 在页面中调用业务元素
+## 在页面中调用业务元素 {#calling-business-elements-pages}
 将页面连接到强大的业务逻辑和数据操作。学习如何从页面调用服务函数和数据模型函数，创建动态的、数据驱动的用户界面，具备实时业务处理能力。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -427,7 +450,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-## 页面中的全代码自定义UI组件
+## 页面中的全代码自定义UI组件 {#fullcode-ui-components-pages}
 创建具有完全编程控制的高级自定义UI组件。构建复杂的交互元素，与页面逻辑无缝集成，处理复杂事件，提供超越标准组件的丰富用户体验。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -491,7 +514,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-## 在页面中使用功能组件
+## 在页面中使用功能组件 {#using-functional-components-pages}
 丰富的组件库是你的超级工具箱。拖拽一个表格展示数据，添加表单收集信息，插入图表让数据可视化。让复杂的前端开发变得简单直观。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -871,7 +894,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   </details>
 </div>
 
-## AI大模型
+## AI大模型 {#ai-large-language-models}
 接入GPT-4、Claude、通义千问等主流大模型。支持多厂商容灾和私有化部署，为应用提供智能对话、文本生成、代码辅助等AI能力。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -916,7 +939,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-## AI知识库
+## AI知识库 {#ai-knowledge-base}
 将企业文档、手册、FAQ转化为智能知识库。支持文档自动处理、智能分段、语义检索，让AI基于企业知识精准回答问题。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1009,7 +1032,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-## AIAgent
+## AIAgent {#ai-agent}
 具备推理和行动能力的智能代理。通过提示词和工具配置，让AI自主分析问题、制定方案、执行任务，处理复杂业务场景。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1099,7 +1122,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-## AI助理
+## AI助理 {#ai-assistant}
 可视化的智能工作流引擎。通过拖拽节点编排业务流程，结合AI决策和人机交互，实现客服、审批、数据处理等场景的智能自动化。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1146,7 +1169,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-## 数据建模
+## 数据建模 {#data-modeling}
 为你的应用设计强大的数据基础。无需复杂的SQL知识，通过可视化方式创建数据表，设计字段类型，建立关联关系。让数据管理变得轻松高效。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1292,7 +1315,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 </div>
 
-## 事务管理
+## 事务管理 {#transaction-management}
 确保复杂业务操作中的数据一致性和可靠性。掌握数据库事务控制机制，实现原子操作，有效处理并发访问场景。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1311,7 +1334,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-## 用户与权限
+## 用户与权限 {#user-permission-management}
 构建安全可靠的用户体系。支持多种登录方式，灵活设计组织架构，精细化权限分配。让不同用户各司其职，确保数据安全和操作规范。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1413,7 +1436,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-## 业务逻辑开发
+## 业务逻辑开发 {#business-logic-development}
 赋予应用强大的业务处理能力。通过可视化编程处理复杂业务规则，响应用户操作，执行后台任务。让逻辑编写像搭积木一样直观易懂。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1497,7 +1520,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-## 审批流程
+## 审批流程 {#approval-process}
 让企业审批流程变得高效有序。通过拖拽方式设计流程图，配置审批人和条件，自动化处理流转。告别繁琐的纸质审批，拥抱数字化办公。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1638,7 +1661,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-## 文件处理
+## 文件处理 {#file-processing}
 轻松处理应用中的各种文件需求。支持多种格式文件上传下载，动态生成Word、Excel文档，让文件操作变得简单便捷。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1700,7 +1723,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-## 外部API集成
+## 外部API集成 {#external-api-integration}
 让你的应用连接更广阔的世界。轻松接入第三方API，集成微信支付、支付宝支付，配置短信通知服务。扩展应用能力边界，满足更多业务场景。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1756,7 +1779,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 </div>
 
-## 缓存管理
+## 缓存管理 {#cache-management}
 让应用跑得更快更稳定。配置智能缓存策略，优化数据访问速度，提升用户体验。确保应用在高并发访问时依然流畅运行。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1775,7 +1798,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-## 内部API开放
+## 内部API开放 {#internal-api-exposure}
 将应用能力暴露给外部系统调用。一键生成标准API接口，管理调用权限，监控使用情况。让你的应用成为数据和服务的提供者。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1829,7 +1852,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 </div>
 
-## 国际化
+## 国际化 {#internationalization}
 让你的应用面向全球用户。支持多语言、区域设置和动态语言切换，打造真正的国际化应用程序。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1866,7 +1889,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-## 前端UI定制
+## 前端UI定制 {#frontend-ui-customization}
 打造独特的视觉体验和品牌形象。自定义应用主题色彩，开发专属UI组件，让应用界面更符合企业品牌调性，提升用户体验和辨识度。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1945,7 +1968,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-## 场景化进阶指南
+## 场景化进阶指南 {#advanced-guide}
 基于真实业务场景的深度实践指南，帮助开发者掌握复杂应用的架构设计和最佳实践。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>

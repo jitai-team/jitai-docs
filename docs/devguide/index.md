@@ -5,17 +5,17 @@ sidebar_position: 0
 import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 # Developer Guide Index
-Ready to experience a revolutionary new way of application development? Start here and learn to build powerful enterprise-grade applications using the cutting-edge technology stack of the AI era.
+Ready to experience a revolutionary approach to application development? Start here and learn to build powerful enterprise-grade applications using cutting-edge AI-era technology.
 
-The developer guide provides a complete learning path from organizational management and application development fundamentals to business logic implementation, along with best practices for mastering complex application architecture design through real business scenarios.
+This developer guide provides a comprehensive learning path from organizational management and application development fundamentals to business logic implementation, along with best practices for mastering complex application architecture design through real-world business scenarios.
 
-**Usage Recommendations**: Beginners should follow the sequential learning path, while experienced developers can jump directly to the scenario-based advanced guides.
+**Usage recommendations**: Beginners should follow the sequential learning path, while experienced developers can jump directly to the scenario-based advanced guides.
 
 First, you need to complete the basic [Download and Installation](tutorial/download-installation)!
 
 
-## Basic Concepts
-Master the core concepts and architecture principles of the JitAi platform. Understand the fundamental concepts of platform applications, element systems, development frameworks, and visual development tools to lay the theoretical foundation for subsequent development work.
+## Basic concepts {#basic-concepts}
+Master the core concepts and architecture principles of the JitAi platform. Understand the fundamental concepts of platform applications, element systems, development frameworks, and visual development tools to establish the theoretical foundation for subsequent development work.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
@@ -39,8 +39,8 @@ Master the core concepts and architecture principles of the JitAi platform. Unde
 
 </div>
 
-## Platform Installation and Node Activation
-Complete the platform installation and node activation process. Learn download and installation methods, node activation procedures, and developer team management to establish a development environment foundation.
+## Platform installation and node activation {#platform-installation-node-activation}
+Complete the platform installation and node activation process. Learn download and installation methods, node activation procedures, and developer team management to establish a solid development environment foundation.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
@@ -84,8 +84,8 @@ Complete the platform installation and node activation process. Learn download a
 
 </div>
 
-## Development Tools and Publishing Services
-Powerful toolchain for efficient development. Master visual development environments, DevOps management tools, and cloud publishing services to achieve complete toolchain support from development to deployment.
+## Development tools and publishing services {#development-tools-publishing-services}
+Powerful toolchain for efficient development. Master visual development environments, DevOps management tools, and cloud publishing services to achieve comprehensive toolchain support from development to deployment.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
@@ -145,7 +145,7 @@ Powerful toolchain for efficient development. Master visual development environm
 
 </div>
 
-## Creating and Publishing Applications
+## Creating and publishing applications {#creating-publishing-applications}
 Complete workflow from application creation to distributed deployment. Master application creation, source code management, version publishing, runtime environment configuration, and building infinitely horizontally scalable distributed cluster architectures.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -244,8 +244,8 @@ Complete workflow from application creation to distributed deployment. Master ap
 </div>
 
 
-## Frontend Portals and Pages
-Design beautiful user interfaces and interactive experiences. From portal navigation to page construction, from component layout to data management, create complete, user-friendly application interfaces.
+## Frontend portals and pages {#frontend-portals-pages}
+Design beautiful user interfaces and interactive experiences. From portal navigation to page construction, from component layout to data management, create comprehensive, user-friendly application interfaces.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
   
@@ -255,26 +255,49 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
   description="Design portal interfaces for different user roles, configure navigation menus and permission controls, and create personalized user experiences."
 >
   <LinkGrid links={[
-    { text: "Application Built-in Three Portals", href: "devguide/shell-and-page/portal-navigation-design#application-built-in-three-portals" },
-    { text: "Three Portal Types", href: "devguide/shell-and-page/portal-navigation-design#three-portal-types" },
-    { text: "Create Portal and Configure Menu", href: "devguide/shell-and-page/portal-navigation-design#create-portal-and-configure-menu" },
-    { text: "Portal Layout Design", href: "devguide/shell-and-page/portal-navigation-design#portal-layout-design" },
-    { text: "Enable or Disable Common Function Entries", href: "devguide/shell-and-page/portal-navigation-design#enable-disable-common-function-entries" },
-    { text: "Using AI Assistant in Portal", href: "devguide/shell-and-page/portal-navigation-design#using-ai-assistant-in-portal" }
+    { text: "Application built-in portals", href: "devguide/shell-and-page/portal-navigation-design#application-built-in-portals" },
+    { text: "Developer portal", href: "devguide/shell-and-page/portal-navigation-design#developer-portal" },
+    { text: "Manager portal", href: "devguide/shell-and-page/portal-navigation-design#manager-portal" },
+    { text: "User portal", href: "devguide/shell-and-page/portal-navigation-design#user-portal" },
+    { text: "Portal types", href: "devguide/shell-and-page/portal-navigation-design#portal-types" },
+    { text: "Generic portal", href: "devguide/shell-and-page/portal-navigation-design#generic-portal" },
+    { text: "Blank portal", href: "devguide/shell-and-page/portal-navigation-design#blank-portal" },
+    { text: "SSR portal", href: "devguide/shell-and-page/portal-navigation-design#ssr-portal" },
+    { text: "Creating portals and configuring menus", href: "devguide/shell-and-page/portal-navigation-design#creating-portals-and-configuring-menus" },
+    { text: "Creating, deleting, and hiding menus", href: "devguide/shell-and-page/portal-navigation-design#creating-deleting-hiding-menus" },
+    { text: "Sorting menus by dragging", href: "devguide/shell-and-page/portal-navigation-design#sorting-menus-by-dragging" },
+    { text: "Menu grouping", href: "devguide/shell-and-page/portal-navigation-design#menu-grouping" },
+    { text: "Creating portal menu groups", href: "devguide/shell-and-page/portal-navigation-design#creating-portal-menu-groups" },
+    { text: "Moving menus into groups", href: "devguide/shell-and-page/portal-navigation-design#moving-menus-into-groups" },
+    { text: "PC and mobile menu pages", href: "devguide/shell-and-page/portal-navigation-design#pc-and-mobile-menu-pages" },
+    { text: "Controlling page logic with variable assignment", href: "devguide/shell-and-page/portal-navigation-design#controlling-page-logic-with-variable-assignment" },
+    { text: "Rewriting menu pages", href: "devguide/shell-and-page/portal-navigation-design#rewriting-menu-pages" },
+    { text: "Portal layout design", href: "devguide/shell-and-page/portal-navigation-design#portal-layout-design" },
+    { text: "Configuring navigation layout", href: "devguide/shell-and-page/portal-navigation-design#configuring-navigation-layout" },
+    { text: "Multi-tab functionality", href: "devguide/shell-and-page/portal-navigation-design#multi-tab-functionality" },
+    { text: "Portal visibility settings", href: "devguide/shell-and-page/portal-navigation-design#portal-visibility-settings" },
+    { text: "Portal ordering", href: "devguide/shell-and-page/portal-navigation-design#portal-ordering" },
+    { text: "Managing common function entries", href: "devguide/shell-and-page/portal-navigation-design#managing-common-function-entries" },
+    { text: "Application and workflow entries", href: "devguide/shell-and-page/portal-navigation-design#application-and-workflow-entries" },
+    { text: "Personal center entry", href: "devguide/shell-and-page/portal-navigation-design#personal-center-entry" },
+    { text: "Integrating AI assistants", href: "devguide/shell-and-page/portal-navigation-design#integrating-ai-assistants" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="Component-based Page Development"
+  title="Component-Based Page Development"
   href="devguide/shell-and-page/component-based-page-development"
   description="Use the visual editor to build page interfaces, configure components and events, and implement rich user interaction features."
 >
   <LinkGrid links={[
-    { text: "Create a Regular Page", href: "devguide/shell-and-page/component-based-page-development#create-a-regular-page" },
-    { text: "Visual Page Editor", href: "devguide/shell-and-page/component-based-page-development#visual-page-editor" },
-    { text: "Page Variables", href: "devguide/shell-and-page/component-based-page-development#page-variables" },
-    { text: "Page Events", href: "devguide/shell-and-page/component-based-page-development#page-events" },
-    { text: "Page Functions", href: "devguide/shell-and-page/component-based-page-development#page-functions" }
+    { text: "Creating regular pages", href: "devguide/shell-and-page/component-based-page-development#creating-regular-pages" },
+    { text: "Visual page editor", href: "devguide/shell-and-page/component-based-page-development#visual-page-editor" },
+    { text: "Component common operations", href: "devguide/shell-and-page/component-based-page-development#component-common-operations" },
+    { text: "Page variables", href: "devguide/shell-and-page/component-based-page-development#page-variables" },
+    { text: "Page functions", href: "devguide/shell-and-page/component-based-page-development#page-functions" },
+    { text: "Page events", href: "devguide/shell-and-page/component-based-page-development#page-events" },
+    { text: "Shortcuts", href: "devguide/shell-and-page/component-based-page-development#shortcuts" },
+    { text: "Enabling AI assistant for page", href: "devguide/shell-and-page/component-based-page-development#enabling-ai-assistant" }
   ]} />
 </IndexCard>
 
@@ -350,7 +373,7 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
 
 </div>
 
-## Using AI in Portals and Pages
+## Using AI in portals and pages {#using-ai-portals-pages}
 Enhance user experience with intelligent AI elements. Integrate AI assistants, agents, and other AI components into portals and pages to create smart, interactive applications that provide personalized assistance and automated workflows.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -387,7 +410,7 @@ Enhance user experience with intelligent AI elements. Integrate AI assistants, a
 
 </div>
 
-## Calling Business Elements in Pages
+## Calling business elements in pages {#calling-business-elements-pages}
 Connect your pages to powerful business logic and data operations. Learn how to invoke service functions and data model functions from pages to create dynamic, data-driven user interfaces with real-time business processing capabilities.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -418,7 +441,7 @@ Connect your pages to powerful business logic and data operations. Learn how to 
 
 </div>
 
-## Full-Code UI Components in Pages
+## Full-code UI components in pages {#fullcode-ui-components-pages}
 Create advanced custom UI components with full programming control. Build sophisticated interactive elements that seamlessly integrate with page logic, handle complex events, and provide rich user experiences beyond standard components.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -482,8 +505,8 @@ Create advanced custom UI components with full programming control. Build sophis
 
 </div>
 
-## Using Functional Components in Pages
-The rich component library is your super toolkit. Drag and drop a table to display data, add forms to collect information, and insert charts for data visualization. Make complex frontend development simple and intuitive.
+## Using functional components in pages {#using-functional-components-pages}
+The rich component library is your powerful toolkit. Drag and drop tables to display data, add forms to collect information, and insert charts for data visualization. Make complex frontend development simple and intuitive.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
@@ -870,7 +893,7 @@ The rich component library is your super toolkit. Drag and drop a table to displ
   </details>
 </div>
 
-## AI Large Language Models
+## AI large language models {#ai-large-language-models}
 Integrate mainstream large language models such as GPT-4, Claude, and Tongyi Qianwen. Support multi-vendor disaster recovery and private deployment to provide applications with AI capabilities including intelligent dialogue, text generation, and code assistance.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -912,7 +935,7 @@ Integrate mainstream large language models such as GPT-4, Claude, and Tongyi Qia
 
 </div>
 
-## AI Knowledge Base
+## AI knowledge base {#ai-knowledge-base}
 Transform enterprise documents, manuals, and FAQs into intelligent knowledge bases. Support automatic document processing, intelligent segmentation, and semantic retrieval to enable AI to answer questions accurately based on enterprise knowledge.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1005,7 +1028,7 @@ Transform enterprise documents, manuals, and FAQs into intelligent knowledge bas
 
 </div>
 
-## AI Agent
+## AI agent {#ai-agent}
 Intelligent agents with reasoning and action capabilities. Through prompts and tool configuration, enable AI to autonomously analyze problems, formulate solutions, and execute tasks to handle complex business scenarios.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1096,7 +1119,7 @@ Intelligent agents with reasoning and action capabilities. Through prompts and t
 
 </div>
 
-## AI Assistant
+## AI assistant {#ai-assistant}
 Visual intelligent workflow engine. Orchestrate business processes through drag-and-drop nodes, combining AI decision-making and human-machine interaction to achieve intelligent automation in scenarios such as customer service, approval, and data processing.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1142,7 +1165,7 @@ Visual intelligent workflow engine. Orchestrate business processes through drag-
 </IndexCard>
 </div>
 
-## Data Modeling
+## Data modeling {#data-modeling}
 Design a powerful data foundation for your application. Create data tables, design field types, and establish relationships through visual methods without complex SQL knowledge. Make data management easy and efficient.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1289,7 +1312,7 @@ Design a powerful data foundation for your application. Create data tables, desi
 
 </div>
 
-## Transaction Management
+## Transaction management {#transaction-management}
 Ensure data consistency and reliability in complex business operations. Master database transaction control mechanisms, implement atomic operations, and handle concurrent access scenarios effectively.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1308,7 +1331,7 @@ Ensure data consistency and reliability in complex business operations. Master d
 
 </div>
 
-## User and Permission Management
+## User and permission management {#user-permission-management}
 Build a secure and reliable user system. Support multiple login methods, flexible organizational structure design, and fine-grained permission allocation. Enable different users to perform their respective duties while ensuring data security and operational compliance.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1410,7 +1433,7 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
 
 </div>
 
-## Business Logic Development
+## Business logic development {#business-logic-development}
 Empower applications with powerful business processing capabilities. Handle complex business rules through visual programming, respond to user operations, and execute background tasks. Make logic writing as intuitive and easy to understand as building blocks.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1494,7 +1517,7 @@ Empower applications with powerful business processing capabilities. Handle comp
 
 </div>
 
-## Approval Process
+## Approval process {#approval-process}
 Make enterprise approval processes efficient and orderly. Design flowcharts through drag-and-drop, configure approvers and conditions, and automate process flow. Say goodbye to tedious paper approvals and embrace digital office work.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1635,7 +1658,7 @@ Make enterprise approval processes efficient and orderly. Design flowcharts thro
 
 </div>
 
-## File Processing
+## File processing {#file-processing}
 Easily handle various file requirements in applications. Support file upload and download in multiple formats, dynamically generate Word and Excel documents, making file operations simple and convenient.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1697,7 +1720,7 @@ Easily handle various file requirements in applications. Support file upload and
 
 </div>
 
-## External API Integration
+## External API integration {#external-api-integration}
 Connect your application to the broader world. Easily integrate third-party APIs, integrate WeChat Pay and Alipay, and configure SMS notification services. Expand application capability boundaries to meet more business scenarios.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1753,7 +1776,7 @@ Connect your application to the broader world. Easily integrate third-party APIs
 </IndexCard>
 </div>
 
-## Cache Management
+## Cache management {#cache-management}
 Make applications run faster and more stable. Configure intelligent caching strategies, optimize data access speed, and enhance user experience. Ensure applications run smoothly even under high concurrent access.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1771,7 +1794,7 @@ Make applications run faster and more stable. Configure intelligent caching stra
 </IndexCard>
 </div>
 
-## Internal API Exposure
+## Internal API exposure {#internal-api-exposure}
 Expose application capabilities for external system calls. Generate standard API interfaces with one click, manage call permissions, and monitor usage. Make your application a provider of data and services.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1827,7 +1850,7 @@ Expose application capabilities for external system calls. Generate standard API
 
 </div>
 
-## Internationalization
+## Internationalization {#internationalization}
 Make your application accessible to global users. Support multiple languages, regional settings, and dynamic language switching to create truly international applications.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1865,7 +1888,7 @@ Make your application accessible to global users. Support multiple languages, re
 </div>
 
 
-## Frontend UI Customization
+## Frontend UI customization {#frontend-ui-customization}
 Create unique visual experiences and brand identity. Customize application theme colors, develop exclusive UI components, and make application interfaces better align with corporate brand tone while enhancing user experience and recognition.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1943,7 +1966,7 @@ Create unique visual experiences and brand identity. Customize application theme
 </IndexCard>
 </div>
 
-## Advanced Guide
+## Advanced guide {#advanced-guide}
 In-depth practical guides based on real business scenarios to help developers master complex application architecture design and best practices.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>

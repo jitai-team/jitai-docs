@@ -7,7 +7,7 @@ sidebar_position: 2
 
 在一个组件化页面中，页面函数逻辑、页面事件函数逻辑、页面中用到的组件的事件函数逻辑中都可以调用其它的业务元素，包括且不限于服务、数据模型、AI大模型、AI Agent、AI助理等。关于调用业务元素的详细内容，可以参考[在函数逻辑中调用前后端工具和服务](/docs/devguide/calling-business-elements-in-pages)。
 
-## 新建常规页面 {#create-a-regular-page}
+## 新建常规页面 {#creating-regular-pages}
 在[创建门户](/docs/devguide/shell-and-page/portal-navigation-design)中，如果开发者选择创建菜单的同时创建页面，则页面会自动生成，可以在元素目录树中找到自动生成的页面并进行编辑。
 
 开发者也可以手动创建页面，JitAi提供了常规页面、AI数据管理页面、AI数据分析页面、数据录入页面、React全代码页面、Vue全代码页面、markdown-page一共7种页面类型。其中AI数据管理页面、AI数据分析页面、数据录入页面都是以常规页面为基础封装的，本文使用常规页面讲解**如何进行组件化的页面开发**。
@@ -30,7 +30,7 @@ JitAi为页面元素提供了可视化拖拽式的页面编辑器，开发者可
 
 JitAi开发框架提供了丰富的组件库，每种组件的配置项和事件各有不同，开发者可以参考[在页面中使用功能组件](/docs/devguide/using-functional-components-in-pages)，了解每种组件详细用法。
 
-## 在页面中集成AI助理 {#integrate-ai-assistant-in-pages}
+## 在页面中集成AI助理 {#integrating-ai-assistants-in-pages}
 页面支持集成AI助理，提供智能对话和辅助功能，增强用户体验。
 
 ### 工具栏 {#toolbar}
@@ -51,7 +51,7 @@ JitAi开发框架提供了丰富的组件库，每种组件的配置项和事件
 
 每一个组件的右上角都有一个`事件`按钮和`...`按钮。点击`事件`按钮可以在事件面板中显示当前组件的事件，点击`...`按钮可以打开组件的通用操作菜单，包括隐藏标题、设置尺寸、移动、生成副本、复制配置、粘贴配置、删除。
 
-### 组件配置区 {#component-config-area}
+### 组件配置区 {#component-configuration-area}
 组件配置区用于配置组件的显示标题、属性、样式、规则、按钮等。
 
 ![表格组件配置总览](./imgs/table-component-config-overview.png)
@@ -74,7 +74,7 @@ JitAi开发框架提供了丰富的组件库，每种组件的配置项和事件
 :::
 
 ## 组件通用操作 {#component-common-operations}
-### 生成副本 {#generate-copy}
+### 生成副本 {#duplicating-components}
 如果页面中需要使用多个同类组件且配置较为雷同，则可以通过生成副本的方式快速添加组件。
 
 ![生成副本](./imgs/generate-copy.gif)
@@ -85,21 +85,21 @@ JitAi开发框架提供了丰富的组件库，每种组件的配置项和事件
 创建组件副本只会复制组件的配置，不会复制组件的事件逻辑。
 :::
 
-### 标题显隐 {#title-show-hide}
+### 标题显隐 {#title-visibility}
 每个组件的标题可以单独设置为显示或隐藏。
 
 ![标题显隐](./imgs/title-show-hide.gif)
 
 当标题被隐藏后，`隐藏标题`按钮会自动变为`显示标题`按钮，点击`显示标题`按钮即可恢复标题的显示。
 
-### 自定义尺寸或自适应  {#custom-size-or-adaptive}
+### 自定义尺寸或自适应  {#custom-sizing-adaptive-layout}
 组件的尺寸大小不仅可以通过拖拽组件边缘的方式进行调整，也可以进行精确设置。
 
 ![设置组件尺寸](./imgs/set-component-size.gif)
 
 当选择按比例自适应时，组件会根据页面在浏览器中的显示宽度自动调整组件的宽度，保持组件的宽高比不变。当选择自定义尺寸时，开发者可以设置组件宽高的像素值。
 
-### 复制和粘贴配置 {#copy-paste-config}
+### 复制和粘贴配置 {#copying-pasting-configurations}
 当前页面中、当前应用跨不同页面以及不同应用跨页面存在两个或多个同类组件，而且有复用配置的需求，则可以使用复制配置和粘贴配置的方式快速复用。
 
 ![复制和粘贴配置](./imgs/copy-and-paste-configuration.gif)
@@ -110,14 +110,14 @@ JitAi开发框架提供了丰富的组件库，每种组件的配置项和事件
 和生成副本类似，复制和粘贴配置只会复制组件的配置，不会复制组件的事件逻辑。和生成副本不同的是，这种复用方式支持跨页面。
 :::
 
-### 移动到其它布局组件中 {#move-to-layout-component}
+### 移动到其它布局组件中 {#moving-to-layout-components}
 当页面中有弹窗、标签页、折叠面板这些布局组件时，开发者可以快速将其它组件移动到这些布局组件中。
 
 ![组件移动](./imgs/move-component-to-other-layout-component.gif)
 
 开发者点击组件右上角的`...`按钮，在弹出的菜单中点击`移动`按钮，在弹窗中选择目标布局组件，即可完成移动。
 
-### 从页面中删除 {#delete-from-page}
+### 从页面中删除 {#deleting-from-page}
 ![删除组件](./imgs/delete-component.gif)
 
 当页面中不再需要某个组件时，开发者点击组件右上角的`...`按钮，在弹出的菜单中点击`删除`按钮，即可从页面中移除组件。
@@ -132,11 +132,11 @@ JitAi开发框架提供了丰富的组件库，每种组件的配置项和事件
 
 开发者在画布顶部点击`主页面`按钮打开主页面的事件面板，并在事件面板左上角的列表中选择`页面变量`，在弹出的列表中以此点选`主页面`-`页面变量`，即可以可视化的方式声明变量。
 
-在页面变量的配置界面，开发者可以点击`声明页面变量`按钮，在弹出的表单中填写变量名称、选择数据类型，点击`确定`即可完成变量声明。开发者也可以点击每个变量标题右侧的按钮，在弹窗中修改已有变量的名称以及参数配置。
+在页面变量的配置界面，开发者可以点击`声明页面变量`按钮，选择数据类型即可完成变量声明。开发者也可以点击每个变量标题右侧的按钮，在弹窗中修改已有变量的名称以及参数配置。
 
 不同数据类型的变量支持的配置参数也有所不同，例如Stext、Ltext等文本类型支持配置限制的字数。
 
-### 从请求链接中获取页面变量值 {#get-variables-from-url}
+### 从请求链接中获取页面变量值 {#getting-variables-from-urls}
 JitAi支持从用户访问页面的请求链接中获取变量值。开发者在声明变量后，在`选择通过Url参数赋值的变量`下拉列表中选择对应的变量即可，支持多选。
 ## 页面函数 {#page-functions}
 页面函数是开发者根据业务需要自行封装的程序逻辑，可以被页面中各类组件的函数、事件调用。
@@ -154,14 +154,14 @@ JitAi支持从用户访问页面的请求链接中获取变量值。开发者在
 
 页面函数创建后，开发者可以填写函数说明、设置参数列表、设置返回值类型，并通过可视化或切换到全代码模式编写函数逻辑。
 
-### 函数重命名/生成副本/删除 {#function-rename-copy-delete}
+### 函数重命名/生成副本/删除 {#function-management-operations}
 对于已经创建的页面函数，可以对其进行重命名、生成副本、删除操作。重命名只能修改函数中文标题，修改函数英文名称则需要切换到全代码模式下进行修改。使用生成副本功能可以快速复用已有函数，并在副本上进行个性化修改。
 
 ![页面函数的更多操作按钮](./imgs/page-function-more-operation-buttons.gif)
 
 开发者将鼠标放在每个页面函数标题右侧的按钮上，即可看到`重命名`、`生成副本`、`删除`三个操作按钮。
 
-### 在页面函数中使用页面变量和调用其它函数 {#use-variables-functions-in-page-function}
+### 在页面函数中使用页面变量和调用其它函数 {#using-page-variables-calling-functions}
 页面函数可以调用当前页面的其它页面函数，也可以访问页面变量。
 
 ![页面函数调用](./imgs/page-function-and-variable-call.gif)
@@ -169,36 +169,36 @@ JitAi支持从用户访问页面的请求链接中获取变量值。开发者在
 在上图示例中，`echo`函数调用了`说你好`函数，并将`变量1`页面变量的值作为入参传递给了`说你好`函数。
 
 ## 页面事件 {#page-events}
-### 页面加载后 {#page-after-load}
+### 页面加载后 {#after-page-load}
 当一个页面完成加载时，会自动触发`页面加载后`事件，开发者可以利用这个事件在页面加载后执行一些初始化操作，例如获取页面变量值、调用页面函数、弹出一些提示信息等。
 
 ![页面加载后事件](./imgs/page-after-load-event.gif)
 
 开发者在`主页面`事件面板的左上角切换到`页面事件`，即可在右侧看到当前页面的事件列表。点击`页面加载后`页签，即可在下方编辑`页面加载后`的事件逻辑。
 
-### 页面聚焦后 {#page-after-focus}
+### 页面聚焦后 {#after-page-focus}
 当浏览器页签切换到当前页面以及平台导航页签切换到当前页面时，都会触发`页面聚焦后`事件。开发者可以利用这个事件在页面聚焦后执行一些操作。
 
 ![页面聚焦后事件](./imgs/page-focus-after-event.png)
 
 开发者在`主页面`事件面板的左上角切换到`页面事件`，即可在右侧看到当前页面的事件列表。点击`页面聚焦后`页签，即可在下方编辑`页面聚焦后`的事件逻辑。
 
-### 页面变量值改变后 {#page-variable-value-changed}
-每个页面变量都会自动生成一个`变量值改变后`事件，当页面变量值改变时，会自动触发该事件。例如变量`访问类型`，对应生成的事件名称为`页面变量(访问类型)改变后`。
+### 页面变量改变时 {#on-page-variable-change}
+每个页面变量都会自动生成一个`变量改变时`事件，当页面变量值改变时，会自动触发该事件。例如变量`访问类型`，对应生成的事件名称为`页面变量(访问类型)改变时`。
 
-![变量值改变后事件](./imgs/variable-value-change-after-event.png)
+![页面变量改变时事件](./imgs/variable-value-change-after-event.png)
 
-开发者可以在事件面板中编辑`页面变量(访问类型)改变后`的事件逻辑。
+开发者可以在事件面板中编辑`页面变量(访问类型)改变时`的事件逻辑。
 
-### 在事件逻辑中使用页面变量和函数 {#use-variables-functions-in-event-logic}
+### 在事件逻辑中使用页面变量和函数 {#using-page-variables-functions-in-event-logic}
 在事件逻辑中，开发者可以访问当前页面的页面变量和页面函数。
 
 ![在事件逻辑中使用页面变量和函数](./imgs/use-page-variables-and-functions-in-event-logic.png)
 
-在上图示例中，`页面变量(访问类型)改变后`事件中调用了`sayHello`函数，并将`访问类型`页面变量的值作为入参传递给了`sayHello`函数。
+在上图示例中，`页面变量(访问类型)改变时`事件中调用了`sayHello`函数，并将`访问类型`页面变量的值作为入参传递给了`sayHello`函数。
 
-## 函数编辑时的快捷操作 {#function-edit-shortcuts}
-### 清空语句 {#clear-statements}
+## 函数编辑时的快捷操作 {#shortcuts}
+### 清空语句 {#clearing-statements}
 当某个页面函数逻辑需要全部重写时，JitAi支持一键清空函数语句。
 
 ![页面函数清空语句](./imgs/page-function-clear-statements.gif)
@@ -207,28 +207,28 @@ JitAi支持从用户访问页面的请求链接中获取变量值。开发者在
 
 使用快捷键`Ctrl/Command+Z`可以撤销清空操作。
 
-### 复制语句 {#copy-statement}
+### 复制语句 {#duplicating-statements}
 需要复用一条已存在的语句并进行修改时，可以使用复制语句功能。
 
 ![复制语句](./imgs/copy-statement.gif)
 
 开发者点击语句右侧的复制按钮，就可以在当前语句下方复制出一条相同的语句，然后在新语句上进行修改。
 
-### 拖拽语句调整其所在行 {#drag-statement}
+### 拖拽语句调整其所在行 {#dragging-statements-to-adjust-position}
 当需要快速调整多条语句的执行顺序时，可以使用拖拽的方式进行调整。
 
 ![拖拽移动函数语句](./imgs/drag-move-function-statement.gif)
 
 开发者将鼠标放在目标语句行上，当鼠标变成小手图案时，按住鼠标左键上下拖拽语句行，即可调整其所在行。
 
-### 删除语句 {#delete-statement}
+### 删除语句 {#deleting-statements}
 当某条语句的逻辑不再被需要时，可以使用删除语句功能。
 
 ![删除语句](./imgs/delete-statement.gif)
 
 开发者点击语句右侧的删除按钮，即可删除当前语句。
 
-### 切换到源码并定位到当前语句 {#switch-to-source-code}
+### 切换到源码并定位到当前语句 {#switching-to-source-code-locating-statements}
 通过可视化编辑器编辑函数逻辑的同时，平台会自动生成对应的源代码，开发者可以随时在可视化编辑器和源代码编辑器之间切换。
 
 ![切换并定位语句源代码](./imgs/switch-to-function-statement-source-view.gif)
@@ -242,14 +242,14 @@ JitAi支持使用快捷键快速完成函数编辑，已支持的快捷键包括
 
 开发者在函数编辑界面中，将鼠标放在底部右侧的`快捷键`按钮上即可看到当前支持的快捷键说明。
 
-## 在函数逻辑中调用前后端工具和服务 {#call-frontend-backend-services}
+## 在函数逻辑中调用前后端工具和服务 {#calling-frontend-backend-tools-services}
 在前端页面函数、组件事件函数逻辑中，开发者可以直接调用后端模型的增删改查函数以及服务函数。开发者自定义的模型和服务函数以及从父应用继承而来的模型和服务函数，都可以被调用。
 
 ![页面函数中调用前后端工具和服务](./imgs/call-frontend-backend-tools-services-in-page-function.gif)
 
 在上图的列表中可以看到变量、后端服务、后端数据模型、AI助理、页面函数、前端的反馈提醒/数据处理/工具函数/异常处理等多种可调用目标，开发者按需选择即可。
 
-### 调用后端模型/服务 {#call-backend-model-service}
+### 调用后端模型/服务 {#calling-backend-models-services}
 数据模型封装了对数据库表的增删改查，服务函数封装了自定义的业务逻辑，JitAi支持开发者以点选的方式完成后端接口调用，而不需要编写任何HTTP接口调用代码。
 
 ![函数中调用模型](./imgs/call-model-in-function.png)
@@ -258,7 +258,7 @@ JitAi支持使用快捷键快速完成函数编辑，已支持的快捷键包括
 
 以上图为例，依次选中`数据模型`-`部门模型`-`获取一条数据`即可完成查询一条部门数据的功能。
 
-### 调用前端服务 {#call-frontend-service}
+### 调用前端服务 {#calling-frontend-services}
 在前端的业务功能开发中，开发者通常需要实现弹窗确认、反馈提醒、loading、消息提示(错误/警告/普通)、日志打印等常见功能，JitAi将这些功能内置到了前端服务中，开发者可以直接使用。
 
 ![函数中调用前端服务](./imgs/call-frontend-service-in-function.png)
@@ -276,7 +276,7 @@ JitAi已经内置了对移动端的适配，可以在移动端页面编辑器中
 
 移动端页面编辑器和PC端页面编辑器在功能上没有区别，配置/事件/函数/页面变量等操作和PC端页面编辑器完全一致。
 
-## 在页面中集成AI助理 {#integrate-ai-assistant-in-page} 
+## 在页面中集成AI助理 {#enabling-ai-assistant} 
 JitAi支持在页面中直接集成[AI助理](/docs/devguide/ai-assistant/create-ai-assistant)，用户在访问页面时可以与AI助理进行交互。
 
 ![在页面中添加AI助理](./imgs/add-ai-assistant-to-page.gif)

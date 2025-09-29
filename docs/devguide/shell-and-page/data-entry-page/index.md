@@ -6,7 +6,7 @@ sidebar_position: 5
 In business scenarios such as personnel information registration, vehicle information registration, and equipment information registration, users need to fill out form data and submit it to the backend for processing. JitAi directly provides data entry pages to help developers quickly complete the development of form data collection functionality.
 
 ## Create Data Entry Page {#create-data-entry-page}
-The creation process of data entry pages is basically the same as [the creation process of regular pages](/docs/devguide/shell-and-page/component-based-page-development#create-a-regular-page), except that data entry pages need to bind a [data table model](/docs/devguide/data-modeling/data-table-model) to store the data entered by users.
+The creation process of data entry pages is basically the same as [the creation process of regular pages](/docs/devguide/shell-and-page/component-based-page-development#creating-regular-pages), except that data entry pages need to bind a [data table model](/docs/devguide/data-modeling/data-table-model) to store the data entered by users.
 
 ![Create Data Entry Page](./imgs/create-data-entry-page.png "Create Data Entry Page")
 

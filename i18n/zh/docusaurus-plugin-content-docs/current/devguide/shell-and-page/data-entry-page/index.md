@@ -6,7 +6,7 @@ sidebar_position: 5
 人员信息登记、车辆信息登记、设备信息登记等业务场景中，需要用户填写表单数据，并提交到后台进行处理。JitAi 直接提供了数据录入页面，帮助开发者快速完成表单数据收集功能的开发。
 
 ## 创建数据录入页面 {#create-data-entry-page}
-数据录入页面的创建过程和[常规页面的创建过程](/docs/devguide/shell-and-page/component-based-page-development#create-a-regular-page)基本一致，不同的是数据录入页面需要绑定一个[数据表模型](/docs/devguide/data-modeling/data-table-model)，用于存储用户录入的数据。
+数据录入页面的创建过程和[常规页面的创建过程](/docs/devguide/shell-and-page/component-based-page-development#creating-regular-pages)基本一致，不同的是数据录入页面需要绑定一个[数据表模型](/docs/devguide/data-modeling/data-table-model)，用于存储用户录入的数据。
 
 ![创建数据录入页面](./imgs/create-data-entry-page.png)
 

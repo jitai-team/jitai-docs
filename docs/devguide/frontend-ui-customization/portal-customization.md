@@ -19,7 +19,7 @@ Custom portals maintain JitAi platform's core functions such as data models and 
 
 ![Creating Custom Portal](./img/5/start-create.png)
 
-In the element directory tree, click the + button to the right of the search box, select `Portal` - `Regular Portal`. Then a popup for creating a regular portal element will appear.
+In the element directory tree, click the + button to the right of the search box, select `Portal` - `Generic Portal`. Then a popup for creating a regular portal element will appear.
 
 ![Creating Custom Portal](./img/5/create-item.png)
 

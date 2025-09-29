@@ -71,7 +71,7 @@ Provides element configuration, API interfaces, and usage methods for each frame
 >
   <LinkGrid columns={2} links={[
     { text: "Global Styles", href: "reference/framework/JitWeb/global-styles" },
-    { text: "Regular Portal", href: "reference/framework/JitWeb/portals/regular-portal" },
+    { text: "Generic Portal", href: "reference/framework/JitWeb/portals/regular-portal" },
     { text: "Blank Portal", href: "reference/framework/JitWeb/portals/blank-portal" },
     { text: "SSR Portal", href: "reference/framework/JitWeb/portals/ssr-portal" },
     { text: "AI Data Management Page", href: "reference/framework/JitWeb/pages/ai-data-management-page" },

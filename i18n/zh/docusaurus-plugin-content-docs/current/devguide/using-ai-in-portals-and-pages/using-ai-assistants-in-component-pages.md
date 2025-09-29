@@ -52,14 +52,14 @@ this.subscribeEvent("AI:aiagents.ClientManagementagent.callTool.preEvent", async
 });
 ```
 
-### 订阅聊天区域人机交互节点事件 {#subscribe-chat-area-human-events}
+### 订阅聊天区域人机交互节点事件 {#subscribe-action-in-conversation-events}
 页面可以订阅[聊天区域人机交互节点事件](../ai-assistant/ai-assistant-event#chat-area-human-machine-interaction-events)。
 订阅方法如下：
 
 ![AI助理 - 聊天区域人机交互事件订阅](./img/assistant-chat-event.png)
 
-### 订阅工作区人机交互节点事件 {#subscribe-workspace-human-events}
-页面可以订阅[工作区人机交互节点事件](../ai-assistant/ai-assistant-event#workspace-human-machine-interaction-events)。
+### 订阅工作区人机交互节点事件 {#subscribe-action-in-page-events}
+页面可以订阅[工作区人机交互节点事件](../ai-assistant/ai-assistant-event#action-in-page-events)。
 订阅方法如下：
 
 ![AI助理 - 工作区人机交互事件订阅](./img/assistant-uiinterrupt-event.png)

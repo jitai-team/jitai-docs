@@ -154,7 +154,7 @@ Develop an AI assistant with the following process design:
    - **Solution Agent**: Analyze requirements and generate quotation content. Node binds Solution Agent.
 ![quote-agent-setting](./img/quote-agent-setting.png)
 
-3. **Solution Agent** → **Confirm Quotation** ([Dialog Human-Machine Interaction Node](/docs/devguide/ai-assistant/process-orchestration-node-configuration#dialog-human-machine-interaction)): Wait for manual confirmation after quotation completion.
+3. **Solution Agent** → **Confirm Quotation** ([Dialog Human-Machine Interaction Node](/docs/devguide/ai-assistant/process-orchestration-node-configuration#action-in-conversation)): Wait for manual confirmation after quotation completion.
 The Confirm Quotation node displays the quotation file content output by the Solution Agent, using Markdown control for rendering.
 ![quotetion-agent](./img/quote-confirm.png)
 

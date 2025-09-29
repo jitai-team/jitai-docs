@@ -39,7 +39,7 @@ Traditional AI development platforms have a fundamental limitation: they can onl
 
 **Application Value**: Particularly suitable for requirement clarification and result confirmation scenarios, ensuring AI fully understands user intent.
 
-#### Workspace Human-Machine Interaction Node
+#### Action in page node
 
 **Technical Features**: AI pauses execution and waits for users to complete operations on frontend pages.
 
@@ -182,9 +182,9 @@ Configuration method reference: [Agent Add Page Tools](../../ai-agent/agent-tool
 Process steps: `Start` -> `Grading By Agent` -> `Confirm Scores` -> `Update Grading Form`
     - **Grading By Agent**: [AI Agent Node](../process-orchestration-node-configuration#ai-agent), bound to the Grading Agent.
 ![assistant-bind-agent](./img/assistant-bind-agent.png)
-    - **Confirm results**: [Dialog Area Human-Machine Interaction Node](../process-orchestration-node-configuration#dialog-human-machine-interaction), displays answer details and comments output by the grading Agent, waits for human confirmation, then updates the grading form after confirmation.
+    - **Confirm results**: [Dialog Area Human-Machine Interaction Node](../process-orchestration-node-configuration#action-in-conversation), displays answer details and comments output by the grading Agent, waits for human confirmation, then updates the grading form after confirmation.
 ![assistant-human-confirm](./img/assistant-human-confirm.png)
-    - **Update Grading Form**: [Workspace Human-Machine Interaction Node](../process-orchestration-node-configuration#workspace-human-machine-interaction), pauses the process and outputs answer details and comments to the page. Set a friendly prompt message to guide users on next steps.
+    - **Update Grading Form**: [Action in page node](../process-orchestration-node-configuration#action-in-page), pauses the process and outputs answer details and comments to the page. Set a friendly prompt message to guide users on next steps.
 
 ![Grading By Agent](./img/assistant-uiinterrupt.png)
 

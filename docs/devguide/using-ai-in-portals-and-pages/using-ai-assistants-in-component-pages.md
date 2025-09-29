@@ -52,19 +52,19 @@ this.subscribeEvent("AI:aiagents.ClientManagementagent.callTool.preEvent", async
 });
 ```
 
-### Subscribe to Chat Area Human-Machine Interaction Node Events {#subscribe-chat-area-human-events}
-Pages can subscribe to [chat area human-machine interaction node events](../ai-assistant/ai-assistant-event#chat-area-human-machine-interaction-events).
+### Subscribe to action in conversation node events {#subscribe-action-in-conversation-events}
+Pages can subscribe to [action in conversation node events](../ai-assistant/ai-assistant-event#in-conversation-action-events).
 The subscription method is as follows:
 
 ![AI Assistant - Chat Area Human-Machine Interaction Event Subscription](./img/assistant-chat-event.png)
 
-### Subscribe to Workspace Human-Machine Interaction Node Events {#subscribe-workspace-human-events}
-Pages can subscribe to [workspace human-machine interaction node events](../ai-assistant/ai-assistant-event#workspace-human-machine-interaction-events).
+### Subscribe to action in page node events {#subscribe-action-in-page-events}
+Pages can subscribe to [action in conversation node events](../ai-assistant/ai-assistant-event#in-page-action-events).
 The subscription method is as follows:
 
 ![AI Assistant - Workspace Human-Machine Interaction Event Subscription](./img/assistant-uiinterrupt-event.png)
 
-## Send AI Messages in Pages {#send-ai-message}
+## Send AI Messages in pages {#send-ai-message}
 
 After using AI Assistant in a page, there will be a **Send AI Message** function on the page. The calling method is as follows:
 

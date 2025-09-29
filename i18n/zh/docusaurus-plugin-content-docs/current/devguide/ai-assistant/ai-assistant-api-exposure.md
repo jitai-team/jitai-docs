@@ -14,7 +14,7 @@ slug: ai-assistant-api-exposure
 调用方式参考[页面中发送AI消息](../using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#send-ai-message)
 
 
-## 应用内调用AI助理
+## 应用内调用AI助理 {#calling-ai-assistant-within-application}
 
 在前端页面、后端服务、模型函数中可[直接调用AI助理](../using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#call-ai-assistant)。
 
@@ -36,7 +36,7 @@ slug: ai-assistant-api-exposure
 :::
 
 
-## 应用外调用AI助理
+## 应用外调用AI助理 {#external-ai-assistant-calling}
 
 正在开发中...
 

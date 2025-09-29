@@ -182,9 +182,9 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 流程步骤为：`Start` -> `AI评分` -> `确认分数` -> `更新评分表单`
     - **AI评分**：[AI Agent节点](../process-orchestration-node-configuration#ai-agent)，绑定评分Agent。
 ![assistant-bind-agent](./img/assistant-bind-agent.png)
-    - **确认分数**：[对话区人机交互节点](../process-orchestration-node-configuration#dialog-human-machine-interaction)，展示评分Agent输出的答题明细及评语，等待人工确认，确认后更新评分表单。
+    - **确认分数**：[对话区人机交互节点](../process-orchestration-node-configuration#action-in-conversation)，展示评分Agent输出的答题明细及评语，等待人工确认，确认后更新评分表单。
 ![assistant-human-confirm](./img/assistant-human-confirm.png)
-    - **更新评分表单**：[工作区人机交互节点](../process-orchestration-node-configuration#workspace-human-machine-interaction)，暂停流程，并输出答题明细及评语到页面中。设置一个友好的提示语，提示用户下一步操作。
+    - **更新评分表单**：[工作区人机交互节点](../process-orchestration-node-configuration#action-in-page)，暂停流程，并输出答题明细及评语到页面中。设置一个友好的提示语，提示用户下一步操作。
 ![Grading By Agent](./img/assistant-uiinterrupt.png)
 
 ### 评分页面使用评分助理

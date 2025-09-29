@@ -25,7 +25,7 @@ AI助理的可视化编排工具让你能够通过直观的拖拽操作设计复
 - **命名规范**：为节点设置有意义的名称，便于后续维护
 :::
 
-## 节点类型详解
+## 节点类型详解 {#node-types-explained}
 
 ### 开始节点 {#start-node}
 这是工作流的起点，就像项目的入口一样。它接收用户的输入和其他[输入参数](./ai-assistant-input-output#input-parameters)，把这些信息存到[状态数据](./ai-assistant-state)里，然后开始执行任务。
@@ -64,7 +64,7 @@ AIAgent节点就是调用具体的AIAgent来处理特定任务。
 点击连线上的` → `按钮打开输入参数配置窗口。左边是Agent需要的变量，右边选择[运行状态数据](./ai-assistant-state.md#state-data-content)中的数据给Agent的变量赋值。
 这个节点运行完成后会把[Agent的输出结果](../ai-agent/agent-input-output#configure-output-results)存储到运行状态中，供其他节点使用。
 
-### 对话区人机交互 {#dialog-human-machine-interaction}
+### 对话区人机交互 {#action-in-conversation}
 **什么是对话区**：对话区就是一个AI对话框，是用户和助理聊天的地方。
 
 ![AI助理-对话区](./img/assistant/human-chat.png)
@@ -85,13 +85,13 @@ AIAgent节点就是调用具体的AIAgent来处理特定任务。
 
 ![节点配置-对话区人机交互-效果](./img/assistant/human-Interrupt-view.png)
 
-### 工作区人机交互 {#workspace-human-machine-interaction}
+### 工作区人机交互 {#action-in-page}
 和助理对话区配合的还有一个**工作区**：用户工作的功能页面。
 
 ![AI助理-工作区](./img/assistant/human-workspace.png)
 
 工作区指的是用户工作的前端页面。
-当任务流程运行到这个节点时，流程的后端会暂停，同时向前端发送暂停事件和相关信息。在工作区可以[订阅暂停后事件](../ai-assistant/ai-assistant-event#workspace-human-machine-interaction-events)，在对应的事件处理函数中，用事件参数更新页面UI状态，然后等待用户做相关操作恢复流程继续执行。
+当任务流程运行到这个节点时，流程的后端会暂停，同时向前端发送暂停事件和相关信息。在工作区可以[订阅暂停后事件](../ai-assistant/ai-assistant-event#action-in-page-events)，在对应的事件处理函数中，用事件参数更新页面UI状态，然后等待用户做相关操作恢复流程继续执行。
 
 节点配置详解：
 - **事件携带的参数**：助理向前端工作区发送暂停事件时携带的参数，这些从[运行状态数据](./ai-assistant-state#state-data-content)中选择，前端可以通过这些参数更新UI状态。
@@ -100,7 +100,7 @@ AIAgent节点就是调用具体的AIAgent来处理特定任务。
 ![AI助理-工作区](./img/assistant/human-workspace-interrupt-setting.png)
 **恢复流程**：在工作区订阅这个节点的暂停事件，进行相关处理逻辑后调用[发送AI消息](../using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#send-ai-message)函数就能恢复流程。发送的消息内容会作为节点的输出参数存储到运行状态数据中，供其他节点使用。 
 
-### 函数调用 {#function-call}
+### 函数调用 {#function}
 这个节点用来调用模型/服务函数对运行状态中的数据进行加工、清理或计算等处理。
 这个节点需要绑定一个服务/模型函数。当任务流程运行到这个节点时会调用绑定的函数，并把函数的返回值存储到运行状态数据中，供其他节点使用。
 
@@ -110,7 +110,7 @@ AIAgent节点就是调用具体的AIAgent来处理特定任务。
 
 **输入参数配置**：函数调用节点的输入参数就是它绑定的函数的参数，参数配置方法和[AIAgent节点](#ai-agent)的输入参数配置方法一样。
 
-### 条件分支 {#conditional-branch}
+### 条件分支 {#if-else}
 根据当前助理状态中的数据情况决定流程的下一步走向。
 
 **条件分支配置详解**：
@@ -121,7 +121,7 @@ AIAgent节点就是调用具体的AIAgent来处理特定任务。
 
 ![AI助理-条件分支节点](./img/assistant/condition-setting.png)
 
-### 多任务执行 {#multi-task-execution}
+### 多任务执行 {#iteration}
 这个节点用来循环执行特定任务，需要设置一个循环的变量，从助理运行状态中选择`多行数据`或`列表`类型的数据。
 
 **多任务执行配置详解**：

@@ -5,11 +5,11 @@ sidebar_position: 1
 
 ## Platform and applications {#platform-and-applications}
 
-JitAi is a brand-new application runtime platform and technology ecosystem (platform, protocol, development framework, development tools, operation tools, cloud publishing services). On the application runtime platform, you can run applications, develop applications, and manage applications. JitAi applications are cross-language (Python, Java, JS/TS/CSS, etc.) full-stack program packages written based on the JAAP protocol.
+JitAi is a brand-new application runtime platform and technology ecosystem (platform, protocol, development framework, development tools, operation tools, cloud publishing services). On the application runtime platform, you can run applications, develop applications, and manage applications. JitAi applications are cross-language (Python, Java, JS/TS/CSS, etc.) full-stack program packages written based on the [JAAP](/docs/reference/runtime-platform/JAAP).
 
 ## DevOps tools and services {#devops-tools-and-services}
 
-The visual development tools, visual operation tools, and application management repository cloud services provided by JitAi are all JitAi applications. Developers only need to manually install the runtime platform to install and run all other tools on the platform. After installing platform nodes, the platform node server will connect to the application repository cloud service. Developers create or associate "developer team" accounts for the created nodes, then can enter the application management tools (operation tools) to create or deploy applications on platform nodes.
+The visual development tools, visual operation tools, and application management repository cloud services provided by JitAi are all JitAi applications. Developers only need to manually install the runtime platform to install and run all other tools on the platform. After installing platform nodes, the platform node server will connect to the application repository cloud service. Developers create or associate `Developer Team` for the installed nodes, then can enter the application management tools (operation tools) to create or deploy applications on platform nodes.
 
 ## Application creation and development {#application-creation-and-development}
 

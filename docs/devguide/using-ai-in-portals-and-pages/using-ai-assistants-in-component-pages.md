@@ -70,7 +70,7 @@ After using AI Assistant in a page, there will be a **Send AI Message** function
 
 ![AI Assistant - Send AI Message](./img/send-ai-message.png)
 
-For function parameters, see [Send AI Message Function](../ai-assistant/ai-assistant-api-integration#send-ai-message)
+For function parameters, see [Send AI Message Function](../ai-assistant/ai-assistant-api-exposure#send-ai-message)
 
 
 ## Direct Call to AI Assistant {#call-ai-assistant}

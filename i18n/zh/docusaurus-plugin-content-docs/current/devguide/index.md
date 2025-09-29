@@ -1839,9 +1839,12 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="devguide/internationalization/creating-language-packages"
   description="学习如何为应用程序创建自定义语言包，包括结构定义和内容组织。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+      { text: "创建语言包", href: "devguide/internationalization/creating-language-packages#creating-language-packages" },
+      { text: "翻译内置词条", href: "devguide/internationalization/creating-language-packages#translating-built-in-terms" },
+      { text: "添加新的词条", href: "devguide/internationalization/creating-language-packages#adding-new-terms" },
+      { text: "导入词条", href: "devguide/internationalization/creating-language-packages#importing-terms" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -1855,13 +1858,40 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="如何翻译页面中的词条"
+  title="如何翻译页面中的术语"
   href="devguide/internationalization/how-to-translate-page-terms"
   description="掌握页面内容翻译技巧，包括动态文本替换和上下文感知翻译。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+      { text: "自动文本翻译", href: "devguide/internationalization/how-to-translate-page-terms#automatic-text-translation" },
+      { text: "响应式文本翻译", href: "devguide/internationalization/how-to-translate-page-terms#dynamic-text-translation" },
+      { text: "DOM节点属性翻译", href: "devguide/internationalization/how-to-translate-page-terms#dom-node-attribute-translation" },
+      { text: "使用API翻译", href: "devguide/internationalization/how-to-translate-page-terms#using-api-translation" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="忽略翻译规则"
+  href="devguide/internationalization/translate-ignore-rules"
+  description="配置规则以排除特定内容不被翻译，确保正确处理品牌名称、技术术语和其他不可翻译内容。"
+>
+  <LinkGrid links={[
+      { text: "基础用法", href: "devguide/internationalization/translate-ignore-rules#basic-usage" },
+      { text: "高级配置", href: "devguide/internationalization/translate-ignore-rules#advanced-configuration" },
+      { text: "配置方法", href: "devguide/internationalization/translate-ignore-rules#configuration-method" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="默认语言"
+  href="devguide/internationalization/default-language"
+  description="为应用程序配置默认语言，确保首次访问用户和没有明确语言偏好的用户获得最佳体验。"
+>
+  <LinkGrid links={[
+      { text: "默认语言配置", href: "devguide/internationalization/default-language#default-language-configuration" },
+      { text: "语言选择策略", href: "devguide/internationalization/default-language#language-selection-strategy" },
+      { text: "配置建议", href: "devguide/internationalization/default-language#configuration-recommendations" }
+  ]} />
 </IndexCard>
 
 </div>

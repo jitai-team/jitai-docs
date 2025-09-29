@@ -5,17 +5,17 @@ slug: process-orchestration-node-configuration
 
 # Process Orchestration and Node Configuration
 
-## Visual Orchestration {#visual-orchestration}
+## Visual orchestration {#visual-orchestration}
 The AI assistant's visual orchestration tool allows you to design complex business processes through intuitive drag-and-drop operations, building intelligent workflows without writing code.
 
 ![Adding Nodes](./img/assistant/assistant-add-node-edge.gif)
 
-**Adding Nodes**:
+#### Adding nodes {#adding-nodes}
 1. Select the required node type from the top toolbar
 2. Drag to the appropriate position on the canvas
 3. Release the mouse to complete node addition
 
-**Connecting Nodes**:
+#### Connecting nodes {#connecting-nodes}
 1. Hover the mouse over the output port of the source node
 2. Hold the left mouse button and drag to the input port of the target node
 3. Release the mouse to establish the connection
@@ -27,7 +27,7 @@ The AI assistant's visual orchestration tool allows you to design complex busine
 
 ## Node types explained {#node-types-explained}
 
-### Start node {#start-node}
+### Start {#start-node}
 This is the starting point of the workflow, like the entry point of a project. It receives user input and other [input parameters](./ai-assistant-input-output#input-parameters), stores this information in [state data](./ai-assistant-state), and then begins task execution.
 Each AI assistant can only have one start node, which is automatically generated after creating the assistant, so you don't need to add it manually.
 
@@ -38,13 +38,15 @@ The next step after a routing decision node can only be an AIAgent node, not oth
 :::
 During routing decisions, it calls a large language model to analyze user input and then intelligently selects the most appropriate processing path.
 
-**Binding large language model**: Routing decisions require a large language model to help with analysis, so we need to configure one for it. The configuration method is as follows:
+#### Binding large language model {#binding-large-language-model}
+Routing decisions require a large language model to help with analysis, so we need to configure one for it. The configuration method is as follows:
 
 ![Node Configuration - Routing Decision](./img/assistant/router-setting.png)
 
 Click on the routing decision node in the process, and a configuration window will open on the right side; select a [large language model](../ai-llm/create-ai-llm) and configure the parameters to complete the setup.
 
-**Input message configuration**: The routing decision node has an input parameter that determines the next step during runtime based on this parameter; we need to assign a value to this parameter. The configuration method is as follows:
+#### Input message configuration {#input-message-configuration}
+The routing decision node has an input parameter that determines the next step during runtime based on this parameter; we need to assign a value to this parameter. The configuration method is as follows:
 
 ![Input Parameter Configuration - Routing Decision](./img/assistant/router-input.png)
 
@@ -56,7 +58,8 @@ We need to bind an [AIAgent](../ai-agent/create-ai-agent) to this node. The conf
 
 ![Node Configuration - AIAgent - Binding Agent](./img/assistant/aiagent-bindagent.png)
 
-**Input parameter configuration**: When the node runs, it will call the Agent and pass in [parameters required by the Agent](../ai-agent/agent-input-output#configure-input-variables).
+#### Input parameter configuration {#input-parameter-configuration}
+When the node runs, it will call the Agent and pass in [parameters required by the Agent](../ai-agent/agent-input-output#configure-input-variables).
 We need to assign values to these parameters. The configuration method is as follows:
 
 ![Node Configuration - AIAgent - Input Parameters](./img/assistant/aiagent-input.png)
@@ -70,7 +73,7 @@ When the task flow runs to this node, it will pause and display data in the dial
 At this node, users can perform operations such as **approve**, **reject**, **reply**, and **edit data** (editing functionality needs to be enabled).
 During runtime, after performing **approve**, **reject**, **reply**, and **edit data** operations, the flow will resume and trigger [dialog area human-machine interaction events](./ai-assistant-event#in-conversation-action-events).
 
-Node configuration details:
+#### Node configuration details {#conversation-node-configuration-details}
 - **Data to Display**: You can freely define the data content that needs user confirmation, sourced from [runtime state data](./ai-assistant-state.md#state-data-content).
 - **Editable**: When enabled, users can edit the displayed data, and the edited data will automatically update to the runtime state.
 - **Use Custom Control Rendering**: By default, it uses the platform's built-in data rendering controls to display data, but you can also use [custom controls](../frontend-ui-customization/custom-controls) for rendering.
@@ -95,7 +98,7 @@ Node configuration details:
 - **Operation Instructions**: A prompt to guide users, telling them where on the page to perform what operations to resume the flow; the prompt will be displayed in the assistant dialog box.
 
 ![AI Assistant - Workspace](./img/assistant/human-workspace-interrupt-setting.png)
-**Resume Flow**: Subscribe to this node's pause event in the workspace, perform related processing logic, then call the [Send AI Message](../using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#send-ai-message) function to resume the flow. The sent message content will be stored as the node's output parameter in the runtime state data for use by other nodes.
+**Resume flow**: Subscribe to this node's pause event in the workspace, perform related processing logic, then call the [Send AI Message](../using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#send-ai-message) function to resume the flow. The sent message content will be stored as the node's output parameter in the runtime state data for use by other nodes.
 
 ### Function {#function}
 This node is used to call model/service functions to process, clean, or calculate data in the runtime state.

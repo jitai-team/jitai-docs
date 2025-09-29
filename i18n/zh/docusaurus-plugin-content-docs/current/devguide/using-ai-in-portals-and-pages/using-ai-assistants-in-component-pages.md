@@ -13,7 +13,7 @@ slug: using-ai-assistants-in-component-pages
 
 在页面编辑器顶部打开 `AI助理` 开关并选择一个AI助理。
 
-## AI助理配置
+## AI助理配置 {#ai-assistant-configuration}
 
 启用AI助理后，页面编辑器右侧会显示AI助理配置面板，包含以下配置选项：
 - **AI助理**：切换页面中使用的AI助理
@@ -24,7 +24,7 @@ slug: using-ai-assistants-in-component-pages
 ![组件页面 - 绑定AI助理](./img/component-page-assistant-config.png)
 
 
-## AI助理事件订阅
+## AI助理事件订阅 {#ai-assistant-event-subscription}
 
 ### 订阅节点运行事件 {#subscribe-node-running-events}
 在助手中为节点启用[可触发的工作区事件](../ai-assistant/ai-assistant-event#node-running-events)后，会有两个事件：**到达节点时** 和 **节点完成后**。页面订阅方法如下：

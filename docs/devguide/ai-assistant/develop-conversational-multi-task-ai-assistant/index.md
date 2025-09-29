@@ -443,7 +443,7 @@ class SolutionSvc(NormalService):
 
 ```
 
-At this point, all components of the assistant have been developed. We can use this assistant in portals. For configuration method, refer to: [Using AI Assistants in Portals](/docs/devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals).
+At this point, all components of the assistant have been developed. We can use this assistant in portals. For configuration method, refer to: [Using AI Assistant in Portals](/docs/devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals).
 
 :::tip Tip
 An AI assistant can handle multiple different types of tasks. It is recommended to enable independent conversation processing flows for each task type.

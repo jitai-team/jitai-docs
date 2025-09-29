@@ -10,12 +10,12 @@ AI助理的可视化编排工具让你能够通过直观的拖拽操作设计复
 
 ![添加节点](./img/assistant/assistant-add-node-edge.gif)
 
-**添加节点**：
+#### 添加节点 {#adding-nodes}
 1. 从顶部工具栏选择需要的节点类型
 2. 拖拽到画布中的合适位置
 3. 释放鼠标完成节点添加
 
-**连接节点**：
+#### 连接节点 {#connecting-nodes}
 1. 将鼠标悬停在源节点的输出端口上
 2. 按住鼠标左键拖拽到目标节点的输入端口
 3. 释放鼠标建立连接
@@ -38,13 +38,15 @@ AI助理的可视化编排工具让你能够通过直观的拖拽操作设计复
 :::
 路由决策时会调用大模型来分析用户输入，然后智能地选择最合适的处理路径。
 
-**绑定大模型**：路由决策需要大模型帮忙分析，所以我们要给它配一个大模型。配置方法如下：
+#### 绑定大模型 {#binding-large-language-model}
+路由决策需要大模型帮忙分析，所以我们要给它配一个大模型。配置方法如下：
 
 ![节点配置-路由决策](./img/assistant/router-setting.png)
 
 在流程中点击路由决策节点，右侧会打开配置窗口；选择[大模型](../ai-llm/create-ai-llm)，配置好参数就完成了。
 
-**输入消息配置**：路由决策节点有个输入参数，运行时会根据这个参数来决定下一步怎么走；我们需要给这个参数赋值。配置方法如下：
+#### 输入消息配置 {#input-message-configuration}
+路由决策节点有个输入参数，运行时会根据这个参数来决定下一步怎么走；我们需要给这个参数赋值。配置方法如下：
 
 ![入参配置-路由决策](./img/assistant/router-input.png)
 
@@ -56,7 +58,8 @@ AIAgent节点就是调用具体的AIAgent来处理特定任务。
 
 ![节点配置-AIAgent-绑定Agent](./img/assistant/aiagent-bindagent.png)
 
-**输入参数配置**：节点运行时会调用Agent，并传入[Agent需要的参数](../ai-agent/agent-input-output#configure-input-variables)。
+#### 输入参数配置 {#input-parameter-configuration}
+节点运行时会调用Agent，并传入[Agent需要的参数](../ai-agent/agent-input-output#configure-input-variables)。
 我们需要给这些参数赋值，配置方法如下：
 
 ![节点配置-AIAgent-输入参数](./img/assistant/aiagent-input.png)
@@ -73,7 +76,7 @@ AIAgent节点就是调用具体的AIAgent来处理特定任务。
 在这个节点用户可以做**同意**、**拒绝**、**回复**及**编辑数据**(需要开启编辑功能)等操作。
 运行时进行**同意**、**拒绝**、**回复**及**编辑数据**操作后会恢复流程，同时触发[对话区人机交互事件](./ai-assistant-event#chat-area-human-machine-interaction-events)。
 
-节点配置详解：
+#### 节点配置详解 {#conversation-node-configuration-details}
 - **需展示的数据**：你可以自由定义需要用户确认的数据内容，这些数据来源于[运行状态数据](./ai-assistant-state#state-data-content)。
 - **可编辑**：开启后，用户才能编辑展示的数据，编辑后的数据会自动更新到运行状态中。
 - **使用自定义控件渲染**：默认会用平台内置的数据渲染控件显示数据，你也可以使用[自定义控件](../frontend-ui-customization/custom-controls)渲染。
@@ -93,27 +96,29 @@ AIAgent节点就是调用具体的AIAgent来处理特定任务。
 工作区指的是用户工作的前端页面。
 当任务流程运行到这个节点时，流程的后端会暂停，同时向前端发送暂停事件和相关信息。在工作区可以[订阅暂停后事件](../ai-assistant/ai-assistant-event#action-in-page-events)，在对应的事件处理函数中，用事件参数更新页面UI状态，然后等待用户做相关操作恢复流程继续执行。
 
-节点配置详解：
+#### 节点配置详解 {#page-node-configuration-details}
 - **事件携带的参数**：助理向前端工作区发送暂停事件时携带的参数，这些从[运行状态数据](./ai-assistant-state#state-data-content)中选择，前端可以通过这些参数更新UI状态。
 - **操作提示**：一个用来引导用户的提示语，告诉用户在页面哪里执行什么操作来恢复流程；提示语会在助理对话框中显示。
 
 ![AI助理-工作区](./img/assistant/human-workspace-interrupt-setting.png)
-**恢复流程**：在工作区订阅这个节点的暂停事件，进行相关处理逻辑后调用[发送AI消息](../using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#send-ai-message)函数就能恢复流程。发送的消息内容会作为节点的输出参数存储到运行状态数据中，供其他节点使用。 
+#### 恢复流程 {#resume-flow}
+在工作区订阅这个节点的暂停事件，进行相关处理逻辑后调用[发送AI消息](../using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#send-ai-message)函数就能恢复流程。发送的消息内容会作为节点的输出参数存储到运行状态数据中，供其他节点使用。 
 
 ### 函数调用 {#function}
 这个节点用来调用模型/服务函数对运行状态中的数据进行加工、清理或计算等处理。
 这个节点需要绑定一个服务/模型函数。当任务流程运行到这个节点时会调用绑定的函数，并把函数的返回值存储到运行状态数据中，供其他节点使用。
 
-**绑定函数**：
+#### 绑定函数 {#binding-function}
 
 ![AI助理-函数调用节点-绑定](./img/assistant/function-bind.png)
 
-**输入参数配置**：函数调用节点的输入参数就是它绑定的函数的参数，参数配置方法和[AIAgent节点](#ai-agent)的输入参数配置方法一样。
+#### 输入参数配置 {#function-input-parameter-configuration}
+函数调用节点的输入参数就是它绑定的函数的参数，参数配置方法和[AIAgent节点](#ai-agent)的输入参数配置方法一样。
 
 ### 条件分支 {#if-else}
 根据当前助理状态中的数据情况决定流程的下一步走向。
 
-**条件分支配置详解**：
+#### 条件分支配置详解 {#conditional-branch-configuration-details}
 - **条件表达式**：使用简单的逻辑表达式判断数据
 - **支持操作符**：等于、不等于、大于、小于、包含、为空等
 - **多条件组合**：可以使用"且"、"或"组合多个条件
@@ -124,7 +129,7 @@ AIAgent节点就是调用具体的AIAgent来处理特定任务。
 ### 多任务执行 {#iteration}
 这个节点用来循环执行特定任务，需要设置一个循环的变量，从助理运行状态中选择`多行数据`或`列表`类型的数据。
 
-**多任务执行配置详解**：
+#### 多任务执行配置详解 {#iteration-configuration-details}
 - **循环变量选择**：选择要循环处理的数据，必须是`多行数据`或`列表`类型
 - **循环执行分支**：设置每次循环时要执行的任务流程
 - **循环结束分支**：设置所有循环完成后的流程走向
@@ -133,7 +138,7 @@ AIAgent节点就是调用具体的AIAgent来处理特定任务。
 
 这个节点有两个分支：**循环执行**：遍历循环的变量，依次执行某个任务；**循环结束**：循环完成后的流程走向。
 
-**循环变量说明**：
+#### 循环变量说明 {#loop-variable-description}
 这个节点运行时会向运行状态中存储两个数据：
 - **`循环索引`**：当前循环的序号（从0开始）
 - **`循环项`**：当前循环处理的数据项

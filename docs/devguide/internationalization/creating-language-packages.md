@@ -6,7 +6,7 @@ title: Creating Language Packages
 
 The JitAi platform includes built-in Simplified Chinese and English language packages. When the application runs, the system automatically selects the appropriate language package based on the browser's language settings. If the browser language is not supported, English is used as the default fallback. You can create custom language packages as needed to support additional languages.
 
-## Creating Language Packages {#creating-language-packages}
+## Creating language packages {#creating-language-packages}
 
 To create a language package, follow these steps:
 
@@ -18,13 +18,13 @@ Click <span style={{ background:"#3d65fd", display: "inline-block", borderRadius
 
 Once the language package is created, the visual editor will automatically open, allowing you to translate existing terms or add new terms.
 
-## Translating Built-in Terms {#translating-built-in-terms}
+## Translating built-in terms {#translating-built-in-terms}
 
 The visual editor displays all terms from the current development framework and visual development tools. Simply enter the corresponding language content for each term. Changes take effect immediately upon saving.
 
 ![update-term-value](./img/update-term-value.gif)
 
-## Adding New Terms {#adding-new-terms}
+## Adding new terms {#adding-new-terms}
 
 You can add any text content from your application as translatable terms and translate them into the target language. Changes take effect immediately without requiring an application restart.
 
@@ -32,7 +32,7 @@ You can add any text content from your application as translatable terms and tra
 
 **Example:** The default portal contains a menu item named `Order Management` that lacks Traditional Chinese translation. When we add a term mapping `Order Management` → `訂單管理` in the Traditional Chinese language package, the menu item will automatically display as `訂單管理` after refreshing the portal page.
 
-## Importing Terms {#importing-terms}
+## Importing terms {#importing-terms}
 
 You can perform batch translation by importing JSON files. In the JSON structure, each key corresponds to the original content displayed in the application code, and the value represents the content translated into the target language. Example below:
 

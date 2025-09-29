@@ -7,9 +7,9 @@ slug: default-language
 
 The default language determines the display language of the application when users have not explicitly selected a language. Properly configuring the default language can improve user experience and ensure the application displays in a language familiar to users upon first access.
 
-## Default Language Configuration {#default-language-configuration}
+## Default language configuration {#default-language-configuration}
 
-**Configuration Steps:**
+**Configuration steps:**
 ![set-default-language](./img/set-default-language.png)
 
 1. Enter the **Developer Portal**
@@ -17,7 +17,7 @@ The default language determines the display language of the application when use
 3. Open **Application Default Elements**
 4. Select **Default Language Package**
 
-## Language Selection Strategy {#language-selection-strategy}
+## Language selection strategy {#language-selection-strategy}
 
 The system selects the display language according to the following priority:
 
@@ -26,7 +26,7 @@ The system selects the display language according to the following priority:
 3. **Browser language**: Automatically selected based on the browser's own language settings. For example, if the browser is set to English, the application will use the English language pack.
 4. **System default**: If none of the above can be matched, default to English
 
-## Configuration Recommendations {#configuration-recommendations}
+## Configuration recommendations {#configuration-recommendations}
 
 - **Target user group**: Set the default language based on the language habits of the main user group
 - **Market coverage**: If the application targets multiple regions, recommend choosing the most widely used language

@@ -1858,7 +1858,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="如何翻译页面中的词条"
+  title="如何翻译页面中的术语"
   href="devguide/internationalization/how-to-translate-page-terms"
   description="掌握页面内容翻译技巧，包括动态文本替换和上下文感知翻译。"
 >

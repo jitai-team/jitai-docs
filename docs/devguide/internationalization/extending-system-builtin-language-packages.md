@@ -3,7 +3,7 @@ sidebar_position: 2
 slug: extending-system-builtin-language-packages
 ---
 
-# Extending System Built-in Language Packages {#extending-system-builtin-language-packages}
+# Extending system built-in language packages {#extending-system-builtin-language-packages}
 
 The platform comes with built-in **简体中文 (zhCN)** and **English (EN)** language packages.
 

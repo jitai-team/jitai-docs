@@ -12,7 +12,7 @@ In the JitAi platform, by default all text content within DOM nodes is automatic
 - User-defined fixed text content
 - Interface elements that do not require localization
 
-## Basic Usage {#basic-usage}
+## Basic usage {#basic-usage}
 
 ### Using translate-ignore Class Name
 
@@ -31,11 +31,11 @@ The simplest way is to add the `translate-ignore` class name to DOM nodes that n
 - Ensure the class name is spelled correctly and is case-sensitive
 - Recommend using it on elements that semantically do not require translation
 
-## Advanced Configuration {#advanced-configuration}
+## Advanced configuration {#advanced-configuration}
 
 In addition to using the default `translate-ignore` class name, you can also configure custom rules to more precisely control which content should be excluded from translation.
 
-#### Rule Interface Definition
+#### Rule interface definition
 
 ```typescript
 export interface IgnoreRule {
@@ -45,14 +45,14 @@ export interface IgnoreRule {
 }
 ```
 
-#### Rule Type Description
+#### Rule type description
 
 - **class**: Match based on CSS class names
 - **id**: Match based on element IDs  
 - **attribute**: Match based on HTML attributes
 - **selector**: Match based on CSS selectors
 
-#### Match Mode Description
+#### Match mode description
 
 - **exact**: Exact match (default)
 - **contains**: Contains match
@@ -60,7 +60,7 @@ export interface IgnoreRule {
 - **endsWith**: Suffix match
 - **regex**: Regular expression match
 
-#### Configuration Example
+#### Configuration example
 
 ```json
 {
@@ -84,11 +84,11 @@ export interface IgnoreRule {
 }
 ```
 
-## Configuration Method {#configuration-method}
+## Configuration method {#configuration-method}
 
 Currently, there is no support for configuring ignore rules through a visual interface, and configuration needs to be done through code-only approach:
 
-**Configuration Steps:**
+**Configuration steps:**
 
 ![translate-ignore-rule](./img/translate-ignore-rule.png)
 

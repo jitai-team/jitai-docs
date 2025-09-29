@@ -1838,10 +1838,10 @@ Make your application accessible to global users. Support multiple languages, re
   description="Learn how to create custom language packages for your application, including structure definition and content organization."
 >
   <LinkGrid links={[
-      { text: "Creating Language Packages", href: "devguide/internationalization/creating-language-packages#creating-language-packages" },
-      { text: "Translating Built-in Terms", href: "devguide/internationalization/creating-language-packages#translating-built-in-terms" },
-      { text: "Adding New Terms", href: "devguide/internationalization/creating-language-packages#adding-new-terms" },
-      { text: "Importing Terms", href: "devguide/internationalization/creating-language-packages#importing-terms" }
+      { text: "Creating language packages", href: "devguide/internationalization/creating-language-packages#creating-language-packages" },
+      { text: "Translating built-in terms", href: "devguide/internationalization/creating-language-packages#translating-built-in-terms" },
+      { text: "Adding new terms", href: "devguide/internationalization/creating-language-packages#adding-new-terms" },
+      { text: "Importing terms", href: "devguide/internationalization/creating-language-packages#importing-terms" }
   ]} />
 </IndexCard>
 
@@ -1851,7 +1851,6 @@ Make your application accessible to global users. Support multiple languages, re
   description="Extend and customize existing system language packages to meet specific business requirements and regional needs."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
   </div>
 </IndexCard>
 
@@ -1861,10 +1860,10 @@ Make your application accessible to global users. Support multiple languages, re
   description="Master the techniques for translating page content, including dynamic text replacement and context-aware translations."
 >
   <LinkGrid links={[
-      { text: "Automatic Text Translation", href: "devguide/internationalization/how-to-translate-page-terms#automatic-text-translation" },
-      { text: "Dynamic Text Translation", href: "devguide/internationalization/how-to-translate-page-terms#dynamic-text-translation" },
-      { text: "DOM Node Attribute Translation", href: "devguide/internationalization/how-to-translate-page-terms#dom-node-attribute-translation" },
-      { text: "Using API Translation", href: "devguide/internationalization/how-to-translate-page-terms#using-api-translation" }
+      { text: "Automatic text translation", href: "devguide/internationalization/how-to-translate-page-terms#automatic-text-translation" },
+      { text: "Dynamic text translation", href: "devguide/internationalization/how-to-translate-page-terms#dynamic-text-translation" },
+      { text: "DOM node attribute translation", href: "devguide/internationalization/how-to-translate-page-terms#dom-node-attribute-translation" },
+      { text: "Using API translation", href: "devguide/internationalization/how-to-translate-page-terms#using-api-translation" }
   ]} />
 </IndexCard>
 
@@ -1874,9 +1873,9 @@ Make your application accessible to global users. Support multiple languages, re
   description="Configure rules to exclude specific content from translation, ensuring proper handling of brand names, technical terms, and other non-translatable content."
 >
   <LinkGrid links={[
-      { text: "Basic Usage", href: "devguide/internationalization/translate-ignore-rules#basic-usage" },
-      { text: "Advanced Configuration", href: "devguide/internationalization/translate-ignore-rules#advanced-configuration" },
-      { text: "Configuration Method", href: "devguide/internationalization/translate-ignore-rules#configuration-method" }
+      { text: "Basic usage", href: "devguide/internationalization/translate-ignore-rules#basic-usage" },
+      { text: "Advanced configuration", href: "devguide/internationalization/translate-ignore-rules#advanced-configuration" },
+      { text: "Configuration method", href: "devguide/internationalization/translate-ignore-rules#configuration-method" }
   ]} />
 </IndexCard>
 
@@ -1886,9 +1885,9 @@ Make your application accessible to global users. Support multiple languages, re
   description="Configure the default language for your application to ensure optimal user experience for first-time visitors and users without explicit language preferences."
 >
   <LinkGrid links={[
-      { text: "Default Language Configuration", href: "devguide/internationalization/default-language#default-language-configuration" },
-      { text: "Language Selection Strategy", href: "devguide/internationalization/default-language#language-selection-strategy" },
-      { text: "Configuration Recommendations", href: "devguide/internationalization/default-language#configuration-recommendations" }
+      { text: "Default language configuration", href: "devguide/internationalization/default-language#default-language-configuration" },
+      { text: "Language selection strategy", href: "devguide/internationalization/default-language#language-selection-strategy" },
+      { text: "Configuration recommendations", href: "devguide/internationalization/default-language#configuration-recommendations" }
   ]} />
 </IndexCard>
 

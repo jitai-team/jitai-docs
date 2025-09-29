@@ -2,21 +2,21 @@
 slug: github-login
 ---
 # GitHub Login {#github-login}
-GitHub Login (GitHubType) is a login authentication element based on GitHub open platform, supporting OAuth authorization login for both PC and mobile platforms. It handles GitHub OAuth authorization flow, user identity authentication and account binding, particularly suitable for developer communities, technical products, open source project management and other scenarios that require unified identity management.
+GitHub Login (GitHubType) is an authentication element built on the GitHub platform that supports OAuth authorization for both PC and mobile environments. It manages the complete GitHub OAuth flow, user authentication, and account binding processes, making it ideal for developer communities, technical products, open-source project management, and other scenarios requiring unified identity management.
 
-The hierarchical structure of GitHub login elements is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.GitHubType) → Instance. Developers can quickly create GitHub login instance elements through JitAi's visual development tools.
+GitHub login elements follow a hierarchical structure: Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.GitHubType) → Instance. Developers can rapidly create GitHub login instances using JitAi's visual development tools.
 
-**Supported Login Methods**:
-- PC OAuth Authorization Login - Redirect to GitHub login page for OAuth authorization
-- Mobile OAuth Authorization Login - Call GitHub OAuth service on mobile devices for authorization login
-- GitHub Enterprise Integration - Support for GitHub Enterprise Server login
+**Supported authentication methods**:
+- PC OAuth authorization login - Redirects users to GitHub's authorization page
+- Mobile OAuth authorization login - Integrates GitHub OAuth services for mobile applications
+- GitHub Enterprise integration - Supports GitHub Enterprise Server authentication
 
-Of course, developers can also create their own Type elements, or modify the official auths.loginTypes.GitHubType element provided by JitAi in their own App to implement their own encapsulation.
+Developers can also create custom Type elements or extend the official auths.loginTypes.GitHubType element within their applications to implement custom authentication workflows.
 
-## Quick Start 
-### Creating Instance Elements
-#### Directory Structure
-```text title="Recommended Directory Structure"
+## Quick Start {#quick-start}
+### Creating instance elements {#creating-instance-elements}
+#### Directory structure {#directory-structure}
+```text title="Recommended directory structure"
 your_app/
 └── auths/
     └── loginTypes/
@@ -25,16 +25,16 @@ your_app/
             └── testGitHubLogin.json   # GitHub application configuration file
 ```
 
-#### e.json File
-```json title="Element Definition File"
+#### e.json file {#e-json-file}
+```json title="Element definition file"
 {
   "title": "GitHub Login",
   "type": "auths.loginTypes.GitHubType"
 }
 ```
 
-#### Business Configuration File
-```json title="testGitHubLogin.json - GitHub Application Configuration"
+#### Business configuration file {#business-configuration-file}
+```json title="testGitHubLogin.json - GitHub application configuration"
 {
   "authConfig": {
     "clientId": "Ov23xxxxxxxxxxxxxxxx",
@@ -43,185 +43,219 @@ your_app/
 }
 ```
 
-#### Usage Example
-```python title="Getting and Using Authentication Element"
-# Get authentication element instance
+#### Usage example {#usage-example}
+```python title="Retrieving and using authentication elements"
+# Retrieve authentication element instance
 auth_element = app.getElement("auths.loginTypes.testGitHubLogin")
 
-# Get login configuration (for frontend OAuth link generation)
+# Get login configuration (used for frontend OAuth URL generation)
 login_config = auth_element.getLoginConfig()
 print(login_config)  # {"clientId": "your_client_id"}
 
-# Get GitHub client
+# Get GitHub client instance
 client = auth_element.getClient()
 
-# Get authentication element through service
-auth_svc = app.getElement("auths.loginTypes.GitHubType.services.GitHubAuthSvc")
-auth = auth_svc.getAuthByClientId("your_client_id")
+# Perform OAuth login through authentication element
+result = auth_element.getLoginCode(code="authorization_code_from_github")
 ```
 
-## Element Configuration
-### e.json Configuration
+## Element Configuration {#element-configuration}
+### e.json configuration {#e-json-configuration}
 | Configuration | Type | Required | Description |
 |---------------|------|----------|-------------|
 | title | string | Yes | Element display name |
 | type | string | Yes | Fixed value: auths.loginTypes.GitHubType |
 
-### Business Configuration File Configuration
-Configuration file name format is `{instance_name}.json`, containing GitHub application authentication information:
+### Business configuration file setup {#business-configuration-file-setup}
+The configuration file follows the naming pattern `{instance_name}.json` and contains GitHub application authentication credentials:
 
 | Configuration | Type | Required | Description |
 |---------------|------|----------|-------------|
 | authConfig.clientId | string | Yes | GitHub OAuth App client ID |
 | authConfig.clientSecret | string | Yes | GitHub OAuth App client secret |
 
-**Configuration Acquisition Method**:
-1. Log in to GitHub (https://github.com/)
-2. Go to "Settings" → "Developer settings" → "OAuth Apps"
-3. Create new OAuth App or select existing application
-4. Get the Client ID and Client Secret from the application details
-5. Configure Authorization callback URL for your application
+**How to obtain configuration credentials**:
+1. Sign in to GitHub (https://github.com/)
+2. Navigate to "Settings" → "Developer settings" → "OAuth Apps"
+3. Create a new OAuth App or select an existing application
+4. Retrieve the Client ID and Client Secret from the application details page
+5. Configure the Authorization callback URL for your application
 
-## Methods 
-### getLoginConfig
-Get login configuration information, mainly used for frontend OAuth authorization link generation.
+## Methods {#methods}
+### getLoginConfig {#getloginconfig}
+Retrieves login configuration data, primarily used for generating OAuth authorization URLs in frontend applications.
 
-#### Return Value
+#### Return value {#getloginconfig-return-value}
 | Type | Corresponding Native Type | Description |
 |------|---------------------------|-------------|
 | JitDict | dict | Dictionary containing clientId and other configurations |
 
-#### Usage Example
-```python title="Getting Login Configuration"
+#### Usage example {#getloginconfig-usage-example}
+```python title="Retrieving login configuration"
 auth_element = app.getElement("auths.loginTypes.testGitHubLogin")
 config = auth_element.getLoginConfig()
 # Returns: {"clientId": "Ov23xxxxxxxxxxxxxxxx"}
 ```
 
-### getClient
-Get GitHub API client instance for calling GitHub-related interfaces.
+### getClient {#getclient}
+Returns a GitHub API client instance for making calls to GitHub-related endpoints.
 
-#### Return Value
+#### Return value {#getclient-return-value}
 | Type | Corresponding Native Type | Description |
 |------|---------------------------|-------------|
 | GitHubClient | object | GitHub client object |
 
-#### Usage Example
-```python title="Getting GitHub Client"
+#### Usage example {#getclient-usage-example}
+```python title="Retrieving GitHub client"
 auth_element = app.getElement("auths.loginTypes.testGitHubLogin")
 client = auth_element.getClient()
-# Can be used to call GitHub API
+# Use this client to make GitHub API calls
 ```
 
-### loginByOAuth (Service Method)
-GitHub OAuth login, complete user login through authorization code.
+### getLoginCode {#getlogincode}
+Processes GitHub OAuth authorization codes to generate login codes. This is the core authentication method for the element.
 
-#### Parameter Details
+#### Parameter details {#getlogincode-parameter-details}
 | Parameter | Type | Corresponding Native Type | Required | Description |
 |-----------|------|---------------------------|----------|-------------|
-| clientId | Stext | str | Yes | GitHub OAuth App client ID |
-| authCode | Stext | str | Yes | OAuth authorization code |
-| platform | Stext | str | Yes | Login platform: web/mobile |
+| code | Stext | str | Yes | GitHub OAuth2 authorization code |
 
-#### Return Value
+#### Return value {#getlogincode-return-value}
 | Type | Corresponding Native Type | Description |
 |------|---------------------------|-------------|
-| JitDict | dict | Login result information |
+| JitDict | dict | Contains loginCode and corpList for authentication results |
 
-#### Usage Example
-```python title="OAuth Login"
-auth_svc = app.getElement("auths.loginTypes.GitHubType.services.GitHubAuthSvc")
-result = auth_svc.loginByOAuth(
-    clientId="Ov23xxxxxxxxxxxxxxxx",
-    authCode="auth_code_from_github",
-    platform="web"
-)
+#### Usage example {#getlogincode-usage-example}
+```python title="OAuth authentication"
+auth_element = app.getElement("auths.loginTypes.testGitHubLogin")
+result = auth_element.getLoginCode(code="auth_code_from_github")
+# Returns: {"loginCode": "...", "corpList": [...]}
 ```
 
-### getAuthByClientId (Service Method)
-Get corresponding authentication element instance through GitHub client ID.
+### getUserInfoByCode {#getuserinfobycode}
+Retrieves GitHub user information using an OAuth authorization code.
 
-#### Parameter Details
+#### Parameter details {#getuserinfobycode-parameter-details}
 | Parameter | Type | Corresponding Native Type | Required | Description |
 |-----------|------|---------------------------|----------|-------------|
-| clientId | Stext | str | Yes | GitHub OAuth App client ID |
+| code | Stext | str | Yes | GitHub OAuth2 authorization code |
 
-#### Return Value
+#### Return value {#getuserinfobycode-return-value}
 | Type | Corresponding Native Type | Description |
 |------|---------------------------|-------------|
-| Element | object | Authentication element instance, returns None if not found |
+| JitDict | dict | GitHub user information dictionary |
 
-#### Usage Example
-```python title="Getting Authentication Element by Client ID"
-auth_svc = app.getElement("auths.loginTypes.GitHubType.services.GitHubAuthSvc")
-auth_element = auth_svc.getAuthByClientId("Ov23xxxxxxxxxxxxxxxx")
-if auth_element:
-    print(f"Found authentication element: {auth_element.fullName}")
+#### Usage example {#getuserinfobycode-usage-example}
+```python title="Retrieving user information"
+auth_element = app.getElement("auths.loginTypes.testGitHubLogin")
+user_info = auth_element.getUserInfoByCode(code="auth_code_from_github")
+# Returns GitHub user data including email, name, avatar_url, etc.
 ```
 
+### bind {#bind}
+Binds a GitHub user account to an existing user account.
 
-## Properties
-### authConfig
-GitHub application configuration information, including clientId, clientSecret and other parameters.
+#### Parameter details {#bind-parameter-details}
+| Parameter | Type | Corresponding Native Type | Required | Description |
+|-----------|------|---------------------------|----------|-------------|
+| userId | Stext | str | Yes | User ID |
+| userInfo | JitDict | dict | Yes | GitHub user information |
+
+#### Usage example {#bind-usage-example}
+```python title="Binding GitHub account"
+auth_element = app.getElement("auths.loginTypes.testGitHubLogin")
+user_info = auth_element.getUserInfoByCode(code="auth_code")
+auth_element.bind(userId="user_id", userInfo=user_info)
+```
+
+### unbind {#unbind}
+Unbinds a GitHub user account.
+
+#### Parameter details {#unbind-parameter-details}
+| Parameter | Type | Corresponding Native Type | Required | Description |
+|-----------|------|---------------------------|----------|-------------|
+| userId | Stext | str | Yes | User ID |
+
+#### Usage example {#unbind-usage-example}
+```python title="Unbinding GitHub account"
+auth_element = app.getElement("auths.loginTypes.testGitHubLogin")
+auth_element.unbind(userId="user_id")
+```
+
+## Properties {#properties}
+### authConfig {#authconfig}
+Contains GitHub application configuration data, including clientId, clientSecret, and other authentication parameters.
 
 | Property | Type | Description |
 |----------|------|-------------|
 | clientId | str | GitHub OAuth App client ID |
 | clientSecret | str | GitHub OAuth App client secret |
 
-### authType
-Authentication type identifier, fixed value for GitHub login type enumeration.
+### authType {#authtype}
+Authentication type identifier with a fixed value representing the GitHub login type enumeration.
 
-### authModelElemName
-Associated authentication data model element name, pointing to GitHubAuthModel.
+### authModelElemName {#authmodelelemname}
+References the associated authentication data model element name, which points to GitHubAuthModel.
 
-## Advanced Features
-### Data Model Extension
-GitHubAuthModel stores GitHub user authentication information, including user ID mapping, GitHub user information and other fields:
+## Advanced Features {#advanced-features}
+### Data model extension {#data-model-extension}
+GitHubAuthModel stores GitHub user authentication data using a simplified field structure:
 
-```python title="Authentication Data Model Fields"
+```python title="Authentication data model fields"
 class GitHubAuthModel(NormalModel):
     id = datatypes.AutoInt(name="id", title="Primary Key ID", primaryKey=True)
-    userId = datatypes.Stext(name="userId", title="User ID")
-    thirdUserId = datatypes.Stext(name="thirdUserId", title="GitHub User ID")
-    login = datatypes.Stext(name="login", title="GitHub Username")
-    name = datatypes.Stext(name="name", title="Display Name")
-    email = datatypes.Stext(name="email", title="Email")
-    avatarUrl = datatypes.Stext(name="avatarUrl", title="Avatar URL")
-    company = datatypes.Stext(name="company", title="Company")
-    location = datatypes.Stext(name="location", title="Location")
-    bio = datatypes.Stext(name="bio", title="Bio")
-    createTime = datatypes.Datetime(name="createTime", title="Create Time")
+    userId = datatypes.Stext(name="userId", title="UserID")
+    email = datatypes.Stext(name="email", title="GitHub email")
+    userInfo = datatypes.JitDict(name="userInfo", title="User information dictionary")
+    createTime = datatypes.Datetime(name="createTime", title="Creation Time")
+    updateTime = datatypes.Datetime(name="updateTime", title="Update Time")
 ```
 
-### Frontend Integration
-Frontend needs to implement OAuth authorization flow:
+**Field descriptions**:
+- `userInfo` field stores complete GitHub user information as a dictionary, including:
+  - `id`: GitHub user ID
+  - `login`: GitHub username
+  - `name`: Display name
+  - `avatar_url`: Avatar URL
+  - `company`: Company
+  - `location`: Location
+  - `bio`: Biography
+  - Additional fields returned by the GitHub API
 
-```typescript title="Frontend Login Implementation"
-// PC OAuth Login
+### Frontend integration {#frontend-integration}
+Frontend applications must implement the OAuth authorization flow:
+
+```typescript title="Frontend login implementation"
+// PC OAuth login
 const loginWithGitHub = async () => {
-    const config = await getLoginConfig(); // Get configuration
+    const config = await getLoginConfig(); // Retrieve configuration
     const authUrl = `https://github.com/login/oauth/authorize?` +
         `client_id=${config.clientId}&` +
         `redirect_uri=${encodeURIComponent(redirectUri)}&` +
         `scope=user:email&` +
         `state=${generateState()}`;
     
-    // Redirect to GitHub login page
+    // Redirect to GitHub authorization page
     window.location.href = authUrl;
 };
 
 // Handle OAuth callback
 const handleOAuthCallback = async (code: string, state: string) => {
     try {
-        const result = await authSvc.loginByOAuth({
-            clientId: config.clientId,
-            authCode: code,
-            platform: 'web'
-        });
+        // Step 1: Get login code through authentication element
+        const authElement = app.getElement("auths.loginTypes.testGitHubLogin");
+        const loginResult = await authElement.getLoginCode(code);
         
-        if (result.success) {
-            // Login successful, redirect to dashboard
+        // Step 2: Complete final login using AuthSvc
+        const authSvc = app.getElement("auths.loginTypes.services.AuthSvc");
+        const finalResult = await authSvc.loginByCode(
+            loginResult.loginCode,
+            "target_corp_name",
+            "web"
+        );
+        
+        if (finalResult.success) {
+            // Login successful, redirect to main page
             window.location.href = '/dashboard';
         }
     } catch (error) {
@@ -230,43 +264,15 @@ const handleOAuthCallback = async (code: string, state: string) => {
 };
 ```
 
-### Permission Configuration
-Configure application permissions in GitHub OAuth App:
+### Permission configuration {#permission-configuration}
+Configure application permissions in your GitHub OAuth App:
 
-```text title="Required OAuth Scopes"
-GitHub OAuth Scopes:
-- user (scope) - Access to user profile information
-- user:email (scope) - Access to user email addresses
-- read:user (scope) - Read access to user profile information
-- user:follow (scope) - Access to follow/unfollow users
-- public_repo (scope) - Access to public repositories (optional)
-- repo (scope) - Full access to repositories (optional)
+```text title="Required OAuth scopes"
+GitHub OAuth scopes:
+- user (scope) - Access user profile information
+- user:email (scope) - Access user email addresses
+- read:user (scope) - Read user profile information
+- user:follow (scope) - Access follow/unfollow functionality
+- public_repo (scope) - Access public repositories (optional)
+- repo (scope) - Access all repositories (optional)
 ```
-
-### Error Handling
-Common error scenarios and handling methods:
-
-```python title="Error Handling Example"
-try:
-    auth_element = auth_svc.getAuthByClientId(clientId)
-    if not auth_element:
-        raise Exception("GitHub authentication configuration not found")
-    
-    result = auth_svc.loginByOAuth(clientId, authCode, platform)
-    if not result.get('success'):
-        raise Exception(result.get('message', 'Login failed'))
-        
-except Exception as e:
-    # Log error and return friendly message
-    logger.error(f"GitHub login failed: {str(e)}")
-    return {"success": False, "message": "Login failed, please try again"}
-```
-
-**Common Error Types**:
-- Application configuration error: Check clientId, clientSecret and other configurations
-- Authorization code expired: OAuth authorization code expires in 10 minutes, need to re-obtain
-- Insufficient permissions: Ensure application has necessary GitHub OAuth scopes
-- Network connection issues: Ensure access to GitHub API services
-- Invalid redirect URI: Ensure redirect URI matches GitHub OAuth App configuration
-- Rate limiting: GitHub API has rate limits, implement appropriate retry mechanisms
-

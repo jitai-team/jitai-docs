@@ -7,9 +7,9 @@
 }
 
 [data-locale="zh"] {
-  --module-card-width: 250px;
-  --module-desc-line-clamp: 2;
-  --aspect-ratio: 16/10;
+  --module-card-width: 250px !important;
+  --module-desc-line-clamp: 2 !important;
+  --aspect-ratio: 16/10 !important;
 }
 
 .ideSection {
@@ -224,7 +224,7 @@
 }
 
 .modulesRow:nth-child(2) {
-  animation-delay: -20s;
+  animation-delay: -30s;
 }
 
 @keyframes slideLeft {

@@ -1,7 +1,6 @@
 ---
 sidebar_position: 2
 slug: application-directory-and-element-source-code
-title: Application Directory and Element Source Code
 ---
 
 # Application Directory and Element Source Code

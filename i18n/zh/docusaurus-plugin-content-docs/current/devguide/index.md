@@ -183,17 +183,19 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="发布与更新应用"
-  href="devguide/creating-and-publishing-applications/publishing-and-updating-applications"
-  description="掌握应用版本管理、发布工作流程和更新策略，学习语义化版本控制和部署配置。"
+  title="发布与升级应用"
+  href="devguide/creating-and-publishing-applications/publishing-and-upgrading-applications"
+  description="掌握应用版本管理、发布工作流程和升级策略，学习语义化版本控制和部署配置。"
 >
   <LinkGrid links={[
-    { text: "应用版本管理与发布", href: "devguide/creating-and-publishing-applications/publishing-and-updating-applications#application-version-management-and-publish" },
-    { text: "语义化版本号", href: "devguide/creating-and-publishing-applications/publishing-and-updating-applications#semantic-versioning" },
-    { text: "自动更新配置", href: "devguide/creating-and-publishing-applications/publishing-and-updating-applications#force-auto-update" },
-    { text: "源代码和初始化数据", href: "devguide/creating-and-publishing-applications/publishing-and-updating-applications#include-source-code" },
-    { text: "应用版本更新", href: "devguide/creating-and-publishing-applications/publishing-and-updating-applications#application-version-updates" },
-    { text: "应用部署策略", href: "devguide/creating-and-publishing-applications/publishing-and-updating-applications#application-deployment-strategies" }
+    { text: "应用版本管理与发布", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#application-version-management-and-publish" },
+    { text: "语义化版本号", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#semantic-versioning" },
+    { text: "是否强制自动更新", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#force-auto-update" },
+    { text: "有意义的更新日志", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#meaningful-update-logs" },
+    { text: "是否包含源代码", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#include-source-code" },
+    { text: "包含一些初始化数据", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#include-initialization-data" },
+    { text: "应用版本升级", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#application-version-updates" },
+    { text: "应用部署策略", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#application-deployment-strategies" }
   ]} />
 </IndexCard>
 
@@ -207,10 +209,14 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "什么是运行环境", href: "devguide/creating-and-publishing-applications/runtime-environment-management#what-is-runtime-environment" },
     { text: "节点的本地默认运行环境", href: "devguide/creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment" },
     { text: "创建新的运行环境", href: "devguide/creating-and-publishing-applications/runtime-environment-management#createnewrunenvironment" },
-    { text: "使用运行环境管理节点集群", href: "devguide/creating-and-publishing-applications/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
-    { text: "在运行环境中部署应用", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-application-in-runtime-environment" },
     { text: "开发模式部署", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-in-development-mode" },
-    { text: "生产模式部署", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-in-production-mode" }
+    { text: "生产模式部署", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-in-production-mode" },
+    { text: "使用运行环境管理节点集群", href: "devguide/creating-and-publishing-applications/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
+    { text: "节点地址", href: "devguide/creating-and-publishing-applications/runtime-environment-management#node-address" },
+    { text: "节点状态", href: "devguide/creating-and-publishing-applications/runtime-environment-management#node-status" },
+    { text: "在运行环境中部署应用", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-application-in-runtime-environment" },
+    { text: "以生产模式部署", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-production-mode" },
+    { text: "以开发模式部署", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-development-mode" }
   ]} />
 </IndexCard>
 
@@ -221,12 +227,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid links={[
     { text: "四层架构模型", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#four-layer-architecture" },
-    { text: "典型部署拓扑", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#typical-deployment-topology" },
     { text: "企业级集群部署架构", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#enterprise-cluster-deployment" },
+    { text: "典型部署拓扑", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#typical-deployment-topology" },
     { text: "多维度环境划分", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#multi-dimensional-environment-division" },
+    { text: "入口地址配置策略", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#entry-address-configuration" },
     { text: "集群扩展策略", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#cluster-scaling-strategies" },
+    { text: "水平扩展模式", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#horizontal-scaling" },
     { text: "负载均衡与容错", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#load-balancing-fault-tolerance" },
-    { text: "架构约束与最佳实践", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#architecture-constraints-best-practices" }
+    { text: "架构约束与最佳实践", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#architecture-constraints-best-practices" },
+    { text: "版本管理约束", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#version-management-constraints" },
+    { text: "网络访问约束", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#network-access-constraints" },
+    { text: "部署最佳实践", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#deployment-best-practices" }
   ]} />
 </IndexCard>
 

@@ -183,17 +183,19 @@ Complete workflow from application creation to distributed deployment. Master ap
 </IndexCard>
 
 <IndexCard
-  title="Publishing and Updating Applications"
-  href="devguide/creating-and-publishing-applications/publishing-and-updating-applications"
-  description="Master application version management, publishing workflows, and update strategies. Learn semantic versioning and deployment configurations."
+  title="Publishing and Upgrading Applications"
+  href="devguide/creating-and-publishing-applications/publishing-and-upgrading-applications"
+  description="Master application version management, publishing workflows, and upgrade strategies. Learn semantic versioning and deployment configurations."
 >
   <LinkGrid links={[
-    { text: "Version Management and Publishing", href: "devguide/creating-and-publishing-applications/publishing-and-updating-applications#application-version-management-and-publish" },
-    { text: "Semantic Versioning", href: "devguide/creating-and-publishing-applications/publishing-and-updating-applications#semantic-versioning" },
-    { text: "Auto-Update Configuration", href: "devguide/creating-and-publishing-applications/publishing-and-updating-applications#force-auto-update" },
-    { text: "Source Code and Initialization Data", href: "devguide/creating-and-publishing-applications/publishing-and-updating-applications#include-source-code" },
-    { text: "Application Version Updates", href: "devguide/creating-and-publishing-applications/publishing-and-updating-applications#application-version-updates" },
-    { text: "Deployment Strategies", href: "devguide/creating-and-publishing-applications/publishing-and-updating-applications#application-deployment-strategies" }
+    { text: "Managing application version and publishing", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#application-version-management-and-publish" },
+    { text: "Understanding semantic versioning", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#semantic-versioning" },
+    { text: "Setting automatic updates", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#force-auto-update" },
+    { text: "Writing meaningful update logs", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#meaningful-update-logs" },
+    { text: "Including source code", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#include-source-code" },
+    { text: "Including initialization data", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#include-initialization-data" },
+    { text: "Upgrading application versions", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#application-version-updates" },
+    { text: "Planning application deployment strategies", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#application-deployment-strategies" }
   ]} />
 </IndexCard>
 
@@ -204,13 +206,17 @@ Complete workflow from application creation to distributed deployment. Master ap
   description="Master the creation, configuration, and management of runtime environments, and learn how to use node clusters and application deployment."
 >
   <LinkGrid links={[
-    { text: "What is Runtime Environment", href: "devguide/creating-and-publishing-applications/runtime-environment-management#what-is-runtime-environment" },
-    { text: "Local Default Runtime Environment", href: "devguide/creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment" },
-    { text: "Create New Runtime Environment", href: "devguide/creating-and-publishing-applications/runtime-environment-management#createnewrunenvironment" },
-    { text: "Development Mode Deployment", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-in-development-mode" },
-    { text: "Production Mode Deployment", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-in-production-mode" },
-    { text: "Use Runtime Environment to Manage Node Clusters", href: "devguide/creating-and-publishing-applications/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
-    { text: "Deploy Application in Runtime Environment", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-application-in-runtime-environment" }
+    { text: "Understanding runtime environments", href: "devguide/creating-and-publishing-applications/runtime-environment-management#what-is-runtime-environment" },
+    { text: "Managing node local default runtime environment", href: "devguide/creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment" },
+    { text: "Creating new runtime environments", href: "devguide/creating-and-publishing-applications/runtime-environment-management#createnewrunenvironment" },
+    { text: "Deploying in development mode", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-in-development-mode" },
+    { text: "Deploying in production mode", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-in-production-mode" },
+    { text: "Managing node clusters with runtime environments", href: "devguide/creating-and-publishing-applications/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
+    { text: "Managing node addresses", href: "devguide/creating-and-publishing-applications/runtime-environment-management#node-address" },
+    { text: "Monitoring node status", href: "devguide/creating-and-publishing-applications/runtime-environment-management#node-status" },
+    { text: "Deploying applications in runtime environments", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-application-in-runtime-environment" },
+    { text: "Deploying in production mode", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-production-mode" },
+    { text: "Deploying in development mode", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-development-mode" }
   ]} />
 </IndexCard>
 
@@ -220,13 +226,18 @@ Complete workflow from application creation to distributed deployment. Master ap
   description="Learn how to build and manage infinitely horizontally scalable distributed cluster architectures for high availability and performance."
 >
   <LinkGrid links={[
-    { text: "Four-Layer Architecture Model", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#four-layer-architecture" },
-    { text: "Typical Deployment Topology", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#typical-deployment-topology" },
-    { text: "Enterprise Cluster Deployment", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#enterprise-cluster-deployment" },
-    { text: "Multi-Dimensional Environment Division", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#multi-dimensional-environment-division" },
-    { text: "Cluster Scaling Strategies", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#cluster-scaling-strategies" },
-    { text: "Load Balancing & Fault Tolerance", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#load-balancing-fault-tolerance" },
-    { text: "Architecture Constraints & Best Practices", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#architecture-constraints-best-practices" }
+    { text: "Understanding the four-layer architecture model", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#four-layer-architecture" },
+    { text: "Designing enterprise cluster deployment architecture", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#enterprise-cluster-deployment" },
+    { text: "Implementing typical deployment topology", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#typical-deployment-topology" },
+    { text: "Organizing multi-dimensional environment division", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#multi-dimensional-environment-division" },
+    { text: "Configuring entry address strategies", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#entry-address-configuration" },
+    { text: "Implementing cluster scaling strategies", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#cluster-scaling-strategies" },
+    { text: "Deploying horizontal scaling modes", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#horizontal-scaling" },
+    { text: "Implementing load balancing and fault tolerance", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#load-balancing-fault-tolerance" },
+    { text: "Understanding architecture constraints and best practices", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#architecture-constraints-best-practices" },
+    { text: "Managing version constraints", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#version-management-constraints" },
+    { text: "Configuring network access constraints", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#network-access-constraints" },
+    { text: "Following deployment best practices", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#deployment-best-practices" }
   ]} />
 </IndexCard>
 

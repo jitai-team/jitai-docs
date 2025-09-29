@@ -28,7 +28,7 @@ slug: creating-and-deploying-applications
 
 :::tip
 
-被继承应用的开发者会持续发布新的版本，以修复bug、添加新功能等，开发者可以在[节点控制台](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment)或[在应用设置](../development-tool-and-publish-service/jitai-visual-development-tools#application-settings)中检查新版本并更新。详细的版本管理请参考[应用发布与更新](../creating-and-publishing-applications/publishing-and-updating-applications#application-version-updates)。
+被继承应用的开发者会持续发布新的版本，以修复bug、添加新功能等，开发者可以在[节点控制台](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment)或[在应用设置](../development-tool-and-publish-service/jitai-visual-development-tools#application-settings)中检查新版本并更新。详细的版本管理请参考[应用发布与更新](../creating-and-publishing-applications/publishing-and-upgrading-applications#application-version-updates)。
 
 :::
 
@@ -59,7 +59,7 @@ slug: creating-and-deploying-applications
 开发者在开发自己的应用时也可以定义环境变量，比如用环境变量来存储数据库连接信息、API密钥等，应用导出/发布时就不会泄露敏感信息。
 
 ## 应用部署 {#deploying-applications}
-应用创建完成后，可以直接在当前运行环境中进行开发和测试。当需要发布正式版本时，请参考[应用发布与更新](../creating-and-publishing-applications/publishing-and-updating-applications)。发布应用版本后，就可以被其它节点和运行环境部署。
+应用创建完成后，可以直接在当前运行环境中进行开发和测试。当需要发布正式版本时，请参考[应用发布与更新](../creating-and-publishing-applications/publishing-and-upgrading-applications)。发布应用版本后，就可以被其它节点和运行环境部署。
 
 ### 在指定节点上部署应用 {#deploying-applications-on-specified-nodes}
 当开发者团队只有少量节点、仅使用节点的默认运行环境时，可以直接通过每个节点的节点控制台来部署应用。

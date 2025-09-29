@@ -1,7 +1,6 @@
 ---
 sidebar_position: 1
 slug: creating-and-deploying-applications
-title: Creating and Deploying Applications
 ---
 
 # Creating and Deploying Applications
@@ -29,7 +28,7 @@ After expanding the `Inherited Apps` collapsible panel and clicking the `Add App
 
 :::tip
 
-Developers of inherited applications continuously release new versions to fix bugs, add new features, etc. Developers can check for new versions and update them in the [Node Console](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment) or [Application Settings](../development-tool-and-publish-service/jitai-visual-development-tools#application-settings). For detailed version management, please refer to [Application Publishing and Updates](../creating-and-publishing-applications/publishing-and-updating-applications#application-version-updates).
+Developers of inherited applications continuously release new versions to fix bugs, add new features, etc. Developers can check for new versions and update them in the [Node Console](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment) or [Application Settings](../development-tool-and-publish-service/jitai-visual-development-tools#application-settings). For detailed version management, please refer to [Application Publishing and Updates](../creating-and-publishing-applications/publishing-and-upgrading-applications#application-version-updates).
 
 :::
 
@@ -62,7 +61,7 @@ The official base framework encapsulates Alibaba Cloud OCR recognition and Amap 
 Developers can also define environment variables when developing their own applications, such as using environment variables to store database connection information, API keys, etc., ensuring that sensitive information will not be exposed when applications are exported or published.
 
 ## Deploying Applications {#deploying-applications}
-After application creation is complete, you can directly develop and test in the current runtime environment. When you need to publish an official version, please refer to [Application Publishing and Updates](../creating-and-publishing-applications/publishing-and-updating-applications). After publishing an application version, it can be deployed by other nodes and runtime environments.
+After application creation is complete, you can directly develop and test in the current runtime environment. When you need to publish an official version, please refer to [Application Publishing and Updates](../creating-and-publishing-applications/publishing-and-upgrading-applications). After publishing an application version, it can be deployed by other nodes and runtime environments.
 
 ### Deploying applications on specified nodes {#deploying-applications-on-specified-nodes}
 When a developer team has only a few nodes and uses only the default runtime environment of nodes, applications can be deployed directly through each node's Node Console.

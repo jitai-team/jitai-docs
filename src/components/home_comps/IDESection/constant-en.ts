@@ -7,17 +7,17 @@ const CONTENT = {
       {
         title: 'Simple, Flexible, and Consistent Development Paradigm',
         description: 'Create, select, assemble, and configure standardized elements to build diverse system functions. Easy for developers to master with high-quality, efficient development workflow',
-        video: 'https://jit-www.oss-cn-beijing.aliyuncs.com/ide_frame.mp4',
+        video: 'https://jit-www.oss-cn-beijing.aliyuncs.com/en_ide_frame.mp4',
       },
       {
         title: 'Automatic High-Quality Code Generation',
         description: 'JitAi graphical orchestration and programming tools use code editing technologies based on application protocols and frameworks, automatically generating high-quality native code. Works collaboratively with programmer and AI coding on the same source code without imposing restrictions',
-        video: 'https://jit-www.oss-cn-beijing.aliyuncs.com/ide_code.mp4',
+        video: 'https://jit-www.oss-cn-beijing.aliyuncs.com/en_ide_code.mp4',
       },
       {
         title: 'Customizable and Extensible',
         description: 'Developers can extend and customize official development tools by implementing element editors in their applications, enabling fully personalized development environments',
-        video: 'https://jit-www.oss-cn-beijing.aliyuncs.com/ide_extend.mp4',
+        video: 'https://jit-www.oss-cn-beijing.aliyuncs.com/en_ide_extend.mp4',
       }
     ],
   developmentModules:[

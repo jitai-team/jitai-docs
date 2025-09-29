@@ -6,7 +6,7 @@ title: Creating Language Packages
 
 
 
-The JitAI platform comes with built-in Simplified Chinese and English language packages. When the application runs, the system automatically selects the corresponding language package based on the browser's language settings. If the browser language is not within the supported range, English is used by default. You can flexibly create custom language packages as needed.
+The JitAi platform comes with built-in Simplified Chinese and English language packages. When the application runs, the system automatically selects the corresponding language package based on the browser's language settings. If the browser language is not within the supported range, English is used by default. You can flexibly create custom language packages as needed.
 
 ## Creating Language Packages
 
@@ -26,10 +26,11 @@ The visual editor will list all terms from the current development framework and
 ![update-term-value](./img/update-term-value.gif)
 
 ## Adding New Terms
-
-You can add content from your application as terms and translate them into the corresponding language content. Changes take effect immediately after adding.
+You can add any text content from your application as terms and translate them into the target language. Changes take effect immediately without requiring an application restart.
 
 ![add-terms](./img/add-terms.gif)
+
+**Example:** The default portal contains a menu item named `Order Management` that lacks 繁体中文 translation. When we add a term mapping `Order Management` → `訂單管理` in the 繁体中文 language package, the menu item will automatically display as `訂單管理` after refreshing the portal page.
 
 ## Importing Terms
 You can batch translate terms by importing JSON files. In the JSON, each key corresponds to the original content displayed in the application code, and the value is the content translated into the corresponding language. Example below:

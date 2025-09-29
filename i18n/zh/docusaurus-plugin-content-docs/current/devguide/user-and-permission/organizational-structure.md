@@ -191,4 +191,4 @@ JitAi提供了通讯录管理页面，可以实时查看部门、成员及角色
 ::: 
 
 ## Microsoft Teams
-界面管理同[钉钉组织架构管理页面](#钉钉自建组织通讯录-dingtalk-organization-contacts)
+界面管理同[钉钉组织架构管理页面](#dingtalk-organization-contacts)

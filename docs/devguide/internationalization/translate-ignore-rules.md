@@ -3,7 +3,7 @@ sidebar_position: 4
 slug: translate-ignore-rules
 ---
 
-# Translation Ignore Rules
+# Translation Ignore Rules {#translation-ignore-rules}
 
 In the JitAi platform, by default all text content within DOM nodes is automatically processed for translation. However, in certain scenarios, you may need to prevent specific text from being translated, such as:
 
@@ -12,7 +12,7 @@ In the JitAi platform, by default all text content within DOM nodes is automatic
 - User-defined fixed text content
 - Interface elements that do not require localization
 
-## Basic Usage
+## Basic Usage {#basic-usage}
 
 ### Using translate-ignore Class Name
 
@@ -31,7 +31,7 @@ The simplest way is to add the `translate-ignore` class name to DOM nodes that n
 - Ensure the class name is spelled correctly and is case-sensitive
 - Recommend using it on elements that semantically do not require translation
 
-## Advanced Configuration
+## Advanced Configuration {#advanced-configuration}
 
 In addition to using the default `translate-ignore` class name, you can also configure custom rules to more precisely control which content should be excluded from translation.
 
@@ -84,7 +84,7 @@ export interface IgnoreRule {
 }
 ```
 
-## Configuration Method
+## Configuration Method {#configuration-method}
 
 Currently, there is no support for configuring ignore rules through a visual interface, and configuration needs to be done through code-only approach:
 

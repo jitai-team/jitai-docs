@@ -3,9 +3,9 @@ sidebar_position: 3
 slug: how-to-translate-page-terms
 ---
 
-# How to Translate Page Terms
+# How to Translate Page Terms {#how-to-translate-page-terms}
 
-## Automatic Text Translation
+## Automatic Text Translation {#automatic-text-translation}
 
 By default, text content within DOM nodes is automatically processed for translation. Here is a simple example:
 
@@ -41,7 +41,7 @@ const TestI18N = () => {
 
 Additionally, more granular control can be achieved through custom [Translation Ignore Rules](./translate-ignore-rules).
 
-## Dynamic Text Translation
+## Dynamic Text Translation {#dynamic-text-translation}
 
 JitAi's internationalization solution supports DOM change monitoring mechanisms that can automatically detect dynamically added or modified DOM nodes on the page and perform real-time translation of their text content. This ensures that even content generated dynamically through JavaScript can automatically apply internationalization processing.
 
@@ -71,7 +71,7 @@ After adding translation mappings of `Click Me` → `点我` and `Already Clicke
 
 ![auto-translate-dynamics](./img/auto-translate-dynamics.gif)
 
-## DOM Node Attribute Translation
+## DOM Node Attribute Translation {#dom-node-attribute-translation}
 
 In addition to text content within DOM nodes, attribute values in HTML tags often require translation.
 JitAi's internationalization solution automatically translates the following HTML attributes by default:
@@ -124,7 +124,7 @@ If you need to translate other HTML attributes, you can add them through code co
 - Avoid configuring functional attributes (such as `id`, `class`, etc.)
 
 
-## Using API Translation
+## Using API Translation {#using-api-translation}
 
 In addition to DOM elements on the page, there are also non-DOM content (such as alert prompts, etc.) that cannot be processed through the DOM node automatic translation mechanism and require manual calls to the translation API. JitAi's internationalization solution provides a programmatic translation interface: `runtimeApp.i18n.translate('xxxx')`.
 

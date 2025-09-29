@@ -1837,13 +1837,16 @@ Make your application accessible to global users. Support multiple languages, re
   href="devguide/internationalization/creating-language-packages"
   description="Learn how to create custom language packages for your application, including structure definition and content organization."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+      { text: "Creating Language Packages", href: "devguide/internationalization/creating-language-packages#creating-language-packages" },
+      { text: "Translating Built-in Terms", href: "devguide/internationalization/creating-language-packages#translating-built-in-terms" },
+      { text: "Adding New Terms", href: "devguide/internationalization/creating-language-packages#adding-new-terms" },
+      { text: "Importing Terms", href: "devguide/internationalization/creating-language-packages#importing-terms" }
+  ]} />
 </IndexCard>
 
 <IndexCard
-  title="Extending System Builtin Language Packages"
+  title="Extending System Built-in Language Packages"
   href="devguide/internationalization/extending-system-builtin-language-packages"
   description="Extend and customize existing system language packages to meet specific business requirements and regional needs."
 >
@@ -1857,9 +1860,36 @@ Make your application accessible to global users. Support multiple languages, re
   href="devguide/internationalization/how-to-translate-page-terms"
   description="Master the techniques for translating page content, including dynamic text replacement and context-aware translations."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+      { text: "Automatic Text Translation", href: "devguide/internationalization/how-to-translate-page-terms#automatic-text-translation" },
+      { text: "Dynamic Text Translation", href: "devguide/internationalization/how-to-translate-page-terms#dynamic-text-translation" },
+      { text: "DOM Node Attribute Translation", href: "devguide/internationalization/how-to-translate-page-terms#dom-node-attribute-translation" },
+      { text: "Using API Translation", href: "devguide/internationalization/how-to-translate-page-terms#using-api-translation" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Translation Ignore Rules"
+  href="devguide/internationalization/translate-ignore-rules"
+  description="Configure rules to exclude specific content from translation, ensuring proper handling of brand names, technical terms, and other non-translatable content."
+>
+  <LinkGrid links={[
+      { text: "Basic Usage", href: "devguide/internationalization/translate-ignore-rules#basic-usage" },
+      { text: "Advanced Configuration", href: "devguide/internationalization/translate-ignore-rules#advanced-configuration" },
+      { text: "Configuration Method", href: "devguide/internationalization/translate-ignore-rules#configuration-method" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Default Language"
+  href="devguide/internationalization/default-language"
+  description="Configure the default language for your application to ensure optimal user experience for first-time visitors and users without explicit language preferences."
+>
+  <LinkGrid links={[
+      { text: "Default Language Configuration", href: "devguide/internationalization/default-language#default-language-configuration" },
+      { text: "Language Selection Strategy", href: "devguide/internationalization/default-language#language-selection-strategy" },
+      { text: "Configuration Recommendations", href: "devguide/internationalization/default-language#configuration-recommendations" }
+  ]} />
 </IndexCard>
 
 </div>

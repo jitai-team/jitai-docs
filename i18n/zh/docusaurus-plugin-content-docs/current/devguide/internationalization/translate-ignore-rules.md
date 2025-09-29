@@ -3,7 +3,7 @@ sidebar_position: 4
 slug: translate-ignore-rules
 ---
 
-# 忽略翻译规则
+# 忽略翻译规则 {#translation-ignore-rules}
 
 在JitAi平台中，默认情况下所有DOM节点中的文本内容都会自动进行翻译处理。但在某些场景下，您可能需要阻止特定文本被翻译，比如：
 
@@ -12,7 +12,7 @@ slug: translate-ignore-rules
 - 用户自定义的固定文本内容
 - 不需要本地化的界面元素
 
-## 基础用法
+## 基础用法 {#basic-usage}
 
 ### 使用 translate-ignore 类名
 
@@ -31,7 +31,7 @@ slug: translate-ignore-rules
 - 确保类名拼写正确，区分大小写
 - 建议在语义上确实不需要翻译的元素上使用
 
-## 高级配置
+## 高级配置 {#advanced-configuration}
 
 除了使用默认的 `translate-ignore` 类名，您还可以通过配置自定义规则来更精确地控制哪些内容需要忽略翻译。
 
@@ -84,7 +84,7 @@ export interface IgnoreRule {
 }
 ```
 
-## 配置方法
+## 配置方法 {#configuration-method}
 
 目前暂不支持通过可视化界面配置忽略规则，需要通过全代码方式进行配置：
 

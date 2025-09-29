@@ -1,6 +1,6 @@
 ---
 sidebar_position: 14
-slug: ai-assistant-api-integration
+slug: ai-assistant-api-exposure
 ---
 
 # AI Assistant API Exposure

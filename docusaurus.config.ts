@@ -105,6 +105,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         theme: {
           customCss: ['./src/css/variables.css', './src/css/custom.css'],
         },
+        sitemap: false, // 禁用自动生成 sitemap
       } satisfies Preset.Options,
     ],
   ],

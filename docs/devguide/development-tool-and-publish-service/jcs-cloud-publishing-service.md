@@ -6,15 +6,15 @@ title: JCS Cloud Application Publishing Service
 
 # JCS Cloud Application Publishing Service
 
-JCS (JitAi Cloud Service) is the official cloud application publishing service maintained and deployed by JitAi, which is also a JitAi application. As a centralized public service, JCS runs on official JitNodes.
+JCS (JitAi Cloud Service) is the official cloud application publishing service maintained and deployed by JitAi. As a centralized public service built on the JitAi platform itself, JCS operates on official JitNodes to provide enterprise-grade application distribution capabilities.
 
-Each JitNode automatically connects to JCS upon startup, synchronizing runtime environment configurations, node status, and version information with JCS. Through JCS, each JitNode can access the cloud application repository to publish and deploy shared applications within organizations or across the entire network.
+Each JitNode establishes automatic connectivity with JCS during startup, maintaining continuous synchronization of runtime environment configurations, node status, and version information. Through JCS, individual JitNodes gain access to the centralized cloud application repository, enabling seamless publication and deployment of shared applications across organizational boundaries and the broader network ecosystem.
 
-## Synchronizing Runtime Environment Configuration from JCS {#synchronizing-runtime-environment-configuration}
-When a JitNode starts up and each time a request reaches the JitNode, the node automatically checks runtime environment configurations from JCS. If there are updates to the runtime environment configuration, the JitNode updates its locally cached runtime environment configuration. The runtime environment configuration includes information such as runtime environment ID, title, remarks, creation time, update time, entry addresses, deployed applications and versions, routing weights, etc. These configurations are modified by developers through the visual interface in the DevOps management tool.
+## Synchronizing runtime environment configuration from JCS {#synchronizing-runtime-environment-configuration}
+JitNodes perform automatic configuration synchronization with JCS both during startup and with each incoming request. When runtime environment configuration updates are detected, nodes refresh their locally cached configurations accordingly. The runtime environment configuration encompasses comprehensive metadata including environment identifiers, descriptive titles, annotations, timestamps for creation and modification, entry point addresses, deployed application inventories with version details, and load balancing weights. Developers manage these configurations through the intuitive visual interface provided by the DevOps management tool.
 
-## Retrieving Version Update Information from JCS {#retrieving-version-update-information}
-Each JitNode periodically retrieves version update information from JCS during runtime (including the JitNode's own version and versions of all applications running on the node). If new versions are discovered, developers will be prompted to update versions in the DevOps management tool interface.
+## Retrieving version update information from JCS {#retrieving-version-update-information}
+During runtime operations, each JitNode maintains periodic communication with JCS to retrieve version update notifications, covering both the node's core platform version and all hosted application versions. When newer versions become available, the DevOps management tool interface presents update prompts to developers, facilitating timely version management and deployment decisions.
 
-## Accessing Cloud Application Repository through JCS {#accessing-cloud-application-repository}
-Application versions published by developers in the DevOps management tool are automatically encrypted and synchronized to the JCS cloud application repository. The application version list that developers see when deploying applications is provided by JCS.
+## Accessing cloud application repository through JCS {#accessing-cloud-application-repository}
+Application versions published through the DevOps management tool undergo automatic encryption and synchronization to the JCS cloud application repository. When developers initiate application deployment workflows, the available version catalog presented in the interface is dynamically sourced from JCS, ensuring access to the most current and authorized application releases.

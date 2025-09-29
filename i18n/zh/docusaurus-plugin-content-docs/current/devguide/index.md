@@ -96,14 +96,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid links={[
     { text: "元素目录树", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#element-directory-tree" },
-    { text: "添加元素", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#add-element" },
+    { text: "添加元素", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#adding-elements" },
     { text: "可视化编辑器", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#visual-editor" },
     { text: "源码编辑器", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#source-code-editor" },
     { text: "源码文件树", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#source-code-file-tree" },
     { text: "应用设置", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#application-settings" },
+    { text: "基本信息", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#basic-information" },
+    { text: "默认元素", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#default-elements" },
+    { text: "环境变量", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#environment-variables" },
     { text: "门户切换", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#portal-switching" },
     { text: "个人中心", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#personal-center" },
-    { text: "语言切换", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#language-switch" },
+    { text: "语言切换", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#language-switching" },
     { text: "导航标签", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#navigation-tabs" }
   ]} />
 </IndexCard>
@@ -114,9 +117,10 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="双控制台架构的全面运维管理解决方案，提供从开发到部署的完整应用生命周期管理。"
 >
   <LinkGrid links={[
-    { text: "双控制台", href: "devguide/development-tool-and-publish-service/devops-management-tool#dual-console-architecture" },
+    { text: "双控制台架构", href: "devguide/development-tool-and-publish-service/devops-management-tool#dual-console-architecture" },
     { text: "本地节点控制台", href: "devguide/development-tool-and-publish-service/devops-management-tool#local-node-console" },
     { text: "组织管理控制台", href: "devguide/development-tool-and-publish-service/devops-management-tool#organization-management-console" },
+    { text: "核心能力概览", href: "devguide/development-tool-and-publish-service/devops-management-tool#core-capabilities-overview" },
     { text: "应用生命周期管理", href: "devguide/development-tool-and-publish-service/devops-management-tool#application-lifecycle-management" },
     { text: "运行环境管理", href: "devguide/development-tool-and-publish-service/devops-management-tool#runtime-environment-management" },
     { text: "节点集群管理", href: "devguide/development-tool-and-publish-service/devops-management-tool#node-cluster-management" },
@@ -1117,7 +1121,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="AI助理的API开放"
-  href="devguide/ai-assistant/ai-assistant-api-integration"
+  href="devguide/ai-assistant/ai-assistant-api-exposure"
   description="通过API接口开放AI助理能力，实现与外部系统的集成。"
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>

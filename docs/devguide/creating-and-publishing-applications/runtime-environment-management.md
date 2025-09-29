@@ -5,73 +5,73 @@ title: Runtime Environment Management
 ---
 
 # Runtime Environment Management
-## What is Runtime Environment {#what-is-runtime-environment}
-Runtime environments are used to isolate the space for application deployment and execution, with runtime resource directories isolated between different runtime environments.
+## Understanding runtime environments {#what-is-runtime-environment}
+Runtime environments provide isolated spaces for application deployment and execution, with complete resource directory separation between different environments.
 
-Each developer team can create multiple runtime environments. Each runtime environment can contain one or more JitNodes (except for the default runtime environment) and deploy multiple applications. Each node can simultaneously join multiple runtime environments.
+Developer teams can create multiple runtime environments, each capable of containing one or more JitNodes (excluding the default runtime environment) and hosting multiple applications. Individual nodes can participate in multiple runtime environments simultaneously.
 
-## Node Local Default Runtime Environment {#node-local-default-runtime-environment}
-A local default runtime environment is automatically created when a node is activated. It is not visible in the runtime environment management interface and is used to run JitAi's built-in DevOps management platform on that node. When users access the node, they are automatically redirected to the local default runtime environment management page of that node, which is the Node Console.
+## Managing node local default runtime environment {#node-local-default-runtime-environment}
+Upon node activation, a local default runtime environment is automatically created. This environment remains invisible in the runtime environment management interface and serves to run JitAi's built-in DevOps management platform on that node. User access to the node automatically redirects to the node's local default runtime environment management page, known as the Node Console.
 
 ![Node Console](./img/4/node-console.png "Node Console")
 
-In the Node Console, users can modify the node name, view node specification authorization information, download current node runtime logs, and update inherited applications.
+The Node Console enables users to modify node names, view node specification authorization details, download current node runtime logs, and upgrade inherited applications.
 
-Users can also perform operations such as application creation, import, export, publishing, deployment, deletion, modifying inherited applications, configuring environment variables, generating copies, and entering the application development interface. For detailed information about these operations, please see [Application Creation and Management](../creating-and-publishing-applications/creating-and-deploying-applications).
+Additional operations include application creation, importing, exporting, publishing, deployment, deletion, inherited application modification, environment variable configuration, duplication, and development interface access. For comprehensive details on these operations, refer to [Application Creation and Management](../creating-and-publishing-applications/creating-and-deploying-applications).
 
-## Create New Runtime Environment {#createnewrunenvironment}
-Runtime environment management needs to be performed in the Organization Management Console. Users can click the "Management" button in the upper right corner of the Node Console interface to enter the Organization Management Console. Conversely, in the upper right corner of the Organization Management Console interface, clicking the "Manage Current Node" button allows switching back to the current node's Node Console.
+## Creating new runtime environments {#createnewrunenvironment}
+Runtime environment management requires access to the Developer Team Management Console. Users can click the `Management` button in the Node Console's upper right corner to access the Developer Team Management Console. Conversely, the `Manage Current Node` button in the Developer Team Management Console's upper right corner enables switching back to the current node's Node Console.
 
-![Organization Management Console](./img/4/organization-management-console.png "Organization Management Console")
+![Developer Team Management Console](./img/4/organization-management-console.png "Developer Team Management Console")
 
-Switch to the runtime environment management page, click the "New Runtime Environment" button, enter the runtime environment name, and click the "Create" button to create a runtime environment.
+Navigate to the runtime environment management page, click `New Environment`, enter the environment name, and click    `Confirm` to create a new runtime environment.
 
-![Create Runtime Environment](./img/4/create-runtime-environment.png "Create Runtime Environment")
+![New Environment](./img/4/create-runtime-environment.png "New Environment")
 
-Users can create multiple runtime environments based on testing and production dimensions, or create different runtime environments based on other custom dimensions. Each runtime environment can add one or more dedicated access entry addresses for accessing applications in the runtime environment.
+Users can establish multiple runtime environments organized by testing and production criteria, or create distinct environments based on custom dimensions. Each runtime environment supports one or more dedicated access entry addresses for application access within that environment.
 
-![Configure Dedicated Access Entry](./img/4/configure-dedicated-access-entry.png "Configure Dedicated Access Entry")
+![Dedicated Access Entry](./img/4/configure-dedicated-access-entry.png "Dedicated Access Entry")
 
 :::tip Note
 
-Runtime environment access entry addresses can be IP addresses or domain names. Users need to configure domain name resolution properly to ensure that entry addresses can normally access the JitNode startup port of specified nodes in the runtime environment. That node will handle request forwarding and load balancing within the cluster.
+Runtime environment access entry addresses accept both IP addresses and domain names. Users must configure domain name resolution correctly to ensure entry addresses can properly access the JitNode startup port of designated nodes within the runtime environment. The designated node manages request forwarding and load balancing throughout the cluster.
 
-The default startup port is 8080. The server Docker version will automatically map to host port 80, and users can also modify the startup port configuration.
+The default startup port is 8080. The server Docker version automatically maps to host port 80, though users can modify the startup port configuration as needed.
 
 :::
 
-Users can modify the name, modify remarks, and delete operations for already created runtime environments.
+Users can modify names, update remarks, and delete previously created runtime environments.
 
-## Development Mode Deployment {#deploy-in-development-mode}
-Deploy applications in development mode, providing hot reload and debugging capabilities.
+## Deploying in development mode {#deploy-in-development-mode}
+Development mode deployment provides hot reload functionality and comprehensive debugging capabilities for enhanced development workflows.
 
-## Production Mode Deployment {#deploy-in-production-mode}
-Deploy applications in production mode, optimizing performance and stability.
+## Deploying in production mode {#deploy-in-production-mode}
+Production mode deployment optimizes application performance and stability for live environments.
 
-## Use Runtime Environment to Manage Node Clusters {#use-runtime-environment-to-manage-node-clusters}
-When a runtime environment has multiple nodes added, it forms a cluster composed of multiple nodes. The cluster can provide horizontal scaling capabilities to ensure service availability and performance. Currently, only server version nodes can be added to runtime environments.
+## Managing node clusters with runtime environments {#use-runtime-environment-to-manage-node-clusters}
+Adding multiple nodes to a runtime environment creates a multi-node cluster configuration. Clusters provide horizontal scaling capabilities to ensure service availability and optimal performance. Currently, only server version nodes support runtime environment integration.
 
 ![Add Node](./img/4/add-node.png "Add Node")
 
-The node list displays each node's name, ID, node address, node status, activation time, and number of deployed applications. Users can also remove nodes from the cluster.
+The node list presents comprehensive information for each node: name, ID, address, status, activation time, and deployed application count. Users can remove nodes from the cluster as needed.
 
-### Node Address
-Nodes pointed to by runtime environment access entry addresses will perform request forwarding and load balancing through addresses of other nodes in the cluster. When a node is activated, it automatically uses the internal network IP as the node address, and users can manually modify the node address.
+### Managing node addresses {#node-address}
+Nodes designated by runtime environment access entry addresses handle request forwarding and load balancing using other cluster node addresses. Upon activation, nodes automatically adopt the internal network IP as their address, though users can manually modify node addresses.
 
-### Node Status
-When a node has not started the JitNode process or has network anomalies and loses connection with JitAi Cloud, the node status displays as "Abnormal". When the node's JitNode process is in running state, the node status displays as "Normal".
+### Monitoring node status {#node-status}
+Node status displays as "Abnormal" when the JitNode process hasn't started or network anomalies cause disconnection from JitAi Cloud. When the JitNode process operates normally, the status shows as "Normal".
 
-## Deploy Application in Runtime Environment {#deploy-application-in-runtime-environment}
-Users can deploy applications to one or more nodes under a runtime environment, and multiple applications can also be deployed in one runtime environment.
+## Deploying applications in runtime environments {#deploy-application-in-runtime-environment}
+Users can deploy applications across one or multiple nodes within a runtime environment, with support for multiple application deployments within a single environment.
 
 ![Deploy Application to Specified Node](./img/4/deploy-application-to-specified-node.png "Deploy Application to Specified Node")
 
-Users can set application access weights on different nodes during deployment and configure environment variable values as needed, supporting modification and deletion of deployment records at any time.
+During deployment, users can configure application access weights across different nodes and set environment variable values as required. Deployment records support modification and deletion at any time.
 
-### Deploy in Production Mode 
-Applications deployed in production mode only contain executable programs, not source code, and cannot be modified online.
+### Deploying in production mode {#deploy-production-mode} 
+Production Mode deployments contain only executable programs without source code, preventing online modifications for enhanced security.
 
-### Deploy in Development Mode 
-When applications are published with source code, they support deployment in development mode during deployment, allowing users to modify applications online.
+### Deploying in development mode {#deploy-development-mode} 
+Applications published with source code support Development Mode deployments, enabling online application modifications.
 
-Development mode is further divided into two approaches: `Deploy Source Code` and `Copy and Generate New Application`.
+Development Mode offers two distinct approaches: `Deploy source code` and `Copy and generate a new application`.

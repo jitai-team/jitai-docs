@@ -1034,20 +1034,20 @@ Intelligent agents with reasoning and action capabilities. Through prompts and t
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Creating AI Agent"
+  title="Creating AI Agents"
   href="devguide/ai-agent/create-ai-agent"
-  description="Learn how to create ReActAgent, configure system prompts, select large language models, write descriptions, and configure runtime state storage."
+  description="Learn how to create ReActAgents, configure system prompts, select large language models, write descriptions, and configure runtime state storage."
 >
   <LinkGrid columns={2} links={[
-    { text: "Creating ReActAgent", href: "devguide/ai-agent/create-ai-agent#create-react-agent" },
-    { text: "Write System Prompt", href: "devguide/ai-agent/create-ai-agent#write-system-prompt" },
-    { text: "Select Model and Configure Parameters", href: "devguide/ai-agent/create-ai-agent#select-model-and-configure-parameters" },
-    { text: "Write Agent Description", href: "devguide/ai-agent/create-ai-agent#write-agent-description" },
-    { text: "Configure Runtime State Storage", href: "devguide/ai-agent/create-ai-agent#configure-runtime-state-storage" },
-    { text: "Memory Storage", href: "devguide/ai-agent/create-ai-agent#memory-storage" },
-    { text: "Database Storage", href: "devguide/ai-agent/create-ai-agent#database-storage" },
-    { text: "Modify Agent in Source Code Mode", href: "devguide/ai-agent/create-ai-agent#modify-agent-in-source-code-mode" },
-    { text: "Custom Callback Processor", href: "devguide/ai-agent/create-ai-agent#custom-callback-processor" }
+    { text: "Creating a ReActAgent", href: "devguide/ai-agent/create-ai-agent#creating-react-agent" },
+    { text: "Writing system prompts", href: "devguide/ai-agent/create-ai-agent#writing-system-prompts" },
+    { text: "Selecting models and configuring parameters", href: "devguide/ai-agent/create-ai-agent#selecting-models-configuring-parameters" },
+    { text: "Writing agent descriptions", href: "devguide/ai-agent/create-ai-agent#writing-agent-descriptions" },
+    { text: "Configuring runtime state storage", href: "devguide/ai-agent/create-ai-agent#configuring-runtime-state-storage" },
+    { text: "Memory storage", href: "devguide/ai-agent/create-ai-agent#memory-storage" },
+    { text: "Database storage", href: "devguide/ai-agent/create-ai-agent#database-storage" },
+    { text: "Modifying agents in source code mode", href: "devguide/ai-agent/create-ai-agent#modifying-agents-source-code-mode" },
+    { text: "Custom callback processors", href: "devguide/ai-agent/create-ai-agent#custom-callback-processors" }
   ]} />
 </IndexCard>
 
@@ -1057,17 +1057,17 @@ Intelligent agents with reasoning and action capabilities. Through prompts and t
   description="Learn how to add and manage various tools in Agent, including model functions, service functions, MCP services, external APIs, and page functions."
 >
   <LinkGrid columns={2} links={[
-    { text: "Agent Call Model Functions", href: "devguide/ai-agent/agent-tools#agent-call-model-functions" },
-    { text: "Agent Call Service Functions", href: "devguide/ai-agent/agent-tools#agent-calling-service-functions" },
-    { text: "Agent Call MCP Services", href: "devguide/ai-agent/agent-tools#agent-call-mcp-service" },
-    { text: "Convert MCP Config to Environment Variables", href: "devguide/ai-agent/agent-tools#convert-mcp-config-to-environment-variables" },
-    { text: "Agent Call External APIs", href: "devguide/ai-agent/agent-tools#agent-call-external-api" },
-    { text: "Agent Call Page Functions", href: "devguide/ai-agent/agent-tools#agent-call-page-functions" },
-    { text: "Tool Function Management", href: "devguide/ai-agent/agent-tools#tool-function-management" },
-    { text: "Enable/Disable Tool Functions", href: "devguide/ai-agent/agent-tools#enable-disable-tool-functions" },
-    { text: "Tool Function Call Pre/Post Event Triggering", href: "devguide/ai-agent/agent-tools#tool-function-call-pre-post-event-triggering" },
-    { text: "Manual Confirmation Before Tool Execution", href: "devguide/ai-agent/agent-tools#manual-confirmation-before-tool-execution" },
-    { text: "Restrict User Roles for Tool Calls", href: "devguide/ai-agent/agent-tools#restrict-user-roles-for-tool-calls" }
+    { text: "Calling model functions", href: "devguide/ai-agent/agent-tools#calling-model-functions" },
+    { text: "Calling service functions", href: "devguide/ai-agent/agent-tools#calling-service-functions" },
+    { text: "Calling MCP servers", href: "devguide/ai-agent/agent-tools#calling-mcp-servers" },
+    { text: "Converting MCP configuration to environment variable", href: "devguide/ai-agent/agent-tools#converting-mcp-config-to-environment-variable" },
+    { text: "Calling external APIs", href: "devguide/ai-agent/agent-tools#calling-external-apis" },
+    { text: "Calling page functions", href: "devguide/ai-agent/agent-tools#calling-page-functions" },
+    { text: "Tool function management", href: "devguide/ai-agent/agent-tools#tool-function-management" },
+    { text: "Enabling/disabling tool functions", href: "devguide/ai-agent/agent-tools#enabling-disabling-tool-functions" },
+    { text: "Tool function call pre/post event triggering", href: "devguide/ai-agent/agent-tools#tool-function-call-pre-post-event-triggering" },
+    { text: "Manual confirmation before tool execution", href: "devguide/ai-agent/agent-tools#manual-confirmation-before-tool-execution" },
+    { text: "Restricting user roles for tool calls", href: "devguide/ai-agent/agent-tools#restricting-user-roles-for-tool-calls" }
   ]} />
 </IndexCard>
 

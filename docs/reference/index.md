@@ -71,12 +71,12 @@ Provides element configuration, API interfaces, and usage methods for each frame
 >
   <LinkGrid columns={2} links={[
     { text: "Global Styles", href: "reference/framework/JitWeb/global-styles" },
-    { text: "Regular Portal", href: "reference/framework/JitWeb/portals/regular-portal" },
+    { text: "Generic Portal", href: "reference/framework/JitWeb/portals/regular-portal" },
     { text: "Blank Portal", href: "reference/framework/JitWeb/portals/blank-portal" },
     { text: "SSR Portal", href: "reference/framework/JitWeb/portals/ssr-portal" },
     { text: "AI Data Management Page", href: "reference/framework/JitWeb/pages/ai-data-management-page" },
     { text: "AI Data Analysis Page", href: "reference/framework/JitWeb/pages/ai-data-analysis-page" },
-    { text: "Regular Page", href: "reference/framework/JitWeb/pages/regular-page" },
+    { text: "Generic Page", href: "reference/framework/JitWeb/pages/generic-page" },
     { text: "Data Entry Page", href: "reference/framework/JitWeb/pages/data-entry-page" },
     { text: "Markdown Page", href: "reference/framework/JitWeb/pages/markdown-page" },
     { text: "React Full Code Page", href: "reference/framework/JitWeb/pages/react-full-code-page" },

@@ -65,23 +65,23 @@ sidebar_position: 3
 
 ## AI数据管理助理 {#enable-ai-data-management-assistant}
 
-### 开启AI数据管理助理
+### 开启AI数据管理助理 {#enable-ai-data-management-assistant}
 AI数据管理页面内置了一个通用的**AI数据管理助理**，用户可使用该助理通过自然语言对话即可完成对数据的增删改查操作，比如用户输入：录入5条随机测试数据；该AI助理会自动录入5条数据，并刷新表格。
 页面中默认不会启用该助理，需要手动开启。开启方式如下：<br/>
 ![启用AI数据管理助手](./imgs/enable-ai-data-management-assistant.png)<br/>
 可视化编辑器顶部切换到`AI助理配置`，然后打开`使用AI数据管理助理`开关。
 
-### 配置大模型
+### 配置大模型 {#configure-large-language-model}
 AI数据管理助理在运行时需要访问系统数据库及调用页面上的函数绘制图表。我们需要为其配置一个支持调用工具的[大模型](/docs/devguide/ai-llm/create-ai-llm)，推荐使用阿里云百炼平台的 qwen-max-latest。[申请API Key](https://bailian.console.aliyun.com/?tab=model#/api-key)
 
-### 助理高级配置
+### 助理高级配置 {#assistant-advanced-configuration}
 - 支持自定义[欢迎语与开场白](/docs/devguide/ai-assistant/welcome-message-and-opening)
 - 支持自定义[输出运行过程日志](/docs/devguide/ai-assistant/ai-assistant-input-output#message-output)，默认会输出简要过程日志。
 
 
 关于AI助理的更多信息，请阅读[AI助理](/docs/devguide/ai-assistant/create-ai-assistant)相关文档。
 
-## 运行效果
+## 运行效果 {#runtime-effect}
 
 点击可视化编辑器右上角的 <span style={{ display: "inline-block", verticalAlign: "middle", margin: "0 4px", height: '30px', marginTop: "-15px" }}>![预览按钮](./imgs/view-icon.png)</span> 按钮，看看效果吧！<br/>
 用户在访问页面时将会看到一个功能完整的数据管理界面，包含数据表格、筛选条件、分页、工具栏中的新增/批量修改/批量删除/导入、操作列中的编辑/删除、点击列标题进行排序。开启AI数据管理助理后，会在页面右侧显示一个AI对话框，用户通过该对话框与助理对话，操作数据。

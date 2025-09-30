@@ -7,12 +7,12 @@ Pages serve as the primary interfaces where users interact with application syst
 
 In component-based pages, the page function logic, page event function logic, and component event function logic can all invoke other business elements, including services, data models, AI large language models, AI Agents, AI assistants, and more. For detailed information about invoking business elements, refer to [Calling Frontend and Backend Tools and Services in Function Logic](/docs/devguide/calling-business-elements-in-pages).
 
-## Creating generic pages {#creating-regular-pages}
+## Creating generic pages {#creating-generic-pages}
 When [creating portals](/docs/devguide/shell-and-page/portal-navigation-design), if developers choose to create pages while creating menus, pages are automatically generated and can be found in the element directory tree for editing.
 
 Developers can also create pages manually. JitAi provides 7 page types: `Generic Page`, `AI Data Mgmt Page`(AI Data Management Page), `AI Data Analysis Page`, `Data Entry Page`, `React Page`, `Vue Page`, and `Markdown Page`. AI Data Mgmt Page, AI Data Analysis Page, and Data Entry Page are all built upon Generic Page. This article uses generic pages to demonstrate **how to perform component-based page development**.
 
-![Select Page Type](./imgs/create-regular-page.gif "Select Page Type")
+![Select Page Type](./imgs/create-generic-page.gif "Select Page Type")
 
 To create a page, developers locate `UI Pages` in the element directory tree, click `+` and select `Generic Page`, fill in the page name in the popup form, and click `Confirm` to complete page creation and automatically enter the [Visual Page Editor](#visual-page-editor).
 

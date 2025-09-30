@@ -290,7 +290,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="使用可视化编辑器构建页面界面，配置组件和事件，实现丰富的用户交互功能。"
 >
   <LinkGrid links={[
-    { text: "新建常规页面", href: "devguide/shell-and-page/component-based-page-development#creating-regular-pages" },
+    { text: "新建常规页面", href: "devguide/shell-and-page/component-based-page-development#creating-generic-pages" },
     { text: "可视化页面编辑器", href: "devguide/shell-and-page/component-based-page-development#visual-page-editor" },
     { text: "组件通用操作", href: "devguide/shell-and-page/component-based-page-development#component-common-operations" },
     { text: "页面变量", href: "devguide/shell-and-page/component-based-page-development#page-variables" },
@@ -339,11 +339,11 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="快速创建数据录入表单，实现数据收集和提交功能。"
 >
   <LinkGrid links={[
-    { text: "创建数据录入页面", href: "devguide/shell-and-page/data-entry-page#create-data-entry-page" },
-    { text: "配置允许查看和编辑的字段", href: "devguide/shell-and-page/data-entry-page#configure-viewable-editable-fields" },
-    { text: "提交后显示再次录入按钮", href: "devguide/shell-and-page/data-entry-page#show-re-entry-button-after-submission" },
-    { text: "提交后展示结果反馈界面", href: "devguide/shell-and-page/data-entry-page#show-result-feedback-after-submission" },
-    { text: "转换为常规页面进行修改", href: "devguide/shell-and-page/data-entry-page#convert-to-regular-page-for-modification" }
+    { text: "创建数据录入页面", href: "devguide/shell-and-page/data-entry-page#creating-data-entry-page" },
+    { text: "配置允许查看和编辑的字段", href: "devguide/shell-and-page/data-entry-page#configuring-viewable-editable-fields" },
+    { text: "提交后显示再次录入按钮", href: "devguide/shell-and-page/data-entry-page#showing-enter-again-button-after-submission" },
+    { text: "提交后展示结果反馈界面", href: "devguide/shell-and-page/data-entry-page#showing-result-feedback-after-submission" },
+    { text: "转换为常规页面进行修改", href: "devguide/shell-and-page/data-entry-page#converting-to-generic-page-for-modification" }
   ]} />
 </IndexCard>
 

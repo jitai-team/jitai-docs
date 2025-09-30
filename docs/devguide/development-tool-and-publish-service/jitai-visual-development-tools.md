@@ -20,7 +20,7 @@ Within the directory tree, developers can search for elements, modify element ti
 ## Adding elements {#adding-elements}
 ![Element Addition Entry](./img/ide/element-add-entry.png "Element Addition Entry")
 
-When developers click the `+` button to add elements, they must sequentially select the element's Meta and Type. Meta represents the top-level application module classification, including portals, pages, data models, and others. Type represents the subcategory within each Meta, such as regular pages, AI data management pages, or full-code pages under the page Meta.
+When developers click the `+` button to add elements, they must sequentially select the element's Meta and Type. Meta represents the top-level application module classification, including portals, pages, data models, and others. Type represents the subcategory within each Meta, such as generic pages, AI data management pages, or full-code pages under the page Meta.
 
 ![Element Addition Popup](./img/ide/element-add-popup.gif "Element Addition Popup")
 

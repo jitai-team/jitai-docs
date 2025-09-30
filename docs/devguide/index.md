@@ -290,7 +290,7 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
   description="Use the visual editor to build page interfaces, configure components and events, and implement rich user interaction features."
 >
   <LinkGrid links={[
-    { text: "Creating regular pages", href: "devguide/shell-and-page/component-based-page-development#creating-regular-pages" },
+    { text: "Creating generic pages", href: "devguide/shell-and-page/component-based-page-development#creating-generic-pages" },
     { text: "Visual page editor", href: "devguide/shell-and-page/component-based-page-development#visual-page-editor" },
     { text: "Component common operations", href: "devguide/shell-and-page/component-based-page-development#component-common-operations" },
     { text: "Page variables", href: "devguide/shell-and-page/component-based-page-development#page-variables" },
@@ -315,7 +315,7 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
     { text: "Configure Viewable and Editable Fields in Form", href: "devguide/shell-and-page/ai-data-management-page#configure-viewable-editable-fields-in-form" },
     { text: "Configure Fields Displayed in Batch Edit Form", href: "devguide/shell-and-page/ai-data-management-page#configure-fields-displayed-in-batch-edit-form" },
     { text: "Enable AI Data Management Assistant", href: "devguide/shell-and-page/ai-data-management-page#enable-ai-data-management-assistant" },
-    { text: "Convert to Regular Page for Modification", href: "devguide/shell-and-page/ai-data-management-page#convert-to-regular-page-for-modification" }
+    { text: "Convert to Generic Page for Modification", href: "devguide/shell-and-page/ai-data-management-page#convert-to-generic-page-for-modification" }
   ]} />
 </IndexCard>
 
@@ -334,16 +334,16 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
 </IndexCard>
 
 <IndexCard
-  title="Data Entry Page"
+  title="Data Entry Pages"
   href="devguide/shell-and-page/data-entry-page"
   description="Quickly create data entry forms to implement data collection and submission functions."
 >
   <LinkGrid links={[
-    { text: "Create Data Entry Page", href: "devguide/shell-and-page/data-entry-page#create-data-entry-page" },
-    { text: "Configure Viewable and Editable Fields", href: "devguide/shell-and-page/data-entry-page#configure-viewable-editable-fields" },
-    { text: "Show Re-entry Button After Submission", href: "devguide/shell-and-page/data-entry-page#show-re-entry-button-after-submission" },
-    { text: "Show Result Feedback After Submission", href: "devguide/shell-and-page/data-entry-page#show-result-feedback-after-submission" },
-    { text: "Convert to Regular Page for Modification", href: "devguide/shell-and-page/data-entry-page#convert-to-regular-page-for-modification" }
+    { text: "Creating a data entry page", href: "devguide/shell-and-page/data-entry-page#creating-data-entry-page" },
+    { text: "Configuring viewable and editable fields", href: "devguide/shell-and-page/data-entry-page#configuring-viewable-editable-fields" },
+    { text: "Showing enter again button after submission", href: "devguide/shell-and-page/data-entry-page#showing-enter-again-button-after-submission" },
+    { text: "Showing result feedback after submission", href: "devguide/shell-and-page/data-entry-page#showing-result-feedback-after-submission" },
+    { text: "Converting to generic page for modification", href: "devguide/shell-and-page/data-entry-page#converting-to-generic-page-for-modification" }
   ]} />
 </IndexCard>
 
@@ -1969,7 +1969,7 @@ Create unique visual experiences and brand identity. Customize application theme
     { text: "Using Styles", href: "devguide/frontend-ui-customization/page-customization#use-style" },
     { text: "Using Local Resources", href: "devguide/frontend-ui-customization/page-customization#use-local-resources" },
     { text: "Using Ant Design Components", href: "devguide/frontend-ui-customization/page-customization#use-ant-design-components" },
-    { text: "Embedding Existing Regular Pages", href: "devguide/frontend-ui-customization/page-customization#embed-existing-regular-page" },
+    { text: "Embedding Existing Generic Pages", href: "devguide/frontend-ui-customization/page-customization#embed-existing-generic-page" },
     { text: "Using Standard Components", href: "devguide/frontend-ui-customization/page-customization#use-standard-component" },
     { text: "Calling Data Model Functions", href: "devguide/frontend-ui-customization/page-customization#call-data-model-function" },
     { text: "Calling Service Functions", href: "devguide/frontend-ui-customization/page-customization#call-service-function" },

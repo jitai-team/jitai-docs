@@ -164,7 +164,7 @@ Note: This is sample data only, not your final return data
     - comments (comments): Overall comment on the answer sheet
 ![Grading Agent Output](./img/agent-output.png)
 
-Configuration method reference: [Configure Output Parameters](../../ai-agent/agent-input-output#configure-output-results)
+Configuration method reference: [Configure Output Parameters](../../ai-agent/agent-input-output#configuring-output-results)
 
 - **Configure tool invocation**: Add the **Grading Management Page** - `Get Variable Value` as a tool, through which the Agent obtains answer detail data from the grading form on the page.
 Configuration method reference: [Agent Add Page Tools](../../ai-agent/agent-tools#calling-page-functions)。

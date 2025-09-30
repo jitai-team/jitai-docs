@@ -72,7 +72,7 @@ Page-level functionality including built-in functions (such as retrieving page v
 ![Add Page Function](./img/agent/agent-add-page-function-tool.gif "Add Page Function")
 
 :::tip
-Page function calls cannot be tested in the developer portal and require verification in the actual user-facing portal. See [Test Agent in Page Assistant](./agent-input-output#test-agent-in-page-assistant) for details.
+Page function calls cannot be tested in the developer portal and require verification in the actual user-facing portal. See [Test Agent in Page Assistant](./agent-input-output#testing-agent-in-page-assistant) for details.
 :::
 
 ## Tool function management {#tool-function-management}

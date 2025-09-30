@@ -163,7 +163,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
     - 评语(comments)：对答卷的整体评语
 ![阅卷Agent-输出](./img/agent-output.png)
 
-配置方式参考：[配置输出参数](../../ai-agent/agent-input-output#configure-output-results)
+配置方式参考：[配置输出参数](../../ai-agent/agent-input-output#configuring-output-results)
 
 - **配置调用工具**：将**阅卷管理页面**`获取变量值`添加为工具，Agent通过该工具获取页面中评分表单中的答题明细数据。
 

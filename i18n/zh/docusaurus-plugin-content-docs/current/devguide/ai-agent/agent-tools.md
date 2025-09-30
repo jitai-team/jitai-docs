@@ -72,7 +72,7 @@ JitAi支持开发者通过[外部API](../third-party-integration/external-api)�
 ![Agent添加页面函数工具](./img/agent/agent-add-page-function-tool.gif)
 
 :::tip
-在开发者门户中无法验证对页面函数的调用，需切换到用户实际访问的门户中进行验证。参考[在页面助理中测试Agent](./agent-input-output#test-agent-in-page-assistant)。
+在开发者门户中无法验证对页面函数的调用，需切换到用户实际访问的门户中进行验证。参考[在页面助理中测试Agent](./agent-input-output#testing-agent-in-page-assistant)。
 :::
 
 ## 工具函数管理 {#tool-function-management}

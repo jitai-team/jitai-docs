@@ -9,11 +9,11 @@ Data table models are the data foundation of JitAi applications. Each data table
 ## Data Table Creation Entry {#data-table-create-entry}
 ![Model Creation Configuration](./img/model-creation-configuration.png)
 
-In the element tree of the development area, find `Data Models`, click the `+` button on the right side, select `Data Table`, and the `Create New Model` dialog will pop up.
+In the element tree of the development area, find `Data Models`, click the `+` button on the right side, select `Data Table Model`, and the `Create Element > Data Table Model` dialog will pop up.
 
 ![Create New Data Model](./img/create-data-model.png)
 
-Developers fill in the model name in the `Create New Model` dialog, select `Create New Data Table Model` as the creation method. The database and data table names will be automatically generated, or you can select existing database elements and edit the database table name.
+Developers fill in the model name in the `Create Element > Data Table Model` dialog, select `Create New Data Table Model` as the creation method. The database and data table names will be automatically generated, or you can select existing database elements and edit the database table name.
 
 :::tip 
 For creating models based on existing tables, refer to [Creating Data Table Elements from Existing Tables](./create-data-table-from-existing-tables.md)
@@ -21,7 +21,7 @@ For creating models based on existing tables, refer to [Creating Data Table Elem
  
 
 ## Designing Table Fields and Data Types {#design-table-fields-and-data-types}
-JitAi applications have various data types such as `Single Line Text`, `Multi-line Text`, `Rich Text`, `Number`, `Amount`, etc., which can be used as database table fields.
+JitAi applications have various data types such as `Single-line Text`, `Multi-line Text`, `Rich Text`, `Number`, `Currency`, etc., which can be used as database table fields.
 
 ![Field Configuration](./img/field-configuration.png)
 
@@ -35,7 +35,7 @@ The single-line text data type is widely used and is one of the most basic and c
 Single-line text fields are suitable for storing the following types of data: names, usernames, titles, brief descriptions, and other short text information that does not require line breaks.
 
 ## Configuring Table Indexes for Query Optimization {#configure-table-index-optimization}
-In advanced configuration, you can add `Multi-column Composite Unique` and `Composite Index` to data tables to optimize query performance and ensure data integrity.
+In advanced configuration, you can add `Multi-column Unique Index` and `Composite Index` to data tables to optimize query performance and ensure data integrity.
 
 ![Composite Index](./img/joint-index.png)
 ### Multi-column Composite Unique {#multi-column-composite-unique}

@@ -7,7 +7,7 @@ slug: file-templates
 File templates are document generation tools that achieve dynamic content filling through preset variables, and can be used to dynamically generate sales contracts, production work orders, and invoice documents.
 JitAi supports Word templates and Excel templates.
 
-## Word Templates {#word-template}
+## Word Template {#word-template}
 When procurement and sales staff prepare contracts for different customers, the contract format is fixed but customer information and order content vary. Through Word templates, you can set variables such as customer names, product names, quantities, and amounts to quickly generate personalized contract documents.
 
 ![](./img/2/2025-08-29-09-40-12.png)
@@ -28,7 +28,7 @@ Print effect display:
 
 ![](./img/2/2025-08-29-11-14-13.png)
 
-### Creating Word Templates {#create-word-template}
+### Creating Word Template {#create-word-template}
 ![](./img/2/2025-08-29-09-07-21.png)
 
 Place the mouse over the `+` button, select Word template in the "More" option, "File Templates" sub-option.
@@ -89,7 +89,7 @@ After template creation is complete, for detailed instructions on how to generat
 :::
 
 
-## Excel Templates {#excel-template}
+## Excel Template {#excel-template}
 When the finance department creates monthly sales reports, the report format is fixed but data needs to be dynamically filled. Through Excel templates, you can set variables such as sales personnel, product categories, sales quantities, and amounts to quickly generate standardized sales analysis reports.
 
 Original data used in this document:
@@ -104,7 +104,7 @@ Excel document configured with template variables:
 After template creation is complete, for detailed instructions on how to generate and print files, please refer to: [Generating and Printing Files Using File Templates](./generating-and-printing-files-using-file-templates)
 :::
 
-### Creating Excel Templates {#create-excel-template}
+### Creating Excel Template {#create-excel-template}
 Creating Excel templates is the same as creating Word templates.
 
 ![](./img/2/2025-08-29_13-58-35.gif)

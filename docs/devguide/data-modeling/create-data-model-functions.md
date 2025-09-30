@@ -9,7 +9,7 @@ In object-oriented development, functions can be encapsulated within classes to 
 
 ![Model Function 1](./img/model-function-1.png)
 
-Developers can access the function design interface by clicking the `Function Design` tab in the model editor page. Click `New Function` and enter the function name in the dialog box (English names are automatically generated and can be customized by developers).
+Developers can access the function design interface by clicking the `Function Design` tab in the model editor page. Click `Create Function` and enter the function name in the dialog box (English names are automatically generated and can be customized by developers).
 
 ![Model Function 2](./img/model-function-2.png)
 

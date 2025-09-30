@@ -8,11 +8,11 @@ Aggregate Table Model is an advanced data modeling approach provided by JitAi, s
 
 ![](./img/create-aggregate-table.png)
 
-Developers find `Data Model` in the element tree, click the `+` on the right, and select Aggregate Table. 
+Developers find `Data Model` in the element tree, click the `+` on the right, and select `Aggregated Table Model`. 
 
 ![](./img/create-aggregate-table-2.png)
 
-In the `Create Aggregate Table` popup page, enter the name (the English name will be automatically generated), and click the `Confirm` button to enter the aggregate table visual editor.
+In the `Create Element > Aggregated Table Model` popup page, enter the name (the English name will be automatically generated), and click the `Confirm` button to enter the aggregate table visual editor.
 
 ![](./img/aggregate-table-config-page.png)
 
@@ -76,7 +76,7 @@ Aggregate tables can add formula fields based on existing aggregate fields. The 
 
 ![](./img/aggregate-table-add-formula-field.png)
 
-Taking a horizontal join aggregate table as an example, on the data configuration page, click `+Formula Field` to enter the formula configuration panel.
+Taking a horizontal join aggregate table as an example, on the data configuration page, click `+ Formula Field` to enter the formula configuration panel.
 
 ![](./img/aggregate-table-formula-field-panel.png)
 

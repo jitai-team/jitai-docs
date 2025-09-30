@@ -11,11 +11,11 @@ JitAi supports visual creation of object models, with fields and functions only 
 
 ![Create Data Object Model](./img/create-data-object-model.png)
 
-In the element tree of the development area, click the `+` button on the right side of Data Models, select `Data Object Model` from the popup list to open the `New Data Object Model` dialog.
+In the element tree of the development area, click the `+` button on the right side of Data Models, select `Data Object Model` from the popup list to open the `Create Element >  Data Object Model` dialog.
 
 ![Data Object Model Dialog](./img/data-object-model-popup.png)
 
-In the `New Data Object Model` dialog, fill in the model name (the system will automatically generate the English name), click `Confirm` to complete the creation, and automatically enter the full-code editing interface of the data object model.
+In the `Create Element >  Data Object Model` dialog, fill in the model name (the system will automatically generate the English name), click `Confirm` to complete the creation, and automatically enter the full-code editing interface of the data object model.
 
 ## Using Data Object Model {#using-data-object-model}
 The usage of data object models is very flexible, suitable for business logic such as service functions and event handling, serving as data carriers for input parameters or output results, and enabling standardized data transmission between different modules. In actual development processes, data object models are commonly used to express and transform complex data structures, avoiding direct database table operations, thereby improving code maintainability and reusability. Additionally, data object models support multi-layered nesting and composition, meeting data organization requirements in complex business scenarios.

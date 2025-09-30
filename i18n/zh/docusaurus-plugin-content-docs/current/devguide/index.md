@@ -1349,22 +1349,22 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <IndexCard
   title="登录认证"
   href="devguide/user-and-permission/login-authentication"
-  description="用户身份验证和登录方式配置，支持多种认证模式。"
+  description="用户身份验证和登录方式配置，支持多种认证模式，包括第三方OAuth和企业集成。"
 >
   <LinkGrid links={[
-    { text: "创建登录方式", href: "devguide/user-and-permission/login-authentication#creating-login-method" },
+    { text: "创建登录认证", href: "devguide/user-and-permission/login-authentication#creating-login-method" },
     { text: "账号密码登录", href: "devguide/user-and-permission/login-authentication#account-password-login" },
     { text: "手机号登录", href: "devguide/user-and-permission/login-authentication#mobile-phone-login" },
     { text: "阿里云短信", href: "devguide/user-and-permission/login-authentication#aliyun-sms" },
-    { text: "AWS SNS短信", href: "devguide/user-and-permission/login-authentication#aws-sns" },
-    { text: "Twilio短信", href: "devguide/user-and-permission/login-authentication#twilio" },
-    { text: "钉钉自建扫码登录", href: "devguide/user-and-permission/login-authentication#dingtalk-custom-qr-login" },
-    { text: "企业微信自建扫码登录", href: "devguide/user-and-permission/login-authentication#wechat-work-custom-qr-login" },
+    { text: "Twilio", href: "devguide/user-and-permission/login-authentication#twilio" },
+    { text: "AWS SNS", href: "devguide/user-and-permission/login-authentication#aws-sns" },
+    { text: "钉钉自建二维码登录", href: "devguide/user-and-permission/login-authentication#dingtalk-custom-qr-login" },
+    { text: "企业微信自建二维码登录", href: "devguide/user-and-permission/login-authentication#wechat-work-custom-qr-login" },
     { text: "微信登录", href: "devguide/user-and-permission/login-authentication#wechat-login" },
     { text: "微信公众号登录", href: "devguide/user-and-permission/login-authentication#wechat-official-account-login" },
     { text: "微信小程序登录", href: "devguide/user-and-permission/login-authentication#wechat-mini-program-login" },
-    { text: "Github登录", href: "devguide/user-and-permission/login-authentication#github-login" },
-    { text: "Google登录", href: "devguide/user-and-permission/login-authentication#google-login" },
+    { text: "GitHub登录", href: "devguide/user-and-permission/login-authentication#github-login" },
+    { text: "Google登录", href: "devguide/user-and-permission/login-authentication#google-login" }
   ]} />
 </IndexCard>
 
@@ -1656,7 +1656,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "阿里云OSS", href: "devguide/file-processing/file-storage#aliyun-oss" },
     { text: "移动云EOS", href: "devguide/file-processing/file-storage#china-mobile-cloud-eos" },
     { text: "MinIO", href: "devguide/file-processing/file-storage#minio" },
-    { text: "七牛云", href: "devguide/file-processing/file-storage#aliyun-oss" },
+    { text: "七牛云", href: "devguide/file-processing/file-storage#qiniu-cloud" },
     { text: "AWS S3", href: "devguide/file-processing/file-storage#aws-s3" },
     { text: "Cloudflare R2", href: "devguide/file-processing/file-storage#cloudflare-r2" },
     { text: "用环境变量防止配置信息泄露", href: "devguide/file-processing/file-storage#prevent-config-info-leak-with-env-variables" },

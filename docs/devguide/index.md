@@ -1148,7 +1148,7 @@ Design a powerful data foundation for your application. Create data tables, desi
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Data Table Model"
+  title="Creating Data Tables"
   href="devguide/data-modeling/data-table-model"
   description="Basic structure of application data, learn how to create and configure data tables, design field types and constraints."
 >
@@ -1206,7 +1206,7 @@ Design a powerful data foundation for your application. Create data tables, desi
 </IndexCard>
 
 <IndexCard
-  title="Extended Table Model"
+  title="Extension Table Model"
   href="devguide/data-modeling/extended-table-model"
   description="Data extension based on existing tables, implementing business field extension and multi-table data integration through association with other data tables."
 >
@@ -1349,19 +1349,19 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
   description="User identity verification and login method configuration, supporting multiple authentication modes."
 >
   <LinkGrid links={[
-    { text: "Creating Login Method", href: "devguide/user-and-permission/login-authentication#creating-login-method" },
+    { text: "Creating Login Auth", href: "devguide/user-and-permission/login-authentication#creating-login-method" },
     { text: "Account Password Login", href: "devguide/user-and-permission/login-authentication#account-password-login" },
-    { text: "Mobile Phone Login", href: "devguide/user-and-permission/login-authentication#mobile-phone-login" },
+    { text: "Phone Login", href: "devguide/user-and-permission/login-authentication#mobile-phone-login" },
     { text: "Alibaba Cloud SMS", href: "devguide/user-and-permission/login-authentication#aliyun-sms" },
     { text: "Twilio", href: "devguide/user-and-permission/login-authentication#twilio" },
     { text: "AWS SNS", href: "devguide/user-and-permission/login-authentication#aws-sns" },
-    { text: "DingTalk Custom QR Login", href: "devguide/user-and-permission/login-authentication#dingtalk-custom-qr-login" },
-    { text: "WeChat Work Custom QR Login", href: "devguide/user-and-permission/login-authentication#wechat-work-custom-qr-login" },
+    { text: "DingTalk Self-built QR Code Login", href: "devguide/user-and-permission/login-authentication#dingtalk-custom-qr-login" },
+    { text: "Wecom Self-built QR Code Login", href: "devguide/user-and-permission/login-authentication#wechat-work-custom-qr-login" },
     { text: "WeChat Login", href: "devguide/user-and-permission/login-authentication#wechat-login" },
     { text: "WeChat Official Account Login", href: "devguide/user-and-permission/login-authentication#wechat-official-account-login" },
     { text: "WeChat Mini Program Login", href: "devguide/user-and-permission/login-authentication#wechat-mini-program-login" },
-    { text: "Github Login", href: "devguide/user-and-permission/login-authentication#github-login" },
-    { text: "Google Login", href: "devguide/user-and-permission/login-authentication#google-login" },
+    { text: "GitHub Login", href: "devguide/user-and-permission/login-authentication#github-login" },
+    { text: "Google Login", href: "devguide/user-and-permission/login-authentication#google-login" }
   ]} />
 </IndexCard>
 
@@ -1653,7 +1653,7 @@ Easily handle various file requirements in applications. Support file upload and
     { text: "Alibaba Cloud OSS", href: "devguide/file-processing/file-storage#aliyun-oss" },
     { text: "China Mobile Cloud EOS", href: "devguide/file-processing/file-storage#china-mobile-cloud-eos" },
     { text: "MinIO", href: "devguide/file-processing/file-storage#minio" },
-    { text: "Qiniu Cloud", href: "devguide/file-processing/file-storage#aliyun-oss" },
+    { text: "Qiniu Cloud", href: "devguide/file-processing/file-storage#qiniu-cloud" },
     { text: "AWS S3", href: "devguide/file-processing/file-storage#aws-s3" },
     { text: "Cloudflare R2", href: "devguide/file-processing/file-storage#cloudflare-r2" },
     { text: "Use Environment Variables to Prevent Config Info Leak", href: "devguide/file-processing/file-storage#prevent-config-info-leak-with-env-variables" },
@@ -1663,7 +1663,7 @@ Easily handle various file requirements in applications. Support file upload and
 </IndexCard>
 
 <IndexCard
-  title="File Templates"
+  title="Creating File Templates"
   href="devguide/file-processing/file-templates"
   description="Document template generation and processing, supporting dynamic content filling and format conversion."
 >

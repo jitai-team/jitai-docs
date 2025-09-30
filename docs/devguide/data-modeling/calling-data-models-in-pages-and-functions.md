@@ -11,17 +11,17 @@ When developing applications on the JitAi platform, data models are not only use
 
 The JitAi platform has built-in a series of commonly used data operation functions for each data model, making it convenient for developers to flexibly call them in pages, forms, and custom function logic to implement CRUD operations and statistics on data. Common built-in model functions include:
 
-- **Get Single Record**: Retrieve a single data record based on conditions.
-- **Query Multiple Records**: Query multiple data records, supporting conditional filtering and pagination.
-- **Create Data**: Insert new data records into the data table.
-- **Bulk Create or Update**: Bulk insert multiple data records or bulk update existing data.
-- **Update Data by Condition**: Bulk update data records that meet specified conditions.
+- **Get One Record**: Retrieve a single data record based on conditions.
+- **Query Multiple Rows**: Query multiple data records, supporting conditional filtering and pagination.
+- **Add Data**: Insert new data records into the data table.
+- **Batch Add or Update**: Bulk insert multiple data records or bulk update existing data.
+- **Update Data by Selected Condition**: Bulk update data records that meet specified conditions.
 - **Update Data**: Update specified data records.
-- **Delete Data by Condition**: Bulk delete data records that meet specified conditions.
+- **Delete Data by Selected Condition**: Bulk delete data records that meet specified conditions.
 - **Delete Data by Primary Key**: Precisely delete specified data records by primary key.
 - **Update Data by Primary Key**: Precisely update specified data records by primary key.
 - **Statistics**: Perform statistical analysis on certain fields of the data model, such as counting, summing, averaging, etc.
-- **Bulk Import Data Conversion**: Bulk import external data and perform data conversion processing (data must contain primary key values).
+- **Batch Import or Repace**: Bulk import external data and perform data conversion processing (data must contain primary key values).
 
 These built-in functions greatly simplify the data operation process. Developers only need to call the corresponding methods in page or function logic and pass the required parameters to complete complex data processing tasks.
 

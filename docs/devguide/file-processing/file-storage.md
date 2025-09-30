@@ -4,7 +4,7 @@ slug: file-storage
 ---
 
 # Configuring Your Own File Storage Service {#configuring-your-own-file-storage-service}
-File upload and usage is a core functionality of web applications, widely used in scenarios such as attachment uploads, avatar management, and image previews. JitAi provides developers with a complete file storage solution, supporting 7 storage methods: Alibaba Cloud OSS, China Mobile Cloud EOS, MinIO, Qiniu Cloud Storage, AWS S3, Cloudflare R2, and local disk storage.
+File upload and usage is a core functionality of web applications, widely used in scenarios such as attachment uploads, avatar management, and image previews. JitAi provides developers with a complete file storage solution, supporting 7 storage methods: alioss, EOS, MinIO, Qiniu Cloud, AWS S3, Cloudflare R2, and disk storage.
 
 ## Local Storage Configuration {#local-storage-configuration}
 Local disk storage saves file resources in the server's local disk. The system automatically generates 30×30 pixel and 300×300 pixel thumbnails for uploaded images while preserving the original size images. JitAi intelligently selects appropriate image sizes based on different usage scenarios, effectively saving network bandwidth and improving page loading speed.
@@ -14,11 +14,11 @@ JitAi supports adding storage services in the following two locations:
 
 ![](./img/1/2025-08-28-14-04-15.png)
 
-Hover the mouse over the `+` button to the right of "Search Elements", select "File Storage" from the "More" menu, then select disk storage type.
+Hover the mouse over the `+` button to the right of "Search Elements", select `Storages` from the `More` menu, then select `Storages` type.
 
 ![](./img/1/2025-08-28-14-13-19.png)
 
-Place the mouse over the `+` button to the right of the "File Storage" menu in the menu bar, and directly select disk storage type in the popup panel.
+Place the mouse over the `+` button to the right of the `Storages` menu in the menu bar, and directly select `disk` type in the popup panel.
 
 ![](./img/1/2025-08-28-15-52-02.png)
 
@@ -51,14 +51,14 @@ Prerequisites for using Alibaba Cloud OSS:
 
 ![](./img/1/2025-08-28-15-04-57.png)
 
-Place the mouse on the "File Storage" menu, then place the mouse on the `+` button on the right side, and select alioss storage.
+Place the mouse on the `Storages` menu, then place the mouse on the `+` button on the right side, and select `alioss`.
 
 ![](./img/1/2025-08-28-15-06-21.png)
 
 In the Alibaba Cloud OSS configuration panel, configure parameters such as filename, element path, accessKeyId, accessKeySecret, endPoint, and bucketName.
 
-### China Mobile Cloud EOS {#china-mobile-cloud-eos}
-The method to trigger the China Mobile Cloud EOS configuration panel is the same as Alibaba Cloud OSS, and the configuration parameters are also the same.
+### EOS {#china-mobile-cloud-eos}
+The method to trigger the EOS configuration panel is the same as Alibaba Cloud OSS, and the configuration parameters are also the same.
 
 ![](./img/1/2025-08-28-15-24-50.png)
 

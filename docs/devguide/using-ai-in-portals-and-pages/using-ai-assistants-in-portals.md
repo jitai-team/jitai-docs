@@ -3,20 +3,20 @@ sidebar_position: 1
 slug: using-ai-assistants-in-portals
 ---
 
-# Using AI Assistants in Generic Portals
+# Using AI Assistant in Generic Portals
 
-## Configuring AI Assistants
+## Configuring AI assistant {#configuring-ai-assistant}
 
 In the visual development interface of regular portals, switch to the **AI Assistant** tab to enter the AI assistant configuration interface:
 
 ![Portals - Bind AI Assistant](./img/portal-assistant-config.png)
 
 After enabling the AI assistant switch, you need to configure the following parameters:
-- **AI Assistant**: Select one from existing [AI Assistants](../ai-assistant)
+- **AI Assistant**: Select one from existing [AI Assistant](../ai-assistant)
 - **Welcome Message and Opening**: Customize the [Welcome Message and Opening](../ai-assistant/welcome-message-and-opening) content
 - **Output Runtime Logs**: Configure the output content of [Runtime Logs](../ai-assistant/ai-assistant-input-output#message-output) during assistant execution
 
-## Runtime Effects
+## Runtime effects {#runtime-effects}
 
 After enabling AI assistant in the portal, the navigation bar will display the "AI Assistant" function entry:
 
@@ -26,6 +26,6 @@ After enabling AI assistant in the portal, the navigation bar will display the "
 
 The AI assistant interface adopts a left-right split layout: the left side displays historical [Chat History](../ai-assistant/ai-chat-history), and the right side is the assistant conversation area.
 
-## Feature Highlights
+## Feature highlights {#feature-highlights}
 
 The JitAi framework has achieved deep integration between AI assistants and portal pages. The previous example briefly demonstrated using AI assistants to open functional pages. In actual scenarios, AI assistants in portals are typically at the subsystem level, with their functional capabilities completely customizable by developers.

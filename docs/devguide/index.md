@@ -325,11 +325,11 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
   description="AI automatically generates data charts through natural language descriptions of requirements, supporting users to adjust chart styles and statistical dimensions at any time."
 >
   <LinkGrid links={[
-    { text: "Create AI Data Analysis Page", href: "devguide/shell-and-page/ai-data-analysis-page#create-ai-data-analysis-page" },
-    { text: "Page Configuration", href: "devguide/shell-and-page/ai-data-analysis-page#page-configuration" },
-    { text: "Runtime Effects Demo", href: "devguide/shell-and-page/ai-data-analysis-page#run-effects" },
-    { text: "Full Code Development", href: "devguide/shell-and-page/ai-data-analysis-page#full-code-development" },
-    { text: "Quick Create", href: "devguide/shell-and-page/ai-data-analysis-page#quick-create" }
+    { text: "Create AI data analysis page", href: "devguide/shell-and-page/ai-data-analysis-page#create-ai-data-analysis-page" },
+    { text: "Page configuration", href: "devguide/shell-and-page/ai-data-analysis-page#page-configuration" },
+    { text: "Runtime effects demo", href: "devguide/shell-and-page/ai-data-analysis-page#runtime-effects" },
+    { text: "Full code development", href: "devguide/shell-and-page/ai-data-analysis-page#full-code-development" },
+    { text: "Quick create", href: "devguide/shell-and-page/ai-data-analysis-page#quick-create" }
   ]} />
 </IndexCard>
 
@@ -379,7 +379,7 @@ Enhance user experience with intelligent AI elements. Integrate AI assistants, a
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Using AI Assistants in Portals"
+  title="Using AI Assistant in Portals"
   href="devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals"
   description="Learn how to use AI assistants into portal interfaces, providing users with intelligent help and guidance throughout their workflow."
 >
@@ -389,7 +389,7 @@ Enhance user experience with intelligent AI elements. Integrate AI assistants, a
 </IndexCard>
 
 <IndexCard
-  title="Using AI Assistants in Component Pages"
+  title="Using AI Assistant in Component Pages"
   href="devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages"
   description="Embed AI assistants into component-based pages to enhance user interactions and provide contextual assistance for specific tasks."
 >
@@ -1860,18 +1860,20 @@ Make your application accessible to global users. Support multiple languages, re
   href="devguide/internationalization/creating-language-packages"
   description="Learn how to create custom language packages for your application, including structure definition and content organization."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+      { text: "Creating language packages", href: "devguide/internationalization/creating-language-packages#creating-language-packages" },
+      { text: "Translating built-in terms", href: "devguide/internationalization/creating-language-packages#translating-built-in-terms" },
+      { text: "Adding new terms", href: "devguide/internationalization/creating-language-packages#adding-new-terms" },
+      { text: "Importing terms", href: "devguide/internationalization/creating-language-packages#importing-terms" }
+  ]} />
 </IndexCard>
 
 <IndexCard
-  title="Extending System Builtin Language Packages"
+  title="Extending System Built-in Language Packages"
   href="devguide/internationalization/extending-system-builtin-language-packages"
   description="Extend and customize existing system language packages to meet specific business requirements and regional needs."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
   </div>
 </IndexCard>
 
@@ -1880,9 +1882,36 @@ Make your application accessible to global users. Support multiple languages, re
   href="devguide/internationalization/how-to-translate-page-terms"
   description="Master the techniques for translating page content, including dynamic text replacement and context-aware translations."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+      { text: "Automatic text translation", href: "devguide/internationalization/how-to-translate-page-terms#automatic-text-translation" },
+      { text: "Dynamic text translation", href: "devguide/internationalization/how-to-translate-page-terms#dynamic-text-translation" },
+      { text: "DOM node attribute translation", href: "devguide/internationalization/how-to-translate-page-terms#dom-node-attribute-translation" },
+      { text: "Using API translation", href: "devguide/internationalization/how-to-translate-page-terms#using-api-translation" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Translation Ignore Rules"
+  href="devguide/internationalization/translate-ignore-rules"
+  description="Configure rules to exclude specific content from translation, ensuring proper handling of brand names, technical terms, and other non-translatable content."
+>
+  <LinkGrid links={[
+      { text: "Basic usage", href: "devguide/internationalization/translate-ignore-rules#basic-usage" },
+      { text: "Advanced configuration", href: "devguide/internationalization/translate-ignore-rules#advanced-configuration" },
+      { text: "Configuration method", href: "devguide/internationalization/translate-ignore-rules#configuration-method" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Default Language"
+  href="devguide/internationalization/default-language"
+  description="Configure the default language for your application to ensure optimal user experience for first-time visitors and users without explicit language preferences."
+>
+  <LinkGrid links={[
+      { text: "Default language configuration", href: "devguide/internationalization/default-language#default-language-configuration" },
+      { text: "Language selection strategy", href: "devguide/internationalization/default-language#language-selection-strategy" },
+      { text: "Configuration recommendations", href: "devguide/internationalization/default-language#configuration-recommendations" }
+  ]} />
 </IndexCard>
 
 </div>

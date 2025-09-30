@@ -1077,13 +1077,14 @@ Intelligent agents with reasoning and action capabilities. Through prompts and t
   description="Master Agent's input variable configuration, output result settings, streaming output, and various calling methods."
 >
   <LinkGrid columns={2} links={[
-    { text: "Configure Input Variables", href: "devguide/ai-agent/agent-input-output#configure-input-variables" },
-    { text: "Use Variables in Prompts", href: "devguide/ai-agent/agent-input-output#use-variables-in-prompt" },
-    { text: "Configure Output Results", href: "devguide/ai-agent/agent-input-output#configure-output-results" },
-    { text: "Agent Streaming Output", href: "devguide/ai-agent/agent-input-output#agent-streaming-output" },
-    { text: "Call Agent in Frontend Functions", href: "devguide/ai-agent/agent-input-output#call-agent-in-frontend-functions" },
-    { text: "Call Agent in Backend Service Functions", href: "devguide/ai-agent/agent-input-output#call-agent-in-backend-service-functions" },
-    { text: "Test Agent in Page Assistant", href: "devguide/ai-agent/agent-input-output#test-agent-in-page-assistant" }
+    { text: "Configuring input variables", href: "devguide/ai-agent/agent-input-output#configuring-input-variables" },
+    { text: "Using variables in prompts", href: "devguide/ai-agent/agent-input-output#using-variables-in-prompts" },
+    { text: "Configuring output results", href: "devguide/ai-agent/agent-input-output#configuring-output-results" },
+    { text: "Output result data types", href: "devguide/ai-agent/agent-input-output#output-result-data-types" },
+    { text: "Agent streaming output", href: "devguide/ai-agent/agent-input-output#agent-streaming-output" },
+    { text: "Calling Agent in frontend functions", href: "devguide/ai-agent/agent-input-output#calling-agent-in-frontend-functions" },
+    { text: "Calling Agent in backend service functions", href: "devguide/ai-agent/agent-input-output#calling-agent-in-backend-service-functions" },
+    { text: "Testing Agent in page assistant", href: "devguide/ai-agent/agent-input-output#testing-agent-in-page-assistant" }
   ]} />
 </IndexCard>
 

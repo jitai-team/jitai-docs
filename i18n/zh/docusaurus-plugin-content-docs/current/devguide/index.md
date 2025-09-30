@@ -1081,13 +1081,14 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="详细了解Agent的输入输出配置和数据处理方式，包括变量配置、流式输出和调用方法。"
 >
   <LinkGrid columns={2} links={[
-    { text: "配置输入变量", href: "devguide/ai-agent/agent-input-output#configure-input-variables" },
-    { text: "在提示词中使用变量", href: "devguide/ai-agent/agent-input-output#use-variables-in-prompt" },
-    { text: "配置输出结果", href: "devguide/ai-agent/agent-input-output#configure-output-results" },
+    { text: "配置输入变量", href: "devguide/ai-agent/agent-input-output#configuring-input-variables" },
+    { text: "在提示词中使用变量", href: "devguide/ai-agent/agent-input-output#using-variables-in-prompts" },
+    { text: "配置输出结果", href: "devguide/ai-agent/agent-input-output#configuring-output-results" },
+    { text: "输出结果数据类型", href: "devguide/ai-agent/agent-input-output#output-result-data-types" },
     { text: "Agent的流式输出", href: "devguide/ai-agent/agent-input-output#agent-streaming-output" },
-    { text: "在前端函数中调用Agent", href: "devguide/ai-agent/agent-input-output#call-agent-in-frontend-functions" },
-    { text: "在后端服务函数中调用Agent", href: "devguide/ai-agent/agent-input-output#call-agent-in-backend-service-functions" },
-    { text: "在页面助理中测试Agent", href: "devguide/ai-agent/agent-input-output#test-agent-in-page-assistant" }
+    { text: "在前端函数中调用Agent", href: "devguide/ai-agent/agent-input-output#calling-agent-in-frontend-functions" },
+    { text: "在后端服务函数中调用Agent", href: "devguide/ai-agent/agent-input-output#calling-agent-in-backend-service-functions" },
+    { text: "在页面助理中测试Agent", href: "devguide/ai-agent/agent-input-output#testing-agent-in-page-assistant" }
   ]} />
 </IndexCard>
 

@@ -124,9 +124,9 @@ This guide is designed for beginners to quickly get up and running. By completin
 
 ### Creating Page and Enabling AI Assistant {#creating-page-enabling-assistant}
 
-1. Create a new `Regular Page` instance element
+1. Create a new `Generic Page` instance element
 
-   ![Creating Regular Page Instance Element](./img/jitairobot/create-regular-page-instance-element.png "Creating Regular Page Instance Element")
+   ![Creating Generic Page Instance Element](./img/jitairobot/create-generic-page-instance-element.png "Creating Generic Page Instance Element")
 
 2. Enable the AI assistant: Select the `Customer Service` AI assistant instance element you just created. This will make the AI assistant available directly in the development environment
    

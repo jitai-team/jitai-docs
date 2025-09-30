@@ -9,11 +9,16 @@ interface ModuleCardProps {
   module: {
     title: string;
     description: string;
+    link?: string;
   };
 }
 
 const ModuleCard: React.FC<ModuleCardProps> = ({ module }) => (
-  <div className={styles.moduleCard}>
+  <div className={styles.moduleCard} onClick={() => {
+    if (module.link) {
+      window.open(module.link, '_blank');
+    }
+  }}>
     <div className={styles.moduleContent}>
       <div className={styles.moduleHeader}>
         <h4 className={styles.moduleTitle}>{module.title}</h4>

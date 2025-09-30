@@ -22,7 +22,7 @@ The JitAi development framework integrates nearly 10 mainstream LLM vendors and 
 Creating a new LLM vendor element:
 <VideoPlayer relatePath="/docs/tutorial/ai_func_llm.mp4" />
 
-The "Question Bank Management" page uses the "AI Data Management Page" type. We need to convert it to a "Regular Page" type for greater flexibility:
+The "Question Bank Management" page uses the "AI Data Management Page" type. We need to convert it to a "Generic Page" type for greater flexibility:
 
 <VideoPlayer relatePath="/docs/tutorial/ai_func_page_convert.mp4" />
 

@@ -12,7 +12,7 @@ Based on the abstract concept of "System = Structure + Process", the development
 - **Portals**: System access entry points, applications provide three types of portals by default
   - User Area Portal: Operation interface for end users
   - Developer Portal: Configuration interface for developers  
-  - Administrator Portal: Management interface for system administrators
+  - Manager Portal: Management interface for system administrators
   - Extended Portals: Custom dedicated entry points based on business requirements
 
 - **Pages**: Functional module interfaces that implement specific business functions through component-based layout or code development

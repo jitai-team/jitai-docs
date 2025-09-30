@@ -261,14 +261,14 @@ page_header = page.newComponent("components.Container", {
 ```
 
 ## FAQ
-**Q: When should I use Markdown Page instead of regular pages?**
-A: Use Markdown Page when you need to display static document content, such as help documentation, operation guides, etc. For dynamic interactive features, use regular pages.
+**Q: When should I use Markdown Page instead of generic pages?**
+A: Use Markdown Page when you need to display static document content, such as help documentation, operation guides, etc. For dynamic interactive features, use generic pages.
 
 **Q: How to dynamically update Markdown page content?**
 A: Markdown page content comes from the index.md file. You need to modify the file content and reload the page element.
 
 **Q: Can I embed other components in Markdown pages?**
-A: No. Markdown pages can only render static content. For dynamic components, use regular pages with Modal display.
+A: No. Markdown pages can only render static content. For dynamic components, use generic pages with Modal display.
 
 **Q: How to add Markdown pages to portal navigation?**
 A: Add the page element's fullName to the pages array in the portal configuration.

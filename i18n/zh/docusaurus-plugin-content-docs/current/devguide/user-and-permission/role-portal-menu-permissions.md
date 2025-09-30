@@ -22,7 +22,7 @@ RBAC（基于角色的访问控制）是一种常用的权限管理机制，通�
 应用的创建者默认被授予开发者角色，拥有[开发者门户](../shell-and-page/portal-navigation-design#developer-portal)的完整权限，可以进行应用开发工作（包括角色创建以及对角色权限的配置）。
 
 ### 管理员 {#administrator}
-应用的创建者默认被授予管理员角色，拥有应用的完全控制权限，可以对应用进行任意的修改和配置。管理员日常使用功能主要集中在[管理者门户](../shell-and-page/portal-navigation-design#admin-portal)。
+应用的创建者默认被授予管理员角色，拥有应用的完全控制权限，可以对应用进行任意的修改和配置。管理员日常使用功能主要集中在[管理者门户](../shell-and-page/portal-navigation-design#manager-portal)。
 
 :::tip
 **只能**由开发者在开发者门户进行应用角色的创建以及授予门户菜单权限。

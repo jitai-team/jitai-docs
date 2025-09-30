@@ -3,7 +3,7 @@ sidebar_position: 1
 slug: using-ai-assistants-in-portals
 ---
 
-# Using AI Assistant in Regular Portals
+# Using AI Assistant in Generic Portals
 
 ## Configuring AI assistant {#configuring-ai-assistant}
 

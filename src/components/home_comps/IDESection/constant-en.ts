@@ -3,6 +3,7 @@ const CONTENT = {
   title: 'Jit Development Tools',
   subtitle: 'Orchestration-based business module composition with programming-based logic development, automatic high-quality code generation, and native coding support',
   color: '#b45309',
+  videoHoverText: 'Click to view HD video in fullscreen',
   coreFeatures:[
       {
         title: 'Simple, Flexible, and Consistent Development Paradigm',

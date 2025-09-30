@@ -3,6 +3,7 @@ const CONTENT = {
   title: 'Jit 开发工具',
   subtitle: '编排式定义业务模块、组合模块，编程式开发业务处理逻辑，自动生成高质量代码，同时支持原生编码',
   color: '#b45309',
+  videoHoverText: '点击全屏查看高清视频',
   coreFeatures:[
       {
         title: '简单、灵活、一致性的开发范式',

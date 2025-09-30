@@ -3,11 +3,13 @@
 :root {
   --module-card-width: 320px;
   --module-desc-line-clamp: 3;
+  --aspect-ratio: 16/9;
 }
 
 [data-locale="zh"] {
-  --module-card-width: 250px;
-  --module-desc-line-clamp: 2;
+  --module-card-width: 250px !important;
+  --module-desc-line-clamp: 2 !important;
+  --aspect-ratio: 16/10 !important;
 }
 
 .ideSection {
@@ -100,7 +102,7 @@
   z-index: 2;
   flex: 5;
   width: 100%;
-  aspect-ratio: 16/10;
+  aspect-ratio: var(--aspect-ratio);
   margin: 2rem;
 }
 
@@ -222,7 +224,7 @@
 }
 
 .modulesRow:nth-child(2) {
-  animation-delay: -20s;
+  animation-delay: -30s;
 }
 
 @keyframes slideLeft {

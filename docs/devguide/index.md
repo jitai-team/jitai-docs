@@ -1094,7 +1094,7 @@ Intelligent agents with reasoning and action capabilities. Through prompts and t
   description="Learn how to integrate knowledge bases with Agent to implement RAG functionality for enhanced response accuracy."
 >
   <LinkGrid links={[
-    { text: "Adding Knowledge Bases in Agent", href: "devguide/ai-agent/agent-knowledge-base#integrate-knowledge-base-rag" }
+    { text: "Adding knowledge bases in Agent", href: "devguide/ai-agent/agent-knowledge-base#integrate-knowledge-base-rag" }
   ]} />
 </IndexCard>
 

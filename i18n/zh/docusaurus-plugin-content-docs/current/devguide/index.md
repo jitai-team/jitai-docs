@@ -1098,7 +1098,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="学习如何为Agent集成知识库，实现检索增强生成，提升回答的准确性和时效性。"
 >
   <LinkGrid links={[
-    { text: "集成知识库实现检索增强生成（RAG）", href: "devguide/ai-agent/agent-knowledge-base#integrate-knowledge-base-rag" }
+    { text: "在Agent中添加知识库", href: "devguide/ai-agent/agent-knowledge-base#integrate-knowledge-base-rag" }
   ]} />
 </IndexCard>
 

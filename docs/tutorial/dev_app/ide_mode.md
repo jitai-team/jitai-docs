@@ -65,7 +65,7 @@ The specific implementation steps are:
 
 ### Creating menus and pages
 
-Now we'll use a more flexible page type (Regular Page) to create the "Test Paper Management" page.
+Now we'll use a more flexible page type (Generic Page) to create the "Test Paper Management" page.
 
 #### Regular page introduction
 

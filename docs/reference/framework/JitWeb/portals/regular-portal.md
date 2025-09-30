@@ -1,10 +1,10 @@
 ---
 slug: regular-portal
 ---
-# Regular Portal
-Regular Portal is a complete portal solution provided by JitWeb, implementing an enterprise-level portal framework based on the React technology stack. It is responsible for application entry management, navigation system construction, and user interface unification, with built-in complete portal components such as left navigation, top navigation, and user information display, while supporting responsive adaptation for both PC and mobile devices.
+# Generic Portal
+Generic Portal is a complete portal solution provided by JitWeb, implementing an enterprise-level portal framework based on the React technology stack. It is responsible for application entry management, navigation system construction, and user interface unification, with built-in complete portal components such as left navigation, top navigation, and user information display, while supporting responsive adaptation for both PC and mobile devices.
 
-The Regular Portal element hierarchy is Meta (shells.Meta) → Type (shells.DefaultType) → Instance. Developers can quickly create Regular Portal instance elements through JitAI's visual development tools.
+The Generic Portal element hierarchy is Meta (shells.Meta) → Type (shells.DefaultType) → Instance. Developers can quickly create Generic Portal instance elements through JitAI's visual development tools.
 
 Of course, developers can also create their own Type elements or modify the official shells.DefaultType element provided by JitAI in their own App to implement their own encapsulation.
 
@@ -354,7 +354,7 @@ Inherited menu configuration, from parent application's menus.
 
 ## Advanced Features
 ### Permission Control
-Regular Portal has built-in complete permission management mechanism, supporting role-based menu access control.
+Generic Portal has built-in complete permission management mechanism, supporting role-based menu access control.
 
 #### Configuration Example and Usage Example
 ```json title="Role Permission Configuration"
@@ -386,7 +386,7 @@ if (portal.allowAccess) {
 ```
 
 ### Mobile Adaptation
-Regular Portal automatically adapts to mobile devices, providing a native app-like user experience.
+Generic Portal automatically adapts to mobile devices, providing a native app-like user experience.
 
 #### Configuration Example and Usage Example
 ```json title="Mobile Menu Configuration"

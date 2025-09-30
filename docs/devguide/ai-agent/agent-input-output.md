@@ -79,4 +79,4 @@ During Agent development, frequent debugging is required. Developers can create 
 
 [How to call Agent in AI Assistant?](../ai-assistant/process-orchestration-node-configuration#ai-agent)
 
-[How to integrate AI Assistant in pages?](../shell-and-page/component-based-page-development#integrate-ai-assistant-in-pages)
+[How to integrate AI Assistant in pages?](../shell-and-page/component-based-page-development#enabling-ai-assistant)

@@ -308,8 +308,8 @@ static getEventList(): Array<{
 2. **Restart service**: Restart the desktop client
 3. **Trigger packaging**: Access the application page, the system will automatically repackage
 
-#### Test in Regular Pages
-Enter the JitAi visual development tool, create a `Regular Page`, and add the just-created `Counter` component to the page.
+#### Test in Generic Pages
+Enter the JitAi visual development tool, create a `Generic Page`, and add the just-created `Counter` component to the page.
 
 When switching to code mode, you'll see the following configuration automatically generated in the page's `scheme.json` file:
 

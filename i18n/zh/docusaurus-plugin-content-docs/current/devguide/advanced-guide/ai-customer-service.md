@@ -126,7 +126,7 @@ slug: ai-customer-service
 
 1. 新建一个`常规页面`实例元素
 
-   ![新建常规页面实例元素](./img/jitairobot/create-regular-page-instance-element.png)
+   ![新建常规页面实例元素](./img/jitairobot/create-generic-page-instance-element.png)
 
 2. 启用AI助理：选择刚才创建的名为`智能客服`的AI助理实例元素，即可在开发区可以直接使用AI助理
    
@@ -148,11 +148,4 @@ slug: ai-customer-service
 
 ## 相关文档
 - **[新增后端Type元素](../../extguide/extend-element-family-classes)** - 学习Type元素扩展开发，包含钉钉机器人集成实战案例
-
-
-
-
-
-
-
 

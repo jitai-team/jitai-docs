@@ -91,23 +91,23 @@ Powerful toolchain for efficient development. Master visual development environm
 
 <IndexCard
   title="JitAi Visual Development Tools"
-  href="devguide/development-tool-and-publish-service/jitai-visual-development-tools"
+  href="devguide/development-tool-and-publish-service/visual-development-tool"
   description="Master the powerful visual development environment, familiarize yourself with IDE functional areas, and learn to switch between visual and source code modes."
 >
   <LinkGrid links={[
-    { text: "Element directory tree", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#element-directory-tree" },
-    { text: "Adding elements", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#adding-elements" },
-    { text: "Visual editor", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#visual-editor" },
-    { text: "Source code editor", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#source-code-editor" },
-    { text: "Source code file tree", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#source-code-file-tree" },
-    { text: "Application settings", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#application-settings" },
-    { text: "Basic information", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#basic-information" },
-    { text: "Default elements", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#default-elements" },
-    { text: "Environment variables", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#environment-variables" },
-    { text: "Portal switching", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#portal-switching" },
-    { text: "Personal center", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#personal-center" },
-    { text: "Language switching", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#language-switching" },
-    { text: "Navigation tabs", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#navigation-tabs" }
+    { text: "Element directory tree", href: "devguide/development-tool-and-publish-service/visual-development-tool#element-directory-tree" },
+    { text: "Adding elements", href: "devguide/development-tool-and-publish-service/visual-development-tool#adding-elements" },
+    { text: "Visual editor", href: "devguide/development-tool-and-publish-service/visual-development-tool#visual-editor" },
+    { text: "Source code editor", href: "devguide/development-tool-and-publish-service/visual-development-tool#source-code-editor" },
+    { text: "Source code file tree", href: "devguide/development-tool-and-publish-service/visual-development-tool#source-code-file-tree" },
+    { text: "Application settings", href: "devguide/development-tool-and-publish-service/visual-development-tool#application-settings" },
+    { text: "Basic information", href: "devguide/development-tool-and-publish-service/visual-development-tool#basic-information" },
+    { text: "Default elements", href: "devguide/development-tool-and-publish-service/visual-development-tool#default-elements" },
+    { text: "Environment variables", href: "devguide/development-tool-and-publish-service/visual-development-tool#environment-variables" },
+    { text: "Portal switching", href: "devguide/development-tool-and-publish-service/visual-development-tool#portal-switching" },
+    { text: "Personal center", href: "devguide/development-tool-and-publish-service/visual-development-tool#personal-center" },
+    { text: "Language switching", href: "devguide/development-tool-and-publish-service/visual-development-tool#language-switching" },
+    { text: "Navigation tabs", href: "devguide/development-tool-and-publish-service/visual-development-tool#navigation-tabs" }
   ]} />
 </IndexCard>
 
@@ -1278,10 +1278,10 @@ Design a powerful data foundation for your application. Create data tables, desi
 <IndexCard
   title="Calling Data Models with AI Agents"
   href="devguide/data-modeling/calling-data-models-in-ai-agent"
-  description="Add data model functions as Agent tools, enabling AI to execute data creation, reading, updating, and deletion operations."
+  description="Add data model functions as Agent tools, enabling AI to intelligently perform CRUD operations and automated data processing."
 >
   <LinkGrid links={[
-    { text: "Data Models as Agent Tools", href: "devguide/data-modeling/calling-data-models-in-ai-agent#data-models-as-agent-tools" }
+    { text: "Data models as Agent tools", href: "devguide/data-modeling/calling-data-models-in-ai-agent#data-models-as-agent-tools" }
   ]} />
 </IndexCard>
 
@@ -1292,10 +1292,10 @@ Design a powerful data foundation for your application. Create data tables, desi
   description="Configure and manage multiple database connections, supporting multi-data source application development."
 >
   <LinkGrid links={[
-    { text: "Create Database Connection", href: "devguide/data-modeling/manage-database-connections#create-database-connection" },
-    { text: "Multi-database Connection Management", href: "devguide/data-modeling/manage-database-connections#multi-database-connection-management" },
-    { text: "Database Connection Security Configuration", href: "devguide/data-modeling/manage-database-connections#database-connection-security-configuration" },
-    { text: "Connection Test and Troubleshooting", href: "devguide/data-modeling/manage-database-connections#connection-test-and-troubleshooting" }
+    { text: "Creating database connections", href: "devguide/data-modeling/manage-database-connections#create-database-connection" },
+    { text: "Multi-database connection management", href: "devguide/data-modeling/manage-database-connections#multi-database-connection-management" },
+    { text: "Database connection security configuration", href: "devguide/data-modeling/manage-database-connections#database-connection-security-configuration" },
+    { text: "Connection testing and troubleshooting", href: "devguide/data-modeling/manage-database-connections#connection-test-and-troubleshooting" }
   ]} />
 </IndexCard>
 
@@ -1305,9 +1305,9 @@ Design a powerful data foundation for your application. Create data tables, desi
   description="Learn about various database types and connection configurations supported by JitAi."
 >
   <LinkGrid links={[
-    { text: "Scenario Selection Suggestions", href: "devguide/data-modeling/supported-database-vendors#scenario-selection-suggestions" },
-    { text: "Cloud Vendor Compatibility", href: "devguide/data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
-    { text: "Database Element Usage", href: "devguide/data-modeling/supported-database-vendors#database-element-usage" }
+    { text: "Scenario selection recommendations", href: "devguide/data-modeling/supported-database-vendors#scenario-selection-recommendations" },
+    { text: "Cloud vendor compatibility", href: "devguide/data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
+    { text: "Database element usage", href: "devguide/data-modeling/supported-database-vendors#database-element-usage" }
   ]} />
 </IndexCard>
 
@@ -1324,9 +1324,9 @@ Ensure data consistency and reliability in complex business operations. Master d
   description="Database transaction control and consistency management to ensure reliability of data operations."
 >
   <LinkGrid links={[
-    { text: "Default Transaction Management Mechanism", href: "devguide/data-modeling/transaction-management#default-transaction-management-mechanism" },
-    { text: "Manual Transaction Commit/Rollback", href: "devguide/data-modeling/transaction-management#manual-transaction-commit-rollback" },
-    { text: "Transaction Decorator", href: "devguide/data-modeling/transaction-management#transaction-decorator" }
+    { text: "Default transaction management mechanism", href: "devguide/data-modeling/transaction-management#default-transaction-management-mechanism" },
+    { text: "Manual transaction commit/rollback", href: "devguide/data-modeling/transaction-management#manual-transaction-commit-rollback" },
+    { text: "Transaction decorator", href: "devguide/data-modeling/transaction-management#transaction-decorator" }
   ]} />
 </IndexCard>
 

@@ -1445,27 +1445,28 @@ Empower applications with powerful business processing capabilities. Handle comp
   description="Backend business logic implementation, encapsulating reusable business functions through service elements, providing API interfaces and data processing services."
 >
   <LinkGrid columns={2} links={[
-    { text: "Creating Service Functions", href: "devguide/business-logic-development/creating-service-elements#create-service-functions" },
-    { text: "Editing Service Functions in Source Code Mode", href: "devguide/business-logic-development/creating-service-elements#edit-service-functions-source-code-mode" },
-    { text: "Adding New Dependency Libraries", href: "devguide/business-logic-development/creating-service-elements#add-new-dependency-library" },
-    { text: "Using Cross-App Service Elements to Call Authorized Interfaces", href: "devguide/business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-interfaces" },
-    { text: "Creating Cross-App Service Elements", href: "devguide/business-logic-development/creating-service-elements#create-cross-app-service-elements" },
-    { text: "Using Cross-App Service Elements in Function Logic", href: "devguide/business-logic-development/creating-service-elements#use-cross-app-service-elements-in-functions" }
+    { text: "Creating service functions", href: "devguide/business-logic-development/creating-service-elements#create-service-functions" },
+    { text: "Editing service functions in source code mode", href: "devguide/business-logic-development/creating-service-elements#edit-service-functions-source-code-mode" },
+    { text: "Adding new dependency libraries", href: "devguide/business-logic-development/creating-service-elements#add-new-dependency-library" },
+    { text: "Using cross-app service elements to call authorized APIs", href: "devguide/business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-apis" },
+    { text: "Creating cross-app service elements", href: "devguide/business-logic-development/creating-service-elements#create-cross-app-service-elements" },
+    { text: "Using cross-app service elements in function logic", href: "devguide/business-logic-development/creating-service-elements#use-cross-app-service-elements-in-functions" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="Calling Other Elements in Service Functions"
+  title="Calling Elements in Service Functions"
   href="devguide/business-logic-development/calling-other-elements-in-service-functions"
   description="Learn how to call other elements from service functions, including models, other services, external APIs, and system components for comprehensive business logic implementation."
 >
   <LinkGrid columns={2} links={[
-    { text: "Using Platform APIs to Call Other Elements", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#use-platform-api-to-call-other-elements" },
-    { text: "Calling Data Model Functions", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-data-model-function" },
-    { text: "Calling Other Service Functions", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-other-service-functions" },
-    { text: "Calling External APIs", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-external-api" },
-    { text: "Calling AI Large Language Models", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-ai-llm" },
-    { text: "Calling AI Agents", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-ai-agent" }
+    { text: "Using platform APIs to call other elements", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#use-platform-api-to-call-other-elements" },
+    { text: "Typical examples", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#typical-examples" },
+    { text: "Calling data model functions", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-data-model-function" },
+    { text: "Calling other service functions", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-other-service-functions" },
+    { text: "Calling external APIs", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-external-api" },
+    { text: "Calling AI large language models", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-ai-llm" },
+    { text: "Calling AI agents", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-ai-agent" }
   ]} />
 </IndexCard>
 
@@ -1475,8 +1476,8 @@ Empower applications with powerful business processing capabilities. Handle comp
   description="Explore practical usage scenarios and best practices for service elements across different business contexts and application architectures."
 >
   <LinkGrid links={[
-    { text: "Where Service Functions Are Used", href: "devguide/business-logic-development/service-elements-usage-scenarios#where-service-functions-are-used" },
-    { text: "Helping AI Understand Service Functions More Accurately", href: "devguide/business-logic-development/service-elements-usage-scenarios#help-ai-understand-service-functions" }
+    { text: "Where service functions are used", href: "devguide/business-logic-development/service-elements-usage-scenarios#where-service-functions-are-used" },
+    { text: "Helping AI understand service functions accurately", href: "devguide/business-logic-development/service-elements-usage-scenarios#help-ai-understand-service-functions" }
   ]} />
 </IndexCard>
 

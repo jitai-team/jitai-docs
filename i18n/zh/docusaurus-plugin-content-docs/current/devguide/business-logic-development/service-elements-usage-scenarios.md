@@ -15,7 +15,7 @@ slug: service-elements-usage-scenarios
 
 完整的准确的函数名称、入参和出参名称、函数描述可以让AI更准确地理解函数功能和用法，从而更准确地调用服务函数。
 
-![服务元素定义文件](./img/service-element-definition-file.png)
+![服务元素定义文件](./img/service-element-definition-file.png "服务元素定义文件")
 
 借助可视化编辑器，开发者可以方便地填写函数名称、定义入参和出参、函数描述，functionList会自动生成到服务元素的e.json文件中。
 

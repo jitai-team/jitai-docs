@@ -1,10 +1,9 @@
 ---
 sidebar_position: 2
-slug: jitai-visual-development-tools
-title: JitAi Visual Development Tools
+slug: visual-development-tool
 ---
 
-# JitAi Visual Development Tools
+# Visual Development Tool
 
 JitAi provides developers with a comprehensive dual-mode application development environment that seamlessly integrates visual design and full-code development capabilities, combining programming and orchestration workflows (referred to as the IDE). Developers can access the application development interface by clicking the `Develop` button in the [Node Console](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment) within the DevOps management tool, or by navigating to the `Developer Portal` within the application. The IDE automatically loads the source code for all application modules, enabling developers to perform both visual editing and source code editing simultaneously.
 

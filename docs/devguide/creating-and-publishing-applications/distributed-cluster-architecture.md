@@ -1,20 +1,19 @@
 ---
 sidebar_position: 5
 slug: distributed-cluster-architecture
-title: Distributed Cluster Architecture for Unlimited Horizontal Scaling
 ---
 # Distributed Cluster Architecture for Unlimited Horizontal Scaling
 
-JitAi supports scaling from single-node deployment to large-scale enterprise cluster deployment through hierarchical management of organizations, nodes, runtime environments, and applications, achieving resource scheduling and load balancing.
+JitAi enables seamless scaling from single-node deployments to large-scale enterprise cluster architectures through hierarchical management of teams, nodes, runtime environments, and applications, delivering comprehensive resource scheduling and load balancing capabilities.
 
-## Four-Layer Architecture Model {#four-layer-architecture}
+## Understanding the four-layer architecture model {#four-layer-architecture}
 
-Each organization can have multiple nodes, each node can participate in multiple runtime environments, and each runtime environment can include multiple nodes and deploy multiple applications.
+Teams can encompass multiple nodes, with each node participating in multiple runtime environments. Runtime environments can span multiple nodes and host multiple application deployments.
 
 ```mermaid
 graph TB
-    subgraph "Organization Layer"
-        Org[Organization]
+    subgraph "Team Layer"
+        Team[Team]
     end
     
     subgraph "Node Layer"
@@ -37,14 +36,14 @@ graph TB
         App4[Custom Application]
     end
     
-    %% Organization manages nodes and environments
-    Org --> Node1
-    Org --> Node2
-    Org --> Node3
-    Org --> Env1
-    Org --> Env2
-    Org --> Env3
-    Org --> Env4
+    %% Team manages nodes and environments
+    Team --> Node1
+    Team --> Node2
+    Team --> Node3
+    Team --> Env1
+    Team --> Env2
+    Team --> Env3
+    Team --> Env4
     
     %% Environments deploy applications
     Env1 --> App1
@@ -61,9 +60,9 @@ graph TB
     Node3 -.Participates.- Env3
 ```
 
-## Enterprise Cluster Deployment Architecture {#enterprise-cluster-deployment}
+## Designing enterprise cluster deployment architecture {#enterprise-cluster-deployment}
 
-### Typical Deployment Topology {#typical-deployment-topology}
+### Implementing typical deployment topology {#typical-deployment-topology}
 
 ```mermaid
 graph TB
@@ -107,9 +106,9 @@ graph TB
     DemoEnv --> App5
 ```
 
-### Multi-Dimensional Environment Division {#multi-dimensional-environment-division}
+### Teamanizing multi-dimensional environment division {#multi-dimensional-environment-division}
 
-Runtime environments support flexible division by different dimensions to meet complex enterprise deployment requirements:
+Runtime environments support flexible organization across multiple dimensions to accommodate complex enterprise deployment requirements:
 
 | Classification Dimension | Environment Examples | Use Cases |
 |----------|----------|----------|
@@ -118,7 +117,7 @@ Runtime environments support flexible division by different dimensions to meet c
 | **By Customer** | Customer A, Customer B, Demo | Multi-tenant deployment |
 | **By Purpose** | Performance Testing, Security Testing | Specialized testing requirements |
 
-### Entry Address Configuration Strategy {#entry-address-configuration}
+### Configuring entry address strategies {#entry-address-configuration}
 
 **Entry Address Configuration Examples:**
 
@@ -130,40 +129,40 @@ Runtime environments support flexible division by different dimensions to meet c
 | Customer A Environment | a.company.com | a1.company.com | :8082 |
 | Demo Environment | demo.company.com | - | :8083 |
 
-## Cluster Scaling Strategies {#cluster-scaling-strategies}
+## Implementing cluster scaling strategies {#cluster-scaling-strategies}
 
-### Horizontal Scaling Mode {#horizontal-scaling}
+### Deploying horizontal scaling modes {#horizontal-scaling}
 
-**Node-Level Scaling**
-- Add physical or virtual nodes to the cluster
-- Automatic load balancing and request distribution
-- Support cross-regional node deployment
+**Node-level scaling**
+- Add physical or virtual nodes to expand cluster capacity
+- Enable automatic load balancing and intelligent request distribution
+- Support cross-regional node deployment for geographic redundancy
 
-**Environment-Level Scaling**
-- Create new runtime environments on existing nodes
-- Support dynamic environment migration and replication
-- Achieve business isolation and resource optimization
+**Environment-level scaling**
+- Create new runtime environments on existing infrastructure
+- Enable dynamic environment migration and seamless replication
+- Achieve business isolation and optimize resource utilization
 
-**Application-Level Scaling**
-- Deploy the same application in multiple environments
-- Support version parallelism and canary releases
-- Achieve high availability and disaster recovery backup
+**Application-level scaling**
+- Deploy identical applications across multiple environments
+- Support version parallelism and canary release strategies
+- Ensure high availability and comprehensive disaster recovery
 
-### Load Balancing and Fault Tolerance {#load-balancing-fault-tolerance}
+### Implementing load balancing and fault tolerance {#load-balancing-fault-tolerance}
 
-**Multi-Node Load Balancing**
-- Intelligent request routing and distribution
-- Node health checks and automatic failover
-- Support weight configuration and traffic control
+**Multi-node load balancing**
+- Intelligent request routing and dynamic distribution
+- Continuous node health monitoring and automatic failover
+- Advanced weight configuration and granular traffic control
 
-**Environment-Level Fault Tolerance**
-- Fault isolation between environments
-- Automatic fault detection and recovery
-- Data backup and synchronization mechanisms
+**Environment-level fault tolerance**
+- Complete fault isolation between runtime environments
+- Proactive fault detection and automated recovery systems
+- Robust data backup and real-time synchronization mechanisms
 
-## Architecture Constraints and Best Practices {#architecture-constraints-best-practices}
+## Understanding architecture constraints and best practices {#architecture-constraints-best-practices}
 
-### Version Management Constraints {#version-management-constraints}
+### Managing version constraints {#version-management-constraints}
 
 | Scenario | Rule | Status | Description |
 |------|------|------|------|
@@ -171,7 +170,7 @@ Runtime environments support flexible division by different dimensions to meet c
 | Same application in different environments | Different version deployment | ✅ Allowed | E.g.: Development environment deploys Application A v1.0, production environment deploys Application A v1.1 |
 | Same application in same environment | Multiple versions coexist | ❌ Prohibited | Only one version of the same application can exist in the same environment |
 
-### Network Access Constraints {#network-access-constraints}
+### Configuring network access constraints {#network-access-constraints}
 
 | Operation Type | Rule Description | Status | Example |
 |----------|----------|------|------|
@@ -180,19 +179,19 @@ Runtime environments support flexible division by different dimensions to meet c
 | Address sharing | Multiple environments share the same entry | ❌ Prohibited | Two environments cannot use `test.com` simultaneously |
 | Conflict detection | System automatically detects conflicts | 🔍 Automatic | Real-time conflict checking and prompting during configuration |
 
-### Deployment Best Practices {#deployment-best-practices}
+### Following deployment best practices {#deployment-best-practices}
 
-**Version Management**
-- Use different environments to test different versions of applications
-- Achieve smooth application version upgrades through environment switching
-- Establish clear version naming and release specifications
+**Version management**
+- Utilize distinct environments for comprehensive application version testing
+- Achieve seamless application version upgrades through strategic environment switching
+- Establish clear version naming conventions and standardized release specifications
 
-**Network Configuration**
-- Use meaningful domain prefixes to distinguish environments
-- Configure backup entry addresses for important environments
-- Avoid frequent modifications to production environment entry addresses
+**Network configuration**
+- Implement meaningful domain prefixes for clear environment identification
+- Configure redundant entry addresses for critical production environments
+- Minimize modifications to production environment entry addresses for stability
 
-**Resource Planning**
-- Allocate node resources reasonably based on business load
-- Regularly evaluate and adjust environment configurations
+**Resource planning**
+- Strategically allocate node resources based on comprehensive business load analysis
+- Conduct regular evaluations and proactive adjustments of environment configurations
 

@@ -1,12 +1,12 @@
 ---
 sidebar_position: 3
-slug: regular-page
+slug: generic-page
 ---
 
-# Regular Page
-Regular Page is a visual page type based on a grid layout system, implementing rapid page construction through drag-and-drop component orchestration. It provides complete component management, event system, and lifecycle mechanisms, supporting frontend-backend separation architecture, balancing development efficiency and functional flexibility. Regular Page is suitable for most enterprise application interface requirements and is the most widely used page type in JitWeb.
+# Generic Page
+Generic Page is a visual page type based on a grid layout system, implementing rapid page construction through drag-and-drop component orchestration. It provides complete component management, event system, and lifecycle mechanisms, supporting frontend-backend separation architecture, balancing development efficiency and functional flexibility. Generic Page is suitable for most enterprise application interface requirements and is the most widely used page type in JitWeb.
 
-The Regular Page element hierarchy is Meta (pages.Meta) → Type (pages.GridPageType) → Instance. Developers can quickly create Regular Page instance elements through JitAI's visual development tools.
+The Generic Page element hierarchy is Meta (pages.Meta) → Type (pages.GridPageType) → Instance. Developers can quickly create Generic Page instance elements through JitAI's visual development tools.
 
 Of course, developers can also create their own Type elements or modify the official pages.GridPageType element provided by JitAI in their own App to implement their own encapsulation.
 
@@ -26,7 +26,7 @@ pages/MyStandardPage/          # Page name (path can be customized)
 #### e.json File
 ```json title="Element Declaration Configuration"
 {
-  "title": "My Regular Page",
+  "title": "My Generic Page",
   "type": "pages.GridPageType",
   "frontBundleEntry": "./index.ts",
   "platform": "PC",
@@ -515,12 +515,12 @@ Page permission configuration object, controlling page access permissions.
 
 ## Advanced Features
 ### Page Inheritance
-Regular Page supports inheritance mechanism, where child pages can inherit components, variables, and methods from parent pages, with support for overriding and extension.
+Generic Page supports inheritance mechanism, where child pages can inherit components, variables, and methods from parent pages, with support for overriding and extension.
 
 #### Configuration Example and Usage Example
 ```json title="Child Page e.json Configuration"
 {
-  "title": "Extended Regular Page", 
+  "title": "Extended Generic Page", 
   "type": "pages.GridPageType",
   "frontBundleEntry": "./index.ts",
   "extend": "pages.BaseStandardPage"
@@ -555,7 +555,7 @@ class ExtendedPage extends Jit.Pages["pages.BaseStandardPage"] {
 ```
 
 ### AI Integration Support
-Regular Page has built-in AI assistant integration capabilities, supporting intelligent interaction and auxiliary functions.
+Generic Page has built-in AI assistant integration capabilities, supporting intelligent interaction and auxiliary functions.
 
 ```typescript title="AI Function Integration"
 class AIEnabledPage extends Jit.Pages["pages.GridPageType"] {

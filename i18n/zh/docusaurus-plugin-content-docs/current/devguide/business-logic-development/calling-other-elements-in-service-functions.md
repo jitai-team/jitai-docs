@@ -17,7 +17,8 @@ result = element.func1(params)
 ```
 `app`是JitAi运行平台提供的运行时对象，指向当前应用，详情参考[App](../../reference/runtime-platform/backend/applications/App)参考文档。
 
-## 几个典型示例
+## 几个典型示例 {#typical-examples}
+
 ### 调用数据模型函数 {#call-data-model-function}
 调用[数据模型内置函数](../../reference/framework/JitORM/data-models#model-built-in-functions)或者[数据模型自定义函数](../data-modeling/create-data-model-functions)完成增删改查操作。
 

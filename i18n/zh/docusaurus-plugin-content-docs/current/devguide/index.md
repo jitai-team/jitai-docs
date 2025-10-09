@@ -1452,7 +1452,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "创建服务函数", href: "devguide/business-logic-development/creating-service-elements#create-service-functions" },
     { text: "源码模式编辑服务函数", href: "devguide/business-logic-development/creating-service-elements#edit-service-functions-source-code-mode" },
     { text: "添加新的依赖库", href: "devguide/business-logic-development/creating-service-elements#add-new-dependency-library" },
-    { text: "使用跨App服务元素调用授权接口", href: "devguide/business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-interfaces" },
+    { text: "使用跨App服务元素调用授权接口", href: "devguide/business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-apis" },
     { text: "创建跨App服务元素", href: "devguide/business-logic-development/creating-service-elements#create-cross-app-service-elements" },
     { text: "在函数逻辑中使用跨App服务元素", href: "devguide/business-logic-development/creating-service-elements#use-cross-app-service-elements-in-functions" }
   ]} />
@@ -1465,6 +1465,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid columns={2} links={[
     { text: "使用平台API调用其它元素", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#use-platform-api-to-call-other-elements" },
+    { text: "几个典型示例", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#typical-examples" },
     { text: "调用数据模型函数", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-data-model-function" },
     { text: "调用其它服务函数", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-other-service-functions" },
     { text: "调用外部API", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-external-api" },

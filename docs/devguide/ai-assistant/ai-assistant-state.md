@@ -9,7 +9,7 @@ Runtime state data is the "memory bank" during AI assistant process execution, s
 
 ## State data storage repository {#state-data-storage-repository}
 We need to configure a persistent storage repository for it, with the following options:
-- **Memory Storage**: Fast speed, but data is lost after restart, suitable for development and testing.
+- **In-memory**: Fast speed, but data is lost after restart, suitable for development and testing.
 - **Relational Database**: Data persistence, supports complex queries, more powerful functionality, suitable for production environments. Currently supports [MySQL database](../data-modeling/manage-database-connections) and [PostgreSQL database](../data-modeling/manage-database-connections).
 
 If not configured, the desktop version will use memory storage by default, and the service version will use the built-in database (MySQL) for storage.
@@ -18,7 +18,7 @@ The setup steps are as follows:
 
 ![AI助理-高级设置](./img/assistant/assistant-state.png)
 
-Click the `Settings` button in the upper right corner of the visual editor to open the settings window and configure the **Runtime State Storage Repository**.
+Click the `Settings` button in the upper right corner of the visual editor to open the settings window and configure the **Runtime state storage**.
 
 ## Runtime state data content {#state-data-content}
 Runtime state data includes the following categories:

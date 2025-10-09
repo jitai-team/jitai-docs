@@ -1310,7 +1310,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="了解JitAi支持的各种数据库类型和连接配置。"
 >
   <LinkGrid links={[
-    { text: "场景选择建议", href: "devguide/data-modeling/supported-database-vendors#scenario-selection-suggestions" },
+    { text: "场景选择建议", href: "devguide/data-modeling/supported-database-vendors#scenario-selection-recommendations" },
     { text: "与云厂商的兼容性说明", href: "devguide/data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
     { text: "数据库元素使用", href: "devguide/data-modeling/supported-database-vendors#database-element-usage" }
   ]} />

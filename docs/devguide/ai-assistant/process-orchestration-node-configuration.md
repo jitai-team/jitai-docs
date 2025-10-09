@@ -64,8 +64,8 @@ We need to assign values to these parameters. The configuration method is as fol
 
 ![Node Configuration - AIAgent - Input Parameters](./img/assistant/aiagent-input.png)
 
-Click the ` → ` button on the connection to open the input parameter configuration window. The left side shows the [AI Agent’s input Parameters](../ai-agent/agent-input-output#configure-input-variables) , and the right side allows you to select data from [runtime state data](./ai-assistant-state.md#state-data-content) to assign values to the Agent's variables.
-After this node completes execution, it will store the [Agent's output results](../ai-agent/agent-input-output#configure-output-results) in the runtime state for use by other nodes.
+Click the ` → ` button on the connection to open the input parameter configuration window. The left side shows the [AI Agent’s input Parameters](../ai-agent/agent-input-output#configuring-input-variables) , and the right side allows you to select data from [runtime state data](./ai-assistant-state.md#state-data-content) to assign values to the Agent's variables.
+After this node completes execution, it will store the [Agent's output results](../ai-agent/agent-input-output#configuring-output-results) in the runtime state for use by other nodes.
 
 ### Action in conversation {#action-in-conversation}
 

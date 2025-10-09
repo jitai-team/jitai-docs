@@ -31,7 +31,7 @@ this.app.aiassistants.ClientManagementAssistant.run("Query Customer", {"paramA":
 
 ### Visual calling {#visual-calling-agent}
 
-In statements, select `Agent` → the Agent you want to call → `Run`, and pass in the [AI Agent's input parameters](../ai-agent/agent-input-output#configure-input-variables).
+In statements, select `Agent` → the Agent you want to call → `Run`, and pass in the [AI Agent's input parameters](../ai-agent/agent-input-output#configuring-input-variables).
 
 ![AI Agent - Call](./img/call-agent-in-page.png)
 ![AI Agent - Call with Parameters](./img/call-agent-in-page-input.png)

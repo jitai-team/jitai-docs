@@ -1043,15 +1043,15 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="学习如何创建ReActAgent，配置系统提示词、大模型参数、输入输出变量，以及运行状态存储等基础配置。"
 >
   <LinkGrid columns={2} links={[
-    { text: "创建ReActAgent", href: "devguide/ai-agent/create-ai-agent#create-react-agent" },
-    { text: "编写系统提示词", href: "devguide/ai-agent/create-ai-agent#write-system-prompt" },
-    { text: "选择模型并配置参数", href: "devguide/ai-agent/create-ai-agent#select-model-and-configure-parameters" },
-    { text: "为Agent编写简介描述", href: "devguide/ai-agent/create-ai-agent#write-agent-description" },
-    { text: "配置运行状态存储仓", href: "devguide/ai-agent/create-ai-agent#configure-runtime-state-storage" },
+    { text: "创建ReActAgent", href: "devguide/ai-agent/create-ai-agent#creating-react-agent" },
+    { text: "编写系统提示词", href: "devguide/ai-agent/create-ai-agent#writing-system-prompts" },
+    { text: "选择模型并配置参数", href: "devguide/ai-agent/create-ai-agent#selecting-models-configuring-parameters" },
+    { text: "为Agent编写简介描述", href: "devguide/ai-agent/create-ai-agent#writing-agent-descriptions" },
+    { text: "配置运行状态存储仓", href: "devguide/ai-agent/create-ai-agent#configuring-runtime-state-storage" },
     { text: "内存存储", href: "devguide/ai-agent/create-ai-agent#memory-storage" },
     { text: "数据库存储", href: "devguide/ai-agent/create-ai-agent#database-storage" },
-    { text: "源码模式修改Agent", href: "devguide/ai-agent/create-ai-agent#modify-agent-in-source-code-mode" },
-    { text: "自定义回调处理器", href: "devguide/ai-agent/create-ai-agent#custom-callback-processor" }
+    { text: "源码模式修改Agent", href: "devguide/ai-agent/create-ai-agent#modifying-agents-source-code-mode" },
+    { text: "自定义回调处理器", href: "devguide/ai-agent/create-ai-agent#custom-callback-processors" }
   ]} />
 </IndexCard>
 
@@ -1061,16 +1061,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="深入了解Agent中各种工具的使用方法和最佳实践，包括模型函数、服务函数、MCP服务、外部API和页面函数。"
 >
   <LinkGrid columns={2} links={[
-    { text: "Agent调用模型函数", href: "devguide/ai-agent/agent-tools#agent-call-model-functions" },
-    { text: "Agent调用服务函数", href: "devguide/ai-agent/agent-tools#agent-calling-service-functions" },
-    { text: "Agent调用MCP服务", href: "devguide/ai-agent/agent-tools#agent-call-mcp-service" },
-    { text: "将MCP配置转为环境变量", href: "devguide/ai-agent/agent-tools#convert-mcp-config-to-environment-variables" },
-    { text: "Agent调用外部API", href: "devguide/ai-agent/agent-tools#agent-call-external-api" },
-    { text: "Agent调用页面函数", href: "devguide/ai-agent/agent-tools#agent-call-page-functions" },
-    { text: "启用/关闭工具函数", href: "devguide/ai-agent/agent-tools#enable-disable-tool-functions" },
+    { text: "Agent调用模型函数", href: "devguide/ai-agent/agent-tools#calling-model-functions" },
+    { text: "Agent调用服务函数", href: "devguide/ai-agent/agent-tools#calling-service-functions" },
+    { text: "Agent调用MCP服务", href: "devguide/ai-agent/agent-tools#calling-mcp-servers" },
+    { text: "将MCP配置转为环境变量", href: "devguide/ai-agent/agent-tools#converting-mcp-config-to-environment-variable" },
+    { text: "Agent调用外部API", href: "devguide/ai-agent/agent-tools#calling-external-apis" },
+    { text: "Agent调用页面函数", href: "devguide/ai-agent/agent-tools#calling-page-functions" },
+    { text: "工具函数管理", href: "devguide/ai-agent/agent-tools#tool-function-management" },
+    { text: "启用/关闭工具函数", href: "devguide/ai-agent/agent-tools#enabling-disabling-tool-functions" },
     { text: "工具函数调用前/后事件触发", href: "devguide/ai-agent/agent-tools#tool-function-call-pre-post-event-triggering" },
     { text: "工具函数执行前的人工确认", href: "devguide/ai-agent/agent-tools#manual-confirmation-before-tool-execution" },
-    { text: "限制工具函数调用的用户角色", href: "devguide/ai-agent/agent-tools#restrict-user-roles-for-tool-calls" }
+    { text: "限制工具函数调用的用户角色", href: "devguide/ai-agent/agent-tools#restricting-user-roles-for-tool-calls" }
   ]} />
 </IndexCard>
 
@@ -1080,13 +1081,14 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="详细了解Agent的输入输出配置和数据处理方式，包括变量配置、流式输出和调用方法。"
 >
   <LinkGrid columns={2} links={[
-    { text: "配置输入变量", href: "devguide/ai-agent/agent-input-output#configure-input-variables" },
-    { text: "在提示词中使用变量", href: "devguide/ai-agent/agent-input-output#use-variables-in-prompt" },
-    { text: "配置输出结果", href: "devguide/ai-agent/agent-input-output#configure-output-results" },
+    { text: "配置输入变量", href: "devguide/ai-agent/agent-input-output#configuring-input-variables" },
+    { text: "在提示词中使用变量", href: "devguide/ai-agent/agent-input-output#using-variables-in-prompts" },
+    { text: "配置输出结果", href: "devguide/ai-agent/agent-input-output#configuring-output-results" },
+    { text: "输出结果数据类型", href: "devguide/ai-agent/agent-input-output#output-result-data-types" },
     { text: "Agent的流式输出", href: "devguide/ai-agent/agent-input-output#agent-streaming-output" },
-    { text: "在前端函数中调用Agent", href: "devguide/ai-agent/agent-input-output#call-agent-in-frontend-functions" },
-    { text: "在后端服务函数中调用Agent", href: "devguide/ai-agent/agent-input-output#call-agent-in-backend-service-functions" },
-    { text: "在页面助理中测试Agent", href: "devguide/ai-agent/agent-input-output#test-agent-in-page-assistant" }
+    { text: "在前端函数中调用Agent", href: "devguide/ai-agent/agent-input-output#calling-agent-in-frontend-functions" },
+    { text: "在后端服务函数中调用Agent", href: "devguide/ai-agent/agent-input-output#calling-agent-in-backend-service-functions" },
+    { text: "在页面助理中测试Agent", href: "devguide/ai-agent/agent-input-output#testing-agent-in-page-assistant" }
   ]} />
 </IndexCard>
 
@@ -1096,7 +1098,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="学习如何为Agent集成知识库，实现检索增强生成，提升回答的准确性和时效性。"
 >
   <LinkGrid links={[
-    { text: "集成知识库实现检索增强生成（RAG）", href: "devguide/ai-agent/agent-knowledge-base#integrate-knowledge-base-rag" }
+    { text: "在Agent中添加知识库", href: "devguide/ai-agent/agent-knowledge-base#integrate-knowledge-base-rag" }
   ]} />
 </IndexCard>
 

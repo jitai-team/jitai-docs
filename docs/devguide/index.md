@@ -91,23 +91,23 @@ Powerful toolchain for efficient development. Master visual development environm
 
 <IndexCard
   title="JitAi Visual Development Tools"
-  href="devguide/development-tool-and-publish-service/jitai-visual-development-tools"
+  href="devguide/development-tool-and-publish-service/visual-development-tool"
   description="Master the powerful visual development environment, familiarize yourself with IDE functional areas, and learn to switch between visual and source code modes."
 >
   <LinkGrid links={[
-    { text: "Element directory tree", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#element-directory-tree" },
-    { text: "Adding elements", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#adding-elements" },
-    { text: "Visual editor", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#visual-editor" },
-    { text: "Source code editor", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#source-code-editor" },
-    { text: "Source code file tree", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#source-code-file-tree" },
-    { text: "Application settings", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#application-settings" },
-    { text: "Basic information", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#basic-information" },
-    { text: "Default elements", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#default-elements" },
-    { text: "Environment variables", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#environment-variables" },
-    { text: "Portal switching", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#portal-switching" },
-    { text: "Personal center", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#personal-center" },
-    { text: "Language switching", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#language-switching" },
-    { text: "Navigation tabs", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#navigation-tabs" }
+    { text: "Element directory tree", href: "devguide/development-tool-and-publish-service/visual-development-tool#element-directory-tree" },
+    { text: "Adding elements", href: "devguide/development-tool-and-publish-service/visual-development-tool#adding-elements" },
+    { text: "Visual editor", href: "devguide/development-tool-and-publish-service/visual-development-tool#visual-editor" },
+    { text: "Source code editor", href: "devguide/development-tool-and-publish-service/visual-development-tool#source-code-editor" },
+    { text: "Source code file tree", href: "devguide/development-tool-and-publish-service/visual-development-tool#source-code-file-tree" },
+    { text: "Application settings", href: "devguide/development-tool-and-publish-service/visual-development-tool#application-settings" },
+    { text: "Basic information", href: "devguide/development-tool-and-publish-service/visual-development-tool#basic-information" },
+    { text: "Default elements", href: "devguide/development-tool-and-publish-service/visual-development-tool#default-elements" },
+    { text: "Environment variables", href: "devguide/development-tool-and-publish-service/visual-development-tool#environment-variables" },
+    { text: "Portal switching", href: "devguide/development-tool-and-publish-service/visual-development-tool#portal-switching" },
+    { text: "Personal center", href: "devguide/development-tool-and-publish-service/visual-development-tool#personal-center" },
+    { text: "Language switching", href: "devguide/development-tool-and-publish-service/visual-development-tool#language-switching" },
+    { text: "Navigation tabs", href: "devguide/development-tool-and-publish-service/visual-development-tool#navigation-tabs" }
   ]} />
 </IndexCard>
 

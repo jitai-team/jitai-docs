@@ -21,7 +21,7 @@ Jit应用层的元素模块
 
 ![](../img/ide_mode_111641.png)
 
-阅读[JitAi可视化开发工具](../../devguide/development-tool-and-publish-service/jitai-visual-development-tools)了解更多。
+阅读[JitAi可视化开发工具](../../devguide/development-tool-and-publish-service/visual-development-tool)了解更多。
 
 回顾上一步[用简易模式搭建题库管理](./easy_mode)，切换到专业模式后，可以在「开发者门户」中对应了：
 

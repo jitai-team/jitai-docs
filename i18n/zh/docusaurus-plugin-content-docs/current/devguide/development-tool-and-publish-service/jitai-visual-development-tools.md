@@ -1,9 +1,9 @@
 ---
 sidebar_position: 2
-slug: jitai-visual-development-tools
+slug: visual-development-tool
 ---
 
-# JitAi可视化开发工具
+# 可视化开发工具
 
 JitAi为开发者提供了可视化和全代码、编程与编排双模式的应用开发工具(后续简称IDE)。在运维管理工具的[节点控制台](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment)中点击`开发`按钮或在应用内切换到`开发者门户`均可进入应用开发界面，IDE会自动加载所有应用模块的源码，开发者可以同时进行可视化编辑和源码编辑。
 

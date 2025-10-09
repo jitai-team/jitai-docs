@@ -31,7 +31,7 @@ this.app.aiassistants.ClientManagementAssistant.run("查询客户", {"paramA": "
 
 ### 可视化调用 {#visual-calling-agent}
 
-在语句中选择`Agent` → 你要调用的Agent → `运行`，并传入[AI Agent的输入参数](../ai-agent/agent-input-output#configure-input-variables)。
+在语句中选择`Agent` → 你要调用的Agent → `运行`，并传入[AI Agent的输入参数](../ai-agent/agent-input-output#configuring-input-variables)。
 
 ![AIAgent-调用](./img/call-agent-in-page.png)
 ![AIAgent-调用-传参](./img/call-agent-in-page-input.png)

@@ -3,11 +3,13 @@
 :root {
   --module-card-width: 320px;
   --module-desc-line-clamp: 3;
+  --aspect-ratio: 16/9;
 }
 
 [data-locale="zh"] {
-  --module-card-width: 250px;
-  --module-desc-line-clamp: 2;
+  --module-card-width: 250px !important;
+  --module-desc-line-clamp: 2 !important;
+  --aspect-ratio: 16/10 !important;
 }
 
 .ideSection {
@@ -64,7 +66,7 @@
 
 /* 核心特性部分 - 简化左右结构设计 */
 .coreFeatures {
-  /* margin-bottom: 6rem; */
+  margin-bottom: 6rem;
 }
 
 .featuresGrid {
@@ -100,7 +102,7 @@
   z-index: 2;
   flex: 5;
   width: 100%;
-  aspect-ratio: 16/10;
+  aspect-ratio: var(--aspect-ratio);
   margin: 2rem;
 }
 
@@ -222,7 +224,7 @@
 }
 
 .modulesRow:nth-child(2) {
-  animation-delay: -20s;
+  animation-delay: -30s;
 }
 
 @keyframes slideLeft {
@@ -462,7 +464,7 @@
 }
 
 .videoContainer:hover {
-  transform: scale(1.02);
+  /* transform: scale(1.02); */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   border-color: rgba(102, 126, 234, 0.3);
 }
@@ -475,23 +477,94 @@
   transition: all 0.3s ease;
 }
 
+/* 隐藏视频控制栏中的特定图标 */
+/* .videoElement::-webkit-media-controls-fullscreen-button {
+  display: none !important;
+}
+
+.videoElement::-webkit-media-controls-play-button {
+  display: none !important;
+}
+
+.videoElement::-webkit-media-controls-text-track-list {
+  display: none !important;
+} */
+
+/* 隐藏所有控制栏图标，只保留进度条和时间 */
+/* .videoElement::-webkit-media-controls {
+  display: flex !important;
+}
+
+.videoElement::-webkit-media-controls-panel {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+} */
+
+/* 隐藏音量控制 */
+/* .videoElement::-webkit-media-controls-mute-button {
+  display: none !important;
+}
+
+.videoElement::-webkit-media-controls-volume-slider {
+  display: none !important;
+} */
+
+/* 隐藏画中画按钮 */
+/* .videoElement::-webkit-media-controls-picture-in-picture-button {
+  display: none !important;
+} */
+
+/* 隐藏下载按钮 */
+/* .videoElement::-webkit-media-controls-download-button {
+  display: none !important;
+} */
+
+/* 隐藏设置按钮 */
+/* .videoElement::-webkit-media-controls-overlay-enclosure {
+  display: none !important;
+} */
+
 .videoOverlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  /* background: linear-gradient(
+  background: linear-gradient(
     135deg,
-    rgba(102, 126, 234, 0.1) 0%,
-    rgba(118, 75, 162, 0.1) 100%
-  ); */
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 1;
+  opacity: 0;
   transition: all 0.3s ease;
   pointer-events: none;
+  border-radius: 12px;
+}
+
+.videoContainer:hover .videoOverlay {
+  opacity: 1;
+}
+
+.hoverText {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.videoContainer:hover .hoverText {
+  opacity: 1;
 }
 
 /* 视频错误状态 */

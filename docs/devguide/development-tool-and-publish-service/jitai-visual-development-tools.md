@@ -1,10 +1,9 @@
 ---
 sidebar_position: 2
-slug: jitai-visual-development-tools
-title: JitAi Visual Development Tools
+slug: visual-development-tool
 ---
 
-# JitAi Visual Development Tools
+# Visual Development Tool
 
 JitAi provides developers with a comprehensive dual-mode application development environment that seamlessly integrates visual design and full-code development capabilities, combining programming and orchestration workflows (referred to as the IDE). Developers can access the application development interface by clicking the `Develop` button in the [Node Console](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment) within the DevOps management tool, or by navigating to the `Developer Portal` within the application. The IDE automatically loads the source code for all application modules, enabling developers to perform both visual editing and source code editing simultaneously.
 
@@ -20,7 +19,7 @@ Within the directory tree, developers can search for elements, modify element ti
 ## Adding elements {#adding-elements}
 ![Element Addition Entry](./img/ide/element-add-entry.png "Element Addition Entry")
 
-When developers click the `+` button to add elements, they must sequentially select the element's Meta and Type. Meta represents the top-level application module classification, including portals, pages, data models, and others. Type represents the subcategory within each Meta, such as regular pages, AI data management pages, or full-code pages under the page Meta.
+When developers click the `+` button to add elements, they must sequentially select the element's Meta and Type. Meta represents the top-level application module classification, including portals, pages, data models, and others. Type represents the subcategory within each Meta, such as generic pages, AI data management pages, or full-code pages under the page Meta.
 
 ![Element Addition Popup](./img/ide/element-add-popup.gif "Element Addition Popup")
 

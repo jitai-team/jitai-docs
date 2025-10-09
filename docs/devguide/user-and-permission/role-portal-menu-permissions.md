@@ -23,12 +23,12 @@ Anonymous users are unregistered users. Applications typically configure some pu
 The application creator is automatically assigned the developer role, with full access to the [Developer Portal](../shell-and-page/portal-navigation-design#developer-portal), enabling comprehensive application development tasks (including role creation and permission configuration).
 
 ### Administrator {#administrator}
-The application creator is automatically assigned the administrator role, with full administrative control over the application, enabling comprehensive modifications and configurations. Administrative functions are primarily managed through the [Administrator Portal](../shell-and-page/portal-navigation-design#admin-portal).
+The application creator is automatically assigned the administrator role, with full administrative control over the application, enabling comprehensive modifications and configurations. Administrative functions are primarily managed through the [Manager Portal](../shell-and-page/portal-navigation-design#manager-portal).
 
 :::tip
 **Only** developers can create application roles and grant portal menu permissions in the Developer Portal.
 
-For daily management of application role members, it is recommended that administrators operate in the Administrator Portal. Additionally, administrators can view but cannot modify data permissions and functional permission configurations for application roles.
+For daily management of application role members, it is recommended that administrators operate in the Manager Portal. Additionally, administrators can view but cannot modify data permissions and functional permission configurations for application roles.
 :::
 
 ## Creating Application Roles {#create-application-role}
@@ -53,9 +53,9 @@ Typically, before deploying an application system to customers, developers can p
 
 ![Managing App Role Members in Dev Area](./img/role/manage-app-role-members-in-dev-area.gif)
 
-In the application role visual editor, developers click `Manage Users in This Role` in the upper left corner to add or remove members for the current role. When adding members, you can select individual users or entire organizational roles and departments. Users with administrative privileges can later manage role membership through the Administrator Portal.
+In the application role visual editor, developers click `Manage Users in This Role` in the upper left corner to add or remove members for the current role. When adding members, you can select individual users or entire organizational roles and departments. Users with administrative privileges can later manage role membership through the Manager Portal.
 
-Developers can also click the `Configure` button to define the organizational scope for application role members. However, for day-to-day operations, it's recommended that administrators handle [Member Management Scope Settings in Organizational Structure](#member-management-scope-settings-in-org-structure) through the Administrator Portal.
+Developers can also click the `Configure` button to define the organizational scope for application role members. However, for day-to-day operations, it's recommended that administrators handle [Member Management Scope Settings in Organizational Structure](#member-management-scope-settings-in-org-structure) through the Manager Portal.
 
 ### Component Button Permission Control {#component-button-permission-control}
 When users with different roles access the same page, the operation buttons they see may be different. For example, on a customer management page, sales personnel can see "Add" and "Edit" buttons, while finance personnel can only query data.
@@ -76,14 +76,14 @@ In the permission configuration interface for portal menus, click on a component
 When developers disable a field's `Visible` option, that field will be hidden from the component. Disabling `Editable` prevents users from modifying that field within the component. Disabling `Statistical` prevents users from performing statistical operations on that field. When a field is set to `Not Visible`, both `Editable` and `Statistical` options are automatically disabled.
 
 ## Hierarchical Management of Multiple Application Roles {#hierarchical-management-of-multiple-application-roles}
-Application roles can be organized into management hierarchies with defined scopes. Roles with supervisory authority can perform [member management](#application-role-member-management) for their subordinate roles through the Administrator Portal's directory. For example, a development director can manage backend development managers but has no authority over finance directors.
+Application roles can be organized into management hierarchies with defined scopes. Roles with supervisory authority can perform [member management](#application-role-member-management) for their subordinate roles through the Manager Portal's directory. For example, a development director can manage backend development managers but has no authority over finance directors.
 
 ![Role Management Scope Configuration](./img/role/role-management-scope-configuration.gif)
 
-The Administrator Portal has the built-in `Permission Management` menu enabled by default. Developers click the `Configure` button in the operation column to the right of `Permission Management` and specify `Management Role Scope` as `All Roles` or `Specified Roles` in the popup.
+The Manager Portal has the built-in `Permission Management` menu enabled by default. Developers click the `Configure` button in the operation column to the right of `Permission Management` and specify `Management Role Scope` as `All Roles` or `Specified Roles` in the popup.
 
 ## Application Role Member Management {#application-role-member-management}
-Roles with Administrator Portal permissions can perform member management for application roles in the Administrator Portal's address book.
+Roles with Manager Portal permissions can perform member management for application roles in the Manager Portal's address book.
 
 ### Member Addition and Removal {#member-addition-and-removal}
 ![Application Role Member Management](./img/role/app-role-member-management.png)

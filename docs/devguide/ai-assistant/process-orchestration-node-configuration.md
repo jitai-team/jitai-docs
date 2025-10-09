@@ -59,7 +59,7 @@ We need to bind an [AIAgent](../ai-agent/create-ai-agent) to this node. The conf
 ![Node Configuration - AIAgent - Binding Agent](./img/assistant/aiagent-bindagent.png)
 
 #### Input parameter configuration {#input-parameter-configuration}
-When the node runs, it will call the Agent and pass in [parameters required by the Agent](../ai-agent/agent-input-output#configure-input-variables).
+When the node runs, it will call the Agent and pass in [parameters required by the Agent](../ai-agent/agent-input-output#configuring-input-variables).
 We need to assign values to these parameters. The configuration method is as follows:
 
 ![Node Configuration - AIAgent - Input Parameters](./img/assistant/aiagent-input.png)

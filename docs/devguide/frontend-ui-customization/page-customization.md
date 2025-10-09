@@ -148,8 +148,8 @@ export const Render = () =>{
 
 For more built-in packages, see [System Built-in Package Overview](#system-built-in-package-overview).
 
-### Embedding Existing Regular Pages {#embed-existing-regular-page}
-Reusing existing regular pages in full-code pages can reduce duplicate development and improve code reusability. The following figure shows an interaction example between full-code pages and embedded regular pages.
+### Embedding Existing Generic Pages {#embed-existing-generic-page}
+Reusing existing generic pages in full-code pages can reduce duplicate development and improve code reusability. The following figure shows an interaction example between full-code pages and embedded generic pages.
 
 ![Full-code Page Embedded Page](./img/full-code-page-embedded-page.gif)
 
@@ -207,7 +207,7 @@ class PageCls extends Jit.BasePage {
 export { Render, PageCls };
 ```
 
-ElementRender can render not only regular page elements but also other full-code pages, just configure the corresponding element's `fullName` to the `elementPath` property. If you need to interact with the embedded page, you can configure the `onInitAfter` property; after initialization is complete, the embedded page's page instance will be passed as a parameter. Example of embedded page's page instance:
+ElementRender can render not only generic page elements but also other full-code pages, just configure the corresponding element's `fullName` to the `elementPath` property. If you need to interact with the embedded page, you can configure the `onInitAfter` property; after initialization is complete, the embedded page's page instance will be passed as a parameter. Example of embedded page's page instance:
 
 ```typescript
 import type { ComponentPageScheme } from "jit";
@@ -233,7 +233,7 @@ Reusing existing standard components in full-code pages can reduce duplicate dev
 
 The example demonstrates cross-page component interaction: buttons in the full-code page control table component data refresh, while listening to table row click events to get and display the current row's ID information.
 
-All standard components are rendered by configuration, and the component renderer accepts a component instance that is constructed through configuration. Because component configuration is complex, when using standard components in full-code, it's recommended that developers first create a regular page, add standard components to the regular page, configure the components, and then copy the component configuration to the full-code page.
+All standard components are rendered by configuration, and the component renderer accepts a component instance that is constructed through configuration. Because component configuration is complex, when using standard components in full-code, it's recommended that developers first create a generic page, add standard components to the generic page, configure the components, and then copy the component configuration to the full-code page.
 
 ![Copy Table Configuration](./img/copy-table-configuration.png)
 
@@ -710,7 +710,7 @@ However, backend functions can only be called in backend runtime (service functi
 
 ![Model Functions](./img/model-functions.png)
 
-In the event panel of regular pages, click the `Please Select` text on blank statements in the function panel, select `Data Model` - `[Model Name]` in the panel to see multiple model operation functions. Taking query interface as an example, select `Get One Data`.
+In the event panel of generic pages, click the `Please Select` text on blank statements in the function panel, select `Data Model` - `[Model Name]` in the panel to see multiple model operation functions. Taking query interface as an example, select `Get One Data`.
 
 ### Full-code Using Model Functions {#full-code-using-model-functions}
 Model functions have many parameters. Considering parameter complexity, developers can visually configure parameters in the following way and quickly locate function code, then directly copy it to the full-code page.

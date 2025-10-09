@@ -3,191 +3,191 @@ sidebar_position: 1
 ---
 
 # Creating Portals
-In enterprise applications, users with different application roles typically see different system function entries based on their permissions or business scope responsibilities. JitAi uses portals to implement this differentiation, where users with different application roles see different portal lists, and each portal contains different navigation menus.
+In enterprise applications, users with different roles typically access different system features based on their permissions and responsibilities. JitAi implements this role-based access control through portals, where each user role is presented with a tailored portal containing role-specific navigation menus.
 
 ![Portal Selection Page](./imgs/portal-select-page.gif "Portal Selection Page")
 
-After logging into the system, users can see the list of portals they can access on the portal selection page. After selecting a portal, they can enter it and access the functions within the portal.
+After logging in, users are presented with a portal selection page displaying all portals they have access to. Selecting a portal grants access to the features and functions available within that specific portal environment.
 
-## Application Built-in Three Portals {#application-built-in-three-portals}
-JitAi creates three built-in portals for each newly created application: Developer Portal, Administrator Portal, and User Portal.
+## Application built-in portals {#application-built-in-portals}
+JitAi automatically provisions three built-in portals for every new application: the `Developer Portal`, `Manager Portal`, and `User Portal`.
 
 ![IDE Portal List](./imgs/ide-portal-list.png "IDE Portal List")
 
-Taking the Developer Portal as an example, users can switch between portals in the upper left corner of any portal.
+Users can switch between available portals using the portal selector located in the upper-left corner of any portal interface. The developer portal serves as a representative example of this functionality.
 
-### Developer Portal {#developer-portal} 
-The Developer Portal is designed for application developers. After entering the Developer Portal, developers can use [JitAi Development Tools](/docs/devguide/development-tool-and-publish-service/jitai-visual-development-tools) for application development work, such as configuring accessible portal lists for different application roles, building system functions, and configuring application information.
+### Developer portal {#developer-portal} 
+The developer portal provides a comprehensive development environment exclusively for application developers. Within this portal, developers can access [JitAi Development Tools](/docs/devguide/development-tool-and-publish-service/visual-development-tool) to execute various development tasks, such as configuring role-based portal access, building system functionality, and managing application settings.
 
-Except for the Developer Portal, the navigation menus of all other portals are configured by application developers within the Developer Portal.
+All portal navigation menus—except for the developer portal itself—are configured by developers through this centralized development interface.
 
-### Administrator Portal {#admin-portal} 
-Users with application administrator roles can enter the Administrator Portal to manage applications, such as managing organizational structure, organizational roles, and their members. Developers can also modify the Administrator Portal.
+### Manager portal {#manager-portal} 
+The manager portal is designed for users with administrative privileges, enabling them to oversee application management tasks including organizational structure configuration, role management, and user administration. Developers retain the ability to customize this portal according to specific requirements.
 
-Each application automatically creates an administrator account upon creation, with initial username: `admin123` and initial password: `admin123`. It is recommended that developers modify these credentials in the personal [basic information](/docs/devguide/development-tool-and-publish-service/jitai-visual-development-tools#personal-center) after logging in.
+Upon application creation, the system automatically generates an administrator account with default credentials: username `admin123` and password `admin123`. For security purposes, it is strongly recommended that developers update these default credentials immediately after first login through the [personal information](/docs/devguide/development-tool-and-publish-service/visual-development-tool#personal-center) settings.
 
 :::tip Organizational Roles vs Application Roles
-Organizational roles correspond to users' positions within the enterprise organizational structure, while `Application Roles` in JitAi applications represent users' permissions within the application system. Organizational roles and application roles are similar but do not have a strict correspondence relationship. An ordinary employee can also be assigned an application administrator role to manage an application system.
+`Organizational roles` correspond to users' positions within the enterprise organizational hierarchy, while `Application roles` in JitAi applications define users' permissions within the application system. Although organizational roles and application roles are conceptually similar, they do not have a strict one-to-one correspondence. For instance, a regular employee can be assigned an application administrator role to manage a specific application system.
 :::
 
-### User Portal {#user-portal}
-Both the Developer Portal and Administrator Portal are essential basic portals in application systems, with the former used for application development and the latter for application management.
+### User portal {#user-portal}
+While the developer and manager portals serve as foundational administrative interfaces—one for development activities and the other for system management—the user portal caters to end users.
 
-The User Portal is designed for regular users who are neither administrators nor developers, but simply use the developed application functions to carry out daily work within their permission scope.
+The user portal is specifically designed for standard users who are neither administrators nor developers. These users access the portal to utilize application features and perform their daily tasks within their designated permission boundaries.
 
-## Three Portal Types {#three-portal-types}
+## Portal types {#portal-types}
 ![Create Portal](./imgs/create-portal.png "Create Portal")
 
-When creating a new portal, developers need to select the portal type. JitAi provides three portal types: Regular Portal, SSR Portal, and Blank Portal.
+Portal creation requires developers to select from three available portal types, each optimized for different use cases: Generic Portal, SSR Portal, and Blank Portal.
 
-### Regular Portal {#regular-portal}
-The Regular Portal is the most commonly used portal type, with built-in complete portal components such as left navigation, top navigation, and user information display, while supporting responsive adaptation for both PC and mobile devices.
+### Generic portal {#generic-portal}
+The Generic Portal represents the most widely adopted portal type, featuring a complete set of built-in components including left navigation, top navigation, and user information displays. This portal type includes full responsive design capabilities, ensuring optimal user experience across both desktop and mobile platforms.
 
-### Blank Portal {#blank-portal}
-The Blank Portal is a minimalist portal implementation that provides basic page containers and routing framework without built-in navigation systems. The interface structure is completely customized by developers, suitable for highly customized application interfaces and special display requirements.
+### Blank portal {#blank-portal}
+The Blank Portal offers a minimalist approach, providing only essential page containers and routing infrastructure without predefined navigation elements. This template grants developers complete control over interface architecture, making it ideal for highly customized applications and specialized display requirements.
 
-### SSR Portal {#ssr-portal}
-SSR (Server-Side Rendering) portals are used to improve first-screen loading performance and SEO optimization, currently supporting Markdown file rendering.
+### SSR portal {#ssr-portal}
+Server-Side Rendering (SSR) portals are engineered to optimize initial page load performance and enhance SEO capabilities. Currently, this portal type supports Markdown file rendering with plans for expanded functionality.
 
-## Create Portal and Configure Menu {#create-portal-and-configure-menu}
-![Create Regular Portal Popup Form](./imgs/create-regular-portal-popup-form.gif "Create Regular Portal Popup Form")
+## Creating portals and configuring menus {#creating-portals-and-configuring-menus}
+![Create Generic Portal Popup Form](./imgs/create-regular-portal-popup-form.gif "Create Generic Portal Popup Form")
 
-Developers find `Portal` in the element tree, click the `+` button on the right, select `Regular Portal` to open the `Create Regular Portal` popup form. After entering the portal name and clicking `Confirm`, developers can create a new regular portal and enter the visual portal editor.
+Portal creation follows a straightforward workflow: navigate to the `UI Portals` section in the element tree, click the `+` button, and select `Generic Portal` to launch the creation dialog. After specifying the portal name and confirming the selection, developers gain access to the visual portal editor for a newly created portal.
 
-![Regular Portal Editor](./imgs/regular-portal-editor.png "Regular Portal Editor")
+![Generic Portal Editor](./imgs/regular-portal-editor.png "Generic Portal Editor")
 
-In the regular portal editor, developers can perform portal menu design, layout design, and configure AI assistants.
+The portal editor provides comprehensive tools for menu design, layout configuration, and AI assistant integration, enabling developers to create fully customized portal experiences.
 
-### Create/Delete/Hide Menu {#create-delete-hide-menu}
+### Creating, deleting, and hiding menus {#creating-deleting-hiding-menus}
 ![Create Menu](./imgs/create-menu.png "Create Menu")
 
-Developers can create multiple menus in the portal as needed. Each menu supports specifying name, icon, and icon color when created. When creating a menu, you can bind existing PC and mobile pages, or automatically create new pages while creating the menu (requires selecting a page type).
+Developers can establish multiple menus within each portal to meet organizational requirements. During menu creation, you can define the menu name, icon, and icon color scheme. The system offers two page association options: binding to existing PC and mobile pages, or automatically generating new pages during the creation process (requiring page type selection).
 
-To delete a menu, click the `Delete` button on the right side of the menu item, choose whether to delete the page together in the popup, and click `Confirm` to delete the menu.
+Menu deletion is accomplished through the `Delete` button located beside each menu item. The system prompts for confirmation regarding associated page deletion before finalizing the removal process.
 
-There is also a `Hide` button on the right side of menu items. When a menu is hidden, users will not see the hidden menu entry when accessing the portal.
+Menu visibility can be controlled using the `Hide` button adjacent to each menu item. Hidden menus remain in the portal configuration but are not displayed to end users during portal navigation.
 
-### Drag Menu Sorting {#drag-menu-sort}
-Developers can drag any menu item to the target position to adjust the order of menu items.
+### Sorting menus by dragging {#sorting-menus-by-dragging}
+Menu organization can be customized through intuitive drag-and-drop functionality, allowing developers to reposition menu items according to logical or priority-based ordering.
 
 ![Portal Menu Drag Sort](./imgs/portal-menu-drag-sort.gif "Portal Menu Drag Sort")
 
-Developers place the mouse on the target menu item, and when the mouse cursor changes to a hand icon, hold down the left mouse button and drag the menu item up and down to adjust its position.
+To reorder menus, hover over the desired menu item until the cursor transforms into a hand icon, then click and drag the item vertically to its new position within the menu hierarchy.
 
-### Menu Grouping {#menu-grouping}
-When there are many menu items, developers can create groups and categorically move menu items into groups to make the portal navigation structure clearer. Of course, you can also create groups in advance and directly create new menus under the groups.
+### Menu grouping {#menu-grouping}
+For portals with extensive menu collections, developers can implement organizational groups to create logical categorization and improve navigation clarity. Groups can be established either reactively to organize existing menus or proactively as containers for future menu additions.
 
-How to create a new portal menu group?
+#### Creating portal menu groups {#creating-portal-menu-groups}
 
 ![Create Portal Menu Group](./imgs/create-portal-menu-group.gif "Create Portal Menu Group")
 
-Developers click the `+ New Group` button, enter the group title in the `New Group` popup, and click `Confirm` to create a group. Developers can set group expand and collapse icons and icon colors while creating the group, or click the `pencil` button on the right side of the group title after creation to edit again.
+To create a group, developers click the `+ New Group` button, enter the group title in the `New Group` dialog, and click `Confirm`. Developers can configure group expand/collapse icons and icon colors during group creation, or click the `pencil` button beside the group title after creation to make further edits.
 
-How to move menus into groups?
+#### Moving menus into groups {#moving-menus-into-groups}
 
 ![Portal Menu Grouping](./imgs/portal-menu-grouping.gif "Portal Menu Grouping")
 
-Each menu has a `Move to` button on the right side. Click this button and select the target group in the popup to move the menu item into that group. To move a menu out of a group or to another group, use the `Move to` button again and select the target portal/group.
+Each menu features a `Move To` button on its right side. Click this button and select the target group from the dropdown to move the menu item into that group. To relocate a menu out of a group or to a different group, use the `Move To` button again and select the desired target portal or group.
 
-Portal menu grouping supports nesting. Developers can click the `+` button on the right side of the group title to create sub-groups under the group, implementing a nested structure.
+Portal menu grouping supports hierarchical nesting. Developers can click the `+` button beside the group title to create sub-groups within the group, establishing a nested organizational structure.
 
-Similar to menus, groups also support move operations.
+Like menus, groups also support relocation operations.
 
 ![Move Portal Menu Group](./imgs/move-portal-menu-group.gif "Move Portal Menu Group")
 
-Developers click the `...` button on the right side of the group title, select the target position in the popup, and click `Confirm` to complete the move.
+Developers click the `...` button beside the group title, select the target position from the dropdown, and click `Confirm` to complete the relocation.
 
-### PC and Mobile Menu Pages {#pc-mobile-menu-pages}
-When creating a menu and selecting to create a new page, the platform will automatically create both PC and mobile pages that appear in the element directory tree. Developers need to perform page development in the visual editor of the pages.
+### PC and mobile menu pages {#pc-and-mobile-menu-pages}
+When creating a menu and selecting to create a new page, the platform automatically generates both PC and mobile page versions that appear in the element directory tree. Developers must then develop these pages using the visual page editor.
 
-When creating a menu and selecting to bind existing pages, developers can specify the PC and mobile pages to bind, choosing either one or both.
+When creating a menu and choosing to bind existing pages, developers can specify which PC and mobile pages to bind, selecting either one or both platforms.
 
 ![Create Menu and Bind Existing Page](./imgs/create-menu-and-bind-existing-page.gif "Create Menu and Bind Existing Page")
 
-If a menu does not have mobile pages enabled, developers can enable them with one click, and can also synchronize PC and mobile pages or remove pages from the menu.
+If a menu lacks mobile page support, developers can enable it with a single click and can also synchronize content between PC and mobile pages or remove pages from the menu entirely.
 
 ![Portal Menu More Buttons](./imgs/portal-menu-more-buttons.gif "Portal Menu More Buttons")
 
-Developers click the `More` button on the right side of the menu item, and click the `Enable Mobile Page` button in the popup list to quickly enable mobile pages. PC and mobile pages support quick synchronization. Click the `Sync PC Page` or `Sync Mobile Page` button to complete design synchronization. To remove PC or mobile pages from the menu, click the `Remove` button.
+Developers click the `More` button on the right side of the menu item and select the `Enable Mobile Page` button from the dropdown to quickly activate mobile page support. PC and mobile pages support rapid synchronization—click the `Sync to PC Page` or `Sync to Mobile Page` button to synchronize designs across platforms. To remove PC or mobile pages from the menu, click the `Remove` button.
 
-### Using Page Variable Assignment to Control Page Logic {#page-variable-assignment}
-The same page may be used by different portal menus. When accessed from different portal menus, the page needs to display different content or execute different logic. This can be achieved using page variable assignment.
+### Controlling page logic with variable assignment {#controlling-page-logic-with-variable-assignment}
+The same page may be utilized by multiple portal menus. When accessed from different portal menus, the page may need to display varying content or execute different logic. This functionality can be achieved through page variable assignment.
 
 ![Portal Menu Page Variable Assignment](./imgs/portal-menu-page-variable-assignment.gif "Portal Menu Page Variable Assignment")
 
-Developers can expand the `More` button on the right side of the menu item, click the `Page Variable Assignment` button, and assign values to page variables in the popup.
+Developers can expand the `More` button on the right side of the menu item, click the `Page Variable Assignment` button, and assign values to page variables in the resulting dialog.
 
 :::warning
-Developers need to declare [page variables](/docs/devguide/shell-and-page/component-based-page-development#page-variables) in the page. If no variables are declared in the page, page variable assignment cannot be set in the portal.
+Developers must first declare [page variables](/docs/devguide/shell-and-page/component-based-page-development#page-variables) within the page. If no variables are declared in the page, page variable assignment cannot be configured in the portal.
 :::
 
-### Rewrite Menu Page {#rewrite-menu-page}
-Portals can also be inherited from inherited applications, but not all menu pages in the portal meet the current application requirements. Developers can rewrite menu pages in the portal.
+### Rewriting menu pages {#rewriting-menu-pages}
+Portals can be inherited from parent applications, but not all inherited menu pages may meet current application requirements. Developers can override menu pages within the portal to customize functionality.
 
-![Rewrite Menu](./imgs/rewrite-menu.png "Rewrite Menu")
+![Override Menu](./imgs/rewrite-menu.png "Override Menu")
 
-Click the `Rewrite` button on the right side of the menu item to open the `Rewrite Menu` popup. Developers can rename the page, choose to create a new page, or directly bind an existing page.
+Click the `Override` button on the right side of the menu item to open the Override Menu dialog. Developers can rename the page, create a new page, or bind an existing page to replace the inherited functionality.
 
-## Portal Layout Design {#portal-layout-design}
-### Set Left/Top Navigation {#set-left-top-navigation}
+## Portal layout design {#portal-layout-design}
+### Configuring navigation layout {#configuring-navigation-layout}
 ![Portal Layout Design](./imgs/portal-layout-design.gif "Portal Layout Design")
 
-Developers can modify the display position of the navigation bar, supporting left navigation and top navigation.
+Developers can customize the navigation bar's display position, with support for both left-side and top-positioned navigation layouts.
 
 ![Portal Left Navigation](./imgs/portal-left-navigation.png "Portal Left Navigation")
 
-The above shows the effect after setting to left navigation, with all navigation menus displayed on the left side of the system interface.
+The above demonstrates the left navigation layout, where all navigation menus are positioned along the left side of the system interface.
 
 ![Portal Top Navigation](./imgs/portal-top-navigation.png "Portal Top Navigation")
 
-The above shows the effect after setting to top navigation, with all navigation menus displayed at the top of the system interface.
+The above demonstrates the top navigation layout, where all navigation menus are positioned along the top of the system interface.
 
-### Multi-tabs {#multi-tabs}
-Developers can enable or disable `Multi-tab Browsing` in the portal's `Layout Design`.
+### Multi-tab functionality {#multi-tab-functionality}
+Developers can enable or disable `Multi-tab Browsing` functionality within the portal's `Layout Design` settings.
 
 ![Portal Navigation Multi-tabs](./imgs/portal-navigation-multi-tabs.gif "Portal Navigation Multi-tabs")
 
-When multi-tabs are enabled, each accessed menu page will appear in the tab list, and users can click tabs to switch between pages.
+When multi-tabs are enabled, each accessed menu page appears as a tab in the tab bar, allowing users to click tabs to switch between open pages.
 
 ![Disable Multi-tabs](./imgs/disable-multi-tabs.gif "Disable Multi-tabs")
 
-When multi-tabs are disabled, the page will not display the tab list, and users can only switch pages through the navigation menu.
+When multi-tabs are disabled, the interface does not display the tab bar, and users can only navigate between pages using the navigation menu.
 
-### Show in Portal Switch List {#show-in-portal-switch-list}
-When developers turn off the `Show in Portal Switch Menu` switch in `Layout Design`, users will not see this portal in the portal switch menu at the upper left corner of the portal.
+### Portal visibility settings {#portal-visibility-settings}
+When developers disable the `Display in portal switch menu` option in `Layout Design`, users will not see this portal in the portal selector located in the upper left corner of the interface.
 
-### Set Order in Portal List {#set-portal-list-order}
-When an application contains multiple portals, developers can set order values in `Layout Design` to adjust the display order of each portal in the portal switch menu.
+### Portal ordering {#portal-ordering}
+When an application contains multiple portals, developers can configure order values in `Layout Design` to control the display sequence of each portal in the portal selector menu.
 
-## Enable or Disable Common Function Entries {#enable-disable-common-function-entries}
-Each newly created portal has some common function entries by default: Initiate Application, To-do Center, Message Center, Personal Center, and New Function (supports creating function modules in simple mode, with weaker development capabilities than [Visual Development Tools](/docs/devguide/development-tool-and-publish-service/jitai-visual-development-tools)). These entries can be enabled or disabled in `Layout Design`.
+## Managing common function entries {#managing-common-function-entries}
+Every newly created portal includes a standard set of common function entries: Initiate Application, To-do Center, Message Center, Personal Center, and New Function. The New Function entry provides simplified module creation capabilities, though with reduced functionality compared to the comprehensive [Visual Development Tools](/docs/devguide/development-tool-and-publish-service/visual-development-tool). All entries can be selectively enabled or disabled through the `Layout Design` configuration.
 
 ![Portal Common Function Entry](./imgs/portal-common-function-entry.png "Portal Common Function Entry")
 
-Developers can check or uncheck in the `Layout Design` - `Common Navigation Functions` area to enable or disable the corresponding function entries.
+Function entry visibility is controlled through the `Layout Design` → `Common Navigation Functions` section, where developers can toggle individual entries according to portal requirements.
 
 ![Portal Common Function Entry Display](./imgs/portal-common-function-entry-display.png "Portal Common Function Entry Display")
 
-The above image shows the effect after enabling all common function entries.
+The above image demonstrates the interface appearance when all common function entries are enabled.
 
-### Initiate Application/To-do/Message Center Entry {#application-todo-message-entry}
-When developers enable the `Initiate Application` + `To-do Center` + `Message Center` entries, users can initiate approval processes, view pending approval items, and view message notifications when accessing the portal.
+### Application and workflow entries {#application-and-workflow-entries}
+Enabling the `Initiate Approval`, `Pending Center`, and `Message Center` entries provides users with direct access to workflow management capabilities, including launching approval processes, reviewing pending tasks, and accessing system notifications—all accessible directly from the portal interface.
 
-![Initiate Application/To-do/Message Center Entry](./imgs/initiate-application-todo-message-center-entry.gif "Initiate Application/To-do/Message Center Entry")
+![Initiate Approval/Pending Center/Message Center Entry](./imgs/initiate-application-todo-message-center-entry.gif "Initiate Approval/Pending Center/Message Center Entry")
 
-### Personal Center Entry {#personal-center-entry}
-When developers enable the `Personal Center` entry, users can view personal basic information and modify nicknames and passwords when accessing the portal, and can also switch [organizational structure](/docs/devguide/user-and-permission/organizational-structure) and log out.
+### Personal center entry {#personal-center-entry}
+The `Personal Center` entry grants users access to profile management functionality, including personal information updates, credential modifications, organization switching, and secure system logout capabilities.
 
 ![Personal Center Functions](./imgs/personal-center-functions.gif "Personal Center Functions")
 
-## Integrating AI Assistant in Portal {#using-ai-assistant-in-portal}
-JitAi supports directly integrating [AI Assistant](/docs/devguide/ai-assistant/create-ai-assistant) in portals, allowing users to interact with AI assistants when accessing portals. This is a general introduction; for detailed content, please refer to [Integrating AI Assistant in Portals](/docs/devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals).
+## Integrating AI assistants {#integrating-ai-assistants}
+JitAi provides native [AI Assistant](/docs/devguide/ai-assistant/create-ai-assistant) integration capabilities, allowing users to interact with intelligent assistants directly through the portal interface. This section offers a high-level overview; detailed implementation guidance is available in [Integrating AI Assistant in Portals](/docs/devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals).
 
 ![Portal Integrate AI Assistant](./imgs/portal-integrate-ai-assistant.gif "Portal Integrate AI Assistant")
 
-Developers click the `AI Assistant` tab in the portal configuration interface, turn on the switch in the configuration interface and select an [AI Assistant](/docs/devguide/ai-assistant/create-ai-assistant) to integrate the AI assistant in the portal.
+AI assistant integration is accomplished through the portal configuration interface: navigate to the `Enable AI Assistant` tab, activate the integration toggle, and select the desired [AI Assistant](/docs/devguide/ai-assistant/create-ai-assistant) for portal embedding.
 
 ![AI Assistant Effect in Portal](./imgs/ai-assistant-effect-in-portal.png "AI Assistant Effect in Portal")
 
-When users access a portal with [AI Assistant](/docs/devguide/ai-assistant/create-ai-assistant) enabled, they can see the "AI Assistant" navigation menu, click to open the AI assistant dialog and interact with it.
+Once AI assistant integration is enabled, users will observe an AI Assistant entry within the portal navigation menu. Selecting this entry launches an interactive dialog interface for direct communication with the AI assistant.
 

@@ -3,24 +3,24 @@ sidebar_position: 2
 slug: develop-backend-element-visual-editor
 ---
 
-# Develop Visual Editors for Backend Type Elements
+# Developing Visual Editors for Backend Type Elements
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-After we completed [Extend Your Own Element Families](./extend-element-family-classes), although we can create instances and run them, configuration parameters need to be manually modified in files, which is not user-friendly for business developers who are not familiar with code.
+After completing the [Extend Your Own Element Families](./extend-element-family-classes) tutorial, you can create and run element instances. However, configuration parameters must be manually modified in files, which presents a challenge for business developers unfamiliar with code.
 
-This article will introduce how to develop a visual configuration editor for DingTalk robots, achieving the same graphical configuration experience as official elements in JitAi development tools.
+This guide demonstrates how to develop a visual configuration editor for a DingTalk robot, delivering the same graphical configuration experience as official JitAi elements.
 
-## Effect Preview
-![Editor Effect](./img/dingtalk-robot-element-configuration-interface.png)
+## Effect preview {#effect-preview}
+![Editor Effect](./img/dingtalk-robot-element-configuration-interface.png "Editor Effect")
 
-## Editor Architecture
+## Editor architecture {#editor-architecture}
 | Element Level | fullName | Main Responsibilities |
 |---------|----------|----------|
-| **Editor Element** | `imRobots.dingTalkStreamType.Editor` | type points to `editors.React`, provides visual configuration interface for DingTalk robot |
-| **Target Element** | `imRobots.dingTalkStreamType` | The target backend Type element being edited, completed in previous chapters |
+| **Editor Element** | `imRobots.dingTalkStreamType.Editor` | Type points to `editors.React`; provides visual configuration interface for DingTalk robot |
+| **Target Element** | `imRobots.dingTalkStreamType` | The backend Type element being edited, completed in previous chapters |
 
-### Editor Directory Structure
+### Editor directory structure {#editor-directory-structure}
 ```shell title="Add Editor subdirectory under dingTalkStreamType"
 imRobots/
 └── dingTalkStreamType/              # Backend Type element (completed)
@@ -37,8 +37,8 @@ imRobots/
         └── utils.ts               # Utility functions
 ```
 
-## Operation Guide
-### Create Editor Directory
+## Step-by-step guide {#step-by-step-guide}
+### Creating the editor directory {#creating-editor-directory}
 Create an Editor subdirectory under the dingTalkStreamType directory:
 
 ```bash
@@ -46,8 +46,8 @@ Create an Editor subdirectory under the dingTalkStreamType directory:
 mkdir -p Editor
 ```
 
-### Install Dependencies
-Add Monaco editor dependency to the project's `package.json`:
+### Installing dependencies {#installing-dependencies}
+Add the Monaco Editor dependency to your project's `package.json`:
 
 ```json title="package.json"
 {
@@ -57,14 +57,14 @@ Add Monaco editor dependency to the project's `package.json`:
 }
 ```
 
-### Implement Editor Files
+### Implementing editor files {#implementing-editor-files}
 <Tabs>
   <TabItem value="config" label="Element Definition File">
 
-**Create editor element definition file** `Editor/e.json`:
+**Create the editor element definition file** `Editor/e.json`:
 
-:::tip Editors are also elements
-In JitAi, editors themselves are also elements, with their own `e.json` definition files.
+:::tip Editors are elements too
+In JitAi, editors are elements with their own `e.json` definition files.
 :::
 
 ```json title="Editor/e.json"
@@ -80,33 +80,33 @@ In JitAi, editors themselves are also elements, with their own `e.json` definiti
 }
 ```
 
-**Editor element configuration description:**
+**Editor element configuration:**
 
 <ul>
-<li><code>title</code>: Editor element display name</li>
-<li><code>type</code>: Fixed as <code>editors.React</code>, indicating React editor element</li>
-<li><code>tag</code>: Fixed as <code>editor</code>, indicating backend element editor</li>
-<li><code>targetType</code>: Target backend element's fullName</li>
-<li><code>frontBundleEntry</code>: Editor entry file</li>
+<li><code>title</code>: Display name for the editor element</li>
+<li><code>type</code>: Must be <code>editors.React</code> to indicate a React editor element</li>
+<li><code>tag</code>: Must be <code>editor</code> to indicate a backend element editor</li>
+<li><code>targetType</code>: Full name of the target backend element</li>
+<li><code>frontBundleEntry</code>: Entry point for the editor</li>
 </ul>
 
   </TabItem>
   <TabItem value="index" label="Entry File">
 
-**Create editor entry file** `Editor/index.ts`:
+**Create the editor entry file** `Editor/index.ts`:
 
 ```typescript title="Editor/index.ts"
 export { Editor } from './Editor';
 ```
 
-:::important Editor export specification
-Backend element editors must export a component named `Editor`, which is a fixed convention for JitAi tools to recognize editors.
+:::important Editor export convention
+Backend element editors must export a component named `Editor`. This is a fixed convention that enables JitAi tools to recognize the editor.
 :::
 
   </TabItem>
   <TabItem value="editor" label="Editor Implementation">
 
-**Create editor main file** `Editor/Editor.tsx`:
+**Create the main editor file** `Editor/Editor.tsx`:
 
 ```tsx title="Editor/Editor.tsx"
 import type { FC } from 'react';
@@ -268,7 +268,7 @@ export { DingTalkEditor as Editor };
   </TabItem>
   <TabItem value="styles" label="Style File">
 
-**Create style file** `Editor/Editor.style.ts`:
+**Create the style file** `Editor/Editor.style.ts`:
 
 ```typescript title="Editor/Editor.style.ts"
 import type { CSSProperties } from 'react';
@@ -304,7 +304,7 @@ export const editorStyles: Record<string, CSSProperties> = {
   </TabItem>
   <TabItem value="utils" label="Utility Functions">
 
-**Create utility functions file** `Editor/utils.ts`:
+**Create the utility functions file** `Editor/utils.ts`:
 
 ```typescript title="Editor/utils.ts"
 /**
@@ -363,8 +363,8 @@ export function getAvailableAgents(): Array<{ value: string; label: string }> {
   </TabItem>
 </Tabs>
 
-## Editor Working Principle
-### Backend Element Editor vs Frontend Component Editor
+## Editor working principles {#editor-working-principles}
+### Backend element editor vs frontend component editor {#backend-vs-frontend-editor}
 
 | Aspect | Backend Element Editor | Frontend Component Editor |
 |--------|----------------------|---------------------------|
@@ -373,7 +373,7 @@ export function getAvailableAgents(): Array<{ value: string; label: string }> {
 | **Interface** | `elementInfo` + `onSave`/`onCancel` | `CompEditorProps` + `onChangeCompConfig` |
 | **Save Method** | Asynchronous save via `onSave` callback | Real-time sync via `onChangeCompConfig` |
 
-### Data Flow
+### Data flow {#data-flow}
 ```mermaid
 graph LR
     A[JitAi Tool] --> B[Editor Component]
@@ -391,26 +391,26 @@ graph LR
 4. **Validation**: Validate form data and JSON format
 5. **Save**: Call `onSave` callback to persist configuration
 
-## Testing
-### Make Editor Take Effect
+## Testing the editor {#testing-the-editor}
+### Making the editor take effect {#making-editor-take-effect}
 1. **Clear cache**: Delete the `dist` directory in the application directory
 2. **Restart service**: Restart the desktop client  
 3. **Trigger packaging**: Access the application page, the system will automatically repackage
 
-### Verify Editor Functionality
+### Verifying editor functionality {#verifying-editor-functionality}
 1. **Open element management**: Enter JitAi development tool's element management interface
 2. **Find target element**: Locate the DingTalk robot element instance
 3. **Open editor**: Click edit button, the visual editor should open
 4. **Test configuration**: Try modifying AI Agent, Client ID and other configurations
 5. **Save verification**: Save configuration and restart element, confirm configuration takes effect
 
-### Common Issue Troubleshooting
+### Troubleshooting common issues {#troubleshooting-common-issues}
 - **Editor not opening**: Check if `targetType` in `e.json` correctly points to the target element
 - **Configuration not saving**: Confirm if `onSave` callback is called correctly and handles errors properly
 - **JSON format error**: Check if JSON editor content format is correct
 
-## Advanced Features
-### Dynamic Agent List
+## Advanced features {#advanced-features}
+### Dynamic agent list {#dynamic-agent-list}
 You can enhance the editor by dynamically loading available AI Agent lists:
 
 ```tsx
@@ -431,7 +431,7 @@ useEffect(() => {
 }, []);
 ```
 
-### Configuration Validation
+### Configuration validation {#configuration-validation}
 Add more comprehensive configuration validation:
 
 ```typescript
@@ -458,7 +458,7 @@ export function validateDingTalkConfig(config: any): string[] {
 }
 ```
 
-## Summary
+## Summary {#summary}
 **Core steps** for developing visual editors for backend elements:
 
 1. **Create Editor directory** + configure editor element definition file `e.json` (`type: "editors.React"`)

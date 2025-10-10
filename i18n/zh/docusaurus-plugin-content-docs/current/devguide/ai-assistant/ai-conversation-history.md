@@ -1,13 +1,13 @@
 ---
 sidebar_position: 13
-slug: ai-chat-history
+slug: ai-conversation-history
 ---
 
 # 对话记录
 
 对话记录是AI助理的"完整备忘录"📝，记录每次交流的内容和状态，让AI能够基于历史上下文提供更准确的回答。不同对话记录之间相互隔离，确保交流的准确性和连续性。
 
-## 创建和管理对话 {#creating-and-managing-conversations}
+## 创建和管理对话 {#start-and-managing-conversation}
 
 - **新建对话**：点击对话框右上角的 ` + ` 开启新对话
 - **自动保存**：发送第一条消息后自动保存，截取前20个字作为标题

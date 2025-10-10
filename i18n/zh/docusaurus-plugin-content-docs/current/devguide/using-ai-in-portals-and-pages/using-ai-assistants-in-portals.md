@@ -24,7 +24,7 @@ slug: using-ai-assistants-in-portals
 
 ![门户 - AI示例](./img/portal-assistant-openmenu.gif)
 
-AI助理界面采用左右分栏布局：左侧显示历史[聊天记录](../ai-assistant/ai-chat-history)，右侧为助手对话区域。
+AI助理界面采用左右分栏布局：左侧显示历史[聊天记录](../ai-assistant/ai-conversation-history)，右侧为助手对话区域。
 
 ## 功能亮点 {#feature-highlights}
 

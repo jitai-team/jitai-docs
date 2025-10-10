@@ -25,7 +25,7 @@ slug: ai-assistant-input-output
 
 
 ### 状态数据输出 {#state-data-output}
-通过在节点上配置**输出数据到对话框**，当节点运行后会将指定的[状态数据](./ai-assistant-state)发送到对话框的回复区。支持该配置项的节点有：AIAgent节点、函数调用节点、条件分支节点和多任务执行节点。
+通过在节点上配置**输出数据到对话框**，当节点运行后会将指定的[状态数据](./ai-assistant-state)发送到对话框的回复区。支持该配置项的节点有：[AIAgent节点](./process-orchestration-node-configuration#ai-agent), [函数调用节点](./process-orchestration-node-configuration#function), [条件分支节点](./process-orchestration-node-configuration#if-else), 和 [多任务执行节点](./process-orchestration-node-configuration#iteration)。
 输出的数据默认会使用内置的控件渲染，你也可以**使用[自定义控件](../frontend-ui-customization/custom-controls)渲染**。
 
 配置方式如下：

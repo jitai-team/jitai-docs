@@ -115,7 +115,7 @@ Next, we'll add AI grading functionality to the Grading Management Page.
 The grading Agent's workflow is as follows:
 Obtain answer details from the page, score each item, provide scores and rationale and update them to answer details; then provide an overall comment based on the overall scoring situation; finally output answer details with scores and rationale along with the overall comment.
 
-- **Create Grading Agent**: Refer to [Creating AI Agent](../../ai-agent/create-ai-agent) for the creation process. After creation, [configure the large model](../../ai-agent/create-ai-agent#select-model-and-configure-parameters).
+- **Create Grading Agent**: Refer to [Creating AI Agent](../../ai-agent/create-ai-agent) for the creation process. After creation, [configure the large model](../../ai-agent/create-ai-agent#selecting-models-configuring-parameters).
 - **Write prompt**:
 ```markdown
 # Role: Grading Expert
@@ -164,10 +164,10 @@ Note: This is sample data only, not your final return data
     - comments (comments): Overall comment on the answer sheet
 ![Grading Agent Output](./img/agent-output.png)
 
-Configuration method reference: [Configure Output Parameters](../../ai-agent/agent-input-output#configure-output-results)
+Configuration method reference: [Configure Output Parameters](../../ai-agent/agent-input-output#configuring-output-results)
 
 - **Configure tool invocation**: Add the **Grading Management Page** - `Get Variable Value` as a tool, through which the Agent obtains answer detail data from the grading form on the page.
-Configuration method reference: [Agent Add Page Tools](../../ai-agent/agent-tools#agent-call-page-functions)。
+Configuration method reference: [Agent Add Page Tools](../../ai-agent/agent-tools#calling-page-functions)。
 
 ![Grading Agent Tool](./img/agent-tool.png)
 

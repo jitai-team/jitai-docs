@@ -11,4 +11,4 @@ Developers can set user role restrictions and pre-execution confirmation for too
 
 ## Configure Agent Tool Execution Permissions {#configure-agent-tool-execution-permissions}
 
-For detailed configuration methods of Agent tool permission control, please refer to [Restrict User Roles for Tool Calls](../ai-agent/agent-tools#restrict-user-roles-for-tool-calls) and [Manual Confirmation Before Tool Execution](../ai-agent/agent-tools#manual-confirmation-before-tool-execution).
+For detailed configuration methods of Agent tool permission control, please refer to [Restrict User Roles for Tool Calls](../ai-agent/agent-tools#restricting-user-roles-for-tool-calls) and [Manual Confirmation Before Tool Execution](../ai-agent/agent-tools#manual-confirmation-before-tool-execution).

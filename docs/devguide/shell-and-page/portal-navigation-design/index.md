@@ -17,14 +17,14 @@ JitAi automatically provisions three built-in portals for every new application:
 Users can switch between available portals using the portal selector located in the upper-left corner of any portal interface. The developer portal serves as a representative example of this functionality.
 
 ### Developer portal {#developer-portal} 
-The developer portal provides a comprehensive development environment exclusively for application developers. Within this portal, developers can access [JitAi Development Tools](/docs/devguide/development-tool-and-publish-service/jitai-visual-development-tools) to execute various development tasks, such as configuring role-based portal access, building system functionality, and managing application settings.
+The developer portal provides a comprehensive development environment exclusively for application developers. Within this portal, developers can access [JitAi Development Tools](/docs/devguide/development-tool-and-publish-service/visual-development-tool) to execute various development tasks, such as configuring role-based portal access, building system functionality, and managing application settings.
 
 All portal navigation menus—except for the developer portal itself—are configured by developers through this centralized development interface.
 
 ### Manager portal {#manager-portal} 
 The manager portal is designed for users with administrative privileges, enabling them to oversee application management tasks including organizational structure configuration, role management, and user administration. Developers retain the ability to customize this portal according to specific requirements.
 
-Upon application creation, the system automatically generates an administrator account with default credentials: username `admin123` and password `admin123`. For security purposes, it is strongly recommended that developers update these default credentials immediately after first login through the [personal information](/docs/devguide/development-tool-and-publish-service/jitai-visual-development-tools#personal-center) settings.
+Upon application creation, the system automatically generates an administrator account with default credentials: username `admin123` and password `admin123`. For security purposes, it is strongly recommended that developers update these default credentials immediately after first login through the [personal information](/docs/devguide/development-tool-and-publish-service/visual-development-tool#personal-center) settings.
 
 :::tip Organizational Roles vs Application Roles
 `Organizational roles` correspond to users' positions within the enterprise organizational hierarchy, while `Application roles` in JitAi applications define users' permissions within the application system. Although organizational roles and application roles are conceptually similar, they do not have a strict one-to-one correspondence. For instance, a regular employee can be assigned an application administrator role to manage a specific application system.
@@ -160,7 +160,7 @@ When developers disable the `Display in portal switch menu` option in `Layout De
 When an application contains multiple portals, developers can configure order values in `Layout Design` to control the display sequence of each portal in the portal selector menu.
 
 ## Managing common function entries {#managing-common-function-entries}
-Every newly created portal includes a standard set of common function entries: Initiate Application, To-do Center, Message Center, Personal Center, and New Function. The New Function entry provides simplified module creation capabilities, though with reduced functionality compared to the comprehensive [Visual Development Tools](/docs/devguide/development-tool-and-publish-service/jitai-visual-development-tools). All entries can be selectively enabled or disabled through the `Layout Design` configuration.
+Every newly created portal includes a standard set of common function entries: Initiate Application, To-do Center, Message Center, Personal Center, and New Function. The New Function entry provides simplified module creation capabilities, though with reduced functionality compared to the comprehensive [Visual Development Tools](/docs/devguide/development-tool-and-publish-service/visual-development-tool). All entries can be selectively enabled or disabled through the `Layout Design` configuration.
 
 ![Portal Common Function Entry](./imgs/portal-common-function-entry.png "Portal Common Function Entry")
 

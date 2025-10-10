@@ -91,23 +91,23 @@ Powerful toolchain for efficient development. Master visual development environm
 
 <IndexCard
   title="JitAi Visual Development Tools"
-  href="devguide/development-tool-and-publish-service/jitai-visual-development-tools"
+  href="devguide/development-tool-and-publish-service/visual-development-tool"
   description="Master the powerful visual development environment, familiarize yourself with IDE functional areas, and learn to switch between visual and source code modes."
 >
   <LinkGrid links={[
-    { text: "Element directory tree", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#element-directory-tree" },
-    { text: "Adding elements", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#adding-elements" },
-    { text: "Visual editor", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#visual-editor" },
-    { text: "Source code editor", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#source-code-editor" },
-    { text: "Source code file tree", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#source-code-file-tree" },
-    { text: "Application settings", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#application-settings" },
-    { text: "Basic information", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#basic-information" },
-    { text: "Default elements", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#default-elements" },
-    { text: "Environment variables", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#environment-variables" },
-    { text: "Portal switching", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#portal-switching" },
-    { text: "Personal center", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#personal-center" },
-    { text: "Language switching", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#language-switching" },
-    { text: "Navigation tabs", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#navigation-tabs" }
+    { text: "Element directory tree", href: "devguide/development-tool-and-publish-service/visual-development-tool#element-directory-tree" },
+    { text: "Adding elements", href: "devguide/development-tool-and-publish-service/visual-development-tool#adding-elements" },
+    { text: "Visual editor", href: "devguide/development-tool-and-publish-service/visual-development-tool#visual-editor" },
+    { text: "Source code editor", href: "devguide/development-tool-and-publish-service/visual-development-tool#source-code-editor" },
+    { text: "Source code file tree", href: "devguide/development-tool-and-publish-service/visual-development-tool#source-code-file-tree" },
+    { text: "Application settings", href: "devguide/development-tool-and-publish-service/visual-development-tool#application-settings" },
+    { text: "Basic information", href: "devguide/development-tool-and-publish-service/visual-development-tool#basic-information" },
+    { text: "Default elements", href: "devguide/development-tool-and-publish-service/visual-development-tool#default-elements" },
+    { text: "Environment variables", href: "devguide/development-tool-and-publish-service/visual-development-tool#environment-variables" },
+    { text: "Portal switching", href: "devguide/development-tool-and-publish-service/visual-development-tool#portal-switching" },
+    { text: "Personal center", href: "devguide/development-tool-and-publish-service/visual-development-tool#personal-center" },
+    { text: "Language switching", href: "devguide/development-tool-and-publish-service/visual-development-tool#language-switching" },
+    { text: "Navigation tabs", href: "devguide/development-tool-and-publish-service/visual-development-tool#navigation-tabs" }
   ]} />
 </IndexCard>
 
@@ -1034,20 +1034,20 @@ Intelligent agents with reasoning and action capabilities. Through prompts and t
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Creating AI Agent"
+  title="Creating AI Agents"
   href="devguide/ai-agent/create-ai-agent"
-  description="Learn how to create ReActAgent, configure system prompts, select large language models, write descriptions, and configure runtime state storage."
+  description="Learn how to create ReActAgents, configure system prompts, select large language models, write descriptions, and configure runtime state storage."
 >
   <LinkGrid columns={2} links={[
-    { text: "Creating ReActAgent", href: "devguide/ai-agent/create-ai-agent#create-react-agent" },
-    { text: "Write System Prompt", href: "devguide/ai-agent/create-ai-agent#write-system-prompt" },
-    { text: "Select Model and Configure Parameters", href: "devguide/ai-agent/create-ai-agent#select-model-and-configure-parameters" },
-    { text: "Write Agent Description", href: "devguide/ai-agent/create-ai-agent#write-agent-description" },
-    { text: "Configure Runtime State Storage", href: "devguide/ai-agent/create-ai-agent#configure-runtime-state-storage" },
-    { text: "Memory Storage", href: "devguide/ai-agent/create-ai-agent#memory-storage" },
-    { text: "Database Storage", href: "devguide/ai-agent/create-ai-agent#database-storage" },
-    { text: "Modify Agent in Source Code Mode", href: "devguide/ai-agent/create-ai-agent#modify-agent-in-source-code-mode" },
-    { text: "Custom Callback Processor", href: "devguide/ai-agent/create-ai-agent#custom-callback-processor" }
+    { text: "Creating a ReActAgent", href: "devguide/ai-agent/create-ai-agent#creating-react-agent" },
+    { text: "Writing system prompts", href: "devguide/ai-agent/create-ai-agent#writing-system-prompts" },
+    { text: "Selecting models and configuring parameters", href: "devguide/ai-agent/create-ai-agent#selecting-models-configuring-parameters" },
+    { text: "Writing agent descriptions", href: "devguide/ai-agent/create-ai-agent#writing-agent-descriptions" },
+    { text: "Configuring runtime state storage", href: "devguide/ai-agent/create-ai-agent#configuring-runtime-state-storage" },
+    { text: "Memory storage", href: "devguide/ai-agent/create-ai-agent#memory-storage" },
+    { text: "Database storage", href: "devguide/ai-agent/create-ai-agent#database-storage" },
+    { text: "Modifying agents in source code mode", href: "devguide/ai-agent/create-ai-agent#modifying-agents-source-code-mode" },
+    { text: "Custom callback processors", href: "devguide/ai-agent/create-ai-agent#custom-callback-processors" }
   ]} />
 </IndexCard>
 
@@ -1057,17 +1057,17 @@ Intelligent agents with reasoning and action capabilities. Through prompts and t
   description="Learn how to add and manage various tools in Agent, including model functions, service functions, MCP services, external APIs, and page functions."
 >
   <LinkGrid columns={2} links={[
-    { text: "Agent Call Model Functions", href: "devguide/ai-agent/agent-tools#agent-call-model-functions" },
-    { text: "Agent Call Service Functions", href: "devguide/ai-agent/agent-tools#agent-calling-service-functions" },
-    { text: "Agent Call MCP Services", href: "devguide/ai-agent/agent-tools#agent-call-mcp-service" },
-    { text: "Convert MCP Config to Environment Variables", href: "devguide/ai-agent/agent-tools#convert-mcp-config-to-environment-variables" },
-    { text: "Agent Call External APIs", href: "devguide/ai-agent/agent-tools#agent-call-external-api" },
-    { text: "Agent Call Page Functions", href: "devguide/ai-agent/agent-tools#agent-call-page-functions" },
-    { text: "Tool Function Management", href: "devguide/ai-agent/agent-tools#tool-function-management" },
-    { text: "Enable/Disable Tool Functions", href: "devguide/ai-agent/agent-tools#enable-disable-tool-functions" },
-    { text: "Tool Function Call Pre/Post Event Triggering", href: "devguide/ai-agent/agent-tools#tool-function-call-pre-post-event-triggering" },
-    { text: "Manual Confirmation Before Tool Execution", href: "devguide/ai-agent/agent-tools#manual-confirmation-before-tool-execution" },
-    { text: "Restrict User Roles for Tool Calls", href: "devguide/ai-agent/agent-tools#restrict-user-roles-for-tool-calls" }
+    { text: "Calling model functions", href: "devguide/ai-agent/agent-tools#calling-model-functions" },
+    { text: "Calling service functions", href: "devguide/ai-agent/agent-tools#calling-service-functions" },
+    { text: "Calling MCP servers", href: "devguide/ai-agent/agent-tools#calling-mcp-servers" },
+    { text: "Converting MCP configuration to environment variable", href: "devguide/ai-agent/agent-tools#converting-mcp-config-to-environment-variable" },
+    { text: "Calling external APIs", href: "devguide/ai-agent/agent-tools#calling-external-apis" },
+    { text: "Calling page functions", href: "devguide/ai-agent/agent-tools#calling-page-functions" },
+    { text: "Tool function management", href: "devguide/ai-agent/agent-tools#tool-function-management" },
+    { text: "Enabling/disabling tool functions", href: "devguide/ai-agent/agent-tools#enabling-disabling-tool-functions" },
+    { text: "Tool function call pre/post event triggering", href: "devguide/ai-agent/agent-tools#tool-function-call-pre-post-event-triggering" },
+    { text: "Manual confirmation before tool execution", href: "devguide/ai-agent/agent-tools#manual-confirmation-before-tool-execution" },
+    { text: "Restricting user roles for tool calls", href: "devguide/ai-agent/agent-tools#restricting-user-roles-for-tool-calls" }
   ]} />
 </IndexCard>
 
@@ -1077,13 +1077,14 @@ Intelligent agents with reasoning and action capabilities. Through prompts and t
   description="Master Agent's input variable configuration, output result settings, streaming output, and various calling methods."
 >
   <LinkGrid columns={2} links={[
-    { text: "Configure Input Variables", href: "devguide/ai-agent/agent-input-output#configure-input-variables" },
-    { text: "Use Variables in Prompts", href: "devguide/ai-agent/agent-input-output#use-variables-in-prompt" },
-    { text: "Configure Output Results", href: "devguide/ai-agent/agent-input-output#configure-output-results" },
-    { text: "Agent Streaming Output", href: "devguide/ai-agent/agent-input-output#agent-streaming-output" },
-    { text: "Call Agent in Frontend Functions", href: "devguide/ai-agent/agent-input-output#call-agent-in-frontend-functions" },
-    { text: "Call Agent in Backend Service Functions", href: "devguide/ai-agent/agent-input-output#call-agent-in-backend-service-functions" },
-    { text: "Test Agent in Page Assistant", href: "devguide/ai-agent/agent-input-output#test-agent-in-page-assistant" }
+    { text: "Configuring input variables", href: "devguide/ai-agent/agent-input-output#configuring-input-variables" },
+    { text: "Using variables in prompts", href: "devguide/ai-agent/agent-input-output#using-variables-in-prompts" },
+    { text: "Configuring output results", href: "devguide/ai-agent/agent-input-output#configuring-output-results" },
+    { text: "Output result data types", href: "devguide/ai-agent/agent-input-output#output-result-data-types" },
+    { text: "Agent streaming output", href: "devguide/ai-agent/agent-input-output#agent-streaming-output" },
+    { text: "Calling Agent in frontend functions", href: "devguide/ai-agent/agent-input-output#calling-agent-in-frontend-functions" },
+    { text: "Calling Agent in backend service functions", href: "devguide/ai-agent/agent-input-output#calling-agent-in-backend-service-functions" },
+    { text: "Testing Agent in page assistant", href: "devguide/ai-agent/agent-input-output#testing-agent-in-page-assistant" }
   ]} />
 </IndexCard>
 
@@ -1093,7 +1094,7 @@ Intelligent agents with reasoning and action capabilities. Through prompts and t
   description="Learn how to integrate knowledge bases with Agent to implement RAG functionality for enhanced response accuracy."
 >
   <LinkGrid links={[
-    { text: "Adding Knowledge Bases in Agent", href: "devguide/ai-agent/agent-knowledge-base#integrate-knowledge-base-rag" }
+    { text: "Adding knowledge bases in Agent", href: "devguide/ai-agent/agent-knowledge-base#integrate-knowledge-base-rag" }
   ]} />
 </IndexCard>
 
@@ -1280,10 +1281,10 @@ Design a powerful data foundation for your application. Create data tables, desi
 <IndexCard
   title="Calling Data Models with AI Agents"
   href="devguide/data-modeling/calling-data-models-in-ai-agent"
-  description="Add data model functions as Agent tools, enabling AI to execute data creation, reading, updating, and deletion operations."
+  description="Add data model functions as Agent tools, enabling AI to intelligently perform CRUD operations and automated data processing."
 >
   <LinkGrid links={[
-    { text: "Data Models as Agent Tools", href: "devguide/data-modeling/calling-data-models-in-ai-agent#data-models-as-agent-tools" }
+    { text: "Data models as Agent tools", href: "devguide/data-modeling/calling-data-models-in-ai-agent#data-models-as-agent-tools" }
   ]} />
 </IndexCard>
 
@@ -1294,10 +1295,10 @@ Design a powerful data foundation for your application. Create data tables, desi
   description="Configure and manage multiple database connections, supporting multi-data source application development."
 >
   <LinkGrid links={[
-    { text: "Create Database Connection", href: "devguide/data-modeling/manage-database-connections#create-database-connection" },
-    { text: "Multi-database Connection Management", href: "devguide/data-modeling/manage-database-connections#multi-database-connection-management" },
-    { text: "Database Connection Security Configuration", href: "devguide/data-modeling/manage-database-connections#database-connection-security-configuration" },
-    { text: "Connection Test and Troubleshooting", href: "devguide/data-modeling/manage-database-connections#connection-test-and-troubleshooting" }
+    { text: "Creating database connections", href: "devguide/data-modeling/manage-database-connections#create-database-connection" },
+    { text: "Multi-database connection management", href: "devguide/data-modeling/manage-database-connections#multi-database-connection-management" },
+    { text: "Database connection security configuration", href: "devguide/data-modeling/manage-database-connections#database-connection-security-configuration" },
+    { text: "Connection testing and troubleshooting", href: "devguide/data-modeling/manage-database-connections#connection-test-and-troubleshooting" }
   ]} />
 </IndexCard>
 
@@ -1307,9 +1308,9 @@ Design a powerful data foundation for your application. Create data tables, desi
   description="Learn about various database types and connection configurations supported by JitAi."
 >
   <LinkGrid links={[
-    { text: "Scenario Selection Suggestions", href: "devguide/data-modeling/supported-database-vendors#scenario-selection-suggestions" },
-    { text: "Cloud Vendor Compatibility", href: "devguide/data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
-    { text: "Database Element Usage", href: "devguide/data-modeling/supported-database-vendors#database-element-usage" }
+    { text: "Scenario selection recommendations", href: "devguide/data-modeling/supported-database-vendors#scenario-selection-recommendations" },
+    { text: "Cloud vendor compatibility", href: "devguide/data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
+    { text: "Database element usage", href: "devguide/data-modeling/supported-database-vendors#database-element-usage" }
   ]} />
 </IndexCard>
 
@@ -1326,9 +1327,9 @@ Ensure data consistency and reliability in complex business operations. Master d
   description="Database transaction control and consistency management to ensure reliability of data operations."
 >
   <LinkGrid links={[
-    { text: "Default Transaction Management Mechanism", href: "devguide/data-modeling/transaction-management#default-transaction-management-mechanism" },
-    { text: "Manual Transaction Commit/Rollback", href: "devguide/data-modeling/transaction-management#manual-transaction-commit-rollback" },
-    { text: "Transaction Decorator", href: "devguide/data-modeling/transaction-management#transaction-decorator" }
+    { text: "Default transaction management mechanism", href: "devguide/data-modeling/transaction-management#default-transaction-management-mechanism" },
+    { text: "Manual transaction commit/rollback", href: "devguide/data-modeling/transaction-management#manual-transaction-commit-rollback" },
+    { text: "Transaction decorator", href: "devguide/data-modeling/transaction-management#transaction-decorator" }
   ]} />
 </IndexCard>
 
@@ -1447,27 +1448,28 @@ Empower applications with powerful business processing capabilities. Handle comp
   description="Backend business logic implementation, encapsulating reusable business functions through service elements, providing API interfaces and data processing services."
 >
   <LinkGrid columns={2} links={[
-    { text: "Creating Service Functions", href: "devguide/business-logic-development/creating-service-elements#create-service-functions" },
-    { text: "Editing Service Functions in Source Code Mode", href: "devguide/business-logic-development/creating-service-elements#edit-service-functions-source-code-mode" },
-    { text: "Adding New Dependency Libraries", href: "devguide/business-logic-development/creating-service-elements#add-new-dependency-library" },
-    { text: "Using Cross-App Service Elements to Call Authorized Interfaces", href: "devguide/business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-interfaces" },
-    { text: "Creating Cross-App Service Elements", href: "devguide/business-logic-development/creating-service-elements#create-cross-app-service-elements" },
-    { text: "Using Cross-App Service Elements in Function Logic", href: "devguide/business-logic-development/creating-service-elements#use-cross-app-service-elements-in-functions" }
+    { text: "Creating service functions", href: "devguide/business-logic-development/creating-service-elements#create-service-functions" },
+    { text: "Editing service functions in source code mode", href: "devguide/business-logic-development/creating-service-elements#edit-service-functions-source-code-mode" },
+    { text: "Adding new dependency libraries", href: "devguide/business-logic-development/creating-service-elements#add-new-dependency-library" },
+    { text: "Using cross-app service elements to call authorized APIs", href: "devguide/business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-apis" },
+    { text: "Creating cross-app service elements", href: "devguide/business-logic-development/creating-service-elements#create-cross-app-service-elements" },
+    { text: "Using cross-app service elements in function logic", href: "devguide/business-logic-development/creating-service-elements#use-cross-app-service-elements-in-functions" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="Calling Other Elements in Service Functions"
+  title="Calling Elements in Service Functions"
   href="devguide/business-logic-development/calling-other-elements-in-service-functions"
   description="Learn how to call other elements from service functions, including models, other services, external APIs, and system components for comprehensive business logic implementation."
 >
   <LinkGrid columns={2} links={[
-    { text: "Using Platform APIs to Call Other Elements", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#use-platform-api-to-call-other-elements" },
-    { text: "Calling Data Model Functions", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-data-model-function" },
-    { text: "Calling Other Service Functions", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-other-service-functions" },
-    { text: "Calling External APIs", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-external-api" },
-    { text: "Calling AI Large Language Models", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-ai-llm" },
-    { text: "Calling AI Agents", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-ai-agent" }
+    { text: "Using platform APIs to call other elements", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#use-platform-api-to-call-other-elements" },
+    { text: "Typical examples", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#typical-examples" },
+    { text: "Calling data model functions", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-data-model-function" },
+    { text: "Calling other service functions", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-other-service-functions" },
+    { text: "Calling external APIs", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-external-api" },
+    { text: "Calling AI large language models", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-ai-llm" },
+    { text: "Calling AI agents", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-ai-agent" }
   ]} />
 </IndexCard>
 
@@ -1477,8 +1479,8 @@ Empower applications with powerful business processing capabilities. Handle comp
   description="Explore practical usage scenarios and best practices for service elements across different business contexts and application architectures."
 >
   <LinkGrid links={[
-    { text: "Where Service Functions Are Used", href: "devguide/business-logic-development/service-elements-usage-scenarios#where-service-functions-are-used" },
-    { text: "Helping AI Understand Service Functions More Accurately", href: "devguide/business-logic-development/service-elements-usage-scenarios#help-ai-understand-service-functions" }
+    { text: "Where service functions are used", href: "devguide/business-logic-development/service-elements-usage-scenarios#where-service-functions-are-used" },
+    { text: "Helping AI understand service functions accurately", href: "devguide/business-logic-development/service-elements-usage-scenarios#help-ai-understand-service-functions" }
   ]} />
 </IndexCard>
 

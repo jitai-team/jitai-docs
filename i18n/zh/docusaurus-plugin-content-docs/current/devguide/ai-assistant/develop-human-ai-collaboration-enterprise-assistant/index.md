@@ -115,7 +115,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 评分Agent的工作流程如下：
 从页面中获取答题明细，逐条评分，给出得分及理由并更新到答题明细中；然后根据整体得分情况给出一个总评语；最后输出包含得分及理由的答题明细与总评语。
 
-- **创建评分Agent元素**：创建过程参考[创建AI Agent](../../ai-agent/create-ai-agent)。创建完成后[配置大模型](../../ai-agent/create-ai-agent#select-model-and-configure-parameters)。
+- **创建评分Agent元素**：创建过程参考[创建AI Agent](../../ai-agent/create-ai-agent)。创建完成后[配置大模型](../../ai-agent/create-ai-agent#selecting-models-configuring-parameters)。
 - **编写提示词**：
 ```markdown
 # 角色：阅卷专家
@@ -163,13 +163,13 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
     - 评语(comments)：对答卷的整体评语
 ![阅卷Agent-输出](./img/agent-output.png)
 
-配置方式参考：[配置输出参数](../../ai-agent/agent-input-output#configure-output-results)
+配置方式参考：[配置输出参数](../../ai-agent/agent-input-output#configuring-output-results)
 
 - **配置调用工具**：将**阅卷管理页面**`获取变量值`添加为工具，Agent通过该工具获取页面中评分表单中的答题明细数据。
 
 ![阅卷Agent-工具](./img/agent-tool.png)
 
-配置方式参考：[Agent 添加页面工具](../../ai-agent/agent-tools#agent-call-page-functions)
+配置方式参考：[Agent 添加页面工具](../../ai-agent/agent-tools#calling-page-functions)
 
 
 ### 开发评分助理 {#developing-the-grading-assistant}

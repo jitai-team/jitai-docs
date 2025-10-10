@@ -42,7 +42,7 @@ slug: publishing-and-upgrading-applications
 
 ## 应用版本升级 {#application-version-updates}
 
-被继承应用的开发者会持续发布新的版本，以修复bug、添加新功能等，开发者可以在[节点控制台](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment)或[在应用设置](../development-tool-and-publish-service/jitai-visual-development-tools#application-settings)中检查新版本并更新。
+被继承应用的开发者会持续发布新的版本，以修复bug、添加新功能等，开发者可以在[节点控制台](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment)或[在应用设置](../development-tool-and-publish-service/visual-development-tool#application-settings)中检查新版本并更新。
 
 ## 应用部署策略 {#application-deployment-strategies}
 

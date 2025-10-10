@@ -28,7 +28,7 @@ slug: creating-and-deploying-applications
 
 :::tip
 
-被继承应用的开发者会持续发布新的版本，以修复bug、添加新功能等，开发者可以在[节点控制台](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment)或[在应用设置](../development-tool-and-publish-service/jitai-visual-development-tools#application-settings)中检查新版本并更新。详细的版本管理请参考[应用发布与更新](../creating-and-publishing-applications/publishing-and-upgrading-applications#application-version-updates)。
+被继承应用的开发者会持续发布新的版本，以修复bug、添加新功能等，开发者可以在[节点控制台](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment)或[在应用设置](../development-tool-and-publish-service/visual-development-tool#application-settings)中检查新版本并更新。详细的版本管理请参考[应用发布与更新](../creating-and-publishing-applications/publishing-and-upgrading-applications#application-version-updates)。
 
 :::
 

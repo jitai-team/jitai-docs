@@ -36,11 +36,11 @@ Create a button in the component that needs to call template printing.
 
 Configure button events:
 
-![Configure Button Events](./img/2/2025-08-29-16-36-33.gif "Configure Button Events")
+![Configure Button Events](./img/2/2025-08-29_16-36-33.gif "Configure Button Events")
 
 1. In the event editing area, click "Please select" in the statement, select the "Print File Template" option under "Utility Functions" in the popup window, which will generate Utility Functions.Print File Template.
 2. Click the `Set Parameters` button of Utility Functions.Print File Template, and set the template type, file template, and assign values to template variables in the popup dialog.
 
 Finally, verify the template printing effect:
 
-![Template Printing Effect](./img/2/2025-08-29-16-43-13.gif "Template Printing Effect")
+![Template Printing Effect](./img/2/2025-08-29_16-43-13.gif "Template Printing Effect")

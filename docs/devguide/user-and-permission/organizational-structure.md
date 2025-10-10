@@ -6,7 +6,7 @@ slug: organizational-structure
 # Organizational Structure {#organizational-structure}
 JitAi provides flexible and diverse organizational structure capabilities, supporting four types: Standard Organization, DingTalk Custom Organization, Wecom Custom Organization and Microsoft Teams. Users can flexibly choose the appropriate organizational structure according to actual management needs and system foundation, achieving efficient management of members and departments. The platform not only supports flexible configuration of members and departments, but also seamless integration with third-party platforms, fully meeting the diversified organizational management scenarios of enterprises.
 
-## Default Organizational Structure {#default-organizational-structure}
+## Default Organization Structure {#default-organizational-structure}
 When creating an application, JitAi will automatically generate a default organizational structure for you.
 
 ![](./img/corp/default-organizational-structure.png)

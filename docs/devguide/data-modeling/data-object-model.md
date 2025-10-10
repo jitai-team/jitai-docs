@@ -3,56 +3,56 @@ sidebar_position: 9
 slug: data-object-model
 ---
 
-# Data Object Model {#data-object-model}
-The Data Object Model is a data structure specifically designed for full-code development mode, similar to DTO (Data Transfer Object), also known as `Table-less Model`. It is customized by developers according to specific business requirements and does not directly map or associate with any database tables. Data object models are mainly used in business logic such as service functions, event handling, and workflow orchestration for structured expression, transmission, and transformation of data. Through data object models, developers can flexibly define multi-layered nested and complex combined data structures, enabling standardized data interaction between different modules, and improving code maintainability, reusability, and business decoupling capabilities. Data object models are very suitable for handling complex business logic, multi-layer data interaction, temporary data encapsulation, and other scenarios.
+# Data Object Models {#data-object-model}
+Data Object Models represent specialized data structures engineered for full-code development environments, functioning similarly to DTOs (Data Transfer Objects) and commonly referred to as `Table-less Models`. These models are custom-designed by developers to meet specific business requirements without directly mapping to or associating with database tables. Data object models serve as the backbone for structured data expression, transmission, and transformation within business logic components such as service functions, event handlers, and workflow orchestration systems. Through data object models, developers can architect flexible multi-layered nested and complex composite data structures that facilitate standardized data interactions between modules while enhancing code maintainability, reusability, and business decoupling capabilities. Data object models excel in scenarios involving complex business logic, multi-tier data interactions, and temporary data encapsulation.
 
-## Creating Data Object Model {#creating-data-object-model}
-JitAi supports visual creation of object models, with fields and functions only supporting full-code editing.
+## Creating data object models {#creating-data-object-model}
+JitAi provides visual creation capabilities for object models, while fields and functions require full-code editing exclusively.
 
-![Create Data Object Model](./img/create-data-object-model.png)
+![Create Data Object Model](./img/create-data-object-model.png "Create Data Object Model")
 
-In the element tree of the development area, click the `+` button on the right side of Data Models, select `Data Object Model` from the popup list to open the `Create Element >  Data Object Model` dialog.
+Navigate to the element tree in the development area, click the `+` button adjacent to Data Models, and select `Data Object Model` from the dropdown menu to launch the `Create Element > Data Object Model` dialog.
 
-![Data Object Model Dialog](./img/data-object-model-popup.png)
+![Data Object Model Dialog](./img/data-object-model-popup.png "Data Object Model Dialog")
 
-In the `Create Element >  Data Object Model` dialog, fill in the model name (the system will automatically generate the English name), click `Confirm` to complete the creation, and automatically enter the full-code editing interface of the data object model.
+Within the `Create Element > Data Object Model` dialog, specify the model name (the system automatically generates the corresponding English identifier), then click `Confirm` to finalize creation and seamlessly transition into the data object model's full-code editing interface.
 
-## Using Data Object Model {#using-data-object-model}
-The usage of data object models is very flexible, suitable for business logic such as service functions and event handling, serving as data carriers for input parameters or output results, and enabling standardized data transmission between different modules. In actual development processes, data object models are commonly used to express and transform complex data structures, avoiding direct database table operations, thereby improving code maintainability and reusability. Additionally, data object models support multi-layered nesting and composition, meeting data organization requirements in complex business scenarios.
+## Using data object models {#using-data-object-model}
+Data object models offer exceptional flexibility, making them ideal for business logic implementations within service functions and event handlers, where they serve as data carriers for input parameters and output results while enabling standardized data transmission across different modules. In practical development workflows, data object models are frequently employed to express and transform complex data structures, eliminating the need for direct database table operations and thereby enhancing code maintainability and reusability. Furthermore, data object models support sophisticated multi-layered nesting and composition patterns, effectively addressing data organization requirements in complex business scenarios.
 
-![Data Object Model Full Code](./img/data-object-model-full-code.png)
+![Data Object Model Full Code](./img/data-object-model-full-code.png "Data Object Model Full Code")
 
-In the full-code editing interface, developers can conveniently view and edit the specific implementation of data object models by clicking the `model.py` file in the left file list. Data object models need to inherit from the base class provided by the platform and can flexibly define properties (fields) and methods according to business requirements.
+Within the full-code editing interface, developers can efficiently view and modify data object model implementations by accessing the `model.py` file from the left-side file navigator. Data object models must inherit from the platform-provided base class and can flexibly define properties (fields) and methods tailored to specific business requirements.
 
-The following is a typical usage flow of a data object model:
+The following represents a typical data object model usage workflow:
 
-## Customizing Fields {#customizing-fields}
-In the `model.py` file of the object model, developers can customize the required fields according to business needs. The following figure shows the field definition interface of the object model:
+## Customizing fields {#customizing-fields}
+Within the object model's `model.py` file, developers can define custom fields tailored to specific business requirements. The following diagram illustrates the object model's field definition interface:
 
-![Object Model Field Definition](./img/object-model-field-definition.png)
+![Object Model Field Definition](./img/object-model-field-definition.png "Object Model Field Definition")
 
-After completing field definition, detailed field configuration methods can be referenced in [Data Table Model](./data-table-model#source-code-mode).
+Upon completing field definitions, comprehensive field configuration methodologies can be found in the [Data Table Model](./data-table-model#source-code-mode) documentation.
 
 :::tip Note
-After configuring custom fields, check whether the `datatypes` package is imported.
+After configuring custom fields, verify that the `datatypes` package has been properly imported.
 :::
 
-## Overriding Model Functions {#overriding-model-functions}
-To implement custom data query logic, it is usually necessary to override model CRUD methods. Here we take overriding the `query` method as an example. The following figure shows an interface example of object model method override:
+## Overriding model functions {#overriding-model-functions}
+To implement custom data query logic, developers typically need to override model CRUD methods. Using the `query` method override as an exemplar, the following diagram demonstrates the object model method override interface:
 
-![Object Model Method Override](./img/object-model-method-override.png)
+![Object Model Method Override](./img/object-model-method-override.png "Object Model Method Override")
 
-After completing method override, the `query` method can provide custom data query capabilities for table components and other elements.
+Upon completing the method override, the `query` method delivers custom data query capabilities to table components and other interface elements.
 
-![Object Model Table Display](./img/object-model-table-display.png)
+![Object Model Table Display](./img/object-model-table-display.png "Object Model Table Display")
 
-Finally, add a table component to the page and set the data object model as the data source to display the data content returned by the `query` method.
+Finally, integrate a table component into the page and configure the data object model as the data source to render the content returned by the `query` method.
 
-Besides overriding the `query` (data query) method, you can also override methods such as `create` (add data), `updateByPK` (update by primary key), `deleteByPK` (delete by primary key) according to business needs to implement custom data processing logic. For example, you can implement validation and processing of new data in the `create` method, handle business validation and transformation before and after data updates in the `updateByPK` method, and perform permission validation or cascading processing in the `deleteByPK` method. Additionally, you can extend custom methods for complex data transformation, aggregation, or validation business requirements. Through overriding and extending these methods, developers can flexibly control the behavior of data object models to meet diverse business scenarios.
+Beyond overriding the `query` (data retrieval) method, developers can override additional methods such as `create` (data insertion), `updateByPK` (primary key-based updates), and `deleteByPK` (primary key-based deletion) to implement custom data processing logic tailored to business requirements. For instance, the `create` method can incorporate validation and preprocessing of new data entries, the `updateByPK` method can handle business validation and transformation processes before and after data updates, while the `deleteByPK` method can enforce permission validation or execute cascading operations. Furthermore, developers can extend custom methods to address complex data transformation, aggregation, or validation requirements. Through strategic overriding and extension of these methods, developers gain granular control over data object model behavior, accommodating diverse business scenarios with precision.
 
-## Defining New Functions {#defining-new-functions}
-In the `model.py` file of the data object model, developers can not only customize fields but also flexibly add custom functions according to actual business needs. Custom functions can be used to implement complex data processing, business logic encapsulation, data validation, format conversion, and other operations, significantly improving model extensibility, flexibility, and code reusability.
+## Defining new functions {#defining-new-functions}
+Within the data object model's `model.py` file, developers can not only customize fields but also dynamically incorporate custom functions aligned with specific business requirements. Custom functions serve as powerful tools for implementing sophisticated data processing operations, business logic encapsulation, data validation protocols, format conversion routines, and other specialized operations, substantially enhancing model extensibility, operational flexibility, and code reusability.
 
-![Add New Function](./img/data-object-model-add-function.gif)
+![Add New Function](./img/data-object-model-add-function.gif "Add New Function")
 
-When adding custom functions, it is recommended to reference the implementation methods of existing methods and write function code in the `model.py` file. To ensure that the platform can correctly identify and call newly defined methods, function declarations need to be made in the `functionList` of the `e.json` file. Only custom functions declared in `functionList` can be properly referenced and called in scenarios such as pages and service functions. Methods inherited from base classes and overridden do not need to be repeatedly declared in each object model. For specific function declaration configuration, please refer to [Element Directory Specification](../../reference/runtime-platform/JAAP#element-directory-specification).
+When implementing custom functions, it's advisable to reference existing method implementations as templates and develop function code within the `model.py` file. To ensure proper platform recognition and invocation of newly defined methods, function declarations must be registered within the `functionList` array of the `e.json` configuration file. Only custom functions explicitly declared in the `functionList` can be appropriately referenced and invoked across various contexts including pages and service functions. Methods inherited from base classes and subsequently overridden do not require redundant declarations within individual object models. For comprehensive function declaration configuration guidelines, consult the [Element Directory Specification](../../reference/runtime-platform/JAAP#element-directory-specification) documentation.

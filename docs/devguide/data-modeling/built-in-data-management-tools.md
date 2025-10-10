@@ -5,12 +5,12 @@ slug: built-in-data-management-tools
 
 # Built-in Data Management Tools {#built-in-data-management-tools}
 
-JitAi provides data management capabilities for data table models, enabling CRUD operations on data tables without writing code. Data can also be managed directly within the development environment.
+JitAi provides comprehensive data management capabilities for data table models, enabling CRUD operations on data tables without requiring code development. Data can be managed directly within the development environment through an intuitive visual interface.
 
-![Data Management 1](./img/data-management-1.png)
+![Data Management Interface](./img/data-management-1.png "Data Management Interface")
 
 Click `Data Management` to access the visual data management interface.
 
-![Data Management 2](./img/data-management-2.png)
+![Data Management Features](./img/data-management-2.png "Data Management Features")
 
-Data management features include data filtering and querying, adding, editing, deleting, batch modification, batch deletion, data clearing and reset, as well as import and export functionality. Users can intuitively manage all records in the data tables.
+The data management system includes comprehensive features for data filtering and querying, adding, editing, deleting, batch modification, batch deletion, data clearing and reset, as well as import and export functionality. Users can intuitively manage all records in the data tables through this powerful interface.

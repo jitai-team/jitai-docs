@@ -83,14 +83,14 @@ AI数据管理助理在运行时需要访问系统数据库及调用页面上的
 
 ## 运行效果 {#runtime-effect}
 
-点击可视化编辑器右上角的 <span style={{ display: "inline-block", verticalAlign: "middle", margin: "0 4px", height: '30px', marginTop: "-15px" }}>![预览按钮](./imgs/view-icon.png)</span> 按钮，看看效果吧！<br/>
+点击可视化编辑器右上角的 <span style={{ display: "inline-flex", alignItems: "center", verticalAlign: "middle", margin: "0 4px", height: '30px', marginTop: "-15px" }}>![预览按钮](./imgs/view-icon.png)</span> 按钮，看看效果吧！<br/>
 用户在访问页面时将会看到一个功能完整的数据管理界面，包含数据表格、筛选条件、分页、工具栏中的新增/批量修改/批量删除/导入、操作列中的编辑/删除、点击列标题进行排序。开启AI数据管理助理后，会在页面右侧显示一个AI对话框，用户通过该对话框与助理对话，操作数据。
 
 ![ai-data-management-page 使用区界面](./imgs/ai-data-management-page-usage-area-interface.png)
 
 ## 转换为常规页面进行修改 {#convert-to-regular-page-for-modification}
 AI数据管理页面是 JitAI 提供的开箱即用的内置页面类型，开发者可以快速创建并使用。当开发者想要基于默认实现进行更精细化的定制修改时，可以将页面转换为常规页面进行无限制地修改。<br/>
-开发者可以在页面编辑器中点击右上角的 <span style={{ display: "inline-block", verticalAlign: "middle", margin: "0 4px", height: '30px' }}>![转换按钮](./imgs/trans-type.png)</span> 按钮，即可将页面转换为常规页面。关于常规页面的开发方法参考[组件化页面开发](/docs/devguide/shell-and-page/component-based-page-development)。
+开发者可以在页面编辑器中点击右上角的 <span style={{ display: "inline-flex", alignItems: "center", verticalAlign: "middle", margin: "0 4px", height: '30px' }}>![转换按钮](./imgs/trans-type.png)</span> 按钮，即可将页面转换为常规页面。关于常规页面的开发方法参考[组件化页面开发](/docs/devguide/shell-and-page/component-based-page-development)。
 
 :::warning
 转换为常规页面后无法再恢复为原来的`AI数据管理功能`类型。

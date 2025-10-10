@@ -1217,12 +1217,12 @@ Design a powerful data foundation for your application. Create data tables, desi
 </IndexCard>
 
 <IndexCard
-  title="Aggregate Table Model"
+  title="Aggregated Table Model"
   href="devguide/data-modeling/aggregate-table-model"
   description="Multi-table data integration and statistical analysis, supporting complex data aggregation and calculation functions."
 >
   <LinkGrid columns={2} links={[
-    { text: "Create aggregate table model", href: "devguide/data-modeling/aggregate-table-model" },
+    { text: "Create aggregated table model", href: "devguide/data-modeling/aggregate-table-model" },
     { text: "Multi-table data merge", href: "devguide/data-modeling/aggregate-table-model#multi-table-data-merge" },
     { text: "Multi-table horizontal join", href: "devguide/data-modeling/aggregate-table-model#multi-table-horizontal-connection" },
     { text: "Group aggregate statistics", href: "devguide/data-modeling/aggregate-table-model#group-aggregate-statistics" },
@@ -1383,7 +1383,7 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
     { text: "Twilio", href: "devguide/user-and-permission/login-authentication#twilio" },
     { text: "AWS SNS", href: "devguide/user-and-permission/login-authentication#aws-sns" },
     { text: "DingTalk self-built QR code login", href: "devguide/user-and-permission/login-authentication#dingtalk-custom-qr-login" },
-    { text: "WeChat Work self-built QR code login", href: "devguide/user-and-permission/login-authentication#wechat-work-custom-qr-login" },
+    { text: "WeCom self-built QR code login", href: "devguide/user-and-permission/login-authentication#wechat-work-custom-qr-login" },
     { text: "WeChat login", href: "devguide/user-and-permission/login-authentication#wechat-login" },
     { text: "WeChat official account login", href: "devguide/user-and-permission/login-authentication#wechat-official-account-login" },
     { text: "WeChat mini program login", href: "devguide/user-and-permission/login-authentication#wechat-mini-program-login" },

@@ -5,7 +5,7 @@ slug: login-authentication
 
 # Login Authentication {#login-authentication}
 
-The JitAi platform supports multiple login authentication methods, including account password login, phone login, DingTalk self-built QR code login, WeChat Work self-built QR code login, WeChat authentication, WeChat official account authentication, WeChat mini program authentication, GitHub login, Google login, and Microsoft Teams authentication, meeting user access and authentication needs in different scenarios, helping enterprises and individual users access applications conveniently and securely.
+The JitAi platform supports multiple login authentication methods, including account password login, phone login, DingTalk self-built QR code login, WeCom self-built QR code login, WeChat authentication, WeChat official account authentication, WeChat mini program authentication, GitHub login, Google login, and Microsoft Teams authentication, meeting user access and authentication needs in different scenarios, helping enterprises and individual users access applications conveniently and securely.
 
 ## Creating login authentication {#creating-login-method}
 
@@ -81,20 +81,20 @@ After completing the relevant configuration, the system will automatically creat
 DingTalk self-built QR code login method needs to be used in conjunction with [DingTalk Custom Organizational Structure](./organizational-structure#dingtalk-custom-organization). When creating a DingTalk custom organizational structure, the system will automatically synchronize and generate the corresponding QR code login method without separate configuration.
 :::
 
-## WeChat Work self-built QR code login {#wechat-work-custom-qr-login}
+## WeCom self-built QR code login {#wechat-work-custom-qr-login}
 
-WeChat Work self-built QR code login is an enterprise-level QR code authentication method based on the WeChat Work platform. Users can quickly and securely log in to the system through WeChat Work client QR code authorization. This method is suitable for employee unified authentication and passwordless login scenarios under the WeChat Work ecosystem. When creating a WeChat Work custom organizational structure, the system will automatically generate a WeChat Work self-built QR code login method. Developers can also independently add WeChat Work self-built QR code login authentication methods according to actual business needs.
+WeCom self-built QR code login is an enterprise-level QR code authentication method based on the WeCom platform. Users can quickly and securely log in to the system through WeCom client QR code authorization. This method is suitable for employee unified authentication and passwordless login scenarios under the WeCom ecosystem. When creating a WeCom custom organizational structure, the system will automatically generate a WeCom self-built QR code login method. Developers can also independently add WeCom self-built QR code login authentication methods according to actual business needs.
 
-![WeChat Work QR Code Scan](./img/auth/wechat-work-qr-scan.gif "WeChat Work QR Code Scan")
+![WeCom QR Code Scan](./img/auth/wechat-work-qr-scan.gif "WeCom QR Code Scan")
 
-When developers choose to create `WeChat Work Self-built QR Code Login`, a `Create WeChat Work Self-built QR Code Login` configuration window will pop up. In this window, you need to fill in the login method name (English name is automatically generated) and configure the credential information of WeChat Work custom application, including `CorpId` (Enterprise ID), `AgentID`, and `Secret`. For how to obtain related configuration information, please refer to [Organizational Structure Documentation](./organizational-structure#wechat-work-custom-organization).
+When developers choose to create `WeCom Self-built QR Code Login`, a `Create WeCom Self-built QR Code Login` configuration window will pop up. In this window, you need to fill in the login method name (English name is automatically generated) and configure the credential information of WeCom custom application, including `CorpId` (Enterprise ID), `AgentID`, and `Secret`. For how to obtain related configuration information, please refer to [Organizational Structure Documentation](./organizational-structure#wechat-work-custom-organization).
 
-![WeChat Work Login Configuration](./img/auth/wechat-work-login-config.png "WeChat Work Login Configuration")
+![WeCom Login Configuration](./img/auth/wechat-work-login-config.png "WeCom Login Configuration")
 
-After configuration is completed, the system will automatically generate a WeChat Work QR code login method and jump to the login method configuration page for your subsequent viewing and management.
+After configuration is completed, the system will automatically generate a WeCom QR code login method and jump to the login method configuration page for your subsequent viewing and management.
 
 :::tip
-WeChat Work self-built QR code login method needs to be used in conjunction with [WeChat Work Custom Organizational Structure](./organizational-structure#wechat-work-custom-organization). When creating a WeChat Work custom organizational structure, the system will automatically synchronize and generate the corresponding QR code login method without separate configuration.
+WeCom self-built QR code login method needs to be used in conjunction with [WeCom Custom Organizational Structure](./organizational-structure#wechat-work-custom-organization). When creating a WeCom custom organizational structure, the system will automatically synchronize and generate the corresponding QR code login method without separate configuration.
 :::
 
 ## WeChat login {#wechat-login}

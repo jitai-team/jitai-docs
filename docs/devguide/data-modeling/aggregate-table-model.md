@@ -3,19 +3,19 @@ sidebar_position: 7
 slug: aggregate-table-model
 ---
 
-# Aggregate Table Model {#aggregate-table-model}
+# Aggregated Table Model {#aggregate-table-model}
 
-The Aggregate Table Model is an advanced data modeling approach provided by JitAi, specifically designed for handling complex data analysis and statistical scenarios. Unlike [regular data table models](./data-table-model), aggregate table models do not directly correspond to a single table structure in the database. Instead, they flexibly configure, associate, merge, and calculate multiple data table models to ultimately generate virtual data tables that meet specific business requirements.
+The Aggregated Table Model is an advanced data modeling approach provided by JitAi, specifically designed for handling complex data analysis and statistical scenarios. Unlike [regular data table models](./data-table-model), aggregated table models do not directly correspond to a single table structure in the database. Instead, they flexibly configure, associate, merge, and calculate multiple data table models to ultimately generate virtual data tables that meet specific business requirements.
 
-![Create Aggregate Table](./img/create-aggregate-table.png "Create Aggregate Table")
+![Create Aggregated Table](./img/create-aggregate-table.png "Create Aggregated Table")
 
-Developers locate `Data Model` in the element tree, click the `+` on the right, and select `Aggregated Table Model`.
+Developers locate `Data Models` in the element tree, click the `+` on the right, and select `Aggregated Table Model`.
 
-![Create Aggregate Table Dialog](./img/create-aggregate-table-2.png "Create Aggregate Table Dialog")
+![Create Aggregated Table Dialog](./img/create-aggregate-table-2.png "Create Aggregated Table Dialog")
 
-In the `Create Element > Aggregated Table Model` popup page, enter the name (the English name will be automatically generated), and click the `Confirm` button to enter the aggregate table visual editor.
+In the `Create Element > Aggregated Table Model` popup page, enter the name (the English name will be automatically generated), and click the `Confirm` button to enter the aggregated table visual editor.
 
-![Aggregate Table Configuration Page](./img/aggregate-table-config-page.png "Aggregate Table Configuration Page")
+![Aggregated Table Configuration Page](./img/aggregate-table-config-page.png "Aggregated Table Configuration Page")
 
 ## Multi-table data merge {#multi-table-data-merge}
 
@@ -80,11 +80,11 @@ After completing the node configuration, click `Data Configuration` to enter the
 
 Aggregate tables can add formula fields based on existing aggregate fields. The values displayed in formula fields are the values calculated by the formulas.
 
-![Aggregate Table Add Formula Field](./img/aggregate-table-add-formula-field.png "Aggregate Table Add Formula Field")
+![Aggregated Table Add Formula Field](./img/aggregate-table-add-formula-field.png "Aggregated Table Add Formula Field")
 
 Taking a horizontal join aggregate table as an example, on the data configuration page, click `+ Formula Field` to enter the formula configuration panel.
 
-![Aggregate Table Formula Field Panel](./img/aggregate-table-formula-field-panel.png "Aggregate Table Formula Field Panel")
+![Aggregated Table Formula Field Panel](./img/aggregate-table-formula-field-panel.png "Aggregated Table Formula Field Panel")
 
 In the formula panel, you can select fields, functions, or operators such as `+`, `-`, `*`, `/` from above. Click to add them to the panel.
 
@@ -103,7 +103,7 @@ After successful preview, configure the formula field name, type, and field conf
 
 This approach first completes the aggregation operations of data tables (merge, join, or group statistics), then filters the aggregated results. It is suitable for scenarios that require conditional judgment based on aggregated results.
 
-![Aggregate Table Filter Data](./img/aggregate-table-filter-data.gif "Aggregate Table Filter Data")
+![Aggregated Table Filter Data](./img/aggregate-table-filter-data.gif "Aggregated Table Filter Data")
 
 Taking the append merge aggregate table as an example, on the data configuration preview page, click the `Data Filter` tab to enter the filter condition configuration page. In the `Set Filter Conditions` popup, click `+` to add filter conditions. If you want to filter data with numbers between 1-300, first select the corresponding number field, then select the comparison operator `In Range`, and finally enter the range values 1 and 300, then click `Confirm`. The data preview will only display row data that meets the condition where the number field is between 1-300.
 

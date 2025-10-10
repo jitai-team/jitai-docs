@@ -82,14 +82,14 @@ For more information about AI assistants, please read the [AI Assistant](/docs/d
 
 ## Runtime effect {#runtime-effect}
 
-Click the <span style={{ display: "inline-block", verticalAlign: "middle", margin: "0 4px", height: '30px', marginTop: "-15px" }}>![Preview Button](./imgs/view-icon.png)</span> button in the top right corner of the visual editor to see the effect!<br/>
+Click the <span style={{ display: "inline-flex", alignItems: "center", verticalAlign: "middle", margin: "0 4px", height: '30px', marginTop: "-15px" }}>![Preview Button](./imgs/view-icon.png)</span> button in the top right corner of the visual editor to see the effect!<br/>
 When users access the page, they will see a fully functional data management interface, including data table, filter conditions, pagination, add/batch modify/batch delete/import in the toolbar, edit/delete in the action column, and clicking column headers for sorting. After enabling the AI data management assistant, an AI dialog box will be displayed on the right side of the page, allowing users to interact with the assistant through this dialog to operate data.
 
 ![ai-data-management-page Usage Area Interface](./imgs/ai-data-management-page-usage-area-interface.png)
 
 ## Convert to generic page for modification {#convert-to-generic-page-for-modification}
 The AI data management page is a built-in page type provided by JitAI out of the box, which developers can quickly create and use. When developers want to make more refined custom modifications based on the default implementation, they can convert the page to a generic page for unlimited modification.<br/>
-Developers can click the <span style={{ display: "inline-block", verticalAlign: "middle", margin: "0 4px", height: '30px' }}>![Convert Button](./imgs/trans-type.png)</span> button in the top right corner of the page editor to convert the page to a generic page. For generic page development methods, refer to [Component-based Page Development](/docs/devguide/shell-and-page/component-based-page-development).
+Developers can click the <span style={{ display: "inline-flex", alignItems: "center", verticalAlign: "middle", margin: "0 4px", height: '30px' }}>![Convert Button](./imgs/trans-type.png)</span> button in the top right corner of the page editor to convert the page to a generic page. For generic page development methods, refer to [Component-based Page Development](/docs/devguide/shell-and-page/component-based-page-development).
 
 :::warning
 After converting to a generic page, it cannot be restored to the original `AI Data Management Page` type.

@@ -91,23 +91,23 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="JitAi可视化开发工具"
-  href="devguide/development-tool-and-publish-service/jitai-visual-development-tools"
+  href="devguide/development-tool-and-publish-service/visual-development-tool"
   description="掌握强大的可视化开发环境，熟悉IDE的各个功能区域，学会在可视化和源码双模式之间自由切换。"
 >
   <LinkGrid links={[
-    { text: "元素目录树", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#element-directory-tree" },
-    { text: "添加元素", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#adding-elements" },
-    { text: "可视化编辑器", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#visual-editor" },
-    { text: "源码编辑器", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#source-code-editor" },
-    { text: "源码文件树", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#source-code-file-tree" },
-    { text: "应用设置", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#application-settings" },
-    { text: "基本信息", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#basic-information" },
-    { text: "默认元素", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#default-elements" },
-    { text: "环境变量", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#environment-variables" },
-    { text: "门户切换", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#portal-switching" },
-    { text: "个人中心", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#personal-center" },
-    { text: "语言切换", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#language-switching" },
-    { text: "导航标签", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#navigation-tabs" }
+    { text: "元素目录树", href: "devguide/development-tool-and-publish-service/visual-development-tool#element-directory-tree" },
+    { text: "添加元素", href: "devguide/development-tool-and-publish-service/visual-development-tool#adding-elements" },
+    { text: "可视化编辑器", href: "devguide/development-tool-and-publish-service/visual-development-tool#visual-editor" },
+    { text: "源码编辑器", href: "devguide/development-tool-and-publish-service/visual-development-tool#source-code-editor" },
+    { text: "源码文件树", href: "devguide/development-tool-and-publish-service/visual-development-tool#source-code-file-tree" },
+    { text: "应用设置", href: "devguide/development-tool-and-publish-service/visual-development-tool#application-settings" },
+    { text: "基本信息", href: "devguide/development-tool-and-publish-service/visual-development-tool#basic-information" },
+    { text: "默认元素", href: "devguide/development-tool-and-publish-service/visual-development-tool#default-elements" },
+    { text: "环境变量", href: "devguide/development-tool-and-publish-service/visual-development-tool#environment-variables" },
+    { text: "门户切换", href: "devguide/development-tool-and-publish-service/visual-development-tool#portal-switching" },
+    { text: "个人中心", href: "devguide/development-tool-and-publish-service/visual-development-tool#personal-center" },
+    { text: "语言切换", href: "devguide/development-tool-and-publish-service/visual-development-tool#language-switching" },
+    { text: "导航标签", href: "devguide/development-tool-and-publish-service/visual-development-tool#navigation-tabs" }
   ]} />
 </IndexCard>
 
@@ -1310,7 +1310,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="了解JitAi支持的各种数据库类型和连接配置。"
 >
   <LinkGrid links={[
-    { text: "场景选择建议", href: "devguide/data-modeling/supported-database-vendors#scenario-selection-suggestions" },
+    { text: "场景选择建议", href: "devguide/data-modeling/supported-database-vendors#scenario-selection-recommendations" },
     { text: "与云厂商的兼容性说明", href: "devguide/data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
     { text: "数据库元素使用", href: "devguide/data-modeling/supported-database-vendors#database-element-usage" }
   ]} />
@@ -1452,7 +1452,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "创建服务函数", href: "devguide/business-logic-development/creating-service-elements#create-service-functions" },
     { text: "源码模式编辑服务函数", href: "devguide/business-logic-development/creating-service-elements#edit-service-functions-source-code-mode" },
     { text: "添加新的依赖库", href: "devguide/business-logic-development/creating-service-elements#add-new-dependency-library" },
-    { text: "使用跨App服务元素调用授权接口", href: "devguide/business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-interfaces" },
+    { text: "使用跨App服务元素调用授权接口", href: "devguide/business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-apis" },
     { text: "创建跨App服务元素", href: "devguide/business-logic-development/creating-service-elements#create-cross-app-service-elements" },
     { text: "在函数逻辑中使用跨App服务元素", href: "devguide/business-logic-development/creating-service-elements#use-cross-app-service-elements-in-functions" }
   ]} />
@@ -1465,6 +1465,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid columns={2} links={[
     { text: "使用平台API调用其它元素", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#use-platform-api-to-call-other-elements" },
+    { text: "几个典型示例", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#typical-examples" },
     { text: "调用数据模型函数", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-data-model-function" },
     { text: "调用其它服务函数", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-other-service-functions" },
     { text: "调用外部API", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-external-api" },

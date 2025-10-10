@@ -35,7 +35,7 @@ JitAi支持开发者在一个服务元素中创建多个服务函数。
 
 开发者需要将元素目录树切换到`源码`视图，找到`requirements.txt`文件并在文件中添加新的依赖库，点击`保存`按钮即可在服务函数中可以直接导入这些依赖库中的包。
 
-## 使用跨App服务元素调用授权接口 {#use-cross-app-service-elements-to-call-authorized-interfaces} 
+## 使用跨App服务元素调用授权接口 {#use-cross-app-service-elements-to-call-authorized-apis} 
 当一个JitAi应用使用[API授权元素](../api-exposure/api-authorization)对外开放了服务函数，另一个JitAi应用可以使用`跨APP服务`元素访问该授权函数，实现跨应用服务函数调用。这种调用方式仅限于在JitAi应用之间进行，调用方不是JitAi应用则依然需要使用[API授权元素SDK调用方式](../api-exposure/using-sdk-to-call-authorized-element-apis.md)。
 
 ### 创建跨App服务元素 {#create-cross-app-service-elements}

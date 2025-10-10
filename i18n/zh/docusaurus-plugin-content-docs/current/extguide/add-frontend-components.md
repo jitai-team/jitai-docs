@@ -15,17 +15,17 @@ import TabItem from '@theme/TabItem';
 在前端领域，现有的门户、页面类型完全够用，其实并没有太多的扩展必要性，但组件却有极大的扩展空间，以应对各种个性化的展示需求。
 :::
 
-### 效果预览
-![计数器组件](./img/add-frontend-component-type-counter.png)
+### 效果预览 {#effect-preview}
+![计数器组件](./img/add-frontend-component-type-counter.png "计数器组件")
 
-### 元素设计
+### 元素设计 {#element-design}
 | 元素层次 | fullName | 主要职责 |
 |---------|----------|----------|
 | **Meta元素** | `components.Meta` | JitAi开发框架中现有的Meta元素（无需创建） |
 | **Type元素** | `components.CounterType` | type指向`components.Meta`，封装基础计数器功能，处理数值增减、样式配置等 |
 | **在页面中使用时的配置** | 页面scheme.json | 在页面中配置组件的具体运行时参数并声明事件、函数、变量 |
 
-#### 计数器组件的目录结构
+#### 计数器组件的目录结构 {#counter-component-directory-structure}
 ```shell title="推荐目录结构"
 ├── components/
 │   └── CounterType/
@@ -41,8 +41,8 @@ import TabItem from '@theme/TabItem';
 │               └── CounterRender.tsx    # 移动端渲染组件
 ```
 
-## 操作指南
-### 创建目录结构
+## 操作指南 {#operation-guide}
+### 创建目录结构 {#creating-directory-structure}
 在你的JitAi应用根目录中，按照以下结构创建目录：
 
 ```bash
@@ -52,7 +52,7 @@ mkdir -p components/CounterType/render/pc
 mkdir -p components/CounterType/render/mobile
 ```
 
-### 实现元素文件
+### 实现元素文件 {#implementing-element-files}
 <Tabs>
   <TabItem value="config" label="元素定义文件">
 
@@ -302,13 +302,13 @@ static getEventList(): Array<{
 - `getEventList`: 告诉编辑器组件会触发哪些事件供页面监听
 :::
 
-### 测试
-#### 使新元素生效
+### 测试 {#testing}
+#### 使新元素生效 {#making-new-elements-take-effect}
 1. **清理缓存**：删除应用目录中的`dist`目录  
 2. **重启服务**：重启桌面端
 3. **触发打包**：访问应用页面，系统自动重新打包
 
-#### 在常规页面中测试
+#### 在常规页面中测试 {#testing-in-generic-pages}
 进入JitAi可视化开发工具，创建一个`常规页面`，在页面中添加刚刚创建的`计数器`组件。
 
 当切换到代码模式下会看到页面的`scheme.json`文件中自动生成了如下配置：
@@ -372,7 +372,7 @@ static getEventList(): Array<{
 
 可以尝试修改`scheme.json`文件中的配置项目（例如name,title,showTitle等），然后切换到可视化模式下，看看计数器组件会发生什么变化？
 
-## 总结
+## 总结 {#summary}
 新增前端组件Type元素的**核心步骤**：
 
 1. **创建目录结构**：`components/YourType/` + 必需文件
@@ -385,7 +385,7 @@ static getEventList(): Array<{
 - 导出名称`ComponentCls`/`Render`不能改
 - 必须实现`getVariableList`/`getFuncList`/`getEventList`
 
-## 进阶思考
+## 进阶思考 {#advanced-thinking}
 手动在页面scheme.json中修改配置项虽然可行，但却不够直观易用，业务专家们在可视化搭建时并不方便。
 
 怎样像官方组件一样，在可视化界面中配置计数器组件的参数呢？

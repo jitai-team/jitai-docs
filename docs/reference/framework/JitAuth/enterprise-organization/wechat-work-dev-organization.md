@@ -1,17 +1,17 @@
 ---
 slug: wechat-work-dev-organization
 ---
-# WeChat Work Proxy Development Organization
-WeChat Work proxy development organization is a specialized organization integration type for WeChat Work third-party applications, implementing multi-enterprise organization management and cross-enterprise authorization based on WeChat Work proxy development mode. It handles organization synchronization, member management, and permission assignment under WeChat Work proxy development mode, supporting multi-tenant SaaS service providers to uniformly manage organizational architectures of multiple authorized enterprises.
+# WeCom Proxy Development Organization
+WeCom proxy development organization is a specialized organization integration type for WeCom third-party applications, implementing multi-enterprise organization management and cross-enterprise authorization based on WeCom proxy development mode. It handles organization synchronization, member management, and permission assignment under WeCom proxy development mode, supporting multi-tenant SaaS service providers to uniformly manage organizational architectures of multiple authorized enterprises.
 
-The hierarchical structure of WeChat Work proxy development organization elements is Meta (corps.Meta) → Type (corps.QywxProxyType) → Instance. Developers can quickly create WeChat Work proxy development organization instance elements through JitAi's visual development tools.
+The hierarchical structure of WeCom proxy development organization elements is Meta (corps.Meta) → Type (corps.QywxProxyType) → Instance. Developers can quickly create WeCom proxy development organization instance elements through JitAi's visual development tools.
 
 Of course, developers can also create their own Type elements or modify the official `corps.QywxProxyType` element provided by JitAi in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements
 #### Directory Structure
-Recommended to create WeChat Work proxy development organization instances under the application's `corps` directory:
+Recommended to create WeCom proxy development organization instances under the application's `corps` directory:
 
 ```
 myapp/
@@ -25,7 +25,7 @@ myapp/
 ```json title="e.json"
 {
   "type": "corps.QywxProxyType",
-  "title": "My WeChat Work Proxy Development Organization",
+  "title": "My WeCom Proxy Development Organization",
   "version": "1.0.0"
 }
 ```
@@ -39,8 +39,8 @@ myapp/
 ```
 
 #### Usage Example
-```python title="Using WeChat Work Proxy Development Organization Instance"
-# Get WeChat Work proxy development organization instance
+```python title="Using WeCom Proxy Development Organization Instance"
+# Get WeCom proxy development organization instance
 corp = app.getElement("corps.MyQywxProxyCorp")
 
 # Initialize organizational architecture
@@ -65,12 +65,12 @@ print(f"Root Department: {root_dept.name}")
 ### Business Configuration File
 | Configuration Item | Type | Required | Default Value | Description |
 |--------|------|------|--------|------|
-| corpId | String | Yes | - | Enterprise ID under WeChat Work proxy development mode |
-| authFullName | String | Yes | - | Corresponding WeChat Work proxy development authentication element fullName |
+| corpId | String | Yes | - | Enterprise ID under WeCom proxy development mode |
+| authFullName | String | Yes | - | Corresponding WeCom proxy development authentication element fullName |
 
 ## Methods
 ### initCorp
-Initialize organizational architecture, called when WeChat Work proxy development organization is first created, automatically triggers organizational architecture synchronization.
+Initialize organizational architecture, called when WeCom proxy development organization is first created, automatically triggers organizational architecture synchronization.
 
 ```python title="Initialize Organizational Architecture"
 corp = app.getElement("corps.MyQywxProxyCorp")
@@ -112,7 +112,7 @@ for role_member in role_members:
 ```
 
 ### syncCorp
-Sync organizational architecture data from WeChat Work server to local, including departments, members, roles, and other information.
+Sync organizational architecture data from WeCom server to local, including departments, members, roles, and other information.
 
 ```python title="Sync Organizational Architecture"
 corp = app.getElement("corps.MyQywxProxyCorp")
@@ -121,16 +121,16 @@ print("Organizational architecture sync completed")
 ```
 
 ### getClient
-Get WeChat Work API client for calling WeChat Work interfaces.
+Get WeCom API client for calling WeCom interfaces.
 
 #### Return Value
 - Type: QywxProxyClient
-- Description: WeChat Work API client instance
+- Description: WeCom API client instance
 
-```python title="Get WeChat Work Client"
+```python title="Get WeCom Client"
 corp = app.getElement("corps.MyQywxProxyCorp")
 client = corp.getClient()
-# Use client to call WeChat Work API
+# Use client to call WeCom API
 dept_list = client.department.list()
 ```
 
@@ -155,7 +155,7 @@ print(f"Application ID: {agent_id}")
 ```
 
 ### getThirdCorpData
-Get third-party organizational architecture data, pull latest organizational architecture information from WeChat Work server.
+Get third-party organizational architecture data, pull latest organizational architecture information from WeCom server.
 
 #### Return Value
 - Type: Dict
@@ -269,13 +269,13 @@ print(f"Department Name: {dept.name}")
 
 ## Properties
 ### corpId
-Enterprise ID under WeChat Work proxy development mode, used to identify specific authorized enterprise.
+Enterprise ID under WeCom proxy development mode, used to identify specific authorized enterprise.
 
 - Type: String
 - Description: Enterprise ID defined in configuration file
 
 ### authFullName
-FullName of corresponding WeChat Work proxy development authentication element, used to get authentication configuration and API client.
+FullName of corresponding WeCom proxy development authentication element, used to get authentication configuration and API client.
 
 - Type: String
 - Description: Complete path identifier of authentication element
@@ -302,7 +302,7 @@ print(f"Full Name: {corp.corpFullName}")
 
 ## Advanced Features
 ### Multi-Enterprise Management
-WeChat Work proxy development organization supports managing organizational architectures of multiple authorized enterprises simultaneously, each enterprise corresponds to an independent organization instance.
+WeCom proxy development organization supports managing organizational architectures of multiple authorized enterprises simultaneously, each enterprise corresponds to an independent organization instance.
 
 ```python title="Manage Multiple Enterprises"
 # Enterprise A's organizational architecture

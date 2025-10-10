@@ -32,18 +32,18 @@ Provides element configuration, API interfaces, and usage methods for each frame
   description="Identity authentication and permission management framework based on RBAC model, providing multiple login methods, enterprise organizational structure management, and API permission control, with support for third-party identity system integration."
 >
   <LinkGrid columns={2} links={[
-    { text: "Regular Roles", href: "reference/framework/JitAuth/regular-roles" },
+    { text: "Generic Roles", href: "reference/framework/JitAuth/regular-roles" },
     { text: "Account Password Login", href: "reference/framework/JitAuth/login-authentication/account-password-login" },
     { text: "Mobile Login", href: "reference/framework/JitAuth/login-authentication/mobile-login" },
     { text: "WeChat Login", href: "reference/framework/JitAuth/login-authentication/wechat-login" },
     { text: "WeChat Mini Program Login", href: "reference/framework/JitAuth/login-authentication/wechat-miniapp-login" },
     { text: "WeChat Official Account Login", href: "reference/framework/JitAuth/login-authentication/wechat-official-login" },
-    { text: "WeChat Work Self-built QR Login", href: "reference/framework/JitAuth/login-authentication/wechat-work-dev-login" },
-    { text: "WeChat Work Third-party Login", href: "reference/framework/JitAuth/login-authentication/wechat-work-qr-login" },
+    { text: "WeCom Self-built QR Login", href: "reference/framework/JitAuth/login-authentication/wechat-work-dev-login" },
+    { text: "WeCom Third-party Login", href: "reference/framework/JitAuth/login-authentication/wechat-work-qr-login" },
     { text: "DingTalk Self-built QR Login", href: "reference/framework/JitAuth/login-authentication/dingtalk-qr-login" },
-    { text: "Standard Organization", href: "reference/framework/JitAuth/enterprise-organization/standard-organization" },
-    { text: "WeChat Work Self-built Organization", href: "reference/framework/JitAuth/enterprise-organization/wechat-work-dev-organization" },
-    { text: "WeChat Work Third-party Organization", href: "reference/framework/JitAuth/enterprise-organization/wechat-work-organization" },
+    { text: "Generic Organization", href: "reference/framework/JitAuth/enterprise-organization/standard-organization" },
+    { text: "WeCom Self-built Organization", href: "reference/framework/JitAuth/enterprise-organization/wechat-work-dev-organization" },
+    { text: "WeCom Third-party Organization", href: "reference/framework/JitAuth/enterprise-organization/wechat-work-organization" },
     { text: "DingTalk Self-built Organization", href: "reference/framework/JitAuth/enterprise-organization/dingtalk-organization" }
   ]} />
 </IndexCard>

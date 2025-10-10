@@ -1,14 +1,14 @@
 ---
 slug: wechat-work-qr-login
 ---
-# WeChat Work Custom QR Code Login {#wechat-work-custom-qr-login}
-WeChat Work custom QR code login is a login authentication element based on WeChat Work custom applications, supporting PC-side QR code scanning login and password-free login within WeChat Work workspace. It handles WeChat Work OAuth authorization flow, user identity authentication, and account binding, while supporting seamless integration with WeChat Work organizational architecture and user information synchronization.
+# WeCom Custom QR Code Login {#wechat-work-custom-qr-login}
+WeCom custom QR code login is a login authentication element based on WeCom custom applications, supporting PC-side QR code scanning login and password-free login within WeCom workspace. It handles WeCom OAuth authorization flow, user identity authentication, and account binding, while supporting seamless integration with WeCom organizational architecture and user information synchronization.
 
-The hierarchical structure of WeChat Work custom QR code login elements is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.QywxInnerType) → Instance. Developers can quickly create WeChat Work custom QR code login instance elements through JitAi's visual development tools.
+The hierarchical structure of WeCom custom QR code login elements is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.QywxInnerType) → Instance. Developers can quickly create WeCom custom QR code login instance elements through JitAi's visual development tools.
 
 **Supported Login Methods**:
-- PC-side QR code scanning login - Display WeChat Work login QR code, users scan with WeChat Work App to complete login
-- WeChat Work workspace login - Directly call JSAPI within WeChat Work workspace to get password-free authorization code for login
+- PC-side QR code scanning login - Display WeCom login QR code, users scan with WeCom App to complete login
+- WeCom workspace login - Directly call JSAPI within WeCom workspace to get password-free authorization code for login
 
 Of course, developers can also create their own Type elements or modify the official `auths.loginTypes.QywxInnerType` element provided by JitAi in their own App to implement their own encapsulation.
 
@@ -18,21 +18,21 @@ Of course, developers can also create their own Type elements or modify the offi
 ```text title="Recommended Directory Structure"
 auths/loginTypes/QywxInnerExample/
 ├── e.json                    # Element declaration file
-└── QywxInnerExample.json     # WeChat Work configuration file
+└── QywxInnerExample.json     # WeCom configuration file
 ```
 
 #### e.json File
 ```json title="Element Declaration File"
 {
-  "title": "WeChat Work Custom QR Code Login Example",
+  "title": "WeCom Custom QR Code Login Example",
   "type": "auths.loginTypes.QywxInnerType"
 }
 ```
 
-#### WeChat Work Configuration File
-WeChat Work configuration file name must match the instance element name, such as `QywxInnerExample.json`:
+#### WeCom Configuration File
+WeCom configuration file name must match the instance element name, such as `QywxInnerExample.json`:
 
-```json title="WeChat Work Configuration File"
+```json title="WeCom Configuration File"
 {
   "corpId": "Your enterprise ID",
   "corpSecret": "Your application Secret",
@@ -62,18 +62,18 @@ user_info = qywx_auth.getLoginCode(authCode=auth_code)
 | type | string | Yes | Fixed value: auths.loginTypes.QywxInnerType |
 
 ### Business Configuration File
-Configuration file name format is `{instance_name}.json`, containing WeChat Work application authentication information:
+Configuration file name format is `{instance_name}.json`, containing WeCom application authentication information:
 
 | Configuration Item | Type | Required | Description |
 |-------|------|------|------|
-| corpId | string | Yes | WeChat Work enterprise ID |
-| corpSecret | string | Yes | WeChat Work application Secret |
-| agentId | string | Yes | WeChat Work application AgentID |
+| corpId | string | Yes | WeCom enterprise ID |
+| corpSecret | string | Yes | WeCom application Secret |
+| agentId | string | Yes | WeCom application AgentID |
 | redirectUri | string | Yes | OAuth2 redirect URI for receiving authorization code |
 
 ## Methods
 ### getLoginConfig
-Get WeChat Work login configuration information for frontend QR code display.
+Get WeCom login configuration information for frontend QR code display.
 
 #### Parameter Details
 This method requires no parameters.
@@ -90,12 +90,12 @@ print(f"Application ID: {config['agentId']}")
 ```
 
 ### getLoginCode
-Get user login information based on WeChat Work authorization code, complete user identity authentication.
+Get user login information based on WeCom authorization code, complete user identity authentication.
 
 #### Parameter Details
 | Parameter Name | Type | Corresponding Native Type | Required | Description |
 |-----|---|----|---|---|
-| authCode | Stext | str | Yes | WeChat Work authorization code, obtained from frontend QR code scanning |
+| authCode | Stext | str | Yes | WeCom authorization code, obtained from frontend QR code scanning |
 | state | Stext | str | No | State parameter for preventing CSRF attacks |
 
 #### Return Value
@@ -120,7 +120,7 @@ Get detailed user information based on user ID.
 #### Parameter Details
 | Parameter Name | Type | Corresponding Native Type | Required | Description |
 |-----|---|----|---|---|
-| userId | Stext | str | Yes | WeChat Work user ID |
+| userId | Stext | str | Yes | WeCom user ID |
 
 #### Return Value
 Return detailed user information dictionary, containing user basic information, department information, position information, etc.
@@ -132,7 +132,7 @@ user_detail = qywx_auth.getUserInfo(userId="zhangsan")
 ```
 
 ### getAccessToken
-Get WeChat Work access token for calling WeChat Work API.
+Get WeCom access token for calling WeCom API.
 
 #### Parameter Details
 This method requires no parameters.
@@ -147,12 +147,12 @@ access_token = qywx_auth.getAccessToken()
 ```
 
 ### syncUserInfo
-Sync WeChat Work user information to local system.
+Sync WeCom user information to local system.
 
 #### Parameter Details
 | Parameter Name | Type | Corresponding Native Type | Required | Description |
 |-----|---|----|---|---|
-| userId | Stext | str | Yes | WeChat Work user ID |
+| userId | Stext | str | Yes | WeCom user ID |
 | forceUpdate | Checkbox | bool | No | Whether to force update, default False |
 
 #### Return Value
@@ -165,7 +165,7 @@ qywx_auth.syncUserInfo(userId="zhangsan", forceUpdate=True)
 ```
 
 ### syncDepartmentInfo
-Sync WeChat Work department information to local system.
+Sync WeCom department information to local system.
 
 #### Parameter Details
 | Parameter Name | Type | Corresponding Native Type | Required | Description |
@@ -184,17 +184,17 @@ qywx_auth.syncDepartmentInfo(deptId="2")  # Sync specified department
 
 ## Properties
 ### QywxInnerAuthModel
-WeChat Work custom login data model, used to store WeChat Work related authentication information. Main fields include id primary key, userId WeChat Work user ID, name user name, mobile phone number, email email address, avatar avatar URL, department department information, position position, gender gender, status employment status, isLeader whether department leader, accessToken access token, refreshToken refresh token, expiresAt token expiration time, createdAt creation time, updatedAt update time, etc.
+WeCom custom login data model, used to store WeCom related authentication information. Main fields include id primary key, userId WeCom user ID, name user name, mobile phone number, email email address, avatar avatar URL, department department information, position position, gender gender, status employment status, isLeader whether department leader, accessToken access token, refreshToken refresh token, expiresAt token expiration time, createdAt creation time, updatedAt update time, etc.
 
 ## Advanced Features
 ### Frontend QR Code Login Integration
-Frontend can build WeChat Work login URL by getting login configuration, display QR code or redirect link, handle authorization code in redirect page to complete login flow.
+Frontend can build WeCom login URL by getting login configuration, display QR code or redirect link, handle authorization code in redirect page to complete login flow.
 
 ```javascript title="Frontend Login Flow Example"
-// Get WeChat Work login configuration
+// Get WeCom login configuration
 const config = await api.getLoginConfig('auths.loginTypes.QywxInnerExample');
 
-// Build WeChat Work login URL
+// Build WeCom login URL
 const loginUrl = `https://login.work.weixin.qq.com/wwlogin/sso/login?login_type=CorpApp&appid=${config.corpId}&agentid=${config.agentId}&redirect_uri=${encodeURIComponent(config.redirectUri)}&state=${config.state}`;
 
 // Handle authorization callback

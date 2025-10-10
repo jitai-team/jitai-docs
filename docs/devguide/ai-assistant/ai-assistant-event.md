@@ -14,11 +14,11 @@ AI assistants support the following main event types:
 - **Chat Area Human-Machine Interaction Events**: Triggered by user confirmation operations in the assistant chat area
 - **Workspace Human-Machine Interaction Events**: Triggered when the assistant runs to a workspace human-machine interaction node
 
-## Frontend workspace events {#frontend-workspace-events}
-Frontend workspace events are mainly used for page UI state updates and user interaction handling. 
+## Frontend page events {#frontend-page-events}
+Frontend page events are mainly used for page UI state updates and user interaction handling. 
 
 ### Node execution events {#node-running-events}
-AI Agent nodes, function call nodes, conditional branch nodes, and multi-task execution nodes can trigger workspace events when they are reached and after execution. The prerequisite is that workspace event triggering needs to be enabled, as shown below:
+[AIAgent nodes](./process-orchestration-node-configuration#ai-agent), [Function nodes](./process-orchestration-node-configuration#function), [IF-ELSE nodes](./process-orchestration-node-configuration#if-else), and [Iteration nodes](./process-orchestration-node-configuration#iteration) can Trigger page event when they are arrivaled and post-execution. The prerequisite is that page event triggering needs to be enabled, as shown below:
 
 ![AI助理-工作区事件-配置](./img/assistant/assistant-workspace-event.png)
 
@@ -26,7 +26,7 @@ After binding the assistant in a page, you can subscribe to node execution event
 
 
 ### Tool call events {#agent-call-tool-events}
-For AI Agent nodes, if tools are used during Agent execution, workspace events will also be triggered before and after tool calls. The prerequisite is that the Agent needs to [enable tool trigger events](../ai-agent/agent-tools#tool-function-call-pre-post-event-triggering).
+For AI Agent nodes, if tools are used during Agent execution, page events will also be triggered before and after tool calls. The prerequisite is that the Agent needs to [enable tool trigger events](../ai-agent/agent-tools#tool-function-call-pre-post-event-triggering).
 
 Tool call events carry parameters of dictionary (JitDict) type with the following attributes:
 - **toolName**: Tool name, such as "services.ASvc.func1". In event handling logic, developers need to handle accordingly based on the tool name.
@@ -37,8 +37,8 @@ After binding the assistant in a page, you can subscribe to tool call events. Fo
 
 
 ### In conversation action events {#in-conversation-action-events} 
-When the process runs to a chat area human-machine interaction node, the dialog will display confirmation operation buttons such as `Agree`, `Reject`, `Edit`, `Reply`, and custom buttons.
-After the user performs confirmation operations or clicks custom buttons, workspace events will be triggered; the events carry parameters that are the data displayed on the node.
+When the process runs to a chat area human-machine interaction node, the dialog will display confirmation operation buttons such as `Agree`, `Refuse`, `Edit`, `Reply`, and custom buttons.
+After the user performs confirmation operations or clicks custom buttons, page events will be triggered; the events carry parameters that are the data displayed on the node.
 
 After binding the assistant in a page, you can subscribe to these events. For subscription methods, see [Subscribing to Chat Area Human-Machine Interaction Events in Pages](../using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#subscribe-action-in-conversation-events)
 

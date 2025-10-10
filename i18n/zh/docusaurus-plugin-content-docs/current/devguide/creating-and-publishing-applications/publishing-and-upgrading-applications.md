@@ -1,9 +1,9 @@
 ---
 sidebar_position: 3
-slug: publishing-and-updating-applications
+slug: publishing-and-upgrading-applications
 ---
 
-# 发布与更新应用
+# 发布与升级应用
 
 当应用完成开发后，开发者可以发布应用版本，以便在其它Jit节点的[运行环境](../creating-and-publishing-applications/runtime-environment-management#deploy-application-in-runtime-environment)中部署该应用版本。
 
@@ -40,9 +40,9 @@ slug: publishing-and-updating-applications
 
 开发者可以选择要包含初始数据的数据表模型，但初始化数据累计最多1000条，请提前规划好每个数据表的数据量并准备好数据。
 
-## 应用版本更新 {#application-version-updates}
+## 应用版本升级 {#application-version-updates}
 
-被继承应用的开发者会持续发布新的版本，以修复bug、添加新功能等，开发者可以在[节点控制台](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment)或[在应用设置](../development-tool-and-publish-service/jitai-visual-development-tools#application-settings)中检查新版本并更新。
+被继承应用的开发者会持续发布新的版本，以修复bug、添加新功能等，开发者可以在[节点控制台](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment)或[在应用设置](../development-tool-and-publish-service/visual-development-tool#application-settings)中检查新版本并更新。
 
 ## 应用部署策略 {#application-deployment-strategies}
 

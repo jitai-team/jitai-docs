@@ -5,7 +5,7 @@ slug: develop-human-ai-collaboration-enterprise-assistant
 
 # 开发与UI页面协作的人机协作式企业级AI助理应用
 
-## 产品核心特性概述
+## 产品核心特性概述 {#product-core-features-overview}
 
 传统AI开发平台存在一个根本性限制：它们只能在后端运行，无法与用户界面进行深度交互。这就像让一个盲人做需要视觉判断的工作，效果可想而知。
 
@@ -17,11 +17,11 @@ slug: develop-human-ai-collaboration-enterprise-assistant
 
 **可视化流程编排**：通过拖拽方式构建复杂的人机协作流程，无需编写代码。
 
-## 技术实现解析
+## 技术实现解析 {#technical-implementation-analysis}
 
-### AI与前端深度融合
+### AI与前端深度融合 {#deep-integration-of-ai-with-frontend}
 
-#### 页面数据作为AI上下文
+#### 页面数据作为AI上下文 {#page-data-as-ai-context}
 
 **技术原理**：将页面函数包装成AI可调用的工具，让AI能够实时获取用户操作数据。
 
@@ -29,9 +29,9 @@ slug: develop-human-ai-collaboration-enterprise-assistant
 
 **应用价值**：AI能够动态感知用户行为，智能调整决策，实现真正的上下文感知。
 
-### 人机协作节点设计
+### 人机协作节点设计 {#human-machine-collaboration-node-design}
 
-#### 对话区人机交互节点
+#### 对话区人机交互节点 {#action-in-conversation-node}
 
 **技术特性**：AI和用户通过对话框进行多轮对话交流。
 
@@ -39,7 +39,7 @@ slug: develop-human-ai-collaboration-enterprise-assistant
 
 **应用价值**：特别适合需求澄清和结果确认的场景，确保AI完全理解用户意图。
 
-#### 工作区人机交互节点
+#### 工作区人机交互节点 {#action-in-page-node}
 
 **技术特性**：AI暂停执行，等待用户在前端页面完成操作。
 
@@ -47,7 +47,7 @@ slug: develop-human-ai-collaboration-enterprise-assistant
 
 **应用价值**：特别适合需要人工确认的复杂业务逻辑，如审批流程、质量检查等。
 
-### 事件驱动的协作机制
+### 事件驱动的协作机制 {#event-driven-collaboration-mechanism}
 
 **技术实现**：页面订阅AI助理的各种事件（开始执行、执行完成、异常等）。
 
@@ -55,9 +55,9 @@ slug: develop-human-ai-collaboration-enterprise-assistant
 
 **应用价值**：用户能够实时看到AI的工作状态，了解执行进展。
 
-## 通过AI阅卷案例展示协作特性
+## 通过AI阅卷案例展示协作特性 {#demonstrating-collaboration-features-through-ai-grading-case-study}
 
-### 案例背景与流程
+### 案例背景与流程 {#case-background-and-process}
 
 **业务场景**：教育机构老师需要批改试卷，传统手工批改工作量大且容易出错。
 
@@ -77,15 +77,15 @@ AI评分完成后，通过对话区人机交互节点暂停，将评分结果输
 **第三步：UI页面协作**
 如果老师觉得分数合适并确认后，会自动将评分结果更新到页面评分表单中。
 
-### 效果展示
+### 效果展示 {#effect-demonstration}
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/ai-grade-demo/demo-zhCN.mp4" />
 
-## 开发步骤详解
+## 开发步骤详解 {#detailed-development-steps}
 
-### 前置准备
+### 前置准备 {#prerequisites}
 
 - **题库表**（questionModel）
 ![questionModel](./img/model-questionModel.png)
@@ -110,12 +110,12 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 接下来，我们为**阅卷管理页面**添加AI阅卷功能。
 
-### 开发评分Agent
+### 开发评分Agent {#developing-the-grading-agent}
 
 评分Agent的工作流程如下：
 从页面中获取答题明细，逐条评分，给出得分及理由并更新到答题明细中；然后根据整体得分情况给出一个总评语；最后输出包含得分及理由的答题明细与总评语。
 
-- **创建评分Agent元素**：创建过程参考[创建AI Agent](../../ai-agent/create-ai-agent)。创建完成后[配置大模型](../../ai-agent/create-ai-agent#select-model-and-configure-parameters)。
+- **创建评分Agent元素**：创建过程参考[创建AI Agent](../../ai-agent/create-ai-agent)。创建完成后[配置大模型](../../ai-agent/create-ai-agent#selecting-models-configuring-parameters)。
 - **编写提示词**：
 ```markdown
 # 角色：阅卷专家
@@ -163,16 +163,16 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
     - 评语(comments)：对答卷的整体评语
 ![阅卷Agent-输出](./img/agent-output.png)
 
-配置方式参考：[配置输出参数](../../ai-agent/agent-input-output#configure-output-results)
+配置方式参考：[配置输出参数](../../ai-agent/agent-input-output#configuring-output-results)
 
 - **配置调用工具**：将**阅卷管理页面**`获取变量值`添加为工具，Agent通过该工具获取页面中评分表单中的答题明细数据。
 
 ![阅卷Agent-工具](./img/agent-tool.png)
 
-配置方式参考：[Agent 添加页面工具](../../ai-agent/agent-tools#agent-call-page-functions)
+配置方式参考：[Agent 添加页面工具](../../ai-agent/agent-tools#calling-page-functions)
 
 
-### 开发评分助理
+### 开发评分助理 {#developing-the-grading-assistant}
 
 - **创建评分助理**：创建方式参考[创建AI助理](../create-ai-assistant)
 
@@ -182,12 +182,12 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 流程步骤为：`Start` -> `AI评分` -> `确认分数` -> `更新评分表单`
     - **AI评分**：[AI Agent节点](../process-orchestration-node-configuration#ai-agent)，绑定评分Agent。
 ![assistant-bind-agent](./img/assistant-bind-agent.png)
-    - **确认分数**：[对话区人机交互节点](../process-orchestration-node-configuration#dialog-human-machine-interaction)，展示评分Agent输出的答题明细及评语，等待人工确认，确认后更新评分表单。
+    - **确认分数**：[对话区人机交互节点](../process-orchestration-node-configuration#action-in-conversation)，展示评分Agent输出的答题明细及评语，等待人工确认，确认后更新评分表单。
 ![assistant-human-confirm](./img/assistant-human-confirm.png)
-    - **更新评分表单**：[工作区人机交互节点](../process-orchestration-node-configuration#workspace-human-machine-interaction)，暂停流程，并输出答题明细及评语到页面中。设置一个友好的提示语，提示用户下一步操作。
+    - **更新评分表单**：[工作区人机交互节点](../process-orchestration-node-configuration#action-in-page)，暂停流程，并输出答题明细及评语到页面中。设置一个友好的提示语，提示用户下一步操作。
 ![Grading By Agent](./img/assistant-uiinterrupt.png)
 
-### 评分页面使用评分助理
+### 评分页面使用评分助理 {#using-the-grading-assistant-on-the-grading-page}
 
 [开启AI助理](../../using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#enable-ai-assistant)并绑定评分助理。
 

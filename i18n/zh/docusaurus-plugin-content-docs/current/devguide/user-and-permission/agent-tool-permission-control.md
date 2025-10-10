@@ -11,4 +11,4 @@ slug: agent-tool-permission-control
 
 ## 配置Agent的工具执行权限 {#configure-agent-tool-execution-permissions}
 
-关于Agent工具权限控制的详细配置方法，请参考 [限制工具函数调用的用户角色](../ai-agent/agent-tools#restrict-user-roles-for-tool-calls) 和 [工具函数执行前的人工确认](../ai-agent/agent-tools#manual-confirmation-before-tool-execution)。
+关于Agent工具权限控制的详细配置方法，请参考 [限制工具函数调用的用户角色](../ai-agent/agent-tools#restricting-user-roles-for-tool-calls) 和 [工具函数执行前的人工确认](../ai-agent/agent-tools#manual-confirmation-before-tool-execution)。

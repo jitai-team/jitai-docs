@@ -1,7 +1,6 @@
 ---
 sidebar_position: 1
 slug: external-api
-title: Creating Universal External API Elements
 ---
 
 # Creating Universal External API Elements
@@ -132,7 +131,7 @@ Data retrieved through the test function represents the complete, unprocessed ra
 :::
 
 #### API Calling {#api-calling}
-To make API interface calls, configure the appropriate functions within regular pages or services.
+To make API interface calls, configure the appropriate functions within generic pages or services.
 
 ![API Calling](./img/1/api_2025-08-27_15-59-11.gif "API Calling")
 

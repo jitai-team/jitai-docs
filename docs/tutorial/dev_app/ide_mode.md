@@ -21,7 +21,7 @@ The developer portal displays the element tree and corresponding editors for eac
 
 ![](../img/ide_mode_111641.png)
 
-For detailed information, see [JitAi Visual Development Tools](../../devguide/development-tool-and-publish-service/jitai-visual-development-tools).
+For detailed information, see [JitAi Visual Development Tools](../../devguide/development-tool-and-publish-service/visual-development-tool).
 
 Reviewing the previous [Building Question Bank Management with Easy Mode](./easy_mode) step, switching to professional mode reveals the following elements in the "Developer Portal":
 
@@ -65,7 +65,7 @@ The specific implementation steps are:
 
 ### Creating menus and pages
 
-Now we'll use a more flexible page type (Regular Page) to create the "Test Paper Management" page.
+Now we'll use a more flexible page type (Generic Page) to create the "Test Paper Management" page.
 
 #### Regular page introduction
 

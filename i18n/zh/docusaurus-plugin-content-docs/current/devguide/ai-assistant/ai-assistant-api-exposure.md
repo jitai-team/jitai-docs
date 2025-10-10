@@ -1,6 +1,6 @@
 ---
 sidebar_position: 14
-slug: ai-assistant-api-integration
+slug: ai-assistant-api-exposure
 ---
 
 # AI助理的API开放
@@ -8,13 +8,13 @@ slug: ai-assistant-api-integration
 ## 发送AI消息函数 {#send-ai-message} 
 在页面中使用AI助理后，页面上会有一个**发送AI消息**的函数。函数有以下入参：
 - **消息内容**：发送的文本消息内容
-- **是否开启新对话**：开启后，会打开一个新的[对话记录](./ai-chat-history)，并发送消息。如果未开启，则会在当前打开的对话中发送消息；如果此时助理在工作区人机交互节点处暂停，则会恢复流程。
+- **是否开启新对话**：开启后，会打开一个新的[对话记录](./ai-conversation-history)，并发送消息。如果未开启，则会在当前打开的对话中发送消息；如果此时助理在工作区人机交互节点处暂停，则会恢复流程。
 - **自定义参数**：AI助理上配置的[自定义输入参数](./ai-assistant-input-output#input-parameters)
 
 调用方式参考[页面中发送AI消息](../using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#send-ai-message)
 
 
-## 应用内调用AI助理
+## 应用内调用AI助理 {#calling-ai-assistant-within-application}
 
 在前端页面、后端服务、模型函数中可[直接调用AI助理](../using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#call-ai-assistant)。
 
@@ -36,7 +36,7 @@ slug: ai-assistant-api-integration
 :::
 
 
-## 应用外调用AI助理
+## 应用外调用AI助理 {#external-ai-assistant-calling}
 
 正在开发中...
 

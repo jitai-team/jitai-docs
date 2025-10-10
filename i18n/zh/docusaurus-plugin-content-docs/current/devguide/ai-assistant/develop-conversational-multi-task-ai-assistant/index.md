@@ -149,7 +149,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
    - **解决方案Agent**：分析需求，生成报价内容。节点绑定解决方案Agent。
 ![quote-agent-setting](./img/quote-agent-setting.png)
 
-3. **解决方案Agent** → **确认报价单**（[对话区人机交互节点](/docs/devguide/ai-assistant/process-orchestration-node-configuration#dialog-human-machine-interaction)）：报价完成后等待人工确认。
+3. **解决方案Agent** → **确认报价单**（[对话区人机交互节点](/docs/devguide/ai-assistant/process-orchestration-node-configuration#action-in-conversation)）：报价完成后等待人工确认。
 确认报价单节点显示报价Agent输出的报价文件内容，使用Markdown控件渲染。
 ![quotetion-agent](./img/quote-confirm.png)
 

@@ -5,17 +5,17 @@ sidebar_position: 0
 import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 # Developer Guide Index
-Ready to experience a revolutionary new way of application development? Start here and learn to build powerful enterprise-grade applications using the cutting-edge technology stack of the AI era.
+Ready to experience a revolutionary approach to application development? Start here and learn to build powerful enterprise-grade applications using cutting-edge AI-era technology.
 
-The developer guide provides a complete learning path from organizational management and application development fundamentals to business logic implementation, along with best practices for mastering complex application architecture design through real business scenarios.
+This developer guide provides a comprehensive learning path from organizational management and application development fundamentals to business logic implementation, along with best practices for mastering complex application architecture design through real-world business scenarios.
 
-**Usage Recommendations**: Beginners should follow the sequential learning path, while experienced developers can jump directly to the scenario-based advanced guides.
+**Usage recommendations**: Beginners should follow the sequential learning path, while experienced developers can jump directly to the scenario-based advanced guides.
 
 First, you need to complete the basic [Download and Installation](tutorial/download-installation)!
 
 
-## Basic Concepts
-Master the core concepts and architecture principles of the JitAi platform. Understand the fundamental concepts of platform applications, element systems, development frameworks, and visual development tools to lay the theoretical foundation for subsequent development work.
+## Basic concepts {#basic-concepts}
+Master the core concepts and architecture principles of the JitAi platform. Understand the fundamental concepts of platform applications, element systems, development frameworks, and visual development tools to establish the theoretical foundation for subsequent development work.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
@@ -25,22 +25,22 @@ Master the core concepts and architecture principles of the JitAi platform. Unde
   description="Understand JitAi platform architecture, application concepts, JAAP protocol, element systems, and development frameworks to master the fundamental principles of the platform."
 >
   <LinkGrid columns={2} links={[
-    { text: "Platform and Applications", href: "devguide/basic-concept#platform-and-applications" },
-    { text: "DevOps Tools and Services", href: "devguide/basic-concept#devops-tools-and-services" },
-    { text: "Application Creation and Development", href: "devguide/basic-concept#application-creation-and-development" },
-    { text: "JAAP Protocol and Elements", href: "devguide/basic-concept#jaap-protocol-and-elements" },
-    { text: "Element Type and Element Loading", href: "devguide/basic-concept#element-type-and-element-loading" },
-    { text: "Development Framework", href: "devguide/basic-concept#development-framework" },
-    { text: "Business Applications and Application Inheritance", href: "devguide/basic-concept#business-applications-and-application-inheritance" },
-    { text: "Development Tools", href: "devguide/basic-concept#development-tools" },
+    { text: "Platform and applications", href: "devguide/basic-concept#platform-and-applications" },
+    { text: "DevOps tools and services", href: "devguide/basic-concept#devops-tools-and-services" },
+    { text: "Application creation and development", href: "devguide/basic-concept#application-creation-and-development" },
+    { text: "JAAP protocol and elements", href: "devguide/basic-concept#jaap-protocol-and-elements" },
+    { text: "Element types and element loading", href: "devguide/basic-concept#element-type-and-element-loading" },
+    { text: "Development framework", href: "devguide/basic-concept#development-framework" },
+    { text: "Business applications and application inheritance", href: "devguide/basic-concept#business-applications-and-application-inheritance" },
+    { text: "Development tools", href: "devguide/basic-concept#development-tools" },
     { text: "Extension", href: "devguide/basic-concept#extension" }
   ]} />
 </IndexCard>
 
 </div>
 
-## Platform Installation and Node Activation
-Complete the platform installation and node activation process. Learn download and installation methods, node activation procedures, and developer team management to establish a development environment foundation.
+## Platform installation and node activation {#platform-installation-node-activation}
+Complete the platform installation and node activation process. Learn download and installation methods, node activation procedures, and developer team management to establish a solid development environment foundation.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
@@ -84,27 +84,30 @@ Complete the platform installation and node activation process. Learn download a
 
 </div>
 
-## Development Tools and Publishing Services
-Powerful toolchain for efficient development. Master visual development environments, DevOps management tools, and cloud publishing services to achieve complete toolchain support from development to deployment.
+## Development tools and publishing services {#development-tools-publishing-services}
+Powerful toolchain for efficient development. Master visual development environments, DevOps management tools, and cloud publishing services to achieve comprehensive toolchain support from development to deployment.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
   title="JitAi Visual Development Tools"
-  href="devguide/development-tool-and-publish-service/jitai-visual-development-tools"
+  href="devguide/development-tool-and-publish-service/visual-development-tool"
   description="Master the powerful visual development environment, familiarize yourself with IDE functional areas, and learn to switch between visual and source code modes."
 >
   <LinkGrid links={[
-    { text: "Element Directory Tree", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#element-directory-tree" },
-    { text: "Add Element", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#add-element" },
-    { text: "Visual Editor", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#visual-editor" },
-    { text: "Source Code Editor", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#source-code-editor" },
-    { text: "Source Code File Tree", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#source-code-file-tree" },
-    { text: "Application Settings", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#application-settings" },
-    { text: "Portal Switching", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#portal-switching" },
-    { text: "Personal Center", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#personal-center" },
-    { text: "Language Switch", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#language-switch" },
-    { text: "Navigation Tabs", href: "devguide/development-tool-and-publish-service/jitai-visual-development-tools#navigation-tabs" }
+    { text: "Element directory tree", href: "devguide/development-tool-and-publish-service/visual-development-tool#element-directory-tree" },
+    { text: "Adding elements", href: "devguide/development-tool-and-publish-service/visual-development-tool#adding-elements" },
+    { text: "Visual editor", href: "devguide/development-tool-and-publish-service/visual-development-tool#visual-editor" },
+    { text: "Source code editor", href: "devguide/development-tool-and-publish-service/visual-development-tool#source-code-editor" },
+    { text: "Source code file tree", href: "devguide/development-tool-and-publish-service/visual-development-tool#source-code-file-tree" },
+    { text: "Application settings", href: "devguide/development-tool-and-publish-service/visual-development-tool#application-settings" },
+    { text: "Basic information", href: "devguide/development-tool-and-publish-service/visual-development-tool#basic-information" },
+    { text: "Default elements", href: "devguide/development-tool-and-publish-service/visual-development-tool#default-elements" },
+    { text: "Environment variables", href: "devguide/development-tool-and-publish-service/visual-development-tool#environment-variables" },
+    { text: "Portal switching", href: "devguide/development-tool-and-publish-service/visual-development-tool#portal-switching" },
+    { text: "Personal center", href: "devguide/development-tool-and-publish-service/visual-development-tool#personal-center" },
+    { text: "Language switching", href: "devguide/development-tool-and-publish-service/visual-development-tool#language-switching" },
+    { text: "Navigation tabs", href: "devguide/development-tool-and-publish-service/visual-development-tool#navigation-tabs" }
   ]} />
 </IndexCard>
 
@@ -115,15 +118,16 @@ Powerful toolchain for efficient development. Master visual development environm
 >
   <LinkGrid links={[
     { text: "Dual Console Architecture", href: "devguide/development-tool-and-publish-service/devops-management-tool#dual-console-architecture" },
-    { text: "Local Node Console", href: "devguide/development-tool-and-publish-service/devops-management-tool#local-node-console" },
-    { text: "Organization Management Console", href: "devguide/development-tool-and-publish-service/devops-management-tool#organization-management-console" },
-    { text: "Application Lifecycle Management", href: "devguide/development-tool-and-publish-service/devops-management-tool#application-lifecycle-management" },
-    { text: "Runtime Environment Management", href: "devguide/development-tool-and-publish-service/devops-management-tool#runtime-environment-management" },
-    { text: "Node Cluster Management", href: "devguide/development-tool-and-publish-service/devops-management-tool#node-cluster-management" },
-    { text: "Flexible Configuration Management", href: "devguide/development-tool-and-publish-service/devops-management-tool#flexible-configuration-management" },
-    { text: "Version Release and Deployment", href: "devguide/development-tool-and-publish-service/devops-management-tool#version-release-and-deployment" },
-    { text: "Multi-platform Export", href: "devguide/development-tool-and-publish-service/devops-management-tool#multi-platform-export" },
-    { text: "Application Template Ecosystem", href: "devguide/development-tool-and-publish-service/devops-management-tool#application-template-ecosystem" }
+    { text: "Local node console", href: "devguide/development-tool-and-publish-service/devops-management-tool#local-node-console" },
+    { text: "Organization management console", href: "devguide/development-tool-and-publish-service/devops-management-tool#organization-management-console" },
+    { text: "Core Capabilities Overview", href: "devguide/development-tool-and-publish-service/devops-management-tool#core-capabilities-overview" },
+    { text: "Application lifecycle management", href: "devguide/development-tool-and-publish-service/devops-management-tool#application-lifecycle-management" },
+    { text: "Runtime environment management", href: "devguide/development-tool-and-publish-service/devops-management-tool#runtime-environment-management" },
+    { text: "Node cluster management", href: "devguide/development-tool-and-publish-service/devops-management-tool#node-cluster-management" },
+    { text: "Flexible configuration management", href: "devguide/development-tool-and-publish-service/devops-management-tool#flexible-configuration-management" },
+    { text: "Version release and deployment", href: "devguide/development-tool-and-publish-service/devops-management-tool#version-release-and-deployment" },
+    { text: "Multi-platform export", href: "devguide/development-tool-and-publish-service/devops-management-tool#multi-platform-export" },
+    { text: "Application template ecosystem", href: "devguide/development-tool-and-publish-service/devops-management-tool#application-template-ecosystem" }
   ]} />
 </IndexCard>
 
@@ -133,15 +137,15 @@ Powerful toolchain for efficient development. Master visual development environm
   description="Official cloud application publishing service providing centralized application repository, version management, and seamless deployment across JitNodes."
 >
   <LinkGrid links={[
-    { text: "Synchronizing Runtime Environment Configuration", href: "devguide/development-tool-and-publish-service/jcs-cloud-publishing-service#synchronizing-runtime-environment-configuration" },
-    { text: "Retrieving Version Update Information", href: "devguide/development-tool-and-publish-service/jcs-cloud-publishing-service#retrieving-version-update-information" },
-    { text: "Accessing Cloud Application Repository", href: "devguide/development-tool-and-publish-service/jcs-cloud-publishing-service#accessing-cloud-application-repository" }
+    { text: "Synchronizing runtime environment configuration from JCS", href: "devguide/development-tool-and-publish-service/jcs-cloud-publishing-service#synchronizing-runtime-environment-configuration" },
+    { text: "Retrieving version update information from JCS", href: "devguide/development-tool-and-publish-service/jcs-cloud-publishing-service#retrieving-version-update-information" },
+    { text: "Accessing cloud application repository through JCS", href: "devguide/development-tool-and-publish-service/jcs-cloud-publishing-service#accessing-cloud-application-repository" }
   ]} />
 </IndexCard>
 
 </div>
 
-## Creating and Publishing Applications
+## Creating and publishing applications {#creating-publishing-applications}
 Complete workflow from application creation to distributed deployment. Master application creation, source code management, version publishing, runtime environment configuration, and building infinitely horizontally scalable distributed cluster architectures.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -152,10 +156,14 @@ Complete workflow from application creation to distributed deployment. Master ap
   description="Learn application creation, inheritance, data configuration, and deployment. Master the fundamentals of application development workflow."
 >
   <LinkGrid links={[
-    { text: "Create First Application", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#create-first-application" },
-    { text: "Rapid Development Based on Existing Apps", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#based-on-existing-application-quick-development" },
-    { text: "Data Storage and Environment Variables", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#data-storage-and-environment-variable-configuration" },
-    { text: "Application Deployment", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#application-deployment" }
+    { text: "Creating Your First Application", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#creating-first-application" },
+    { text: "Developing Applications Based on Existing Templates", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#developing-applications-based-on-existing-templates" },
+    { text: "Inheriting from Applications", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#inheriting-from-applications" },
+    { text: "Duplicating Applications", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#duplicating-applications" },
+    { text: "Configuring Data Storage and Environment Variables", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#configuring-data-storage-and-environment-variables" },
+    { text: "Deploying Applications", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#deploying-applications" },
+    { text: "Deploying Applications on Specified Nodes", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#deploying-applications-on-specified-nodes" },
+    { text: "Deploying Applications in Specified Runtime Environments", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#deploying-applications-in-specified-runtime-environments" }
   ]} />
 </IndexCard>
 
@@ -165,27 +173,29 @@ Complete workflow from application creation to distributed deployment. Master ap
   description="Understand JitAi application directory structure based on JAAP protocol, element code organization, and source code export/import mechanisms."
 >
   <LinkGrid links={[
-    { text: "Application Directory Structure", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#application-directory-structure" },
-    { text: "Element Code Directory Structure", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#element-code-directory-structure" },
-    { text: "Application Source Code Export/Import", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#application-export-import" },
-    { text: "Export Source Code Zip", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#export-source-code-zip" },
-    { text: "Export to WeChat MiniProgram", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#export-to-wechat-miniprogram" },
-    { text: "Import Application Source Code", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#import-application-source-code" }
+    { text: "Understanding application directory structure", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#application-directory-structure" },
+    { text: "Understanding element code directory structure", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#element-code-directory-structure" },
+    { text: "Exporting and importing application source code", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#application-export-import" },
+    { text: "Exporting source code zip packages", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#export-source-code-zip" },
+    { text: "Exporting to WeChat MiniProgram", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#export-to-wechat-miniprogram" },
+    { text: "Importing application source code packages", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#import-application-source-code" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="Publishing and Updating Applications"
-  href="devguide/creating-and-publishing-applications/publishing-and-updating-applications"
-  description="Master application version management, publishing workflows, and update strategies. Learn semantic versioning and deployment configurations."
+  title="Publishing and Upgrading Applications"
+  href="devguide/creating-and-publishing-applications/publishing-and-upgrading-applications"
+  description="Master application version management, publishing workflows, and upgrade strategies. Learn semantic versioning and deployment configurations."
 >
   <LinkGrid links={[
-    { text: "Version Management and Publishing", href: "devguide/creating-and-publishing-applications/publishing-and-updating-applications#application-version-management-and-publish" },
-    { text: "Semantic Versioning", href: "devguide/creating-and-publishing-applications/publishing-and-updating-applications#semantic-versioning" },
-    { text: "Auto-Update Configuration", href: "devguide/creating-and-publishing-applications/publishing-and-updating-applications#force-auto-update" },
-    { text: "Source Code and Initialization Data", href: "devguide/creating-and-publishing-applications/publishing-and-updating-applications#include-source-code" },
-    { text: "Application Version Updates", href: "devguide/creating-and-publishing-applications/publishing-and-updating-applications#application-version-updates" },
-    { text: "Deployment Strategies", href: "devguide/creating-and-publishing-applications/publishing-and-updating-applications#application-deployment-strategies" }
+    { text: "Managing application version and publishing", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#application-version-management-and-publish" },
+    { text: "Understanding semantic versioning", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#semantic-versioning" },
+    { text: "Setting automatic updates", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#force-auto-update" },
+    { text: "Writing meaningful update logs", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#meaningful-update-logs" },
+    { text: "Including source code", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#include-source-code" },
+    { text: "Including initialization data", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#include-initialization-data" },
+    { text: "Upgrading application versions", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#application-version-updates" },
+    { text: "Planning application deployment strategies", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#application-deployment-strategies" }
   ]} />
 </IndexCard>
 
@@ -196,13 +206,17 @@ Complete workflow from application creation to distributed deployment. Master ap
   description="Master the creation, configuration, and management of runtime environments, and learn how to use node clusters and application deployment."
 >
   <LinkGrid links={[
-    { text: "What is Runtime Environment", href: "devguide/creating-and-publishing-applications/runtime-environment-management#what-is-runtime-environment" },
-    { text: "Local Default Runtime Environment", href: "devguide/creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment" },
-    { text: "Create New Runtime Environment", href: "devguide/creating-and-publishing-applications/runtime-environment-management#createnewrunenvironment" },
-    { text: "Development Mode Deployment", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-in-development-mode" },
-    { text: "Production Mode Deployment", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-in-production-mode" },
-    { text: "Use Runtime Environment to Manage Node Clusters", href: "devguide/creating-and-publishing-applications/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
-    { text: "Deploy Application in Runtime Environment", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-application-in-runtime-environment" }
+    { text: "Understanding runtime environments", href: "devguide/creating-and-publishing-applications/runtime-environment-management#what-is-runtime-environment" },
+    { text: "Managing node local default runtime environment", href: "devguide/creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment" },
+    { text: "Creating new runtime environments", href: "devguide/creating-and-publishing-applications/runtime-environment-management#createnewrunenvironment" },
+    { text: "Deploying in development mode", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-in-development-mode" },
+    { text: "Deploying in production mode", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-in-production-mode" },
+    { text: "Managing node clusters with runtime environments", href: "devguide/creating-and-publishing-applications/runtime-environment-management#use-runtime-environment-to-manage-node-clusters" },
+    { text: "Managing node addresses", href: "devguide/creating-and-publishing-applications/runtime-environment-management#node-address" },
+    { text: "Monitoring node status", href: "devguide/creating-and-publishing-applications/runtime-environment-management#node-status" },
+    { text: "Deploying applications in runtime environments", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-application-in-runtime-environment" },
+    { text: "Deploying in production mode", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-production-mode" },
+    { text: "Deploying in development mode", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-development-mode" }
   ]} />
 </IndexCard>
 
@@ -212,21 +226,26 @@ Complete workflow from application creation to distributed deployment. Master ap
   description="Learn how to build and manage infinitely horizontally scalable distributed cluster architectures for high availability and performance."
 >
   <LinkGrid links={[
-    { text: "Four-Layer Architecture Model", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#four-layer-architecture" },
-    { text: "Typical Deployment Topology", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#typical-deployment-topology" },
-    { text: "Enterprise Cluster Deployment", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#enterprise-cluster-deployment" },
-    { text: "Multi-Dimensional Environment Division", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#multi-dimensional-environment-division" },
-    { text: "Cluster Scaling Strategies", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#cluster-scaling-strategies" },
-    { text: "Load Balancing & Fault Tolerance", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#load-balancing-fault-tolerance" },
-    { text: "Architecture Constraints & Best Practices", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#architecture-constraints-best-practices" }
+    { text: "Understanding the four-layer architecture model", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#four-layer-architecture" },
+    { text: "Designing enterprise cluster deployment architecture", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#enterprise-cluster-deployment" },
+    { text: "Implementing typical deployment topology", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#typical-deployment-topology" },
+    { text: "Organizing multi-dimensional environment division", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#multi-dimensional-environment-division" },
+    { text: "Configuring entry address strategies", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#entry-address-configuration" },
+    { text: "Implementing cluster scaling strategies", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#cluster-scaling-strategies" },
+    { text: "Deploying horizontal scaling modes", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#horizontal-scaling" },
+    { text: "Implementing load balancing and fault tolerance", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#load-balancing-fault-tolerance" },
+    { text: "Understanding architecture constraints and best practices", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#architecture-constraints-best-practices" },
+    { text: "Managing version constraints", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#version-management-constraints" },
+    { text: "Configuring network access constraints", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#network-access-constraints" },
+    { text: "Following deployment best practices", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#deployment-best-practices" }
   ]} />
 </IndexCard>
 
 </div>
 
 
-## Frontend Portals and Pages
-Design beautiful user interfaces and interactive experiences. From portal navigation to page construction, from component layout to data management, create complete, user-friendly application interfaces.
+## Frontend portals and pages {#frontend-portals-pages}
+Design beautiful user interfaces and interactive experiences. From portal navigation to page construction, from component layout to data management, create comprehensive, user-friendly application interfaces.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
   
@@ -236,26 +255,49 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
   description="Design portal interfaces for different user roles, configure navigation menus and permission controls, and create personalized user experiences."
 >
   <LinkGrid links={[
-    { text: "Application Built-in Three Portals", href: "devguide/shell-and-page/portal-navigation-design#application-built-in-three-portals" },
-    { text: "Three Portal Types", href: "devguide/shell-and-page/portal-navigation-design#three-portal-types" },
-    { text: "Create Portal and Configure Menu", href: "devguide/shell-and-page/portal-navigation-design#create-portal-and-configure-menu" },
-    { text: "Portal Layout Design", href: "devguide/shell-and-page/portal-navigation-design#portal-layout-design" },
-    { text: "Enable or Disable Common Function Entries", href: "devguide/shell-and-page/portal-navigation-design#enable-disable-common-function-entries" },
-    { text: "Using AI Assistant in Portal", href: "devguide/shell-and-page/portal-navigation-design#using-ai-assistant-in-portal" }
+    { text: "Application built-in portals", href: "devguide/shell-and-page/portal-navigation-design#application-built-in-portals" },
+    { text: "Developer portal", href: "devguide/shell-and-page/portal-navigation-design#developer-portal" },
+    { text: "Manager portal", href: "devguide/shell-and-page/portal-navigation-design#manager-portal" },
+    { text: "User portal", href: "devguide/shell-and-page/portal-navigation-design#user-portal" },
+    { text: "Portal types", href: "devguide/shell-and-page/portal-navigation-design#portal-types" },
+    { text: "Generic portal", href: "devguide/shell-and-page/portal-navigation-design#generic-portal" },
+    { text: "Blank portal", href: "devguide/shell-and-page/portal-navigation-design#blank-portal" },
+    { text: "SSR portal", href: "devguide/shell-and-page/portal-navigation-design#ssr-portal" },
+    { text: "Creating portals and configuring menus", href: "devguide/shell-and-page/portal-navigation-design#creating-portals-and-configuring-menus" },
+    { text: "Creating, deleting, and hiding menus", href: "devguide/shell-and-page/portal-navigation-design#creating-deleting-hiding-menus" },
+    { text: "Sorting menus by dragging", href: "devguide/shell-and-page/portal-navigation-design#sorting-menus-by-dragging" },
+    { text: "Menu grouping", href: "devguide/shell-and-page/portal-navigation-design#menu-grouping" },
+    { text: "Creating portal menu groups", href: "devguide/shell-and-page/portal-navigation-design#creating-portal-menu-groups" },
+    { text: "Moving menus into groups", href: "devguide/shell-and-page/portal-navigation-design#moving-menus-into-groups" },
+    { text: "PC and mobile menu pages", href: "devguide/shell-and-page/portal-navigation-design#pc-and-mobile-menu-pages" },
+    { text: "Controlling page logic with variable assignment", href: "devguide/shell-and-page/portal-navigation-design#controlling-page-logic-with-variable-assignment" },
+    { text: "Rewriting menu pages", href: "devguide/shell-and-page/portal-navigation-design#rewriting-menu-pages" },
+    { text: "Portal layout design", href: "devguide/shell-and-page/portal-navigation-design#portal-layout-design" },
+    { text: "Configuring navigation layout", href: "devguide/shell-and-page/portal-navigation-design#configuring-navigation-layout" },
+    { text: "Multi-tab functionality", href: "devguide/shell-and-page/portal-navigation-design#multi-tab-functionality" },
+    { text: "Portal visibility settings", href: "devguide/shell-and-page/portal-navigation-design#portal-visibility-settings" },
+    { text: "Portal ordering", href: "devguide/shell-and-page/portal-navigation-design#portal-ordering" },
+    { text: "Managing common function entries", href: "devguide/shell-and-page/portal-navigation-design#managing-common-function-entries" },
+    { text: "Application and workflow entries", href: "devguide/shell-and-page/portal-navigation-design#application-and-workflow-entries" },
+    { text: "Personal center entry", href: "devguide/shell-and-page/portal-navigation-design#personal-center-entry" },
+    { text: "Integrating AI assistants", href: "devguide/shell-and-page/portal-navigation-design#integrating-ai-assistants" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="Component-based Page Development"
+  title="Component-Based Page Development"
   href="devguide/shell-and-page/component-based-page-development"
   description="Use the visual editor to build page interfaces, configure components and events, and implement rich user interaction features."
 >
   <LinkGrid links={[
-    { text: "Create a Regular Page", href: "devguide/shell-and-page/component-based-page-development#create-a-regular-page" },
-    { text: "Visual Page Editor", href: "devguide/shell-and-page/component-based-page-development#visual-page-editor" },
-    { text: "Page Variables", href: "devguide/shell-and-page/component-based-page-development#page-variables" },
-    { text: "Page Events", href: "devguide/shell-and-page/component-based-page-development#page-events" },
-    { text: "Page Functions", href: "devguide/shell-and-page/component-based-page-development#page-functions" }
+    { text: "Creating generic pages", href: "devguide/shell-and-page/component-based-page-development#creating-generic-pages" },
+    { text: "Visual page editor", href: "devguide/shell-and-page/component-based-page-development#visual-page-editor" },
+    { text: "Component common operations", href: "devguide/shell-and-page/component-based-page-development#component-common-operations" },
+    { text: "Page variables", href: "devguide/shell-and-page/component-based-page-development#page-variables" },
+    { text: "Page functions", href: "devguide/shell-and-page/component-based-page-development#page-functions" },
+    { text: "Page events", href: "devguide/shell-and-page/component-based-page-development#page-events" },
+    { text: "Shortcuts", href: "devguide/shell-and-page/component-based-page-development#shortcuts" },
+    { text: "Enabling AI assistant for page", href: "devguide/shell-and-page/component-based-page-development#enabling-ai-assistant" }
   ]} />
 </IndexCard>
 
@@ -273,7 +315,7 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
     { text: "Configure Viewable and Editable Fields in Form", href: "devguide/shell-and-page/ai-data-management-page#configure-viewable-editable-fields-in-form" },
     { text: "Configure Fields Displayed in Batch Edit Form", href: "devguide/shell-and-page/ai-data-management-page#configure-fields-displayed-in-batch-edit-form" },
     { text: "Enable AI Data Management Assistant", href: "devguide/shell-and-page/ai-data-management-page#enable-ai-data-management-assistant" },
-    { text: "Convert to Regular Page for Modification", href: "devguide/shell-and-page/ai-data-management-page#convert-to-regular-page-for-modification" }
+    { text: "Convert to Generic Page for Modification", href: "devguide/shell-and-page/ai-data-management-page#convert-to-generic-page-for-modification" }
   ]} />
 </IndexCard>
 
@@ -283,25 +325,25 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
   description="AI automatically generates data charts through natural language descriptions of requirements, supporting users to adjust chart styles and statistical dimensions at any time."
 >
   <LinkGrid links={[
-    { text: "Create AI Data Analysis Page", href: "devguide/shell-and-page/ai-data-analysis-page#create-ai-data-analysis-page" },
-    { text: "Page Configuration", href: "devguide/shell-and-page/ai-data-analysis-page#page-configuration" },
-    { text: "Runtime Effects Demo", href: "devguide/shell-and-page/ai-data-analysis-page#run-effects" },
-    { text: "Full Code Development", href: "devguide/shell-and-page/ai-data-analysis-page#full-code-development" },
-    { text: "Quick Create", href: "devguide/shell-and-page/ai-data-analysis-page#quick-create" }
+    { text: "Create AI data analysis page", href: "devguide/shell-and-page/ai-data-analysis-page#create-ai-data-analysis-page" },
+    { text: "Page configuration", href: "devguide/shell-and-page/ai-data-analysis-page#page-configuration" },
+    { text: "Runtime effects demo", href: "devguide/shell-and-page/ai-data-analysis-page#runtime-effects" },
+    { text: "Full code development", href: "devguide/shell-and-page/ai-data-analysis-page#full-code-development" },
+    { text: "Quick create", href: "devguide/shell-and-page/ai-data-analysis-page#quick-create" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="Data Entry Page"
+  title="Data Entry Pages"
   href="devguide/shell-and-page/data-entry-page"
   description="Quickly create data entry forms to implement data collection and submission functions."
 >
   <LinkGrid links={[
-    { text: "Create Data Entry Page", href: "devguide/shell-and-page/data-entry-page#create-data-entry-page" },
-    { text: "Configure Viewable and Editable Fields", href: "devguide/shell-and-page/data-entry-page#configure-viewable-editable-fields" },
-    { text: "Show Re-entry Button After Submission", href: "devguide/shell-and-page/data-entry-page#show-re-entry-button-after-submission" },
-    { text: "Show Result Feedback After Submission", href: "devguide/shell-and-page/data-entry-page#show-result-feedback-after-submission" },
-    { text: "Convert to Regular Page for Modification", href: "devguide/shell-and-page/data-entry-page#convert-to-regular-page-for-modification" }
+    { text: "Creating a data entry page", href: "devguide/shell-and-page/data-entry-page#creating-data-entry-page" },
+    { text: "Configuring viewable and editable fields", href: "devguide/shell-and-page/data-entry-page#configuring-viewable-editable-fields" },
+    { text: "Showing enter again button after submission", href: "devguide/shell-and-page/data-entry-page#showing-enter-again-button-after-submission" },
+    { text: "Showing result feedback after submission", href: "devguide/shell-and-page/data-entry-page#showing-result-feedback-after-submission" },
+    { text: "Converting to generic page for modification", href: "devguide/shell-and-page/data-entry-page#converting-to-generic-page-for-modification" }
   ]} />
 </IndexCard>
 
@@ -331,13 +373,13 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
 
 </div>
 
-## Using AI in Portals and Pages
+## Using AI in portals and pages {#using-ai-portals-pages}
 Enhance user experience with intelligent AI elements. Integrate AI assistants, agents, and other AI components into portals and pages to create smart, interactive applications that provide personalized assistance and automated workflows.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Using AI Assistants in Portals"
+  title="Using AI Assistant in Portals"
   href="devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals"
   description="Learn how to use AI assistants into portal interfaces, providing users with intelligent help and guidance throughout their workflow."
 >
@@ -347,7 +389,7 @@ Enhance user experience with intelligent AI elements. Integrate AI assistants, a
 </IndexCard>
 
 <IndexCard
-  title="Using AI Assistants in Component Pages"
+  title="Using AI Assistant in Component Pages"
   href="devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages"
   description="Embed AI assistants into component-based pages to enhance user interactions and provide contextual assistance for specific tasks."
 >
@@ -368,7 +410,7 @@ Enhance user experience with intelligent AI elements. Integrate AI assistants, a
 
 </div>
 
-## Calling Business Elements in Pages
+## Calling business elements in pages {#calling-business-elements-pages}
 Connect your pages to powerful business logic and data operations. Learn how to invoke service functions and data model functions from pages to create dynamic, data-driven user interfaces with real-time business processing capabilities.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -399,7 +441,7 @@ Connect your pages to powerful business logic and data operations. Learn how to 
 
 </div>
 
-## Full-Code UI Components in Pages
+## Full-code UI components in pages {#fullcode-ui-components-pages}
 Create advanced custom UI components with full programming control. Build sophisticated interactive elements that seamlessly integrate with page logic, handle complex events, and provide rich user experiences beyond standard components.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -463,8 +505,8 @@ Create advanced custom UI components with full programming control. Build sophis
 
 </div>
 
-## Using Functional Components in Pages
-The rich component library is your super toolkit. Drag and drop a table to display data, add forms to collect information, and insert charts for data visualization. Make complex frontend development simple and intuitive.
+## Using functional components in pages {#using-functional-components-pages}
+The rich component library is your powerful toolkit. Drag and drop tables to display data, add forms to collect information, and insert charts for data visualization. Make complex frontend development simple and intuitive.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
@@ -851,7 +893,7 @@ The rich component library is your super toolkit. Drag and drop a table to displ
   </details>
 </div>
 
-## AI Large Language Models
+## AI large language models {#ai-large-language-models}
 Integrate mainstream large language models such as GPT-4, Claude, and Tongyi Qianwen. Support multi-vendor disaster recovery and private deployment to provide applications with AI capabilities including intelligent dialogue, text generation, and code assistance.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -893,7 +935,7 @@ Integrate mainstream large language models such as GPT-4, Claude, and Tongyi Qia
 
 </div>
 
-## AI Knowledge Base
+## AI knowledge base {#ai-knowledge-base}
 Transform enterprise documents, manuals, and FAQs into intelligent knowledge bases. Support automatic document processing, intelligent segmentation, and semantic retrieval to enable AI to answer questions accurately based on enterprise knowledge.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -986,26 +1028,26 @@ Transform enterprise documents, manuals, and FAQs into intelligent knowledge bas
 
 </div>
 
-## AI Agent
+## AI agent {#ai-agent}
 Intelligent agents with reasoning and action capabilities. Through prompts and tool configuration, enable AI to autonomously analyze problems, formulate solutions, and execute tasks to handle complex business scenarios.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Creating AI Agent"
+  title="Creating AI Agents"
   href="devguide/ai-agent/create-ai-agent"
-  description="Learn how to create ReActAgent, configure system prompts, select large language models, write descriptions, and configure runtime state storage."
+  description="Learn how to create ReActAgents, configure system prompts, select large language models, write descriptions, and configure runtime state storage."
 >
   <LinkGrid columns={2} links={[
-    { text: "Creating ReActAgent", href: "devguide/ai-agent/create-ai-agent#create-react-agent" },
-    { text: "Write System Prompt", href: "devguide/ai-agent/create-ai-agent#write-system-prompt" },
-    { text: "Select Model and Configure Parameters", href: "devguide/ai-agent/create-ai-agent#select-model-and-configure-parameters" },
-    { text: "Write Agent Description", href: "devguide/ai-agent/create-ai-agent#write-agent-description" },
-    { text: "Configure Runtime State Storage", href: "devguide/ai-agent/create-ai-agent#configure-runtime-state-storage" },
-    { text: "Memory Storage", href: "devguide/ai-agent/create-ai-agent#memory-storage" },
-    { text: "Database Storage", href: "devguide/ai-agent/create-ai-agent#database-storage" },
-    { text: "Modify Agent in Source Code Mode", href: "devguide/ai-agent/create-ai-agent#modify-agent-in-source-code-mode" },
-    { text: "Custom Callback Processor", href: "devguide/ai-agent/create-ai-agent#custom-callback-processor" }
+    { text: "Creating a ReActAgent", href: "devguide/ai-agent/create-ai-agent#creating-react-agent" },
+    { text: "Writing system prompts", href: "devguide/ai-agent/create-ai-agent#writing-system-prompts" },
+    { text: "Selecting models and configuring parameters", href: "devguide/ai-agent/create-ai-agent#selecting-models-configuring-parameters" },
+    { text: "Writing agent descriptions", href: "devguide/ai-agent/create-ai-agent#writing-agent-descriptions" },
+    { text: "Configuring runtime state storage", href: "devguide/ai-agent/create-ai-agent#configuring-runtime-state-storage" },
+    { text: "Memory storage", href: "devguide/ai-agent/create-ai-agent#memory-storage" },
+    { text: "Database storage", href: "devguide/ai-agent/create-ai-agent#database-storage" },
+    { text: "Modifying agents in source code mode", href: "devguide/ai-agent/create-ai-agent#modifying-agents-source-code-mode" },
+    { text: "Custom callback processors", href: "devguide/ai-agent/create-ai-agent#custom-callback-processors" }
   ]} />
 </IndexCard>
 
@@ -1015,17 +1057,17 @@ Intelligent agents with reasoning and action capabilities. Through prompts and t
   description="Learn how to add and manage various tools in Agent, including model functions, service functions, MCP services, external APIs, and page functions."
 >
   <LinkGrid columns={2} links={[
-    { text: "Agent Call Model Functions", href: "devguide/ai-agent/agent-tools#agent-call-model-functions" },
-    { text: "Agent Call Service Functions", href: "devguide/ai-agent/agent-tools#agent-calling-service-functions" },
-    { text: "Agent Call MCP Services", href: "devguide/ai-agent/agent-tools#agent-call-mcp-service" },
-    { text: "Convert MCP Config to Environment Variables", href: "devguide/ai-agent/agent-tools#convert-mcp-config-to-environment-variables" },
-    { text: "Agent Call External APIs", href: "devguide/ai-agent/agent-tools#agent-call-external-api" },
-    { text: "Agent Call Page Functions", href: "devguide/ai-agent/agent-tools#agent-call-page-functions" },
-    { text: "Tool Function Management", href: "devguide/ai-agent/agent-tools#tool-function-management" },
-    { text: "Enable/Disable Tool Functions", href: "devguide/ai-agent/agent-tools#enable-disable-tool-functions" },
-    { text: "Tool Function Call Pre/Post Event Triggering", href: "devguide/ai-agent/agent-tools#tool-function-call-pre-post-event-triggering" },
-    { text: "Manual Confirmation Before Tool Execution", href: "devguide/ai-agent/agent-tools#manual-confirmation-before-tool-execution" },
-    { text: "Restrict User Roles for Tool Calls", href: "devguide/ai-agent/agent-tools#restrict-user-roles-for-tool-calls" }
+    { text: "Calling model functions", href: "devguide/ai-agent/agent-tools#calling-model-functions" },
+    { text: "Calling service functions", href: "devguide/ai-agent/agent-tools#calling-service-functions" },
+    { text: "Calling MCP servers", href: "devguide/ai-agent/agent-tools#calling-mcp-servers" },
+    { text: "Converting MCP configuration to environment variable", href: "devguide/ai-agent/agent-tools#converting-mcp-config-to-environment-variable" },
+    { text: "Calling external APIs", href: "devguide/ai-agent/agent-tools#calling-external-apis" },
+    { text: "Calling page functions", href: "devguide/ai-agent/agent-tools#calling-page-functions" },
+    { text: "Tool function management", href: "devguide/ai-agent/agent-tools#tool-function-management" },
+    { text: "Enabling/disabling tool functions", href: "devguide/ai-agent/agent-tools#enabling-disabling-tool-functions" },
+    { text: "Tool function call pre/post event triggering", href: "devguide/ai-agent/agent-tools#tool-function-call-pre-post-event-triggering" },
+    { text: "Manual confirmation before tool execution", href: "devguide/ai-agent/agent-tools#manual-confirmation-before-tool-execution" },
+    { text: "Restricting user roles for tool calls", href: "devguide/ai-agent/agent-tools#restricting-user-roles-for-tool-calls" }
   ]} />
 </IndexCard>
 
@@ -1035,13 +1077,14 @@ Intelligent agents with reasoning and action capabilities. Through prompts and t
   description="Master Agent's input variable configuration, output result settings, streaming output, and various calling methods."
 >
   <LinkGrid columns={2} links={[
-    { text: "Configure Input Variables", href: "devguide/ai-agent/agent-input-output#configure-input-variables" },
-    { text: "Use Variables in Prompts", href: "devguide/ai-agent/agent-input-output#use-variables-in-prompt" },
-    { text: "Configure Output Results", href: "devguide/ai-agent/agent-input-output#configure-output-results" },
-    { text: "Agent Streaming Output", href: "devguide/ai-agent/agent-input-output#agent-streaming-output" },
-    { text: "Call Agent in Frontend Functions", href: "devguide/ai-agent/agent-input-output#call-agent-in-frontend-functions" },
-    { text: "Call Agent in Backend Service Functions", href: "devguide/ai-agent/agent-input-output#call-agent-in-backend-service-functions" },
-    { text: "Test Agent in Page Assistant", href: "devguide/ai-agent/agent-input-output#test-agent-in-page-assistant" }
+    { text: "Configuring input variables", href: "devguide/ai-agent/agent-input-output#configuring-input-variables" },
+    { text: "Using variables in prompts", href: "devguide/ai-agent/agent-input-output#using-variables-in-prompts" },
+    { text: "Configuring output results", href: "devguide/ai-agent/agent-input-output#configuring-output-results" },
+    { text: "Output result data types", href: "devguide/ai-agent/agent-input-output#output-result-data-types" },
+    { text: "Agent streaming output", href: "devguide/ai-agent/agent-input-output#agent-streaming-output" },
+    { text: "Calling Agent in frontend functions", href: "devguide/ai-agent/agent-input-output#calling-agent-in-frontend-functions" },
+    { text: "Calling Agent in backend service functions", href: "devguide/ai-agent/agent-input-output#calling-agent-in-backend-service-functions" },
+    { text: "Testing Agent in page assistant", href: "devguide/ai-agent/agent-input-output#testing-agent-in-page-assistant" }
   ]} />
 </IndexCard>
 
@@ -1051,7 +1094,7 @@ Intelligent agents with reasoning and action capabilities. Through prompts and t
   description="Learn how to integrate knowledge bases with Agent to implement RAG functionality for enhanced response accuracy."
 >
   <LinkGrid links={[
-    { text: "Adding Knowledge Bases in Agent", href: "devguide/ai-agent/agent-knowledge-base#integrate-knowledge-base-rag" }
+    { text: "Adding knowledge bases in Agent", href: "devguide/ai-agent/agent-knowledge-base#integrate-knowledge-base-rag" }
   ]} />
 </IndexCard>
 
@@ -1077,7 +1120,7 @@ Intelligent agents with reasoning and action capabilities. Through prompts and t
 
 </div>
 
-## AI Assistant
+## AI assistant {#ai-assistant}
 Visual intelligent workflow engine. Orchestrate business processes through drag-and-drop nodes, combining AI decision-making and human-machine interaction to achieve intelligent automation in scenarios such as customer service, approval, and data processing.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1114,7 +1157,7 @@ Visual intelligent workflow engine. Orchestrate business processes through drag-
 
 <IndexCard
   title="AI Assistant API Integration"
-  href="devguide/ai-assistant/ai-assistant-api-integration"
+  href="devguide/ai-assistant/ai-assistant-api-exposure"
   description="Expose AI assistant capabilities through API interfaces for integration with external systems."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
@@ -1123,7 +1166,7 @@ Visual intelligent workflow engine. Orchestrate business processes through drag-
 </IndexCard>
 </div>
 
-## Data Modeling
+## Data modeling {#data-modeling}
 Design a powerful data foundation for your application. Create data tables, design field types, and establish relationships through visual methods without complex SQL knowledge. Make data management easy and efficient.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1235,10 +1278,10 @@ Design a powerful data foundation for your application. Create data tables, desi
 <IndexCard
   title="Calling Data Models with AI Agents"
   href="devguide/data-modeling/calling-data-models-in-ai-agent"
-  description="Add data model functions as Agent tools, enabling AI to execute data creation, reading, updating, and deletion operations."
+  description="Add data model functions as Agent tools, enabling AI to intelligently perform CRUD operations and automated data processing."
 >
   <LinkGrid links={[
-    { text: "Data Models as Agent Tools", href: "devguide/data-modeling/calling-data-models-in-ai-agent#data-models-as-agent-tools" }
+    { text: "Data models as Agent tools", href: "devguide/data-modeling/calling-data-models-in-ai-agent#data-models-as-agent-tools" }
   ]} />
 </IndexCard>
 
@@ -1249,10 +1292,10 @@ Design a powerful data foundation for your application. Create data tables, desi
   description="Configure and manage multiple database connections, supporting multi-data source application development."
 >
   <LinkGrid links={[
-    { text: "Create Database Connection", href: "devguide/data-modeling/manage-database-connections#create-database-connection" },
-    { text: "Multi-database Connection Management", href: "devguide/data-modeling/manage-database-connections#multi-database-connection-management" },
-    { text: "Database Connection Security Configuration", href: "devguide/data-modeling/manage-database-connections#database-connection-security-configuration" },
-    { text: "Connection Test and Troubleshooting", href: "devguide/data-modeling/manage-database-connections#connection-test-and-troubleshooting" }
+    { text: "Creating database connections", href: "devguide/data-modeling/manage-database-connections#create-database-connection" },
+    { text: "Multi-database connection management", href: "devguide/data-modeling/manage-database-connections#multi-database-connection-management" },
+    { text: "Database connection security configuration", href: "devguide/data-modeling/manage-database-connections#database-connection-security-configuration" },
+    { text: "Connection testing and troubleshooting", href: "devguide/data-modeling/manage-database-connections#connection-test-and-troubleshooting" }
   ]} />
 </IndexCard>
 
@@ -1262,15 +1305,15 @@ Design a powerful data foundation for your application. Create data tables, desi
   description="Learn about various database types and connection configurations supported by JitAi."
 >
   <LinkGrid links={[
-    { text: "Scenario Selection Suggestions", href: "devguide/data-modeling/supported-database-vendors#scenario-selection-suggestions" },
-    { text: "Cloud Vendor Compatibility", href: "devguide/data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
-    { text: "Database Element Usage", href: "devguide/data-modeling/supported-database-vendors#database-element-usage" }
+    { text: "Scenario selection recommendations", href: "devguide/data-modeling/supported-database-vendors#scenario-selection-recommendations" },
+    { text: "Cloud vendor compatibility", href: "devguide/data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
+    { text: "Database element usage", href: "devguide/data-modeling/supported-database-vendors#database-element-usage" }
   ]} />
 </IndexCard>
 
 </div>
 
-## Transaction Management
+## Transaction management {#transaction-management}
 Ensure data consistency and reliability in complex business operations. Master database transaction control mechanisms, implement atomic operations, and handle concurrent access scenarios effectively.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1281,46 +1324,51 @@ Ensure data consistency and reliability in complex business operations. Master d
   description="Database transaction control and consistency management to ensure reliability of data operations."
 >
   <LinkGrid links={[
-    { text: "Default Transaction Management Mechanism", href: "devguide/data-modeling/transaction-management#default-transaction-management-mechanism" },
-    { text: "Manual Transaction Commit/Rollback", href: "devguide/data-modeling/transaction-management#manual-transaction-commit-rollback" },
-    { text: "Transaction Decorator", href: "devguide/data-modeling/transaction-management#transaction-decorator" }
+    { text: "Default transaction management mechanism", href: "devguide/data-modeling/transaction-management#default-transaction-management-mechanism" },
+    { text: "Manual transaction commit/rollback", href: "devguide/data-modeling/transaction-management#manual-transaction-commit-rollback" },
+    { text: "Transaction decorator", href: "devguide/data-modeling/transaction-management#transaction-decorator" }
   ]} />
 </IndexCard>
 
 </div>
 
-## User and Permission Management
+## User and permission management {#user-permission-management}
 Build a secure and reliable user system. Support multiple login methods, flexible organizational structure design, and fine-grained permission allocation. Enable different users to perform their respective duties while ensuring data security and operational compliance.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Organizational Structure"
-  href="devguide/user-and-permission/organizational-structure"
-  description="Enterprise organizational structure management, including department, position and personnel hierarchical relationship configuration."
+  title="Organization"
+  href="devguide/user-and-permission/organization"
+  description="Enterprise organization management, including department, position and personnel hierarchical relationship configuration."
 >
   <LinkGrid links={[
-    { text: "Standard Organization", href: "devguide/user-and-permission/organizational-structure#standard-organization" },
-    { text: "Allowing New Registered Users to Join", href: "devguide/user-and-permission/organizational-structure#allowing-new-registered-users-to-join" },
-    { text: "DingTalk Custom Organization", href: "devguide/user-and-permission/organizational-structure#dingtalk-custom-organization" },
-    { text: "WeChat Work Custom Organization", href: "devguide/user-and-permission/organizational-structure#wechat-work-custom-organization" },
-    { text: "Contact Management Entry", href: "devguide/user-and-permission/organizational-structure#contact-management-entry" },
-    { text: "DingTalk Custom Organization", href: "devguide/user-and-permission/organizational-structure#dingtalk-custom-organization" },
-    { text: "WeChat Work Custom Organization", href: "devguide/user-and-permission/organizational-structure#wechat-work-custom-organization" },
-    { text: "Microsoft Teams", href: "devguide/user-and-permission/organizational-structure#microsoft-teams" },
-    { text: "Department Member Search", href: "devguide/user-and-permission/organizational-structure#department-member-search" },
-    { text: "Setting Organization Leader", href: "devguide/user-and-permission/organizational-structure#setting-organization-leader" },
-    { text: "Creating Department", href: "devguide/user-and-permission/organizational-structure#creating-department" },
-    { text: "Adding Member", href: "devguide/user-and-permission/organizational-structure#adding-member" },
-    { text: "Importing Members", href: "devguide/user-and-permission/organizational-structure#importing-members" },
-    { text: "Exporting Members", href: "devguide/user-and-permission/organizational-structure#exporting-members" },
-    { text: "Adjusting Department", href: "devguide/user-and-permission/organizational-structure#adjusting-department" },
-    { text: "Member Resignation", href: "devguide/user-and-permission/organizational-structure#member-resignation" },
-    { text: "Creating Role", href: "devguide/user-and-permission/organizational-structure#creating-role" },
-    { text: "Creating Role Group", href: "devguide/user-and-permission/organizational-structure#creating-role-group" },
-    { text: "Managing Role Members", href: "devguide/user-and-permission/organizational-structure#managing-role-members" },
-    { text: "Syncing DingTalk Organization Structure", href: "devguide/user-and-permission/organizational-structure#syncing-dingtalk-organization-structure" },
-    { text: "Syncing WeChat Work Organization Structure", href: "devguide/user-and-permission/organizational-structure#syncing-wechat-work-organization-structure" },
+    { text: "Default Organization", href: "devguide/user-and-permission/organization#default-organization" },
+    { text: "Creating organizations", href: "devguide/user-and-permission/organization#creating-organizations" },
+    { text: "Generic organization", href: "devguide/user-and-permission/organization#generic-organization" },
+    { text: "Allowing new users to join", href: "devguide/user-and-permission/organization#allowing-new-users-to-join" },
+    { text: "DingTalk Self-built Org.", href: "devguide/user-and-permission/organization#dingtalk-custom-organization" },
+    { text: "WeCom Self-built Org.", href: "devguide/user-and-permission/organization#wechat-work-custom-organization" },
+    { text: "Microsoft Teams", href: "devguide/user-and-permission/organization#microsoft-teams" },
+    { text: "Contact management entry", href: "devguide/user-and-permission/organization#contact-management-entry" },
+    { text: "Setting organization leader", href: "devguide/user-and-permission/organization#setting-organization-leader" },
+    { text: "Department member search", href: "devguide/user-and-permission/organization#department-member-search" },
+    { text: "Generic organization contacts", href: "devguide/user-and-permission/organization#generic-organization-contacts" },
+    { text: "Creating department", href: "devguide/user-and-permission/organization#creating-department" },
+    { text: "Adding member", href: "devguide/user-and-permission/organization#adding-member" },
+    { text: "Importing members", href: "devguide/user-and-permission/organization#importing-members" },
+    { text: "Exporting members", href: "devguide/user-and-permission/organization#exporting-members" },
+    { text: "Adjusting department", href: "devguide/user-and-permission/organization#adjusting-department" },
+    { text: "Member resignation", href: "devguide/user-and-permission/organization#member-resignation" },
+    { text: "Creating role", href: "devguide/user-and-permission/organization#creating-role" },
+    { text: "Creating role group", href: "devguide/user-and-permission/organization#creating-role-group" },
+    { text: "Managing role members", href: "devguide/user-and-permission/organization#managing-role-members" },
+    { text: "DingTalk organization contacts", href: "devguide/user-and-permission/organization#dingtalk-organization-contacts" },
+    { text: "Syncing DingTalk organization structure", href: "devguide/user-and-permission/organization#syncing-dingtalk-organization-structure" },
+    { text: "Exporting members", href: "devguide/user-and-permission/organization#exporting-members-dingtalk" },
+    { text: "WeCom organization contacts", href: "devguide/user-and-permission/organization#wechat-work-organization-contacts" },
+    { text: "Syncing WeCom organization structure", href: "devguide/user-and-permission/organization#syncing-wechat-work-organization-structure" },
+    { text: "Exporting members", href: "devguide/user-and-permission/organization#exporting-members-wechat-work" },
   ]} />
 </IndexCard>
 
@@ -1337,7 +1385,7 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
     { text: "Twilio", href: "devguide/user-and-permission/login-authentication#twilio" },
     { text: "AWS SNS", href: "devguide/user-and-permission/login-authentication#aws-sns" },
     { text: "DingTalk Custom QR Login", href: "devguide/user-and-permission/login-authentication#dingtalk-custom-qr-login" },
-    { text: "WeChat Work Custom QR Login", href: "devguide/user-and-permission/login-authentication#wechat-work-custom-qr-login" },
+    { text: "WeCom Custom QR Login", href: "devguide/user-and-permission/login-authentication#wechat-work-custom-qr-login" },
     { text: "WeChat Login", href: "devguide/user-and-permission/login-authentication#wechat-login" },
     { text: "WeChat Official Account Login", href: "devguide/user-and-permission/login-authentication#wechat-official-account-login" },
     { text: "WeChat Mini Program Login", href: "devguide/user-and-permission/login-authentication#wechat-mini-program-login" },
@@ -1352,20 +1400,20 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
   description="Application role definition and permission allocation, implementing fine-grained access control."
 >
   <LinkGrid columns={2} links={[
-    { text: "Built-in Three Application Roles", href: "devguide/user-and-permission/role-portal-menu-permissions#built-in-three-application-roles" },
-    { text: "Anonymous User", href: "devguide/user-and-permission/role-portal-menu-permissions#anonymous-user" },
+    { text: "Built-in application roles", href: "devguide/user-and-permission/role-portal-menu-permissions#built-in-three-application-roles" },
+    { text: "Anonymous user", href: "devguide/user-and-permission/role-portal-menu-permissions#anonymous-user" },
     { text: "Developer", href: "devguide/user-and-permission/role-portal-menu-permissions#developer" },
     { text: "Administrator", href: "devguide/user-and-permission/role-portal-menu-permissions#administrator" },
-    { text: "Creating Application Roles", href: "devguide/user-and-permission/role-portal-menu-permissions#create-application-role" },
-    { text: "Application Role Permission Configuration", href: "devguide/user-and-permission/role-portal-menu-permissions#application-role-permission-configuration" },
-    { text: "Specifying Accessible Portals and Menus", href: "devguide/user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus" },
-    { text: "Managing Application Role Members in Developer Portal", href: "devguide/user-and-permission/role-portal-menu-permissions#manage-application-role-members-in-developer-portal" },
-    { text: "Component Button Permission Control", href: "devguide/user-and-permission/role-portal-menu-permissions#component-button-permission-control" },
-    { text: "Component Data Field Read/Write/Statistics Permission Control", href: "devguide/user-and-permission/role-portal-menu-permissions#component-data-field-access-control" },
-    { text: "Hierarchical Management of Multiple Application Roles", href: "devguide/user-and-permission/role-portal-menu-permissions#hierarchical-management-of-multiple-application-roles" },
-    { text: "Application Role Member Management", href: "devguide/user-and-permission/role-portal-menu-permissions#application-role-member-management" },
-    { text: "Member Addition and Removal", href: "devguide/user-and-permission/role-portal-menu-permissions#member-addition-and-removal" },
-    { text: "Member Management Scope Settings in Organizational Structure", href: "devguide/user-and-permission/role-portal-menu-permissions#member-management-scope-settings-in-org-structure" }
+    { text: "Creating application roles", href: "devguide/user-and-permission/role-portal-menu-permissions#create-application-role" },
+    { text: "Application role permission configuration", href: "devguide/user-and-permission/role-portal-menu-permissions#application-role-permission-configuration" },
+    { text: "Specifying accessible portals and menus", href: "devguide/user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus" },
+    { text: "Managing application role members in the Developer Portal", href: "devguide/user-and-permission/role-portal-menu-permissions#manage-application-role-members-in-developer-portal" },
+    { text: "Component button permission control", href: "devguide/user-and-permission/role-portal-menu-permissions#component-button-permission-control" },
+    { text: "Component data field read/write/statistics permission control", href: "devguide/user-and-permission/role-portal-menu-permissions#component-data-field-access-control" },
+    { text: "Hierarchical management of multiple application roles", href: "devguide/user-and-permission/role-portal-menu-permissions#hierarchical-management-of-multiple-application-roles" },
+    { text: "Application role member management", href: "devguide/user-and-permission/role-portal-menu-permissions#application-role-member-management" },
+    { text: "Member addition and removal", href: "devguide/user-and-permission/role-portal-menu-permissions#member-addition-and-removal" },
+    { text: "Member management scope settings in organization", href: "devguide/user-and-permission/role-portal-menu-permissions#member-management-scope-settings-in-org" }
   ]} />
 </IndexCard>
 
@@ -1375,7 +1423,7 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
   description="Advanced role-based permission control for business elements, data models, and functional components."
 >
   <LinkGrid links={[
-    { text: "Portal-level Data Operation Type and Scope Control", href: "devguide/user-and-permission/roles-and-business-element-permissions#portal-level-data-operation-type-and-scope-control" }
+    { text: "Portal-level data operation type and scope control", href: "devguide/user-and-permission/roles-and-business-element-permissions#portal-level-data-operation-type-and-scope-control" }
   ]} />
 </IndexCard>
 
@@ -1385,13 +1433,13 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
   description="Configure and manage permission control for AI Agent tools, ensuring secure and controlled agent operations."
 >
   <LinkGrid links={[
-    { text: "Configure Agent Tool Execution Permissions", href: "devguide/user-and-permission/agent-tool-permission-control#configure-agent-tool-execution-permissions" }
+    { text: "Configuring Agent tool execution permissions", href: "devguide/user-and-permission/agent-tool-permission-control#configure-agent-tool-execution-permissions" }
   ]} />
 </IndexCard>
 
 </div>
 
-## Business Logic Development
+## Business logic development {#business-logic-development}
 Empower applications with powerful business processing capabilities. Handle complex business rules through visual programming, respond to user operations, and execute background tasks. Make logic writing as intuitive and easy to understand as building blocks.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1402,27 +1450,28 @@ Empower applications with powerful business processing capabilities. Handle comp
   description="Backend business logic implementation, encapsulating reusable business functions through service elements, providing API interfaces and data processing services."
 >
   <LinkGrid columns={2} links={[
-    { text: "Creating Service Functions", href: "devguide/business-logic-development/creating-service-elements#create-service-functions" },
-    { text: "Editing Service Functions in Source Code Mode", href: "devguide/business-logic-development/creating-service-elements#edit-service-functions-source-code-mode" },
-    { text: "Adding New Dependency Libraries", href: "devguide/business-logic-development/creating-service-elements#add-new-dependency-library" },
-    { text: "Using Cross-App Service Elements to Call Authorized Interfaces", href: "devguide/business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-interfaces" },
-    { text: "Creating Cross-App Service Elements", href: "devguide/business-logic-development/creating-service-elements#create-cross-app-service-elements" },
-    { text: "Using Cross-App Service Elements in Function Logic", href: "devguide/business-logic-development/creating-service-elements#use-cross-app-service-elements-in-functions" }
+    { text: "Creating service functions", href: "devguide/business-logic-development/creating-service-elements#create-service-functions" },
+    { text: "Editing service functions in source code mode", href: "devguide/business-logic-development/creating-service-elements#edit-service-functions-source-code-mode" },
+    { text: "Adding new dependency libraries", href: "devguide/business-logic-development/creating-service-elements#add-new-dependency-library" },
+    { text: "Using cross-app service elements to call authorized APIs", href: "devguide/business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-apis" },
+    { text: "Creating cross-app service elements", href: "devguide/business-logic-development/creating-service-elements#create-cross-app-service-elements" },
+    { text: "Using cross-app service elements in function logic", href: "devguide/business-logic-development/creating-service-elements#use-cross-app-service-elements-in-functions" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="Calling Other Elements in Service Functions"
+  title="Calling Elements in Service Functions"
   href="devguide/business-logic-development/calling-other-elements-in-service-functions"
   description="Learn how to call other elements from service functions, including models, other services, external APIs, and system components for comprehensive business logic implementation."
 >
   <LinkGrid columns={2} links={[
-    { text: "Using Platform APIs to Call Other Elements", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#use-platform-api-to-call-other-elements" },
-    { text: "Calling Data Model Functions", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-data-model-function" },
-    { text: "Calling Other Service Functions", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-other-service-functions" },
-    { text: "Calling External APIs", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-external-api" },
-    { text: "Calling AI Large Language Models", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-ai-llm" },
-    { text: "Calling AI Agents", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-ai-agent" }
+    { text: "Using platform APIs to call other elements", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#use-platform-api-to-call-other-elements" },
+    { text: "Typical examples", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#typical-examples" },
+    { text: "Calling data model functions", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-data-model-function" },
+    { text: "Calling other service functions", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-other-service-functions" },
+    { text: "Calling external APIs", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-external-api" },
+    { text: "Calling AI large language models", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-ai-llm" },
+    { text: "Calling AI agents", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-ai-agent" }
   ]} />
 </IndexCard>
 
@@ -1432,8 +1481,8 @@ Empower applications with powerful business processing capabilities. Handle comp
   description="Explore practical usage scenarios and best practices for service elements across different business contexts and application architectures."
 >
   <LinkGrid links={[
-    { text: "Where Service Functions Are Used", href: "devguide/business-logic-development/service-elements-usage-scenarios#where-service-functions-are-used" },
-    { text: "Helping AI Understand Service Functions More Accurately", href: "devguide/business-logic-development/service-elements-usage-scenarios#help-ai-understand-service-functions" }
+    { text: "Where service functions are used", href: "devguide/business-logic-development/service-elements-usage-scenarios#where-service-functions-are-used" },
+    { text: "Helping AI understand service functions accurately", href: "devguide/business-logic-development/service-elements-usage-scenarios#help-ai-understand-service-functions" }
   ]} />
 </IndexCard>
 
@@ -1475,7 +1524,7 @@ Empower applications with powerful business processing capabilities. Handle comp
 
 </div>
 
-## Approval Process
+## Approval process {#approval-process}
 Make enterprise approval processes efficient and orderly. Design flowcharts through drag-and-drop, configure approvers and conditions, and automate process flow. Say goodbye to tedious paper approvals and embrace digital office work.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1616,7 +1665,7 @@ Make enterprise approval processes efficient and orderly. Design flowcharts thro
 
 </div>
 
-## File Processing
+## File processing {#file-processing}
 Easily handle various file requirements in applications. Support file upload and download in multiple formats, dynamically generate Word and Excel documents, making file operations simple and convenient.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1678,7 +1727,7 @@ Easily handle various file requirements in applications. Support file upload and
 
 </div>
 
-## External API Integration
+## External API integration {#external-api-integration}
 Connect your application to the broader world. Easily integrate third-party APIs, integrate WeChat Pay and Alipay, and configure SMS notification services. Expand application capability boundaries to meet more business scenarios.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1734,7 +1783,7 @@ Connect your application to the broader world. Easily integrate third-party APIs
 </IndexCard>
 </div>
 
-## Cache Management
+## Cache management {#cache-management}
 Make applications run faster and more stable. Configure intelligent caching strategies, optimize data access speed, and enhance user experience. Ensure applications run smoothly even under high concurrent access.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1752,7 +1801,7 @@ Make applications run faster and more stable. Configure intelligent caching stra
 </IndexCard>
 </div>
 
-## Internal API Exposure
+## Internal API exposure {#internal-api-exposure}
 Expose application capabilities for external system calls. Generate standard API interfaces with one click, manage call permissions, and monitor usage. Make your application a provider of data and services.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1808,7 +1857,7 @@ Expose application capabilities for external system calls. Generate standard API
 
 </div>
 
-## Internationalization
+## Internationalization {#internationalization}
 Make your application accessible to global users. Support multiple languages, regional settings, and dynamic language switching to create truly international applications.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1818,18 +1867,20 @@ Make your application accessible to global users. Support multiple languages, re
   href="devguide/internationalization/creating-language-packages"
   description="Learn how to create custom language packages for your application, including structure definition and content organization."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+      { text: "Creating language packages", href: "devguide/internationalization/creating-language-packages#creating-language-packages" },
+      { text: "Translating built-in terms", href: "devguide/internationalization/creating-language-packages#translating-built-in-terms" },
+      { text: "Adding new terms", href: "devguide/internationalization/creating-language-packages#adding-new-terms" },
+      { text: "Importing terms", href: "devguide/internationalization/creating-language-packages#importing-terms" }
+  ]} />
 </IndexCard>
 
 <IndexCard
-  title="Extending System Builtin Language Packages"
+  title="Extending System Built-in Language Packages"
   href="devguide/internationalization/extending-system-builtin-language-packages"
   description="Extend and customize existing system language packages to meet specific business requirements and regional needs."
 >
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
   </div>
 </IndexCard>
 
@@ -1838,15 +1889,42 @@ Make your application accessible to global users. Support multiple languages, re
   href="devguide/internationalization/how-to-translate-page-terms"
   description="Master the techniques for translating page content, including dynamic text replacement and context-aware translations."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+      { text: "Automatic text translation", href: "devguide/internationalization/how-to-translate-page-terms#automatic-text-translation" },
+      { text: "Dynamic text translation", href: "devguide/internationalization/how-to-translate-page-terms#dynamic-text-translation" },
+      { text: "DOM node attribute translation", href: "devguide/internationalization/how-to-translate-page-terms#dom-node-attribute-translation" },
+      { text: "Using API translation", href: "devguide/internationalization/how-to-translate-page-terms#using-api-translation" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Translation Ignore Rules"
+  href="devguide/internationalization/translate-ignore-rules"
+  description="Configure rules to exclude specific content from translation, ensuring proper handling of brand names, technical terms, and other non-translatable content."
+>
+  <LinkGrid links={[
+      { text: "Basic usage", href: "devguide/internationalization/translate-ignore-rules#basic-usage" },
+      { text: "Advanced configuration", href: "devguide/internationalization/translate-ignore-rules#advanced-configuration" },
+      { text: "Configuration method", href: "devguide/internationalization/translate-ignore-rules#configuration-method" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Default Language"
+  href="devguide/internationalization/default-language"
+  description="Configure the default language for your application to ensure optimal user experience for first-time visitors and users without explicit language preferences."
+>
+  <LinkGrid links={[
+      { text: "Default language configuration", href: "devguide/internationalization/default-language#default-language-configuration" },
+      { text: "Language selection strategy", href: "devguide/internationalization/default-language#language-selection-strategy" },
+      { text: "Configuration recommendations", href: "devguide/internationalization/default-language#configuration-recommendations" }
+  ]} />
 </IndexCard>
 
 </div>
 
 
-## Frontend UI Customization
+## Frontend UI customization {#frontend-ui-customization}
 Create unique visual experiences and brand identity. Customize application theme colors, develop exclusive UI components, and make application interfaces better align with corporate brand tone while enhancing user experience and recognition.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
@@ -1898,7 +1976,7 @@ Create unique visual experiences and brand identity. Customize application theme
     { text: "Using Styles", href: "devguide/frontend-ui-customization/page-customization#use-style" },
     { text: "Using Local Resources", href: "devguide/frontend-ui-customization/page-customization#use-local-resources" },
     { text: "Using Ant Design Components", href: "devguide/frontend-ui-customization/page-customization#use-ant-design-components" },
-    { text: "Embedding Existing Regular Pages", href: "devguide/frontend-ui-customization/page-customization#embed-existing-regular-page" },
+    { text: "Embedding Existing Generic Pages", href: "devguide/frontend-ui-customization/page-customization#embed-existing-generic-page" },
     { text: "Using Standard Components", href: "devguide/frontend-ui-customization/page-customization#use-standard-component" },
     { text: "Calling Data Model Functions", href: "devguide/frontend-ui-customization/page-customization#call-data-model-function" },
     { text: "Calling Service Functions", href: "devguide/frontend-ui-customization/page-customization#call-service-function" },
@@ -1924,7 +2002,7 @@ Create unique visual experiences and brand identity. Customize application theme
 </IndexCard>
 </div>
 
-## Advanced Guide
+## Advanced guide {#advanced-guide}
 In-depth practical guides based on real business scenarios to help developers master complex application architecture design and best practices.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>

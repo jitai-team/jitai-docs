@@ -1,8 +1,8 @@
 ---
 slug: standard-organization
 ---
-# Standard Organization
-Standard organization is an enterprise organizational architecture management element in the JitAuth framework, implementing enterprise personnel management based on department hierarchical structure and role permission system. It handles organizational architecture maintenance, member management, and permission assignment, supporting department hierarchical management, role permission control, and member status management.
+# Generic Organization
+Generic organization is an enterprise organizational architecture management element in the JitAuth framework, implementing enterprise personnel management based on department hierarchical structure and role permission system. It handles organizational architecture maintenance, member management, and permission assignment, supporting department hierarchical management, role permission control, and member status management.
 
 The hierarchical structure of standard organization elements is Meta (corps.Meta) → Type (corps.NormalType) → Instance. Developers can quickly create standard organization instance elements through JitAi's visual development tools.
 
@@ -387,7 +387,7 @@ Organization element fullName identifier.
 
 ## Advanced Features
 ### Organization Initialization Process
-Standard organization supports complete initialization process, including root department creation and first administrator addition:
+Generic organization supports complete initialization process, including root department creation and first administrator addition:
 
 ```python title="Complete Initialization Example"
 corp = app.getElement("corps.Default")

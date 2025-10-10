@@ -13,7 +13,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 ## Implementation process
 
-The JitAi application framework includes built-in "Developer" and "Administrator" roles, corresponding to the "Developer Portal" and "Administrator Portal" respectively.
+The JitAi application framework includes built-in "Developer" and "Administrator" roles, corresponding to the "Developer Portal" and "Manager Portal" respectively.
 
 This project requires two role types: Teacher and Student. Since we've already created "Teacher Portal" and "Student Portal" for these roles, permission configuration becomes straightforward.
 
@@ -25,15 +25,15 @@ You can also click "Configure" for each menu to further configure component-leve
 
 ![](../img/role_150729.png)
 
-### Managing Organizations and Configuring Personnel in the "Administrator Portal"
+### Managing Organizations and Configuring Personnel in the "Manager Portal"
 
 ![](../img/role_155400.png)
 
 In this application, we'll create "Teacher" and "Student" departments.
 
-For detailed information, see [Organizational Structure](../../devguide/user-and-permission/organizational-structure).
+For detailed information, see [Organizational Structure](../../devguide/user-and-permission/organization).
 
-### Configuring Role Membership in the "Administrator Portal"
+### Configuring Role Membership in the "Manager Portal"
 
 Add the "Teacher" department to the "Teacher" role's member configuration, and add the "Student" department to the "Student" role's member configuration.
 

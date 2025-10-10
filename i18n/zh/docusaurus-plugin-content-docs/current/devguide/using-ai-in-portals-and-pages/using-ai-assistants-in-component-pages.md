@@ -13,7 +13,7 @@ slug: using-ai-assistants-in-component-pages
 
 在页面编辑器顶部打开 `AI助理` 开关并选择一个AI助理。
 
-## AI助理配置
+## AI助理配置 {#ai-assistant-configuration}
 
 启用AI助理后，页面编辑器右侧会显示AI助理配置面板，包含以下配置选项：
 - **AI助理**：切换页面中使用的AI助理
@@ -24,7 +24,7 @@ slug: using-ai-assistants-in-component-pages
 ![组件页面 - 绑定AI助理](./img/component-page-assistant-config.png)
 
 
-## AI助理事件订阅
+## AI助理事件订阅 {#ai-assistant-event-subscription}
 
 ### 订阅节点运行事件 {#subscribe-node-running-events}
 在助手中为节点启用[可触发的工作区事件](../ai-assistant/ai-assistant-event#node-running-events)后，会有两个事件：**到达节点时** 和 **节点完成后**。页面订阅方法如下：
@@ -52,14 +52,14 @@ this.subscribeEvent("AI:aiagents.ClientManagementagent.callTool.preEvent", async
 });
 ```
 
-### 订阅聊天区域人机交互节点事件 {#subscribe-chat-area-human-events}
+### 订阅聊天区域人机交互节点事件 {#subscribe-action-in-conversation-events}
 页面可以订阅[聊天区域人机交互节点事件](../ai-assistant/ai-assistant-event#chat-area-human-machine-interaction-events)。
 订阅方法如下：
 
 ![AI助理 - 聊天区域人机交互事件订阅](./img/assistant-chat-event.png)
 
-### 订阅工作区人机交互节点事件 {#subscribe-workspace-human-events}
-页面可以订阅[工作区人机交互节点事件](../ai-assistant/ai-assistant-event#workspace-human-machine-interaction-events)。
+### 订阅工作区人机交互节点事件 {#subscribe-action-in-page-events}
+页面可以订阅[工作区人机交互节点事件](../ai-assistant/ai-assistant-event#action-in-page-events)。
 订阅方法如下：
 
 ![AI助理 - 工作区人机交互事件订阅](./img/assistant-uiinterrupt-event.png)
@@ -70,7 +70,7 @@ this.subscribeEvent("AI:aiagents.ClientManagementagent.callTool.preEvent", async
 
 ![AI助理 - 发送AI消息](./img/send-ai-message.png)
 
-功能参数请参见[发送AI消息功能](../ai-assistant/ai-assistant-api-integration#send-ai-message)
+功能参数请参见[发送AI消息功能](../ai-assistant/ai-assistant-api-exposure#send-ai-message)
 
 
 ## 直接调用AI助理 {#call-ai-assistant}

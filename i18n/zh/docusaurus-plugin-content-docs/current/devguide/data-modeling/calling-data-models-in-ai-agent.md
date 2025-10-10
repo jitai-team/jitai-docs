@@ -18,4 +18,4 @@ slug: calling-data-models-in-ai-agent
 - 实现跨多个数据模型的关联操作
 - 基于业务规则进行数据验证和处理
 
-关于如何将数据模型函数添加为Agent工具的详细操作步骤，请参考 [Agent调用模型函数](../ai-agent/agent-tools#agent-call-model-functions)。
+关于如何将数据模型函数添加为Agent工具的详细操作步骤，请参考 [Agent调用模型函数](../ai-agent/agent-tools#calling-model-functions)。

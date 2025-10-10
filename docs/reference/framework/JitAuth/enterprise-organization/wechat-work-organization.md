@@ -1,10 +1,10 @@
 ---
 slug: wechat-work-organization
 ---
-# WeChat Work Custom Organization {#wechat-work-custom-organization}
-WeChat Work custom organization is an enterprise-level organizational architecture integration type in the JitAuth framework, implementing organizational architecture synchronization and user management based on WeChat Work custom application API. It handles WeChat Work contact synchronization, organizational information retrieval, and user identity authentication, supporting automatic organizational architecture synchronization and user permission inheritance.
+# WeCom Self-built Org. {#wechat-work-custom-organization}
+WeCom Self-built Org. is an enterprise-level organizational architecture integration type in the JitAuth framework, implementing organizational architecture synchronization and user management based on WeCom custom application API. It handles WeCom contact synchronization, organizational information retrieval, and user identity authentication, supporting automatic organizational architecture synchronization and user permission inheritance.
 
-The hierarchical structure of WeChat Work custom organization elements is Meta (corps.Meta) → Type (corps.QywxInnerType) → Instance. Developers can quickly create WeChat Work custom organization instance elements through JitAi's visual development tools.
+The hierarchical structure of WeCom Self-built Org. elements is Meta (corps.Meta) → Type (corps.QywxInnerType) → Instance. Developers can quickly create WeCom Self-built Org. instance elements through JitAi's visual development tools.
 
 Of course, developers can also create their own Type elements or modify the official `corps.QywxInnerType` element provided by JitAi in their own App to implement their own encapsulation.
 
@@ -21,7 +21,7 @@ corps/
 #### e.json File
 ```json title="e.json Configuration"
 {
-  "title": "My WeChat Work Organization",
+  "title": "My WeCom Organization",
   "type": "corps.QywxInnerType"
 }
 ```
@@ -37,7 +37,7 @@ corps/
 
 #### Usage Example
 ```python title="Basic Usage Example"
-# Get WeChat Work organization instance
+# Get WeCom organization instance
 corp = app.getElement("corps.MyQywxCorp")
 
 # Initialize organizational architecture
@@ -62,13 +62,13 @@ print(f"Administrators: {admin_list}")
 ### Authentication Configuration (authConfig)
 | Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| corpId | string | Yes | WeChat Work enterprise ID |
-| agentId | string | Yes | WeChat Work application ID |
-| secret | string | Yes | WeChat Work application Secret |
+| corpId | string | Yes | WeCom enterprise ID |
+| agentId | string | Yes | WeCom application ID |
+| secret | string | Yes | WeCom application Secret |
 
 ## Methods
 ### initCorp
-Initialize organizational architecture, WeChat Work custom organizational architecture initialization automatically syncs organizational architecture data.
+Initialize organizational architecture, WeCom Self-built Org.al architecture initialization automatically syncs organizational architecture data.
 
 | Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
@@ -82,7 +82,7 @@ corp.initCorp()
 ```
 
 ### syncCorp
-Sync WeChat Work organizational architecture data to local, including departments, members, roles, and other information.
+Sync WeCom organizational architecture data to local, including departments, members, roles, and other information.
 
 | Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
@@ -96,13 +96,13 @@ corp.syncCorp()
 ```
 
 ### getThirdCorpData
-Get third-party WeChat Work organizational architecture data.
+Get third-party WeCom organizational architecture data.
 
 | Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
 | - | - | - | - | No parameters |
 
-**Return Value:** dict - Complete data containing WeChat Work organizational architecture
+**Return Value:** dict - Complete data containing WeCom organizational architecture
 
 ```python title="Get Third-Party Organizational Architecture Data"
 corp = app.getElement("corps.MyQywxCorp")
@@ -115,7 +115,7 @@ Batch register users to local system.
 
 | Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| corpData | JitDict | dict | Yes | WeChat Work organizational architecture data |
+| corpData | JitDict | dict | Yes | WeCom organizational architecture data |
 
 **Return Value:** None
 
@@ -270,18 +270,18 @@ print(f"Full Name: {corp_info['fullName']}")
 ```
 
 ### getClient
-Get WeChat Work client.
+Get WeCom client.
 
 | Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
 | - | - | - | - | No parameters |
 
-**Return Value:** object - WeChat Work API client object
+**Return Value:** object - WeCom API client object
 
-```python title="Get WeChat Work Client"
+```python title="Get WeCom Client"
 corp = app.getElement("corps.MyQywxCorp")
 client = corp.getClient()
-# Use client to call WeChat Work API
+# Use client to call WeCom API
 ```
 
 ## Properties
@@ -330,7 +330,7 @@ print(f"Organizational Architecture Full Name: {corp.corpFullName}")
 ```
 
 ### authConfig
-Authentication configuration information, containing WeChat Work application authentication parameters.
+Authentication configuration information, containing WeCom application authentication parameters.
 
 **Type:** dict  
 **Access:** Read-only
@@ -343,7 +343,7 @@ print(f"Application ID: {corp.authConfig['agentId']}")
 
 ## Advanced Features
 ### Automatic Sync Configuration
-WeChat Work custom organization supports scheduled automatic synchronization of WeChat Work contact data, ensuring local organizational architecture remains consistent with WeChat Work.
+WeCom Self-built Org. supports scheduled automatic synchronization of WeCom contact data, ensuring local organizational architecture remains consistent with WeCom.
 
 ```python title="Configure Automatic Sync"
 # Configure scheduled sync in task template

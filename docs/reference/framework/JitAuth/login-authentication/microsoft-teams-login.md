@@ -163,26 +163,6 @@ if auth_element:
     print(f"Found authentication element: {auth_element.fullName}")
 ```
 
-### getUserProfile (Service Method)
-Get detailed information of Microsoft Teams users.
-
-#### Parameter Details
-| Parameter | Type | Native Type | Required | Description |
-|-----------|------|-------------|----------|-------------|
-| accessToken | Stext | str | Yes | Access token |
-
-#### Return Value
-| Type | Native Type | Description |
-|------|-------------|-------------|
-| JitDict | dict | User information dictionary |
-
-#### Usage Example
-```python title="Get User Information"
-auth_svc = app.getElement("auths.loginTypes.MicrosoftTeamsType.services.MicrosoftTeamsAuthSvc")
-user_info = auth_svc.getUserProfile(access_token)
-print(f"User information: {user_info}")
-```
-
 ## Properties
 ### authConfig
 Microsoft Teams application configuration information, containing parameters such as corpId, clientId, clientSecret.

@@ -31,10 +31,10 @@ Copy the theme color variable `colorPrimary` from the right side to the left edi
 Click the `Settings` tab, then click `Application Default Elements` to enter the default element editor. Click the `Default Global Style` dropdown, select the newly created `Global Style Element`, click the `Save` button, and refresh the page to see that the theme color has been applied.
 
 ## More Style Variables {#more-style-variables}
-For style variables, please refer to [Style Variables](https://ant.design/docs/react/customize-theme-cn#seedtoken).
+For style variables, please refer to [Style Variables](https://ant.design/docs/react/customize-theme#seedtoken).
 
 ## Debugging Theme {#debug-theme}
-Developers can use the official Ant Design [Theme Editor](https://ant.design/theme-editor-cn) to generate custom themes.
+Developers can use the official Ant Design [Theme Editor](https://ant.design/theme-editor) to generate custom themes.
 
 After adjusting the styles in the theme editor, click `Theme Configuration`.
 

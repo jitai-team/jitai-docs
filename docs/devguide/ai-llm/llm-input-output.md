@@ -50,7 +50,7 @@ The system will automatically retrieve link content and merge the processed cont
 
 :::tip Supported Link Types and Limitations
 - **Text Documents**: Plain text, HTML web pages, Markdown - up to 4096 characters
-- **PDF Documents**: Extract text content from first 10 pages - up to 4096 characters  
+- **PDF Documents**: Extract text content from first 10 pages - up to 4096 characters
 - **Image Files**: JPEG, PNG, WebP, GIF, BMP, TIFF - automatically compressed to 1024×1024 pixels
 - **Processing Limits**: Maximum 5 links per request, maximum 5MB per file, 10-second request timeout
 :::
@@ -59,7 +59,7 @@ The system will automatically retrieve link content and merge the processed cont
 ### Function Output: Output Control
 If developers want to control the format of `runLlm` function return results, there's no need to describe it in prompts - use the `Output Control` configuration shown below. These configurations will serve as the `outputArgs` part in the `config` parameter, guiding the function to return structured data.
 
-![Output Control](./img/1/control-output.gif)
+![Output Control](./img/1/control-output.png)
 
 For example, the figure shows extracting name, phone number, and address from express delivery information.
 

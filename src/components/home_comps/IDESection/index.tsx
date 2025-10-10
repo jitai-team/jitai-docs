@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styles from './styles.module.css';
 import globalStyles from '../../../pages/index.module.css';
 import ScrollAnimation from '../../ScrollAnimation';
@@ -38,6 +38,22 @@ interface IDESectionProps {
 
 const IDESection: React.FC<IDESectionProps> = ({ currentLocale }) => {
   const CONTENT = currentLocale === 'zh' ? CONTENT_ZH : CONTENT_EN;
+  const videoRefs = useRef<{ [key: string]: HTMLVideoElement | null }>({});
+
+  const handleVideoClick = (videoSrc: string, index: number) => {
+    const videoElement = videoRefs.current[`video-${index}`];
+    if (videoElement) {
+      if (videoElement.requestFullscreen) {
+        videoElement.requestFullscreen();
+      } else if ((videoElement as any).webkitRequestFullscreen) {
+        (videoElement as any).webkitRequestFullscreen();
+      } else if ((videoElement as any).mozRequestFullScreen) {
+        (videoElement as any).mozRequestFullScreen();
+      } else if ((videoElement as any).msRequestFullscreen) {
+        (videoElement as any).msRequestFullscreen();
+      }
+    }
+  };
 
   return (
     <ScrollAnimation animationType="fadeInUp" duration={500}>
@@ -70,17 +86,25 @@ const IDESection: React.FC<IDESectionProps> = ({ currentLocale }) => {
                     <div className={`${styles.featureCard} ${index % 2 === 1 ? styles.reverseCard : ''}`}>
                       <div className={styles.featureImage}>
                         {feature.video ? (
-                          <div className={styles.videoContainer}>
+                          <div 
+                            className={styles.videoContainer}
+                            onClick={() => handleVideoClick(feature.video, index)}
+                          >
                             <video
+                              ref={(el) => {
+                                videoRefs.current[`video-${index}`] = el;
+                              }}
                               src={feature.video}
                               autoPlay
                               loop
                               muted
                               playsInline
-                              controls
                               className={styles.videoElement}
                             />
                             <div className={styles.videoOverlay}>
+                              <div className={styles.hoverText}>
+                                {CONTENT.videoHoverText}
+                              </div>
                             </div>
                           </div>
                         ) : (

@@ -1,7 +1,6 @@
 ---
 sidebar_position: 1
 slug: external-api
-title: Creating Universal External API Elements
 ---
 
 # Creating Universal External API Elements

@@ -1338,32 +1338,37 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Organizational Structure"
-  href="devguide/user-and-permission/organizational-structure"
-  description="Enterprise organizational structure management, including department, position and personnel hierarchical relationship configuration."
+  title="Organization"
+  href="devguide/user-and-permission/organization"
+  description="Enterprise organization management, including department, position and personnel hierarchical relationship configuration."
 >
   <LinkGrid links={[
-    { text: "Standard Organization", href: "devguide/user-and-permission/organizational-structure#standard-organization" },
-    { text: "Allowing New Registered Users to Join", href: "devguide/user-and-permission/organizational-structure#allowing-new-registered-users-to-join" },
-    { text: "DingTalk Custom Organization", href: "devguide/user-and-permission/organizational-structure#dingtalk-custom-organization" },
-    { text: "WeChat Work Custom Organization", href: "devguide/user-and-permission/organizational-structure#wechat-work-custom-organization" },
-    { text: "Contact Management Entry", href: "devguide/user-and-permission/organizational-structure#contact-management-entry" },
-    { text: "DingTalk Custom Organization", href: "devguide/user-and-permission/organizational-structure#dingtalk-custom-organization" },
-    { text: "WeChat Work Custom Organization", href: "devguide/user-and-permission/organizational-structure#wechat-work-custom-organization" },
-    { text: "Microsoft Teams", href: "devguide/user-and-permission/organizational-structure#microsoft-teams" },
-    { text: "Department Member Search", href: "devguide/user-and-permission/organizational-structure#department-member-search" },
-    { text: "Setting Organization Leader", href: "devguide/user-and-permission/organizational-structure#setting-organization-leader" },
-    { text: "Creating Department", href: "devguide/user-and-permission/organizational-structure#creating-department" },
-    { text: "Adding Member", href: "devguide/user-and-permission/organizational-structure#adding-member" },
-    { text: "Importing Members", href: "devguide/user-and-permission/organizational-structure#importing-members" },
-    { text: "Exporting Members", href: "devguide/user-and-permission/organizational-structure#exporting-members" },
-    { text: "Adjusting Department", href: "devguide/user-and-permission/organizational-structure#adjusting-department" },
-    { text: "Member Resignation", href: "devguide/user-and-permission/organizational-structure#member-resignation" },
-    { text: "Creating Role", href: "devguide/user-and-permission/organizational-structure#creating-role" },
-    { text: "Creating Role Group", href: "devguide/user-and-permission/organizational-structure#creating-role-group" },
-    { text: "Managing Role Members", href: "devguide/user-and-permission/organizational-structure#managing-role-members" },
-    { text: "Syncing DingTalk Organization Structure", href: "devguide/user-and-permission/organizational-structure#syncing-dingtalk-organization-structure" },
-    { text: "Syncing WeChat Work Organization Structure", href: "devguide/user-and-permission/organizational-structure#syncing-wechat-work-organization-structure" },
+    { text: "Default Organization", href: "devguide/user-and-permission/organization#default-organization" },
+    { text: "Creating organizations", href: "devguide/user-and-permission/organization#creating-organizations" },
+    { text: "Generic organization", href: "devguide/user-and-permission/organization#generic-organization" },
+    { text: "Allowing new users to join", href: "devguide/user-and-permission/organization#allowing-new-users-to-join" },
+    { text: "DingTalk Self-built Org.", href: "devguide/user-and-permission/organization#dingtalk-custom-organization" },
+    { text: "WeCom Self-built Org.", href: "devguide/user-and-permission/organization#wechat-work-custom-organization" },
+    { text: "Microsoft Teams", href: "devguide/user-and-permission/organization#microsoft-teams" },
+    { text: "Contact management entry", href: "devguide/user-and-permission/organization#contact-management-entry" },
+    { text: "Setting organization leader", href: "devguide/user-and-permission/organization#setting-organization-leader" },
+    { text: "Department member search", href: "devguide/user-and-permission/organization#department-member-search" },
+    { text: "Generic organization contacts", href: "devguide/user-and-permission/organization#generic-organization-contacts" },
+    { text: "Creating department", href: "devguide/user-and-permission/organization#creating-department" },
+    { text: "Adding member", href: "devguide/user-and-permission/organization#adding-member" },
+    { text: "Importing members", href: "devguide/user-and-permission/organization#importing-members" },
+    { text: "Exporting members", href: "devguide/user-and-permission/organization#exporting-members" },
+    { text: "Adjusting department", href: "devguide/user-and-permission/organization#adjusting-department" },
+    { text: "Member resignation", href: "devguide/user-and-permission/organization#member-resignation" },
+    { text: "Creating role", href: "devguide/user-and-permission/organization#creating-role" },
+    { text: "Creating role group", href: "devguide/user-and-permission/organization#creating-role-group" },
+    { text: "Managing role members", href: "devguide/user-and-permission/organization#managing-role-members" },
+    { text: "DingTalk organization contacts", href: "devguide/user-and-permission/organization#dingtalk-organization-contacts" },
+    { text: "Syncing DingTalk organization structure", href: "devguide/user-and-permission/organization#syncing-dingtalk-organization-structure" },
+    { text: "Exporting members", href: "devguide/user-and-permission/organization#exporting-members-dingtalk" },
+    { text: "WeCom organization contacts", href: "devguide/user-and-permission/organization#wechat-work-organization-contacts" },
+    { text: "Syncing WeCom organization structure", href: "devguide/user-and-permission/organization#syncing-wechat-work-organization-structure" },
+    { text: "Exporting members", href: "devguide/user-and-permission/organization#exporting-members-wechat-work" },
   ]} />
 </IndexCard>
 
@@ -1380,7 +1385,7 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
     { text: "Twilio", href: "devguide/user-and-permission/login-authentication#twilio" },
     { text: "AWS SNS", href: "devguide/user-and-permission/login-authentication#aws-sns" },
     { text: "DingTalk Custom QR Login", href: "devguide/user-and-permission/login-authentication#dingtalk-custom-qr-login" },
-    { text: "WeChat Work Custom QR Login", href: "devguide/user-and-permission/login-authentication#wechat-work-custom-qr-login" },
+    { text: "WeCom Custom QR Login", href: "devguide/user-and-permission/login-authentication#wechat-work-custom-qr-login" },
     { text: "WeChat Login", href: "devguide/user-and-permission/login-authentication#wechat-login" },
     { text: "WeChat Official Account Login", href: "devguide/user-and-permission/login-authentication#wechat-official-account-login" },
     { text: "WeChat Mini Program Login", href: "devguide/user-and-permission/login-authentication#wechat-mini-program-login" },
@@ -1395,20 +1400,20 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
   description="Application role definition and permission allocation, implementing fine-grained access control."
 >
   <LinkGrid columns={2} links={[
-    { text: "Built-in Three Application Roles", href: "devguide/user-and-permission/role-portal-menu-permissions#built-in-three-application-roles" },
-    { text: "Anonymous User", href: "devguide/user-and-permission/role-portal-menu-permissions#anonymous-user" },
+    { text: "Built-in application roles", href: "devguide/user-and-permission/role-portal-menu-permissions#built-in-three-application-roles" },
+    { text: "Anonymous user", href: "devguide/user-and-permission/role-portal-menu-permissions#anonymous-user" },
     { text: "Developer", href: "devguide/user-and-permission/role-portal-menu-permissions#developer" },
     { text: "Administrator", href: "devguide/user-and-permission/role-portal-menu-permissions#administrator" },
-    { text: "Creating Application Roles", href: "devguide/user-and-permission/role-portal-menu-permissions#create-application-role" },
-    { text: "Application Role Permission Configuration", href: "devguide/user-and-permission/role-portal-menu-permissions#application-role-permission-configuration" },
-    { text: "Specifying Accessible Portals and Menus", href: "devguide/user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus" },
-    { text: "Managing Application Role Members in Developer Portal", href: "devguide/user-and-permission/role-portal-menu-permissions#manage-application-role-members-in-developer-portal" },
-    { text: "Component Button Permission Control", href: "devguide/user-and-permission/role-portal-menu-permissions#component-button-permission-control" },
-    { text: "Component Data Field Read/Write/Statistics Permission Control", href: "devguide/user-and-permission/role-portal-menu-permissions#component-data-field-access-control" },
-    { text: "Hierarchical Management of Multiple Application Roles", href: "devguide/user-and-permission/role-portal-menu-permissions#hierarchical-management-of-multiple-application-roles" },
-    { text: "Application Role Member Management", href: "devguide/user-and-permission/role-portal-menu-permissions#application-role-member-management" },
-    { text: "Member Addition and Removal", href: "devguide/user-and-permission/role-portal-menu-permissions#member-addition-and-removal" },
-    { text: "Member Management Scope Settings in Organizational Structure", href: "devguide/user-and-permission/role-portal-menu-permissions#member-management-scope-settings-in-org-structure" }
+    { text: "Creating application roles", href: "devguide/user-and-permission/role-portal-menu-permissions#create-application-role" },
+    { text: "Application role permission configuration", href: "devguide/user-and-permission/role-portal-menu-permissions#application-role-permission-configuration" },
+    { text: "Specifying accessible portals and menus", href: "devguide/user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus" },
+    { text: "Managing application role members in the Developer Portal", href: "devguide/user-and-permission/role-portal-menu-permissions#manage-application-role-members-in-developer-portal" },
+    { text: "Component button permission control", href: "devguide/user-and-permission/role-portal-menu-permissions#component-button-permission-control" },
+    { text: "Component data field read/write/statistics permission control", href: "devguide/user-and-permission/role-portal-menu-permissions#component-data-field-access-control" },
+    { text: "Hierarchical management of multiple application roles", href: "devguide/user-and-permission/role-portal-menu-permissions#hierarchical-management-of-multiple-application-roles" },
+    { text: "Application role member management", href: "devguide/user-and-permission/role-portal-menu-permissions#application-role-member-management" },
+    { text: "Member addition and removal", href: "devguide/user-and-permission/role-portal-menu-permissions#member-addition-and-removal" },
+    { text: "Member management scope settings in organization", href: "devguide/user-and-permission/role-portal-menu-permissions#member-management-scope-settings-in-org" }
   ]} />
 </IndexCard>
 
@@ -1418,7 +1423,7 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
   description="Advanced role-based permission control for business elements, data models, and functional components."
 >
   <LinkGrid links={[
-    { text: "Portal-level Data Operation Type and Scope Control", href: "devguide/user-and-permission/roles-and-business-element-permissions#portal-level-data-operation-type-and-scope-control" }
+    { text: "Portal-level data operation type and scope control", href: "devguide/user-and-permission/roles-and-business-element-permissions#portal-level-data-operation-type-and-scope-control" }
   ]} />
 </IndexCard>
 
@@ -1428,7 +1433,7 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
   description="Configure and manage permission control for AI Agent tools, ensuring secure and controlled agent operations."
 >
   <LinkGrid links={[
-    { text: "Configure Agent Tool Execution Permissions", href: "devguide/user-and-permission/agent-tool-permission-control#configure-agent-tool-execution-permissions" }
+    { text: "Configuring Agent tool execution permissions", href: "devguide/user-and-permission/agent-tool-permission-control#configure-agent-tool-execution-permissions" }
   ]} />
 </IndexCard>
 

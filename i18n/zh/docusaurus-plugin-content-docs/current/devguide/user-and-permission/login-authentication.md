@@ -66,14 +66,14 @@ Amazon Simple Notification Service（SNS）是亚马逊云提供的全托管发�
 
 ![钉钉扫码](./img/auth/dingtalk-qr-scan.gif)
 
-当开发者选择创建`钉钉自建扫码登录`时，将弹出`新建钉钉自建扫码登录`配置窗口。在该窗口中，需填写登录方式名称（英文名自动生成），并配置钉钉自建应用的凭证信息，包括`CorpId`（企业ID）、`AgentID`、`appKey`、`appSecret`。相关配置信息的获取方式可参考[组织架构文档](./organizational-structure#dingtalk-custom-organization)。
+当开发者选择创建`钉钉自建扫码登录`时，将弹出`新建钉钉自建扫码登录`配置窗口。在该窗口中，需填写登录方式名称（英文名自动生成），并配置钉钉自建应用的凭证信息，包括`CorpId`（企业ID）、`AgentID`、`appKey`、`appSecret`。相关配置信息的获取方式可参考[组织架构文档](./organization#dingtalk-custom-organization)。
 
 ![钉钉登录配置](./img/auth/dingtalk-login-config.png)
 
 完成相关配置后，系统将自动创建钉钉扫码登录方式，并跳转至登录方式配置页面，方便你进行后续查看与管理。
 
 :::tip
-钉钉自建扫码登录方式需与[钉钉自建组织架构](./organizational-structure#dingtalk-custom-organization)配套使用。创建钉钉自建组织架构时，系统会自动同步生成对应的扫码登录方式，无需单独配置。
+钉钉自建扫码登录方式需与[钉钉自建组织架构](./organization#dingtalk-custom-organization)配套使用。创建钉钉自建组织架构时，系统会自动同步生成对应的扫码登录方式，无需单独配置。
 :::
 
 ## 企业微信自建扫码登录 {#wechat-work-custom-qr-login}
@@ -81,14 +81,14 @@ Amazon Simple Notification Service（SNS）是亚马逊云提供的全托管发�
 
 ![企微扫码](./img/auth/wechat-work-qr-scan.gif)
 
-当开发者选择创建`企业微信自建扫码登录`时，将弹出`新建企业微信自建扫码登录`配置窗口。在该窗口中，需填写登录方式名称（英文名自动生成），并配置企业微信自建应用的凭证信息，包括`CorpId`（企业ID）、`AgentID`、`Secret`。相关配置信息的获取方式可参考[组织架构文档](./organizational-structure#wechat-work-custom-organization)。
+当开发者选择创建`企业微信自建扫码登录`时，将弹出`新建企业微信自建扫码登录`配置窗口。在该窗口中，需填写登录方式名称（英文名自动生成），并配置企业微信自建应用的凭证信息，包括`CorpId`（企业ID）、`AgentID`、`Secret`。相关配置信息的获取方式可参考[组织架构文档](./organization#wechat-work-custom-organization)。
 
 ![企微登录配置](./img/auth/wechat-work-login-config.png)
 
 配置完成后，系统会自动生成企业微信扫码登录方式，并跳转至登录方式配置页面，便于你后续的查看与管理。
 
 :::tip
-企业微信自建扫码登录方式需与[企业微信自建组织架构](./organizational-structure#wechat-work-custom-organization)配套使用。创建企业微信自建组织架构时，系统会自动同步生成对应的扫码登录方式，无需单独配置。
+企业微信自建扫码登录方式需与[企业微信自建组织架构](./organization#wechat-work-custom-organization)配套使用。创建企业微信自建组织架构时，系统会自动同步生成对应的扫码登录方式，无需单独配置。
 :::
 
 ## 微信登录 {#wechat-login}

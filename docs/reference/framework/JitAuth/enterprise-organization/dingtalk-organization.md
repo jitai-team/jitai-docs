@@ -1,10 +1,10 @@
 ---
 slug: dingtalk-organization
 ---
-# DingTalk Custom Organization {#dingtalk-custom-organization}
-DingTalk custom organization is a specialized organization type in the JitAuth framework for integrating DingTalk enterprise internal application organizational architecture, implemented based on DingTalk Open Platform API to achieve automatic synchronization and unified management of enterprise organizational architecture. It handles DingTalk contact synchronization, department structure retrieval, and user identity authentication, supporting seamless integration with DingTalk workspace and providing enterprise-level permission management and user relationship maintenance capabilities.
+# DingTalk Self-built Org. {#dingtalk-custom-organization}
+DingTalk Self-built Org. is a specialized organization type in the JitAuth framework for integrating DingTalk enterprise internal application organizational architecture, implemented based on DingTalk Open Platform API to achieve automatic synchronization and unified management of enterprise organizational architecture. It handles DingTalk contact synchronization, department structure retrieval, and user identity authentication, supporting seamless integration with DingTalk workspace and providing enterprise-level permission management and user relationship maintenance capabilities.
 
-The hierarchical structure of DingTalk custom organization elements is Meta (corps.Meta) → Type (corps.DDInnerType) → Instance. Developers can quickly create DingTalk custom organization instance elements through JitAi's visual development tools.
+The hierarchical structure of DingTalk Self-built Org. elements is Meta (corps.Meta) → Type (corps.DDInnerType) → Instance. Developers can quickly create DingTalk Self-built Org. instance elements through JitAi's visual development tools.
 
 Of course, developers can also create their own Type elements or modify the official `corps.DDInnerType` element provided by JitAi in their own App to implement their own encapsulation.
 
@@ -42,8 +42,8 @@ corps/
 ```
 
 #### Usage Example
-```python title="Getting and Using DingTalk Custom Organization"
-# Get DingTalk custom organization instance
+```python title="Getting and Using DingTalk Self-built Org."
+# Get DingTalk Self-built Org. instance
 nail_corp = app.getElement("corps.testNailDivision")
 
 # Sync organizational architecture
@@ -335,7 +335,7 @@ Display name of the organization, used for user interface display and logging.
 
 ## Advanced Features
 ### Automatic Sync Mechanism
-DingTalk custom organization automatically executes organizational architecture synchronization during initialization, ensuring local data consistency with DingTalk servers. The sync process includes error handling and data integrity validation, supporting efficient synchronization of large-scale organizational architectures.
+DingTalk Self-built Org. automatically executes organizational architecture synchronization during initialization, ensuring local data consistency with DingTalk servers. The sync process includes error handling and data integrity validation, supporting efficient synchronization of large-scale organizational architectures.
 
 ```python title="Automatic Sync Configuration"
 # Automatically trigger sync when creating instance

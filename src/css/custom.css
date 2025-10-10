@@ -366,10 +366,11 @@ details>div>div {
   padding: 0 2rem !important;
 }
 
-/* 隐藏首页的Docusaurus默认导航栏 */
-.home-page>#__docusaurus>nav {
+/* 隐藏使用自定义页面布局的页面的默认导航栏 */
+body[data-page-type="custom-layout"] .navbar,body:has(.custom-page) .navbar {
   display: none !important;
 }
+
 
 
 .navbar__items>a[href*="demo.jit.pro"] {

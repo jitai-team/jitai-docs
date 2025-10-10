@@ -6,8 +6,9 @@ slug: extend-element-family-classes
 # 扩展自己的元素族类
 
 当JitAi开发框架中现有的Type元素无法满足特定业务需求时，开发者可以通过两种方式扩展功能：
-1. 复用现有Meta，创建新的Type元素：适合在已有族类内扩展功能。比如在消息服务框架下增加微信企业号通知、邮件通知，在支付服务框架下集成PayPal支付。以上都是指向已有Meta的新Type元素。
-2. 创建全新元素族类：适合全新业务领域的扩展，自成体系的新元素族类。比如IoT集成，需要支持MQTT、Modbus等多种不同的协议。
+
+1. **复用现有Meta，创建新的Type元素**：适合在已有族类内扩展功能。比如在消息服务框架下增加微信企业号通知、邮件通知，在支付服务框架下集成PayPal支付。以上都是指向已有Meta的新Type元素。
+2. **创建全新元素族类**：适合全新业务领域的扩展，自成体系的新元素族类。比如IoT集成，需要支持MQTT、Modbus等多种不同的协议。
 
 本文将采用方式2，通过实战案例，一步步指导开发者完成智能客服和钉钉机器人的集成。
 
@@ -15,22 +16,25 @@ slug: extend-element-family-classes
 如果你还没有完成[桌面版安装](../tutorial/download-installation)和[入门教程导读](../tutorial)，请先完成这些入门教程。
 :::
 
-## 将智能客服集成到钉钉机器人
+## 将智能客服集成到钉钉机器人 {#integrating-intelligent-customer-service}
+
 我们将`钉钉机器人`放到`IM机器人`这个顶级分类中，因此`IM机器人`就是Meta，`钉钉机器人`就是该分类下的Type之一，微信、企微、飞书等各类IM机器人都可以成为该分类下的新Type。
 
-### 效果预览
+### 效果预览 {#effect-preview}
+
 完成后的钉钉机器人效果：用户在钉钉群中@机器人发送问题，机器人会调用配置的智能客服Agent，实现流式回复。
 
-![钉钉机器人最终效果](./img/jitairobot/final-effect-dingtalk.png)
+![钉钉机器人最终效果](./img/jitairobot/final-effect-dingtalk.png "钉钉机器人最终效果")
 
-### 元素族类设计
+### 元素族类设计 {#element-family-design}
 | 元素层次 | fullName | 主要职责 |
 |---------|----------|----------|
 | **Meta元素** | `imRobots.Meta` | 定义IM机器人族类，统一管理各平台机器人 |
 | **Type元素** | `imRobots.dingTalkStreamType` | 封装钉钉SDK，处理消息收发和Stream连接等技术复杂度，开发配置项 |
 | **实例元素** | `imRobots.dingTalkDemo` | 配置具体的钉钉应用参数和智能体 |
 
-#### 目录结构
+#### 目录结构 {#directory-structure}
+
 ```shell title="imRobots元素族类在App中的子目录结构"
 ├── imRobots/
 │   ├── Meta/
@@ -58,8 +62,9 @@ python-socks==2.7.1
 ```
 :::
 
-### 元素族类实现
-#### Meta元素
+### 元素族类实现 {#element-family-implementation}
+
+#### Meta元素 {#meta-element}
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -85,7 +90,8 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
-#### Type元素
+#### Type元素 {#type-element}
+
 <Tabs>
   <TabItem value="ejson" label="e.json">
 
@@ -501,7 +507,8 @@ __all__ = ["Loader"]
   </TabItem>
 </Tabs>
 
-#### 实例元素
+#### 实例元素 {#instance-element}
+
 <Tabs>
   <TabItem value="ejson" label="e.json">
 
@@ -554,19 +561,23 @@ __all__ = ["Loader"]
   </TabItem>
 </Tabs>
 
-### 测试
-#### 使新元素族类生效
+### 测试 {#testing}
+
+#### 使新元素族类生效 {#making-new-element-family-effective}
+
 1. **清理缓存**：删除应用目录中的`dist`目录
 2. **重启服务**：重启桌面端
 3. **触发打包**：访问应用页面，系统自动重新打包
 4. **检查日志**：观察日志，确认元素加载成功，与钉钉开发者平台的长连接是否建立成功
 
-#### 功能测试
+#### 功能测试 {#functional-testing}
+
 1. 在钉钉群中@机器人发送消息
 2. 机器人应该回复"思考中"卡片
 3. AI处理完成后更新为最终回复卡片
 
-## 总结回顾
+## 总结回顾 {#summary-and-review}
+
 通过钉钉机器人这个实战案例，我们完整学习了Type元素扩展开发的全流程：
 
 1. **设计决策**：如何选择扩展方式（复用vs新建）
@@ -576,7 +587,8 @@ __all__ = ["Loader"]
 
 开发者应发散思维，将上述思路应用到其他业务场景中。
 
-## 进阶思考
+## 进阶思考 {#advanced-thinking}
+
 手动创建实例元素目录虽然可行，但却繁琐。怎样像官方元素一样，在可视化界面中一键添加和配置新的钉钉机器人实例元素呢？
 
 请参考 [为后端Type元素开发可视化编辑器](./develop-backend-element-visual-editor)。

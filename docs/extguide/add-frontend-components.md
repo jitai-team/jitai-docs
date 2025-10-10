@@ -7,25 +7,25 @@ slug: add-frontend-components
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-When existing frontend components in the JitAi development framework cannot meet specific business requirements, developers can extend new components under `components.Meta` and add these new components to pages in the JitAi visual development tool.
+When the existing UI components in the JitAi development framework don't meet your specific business requirements, you can extend new components under `components.Meta` and integrate them into pages using the JitAi visual development tool.
 
-Next, we'll use a simple counter component as an example to demonstrate how to add frontend components. The counter component has basic functionality such as displaying values and clicking buttons to increment/decrement values.
+In this guide, we'll walk through creating a simple counter component that demonstrates how to extend UI components. This counter features basic functionality including value display and increment/decrement buttons.
 
 :::tip Tip
-In the frontend domain, existing portal and page types are completely sufficient, so there's actually not much need for extension, but components have enormous extension potential to handle various personalized display requirements.
+While JitAi's existing portal and page types are comprehensive and rarely need extension, UI components offer significant opportunities for customization to meet diverse presentation requirements.
 :::
 
-### Effect Preview
-![Counter Component](./img/add-frontend-component-type-counter.png)
+### Effect preview {#effect-preview}
+![Counter Component](./img/add-frontend-component-type-counter.png "Counter Component")
 
-### Element Design
+### Element design {#element-design}
 | Element Level | fullName | Main Responsibilities |
 |---------|----------|----------|
 | **Meta Element** | `components.Meta` | Existing Meta element in JitAi development framework (no need to create) |
 | **Type Element** | `components.CounterType` | type points to `components.Meta`, encapsulates basic counter functionality, handles value increment/decrement, style configuration, etc. |
 | **Configuration when used in pages** | Page scheme.json | Configure specific runtime parameters for components in pages and declare events, functions, variables |
 
-#### Counter Component Directory Structure
+#### Counter component directory structure {#counter-component-directory-structure}
 ```shell title="Recommended Directory Structure"
 ├── components/
 │   └── CounterType/
@@ -41,8 +41,8 @@ In the frontend domain, existing portal and page types are completely sufficient
 │               └── CounterRender.tsx    # Mobile rendering component
 ```
 
-## Operation Guide
-### Create Directory Structure
+## Operation guide {#operation-guide}
+### Creating directory structure {#creating-directory-structure}
 In your JitAi application root directory, create directories according to the following structure:
 
 ```bash
@@ -52,7 +52,7 @@ mkdir -p components/CounterType/render/pc
 mkdir -p components/CounterType/render/mobile
 ```
 
-### Implement Element Files
+### Implementing element files {#implementing-element-files}
 <Tabs>
   <TabItem value="config" label="Element Definition File">
 
@@ -262,11 +262,14 @@ export class CounterComponent extends Jit.BaseComponent {
   </TabItem>
 </Tabs>
 
-:::important Frontend component Type elements must meet the following specifications to be effectively recognized and loaded by the page editor
-**1. Exactly match the following export names**
-- Component class export must use the `ComponentCls` name
-- Renderer class export must use the `Render` name  
-- Actual class names can be customized (such as CounterComponent, CounterRender, etc.)
+:::important Required specifications for UI component Type elements
+To ensure your component is properly recognized and loaded by the page editor, follow these requirements:
+
+**1. Use exact export names**
+- Component class must be exported as `ComponentCls`
+- Renderer class must be exported as `Render`
+- Internal class names can be customized (e.g., `CounterComponent`, `CounterRender`)
+
 **2. Implement three static methods**  
 
 ```typescript
@@ -297,19 +300,19 @@ static getEventList(): Array<{
 }>
 ```
 **Method descriptions:**
-- `getVariableList`: Tells the editor which variables the component has that can be referenced in pages
-- `getFuncList`: Tells the editor which methods the component has that can be called in pages  
-- `getEventList`: Tells the editor which events the component will trigger for pages to listen to
+- `getVariableList`: Declares component variables available for reference in pages
+- `getFuncList`: Declares component methods available for invocation in pages
+- `getEventList`: Declares events that the component will emit for pages to listen to
 :::
 
-### Testing
-#### Make New Elements Take Effect
+### Testing {#testing}
+#### Making new elements take effect {#making-new-elements-take-effect}
 1. **Clear cache**: Delete the `dist` directory in the application directory  
 2. **Restart service**: Restart the desktop client
 3. **Trigger packaging**: Access the application page, the system will automatically repackage
 
-#### Test in Generic Pages
-Enter the JitAi visual development tool, create a `Generic Page`, and add the just-created `Counter` component to the page.
+#### Testing in generic pages {#testing-in-generic-pages}
+Enter the JitAi visual development tool, create a `Generic Page`, and add the newly created `Counter` component to the page.
 
 When switching to code mode, you'll see the following configuration automatically generated in the page's `scheme.json` file:
 
@@ -364,30 +367,30 @@ When switching to code mode, you'll see the following configuration automaticall
 }
 ```
 
-**Basic functionality verification**:
-- Check if the counter component displays normally in the page
-- Click the plus button to verify if the value increases
-- Click the minus button to verify if the value decreases
-- Check if the component title displays correctly
+**Verify basic functionality**:
+- Confirm the counter component renders correctly on the page
+- Click the plus button to verify value increments
+- Click the minus button to verify value decrements
+- Check that the component title displays properly
 
-You can try modifying configuration items in the `scheme.json` file (such as name, title, showTitle, etc.), then switch to visual mode to see what changes occur in the counter component.
+Try modifying configuration items in the `scheme.json` file (such as `name`, `title`, or `showTitle`), then switch to visual mode to observe the changes in the counter component.
 
-## Summary
-**Core steps** for adding frontend component Type elements:
+## Summary {#summary}
+**Core steps** for extending UI component Type elements:
 
 1. **Create directory structure**: `components/YourType/` + required files
-2. **Configure e.json**: `type: "components.Meta"`
-3. **Implement component class**: Inherit `BaseComponent` + three static methods
-4. **Create render component**: React component that receives `compIns` parameter
-5. **Correct exports**: `ComponentCls` and `Render`
+2. **Configure e.json**: Set `type: "components.Meta"`
+3. **Implement component class**: Extend `BaseComponent` and implement three static methods
+4. **Create render component**: Build a React component that receives the `compIns` parameter
+5. **Export correctly**: Use `ComponentCls` and `Render` as export names
 
 **Key points**:
-- Export names `ComponentCls`/`Render` cannot be changed
-- Must implement `getVariableList`/`getFuncList`/`getEventList`
+- Export names `ComponentCls` and `Render` must not be changed
+- The three static methods `getVariableList`, `getFuncList`, and `getEventList` must be implemented
 
-## Advanced Thinking
-Manually modifying configuration items in the page scheme.json is feasible but not intuitive or user-friendly, making it inconvenient for business experts during visual construction.
+## Advanced thinking {#advanced-thinking}
+While manually modifying configuration items in the page's `scheme.json` file is feasible, it's not intuitive or user-friendly, making it inconvenient for business users during visual development.
 
-How can we configure counter component parameters in the visual interface just like official components?
+How can we configure counter component parameters through the visual interface, just like the official components?
 
-Please refer to [Develop Visual Editors for Frontend Component Elements](./develop-frontend-component-visual-editor).
+Please refer to [Developing Visual Editors for UI Component Type Elements](./develop-frontend-component-visual-editor).

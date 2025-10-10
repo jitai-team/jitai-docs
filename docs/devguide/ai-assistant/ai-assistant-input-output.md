@@ -25,18 +25,18 @@ When [using AI assistants in portals or pages](../using-ai-in-portals-and-pages)
 
 
 ### State data output {#state-data-output}
-By configuring **Output Data to Dialog** on nodes, when the node runs, the specified [state data](./ai-assistant-state) will be sent to the dialog's reply area. Nodes that support this configuration include: AIAgent nodes, function call nodes, conditional branch nodes, and multi-task execution nodes.
-The output data will use built-in controls for rendering by default, and you can also **use [custom controls](../frontend-ui-customization/custom-controls) for rendering**.
+By configuring **Output Data to Conversation** on nodes, when the node runs, the specified [state data](./ai-assistant-state) will be sent to the conversation. Nodes that support this configuration include: [AIAgent nodes](./process-orchestration-node-configuration#ai-agent), [Function nodes](./process-orchestration-node-configuration#function), [IF-ELSE nodes](./process-orchestration-node-configuration#if-else), and [Iteration nodes](./process-orchestration-node-configuration#iteration).
+The output data will use built-in widgets for rendering by default, and you can also **Use [custom widgets](../frontend-ui-customization/custom-controls) for rendering**.
 
 The configuration method is as follows:
 
 ![AI助理-节点-发送数据](./img/assistant/send-data-to-chat.png)
 
 ### Action in conversation node output {#action-in-conversation-node-output}
-The **Data to Display** configured in [action in assistant node](./process-orchestration-node-configuration#action-in-conversation) will be output in the assistant dialog.
+The **Data to be displayed** configured in [action in assistant node](./process-orchestration-node-configuration#action-in-conversation) will be output to the assistant conversation.
 
 ### Action in page node output {#action-in-page-node-output}
-The **Operation Prompts** configured in [action in page node](./process-orchestration-node-configuration#action-in-page) will be output in the assistant dialog.
+The **Operation prompt** configured in [action in page node](./process-orchestration-node-configuration#action-in-page) will be output to the assistant conversation.
 
 
 

@@ -176,7 +176,7 @@ SSR(Server-Side Rendering，服务端渲染)门户用于提升首屏加载性能
 ![发起申请/待办/消息中心入口](./imgs/initiate-application-todo-message-center-entry.gif)
 
 ### 个人中心入口 {#personal-center-entry}
-当开发者开启`个人中心`入口时，用户在访问门户时可以查看个人基本信息以及修改昵称、密码，也可以切换[组织架构](/docs/devguide/user-and-permission/organizational-structure)、退出登录。
+当开发者开启`个人中心`入口时，用户在访问门户时可以查看个人基本信息以及修改昵称、密码，也可以切换[组织架构](/docs/devguide/user-and-permission/organization)、退出登录。
 
 ![个人中心功能](./imgs/personal-center-functions.gif)
 

@@ -45,12 +45,12 @@ Routing decisions require a large language model to help with analysis, so we ne
 
 Click on the routing decision node in the process, and a configuration window will open on the right side; select a [large language model](../ai-llm/create-ai-llm) and configure the parameters to complete the setup.
 
-#### Input message configuration {#input-message-configuration}
-The routing decision node has an input parameter that determines the next step during runtime based on this parameter; we need to assign a value to this parameter. The configuration method is as follows:
+#### Input parameter configuration {#input-message-configuration}
+The routing decision node has an input parameter named `User Input` that determines the next step during runtime based on this parameter; we need to assign a value to this parameter. The configuration method is as follows:
 
 ![Input Parameter Configuration - Routing Decision](./img/assistant/router-input.png)
 
-The input configuration window will automatically pop up when connecting from other nodes to the routing decision node, and can also be opened later by clicking the ` → ` button on the connection. You can pass variables from the assistant's "memory" to it.
+The input configuration window will automatically pop up when connecting from other nodes to the routing decision node, and can also be opened later by clicking the ` → ` button on the connection. You can pass variables from the [assistant's state](./ai-assistant-state) to it.
 
 ### AIAgent {#ai-agent}
 The AIAgent node calls a specific AIAgent to handle particular tasks.
@@ -64,17 +64,17 @@ We need to assign values to these parameters. The configuration method is as fol
 
 ![Node Configuration - AIAgent - Input Parameters](./img/assistant/aiagent-input.png)
 
-Click the ` → ` button on the connection to open the input parameter configuration window. The left side shows the variables required by the Agent, and the right side allows you to select data from [runtime state data](./ai-assistant-state.md#state-data-content) to assign values to the Agent's variables.
+Click the ` → ` button on the connection to open the input parameter configuration window. The left side shows the [AI Agent’s input Parameters](../ai-agent/agent-input-output#configuring-input-variables) , and the right side allows you to select data from [runtime state data](./ai-assistant-state.md#state-data-content) to assign values to the Agent's variables.
 After this node completes execution, it will store the [Agent's output results](../ai-agent/agent-input-output#configuring-output-results) in the runtime state for use by other nodes.
 
 ### Action in conversation {#action-in-conversation}
 
 When the task flow runs to this node, it will pause and display data in the dialog box. The flow can only continue after the user confirms the data and performs corresponding operations. If there is no next node, the flow automatically ends.
-At this node, users can perform operations such as **approve**, **reject**, **reply**, and **edit data** (editing functionality needs to be enabled).
-During runtime, after performing **approve**, **reject**, **reply**, and **edit data** operations, the flow will resume and trigger [dialog area human-machine interaction events](./ai-assistant-event#in-conversation-action-events).
+At this node, users can perform operations such as **Approve**, **Refuse**, **Reply**, and **Edit data** (editing functionality needs to be enabled).
+During runtime, after performing **Approve**, **Refuse**, **Reply**, and **Edit data** operations, the flow will resume and trigger [dialog area human-machine interaction events](./ai-assistant-event#in-conversation-action-events).
 
 #### Node configuration details {#conversation-node-configuration-details}
-- **Data to Display**: You can freely define the data content that needs user confirmation, sourced from [runtime state data](./ai-assistant-state.md#state-data-content).
+- **Data to Display**: You can freely define the data content that needs user confirmation, sourced from [runtime state data](./ai-assistant-state#state-data-content).
 - **Editable**: When enabled, users can edit the displayed data, and the edited data will automatically update to the runtime state.
 - **Use Custom Control Rendering**: By default, it uses the platform's built-in data rendering controls to display data, but you can also use [custom controls](../frontend-ui-customization/custom-controls) for rendering.
 - **Display Operation Buttons**: You can customize operation buttons at this node, which can trigger [dialog area human-machine interaction events](./ai-assistant-event#in-conversation-action-events) when clicked.
@@ -88,16 +88,19 @@ Runtime effect is as follows:
 ### Action in page {#action-in-page}
 Complementing the assistant dialog area is a **workspace**: the functional page where users work.
 
-![AI Assistant - Workspace](./img/assistant/human-workspace.png)
-
 The workspace refers to the frontend page where users work.
 When the task flow runs to this node, the backend of the flow will pause and send pause events and related information to the frontend. In the workspace, you can [subscribe to post-pause events](../ai-assistant/ai-assistant-event#in-page-action-events). In the corresponding event handler function, use event parameters to update the page UI state, then wait for users to perform related operations to resume the flow.
 
 Node configuration details:
-- **Parameters Carried by Events**: Parameters carried by the assistant when sending pause events to the frontend workspace, selected from [runtime state data](./ai-assistant-state#state-data-content), which the frontend can use to update UI state.
-- **Operation Instructions**: A prompt to guide users, telling them where on the page to perform what operations to resume the flow; the prompt will be displayed in the assistant dialog box.
+- **Parameters Carried by Events**: Parameters carried by the assistant when sending pause events to the frontend workspace, selected from [assistant's state](./ai-assistant-state#state-data-content), which the frontend can use to update UI state.
+- **Operation Prompt**: A prompt to guide users, telling them where on the page to perform what operations to resume the flow; the prompt will be displayed in the assistant dialog box.
 
 ![AI Assistant - Workspace](./img/assistant/human-workspace-interrupt-setting.png)
+
+Runtime effect is as follows:
+
+![Node Configuration - Dialog Area Human-Machine Interaction - Effect](./img/assistant/human-workspace.png)
+
 **Resume flow**: Subscribe to this node's pause event in the workspace, perform related processing logic, then call the [Send AI Message](../using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#send-ai-message) function to resume the flow. The sent message content will be stored as the node's output parameter in the runtime state data for use by other nodes.
 
 ### Function {#function}
@@ -122,10 +125,10 @@ Determines the next step of the flow based on the data situation in the current 
 ![AI Assistant - Conditional Branch Node](./img/assistant/condition-setting.png)
 
 ### Iteration {#iteration}
-This node is used to cyclically execute specific tasks, requiring setting a loop variable selected from `multi-row data` or `list` type data in the assistant runtime state.
+This node is used to cyclically execute specific tasks, requiring setting a loop variable selected from `RowList` or `JitList` type data in the assistant runtime state.
 
 **Iteration configuration details**:
-- **Loop variable selection**: Select the data to be processed in a loop, must be `multi-row data` or `list` type
+- **Loop variable selection**: Select the data to be processed in a loop, must be `RowList` or `JitList` type
 - **Loop execution branch**: Set the task flow to execute during each loop iteration
 - **Loop end branch**: Set the flow direction after all loops are completed
 
@@ -145,7 +148,7 @@ When this node runs, it will store two pieces of data in the runtime state:
 ## Full code development {#full-code-development}
 Click the <span style={{ display: "inline-flex", verticalAlign: "middle", margin: "0 !important", height: '30px', width: '40px', alignItems: "center" }}>![Full Code Button](./img/assistant/code.png)</span> button in the top right corner of the assistant editor to switch to source code editing mode.
 In source code mode, the left side displays source code files, and clicking on a source code file shows its content on the right side.
-- **e.json**: The assistant element declaration file, where "inputArgs" stores custom input parameter configuration
+- **e.json**: The assistant element declaration file
 
 ![AI Assistant - Element Declaration](./img/assistant/assistant-define.png)
 

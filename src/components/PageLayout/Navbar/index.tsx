@@ -13,16 +13,10 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
   const [activeNavItem, setActiveNavItem] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  
+
   const CONTENT = currentLocale === 'zh' ? CONTENT_ZH : CONTENT_EN;
 
   useEffect(() => {
-    
-    // 为首页添加特殊类名，用于隐藏Docusaurus默认导航栏
-    setTimeout(() => {
-      document.body.classList.add('home-page');
-    }, 50);
-    
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };

@@ -35,12 +35,12 @@ The configuration in role permissions will be combined with the conditions confi
 :::
 
 ## Configure default data sort rules {#configure-default-data-sort-rules}
-The display order of data tables often affects user work efficiency. For example, sales personnel want to see the latest orders first, while financial personnel may pay more attention to transactions with larger amounts. Reasonably setting default data sort rules allows users to see the most important or relevant data at first glance when entering the page, improving data search and processing efficiency.
+The display order of data models often affects user work efficiency. For example, sales personnel want to see the latest orders first, while financial personnel may pay more attention to transactions with larger amounts. Reasonably setting default data sort rules allows users to see the most important or relevant data at first glance when entering the page, improving data search and processing efficiency.
 
 Developers can configure **Data Sorting** in the page editor, and click the plus button on the right side of each sort condition to add multiple sort conditions.
 
 ## Specify field columns displayed in table {#hide-some-fields-in-page-table}
-In actual business scenarios, it may be necessary to hide some fields. For example, users don't need to see fields like `Creation Time` and `Update Time`. By hiding fields, irrelevant data interference to users can be reduced, improving page cleanliness and usage efficiency.
+In actual business scenarios, it may be necessary to hide some fields. For example, users don't need to see fields like `id`. By hiding fields, irrelevant data interference to users can be reduced, improving page cleanliness and usage efficiency.
 
 Developers can configure this in `Display in Table` in the page editor. Check to display the corresponding field, uncheck to hide the corresponding field.
 
@@ -100,7 +100,7 @@ In addition to creating in the developer portal, you can also quickly create in 
 
 ![Create AI Data Management Page - quickly](./imgs/quickly.png)
 
-Click **Create New** → **AI Data Management Functions**.This operation will create a new AI data Management page and simultaneously create a menu in the portal and bind it to the newly added page.
+Click **Create** → **AI Data Management Functions**.This operation will create a new AI data Management page and simultaneously create a menu in the portal and bind it to the newly added page.
 
 :::tip Tip
 You need to be granted [quick create permissions](/docs/devguide/user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus) to see the quick create entry.

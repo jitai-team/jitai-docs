@@ -37,7 +37,7 @@ After binding the assistant in a page, you can subscribe to tool call events. Fo
 
 
 ### In conversation action events {#in-conversation-action-events} 
-When the process runs to a chat area human-machine interaction node, the dialog will display confirmation operation buttons such as `Agree`, `Refuse`, `Edit`, `Reply`, and custom buttons.
+When the process runs to a chat area human-machine interaction node, the dialog will display confirmation operation buttons such as `Approve`, `Reject`, `Edit`, `Reply`, and custom buttons.
 After the user performs confirmation operations or clicks custom buttons, page events will be triggered; the events carry parameters that are the data displayed on the node.
 
 After binding the assistant in a page, you can subscribe to these events. For subscription methods, see [Subscribing to Chat Area Human-Machine Interaction Events in Pages](../using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#subscribe-action-in-conversation-events)

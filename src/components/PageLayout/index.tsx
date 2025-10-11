@@ -22,8 +22,13 @@ const PageLayout: React.FC<PageLayoutProps> = ({
   const { i18n } = useDocusaurusContext();
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-locale', i18n.currentLocale);
-  }, [i18n.currentLocale]);
+    document.body.setAttribute('data-page-type', 'custom-layout');
+
+    // 清理函数：组件卸载时移除类名
+    return () => {
+      document.body.removeAttribute('data-page-type');
+    };
+  }, []);
 
   // 为子组件注入 currentLocale prop
   const childrenWithProps = React.Children.map(children, (child) => {

@@ -11,16 +11,16 @@ import TabItem from '@theme/TabItem';
 
 本文将介绍如何为钉钉机器人开发可视化配置编辑器，实现在JitAi开发工具中像官方元素一样的图形化配置体验。
 
-## 效果预览
-![编辑器效果](./img/dingtalk-robot-element-configuration-interface.png)
+## 效果预览 {#effect-preview}
+![编辑器效果](./img/dingtalk-robot-element-configuration-interface.png "编辑器效果")
 
-## 编辑器架构
+## 编辑器架构 {#editor-architecture}
 | 元素层次 | fullName | 主要职责 |
 |---------|----------|----------|
 | **编辑器元素** | `imRobots.dingTalkStreamType.Editor` | type指向`editors.React`，为钉钉机器人提供可视化配置界面 |
 | **目标元素** | `imRobots.dingTalkStreamType` | 被编辑的目标后端Type元素，已在前面章节完成 |
 
-### 编辑器目录结构
+### 编辑器目录结构 {#editor-directory-structure}
 ```shell title="在dingTalkStreamType下新增Editor子目录"
 imRobots/
 └── dingTalkStreamType/              # 后端Type元素（已完成）
@@ -37,8 +37,8 @@ imRobots/
         └── utils.ts               # 工具函数
 ```
 
-## 操作指南
-### 创建编辑器目录
+## 操作指南 {#step-by-step-guide}
+### 创建编辑器目录 {#creating-editor-directory}
 在dingTalkStreamType目录下创建Editor子目录：
 
 ```bash
@@ -46,7 +46,7 @@ imRobots/
 mkdir -p Editor
 ```
 
-### 安装依赖
+### 安装依赖 {#installing-dependencies}
 在项目的`package.json`中添加Monaco编辑器依赖：
 
 ```json title="package.json"
@@ -57,7 +57,7 @@ mkdir -p Editor
 }
 ```
 
-### 实现编辑器文件
+### 实现编辑器文件 {#implementing-editor-files}
 <Tabs>
   <TabItem value="config" label="元素定义文件">
 
@@ -309,8 +309,8 @@ export const Editor = MyEditor;
   </TabItem>
 </Tabs>
 
-## 定制你的编辑器
-### 修改元素配置
+## 定制你的编辑器 {#customizing-your-editor}
+### 修改元素配置 {#modifying-element-configuration}
 在 `Editor/e.json` 中，将 `targetType` 改为你的后端元素：
 
 ```json
@@ -320,7 +320,7 @@ export const Editor = MyEditor;
 }
 ```
 
-### 定义配置结构
+### 定义配置结构 {#defining-configuration-structure}
 在 `Editor.tsx` 中，修改配置接口和表单：
 
 ```tsx
@@ -350,25 +350,25 @@ if (!config.apiKey || !config.endpoint) {
 }
 ```
 
-## 测试
-### 使编辑器生效
+## 测试 {#testing-the-editor}
+### 使编辑器生效 {#making-editor-take-effect}
 1. **清理缓存**：删除应用目录中的`dist`目录  
 2. **重启服务**：重启桌面端
 3. **触发打包**：访问应用页面，系统自动重新打包
 
-### 验证编辑器功能
+### 验证编辑器功能 {#verifying-editor-functionality}
 1. **创建元素实例**：在JitAi开发工具中创建钉钉机器人元素实例
 2. **打开编辑器**：点击元素实例进入编辑器
 3. **切换模式**：点击配置/代码图标，验证模式切换
 4. **修改配置**：尝试在GUI模式修改配置，观察代码模式是否同步
 5. **保存验证**：保存后重新打开，确认配置已持久化
 
-### 常见问题排查
+### 常见问题排查 {#troubleshooting-common-issues}
 - **编辑器不显示**：检查`targetType`中的后端元素名称是否正确
 - **Monaco编辑器不显示**：检查`@monaco-editor/react`依赖是否安装
 - **保存失败**：查看浏览器控制台，检查API调用是否正常
 
-## 总结
+## 总结 {#summary}
 为后端元素开发可视化编辑器的**核心步骤**：
 
 1. **创建Editor目录** + 配置编辑器元素定义文件`e.json`（`type: "editors.React"`）

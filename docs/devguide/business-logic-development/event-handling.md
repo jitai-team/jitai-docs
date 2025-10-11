@@ -125,12 +125,12 @@ In the IDE, click `+` -> `Event` -> `AI Assistant Event`, open the event configu
 When AI Agent calls tools, we can subscribe to this event to insert business processing logic during Agent execution. The prerequisite is that the tool needs to enable <a href="../ai-agent#ai-agent-tool-configuration">trigger events</a>.
 
 ### Trigger Timings {#agent-tool-trigger-timings}
-- **Before Tool Call**: Triggered before tool call.
-- **After Tool Call**: Triggered after tool call.
+- **Tool Pre-call**: Triggered before tool call.
+- **Tool Post-call**: Triggered after tool call.
 
 The parameters carried by the event are of dictionary (JitDict) type with the following attributes:
 - **toolName**: Tool name, such as: "services.ASvc.func1". In event processing logic, developers need to perform corresponding processing based on the tool name.
-- **args**: Parameters. If it's a before tool call event and `Include data in event message` is enabled, the args value is the input parameters for calling the tool; if it's an after tool call event and `Include data in event message` is enabled, the args value is the return value of the tool.
+- **args**: Parameters. If it's a before tool call event and `Include data in event message` is enabled, the args value is the input args for calling the tool; if it's an after tool call event and `Include data in event message` is enabled, the args value is the return value of the tool.
 
 ### Subscribing to Events {#subscribing-to-agent-tool-events}
 You need to create an Agent tool event element to subscribe.

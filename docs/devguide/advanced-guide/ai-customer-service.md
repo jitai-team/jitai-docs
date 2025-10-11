@@ -1,153 +1,150 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 slug: ai-customer-service
 ---
 
-# AI智能客服
+# AI Customer Service Agent
 
 :::info
-本文适合新手快速上手。通过对本文的学习，你将有以下收获：
-1. 了解极态开发平台的入门使用方式。
-2. 独立开发一个智能客服智能体，并集成到业务系统页面中使用。
-3. 不支持使用SQLite数据库，请将默认数据库调整为MySQL数据库，关于数据库请参考[JitORM](../data-modeling/supported-database-vendors)。
+This guide is designed for beginners to quickly get up and running. By completing this tutorial, you will:
+1. Master the fundamentals of the JitAi development platform.
+2. Build an AI customer service agent from scratch and integrate it into your business application pages.
+3. Note: SQLite database is not supported. Please configure MySQL as your default database. For database details, see [JitORM](../data-modeling/supported-database-vendors).
 :::
 
-## 效果预览
+## Preview {#preview}
 
-![最终效果_页面内置AI助理](./img/jitairobot/final-result-embedded-ai-assistant.png)
+![Final Result - Embedded AI Assistant](./img/jitairobot/final-result-embedded-ai-assistant.png "Final Result - Embedded AI Assistant")
 
 --- 
 
-## 让我们开始吧！
-### 准备工作
-1. [下载桌面版安装包](../../tutorial/download-installation)（如已安装可跳过）
-2. 准备大模型服务 API Key，需开发者自行注册申请（本案例使用[阿里云百炼平台](https://bailian.console.aliyun.com/?tab=model#/api-key)）
-3. 准备一份文档，作为知识库内容来源（支持 Word、PDF、TXT、Markdown 格式）
+## Let's Get Started! {#getting-started}
+### Prerequisites {#prerequisites}
+1. [Download the desktop installation package](../../tutorial/download-installation) (skip if already installed)
+2. Obtain a large language model service API key - you'll need to register with a provider (this tutorial uses [Alibaba Cloud Bailian Platform](https://bailian.console.aliyun.com/?tab=model#/api-key))
+3. Prepare a document to serve as your knowledge base content source (supports Word, PDF, TXT, and Markdown formats)
 
 ---
 
-### 创建应用
+### Creating the Application {#creating-application}
 
-1. 启动桌面版 JitNode，完成激活流程
-2. 进入应用管理页面，命名为"TestJitAI"
-3. 点击应用列表中的`开发`，进入应用开发区
+1. Launch the desktop JitNode application and complete the activation process
+2. Navigate to the application management page and create a new application named "TestJitAI"
+3. Click `Develop` in the application list to access the development environment
 
-    ![新建应用](./img/jitairobot/create-new-application.png)
-
----
-
-### 创建AI大模型实例元素
-
-1. AI大模型->选择一家大模型厂商（本案例中使用阿里云百炼）
-2. 配置 API Key，配置备用 API Key（可选）
-3. 确定
-
-    ![新建AI大模型实例元素](./img/jitairobot/create-ai-llm-instance-element.png)
+    ![Creating New Application](./img/jitairobot/create-new-application.png "Creating New Application")
 
 ---
 
-### 创建AI知识库实例元素
-1. 新建知识库实例元素
+### Creating AI LLM Instance Element {#creating-ai-llm-instance}
+
+1. Navigate to AI LLM and select a large language model provider (this tutorial uses Alibaba Cloud Bailian)
+2. Configure your API key and optionally set up a backup API key
+3. Confirm the configuration
+
+    ![Creating AI LLM Instance Element](./img/jitairobot/create-ai-llm-instance-element.png "Creating AI LLM Instance Element")
+
+---
+
+### Creating AI Knowledge Base Instance Element {#creating-ai-knowledge-base-instance}
+1. Create a new knowledge base instance element
    
-   ![新建AI知识库实例元素](./img/jitairobot/create-ai-knowledge-base-instance-element.png)
+   ![Creating AI Knowledge Base Instance Element](./img/jitairobot/create-ai-knowledge-base-instance-element.png "Creating AI Knowledge Base Instance Element")
 
-2. 选择向量模型：大模型厂商选择之前创建的AI大模型实例，模型选择text-embedding-v3
-3. 选择重排模型：大模型厂商选择之前创建的AI大模型实例元素，模型选择gte-rerank-v2
-4. 确定
-5. 添加文件
+2. Configure vector model: Select the previously created AI LLM instance as your provider and choose text-embedding-v3 as the model
+3. Configure rerank model: Select the previously created AI LLM instance as your provider and choose gte-rerank-v2 as the model
+4. Confirm the configuration
+5. Upload files to the knowledge base
    
-   ![添加知识库文件](./img/jitairobot/add-knowledge-base-files.png)
+   ![Adding Knowledge Base Files](./img/jitairobot/add-knowledge-base-files.png "Adding Knowledge Base Files")
 
-6. 触发文档向量化任务（服务器版无需手动触发）
+6. Initiate document vectorization (server version automatically handles this process)
 
-    打开一个新的浏览器页签，访问以下地址，触发向量化任务：
+    For desktop installations, open a new browser tab and navigate to the following URL to trigger vectorization:
     ```shell
     http://127.0.0.1:8080/onTimer
     ```
     
-    稍等片刻，向量化任务完成，知识库中文档状态变为`正常`。
+    Allow time for the vectorization process to complete. The document status in your knowledge base will update to `Normal` once finished.
 
-    ![知识库文件添加成功](./img/jitairobot/knowledge-base-files-added-successfully.png)
+    ![Knowledge Base Files Added Successfully](./img/jitairobot/knowledge-base-files-added-successfully.png "Knowledge Base Files Added Successfully")
 
 ---
 
-### 创建AIAgent实例元素
+### Creating AI Agent Instance Element {#creating-ai-agent-instance}
 
-1. 新建AIAgent实例元素，命名为`智能客服`
+1. Create a new AI Agent instance element and name it `Customer Service`
    
-   ![新建AIAgent实例元素](./img/jitairobot/create-ai-agent-instance-element.png)
+   ![Creating AI Agent Instance Element](./img/jitairobot/create-ai-agent-instance-element.png "Creating AI Agent Instance Element")
 
-   ```text title="Agent描述"
-   该智能体作为咨询客服，能够回答关于极态的各类常见问题
+   ```text title="Agent Description"
+   This agent functions as a customer service representative, capable of answering various common questions about JitAi
    ```
 
-   ![AIAgent基础配置](./img/jitairobot/ai-agent-basic-config.png)
+   ![AI Agent Basic Configuration](./img/jitairobot/ai-agent-basic-config.png "AI Agent Basic Configuration")
 
-2. 选择之前创建的AI大模型实例元素
-3. 选择模型：qwen-max-latest
+2. Select the previously created AI LLM instance element
+3. Choose the model: qwen-max-latest
    
-   ![AIAgent添加知识库](./img/jitairobot/ai-agent-add-knowledge-base.png)
+   ![AI Agent Adding Knowledge Base](./img/jitairobot/ai-agent-add-knowledge-base.png "AI Agent Adding Knowledge Base")
 
-4. 添加知识库：选择之前创建的AI知识库实例元素
-5. 编写提示词
-    ```markdown title="参考提示词"
-    你是一个专业且友好的智能客服，你可以根据知识库的知识回答用户的问题。
+4. Link knowledge base: Select the previously created AI knowledge base instance element
+5. Configure the system prompt
+    ```markdown title="Sample Prompt"
+    You are a professional and friendly AI customer service representative who answers user questions based on knowledge base information.
 
-    ## 任务
-    1. 识别用户提问中的关键词，理解问题，并思考用户潜在的需要，整理出`关键词列表`
-    2. 使用`关键词列表`查询知识库，获得`知识片段`
-    3. 对获得的`知识片段`进行整合以及自然语言润色，形成最终回答
+    ## Tasks
+    1. Identify keywords in user questions, understand the issues, consider users' potential needs, and compile a `keyword list`
+    2. Use the `keyword list` to query the knowledge base and retrieve `knowledge fragments`
+    3. Synthesize the retrieved `knowledge fragments` and present them in clear, natural language to form your final response
 
-    ## 约束
-    4. 若没有查询到相关`知识片段`，则明确说明"知识库中未覆盖相关内容"
+    ## Constraints
+    4. If no relevant `knowledge fragments` are found, clearly state "This information is not available in our knowledge base"
     ```
 
-6. 保存
+6. Save your configuration
 
 
 ---
 
-### 创建AI助理实例元素
+### Creating AI Assistant Instance Element {#creating-ai-assistant-instance}
 
-1. 新建AI助理实例元素，命名为`智能客服`
+1. Create a new AI assistant instance element and name it `Customer Service`
    
-   ![新建AI助理实例元素](./img/jitairobot/create-ai-assistant-instance-element.png)
+   ![Creating AI Assistant Instance Element](./img/jitairobot/create-ai-assistant-instance-element.png "Creating AI Assistant Instance Element")
 
-2. 添加一个`AI Agent`节点，并选择之前创建的AIAgent实例元素
-3. 将`Start`节点连线到名称为`智能客服`的AI Agent节点
-4. 设置欢迎语和开场白（可选）
-5. 保存
+2. Add an `AI Agent` node and select the previously created AI Agent instance element
+3. Connect the `Start` node to the AI Agent node named `Customer Service`
+4. Configure welcome message and opening statement (optional)
+5. Save your configuration
 
-![AI助理编排配置界面](./img/jitairobot/ai-assistant-flow-config.png)
+![AI Assistant Flow Configuration Interface](./img/jitairobot/ai-assistant-flow-config.png "AI Assistant Flow Configuration Interface")
 
 ---
 
-### 创建页面并启用AI助理
+### Creating Page and Enabling AI Assistant {#creating-page-enabling-assistant}
 
-1. 新建一个`常规页面`实例元素
+1. Create a new `Generic Page` instance element
 
-   ![新建常规页面实例元素](./img/jitairobot/create-regular-page-instance-element.png)
+   ![Creating Generic Page Instance Element](./img/jitairobot/create-generic-page-instance-element.png "Creating Generic Page Instance Element")
 
-2. 启用AI助理：选择刚才创建的名为`智能客服`的AI助理实例元素，即可在开发区可以直接使用AI助理
+2. Enable the AI assistant: Select the `Customer Service` AI assistant instance element you just created. This will make the AI assistant available directly in the development environment
    
-   ![为页面启用AI助理](./img/jitairobot/enable-ai-assistant-for-page.png)
+   ![Enabling AI Assistant for Page](./img/jitairobot/enable-ai-assistant-for-page.png "Enabling AI Assistant for Page")
 
-   ![在开发区使用AI助理](./img/jitairobot/use-ai-assistant-in-dev-area.png)
+   ![Using AI Assistant in Development Area](./img/jitairobot/use-ai-assistant-in-dev-area.png "Using AI Assistant in Development Area")
 
-3. 在门户->使用者门户->新建菜单->绑定已有页面，用户即可在使用者门户中使用AI助理
-    ![在使用者门户中配置AI助理页面](./img/jitairobot/configure-ai-assistant-page-in-user-portal.png)
+3. To make the AI assistant available to end users, navigate to Portal → User Portal → Create New Menu → Bind Existing Page. Users will then be able to access the AI assistant through the user portal
+    ![Configuring AI Assistant Page in User Portal](./img/jitairobot/configure-ai-assistant-page-in-user-portal.png "Configuring AI Assistant Page in User Portal")
 
-    ![在使用者门户中使用AI助理](./img/jitairobot/final-result-embedded-ai-assistant.png)
+    ![Using AI Assistant in User Portal](./img/jitairobot/final-result-embedded-ai-assistant.png "Using AI Assistant in User Portal")
 
 
 ---
 
-## 恭喜你！
+## Congratulations! {#congratulations}
 
-你已经学会了极态开发平台的基本使用方式，并开发了一个智能客服智能体。
-
-## 相关文档
-- **[新增后端Type元素](../../extguide/backend/add-backend-type-elements)** - 学习Type元素扩展开发，包含钉钉机器人集成实战案例
+You have successfully mastered the fundamentals of the JitAi development platform and built your first AI customer service agent.
 
 
 

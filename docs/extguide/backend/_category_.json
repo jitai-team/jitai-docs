@@ -1,9 +1,0 @@
-{
-  "label": "Backend",
-  "position": 2,
-  "link": {
-    "type": "generated-index",
-    "slug": "backend",
-    "description": "Extend backend Type elements, develop backend visual editors, implement custom business logic and data processing"
-  }
-}

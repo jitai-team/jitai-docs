@@ -3,28 +3,28 @@ sidebar_position: 2
 slug: wechat-pay
 ---
 
-# 微信支付
-微信支付是集成微信支付官方API的支付处理元素，基于微信支付V2API实现扫码支付、H5支付、小程序支付等多种支付方式。它负责订单创建、支付状态查询和回调通知处理，提供微信生态内的无缝支付体验。微信支付适用于微信小程序、公众号、APP等微信生态应用场景，通过标准化API简化支付集成复杂度。
+# WeChat Pay
+WeChat Pay is a payment processing element integrated with WeChat Pay's official API, implementing multiple payment methods including QR code payment, H5 payment, and mini-program payment based on WeChat Pay V2 API. It handles order creation, payment status queries, and callback notification processing, providing seamless payment experience within the WeChat ecosystem. WeChat Pay is suitable for WeChat mini-programs, official accounts, apps, and other WeChat ecosystem application scenarios, simplifying payment integration complexity through standardized APIs.
 
-微信支付元素分层结构为Meta（pays.Meta） → Type（pays.WechatPayType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建微信支付实例元素。
+The hierarchical structure of WeChat Pay elements is Meta (pays.Meta) → Type (pays.WechatPayType) → Instance. Developers can quickly create WeChat Pay instance elements through JitAi's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的pays.WechatPayType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `pays.WechatPayType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 pays/
 └── myWechatPay/
     ├── e.json
     └── myWechatPay.json
 ```
 
-#### e.json文件
-```json title="e.json配置"
+#### e.json File
+```json title="e.json Configuration"
 {
   "type": "pays.WechatPayType",
-  "title": "我的微信支付",
+  "title": "My WeChat Pay",
   "mchId": "1234567890",
   "apiKey": "your_api_key_here",
   "frontBundleEntry": "./myWechatPay.json",
@@ -32,7 +32,7 @@ pays/
 }
 ```
 
-#### 业务配置文件
+#### Business Configuration File
 ```json title="myWechatPay.json"
 {
   "config": {
@@ -43,90 +43,90 @@ pays/
 }
 ```
 
-#### 调用示例
-```python title="创建订单和支付"
-# 获取微信支付元素
+#### Usage Example
+```python title="Create Order and Payment"
+# Get WeChat Pay element
 wechat_pay = app.getElement("pays.myWechatPay")
 
-# 创建订单
+# Create order
 order = wechat_pay.create(
-    subject="商品购买",
+    subject="Product Purchase",
     amount=99.99,
     orderId="D20231120161615000001"
 )
 
-# 获取支付链接
+# Get payment link
 pay_result = wechat_pay.getPayUrl(
     orderId="D20231120161615000001",
     payType="NATIVE"
 )
 
-# 查询订单状态
+# Query order status
 wechat_pay.check("D20231120161615000001")
 
-# 取消订单
+# Cancel order
 wechat_pay.cancel("D20231120161615000001")
 ```
 
-## 元素配置
-### e.json配置
-| 配置项 | 类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| type | string | 是 | 固定值 "pays.WechatPayType" |
-| title | string | 是 | 元素显示名称 |
-| mchId | string | 是 | 微信商户号 |
-| apiKey | string | 是 | 微信支付API密钥 |
-| frontBundleEntry | string | 否 | 前端配置文件路径 |
-| backendBundleEntry | string | 否 | 后端代码目录路径，默认为 "." |
+| type | string | Yes | Fixed value "pays.WechatPayType" |
+| title | string | Yes | Element display name |
+| mchId | string | Yes | WeChat merchant ID |
+| apiKey | string | Yes | WeChat Pay API key |
+| frontBundleEntry | string | No | Frontend configuration file path |
+| backendBundleEntry | string | No | Backend code directory path, defaults to "." |
 
-### 业务配置文件配置
-| 配置项 | 类型 | 必填 | 说明 |
+### Business Configuration File
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| appId | string | 是 | 微信应用ID（公众号或小程序AppId） |
-| mchId | string | 是 | 微信商户号 |
-| apiKey | string | 是 | 微信支付API密钥 |
+| appId | string | Yes | WeChat application ID (official account or mini-program AppId) |
+| mchId | string | Yes | WeChat merchant ID |
+| apiKey | string | Yes | WeChat Pay API key |
 
-## 方法 
+## Methods
 ### create
-创建内部订单记录，生成订单号并初始化订单状态。
+Create internal order record, generate order number and initialize order status.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| subject | Stext | str | 是 | 订单标题，支付页面显示的商品描述 |
-| amount | Numeric | float | 是 | 订单金额，单位为元 |
-| orderId | Stext | str | 否 | 自定义订单号，不填则自动生成 |
+| subject | Stext | str | Yes | Order title, product description displayed on payment page |
+| amount | Numeric | float | Yes | Order amount in yuan |
+| orderId | Stext | str | No | Custom order number, auto-generated if not provided |
 
-#### 返回值
-返回订单对象，包含订单号、状态等信息。
+#### Return Value
+Returns order object containing order number, status, and other information.
 
-#### 使用示例
-```python title="创建订单"
-# 自动生成订单号
+#### Usage Example
+```python title="Create Order"
+# Auto-generate order number
 order = wechat_pay.create(
-    subject="商品购买",
+    subject="Product Purchase",
     amount=199.50
 )
 
-# 指定订单号
+# Specify order number
 order = wechat_pay.create(
-    subject="VIP会员充值",
+    subject="VIP Membership Top-up",
     amount=99.00,
     orderId="CUSTOM20231120001"
 )
 ```
 
 ### getPayUrl
-调用微信支付API创建支付订单，返回支付链接。
+Call WeChat Pay API to create payment order, return payment link.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| orderId | Stext | str | 是 | 订单号 |
-| payType | Stext | str | 否 | 支付类型，默认NATIVE（扫码支付） |
+| orderId | Stext | str | Yes | Order number |
+| payType | Stext | str | No | Payment type, defaults to NATIVE (QR code payment) |
 
-#### 返回值
-返回包含支付链接的字典对象：
+#### Return Value
+Returns dictionary object containing payment link:
 ```python
 {
     "payUrl": "weixin://wxpay/bizpayurl?pr=xxx",
@@ -134,9 +134,9 @@ order = wechat_pay.create(
 }
 ```
 
-#### 使用示例
-```python title="获取支付链接"
-# 扫码支付
+#### Usage Example
+```python title="Get Payment Link"
+# QR code payment
 result = wechat_pay.getPayUrl(
     orderId="D20231120161615000001",
     payType="NATIVE"
@@ -145,156 +145,156 @@ pay_url = result["payUrl"]
 ```
 
 ### notify
-接收微信支付回调通知，处理支付结果。
+Receive WeChat Pay callback notification, handle payment result.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| xml | Stext | str | 是 | 微信发送的XML格式回调数据 |
+| xml | Stext | str | Yes | XML format callback data sent by WeChat |
 
-#### 返回值
-返回处理结果状态。
+#### Return Value
+Returns processing result status.
 
-#### 使用示例
-```python title="处理支付回调"
-# 通常在回调接口中调用
+#### Usage Example
+```python title="Handle Payment Callback"
+# Usually called in callback interface
 result = wechat_pay.notify(xml_data)
 ```
 
 ### check
-主动查询第三方订单状态并更新本地订单。
+Actively query third-party order status and update local order.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| orderId | Stext | str | 是 | 订单号 |
+| orderId | Stext | str | Yes | Order number |
 
-#### 返回值
-返回操作成功状态。
+#### Return Value
+Returns operation success status.
 
-#### 使用示例
-```python title="查询订单状态"
-# 用户点击"已完成支付"时调用
+#### Usage Example
+```python title="Query Order Status"
+# Called when user clicks "Payment Completed"
 result = wechat_pay.check("D20231120161615000001")
 ```
 
 ### cancel
-取消订单，同时取消第三方订单和本地订单。
+Cancel order, cancel both third-party order and local order.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| orderId | Stext | str | 是 | 订单号 |
+| orderId | Stext | str | Yes | Order number |
 
-#### 返回值
-返回操作成功状态。
+#### Return Value
+Returns operation success status.
 
-#### 使用示例
-```python title="取消订单"
-# 用户主动取消订单
+#### Usage Example
+```python title="Cancel Order"
+# User actively cancels order
 result = wechat_pay.cancel("D20231120161615000001")
 ```
 
 ### checkThird
-调用微信API查询订单状态并更新微信支付记录表。
+Call WeChat API to query order status and update WeChat Pay record table.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| payLog | Object | object | 是 | 支付记录对象 |
+| payLog | Object | object | Yes | Payment record object |
 
-#### 返回值
-返回微信支付记录对象。
+#### Return Value
+Returns WeChat Pay record object.
 
-#### 使用示例
-```python title="查询第三方状态"
-# 内部方法，通常不直接调用
+#### Usage Example
+```python title="Query Third-party Status"
+# Internal method, usually not called directly
 pay_log = app.getElement("pays.models.PayLogModel").queryset.get(orderId=order_id)
 wechat_log = wechat_pay.checkThird(pay_log)
 ```
 
 ### cancelThird
-调用微信API取消第三方订单。
+Call WeChat API to cancel third-party order.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| orderId | Stext | str | 是 | 订单号 |
+| orderId | Stext | str | Yes | Order number |
 
-#### 返回值
-返回操作成功状态。
+#### Return Value
+Returns operation success status.
 
-#### 使用示例
-```python title="取消第三方订单"
-# 内部方法，通常不直接调用
+#### Usage Example
+```python title="Cancel Third-party Order"
+# Internal method, usually not called directly
 result = wechat_pay.cancelThird("D20231120161615000001")
 ```
 
 ### generateOrderId
-生成唯一订单号。
+Generate unique order number.
 
-#### 返回值
-返回格式为"D" + 时间戳 + 6位随机数的订单号字符串。
+#### Return Value
+Returns order number string in format "D" + timestamp + 6-digit random number.
 
-#### 使用示例
-```python title="生成订单号"
+#### Usage Example
+```python title="Generate Order Number"
 order_id = wechat_pay.generateOrderId()
-# 例如：D202311201616150000001
+# Example: D202311201616150000001
 ```
 
-## 属性
+## Properties
 ### fullName
-支付元素的完整名称。
+Complete name of payment element.
 
 ### config
-支付配置信息，包含appId、mchId、apiKey等参数。
+Payment configuration information, containing appId, mchId, apiKey, and other parameters.
 
 ### appId
-微信应用ID。
+WeChat application ID.
 
 ### mchId
-微信商户号。
+WeChat merchant ID.
 
 ### apiKey
-微信支付API密钥。
+WeChat Pay API key.
 
-## 高级特性
-### 回调通知处理
-微信支付支持自动处理支付回调通知，当用户完成支付后，微信会向指定的回调地址发送支付结果。系统会自动解析回调数据并更新订单状态。
+## Advanced Features
+### Callback Notification Handling
+WeChat Pay supports automatic handling of payment callback notifications. When users complete payment, WeChat sends payment results to the specified callback address. The system automatically parses callback data and updates order status.
 
-```python title="配置回调处理"
-# 回调URL自动生成，格式为：
+```python title="Configure Callback Handling"
+# Callback URL is auto-generated in format:
 # {host}/api/{app}/pays/services/PaySvc/wechatNotify
 
-# 获取回调URL
+# Get callback URL
 notify_url = wechat_pay.getNotifyUrl()
 ```
 
-### 支付状态管理
-微信支付提供完整的支付状态追踪，包括等待支付、支付成功、支付失败、订单关闭等状态。系统会维护本地订单表和微信订单表的状态同步。
+### Payment Status Management
+WeChat Pay provides complete payment status tracking, including waiting for payment, payment success, payment failure, order closed, and other statuses. The system maintains status synchronization between local order table and WeChat order table.
 
-```python title="状态查询示例"
-# 获取订单模型
+```python title="Status Query Example"
+# Get order model
 PayLogModel = app.getElement("pays.models.PayLogModel")
 order = PayLogModel.queryset.get(orderId=order_id)
 
-# 检查订单状态
+# Check order status
 if order.status.value == "success":
-    print("支付已完成")
+    print("Payment completed")
 elif order.status.value == "wait":
-    print("等待支付")
+    print("Waiting for payment")
 ```
 
-### 多支付方式支持
-微信支付支持多种支付类型，包括NATIVE扫码支付、H5支付、小程序支付等。开发者可根据应用场景选择合适的支付方式。
+### Multi-Payment Method Support
+WeChat Pay supports multiple payment types, including NATIVE QR code payment, H5 payment, mini-program payment, etc. Developers can choose appropriate payment methods based on application scenarios.
 
-```python title="不同支付方式"
-# 扫码支付（默认）
+```python title="Different Payment Methods"
+# QR code payment (default)
 result = wechat_pay.getPayUrl(orderId, "NATIVE")
 
-# H5支付
+# H5 payment
 result = wechat_pay.getPayUrl(orderId, "MWEB")
 
-# 小程序支付
+# Mini-program payment
 result = wechat_pay.getPayUrl(orderId, "JSAPI")
-``` 
+```

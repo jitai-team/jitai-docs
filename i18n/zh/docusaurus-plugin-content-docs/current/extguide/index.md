@@ -1,7 +1,7 @@
 ---
 sidebar_position: -1
 ---
-# 导读
+# 扩展指南导读
 
 **为什么需要框架扩展？**
 
@@ -12,44 +12,40 @@ JitAi提供了丰富的官方开发框架，但在实际业务场景中，你可
 
 框架扩展正是为了解决这些问题，让你能够在JitAi生态基础上，构建满足特定需求的解决方案。
 
-## 问题导向指引
+## 必须先了解JAAP {#must-understand-jaap-first}
 
-### 前端
+开发者对JitAi开发框架进行扩展的认知前提是深入理解JAAP（JitAi Ai Application Protocol）中的规范，尤其是Meta、Type、Instance元素的概念和三者之间的关系。如果要对官方框架进行覆盖重写，则还需要理解继承重写的原理。
 
-| 你遇到的问题 | 相关文档 |
+[点击此处学习JAAP](/docs/reference/runtime-platform/JAAP)
+
+## 问题导向指引 {#problem-oriented-guide}
+
+| 你想要实现什么 | 相关文档 |
 |-------------|----------|
-| 官方框架缺少我需要的前端组件 | [新增前端组件元素](frontend/add-frontend-components) \| [开发前端组件元素的可视化编辑器](frontend/develop-frontend-component-visual-editor)|
-| 想定制自己的前端Type元素可视化编辑器 | [开发前端组件元素的可视化编辑器](frontend/develop-frontend-component-visual-editor) |
+| 添加JitAi中没有的自定义图表组件 | [扩展自己的UI组件Type元素](/docs/extguide/add-frontend-components) |
+| 让我的自定义组件可以通过拖拽界面进行配置 | [为UI组件Type元素开发可视化编辑器](/docs/extguide/develop-frontend-component-visual-editor) |
+| 集成第三方服务，如Slack机器人或IoT设备 | [扩展自己的元素族类](/docs/extguide/extend-element-family-classes) |
+| 为我的后端集成创建用户友好的配置面板 | [为后端Type元素开发可视化编辑器](/docs/extguide/develop-backend-element-visual-editor) |
+| 构建具有特定布局和行为的自定义页面模板 | [扩展自己的页面Type及其编辑器](/docs/extguide/extend-page-type-editor) |
+| 连接专有数据库或数据源 | [扩展自己的数据库Type元素](/docs/extguide/extend-database-type-elements) |
+| 处理自定义数据格式或业务对象 | [扩展自己的数据模型Type元素](/docs/extguide/extend-data-model-type-elements) |
+| 集成专业AI模型或自定义LLM工作流 | [扩展自己的AI Agent Type元素](/docs/extguide/extend-ai-agent-type-elements) |
+| 为你的业务创建领域特定的AI助理 | [扩展自己的AI助理Type元素](/docs/extguide/extend-ai-assistant-type-elements) |
+| 添加对区域支付网关或自定义计费的支持 | [扩展自己的支付Type元素](/docs/extguide/extend-payment-type-elements) |
 
-### 后端
+## 扩展类型 {#extension-types}
 
-| 你遇到的问题 | 相关文档 |
-|-------------|----------|
-| 官方框架缺少我需要的后端元素 | [新增后端Type元素](backend/add-backend-type-elements) \| [开发后端元素可视化编辑器](backend/develop-backend-element-visual-editor)|
-| 现有后端元素的功能与我的需要接近，但要调整 | [继承扩展已有后端Type元素](backend/inherit-and-extend-existing-backend-type-elements) |
-| 想定制自己的后端Type元素可视化编辑器 | [开发后端元素可视化编辑器](backend/develop-backend-element-visual-editor) |
-
-### 综合
-
-| 你遇到的问题 | 相关文档 |
-|-------------|----------|
-| 需要新增包含前后端两部分功能的Type元素 | [新增前后端复合Type元素](comprehensive/add-frontend-backend-composite-type-elements) |
-| 想要构建自己的可视化开发工具 | [自建开发工具](comprehensive/build-your-own-development-tools) |
-| 需要发布可复用的扩展框架 | [发布自己的开发框架](comprehensive/publish-your-own-development-framework) |
-
-## 扩展类型
-
-### 新增扩展
+### 新增扩展 {#new-extensions}
 创造全新的Type元素及其可视化编辑器，适用于官方框架完全没有的功能。
 
-### 继承扩展
+### 继承扩展 {#inheritance-extensions}
 基于现有Type元素进行扩展和修改，必须保持API兼容性（里氏替换原则）。
 
 **实现方式：**
 - **完全重写**：重新实现所有逻辑，但保持对外接口一致
 - **增量修改**：在原有逻辑基础上进行局部调整，保持接口一致
 
-## 社区支持
+## 社区支持 {#community-support}
 - 扩展开发过程中遇到问题，可通过[社区论坛](https://forum.jit.pro/)获得帮助
 - 优秀的扩展实现，欢迎分享到社区供其他开发者学习
 - 具有通用价值的扩展，有机会被集成到官方框架中

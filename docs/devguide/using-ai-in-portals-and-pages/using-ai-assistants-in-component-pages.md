@@ -3,17 +3,17 @@ sidebar_position: 2
 slug: using-ai-assistants-in-component-pages
 ---
 
-# Using AI Assistants in Component Pages
+# Using AI Assistant in Component Pages
 After using [AI Assistant](../ai-assistant) in component pages, an AI dialog box will be displayed on the right side of the page. The page can also subscribe to [AI Assistant events](../ai-assistant/ai-assistant-event) to enable interaction between the page and AI, as well as collaboration between users and AI.
 
-## Enabling AI Assistant
+## Enabling AI Assistant {#enable-ai-assistant}
 Follow these steps:
 
 ![Component Page - Bind AI Assistant](./img/component-page-bind-assistant.png)
 
 Turn on the `AI Assistant` switch at the top of the page editor and select an AI assistant.
 
-## AI Assistant Configuration
+## AI assistant configuration {#ai-assistant-configuration}
 
 After enabling the AI Assistant, an AI Assistant configuration panel will be displayed on the right side of the page editor with the following configuration options:
 - **AI Assistant**: Switch the AI assistant used in the page
@@ -24,7 +24,7 @@ After enabling the AI Assistant, an AI Assistant configuration panel will be dis
 ![Component Page - Bind AI Assistant](./img/component-page-assistant-config.png)
 
 
-## AI Assistant Event Subscription
+## AI assistant event subscription {#ai-assistant-event-subscription}
 
 ### Subscribe to Node Running Events {#subscribe-node-running-events}
 After enabling [triggerable workspace events](../ai-assistant/ai-assistant-event#node-running-events) for nodes in the assistant, there will be two events: **When Node is Reached** and **After Node Completion**. The page subscription method is as follows:
@@ -52,28 +52,28 @@ this.subscribeEvent("AI:aiagents.ClientManagementagent.callTool.preEvent", async
 });
 ```
 
-### Subscribe to Chat Area Human-Machine Interaction Node Events {#subscribe-chat-area-human-events}
-Pages can subscribe to [chat area human-machine interaction node events](../ai-assistant/ai-assistant-event#chat-area-human-machine-interaction-events).
+### Subscribe to action in conversation node events {#subscribe-action-in-conversation-events}
+Pages can subscribe to [action in conversation node events](../ai-assistant/ai-assistant-event#in-conversation-action-events).
 The subscription method is as follows:
 
 ![AI Assistant - Chat Area Human-Machine Interaction Event Subscription](./img/assistant-chat-event.png)
 
-### Subscribe to Workspace Human-Machine Interaction Node Events {#subscribe-workspace-human-events}
-Pages can subscribe to [workspace human-machine interaction node events](../ai-assistant/ai-assistant-event#workspace-human-machine-interaction-events).
+### Subscribe to action in page node events {#subscribe-action-in-page-events}
+Pages can subscribe to [action in conversation node events](../ai-assistant/ai-assistant-event#in-page-action-events).
 The subscription method is as follows:
 
 ![AI Assistant - Workspace Human-Machine Interaction Event Subscription](./img/assistant-uiinterrupt-event.png)
 
-## Send AI Messages in Pages {#send-ai-message}
+## Send AI messages in pages {#send-ai-message}
 
 After using AI Assistant in a page, there will be a **Send AI Message** function on the page. The calling method is as follows:
 
 ![AI Assistant - Send AI Message](./img/send-ai-message.png)
 
-For function parameters, see [Send AI Message Function](../ai-assistant/ai-assistant-api-integration#send-ai-message)
+For function parameters, see [Send AI Message Function](../ai-assistant/ai-assistant-api-exposure#send-ai-message)
 
 
-## Direct Call to AI Assistant {#call-ai-assistant}
+## Direct call to AI assistant {#call-ai-assistant}
 
 Additionally, pages support directly calling AI Assistant without enabling it. The AI Assistant provides a **Run** method that can be called directly. The calling method is as follows:
 

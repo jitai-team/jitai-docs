@@ -3,6 +3,7 @@
   "position": 5,
   "link": {
     "type": "generated-index",
+    "slug": "reference/runtime-platform/backend/jit-nodes",
     "description": "JitNode API documentation for node management and operations"
   }
 } 

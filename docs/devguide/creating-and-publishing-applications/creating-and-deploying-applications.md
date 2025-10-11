@@ -1,75 +1,76 @@
 ---
 sidebar_position: 1
 slug: creating-and-deploying-applications
-title: Creating and Deploying Applications
 ---
 
 # Creating and Deploying Applications
 
 ![Node Console](./img/1/node-console.png "Node Console")
 
-The [Node Console](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment) in the DevOps management tool provides developers with entry points for application creation, import, export, publishing, and deployment, covering the complete lifecycle from project initiation to operations.
+The [Node Console](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment) in the DevOps management tool provides developers with comprehensive entry points for application creation, import, export, publishing, and deployment, covering the complete lifecycle from project initiation to operations.
 
-## Create First Application {#create-first-application}
-Click the `New Application` button in the Node Console to open the new application dialog.
+## Creating Your First Application {#creating-first-application}
+Click the `Create Application` button in the Node Console to open the application creation dialog.
 
-![Create New Application](./img/1/create-new-application.png "Create New Application")
+![Create Application](./img/1/create-new-application.png "Create Application")
 
-Developers only need to fill in the application name and ID, then click confirm to quickly complete the creation of an application.
+Developers simply need to provide the application name and ID, then click confirm to quickly complete application creation.
 
-## Rapid Development Based on Existing Applications {#based-on-existing-application-quick-development}
-To facilitate developers in quickly developing customizations based on existing applications, JitAi provides two approaches: application inheritance and creating copies.
+## Developing Applications Based on Existing Templates {#developing-applications-based-on-existing-templates}
+To facilitate rapid development and customization based on existing applications, JitAi provides two approaches: application inheritance and creating copies.
   
-### Application Inheritance
-Inheritance allows an application to possess the functional modules of the inherited application. Every newly created application inherits two official application templates by default: JIT Development Framework and JIT Development Tools. The former is JitAi's official development framework, providing rich out-of-the-box elements, while the latter provides visual and full-code dual-mode development tools for the application development process. In addition to the default inherited official application templates, developers can continue to add other applications to inherit.
+### Inheriting from applications {#inheriting-from-applications}
+Inheritance enables an application to acquire the functional modules of the inherited application. Every newly created application inherits two official application templates by default: JIT Development Framework and JIT Development Tools. The former is JitAi's official development framework, providing rich out-of-the-box elements, while the latter provides visual and full-code dual-mode development tools for the application development process. Beyond the default inherited official application templates, developers can add additional applications to inherit.
 
 ![Add Application Template](./img/1/add-application-template.gif "Add Application Template")
 
-After developers click to expand the `Inherit Applications` collapsible panel and click the `Add Application Template` button on the right, the application template list will open. Developers can view publicly available or organization-internal application templates in the list, and click on cards to add them to the inheritance list. Added application templates can also be removed by clicking the `Remove` button on the right, though the JIT Development Framework does not support removal operations.
+After expanding the `Inherited Apps` collapsible panel and clicking the `Add Application Template` button, the application template list opens. Developers can browse publicly available or organization-internal application templates in the list, and click on cards to add them to the inheritance list. Added application templates can be removed by clicking the `Remove` button, though the JIT Development Framework does not support removal operations.
 
 :::tip
 
-Developers of inherited applications will continuously release new versions to fix bugs, add new features, etc. Developers can check for new versions and update them in the [Node Console](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment) or [Application Settings](../development-tool-and-publish-service/jitai-visual-development-tools#application-settings). For detailed version management, please refer to [Application Publishing and Updates](../creating-and-publishing-applications/publishing-and-updating-applications#application-version-updates).
+Developers of inherited applications continuously release new versions to fix bugs, add new features, etc. Developers can check for new versions and update them in the [Node Console](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment) or [Application Settings](../development-tool-and-publish-service/visual-development-tool#application-settings). For detailed version management, please refer to [Application Publishing and Updates](../creating-and-publishing-applications/publishing-and-upgrading-applications#application-version-updates).
 
 :::
 
-In JitAi development tools, developers can both develop new elements and view elements inherited from inherited applications, and override individual elements.
+In JitAi development tools, developers can both develop new elements and view elements inherited from parent applications, and override individual elements as needed.
 
 ![Override Inherited Elements](./img/1/override-inherited-elements.gif "Override Inherited Elements")
 
-Developers can click the `Show Inherited Applications` button to find elements from inherited applications at the bottom of the element directory tree. Clicking on an element will open the element editor on the right. Inherited elements do not support direct editing, but can be overridden by clicking the `Override` button in the upper right corner of the editor.
+Developers can click the `Show Inherited Applications` button to locate elements from inherited applications at the bottom of the element directory tree. Clicking on an element opens the element editor on the right. Inherited elements do not support direct editing, but can be overridden by clicking the `Override` button in the upper right corner of the editor.
 
-### Create Copy
-The inheritance approach only allows overriding elements of specified parent applications. If you want to modify an application based on source code without damaging the original application, you can create a copy.
+### Duplicating applications {#duplicating-applications}
+The inheritance approach only allows overriding elements of specified parent applications. If you want to modify an application based on source code without affecting the original application, you can duplicate the application.
 
-![Create Application Copy](./img/1/create-application-copy.png "Create Application Copy")
+The duplicated application is a completely new application. Developers need to provide a new application name and ID, and any modifications to the duplicate will not affect the original application.
 
-The created copy is a completely new application. Developers need to fill in a new application name and ID, and any modifications to the copy will not affect the original application.
+![Duplicate Application](./img/1/create-application-copy.png "Duplicate Application")
 
-## Data Storage and Environment Variable Configuration {#data-storage-and-environment-variable-configuration}
-When creating a new application, JitAi uses local disk as the default file storage method for the application. The desktop version uses SQLite as the default database and cache for applications, while the server version uses MySQL as the default database and Redis as the default cache. Developers can modify the default configuration when creating applications to connect to their specified OSS storage, database, and cache services.
+Developers can sequentially click the `More` and `Duplicate` buttons to open the duplicate application dialog. After providing a new application name and ID, clicking the `Confirm` button completes the duplication process.
+
+## Configuring Data Storage and Environment Variables {#configuring-data-storage-and-environment-variables}
+When creating a new application, JitAi uses local disk as the default file storage method. The desktop version uses SQLite as the default database and cache for applications, while the server version uses MySQL as the default database and Redis as the default cache. Developers can modify the default configuration during application creation to connect to their specified OSS storage, database, and cache services.
 
 ![Custom Database Connection](./img/1/custom-database-connection.gif "Custom Database Connection")
 
-Taking MySQL database connection as an example, developers prepare their own MySQL service and fill in the connection information (developers need to ensure the MySQL service is accessible).
+Using MySQL database connection as an example, developers prepare their own MySQL service and provide the connection information (developers must ensure the MySQL service is accessible).
 
 ![Configure Environment Variables](./img/1/configure-environment-variables.gif "Configure Environment Variables")
 
-The official base framework encapsulates Alibaba Cloud OCR recognition and Amap API, with the required API key information defined as environment variables. PDF conversion and file preview use JitAi official servers by default, but developers can build their own servers and configure service addresses in environment variables.
+The official base framework encapsulates Alibaba Cloud OCR recognition and Amap API, with the required API key information defined as environment variables. PDF conversion and file preview use JitAi official servers by default, but developers can deploy their own servers and configure service addresses in environment variables.
 
-Developers can also define environment variables when developing their own applications, such as using environment variables to store database connection information, API keys, etc., so that sensitive information will not be leaked when applications are exported/published.
+Developers can also define environment variables when developing their own applications, such as using environment variables to store database connection information, API keys, etc., ensuring that sensitive information will not be exposed when applications are exported or published.
 
-## Application Deployment {#application-deployment}
-After application creation is complete, you can directly develop and test in the current runtime environment. When you need to publish an official version, please refer to [Application Publishing and Updates](../creating-and-publishing-applications/publishing-and-updating-applications). After publishing an application version, it can be deployed by other nodes and runtime environments.
+## Deploying Applications {#deploying-applications}
+After application creation is complete, you can directly develop and test in the current runtime environment. When you need to publish an official version, please refer to [Application Publishing and Updates](../creating-and-publishing-applications/publishing-and-upgrading-applications). After publishing an application version, it can be deployed by other nodes and runtime environments.
 
-### Deploy Application on Specified Node
-When a developer organization has only a few nodes and uses only the default runtime environment of nodes, applications can be deployed directly through each node's Node Console.
+### Deploying applications on specified nodes {#deploying-applications-on-specified-nodes}
+When a developer team has only a few nodes and uses only the default runtime environment of nodes, applications can be deployed directly through each node's Node Console.
 
-In the [Node Console](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment), click the `Deploy Application` button to open the deploy application dialog. Developers need to select the application, version, and deployment method, then click the `Confirm` button to complete deployment.
+In the [Node Console](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment), click the `Deploy Application` button to open the deployment dialog. Developers need to select the application, version, and deployment method, then click the `Confirm` button to complete deployment.
 
-### Deploy Application in Specified Runtime Environment
-When a developer organization manages multiple JitNodes and multiple runtime environments, applications need to be deployed for multiple nodes under specific runtime environments in the [Organization Management Console](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment).
+### Deploying applications in specified runtime environments {#deploying-applications-in-specified-runtime-environments}
+When a developer team manages multiple JitNodes and multiple runtime environments, you can refer to the [Team Management Console](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment) to deploy applications for multiple nodes under specific runtime environments.
 
-In the [Organization Management Console](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment), select the target runtime environment and click the `Deploy Application` button to open the deploy application dialog. Developers need to select the application, version, deployment method, and target nodes, then click the `Confirm` button to complete deployment.
+In the [Team Management Console](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment), select the target runtime environment and click the `Deploy Application` button to open the deployment dialog. Developers need to select the application, version, deployment mode, and target nodes, then click the `Confirm` button to complete deployment.
 
 In the deployment dialog, developers can add one or more nodes under the runtime environment and configure different access weights for each node.

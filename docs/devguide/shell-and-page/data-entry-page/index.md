@@ -2,46 +2,46 @@
 sidebar_position: 5
 ---
 
-# Data Entry Page
-In business scenarios such as personnel information registration, vehicle information registration, and equipment information registration, users need to fill out form data and submit it to the backend for processing. JitAi directly provides data entry pages to help developers quickly complete the development of form data collection functionality.
+# Data Entry Pages
+In business scenarios such as personnel registration, vehicle registration, and equipment registration, users need to fill out forms and submit data to the backend for processing. JitAi provides built-in data entry pages that help developers quickly implement form data collection functionality.
 
-## Create Data Entry Page {#create-data-entry-page}
-The creation process of data entry pages is basically the same as [the creation process of regular pages](../component-based-page-development#create-a-regular-page), except that data entry pages need to bind a [data table model](../../data-modeling/data-table-model) to store the data entered by users.
+## Creating a data entry page {#creating-data-entry-page}
+The process for creating data entry pages is essentially the same as [creating generic pages](/docs/devguide/shell-and-page/component-based-page-development#creating-generic-pages), except that data entry pages must be bound to a [data table model](/docs/devguide/data-modeling/data-table-model) to store user-submitted data.
 
-![Create Data Entry Page](./imgs/create-data-entry-page.png "Create Data Entry Page")
+![Creating Data Entry Page](./imgs/create-data-entry-page.png "Creating Data Entry Page")
 
-Developers can select the page type as `Data Entry Page` when creating a page, and select the [data table model](../../data-modeling/data-table-model) for data entry at `Select Data Table`. After clicking the `Confirm` button, it will automatically enter the visual editor.
+When creating a page, developers can select `Data Entry Page` as the page type and choose the target [data table model](/docs/devguide/data-modeling/data-table-model) in the `Select Data Table` section. After clicking `Confirm`, the visual editor will open automatically.
 
-## Configure Viewable and Editable Fields {#configure-viewable-editable-fields}
-When developers don't want to expose certain fields to users, they can configure the fields that users can view. When developers only want users to see field values but not modify them, they can configure the fields that users can edit.
+## Configuring viewable and editable fields {#configuring-viewable-editable-fields}
+When certain fields should not be exposed to users, developers can configure which fields are viewable. When fields should be visible but not editable, developers can configure which fields are editable.
 
-![Configure Viewable and Editable Fields](./imgs/data-entry-configure-viewable-editable-fields.gif "Configure Viewable and Editable Fields")
+![Configuring Viewable and Editable Fields](./imgs/data-entry-configure-viewable-editable-fields.gif "Configuring Viewable and Editable Fields")
 
-In the `Allow View` column of the page editor, developers can uncheck fields that don't need to be exposed to users (e.g., ID), and the corresponding fields will no longer be displayed in the entry form that users see.
+In the page editor's `Visible` column, developers can uncheck fields that should not be exposed to users (e.g., ID fields). These fields will not appear in the user-facing entry form.
 
-In the `Allow Edit` column of the page editor, developers can uncheck fields that users are not allowed to modify, and the corresponding fields that users see in the entry form will be in read-only state.
+In the page editor's `Editable` column, developers can uncheck fields that users should not be able to edit. These fields will appear as read-only in the entry form.
 
-## Show Re-entry Button After Submission {#show-re-entry-button-after-submission}
-When users need to continuously enter multiple data records using one form, developers can enable the `Show Re-entry` switch to support this requirement.
+## Showing enter again button after submission {#showing-enter-again-button-after-submission}
+When users need to enter multiple records consecutively using the same form, developers can enable the `Show Enter Again Button` option to support this workflow.
 
-![Data Entry Page Re-entry](./imgs/data-entry-page-re-entry.gif "Data Entry Page Re-entry")
+![Data Entry Page Enter Again](./imgs/data-entry-page-enter-again.gif "Data Entry Page Enter Again")
 
-Developers can check the `Show Re-entry` option when developing the page, so that users can click the `Re-entry` button after each data `submission` to return to the entry interface and fill in new data. This option is enabled by default.
+Developers can check the `Show Enter Again Button` option during page development. This allows users to click the `Enter Again` button after each submission to return to the entry interface and fill in new data. This option is enabled by default.
 
-## Show Result Feedback After Submission {#show-result-feedback-after-submission}
-After users complete a data submission, a feedback interface for the entry result can be provided to inform users of the submission result. This is a common interaction design that can enhance user experience.
+## Showing result feedback after submission {#showing-result-feedback-after-submission}
+After users complete a data submission, you can display a feedback interface to inform them of the submission result. This is a common interaction pattern that enhances user experience.
 
 ![Data Entry Page Result Feedback](./imgs/data-entry-page-result-feedback.gif "Data Entry Page Result Feedback")
 
-When developers check the `Show Entry Result Feedback` option in the page editor, users will see a successful data entry feedback reminder interface after completing form data filling and clicking the `Submit` button. This option is enabled by default.
+When developers check the `Show Result Feedback UI` option in the page editor, users will see a success confirmation interface after completing the form and clicking `Submit`. This option is enabled by default.
 
-## Convert to Regular Page for Modification {#convert-to-regular-page-for-modification}
-Data entry pages are out-of-the-box built-in page types provided by JitAi that developers can quickly create and use. When developers want to make more refined customizations based on the default implementation, they can convert the page to a regular page for unlimited modifications.
+## Converting to generic page for modification {#converting-to-generic-page-for-modification}
+Data entry pages are out-of-the-box page types provided by JitAi that developers can create and use immediately. When developers need more granular customization beyond the default implementation, they can convert the page to a generic page for unlimited modifications.
 
-![Convert to Regular Page](./imgs/convert-to-regular-page.gif "Convert to Regular Page")
+![Converting to Generic Page](./imgs/convert-to-generic-page.gif "Converting to Generic Page")
 
-Developers can click the `Convert to Regular Page` button in the upper right corner of the page editor to convert the page to a regular page. For development methods of regular pages, refer to [Component-based Page Development](../component-based-page-development).
+Developers can click the `Convert to Generic Page` button in the upper-right corner of the page editor to convert the page to a generic page. For generic page development methods, refer to [Component-based Page Development](/docs/devguide/shell-and-page/component-based-page-development).
 
 :::warning
-After converting to a regular page, it cannot be restored to the original `Data Entry Page` type.
+Once converted to a generic page, it cannot be reverted to the original `Data Entry Page` type.
 :::

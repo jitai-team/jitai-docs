@@ -1,0 +1,112 @@
+<svg width="800" height="500" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景渐变 -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e9ecef;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="consumerGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b9d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff8fab;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="enterpriseGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a90e2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6ba3f5;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="500" fill="url(#bgGradient)"/>
+  
+  <!-- 主标题 -->
+  <text x="400" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50">AI Application Architecture Comparison</text>
+  
+  <!-- 左侧：消费级 -->
+  <g transform="translate(50, 80)">
+    <!-- 标题卡片 -->
+    <rect x="0" y="0" width="300" height="60" fill="url(#consumerGradient)" rx="10" filter="drop-shadow(0 4px 8px rgba(0,0,0,0.1))"/>
+    <text x="150" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white">Consumer AI Applications</text>
+    
+    <!-- 特征图标和文字 -->
+    <!-- 云端服务 -->
+    <g transform="translate(0, 80)">
+      <circle cx="30" cy="30" r="25" fill="#ffe0ed" stroke="#ff6b9d" stroke-width="2"/>
+      <text x="30" y="35" text-anchor="middle" font-size="16">☁️</text>
+      <text x="70" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#d63384">Cloud Hosting</text>
+      <text x="70" y="40" font-family="Arial, sans-serif" font-size="12" fill="#666">SaaS Service Model</text>
+    </g>
+    
+    <!-- 标准化 -->
+    <g transform="translate(0, 140)">
+      <circle cx="30" cy="30" r="25" fill="#ffe0ed" stroke="#ff6b9d" stroke-width="2"/>
+      <text x="30" y="35" text-anchor="middle" font-size="16">📦</text>
+      <text x="70" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#d63384">Standardized Features</text>
+      <text x="70" y="40" font-family="Arial, sans-serif" font-size="12" fill="#666">General Use Cases</text>
+    </g>
+    
+    <!-- 表层集成 -->
+    <g transform="translate(0, 200)">
+      <circle cx="30" cy="30" r="25" fill="#ffe0ed" stroke="#ff6b9d" stroke-width="2"/>
+      <text x="30" y="35" text-anchor="middle" font-size="16">🔌</text>
+      <text x="70" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#d63384">API Integration</text>
+      <text x="70" y="40" font-family="Arial, sans-serif" font-size="12" fill="#666">Surface Interface Calls</text>
+    </g>
+    
+    <!-- 用户级权限 -->
+    <g transform="translate(0, 260)">
+      <circle cx="30" cy="30" r="25" fill="#ffe0ed" stroke="#ff6b9d" stroke-width="2"/>
+      <text x="30" y="35" text-anchor="middle" font-size="16">👤</text>
+      <text x="70" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#d63384">User-level Permissions</text>
+      <text x="70" y="40" font-family="Arial, sans-serif" font-size="12" fill="#666">Simple Access Control</text>
+    </g>
+  </g>
+  
+  <!-- 中间分割线和VS -->
+  <line x1="400" y1="80" x2="400" y2="450" stroke="#e74c3c" stroke-width="3" opacity="0.7"/>
+  <circle cx="400" cy="265" r="30" fill="#e74c3c" filter="drop-shadow(0 4px 8px rgba(0,0,0,0.2))"/>
+  <text x="400" y="272" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white">VS</text>
+  
+  <!-- 右侧：企业级 -->
+  <g transform="translate(450, 80)">
+    <!-- 标题卡片 -->
+    <rect x="0" y="0" width="300" height="60" fill="url(#enterpriseGradient)" rx="10" filter="drop-shadow(0 4px 8px rgba(0,0,0,0.1))"/>
+    <text x="150" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="white">Enterprise AI Applications</text>
+    
+    <!-- 特征图标和文字 -->
+    <!-- 本地部署 -->
+    <g transform="translate(0, 80)">
+      <circle cx="30" cy="30" r="25" fill="#e3f2fd" stroke="#4a90e2" stroke-width="2"/>
+      <text x="30" y="35" text-anchor="middle" font-size="16">🏢</text>
+      <text x="70" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1976d2">On-Premise Deployment</text>
+      <text x="70" y="40" font-family="Arial, sans-serif" font-size="12" fill="#666">Secure Data Control</text>
+    </g>
+    
+    <!-- 深度定制 -->
+    <g transform="translate(0, 140)">
+      <circle cx="30" cy="30" r="25" fill="#e3f2fd" stroke="#4a90e2" stroke-width="2"/>
+      <text x="30" y="35" text-anchor="middle" font-size="16">⚙️</text>
+      <text x="70" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1976d2">Deep Customization</text>
+      <text x="70" y="40" font-family="Arial, sans-serif" font-size="12" fill="#666">Business Process Integration</text>
+    </g>
+    
+    <!-- 原生集成 -->
+    <g transform="translate(0, 200)">
+      <circle cx="30" cy="30" r="25" fill="#e3f2fd" stroke="#4a90e2" stroke-width="2"/>
+      <text x="30" y="35" text-anchor="middle" font-size="16">🔗</text>
+      <text x="70" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1976d2">Native Integration</text>
+      <text x="70" y="40" font-family="Arial, sans-serif" font-size="12" fill="#666">Deep System Fusion</text>
+    </g>
+    
+    <!-- 精细权限 -->
+    <g transform="translate(0, 260)">
+      <circle cx="30" cy="30" r="25" fill="#e3f2fd" stroke="#4a90e2" stroke-width="2"/>
+      <text x="30" y="35" text-anchor="middle" font-size="16">🛡️</text>
+      <text x="70" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1976d2">Fine-grained Permissions</text>
+      <text x="70" y="40" font-family="Arial, sans-serif" font-size="12" fill="#666">Tool-level Control</text>
+    </g>
+  </g>
+  
+  <!-- 底部核心差异说明 -->
+  <rect x="50" y="420" width="700" height="60" fill="rgba(255,255,255,0.9)" stroke="#dee2e6" stroke-width="1" rx="8"/>
+  <text x="400" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#495057">Core Differences</text>
+  <text x="400" y="460" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6c757d">Consumer-grade focuses on usability and versatility, enterprise-grade emphasizes security and deep business integration</text>
+</svg>

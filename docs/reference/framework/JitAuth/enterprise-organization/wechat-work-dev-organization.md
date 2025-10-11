@@ -1,17 +1,17 @@
 ---
 slug: wechat-work-dev-organization
 ---
-# 企业微信代开发组织
-企业微信代开发组织是专门针对企业微信第三方应用的组织集成类型，基于企业微信代开发模式实现多企业组织管理和跨企业授权。它负责企业微信代开发模式下的组织同步、成员管理和权限分配，支持多租户SaaS服务商统一管理多个授权企业的组织架构。
+# WeCom Proxy Development Organization
+WeCom proxy development organization is a specialized organization integration type for WeCom third-party applications, implementing multi-enterprise organization management and cross-enterprise authorization based on WeCom proxy development mode. It handles organization synchronization, member management, and permission assignment under WeCom proxy development mode, supporting multi-tenant SaaS service providers to uniformly manage organizational architectures of multiple authorized enterprises.
 
-企业微信代开发组织元素分层结构为Meta（corps.Meta）→ Type（corps.QywxProxyType）→ 实例，开发者可通过JitAi的可视化开发工具快捷地创建企业微信代开发组织实例元素。
+The hierarchical structure of WeCom proxy development organization elements is Meta (corps.Meta) → Type (corps.QywxProxyType) → Instance. Developers can quickly create WeCom proxy development organization instance elements through JitAi's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的corps.QywxProxyType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `corps.QywxProxyType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-推荐在应用的`corps`目录下创建企业微信代开发组织实例：
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+Recommended to create WeCom proxy development organization instances under the application's `corps` directory:
 
 ```
 myapp/
@@ -21,16 +21,16 @@ myapp/
 │       └── MyQywxProxyCorp.json
 ```
 
-#### e.json文件
+#### e.json File
 ```json title="e.json"
 {
   "type": "corps.QywxProxyType",
-  "title": "我的企业微信代开发组织",
+  "title": "My WeCom Proxy Development Organization",
   "version": "1.0.0"
 }
 ```
 
-#### 业务配置文件
+#### Business Configuration File
 ```json title="MyQywxProxyCorp.json"
 {
   "corpId": "{{qywxProxyCorpId}}",
@@ -38,314 +38,314 @@ myapp/
 }
 ```
 
-#### 调用示例
-```python title="使用企业微信代开发组织实例"
-# 获取企业微信代开发组织实例
+#### Usage Example
+```python title="Using WeCom Proxy Development Organization Instance"
+# Get WeCom proxy development organization instance
 corp = app.getElement("corps.MyQywxProxyCorp")
 
-# 初始化组织架构
+# Initialize organizational architecture
 corp.initCorp()
 
-# 同步组织架构
+# Sync organizational architecture
 corp.syncCorp()
 
-# 获取根部门
+# Get root department
 root_dept = corp.getRootDept()
-print(f"根部门: {root_dept.name}")
+print(f"Root Department: {root_dept.name}")
 ```
 
-## 元素配置
-### e.json配置
-| 配置项 | 类型 | 必填 | 默认值 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Configuration Item | Type | Required | Default Value | Description |
 |--------|------|------|--------|------|
-| type | String | 是 | - | 固定值：corps.QywxProxyType |
-| title | String | 是 | - | 组织架构显示名称 |
-| version | String | 否 | 1.0.0 | 版本号 |
+| type | String | Yes | - | Fixed value: corps.QywxProxyType |
+| title | String | Yes | - | Organization architecture display name |
+| version | String | No | 1.0.0 | Version number |
 
-### 业务配置文件配置
-| 配置项 | 类型 | 必填 | 默认值 | 说明 |
+### Business Configuration File
+| Configuration Item | Type | Required | Default Value | Description |
 |--------|------|------|--------|------|
-| corpId | String | 是 | - | 企业微信代开发模式下的企业ID |
-| authFullName | String | 是 | - | 对应的企业微信代开发认证元素fullName |
+| corpId | String | Yes | - | Enterprise ID under WeCom proxy development mode |
+| authFullName | String | Yes | - | Corresponding WeCom proxy development authentication element fullName |
 
-## 方法 
+## Methods
 ### initCorp
-初始化组织架构，在企业微信代开发组织首次创建时调用，会自动触发组织架构同步。
+Initialize organizational architecture, called when WeCom proxy development organization is first created, automatically triggers organizational architecture synchronization.
 
-```python title="初始化组织架构"
+```python title="Initialize Organizational Architecture"
 corp = app.getElement("corps.MyQywxProxyCorp")
 corp.initCorp()
 ```
 
 ### getRootDept
-获取组织架构的根部门，如果根部门不存在则自动创建。
+Get the root department of the organizational architecture, automatically creates if root department doesn't exist.
 
-#### 返回值
-- 类型：CorpDept对象
-- 说明：根部门模型实例
+#### Return Value
+- Type: CorpDept object
+- Description: Root department model instance
 
-```python title="获取根部门"
+```python title="Get Root Department"
 corp = app.getElement("corps.MyQywxProxyCorp")
 root_dept = corp.getRootDept()
-print(f"根部门名称: {root_dept.name}")
-print(f"根部门ID: {root_dept.deptId}")
+print(f"Root Department Name: {root_dept.name}")
+print(f"Root Department ID: {root_dept.deptId}")
 ```
 
 ### setUserRole
-为指定成员设置角色列表，会先清除该成员的所有角色，再设置新的角色。
+Set role list for specified member, first clears all roles of the member, then sets new roles.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|------|--------|------|
-| memberId | String | 是 | - | 成员ID |
-| roleIdList | List[String] | 是 | - | 角色ID列表 |
+| memberId | String | Yes | - | Member ID |
+| roleIdList | List[String] | Yes | - | Role ID list |
 
-#### 返回值
-- 类型：List[CorpRoleMember]
-- 说明：设置完成后的角色成员关系对象列表
+#### Return Value
+- Type: List[CorpRoleMember]
+- Description: List of role member relationship objects after setting completion
 
-```python title="设置用户角色"
+```python title="Set User Role"
 corp = app.getElement("corps.MyQywxProxyCorp")
 role_members = corp.setUserRole("member123", ["role1", "role2"])
 for role_member in role_members:
-    print(f"成员{role_member.memberId}的角色{role_member.roleId}")
+    print(f"Member {role_member.memberId}'s role {role_member.roleId}")
 ```
 
 ### syncCorp
-从企业微信服务器同步组织架构数据到本地，包括部门、成员、角色等信息。
+Sync organizational architecture data from WeCom server to local, including departments, members, roles, and other information.
 
-```python title="同步组织架构"
+```python title="Sync Organizational Architecture"
 corp = app.getElement("corps.MyQywxProxyCorp")
 corp.syncCorp()
-print("组织架构同步完成")
+print("Organizational architecture sync completed")
 ```
 
 ### getClient
-获取企业微信API客户端，用于调用企业微信接口。
+Get WeCom API client for calling WeCom interfaces.
 
-#### 返回值
-- 类型：QywxProxyClient
-- 说明：企业微信API客户端实例
+#### Return Value
+- Type: QywxProxyClient
+- Description: WeCom API client instance
 
-```python title="获取企业微信客户端"
+```python title="Get WeCom Client"
 corp = app.getElement("corps.MyQywxProxyCorp")
 client = corp.getClient()
-# 使用客户端调用企业微信API
+# Use client to call WeCom API
 dept_list = client.department.list()
 ```
 
 ### getAgentId
-静态方法，获取代开发应用的AgentId。
+Static method to get the AgentId of the proxy development application.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|------|--------|------|
-| corpId | String | 是 | - | 企业ID |
-| suiteId | String | 是 | - | 第三方应用套件ID |
+| corpId | String | Yes | - | Enterprise ID |
+| suiteId | String | Yes | - | Third-party application suite ID |
 
-#### 返回值
-- 类型：String
-- 说明：应用的AgentId
+#### Return Value
+- Type: String
+- Description: Application's AgentId
 
-```python title="获取应用ID"
+```python title="Get Application ID"
 from corps.QywxProxyType import QywxProxyCorp
 
 agent_id = QywxProxyCorp.getAgentId("corp123", "suite456")
-print(f"应用ID: {agent_id}")
+print(f"Application ID: {agent_id}")
 ```
 
 ### getThirdCorpData
-获取第三方组织架构数据，从企业微信服务器拉取最新的组织架构信息。
+Get third-party organizational architecture data, pull latest organizational architecture information from WeCom server.
 
-#### 返回值
-- 类型：Dict
-- 说明：包含组织架构完整信息的数据字典
+#### Return Value
+- Type: Dict
+- Description: Data dictionary containing complete organizational architecture information
 
-```python title="获取第三方组织架构数据"
+```python title="Get Third-Party Organizational Architecture Data"
 corp = app.getElement("corps.MyQywxProxyCorp")
 corp_data = corp.getThirdCorpData()
-print(f"企业名称: {corp_data['corpName']}")
-print(f"部门数量: {len(corp_data['deptList'])}")
+print(f"Enterprise Name: {corp_data['corpName']}")
+print(f"Department Count: {len(corp_data['deptList'])}")
 ```
 
 ### bulkRegister
-批量注册用户，根据同步的组织架构数据批量处理用户的创建、更新和状态变更。
+Batch register users, batch process user creation, updates, and status changes based on synced organizational architecture data.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|------|--------|------|
-| corpData | Dict | 是 | - | 组织架构数据字典 |
+| corpData | Dict | Yes | - | Organizational architecture data dictionary |
 
-```python title="批量注册用户"
+```python title="Batch Register Users"
 corp = app.getElement("corps.MyQywxProxyCorp")
 corp_data = corp.getThirdCorpData()
 corp.bulkRegister(corp_data)
-print("用户批量注册完成")
+print("User batch registration completed")
 ```
 
 ### offlineMember
-将指定成员列表转为离职状态，不影响成员在其他组织架构中的登录。
+Set specified member list to offline status, does not affect member login in other organizational architectures.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|------|--------|------|
-| memberIdList | List[String] | 是 | - | 要离线的成员ID列表 |
+| memberIdList | List[String] | Yes | - | List of member IDs to set offline |
 
-```python title="离线成员"
+```python title="Offline Members"
 corp = app.getElement("corps.MyQywxProxyCorp")
 corp.offlineMember(["member1", "member2"])
-print("成员已设置为离职状态")
+print("Members have been set to resigned status")
 ```
 
 ### getDepts
-获取所有部门列表。
+Get all department list.
 
-#### 返回值
-- 类型：List[CorpDept]
-- 说明：部门对象列表
+#### Return Value
+- Type: List[CorpDept]
+- Description: List of department objects
 
-```python title="获取部门列表"
+```python title="Get Department List"
 corp = app.getElement("corps.MyQywxProxyCorp")
 depts = corp.getDepts()
 for dept in depts:
-    print(f"部门: {dept.name}")
+    print(f"Department: {dept.name}")
 ```
 
 ### getMembers
-获取所有成员列表。
+Get all member list.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|------|--------|------|
-| status | String | 否 | None | 成员状态筛选 |
+| status | String | No | None | Member status filter |
 
-#### 返回值
-- 类型：List[CorpMember]
-- 说明：成员对象列表
+#### Return Value
+- Type: List[CorpMember]
+- Description: List of member objects
 
-```python title="获取成员列表"
+```python title="Get Member List"
 corp = app.getElement("corps.MyQywxProxyCorp")
-# 获取所有成员
+# Get all members
 all_members = corp.getMembers()
-# 获取在职成员
+# Get active members
 active_members = corp.getMembers(status="active")
 ```
 
 ### getMember
-根据成员ID获取成员信息。
+Get member information by member ID.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|------|--------|------|
-| memberId | String | 是 | - | 成员ID |
+| memberId | String | Yes | - | Member ID |
 
-#### 返回值
-- 类型：CorpMember
-- 说明：成员对象
+#### Return Value
+- Type: CorpMember
+- Description: Member object
 
-```python title="获取单个成员"
+```python title="Get Single Member"
 corp = app.getElement("corps.MyQywxProxyCorp")
 member = corp.getMember("member123")
-print(f"成员姓名: {member.name}")
+print(f"Member Name: {member.name}")
 ```
 
 ### getDept
-根据部门ID获取部门信息。
+Get department information by department ID.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Default Value | Description |
 |--------|------|------|--------|------|
-| deptId | String | 是 | - | 部门ID |
+| deptId | String | Yes | - | Department ID |
 
-#### 返回值
-- 类型：CorpDept
-- 说明：部门对象
+#### Return Value
+- Type: CorpDept
+- Description: Department object
 
-```python title="获取单个部门"
+```python title="Get Single Department"
 corp = app.getElement("corps.MyQywxProxyCorp")
 dept = corp.getDept("dept123")
-print(f"部门名称: {dept.name}")
+print(f"Department Name: {dept.name}")
 ```
 
-## 属性
+## Properties
 ### corpId
-企业微信代开发模式下的企业ID，用于标识具体的授权企业。
+Enterprise ID under WeCom proxy development mode, used to identify specific authorized enterprise.
 
-- 类型：String
-- 说明：在配置文件中定义的企业ID
+- Type: String
+- Description: Enterprise ID defined in configuration file
 
 ### authFullName
-对应的企业微信代开发认证元素的fullName，用于获取认证配置和API客户端。
+FullName of corresponding WeCom proxy development authentication element, used to get authentication configuration and API client.
 
-- 类型：String
-- 说明：认证元素的完整路径标识
+- Type: String
+- Description: Complete path identifier of authentication element
 
 ### corpFullName
-组织架构元素的完整名称标识。
+Complete name identifier of organizational architecture element.
 
-- 类型：String
-- 说明：当前组织架构实例的fullName
+- Type: String
+- Description: FullName of current organizational architecture instance
 
 ### title
-组织架构的显示名称。
+Display name of organizational architecture.
 
-- 类型：String
-- 说明：在e.json中配置的显示标题
+- Type: String
+- Description: Display title configured in e.json
 
-```python title="访问属性"
+```python title="Access Properties"
 corp = app.getElement("corps.MyQywxProxyCorp")
-print(f"企业ID: {corp.corpId}")
-print(f"认证元素: {corp.authFullName}")
-print(f"组织名称: {corp.title}")
-print(f"完整名称: {corp.corpFullName}")
+print(f"Enterprise ID: {corp.corpId}")
+print(f"Authentication Element: {corp.authFullName}")
+print(f"Organization Name: {corp.title}")
+print(f"Full Name: {corp.corpFullName}")
 ```
 
-## 高级特性
-### 多企业管理
-企业微信代开发组织支持同时管理多个授权企业的组织架构，每个企业对应一个独立的组织实例。
+## Advanced Features
+### Multi-Enterprise Management
+WeCom proxy development organization supports managing organizational architectures of multiple authorized enterprises simultaneously, each enterprise corresponds to an independent organization instance.
 
-```python title="管理多个企业"
-# 企业A的组织架构
+```python title="Manage Multiple Enterprises"
+# Enterprise A's organizational architecture
 corp_a = app.getElement("corps.CorpA")
 corp_a.syncCorp()
 
-# 企业B的组织架构
+# Enterprise B's organizational architecture
 corp_b = app.getElement("corps.CorpB")
 corp_b.syncCorp()
 
-# 统计各企业成员数量
-print(f"企业A成员数: {len(corp_a.getMembers())}")
-print(f"企业B成员数: {len(corp_b.getMembers())}")
+# Count member numbers of each enterprise
+print(f"Enterprise A member count: {len(corp_a.getMembers())}")
+print(f"Enterprise B member count: {len(corp_b.getMembers())}")
 ```
 
-### 成员状态管理
-支持对成员进行精细的状态管理，包括在职、离职等状态的自动同步和手动调整。
+### Member Status Management
+Supports fine-grained status management of members, including automatic synchronization and manual adjustment of active, resigned, and other statuses.
 
-```python title="成员状态管理"
+```python title="Member Status Management"
 corp = app.getElement("corps.MyQywxProxyCorp")
 
-# 同步时自动处理离职成员
+# Automatically handle resigned members during sync
 corp.syncCorp()
 
-# 手动设置成员离职
+# Manually set members as resigned
 corp.offlineMember(["member1", "member2"])
 
-# 查看不同状态的成员
+# View members of different statuses
 active_members = corp.getMembers(status="active")
 offline_members = corp.getMembers(status="offline")
 ```
 
-### 权限角色分配
-支持灵活的角色权限体系，可以为成员分配多个角色，实现细粒度的权限控制。
+### Permission Role Assignment
+Supports flexible role permission system, can assign multiple roles to members, implementing fine-grained permission control.
 
-```python title="权限角色分配"
+```python title="Permission Role Assignment"
 corp = app.getElement("corps.MyQywxProxyCorp")
 
-# 为成员设置多个角色
+# Set multiple roles for members
 corp.setUserRole("manager001", ["admin", "dept_manager"])
 corp.setUserRole("employee001", ["employee", "project_member"])
 
-# 批量设置角色
+# Batch set roles
 member_roles = {
     "user1": ["role1", "role2"], 
     "user2": ["role2", "role3"]
@@ -353,4 +353,3 @@ member_roles = {
 for member_id, role_list in member_roles.items():
     corp.setUserRole(member_id, role_list)
 ```
-

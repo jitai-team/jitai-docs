@@ -3,32 +3,32 @@ sidebar_position: 1
 slug: database
 ---
 
-# 数据库
-## 简介
-JitAi官方提供了多种数据库Type元素，支持统一的数据库访问接口和连接管理功能，已支持的数据库类型以及对应的Type元素fullName如下：
+# Database
+## Introduction
+JitAi officially provides multiple database Type elements, supporting unified database access interfaces and connection management functionality. The supported database types and their corresponding Type element fullNames are as follows:
 - **SQLite**: databases.SqliteType
 - **MySQL**: databases.MySQLType
 - **PostgreSQL**: databases.PgSqlType
 - **Oracle**: databases.OracleType
 - **Microsoft SQL Server**: databases.SqlServerType
-- **达梦**: databases.DmdbType
+- **DM (Dameng)**: databases.DmdbType
 
-开发者可以在JitAi开发工具中使用可视化界面创建和配置数据库实例元素，也可以使用全代码方式。
+Developers can use the visual interface in JitAi development tools to create and configure database instance elements, or use full-code approach.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的databases.xxxType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `databases.xxxType` elements provided by JitAi in their own App to implement their own encapsulation.
 
-## 元素目录构成
-所有数据库实例元素的目录都是由元素定义文件和配置文件构成。
+## Element Directory Structure
+All database instance element directories are composed of element definition files and configuration files.
 
-- `e.json`：元素定义文件，用于定义元素的标题、所属type等。
-- `[元素名称].json`：配置文件，用于配置数据库的连接信息等，文件名称与元素名称一致。例如：元素fullName='databases.SQLiteDB'，则文件名称为'SQLiteDB.json'。
+- `e.json`: Element definition file, used to define element title, type, etc.
+- `[Element Name].json`: Configuration file, used to configure database connection information, etc. The file name matches the element name. For example: if element fullName='databases.SQLiteDB', then the file name is 'SQLiteDB.json'.
 
 ### SQLite
-假设在应用根目录下创建一个名为`SQLiteDB`的SQLite数据库实例元素，其相对路径为`databases/SQLiteDB`，则fullName为`databases.SQLiteDB`，其目录结构如下：
+Assuming creating a SQLite database instance element named `SQLiteDB` under the application root directory, with relative path `databases/SQLiteDB`, then fullName is `databases.SQLiteDB`, and its directory structure is as follows:
 
 ```json title="e.json"
 {
-    "title": "默认数据库",
+    "title": "Default Database",
     "backendBundleEntry": ".",
     "type": "databases.SqliteType",
     "variables": []
@@ -46,11 +46,11 @@ JitAi官方提供了多种数据库Type元素，支持统一的数据库访问�
 ```
 
 ### MySQL
-假设在应用根目录下创建一个名为`MySQLDB`的MySQL数据库实例元素，其相对路径为`databases/MySQLDB`，则fullName为`databases.MySQLDB`，其目录结构如下：
+Assuming creating a MySQL database instance element named `MySQLDB` under the application root directory, with relative path `databases/MySQLDB`, then fullName is `databases.MySQLDB`, and its directory structure is as follows:
 
 ```json title="e.json"
 {
-    "title": "默认数据库",
+    "title": "Default Database",
     "backendBundleEntry": ".",
     "type": "databases.MySQLType",
     "variables": []
@@ -72,11 +72,11 @@ JitAi官方提供了多种数据库Type元素，支持统一的数据库访问�
 ```
 
 ### PostgreSQL
-假设在应用根目录下创建一个名为`PostgreSQLDB`的PostgreSQL数据库实例元素，其相对路径为`databases/PostgreSQLDB`，则fullName为`databases.PostgreSQLDB`，其目录结构如下：
+Assuming creating a PostgreSQL database instance element named `PostgreSQLDB` under the application root directory, with relative path `databases/PostgreSQLDB`, then fullName is `databases.PostgreSQLDB`, and its directory structure is as follows:
 
 ```json title="e.json"
 {
-    "title": "默认数据库",
+    "title": "Default Database",
     "backendBundleEntry": ".",
     "type": "databases.PgSqlType",
     "variables": []
@@ -94,11 +94,11 @@ JitAi官方提供了多种数据库Type元素，支持统一的数据库访问�
 ```
 
 ### Oracle
-假设在应用根目录下创建一个名为`OracleDB`的Oracle数据库实例元素，其相对路径为`databases/OracleDB`，则fullName为`databases.OracleDB`，其目录结构如下：
+Assuming creating an Oracle database instance element named `OracleDB` under the application root directory, with relative path `databases/OracleDB`, then fullName is `databases.OracleDB`, and its directory structure is as follows:
 
 ```json title="e.json"
 {
-    "title": "默认数据库",
+    "title": "Default Database",
     "type": "databases.OracleType",
     "backendBundleEntry": ".",
     "variables": []
@@ -116,11 +116,11 @@ JitAi官方提供了多种数据库Type元素，支持统一的数据库访问�
 ```
 
 ### Microsoft SQL Server
-假设在应用根目录下创建一个名为`SqlServerDB`的Microsoft SQL Server数据库实例元素，其相对路径为`databases/SqlServerDB`，则其目录结构如下：
+Assuming creating a Microsoft SQL Server database instance element named `SqlServerDB` under the application root directory, with relative path `databases/SqlServerDB`, then its directory structure is as follows:
 
 ```json title="e.json"
 {
-    "title": "默认数据库",
+    "title": "Default Database",
     "type": "databases.SqlServerType",
     "backendBundleEntry": ".",
     "variables": []
@@ -137,12 +137,12 @@ JitAi官方提供了多种数据库Type元素，支持统一的数据库访问�
 }
 ```
 
-### 达梦
-假设在应用根目录下创建一个名为`DmdbDB`的达梦数据库实例元素，其相对路径为`databases/DmdbDB`，则fullName为`databases.DmdbDB`，其目录结构如下：
+### DM (Dameng)
+Assuming creating a DM database instance element named `DmdbDB` under the application root directory, with relative path `databases/DmdbDB`, then fullName is `databases.DmdbDB`, and its directory structure is as follows:
 
 ```json title="e.json"
 {
-    "title": "默认数据库",
+    "title": "Default Database",
     "type": "databases.DmdbType",
     "backendBundleEntry": ".",
     "variables": []
@@ -159,4 +159,3 @@ JitAi官方提供了多种数据库Type元素，支持统一的数据库访问�
     "user": "SYSDBA"
 }
 ```
-

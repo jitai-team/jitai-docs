@@ -61,7 +61,7 @@ import { BasePage } from 'common/type';
 export class MyPage extends BasePage {
   async showConfirmDialog() {
     const modal = app.getElement('confirmModal');
-    await modal.call('请确认您的操作');
+    await modal.call('请确认你的操作');
   }
   
   async handleConfirm() {

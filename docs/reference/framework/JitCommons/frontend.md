@@ -1,437 +1,436 @@
 ---
 slug: frontend
 ---
-# 前端
-为前端开发提供统一的全局组件、公共模块、工具函数和Web Workers支持。
+# Frontend
+Provides unified global components, public modules, utility functions, and Web Workers support for frontend development.
 
-globals.Calc是官方内置的公共模块Type元素，提供数学、逻辑、文本和日期时间计算功能。globals.Calc元素层级结构为Meta（globals.Meta） → Type（globals.Calc），开发者可以使用`app.getElement("globals.Calc")`获取并直接使用。
+globals.Calc is an official built-in public module Type element that provides mathematical, logical, text, and date/time calculation functions. The globals.Calc element hierarchical structure is Meta (globals.Meta) → Type (globals.Calc), and developers can use `app.getElement("globals.Calc")` to get and use it directly.
 
-modules.xxx系列是官方提供的前端数据处理、用户界面反馈、文件与工具、消息通信等功能的实例元素，元素层级结构为Meta（modules.Meta） → Type（modules.FrontType） → 实例，开发者可以使用`app.getElement("modules.xxx")`获取并直接使用。
+modules.xxx series are official instance elements providing frontend data processing, user interface feedback, files and tools, message communication, and other functions. The element hierarchical structure is Meta (modules.Meta) → Type (modules.FrontType) → Instance, and developers can use `app.getElement("modules.xxx")` to get and use them directly.
 
-当然，开发者也可以创建自己的公共模块以及modules.xxx系列元素，或者在自己的App中改写JitAi官方提供的元素，以实现自己的封装。
+Of course, developers can also create their own public modules and modules.xxx series elements, or modify the official elements provided by JitAi in their own App to implement their own encapsulation.
 
-## 计算组件
+## Calculation Components
 ### globals.Calc
-全局计算组件，提供数学、逻辑、文本和日期时间计算功能。
+Global calculation component providing mathematical, logical, text, and date/time calculation functions.
 
-#### 基本用法
-```tsx title="计算组件基本使用"
+#### Basic Usage
+```tsx title="Basic Usage of Calculation Components"
 import { app } from 'jit';
 
-// 获取计算组件
+// Get calculation component
 const CALC = await app.getElement('globals.Calc');
 
-// 使用计算函数
+// Use calculation functions
 const result = CALC.SUM(10, 20, 30);
 const text = CALC.CONCAT("Hello", "World");
 const now = CALC.NOW();
 ```
 
-#### 数学计算函数
-| 函数名 | 参数 | 返回值 | 功能描述 |
+#### Mathematical Calculation Functions
+| Function Name | Parameters | Return Value | Function Description |
 |--------|------|--------|----------|
-| SUM | (...numbers: number[]) | number | 求和多个数字 |
-| AVG | (...numbers: number[]) | number | 计算平均值 |
-| MAX | (...numbers: number[]) | number | 获取最大值 |
-| MIN | (...numbers: number[]) | number | 获取最小值 |
-| ABS | (number: number) | number | 获取绝对值 |
-| ROUND | (number: number, digits: number) | number | 四舍五入到指定小数位 |
-| TRUNCATE | (number: number, digits: number) | number | 截取小数位不四舍五入 |
-| POWER | (base: number, exponent: number) | number | 幂运算 base^exponent |
-| MOD | (dividend: number, divisor: number) | number | 取余运算 |
-| RANDOM | (min: number, max: number, decimal: number) | number | 生成指定范围和小数位的随机数 |
-| CHINESEUPPER | (number: number) | string | 数字转中文大写金额 |
-| ENGLISHUPPER | (number: number) | string | 数字转英文大写金额 |
-| TOSTRING | (value: any) | string \| null | 转换为字符串，失败返回null |
-| TONUMBER | (value: any) | number \| null | 转换为数字，失败返回null |
+| SUM | (...numbers: number[]) | number | Sum multiple numbers |
+| AVG | (...numbers: number[]) | number | Calculate average |
+| MAX | (...numbers: number[]) | number | Get maximum value |
+| MIN | (...numbers: number[]) | number | Get minimum value |
+| ABS | (number: number) | number | Get absolute value |
+| ROUND | (number: number, digits: number) | number | Round to specified decimal places |
+| TRUNCATE | (number: number, digits: number) | number | Truncate decimal places without rounding |
+| POWER | (base: number, exponent: number) | number | Power operation base^exponent |
+| MOD | (dividend: number, divisor: number) | number | Modulo operation |
+| RANDOM | (min: number, max: number, decimal: number) | number | Generate random number in specified range and decimal places |
+| CHINESEUPPER | (number: number) | string | Convert number to Chinese uppercase amount |
+| ENGLISHUPPER | (number: number) | string | Convert number to English uppercase amount |
+| TOSTRING | (value: any) | string \| null | Convert to string, return null on failure |
+| TONUMBER | (value: any) | number \| null | Convert to number, return null on failure |
 
-#### 文本处理函数
-| 函数名 | 参数 | 返回值 | 功能描述 |
+#### Text Processing Functions
+| Function Name | Parameters | Return Value | Function Description |
 |--------|------|--------|----------|
-| CONCAT | (...texts: any[]) | string | 连接多个值为文本 |
-| LEN | (text: string) | number | 获取文本长度 |
-| LEFT | (text: string, length: number) | string | 从左侧截取指定长度文本 |
-| RIGHT | (text: string, length: number) | string | 从右侧截取指定长度文本 |
-| MID | (text: string, start: number, length: number) | string | 从指定位置截取指定长度文本 |
-| TRIM | (text: string) | string | 去除首尾空格 |
-| REPLACE | (text: string, oldText: string, newText: string) | string | 全局替换文本 |
-| INSERT | (sourceText: string, start: number, length: number, replaceText: string) | string | 在指定位置替换文本 |
-| LOCATE | (searchText: string, sourceText: string) | boolean | 判断是否包含指定文本 |
-| IDCARDSEX | (idCard: string) | string | 根据身份证号获取性别（'男'/'女'/''） |
-| IDCARDBIRTHDAY | (idCard: string) | string | 根据身份证号获取生日（YYYY-MM-DD格式） |
+| CONCAT | (...texts: any[]) | string | Concatenate multiple values to text |
+| LEN | (text: string) | number | Get text length |
+| LEFT | (text: string, length: number) | string | Extract specified length text from left |
+| RIGHT | (text: string, length: number) | string | Extract specified length text from right |
+| MID | (text: string, start: number, length: number) | string | Extract specified length text from specified position |
+| TRIM | (text: string) | string | Remove leading and trailing spaces |
+| REPLACE | (text: string, oldText: string, newText: string) | string | Global text replacement |
+| INSERT | (sourceText: string, start: number, length: number, replaceText: string) | string | Replace text at specified position |
+| LOCATE | (searchText: string, sourceText: string) | boolean | Check if contains specified text |
+| IDCARDSEX | (idCard: string) | string | Get gender from ID card number ('男'/'女'/''') |
+| IDCARDBIRTHDAY | (idCard: string) | string | Get birthday from ID card number (YYYY-MM-DD format) |
 
-#### 日期时间函数
-| 函数名 | 参数 | 返回值 | 功能描述 |
+#### Date and Time Functions
+| Function Name | Parameters | Return Value | Function Description |
 |--------|------|--------|----------|
-| NOW | () | string | 获取当前时间（YYYY-MM-DD HH:mm:ss格式） |
-| TODAY | () | string | 获取今天日期（YYYY-MM-DD格式） |
-| DATEADD | (date: string, number: number, unit?: string) | string \| null | 日期加减运算，unit可选：'Y'/'y'（年）、'M'/'m'（月）、'D'/'d'（日）、'H'/'h'（时）、'I'/'i'（分）、'S'/'s'（秒），默认为天 |
-| DATEDELTA | (date1: string, date2: string, unit?: string) | number \| null | 计算日期差值，unit同DATEADD，返回date1-date2的差值 |
-| EXTRACT | (date: string, unit?: string) | number \| null | 提取日期部分，unit可选：'Y'/'y'（年）、'M'/'m'（月）、'D'/'d'（日）、'H'/'h'（时）、'I'/'i'（分）、'S'/'s'（秒）、'Q'/'q'（季度），默认返回年 |
-| TIMESTAMPFORMAT | (timestamp: number) | string | 时间戳转日期时间字符串 |
-| DATESTR | (date: string) | string | 日期转YYYYMMDD格式字符串 |
-| DATE | (year: number, month: number, day: number) | string | 构造日期字符串（YYYY-MM-DD格式） |
-| MONTHDAYS | (date: string) | number \| null | 获取指定日期所在月份的天数 |
-| DAYOFYEAR | (date: string) | number \| null | 获取指定日期是当年第几天 |
-| WEEKOFYEAR | (date: string) | number | 获取指定日期是当年第几周 |
-| WEEKDAYNUM | (date: string) | number \| null | 获取星期数字（1-7，周一到周日） |
-| WEEKDAYSTR | (date: string) | string | 获取星期文本（星期一到星期日） |
-| MONTHSTART | (date: string) | string \| null | 获取指定日期所在月份的第一天 |
-| MONTHEND | (date: string) | string \| null | 获取指定日期所在月份的最后一天 |
-| NETWORKDAYS | (startDate: string, endDate: string) | number \| null | 计算两个日期间的工作日天数（排除周末和节假日） |
-| WORKDAY | (date: string, days: number, holidays?: any[]) | string | 从指定日期开始计算指定工作日后的日期 |
+| NOW | () | string | Get current time (YYYY-MM-DD HH:mm:ss format) |
+| TODAY | () | string | Get today's date (YYYY-MM-DD format) |
+| DATEADD | (date: string, number: number, unit?: string) | string \| null | Date addition/subtraction, unit optional: 'Y'/'y' (year), 'M'/'m' (month), 'D'/'d' (day), 'H'/'h' (hour), 'I'/'i' (minute), 'S'/'s' (second), default is day |
+| DATEDELTA | (date1: string, date2: string, unit?: string) | number \| null | Calculate date difference, unit same as DATEADD, returns date1-date2 difference |
+| EXTRACT | (date: string, unit?: string) | number \| null | Extract date part, unit optional: 'Y'/'y' (year), 'M'/'m' (month), 'D'/'d' (day), 'H'/'h' (hour), 'I'/'i' (minute), 'S'/'s' (second), 'Q'/'q' (quarter), default returns year |
+| TIMESTAMPFORMAT | (timestamp: number) | string | Convert timestamp to date time string |
+| DATESTR | (date: string) | string | Convert date to YYYYMMDD format string |
+| DATE | (year: number, month: number, day: number) | string | Construct date string (YYYY-MM-DD format) |
+| MONTHDAYS | (date: string) | number \| null | Get number of days in month for specified date |
+| DAYOFYEAR | (date: string) | number \| null | Get day of year for specified date |
+| WEEKOFYEAR | (date: string) | number | Get week of year for specified date |
+| WEEKDAYNUM | (date: string) | number \| null | Get weekday number (1-7, Monday to Sunday) |
+| WEEKDAYSTR | (date: string) | string | Get weekday text (Monday to Sunday) |
+| MONTHSTART | (date: string) | string \| null | Get first day of month for specified date |
+| MONTHEND | (date: string) | string \| null | Get last day of month for specified date |
+| NETWORKDAYS | (startDate: string, endDate: string) | number \| null | Calculate working days between two dates (excluding weekends and holidays) |
+| WORKDAY | (date: string, days: number, holidays?: any[]) | string | Calculate date after specified working days from specified date |
 
-#### 逻辑判断函数
-| 函数名 | 参数 | 返回值 | 功能描述 |
+#### Logical Judgment Functions
+| Function Name | Parameters | Return Value | Function Description |
 |--------|------|--------|----------|
-| IF | (condition: any, trueValue: any, falseValue: any) | any | 条件判断，condition为真返回trueValue，否则返回falseValue |
-| IFS | (...args: any[]) | any | 多条件判断，按条件值对依次判断，返回第一个满足条件的值，最后一个参数作为默认值 |
-| AND | (...conditions: any[]) | boolean | 逻辑与运算，所有条件都为真才返回true |
-| OR | (...conditions: any[]) | boolean | 逻辑或运算，任一条件为真就返回true |
-| ISEMPTY | (value: any) | boolean | 判断值是否为空（null、undefined、空字符串、空数组、空对象） |
-| ISNOTEMPTY | (value: any) | boolean | 判断值是否非空 |
-| EMPTY | () | null | 返回空值null |
-| EMPTYSTR | () | string | 返回空字符串"" |
-| DEFAULTVALUE | (value: T, defaultValue: T) | T | 如果value为空则返回defaultValue，否则返回value |
+| IF | (condition: any, trueValue: any, falseValue: any) | any | Conditional judgment, return trueValue if condition is true, otherwise return falseValue |
+| IFS | (...args: any[]) | any | Multiple conditional judgment, judge in order of condition-value pairs, return first satisfied value, last parameter as default value |
+| AND | (...conditions: any[]) | boolean | Logical AND operation, return true only if all conditions are true |
+| OR | (...conditions: any[]) | boolean | Logical OR operation, return true if any condition is true |
+| ISEMPTY | (value: any) | boolean | Check if value is empty (null, undefined, empty string, empty array, empty object) |
+| ISNOTEMPTY | (value: any) | boolean | Check if value is not empty |
+| EMPTY | () | null | Return empty value null |
+| EMPTYSTR | () | string | Return empty string "" |
+| DEFAULTVALUE | (value: T, defaultValue: T) | T | Return defaultValue if value is empty, otherwise return value |
 
-#### 常用示例
-```tsx title="计算函数常用示例"
+#### Common Examples
+```tsx title="Common Examples of Calculation Functions"
 const CALC = await app.getElement('globals.Calc');
 
-// 数学计算
+// Mathematical calculations
 const total = CALC.SUM(10, 20, 30);                    // 60
 const avg = CALC.AVG(1, 2, 3, 4, 5);                   // 3
 const rounded = CALC.ROUND(3.14159, 2);                // 3.14
-const random = CALC.RANDOM(1, 100, 0);                 // 1-100随机整数
+const random = CALC.RANDOM(1, 100, 0);                 // Random integer 1-100
 
-// 文本处理
+// Text processing
 const fullName = CALC.CONCAT("张", "三");               // "张三"
 const length = CALC.LEN("Hello World");                // 11
 const left3 = CALC.LEFT("Hello", 3);                   // "Hel"
 const gender = CALC.IDCARDSEX("110101199001011234");    // "男"
 
-// 日期时间
+// Date and time
 const now = CALC.NOW();                                 // "2024-01-15 14:30:25"
 const today = CALC.TODAY();                             // "2024-01-15"
 const nextWeek = CALC.DATEADD(today, 7, "D");          // "2024-01-22"
 const year = CALC.EXTRACT(today, "Y");                 // 2024
 
-// 逻辑判断
+// Logical judgment
 const result = CALC.IF(total > 50, "及格", "不及格");    // "及格"
 const isEmpty = CALC.ISEMPTY("");                       // true
 const defaultName = CALC.DEFAULTVALUE(null, "匿名");    // "匿名"
 ```
 
-## 变量管理
+## Variable Management
 ### globals.AppVar
-应用变量配置组件，提供前端应用级别的变量配置框架。
+Application variable configuration component providing frontend application-level variable configuration framework.
 
-#### 基本用法
-```tsx title="应用变量基本使用"
+#### Basic Usage
+```tsx title="Basic Usage of Application Variables"
 import { app } from 'jit';
 
-// 获取应用变量配置
+// Get application variable configuration
 const appVar = await app.getElement('globals.AppVar');
 
-// 应用变量配置是一个JSON对象
-console.log(appVar); // 输出变量配置
+// Application variable configuration is a JSON object
+console.log(appVar); // Output variable configuration
 ```
 
-#### 组件特性
-| 特性 | 说明 |
+#### Component Features
+| Feature | Description |
 |------|------|
-| 配置格式 | JSON对象格式的变量配置 |
-| 作用域 | 前端应用级别 |
-| 用途 | 提供变量定义框架和配置基础 |
+| Configuration Format | JSON object format variable configuration |
+| Scope | Frontend application level |
+| Purpose | Provide variable definition framework and configuration foundation |
 
 ### globals.GlobalVar
-全局变量组件，提供预定义的时间相关变量和用户信息。
+Global variable component providing predefined time-related variables and user information.
 
-#### 基本用法
-```tsx title="全局变量基本使用"
+#### Basic Usage
+```tsx title="Basic Usage of Global Variables"
 import { app } from 'jit';
 
 const globalVar = await app.getElement('globals.GlobalVar');
 
-// 使用时间变量
+// Use time variables
 const now = globalVar.currentTime;
 const today = globalVar.today;
 const currentUser = globalVar.currentUser;
 ```
 
-#### 时间相关变量
-| 变量名 | 类型 | 功能描述 |
+#### Time-Related Variables
+| Variable Name | Type | Function Description |
 |--------|------|----------|
-| currentTime | Datetime | 当前时间 |
-| today | DateRange | 今天时间范围 |
-| yesterday | DateRange | 昨天时间范围 |
-| tomorrow | DateRange | 明天时间范围 |
-| thisWeek | DateRange | 本周时间范围 |
-| lastWeek | DateRange | 上周时间范围 |
-| nextWeek | DateRange | 下周时间范围 |
-| thisMonth | DateRange | 本月时间范围 |
-| lastMonth | DateRange | 上月时间范围 |
-| nextMonth | DateRange | 下月时间范围 |
-| thisQuarter | DateRange | 本季度时间范围 |
-| lastQuarter | DateRange | 上季度时间范围 |
-| nextQuarter | DateRange | 下季度时间范围 |
-| thisYear | DateRange | 今年时间范围 |
-| lastYear | DateRange | 去年时间范围 |
-| nextYear | DateRange | 明年时间范围 |
+| currentTime | Datetime | Current time |
+| today | DateRange | Today time range |
+| yesterday | DateRange | Yesterday time range |
+| tomorrow | DateRange | Tomorrow time range |
+| thisWeek | DateRange | This week time range |
+| lastWeek | DateRange | Last week time range |
+| nextWeek | DateRange | Next week time range |
+| thisMonth | DateRange | This month time range |
+| lastMonth | DateRange | Last month time range |
+| nextMonth | DateRange | Next month time range |
+| thisQuarter | DateRange | This quarter time range |
+| lastQuarter | DateRange | Last quarter time range |
+| nextQuarter | DateRange | Next quarter time range |
+| thisYear | DateRange | This year time range |
+| lastYear | DateRange | Last year time range |
+| nextYear | DateRange | Next year time range |
 
-#### 动态天数范围变量
-| 变量名 | 类型 | 功能描述 |
+#### Dynamic Day Range Variables
+| Variable Name | Type | Function Description |
 |--------|------|----------|
-| last24Hours | DateRange | 近24小时 |
-| last2Days | DateRange | 近2天 |
-| last3Days | DateRange | 近3天 |
-| last7Days | DateRange | 近7天 |
-| last15Days | DateRange | 近15天 |
-| last30Days | DateRange | 近30天 |
-| last60Days | DateRange | 近60天 |
-| last90Days | DateRange | 近90天 |
+| last24Hours | DateRange | Last 24 hours |
+| last2Days | DateRange | Last 2 days |
+| last3Days | DateRange | Last 3 days |
+| last7Days | DateRange | Last 7 days |
+| last15Days | DateRange | Last 15 days |
+| last30Days | DateRange | Last 30 days |
+| last60Days | DateRange | Last 60 days |
+| last90Days | DateRange | Last 90 days |
 
-#### 用户相关变量
-| 变量名 | 类型 | 功能描述 |
+#### User-Related Variables
+| Variable Name | Type | Function Description |
 |--------|------|----------|
-| currentUser | Member | 当前登录用户信息 |
+| currentUser | Member | Current logged-in user information |
 
-## 数据处理
+## Data Processing
 ### modules.DataHandler
-数据处理模块，提供数据转换、过滤器转换等功能。
+Data processing module providing data conversion, filter conversion, and other functions.
 
-#### 基本用法
-```tsx title="数据处理基本使用"
+#### Basic Usage
+```tsx title="Basic Usage of Data Processing"
 import { app } from 'jit';
 
 const { convertRowData, convertRowList, convertFilter, tableSet } = await app.getElement('modules.DataHandler');
 
-// 使用数据转换
+// Use data conversion
 const rowData = convertRowData(mappingDict, sourceVal, targetModelName, sourceModelName);
 const filter = convertFilter(mappingDict, sourceVal);
 const table = tableSet(tqlConfig);
 ```
 
-#### 可用方法
-| 方法名 | 参数 | 返回值 | 功能描述 |
+#### Available Methods
+| Method Name | Parameters | Return Value | Function Description |
 |--------|------|--------|----------|
-| convertRowData | (mappingDict: Record&lt;string, any&gt;, sourceVal: any, targetModelName: string, sourceModelName: string) | Record&lt;string, any&gt; \| undefined | 转换单行数据格式 |
-| convertRowList | (mappingDict: Record&lt;string, any&gt;, sourceVal: any, targetModelName: string, sourceModelName: string) | Record&lt;string, any&gt;[] \| undefined | 转换多行数据格式 |
-| convertFilter | (mappingDict: Record&lt;string, any&gt;, sourceVal?: string) | string \| null | 转换筛选条件 |
-| tableSet | (tqlConfig: ITqlInitConfig) | TableSet | 创建表数据集对象 |
+| convertRowData | (mappingDict: Record&lt;string, any&gt;, sourceVal: any, targetModelName: string, sourceModelName: string) | Record&lt;string, any&gt; \| undefined | Convert single row data format |
+| convertRowList | (mappingDict: Record&lt;string, any&gt;, sourceVal: any, targetModelName: string, sourceModelName: string) | Record&lt;string, any&gt;[] \| undefined | Convert multiple row data format |
+| convertFilter | (mappingDict: Record&lt;string, any&gt;, sourceVal?: string) | string \| null | Convert filter conditions |
+| tableSet | (tqlConfig: ITqlInitConfig) | TableSet | Create table dataset object |
 
-## 用户界面反馈
+## User Interface Feedback
 ### modules.FeedBack
-反馈组件模块，提供消息提示、确认对话框、加载状态等UI反馈。
+Feedback component module providing message prompts, confirmation dialogs, loading states, and other UI feedback.
 
-#### 基本用法
-```tsx title="反馈组件基本使用"
+#### Basic Usage
+```tsx title="Basic Usage of Feedback Components"
 import { app } from 'jit';
 
 const { globalMessage, globalConfirm, openLoading, closeLoading } = await app.getElement('modules.FeedBack');
 
-// 使用反馈功能
-globalMessage('success', '操作成功！');
-const confirmed = await globalConfirm('确定删除吗？');
-const loadingId = openLoading('处理中...');
+// Use feedback functions
+globalMessage('success', 'Operation successful!');
+const confirmed = await globalConfirm('Are you sure to delete?');
+const loadingId = openLoading('Processing...');
 ```
 
-#### 消息提示方法
-| 方法名 | 参数 | 返回值 | 功能描述 |
+#### Message Prompt Methods
+| Method Name | Parameters | Return Value | Function Description |
 |--------|------|--------|----------|
-| globalMessage | (type: string, content: string \| object) | void | 显示消息提示，type可选：'success'、'error'、'warn'、'info' |
+| globalMessage | (type: string, content: string \| object) | void | Show message prompt, type optional: 'success', 'error', 'warn', 'info' |
 
-#### 对话框方法
-| 方法名 | 参数 | 返回值 | 功能描述 |
+#### Dialog Methods
+| Method Name | Parameters | Return Value | Function Description |
 |--------|------|--------|----------|
-| globalConfirm | (content: string \| Record&lt;string, any&gt;) | Promise&lt;string&gt; | 显示确认对话框，返回Promise&lt;'true'&#124;'false'&gt; |
+| globalConfirm | (content: string \| Record&lt;string, any&gt;) | Promise&lt;string&gt; | Show confirmation dialog, return Promise&lt;'true'&#124;'false'&gt; |
 
-#### 加载状态方法
-| 方法名 | 参数 | 返回值 | 功能描述 |
+#### Loading State Methods
+| Method Name | Parameters | Return Value | Function Description |
 |--------|------|--------|----------|
-| openLoading | (text?: string) | string | 显示加载状态，返回唯一的loadingId |
-| closeLoading | (loadingId: string) | void | 关闭指定ID的加载状态 |
+| openLoading | (text?: string) | string | Show loading state, return unique loadingId |
+| closeLoading | (loadingId: string) | void | Close specified ID loading state |
 
-## 文件与工具
+## Files and Tools
 ### modules.Util
-工具模块，提供文件处理、导出、打印等常用功能。
+Utility module providing file processing, export, printing, and other common functions.
 
-#### 基本用法
-```tsx title="工具模块基本使用"
+#### Basic Usage
+```tsx title="Basic Usage of Utility Module"
 import { app } from 'jit';
 
 const { exportExcel, uploadFile, printQrCode, generateJitList } = await app.getElement('modules.Util');
 
-// 使用工具功能
+// Use utility functions
 await exportExcel(exportConfig);
 await uploadFile(file);
 await printQrCode(qrConfig);
 
-// 生成数字列表
-const numberList = await generateJitList(5); // 生成 [1,2,3,4,5] 的JitList
+// Generate number list
+const numberList = await generateJitList(5); // Generate JitList of [1,2,3,4,5]
 ```
 
-#### 文件处理方法
-| 方法名 | 参数 | 返回值 | 功能描述 |
+#### File Processing Methods
+| Method Name | Parameters | Return Value | Function Description |
 |--------|------|--------|----------|
-| uploadFile | (file: Record&lt;string, any&gt;, ...args: any[]) | Promise&lt;any&gt; | 文件上传到默认存储 |
-| generateFile | () | File | 生成文件数据类型实例 |
-| fileTmpls.download | (templateId: string) | Promise&lt;any&gt; | 下载文件模板 |
+| uploadFile | (file: Record&lt;string, any&gt;, ...args: any[]) | Promise&lt;any&gt; | Upload file to default storage |
+| generateFile | () | File | Generate file data type instance |
+| fileTmpls.download | (templateId: string) | Promise&lt;any&gt; | Download file template |
 
-#### 数据生成方法
-| 方法名 | 参数 | 返回值 | 功能描述 |
+#### Data Generation Methods
+| Method Name | Parameters | Return Value | Function Description |
 |--------|------|--------|----------|
-| generateJitList | (len: number) | Promise&lt;JitList&gt; | 根据传入的长度生成连续的数字数组列表，返回从1到len的JitList类型数据 |
+| generateJitList | (len: number) | Promise&lt;JitList&gt; | Generate consecutive number array list based on input length, return JitList type data from 1 to len |
 
-#### 导出功能方法
-| 方法名 | 参数 | 返回值 | 功能描述 |
+#### Export Function Methods
+| Method Name | Parameters | Return Value | Function Description |
 |--------|------|--------|----------|
-| exportExcel | (exportExcelConfig: ExportConfig) | Promise&lt;void&gt; | 导出Excel文件 |
-| exportExcelType | (data: any, type: string) | void | 按指定类型导出Excel |
+| exportExcel | (exportExcelConfig: ExportConfig) | Promise&lt;void&gt; | Export Excel file |
+| exportExcelType | (data: any, type: string) | void | Export Excel by specified type |
 
-#### 打印功能方法
-| 方法名 | 参数 | 返回值 | 功能描述 |
+#### Print Function Methods
+| Method Name | Parameters | Return Value | Function Description |
 |--------|------|--------|----------|
-| printQrCode | (data: QrCodeConfig) | Promise&lt;void&gt; | 打印二维码 |
-| printAttachmentsInBulk | (tmplName: Record&lt;string, any&gt;) | Promise&lt;void&gt; | 批量打印附件 |
+| printQrCode | (data: QrCodeConfig) | Promise&lt;void&gt; | Print QR code |
+| printAttachmentsInBulk | (tmplName: Record&lt;string, any&gt;) | Promise&lt;void&gt; | Bulk print attachments |
 
-#### 页面操作方法
-| 方法名 | 参数 | 返回值 | 功能描述 |
+#### Page Operation Methods
+| Method Name | Parameters | Return Value | Function Description |
 |--------|------|--------|----------|
-| openPage | (data: OpenPageConfig) | void | 打开新页面 |
-| log | (type: 'log' \| 'warn' \| 'error', content: string) | void | 控制台日志记录 |
+| openPage | (data: OpenPageConfig) | void | Open new page |
+| log | (type: 'log' \| 'warn' \| 'error', content: string) | void | Console log recording |
 
-## 消息通信
+## Message Communication
 ### modules.MessageHandler
-消息处理模块，提供短信发送和消息通知功能。
+Message processing module providing SMS sending and message notification functions.
 
-#### 基本用法
-```tsx title="消息处理基本使用"
+#### Basic Usage
+```tsx title="Basic Usage of Message Processing"
 import { app } from 'jit';
 
 const { sendMsg, sendSms } = await app.getElement('modules.MessageHandler');
 
-// 使用消息功能
+// Use message functions
 await sendSms(smsFullName, smsConfig, receiver, params);
 await sendMsg(receiver, msgData);
 ```
 
-#### 可用方法
-| 方法名 | 参数 | 返回值 | 功能描述 |
+#### Available Methods
+| Method Name | Parameters | Return Value | Function Description |
 |--------|------|--------|----------|
-| sendSms | (smsFullName: string, smsConfig: Record&lt;string, any&gt;, receiver: \{receiverDict: ReceiverDict\}, params: Record&lt;string, any&gt;) | Promise&lt;void&gt; | 发送短信通知 |
-| sendMsg | (receiver: \{receiverDict: ReceiverDict\}, msgData: \{msg: MsgData\}) | Promise&lt;void&gt; | 发送消息通知 |
+| sendSms | (smsFullName: string, smsConfig: Record&lt;string, any&gt;, receiver: \{receiverDict: ReceiverDict\}, params: Record&lt;string, any&gt;) | Promise&lt;void&gt; | Send SMS notification |
+| sendMsg | (receiver: \{receiverDict: ReceiverDict\}, msgData: \{msg: MsgData\}) | Promise&lt;void&gt; | Send message notification |
 
-## 审批处理
+## Approval Processing
 ### modules.ApproveHandle
-审批处理模块，提供审批任务相关功能。
+Approval processing module providing approval task related functions.
 
-#### 基本用法
-```tsx title="审批处理基本使用"
+#### Basic Usage
+```tsx title="Basic Usage of Approval Processing"
 import { app } from 'jit';
 
 const { applyTask } = await app.getElement('modules.ApproveHandle');
 
-// 使用审批功能
+// Use approval functions
 await applyTask(approveDict, workflowName, rowDataDict, modelName);
 ```
 
-#### 可用方法
-| 方法名 | 参数 | 返回值 | 功能描述 |
+#### Available Methods
+| Method Name | Parameters | Return Value | Function Description |
 |--------|------|--------|----------|
-| applyTask | (approveDict: Record&lt;string, any&gt;, workflowName: string, rowDataDict: Record&lt;string, any&gt;, modelName: string) | Promise&lt;void&gt; | 发起审批流程 |
+| applyTask | (approveDict: Record&lt;string, any&gt;, workflowName: string, rowDataDict: Record&lt;string, any&gt;, modelName: string) | Promise&lt;void&gt; | Initiate approval process |
 
-## 外部集成
+## External Integration
 ### modules.ExternalApiHandle
-外部API调用模块，提供统一的外部API访问接口。
+External API call module providing unified external API access interface.
 
-#### 基本用法
-```tsx title="外部API基本使用"
+#### Basic Usage
+```tsx title="Basic Usage of External API"
 import { app } from 'jit';
 
 const { callExternalApi } = await app.getElement('modules.ExternalApiHandle');
 
-// 使用外部API
+// Use external API
 await callExternalApi(fullName, apiName, headers, params, body);
 ```
 
-#### 可用方法
-| 方法名 | 参数 | 返回值 | 功能描述 |
+#### Available Methods
+| Method Name | Parameters | Return Value | Function Description |
 |--------|------|--------|----------|
-| callExternalApi | (fullName: string, apiName: string, headers: Record&lt;string, any&gt;, params: Record&lt;string, any&gt;, body: Record&lt;string, any&gt;) | Promise&lt;void&gt; | 调用外部API接口 |
+| callExternalApi | (fullName: string, apiName: string, headers: Record&lt;string, any&gt;, params: Record&lt;string, any&gt;, body: Record&lt;string, any&gt;) | Promise&lt;void&gt; | Call external API interface |
 
-## 公共工具
+## Public Tools
 ### modules.common
-公共工具模块，提供通用的工具函数和组件。
+Public utility module providing common utility functions and components.
 
-#### 基本用法
-```tsx title="公共工具基本使用"
+#### Basic Usage
+```tsx title="Basic Usage of Public Tools"
 import { app } from 'jit';
 
 const { downloadFile, FilePreviewer } = await app.getElement('modules.common');
 
-// 使用公共工具
+// Use public tools
 downloadFile(url);
 FilePreviewer({ file: { url: 'fileUrl', type: 'application/pdf' } });
 ```
 
-#### 工具函数
-| 函数名 | 参数 | 返回值 | 功能描述 |
+#### Utility Functions
+| Function Name | Parameters | Return Value | Function Description |
 |--------|------|--------|----------|
-| downloadFile | (url: string) | void | 下载指定URL的文件 |
+| downloadFile | (url: string) | void | Download file from specified URL |
 
-#### 可用组件
-| 组件名 | 参数 | 返回值 | 功能描述 |
+#### Available Components
+| Component Name | Parameters | Return Value | Function Description |
 |--------|------|--------|----------|
-| FilePreviewer | (\{file: PreviewFile, fileList?: PreviewFile[], mode?: PLATFORM\}) | void | 文件预览功能（直接调用，不返回组件） |
+| FilePreviewer | (\{file: PreviewFile, fileList?: PreviewFile[], mode?: PLATFORM\}) | void | File preview function (direct call, no component return) |
 
-## 异常处理
+## Exception Handling
 ### modules.ExceptionHandler
-异常处理模块，提供统一的错误提示和控制台输出功能。
+Exception handling module providing unified error prompts and console output functions.
 
-#### 基本用法
-```tsx title="异常处理基本使用"
+#### Basic Usage
+```tsx title="Basic Usage of Exception Handling"
 import { app } from 'jit';
 
 const { promptError, promptWarn, promptInfo, consoleError } = await app.getElement('modules.ExceptionHandler');
 
-// 使用异常处理
-promptError('操作失败');
-promptWarn('警告信息');
-consoleError('错误信息');
+// Use exception handling
+promptError('Operation failed');
+promptWarn('Warning information');
+consoleError('Error information');
 ```
 
-#### 可用方法
-| 方法名 | 参数 | 返回值 | 功能描述 |
+#### Available Methods
+| Method Name | Parameters | Return Value | Function Description |
 |--------|------|--------|----------|
-| promptError | (message: string) | void | 显示错误提示 |
-| promptWarn | (message: string) | void | 显示警告提示 |
-| promptInfo | (message: string) | void | 显示信息提示 |
-| consoleError | (message: string, responseData?: Record&lt;string, any&gt;) | void | 控制台错误输出 |
+| promptError | (message: string) | void | Show error prompt |
+| promptWarn | (message: string) | void | Show warning prompt |
+| promptInfo | (message: string) | void | Show information prompt |
+| consoleError | (message: string, responseData?: Record&lt;string, any&gt;) | void | Console error output |
 
-## 多线程支持
+## Multi-threading Support
 ### workers.WebWorker
-Web Worker支持模块，提供多线程计算能力的基础封装。
+Web Worker support module providing basic encapsulation for multi-threaded computing capabilities.
 
-#### 基本用法
-```tsx title="WebWorker基本使用"
+#### Basic Usage
+```tsx title="Basic Usage of WebWorker"
 import { app } from 'jit';
 
-// 获取WebWorker配置
+// Get WebWorker configuration
 const webWorkerConfig = await app.getElement('workers.WebWorker');
 
-// 使用原生Web Worker API
+// Use native Web Worker API
 const worker = new Worker('/workers/calculation.js');
 worker.postMessage(data);
 worker.terminate();
 ```
 
-#### 原生API使用
-| API | 参数 | 返回值 | 功能描述 |
+#### Native API Usage
+| API | Parameters | Return Value | Function Description |
 |-----|------|--------|----------|
-| new Worker(scriptURL) | (scriptURL: string) | Worker | 创建Web Worker实例 |
-| worker.postMessage(data) | (data: any) | void | 向Worker发送消息 |
-| worker.onmessage | = (event: MessageEvent) =&gt; void | - | 监听Worker返回消息的事件处理器 |
-| worker.onerror | = (event: ErrorEvent) =&gt; void | - | 监听Worker错误的事件处理器 |
-| worker.terminate() | () | void | 终止Worker执行 |
-
+| new Worker(scriptURL) | (scriptURL: string) | Worker | Create Web Worker instance |
+| worker.postMessage(data) | (data: any) | void | Send message to Worker |
+| worker.onmessage | = (event: MessageEvent) =&gt; void | - | Event handler for listening to Worker return messages |
+| worker.onerror | = (event: ErrorEvent) =&gt; void | - | Event handler for listening to Worker errors |
+| worker.terminate() | () | void | Terminate Worker execution |

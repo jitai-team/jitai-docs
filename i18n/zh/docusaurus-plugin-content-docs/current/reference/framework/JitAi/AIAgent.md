@@ -271,7 +271,7 @@ AIAgent根据e.json中的`outputArgs`配置自动生成JSONSchema，指导大语
 ### 工具编排配置
 **重要原则：任何在e.json中声明了functionList的实例元素都可以作为AIAgent的工具被调用。**
 
-这意味着您可以将以下类型的实例元素配置为AIAgent的工具：
+这意味着你可以将以下类型的实例元素配置为AIAgent的工具：
 - **模型实例元素（models）**：具有内置数据操作函数（如query、save等）
 - **服务实例元素（services）**：自定义业务逻辑函数
 - **页面实例元素（pages）**：前端交互功能
@@ -520,7 +520,7 @@ result3 = agent.run(
 }
 ```
 
-## 流式回调处理 {#streaming-callback-processing}
+### 流式回调处理 {#streaming-callback-processing}
 
 ```python title="事件监听示例"
 def event_callback(data):
@@ -587,7 +587,8 @@ agent.run(
 }
 ```
 
-### 自定义回调处理器 
+### 自定义回调处理器 {#custom-callback-handlers}
+
 JitAi的ReActAgent基于LangGraph构建，回调处理器用于监听和处理Agent推理、工具调用等各类关键流程事件，兼容[langchain_core.callbacks.BaseCallbackHandler](https://python.langchain.com/api_reference/core/callbacks/langchain_core.callbacks.base.BaseCallbackHandler.html#langchain_core.callbacks.base.BaseCallbackHandler)中定义的全部回调方法以及pre_model_hook和post_model_hook函数（参考[LangChain官方文档](https://langchain-ai.github.io/langgraph/reference/agents/?h=create_react#langgraph.prebuilt.chat_agent_executor.create_react_agent)中pre_model_hook和post_model_hook的定义）。
 
 通过自定义回调处理器，开发者可以灵活介入模型推理前后、工具调用前后等环节，实现日志记录、参数校验、上下文增强等高级功能。
@@ -617,8 +618,6 @@ class CustomCallback(CustomAgentCallbackHandler):
         # 工具调用结束时的处理
         print(f"工具调用结果: {output[:100]}...")
 ```
-
-## 自定义回调处理器 {#custom-callback-handlers}
 
 ```json title="配置和使用自定义回调"
 {

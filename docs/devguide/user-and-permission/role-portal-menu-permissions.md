@@ -4,93 +4,109 @@ slug: role-portal-menu-permissions
 ---
 
 # Role and Portal Menu Permissions {#role-portal-menu-permissions}
-RBAC（基于角色的访问控制）是一种常用的权限管理机制，通过为用户分配角色，并为角色授予相应的权限，实现对系统资源的访问控制。
 
-根据业务流程设计配套的角色权限体系是企业级应用设计的重要一环。JitAi提供多层级立体化地操作权限以及数据权限管控方案。对于`应用角色+门户+页面+组件+数据模型+模型函数`排列组合中的任意一种组合，都可以进行有区分的权限配置，最大限度地保障应用使用期间的数据安全，防止越权访问。
+RBAC (Role-Based Access Control) is a widely adopted permission management mechanism that controls access to system resources by assigning roles to users and granting appropriate permissions to those roles.
 
-## 内置的3种应用角色 {#built-in-three-application-roles}
-对于每一个新创建的应用，都会自动创建匿名用户、开发者、管理员三种基本的应用角色。
+Designing a comprehensive role-based permission system aligned with business processes is a critical aspect of enterprise application design. JitAi provides multi-layered, granular operational and data permission control solutions. For any combination of `application role + portal + page + component + data model + model function`, you can implement fine-grained permission configurations to ensure maximum data security during application usage and prevent unauthorized access.
 
-:::tip 组织角色与应用角色的区分
-组织角色与用户在企业组织架构中的岗位相对应，而`应用角色`则代表用户在应用系统中的权限。组织角色与应用角色类似但并无严格对应关系。一个普通员工也可以被赋予应用管理员的角色，管理一个应用系统中的部分功能板块。
+## Built-in application roles {#built-in-three-application-roles}
+
+For each newly created application, three basic application roles are automatically created: anonymous user, developer, and administrator.
+
+:::tip Distinguishing organizational roles from application roles
+Organizational roles correspond to positions within the enterprise organizational structure, while `application roles` represent user permissions within the application system. Organizational roles and application roles are conceptually similar but do not have a strict one-to-one correspondence. For instance, an ordinary employee can be assigned an application administrator role to manage specific functional modules within an application.
 :::
 
-### 匿名用户 {#anonymous-user}
-匿名用户即未注册用户，通常应用会为匿名用户配置一些可公开访问页面以及数据。JitAi默认没有授予匿名用户任何门户权限，需要开发者进行配置。
+### Anonymous user {#anonymous-user}
 
-### 开发者 {#developer}
-应用的创建者默认被授予开发者角色，拥有[开发者门户](../shell-and-page/portal-navigation-design#developer-portal)的完整权限，可以进行应用开发工作（包括角色创建以及对角色权限的配置）。
+Anonymous users are unregistered users who have not logged into the system. Applications typically configure publicly accessible pages and data for anonymous users. By default, JitAi does not grant anonymous users any portal permissions, which developers must explicitly configure.
 
-### 管理员 {#administrator}
-应用的创建者默认被授予管理员角色，拥有应用的完全控制权限，可以对应用进行任意的修改和配置。管理员日常使用功能主要集中在[管理者门户](../shell-and-page/portal-navigation-design#admin-portal)。
+### Developer {#developer}
+
+The application creator is automatically assigned the developer role with full access to the [Developer Portal](../shell-and-page/portal-navigation-design#developer-portal), enabling comprehensive application development tasks including role creation and permission configuration.
+
+### Administrator {#administrator}
+
+The application creator is automatically assigned the administrator role with complete administrative control over the application, enabling comprehensive modifications and configurations. Administrative functions are primarily managed through the [Manager Portal](../shell-and-page/portal-navigation-design#manager-portal).
 
 :::tip
-**只能**由开发者在开发者门户进行应用角色的创建以及授予门户菜单权限。
+**Only** developers can create application roles and grant portal menu permissions in the Developer Portal.
 
-关于日常对应用角色成员的管理，建议由管理员在管理者门户中操作。另外，管理员可以查看但无法修改应用角色的数据权限以及功能权限配置。
+For daily management of application role members, administrators should operate in the Manager Portal. Note that administrators can view but cannot modify data permissions and functional permission configurations for application roles.
 :::
 
-## 创建应用角色 {#create-application-role}
-可以根据不同岗位（如销售、财务、客服等）或业务流程的需要，定义不同的应用角色。
+## Creating application roles {#create-application-role}
 
-![新建常规角色](./img/role/create-regular-role.png)
+You can define different application roles based on organizational positions (such as sales, finance, customer service, etc.) or specific business process requirements.
 
-开发者在元素目录树中找到`角色`，点击右侧的`+`按钮，选择`常规角色`，在表单弹窗中填写角色名称，点击`确定`按钮即可完成新角色的创建。
+![Creating Generic Role](./img/role/create-regular-role.png "Creating Generic Role")
 
-## 应用角色的权限配置 {#application-role-permission-configuration}
-### 指定可访问的门户及菜单 {#specify-accessible-portals-and-menus}
-人力资源部门需要访问员工信息，销售部门需要访问客户信息，财务部门需要访问财务报表。通过为角色指定可访问的门户及菜单，可以确保用户只能访问其工作所需功能。
+To create a new role, developers locate `Perm Roles` in the element directory tree, click the `+` button on the right, select `Generic Role`, enter the role name in the form dialog, and click the `Confirm` button to complete the creation.
 
-![门户菜单权限配置](./img/role/portal-menu-permission-configuration.gif)
+## Application role permission configuration {#application-role-permission-configuration}
 
-在应用角色的可视化编辑器中会展示所有的门户列表，开发者可以为当前角色勾选在每个门户下允许访问的菜单。
+### Specifying accessible portals and menus {#specify-accessible-portals-and-menus}
 
-当开发者选择授予门户下所有菜单权限时，该门户后续添加的菜单也会自动被授予，不需要再手动勾选。
+Different departments require access to different resources: the HR department needs employee information, the sales department needs customer information, and the finance department needs financial reports. By specifying accessible portals and menus for each role, you ensure users can only access functions relevant to their work responsibilities.
 
-### 在开发者门户中管理应用角色成员 {#manage-application-role-members-in-developer-portal}
-通常在应用系统交付客户之前，开发者可以先行分配好各个应用角色的初始成员，以便客户在应用系统上线后直接开展日常工作。
+![Portal Menu Permission Configuration](./img/role/portal-menu-permission-configuration.gif "Portal Menu Permission Configuration")
 
-![在开发区管理应用角色成员](./img/role/manage-app-role-members-in-dev-area.gif)
+The visual editor for application roles displays all available portals, allowing developers to select which menus within each portal the current role can access.
 
-在应用角色的可视化编辑器中，开发者点击左上角的`管理本角色下的用户`，即可为当前应用角色添加/删除成员。添加成员时支持直接选择用户，也可以直接选择组织角色或者部门。拥有管理角色的用户后续也可以在管理者门户中配置应用角色下的成员。
+When developers grant access to all menus within a portal, any subsequently added menus automatically inherit these permissions without requiring manual configuration.
 
-开发者也可以点击`配置`按钮，设置应用角色成员在组织架构中的管理范围。但在系统日常使用中，更适合由管理员在管理者门户中进行[成员在组织架构中的管辖范围设置](#member-management-scope-settings-in-org-structure)。
+### Managing application role members in the Developer Portal {#manage-application-role-members-in-developer-portal}
 
-### 组件的按钮权限控制 {#component-button-permission-control}
-不同角色的用户访问同一个页面时，看到的操作按钮可能是不同的。例如，在客户管理页面，销售人员可以看到“新增”“编辑”按钮，而财务人员则只能查询数据。
+Typically, before deploying an application system to customers, developers can pre-configure initial role assignments, enabling customers to begin their daily operations immediately once the system goes live.
 
-![组件按钮权限控制](./img/role/component-button-permission-control.gif)
+![Managing App Role Members in Developer Portal](./img/role/manage-app-role-members-in-dev-area.gif "Managing App Role Members in Developer Portal")
 
-开发者可以在应用角色的可视化编辑器中，点击门户菜单右侧的`配置`按钮，在弹出权限配置界面中可以看到菜单页面中的所有组件列表以及每个组件的按钮列表。将不需要展示的按钮取消勾选即可。
+In the application role visual editor, developers click `Manage users assigned to this role` in the upper left corner to add or remove members for the current role. When adding members, you can select individual users, organizational roles, or entire departments. Users with administrative privileges can subsequently manage role membership through the Manager Portal.
 
-后续新增加的按钮会被默认勾选，如需取消需要开发者手动操作。
+Developers can also click the `Configuration` button to define the organizational scope for application role members. However, for routine operations, administrators should handle [member management scope settings in organization](#member-management-scope-settings-in-org) through the Manager Portal.
 
-### 组件的数据字段读/写/统计权限控制 {#component-data-field-access-control}
-大多数组件都需要绑定数据模型，开发者不仅可以进行[门户级的数据操作类型和操作范围控制](./roles-and-business-element-permissions#portal-level-data-operation-type-and-scope-control)，也可以在组件上进行更进一步的数据范围/字段读写/统计权限控制，优先级高于组件在页面中的现有配置。
+### Component button permission control {#component-button-permission-control}
 
-![组件数据筛选和字段权限配置](./img/role/component-data-filtering-and-field-permission-config.gif)
+Users with different roles may see different operation buttons when accessing the same page. For example, on a customer management page, sales personnel can see "Add" and "Edit" buttons, while finance personnel can only query data without modification capabilities.
 
-在门户菜单的权限配置界面中，点击某个组件后，再点击`数据源`右侧的`配置`按钮，就可以配置筛选条件。
+![Component Button Permission Control](./img/role/component-button-permission-control.gif "Component Button Permission Control")
 
-开发者取消勾选字段的`可见`复选框后，该字段将不再显示在组件中，取消勾选`可编辑`后，用户在组件中将无法编辑该字段，取消勾选`可统计`后，用户无法在组件中对字段进行统计计算。如果字段`不可见`，会自动取消勾选`可编辑`和`可统计`。
-## 多应用角色的分级管理 {#hierarchical-management-of-multiple-application-roles}
-多个应用角色之间可以存在管理层级和范围，拥有管辖权的角色可以在管理者门户的通讯录中对被管辖的角色进行[成员管理](#application-role-member-management)。例如，研发总监可以管理后端开发经理，但不能管理财务总监。
+In the visual editor for application roles, developers can click the `Configuration` button to the right of portal menus. The popup permission configuration interface displays all components on the menu page and the button list for each component. Simply uncheck buttons that should not be displayed for this role.
 
-![角色管理范围配置](./img/role/role-management-scope-configuration.gif)
+Newly added buttons are enabled by default; developers must manually disable them if access should be restricted for specific roles.
 
-管理者门户默认启用了内置的`权限管理`菜单，开发者点击`权限管理`右侧操作列中的`配置`按钮，在弹窗中指定`管理角色范围`为`全部角色`或`指定角色`。
-## 应用角色成员的管理 {#application-role-member-management}
-拥有管理者门户权限的角色，可以在管理者门户的通讯录中对应用角色进行成员管理。
+### Component data field read/write/statistics permission control {#component-data-field-access-control}
 
-### 成员的添加/删除 {#member-addition-and-removal}
-![应用角色成员管理](./img/role/app-role-member-management.png)
+Most components require data model binding. Developers can implement [portal-level data operation type and scope control](./roles-and-business-element-permissions#portal-level-data-operation-type-and-scope-control) and apply additional granular controls at the component level, including data scope filtering, field-level read/write permissions, and statistical permission controls. Component-level configurations take precedence over page-level settings.
 
-用户点击左侧菜单中的`通讯录`，在通讯录页面中切换到`角色`标签页，即可看到自己拥有管辖权的应用角色列表。点击某个角色，在右侧的表格中进行成员添加、批量删除、搜索以及管理范围修改。
+![Component Data Filtering and Field Permission Config](./img/role/component-data-filtering-and-field-permission-config.gif "Component Data Filtering and Field Permission Config")
 
-### 成员在组织架构中的管理范围设置 {#member-management-scope-settings-in-org-structure}
-以报销单审批场景为例：企业通常由多个部门，其中财务部的两名员工负责报销审批，他们拥有`报销专员`应用角色，但两人分别负责审批不同部门的报销单，即两人的管理范围不同。
+In the permission configuration interface for portal menus, click a component, then click the `Configuration` button to the right of `Data Source` to configure filter conditions.
 
-![管理区设置角色成员管理范围](./img/role/management-area-set-role-member-scope.png)
+When developers disable a field's `Visible` option, that field becomes hidden in the component. Disabling `Editable` prevents users from modifying that field within the component. Disabling `Statistic` prevents users from performing statistical operations on that field. When a field is set to not visible, both `Editable` and `Statistic` options are automatically disabled.
 
-管理员用户在成员列表的`管理范围`列中点击修改按钮，即可在弹窗中设置对应成员的管理范围。当报销单审批流程流转到`报销专员`审批节点时，会根据发起人所在部门自动匹配到对应的报销专员，平台提醒报销专员进行审批。
+## Hierarchical management of multiple application roles {#hierarchical-management-of-multiple-application-roles}
 
+Application roles can be organized into management hierarchies with defined scopes. Roles with supervisory authority can perform [member management](#application-role-member-management) for their subordinate roles through the Manager Portal's address book. For example, a development director can manage backend development managers but has no authority over finance directors.
+
+![Role Management Scope Configuration](./img/role/role-management-scope-configuration.gif "Role Management Scope Configuration")
+
+The Manager Portal has a built-in `Permission Manage` menu enabled by default. Developers click the `Configuration` button in the operation column to the right of `Permission Manage` and specify `Management Role Scope` as either `All Roles` or `Specify Roles` in the popup dialog.
+
+## Application role member management {#application-role-member-management}
+
+Roles with Manager Portal permissions can perform member management for application roles through the Manager Portal's address book.
+
+### Member addition and removal {#member-addition-and-removal}
+
+![Application Role Member Management](./img/role/app-role-member-management.png "Application Role Member Management")
+
+Users click `Address Book` in the left menu and switch to the `Perm Roles` tab on the address book page to view the list of application roles under their jurisdiction. Click a role to perform member addition, batch deletion, search, and management scope modifications in the table on the right.
+
+### Member management scope settings in organization {#member-management-scope-settings-in-org}
+
+Consider an expense report approval scenario: an enterprise typically has multiple departments, with two finance department employees responsible for expense approvals. Both employees hold the Expense Specialist application role, but each is responsible for approving reports from different departments, thus requiring distinct management scopes.
+
+![Set Role Member Scope](./img/role/management-area-set-role-member-scope.png "Role Member Scope")
+
+Administrators click the modify button in the `Management Scope` column of the member list to configure each member's scope of authority in the popup dialog. When an expense report reaches the Expense Specialist approval stage, the system automatically routes it to the appropriate specialist based on the submitter's department and sends a notification to complete the approval.

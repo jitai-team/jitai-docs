@@ -1,9 +1,9 @@
 ---
-sidebar_position: 11
+sidebar_position: 21.5
 ---
 
 # 缓存配置与使用
-在极态云中，平台支持多种缓存类型，包括 Redis、SQLite 和 TongRDS，能够覆盖从开发测试到生产部署的不同场景。缓存适合存放读取频繁且可容忍短暂不一致的数据，比如用户会话、验证码、热点配置、列表聚合结果、限流计数等。系统会自动为不同应用加上键名前缀，避免跨应用冲突。
+JitAi支持多种缓存类型，包括 Redis、SQLite 和 TongRDS，能够覆盖从开发测试到生产部署的不同场景。缓存适合存放读取频繁且可容忍短暂不一致的数据，比如用户会话、验证码、热点配置、列表聚合结果、限流计数等。系统会自动为不同应用加上键名前缀，避免跨应用冲突。
 内置缓存用于“开箱即用”的开发/测试环境：桌面环境默认使用 SQLite，服务器环境默认使用容器内Redis。生产环境推荐独立部署 Redis，并在应用中创建对应的缓存实例。
 
 ## 缓存服务配置 {#cache-service-configuration}
@@ -15,7 +15,7 @@ sidebar_position: 11
 
 ![参数配置](./img/parameter-configuration.png)
 
-弹出参数配置面板，按提示填写连接信息并保存。生产环境建议将连接参数通过环境变量注入，避免把密码等敏感信息写入仓库，参考：[数据库连接安全配置](../data-modeling/manage-database-connections#database-connection-security-configuration)。
+弹出参数配置面板，按提示填写连接信息并保存。生产环境建议将连接参数通过环境变量注入，避免把密码等敏感信息写入仓库，参考：[数据库连接安全配置](/docs/devguide/data-modeling/manage-database-connections#database-connection-security-configuration)。
 
 ![测试连接](./img/test-connection.png)
 
@@ -63,9 +63,9 @@ alive = cache.ping()  # True 表示连接正常
 
 更详细接口参考：
 
-[Redis缓存](../../reference/framework/JitStorage/cache/redis-cache#methods)
+[Redis缓存](/docs/reference/framework/JitStorage/cache/redis-cache#methods)
 
-[SQLite缓存](../../reference/framework/JitStorage/cache/sqlite-cache#methods)
+[SQLite缓存](/docs/reference/framework/JitStorage/cache/sqlite-cache#methods)
 
-[TongRDS缓存](../../reference/framework/JitStorage/cache/tongrds-cache#methods)
+[TongRDS缓存](/docs/reference/framework/JitStorage/cache/tongrds-cache#methods)
 

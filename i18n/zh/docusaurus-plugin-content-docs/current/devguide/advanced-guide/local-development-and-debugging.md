@@ -1,20 +1,20 @@
 ---
-sidebar_position: -4
+sidebar_position: 1
 slug: local-development-and-debugging
 ---
 
-# 本地开发与调试
+# 使用VSCode或PyCharm开发与调试JitAi应用
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-本文档指导开发者使用桌面版配置本地开发调试环境，以便进行高效的开发与调试。
+本文指导开发者使用桌面版配置本地开发调试环境，以便进行高效的开发与调试。
 
 ## 🛠️ 环境准备
 :::info 
-确保您已经完成了基础安装和配置。如果还未安装，请参考 [下载安装](../../tutorial/download-installation) 章节。
+确保你已经完成了基础安装和配置。如果还未安装，请参考 [下载安装](../../tutorial/download-installation) 章节。
 :::
 
-支持多种主流IDE进行本地开发调试，您可以根据个人偏好选择：
+支持多种主流IDE进行本地开发调试，你可以根据个人偏好选择：
 
 - **Visual Studio Code**: 轻量级编辑器，丰富的Python扩展生态
 - **PyCharm**: 专业Python IDE，强大的调试和重构功能
@@ -153,7 +153,7 @@ C:\Program Files\jit\resources\app.asar.unpacked\JitNode
    - 点击 `Apply` 和 `OK` 保存设置
 
 :::tip 解释器验证
-添加成功后，您会在解释器列表中看到 JitNode 的 Python 版本信息。如果显示错误，请检查路径是否正确。
+添加成功后，你会在解释器列表中看到 JitNode 的 Python 版本信息。如果显示错误，请检查路径是否正确。
 :::
 
 #### 3. 创建运行配置
@@ -214,4 +214,4 @@ Environment variables:
 
 ---
 
-完成以上配置后，您就可以进行本地开发调试了！
+完成以上配置后，你就可以进行本地开发调试了！

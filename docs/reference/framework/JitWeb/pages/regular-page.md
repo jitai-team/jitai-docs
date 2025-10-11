@@ -1,32 +1,32 @@
 ---
 sidebar_position: 3
-slug: regular-page
+slug: generic-page
 ---
 
-# 常规页面
-常规页面是基于网格布局系统的可视化页面类型，通过拖拽式组件编排实现快速的页面构建。它提供完整的组件管理、事件系统和生命周期机制，支持前后端分离架构，平衡了开发效率和功能灵活性。常规页面适用于大多数企业应用界面需求，是JitWeb中使用最广泛的页面类型。
+# Generic Page
+Generic Page is a visual page type based on a grid layout system, implementing rapid page construction through drag-and-drop component orchestration. It provides complete component management, event system, and lifecycle mechanisms, supporting frontend-backend separation architecture, balancing development efficiency and functional flexibility. Generic Page is suitable for most enterprise application interface requirements and is the most widely used page type in JitWeb.
 
-常规页面元素分层结构为Meta（pages.Meta） → Type（pages.GridPageType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建常规页面实例元素。
+The Generic Page element hierarchy is Meta (pages.Meta) → Type (pages.GridPageType) → Instance. Developers can quickly create Generic Page instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的pages.GridPageType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official pages.GridPageType element provided by JitAI in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
-pages/MyStandardPage/          # 页面名称（路径可自定义）
-├── e.json                     # 元素声明文件
-├── scheme.json                # 页面配置文件
-├── index.ts                   # 前端入口文件
-├── page.ts                    # 页面逻辑实现
-├── PageRender.tsx             # 页面渲染组件（可选）
-└── page.style.ts              # 页面样式文件（可选）
+## Quick Start
+### Create Instance Element
+#### Directory Structure
+```text title="Recommended Directory Structure"
+pages/MyStandardPage/          # Page name (path can be customized)
+├── e.json                     # Element declaration file
+├── scheme.json                # Page configuration file
+├── index.ts                   # Frontend entry file
+├── page.ts                    # Page logic implementation
+├── PageRender.tsx             # Page render component (optional)
+└── page.style.ts              # Page style file (optional)
 ```
 
-#### e.json文件
-```json title="元素声明配置"
+#### e.json File
+```json title="Element Declaration Configuration"
 {
-  "title": "我的常规页面",
+  "title": "My Generic Page",
   "type": "pages.GridPageType",
   "frontBundleEntry": "./index.ts",
   "platform": "PC",
@@ -34,8 +34,8 @@ pages/MyStandardPage/          # 页面名称（路径可自定义）
 }
 ```
 
-#### scheme.json文件
-```json title="页面配置文件"
+#### scheme.json File
+```json title="Page Configuration File"
 {
   "layout": [
     {
@@ -52,7 +52,7 @@ pages/MyStandardPage/          # 页面名称（路径可自定义）
     {
       "name": "MyTable",
       "type": "components.Table",
-      "title": "数据表格",
+      "title": "Data Table",
       "config": {
         "dataSource": "models.UserModel"
       }
@@ -62,35 +62,35 @@ pages/MyStandardPage/          # 页面名称（路径可自定义）
     {
       "name": "searchKeyword",
       "dataType": "Stext",
-      "title": "搜索关键词",
+      "title": "Search Keyword",
       "value": ""
     }
   ],
   "functionList": [
     {
       "name": "handleSearch",
-      "title": "处理搜索",
+      "title": "Handle Search",
       "args": []
     }
   ]
 }
 ```
 
-#### page.ts文件
-```typescript title="页面逻辑实现"
+#### page.ts File
+```typescript title="Page Logic Implementation"
 import { Jit } from 'jit';
 
 export default class MyStandardPage extends Jit.Pages["pages.GridPageType"] {
     
     bindEvent() {
-        // 绑定组件事件
+        // Bind component events
         this.MyTable.onRowClick = (row: any) => {
-            console.log('点击行:', row);
+            console.log('Row clicked:', row);
         };
     }
 
     handleSearch() {
-        // 实现搜索逻辑
+        // Implement search logic
         const keyword = this.searchKeyword.value;
         this.MyTable.refresh({
             filter: `Q(name__like='%${keyword}%')`
@@ -99,66 +99,66 @@ export default class MyStandardPage extends Jit.Pages["pages.GridPageType"] {
 }
 ```
 
-#### 调用示例
-```typescript title="页面使用"
-// 获取页面实例
+#### Usage Example
+```typescript title="Page Usage"
+// Get page instance
 const page = app.getElement("pages.MyStandardPage");
 
-// 初始化页面
+// Initialize page
 await page.init();
 
-// 订阅页面事件
+// Subscribe to page events
 page.subscribeEvent("CUSTOM_EVENT", (event) => {
-    console.log("接收到自定义事件:", event);
+    console.log("Received custom event:", event);
 });
 
-// 刷新页面
+// Refresh page
 page.refresh();
 ```
 
-## 元素配置
-### e.json配置
-| 字段名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
-| title | string | 是 | 页面显示标题 |
-| type | string | 是 | 固定值"pages.GridPageType" |
-| frontBundleEntry | string | 是 | 前端入口文件路径 |
-| platform | string | 否 | runtime-platform，默认"PC" |
-| outputName | string | 否 | 输出文件名，默认"index" |
-| extend | string | 否 | 继承的父页面fullName |
+## Element Configuration
+### e.json Configuration
+| Field Name | Type | Required | Description |
+|------------|------|----------|-------------|
+| title | string | Yes | Page display title |
+| type | string | Yes | Fixed value "pages.GridPageType" |
+| frontBundleEntry | string | Yes | Frontend entry file path |
+| platform | string | No | runtime-platform, default "PC" |
+| outputName | string | No | Output file name, default "index" |
+| extend | string | No | Inherited parent page fullName |
 
-### scheme.json配置
-| 字段名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
-| layout | Array | 是 | 组件布局配置数组 |
-| componentList | Array | 是 | 页面组件配置数组 |
-| variableList | Array | 否 | 页面变量配置数组 |
-| functionList | Array | 否 | 页面方法配置数组 |
-| aiConfig | Object | 否 | AI配置对象 |
+### scheme.json Configuration
+| Field Name | Type | Required | Description |
+|------------|------|----------|-------------|
+| layout | Array | Yes | Component layout configuration array |
+| componentList | Array | Yes | Page component configuration array |
+| variableList | Array | No | Page variable configuration array |
+| functionList | Array | No | Page method configuration array |
+| aiConfig | Object | No | AI configuration object |
 
-## 方法 
+## Methods
 ### init
-初始化页面，加载配置、组件和变量，必须在页面使用前调用。
+Initialize the page, load configuration, components, and variables. Must be called before using the page.
 
-#### 使用示例
-```typescript title="页面初始化"
+#### Usage Example
+```typescript title="Page Initialization"
 const page = app.getElement("pages.MyStandardPage");
 await page.init();
-console.log("页面初始化完成:", page.isReady);
+console.log("Page initialization completed:", page.isReady);
 ```
 
 ### bindEvent
-绑定页面和组件事件，在页面初始化时自动调用，开发者可重写此方法。
+Bind page and component events, automatically called during page initialization. Developers can override this method.
 
-#### 使用示例
-```typescript title="事件绑定"
+#### Usage Example
+```typescript title="Event Binding"
 bindEvent() {
-    // 绑定组件事件
+    // Bind component events
     this.MyButton.onClick = () => {
         this.handleButtonClick();
     };
     
-    // 绑定页面级事件
+    // Bind page-level events
     this.subscribeEvent("DATA_CHANGED", (event) => {
         this.MyTable.refresh();
     });
@@ -166,19 +166,19 @@ bindEvent() {
 ```
 
 ### getScheme
-获取页面完整的配置方案，包含继承处理后的最终配置。
+Get the complete page configuration scheme, including the final configuration after inheritance processing.
 
-#### 返回值
-返回包含layout、componentList、variableList、functionList等的配置对象。
+#### Return Value
+Returns a configuration object containing layout, componentList, variableList, functionList, etc.
 
-#### 使用示例
-```typescript title="获取页面配置"
+#### Usage Example
+```typescript title="Get Page Configuration"
 const scheme = this.getScheme();
-console.log("页面布局:", scheme.layout);
-console.log("组件列表:", scheme.componentList);
-console.log("变量列表:", scheme.variableList);
+console.log("Page layout:", scheme.layout);
+console.log("Component list:", scheme.componentList);
+console.log("Variable list:", scheme.variableList);
 
-// 动态修改配置
+// Dynamically modify configuration
 scheme.layout.push({
     i: "NewComponent",
     x: 0,
@@ -189,364 +189,364 @@ scheme.layout.push({
 ```
 
 ### publishEvent
-发布页面事件，向页面内的组件和订阅者广播消息。
+Publish page events, broadcasting messages to components and subscribers within the page.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| messageName | Stext | string &#124; symbol | 是 | 事件名称 |
-| ex | JitDict | Record&lt;string, any&gt; | 否 | 事件附加数据 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| messageName | Stext | string &#124; symbol | Yes | Event name |
+| ex | JitDict | Record&lt;string, any&gt; | No | Event additional data |
 
-#### 使用示例
-```typescript title="事件发布"
-// 发布简单事件
+#### Usage Example
+```typescript title="Event Publishing"
+// Publish simple event
 this.publishEvent("DATA_UPDATED");
 
-// 发布带数据的事件
+// Publish event with data
 this.publishEvent("USER_SELECTED", {
     userId: 123,
-    userName: "张三",
+    userName: "John",
     action: "select"
 });
 ```
 
 ### subscribeEvent
-订阅页面事件，注册事件回调函数。
+Subscribe to page events, register event callback functions.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| messageName | Stext | string &#124; symbol | 是 | 事件名称 |
-| callback | Function | Handler&lt;T&gt; | 是 | 事件回调函数 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| messageName | Stext | string &#124; symbol | Yes | Event name |
+| callback | Function | Handler&lt;T&gt; | Yes | Event callback function |
 
-#### 返回值
-返回事件处理器ID，用于取消订阅。
+#### Return Value
+Returns event handler ID for unsubscribing.
 
-#### 使用示例
-```typescript title="事件订阅"
-// 订阅事件
+#### Usage Example
+```typescript title="Event Subscription"
+// Subscribe to event
 const handlerId = this.subscribeEvent("DATA_UPDATED", (event) => {
-    console.log("数据已更新:", event.data);
+    console.log("Data updated:", event.data);
     this.MyTable.refresh();
 });
 
-// 带类型的事件订阅
+// Typed event subscription
 interface UserEvent {
     userId: number;
     userName: string;
 }
 
 this.subscribeEvent<UserEvent>("USER_SELECTED", (event) => {
-    console.log(`用户 ${event.data.userName} 被选中`);
+    console.log(`User ${event.data.userName} selected`);
 });
 ```
 
 ### unSubscribeEvent
-取消订阅页面事件。
+Unsubscribe from page events.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| handlerId | Stext | string | 是 | 事件处理器ID |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| handlerId | Stext | string | Yes | Event handler ID |
 
-#### 使用示例
-```typescript title="取消事件订阅"
-// 订阅事件并获取处理器ID
+#### Usage Example
+```typescript title="Event Unsubscription"
+// Subscribe to event and get handler ID
 const handlerId = this.subscribeEvent("TEST_EVENT", (event) => {
-    console.log("处理测试事件");
+    console.log("Handle test event");
 });
 
-// 取消订阅
+// Unsubscribe
 this.unSubscribeEvent(handlerId);
 ```
 
 ### off
-取消底层事件监听器，比unSubscribeEvent更底层的事件控制。
+Cancel underlying event listeners, providing lower-level event control than unSubscribeEvent.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| handlerId | Stext | string | 是 | 事件处理器ID |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| handlerId | Stext | string | Yes | Event handler ID |
 
-#### 使用示例
-```typescript title="取消底层事件监听"
-// 获取应用级事件处理器ID
+#### Usage Example
+```typescript title="Cancel Underlying Event Listening"
+// Get application-level event handler ID
 const appHandlerId = this.app.on((event) => {
-    console.log("应用级事件:", event);
+    console.log("Application-level event:", event);
 });
 
-// 取消监听
+// Cancel listening
 this.off(appHandlerId);
 ```
 
 ### newVariable
-创建页面变量实例，支持所有JitAi数据类型。
+Create page variable instances, supporting all JitAI data types.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| varConfig | JitDict | DataTypeConfig | 是 | 变量配置对象 |
-| value | Any | any | 否 | 变量初始值 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| varConfig | JitDict | DataTypeConfig | Yes | Variable configuration object |
+| value | Any | any | No | Variable initial value |
 
-#### 返回值
-返回创建的变量实例对象。
+#### Return Value
+Returns the created variable instance object.
 
-#### 使用示例
-```typescript title="创建页面变量"
-// 创建文本变量
+#### Usage Example
+```typescript title="Create Page Variables"
+// Create text variable
 const textVar = this.newVariable({
     name: "description",
     dataType: "Stext",
-    title: "描述信息"
-}, "默认描述");
+    title: "Description"
+}, "Default description");
 
-// 创建数字变量
+// Create numeric variable
 const numberVar = this.newVariable({
     name: "count",
     dataType: "Numeric",
-    title: "数量",
+    title: "Count",
     decimal: 0
 }, 10);
 
-// 使用变量
-console.log("文本值:", textVar.value);
+// Use variables
+console.log("Text value:", textVar.value);
 numberVar.value = 20;
 ```
 
 ### newComponent
-创建组件实例，用于动态添加组件。
+Create component instances for dynamic component addition.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| type | Stext | string | 是 | 组件类型标识 |
-| createCompConfig | JitDict | any | 是 | 组件创建配置 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| type | Stext | string | Yes | Component type identifier |
+| createCompConfig | JitDict | any | Yes | Component creation configuration |
 
-#### 返回值
-返回创建的组件实例对象。
+#### Return Value
+Returns the created component instance object.
 
-#### 使用示例
-```typescript title="动态创建组件"
-// 创建按钮组件
+#### Usage Example
+```typescript title="Dynamic Component Creation"
+// Create button component
 const button = await this.newComponent("components.Button", {
     name: "DynamicButton",
-    title: "动态按钮",
+    title: "Dynamic Button",
     config: {
-        text: "点击我",
+        text: "Click Me",
         type: "primary"
     }
 });
 
-// 绑定组件到页面
+// Bind component to page
 button.bindPage(this);
 this["DynamicButton"] = button;
 ```
 
 ### getUIContext
-获取页面UI上下文信息，包含所有可用的函数和变量列表。
+Get page UI context information, including all available function and variable lists.
 
-#### 返回值
-返回包含functionList和variables的对象。
+#### Return Value
+Returns an object containing functionList and variables.
 
-#### 使用示例
-```typescript title="获取UI上下文"
+#### Usage Example
+```typescript title="Get UI Context"
 const context = this.getUIContext();
-console.log("可用函数:", context.functionList);
-console.log("可用变量:", context.variables);
+console.log("Available functions:", context.functionList);
+console.log("Available variables:", context.variables);
 
-// 遍历所有可用函数
+// Iterate through all available functions
 context.functionList.forEach(func => {
-    console.log(`函数: ${func.title}(${func.name})`);
+    console.log(`Function: ${func.title}(${func.name})`);
 });
 ```
 
 ### getVariableValue
-获取变量的值，支持页面变量和组件变量。
+Get variable values, supporting both page variables and component variables.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| varName | Variable &#124; Stext | InstanceType&lt;BaseDataType&gt; &#124; string | 是 | 变量名或变量实例 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| varName | Variable &#124; Stext | InstanceType&lt;BaseDataType&gt; &#124; string | Yes | Variable name or variable instance |
 
-#### 返回值
-返回变量的当前值。
+#### Return Value
+Returns the current value of the variable.
 
-#### 使用示例
-```typescript title="获取变量值"
-// 获取页面变量值
+#### Usage Example
+```typescript title="Get Variable Value"
+// Get page variable value
 const searchValue = this.getVariableValue("searchKeyword");
-console.log("搜索关键词:", searchValue);
+console.log("Search keyword:", searchValue);
 
-// 获取组件变量值
+// Get component variable value
 const tableData = this.getVariableValue("MyTable.selectedRows");
-console.log("表格选中行:", tableData);
+console.log("Table selected rows:", tableData);
 
-// 使用变量实例获取值
+// Get value using variable instance
 const keywordVar = this.searchKeyword;
 const value = this.getVariableValue(keywordVar);
 ```
 
 ### parseVariableInQ
-解析Q表达式中的变量，将页面变量转换为实际值。
+Parse variables in Q expressions, converting page variables to actual values.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| str | Stext | string | 是 | 包含变量的Q表达式字符串 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| str | Stext | string | Yes | Q expression string containing variables |
 
-#### 返回值
-返回解析后的Q表达式字符串。
+#### Return Value
+Returns the parsed Q expression string.
 
-#### 使用示例
-```typescript title="Q表达式变量解析"
-// 设置页面变量
-this.searchKeyword.value = "张三";
+#### Usage Example
+```typescript title="Q Expression Variable Parsing"
+// Set page variables
+this.searchKeyword.value = "John";
 this.minAge.value = 18;
 
-// 解析包含变量的Q表达式
+// Parse Q expression containing variables
 const qStr = "Q(name__like=this.searchKeyword.value) & Q(age__gte=this.minAge.value)";
 const parsedQ = this.parseVariableInQ(qStr);
-console.log("解析后的Q表达式:", parsedQ);
+console.log("Parsed Q expression:", parsedQ);
 
-// 用于数据查询
+// Use for data query
 this.MyTable.refresh({
     filter: parsedQ
 });
 ```
 
 ### refresh
-刷新页面显示，触发页面内部刷新事件。
+Refresh page display, triggering internal page refresh events.
 
-#### 使用示例
-```typescript title="页面刷新"
-// 数据更新后刷新页面
+#### Usage Example
+```typescript title="Page Refresh"
+// Refresh page after data update
 const updateData = async () => {
     await this.saveUserData();
-    // 刷新页面显示
+    // Refresh page display
     this.refresh();
 };
 ```
 
 ### refreshPageVariable
-刷新页面变量，重新从URL参数加载变量值。
+Refresh page variables, reload variable values from URL parameters.
 
-#### 使用示例
-```typescript title="页面变量刷新"
-// 当URL参数变化时刷新页面变量
+#### Usage Example
+```typescript title="Page Variable Refresh"
+// Refresh page variables when URL parameters change
 this.refreshPageVariable();
 
-// 监听路由变化并刷新变量
+// Listen to route changes and refresh variables
 window.addEventListener('popstate', () => {
     this.refreshPageVariable();
 });
 ```
 
 ### sendAiMessage
-发送AI消息，需要配置AI助手。
+Send AI messages, requires AI assistant configuration.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| message | Stext | string | 是 | 发送的消息内容 |
-| inNewChat | Numeric | number | 否 | 是否在新对话中发送，默认0 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| message | Stext | string | Yes | Message content to send |
+| inNewChat | Numeric | number | No | Whether to send in new chat, default 0 |
 
-#### 使用示例
-```typescript title="AI消息发送"
-// 发送AI消息
-await this.sendAiMessage("请帮我分析这份数据", 1);
+#### Usage Example
+```typescript title="AI Message Sending"
+// Send AI message
+await this.sendAiMessage("Please help me analyze this data", 1);
 
-// 监听AI响应
+// Listen to AI response
 this.subscribeEvent("AI_RESPONSE", (event) => {
-    console.log("AI回复:", event.data.response);
+    console.log("AI response:", event.data.response);
 });
 ```
 
 ### destroy
-销毁页面实例，清理所有资源和事件监听器。
+Destroy page instance, clean up all resources and event listeners.
 
-#### 使用示例
-```typescript title="页面销毁"
-// 页面卸载时调用
+#### Usage Example
+```typescript title="Page Destruction"
+// Called when page is unloaded
 const cleanup = () => {
     this.destroy();
-    console.log("页面已销毁");
+    console.log("Page destroyed");
 };
 
-// 在路由切换时自动调用
+// Automatically called during route switching
 window.addEventListener('beforeunload', cleanup);
 ```
 
-## 属性
+## Properties
 ### name
-页面名称，对应元素的name字段。
+Page name, corresponding to the element's name field.
 
 ### title
-页面显示标题，对应元素的title字段。
+Page display title, corresponding to the element's title field.
 
 ### fullName
-页面完整名称，包含路径的完整标识符。
+Complete page name, including the complete identifier with path.
 
 ### ePath
-页面在应用中的路径。
+Page path in the application.
 
 ### scheme
-页面配置对象，包含布局、组件、变量和方法定义。
+Page configuration object, containing layout, components, variables, and method definitions.
 
 ### compInsList
-页面组件实例列表，包含所有已加载的组件。
+Page component instance list, containing all loaded components.
 
 ### compInsDict
-页面组件实例字典，以组件名为key的组件映射。
+Page component instance dictionary, component mapping with component name as key.
 
 ### isReady
-页面就绪状态，表示页面是否已完成初始化。
+Page ready state, indicating whether the page has completed initialization.
 
 ### app
-当前应用实例，提供应用级服务和方法。
+Current application instance, providing application-level services and methods.
 
 ### aiConfig
-AI配置信息，包含AI助手的启用状态和配置。
+AI configuration information, including AI assistant enable status and configuration.
 
 ### extend
-继承的父页面fullName，用于页面继承功能。
+Inherited parent page fullName, used for page inheritance functionality.
 
 ### pagePerm
-页面权限配置对象，控制页面的访问权限。
+Page permission configuration object, controlling page access permissions.
 
-## 高级特性
-### 页面继承
-常规页面支持继承机制，子页面可以继承父页面的组件、变量和方法，并支持重写和扩展。
+## Advanced Features
+### Page Inheritance
+Generic Page supports inheritance mechanism, where child pages can inherit components, variables, and methods from parent pages, with support for overriding and extension.
 
-#### 配置示例和使用示例
-```json title="子页面e.json配置"
+#### Configuration Example and Usage Example
+```json title="Child Page e.json Configuration"
 {
-  "title": "扩展的常规页面", 
+  "title": "Extended Generic Page", 
   "type": "pages.GridPageType",
   "frontBundleEntry": "./index.ts",
   "extend": "pages.BaseStandardPage"
 }
 ```
 
-```typescript title="页面继承实现"
+```typescript title="Page Inheritance Implementation"
 class ExtendedPage extends Jit.Pages["pages.BaseStandardPage"] {
     scheme = {
-        // 继承父页面配置并扩展
+        // Inherit parent page configuration and extend
         ...super.getScheme(),
         componentList: [
             ...super.getScheme().componentList,
             {
                 name: "NewButton",
                 type: "components.Button", 
-                title: "新增按钮",
+                title: "New Button",
                 config: {}
             }
         ]
     };
 
     bindEvent() {
-        super.bindEvent(); // 继承父类事件绑定
+        super.bindEvent(); // Inherit parent class event binding
         
-        // 扩展新的事件绑定
+        // Extend new event binding
         this.NewButton.onClick = () => {
             this.handleNewFeature();
         };
@@ -554,13 +554,13 @@ class ExtendedPage extends Jit.Pages["pages.BaseStandardPage"] {
 }
 ```
 
-### AI集成支持
-常规页面内置AI助手集成能力，支持智能交互和辅助功能。
+### AI Integration Support
+Generic Page has built-in AI assistant integration capabilities, supporting intelligent interaction and auxiliary functions.
 
-```typescript title="AI功能集成"
+```typescript title="AI Function Integration"
 class AIEnabledPage extends Jit.Pages["pages.GridPageType"] {
     scheme = {
-        // ... 其他配置
+        // ... other configurations
         aiConfig: {
             useAi: 1,
             aiAssistant: "assistants.MyAI"
@@ -568,10 +568,10 @@ class AIEnabledPage extends Jit.Pages["pages.GridPageType"] {
     };
 
     async handleAIQuery(userInput: string) {
-        // 发送AI消息
+        // Send AI message
         await this.sendAiMessage(userInput, 1);
         
-        // 监听AI响应
+        // Listen to AI response
         this.subscribeEvent("AI_RESPONSE", (event) => {
             this.displayAIResponse(event.data.response);
         });
@@ -579,26 +579,26 @@ class AIEnabledPage extends Jit.Pages["pages.GridPageType"] {
 }
 ```
 
-### 动态布局调整
-支持运行时动态调整组件布局和配置。
+### Dynamic Layout Adjustment
+Supports runtime dynamic adjustment of component layout and configuration.
 
-```typescript title="动态布局管理"
+```typescript title="Dynamic Layout Management"
 class DynamicLayoutPage extends Jit.Pages["pages.GridPageType"] {
     
     adjustLayout(componentName: string, newLayout: any) {
-        // 更新布局配置
+        // Update layout configuration
         const layoutItem = this.scheme.layout.find(item => item.i === componentName);
         if (layoutItem) {
             Object.assign(layoutItem, newLayout);
-            this.refresh(); // 刷新页面应用新布局
+            this.refresh(); // Refresh page to apply new layout
         }
     }
 
     addComponent(componentConfig: any, layoutConfig: any) {
-        // 动态添加组件
+        // Dynamically add component
         this.scheme.componentList.push(componentConfig);
         this.scheme.layout.push(layoutConfig);
-        this.loadComponents(); // 重新加载组件
+        this.loadComponents(); // Reload components
     }
 }
 ``` 

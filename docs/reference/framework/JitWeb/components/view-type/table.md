@@ -1,25 +1,25 @@
 ---
 slug: table
 ---
-# 表格
-表格是数据展示组件，基于模型数据源实现分页查询、排序、筛选等功能。它负责数据列表的展示、行级操作、批量操作和统计汇总，支持行内编辑、字段点击事件、工具栏按钮和移动端自适应显示。
+# Table
+Table is a data display component that implements pagination, sorting, filtering and other functions based on model data sources. It handles data list display, row-level operations, batch operations and statistical summaries, supporting inline editing, field click events, toolbar buttons and mobile adaptive display.
 
-表格元素分层结构为Meta（components.Meta） → Type（components.Table） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建表格实例元素。
+The table element has a hierarchical structure of Meta (components.Meta) → Type (components.Table) → Instance. Developers can quickly create table instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.TableType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `components.TableType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基础配置示例
-```json title="基础表格配置"
+## Quick Start 
+### Basic Configuration Example
+```json title="Basic Table Configuration"
 {
   "fullName": "components.Table",
   "type": "components.Table", 
   "name": "Table1",
-  "title": "客户表格",
+  "title": "Customer Table",
   "config": {
     "requireElements": [
       {
-        "title": "表格数据模型",
+        "title": "Table Data Model",
         "type": "models.Meta",
         "name": "models.CustomerModel",
         "filter": "",
@@ -42,406 +42,406 @@ slug: table
 }
 ```
 
-### 配置属性说明
-| 属性名 | 类型 | 必填 | 默认值 | 说明 |
+### Configuration Properties
+| Property Name | Type | Required | Default Value | Description |
 |--------|------|------|--------|------|
-| requireElements | requireElement[] | 是 | [] | 数据源模型配置 |
-| fieldIdList | string[] | 否 | [] | 显示字段列表 |
-| defaultRender | boolean | 否 | true | 首次加载刷新 |
-| level | number | 否 | 2 | 关联数据层级 |
-| pageSize | number | 否 | 20 | 每页显示条数 |
-| disableSelect | boolean | 否 | false | 禁用行选择 |
-| disableSort | boolean | 否 | false | 禁用排序功能 |
-| showSerialNum | boolean | 否 | false | 显示序号列 |
-| alias | [string, string][] | 否 | [] | 字段别名配置 |
-| editableColumns | string[] | 否 | [] | 可编辑字段 |
-| clickField | string[] | 否 | [] | 可点击字段 |
-| frozenColumns | string[] | 否 | [] | 冻结字段 |
-| textWrapColumns | string[] | 否 | [] | 换行显示字段 |
-| columnWidth | Record\<string, any\> | 否 | {} | 列宽设置 |
-| toolbarLeft | ButtonProps[] | 否 | [] | 左侧工具栏按钮 |
-| toolbarRight | ButtonProps[] | 否 | [] | 右侧工具栏按钮 |
-| actionBtn | ButtonProps[] | 否 | [] | 操作列按钮 |
-| fieldStatisticList | fieldStatisticItemType[] | 否 | [] | 统计行配置 |
-| displayGroupBy | boolean | 否 | false | 启用分组显示 |
-| fieldGroupList | FieldDisplayConfig[] | 否 | [] | 分组配置 |
-| speedMode | boolean | 否 | false | 极速模式 |
-| noDataText | string | 否 | '' | 无数据提示文本 |
-| customFieldEditor | CustomFieldSlots | 否 | {} | 自定义字段编辑器 |
-| customFieldRender | CustomFieldSlots | 否 | {} | 自定义字段渲染器 |
+| requireElements | requireElement[] | Yes | [] | Data source model configuration |
+| fieldIdList | string[] | No | [] | Display field list |
+| defaultRender | boolean | No | true | Refresh on first load |
+| level | number | No | 2 | Related data level |
+| pageSize | number | No | 20 | Number of items per page |
+| disableSelect | boolean | No | false | Disable row selection |
+| disableSort | boolean | No | false | Disable sorting functionality |
+| showSerialNum | boolean | No | false | Show serial number column |
+| alias | [string, string][] | No | [] | Field alias configuration |
+| editableColumns | string[] | No | [] | Editable fields |
+| clickField | string[] | No | [] | Clickable fields |
+| frozenColumns | string[] | No | [] | Frozen columns |
+| textWrapColumns | string[] | No | [] | Text wrap display fields |
+| columnWidth | Record\<string, any\> | No | {} | Column width settings |
+| toolbarLeft | ButtonProps[] | No | [] | Left toolbar buttons |
+| toolbarRight | ButtonProps[] | No | [] | Right toolbar buttons |
+| actionBtn | ButtonProps[] | No | [] | Action column buttons |
+| fieldStatisticList | fieldStatisticItemType[] | No | [] | Statistics row configuration |
+| displayGroupBy | boolean | No | false | Enable group display |
+| fieldGroupList | FieldDisplayConfig[] | No | [] | Group configuration |
+| speedMode | boolean | No | false | Speed mode |
+| noDataText | string | No | '' | No data prompt text |
+| customFieldEditor | CustomFieldSlots | No | {} | Custom field editor |
+| customFieldRender | CustomFieldSlots | No | {} | Custom field renderer |
 
-## 变量
+## Variables
 ### displayRowList
-- **类型**: RowList\<T\>
-- **只读**: 是
-- **说明**: 当前页显示的数据列表，包含分页查询后的所有行数据
+- **Type**: RowList\<T\>
+- **Read-only**: Yes
+- **Description**: Current page display data list, containing all row data after pagination query
 
 ### selectedRowList
-- **类型**: RowList\<T\>
-- **只读**: 是
-- **说明**: 用户选中的多行数据列表，支持跨页选择
+- **Type**: RowList\<T\>
+- **Read-only**: Yes
+- **Description**: Multi-row data list selected by user, supports cross-page selection
 
 ### activeRow
-- **类型**: RowData\<T\>
-- **只读**: 是  
-- **说明**: 当前操作的单行数据，在行点击、字段编辑、按钮点击时更新
+- **Type**: RowData\<T\>
+- **Read-only**: Yes  
+- **Description**: Current single row data being operated, updated on row click, field edit, button click
 
 ### filter
-- **类型**: QFilter
-- **只读**: 是
-- **说明**: 当前生效的筛选条件，包含组件筛选和权限筛选的组合条件
+- **Type**: QFilter
+- **Read-only**: Yes
+- **Description**: Currently effective filter conditions, containing combined conditions of component filters and permission filters
 
 ### loading
-- **类型**: Numeric
-- **只读**: 否
-- **说明**: 数据加载状态，0表示加载完成，1表示正在加载
+- **Type**: Numeric
+- **Read-only**: No
+- **Description**: Data loading status, 0 means loading complete, 1 means loading in progress
 
-## 方法 
+## Methods 
 ### call
-异步刷新表格数据，支持传入筛选条件，会重置到第一页。
+Asynchronously refresh table data, supports passing filter conditions, will reset to first page.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| qFilter | QFilter | 否 | 筛选条件，会与现有筛选条件合并 |
+| qFilter | QFilter | No | Filter conditions, will be merged with existing filter conditions |
 
-#### 使用示例
-```typescript title="刷新表格数据"
-// 无条件刷新
+#### Usage Example
+```typescript title="Refresh Table Data"
+// Refresh without conditions
 await table.call();
 
-// 带筛选条件刷新
+// Refresh with filter conditions
 const filter = new Jit.datatypes.QFilter();
 filter.value = "Q(status='active')";
 await table.call(filter);
 ```
 
 ### refresh
-异步刷新当前页数据，保持当前页码和筛选条件不变。
+Asynchronously refresh current page data, keeping current page number and filter conditions unchanged.
 
-#### 使用示例
-```typescript title="刷新当前页"
+#### Usage Example
+```typescript title="Refresh Current Page"
 await table.refresh();
 ```
 
 ### prevPage
-异步翻到上一页，如果已是第一页则提示用户。
+Asynchronously go to previous page, prompts user if already on first page.
 
-#### 使用示例
-```typescript title="上一页"
+#### Usage Example
+```typescript title="Previous Page"
 await table.prevPage();
 ```
 
 ### nextPage
-异步翻到下一页，如果已是最后一页则提示用户。
+Asynchronously go to next page, prompts user if already on last page.
 
-#### 使用示例
-```typescript title="下一页"
+#### Usage Example
+```typescript title="Next Page"
 await table.nextPage();
 ```
 
 ### goPage
-异步跳转到指定页码，会验证页码有效性。
+Asynchronously jump to specified page number, validates page number validity.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| pageNumber | number | 是 | 目标页码，从1开始 |
+| pageNumber | number | Yes | Target page number, starting from 1 |
 
-#### 使用示例
-```typescript title="跳转页面"
-// 跳转到第3页
+#### Usage Example
+```typescript title="Jump to Page"
+// Jump to page 3
 await table.goPage(3);
 ```
 
 ### updatePage
-更新页码和页面大小，触发数据刷新。
+Update page number and page size, trigger data refresh.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| pageNumber | number | 是 | 页码 |
-| pageSize | number | 是 | 每页条数 |
+| pageNumber | number | Yes | Page number |
+| pageSize | number | Yes | Items per page |
 
 ### updateConfig
-更新组件配置，合并新配置并触发刷新。
+Update component configuration, merge new configuration and trigger refresh.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| config | ComponentConfig | 是 | 新的配置对象 |
+| config | ComponentConfig | Yes | New configuration object |
 
 ### publishEvent
-发布组件事件，通知订阅者。
+Publish component event, notify subscribers.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| name | string | 是 | 事件名称 |
-| ex | Record\<string, any\> | 否 | 额外参数 |
+| name | string | Yes | Event name |
+| ex | Record\<string, any\> | No | Additional parameters |
 
 ### subscribeEvent
-订阅组件事件，设置事件处理函数。
+Subscribe to component event, set event handler function.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| name | string | 是 | 事件名称 |
-| evtCb | (data: any) => Promise\<void\> \| void | 是 | 回调函数 |
-| unSubscribeExist | boolean | 否 | 是否取消已有订阅 |
+| name | string | Yes | Event name |
+| evtCb | (data: any) => Promise\<void\> \| void | Yes | Callback function |
+| unSubscribeExist | boolean | No | Whether to cancel existing subscription |
 
-#### 返回值
-- **类型**: string
-- **说明**: 订阅处理器ID，用于取消订阅
+#### Return Value
+- **Type**: string
+- **Description**: Subscription handler ID, used for unsubscription
 
 ### unSubscribeEvent
-取消事件订阅。
+Cancel event subscription.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| id | string | 是 | 订阅处理器ID |
+| id | string | Yes | Subscription handler ID |
 
 ### setConfig
-设置组件配置。
+Set component configuration.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| next | Partial\<T & \{requireElements: requireElement[]\}\> | 是 | 新配置 |
-| clean | boolean | 否 | 是否完全替换 |
+| next | Partial\<T & \{requireElements: requireElement[]\}\> | Yes | New configuration |
+| clean | boolean | No | Whether to completely replace |
 
 ### getEventKey
-获取事件完整标识。
+Get complete event identifier.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| eventName | string | 是 | 事件名称 |
+| eventName | string | Yes | Event name |
 
-#### 返回值
-- **类型**: string
-- **说明**: 事件完整标识
+#### Return Value
+- **Type**: string
+- **Description**: Complete event identifier
 
 ### runCode
-执行代码字符串。
+Execute code string.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| code | string | 是 | 要执行的代码 |
+| code | string | Yes | Code to execute |
 
 ### getPermConfig
-获取权限配置。
+Get permission configuration.
 
-#### 返回值
-- **类型**: Record\<string, any\> | undefined
-- **说明**: 当前组件的权限配置
+#### Return Value
+- **Type**: Record\<string, any\> | undefined
+- **Description**: Current component's permission configuration
 
 ### destroy
-销毁组件，清理所有资源和事件监听。
+Destroy component, clean up all resources and event listeners.
 
 ### bindApp
-绑定应用实例到组件。
+Bind application instance to component.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| app | App | 是 | 应用实例 |
+| app | App | Yes | Application instance |
 
 ### bindPage
-绑定页面实例到组件。
+Bind page instance to component.
 
-#### 参数详解
-| 参数名 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Required | Description |
 |--------|------|------|------|
-| page | BasePage | 是 | 页面实例 |
+| page | BasePage | Yes | Page instance |
 
-## 属性
+## Properties
 ### name
-- **类型**: string
-- **只读**: 是
-- **说明**: 组件实例名称
+- **Type**: string
+- **Read-only**: Yes
+- **Description**: Component instance name
 
 ### title
-- **类型**: string
-- **只读**: 是
-- **说明**: 组件显示标题
+- **Type**: string
+- **Read-only**: Yes
+- **Description**: Component display title
 
 ### config
-- **类型**: TableCompConfig & \{requireElements: requireElement[]\}
-- **只读**: 否
-- **说明**: 组件配置对象
+- **Type**: TableCompConfig & \{requireElements: requireElement[]\}
+- **Read-only**: No
+- **Description**: Component configuration object
 
 ### compType
-- **类型**: COMPONENT_TYPE
-- **只读**: 是
-- **说明**: 组件类型标识
+- **Type**: COMPONENT_TYPE
+- **Read-only**: Yes
+- **Description**: Component type identifier
 
 ### showTitle
-- **类型**: boolean
-- **只读**: 是
-- **说明**: 是否显示组件标题
+- **Type**: boolean
+- **Read-only**: Yes
+- **Description**: Whether to show component title
 
 ### type
-- **类型**: string
-- **只读**: 是
-- **说明**: 组件类型完整路径
+- **Type**: string
+- **Read-only**: Yes
+- **Description**: Component type complete path
 
 ### pageNumber
-- **类型**: number
-- **只读**: 否
-- **说明**: 当前页码，从1开始
+- **Type**: number
+- **Read-only**: No
+- **Description**: Current page number, starting from 1
 
 ### pageSize
-- **类型**: number
-- **只读**: 否
-- **说明**: 每页显示条数
+- **Type**: number
+- **Read-only**: No
+- **Description**: Number of items per page
 
 ### sort
-- **类型**: string[]
-- **只读**: 否
-- **说明**: 排序规则数组
+- **Type**: string[]
+- **Read-only**: No
+- **Description**: Sorting rules array
 
 ### rowDataList
-- **类型**: (typeof Jit.BaseModel)[]
-- **只读**: 否
-- **说明**: 当前页原始数据列表
+- **Type**: (typeof Jit.BaseModel)[]
+- **Read-only**: No
+- **Description**: Current page raw data list
 
 ### count
-- **类型**: number
-- **只读**: 否
-- **说明**: 数据总条数
+- **Type**: number
+- **Read-only**: No
+- **Description**: Total number of data items
 
 ### fieldDefineList
-- **类型**: DataTypeConfig[]
-- **只读**: 否
-- **说明**: 字段定义列表
+- **Type**: DataTypeConfig[]
+- **Read-only**: No
+- **Description**: Field definition list
 
 ### fieldDefineDict
-- **类型**: Record\<string, DataTypeConfig\>
-- **只读**: 否
-- **说明**: 字段定义字典
+- **Type**: Record\<string, DataTypeConfig\>
+- **Read-only**: No
+- **Description**: Field definition dictionary
 
 ### primaryKey
-- **类型**: string
-- **只读**: 否
-- **说明**: 主键字段名
+- **Type**: string
+- **Read-only**: No
+- **Description**: Primary key field name
 
 ### ModelClass
-- **类型**: typeof Jit.BaseModel
-- **只读**: 否
-- **说明**: 数据源模型类
+- **Type**: typeof Jit.BaseModel
+- **Read-only**: No
+- **Description**: Data source model class
 
 ### level
-- **类型**: number
-- **只读**: 否
-- **说明**: 关联数据查询层级
+- **Type**: number
+- **Read-only**: No
+- **Description**: Related data query level
 
 ### statisticData
-- **类型**: Record\<string, any\>[]
-- **只读**: 否
-- **说明**: 统计行数据
+- **Type**: Record\<string, any\>[]
+- **Read-only**: No
+- **Description**: Statistics row data
 
 ### staticList
-- **类型**: fieldStatisticItemType[]
-- **只读**: 否
-- **说明**: 统计字段配置列表
+- **Type**: fieldStatisticItemType[]
+- **Read-only**: No
+- **Description**: Statistics field configuration list
 
 ### filterValue
-- **类型**: string
-- **只读**: 是
-- **说明**: 生效的筛选条件字符串
+- **Type**: string
+- **Read-only**: Yes
+- **Description**: Effective filter condition string
 
 ### app
-- **类型**: App
-- **只读**: 是
-- **说明**: 关联的应用实例
+- **Type**: App
+- **Read-only**: Yes
+- **Description**: Associated application instance
 
 ### page
-- **类型**: BasePage
-- **只读**: 是
-- **说明**: 关联的页面实例
+- **Type**: BasePage
+- **Read-only**: Yes
+- **Description**: Associated page instance
 
 ### fullName
-- **类型**: string
-- **只读**: 是
-- **说明**: 组件完整标识名称
+- **Type**: string
+- **Read-only**: Yes
+- **Description**: Component complete identifier name
 
 ### dataTypeList
-- **类型**: BaseDataType[]
-- **只读**: 是
-- **说明**: 组件变量定义列表
+- **Type**: BaseDataType[]
+- **Read-only**: Yes
+- **Description**: Component variable definition list
 
-## 事件
+## Events
 ### clickRow
-行点击事件，用户点击表格行时触发。
+Row click event, triggered when user clicks on a table row.
 
-**数据**: activeRow - 点击的行数据
+**Data**: activeRow - clicked row data
 
-```typescript title="行点击事件处理"
+```typescript title="Row Click Event Handling"
 table.subscribeEvent('clickRow', async (data) => {
-  console.log('点击的行数据:', data.activeRow);
+  console.log('Clicked row data:', data.activeRow);
 });
 ```
 
 ### selectedChange
-选中状态变更事件，用户选择或取消选择行时触发。
+Selection state change event, triggered when user selects or deselects rows.
 
-**数据**: selectedRowList - 当前选中的所有行数据
+**Data**: selectedRowList - currently selected all row data
 
-```typescript title="选中变更事件处理"
+```typescript title="Selection Change Event Handling"
 table.subscribeEvent('selectedChange', async (data) => {
-  console.log('选中的行数据:', data.selectedRowList);
+  console.log('Selected row data:', data.selectedRowList);
 });
 ```
 
 ### refresh
-刷新事件，数据重新加载时触发。
+Refresh event, triggered when data is reloaded.
 
-```typescript title="刷新事件处理"
+```typescript title="Refresh Event Handling"
 table.subscribeEvent('refresh', async () => {
-  console.log('表格数据已刷新');
+  console.log('Table data has been refreshed');
 });
 ```
 
-### 动态按钮事件
-根据配置的toolbarLeft、toolbarRight、actionBtn自动生成的点击事件。
+### Dynamic Button Events
+Click events automatically generated based on configured toolbarLeft, toolbarRight, actionBtn.
 
-**命名规则**: `click + 按钮ID（驼峰格式）`
+**Naming Rule**: `click + Button ID (camelCase format)`
 
-```typescript title="按钮事件处理"
-// 假设按钮ID为 "add-user"
+```typescript title="Button Event Handling"
+// Assuming button ID is "add-user"
 table.subscribeEvent('clickAddUser', async (data) => {
-  console.log('添加用户按钮点击', data.activeRow);
+  console.log('Add user button clicked', data.activeRow);
 });
 ```
 
-### 字段值变更事件
-可编辑字段值改变后触发的事件。
+### Field Value Change Events
+Events triggered after editable field values change.
 
-**命名规则**: `after + 字段名 + change（驼峰格式）`
+**Naming Rule**: `after + Field Name + change (camelCase format)`
 
-```typescript title="字段变更事件处理"
-// name字段值变更事件
+```typescript title="Field Change Event Handling"
+// name field value change event
 table.subscribeEvent('afterNameChange', async (data) => {
-  console.log('姓名字段已变更:', data.activeRow);
+  console.log('Name field has changed:', data.activeRow);
 });
 
-// 任意字段变更事件
+// Any field change event
 table.subscribeEvent('afterRowChange', async (data) => {
-  console.log('行数据已变更:', data.activeRow);
+  console.log('Row data has changed:', data.activeRow);
 });
 ```
 
-### 字段点击事件
-可点击字段的点击事件。
+### Field Click Events
+Click events for clickable fields.
 
-**命名规则**: `click + 字段名（驼峰格式）`
+**Naming Rule**: `click + Field Name (camelCase format)`
 
-```typescript title="字段点击事件处理"
-// phone字段点击事件
+```typescript title="Field Click Event Handling"
+// phone field click event
 table.subscribeEvent('clickPhone', async (data) => {
-  console.log('电话字段点击:', data.activeRow);
+  console.log('Phone field clicked:', data.activeRow);
 });
 ``` 

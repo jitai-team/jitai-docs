@@ -1,24 +1,23 @@
 ---
 sidebar_position: 1
 slug: download-installation
-title: Download and Installation
 ---
 # Download and Installation
 
-Through the introduction of [Basic Concepts](../basic-concept/), we have learned that JitAi is a brand-new application runtime platform and technology system. To start developing applications with JitAi, you first need to install the JitAi runtime platform.
+As introduced in [Basic Concepts](../basic-concept/), JitAi is a cutting-edge application runtime platform and comprehensive technology ecosystem. To begin developing applications with JitAi, you must first install the JitAi runtime platform.
 
-JitAi provides two versions of installation packages:
+JitAi offers two installation package versions:
 
-- **Desktop Version**: Suitable for developers to develop, run, debug, and publish applications on personal computers, supporting Windows and Mac systems
-- **Server Version**: Used for deploying application systems on servers, supporting cluster deployment, and can be used as both testing and production environments
+- **Desktop Version**: Designed for developers to build, run, debug, and publish applications on personal workstations, with support for Windows and macOS systems
+- **Server Version**: Engineered for deploying application systems on server infrastructure, supporting cluster deployments and serving as both testing and production environments
 
-After installation, you need to create or associate a "Developer Organization" for the created node, then you can access the application management tools to create or deploy applications on the platform node.
+Following installation, you must create or associate a "Developer Team" with the newly created node to access the application management tools and begin creating or deploying applications on the platform node.
 
-## Detailed Installation Steps {#detailed-installation-steps}
+## Detailed installation steps {#detailed-installation-steps}
 
-For complete download and installation steps, please refer to: [Download and Installation Tutorial](../../tutorial/download-installation)
+For comprehensive download and installation procedures, please refer to: [Download and Installation Tutorial](../../tutorial/download-installation)
 
-This tutorial includes:
-- Detailed installation steps for Windows and Mac desktop versions
-- Docker server version deployment methods
-- Frequently asked questions
+This tutorial covers:
+- Step-by-step installation procedures for Windows and macOS desktop versions
+- Docker server version deployment methodologies
+- Frequently asked questions and troubleshooting

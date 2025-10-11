@@ -3,66 +3,66 @@ sidebar_position: 1
 slug: create-knowledge-elements
 ---
 
-# 创建知识库元素
-在传统应用系统中，经常面临用户手册散落在各个文档，常见问题答案需要反复查找的问题。
+# Creating Knowledge Base Elements
+In traditional application systems, user manuals are often scattered across various documents, and answers to frequently asked questions need to be repeatedly searched for.
 
-AI知识库元素正是为了解决这些痛点而生。它不仅是文档的存储容器，还具备语义理解的检索能力。它将各类文档转化为可被“理解”的结构化知识，当用户提出问题时，知识库会理解语义意图，返回知识库中匹配的答案。
+AI knowledge base elements are designed to solve these pain points. They are not just document storage containers, but also have semantic understanding retrieval capabilities. They transform various documents into structured knowledge that can be "understood", and when users ask questions, the knowledge base understands semantic intent and returns matching answers from the knowledge base.
 
-## 创建AI知识库元素 {#create-ai-knowledge-base-element}
+## Creating AI Knowledge Base Elements {#create-ai-knowledge-base-element}
 :::tip
-建议先完成[大模型厂商](../ai-llm/create-ai-llm#create-llm-vendor-element)和[向量数据库](./vector-database-standalone-deployment)的创建，再创建AI知识库，以便在创建流程中直接选择对应元素。大模型厂商推荐`阿里百炼`和`硅基流动`，他们有比较丰富的向量和重排模型供开发者选择。
+It is recommended to first complete the creation of [LLM vendors](../ai-llm/create-ai-llm#creating-llm-vendor-elements) and [vector databases](./vector-database-standalone-deployment), then create the AI knowledge base, so that you can directly select the corresponding elements during the creation process. For LLM vendors, we recommend `Alibaba Cloud Bailian` and `SiliconFlow`, as they have rich vector and reranking models for developers to choose from.
 :::
 
-![创建AI知识库元素](./img/create-ai-knowledge-base-element.png)
+![Creating AI Knowledge Base Element](./img/create-ai-knowledge-base-element.png)
 
-在元素目录树点击搜索框右侧的`+`按钮，选择`AI知识库`-`标准知识库`。随后弹出创建AI知识库元素的弹窗。
+Click the `+` button to the right of the search box in the element directory tree, select `AI Knowledge Base` - `Standard Knowledge Base`. A dialog for creating an AI knowledge base element will then appear.
 
-![创建弹窗](./img/create-popup.png)
+![Creation Dialog](./img/create-popup.png)
 
-创建弹窗中需依次完成`名称`,`向量数据库`，`向量模型`和`重排模型`的选择。点击`确定`完成创建。
+In the creation dialog, you need to complete the selection of `Name`, `Vector Database`, `Vector Model`, and `Reranking Model` in sequence. Click `OK` to complete creation.
 
 :::tip
-向量模型对搜索的结果有较大的影响，请根据实际情况选择，创建完成后不允许再次修改。
+The vector model has a significant impact on search results. Please choose according to actual circumstances. Modification is not allowed after creation is completed.
 :::
 
-![元素树中显示](./img/display-in-element-tree.png)
+![Display in Element Tree](./img/display-in-element-tree.png)
 
-创建完成后会在左侧元素树中显示。
+After creation, it will be displayed in the left element tree.
 
-## 原理说明 {#principle-description}
+## Principle Description {#principle-description}
 
-### 核心构成要素 {#core-components}
+### Core Components {#core-components}
 
-AI知识库基于先进的RAG（检索增强生成）架构，由五个核心组件协同工作：
+AI knowledge bases are based on advanced RAG (Retrieval-Augmented Generation) architecture, with five core components working together:
 
-- **向量模型**：将文档和查询转换为高维向量表示，实现语义理解
-- **重排模型**：对初步检索结果进行精确排序，提升匹配准确度
-- **向量数据库**：高效存储和检索向量数据，支持大规模相似度计算
-- **文档处理器**：智能解析、分块、清洗文档内容，优化向量化效果
-- **关系数据库**：存储文档元数据和文本块，确保数据一致性
+- **Vector Model**: Converts documents and queries into high-dimensional vector representations for semantic understanding
+- **Reranking Model**: Performs precise sorting of preliminary retrieval results to improve matching accuracy
+- **Vector Database**: Efficiently stores and retrieves vector data, supporting large-scale similarity computation
+- **Document Processor**: Intelligently parses, chunks, and cleans document content to optimize vectorization effects
+- **Relational Database**: Stores document metadata and text chunks to ensure data consistency
 
-### 系统架构 {#system-architecture}
+### System Architecture {#system-architecture}
 
 ```mermaid
 graph TB
-    subgraph "应用层"
-        A[知识库管理器]
+    subgraph "Application Layer"
+        A[Knowledge Base Manager]
     end
     
-    subgraph "服务层"
-        B[文档处理器]
-        C[向量操作服务]
-        D[检索增强引擎]
+    subgraph "Service Layer"
+        B[Document Processor]
+        C[Vector Operation Service]
+        D[Retrieval Augmentation Engine]
     end
     
-    subgraph "模型层"
-        E[向量模型<br/>BGE-M3]
-        F[重排模型<br/>BCE-Reranker]
+    subgraph "Model Layer"
+        E[Vector Model<br/>BGE-M3]
+        F[Reranking Model<br/>BCE-Reranker]
     end
     
-    subgraph "存储层"
-        G[向量数据库<br/>语义存储]
-        H[关系数据库<br/>元数据存储]
+    subgraph "Storage Layer"
+        G[Vector Database<br/>Semantic Storage]
+        H[Relational Database<br/>Metadata Storage]
     end
     
     A --> B
@@ -77,32 +77,32 @@ graph TB
     D --> H
 ```
 
-### 技术原理 {#technical-principles}
+### Technical Principles {#technical-principles}
 
-**语义理解技术**：采用先进的文本向量化模型，将自然语言转换为数学向量空间中的点，使计算机能够理解文本的语义关系，而不仅仅是关键词匹配。
+**Semantic Understanding Technology**: Uses advanced text vectorization models to convert natural language into points in mathematical vector space, enabling computers to understand semantic relationships in text rather than just keyword matching.
 
-**两阶段检索机制**：
-1. **向量检索阶段**：在向量空间中快速定位语义相似的候选文档
-2. **重排序阶段**：基于查询上下文对候选结果进行精确排序
+**Two-Stage Retrieval Mechanism**:
+1. **Vector Retrieval Stage**: Quickly locate semantically similar candidate documents in vector space
+2. **Reranking Stage**: Perform precise sorting of candidate results based on query context
 
-**混合存储策略**：向量数据库专门处理高维向量的相似度计算，关系数据库管理结构化的元数据，两者协同确保检索的高效性和准确性。
+**Hybrid Storage Strategy**: Vector databases specialize in similarity computation of high-dimensional vectors, while relational databases manage structured metadata. Both work together to ensure retrieval efficiency and accuracy.
 
-### 数据处理流程 {#data-processing-flow}
+### Data Processing Flow {#data-processing-flow}
 
 ```mermaid
 flowchart LR
-    A[文档上传] --> B[类型识别]
-    B --> C[内容解析]
-    C --> D[智能分块]
-    D --> E[内容清洗]
-    E --> F[向量化]
-    F --> G[存储索引]
-    G --> H[检索就绪]
+    A[Document Upload] --> B[Type Recognition]
+    B --> C[Content Parsing]
+    C --> D[Intelligent Chunking]
+    D --> E[Content Cleaning]
+    E --> F[Vectorization]
+    F --> G[Storage Indexing]
+    G --> H[Retrieval Ready]
     
-    subgraph "处理优化"
-        I[批量操作]
-        J[并行处理]
-        K[质量控制]
+    subgraph "Processing Optimization"
+        I[Batch Operations]
+        J[Parallel Processing]
+        K[Quality Control]
     end
     
     F -.-> I
@@ -110,25 +110,25 @@ flowchart LR
     E -.-> K
 ```
 
-### 检索机制 {#retrieval-mechanism}
+### Retrieval Mechanism {#retrieval-mechanism}
 
 ```mermaid
 sequenceDiagram
-    participant U as 用户查询
-    participant V as 向量化
-    participant D as 向量数据库
-    participant F as 结果过滤
-    participant R as 重排模型
-    participant A as 结果组装
+    participant U as User Query
+    participant V as Vectorization
+    participant D as Vector Database
+    participant F as Result Filtering
+    participant R as Reranking Model
+    participant A as Result Assembly
     
-    U->>V: 查询文本
-    V->>D: 查询向量
-    D->>F: TopK候选结果
-    F->>R: 相似度过滤
-    R->>A: 精确排序
-    A->>U: TopN最终结果
+    U->>V: Query Text
+    V->>D: Query Vector
+    D->>F: TopK Candidate Results
+    F->>R: Similarity Filtering
+    R->>A: Precise Sorting
+    A->>U: TopN Final Results
 ```
 
-用户查询经过向量化后，系统在向量空间中检索出TopK个语义相似的候选文档，通过相似度阈值过滤低质量结果，最后使用重排模型基于查询上下文进行精确排序，返回TopN个最相关的知识片段。
+After user queries are vectorized, the system retrieves TopK semantically similar candidate documents in vector space, filters low-quality results through similarity thresholds, and finally uses reranking models to perform precise sorting based on query context, returning TopN most relevant knowledge fragments.
 
-> 关于检索参数配置和在后端可视化编程中的具体使用方法，请参见[使用知识库进行全文与语义检索](./full-text-and-semantic-search)。
+> For retrieval parameter configuration and specific usage methods in backend visual programming, please refer to [Full-Text and Semantic Search Using Knowledge Base](./full-text-and-semantic-search).

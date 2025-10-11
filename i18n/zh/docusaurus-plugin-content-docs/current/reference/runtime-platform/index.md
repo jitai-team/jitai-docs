@@ -1,15 +1,15 @@
 ---
 sidebar_position: -1
 ---
-# 概述
-[**JAAP（JitAi Application Protocol）**](./JAAP) 完成了对应用开发复杂度的抽象，使业务专家能够专注于上层业务逻辑的编排，而要让JAAP真正发挥作用，就需要一个能够理解和执行JAAP的环境——应用运行容器。
+# 运行平台概述
+[**JAAP（JitAi Application Protocol）**](/docs/reference/runtime-platform/JAAP) 完成了对应用开发复杂度的抽象，使业务专家能够专注于上层业务逻辑的编排，而要让JAAP真正发挥作用，就需要一个能够理解和执行JAAP的环境——应用运行容器。
 
 ## JAAP应用运行容器
-应用运行容器即JitAi应用runtime-platform，内置在安装包中，随JitNode节点的启动而加载。JitAi应用runtime-platform是跨平台的，支持在Windows、MacOS、Linux操作系统上运行。
+应用运行容器即JitAi应用运行平台，内置在安装包中，随JitNode节点的启动而加载。JitAi应用运行平台是跨平台的，支持在Windows、MacOS、Linux操作系统上运行。
 
 我们对照JVM、Docker来理解JAAP应用运行容器:
 
-| 类比对象 | 解释对象 | 执行结果 | JitAi应用runtime-platform |
+| 类比对象 | 解释对象 | 执行结果 | JitAi应用运行平台 |
 |---------|----------|----------|------------|
 | **JVM** | Java字节码 | 跨平台运行Java程序 | 解释JAAP配置，跨平台运行JitAi应用 |
 | **Docker** | Dockerfile | 构建和运行容器 | 解释JAAP配置，构建和运行应用 |

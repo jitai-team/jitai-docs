@@ -1,16 +1,17 @@
 ---
 slug: custom-controls
 ---
-# 自定义控件
-自定义控件是JitWeb框架中的可复用UI组件元素，基于React技术栈实现前端交互功能。它负责封装特定业务逻辑、提供数据绑定能力和响应用户操作，支持在页面和工作流节点中灵活调用。
+# Custom Controls
 
-自定义控件元素分层结构为Meta（widgets.Meta） → Type（widgets.React） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建自定义控件实例元素。
+Custom Controls are reusable UI component elements in the JitWeb framework, implemented based on React technology stack for frontend interaction functionality. They are responsible for encapsulating specific business logic, providing data binding capabilities, and responding to user operations, supporting flexible invocation in pages and workflow nodes.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的widgets.ReactType元素，以实现自己的封装。
+The Custom Control element has a hierarchical structure of Meta (widgets.Meta) → Type (widgets.React) → Instance. Developers can quickly create custom control instance elements through JitAI's visual development tools.
 
-## 快速开始 
-### 基础配置示例
-创建一个简单的输入控件：
+Of course, developers can also create their own Type elements or modify the official widgets.ReactType element provided by JitAi in their own App to implement their own encapsulation.
+
+## Quick Start
+### Basic Configuration Example
+Create a simple input control:
 
 ```tsx title="index.tsx"
 import type { Jit } from 'jit';
@@ -44,11 +45,11 @@ export const Render: FC<{
 };
 ```
 
-对应的配置文件：
+Corresponding configuration file:
 
 ```json title="e.json"
 {
-  "title": "自定义输入控件",
+  "title": "Custom Input Control",
   "type": "widgets.React",
   "outputName": "index",
   "frontBundleEntry": "index.tsx",
@@ -56,33 +57,33 @@ export const Render: FC<{
 }
 ```
 
-### 页面中使用
-在React组件中通过ElementRender调用：
+### Usage in Pages
+Call through ElementRender in React components:
 
-```tsx title="页面使用示例"
+```tsx title="Page Usage Example"
 import { ElementRender } from 'jit-web';
 
-// 创建数据类型实例
+// Create data type instance
 const textData = new Jit.datatypes.Stext({
     name: 'userInput',
-    value: '初始值',
+    value: 'Initial value',
 });
 
-// 使用自定义控件
+// Use custom control
 <ElementRender
     elementPath="widgets.testCustomControls"
     props={{
         data: textData,
         onChange: (v: string) => {
-            console.log('值变更：', v);
+            console.log('Value changed:', v);
         }
     }}
 />
 ```
 
-在工作流节点中通过widgetFullName引用：
+Reference through widgetFullName in workflow nodes:
 
-```json title="节点配置"
+```json title="Node Configuration"
 {
     "renderByWidget": 1,
     "widgetFullName": "widgets.testCustomControls",
@@ -91,50 +92,50 @@ const textData = new Jit.datatypes.Stext({
 }
 ```
 
-### 配置属性说明
-| 属性 | 类型 | 必填 | 默认值 | 说明 |
+### Configuration Properties
+| Property | Type | Required | Default Value | Description |
 |------|------|------|--------|------|
-| title | string | 是 | - | 控件显示名称 |
-| type | string | 是 | "widgets.React" | 控件类型，固定值 |
-| outputName | string | 是 | "index" | 输出文件名 |
-| frontBundleEntry | string | 是 | "index.tsx" | 前端入口文件路径 |
-| props | array | 否 | `[]` | 属性配置列表 |
+| title | string | Yes | - | Control display name |
+| type | string | Yes | "widgets.React" | Control type, fixed value |
+| outputName | string | Yes | "index" | Output file name |
+| frontBundleEntry | string | Yes | "index.tsx" | Frontend entry file path |
+| props | array | No | `[]` | Property configuration list |
 
-## 变量
+## Variables
 ### data
-- **类型**：`InstanceType<typeof Jit.BaseDataType>`
-- **说明**：绑定的数据类型实例，支持双向数据绑定
-- **示例**：通过props传入的数据实例，可监听值变更事件
+- **Type**: `InstanceType<typeof Jit.BaseDataType>`
+- **Description**: Bound data type instance, supports two-way data binding
+- **Example**: Data instance passed through props, can listen to value change events
 
 ### props
-- **类型**：`Record<string, any>`
-- **说明**：组件属性对象，包含外部传入的所有配置参数
-- **示例**：包含data、onChange等业务相关属性
+- **Type**: `Record<string, any>`
+- **Description**: Component properties object, containing all configuration parameters passed from external sources
+- **Example**: Contains business-related properties such as data, onChange
 
-## 方法 
+## Methods
 ### getRuntimeApp()
-获取当前运行时应用实例。
+Get current runtime application instance.
 
-#### 返回值
-- `App` - 应用实例对象
+#### Return Value
+- `App` - Application instance object
 
-#### 使用示例
+#### Usage Example
 ```tsx
 const app = getRuntimeApp();
 ```
 
 ### publishEvent(name, data)
-发布组件事件，支持跨组件通信。
+Publish component events, supporting cross-component communication.
 
-#### 参数详解
-| 参数 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter | Type | Required | Description |
 |------|------|------|------|
-| name | string | 是 | 事件名称 |
-| data | `Record<string, any>` | 否 | 事件数据 |
+| name | string | Yes | Event name |
+| data | `Record<string, any>` | No | Event data |
 
-#### 使用示例
+#### Usage Example
 ```tsx
-// 发布事件
+// Publish event
 const sendEvent = () => {
     const app = getRuntimeApp();
     app?.emit({
@@ -145,23 +146,23 @@ const sendEvent = () => {
 ```
 
 ### subscribeEvent(name, callback)
-订阅组件事件，实现事件监听。
+Subscribe to component events, implementing event listening.
 
-#### 参数详解
-| 参数 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter | Type | Required | Description |
 |------|------|------|------|
-| name | string | 是 | 事件名称 |
-| callback | Function | 是 | 事件回调函数 |
+| name | string | Yes | Event name |
+| callback | Function | Yes | Event callback function |
 
-#### 返回值
-- `string` - 事件处理器ID，用于取消订阅
+#### Return Value
+- `string` - Event handler ID, used for unsubscribing
 
-#### 使用示例
+#### Usage Example
 ```tsx
 useEffect(() => {
     const app = getRuntimeApp();
     const handleId = app?.on(async (data) => {
-        console.log('事件数据：', data);
+        console.log('Event data:', data);
     }, async (event) => {
         return event.name === 'targetEvent';
     });
@@ -173,17 +174,17 @@ useEffect(() => {
 ```
 
 ### onValueChange(callback)
-监听数据值变更事件。
+Listen to data value change events.
 
-#### 参数详解
-| 参数 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter | Type | Required | Description |
 |------|------|------|------|
-| callback | Function | 是 | 值变更回调函数 |
+| callback | Function | Yes | Value change callback function |
 
-#### 返回值
-- `string` - 事件处理器ID
+#### Return Value
+- `string` - Event handler ID
 
-#### 使用示例
+#### Usage Example
 ```tsx
 useEffect(() => {
     if (!data) return;
@@ -196,21 +197,21 @@ useEffect(() => {
 }, [data]);
 ```
 
-## 属性
-暂无
+## Attributes
+None
 
-## 事件
+## Events
 ### onValueChange
-数据值变更事件，当绑定的数据类型实例值发生变化时触发。
+Data value change event, triggered when the bound data type instance value changes.
 
-#### 参数详解
-| 参数 | 类型 | 说明 |
+#### Parameter Details
+| Parameter | Type | Description |
 |------|------|------|
-| value | any | 变更后的新值 |
+| value | any | New value after change |
 
-#### 使用示例
+#### Usage Example
 ```tsx
-// 监听数据变更
+// Listen to data changes
 useEffect(() => {
     if (!p.data) return;
     
@@ -223,16 +224,16 @@ useEffect(() => {
 }, [p.data]);
 ```
 
-## 高级特性
-### 数据双向绑定
-支持与数据类型实例的双向数据绑定，实现数据同步更新。
+## Advanced Features
+### Two-way Data Binding
+Supports two-way data binding with data type instances, implementing synchronized data updates.
 
-#### 配置示例
+#### Configuration Example
 ```tsx
 export const Render: FC<{ props: Props }> = ({ props: p }) => {
     const [value, setValue] = useState(p.data?.value);
     
-    // 监听数据变更
+    // Listen to data changes
     useEffect(() => {
         if (!p.data) return;
         
@@ -244,11 +245,11 @@ export const Render: FC<{ props: Props }> = ({ props: p }) => {
         return () => app.off(handleId);
     }, [p.data]);
     
-    // 更新数据
+    // Update data
     const handleChange = (newValue: any) => {
         setValue(newValue);
         p.onChange?.(newValue);
-        // 直接更新数据类型实例
+        // Directly update data type instance
         if (p.data) {
             p.data.value = newValue;
         }
@@ -263,18 +264,18 @@ export const Render: FC<{ props: Props }> = ({ props: p }) => {
 };
 ```
 
-### 跨组件事件通信
-实现组件间的事件发布和订阅机制。
+### Cross-component Event Communication
+Implement event publishing and subscription mechanism between components.
 
-#### 配置示例
+#### Configuration Example
 ```tsx
 export const Render: FC<{ props: Props }> = ({ props }) => {
     useEffect(() => {
         const app = getRuntimeApp();
         
-        // 监听全局事件
+        // Listen to global events
         const handleId = app?.on(async (data) => {
-            console.log('接收到事件：', data);
+            console.log('Received event:', data);
         }, async (event) => {
             return event.name === 'customEvent';
         });
@@ -284,7 +285,7 @@ export const Render: FC<{ props: Props }> = ({ props }) => {
         };
     }, []);
     
-    // 发送事件
+    // Send event
     const sendEvent = () => {
         const app = getRuntimeApp();
         app?.emit({
@@ -293,48 +294,48 @@ export const Render: FC<{ props: Props }> = ({ props }) => {
         }, { data: 'event data' });
     };
     
-    return <button onClick={sendEvent}>发送事件</button>;
+    return <button onClick={sendEvent}>Send Event</button>;
 };
 ```
 
-### 生命周期管理
-实现组件的完整生命周期控制。
+### Lifecycle Management
+Implement complete component lifecycle control.
 
-#### 配置示例
+#### Configuration Example
 ```tsx
 export const Render: FC<{ props: Props }> = ({ props }) => {
     const componentRef = useRef<any>(null);
     
-    // 组件挂载
+    // Component mount
     useEffect(() => {
-        console.log('组件已挂载');
+        console.log('Component mounted');
         
-        // 初始化逻辑
+        // Initialization logic
         initComponent();
         
         return () => {
-            // 清理逻辑
+            // Cleanup logic
             cleanup();
-            console.log('组件已卸载');
+            console.log('Component unmounted');
         };
     }, []);
     
     const initComponent = () => {
-        // 初始化组件状态
+        // Initialize component state
     };
     
     const cleanup = () => {
-        // 清理资源、事件监听器等
+        // Clean up resources, event listeners, etc.
     };
     
-    return <div ref={componentRef}>组件内容</div>;
+    return <div ref={componentRef}>Component content</div>;
 };
 ```
 
-### 错误处理机制
-实现健壮的错误处理和用户反馈。
+### Error Handling Mechanism
+Implement robust error handling and user feedback.
 
-#### 配置示例
+#### Configuration Example
 ```tsx
 export const Render: FC<{ props: Props }> = ({ props }) => {
     const [error, setError] = useState<string | null>(null);
@@ -342,21 +343,21 @@ export const Render: FC<{ props: Props }> = ({ props }) => {
     const handleOperation = async () => {
         try {
             setError(null);
-            // 执行可能出错的操作
+            // Execute potentially error-prone operations
             await someAsyncOperation();
         } catch (err) {
-            setError(err instanceof Error ? err.message : '操作失败');
-            console.error('组件操作错误：', err);
+            setError(err instanceof Error ? err.message : 'Operation failed');
+            console.error('Component operation error:', err);
         }
     };
     
     if (error) {
-        return <Alert message="错误" description={error} type="error" />;
+        return <Alert message="Error" description={error} type="error" />;
     }
     
     return (
         <div>
-            <button onClick={handleOperation}>执行操作</button>
+            <button onClick={handleOperation}>Execute Operation</button>
         </div>
     );
 };

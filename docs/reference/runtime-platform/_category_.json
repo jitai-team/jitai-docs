@@ -3,7 +3,7 @@
   "position": 1,
   "collapsed": false,
   "link": {
-    "type": "generated-index",
+    "slug": "reference/runtime-platform",
     "description": "Provides system APIs to developers for application development."
   }
 } 

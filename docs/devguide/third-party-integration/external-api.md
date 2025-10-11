@@ -3,144 +3,144 @@ sidebar_position: 1
 slug: external-api
 ---
 
-# 创建通用的外部API元素
-外部 API 集成是用于调用第三方 HTTP 接口的元素，基于 requests 库实现 RESTful API 的统一调用管理。它负责 HTTP 请求封装、参数处理和响应解析，支持 GET、POST、PUT、DELETE 等标准 HTTP 方法，提供请求前后处理和回调机制。
+# Creating Universal External API Elements
+External API integration elements enable seamless integration with third-party HTTP interfaces, providing unified RESTful API call management built on the requests library. These elements handle HTTP request encapsulation, parameter processing, and response parsing, supporting standard HTTP methods including GET, POST, PUT, and DELETE, while offering pre-request processing, post-response processing, and callback mechanisms.
 
-## 外部API创建
-![外部API创建](./img/1/api_2025-08-26_19-18-25.png)
+## Creating External APIs {#creating-external-apis}
+![Creating External APIs](./img/1/api_2025-08-26_19-18-25.png "Creating External APIs")
 
-在左侧元素树上点击`+`会打开弹窗，将鼠标移动到“更多”中，会看到“外部 API”。点击“外部 API”里面的“常规 API”，就会打开常规 API 的新建弹窗页面。
+Click the `+` button in the left element tree to open a popup dialog. Navigate to "More" to reveal the "External API" option. Click "General API" under "External API" to launch the general API creation dialog.
 
-![API弹窗](./img/1/api_2025-08-27_10-55-29.png)
+![API Dialog](./img/1/api_2025-08-27_10-55-29.png "API Dialog")
 
-在新建弹窗页面中，填写好外部 API 名称后，点击`确定`就创建了一个外部 API 元素。
+In the creation dialog, enter the external API name and click `Confirm` to create an external API element.
 
-![API配置](./img/1/api_2025-08-27_11-01-37.png)
+![API Configuration](./img/1/api_2025-08-27_11-01-37.png "API Configuration")
 
-进入外部 API 的配置页面，可以看到外部 API 包含两个模块：公共配置和接口列表。
+Upon entering the external API configuration page, you'll see that external APIs consist of two main modules: Public Configuration and Interface List.
 
-## 公共配置 {#public-configuration}
-公共配置是指外部 API 的一些通用配置，比如：域名、公共的请求头、请求前置处理、响应后置处理等。
+## Public Configuration {#public-configuration}
+Public configuration encompasses common settings for external APIs, including domain names, public request headers, request preprocessing, response postprocessing, and other shared parameters.
 
-### 访问域名 {#access-domain}
-访问域名是集成外部 API 的必填项。
+### Access Domain {#access-domain}
+The access domain is a mandatory field for external API integration.
 
-![访问域名](./img/1/api_2025-08-27_11-47-43.png)
+![Access Domain](./img/1/api_2025-08-27_11-47-43.png "Access Domain")
 
-它可以是 IP 和端口号组合，也可以是域名。
+This can be either an IP address and port combination or a fully qualified domain name.
 
-### 公共请求头 {#public-request-headers}
-公共请求头是当前外部 API 服务下所有接口通用的请求头，在公共请求头中可以配置一些常用的参数，如：Content-Type、Accept 等。
+### Public Request Headers {#public-request-headers}
+Public request headers define common headers that apply to all interfaces within the current external API service. You can configure standard parameters in public request headers, such as Content-Type, Accept, and authentication headers.
 
-![公共请求头](./img/1/api_2025-08-27_11-51-59.png)
+![Public Request Headers](./img/1/api_2025-08-27_11-51-59.png "Public Request Headers")
 
-点击`+ 添加参数`后，出现添加参数弹窗。填写完参数信息后，点击`保存`即可添加公共请求头。
+Click `+ Add Parameter` to open the parameter addition dialog. After entering the parameter details, click `Save` to add the public request header.
 
-### 请求前置处理 {#request-preprocessing}
-某些 API 在请求时需要进行签名、加密等动态实时计算，可以使用请求前置处理函数实现。
+### Request Preprocessing {#request-preprocessing}
+Certain APIs require dynamic real-time calculations such as digital signing and encryption before making requests. These operations can be implemented using request preprocessing functions.
 
-![拦截处理](./img/1/api_2025-08-27_12-00-56.png)
+![Interceptor Processing](./img/1/api_2025-08-27_12-00-56.png "Interceptor Processing")
 
-### 响应后置处理 {#response-postprocessing}
-在 API 响应后，可能需要对响应数据进行二次处理，比如解密、数据校验等，可以使用响应后置处理函数实现。
+### Response Postprocessing {#response-postprocessing}
+After receiving API responses, you may need to perform additional processing on the response data, such as decryption, data validation, or format transformation. These operations can be implemented using response postprocessing functions.
 
-:::warning 注意
+:::warning Note
 
-请求前置函数和响应处理函数都不是必填的。如果响应处理函数没有填写，则响应数据将原样返回。
+Both request preprocessing and response postprocessing functions are optional. If no response processing function is configured, the response data will be returned unchanged.
 
-在配置这两个函数之前，需要到标准服务中创建对应的服务函数。
-
-:::
-
-## API接口管理 {#api-interface-management}
-就像一个服务有多个方法一样，一个外部 API 服务也可以有多个接口，这些接口都定义在“接口列表”中。
-
-![接口列表](./img/1/api_2025-08-27_14-37-03.png)
-
-开发者可以根据具体情况添加单个接口以及对多个接口进行分组展示。
-
-### API接口分组 {#api-interface-grouping}
-开发者可以将同类接口放在同一个分组中，方便管理。例如，订单相关接口放在订单分组下，用户相关接口放在用户分组下等。
-
-![接口分组](./img/1/api_2025-08-27_14-43-41.png)
-
-开发者在左侧点击添加分组，会打开添加分组的弹窗。输入分组名称后保存，就可以创建一个分组。
-
-![添加分组](./img/1/api_2025-08-27_14-44-41.png)
-
-接口分组创建成功后，点击分组后面的`更多`图标，可以对分组进行添加接口、修改分组名称、删除分组等操作。
-
-### API接口 {#api-interface}
-每个 API 接口有自己的名称、请求方式（GET/POST/PUT/DELETE）和接口路径等信息。
-
-![接口创建](./img/1/api_2025-08-27_14-48-59.png)
-
-点击`添加接口`，会打开添加接口的弹窗。在弹窗中，填写接口标题、接口名称、请求方式和接口路径，点击`确定`，就创建了一个新的接口。
-
-:::warning 注意
-接口名称一般用英文，作为外部 API 接口的标识，不允许重复。
-
-真正的接口请求路径是由域名和接口路径拼接而成。
-:::
-
-创建弹窗保存后进入接口详情页面，开发者可以进一步对接口进行配置。
-
-![接口详情](./img/1/api_2025-08-27_14-57-20.png)
-
-#### 请求参数
-每个 API 接口都可以配置 Params 参数、Body 参数以及 Header 参数。
-
-![参数配置](./img/1/api_2025-08-27_15-01-30.png)
-
-点击`+ 添加参数`就可以在对应的 tab 下面添加参数。
-
-:::tip 提示
-Params 参数会放在 url 的 query string 中，一般情况下，当前请求类型是'GET' 类型才进行设置。
-
-Body 参数会放在请求体中，一般情况下，当前请求类型是'POST'、'PUT'类型才进行设置。
-
-Header 参数会放在请求头中，在请求的时候，会将公共配置中的 Header 参数进行合并处理。
+Before configuring these functions, you must first create the corresponding service functions in the standard service module.
 
 :::
 
-#### 返回值类型
-如果当前接口有返回值，那么就需要配置对应的返回值类型。通常接口返回 JSON 格式的数据，可以使用“字典”作为返回值类型，并配置字段的映射关系。
+## API Interface Management {#api-interface-management}
+Similar to how a service contains multiple methods, an external API service can encompass multiple interfaces, all organized within the "Interface List".
 
-![返回值类型](./img/1/api_2025-08-27_17-13-42.gif)
+![Interface List](./img/1/api_2025-08-27_14-37-03.png "Interface List")
 
-注意：这里的返回值类型都是 JitAi 里面定义的[数据类型](../../reference/framework/JitORM/data-types)
+Developers can add individual interfaces and organize multiple interfaces into groups for better management and display based on specific requirements.
 
-#### 回调函数
-JitAi 通过回调函数配置服务元素中的函数，对最终结果进行业务处理。
+### API Interface Grouping {#api-interface-grouping}
+Developers can organize related interfaces into the same group for streamlined management. For example, order-related interfaces can be grouped under "Orders," while user-related interfaces can be grouped under "Users."
 
-![回调函数](./img/1/api_2025-08-27_15-13-23.png)
+![Interface Grouping](./img/1/api_2025-08-27_14-43-41.png "Interface Grouping")
 
-在设置回调函数之前，需要到标准服务中创建对应的函数。
+Click "Add Group" on the left panel to open the group creation dialog. Enter the group name and save to create a new group.
 
-### API接口的测试及调用
-#### API接口测试 {#api-interface-testing}
-创建好一个接口后，可以测试接口是否可用。
+![Adding Group](./img/1/api_2025-08-27_14-44-41.png "Adding Group")
 
-![API 测试](./img/1/api_2025-08-27_15-21-44.gif)
+Once the interface group is created successfully, click the `More` icon next to the group to access additional operations such as adding interfaces, modifying group names, or deleting groups.
 
-在接口详情页面点击`测试`，会打开测试弹窗。在测试弹窗中，填写参数，点击`测试`按钮，就可以测试接口是否可用。
+### API Interface {#api-interface}
+Each API interface contains its own unique name, request method (GET/POST/PUT/DELETE), and endpoint path information.
 
-:::warning 注意
+![Interface Creation](./img/1/api_2025-08-27_14-48-59.png "Interface Creation")
 
-使用测试功能得到的数据是完整的原始数据，没有经过数据处理。
+Click `Add Interface` to open the interface creation dialog. In the dialog, specify the interface title, interface name, request method, and endpoint path, then click `Confirm` to create the new interface.
+
+:::warning Note
+Interface names should be in English, serving as unique identifiers for external API interfaces and must not be duplicated.
+
+The complete interface request URL is constructed by concatenating the domain name with the interface path.
 :::
 
-#### API调用
-在常规页面或者服务中，配置相关函数，即可进行 API 接口的调用。
+After saving the creation dialog, you'll be directed to the interface details page where developers can perform additional interface configuration.
 
-![API 调用](./img/1/api_2025-08-27_15-59-11.gif)
+![Interface Details](./img/1/api_2025-08-27_14-57-20.png "Interface Details")
 
-在函数逻辑中，选择“服务 -> 外部 API 服务 -> 调用外部 API”后，实现了一个 API 函数调用的声明。
+#### Request Parameters {#request-parameters}
+Each API interface supports configuration of three parameter types: Params, Body, and Header parameters.
 
-![API 调用声明](./img/1/api_2025-08-27_15-40-53.png)
+![Parameter Configuration](./img/1/api_2025-08-27_15-01-30.png "Parameter Configuration")
 
-在`设置参数`弹窗中选择 API 接口后，填写相关参数，并点击`确定`。那么就创建了一个完整的 API 函数调用。
+Click `+ Add Parameter` to add parameters within the corresponding tab section.
 
-![API 调用参数](./img/1/api_2025-08-27_17-26-39.png)
+:::tip Tip
+Params parameters are included in the URL's query string and are typically used with 'GET' request types.
 
-在使用者门户中，点击“获取当前天气”按钮，就可以获取当前天气信息了。
+Body parameters are embedded in the request body and are commonly used with 'POST' or 'PUT' request types.
+
+Header parameters are included in the request headers and will be automatically merged with header parameters from the public configuration during API calls.
+
+:::
+
+#### Return Value Type {#return-value-type}
+If the interface returns data, you must configure the appropriate return value type. Since interfaces typically return JSON-formatted data, you can select "Dictionary" as the return value type and configure the corresponding field mapping relationships.
+
+![Return Value Type](./img/1/api_2025-08-27_17-13-42.gif "Return Value Type")
+
+Note: All return value types available here are [data types](../../reference/framework/JitORM/data-types) defined within the JitAi framework.
+
+#### Callback Function {#callback-function}
+JitAi utilizes callback functions to configure service element functions that perform business logic processing on the final API response results.
+
+![Callback Function](./img/1/api_2025-08-27_15-13-23.png "Callback Function")
+
+Before configuring callback functions, you must first create the corresponding functions within the standard service module.
+
+### API Interface Testing and Calling {#api-interface-testing-and-calling}
+#### API Interface Testing {#api-interface-testing}
+Once an interface is created, you can verify its availability through testing.
+
+![API Testing](./img/1/api_2025-08-27_15-21-44.gif "API Testing")
+
+Click `Test` on the interface details page to open the testing dialog. In the dialog, enter the required parameters and click the `Test` button to verify interface functionality.
+
+:::warning Note
+
+Data retrieved through the test function represents the complete, unprocessed raw response from the API.
+:::
+
+#### API Calling {#api-calling}
+To make API interface calls, configure the appropriate functions within generic pages or services.
+
+![API Calling](./img/1/api_2025-08-27_15-59-11.gif "API Calling")
+
+In the function logic, navigate to "Service -> External API Service -> Call External API" to create an API function call declaration.
+
+![API Call Declaration](./img/1/api_2025-08-27_15-40-53.png "API Call Declaration")
+
+In the `Set Parameters` dialog, select the target API interface, configure the necessary parameters, and click `Confirm`. This establishes a complete API function call.
+
+![API Call Parameters](./img/1/api_2025-08-27_17-26-39.png "API Call Parameters")
+
+In the user portal, clicking the "Get Current Weather" button will retrieve the current weather information through the configured API call.

@@ -1,8 +1,9 @@
 {
   "label": "Frontend UI Customization",
-  "position": 20,
+  "position": 13,
   "link": {
     "type": "generated-index",
+    "slug": "devguide/frontend-ui-customization",
     "description": "Learn how to customize frontend UI elements including components, pages, and portals for unique visual experiences and brand identity."
   }
 }

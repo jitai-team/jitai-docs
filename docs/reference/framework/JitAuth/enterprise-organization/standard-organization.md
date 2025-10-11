@@ -1,43 +1,43 @@
 ---
 slug: standard-organization
 ---
-# 标准组织
-标准组织是JitAuth框架中的企业组织架构管理元素，基于部门层级结构和角色权限体系实现企业人员管理。它负责组织架构维护、成员管理和权限分配，支持部门层级管理、角色权限控制和成员状态管理等功能。
+# Generic Organization
+Generic organization is an enterprise organizational architecture management element in the JitAuth framework, implementing enterprise personnel management based on department hierarchical structure and role permission system. It handles organizational architecture maintenance, member management, and permission assignment, supporting department hierarchical management, role permission control, and member status management.
 
-标准组织元素分层结构为Meta（corps.Meta） → Type（corps.NormalType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建标准组织实例元素。
+The hierarchical structure of standard organization elements is Meta (corps.Meta) → Type (corps.NormalType) → Instance. Developers can quickly create standard organization instance elements through JitAi's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的corps.NormalType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `corps.NormalType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-推荐的标准组织实例元素目录结构：
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+Recommended directory structure for standard organization instance elements:
 
 ```
 corps/
-├── Default/                  # 实例元素目录（可自定义）
-│   ├── e.json               # 元素配置文件
-│   └── Default.json         # 业务配置文件（可选）
+├── Default/                  # Instance element directory (customizable)
+│   ├── e.json               # Element configuration file
+│   └── Default.json         # Business configuration file (optional)
 ```
 
-#### e.json文件
-```json title="基础配置示例"
+#### e.json File
+```json title="Basic Configuration Example"
 {
   "allowJoin": 1,
   "backendBundleEntry": ".",
   "frontBundleEntry": "./Default.json",
   "refSpace": false,
-  "title": "默认组织架构",
+  "title": "Default Organization Architecture",
   "type": "corps.NormalType"
 }
 ```
 
-#### 业务配置文件
-```json title="Default.json配置示例"
+#### Business Configuration File
+```json title="Default.json Configuration Example"
 {
   "firstMember": {
     "memberId": "admin123",
-    "nick": "管理员",
+    "nick": "Administrator",
     "password": "admin123",
     "userId": "admin123",
     "username": "admin123"
@@ -45,85 +45,85 @@ corps/
 }
 ```
 
-#### 调用示例
-```python title="获取组织实例"
-# 获取标准组织实例
+#### Usage Example
+```python title="Getting Organization Instance"
+# Get standard organization instance
 corp = app.getElement("corps.Default")
 
-# 初始化组织
+# Initialize organization
 result = corp.initCorp()
 
-# 获取组织信息
+# Get organization information
 corp_info = corp.getCorpInfo()
-print(f"组织名称: {corp_info['title']}")
+print(f"Organization Name: {corp_info['title']}")
 ```
 
-## 元素配置
-### e.json配置
-| 配置项 | 类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| allowJoin | int | 否 | 是否允许用户加入，1：允许，0：不允许 |
-| backendBundleEntry | str | 是 | 后端入口，固定为"." |
-| frontBundleEntry | str | 否 | 前端配置文件路径 |
-| refSpace | bool | 否 | 是否引用空间，默认false |
-| title | str | 是 | 组织显示名称 |
-| type | str | 是 | 元素类型，固定为"corps.NormalType" |
+| allowJoin | int | No | Whether to allow users to join, 1: allow, 0: not allow |
+| backendBundleEntry | str | Yes | Backend entry, fixed as "." |
+| frontBundleEntry | str | No | Frontend configuration file path |
+| refSpace | bool | No | Whether to reference space, default false |
+| title | str | Yes | Organization display name |
+| type | str | Yes | Element type, fixed as "corps.NormalType" |
 
-### 业务配置文件配置
-| 配置项 | 类型 | 必填 | 说明 |
+### Business Configuration File
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| firstMember | dict | 否 | 首个管理员用户配置 |
-| firstMember.memberId | str | 是 | 成员ID |
-| firstMember.nick | str | 是 | 显示昵称 |
-| firstMember.password | str | 否 | 登录密码 |
-| firstMember.userId | str | 是 | 用户ID |
-| firstMember.username | str | 否 | 登录用户名 |
+| firstMember | dict | No | First administrator user configuration |
+| firstMember.memberId | str | Yes | Member ID |
+| firstMember.nick | str | Yes | Display nickname |
+| firstMember.password | str | No | Login password |
+| firstMember.userId | str | Yes | User ID |
+| firstMember.username | str | No | Login username |
 
-## 方法 
+## Methods
 ### initCorp
-初始化组织架构，创建根部门并添加首个管理员用户。
+Initialize organizational architecture, create root department and add first administrator user.
 
-#### 参数详解
-无参数
+#### Parameter Details
+No parameters
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |------|------|
-| dict | 成功返回标准成功结果 |
+| dict | Success returns standard success result |
 
-#### 使用示例
-```python title="初始化组织"
+#### Usage Example
+```python title="Initialize Organization"
 corp = app.getElement("corps.Default")
 result = corp.initCorp()
 ```
 
 ### addMember
-添加组织成员，支持设置部门和角色，可同时创建认证信息。
+Add organization members, support setting departments and roles, can create authentication information simultaneously.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| nick | Stext | str | 是 | 用户显示昵称 |
-| deptIdList | JitList | list | 是 | 所属部门ID列表 |
-| roleIdList | JitList | list | 否 | 所属角色ID列表 |
-| phone | Phone | str | 否 | 手机号码 |
-| username | Stext | str | 否 | 登录用户名 |
-| password | Stext | str | 否 | 登录密码(MD5格式) |
-| memberId | Stext | str | 否 | 指定成员ID |
-| userId | Stext | str | 否 | 指定用户ID |
+| nick | Stext | str | Yes | User display nickname |
+| deptIdList | JitList | list | Yes | Department ID list |
+| roleIdList | JitList | list | No | Role ID list |
+| phone | Phone | str | No | Phone number |
+| username | Stext | str | No | Login username |
+| password | Stext | str | No | Login password (MD5 format) |
+| memberId | Stext | str | No | Specify member ID |
+| userId | Stext | str | No | Specify user ID |
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |------|------|
-| dict | 包含新创建成员信息的字典 |
+| dict | Dictionary containing newly created member information |
 
-#### 使用示例
-```python title="添加成员"
+#### Usage Example
+```python title="Add Member"
 corp = app.getElement("corps.Default")
 
-# 添加普通成员
+# Add regular member
 member_data = corp.addMember(
-    nick="张三",
+    nick="Zhang San",
     deptIdList=["dept001"],
     roleIdList=["role001"],
     phone="13800138000",
@@ -133,96 +133,96 @@ member_data = corp.addMember(
 ```
 
 ### createDept
-创建组织部门。
+Create organization department.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 部门名称 |
-| parentId | Stext | str | 否 | 父部门ID，默认为根部门 |
+| name | Stext | str | Yes | Department name |
+| parentId | Stext | str | No | Parent department ID, defaults to root department |
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |------|------|
-| RowData | 新创建的部门对象 |
+| RowData | Newly created department object |
 
-#### 使用示例
-```python title="创建部门"
+#### Usage Example
+```python title="Create Department"
 corp = app.getElement("corps.Default")
 
-# 创建一级部门
-dept = corp.createDept(name="技术部")
+# Create first-level department
+dept = corp.createDept(name="Technology Department")
 
-# 创建子部门
-sub_dept = corp.createDept(name="前端组", parentId=dept.deptId.value)
+# Create sub-department
+sub_dept = corp.createDept(name="Frontend Group", parentId=dept.deptId.value)
 ```
 
 ### updateDept
-更新部门信息。
+Update department information.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| deptId | Stext | str | 是 | 部门ID |
-| name | Stext | str | 是 | 新部门名称 |
-| parentId | Stext | str | 否 | 新父部门ID |
+| deptId | Stext | str | Yes | Department ID |
+| name | Stext | str | Yes | New department name |
+| parentId | Stext | str | No | New parent department ID |
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |------|------|
-| RowData | 更新后的部门对象 |
+| RowData | Updated department object |
 
-#### 使用示例
-```python title="更新部门"
+#### Usage Example
+```python title="Update Department"
 corp = app.getElement("corps.Default")
 
-# 更新部门名称
+# Update department name
 updated_dept = corp.updateDept(
     deptId="dept001",
-    name="技术研发部"
+    name="Technology R&D Department"
 )
 ```
 
 ### deleteDept
-删除部门。
+Delete department.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| deptId | Stext | str | 是 | 要删除的部门ID |
+| deptId | Stext | str | Yes | Department ID to delete |
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |------|------|
-| dict | 成功返回标准成功结果 |
+| dict | Success returns standard success result |
 
-#### 使用示例
-```python title="删除部门"
+#### Usage Example
+```python title="Delete Department"
 corp = app.getElement("corps.Default")
 
-# 删除部门（需确保无子部门和成员）
+# Delete department (ensure no sub-departments and members)
 result = corp.deleteDept(deptId="dept001")
 ```
 
 ### setDeptLeaderByDept
-设置部门主管。
+Set department leader.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| deptId | Stext | str | 是 | 部门ID |
-| memberIdList | JitList | list | 是 | 主管成员ID列表 |
+| deptId | Stext | str | Yes | Department ID |
+| memberIdList | JitList | list | Yes | Leader member ID list |
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |------|------|
-| list | 更新的部门成员关系列表 |
+| list | Updated department member relationship list |
 
-#### 使用示例
-```python title="设置部门主管"
+#### Usage Example
+```python title="Set Department Leader"
 corp = app.getElement("corps.Default")
 
-# 设置部门主管
+# Set department leader
 leaders = corp.setDeptLeaderByDept(
     deptId="dept001",
     memberIdList=["member001", "member002"]
@@ -230,74 +230,74 @@ leaders = corp.setDeptLeaderByDept(
 ```
 
 ### createRole
-创建角色。
+Create role.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| name | Stext | str | 是 | 角色名称 |
-| roleGroupId | Stext | str | 是 | 角色组ID |
+| name | Stext | str | Yes | Role name |
+| roleGroupId | Stext | str | Yes | Role group ID |
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |------|------|
-| RowData | 新创建的角色对象 |
+| RowData | Newly created role object |
 
-#### 使用示例
-```python title="创建角色"
+#### Usage Example
+```python title="Create Role"
 corp = app.getElement("corps.Default")
 
-# 创建角色
+# Create role
 role = corp.createRole(
-    name="项目经理",
+    name="Project Manager",
     roleGroupId="group001"
 )
 ```
 
 ### updateUserInfo
-更新成员信息。
+Update member information.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| memberId | Stext | str | 是 | 成员ID |
-| **updateDict | JitDict | dict | 是 | 更新字段字典 |
+| memberId | Stext | str | Yes | Member ID |
+| **updateDict | JitDict | dict | Yes | Update field dictionary |
 
-允许更新的字段：nick、phone、email、photo、gender、extendConf
+Allowed update fields: nick, phone, email, photo, gender, extendConf
 
-#### 返回值
-无返回值
+#### Return Value
+No return value
 
-#### 使用示例
-```python title="更新成员信息"
+#### Usage Example
+```python title="Update Member Information"
 corp = app.getElement("corps.Default")
 
-# 更新成员信息
+# Update member information
 corp.updateUserInfo(
     memberId="member001",
-    nick="李四",
+    nick="Li Si",
     phone="13900139000",
     email="lisi@example.com"
 )
 ```
 
 ### changeMemberStatus
-批量修改成员状态。
+Batch modify member status.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| memberIdList | JitList | list | 是 | 成员ID列表 |
-| status | Numeric | int | 是 | 目标状态，1：在职，2：离职 |
+| memberIdList | JitList | list | Yes | Member ID list |
+| status | Numeric | int | Yes | Target status, 1: active, 2: resigned |
 
-#### 返回值
-无返回值
+#### Return Value
+No return value
 
-#### 使用示例
-```python title="修改成员状态"
+#### Usage Example
+```python title="Modify Member Status"
 corp = app.getElement("corps.Default")
 
-# 将成员设为离职
+# Set members as resigned
 corp.changeMemberStatus(
     memberIdList=["member001", "member002"],
     status=2
@@ -305,148 +305,148 @@ corp.changeMemberStatus(
 ```
 
 ### setAdmin
-设置组织管理员。
+Set organization administrators.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| memberIdList | JitList | list | 是 | 管理员成员ID列表 |
+| memberIdList | JitList | list | Yes | Administrator member ID list |
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |------|------|
-| dict | 空字典 |
+| dict | Empty dictionary |
 
-#### 使用示例
-```python title="设置管理员"
+#### Usage Example
+```python title="Set Administrators"
 corp = app.getElement("corps.Default")
 
-# 设置管理员
+# Set administrators
 corp.setAdmin(memberIdList=["member001"])
 ```
 
 ### getAdmin
-获取组织管理员列表。
+Get organization administrator list.
 
-#### 参数详解
-无参数
+#### Parameter Details
+No parameters
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |------|------|
-| list | 管理员成员ID列表 |
+| list | Administrator member ID list |
 
-#### 使用示例
-```python title="获取管理员"
+#### Usage Example
+```python title="Get Administrators"
 corp = app.getElement("corps.Default")
 
-# 获取管理员列表
+# Get administrator list
 admins = corp.getAdmin()
-print(f"管理员: {admins}")
+print(f"Administrators: {admins}")
 ```
 
 ### getLocalCorpData
-获取完整的组织架构数据。
+Get complete organizational architecture data.
 
-#### 参数详解
-无参数
+#### Parameter Details
+No parameters
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |------|------|
-| dict | 包含组织完整信息的字典 |
+| dict | Dictionary containing complete organization information |
 
-返回数据结构：
-- corp: 组织基本信息
-- userList: 在职用户列表
-- deptList: 部门列表（含路径信息）
-- deptMemberList: 部门成员关系列表
-- roleList: 角色列表
-- roleGroupList: 角色组列表
-- roleMemberSet: 角色成员关系列表
+Return data structure:
+- corp: Organization basic information
+- userList: Active user list
+- deptList: Department list (including path information)
+- deptMemberList: Department member relationship list
+- roleList: Role list
+- roleGroupList: Role group list
+- roleMemberSet: Role member relationship list
 
-#### 使用示例
-```python title="获取组织数据"
+#### Usage Example
+```python title="Get Organization Data"
 corp = app.getElement("corps.Default")
 
-# 获取完整组织数据
+# Get complete organization data
 corp_data = corp.getLocalCorpData()
-print(f"用户数量: {len(corp_data['userList'])}")
-print(f"部门数量: {len(corp_data['deptList'])}")
+print(f"User count: {len(corp_data['userList'])}")
+print(f"Department count: {len(corp_data['deptList'])}")
 ```
 
-## 属性
+## Properties
 ### corpFullName
-组织完整名称，等同于fullName属性。
+Organization full name, equivalent to fullName property.
 
 ### title
-组织显示标题。
+Organization display title.
 
 ### fullName
-组织元素的fullName标识。
+Organization element fullName identifier.
 
-## 高级特性
-### 组织初始化流程
-标准组织支持完整的初始化流程，包括根部门创建和首个管理员添加：
+## Advanced Features
+### Organization Initialization Process
+Generic organization supports complete initialization process, including root department creation and first administrator addition:
 
-```python title="完整初始化示例"
+```python title="Complete Initialization Example"
 corp = app.getElement("corps.Default")
 
-# 执行初始化
+# Execute initialization
 corp.initCorp()
 
-# 验证初始化结果
+# Verify initialization result
 admins = corp.getAdmin()
 corp_data = corp.getLocalCorpData()
 
-print(f"管理员: {admins}")
-print(f"根部门: {corp_data['deptList'][0]['name']}")
+print(f"Administrators: {admins}")
+print(f"Root Department: {corp_data['deptList'][0]['name']}")
 ```
 
-### 批量操作支持
-支持批量管理部门成员和角色成员：
+### Batch Operation Support
+Supports batch management of department members and role members:
 
-```python title="批量操作示例"
+```python title="Batch Operation Example"
 corp = app.getElement("corps.Default")
 
-# 批量添加部门成员
+# Batch add department members
 corp.addDeptMember(
     deptId="dept001",
     memberIdList=["member001", "member002", "member003"]
 )
 
-# 批量删除部门成员
+# Batch delete department members
 corp.deleteDeptMember(
     deptId="dept001",
     memberIdList=["member003"]
 )
 
-# 批量添加角色成员
+# Batch add role members
 corp.addRoleMember(
     roleId="role001",
     memberIdList=["member001", "member002"]
 )
 ```
 
-### 权限和状态管理
-支持细粒度的权限控制和成员状态管理：
+### Permission and Status Management
+Supports fine-grained permission control and member status management:
 
-```python title="权限管理示例"
+```python title="Permission Management Example"
 corp = app.getElement("corps.Default")
 
-# 设置部门限制
+# Set department restrictions
 corp.setDeptLimit(
     roleId="role001",
     memberId="member001",
     deptIdList=["dept001", "dept002"]
 )
 
-# 修改成员状态为离职
+# Change member status to resigned
 corp.changeMemberStatus(
     memberIdList=["member002"],
-    status=2  # 离职状态
+    status=2  # Resigned status
 )
 
-# 删除离职成员
+# Delete resigned members
 corp.deleteMember(memberIdList=["member002"])
 ```

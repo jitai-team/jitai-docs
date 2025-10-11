@@ -1,26 +1,26 @@
 ---
 slug: model-filter
 ---
-# 模型筛选器
-模型筛选器是用于对指定模型数据进行筛选操作的交互组件，基于React和TypeScript实现数据查询条件的可视化配置能力。它负责构建查询条件、管理筛选状态和触发查询事件，支持简单模式、复杂模式和自由模式三种筛选方式，提供列表和标签两种展示样式。
+# Model Filter
+The model filter is an interactive component used for filtering operations on specified model data, implementing visual configuration capabilities for data query conditions based on React and TypeScript. It handles query condition construction, filter state management, and query event triggering, supporting three filtering modes: simple mode, complex mode, and free mode, providing list and tag display styles.
 
-模型筛选器元素分层结构为Meta（components.Meta）→ Type（components.Filter）→ 实例，开发者可通过JitAI的可视化开发工具快捷地创建模型筛选器实例元素。
+The model filter element has a hierarchical structure of Meta (components.Meta) → Type (components.Filter) → Instance. Developers can quickly create model filter instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.FilterType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `components.FilterType` element provided by JitAI in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基础配置示例
-```typescript title="基本使用示例"
+## Quick Start
+### Basic Configuration Example
+```typescript title="Basic Usage Example"
 {
   "name": "Filter1",
-  "title": "用户筛选器",
+  "title": "User Filter",
   "type": "components.Filter", 
   "config": {
     "requireElements": [
       {
         "name": "models.UserModel",
         "type": "models.Meta",
-        "title": "用户模型",
+        "title": "User Model",
         "filter": "",
         "orderBy": []
       }
@@ -46,7 +46,7 @@ slug: model-filter
             {
               "id": "filter-group-1",
               "type": "normal",
-              "name": "男",
+              "name": "Male",
               "operator": "isEqual",
               "filter": [
                 {
@@ -70,64 +70,64 @@ slug: model-filter
 }
 ```
 
-### 配置属性说明
-| 属性名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| requireElements | requireElement[] | 是 | - | 关联的模型元素配置 |
-| mode | FilterModeEnum | 否 | 'simple' | 筛选模式：simple/complex/free |
-| firstTimeQuery | boolean | 否 | true | 是否首次加载时查询 |
-| layoutPercent | number | 否 | 1 | 布局百分比 |
-| styleMode | SimpleFilterStyleEnum | 否 | 'list' | 简单模式样式：list/tag |
-| typeMode | SimpleFilterTypeEnum | 否 | 'horizontal' | 简单模式类型：horizontal/vertical |
-| config | Record&lt;string, IFilterSimpleConfigNode&gt; | 否 | \{\} | 字段筛选配置 |
-| isShowAllField | boolean | 否 | false | 是否显示所有字段 |
+### Configuration Properties
+| Property Name | Type | Required | Default Value | Description |
+|---------------|------|----------|---------------|-------------|
+| requireElements | requireElement[] | Yes | - | Associated model element configuration |
+| mode | FilterModeEnum | No | 'simple' | Filter mode: simple/complex/free |
+| firstTimeQuery | boolean | No | true | Whether to query on first load |
+| layoutPercent | number | No | 1 | Layout percentage |
+| styleMode | SimpleFilterStyleEnum | No | 'list' | Simple mode style: list/tag |
+| typeMode | SimpleFilterTypeEnum | No | 'horizontal' | Simple mode type: horizontal/vertical |
+| config | Record&lt;string, IFilterSimpleConfigNode&gt; | No | \{\} | Field filter configuration |
+| isShowAllField | boolean | No | false | Whether to show all fields |
 
-#### requireElement 配置
-| 属性名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
-| name | string | 是 | 模型元素fullName |
-| type | string | 是 | 固定值 'models.Meta' |
-| title | string | 是 | 模型显示名称 |
-| filter | string | 否 | 预设筛选条件 |
-| orderBy | string[] | 否 | 排序规则 |
+#### requireElement Configuration
+| Property Name | Type | Required | Description |
+|---------------|------|----------|-------------|
+| name | string | Yes | Model element fullName |
+| type | string | Yes | Fixed value 'models.Meta' |
+| title | string | Yes | Model display name |
+| filter | string | No | Preset filter condition |
+| orderBy | string[] | No | Sorting rules |
 
-#### 字段筛选配置 (IFilterSimpleConfigNodeConfig)
-| 属性名 | 类型 | 必填 | 默认值 | 说明 |
-|--------|------|------|--------|------|
-| fieldId | string | 是 | - | 字段ID |
-| showTitle | boolean | 否 | true | 是否显示字段标题 |
-| multiple | boolean | 否 | false | 是否多选 |
-| isAll | boolean | 否 | false | 是否包含全部选项 |
-| isShowAlias | boolean | 否 | false | 是否显示字段别名 |
-| alias | string | 否 | - | 字段别名 |
-| group | IFilterSimpleConfigGroupItem[] | 否 | [] | 筛选分组配置 |
-| defaultSelectedGroup | string[] | 否 | [] | 默认选中分组 |
-| hasDefaultSelect | boolean | 否 | false | 是否有默认选择 |
-| isCustom | boolean | 否 | true | 是否支持自定义筛选 |
-| customFilterOperateType | string | 否 | - | 自定义筛选操作类型 |
-| customFilterInfo | IFilterCompItem[] | 否 | [] | 自定义筛选信息 |
-| placeholder | string | 否 | - | 占位符文本 |
-| rowNum | number | 否 | 1 | 显示行数 |
-| isShowMore | boolean | 否 | false | 是否显示更多选项 |
-| isFuzzyQuery | boolean | 否 | false | 是否支持模糊查询 |
+#### Field Filter Configuration (IFilterSimpleConfigNodeConfig)
+| Property Name | Type | Required | Default Value | Description |
+|---------------|------|----------|---------------|-------------|
+| fieldId | string | Yes | - | Field ID |
+| showTitle | boolean | No | true | Whether to show field title |
+| multiple | boolean | No | false | Whether to support multiple selection |
+| isAll | boolean | No | false | Whether to include all options |
+| isShowAlias | boolean | No | false | Whether to show field alias |
+| alias | string | No | - | Field alias |
+| group | IFilterSimpleConfigGroupItem[] | No | [] | Filter group configuration |
+| defaultSelectedGroup | string[] | No | [] | Default selected groups |
+| hasDefaultSelect | boolean | No | false | Whether to have default selection |
+| isCustom | boolean | No | true | Whether to support custom filtering |
+| customFilterOperateType | string | No | - | Custom filter operation type |
+| customFilterInfo | IFilterCompItem[] | No | [] | Custom filter information |
+| placeholder | string | No | - | Placeholder text |
+| rowNum | number | No | 1 | Number of display rows |
+| isShowMore | boolean | No | false | Whether to show more options |
+| isFuzzyQuery | boolean | No | false | Whether to support fuzzy query |
 
-## 变量
+## Variables
 ### filter
-筛选条件变量，存储当前组件的所有筛选条件。
+Filter condition variable, storing all filter conditions of the current component.
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
-| 名称 | filter | 变量名 |
-| 类型 | QFilter | 查询筛选条件类型 |
-| 泛型 | 关联模型 | 指向requireElements中指定的模型 |
-| 只读 | true | 变量为只读，由组件内部维护 |
+| Property | Type | Description |
+|----------|------|-------------|
+| Name | filter | Variable name |
+| Type | QFilter | Query filter condition type |
+| Generic | Associated model | Points to model specified in requireElements |
+| Read-only | true | Variable is read-only, maintained internally by component |
 
-**使用示例**：
-```typescript title="获取筛选条件"
-// 获取当前筛选条件
+**Usage Example**:
+```typescript title="Get Filter Conditions"
+// Get current filter conditions
 const currentFilter = this.filter.value;
 
-// 在其他组件中引用筛选条件
+// Reference filter conditions in other components
 {
   "dataSource": {
     "filter": "{{Filter1.filter}}"
@@ -135,45 +135,45 @@ const currentFilter = this.filter.value;
 }
 ```
 
-## 方法 
+## Methods
 ### reset
-重置筛选器所有筛选条件为初始状态。
+Reset all filter conditions of the filter to initial state.
 
-```typescript title="重置筛选器"
+```typescript title="Reset Filter"
 await this.reset();
 ```
 
 ### runCode
-执行JavaScript代码字符串，代码在页面上下文中运行。
+Execute JavaScript code string, code runs in page context.
 
-**参数**：
-| 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
-| code | string | 是 | 要执行的JavaScript代码 |
+**Parameters**:
+| Parameter Name | Type | Required | Description |
+|----------------|------|----------|-------------|
+| code | string | Yes | JavaScript code to execute |
 
-**返回值**：any - 代码执行结果
+**Return Value**: any - Code execution result
 
-```typescript title="执行动态代码"
-// 获取筛选条件
+```typescript title="Execute Dynamic Code"
+// Get filter conditions
 const filterValue = this.runCode('this.filter.value');
 
-// 执行复杂逻辑
+// Execute complex logic
 const result = this.runCode(`
   const condition = this.filter.value;
-  return condition ? '有筛选条件' : '无筛选条件';
+  return condition ? 'Has filter conditions' : 'No filter conditions';
 `);
 ```
 
 ### setConfig
-更新组件配置。
+Update component configuration.
 
-**参数**：
-| 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
-| next | Partial&lt;T&gt; | 是 | 新配置对象 |
-| clean | boolean | 否 | 是否完全替换配置 |
+**Parameters**:
+| Parameter Name | Type | Required | Description |
+|----------------|------|----------|-------------|
+| next | Partial&lt;T&gt; | Yes | New configuration object |
+| clean | boolean | No | Whether to completely replace configuration |
 
-```typescript title="动态修改配置"
+```typescript title="Dynamically Modify Configuration"
 this.setConfig({
   styleMode: "tag",
   typeMode: "vertical"
@@ -181,15 +181,15 @@ this.setConfig({
 ```
 
 ### publishEvent
-发布组件事件。
+Publish component events.
 
-**参数**：
-| 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
-| name | string | 是 | 事件名称 |
-| ex | Record&lt;string, any&gt; | 否 | 事件额外数据 |
+**Parameters**:
+| Parameter Name | Type | Required | Description |
+|----------------|------|----------|-------------|
+| name | string | Yes | Event name |
+| ex | Record&lt;string, any&gt; | No | Event additional data |
 
-```typescript title="发布自定义事件"
+```typescript title="Publish Custom Event"
 await this.publishEvent('customFilter', { 
   filterType: 'advanced',
   data: filterData 
@@ -197,115 +197,115 @@ await this.publishEvent('customFilter', {
 ```
 
 ### subscribeEvent
-订阅组件事件。
+Subscribe to component events.
 
-**参数**：
-| 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
-| name | string | 是 | 事件名称 |
-| evtCb | Function | 是 | 事件回调函数 |
-| unSubscribeExist | boolean | 否 | 是否取消已存在订阅 |
+**Parameters**:
+| Parameter Name | Type | Required | Description |
+|----------------|------|----------|-------------|
+| name | string | Yes | Event name |
+| evtCb | Function | Yes | Event callback function |
+| unSubscribeExist | boolean | No | Whether to cancel existing subscriptions |
 
-**返回值**：string - 事件处理器ID
+**Return Value**: string - Event handler ID
 
-```typescript title="订阅筛选事件"
+```typescript title="Subscribe to Filter Event"
 const handlerId = this.subscribeEvent('afterFilter', async (data) => {
-  console.log('筛选条件:', data.filter.value);
+  console.log('Filter conditions:', data.filter.value);
 });
 ```
 
 ### unSubscribeEvent
-取消事件订阅。
+Cancel event subscription.
 
-**参数**：
-| 参数名 | 类型 | 必填 | 说明 |
-|--------|------|------|------|
-| id | string | 是 | 事件处理器ID |
+**Parameters**:
+| Parameter Name | Type | Required | Description |
+|----------------|------|----------|-------------|
+| id | string | Yes | Event handler ID |
 
 ### destroy
-销毁组件实例，清理所有资源和事件订阅。
+Destroy component instance, clean up all resources and event subscriptions.
 
 ### getPermConfig
-获取组件权限配置。
+Get component permission configuration.
 
-**返回值**：Record&lt;string, any&gt; | undefined - 权限配置对象
+**Return Value**: Record&lt;string, any&gt; | undefined - Permission configuration object
 
-## 事件
+## Events
 ### afterFilter
-查询后事件，在筛选条件发生变化并完成查询后触发。
+After query event, triggered when filter conditions change and query is completed.
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
-| 事件名称 | afterFilter | 固定事件名 |
-| 数据参数 | filter | 当前筛选条件 |
-| 触发时机 | 筛选条件变化并查询完成后 |
+| Property | Type | Description |
+|----------|------|-------------|
+| Event Name | afterFilter | Fixed event name |
+| Data Parameter | filter | Current filter conditions |
+| Trigger Timing | After filter conditions change and query is completed |
 
-```typescript title="事件处理示例"
-// 订阅筛选后事件
+```typescript title="Event Handling Example"
+// Subscribe to after filter event
 this.subscribeEvent('afterFilter', async (data) => {
-  console.log('筛选条件:', data.filter.value);
-  // 更新其他组件数据
+  console.log('Filter conditions:', data.filter.value);
+  // Update other component data
   await this.Table1.refresh();
 });
 ```
 
-## 属性
+## Properties
 ### name
-组件实例名称。
+Component instance name.
 
-- **类型**：string
+- **Type**: string
 
 ### title
-组件显示标题。
+Component display title.
 
-- **类型**：string
+- **Type**: string
 
 ### type
-组件类型标识。
+Component type identifier.
 
-- **类型**：string
+- **Type**: string
 
 ### showTitle
-是否显示标题。
+Whether to show title.
 
-- **类型**：boolean
+- **Type**: boolean
 
 ### config
-组件配置对象。
+Component configuration object.
 
-- **类型**：T
+- **Type**: T
 
 ### app
-应用实例引用。
+Application instance reference.
 
-- **类型**：App
+- **Type**: App
 
 ### page
-页面实例引用。
+Page instance reference.
 
-- **类型**：BasePage
+- **Type**: BasePage
 
-## 高级特性
-### 多模式支持
-```typescript title="复杂模式配置"
+## Advanced Features
+### Multi-mode Support
+```typescript title="Complex Mode Configuration"
 {
   "mode": "complex",
   "layoutPercent": 1,
   "config": {
     "fieldId": {
-      "layout": { /* 布局配置 */ },
+      "layout": { /* Layout configuration */ },
       "config": {
         "fieldId": "userName",
         "isShowAlias": true,
-        "alias": "用户名称"
+        "alias": "User Name"
       }
     }
   }
 }
 ```
 
-### 自定义筛选条件
-```typescript title="自定义筛选配置"
+### Custom Filter Conditions
+```typescript title="Custom Filter Configuration"
 {
   "customFilterInfo": [
     {
@@ -320,5 +320,5 @@ this.subscribeEvent('afterFilter', async (data) => {
 }
 ```
 
-### 动态字段生成
-当设置`isShowAllField: true`时，组件会自动根据关联模型的字段定义生成筛选配置，排除不支持筛选的字段类型（图片、富文本、定位、附件、子表）。
+### Dynamic Field Generation
+When `isShowAllField: true` is set, the component automatically generates filter configuration based on the associated model's field definitions, excluding field types that don't support filtering (images, rich text, location, attachments, sub-tables).

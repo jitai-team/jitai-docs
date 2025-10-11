@@ -1,275 +1,275 @@
 ---
 slug: parse-excel
 ---
-# 解析Excel
-解析Excel是用于解析.xlsx格式文件并将数据导入到指定数据模型的组件，基于Steps步骤条和表格展示实现Excel数据的上传、解析和导入功能。它负责文件上传验证、数据格式转换和批量数据导入，支持字段别名映射、数据预览和自定义按钮操作。
+# Parse Excel
+Parse Excel is a component for parsing .xlsx format files and importing data into specified data models, implemented based on Steps stepper and table display to provide Excel data upload, parsing, and import functionality. It handles file upload validation, data format conversion, and batch data import, supporting field alias mapping, data preview, and custom button operations.
 
-解析Excel元素分层结构为Meta（components.Meta） → Type（components.ParseData） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建解析Excel实例元素。
+The parse Excel element has a hierarchical structure of Meta (components.Meta) → Type (components.ParseData) → Instance. Developers can quickly create parse Excel instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.ParseDataType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `components.ParseDataType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 基础配置示例
-```json title="基础配置"
+## Quick Start 
+### Basic Configuration Example
+```json title="Basic Configuration"
 {
   "requireElements": [
     {
       "name": "models.CustomerModel",
       "type": "models.Meta",
-      "title": "客户模型"
+      "title": "Customer Model"
     }
   ],
   "fieldIdList": ["custName", "phone", "birthday"],
   "fieldAliasList": [
     {
       "fieldId": "custName",
-      "aliasName": "客户姓名"
+      "aliasName": "Customer Name"
     },
     {
       "fieldId": "phone", 
-      "aliasName": "联系电话"
+      "aliasName": "Phone Number"
     }
   ],
   "footerBtnList": [
     {
       "id": "import",
-      "name": "导入数据",
+      "name": "Import Data",
       "type": "primary"
     }
   ]
 }
 ```
 
-### 配置属性说明
-| 属性 | 类型 | 必填 | 说明 |
+### Configuration Properties
+| Property | Type | Required | Description |
 |------|------|------|------|
-| requireElements | array | 是 | 关联的数据模型配置 |
-| fieldIdList | string[] | 否 | 导入的表头字段列表 |
-| fieldAliasList | object[] | 否 | 字段别名映射配置 |
-| footerBtnList | object[] | 否 | 自定义操作按钮列表 |
-| replaceFiled | string[] | 否 | 选中的替换字段数组 |
+| requireElements | array | Yes | Associated data model configuration |
+| fieldIdList | string[] | No | List of header fields to import |
+| fieldAliasList | object[] | No | Field alias mapping configuration |
+| footerBtnList | object[] | No | Custom operation button list |
+| replaceFiled | string[] | No | Selected replacement field array |
 
-**requireElements配置项：**
-- name: 数据模型的fullName
-- type: 固定为"models.Meta"  
-- title: 模型显示名称
+**requireElements Configuration Items:**
+- name: fullName of the data model
+- type: Fixed as "models.Meta"  
+- title: Model display name
 
-**fieldAliasList配置项：**
-- fieldId: 模型字段ID
-- aliasName: 字段别名显示名称
+**fieldAliasList Configuration Items:**
+- fieldId: Model field ID
+- aliasName: Field alias display name
 
-**footerBtnList配置项：**
-- id: 按钮唯一标识
-- name: 按钮显示文本
-- type: 按钮类型(primary/default等)
+**footerBtnList Configuration Items:**
+- id: Button unique identifier
+- name: Button display text
+- type: Button type (primary/default, etc.)
 
-## 变量
+## Variables
 ### rowDataList
-解析后的多行数据，类型为RowList，包含从Excel文件中解析出的所有数据记录。
+Parsed multi-row data, type is RowList, containing all data records parsed from the Excel file.
 
-- **类型**: RowList\<T\>
-- **泛型**: 关联的数据模型类型
-- **只读**: 是
-- **说明**: 存储Excel解析后的数据，可用于后续的数据处理和导入操作
+- **Type**: RowList\<T\>
+- **Generic**: Associated data model type
+- **Read-only**: Yes
+- **Description**: Stores Excel parsed data, can be used for subsequent data processing and import operations
 
-## 方法 
+## Methods 
 ### publishEvent
-发布组件事件。
+Publish component event.
 
-#### 参数详解
-| 参数 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter | Type | Required | Description |
 |------|------|------|------|
-| name | string | 是 | 事件名称 |
-| ex | object | 否 | 额外的事件数据 |
+| name | string | Yes | Event name |
+| ex | object | No | Additional event data |
 
-#### 使用示例
-```typescript title="发布自定义事件"
+#### Usage Example
+```typescript title="Publish Custom Event"
 await parseDataComponent.publishEvent('afterParse', {
   rowDataList: processedData
 });
 ```
 
 ### subscribeEvent
-订阅组件事件。
+Subscribe to component event.
 
-#### 参数详解
-| 参数 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter | Type | Required | Description |
 |------|------|------|------|
-| name | string | 是 | 事件名称 |
-| evtCb | function | 是 | 事件回调函数 |
-| unSubscribeExist | boolean | 否 | 是否取消已存在的订阅，默认true |
+| name | string | Yes | Event name |
+| evtCb | function | Yes | Event callback function |
+| unSubscribeExist | boolean | No | Whether to cancel existing subscription, default true |
 
-#### 返回值
-string - 事件处理器ID，用于取消订阅
+#### Return Value
+string - Event handler ID, used for unsubscribing
 
-#### 使用示例
-```typescript title="订阅事件"
+#### Usage Example
+```typescript title="Subscribe to Event"
 const handlerId = parseDataComponent.subscribeEvent('afterParse', (data) => {
-  console.log('接收到解析数据:', data.rowDataList);
+  console.log('Received parsed data:', data.rowDataList);
 });
 ```
 
 ### unSubscribeEvent
-取消事件订阅。
+Unsubscribe from event.
 
-#### 参数详解
-| 参数 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter | Type | Required | Description |
 |------|------|------|------|
-| id | string | 是 | 事件处理器ID |
+| id | string | Yes | Event handler ID |
 
-#### 使用示例
-```typescript title="取消事件订阅"
+#### Usage Example
+```typescript title="Unsubscribe from Event"
 parseDataComponent.unSubscribeEvent(handlerId);
 ```
 
 ### setConfig
-设置组件配置。
+Set component configuration.
 
-#### 参数详解
-| 参数 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter | Type | Required | Description |
 |------|------|------|------|
-| next | object | 是 | 新的配置对象 |
-| clean | boolean | 否 | 是否完全替换配置，默认false |
+| next | object | Yes | New configuration object |
+| clean | boolean | No | Whether to completely replace configuration, default false |
 
-#### 使用示例
-```typescript title="更新组件配置"
+#### Usage Example
+```typescript title="Update Component Configuration"
 parseDataComponent.setConfig({
   fieldIdList: ['newField1', 'newField2']
 });
 ```
 
 ### destroy
-销毁组件实例，清理所有事件监听器和变量。
+Destroy component instance, clean up all event listeners and variables.
 
-#### 使用示例
-```typescript title="销毁组件"
+#### Usage Example
+```typescript title="Destroy Component"
 parseDataComponent.destroy();
 ```
 
 ### runCode
-执行动态代码字符串。
+Execute dynamic code string.
 
-#### 参数详解
-| 参数 | 类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter | Type | Required | Description |
 |------|------|------|------|
-| code | string | 是 | 要执行的代码字符串 |
+| code | string | Yes | Code string to execute |
 
-#### 返回值
-any - 代码执行结果
+#### Return Value
+any - Code execution result
 
-#### 使用示例
-```typescript title="执行动态代码"
+#### Usage Example
+```typescript title="Execute Dynamic Code"
 const result = parseDataComponent.runCode('this.rowDataList.length');
 ```
 
 ### getPermConfig
-获取组件的权限配置。
+Get component permission configuration.
 
-#### 返回值
-object | undefined - 权限配置对象，如果无权限限制则返回undefined
+#### Return Value
+object | undefined - Permission configuration object, returns undefined if no permission restrictions
 
-#### 使用示例
-```typescript title="获取权限配置"
+#### Usage Example
+```typescript title="Get Permission Configuration"
 const permConfig = parseDataComponent.getPermConfig();
 if (permConfig) {
-  console.log('组件权限配置:', permConfig);
+  console.log('Component permission configuration:', permConfig);
 }
 ```
 
-## 属性
+## Properties
 ### name
-组件实例名称，类型为string。
+Component instance name, type is string.
 
 ### title
-组件显示标题，类型为string。
+Component display title, type is string.
 
 ### config
-组件配置对象，类型为object，包含所有组件配置信息。
+Component configuration object, type is object, contains all component configuration information.
 
 ### showTitle
-是否显示标题，类型为boolean。
+Whether to show title, type is boolean.
 
 ### type
-组件类型标识，类型为string。
+Component type identifier, type is string.
 
 ### fullName
-组件的完整名称，类型为string。
+Component full name, type is string.
 
 ### compType
-组件类型枚举值，类型为string。
+Component type enumeration value, type is string.
 
 ### dataTypeList
-组件变量定义列表，类型为array。
+Component variable definition list, type is array.
 
 ### app
-应用实例（getter属性），类型为App。
+Application instance (getter property), type is App.
 
 ### page
-页面实例（getter属性），类型为BasePage。
+Page instance (getter property), type is BasePage.
 
 ### ModelClass
-关联的数据模型类，类型为class。
+Associated data model class, type is class.
 
 ### fieldDefineList
-字段定义列表，类型为array。
+Field definition list, type is array.
 
 ### allFieldDict
-所有字段字典，类型为object。
+All fields dictionary, type is object.
 
 ### primaryKey
-主键字段名，类型为string。
+Primary key field name, type is string.
 
-## 事件
+## Events
 ### afterParse
-解析完成后触发的事件。
+Event triggered after parsing is completed.
 
-#### 参数详解
-| 参数 | 类型 | 说明 |
+#### Parameter Details
+| Parameter | Type | Description |
 |------|------|------|
-| data | object | 事件数据对象 |
-| data.rowDataList | RowList | 解析后的多行数据 |
+| data | object | Event data object |
+| data.rowDataList | RowList | Parsed multi-row data |
 
-#### 使用示例
-```typescript title="监听解析完成事件"
+#### Usage Example
+```typescript title="Listen to Parse Complete Event"
 parseDataComponent.subscribeEvent('afterParse', (data) => {
-  console.log('解析完成，数据行数:', data.rowDataList.length);
-  // 处理解析后的数据
+  console.log('Parsing completed, data row count:', data.rowDataList.length);
+  // Process parsed data
   processParseData(data.rowDataList);
 });
 ```
 
-### 动态按钮事件
-根据footerBtnList配置自动生成的按钮点击事件，事件名为`click + 按钮ID`的驼峰命名。
+### Dynamic Button Events
+Button click events automatically generated based on footerBtnList configuration, event name is `click + ButtonID` in camelCase.
 
-#### 参数详解
-| 参数 | 类型 | 说明 |
+#### Parameter Details
+| Parameter | Type | Description |
 |------|------|------|
-| data | object | 事件数据对象 |
-| data.rowDataList | RowList | 当前解析的多行数据 |
+| data | object | Event data object |
+| data.rowDataList | RowList | Currently parsed multi-row data |
 
-#### 使用示例
-```typescript title="监听自定义按钮事件"
-// 配置了id为"import"的按钮，事件名为"clickImport"
+#### Usage Example
+```typescript title="Listen to Custom Button Events"
+// Button with id "import" configured, event name is "clickImport"
 parseDataComponent.subscribeEvent('clickImport', (data) => {
-  console.log('导入按钮点击，准备导入数据');
-  // 执行数据导入逻辑
+  console.log('Import button clicked, preparing to import data');
+  // Execute data import logic
   importData(data.rowDataList);
 });
 ```
 
-## 使用限制
-### 文件格式要求
-- 仅支持.xlsx格式的Excel文件
-- 文件大小不超过5MB
-- 不支持包含合并单元格的文件
-- 不支持竖向表头格式
+## Usage Limitations
+### File Format Requirements
+- Only supports .xlsx format Excel files
+- File size must not exceed 5MB
+- Does not support files with merged cells
+- Does not support vertical header format
 
-### 数据类型限制
-- 一次性解析数据不可超过500条
-- 不支持解析子表、流水号、附件、图片、超链接、地址、手写签名、定位类型字段
-- 系统会自动截取超出限制的数据
+### Data Type Limitations
+- Cannot parse more than 500 records at once
+- Does not support parsing sub-tables, serial numbers, attachments, images, hyperlinks, addresses, handwritten signatures, location type fields
+- System will automatically truncate data exceeding the limit
 
-### 字段映射规则
-- fieldIdList中只保留在关联模型中存在的字段
-- fieldAliasList中只保留在关联模型中存在的字段映射
-- 解析时会根据字段别名进行数据映射 
+### Field Mapping Rules
+- fieldIdList only retains fields that exist in the associated model
+- fieldAliasList only retains field mappings that exist in the associated model
+- Parsing will perform data mapping based on field aliases 

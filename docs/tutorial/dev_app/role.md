@@ -5,39 +5,38 @@ slug: role
 ---
 # Implementing Permission Control with Application Roles
 
-## Demo Effect
+## Demo effect
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/role_effect.mp4" />
 
-## Implementation Process
+## Implementation process
 
-The JIT application framework already has built-in "Developer" and "Administrator" roles, corresponding to "Developer Portal" and "Administrator Portal" respectively.
+The JitAi application framework includes built-in "Developer" and "Administrator" roles, corresponding to the "Developer Portal" and "Manager Portal" respectively.
 
-In this project, there are 2 types of roles: Teacher and Student.
-Since we have already created "Teacher Portal" and "Student Portal" for these 2 roles, the permission configuration is now very simple.
+This project requires two role types: Teacher and Student. Since we've already created "Teacher Portal" and "Student Portal" for these roles, permission configuration becomes straightforward.
 
-### Creating Application Roles and Managing Permission Scope in "Developer Portal"
+### Creating application roles and managing permission scope in the "Developer Portal"
 
 ![](../img/role_150631.png)
 
-You can also click "Configure" on the right for each menu to further configure permissions for each component, allowing precise control over each button, each field, read/write permissions, etc.
+You can also click "Configure" for each menu to further configure component-level permissions, enabling precise control over individual buttons, fields, read/write permissions, and more.
 
 ![](../img/role_150729.png)
 
-### Managing Organizations and Configuring Personnel in "Administrator Portal"
+### Managing Organizations and Configuring Personnel in the "Manager Portal"
 
 ![](../img/role_155400.png)
 
-In this application, we create "Teacher" department and "Student" department.
+In this application, we'll create "Teacher" and "Student" departments.
 
-Read [Organizational Structure](../../devguide/user-and-permission/organizational-structure) for more details.
+For detailed information, see [Organizational Structure](../../devguide/user-and-permission/organization).
 
-### Configuring Which Members Each Role Contains in "Administrator Portal"
+### Configuring Role Membership in the "Manager Portal"
 
-Add the "Teacher" department to the member configuration under the "Teacher" role; add the "Student" department to the member configuration under the "Student" role
+Add the "Teacher" department to the "Teacher" role's member configuration, and add the "Student" department to the "Student" role's member configuration.
 
 ![](../img/role_160224.png)
 
-Read [Role and Portal Menu Permissions](../../devguide/user-and-permission/role-portal-menu-permissions) for more details.
+For detailed information, see [Role and Portal Menu Permissions](../../devguide/user-and-permission/role-portal-menu-permissions).

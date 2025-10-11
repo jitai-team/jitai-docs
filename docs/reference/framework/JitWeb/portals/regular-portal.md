@@ -1,28 +1,28 @@
 ---
 slug: regular-portal
 ---
-# 常规门户
-常规门户是JitWeb提供的完整门户解决方案，基于React技术栈实现企业级门户框架。它负责应用入口管理、导航体系构建和用户界面统一，内置左侧导航、顶部导航、用户信息展示等完整门户组件，同时支持PC端和移动端的响应式适配。
+# Generic Portal
+Generic Portal is a complete portal solution provided by JitWeb, implementing an enterprise-level portal framework based on the React technology stack. It is responsible for application entry management, navigation system construction, and user interface unification, with built-in complete portal components such as left navigation, top navigation, and user information display, while supporting responsive adaptation for both PC and mobile devices.
 
-常规门户元素分层结构为Meta（shells.Meta） → Type（shells.DefaultType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建常规门户实例元素。
+The Generic Portal element hierarchy is Meta (shells.Meta) → Type (shells.DefaultType) → Instance. Developers can quickly create Generic Portal instance elements through JitAI's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的shells.DefaultType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official shells.DefaultType element provided by JitAI in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+## Quick Start
+### Create Instance Element
+#### Directory Structure
+```text title="Recommended Directory Structure"
 shells/
-└── MyPortal/               # 门户名称（可自定义）
-    ├── e.json             # 元素声明文件
-    └── feature.json       # 业务配置文件
+└── MyPortal/               # Portal name (customizable)
+    ├── e.json             # Element declaration file
+    └── feature.json       # Business configuration file
 ```
 
-#### e.json文件
-```json title="基本配置示例"
+#### e.json File
+```json title="Basic Configuration Example"
 {
   "type": "shells.DefaultType",
-  "title": "我的门户",
+  "title": "My Portal",
   "page": "pages.ShellLeftNavPage",
   "default": true,
   "status": 0,
@@ -30,17 +30,17 @@ shells/
   "bizPageMode": true,
   "refreshOnPageFocus": true,
   "sort": 1,
-  "remark": "门户说明"
+  "remark": "Portal description"
 }
 ```
 
-#### 业务配置文件
-```json title="feature.json菜单配置"
+#### Business Configuration File
+```json title="feature.json Menu Configuration"
 {
   "menus": [
     {
       "name": "dashboard",
-      "title": "工作台",
+      "title": "Dashboard",
       "nodeType": "page",
       "page": "pages.Dashboard",
       "mobilePage": "pages.DashboardMobile",
@@ -49,14 +49,14 @@ shells/
     },
     {
       "name": "system",
-      "title": "系统管理",
+      "title": "System Management",
       "nodeType": "group",
       "icon": "setting",
       "sort": 2,
       "children": [
         {
           "name": "users",
-          "title": "用户管理",
+          "title": "User Management",
           "nodeType": "page",
           "page": "pages.UserManage",
           "mobilePage": "pages.UserManageMobile",
@@ -69,295 +69,295 @@ shells/
 }
 ```
 
-#### 调用示例
-```javascript title="获取门户实例"
+#### Usage Example
+```javascript title="Get Portal Instance"
 import { getRuntimeApp } from 'jit';
 
-// 获取应用实例
+// Get application instance
 const app = getRuntimeApp();
 
-// 获取门户元素定义
+// Get portal element definition
 const [shellDefine] = app.getElementDefine("shells.MyPortal");
 
-// 获取门户实例
+// Get portal instance
 const portal = app.getElement("shells.MyPortal");
 
-// 获取门户配置
+// Get portal configuration
 const portalConfig = portal.shellConfig;
 const portalMenus = portal.menuTree;
 
-// 检查权限
+// Check permissions
 const hasAccess = portal.allowAccess;
 ```
 
-## 元素配置
-### e.json配置
-| 配置项 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| type | Stext | str | 是 | 固定为"shells.DefaultType" |
-| title | Stext | str | 是 | 门户显示名称 |
-| page | Stext | str | 否 | 导航页面，默认为"pages.ShellLeftNavPage" |
-| default | Checkbox | bool | 否 | 是否为使用者门户 |
-| status | Numeric | int | 否 | 门户状态，0:启用 1:禁用 |
-| frontBundleEntry | Stext | str | 是 | 前端配置文件路径，通常为"./feature.json" |
-| bizPageMode | Checkbox | bool | 否 | 是否启用业务页面模式 |
-| refreshOnPageFocus | Checkbox | bool | 否 | 页面获得焦点时是否刷新 |
-| sort | Numeric | int | 否 | 排序权重 |
-| remark | Ltext | str | 否 | 门户说明 |
-| hideInRole | Checkbox | bool | 否 | 是否在角色中隐藏 |
-| commonFuncList1 | JitList | list | 否 | 通用功能配置1 |
-| commonFuncList2 | JitList | list | 否 | 通用功能配置2 |
-| commonFuncList3 | JitList | list | 否 | 通用功能配置3 |
+## Element Configuration
+### e.json Configuration
+| Configuration | Type | Native Type | Required | Description |
+|---------------|------|-------------|----------|-------------|
+| type | Stext | str | Yes | Fixed as "shells.DefaultType" |
+| title | Stext | str | Yes | Portal display name |
+| page | Stext | str | No | Navigation page, defaults to "pages.ShellLeftNavPage" |
+| default | Checkbox | bool | No | Whether it's the user portal |
+| status | Numeric | int | No | Portal status, 0: enabled 1: disabled |
+| frontBundleEntry | Stext | str | Yes | Frontend configuration file path, usually "./feature.json" |
+| bizPageMode | Checkbox | bool | No | Whether to enable business page mode |
+| refreshOnPageFocus | Checkbox | bool | No | Whether to refresh when page gains focus |
+| sort | Numeric | int | No | Sort weight |
+| remark | Ltext | str | No | Portal description |
+| hideInRole | Checkbox | bool | No | Whether to hide in role |
+| commonFuncList1 | JitList | list | No | Common function configuration 1 |
+| commonFuncList2 | JitList | list | No | Common function configuration 2 |
+| commonFuncList3 | JitList | list | No | Common function configuration 3 |
 
-### 业务配置文件配置
-feature.json文件包含门户的菜单结构和AI配置：
+### Business Configuration File Configuration
+The feature.json file contains the portal's menu structure and AI configuration:
 
-| 配置项 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| menus | JitList | list | 是 | 菜单配置列表 |
-| aiConfig | JitDict | dict | 否 | AI助理配置 |
+| Configuration | Type | Native Type | Required | Description |
+|---------------|------|-------------|----------|-------------|
+| menus | JitList | list | Yes | Menu configuration list |
+| aiConfig | JitDict | dict | No | AI assistant configuration |
 
-菜单项配置：
+Menu item configuration:
 
-| 配置项 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| name | Stext | str | 是 | 菜单唯一标识 |
-| title | Stext | str | 是 | 菜单显示名称 |
-| nodeType | Stext | str | 是 | 节点类型：page/group |
-| page | Stext | str | 否 | PC端页面路径 |
-| mobilePage | Stext | str | 否 | 移动端页面路径 |
-| icon | Stext | str | 否 | 菜单图标 |
-| sort | Numeric | int | 否 | 排序权重 |
-| hide | Checkbox | bool | 否 | 是否隐藏 |
-| children | JitList | list | 否 | 子菜单列表 |
+| Configuration | Type | Native Type | Required | Description |
+|---------------|------|-------------|----------|-------------|
+| name | Stext | str | Yes | Menu unique identifier |
+| title | Stext | str | Yes | Menu display name |
+| nodeType | Stext | str | Yes | Node type: page/group |
+| page | Stext | str | No | PC page path |
+| mobilePage | Stext | str | No | Mobile page path |
+| icon | Stext | str | No | Menu icon |
+| sort | Numeric | int | No | Sort weight |
+| hide | Checkbox | bool | No | Whether to hide |
+| children | JitList | list | No | Submenu list |
 
-## 方法 
+## Methods
 ### getAvailableMenu
-获取可用的菜单列表，过滤掉无权限、隐藏和无效的菜单。
+Get available menu list, filtering out menus without permissions, hidden menus, and invalid menus.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| menuTree | JitList | list | 否 | 菜单树，默认使用实例的权限菜单 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| menuTree | JitList | list | No | Menu tree, defaults to instance's permission menu |
 
-#### 返回值
-返回过滤后的可用菜单列表（list类型）。
+#### Return Value
+Returns filtered available menu list (list type).
 
-#### 使用示例
-```javascript title="获取可用菜单"
+#### Usage Example
+```javascript title="Get Available Menus"
 import { getRuntimeApp } from 'jit';
 
 const app = getRuntimeApp();
 const portal = app.getElement("shells.MyPortal");
 
-// 获取所有可用菜单
+// Get all available menus
 const availableMenus = portal.getAvailableMenu();
 
-// 获取指定菜单树的可用菜单
+// Get available menus for specified menu tree
 const customMenus = [
-    {name: "test", title: "测试", page: "pages.Test", nodeType: "page"}
+    {name: "test", title: "Test", page: "pages.Test", nodeType: "page"}
 ];
 const filteredMenus = portal.getAvailableMenu(customMenus);
 ```
 
 ### flatFeatureMenuItem
-将层级菜单结构平铺为一维列表。
+Flatten hierarchical menu structure into a one-dimensional list.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| menus | JitList | list | 否 | 菜单列表，默认使用实例的菜单树 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| menus | JitList | list | No | Menu list, defaults to instance's menu tree |
 
-#### 返回值
-返回平铺后的菜单列表（list类型）。
+#### Return Value
+Returns flattened menu list (list type).
 
-#### 使用示例
-```javascript title="平铺菜单结构"
+#### Usage Example
+```javascript title="Flatten Menu Structure"
 import { getRuntimeApp } from 'jit';
 
 const app = getRuntimeApp();
 const portal = app.getElement("shells.MyPortal");
 
-// 平铺默认菜单
+// Flatten default menu
 const flatMenus = portal.flatFeatureMenuItem();
 
-// 平铺指定菜单
+// Flatten specified menu
 const customMenus = portal.menuTree;
 const flatCustom = portal.flatFeatureMenuItem(customMenus);
 ```
 
 ### getPermConfig
-根据角色名称获取权限配置。
+Get permission configuration based on role name.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| roleName | Stext | str | 是 | 角色fullName |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| roleName | Stext | str | Yes | Role fullName |
 
-#### 返回值
-无返回值，会设置实例的permConfig属性。
+#### Return Value
+No return value, sets the instance's permConfig property.
 
-#### 使用示例
-```javascript title="获取角色权限"
+#### Usage Example
+```javascript title="Get Role Permissions"
 import { getRuntimeApp } from 'jit';
 
 const app = getRuntimeApp();
 const portal = app.getElement("shells.MyPortal");
 
-// 获取管理员权限
+// Get admin permissions
 await portal.getPermConfig("roles.Admin");
 
-// 获取当前权限配置
+// Get current permission configuration
 const currentPerm = portal.permConfig;
 ```
 
 ### mergeMenus
-合并多个菜单列表，前面的菜单会覆盖后面同名的菜单。
+Merge multiple menu lists, with earlier menus overriding later menus with the same name.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| menusLists | JitList | list | 是 | 菜单列表的列表 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| menusLists | JitList | list | Yes | List of menu lists |
 
-#### 返回值
-返回合并后的菜单列表（list类型）。
+#### Return Value
+Returns merged menu list (list type).
 
-#### 使用示例
-```javascript title="合并菜单"
+#### Usage Example
+```javascript title="Merge Menus"
 import { getRuntimeApp } from 'jit';
 
 const app = getRuntimeApp();
 const portal = app.getElement("shells.MyPortal");
 
-// 合并多个菜单列表
-const baseMenus = [{name: "home", title: "首页"}];
-const extendMenus = [{name: "about", title: "关于"}];
+// Merge multiple menu lists
+const baseMenus = [{name: "home", title: "Home"}];
+const extendMenus = [{name: "about", title: "About"}];
 const merged = portal.mergeMenus([baseMenus, extendMenus]);
 ```
 
 ### getPermMenu
-获取有权限的菜单列表，根据权限配置过滤菜单。
+Get menu list with permissions, filtering menus based on permission configuration.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| menuTree | JitList | list | 否 | 菜单树，默认使用实例的菜单树 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| menuTree | JitList | list | No | Menu tree, defaults to instance's menu tree |
 
-#### 返回值
-返回有权限的菜单列表（list类型）。
+#### Return Value
+Returns menu list with permissions (list type).
 
-#### 使用示例
-```javascript title="获取有权限菜单"
+#### Usage Example
+```javascript title="Get Permission Menus"
 import { getRuntimeApp } from 'jit';
 
 const app = getRuntimeApp();
 const portal = app.getElement("shells.MyPortal");
 
-// 获取有权限的菜单
+// Get menus with permissions
 const permMenus = portal.getPermMenu();
 
-// 获取指定菜单树的权限菜单
+// Get permission menus for specified menu tree
 const customMenus = portal.menuTree;
 const filteredPermMenus = portal.getPermMenu(customMenus);
 ```
 
 ### setExtendsFeature
-设置继承的特性配置。
+Set inherited feature configuration.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| feature | JitList | list | 是 | 继承特性配置列表，包含menus和aiConfig |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| feature | JitList | list | Yes | Inherited feature configuration list, containing menus and aiConfig |
 
-#### 返回值
-无返回值。
+#### Return Value
+No return value.
 
-#### 使用示例
-```javascript title="设置继承特性"
+#### Usage Example
+```javascript title="Set Inherited Features"
 import { getRuntimeApp } from 'jit';
 
 const app = getRuntimeApp();
 const portal = app.getElement("shells.MyPortal");
 
-// 设置继承特性
+// Set inherited features
 const inheritedFeature = [
-    {menus: [{name: "base", title: "基础功能"}]}
+    {menus: [{name: "base", title: "Base Functions"}]}
 ];
 portal.setExtendsFeature(inheritedFeature);
 ```
 
 ### setOriginFeature
-设置原始特性配置。
+Set original feature configuration.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| feature | JitDict | object | 是 | 原始特性配置，包含menus和aiConfig |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| feature | JitDict | object | Yes | Original feature configuration, containing menus and aiConfig |
 
-#### 返回值
-无返回值。
+#### Return Value
+No return value.
 
-#### 使用示例
-```javascript title="设置原始特性"
+#### Usage Example
+```javascript title="Set Original Features"
 import { getRuntimeApp } from 'jit';
 
 const app = getRuntimeApp();
 const portal = app.getElement("shells.MyPortal");
 
-// 设置原始特性
+// Set original features
 const originalFeature = {
-    menus: [{name: "custom", title: "自定义功能"}]
+    menus: [{name: "custom", title: "Custom Functions"}]
 };
 portal.setOriginFeature(originalFeature);
 ```
 
 ### setBackUrl
-设置返回URL。
+Set return URL.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| backUrl | Stext | str | 是 | 返回URL地址 |
+#### Parameters
+| Parameter | Type | Native Type | Required | Description |
+|-----------|------|-------------|----------|-------------|
+| backUrl | Stext | str | Yes | Return URL address |
 
-#### 返回值
-无返回值。
+#### Return Value
+No return value.
 
-#### 使用示例
-```javascript title="设置返回URL"
+#### Usage Example
+```javascript title="Set Return URL"
 import { getRuntimeApp } from 'jit';
 
 const app = getRuntimeApp();
 const portal = app.getElement("shells.MyPortal");
 
-// 设置返回URL
+// Set return URL
 portal.setBackUrl("/previous-page");
 ```
 
-## 属性
+## Properties
 ### routePath
-门户的路由路径，只读属性。
+Portal's route path, read-only property.
 
 ### menuTree
-合并后的完整菜单树结构。
+Merged complete menu tree structure.
 
 ### permConfig
-当前的权限配置，可能为"all"或具体的权限对象。
+Current permission configuration, may be "all" or specific permission object.
 
 ### allowAccess
-是否允许访问门户的布尔值。
+Boolean value indicating whether portal access is allowed.
 
 ### originMenus
-原始菜单配置，来自当前门户的feature.json。
+Original menu configuration, from current portal's feature.json.
 
 ### extendsMenus
-继承的菜单配置，来自父应用的菜单。
+Inherited menu configuration, from parent application's menus.
 
-## 高级特性
-### 权限控制
-常规门户内置完整的权限管理机制，支持基于角色的菜单访问控制。
+## Advanced Features
+### Permission Control
+Generic Portal has built-in complete permission management mechanism, supporting role-based menu access control.
 
-#### 配置示例和使用示例
-```json title="角色权限配置"
+#### Configuration Example and Usage Example
+```json title="Role Permission Configuration"
 {
   "roleName": "roles.Manager",
   "shellPerm": {
@@ -369,32 +369,32 @@ portal.setBackUrl("/previous-page");
 }
 ```
 
-```javascript title="权限检查"
+```javascript title="Permission Check"
 import { getRuntimeApp } from 'jit';
 
 const app = getRuntimeApp();
 const portal = app.getElement("shells.MyPortal");
 
-// 检查门户访问权限
+// Check portal access permissions
 if (portal.allowAccess) {
-    // 获取有权限的菜单
+    // Get menus with permissions
     const permMenus = portal.getPermMenu();
     
-    // 获取可用菜单（过滤权限+隐藏+无效）
+    // Get available menus (filter permissions + hidden + invalid)
     const availableMenus = portal.getAvailableMenu();
 }
 ```
 
-### 移动端适配
-常规门户自动适配移动端，提供原生应用般的用户体验。
+### Mobile Adaptation
+Generic Portal automatically adapts to mobile devices, providing a native app-like user experience.
 
-#### 配置示例和使用示例
-```json title="移动端菜单配置"
+#### Configuration Example and Usage Example
+```json title="Mobile Menu Configuration"
 {
   "menus": [
     {
       "name": "dashboard",
-      "title": "工作台", 
+      "title": "Dashboard", 
       "page": "pages.Dashboard",
       "mobilePage": "pages.DashboardMobile",
       "nodeType": "page"
@@ -403,39 +403,39 @@ if (portal.allowAccess) {
 }
 ```
 
-移动端会自动使用`mobilePage`配置的页面，并提供底部导航栏。
+Mobile devices will automatically use the `mobilePage` configured page and provide a bottom navigation bar.
 
-### 菜单继承与合并
-支持从父应用继承菜单配置，并智能合并重复项。门户会自动合并继承菜单和原始菜单，相同name的菜单会被覆盖。
+### Menu Inheritance and Merging
+Supports inheriting menu configuration from parent applications and intelligently merging duplicates. The portal automatically merges inherited menus and original menus, with menus with the same name being overridden.
 
-#### 配置示例和使用示例
-```javascript title="查看合并结果"
+#### Configuration Example and Usage Example
+```javascript title="View Merge Results"
 import { getRuntimeApp } from 'jit';
 
 const app = getRuntimeApp();
 const portal = app.getElement("shells.MyPortal");
 
-// 查看原始菜单
+// View original menus
 const originalMenus = portal.originMenus;
 
-// 查看继承菜单  
+// View inherited menus  
 const inheritedMenus = portal.extendsMenus;
 
-// 查看最终合并结果
+// View final merge results
 const finalMenus = portal.menuTree;
 ```
 
-### 主题定制
-支持自定义主题配置，实现个性化的视觉效果。
+### Theme Customization
+Supports custom theme configuration to achieve personalized visual effects.
 
-#### 配置示例和使用示例
-```json title="主题配置"
+#### Configuration Example and Usage Example
+```json title="Theme Configuration"
 {
   "type": "shells.DefaultType",
-  "title": "定制门户",
+  "title": "Custom Portal",
   "theme": "custom",
   "page": "pages.ShellLeftNavPage"
 }
 ```
 
-主题文件需要在Type元素的themes目录下提供对应的模板文件。 
+Theme files need to provide corresponding template files in the themes directory of the Type element. 

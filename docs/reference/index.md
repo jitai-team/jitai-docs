@@ -2,250 +2,266 @@
 sidebar_position: -1
 ---
 
-# 导读
+import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
-欢迎使用JitAi参考手册！这里提供完整的技术参考资料，按技术栈层次组织，涵盖应用开发到运维管理的全生命周期。
+# Reference Index
+JitAi reference documentation provides comprehensive API documentation, configuration instructions, and technical specifications. Developers can query element configuration parameters, method invocation interfaces, data structure definitions, and platform protocol specifications to quickly resolve technical issues during development.
+## [Development Framework](reference/framework)
+Provides element configuration, API interfaces, and usage methods for each framework module, including complete parameter descriptions, code examples, and best practice guidance.
 
-## 快速导航
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', gap: '16px', marginBottom: '32px'}}>
 
-### [开发框架](./framework/) - 应用构建基础
-**适合人群**：应用开发者、架构师  
-**内容特点**：企业级开发框架，元素族类封装，结构+过程设计理念
+<IndexCard
+  title="JitAi"
+  href="reference/framework/JitAi"
+  description="AI application development framework that provides comprehensive AI-native application building capabilities."
+>
+  <LinkGrid columns={2} links={[
+    { text: "AIAgent", href: "reference/framework/JitAi/AIAgent" },
+    { text: "AI Assistant", href: "reference/framework/JitAi/ai-assistant" },
+    { text: "AI Large Models", href: "reference/framework/JitAi/ai-large-models" },
+    { text: "AI Knowledge Base", href: "reference/framework/JitAi/ai-knowledge-base" },
+    { text: "Agent Events", href: "reference/framework/JitAi/agent-events" },
+    { text: "Assistant Events", href: "reference/framework/JitAi/assistant-events" }
+  ]} />
+</IndexCard>
 
-#### JitAi框架（AI智能）
-<div style={{columns: 2, columnGap: '2rem'}}>
+<IndexCard
+  title="JitAuth"
+  href="reference/framework/JitAuth/"
+  description="Identity authentication and permission management framework based on RBAC model, providing multiple login methods, enterprise organizational structure management, and API permission control, with support for third-party identity system integration."
+>
+  <LinkGrid columns={2} links={[
+    { text: "Generic Roles", href: "reference/framework/JitAuth/regular-roles" },
+    { text: "Account Password Login", href: "reference/framework/JitAuth/login-authentication/account-password-login" },
+    { text: "Mobile Login", href: "reference/framework/JitAuth/login-authentication/mobile-login" },
+    { text: "WeChat Login", href: "reference/framework/JitAuth/login-authentication/wechat-login" },
+    { text: "WeChat Mini Program Login", href: "reference/framework/JitAuth/login-authentication/wechat-miniapp-login" },
+    { text: "WeChat Official Account Login", href: "reference/framework/JitAuth/login-authentication/wechat-official-login" },
+    { text: "WeCom Self-built QR Login", href: "reference/framework/JitAuth/login-authentication/wechat-work-dev-login" },
+    { text: "WeCom Third-party Login", href: "reference/framework/JitAuth/login-authentication/wechat-work-qr-login" },
+    { text: "DingTalk Self-built QR Login", href: "reference/framework/JitAuth/login-authentication/dingtalk-qr-login" },
+    { text: "Generic Organization", href: "reference/framework/JitAuth/enterprise-organization/standard-organization" },
+    { text: "WeCom Self-built Organization", href: "reference/framework/JitAuth/enterprise-organization/wechat-work-dev-organization" },
+    { text: "WeCom Third-party Organization", href: "reference/framework/JitAuth/enterprise-organization/wechat-work-organization" },
+    { text: "DingTalk Self-built Organization", href: "reference/framework/JitAuth/enterprise-organization/dingtalk-organization" }
+  ]} />
+</IndexCard>
 
-- [AI框架概述](./framework/JitAi/intro) - 框架总览
-- [AIAgent](./framework/JitAi/AIAgent) - 智能代理构建
-- [AI助理](./framework/JitAi/ai-assistant) - AI助手开发
-- [AI大模型](./framework/JitAi/ai-large-models) - 大语言模型集成
-- [AI知识库](./framework/JitAi/ai-knowledge-base) - 知识库管理
-- [Agent事件](./framework/JitAi/agent-events) - Agent事件机制
-- [助理事件](./framework/JitAi/assistant-events) - 助理事件处理
+<IndexCard
+  title="JitORM"
+  href="reference/framework/JitORM/"
+  description="Object-relational mapping framework supporting multiple database types, providing visual data modeling, rich data types, Q-expression queries, and TQL language with built-in model event mechanisms."
+>
+  <LinkGrid columns={2} links={[
+    { text: "ORM Overview", href: "reference/framework/JitORM/" },
+    { text: "Database", href: "reference/framework/JitORM/database" },
+    { text: "Data Models", href: "reference/framework/JitORM/data-models" },
+    { text: "Data Types", href: "reference/framework/JitORM/data-types" },
+    { text: "Q Expressions", href: "reference/framework/JitORM/q-expressions" },
+    { text: "TQL", href: "reference/framework/JitORM/TQL" },
+    { text: "Model Events", href: "reference/framework/JitORM/model-events" }
+  ]} />
+</IndexCard>
 
-</div>
+<IndexCard
+  title="JitWeb"
+  href="reference/framework/JitWeb/"
+  description="Frontend UI framework providing portal systems, page management, and component libraries, supporting visual page construction, responsive layouts, and custom control development."
+>
+  <LinkGrid columns={2} links={[
+    { text: "Global Styles", href: "reference/framework/JitWeb/global-styles" },
+    { text: "Generic Portal", href: "reference/framework/JitWeb/portals/regular-portal" },
+    { text: "Blank Portal", href: "reference/framework/JitWeb/portals/blank-portal" },
+    { text: "SSR Portal", href: "reference/framework/JitWeb/portals/ssr-portal" },
+    { text: "AI Data Management Page", href: "reference/framework/JitWeb/pages/ai-data-management-page" },
+    { text: "AI Data Analysis Page", href: "reference/framework/JitWeb/pages/ai-data-analysis-page" },
+    { text: "Generic Page", href: "reference/framework/JitWeb/pages/generic-page" },
+    { text: "Data Entry Page", href: "reference/framework/JitWeb/pages/data-entry-page" },
+    { text: "Markdown Page", href: "reference/framework/JitWeb/pages/markdown-page" },
+    { text: "React Full Code Page", href: "reference/framework/JitWeb/pages/react-full-code-page" },
+    { text: "Vue Full Code Page", href: "reference/framework/JitWeb/pages/vue-full-code-page" },
+    { text: "Table", href: "reference/framework/JitWeb/components/view-type/table" },
+    { text: "List", href: "reference/framework/JitWeb/components/view-type/list" },
+    { text: "Statistical Chart", href: "reference/framework/JitWeb/components/view-type/statistical-chart" },
+    { text: "Tree", href: "reference/framework/JitWeb/components/view-type/tree" },
+    { text: "Calendar", href: "reference/framework/JitWeb/components/view-type/calendar" },
+    { text: "Gantt Chart", href: "reference/framework/JitWeb/components/view-type/gantt-chart" },
+    { text: "Kanban", href: "reference/framework/JitWeb/components/view-type/kanban" },
+    { text: "Gallery", href: "reference/framework/JitWeb/components/view-type/gallery" },
+    { text: "Carousel", href: "reference/framework/JitWeb/components/view-type/carousel" },
+    { text: "Timeline", href: "reference/framework/JitWeb/components/view-type/timeline" },
+    { text: "Cross Table", href: "reference/framework/JitWeb/components/view-type/cross-table" },
+    { text: "Group Table", href: "reference/framework/JitWeb/components/view-type/group-table" },
+    { text: "Cascade Table", href: "reference/framework/JitWeb/components/view-type/cascade-table" },
+    { text: "Cascade Tree", href: "reference/framework/JitWeb/components/view-type/cascade-tree" },
+    { text: "Row to Column", href: "reference/framework/JitWeb/components/view-type/row-to-column" },
+    { text: "Import", href: "reference/framework/JitWeb/components/view-type/import" },
+    { text: "Parse Excel", href: "reference/framework/JitWeb/components/view-type/parse-excel" },
+    { text: "Full Code Component", href: "reference/framework/JitWeb/components/view-type/full-code-component" },
+    { text: "Form", href: "reference/framework/JitWeb/components/form-type/form" },
+    { text: "Batch Edit Form", href: "reference/framework/JitWeb/components/form-type/batch-edit-form" },
+    { text: "Button", href: "reference/framework/JitWeb/components/operation-type/button" },
+    { text: "Model Filter", href: "reference/framework/JitWeb/components/operation-type/model-filter" },
+    { text: "General Filter", href: "reference/framework/JitWeb/components/operation-type/general-filter" },
+    { text: "Data Correction", href: "reference/framework/JitWeb/components/operation-type/data-correction" },
+    { text: "Payment", href: "reference/framework/JitWeb/components/operation-type/payment" },
+    { text: "Tabs", href: "reference/framework/JitWeb/components/layout-type/tabs" },
+    { text: "Modal", href: "reference/framework/JitWeb/components/layout-type/modal" },
+    { text: "Sub Page", href: "reference/framework/JitWeb/components/layout-type/sub-page" },
+    { text: "Collapse Panel", href: "reference/framework/JitWeb/components/layout-type/collapse-panel" },
+    { text: "Initiate Application", href: "reference/framework/JitWeb/components/approval-type/initiate-application" },
+    { text: "Approval Processing", href: "reference/framework/JitWeb/components/approval-type/approval-workflowing" },
+    { text: "Custom Controls", href: "reference/framework/JitWeb/custom-controls" }
+  ]} />
+</IndexCard>
 
-#### JitAuth框架（认证授权）
-<div style={{columns: 2, columnGap: '2rem'}}>
+<IndexCard
+  title="JitService"
+  href="reference/framework/JitService/"
+  description="Business service framework providing API authorization management, external system integration, frontend and backend interceptors, custom business services, and event-driven architecture support."
+>
+  <LinkGrid columns={2} links={[
+    { text: "API Authorization", href: "reference/framework/JitService/api-authorization" },
+    { text: "External API Integration", href: "reference/framework/JitService/external-api-integration" },
+    { text: "Frontend Interceptor", href: "reference/framework/JitService/frontend-interceptor" },
+    { text: "Backend Interceptor", href: "reference/framework/JitService/backend-interceptor" },
+    { text: "Custom Business Service", href: "reference/framework/JitService/custom-business-service" },
+    { text: "Custom Events", href: "reference/framework/JitService/custom-events" },
+    { text: "Event Service", href: "reference/framework/JitService/event-service" }
+  ]} />
+</IndexCard>
 
-- [常规角色](./framework/JitAuth/regular-roles) - 权限管理体系
-- [账号密码登录](./framework/JitAuth/login-authentication/account-password-login) - 基础认证
-- [手机号登录](./framework/JitAuth/login-authentication/mobile-login) - 手机认证
-- [微信登录](./framework/JitAuth/login-authentication/wechat-login) - 微信认证
-- [微信小程序登录](./framework/JitAuth/login-authentication/wechat-miniapp-login) - 小程序认证
-- [微信公众号登录](./framework/JitAuth/login-authentication/wechat-official-login) - 公众号认证
-- [企业微信自建扫码登录](./framework/JitAuth/login-authentication/wechat-work-dev-login) - 企微自建
-- [企业微信代开发登录](./framework/JitAuth/login-authentication/wechat-work-qr-login) - 企微代开发
-- [钉钉自建扫码登录](./framework/JitAuth/login-authentication/dingtalk-qr-login) - 钉钉认证
-- [标准组织](./framework/JitAuth/enterprise-organization/standard-organization) - 标准组织架构
-- [企业微信自建组织](./framework/JitAuth/enterprise-organization/wechat-work-dev-organization) - 企微组织
-- [企业微信代开发组织](./framework/JitAuth/enterprise-organization/wechat-work-organization) - 企微代开发组织
-- [钉钉自建组织](./framework/JitAuth/enterprise-organization/dingtalk-organization) - 钉钉组织
+<IndexCard
+  title="JitStorage"
+  href="reference/framework/JitStorage/"
+  description="Storage management framework providing unified file storage interfaces, supporting local disk and cloud storage services, integrating multiple caching solutions and file template processing capabilities."
+>
+  <LinkGrid columns={2} links={[
+    { text: "Disk Storage", href: "reference/framework/JitStorage/storage/disk-storage" },
+    { text: "Alibaba Cloud OSS Storage", href: "reference/framework/JitStorage/storage/aliyun-oss-storage" },
+    { text: "Qiniu Cloud Storage", href: "reference/framework/JitStorage/storage/qiniu-storage" },
+    { text: "MinIO Storage", href: "reference/framework/JitStorage/storage/minio-storage" },
+    { text: "EOS Storage", href: "reference/framework/JitStorage/storage/eos-storage" },
+    { text: "Built-in Cache", href: "reference/framework/JitStorage/cache/built-in-cache" },
+    { text: "Redis Cache", href: "reference/framework/JitStorage/cache/redis-cache" },
+    { text: "SQLite Cache", href: "reference/framework/JitStorage/cache/sqlite-cache" },
+    { text: "TongRDS Cache", href: "reference/framework/JitStorage/cache/tongrds-cache" },
+    { text: "Excel Template", href: "reference/framework/JitStorage/file-templates/excel-template" },
+    { text: "Word Template", href: "reference/framework/JitStorage/file-templates/word-template" }
+  ]} />
+</IndexCard>
 
-</div>
+<IndexCard
+  title="JitPay"
+  href="reference/framework/JitPay/"
+  description="Payment service framework integrating WeChat Pay and Alipay platforms, providing unified payment interfaces and transaction management capabilities."
+>
+  <LinkGrid columns={2} links={[
+    { text: "Payment Service", href: "reference/framework/JitPay/payment-service" },
+    { text: "WeChat Pay", href: "reference/framework/JitPay/wechat-pay" },
+    { text: "Alipay", href: "reference/framework/JitPay/alipay" }
+  ]} />
+</IndexCard>
 
-#### JitORM框架（数据持久化）
-<div style={{columns: 2, columnGap: '2rem'}}>
+<IndexCard
+  title="JitWorkflow"
+  href="reference/framework/JitWorkflow/"
+  description="Workflow engine providing visual approval process design, process instance management, and approval event handling, supporting complex business process orchestration."
+>
+  <LinkGrid columns={2} links={[
+    { text: "Regular Approval", href: "reference/framework/JitWorkflow/regular-approval" },
+    { text: "Approval Events", href: "reference/framework/JitWorkflow/approval-events" }
+  ]} />
+</IndexCard>
 
-- [ORM概述](./framework/JitORM/) - 对象关系映射
-- [数据库](./framework/JitORM/database) - 数据库抽象层
-- [数据模型](./framework/JitORM/data-models) - 模型定义
-- [数据类型](./framework/JitORM/data-types) - 数据类型系统
-- [Q表达式](./framework/JitORM/q-expressions) - 查询表达式
-- [TQL](./framework/JitORM/TQL) - 查询语言
-- [模型事件](./framework/JitORM/model-events) - 数据模型事件
+<IndexCard
+  title="JitTask"
+  href="reference/framework/JitTask/"
+  description="Task scheduling framework supporting scheduled tasks and intelligent task scheduling based on data model date fields, providing task monitoring and management capabilities."
+>
+  <LinkGrid columns={2} links={[
+    { text: "Task Service", href: "reference/framework/JitTask/task-service" },
+    { text: "Scheduled Tasks", href: "reference/framework/JitTask/scheduled-tasks" },
+    { text: "Date Field Tasks", href: "reference/framework/JitTask/date-field-tasks" }
+  ]} />
+</IndexCard>
 
-</div>
+<IndexCard
+  title="JitI18N"
+  href="reference/framework/JitI18N/"
+  description="Internationalization framework providing multi-language support and language pack management, supporting dynamic language switching and localized content management."
+>
+  <LinkGrid columns={2} links={[
+    { text: "Language Pack", href: "reference/framework/JitI18N/language-pack" }
+  ]} />
+</IndexCard>
 
-#### JitWeb框架（前端界面）
-<div style={{columns: 2, columnGap: '2rem'}}>
+<IndexCard
+  title="JitMessage"
+  href="reference/framework/JitMessage/"
+  description="Message notification framework integrating SMS push channels, providing unified message sending interfaces and template management capabilities."
+>
+  <LinkGrid columns={2} links={[
+    { text: "Alibaba Cloud SMS", href: "reference/framework/JitMessage/aliyun-sms" }
+  ]} />
+</IndexCard>
 
-- [全局样式](./framework/JitWeb/global-styles) - 样式管理
-
-**门户类型：**
-- [常规门户](./framework/JitWeb/portals/regular-portal) - 常规门户
-- [空白门户](./framework/JitWeb/portals/blank-portal) - 空白门户
-- [SSR门户](./framework/JitWeb/portals/ssr-portal) - 服务端渲染
-
-**页面类型：**
-- [AI数据管理页面](./framework/JitWeb/pages/ai-data-management-page) - 数据管理
-- [AI数据分析页面](./framework/JitWeb/pages/ai-data-analysis-page) - 数据分析
-- [常规页面](./framework/JitWeb/pages/regular-page) - 组件化页面
-- [数据录入页面](./framework/JitWeb/pages/data-entry-page) - 数据录入
-- [Markdown页面](./framework/JitWeb/pages/markdown-page) - 文档页面
-- [React全代码页面](./framework/JitWeb/pages/react-full-code-page) - 完全自定义
-- [Vue全代码页面](./framework/JitWeb/pages/vue-full-code-page) - Vue开发
-
-**视图组件：**
-- [表格](./framework/JitWeb/components/view-type/table) - 数据表格
-- [列表](./framework/JitWeb/components/view-type/list) - 数据列表
-- [统计图](./framework/JitWeb/components/view-type/statistical-chart) - 图表组件
-- [树形](./framework/JitWeb/components/view-type/tree) - 树形结构
-- [日历](./framework/JitWeb/components/view-type/calendar) - 日历组件
-- [甘特图](./framework/JitWeb/components/view-type/gantt-chart) - 项目管理
-- [看板](./framework/JitWeb/components/view-type/kanban) - 看板管理
-- [画廊](./framework/JitWeb/components/view-type/gallery) - 图片展示
-- [轮播图](./framework/JitWeb/components/view-type/carousel) - 轮播展示
-- [时间轴](./framework/JitWeb/components/view-type/timeline) - 时间线
-- [交叉表](./framework/JitWeb/components/view-type/cross-table) - 交叉分析
-- [分组表](./framework/JitWeb/components/view-type/group-table) - 分组展示
-- [级联表](./framework/JitWeb/components/view-type/cascade-table) - 级联关系
-- [级联树](./framework/JitWeb/components/view-type/cascade-tree) - 级联树形
-- [行转列](./framework/JitWeb/components/view-type/row-to-column) - 数据转置
-- [导入](./framework/JitWeb/components/view-type/import) - 数据导入
-- [解析Excel](./framework/JitWeb/components/view-type/parse-excel) - Excel处理
-- [全代码组件](./framework/JitWeb/components/view-type/full-code-component) - 自定义组件
-
-**表单组件：**
-- [表单](./framework/JitWeb/components/form-type/form) - 基础表单
-- [批量编辑表单](./framework/JitWeb/components/form-type/batch-edit-form) - 批量编辑
-
-**操作组件：**
-- [按钮](./framework/JitWeb/components/operation-type/button) - 操作按钮
-- [模型筛选器](./framework/JitWeb/components/operation-type/model-filter) - 数据筛选
-- [通用筛选器](./framework/JitWeb/components/operation-type/general-filter) - 通用筛选
-- [数据修正](./framework/JitWeb/components/operation-type/data-correction) - 数据纠错
-- [支付](./framework/JitWeb/components/operation-type/payment) - 支付操作
-
-**布局组件：**
-- [标签页](./framework/JitWeb/components/layout-type/tabs) - 标签页布局
-- [弹窗](./framework/JitWeb/components/layout-type/modal) - 弹窗组件
-- [子页面](./framework/JitWeb/components/layout-type/sub-page) - 嵌套页面
-- [折叠面板](./framework/JitWeb/components/layout-type/collapse-panel) - 折叠布局
-
-**审批组件：**
-- [发起申请](./framework/JitWeb/components/approval-type/initiate-application) - 申请发起
-- [审批处理](./framework/JitWeb/components/approval-type/approval-workflowing) - 审批操作
-
-**扩展组件：**
-- [自定义控件](./framework/JitWeb/custom-controls) - 自定义开发
-
-</div>
-
-#### JitService框架（业务服务）
-<div style={{columns: 2, columnGap: '2rem'}}>
-
-- [API授权](./framework/JitService/api-authorization) - 对外提供HTTP接口
-- [外部API集成](./framework/JitService/external-api-integration) - 集成外部HTTP接口
-- [前端拦截器](./framework/JitService/frontend-interceptor) - 前端请求拦截
-- [后端拦截器](./framework/JitService/backend-interceptor) - 后端HTTP拦截处理
-- [自定义业务服务](./framework/JitService/custom-business-service) - 业务逻辑封装
-- [自定义事件](./framework/JitService/custom-events) - 由开发者自由声明和触发的事件
-- [事件服务](./framework/JitService/event-service) - 内置的事件管理服务
-
-</div>
-
-#### JitStorage框架（存储管理）
-<div style={{columns: 2, columnGap: '2rem'}}>
-
-**文件存储：**
-- [磁盘存储](./framework/JitStorage/storage/disk-storage) - 本地文件存储
-- [阿里云OSS存储](./framework/JitStorage/storage/aliyun-oss-storage) - 阿里云对象存储
-- [七牛云存储](./framework/JitStorage/storage/qiniu-storage) - 七牛云存储
-- [MinIO存储](./framework/JitStorage/storage/minio-storage) - MinIO对象存储
-- [EOS存储](./framework/JitStorage/storage/eos-storage) - EOS存储服务
-
-**缓存服务：**
-- [内置缓存](./framework/JitStorage/cache/built-in-cache) - 内存缓存
-- [Redis缓存](./framework/JitStorage/cache/redis-cache) - Redis分布式缓存
-- [SQLite缓存](./framework/JitStorage/cache/sqlite-cache) - SQLite缓存
-- [TongRDS缓存](./framework/JitStorage/cache/tongrds-cache) - TongRDS缓存
-
-**文件模板：**
-- [Excel模板](./framework/JitStorage/file-templates/excel-template) - Excel文档模板
-- [Word模板](./framework/JitStorage/file-templates/word-template) - Word文档模板
-
-</div>
-
-#### JitPay框架（支付服务）
-<div style={{columns: 2, columnGap: '2rem'}}>
-
-- [支付服务](./framework/JitPay/payment-service) - 支付服务基础
-- [微信支付](./framework/JitPay/wechat-pay) - 微信支付集成
-- [支付宝支付](./framework/JitPay/alipay) - 支付宝支付集成
-
-</div>
-
-#### JitWorkflow框架（工作流）
-<div style={{columns: 2, columnGap: '2rem'}}>
-
-- [常规审批](./framework/JitWorkflow/regular-approval) - 常规审批流程
-- [审批事件](./framework/JitWorkflow/approval-events) - 审批事件处理
-
-</div>
-
-#### JitTask框架（任务调度）
-<div style={{columns: 2, columnGap: '2rem'}}>
-
-- [任务服务](./framework/JitTask/task-service) - 任务服务基础
-- [定时任务](./framework/JitTask/scheduled-tasks) - 定时任务调度
-- [日期字段任务](./framework/JitTask/date-field-tasks) - 基于日期的任务
-
-</div>
-
-#### JitI18N框架（国际化）
-<div style={{columns: 2, columnGap: '2rem'}}>
-
-- [语言包](./framework/JitI18N/language-pack) - 多语言国际化支持
-
-</div>
-
-#### JitMessage框架（消息服务）
-<div style={{columns: 2, columnGap: '2rem'}}>
-
-- [阿里云短信](./framework/JitMessage/aliyun-sms) - 短信发送服务
-
-</div>
-
-#### JitCommons框架（通用组件）
-<div style={{columns: 2, columnGap: '2rem'}}>
-
-- [通用前端](./framework/JitCommons/frontend) - 前端通用工具，例如界面反馈、文件、消息通信，数学、逻辑、文本、日期等计算工具
-- [通用后端](./framework/JitCommons/backend) - 后端通用工具，例如数学计算、日期时间计算、字符串处理等80+个工具函数
-
-</div>
-
-### [runtime-platform](./runtime-platform/) - 应用执行环境  
-**适合人群**：系统架构师、平台开发者  
-**内容特点**：JAAP协议规范、运行容器机制、平台API
-
-#### 平台协议与规范
-<div style={{columns: 2, columnGap: '2rem'}}>
-
-- [JAAP协议](./runtime-platform/JAAP) - 应用协议规范
-- [JitNode目录](./runtime-platform/jitnode-directory) - 目录结构说明
-- [平台概述](./runtime-platform/) - runtime-platform介绍
-
-</div>
-
-#### 前端运行环境
-<div style={{columns: 2, columnGap: '2rem'}}>
-
-- [前端应用管理](./runtime-platform/frontend/applications/App) - 前端应用配置
-- [前端元素定义](./runtime-platform/frontend/elements/ElementDefine) - 前端元素规范
+<IndexCard
+  title="JitCommons"
+  href="reference/framework/JitCommons/"
+  description="Common utility library providing shared computational functions, data processing tools, and common utility methods for frontend and backend, simplifying common operations during development."
+>
+  <LinkGrid columns={2} links={[
+    { text: "Common Frontend", href: "reference/framework/JitCommons/frontend" },
+    { text: "Common Backend", href: "reference/framework/JitCommons/backend" }
+  ]} />
+</IndexCard>
 
 </div>
 
-#### 后端运行环境
-<div style={{columns: 2, columnGap: '2rem'}}>
+## [Runtime Platform](reference/runtime-platform)
+Covers platform protocol specifications, application deployment configuration, and runtime environment management, helping developers understand the technical details of application packaging, publishing, and operations.
 
-- [后端应用管理](./runtime-platform/backend/applications/App) - 后端应用配置
-- [应用代码管理](./runtime-platform/backend/applications/AppCode) - 代码资源管理
-- [应用资源管理](./runtime-platform/backend/applications/AppResource) - 资源配置
-- [运行环境配置](./runtime-platform/backend/runtime-environment/01Environ) - 环境参数
-- [元素管理](./runtime-platform/backend/elements/Element) - 元素定义与管理
-- [节点配置](./runtime-platform/backend/jit-nodes/Node) - Jit节点管理
-- 
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', gap: '16px', marginBottom: '32px'}}>
+
+<IndexCard
+  title="Platform Protocols and Specifications"
+  href="reference/runtime-platform/"
+  description="Core protocols and specifications of the runtime platform, defining JAAP application protocol, JitNode directory structure, and platform runtime mechanisms."
+>
+  <LinkGrid columns={2} links={[
+    { text: "JAAP Protocol", href: "reference/runtime-platform/JAAP" },
+    { text: "JitNode Directory", href: "reference/runtime-platform/jitnode-directory" },
+    { text: "Platform Overview", href: "reference/runtime-platform/" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Frontend Runtime Environment"
+  href="reference/runtime-platform/frontend/"
+  description="Frontend runtime environment management, providing frontend application configuration, element definition specifications, and client-side runtime support."
+>
+  <LinkGrid columns={2} links={[
+    { text: "Frontend Application Management", href: "reference/runtime-platform/frontend/applications/App" },
+    { text: "Frontend Element Definition", href: "reference/runtime-platform/frontend/elements/ElementDefine" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Backend Runtime Environment"
+  href="reference/runtime-platform/backend/"
+  description="Backend runtime environment management, providing application lifecycle management, code resource management, runtime environment configuration, and node cluster management."
+>
+  <LinkGrid columns={2} links={[
+    { text: "Backend Application Management", href: "reference/runtime-platform/backend/applications/App" },
+    { text: "Application Code Management", href: "reference/runtime-platform/backend/applications/AppCode" },
+    { text: "Application Resource Management", href: "reference/runtime-platform/backend/applications/AppResource" },
+    { text: "Runtime Environment Configuration", href: "reference/runtime-platform/backend/runtime-environment/01Environ" },
+    { text: "Element Management", href: "reference/runtime-platform/backend/elements/Element" },
+    { text: "Node Configuration", href: "reference/runtime-platform/backend/jit-nodes/Node" }
+  ]} />
+</IndexCard>
 
 </div>
-
-### [dev-tools](./dev-tools/programming-orchestration-dual-mode) - 可视化开发环境
-**适合人群**：应用开发者、IDE扩展开发者  
-**内容特点**：编程与编排双模式、可视化与代码开发切换
-
-#### 核心内容
-- [工具概述](./dev-tools/programming-orchestration-dual-mode) - IDEApp开发环境介绍
-- 编程与编排双模式设计理念
-- 可视化开发与全代码开发统一
-- Type Editor规范与扩展API
 

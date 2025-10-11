@@ -1,8 +1,9 @@
 {
   "label": "Full-Code UI Components in Pages",
-  "position": 13,
+  "position": 14,
   "link": {
     "type": "generated-index",
+    "slug": "devguide/fullcode-ui-components-in-pages",
     "description": "Learn how to create and integrate full-code custom UI components in pages, including interface specifications, function calls, event handling, and component communication."
   }
 }

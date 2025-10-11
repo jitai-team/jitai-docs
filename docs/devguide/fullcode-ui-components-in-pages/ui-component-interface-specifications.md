@@ -6,35 +6,35 @@ slug: ui-component-interface-specifications
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# 全代码组件接口规范
+# Full-Code UI Component Interface Specifications
 
-全代码组件基于 React 开发，需要遵循特定的接口规范和代码结构。本文档详细说明全代码组件的核心接口、文件结构和开发规范。
+Full-code UI components are developed based on React and must follow specific interface specifications and code structures. This document details the core interfaces, file structures, and development standards for full-code components.
 
 :::tip
-与自定义组件类型不同的是，全代码组件的适用范围是当前页面，而自定义组件类型可以在多个页面中重复使用。全代码组件适合一些快速验证，需求灵活多变的场景。
+Unlike custom component types, full-code components are scoped to the current page, while custom component types can be reused across multiple pages. Full-code components are suitable for rapid prototyping and scenarios with flexible, changing requirements.
 
-如需了解如何创建全代码组件，请参考：[全代码组件创建指南](../using-functional-components-in-pages/full-code-components)
+To learn how to create full-code components, please refer to: [Full-Code Component Creation Guide](../using-functional-components-in-pages/full-code-components)
 :::
 
-## 组件接口架构 {#component-interface-architecture}
+## Component Interface Architecture {#component-interface-architecture}
 
-![源码](./img/15/source-code.png)
+![Source Code](./img/15/source-code.png)
 
-全代码组件遵循标准的三层架构：**页面渲染器**、**页面逻辑类** 和 **组件接口**。平台将页面装配过程封装为黑盒，开发者只需理解三个核心接口：
+Full-code components follow a standard three-layer architecture: **Page Renderer**, **Page Logic Class**, and **Component Interface**. The platform encapsulates the page assembly process as a black box, and developers only need to understand three core interfaces:
 
-### 核心接口定义 {#core-interface-definitions}
+### Core Interface Definitions {#core-interface-definitions}
 
-- **页面渲染器（`PageRender.tsx`）**：调用平台 `ElementRender` 接口渲染整页
-- **页面类（`page.ts`）**：实现 `Jit.GridPage` 接口，管理组件实例和事件订阅
-- **组件类（`BlankComponent2.tsx`）**：继承 `Jit.BaseComponent` 接口，包含 `Render` 和逻辑方法
+- **Page Renderer (`PageRender.tsx`)**: Calls the platform's `ElementRender` interface to render the entire page
+- **Page Class (`page.ts`)**: Implements the `Jit.GridPage` interface, managing component instances and event subscriptions
+- **Component Class (`BlankComponent2.tsx`)**: Inherits from the `Jit.BaseComponent` interface, containing `Render` and logic methods
 
-### 接口交互机制 {#interface-interaction-mechanism}
+### Interface Interaction Mechanism {#interface-interaction-mechanism}
 
-平台通过 `props.compIns` 将组件逻辑实例注入到渲染器中，实现界面与逻辑的分离。`ElementRender` 负责组件的生命周期管理和数据流控制。
+The platform injects component logic instances into the renderer through `props.compIns`, achieving separation between UI and logic. `ElementRender` is responsible for component lifecycle management and data flow control.
 
-### 接口实现规范 {#interface-implementation-specifications}
+### Interface Implementation Specifications {#interface-implementation-specifications}
 
-全代码组件必须遵循以下接口实现规范：
+Full-code components must follow the following interface implementation specifications:
 
 <Tabs>
   <TabItem value="index" label="index.ts" default>
@@ -74,16 +74,16 @@ import BlankComponent2 from "./BlankComponent2";
 type BaseComponent = InstanceType<typeof Jit.BaseComponent>;
 
 class PageCls extends Jit.GridPage {
-  // 名称需与 scheme.json 中组件 name 一致："BlankComponent2"
+  // Name must match the component name in scheme.json: "BlankComponent2"
   BlankComponent2!: BaseComponent = new BlankComponent2();
   scheme: ComponentPageScheme = schemeJson;
 
-  // 页面级事件订阅
+  // Page-level event subscription
   bindEvent() {
-    // 订阅组件渲染器中通过 compIns.publishEvent 发布的事件
+    // Subscribe to events published through compIns.publishEvent in component renderer
     this.BlankComponent2.subscribeEvent('handleClickMe', async () => {
-      // 这里可调用服务、更新页面变量、提示信息等
-      // console.log('收到事件 handleClickMe');
+      // Here you can call services, update page variables, show messages, etc.
+      // console.log('Received event handleClickMe');
     });
   }
 }
@@ -98,13 +98,13 @@ export default PageCls;
 import { Jit } from 'jit';
 import { Button, message } from 'antd';
 
-// 组件渲染器：接收 compIns（逻辑实例），负责 UI 与交互
+// Component renderer: receives compIns (logic instance), handles UI and interactions
 const Render = (props) => {
   const compIns = props.compIns;
   const handleClick = () => {
-    // 1) 调用逻辑方法
+    // 1) Call logic method
     message.success(compIns.getData());
-    // 2) 发布事件，供页面或其他组件订阅
+    // 2) Publish event for page or other components to subscribe
     compIns.publishEvent('handleClickMe');
   };
   return (
@@ -114,12 +114,12 @@ const Render = (props) => {
   );
 };
 
-// 逻辑处理类：对外暴露方法、事件等
+// Logic processing class: exposes methods, events, etc.
 export default class BlankComponent2 extends Jit.BaseComponent {
-  // 将渲染器挂到逻辑对象上
+  // Attach renderer to logic object
   Render = Render;
 
-  // 对外提供的方法，可被页面/其他组件调用
+  // Public method that can be called by page/other components
   getData() {
     return 'so cool !!!';
   }
@@ -145,7 +145,7 @@ export default class BlankComponent2 extends Jit.BaseComponent {
       "fullName": "components.BlankComponent",
       "type": "components.BlankComponent",
       "name": "BlankComponent2",
-      "title": "全代码组件2",
+      "title": "Full-Code Component 2",
       "config": {
         "requireElements": []
       },
@@ -165,45 +165,45 @@ export default class BlankComponent2 extends Jit.BaseComponent {
   </TabItem>
 </Tabs>
 
-### 接口运行时序 {#interface-runtime-sequence}
+### Interface Runtime Sequence {#interface-runtime-sequence}
 
 ```mermaid
 sequenceDiagram
-    participant U as 用户
+    participant U as User
     participant P as PageRender
     participant E as ElementRender
     participant PC as PageCls
     participant BC as BlankComponent2
     participant R as Render
 
-    U->>P: 访问页面
-    P->>E: 调用 ElementRender
-    E->>PC: 创建页面实例
-    PC->>BC: 创建组件逻辑实例
-    PC->>PC: 执行 bindEvent() 订阅事件
-    E->>R: 渲染组件 Render
-    E->>R: 注入 props.compIns（BlankComponent2 实例）
+    U->>P: Access page
+    P->>E: Call ElementRender
+    E->>PC: Create page instance
+    PC->>BC: Create component logic instance
+    PC->>PC: Execute bindEvent() to subscribe events
+    E->>R: Render component Render
+    E->>R: Inject props.compIns (BlankComponent2 instance)
 
-    Note over R: 组件渲染完成
+    Note over R: Component rendering complete
 
-    U->>R: 点击按钮
-    R->>BC: 调用 compIns.getData()
-    BC-->>R: 返回数据
-    R->>BC: 发布事件 publishEvent('handleClickMe')
-    BC->>PC: 触发订阅的事件处理
-    PC->>PC: 执行事件回调逻辑
+    U->>R: Click button
+    R->>BC: Call compIns.getData()
+    BC-->>R: Return data
+    R->>BC: Publish event publishEvent('handleClickMe')
+    BC->>PC: Trigger subscribed event handler
+    PC->>PC: Execute event callback logic
 ```
 
-### 接口调用说明 {#interface-invocation-explanation}
+### Interface Invocation Explanation {#interface-invocation-explanation}
 
-全代码组件接口的核心调用机制：
+Core invocation mechanism of full-code component interfaces:
 
-- **页面接口**：`PageRender` 调用 `ElementRender` 接口，平台根据 `scheme.json` 配置生成组件树
-- **组件接口**：平台创建组件逻辑实例，通过 `props.compIns` 接口传入渲染器
-- **事件接口**：`Render` 通过 `compIns` 接口调用逻辑方法、发布事件；`page.ts` 通过 `bindEvent()` 接口订阅事件
+- **Page Interface**: `PageRender` calls the `ElementRender` interface, platform generates component tree based on `scheme.json` configuration
+- **Component Interface**: Platform creates component logic instance, passes it to renderer through `props.compIns` interface
+- **Event Interface**: `Render` calls logic methods and publishes events through `compIns` interface; `page.ts` subscribes to events through `bindEvent()` interface
 
-## 相关文档
+## Related Documentation
 
-- [在全代码组件中调用页面和组件函数](./calling-page-and-component-functions-in-fullcode-components) - 了解如何在全代码组件中调用其他组件和页面的方法
-- [发布和订阅事件](./emitting-events) - 了解全代码组件的事件机制
-- [在页面代码中调用全代码组件函数](./calling-fullcode-component-functions-in-page-code) - 了解如何从页面代码中调用全代码组件的方法
+- [Calling Page and Component Functions in Full-Code Components](./calling-page-and-component-functions-in-fullcode-components) - Learn how to call other components and page methods in full-code components
+- [Publishing and Subscribing Events](./emitting-events) - Understand the event mechanism of full-code components
+- [Calling Full-Code Component Functions in Page Code](./calling-fullcode-component-functions-in-page-code) - Learn how to call full-code component methods from page code

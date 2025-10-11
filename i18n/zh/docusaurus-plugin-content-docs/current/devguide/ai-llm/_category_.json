@@ -1,9 +1,9 @@
 {
-  "label": "AI大模型",
+  "label": "AI Large Language Model",
   "position": 8,
   "link": {
     "type": "generated-index",
-    "slug": "ai-llm",
-    "description": "AI大语言模型集成与使用"
+    "slug": "devguide/ai-llm",
+    "description": "AI large language model integration and usage"
   }
 }

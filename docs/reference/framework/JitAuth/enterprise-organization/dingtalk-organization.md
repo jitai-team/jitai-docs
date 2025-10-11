@@ -1,27 +1,27 @@
 ---
 slug: dingtalk-organization
 ---
-# 钉钉自建组织 {#dingtalk-custom-organization}
-钉钉自建组织是JitAuth框架中用于集成钉钉企业内部应用组织架构的专用组织类型，基于钉钉开放平台API实现企业组织架构自动同步和统一管理。它负责钉钉通讯录同步、部门结构获取和用户身份验证，支持与钉钉工作台的无缝集成，提供企业级权限管理和用户关系维护能力。
+# DingTalk Self-built Org. {#dingtalk-custom-organization}
+DingTalk Self-built Org. is a specialized organization type in the JitAuth framework for integrating DingTalk enterprise internal application organizational architecture, implemented based on DingTalk Open Platform API to achieve automatic synchronization and unified management of enterprise organizational architecture. It handles DingTalk contact synchronization, department structure retrieval, and user identity authentication, supporting seamless integration with DingTalk workspace and providing enterprise-level permission management and user relationship maintenance capabilities.
 
-钉钉自建组织元素分层结构为Meta（corps.Meta） → Type（corps.DDInnerType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建钉钉自建组织实例元素。
+The hierarchical structure of DingTalk Self-built Org. elements is Meta (corps.Meta) → Type (corps.DDInnerType) → Instance. Developers can quickly create DingTalk Self-built Org. instance elements through JitAi's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的corps.DDInnerType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `corps.DDInnerType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 corps/
 └── testNailDivision/
-    ├── e.json                    # 元素配置文件
-    └── testNailDivision.json     # 业务配置文件
+    ├── e.json                    # Element configuration file
+    └── testNailDivision.json     # Business configuration file
 ```
 
-#### e.json文件
-```json title="元素配置示例"
+#### e.json File
+```json title="Element Configuration Example"
 {
-  "title": "测试钉钉组织",
+  "title": "Test DingTalk Organization",
   "type": "corps.DDInnerType",
   "backendBundleEntry": ".",
   "frontBundleEntry": "./testNailDivision.json",
@@ -29,8 +29,8 @@ corps/
 }
 ```
 
-#### 业务配置文件
-```json title="业务配置示例 - testNailDivision.json"
+#### Business Configuration File
+```json title="Business Configuration Example - testNailDivision.json"
 {
   "authConfig": {
     "corpId": "ding12345678",
@@ -41,318 +41,318 @@ corps/
 }
 ```
 
-#### 调用示例
-```python title="获取和使用钉钉自建组织"
-# 获取钉钉自建组织实例
+#### Usage Example
+```python title="Getting and Using DingTalk Self-built Org."
+# Get DingTalk Self-built Org. instance
 nail_corp = app.getElement("corps.testNailDivision")
 
-# 同步组织架构
+# Sync organizational architecture
 nail_corp.syncCorp()
 
-# 获取根部门
+# Get root department
 root_dept = nail_corp.getRootDept()
-print(f"根部门: {root_dept.name}")
+print(f"Root Department: {root_dept.name}")
 ```
 
-## 元素配置
-### e.json配置
-| 配置项 | 类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| title | str | 是 | 组织名称，用于显示标识 |
-| type | str | 是 | 固定值"corps.DDInnerType" |
-| backendBundleEntry | str | 是 | 后端入口点，通常为"." |
-| frontBundleEntry | str | 是 | 前端入口点，指向业务配置文件 |
-| fullName | str | 是 | 元素完整名称，格式为"corps.[实例名]" |
+| title | str | Yes | Organization name, used for display identification |
+| type | str | Yes | Fixed value "corps.DDInnerType" |
+| backendBundleEntry | str | Yes | Backend entry point, usually "." |
+| frontBundleEntry | str | Yes | Frontend entry point, points to business configuration file |
+| fullName | str | Yes | Element full name, format "corps.[instance name]" |
 
-### 业务配置文件配置
-| 配置项 | 类型 | 必填 | 说明 |
+### Business Configuration File
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| authConfig.corpId | str | 是 | 钉钉企业ID，从钉钉开发者后台获取 |
-| authConfig.agentId | str | 是 | 钉钉应用AgentId |
-| authConfig.appKey | str | 是 | 钉钉应用的AppKey |
-| authConfig.appSecret | str | 是 | 钉钉应用的AppSecret |
+| authConfig.corpId | str | Yes | DingTalk enterprise ID, obtained from DingTalk developer backend |
+| authConfig.agentId | str | Yes | DingTalk application AgentId |
+| authConfig.appKey | str | Yes | DingTalk application AppKey |
+| authConfig.appSecret | str | Yes | DingTalk application AppSecret |
 
-## 方法 
+## Methods
 ### bulkRegister
-批量注册和更新组织成员的用户绑定关系。
+Batch register and update user binding relationships for organization members.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| corpData | CorpData | dict | 是 | 组织数据对象 |
-| memberList | list | list | 否 | 成员模型对象列表，默认为None |
+| corpData | CorpData | dict | Yes | Organization data object |
+| memberList | list | list | No | Member model object list, defaults to None |
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |------|------|
-| None | 无返回值 |
+| None | No return value |
 
-#### 使用示例
-```python title="批量注册成员"
+#### Usage Example
+```python title="Batch Register Members"
 nail_corp = app.getElement("corps.testNailDivision")
 
-# 获取组织数据
+# Get organization data
 corp_data = nail_corp.getThirdCorpData()
 
-# 批量注册所有成员
+# Batch register all members
 nail_corp.bulkRegister(corp_data)
-print("成员注册完成")
+print("Member registration completed")
 ```
 
 ### getAdmin
-获取当前组织架构的管理员ID列表。
+Get the administrator ID list of the current organizational architecture.
 
-#### 返回值
-| 类型 | 对应原生类型 | 说明 |
+#### Return Value
+| Type | Corresponding Native Type | Description |
 |------|-------------|------|
-| list | list | 管理员ID列表 |
+| list | list | Administrator ID list |
 
-#### 使用示例
-```python title="获取组织管理员"
+#### Usage Example
+```python title="Get Organization Administrators"
 nail_corp = app.getElement("corps.testNailDivision")
 admin_ids = nail_corp.getAdmin()
-print(f"管理员ID列表: {admin_ids}")
+print(f"Administrator ID list: {admin_ids}")
 ```
 
 ### getClient
-获取钉钉API客户端实例，用于与钉钉开放平台进行通信。
+Get DingTalk API client instance for communicating with DingTalk Open Platform.
 
-#### 返回值
-| 类型 | 对应原生类型 | 说明 |
+#### Return Value
+| Type | Corresponding Native Type | Description |
 |------|-------------|------|
-| DDInnerClient | object | 钉钉API客户端对象 |
+| DDInnerClient | object | DingTalk API client object |
 
-#### 使用示例
-```python title="获取钉钉客户端"
+#### Usage Example
+```python title="Get DingTalk Client"
 nail_corp = app.getElement("corps.testNailDivision")
 client = nail_corp.getClient()
 
-# 客户端用于内部API调用，通常无需直接使用
+# Client is used for internal API calls, usually no need to use directly
 ```
 
 ### getCorpInfo
-获取组织的配置信息。
+Get organization configuration information.
 
-#### 返回值
-| 类型 | 对应原生类型 | 说明 |
+#### Return Value
+| Type | Corresponding Native Type | Description |
 |------|-------------|------|
-| dict | dict | 组织配置信息字典 |
+| dict | dict | Organization configuration information dictionary |
 
-#### 使用示例
-```python title="获取组织信息"
+#### Usage Example
+```python title="Get Organization Information"
 nail_corp = app.getElement("corps.testNailDivision")
 corp_info = nail_corp.getCorpInfo()
-print(f"组织信息: {corp_info}")
+print(f"Organization information: {corp_info}")
 ```
 
 ### getLocalCorpData
-获取本地用户池和企业认证信息的完整数据。
+Get complete data of local user pool and enterprise authentication information.
 
-#### 返回值
-| 类型 | 对应原生类型 | 说明 |
+#### Return Value
+| Type | Corresponding Native Type | Description |
 |------|-------------|------|
-| dict | dict | 包含用户、部门、角色等完整组织数据的字典 |
+| dict | dict | Dictionary containing complete organizational data including users, departments, roles, etc. |
 
-#### 使用示例
-```python title="获取本地组织数据"
+#### Usage Example
+```python title="Get Local Organization Data"
 nail_corp = app.getElement("corps.testNailDivision")
 local_data = nail_corp.getLocalCorpData()
 
-# 访问不同类型的数据
-print(f"用户列表: {local_data['userList']}")
-print(f"部门列表: {local_data['deptList']}")
-print(f"角色列表: {local_data['roleList']}")
+# Access different types of data
+print(f"User list: {local_data['userList']}")
+print(f"Department list: {local_data['deptList']}")
+print(f"Role list: {local_data['roleList']}")
 ```
 
 ### getRootDept
-获取组织架构的根部门信息。
+Get root department information of the organizational architecture.
 
-#### 返回值
-| 类型 | 对应原生类型 | 说明 |
+#### Return Value
+| Type | Corresponding Native Type | Description |
 |------|-------------|------|
-| CorpDept | dict | 根部门模型对象，包含部门基本信息 |
+| CorpDept | dict | Root department model object, containing basic department information |
 
-#### 使用示例
-```python title="获取根部门"
+#### Usage Example
+```python title="Get Root Department"
 nail_corp = app.getElement("corps.testNailDivision")
 root_dept = nail_corp.getRootDept()
 
-# 访问根部门属性
-print(f"部门ID: {root_dept.deptId}")
-print(f"部门名称: {root_dept.name}")
-print(f"组织名称: {root_dept.corpFullName}")
+# Access root department attributes
+print(f"Department ID: {root_dept.deptId}")
+print(f"Department name: {root_dept.name}")
+print(f"Organization name: {root_dept.corpFullName}")
 ```
 
 ### getThirdCorpData
-获取钉钉第三方组织架构的原始数据。
+Get raw data of DingTalk third-party organizational architecture.
 
-#### 返回值
-| 类型 | 对应原生类型 | 说明 |
+#### Return Value
+| Type | Corresponding Native Type | Description |
 |------|-------------|------|
-| CorpData | dict | 钉钉组织数据对象，包含完整的组织架构信息 |
+| CorpData | dict | DingTalk organization data object, containing complete organizational architecture information |
 
-#### 使用示例
-```python title="获取第三方组织数据"
+#### Usage Example
+```python title="Get Third-Party Organization Data"
 nail_corp = app.getElement("corps.testNailDivision")
 corp_data = nail_corp.getThirdCorpData()
 
-# 访问组织数据属性
-print(f"企业ID: {corp_data.corpId}")
-print(f"用户字典: {corp_data.userDict}")
-print(f"部门数据: {corp_data.deptDict}")
+# Access organization data attributes
+print(f"Enterprise ID: {corp_data.corpId}")
+print(f"User dictionary: {corp_data.userDict}")
+print(f"Department data: {corp_data.deptDict}")
 ```
 
 ### getUserSignature
-获取指定用户的签名信息。
+Get signature information for a specified user.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| memberId | str | str | 是 | 用户成员ID |
+| memberId | str | str | Yes | User member ID |
 
-#### 返回值
-| 类型 | 对应原生类型 | 说明 |
+#### Return Value
+| Type | Corresponding Native Type | Description |
 |------|-------------|------|
-| dict | dict | 包含signature字段的字典 |
+| dict | dict | Dictionary containing signature field |
 
-#### 使用示例
-```python title="获取用户签名"
+#### Usage Example
+```python title="Get User Signature"
 nail_corp = app.getElement("corps.testNailDivision")
 signature_info = nail_corp.getUserSignature("member123")
-print(f"用户签名: {signature_info['signature']}")
+print(f"User signature: {signature_info['signature']}")
 ```
 
 ### initCorp
-初始化钉钉组织架构，创建实例时自动调用该方法同步组织数据。
+Initialize DingTalk organizational architecture, automatically called when creating an instance to sync organization data.
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |------|------|
-| None | 无返回值 |
+| None | No return value |
 
-#### 使用示例
-```python title="初始化组织架构"
+#### Usage Example
+```python title="Initialize Organizational Architecture"
 nail_corp = app.getElement("corps.testNailDivision")
-# 初始化方法在元素创建时自动调用，通常无需手动调用
+# Initialization method is automatically called when element is created, usually no need to call manually
 nail_corp.initCorp()
 ```
 
 ### offlineMember
-将指定成员转为离职状态，但不影响成员在其他组织架构中的登录。
+Set specified members to offline status, but does not affect member login in other organizational architectures.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| memberIdList | list | list | 是 | 成员ID列表 |
+| memberIdList | list | list | Yes | Member ID list |
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |------|------|
-| None | 无返回值 |
+| None | No return value |
 
-#### 使用示例
-```python title="离职成员"
+#### Usage Example
+```python title="Offline Members"
 nail_corp = app.getElement("corps.testNailDivision")
 nail_corp.offlineMember(["member123", "member456"])
-print("成员离职操作完成")
+print("Member offline operation completed")
 ```
 
 ### saveUserSignature
-保存指定用户的签名信息。
+Save signature information for a specified user.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| memberId | str | str | 是 | 用户成员ID |
-| signature | str | str | 是 | 签名图片链接 |
+| memberId | str | str | Yes | User member ID |
+| signature | str | str | Yes | Signature image link |
 
-#### 返回值
-| 类型 | 对应原生类型 | 说明 |
+#### Return Value
+| Type | Corresponding Native Type | Description |
 |------|-------------|------|
-| dict | dict | 成功返回标识 |
+| dict | dict | Success return identifier |
 
-#### 使用示例
-```python title="保存用户签名"
+#### Usage Example
+```python title="Save User Signature"
 nail_corp = app.getElement("corps.testNailDivision")
 result = nail_corp.saveUserSignature("member123", "https://example.com/signature.png")
-print("签名保存成功")
+print("Signature saved successfully")
 ```
 
 ### setAdmin
-设置组织负责人，指定管理员。
+Set organization administrators, specify administrators.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| memberIdList | list | list | 是 | 成员ID列表 |
+| memberIdList | list | list | Yes | Member ID list |
 
-#### 返回值
-| 类型 | 对应原生类型 | 说明 |
+#### Return Value
+| Type | Corresponding Native Type | Description |
 |------|-------------|------|
-| dict | dict | 空字典表示成功 |
+| dict | dict | Empty dictionary indicates success |
 
-#### 使用示例
-```python title="设置组织管理员"
+#### Usage Example
+```python title="Set Organization Administrators"
 nail_corp = app.getElement("corps.testNailDivision")
 result = nail_corp.setAdmin(["member123", "member456"])
-print("管理员设置成功")
+print("Administrator set successfully")
 ```
 
 ### syncCorp
-同步钉钉组织架构数据，包括部门结构、用户信息和角色关系的完整同步。
+Sync DingTalk organizational architecture data, including complete synchronization of department structure, user information, and role relationships.
 
-#### 返回值
-| 类型 | 说明 |
+#### Return Value
+| Type | Description |
 |------|------|
-| None | 无返回值 |
+| None | No return value |
 
-#### 使用示例
-```python title="同步组织架构"
+#### Usage Example
+```python title="Sync Organizational Architecture"
 nail_corp = app.getElement("corps.testNailDivision")
 
 try:
     nail_corp.syncCorp()
-    print("组织架构同步成功")
+    print("Organizational architecture sync successful")
 except Exception as e:
-    print(f"同步失败: {e}")
+    print(f"Sync failed: {e}")
 ```
 
-## 属性
+## Properties
 ### authConfig
-钉钉认证配置信息，包含连接钉钉开放平台所需的关键参数。
+DingTalk authentication configuration information, containing key parameters required for connecting to DingTalk Open Platform.
 
 ### corpData
-组织的完整配置数据，包含所有元素配置信息。
+Complete configuration data of the organization, containing all element configuration information.
 
 ### corpFullName
-组织元素的完整名称，用于在系统中唯一标识该组织实例。
+Full name of the organization element, used to uniquely identify the organization instance in the system.
 
 ### fullName
-组织元素的完整名称，与corpFullName相同。
+Full name of the organization element, same as corpFullName.
 
 ### title
-组织的显示名称，用于用户界面展示和日志记录。
+Display name of the organization, used for user interface display and logging.
 
-## 高级特性
-### 自动同步机制
-钉钉自建组织在初始化时会自动执行组织架构同步，确保本地数据与钉钉服务器保持一致。同步过程包含错误处理和数据完整性验证，支持大规模组织架构的高效同步。
+## Advanced Features
+### Automatic Sync Mechanism
+DingTalk Self-built Org. automatically executes organizational architecture synchronization during initialization, ensuring local data consistency with DingTalk servers. The sync process includes error handling and data integrity validation, supporting efficient synchronization of large-scale organizational architectures.
 
-```python title="自动同步配置"
-# 创建实例时自动触发同步
+```python title="Automatic Sync Configuration"
+# Automatically trigger sync when creating instance
 nail_corp = app.getElement("corps.testNailDivision")
-# 系统自动执行：initCorp() -> syncCorp() -> bulkRegister()
+# System automatically executes: initCorp() -> syncCorp() -> bulkRegister()
 ```
 
-### 用户身份绑定
-基于钉钉unionId实现用户身份的唯一标识和跨组织管理，自动维护本地用户与钉钉用户的绑定关系，支持用户认证信息的动态更新和权限继承。
+### User Identity Binding
+Based on DingTalk unionId to achieve unique identification and cross-organization management of user identities, automatically maintaining binding relationships between local users and DingTalk users, supporting dynamic updates of user authentication information and permission inheritance.
 
-```python title="用户绑定管理"
-# 同步时自动处理用户绑定
+```python title="User Binding Management"
+# Automatically handle user binding during sync
 nail_corp.syncCorp()
 
-# 系统自动处理：
-# 1. 基于unionId识别用户唯一性
-# 2. 创建或更新本地用户账户
-# 3. 维护钉钉认证信息表
-# 4. 设置组织成员关系
-``` 
+# System automatically handles:
+# 1. Identify user uniqueness based on unionId
+# 2. Create or update local user accounts
+# 3. Maintain DingTalk authentication information table
+# 4. Set organization member relationships
+```

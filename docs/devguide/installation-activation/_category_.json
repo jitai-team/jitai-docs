@@ -3,6 +3,7 @@
     "position": 2,
     "link": {
       "type": "generated-index",
-      "description": "Complete guide to JitAi platform installation, node activation, developer organization management, and platform updates. Learn how to set up your development environment from installation to organization binding."
+      "slug": "devguide/installation-activation",
+      "description": "Comprehensive guide to JitAi platform installation, node activation, developer team management, and platform updates. Learn how to establish your development environment from installation through team binding."
     }
   } 

@@ -11,7 +11,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/jitai-team/jitai-docs)](https://github.com/jitai-team/jitai-docs/issues)
 [![GitHub license](https://img.shields.io/github/license/jitai-team/jitai-docs)](https://github.com/jitai-team/jitai-docs/blob/master/LICENSE)
 
-[🌐 在线文档](https://developer.jit.pro) | [📖 快速开始](#快速开始) | [🤝 参与贡献](#参与贡献) | [💬 社区交流](#社区交流)
+[🌐 在线文档](https://jit.pro/docs) | [📖 快速开始](#快速开始) | [🤝 参与贡献](#参与贡献) | [💬 社区交流](#社区交流)
 
 **语言版本 / Language Versions:**
 [🇨🇳 中文](README.md) | [🇺🇸 English](README_EN.md) | [🤝 贡献指南](CONTRIBUTING.md) | [🤝 Contributing Guide](CONTRIBUTING_EN.md)

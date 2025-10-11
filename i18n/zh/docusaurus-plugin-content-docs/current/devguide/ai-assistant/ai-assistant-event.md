@@ -14,7 +14,7 @@ AI助理支持以下主要事件类型：
 - **对话区人机交互事件**：用户在助理对话区中的确认操作触发
 - **工作区人机交互事件**：助理运行至工作区人机交互节点时触发
 
-## 前端工作区事件 {#frontend-workspace-events}
+## 前端工作区事件 {#frontend-page-events}
 前端工作区事件主要用于页面UI状态更新和用户交互处理。 
 
 ### 节点运行事件 {#node-running-events}
@@ -40,13 +40,13 @@ AI Agent节点、函数调用节点、条件分支节点及多任务执行节点
 当流程运行到对话区人机交互节点时，对话框中会显示`同意`、`拒绝`、`编辑`、`回复`确认操作按钮及自定义按钮。
 用户做了确认操作或点击自定义按钮后，会触发工作区事件；事件中携带的参数是节点上展示的数据。
 
-页面中绑定该助理后即可订阅这些事件，订阅方式请见[页面中订阅对话区人机交互事件](../using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#subscribe-chat-area-human-events)
+页面中绑定该助理后即可订阅这些事件，订阅方式请见[页面中订阅对话区人机交互事件](../using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#subscribe-action-in-conversation-events)
 
 
-### 工作区人机交互事件 {#workspace-human-machine-interaction-events} 
+### 工作区人机交互事件 {#action-in-page-events} 
 当流程运行到工作区人机交互节点时，会触发助理暂停事件，该事件会携带节点上配置的参数。
 
-页面中绑定该助理后即可订阅助理暂停事件，订阅方式请见[页面中订阅工作区人机交互事件](../using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#subscribe-workspace-human-events)
+页面中绑定该助理后即可订阅助理暂停事件，订阅方式请见[页面中订阅工作区人机交互事件](../using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#subscribe-action-in-page-events)
 
 
 ## 后端业务事件 {#backend-business-events}
@@ -59,7 +59,7 @@ AI Agent节点、函数调用节点、条件分支节点及多任务执行节点
 
 后端如何订阅节点运行事件，参考：[AI助理事件](../business-logic-development/event-handling#ai-assistant-events)
 
-### 工具调用事件
+### 工具调用事件 {#backend-tool-call-events}
 对于AI Agent节点，在Agent运行过程中如果会用到工具，那么在工具调用前和工具调用后也会触发后端事件。前提是工具需要开启[触发事件](../ai-agent/agent-tools#tool-function-call-pre-post-event-triggering)。
 
 后端如何订阅工具调用事件，参考：[Agent工具调用事件](../business-logic-development/event-handling#agent-tool-call-events)

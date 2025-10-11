@@ -6,27 +6,28 @@ slug: ai_func
 
 # Implementing Answer Generation with AI LLM Functions
 
-## Case Effect
+## Case effect
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
 <VideoPlayer relatePath="/docs/tutorial/ai_func_effect.mp4" />
 
 
-## Implementation Process
+## Implementation process
 
-To implement AI functionality, you first need to integrate with large language models. The LLM vendor element provides a unified integration solution for AI large model vendors, shielding API differences between different LLM vendors. Developers only need to simply configure keys to make calls.
-The JitAi development framework has integrated nearly 10 mainstream LLM vendors and supports integration with privately deployed large models.
+To implement AI functionality, you must first integrate with large language models. The LLM vendor element provides unified integration for AI large model vendors, abstracting API differences between different LLM providers. Developers need only configure API keys to enable calls.
 
-Creating a new LLM vendor element is as follows:
+The JitAi development framework integrates nearly 10 mainstream LLM vendors and supports privately deployed large models.
+
+Creating a new LLM vendor element:
 <VideoPlayer relatePath="/docs/tutorial/ai_func_llm.mp4" />
 
-The "Question Bank Management" page is an "AI Data Management Page" type. We need to convert it to a "Regular Page" type for higher flexibility. The operation is as follows:
+The "Question Bank Management" page uses the "AI Data Management Page" type. We need to convert it to a "Generic Page" type for greater flexibility:
 
 <VideoPlayer relatePath="/docs/tutorial/ai_func_page_convert.mp4" />
 
-In JitAi, calling large models is very simple, just like calling ordinary functions. It can be called directly in frontend pages or in backend service functions.
+In JitAi, invoking large models is straightforward—similar to calling ordinary functions. Large models can be invoked directly from frontend pages or backend service functions.
 
 <VideoPlayer relatePath="/docs/tutorial/ai_func_page_event.mp4" />
 
-Read [AI Large Language Models](../../devguide/ai-llm/create-ai-llm) for more details.
+For detailed information, see [AI Large Language Models](../../devguide/ai-llm/create-ai-llm).

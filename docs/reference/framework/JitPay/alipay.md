@@ -3,36 +3,36 @@ sidebar_position: 1
 slug: alipay
 ---
 
-# 支付宝支付
-支付宝支付是JitPay框架的核心Type元素，基于支付宝官方API实现多种支付方式的集成。它负责支付链接生成、订单状态查询和回调通知处理，支持扫码支付、手机网站支付等方式，适用于电商、O2O、生活服务等多种商业应用场景。
+# Alipay Payment
+Alipay payment is the core Type element of the JitPay framework, implementing integration of multiple payment methods based on Alipay's official API. It handles payment link generation, order status queries, and callback notification processing, supporting QR code payment, mobile website payment, and other methods, suitable for e-commerce, O2O, lifestyle services, and various other commercial application scenarios.
 
-支付宝支付元素分层结构为Meta（pays.Meta）→ Type（pays.AliPayType）→ 实例，开发者可通过JitAi的可视化开发工具快捷地创建支付宝支付实例元素。
+The hierarchical structure of Alipay payment elements is Meta (pays.Meta) → Type (pays.AliPayType) → Instance. Developers can quickly create Alipay payment instance elements through JitAi's visual development tools.
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的pays.AliPayType元素，以实现自己的封装。
+Of course, developers can also create their own Type elements or modify the official `pays.AliPayType` element provided by JitAi in their own App to implement their own encapsulation.
 
-## 快速开始 
-### 创建实例元素
-#### 目录结构
-```text title="推荐目录结构"
+## Quick Start
+### Creating Instance Elements
+#### Directory Structure
+```text title="Recommended Directory Structure"
 pays/
 └── aliPayment/
     ├── e.json
     └── aliPayment.json
 ```
 
-#### e.json文件
-```json title="e.json配置示例"
+#### e.json File
+```json title="e.json Configuration Example"
 {
   "type": "pays.AliPayType",
-  "title": "支付宝支付",
+  "title": "Alipay Payment",
   "variables": [],
   "frontBundleEntry": "./aliPayment.json",
   "backendBundleEntry": "."
 }
 ```
 
-#### 业务配置文件
-```json title="aliPayment.json配置示例"
+#### Business Configuration File
+```json title="aliPayment.json Configuration Example"
 {
   "config": {
     "appId": "your_alipay_app_id",
@@ -42,74 +42,74 @@ pays/
 }
 ```
 
-#### 调用示例
-```python title="基础使用示例"
-# 获取支付宝支付元素
+#### Usage Example
+```python title="Basic Usage Example"
+# Get Alipay payment element
 alipay = app.getElement("pays.aliPayment")
 
-# 创建订单
+# Create order
 payLog = alipay.create(
-    subject="商品购买",
+    subject="Product Purchase",
     amount=99.99,
     orderId="D20241220161615000001"
 )
 
-# 获取支付链接（扫码支付）
+# Get payment link (QR code payment)
 result = alipay.getPayUrl(
     orderId="D20241220161615000001",
     payType="PRE_PAY"
 )
-print(result["payUrl"])  # 二维码链接
+print(result["payUrl"])  # QR code link
 
-# 获取手机支付表单
+# Get mobile payment form
 result = alipay.getPayUrl(
     orderId="D20241220161615000001", 
     payType="WAP_PAY"
 )
-print(result["form"])  # HTML表单
+print(result["form"])  # HTML form
 ```
 
-## 元素配置
-### e.json配置
-| 配置项 | 类型 | 必填 | 说明 |
+## Element Configuration
+### e.json Configuration
+| Configuration Item | Type | Required | Description |
 |--------|------|------|------|
-| type | string | 是 | 固定值：pays.AliPayType |
-| title | string | 是 | 元素显示名称 |
-| frontBundleEntry | string | 是 | 前端配置文件路径 |
-| backendBundleEntry | string | 是 | 后端入口，通常为"." |
+| type | string | Yes | Fixed value: pays.AliPayType |
+| title | string | Yes | Element display name |
+| frontBundleEntry | string | Yes | Frontend configuration file path |
+| backendBundleEntry | string | Yes | Backend entry, usually "." |
 
-### 业务配置文件配置
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+### Business Configuration File
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| appId | Stext | str | 是 | 支付宝应用ID |
-| publicKey | Stext | str | 是 | 支付宝公钥 |
-| privateKey | Stext | str | 是 | 应用私钥 |
+| appId | Stext | str | Yes | Alipay application ID |
+| publicKey | Stext | str | Yes | Alipay public key |
+| privateKey | Stext | str | Yes | Application private key |
 
-## 方法 
+## Methods
 ### create
-创建内部订单，生成本地订单记录。
+Create internal order, generate local order record.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| subject | Stext | str | 是 | 订单标题 |
-| amount | Money | float | 是 | 金额，单位为元 |
-| orderId | Stext | str | 否 | 订单号，为空时自动生成 |
+| subject | Stext | str | Yes | Order title |
+| amount | Money | float | Yes | Amount in yuan |
+| orderId | Stext | str | No | Order number, auto-generated if empty |
 
-#### 返回值
-返回PayLogModel实例对象，包含订单的完整信息。
+#### Return Value
+Returns PayLogModel instance object containing complete order information.
 
-#### 使用示例
-```python title="创建订单示例"
+#### Usage Example
+```python title="Create Order Example"
 alipay = app.getElement("pays.aliPayment")
 
-# 自动生成订单号
+# Auto-generate order number
 payLog = alipay.create(
     subject="iPhone 15 Pro",
     amount=7999.00
 )
 
-# 指定订单号
+# Specify order number
 payLog = alipay.create(
     subject="MacBook Air",
     amount=8999.00,
@@ -118,29 +118,29 @@ payLog = alipay.create(
 ```
 
 ### getPayUrl
-获取支付链接，根据支付方式返回不同格式的支付信息。
+Get payment link, returns different format payment information based on payment method.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| orderId | Stext | str | 是 | 订单号 |
-| payType | Stext | str | 是 | 支付方式：PRE_PAY或WAP_PAY |
+| orderId | Stext | str | Yes | Order number |
+| payType | Stext | str | Yes | Payment method: PRE_PAY or WAP_PAY |
 
-#### 返回值
-返回字典，包含payUrl（二维码链接）和form（HTML表单）字段。
+#### Return Value
+Returns dictionary containing payUrl (QR code link) and form (HTML form) fields.
 
-#### 使用示例
-```python title="获取支付链接示例"
+#### Usage Example
+```python title="Get Payment Link Example"
 alipay = app.getElement("pays.aliPayment")
 
-# PC端扫码支付
+# PC QR code payment
 result = alipay.getPayUrl(
     orderId="D20241220161615000001",
     payType="PRE_PAY"
 )
 qr_url = result["payUrl"]
 
-# 手机端网站支付
+# Mobile website payment
 result = alipay.getPayUrl(
     orderId="D20241220161615000001",
     payType="WAP_PAY"
@@ -149,40 +149,40 @@ form_html = result["form"]
 ```
 
 ### check
-确认订单支付状态，调用支付宝接口验证支付结果。
+Confirm order payment status, call Alipay API to verify payment result.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| orderId | Stext | str | 是 | 订单号 |
+| orderId | Stext | str | Yes | Order number |
 
-#### 返回值
-返回SUCCESS_RETURN常量，表示检查操作完成。
+#### Return Value
+Returns SUCCESS_RETURN constant, indicating check operation completed.
 
-#### 使用示例
-```python title="检查支付状态示例"
+#### Usage Example
+```python title="Check Payment Status Example"
 alipay = app.getElement("pays.aliPayment")
 
 try:
     result = alipay.check("D20241220161615000001")
-    print("订单状态检查完成")
+    print("Order status check completed")
 except Exception as e:
-    print(f"检查失败：{e}")
+    print(f"Check failed: {e}")
 ```
 
 ### checkThird
-查询支付宝订单状态，更新本地订单记录。
+Query Alipay order status, update local order record.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| payLog | PayLogModel | dict | 是 | 订单数据对象 |
+| payLog | PayLogModel | dict | Yes | Order data object |
 
-#### 返回值
-返回AliPayLogModel实例或空字典。
+#### Return Value
+Returns AliPayLogModel instance or empty dictionary.
 
-#### 使用示例
-```python title="查询第三方状态示例"
+#### Usage Example
+```python title="Query Third-party Status Example"
 alipay = app.getElement("pays.aliPayment")
 PayLogModel = app.getElement("pays.models.PayLogModel")
 
@@ -191,118 +191,118 @@ aliPayLog = alipay.checkThird(payLog)
 ```
 
 ### cancel
-取消订单，同时取消本地订单和支付宝订单。
+Cancel order, cancel both local order and Alipay order.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| orderId | Stext | str | 是 | 订单号 |
+| orderId | Stext | str | Yes | Order number |
 
-#### 返回值
-返回SUCCESS_RETURN常量，表示取消操作完成。
+#### Return Value
+Returns SUCCESS_RETURN constant, indicating cancel operation completed.
 
-#### 使用示例
-```python title="取消订单示例"
+#### Usage Example
+```python title="Cancel Order Example"
 alipay = app.getElement("pays.aliPayment")
 
 result = alipay.cancel("D20241220161615000001")
-print("订单已取消")
+print("Order cancelled")
 ```
 
 ### cancelThird
-调用支付宝接口取消第三方订单。
+Call Alipay API to cancel third-party order.
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
+#### Parameter Details
+| Parameter Name | Type | Corresponding Native Type | Required | Description |
 |--------|------|-------------|------|------|
-| orderId | Stext | str | 是 | 订单号 |
+| orderId | Stext | str | Yes | Order number |
 
-#### 返回值
-返回SUCCESS_RETURN常量。
+#### Return Value
+Returns SUCCESS_RETURN constant.
 
 ### notify
-接收支付宝回调通知，处理支付结果。
+Receive Alipay callback notification, handle payment result.
 
-#### 使用示例
-```python title="回调处理示例"
+#### Usage Example
+```python title="Callback Handling Example"
 alipay = app.getElement("pays.aliPayment")
 
-# 通常在路由中调用
+# Usually called in routes
 def alipay_notify():
     result = alipay.notify()
     return result
 ```
 
 ### generateOrderId
-生成默认格式的订单号。
+Generate default format order number.
 
-#### 返回值
-返回格式为"D + 日期时间(yyyymmddhhmmss) + 6位随机数"的订单号。
+#### Return Value
+Returns order number in format "D + datetime(yyyymmddhhmmss) + 6-digit random number".
 
-#### 使用示例
-```python title="生成订单号示例"
+#### Usage Example
+```python title="Generate Order Number Example"
 order_id = app.getElement("pays.aliPayment").generateOrderId()
-print(order_id)  # 例如：D202412201616150000001
+print(order_id)  # Example: D202412201616150000001
 ```
 
-## 属性
+## Properties
 ### config
-包含支付宝配置信息的字典，包括appId、publicKey、privateKey等认证参数。
+Dictionary containing Alipay configuration information, including appId, publicKey, privateKey, and other authentication parameters.
 
 ### fullName
-元素的完整名称，用于标识支付方式。
+Complete element name, used to identify payment method.
 
 ### appId
-支付宝应用ID，从配置中获取。
+Alipay application ID, obtained from configuration.
 
 ### publicKey
-支付宝公钥，用于验证回调数据。
+Alipay public key, used to verify callback data.
 
 ### privateKey
-应用私钥，用于签名请求数据。
+Application private key, used to sign request data.
 
-## 高级特性
-### 支付方式配置
-支付宝支付支持多种支付方式，通过payType参数控制：
+## Advanced Features
+### Payment Method Configuration
+Alipay payment supports multiple payment methods, controlled through payType parameter:
 
-```python title="不同支付方式示例"
+```python title="Different Payment Methods Example"
 alipay = app.getElement("pays.aliPayment")
 
-# 扫码支付（PC端）
+# QR code payment (PC)
 pc_result = alipay.getPayUrl(
     orderId="ORDER001",
     payType="PRE_PAY"
 )
 
-# 手机网站支付
+# Mobile website payment
 mobile_result = alipay.getPayUrl(
     orderId="ORDER001", 
     payType="WAP_PAY"
 )
 ```
 
-### 订单状态管理
-系统提供完整的订单状态管理机制：
+### Order Status Management
+System provides complete order status management mechanism:
 
-```python title="订单状态处理示例"
+```python title="Order Status Handling Example"
 from pays.Meta import PayStatusEnum, AliPayStatusEnum
 
-# 本地订单状态
-# PayStatusEnum.wait - 等待支付
-# PayStatusEnum.success - 支付成功
-# PayStatusEnum.close - 订单关闭
-# PayStatusEnum.timeout - 订单超时
-# 支付宝订单状态
-# AliPayStatusEnum.WAIT_BUYER_PAY - 等待买家付款
-# AliPayStatusEnum.TRADE_SUCCESS - 交易成功
-# AliPayStatusEnum.TRADE_CLOSED - 交易关闭
-# AliPayStatusEnum.TRADE_FINISHED - 交易结束
+# Local order status
+# PayStatusEnum.wait - Waiting for payment
+# PayStatusEnum.success - Payment successful
+# PayStatusEnum.close - Order closed
+# PayStatusEnum.timeout - Order timeout
+# Alipay order status
+# AliPayStatusEnum.WAIT_BUYER_PAY - Waiting for buyer payment
+# AliPayStatusEnum.TRADE_SUCCESS - Trade successful
+# AliPayStatusEnum.TRADE_CLOSED - Trade closed
+# AliPayStatusEnum.TRADE_FINISHED - Trade finished
 ```
 
-### 错误处理
-集成完整的错误处理机制：
+### Error Handling
+Integrated complete error handling mechanism:
 
-```python title="错误处理示例"
+```python title="Error Handling Example"
 from commons.errcode import PayErrorCode
 
 alipay = app.getElement("pays.aliPayment")
@@ -310,9 +310,9 @@ alipay = app.getElement("pays.aliPayment")
 try:
     result = alipay.getPayUrl("INVALID_ORDER", "PRE_PAY")
 except PayErrorCode.ORDER_NOT_EXIST_ERROR:
-    print("订单不存在")
+    print("Order does not exist")
 except PayErrorCode.UNKNOWN_PAY_TYPE:
-    print("未知支付方式")
+    print("Unknown payment method")
 except Exception as e:
-    print(f"其他错误：{e}")
-``` 
+    print(f"Other error: {e}")
+```

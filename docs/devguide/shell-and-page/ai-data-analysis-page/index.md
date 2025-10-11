@@ -74,7 +74,7 @@ In addition to creating in the developer portal, you can also quickly create in 
 
 ![Create AI Data Analysis Page - quickly](./imgs/quickly.png)
 
-Click **Create New** → **AI Data Analysis Functions**.This operation will create a new AI data analysis page and simultaneously create a menu in the portal and bind it to the newly added page.
+Click **Create** → **AI Data Analysis Functions**.This operation will create a new AI data analysis page and simultaneously create a menu in the portal and bind it to the newly added page.
 
 :::tip Tip
 You need to be granted [quick create permissions](/docs/devguide/user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus) to see the quick create entry.

@@ -1728,7 +1728,8 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid links={[
     { text: "打印Word模板", href: "devguide/file-processing/generating-and-printing-files-using-file-templates#print-word-template" },
-    { text: "打印Excel模板", href: "devguide/file-processing/generating-and-printing-files-using-file-templates#print-excel-template" }
+    { text: "打印Excel模板", href: "devguide/file-processing/generating-and-printing-files-using-file-templates#print-excel-template" },
+    { text: "生成附件", href: "devguide/file-processing/generating-and-printing-files-using-file-templates#generate-attachments" }
   ]} />
 </IndexCard>
 

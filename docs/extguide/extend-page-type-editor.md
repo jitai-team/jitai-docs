@@ -5,56 +5,53 @@ slug: extend-page-type-editor
 
 # Extend Your Own Page Type and Editor
 
+Imagine you need to develop a countdown timer page for an online examination system. You open JitAi and review the existing page types: generic pages are too simple, data management pages don't fit, Markdown pages are even less suitable... At this point, you realize you need to create an entirely new page type.
 
-# 开发自定义页面Type和编辑器
+This guide will walk you through the complete experience of developing a custom page Type element. More importantly, you'll understand how JitAi's clever design makes this seemingly complex task remarkably simple.
 
-想象一下，你需要为一个在线考试系统开发倒计时页面。你打开JitAi，查看现有的页面类型：常规页面太简单，数据管理页面不合适，Markdown页面更不行...这时候你意识到，需要创建一个全新的页面类型。
+## Understanding how pages are loaded {#understanding-how-pages-are-loaded}
 
-这篇文档将带你完整体验如何开发自定义页面Type，更重要的是，你将理解JitAi是如何通过巧妙的设计，让这件看似复杂的事变得如此简单。
+Before we start coding, let's understand a core concept: when a user accesses a page, how does JitAi locate and load the correct code?
 
-## 理解页面是如何被加载的
+### The page loading journey {#the-page-loading-journey}
 
-在开始动手之前，让我们先理解一个核心问题：当用户访问一个页面时，JitAi是如何找到并加载正确的代码的？
-
-### 一次页面加载之旅
-
-让我们跟踪一个页面从URL到渲染的完整过程：
+Let's trace the complete process from URL to rendering:
 
 ```typescript
-// 用户访问: /pages/examTimer
+// User visits: /pages/examTimer
 ```
 
-当这个请求到达时，JitAi开始了一段精妙的查找之旅：
+When this request arrives, JitAi embarks on an elegant discovery journey:
 
 ```typescript
-// 第一步：runApp.ts 启动应用
+// Step 1: runApp.ts starts the application
 await runtimeApp.getElement('pages.examTimer');
 
-// 第二步：app.ts 开始查找元素
+// Step 2: app.ts begins element lookup
 async getElement(elementPath: string) {
-    // 找到元素定义
+    // Locate the element definition
     const elements = this.findElement(elementPath);
 
-    // 关键：寻找合适的loader
+    // Key: Find the appropriate loader
     return await this.loadElement(elements);
 }
 ```
 
-这里出现了第一个关键概念：**Loader（加载器）**。
+Here we encounter the first key concept: **Loader**.
 
-### Loader - 灵活性的秘密
+### Loader - the secret to flexibility {#loader-the-secret-to-flexibility}
 
-Loader是JitAi最巧妙的设计之一。它不是一个固定的加载逻辑，而是一个**可继承、可覆盖的函数链**。
+The Loader is one of JitAi's most ingenious designs. It's not a fixed loading logic, but rather an **inheritable, overridable function chain**.
 
 ```typescript
-// 寻找loader的过程就像找钥匙
+// Finding a loader is like finding the right key
 async getElementLoader(elementPath: string) {
-    // 1. 这个页面自己有专门的钥匙吗？
+    // 1. Does this page have its own dedicated key?
     if (element.define.loader) {
         return element.loader;
     }
 
-    // 2. 没有？那它的Type有通用钥匙吗？
+    // 2. No? Does its Type have a universal key?
     if (element.define.type) {
         const typeModule = await this.getElement(element.type);
         if (typeModule?.loader) {
@@ -62,30 +59,30 @@ async getElementLoader(elementPath: string) {
         }
     }
 
-    // 3. 还是没有？用万能钥匙（Meta的loader）
+    // 3. Still no? Use the master key (Meta's loader)
     const metaModule = await this.getElement('pages.Meta');
     return metaModule?.loader;
 }
 ```
 
-这个设计的巧妙之处在于：
-- **实例可以特殊化**：特定页面可以有自己的加载逻辑
-- **Type可以统一管理**：同类页面共享加载方式
-- **Meta提供兜底**：确保总有一个loader可用
+The elegance of this design lies in:
+- **Instance specialization**: Specific pages can have their own loading logic
+- **Type-level management**: Similar pages share loading mechanisms
+- **Meta fallback**: Ensures there's always a loader available
 
-现在你可能会问：为什么需要这么复杂的机制？让我们通过实际案例来理解。
+You might ask: why do we need such a complex mechanism? Let's understand through a real-world example.
 
-### 为什么Vue页面需要自定义Loader
+### Why Vue pages need custom loaders {#why-vue-pages-need-custom-loaders}
 
-让我们对比一下React页面和Vue页面的加载需求：
+Let's compare the loading requirements of React pages versus Vue pages:
 
 ```typescript
-// React页面的标准加载（Meta提供的默认loader）
+// React pages: standard loading (default loader provided by Meta)
 export default async (elements) => {
     const pageModule = await import(path);
-    // 期望得到：PageCls 和 Render
+    // Expected exports: PageCls and Render
 
-    // 用HOC包装，注入页面实例
+    // Wrap with HOC, inject page instance
     const Render = pageHOC(PageWrapper, {
         PageCls: pageModule.PageCls,
         PageRender: pageModule.Render
@@ -94,15 +91,15 @@ export default async (elements) => {
     return { PageCls, Render };
 }
 
-// Vue页面的特殊需求（自定义loader）
+// Vue pages: special requirements (custom loader)
 export default async (elements) => {
     const pageModule = await import(path);
-    // 同样得到：PageCls 和 Render
+    // Same expected exports: PageCls and Render
 
-    // 但是！Vue需要DOM元素来挂载
+    // But! Vue needs a DOM element to mount
     const Render = vueHOC(VuePageWrapper, {
         PageCls: pageModule.PageCls,
-        // Vue的Render需要接收DOM
+        // Vue's Render needs to receive a DOM element
         PageRender: (dom, page) => {
             createApp(VueApp, { page }).mount(dom);
         }
@@ -112,89 +109,89 @@ export default async (elements) => {
 }
 ```
 
-看到区别了吗？Vue页面需要一个真实的DOM元素来挂载，而React只需要返回虚拟DOM。这就是为什么VueType需要自定义loader - 它需要改变页面的加载和渲染方式。
+See the difference? Vue pages require a real DOM element to mount, while React only needs to return virtual DOM. This is why Vue Types need custom loaders—they must change how pages are loaded and rendered.
 
-## 开发计时器页面Type
+## Developing a timer page Type {#developing-a-timer-page-type}
 
-现在我们理解了原理，让我们开始开发一个计时器页面Type。这个过程会让你真正体会到JitAi的强大。然我们先看看效果：
+Now that we understand the principles, let's develop a timer page Type. This process will truly demonstrate JitAi's power. Let's first look at the final result:
 
-![实例展示](./img/5/实例展示.png)
+![Instance Demo](./img/5/实例展示.png) "Instance Demo"
 
-### 页面Type的完整组成
+### Complete composition of a page Type {#complete-composition-of-a-page-type}
 
-在开始编码前，让我们先了解一个完整的页面Type需要哪些组件：
+Before we start coding, let's understand what components a complete page Type requires:
 
-| 组成部分 | 运行环境 | 主要职责 | 文件位置 |
+| Component | Runtime Environment | Primary Responsibility | File Location |
 |---------|----------|----------|----------|
-| **Type元素本体** | 使用区 | 定义页面类(PageCls)和渲染组件(Render) | `pages/TimerPageType/` |
-| **元素定义配置器** | IDE | 提供创建页面的可视化表单 | `pages/TimerPageType/DefineEditor/` |
-| **增删改API** | IDE | 根据配置生成页面实例代码 | `pages/TimerPageType/Api/` |
-| **元素编辑器** | IDE | 提供代码编辑界面 | `pages/TimerPageType/editor/` |
+| **Type Element Core** | Usage Zone | Define page class (PageCls) and render component (Render) | `pages/TimerPageType/` |
+| **Element Definition Editor** | IDE | Provide visual form for page creation | `pages/TimerPageType/DefineEditor/` |
+| **CRUD API** | IDE | Generate page instance code based on configuration | `pages/TimerPageType/Api/` |
+| **Element Editor** | IDE | Provide code editing interface | `pages/TimerPageType/editor/` |
 
-这些组件分工明确：
-- **使用区组件**：负责页面的实际运行和渲染
-- **IDE组件**：负责页面的创建、配置和编辑
+These components have clear divisions of responsibility:
+- **Usage Zone Components**: Handle actual page execution and rendering
+- **IDE Components**: Handle page creation, configuration, and editing
 
-### 第一步：规划目录结构
+### Step 1: Planning the directory structure {#step-1-planning-the-directory-structure}
 
-一个完整的页面Type需要在两个地方创建文件：
+A complete page Type requires files in two locations:
 
 ```bash
-# 使用区：页面运行时文件
+# Usage Zone: Page runtime files
 pages/
 └── TimerPageType/
-    ├── e.json           # 元素定义，标记loadTime: "startUp"
-    ├── index.ts         # 入口文件，导出PageCls和Render
-    ├── TimerPage.ts     # 页面类，继承Jit.BasePage
-    ├── Render.tsx       # 渲染组件
-    ├── DefineEditor/    # 创建配置器
+    ├── e.json           # Element definition, mark loadTime: "startUp"
+    ├── index.ts         # Entry file, exports PageCls and Render
+    ├── TimerPage.ts     # Page class, extends Jit.BasePage
+    ├── Render.tsx       # Render component
+    ├── DefineEditor/    # Creation configurator
     │   ├── e.json
     │   ├── index.ts
     │   └── Editor.tsx
-    └── Api/             # 增删改接口
+    └── Api/             # CRUD interfaces
         ├── e.json
         ├── index.ts
         ├── create.ts
         └── update.ts
 ```
 
-### 第二步：设计Type的能力
+### Step 2: Designing Type capabilities {#step-2-designing-type-capabilities}
 
-在开始编码前，我们需要思考：计时器页面应该具备什么能力？
+Before we start coding, we need to think: what capabilities should a timer page have?
 
 ```typescript
-// 我们期望的使用方式
+// Our expected usage pattern
 const timerPage = new TimerPage({
-    duration: 3600,        // 60分钟
-    onTimeout: () => {     // 时间到了
-        alert('考试结束！');
+    duration: 3600,        // 60 minutes
+    onTimeout: () => {     // When time is up
+        alert('Exam finished!');
     }
 });
 
-timerPage.start();        // 开始计时
-timerPage.pause();        // 暂停
-timerPage.getRemaining(); // 获取剩余时间
+timerPage.start();        // Start timer
+timerPage.pause();        // Pause
+timerPage.getRemaining(); // Get remaining time
 ```
 
-### 第三步：创建Type元素
+### Step 3: Creating the Type element {#step-3-creating-the-type-element}
 
-现在，让我们创建TimerPageType。由于我们没有自定义loader，将使用Meta的loader，这意味着我们必须遵循Meta的规范：导出`PageCls`和`Render`。
+Now, let's create TimerPageType. Since we're not defining a custom loader, we'll use Meta's loader, which means we must follow Meta's convention: export `PageCls` and `Render`.
 
 ```typescript title="pages/TimerPageType/TimerPage.ts"
 import { Jit } from 'jit';
 
-// 这是Type层的页面类，定义计时器页面的通用能力
+// This is the Type-level page class, defining common timer page capabilities
 export class TimerPage extends Jit.BasePage {
     protected duration: number = 0;
     protected remaining: number = 0;
     protected timerId?: ReturnType<typeof window.setInterval>;
     protected status: 'idle' | 'running' | 'paused' | 'finished' = 'idle';
 
-    // Type定义的配置结构 - 所有实例都会遵循
+    // Configuration structure defined by Type - all instances will follow
     config?: {
-        duration: number;      // 总时长（秒）
-        autoStart?: boolean;   // 自动开始
-        warnAt?: number;       // 警告时间点
+        duration: number;      // Total duration (seconds)
+        autoStart?: boolean;   // Auto-start
+        warnAt?: number;       // Warning time point
         theme?: 'exam' | 'game' | 'work';
     };
 
@@ -204,7 +201,7 @@ export class TimerPage extends Jit.BasePage {
         this.remaining = this.duration;
     }
 
-    // 核心方法 - 供实例使用或重写
+    // Core methods - for instances to use or override
     start(): void {
         if (this.status === 'finished') return;
 
@@ -212,18 +209,18 @@ export class TimerPage extends Jit.BasePage {
         this.timerId = setInterval(() => {
             this.remaining--;
 
-            // 发布事件，让UI响应
+            // Publish event to let UI respond
             this.publishEvent('TIMER_TICK', {
                 remaining: this.remaining,
                 percentage: (this.remaining / this.duration) * 100
             });
 
-            // 警告检查
+            // Warning check
             if (this.config?.warnAt && this.remaining === this.config.warnAt) {
                 this.onWarning();
             }
 
-            // 结束检查
+            // Finish check
             if (this.remaining <= 0) {
                 this.finish();
             }
@@ -245,16 +242,16 @@ export class TimerPage extends Jit.BasePage {
         this.onTimeout();
     }
 
-    // 可被实例重写的钩子方法
+    // Hook methods that instances can override
     onWarning(): void {
-        console.log('时间即将结束！');
+        console.log('Time is running out!');
     }
 
     onTimeout(): void {
-        console.log('时间到！');
+        console.log('Time is up!');
     }
 
-    // 格式化显示 - 实例可能需要不同的格式
+    // Format display - instances may need different formats
     formatTime(seconds: number): string {
         const hours = Math.floor(seconds / 3600);
         const minutes = Math.floor((seconds % 3600) / 60);
@@ -266,7 +263,7 @@ export class TimerPage extends Jit.BasePage {
         return `${minutes}:${secs.toString().padStart(2, '0')}`;
     }
 
-    // 获取剩余时间和状态的方法（Render组件需要）
+    // Methods to get remaining time and status (needed by Render component)
     getRemaining(): number {
         return this.remaining;
     }
@@ -279,13 +276,13 @@ export class TimerPage extends Jit.BasePage {
 export default TimerPage;
 ```
 
-注意这里的设计思路：
-- **Type定义通用能力**：所有计时器都需要的start、pause、finish
-- **预留扩展点**：onWarning、onTimeout可以被实例重写
-- **事件驱动**：通过事件让UI和逻辑解耦
-- **继承BasePage**：获得页面的基础能力（生命周期、事件系统等）
+Note the design philosophy here:
+- **Type defines common capabilities**: start, pause, finish methods needed by all timers
+- **Extension points reserved**: onWarning, onTimeout can be overridden by instances
+- **Event-driven**: Decouples UI from logic through events
+- **Inherits BasePage**: Gains foundational page capabilities (lifecycle, event system, etc.)
 
-### 第四步：创建渲染组件
+### Step 4: Creating the render component {#step-4-creating-the-render-component}
 
 ```tsx title="pages/TimerPageType/Render.tsx"
 import React, { useState, useEffect } from 'react';
@@ -302,7 +299,7 @@ const TimerRender: React.FC<TimerRenderProps> = ({ page }) => {
     const [status, setStatus] = useState(page.getStatus());
 
     useEffect(() => {
-        // 监听计时器事件
+        // Subscribe to timer events
         const handlerIds: string[] = [];
 
         const tickHandlerId = page.subscribeEvent('TIMER_TICK', (e) => {
@@ -323,13 +320,13 @@ const TimerRender: React.FC<TimerRenderProps> = ({ page }) => {
         });
         handlerIds.push(finishedHandlerId);
 
-        // 如果配置了自动开始
+        // If auto-start is configured
         if (page.config?.autoStart) {
             page.start();
         }
 
         return () => {
-            // 清理事件监听
+            // Clean up event listeners
             handlerIds.forEach(id => {
                 page.unSubscribeEvent(id);
             });
@@ -345,7 +342,7 @@ const TimerRender: React.FC<TimerRenderProps> = ({ page }) => {
 
     return (
         <Card
-            title={page.title || "计时器"}
+            title={page.title || "Timer"}
             style={{ maxWidth: 500, margin: '50px auto' }}
         >
             <Progress
@@ -366,7 +363,7 @@ const TimerRender: React.FC<TimerRenderProps> = ({ page }) => {
                             setStatus('running');
                         }}
                     >
-                        {status === 'idle' ? '开始' : '继续'}
+                        {status === 'idle' ? 'Start' : 'Resume'}
                     </Button>
                 ) : status === 'running' ? (
                     <Button
@@ -376,11 +373,11 @@ const TimerRender: React.FC<TimerRenderProps> = ({ page }) => {
                             setStatus('paused');
                         }}
                     >
-                        暂停
+                        Pause
                     </Button>
                 ) : (
                     <Typography.Title level={3} type="danger">
-                        时间结束！
+                        Time's Up!
                     </Typography.Title>
                 )}
             </div>
@@ -391,129 +388,129 @@ const TimerRender: React.FC<TimerRenderProps> = ({ page }) => {
 export default TimerRender;
 ```
 
-现在让我们创建Type的入口文件，遵循Meta loader的规范：
+Now let's create the Type's entry file, following Meta loader conventions:
 
 ```typescript title="pages/TimerPageType/index.ts"
 import TimerPage from './TimerPage';
 import Render from './Render';
 
-// 必须导出PageCls和Render，这是Meta loader的约定
+// Must export PageCls and Render, this is Meta loader's convention
 const PageCls = TimerPage;
 
 export {
     TimerPage as default,
-    PageCls,    // Meta loader需要这个
-    Render      // Meta loader需要这个
+    PageCls,    // Meta loader requires this
+    Render      // Meta loader requires this
 };
 ```
 
-同时，我们需要在e.json中标记这个Type为启动时加载：
+Additionally, we need to mark this Type for startup loading in e.json:
 
 ```json title="pages/TimerPageType/e.json"
 {
-    "title": "计时器页面类型",
+    "title": "Timer Page Type",
     "type": "pages.Meta",
     "frontBundleEntry": "./index.ts",
-    "loadTime": "startUp"  // 关键：标记为启动时加载
+    "loadTime": "startUp"  // Key: mark for startup loading
 }
 ```
 
-### 第五步：理解动态继承机制
+### Step 5: Understanding dynamic inheritance {#step-5-understanding-dynamic-inheritance}
 
-这里有一个精妙的设计 - **动态继承**。当应用启动时，JitAi会：
+Here's an elegant design pattern - **dynamic inheritance**. When the application starts, JitAi:
 
 ```typescript
-// app.ts - 启动时加载标记为startUp的元素
+// app.ts - loads elements marked as startUp during initialization
 async loadNecessaryElements() {
     const startUpElements = findElementsByLoadTime('startUp');
 
     for (const element of startUpElements) {
         const module = await this.getElement(element);
 
-        // 如果模块导出了default并且有name属性
+        // If module exports default with a name property
         if (module?.default?.name) {
-            // 注册到Jit全局对象
+            // Register to Jit global object
             Jit.bindModule(module.default.name, module.default);
-            // 现在可以通过 Jit.TimerPage 访问了！
+            // Now accessible via Jit.TimerPage!
         }
     }
 }
 ```
 
-这就是为什么我们能在实例中这样写：
+This is why we can write in instances:
 
 ```typescript
-// 不是 import { TimerPage } from '../TimerPageType'
-// 而是直接从Jit对象访问
-class ExamTimer extends Jit.TimerPage {  // 动态继承！
+// Not import { TimerPage } from '../TimerPageType'
+// But directly access from Jit object
+class ExamTimer extends Jit.TimerPage {  // Dynamic inheritance!
     // ...
 }
 ```
 
-这个设计的巧妙之处：
-- **解耦依赖**：实例不需要知道Type的物理位置
-- **动态加载**：Type可以来自任何地方（本地、远程、扩展包）
-- **统一管理**：所有页面类都通过Jit对象访问
+The elegance of this design:
+- **Decoupled dependencies**: Instances don't need to know Type's physical location
+- **Dynamic loading**: Types can come from anywhere (local, remote, extension packages)
+- **Unified management**: All page classes accessed through Jit object
 
-### 第六步：创建一个考试计时器实例
+### Step 6: Creating an exam timer instance {#step-6-creating-an-exam-timer-instance}
 
-现在Type准备好了，让我们创建一个具体的考试计时器：
+Now that the Type is ready, let's create a specific exam timer:
 
 ```typescript title="pages/examTimer/index.ts"
-// 注意：不是直接import，而是通过Jit访问
-// 因为TimerPage已经在启动时注册到Jit对象了
+// Note: Not direct import, but accessed through Jit
+// Because TimerPage is registered to Jit object at startup
 import { Jit } from 'jit';
 
-// 动态继承：从Jit对象获取TimerPage类
+// Dynamic inheritance: get TimerPage class from Jit object
 class ExamTimerPage extends Jit.TimerPage {
     private answers: Map<string, string> = new Map();
     private autoSaveTimer?: ReturnType<typeof window.setInterval>;
-    private examId: string = 'exam_001'; // 添加examId属性
+    private examId: string = 'exam_001'; // Add examId property
 
     constructor(options: any) {
         super(options);
 
-        // 考试页面的特定配置
+        // Exam page specific configuration
         this.config = {
-            duration: 7200,      // 2小时
-            autoStart: false,    // 需要考生点击开始
-            warnAt: 300,         // 最后5分钟警告
+            duration: 7200,      // 2 hours
+            autoStart: false,    // Requires student to click start
+            warnAt: 300,         // Warning at last 5 minutes
             theme: 'exam'
         };
     }
 
-    // 重写开始方法，添加自动保存
+    // Override start method, add auto-save
     start(): void {
         super.start();
 
-        // 每30秒自动保存答案
+        // Auto-save answers every 30 seconds
         this.autoSaveTimer = setInterval(() => {
             this.saveAnswers();
         }, 30000);
     }
 
-    // 重写警告方法
+    // Override warning method
     onWarning(): void {
-        // 不只是console.log了
+        // More than just console.log
         this.app.showNotification({
             type: 'warning',
-            message: '考试时间仅剩5分钟，请注意保存！'
+            message: 'Only 5 minutes remaining, please save your work!'
         });
 
-        // 高亮显示计时器
+        // Highlight the timer
         this.publishEvent('HIGHLIGHT_TIMER');
     }
 
-    // 重写结束方法
+    // Override timeout method
     onTimeout(): void {
-        // 强制提交试卷
+        // Force submit exam
         this.submitExam();
 
-        // 跳转到结果页
+        // Navigate to results page
         this.app.navigate('/exam/result');
     }
 
-    // 重写pause方法，停止自动保存
+    // Override pause method, stop auto-save
     pause(): void {
         super.pause();
         if (this.autoSaveTimer) {
@@ -522,14 +519,14 @@ class ExamTimerPage extends Jit.TimerPage {
         }
     }
 
-    // 考试特有的方法
+    // Exam-specific methods
     saveAnswers(): void {
         const data = Array.from(this.answers.entries());
         this.app.request('saveExamProgress', { answers: data });
     }
 
     submitExam(): void {
-        // 停止自动保存
+        // Stop auto-save
         if (this.autoSaveTimer) {
             clearInterval(this.autoSaveTimer);
             this.autoSaveTimer = undefined;
@@ -538,46 +535,46 @@ class ExamTimerPage extends Jit.TimerPage {
         this.saveAnswers();
         this.app.request('submitExam', {
             examId: this.examId,
-            duration: this.duration - this.remaining // 使用继承的protected属性
+            duration: this.duration - this.remaining // Use inherited protected property
         });
     }
 }
 
-// 导出遵循规范
+// Export following conventions
 const PageCls = ExamTimerPage;
 export { ExamTimerPage as default, PageCls };
 ```
 
-看到了吗？通过动态继承，考试计时器：
-- **复用了**计时器的核心逻辑（通过`Jit.TimerPage`）
-- **扩展了**自动保存、强制提交等考试特性
-- **重写了**警告和结束的行为
-- **无需关心**TimerPage的具体位置
+See? Through dynamic inheritance, the exam timer:
+- **Reuses** the timer's core logic (via `Jit.TimerPage`)
+- **Extends** exam-specific features like auto-save and forced submission
+- **Overrides** warning and timeout behaviors
+- **Doesn't need to care** about TimerPage's specific location
 
-这就是Type机制的魅力 - **在复用和定制之间找到完美平衡**。
+This is the charm of the Type mechanism - **finding the perfect balance between reuse and customization**.
 
-实际上，JitAi内置的页面类型也是这样工作的：
-- `Jit.BasePage` - 所有页面的基类
-- `Jit.GridPage` - 常规页面使用的类
-- `Jit.DataManagePage` - 数据管理页面使用的类
+Actually, JitAi's built-in page types work the same way:
+- `Jit.BasePage` - Base class for all pages
+- `Jit.GridPage` - Class used by regular pages
+- `Jit.DataManagePage` - Class used by data management pages
 
-你的TimerPage也成为了这个家族的一员：`Jit.TimerPage`！
+Your TimerPage has now become part of this family: `Jit.TimerPage`!
 
-![在可视化编辑器中可以看到](./img/5/完成后可以在页面中看到.png)
+![Visible in Visual Editor](./img/5/完成后可以在页面中看到.png) "Visible in Visual Editor"
 
-经过上面的步骤，你可以在可视化编辑器中看到新建的页面类型了。
+After these steps, you can see the newly created page type in the visual editor.
 
-## 让Type在IDE中可配置
+## Making Type configurable in IDE {#making-type-configurable-in-ide}
 
-到这里，我们的TimerPageType已经可以工作了。但如何让其他开发者在IDE中方便地创建计时器页面呢？这需要三个配套工具。
+At this point, our TimerPageType is functional. But how do we make it convenient for other developers to create timer pages in the IDE? This requires three supporting tools.
 
-### DefineEditor - 让创建变得简单
+### DefineEditor - simplifying creation {#defineeditor-simplifying-creation}
 
-DefineEditor是为页面Type提供可视化创建界面的元素。可视化编辑器中点击创建会唤起这个组件，效果如下：
+DefineEditor provides a visual creation interface for page Types. Clicking create in the visual editor will invoke this component, with the following effect:
 
-![定义编辑器](./img/5/定义编辑器.png)
+![Definition Editor](./img/5/定义编辑器.png) "Definition Editor"
 
-它需要特殊的e.json配置：
+It requires special e.json configuration:
 ```json title="pages/TimerPageType/DefineEditor/e.json"
 {
     "type": "editors.React",
@@ -589,12 +586,12 @@ DefineEditor是为页面Type提供可视化创建界面的元素。可视化编�
 }
 ```
 
-**关键配置说明：**
-- `type`: 必须为 `"editors.React"`，标识这是一个React编辑器元素
-- `targetType`: 数组格式，指定此编辑器服务的页面Type，这里是 `["pages.TimerPageType"]`
-- `tag`: 必须为 `"defineEditor"`，标识这是定义编辑器
-- `outputName`: 导出的模块名，通常为 `"index"`
-- `frontBundleEntry`: 前端入口文件路径
+**Key configuration explained:**
+- `type`: Must be `"editors.React"`, identifying this as a React editor element
+- `targetType`: Array format, specifies which page Type this editor serves, here `["pages.TimerPageType"]`
+- `tag`: Must be `"defineEditor"`, identifying this as a definition editor
+- `outputName`: Export module name, typically `"index"`
+- `frontBundleEntry`: Frontend entry file path
 
 ```tsx title="pages/TimerPageType/DefineEditor/Editor.tsx"
 import React, { useState } from 'react';
@@ -609,16 +606,16 @@ const TimerDefineEditor: React.FC<TimerDefineEditorProps> = ({ onSave, onCancel 
     const [formData, setFormData] = useState({
         name: '',
         title: '',
-        path: 'pages', // 添加默认路径
+        path: 'pages', // Add default path
         duration: 3600,
         theme: 'work',
         autoStart: false
     });
 
     const handleSave = () => {
-        // 验证必填字段
+        // Validate required fields
         if (!formData.name || !formData.title) {
-            alert('请填写页面标识和标题');
+            alert('Please fill in page identifier and title');
             return;
         }
         onSave(formData);
@@ -627,27 +624,27 @@ const TimerDefineEditor: React.FC<TimerDefineEditorProps> = ({ onSave, onCancel 
     return (
         <div>
             <Form layout="vertical">
-                <Divider>基本信息</Divider>
+                <Divider>Basic Information</Divider>
 
-                <Form.Item label="页面标识" required>
+                <Form.Item label="Page Identifier" required>
                     <Input
-                        placeholder="如：mathExamTimer"
+                        placeholder="e.g.: mathExamTimer"
                         value={formData.name}
                         onChange={e => setFormData({...formData, name: e.target.value})}
                     />
                 </Form.Item>
 
-                <Form.Item label="页面标题" required>
+                <Form.Item label="Page Title" required>
                     <Input
-                        placeholder="如：数学考试倒计时"
+                        placeholder="e.g.: Math Exam Countdown"
                         value={formData.title}
                         onChange={e => setFormData({...formData, title: e.target.value})}
                     />
                 </Form.Item>
 
-                <Divider>计时器配置</Divider>
+                <Divider>Timer Configuration</Divider>
 
-                <Form.Item label="计时时长（秒）">
+                <Form.Item label="Duration (seconds)">
                     <InputNumber
                         min={1}
                         value={formData.duration}
@@ -655,35 +652,35 @@ const TimerDefineEditor: React.FC<TimerDefineEditorProps> = ({ onSave, onCancel 
                         style={{ width: '100%' }}
                     />
                     <div style={{ color: '#999', fontSize: 12, marginTop: 4 }}>
-                        当前设置：{Math.floor(formData.duration / 60)} 分钟
+                        Current setting: {Math.floor(formData.duration / 60)} minutes
                     </div>
                 </Form.Item>
 
-                <Form.Item label="主题风格">
+                <Form.Item label="Theme Style">
                     <Select
                         value={formData.theme}
                         onChange={v => setFormData({...formData, theme: v})}
                     >
-                        <Select.Option value="exam">考试（红色警示）</Select.Option>
-                        <Select.Option value="game">游戏（绿色活力）</Select.Option>
-                        <Select.Option value="work">工作（蓝色专业）</Select.Option>
+                        <Select.Option value="exam">Exam (Red Alert)</Select.Option>
+                        <Select.Option value="game">Game (Green Vitality)</Select.Option>
+                        <Select.Option value="work">Work (Blue Professional)</Select.Option>
                     </Select>
                 </Form.Item>
 
-                <Form.Item label="自动开始">
+                <Form.Item label="Auto Start">
                     <Switch
                         checked={formData.autoStart}
                         onChange={v => setFormData({...formData, autoStart: v})}
                     />
                     <div style={{ color: '#999', fontSize: 12, marginTop: 4 }}>
-                        页面加载后是否自动开始计时
+                        Whether to auto-start timer after page loads
                     </div>
                 </Form.Item>
             </Form>
 
             <div style={{ marginTop: 24, textAlign: 'right' }}>
-                <Button onClick={onCancel} style={{ marginRight: 8 }}>取消</Button>
-                <Button type="primary" onClick={handleSave}>确定</Button>
+                <Button onClick={onCancel} style={{ marginRight: 8 }}>Cancel</Button>
+                <Button type="primary" onClick={handleSave}>OK</Button>
             </div>
         </div>
     );
@@ -692,9 +689,9 @@ const TimerDefineEditor: React.FC<TimerDefineEditorProps> = ({ onSave, onCancel 
 export default TimerDefineEditor;
 ```
 
-### API - 生成正确的代码
+### API - generating correct code {#api-generating-correct-code}
 
-API元素为页面Type提供增删改查接口。它也需要特殊的e.json配置：
+The API element provides CRUD interfaces for page Types. It also requires special e.json configuration:
 
 ```json title="pages/TimerPageType/Api/e.json"
 {
@@ -718,15 +715,15 @@ API元素为页面Type提供增删改查接口。它也需要特殊的e.json配�
 }
 ```
 
-**关键配置说明：**
-- `type`: 必须为 `"elementApis.Meta"`，标识这是一个API元素
-- `targetType`: 字符串格式，指定此API服务的目标类型，这里是 `"pages.TimerPageType"`
-- `functionList`: 数组，定义API提供的函数列表
-  - `name`: 函数名，对应实际的导出函数
-  - `title`: 显示名称，在IDE中展示给用户
-  - `args`: 参数列表，这里为空数组表示参数由函数内部处理
-- `outputName`: 导出的模块名，通常为 `"index"`
-- `frontBundleEntry`: 前端入口文件路径
+**Key configuration explained:**
+- `type`: Must be `"elementApis.Meta"`, identifying this as an API element
+- `targetType`: String format, specifies the target type this API serves, here `"pages.TimerPageType"`
+- `functionList`: Array defining the list of functions provided by the API
+  - `name`: Function name, corresponds to actual exported function
+  - `title`: Display name, shown to users in the IDE
+  - `args`: Parameter list, empty array here means parameters handled internally by the function
+- `outputName`: Export module name, typically `"index"`
+- `frontBundleEntry`: Frontend entry file path
 
 ```typescript title="pages/TimerPageType/Api/create.ts"
 import { getRuntimeApp } from 'jit';
@@ -745,7 +742,7 @@ export default async function create(formData: CreateFormData) {
     const { name, title, path, duration, theme, autoStart } = formData;
     const fullName = `${path}.${name}`;
 
-    // 生成页面代码 - 注意使用Jit.TimerPage而不是import
+    // Generate page code - note use of Jit.TimerPage instead of import
     const code = `import { Jit } from 'jit';
 
 class ${name}Page extends Jit.TimerPage {
@@ -763,14 +760,14 @@ const PageCls = ${name}Page;
 export { ${name}Page as default, PageCls };
 `;
 
-    // 生成e.json配置
+    // Generate e.json configuration
     const eJsonContent = {
         title,
         type: 'pages.TimerPageType',
         frontBundleEntry: './index.ts'
     };
 
-    // 保存到文件系统
+    // Save to filesystem
     await app.saveElement([{
         ePath: `${fullName.split('.').join('/')}/e.json`,
         define: eJsonContent,
@@ -789,56 +786,56 @@ export { ${name}Page as default, PageCls };
 }
 ```
 
-### Editor - 让修改更方便
+### Editor - making modifications easier {#editor-making-modifications-easier}
 
-编辑器元素是可选的。如果您没有为您的页面Type定义专门的编辑器，系统会自动使用通用的代码编辑器作为兜底。通用编辑器提供了基本的源码编辑功能，包括语法高亮、代码提示和文件管理等。效果如下：
+The editor element is optional. If you don't define a dedicated editor for your page Type, the system will automatically use a generic code editor as fallback. The generic editor provides basic source code editing capabilities, including syntax highlighting, code hints, and file management. Here's the effect:
 
-![默认编辑器效果](./img/5/兜底的编辑器.png)
+![Default Editor Effect](./img/5/兜底的编辑器.png) "Default Editor Effect"
 
-当然，如果您希望为用户提供更专业的编辑体验，可以根据自己页面Type的特点设计专门的编辑界面。
+Of course, if you want to provide users with a more professional editing experience, you can design a specialized editing interface based on your page Type's characteristics.
 
-#### 编辑器核心API
+#### Core editor APIs {#core-editor-apis}
 
-JitAi提供了两个核心API来支持编辑器开发：
+JitAi provides two core APIs to support editor development:
 
-**1. 获取源码**
+**1. Getting source code**
 ```typescript
-// 获取元素的所有源码文件
+// Get all source files of an element
 const resources = await app.services.ElementSvc.getElementResource(
-    fullName,    // 元素完整名称
-    [],          // 忽略的文件列表
-    [],          // 指定获取的文件列表（空数组表示获取所有）
-    true         // 是否需要扩展信息
+    fullName,    // Element full name
+    [],          // List of files to ignore
+    [],          // List of files to fetch (empty array means fetch all)
+    true         // Whether extended information is needed
 );
-// 返回格式：{ 'index.ts': '文件内容', 'config.json': '配置内容', ... }
+// Return format: { 'index.ts': 'file content', 'config.json': 'config content', ... }
 ```
 
-**2. 保存源码**
+**2. Saving source code**
 ```typescript
-// 保存修改后的源码文件
+// Save modified source files
 await app.saveElementResource(
-    fullName,      // 元素完整名称
-    elementFiles   // 文件内容对象：{ '文件名': '文件内容' }
+    fullName,      // Element full name
+    elementFiles   // File content object: { 'filename': 'file content' }
 );
 ```
 
-#### 编辑器设计建议
+#### Editor design recommendations {#editor-design-recommendations}
 
-- **多文件支持**：使用Tabs组件支持多个文件的编辑
-- **语法高亮**：根据文件扩展名选择合适的语言模式
-- **保存检测**：比较原始内容和当前内容，提示未保存的变更
-- **错误处理**：优雅处理加载和保存过程中的错误
-- **用户体验**：提供刷新、撤销等常用功能
+- **Multi-file support**: Use Tabs component to support editing multiple files
+- **Syntax highlighting**: Select appropriate language mode based on file extension
+- **Save detection**: Compare original and current content, prompt for unsaved changes
+- **Error handling**: Gracefully handle errors during loading and saving
+- **User experience**: Provide common functions like refresh, undo, etc.
 
-具体的编辑器界面设计完全由开发者根据页面Type的特点自主决定。
+The specific editor interface design is entirely up to the developer based on the page Type's characteristics.
 
-## 更多应用场景
+## More application scenarios {#more-application-scenarios}
 
-除了计时器页面，JitAi的页面Type机制还可以支持许多其他场景：
+Besides timer pages, JitAi's page Type mechanism can support many other scenarios:
 
-### 特殊需求类型
+### Special requirement types {#special-requirement-types}
 
-- **3D页面**：集成Three.js或Babylon.js
-- **实时协作页面**：集成WebSocket或WebRTC
-- **移动页面**：针对移动端优化的交互
-- **打印页面**：专门用于打印输出
+- **3D pages**: Integrate Three.js or Babylon.js
+- **Real-time collaboration pages**: Integrate WebSocket or WebRTC
+- **Mobile pages**: Optimized interactions for mobile devices
+- **Print pages**: Specifically designed for print output

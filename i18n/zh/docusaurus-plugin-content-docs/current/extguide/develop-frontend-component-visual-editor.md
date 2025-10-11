@@ -11,18 +11,18 @@ import TabItem from '@theme/TabItem';
 
 本文将介绍如何为计数器组件开发可视化配置编辑器，实现在JitAi开发工具中像官方组件一样的图形化配置体验。
 
-## 效果预览
+## 效果预览 {#preview-of-editor-interface}
 开发完成后，在可视化开发工具中选中计数器组件时，右侧属性面板将显示友好的配置界面：
 
-![编辑器效果](./img/visual-editor-configuration-interface.png)
+![编辑器效果](./img/visual-editor-configuration-interface.png "编辑器效果")
 
-## 编辑器架构
+## 编辑器架构 {#editor-architecture}
 | 元素层次 | fullName | 主要职责 |
 |---------|----------|----------|
 | **编辑器元素** | `components.CounterType.Editor` | type指向`editors.React`，为CounterType提供可视化配置界面 |
 | **目标组件** | `components.CounterType` | 被编辑的目标组件，已在前面章节完成 |
 
-### 编辑器目录结构
+### 编辑器目录结构 {#editor-directory-structure}
 ```shell title="在CounterType下新增Editor子目录"
 components/
 └── CounterType/
@@ -39,8 +39,8 @@ components/
         └── Editor.tsx                  # 编辑器实现文件
 ```
 
-## 操作指南
-### 创建编辑器目录
+## 操作指南 {#implementation-guide}
+### 创建编辑器目录 {#creating-editor-directory}
 在CounterType目录下创建Editor子目录：
 
 ```bash
@@ -48,7 +48,7 @@ components/
 mkdir -p Editor
 ```
 
-### 实现编辑器文件
+### 实现编辑器文件 {#implementing-editor-files}
 <Tabs>
   <TabItem value="config" label="元素定义文件">
 
@@ -153,8 +153,8 @@ export default CounterEditor;
   </TabItem>
 </Tabs>
 
-## 编辑器工作原理
-### 数据流转机制
+## 编辑器工作原理 {#how-editor-works}
+### 数据流转机制 {#data-flow-mechanism}
 ```mermaid
 graph LR
     A[可视化工具] --> B[Editor组件]
@@ -171,8 +171,8 @@ graph LR
 4. **变化监听**: `useEffect`监听配置变化
 5. **回调通知**: 通过`onChangeCompConfig`回调通知工具配置已更改
 
-### 核心接口规范
-#### CompEditorProps接口
+### 核心接口规范 {#core-interface-specifications}
+#### CompEditorProps接口 {#compeditorprops-interface}
 :::info JitAi提供的接口
 `CompEditorProps`是由JitAi IDEApp提供的标准接口，开发者可直接从`components/common/types`导入使用，无需自己定义。
 :::
@@ -196,7 +196,7 @@ interface CompEditorProps {
 }
 ```
 
-#### 配置更新最佳实践
+#### 配置更新最佳实践 {#configuration-update-best-practices}
 ```typescript
 // ✅ 正确的配置更新方式
 const updateConfig = (updates: Record<string, any>) => {
@@ -216,25 +216,25 @@ const updateConfig = (updates: Record<string, any>) => {
 };
 ```
 
-## 测试
-### 使编辑器生效
+## 测试 {#testing}
+### 使编辑器生效 {#making-editor-take-effect}
 1. **清理缓存**：删除应用目录中的`dist`目录  
 2. **重启服务**：重启桌面端
 3. **触发打包**：访问应用页面，系统自动重新打包
 
-### 验证编辑器功能
+### 验证编辑器功能 {#verifying-editor-functionality}
 1. **打开页面编辑器**：在JitAi开发工具中打开包含计数器组件的页面
 2. **选中组件**：点击页面中的计数器组件
 3. **查看属性面板**：右侧属性面板应显示"初始值"配置项
 4. **修改配置**：尝试修改初始值，观察组件是否实时更新
 5. **保存验证**：保存页面后重新打开，确认配置已持久化
 
-### 常见问题排查
+### 常见问题排查 {#common-issue-troubleshooting}
 - **编辑器不显示**：检查`e.json`中`targetType`是否正确指向组件
 - **配置无法保存**：确认`onChangeCompConfig`回调是否正确调用
 - **初始化出错**：检查`didMountRef`是否正确避免初始回调
 
-## 进阶扩展
+## 进阶扩展 {#advanced-extensions}
 如需为计数器组件添加更多配置选项，只需在编辑器中增加对应的表单控件：
 
 ```tsx
@@ -265,7 +265,7 @@ const updateConfig = (updates: Record<string, any>) => {
 
 支持的Antd组件：`InputNumber`、`Input`、`Switch`、`Select`、`DatePicker`等。
 
-## 总结
+## 总结 {#summary}
 为前端组件开发可视化编辑器的**核心步骤**：
 
 1. **创建Editor目录** + 配置编辑器元素定义文件`e.json`（`type: "editors.React"`）

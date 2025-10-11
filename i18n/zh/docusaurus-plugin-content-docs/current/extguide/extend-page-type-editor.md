@@ -5,18 +5,15 @@ slug: extend-page-type-editor
 
 # 扩展自己的页面Type和编辑器
 
-
-# 开发自定义页面Type和编辑器
-
 想象一下，你需要为一个在线考试系统开发倒计时页面。你打开JitAi，查看现有的页面类型：常规页面太简单，数据管理页面不合适，Markdown页面更不行...这时候你意识到，需要创建一个全新的页面类型。
 
 这篇文档将带你完整体验如何开发自定义页面Type，更重要的是，你将理解JitAi是如何通过巧妙的设计，让这件看似复杂的事变得如此简单。
 
-## 理解页面是如何被加载的
+## 理解页面是如何被加载的 {#understanding-how-pages-are-loaded}
 
 在开始动手之前，让我们先理解一个核心问题：当用户访问一个页面时，JitAi是如何找到并加载正确的代码的？
 
-### 一次页面加载之旅
+### 一次页面加载之旅 {#the-page-loading-journey}
 
 让我们跟踪一个页面从URL到渲染的完整过程：
 
@@ -42,7 +39,7 @@ async getElement(elementPath: string) {
 
 这里出现了第一个关键概念：**Loader（加载器）**。
 
-### Loader - 灵活性的秘密
+### Loader - 灵活性的秘密 {#loader-the-secret-to-flexibility}
 
 Loader是JitAi最巧妙的设计之一。它不是一个固定的加载逻辑，而是一个**可继承、可覆盖的函数链**。
 
@@ -75,7 +72,7 @@ async getElementLoader(elementPath: string) {
 
 现在你可能会问：为什么需要这么复杂的机制？让我们通过实际案例来理解。
 
-### 为什么Vue页面需要自定义Loader
+### 为什么Vue页面需要自定义Loader {#why-vue-pages-need-custom-loaders}
 
 让我们对比一下React页面和Vue页面的加载需求：
 
@@ -114,13 +111,13 @@ export default async (elements) => {
 
 看到区别了吗？Vue页面需要一个真实的DOM元素来挂载，而React只需要返回虚拟DOM。这就是为什么VueType需要自定义loader - 它需要改变页面的加载和渲染方式。
 
-## 开发计时器页面Type
+## 开发计时器页面Type {#developing-a-timer-page-type}
 
 现在我们理解了原理，让我们开始开发一个计时器页面Type。这个过程会让你真正体会到JitAi的强大。然我们先看看效果：
 
 ![实例展示](./img/5/实例展示.png)
 
-### 页面Type的完整组成
+### 页面Type的完整组成 {#complete-composition-of-a-page-type}
 
 在开始编码前，让我们先了解一个完整的页面Type需要哪些组件：
 
@@ -135,7 +132,7 @@ export default async (elements) => {
 - **使用区组件**：负责页面的实际运行和渲染
 - **IDE组件**：负责页面的创建、配置和编辑
 
-### 第一步：规划目录结构
+### 第一步：规划目录结构 {#step-1-planning-the-directory-structure}
 
 一个完整的页面Type需要在两个地方创建文件：
 
@@ -158,7 +155,7 @@ pages/
         └── update.ts
 ```
 
-### 第二步：设计Type的能力
+### 第二步：设计Type的能力 {#step-2-designing-type-capabilities}
 
 在开始编码前，我们需要思考：计时器页面应该具备什么能力？
 
@@ -176,7 +173,7 @@ timerPage.pause();        // 暂停
 timerPage.getRemaining(); // 获取剩余时间
 ```
 
-### 第三步：创建Type元素
+### 第三步：创建Type元素 {#step-3-creating-the-type-element}
 
 现在，让我们创建TimerPageType。由于我们没有自定义loader，将使用Meta的loader，这意味着我们必须遵循Meta的规范：导出`PageCls`和`Render`。
 
@@ -285,7 +282,7 @@ export default TimerPage;
 - **事件驱动**：通过事件让UI和逻辑解耦
 - **继承BasePage**：获得页面的基础能力（生命周期、事件系统等）
 
-### 第四步：创建渲染组件
+### 第四步：创建渲染组件 {#step-4-creating-the-render-component}
 
 ```tsx title="pages/TimerPageType/Render.tsx"
 import React, { useState, useEffect } from 'react';
@@ -418,7 +415,7 @@ export {
 }
 ```
 
-### 第五步：理解动态继承机制
+### 第五步：理解动态继承机制 {#step-5-understanding-dynamic-inheritance}
 
 这里有一个精妙的设计 - **动态继承**。当应用启动时，JitAi会：
 
@@ -455,7 +452,7 @@ class ExamTimer extends Jit.TimerPage {  // 动态继承！
 - **动态加载**：Type可以来自任何地方（本地、远程、扩展包）
 - **统一管理**：所有页面类都通过Jit对象访问
 
-### 第六步：创建一个考试计时器实例
+### 第六步：创建一个考试计时器实例 {#step-6-creating-an-exam-timer-instance}
 
 现在Type准备好了，让我们创建一个具体的考试计时器：
 
@@ -567,11 +564,11 @@ export { ExamTimerPage as default, PageCls };
 
 经过上面的步骤，你可以在可视化编辑器中看到新建的页面类型了。
 
-## 让Type在IDE中可配置
+## 让Type在IDE中可配置 {#making-type-configurable-in-ide}
 
 到这里，我们的TimerPageType已经可以工作了。但如何让其他开发者在IDE中方便地创建计时器页面呢？这需要三个配套工具。
 
-### DefineEditor - 让创建变得简单
+### DefineEditor - 让创建变得简单 {#defineeditor-simplifying-creation}
 
 DefineEditor是为页面Type提供可视化创建界面的元素。可视化编辑器中点击创建会唤起这个组件，效果如下：
 
@@ -692,7 +689,7 @@ const TimerDefineEditor: React.FC<TimerDefineEditorProps> = ({ onSave, onCancel 
 export default TimerDefineEditor;
 ```
 
-### API - 生成正确的代码
+### API - 生成正确的代码 {#api-generating-correct-code}
 
 API元素为页面Type提供增删改查接口。它也需要特殊的e.json配置：
 
@@ -789,7 +786,7 @@ export { ${name}Page as default, PageCls };
 }
 ```
 
-### Editor - 让修改更方便
+### Editor - 让修改更方便 {#editor-making-modifications-easier}
 
 编辑器元素是可选的。如果你没有为你的页面Type定义专门的编辑器，系统会自动使用通用的代码编辑器作为兜底。通用编辑器提供了基本的源码编辑功能，包括语法高亮、代码提示和文件管理等。效果如下：
 
@@ -797,7 +794,7 @@ export { ${name}Page as default, PageCls };
 
 当然，如果你希望为用户提供更专业的编辑体验，可以根据自己页面Type的特点设计专门的编辑界面。
 
-#### 编辑器核心API
+#### 编辑器核心API {#core-editor-apis}
 
 JitAi提供了两个核心API来支持编辑器开发：
 
@@ -822,7 +819,7 @@ await app.saveElementResource(
 );
 ```
 
-#### 编辑器设计建议
+#### 编辑器设计建议 {#editor-design-recommendations}
 
 - **多文件支持**：使用Tabs组件支持多个文件的编辑
 - **语法高亮**：根据文件扩展名选择合适的语言模式
@@ -832,11 +829,11 @@ await app.saveElementResource(
 
 具体的编辑器界面设计完全由开发者根据页面Type的特点自主决定。
 
-## 更多应用场景
+## 更多应用场景 {#more-application-scenarios}
 
 除了计时器页面，JitAi的页面Type机制还可以支持许多其他场景：
 
-### 特殊需求类型
+### 特殊需求类型 {#special-requirement-types}
 
 - **3D页面**：集成Three.js或Babylon.js
 - **实时协作页面**：集成WebSocket或WebRTC

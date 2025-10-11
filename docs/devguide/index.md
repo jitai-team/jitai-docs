@@ -1172,14 +1172,17 @@ Design a powerful data foundation for your application. Create data tables, desi
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Data Table Model"
+  title="Creating Data Tables"
   href="devguide/data-modeling/data-table-model"
-  description="Basic structure of application data, learn how to create and configure data tables, design field types and constraints."
+  description="Foundational data layer for JitAi applications, learn how to create and configure data tables, design field types and constraints."
 >
   <LinkGrid links={[
-    { text: "Create Data Table Model", href: "devguide/data-modeling/data-table-model" },
-    { text: "Design Table Fields and Data Types", href: "devguide/data-modeling/data-table-model#design-table-fields-and-data-types" },
-    { text: "Configure Table Index Optimization", href: "devguide/data-modeling/data-table-model#configure-table-index-optimization" }
+    { text: "Data table creation entry", href: "devguide/data-modeling/data-table-model#data-table-create-entry" },
+    { text: "Designing table fields and data types", href: "devguide/data-modeling/data-table-model#design-table-fields-and-data-types" },
+    { text: "Configuring table indexes for query optimization", href: "devguide/data-modeling/data-table-model#configure-table-index-optimization" },
+    { text: "Multi-column composite unique constraints", href: "devguide/data-modeling/data-table-model#multi-column-composite-unique" },
+    { text: "Composite indexes", href: "devguide/data-modeling/data-table-model#composite-index" },
+    { text: "Source code mode", href: "devguide/data-modeling/data-table-model#source-code-mode" }
   ]} />
 </IndexCard>
 
@@ -1189,7 +1192,7 @@ Design a powerful data foundation for your application. Create data tables, desi
   description="Quickly create data table elements from existing database tables, supporting rapid model generation."
 >
   <LinkGrid links={[
-    { text: "Creating Tables from Existing Database Schema", href: "devguide/data-modeling/create-data-table-from-existing-tables" },
+    { text: "Creating tables from existing database schema", href: "devguide/data-modeling/create-data-table-from-existing-tables" }
   ]} />
 </IndexCard>
 
@@ -1199,7 +1202,7 @@ Design a powerful data foundation for your application. Create data tables, desi
   description="Utilize built-in data management tools for efficient data operations and administration."
 >
   <LinkGrid links={[
-    { text: "Built-in Data Management Tools", href: "devguide/data-modeling/built-in-data-management-tools" },
+    { text: "Built-in data management tools", href: "devguide/data-modeling/built-in-data-management-tools" }
   ]} />
 </IndexCard>
 
@@ -1209,43 +1212,43 @@ Design a powerful data foundation for your application. Create data tables, desi
   description="Design and implement custom data model functions to extend data processing capabilities."
 >
   <LinkGrid links={[
-    { text: "Creating Data Model Functions", href: "devguide/data-modeling/create-data-model-functions" },
+    { text: "Creating data model functions", href: "devguide/data-modeling/create-data-model-functions" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="Aggregate Table Model"
+  title="Aggregated Table Model"
   href="devguide/data-modeling/aggregate-table-model"
   description="Multi-table data integration and statistical analysis, supporting complex data aggregation and calculation functions."
 >
   <LinkGrid columns={2} links={[
-    { text: "Create Aggregate Table Model", href: "devguide/data-modeling/aggregate-table-model" },
-    { text: "Multi-table Data Merge", href: "devguide/data-modeling/aggregate-table-model#multi-table-data-merge" },
-    { text: "Multi-table Horizontal Connection", href: "devguide/data-modeling/aggregate-table-model#multi-table-horizontal-connection" },
-    { text: "Group Aggregate Statistics", href: "devguide/data-modeling/aggregate-table-model#group-aggregate-statistics" },
-    { text: "Extend Custom Calculation Fields", href: "devguide/data-modeling/aggregate-table-model#extend-custom-calculation-fields" },
-    { text: "Aggregate Then Filter", href: "devguide/data-modeling/aggregate-table-model#aggregate-then-filter" },
-    { text: "Filter Then Aggregate (Recommended)", href: "devguide/data-modeling/aggregate-table-model#aggregate-then-filter" }
+    { text: "Create aggregated table model", href: "devguide/data-modeling/aggregate-table-model" },
+    { text: "Multi-table data merge", href: "devguide/data-modeling/aggregate-table-model#multi-table-data-merge" },
+    { text: "Multi-table horizontal join", href: "devguide/data-modeling/aggregate-table-model#multi-table-horizontal-connection" },
+    { text: "Group aggregate statistics", href: "devguide/data-modeling/aggregate-table-model#group-aggregate-statistics" },
+    { text: "Extending custom calculation fields", href: "devguide/data-modeling/aggregate-table-model#extend-custom-calculation-fields" },
+    { text: "Aggregate then filter", href: "devguide/data-modeling/aggregate-table-model#aggregate-then-filter" },
+    { text: "Filter first then aggregate (recommended)", href: "devguide/data-modeling/aggregate-table-model#filter-first-then-aggregate" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="Extended Table Model"
+  title="Extension Table Model"
   href="devguide/data-modeling/extended-table-model"
   description="Data extension based on existing tables, implementing business field extension and multi-table data integration through association with other data tables."
 >
   <LinkGrid columns={2} links={[
-    { text: "Extended Table Creation", href: "devguide/data-modeling/extended-table-model" },
-    { text: "Connection Design", href: "devguide/data-modeling/extended-table-model#connection-design" },
-    { text: "Set Baseline Table Filter Conditions", href: "devguide/data-modeling/extended-table-model#set-baseline-table-filter-conditions" },
-    { text: "Add Data Table", href: "devguide/data-modeling/extended-table-model#add-data-table" },
-    { text: "Real-time Edit Statistics Table Configuration", href: "devguide/data-modeling/extended-table-model#real-time-edit-statistics-table-configuration" },
-    { text: "Field Statistics", href: "devguide/data-modeling/extended-table-model#field-statistics" },
-    { text: "Add Formula Field", href: "devguide/data-modeling/extended-table-model#add-formula-field" },
-    { text: "Modify Field Alias", href: "devguide/data-modeling/extended-table-model#modify-field-alias" },
-    { text: "Function Design", href: "devguide/data-modeling/extended-table-model#function-design" },
-    { text: "Create Function", href: "devguide/data-modeling/extended-table-model#create-function" },
-    { text: "Source Code View Edit", href: "devguide/data-modeling/extended-table-model#source-code-view-edit" }
+    { text: "Extension table creation", href: "devguide/data-modeling/extended-table-model" },
+    { text: "Connection design", href: "devguide/data-modeling/extended-table-model#connection-design" },
+    { text: "Setting baseline table filter conditions", href: "devguide/data-modeling/extended-table-model#setting-baseline-table-filter-conditions" },
+    { text: "Adding data tables", href: "devguide/data-modeling/extended-table-model#adding-data-tables" },
+    { text: "Real-time editing of statistics table configuration", href: "devguide/data-modeling/extended-table-model#real-time-editing-statistics-table-configuration" },
+    { text: "Field statistics", href: "devguide/data-modeling/extended-table-model#field-statistics" },
+    { text: "Adding formula fields", href: "devguide/data-modeling/extended-table-model#adding-formula-fields" },
+    { text: "Modifying field aliases", href: "devguide/data-modeling/extended-table-model#modifying-field-aliases" },
+    { text: "Function design", href: "devguide/data-modeling/extended-table-model#function-design" },
+    { text: "Creating functions", href: "devguide/data-modeling/extended-table-model#creating-functions" },
+    { text: "Source code viewing and editing", href: "devguide/data-modeling/extended-table-model#source-code-viewing-and-editing" }
   ]} />
 </IndexCard>
 
@@ -1255,23 +1258,23 @@ Design a powerful data foundation for your application. Create data tables, desi
   description="Learn how to effectively use data models in frontend pages and backend function logic for data operations."
 >
   <LinkGrid columns={2} links={[
-    { text: "Built-in Model Functions", href: "devguide/data-modeling/calling-data-models-in-pages-and-functions#built-in-model-functions" },
-    { text: "Calling Data Models in Pages", href: "devguide/data-modeling/calling-data-models-in-pages-and-functions#calling-data-models-in-pages" },
-    { text: "Calling Data Models in Functions", href: "devguide/data-modeling/calling-data-models-in-pages-and-functions#calling-data-models-in-functions" }
+    { text: "Built-in model functions", href: "devguide/data-modeling/calling-data-models-in-pages-and-functions#built-in-model-functions" },
+    { text: "Calling data models in pages", href: "devguide/data-modeling/calling-data-models-in-pages-and-functions#calling-data-models-in-pages" },
+    { text: "Calling data models in functions", href: "devguide/data-modeling/calling-data-models-in-pages-and-functions#calling-data-models-in-functions" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="Data Object Model"
+  title="Creating Data Object Models"
   href="devguide/data-modeling/data-object-model"
-  description="Data structure designed specifically for full-code development, similar to DTO, used for structured data expression and transmission in business logic."
+  description="Specialized data structures engineered for full-code development environments, similar to DTOs, used for structured data expression and transmission in business logic."
 >
   <LinkGrid links={[
-    { text: "Creating Data Object Model", href: "devguide/data-modeling/data-object-model#creating-data-object-model" },
-    { text: "Using Data Object Model", href: "devguide/data-modeling/data-object-model#using-data-object-model" },
-    { text: "Customizing Fields", href: "devguide/data-modeling/data-object-model#customizing-fields" },
-    { text: "Overriding Model Functions", href: "devguide/data-modeling/data-object-model#overriding-model-functions" },
-    { text: "Defining New Functions", href: "devguide/data-modeling/data-object-model#defining-new-functions" }
+    { text: "Creating data object models", href: "devguide/data-modeling/data-object-model#creating-data-object-model" },
+    { text: "Using data object models", href: "devguide/data-modeling/data-object-model#using-data-object-model" },
+    { text: "Customizing fields", href: "devguide/data-modeling/data-object-model#customizing-fields" },
+    { text: "Overriding model functions", href: "devguide/data-modeling/data-object-model#overriding-model-functions" },
+    { text: "Defining new functions", href: "devguide/data-modeling/data-object-model#defining-new-functions" }
   ]} />
 </IndexCard>
 
@@ -1338,32 +1341,37 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Organizational Structure"
-  href="devguide/user-and-permission/organizational-structure"
-  description="Enterprise organizational structure management, including department, position and personnel hierarchical relationship configuration."
+  title="Organization"
+  href="devguide/user-and-permission/organization"
+  description="Enterprise organization management, including department, position and personnel hierarchical relationship configuration."
 >
   <LinkGrid links={[
-    { text: "Standard Organization", href: "devguide/user-and-permission/organizational-structure#standard-organization" },
-    { text: "Allowing New Registered Users to Join", href: "devguide/user-and-permission/organizational-structure#allowing-new-registered-users-to-join" },
-    { text: "DingTalk Custom Organization", href: "devguide/user-and-permission/organizational-structure#dingtalk-custom-organization" },
-    { text: "WeChat Work Custom Organization", href: "devguide/user-and-permission/organizational-structure#wechat-work-custom-organization" },
-    { text: "Contact Management Entry", href: "devguide/user-and-permission/organizational-structure#contact-management-entry" },
-    { text: "DingTalk Custom Organization", href: "devguide/user-and-permission/organizational-structure#dingtalk-custom-organization" },
-    { text: "WeChat Work Custom Organization", href: "devguide/user-and-permission/organizational-structure#wechat-work-custom-organization" },
-    { text: "Microsoft Teams", href: "devguide/user-and-permission/organizational-structure#microsoft-teams" },
-    { text: "Department Member Search", href: "devguide/user-and-permission/organizational-structure#department-member-search" },
-    { text: "Setting Organization Leader", href: "devguide/user-and-permission/organizational-structure#setting-organization-leader" },
-    { text: "Creating Department", href: "devguide/user-and-permission/organizational-structure#creating-department" },
-    { text: "Adding Member", href: "devguide/user-and-permission/organizational-structure#adding-member" },
-    { text: "Importing Members", href: "devguide/user-and-permission/organizational-structure#importing-members" },
-    { text: "Exporting Members", href: "devguide/user-and-permission/organizational-structure#exporting-members" },
-    { text: "Adjusting Department", href: "devguide/user-and-permission/organizational-structure#adjusting-department" },
-    { text: "Member Resignation", href: "devguide/user-and-permission/organizational-structure#member-resignation" },
-    { text: "Creating Role", href: "devguide/user-and-permission/organizational-structure#creating-role" },
-    { text: "Creating Role Group", href: "devguide/user-and-permission/organizational-structure#creating-role-group" },
-    { text: "Managing Role Members", href: "devguide/user-and-permission/organizational-structure#managing-role-members" },
-    { text: "Syncing DingTalk Organization Structure", href: "devguide/user-and-permission/organizational-structure#syncing-dingtalk-organization-structure" },
-    { text: "Syncing WeChat Work Organization Structure", href: "devguide/user-and-permission/organizational-structure#syncing-wechat-work-organization-structure" },
+    { text: "Default organization", href: "devguide/user-and-permission/organization#default-organization" },
+    { text: "Organizational structure creation", href: "devguide/user-and-permission/organization#organizational-structure-creation" },
+    { text: "Generic organization", href: "devguide/user-and-permission/organization#generic-organization" },
+    { text: "Allowing new registered users to join", href: "devguide/user-and-permission/organization#allowing-new-registered-users-to-join" },
+    { text: "DingTalk self-built org.", href: "devguide/user-and-permission/organization#dingtalk-custom-organization" },
+    { text: "WeCom self-built org.", href: "devguide/user-and-permission/organization#wechat-work-custom-organization" },
+    { text: "Microsoft Teams", href: "devguide/user-and-permission/organization#microsoft-teams" },
+    { text: "Contact management entry", href: "devguide/user-and-permission/organization#contact-management-entry" },
+    { text: "Setting organization leader", href: "devguide/user-and-permission/organization#setting-organization-leader" },
+    { text: "Department member search", href: "devguide/user-and-permission/organization#department-member-search" },
+    { text: "Generic organization contacts", href: "devguide/user-and-permission/organization#generic-organization-contacts" },
+    { text: "Creating department", href: "devguide/user-and-permission/organization#creating-department" },
+    { text: "Adding member", href: "devguide/user-and-permission/organization#adding-member" },
+    { text: "Importing members", href: "devguide/user-and-permission/organization#importing-members" },
+    { text: "Exporting members", href: "devguide/user-and-permission/organization#exporting-members" },
+    { text: "Adjusting department", href: "devguide/user-and-permission/organization#adjusting-department" },
+    { text: "Member resignation", href: "devguide/user-and-permission/organization#member-resignation" },
+    { text: "Creating role", href: "devguide/user-and-permission/organization#creating-role" },
+    { text: "Creating role group", href: "devguide/user-and-permission/organization#creating-role-group" },
+    { text: "Managing role members", href: "devguide/user-and-permission/organization#managing-role-members" },
+    { text: "DingTalk organization contacts", href: "devguide/user-and-permission/organization#dingtalk-organization-contacts" },
+    { text: "Syncing DingTalk organization structure", href: "devguide/user-and-permission/organization#syncing-dingtalk-organization-structure" },
+    { text: "Exporting members", href: "devguide/user-and-permission/organization#exporting-members-dingtalk" },
+    { text: "WeCom organization contacts", href: "devguide/user-and-permission/organization#wechat-work-organization-contacts" },
+    { text: "Syncing WeCom organization structure", href: "devguide/user-and-permission/organization#syncing-wechat-work-organization-structure" },
+    { text: "Exporting members", href: "devguide/user-and-permission/organization#exporting-members-wechat-work" },
   ]} />
 </IndexCard>
 
@@ -1373,19 +1381,19 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
   description="User identity verification and login method configuration, supporting multiple authentication modes."
 >
   <LinkGrid links={[
-    { text: "Creating Login Method", href: "devguide/user-and-permission/login-authentication#creating-login-method" },
-    { text: "Account Password Login", href: "devguide/user-and-permission/login-authentication#account-password-login" },
-    { text: "Mobile Phone Login", href: "devguide/user-and-permission/login-authentication#mobile-phone-login" },
+    { text: "Creating login authentication", href: "devguide/user-and-permission/login-authentication#creating-login-method" },
+    { text: "Account password login", href: "devguide/user-and-permission/login-authentication#account-password-login" },
+    { text: "Phone login", href: "devguide/user-and-permission/login-authentication#mobile-phone-login" },
     { text: "Alibaba Cloud SMS", href: "devguide/user-and-permission/login-authentication#aliyun-sms" },
     { text: "Twilio", href: "devguide/user-and-permission/login-authentication#twilio" },
     { text: "AWS SNS", href: "devguide/user-and-permission/login-authentication#aws-sns" },
-    { text: "DingTalk Custom QR Login", href: "devguide/user-and-permission/login-authentication#dingtalk-custom-qr-login" },
-    { text: "WeChat Work Custom QR Login", href: "devguide/user-and-permission/login-authentication#wechat-work-custom-qr-login" },
-    { text: "WeChat Login", href: "devguide/user-and-permission/login-authentication#wechat-login" },
-    { text: "WeChat Official Account Login", href: "devguide/user-and-permission/login-authentication#wechat-official-account-login" },
-    { text: "WeChat Mini Program Login", href: "devguide/user-and-permission/login-authentication#wechat-mini-program-login" },
-    { text: "Github Login", href: "devguide/user-and-permission/login-authentication#github-login" },
-    { text: "Google Login", href: "devguide/user-and-permission/login-authentication#google-login" },
+    { text: "DingTalk self-built QR code login", href: "devguide/user-and-permission/login-authentication#dingtalk-custom-qr-login" },
+    { text: "WeCom self-built QR code login", href: "devguide/user-and-permission/login-authentication#wechat-work-custom-qr-login" },
+    { text: "WeChat login", href: "devguide/user-and-permission/login-authentication#wechat-login" },
+    { text: "WeChat official account login", href: "devguide/user-and-permission/login-authentication#wechat-official-account-login" },
+    { text: "WeChat mini program login", href: "devguide/user-and-permission/login-authentication#wechat-mini-program-login" },
+    { text: "GitHub login", href: "devguide/user-and-permission/login-authentication#github-login" },
+    { text: "Google login", href: "devguide/user-and-permission/login-authentication#google-login" }
   ]} />
 </IndexCard>
 
@@ -1395,20 +1403,20 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
   description="Application role definition and permission allocation, implementing fine-grained access control."
 >
   <LinkGrid columns={2} links={[
-    { text: "Built-in Three Application Roles", href: "devguide/user-and-permission/role-portal-menu-permissions#built-in-three-application-roles" },
-    { text: "Anonymous User", href: "devguide/user-and-permission/role-portal-menu-permissions#anonymous-user" },
+    { text: "Built-in application roles", href: "devguide/user-and-permission/role-portal-menu-permissions#built-in-three-application-roles" },
+    { text: "Anonymous user", href: "devguide/user-and-permission/role-portal-menu-permissions#anonymous-user" },
     { text: "Developer", href: "devguide/user-and-permission/role-portal-menu-permissions#developer" },
     { text: "Administrator", href: "devguide/user-and-permission/role-portal-menu-permissions#administrator" },
-    { text: "Creating Application Roles", href: "devguide/user-and-permission/role-portal-menu-permissions#create-application-role" },
-    { text: "Application Role Permission Configuration", href: "devguide/user-and-permission/role-portal-menu-permissions#application-role-permission-configuration" },
-    { text: "Specifying Accessible Portals and Menus", href: "devguide/user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus" },
-    { text: "Managing Application Role Members in Developer Portal", href: "devguide/user-and-permission/role-portal-menu-permissions#manage-application-role-members-in-developer-portal" },
-    { text: "Component Button Permission Control", href: "devguide/user-and-permission/role-portal-menu-permissions#component-button-permission-control" },
-    { text: "Component Data Field Read/Write/Statistics Permission Control", href: "devguide/user-and-permission/role-portal-menu-permissions#component-data-field-access-control" },
-    { text: "Hierarchical Management of Multiple Application Roles", href: "devguide/user-and-permission/role-portal-menu-permissions#hierarchical-management-of-multiple-application-roles" },
-    { text: "Application Role Member Management", href: "devguide/user-and-permission/role-portal-menu-permissions#application-role-member-management" },
-    { text: "Member Addition and Removal", href: "devguide/user-and-permission/role-portal-menu-permissions#member-addition-and-removal" },
-    { text: "Member Management Scope Settings in Organizational Structure", href: "devguide/user-and-permission/role-portal-menu-permissions#member-management-scope-settings-in-org-structure" }
+    { text: "Creating application roles", href: "devguide/user-and-permission/role-portal-menu-permissions#create-application-role" },
+    { text: "Application role permission configuration", href: "devguide/user-and-permission/role-portal-menu-permissions#application-role-permission-configuration" },
+    { text: "Specifying accessible portals and menus", href: "devguide/user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus" },
+    { text: "Managing application role members in the Developer Portal", href: "devguide/user-and-permission/role-portal-menu-permissions#manage-application-role-members-in-developer-portal" },
+    { text: "Component button permission control", href: "devguide/user-and-permission/role-portal-menu-permissions#component-button-permission-control" },
+    { text: "Component data field read/write/statistics permission control", href: "devguide/user-and-permission/role-portal-menu-permissions#component-data-field-access-control" },
+    { text: "Hierarchical management of multiple application roles", href: "devguide/user-and-permission/role-portal-menu-permissions#hierarchical-management-of-multiple-application-roles" },
+    { text: "Application role member management", href: "devguide/user-and-permission/role-portal-menu-permissions#application-role-member-management" },
+    { text: "Member addition and removal", href: "devguide/user-and-permission/role-portal-menu-permissions#member-addition-and-removal" },
+    { text: "Member management scope settings in organization", href: "devguide/user-and-permission/role-portal-menu-permissions#member-management-scope-settings-in-org" }
   ]} />
 </IndexCard>
 
@@ -1418,7 +1426,7 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
   description="Advanced role-based permission control for business elements, data models, and functional components."
 >
   <LinkGrid links={[
-    { text: "Portal-level Data Operation Type and Scope Control", href: "devguide/user-and-permission/roles-and-business-element-permissions#portal-level-data-operation-type-and-scope-control" }
+    { text: "Portal-level data operation type and scope control", href: "devguide/user-and-permission/roles-and-business-element-permissions#portal-level-data-operation-type-and-scope-control" }
   ]} />
 </IndexCard>
 
@@ -1428,7 +1436,7 @@ Build a secure and reliable user system. Support multiple login methods, flexibl
   description="Configure and manage permission control for AI Agent tools, ensuring secure and controlled agent operations."
 >
   <LinkGrid links={[
-    { text: "Configure Agent Tool Execution Permissions", href: "devguide/user-and-permission/agent-tool-permission-control#configure-agent-tool-execution-permissions" }
+    { text: "Configuring Agent tool execution permissions", href: "devguide/user-and-permission/agent-tool-permission-control#configure-agent-tool-execution-permissions" }
   ]} />
 </IndexCard>
 
@@ -1671,41 +1679,41 @@ Easily handle various file requirements in applications. Support file upload and
   description="File upload, storage and management system supporting multiple storage methods and file operations."
 >
   <LinkGrid columns={2} links={[
-    { text: "Local Storage Configuration", href: "devguide/file-processing/file-storage#local-storage-configuration" },
-    { text: "Add Local Storage", href: "devguide/file-processing/file-storage#add-local-storage" },
-    { text: "Specify Disk Storage Directory", href: "devguide/file-processing/file-storage#specify-disk-storage-directory" },
-    { text: "Cloud Storage Service Configuration", href: "devguide/file-processing/file-storage#cloud-storage-service-configuration" },
+    { text: "Local storage configuration", href: "devguide/file-processing/file-storage#local-storage-configuration" },
+    { text: "Adding local storage", href: "devguide/file-processing/file-storage#add-local-storage" },
+    { text: "Specifying disk storage directory", href: "devguide/file-processing/file-storage#specify-disk-storage-directory" },
+    { text: "Cloud storage service configuration", href: "devguide/file-processing/file-storage#cloud-storage-service-configuration" },
     { text: "Alibaba Cloud OSS", href: "devguide/file-processing/file-storage#aliyun-oss" },
     { text: "China Mobile Cloud EOS", href: "devguide/file-processing/file-storage#china-mobile-cloud-eos" },
     { text: "MinIO", href: "devguide/file-processing/file-storage#minio" },
-    { text: "Qiniu Cloud", href: "devguide/file-processing/file-storage#aliyun-oss" },
+    { text: "Qiniu Cloud", href: "devguide/file-processing/file-storage#qiniu-cloud" },
     { text: "AWS S3", href: "devguide/file-processing/file-storage#aws-s3" },
     { text: "Cloudflare R2", href: "devguide/file-processing/file-storage#cloudflare-r2" },
-    { text: "Use Environment Variables to Prevent Config Info Leak", href: "devguide/file-processing/file-storage#prevent-config-info-leak-with-env-variables" },
-    { text: "Set Application Default Storage Service", href: "devguide/file-processing/file-storage#set-application-default-storage-service" },
-    { text: "Call File Upload in Frontend Code", href: "devguide/file-processing/file-storage#call-file-upload-in-frontend-code" }
+    { text: "Using environment variables to prevent config info leak", href: "devguide/file-processing/file-storage#prevent-config-info-leak-with-env-variables" },
+    { text: "Setting application default storage service", href: "devguide/file-processing/file-storage#set-application-default-storage-service" },
+    { text: "Calling file upload in frontend code", href: "devguide/file-processing/file-storage#call-file-upload-in-frontend-code" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="File Templates"
+  title="Creating File Templates"
   href="devguide/file-processing/file-templates"
   description="Document template generation and processing, supporting dynamic content filling and format conversion."
 >
   <LinkGrid columns={2} links={[
-    { text: "Word Template", href: "devguide/file-processing/file-templates#word-template" },
-    { text: "Create Word Template", href: "devguide/file-processing/file-templates#create-word-template" },
-    { text: "Create Word Template Variables", href: "devguide/file-processing/file-templates#create-word-template-variables" },
-    { text: "Use Template Variables in Word", href: "devguide/file-processing/file-templates#use-template-variables-in-word" },
-    { text: "Excel Template", href: "devguide/file-processing/file-templates#excel-template" },
-    { text: "Create Excel Template", href: "devguide/file-processing/file-templates#create-excel-template" },
-    { text: "Create Excel Template Variables", href: "devguide/file-processing/file-templates#create-excel-template-variables" },
-    { text: "Use Template Variables in Excel", href: "devguide/file-processing/file-templates#use-template-variables-in-excel" },
-    { text: "Template Variable Style Description", href: "devguide/file-processing/file-templates#template-variable-style-description" },
-    { text: "Text Style", href: "devguide/file-processing/file-templates#text-style" },
-    { text: "Numeric Style", href: "devguide/file-processing/file-templates#numeric-style" },
-    { text: "Date Time Style", href: "devguide/file-processing/file-templates#date-time-style" },
-    { text: "Multi-value Style (Complex Types)", href: "devguide/file-processing/file-templates#multi-value-complex-types" }
+    { text: "Word template", href: "devguide/file-processing/file-templates#word-template" },
+    { text: "Creating word template", href: "devguide/file-processing/file-templates#create-word-template" },
+    { text: "Creating word template variables", href: "devguide/file-processing/file-templates#create-word-template-variables" },
+    { text: "Using template variables in Word documents", href: "devguide/file-processing/file-templates#use-template-variables-in-word" },
+    { text: "Excel template", href: "devguide/file-processing/file-templates#excel-template" },
+    { text: "Creating Excel template", href: "devguide/file-processing/file-templates#create-excel-template" },
+    { text: "Creating Excel template variables", href: "devguide/file-processing/file-templates#create-excel-template-variables" },
+    { text: "Using template variables in Excel documents", href: "devguide/file-processing/file-templates#use-template-variables-in-excel" },
+    { text: "Template variable style description", href: "devguide/file-processing/file-templates#template-variable-style-description" },
+    { text: "Text styles", href: "devguide/file-processing/file-templates#text-style" },
+    { text: "Numeric styles", href: "devguide/file-processing/file-templates#numeric-style" },
+    { text: "Date-time styles", href: "devguide/file-processing/file-templates#date-time-style" },
+    { text: "Multi-value styles (complex types)", href: "devguide/file-processing/file-templates#multi-value-complex-types" }
   ]} />
 </IndexCard>
 
@@ -1715,8 +1723,8 @@ Easily handle various file requirements in applications. Support file upload and
   description="Learn how to use file templates to generate and print documents programmatically, including dynamic content population and output formatting."
 >
   <LinkGrid links={[
-    { text: "Print Word Templates", href: "devguide/file-processing/generating-and-printing-files-using-file-templates#print-word-template" },
-    { text: "Print Excel Templates", href: "devguide/file-processing/generating-and-printing-files-using-file-templates#print-excel-template" }
+    { text: "Print Word templates", href: "devguide/file-processing/generating-and-printing-files-using-file-templates#print-word-template" },
+    { text: "Print Excel templates", href: "devguide/file-processing/generating-and-printing-files-using-file-templates#print-excel-template" }
   ]} />
 </IndexCard>
 

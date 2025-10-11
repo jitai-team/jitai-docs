@@ -11,7 +11,7 @@ slug: using-ai-elements-in-pages
 
 ### Visual calling {#visual-calling}
 
-In statements, select `AI Assistant` → the assistant you want to call → `Run`, and pass in the [assistant's input parameters](../ai-assistant/ai-assistant-input-output#input-parameters).
+In statements, select `AI Assistant` → the assistant you want to call → `Run`, and pass in the [assistant's input args](../ai-assistant/ai-assistant-input-output#input-args).
 
 ![AI Assistant - Call](./img/call-assistant-in-page.png)
 ![AI Assistant - Call with Parameters](./img/call-assistant-in-page-input.png)
@@ -31,7 +31,7 @@ this.app.aiassistants.ClientManagementAssistant.run("Query Customer", {"paramA":
 
 ### Visual calling {#visual-calling-agent}
 
-In statements, select `Agent` → the Agent you want to call → `Run`, and pass in the [AI Agent's input parameters](../ai-agent/agent-input-output#configuring-input-variables).
+In statements, select `Agent` → the Agent you want to call → `Run`, and pass in the [AI Agent's input args](../ai-agent/agent-input-output#configuring-input-variables).
 
 ![AI Agent - Call](./img/call-agent-in-page.png)
 ![AI Agent - Call with Parameters](./img/call-agent-in-page-input.png)
@@ -55,7 +55,7 @@ In statements, select `Large Language Model` → the large language model you wa
 
 ![Large Language Model - Call](./img/call-llm-in-page.png)
 
-Then set the [input parameters](../ai-llm/llm-input-output#call-llm-input): the model to call, prompt, and output format.
+Then set the [input args](../ai-llm/llm-input-output#call-llm-input): the model to call, prompt, and output format.
 
 ![Large Language Model - Call with Parameters](./img/call-llm-in-page-input.gif)
 

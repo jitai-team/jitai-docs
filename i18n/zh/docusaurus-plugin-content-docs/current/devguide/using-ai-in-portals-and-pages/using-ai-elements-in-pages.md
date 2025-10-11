@@ -11,7 +11,7 @@ slug: using-ai-elements-in-pages
 
 ### 可视化调用 {#visual-calling}
 
-在语句中选择`AI助理` → 你要调用的助理 → `运行`，并传入[助理的输入参数](../ai-assistant/ai-assistant-input-output#input-parameters)。
+在语句中选择`AI助理` → 你要调用的助理 → `运行`，并传入[助理的输入参数](../ai-assistant/ai-assistant-input-output#input-args)。
 
 ![AI助理-调用](./img/call-assistant-in-page.png)
 ![AI助理-调用-传参](./img/call-assistant-in-page-input.png)

@@ -45,7 +45,7 @@ JitAi enables complex AI application development to transition from laboratory e
 JitAi provides AI Large Language Model elements, AI Agent elements, AI Assistant elements, and Knowledge Base elements.
 
 - **AI Large Language Model Elements**: Implement API encapsulation for mainstream large language models on the market. Developers can configure large language model calls by simply filling in API addresses and API_KEYs. Large language model elements can be called as functions by service/model elements.
-- **AI Agent Elements**: Atomic AI application units that implement single AI functionalities through configuration of large language model elements, input parameters, output results, tools, and knowledge bases. AI Agents can be called independently like function calls or be invoked by assistant elements.
+- **AI Agent Elements**: Atomic AI application units that implement single AI functionalities through configuration of large language model elements, input args, output results, tools, and knowledge bases. AI Agents can be called independently like function calls or be invoked by assistant elements.
 - **AI Assistant Elements**: Used to implement complex tasks through visual workflow orchestration, combining multiple nodes and multiple Agents to achieve complex server-side business processes. On the frontend, they provide a dialog box that can be embedded into pages and interact with the pages.
 - **Knowledge Base Elements**: Used to implement RAG knowledge base encapsulation. Developers can build their own knowledge bases by uploading documents, and these knowledge bases can be called by Agents.
 

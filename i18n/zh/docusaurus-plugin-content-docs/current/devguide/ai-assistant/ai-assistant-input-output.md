@@ -5,7 +5,7 @@ slug: ai-assistant-input-output
 
 # AI助理的输入与输出
 
-## 输入参数 {#input-parameters}
+## 输入参数 {#input-args}
 每个助理有一个固定的输入参数：用户输入(userInput)。除此之外，你还可以自定义其他输入参数。在使用助理时需要为这些参数赋值。
 设置步骤如下：
 

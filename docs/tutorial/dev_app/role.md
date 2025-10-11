@@ -31,7 +31,7 @@ You can also click "Configure" for each menu to further configure component-leve
 
 In this application, we'll create "Teacher" and "Student" departments.
 
-For detailed information, see [Organizational Structure](../../devguide/user-and-permission/organizational-structure).
+For detailed information, see [Organizational Structure](../../devguide/user-and-permission/organization).
 
 ### Configuring Role Membership in the "Manager Portal"
 

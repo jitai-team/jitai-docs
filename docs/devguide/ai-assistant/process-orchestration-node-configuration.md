@@ -70,8 +70,8 @@ After this node completes execution, it will store the [Agent's output results](
 ### Action in conversation {#action-in-conversation}
 
 When the task flow runs to this node, it will pause and display data in the dialog box. The flow can only continue after the user confirms the data and performs corresponding operations. If there is no next node, the flow automatically ends.
-At this node, users can perform operations such as **Approve**, **Refuse**, **Reply**, and **Edit data** (editing functionality needs to be enabled).
-During runtime, after performing **Approve**, **Refuse**, **Reply**, and **Edit data** operations, the flow will resume and trigger [dialog area human-machine interaction events](./ai-assistant-event#in-conversation-action-events).
+At this node, users can perform operations such as **Approve**, **Reject**, **Reply**, and **Edit data** (editing functionality needs to be enabled).
+During runtime, after performing **Approve**, **Reject**, **Reply**, and **Edit data** operations, the flow will resume and trigger [dialog area human-machine interaction events](./ai-assistant-event#in-conversation-action-events).
 
 #### Node configuration details {#conversation-node-configuration-details}
 - **Data to Display**: You can freely define the data content that needs user confirmation, sourced from [runtime state data](./ai-assistant-state#state-data-content).

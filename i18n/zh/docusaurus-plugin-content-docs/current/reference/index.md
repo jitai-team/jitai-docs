@@ -41,7 +41,7 @@ JitAi参考手册提供完整的API文档、配置说明和技术规范。开发
     { text: "企业微信自建扫码登录", href: "reference/framework/JitAuth/login-authentication/wechat-work-dev-login" },
     { text: "企业微信代开发登录", href: "reference/framework/JitAuth/login-authentication/wechat-work-qr-login" },
     { text: "钉钉自建扫码登录", href: "reference/framework/JitAuth/login-authentication/dingtalk-qr-login" },
-    { text: "标准组织", href: "reference/framework/JitAuth/enterprise-organization/standard-organization" },
+    { text: "常规组织", href: "reference/framework/JitAuth/enterprise-organization/standard-organization" },
     { text: "企业微信自建组织", href: "reference/framework/JitAuth/enterprise-organization/wechat-work-dev-organization" },
     { text: "企业微信代开发组织", href: "reference/framework/JitAuth/enterprise-organization/wechat-work-organization" },
     { text: "钉钉自建组织", href: "reference/framework/JitAuth/enterprise-organization/dingtalk-organization" }

@@ -11,15 +11,15 @@ Follow these steps:
 
 ![Component Page - Bind AI Assistant](./img/component-page-bind-assistant.png)
 
-Turn on the `AI Assistant` switch at the top of the page editor and select an AI assistant.
+​Enable and select an `AI Assistant` at the top of the page editor.​​ 
 
 ## AI assistant configuration {#ai-assistant-configuration}
 
 After enabling the AI Assistant, an AI Assistant configuration panel will be displayed on the right side of the page editor with the following configuration options:
 - **AI Assistant**: Switch the AI assistant used in the page
 - **Welcome Message and Opening**: Set personalized [welcome message and opening](../ai-assistant/welcome-message-and-opening)
-- **Input Parameters**: If the assistant being used has [custom input parameters](../ai-assistant/ai-assistant-input-output#input-parameters) configured, these parameters need to be assigned values.
-- **Output Runtime Logs**: Customize the [runtime log](../ai-assistant/ai-assistant-input-output#message-output) content output by the assistant during runtime.
+- **Set the input args**: If the assistant being used has [custom input args](../ai-assistant/ai-assistant-input-output#input-args) configured, these args need to be assigned values.
+- **Output Process Log**: Customize the [runtime log](../ai-assistant/ai-assistant-input-output#message-output) content output by the assistant during runtime.
 
 ![Component Page - Bind AI Assistant](./img/component-page-assistant-config.png)
 
@@ -27,17 +27,17 @@ After enabling the AI Assistant, an AI Assistant configuration panel will be dis
 ## AI assistant event subscription {#ai-assistant-event-subscription}
 
 ### Subscribe to Node Running Events {#subscribe-node-running-events}
-After enabling [triggerable workspace events](../ai-assistant/ai-assistant-event#node-running-events) for nodes in the assistant, there will be two events: **When Node is Reached** and **After Node Completion**. The page subscription method is as follows:
+After enabling [Trigger page events](../ai-assistant/ai-assistant-event#frontend-page-events) for nodes in the assistant, there will be two events: **Arrived** and **Post-execution**. The page subscription method is as follows:
 
 ![AI Assistant - Workspace Event Subscription](./img/assistant-workspace-event-subscribe.png)
 
-In the event handling logic, you can use the parameters output by the event:
+Within the event handler, you can access the event's payload:
 
 ![AI Assistant - Workspace Event Subscription](./img/assistant-workspace-event-args.png)
 
 ### Subscribe to Tool Call Events {#subscribe-call-tool-events}
 
-After enabling [tool call events](../ai-assistant/ai-assistant-event#agent-call-tool-events) for AI Agent nodes in the assistant, there will be two events: **Before Tool Call** and **After Tool Call**. The page subscription method is as follows:
+After enabling [Tool call events](../ai-assistant/ai-assistant-event#agent-call-tool-events) for AI Agent nodes in the assistant, there will be two events: **Tool Pre-call** and **Tool Post-call**. The page subscription method is as follows:
 
 ![AI Assistant - Tool Call Event Subscription](./img/assistant-workspace-tool-event.png)
 

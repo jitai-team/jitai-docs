@@ -9,7 +9,7 @@ slug: ai-assistant-api-exposure
 After using an AI assistant in a page, there will be a **Send AI Message** function on the page. The function has the following parameters:
 - **Message Content**: The text message content to be sent
 - **Start New Conversation**: When enabled, it will open a new [conversation record](./ai-conversation-history) and send the message. If not enabled, it will send the message in the currently open conversation; if the assistant is paused at a workspace human-machine interaction node at this time, the process will resume.
-- **Custom Parameters**: [Custom input parameters](./ai-assistant-input-output#input-parameters) configured on the AI assistant
+- **Custom Parameters**: [Custom input args](./ai-assistant-input-output#input-args) configured on the AI assistant
 
 For calling methods, refer to [Sending AI Messages in Pages](../using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#send-ai-message)
 

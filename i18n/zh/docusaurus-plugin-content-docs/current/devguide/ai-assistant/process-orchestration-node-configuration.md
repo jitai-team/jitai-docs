@@ -28,7 +28,7 @@ AI助理的可视化编排工具让你能够通过直观的拖拽操作设计复
 ## 节点类型详解 {#node-types-explained}
 
 ### 开始节点 {#start-node}
-这是工作流的起点，就像项目的入口一样。它接收用户的输入和其他[输入参数](./ai-assistant-input-output#input-parameters)，把这些信息存到[状态数据](./ai-assistant-state)里，然后开始执行任务。
+这是工作流的起点，就像项目的入口一样。它接收用户的输入和其他[输入参数](./ai-assistant-input-output#input-args)，把这些信息存到[状态数据](./ai-assistant-state)里，然后开始执行任务。
 每个AI助理中只能有一个开始节点，而且创建助理后会自动生成，你不需要手动添加。
 
 ### 路由决策 {#routing-decision}

@@ -71,14 +71,14 @@ Amazon Simple Notification Service (SNS) 是亚马逊云服务提供的完全托
 
 ![钉钉二维码扫描](./img/auth/dingtalk-qr-scan.gif)
 
-当开发者选择创建`钉钉自建二维码登录`时，将弹出`新建钉钉自建二维码登录`配置窗口。在该窗口中，需填写登录方式名称（英文名自动生成），配置钉钉自定义应用的凭证信息，包括`CorpId`（企业ID）、`AgentID`、`appKey`和`appSecret`。相关配置信息获取方法，请参考[组织架构文档](./organizational-structure#dingtalk-custom-organization)。
+当开发者选择创建`钉钉自建二维码登录`时，将弹出`新建钉钉自建二维码登录`配置窗口。在该窗口中，需填写登录方式名称（英文名自动生成），配置钉钉自定义应用的凭证信息，包括`CorpId`（企业ID）、`AgentID`、`appKey`和`appSecret`。相关配置信息获取方法，请参考[组织架构文档](./organization#dingtalk-custom-organization)。
 
 ![钉钉登录配置](./img/auth/dingtalk-login-config.png)
 
 完成相关配置后，系统将自动创建钉钉二维码登录方式，并跳转到登录方式配置页面，供您后续查看和管理。
 
 :::tip
-钉钉自建二维码登录方式需要配合[钉钉自定义组织架构](./organizational-structure#dingtalk-custom-organization)使用。在创建钉钉自定义组织架构时，系统会自动同步生成对应的二维码登录方式，无需单独配置。
+钉钉自建二维码登录方式需要配合[钉钉自定义组织架构](./organization#dingtalk-custom-organization)使用。在创建钉钉自定义组织架构时，系统会自动同步生成对应的二维码登录方式，无需单独配置。
 :::
 
 ## 企业微信自建二维码登录 {#wechat-work-custom-qr-login}
@@ -87,14 +87,14 @@ Amazon Simple Notification Service (SNS) 是亚马逊云服务提供的完全托
 
 ![企业微信二维码扫描](./img/auth/wechat-work-qr-scan.gif)
 
-当开发者选择创建`企业微信自建二维码登录`时，将弹出`新建企业微信自建二维码登录`配置窗口。在该窗口中，需填写登录方式名称（英文名自动生成），配置企业微信自定义应用的凭证信息，包括`CorpId`（企业ID）、`AgentID`和`Secret`。相关配置信息获取方法，请参考[组织架构文档](./organizational-structure#wechat-work-custom-organization)。
+当开发者选择创建`企业微信自建二维码登录`时，将弹出`新建企业微信自建二维码登录`配置窗口。在该窗口中，需填写登录方式名称（英文名自动生成），配置企业微信自定义应用的凭证信息，包括`CorpId`（企业ID）、`AgentID`和`Secret`。相关配置信息获取方法，请参考[组织架构文档](./organization#wechat-work-custom-organization)。
 
 ![企业微信登录配置](./img/auth/wechat-work-login-config.png)
 
 配置完成后，系统将自动生成企业微信二维码登录方式，并跳转到登录方式配置页面，供您后续查看和管理。
 
 :::tip
-企业微信自建二维码登录方式需要配合[企业微信自定义组织架构](./organizational-structure#wechat-work-custom-organization)使用。在创建企业微信自定义组织架构时，系统会自动同步生成对应的二维码登录方式，无需单独配置。
+企业微信自建二维码登录方式需要配合[企业微信自定义组织架构](./organization#wechat-work-custom-organization)使用。在创建企业微信自定义组织架构时，系统会自动同步生成对应的二维码登录方式，无需单独配置。
 :::
 
 ## 微信登录 {#wechat-login}

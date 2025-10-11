@@ -70,14 +70,14 @@ DingTalk self-built QR code login is an enterprise-level identity authentication
 
 ![DingTalk QR Code Scan](./img/auth/dingtalk-qr-scan.gif "DingTalk QR Code Scan")
 
-When developers choose to create `DingTalk Self-built QR Code Login`, a `Create Element > Create DingTalk Self-built QR Code Login` configuration window will appear. In this window, you need to fill in the login method name (English name is automatically generated) and configure the credential information of DingTalk custom application, including `CorpId` (Enterprise ID), `AgentID`, `appKey`, and `appSecret`. For information on how to obtain related configuration information, please refer to [Organizational Structure Documentation](./organizational-structure#dingtalk-custom-organization).
+When developers choose to create `DingTalk Self-built QR Code Login`, a `Create Element > Create DingTalk Self-built QR Code Login` configuration window will appear. In this window, you need to fill in the login method name (English name is automatically generated) and configure the credential information of DingTalk custom application, including `CorpId` (Enterprise ID), `AgentID`, `appKey`, and `appSecret`. For information on how to obtain related configuration information, please refer to [Organizational Structure Documentation](./organization#dingtalk-custom-organization).
 
 ![DingTalk Login Configuration](./img/auth/dingtalk-login-config.png "DingTalk Login Configuration")
 
 After completing the relevant configuration, the system will automatically create a DingTalk QR code login method and navigate to the login method configuration page for your subsequent viewing and management.
 
 :::tip
-DingTalk self-built QR code login method needs to be used in conjunction with [DingTalk Custom Organizational Structure](./organizational-structure#dingtalk-custom-organization). When creating a DingTalk custom organizational structure, the system will automatically synchronize and generate the corresponding QR code login method without separate configuration.
+DingTalk self-built QR code login method needs to be used in conjunction with [DingTalk Custom Organizational Structure](./organization#dingtalk-custom-organization). When creating a DingTalk custom organizational structure, the system will automatically synchronize and generate the corresponding QR code login method without separate configuration.
 :::
 
 ## WeCom self-built QR code login {#wechat-work-custom-qr-login}
@@ -86,14 +86,14 @@ WeCom self-built QR code login is an enterprise-level QR code authentication met
 
 ![WeCom QR Code Scan](./img/auth/wechat-work-qr-scan.gif "WeCom QR Code Scan")
 
-When developers choose to create `WeCom Self-built QR Code Login`, a `Create WeCom Self-built QR Code Login` configuration window will appear. In this window, you need to fill in the login method name (English name is automatically generated) and configure the credential information of WeCom custom application, including `CorpId` (Enterprise ID), `AgentID`, and `Secret`. For information on how to obtain related configuration information, please refer to [Organizational Structure Documentation](./organizational-structure#wechat-work-custom-organization).
+When developers choose to create `WeCom Self-built QR Code Login`, a `Create WeCom Self-built QR Code Login` configuration window will appear. In this window, you need to fill in the login method name (English name is automatically generated) and configure the credential information of WeCom custom application, including `CorpId` (Enterprise ID), `AgentID`, and `Secret`. For information on how to obtain related configuration information, please refer to [Organizational Structure Documentation](./organization#wechat-work-custom-organization).
 
 ![WeCom Login Configuration](./img/auth/wechat-work-login-config.png "WeCom Login Configuration")
 
 After configuration is completed, the system will automatically generate a WeCom QR code login method and navigate to the login method configuration page for your subsequent viewing and management.
 
 :::tip
-WeCom self-built QR code login method needs to be used in conjunction with [WeCom Custom Organizational Structure](./organizational-structure#wechat-work-custom-organization). When creating a WeCom custom organizational structure, the system will automatically synchronize and generate the corresponding QR code login method without separate configuration.
+WeCom self-built QR code login method needs to be used in conjunction with [WeCom Custom Organizational Structure](./organization#wechat-work-custom-organization). When creating a WeCom custom organizational structure, the system will automatically synchronize and generate the corresponding QR code login method without separate configuration.
 :::
 
 ## WeChat login {#wechat-login}

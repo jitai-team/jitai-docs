@@ -1346,36 +1346,36 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="组织架构"
-  href="devguide/user-and-permission/organizational-structure"
+  href="devguide/user-and-permission/organization"
   description="企业组织管理，包括部门、岗位和人员层级关系配置。"
 >
   <LinkGrid links={[
-    { text: "默认组织架构", href: "devguide/user-and-permission/organizational-structure#default-organization" },
-    { text: "组织架构创建", href: "devguide/user-and-permission/organizational-structure#organizational-structure-creation" },
-    { text: "常规组织", href: "devguide/user-and-permission/organizational-structure#generic-organization" },
-    { text: "允许新注册用户加入", href: "devguide/user-and-permission/organizational-structure#allowing-new-registered-users-to-join" },
-    { text: "钉钉自建组织", href: "devguide/user-and-permission/organizational-structure#dingtalk-custom-organization" },
-    { text: "企业微信自建组织", href: "devguide/user-and-permission/organizational-structure#wechat-work-custom-organization" },
-    { text: "Microsoft Teams", href: "devguide/user-and-permission/organizational-structure#microsoft-teams" },
-    { text: "通讯录管理入口", href: "devguide/user-and-permission/organizational-structure#contact-management-entry" },
-    { text: "设置组织负责人", href: "devguide/user-and-permission/organizational-structure#setting-organization-leader" },
-    { text: "部门成员搜索", href: "devguide/user-and-permission/organizational-structure#department-member-search" },
-    { text: "常规组织通讯录", href: "devguide/user-and-permission/organizational-structure#generic-organization-contacts" },
-    { text: "新建部门", href: "devguide/user-and-permission/organizational-structure#creating-department" },
-    { text: "添加成员", href: "devguide/user-and-permission/organizational-structure#adding-member" },
-    { text: "导入成员", href: "devguide/user-and-permission/organizational-structure#importing-members" },
-    { text: "导出成员", href: "devguide/user-and-permission/organizational-structure#exporting-members" },
-    { text: "调整部门", href: "devguide/user-and-permission/organizational-structure#adjusting-department" },
-    { text: "成员转为离职", href: "devguide/user-and-permission/organizational-structure#member-resignation" },
-    { text: "新建角色", href: "devguide/user-and-permission/organizational-structure#creating-role" },
-    { text: "新建角色组", href: "devguide/user-and-permission/organizational-structure#creating-role-group" },
-    { text: "管理角色成员", href: "devguide/user-and-permission/organizational-structure#managing-role-members" },
-    { text: "钉钉自建组织通讯录", href: "devguide/user-and-permission/organizational-structure#dingtalk-organization-contacts" },
-    { text: "同步钉钉组织架构", href: "devguide/user-and-permission/organizational-structure#syncing-dingtalk-organization-structure" },
-    { text: "导出成员", href: "devguide/user-and-permission/organizational-structure#exporting-members-dingtalk" },
-    { text: "企业微信自建组织通讯录", href: "devguide/user-and-permission/organizational-structure#wechat-work-organization-contacts" },
-    { text: "同步企业微信组织架构", href: "devguide/user-and-permission/organizational-structure#syncing-wechat-work-organization-structure" },
-    { text: "导出成员", href: "devguide/user-and-permission/organizational-structure#exporting-members-wechat-work" },
+    { text: "默认组织架构", href: "devguide/user-and-permission/organization#default-organization" },
+    { text: "组织架构创建", href: "devguide/user-and-permission/organization#organizational-structure-creation" },
+    { text: "常规组织", href: "devguide/user-and-permission/organization#generic-organization" },
+    { text: "允许新注册用户加入", href: "devguide/user-and-permission/organization#allowing-new-registered-users-to-join" },
+    { text: "钉钉自建组织", href: "devguide/user-and-permission/organization#dingtalk-custom-organization" },
+    { text: "企业微信自建组织", href: "devguide/user-and-permission/organization#wechat-work-custom-organization" },
+    { text: "Microsoft Teams", href: "devguide/user-and-permission/organization#microsoft-teams" },
+    { text: "通讯录管理入口", href: "devguide/user-and-permission/organization#contact-management-entry" },
+    { text: "设置组织负责人", href: "devguide/user-and-permission/organization#setting-organization-leader" },
+    { text: "部门成员搜索", href: "devguide/user-and-permission/organization#department-member-search" },
+    { text: "常规组织通讯录", href: "devguide/user-and-permission/organization#generic-organization-contacts" },
+    { text: "新建部门", href: "devguide/user-and-permission/organization#creating-department" },
+    { text: "添加成员", href: "devguide/user-and-permission/organization#adding-member" },
+    { text: "导入成员", href: "devguide/user-and-permission/organization#importing-members" },
+    { text: "导出成员", href: "devguide/user-and-permission/organization#exporting-members" },
+    { text: "调整部门", href: "devguide/user-and-permission/organization#adjusting-department" },
+    { text: "成员转为离职", href: "devguide/user-and-permission/organization#member-resignation" },
+    { text: "新建角色", href: "devguide/user-and-permission/organization#creating-role" },
+    { text: "新建角色组", href: "devguide/user-and-permission/organization#creating-role-group" },
+    { text: "管理角色成员", href: "devguide/user-and-permission/organization#managing-role-members" },
+    { text: "钉钉自建组织通讯录", href: "devguide/user-and-permission/organization#dingtalk-organization-contacts" },
+    { text: "同步钉钉组织架构", href: "devguide/user-and-permission/organization#syncing-dingtalk-organization-structure" },
+    { text: "导出成员", href: "devguide/user-and-permission/organization#exporting-members-dingtalk" },
+    { text: "企业微信自建组织通讯录", href: "devguide/user-and-permission/organization#wechat-work-organization-contacts" },
+    { text: "同步企业微信组织架构", href: "devguide/user-and-permission/organization#syncing-wechat-work-organization-structure" },
+    { text: "导出成员", href: "devguide/user-and-permission/organization#exporting-members-wechat-work" },
   ]} />
 </IndexCard>
 

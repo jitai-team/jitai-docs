@@ -89,7 +89,7 @@ Each Agent tool call can trigger two backend events: pre-call and post-call even
 
 ![Agent Tool Events](./img/agent/agent-tool-events.gif "Agent Tool Events")
 
-The `Pre-Call` and `Post-Call` event configuration options appear on the right side of each tool function. Hovering over these options reveals a configuration panel for enabling or disabling `Event Triggering` and `Payload Inclusion`. Pre-Call event parameters include the tool name and input parameters, while Post-Call event parameters include the tool name and return results. The tool name is always included, while input parameters and return results are controlled by the `Payload Inclusion` setting.
+The `Pre-Call` and `Post-Call` event configuration options appear on the right side of each tool function. Hovering over these options reveals a configuration panel for enabling or disabling `Event Triggering` and `Payload Inclusion`. Pre-Call event parameters include the tool name and input args, while Post-Call event parameters include the tool name and return results. The tool name is always included, while input args and return results are controlled by the `Payload Inclusion` setting.
 
 To handle these events, developers must create [Agent Tool Event](../business-logic-development/event-handling#agent-tool-call-events) instance elements that subscribe to the Agent's tool call events and execute the corresponding event logic.
 

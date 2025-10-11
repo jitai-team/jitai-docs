@@ -1179,12 +1179,15 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <IndexCard
   title="数据表模型"
   href="devguide/data-modeling/data-table-model"
-  description="应用数据的基础结构，学习如何创建和配置数据表，设计字段类型和约束。"
+  description="JitAi应用的数据基础层，学习如何创建和配置数据表，设计字段类型和约束。"
 >
   <LinkGrid links={[
-    { text: "创建数据表模型", href: "devguide/data-modeling/data-table-model" },
+    { text: "数据表创建入口", href: "devguide/data-modeling/data-table-model#data-table-create-entry" },
     { text: "设计表字段与数据类型", href: "devguide/data-modeling/data-table-model#design-table-fields-and-data-types" },
-    { text: "配置表索引优化查询", href: "devguide/data-modeling/data-table-model#configure-table-index-optimization" }
+    { text: "配置表索引优化查询", href: "devguide/data-modeling/data-table-model#configure-table-index-optimization" },
+    { text: "多列联合唯一约束", href: "devguide/data-modeling/data-table-model#multi-column-composite-unique" },
+    { text: "组合索引", href: "devguide/data-modeling/data-table-model#composite-index" },
+    { text: "源码模式", href: "devguide/data-modeling/data-table-model#source-code-mode" }
   ]} />
 </IndexCard>
 
@@ -1194,7 +1197,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="从现有数据库表快速创建数据表元素，支持快速模型生成。"
 >
   <LinkGrid links={[
-    { text: "从已有数据表中创建数据表", href: "devguide/data-modeling/create-data-table-from-existing-tables" },
+    { text: "从已有数据表中创建数据表", href: "devguide/data-modeling/create-data-table-from-existing-tables" }
   ]} />
 </IndexCard>
 
@@ -1204,7 +1207,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="利用内置数据管理工具进行高效的数据操作和管理。"
 >
   <LinkGrid links={[
-    { text: "内置数据管理工具", href: "devguide/data-modeling/built-in-data-management-tools" },
+    { text: "内置数据管理工具", href: "devguide/data-modeling/built-in-data-management-tools" }
   ]} />
 </IndexCard>
 
@@ -1214,7 +1217,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="设计和实现自定义数据模型函数，扩展数据处理能力。"
 >
   <LinkGrid links={[
-    { text: "创建数据模型函数", href: "devguide/data-modeling/create-data-model-functions" },
+    { text: "创建数据模型函数", href: "devguide/data-modeling/create-data-model-functions" }
   ]} />
 </IndexCard>
 
@@ -1230,7 +1233,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "分组聚合统计", href: "devguide/data-modeling/aggregate-table-model#group-aggregate-statistics" },
     { text: "扩展自定义计算字段", href: "devguide/data-modeling/aggregate-table-model#extend-custom-calculation-fields" },
     { text: "先聚合后筛选", href: "devguide/data-modeling/aggregate-table-model#aggregate-then-filter" },
-    { text: "先筛选后聚合（推荐）", href: "devguide/data-modeling/aggregate-table-model#aggregate-then-filter" }
+    { text: "先筛选后聚合（推荐）", href: "devguide/data-modeling/aggregate-table-model#filter-first-then-aggregate" }
   ]} />
 </IndexCard>
 
@@ -1242,15 +1245,15 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   <LinkGrid columns={2} links={[
     { text: "扩展表创建", href: "devguide/data-modeling/extended-table-model" },
     { text: "连接设计", href: "devguide/data-modeling/extended-table-model#connection-design" },
-    { text: "设置基准表筛选条件", href: "devguide/data-modeling/extended-table-model#set-baseline-table-filter-conditions" },
-    { text: "添加数据表", href: "devguide/data-modeling/extended-table-model#add-data-table" },
-    { text: "实时编辑统计表配置", href: "devguide/data-modeling/extended-table-model#real-time-edit-statistics-table-configuration" },
+    { text: "设置基准表筛选条件", href: "devguide/data-modeling/extended-table-model#setting-baseline-table-filter-conditions" },
+    { text: "添加数据表", href: "devguide/data-modeling/extended-table-model#adding-data-tables" },
+    { text: "实时编辑统计表配置", href: "devguide/data-modeling/extended-table-model#real-time-editing-statistics-table-configuration" },
     { text: "字段统计", href: "devguide/data-modeling/extended-table-model#field-statistics" },
-    { text: "添加公式字段", href: "devguide/data-modeling/extended-table-model#add-formula-field" },
-    { text: "修改字段别名", href: "devguide/data-modeling/extended-table-model#modify-field-alias" },
+    { text: "添加公式字段", href: "devguide/data-modeling/extended-table-model#adding-formula-fields" },
+    { text: "修改字段别名", href: "devguide/data-modeling/extended-table-model#modifying-field-aliases" },
     { text: "函数设计", href: "devguide/data-modeling/extended-table-model#function-design" },
-    { text: "新建函数", href: "devguide/data-modeling/extended-table-model#create-function" },
-    { text: "源代码查看编辑", href: "devguide/data-modeling/extended-table-model#source-code-view-edit" }
+    { text: "新建函数", href: "devguide/data-modeling/extended-table-model#creating-functions" },
+    { text: "源代码查看编辑", href: "devguide/data-modeling/extended-table-model#source-code-viewing-and-editing" }
   ]} />
 </IndexCard>
 
@@ -1267,12 +1270,12 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="数据对象模型"
+  title="创建数据对象模型"
   href="devguide/data-modeling/data-object-model"
-  description="专为全代码开发模式设计的数据结构，类似于DTO，用于业务逻辑中的数据结构化表达与传递。"
+  description="专为全代码开发环境设计的专业数据结构，类似于DTO，用于业务逻辑中的结构化数据表达和传递。"
 >
   <LinkGrid links={[
-    { text: "数据对象模型创建", href: "devguide/data-modeling/data-object-model" },
+    { text: "创建数据对象模型", href: "devguide/data-modeling/data-object-model#creating-data-object-model" },
     { text: "数据对象模型使用", href: "devguide/data-modeling/data-object-model#using-data-object-model" },
     { text: "自定义字段", href: "devguide/data-modeling/data-object-model#customizing-fields" },
     { text: "模型函数重写", href: "devguide/data-modeling/data-object-model#overriding-model-functions" },
@@ -1348,9 +1351,9 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid links={[
     { text: "默认组织架构", href: "devguide/user-and-permission/organization#default-organization" },
-    { text: "组织架构创建", href: "devguide/user-and-permission/organization#creating-organizations" },
+    { text: "组织架构创建", href: "devguide/user-and-permission/organization#organizational-structure-creation" },
     { text: "常规组织", href: "devguide/user-and-permission/organization#generic-organization" },
-    { text: "允许新注册用户加入", href: "devguide/user-and-permission/organization#allowing-new-users-to-join" },
+    { text: "允许新注册用户加入", href: "devguide/user-and-permission/organization#allowing-new-registered-users-to-join" },
     { text: "钉钉自建组织", href: "devguide/user-and-permission/organization#dingtalk-custom-organization" },
     { text: "企业微信自建组织", href: "devguide/user-and-permission/organization#wechat-work-custom-organization" },
     { text: "Microsoft Teams", href: "devguide/user-and-permission/organization#microsoft-teams" },
@@ -1379,22 +1382,22 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <IndexCard
   title="登录认证"
   href="devguide/user-and-permission/login-authentication"
-  description="用户身份验证和登录方式配置，支持多种认证模式。"
+  description="用户身份验证和登录方式配置，支持多种认证模式，包括第三方OAuth和企业集成。"
 >
   <LinkGrid links={[
-    { text: "创建登录方式", href: "devguide/user-and-permission/login-authentication#creating-login-method" },
+    { text: "创建登录认证", href: "devguide/user-and-permission/login-authentication#creating-login-method" },
     { text: "账号密码登录", href: "devguide/user-and-permission/login-authentication#account-password-login" },
     { text: "手机号登录", href: "devguide/user-and-permission/login-authentication#mobile-phone-login" },
     { text: "阿里云短信", href: "devguide/user-and-permission/login-authentication#aliyun-sms" },
-    { text: "AWS SNS短信", href: "devguide/user-and-permission/login-authentication#aws-sns" },
-    { text: "Twilio短信", href: "devguide/user-and-permission/login-authentication#twilio" },
-    { text: "钉钉自建扫码登录", href: "devguide/user-and-permission/login-authentication#dingtalk-custom-qr-login" },
-    { text: "企业微信自建扫码登录", href: "devguide/user-and-permission/login-authentication#wechat-work-custom-qr-login" },
+    { text: "Twilio", href: "devguide/user-and-permission/login-authentication#twilio" },
+    { text: "AWS SNS", href: "devguide/user-and-permission/login-authentication#aws-sns" },
+    { text: "钉钉自建二维码登录", href: "devguide/user-and-permission/login-authentication#dingtalk-custom-qr-login" },
+    { text: "企业微信自建二维码登录", href: "devguide/user-and-permission/login-authentication#wechat-work-custom-qr-login" },
     { text: "微信登录", href: "devguide/user-and-permission/login-authentication#wechat-login" },
     { text: "微信公众号登录", href: "devguide/user-and-permission/login-authentication#wechat-official-account-login" },
     { text: "微信小程序登录", href: "devguide/user-and-permission/login-authentication#wechat-mini-program-login" },
-    { text: "Github登录", href: "devguide/user-and-permission/login-authentication#github-login" },
-    { text: "Google登录", href: "devguide/user-and-permission/login-authentication#google-login" },
+    { text: "GitHub登录", href: "devguide/user-and-permission/login-authentication#github-login" },
+    { text: "Google登录", href: "devguide/user-and-permission/login-authentication#google-login" }
   ]} />
 </IndexCard>
 
@@ -1687,7 +1690,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "阿里云OSS", href: "devguide/file-processing/file-storage#aliyun-oss" },
     { text: "移动云EOS", href: "devguide/file-processing/file-storage#china-mobile-cloud-eos" },
     { text: "MinIO", href: "devguide/file-processing/file-storage#minio" },
-    { text: "七牛云", href: "devguide/file-processing/file-storage#aliyun-oss" },
+    { text: "七牛云", href: "devguide/file-processing/file-storage#qiniu-cloud" },
     { text: "AWS S3", href: "devguide/file-processing/file-storage#aws-s3" },
     { text: "Cloudflare R2", href: "devguide/file-processing/file-storage#cloudflare-r2" },
     { text: "用环境变量防止配置信息泄露", href: "devguide/file-processing/file-storage#prevent-config-info-leak-with-env-variables" },
@@ -1723,7 +1726,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="devguide/file-processing/generating-and-printing-files-using-file-templates"
   description="学习如何使用文件模板程序化生成和打印文档，包括动态内容填充和输出格式化。"
 >
-  <LinkGrid columns={2} links={[
+  <LinkGrid links={[
     { text: "打印Word模板", href: "devguide/file-processing/generating-and-printing-files-using-file-templates#print-word-template" },
     { text: "打印Excel模板", href: "devguide/file-processing/generating-and-printing-files-using-file-templates#print-excel-template" }
   ]} />

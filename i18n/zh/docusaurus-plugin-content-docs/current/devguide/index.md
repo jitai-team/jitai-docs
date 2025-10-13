@@ -105,7 +105,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "默认元素", href: "devguide/development-tool-and-publish-service/visual-development-tool#default-elements" },
     { text: "环境变量", href: "devguide/development-tool-and-publish-service/visual-development-tool#environment-variables" },
     { text: "门户切换", href: "devguide/development-tool-and-publish-service/visual-development-tool#portal-switching" },
-    { text: "个人中心", href: "devguide/development-tool-and-publish-service/visual-development-tool#personal-center" },
+    { text: "个人中心", href: "devguide/development-tool-and-publish-service/visual-development-tool#profile" },
     { text: "语言切换", href: "devguide/development-tool-and-publish-service/visual-development-tool#language-switching" },
     { text: "导航标签", href: "devguide/development-tool-and-publish-service/visual-development-tool#navigation-tabs" }
   ]} />
@@ -279,7 +279,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "设置在门户列表中的顺序", href: "devguide/shell-and-page/portal-navigation-design#portal-ordering" },
     { text: "启用或关闭常用功能入口", href: "devguide/shell-and-page/portal-navigation-design#managing-common-function-entries" },
     { text: "发起申请/待办/消息中心入口", href: "devguide/shell-and-page/portal-navigation-design#application-and-workflow-entries" },
-    { text: "个人中心入口", href: "devguide/shell-and-page/portal-navigation-design#personal-center-entry" },
+    { text: "个人中心入口", href: "devguide/shell-and-page/portal-navigation-design#profile-entry" },
     { text: "在门户中集成AI助理", href: "devguide/shell-and-page/portal-navigation-design#integrating-ai-assistants" }
   ]} />
 </IndexCard>
@@ -720,7 +720,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="模型筛选器"
-  href="devguide/using-functional-components-in-pages/filter-components"
+  href="devguide/using-functional-components-in-pages/filter-components#model-filters"
   description="基于数据模型的高级筛选组件，支持简单、复杂和自由筛选模式。"
 >
   <LinkGrid links={[
@@ -734,7 +734,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="通用筛选器"
-  href="devguide/using-functional-components-in-pages/filter-components"
+  href="devguide/using-functional-components-in-pages/filter-components#universal-filters"
   description="灵活的通用筛选组件，支持自定义字段配置和多种触发模式。"
 >
   <LinkGrid columns={2} links={[
@@ -743,7 +743,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "显示 查询/重置 按钮", href: "devguide/using-functional-components-in-pages/filter-components#show-query-reset-buttons" },
     { text: "条件变更后触发查询", href: "devguide/using-functional-components-in-pages/filter-components#condition-change-trigger-query" },
     { text: "首次加载进行筛选", href: "devguide/using-functional-components-in-pages/filter-components#first-load-filter" },
-    { text: "筛选器的使用", href: "devguide/using-functional-components-in-pages/filter-components#filter-usage" }
+    { text: "筛选器的使用", href: "devguide/using-functional-components-in-pages/filter-components#universal-filter-usage" }
   ]} />
 </IndexCard>
 
@@ -835,7 +835,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "发起申请的参数配置", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-1" },
     { text: "发起申请的处理后/刷新后事件", href: "devguide/using-functional-components-in-pages/approval-components#post-processing-refresh-event" },
     { text: "审批处理组件创建", href: "devguide/using-functional-components-in-pages/approval-components#create-approval-workflow-component" },
-    { text: "审批处理的参数配置", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-1" },
+    { text: "审批处理的参数配置", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-2" },
     { text: "是否保留历史审批记录", href: "devguide/using-functional-components-in-pages/approval-components#keep-historical-approval-records" },
     { text: "审批处理的处理后/刷新后事件", href: "devguide/using-functional-components-in-pages/approval-components#post-processing-refresh-event-1" }
   ]} />

@@ -109,17 +109,19 @@ Various nodes in AI Assistant can trigger some events during runtime. We can sub
 ### Trigger Timings {#ai-assistant-trigger-timings}
 - **Before Assistant Run**: Triggered before the assistant starts running, with user input as the parameter.
 - **After Assistant Run**: Triggered after the assistant completes running, with no parameters.
-- **Node Arrival**: Triggered when AI Agent nodes, function call nodes, conditional branch nodes, and multi-task execution nodes are reached. The prerequisite is that the node needs to enable backend event triggering. For enabling method, see: <a href="../ai-assistant/create-ai-assistant#node-runtime-events" target="_blank">Node Runtime Events</a>. The parameter carried is the `Node Arrival Event Output Parameter` configured on the node.
-- **After Node Execution**: Event type is: afterNodeRun; triggered after AI Agent nodes, function call nodes, conditional branch nodes, and multi-task execution nodes complete execution. The prerequisite is that the node needs to enable backend event triggering. The parameter carried is the `After Node Execution Output Parameter` configured on the node.
+- **Node Arrival**: Triggered when AI Agent nodes, function call nodes, conditional branch nodes, and multi-task execution nodes are reached. The prerequisite is that the node needs to enable backend event triggering. For enabling method, see: [Node execution events](../ai-assistant/ai-assistant-event#backend-node-events). The parameter carried is the `Node arrival event output parameters` configured on the node.
+- **After Node Execution**: Event type is: afterNodeRun; triggered after AI Agent nodes, function call nodes, conditional branch nodes, and multi-task execution nodes complete execution. The prerequisite is that the node needs to enable backend event triggering. The parameter carried is the `Node post-execution event output parameters` configured on the node.
 
 ### Subscribing to Events {#subscribing-to-ai-assistant-events}
 You need to create an AI Assistant event element to subscribe.
 
 ![Create AI Assistant Event Subscription](./img/ai/assistant-event-create.png)
 
-In the IDE, click `+` -> `Event` -> `AI Assistant Event`, open the event configuration window, and fill in the event configuration information.
+In the IDE, click <span style={{ background:"#3d65fd", display: "inline-block", borderRadius: "8px", textAlign: "center", lineHeight: "100%", color: "#ffffff", fontSize: "24px", padding: "0px 10px 5px" }}>+</span> -> **More** -> **Events** -> **AI Assistant Event**, open the event configuration dialog, and fill in the event configuration information.
 
 ![AI Assistant Event Configuration](./img/ai/assistant-event-config.png)
+
+Select the target [AI Assistant](../ai-assistant) and [AI Assistant Events](../ai-assistant/ai-assistant-event), and configure the corresponding excute function.
 
 ## Agent Tool Call Events {#agent-tool-call-events}
 When AI Agent calls tools, we can subscribe to this event to insert business processing logic during Agent execution. The prerequisite is that the tool needs to enable <a href="../ai-agent#ai-agent-tool-configuration">trigger events</a>.
@@ -137,7 +139,7 @@ You need to create an Agent tool event element to subscribe.
 
 ![Create Agent Tool Event Subscription](./img/ai/agent-event-create.png)
 
-In the IDE, click `+` -> `Event` -> `Agent Tool Event`, open the event configuration window, and fill in the event configuration information.
+In the IDE, click <span style={{ background:"#3d65fd", display: "inline-block", borderRadius: "8px", textAlign: "center", lineHeight: "100%", color: "#ffffff", fontSize: "24px", padding: "0px 10px 5px" }}>+</span> -> **More** -> **Events** -> **AI Assistant Event**, open the event configuration dialog, and fill in the event configuration information.
 
 ![Agent Tool Event Configuration](./img/ai/agent-event-config.png)
 

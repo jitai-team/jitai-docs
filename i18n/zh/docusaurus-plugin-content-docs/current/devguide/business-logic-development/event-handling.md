@@ -121,6 +121,8 @@ AI助理的各节点运行时可触发一些事件，我们可以通过订阅该
 
 ![AI助理事件配置](./img/ai/assistant-event-config.png)
 
+选择要订阅的[AI助理](../ai-assistant) -> [事件触发事件](../ai-assistant/ai-assistant-event)，配置一个响应函数即可。
+
 ## Agent工具调用事件 {#agent-tool-call-events}
 AI Agent在调用工具时，我们可以通过订阅该事件在Agent运行过程中插入一些业务处理逻辑。前提是工具需要开启<a href="../ai-agent#ai-agent-tool-configuration">触发事件</a>。
 

@@ -14,14 +14,13 @@ slug: using-ai-elements-in-pages
 In statements, select `AI Assistant` → the assistant you want to call → `Run`, and pass in the [assistant's input args](../ai-assistant/ai-assistant-input-output#input-args).
 
 ![AI Assistant - Call](./img/call-assistant-in-page.png)
-![AI Assistant - Call with Parameters](./img/call-assistant-in-page-input.png)
 
 ### Full code calling {#full-code-calling}
 You can also call it through full code. The calling syntax in pages is as follows:
 
 ```javascript
 // this.app.{AI Assistant Element ID}.run(param1, param2)
-this.app.aiassistants.ClientManagementAssistant.run("Query Customer", {"paramA": "Zhang San"});
+this.app.AIDemo.aiassistants.ClientManagementAssistant.run("Add on custmer", {"paramA": "Tony"});
 ```
 
 ![AI Assistant - Full Code Call](./img/call-assistant-in-page-code.png)
@@ -33,7 +32,6 @@ this.app.aiassistants.ClientManagementAssistant.run("Query Customer", {"paramA":
 
 In statements, select `Agent` → the Agent you want to call → `Run`, and pass in the [AI Agent's input args](../ai-agent/agent-input-output#configuring-input-variables).
 
-![AI Agent - Call](./img/call-agent-in-page.png)
 ![AI Agent - Call with Parameters](./img/call-agent-in-page-input.png)
 
 ### Full code calling {#full-code-calling-agent}
@@ -41,7 +39,7 @@ You can also call it through full code. The calling syntax in pages is as follow
 
 ```javascript
 // this.app.{AI Agent Element ID}.run(param1, param2)
-this.app.aiagents.ClientManagementAgent.run("Query Customer", "Zhang San");
+this.app.AIDemo.aiagents.ClientManagementagent.run("Add one  customer", "Tony");
 ```
 
 ![AI Agent - Full Code Call](./img/call-agent-in-page-code.png)
@@ -64,7 +62,7 @@ You can also call it through full code. The calling syntax in pages is as follow
 
 ```javascript
 // this.app.{Large Language Model Element ID}.runLlm(param)
-this.app.llms.alibur.runLlm({
+this.app.AIDemo.llms.alibur.runLlm({
     "dataType": "Ltext",
     "promptList": [{  // Prompt
         "role": "system",
@@ -72,13 +70,13 @@ this.app.llms.alibur.runLlm({
         "id": "config-9o9ztc2"
     }],
     "llmConfig": { // Large Language Model Configuration
-        "model": "qvq-max-latest"
+        "model": "qwen-max-latest"
     },
-    "outputArgs": [{ // Output Format
+    "outputArgs": [{
         "title": "Customer Details",
-        "name": "clientDetails",
-        "dataType": "Stext",
-        "isAllowScan": false
+        "name": "customerDetails",
+        "dataType": "RowData",
+        "generic": "AIDemo.models.CustomerModel"
     }]
 });
 ```

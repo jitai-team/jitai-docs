@@ -1723,8 +1723,9 @@ Easily handle various file requirements in applications. Support file upload and
   description="Learn how to use file templates to generate and print documents programmatically, including dynamic content population and output formatting."
 >
   <LinkGrid links={[
-    { text: "Print Word templates", href: "devguide/file-processing/generating-and-printing-files-using-file-templates#print-word-template" },
-    { text: "Print Excel templates", href: "devguide/file-processing/generating-and-printing-files-using-file-templates#print-excel-template" }
+    { text: "Printing Word templates", href: "devguide/file-processing/generating-and-printing-files-using-file-templates#print-word-template" },
+    { text: "Printing Excel templates", href: "devguide/file-processing/generating-and-printing-files-using-file-templates#print-excel-template" },
+    { text: "Generating attachments", href: "devguide/file-processing/generating-and-printing-files-using-file-templates#generate-attachments" }
   ]} />
 </IndexCard>
 

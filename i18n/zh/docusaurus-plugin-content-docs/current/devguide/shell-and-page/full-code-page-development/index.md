@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 本文档介绍全代码页面的创建流程。如需了解具体的开发技术和使用方法，请参考1 [页面定制](../../frontend-ui-customization/page-customization.md)。
 :::
 
-## 创建 React 全代码页面 {#create-react-full-code-page}
+## 创建 React 全代码页面 {#creating-react-full-code-pages}
 平台使用React构建，React全代码页面能最大程度与平台融合。
 
 ![React全代码页面创建](./imgs/create.png)
@@ -31,7 +31,7 @@ import TabItem from '@theme/TabItem';
 
 默认生成两个文件：一个 `index.tsx`，一个 `e.json`。`e.json` 是页面元素的定义；重点关注 `index.tsx`。`index.tsx` 会导出两个核心模块：Render 函数（当前全代码页面的主渲染函数）和 PageCls（一个页面类，继承自 `BasePage`）。PageCls 会在页面渲染前由系统进行实例化，并传入到 Render 的 props 中。
 
-## 创建Vue全代码页面 {#vue-full-code-page}
+## 创建Vue全代码页面 {#creating-vue-full-code-pages}
 对于不熟悉React的开发者，平台也提供了Vue全代码页面。
 
 ![Vue全代码页面创建](./imgs/vue-create.png)

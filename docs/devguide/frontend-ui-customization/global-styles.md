@@ -4,44 +4,44 @@ slug: global-styles
 ---
 
 # Global Styles
-In traditional application development, styles for different pages and components are often defined independently, leading to inconsistent styling within the same application. When adjustments to brand colors or overall styling are needed, developers must modify style code in multiple locations, resulting in extremely high maintenance costs. The `Global Styles` feature provides a centralized style configuration center. Through a unified configuration panel, developers can define the overall visual style of their application. These configurations are applied to all Ant Design-based UI components, ensuring visual consistency throughout the entire application.
+In traditional application development, page- and component-level styles are often defined independently, which easily leads to inconsistency within the same application. When brand colors or global styles need to change, developers must update styles in many places, driving up maintenance costs. The `Global Styles` feature provides a centralized configuration center. Through a unified panel, you can define the application's overall visual theme. These settings apply to all Ant Design–based UI components, ensuring visual consistency across the entire application.
 
-## Creating Global Style Element {#create-global-style-element}
+## Creating a global style element {#create-global-style-element}
 ![Create](./img/1/create.png)
 
-In the element directory tree, click the `+` button to the right of the search box, select `More` - `Global Styles` - `Standard Styles`, then a popup for creating a global style element will appear.
+In the element tree, click the `+` button to the right of the search box, choose `More` → `Global Styles` → `Standard Styles`. A dialog for creating a global style element will appear.
 
 ![Popup](./img/1/popup.png)
 
-In the creation popup, you only need to fill in the `Name`, then click `OK` to complete the creation.
+In the creation dialog, enter a `Name` and click `OK` to create.
 
-## Modifying Global Style {#modify-global-style}
-After creation, it will appear in the left element tree.
+## Modifying the global style {#modify-global-style}
+After creation, the element appears in the left-side tree.
 
 ![Editor](./img/1/editor.png)
 
-The editor is divided into a left editing area and a right reference area. The left editing format is `JSON`, and the right side contains common style variable descriptions. Developers can copy styles from the reference area and paste them into the left editing area for modification. Taking theme color modification as an example, as shown in the figure:
+The editor consists of a left editing pane and a right reference pane. The left pane uses `JSON`; the right pane lists common style variables. You can copy variables from the reference pane, paste them into the left pane, and modify them. For example, to change the theme color:
 
 ![Modify](./img/1/modify.png)
 
-Copy the theme color variable `colorPrimary` from the right side to the left editing area, modify the color value, and finally click the `Save` button to save. At this point, the theme color cannot be applied yet and needs to be set as shown below:
+Copy the theme color variable `colorPrimary` from the right pane to the left editor, change its value, and click `Save`. The theme color is not applied yet; set it as shown below:
 
 ![Usage](./img/1/usage.png)
 
-Click the `Settings` tab, then click `Application Default Elements` to enter the default element editor. Click the `Default Global Style` dropdown, select the newly created `Global Style Element`, click the `Save` button, and refresh the page to see that the theme color has been applied.
+Open the `Settings` tab and click `Application Default Elements` to enter the default element editor. From `Default Global Style`, select the newly created global style element, click `Save`, and refresh the page to apply the theme color.
 
-## More Style Variables {#more-style-variables}
-For style variables, please refer to [Style Variables](https://ant.design/docs/react/customize-theme#seedtoken).
+## More style variables {#more-style-variables}
+For available variables, see [Style variables](https://ant.design/docs/react/customize-theme#seedtoken).
 
-## Debugging Theme {#debug-theme}
-Developers can use the official Ant Design [Theme Editor](https://ant.design/theme-editor) to generate custom themes.
+## Debugging the theme {#debug-theme}
+Use the official Ant Design [Theme Editor](https://ant.design/theme-editor) to generate custom themes.
 
-After adjusting the styles in the theme editor, click `Theme Configuration`.
+After adjusting styles in the theme editor, click `Theme Configuration`.
 
 ![Style Editor](./img/1/style-editor.png)
 
-Copy the configuration from the theme configuration popup.
+Copy the configuration from the theme configuration dialog.
 
 ![Editor Configuration](./img/1/editor-configuration.png)
 
-Paste the configuration into the global style editing area.
+Paste the configuration into the global style editor.

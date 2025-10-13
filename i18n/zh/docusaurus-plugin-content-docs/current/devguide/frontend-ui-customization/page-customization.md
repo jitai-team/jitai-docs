@@ -536,7 +536,7 @@ export { Render, PageCls };
 
 ## 创建Vue全代码页面 {#vue-full-code-page}
 
-### 基本结构
+### 基本结构 {#basic-structure}
 Vue全代码页面由四个核心文件组成：
 
 <Tabs>
@@ -667,7 +667,7 @@ export { PageCls };
 
 **e.json** - 元素定义文件，type 为 "pages.VueType"，指定 Vue 页面类型。
 
-### 使用 Element Plus 组件
+### 使用 Element Plus 组件 {#using-element-plus-components}
 Vue 全代码页面内置了 Element Plus UI 组件库，可以直接使用所有 Element Plus 组件：
 
 ```html
@@ -678,7 +678,7 @@ Vue 全代码页面内置了 Element Plus UI 组件库，可以直接使用所�
 </template>
 ```
 
-### 与 page 实例交互
+### 与 page 实例交互 {#interacting-with-page-instance}
 Vue 组件通过 props 接收 page 实例，可以调用 page 上的方法和访问属性：
 
 ```typescript
@@ -728,10 +728,10 @@ const app = getRuntimeApp();
 ```
 :::
 
-## 服务函数的使用
+## 服务函数的使用 {#using-service-functions}
 参考[数据模型的增删改查](#crud-operations-for-data-models)
 
-### 全代码调用服务函数
+### 全代码调用服务函数 {#full-code-calling-service-functions}
 参考[全代码使用模型函数](#full-code-using-model-functions)
 
 ## 使用第三方包 {#use-third-party-packages}
@@ -741,9 +741,9 @@ const app = getRuntimeApp();
 
 ![rxjs](./img/rxjs.png)
 
-在 `package.json` 的 `dependencies` 字段添加 `rxjs` 依赖包，点击“保存”按钮，即可安装依赖。
+在 `package.json` 的 `dependencies` 字段添加 `rxjs` 依赖包，点击"保存"按钮，即可安装依赖。
 
-### 使用网络资源
+### 使用网络资源 {#using-network-resources}
 系统的打包器集成了从网络导包的能力，但要求网络包是 ES Module 格式，否则会报错。推荐使用 `https://esm.sh`。如果同样要使用 rxjs，可以在页面中直接引入 `import { Observable } from 'https://esm.sh/rxjs'`；
 
 ![网络资源](./img/network-resources.png)
@@ -765,7 +765,7 @@ esm.sh 还提供了一些优化参数，比如使用 `?bundle` 可以将多个 E
 开发环境可开启 `jit.config.ts` 的 `sourcemap` 选项；生产环境建议设置为 `false`，以显著减少产物体积。
 :::
 
-### 引入打包插件
+### 引入打包插件 {#introducing-build-plugins}
 以引入 Less、SCSS 解析插件为例，这两个插件已经集成在平台的打包器 `jit-builder` 中。可按照[使用第三方包](#use-third-party-packages)的方式在 package.json 中引入 `jit-builder`。
 
 ![less支持](./img/less-support.png)
@@ -780,7 +780,7 @@ esm.sh 还提供了一些优化参数，比如使用 `?bundle` 可以将多个 E
 上述方法适用于所有 esbuild 插件。如何找到对应的插件，参考 [esbuild 插件](https://esbuild.github.io/plugins/)
 :::
 
-## 系统内置包一览表
+## 系统内置包一览表 {#system-built-in-package-overview}
 平台预置了常用的第三方库，可以直接在代码中导入使用，无需在 package.json 中声明：
 
 | 包名 | 版本 | 全局变量名 | 说明 |
@@ -823,7 +823,7 @@ esm.sh 还提供了一些优化参数，比如使用 `?bundle` 可以将多个 E
 这些库无需安装即可直接导入使用，例如：`import { useState } from 'react'`、`import { Button } from 'antd'` 等。
 :::
 
-## 默认loader映射
+## 默认loader映射 {#default-loader-mapping}
 平台基于 esbuild 构建，以下是系统默认的文件类型处理器配置：
 
 | 文件类型 | Loader | 说明 |
@@ -841,9 +841,10 @@ esm.sh 还提供了一些优化参数，比如使用 `?bundle` 可以将多个 E
 如需自定义其他文件类型的处理方式，可在 `jit.config.ts` 的 `esBuildOptions.loader` 中进行配置。
 :::
 
-## 相关阅读
-### 创建全代码页面
+## 相关阅读 {#related-reading}
+
+### 创建全代码页面 {#creating-full-code-pages}
 了解如何创建React和Vue全代码页面，参考：[创建全代码页面](../shell-and-page/full-code-page-development)
 
-### 全代码组件
+### 全代码组件 {#full-code-components}
 了解在页面中使用全代码组件开发，参考：[全代码组件](../fullcode-ui-components-in-pages/ui-component-interface-specifications)

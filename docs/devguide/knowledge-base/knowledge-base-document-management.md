@@ -5,68 +5,68 @@ slug: knowledge-base-document-management
 
 # Knowledge Base Document Management
 
-Add and maintain AI knowledge base documents on the "Document Management" page:
+Add and maintain AI knowledge base documents through the "Document Management" page:
 
 ![Add Document](./img/add-document-alt.png)
 
-Click "+ Add File" to open the add file slide panel.
+Click "+ Add File" to open the file upload panel.
 
 ![Document Upload](./img/document-upload.png)
 
-In the "Select Data Source" step-by-step guide page, click the dashed box to select documents or drag documents into the dashed box. After the upload is complete, click "Next".
+In the "Select Data Source" step, click the dashed box to select documents or drag files directly into the box. Once the upload completes, click "Next".
 
 :::tip
-Document formats support PDF, DOCX, TXT, MD, with individual document size not exceeding 10M.
+Supported document formats include PDF, DOCX, TXT, and MD, with a maximum file size of 10MB per document.
 :::
 
 ![Segment Cleaning](./img/segment-cleaning.png)
 
-After entering the "Segmentation and Cleaning" step, configure "Segment Identifier", "Maximum Segment Length", "Segment Overlap Length", and "Cleaning Settings" in sequence according to the actual situation of the uploaded documents. After configuration is complete, click "Next". For parameter descriptions, refer to [Vectorization Configuration Description](#vectorization-configuration-description).
+In the "Segmentation and Cleaning" step, configure the "Segment Identifier", "Maximum Segment Length", "Segment Overlap Length", and "Cleaning Settings" based on your document characteristics. Once configured, click "Next". For detailed parameter descriptions, see [Vectorization Configuration](#vectorization-configuration).
 
 ![Vectorization](./img/vectorization.png)
 
-After entering the "Process and Complete" step, the system will process each document in the background. You can wait for all documents to complete vectorization, or click "Return to Document List" to directly close the slide panel (this does not affect the background processing flow).
+In the "Process and Complete" step, the system will process each document in the background. You can either wait for all documents to finish vectorization or click "Return to Document List" to close the panel (background processing will continue uninterrupted).
 
 ![File List](./img/file-list.png)
 
-Click the refresh button in the document list to view the current document vectorization status.
+Click the refresh button in the document list to view the current vectorization status of each document.
 
 
-## AI Knowledge Base Settings {#ai-knowledge-base-settings}
-Configuration items in "Knowledge Base Settings" will affect search result accuracy and the size of final returned content.
+## Knowledge base settings {#knowledge-base-settings}
+Configuration settings in "Knowledge Base Settings" directly impact search result accuracy and the volume of returned content.
 
 ![Knowledge Base Settings](./img/knowledge-base-settings.png)
 
-Settings for "Vector Database" and "Vector Model" are not allowed to be modified. Developers can dynamically adjust parameters such as "Reranking Model", "TopK", "TopN", "Vector Similarity Threshold", and "Reranking Score Threshold" based on feedback from [Query Testing](#query-testing).
+The "Vector Database" and "Embedding Model" settings cannot be modified after creation. However, you can dynamically adjust parameters such as "Reranking Model", "TopK", "TopN", "Vector Similarity Threshold", and "Reranking Score Threshold" based on feedback from [Query Testing](#query-testing).
 
 :::tip
-To improve accuracy, you need to first understand [How Settings Participate in Query Flow](./full-text-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow). Additionally, after modifying configuration items, you need to click save for them to take effect in [Query Testing](#query-testing).
+To improve accuracy, first familiarize yourself with [How Settings Participate in Query Flow](./keyword-and-semantic-search#how-knowledge-base-settings-participate-in-query-flow). Note that configuration changes must be saved before they take effect in [Query Testing](#query-testing).
 :::
 
-## Query Testing {#query-testing}
-To facilitate debugging the effectiveness of AI knowledge bases, a query testing function is provided.
+## Query testing {#query-testing}
+A query testing feature is provided to help you debug and optimize AI knowledge base performance.
 
 ![Query Testing](./img/query-test.png)
 
-After entering a question and clicking "Test Query", the system will understand the query semantics and return results, while displaying the number of documents that meet the conditions, vector similarity scores, and reranking scores for each document. Based on this, you can continuously adjust [Knowledge Base Settings](#ai-knowledge-base-settings) to improve retrieval effectiveness.
+After entering a question and clicking "Test Query", the system interprets the query semantics and returns matching results. It also displays the number of qualifying documents along with their vector similarity scores and reranking scores. Use these insights to continuously adjust [Knowledge Base Settings](#knowledge-base-settings) and improve retrieval performance.
 
-## Vectorization Configuration Description {#vectorization-configuration-description}
-- Segment Identifier: Separators used to split documents, multiple can be selected. The system segments according to all selected separators, defaulting to paragraph separator (`\\n\\n`).
-- Maximum Segment Length: Maximum number of characters per text chunk, recommended 500–2000. Smaller chunks are more precise but may lose context; larger chunks retain more context but may be less precise.
-- Segment Overlap Length: Number of overlapping characters between adjacent text chunks, recommended to be 10%–20% of chunk size.
-- Enable Segment Cleaning: Cleaning functions to improve text quality and retrieval precision, such as whitespace cleanup, full-width to half-width conversion, line break repair, etc.
+## Vectorization configuration {#vectorization-configuration}
+- **Segment Identifier**: Delimiters used to split documents. Multiple delimiters can be selected. The system segments based on all selected delimiters, defaulting to paragraph breaks (`\\n\\n`).
+- **Maximum Segment Length**: Maximum character count per text chunk, recommended range 500–2000. Smaller chunks provide greater precision but may lose context; larger chunks retain more context but may sacrifice precision.
+- **Segment Overlap Length**: Number of overlapping characters between adjacent chunks, recommended to be 10%–20% of the chunk size.
+- **Enable Segment Cleaning**: Enables text quality improvements and retrieval precision enhancements, including whitespace cleanup, full-width to half-width conversion, line break repair, etc.
 
-## Knowledge Base Configuration Parameter Description {#knowledge-base-configuration-parameter-description}
+## Knowledge base configuration parameters {#knowledge-base-configuration-parameters}
 | Parameter Name | Default Value | Recommended Range | Description |
 |---------|--------|----------|------|
-| Vector Model | - | - | Determines semantic understanding capability of documents and queries, cannot be modified after creation |
-| Reranking Model | - | - | Performs fine sorting of recalled results, can be changed anytime to optimize effectiveness |
-| TopK | 50 | 1-100 | Vector recall count, controls the number of documents in preliminary retrieval |
-| TopN | 5 | 1-10 | Post-reranking return count, final number of documents returned to users |
-| Vector Similarity Threshold (vectorScore) | 0.6 | 0.1-1.0 | Filters recall results, higher values require stricter matching |
-| Reranking Score Threshold (reRankScore) | 0.3 | 0.1-1.0 | Filters reranking results, higher values require more precision |
+| Embedding Model | - | - | Determines semantic understanding capability for documents and queries; cannot be modified after creation |
+| Reranking Model | - | - | Performs fine-grained sorting of recalled results; can be changed anytime to optimize performance |
+| TopK | 50 | 1-100 | Vector recall count; controls the number of documents retrieved in the initial search |
+| TopN | 5 | 1-10 | Post-reranking return count; final number of documents returned to users |
+| Vector Similarity Threshold (vectorScore) | 0.6 | 0.1-1.0 | Filters recall results; higher values require stricter semantic matching |
+| Reranking Score Threshold (reRankScore) | 0.3 | 0.1-1.0 | Filters reranking results; higher values demand greater precision |
 
 :::tip Parameter Recommendations
-Generally recommend first increasing TopK (expanding recall coverage), then using appropriate reRankScore for fine filtering. If recall noise is excessive, vectorScore can be appropriately increased.
+Generally, start by increasing TopK (to expand recall coverage), then apply an appropriate reRankScore for fine-grained filtering. If recall contains too much noise, consider raising the vectorScore threshold.
 :::
 

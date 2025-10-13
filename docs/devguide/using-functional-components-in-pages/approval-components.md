@@ -1,91 +1,90 @@
 ---
 sidebar_position: 13
 slug: approval-components
+title: Approval Components
 ---
 
-# 审批组件
-## 发起申请组件
-发起申请是审批流程的入口组件，基于表单数据模型实现审批申请的发起和管理功能。它负责收集用户填写的表单数据、启动审批流程和展示审批流程，支持数据刷新和事件通知机制。
+# Approval Components
+## Initiate application component {#initiate-application-component}
+The initiate application component serves as the entry point for approval workflows, implementing application initiation and management functionality based on form data models. It is responsible for collecting user-submitted form data, launching approval processes, and displaying workflow progress, with support for data refresh and event notification mechanisms.
 
-### 创建发起申请组件 {#create-initiate-application-component}
-![发起申请组件创建](./img/13/wf_2025-08-29_16-08-54.png)
+### Creating initiate application component {#create-initiate-application-component}
+![Creating Initiate Application Component](./img/13/wf_2025-08-29_16-08-54.png)
 
-在页面可视化编辑器中点击`插入组件`，将“发起申请”组件拖拽到页面中。然后在右侧配置面板中配置发起申请组件参数。
+In the page visual editor, click `Insert Component` and drag the "Initiate Application" component onto the page. Then configure the initiate application component parameters in the right configuration panel.
 
-### 参数配置 {#parameter-configuration-1}
-使用发起申请组件时，需要指定使用的[审批流程实例元素](../approval-workflow/approval-workflow-basic-configuration)。
+### Parameter configuration {#parameter-configuration-1}
+When using the initiate application component, you need to specify the [approval workflow instance element](../approval-workflow/approval-workflow-basic-configuration) to be used.
 
-![发起申请组件参数](./img/13/wf_2025-08-29_16-13-23.png)
+![Initiate Application Component Parameters](./img/13/wf_2025-08-29_16-13-23.png)
 
-在可视化编辑器中，点击发起申请组件后，可以看到发起申请组件的参数配置面板。在配置面板中，选择对应的审批流程实例元素。另外，开发者可以选择是否显示审批流程记录。
+In the visual editor, clicking on the initiate application component reveals the parameter configuration panel. In the configuration panel, select the corresponding approval workflow instance element. Additionally, developers can choose whether to display approval workflow records.
 
-:::warning 注意
-一般情况下，在创建发起申请组件之前，需要提前创建好审批流程，具体请参考[审批流程](../approval-workflow/approval-workflow-basic-configuration)。
+:::warning Note
+Generally, approval workflows should be created before creating initiate application components. Please refer to [Approval Workflows](../approval-workflow/approval-workflow-basic-configuration) for details.
 
-开发者也可以点击下拉框中的`新建常规审批`进行创建审批流程。
+Developers can also click `Create New General Approval` in the dropdown to create approval workflows.
 
-发起申请组件所看到的审批流程记录，其实是根据所选的审批流程生成的审批流程预测数据。
+The approval workflow records displayed by the initiate application component are actually approval workflow prediction data generated based on the selected approval workflow.
 
-如果审批流程关闭了预测功能，那么发起申请组件将不会显示审批流程记录。
-
+If the approval workflow has disabled the prediction feature, the initiate application component will not display approval workflow records.
 :::
 
-### 处理后/刷新后事件 {#post-processing-refresh-event}
-发起申请组件提供了`处理后`和`刷新后`两个事件，用于处理完成后和刷新完成后的逻辑。
+### After processing/refresh events {#post-processing-refresh-event}
+The initiate application component provides `After Processing` and `After Refresh` events for handling post-completion and post-refresh logic.
 
-![处理后和刷新后事件](./img/13/wf_2025-08-29_16-24-47.png)
+![After Processing and After Refresh Events](./img/13/wf_2025-08-29_16-24-47.png)
 
-处理后事件用于发起申请提交后的逻辑，例如，当审批数据提交后，关闭当前弹窗并刷新表格数据等。
+The after processing event handles logic following application submission, such as closing the current dialog and refreshing table data after approval data is submitted.
 
-刷新后事件用于发起申请组件刷新后的逻辑，需要配合发起申请的刷新函数使用。
+The after refresh event handles logic following initiate application component refresh and must be used in conjunction with the initiate application refresh function.
 
-![发起申请组件参数](./img/13/wf_2025-08-29_16-28-26.png)
+![Initiate Application Component Parameters](./img/13/wf_2025-08-29_16-28-26.png)
 
-例如，开发者在表格中配置打开弹窗并刷新发起申请组件，那么发起申请组件内的刷新后事件才会生效。
+For example, when developers configure opening a dialog and refreshing the initiate application component in a table, the after refresh event within the initiate application component will take effect.
 
-## 审批处理组件
-审批处理是工作流审批任务的核心操作组件，基于工作流引擎实现审批任务的处理、查看和状态管理。它负责加载指定工作流的待处理任务、展示审批历史记录和处理用户的审批操作。
+## Approval processing component {#approval-processing-component}
+The approval processing component is the core operational component for workflow approval tasks, implementing approval task processing, viewing, and status management based on the workflow engine. It is responsible for loading pending tasks for specified workflows, displaying approval history, and handling user approval operations.
 
-### 创建审批处理组件 {#create-approval-workflow-component}
-![审批处理组件创建](./img/13/wf_2025-08-29_16-45-56.png)
+### Creating approval processing component {#create-approval-workflow-component}
+![Creating Approval Processing Component](./img/13/wf_2025-08-29_16-45-56.png)
 
-在页面可视化编辑器中点击`插入组件`，将“审批处理”组件拖拽到页面中。然后在右侧配置面板中配置审批处理组件参数。
+In the page visual editor, click `Insert Component` and drag the "Approval Processing" component onto the page. Then configure the approval processing component parameters in the right configuration panel.
 
-### 参数配置 {#parameter-configuration-1}
-使用审批处理组件时，也需要指定使用的[审批流程实例元素](../approval-workflow/approval-workflow-basic-configuration)。除了配置审批流程外，审批处理组件还可以选择是否显示审批流程以及是否保留历史审批记录。
+### Parameter configuration {#parameter-configuration-2}
+When using the approval processing component, you also need to specify the [approval workflow instance element](../approval-workflow/approval-workflow-basic-configuration) to be used. In addition to configuring the approval workflow, the approval processing component can also choose whether to display the approval workflow and whether to retain historical approval records.
 
-![审批处理组件参数](./img/13/wf_2025-08-29_16-48-56.png)
+![Approval Processing Component Parameters](./img/13/wf_2025-08-29_16-48-56.png)
 
-### 保留历史审批记录 {#keep-historical-approval-records}
-发起人可以对审批单进行撤销操作和重新发起操作。如果开发者勾选了`保留历史审批记录`，那么这些撤销操作和重新发起操作会保留在审批记录中。反之，这些操作不会保存在审批记录中。
+### Retaining historical approval records {#keep-historical-approval-records}
+Initiators can perform withdrawal and re-initiation operations on approval forms. If developers check `Retain Historical Approval Records`, these withdrawal and re-initiation operations will be preserved in the approval records. Otherwise, these operations will not be saved in the approval records.
 
-![保留历史审批记录](./img/13/wf_2025-08-29_16-54-24.png)
-![不保留历史审批记录](./img/13/wf_2025-08-29_16-56-15.png)
+![Retain Historical Approval Records](./img/13/wf_2025-08-29_16-54-24.png)
+![Do Not Retain Historical Approval Records](./img/13/wf_2025-08-29_16-56-15.png)
 
-:::warning 注意
-一般情况下，在创建审批处理组件之前，需要提前创建好审批流程，具体请参考[审批流程](../approval-workflow/approval-workflow-basic-configuration)。
+:::warning Note
+Generally, approval workflows should be created before creating approval processing components. Please refer to [Approval Workflows](../approval-workflow/approval-workflow-basic-configuration) for details.
 
-审批组件在开发区是无法预览的，需要到使用区才能查看。
+Approval components cannot be previewed in the development area and must be viewed in the usage area.
 
-如果审批表单无需当前登录人审批，将显示“当前暂无审批待办事项”。
+If the approval form does not require approval from the current logged-in user, it will display "No pending approval items currently available."
 
-如果取消勾选`显示审批流程`，那么无论是否勾选`保留历史审批记录`都不会出现审批流程记录。
+If `Display Approval Workflow` is unchecked, approval workflow records will not appear regardless of whether `Retain Historical Approval Records` is checked.
 
-如果审批流程关闭了预测功能，那么审批处理组件仅显示已经流转的审批记录。
-
+If the approval workflow has disabled the prediction feature, the approval processing component will only display approval records that have already been processed.
 :::
 
-在使用审批处理组件时，需要为该组件提供数据源，否则将无法使用。
+When using the approval processing component, you need to provide a data source for this component, otherwise it cannot be used.
 
-![数据源](./img/13/wf_2025-08-29_17-07-05.png)
+![Data Source](./img/13/wf_2025-08-29_17-07-05.png)
 
-如上图，我们使用表格和审批处理组件配合使用，需要在表格的事件中为审批处理组件提供数据源。
+As shown above, when using tables and approval processing components together, you need to provide a data source for the approval processing component in the table's events.
 
-### 处理后/刷新后事件 {#post-processing-refresh-event-1}
-审批处理组件提供了`处理后`和`刷新后`两个事件，用于处理完成后和刷新完成后的逻辑。
+### After processing/refresh events {#post-processing-refresh-event-1}
+The approval processing component provides `After Processing` and `After Refresh` events for handling post-completion and post-refresh logic.
 
-![处理后和刷新后事件](./img/13/wf_2025-08-29_17-10-59.png)
+![After Processing and After Refresh Events](./img/13/wf_2025-08-29_17-10-59.png)
 
-处理后事件用于对审批单处理后的逻辑，例如，当审批数据处理后，关闭当前弹窗并刷新表格数据等。 
+The after processing event handles logic following approval form processing, such as closing the current dialog and refreshing table data after approval data is processed.
 
-刷新后事件用于审批处理组件刷新后的逻辑，需要配合审批处理组件的刷新函数使用。 
+The after refresh event handles logic following approval processing component refresh and must be used in conjunction with the approval processing component's refresh function.

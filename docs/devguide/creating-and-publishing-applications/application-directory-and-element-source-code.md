@@ -47,7 +47,7 @@ JitAi offers comprehensive application export and import capabilities, supportin
 
 ### Exporting source code zip packages {#export-source-code-zip}
 
-From the application list in the [Node Console](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment), click the `More` → `Export Application` button on any application card to download the complete source code zip package.
+From the application list in the [Node Console](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment), click the `More` → `Export as ZIP File` button on any application card to download the complete source code zip package.
 
 **Source Code Package Characteristics:**
 - Contains comprehensive application source code and resource files

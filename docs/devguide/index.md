@@ -707,7 +707,7 @@ The rich component library is your powerful toolkit. Drag and drop tables to dis
 
 <IndexCard
   title="Model Filter"
-  href="devguide/using-functional-components-in-pages/filter-components"
+  href="devguide/using-functional-components-in-pages/filter-components#model-filters"
   description="Advanced filtering component based on data models, supporting simple, complex and free filtering modes."
 >
   <LinkGrid links={[
@@ -721,7 +721,7 @@ The rich component library is your powerful toolkit. Drag and drop tables to dis
 
 <IndexCard
   title="Universal Filter"
-  href="devguide/using-functional-components-in-pages/filter-components"
+  href="devguide/using-functional-components-in-pages/filter-components#universal-filters"
   description="Flexible universal filtering component supporting custom field configuration and multiple trigger modes."
 >
   <LinkGrid columns={2} links={[
@@ -730,7 +730,7 @@ The rich component library is your powerful toolkit. Drag and drop tables to dis
     { text: "Show Query/Reset Buttons", href: "devguide/using-functional-components-in-pages/filter-components#show-query-reset-buttons" },
     { text: "Condition Change Trigger Query", href: "devguide/using-functional-components-in-pages/filter-components#condition-change-trigger-query" },
     { text: "First Load Filter", href: "devguide/using-functional-components-in-pages/filter-components#first-load-filter" },
-    { text: "Filter Usage", href: "devguide/using-functional-components-in-pages/filter-components#filter-usage" }
+    { text: "Filter Usage", href: "devguide/using-functional-components-in-pages/filter-components#universal-filter-usage" }
   ]} />
 </IndexCard>
 
@@ -822,7 +822,7 @@ The rich component library is your powerful toolkit. Drag and drop tables to dis
     { text: "Parameter Configuration for Initiate Application", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-1" },
     { text: "Post-processing/Refresh Event for Initiate Application", href: "devguide/using-functional-components-in-pages/approval-components#post-processing-refresh-event" },
     { text: "Create Approval Process Component", href: "devguide/using-functional-components-in-pages/approval-components#create-approval-workflow-component" },
-    { text: "Parameter Configuration for Approval Processing", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-1" },
+    { text: "Parameter Configuration for Approval Processing", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-2" },
     { text: "Keep Historical Approval Records", href: "devguide/using-functional-components-in-pages/approval-components#keep-historical-approval-records" },
     { text: "Post-processing/Refresh Event for Approval Processing", href: "devguide/using-functional-components-in-pages/approval-components#post-processing-refresh-event-1" }
   ]} />

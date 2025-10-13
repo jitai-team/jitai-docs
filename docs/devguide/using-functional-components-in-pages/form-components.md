@@ -9,10 +9,10 @@ title: Form Components
 Forms are among the most frequently used components in application development. While traditional forms are limited to collecting, validating, and submitting user input data, JitAi's form components extend far beyond these basic functions. They provide powerful capabilities including visual design, data model binding, permission control, and business rule configuration. Through intuitive drag-and-drop operations, you can construct enterprise-grade form applications with sophisticated interaction logic and advanced data processing capabilities.
 
 ## Basic configuration and item management {#basic-configuration-and-item-management}
-In the page visual editor, click "Insert Component" and drag the "Form" component onto the page. Select a data model in the data source configuration and click `OK`.
+In the page visual editor, click "Insert Component" and drag the "Form" component onto the page. Select a data model in the data source configuration and click `Confirm`.
 
 :::warning Note
-Supported model types include data tables, aggregate tables, and extended tables. Note that when aggregate tables are selected, data submission is not available.
+Supported model types include Data Tables, Aggregate Tables, and Extended Tables. Note that when Aggregate Tables are selected, data submission is not available.
 :::
 
 ![Field Visibility](./img/2/form_2025-08-20_11-32-36.png)
@@ -188,15 +188,15 @@ Validation rules ensure that submitted form data meets specified criteria. Confi
 -   **Rule name**: Descriptive identifier for the validation rule, facilitating management and modification.
 -   **Validation condition**: Defines the criteria that must be satisfied for successful form submission.
 -   **Failure handling**: Two approaches are available:
-    -   **Warning with save option**: Displays a warning when validation fails, allowing users to either "Continue to Save" or "Cancel" the submission.
-    -   **Block submission**: Prevents form submission entirely when validation fails, displaying an error message.
+    -   **Warning still can save**: Displays a warning when validation fails, allowing users to either "Continue to Save" or "Cancel" the submission.
+    -   **Forbid Submission**: Prevents form submission entirely when validation fails, displaying an error message.
 -   **Failure message**: Custom text displayed in warning or error prompts when validation criteria are not met.
 
 :::warning Note
 
 Validation rules are active only in input and edit modes.
 
-When multiple validation rules exist, "Block submission" rules are evaluated first (top to bottom), followed by "Warning with save option" rules (also top to bottom).
+When multiple validation rules exist, "Forbid Submission" rules are evaluated first (top to bottom), followed by "Warning still can save" rules (also top to bottom).
 :::
 
 **Visibility rules**
@@ -312,7 +312,7 @@ Tab containers can be positioned anywhere within the form layout. Configuration 
 
 **Position**: Relative placement within the form's tab container hierarchy.
 
-**Style**: Visual appearance, with simple and card style options available.
+**Style**: Visual appearance, with Minimalist and Card style options available.
 
 **Tab items**: Defaults to three tabs, with support for adding or removing tabs as needed.
 
@@ -326,7 +326,7 @@ Collapse panels can be positioned anywhere within the form layout. Configuration
 
 **Accordion mode**: Enabled by default, ensuring only one panel section is expanded at a time.
 
-**Style**: Visual appearance, with simple and card style options available.
+**Style**: Visual appearance, with Minimalist and Card style options available.
 
 **Default expanded state**: When enabled, all panels start in expanded state (only effective in non-accordion mode).
 
@@ -360,9 +360,9 @@ Dividers provide visual separation between form sections and can be positioned a
 
 **Divider style**: Selection from built-in visual styles for the divider line.
 
-**Color scheme**: Theme color configuration for the divider element.
+**Color**: Theme color configuration for the divider element.
 
-**Title color**: Specific color configuration for the divider title text.
+**Title Color**: Specific color configuration for the divider title text.
 
 ![Divider Display](./img/2/form_2025-08-22_10-55-46.png)
 

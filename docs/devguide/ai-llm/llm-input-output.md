@@ -5,10 +5,10 @@ slug: llm-input-output
 
 # LLM Function Input and Output
 
-The core execution function of large language models is `runLlm`, which serves as the unified entry point for all LLM calls. This function accepts two types of key input parameters: **LLM configuration** (including model selection and parameter settings) and **prompt content** (including system prompts, user prompts, and variables), and uses **output control** configuration to standardize the format and structure of returned results.
+The core execution function of large language models is `runLlm`, which serves as the unified entry point for all LLM calls. This function accepts two types of key input args: **LLM configuration** (including model selection and parameter settings) and **prompt content** (including system prompts, user prompts, and variables), and uses **output control** configuration to standardize the format and structure of returned results.
 
 ## Calling LLM in Pages {#call-llm-in-pages}
-In page functions and event function logic, developers can use the runtime functions of LLM vendor elements to call LLMs and get LLM return values. These configurations will ultimately serve as input parameters for the `runLlm` function.
+In page functions and event function logic, developers can use the runtime functions of LLM vendor elements to call LLMs and get LLM return values. These configurations will ultimately serve as input args for the `runLlm` function.
 
 ![Page Call LLM](./img/1/page-call-large-model.gif)
 

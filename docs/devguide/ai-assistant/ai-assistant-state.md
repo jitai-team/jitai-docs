@@ -30,7 +30,7 @@ Runtime state data includes the following categories:
 ## Data usage methods {#data-usage-methods}
 Multiple usage scenarios for runtime state data in AI assistant processes:
 
-- **Node Configuration**: Select data as input parameters when configuring nodes
+- **Node Configuration**: Select data as input args when configuring nodes
 - **Conditional Judgment**: Make judgments based on data values in conditional branches
 - **Loop Processing**: Iterate through array-type data in loop nodes
 - **Data Display**: Display data to users in chat areas or workspaces
@@ -41,13 +41,13 @@ The data flow in AI assistants follows a clear pattern, with data being passed a
 
 ### Data input phase {#data-input-phase}
 1. **User Input**: Messages sent by users are passed in as `userInput` parameters
-2. **Custom Parameters**: Other input parameters configured through advanced settings
+2. **Custom Parameters**: Other input args configured through advanced settings
 3. **Initial Data**: All input data is stored in runtime state for use by subsequent nodes
 
 ### Inter-node data transfer {#inter-node-data-transfer}
 1. **Router Node**: Receives user input messages and passes them to the large model for content analysis
 
-2. **AIAgent Node**: Reads input parameters from runtime state, passes them to the bound Agent for task processing, and stores the Agent's return results in runtime state.
+2. **AIAgent Node**: Reads input args from runtime state, passes them to the bound Agent for task processing, and stores the Agent's return results in runtime state.
 
 3. **Function Node**: Reads function parameters from runtime state, passes them to the bound function, and stores the function's return value in runtime state.
 

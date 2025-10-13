@@ -5,15 +5,15 @@ slug: ai-assistant-input-output
 
 # AI Assistant Input and Output
 
-## Input parameters {#input-parameters}
-Each assistant has a fixed input parameter: user input (userInput). In addition, you can customize other input parameters. These parameters need to be assigned values when using the assistant.
+## Input args {#input-args}
+Each assistant has a fixed input parameter: user input (userInput). In addition, you can customize other input args. These parameters need to be assigned values when using the assistant.
 The setup steps are as follows:
 
 ![AI助理-高级设置](./img/assistant/assistant-input.png)
 
-Click the `Settings` button in the upper right corner of the process editor to open the settings window and add input parameters.
+Click the `Settings` button in the upper right corner of the process editor to open the settings window and add input args.
 
-If the assistant has custom input parameters configured, these parameters need to be assigned values when [using AI assistants in portals or pages](../using-ai-in-portals-and-pages).
+If the assistant has custom input args configured, these parameters need to be assigned values when [using AI assistants in portals or pages](../using-ai-in-portals-and-pages).
 
 ## Output content {#message-output}
 

@@ -6,31 +6,35 @@ slug: extend-element-family-classes
 # Extend Your Own Element Families
 
 When existing Type elements in the JitAi development framework cannot meet specific business requirements, developers can extend functionality through two approaches:
-1. Reuse existing Meta and create new Type elements: Suitable for extending functionality within existing families. For example, adding email notifications under the messaging service framework, or integrating PayPal payments under the payment service framework. These are all new Type elements pointing to existing Meta.
-2. Create entirely new element families: Suitable for extensions in completely new business domains, forming self-contained new element families. For example, IoT integration that needs to support various protocols like MQTT, Modbus, etc.
 
-This article will adopt approach 2, using practical examples to guide developers step by step through integrating intelligent customer service with DingTalk robots.
+1. **Reuse existing Meta and create new Type elements**: Suitable for extending functionality within existing families. For example, adding email notifications under the messaging service framework, or integrating PayPal payments under the payment service framework. These are all new Type elements pointing to existing Meta.
+2. **Create entirely new element families**: Suitable for extensions in completely new business domains, forming self-contained new element families. For example, IoT integration that needs to support various protocols like MQTT, Modbus, etc.
+
+This article adopts approach 2, using a practical example to guide developers step by step through integrating intelligent customer service with DingTalk robots.
 
 :::tip Have you completed the getting started tutorials?
-If you haven't completed the [Desktop Editon Installation](../tutorial/download-installation) and [Getting Started](../tutorial), please complete these tutorials first.
+If you haven't completed the [Desktop Version Installation](../tutorial/download-installation) and [Getting Started](../tutorial), please complete these tutorials first.
 :::
 
-## Integrating Intelligent Customer Service with DingTalk Robots
+## Integrating intelligent customer service with DingTalk robots {#integrating-intelligent-customer-service}
+
 We place `DingTalk Robot` under the top-level category `IM Robot`, so `IM Robot` is the Meta, and `DingTalk Robot` is one of the Types under this category. WeChat, Enterprise WeChat, Feishu, and other IM robots can all become new Types under this category.
 
-### Effect Preview
+### Effect preview {#effect-preview}
+
 The final DingTalk robot effect: Users @mention the robot in DingTalk groups to send questions, and the robot calls the configured intelligent customer service Agent to provide streaming replies.
 
-![DingTalk Robot Final Effect](./img/jitairobot/final-effect-dingtalk.png)
+![DingTalk Robot Final Effect](./img/jitairobot/final-effect-dingtalk.png "DingTalk Robot Final Effect")
 
-### Element Family Design
+### Element family design {#element-family-design}
 | Element Level | fullName | Main Responsibilities |
 |---------|----------|----------|
 | **Meta Element** | `imRobots.Meta` | Define IM robot family, unified management of robots across platforms |
-| **Type Element** | `imRobots.dingTalkStreamType` | Encapsulate DingTalk SDK, handle message sending/receiving and Stream connection technical complexity, develop configuration options |
+| **Type Element** | `imRobots.dingTalkStreamType` | Encapsulate DingTalk SDK, handle message sending/receiving and Stream connection technical complexity, expose configuration options |
 | **Instance Element** | `imRobots.dingTalkDemo` | Configure specific DingTalk application parameters and intelligent agents |
 
-#### Directory Structure
+#### Directory structure {#directory-structure}
+
 ```shell title="imRobots element family subdirectory structure in App"
 ├── imRobots/
 │   ├── Meta/
@@ -50,7 +54,7 @@ The final DingTalk robot effect: Users @mention the robot in DingTalk groups to 
 └── ...
 ```
 
-:::tip Third-party Dependencies
+:::tip Third-party dependencies
 Add dependencies to `requirements.txt` in the App root directory:
 ```text title="requirements.txt"
 dingtalk-stream==0.24.2
@@ -58,8 +62,9 @@ python-socks==2.7.1
 ```
 :::
 
-### Element Family Implementation
-#### Meta Element
+### Element family implementation {#element-family-implementation}
+
+#### Meta element {#meta-element}
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -85,7 +90,8 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
-#### Type Element
+#### Type element {#type-element}
+
 <Tabs>
   <TabItem value="ejson" label="e.json">
 
@@ -501,7 +507,8 @@ __all__ = ["Loader"]
   </TabItem>
 </Tabs>
 
-#### Instance Element
+#### Instance element {#instance-element}
+
 <Tabs>
   <TabItem value="ejson" label="e.json">
 
@@ -526,23 +533,23 @@ __all__ = ["Loader"]
 }
 ```
 
-:::tip Configuration Instructions
+:::tip Configuration instructions
 1. `agent`: The fullName of the intelligent customer service AIAgent, such as `aiagents.ragTest`
-2. `clientId`/`clientSecret`: Need to be obtained from DingTalk Developer Platform, follow these steps:
+2. `clientId`/`clientSecret`: These need to be obtained from DingTalk Developer Platform by following these steps:
 
-**DingTalk Account and Enterprise Preparation**
-1. Register and log in to DingTalk account
+**DingTalk account and enterprise preparation**
+1. Register and log in to your DingTalk account
 2. Create your own enterprise
 
-**DingTalk Developer Platform Application Creation**
+**DingTalk Developer Platform application creation**
 1. Log in to [DingTalk Developer Platform](https://open-dev.dingtalk.com)
-2. Go to `Application Development` → `Enterprise Internal Applications` → `DingTalk Applications`
-3. Click `Create Application`, set application name and description
-4. Go to `Application Capabilities` → `Add Application Capabilities`, find `Robot` and add it
+2. Navigate to `Application Development` → `Enterprise Internal Applications` → `DingTalk Applications`
+3. Click `Create Application`, then set the application name and description
+4. Navigate to `Application Capabilities` → `Add Application Capabilities`, find `Robot` and add it
 5. In robot configuration, select `Stream Mode` for `Message Receiving Mode`
 6. Publish the application
 7. Create an enterprise internal group and add the robot you just created
-8. Go to `Basic Information` → `Credentials and Basic Information` → `Application Credentials` to get `Client ID` and `Client Secret`
+8. Navigate to `Basic Information` → `Credentials and Basic Information` → `Application Credentials` to obtain `Client ID` and `Client Secret`
 :::
 
   </TabItem>
@@ -554,29 +561,34 @@ __all__ = ["Loader"]
   </TabItem>
 </Tabs>
 
-### Testing
-#### Making New Element Family Effective
-1. **Clear Cache**: Delete the `dist` directory in the application directory
-2. **Restart Service**: Restart the desktop application
-3. **Trigger Packaging**: Access the application page, system automatically repackages
-4. **Check Logs**: Observe logs to confirm element loading success and whether long connection with DingTalk Developer Platform is established successfully
+### Testing {#testing}
 
-#### Functional Testing
-1. @mention the robot in DingTalk group to send messages
-2. Robot should reply with "Thinking" card
-3. After AI processing completes, update to final reply card
+#### Making new element family effective {#making-new-element-family-effective}
 
-## Summary and Review
-Through this DingTalk robot practical case, we have completely learned the full process of Type element extension development:
+1. **Clear cache**: Delete the `dist` directory in the application directory
+2. **Restart service**: Restart the desktop application
+3. **Trigger packaging**: Access the application page, the system will automatically repackage
+4. **Check logs**: Observe logs to confirm successful element loading and whether the long connection with DingTalk Developer Platform is established successfully
 
-1. **Design Decisions**: How to choose extension approach (reuse vs new creation)
-2. **Architecture Design**: Responsibility division of Meta, Type, and Instance three-layer architecture
-3. **Technical Implementation Encapsulation**: Third-party SDK integration, asynchronous processing, parameter configuration and other technical complexities are all encapsulated in Type elements
-4. **Instance Elements**: Instance elements are responsible for configuring specific runtime parameters
+#### Functional testing {#functional-testing}
 
-Developers should think divergently and apply the above approach to other business scenarios.
+1. @mention the robot in a DingTalk group to send messages
+2. The robot should reply with a "Thinking" card
+3. After AI processing completes, the card updates to the final reply
 
-## Advanced Thinking
-While manually creating instance element directories is feasible, it is cumbersome. How can we add and configure new DingTalk robot instance elements with one click in the visual interface like official elements?
+## Summary and review {#summary-and-review}
+
+Through this DingTalk robot practical case, we have learned the complete process of Type element extension development:
+
+1. **Design decisions**: How to choose an extension approach (reusing existing Meta vs. creating new element families)
+2. **Architecture design**: Responsibility division across the Meta, Type, and Instance three-layer architecture
+3. **Technical implementation encapsulation**: Third-party SDK integration, asynchronous processing, parameter configuration, and other technical complexities are all encapsulated in Type elements
+4. **Instance elements**: Instance elements are responsible for configuring specific runtime parameters
+
+Developers should think creatively and apply this approach to other business scenarios.
+
+## Advanced thinking {#advanced-thinking}
+
+While manually creating instance element directories is feasible, it can be cumbersome. How can we add and configure new DingTalk robot instance elements with one click in the visual interface like official elements?
 
 Please refer to [Develop Visual Editors for Backend Type Elements](./develop-backend-element-visual-editor).

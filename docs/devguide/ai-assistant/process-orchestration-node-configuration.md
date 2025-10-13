@@ -28,7 +28,7 @@ The AI assistant's visual orchestration tool allows you to design complex busine
 ## Node types explained {#node-types-explained}
 
 ### Start {#start-node}
-This is the starting point of the workflow, like the entry point of a project. It receives user input and other [input parameters](./ai-assistant-input-output#input-parameters), stores this information in [state data](./ai-assistant-state), and then begins task execution.
+This is the starting point of the workflow, like the entry point of a project. It receives user input and other [input args](./ai-assistant-input-output#input-args), stores this information in [state data](./ai-assistant-state), and then begins task execution.
 Each AI assistant can only have one start node, which is automatically generated after creating the assistant, so you don't need to add it manually.
 
 ### Router {#routing-decision}
@@ -70,8 +70,8 @@ After this node completes execution, it will store the [Agent's output results](
 ### Action in conversation {#action-in-conversation}
 
 When the task flow runs to this node, it will pause and display data in the dialog box. The flow can only continue after the user confirms the data and performs corresponding operations. If there is no next node, the flow automatically ends.
-At this node, users can perform operations such as **Approve**, **Refuse**, **Reply**, and **Edit data** (editing functionality needs to be enabled).
-During runtime, after performing **Approve**, **Refuse**, **Reply**, and **Edit data** operations, the flow will resume and trigger [dialog area human-machine interaction events](./ai-assistant-event#in-conversation-action-events).
+At this node, users can perform operations such as **Approve**, **Reject**, **Reply**, and **Edit data** (editing functionality needs to be enabled).
+During runtime, after performing **Approve**, **Reject**, **Reply**, and **Edit data** operations, the flow will resume and trigger [dialog area human-machine interaction events](./ai-assistant-event#in-conversation-action-events).
 
 #### Node configuration details {#conversation-node-configuration-details}
 - **Data to Display**: You can freely define the data content that needs user confirmation, sourced from [runtime state data](./ai-assistant-state#state-data-content).
@@ -111,7 +111,7 @@ This node needs to bind a service/model function. When the task flow runs to thi
 
 ![AI Assistant - Function Call Node - Binding](./img/assistant/function-bind.png)
 
-**Input parameter configuration**: The input parameters of the function call node are the parameters of its bound function. The parameter configuration method is the same as the [AIAgent node](#ai-agent) input parameter configuration method.
+**Input parameter configuration**: The input args of the function call node are the parameters of its bound function. The parameter configuration method is the same as the [AIAgent node](#ai-agent) input parameter configuration method.
 
 ### IF-ELSE {#if-else}
 Determines the next step of the flow based on the data situation in the current assistant state.

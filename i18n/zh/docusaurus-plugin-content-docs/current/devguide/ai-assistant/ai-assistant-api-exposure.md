@@ -9,7 +9,7 @@ slug: ai-assistant-api-exposure
 在页面中使用AI助理后，页面上会有一个**发送AI消息**的函数。函数有以下入参：
 - **消息内容**：发送的文本消息内容
 - **是否开启新对话**：开启后，会打开一个新的[对话记录](./ai-conversation-history)，并发送消息。如果未开启，则会在当前打开的对话中发送消息；如果此时助理在工作区人机交互节点处暂停，则会恢复流程。
-- **自定义参数**：AI助理上配置的[自定义输入参数](./ai-assistant-input-output#input-parameters)
+- **自定义参数**：AI助理上配置的[自定义输入参数](./ai-assistant-input-output#input-args)
 
 调用方式参考[页面中发送AI消息](../using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#send-ai-message)
 

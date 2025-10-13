@@ -75,17 +75,17 @@ JitAi为开发者提供了可视化和全代码、编程与编排双模式的应
 
 点击IDE左上角的下三角图标，即可点选切换门户。
 
-## 个人中心 {#personal-center}
+## 个人中心 {#profile}
 开发者可以在个人中心修改个人昵称、账号、密码。
 
-![打开个人中心](./img/ide/open-personal-center.gif)
+![打开个人中心](./img/ide/open-profile.gif)
 
 点击IDE左下角的下三角图标，点击`基本信息`，即可打开个人中心。
 
 ## 语言切换 {#language-switching}
 点击IDE左下角的语言文案（English、简体中文等），即可切换界面语言。
 
-![切换界面显示语言](./img/ide/switch-interface-display-language.png)
+![切换界面显示语言](./img/ide/switch-interface-display-language.gif)
 
 多语言是JitAi开发框架提供的元素之一，不仅用于IDE的国际化，同样可以用于任意其它应用的国际化。
 

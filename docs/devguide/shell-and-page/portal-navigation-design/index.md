@@ -24,7 +24,7 @@ All portal navigation menus—except for the developer portal itself—are confi
 ### Manager portal {#manager-portal} 
 The manager portal is designed for users with administrative privileges, enabling them to oversee application management tasks including organizational structure configuration, role management, and user administration. Developers retain the ability to customize this portal according to specific requirements.
 
-Upon application creation, the system automatically generates an administrator account with default credentials: username `admin123` and password `admin123`. For security purposes, it is strongly recommended that developers update these default credentials immediately after first login through the [personal information](/docs/devguide/development-tool-and-publish-service/visual-development-tool#personal-center) settings.
+Upon application creation, the system automatically generates an administrator account with default credentials: username `admin123` and password `admin123`. For security purposes, it is strongly recommended that developers update these default credentials immediately after first login through the [personal information](/docs/devguide/development-tool-and-publish-service/visual-development-tool#profile) settings.
 
 :::tip Organizational Roles vs Application Roles
 `Organizational roles` correspond to users' positions within the enterprise organizational hierarchy, while `Application roles` in JitAi applications define users' permissions within the application system. Although organizational roles and application roles are conceptually similar, they do not have a strict one-to-one correspondence. For instance, a regular employee can be assigned an application administrator role to manage a specific application system.
@@ -160,7 +160,7 @@ When developers disable the `Display in portal switch menu` option in `Layout De
 When an application contains multiple portals, developers can configure order values in `Layout Design` to control the display sequence of each portal in the portal selector menu.
 
 ## Managing common function entries {#managing-common-function-entries}
-Every newly created portal includes a standard set of common function entries: Initiate Application, To-do Center, Message Center, Personal Center, and New Function. The New Function entry provides simplified module creation capabilities, though with reduced functionality compared to the comprehensive [Visual Development Tools](/docs/devguide/development-tool-and-publish-service/visual-development-tool). All entries can be selectively enabled or disabled through the `Layout Design` configuration.
+Every newly created portal includes a standard set of common function entries: Initiate Application, To-do Center, Message Center, Profile, and New Function. The New Function entry provides simplified module creation capabilities, though with reduced functionality compared to the comprehensive [Visual Development Tools](/docs/devguide/development-tool-and-publish-service/visual-development-tool). All entries can be selectively enabled or disabled through the `Layout Design` configuration.
 
 ![Portal Common Function Entry](./imgs/portal-common-function-entry.png "Portal Common Function Entry")
 
@@ -175,10 +175,10 @@ Enabling the `Initiate Approval`, `Pending Center`, and `Message Center` entries
 
 ![Initiate Approval/Pending Center/Message Center Entry](./imgs/initiate-application-todo-message-center-entry.gif "Initiate Approval/Pending Center/Message Center Entry")
 
-### Personal center entry {#personal-center-entry}
-The `Personal Center` entry grants users access to profile management functionality, including personal information updates, credential modifications, organization switching, and secure system logout capabilities.
+### Profile entry {#profile-entry}
+The `Profile` entry grants users access to profile management functionality, including personal information updates, credential modifications, organization switching, and secure system logout capabilities.
 
-![Personal Center Functions](./imgs/personal-center-functions.gif "Personal Center Functions")
+![Profile Functions](./imgs/profile-functions.gif "Profile Functions")
 
 ## Integrating AI assistants {#integrating-ai-assistants}
 JitAi provides native [AI Assistant](/docs/devguide/ai-assistant/create-ai-assistant) integration capabilities, allowing users to interact with intelligent assistants directly through the portal interface. This section offers a high-level overview; detailed implementation guidance is available in [Integrating AI Assistant in Portals](/docs/devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals).

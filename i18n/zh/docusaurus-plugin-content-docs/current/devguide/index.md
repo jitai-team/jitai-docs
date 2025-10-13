@@ -105,7 +105,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "默认元素", href: "devguide/development-tool-and-publish-service/visual-development-tool#default-elements" },
     { text: "环境变量", href: "devguide/development-tool-and-publish-service/visual-development-tool#environment-variables" },
     { text: "门户切换", href: "devguide/development-tool-and-publish-service/visual-development-tool#portal-switching" },
-    { text: "个人中心", href: "devguide/development-tool-and-publish-service/visual-development-tool#personal-center" },
+    { text: "个人中心", href: "devguide/development-tool-and-publish-service/visual-development-tool#profile" },
     { text: "语言切换", href: "devguide/development-tool-and-publish-service/visual-development-tool#language-switching" },
     { text: "导航标签", href: "devguide/development-tool-and-publish-service/visual-development-tool#navigation-tabs" }
   ]} />
@@ -279,7 +279,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "设置在门户列表中的顺序", href: "devguide/shell-and-page/portal-navigation-design#portal-ordering" },
     { text: "启用或关闭常用功能入口", href: "devguide/shell-and-page/portal-navigation-design#managing-common-function-entries" },
     { text: "发起申请/待办/消息中心入口", href: "devguide/shell-and-page/portal-navigation-design#application-and-workflow-entries" },
-    { text: "个人中心入口", href: "devguide/shell-and-page/portal-navigation-design#personal-center-entry" },
+    { text: "个人中心入口", href: "devguide/shell-and-page/portal-navigation-design#profile-entry" },
     { text: "在门户中集成AI助理", href: "devguide/shell-and-page/portal-navigation-design#integrating-ai-assistants" }
   ]} />
 </IndexCard>

@@ -105,7 +105,7 @@ Powerful toolchain for efficient development. Master visual development environm
     { text: "Default elements", href: "devguide/development-tool-and-publish-service/visual-development-tool#default-elements" },
     { text: "Environment variables", href: "devguide/development-tool-and-publish-service/visual-development-tool#environment-variables" },
     { text: "Portal switching", href: "devguide/development-tool-and-publish-service/visual-development-tool#portal-switching" },
-    { text: "Personal center", href: "devguide/development-tool-and-publish-service/visual-development-tool#personal-center" },
+    { text: "Profile", href: "devguide/development-tool-and-publish-service/visual-development-tool#profile" },
     { text: "Language switching", href: "devguide/development-tool-and-publish-service/visual-development-tool#language-switching" },
     { text: "Navigation tabs", href: "devguide/development-tool-and-publish-service/visual-development-tool#navigation-tabs" }
   ]} />
@@ -279,7 +279,7 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
     { text: "Portal ordering", href: "devguide/shell-and-page/portal-navigation-design#portal-ordering" },
     { text: "Managing common function entries", href: "devguide/shell-and-page/portal-navigation-design#managing-common-function-entries" },
     { text: "Application and workflow entries", href: "devguide/shell-and-page/portal-navigation-design#application-and-workflow-entries" },
-    { text: "Personal center entry", href: "devguide/shell-and-page/portal-navigation-design#personal-center-entry" },
+    { text: "Profile entry", href: "devguide/shell-and-page/portal-navigation-design#profile-entry" },
     { text: "Integrating AI assistants", href: "devguide/shell-and-page/portal-navigation-design#integrating-ai-assistants" }
   ]} />
 </IndexCard>

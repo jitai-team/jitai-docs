@@ -4,7 +4,7 @@ slug: approval-components
 ---
 
 # 审批组件
-## 发起申请组件
+## 发起申请组件 {#initiate-application-component}
 发起申请是审批流程的入口组件，基于表单数据模型实现审批申请的发起和管理功能。它负责收集用户填写的表单数据、启动审批流程和展示审批流程，支持数据刷新和事件通知机制。
 
 ### 创建发起申请组件 {#create-initiate-application-component}
@@ -43,7 +43,7 @@ slug: approval-components
 
 例如，开发者在表格中配置打开弹窗并刷新发起申请组件，那么发起申请组件内的刷新后事件才会生效。
 
-## 审批处理组件
+## 审批处理组件 {#approval-processing-component}
 审批处理是工作流审批任务的核心操作组件，基于工作流引擎实现审批任务的处理、查看和状态管理。它负责加载指定工作流的待处理任务、展示审批历史记录和处理用户的审批操作。
 
 ### 创建审批处理组件 {#create-approval-workflow-component}
@@ -51,7 +51,7 @@ slug: approval-components
 
 在页面可视化编辑器中点击`插入组件`，将“审批处理”组件拖拽到页面中。然后在右侧配置面板中配置审批处理组件参数。
 
-### 参数配置 {#parameter-configuration-1}
+### 参数配置 {#parameter-configuration-2}
 使用审批处理组件时，也需要指定使用的[审批流程实例元素](../approval-workflow/approval-workflow-basic-configuration)。除了配置审批流程外，审批处理组件还可以选择是否显示审批流程以及是否保留历史审批记录。
 
 ![审批处理组件参数](./img/13/wf_2025-08-29_16-48-56.png)

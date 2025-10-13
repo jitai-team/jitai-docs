@@ -18,7 +18,7 @@ slug: using-ai-assistants-in-component-pages
 启用AI助理后，页面编辑器右侧会显示AI助理配置面板，包含以下配置选项：
 - **AI助理**：切换页面中使用的AI助理
 - **欢迎语与开场白**：设置个性化的[欢迎语与开场白](../ai-assistant/welcome-message-and-opening)
-- **输入参数**：如果使用的助手配置了[自定义输入参数](../ai-assistant/ai-assistant-input-output#input-parameters)，需要为这些参数赋值
+- **输入参数**：如果使用的助手配置了[自定义输入参数](../ai-assistant/ai-assistant-input-output#input-args)，需要为这些参数赋值
 - **输出运行时日志**：自定义助手运行时输出的[运行时日志](../ai-assistant/ai-assistant-input-output#message-output)内容
 
 ![组件页面 - 绑定AI助理](./img/component-page-assistant-config.png)

@@ -1,41 +1,42 @@
 ---
 sidebar_position: 14
 slug: payment-components
+title: Payment Components
 ---
 
-# 支付组件
-支付组件是基于统一的支付接口实现多平台支付功能的操作性组件。它负责订单创建、支付流程管理和状态监控，支持支付宝和微信支付平台，提供完整的支付生命周期管理。
+# Payment Components
+Payment components are operational components that implement multi-platform payment functionality based on unified payment interfaces. They are responsible for order creation, payment process management, and status monitoring, supporting Alipay and WeChat Pay platforms while providing complete payment lifecycle management.
 
-## 支付组件的创建 {#payment-component-creation}
-![支付组件创建](./img/14/pay_2025-08-28_19-37-19.png)
+## Creating payment components {#payment-component-creation}
+![Creating Payment Components](./img/14/pay_2025-08-28_19-37-19.png)
 
-在页面可视化编辑器中点击“插入组件”，将“支付”组件拖拽到页面中。然后在右侧配置面板中配置支付组件参数。
+In the page visual editor, click "Insert Component" and drag the "Payment" component onto the page. Then configure the payment component parameters in the right configuration panel.
 
-:::warning 注意
-创建支付组件时，需要提前创建好支付服务元素，具体请参考[支付服务](../third-party-integration/payment-service)。
+:::warning Note
+When creating payment components, payment service elements must be created in advance. Please refer to [Payment Services](../third-party-integration/payment-service) for details.
 
-使用支付组件前，需要调用支付组件的函数。
+Before using payment components, you need to invoke the payment component functions.
 :::
 
-## 发起支付函数 {#initiate-payment-function}
-支付组件提供了“发起支付”函数，用于发起支付。
+## Initiate payment function {#initiate-payment-function}
+Payment components provide an "Initiate Payment" function for triggering payment processes.
 
-该函数接收三个参数：订单号、订单描述和订单金额。其中，订单号可以不填，但订单描述和订单金额必填，否则会出现支付异常。
+This function accepts three parameters: order number, order description, and order amount. The order number is optional, but order description and order amount are required; otherwise, payment exceptions will occur.
 
-![发起支付](./img/14/pay_2025-08-29_08-38-30.png)
+![Initiate Payment](./img/14/pay_2025-08-29_08-38-30.png)
 
-在它的上级组件的事件配置中需要配置调用该函数的逻辑。例如，表格和支付组件配合使用，那么需要在表格的事件逻辑中进行配置。
+The logic for invoking this function must be configured in the event configuration of its parent component. For example, when using tables and payment components together, configuration is required in the table's event logic.
 
-## 事件逻辑 {#event-logic}
-支付组件提供了支付成功后和支付失败后事件，用于处理支付成功和失败后的逻辑。
+## Event logic {#event-logic}
+Payment components provide after payment success and after payment failure events for handling post-payment success and failure logic.
 
-![支付成功和失败事件](./img/14/pay_2025-08-29_08-59-46.png)
+![Payment Success and Failure Events](./img/14/pay_2025-08-29_08-59-46.png)
 
-在支付组件的事件逻辑中，进行配置相关逻辑即可。例如，支付成功后打印小票等事件逻辑。
+Configure the relevant logic in the payment component's event logic. For example, event logic such as printing receipts after successful payment.
 
-## 组件使用 {#component-usage}
-在可视化编辑器中创建好支付组件，并配置了相关事件后，就可以在页面中发起支付了。
+## Component usage {#component-usage}
+After creating payment components in the visual editor and configuring related events, you can initiate payments on the page.
 
-![支付组件使用](./img/14/pay_2025-08-28_19-17-44.png)
+![Payment Component Usage](./img/14/pay_2025-08-28_19-17-44.png)
 
-在使用区中，点击表格的“付款”按钮，会触发支付组件的支付逻辑，并弹出支付页面。在支付页面中选择支付方式后会刷新支付二维码，当用户扫码支付后会触发支付组件的支付成功后或支付失败后的事件逻辑。
+In the usage area, clicking the "Payment" button in the table triggers the payment component's payment logic and opens the payment page. After selecting a payment method on the payment page, the payment QR code refreshes. When users scan the code to pay, it triggers the payment component's after payment success or after payment failure event logic.

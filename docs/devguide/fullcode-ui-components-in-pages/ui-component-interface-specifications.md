@@ -6,35 +6,35 @@ slug: ui-component-interface-specifications
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Full-Code UI Component Interface Specifications
+# Full-Code Component Interface Specifications
 
-Full-code UI components are developed based on React and must follow specific interface specifications and code structures. This document details the core interfaces, file structures, and development standards for full-code components.
+Full-code components are built with React and must adhere to specific interface contracts and code structures. This guide explains the core interfaces, file layout, and development conventions for full-code components.
 
-:::tip
-Unlike custom component types, full-code components are scoped to the current page, while custom component types can be reused across multiple pages. Full-code components are suitable for rapid prototyping and scenarios with flexible, changing requirements.
+::::
+Full-code components are scoped to the current page, whereas custom component types can be reused across multiple pages. They are ideal for rapid prototyping and evolving requirements.
 
-To learn how to create full-code components, please refer to: [Full-Code Component Creation Guide](../using-functional-components-in-pages/full-code-components)
-:::
+To create full-code components, see: [Creating full-code components](../using-functional-components-in-pages/full-code-components)
+::::
 
-## Component Interface Architecture {#component-interface-architecture}
+## Component interface architecture {#component-interface-architecture}
 
-![Source Code](./img/15/source-code.png)
+![Source code](./img/15/source-code.png)
 
-Full-code components follow a standard three-layer architecture: **Page Renderer**, **Page Logic Class**, and **Component Interface**. The platform encapsulates the page assembly process as a black box, and developers only need to understand three core interfaces:
+Full-code components follow a standard three-layer architecture: **Page renderer**, **Page logic class**, and **Component interface**. The platform treats page composition as a black box; you only need to work with three core interfaces:
 
-### Core Interface Definitions {#core-interface-definitions}
+### Core interface definitions {#core-interface-definitions}
 
-- **Page Renderer (`PageRender.tsx`)**: Calls the platform's `ElementRender` interface to render the entire page
-- **Page Class (`page.ts`)**: Implements the `Jit.GridPage` interface, managing component instances and event subscriptions
-- **Component Class (`BlankComponent2.tsx`)**: Inherits from the `Jit.BaseComponent` interface, containing `Render` and logic methods
+- **Page renderer (`PageRender.tsx`)**: Renders the entire page by invoking the platform `ElementRender` interface.
+- **Page class (`page.ts`)**: Implements `Jit.GridPage`; manages component instances and event subscriptions.
+- **Component class (`BlankComponent2.tsx`)**: Extends `Jit.BaseComponent`; defines the `Render` function and logic methods.
 
-### Interface Interaction Mechanism {#interface-interaction-mechanism}
+### Interface interaction mechanism {#interface-interaction-mechanism}
 
-The platform injects component logic instances into the renderer through `props.compIns`, achieving separation between UI and logic. `ElementRender` is responsible for component lifecycle management and data flow control.
+The platform injects the component logic instance into the renderer via `props.compIns`, separating UI from logic. `ElementRender` manages component lifecycles and data flow.
 
-### Interface Implementation Specifications {#interface-implementation-specifications}
+### Interface implementation specifications {#interface-implementation-specifications}
 
-Full-code components must follow the following interface implementation specifications:
+Full-code components must comply with these implementation rules:
 
 <Tabs>
   <TabItem value="index" label="index.ts" default>
@@ -165,7 +165,7 @@ export default class BlankComponent2 extends Jit.BaseComponent {
   </TabItem>
 </Tabs>
 
-### Interface Runtime Sequence {#interface-runtime-sequence}
+### Interface runtime sequence {#interface-runtime-sequence}
 
 ```mermaid
 sequenceDiagram
@@ -194,15 +194,15 @@ sequenceDiagram
     PC->>PC: Execute event callback logic
 ```
 
-### Interface Invocation Explanation {#interface-invocation-explanation}
+### Interface invocation explanation {#interface-invocation-explanation}
 
-Core invocation mechanism of full-code component interfaces:
+The core invocation mechanism for full-code component interfaces:
 
-- **Page Interface**: `PageRender` calls the `ElementRender` interface, platform generates component tree based on `scheme.json` configuration
-- **Component Interface**: Platform creates component logic instance, passes it to renderer through `props.compIns` interface
-- **Event Interface**: `Render` calls logic methods and publishes events through `compIns` interface; `page.ts` subscribes to events through `bindEvent()` interface
+- **Page interface**: `PageRender` calls `ElementRender`; the platform generates the component tree based on the `scheme.json` configuration.
+- **Component interface**: The platform creates the component logic instance and passes it to the renderer via the `props.compIns` interface.
+- **Event interface**: `Render` invokes logic methods and publishes events via the `compIns` interface; `page.ts` subscribes via the `bindEvent()` interface.
 
-## Related Documentation
+## Related documentation {#related-documentation}
 
 - [Calling Page and Component Functions in Full-Code Components](./calling-page-and-component-functions-in-fullcode-components) - Learn how to call other components and page methods in full-code components
 - [Publishing and Subscribing Events](./emitting-events) - Understand the event mechanism of full-code components

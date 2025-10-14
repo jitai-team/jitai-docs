@@ -53,7 +53,7 @@ In statements, select `Large Language Model` → the large language model you wa
 
 ![Large Language Model - Call](./img/call-llm-in-page.png)
 
-Then set the [input args](../ai-llm/llm-input-output#call-llm-input): the model to call, prompt, and output format.
+Then set the [input args](../ai-llm/llm-input-output#call-llm-in-pages): the model to call, prompt, and output format.
 
 ![Large Language Model - Call with Parameters](./img/call-llm-in-page-input.gif)
 

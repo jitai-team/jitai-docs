@@ -9,7 +9,7 @@ An Agent (intelligent agent) possesses autonomous decision-making and task execu
 
 An Agent consists of three core components: system prompts, tools, and large language models. To achieve deep integration between Agents and application systems, they need to be able to identify, understand, and call existing system functional modules. In enterprise applications, it is typically necessary to precisely configure an Agent's input and output parameters and their formats, enabling flexible parameter passing, result retrieval, and processing in program logic. Additionally, Agents can integrate with knowledge bases to implement Retrieval-Augmented Generation (RAG).
 
-## Creating a ReActAgent {#creating-react-agent}
+## Creating ReActAgent {#creating-react-agent}
 
 ReAct (Reasoning and Acting) is an Agent working mode that combines "reasoning" and "acting". It enables AI to alternately think and take actions when facing complex tasks, dynamically adjusting subsequent decisions based on feedback from each step. Developers can use JitAi to quickly develop and debug ReAct-mode Agents that are natively integrated with applications, known as ReActAgents.
 
@@ -45,13 +45,13 @@ Developers need to complete the creation of large language model instance elemen
 You can refer to the official documentation of various large language model service providers to understand model capabilities and parameter configuration.
 :::
 
-## Writing agent descriptions {#writing-agent-descriptions}
+## Writing agent capabilities {#writing-agent-capabilities}
 
-`Agent Description` is text used to describe the Agent's purpose, functionality, features, and other information. When creating a ReActAgent, developers can write a concise and clear description. When the Agent is orchestrated by AI Assistant, the description information will be used for AI Assistant's routing decision analysis, thereby selecting the most suitable Agent among multiple Agents to handle user requests.
+`Capabilities` is text used to describe the Agent's purpose, functionality, features, and other information. When creating a ReActAgent, developers can write a concise and clear description. When the Agent is orchestrated by AI Assistant, the description information will be used for AI Assistant's routing decision analysis, thereby selecting the most suitable Agent among multiple Agents to handle user requests.
 
-![Write Agent Description](./img/agent/write-agent-description.png "Write Agent Description")
+![Write Agent Capabilities](./img/agent/write-agent-description.png "Write Agent Capabilities")
 
-Developers can fill in the description information in the `Basic Configuration` - `Agent Description` input box of the Agent visual editor and click `Save`. Usually, the description information can be consistent with the role description in the system prompt.
+Developers can fill in the description information in the `Basic Configuration` - `Capabilities` input box of the Agent visual editor and click `Save`. Usually, the description information can be consistent with the role description in the system prompt.
 
 ## Configuring runtime state storage {#configuring-runtime-state-storage}
 
@@ -63,13 +63,13 @@ Agents need to save and update state information during execution to maintain co
 
 Memory storage is suitable for testing and debugging stages, providing quick verification without relying on databases. Once the Jit node restarts, session context information in memory storage will be lost, so it is not recommended for production environments.
 
-Developers can select `Memory Storage` from the `Basic Configuration` - `Runtime State Storage` dropdown list in the Agent visual editor and click `Save`.
+Developers can select `memory` from the `Basic Configuration` - `Runtime state storage` dropdown list in the Agent visual editor and click `Save`.
 
 ### Database storage {#database-storage}
 
 Database storage is suitable for production environments and can persistently save the Agent's runtime state. Even if the Jit node restarts, session context information will not be lost. In cluster mode, session context information in database storage can also be shared by multiple Jit nodes.
 
-Developers can select the target database from the `Basic Configuration` - `Runtime State Storage` dropdown list in the Agent visual editor and click `Save`.
+Developers can select the target database from the `Basic Configuration` - `Runtime state storage` dropdown list in the Agent visual editor and click `Save`.
 
 :::tip
 Developers need to create a MySQL or PostgreSQL database element first before they can select and use it in the Agent.

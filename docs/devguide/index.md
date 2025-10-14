@@ -248,7 +248,7 @@ Complete workflow from application creation to distributed deployment. Master ap
 Design beautiful user interfaces and interactive experiences. From portal navigation to page construction, from component layout to data management, create comprehensive, user-friendly application interfaces.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
-  
+
 <IndexCard
   title="Creating Portals"
   href="devguide/shell-and-page/portal-navigation-design"
@@ -277,10 +277,10 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
     { text: "Multi-tab functionality", href: "devguide/shell-and-page/portal-navigation-design#multi-tab-functionality" },
     { text: "Portal visibility settings", href: "devguide/shell-and-page/portal-navigation-design#portal-visibility-settings" },
     { text: "Portal ordering", href: "devguide/shell-and-page/portal-navigation-design#portal-ordering" },
-    { text: "Managing common function entries", href: "devguide/shell-and-page/portal-navigation-design#managing-common-function-entries" },
+    { text: "Managing common features entries", href: "devguide/shell-and-page/portal-navigation-design#managing-common-features-entries" },
     { text: "Application and workflow entries", href: "devguide/shell-and-page/portal-navigation-design#application-and-workflow-entries" },
     { text: "Profile entry", href: "devguide/shell-and-page/portal-navigation-design#profile-entry" },
-    { text: "Integrating AI assistants", href: "devguide/shell-and-page/portal-navigation-design#integrating-ai-assistants" }
+    { text: "Enabling AI assistant", href: "devguide/shell-and-page/portal-navigation-design#integrating-ai-assistants" }
   ]} />
 </IndexCard>
 
@@ -366,8 +366,8 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
   description="Fully customized page development approach for advanced developers, supporting complex business logic and personalized interfaces."
 >
   <LinkGrid columns={2} links={[
-    { text: "Create React Full Code Page", href: "devguide/shell-and-page/full-code-page-development#create-react-full-code-page" },
-    { text: "Create Vue Full Code Page", href: "devguide/shell-and-page/full-code-page-development#vue-full-code-page" }
+    { text: "Creating React full-code pages", href: "devguide/shell-and-page/full-code-page-development#creating-react-full-code-pages" },
+    { text: "Creating Vue full-code pages", href: "devguide/shell-and-page/full-code-page-development#creating-vue-full-code-pages" }
   ]} />
 </IndexCard>
 
@@ -421,21 +421,22 @@ Connect your pages to powerful business logic and data operations. Learn how to 
   description="Learn how to invoke service functions from pages to execute business logic, process data, and integrate with external systems for dynamic content generation."
 >
   <LinkGrid links={[
-    { text: "Calling Service Functions in Standard Pages", href: "devguide/calling-business-elements-in-pages/calling-service-functions-in-pages#calling-service-functions-in-standard-pages" },
-    { text: "Calling Service Functions in Full-Code Pages", href: "devguide/calling-business-elements-in-pages/calling-service-functions-in-pages#calling-service-functions-in-full-code-pages" },
-    { text: "Complex Parameter Handling", href: "devguide/calling-business-elements-in-pages/calling-service-functions-in-pages#complex-parameter-handling" }
+    { text: "Invoking service functions in standard pages", href: "devguide/calling-business-elements-in-pages/calling-service-functions-in-pages#calling-service-functions-in-standard-pages" },
+    { text: "Invoking service functions in full-code pages", href: "devguide/calling-business-elements-in-pages/calling-service-functions-in-pages#calling-service-functions-in-full-code-pages" },
+    { text: "Handling complex parameters", href: "devguide/calling-business-elements-in-pages/calling-service-functions-in-pages#complex-parameter-handling" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Calling Data Model Functions in Pages"
   href="devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages"
-  description="Master the techniques for calling data model functions from pages to perform CRUD operations, data queries, and database interactions for real-time data display."
+  description="Master the techniques for invoking data model functions from pages to perform CRUD operations, data queries, and database interactions for real-time data display."
 >
   <LinkGrid links={[
-    { text: "Calling Syntax", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#calling-syntax" },
-    { text: "Basic Syntax in Full-Code Pages", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#basic-syntax-in-full-code-pages" },
-    { text: "Data Operation Capabilities", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#data-operation-capabilities" }
+    { text: "Calling syntax", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#calling-syntax" },
+    { text: "Basic syntax in full-code pages", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#basic-syntax-in-full-code-pages" },
+    { text: "Data operation capabilities", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#data-operation-capabilities" },
+    { text: "Related documentation", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#related-documentation" }
   ]} />
 </IndexCard>
 
@@ -452,12 +453,13 @@ Create advanced custom UI components with full programming control. Build sophis
   description="Learn the interface specifications and standards for creating full-code UI components, including props, state management, and lifecycle methods."
 >
   <LinkGrid columns={2} links={[
-    { text: "Component Interface Architecture", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#component-interface-architecture" },
-    { text: "Core Interface Definitions", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#core-interface-definitions" },
-    { text: "Interface Interaction Mechanism", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-interaction-mechanism" },
-    { text: "Interface Implementation Specifications", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-implementation-specifications" },
-    { text: "Interface Runtime Sequence", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-runtime-sequence" },
-    { text: "Interface Invocation Explanation", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-invocation-explanation" }
+    { text: "Component interface architecture", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#component-interface-architecture" },
+    { text: "Core interface definitions", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#core-interface-definitions" },
+    { text: "Interface interaction mechanism", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-interaction-mechanism" },
+    { text: "Interface implementation specifications", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-implementation-specifications" },
+    { text: "Interface runtime sequence", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-runtime-sequence" },
+    { text: "Interface invocation explanation", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-invocation-explanation" },
+    { text: "Related documentation", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#related-documentation" }
   ]} />
 </IndexCard>
 
@@ -467,12 +469,13 @@ Create advanced custom UI components with full programming control. Build sophis
   description="Master techniques for invoking page functions and other component functions from within full-code components for seamless integration."
 >
   <LinkGrid columns={2} links={[
-    { text: "Calling Principle", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#calling-principle" },
-    { text: "Practical Examples", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#practical-examples" },
-    { text: "Basic Component Calling", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#basic-component-calling" },
-    { text: "Getting Data from Other Components", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#getting-data-from-other-components" },
-    { text: "Common Component Methods", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#common-component-methods" },
-    { text: "Basic Calling Pattern", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#basic-calling-pattern" }
+    { text: "Calling principle", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#calling-principle" },
+    { text: "Practical examples", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#practical-examples" },
+    { text: "Basic component calling", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#basic-component-calling" },
+    { text: "Getting data from other components", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#getting-data-from-other-components" },
+    { text: "Common component methods", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#common-component-methods" },
+    { text: "Basic calling pattern", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#basic-calling-pattern" },
+    { text: "Related documentation", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#related-documentation" }
   ]} />
 </IndexCard>
 
@@ -495,11 +498,12 @@ Create advanced custom UI components with full programming control. Build sophis
 <IndexCard
   title="Calling Full-Code Component Functions in Page Code"
   href="devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code"
-  description="Understand how to call functions exposed by full-code components from page code to control component behavior and data flow."
+  description="Understand how to invoke functions exposed by full-code components from page code to control component behavior and data flow."
 >
   <LinkGrid links={[
-    { text: "Calling Principle", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#calling-principle" },
-    { text: "Calling Timing and Lifecycle", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#calling-timing-and-lifecycle" }
+    { text: "Calling mechanism", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#calling-mechanism" },
+    { text: "Calling timing and lifecycle", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#calling-timing-and-lifecycle" },
+    { text: "Related documentation", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#related-documentation" }
   ]} />
 </IndexCard>
 
@@ -905,9 +909,9 @@ Integrate mainstream large language models such as GPT-4, Claude, and Tongyi Qia
 >
   <LinkGrid links={[
     { text: "Mainstream LLM Vendor Support List", href: "devguide/ai-llm/create-ai-llm#mainstream-llm-vendor-support-list" },
-    { text: "Create LLM Vendor Element", href: "devguide/ai-llm/create-ai-llm#creating-llm-vendor-elements" },
-    { text: "Retry and Backup API Key Mechanism", href: "devguide/ai-llm/create-ai-llm#retry-backup-api-key-mechanism" },
-    { text: "Private LLM Integration", href: "devguide/ai-llm/create-ai-llm#private-llm-integration" }
+    { text: "Creating LLM vendor elements", href: "devguide/ai-llm/create-ai-llm#creating-llm-vendor-elements" },
+    { text: "Retry and backup API key mechanism", href: "devguide/ai-llm/create-ai-llm#retry-backup-api-key-mechanism" },
+    { text: "Private LLM integration", href: "devguide/ai-llm/create-ai-llm#private-llm-integration" }
   ]} />
 </IndexCard>
 
@@ -917,9 +921,15 @@ Integrate mainstream large language models such as GPT-4, Claude, and Tongyi Qia
   description="Understand the input and output configurations of large language models for optimal integration and performance."
 >
   <LinkGrid links={[
-    { text: "Calling LLM in Pages", href: "devguide/ai-llm/llm-input-output#call-llm-in-pages" },
-    { text: "Calling LLM in Backend Functions", href: "devguide/ai-llm/llm-input-output#call-llm-in-backend-functions" },
-    { text: "LLM Programming Interface", href: "devguide/ai-llm/llm-input-output#llm-programming-interface" }
+    { text: "Calling LLM in pages", href: "devguide/ai-llm/llm-input-output#call-llm-in-pages" },
+    { text: "Function input 1: Setting the language model", href: "devguide/ai-llm/llm-input-output#setting-language-model" },
+    { text: "Function input 2: Using prompts", href: "devguide/ai-llm/llm-input-output#using-prompts" },
+    { text: "Function output: Output control", href: "devguide/ai-llm/llm-input-output#output-control" },
+    { text: "Calling LLM in backend functions", href: "devguide/ai-llm/llm-input-output#call-llm-in-backend-functions" },
+    { text: "LLM programming interface", href: "devguide/ai-llm/llm-input-output#llm-programming-interface" },
+    { text: "runLlm", href: "devguide/ai-llm/llm-input-output#runllm" },
+    { text: "embedDocuments", href: "devguide/ai-llm/llm-input-output#embeddocuments" },
+    { text: "rerankDocuments", href: "devguide/ai-llm/llm-input-output#rerankdocuments" }
   ]} />
 </IndexCard>
 
@@ -943,16 +953,16 @@ Transform enterprise documents, manuals, and FAQs into intelligent knowledge bas
 <IndexCard
   title="Creating Knowledge Base Elements"
   href="devguide/knowledge-base/create-knowledge-elements"
-  description="Learn how to create AI Knowledge Base elements and understand their working principles."
+  description="Learn how to create AI knowledge base elements and understand their working principles."
 >
   <LinkGrid columns={2} links={[
-    { text: "Creating AI Knowledge Base Elements", href: "devguide/knowledge-base/create-knowledge-elements#create-ai-knowledge-base-element" },
-    { text: "Principle Description", href: "devguide/knowledge-base/create-knowledge-elements#principle-description" },
-    { text: "Core Components", href: "devguide/knowledge-base/create-knowledge-elements#core-components" },
-    { text: "System Architecture", href: "devguide/knowledge-base/create-knowledge-elements#system-architecture" },
-    { text: "Technical Principles", href: "devguide/knowledge-base/create-knowledge-elements#technical-principles" },
-    { text: "Data Processing Flow", href: "devguide/knowledge-base/create-knowledge-elements#data-processing-flow" },
-    { text: "Retrieval Mechanism", href: "devguide/knowledge-base/create-knowledge-elements#retrieval-mechanism" }
+    { text: "Creating AI knowledge base elements", href: "devguide/knowledge-base/create-knowledge-elements#create-ai-knowledge-base-element" },
+    { text: "How it works", href: "devguide/knowledge-base/create-knowledge-elements#principle-description" },
+    { text: "Core components", href: "devguide/knowledge-base/create-knowledge-elements#core-components" },
+    { text: "System architecture", href: "devguide/knowledge-base/create-knowledge-elements#system-architecture" },
+    { text: "Technical principles", href: "devguide/knowledge-base/create-knowledge-elements#technical-principles" },
+    { text: "Data processing flow", href: "devguide/knowledge-base/create-knowledge-elements#data-processing-flow" },
+    { text: "Retrieval mechanism", href: "devguide/knowledge-base/create-knowledge-elements#retrieval-mechanism" }
   ]} />
 </IndexCard>
 
@@ -962,25 +972,25 @@ Transform enterprise documents, manuals, and FAQs into intelligent knowledge bas
   description="Manage knowledge base documents, configure knowledge base parameters, perform query testing and vectorization tuning."
 >
   <LinkGrid columns={2} links={[
-    { text: "AI Knowledge Base Settings", href: "devguide/knowledge-base/knowledge-base-document-management#ai-knowledge-base-settings" },
-    { text: "Query Testing", href: "devguide/knowledge-base/knowledge-base-document-management#query-testing" },
-    { text: "Vectorization Configuration Description", href: "devguide/knowledge-base/knowledge-base-document-management#vectorization-configuration-description" },
-    { text: "Knowledge Base Configuration Parameter Description", href: "devguide/knowledge-base/knowledge-base-document-management#knowledge-base-configuration-parameter-description" }
+    { text: "Knowledge base settings", href: "devguide/knowledge-base/knowledge-base-document-management#knowledge-base-settings" },
+    { text: "Query testing", href: "devguide/knowledge-base/knowledge-base-document-management#query-testing" },
+    { text: "Vectorization configuration", href: "devguide/knowledge-base/knowledge-base-document-management#vectorization-configuration" },
+    { text: "Knowledge base configuration parameters", href: "devguide/knowledge-base/knowledge-base-document-management#knowledge-base-configuration-parameters" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Full-Text and Semantic Search Using Knowledge Base Elements"
-  href="devguide/knowledge-base/full-text-and-semantic-search"
-  description="Understand how configuration items participate in query flow and call knowledge base in backend visual programming."
+  href="devguide/knowledge-base/keyword-and-semantic-search"
+  description="Learn how to call knowledge bases in backend visual programming and understand how configuration settings participate in the query flow."
 >
   <LinkGrid columns={2} links={[
-    { text: "Callling AI Knowledge Base in Backend Visual Programming", href: "devguide/knowledge-base/full-text-and-semantic-search#call-ai-knowledge-base-in-backend-visual-programming" },
-    { text: "Semantic Search", href: "devguide/knowledge-base/full-text-and-semantic-search#semantic-search" },
-    { text: "Adding Document", href: "devguide/knowledge-base/full-text-and-semantic-search#adding-document" },
-    { text: "Deleting Document", href: "devguide/knowledge-base/full-text-and-semantic-search#deleting-document" },
-    { text: "Searching by Keywords", href: "devguide/knowledge-base/full-text-and-semantic-search#searching-by-keywords" },
-    { text: "How AI Knowledge Base Settings Participate in Query Flow", href: "devguide/knowledge-base/full-text-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow" }
+    { text: "Calling AI knowledge base in backend visual programming", href: "devguide/knowledge-base/keyword-and-semantic-search#call-ai-knowledge-base-in-backend-visual-programming" },
+    { text: "Semantic search", href: "devguide/knowledge-base/keyword-and-semantic-search#semantic-search" },
+    { text: "Adding a document", href: "devguide/knowledge-base/keyword-and-semantic-search#adding-document" },
+    { text: "Deleting a document", href: "devguide/knowledge-base/keyword-and-semantic-search#deleting-document" },
+    { text: "Searching by keywords", href: "devguide/knowledge-base/keyword-and-semantic-search#searching-by-keywords" },
+    { text: "How AI knowledge base settings participate in query flow", href: "devguide/knowledge-base/keyword-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow" }
   ]} />
 </IndexCard>
 
@@ -991,24 +1001,24 @@ Transform enterprise documents, manuals, and FAQs into intelligent knowledge bas
 >
   <LinkGrid links={[
     { text: "Relationship Between Knowledge Base and Agent", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#relationship-between-knowledge-base-and-agent" },
-    { text: "Technical Integration Principle", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#technical-integration-principle" },
+    { text: "Technical Integration Principles", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#technical-integration-principles" },
     { text: "Integration Modes", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#integration-modes" },
-    { text: "Using Knowledge Base in Agent", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#use-knowledge-base-in-agent" }
+    { text: "Using Knowledge Base in Agent", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#using-knowledge-base-in-agent" }
   ]} />
 </IndexCard>
 
 <IndexCard
-  title="Vector Database Standalone Deployment"
+  title="Deploying Vector Databases as Standalone Services"
   href="devguide/knowledge-base/vector-database-standalone-deployment"
   description="Intelligent storage engine for enterprise knowledge. Convert text into vector data to achieve semantic-level precise search."
 >
   <LinkGrid columns={2} links={[
-    { text: "Standalone Deployment Solution: Chroma Vector Database", href: "devguide/knowledge-base/vector-database-standalone-deployment#chroma-standalone-deployment" },
-    { text: "Advantages of Standalone Deployment", href: "devguide/knowledge-base/vector-database-standalone-deployment#advantages-of-standalone-deployment" },
-    { text: "Chroma Standalone Deployment Installation", href: "devguide/knowledge-base/vector-database-standalone-deployment#chroma-installation" },
-    { text: "Connecting to Standalone Chroma Database", href: "devguide/knowledge-base/vector-database-standalone-deployment#connect-to-standalone-chroma" },
-    { text: "Development Testing Environment: Local Configuration", href: "devguide/knowledge-base/vector-database-standalone-deployment#local-development-config" },
-    { text: "Vector Database Programming Interface", href: "devguide/knowledge-base/vector-database-standalone-deployment#vector-database-programming-interface" },
+    { text: "Standalone deployment solution: Chroma vector database", href: "devguide/knowledge-base/vector-database-standalone-deployment#chroma-standalone-deployment" },
+    { text: "Advantages of standalone deployment", href: "devguide/knowledge-base/vector-database-standalone-deployment#advantages-of-standalone-deployment" },
+    { text: "Installing Chroma for standalone deployment", href: "devguide/knowledge-base/vector-database-standalone-deployment#chroma-installation" },
+    { text: "Connecting to a standalone Chroma database", href: "devguide/knowledge-base/vector-database-standalone-deployment#connect-to-standalone-chroma" },
+    { text: "Local configuration for development and testing", href: "devguide/knowledge-base/vector-database-standalone-deployment#local-development-config" },
+    { text: "Vector database programming interface", href: "devguide/knowledge-base/vector-database-standalone-deployment#vector-database-programming-interface" },
     { text: "health_check", href: "devguide/knowledge-base/vector-database-standalone-deployment#health_check" },
     { text: "create_collection", href: "devguide/knowledge-base/vector-database-standalone-deployment#create_collection" },
     { text: "add_vectors", href: "devguide/knowledge-base/vector-database-standalone-deployment#add_vectors" },
@@ -1039,10 +1049,10 @@ Intelligent agents with reasoning and action capabilities. Through prompts and t
   description="Learn how to create ReActAgents, configure system prompts, select large language models, write descriptions, and configure runtime state storage."
 >
   <LinkGrid columns={2} links={[
-    { text: "Creating a ReActAgent", href: "devguide/ai-agent/create-ai-agent#creating-react-agent" },
+    { text: "Creating ReActAgent", href: "devguide/ai-agent/create-ai-agent#creating-react-agent" },
     { text: "Writing system prompts", href: "devguide/ai-agent/create-ai-agent#writing-system-prompts" },
     { text: "Selecting models and configuring parameters", href: "devguide/ai-agent/create-ai-agent#selecting-models-configuring-parameters" },
-    { text: "Writing agent descriptions", href: "devguide/ai-agent/create-ai-agent#writing-agent-descriptions" },
+    { text: "Writing agent capabilities", href: "devguide/ai-agent/create-ai-agent#writing-agent-capabilities" },
     { text: "Configuring runtime state storage", href: "devguide/ai-agent/create-ai-agent#configuring-runtime-state-storage" },
     { text: "Memory storage", href: "devguide/ai-agent/create-ai-agent#memory-storage" },
     { text: "Database storage", href: "devguide/ai-agent/create-ai-agent#database-storage" },
@@ -1939,10 +1949,10 @@ Create unique visual experiences and brand identity. Customize application theme
   description="Application overall style and theme configuration, unifying interface style and user experience."
 >
   <LinkGrid links={[
-    { text: "Creating Global Style Element", href: "devguide/frontend-ui-customization/global-styles#create-global-style-element" },
-    { text: "Modifying Global Style", href: "devguide/frontend-ui-customization/global-styles#modify-global-style" },
-    { text: "More Style Variables", href: "devguide/frontend-ui-customization/global-styles#more-style-variables" },
-    { text: "Debugging Theme", href: "devguide/frontend-ui-customization/global-styles#debug-theme" }
+    { text: "Creating a global style element", href: "devguide/frontend-ui-customization/global-styles#create-global-style-element" },
+    { text: "Modifying the global style", href: "devguide/frontend-ui-customization/global-styles#modify-global-style" },
+    { text: "More style variables", href: "devguide/frontend-ui-customization/global-styles#more-style-variables" },
+    { text: "Debugging the theme", href: "devguide/frontend-ui-customization/global-styles#debug-theme" }
   ]} />
 </IndexCard>
 
@@ -1974,19 +1984,31 @@ Create unique visual experiences and brand identity. Customize application theme
 <IndexCard
   title="Page Customization"
   href="devguide/frontend-ui-customization/page-customization"
-  description="Specific development technologies and usage methods for full-code pages, including style processing, component usage, resource management, data operations, etc."
+  description="Specific development technologies and usage patterns for full-code pages, including style processing, component usage, resource management, and data operations."
 >
   <LinkGrid columns={2} links={[
-    { text: "Using Styles", href: "devguide/frontend-ui-customization/page-customization#use-style" },
-    { text: "Using Local Resources", href: "devguide/frontend-ui-customization/page-customization#use-local-resources" },
-    { text: "Using Ant Design Components", href: "devguide/frontend-ui-customization/page-customization#use-ant-design-components" },
-    { text: "Embedding Existing Generic Pages", href: "devguide/frontend-ui-customization/page-customization#embed-existing-generic-page" },
-    { text: "Using Standard Components", href: "devguide/frontend-ui-customization/page-customization#use-standard-component" },
-    { text: "Calling Data Model Functions", href: "devguide/frontend-ui-customization/page-customization#call-data-model-function" },
-    { text: "Calling Service Functions", href: "devguide/frontend-ui-customization/page-customization#call-service-function" },
-    { text: "Creating Vue Full-code Page", href: "devguide/frontend-ui-customization/page-customization#vue-full-code-page" },
-    { text: "Using Third-party Packages", href: "devguide/frontend-ui-customization/page-customization#use-third-party-packages" },
-    { text: "Using Packaging Configuration", href: "devguide/frontend-ui-customization/page-customization#use-packaging-configuration" }
+    { text: "Creating a React full-code page", href: "devguide/frontend-ui-customization/page-customization#create-react-full-code-page" },
+    { text: "Using styles", href: "devguide/frontend-ui-customization/page-customization#use-style" },
+    { text: "Using local resources", href: "devguide/frontend-ui-customization/page-customization#use-local-resources" },
+    { text: "Using Ant Design components", href: "devguide/frontend-ui-customization/page-customization#use-ant-design-components" },
+    { text: "Embedding existing standard pages", href: "devguide/frontend-ui-customization/page-customization#embed-existing-standard-page" },
+    { text: "Using standard components", href: "devguide/frontend-ui-customization/page-customization#use-standard-component" },
+    { text: "Calling data model functions", href: "devguide/frontend-ui-customization/page-customization#call-data-model-function" },
+    { text: "Calling service functions", href: "devguide/frontend-ui-customization/page-customization#call-service-function" },
+    { text: "Creating a Vue full-code page", href: "devguide/frontend-ui-customization/page-customization#vue-full-code-page" },
+    { text: "Basic structure", href: "devguide/frontend-ui-customization/page-customization#basic-structure" },
+    { text: "Using Element Plus components", href: "devguide/frontend-ui-customization/page-customization#using-element-plus-components" },
+    { text: "Interacting with the page instance", href: "devguide/frontend-ui-customization/page-customization#interacting-with-page-instance" },
+    { text: "CRUD operations for data models", href: "devguide/frontend-ui-customization/page-customization#crud-operations-for-data-models" },
+    { text: "Using model functions in full-code", href: "devguide/frontend-ui-customization/page-customization#full-code-using-model-functions" },
+    { text: "Using service functions", href: "devguide/frontend-ui-customization/page-customization#using-service-functions" },
+    { text: "Calling service functions in full-code", href: "devguide/frontend-ui-customization/page-customization#full-code-calling-service-functions" },
+    { text: "Using third-party packages", href: "devguide/frontend-ui-customization/page-customization#use-third-party-packages" },
+    { text: "Using network resources", href: "devguide/frontend-ui-customization/page-customization#using-network-resources" },
+    { text: "Using build configuration", href: "devguide/frontend-ui-customization/page-customization#use-build-configuration" },
+    { text: "Introducing build plugins", href: "devguide/frontend-ui-customization/page-customization#introducing-build-plugins" },
+    { text: "System built-in package overview", href: "devguide/frontend-ui-customization/page-customization#system-built-in-package-overview" },
+    { text: "Default loader mapping", href: "devguide/frontend-ui-customization/page-customization#default-loader-mapping" }
   ]} />
 </IndexCard>
 

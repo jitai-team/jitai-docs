@@ -1049,10 +1049,10 @@ Intelligent agents with reasoning and action capabilities. Through prompts and t
   description="Learn how to create ReActAgents, configure system prompts, select large language models, write descriptions, and configure runtime state storage."
 >
   <LinkGrid columns={2} links={[
-    { text: "Creating a ReActAgent", href: "devguide/ai-agent/create-ai-agent#creating-react-agent" },
+    { text: "Creating ReActAgent", href: "devguide/ai-agent/create-ai-agent#creating-react-agent" },
     { text: "Writing system prompts", href: "devguide/ai-agent/create-ai-agent#writing-system-prompts" },
     { text: "Selecting models and configuring parameters", href: "devguide/ai-agent/create-ai-agent#selecting-models-configuring-parameters" },
-    { text: "Writing agent descriptions", href: "devguide/ai-agent/create-ai-agent#writing-agent-descriptions" },
+    { text: "Writing agent capabilities", href: "devguide/ai-agent/create-ai-agent#writing-agent-capabilities" },
     { text: "Configuring runtime state storage", href: "devguide/ai-agent/create-ai-agent#configuring-runtime-state-storage" },
     { text: "Memory storage", href: "devguide/ai-agent/create-ai-agent#memory-storage" },
     { text: "Database storage", href: "devguide/ai-agent/create-ai-agent#database-storage" },

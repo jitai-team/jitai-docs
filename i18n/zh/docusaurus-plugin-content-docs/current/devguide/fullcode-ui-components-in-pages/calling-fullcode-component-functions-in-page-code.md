@@ -7,7 +7,7 @@ slug: calling-fullcode-component-functions-in-page-code
 
 页面类作为所有组件的"中央调度器"，不仅可以订阅全代码组件的事件，还可以直接调用全代码组件的方法。这为页面级的逻辑处理提供了强大的控制能力。
 
-## 调用原理 {#calling-principle}
+## 调用原理 {#invocation-mechanism}
 
 在页面类中，每个全代码组件都被实例化为页面类的属性。这意味着页面类可以直接访问全代码组件的所有公开方法：
 
@@ -42,7 +42,7 @@ class PageCls extends Jit.GridPage {
 }
 ```
 
-## 调用时机和生命周期 {#calling-timing-and-lifecycle}
+## 调用时机和生命周期 {#invocation-timing-and-lifecycle}
 
 了解何时调用全代码组件的方法非常重要：
 
@@ -83,7 +83,7 @@ class PageCls extends Jit.GridPage {
 }
 ```
 
-## 相关文档
+## 相关文档 {#related-documentation}
 
 - [全代码组件接口规范](./ui-component-interface-specifications) - 了解全代码组件的基本结构和公开方法
 - [在全代码组件中调用页面和组件函数](./calling-page-and-component-functions-in-fullcode-components) - 了解反向调用的方式

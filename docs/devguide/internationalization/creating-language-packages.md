@@ -4,7 +4,15 @@ slug: creating-language-packages
 title: Creating Language Packages
 ---
 
-The JitAi platform includes built-in Simplified Chinese and English language packages. When the application runs, the system automatically selects the appropriate language package based on the browser's language settings. If the browser language is not supported, English is used as the default fallback. You can create custom language packages as needed to support additional languages.
+## What is language package {#what-is-language-package}
+
+Language packs are a multilingual support feature provided by the JitAi platform, enabling applications to display interface text according to users' language preferences.
+
+A language pack is essentially a translation mapping table that associates original text in applications with translated text in different languages. For example, when an application needs to display an "Add" button, the system will show "添加" for Chinese users, "Add" for English users, and "추가" for Korean users, based on the user's language settings.
+
+Through language packs, a single application can support multiple languages simultaneously. When users access the application, the system automatically detects their browser's language settings and selects the corresponding language pack to display interface content. If the user's language is not within the supported range, the system defaults to the English version.
+
+The JitAi platform comes with built-in language packs for Simplified Chinese and English, ready to use out of the box. Developers can also create custom language packs as needed to support additional languages such as Traditional Chinese, Japanese, Korean, and more.
 
 ## Creating language packages {#creating-language-packages}
 

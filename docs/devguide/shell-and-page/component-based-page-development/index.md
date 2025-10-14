@@ -5,14 +5,14 @@ sidebar_position: 2
 # Component-Based Page Development {#component-based-page-development}
 Pages serve as the primary interfaces where users interact with application systems. They are composed of various frontend functional [components](/docs/devguide/using-functional-components-in-pages) that provide data display interfaces and interactive operation entry points. When [creating portals](/docs/devguide/shell-and-page/portal-navigation-design), developers design navigation menus for each portal, with each menu item corresponding to both PC and mobile versions of a page.
 
-In component-based pages, the page function logic, page event function logic, and component event function logic can all invoke other business elements, including services, data models, AI large language models, AI Agents, AI assistants, and more. For detailed information about invoking business elements, refer to [Calling Frontend and Backend Tools and Services in Function Logic](/docs/devguide/calling-business-elements-in-pages).
+In component-based pages, the page function logic, page event function logic, and component event function logic can all invoke other business elements, including [services](/docs/devguide/business-logic-development/creating-service-elements), [data models](/docs/devguide/data-modeling), [large language models](/docs/devguide/ai-llm/create-ai-llm), [AI Agents](/docs/devguide/ai-agent/create-ai-agent), [AI assistants](/docs/devguide/ai-assistant/create-ai-assistant), and more. For detailed information about invoking business elements, refer to [Calling Frontend and Backend Tools and Services in Function Logic](/docs/devguide/calling-business-elements-in-pages).
 
 ## Creating generic pages {#creating-generic-pages}
 When [creating portals](/docs/devguide/shell-and-page/portal-navigation-design), if developers choose to create pages while creating menus, pages are automatically generated and can be found in the element directory tree for editing.
 
 Developers can also create pages manually. JitAi provides 7 page types: `Generic Page`, `AI Data Mgmt Page`(AI Data Management Page), `AI Data Analysis Page`, `Data Entry Page`, `React Page`, `Vue Page`, and `Markdown Page`. AI Data Mgmt Page, AI Data Analysis Page, and Data Entry Page are all built upon Generic Page. This article uses generic pages to demonstrate **how to perform component-based page development**.
 
-![Select Page Type](./imgs/create-generic-page.gif "Select Page Type")
+![Create Generic Page](./imgs/create-generic-page.gif "Create Generic Page")
 
 To create a page, developers locate `UI Pages` in the element directory tree, click `+` and select `Generic Page`, fill in the page name in the popup form, and click `Confirm` to complete page creation and automatically enter the [Visual Page Editor](#visual-page-editor).
 
@@ -166,7 +166,7 @@ Page functions can invoke other page functions within the current page and acces
 
 ![Page Function and Variable Call](./imgs/page-function-and-variable-call.gif "Page Function and Variable Call")
 
-In the example above, the `echo` function calls the `Say Hello` function and passes the value of the `Variable 1` page variable as an input parameter to the `Say Hello` function.
+In the example above, the `TestInvoke` function calls the `SayHi` function and passes the value of the `Var1` page variable as an input parameter to the `SayHi` function.
 
 ## Page events {#page-events}
 ### After page load {#after-page-load}
@@ -184,18 +184,18 @@ When browser tabs switch to the current page or platform navigation tabs switch 
 Developers switch to `Page Events` in the upper left corner of the `Main Page` event panel to view the current page's event list on the right side. Click the `After Page Focus` tab to edit the `After Page Focus` event logic below.
 
 ### On page variable change {#on-page-variable-change}
-Each page variable automatically generates an `On Page Variable Change` event. When a page variable value changes, this event triggers automatically. For example, the variable `Access Type` generates the corresponding event `On Page Variable (Access Type) Change`.
+Each page variable automatically generates an `On Page Variable Change` event. When a page variable value changes, this event triggers automatically. For example, the variable `var1` generates the corresponding event `On Page Variable (var1) Change`.
 
 ![On Page Variable Change](./imgs/variable-value-change-after-event.png "On Page Variable Change")
 
-Developers can edit the `On Page Variable (Access Type) Change` event logic within the event panel.
+Developers can edit the `On Page Variable (var1) Change` event logic within the event panel.
 
 ### Using page variables and functions in event logic {#using-page-variables-functions-in-event-logic}
 Within event logic, developers can access the current page's variables and functions.
 
 ![Use Page Variables and Functions in Event Logic](./imgs/use-page-variables-and-functions-in-event-logic.png "Use Page Variables and Functions in Event Logic")
 
-In the example above, the `On Page Variable (Access Type) Change` event calls the `sayHello` function and passes the `Access Type` page variable value as an input parameter to the `sayHello` function.
+In the example above, the `On Page Variable (var2) Change` event calls the `SayHi` function and passes the `var2` page variable value as an input parameter to the `SayHi` function.
 
 ## Shortcuts {#shortcuts}
 ### Clearing statements {#clearing-statements}
@@ -256,7 +256,7 @@ Data models encapsulate CRUD operations on database tables, while service functi
 
 Developers click the `Basic Statement` button, then click the `Please select` text in the newly inserted blank statement to display a list of callable targets.
 
-Using the example above, sequentially selecting `Data Models` - `Department model` - `Get One Record` completes the functionality for querying a single department data record.
+Using the example above, sequentially selecting `Data Models` - `Customer(example)` - `Get One Record` completes the functionality for querying a single department data record.
 
 ### Calling frontend services {#calling-frontend-services}
 In frontend business function development, developers typically need common functionality such as popup confirmations, feedback reminders, loading indicators, message prompts (error/warning/normal), and log printing. JitAi provides these functions as built-in frontend services for direct use.

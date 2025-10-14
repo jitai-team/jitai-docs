@@ -5,7 +5,7 @@ sidebar_position: 2
 # 创建组件化页面
 页面是用户与应用系统交互的主要场所，由不同的前端功能[组件](/docs/devguide/using-functional-components-in-pages)构成，为用户提供数据展示界面以及交互操作入口。开发者在[创建门户](/docs/devguide/shell-and-page/portal-navigation-design)中规划每个门户中的导航菜单，而每个菜单项则对应一个页面的PC端和移动端。
 
-在一个组件化页面中，页面函数逻辑、页面事件函数逻辑、页面中用到的组件的事件函数逻辑中都可以调用其它的业务元素，包括且不限于服务、数据模型、AI大模型、AI Agent、AI助理等。关于调用业务元素的详细内容，可以参考[在函数逻辑中调用前后端工具和服务](/docs/devguide/calling-business-elements-in-pages)。
+在一个组件化页面中，页面函数逻辑、页面事件函数逻辑、页面中用到的组件的事件函数逻辑中都可以调用其它的业务元素，包括且不限于[服务](/docs/devguide/business-logic-development/creating-service-elements)、[数据模型](/docs/devguide/data-modeling)、[AI大模型](/docs/devguide/ai-llm/create-ai-llm)、[AI Agent](/docs/devguide/ai-agent/create-ai-agent)、[AI助理](/docs/devguide/ai-assistant/create-ai-assistant)等。关于调用业务元素的详细内容，可以参考[在函数逻辑中调用前后端工具和服务](/docs/devguide/calling-business-elements-in-pages)。
 
 ## 新建常规页面 {#creating-generic-pages}
 在[创建门户](/docs/devguide/shell-and-page/portal-navigation-design)中，如果开发者选择创建菜单的同时创建页面，则页面会自动生成，可以在元素目录树中找到自动生成的页面并进行编辑。

@@ -81,7 +81,7 @@ For portals with extensive menu collections, developers can implement organizati
 
 ![Create Portal Menu Group](./imgs/create-portal-menu-group.gif "Create Portal Menu Group")
 
-To create a group, developers click the `+ New Group` button, enter the group title in the `New Group` dialog, and click `Confirm`. Developers can configure group expand/collapse icons and icon colors during group creation, or click the `pencil` button beside the group title after creation to make further edits.
+To create a group, developers click the `+ Create Group` button, enter the group title in the `Create Group` dialog, and click `Confirm`. Developers can configure group expand/collapse icons and icon colors during group creation, or click the edit button beside the group title after creation to make further edits.
 
 #### Moving menus into groups {#moving-menus-into-groups}
 
@@ -115,7 +115,7 @@ The same page may be utilized by multiple portal menus. When accessed from diffe
 
 ![Portal Menu Page Variable Assignment](./imgs/portal-menu-page-variable-assignment.gif "Portal Menu Page Variable Assignment")
 
-Developers can expand the `More` button on the right side of the menu item, click the `Page Variable Assignment` button, and assign values to page variables in the resulting dialog.
+Developers can expand the `More` button on the right side of the menu item, click the `Page Variables` button, and assign values to page variables in the resulting dialog.
 
 :::warning
 Developers must first declare [page variables](/docs/devguide/shell-and-page/component-based-page-development#page-variables) within the page. If no variables are declared in the page, page variable assignment cannot be configured in the portal.
@@ -159,29 +159,29 @@ When developers disable the `Display in portal switch menu` option in `Layout De
 ### Portal ordering {#portal-ordering}
 When an application contains multiple portals, developers can configure order values in `Layout Design` to control the display sequence of each portal in the portal selector menu.
 
-## Managing common function entries {#managing-common-function-entries}
-Every newly created portal includes a standard set of common function entries: Initiate Application, To-do Center, Message Center, Profile, and New Function. The New Function entry provides simplified module creation capabilities, though with reduced functionality compared to the comprehensive [Visual Development Tools](/docs/devguide/development-tool-and-publish-service/visual-development-tool). All entries can be selectively enabled or disabled through the `Layout Design` configuration.
+## Managing common features entries {#managing-common-features-entries}
+Every newly created portal includes a standard set of common features entries: `Submit Request`, `Approval Center`, `Create (Only effective on PC)`. The `Create` entry provides simplified module creation capabilities, though with reduced functionality compared to the comprehensive [Visual Development Tool](/docs/devguide/development-tool-and-publish-service/visual-development-tool). All entries can be selectively enabled or disabled through the `Layout Design` configuration.
 
-![Portal Common Function Entry](./imgs/portal-common-function-entry.png "Portal Common Function Entry")
+![Portal Common Features Entries](./imgs/portal-common-function-entry.png "Portal Common Features Entries")
 
-Function entry visibility is controlled through the `Layout Design` → `Common Navigation Functions` section, where developers can toggle individual entries according to portal requirements.
+Common features entries visibility are controlled through the `Layout Design` → `Common Features` section, where developers can toggle individual entries according to portal requirements.
 
-![Portal Common Function Entry Display](./imgs/portal-common-function-entry-display.png "Portal Common Function Entry Display")
+![Display Portal Common Features](./imgs/portal-common-function-entry-display.png "Display Portal Common Features")
 
-The above image demonstrates the interface appearance when all common function entries are enabled.
+The above image demonstrates the interface appearance when all common features entries are enabled.
 
 ### Application and workflow entries {#application-and-workflow-entries}
-Enabling the `Initiate Approval`, `Pending Center`, and `Message Center` entries provides users with direct access to workflow management capabilities, including launching approval processes, reviewing pending tasks, and accessing system notifications—all accessible directly from the portal interface.
+Enabling the `Submit Request`, `Approval Center` entries provides users with direct access to workflow management capabilities, including launching approval processes, reviewing pending tasks, all accessible directly from the portal interface.
 
-![Initiate Approval/Pending Center/Message Center Entry](./imgs/initiate-application-todo-message-center-entry.gif "Initiate Approval/Pending Center/Message Center Entry")
+![Submit Request/Approval Center Entry](./imgs/initiate-application-todo-message-center-entry.gif "Submit Request/Approval Center Entry")
 
 ### Profile entry {#profile-entry}
-The `Profile` entry grants users access to profile management functionality, including personal information updates, credential modifications, organization switching, and secure system logout capabilities.
+The `Profile` entry grants users access to profile management functionality, including personal information updates, credential modifications, organization switching, and secure sign out.
 
-![Profile Functions](./imgs/profile-functions.gif "Profile Functions")
+![Profile](./imgs/profile-functions.gif "Profile")
 
-## Integrating AI assistants {#integrating-ai-assistants}
-JitAi provides native [AI Assistant](/docs/devguide/ai-assistant/create-ai-assistant) integration capabilities, allowing users to interact with intelligent assistants directly through the portal interface. This section offers a high-level overview; detailed implementation guidance is available in [Integrating AI Assistant in Portals](/docs/devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals).
+## Enabling AI assistant {#integrating-ai-assistants}
+JitAi provides native [AI Assistant](/docs/devguide/ai-assistant/create-ai-assistant) integration capabilities, allowing users to interact with intelligent assistants directly through the portal interface. This section offers a high-level overview; detailed implementation guidance is available in [Using AI Assistant in Generic Portals](/docs/devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals).
 
 ![Portal Integrate AI Assistant](./imgs/portal-integrate-ai-assistant.gif "Portal Integrate AI Assistant")
 
@@ -189,5 +189,4 @@ AI assistant integration is accomplished through the portal configuration interf
 
 ![AI Assistant Effect in Portal](./imgs/ai-assistant-effect-in-portal.png "AI Assistant Effect in Portal")
 
-Once AI assistant integration is enabled, users will observe an AI Assistant entry within the portal navigation menu. Selecting this entry launches an interactive dialog interface for direct communication with the AI assistant.
-
+Once AI assistant is enabled, users will observe an AI Assistant entry within the portal navigation menu. Selecting this entry launches an interactive dialog interface for direct communication with the AI assistant.

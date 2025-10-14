@@ -23,7 +23,7 @@ Service functions serve as containers for complex business logic processing. Whe
 
 ![Add Service Functions](./img/agent/agent-add-service-function-tool.gif "Add Service Functions")
 
-To add service functions, navigate to the `Tools` tab in the Agent visual editor, click `Add Tool`, select `Service Functions` from the list, choose the target service in the popup dialog, and click `Confirm`.
+To add service functions, navigate to the `Tools` tab in the Agent visual editor, click `Add Tool`, select `Services` from the list, choose the target service in the popup dialog, and click `Confirm`.
 
 By default, all service functions are added as tools. Developers should selectively disable unnecessary functions based on their specific requirements.
 

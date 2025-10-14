@@ -277,7 +277,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "多标签页", href: "devguide/shell-and-page/portal-navigation-design#multi-tab-functionality" },
     { text: "是否显示在门户切换列表中", href: "devguide/shell-and-page/portal-navigation-design#portal-visibility-settings" },
     { text: "设置在门户列表中的顺序", href: "devguide/shell-and-page/portal-navigation-design#portal-ordering" },
-    { text: "启用或关闭常用功能入口", href: "devguide/shell-and-page/portal-navigation-design#managing-common-function-entries" },
+    { text: "启用或关闭常用功能入口", href: "devguide/shell-and-page/portal-navigation-design#managing-common-features-entries" },
     { text: "发起申请/待办/消息中心入口", href: "devguide/shell-and-page/portal-navigation-design#application-and-workflow-entries" },
     { text: "个人中心入口", href: "devguide/shell-and-page/portal-navigation-design#profile-entry" },
     { text: "在门户中集成AI助理", href: "devguide/shell-and-page/portal-navigation-design#integrating-ai-assistants" }

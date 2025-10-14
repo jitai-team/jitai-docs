@@ -10,7 +10,7 @@ Filters are essential data processing tools designed to extract specific data su
 JitAi offers two types of filters: model filters that target specific data models, and universal filters that can be configured at runtime to filter multiple models simultaneously.
 
 ## Model filters {#model-filters}
-In the page visual editor, click "Insert Component" and drag the "Model Filter" component onto the page. Select a data model in the data source configuration and click "OK".
+In the page visual editor, click "Insert Component" and drag the "Model Filter" component onto the page. Select a data model in the data source configuration and click `Confirm`.
 
 ![Model Filter](./img/6/filter_2025-08-22_14-19-08.png)
 
@@ -36,27 +36,27 @@ Clicking on any field in the page configuration area opens the field configurati
 
 ![Filter Field Support Multiple Selection](./img/6/filter_2025-08-22_14-41-36.png)
 
-    When enabled, the filter field allows multiple option selection simultaneously. Options are connected using OR logic, meaning data matching any selected option will be included in results.
+When enabled, the filter field allows multiple option selection simultaneously. Options are connected using OR logic, meaning data matching any selected option will be included in results.
 
 When disabled, the filter field restricts selection to a single option.
 
 **"All" option display**
 
-    ![Filter Field Display "All" Option](./img/6/filter_2025-08-22_14-42-33.png)
+![Filter Field Display "All" Option](./img/6/filter_2025-08-22_14-42-33.png)
 
-    When enabled, displays an "All" option by default in the option group, which is mutually exclusive with other selections.
+When enabled, displays an "All" option by default in the option group, which is mutually exclusive with other selections.
 
 **Title display**
 
-    ![Filter Field Display Title](./img/6/filter_2025-08-22_14-49-01.png)
+![Filter Field Display Title](./img/6/filter_2025-08-22_14-49-01.png)
 
-    When disabled, the filter field title is hidden from the interface.
+When disabled, the filter field title is hidden from the interface.
 
 **Field alias configuration**
 
-    ![Filter Field Set Field Alias](./img/6/filter_2025-08-22_14-50-27.png)
+![Filter Field Set Field Alias](./img/6/filter_2025-08-22_14-50-27.png)
 
-    When enabled, displays an input field for entering a custom field alias. Note that "Title display" must be enabled to use this feature.
+When enabled, displays an input field for entering a custom field alias. Note that "Title display" must be enabled to use this feature.
 
 #### Width proportion
 ![Filter Field Proportion](./img/6/filter_2025-08-22_14-54-55.png)

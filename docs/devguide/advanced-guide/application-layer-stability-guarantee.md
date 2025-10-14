@@ -223,7 +223,7 @@ graph TB
         end
         
         subgraph "Development Framework Layer"
-            Framework[Element Family Classes<br/>(Runtime Platform agnostic to specific families)]
+            Framework[Element Family Classes<br/>Runtime Platform agnostic to specific families]
         end
         
         subgraph "Application Runtime Platform Layer"

@@ -800,12 +800,12 @@ body[data-page-type="custom-layout"] .external-link,body:has(.custom-page) .exte
 }
 
 .theme-doc-markdown th {
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-light)) !important;
-  color: white !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   padding: 1rem !important;
   text-align: left !important;
   font-size: 0.875rem !important;
+  color: #111827 !important;
+  border-bottom: 2px solid #e5e7eb !important;
 }
 
 .theme-doc-markdown td {
@@ -934,6 +934,11 @@ body[data-page-type="custom-layout"] .external-link,body:has(.custom-page) .exte
 
 [data-theme='dark'] .theme-doc-markdown table {
   background: #1f2937 !important;
+}
+
+[data-theme='dark'] .theme-doc-markdown th {
+  color: #f9fafb !important;
+  border-bottom-color: #4b5563 !important;
 }
 
 [data-theme='dark'] .theme-doc-markdown td {

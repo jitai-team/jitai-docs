@@ -133,7 +133,7 @@ When the current process flows to a subprocess, the data from the current proces
 Function design is performed in a visual form.
 
 :::warning Note
-Input parameters are fixed as the main process form data, and the return value type is single-row data. If the return value of the selected function does not match the form model, it will cause function execution exceptions.
+Input args are fixed as the main process form data, and the return value type is single-row data. If the return value of the selected function does not match the form model, it will cause function execution exceptions.
 :::
 
 ### Update Main Process Data When Single Subprocess Ends {#update-main-process-data-single-sub-process-end}
@@ -144,7 +144,7 @@ After the subprocess ends, determine whether the subprocess form data needs to b
 Function design is also performed in a visual form here.
 
 :::warning Note
-Input parameters are fixed as the main process form data and subprocess form data, and the return value type is single-row data. If the return value of the selected function does not match the form model, it will cause function execution exceptions.
+Input args are fixed as the main process form data and subprocess form data, and the return value type is single-row data. If the return value of the selected function does not match the form model, it will cause function execution exceptions.
 :::
 
 ### Update Main Process Data When All Subprocesses End {#update-main-process-data-all-sub-processes-end}
@@ -155,5 +155,5 @@ When the main process flows to subprocesses and generates multiple subprocesses 
 :::warning Note
 This function only applies to scenarios that generate multiple subprocesses.
 
-Input parameters are fixed as the main process form data and subprocess form data, and the return value type is single-row data. If the return value of the selected function does not match the form model, it will cause function execution exceptions.
+Input args are fixed as the main process form data and subprocess form data, and the return value type is single-row data. If the return value of the selected function does not match the form model, it will cause function execution exceptions.
 :::

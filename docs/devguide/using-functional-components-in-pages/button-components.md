@@ -1,32 +1,33 @@
 ---
 sidebar_position: 10
 slug: button-components
+title: Button Components
 ---
 
-# 按钮组件
-按钮是基础交互组件，负责触发各种操作和事件。它基于Ant Design Button组件实现用户交互功能，支持多种按钮样式、状态显示、权限控制和条件显示，提供异步操作和加载状态反馈能力。
+# Button Components
+Button components are fundamental interactive elements responsible for triggering various operations and events. Built upon the Ant Design Button component, they provide comprehensive user interaction capabilities, supporting multiple button styles, state displays, permission controls, and conditional visibility, along with asynchronous operation handling and loading state feedback.
 
-## 按钮组件创建 {#button-component-creation}
-![按钮组件创建](./img/10/button_2025-08-29_14-52-51.png)
+## Creating button components {#button-component-creation}
+![Creating Button Components](./img/10/button_2025-08-29_14-52-51.png)
 
-在页面可视化编辑器中点击`插入组件`，将“按钮”组件拖拽到页面中。然后在右侧配置面板中配置按钮组件参数。
+In the page visual editor, click `Insert Component` and drag the "Button" component onto the page. Then configure the button component parameters in the right configuration panel.
 
-## 标题/图标/类型配置 {#title-icon-type-configuration}
-类似于Ant Design的Button组件，按钮组件提供了丰富的参数配置，用于配置按钮的标题、图标、样式、类型、大小等功能。
+## Title/icon/type configuration {#title-icon-type-configuration}
+Similar to Ant Design's Button component, button components offer extensive parameter configuration options for setting button titles, icons, styles, types, sizes, and other functionality.
 
-在可视化编辑器中，点击按钮组件后，可以看到按钮组件的参数配置面板，可以进行参数配置。
+In the visual editor, clicking on a button component reveals the parameter configuration panel where you can adjust settings.
 
-:::warning 注意
-一般情况下，按钮组件默认显示按钮标题。如果隐藏按钮标题，那么图标会设为必填项。
+:::warning Note
+Generally, button components display button titles by default. If the button title is hidden, the icon becomes a required field.
 
-默认情况下，按钮尺寸会按照比例自适应缩放。但是，如果当前页面中按钮组件下面没有其他组件，那么按钮会占据剩余空间。
+By default, button dimensions scale proportionally and adaptively. However, if there are no other components below the button component on the current page, the button will occupy the remaining space.
 
-按钮组件可以设置固定宽高，通过`设置尺寸`完成，具体操作参考[设置尺寸](../shell-and-page/component-based-page-development#custom-sizing-adaptive-layout)。
+Button components can be set to fixed width and height through `Set Dimensions`. For specific operations, refer to [Set Dimensions](../shell-and-page/component-based-page-development#custom-sizing-adaptive-layout).
 :::
 
-## 点击后事件 {#click-event}
-按钮组件支持`点击后`事件，用于处理按钮点击后的逻辑。
+## Click event handling {#click-event}
+Button components support `After Click` events for handling post-click logic.
 
-![按钮组件事件](./img/10/button_2025-08-29_15-26-26.png)
+![Button Component Events](./img/10/button_2025-08-29_15-26-26.png)
 
-当按钮被点击时，可以执行一些操作，比如跳转到新的页面、弹出提示框、调用API接口等等。
+When a button is clicked, various operations can be executed, such as navigating to new pages, displaying alert dialogs, calling API endpoints, and more.

@@ -21,7 +21,7 @@ slug: knowledge-base-document-management
 
 ![分段清洗](./img/segment-cleaning.png)
 
-进入"分段及清洗"步骤后，根据上传文档的实际情况，依次配置"分段标识符""分段最大长度""分段重叠长度"和"清洗设置"，配置完成后点击"下一步"。参数说明参考[向量化配置说明](#vectorization-configuration-description)。
+进入"分段及清洗"步骤后，根据上传文档的实际情况，依次配置"分段标识符""分段最大长度""分段重叠长度"和"清洗设置"，配置完成后点击"下一步"。参数说明参考[向量化配置](#vectorization-configuration)。
 
 ![向量化](./img/vectorization.png)
 
@@ -32,15 +32,15 @@ slug: knowledge-base-document-management
 在文档列表中点击刷新按钮，可查看当前文档向量化状态。
 
 
-## 知识库设置 {#ai-knowledge-base-settings}
-“知识库设置”中的配置项会影响搜索结果准确性和最终返回内容的大小。
+## 知识库设置 {#knowledge-base-settings}
+"知识库设置"中的配置项会影响搜索结果准确性和最终返回内容的大小。
 
 ![知识库设置](./img/knowledge-base-settings.png)
 
-“向量数据库”和“向量模型”的设置不允许修改。开发者可以根据[查询测试](#query-testing)的反馈，动态调整“重排模型”“TopK”“TopN”“向量相似度阈值”“重排分数阈值”等参数。
+"向量数据库"和"向量模型"的设置不允许修改。开发者可以根据[查询测试](#query-testing)的反馈，动态调整"重排模型""TopK""TopN""向量相似度阈值""重排分数阈值"等参数。
 
 :::tip
-提高准确性需要先了解[设置如何参与查询流程](./full-text-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow)。另外，修改配置项后需点击保存，才能在[查询测试](#query-testing)中生效。
+提高准确性需要先了解[设置如何参与查询流程](./keyword-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow)。另外，修改配置项后需点击保存，才能在[查询测试](#query-testing)中生效。
 :::
 
 ## 查询测试 {#query-testing}
@@ -48,15 +48,15 @@ slug: knowledge-base-document-management
 
 ![查询测试](./img/query-test.png)
 
-输入问题后点击“测试查询”，系统会理解查询语义并返回结果；同时显示符合条件的文档数量、每个文档的向量相似度评分与重排分数评分。可据此不断调整[知识库设置](#ai-knowledge-base-settings)以提升检索效果。
+输入问题后点击"测试查询"，系统会理解查询语义并返回结果；同时显示符合条件的文档数量、每个文档的向量相似度评分与重排分数评分。可据此不断调整[知识库设置](#knowledge-base-settings)以提升检索效果。
 
-## 向量化配置说明 {#vectorization-configuration-description}
+## 向量化配置说明 {#vectorization-configuration}
 - 分段标识符：用于拆分文档的分隔符，可选择多个。系统按所有选择的分隔符进行分段，默认使用段落分隔符（`\\n\\n`）。
 - 分段最大长度：每个文本块的最大字符数，建议 500–2000。小块更精确但可能丢失上下文；大块保留更多上下文但可能不够精确。
 - 分段重叠长度：相邻文本块的重叠字符数，建议为块大小的 10%–20%。
 - 开启分段清洗：提升文本质量与检索精度的清洗功能，如空白清理、全角转半角、断行修复等。
 
-## 知识库配置参数说明 {#knowledge-base-configuration-parameter-description}
+## 知识库配置参数说明 {#knowledge-base-configuration-parameters}
 | 参数名称 | 默认值 | 建议范围 | 说明 |
 |---------|--------|----------|------|
 | 向量模型 | - | - | 决定文档与查询的语义理解能力，创建后不可修改 |

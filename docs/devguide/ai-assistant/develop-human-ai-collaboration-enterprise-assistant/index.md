@@ -25,7 +25,7 @@ Traditional AI development platforms have a fundamental limitation: they can onl
 
 **Technical principle**: Wrap page functions into tools that AI can call, enabling AI to obtain user operation data in real-time.
 
-**Implementation method**: Page data directly serves as AI input parameters, with AI obtaining page state through tool invocation.
+**Implementation method**: Page data directly serves as AI input args, with AI obtaining page state through tool invocation.
 
 **Application value**: AI can dynamically perceive user behavior, intelligently adjust decisions, and achieve true context awareness.
 

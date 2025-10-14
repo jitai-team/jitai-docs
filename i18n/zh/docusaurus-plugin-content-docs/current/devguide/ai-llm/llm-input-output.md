@@ -14,7 +14,7 @@ slug: llm-input-output
 
 点击组件右上角的`事件`，点击事件面板中空白语句上的`请选择`文案，在面板中选择`大模型`-`大模型厂商`，完成后会生成大模型厂商运行函数，点击`提示词配置`，会弹出大模型`提示词配置`面板。
 
-### 函数输入一：设置大语言模型 {#call-llm-input}
+### 函数输入一：设置大语言模型 {#setting-language-model}
 ![大模型选择.png](./img/1/large-model-selection.png)
 
 在`提示词配置`弹窗中，首先要选择使用的大模型，点击大模型选择框，在弹出的下拉面板中选择对应的大模型即可。选择模型后会自动匹配对应模型的参数，开发者可根据具体模型的特性进行修改。这些模型配置信息将作为 `runLlm` 函数的 `config` 参数中的 `llmConfig` 部分。
@@ -22,7 +22,7 @@ slug: llm-input-output
 不同模型支持的配置参数不同，但是一般都支持温度参数，温度参数是最重要的参数之一，开发者可根据业务情况来选择合适的温度参数从而控制模型生成的随机性。
 :::
 
-### 函数输入二：使用提示词
+### 函数输入二：使用提示词 {#using-prompts}
 提示词是决定大模型输出质量的关键，构成了 `runLlm` 函数的核心输入内容。系统提示词总是作为第一个提示词输入，一般用于定义模型的角色、行为准则、语气风格、安全限制等。用户提示词作为第二个提示词输入，一般用于描述用户意图、需求、上下文等。
 
 ![提示词.png](./img/1/prompts.png)
@@ -31,14 +31,14 @@ slug: llm-input-output
 点击右上角`插入变量`按钮，可将页面变量内容插入到提示词中，变量内容可以动态改变提示词的内容，从而控制大模型输出。这些变量将作为 `runLlm` 函数的 `context` 参数传入，实现动态的变量替换。
 
 
-#### 智能链接解析
+#### 智能链接解析 {#intelligent-link-parsing}
 当你在提示词中输入包含链接的文本时，系统会自动识别并处理这些链接，将获取到的内容直接合并到提示词中发送给AI大模型。
 
 :::tip
 图片链接需要使用支持多模态或视觉功能的AI大模型（如qwen-vl-max-latest、GPT-4o等）才能正确识别和分析图片内容。使用纯文本模型时，图片链接将被跳过处理。
 :::
 
-#### 使用示例
+#### 使用示例 {#usage-example}
 在提示词中直接输入包含链接的内容：
 
 ```
@@ -56,7 +56,7 @@ slug: llm-input-output
 :::
 
 
-### 函数输出：控制输出
+### 函数输出：控制输出 {#output-control}
 开发者如果想控制 `runLlm` 函数返回结果的格式，无需在提示词中描述，使用下图的`控制输出`配置即可实现。这些配置将作为 `config` 参数中的 `outputArgs` 部分，指导函数返回结构化数据。
 
 ![控制输出.png](./img/1/control-output.gif)
@@ -84,13 +84,13 @@ slug: llm-input-output
 配置参考[在页面中调用大模型](#call-llm-in-pages)
 
 ## 大模型编程接口 {#llm-programming-interface}
-### runLlm
+### runLlm {#runllm}
 `runLlm` 是大模型模块的核心函数，接受配置参数（config）和上下文变量（context）作为输入，返回大模型的响应结果。所有通过界面配置的模型设置、提示词内容和输出格式，最终都会转换为该函数的调用参数。[API文档](../../reference/framework/JitAi/ai-large-models#runllm)
 
-### embedDocuments
+### embedDocuments {#embeddocuments}
 ai-llm的文档向量化方法，用于将文本列表转换为高维向量表示。[API文档](../../reference/framework/JitAi/ai-large-models#embeddocuments)
 
-### rerankDocuments
+### rerankDocuments {#rerankdocuments}
 ai-llm的文档重排方法，用于基于查询文本对候选文档进行重新排序。[API文档](../../reference/framework/JitAi/ai-large-models#rerankdocuments)
 
 

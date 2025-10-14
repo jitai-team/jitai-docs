@@ -9,7 +9,7 @@ Based on the abstract concept of "System = Structure + Process", the development
 
 ## Core Element Family Classes
 ### User Interface Layer
-- **Portals**: System access entry points, applications provide three types of portals by default
+- **Portals**: System visit entry points, applications provide three types of portals by default
   - User Area Portal: Operation interface for end users
   - Developer Portal: Configuration interface for developers  
   - Manager Portal: Management interface for system administrators

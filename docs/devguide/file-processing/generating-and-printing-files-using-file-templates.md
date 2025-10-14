@@ -44,3 +44,12 @@ Configure button events:
 Finally, verify the template printing effect:
 
 ![Template Printing Effect](./img/2/2025-08-29_16-43-13.gif "Template Printing Effect")
+
+## Generating attachments {#generate-attachments}
+
+Create a button in the component that needs to call attachment generation.
+
+![Create Attachment Generation Button](./img/2/2025-08-29_16-36-33-2.gif "Create Attachment Generation Button")
+
+1. In the event editing area, click "Please select" in the statement, then choose "Services" > "Utility Service" > "Generate Attachment" in the popup window. This will generate `Service.Utility Service.Generate Attachment`.
+2. Click the `Set Parameters` button of `Services.Utility Service.Generate Attachment`. In the popup dialog, set the Template Type, select the File Template, specify the name for the generated attachment, choose the output method, and assign values to the template variables.

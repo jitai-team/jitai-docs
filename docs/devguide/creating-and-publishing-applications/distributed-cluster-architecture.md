@@ -119,9 +119,9 @@ Runtime environments support flexible organization across multiple dimensions to
 
 ### Configuring entry address strategies {#entry-address-configuration}
 
-**Entry Address Configuration Examples:**
+**Entry Point Configuration Examples:**
 
-| Runtime Environment | Primary Entry Address | Backup Entry Address | Port Entry |
+| Runtime Environment | Primary Entry Point | Backup Entry Point | Port |
 |----------|------------|-------------|----------|
 | Development Environment | dev.company.com | dev2.company.com | :8080 |
 | Testing Environment | test.company.com | staging.company.com | :8081 |

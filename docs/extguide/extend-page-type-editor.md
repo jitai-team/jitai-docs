@@ -5,23 +5,23 @@ slug: extend-page-type-editor
 
 # Extend Your Own Page Type and Editor
 
-Imagine you need to develop a countdown timer page for an online examination system. You open JitAi and review the existing page types: generic pages are too simple, data management pages don't fit, Markdown pages are even less suitable... At this point, you realize you need to create an entirely new page type.
+Imagine you're tasked with building a countdown timer page for an online examination system. You open JitAi and review the existing page types: generic pages are too simplistic, data management pages don't fit the use case, and Markdown pages are completely unsuitable. At this point, you realize you need to create an entirely new page type.
 
-This guide will walk you through the complete experience of developing a custom page Type element. More importantly, you'll understand how JitAi's clever design makes this seemingly complex task remarkably simple.
+This guide will walk you through the complete process of developing a custom page Type element. More importantly, you'll discover how JitAi's elegant architecture makes this seemingly complex task surprisingly straightforward.
 
 ## Understanding how pages are loaded {#understanding-how-pages-are-loaded}
 
-Before we start coding, let's understand a core concept: when a user accesses a page, how does JitAi locate and load the correct code?
+Before diving into code, let's first understand a fundamental concept: when a user accesses a page, how does JitAi locate and load the appropriate code?
 
 ### The page loading journey {#the-page-loading-journey}
 
-Let's trace the complete process from URL to rendering:
+Let's trace the complete journey from URL to rendering:
 
 ```typescript
 // User visits: /pages/examTimer
 ```
 
-When this request arrives, JitAi embarks on an elegant discovery journey:
+When this request arrives, JitAi initiates an elegant discovery process:
 
 ```typescript
 // Step 1: runApp.ts starts the application
@@ -37,11 +37,11 @@ async getElement(elementPath: string) {
 }
 ```
 
-Here we encounter the first key concept: **Loader**.
+This is where we encounter our first key concept: **Loader**.
 
 ### Loader - the secret to flexibility {#loader-the-secret-to-flexibility}
 
-The Loader is one of JitAi's most ingenious designs. It's not a fixed loading logic, but rather an **inheritable, overridable function chain**.
+The Loader represents one of JitAi's most ingenious architectural designs. Rather than rigid loading logic, it's an **inheritable, overridable function chain** that provides tremendous flexibility.
 
 ```typescript
 // Finding a loader is like finding the right key
@@ -65,12 +65,12 @@ async getElementLoader(elementPath: string) {
 }
 ```
 
-The elegance of this design lies in:
-- **Instance specialization**: Specific pages can have their own loading logic
-- **Type-level management**: Similar pages share loading mechanisms
-- **Meta fallback**: Ensures there's always a loader available
+The elegance of this design lies in its layered approach:
+- **Instance specialization**: Individual pages can define custom loading logic
+- **Type-level reuse**: Pages of the same type share common loading mechanisms
+- **Meta fallback**: Guarantees a default loader is always available
 
-You might ask: why do we need such a complex mechanism? Let's understand through a real-world example.
+You might wonder: why is such a sophisticated mechanism necessary? Let's explore this through a real-world example.
 
 ### Why Vue pages need custom loaders {#why-vue-pages-need-custom-loaders}
 
@@ -109,17 +109,17 @@ export default async (elements) => {
 }
 ```
 
-See the difference? Vue pages require a real DOM element to mount, while React only needs to return virtual DOM. This is why Vue Types need custom loaders—they must change how pages are loaded and rendered.
+Notice the key difference? Vue pages require a real DOM element for mounting, whereas React simply returns a virtual DOM. This is precisely why Vue Types need custom loaders—they fundamentally alter how pages are loaded and rendered.
 
 ## Developing a timer page Type {#developing-a-timer-page-type}
 
-Now that we understand the principles, let's develop a timer page Type. This process will truly demonstrate JitAi's power. Let's first look at the final result:
+Now that we've grasped the underlying principles, let's develop a timer page Type. This hands-on example will truly showcase JitAi's power. Here's what we'll build:
 
 ![Instance Demo](./img/5/实例展示.png) "Instance Demo"
 
 ### Complete composition of a page Type {#complete-composition-of-a-page-type}
 
-Before we start coding, let's understand what components a complete page Type requires:
+Before writing any code, let's understand the essential components that make up a complete page Type:
 
 | Component | Runtime Environment | Primary Responsibility | File Location |
 |---------|----------|----------|----------|
@@ -128,9 +128,9 @@ Before we start coding, let's understand what components a complete page Type re
 | **CRUD API** | IDE | Generate page instance code based on configuration | `pages/TimerPageType/Api/` |
 | **Element Editor** | IDE | Provide code editing interface | `pages/TimerPageType/editor/` |
 
-These components have clear divisions of responsibility:
-- **Usage Zone Components**: Handle actual page execution and rendering
-- **IDE Components**: Handle page creation, configuration, and editing
+These components have clearly defined responsibilities:
+- **Usage Zone components**: Handle runtime page execution and rendering
+- **IDE components**: Facilitate page creation, configuration, and editing
 
 ### Step 1: Planning the directory structure {#step-1-planning-the-directory-structure}
 
@@ -157,7 +157,7 @@ pages/
 
 ### Step 2: Designing Type capabilities {#step-2-designing-type-capabilities}
 
-Before we start coding, we need to think: what capabilities should a timer page have?
+Before writing code, let's define the essential capabilities our timer page should provide:
 
 ```typescript
 // Our expected usage pattern
@@ -175,7 +175,7 @@ timerPage.getRemaining(); // Get remaining time
 
 ### Step 3: Creating the Type element {#step-3-creating-the-type-element}
 
-Now, let's create TimerPageType. Since we're not defining a custom loader, we'll use Meta's loader, which means we must follow Meta's convention: export `PageCls` and `Render`.
+Now let's create the TimerPageType. Since we're not implementing a custom loader, we'll rely on Meta's default loader, which requires us to adhere to its convention: exporting both `PageCls` and `Render`.
 
 ```typescript title="pages/TimerPageType/TimerPage.ts"
 import { Jit } from 'jit';
@@ -276,11 +276,11 @@ export class TimerPage extends Jit.BasePage {
 export default TimerPage;
 ```
 
-Note the design philosophy here:
-- **Type defines common capabilities**: start, pause, finish methods needed by all timers
-- **Extension points reserved**: onWarning, onTimeout can be overridden by instances
-- **Event-driven**: Decouples UI from logic through events
-- **Inherits BasePage**: Gains foundational page capabilities (lifecycle, event system, etc.)
+Note the key design principles at work here:
+- **Type defines shared capabilities**: The start, pause, and finish methods are universal to all timer instances
+- **Extension points provided**: Methods like onWarning and onTimeout can be overridden by specific instances
+- **Event-driven architecture**: UI and business logic are decoupled through an event system
+- **Inherits from BasePage**: Automatically inherits foundational page capabilities (lifecycle management, event system, etc.)
 
 ### Step 4: Creating the render component {#step-4-creating-the-render-component}
 
@@ -388,7 +388,7 @@ const TimerRender: React.FC<TimerRenderProps> = ({ page }) => {
 export default TimerRender;
 ```
 
-Now let's create the Type's entry file, following Meta loader conventions:
+Next, let's create the Type's entry file, adhering to Meta loader conventions:
 
 ```typescript title="pages/TimerPageType/index.ts"
 import TimerPage from './TimerPage';
@@ -404,7 +404,7 @@ export {
 };
 ```
 
-Additionally, we need to mark this Type for startup loading in e.json:
+We also need to configure this Type for startup loading in its e.json file:
 
 ```json title="pages/TimerPageType/e.json"
 {
@@ -417,7 +417,7 @@ Additionally, we need to mark this Type for startup loading in e.json:
 
 ### Step 5: Understanding dynamic inheritance {#step-5-understanding-dynamic-inheritance}
 
-Here's an elegant design pattern - **dynamic inheritance**. When the application starts, JitAi:
+Here's where we encounter an elegant architectural pattern: **dynamic inheritance**. During application startup, JitAi performs the following:
 
 ```typescript
 // app.ts - loads elements marked as startUp during initialization
@@ -437,7 +437,7 @@ async loadNecessaryElements() {
 }
 ```
 
-This is why we can write in instances:
+This mechanism enables us to write instance code like this:
 
 ```typescript
 // Not import { TimerPage } from '../TimerPageType'
@@ -447,14 +447,14 @@ class ExamTimer extends Jit.TimerPage {  // Dynamic inheritance!
 }
 ```
 
-The elegance of this design:
-- **Decoupled dependencies**: Instances don't need to know Type's physical location
-- **Dynamic loading**: Types can come from anywhere (local, remote, extension packages)
-- **Unified management**: All page classes accessed through Jit object
+This design offers several key advantages:
+- **Decoupled dependencies**: Instances remain agnostic to the Type's physical location
+- **Dynamic loading**: Types can originate from anywhere—local files, remote sources, or extension packages
+- **Unified access**: All page classes are accessible through the centralized Jit object
 
 ### Step 6: Creating an exam timer instance {#step-6-creating-an-exam-timer-instance}
 
-Now that the Type is ready, let's create a specific exam timer:
+With our Type fully defined, let's create a concrete exam timer instance:
 
 ```typescript title="pages/examTimer/index.ts"
 // Note: Not direct import, but accessed through Jit
@@ -545,36 +545,36 @@ const PageCls = ExamTimerPage;
 export { ExamTimerPage as default, PageCls };
 ```
 
-See? Through dynamic inheritance, the exam timer:
-- **Reuses** the timer's core logic (via `Jit.TimerPage`)
-- **Extends** exam-specific features like auto-save and forced submission
-- **Overrides** warning and timeout behaviors
-- **Doesn't need to care** about TimerPage's specific location
+Notice how dynamic inheritance enables the exam timer to:
+- **Reuse** the timer's core functionality (through `Jit.TimerPage`)
+- **Extend** with exam-specific features like auto-save and forced submission
+- **Override** warning and timeout behaviors to meet specific requirements
+- **Remain agnostic** to TimerPage's physical location
 
-This is the charm of the Type mechanism - **finding the perfect balance between reuse and customization**.
+This exemplifies the elegance of the Type mechanism: **achieving the optimal balance between code reuse and customization**.
 
-Actually, JitAi's built-in page types work the same way:
-- `Jit.BasePage` - Base class for all pages
-- `Jit.GridPage` - Class used by regular pages
-- `Jit.DataManagePage` - Class used by data management pages
+In fact, JitAi's built-in page types follow this exact same pattern:
+- `Jit.BasePage` — Foundation class for all pages
+- `Jit.GridPage` — Used by standard grid pages
+- `Jit.DataManagePage` — Used by data management pages
 
-Your TimerPage has now become part of this family: `Jit.TimerPage`!
+Your TimerPage has now joined this family as `Jit.TimerPage`!
 
 ![Visible in Visual Editor](./img/5/完成后可以在页面中看到.png) "Visible in Visual Editor"
 
-After these steps, you can see the newly created page type in the visual editor.
+After completing these steps, your newly created page type will appear in the visual editor.
 
 ## Making Type configurable in IDE {#making-type-configurable-in-ide}
 
-At this point, our TimerPageType is functional. But how do we make it convenient for other developers to create timer pages in the IDE? This requires three supporting tools.
+At this stage, our TimerPageType is fully functional. However, to enable other developers to easily create timer pages through the IDE, we need to provide three supporting tools.
 
 ### DefineEditor - simplifying creation {#defineeditor-simplifying-creation}
 
-DefineEditor provides a visual creation interface for page Types. Clicking create in the visual editor will invoke this component, with the following effect:
+The DefineEditor provides a visual interface for creating page Type instances. When users click "Create" in the visual editor, this component is invoked, producing the following interface:
 
 ![Definition Editor](./img/5/定义编辑器.png) "Definition Editor"
 
-It requires special e.json configuration:
+This requires specific e.json configuration:
 ```json title="pages/TimerPageType/DefineEditor/e.json"
 {
     "type": "editors.React",
@@ -586,12 +586,12 @@ It requires special e.json configuration:
 }
 ```
 
-**Key configuration explained:**
-- `type`: Must be `"editors.React"`, identifying this as a React editor element
-- `targetType`: Array format, specifies which page Type this editor serves, here `["pages.TimerPageType"]`
-- `tag`: Must be `"defineEditor"`, identifying this as a definition editor
-- `outputName`: Export module name, typically `"index"`
-- `frontBundleEntry`: Frontend entry file path
+**Key configuration properties:**
+- `type`: Must be `"editors.React"` to identify this as a React-based editor element
+- `targetType`: Array format specifying which page Type this editor serves (here: `["pages.TimerPageType"]`)
+- `tag`: Must be `"defineEditor"` to identify this as a definition editor
+- `outputName`: The exported module name, typically `"index"`
+- `frontBundleEntry`: Path to the frontend entry file
 
 ```tsx title="pages/TimerPageType/DefineEditor/Editor.tsx"
 import React, { useState } from 'react';
@@ -691,7 +691,7 @@ export default TimerDefineEditor;
 
 ### API - generating correct code {#api-generating-correct-code}
 
-The API element provides CRUD interfaces for page Types. It also requires special e.json configuration:
+The API element provides CRUD (Create, Read, Update, Delete) interfaces for page Types. This also requires specific e.json configuration:
 
 ```json title="pages/TimerPageType/Api/e.json"
 {
@@ -715,15 +715,15 @@ The API element provides CRUD interfaces for page Types. It also requires specia
 }
 ```
 
-**Key configuration explained:**
-- `type`: Must be `"elementApis.Meta"`, identifying this as an API element
-- `targetType`: String format, specifies the target type this API serves, here `"pages.TimerPageType"`
-- `functionList`: Array defining the list of functions provided by the API
-  - `name`: Function name, corresponds to actual exported function
-  - `title`: Display name, shown to users in the IDE
-  - `args`: Parameter list, empty array here means parameters handled internally by the function
-- `outputName`: Export module name, typically `"index"`
-- `frontBundleEntry`: Frontend entry file path
+**Key configuration properties:**
+- `type`: Must be `"elementApis.Meta"` to identify this as an API element
+- `targetType`: String format specifying the target type this API serves (here: `"pages.TimerPageType"`)
+- `functionList`: Array defining the API's function list
+  - `name`: Function identifier, corresponding to the actual exported function
+  - `title`: Display name shown to users in the IDE
+  - `args`: Parameter list (empty array indicates parameters are handled internally)
+- `outputName`: The exported module name, typically `"index"`
+- `frontBundleEntry`: Path to the frontend entry file
 
 ```typescript title="pages/TimerPageType/Api/create.ts"
 import { getRuntimeApp } from 'jit';
@@ -788,17 +788,17 @@ export { ${name}Page as default, PageCls };
 
 ### Editor - making modifications easier {#editor-making-modifications-easier}
 
-The editor element is optional. If you don't define a dedicated editor for your page Type, the system will automatically use a generic code editor as fallback. The generic editor provides basic source code editing capabilities, including syntax highlighting, code hints, and file management. Here's the effect:
+The editor element is optional. If you don't define a custom editor for your page Type, the system automatically provides a generic code editor as a fallback. This default editor offers essential source code editing capabilities, including syntax highlighting, code hints, and file management:
 
 ![Default Editor Effect](./img/5/兜底的编辑器.png) "Default Editor Effect"
 
-Of course, if you want to provide users with a more professional editing experience, you can design a specialized editing interface based on your page Type's characteristics.
+Of course, if you wish to deliver a more specialized editing experience, you can design a custom editor interface tailored to your page Type's unique characteristics.
 
 #### Core editor APIs {#core-editor-apis}
 
-JitAi provides two core APIs to support editor development:
+JitAi provides two essential APIs for editor development:
 
-**1. Getting source code**
+**1. Retrieving source code**
 ```typescript
 // Get all source files of an element
 const resources = await app.services.ElementSvc.getElementResource(
@@ -821,21 +821,21 @@ await app.saveElementResource(
 
 #### Editor design recommendations {#editor-design-recommendations}
 
-- **Multi-file support**: Use Tabs component to support editing multiple files
-- **Syntax highlighting**: Select appropriate language mode based on file extension
-- **Save detection**: Compare original and current content, prompt for unsaved changes
-- **Error handling**: Gracefully handle errors during loading and saving
-- **User experience**: Provide common functions like refresh, undo, etc.
+- **Multi-file support**: Utilize a Tabs component to enable editing of multiple files
+- **Syntax highlighting**: Automatically select the appropriate language mode based on file extensions
+- **Save detection**: Compare original and current content to prompt users about unsaved changes
+- **Error handling**: Implement graceful error handling for loading and saving operations
+- **User experience**: Provide essential functions such as refresh, undo, and keyboard shortcuts
 
-The specific editor interface design is entirely up to the developer based on the page Type's characteristics.
+The specific editor interface design is entirely at the developer's discretion and should align with the page Type's unique requirements.
 
 ## More application scenarios {#more-application-scenarios}
 
-Besides timer pages, JitAi's page Type mechanism can support many other scenarios:
+Beyond timer pages, JitAi's page Type mechanism supports a wide variety of specialized use cases:
 
 ### Special requirement types {#special-requirement-types}
 
-- **3D pages**: Integrate Three.js or Babylon.js
-- **Real-time collaboration pages**: Integrate WebSocket or WebRTC
-- **Mobile pages**: Optimized interactions for mobile devices
-- **Print pages**: Specifically designed for print output
+- **3D visualization pages**: Integration with Three.js or Babylon.js for immersive 3D experiences
+- **Real-time collaboration pages**: WebSocket or WebRTC integration for collaborative editing
+- **Mobile-optimized pages**: Touch-optimized interactions designed specifically for mobile devices
+- **Print-ready pages**: Layouts and components optimized for high-quality print output

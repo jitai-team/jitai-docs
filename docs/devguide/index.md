@@ -277,10 +277,10 @@ Design beautiful user interfaces and interactive experiences. From portal naviga
     { text: "Multi-tab functionality", href: "devguide/shell-and-page/portal-navigation-design#multi-tab-functionality" },
     { text: "Portal visibility settings", href: "devguide/shell-and-page/portal-navigation-design#portal-visibility-settings" },
     { text: "Portal ordering", href: "devguide/shell-and-page/portal-navigation-design#portal-ordering" },
-    { text: "Managing common function entries", href: "devguide/shell-and-page/portal-navigation-design#managing-common-function-entries" },
+    { text: "Managing common features entries", href: "devguide/shell-and-page/portal-navigation-design#managing-common-features-entries" },
     { text: "Application and workflow entries", href: "devguide/shell-and-page/portal-navigation-design#application-and-workflow-entries" },
     { text: "Profile entry", href: "devguide/shell-and-page/portal-navigation-design#profile-entry" },
-    { text: "Integrating AI assistants", href: "devguide/shell-and-page/portal-navigation-design#integrating-ai-assistants" }
+    { text: "Enabling AI assistant", href: "devguide/shell-and-page/portal-navigation-design#integrating-ai-assistants" }
   ]} />
 </IndexCard>
 

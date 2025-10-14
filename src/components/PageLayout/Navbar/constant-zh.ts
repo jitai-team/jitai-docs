@@ -37,7 +37,7 @@ const CONTENT = {
       label: '社区',
       type: 'link',
       isNewTab: true,
-      url: 'https://forum.jit.pro/',
+      url: 'https://forum.jit.pro',
       external: true
     },
   ],
@@ -46,7 +46,7 @@ const CONTENT = {
     label: '在线试用',
     type: 'button',
     isNewTab: true,
-    url: 'https://jit.pro/',
+    url: 'https://jit.pro',
     external: true
   }
 };

@@ -21,7 +21,7 @@ slug: knowledge-base-document-management
 
 ![分段清洗](./img/segment-cleaning.png)
 
-进入"分段及清洗"步骤后，根据上传文档的实际情况，依次配置"分段标识符""分段最大长度""分段重叠长度"和"清洗设置"，配置完成后点击"下一步"。参数说明参考[向量化配置说明](#vectorization-configuration-description)。
+进入"分段及清洗"步骤后，根据上传文档的实际情况，依次配置"分段标识符""分段最大长度""分段重叠长度"和"清洗设置"，配置完成后点击"下一步"。参数说明参考[向量化配置](#vectorization-configuration)。
 
 ![向量化](./img/vectorization.png)
 
@@ -40,7 +40,7 @@ slug: knowledge-base-document-management
 "向量数据库"和"向量模型"的设置不允许修改。开发者可以根据[查询测试](#query-testing)的反馈，动态调整"重排模型""TopK""TopN""向量相似度阈值""重排分数阈值"等参数。
 
 :::tip
-提高准确性需要先了解[设置如何参与查询流程](./full-text-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow)。另外，修改配置项后需点击保存，才能在[查询测试](#query-testing)中生效。
+提高准确性需要先了解[设置如何参与查询流程](./keyword-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow)。另外，修改配置项后需点击保存，才能在[查询测试](#query-testing)中生效。
 :::
 
 ## 查询测试 {#query-testing}

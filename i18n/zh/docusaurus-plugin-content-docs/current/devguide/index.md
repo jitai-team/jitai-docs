@@ -985,16 +985,16 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="使用知识库元素实现关键词检索和语义检索"
-  href="devguide/knowledge-base/full-text-and-semantic-search"
+  href="devguide/knowledge-base/keyword-and-semantic-search"
   description="理解配置项如何参与查询流程，并在后端可视化编程中调用知识库。"
 >
   <LinkGrid columns={2} links={[
-    { text: "在后端可视化编程中调用 AI 知识库", href: "devguide/knowledge-base/full-text-and-semantic-search#call-ai-knowledge-base-in-backend-visual-programming" },
-    { text: "语义检索", href: "devguide/knowledge-base/full-text-and-semantic-search#semantic-search" },
-    { text: "新增文档", href: "devguide/knowledge-base/full-text-and-semantic-search#adding-document" },
-    { text: "删除文档", href: "devguide/knowledge-base/full-text-and-semantic-search#deleting-document" },
-    { text: "关键词检索", href: "devguide/knowledge-base/full-text-and-semantic-search#searching-by-keywords" },
-    { text: "AI 知识库设置如何参与查询流程", href: "devguide/knowledge-base/full-text-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow" }
+    { text: "在后端可视化编程中调用 AI 知识库", href: "devguide/knowledge-base/keyword-and-semantic-search#call-ai-knowledge-base-in-backend-visual-programming" },
+    { text: "语义检索", href: "devguide/knowledge-base/keyword-and-semantic-search#semantic-search" },
+    { text: "新增文档", href: "devguide/knowledge-base/keyword-and-semantic-search#adding-document" },
+    { text: "删除文档", href: "devguide/knowledge-base/keyword-and-semantic-search#deleting-document" },
+    { text: "关键词检索", href: "devguide/knowledge-base/keyword-and-semantic-search#searching-by-keywords" },
+    { text: "AI 知识库设置如何参与查询流程", href: "devguide/knowledge-base/keyword-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow" }
   ]} />
 </IndexCard>
 
@@ -1005,9 +1005,9 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid links={[
     { text: "知识库与Agent的关系", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#relationship-between-knowledge-base-and-agent" },
-    { text: "技术集成原理", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#technical-integration-principle" },
+    { text: "技术集成原理", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#technical-integration-principles" },
     { text: "集成模式", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#integration-modes" },
-    { text: "在Agent中使用知识库", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#use-knowledge-base-in-agent" }
+    { text: "在Agent中使用知识库", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#using-knowledge-base-in-agent" }
   ]} />
 </IndexCard>
 

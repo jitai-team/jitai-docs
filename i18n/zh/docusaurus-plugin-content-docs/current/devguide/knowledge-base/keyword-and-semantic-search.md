@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-slug: full-text-and-semantic-search
+slug: keyword-and-semantic-search
 ---
 
 # 使用知识库元素实现关键词检索和语义检索
@@ -25,7 +25,7 @@ slug: full-text-and-semantic-search
 填入“业务ID”“文档文件”及其它向量化配置后点击保存。其中“业务ID”为当前添加文档的标识（后续删除可据此定位）；“文档文件”支持附件字段中的多个文件。
 
 :::tip
-其它配置参考[向量化配置说明](./knowledge-base-document-management#vectorization-configuration-description)。
+其它配置参考[向量化配置](./knowledge-base-document-management#vectorization-configuration)。
 :::
 
 ### 删除文档 {#deleting-document}

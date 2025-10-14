@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-slug: full-text-and-semantic-search
+slug: keyword-and-semantic-search
 ---
 
 # Keyword and Semantic Search Using Knowledge Base Elements
@@ -25,7 +25,7 @@ In the function panel, select "Knowledge Base - [Knowledge Base Name] - Add Docu
 Fill in the "Business ID", "Document File", and other vectorization settings, then click Save. The "Business ID" serves as the identifier for the added document (used for later deletion). The "Document File" field supports multiple files from attachment fields.
 
 :::tip
-For additional configuration options, see [Vectorization Configuration Description](./knowledge-base-document-management#vectorization-configuration-description).
+For additional configuration options, see [Vectorization Configuration](./knowledge-base-document-management#vectorization-configuration).
 :::
 
 ### Deleting a document {#deleting-document}
@@ -42,6 +42,6 @@ In the function panel, select "Knowledge Base - [Knowledge Base Name] - Keyword 
 You can use an LLM to extract keywords from questions before performing keyword queries.
 :::
 
-## How knowledge base settings participate in query flow {#how-knowledge-base-settings-participate-in-query-flow}
+## How AI knowledge base settings participate in query flow {#how-ai-knowledge-base-settings-participate-in-query-flow}
 
 For a detailed explanation of the knowledge base query flow, including vector retrieval, reranking mechanisms, and parameter configuration, refer to [Creating Knowledge Base Elements - Retrieval Mechanism](./create-knowledge-elements#retrieval-mechanism).

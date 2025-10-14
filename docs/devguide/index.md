@@ -501,8 +501,8 @@ Create advanced custom UI components with full programming control. Build sophis
   description="Understand how to invoke functions exposed by full-code components from page code to control component behavior and data flow."
 >
   <LinkGrid links={[
-    { text: "Invocation mechanism", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#invocation-mechanism" },
-    { text: "Invocation timing and lifecycle", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#invocation-timing-and-lifecycle" },
+    { text: "Calling mechanism", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#calling-mechanism" },
+    { text: "Calling timing and lifecycle", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#calling-timing-and-lifecycle" },
     { text: "Related documentation", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#related-documentation" }
   ]} />
 </IndexCard>
@@ -981,16 +981,16 @@ Transform enterprise documents, manuals, and FAQs into intelligent knowledge bas
 
 <IndexCard
   title="Full-Text and Semantic Search Using Knowledge Base Elements"
-  href="devguide/knowledge-base/full-text-and-semantic-search"
+  href="devguide/knowledge-base/keyword-and-semantic-search"
   description="Learn how to call knowledge bases in backend visual programming and understand how configuration settings participate in the query flow."
 >
   <LinkGrid columns={2} links={[
-    { text: "Calling AI knowledge base in backend visual programming", href: "devguide/knowledge-base/full-text-and-semantic-search#call-ai-knowledge-base-in-backend-visual-programming" },
-    { text: "Semantic search", href: "devguide/knowledge-base/full-text-and-semantic-search#semantic-search" },
-    { text: "Adding a document", href: "devguide/knowledge-base/full-text-and-semantic-search#adding-document" },
-    { text: "Deleting a document", href: "devguide/knowledge-base/full-text-and-semantic-search#deleting-document" },
-    { text: "Searching by keywords", href: "devguide/knowledge-base/full-text-and-semantic-search#searching-by-keywords" },
-    { text: "How AI knowledge base settings participate in query flow", href: "devguide/knowledge-base/full-text-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow" }
+    { text: "Calling AI knowledge base in backend visual programming", href: "devguide/knowledge-base/keyword-and-semantic-search#call-ai-knowledge-base-in-backend-visual-programming" },
+    { text: "Semantic search", href: "devguide/knowledge-base/keyword-and-semantic-search#semantic-search" },
+    { text: "Adding a document", href: "devguide/knowledge-base/keyword-and-semantic-search#adding-document" },
+    { text: "Deleting a document", href: "devguide/knowledge-base/keyword-and-semantic-search#deleting-document" },
+    { text: "Searching by keywords", href: "devguide/knowledge-base/keyword-and-semantic-search#searching-by-keywords" },
+    { text: "How AI knowledge base settings participate in query flow", href: "devguide/knowledge-base/keyword-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow" }
   ]} />
 </IndexCard>
 
@@ -1001,9 +1001,9 @@ Transform enterprise documents, manuals, and FAQs into intelligent knowledge bas
 >
   <LinkGrid links={[
     { text: "Relationship Between Knowledge Base and Agent", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#relationship-between-knowledge-base-and-agent" },
-    { text: "Technical Integration Principle", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#technical-integration-principle" },
+    { text: "Technical Integration Principles", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#technical-integration-principles" },
     { text: "Integration Modes", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#integration-modes" },
-    { text: "Using Knowledge Base in Agent", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#use-knowledge-base-in-agent" }
+    { text: "Using Knowledge Base in Agent", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#using-knowledge-base-in-agent" }
   ]} />
 </IndexCard>
 
@@ -1991,7 +1991,7 @@ Create unique visual experiences and brand identity. Customize application theme
     { text: "Using styles", href: "devguide/frontend-ui-customization/page-customization#use-style" },
     { text: "Using local resources", href: "devguide/frontend-ui-customization/page-customization#use-local-resources" },
     { text: "Using Ant Design components", href: "devguide/frontend-ui-customization/page-customization#use-ant-design-components" },
-    { text: "Embedding existing generic pages", href: "devguide/frontend-ui-customization/page-customization#embed-existing-generic-page" },
+    { text: "Embedding existing standard pages", href: "devguide/frontend-ui-customization/page-customization#embed-existing-standard-page" },
     { text: "Using standard components", href: "devguide/frontend-ui-customization/page-customization#use-standard-component" },
     { text: "Calling data model functions", href: "devguide/frontend-ui-customization/page-customization#call-data-model-function" },
     { text: "Calling service functions", href: "devguide/frontend-ui-customization/page-customization#call-service-function" },

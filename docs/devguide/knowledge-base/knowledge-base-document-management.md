@@ -40,7 +40,7 @@ Configuration settings in "Knowledge Base Settings" directly impact search resul
 The "Vector Database" and "Embedding Model" settings cannot be modified after creation. However, you can dynamically adjust parameters such as "Reranking Model", "TopK", "TopN", "Vector Similarity Threshold", and "Reranking Score Threshold" based on feedback from [Query Testing](#query-testing).
 
 :::tip
-To improve accuracy, first familiarize yourself with [How Settings Participate in Query Flow](./keyword-and-semantic-search#how-knowledge-base-settings-participate-in-query-flow). Note that configuration changes must be saved before they take effect in [Query Testing](#query-testing).
+To improve accuracy, first familiarize yourself with [How Settings Participate in Query Flow](./keyword-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow). Note that configuration changes must be saved before they take effect in [Query Testing](#query-testing).
 :::
 
 ## Query testing {#query-testing}

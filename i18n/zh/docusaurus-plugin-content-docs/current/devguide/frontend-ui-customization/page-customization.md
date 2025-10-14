@@ -21,7 +21,7 @@ import TabItem from '@theme/TabItem';
 
 ![样式](./img/styles.png)
 
-LESS 和 SCSS 的样式文件需要配置解析插件，参考[引入打包插件](#引入打包插件)
+LESS 和 SCSS 的样式文件需要配置解析插件，参考[引入打包插件](#introducing-build-plugins)
 
 <Tabs>
   <TabItem value="inline" label="内联样式" default>
@@ -133,7 +133,7 @@ export const Render = () =>{
 }
 ```
 
-更多资源的解析能力，请查看[默认loader映射](#默认loader映射)，你也可以通过[打包配置的使用](#use-packaging-configuration)来扩展loader映射。
+更多资源的解析能力，请查看[默认loader映射](#default-loader-mapping)，你也可以通过[打包配置的使用](#use-packaging-configuration)来扩展loader映射。
 
 ### 使用 Ant Design 的组件 {#use-ant-design-components}
 平台基于 React 框架，内置了 Ant Design UI 组件库，可以直接使用所有 Ant Design 组件；移动端可使用 Ant Design Mobile 组件库。
@@ -146,7 +146,7 @@ export const Render = () =>{
 }
 ```
 
-更多内置包，请查看[系统内置包一览表](#系统内置包一览表)。
+更多内置包，请查看[系统内置包一览表](#system-built-in-package-overview)。
 
 ### 内嵌已有常规页面 {#embed-existing-regular-page}
 在全代码页面中复用已有的常规页面，可以减少重复开发，提高代码复用性。下图展示了全代码页面与内嵌常规页面的交互示例。

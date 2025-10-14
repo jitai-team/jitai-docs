@@ -3,11 +3,11 @@ sidebar_position: 5
 slug: vector-database-standalone-deployment
 ---
 
-# Vector Database Standalone Deployment
+# Deploying Vector Databases as Standalone Services
 
-In production environments and enterprise applications, **standalone deployment of vector databases** is a key strategy to ensure performance, stability, and scalability. Standalone deployment separates vector databases from application services to run as dedicated data services, providing stronger concurrent processing capabilities, better resource isolation, and more flexible operational management.
+In production and enterprise environments, **deploying vector databases as standalone services** is essential for ensuring optimal performance, stability, and scalability. Standalone deployment decouples vector databases from application services, allowing them to operate as dedicated data services with enhanced concurrent processing capabilities, superior resource isolation, and more flexible operational management.
 
-Vector databases are the underlying storage engines for [AI Knowledge Base](./create-knowledge-elements) elements, responsible for converting document content into vector data for storage and retrieval. Through standalone deployment, unified vector storage services can be provided for multiple knowledge base applications, achieving resource sharing and centralized management, while supporting horizontal scaling to handle large-scale data and high-concurrency access requirements.
+Vector databases serve as the underlying storage engine for [AI Knowledge Base](./create-knowledge-elements) elements, converting document content into vector data for efficient storage and retrieval. Standalone deployment enables you to provide unified vector storage services across multiple knowledge base applications, facilitating resource sharing and centralized management while supporting horizontal scaling to meet large-scale data and high-concurrency access demands.
 
 ![Vector Database Creation](./img/vector-database-creation.png)
 
@@ -15,58 +15,58 @@ Vector databases are the underlying storage engines for [AI Knowledge Base](./cr
 Vector databases use `cosine similarity` as the default distance metric algorithm, which is particularly suitable for text semantic similarity computation.
 :::
 
-## Standalone Deployment Solution: Chroma Vector Database {#chroma-standalone-deployment}
+## Standalone deployment solution: Chroma vector database {#chroma-standalone-deployment}
 
-Chroma is the vector database solution recommended by the JitAi platform, supporting standalone service deployment with characteristics of being lightweight, high-performance, and easy to maintain. Standalone deployed Chroma databases can provide unified vector storage services for multiple JitAi application instances, achieving enterprise-level data management and service governance.
+Chroma is the recommended vector database solution for the JitAi platform, offering standalone service deployment with a lightweight footprint, high performance, and easy maintenance. A standalone Chroma deployment provides unified vector storage services across multiple JitAi application instances, enabling enterprise-grade data management and service governance.
 
-### Advantages of Standalone Deployment {#advantages-of-standalone-deployment}
+### Advantages of standalone deployment {#advantages-of-standalone-deployment}
 
-- **Performance Isolation**: Independent computing and storage resources, avoiding competition with application services for system resources
-- **Horizontal Scaling**: Supports cluster deployment, easily handling large-scale data and high-concurrency access
-- **Data Security**: Independent network configuration and access control, providing stronger security guarantees
-- **Operational Convenience**: Unified data backup, monitoring, and maintenance strategies
+- **Performance isolation**: Dedicated computing and storage resources prevent resource contention with application services
+- **Horizontal scaling**: Cluster deployment support enables seamless handling of large-scale data and high-concurrency access
+- **Data security**: Independent network configuration and access control deliver enhanced security guarantees
+- **Operational convenience**: Centralized data backup, monitoring, and maintenance strategies simplify operations
 
-### Chroma Standalone Deployment Installation {#chroma-installation}
+### Installing Chroma for standalone deployment {#chroma-installation}
 
-Official documentation provides multiple deployment methods, choose according to actual requirements:
+The official documentation offers multiple deployment methods to suit your specific requirements:
 
-- **Docker Deployment**: [Chroma Docker Official Documentation](https://docs.trychroma.com/deployment/docker)
-- **Cloud Service Deployment**: [Chroma Cloud Service Deployment Guide](https://docs.trychroma.com/deployment/aws)
+- **Docker deployment**: [Chroma Docker Official Documentation](https://docs.trychroma.com/deployment/docker)
+- **Cloud service deployment**: [Chroma Cloud Service Deployment Guide](https://docs.trychroma.com/deployment/aws)
 
-### Connecting to Standalone Chroma Database {#connect-to-standalone-chroma}
+### Connecting to a standalone Chroma database {#connect-to-standalone-chroma}
 
-Connect to standalone deployed Chroma vector database in JitAi platform:
+To connect to a standalone Chroma vector database in the JitAi platform:
 
 ![Remote](./img/remote.png)
 
-Configuration parameter descriptions:
-- **Name**: Identifier name for the vector database element
-- **Database Address**: IP or domain name of the standalone deployed Chroma server
-- **Port**: Chroma service listening port (default 8000)
-- **Timeout**: Connection and query timeout settings
-- **Authentication Token**: Access token required if authentication mechanism is enabled
+Configuration parameters:
+- **Name**: Identifier for the vector database element
+- **Database address**: IP address or domain name of the standalone Chroma server
+- **Port**: Chroma service listening port (default: 8000)
+- **Timeout**: Connection and query timeout duration
+- **Authentication token**: Access token (required if authentication is enabled)
 
-## Development Testing Environment: Local Configuration {#local-development-config}
+## Local configuration for development and testing {#local-development-config}
 
-For development testing scenarios, JitAi supports localized vector database configuration, requiring no standalone deployment of external services, ready to use out of the box:
+For development and testing scenarios, JitAi supports local vector database configuration without requiring standalone deployment of external services—ready to use out of the box:
 
 ![Localization](./img/localization.png)
 
-Local configuration uses built-in storage methods, with data directly saved in the JitAi platform's local environment. Simply input "Name" and select "Persistence Mode" to quickly create a local vector database, suitable for prototype development and feature verification.
+Local configuration leverages built-in storage, with data saved directly in the JitAi platform's local environment. Simply provide a name and select a persistence mode to quickly create a local vector database, ideal for prototyping and feature validation.
 
 :::tip
-Production environments recommend using standalone deployment solutions for better performance, reliability, and maintainability.
+For production environments, we recommend using standalone deployment to achieve optimal performance, reliability, and maintainability.
 :::
 
-## Vector Database Programming Interface {#vector-database-programming-interface}
+## Vector database programming interface {#vector-database-programming-interface}
 ### health_check {#health_check}
-Check the connection status and operational health of the vector database, returning basic database information. [API Documentation](../../reference/framework/JitAi/vector-database#health_check)
+Checks the connection status and operational health of the vector database, returning basic database information. [API Documentation](../../reference/framework/JitAi/vector-database#health_check)
 
 ### create_collection {#create_collection}
-Create new collections in the vector database for storing and managing related vector data. [API Documentation](../../reference/framework/JitAi/vector-database#create_collection)
+Creates new collections in the vector database for storing and managing related vector data. [API Documentation](../../reference/framework/JitAi/vector-database#create_collection)
 
 ### add_vectors {#add_vectors}
-Store vector data and its metadata to specified collections. [API Documentation](../../reference/framework/JitAi/vector-database#add_vectors)
+Stores vector data and associated metadata in specified collections. [API Documentation](../../reference/framework/JitAi/vector-database#add_vectors)
 
 ### query_vectors {#query_vectors}
-Search for the most similar vector data in collections based on query vectors. [API Documentation](../../reference/framework/JitAi/vector-database#query_vectors)
+Searches for the most similar vector data in collections based on query vectors. [API Documentation](../../reference/framework/JitAi/vector-database#query_vectors)

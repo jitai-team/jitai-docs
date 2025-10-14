@@ -9,19 +9,19 @@ import TabItem from '@theme/TabItem';
 # Page Customization
 
 :::info Prerequisites
-If you haven't created a full-code page yet, please first refer to [Creating Full-code Pages](../shell-and-page/full-code-page-development) to learn how to create React and Vue full-code pages.
+If you haven't created a full-code page yet, please refer to [Creating Full-code Pages](../shell-and-page/full-code-page-development) first to learn how to create React and Vue full-code pages.
 :::
 
-This document introduces the specific development technologies and usage methods for full-code pages, including style processing, component usage, resource management, data operations, etc.
+This document covers specific development technologies and usage patterns for full-code pages, including style processing, component usage, resource management, and data operations.
 
-## Creating React Full-code Page {#create-react-full-code-page}
+## Creating a React full-code page {#create-react-full-code-page}
 
-### Using Styles {#use-style}
-In full-code pages, you can choose style solutions as needed: inline styles (CSS inline), CSS-in-JS, CSS work out of the box without additional packaging configuration; while using native LESS or SCSS requires enabling corresponding packaging configuration in the project to take effect.
+### Using styles {#use-style}
+In full-code pages, you can choose from various styling solutions: inline styles, CSS-in-JS, or plain CSS—all of which work out of the box without additional build configuration. However, native LESS or SCSS requires enabling the corresponding build configuration in your project.
 
 ![Styles](./img/styles.png)
 
-LESS and SCSS style files require configuration of parsing plugins, refer to [Introducing Packaging Plugins](#introducing-packaging-plugins)
+LESS and SCSS style files require configuring parsing plugins. Refer to [Introducing build plugins](#introducing-build-plugins) for details.
 
 <Tabs>
   <TabItem value="inline" label="Inline Styles" default>
@@ -119,11 +119,11 @@ import './styles.scss';
 </Tabs>
 
 :::tip
-When using CSS-in-JS, you can directly consume antd's theme tokens, naturally aligning with platform default styles; you can also read and reuse custom variables defined in the platform's "Global Styles", achieving unified management of brand colors, border radius, shadows, etc. with one-place configuration. Refer to [Global Styles](./global-styles).
+When using CSS-in-JS, you can directly consume Ant Design's theme tokens to naturally align with the platform's default styles. You can also access and reuse custom variables defined in the platform's "Global Styles," enabling centralized management of brand colors, border radius, shadows, and more. See [Global Styles](./global-styles) for details.
 :::
 
-### Using Local Resources {#use-local-resources}
-The platform provides parsing capabilities for common resources. In full-code, you can directly use `import` statements to import resources, using images as an example.
+### Using local resources {#use-local-resources}
+The platform provides built-in parsing capabilities for common resources. In full-code pages, you can directly use `import` statements to import resources. Here's an image example:
 
 ```typescript
 import logo from './logo.png';
@@ -133,10 +133,10 @@ export const Render = () =>{
 }
 ```
 
-For more resource parsing capabilities, see [Default Loader Mapping](#default-loader-mapping). You can also extend loader mapping through [Using Packaging Configuration](#use-packaging-configuration).
+For additional resource parsing capabilities, see [Default loader mapping](#default-loader-mapping). You can also extend loader mappings via [Using build configuration](#use-build-configuration).
 
-### Using Ant Design Components {#use-ant-design-components}
-The platform is based on the React framework and has built-in Ant Design UI component library, allowing direct use of all Ant Design components; for mobile, you can use the Ant Design Mobile component library.
+### Using Ant Design components {#use-ant-design-components}
+The platform is built on the React framework with the Ant Design UI component library pre-installed, allowing you to directly use all Ant Design components. For mobile applications, the Ant Design Mobile component library is also available.
 
 ```typescript
 import { Button } from 'antd';
@@ -146,16 +146,16 @@ export const Render = () =>{
 }
 ```
 
-For more built-in packages, see [System Built-in Package Overview](#system-built-in-package-overview).
+For a complete list of built-in packages, see [System built-in package overview](#system-built-in-package-overview).
 
-### Embedding Existing Generic Pages {#embed-existing-generic-page}
-Reusing existing generic pages in full-code pages can reduce duplicate development and improve code reusability. The following figure shows an interaction example between full-code pages and embedded generic pages.
+### Embedding existing standard pages {#embed-existing-standard-page}
+Reusing existing standard pages within full-code pages reduces duplicate development and improves code reusability. The following demonstrates interaction between full-code pages and embedded standard pages.
 
-![Full-code Page Embedded Page](./img/full-code-page-embedded-page.gif)
+![Full-code page embedded page](./img/full-code-page-embedded-page.gif)
 
-The example demonstrates cross-page component interaction: buttons in the full-code page control data refresh of the embedded page table, while listening to table row click events to get and display the current row's ID information.
+This example demonstrates cross-page component interaction: buttons in the full-code page control data refresh of the embedded page's table, while listening to table row click events to retrieve and display the current row's ID.
 
-Implementation as follows:
+Implementation:
 
 ```typescript
 import { useRef } from "react";
@@ -207,7 +207,7 @@ class PageCls extends Jit.BasePage {
 export { Render, PageCls };
 ```
 
-ElementRender can render not only generic page elements but also other full-code pages, just configure the corresponding element's `fullName` to the `elementPath` property. If you need to interact with the embedded page, you can configure the `onInitAfter` property; after initialization is complete, the embedded page's page instance will be passed as a parameter. Example of embedded page's page instance:
+The `ElementRender` component can render both standard page elements and other full-code pages—simply configure the element's `fullName` to the `elementPath` property. To interact with the embedded page, configure the `onInitAfter` property. Upon initialization, the embedded page's instance will be passed as a parameter. Here's an example of an embedded page instance:
 
 ```typescript
 import type { ComponentPageScheme } from "jit";
@@ -224,22 +224,22 @@ class PageCls extends Jit.GridPage {
 export default PageCls;
 ```
 
-The embedded page contains a table instance named Table1, and the full-code page can operate on it through the page's instance.
+The embedded page contains a table instance named `Table1`, which the full-code page can interact with via the page instance.
 
-### Using Standard Components {#use-standard-component}
-Reusing existing standard components in full-code pages can reduce duplicate development and improve code reusability. The following figure shows an interaction example between full-code pages and standard components.
+### Using standard components {#use-standard-component}
+Reusing existing standard components within full-code pages reduces duplicate development and improves code reusability. The following demonstrates interaction between full-code pages and standard components.
 
-![Full-code Page Standard Components](./img/full-code-page-standard-components.gif)
+![Full-code page standard components](./img/full-code-page-standard-components.gif)
 
-The example demonstrates cross-page component interaction: buttons in the full-code page control table component data refresh, while listening to table row click events to get and display the current row's ID information.
+This example demonstrates cross-page component interaction: buttons in the full-code page control table component data refresh, while listening to table row click events to retrieve and display the current row's ID.
 
-All standard components are rendered by configuration, and the component renderer accepts a component instance that is constructed through configuration. Because component configuration is complex, when using standard components in full-code, it's recommended that developers first create a generic page, add standard components to the generic page, configure the components, and then copy the component configuration to the full-code page.
+All standard components are configuration-driven—the component renderer accepts a component instance constructed from configuration. Due to the complexity of component configuration, when using standard components in full-code pages, we recommend first creating a generic page, adding and configuring standard components there, then copying the component configuration to your full-code page.
 
-![Copy Table Configuration](./img/copy-table-configuration.png)
+![Copy table configuration](./img/copy-table-configuration.png)
 
-Click on the page with the component to copy, switch to source code mode, open `scheme.json` to find the componentList configuration item, and copy the component configuration you want to use to the full-code page.
+Navigate to the standard page containing the component to copy, switch to source code mode, open `scheme.json`, locate the `componentList` configuration item, and copy the desired component configuration to your full-code page.
 
-Example code as follows:
+Example code:
 
 <Tabs>
   <TabItem value="index" label="index.tsx" default>
@@ -472,24 +472,24 @@ export default ComponentRender;
   </TabItem>
 </Tabs>
 
-**index.tsx** - Main page component, implements UI rendering and event interaction logic.
+**index.tsx** - Main page component implementing UI rendering and event interaction logic.
 
-**ComponentRender.tsx** - Reusable standard component renderer, responsible for dynamically loading and instantiating standard components.
+**ComponentRender.tsx** - Reusable standard component renderer responsible for dynamically loading and instantiating standard components.
 
-**tableConfig.json** - Table component configuration example, contains data model reference `models.cascadeTableData`, actual usage needs to be replaced with real data model in the project.
+**tableConfig.json** - Table component configuration example containing data model reference `models.cascadeTableData`. Replace with your project's actual data model in practice.
 
-**e.json** - Page element definition file, type is "pages.NormalType", specifies React full-code page type; frontBundleEntry points to the entry file.
+**e.json** - Page element definition file with type `"pages.NormalType"`, specifying a React full-code page type. The `frontBundleEntry` points to the entry file.
 
-### Calling Data Model Functions {#call-data-model-function}
-In full-code pages, you can very conveniently call data model functions. It's recommended to use visual pages to configure function parameters first, then directly copy the function code to the full-code page. For specific instructions on how to get function code, please refer to [CRUD Operations for Data Models](#crud-operations-for-data-models).
+### Calling data model functions {#call-data-model-function}
+Full-code pages provide convenient access to data model functions. We recommend using visual pages to configure function parameters first, then copying the generated function code to your full-code page. For specific instructions, refer to [CRUD operations for data models](#crud-operations-for-data-models).
 
-For detailed data model function calling methods and syntax descriptions, please refer to: [Calling Data Model Functions in Pages](../calling-business-elements-in-pages/calling-data-model-functions-in-pages)
+For detailed data model function calling methods and syntax, see: [Calling Data Model Functions in Pages](../calling-business-elements-in-pages/calling-data-model-functions-in-pages)
 
-Taking getting one piece of data from the model as an example:
+Here's an example of retrieving a single record from a data model:
 
-![Call Model Function](./img/call-model-function.gif)
+![Call model function](./img/call-model-function.gif)
 
-Click the button to call the model's get one data function and display it in a popup. Example code as follows:
+Clicking the button calls the model's get-one-record function and displays the result in a message. Example code:
 
 ```typescript
 import { Button, message } from 'antd';
@@ -527,16 +527,17 @@ class PageCls extends Jit.BasePage {
 export { Render, PageCls };
 
 ```
-The method to call model functions is similar: this.app.models.[model name].[method name]([parameter1], [parameter2], ...)
 
-### Calling Service Functions {#call-service-function}
-The calling method for service functions is exactly the same as [data model functions](#call-data-model-function), with the calling syntax: `this.app.services.[service name].[method name]([parameter1], [parameter2], ...)`.
+The syntax for calling model functions is: `this.app.models.[model name].[method name]([param1], [param2], ...)`
 
-For detailed service function calling methods and examples, please refer to: [Calling Service Functions in Pages](../calling-business-elements-in-pages/calling-service-functions-in-pages)
+### Calling service functions {#call-service-function}
+Service functions follow the same calling pattern as [data model functions](#call-data-model-function), using the syntax: `this.app.services.[service name].[method name]([param1], [param2], ...)`.
 
-## Creating Vue Full-code Page {#vue-full-code-page}
+For detailed service function calling methods and examples, see: [Calling Service Functions in Pages](../calling-business-elements-in-pages/calling-service-functions-in-pages)
 
-### Basic Structure
+## Creating a Vue full-code page {#vue-full-code-page}
+
+### Basic structure {#basic-structure}
 Vue full-code pages consist of four core files:
 
 <Tabs>
@@ -659,16 +660,16 @@ export { PageCls };
   </TabItem>
 </Tabs>
 
-**App.vue** - Vue component, uses Composition API syntax, receives page instance through props.
+**App.vue** - Vue component using Composition API syntax that receives the page instance via props.
 
-**index.ts** - Render entry, creates Vue application and uses Element Plus, passes page instance as props to App component.
+**index.ts** - Render entry that creates the Vue application, registers Element Plus, and passes the page instance as props to the App component.
 
-**page.ts** - Page logic processing class, inherits from Jit.BasePage, can add custom methods for Vue component calls.
+**page.ts** - Page logic processing class that inherits from `Jit.BasePage`. Add custom methods here for Vue component calls.
 
-**e.json** - Element definition file, type is "pages.VueType", specifies Vue page type.
+**e.json** - Element definition file with type `"pages.VueType"`, specifying a Vue page type.
 
-### Using Element Plus Components
-Vue full-code pages have built-in Element Plus UI component library, allowing direct use of all Element Plus components:
+### Using Element Plus components {#using-element-plus-components}
+Vue full-code pages have the Element Plus UI component library pre-installed, allowing you to directly use all Element Plus components:
 
 ```html
 <template>
@@ -678,8 +679,8 @@ Vue full-code pages have built-in Element Plus UI component library, allowing di
 </template>
 ```
 
-### Interacting with page Instance
-Vue components receive the page instance through props and can call methods and access properties on the page:
+### Interacting with the page instance {#interacting-with-page-instance}
+Vue components receive the page instance via props and can call methods and access properties:
 
 ```typescript
 <script setup>
@@ -699,28 +700,29 @@ const pageTitle = props.page.title;
 ```
 
 :::tip
-Vue full-code pages focus on native Vue development experience, fully supporting [data model functions](#call-data-model-function), [service functions](#call-service-function) calls, and [local resource](#use-local-resources) references and other core functions, allowing you to fully leverage Vue ecosystem advantages while enjoying platform-provided capabilities.
+Vue full-code pages deliver a native Vue development experience with full support for [data model functions](#call-data-model-function), [service functions](#call-service-function), [local resource](#use-local-resources) references, and other core capabilities, allowing you to leverage the Vue ecosystem while benefiting from platform features.
 :::
 
 # Related Materials
-## CRUD Operations for Data Models {#crud-operations-for-data-models}
-Backend data models provide complete CRUD functionality, [API Documentation](/docs/reference/framework/JitORM/data-models#basic-data-operations).
 
-However, backend functions can only be called in backend runtime (service functions, scheduled task functions, event functions). Considering this, the frontend environment platform also provides data model operation interfaces, as shown below:
+## CRUD operations for data models {#crud-operations-for-data-models}
+Backend data models provide comprehensive CRUD functionality. See the [API Documentation](/docs/reference/framework/JitORM/data-models#basic-data-operations) for details.
 
-![Model Functions](./img/model-functions.png)
+However, backend functions can only be called in backend runtime contexts (service functions, scheduled task functions, event functions). To address this, the platform also provides data model operation interfaces for the frontend environment:
 
-In the event panel of generic pages, click the `Please Select` text on blank statements in the function panel, select `Data Model` - `[Model Name]` in the panel to see multiple model operation functions. Taking query interface as an example, select `Get One Data`.
+![Model functions](./img/model-functions.png)
 
-### Full-code Using Model Functions {#full-code-using-model-functions}
-Model functions have many parameters. Considering parameter complexity, developers can visually configure parameters in the following way and quickly locate function code, then directly copy it to the full-code page.
+In the event panel of standard pages, click the `Please Select` text on blank statements in the function panel. Select `Data Model` → `[Model Name]` to view multiple model operation functions. For example, select `Get One Data` for query operations.
 
-![Enter Function](./img/enter-function.png)
+### Using model functions in full-code {#full-code-using-model-functions}
+Model functions often have multiple parameters. To simplify this complexity, you can visually configure parameters and quickly locate the generated code to copy directly into your full-code page.
 
-Click `Parameter Settings`, configure function parameters, at the end of the generated function statement, click the `</>` button, it will jump to the source code area and locate the current function statement, copy the function statement `await this.app.models.CalendarTestModel.get(Q(Q("id", "=", 1)), null, 2);` to the full-code.
+![Enter function](./img/enter-function.png)
+
+Click `Parameter Settings` and configure the function parameters. At the end of the generated function statement, click the `</>` button to jump to the source code area with the function statement highlighted. Copy the function statement (e.g., `await this.app.models.CalendarTestModel.get(Q(Q("id", "=", 1)), null, 2);`) into your full-code page.
 
 :::warning
-Note: Data model functions in pages all start with `this.app`. If there's no `this.app` where you're using it, please add it yourself.
+Note: Data model functions in pages always start with `this.app`. If you're in a context without `this.app`, import and use the runtime app:
 ```typescript
 import { getRuntimeApp } from 'jit';
 const app = getRuntimeApp();
@@ -728,78 +730,78 @@ const app = getRuntimeApp();
 ```
 :::
 
-## Using Service Functions
-Refer to [CRUD Operations for Data Models](#crud-operations-for-data-models)
+## Using service functions {#using-service-functions}
+See [CRUD operations for data models](#crud-operations-for-data-models) for usage patterns.
 
-### Full-code Calling Service Functions
-Refer to [Full-code Using Model Functions](#full-code-using-model-functions)
+### Calling service functions in full-code {#full-code-calling-service-functions}
+See [Using model functions in full-code](#full-code-using-model-functions) for the same approach.
 
-## Using Third-party Packages {#use-third-party-packages}
-In full-code-page-development, you can flexibly introduce third-party npm packages to extend functionality. In the editor's source code mode, modify the `package.json` file, add required dependency packages to the `dependencies` field, then click the "Save" button. The system will automatically run `pnpm install` on the backend to install newly added dependency packages. After installation is complete, you can normally import and use them in code.
+## Using third-party packages {#use-third-party-packages}
+In full-code page development, you can flexibly integrate third-party npm packages to extend functionality. In the editor's source code mode, modify the `package.json` file by adding the required dependencies to the `dependencies` field, then click "Save." The system will automatically run `pnpm install` on the backend to install the new packages, after which you can import and use them normally in your code.
 
-Taking rxjs as an example, add dependency package in `package.json`:
+For example, to add rxjs, modify `package.json`:
 
 ![rxjs](./img/rxjs.png)
 
-Add the `rxjs` dependency package to the `dependencies` field in `package.json`, click the "Save" button to install dependencies.
+Add the `rxjs` dependency to the `dependencies` field in `package.json`, then click "Save" to install.
 
-### Using Network Resources
-The system's bundler integrates the ability to import packages from the network, but requires network packages to be in ES Module format, otherwise it will report errors. It's recommended to use `https://esm.sh`. If you also want to use rxjs, you can directly import `import { Observable } from 'https://esm.sh/rxjs'` in the page;
+### Using network resources {#using-network-resources}
+The system's bundler supports importing packages from the network, but requires them to be in ES Module format or errors will occur. We recommend using `https://esm.sh`. For rxjs, you can directly import it in your page:
 
-![Network Resources](./img/network-resources.png)
+![Network resources](./img/network-resources.png)
 
-After importing `import { Observable } from 'https://esm.sh/rxjs?bundle'` in frontend files, you can directly use third-party packages.
+After importing `import { Observable } from 'https://esm.sh/rxjs?bundle'` in your frontend files, you can use the third-party package directly.
 
 :::tip
-esm.sh also provides some optimization parameters. For example, using `?bundle` can compress multiple ES Modules into one file, thereby reducing request times and improving performance. esm.sh is an open source project. If used in production environment, it's recommended to deploy it yourself to improve availability and security.
+esm.sh provides optimization parameters like `?bundle`, which compresses multiple ES Modules into a single file, reducing request count and improving performance. Since esm.sh is open source, we recommend self-hosting in production environments for better availability and security.
 :::
 
-## Using Packaging Configuration {#use-packaging-configuration}
-The platform's frontend bundler is based on esbuild encapsulation, and configuration items are consistent with esbuild. In the `jit.config.ts` file in the application root directory, you can customize packaging parameters to meet specific build requirements.
+## Using build configuration {#use-build-configuration}
+The platform's frontend bundler is built on esbuild, with configuration options matching esbuild's API. In the `jit.config.ts` file at your application root, you can customize build parameters to meet specific requirements.
 
-![Package Configuration](./img/package-configuration.png)
+![Package configuration](./img/package-configuration.png)
 
-The esBuildOptions configuration is consistent with esbuild. For details, refer to [esbuild documentation](https://esbuild.github.io).
+The `esBuildOptions` configuration aligns with esbuild. For details, refer to the [esbuild documentation](https://esbuild.github.io).
 
-:::tip Using Source Code Debugging
-Development environment can enable the `sourcemap` option in `jit.config.ts`; production environment is recommended to set to `false` to significantly reduce bundle size.
+:::tip Source map debugging
+In development, you can enable the `sourcemap` option in `jit.config.ts`. For production, set it to `false` to significantly reduce bundle size.
 :::
 
-### Introducing Packaging Plugins
-Taking the introduction of Less and SCSS parsing plugins as an example, these two plugins are already integrated in the platform's bundler `jit-builder`. You can introduce `jit-builder` in package.json following the method in [Using Third-party Packages](#use-third-party-packages).
+### Introducing build plugins {#introducing-build-plugins}
+For example, to add Less and SCSS parsing plugins—both already integrated in the platform's bundler `jit-builder`—you can include `jit-builder` in package.json following the method in [Using third-party packages](#use-third-party-packages).
 
-![less support](./img/less-support.png)
+![Less support](./img/less-support.png)
 
-Because the system default package.json already includes `jit-builder`, you only need to change devDependencies to dependencies, then save. Next, modify the packaging configuration file `jit.config.ts`.
+Since the default package.json already includes `jit-builder`, simply change it from `devDependencies` to `dependencies`, then save. Next, modify the build configuration file `jit.config.ts`.
 
-![Style Plugins](./img/style-plugins.png)
+![Style plugins](./img/style-plugins.png)
 
-Import `styleInJsPlugin` and `scssInJsPlugin` in `jit.config.ts`, then add them to `plugins`.
+Import `styleInJsPlugin` and `scssInJsPlugin` in `jit.config.ts`, then add them to the `plugins` array.
 
-:::tip More Plugins
-The above method applies to all esbuild plugins. For how to find corresponding plugins, refer to [esbuild plugins](https://esbuild.github.io/plugins/)
+:::tip
+This method applies to all esbuild plugins. To find plugins, refer to the [esbuild plugins directory](https://esbuild.github.io/plugins/).
 :::
 
-## System Built-in Package Overview
-The platform pre-includes commonly used third-party libraries that can be directly imported and used in code without declaration in package.json:
+## System built-in package overview {#system-built-in-package-overview}
+The platform pre-includes commonly used third-party libraries that can be imported and used directly in code without declaring them in package.json:
 
 | Package Name | Version | Global Variable Name | Description |
 |------|------|-----------|------|
 | **React Ecosystem** | | | |
 | `react` | 18.2.0 | `React` | React core library |
-| `react-dom` | 18.2.0 | `ReactDom` | React DOM manipulation library |
+| `react-dom` | 18.2.0 | `ReactDom` | React DOM library |
 | `react-dom/client` | 18.2.0 | `ReactDomClient` | React 18 client API |
-| `react-dom/server` | 18.2.0 | `ReactDomServer` | React server-side rendering API |
-| `react-router` | 6.18.0 | `ReactRouter` | React router core |
-| `react-router-dom` | 6.18.0 | `ReactRouterDom` | React router DOM binding |
-| `react-dnd` | 16.0.1 | `ReactDnd` | React drag and drop library |
-| `react-dnd-html5-backend` | 16.0.1 | `ReactDndHtml5Backend` | HTML5 drag and drop backend |
+| `react-dom/server` | 18.2.0 | `ReactDomServer` | React server rendering API |
+| `react-router` | 6.18.0 | `ReactRouter` | React Router core |
+| `react-router-dom` | 6.18.0 | `ReactRouterDom` | React Router DOM bindings |
+| `react-dnd` | 16.0.1 | `ReactDnd` | React drag-and-drop library |
+| `react-dnd-html5-backend` | 16.0.1 | `ReactDndHtml5Backend` | HTML5 drag-and-drop backend |
 | **Vue Ecosystem** | | | |
 | `vue` | 3.5.13 | `Vue` | Vue.js framework |
-| `element-plus` | 2.8.8 | `ElementPlus` | Vue3 UI component library |
+| `element-plus` | 2.8.8 | `ElementPlus` | Vue 3 UI component library |
 | **UI Component Libraries** | | | |
 | `antd` | 5.24.0 | `JitAntd` | Ant Design component library |
-| `antd-mobile` | 5.33.0 | `antdMobile` | Ant Design mobile components |
+| `antd-mobile` | 5.33.0 | `antdMobile` | Ant Design Mobile components |
 | `@ant-design/cssinjs` | 1.17.5 | `antCssInJs` | Ant Design CSS-in-JS |
 | **Style Processing** | | | |
 | `@emotion/react` | 11.13.3 | `EmotionReact` | CSS-in-JS library |
@@ -813,37 +815,38 @@ The platform pre-includes commonly used third-party libraries that can be direct
 | `ahooks` | 3.7.8 | `ahooks` | React Hooks library |
 | `localforage` | 1.10.0 | `localforage` | Local storage library |
 | `recast` | 0.23.4 | `recast` | JavaScript AST tool |
-| **Platform Specific** | | | |
+| **Platform-Specific** | | | |
 | `jit` | - | `JitCore` | JitAi core library |
-| `jit-utils` | - | `JitUtils` | JitAi utility library |
-| `jit-ui` | - | `JitUi` | JitAi UI component library |
-| `jit-widgets` | - | `JitWidgets` | JitAi widget library |
+| `jit-utils` | - | `JitUtils` | JitAi utilities |
+| `jit-ui` | - | `JitUi` | JitAi UI components |
+| `jit-widgets` | - | `JitWidgets` | JitAi widgets |
 
-:::tip Direct Usage
-These libraries can be directly imported and used without installation, for example: `import { useState } from 'react'`, `import { Button } from 'antd'`, etc.
+:::tip
+These libraries can be imported and used directly without installation, e.g., `import { useState } from 'react'` or `import { Button } from 'antd'`.
 :::
 
-## Default Loader Mapping
-The platform is built based on esbuild. The following is the system default file type processor configuration:
+## Default loader mapping {#default-loader-mapping}
+The platform is built on esbuild. The following shows the default file type processor configuration:
 
 | File Type | Loader | Description |
 |---------|--------|------|
-| `.png` | `dataurl` | PNG image files, converted to base64 embedded |
-| `.jpe` | `dataurl` | JPEG image files, converted to base64 embedded |
-| `.jpeg` | `dataurl` | JPEG image files, converted to base64 embedded |
-| `.gif` | `dataurl` | GIF animation files, converted to base64 embedded |
-| `.svg` | `dataurl` | SVG vector image files, converted to base64 embedded |
-| `.css` | `dataurl` | CSS style files, converted to base64 embedded |
-| `.py` | `text` | Python script files, processed as text |
-| `.webp` | `dataurl` | WebP image files, converted to base64 embedded |
+| `.png` | `dataurl` | PNG images, converted to base64 data URLs |
+| `.jpe` | `dataurl` | JPE images, converted to base64 data URLs |
+| `.jpeg` | `dataurl` | JPEG images, converted to base64 data URLs |
+| `.gif` | `dataurl` | GIF images, converted to base64 data URLs |
+| `.svg` | `dataurl` | SVG vector graphics, converted to base64 data URLs |
+| `.css` | `dataurl` | CSS stylesheets, converted to base64 data URLs |
+| `.py` | `text` | Python scripts, processed as text |
+| `.webp` | `dataurl` | WebP images, converted to base64 data URLs |
 
-:::tip Custom Loader
-If you need to customize processing methods for other file types, you can configure them in `esBuildOptions.loader` in `jit.config.ts`.
+:::tip
+To customize processing for other file types, configure them in `esBuildOptions.loader` within `jit.config.ts`.
 :::
 
-## Related Reading
-### Creating Full-code Pages
-Learn how to create React and Vue full-code pages, refer to: [Creating Full-code Pages](../shell-and-page/full-code-page-development)
+## Related reading {#related-reading}
 
-### Full-code Components
-Learn about using full-code components for development in pages, refer to: [Full-code Components](../fullcode-ui-components-in-pages/ui-component-interface-specifications)
+### Creating full-code pages {#creating-full-code-pages}
+Learn how to create React and Vue full-code pages: [Creating Full-code Pages](../shell-and-page/full-code-page-development)
+
+### Full-code components {#full-code-components}
+Learn about developing with full-code components in pages: [Full-Code Component Interface Specifications](../fullcode-ui-components-in-pages/ui-component-interface-specifications)

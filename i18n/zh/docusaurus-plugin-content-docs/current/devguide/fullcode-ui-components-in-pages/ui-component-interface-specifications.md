@@ -202,7 +202,7 @@ sequenceDiagram
 - **组件接口**：平台创建组件逻辑实例，通过 `props.compIns` 接口传入渲染器
 - **事件接口**：`Render` 通过 `compIns` 接口调用逻辑方法、发布事件；`page.ts` 通过 `bindEvent()` 接口订阅事件
 
-## 相关文档
+## 相关文档 {#related-documentation}
 
 - [在全代码组件中调用页面和组件函数](./calling-page-and-component-functions-in-fullcode-components) - 了解如何在全代码组件中调用其他组件和页面的方法
 - [发布和订阅事件](./emitting-events) - 了解全代码组件的事件机制

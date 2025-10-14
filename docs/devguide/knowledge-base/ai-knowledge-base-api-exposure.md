@@ -5,5 +5,5 @@ slug: ai-knowledge-base-api-exposure
 
 # AI Knowledge Base API Exposure
 
-coming soon...
+Coming soon...
 

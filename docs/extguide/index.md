@@ -46,6 +46,6 @@ Extend and modify existing Type elements while maintaining API compatibility (Li
 - **Incremental modification**: Make local adjustments based on existing logic while maintaining interface consistency
 
 ## Community support {#community-support}
-- For issues encountered during extension development, get help through the [community forum](https://forum.jit.pro/)
+- For issues encountered during extension development, get help through the [community forum](https://forum.jit.pro)
 - Excellent extension implementations are welcome to be shared with the community for other developers to learn
 - Extensions with universal value have the opportunity to be integrated into the official framework

@@ -1519,13 +1519,13 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "模型事件", href: "devguide/business-logic-development/event-handling#model-events" },
     { text: "审批事件", href: "devguide/business-logic-development/event-handling#approval-events" },
     { text: "自定义事件", href: "devguide/business-logic-development/event-handling#custom-events" },
-    { text: "ai-assistant事件", href: "devguide/business-logic-development/event-handling#ai-assistant-events" },
+    { text: "AI助理事件", href: "devguide/business-logic-development/event-handling#ai-assistant-events" },
     { text: "Agent工具调用事件", href: "devguide/business-logic-development/event-handling#agent-tool-call-events" },
-    { text: "用服务函数替换事件内函数", href: "devguide/business-logic-development/event-handling#replacing-event-internal-function-with-service-function" },
+    { text: "用服务函数替换事件内函数", href: "devguide/business-logic-development/event-handling#replacing-event-internal-functions-with-service-functions" },
     { text: "启用事件", href: "devguide/business-logic-development/event-handling#enabling-events" },
-    { text: "同步/异步执行事件", href: "devguide/business-logic-development/event-handling#executing-events-synchronously-asynchronously" },
+    { text: "同步/异步执行事件", href: "devguide/business-logic-development/event-handling#executing-events-synchronously-or-asynchronously" },
     { text: "查看事件执行记录", href: "devguide/business-logic-development/event-handling#viewing-event-execution-records" },
-    { text: "查看/编辑全代码", href: "devguide/business-logic-development/event-handling#viewing-editing-full-code" }
+    { text: "查看/编辑全代码", href: "devguide/business-logic-development/event-handling#viewing-and-editing-full-code" }
   ]} />
 </IndexCard>
 

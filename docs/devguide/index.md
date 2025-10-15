@@ -2052,7 +2052,6 @@ In-depth practical guides based on real business scenarios to help developers ma
 >
   <LinkGrid links={[
     { text: "AI Customer Service", href: "devguide/advanced-guide/ai-customer-service" },
-    { text: "AI Question Grading", href: "devguide/advanced-guide/ai-question-grading" },
     { text: "Agent Prompt Writing Techniques", href: "devguide/advanced-guide/agent-prompt-writing-techniques" }
   ]} />
 </IndexCard>

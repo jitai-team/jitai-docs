@@ -89,13 +89,13 @@ By default, `Sync Approval Information to Data Table Model` is in a closed state
 |    Initiator    |                  Member Single Select                  |     When Initiating Approval     |
 |   Initiation Time   |                  Date Time                  |     When Initiating Approval     |
 |   End Time   |                  Date Time                  |     When Approval Ends     |
-| Approval Workflow Title | Single Line Text, Multi-line Text, Option Group Single Select, Dropdown Single Select |     When Initiating Approval     |
-| Approval Workflow ID  |                  Single Line Text                  |     When Initiating Approval     |
+| Approval Workflow Title | Single-line Text, Multi-line Text, Single Choice, Dropdown Single Select |     When Initiating Approval     |
+| Approval Workflow ID  |                  Single-line Text                  |     When Initiating Approval     |
 | Approval Instance ID  |                    Number                    |     When Initiating Approval     |
-| Current Node Title | Single Line Text, Multi-line Text, Option Group Single Select, Dropdown Single Select |     After Approval Processing     |
-| Current Node ID  |                  Single Line Text                  |     After Approval Processing     |
+| Current Node Title | Single-line Text, Multi-line Text, Single Choice, Dropdown Single Select |     After Approval Processing     |
+| Current Node ID  |                  Single-line Text                  |     After Approval Processing     |
 |  Current Approver  |             Member Single Select, Member Multi-select             |     After Approval Processing     |
-|   Approval Status   | Single Line Text, Multi-line Text, Option Group Single Select, Dropdown Single Select |   After Approval Status Change   |
+|   Approval Status   | Single-line Text, Multi-line Text, Single Choice, Dropdown Single Select |   After Approval Status Change   |
 
 ### Sync to Third-Party Approval To-Do {#sync-to-third-party-approval-todo}
 When a user-created application has integrated with DingTalk organizational structure and wants to synchronize to-do messages in the system to DingTalk's to-do items, they can enable the `Sync to Third-Party Approval To-Do` function in approval settings.

@@ -18,8 +18,10 @@ JitAi有能力支撑行业主流和领先的应用层稳定性保证措施。
 - 🔄 **独立部署**：不影响其他应用运行，故障隔离
 :::
 
-## 渐进式验证流程
-### 多运行环境
+## 渐进式验证流程 {#progressive-validation-process}
+
+### 多运行环境 {#multiple-runtime-environments}
+
 在JitAi运维平台创建多个运行环境，采用**测试环境 → Beta环境 → 正式环境**的渐进式验证流程：
 
 ```mermaid
@@ -41,7 +43,8 @@ graph TD
     L --> N[全量发布]
 ```
 
-### 环境配置策略
+### 环境配置策略 {#environment-configuration-strategy}
+
 <Tabs>
 <TabItem value="test" label="🧪 测试环境" default>
 
@@ -99,7 +102,8 @@ graph TD
 </TabItem>
 </Tabs>
 
-### 版本管理与发布策略
+### 版本管理与发布策略 {#version-management-and-release-strategy}
+
 | 发布阶段 | 版本状态 | 验证周期 | 通过标准 | 失败处理 |
 |---------|---------|---------|---------|---------|
 | **应用仓库** | 开发完成版本 | 代码审查 | 代码规范 + 功能完整性 | 重新开发修复 |
@@ -107,8 +111,10 @@ graph TD
 | **Beta环境** | 准生产版本 | 3-5天 | 真实数据兼容 + 生产性能 | 数据问题分析 |
 | **正式环境** | 生产版本 | 持续监控 | 稳定性指标 + 用户体验 | 灰度回滚 |
 
-## 灰度发布机制
-### 节点级灰度发布
+## 灰度发布机制 {#canary-release-mechanism}
+
+### 节点级灰度发布 {#node-level-canary-release}
+
 在JitAi集群架构中，其中一个JitNode节点承担负载均衡器角色，负责流量分发控制。运行环境入口地址就是解析到该节点。
 
 ```mermaid
@@ -139,8 +145,10 @@ graph TB
     M1 --> M2
 ```
 
-### 灰度发布流程控制
-#### 稳定性与可用性双重评估
+### 灰度发布流程控制 {#controlling-canary-release-process}
+
+#### 稳定性与可用性双重评估 {#assessing-stability-and-availability}
+
 灰度发布需要同时评估**稳定性**和**可用性**两个维度：
 
 - **稳定性**：系统运行的错误率、响应时间等技术指标
@@ -161,7 +169,8 @@ graph TB
 - 📊 **数据保留**：节点继续运行，便于问题分析和调试
 :::
 
-### 灰度发布操作流程
+### 灰度发布操作流程 {#operating-canary-release-process}
+
 **标准发布流程：**
 
 1. **选择灰度节点**：选择1个节点作为初始灰度节点
@@ -206,12 +215,14 @@ graph TD
 5. **修复验证**：问题修复后进行功能验证
 6. **流量恢复**：验证通过后逐步恢复该节点的流量分配
 
-## 可观测性
+## 可观测性 {#observability}
+
 :::info
 可观测性相关能力正在建设中，即将上线
 :::
 
-### OpenTelemetry及APM生态集成
+### OpenTelemetry及APM生态集成 {#integrating-with-opentelemetry-and-apm-ecosystem}
+
 JitAi应用运行平台支持[OpenTelemetry](https://opentelemetry.io/)，这是可观测性领域的核心标准，在技术演进、生态整合和行业实践中具有不替代的地位。
 
 ```mermaid

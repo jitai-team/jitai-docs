@@ -10,7 +10,7 @@ Filters are essential data processing tools designed to extract specific data su
 JitAi offers two types of filters: model filters that target specific data models, and universal filters that can be configured at runtime to filter multiple models simultaneously.
 
 ## Model filters {#model-filters}
-In the page visual editor, click "Insert Component" and drag the "Model Filter" component onto the page. Select a data model in the data source configuration and click `Confirm`.
+In the page visual editor, click `Insert Component` and drag the `Model Filter` component onto the page. Select a data model in the data source configuration and click `Confirm`.
 
 ![Model Filter](./img/6/filter_2025-08-22_14-19-08.png)
 

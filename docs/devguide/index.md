@@ -1548,16 +1548,18 @@ Make enterprise approval processes efficient and orderly. Design flowcharts thro
   description="Creation and basic settings of approval processes, including process node configuration and path design."
 >
   <LinkGrid columns={2} links={[
-    { text: "Create Process", href: "devguide/approval-workflow/approval-workflow-basic-configuration#create-process" },
-    { text: "Drag Process Node", href: "devguide/approval-workflow/approval-workflow-basic-configuration#drag-process-node" },
-    { text: "Approval Process Default Page", href: "devguide/approval-workflow/approval-workflow-basic-configuration#approval-workflow-default-page" },
-    { text: "Other Process Configuration", href: "devguide/approval-workflow/approval-workflow-basic-configuration#other-process-configuration" },
-    { text: "Sync Approval Info to Data Table Model", href: "devguide/approval-workflow/approval-workflow-basic-configuration#sync-approval-info-to-data-table-model" },
-    { text: "Sync to Third-party Approval Todo", href: "devguide/approval-workflow/approval-workflow-basic-configuration#sync-to-third-party-approval-todo" },
-    { text: "Comment Function", href: "devguide/approval-workflow/approval-workflow-basic-configuration#comment-function" },
-    { text: "Share", href: "devguide/approval-workflow/approval-workflow-basic-configuration#share" },
-    { text: "Print Approval Form", href: "devguide/approval-workflow/approval-workflow-basic-configuration#print-approval-form" },
-    { text: "Reuse Other Approval Processes", href: "devguide/approval-workflow/approval-workflow-basic-configuration#reuse-other-approval-workflowes" }
+    { text: "Creating Processes", href: "devguide/approval-workflow/approval-workflow-basic-configuration#create-process" },
+    { text: "Configuring Process Nodes", href: "devguide/approval-workflow/approval-workflow-basic-configuration#drag-process-node" },
+    { text: "Approval Workflow Default Pages", href: "devguide/approval-workflow/approval-workflow-basic-configuration#approval-workflow-default-page" },
+    { text: "Prediction Capabilities", href: "devguide/approval-workflow/approval-workflow-basic-configuration#prediction-feature" },
+    { text: "Additional Process Configuration", href: "devguide/approval-workflow/approval-workflow-basic-configuration#other-process-configuration" },
+    { text: "Synchronizing Approval Information to Data Table Models", href: "devguide/approval-workflow/approval-workflow-basic-configuration#sync-approval-info-to-data-table-model" },
+    { text: "Prediction Functionality", href: "devguide/approval-workflow/approval-workflow-basic-configuration#prediction-function" },
+    { text: "Synchronizing to Third-party Approval To-do Systems", href: "devguide/approval-workflow/approval-workflow-basic-configuration#sync-to-third-party-approval-todo" },
+    { text: "Comment Functionality", href: "devguide/approval-workflow/approval-workflow-basic-configuration#comment-function" },
+    { text: "Sharing Capabilities", href: "devguide/approval-workflow/approval-workflow-basic-configuration#share" },
+    { text: "Printing Approval Forms", href: "devguide/approval-workflow/approval-workflow-basic-configuration#print-approval-form" },
+    { text: "Reusing Existing Approval Workflows", href: "devguide/approval-workflow/approval-workflow-basic-configuration#reuse-other-approval-workflowes" }
   ]} />
 </IndexCard>
 
@@ -1586,20 +1588,20 @@ Make enterprise approval processes efficient and orderly. Design flowcharts thro
   <LinkGrid columns={2} links={[
     { text: "Approver Settings", href: "devguide/approval-workflow/approval-node-configuration#approver-settings" },
     { text: "Approval Flow Rules", href: "devguide/approval-workflow/approval-node-configuration#approval-flow-rules" },
-    { text: "Approval Process Rules", href: "devguide/approval-workflow/approval-node-configuration#approval-workflow-rules" },
-    { text: "Approval Extended Function Configuration", href: "devguide/approval-workflow/approval-node-configuration#approval-extended-function-configuration" },
+    { text: "Approval Workflow Processing Rules", href: "devguide/approval-workflow/approval-node-configuration#approval-workflow-rules" },
+    { text: "Approval Extended Functionality Configuration", href: "devguide/approval-workflow/approval-node-configuration#approval-extended-function-configuration" },
     { text: "Deduplication Approval", href: "devguide/approval-workflow/approval-node-configuration#deduplication-approval" },
     { text: "Time-limited Processing", href: "devguide/approval-workflow/approval-node-configuration#time-limited-processing" },
-    { text: "Approval Draft", href: "devguide/approval-workflow/approval-node-configuration#approval-draft" },
+    { text: "Approval Drafts", href: "devguide/approval-workflow/approval-node-configuration#approval-draft" },
     { text: "Approval Feedback", href: "devguide/approval-workflow/approval-node-configuration#approval-feedback" },
-    { text: "Handwritten Signature", href: "devguide/approval-workflow/approval-node-configuration#handwritten-signature" },
-    { text: "Allow Batch Approval", href: "devguide/approval-workflow/approval-node-configuration#allow-batch-approval" },
-    { text: "Message Notification", href: "devguide/approval-workflow/approval-node-configuration#message-notification" },
-    { text: "SMS Notification", href: "devguide/approval-workflow/approval-node-configuration#sms-notification" },
+    { text: "Handwritten Signatures", href: "devguide/approval-workflow/approval-node-configuration#handwritten-signature" },
+    { text: "Batch Approval Permissions", href: "devguide/approval-workflow/approval-node-configuration#allow-batch-approval" },
+    { text: "Message Notifications", href: "devguide/approval-workflow/approval-node-configuration#message-notification" },
+    { text: "SMS Notifications", href: "devguide/approval-workflow/approval-node-configuration#sms-notification" },
     { text: "Approval Page and Permission Control", href: "devguide/approval-workflow/approval-node-configuration#approval-page-permission-control" },
     { text: "Pages Used by Current Node", href: "devguide/approval-workflow/approval-node-configuration#pages-used-by-current-node" },
-    { text: "Summary Display", href: "devguide/approval-workflow/approval-node-configuration#summary-display" },
-    { text: "Field Permission", href: "devguide/approval-workflow/approval-node-configuration#fieldpermission" },
+    { text: "Summary Information Display", href: "devguide/approval-workflow/approval-node-configuration#summary-display" },
+    { text: "Field Permissions", href: "devguide/approval-workflow/approval-node-configuration#fieldpermission" },
     { text: "Layout Control Permissions", href: "devguide/approval-workflow/approval-node-configuration#layout-control-permissions" }
   ]} />
 </IndexCard>
@@ -1635,9 +1637,9 @@ Make enterprise approval processes efficient and orderly. Design flowcharts thro
   description="Customize approval interface and user experience to improve approval efficiency."
 >
   <LinkGrid links={[
-    { text: "Approval Page Advanced Customization", href: "devguide/approval-workflow/approval-page-customization#approval-page-advanced-customization" },
+    { text: "Advanced Approval Page Customization", href: "devguide/approval-workflow/approval-page-customization#approval-page-advanced-customization" },
     { text: "Approval Page Types", href: "devguide/approval-workflow/approval-page-customization#approval-page-types" },
-    { text: "Custom Page Creation Method", href: "devguide/approval-workflow/approval-page-customization#custom-page-creation-method" }
+    { text: "Custom Page Creation Methods", href: "devguide/approval-workflow/approval-page-customization#custom-page-creation-method" }
   ]} />
 </IndexCard>
 
@@ -1647,11 +1649,11 @@ Make enterprise approval processes efficient and orderly. Design flowcharts thro
   description="Practical application and operation guide of approval process, including initiating and processing approvals."
 >
   <LinkGrid links={[
-    { text: "Initiate Application", href: "devguide/approval-workflow/approval-workflow-usage#initiate-application" },
-    { text: "Todo Center", href: "devguide/approval-workflow/approval-workflow-usage#todo-center" },
-    { text: "Detail Page", href: "devguide/approval-workflow/approval-workflow-usage#detail-page" },
-    { text: "Delegate to Others Processing", href: "devguide/approval-workflow/approval-workflow-usage#delegate-to-others-processing" },
-    { text: "Approval Process Management Page", href: "devguide/approval-workflow/approval-workflow-usage#approval-workflow-management-page" }
+    { text: "Initiating Applications", href: "devguide/approval-workflow/approval-workflow-usage#initiate-application" },
+    { text: "To-Do Center", href: "devguide/approval-workflow/approval-workflow-usage#todo-center" },
+    { text: "Detail Pages", href: "devguide/approval-workflow/approval-workflow-usage#detail-page" },
+    { text: "Delegating to Others for Processing", href: "devguide/approval-workflow/approval-workflow-usage#delegate-to-others-processing" },
+    { text: "Approval Workflow Management Pages", href: "devguide/approval-workflow/approval-workflow-usage#approval-workflow-management-page" }
   ]} />
 </IndexCard>
 

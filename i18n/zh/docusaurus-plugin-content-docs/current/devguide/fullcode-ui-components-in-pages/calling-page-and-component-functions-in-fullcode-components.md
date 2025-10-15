@@ -150,7 +150,7 @@ page.ComponentName.methodName(parameters);
 const data = page.ComponentName.propertyName?.value;
 ```
 
-## 相关文档
+## 相关文档 {#related-documentation}
 
 - [全代码组件接口规范](./ui-component-interface-specifications) - 了解全代码组件的基本结构和接口
 - [发布和订阅事件](./emitting-events) - 了解组件间的事件通信机制

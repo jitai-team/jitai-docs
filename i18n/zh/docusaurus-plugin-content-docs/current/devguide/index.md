@@ -19,7 +19,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
-<IndexCard 
+<IndexCard
   title="平台架构与核心概念"
   href="devguide/basic-concept"
   description="了解JitAi平台架构、应用概念、JAAP协议、元素体系和开发框架，掌握平台的基础原理。"
@@ -105,7 +105,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "默认元素", href: "devguide/development-tool-and-publish-service/visual-development-tool#default-elements" },
     { text: "环境变量", href: "devguide/development-tool-and-publish-service/visual-development-tool#environment-variables" },
     { text: "门户切换", href: "devguide/development-tool-and-publish-service/visual-development-tool#portal-switching" },
-    { text: "个人中心", href: "devguide/development-tool-and-publish-service/visual-development-tool#personal-center" },
+    { text: "个人中心", href: "devguide/development-tool-and-publish-service/visual-development-tool#profile" },
     { text: "语言切换", href: "devguide/development-tool-and-publish-service/visual-development-tool#language-switching" },
     { text: "导航标签", href: "devguide/development-tool-and-publish-service/visual-development-tool#navigation-tabs" }
   ]} />
@@ -277,9 +277,9 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "多标签页", href: "devguide/shell-and-page/portal-navigation-design#multi-tab-functionality" },
     { text: "是否显示在门户切换列表中", href: "devguide/shell-and-page/portal-navigation-design#portal-visibility-settings" },
     { text: "设置在门户列表中的顺序", href: "devguide/shell-and-page/portal-navigation-design#portal-ordering" },
-    { text: "启用或关闭常用功能入口", href: "devguide/shell-and-page/portal-navigation-design#managing-common-function-entries" },
+    { text: "启用或关闭常用功能入口", href: "devguide/shell-and-page/portal-navigation-design#managing-common-features-entries" },
     { text: "发起申请/待办/消息中心入口", href: "devguide/shell-and-page/portal-navigation-design#application-and-workflow-entries" },
-    { text: "个人中心入口", href: "devguide/shell-and-page/portal-navigation-design#personal-center-entry" },
+    { text: "个人中心入口", href: "devguide/shell-and-page/portal-navigation-design#profile-entry" },
     { text: "在门户中集成AI助理", href: "devguide/shell-and-page/portal-navigation-design#integrating-ai-assistants" }
   ]} />
 </IndexCard>
@@ -366,7 +366,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="面向高级开发者的完全自定义页面开发方式，支持复杂业务逻辑和个性化界面。"
 >
   <LinkGrid columns={2} links={[
-    { text: "创建 React 全代码页面", href: "devguide/shell-and-page/full-code-page-development#create-react-full-code-page" },
+    { text: "创建 React 全代码页面", href: "devguide/shell-and-page/full-code-page-development#creating-react-full-code-pages" },
     { text: "使用样式", href: "devguide/frontend-ui-customization/page-customization#use-style" },
     { text: "使用本地资源", href: "devguide/frontend-ui-customization/page-customization#use-local-resources" },
     { text: "使用 Ant Design 的组件", href: "devguide/frontend-ui-customization/page-customization#use-ant-design-components" },
@@ -374,7 +374,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "使用标准组件", href: "devguide/frontend-ui-customization/page-customization#use-standard-component" },
     { text: "调用数据模型函数", href: "devguide/frontend-ui-customization/page-customization#call-data-model-function" },
     { text: "调用服务函数", href: "devguide/frontend-ui-customization/page-customization#call-service-function" },
-    { text: "创建Vue全代码页面", href: "devguide/shell-and-page/full-code-page-development#vue-full-code-page" },
+    { text: "创建Vue全代码页面", href: "devguide/shell-and-page/full-code-page-development#creating-vue-full-code-pages" },
     { text: "使用第三方包", href: "devguide/frontend-ui-customization/page-customization#use-third-party-packages" },
     { text: "打包配置的使用", href: "devguide/frontend-ui-customization/page-customization#use-packaging-configuration" }
   ]} />
@@ -444,7 +444,8 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   <LinkGrid links={[
     { text: "调用语法", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#calling-syntax" },
     { text: "全代码页面中的基本语法", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#basic-syntax-in-full-code-pages" },
-    { text: "数据操作能力", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#data-operation-capabilities" }
+    { text: "数据操作能力", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#data-operation-capabilities" },
+    { text: "相关文档", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#related-documentation" }
   ]} />
 </IndexCard>
 
@@ -466,7 +467,8 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "接口交互机制", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-interaction-mechanism" },
     { text: "接口实现规范", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-implementation-specifications" },
     { text: "接口运行时序", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-runtime-sequence" },
-    { text: "接口调用说明", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-invocation-explanation" }
+    { text: "接口调用说明", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-invocation-explanation" },
+    { text: "相关文档", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#related-documentation" }
   ]} />
 </IndexCard>
 
@@ -481,7 +483,8 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "基本组件调用", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#basic-component-calling" },
     { text: "获取其他组件的数据", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#getting-data-from-other-components" },
     { text: "常用组件调用方法", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#common-component-methods" },
-    { text: "基本调用模式", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#basic-calling-pattern" }
+    { text: "基本调用模式", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#basic-calling-pattern" },
+    { text: "相关文档", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#related-documentation" }
   ]} />
 </IndexCard>
 
@@ -507,8 +510,9 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="了解如何从页面代码调用全代码组件暴露的函数，控制组件行为和数据流。"
 >
   <LinkGrid links={[
-    { text: "调用原理", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#calling-principle" },
-    { text: "调用时机和生命周期", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#calling-timing-and-lifecycle" }
+    { text: "调用原理", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#invocation-mechanism" },
+    { text: "调用时机和生命周期", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#invocation-timing-and-lifecycle" },
+    { text: "相关文档", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#related-documentation" }
   ]} />
 </IndexCard>
 
@@ -716,7 +720,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="模型筛选器"
-  href="devguide/using-functional-components-in-pages/filter-components"
+  href="devguide/using-functional-components-in-pages/filter-components#model-filters"
   description="基于数据模型的高级筛选组件，支持简单、复杂和自由筛选模式。"
 >
   <LinkGrid links={[
@@ -730,7 +734,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 <IndexCard
   title="通用筛选器"
-  href="devguide/using-functional-components-in-pages/filter-components"
+  href="devguide/using-functional-components-in-pages/filter-components#universal-filters"
   description="灵活的通用筛选组件，支持自定义字段配置和多种触发模式。"
 >
   <LinkGrid columns={2} links={[
@@ -739,7 +743,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "显示 查询/重置 按钮", href: "devguide/using-functional-components-in-pages/filter-components#show-query-reset-buttons" },
     { text: "条件变更后触发查询", href: "devguide/using-functional-components-in-pages/filter-components#condition-change-trigger-query" },
     { text: "首次加载进行筛选", href: "devguide/using-functional-components-in-pages/filter-components#first-load-filter" },
-    { text: "筛选器的使用", href: "devguide/using-functional-components-in-pages/filter-components#filter-usage" }
+    { text: "筛选器的使用", href: "devguide/using-functional-components-in-pages/filter-components#universal-filter-usage" }
   ]} />
 </IndexCard>
 
@@ -831,7 +835,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "发起申请的参数配置", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-1" },
     { text: "发起申请的处理后/刷新后事件", href: "devguide/using-functional-components-in-pages/approval-components#post-processing-refresh-event" },
     { text: "审批处理组件创建", href: "devguide/using-functional-components-in-pages/approval-components#create-approval-workflow-component" },
-    { text: "审批处理的参数配置", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-1" },
+    { text: "审批处理的参数配置", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-2" },
     { text: "是否保留历史审批记录", href: "devguide/using-functional-components-in-pages/approval-components#keep-historical-approval-records" },
     { text: "审批处理的处理后/刷新后事件", href: "devguide/using-functional-components-in-pages/approval-components#post-processing-refresh-event-1" }
   ]} />
@@ -922,8 +926,14 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid links={[
     { text: "在页面中调用大模型", href: "devguide/ai-llm/llm-input-output#call-llm-in-pages" },
+    { text: "函数输入一：设置大语言模型", href: "devguide/ai-llm/llm-input-output#setting-language-model" },
+    { text: "函数输入二：使用提示词", href: "devguide/ai-llm/llm-input-output#using-prompts" },
+    { text: "函数输出：控制输出", href: "devguide/ai-llm/llm-input-output#output-control" },
     { text: "在后端函数中调用大模型", href: "devguide/ai-llm/llm-input-output#call-llm-in-backend-functions" },
-    { text: "大模型编程接口", href: "devguide/ai-llm/llm-input-output#llm-programming-interface" }
+    { text: "大模型编程接口", href: "devguide/ai-llm/llm-input-output#llm-programming-interface" },
+    { text: "runLlm", href: "devguide/ai-llm/llm-input-output#runllm" },
+    { text: "embedDocuments", href: "devguide/ai-llm/llm-input-output#embeddocuments" },
+    { text: "rerankDocuments", href: "devguide/ai-llm/llm-input-output#rerankdocuments" }
   ]} />
 </IndexCard>
 
@@ -966,25 +976,25 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="管理知识库文档，配置知识库参数，进行查询测试与向量化调优。"
 >
   <LinkGrid columns={2} links={[
-    { text: "知识库设置", href: "devguide/knowledge-base/knowledge-base-document-management#ai-knowledge-base-settings" },
+    { text: "知识库设置", href: "devguide/knowledge-base/knowledge-base-document-management#knowledge-base-settings" },
     { text: "查询测试", href: "devguide/knowledge-base/knowledge-base-document-management#query-testing" },
-    { text: "向量化配置说明", href: "devguide/knowledge-base/knowledge-base-document-management#vectorization-configuration-description" },
-    { text: "知识库配置参数说明", href: "devguide/knowledge-base/knowledge-base-document-management#knowledge-base-configuration-parameter-description" }
+    { text: "向量化配置说明", href: "devguide/knowledge-base/knowledge-base-document-management#vectorization-configuration" },
+    { text: "知识库配置参数说明", href: "devguide/knowledge-base/knowledge-base-document-management#knowledge-base-configuration-parameters" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="使用知识库元素实现关键词检索和语义检索"
-  href="devguide/knowledge-base/full-text-and-semantic-search"
+  href="devguide/knowledge-base/keyword-and-semantic-search"
   description="理解配置项如何参与查询流程，并在后端可视化编程中调用知识库。"
 >
   <LinkGrid columns={2} links={[
-    { text: "在后端可视化编程中调用 AI 知识库", href: "devguide/knowledge-base/full-text-and-semantic-search#call-ai-knowledge-base-in-backend-visual-programming" },
-    { text: "语义检索", href: "devguide/knowledge-base/full-text-and-semantic-search#semantic-search" },
-    { text: "新增文档", href: "devguide/knowledge-base/full-text-and-semantic-search#adding-document" },
-    { text: "删除文档", href: "devguide/knowledge-base/full-text-and-semantic-search#deleting-document" },
-    { text: "关键词检索", href: "devguide/knowledge-base/full-text-and-semantic-search#searching-by-keywords" },
-    { text: "AI 知识库设置如何参与查询流程", href: "devguide/knowledge-base/full-text-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow" }
+    { text: "在后端可视化编程中调用 AI 知识库", href: "devguide/knowledge-base/keyword-and-semantic-search#call-ai-knowledge-base-in-backend-visual-programming" },
+    { text: "语义检索", href: "devguide/knowledge-base/keyword-and-semantic-search#semantic-search" },
+    { text: "新增文档", href: "devguide/knowledge-base/keyword-and-semantic-search#adding-document" },
+    { text: "删除文档", href: "devguide/knowledge-base/keyword-and-semantic-search#deleting-document" },
+    { text: "关键词检索", href: "devguide/knowledge-base/keyword-and-semantic-search#searching-by-keywords" },
+    { text: "AI 知识库设置如何参与查询流程", href: "devguide/knowledge-base/keyword-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow" }
   ]} />
 </IndexCard>
 
@@ -995,9 +1005,9 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid links={[
     { text: "知识库与Agent的关系", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#relationship-between-knowledge-base-and-agent" },
-    { text: "技术集成原理", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#technical-integration-principle" },
+    { text: "技术集成原理", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#technical-integration-principles" },
     { text: "集成模式", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#integration-modes" },
-    { text: "在Agent中使用知识库", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#use-knowledge-base-in-agent" }
+    { text: "在Agent中使用知识库", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#using-knowledge-base-in-agent" }
   ]} />
 </IndexCard>
 
@@ -1980,6 +1990,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="介绍全代码页面的具体开发技术和使用方法，包括样式处理、组件使用、资源管理、数据操作等。"
 >
   <LinkGrid columns={2} links={[
+    { text: "创建 React 全代码页面", href: "devguide/frontend-ui-customization/page-customization#create-react-full-code-page" },
     { text: "使用样式", href: "devguide/frontend-ui-customization/page-customization#use-style" },
     { text: "使用本地资源", href: "devguide/frontend-ui-customization/page-customization#use-local-resources" },
     { text: "使用 Ant Design 的组件", href: "devguide/frontend-ui-customization/page-customization#use-ant-design-components" },
@@ -1988,8 +1999,19 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "调用数据模型函数", href: "devguide/frontend-ui-customization/page-customization#call-data-model-function" },
     { text: "调用服务函数", href: "devguide/frontend-ui-customization/page-customization#call-service-function" },
     { text: "创建Vue全代码页面", href: "devguide/frontend-ui-customization/page-customization#vue-full-code-page" },
+    { text: "基本结构", href: "devguide/frontend-ui-customization/page-customization#basic-structure" },
+    { text: "使用 Element Plus 组件", href: "devguide/frontend-ui-customization/page-customization#using-element-plus-components" },
+    { text: "与 page 实例交互", href: "devguide/frontend-ui-customization/page-customization#interacting-with-page-instance" },
+    { text: "数据模型的增删改查", href: "devguide/frontend-ui-customization/page-customization#crud-operations-for-data-models" },
+    { text: "全代码使用模型函数", href: "devguide/frontend-ui-customization/page-customization#full-code-using-model-functions" },
+    { text: "服务函数的使用", href: "devguide/frontend-ui-customization/page-customization#using-service-functions" },
+    { text: "全代码调用服务函数", href: "devguide/frontend-ui-customization/page-customization#full-code-calling-service-functions" },
     { text: "使用第三方包", href: "devguide/frontend-ui-customization/page-customization#use-third-party-packages" },
-    { text: "打包配置的使用", href: "devguide/frontend-ui-customization/page-customization#use-packaging-configuration" }
+    { text: "使用网络资源", href: "devguide/frontend-ui-customization/page-customization#using-network-resources" },
+    { text: "打包配置的使用", href: "devguide/frontend-ui-customization/page-customization#use-packaging-configuration" },
+    { text: "引入打包插件", href: "devguide/frontend-ui-customization/page-customization#introducing-build-plugins" },
+    { text: "系统内置包一览表", href: "devguide/frontend-ui-customization/page-customization#system-built-in-package-overview" },
+    { text: "默认loader映射", href: "devguide/frontend-ui-customization/page-customization#default-loader-mapping" }
   ]} />
 </IndexCard>
 

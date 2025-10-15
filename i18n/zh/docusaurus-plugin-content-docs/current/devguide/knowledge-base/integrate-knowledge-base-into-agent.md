@@ -3,7 +3,7 @@ sidebar_position: 4
 slug: integrate-knowledge-base-into-agent
 ---
 
-# 把知识库集成到agent {#use-ai-knowledge-base-in-ai-agent}
+# 把知识库集成到agent {#integrating-knowledge-base-into-agent}
 
 知识库作为AI Agent的核心知识支撑，通过检索增强生成（RAG）技术为Agent提供准确、及时的领域知识，显著提升Agent的专业能力和回答质量。
 
@@ -15,7 +15,7 @@ slug: integrate-knowledge-base-into-agent
 - **智能检索**：通过向量相似度和重排模型，知识库能够理解Agent查询的语义意图，返回最相关的知识片段
 - **动态增强**：Agent可以实时查询知识库，获取最新的业务信息，而无需重新训练模型
 
-## 技术集成原理 {#technical-integration-principle}
+## 技术集成原理 {#technical-integration-principles}
 
 ```mermaid
 flowchart LR
@@ -40,7 +40,7 @@ Agent集成知识库后，能够在推理过程中动态获取相关知识，实
 - **强制模式**：Agent在处理用户请求前必须先查询知识库，确保每次回答都基于最新知识
 - **决策模式**：由大模型智能判断是否需要查询知识库，平衡回答速度与知识准确性
 
-## 在Agent中使用知识库 {#use-knowledge-base-in-agent}
+## 在Agent中使用知识库 {#using-knowledge-base-in-agent}
 
 详细的集成配置和使用方法，请参考[集成知识库实现检索增强生成（RAG）](../ai-agent/agent-knowledge-base#integrate-knowledge-base-rag)。
 

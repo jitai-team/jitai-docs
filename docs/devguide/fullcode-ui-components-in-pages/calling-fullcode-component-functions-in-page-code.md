@@ -5,11 +5,11 @@ slug: calling-fullcode-component-functions-in-page-code
 
 # Calling Full-Code Component Functions in Page Code
 
-The page class acts as the "central dispatcher" for all components and can not only subscribe to full-code component events but also directly call full-code component methods. This provides powerful control capabilities for page-level logic processing.
+The page class acts as the central dispatcher for all components, capable of subscribing to full-code component events and directly invoking their methods. This provides powerful page-level control and orchestration capabilities.
 
-## Calling Principle {#calling-principle}
+## Calling mechanism {#calling-mechanism}
 
-In the page class, each full-code component is instantiated as a property of the page class. This means the page class can directly access all public methods of full-code components:
+In the page class, each full-code component is instantiated as a class property. This allows the page to directly access all public methods exposed by full-code components:
 
 ```typescript title="Component instances in page.ts"
 import type { ComponentPageScheme } from "jit";
@@ -42,11 +42,11 @@ class PageCls extends Jit.GridPage {
 }
 ```
 
-## Calling Timing and Lifecycle {#calling-timing-and-lifecycle}
+## Calling timing and lifecycle {#calling-timing-and-lifecycle}
 
-Understanding when to call full-code component methods is very important:
+Understanding when to call full-code component methods is crucial for proper functionality:
 
-```typescript title="Calling timing in lifecycle"
+```typescript title="Calling timing in the lifecycle"
 class PageCls extends Jit.GridPage {
     CustomComponent!: BaseComponent = new CustomComponent();
 
@@ -83,7 +83,7 @@ class PageCls extends Jit.GridPage {
 }
 ```
 
-## Related Documentation
+## Related documentation {#related-documentation}
 
 - [Full-Code Component Interface Specifications](./ui-component-interface-specifications) - Learn about the basic structure and public methods of full-code components
 - [Calling Page and Component Functions in Full-Code Components](./calling-page-and-component-functions-in-fullcode-components) - Learn about reverse calling methods

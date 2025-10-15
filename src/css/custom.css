@@ -371,6 +371,9 @@ body[data-page-type="custom-layout"] .navbar,body:has(.custom-page) .navbar {
   display: none !important;
 }
 
+body[data-page-type="custom-layout"] .external-link,body:has(.custom-page) .external-link {
+  display: block !important;
+}
 
 
 .navbar__items>a[href*="demo.jit.pro"] {

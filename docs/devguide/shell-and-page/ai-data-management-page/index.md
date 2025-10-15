@@ -4,7 +4,17 @@ sidebar_position: 3
 
 # AI Data Management Page
 
-Common data management pages typically provide CRUD (Create, Read, Update, Delete) functionality, including filter conditions, sorting, pagination, toolbar buttons, action column buttons, and other common interface elements and features. JitAI directly provides an AI data management page to help developers quickly complete data management functionality development, and supports users to perform data management tasks using AI.
+## What is AI data management page {#what-is-ai-data-management-page}
+
+In enterprise application development, there are numerous data management pages with similar functionality. These pages share core features of performing CRUD operations on specific data tables, with consistent user interfaces and interaction patterns. The only difference lies in the data tables they operate on. The JitAI platform addresses this repetitive development scenario by providing a built-in AI Data Management Page type. Developers only need to simply configure the target data table and data permissions to quickly complete the development of a fully functional data management page without repeatedly writing similar code. This page type significantly improves development efficiency, allowing developers to focus more on business logic innovation rather than repetitive basic functionality development.
+
+### Features {#features}
+
+The AI Data Management Page provides standard data management functionality required for enterprise applications, including basic display features such as data table presentation, conditional filtering, sorting, and pagination, as well as data operation features such as adding, editing, deleting, and batch operations. The page adopts a unified UI design style, ensuring consistent user experience across different business scenarios. The most core feature is the built-in AI Data Management Assistant, which allows users to complete various data operations through natural language dialogue with AI, such as "query all orders with pending approval status" or "batch update the priority of these records to high". This intelligent interaction approach makes data management more intuitive and efficient, particularly suitable for users unfamiliar with traditional table operations, and significantly improves data processing efficiency.
+
+### Technical Implementation {#technical-implementation}
+
+The AI Data Management Page is built on the JitAI platform's page framework, adopting a configuration-driven development model. Developers configure data table fields, permission rules, filter conditions, and other parameters through the visual editor, and the system automatically generates corresponding page code and database operation logic based on these configurations. The page includes built-in standard components such as tables, forms, filters, popups, and import functionality, supporting various common data display and operation requirements. The AI assistant implementation is based on large language model tool calling capabilities, interacting with the page through predefined function interfaces to execute database operations such as querying, adding, modifying, and deleting. The system also integrates comprehensive permission control mechanisms to ensure users can only access and operate authorized data, guaranteeing data security.
 
 ## Creating AI data management page {#create-ai-data-management-page}
 Enter the developer portal and create it by following these steps:

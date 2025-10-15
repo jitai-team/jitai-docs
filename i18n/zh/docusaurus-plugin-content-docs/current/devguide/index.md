@@ -2058,7 +2058,6 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid links={[
     { text: "AI智能客服", href: "devguide/advanced-guide/ai-customer-service" },
-    { text: "AI智能出题&阅卷", href: "devguide/advanced-guide/ai-question-grading" },
     { text: "Agent提示词编写技巧", href: "devguide/advanced-guide/agent-prompt-writing-techniques" }
   ]} />
 </IndexCard>

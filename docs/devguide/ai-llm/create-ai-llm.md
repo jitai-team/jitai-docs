@@ -4,9 +4,9 @@ slug: create-ai-llm
 ---
 
 # Creating AI LLM Elements {#create-ai-llm}
-As AI technology rapidly advances, modern application systems are experiencing an intelligent transformation. However, developers often face decision paralysis and integration challenges when confronted with numerous AI service providers and constantly evolving model versions.
+LLM elements are the core components that enable unified integration of various AI large language model services within the JitAi platform. They provide foundational model capabilities for [AI Agents](../ai-agent/create-ai-agent), [AI Assistants](../ai-assistant/create-ai-assistant), and [AI Knowledge Bases](../knowledge-base/create-knowledge-elements).
 
-LLM vendor elements serve as JitAi platform's unified AI integration solution to address these challenges. Whether you're building intelligent [AI Knowledge Bases](../knowledge-base/create-knowledge-elements), developing AI assistants, or creating autonomous decision-making agents, they provide stable and reliable LLM service support.
+The platform natively supports mainstream LLM vendors including Anthropic, OpenAI, Gemini, Deepseek, Alibaba Cloud Bailian, and SiliconFlow, while also providing OpenAI-compatible interfaces for privately deployed models. Flexible API key management and intelligent retry mechanisms ensure reliable and stable model invocations.
 
 ## Mainstream LLM Vendor Support List {#mainstream-llm-vendor-support-list}
 *   Anthropic

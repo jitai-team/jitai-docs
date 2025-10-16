@@ -4,12 +4,16 @@ slug: creating-and-deploying-applications
 ---
 
 # Creating and Deploying Applications
+Applications in JitAi are collectively referred to as `JitAi Apps`, and their structure follows the application specifications defined in [JAAP](/docs/reference/runtime-platform/JAAP). Both `Official Apps` and developer-created `MyApps` are `JitAi Apps`. An application's composition adheres to JAAP specifications and typically contains multiple fundamental elements such as [portals and pages](../shell-and-page/portal-navigation-design), [page components](../using-functional-components-in-pages), [data models](../data-modeling), and [service functions](../business-logic-development/creating-service-elements), with each element serving as an independent functional module.
+
+Application development is the process of adding, modifying, and removing code for various elements within an application. Unlike modules in traditional development paradigms, elements in JitAi Apps have no static dependencies and zero coupling, making it exceptionally easy to reuse, modify, and replace application modules.
+
+## Creating Your First Application {#creating-first-application}
 
 ![Node Console](./img/1/node-console.png "Node Console")
 
 The [Node Console](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment) in the DevOps management tool provides developers with comprehensive entry points for application creation, import, export, publishing, and deployment, covering the complete lifecycle from project initiation to operations.
 
-## Creating Your First Application {#creating-first-application}
 Click the `Create Application` button in the Node Console to open the application creation dialog.
 
 ![Create Application](./img/1/create-new-application.png "Create Application")

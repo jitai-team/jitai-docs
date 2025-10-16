@@ -5,11 +5,15 @@ slug: creating-and-deploying-applications
 
 # 创建和部署应用
 
+JitAi中的应用被统称为`JitAi App`，其构成结构遵循[JAAP](/docs/reference/runtime-platform/JAAP)中的应用规范。`官方App`以及开发者开发的`MyApp`都是`JitAi App`。应用的构成遵循JAAP中的应用规范，一个应用中通常包含多个[门户、页面](../shell-and-page/portal-navigation-design)、[页面组件](../using-functional-components-in-pages)、[数据模型](../data-modeling)、[服务函数](../business-logic-development/creating-service-elements)等基本元素，每个元素都是一个独立的功能模块。
+开发应用就是对应用中各个元素的代码进行增删改的过程。不同于传统开发模式下的应用模块，JitAi App中的元素之间没有静态依赖，耦合度为零，极大方便了对应用模块的复用、改写、替换。
+
+## 创建第一个应用 {#creating-first-application}
+
 ![节点控制台](./img/1/node-console.png)
 
 运维管理工具中的[节点控制台](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment)为开发者提供了应用创建、导入、导出、发布、部署等功能入口，覆盖了从立项到运维的全生命周期。
 
-## 创建第一个应用 {#creating-first-application}
 在节点控制台中点击`新建应用`按钮，会打开新建应用弹窗。
 
 ![新建应用](./img/1/create-new-application.png)

@@ -7,20 +7,23 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # Application Layer Stability Guarantee
-JitAi has the capability to support mainstream and leading application layer stability assurance measures in the industry.
 
-Application layer updates have the characteristics of **relatively localized impact, high update frequency, and user experience sensitivity**, requiring support for rapid iteration while ensuring stability.
+JitAi supports industry-standard and advanced stability assurance measures at the application layer.
+
+Application layer updates are characterized by **relatively localized impact, high update frequency, and sensitivity to user experience**. This requires balancing stability with the ability to iterate rapidly.
 
 :::tip 
-- 🎯 **Localized Impact**: Single or few application updates with controllable risks
-- ⚡ **Rapid Iteration**: Support frequent updates to respond to business needs  
-- 👤 **User Control**: Users can choose upgrade timing, reducing forced upgrade risks
-- 🔄 **Independent Deployment**: Does not affect other application operations, fault isolation
+- 🎯 **Localized Impact**: Updates to single or few applications with controllable risk
+- ⚡ **Rapid Iteration**: Supports frequent updates in response to business needs  
+- 👤 **User Control**: Users choose when to upgrade, reducing forced upgrade risk
+- 🔄 **Independent Deployment**: Updates don't affect other applications, enabling fault isolation
 :::
 
-## Progressive Validation Process
-### Multiple Runtime Environments
-Create multiple runtime environments in the JitAi operations platform, adopting a progressive validation process of **Test Environment → Beta Environment → Production Environment**:
+## Progressive validation process {#progressive-validation-process}
+
+### Multiple runtime environments {#multiple-runtime-environments}
+
+Create multiple runtime environments in the JitAi operations platform, adopting a progressive validation workflow: **Test Environment → Beta Environment → Production Environment**.
 
 ```mermaid
 graph TD
@@ -41,75 +44,79 @@ graph TD
     L --> N[Full Release]
 ```
 
-### Environment Configuration Strategy
+### Environment configuration strategy {#environment-configuration-strategy}
+
 <Tabs>
 <TabItem value="test" label="🧪 Test Environment" default>
 
 :::info Test Environment Configuration
-**Functional Positioning**: Function validation and basic performance testing
+**Purpose**: Functional validation and basic performance testing
 
 🔧 **Environment Characteristics**
-- **Data Source**: Simulated data or desensitized data
+- **Data Source**: Simulated or desensitized data
 - **Traffic Source**: Testing team and developers
-- **Resource Configuration**: Medium scale, meeting functional testing requirements
+- **Resource Allocation**: Medium-scale resources for functional testing
 
 ✅ **Validation Focus**
-- Business logic correctness validation
-- User interface and interaction experience testing
-- Basic performance and response time testing
-- Integration function testing with other systems
+- Business logic correctness
+- User interface and interaction experience
+- Basic performance and response time
+- Integration with other systems
 :::
 
 </TabItem>
 <TabItem value="beta" label="🚀 Beta Environment">
 
 :::info Beta Environment Configuration  
-**Functional Positioning**: Real environment validation, connected to production environment data
+**Purpose**: Real-world validation with production data
 
 🔧 **Environment Characteristics**
-- **Data Source**: Production environment data (read-only mode or replica)
-- **Traffic Source**: Internal users and a small number of external users
-- **Resource Configuration**: Close to production environment scale
+- **Data Source**: Production data (read-only mode or replica)
+- **Traffic Source**: Internal users and limited external users
+- **Resource Allocation**: Near-production scale
 
 ✅ **Validation Focus**
-- Real data compatibility validation
-- Production-level performance and stability testing
-- Complete business process end-to-end validation
-- Data security and consistency checks
+- Real data compatibility
+- Production-grade performance and stability
+- End-to-end business process validation
+- Data security and consistency
 :::
 
 </TabItem>
 <TabItem value="prod" label="🌐 Production Environment">
 
 :::info Production Environment Configuration
-**Functional Positioning**: Production service, serving real users
+**Purpose**: Live service for actual users
 
 🔧 **Environment Characteristics**
 - **Data Source**: Production data
-- **Traffic Source**: Full user traffic
-- **Resource Configuration**: Production-level resource configuration
+- **Traffic Source**: All user traffic
+- **Resource Allocation**: Production-grade configuration
 
 ✅ **Validation Focus**
-- Overall system stability monitoring
+- Overall system stability
 - User experience and satisfaction metrics
-- Business key metrics monitoring
-- 7x24 hour availability assurance
+- Critical business metrics
+- 24/7 availability
 :::
 
 </TabItem>
 </Tabs>
 
-### Version Management and Release Strategy
+### Version management and release strategy {#version-management-and-release-strategy}
+
 | Release Stage | Version Status | Validation Cycle | Pass Criteria | Failure Handling |
 |---------|---------|---------|---------|---------|
-| **App Repository** | Development Complete Version | Code Review | Code Standards + Functional Completeness | Redevelopment and Fix |
-| **Test Environment** | Functional Test Version | 1-2 days | Functional Correctness + Basic Performance | Return to Development Stage |
-| **Beta Environment** | Pre-production Version | 3-5 days | Real Data Compatibility + Production Performance | Data Issue Analysis |
-| **Production Environment** | Production Version | Continuous Monitoring | Stability Metrics + User Experience | Canary Rollback |
+| **App Repository** | Development completed | Code review | Code standards + functional completeness | Return to development for fixes |
+| **Test Environment** | Functional testing | 1-2 days | Functional correctness + basic performance | Return to development stage |
+| **Beta Environment** | Pre-production | 3-5 days | Real data compatibility + production performance | Analyze data issues |
+| **Production Environment** | Production | Continuous monitoring | Stability metrics + user experience | Canary rollback |
 
-## Canary Release Mechanism
-### Node-level Canary Release
-In the JitAi cluster architecture, one of the JitNode nodes acts as a load balancer, responsible for traffic distribution control. The runtime environment entry address resolves to this node.
+## Canary release mechanism {#canary-release-mechanism}
+
+### Node-level canary release {#node-level-canary-release}
+
+In the JitAi cluster architecture, one JitNode serves as the load balancer, controlling traffic distribution. The runtime environment entry address resolves to this node.
 
 ```mermaid
 graph TB
@@ -139,41 +146,44 @@ graph TB
     M1 --> M2
 ```
 
-### Canary Release Process Control
-#### Dual Assessment of Stability and Availability
-Canary releases need to simultaneously assess two dimensions: **stability** and **availability**:
+### Controlling canary release process {#controlling-canary-release-process}
 
-- **Stability**: Technical metrics such as system error rates and response times
-- **Availability**: Normal service capability of business functions and user experience metrics
+#### Assessing stability and availability {#assessing-stability-and-availability}
+
+Canary releases require simultaneous assessment of two dimensions: **stability** and **availability**.
+
+- **Stability**: Technical metrics such as error rates and response times
+- **Availability**: Business function uptime and user experience metrics
 
 | Canary Stage | Canary Nodes | Traffic Ratio | Observation Period | Stability Standard | Availability Standard | Exception Handling |
 |---------|----------|---------|--------|----------|----------|----------|
-| **Initial Canary** | 1 node | 5% | 2 hours | Error rate &lt; 0.01% | Business availability &gt; 99.9% | Set traffic weight to 0% |
-| **Small Scale Expansion** | 2 nodes | 20% | 4 hours | Error rate &lt; 0.005% | Business availability &gt; 99.95% | Set traffic weight to 0% |
-| **Medium Scale** | 50% nodes | 50% | 8 hours | Error rate &lt; 0.001% | Business availability &gt; 99.98% | Immediate rollback or set traffic to 0% |
-| **Full Release** | All nodes | 100% | Continuous monitoring | System stable | Business normal | Emergency rollback |
+| **Initial canary** | 1 node | 5% | 2 hours | Error rate &lt; 0.01% | Business availability &gt; 99.9% | Set traffic weight to 0% |
+| **Small-scale expansion** | 2 nodes | 20% | 4 hours | Error rate &lt; 0.005% | Business availability &gt; 99.95% | Set traffic weight to 0% |
+| **Medium scale** | 50% of nodes | 50% | 8 hours | Error rate &lt; 0.001% | Business availability &gt; 99.98% | Immediate rollback or set traffic to 0% |
+| **Full release** | All nodes | 100% | Continuous monitoring | System stable | Business functioning normally | Emergency rollback |
 
-:::tip Canary Node Traffic Zero Mechanism
-When canary nodes exhibit abnormal behavior, you can **immediately set their traffic weight to 0%** to achieve second-level fault isolation:
-- 🚨 **Instant Response**: No need to wait for rollback deployment, directly cut off abnormal node traffic
-- 🛡️ **User Protection**: Ensure user requests are not routed to abnormal nodes
-- 🔄 **Quick Recovery**: Traffic allocation can be quickly restored after issue resolution
-- 📊 **Data Retention**: Nodes continue running for problem analysis and debugging
+:::tip Traffic zeroing mechanism
+When canary nodes exhibit abnormal behavior, **immediately set their traffic weight to 0%** for instant fault isolation:
+- 🚨 **Instant Response**: Cut off traffic to abnormal nodes without waiting for rollback deployment
+- 🛡️ **User Protection**: Ensures user requests aren't routed to problematic nodes
+- 🔄 **Quick Recovery**: Traffic can be rapidly restored once issues are resolved
+- 📊 **Data Retention**: Nodes remain running for analysis and debugging
 :::
 
-### Canary Release Operation Process
-**Standard Release Process:**
+### Operating canary release process {#operating-canary-release-process}
 
-1. **Select Canary Node**: Choose 1 node as the initial canary node
-2. **Adjust Traffic Weight**: Adjust the node's traffic weight to 5%
-3. **Deploy New Version**: Deploy the new version application on the canary node
-4. **Start Monitoring**: Enable comprehensive monitoring and alerting
-5. **Dual Assessment**: Simultaneously assess stability and availability metrics
-6. **Decision Execution**: Decide next steps based on assessment results
-7. **Gradual Expansion**: Gradually increase canary nodes and traffic ratio after stabilization
-8. **Complete Release**: All nodes upgraded, restore normal traffic distribution
+**Standard release workflow:**
 
-**Exception Handling Process:**
+1. **Select canary node**: Choose one node as the initial canary
+2. **Adjust traffic weight**: Set the node's traffic weight to 5%
+3. **Deploy new version**: Deploy the new application version on the canary node
+4. **Start monitoring**: Enable comprehensive monitoring and alerting
+5. **Dual assessment**: Simultaneously assess stability and availability metrics
+6. **Execute decision**: Determine next steps based on assessment results
+7. **Gradual expansion**: Progressively increase canary nodes and traffic ratio after stabilization
+8. **Complete release**: Upgrade all nodes and restore normal traffic distribution
+
+**Exception handling workflow:**
 
 ```mermaid
 graph TD
@@ -197,22 +207,24 @@ graph TD
     L --> N[Re-release After Problem Fix]
 ```
 
-**Traffic Zero Operation Steps:**
+**Traffic zeroing steps:**
 
-1. **Anomaly Detection**: Monitoring system detects stability or availability metric anomalies
-2. **Instant Isolation**: Set canary node traffic weight to 0% (takes &lt; 10 seconds)
-3. **Status Confirmation**: Confirm user traffic has completely switched to stable nodes
-4. **Problem Diagnosis**: Perform problem analysis and debugging in isolated state
-5. **Fix Verification**: Perform functional verification after problem resolution
-6. **Traffic Recovery**: Gradually restore the node's traffic allocation after verification passes
+1. **Anomaly detection**: Monitoring system detects stability or availability metric anomalies
+2. **Instant isolation**: Set canary node traffic weight to 0% (takes &lt; 10 seconds)
+3. **Status confirmation**: Verify user traffic has completely switched to stable nodes
+4. **Problem diagnosis**: Analyze and debug issues in the isolated state
+5. **Fix verification**: Validate functionality after resolving problems
+6. **Traffic recovery**: Gradually restore traffic allocation to the node after verification
 
-## Observability
+## Observability {#observability}
+
 :::info
-Observability-related capabilities are under construction and will be launched soon
+Observability features are currently under development and will be available soon.
 :::
 
-### OpenTelemetry and APM Ecosystem Integration
-JitAi application Runtime Platform supports [OpenTelemetry](https://opentelemetry.io/), which is the core standard in the observability field and holds an irreplaceable position in technological evolution, ecosystem integration, and industry practices.
+### Integrating with OpenTelemetry and APM ecosystem {#integrating-with-opentelemetry-and-apm-ecosystem}
+
+The JitAi Application Runtime Platform supports [OpenTelemetry](https://opentelemetry.io/), the industry-standard framework for observability. OpenTelemetry plays an essential role in technology evolution, ecosystem integration, and industry best practices.
 
 ```mermaid
 graph TB
@@ -223,7 +235,7 @@ graph TB
         end
         
         subgraph "Development Framework Layer"
-            Framework[Element Family Classes<br/>(Runtime Platform agnostic to specific families)]
+            Framework[Element Family Classes<br/>Runtime Platform agnostic to specific families]
         end
         
         subgraph "Application Runtime Platform Layer"

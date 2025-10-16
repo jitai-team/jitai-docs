@@ -4,7 +4,9 @@ slug: api-authorization
 ---
 
 # Creating API Authorization Elements
-API Authorization is the process of controlling access permissions to interfaces (APIs), designed to ensure that only authorized external callers can access specific resources or perform specific operations.
+API Authorization is JitAi platform's interface access control mechanism designed to securely expose application element capabilities to external systems. By creating API authorization elements and configuring access credentials (accessKey/accessSecret), developers can provide business capabilities such as service functions, data models, AI Agents, and AI Assistants as standard APIs for external system invocation.
+
+The platform provides comprehensive authorization management capabilities, including interface authorization configuration, invocation URL generation, and call record tracking. External systems can invoke these APIs through the platform's multi-language SDKs (Python, Node.js, Java), or JitAi applications can interconnect via [cross-app service elements](../business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-apis), building a flexible application integration ecosystem.
 
 ## Creating New API Authorization {#api-authorization-creation}
 ![Creating API Authorization](./img/api_2025-08-26_15-21-40.png)

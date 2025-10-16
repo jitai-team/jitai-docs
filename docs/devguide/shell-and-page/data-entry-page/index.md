@@ -38,7 +38,7 @@ When developers check the `Show Result Feedback UI` option in the page editor, u
 ## Converting to generic page for modification {#converting-to-generic-page-for-modification}
 Data entry pages are out-of-the-box page types provided by JitAi that developers can create and use immediately. When developers need more granular customization beyond the default implementation, they can convert the page to a generic page for unlimited modifications.
 
-![Converting to Generic Page](./imgs/convert-to-generic-page.gif "Converting to Generic Page")
+![Convert to Generic Page](./imgs/convert-to-generic-page.gif "Convert to Generic Page")
 
 Developers can click the `Convert to Generic Page` button in the upper-right corner of the page editor to convert the page to a generic page. For generic page development methods, refer to [Component-based Page Development](/docs/devguide/shell-and-page/component-based-page-development).
 

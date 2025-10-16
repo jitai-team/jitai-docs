@@ -5,9 +5,9 @@ slug: create-ai-agent
 
 # Creating AI Agents
 
-An Agent (intelligent agent) possesses autonomous decision-making and task execution capabilities, automatically selecting appropriate tools to complete complex business processes based on user input and contextual information.
+AI Agents are intelligent entities with autonomous decision-making and task execution capabilities. They understand user intent, autonomously select and invoke appropriate tools, and complete complex business workflows.
 
-An Agent consists of three core components: system prompts, tools, and large language models. To achieve deep integration between Agents and application systems, they need to be able to identify, understand, and call existing system functional modules. In enterprise applications, it is typically necessary to precisely configure an Agent's input and output parameters and their formats, enabling flexible parameter passing, result retrieval, and processing in program logic. Additionally, Agents can integrate with knowledge bases to implement Retrieval-Augmented Generation (RAG).
+An Agent consists of three core components: system prompts, large language models, and tools. The platform supports configuring a rich toolset for Agents, including model functions, service functions, MCP services, external APIs, and page functions, **enabling intelligent invocation of full-stack elements across both frontend and backend**. Additionally, Agents support flexible input/output configuration for programmatic invocation, as well as knowledge base integration for Retrieval-Augmented Generation (RAG) to enhance response accuracy and timeliness.
 
 ## Creating ReActAgent {#creating-react-agent}
 

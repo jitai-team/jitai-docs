@@ -3,26 +3,26 @@ sidebar_position: 1
 slug: local-development-and-debugging
 ---
 
-# Developing and Debugging JitAi Applications with VSCode or PyCharm
+# Developing and Debugging JitAi Applications With VSCode or PyCharm
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-This document guides developers on configuring a local development and debugging environment using the desktop version for efficient development and debugging.
+This guide walks you through setting up a local development and debugging environment using the desktop version of JitAi for efficient application development.
 
-## 🛠️ Environment Setup
+## 🛠️ Environment setup {#environment-setup}
 :::info 
-Ensure you have completed the basic installation and configuration. If not yet installed, please refer to the [Download and Installation](../../tutorial/download-installation) section.
+Ensure you have completed the basic installation and configuration. If not yet installed, refer to the [Download and Installation](../../tutorial/download-installation) guide.
 :::
 
-Multiple mainstream IDEs are supported for local development and debugging. You can choose based on your personal preference:
+JitAi supports multiple mainstream IDEs for local development and debugging. Choose the one that best suits your workflow:
 
-- **Visual Studio Code**: Lightweight editor with rich Python extension ecosystem
-- **PyCharm**: Professional Python IDE with powerful debugging and refactoring capabilities
+- **Visual Studio Code**: A lightweight editor with a rich Python extension ecosystem
+- **PyCharm**: A professional Python IDE with powerful debugging and refactoring capabilities
 
-## ⚙️ IDE Debug Configuration
-### Visual Studio Code
-#### 1. Open Project
-Open the JitNode directory from the installation directory in VSCode:
+## ⚙️ IDE debug configuration {#ide-debug-configuration}
+### Visual Studio Code {#visual-studio-code}
+#### Opening the project {#opening-the-project-vscode}
+Open the JitNode directory from your JitAi installation directory in VSCode:
 
 ```shell title="Path on macOS"
 /Applications/Jit.app/Contents/Resources/app.asar.unpacked/JitNode
@@ -32,11 +32,11 @@ Open the JitNode directory from the installation directory in VSCode:
 C:\Program Files\jit\resources\app.asar.unpacked\JitNode
 ```
 
-#### 2. Create Debug Configuration File
+#### Creating the debug configuration file {#creating-debug-config-vscode}
 Create a `.vscode/launch.json` file in the project root directory:
 
 :::warning Note
-If the `.vscode` directory does not exist, please create it first.
+If the `.vscode` directory does not exist, create it first.
 :::
 
 <Tabs>
@@ -99,14 +99,14 @@ If the `.vscode` directory does not exist, please create it first.
   </TabItem>
 </Tabs>
 
-#### 3. Start Debugging
+#### Starting the debugger {#starting-debugger-vscode}
 1. Click the **Run and Debug** icon in the sidebar
 2. Select the **"JitNode Debug"** configuration
 3. Click the green run button to start debugging
 
-### PyCharm
-#### 1. Open Project
-Open the JitNode directory from the installation directory in PyCharm:
+### PyCharm {#pycharm}
+#### Opening the project {#opening-the-project-pycharm}
+Open the JitNode directory from your JitAi installation directory in PyCharm:
 
 ```shell title="Path on macOS"
 /Applications/Jit.app/Contents/Resources/app.asar.unpacked/JitNode
@@ -116,19 +116,19 @@ Open the JitNode directory from the installation directory in PyCharm:
 C:\Program Files\jit\resources\app.asar.unpacked\JitNode
 ```
 
-#### 2. Configure System Interpreter
-Before creating a run configuration, you need to add JitNode's Python interpreter to the system interpreter list:
+#### Configuring the system interpreter {#configuring-system-interpreter}
+Before creating a run configuration, add JitNode's Python interpreter to the system interpreter list:
 
-1. **Open Interpreter Settings**:
+1. **Open interpreter settings**:
    - Menu: `File` → `Settings...` (Windows/Linux) or `PyCharm` → `Settings` (macOS)
    - Left navigation: `Project` → `Python Interpreter`
 
-2. **Add New Interpreter**:
-   - Click the gear icon in the top right → `Add Interpreter`, select `Add Local Interpreter`
+2. **Add new interpreter**:
+   - Click the gear icon in the top right → `Add Interpreter`, then select `Add Local Interpreter`
    - Select `System Interpreter`
    - Click the `...` browse button
 
-3. **Select JitNode Python Interpreter**:
+3. **Select JitNode Python interpreter**:
 
 <Tabs>
   <TabItem value="pycharm-interp-mac" label="🍎 macOS / Linux" default>
@@ -147,24 +147,24 @@ Interpreter path: [project path]\system\bin\python\python.exe
   </TabItem>
 </Tabs>
 
-4. **Apply Configuration**:
+4. **Apply configuration**:
    - Click `OK` to confirm the interpreter path
    - Wait for PyCharm to index and configure the environment
-   - Click `Apply` and `OK` to save settings
+   - Click `Apply` and `OK` to save the settings
 
-:::tip Interpreter Verification
-After successful addition, you will see JitNode's Python version information in the interpreter list. If errors are displayed, please check if the path is correct.
+:::tip Interpreter verification
+After successful addition, you should see JitNode's Python version information in the interpreter list. If errors appear, verify that the path is correct.
 :::
 
-#### 3. Create Run Configuration
-1. **Open Run Configuration**:
+#### Creating the run configuration {#creating-run-config-pycharm}
+1. **Open run configuration**:
    - Menu: `Run` → `Edit Configurations...`
    - Or click the run configuration dropdown in the top right → `Edit Configurations...`
 
-2. **Add New Configuration**:
+2. **Add new configuration**:
    - Click `+` → Select `Python`
 
-3. **Configure Parameters**:
+3. **Configure parameters**:
 
 <Tabs>
   <TabItem value="pycharm-mac" label="🍎 macOS / Linux" default>
@@ -195,23 +195,23 @@ Environment variables:
   </TabItem>
 </Tabs>
 
-#### 4. Start Debugging
+#### Starting the debugger {#starting-debugger-pycharm}
 1. Click `OK` to save the configuration
 2. Select the "JitNode Debug" configuration
 3. Click the green run button or press `Shift+F10` to start
 
-:::note Important Notes
-Ensure that the JitNode interpreter you just added is selected in the "Python interpreter" field of the run configuration, not the system default Python.
+:::note Important
+Ensure that you select the JitNode interpreter you just added in the "Python interpreter" field of the run configuration, not the system's default Python.
 :::
 
-## 📝 Configuration Description
-:::note Common Configuration Items
-- **Debug Entry Point**: Uniformly use the `system/jitDebugger.py` file
-- **Python Interpreter**: Use JitNode's built-in Python environment
-- **Working Directory**: Set to JitNode project root directory
-- **Environment Variables**: Configure `PYTHONPATH` to point to JitNode's Python environment
+## 📝 Configuration overview {#configuration-overview}
+:::note Common configuration items
+- **Debug entry point**: Always use the `system/jitDebugger.py` file
+- **Python interpreter**: Use JitNode's built-in Python environment
+- **Working directory**: Set to the JitNode project root directory
+- **Environment variables**: Configure `PYTHONPATH` to point to JitNode's Python environment
 :::
 
 ---
 
-After completing the above configuration, you can proceed with local development and debugging!
+After completing the above configuration, you're ready to begin local development and debugging!

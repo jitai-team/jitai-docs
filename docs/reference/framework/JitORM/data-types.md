@@ -103,7 +103,7 @@ Each data type has its specific parameter configuration items and usage methods.
 
 ---
 
-### AutoInt (Auto-increment Integer, usually used as primary key)
+### AutoInt (Auto Inc Id, usually used as primary key)
 **Inherits:** `Numeric`
 
 **Specific Parameters:** None
@@ -545,7 +545,7 @@ All data type objects have the following common properties:
 
 ---
 
-### AutoInt (Auto-increment Integer)
+### AutoInt (Auto Inc Id)
 **Inherits:** `Numeric`
 
 **Functions:**

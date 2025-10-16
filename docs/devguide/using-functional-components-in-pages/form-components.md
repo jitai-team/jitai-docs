@@ -1,538 +1,541 @@
 ---
 sidebar_position: 2
 slug: form-components
+title: Form Components
 ---
 
-# Form
-表单，作为应用开发中最常用的组件。传统的表单只能用于收集、验证和提交用户输入的数据，而 JitAi 的form-components不仅涵盖传统表单的功能，还提供了可视化设计、数据模型绑定、权限控制、业务规则配置等强大功能。只需拖拽操作，即可构建出具备复杂交互逻辑和数据处理能力的企业级表单应用。
+# Form Components
 
-## 基础配置与配置项管理 {#basic-configuration-and-item-management}
-在页面可视化编辑器中点击“插入组件”，将“表单”组件拖拽到页面中。在数据源配置中选择数据模型，点击`确定`。
+Forms are among the most frequently used components in application development. While traditional forms are limited to collecting, validating, and submitting user input data, JitAi's form components extend far beyond these basic functions. They provide powerful capabilities including visual design, data model binding, permission control, and business rule configuration. Through intuitive drag-and-drop operations, you can construct enterprise-grade form applications with sophisticated interaction logic and advanced data processing capabilities.
 
-:::warning 注意
-模型类型可以选择数据表、聚合表、扩展表，当选择聚合表时，数据不可提交。
+## Basic configuration and item management {#basic-configuration-and-item-management}
+In the page visual editor, click `Insert Component` and drag the `Form component` onto the page. Select a data model in the data source configuration and click `Confirm`.
+
+:::warning Note
+Supported model types include Data Tables, Aggregate Tables, and Extended Tables. Note that when Aggregate Tables are selected, data submission is not available.
 :::
 
-![字段显隐](./img/2/form_2025-08-20_11-32-36.png)
+![Field Visibility](./img/2/form_2025-08-20_11-32-36.png)
 
-默认情况下，form-components会展示该模型中的所有字段。当然，你也可以根据需求在页面右侧配置面板中的“显示字段”模块进行配置。
+By default, form components display all fields from the selected model. You can customize field visibility through the "Display Fields" module in the right configuration panel.
 
-![扩展变量支持](./img/2/form_2025-08-20_11-41-12.png)
+![Extended Variable Support](./img/2/form_2025-08-20_11-41-12.png)
 
-如果有些字段仅在该表单中使用到，但不需要提交到数据模型中。那么你可以通过“扩展变量”来实现。扩展变量和模型字段唯一区别就是它不会存储到数据模型中，扩展变量支持大部分数据类型，如单行文本、多行文本、数字等。
+For fields that are only needed within the form but should not be persisted to the data model, you can utilize "Extended Variables". The key distinction between extended variables and model fields is that extended variables are not stored in the underlying data model. Extended variables support most standard data types, including single-line text, multi-line text, numeric values, and more.
 
-![扩展变量](./img/2/form_2025-08-20_11-44-45.png)
+![Extended Variables](./img/2/form_2025-08-20_11-44-45.png)
 
-扩展变量默认添加到整个表单的最下面（底部按钮上面），字段名称默认为数据类型与序号组合。例如，我添加一个单行文本，字段名为“单行文本 1”，再次添加就是“单行文本 2”，以此类推。
+Extended variables are automatically positioned at the bottom of the form (above the action buttons) by default. Field names are generated using a combination of the data type and a sequential number. For instance, adding a single-line text field creates "Single-line Text 1", with subsequent additions becoming "Single-line Text 2", and so forth.
 
-:::tip 注意
-所有字段在页面配置区面板中可以拖动位置，选中某个字段后再按住鼠标左键即可进行上下拖拽。
+:::tip Note
+All fields support drag-and-drop repositioning within the page configuration panel. Simply select a field and drag it to the desired position using the left mouse button.
 :::
 
-### 配置项配置设计
-![字段配置](./img/2/form_2025-08-20_15-11-12.png)
+### Configuration item design {#configuration-item-design}
+![Field Configuration](./img/2/form_2025-08-20_15-11-12.png)
 
-在页面配置区点击对应字段，会打开右侧字段配置面板。
+Click on any field in the page configuration area to access its configuration panel on the right side.
 
-字段配置面板主要有以下配置项：
+The field configuration panel includes the following key configuration options:
 
-1. 字段名称：默认显示的是模型中字段标题，支持修改，也可以隐藏字段名称；对于扩展变量，字段名称默认为数据类型与序号组合。
-2. 字段权限：可编辑、仅可见、隐藏；主键字段默认隐藏且不可编辑；在数据表模型中设置公式值字段默认只读，且不可编辑；关联字段下的字段默认只读，且不可编辑。
-3. 字段编辑器/字段渲染器：默认使用系统自带的字段编辑器/字段渲染器，你也可以自定义字段编辑器/字段渲染器，然后在此选择自定义字段编辑器/字段渲染器。
-4. 占比：该字段在表单中的宽度占比，默认 100%，即占满整行。
-5. 校验：选择该字段是否需要必填限制。
-6. 字段描述：仅数据表模型字段才可配置字段描述，可以设置在字段名称下方显示还是鼠标悬停时显示。
-7. 参数设置：仅扩展变量支持参数设置，不同数据类型对应的参数配置也不一样（数据表模型字段参数设置在数据表模型中创建该字段时配置），具体参考[数据类型](../../reference/framework/JitORM/data-types#type-specific-parameters)。
-8. 组件触发事件：当字段是可编辑状态，触发事件："XXX 字段"字段改变后，选中后，字段值的值发生改变后即可触发；当字段是仅可见时，触发事件："XXX 字段"点击后，选中后，字段在表单中是可点击的
+1. **Field Name**: Displays the field title from the model by default and supports customization. The field name can also be hidden if needed. For extended variables, the name defaults to a combination of data type and sequence number.
+2. **Field Permissions**: Controls field accessibility with three states: Editable, View Only, and Hidden. Primary key fields are hidden by default and non-editable. Formula fields in data table models are read-only by default. Associated fields are also read-only by default.
+3. **Field Editor/Renderer**: Uses the system's built-in field editor and renderer by default. You can create and select custom field editors or renderers as needed.
+4. **Width Proportion**: Defines the field's width percentage within the form layout. Default is 100%, meaning the field spans the entire row.
+5. **Validation**: Configures whether the field is required for form submission.
+6. **Field Description**: Available only for data table model fields. Can be configured to display below the field name or on mouse hover.
+7. **Parameter Settings**: Exclusive to extended variables, with different parameter configurations based on data type. For data table model fields, parameters are configured during field creation. See [Data Types](../../reference/framework/JitORM/data-types#type-specific-parameters) for details.
+8. **Component Trigger Events**: For editable fields, enables "Field Changed" events triggered when field values change. For view-only fields, enables "Field Clicked" events, making the field interactive within the form.
 
-部分字段会有特殊的配置：
+Certain field types offer specialized configuration options:
 
-#### 单行文本
-    **输入时支持模糊匹配：** 开启后，用户输入内容时，会根据配置的选项进行模糊匹配，并给出匹配结果。
+#### Single-line text
+**Fuzzy matching support**: When enabled, the system performs real-time fuzzy matching against configured options as users type, displaying relevant suggestions.
 
-    **支持扫码录入：** 移动端专属，该功能开启后，用户再录入时，会自动打开手机摄像头，进行扫码，将扫码结果填入字段。
+**Scan input support**: A mobile-specific feature that automatically activates the device camera for barcode/QR code scanning when users interact with the field, populating it with scan results.
 
-#### 选项组单选/下拉框单选
-    显示的时候有两种模式：仅显示已选中选项和显示全部并选择部分突出显示。
+#### Option group radio/dropdown radio
+Two display modes are available: show only selected options, or show all options with selected items highlighted.
 
-:::tip 注意
-注意显示模式仅当该字段只读时有效
+:::tip Note
+Display modes are only applicable when the field is in read-only state.
 :::
 
-        **仅显示已选中选项**
+**Display only selected options**
 
-          ![仅显示已选中选项](./img/2/form_2025-08-20_15-14-20.png)
+![Display Only Selected Options](./img/2/form_2025-08-20_15-14-20.png)
 
-        **显示全部并选择部分突出显示**
+**Display all with selected parts highlighted**
 
-          ![显示全部并选择部分突出显示](./img/2/form_2025-08-20_15-16-24.png)
+![Display All with Selected Parts Highlighted](./img/2/form_2025-08-20_15-16-24.png)
 
-#### 图片
-    显示的时候有两种模式：默认（一行四个展示）；按容器宽度缩放（占据容器 100%宽度）
+#### Images
+Two display modes are supported: Default (four images per row) and Scale to container width (occupies 100% of container width).
 
-:::tip 注意
-显示模式仅当该字段为只读状态时生效，按容器宽度缩放仅当该字段只展示一张图片时生效
+:::tip Note
+Display modes are only effective when the field is in read-only state. Scale to container width only applies when displaying a single image.
 :::
 
-**默认模式**
+**Default mode**
 
-         ![默认模式](./img/2/form_2025-08-21_11-18-01.png)
+![Default Mode](./img/2/form_2025-08-21_11-18-01.png)
 
-**按容器宽度缩放**
+**Scale to container width**
 
-        ![按容器宽度缩放](./img/2/form_2025-08-21_11-32-10.png)
+![Scale to Container Width](./img/2/form_2025-08-21_11-32-10.png)
 
-#### 关联单选
-    关联单选在表单中显示的关联表的数据标题，可以对关联的数据设置筛选和下拉列表中显示的顺序
+#### Associated radio
+Associated radio fields display the title data from linked tables within the form. You can configure filtering criteria and display order for the associated data in dropdown lists.
 
-    **数据筛选：** 配置筛选条件，在请求关联数据的时候会通过筛选条件对数据进行过滤
+**Data filtering**: Define filtering conditions that are applied when retrieving associated data from the linked table.
 
-    **数据排序：** 配置数据排序规则，对请求后返回的数据进行排序再展现给用户
+**Data sorting**: Configure sorting rules to organize the retrieved data before presenting it to users in the dropdown interface.
 
-#### 子表
-    ![子表](./img/2/form_2025-08-21_13-48-09.gif)
+#### Sub-table
+![Sub-table](./img/2/form_2025-08-21_13-48-09.gif)
 
-    **可新增子表记录：** 勾选后显示新增子表的入口
+**Enable adding sub-table records**: When enabled, displays the interface for adding new sub-table entries.
 
-    **可选择多行数据：** 勾选后子表的每行数据可选择
+**Enable multiple row selection**: When enabled, allows users to select multiple rows within the sub-table.
 
-    **可删除选择的多行数据：** 勾选后出现批量删除按钮
+**Enable batch deletion of selected rows**: When enabled, provides a batch delete button for removing multiple selected rows.
 
-    **可复制行数据：** 勾选后子表的每行数据可复制
+**Enable row data copying**: When enabled, allows users to duplicate individual rows within the sub-table.
 
-    **可删除行数据：** 勾选后子表的每行数据可删除
+**Enable row data deletion**: When enabled, provides delete functionality for individual rows.
 
-    **可上移/下移子表顺序：** 勾选后子表的每行数据可上下移动
+**Enable sub-table row reordering**: When enabled, allows users to move rows up or down to change their order.
 
-    **可插入子表数据：** 勾选后子表的每行数据前可插入数据
+**Enable sub-table data insertion**: When enabled, allows users to insert new rows at any position within the sub-table.
 
-    **子表输入框开关：** 勾选后子表在新增和编辑模式下呈现编辑状态
+**Sub-table input mode toggle**: When enabled, the sub-table displays in editable mode during add and edit operations.
 
-    **子表显示字段：** 可设置子表中的字段的显示和隐藏，默认显示子表所有字段
+**Sub-table field visibility**: Configure which fields are displayed or hidden within the sub-table. All sub-table fields are visible by default.
 
-    **业务规则：** 可针对子表的字段设置校验规则和编辑规则（如何设置参照表单主表的业务规则）
+**Business rules**: Configure validation and editing rules for sub-table fields (configuration follows the same principles as main table business rules).
 
-        -  校验规则：在表单提交时对子表中的字段进行校验，若不通过则组织表单提交或警告
-        -  编辑规则：当满足编辑规则中的条件时，子表中的某些字段才可以进行编辑，否则为只读状态。
+-  **Validation rules**: Validate sub-table fields during form submission. Failed validation either prevents submission or displays warnings.
+-  **Editing rules**: Control field edit ability based on specified conditions. Fields become read-only when conditions are not met.
 
-    **数据筛选：** 当表单处于新增或编辑模式下，对子表进行数据筛选，并展示筛选后结果。
+**Data filtering**: Apply filtering criteria to sub-table data when the form is in add or edit mode, displaying only filtered results.
 
-    **按钮：** 除上面子表预设的按钮外，用户也可以为子表添加导航栏按钮和操作列按钮。
+**Custom buttons**: Beyond the default sub-table buttons, you can add custom navigation bar buttons and operation column buttons.
 
-        ![子表按钮](./img/2/form_2025-08-21_14-09-03.png)
+![Sub-table Buttons](./img/2/form_2025-08-21_14-09-03.png)
 
-    **字段列宽调整：** 用户可以调整子表中每个字段的列宽。
+**Column width adjustment**: Customize the width of individual columns within the sub-table for optimal display.
 
-    :::warning 注意
-    所有的按钮都可以自定义按钮标题、类型等
+:::warning Note
+All buttons support customization of titles, types, and other properties.
 
-    如果想勾选“可删除选择的多行数据”，需要先将“可选择多行数据”勾选
-    :::
-
-## 字段校验与交互 {#field-validation-and-interaction}
-### 录入/查看/编辑模式
-    表单有三种显示模式，分别是录入模式、查看模式和编辑模式；默认表单为录入模式。
-
-    #### 录入模式
-
-    ![录入模式](./img/2/form_2025-08-21_14-21-53.png)
-
-    录入模式下的表单为空表单，用户点击提交按钮后，数据表模型新增一条记录
-
-    #### 查看模式
-
-    ![查看模式](./img/2/form_2025-08-21_14-23-20.png)
-
-    查看模式下的表单中所有字段均为只读状态，且表单底部不会显示提交按钮。
-
-    #### 编辑模式
-
-    ![编辑模式](./img/2/form_2025-08-21_14-28-20.png)
-
-    在编辑模式下，表单中所有字段呈现编辑状态，用户点击提交按钮后，数据表模型更新一条记录。
-
-    ![配置模式](./img/2/form_2025-08-21_14-38-32.gif)
-
-    可以在上级组件的事件配置中配置，在不同的事件上给表单的显示模式配置不同的值。
-
-### 字段操作权限  {#field-operation-permissions}
-#### 字段本身设置权限
-    表单每个字段都可以设置权限，控制字段是否显示、是否可编辑、是否必填。
-
-    ![字段权限](./img/2/form_2025-08-21_14-43-10.png)
-
-    可以在页面配置区点击每个字段右上角角标设置或进入右侧字段配置区进行设置。
-
-    如果设置了隐藏，那么在使用的时候该字段将不再显示；如果设置了只读，那么在使用的时候该字段将只读，用户无法修改；如果设置了必填，那么在使用的时候该字段将变成必填项。
-
-    ![必填](./img/2/form_2025-08-21_14-49-33.png)
-
-#### 批量设置字段权限
-    ![批量设置字段状态](./img/2/form_2025-08-21_19-52-35.gif)
-
-    可批量对表单中所有字段进行可编辑/仅可见/隐藏状态设置，或清空整个表单。
-
-#### 字段规则设置权限
-    表单主表可以设置四种规则：校验规则、显隐规则、必填规则、编辑规则。
-
-    表单子表可以设置两种规则：校验规则、编辑规则。
-
-    **校验规则**
-
-        ![校验规则](./img/2/form_2025-08-21_15-04-10.png)
-
-        校验规则用于校验表单提交的数据是否符合规范，其配置项有：
-
-        -   规则名称：校验规则名称，用于标识该条规则，方便用户查看和修改。
-        -   校验条件：用于校验规则，当表单提交数据时需满足改条件才能提交成功。
-        -   不符合校验规则时的处理方式：有两种。
-            -   警告后仍可保存：表单提交的数据不满足校验条件，会有警告提示，点击“继续保存”，还是可以提交数据；点击“取消”，取消提交数据
-            -   禁止提交：表单提交的数据不满足校验条件，将无法提交数据，并弹出错误提示
-        -   不符合校验规则时的提示语：警告提示或错误提示中的内容
-
-        :::warning 注意
-
-        校验规则仅在表单的录入模式和编辑模式下才会生效
-
-        当一个form-components中有多个校验规则，从上往下依次校验“禁止提交”的规则，再依次校验“警告后仍可保存”的规则。
-        :::
-
-    **显隐规则**
-
-        ![显隐规则](./img/2/form_2025-08-21_15-15-55.png)
-
-        显隐规则用于表单数据满足一定条件才显示某些字段或布局控件。其配置项有：
-
-        -   规则名称：显隐规则名称，用于标识该条规则，方便用户查看和修改
-        -   校验条件：用于校验规则，当该条件满足时，下面配置的字段或布局控件会显示
-        -   才显示的字段：当表单数据满足上面的校验条件，会在表单中显示的字段
-        -   才显示选中的标签页/折叠面板/分割线：当表单数据满足上面的筛选条件，才会显示标签页/折叠面板/分割线，否则会是隐藏状态
-
-        :::warning 注意
-
-        显隐规则在表单的录入/编辑/查看模式中均会生效
-
-        为了达到显隐规则效果，在不满足条件时或者表单初始状态，一般需要配置的字段是隐藏状态。所以，在保存显隐规则后，若字段在表单中的不是隐藏状态，会自动将字段设为隐藏。这不是强制的，你还是可以将字段改为非隐藏状态；
-
-        在表单实际运行时，若表单数据不满足筛选条件，显隐规则不会将“才显示的字段”自动置为隐藏，保持为字段本身设置的状态；
-
-        当一个form-components有多个显隐规则，从上往下依次执行。
-
-        :::
-
-    **必填规则**
-
-        ![必填规则](./img/2/form_2025-08-21_15-26-15.png)
-
-        必填规则用于表单数据满足一定条件时才必填某些字段。其配置项有：
-
-        -   规则名称：必填规则名称，用于标识该条规则，方便用户查看和修改
-        -   校验条件：用于校验规则，当该条件满足时，下面配置的字段会置为必填
-        -   才必填的字段：当满足校验条件时，字段都会置为必填。
-
-        :::warning 注意
-
-        必填规则仅在表单的录入模式和编辑模式下才会生效
-
-        为了达到必填规则效果，在不满足条件时或者表单初始状态，一般需要配置的字段是非必填状态。在保存必填规则后，若字段在表单是必填状态，会自动将字段设为非必填
-
-        在表单实际运行时，若表单数据不满足筛选条件，必填规则不会将“才必填的字段”自动置为非必填
-
-        当一个form-components有多个必填规则，依次执行
-
-        当必填的字段未满足显隐规则而被隐藏，则提交时不做必填校验
-
-        :::
-
-    **编辑规则**
-
-        ![编辑规则](./img/2/form_2025-08-21_15-33-30.png)
-
-        编辑规则用于表单数据满足一定条件时才可以编辑某些字段。其配置项有：
-        -   规则名称：编辑规则名称，用于标识该条规则，方便用户查看和修改
-        -   校验条件：用于校验规则，当该条件满足时，下面配置的字段会置为编辑状态
-        -   才必填的字段：当满足校验条件时，字段状态置为可编辑状态。
-
-        :::warning 注意
-
-        编辑规则仅在表单的录入模式和编辑模式下才会生效
-
-        为了达到编辑规则效果，在不满足条件时或者表单初始状态，一般需要配置的字段是只读。在保存必填规则后，若字段在表单中的编辑/隐藏状态，会自动将字段设为只读。这不是强制，你还是更改字段的状态
-
-        在表单实际运行时，若表单数据不满足筛选条件，编辑规则不会将“才编辑的字段”自动置为只读，保持为字段本身设置的状态
-
-        当一个form-components有多个编辑规则，从左往右依次执行
-
-        :::
-
-#### 角色页面中设置权限
-     当某些字段或按钮仅对某些角色可见时，可以在角色页面中设置权限。
-
-### 字段描述显示
-    ![字段描述1](./img/2/form_2025-08-21_14-59-41.png)
-
-    在字段名称下方显示：在字段名称下方通过灰色小字显示字段的描述。
-
-    ![字段描述2](./img/2/form_2025-08-21_15-00-57.png)
-
-    鼠标悬停图标时显示：字段名称旁边有个灰色图标，鼠标悬停图标时显示字段的描述。
-
-## 布局设计 {#layout-design}
-    ![表单布局](./img/2/form_2025-08-21_15-45-03.png)
-
-    表单中每个字段都可以自行调节宽高。在页面配置区域，悬浮在字段上就会出现可调节宽高的图标。如果需要对整体布局进行调整，可以在右侧配置区域的“快速设置表单布局”中进行快捷操作。快速设置表单布局支持：一行一列、一行两列、一行三列、一行四列。
-
-    另外，表单中字段名称和编辑器之间也可以调整为上下布局或左右布局；默认上下布局
-
-    ![字段布局](./img/2/form_2025-08-21_15-50-08.png)
-
-    表单中除了可以添加字段，还可以添加按钮或标签页、折叠面板、占位符、分割线、二维码等布局控件。
-
-    ### 按钮配置
-
-        ![按钮](./img/2/form_2025-08-21_16-30-52.png)
-
-        可以为表单添加顶部按钮、中部按钮和底部按钮，其中顶部按钮和底部按钮会固定在表单的顶部或底部。表单中添加按钮后，会在事件面板中增加对应的按钮事件
-
-    ### 布局控件
-
-        ![布局控件](./img/2/form_2025-08-22_11-19-53.png)
-
-        在表单右侧面板可进行添加布局控件，如标签页、折叠面板、占位符、分割线、二维码等。
-
-        **标签页**
-
-        ![标签页](./img/2/form_2025-08-21_16-34-35.png)
-
-        在表单右侧添加标签页后，可自行调整标签页在表单中的位置。它的配置项有：
-
-        标签页名称：方便识别，也可以在表单中隐藏标签页的名称
-
-        位置：标签在表单标签页容器的相对位置
-
-        风格：标签页风格，支持简约和卡片两种
-
-        标签：默认三个标签，可以自行添加或删除标签
-
-        **折叠面板**
-
-        ![折叠面板](./img/2/form_2025-08-21_16-59-06.png)
-
-        在表单右侧添加折叠面板后，可自行调整折叠面板在表单中的位置。它的配置项有：
-
-        折叠面板名称：方便识别，也可以在表单中隐藏折叠面板的名称
-
-        手风琴模式： 默认是选中状态，开启后每次只展开一个面板
-
-        风格： 折叠面板风格，支持简约和卡片两种
-
-        默认全部打开：勾选后折叠面板将全部展开，仅非手风琴模式下有效
-
-        背景色：自定义面板中的背景颜色，默认为白色
-
-        标签：默认三个标签，可以自行添加或删除标签
-
-    :::warning 注意
-
-        当使用标签页或折叠面板后，页面配置区所有字段的右上角会出现“移动到”按钮，点击后可以将字段移动到标签页或折叠面板中。
-
-        ![移动弹出](./img/2/form_2025-08-21_17-06-56.png)
-
-    :::
-
-    **占位符**
-
-        ![占位符](./img/2/form_2025-08-21_17-13-09.png)
-
-        占位符可以占据一块空白区域，不会被其他字段或控件排挤覆盖。在表单实际运行，因显隐规则、用户字段权限等因素，表单在渲染时会根据显示的字段自动填充布局。这时，可以添加占位符，防止因自动布局而导致字段排版错乱。
-
-    **分割线**
-
-        ![分割线](./img/2/form_2025-08-21_17-14-46.png)
-
-        在表单右侧添加分割线后，可自行调整分割线在表单中的位置，用于划分表单内容。它的配置有：
-
-        分割线标题：方便识别，将会在分割线上方展示
-
-        描述说明：描述该字段的用途，将会在分割线下方展示
-
-        分割线样式：内置分割线的几种样式，可自行选择
-
-        配色：分割线主题颜色配置
-
-        标题颜色：分割线标题颜色配置
-
-        ![分割线展示](./img/2/form_2025-08-22_10-55-46.png)
-
-    **二维码**
-
-        ![二维码](./img/2/form_2025-08-21_17-21-12.png)
-
-        二维码控件主要是将某个链接通过二维码的形式在表单中展示，内容可以选择应用内菜单链接或文本值。它的配置有：
-
-        名称：二维码控件名称，方便识别
-
-        显示链接：勾选后在二维码下面显示链接
-
-        显示名称：勾选后在二维码下面显示名称
-
-        内容：二维码内容，可以是应用内菜单链接或文本值
-            - 应用内菜单链接：点击选择应用内某个菜单，将其链接作为二维码内容
-            - 文本值：直接输入文本值作为二维码内容
-
-        ![二维码展示](./img/2/form_2025-08-22_10-59-46.png)
-
-## 使用自定义控件渲染字段 {#use-custom-controls-to-render-fields}
-**字段渲染器**
-
-    当表单使用[自定义控件](../frontend-ui-customization/custom-controls)作为字段渲染器时，所设计的自定义控件必须支持以下属性：
-
-    fieldConfig：当前字段在表单配置中的配置信息
-
-    data：当前字段的字段值
-
-    rowData：当前数据表模型的单行数据，即当前表单的数据
-
-**字段编辑器**
-
-    当表单使用[自定义控件](../frontend-ui-customization/custom-controls)作为字段编辑器时，同自定义渲染器一样，也要支持以下属性：
-
-    fieldConfig：当前字段在表单配置中的配置信息
-
-    data：当前字段的字段值
-
-    rowData：当前数据表模型的单行数据，即当前表单的数据
-
-    onChange： 当前字段的值在自定义控件中发生改变时，会触发该方法将新的值传递给表单
-
-## 事件配置 {#event-configuration}
-    表单可以配置表单事件，用于监听表单的提交前、提交后、刷新后等，并执行相应的操作。默认情况下，表单可以配置提交前、提交后和刷新事件。
-
-    ![表单事件](./img/2/form_2025-08-21_18-54-24.png)
-
-    除了表单默认的三个事件外，添加按钮或字段也会增加一些事件。
-
-        ![添加按钮事件](./img/2/form_2025-08-21_18-57-36.png)
-
-        **添加按钮后，会增加按钮点击事件**
-
-        ![添加字段事件](./img/2/form_2025-08-21_18-59-50.png)
-
-        **添加普通字段（不是子表字段）后，在字段配置区打开组件触发事件，会相应添加字段的值改变后事件和字典值点击事件**
-
-        ![添加子表字段事件](./img/2/form_2025-08-21_19-09-44.png)
-
-        **添加子表字段后，会增加子表的新增点击后事件、删除点击后事件、复制点击后事件、选中行后事件**
-
-        ![触发数据模型新增/更新数据事件](./img/2/form_2025-08-21_19-14-37.png)
-
-    表单配置区最下面有一个“触发数据模型新增/更新数据事件”选项，若勾选，则在表单提交时会触发数据模型的新增/更新事件。
-
-## 高级功能 {#advanced-functions}
-    ![表单高级功能](./img/2/form_2025-08-21_19-23-55.png)
-
-    表单还可以配置是否显示审批记录、操作记录、结果反馈以及批量设置字段状态等功能
-
-    ### 显示暂存按钮
-
-    ![暂存按钮](./img/2/form_2025-08-21_19-33-35.png)
-
-    ![暂存数据提示](./img/2/form_2025-08-21_19-34-52.png)
-
-    勾选后，在表单底部会显示暂存按钮，用户可点击暂存按钮将表单数据保存到暂存区，下次打开表单时，表单顶部会提示暂存数据，用户可点击恢复数据。
-    :::tip
-    勾选后，事件面板会新增一个暂存事件，用于触发暂存后事件
-    :::
-
-    ### 显示再次录入按钮
-
-    ![再录入按钮](./img/2/form_2025-08-21_19-39-31.png)
-
-    勾选后，当表单提交后会出现提交成功页面且可以点击“再次录入”按钮，进行表单再次录入。
-
-    ### 显示审批记录
-
-    ![审批记录](./img/2/form_2025-08-21_19-45-18.png)
-
-    勾选后，若该数据表模型关联审批流程，在页面的右侧将会显示审批记录。
-    
-    :::tip 注意
-    默认情况下，审批记录会将[审批预测结果](../approval-workflow/approval-workflow-basic-configuration#prediction-feature)一并显示
-
-    如果某个审批流程关闭了预测功能，则该流程将不会显示预测结果
-    :::
-
-    ### 显示操作记录
-
-    ![操作记录](./img/2/form_2025-08-21_19-47-29.png)
-
-    勾选后，在页面的右侧将会显示操作记录。
-
-    ### 显示录入结果反馈
-
-    ![录入结果反馈](./img/2/form_2025-08-21_19-49-09.png)
-
-    勾选后，在录入完成后，将录入结果反馈给用户。
-
-## 批量编辑表单配置 {#batch-edit-form-configuration}
-![批量编辑表单展示](./img/2/form_2025-08-22_11-48-37.gif)
-
-当我们需要对于数据表中的多行数据中的多个字段进行修改时，可以使用批量编辑表单来完成。在使用批量编辑表单修改数据后，点击提交按钮后将会对数据表模型进行更新。
-
-在页面可视化编辑器中点击“插入组件”，将“批量编辑表单”组件拖拽到页面中。在数据源配置中选择数据模型，点击“确定”。
-
-![批量编辑表单](./img/2/form_2025-08-22_13-54-43.png)
-
-:::warning 注意
-批量编辑form-components是对于某个模型进行批量编辑的表单，因此它只能选择数据表模型作为数据源，且需要配合表格或看板等视图组件一并使用。
+To enable "batch deletion of selected rows", you must first enable "multiple row selection".
 :::
 
-![批量编辑form-components](./img/2/form_2025-08-22_11-35-54.png)
+## Field validation and interaction {#field-validation-and-interaction}
+### Input/view/edit modes {#inputviewedit-modes}
+Forms support three distinct display modes: input mode, view mode, and edit mode. Forms default to input mode when first created.
 
-默认情况下，批量编辑form-components会展示该模型中的除了只读、子表外的所有字段。当然，你也可以根据需求在页面右侧配置面板中的“显示字段”模块进行配置。
+#### Input mode
 
-:::tip 提示
-批量编辑表单里面的字段必须是数据表模型字段，不支持添加扩展变量
+![Input Mode](./img/2/form_2025-08-21_14-21-53.png)
 
-批量编辑表单的字段配置、业务规则、布局控件的使用与form-components一致
+Input mode presents an empty form for data entry. When users submit the form, a new record is created in the associated data table model.
 
-批量编辑表单不支持使用二维码作为布局控件
+#### View mode
+
+![View Mode](./img/2/form_2025-08-21_14-23-20.png)
+
+View mode renders all fields as read-only, with no submit button displayed. This mode is ideal for displaying existing data without allowing modifications.
+
+#### Edit mode
+
+![Edit Mode](./img/2/form_2025-08-21_14-28-20.png)
+
+Edit mode enables modification of existing data, with all fields in an editable state. Form submission updates the corresponding record in the data table model.
+
+![Configuration Mode](./img/2/form_2025-08-21_14-38-32.gif)
+
+You can configure different display modes for various events through the parent component's event configuration settings.
+
+### Field operation permissions  {#field-operation-permissions}
+#### Setting permissions for individual fields
+Each form field supports individual permission configuration to control visibility, edit ability, and validation requirements.
+
+![Field Permissions](./img/2/form_2025-08-21_14-43-10.png)
+
+Access permission settings by clicking the indicator in the upper-right corner of each field in the page configuration area, or through the field configuration panel on the right.
+
+**Hidden** fields are not displayed in the form. **Read-only** fields display data but prevent user modifications. **Required** fields must be completed before form submission.
+
+![Required](./img/2/form_2025-08-21_14-49-33.png)
+
+#### Batch setting field permissions
+![Batch Set Field Status](./img/2/form_2025-08-21_19-52-35.gif)
+
+Apply permission changes to multiple fields simultaneously by setting them to editable, view-only, or hidden status. You can also clear all form data at once.
+
+#### Setting permissions through field rules
+The main form table supports four rule types: validation rules, visibility rules, required rules, and editing rules.
+
+Sub-tables support two rule types: validation rules and editing rules.
+
+**Validation rules**
+
+![Validation Rules](./img/2/form_2025-08-21_15-04-10.png)
+
+Validation rules ensure that submitted form data meets specified criteria. Configuration options include:
+
+-   **Rule name**: Descriptive identifier for the validation rule, facilitating management and modification.
+-   **Validation condition**: Defines the criteria that must be satisfied for successful form submission.
+-   **Failure handling**: Two approaches are available:
+    -   **Warning still can save**: Displays a warning when validation fails, allowing users to either "Continue to Save" or "Cancel" the submission.
+    -   **Forbid Submission**: Prevents form submission entirely when validation fails, displaying an error message.
+-   **Failure message**: Custom text displayed in warning or error prompts when validation criteria are not met.
+
+:::warning Note
+
+Validation rules are active only in input and edit modes.
+
+When multiple validation rules exist, "Forbid Submission" rules are evaluated first (top to bottom), followed by "Warning still can save" rules (also top to bottom).
 :::
 
-## 批量编辑表单事件与交互 {#batch-edit-form-events-and-interaction}
-在使用批量编辑表单时，需要为该组件提供数据源，否则将无法进行提交数据。
+**Visibility rules**
 
-![批量编辑表单事件与交互](./img/2/form_2025-08-22_11-44-59.png)
+![Visibility Rules](./img/2/form_2025-08-21_15-15-55.png)
 
-如上图，我们使用表格和批量编辑表单配合使用，我们需要在表格的事件中为批量编辑表单提供数据源。
+Visibility rules control the conditional display of fields and layout elements based on form data. Configuration options include:
 
-## 数据修正配置 {#data-correction-configuration}
-数据修正属于操作类组件，有点类似于批量编辑表单，但没有批量编辑表单的功能强大，只能对数据表中某些字段做简单修正。例如，想将某个数据表模型中的多行数据的个别字段的值统一调整，且没有其他复杂操作，就可以使用该组件。
+-   **Rule name**: Descriptive identifier for the visibility rule, facilitating management and modification.
+-   **Display condition**: Defines when the specified fields or layout controls should become visible.
+-   **Conditional fields**: Fields that become visible when the display condition is satisfied.
+-   **Conditional layout elements**: Tabs, collapse panels, or dividers that are shown or hidden based on the filtering condition.
 
-![数据修正](./img/2/form_2025-08-22_17-58-34.png)
+:::warning Note
 
-在页面可视化编辑器中点击“插入组件”，将“数据修正”组件拖拽到页面中。在数据源配置中选择数据模型，点击“确定”。
+Visibility rules are active across all form modes (input, edit, and view).
 
-![数据修正配置](./img/2/form_2025-08-22_18-07-56.png)
-在“可编辑字段”下点击打开字段显示面板，可以进行字段预选操作。
+For optimal visibility rule behavior, affected fields should typically be hidden by default when conditions are not met. After saving visibility rules, fields that are not hidden will be automatically set to hidden state. This behavior can be overridden if needed.
 
-:::warning 注意
+During form operation, if data doesn't meet the filtering condition, visibility rules preserve the field's current state rather than forcing it to hidden.
 
-数据修正仅支持对以下数据类型进行处理：单行文本、多行文本、数字、金额、百分比、日期、时间、日期时间、身份证号、手机号、车牌号、检查框、选项组单选、选项组多选、下拉框单选、下拉框多选、成员单选、成员多选、部门单选、部门多选。
+Multiple visibility rules are executed sequentially from top to bottom.
+
 :::
 
-![数据修正](./img/2/form_2025-08-23_09-56-34.gif)
+**Required rules**
 
-数据修正对于不同的数据类型，有不同的处理方式。如：
-单行文本有设置为、删除掉、追加、清空等方法。
-日期时间有增加年、增加月、增加周、增加日、增加时、增加分、增加秒、减少年、减少月、减少周、减少日、减少时、减少分、减少秒、设置为、清空等方法。
-具体详情，查看数据类型。
+![Required Rules](./img/2/form_2025-08-21_15-26-15.png)
 
-## 数据修正使用 {#data-correction-usage}
-![数据修正使用](./img/2/form_2025-08-22_18-14-30.png)
+Required rules dynamically enforce field requirements based on form data conditions. Configuration options include:
 
-由于数据修正必须配合表格或看板等视图组件一并使用。因此，首先需要在表格的“选中行后”事件内，将选中的值传给数据修正组件。
+-   **Rule name**: Descriptive identifier for the required rule, facilitating management and modification.
+-   **Requirement condition**: Defines when the specified fields should become mandatory.
+-   **Conditional required fields**: Fields that become required when the condition is satisfied.
 
-![数据修正使用](./img/2/form_2025-08-22_18-19-50.gif)
+:::warning Note
 
-在页面可视化编辑器配置好后，勾选表格组件的行数据，再在数据修正里面进行修改，点击提交后就会生效了。
+Required rules are active only in input and edit modes.
+
+For optimal required rule behavior, affected fields should typically be non-required by default. After saving required rules, fields that are currently required will be automatically set to non-required state.
+
+During form operation, if data doesn't meet the filtering condition, required rules preserve the field's current requirement state.
+
+Multiple required rules are executed sequentially.
+
+Required validation is bypassed for fields that are hidden due to visibility rules.
+
+:::
+
+**Editing rules**
+
+![Editing Rules](./img/2/form_2025-08-21_15-33-30.png)
+
+Editing rules control field edit ability based on form data conditions. Configuration options include:
+-   **Rule name**: Descriptive identifier for the editing rule, facilitating management and modification.
+-   **Edit condition**: Defines when the specified fields should become editable.
+-   **Conditional editable fields**: Fields that become editable when the condition is satisfied.
+
+:::warning Note
+
+Editing rules are active only in input and edit modes.
+
+For optimal editing rule behavior, affected fields should typically be read-only by default. After saving editing rules, fields that are currently editable or hidden will be automatically set to read-only state. This behavior can be overridden if needed.
+
+During form operation, if data doesn't meet the filtering condition, editing rules preserve the field's current edit ability state.
+
+Multiple editing rules are executed sequentially from left to right.
+
+:::
+
+#### Setting permissions in role pages
+Role-based permissions can be configured when certain fields or buttons should only be visible to specific user roles.
+
+### Field description display {#field-description-display}
+![Field Description 1](./img/2/form_2025-08-21_14-59-41.png)
+
+**Below field name**: Displays the field description as small gray text beneath the field label.
+
+![Field Description 2](./img/2/form_2025-08-21_15-00-57.png)
+
+**On hover**: Shows a gray icon next to the field name, with the description appearing when users hover over the icon.
+
+## Layout design {#layout-design}
+![Form Layout](./img/2/form_2025-08-21_15-45-03.png)
+
+Individual fields support independent width and height adjustments. Hover over any field in the page configuration area to reveal sizing controls. For overall layout modifications, use the "Quick Set Form Layout" options in the right configuration panel, which supports one to four columns per row.
+
+Field label and input positioning can be configured as either vertical (default) or horizontal layout.
+
+![Field Layout](./img/2/form_2025-08-21_15-50-08.png)
+
+Beyond field elements, forms support various layout controls including buttons, tabs, collapse panels, placeholders, dividers, and QR codes.
+
+### Button configuration {#button-configuration}
+
+![Buttons](./img/2/form_2025-08-21_16-30-52.png)
+
+Forms support three button placement zones: top, middle, and bottom. Top and bottom buttons remain fixed in their respective positions. Adding buttons automatically creates corresponding events in the event panel.
+
+### Layout controls {#layout-controls}
+
+![Layout Controls](./img/2/form_2025-08-22_11-19-53.png)
+
+Various layout controls can be added through the right panel, including tabs, collapse panels, placeholders, dividers, and QR codes.
+
+**Tabs**
+
+![Tabs](./img/2/form_2025-08-21_16-34-35.png)
+
+Tab containers can be positioned anywhere within the form layout. Configuration options include:
+
+**Tab name**: Identifier for the tab container, which can be hidden in the final form display.
+
+**Position**: Relative placement within the form's tab container hierarchy.
+
+**Style**: Visual appearance, with Minimalist and Card style options available.
+
+**Tab items**: Defaults to three tabs, with support for adding or removing tabs as needed.
+
+**Collapse panel**
+
+![Collapse Panel](./img/2/form_2025-08-21_16-59-06.png)
+
+Collapse panels can be positioned anywhere within the form layout. Configuration options include:
+
+**Panel name**: Identifier for the collapse panel, which can be hidden in the final form display.
+
+**Accordion mode**: Enabled by default, ensuring only one panel section is expanded at a time.
+
+**Style**: Visual appearance, with Minimalist and Card style options available.
+
+**Default expanded state**: When enabled, all panels start in expanded state (only effective in non-accordion mode).
+
+**Background color**: Customizable panel background, defaulting to white.
+
+**Panel sections**: Defaults to three sections, with support for adding or removing sections as needed.
+
+:::warning Note
+
+When tabs or collapse panels are present, all fields display a "Move to" button in their upper-right corner. Use this to relocate fields into specific tabs or panel sections.
+
+![Move Popup](./img/2/form_2025-08-21_17-06-56.png)
+
+:::
+
+**Placeholder**
+
+![Placeholder](./img/2/form_2025-08-21_17-13-09.png)
+
+Placeholders reserve blank space within the form layout, preventing other elements from occupying that area. During form rendering, automatic layout adjustments based on visibility rules and permissions can cause field positioning issues. Placeholders maintain consistent spacing and prevent layout disruption.
+
+**Divider**
+
+![Divider](./img/2/form_2025-08-21_17-14-46.png)
+
+Dividers provide visual separation between form sections and can be positioned anywhere within the layout. Configuration options include:
+
+**Divider title**: Optional heading displayed above the divider line for section identification.
+
+**Description**: Optional explanatory text displayed below the divider line.
+
+**Divider style**: Selection from built-in visual styles for the divider line.
+
+**Color**: Theme color configuration for the divider element.
+
+**Title Color**: Specific color configuration for the divider title text.
+
+![Divider Display](./img/2/form_2025-08-22_10-55-46.png)
+
+**QR code**
+
+![QR Code](./img/2/form_2025-08-21_17-21-12.png)
+
+QR code controls embed scannable codes within forms, typically containing links or text data. Configuration options include:
+
+**Name**: Identifier for the QR code control for management purposes.
+
+**Display link**: When enabled, shows the encoded URL as text below the QR code.
+
+**Display name**: When enabled, shows the control name as a label below the QR code.
+
+**Content source**: Defines what the QR code encodes:
+- **In-app menu link**: Select from available application menus to encode their URLs.
+- **Text value**: Directly input custom text or URLs for encoding.
+
+![QR Code Display](./img/2/form_2025-08-22_10-59-46.png)
+
+## Using custom controls to render fields {#use-custom-controls-to-render-fields}
+**Field renderer**
+
+When implementing [Custom Controls](../frontend-ui-customization/custom-controls) as field renderers, the custom components must support these required properties:
+
+**fieldConfig**: Configuration metadata for the current field within the form structure.
+
+**data**: The current value of the field being rendered.
+
+**rowData**: Complete data object for the current form record from the associated data table model.
+
+**Field editor**
+
+When implementing [Custom Controls](../frontend-ui-customization/custom-controls) as field editors, the custom components must support these required properties:
+
+**fieldConfig**: Configuration metadata for the current field within the form structure.
+
+**data**: The current value of the field being edited.
+
+**rowData**: Complete data object for the current form record from the associated data table model.
+
+**onChange**: Callback function triggered when the field value changes, passing the updated value back to the form system.
+
+## Event configuration {#event-configuration}
+Forms support comprehensive event handling for pre-submission, post-submission, post-refresh, and other lifecycle events. Default event types include pre-submission, post-submission, and refresh events.
+
+![Form Events](./img/2/form_2025-08-21_18-54-24.png)
+
+Beyond the default form events, adding buttons or fields automatically creates additional event handlers.
+
+![Add Button Events](./img/2/form_2025-08-21_18-57-36.png)
+
+**Button events**: Adding buttons automatically creates corresponding click event handlers.
+
+![Add Field Events](./img/2/form_2025-08-21_18-59-50.png)
+
+**Field events**: Adding regular fields (excluding sub-table fields) and enabling component trigger events creates field value change and dictionary value click event handlers.
+
+![Add Sub-table Field Events](./img/2/form_2025-08-21_19-09-44.png)
+
+**Sub-table events**: Adding sub-table fields creates multiple event handlers including add, delete, copy, and row selection events.
+
+![Trigger Data Model Add/Update Data Events](./img/2/form_2025-08-21_19-14-37.png)
+
+The form configuration includes a "Trigger data model add/update data events" option. When enabled, form submissions automatically trigger corresponding data model events for record creation or updates.
+
+## Advanced functions {#advanced-functions}
+![Form Advanced Functions](./img/2/form_2025-08-21_19-23-55.png)
+
+Forms support additional advanced features including approval records display, operation logging, result feedback, and batch field status management.
+
+### Display draft button {#display-draft-button}
+
+![Draft Button](./img/2/form_2025-08-21_19-33-35.png)
+
+![Draft Data Prompt](./img/2/form_2025-08-21_19-34-52.png)
+
+When enabled, a draft button appears at the bottom of the form, allowing users to save incomplete form data for later completion. Upon reopening the form, users receive a prompt to restore previously saved draft data.
+:::tip
+Enabling this feature adds a draft event to the event panel for handling post-draft actions.
+:::
+
+### Display re-entry button {#display-re-entry-button}
+
+![Re-entry Button](./img/2/form_2025-08-21_19-39-31.png)
+
+When enabled, successful form submission displays a confirmation page with a "Re-entry" button, allowing users to immediately create another record using the same form.
+
+### Display approval records {#display-approval-records}
+
+![Approval Records](./img/2/form_2025-08-21_19-45-18.png)
+
+When enabled, forms associated with approval workflows display approval history and status information in a side panel.
+
+:::tip Note
+Approval records include [Approval Prediction Results](../approval-workflow/approval-workflow-basic-configuration#prediction-feature) by default.
+
+Workflows with disabled prediction features will not display prediction results.
+:::
+
+### Display operation records {#display-operation-records}
+
+![Operation Records](./img/2/form_2025-08-21_19-47-29.png)
+
+When enabled, displays a comprehensive log of all operations performed on the record in a side panel.
+
+### Display entry result feedback {#display-entry-result-feedback}
+
+![Entry Result Feedback](./img/2/form_2025-08-21_19-49-09.png)
+
+When enabled, provides users with detailed feedback about the success or failure of their data entry operations.
+
+## Batch edit form configuration {#batch-edit-form-configuration}
+![Batch Edit Form Display](./img/2/form_2025-08-22_11-48-37.gif)
+
+Batch edit forms enable simultaneous modification of multiple fields across multiple data table records. After making changes and submitting, all selected records are updated in the underlying data table model.
+
+To add a batch edit form, use the page visual editor to drag the `Batch Edit Form` component onto the page, then select the target data model in the data source configuration.
+
+![Batch Edit Form](./img/2/form_2025-08-22_13-54-43.png)
+
+:::warning Note
+Batch edit forms are designed specifically for bulk data modification and only support data table models as data sources. They must be used in conjunction with view components like tables or kanban boards for record selection.
+:::
+
+![Batch Edit form-components](./img/2/form_2025-08-22_11-35-54.png)
+
+By default, batch edit forms display all model fields except read-only and sub-table fields. Field visibility can be customized through the "Display Fields" module in the right configuration panel.
+
+:::tip Tip
+Batch edit forms only support data table model fields; extended variables are not available.
+
+Field configuration, business rules, and layout controls function identically to standard form components.
+
+QR code layout controls are not supported in batch edit forms.
+:::
+
+## Batch edit form events and interaction {#batch-edit-form-events-and-interaction}
+Batch edit forms require a data source to function properly. Without selected records, data submission is not possible.
+
+![Batch Edit Form Events and Interaction](./img/2/form_2025-08-22_11-44-59.png)
+
+The example above demonstrates the integration of tables with batch edit forms. The table's event configuration must provide selected record data to the batch edit form component.
+
+## Data correction configuration {#data-correction-configuration}
+Data correction components provide simplified bulk editing capabilities for specific field types. While less comprehensive than batch edit forms, they excel at making uniform adjustments to individual fields across multiple records without complex operations.
+
+![Data Correction](./img/2/form_2025-08-22_17-58-34.png)
+
+To add data correction functionality, drag the `Data Correction` component from the component library onto the page, then select the target data model in the configuration panel.
+
+![Data Correction Configuration](./img/2/form_2025-08-22_18-07-56.png)
+Access the field selection interface through the "Editable Fields" panel to configure which fields are available for correction.
+
+:::warning Note
+
+Data correction supports the following data types: single-line text, multi-line text, numbers, amounts, percentages, dates, times, date-times, ID numbers, phone numbers, license plates, checkboxes, option group radio, option group multi-select, dropdown radio, dropdown multi-select, member radio, member multi-select, department radio, department multi-select.
+:::
+
+![Data Correction](./img/2/form_2025-08-23_09-56-34.gif)
+
+Data correction offers different processing methods tailored to each data type:
+- **Single-line text**: set to, delete, append, clear, and other text manipulation operations
+- **Date-time**: comprehensive date arithmetic including add/subtract operations for years, months, weeks, days, hours, minutes, seconds, plus set to and clear operations
+
+Refer to the data types documentation for complete operation details.
+
+## Data correction usage {#data-correction-usage}
+![Data Correction Usage](./img/2/form_2025-08-22_18-14-30.png)
+
+Data correction requires integration with view components like tables or kanban boards for record selection. Configure the table's "After Row Selection" event to pass selected records to the data correction component.
+
+![Data Correction Usage](./img/2/form_2025-08-22_18-19-50.gif)
+
+Once configured, select the desired records in the table component, apply corrections through the data correction interface, and submit to apply changes to all selected records.

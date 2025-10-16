@@ -75,17 +75,17 @@ Applications provide different functional entry points and navigation interfaces
 
 Click the dropdown arrow icon in the upper left corner of the IDE to select and switch between portals.
 
-## Personal center {#personal-center}
+## Profile {#profile}
 Developers can modify their personal nickname, account credentials, and password within the personal center.
 
-![Open Personal Center](./img/ide/open-personal-center.gif "Open Personal Center")
+![Open Profile](./img/ide/open-profile.gif "Open Profile")
 
-Click the dropdown arrow icon in the lower left corner of the IDE, then select `Application Basic Information` to access the personal center.
+Click the dropdown arrow icon in the lower left corner of the IDE, then select `Profile` to access the personal center.
 
 ## Language switching {#language-switching}
 Click the language indicator in the lower left corner of the IDE (English, Simplified Chinese, etc.) to switch the interface language.
 
-![Switch Interface Display Language](./img/ide/switch-interface-display-language.png "Switch Interface Display Language")
+![Switch Language](./img/ide/switch-interface-display-language.gif "Switch Language")
 
 Multi-language support is one of the core elements provided by the JitAi development framework, utilized not only for IDE internationalization but also for internationalizing any other applications built on the platform.
 

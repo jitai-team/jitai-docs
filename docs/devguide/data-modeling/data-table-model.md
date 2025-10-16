@@ -4,53 +4,55 @@ slug: data-table-model
 ---
 
 # Creating Data Tables {#data-table-model}
-Data table models are the data foundation of JitAi applications. Each data table model corresponds to a table in the database, used to define the structure, types, and constraint rules of business data. In JitAi, you can create data table models in two ways: first, create a brand new data table model, suitable for designing business data structures from scratch; second, quickly generate models based on existing database tables, convenient for managing and extending existing data tables.
+Data table models constitute the foundational data layer for JitAi applications. Each data table model corresponds directly to a database table, defining the structure, data types, and constraint rules for business data. JitAi offers two distinct approaches for creating data table models: developing new data table models from scratch, which proves ideal for ground-up business data structure design, or generating models from existing database tables, which streamlines the management and extension of legacy data architectures.
 
-## Data Table Creation Entry {#data-table-create-entry}
-![Model Creation Configuration](./img/model-creation-configuration.png)
+## Data table creation entry {#data-table-create-entry}
+![Model Creation Configuration](./img/model-creation-configuration.png "Model Creation Configuration")
 
-In the element tree of the development area, find `Data Models`, click the `+` button on the right side, select `Data Table`, and the `Create New Model` dialog will pop up.
+Navigate to `Data Models` within the development area's element tree, click the `+` button, and select `Data Table Model` to launch the `Create Element > Data Table Model` dialog.
 
-![Create New Data Model](./img/create-data-model.png)
+![Create New Data Model](./img/create-data-model.png "Create New Data Model")
 
-Developers fill in the model name in the `Create New Model` dialog, select `Create New Data Table Model` as the creation method. The database and data table names will be automatically generated, or you can select existing database elements and edit the database table name.
+Within the `Create Element > Data Table Model` dialog, specify the model name and select `Create New Data Table Model` as the creation method. The system automatically generates database and table names, although you can select existing database elements and customize the table name according to your requirements.
 
 :::tip 
-For creating models based on existing tables, refer to [Creating Data Table Elements from Existing Tables](./create-data-table-from-existing-tables.md)
+For creating models from existing tables, see [Creating Data Table Elements from Existing Tables](./create-data-table-from-existing-tables.md)
 :::
- 
+ 
 
-## Designing Table Fields and Data Types {#design-table-fields-and-data-types}
-JitAi applications have various data types such as `Single Line Text`, `Multi-line Text`, `Rich Text`, `Number`, `Amount`, etc., which can be used as database table fields.
+## Designing table fields and data types {#design-table-fields-and-data-types}
+JitAi applications provide comprehensive support for various data types including `Single-line Text`, `Multi-line Text`, `Rich Text`, `Number`, `Currency`, and numerous others that function as database table fields.
 
-![Field Configuration](./img/field-configuration.png)
+![Field Configuration](./img/field-configuration.png "Field Configuration")
 
-When creating data tables, appropriate field types should be selected based on specific business requirements.
+When architecting data tables, select appropriate field types aligned with your specific business requirements.
 
-Each data type has its own configuration options. Taking **Single Line Text** as an example:
+Each data type presents distinct configuration options. Consider **Single-line Text** as an exemplar:
 
-![Single Line Text Configuration](./img/single-line-text-configuration.png)
-The single-line text data type is widely used and is one of the most basic and commonly used field types in data modeling. Its main characteristics include: supporting only single-line text content without line breaks, automatically generating field names (such as `f5f6`) for convenient database operations, and storing a maximum of 255 characters by default. This field type supports various personalized settings and constraint conditions, allowing you to set placeholder text, limit maximum text length, ensure field value uniqueness through uniqueness control, and support creating database indexes to optimize query performance. In addition, single-line text fields also support setting calculation formulas for dynamic calculations and preset default values, meeting flexible requirements in different business scenarios.
+![Single-line Text Configuration](./img/single-line-text-configuration.png "Single-line Text Configuration")
 
-Single-line text fields are suitable for storing the following types of data: names, usernames, titles, brief descriptions, and other short text information that does not require line breaks.
+The single-line text data type enjoys widespread adoption and represents one of the most fundamental field types in data modeling. Key characteristics encompass: exclusive support for single-line text content without line breaks, automatic field name generation (e.g., `f5f6`) for streamlined database operations, and a default storage capacity of 255 characters. This field type accommodates extensive customization options and constraints, empowering you to configure placeholder text, enforce maximum text length restrictions, ensure field value uniqueness through uniqueness constraints, and establish database indexes for enhanced query performance. Furthermore, single-line text fields support calculation formulas for dynamic computations and default value configurations, addressing diverse requirements across varied business scenarios.
 
-## Configuring Table Indexes for Query Optimization {#configure-table-index-optimization}
-In advanced configuration, you can add `Multi-column Composite Unique` and `Composite Index` to data tables to optimize query performance and ensure data integrity.
+Single-line text fields prove optimal for storing: names, usernames, titles, brief descriptions, and other concise textual information that doesn't necessitate line breaks.
 
-![Composite Index](./img/joint-index.png)
-### Multi-column Composite Unique {#multi-column-composite-unique}
-Create composite unique constraints by selecting multiple fields to ensure that the combined values of these fields are unique throughout the table. For example, you can set the `Product Name` and `Specification` fields as composite unique to prevent duplicate products with the same specifications.
+## Configuring table indexes for query optimization {#configure-table-index-optimization}
+Advanced configuration capabilities enable you to incorporate `Multi-column Unique Indexes` and `Composite Indexes` into data tables for optimizing query performance and ensuring data integrity.
 
-### Composite Index {#composite-index}
-Create composite indexes by selecting multiple fields. Filtering based on these fields simultaneously can significantly improve query performance.
+![Composite Index](./img/joint-index.png "Composite Index")
+
+### Multi-column composite unique constraints {#multi-column-composite-unique}
+Establish composite unique constraints by selecting multiple fields to ensure the combined values maintain uniqueness across the entire table. For example, configuring `Product Name` and `Specification` fields as composite unique prevents duplicate products with identical specifications.
+
+### Composite indexes {#composite-index}
+Construct composite indexes by selecting multiple fields. Queries that filter based on these fields simultaneously will experience substantially improved performance.
 
 :::warning Warning
-Proper index configuration can effectively improve query speed, but too many indexes will affect data write performance. Balance is needed according to actual business scenarios.
+While proper index configuration effectively enhances query speed, excessive indexing can adversely impact data write performance. Maintain an optimal balance based on your specific business scenarios.
 :::
 
-## Source Code Mode {#source-code-mode}
-In addition to visual configuration, it also supports directly modifying model source code in code mode, providing greater flexibility for advanced developers.
+## Source code mode {#source-code-mode}
+Beyond visual configuration capabilities, the platform provides direct modification of model source code within code mode, delivering enhanced flexibility for advanced developers.
 
-![View Source Code](./img/view-source-code.png)
+![View Source Code](./img/view-source-code.png "View Source Code")
 
-Switching to source code mode, you can see the entire model's source code including model definitions, model functions, etc.
+Within source code mode, you can access comprehensive model source code, including model definitions, model functions, and additional components.

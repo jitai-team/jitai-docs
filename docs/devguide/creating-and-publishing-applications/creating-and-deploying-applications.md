@@ -24,7 +24,7 @@ Inheritance enables an application to acquire the functional modules of the inhe
 
 ![Add Application Template](./img/1/add-application-template.gif "Add Application Template")
 
-After expanding the `Inherited Apps` collapsible panel and clicking the `Add Application Template` button, the application template list opens. Developers can browse publicly available or organization-internal application templates in the list, and click on cards to add them to the inheritance list. Added application templates can be removed by clicking the `Remove` button, though the JIT Development Framework does not support removal operations.
+After expanding the `Inherited Applications` collapsible panel and clicking the `Add Application Template` button, the application template list opens. Developers can browse publicly available or organization-internal application templates in the list, and click on cards to add them to the inheritance list. Added application templates can be removed by clicking the `Remove` button, though the JIT Development Framework does not support removal operations.
 
 :::tip
 
@@ -36,14 +36,14 @@ In JitAi development tools, developers can both develop new elements and view el
 
 ![Override Inherited Elements](./img/1/override-inherited-elements.gif "Override Inherited Elements")
 
-Developers can click the `Show Inherited Applications` button to locate elements from inherited applications at the bottom of the element directory tree. Clicking on an element opens the element editor on the right. Inherited elements do not support direct editing, but can be overridden by clicking the `Override` button in the upper right corner of the editor.
+Developers can click the `Show Inherited Elements` button to locate elements from inherited applications at the bottom of the element directory tree. Clicking on an element opens the element editor on the right. Inherited elements do not support direct editing, but can be overridden by clicking the `Override` button in the upper right corner of the editor.
 
 ### Duplicating applications {#duplicating-applications}
 The inheritance approach only allows overriding elements of specified parent applications. If you want to modify an application based on source code without affecting the original application, you can duplicate the application.
 
 The duplicated application is a completely new application. Developers need to provide a new application name and ID, and any modifications to the duplicate will not affect the original application.
 
-![Duplicate Application](./img/1/create-application-copy.png "Duplicate Application")
+![Duplicate Application](./img/1/create-application-copy.gif "Duplicate Application")
 
 Developers can sequentially click the `More` and `Duplicate` buttons to open the duplicate application dialog. After providing a new application name and ID, clicking the `Confirm` button completes the duplication process.
 

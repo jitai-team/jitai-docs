@@ -24,7 +24,7 @@ JitAi会为每个新创建的应用创建三个内置的门户：开发者门户
 ### 管理者门户 {#manager-portal} 
 拥有应用管理员角色的用户可以进入管理者门户对应用进行管理，比如管理组织架构、组织架构角色及其成员。开发者也可以对管理者门户进行修改。
 
-每个应用在创建时会自动创建一个管理员账号，初始用户名：`admin123`，初始密码：`admin123`，建议开发者登录后在个人[基本信息](/docs/devguide/development-tool-and-publish-service/visual-development-tool#personal-center)中修改。
+每个应用在创建时会自动创建一个管理员账号，初始用户名：`admin123`，初始密码：`admin123`，建议开发者登录后在个人[基本信息](/docs/devguide/development-tool-and-publish-service/visual-development-tool#profile)中修改。
 
 :::tip 组织架构角色与应用角色
 `组织架构角色`与用户在企业组织架构中的岗位相对应，而JitAi应用中的的`应用角色`则代表用户在应用系统中的权限。组织架构角色与应用角色类似但并无严格对照关系，一个普通员工也可以被赋予应用管理员的角色，管理一个应用系统。
@@ -159,8 +159,8 @@ SSR(Server-Side Rendering，服务端渲染)门户用于提升首屏加载性能
 ### 设置在门户列表中的顺序 {#portal-ordering}
 当应用包含多个门户时，开发者可以在`布局设计`中设置顺序值，从而调整每个门户在门户切换菜单中的显示顺序。
 
-## 启用或关闭常用功能入口 {#managing-common-function-entries}
-每个新建的门户默认都会有一些常用功能入口：发起申请、待办中心、消息中心、个人中心、新建功能（支持简易模式下新建功能模块，开发能力弱于[可视化开发工具](/docs/devguide/development-tool-and-publish-service/visual-development-tool)）。以上入口支持在`布局设计`中启用或禁用。
+## 启用或关闭常用功能入口 {#managing-common-features-entries}
+每个新建的门户默认都会有一些常用功能入口：发起申请、待办中心、新建功能（支持简易模式下新建功能模块，开发能力弱于[可视化开发工具](/docs/devguide/development-tool-and-publish-service/visual-development-tool)）。以上入口支持在`布局设计`中启用或禁用。
 
 ![门户常用功能入口](./imgs/portal-common-function-entry.png)
 
@@ -170,15 +170,15 @@ SSR(Server-Side Rendering，服务端渲染)门户用于提升首屏加载性能
 
 上图是启用所有常用功能入口后的效果。
 
-### 发起申请/待办/消息中心入口 {#application-and-workflow-entries}
-当开发者开启`发起申请`+`待办中心`+`消息中心`入口时，用户可以在访问门户时发起审批流程、查看待办审批事项、查看消息通知。
+### 发起申请/待办 {#application-and-workflow-entries}
+当开发者开启`发起申请`+`待办中心`入口时，用户可以在访问门户时发起审批流程、查看待办审批事项。
 
-![发起申请/待办/消息中心入口](./imgs/initiate-application-todo-message-center-entry.gif)
+![发起申请/待办](./imgs/initiate-application-todo-message-center-entry.gif)
 
-### 个人中心入口 {#personal-center-entry}
+### 个人中心入口 {#profile-entry}
 当开发者开启`个人中心`入口时，用户在访问门户时可以查看个人基本信息以及修改昵称、密码，也可以切换[组织架构](/docs/devguide/user-and-permission/organization)、退出登录。
 
-![个人中心功能](./imgs/personal-center-functions.gif)
+![个人中心功能](./imgs/profile-functions.gif)
 
 ## 在门户中集成AI助理 {#integrating-ai-assistants}
 JitAi支持在门户中直接集成[AI助理](/docs/devguide/ai-assistant/create-ai-assistant)，用户在访问门户时可以与AI助理进行交互。这里做概括性介绍，详细内容请参考[在门户中集成AI助理](/docs/devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals)。

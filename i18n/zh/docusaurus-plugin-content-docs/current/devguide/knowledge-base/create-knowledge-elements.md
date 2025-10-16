@@ -48,23 +48,23 @@ graph TB
     subgraph "应用层"
         A[知识库管理器]
     end
-    
+
     subgraph "服务层"
         B[文档处理器]
         C[向量操作服务]
         D[检索增强引擎]
     end
-    
+
     subgraph "模型层"
         E[向量模型<br/>BGE-M3]
         F[重排模型<br/>BCE-Reranker]
     end
-    
+
     subgraph "存储层"
         G[向量数据库<br/>语义存储]
         H[关系数据库<br/>元数据存储]
     end
-    
+
     A --> B
     A --> C
     A --> D
@@ -98,13 +98,13 @@ flowchart LR
     E --> F[向量化]
     F --> G[存储索引]
     G --> H[检索就绪]
-    
+
     subgraph "处理优化"
         I[批量操作]
         J[并行处理]
         K[质量控制]
     end
-    
+
     F -.-> I
     G -.-> J
     E -.-> K
@@ -120,7 +120,7 @@ sequenceDiagram
     participant F as 结果过滤
     participant R as 重排模型
     participant A as 结果组装
-    
+
     U->>V: 查询文本
     V->>D: 查询向量
     D->>F: TopK候选结果
@@ -131,4 +131,4 @@ sequenceDiagram
 
 用户查询经过向量化后，系统在向量空间中检索出TopK个语义相似的候选文档，通过相似度阈值过滤低质量结果，最后使用重排模型基于查询上下文进行精确排序，返回TopN个最相关的知识片段。
 
-> 关于检索参数配置和在后端可视化编程中的具体使用方法，请参见[使用知识库进行全文与语义检索](./full-text-and-semantic-search)。
+> 关于检索参数配置和在后端可视化编程中的具体使用方法，请参见[使用知识库进行全文与语义检索](./keyword-and-semantic-search)。

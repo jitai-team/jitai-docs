@@ -1,170 +1,171 @@
 ---
 sidebar_position: 6
 slug: filter-components
+title: Filter Components
 ---
 
-# 筛选器组件
-筛选器是一种广泛使用的数据处理工具，主要用于从大量数据中筛选出满足特定条件的数据子集。允许用户自定义搜索参数，例如选择特定日期范围、价格区间或类别等，以展示符合用户需求的结果。
+# Filter Components
+Filters are essential data processing tools designed to extract specific data subsets from large datasets based on defined criteria. They enable users to customize search parameters—such as date ranges, price intervals, or categories—to display results that match their requirements.
 
-JitAi 提供了模型筛选器，可以针对特定的数据模型进行筛选。还提供了通用筛选器，在使用的时候再配置模型，可以做到一个筛选器对多个模型进行同时筛选。
+JitAi offers two types of filters: model filters that target specific data models, and universal filters that can be configured at runtime to filter multiple models simultaneously.
 
-## 模型筛选器
-在页面可视化编辑器中点击“插入组件”，将“模型筛选器”组件拖拽到页面中。在数据源配置中选择数据模型，点击“确定”。
+## Model filters {#model-filters}
+In the page visual editor, click `Insert Component` and drag the `Model Filter` component onto the page. Select a data model in the data source configuration and click `Confirm`.
 
-![模型筛选器](./img/6/filter_2025-08-22_14-19-08.png)
+![Model Filter](./img/6/filter_2025-08-22_14-19-08.png)
 
-模型筛选器有三种操作模式，分别为：简单筛选、复杂筛选和自由筛选；默认模式为简单筛选。（移动端暂不支持自由筛选）
+Model filters support three operation modes: simple filter, complex filter, and free filter. The default mode is simple filter. Note that free filter mode is not currently supported on mobile devices.
 
-### 简单筛选 {#simple-filter}
-在简单筛选模式下，可以对各类型数据进行分组并以平铺的形式呈现在页面中。用户无需进行繁琐的输入操作，只需轻松地通过点击预设的各类分组标签，即可实现对海量信息的精准筛选与定位。
+### Simple filter {#simple-filter}
+Simple filter mode organizes various data types into groups and displays them in a tiled layout. Users can achieve precise data filtering without complex input operations—simply clicking on preset group tags enables efficient navigation through large datasets.
 
-![筛选分组](./img/6/filter_2025-08-22_14-28-28.png)
+![Filter Grouping](./img/6/filter_2025-08-22_14-28-28.png)
 
-在简单筛选中，会对部分常用数据类型自动添加筛选字段，并提供内置的推荐筛选分组，如数字/金额的数值型分组，百分比的区间分组，选项组/下拉框的选项组分组等。
+Simple filters automatically generate filter fields for common data types, providing built-in recommended groupings such as numeric ranges for numbers and amounts, interval groups for percentages, and option groups for selection fields.
 
-![筛选字段](./img/6/filter_2025-08-22_14-33-12.png)
+![Filter Fields](./img/6/filter_2025-08-22_14-33-12.png)
 
-同时在此基础上，通过点击“已显示字段”来新增或删除筛选字段，再针对每个筛选字段配置不同的字段属性、分组等。
+Building on this foundation, you can customize filter fields by clicking "Displayed Fields" to add or remove fields, then configure individual field attributes and groupings.
 
-![筛选字段配置面板](./img/6/filter_2025-08-22_14-35-07.png)
+![Filter Field Configuration Panel](./img/6/filter_2025-08-22_14-35-07.png)
 
-在页面配置区点击对应字段，会打开右侧字段配置面板，在这个面板可以对筛选字段进行更一步的配置。注意：每个筛选字段之间的逻辑关系为“与”的连接。
+Clicking on any field in the page configuration area opens the field configuration panel on the right, where you can fine-tune filter settings. Note that filter fields are connected using AND logic by default.
 
-#### 基本配置
-**支持多选**
+#### Basic configuration
+**Multiple selection support**
 
-![筛选字段支持多选](./img/6/filter_2025-08-22_14-41-36.png)
+![Filter Field Support Multiple Selection](./img/6/filter_2025-08-22_14-41-36.png)
 
-    若勾选此项，该筛选字段在筛选的时候支持同时选中多个选项，每个选项间的逻辑关系为“或”的连接，符合其中一个选项的就会被筛选到。
+When enabled, the filter field allows multiple option selection simultaneously. Options are connected using OR logic, meaning data matching any selected option will be included in results.
 
-若未勾选此项，那么该筛选字段在筛选的时候只能选择一个选项。
+When disabled, the filter field restricts selection to a single option.
 
-**显示“全部”选项**
+**"All" option display**
 
-    ![筛选字段显示“全部”选项](./img/6/filter_2025-08-22_14-42-33.png)
+![Filter Field Display "All" Option](./img/6/filter_2025-08-22_14-42-33.png)
 
-    若勾选此项，在选项组中默认展示“全部”选项，且与其他选项之间互斥。
+When enabled, displays an "All" option by default in the option group, which is mutually exclusive with other selections.
 
-**显示标题**
+**Title display**
 
-    ![筛选字段显示标题](./img/6/filter_2025-08-22_14-49-01.png)
+![Filter Field Display Title](./img/6/filter_2025-08-22_14-49-01.png)
 
-    若未勾选此项，则筛选字段的标题将不显示。
+When disabled, the filter field title is hidden from the interface.
 
-**设置字段别名**
+**Field alias configuration**
 
-    ![筛选字段设置字段别名](./img/6/filter_2025-08-22_14-50-27.png)
+![Filter Field Set Field Alias](./img/6/filter_2025-08-22_14-50-27.png)
 
-    若勾选此项，在下方会出现Input输入框，可输入字段别名。（注意：若不勾选“显示标题”，则无法设置字段别名）
+When enabled, displays an input field for entering a custom field alias. Note that "Title display" must be enabled to use this feature.
 
-#### 占比
-![筛选字段占比](./img/6/filter_2025-08-22_14-54-55.png)
+#### Width proportion
+![Filter Field Proportion](./img/6/filter_2025-08-22_14-54-55.png)
 
-在页面配置区可以对每个筛选字段通过拖拉的形式改变它的宽度，也可以在右侧配置区点击“占比”下的选项，对它设置预设的几个宽度比例。
+Adjust filter field widths by dragging in the page configuration area, or select from preset width ratios in the "Proportion" section of the right configuration panel.
 
-#### 分组设置
-![筛选字段分组](./img/6/filter_2025-08-22_14-56-18.png)
+#### Group settings
+![Filter Field Grouping](./img/6/filter_2025-08-22_14-56-18.png)
 
-对数据表模型的数据进行精细化分组，无论是处理离散型还是连续型变量，都能够实现数据的有序分类与整合。预设一些分组，如数字/金额的数值型分组，百分比的区间分组，选项组/下拉框的选项组分组，从而快速实现数据筛选。
+Configure fine-grained data groupings for both discrete and continuous variables, enabling systematic data classification and organization. Predefined groups include numeric ranges for numbers and amounts, interval groups for percentages, and option groups for selection fields.
 
-点击“设置分组”会打开弹窗，对分组每个选项进行设置。分组包含三个要素：
+Click "Set Groups" to open the configuration dialog for defining group options. Each group consists of three components:
 
--   分组名称：直接呈现在页面上的选项名，方便用户查看。
--   筛选方式： 针对每个分组设置指定的筛选方式。
--   筛选范围：设定分组在指定筛选方式下的范围，支持常量赋值和变量赋值。
+-   **Group name**: The display label shown to users on the interface.
+-   **Filter method**: The specific filtering logic applied to the group.
+-   **Filter range**: The criteria range for the group, supporting both constant and variable assignments.
 
-:::tip 提示
-筛选方式有很多种，如：包含任意一个、包含、不包含任意一个、不包含、等于任意一个、等于、不等于任意一个、不等于、开头为、结尾为、在范围内、\>、\<、\>=、\<=、属于、不属于、为空、不为空、选中、不选中等。但是每一种数据类型都有自己对应的筛选方法，并不是都会用到，具体要看数据类型详细介绍。
+:::tip Tip
+Numerous filter methods are available, including: contains any, contains, does not contain any, does not contain, equals any, equals, does not equal any, does not equal, starts with, ends with, in range, greater than, less than, great than or equal to, less than or equal to, belongs to, does not belong to, is empty, is not empty, selected, not selected, and more. Each data type supports specific filter methods—not all methods apply to every type. Consult the detailed data type documentation for type-specific filtering options.
 :::
 
-#### 默认选中分组
-预设选中状态，可以选择已有选项组中的某一个选项作为默认的筛选选项。
+#### Default selected group
+Configure the initial selection state by choosing one option from existing groups as the default filter criteria.
 
-#### 支持自定义筛选
-![自定义筛选](./img/6/filter_2025-08-22_15-28-48.png)
+#### Custom filtering support
+![Custom Filtering](./img/6/filter_2025-08-22_15-28-48.png)
 
-若勾选此项，可以通过选定的默认筛选方式对该字段进行自定义筛选。
+When enabled, allows users to apply custom filtering logic to the field using the configured default filter method.
 
-#### 移动端差异
-![移动端差异](./img/6/filter_2025-08-22_16-07-52.gif)
+#### Mobile platform differences
+![Mobile Differences](./img/6/filter_2025-08-22_16-07-52.gif)
 
-移动端下的简单筛选与 PC 端有些差异：
+Simple filtering on mobile devices differs from desktop in several ways:
 
--   筛选配置项顺序调整：在右侧配置区，选中某个字段上下拖动进行排序
--   风格：移动端默认列表风格，最多展示三个筛选项，点击右侧图标可查看更多
--   排列方式：当选择“标签”风格时，可选择左右排列或上下排列
+-   **Configuration ordering**: Drag fields up or down in the right configuration area to adjust display order
+-   **Display style**: Defaults to list style, showing a maximum of three filter items with an expand icon for additional options
+-   **Layout arrangement**: When using "Tag" style, choose between horizontal or vertical arrangement
 
-### 复杂筛选 {#complex-filter}
-![复杂筛选](./img/6/filter_2025-08-22_16-16-37.png)
+### Complex filter {#complex-filter}
+![Complex Filter](./img/6/filter_2025-08-22_16-16-37.png)
 
-复杂筛选相对于简单筛选而言灵活度更高，只需确定筛选字段，筛选方式由使用者自由选择，根据字段自身特性，可选择不同的筛选方式
+Complex filtering provides greater flexibility than simple filtering by allowing users to define filter fields while maintaining full control over filtering methods. Users can select appropriate filter methods based on each field's characteristics and data type.
 
-复杂筛选新增筛选字段方式与简单筛选相同，也是通过勾选字段的方式，只是会生成每种数据类型相应的自定义筛选，且都会内置一种常用筛选方式作为默认方法
+Filter field addition follows the same process as simple filtering—selecting fields through checkboxes—but generates customizable filters for each data type, each with a sensible default filter method.
 
-![配置字段别名](./img/6/filter_2025-08-22_16-27-23.png)
+![Configure Field Alias](./img/6/filter_2025-08-22_16-27-23.png)
 
-在复杂筛选的筛选字段配置中也只会提供最简单的“设置字段别名”，其他具体如何筛选由用户在实际使用时灵活改变
+Complex filter field configuration focuses on essential settings, providing only "Field Alias" configuration. Users retain full flexibility to modify specific filtering methods during runtime based on their needs.
 
-### 自由筛选 {#free-filter}
-![自由筛选](./img/6/filter_2025-08-22_16-29-53.gif)
+### Free filter {#free-filter}
+![Free Filter](./img/6/filter_2025-08-22_16-29-53.gif)
 
-自由筛选是一种完全开放给用户自己配置的操作模式。它在复杂筛选的基础上放开了对于筛选字段的限制，用户可以任意选择筛选字段，同时基于字段选择想要的筛选条件，是灵活度最高的筛选模式
+Free filtering represents the most flexible operation mode, providing complete user control over filter configuration. Building upon complex filtering capabilities, it removes all field restrictions, enabling users to dynamically select both filter fields and conditions. This mode offers maximum adaptability for diverse filtering requirements.
 
-### 布局设置 {#layout-settings}
-![布局设置](./img/6/filter_2025-08-22_16-32-54.gif)
+### Layout settings {#layout-settings}
+![Layout Settings](./img/6/filter_2025-08-22_16-32-54.gif)
 
-筛选器（不包括自由筛选模式）可以通过“快捷操作”中的“快速布局”，可以对筛选器的配置项进行一行一列/一行两列/一行三列/一行四列布局。当然，用户也可以在页面配置区进行自行拖拽布局。
+Filters (except free filter mode) support rapid layout configuration through "Quick Layout" in the "Quick Operations" menu. Choose from preset arrangements: single column, two columns, three columns, or four columns per row. Alternatively, customize layouts by dragging elements within the page configuration area.
 
-:::tip 提示
-简单筛选模式下，还有一个“首次加载进行筛选”。勾选后，用户在打开页面时，会自动进行筛选。
+:::tip Tip
+Simple filter mode includes a "Filter on First Load" option. When enabled, the filter automatically executes upon page load, immediately displaying filtered results.
 :::
 
-### 筛选器的使用 {#filter-usage}
-![筛选器事件](./img/6/filter_2025-08-22_16-51-09.gif)
+### Filter usage {#filter-usage}
+![Filter Events](./img/6/filter_2025-08-22_16-51-09.gif)
 
-在页面配置区点击筛选器右上角“事件”按钮，打开事件配置面板。在“查询后”事件中，用户可以获取筛选后的值，再将这个值传递给其他组件实现筛选。
+Access the event configuration panel by clicking the "Events" button in the filter's upper-right corner within the page configuration area. The "After Query" event captures filtered values, which can then be passed to other components to implement filtering functionality.
 
-:::warning 注意
-筛选器必须配置“查询后”事件，将筛选后的值传递给其他组件实现筛选。
+:::warning Note
+Filters require "After Query" event configuration to pass filtered values to other components for filtering implementation.
 
-筛选器通过“查询后”得到的结果是个 [Q 表达式对象](../../reference/framework/JitORM/TQL)，将该表达式对象传递给其他组件，其他组件会根据这个表达式对象进行筛选
+The "After Query" event returns a [Q Expression Object](../../reference/framework/JitORM/TQL). Other components use this expression object to apply the specified filtering criteria.
 :::
 
-## 通用筛选器
-通用筛选器相较于模型筛选器，最大的区别就是模型筛选器必须指定模型，而通用筛选器在配置的时候无需使用模型
+## Universal filters {#universal-filters}
+The key distinction between universal and model filters lies in their configuration approach: model filters require a predefined data model, while universal filters can be configured without specifying a model upfront, offering greater flexibility for dynamic filtering scenarios.
 
-![通用筛选器](./img/6/filter_2025-08-22_17-04-43.png)
+![Universal Filter](./img/6/filter_2025-08-22_17-04-43.png)
 
-### 筛选字段配置 {#filter-field-configuration}
-通用筛选器默认不显示配置项，需要用户手动添加对应的筛选字段。添加后，在页面配置区点击相应的筛选字段，即可在右侧的配置区域看到该筛选字段的配置项。
+### Filter field configuration {#filter-field-configuration}
+Universal filters start with a blank configuration, requiring manual addition of filter fields. Once added, click on any filter field in the page configuration area to access its configuration options in the right panel.
 
-![筛选字段配置](./img/6/filter_2025-08-23_09-36-30.png)
+![Filter Field Configuration](./img/6/filter_2025-08-23_09-36-30.png)
 
-:::tip 提示
-通用筛选器中筛选字段的配置项和模型筛选器中的基本一致
+:::tip Tip
+Universal filter field configurations mirror those of model filters with one key addition.
 
-由于通用筛选器没有模型，因此每个筛选字段会有"参数配置"选项。例如：单行文本可以限制字符长度，数字类型可以设置小数位数、单位等，具体参考[数据类型](../../reference/framework/JitORM/data-types#type-specific-parameters)。
+Since universal filters operate without predefined models, each filter field includes "Parameter Configuration" options. Examples include character length limits for text fields, decimal precision and units for numeric fields, and more. Consult [Data Types](../../reference/framework/JitORM/data-types#type-specific-parameters) for comprehensive parameter details.
 :::
 
-![筛选配置](./img/6/filter_2025-08-23_09-37-21.png)
+![Filter Configuration](./img/6/filter_2025-08-23_09-37-21.png)
 
-### 快速布局 {#quick-layout}
-可以通过“快捷操作”中的“快速布局”，可以对筛选器的配置项进行一行一列/一行两列/一行三列/一行四列布局。当然，用户也可以在页面配置区进行自行拖拽布局。
+### Quick layout {#quick-layout}
+Utilize "Quick Layout" in the "Quick Operations" menu to arrange filter elements in preset configurations: single column, two columns, three columns, or four columns per row. Manual layout customization is also available through drag-and-drop operations in the page configuration area.
 
-### 显示 查询/重置 按钮 {#show-query-reset-buttons}
-筛选器右侧出现查询/重置按钮，取消勾选则不显示这两个按钮。点击查询/重置按钮均会触发"查询后"事件方法。
+### Query/reset button display {#show-query-reset-buttons}
+Query and Reset buttons are displayed on the filter's right side by default. Disable this option to hide both buttons. Both Query and Reset button interactions trigger the "After Query" event.
 
-### 条件变更后触发查询 {#condition-change-trigger-query}
-默认情况下，当筛选字段的值发生变更是不会触发“查询后”事件。当用户勾选“条件变更后触发查询”复选框后，才会触发“查询后”事件。
+### Auto-query on condition change {#condition-change-trigger-query}
+By default, filter field value changes do not automatically trigger the "After Query" event. Enable "Trigger Query After Condition Change" to automatically execute queries when filter conditions are modified.
 
-### 首次加载进行筛选 {#first-load-filter}
-默认情况下，当首次加载筛选器组件时，会触发“查询后”事件。用户可根据需求选择是否取消此功能。
+### Initial load filtering {#first-load-filter}
+The filter component automatically triggers the "After Query" event upon initial load by default. This behavior can be disabled based on specific application requirements.
 
-:::tip 提示 
-若取消勾选“显示 查询/重置 按钮”，那么需要将“条件变更后触发查询”勾选，否则无法触发“查询后”事件 
+:::tip Tip 
+When "Query/Reset Button Display" is disabled, "Auto-query on Condition Change" must be enabled to ensure the "After Query" event can still be triggered.
 ::: 
 
-### 筛选器的使用 
-![筛选器使用](./img/6/filter_2025-08-22_17-24-54.gif)
+### Filter usage {#universal-filter-usage}
+![Filter Usage](./img/6/filter_2025-08-22_17-24-54.gif)
 
-通用筛选器和模型筛选器一样，需要在事件配置面板中配置“查询后”事件逻辑。注意的是，用户需要先指定数据表模型，调用通用筛选器的“获取筛选条件”方法，然后将筛选后的值传递给其他组件实现筛选。 
+Universal filters require "After Query" event configuration similar to model filters. The key difference is that users must first specify the target data table model, invoke the universal filter's "Get Filter Conditions" method, and then pass the resulting filter criteria to other components for filtering implementation.

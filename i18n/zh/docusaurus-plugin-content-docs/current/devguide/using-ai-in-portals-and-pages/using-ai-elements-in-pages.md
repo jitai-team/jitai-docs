@@ -11,7 +11,7 @@ slug: using-ai-elements-in-pages
 
 ### 可视化调用 {#visual-calling}
 
-在语句中选择`AI助理` → 你要调用的助理 → `运行`，并传入[助理的输入参数](../ai-assistant/ai-assistant-input-output#input-parameters)。
+在语句中选择`AI助理` → 你要调用的助理 → `运行`，并传入[助理的输入参数](../ai-assistant/ai-assistant-input-output#input-args)。
 
 ![AI助理-调用](./img/call-assistant-in-page.png)
 ![AI助理-调用-传参](./img/call-assistant-in-page-input.png)
@@ -55,7 +55,7 @@ this.app.aiagents.ClientManagementAgent.run("查询客户", "张三");
 
 ![大模型-调用](./img/call-llm-in-page.png)
 
-然后设置[输入参数](../ai-llm/llm-input-output#call-llm-input)：调用的模型、提示词及输出格式。
+然后设置[输入参数](../ai-llm/llm-input-output#call-llm-in-pages)：调用的模型、提示词及输出格式。
 
 ![大模型-调用-传参](./img/call-llm-in-page-input.gif)
 

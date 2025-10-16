@@ -37,7 +37,7 @@ const CONTENT = {
       label: 'Community',
       type: 'link',
       isNewTab: true,
-      url: 'https://forum.jit.pro/',
+      url: 'https://forum.jit.pro',
       external: true
     },
   ],
@@ -46,7 +46,7 @@ const CONTENT = {
     label: 'Try Online',
     type: 'button',
     isNewTab: true,
-    url: 'https://demo.jit.pro/',
+    url: 'https://demo.jit.pro',
     external: true
   }
 };

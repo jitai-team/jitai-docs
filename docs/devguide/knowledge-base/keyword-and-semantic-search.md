@@ -1,47 +1,47 @@
 ---
 sidebar_position: 3
-slug: full-text-and-semantic-search
+slug: keyword-and-semantic-search
 ---
 
-# Full-Text and Semantic Search Using Knowledge Base Elements
+# Keyword and Semantic Search Using Knowledge Base Elements
 
-Knowledge bases support two types of retrieval: **keyword search** based on precise keyword matching, and **semantic search** based on vector similarity to understand semantic meaning. JitAi knowledge bases integrate the advantages of both technologies, supporting both precise keyword queries and intelligent semantic understanding retrieval.
+Knowledge bases support two retrieval methods: **keyword search** for precise keyword matching, and **semantic search** for understanding semantic meaning through vector similarity. JitAi knowledge bases combine the strengths of both approaches, enabling precise keyword queries and intelligent semantic understanding.
 
-## Callling AI Knowledge Base in Backend Visual Programming {#call-ai-knowledge-base-in-backend-visual-programming}
-In backend visual programming functions (service functions/model functions/task functions/event functions), knowledge base elements provide 4 methods: "Query", "Add Document", "Delete Document", and "Keyword Query".
+## Calling AI knowledge base in backend visual programming {#call-ai-knowledge-base-in-backend-visual-programming}
+Knowledge base elements in backend visual programming functions (service functions, model functions, task functions, and event functions) provide four methods: Query, Add Document, Delete Document, and Keyword Query.
 
-### Semantic Search {#semantic-search}
-![Semantic Search](./img/query.png)
+### Semantic search {#semantic-search}
+![Semantic search](./img/query.png)
 
-Click "Please Select" at the blank statement in the function panel, select "Knowledge Base - [Knowledge Base Name] - Query" to generate an AI knowledge base query function; you can set query conditions in the input box of the query function.
+In the function panel, click "Please Select" on a blank statement, then choose "Knowledge Base - [Knowledge Base Name] - Query" to create an AI knowledge base query function. You can configure query conditions in the function's input field.
 
-### Adding Document {#adding-document}
-![Adding Document Statement](./img/add-document-statement.png)
+### Adding a document {#adding-document}
+![Adding document statement](./img/add-document-statement.png)
 
-Select "Knowledge Base - [Knowledge Base Name] - Add Document" in the function panel to generate an add document function; click "Document Addition Configuration" in the function to open detailed configuration for adding documents.
+In the function panel, select "Knowledge Base - [Knowledge Base Name] - Add Document" to create an add document function. Click "Document Addition Configuration" in the function to access the detailed configuration options.
 
-![Adding Document](./img/add-document.png)
+![Adding a document](./img/add-document.png)
 
-Fill in "Business ID", "Document File", and other vectorization configurations, then click save. The "Business ID" is the identifier for the currently added document (can be used for subsequent deletion); "Document File" supports multiple files in attachment fields.
-
-:::tip
-For other configurations, refer to [Vectorization Configuration Description](./knowledge-base-document-management#vectorization-configuration-description).
-:::
-
-### Deleting Document {#deleting-document}
-![Delete](./img/delete.png)
-
-Select "Knowledge Base - [Knowledge Base Name] - Delete Document" in the function panel to generate a delete document function; fill in the Business ID, and after running, all documents under that Business ID will be deleted.
-
-### Searching by Keywords {#searching-by-keywords}
-![Searching by Keywords](./img/keyword-query.png)
-
-Select "Knowledge Base - [Knowledge Base Name] - Keyword Query" in the function panel to generate a keyword query function; after configuring the keyword list and query quantity, corresponding query results will be returned.
+Fill in the "Business ID", "Document File", and other vectorization settings, then click Save. The "Business ID" serves as the identifier for the added document (used for later deletion). The "Document File" field supports multiple files from attachment fields.
 
 :::tip
-You can first use LLM to extract keywords from questions, then perform keyword queries.
+For additional configuration options, see [Vectorization Configuration](./knowledge-base-document-management#vectorization-configuration).
 :::
 
-## How AI Knowledge Base Settings Participate in Query Flow {#how-ai-knowledge-base-settings-participate-in-query-flow}
+### Deleting a document {#deleting-document}
+![Deleting a document](./img/delete.png)
 
-For detailed explanation of knowledge base query flow, including vector retrieval, reranking mechanisms, and parameter configuration, please refer to [Creating Knowledge Base Elements - Retrieval Mechanism](./create-knowledge-elements#retrieval-mechanism).
+In the function panel, select "Knowledge Base - [Knowledge Base Name] - Delete Document" to create a delete document function. Enter the Business ID, and upon execution, all documents associated with that Business ID will be removed.
+
+### Searching by keywords {#searching-by-keywords}
+![Searching by keywords](./img/keyword-query.png)
+
+In the function panel, select "Knowledge Base - [Knowledge Base Name] - Keyword Query" to create a keyword query function. After configuring the keyword list and result quantity, the function will return matching results.
+
+:::tip
+You can use an LLM to extract keywords from questions before performing keyword queries.
+:::
+
+## How AI knowledge base settings participate in query flow {#how-ai-knowledge-base-settings-participate-in-query-flow}
+
+For a detailed explanation of the knowledge base query flow, including vector retrieval, reranking mechanisms, and parameter configuration, refer to [Creating Knowledge Base Elements - Retrieval Mechanism](./create-knowledge-elements#retrieval-mechanism).

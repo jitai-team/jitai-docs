@@ -4,7 +4,9 @@ slug: api-authorization
 ---
 
 # 创建API授权元素
-API 授权（API Authorization）是控制接口（API）访问权限的过程，旨在确保只有被授权的外部调用方才能够访问特定资源或执行特定操作。
+API授权是JitAi平台提供的接口访问控制机制，用于将应用内的元素能力安全地对外开放。通过创建API授权元素并配置访问凭证（accessKey/accessSecret），开发者可以将服务函数、数据模型、AI Agent、AI助理等业务能力以标准API的形式提供给外部系统调用。
+
+平台提供完整的授权管理能力，包括接口授权配置、调用地址生成、调用记录追踪等。外部系统可以通过平台提供的多语言SDK（Python、Node.js、Java）进行调用，或者在JitAi应用之间通过[跨App服务元素](../business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-apis)实现互通，构建灵活的应用集成生态。
 
 ## 创建新的API授权 {#api-authorization-creation}
 ![API 授权的创建](./img/api_2025-08-26_15-21-40.png)

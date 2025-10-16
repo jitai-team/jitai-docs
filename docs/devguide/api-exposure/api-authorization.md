@@ -11,7 +11,7 @@ API Authorization is a mechanism for controlling access permissions to interface
 
 ![Creating API Authorization](./img/api_2025-08-26_15-21-40.png)
 
-Click the `+` button in the element tree on the left to open a dialog. Hover over "More" to reveal "API Auths", then click "Generic API Auth" to open the creation dialog.
+Click the `+` button in the element tree on the left to open a dialog. to reveal "API Auths", then click "Generic API Auth" to open the creation dialog.
 
 ![API Creation Dialog](./img/api_2025-08-26_15-26-59.png)
 

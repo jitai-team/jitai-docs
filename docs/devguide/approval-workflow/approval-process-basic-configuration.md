@@ -1,7 +1,6 @@
 ---
 sidebar_position: 1
 slug: approval-workflow-basic-configuration
-title: Approval Workflow Basic Configuration
 ---
 
 # Approval Workflow Basic Configuration
@@ -86,17 +85,17 @@ To facilitate integration of approval-related information (such as initiator det
 By default, `Sync Approval Information to Data Table Model` remains disabled. In this state, generated approval information is stored in the system's built-in "Approval Workflow Instance" data table. To utilize this functionality, users must prepare corresponding fields in the data table model to store approval-related information. Required field types are specified below:
 
 |   Approval Information   |          Data Table Model Accepted Data Types          | Storage Timing |
-| :----------: | :----------------------------------------: | :----------------: |
-|    Initiator    |                  Member Single Select                  |     Upon Approval Initiation     |
-|   Initiation Time   |                  Date Time                  |     Upon Approval Initiation     |
-|   End Time   |                  Date Time                  |     Upon Approval Completion     |
-| Approval Workflow Title | Single Line Text, Multi-line Text, Option Group Single Select, Dropdown Single Select |     Upon Approval Initiation     |
-| Approval Workflow ID  |                  Single Line Text                  |     Upon Approval Initiation     |
-| Approval Instance ID  |                    Number                    |     Upon Approval Initiation     |
-| Current Node Title | Single Line Text, Multi-line Text, Option Group Single Select, Dropdown Single Select |     After Approval Processing     |
-| Current Node ID  |                  Single Line Text                  |     After Approval Processing     |
-|  Current Approver  |             Member Single Select, Member Multi-select             |     After Approval Processing     |
-|   Approval Status   | Single Line Text, Multi-line Text, Option Group Single Select, Dropdown Single Select |   Upon Approval Status Change   |
+| :----------: |:-------------------------------------------------------------------------------------:| :----------------: |
+|    Initiator    |                                 Member Single Select                                  |     Upon Approval Initiation     |
+|   Initiation Time   |                                       Date Time                                       |     Upon Approval Initiation     |
+|   End Time   |                                       Date Time                                       |     Upon Approval Completion     |
+| Approval Workflow Title | Single-line Text, Multi-line Text, Single Choice, Dropdown Single Select |     Upon Approval Initiation     |
+| Approval Workflow ID  |                                   Single-line Text                                    |     Upon Approval Initiation     |
+| Approval Instance ID  |                                        Number                                         |     Upon Approval Initiation     |
+| Current Node Title | Single-line Text, Multi-line Text, Single Choice, Dropdown Single Select |     After Approval Processing     |
+| Current Node ID  |                                   Single-line Text                                    |     After Approval Processing     |
+|  Current Approver  |                       Member Single Select, Member Multi-select                       |     After Approval Processing     |
+|   Approval Status   | Single-line Text, Multi-line Text, Single Choice, Dropdown Single Select |   Upon Approval Status Change   |
 
 ### Synchronizing to third-party approval to-do systems {#sync-to-third-party-approval-todo}
 When user-created applications integrate with DingTalk organizational structures and require synchronization of system to-do messages to DingTalk's task management, users can enable the `Sync to Third-Party Approval To-Do` function in approval settings.

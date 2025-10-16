@@ -80,14 +80,14 @@ Each data type has its specific parameter configuration items and usage methods.
 
 ---
 
-### Money (Amount)
+### Money (Currency)
 **Inherits:** `Numeric`
 
 **Specific Parameters:** None
 
 ---
 
-### Percent (Percentage)
+### Percent (Percent)
 **Inherits:** `Numeric`
 
 **Parameter Override:**
@@ -486,7 +486,7 @@ All data type objects have the following common properties:
 
 ---
 
-### Money (Amount)
+### Money (Currency)
 **Inherits:** `Numeric`
 
 **Properties:**
@@ -509,7 +509,7 @@ All data type objects have the following common properties:
 
 ---
 
-### Percent (Percentage)
+### Percent (Percent)
 **Inherits:** `Numeric`
 
 **Properties:**
@@ -577,7 +577,7 @@ All data type objects have the following common properties:
 
 ---
 
-### Radio (Single Selection)
+### Radio (Single Choice)
 **Inherits:** `Stext`
 
 **Functions:**
@@ -587,7 +587,7 @@ All data type objects have the following common properties:
 
 ---
 
-### Dropdown (Dropdown Selection)
+### Dropdown (Single Select)
 **Inherits:** `Radio`
 
 **Properties:**
@@ -599,7 +599,7 @@ All data type objects have the following common properties:
 
 ---
 
-### MultiRadio (Multiple Selection)
+### MultiRadio (Multiple Chioce)
 **Inherits:** `Radio`
 
 **Properties:**
@@ -619,7 +619,7 @@ All data type objects have the following common properties:
 
 ---
 
-### MultiDropdown (Multiple Dropdown Selection)
+### MultiDropdown (Multiple Select)
 **Inherits:** `MultiRadio`
 
 **Properties:**

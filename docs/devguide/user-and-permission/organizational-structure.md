@@ -74,10 +74,10 @@ After completing the configuration, the system will automatically pull organizat
 
 **WeCom Configuration Information Acquisition Guide: Please refer to [WeCom Official Documentation](https://work.weixin.qq.com)**
 
-![](./img/corp/wechat-work-id.png)
+![WeCom Enterprise ID](./img/corp/wechat-work-id.png "WeCom Enterprise ID")
 The Enterprise ID (CorpId) can be obtained from the enterprise information page in the WeCom management backend.
 
-![](./img/corp/wechat-work-config-2.png)
+![WeCom Application Configuration](./img/corp/wechat-work-config-2.png "WeCom Application Configuration")
 Application-related configuration information can be viewed on the details page of the WeCom custom application.
 
 After the organizational structure is created, JitAi will automatically configure [WeCom Self-built QR Code](./login-authentication#wechat-work-custom-qr-login) for the organization without manual setup, facilitating members to quickly log in to the system through WeCom QR code scanning.

@@ -9,7 +9,7 @@ slug: api-exposure-examples-for-various-elements
 
 ## 服务函数的API授权 {#service-function-api-authorization}
 
-服务函数的API授权，就是将服务函数开放给外部调用。在授权详情页面中，点击`服务`标签，就可以对服务函数进行API授权。
+服务函数的API授权，就是将服务函数开放给外部调用。在授权详情页面中点击`接口授权`，就可以对服务函数进行API授权。
 
 ![服务函数的API授权](./img/api_2025-09-16_14-09-03.png)
 

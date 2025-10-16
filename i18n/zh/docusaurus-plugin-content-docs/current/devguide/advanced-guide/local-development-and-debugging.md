@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 本文指导开发者使用桌面版配置本地开发调试环境，以便进行高效的开发与调试。
 
-## 🛠️ 环境准备
+## 🛠️ 环境准备 {#environment-setup}
 :::info 
 确保你已经完成了基础安装和配置。如果还未安装，请参考 [下载安装](../../tutorial/download-installation) 章节。
 :::
@@ -19,9 +19,9 @@ import TabItem from '@theme/TabItem';
 - **Visual Studio Code**: 轻量级编辑器，丰富的Python扩展生态
 - **PyCharm**: 专业Python IDE，强大的调试和重构功能
 
-## ⚙️ IDE 调试配置
-### Visual Studio Code
-#### 1. 打开项目
+## ⚙️ IDE 调试配置 {#ide-debug-configuration}
+### Visual Studio Code {#visual-studio-code}
+#### 1. 打开项目 {#opening-the-project-vscode}
 在VSCode中打开安装目录中的JitNode目录：
 
 ```shell title="MacOS中的路径"
@@ -32,7 +32,7 @@ import TabItem from '@theme/TabItem';
 C:\Program Files\jit\resources\app.asar.unpacked\JitNode
 ```
 
-#### 2. 创建调试配置文件
+#### 2. 创建调试配置文件 {#creating-debug-config-vscode}
 在项目根目录下创建 `.vscode/launch.json` 文件：
 
 :::warning 注意
@@ -99,13 +99,13 @@ C:\Program Files\jit\resources\app.asar.unpacked\JitNode
   </TabItem>
 </Tabs>
 
-#### 3. 启动调试
+#### 3. 启动调试 {#starting-debugger-vscode}
 1. 点击侧边栏的 **Run and Debug** 图标
 2. 选择 **"JitNode Debug"** 配置
 3. 点击绿色运行按钮启动调试
 
-### PyCharm
-#### 1. 打开项目
+### PyCharm {#pycharm}
+#### 1. 打开项目 {#opening-the-project-pycharm}
 在PyCharm中打开安装目录中的JitNode目录：
 
 ```shell title="MacOS中的路径"
@@ -116,7 +116,7 @@ C:\Program Files\jit\resources\app.asar.unpacked\JitNode
 C:\Program Files\jit\resources\app.asar.unpacked\JitNode
 ```
 
-#### 2. 配置系统解释器
+#### 2. 配置系统解释器 {#configuring-system-interpreter}
 在创建运行配置之前，需要先将 JitNode 的 Python 解释器添加到系统解释器列表：
 
 1. **打开解释器设置**：
@@ -156,7 +156,7 @@ C:\Program Files\jit\resources\app.asar.unpacked\JitNode
 添加成功后，你会在解释器列表中看到 JitNode 的 Python 版本信息。如果显示错误，请检查路径是否正确。
 :::
 
-#### 3. 创建运行配置
+#### 3. 创建运行配置 {#creating-run-config-pycharm}
 1. **打开运行配置**：
    - 菜单：`Run` → `Edit Configurations...`
    - 或点击右上角运行配置下拉菜单 → `Edit Configurations...`
@@ -195,7 +195,7 @@ Environment variables:
   </TabItem>
 </Tabs>
 
-#### 4. 启动调试
+#### 4. 启动调试 {#starting-debugger-pycharm}
 1. 点击 `OK` 保存配置
 2. 选择 "JitNode Debug" 配置
 3. 点击绿色运行按钮或按 `Shift+F10` 启动
@@ -204,7 +204,7 @@ Environment variables:
 确保在运行配置的 "Python interpreter" 字段中选择了刚才添加的 JitNode 解释器，而不是系统默认的 Python。
 :::
 
-## 📝 配置说明
+## 📝 配置说明 {#configuration-overview}
 :::note 通用配置项
 - **调试入口**: 统一使用 `system/jitDebugger.py` 文件
 - **Python解释器**: 使用 JitNode 内置的 Python 环境

@@ -2,7 +2,7 @@
 slug: wechat-miniapp-login
 ---
 # WeChat Mini Program Login
-WeChat Mini Program login is an authentication method based on WeChat official authorization mechanism, responsible for Mini Program authorization login, user identity authentication, and account binding management. It supports automatic acquisition of WeChat user identifiers like openId/unionId, binding code mechanism for new user registration, Session key security management, and account binding/unbinding operations, with deep integration into the WeChat Mini Program ecosystem.
+WeChat Mini Program login is an authentication method based on WeChat official authorization mechanism, responsible for Mini Program authorization login, user identity authentication, and account binding management. It supports automatic acquisition of WeChat user identifiers like openId/unionId, invite code mechanism for new user registration, Session key security management, and account binding/unbinding operations, with deep integration into the WeChat Mini Program ecosystem.
 
 The hierarchical structure of WeChat Mini Program login elements is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.WeChatMiniType) → Instance. Developers can quickly create WeChat Mini Program login instance elements through JitAi's visual development tools.
 
@@ -89,7 +89,7 @@ elif "bindCode" in result:
 ```
 
 ### register
-Complete new user registration process using binding code.
+Complete new user registration process using invite code.
 
 #### Parameter Details
 | Parameter Name | Type | Corresponding Native Type | Required | Description |
@@ -149,16 +149,16 @@ result = wechat_auth.unbind(123)
 
 ## Advanced Features
 ### Complete Registration Process
-When allowRegister=1, new users can complete registration through binding code mechanism, which includes authorization check, binding code generation, and user creation steps.
+When allowRegister=1, new users can complete registration through invite code mechanism, which includes authorization check, invite code generation, and user creation steps.
 
 ```python title="Complete New User Registration Process"
 wechat_auth = app.getElement("auths.loginTypes.myWeChatMiniLogin")
 
-# Try login to get binding code
+# Try login to get invite code
 login_result = wechat_auth.getLoginCode("wx_mini_code")
 
 if "bindCode" in login_result:
-    # Complete registration using binding code
+    # Complete registration using invite code
     bind_code = login_result["bindCode"]
     new_user = wechat_auth.register(bind_code)
     print(f"Registration successful, User ID: {new_user.userId.value}")

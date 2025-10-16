@@ -9,7 +9,7 @@ title: Form Components
 Forms are among the most frequently used components in application development. While traditional forms are limited to collecting, validating, and submitting user input data, JitAi's form components extend far beyond these basic functions. They provide powerful capabilities including visual design, data model binding, permission control, and business rule configuration. Through intuitive drag-and-drop operations, you can construct enterprise-grade form applications with sophisticated interaction logic and advanced data processing capabilities.
 
 ## Basic configuration and item management {#basic-configuration-and-item-management}
-In the page visual editor, click "Insert Component" and drag the "Form" component onto the page. Select a data model in the data source configuration and click `Confirm`.
+In the page visual editor, click `Insert Component` and drag the `Form component` onto the page. Select a data model in the data source configuration and click `Confirm`.
 
 :::warning Note
 Supported model types include Data Tables, Aggregate Tables, and Extended Tables. Note that when Aggregate Tables are selected, data submission is not available.
@@ -481,7 +481,7 @@ When enabled, provides users with detailed feedback about the success or failure
 
 Batch edit forms enable simultaneous modification of multiple fields across multiple data table records. After making changes and submitting, all selected records are updated in the underlying data table model.
 
-To add a batch edit form, use the page visual editor to drag the "Batch Edit Form" component onto the page, then select the target data model in the data source configuration.
+To add a batch edit form, use the page visual editor to drag the `Batch Edit Form` component onto the page, then select the target data model in the data source configuration.
 
 ![Batch Edit Form](./img/2/form_2025-08-22_13-54-43.png)
 
@@ -513,7 +513,7 @@ Data correction components provide simplified bulk editing capabilities for spec
 
 ![Data Correction](./img/2/form_2025-08-22_17-58-34.png)
 
-To add data correction functionality, drag the "Data Correction" component from the component library onto the page, then select the target data model in the configuration panel.
+To add data correction functionality, drag the `Data Correction` component from the component library onto the page, then select the target data model in the configuration panel.
 
 ![Data Correction Configuration](./img/2/form_2025-08-22_18-07-56.png)
 Access the field selection interface through the "Editable Fields" panel to configure which fields are available for correction.

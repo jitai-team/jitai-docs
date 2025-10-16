@@ -1555,8 +1555,10 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "创建流程", href: "devguide/approval-workflow/approval-workflow-basic-configuration#create-process" },
     { text: "拖拽流程节点", href: "devguide/approval-workflow/approval-workflow-basic-configuration#drag-process-node" },
     { text: "审批流程默认页面", href: "devguide/approval-workflow/approval-workflow-basic-configuration#approval-workflow-default-page" },
+    { text: "预测功能", href: "devguide/approval-workflow/approval-workflow-basic-configuration#prediction-feature" },
     { text: "其他流程配置", href: "devguide/approval-workflow/approval-workflow-basic-configuration#other-process-configuration" },
     { text: "同步审批信息到数据表模型", href: "devguide/approval-workflow/approval-workflow-basic-configuration#sync-approval-info-to-data-table-model" },
+    { text: "预测功能", href: "devguide/approval-workflow/approval-workflow-basic-configuration#prediction-function" },
     { text: "同步到第三方审批待办", href: "devguide/approval-workflow/approval-workflow-basic-configuration#sync-to-third-party-approval-todo" },
     { text: "评论功能", href: "devguide/approval-workflow/approval-workflow-basic-configuration#comment-function" },
     { text: "分享", href: "devguide/approval-workflow/approval-workflow-basic-configuration#share" },
@@ -1594,7 +1596,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "审批扩展功能配置", href: "devguide/approval-workflow/approval-node-configuration#approval-extended-function-configuration" },
     { text: "去重审批", href: "devguide/approval-workflow/approval-node-configuration#deduplication-approval" },
     { text: "限时处理", href: "devguide/approval-workflow/approval-node-configuration#time-limited-processing" },
-    { text: "审批暂存", href: "devguide/approval-workflow/approval-node-configuration#approval-draft" },
+    { text: "审批草稿", href: "devguide/approval-workflow/approval-node-configuration#approval-draft" },
     { text: "审批意见反馈", href: "devguide/approval-workflow/approval-node-configuration#approval-feedback" },
     { text: "手写签名", href: "devguide/approval-workflow/approval-node-configuration#handwritten-signature" },
     { text: "允许批量审批", href: "devguide/approval-workflow/approval-node-configuration#allow-batch-approval" },
@@ -2056,7 +2058,6 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 >
   <LinkGrid links={[
     { text: "AI智能客服", href: "devguide/advanced-guide/ai-customer-service" },
-    { text: "AI智能出题&阅卷", href: "devguide/advanced-guide/ai-question-grading" },
     { text: "Agent提示词编写技巧", href: "devguide/advanced-guide/agent-prompt-writing-techniques" }
   ]} />
 </IndexCard>

@@ -5,177 +5,177 @@ slug: approval-workflow-basic-configuration
 
 # Approval Workflow Basic Configuration
 
-An approval workflow typically refers to a series of steps within an organization for reviewing and making decisions on specific requests. The approval engine processes various approval requests such as financial reimbursements, leave applications, purchase requests, etc., through predefined rules, workflows, and conditions.
+Approval workflows represent structured organizational processes for reviewing and authorizing specific requests. The approval engine manages diverse approval scenarios—including expense reimbursements, leave requests, and purchase orders—through predefined business rules, workflow logic, and conditional criteria.
 
-JitAi implements visual construction of enterprise approval workflows based on extensive enterprise universal patterns. It integrates rich customization options for functionality, covering advanced features such as rule engines, conditional branches, parallel branches, and subprocess approval flow design.
+JitAi enables visual construction of enterprise approval workflows based on comprehensive organizational patterns. The platform integrates extensive customization capabilities, encompassing advanced features such as rule engines, conditional branching, parallel processing, and subprocess approval flow design.
 
-## Create Process {#create-process}
-Approval workflows are generally created based on specific business scenarios, such as leave processes, reimbursement processes, purchase processes, etc., which require storing corresponding business data in a data table model. Therefore, when creating an approval workflow, you need to select an associated data model.
+## Creating processes {#create-process}
+Approval workflows are typically designed around specific business scenarios such as leave management, expense processing, or procurement workflows, requiring corresponding business data storage in data table models. Therefore, creating an approval workflow necessitates selecting an associated data model.
 
-![Create Approval Workflow](./img/workflow_2025-08-23_10-41-35.png)
+![Creating Approval Workflow](./img/workflow_2025-08-23_10-41-35.png)
 
-Click the `+` button next to "Approval" in the left element tree to open the new approval workflow popup, fill in the approval workflow name and associated data model, then click `Save` to create an approval workflow.
+Click the `+` button adjacent to "Approval" in the left element tree to open the new approval workflow dialog. Enter the approval workflow name and select the associated data model, then click `Save` to create the workflow.
 
-## Drag Process Nodes {#drag-process-node}
-JitAi provides developers with a visual process configuration interface where processes can be quickly created by dragging nodes.
+## Configuring process nodes {#drag-process-node}
+JitAi provides developers with an intuitive visual process configuration interface enabling rapid workflow creation through node-based design.
 
 ![Approval Configuration Panel](./img/workflow_2025-08-23_11-41-38.png)
 
-Approval workflows have many approval nodes, each with different functions, such as:
+Approval workflows comprise various node types, each serving distinct functions:
 
-**Start Node**: Represents the beginning of an approval workflow. Each approval workflow has one and only one start node. You can configure some configuration information for users to "initiate requests".
+**Start Node**: Represents the workflow initiation point. Each approval workflow contains exactly one start node where you can configure initialization settings for users to "initiate requests".
 
-**End Node**: Represents the end of an approval workflow. Each approval workflow has one and only one end node. It indicates that the entire process has been completed.
+**End Node**: Represents the workflow termination point. Each approval workflow contains exactly one end node, indicating complete process execution.
 
-**Approval Node**: Used to designate approvers to review the current approval workflow. In approval nodes, you need to configure approvers and related configuration information for approval nodes.
+**Approval Node**: Designates approvers for workflow review. Approval nodes require configuration of approvers and related approval settings.
 
-**CC Node**: Used to designate CC recipients for the current approval workflow. In CC nodes, you need to configure CC recipients and related configuration information for CC nodes.
+**CC Node**: Designates carbon copy recipients for workflow notifications. CC nodes require configuration of recipients and related notification settings.
 
-**Branch Node**: Used for branch judgment. The approval workflow will flow to specified branch routes based on condition return results.
+**Branch Node**: Implements conditional logic routing. The workflow proceeds to specified branch paths based on condition evaluation results.
 
-**Parallel Start/Parallel End**: Used for parallel processing of workflows. After the approval workflow reaches the parallel start node, it will flow to all parallel nodes simultaneously.
+**Parallel Start/Parallel End**: Enables concurrent workflow processing. Upon reaching the parallel start node, the workflow simultaneously proceeds to all parallel branches.
 
-**Subprocess**: After the approval workflow enters a subprocess, it will run according to the subprocess logic and return to the parent process after completion.
+**Subprocess**: Executes embedded workflow logic. When entering a subprocess, execution follows subprocess logic before returning to the parent workflow.
 
 :::tip Tip
 
-A complete approval workflow must have at least one approval node in addition to the start and end nodes.
+A complete approval workflow must include at least one approval node in addition to the mandatory start and end nodes.
 
-Parallel start and parallel end nodes must come in pairs.
+Parallel start and parallel end nodes must be configured in pairs.
 :::
 
-## Prediction Feature {#prediction-feature}
-AI prediction and intelligent recommendation features provide process optimization suggestions based on historical approval data.
+## Prediction capabilities {#prediction-feature}
+AI-powered prediction and intelligent recommendation features deliver process optimization insights based on historical approval data analysis.
 
-## Approval Workflow Default Page {#approval-workflow-default-page}
-Each approval workflow has a default page. When users perform operations such as initiating requests or viewing approvals, they will enter this page.
+## Approval workflow default pages {#approval-workflow-default-page}
+Each approval workflow includes a default page interface. Users access this page when performing operations such as initiating requests or reviewing approvals.
 
 ![Default Page](./img/workflow_2025-08-26_11-01-13.png)
 
-In the process configuration panel, click `Approval Default Page` in the upper left corner to open the default page configuration panel.
+In the process configuration panel, click `Approval Default Page` in the upper left corner to access the default page configuration interface.
 
 ![Default Page Configuration Panel](./img/workflow_2025-08-26_16-52-02.png)
 
-In the default page configuration panel, you can set up the approval form.
+The default page configuration panel enables approval form setup and customization.
 
 :::tip Tip
 
-For the process default page, by default, all nodes use this page. Therefore, if you modify the process default page, the page seen at all nodes will change.
+The process default page serves as the template for all nodes by default. Modifications to the process default page affect the interface displayed across all workflow nodes.
 
-Start nodes, approval nodes, and CC nodes can customize pages.
+Start nodes, approval nodes, and CC nodes support custom page configurations.
 
-The form generated by the approval workflow default page cannot be deleted. For how to operate forms, refer to [form-components](../using-functional-components-in-pages/form-components)
+The approval workflow default page generates a form that cannot be deleted. For form operation guidance, refer to [form-components](../using-functional-components-in-pages/form-components).
 
 :::
 
-## Other Process Configuration {#other-process-configuration}
-In addition to configuring nodes and page adjustments on the page, approval workflows have other configurations.
+## Additional process configuration {#other-process-configuration}
+Beyond node configuration and page customization, approval workflows support additional configuration options.
 
 ![Process Configuration](./img/workflow_2025-08-23_11-57-59.png)
 
-In the process configuration panel, click `Approval Configuration` in the upper right corner to open the approval configuration popup.
+In the process configuration panel, click `Approval Configuration` in the upper right corner to access the approval configuration dialog.
 
-In the configuration popup, we can view associated data models, synchronize approval information to corresponding data models, set approval icons, enable approval prediction features, enable comment features, allow sharing, allow printing approval forms, and other functions.
+The configuration dialog provides access to associated data models, approval information synchronization to corresponding data models, approval icon settings, approval prediction feature enablement, comment functionality, sharing permissions, approval form printing capabilities, and other advanced functions.
 
-### Sync Approval Information to Data Table Model {#sync-approval-info-to-data-table-model}
-To facilitate users in combining approval-related information (such as initiator, initiation time, approval status, etc.) with business data for use, statistics, and analysis, JitAi allows synchronizing approval process information to data table models specified by developers.
+### Synchronizing approval information to data table models {#sync-approval-info-to-data-table-model}
+To facilitate integration of approval-related information (such as initiator details, initiation timestamps, approval status, etc.) with business data for analysis, reporting, and statistical purposes, JitAi enables synchronization of approval process information to developer-specified data table models.
 
 ![Data Table Model](./img/workflow_2025-08-23_13-57-55.png)
 
-By default, `Sync Approval Information to Data Table Model` is in a closed state. At this time, the generated approval information will be saved to the system's built-in "Approval Workflow Instance" data table. If users want to use this function, they must prepare corresponding fields in the data table model in advance to store approval-related information. The field types are as follows:
+By default, `Sync Approval Information to Data Table Model` remains disabled. In this state, generated approval information is stored in the system's built-in "Approval Workflow Instance" data table. To utilize this functionality, users must prepare corresponding fields in the data table model to store approval-related information. Required field types are specified below:
 
-|   Approval Information   |          Data Table Model Accepted Data Types          | Timing of Storage in Model |
-| :----------: | :----------------------------------------: | :----------------: |
-|    Initiator    |                  Member Single Select                  |     When Initiating Approval     |
-|   Initiation Time   |                  Date Time                  |     When Initiating Approval     |
-|   End Time   |                  Date Time                  |     When Approval Ends     |
-| Approval Workflow Title | Single Line Text, Multi-line Text, Option Group Single Select, Dropdown Single Select |     When Initiating Approval     |
-| Approval Workflow ID  |                  Single Line Text                  |     When Initiating Approval     |
-| Approval Instance ID  |                    Number                    |     When Initiating Approval     |
-| Current Node Title | Single Line Text, Multi-line Text, Option Group Single Select, Dropdown Single Select |     After Approval Processing     |
-| Current Node ID  |                  Single Line Text                  |     After Approval Processing     |
-|  Current Approver  |             Member Single Select, Member Multi-select             |     After Approval Processing     |
-|   Approval Status   | Single Line Text, Multi-line Text, Option Group Single Select, Dropdown Single Select |   After Approval Status Change   |
+|   Approval Information   |          Data Table Model Accepted Data Types          | Storage Timing |
+| :----------: |:-------------------------------------------------------------------------------------:| :----------------: |
+|    Initiator    |                                 Member Single Select                                  |     Upon Approval Initiation     |
+|   Initiation Time   |                                       Date Time                                       |     Upon Approval Initiation     |
+|   End Time   |                                       Date Time                                       |     Upon Approval Completion     |
+| Approval Workflow Title | Single-line Text, Multi-line Text, Single Choice, Dropdown Single Select |     Upon Approval Initiation     |
+| Approval Workflow ID  |                                   Single-line Text                                    |     Upon Approval Initiation     |
+| Approval Instance ID  |                                        Number                                         |     Upon Approval Initiation     |
+| Current Node Title | Single-line Text, Multi-line Text, Single Choice, Dropdown Single Select |     After Approval Processing     |
+| Current Node ID  |                                   Single-line Text                                    |     After Approval Processing     |
+|  Current Approver  |                       Member Single Select, Member Multi-select                       |     After Approval Processing     |
+|   Approval Status   | Single-line Text, Multi-line Text, Single Choice, Dropdown Single Select |   Upon Approval Status Change   |
 
-### Sync to Third-Party Approval To-Do {#sync-to-third-party-approval-todo}
-When a user-created application has integrated with DingTalk organizational structure and wants to synchronize to-do messages in the system to DingTalk's to-do items, they can enable the `Sync to Third-Party Approval To-Do` function in approval settings.
+### Synchronizing to third-party approval to-do systems {#sync-to-third-party-approval-todo}
+When user-created applications integrate with DingTalk organizational structures and require synchronization of system to-do messages to DingTalk's task management, users can enable the `Sync to Third-Party Approval To-Do` function in approval settings.
 
-When users check this option, initiated approvals will be synchronized to corresponding approvers through DingTalk's to-do items.
+When enabled, initiated approvals synchronize to corresponding approvers through DingTalk's to-do item system.
 
 :::tip Note
-This function is only applicable to approval applications that have integrated with DingTalk organizational structure. If DingTalk organizational structure is not integrated, this option will not be visible.
+This functionality applies exclusively to approval applications integrated with DingTalk organizational structures. Without DingTalk integration, this option remains hidden.
 :::
 
-### Prediction Function {#prediction-function} 
-When users want to know the approvers of subsequent workflow nodes when initiating or processing approvals, they can enable the prediction function.
+### Prediction functionality {#prediction-function} 
+When users require visibility into subsequent workflow node approvers during approval initiation or processing, they can enable the prediction functionality.
 
 ![Prediction Function](./img/workflow_2025-09-06_10-00-07.png)
 
 ![Prediction Function Effect](./img/workflow_2025-09-06_10-02-12.png)
 
-After the prediction function is enabled, users will see the approvers of subsequent nodes when initiating or processing approvals.
+With prediction functionality enabled, users can preview subsequent node approvers during approval initiation or processing.
 
 :::warning Note
-The system enables the prediction function by default.
+The system enables prediction functionality by default.
 
-Approval prediction data is also displayed in the approval records on the right side. Among them, nodes that have already been processed have solid borders and contain specific times. Nodes that have not been processed have dashed borders and no specific times.
+Approval prediction data also appears in approval records on the right panel. Processed nodes display solid borders with specific timestamps, while unprocessed nodes show dashed borders without timestamps.
 
-If the prediction function is disabled, the application node will not display approval records, and approval processing nodes will only display approval records that have been processed.
+When prediction functionality is disabled, application nodes will not display approval records, and approval processing nodes will only show completed approval records.
 :::
 
-### Comment Function {#comment-function}
-After users initiate approvals, approval participants can comment during approval and can see comments from others. Comments support uploading images and support image preview.
+### Comment functionality {#comment-function}
+After users initiate approvals, approval participants can add comments during the approval process and view comments from other participants. The comment system supports image uploads and image preview capabilities.
 
 ![Comment Function](./img/workflow_2025-08-23_14-50-33.png)
 
 :::tip Note
-The comment function is not for each approval node, but for the entire approval workflow. That is, as long as it is in the same approval workflow, users can comment regardless of which approval node they are at.
+The comment functionality operates at the workflow level rather than individual approval nodes. Participants can comment from any approval node within the same approval workflow.
 :::
 
-### Share {#share}
-When users need to share approval workflows, this can be achieved through the sharing function.
+### Sharing capabilities {#share}
+When users need to share approval workflows, this functionality can be accessed through the sharing feature.
 
 ![Share Function](./img/workflow_2025-08-26_14-21-13.png)
 
-Enable the "Allow Sharing" function in the "Approval Configuration" popup, and "Share" buttons will appear in the detail interfaces of to-do, done, initiated, and CC items related to this approval workflow.
+Enable "Allow Sharing" in the "Approval Configuration" dialog to display "Share" buttons in the detail interfaces of to-do, completed, initiated, and CC items related to the approval workflow.
 
-### Print Approval Form {#print-approval-form}
-Some users need to print approval forms in certain scenarios, which can be achieved through the printing function.
+### Printing approval forms {#print-approval-form}
+Certain scenarios require printed approval forms, which can be accomplished through the printing functionality.
 
 ![Default Print Template](./img/workflow_2025-08-23_15-02-42.png)
 
-Each approval workflow has a default approval form print template, and users can download the default template for viewing. Additionally, users can also customize print templates and save them as templates.
+Each approval workflow includes a default approval form print template. Users can download the default template for review and create custom print templates for storage as reusable templates.
 
 ![Custom Print Template](./img/workflow_2025-08-23_15-06-19.png)
 
 :::warning Note
-"Print Approval Form" is also for the entire approval workflow, meaning all approval nodes' approval forms use the same set of print templates. However, different approval nodes display different data, such as node names, node processors, node processing results, node processing comments, node processing times, etc.
+"Print Approval Form" operates at the workflow level, meaning all approval nodes utilize the same print template set. However, different approval nodes display varying data including node names, node processors, node processing results, node processing comments, node processing timestamps, etc.
 
-When using custom print templates, there are some required parameters, and the designed template must include these parameters.
+When implementing custom print templates, certain parameters are mandatory, and designed templates must incorporate these required parameters.
 :::
 
 ![Print Button](./img/workflow_2025-08-23_15-10-32.png)
 
-After users enable "Allow Print Approval Form", the approval workflow will display a print button at each approval node. Click the `Print` button to print the current approval form.
+After enabling "Allow Print Approval Form", the approval workflow displays a print button at each approval node. Click the `Print` button to generate the current approval form printout.
 
-## Reuse Other Approval Workflows {#reuse-other-approval-workflowes}
-If you want to create a new approval workflow based on an existing approval workflow, where the new approval workflow will update with the original approval workflow updates, you can use the approval workflow reuse function.
+## Reusing existing approval workflows {#reuse-other-approval-workflowes}
+To create new approval workflows based on existing workflows where the new workflow inherits updates from the original workflow, utilize the approval workflow reuse functionality.
 
 ![Reuse Approval Workflow](./img/workflow_2025-08-26_11-10-51.png)
 
-When using the reuse function, you must ensure that the data model of the current approval workflow is consistent with the data model of the reused approval workflow.
+When implementing the reuse functionality, ensure the current approval workflow's data model matches the reused approval workflow's data model.
 
-For flow paths, by default, they follow changes in the reused approval workflow. If the current workflow changes the path (adding/deleting workflow nodes or adjusting node connections), it will no longer change with the reused workflow.
+For flow paths, they inherit changes from the reused approval workflow by default. If the current workflow modifies paths (adding/removing workflow nodes or adjusting node connections), it will no longer inherit changes from the reused workflow.
 
-For workflow node configurations, by default, they also follow the configuration of the reused approval workflow. If the current workflow node configuration changes, the changed configuration will be stored again, while unmodified configurations will change with the reused approval workflow.
+For workflow node configurations, they also inherit settings from the reused approval workflow by default. When current workflow node configurations change, modified configurations are stored independently while unmodified configurations continue inheriting from the reused approval workflow.
 
-For approval pages, the current approval workflow will automatically create an approval page, but this page inherits the approval page of the reused approval workflow, supports partial modifications, and unmodified parts will automatically update with the inherited page.
+For approval pages, the current approval workflow automatically creates an approval page that inherits from the reused approval workflow's page, supports partial modifications, and automatically updates unmodified sections with the inherited page.
 
 :::warning Note
 
-If you want to create a new approval workflow based on an existing approval workflow but don't want to inherit the original approval workflow, you can use the approval workflow copy function.
+To create new approval workflows based on existing workflows without inheritance relationships, utilize the approval workflow copy functionality.
 
 ![Approval Copy](./img/workflow_2025-08-23_11-30-47.png)
 
-Click the "Generate Copy" button in the left element tree to implement the approval workflow copy function.
+Click the "Generate Copy" button in the left element tree to implement the approval workflow copy functionality.
 :::

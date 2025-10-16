@@ -4,10 +4,10 @@ slug: using-interceptors-for-custom-request-authentication
 ---
 
 # Using Interceptors for Custom Request Authentication
-When systems need to provide APIs for external partners, authentication is often required to restrict unauthorized access. JitAi's API authorization elements can implement exposing API interfaces to third parties (recommended approach), but this requires callers to use the client SDK provided by JitAi. When callers cannot use the SDK, you can use [backend interceptors](../../reference/framework/JitService/backend-interceptor) to implement custom authentication methods to accommodate different calling patterns. This document uses custom Bearer Token authentication as an example.
+When systems need to provide APIs to external partners, authentication is often required to restrict unauthorized access. While JitAi's API authorization elements can expose API interfaces to third parties (the recommended approach), this requires callers to use JitAi's client SDK. When callers cannot use the SDK, you can leverage [backend interceptors](../../reference/framework/JitService/backend-interceptor) to implement custom authentication methods that accommodate different calling patterns. This document demonstrates custom Bearer Token authentication as an example.
 
-## Creating Interceptor Instance Element Directory
-Interceptor elements are not currently supported for creation in the visual development tool. Developers should use the desktop version for [local development and debugging](./local-development-and-debugging) and manually create the element directory in the application directory.
+## Creating interceptor instance element directory {#creating-interceptor-directory}
+Interceptor elements are not currently supported for creation in the visual development tool. Developers should use the desktop version for [local development and debugging](./local-development-and-debugging) and manually create the element directory within the application directory.
 
 ```text title="Interceptor Element Directory Structure"
 interceptors/
@@ -17,8 +17,8 @@ interceptors/
     └── interceptor.py
 ```
 
-### Implementing Interceptor Logic
-Inherit from `RequestInterceptor` and implement authentication logic in the before method: only perform validation when the target service function is in the whitelist, otherwise allow it to pass through.
+### Implementing interceptor logic {#implementing-interceptor-logic}
+Inherit from `RequestInterceptor` and implement authentication logic in the `before` method: only perform validation when the target service function is in the whitelist; otherwise, allow the request to pass through.
 
 ```python title="interceptors/BearerToken/interceptor.py"
 from interceptors.Http import RequestInterceptor
@@ -69,13 +69,13 @@ class BearerToken(RequestInterceptor):
     
 ```
 
-### Exporting the Interceptor Class
+### Exporting the interceptor class {#exporting-interceptor-class}
 ```python title="interceptors/BearerToken/__init__.py"
 # The exported class name must match the element directory name
 from .interceptor import BearerToken
 ```
 
-### Editing `e.json`
+### Editing `e.json` {#editing-interceptor-ejson}
 ```json title="interceptors/BearerToken/e.json"
 {
   "title": "BearerToken Authentication",
@@ -86,10 +86,10 @@ from .interceptor import BearerToken
 }
 ```
 
-## Creating Service Functions
+## Creating service functions {#creating-service-functions}
 Developers can use JitAi's visual development tool to quickly create service elements and functions.
 
-![Visual Creation of Order Query Function](./img/jitservice/visual-create-order-query-service-function.png)
+![Visual Creation of Order Query Function](./img/jitservice/visual-create-order-query-service-function.png "Visual Creation of Order Query Function")
 
 ```text title="Service Element Directory Structure"
 services/
@@ -99,7 +99,7 @@ services/
     └── service.py
 ```
 
-### Implementing Function Logic
+### Implementing function logic {#implementing-function-logic}
 ```python title="services/OrderSvc/service.py"
 
 from services.NormalType import NormalService
@@ -119,7 +119,7 @@ from .service import OrderSvc
 
 ```
 
-### Editing e.json
+### Editing e.json {#editing-service-ejson}
 ```json title="services/OrderSvc/e.json"
 {
     "title": "Order Service",
@@ -150,12 +150,12 @@ Note:
 1. Declare `ignoreSign: true` to make the function skip the platform's default signature verification.
 2. Declare `loginRequired: false` to make the function skip the platform's default login status validation.
 
-The above two configurations need to be modified by switching to full-code mode.
+These two configurations must be modified by switching to full-code mode.
 
-![Full-code Mode Modification of e.json](./img/jitservice/full-code-mode-modify-element-definition-file.png)
+![Full-code Mode Modification of e.json](./img/jitservice/full-code-mode-modify-element-definition-file.png "Full-code Mode Modification of e.json")
 
-## Testing and Verification
-First delete the dist directory under the application directory, restart Jit, and then test using curl commands.
+## Testing and verification {#testing-and-verification}
+First, delete the `dist` directory under the application directory, restart Jit, and then test using curl commands.
 
 ```shell title="Test curl Command"
 curl -X POST \

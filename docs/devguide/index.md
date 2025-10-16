@@ -1505,13 +1505,13 @@ Implement powerful business logic with visual programming. Handle complex rules,
   description="Automate workflows with scheduled and asynchronous tasks—execute complex background processes reliably."
 >
   <LinkGrid columns={2} links={[
-    { text: "Creating Tasks", href: "devguide/business-logic-development/background-tasks#creating-tasks" },
-    { text: "Scheduled Tasks", href: "devguide/business-logic-development/background-tasks#scheduled-tasks" },
-    { text: "Date Field Tasks", href: "devguide/business-logic-development/background-tasks#date-field-tasks" },
-    { text: "General Configuration Items", href: "devguide/business-logic-development/background-tasks#general-configuration-items" },
-    { text: "Developing Task Execution Functions", href: "devguide/business-logic-development/background-tasks#developing-task-execution-functions" },
-    { text: "Viewing Execution Records", href: "devguide/business-logic-development/background-tasks#viewing-execution-records" },
-    { text: "Source Code Mode", href: "devguide/business-logic-development/background-tasks#source-code-mode" }
+    { text: "Creating tasks", href: "devguide/business-logic-development/background-tasks#creating-tasks" },
+    { text: "Scheduled tasks", href: "devguide/business-logic-development/background-tasks#scheduled-tasks" },
+    { text: "Date field tasks", href: "devguide/business-logic-development/background-tasks#date-field-tasks" },
+    { text: "General configuration items", href: "devguide/business-logic-development/background-tasks#general-configuration-items" },
+    { text: "Developing task execution functions", href: "devguide/business-logic-development/background-tasks#developing-task-execution-functions" },
+    { text: "Viewing execution records", href: "devguide/business-logic-development/background-tasks#viewing-execution-records" },
+    { text: "Source code mode", href: "devguide/business-logic-development/background-tasks#source-code-mode" }
   ]} />
 </IndexCard>
 
@@ -1521,17 +1521,17 @@ Implement powerful business logic with visual programming. Handle complex rules,
   description="Implement reactive business logic—monitor and respond to system events, model changes, and custom triggers."
 >
   <LinkGrid columns={2} links={[
-    { text: "Creating Events", href: "devguide/business-logic-development/event-handling#creating-events" },
-    { text: "Model Events", href: "devguide/business-logic-development/event-handling#model-events" },
-    { text: "Approval Events", href: "devguide/business-logic-development/event-handling#approval-events" },
-    { text: "Custom Events", href: "devguide/business-logic-development/event-handling#custom-events" },
-    { text: "AI-Assistant Events", href: "devguide/business-logic-development/event-handling#ai-assistant-events" },
-    { text: "Agent Tool Call Events", href: "devguide/business-logic-development/event-handling#agent-tool-call-events" },
-    { text: "Replacing Event Internal Function with Service Function", href: "devguide/business-logic-development/event-handling#replacing-event-internal-function-with-service-function" },
-    { text: "Enabling Events", href: "devguide/business-logic-development/event-handling#enabling-events" },
-    { text: "Executing Events Synchronously/Asynchronously", href: "devguide/business-logic-development/event-handling#executing-events-synchronously-asynchronously" },
-    { text: "Viewing Event Execution Records", href: "devguide/business-logic-development/event-handling#viewing-event-execution-records" },
-    { text: "Viewing/Editing Full Code", href: "devguide/business-logic-development/event-handling#viewing-editing-full-code" }
+    { text: "Creating events", href: "devguide/business-logic-development/event-handling#creating-events" },
+    { text: "Model events", href: "devguide/business-logic-development/event-handling#model-events" },
+    { text: "Approval events", href: "devguide/business-logic-development/event-handling#approval-events" },
+    { text: "Custom events", href: "devguide/business-logic-development/event-handling#custom-events" },
+    { text: "AI Assistant events", href: "devguide/business-logic-development/event-handling#ai-assistant-events" },
+    { text: "Agent tool call events", href: "devguide/business-logic-development/event-handling#agent-tool-call-events" },
+    { text: "Replacing event internal functions with service functions", href: "devguide/business-logic-development/event-handling#replacing-event-internal-functions-with-service-functions" },
+    { text: "Enabling events", href: "devguide/business-logic-development/event-handling#enabling-events" },
+    { text: "Executing events synchronously or asynchronously", href: "devguide/business-logic-development/event-handling#executing-events-synchronously-or-asynchronously" },
+    { text: "Viewing event execution records", href: "devguide/business-logic-development/event-handling#viewing-event-execution-records" },
+    { text: "Viewing and editing full code", href: "devguide/business-logic-development/event-handling#viewing-and-editing-full-code" }
   ]} />
 </IndexCard>
 

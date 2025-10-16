@@ -103,7 +103,7 @@ Each data type has its specific parameter configuration items and usage methods.
 
 ---
 
-### AutoInt (Auto-increment Integer, usually used as primary key)
+### AutoInt (Auto Inc Id, usually used as primary key)
 **Inherits:** `Numeric`
 
 **Specific Parameters:** None
@@ -126,7 +126,7 @@ Each data type has its specific parameter configuration items and usage methods.
 
 ---
 
-### Radio (Single Selection)
+### Radio (Single Choice)
 **Inherits:** `Stext`
 
 | Parameter Name | Type | Default Value | Description |
@@ -139,7 +139,7 @@ Each data type has its specific parameter configuration items and usage methods.
 
 ---
 
-### MultiRadio (Multiple Selection)
+### MultiRadio (Multiple Choice)
 **Inherits:** `Radio`
 
 | Parameter Name | Type | Default Value | Description |
@@ -148,14 +148,14 @@ Each data type has its specific parameter configuration items and usage methods.
 
 ---
 
-### Dropdown (Dropdown Selection)
+### Dropdown (Single Select)
 **Inherits:** `Radio`
 
 **Specific Parameters:** None
 
 ---
 
-### MultiDropdown (Multiple Dropdown Selection)
+### MultiDropdown (Multiple Select)
 **Inherits:** `MultiRadio`
 
 | Parameter Name | Type | Default Value | Description |
@@ -203,7 +203,7 @@ Each data type has its specific parameter configuration items and usage methods.
 
 ---
 
-### File (Attachment)
+### File (Attachments)
 **Inherits:** `JitList`
 
 | Parameter Name | Type | Default Value | Description |
@@ -217,7 +217,7 @@ Each data type has its specific parameter configuration items and usage methods.
 
 ---
 
-### Image (Image)
+### Image (Images)
 **Inherits:** `JitList`
 
 | Parameter Name | Type | Default Value | Description |
@@ -231,14 +231,14 @@ Each data type has its specific parameter configuration items and usage methods.
 
 ---
 
-### Signature (Handwritten Signature)
+### Signature (Signature)
 | Parameter Name | Type | Default Value | Description |
 |--------|------|--------|------|
 | mode | String | "new" | Signature mode (new: sign again each time, prev: use previous signature) |
 
 ---
 
-### Dept (Department Single Selection)
+### Dept (Single Department)
 **Inherits:** `Stext`
 
 | Parameter Name | Type | Default Value | Description |
@@ -251,14 +251,14 @@ Each data type has its specific parameter configuration items and usage methods.
 
 ---
 
-### MultiDept (Department Multiple Selection)
+### MultiDept (Multiple Departments)
 **Inherits:** `Dept`
 
 **Specific Parameters:** None
 
 ---
 
-### Member (Member Single Selection)
+### Member (Single Member)
 **Inherits:** `Stext`
 
 | Parameter Name | Type | Default Value | Description |
@@ -272,7 +272,7 @@ Each data type has its specific parameter configuration items and usage methods.
 
 ---
 
-### MultiMember (Member Multiple Selection)
+### MultiMember (Multiple Members)
 **Inherits:** `Member`
 
 **Specific Parameters:** None
@@ -289,7 +289,7 @@ Each data type has its specific parameter configuration items and usage methods.
 
 ---
 
-### Identify (ID Card Number)
+### Identify (ID Number)
 **Inherits:** `Stext`
 
 **Specific Parameters:** None
@@ -327,14 +327,14 @@ Each data type has its specific parameter configuration items and usage methods.
 
 ---
 
-### Link (Hyperlink)
+### Link (Link)
 **Inherits:** `JitDict`
 
 **Specific Parameters:** None
 
 ---
 
-### SubTable (Sub Table)
+### SubTable (Sub-Table)
 **Inherits:** `RowList`
 
 | Parameter Name | Type | Default Value | Description |
@@ -391,7 +391,7 @@ Not applicable to model fields
 
 ---
 
-### RowList (Multiple Row Data)
+### RowList (Multiple Row Datas)
 :::warning
 Not applicable to model fields
 :::
@@ -402,7 +402,7 @@ Not applicable to model fields
 
 ---
 
-### RelateData (Related Single Selection)
+### RelateData (Related Record)
 **Inherits:** `RowData`
 
 | Parameter Name | Type | Default Value | Description |
@@ -415,7 +415,7 @@ Not applicable to model fields
 
 ---
 
-### MultiRelateData (Related Multiple Selection)
+### MultiRelateData (Related Records)
 **Inherits:** `RowList`, `RelateData`
 
 **Specific Parameters:** None
@@ -454,7 +454,7 @@ All data type objects have the following common properties:
 
 ---
 
-### Ltext (Long Text)
+### Ltext (Multi-line Text)
 **Inherits:** `Stext`
 
 **Functions:**
@@ -545,7 +545,7 @@ All data type objects have the following common properties:
 
 ---
 
-### AutoInt (Auto-increment Integer)
+### AutoInt (Auto Inc Id)
 **Inherits:** `Numeric`
 
 **Functions:**
@@ -718,7 +718,7 @@ All data type objects have the following common properties:
 
 ---
 
-### File (Attachment)
+### File (Attachments)
 **Inherits:** `JitList`
 
 **Properties:**
@@ -743,7 +743,7 @@ All data type objects have the following common properties:
 
 ---
 
-### Image (Image)
+### Image (Images)
 **Inherits:** `JitList`
 
 **Properties:**
@@ -768,7 +768,7 @@ All data type objects have the following common properties:
 
 ---
 
-### Signature (Handwritten Signature)
+### Signature (Signature)
 **Properties:**
 - `mode`: Signature mode, read-only (new: sign again each time, prev: use previous signature)
 
@@ -777,7 +777,7 @@ All data type objects have the following common properties:
 
 ---
 
-### Dept (Department)
+### Dept (Single Department)
 **Inherits:** `Stext`
 
 **Properties:**
@@ -805,7 +805,7 @@ All data type objects have the following common properties:
 
 ---
 
-### MultiDept (Multiple Department Selection)
+### MultiDept (Multiple Departments)
 **Inherits:** `Dept`
 
 **Functions:**
@@ -814,7 +814,7 @@ All data type objects have the following common properties:
 
 ---
 
-### Member (Member)
+### Member (Single Member)
 **Inherits:** `Stext`
 
 **Properties:**
@@ -851,7 +851,7 @@ All data type objects have the following common properties:
 
 ---
 
-### MultiMember (Multiple Member Selection)
+### MultiMember (Multiple Members)
 **Inherits:** `Member`
 
 **Functions:**
@@ -879,7 +879,7 @@ All data type objects have the following common properties:
 
 ---
 
-### Identify (ID Card Number)
+### Identify (ID Number)
 **Inherits:** `Stext`
 
 **Properties:**
@@ -933,7 +933,7 @@ All data type objects have the following common properties:
 
 ---
 
-### Link (Hyperlink)
+### Link (Link)
 **Inherits:** `JitDict`
 
 **Properties:**
@@ -945,7 +945,7 @@ All data type objects have the following common properties:
 
 ---
 
-### SubTable (Sub Table)
+### SubTable (Sub-Table)
 **Inherits:** `RowList`
 
 **Properties:**
@@ -1042,7 +1042,7 @@ All data type objects have the following common properties:
 
 ---
 
-### RowList (Multiple Row Data)
+### RowList (Multiple Row Datas)
 **Properties:**
 - `Model`: Corresponding model class, read-only
 - `value`: Variable value, read-write
@@ -1072,7 +1072,7 @@ All data type objects have the following common properties:
 
 ---
 
-### RelateData (Related Single Selection)
+### RelateData (Related Record)
 **Inherits:** `RowData`
 
 **Properties:**
@@ -1093,11 +1093,11 @@ All data type objects have the following common properties:
 
 ---
 
-### MultiRelateData (Related Multiple Selection)
+### MultiRelateData (Related Records)
 **Inherits:** `RowList`, `RelateData`
 
 ---
-### QFilter (Query Filter)
+### QFilter (Filter Condition)
 **Properties:**
 - `value`: Variable value, read-write
 

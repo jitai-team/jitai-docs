@@ -3,8 +3,19 @@ sidebar_position: 4
 ---
 
 # AI Data Analysis Page
-## Overview {#overview}
-In traditional development mode, statistical charts are pre-designed by developers, and users cannot modify chart types and statistical methods. JitAI's AI data analysis page allows users to describe their requirements through natural language, with AI automatically generating corresponding data charts and supporting users to adjust chart styles and statistical dimensions at any time.
+
+## What is AI data analysis page {#what-is-ai-data-analysis-page}
+
+AI Data Analysis Page is a data visualization solution launched by the JitAI platform. It fundamentally transforms the traditional data analysis paradigm, enabling ordinary users to easily perform professional-grade data analysis tasks.
+The AI Data Analysis Page simplifies complex data analysis work into natural language conversations, allowing non-technical personnel to independently complete data insights and significantly reduce the barriers and costs of enterprise data analysis.
+
+### Features {#features}
+
+Users can describe data requirements in everyday language, such as "statistics of departmental performance rankings" or "analysis of sales trend changes," and the AI will automatically understand and generate corresponding charts. The system automatically selects the most appropriate chart type based on data characteristics, and users can adjust chart styles, colors, and filtering conditions at any time while saving personal preference settings. Developers can precisely control which data is allowed to be analyzed, ensuring data security.
+
+### Technical Implementation Principles {#technical-implementation}
+
+The JitAI platform has built-in data analysis page types and professional AI assistants. Developers only need to configure large language models and data permissions. Page development can be completed through the visual interface. When users input requirements, the AI automatically parses natural language, selects the best chart type and style, generates chart configurations, and calls page tools for display.
 
 ## Creating AI data analysis page {#create-ai-data-analysis-page}
 Create in the developer portal by following these steps:
@@ -74,7 +85,7 @@ In addition to creating in the developer portal, you can also quickly create in 
 
 ![Create AI Data Analysis Page - quickly](./imgs/quickly.png)
 
-Click **Create New** → **AI Data Analysis Functions**.This operation will create a new AI data analysis page and simultaneously create a menu in the portal and bind it to the newly added page.
+Click **Create** → **AI Data Analysis Functions**.This operation will create a new AI data analysis page and simultaneously create a menu in the portal and bind it to the newly added page.
 
 :::tip Tip
 You need to be granted [quick create permissions](/docs/devguide/user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus) to see the quick create entry.

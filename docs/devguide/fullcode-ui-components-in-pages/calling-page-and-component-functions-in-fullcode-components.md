@@ -5,11 +5,11 @@ slug: calling-page-and-component-functions-in-fullcode-components
 
 # Calling Page and Component Functions in Full-Code Components
 
-In full-code components, you can conveniently call methods of other components on the same page. **The core concept is: the page class acts as a "central dispatcher" that manages all component instances**.
+In full-code components, you can easily invoke methods from other components on the same page. **The core concept is: the page class serves as a "central dispatcher" managing all component instances**.
 
-## Calling Principle {#calling-principle}
+## Calling principle {#calling-principle}
 
-Imagine the page as a "command center" where all components register themselves:
+Think of the page as a "command center" where all components register themselves:
 
 ```typescript title="Component registration in page.ts"
 class PageCls extends Jit.GridPage {
@@ -19,7 +19,7 @@ class PageCls extends Jit.GridPage {
 }
 ```
 
-Each custom component can access this "command center" through `compIns.page` and then call other components:
+Each custom component can access this "command center" via `compIns.page` and invoke other components:
 
 ```typescript
 // In the custom component's Render
@@ -30,11 +30,11 @@ const page = compIns.page;     // Access page "command center"
 page.Table3.call();            // Refresh table data
 ```
 
-## Practical Examples {#practical-examples}
+## Practical examples {#practical-examples}
 
-### Basic Component Calling {#basic-component-calling}
+### Basic component calling {#basic-component-calling}
 
-The following example demonstrates how to call methods of other components on the page in full-code components:
+The following example demonstrates how to invoke methods from other components on the page within full-code components:
 
 ```typescript title="Calling other components in full-code components"
 import { Jit } from 'jit';
@@ -85,9 +85,9 @@ export default class InteractiveComponent extends Jit.BaseComponent {
 }
 ```
 
-### Getting Data from Other Components {#getting-data-from-other-components}
+### Getting data from other components {#getting-data-from-other-components}
 
-Besides calling methods, you can also get data from other components:
+In addition to invoking methods, you can also retrieve data from other components:
 
 ```typescript title="Getting data from other components"
 const Render = (props) => {
@@ -131,13 +131,13 @@ const Render = (props) => {
 };
 ```
 
-## Common Component Methods {#common-component-methods}
+## Common component methods {#common-component-methods}
 
-Different component types provide rich calling methods and data access interfaces. For detailed component methods and interface descriptions, please refer to:
+Different component types provide a rich set of methods and data access interfaces. For detailed component method and interface documentation, please refer to:
 
-- [JitWeb Component Reference Documentation](../../reference/framework/JitWeb/components/) - View detailed methods and properties of all components
+- [JitWeb Component Reference Documentation](../../reference/framework/JitWeb/components/) - View comprehensive methods and properties for all components
 
-### Basic Calling Pattern {#basic-calling-pattern}
+### Basic calling pattern {#basic-calling-pattern}
 
 ```typescript
 // General calling pattern
@@ -150,8 +150,8 @@ page.ComponentName.methodName(parameters);
 const data = page.ComponentName.propertyName?.value;
 ```
 
-## Related Documentation
+## Related documentation {#related-documentation}
 
 - [Full-Code Component Interface Specifications](./ui-component-interface-specifications) - Learn about the basic structure and interfaces of full-code components
-- [Publishing and Subscribing Events](./emitting-events) - Understand the event communication mechanism between components
-- [Calling Full-Code Component Functions in Page Code](./calling-fullcode-component-functions-in-page-code) - Learn about reverse calling methods
+- [Publishing and Subscribing Events](./emitting-events) - Understand event communication mechanisms between components
+- [Calling Full-Code Component Functions in Page Code](./calling-fullcode-component-functions-in-page-code) - Learn how to call full-code components from page code

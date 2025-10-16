@@ -79,7 +79,7 @@ Save the modified `index.tsx` file and use this custom control to replace the re
 :::tip Note
 The implementation principle of custom controls is to create renderers or editors for data types using React syntax, rendering data into specific styles and interactive effects.
 
-When developing custom controls, you need to use full-code development. For how to use full-code development, please refer to [full-code-page-development](../shell-and-page/full-code-page-development#create-react-full-code-page).
+When developing custom controls, you need to use full-code development. For how to use full-code development, please refer to [Creating Full-Code Pages](../shell-and-page/full-code-page-development#creating-react-full-code-pages).
 :::
 
 ### Using Custom Control in Forms {#use-custom-control-in-form}

@@ -3,19 +3,19 @@ sidebar_position: 4
 slug: integrate-knowledge-base-into-agent
 ---
 
-# Integrating Knowledge Base into Agent {#use-ai-knowledge-base-in-ai-agent}
+# Integrating Knowledge Base Into Agent {#integrating-knowledge-base-into-agent}
 
-Knowledge bases serve as the core knowledge support for AI Agents, providing accurate and timely domain knowledge through Retrieval-Augmented Generation (RAG) technology, significantly enhancing Agent's professional capabilities and response quality.
+Knowledge bases serve as the core knowledge backbone for AI Agents, delivering accurate and timely domain expertise through Retrieval-Augmented Generation (RAG) technology. This integration significantly enhances an Agent's professional capabilities and response quality.
 
-## Relationship Between Knowledge Base and Agent {#relationship-between-knowledge-base-and-agent}
+## Relationship between knowledge base and agent {#relationship-between-knowledge-base-and-agent}
 
-In the JitAi platform, knowledge base elements form a close collaborative relationship with AI Agents:
+Within the JitAi platform, knowledge base elements establish a tightly integrated collaborative relationship with AI Agents:
 
-- **Knowledge Provider**: Knowledge bases transform various documents into structured knowledge that can be "understood", providing Agents with rich knowledge sources
-- **Intelligent Retrieval**: Through vector similarity and reranking models, knowledge bases can understand the semantic intent of Agent queries and return the most relevant knowledge fragments
-- **Dynamic Enhancement**: Agents can query knowledge bases in real-time to obtain the latest business information without retraining models
+- **Knowledge provisioning**: Knowledge bases transform diverse documents into structured, machine-understandable knowledge, providing Agents with rich knowledge repositories
+- **Intelligent retrieval**: Through vector similarity matching and reranking models, knowledge bases comprehend the semantic intent behind Agent queries and return the most relevant knowledge fragments
+- **Dynamic enhancement**: Agents can query knowledge bases in real-time to obtain the latest business information without requiring model retraining
 
-## Technical Integration Principle {#technical-integration-principle}
+## Technical integration principles {#technical-integration-principles}
 
 ```mermaid
 flowchart LR
@@ -29,18 +29,18 @@ flowchart LR
     G --> H[Generate Response]
 ```
 
-After integrating knowledge bases, Agents can dynamically acquire relevant knowledge during reasoning, achieving:
-- **Context Enhancement**: Use retrieved knowledge as contextual supplements to improve response accuracy
-- **Knowledge Timeliness**: Obtain the latest document content, avoiding limitations of model training data timeliness
-- **Professional Domain Support**: Through domain-specific knowledge bases, enable Agents to possess deep knowledge in professional fields
+When knowledge bases are integrated, Agents can dynamically acquire relevant knowledge during the reasoning process, enabling:
+- **Context augmentation**: Leverages retrieved knowledge as contextual supplements to improve response accuracy
+- **Knowledge currency**: Obtains the latest document content, circumventing the temporal limitations of model training data
+- **Domain expertise**: Through domain-specific knowledge bases, equips Agents with deep expertise in specialized fields
 
-## Integration Modes {#integration-modes}
+## Integration modes {#integration-modes}
 
 Knowledge bases support two integration modes:
-- **Mandatory Mode**: Agents must first query the knowledge base before processing user requests, ensuring every response is based on the latest knowledge
-- **Decision Mode**: LLM intelligently determines whether to query the knowledge base, balancing response speed with knowledge accuracy
+- **Mandatory mode**: Agents must query the knowledge base before processing user requests, ensuring every response is grounded in the latest knowledge
+- **Decision mode**: The LLM intelligently determines whether to query the knowledge base, balancing response speed against knowledge accuracy
 
-## Using Knowledge Base in Agent {#use-knowledge-base-in-agent}
+## Using knowledge base in agent {#using-knowledge-base-in-agent}
 
-For detailed integration configuration and usage methods, please refer to [Integrate Knowledge Base to Implement Retrieval-Augmented Generation (RAG)](../ai-agent/agent-knowledge-base#integrate-knowledge-base-rag).
+For detailed integration configuration and usage instructions, refer to [Integrating Knowledge Base for Retrieval-Augmented Generation (RAG)](../ai-agent/agent-knowledge-base#integrate-knowledge-base-rag).
 

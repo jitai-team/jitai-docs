@@ -32,6 +32,6 @@ app.models.[模型ID].[方法名称]([参数1], [参数2], ...)
 ### 数据操作能力 {#data-operation-capabilities}
 数据模型函数为页面提供了强大的数据操作能力，通过简单统一的语法即可完成复杂的数据处理任务。如需了解如何创建和配置数据模型，请参考：[数据表模型](../data-modeling/data-table-model.md)
 
-## 相关文档
+## 相关文档 {#related-documentation}
 
 - [服务函数调用](./calling-service-functions-in-pages) - 了解服务函数的调用方式，语法与数据模型函数完全一致

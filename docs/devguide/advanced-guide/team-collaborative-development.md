@@ -4,21 +4,24 @@ slug: team-collaborative-development
 ---
 
 # Team Collaborative Development with JitAi Desktop
-## Desktop Development Workflow (Recommended)
-![Desktop Development Workflow](./img/desktop-dev-flow.svg)
 
-1. **Local Development** → Use JitNode Desktop (Windows/Mac) for application development and debugging (source code managed with Git repository)
-2. **Version Release** → Publish application version after development completion
-3. **Test Deployment** → Deploy the corresponding version in test environment for validation
-4. **Production Deployment** → Deploy the version to production environment after testing passes
+## Desktop development workflow (recommended) {#desktop-development-workflow}
 
-## Server-based Collaboration Workflow
-![Server-based Collaboration Workflow](./img/server-collab-flow.svg)
+![Desktop Development Workflow](./img/desktop-dev-flow.svg "Desktop Development Workflow")
 
-1. **Development Node** → Use server-based nodes as shared development environment
-2. **Development Testing** → Business personnel build modules online visually, with immediate effect and instant testing
-3. **Production Release** → Release version and deploy it in production environment
+1. **Local Development** → Develop applications locally using JitNode Desktop (Windows/Mac) for application development and debugging (source code managed via Git repository)
+2. **Version Release** → Publish the application version upon completion of development
+3. **Test Deployment** → Deploy the corresponding version to the test environment for validation
+4. **Production Deployment** → Deploy the validated version to the production environment
+
+## Server-based collaboration workflow {#server-based-collaboration-workflow}
+
+![Server-based Collaboration Workflow](./img/server-collab-flow.svg "Server-based Collaboration Workflow")
+
+1. **Development Node** → Use server-based nodes as a shared development environment
+2. **Development Testing** → Business users build modules visually online with immediate effects and real-time testing
+3. **Production Release** → Release the version and deploy it to the production environment
 
 :::warning Production Environment Security
-Although the platform supports immediate changes taking effect, it is strongly recommended not to modify the production environment directly. Strictly follow the development → testing → production deployment workflow.
+Although the platform supports making changes take effect immediately, it is strongly recommended not to modify the production environment directly. Always follow the development → testing → production deployment workflow.
 :::

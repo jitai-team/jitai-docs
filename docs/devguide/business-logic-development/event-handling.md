@@ -90,36 +90,17 @@ Custom events provide maximum flexibility, enabling developers to declare their 
 
 The workflow for custom events is as follows: first, declare events in service elements, then subscribe to and execute them through event elements.
 
-<<<<<<< HEAD
 ![Entering source code mode](./img/enter-source-code-1.png "Entering source code mode")
-=======
-### Trigger Timings {#ai-assistant-trigger-timings}
-- **Before Assistant Run**: Triggered before the assistant starts running, with user input as the parameter.
-- **After Assistant Run**: Triggered after the assistant completes running, with no parameters.
-- **Node Arrival**: Triggered when AI Agent nodes, function call nodes, conditional branch nodes, and multi-task execution nodes are reached. The prerequisite is that the node needs to enable backend event triggering. For enabling method, see: [Node execution events](../ai-assistant/ai-assistant-event#backend-node-events). The parameter carried is the `Node arrival event output parameters` configured on the node.
-- **After Node Execution**: Event type is: afterNodeRun; triggered after AI Agent nodes, function call nodes, conditional branch nodes, and multi-task execution nodes complete execution. The prerequisite is that the node needs to enable backend event triggering. The parameter carried is the `Node post-execution event output parameters` configured on the node.
->>>>>>> upstream/master
 
 Developers must first create a service element and write related business functions (e.g., adding a record to table A). Click the switch icon in the upper right corner to enter the code editing interface.
 
 ![Adding event declaration in source code](./img/source-code-add-event-declaration.png "Adding event declaration in source code")
 
-<<<<<<< HEAD
 In the service's `e.json` configuration file, add the event declaration list `eventDescs`. Each event must include `name` (event name), `title` (title), and `desc` (description) attributes.
-=======
-In the IDE, click <span style={{ background:"#3d65fd", display: "inline-block", borderRadius: "8px", textAlign: "center", lineHeight: "100%", color: "#ffffff", fontSize: "24px", padding: "0px 10px 5px" }}>+</span> -> **More** -> **Events** -> **AI Assistant Event**, open the event configuration dialog, and fill in the event configuration information.
->>>>>>> upstream/master
 
 ### Triggering events in function logic {#triggering-events-in-function-logic}
 
-<<<<<<< HEAD
 Add statements in function logic to trigger custom events.
-=======
-Select the target [AI Assistant](../ai-assistant) and [AI Assistant Events](../ai-assistant/ai-assistant-event), and configure the corresponding excute function.
-
-## Agent Tool Call Events {#agent-tool-call-events}
-When AI Agent calls tools, we can subscribe to this event to insert business processing logic during Agent execution. The prerequisite is that the tool needs to enable <a href="../ai-agent#ai-agent-tool-configuration">trigger events</a>.
->>>>>>> upstream/master
 
 ![Custom event trigger](./img/custom-event-trigger.png "Custom event trigger")
 
@@ -129,11 +110,7 @@ In the service's `service.py` function logic, use `app.event.publish` to trigger
 
 Create a custom event element to subscribe to events declared in service functions.
 
-<<<<<<< HEAD
 ![Custom event creation](./img/custom-event-creation.gif "Custom event creation")
-=======
-In the IDE, click <span style={{ background:"#3d65fd", display: "inline-block", borderRadius: "8px", textAlign: "center", lineHeight: "100%", color: "#ffffff", fontSize: "24px", padding: "0px 10px 5px" }}>+</span> -> **More** -> **Events** -> **AI Assistant Event**, open the event configuration dialog, and fill in the event configuration information.
->>>>>>> upstream/master
 
 In the `New Custom Event` dialog, select the declared event, configure the execution function and async settings, then enter the detailed configuration page after creation.
 

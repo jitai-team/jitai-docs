@@ -84,7 +84,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
         {/* Logo 和导航菜单在左侧 */}
         <div className={styles.leftSection}>
           <div className={styles.logo} onClick={() => handleNavClick(CONTENT.navItems[0])}>
-            <span>JitAi</span>
+            <img src="/img/jit.png" alt="JitAI" />
           </div>
 
           {/* 桌面端导航 */}

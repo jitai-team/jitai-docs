@@ -6,7 +6,7 @@
 /* 全局样式变量 - 多彩主题架构 */
 :root {
   /* 基础色彩系统 */
-  --color-primary: #2461fe;      /* 主色调 - 蓝色 */
+  --color-primary: #3D65FD;      /* 主色调 - 蓝色 */
   --color-secondary: #ca4ba7;     /* 辅助色 - 紫色 */
   --color-accent: #6b7280;        /* 强调色 - 灰色 */
   --color-light: #9ca3af;         /* 浅色 */
@@ -20,9 +20,9 @@
   --color-dark-rgb: 31, 41, 55;
 
   /* 前3屏 - 多彩介绍屏色彩系统 */
-  --hero-primary: #2461fe;        /* HeroSection主色 - 蓝色 */
+  --hero-primary: #3D65FD;        /* HeroSection主色 - 蓝色 */
   --hero-secondary: #ca4ba7;      /* HeroSection辅助色 - 紫色 */
-  --hero-gradient: linear-gradient(135deg, #2461fe 0%, #ca4ba7 100%);
+  --hero-gradient: linear-gradient(135deg, #3D65FD 0%, #ca4ba7 100%);
   --hero-bg: linear-gradient(135deg, #f8faff 0%, #f0f4ff 50%, #f5f3ff 100%);
 
   /* ProductSection - 多彩卡片色彩（优化顺序） */

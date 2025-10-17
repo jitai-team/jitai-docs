@@ -13,7 +13,7 @@ const ProductSection: React.FC<ProductSectionProps> = ({ currentLocale }) => {
   const CONTENT = currentLocale === 'zh' ? CONTENT_ZH : CONTENT_EN;
 
   return (
-          <ScrollAnimation animationType="fadeInUp" duration={500}>
+      <ScrollAnimation animationType="fadeInUp" duration={500}>
         <section
           id="section-1"
           className={`${styles.productSection} ${globalStyles.gradientBackground}`}
@@ -24,14 +24,6 @@ const ProductSection: React.FC<ProductSectionProps> = ({ currentLocale }) => {
           // } as React.CSSProperties}
         >
           <div className={globalStyles.sectionContent}>
-            <ScrollAnimation animationType="fadeInUp" delay={100}>
-              <h2 className={globalStyles.sectionTitle}>{CONTENT.title}</h2>
-            </ScrollAnimation>
-            <ScrollAnimation animationType="fadeInUp" delay={200}>
-              <p className={styles.sectionSubtitle}>
-                {CONTENT.subtitle}
-              </p>
-            </ScrollAnimation>
             <div className={styles.cardsGrid}>
               {CONTENT.cards.map((card, index) => (
                 <ScrollAnimation
@@ -47,11 +39,10 @@ const ProductSection: React.FC<ProductSectionProps> = ({ currentLocale }) => {
                       '--card-hover-color': card.color
                     } as React.CSSProperties}
                   >
-                    <div className={styles.cardIcon}>{card.icon}</div>
                     <div className={styles.cardHeader}>
                       <h3>{card.title}</h3>
                     </div>
-                    <p className={styles.cardDescription}>{card.description}</p>
+                    <p className={styles.cardDescription} dangerouslySetInnerHTML={{ __html: card.description }} />
                   </div>
                 </ScrollAnimation>
               ))}

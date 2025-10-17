@@ -53,7 +53,7 @@ this.subscribeEvent("AI:aiagents.ClientManagementagent.callTool.preEvent", async
 ```
 
 ### Subscribe to action in conversation node events {#subscribe-action-in-conversation-events}
-Pages can subscribe to [action in conversation node events](../ai-assistant/ai-assistant-event#in-conversation-action-events).
+Pages can subscribe to [action in conversation node events](../ai-assistant/ai-assistant-event#action-in-conversation-events).
 The subscription method is as follows:
 
 ![AI Assistant - Chat Area Human-Machine Interaction Event Subscription](./img/assistant-chat-event.png)

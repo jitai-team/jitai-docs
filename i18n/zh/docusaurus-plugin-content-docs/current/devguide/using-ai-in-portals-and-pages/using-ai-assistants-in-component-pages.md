@@ -53,7 +53,7 @@ this.subscribeEvent("AI:aiagents.ClientManagementagent.callTool.preEvent", async
 ```
 
 ### 订阅聊天区域人机交互节点事件 {#subscribe-action-in-conversation-events}
-页面可以订阅[聊天区域人机交互节点事件](../ai-assistant/ai-assistant-event#chat-area-human-machine-interaction-events)。
+页面可以订阅[聊天区域人机交互节点事件](../ai-assistant/ai-assistant-event#action-in-conversation-events)。
 订阅方法如下：
 
 ![AI助理 - 聊天区域人机交互事件订阅](./img/assistant-chat-event.png)

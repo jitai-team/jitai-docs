@@ -48,7 +48,7 @@ slug: external-api
 
 请求前置函数和响应处理函数都不是必填的。如果响应处理函数没有填写，则响应数据将原样返回。
 
-在配置这两个函数之前，需要到标准服务中创建对应的服务函数。
+在配置这两个函数之前，需要到[标准服务](../business-logic-development/creating-service-elements.md)中创建对应的服务函数。
 
 :::
 
@@ -115,7 +115,7 @@ JitAi 通过回调函数配置服务元素中的函数，对最终结果进行�
 
 ![回调函数](./img/1/api_2025-08-27_15-13-23.png)
 
-在设置回调函数之前，需要到标准服务中创建对应的函数。
+在设置回调函数之前，需要到[标准服务](../business-logic-development/creating-service-elements.md)中创建对应的函数。
 
 ### API接口的测试及调用 {#api-interface-testing-and-calling}
 #### API接口测试 {#api-interface-testing}

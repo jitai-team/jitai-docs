@@ -8,7 +8,7 @@ slug: sms-service
 
 JitAi 接入短信服务，开发者在 IDE 门户配置短信服务参数，提供给其他模块（如手机号登录、审批通知发送短信等）使用。
 
-当前 JitAi 暂时只支持阿里云短信服务。
+当前 JitAi 支持阿里云短信、AWS SNS短信和Twilio短信服务。
 
 ## 阿里云短信 {#aliyun-sms}
 阿里云短信是基于阿里云 SMS API 的企业级短信通知服务，通过标准的 sendMessage 接口实现验证码发送、通知提醒等短信业务场景。它集成阿里云 SMS API，支持 AccessKey 认证和签名验证机制，提供完整的错误处理和日志监控，确保消息发送的可靠性。
@@ -32,7 +32,45 @@ accessKey、accessSecret 和 verifySign 签名都是创建阿里云短信服务�
 
 进入阿里云短信服务配置页面。用户如果需要修改参数，直接修改后点击`保存`即可。注意填写内容的真实性，否则将无法使用。
 
-### 手机登录方式中使用短信服务 {#use-sms-service-in-mobile-login}
+## AWS SNS短信 {#aws-sns-sms}
+AWS SNS短信是AWS提供的企业级短信通知服务，通过标准的 sendMessage 接口实现验证码发送、通知提醒等短信业务场景。它集成AWS SNS API，支持 AccessKey 认证和签名验证机制，提供完整的错误处理和日志监控，确保消息发送的可靠性。
+
+### AWS SNS短信服务创建 {#aws-sns-service-creation}
+![AWS SNS短信创建](./img/3/sms_2025-10-17_14-24-03.png)
+在左侧元素树上点击`+`会打开弹窗，将鼠标移动到“更多”中，会看到“短信服务”。点击“短信服务”里面的“AWS SNS短信”，就会打开AWS SNS短信的新建弹窗页面。
+
+![AWS SNS短信新建弹窗](./img/3/sms_2025-10-17_14-26-53.png)
+在新建弹窗页面中，填写名称，再按照要求填写 accessKey、Secret Key 和 Region后，点击`确定`就创建了一个AWS SNS短信元素。
+
+:::warning 注意
+accessKey、Secret Key 和 Region都是创建AWS SNS短信服务时必须填写的参数。
+
+三个参数都是由AWS提供，需要用户到[AWS SNS短信服务平台](https://docs.aws.amazon.com/sns/latest/dg/welcome.html)进行申请。
+:::
+
+![AWS SNS短信配置](./img/3/sms_2025-10-17_14-27-51.png)
+进入AWS SNS短信服务配置页面。用户如果需要修改参数，直接修改后点击`保存`即可。注意填写内容的真实性，否则将无法使用。
+
+## Twilio短信 {#twilio-sms}
+Twilio短信是Twilio提供的企业级短信通知服务，通过标准的 sendMessage 接口实现验证码发送、通知提醒等短信业务场景。它集成Twilio API，支持 AccessKey 认证和签名验证机制，提供完整的错误处理和日志监控，确保消息发送的可靠性。
+
+### Twilio短信服务创建 {#twilio-service-creation}
+![Twilio短信创建](./img/3/sms_2025-10-17_14-29-41.png)
+在左侧元素树上点击`+`会打开弹窗，将鼠标移动到“更多”中，会看到“短信服务”。点击“短信服务”里面的“Twilio短信”，就会打开Twilio短信的新建弹窗页面。
+
+![Twilio短信新建弹窗](./img/3/sms_2025-10-17_14-31-47.png)
+在新建弹窗页面中，填写名称，再按照要求填写 accountSid、authToken 和 From Number后，点击`确定`就创建了一个Twilio短信元素。
+
+:::warning 注意
+accountSid、authToken 和 From Number都是创建Twilio短信服务时必须填写的参数。
+
+这三个参数都是由Twilio提供，需要用户到[Twilio短信服务平台](https://www.twilio.com/docs/messaging)进行申请。
+:::
+
+![Twilio短信配置](./img/3/sms_2025-10-17_14-37-01.png)
+进入Twilio短信服务配置页面。用户如果需要修改参数，直接修改后点击`保存`即可。注意填写内容的真实性，否则将无法使用。
+
+## 手机登录方式中使用短信服务 {#use-sms-service-in-mobile-login}
 开通手机登录方式后，用户注册账号或登录时，系统会要求用户填写手机号码，然后发送验证码到用户手机。这里就会使用到短信服务进行发送验证码功能。
 
 ![手机登录使用短信服务](./img/3/sms_2025-08-28_10-26-48.png)
@@ -44,12 +82,14 @@ accessKey、accessSecret 和 verifySign 签名都是创建阿里云短信服务�
 开发者可以选择已经创建好的短信服务，也可以创建一个新的短信服务。
 
 :::tip 提示
+阿里云短信服务需要配置短信模板代码。而其他短信服务则配置短信模板即可。
+
 短信模板代码是开发者在短信平台中配置的验证码信息模板，需要开发者去短信平台申请。
 
 对已经创建好的手机登录方式，可以在手机登录方式的配置页面修改短信服务和模板代码。
 :::
 
-### 审批流程中使用短信服务 {#use-sms-service-in-approval-workflow}
+## 审批流程中使用短信服务 {#use-sms-service-in-approval-flow}
 审批节点/抄送节点支持配置短信服务，当开发者配置短信服务后，如果有对应的审批流转到该节点，系统就会发送短信给审批人/抄送人。
 
 ![审批使用短信服务](./img/3/sms_2025-08-28_10-56-19.png)
@@ -66,7 +106,7 @@ accessKey、accessSecret 和 verifySign 签名都是创建阿里云短信服务�
 
 :::
 
-### 短信通知功能 {#sms-notification-function}
+## 短信通知功能 {#sms-notification-function}
 开发者可以在函数逻辑中配置短信通知功能，当执行这个函数时，系统就会发送短信给指定用户。
 
 ![短信通知功能](./img/3/sms_2025-08-28_11-17-56.png)

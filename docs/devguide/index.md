@@ -1792,8 +1792,12 @@ Connect to the broader ecosystem—integrate third-party APIs, payment gateways 
   <LinkGrid links={[
     { text: "Alibaba Cloud SMS", href: "devguide/third-party-integration/sms-service#aliyun-sms" },
     { text: "Creating Alibaba Cloud SMS Service", href: "devguide/third-party-integration/sms-service#aliyun-sms-service-creation" },
+    { text: "AWS SNS SMS", href: "devguide/third-party-integration/sms-service#aws-sns-sms" },
+    { text: "Creating AWS SNS SMS service", href: "devguide/third-party-integration/sms-service#aws-sns-service-creation" },
+    { text: "Twilio SMS", href: "devguide/third-party-integration/sms-service#twilio-sms" },
+    { text: "Creating Twilio SMS service", href: "devguide/third-party-integration/sms-service#twilio-service-creation" },
     { text: "Using SMS Service in Mobile Login", href: "devguide/third-party-integration/sms-service#use-sms-service-in-mobile-login" },
-    { text: "Using SMS Service in Approval Workflows", href: "devguide/third-party-integration/sms-service#use-sms-service-in-approval-workflow" },
+    { text: "Using SMS Service in Approval Workflows", href: "devguide/third-party-integration/sms-service#use-sms-service-in-approval-flow" },
     { text: "SMS Notification Function", href: "devguide/third-party-integration/sms-service#sms-notification-function" }
   ]} />
 </IndexCard>

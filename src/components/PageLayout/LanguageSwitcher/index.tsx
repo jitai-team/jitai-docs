@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from '@docusaurus/router';
 import styles from './styles.module.css';
 
 interface LanguageSwitcherProps {
@@ -6,17 +7,18 @@ interface LanguageSwitcherProps {
 }
 
 const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className }) => {
+  const location = useLocation();
   const [currentLang, setCurrentLang] = useState<'zh' | 'en'>('en');
 
   useEffect(() => {
     // 根据当前路径判断语言
-    const path = window.location.pathname;
+    const path = location.pathname;
     if (path.startsWith('/zh')) {
       setCurrentLang('zh');
     } else {
       setCurrentLang('en');
     }
-  }, []);
+  }, [location.pathname]);
 
   const handleLanguageSwitch = () => {
     const currentPath = window.location.pathname;

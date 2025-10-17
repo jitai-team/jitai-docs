@@ -1,6 +1,6 @@
 ---
 sidebar_position: 17
-slug: develop-human-ai-collaboration-enterprise-assistant
+slug: /devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant
 ---
 
 # 开发与UI页面协作的人机协作式企业级AI助理应用
@@ -115,7 +115,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 评分Agent的工作流程如下：
 从页面中获取答题明细，逐条评分，给出得分及理由并更新到答题明细中；然后根据整体得分情况给出一个总评语；最后输出包含得分及理由的答题明细与总评语。
 
-- **创建评分Agent元素**：创建过程参考[创建AI Agent](../../ai-agent/create-ai-agent)。创建完成后[配置大模型](../../ai-agent/create-ai-agent#selecting-models-configuring-parameters)。
+- **创建评分Agent元素**：创建过程参考[创建AI Agent](/docs/devguide/ai-agent/create-ai-agent)。创建完成后[配置大模型](/docs/devguide/ai-agent/create-ai-agent#selecting-models-configuring-parameters)。
 - **编写提示词**：
 ```markdown
 # 角色：阅卷专家
@@ -163,33 +163,33 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
     - 评语(comments)：对答卷的整体评语
 ![阅卷Agent-输出](./img/agent-output.png)
 
-配置方式参考：[配置输出参数](../../ai-agent/agent-input-output#configuring-output-results)
+配置方式参考：[配置输出参数](/docs/devguide/ai-agent/agent-input-output#configuring-output-results)
 
 - **配置调用工具**：将**阅卷管理页面**`获取变量值`添加为工具，Agent通过该工具获取页面中评分表单中的答题明细数据。
 
 ![阅卷Agent-工具](./img/agent-tool.png)
 
-配置方式参考：[Agent 添加页面工具](../../ai-agent/agent-tools#calling-page-functions)
+配置方式参考：[Agent 添加页面工具](/docs/devguide/ai-agent/agent-tools#calling-page-functions)
 
 
 ### 开发评分助理 {#developing-the-grading-assistant}
 
-- **创建评分助理**：创建方式参考[创建AI助理](../create-ai-assistant)
+- **创建评分助理**：创建方式参考[创建AI助理](/docs/devguide/ai-assistant/create-ai-assistant)
 
 - **编排助理流程**：
 ![阅卷助理-流程](./img/assistant-process.png)
 
 流程步骤为：`Start` -> `AI评分` -> `确认分数` -> `更新评分表单`
-    - **AI评分**：[AI Agent节点](../process-orchestration-node-configuration#ai-agent)，绑定评分Agent。
+    - **AI评分**：[AI Agent节点](/docs/devguide/ai-assistant/process-orchestration-node-configuration#ai-agent)，绑定评分Agent。
 ![assistant-bind-agent](./img/assistant-bind-agent.png)
-    - **确认分数**：[对话区人机交互节点](../process-orchestration-node-configuration#action-in-conversation)，展示评分Agent输出的答题明细及评语，等待人工确认，确认后更新评分表单。
+    - **确认分数**：[对话区人机交互节点](/docs/devguide/ai-assistant/process-orchestration-node-configuration#action-in-conversation)，展示评分Agent输出的答题明细及评语，等待人工确认，确认后更新评分表单。
 ![assistant-human-confirm](./img/assistant-human-confirm.png)
-    - **更新评分表单**：[工作区人机交互节点](../process-orchestration-node-configuration#action-in-page)，暂停流程，并输出答题明细及评语到页面中。设置一个友好的提示语，提示用户下一步操作。
+    - **更新评分表单**：[工作区人机交互节点](/docs/devguide/ai-assistant/process-orchestration-node-configuration#action-in-page)，暂停流程，并输出答题明细及评语到页面中。设置一个友好的提示语，提示用户下一步操作。
 ![Grading By Agent](./img/assistant-uiinterrupt.png)
 
 ### 评分页面使用评分助理 {#using-the-grading-assistant-on-the-grading-page}
 
-[开启AI助理](../../using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#enable-ai-assistant)并绑定评分助理。
+[开启AI助理](/docs/devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#enable-ai-assistant)并绑定评分助理。
 
 ![页面使用AI助理](./img/page-use-assistant.png)
 
@@ -209,6 +209,6 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 下载地址: <a href="https://jit-www.oss-cn-beijing.aliyuncs.com/docs/ai-grade-demo/whwy.quickTutorial.0_0_0.zip">AI阅卷Demo源码</a>。
 
-进入[JitNode控制台](../../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment), 导入即可。
+进入[JitNode控制台](/docs/devguide/creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment), 导入即可。
 
 ![导入示例源码](./img/import-source-code.png)

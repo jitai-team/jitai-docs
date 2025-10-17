@@ -1888,8 +1888,12 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   <LinkGrid links={[
     { text: "阿里云短信", href: "devguide/third-party-integration/sms-service#aliyun-sms" },
     { text: "阿里云短信服务创建", href: "devguide/third-party-integration/sms-service#aliyun-sms-service-creation" },
+    { text: "AWS SNS短信", href: "devguide/third-party-integration/sms-service#aws-sns-sms" },
+    { text: "AWS SNS短信服务创建", href: "devguide/third-party-integration/sms-service#aws-sns-service-creation" },
+    { text: "Twilio短信", href: "devguide/third-party-integration/sms-service#twilio-sms" },
+    { text: "Twilio短信服务创建", href: "devguide/third-party-integration/sms-service#twilio-service-creation" },
     { text: "手机登录方式中使用短信服务", href: "devguide/third-party-integration/sms-service#use-sms-service-in-mobile-login" },
-    { text: "审批流程中使用短信服务", href: "devguide/third-party-integration/sms-service#use-sms-service-in-approval-workflow" },
+    { text: "审批流程中使用短信服务", href: "devguide/third-party-integration/sms-service#use-sms-service-in-approval-flow" },
     { text: "短信通知功能", href: "devguide/third-party-integration/sms-service#sms-notification-function" }
   ]} />
 </IndexCard>

@@ -599,7 +599,7 @@ All data type objects have the following common properties:
 
 ---
 
-### MultiRadio (Multiple Chioce)
+### MultiRadio (Multiple Choice)
 **Inherits:** `Radio`
 
 **Properties:**

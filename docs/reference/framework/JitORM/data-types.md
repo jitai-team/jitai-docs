@@ -421,7 +421,7 @@ Not applicable to model fields
 **Specific Parameters:** None
 
 ---
-### QFilter (Filter Condition)
+### QFilter (Filter Conditions)
 :::warning
 Not applicable to model fields
 :::
@@ -1097,7 +1097,7 @@ All data type objects have the following common properties:
 **Inherits:** `RowList`, `RelateData`
 
 ---
-### QFilter (Filter Condition)
+### QFilter (Filter Conditions)
 **Properties:**
 - `value`: Variable value, read-write
 

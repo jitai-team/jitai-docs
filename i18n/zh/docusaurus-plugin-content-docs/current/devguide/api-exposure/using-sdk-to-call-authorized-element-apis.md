@@ -7,16 +7,16 @@ slug: using-sdk-to-call-authorized-element-apis
 
 开发者配置好授权信息和授权接口后，调用方可以通过调用 JitAi 提供的 SDK 来调用授权方开放的接口。
 
-在授权详情页面中，点击`下载SDK`，可以查看SDK使用指南和下载地址。
+在授权详情页面中，点击`SDK下载`，可以查看SDK使用指南和下载地址。
 
-![SDK 集成](./img/api_2025-08-26_15-50-10.gif)
+![SDK 集成](./img/api_2025-10-16_20-26-15.png)
 
 JitAi 提供了 Python、Nodejs、Java 三种语言的 SDK。
 
 ## 使用Python SDK {#using-python-sdk}
 作为Python 开发者，可以使用 Python SDK 来调用授权方开放的接口。
 
-![Python SDK](./img/api_2025-09-16_14-22-10.png)
+![Python SDK](./img/api_2025-10-16_20-26-15.png)
 
 调用方可以使用命令行安装Python SDK或者在`下载SDK`弹窗中的`Python`标签页下点击`下载地址`进行下载SDK。
 
@@ -111,3 +111,6 @@ public class App {
 }
 ```
 
+:::warning 注意
+这些 SDK 仅供服务端使用。如果直接从浏览器或前端代码调用这些 API，将会因为跨域资源共享（CORS）限制而失败。
+:::

@@ -57,7 +57,7 @@ const ImageComponent: React.FC<ImageComponentProps> = ({ imageKey }) => {
         </div>
       );
     default:
-      return <div className={`${imageStyles.image} 111`} />;
+      return <div className={`${imageStyles.image}`} />;
   }
 };
 

@@ -14,26 +14,12 @@
 
 .ideSection {
   padding: var(--section-padding);
-  background: linear-gradient(135deg,
-    color-mix(in srgb, var(--section-color) 5%, white) 0%,
-    color-mix(in srgb, var(--section-color) 3%, white) 50%,
-    color-mix(in srgb, var(--section-color) 7%, white) 100%);
+  background: #f0f4ff;
   position: relative;
   overflow: hidden;
 }
 
-.ideSection::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background:
-    radial-gradient(circle at 20% 80%, color-mix(in srgb, var(--section-color) 8%, transparent) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, color-mix(in srgb, var(--section-color) 6%, transparent) 0%, transparent 50%);
-  pointer-events: none;
-}
+/* 装饰样式已移除 */
 
 .container {
   max-width: 1400px;
@@ -151,6 +137,8 @@
   margin: 0;
   line-height: 1.4;
   transition: all 0.3s ease;
+  color: #131C43;
+  font-weight: 600;
 }
 
 .featureCard:hover .featureTitle {
@@ -277,10 +265,10 @@
 .moduleTitle {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--section-primary);
+  color: #131C43;
   margin: 0;
   line-height: 1.3;
-  background: linear-gradient(135deg, var(--section-primary) 0%, var(--section-secondary) 100%);
+  background: linear-gradient(135deg, #131C43 0%, #131C43 100%);
   -webkit-background-clip: text;
   background-clip: text;
   flex: 1;

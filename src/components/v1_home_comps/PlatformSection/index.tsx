@@ -42,9 +42,6 @@ const PlatformSection: React.FC<PlatformSectionProps> = ({ currentLocale }) => {
               >
                 <div
                   className={`${globalStyles.baseCard} ${styles.featureCard} animatedChild`}
-                  // style={{
-                  //   '--card-color': CONTENT.color,
-                  // } as React.CSSProperties}
                 >
                   <div className={styles.featureImage}>
                     <ImageComponent imageKey={feature.imageKey} />

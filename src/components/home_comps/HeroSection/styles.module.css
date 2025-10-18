@@ -22,33 +22,9 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(61, 101, 253, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(19, 28, 67, 0.02) 0%, transparent 50%);
-  pointer-events: none;
-}
+/* 装饰样式已移除 */
 
-.hero::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-    linear-gradient(45deg, transparent 0%, rgba(61, 101, 253, 0.01) 50%, transparent 100%);
-  background-size: 200px 200px;
-  background-position: 0 0;
-  pointer-events: none;
-  opacity: 0.3;
-}
+/* 装饰样式已移除 */
 
 /* 标题区域 */
 .titleSection {

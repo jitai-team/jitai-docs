@@ -63,7 +63,6 @@
   --hover-shadow-primary: 0 20px 40px rgba(61, 101, 253, var(--opacity-heavy));
   --hover-shadow-hero: 0 10px 25px rgba(61, 101, 253, var(--opacity-hover));
   --hover-shadow-navbar: 0 4px 8px rgba(61, 101, 253, var(--opacity-shadow));
-  --hover-shadow-card: 0 20px 40px rgba(0, 0, 0, 0.15);
 
   /* ===== 字体系统 ===== */
   --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -219,7 +218,7 @@ body img {
   backdrop-filter: blur(15px);
   border-radius: var(--border-radius-card);
   border: 1px solid var(--border-color-light);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-md);
   transition: var(--transition-primary);
   position: relative;
   overflow: hidden;
@@ -227,19 +226,11 @@ body img {
 
 .baseCard:hover {
   transform: translateY(-8px);
-  box-shadow: var(--hover-shadow-card);
-  border-color: var(--border-color);
+  box-shadow: var(--shadow-md) !important;
+  border-color: var(--color-primary);
   background: var(--bg-card-hover);
 }
 
-/* 卡片变体 */
-.cardElevated {
-  box-shadow: var(--shadow-xl);
-}
-
-.cardElevated:hover {
-  box-shadow: var(--shadow-2xl);
-}
 
 /* ===== 按钮样式系统 ===== */
 .primaryButton {

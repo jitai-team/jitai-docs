@@ -45,12 +45,6 @@
   transition: var(--transition-primary);
 }
 
-.featureCard:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--hover-shadow-card);
-  border-color: var(--color-primary);
-}
-
 .featureImage {
   position: relative;
   width: 100%;

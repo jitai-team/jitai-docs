@@ -70,11 +70,7 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({ currentLocale }) =>
         <div className={styles.cardsGrid}>
               {content.cards.map((card, index) => (
                   <div
-                    className={styles.card}
-                    style={{
-                      '--card-color': card.color,
-                      '--card-hover-color': card.color
-                    } as React.CSSProperties}
+                    className={`${globalStyles.baseCard} ${styles.card}`}
                   >
                     <div className={styles.cardHeader}>
                       <h3>{card.title}</h3>

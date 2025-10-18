@@ -43,13 +43,6 @@
   flex-direction: column;
 }
 
-.frameworkCard:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--hover-shadow-card);
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-}
-
 .cardHeader {
   display: flex;
   align-items: center;

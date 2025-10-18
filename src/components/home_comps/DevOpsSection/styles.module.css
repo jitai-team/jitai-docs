@@ -44,12 +44,6 @@
   box-shadow: var(--shadow-md);
 }
 
-.featureCard:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--hover-shadow-card);
-  border-color: var(--color-primary);
-}
-
 .wideCard {
   flex: var(--image-left-ratio);
 }

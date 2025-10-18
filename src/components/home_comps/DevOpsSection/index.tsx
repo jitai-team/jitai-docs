@@ -50,7 +50,7 @@ const DevOpsSection: React.FC<DevOpsSectionProps> = ({ currentLocale }) => {
                   return (
                     <div
                       key={featureIndex}
-                      className={`${styles.featureCard} ${
+                      className={`${globalStyles.baseCard} ${styles.featureCard} ${
                         isWideCard ? styles.wideCard : styles.narrowCard
                       }`}
                     >

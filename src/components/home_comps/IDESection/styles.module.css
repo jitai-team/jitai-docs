@@ -1,4 +1,4 @@
-/* IDE Section 样式 - 绿色主题浅色渐变背景 */
+/* IDE Section 样式 - 重构版本 */
 
 :root {
   --module-card-width: 320px;
@@ -14,30 +14,28 @@
 
 .ideSection {
   padding: var(--section-padding);
-  background: #f0f4ff;
+  background: var(--bg-secondary);
   position: relative;
   overflow: hidden;
 }
 
-/* 装饰样式已移除 */
-
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 var(--container-padding);
 }
 
 .header {
   text-align: center;
-  margin-bottom: 6rem;
+  margin-bottom: var(--space-24);
 }
 
 .title {
   font-size: var(--font-size-title);
-  font-weight: 700;
-  color: var(--section-primary);
-  margin-bottom: 1.5rem;
-  background: var(--gradient-section);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-6);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -47,31 +45,31 @@
   font-size: var(--font-size-subtitle);
   color: var(--text-secondary);
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: var(--line-height-relaxed);
 }
 
-/* 核心特性部分 - 简化左右结构设计 */
+/* 核心特性部分 */
 .coreFeatures {
-  margin-bottom: 6rem;
+  margin-bottom: var(--space-24);
 }
 
 .featuresGrid {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: var(--space-12);
   margin-left: auto;
   margin-right: auto;
 }
 
 .featureCard {
-  border-radius: 16px;
+  border-radius: var(--border-radius-xl);
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: var(--transition-normal);
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: var(--space-8);
 }
 
 /* 偶数行卡片左右对调 */
@@ -89,7 +87,7 @@
   flex: 5;
   width: 100%;
   aspect-ratio: var(--aspect-ratio);
-  margin: 2rem;
+  margin: var(--space-8);
 }
 
 .imagePlaceholder {
@@ -98,25 +96,18 @@
   background: linear-gradient(135deg,
     rgba(55, 65, 81, 0.08) 0%,
     rgba(75, 85, 99, 0.08) 100%);
-  border-radius: 12px;
+  border-radius: var(--border-radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  transition: all 0.3s ease;
+  transition: var(--transition-normal);
   border: 1px solid rgba(55, 65, 81, 0.06);
 }
 
-/* .featureCard:hover .imagePlaceholder {
-  background: linear-gradient(135deg,
-    rgba(55, 65, 81, 0.12) 0%,
-    rgba(75, 85, 99, 0.12) 100%);
-  border-color: rgba(55, 65, 81, 0.12);
-} */
-
 .placeholderIcon {
-  color: var(--section-primary);
-  transition: all 0.3s ease;
+  color: var(--color-primary);
+  transition: var(--transition-normal);
   opacity: 0.6;
 }
 
@@ -128,38 +119,38 @@
   flex: 2;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: var(--space-3);
   position: relative;
   z-index: 2;
 }
 
 .featureTitle {
   margin: 0;
-  line-height: 1.4;
-  transition: all 0.3s ease;
-  color: #131C43;
-  font-weight: 600;
+  line-height: var(--line-height-tight);
+  transition: var(--transition-normal);
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-semibold);
 }
 
 .featureCard:hover .featureTitle {
-  color: var(--card-color);
+  color: var(--color-primary);
 }
 
 .featureDescription {
   color: var(--text-secondary);
-  line-height: 1.6;
-  font-size: 0.95rem;
+  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-sm);
   margin: 0;
-  font-weight: 400;
-  transition: all 0.3s ease;
+  font-weight: var(--font-weight-normal);
+  transition: var(--transition-normal);
 }
 
-/* 可视化开发模块部分 - 2行卡片自动滚动 */
+/* 可视化开发模块部分 */
 .developmentModules {
-  margin-top: 4rem;
+  margin-top: var(--space-16);
   overflow: hidden;
   position: relative;
-  padding: 0 4rem;
+  padding: 0 var(--space-16);
   width: 100%;
 }
 
@@ -170,7 +161,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 4rem;
+  width: var(--space-16);
   z-index: 2;
   pointer-events: none;
 }
@@ -198,14 +189,14 @@
 .modulesGrid {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin: 1rem 0;
+  gap: var(--space-4);
+  margin: var(--space-4) 0;
   width: max-content;
 }
 
 .modulesRow {
   display: flex;
-  gap: 1rem;
+  gap: var(--space-4);
   animation: slideLeft 40s linear infinite;
   width: max-content;
   will-change: transform;
@@ -225,13 +216,13 @@
 }
 
 .moduleCard {
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--bg-card);
   backdrop-filter: blur(10px);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 4px 12px var(--shadow-color);
-  transition: all 0.3s ease;
+  border-radius: var(--border-radius-md);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-normal);
   position: relative;
   cursor: pointer;
   flex: 0 0 auto;
@@ -243,8 +234,8 @@
 
 .moduleCard:hover {
   transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  border-color: var(--card-color);
+  box-shadow: var(--hover-shadow-card);
+  border-color: var(--color-primary);
 }
 
 .moduleContent {
@@ -259,45 +250,44 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.8rem;
+  margin-bottom: var(--space-3);
 }
 
 .moduleTitle {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #131C43;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-secondary);
   margin: 0;
-  line-height: 1.3;
-  background: linear-gradient(135deg, #131C43 0%, #131C43 100%);
+  line-height: var(--line-height-tight);
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   flex: 1;
 }
 
-
 .arrowIcon {
-  color: var(--section-accent);
+  color: var(--color-accent);
   transform: translateX(-10px);
-  transition: all 0.3s ease;
+  transition: var(--transition-normal);
   opacity: 0;
 }
 
 .moduleCard:hover .arrowIcon {
   opacity: 1;
   transform: translateX(0);
-  color: var(--card-color);
+  color: var(--color-primary);
 }
 
 .moduleCard:hover .moduleTitle {
-  color: var(--card-color);
+  color: var(--color-primary);
 }
 
 .moduleDescription {
   color: var(--text-secondary);
-  line-height: var(--text-line-height);
-  font-size: 0.8rem;
+  line-height: var(--line-height-normal);
+  font-size: var(--font-size-xs);
   margin: 0;
-  font-weight: 400;
+  font-weight: var(--font-weight-normal);
   flex-grow: 1;
   display: -webkit-box;
   line-clamp: var(--module-desc-line-clamp);
@@ -307,19 +297,18 @@
 }
 
 /* 响应式设计 */
-
 @media (max-width: 768px) {
   .featuresGrid {
     max-width: 100%;
-    gap: 1.5rem;
+    gap: var(--space-6);
   }
 
   .featureCard {
-    padding: 1.25rem;
+    padding: var(--space-5);
     min-height: 140px;
     flex-direction: column;
     text-align: center;
-    gap: 1rem;
+    gap: var(--space-4);
   }
 
   .featureImage {
@@ -336,58 +325,58 @@
   }
 
   .featureDescription {
-    font-size: 0.85rem;
+    font-size: var(--font-size-sm);
   }
 
   .developmentModules {
-    padding: 0 2rem;
+    padding: 0 var(--space-8);
   }
 
   .developmentModules::before,
   .developmentModules::after {
-    width: 2rem;
+    width: var(--space-8);
   }
 
   .ideSection {
-    padding: 6rem 0;
+    padding: var(--space-24) 0;
   }
 
   .container {
-    padding: 0 1.5rem;
+    padding: 0 var(--space-6);
   }
 
   .header {
-    margin-bottom: 4rem;
+    margin-bottom: var(--space-16);
   }
 
   .title {
-    font-size: 2rem;
+    font-size: var(--font-size-4xl);
   }
 
   .subtitle {
-    font-size: 1rem;
+    font-size: var(--font-size-base);
   }
 
   .modulesGrid {
-    gap: 0.6rem;
+    gap: var(--space-2);
   }
 
   .moduleCard {
-    padding: 0.6rem;
+    padding: var(--space-2);
   }
 
   .moduleTitle {
-    font-size: 0.9rem;
+    font-size: var(--font-size-sm);
   }
 
   .moduleDescription {
-    font-size: 0.75rem;
+    font-size: var(--font-size-xs);
   }
 }
 
 @media (max-width: 480px) {
   .featuresGrid {
-    gap: 1rem;
+    gap: var(--space-4);
   }
 
   .featureImage {
@@ -395,7 +384,7 @@
   }
 
   .featureCard {
-    padding: 1rem;
+    padding: var(--space-4);
     min-height: 120px;
   }
 
@@ -404,36 +393,36 @@
   }
 
   .featureDescription {
-    font-size: 0.8rem;
+    font-size: var(--font-size-xs);
   }
 
   .developmentModules {
-    padding: 0 1.5rem;
+    padding: 0 var(--space-6);
   }
 
   .developmentModules::before,
   .developmentModules::after {
-    width: 1.5rem;
+    width: var(--space-6);
   }
 
   .ideSection {
-    padding: 4rem 0;
+    padding: var(--space-16) 0;
   }
 
   .title {
-    font-size: 1.8rem;
+    font-size: var(--font-size-3xl);
   }
 
   .moduleCard {
-    padding: 0.5rem;
+    padding: var(--space-2);
   }
 
   .moduleTitle {
-    font-size: 0.85rem;
+    font-size: var(--font-size-xs);
   }
 
   .moduleDescription {
-    font-size: 0.7rem;
+    font-size: var(--font-size-xs);
   }
 }
 
@@ -442,18 +431,17 @@
   position: relative;
   width: 100%;
   height: 100%;
-  border-radius: 12px;
+  border-radius: var(--border-radius-lg);
   overflow: hidden;
   background: linear-gradient(135deg,
     rgba(55, 65, 81, 0.08) 0%,
     rgba(75, 85, 99, 0.08) 100%);
   border: 1px solid rgba(55, 65, 81, 0.06);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--transition-primary);
 }
 
 .videoContainer:hover {
-  /* transform: scale(1.02); */
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-lg);
   border-color: rgba(102, 126, 234, 0.3);
 }
 
@@ -461,57 +449,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 12px;
-  transition: all 0.3s ease;
+  border-radius: var(--border-radius-lg);
+  transition: var(--transition-normal);
 }
-
-/* 隐藏视频控制栏中的特定图标 */
-/* .videoElement::-webkit-media-controls-fullscreen-button {
-  display: none !important;
-}
-
-.videoElement::-webkit-media-controls-play-button {
-  display: none !important;
-}
-
-.videoElement::-webkit-media-controls-text-track-list {
-  display: none !important;
-} */
-
-/* 隐藏所有控制栏图标，只保留进度条和时间 */
-/* .videoElement::-webkit-media-controls {
-  display: flex !important;
-}
-
-.videoElement::-webkit-media-controls-panel {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-} */
-
-/* 隐藏音量控制 */
-/* .videoElement::-webkit-media-controls-mute-button {
-  display: none !important;
-}
-
-.videoElement::-webkit-media-controls-volume-slider {
-  display: none !important;
-} */
-
-/* 隐藏画中画按钮 */
-/* .videoElement::-webkit-media-controls-picture-in-picture-button {
-  display: none !important;
-} */
-
-/* 隐藏下载按钮 */
-/* .videoElement::-webkit-media-controls-download-button {
-  display: none !important;
-} */
-
-/* 隐藏设置按钮 */
-/* .videoElement::-webkit-media-controls-overlay-enclosure {
-  display: none !important;
-} */
 
 .videoOverlay {
   position: absolute;
@@ -528,9 +468,9 @@
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: all 0.3s ease;
+  transition: var(--transition-normal);
   pointer-events: none;
-  border-radius: 12px;
+  border-radius: var(--border-radius-lg);
 }
 
 .videoContainer:hover .videoOverlay {
@@ -539,16 +479,16 @@
 
 .hoverText {
   background: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 0.875rem;
-  font-weight: 500;
+  color: var(--color-white);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--border-radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
   text-align: center;
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-normal);
 }
 
 .videoContainer:hover .hoverText {
@@ -570,7 +510,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: var(--text-secondary);
-  font-size: 0.875rem;
+  font-size: var(--font-size-sm);
   text-align: center;
   z-index: 1;
 }
@@ -578,11 +518,11 @@
 /* 响应式视频样式 */
 @media (max-width: 768px) {
   .videoContainer {
-    border-radius: 8px;
+    border-radius: var(--border-radius-md);
   }
 
   .videoElement {
-    border-radius: 8px;
+    border-radius: var(--border-radius-md);
   }
 
   .playIndicator {

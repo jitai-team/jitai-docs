@@ -15,7 +15,7 @@
     height: 50px;
     background: transparent;
     border-radius: 50%;
-    border: 3px solid #131C43;
+    border: 3px solid #6d28d9;
 }
 
 .microkernel::after {
@@ -23,7 +23,7 @@
     position: absolute;
     width: 20px;
     height: 20px;
-    background: #131C43;
+    background: #6d28d9;
     border-radius: 50%;
 }
 
@@ -33,7 +33,7 @@
     position: absolute;
     width: 60px;
     height: 3px;
-    background: #131C43;
+    background: #6d28d9;
     border-radius: 2px;
     top: calc(50% - 15px);
 }
@@ -43,7 +43,7 @@
     position: absolute;
     width: 45px;
     height: 3px;
-    background: #131C43;
+    background: #a855f7;
     border-radius: 2px;
 }
 
@@ -51,7 +51,7 @@
     position: absolute;
     width: 70px;
     height: 3px;
-    background: rgba(19, 28, 67, 0.3);
+    background: #c084fc;
     border-radius: 2px;
     top: calc(50% + 10px);
 }
@@ -62,7 +62,7 @@
     position: absolute;
     width: 60px;
     height: 40px;
-    border: 2px solid #131C43;
+    border: 2px solid #6d28d9;
     border-radius: 6px;
 }
 
@@ -71,7 +71,7 @@
     position: absolute;
     width: 40px;
     height: 25px;
-    border: 2px solid #131C43;
+    border: 2px solid #a855f7;
     border-radius: 4px;
 }
 
@@ -81,9 +81,9 @@
     position: absolute;
     width: 70px;
     height: 45px;
-    border: 2px solid #131C43;
+    border: 2px solid #6d28d9;
     border-radius: 8px;
-    background: rgba(19, 28, 67, 0.1);
+    background: rgba(109, 40, 217, 0.1);
 }
 
 .virtualization::after {
@@ -91,7 +91,7 @@
     position: absolute;
     width: 12px;
     height: 12px;
-    background: #131C43;
+    background: #6d28d9;
     border-radius: 50%;
     top: 45px;
 }
@@ -100,7 +100,7 @@
     position: absolute;
     width: 50px;
     height: 2px;
-    background: #131C43;
+    background: #a855f7;
     top: 80px;
 }
 
@@ -110,7 +110,7 @@
     position: absolute;
     width: 35px;
     height: 40px;
-    background: rgba(19, 28, 67, 0.1);
+    background: rgba(109, 40, 217, 0.1);
     border-radius: 18px 18px 6px 6px;
     top: 35px;
 }
@@ -120,7 +120,7 @@
     position: absolute;
     width: 20px;
     height: 20px;
-    border: 3px solid #131C43;
+    border: 3px solid #6d28d9;
     border-radius: 50%;
     top: 45px;
     background: transparent;
@@ -130,7 +130,7 @@
     position: absolute;
     width: 45px;
     height: 25px;
-    background: #131C43;
+    background: #6d28d9;
     border-radius: 4px;
     top: 60px;
 }
@@ -141,7 +141,7 @@
     position: absolute;
     width: 40px;
     height: 40px;
-    border: 2px solid #131C43;
+    border: 2px solid #6d28d9;
     border-radius: 6px;
     transform: rotate(45deg);
 }
@@ -151,7 +151,7 @@
     position: absolute;
     width: 25px;
     height: 25px;
-    border: 2px solid #131C43;
+    border: 2px solid #a855f7;
     border-radius: 4px;
     transform: rotate(45deg);
 }
@@ -162,7 +162,7 @@
     position: absolute;
     width: 60px;
     height: 3px;
-    background: #131C43;
+    background: #6d28d9;
 }
 
 .fullstack::after {
@@ -170,7 +170,7 @@
     position: absolute;
     width: 3px;
     height: 60px;
-    background: #131C43;
+    background: #6d28d9;
     /* left: 108px; */
 }
 
@@ -178,7 +178,7 @@
     position: absolute;
     width: 8px;
     height: 8px;
-    background: #131C43;
+    background: #a855f7;
     border-radius: 50%;
 }
 
@@ -193,7 +193,7 @@
     position: absolute;
     width: 14px;
     height: 14px;
-    background: #131C43;
+    background: #6d28d9;
     z-index: 2;
     border-radius: 50%;
     top: calc(50% - 35px);
@@ -206,7 +206,7 @@
     position: absolute;
     width: 14px;
     height: 14px;
-    background: #131C43;
+    background: #6d28d9;
     z-index: 2;
     border-radius: 50%;
     top: calc(50% + 15px);
@@ -217,7 +217,7 @@
     position: absolute;
     width: 14px;
     height: 14px;
-    background: #131C43;
+    background: #6d28d9;
     z-index: 2;
     border-radius: 50%;
     top: calc(50% + 15px);
@@ -228,8 +228,8 @@
     position: absolute;
     width: 2px;
     height: 55px;
-    background: #131C43;
-    top: calc(50% - 28px);
+    background: #a855f7;
+    top: clac(50% - 28px);
     left: 50%;
     transform: translateX(-50%) rotate(35deg);
     transform-origin: top center;
@@ -239,8 +239,8 @@
     position: absolute;
     width: 2px;
     height: 55px;
-    background: #131C43;
-    top: calc(50% - 28px);
+    background: #a855f7;
+    top: clac(50% - 28px);
     left: 50%;
     transform: translateX(-50%) rotate(-35deg);
     transform-origin: top center;
@@ -250,7 +250,7 @@
     position: absolute;
     width: 80px;
     height: 2px;
-    background: rgba(19, 28, 67, 0.3);
+    background: #c084fc;
     top: calc(50% + 23px);
     left: 50%;
     transform: translateX(-50%);

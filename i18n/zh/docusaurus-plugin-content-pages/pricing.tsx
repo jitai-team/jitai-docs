@@ -3,7 +3,7 @@ import PageLayout from '../../../src/components/PageLayout';
 import PricingSection from '../../../src/components/price_comps/PricingSection';
 import PricingContactSection from '../../../src/components/price_comps/PricingContactSection';
 import PricingFAQSection from '../../../src/components/price_comps/PricingFAQSection';
-import styles from './pricing.module.css';
+import styles from '../../../src/pages/pricing.module.css';
 
 const PricingPage: React.FC = () => {
   const pricingTitle = 'JitAI Pricing Plans - Flexible Enterprise AI Development Platform';

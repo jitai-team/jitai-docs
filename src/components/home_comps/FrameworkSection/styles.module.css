@@ -1,103 +1,96 @@
-/* Framework Section 样式 */
+/* Framework Section 样式 - 重构版本 */
+
 .frameworkSection {
   padding: var(--section-padding);
-  background: #ffffff;
+  background: var(--bg-primary);
   position: relative;
   overflow: hidden;
 }
 
-/* 装饰样式已移除 */
-
 .headerSection {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: var(--space-16);
 }
 
 .sectionSubtitle {
   font-size: var(--font-size-subtitle);
   color: var(--text-secondary);
-  margin: 1.5rem auto 0;
-  line-height: 1.6;
-  font-weight: 400;
+  margin: var(--space-6) auto 0;
+  line-height: var(--line-height-relaxed);
+  font-weight: var(--font-weight-normal);
 }
 
 .frameworksGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-  align-items: stretch; /* 新增，确保所有子项等高 */
+  gap: var(--space-8);
+  margin-top: var(--space-12);
+  align-items: stretch;
 }
 
 .frameworkCard {
   position: relative;
   transition: var(--transition-primary);
   border: 1px solid var(--border-color);
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--bg-card);
   backdrop-filter: blur(10px);
   overflow: hidden;
-  padding: 2rem;
-  border-radius: var(--border-radius);
-  box-shadow: 0 8px 32px var(--shadow-color);
-  height: 100%; /* 保持等高 */
+  padding: var(--space-8);
+  border-radius: var(--border-radius-card);
+  box-shadow: var(--shadow-lg);
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-/* 移除顶部颜色条 */
-
 .frameworkCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  border-color: var(--card-color);
-  color: var(--card-color);
+  box-shadow: var(--hover-shadow-card);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }
 
 .cardHeader {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
 }
 
 .cardIcon {
-  /* width: 48px;
-  height: 48px; */
-  border-radius: 12px;
+  border-radius: var(--border-radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: all 0.3s ease;
+  transition: var(--transition-normal);
 }
 
 .iconEmoji {
-  font-size: 1.5rem;
+  font-size: var(--font-size-2xl);
   line-height: 1;
 }
 
-
 .frameworkName {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #131C43;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-secondary);
   margin: 0;
-  line-height: 1.2;
-  transition: color 0.3s ease;
+  line-height: var(--line-height-tight);
+  transition: color var(--transition-normal);
   flex: 1;
 }
 
 .frameworkCard:hover .frameworkName {
-  color: #3D65FD;
+  color: var(--color-primary);
 }
-
 
 .frameworkDescription {
   color: var(--text-secondary);
-  line-height: var(--text-line-height);
-  margin: 1rem 0;
+  line-height: var(--line-height-normal);
+  margin: var(--space-4) 0;
   font-size: var(--font-size-body);
-  flex: 1; /* 填充剩余空间 */
+  flex: 1;
 }
 
 .frameworkLink {
@@ -113,24 +106,24 @@
 .linkIndicator {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
-  font-size: 0.9rem;
+  gap: var(--space-1);
+  font-size: var(--font-size-sm);
   color: var(--text-secondary);
   filter: brightness(0.8);
-  transition: all 0.3s ease;
+  transition: var(--transition-normal);
   opacity: 0;
   transform: translateX(-10px);
 }
 
 .frameworkLink:hover .linkIndicator {
-  color: var(--card-color);
+  color: var(--color-primary);
   filter: brightness(1);
   opacity: 1;
   transform: translateX(0);
 }
 
 .linkIndicator svg {
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-normal);
 }
 
 .frameworkLink:hover .linkIndicator svg {
@@ -141,94 +134,84 @@
 @media (max-width: 1200px) {
   .frameworksGrid {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    gap: var(--space-6);
   }
 }
 
 @media (max-width: 768px) {
   .frameworkSection {
-    padding: 6rem 0;
+    padding: var(--space-24) 0;
   }
 
   .headerSection {
-    margin-bottom: 3rem;
+    margin-bottom: var(--space-12);
   }
 
   .sectionSubtitle {
-    font-size: 1rem;
-    padding: 0 1rem;
+    font-size: var(--font-size-base);
+    padding: 0 var(--space-4);
   }
 
   .frameworksGrid {
     grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 0 1rem;
+    gap: var(--space-4);
+    padding: 0 var(--space-4);
   }
 
   .frameworkCard {
-    padding: 1.75rem;
+    padding: var(--space-7);
   }
 
   .cardHeader {
-    gap: 0.75rem;
-    margin-bottom: 0.75rem;
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
   }
 
-  /* .cardIcon {
-    width: 40px;
-    height: 40px;
-  } */
-
   .iconEmoji {
-    font-size: 1.25rem;
+    font-size: var(--font-size-xl);
   }
 
   .frameworkName {
-    font-size: 1.1rem;
+    font-size: var(--font-size-lg);
   }
 
   .frameworkDescription {
-    font-size: 0.9rem;
+    font-size: var(--font-size-sm);
   }
 }
 
 @media (max-width: 480px) {
   .frameworkSection {
-    padding: 4rem 0;
+    padding: var(--space-16) 0;
   }
 
   .headerSection {
-    margin-bottom: 2rem;
+    margin-bottom: var(--space-8);
   }
 
   .sectionSubtitle {
-    font-size: 0.95rem;
-    padding: 0 0.5rem;
+    font-size: var(--font-size-sm);
+    padding: 0 var(--space-2);
   }
 
   .frameworksGrid {
-    gap: 1rem;
-    padding: 0 0.5rem;
+    gap: var(--space-4);
+    padding: 0 var(--space-2);
   }
 
   .frameworkCard {
-    padding: 1.5rem;
+    padding: var(--space-6);
   }
 
-  /* .cardIcon {
-    width: 36px;
-    height: 36px;
-  } */
-
   .iconEmoji {
-    font-size: 1.1rem;
+    font-size: var(--font-size-lg);
   }
 
   .frameworkName {
-    font-size: 1rem;
+    font-size: var(--font-size-base);
   }
 
   .frameworkDescription {
-    font-size: 0.85rem;
+    font-size: var(--font-size-xs);
   }
 }

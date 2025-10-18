@@ -1,7 +1,7 @@
 const CONTENT = {
   title: 'Jit Runtime Platform',
   subtitle: 'Locally Deployed Integrated Application Runtime Environment',
-  color: '#3D65FD',
+  color: '#6d28d9',
   features: [
     {
       title: 'Microkernel Architecture',

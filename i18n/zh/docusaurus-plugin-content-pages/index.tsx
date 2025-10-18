@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
 import PageLayout from '../../../src/components/PageLayout';
 import HeroSection from '../../../src/components/home_comps/HeroSection';
-import ProductSection from '../../../src/components/home_comps/ProductSection';
 import DevOpsSection from '../../../src/components/home_comps/DevOpsSection';
 import IDESection from '../../../src/components/home_comps/IDESection';
 import PlatformSection from '../../../src/components/home_comps/PlatformSection';
 import FrameworkSection from '../../../src/components/home_comps/FrameworkSection';
-import TechnologiesSection from '../../../src/components/home_comps/TechnologiesSection';
-import styles from './index.module.css';
+import styles from '../../../src/pages/index.module.css';
 
 const HomePage: React.FC = () => {
   const homeTitle = '下一代AI应用开发技术体系';
@@ -20,8 +18,6 @@ const HomePage: React.FC = () => {
       containerClassName={styles.container}
     >
       <HeroSection />
-      <ProductSection />
-      <TechnologiesSection />
       <PlatformSection />
       <FrameworkSection />
       <IDESection />

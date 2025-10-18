@@ -88,20 +88,20 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ currentLocale }) => {
                 <p className={styles.versionDescription}>{CONTENT.desktop.mac.description}</p>
                 <div className={styles.downloadActions}>
                   <a 
-                    href={CONTENT.desktop.mac.intelDownloadUrl} 
-                    className={styles.downloadButton}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span className={styles.buttonText}>{CONTENT.desktop.mac.intelDownloadText}</span>
-                  </a>
-                  <a 
                     href={CONTENT.desktop.mac.appleDownloadUrl} 
                     className={styles.downloadButton}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <span className={styles.buttonText}>{CONTENT.desktop.mac.appleDownloadText}</span>
+                  </a>
+                  <a 
+                    href={CONTENT.desktop.mac.intelDownloadUrl} 
+                    className={styles.downloadButton}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className={styles.buttonText}>{CONTENT.desktop.mac.intelDownloadText}</span>
                   </a>
                 </div>
               </div>

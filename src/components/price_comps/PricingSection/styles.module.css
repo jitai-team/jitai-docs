@@ -1,5 +1,6 @@
-/* PricingSection 样式 - 参考首页设计风格 */
+/* PricingSection 样式 - 遵循统一设计规范 */
 
+/* 页面特定变量 */
 :root {
   --page-title-line-height: 1.5;
   --card-title-line-height: 1.3;
@@ -11,130 +12,128 @@
   --card-title-line-height: 1.4 !important;
 }
 
+/* ===== 页面布局 ===== */
 .sectionContent {
-  width: 100%;
-  max-width: 1500px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
 }
 
+/* ===== 页面容器 ===== */
 .pricing {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: var(--hero-bg);
-  color: #1a1a1a;
-  padding: 8rem 0;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: var(--section-padding);
   position: relative;
   overflow: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--font-primary);
 }
 
-/* 页面标题 */
+/* ===== 页面标题 ===== */
 .pageHeader {
   text-align: center;
-  margin: 4rem 0;
+  margin: var(--space-16) 0;
 }
 
 .pageTitle {
-  font-size: 3.5rem;
-  font-weight: 700;
-  background: var(--hero-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 1.5rem;
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-secondary);
+  margin-bottom: var(--space-6);
   line-height: var(--page-title-line-height) !important;
 }
 
 .pageSubtitle {
-  font-size: 1.25rem;
-  color: #6b7280;
+  font-size: var(--font-size-subtitle);
+  color: var(--text-secondary);
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: var(--line-height-relaxed);
 }
 
 
-/* 标签页容器 */
+/* ===== 标签页容器 ===== */
 .tabContainer {
   display: flex;
   justify-content: center;
-  margin-bottom: 3rem;
+  margin-bottom: var(--space-12);
   transition-delay: 0.1s;
 }
 
 .tabGroup {
   display: flex;
-  /* background: rgba(255, 255, 255, 0.8); */
   backdrop-filter: blur(20px);
-  border-radius: 1rem;
-  /* padding: 0.5rem; */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color-light);
 }
 
 .tab {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--space-2);
   background: transparent;
   border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.75rem;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--border-radius-lg);
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  font-size: 1rem;
-  font-weight: 500;
-  color: #6b7280;
+  transition: var(--transition-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
   min-width: 120px;
   justify-content: center;
 }
 
 .tab:hover {
-  color: #2461fe;
-  background: rgba(36, 97, 254, 0.05);
+  color: var(--color-primary);
+  background: rgba(61, 101, 253, 0.05);
 }
 
 .tabActive {
-  background: var(--hero-gradient);
-  color: white;
-  box-shadow: 0 4px 12px rgba(36, 97, 254, 0.3);
+  background: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: var(--hover-shadow-primary);
   transform: scale(1.02);
 }
 
 .tabActive:hover {
-  color: white;
-  background: var(--hero-gradient);
+  color: var(--color-white);
+  background: var(--color-primary);
 }
 
 .tabIcon {
-  font-size: 1.1rem;
+  font-size: var(--font-size-lg);
   display: none;
 }
 
 .tabText {
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
 
-/* 价格卡片网格 - 针对1400px优化 */
+/* ===== 价格卡片网格 ===== */
 .pricingCards {
   display: grid;
   grid-template-columns: repeat(5, minmax(240px, 1fr));
-  gap: 1.2rem;
-  margin-bottom: 4rem;
+  gap: var(--space-5);
+  margin-bottom: var(--space-16);
   transition-delay: 0.2s;
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* 价格卡片基础样式 */
+/* ===== 价格卡片基础样式 ===== */
 .pricingCard {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--bg-card);
   backdrop-filter: blur(20px);
-  border-radius: 1.2rem;
-  padding: 1.2rem;
-  border: 1px solid rgba(229, 231, 235, 0.8);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: var(--border-radius-xl);
+  padding: var(--space-5);
+  border: 1px solid var(--border-color-light);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-primary);
   position: relative;
   overflow: hidden;
   min-height: 420px;
@@ -149,68 +148,67 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: var(--hero-gradient);
+  background: var(--color-primary);
   transform: scaleX(0);
-  transition: transform 0.4s ease;
+  transition: transform var(--transition-primary);
 }
 
-.pricingCard:hover{
+.pricingCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
-  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: var(--hover-shadow-primary);
+  border-color: var(--color-primary);
 }
 
-.pricingCard:hover::before{
+.pricingCard:hover::before {
   transform: scaleX(1);
 }
 
-/* 推荐卡片样式 */
-
+/* ===== 推荐卡片样式 ===== */
 .recommendedBadge {
   position: absolute;
   line-height: normal;
   top: -1px;
   right: 0rem;
-  background: var(--hero-gradient);
-  color: white;
-  padding: 0.5rem 1.5rem;
-  border-radius: 0 0 0rem 1rem;
-  font-size: 0.875rem;
-  font-weight: 600;
-  box-shadow: 0 4px 12px rgba(36, 97, 254, 0.3);
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--space-2) var(--space-6);
+  border-radius: 0 0 0rem var(--border-radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  box-shadow: var(--hover-shadow-primary);
 }
 
-/* 卡片头部 */
+/* ===== 卡片头部 ===== */
 .cardHeader {
   text-align: center;
-  margin-top: 1rem;
+  margin-top: var(--space-4);
 }
 
 .cardIcon {
-  font-size: 2.5rem;
-  margin-bottom: 0.75rem;
+  font-size: var(--font-size-5xl);
+  margin-bottom: var(--space-3);
 }
 
 .cardTitle {
-  font-size: 1.1rem !important;
-  font-weight: 600;
-  color: #1f2937;
-  margin-bottom: 0.4rem;
+  font-size: var(--font-size-lg) !important;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
   line-height: var(--card-title-line-height) !important;
   text-align: center;
 }
 
 .cardSubtitle {
-  font-size: 0.8rem;
-  color: #6b7280;
-  margin: 0 0 1rem 0;
-  line-height: 1.4;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin: 0 0 var(--space-4) 0;
+  line-height: var(--line-height-normal);
   text-align: center;
 }
 
-/* 价格部分 */
+/* ===== 价格部分 ===== */
 .cardPrice {
-  margin-bottom: 1.2rem;
+  margin-bottom: var(--space-5);
   background: transparent;
   border-radius: 0;
   border: none;
@@ -223,112 +221,112 @@
 
 .priceLabel {
   display: block;
-  font-size: 0.875rem;
-  color: #6b7280;
-  margin-bottom: 0.5rem;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
 }
 
 .price {
   display: flex;
   align-items: baseline;
   justify-content: center;
-  gap: 0.25rem;
+  gap: var(--space-1);
 }
 
 .currency {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #1f2937;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
 }
 
 .amount {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #1f2937;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
 }
 
 .period {
-  font-size: 0.8rem;
-  color: #6b7280;
-  font-weight: 500;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-medium);
 }
 
-/* 功能列表 */
+/* ===== 功能列表 ===== */
 .cardFeatures {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: var(--space-2);
   flex: 1;
   margin-top: auto;
 }
 
 .cardFeatures .featureItem {
   display: block;
-  font-size: 0.8rem;
-  color: #374151;
-  padding: 0.2rem 0;
-  line-height: 1.5;
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  padding: var(--space-1) 0;
+  line-height: var(--line-height-normal);
   text-align: left;
 }
 
-/* 包含内容信息 */
+/* ===== 包含内容信息 ===== */
 .packageInfo {
-  font-size: 0.8rem;
-  color: #6b7280;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-2);
   text-align: left;
 }
 
-/* 订购按钮区域 */
+/* ===== 订购按钮区域 ===== */
 .cardAction {
-  margin-bottom: 1rem;
-  padding: 0.5rem 0;
+  margin-bottom: var(--space-4);
+  padding: var(--space-2) 0;
 }
 
 .orderButton {
   width: 100%;
-  background: #f3f4f6;
-  color: #6b7280;
-  border: 1px solid #e5e7eb;
-  border-radius: 0.8rem;
-  padding: 0.8rem 1rem;
-  font-size: 0.9rem;
-  font-weight: 600;
+  background: var(--color-gray-100);
+  color: var(--text-secondary);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--transition-primary);
   box-shadow: none;
 }
 
 .orderButton:hover {
-  background: #e5e7eb;
-  color: #4b5563;
+  background: var(--color-gray-200);
+  color: var(--text-primary);
 }
 
-/* 卡片悬停时的按钮样式 */
+/* ===== 卡片悬停时的按钮样式 ===== */
 .pricingCard:hover .orderButton {
-  background: linear-gradient(135deg, #2461fe 0%, #ca4ba7 100%);
-  color: white;
+  background: var(--color-primary);
+  color: var(--color-white);
   border: none;
-  box-shadow: 0 4px 12px rgba(36, 97, 254, 0.2);
+  box-shadow: var(--hover-shadow-primary);
 }
 
 .pricingCard:hover .orderButton:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(36, 97, 254, 0.3);
+  box-shadow: var(--hover-shadow-primary);
 }
 
 
-/* 特别说明 */
+/* ===== 特别说明 ===== */
 .specialNote {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: var(--space-6);
   transition-delay: 0.4s;
 }
 
 .noteIcon {
-  font-size: 3rem;
+  font-size: var(--font-size-6xl);
   flex-shrink: 0;
 }
 
@@ -337,41 +335,39 @@
 }
 
 .noteTitle {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #1f2937;
-  margin-bottom: 0.75rem;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
 }
 
 .noteText {
-  font-size: 1.1rem;
-  color: #6b7280;
-  line-height: 1.6;
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  line-height: var(--line-height-normal);
   margin: 0;
 }
 
 .noteText strong {
-  background: linear-gradient(135deg, rgb(36, 73, 254) 0%, rgb(202, 75, 167) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 600;
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
 }
 
+/* ===== 下载按钮 ===== */
 .downloadButton {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  background: linear-gradient(135deg, #2461fe 0%, #ca4ba7 100%);
-  color: white;
-  padding: 0.875rem 1.75rem;
-  border-radius: 0.75rem;
+  gap: var(--space-2);
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--space-4) var(--space-7);
+  border-radius: var(--border-radius-lg);
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  margin-top: 1rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 6px 20px rgba(36, 97, 254, 0.25);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  margin-top: var(--space-4);
+  transition: var(--transition-primary);
+  box-shadow: var(--hover-shadow-primary);
   position: relative;
   overflow: hidden;
 }
@@ -393,9 +389,9 @@
 
 .downloadButton:hover {
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 12px 28px rgba(36, 97, 254, 0.35);
+  box-shadow: var(--hover-shadow-primary);
   text-decoration: none;
-  color: white;
+  color: var(--color-white);
 }
 
 .downloadButton:hover .buttonIcon {
@@ -407,7 +403,7 @@
   align-items: center;
   width: 18px;
   height: 18px;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-normal);
 }
 
 .downloadButton .buttonIcon svg {
@@ -418,15 +414,16 @@
 
 /* 响应式设计 */
 
+/* ===== 响应式设计 ===== */
 @media (max-width: 1400px) {
   .pricingCards {
     grid-template-columns: repeat(5, minmax(200px, 1fr));
-    gap: 0.8rem;
+    gap: var(--space-3);
     max-width: 1200px;
   }
   
   .pricingCard {
-    padding: 0.8rem;
+    padding: var(--space-3);
     min-height: 380px;
   }
   
@@ -435,144 +432,139 @@
   }
   
   .pageTitle {
-    font-size: 3rem;
+    font-size: var(--font-size-4xl);
   }
   
   .cardTitle {
-    font-size: 0.95rem;
+    font-size: var(--font-size-base);
   }
   
   .amount {
-    font-size: 1.4rem;
+    font-size: var(--font-size-2xl);
   }
 }
 
 @media (max-width: 768px) {
-  
   .pricing {
-    padding: 6rem 0;
+    padding: var(--space-24) 0;
   }
 
   .pageTitle {
-    font-size: 2.5rem;
+    font-size: var(--font-size-4xl);
   }
   
   .pageSubtitle {
-    font-size: 1.1rem;
+    font-size: var(--font-size-base);
   }
   
   .tabContainer {
-    margin-bottom: 2rem;
+    margin-bottom: var(--space-8);
   }
   
   .tab {
-    padding: 0.625rem 1.25rem;
-    font-size: 0.9rem;
+    padding: var(--space-3) var(--space-5);
+    font-size: var(--font-size-sm);
     min-width: 100px;
   }
   
   .tabIcon {
-    font-size: 1rem;
+    font-size: var(--font-size-base);
   }
   
   .pricingCards {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-bottom: 4rem;
+    gap: var(--space-6);
+    margin-bottom: var(--space-16);
   }
 
-  
   .recommended {
     transform: scale(1);
   }
   
   .cardIcon {
-    font-size: 2.5rem;
+    font-size: var(--font-size-5xl);
   }
   
   .cardTitle {
-    font-size: 1.25rem;
+    font-size: var(--font-size-xl);
   }
   
   .amount {
-    font-size: 1.75rem;
+    font-size: var(--font-size-3xl);
   }
   
   .comparisonTitle {
-    font-size: 1.5rem;
+    font-size: var(--font-size-2xl);
   }
   
   .tableContainer {
-    padding: 1rem;
-    border-radius: 1rem;
+    padding: var(--space-4);
+    border-radius: var(--border-radius-xl);
   }
   
   .table {
-    font-size: 0.8rem;
+    font-size: var(--font-size-sm);
   }
   
   .tableHeader {
-    padding: 1rem 0.5rem;
-    font-size: 0.75rem;
+    padding: var(--space-4) var(--space-2);
+    font-size: var(--font-size-xs);
   }
   
   .featureCell {
-    padding: 1rem 0.5rem;
-    font-size: 0.8rem;
+    padding: var(--space-4) var(--space-2);
+    font-size: var(--font-size-sm);
   }
   
   .specialNote {
     flex-direction: column;
     text-align: center;
-    gap: 1rem;
+    gap: var(--space-4);
   }
-  
   
   .noteIcon {
-    font-size: 2.5rem;
+    font-size: var(--font-size-5xl);
   }
-  
 }
 
 @media (max-width: 480px) {
-  
   .pricing {
-    padding: 4rem 0;
+    padding: var(--space-16) 0;
   }
 
   .pageTitle {
-    font-size: 2rem;
+    font-size: var(--font-size-3xl);
   }
   
   .pageSubtitle {
-    font-size: 1rem;
+    font-size: var(--font-size-base);
   }
   
   .amount {
-    font-size: 2.5rem;
+    font-size: var(--font-size-4xl);
   }
   
   .comparisonTitle {
-    font-size: 1.25rem;
+    font-size: var(--font-size-xl);
   }
   
   .tableContainer {
-    padding: 0.75rem;
+    padding: var(--space-3);
   }
   
   .tableHeader {
-    padding: 0.75rem 0.25rem;
-    font-size: 0.7rem;
+    padding: var(--space-3) var(--space-1);
+    font-size: var(--font-size-xs);
   }
   
   .featureCell {
-    padding: 0.75rem 0.25rem;
-    font-size: 0.75rem;
+    padding: var(--space-3) var(--space-1);
+    font-size: var(--font-size-xs);
   }
 
   .downloadButton {
-    padding: 0.75rem 1.5rem;
-    font-size: 0.9rem;
-    margin-top: 0.75rem;
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--font-size-sm);
+    margin-top: var(--space-3);
   }
 }

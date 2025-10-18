@@ -1,11 +1,14 @@
-/* Download page styles */
+/* Download page styles - 遵循统一设计规范 */
+
+/* ===== 页面容器 ===== */
 .container {
   min-height: 100vh;
-  background: var(--hero-bg);
-  color: #1a1a1a;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
 }
 
+/* ===== 自定义页面布局 ===== */
 .custom-page {
   position: relative;
   overflow-x: hidden;

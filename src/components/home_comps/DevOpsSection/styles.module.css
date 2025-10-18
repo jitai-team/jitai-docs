@@ -99,20 +99,6 @@
   margin: 0;
 }
 
-/* SVG 样式 */
-.svgContainer {
-  color: var(--color-primary);
-}
-
-.svgBackground {
-  fill: var(--color-gray-100);
-  stroke: var(--color-gray-200);
-}
-
-.svgContentArea {
-  fill: var(--color-gray-100);
-  stroke: var(--color-gray-200);
-}
 
 /* 响应式设计 */
 @media (max-width: 768px) {
@@ -142,12 +128,6 @@
     font-size: var(--font-size-sm);
   }
 
-  .imagePlaceholder {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 }
 
 @media (max-width: 480px) {
@@ -174,10 +154,4 @@
     font-size: var(--font-size-sm);
   }
 
-  .imagePlaceholder {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 }

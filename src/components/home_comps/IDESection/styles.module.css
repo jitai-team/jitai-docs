@@ -105,15 +105,6 @@
   border: 1px solid rgba(55, 65, 81, 0.06);
 }
 
-.placeholderIcon {
-  color: var(--color-primary);
-  transition: var(--transition-normal);
-  opacity: 0.6;
-}
-
-.featureCard:hover .placeholderIcon {
-  opacity: 0.8;
-}
 
 .featureContent {
   flex: 2;
@@ -517,22 +508,5 @@
 
   .videoElement {
     border-radius: var(--border-radius-md);
-  }
-
-  .playIndicator {
-    width: 40px;
-    height: 40px;
-  }
-}
-
-@media (max-width: 480px) {
-  .playIndicator {
-    width: 36px;
-    height: 36px;
-  }
-
-  .playIndicator svg {
-    width: 20px;
-    height: 20px;
   }
 }

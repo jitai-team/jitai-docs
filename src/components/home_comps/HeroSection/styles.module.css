@@ -306,15 +306,9 @@
 
 .cardsGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
   margin-top: 4rem;
-  position: relative;
-  z-index: 1;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
   align-items: stretch;
 }
 
@@ -323,8 +317,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  height: auto;
-  min-height: 220px;
+  height: 100%;
   position: relative;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.9);

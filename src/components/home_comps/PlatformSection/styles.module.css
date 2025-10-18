@@ -60,7 +60,7 @@
 
 .featureCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px color-mix(in srgb, var(--card-color) 20%, transparent);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   border-color: var(--card-color);
 }
 

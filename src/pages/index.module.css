@@ -79,6 +79,9 @@
   --font-size-4xl: 2.25rem;     /* 36px */
   --font-size-5xl: 3rem;        /* 48px */
   --font-size-6xl: 3.75rem;     /* 60px */
+  --font-size-7xl: 4.5rem;      /* 72px */
+  --font-size-8xl: 5.25rem;     /* 84px */
+  --font-size-9xl: 6rem;        /* 96px */
   
   /* 语义化字体大小 */
   --font-size-title: var(--font-size-5xl);
@@ -191,6 +194,7 @@ body img {
 /* ===== Section 样式 ===== */
 .sectionContent {
   max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 var(--container-padding);
 }

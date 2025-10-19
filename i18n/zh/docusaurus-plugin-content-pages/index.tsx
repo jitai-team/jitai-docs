@@ -8,7 +8,7 @@ import FrameworkSection from '../../../src/components/home_comps/FrameworkSectio
 import styles from '../../../src/pages/index.module.css';
 
 const HomePage: React.FC = () => {
-  const homeTitle = '下一代AI应用开发技术体系';
+  const homeTitle = 'JitAI - 生产级AI应用开发平台';
   const homeDesc = 'JitAI全球首创解释型应用架构，让AI智能体实时感知与编排系统，开发效率提升10倍！立即体验智能开发新时代。';
 
   return (

@@ -5,7 +5,7 @@
 }
 
 [data-locale="zh"] {
-  --hero-title-font-size: 4rem !important; 
+  --hero-title-font-size: var(--font-size-7xl) !important; 
 }
 
 .hero {

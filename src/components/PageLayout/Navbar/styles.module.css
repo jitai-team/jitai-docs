@@ -98,7 +98,7 @@
 
 /* Try Online 按钮样式 */
 .tryOnlineButton {
-  background: #3D65FD;
+  background: var(--primary-color);
   color: white;
   border: none;
   padding: 0.75rem 1.75rem;

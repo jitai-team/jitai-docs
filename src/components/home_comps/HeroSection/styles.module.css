@@ -203,20 +203,20 @@
 /* 响应式设计 */
 @media (max-width: 1400px) {
   .hero {
-    padding: var(--space-24) 0;
+    padding: var(--space-20) 0 var(--space-16) 0;
   }
 }
 
 @media (max-width: 768px) {
   .hero {
-    padding: var(--space-8) 0;
+    padding: var(--space-12) 0 var(--space-8) 0;
     min-height: 100vh;
     justify-content: center;
   }
 
   .titleSection {
-    margin-top: var(--space-8);
-    margin-bottom: var(--space-16);
+    margin-top: var(--space-16);
+    margin-bottom: var(--space-8);
   }
 
   .heroTitle {
@@ -225,17 +225,12 @@
   }
 
   .heroButtons {
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
     gap: var(--space-4);
   }
 
   .primaryButton,
   .secondaryButton {
-    width: 100%;
     max-width: 280px;
-    justify-content: center;
     padding: var(--space-3) var(--space-6);
     font-size: var(--font-size-base);
   }
@@ -244,12 +239,10 @@
     grid-template-columns: 1fr;
     gap: var(--space-6);
     margin-top: var(--space-12);
-    padding: 0 var(--space-8);
   }
 
   .card {
     padding: var(--space-8) var(--space-6);
-    min-height: 180px;
   }
 
   .cardHeader {
@@ -268,12 +261,12 @@
 
 @media (max-width: 480px) {
   .hero {
-    padding: 0;
+    padding: var(--space-12) 0 var(--space-6) 0;
   }
 
   .titleSection {
-    margin-top: var(--space-10);
-    margin-bottom: var(--space-12);
+    margin-top: var(--space-12);
+    margin-bottom: var(--space-10);
   }
 
   .heroTitle {
@@ -289,12 +282,10 @@
 
   .cardsGrid {
     gap: var(--space-5);
-    padding: 0 var(--space-6);
   }
 
   .card {
     padding: var(--space-7) var(--space-5);
-    min-height: 160px;
   }
 
   .cardHeader {

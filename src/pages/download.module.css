@@ -3,9 +3,9 @@
 /* ===== 页面容器 ===== */
 .container {
   min-height: 100vh;
-  background: var(--bg-primary);
+  /* background: var(--bg-primary);
   color: var(--text-primary);
-  font-family: var(--font-primary);
+  font-family: var(--font-primary); */
 }
 
 /* ===== 自定义页面布局 ===== */

@@ -12,30 +12,31 @@
   --card-title-line-height: 1.4 !important;
 }
 
-/* ===== 页面布局 ===== */
-.sectionContent {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 var(--container-padding);
-}
-
 /* ===== 页面容器 ===== */
 .download {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
   color: var(--text-primary);
-  padding: var(--section-padding);
   position: relative;
   overflow: hidden;
   font-family: var(--font-primary);
+  padding: var(--section-padding);
 }
+
+/* ===== 页面布局 ===== */
+.sectionContent {
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
 
 /* ===== 页面标题 ===== */
 .pageHeader {
   text-align: center;
-  margin: var(--space-16) 0;
+  margin-bottom: var(--space-16);
+  margin-top: var(--space-8);
 }
 
 .pageTitle {

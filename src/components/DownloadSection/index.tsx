@@ -11,20 +11,7 @@ interface DownloadSectionProps {
 const DownloadSection: React.FC<DownloadSectionProps> = ({ currentLocale }) => {
   const CONTENT = currentLocale === 'zh' ? CONTENT_ZH : CONTENT_EN;
 
-  const [isVisible, setIsVisible] = useState(false);
-  const [animateElements, setAnimateElements] = useState(false);
   const [copySuccess, setCopySuccess] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-      setTimeout(() => {
-        setAnimateElements(true);
-      }, 300);
-    }, 100);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   const handleCopy = async () => {
     try {
@@ -39,10 +26,10 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ currentLocale }) => {
   };
 
   return (
-    <section id="download-section" className={`${styles.download} ${isVisible ? styles.fadeIn : ''}`}>
+    <section id="download-section" className={`${styles.download}`}>
       <div className={`${globalStyles.sectionContent} ${styles.sectionContent}`}>
         {/* 页面标题 */}
-        <div className={`${styles.pageHeader} ${animateElements ? styles.headerAnimate : ''}`}>
+        <div className={`${styles.pageHeader}`}>
           <h1 className={styles.pageTitle}>{CONTENT.title}</h1>
           <p className={styles.pageSubtitle}>
             {CONTENT.subtitle}
@@ -50,7 +37,7 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ currentLocale }) => {
         </div>
 
         {/* 下载内容区域 - 混合布局 */}
-        <div className={`${styles.downloadContent} ${animateElements ? styles.contentAnimate : ''}`}>
+        <div className={`${styles.downloadContent}`}>
           {/* 桌面版卡片 - 并列显示 */}
           <div className={styles.desktopCards}>
             {/* Windows 版本 */}

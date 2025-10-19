@@ -21,6 +21,7 @@
 
 .titleSection {
   margin-bottom: var(--space-16);
+  margin-top: var(--space-12);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -214,7 +215,7 @@
   }
 
   .titleSection {
-    margin-top: var(--space-4);
+    margin-top: var(--space-8);
     margin-bottom: var(--space-16);
   }
 
@@ -271,7 +272,7 @@
   }
 
   .titleSection {
-    margin-top: var(--space-2);
+    margin-top: var(--space-10);
     margin-bottom: var(--space-12);
   }
 

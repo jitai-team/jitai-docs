@@ -2,21 +2,15 @@
 sidebar_position: 2
 ---
 
-# Component-Based Page Development {#component-based-page-development}
-Pages serve as the primary interfaces where users interact with application systems. They are composed of various frontend functional [components](/docs/devguide/using-functional-components-in-pages) that provide data display interfaces and interactive operation entry points. When [creating portals](/docs/devguide/shell-and-page/portal-navigation-design), developers design navigation menus for each portal, with each menu item corresponding to both PC and mobile versions of a page.
+# Creating Generic Pages {#creating-generic-pages}
 
-In component-based pages, the page function logic, page event function logic, and component event function logic can all invoke other business elements, including [services](/docs/devguide/business-logic-development/creating-service-elements), [data models](/docs/devguide/data-modeling), [large language models](/docs/devguide/ai-llm/create-ai-llm), [AI Agents](/docs/devguide/ai-agent/create-ai-agent), [AI assistants](/docs/devguide/ai-assistant/create-ai-assistant), and more. For detailed information about invoking business elements, refer to [Calling Frontend and Backend Tools and Services in Function Logic](/docs/devguide/calling-business-elements-in-pages).
+Generic pages are the most widely used page type in page development. Developers add components to blank pages as needed to create page layouts, and configure components and write event logic. This article uses generic pages to demonstrate **how to perform componentized page development**.
 
-## Creating generic pages {#creating-generic-pages}
-When [creating portals](/docs/devguide/shell-and-page/portal-navigation-design), if developers choose to create pages while creating menus, pages are automatically generated and can be found in the element directory tree for editing.
-
-Developers can also create pages manually. JitAi provides 7 page types: `Generic Page`, `AI Data Mgmt Page`(AI Data Management Page), `AI Data Analysis Page`, `Data Entry Page`, `React Page`, `Vue Page`, and `Markdown Page`. AI Data Mgmt Page, AI Data Analysis Page, and Data Entry Page are all built upon Generic Page. This article uses generic pages to demonstrate **how to perform component-based page development**.
-
-![Create Generic Page](./imgs/create-generic-page.gif "Create Generic Page")
+![Create Generic Page](./imgs/create-generic-page.gif)
 
 To create a page, developers locate `UI Pages` in the element directory tree, click `+` and select `Generic Page`, fill in the page name in the popup form, and click `Confirm` to complete page creation and automatically enter the [Visual Page Editor](#visual-page-editor).
 
-### Page inheritance {#page-inheritance}
+## Page inheritance {#page-inheritance}
 To reuse an existing page, developers can select the page to inherit in the advanced configuration while filling in the page name.
 
 The new page will inherit all component configurations from the parent page (excluding event logic), and developers can modify these configurations in the new page.

@@ -57,7 +57,7 @@ During Agent execution, it continuously receives information such as large langu
 AI Assistant already supports streaming output when calling an Agent. If developers call the Agent's `run` method through code, they can also pass in a custom streaming callback function to subscribe to and process streaming output messages in real-time. Please refer to [Streaming Callback Processing](../../reference/framework/JitAi/AIAgent#streaming-callback-processing) in the reference manual for detailed usage.
 
 ## Calling Agent in frontend functions {#calling-agent-in-frontend-functions}
-In actual business scenarios, it's often necessary to call AI capabilities in real-time based on user operations on pages (such as clicking buttons, filling forms, switching options, etc.) to implement intelligent recommendations, auto-completion, intelligent Q&A, and other functions. To meet these needs, the platform supports directly calling Agents in frontend function logic ([page functions](../shell-and-page/component-based-page-development#page-functions), [page event functions](../shell-and-page/component-based-page-development#page-events), [component event functions](../shell-and-page/component-based-page-development#event-panel)) and flexibly passing parameters, enabling AI capabilities to be seamlessly integrated into various frontend interactions, improving user experience and business intelligence levels.
+In actual business scenarios, it's often necessary to call AI capabilities in real-time based on user operations on pages (such as clicking buttons, filling forms, switching options, etc.) to implement intelligent recommendations, auto-completion, intelligent Q&A, and other functions. To meet these needs, the platform supports directly calling Agents in frontend function logic ([page functions](../shell-and-page/generic-page#page-functions), [page event functions](../shell-and-page/generic-page#page-events), [component event functions](../shell-and-page/generic-page#event-panel)) and flexibly passing parameters, enabling AI capabilities to be seamlessly integrated into various frontend interactions, improving user experience and business intelligence levels.
 
 ![Call Agent in Frontend Functions](./img/agent/call-agent-in-frontend-function.gif "Call Agent in Frontend Functions")
 
@@ -79,4 +79,4 @@ During Agent development, frequent debugging is required. Developers can create 
 
 [How to call Agent in AI Assistant?](../ai-assistant/process-orchestration-node-configuration#ai-agent)
 
-[How to integrate AI Assistant in pages?](../shell-and-page/component-based-page-development#enabling-ai-assistant)
+[How to integrate AI Assistant in pages?](../shell-and-page/generic-page#enabling-ai-assistant)

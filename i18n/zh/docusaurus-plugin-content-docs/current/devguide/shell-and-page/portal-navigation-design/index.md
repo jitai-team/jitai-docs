@@ -118,7 +118,7 @@ SSR(Server-Side Rendering，服务端渲染)门户用于提升首屏加载性能
 开发者可以展开菜单项右侧的`更多`按钮，点击`页面变量赋值`按钮，在弹窗中为页面变量赋值。
 
 :::warning
-开发者需要在页面中声明[页面变量](/docs/devguide/shell-and-page/component-based-page-development#page-variables)，页面没有声明变量时则无法在门户中设置页面变量赋值。
+开发者需要在页面中声明[页面变量](/docs/devguide/shell-and-page/generic-page#page-variables)，页面没有声明变量时则无法在门户中设置页面变量赋值。
 :::
 
 ### 重写菜单页面 {#rewriting-menu-pages}

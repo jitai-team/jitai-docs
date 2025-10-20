@@ -22,7 +22,7 @@ Generally, button components display button titles by default. If the button tit
 
 By default, button dimensions scale proportionally and adaptively. However, if there are no other components below the button component on the current page, the button will occupy the remaining space.
 
-Button components can be set to fixed width and height through `Set Dimensions`. For specific operations, refer to [Set Dimensions](../shell-and-page/component-based-page-development#custom-sizing-adaptive-layout).
+Button components can be set to fixed width and height through `Set Dimensions`. For specific operations, refer to [Set Dimensions](../shell-and-page/generic-page#custom-sizing-adaptive-layout).
 :::
 
 ## Click event handling {#click-event}

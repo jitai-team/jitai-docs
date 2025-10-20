@@ -285,19 +285,25 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="创建组件化页面"
-  href="devguide/shell-and-page/component-based-page-development"
+  title="组件化页面"
+  href="devguide/shell-and-page/componentized-page"
+  description="理解组件化页面——JitAi页面系统的基础，由功能组件构建，用于数据展示和用户交互。"
+/>
+
+<IndexCard
+  title="创建常规页面"
+  href="devguide/shell-and-page/generic-page"
   description="使用可视化编辑器构建页面界面，配置组件和事件，实现丰富的用户交互功能。"
 >
   <LinkGrid links={[
-    { text: "新建常规页面", href: "devguide/shell-and-page/component-based-page-development#creating-generic-pages" },
-    { text: "可视化页面编辑器", href: "devguide/shell-and-page/component-based-page-development#visual-page-editor" },
-    { text: "组件通用操作", href: "devguide/shell-and-page/component-based-page-development#component-common-operations" },
-    { text: "页面变量", href: "devguide/shell-and-page/component-based-page-development#page-variables" },
-    { text: "页面函数", href: "devguide/shell-and-page/component-based-page-development#page-functions" },
-    { text: "页面事件", href: "devguide/shell-and-page/component-based-page-development#page-events" },
-    { text: "快捷操作", href: "devguide/shell-and-page/component-based-page-development#shortcuts" },
-    { text: "为页面启用AI助理", href: "devguide/shell-and-page/component-based-page-development#enabling-ai-assistant" }
+    { text: "新建常规页面", href: "devguide/shell-and-page/generic-page" },
+    { text: "可视化页面编辑器", href: "devguide/shell-and-page/generic-page#visual-page-editor" },
+    { text: "组件通用操作", href: "devguide/shell-and-page/generic-page#component-common-operations" },
+    { text: "页面变量", href: "devguide/shell-and-page/generic-page#page-variables" },
+    { text: "页面函数", href: "devguide/shell-and-page/generic-page#page-functions" },
+    { text: "页面事件", href: "devguide/shell-and-page/generic-page#page-events" },
+    { text: "快捷操作", href: "devguide/shell-and-page/generic-page#shortcuts" },
+    { text: "为页面启用AI助理", href: "devguide/shell-and-page/generic-page#enabling-ai-assistant" }
   ]} />
 </IndexCard>
 
@@ -392,9 +398,11 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals"
   description="学习如何将AI助理集成到门户界面中，为用户在整个工作流程中提供智能帮助和指导。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "配置AI助理", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals#configuring-ai-assistant" },
+    { text: "运行时效果", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals#runtime-effects" },
+    { text: "功能亮点", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals#feature-highlights" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -402,9 +410,13 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages"
   description="将AI助理嵌入到基于组件的页面中，增强用户交互并为特定任务提供上下文帮助。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "启用AI助理", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#enable-ai-assistant" },
+    { text: "AI助理配置", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#ai-assistant-configuration" },
+    { text: "AI助理事件订阅", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#ai-assistant-event-subscription" },
+    { text: "在页面中发送AI消息", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#send-ai-message" },
+    { text: "直接调用AI助理", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#call-ai-assistant" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -412,9 +424,13 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages"
   description="掌握从页面调用AI元素的技巧，包括AI智能体、LLM服务和知识库，用于动态内容生成。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "在页面中使用AI助理", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#using-in-pages" },
+    { text: "可视化调用", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#visual-calling" },
+    { text: "全代码调用", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#full-code-calling" },
+    { text: "在页面中使用AI Agent", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#using-ai-agent-in-pages" },
+    { text: "在页面中使用大模型", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#using-large-language-models-in-pages" }
+  ]} />
 </IndexCard>
 
 </div>
@@ -1142,41 +1158,123 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <IndexCard
   title="创建AI助理元素"
   href="devguide/ai-assistant/create-ai-assistant"
-  description="学习如何创建AI助理元素，配置工作流、节点类型和事件处理，实现智能业务流程自动化。"
+  description="构建生产级AI应用，支持多智能体协作、UI交互和可视化编排，无需编写代码。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "什么是AI助理", href: "devguide/ai-assistant/create-ai-assistant#what-is-ai-assistant" },
+    { text: "功能特性", href: "devguide/ai-assistant/create-ai-assistant#features" },
+    { text: "创建AI助理", href: "devguide/ai-assistant/create-ai-assistant#creating-ai-assistant" }
+  ]} />
 </IndexCard>
 
 <IndexCard
   title="流程编排与节点配置"
   href="devguide/ai-assistant/process-orchestration-node-configuration"
-  description="深入了解AI助理流程编排技术和详细的节点配置方法。"
+  description="掌握可视化工作流设计，包含8种以上节点类型：AIAgent、路由、条件逻辑、人机协作节点等。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "可视化编排", href: "devguide/ai-assistant/process-orchestration-node-configuration#visual-orchestration" },
+    { text: "开始节点", href: "devguide/ai-assistant/process-orchestration-node-configuration#start-node" },
+    { text: "路由节点", href: "devguide/ai-assistant/process-orchestration-node-configuration#routing-decision" },
+    { text: "AIAgent节点", href: "devguide/ai-assistant/process-orchestration-node-configuration#ai-agent" },
+    { text: "对话区人机交互节点", href: "devguide/ai-assistant/process-orchestration-node-configuration#action-in-conversation" },
+    { text: "工作区人机交互节点", href: "devguide/ai-assistant/process-orchestration-node-configuration#action-in-page" },
+    { text: "函数节点", href: "devguide/ai-assistant/process-orchestration-node-configuration#function" },
+    { text: "条件分支节点", href: "devguide/ai-assistant/process-orchestration-node-configuration#if-else" },
+    { text: "循环节点", href: "devguide/ai-assistant/process-orchestration-node-configuration#iteration" }
+  ]} />
 </IndexCard>
 
 <IndexCard
   title="AI助理的输入与输出"
   href="devguide/ai-assistant/ai-assistant-input-output"
-  description="理解AI助理的输入输出配置和数据处理方法。"
+  description="配置自定义输入参数、控制运行时日志详细程度，并使用自定义控件向对话发送结构化数据。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "配置输入参数", href: "devguide/ai-assistant/ai-assistant-input-output#input-args" },
+    { text: "运行时流程日志输出", href: "devguide/ai-assistant/ai-assistant-input-output#runtime-process-log-output" },
+    { text: "状态数据输出到对话", href: "devguide/ai-assistant/ai-assistant-input-output#state-data-output" },
+    { text: "节点输出配置", href: "devguide/ai-assistant/ai-assistant-input-output#message-output" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="AI助理的运行时状态"
+  href="devguide/ai-assistant/ai-assistant-state"
+  description="利用运行时状态作为AI的「记忆库」，实现上下文保留、多轮对话和错误恢复。"
+>
+  <LinkGrid links={[
+    { text: "状态数据存储仓库", href: "devguide/ai-assistant/ai-assistant-state#state-data-storage-repository" },
+    { text: "运行时状态数据内容", href: "devguide/ai-assistant/ai-assistant-state#state-data-content" },
+    { text: "数据使用方法", href: "devguide/ai-assistant/ai-assistant-state#data-usage-methods" },
+    { text: "数据流与节点间传递", href: "devguide/ai-assistant/ai-assistant-state#data-flow" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="AI助理的事件"
+  href="devguide/ai-assistant/ai-assistant-event"
+  description="在前端页面和后端服务中订阅节点执行、工具调用和人机交互事件。"
+>
+  <LinkGrid links={[
+    { text: "事件类型概述", href: "devguide/ai-assistant/ai-assistant-event#event-type-overview" },
+    { text: "前端页面事件", href: "devguide/ai-assistant/ai-assistant-event#frontend-page-events" },
+    { text: "节点执行事件", href: "devguide/ai-assistant/ai-assistant-event#node-running-events" },
+    { text: "工具调用事件", href: "devguide/ai-assistant/ai-assistant-event#agent-call-tool-events" },
+    { text: "人机交互事件", href: "devguide/ai-assistant/ai-assistant-event#action-in-conversation-events" },
+    { text: "后端业务事件", href: "devguide/ai-assistant/ai-assistant-event#backend-business-events" }
+  ]} />
 </IndexCard>
 
 <IndexCard
   title="AI助理的API开放"
   href="devguide/ai-assistant/ai-assistant-api-exposure"
-  description="通过API接口开放AI助理能力，实现与外部系统的集成。"
+  description="通过API接口开放AI助理能力，实现应用内集成和外部系统对接。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "发送AI消息函数", href: "devguide/ai-assistant/ai-assistant-api-exposure#send-ai-message" },
+    { text: "在应用内调用AI助理", href: "devguide/ai-assistant/ai-assistant-api-exposure#calling-ai-assistant-within-application" },
+    { text: "外部调用AI助理", href: "devguide/ai-assistant/ai-assistant-api-exposure#external-ai-assistant-calling" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="欢迎语与对话历史"
+  href="devguide/ai-assistant/welcome-message-and-opening"
+  description="配置欢迎语、开场白，管理对话历史，提升用户参与度和上下文连续性。"
+>
+  <LinkGrid links={[
+    { text: "欢迎语配置", href: "devguide/ai-assistant/welcome-message-and-opening#welcome-message-configuration" },
+    { text: "开场白配置", href: "devguide/ai-assistant/welcome-message-and-opening#preamble-configuration" },
+    { text: "对话历史管理", href: "devguide/ai-assistant/ai-conversation-history#start-and-managing-conversation" },
+    { text: "使用历史对话", href: "devguide/ai-assistant/ai-conversation-history#using-historical-conversations" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="开发对话式多任务AI助理"
+  href="devguide/ai-assistant/develop-conversational-multi-task-ai-assistant"
+  description="完整教程：构建具有智能路由、多个智能体和自动文档生成功能的AI助理。"
+>
+  <LinkGrid links={[
+    { text: "文案Agent开发", href: "devguide/ai-assistant/develop-conversational-multi-task-ai-assistant#writing-agent" },
+    { text: "客服Agent与知识库", href: "devguide/ai-assistant/develop-conversational-multi-task-ai-assistant#customer-service-agent" },
+    { text: "方案Agent生成报价", href: "devguide/ai-assistant/develop-conversational-multi-task-ai-assistant#solution-agent" },
+    { text: "流程编排与集成", href: "devguide/ai-assistant/develop-conversational-multi-task-ai-assistant#developing-ai-assistant" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="开发人机协作式企业级AI助理"
+  href="devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant"
+  description="构建复杂的AI评分系统，展示深度UI集成、事件驱动协作和人工监督。"
+>
+  <LinkGrid links={[
+    { text: "产品核心特性", href: "devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant#product-core-features-overview" },
+    { text: "与前端深度融合", href: "devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant#deep-integration-of-ai-with-frontend" },
+    { text: "人机协作节点设计", href: "devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant#human-machine-collaboration-node-design" },
+    { text: "AI评分案例研究", href: "devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant#demonstrating-collaboration-features-through-ai-grading-case-study" }
+  ]} />
 </IndexCard>
 
 </div>
@@ -1796,8 +1894,12 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   <LinkGrid links={[
     { text: "阿里云短信", href: "devguide/third-party-integration/sms-service#aliyun-sms" },
     { text: "阿里云短信服务创建", href: "devguide/third-party-integration/sms-service#aliyun-sms-service-creation" },
+    { text: "AWS SNS短信", href: "devguide/third-party-integration/sms-service#aws-sns-sms" },
+    { text: "AWS SNS短信服务创建", href: "devguide/third-party-integration/sms-service#aws-sns-service-creation" },
+    { text: "Twilio短信", href: "devguide/third-party-integration/sms-service#twilio-sms" },
+    { text: "Twilio短信服务创建", href: "devguide/third-party-integration/sms-service#twilio-service-creation" },
     { text: "手机登录方式中使用短信服务", href: "devguide/third-party-integration/sms-service#use-sms-service-in-mobile-login" },
-    { text: "审批流程中使用短信服务", href: "devguide/third-party-integration/sms-service#use-sms-service-in-approval-workflow" },
+    { text: "审批流程中使用短信服务", href: "devguide/third-party-integration/sms-service#use-sms-service-in-approval-flow" },
     { text: "短信通知功能", href: "devguide/third-party-integration/sms-service#sms-notification-function" }
   ]} />
 </IndexCard>

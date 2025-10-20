@@ -36,7 +36,7 @@ Tool call events carry parameters of dictionary (JitDict) type with the followin
 After binding the assistant in a page, you can subscribe to tool call events. For subscription methods, see [Subscribing to Tool Events in Pages](../using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#subscribe-call-tool-events)
 
 
-### Action-in-conversation events {#in-conversation-action-events} 
+### Action-in-conversation events {#action-in-conversation-events} 
 When the process runs to a Action-in-conversation node, the dialog will display confirmation operation buttons such as `Approve`, `Reject`, `Edit`, `Reply`, and custom buttons.
 After the user performs confirmation operations or clicks custom buttons, page events will be triggered; the events carry parameters that are the data displayed on the node.
 

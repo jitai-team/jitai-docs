@@ -7,7 +7,7 @@ slug: agent-tools
 
 Tools extend an Agent's capabilities beyond natural language understanding and processing, enabling it to actively invoke external services, databases, APIs, and other resources to perform complex operations including information retrieval, data processing, and task execution. By integrating appropriate tools with an Agent, developers can enhance its business processing and automation capabilities to address diverse application requirements.
 
-Applications built on JitAi's interpretive system architecture feature self-describing elements that large language models can accurately understand and utilize as Agent tools. Through the Agent visual editor's `Tools` section, developers can integrate [Model Functions](../data-modeling/create-data-model-functions), [Service Functions](../business-logic-development/creating-service-elements#create-service-functions), [MCP servers](https://modelcontextprotocol.io/docs/getting-started/intro), [External APIs](../third-party-integration/external-api), and [Page Functions](../shell-and-page/component-based-page-development#page-functions), empowering AI to interact with full-stack elements across both frontend and backend systems.
+Applications built on JitAi's interpretive system architecture feature self-describing elements that large language models can accurately understand and utilize as Agent tools. Through the Agent visual editor's `Tools` section, developers can integrate [Model Functions](../data-modeling/create-data-model-functions), [Service Functions](../business-logic-development/creating-service-elements#create-service-functions), [MCP servers](https://modelcontextprotocol.io/docs/getting-started/intro), [External APIs](../third-party-integration/external-api), and [Page Functions](../shell-and-page/generic-page#page-functions), empowering AI to interact with full-stack elements across both frontend and backend systems.
 
 ## Calling model functions {#calling-model-functions}
 [Data models](../../reference/framework/JitORM/data-models#model-built-in-functions) include standard CRUD functions, and developers can [create custom model functions](../data-modeling/create-data-model-functions) to meet specific business requirements. Once data model functions are added as Agent tools, the Agent can perform create, read, update, and delete operations through these functions, supporting various data processing scenarios.
@@ -67,7 +67,7 @@ To add external APIs, navigate to the `Tools` tab in the Agent visual editor, cl
 By default, all external API functions are added as tools. Developers should selectively disable unnecessary functions based on their specific requirements.
 
 ## Calling page functions {#calling-page-functions}
-Page-level functionality including built-in functions (such as retrieving page variables), component functions (such as table refresh and popup controls), and developer-defined [page functions](../shell-and-page/component-based-page-development#page-functions) can all be integrated as Agent tools, enabling AI-driven frontend UI operations.
+Page-level functionality including built-in functions (such as retrieving page variables), component functions (such as table refresh and popup controls), and developer-defined [page functions](../shell-and-page/generic-page#page-functions) can all be integrated as Agent tools, enabling AI-driven frontend UI operations.
 
 ![Add Page Function](./img/agent/agent-add-page-function-tool.gif "Add Page Function")
 

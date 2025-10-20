@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './styles.module.css';
 import globalStyles from '../../../pages/index.module.css';
-import ScrollAnimation from '../../ScrollAnimation';
 import CONTENT_ZH from './constant-zh';
 import CONTENT_EN from './constant-en';
 

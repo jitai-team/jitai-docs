@@ -8,8 +8,8 @@ import DevOpsSection from '../components/home_comps/DevOpsSection';
 import styles from './index.module.css';
 
 const HomePage: React.FC = () => {
-  const homeTitle = 'JitAI - Production-grade AI Application Development Platform';
-  const homeDesc = "JitAI: Production-grade AI application development platform, accelerating AI application scaling. Experience the new era of intelligent development with our comprehensive AI application solutions.";
+  const homeTitle = 'JitAI - Quickly Build Production-Grade AI Apps';
+  const homeDesc = "The world's first interpreted app framework enabling AI agents to perceive and orchestrate systems in real-time, boosting development efficiency by 10x! ";
 
   return (
     <PageLayout 

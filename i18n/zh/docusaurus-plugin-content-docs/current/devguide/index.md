@@ -77,8 +77,9 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="学习如何更新和升级平台节点，保持系统稳定性和功能更新。"
 >
   <LinkGrid links={[
-    { text: "更新流程", href: "devguide/installation-activation/platform-node-updates-upgrades" },
-    { text: "升级方法", href: "devguide/installation-activation/platform-node-updates-upgrades" }
+    { text: "升级提示与入口", href: "devguide/installation-activation/platform-node-updates-upgrades#upgrade-entry" },
+    { text: "一键升级流程", href: "devguide/installation-activation/platform-node-updates-upgrades#one-click-upgrade" },
+    { text: "集群环境中的升级建议", href: "devguide/installation-activation/platform-node-updates-upgrades#cluster-recommendations" },
   ]} />
 </IndexCard>
 

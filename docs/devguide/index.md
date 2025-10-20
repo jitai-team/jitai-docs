@@ -77,8 +77,9 @@ Set up your development environment by installing the platform and activating no
   description="Keep your platform nodes up-to-date with the latest features and stability improvements."
 >
   <LinkGrid links={[
-    { text: "Update Procedures", href: "devguide/installation-activation/platform-node-updates-upgrades" },
-    { text: "Upgrade Methods", href: "devguide/installation-activation/platform-node-updates-upgrades" }
+    { text: "Update banner and entry", href: "devguide/installation-activation/platform-node-updates-upgrades#upgrade-entry" },
+    { text: "One‑click upgrade flow", href: "devguide/installation-activation/platform-node-updates-upgrades#one-click-upgrade" },
+    { text: "Recommendations for clusters", href: "devguide/installation-activation/platform-node-updates-upgrades#cluster-recommendations" }
   ]} />
 </IndexCard>
 

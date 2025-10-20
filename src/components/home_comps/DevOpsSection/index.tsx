@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './styles.module.css';
 import globalStyles from '../../../pages/index.module.css';
-import ScrollAnimation from '../../ScrollAnimation';
 import CONTENT_EN from './constant-en';
 import CONTENT_ZH from './constant-zh';
 
@@ -23,72 +22,59 @@ const DevOpsSection: React.FC<DevOpsSectionProps> = ({ currentLocale }) => {
   }
 
   return (
-    <ScrollAnimation animationType="fadeInUp" duration={500}>
-      <section
-        id="devops-section"
-        className={`${styles.devopsSection} ${globalStyles.gradientBackground}`}
-        style={{
-          '--section-color': CONTENT.color,
-          '--card-color': CONTENT.color,
-        } as React.CSSProperties}
-      >
-        <div className={globalStyles.sectionContent}>
-          <ScrollAnimation animationType="fadeInUp" delay={100}>
-            <h2 className={globalStyles.sectionTitle}>{CONTENT.title}</h2>
-          </ScrollAnimation>
-          <ScrollAnimation animationType="fadeInUp" delay={200}>
-            <p className={styles.sectionSubtitle}>
-              {CONTENT.subtitle}
-            </p>
-          </ScrollAnimation>
+    <section
+      id="devops-section"
+      className={`${styles.devopsSection} ${globalStyles.gradientBackground}`}
+      style={{
+        '--section-color': CONTENT.color,
+        '--card-color': CONTENT.color,
+      } as React.CSSProperties}
+    >
+      <div className={globalStyles.sectionContent}>
+        <h2 className={globalStyles.sectionTitle}>{CONTENT.title}</h2>
+        <p className={styles.sectionSubtitle}>
+          {CONTENT.subtitle}
+        </p>
 
-          <div className={styles.featuresContainer}>
-            {featuresRows.map((row, rowIndex) => {
-              const isOddRow = rowIndex % 2 === 0; // 单数行（0-based索引）
+        <div className={styles.featuresContainer}>
+          {featuresRows.map((row, rowIndex) => {
+            const isOddRow = rowIndex % 2 === 0; // 单数行（0-based索引）
 
-              return (
-                <ScrollAnimation
-                  key={rowIndex}
-                  animationType="fadeInUp"
-                  delay={300 + rowIndex * 200}
-                  duration={500}
-                >
-                  <div className={styles.featureRow}>
-                    {row.map((feature, featureIndex) => {
-                      const isWideCard = isOddRow
-                        ? featureIndex === 0  // 单数行：左侧宽
-                        : featureIndex === 1; // 偶数行：右侧宽
+            return (
+              <div className={styles.featureRow}>
+                {row.map((feature, featureIndex) => {
+                  const isWideCard = isOddRow
+                    ? featureIndex === 0  // 单数行：左侧宽
+                    : featureIndex === 1; // 偶数行：右侧宽
 
-                      return (
-                        <div
-                          key={featureIndex}
-                          className={`${styles.featureCard} ${
-                            isWideCard ? styles.wideCard : styles.narrowCard
-                          }`}
-                        >
-                          <div className={styles.featureImage}>
-                            {feature.image ? (
-                              <img src={feature.image} alt={feature.imageAlt} />
-                            ) : (
-                              <div className={`${globalStyles.imagePlaceholder} ${styles.imagePlaceholder}`}>
-                              </div>
-                            )}
+                  return (
+                    <div
+                      key={featureIndex}
+                      className={`${globalStyles.baseCard} ${styles.featureCard} ${
+                        isWideCard ? styles.wideCard : styles.narrowCard
+                      }`}
+                    >
+                      <div className={styles.featureImage}>
+                        {feature.image ? (
+                          <img src={feature.image} alt={feature.imageAlt} />
+                        ) : (
+                          <div className={`${globalStyles.imagePlaceholder} ${styles.imagePlaceholder}`}>
                           </div>
-                          <div className={styles.featureContent}>
-                            <h3>{feature.title}</h3>
-                            <p>{feature.description}</p>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </ScrollAnimation>
-              );
-            })}
-          </div>
+                        )}
+                      </div>
+                      <div className={styles.featureContent}>
+                        <h3>{feature.title}</h3>
+                        <p>{feature.description}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
         </div>
-      </section>
-    </ScrollAnimation>
+      </div>
+    </section>
   );
 };
 

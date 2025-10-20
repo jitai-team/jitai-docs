@@ -21,7 +21,7 @@ slug: button-components
 
 默认情况下，按钮尺寸会按照比例自适应缩放。但是，如果当前页面中按钮组件下面没有其他组件，那么按钮会占据剩余空间。
 
-按钮组件可以设置固定宽高，通过`设置尺寸`完成，具体操作参考[设置尺寸](../shell-and-page/component-based-page-development#custom-sizing-adaptive-layout)。
+按钮组件可以设置固定宽高，通过`设置尺寸`完成，具体操作参考[设置尺寸](../shell-and-page/generic-page#custom-sizing-adaptive-layout)。
 :::
 
 ## 点击后事件 {#click-event}

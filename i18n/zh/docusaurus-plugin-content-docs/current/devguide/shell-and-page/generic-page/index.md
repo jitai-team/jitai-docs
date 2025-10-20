@@ -2,21 +2,15 @@
 sidebar_position: 2
 ---
 
-# 创建组件化页面
-页面是用户与应用系统交互的主要场所，由不同的前端功能[组件](/docs/devguide/using-functional-components-in-pages)构成，为用户提供数据展示界面以及交互操作入口。开发者在[创建门户](/docs/devguide/shell-and-page/portal-navigation-design)中规划每个门户中的导航菜单，而每个菜单项则对应一个页面的PC端和移动端。
+# 创建常规页面 {#creating-generic-pages}
 
-在一个组件化页面中，页面函数逻辑、页面事件函数逻辑、页面中用到的组件的事件函数逻辑中都可以调用其它的业务元素，包括且不限于[服务](/docs/devguide/business-logic-development/creating-service-elements)、[数据模型](/docs/devguide/data-modeling)、[AI大模型](/docs/devguide/ai-llm/create-ai-llm)、[AI Agent](/docs/devguide/ai-agent/create-ai-agent)、[AI助理](/docs/devguide/ai-assistant/create-ai-assistant)等。关于调用业务元素的详细内容，可以参考[在函数逻辑中调用前后端工具和服务](/docs/devguide/calling-business-elements-in-pages)。
-
-## 新建常规页面 {#creating-generic-pages}
-在[创建门户](/docs/devguide/shell-and-page/portal-navigation-design)中，如果开发者选择创建菜单的同时创建页面，则页面会自动生成，可以在元素目录树中找到自动生成的页面并进行编辑。
-
-开发者也可以手动创建页面，JitAi提供了常规页面、AI数据管理页面、AI数据分析页面、数据录入页面、React全代码页面、Vue全代码页面、markdown-page一共7种页面类型。其中AI数据管理页面、AI数据分析页面、数据录入页面都是以常规页面为基础封装的，本文使用常规页面讲解**如何进行组件化的页面开发**。
+常规页面是页面开发中使用最广泛的页面类型，开发者按需在空白的页面中添加组件进行页面布局，并进行组件的配置和事件逻辑的编写。本文使用常规页面讲解**如何进行组件化的页面开发**。
 
 ![创建页面时选择类型](./imgs/create-generic-page.gif)
 
 开发者在元素目录树中找到`页面`，点击`+`后选择`常规页面`，在弹出的`新建常规页面`表单弹窗中填写页面名称，点击`确定`后即可完成页面创建并自动进入[可视化页面编辑器](#visual-page-editor)。
 
-### 页面继承 {#page-inheritance}
+## 页面继承 {#page-inheritance}
 如果想复用某个已存在的页面，开发者可以在填写页面名称的同时，在高级配置中选择要继承的页面。
 
 新页面将拥有被继承页面的所有组件配置（不包含事件逻辑），开发者可以在新页面中进行编辑。

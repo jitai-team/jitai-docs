@@ -2,7 +2,7 @@
 
 .frameworkSection {
   padding: var(--section-padding);
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
   position: relative;
   overflow: hidden;
 }

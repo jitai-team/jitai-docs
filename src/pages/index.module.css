@@ -230,7 +230,6 @@ body img {
 }
 
 .baseCard:hover {
-  transform: translateY(-8px);
   box-shadow: var(--shadow-md) !important;
   border-color: var(--color-primary);
   background: var(--bg-card-hover);

@@ -30,7 +30,7 @@ const CONTENT = {
       {
         title: '页面可视化开发',
         description: '灵活组合组件，界面完全自由排版，支持自定义组件事件和变量函数',
-        link: './docs/devguide/shell-and-page/component-based-page-development',
+        link: './docs/devguide/shell-and-page/generic-page',
       },
       {
         title: '服务可视化开发',

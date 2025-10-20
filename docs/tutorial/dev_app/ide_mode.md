@@ -69,7 +69,7 @@ Now we'll use a more flexible page type (Generic Page) to create the "Test Paper
 
 #### Regular page introduction
 
-Pages comprise components that allow flexible layout adjustments for complete interface design freedom. Components connected to data models include built-in data read/write capabilities, enabling local customization through detailed component configuration. Components can configure events and invoke functions from other components, achieving interactive linkage between components. See [Component-based Page Development](../../devguide/shell-and-page/component-based-page-development) for details.
+Pages comprise components that allow flexible layout adjustments for complete interface design freedom. Components connected to data models include built-in data read/write capabilities, enabling local customization through detailed component configuration. Components can configure events and invoke functions from other components, achieving interactive linkage between components. See [Component-based Page Development](../../devguide/shell-and-page/generic-page) for details.
 
 ![](../img/ide_mode_143959.png)
 

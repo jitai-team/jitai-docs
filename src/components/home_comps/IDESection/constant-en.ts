@@ -30,7 +30,7 @@ const CONTENT = {
       {
         title: 'Page Visual Develop',
         description: 'Flexible component combination, completely free interface layout, supports custom component events and variable functions',
-        link: './docs/devguide/shell-and-page/component-based-page-development',
+        link: './docs/devguide/shell-and-page/generic-page',
       },
       {
         title: 'Service Visual Develop',

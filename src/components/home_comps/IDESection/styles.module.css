@@ -123,9 +123,9 @@
   font-weight: var(--font-weight-semibold);
 }
 
-.featureCard:hover .featureTitle {
+/* .featureCard:hover .featureTitle {
   color: var(--color-primary);
-}
+} */
 
 .featureDescription {
   color: var(--text-secondary);

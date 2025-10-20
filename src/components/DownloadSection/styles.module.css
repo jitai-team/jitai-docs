@@ -95,7 +95,6 @@
 }
 
 .versionCard:hover {
-  transform: translateY(-8px);
   box-shadow: var(--hover-shadow-primary);
   border-color: var(--color-primary);
   background: var(--bg-card-hover);
@@ -231,7 +230,6 @@
 }
 
 .downloadButton:hover {
-  transform: translateY(-2px);
   box-shadow: var(--hover-shadow-primary);
   color: var(--color-white);
   text-decoration: none;
@@ -271,7 +269,6 @@
 }
 
 .downloadButtonSecondary:hover {
-  transform: translateY(-2px);
   box-shadow: var(--hover-shadow-primary);
   background: transparent;
   color: var(--color-primary);
@@ -524,7 +521,6 @@
 }
 
 .copyButton:hover {
-  transform: translateY(-2px);
   box-shadow: var(--hover-shadow-primary);
   color: var(--color-white);
   text-decoration: none;
@@ -646,7 +642,6 @@
 
 .modalButton:hover {
   background: var(--color-secondary);
-  transform: translateY(-1px);
 }
 
 /* 响应式设计 */

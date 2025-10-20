@@ -20,19 +20,19 @@
 .errorMessage {
   font-size: 2.5rem;
   font-weight: 600;
-  color: #333;
+  color: var(--text-color);
   margin: 0 0 1.5rem 0;
 }
 
 .errorDescription {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--text-color);
   margin: 0 0 3rem 0;
   line-height: 1.6;
 }
 
 .homeLink {
-  color: #667eea;
+  color: var(--primary-color);
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 500;
@@ -40,7 +40,6 @@
 }
 
 .homeLink:hover {
-  color: #764ba2;
   text-decoration: underline;
 }
 

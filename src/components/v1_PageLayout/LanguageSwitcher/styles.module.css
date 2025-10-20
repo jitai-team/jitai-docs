@@ -1,0 +1,112 @@
+/* Ant Design 风格的语言切换器 */
+.languageSwitcher {
+  position: relative;
+  display: inline-block;
+}
+
+/* 切换按钮 - 模仿 Ant Design 样式 */
+.switchButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  outline: none;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 32px;
+  /* box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02); */
+}
+
+.switchButton:hover {
+  color: #1890ff;
+  border-color: #1890ff;
+}
+
+.switchButton:active {
+  color: #096dd9;
+  border-color: #096dd9;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
+}
+
+.switchButton:focus-visible {
+  color: #1890ff;
+  border-color: #1890ff;
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+/* 地球图标样式 */
+.globeIcon {
+  color: rgba(0, 0, 0, 0.65);
+  transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  flex-shrink: 0;
+}
+
+/* 当前语言文字 */
+.currentLang {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.85);
+  line-height: 1.5715;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  user-select: none;
+  transition: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.switchButton:hover .globeIcon,
+.switchButton:hover .currentLang {
+  color: inherit;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .switchButton {
+    padding: 6px 10px;
+    height: 36px;
+    min-width: 36px;
+  }
+  
+  .currentLang {
+    font-size: 15px;
+  }
+}
+
+/* 高对比度模式 */
+@media (prefers-contrast: high) {
+  .switchButton {
+    border-width: 2px;
+    border-color: #000000;
+  }
+  
+  .switchButton:hover {
+    border-color: #1890ff;
+    color: #1890ff;
+  }
+  
+  .globeIcon {
+    color: #000000;
+  }
+  
+  .currentLang {
+    color: #000000;
+    font-weight: 500;
+  }
+  
+  .switchButton:hover .globeIcon,
+  .switchButton:hover .currentLang {
+    color: inherit;
+  }
+}
+
+/* 减少动画偏好 */
+@media (prefers-reduced-motion: reduce) {
+  .switchButton,
+  .currentLang {
+    transition: none;
+  }
+}

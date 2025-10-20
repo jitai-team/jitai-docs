@@ -36,7 +36,7 @@ AI Agent节点、函数调用节点、条件分支节点及多任务执行节点
 页面中绑定该助理后即可订阅工具调用事件，订阅方式请见[页面中订阅工具事件](../using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#subscribe-call-tool-events)
 
 
-### 对话区人机交互事件 {#chat-area-human-machine-interaction-events} 
+### 对话区人机交互事件 {#action-in-conversation-events} 
 当流程运行到对话区人机交互节点时，对话框中会显示`同意`、`拒绝`、`编辑`、`回复`确认操作按钮及自定义按钮。
 用户做了确认操作或点击自定义按钮后，会触发工作区事件；事件中携带的参数是节点上展示的数据。
 

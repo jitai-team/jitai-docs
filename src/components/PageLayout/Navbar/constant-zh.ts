@@ -46,7 +46,7 @@ const CONTENT = {
     label: '在线试用',
     type: 'button',
     isNewTab: true,
-    url: 'https://jit.pro',
+    url: 'https://demo.jit.pro',
     external: true
   }
 };

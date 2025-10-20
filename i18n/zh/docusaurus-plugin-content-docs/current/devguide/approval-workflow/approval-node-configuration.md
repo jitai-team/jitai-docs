@@ -144,7 +144,7 @@ slug: approval-node-configuration
 
 ![短信通知](./img/workflow_2025-08-25_14-38-31.png)
 
-注意：在配置短信通知功能前，需要配置短信服务以及短信模板代码（如何配置短信服务？，请参照[短信服务](../third-party-integration/sms-service#use-sms-service-in-approval-workflow)）。
+注意：在配置短信通知功能前，需要配置短信服务以及短信模板代码（如何配置短信服务？，请参照[短信服务](../third-party-integration/sms-service#use-sms-service-in-approval-flow)）。
 
 ## 审批页面与权限控制 {#approval-page-permission-control}
 每个审批节点都可以对展现的页面进行权限控制，比如给某个审批节点进行定制页面，配置字段的查看编辑等。

@@ -1,0 +1,40 @@
+/* 博客文章详情页面样式 */
+
+.container {
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+.blogPostPage {
+  display: flex;
+  gap: var(--space-8);
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.main {
+  flex: 1;
+  min-width: 0; /* 防止 flex 子元素溢出 */
+}
+
+/* 响应式设计 */
+@media (max-width: 996px) {
+  .blogPostPage {
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+}
+
+@media (max-width: 768px) {
+  .blogPostPage {
+    padding: 0 var(--space-6);
+  }
+}
+
+@media (max-width: 480px) {
+  .blogPostPage {
+    padding: 0 var(--space-4);
+  }
+}

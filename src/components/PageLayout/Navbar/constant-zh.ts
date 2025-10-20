@@ -25,6 +25,14 @@ const CONTENT = {
       external: true
     },
     {
+      id: 'blog',
+      label: '博客',
+      type: 'link',
+      isNewTab: false,
+      url: '/zh/blog',
+      external: true
+    },
+    {
       id: 'guide',
       label: '文档',
       type: 'link',

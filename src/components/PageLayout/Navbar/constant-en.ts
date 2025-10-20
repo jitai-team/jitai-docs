@@ -25,6 +25,14 @@ const CONTENT = {
       external: true
     },
     {
+      id: 'blog',
+      label: 'Blog',
+      type: 'link',
+      isNewTab: false,
+      url: '/blog',
+      external: true
+    },
+    {
       id: 'guide',
       label: 'Docs',
       type: 'link',

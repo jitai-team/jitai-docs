@@ -1,0 +1,174 @@
+/* 采用首页变量与布局风格的纯色卡片式 Blog 列表样式 */
+
+.container {
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+.headerSection {
+  text-align: center;
+  padding: var(--space-16) 0 var(--space-8);
+}
+
+.pageTitle {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-primary);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.pageSubtitle {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.sectionContent {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.gridContainer {
+  display: grid;
+  gap: var(--space-8);
+  margin-top: var(--space-12);
+  align-items: stretch;
+}
+
+.gridAutoFit {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.baseCard {
+  background: var(--bg-card);
+  backdrop-filter: blur(15px);
+  border-radius: var(--border-radius-card);
+  border: 1px solid var(--border-color-light);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.baseCard:hover {
+  box-shadow: var(--shadow-md) !important;
+  border-color: var(--color-primary);
+  background: var(--bg-card-hover);
+}
+
+.blogCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cardImage {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  display: block;
+}
+
+.cardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-primary);
+}
+
+.blogCard:hover .cardImage img {
+  transform: scale(1.03);
+}
+
+.cardContent {
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cardMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-4);
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+.metaItem { display: flex; align-items: center; gap: var(--space-2); }
+
+.postDate { font-weight: var(--font-weight-medium); }
+
+.readTime {
+  background: rgba(61, 101, 253, 0.1);
+  color: var(--color-primary);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--border-radius-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.cardTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-secondary);
+  margin: 0 0 var(--space-4) 0;
+  line-height: var(--line-height-tight);
+}
+
+.cardTitle a { color: inherit; text-decoration: none; }
+.cardTitle a:hover { text-decoration: underline; }
+
+.cardExcerpt {
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-6);
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-6);
+}
+
+.authorInfo { display: flex; align-items: center; gap: var(--space-2); }
+.authorName { font-weight: var(--font-weight-medium); color: var(--text-primary); }
+
+.tagsContainer { display: flex; gap: var(--space-2); }
+.tag {
+  background: rgba(19, 28, 67, 0.1);
+  color: var(--color-secondary);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+}
+
+.readMoreButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  transition: var(--transition-primary);
+  align-self: flex-start;
+}
+
+.readMoreButton:hover { color: var(--color-secondary); text-decoration: none; }
+
+.paginatorWrapper { display: flex; justify-content: center; padding: var(--space-12) 0; }
+
+@media (max-width: 768px) {
+  .headerSection { padding: var(--space-12) 0 var(--space-6); }
+  .pageTitle { font-size: var(--font-size-4xl); }
+  .gridAutoFit { grid-template-columns: 1fr; }
+  .cardImage { height: 160px; }
+  .cardContent { padding: var(--space-6); }
+}
+
+

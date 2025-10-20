@@ -2,7 +2,7 @@
 
 .platformSection {
   padding: var(--section-padding);
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
   position: relative;
   overflow: hidden;
 }

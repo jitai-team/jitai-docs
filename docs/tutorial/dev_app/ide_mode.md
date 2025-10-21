@@ -19,7 +19,7 @@ Element modules within the JitAi application layer:
 
 The developer portal displays the element tree and corresponding editors for each element, including both visual development editors and source code development editors.
 
-![](../img/ide_mode_111641.png)
+![](../img/ide_mode_10.png)
 
 For detailed information, see [JitAi Visual Development Tools](../../devguide/development-tool-and-publish-service/visual-development-tool).
 
@@ -29,16 +29,16 @@ Reviewing the previous [Building Question Bank Management with Easy Mode](./easy
 * "Question Bank Table" data model
 * "Question Bank Management" PC page and mobile page
 
-![](../img/ide_mode_150059.png)
+![](../img/ide_mode_11.png)
 
 
 Here's an overview of the most essential and fundamental elements:
 
-* **Portal**: A collection of pages oriented toward specific scenarios. For example, you can create a "Student Portal" for students and a "Teacher Portal" for teachers. Clicking portal menus opens their configured pages. See [Portal Navigation Design](../../devguide/shell-and-page/portal-navigation-design) for details.
+* **Portal**: A collection of pages oriented toward specific scenarios. For example, you can create a "Examinee Portal" for examinees and a "Examiner Portal" for examiners. Clicking portal menus opens their configured pages. See [Portal Navigation Design](../../devguide/shell-and-page/portal-navigation-design) for details.
 * **Page**: The frontend interface that users see and interact with.
 * **Data Model**: Similar to Excel tables with built-in CRUD interfaces, enabling pages to directly read and write data. See [Data Modeling](../../devguide/data-modeling/data-table-model) for details.
 * **Service**: A collection of interfaces oriented toward specific business scenarios. When built-in CRUD interfaces of data models are insufficient, services extend additional interface capabilities. See [Creating Service Elements](../../devguide/business-logic-development/creating-service-elements) for details.
-* **Backend Event**: Triggered to facilitate data flow between multiple business models. For example, after creating a test paper, automatically generating answer sheets for each student. See [Event Handling](../../devguide/business-logic-development/event-handling) for details.
+* **Backend Event**: Triggered to facilitate data flow between multiple business models. For example, after creating a test paper, automatically generating answer sheets for each examinee. See [Event Handling](../../devguide/business-logic-development/event-handling) for details.
 
 ## Case effect
 
@@ -55,12 +55,17 @@ Begin by analyzing the business scenario, considering data structure requirement
 
 The specific implementation steps are:
 
-<VideoPlayer relatePath="/docs/tutorial/ide_mode_create_table.mp4" />
+Create Entry:
+![](../img/ide_mode_21.png)
+![](../img/ide_mode_22.png)
 
+Pager Table Config：
+![](../img/ide_mode_23.png)
 
 **Note**: Setting descriptive data titles helps locate specific data rows through "Data Title" functionality. Data titles can be updated at any time.
 
-![](../img/ide_mode_model_title.gif)
+Pager SubTable：
+![](../img/ide_mode_24.png)
 
 
 ### Creating menus and pages

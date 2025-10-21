@@ -13,9 +13,9 @@ slug: code
 
 ### Create portal
 
-The previous question bank, test creation, and grading functions were designed for teachers. We'll rename the "User Portal" to "Teacher Portal."
+The previous question bank, test creation, and grading functions were designed for examiners. We'll rename the "User Portal" to "Examiner Portal."
 
-Simultaneously, we'll create a new "Student Portal" for students to answer questions and view test scores:
+Simultaneously, we'll create a new "Examinee Portal" for examinees to answer questions and view test scores:
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 

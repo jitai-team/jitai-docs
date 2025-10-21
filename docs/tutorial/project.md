@@ -5,7 +5,7 @@ slug: project
 ---
 # Case Study
 
-This case study demonstrates an educational assessment system where teachers create test papers, students take examinations, and teachers evaluate student responses.
+This case study demonstrates an educational assessment system where examiners create test papers, examinees take examinations, and examiners evaluate examinee responses.
 
 ## Exploring the project
 
@@ -16,20 +16,20 @@ After setting up your environment, you can deploy this application directly to e
 | Name | Account | Password | Role | Description |
 |------|------|------|------|------|
 | Admin | admin123 | admin123 | Administrator | System administrator with all permissions |
-| Teacher A | jialaoshi | ls123456 | Teacher | Can create test papers and grade |
-| Teacher B | yilaoshi | ls123456 | Teacher | Can create test papers and grade |
-| Student A | kaoshenga | ks123456 | Student | Can take exams |
-| Student B | kaoshengb | ks123456 | Student | Can take exams |
+| Examiner1 | examiner1 | examiner1 | Examiner | Can create test papers and grade |
+| Examiner2 | examiner2 | examiner2 | Examiner | Can create test papers and grade |
+| Examinee1 | examinee1 | examinee1 | Examinee | Can take exams |
+| Examinee2 | examinee2 | eaxminee2 | Examinee | Can take exams |
 
 ## Demo overview
-### Teacher portal
+### Examiner portal
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
-<VideoPlayer relatePath="/docs/tutorial/project_teacher.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/project_examiner.mp4" />
 
-### Student portal
+### Examinee portal
 
-<VideoPlayer relatePath="/docs/tutorial/project_student.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/project_examinee.mp4" />
 
 ### Administrator portal
 
@@ -38,7 +38,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 ## Data model overview
 * **Question Bank Table**: Stores comprehensive question information including content, type, difficulty level, and metadata
 * **Test Paper Tables**: Store test paper configurations and question associations through main and detail tables
-* **Answer Sheet Tables**: Store student responses and scoring information through main and detail tables
+* **Answer Sheet Tables**: Store examinee responses and scoring information through main and detail tables
 
 The detailed field structures are illustrated below:
 

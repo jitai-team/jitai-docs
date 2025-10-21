@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'ignore',
+          onUntruncatedBlogPosts: 'warn',
         },
         theme: {
           customCss: ['./src/css/variables.css', './src/css/custom.css'],

@@ -2,7 +2,7 @@
 title: What Is an AI Native Development Platform？
 authors: []
 date: 2025/9/15
-tags: [AI native, development platform]
+tags: [AI Native, Development Platform]
 image: https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/YdgOk2b4aeB12q4B/img/a572437b-216d-4d6a-86cf-22b6eb57160d.png
 description: "In today’s world, where everyone is embracing AI in software development, how much of your code do you write yourself? How much is generated by AI? In this evolving landscape, every software engineer will soon have to become an AI native developer."
 ---
@@ -13,7 +13,7 @@ description: "In today’s world, where everyone is embracing AI in sof
 > In today’s world, where everyone is embracing AI in software development, how much of your code do you write yourself? How much is generated by AI? In this evolving landscape, every software engineer will soon have to become an AI native developer.
 
 > But do we need to manually debug and adapt every AI-generated line of code—whether in embedded AI scenarios or vibe coding? Is there a development approach that can truly streamline this process? Perhaps an AI native development platform gives the answer.
-
+<!--truncate-->
 ## 1. What Is an AI Native Development Platform?
 
 An AI native development platform is a system designed from the ground up with AI as a core, intrinsic component—not just an add-on.

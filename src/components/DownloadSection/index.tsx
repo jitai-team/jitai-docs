@@ -11,24 +11,15 @@ interface DownloadSectionProps {
 const DownloadSection: React.FC<DownloadSectionProps> = ({ currentLocale }) => {
   const CONTENT = currentLocale === 'zh' ? CONTENT_ZH : CONTENT_EN;
 
-  const [isVisible, setIsVisible] = useState(false);
-  const [animateElements, setAnimateElements] = useState(false);
   const [copySuccess, setCopySuccess] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-      setTimeout(() => {
-        setAnimateElements(true);
-      }, 300);
-    }, 100);
-
-    return () => clearTimeout(timer);
-  }, []);
+  // 中文版默认使用中国大陆镜像，英文版默认使用全球镜像
+  const [isChinaMirror, setIsChinaMirror] = useState(currentLocale === 'zh');
+  const [showSecurityModal, setShowSecurityModal] = useState(false);
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(CONTENT.server.docker.command);
+      const command = isChinaMirror ? CONTENT.server.docker.chinaCommand : CONTENT.server.docker.globalCommand;
+      await navigator.clipboard.writeText(command);
       setCopySuccess(true);
       setTimeout(() => {
         setCopySuccess(false);
@@ -38,11 +29,24 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ currentLocale }) => {
     }
   };
 
+  const handleMacDownload = (url: string) => {
+    // 显示安全提示弹窗
+    setShowSecurityModal(true);
+    // 延迟打开下载链接，让用户先看到提示
+    setTimeout(() => {
+      window.open(url, '_blank');
+    }, 1000);
+  };
+
+  const closeSecurityModal = () => {
+    setShowSecurityModal(false);
+  };
+
   return (
-    <section id="download-section" className={`${styles.download} ${isVisible ? styles.fadeIn : ''}`}>
+    <section id="download-section" className={`${styles.download}`}>
       <div className={`${globalStyles.sectionContent} ${styles.sectionContent}`}>
         {/* 页面标题 */}
-        <div className={`${styles.pageHeader} ${animateElements ? styles.headerAnimate : ''}`}>
+        <div className={`${styles.pageHeader}`}>
           <h1 className={styles.pageTitle}>{CONTENT.title}</h1>
           <p className={styles.pageSubtitle}>
             {CONTENT.subtitle}
@@ -50,7 +54,7 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ currentLocale }) => {
         </div>
 
         {/* 下载内容区域 - 混合布局 */}
-        <div className={`${styles.downloadContent} ${animateElements ? styles.contentAnimate : ''}`}>
+        <div className={`${styles.downloadContent}`}>
           {/* 桌面版卡片 - 并列显示 */}
           <div className={styles.desktopCards}>
             {/* Windows 版本 */}
@@ -87,22 +91,18 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ currentLocale }) => {
                 <h2 className={styles.versionTitle}>{CONTENT.desktop.mac.title}</h2>
                 <p className={styles.versionDescription}>{CONTENT.desktop.mac.description}</p>
                 <div className={styles.downloadActions}>
-                  <a 
-                    href={CONTENT.desktop.mac.intelDownloadUrl} 
+                  <button 
+                    onClick={() => handleMacDownload(CONTENT.desktop.mac.appleDownloadUrl)}
                     className={styles.downloadButton}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <span className={styles.buttonText}>{CONTENT.desktop.mac.intelDownloadText}</span>
-                  </a>
-                  <a 
-                    href={CONTENT.desktop.mac.appleDownloadUrl} 
-                    className={styles.downloadButton}
-                    target="_blank"
-                    rel="noopener noreferrer"
                   >
                     <span className={styles.buttonText}>{CONTENT.desktop.mac.appleDownloadText}</span>
-                  </a>
+                  </button>
+                  <button 
+                    onClick={() => handleMacDownload(CONTENT.desktop.mac.intelDownloadUrl)}
+                    className={styles.downloadButtonSecondary}
+                  >
+                    <span className={styles.buttonText}>{CONTENT.desktop.mac.intelDownloadText}</span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -118,20 +118,41 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ currentLocale }) => {
             <div className={styles.versionHeader}>
               <h2 className={styles.versionTitle}>{CONTENT.server.docker.title}</h2>
               <p className={styles.versionDescription}>{CONTENT.server.docker.description}</p>
-                     <div className={styles.codeBlock}>
-                       <div className={styles.codeContent}>
-                         <span className={styles.codePrompt}>{'>'}</span>
-                         <div className={styles.codeText}>
-                           <code>{CONTENT.server.docker.command}</code>
-                         </div>
-                         <button 
-                           className={styles.copyButton}
-                           onClick={handleCopy}
-                         >
-                           {copySuccess ? CONTENT.server.docker.copySuccess : CONTENT.server.docker.copyText}
-                         </button>
-                       </div>
-                     </div>
+              
+              {/* 代码块 */}
+              <div className={styles.codeBlock}>
+                {/* 代码块头部 - 分段控制器在左上角 */}
+                <div className={styles.codeHeader}>
+                  <div className={styles.segmentedControl}>
+                    <button 
+                      className={`${styles.segmentButton} ${!isChinaMirror ? styles.segmentActive : ''}`}
+                      onClick={() => setIsChinaMirror(false)}
+                    >
+                      {CONTENT.server.docker.globalSegment}
+                    </button>
+                    <button 
+                      className={`${styles.segmentButton} ${isChinaMirror ? styles.segmentActive : ''}`}
+                      onClick={() => setIsChinaMirror(true)}
+                    >
+                      {CONTENT.server.docker.chinaSegment}
+                    </button>
+                  </div>
+                </div>
+                
+                {/* 代码内容 */}
+                <div className={styles.codeContent}>
+                  <span className={styles.codePrompt}>{'>'}</span>
+                  <div className={styles.codeText}>
+                    <code>{isChinaMirror ? CONTENT.server.docker.chinaCommand : CONTENT.server.docker.globalCommand}</code>
+                  </div>
+                  <button 
+                    className={styles.copyButton}
+                    onClick={handleCopy}
+                  >
+                    {copySuccess ? CONTENT.server.docker.copySuccess : CONTENT.server.docker.copyText}
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -143,6 +164,33 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ currentLocale }) => {
           </a>
         </div>
       </div>
+
+      {/* macOS 安全提示弹窗 */}
+      {showSecurityModal && (
+        <div className={styles.modalOverlay} onClick={closeSecurityModal}>
+          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+            <div className={styles.modalHeader}>
+              <h3 className={styles.modalTitle}>{CONTENT.desktop.mac.securityModal.title}</h3>
+              <button className={styles.modalClose} onClick={closeSecurityModal}>×</button>
+            </div>
+                   <div className={styles.modalBody}>
+                     <p className={styles.modalText}>{CONTENT.desktop.mac.securityModal.content}</p>
+                     <div className={styles.modalImage}>
+                       <img
+                         src={CONTENT.desktop.mac.securityModal.imageUrl}
+                         alt="macOS Security Warning"
+                         className={styles.securityImage}
+                       />
+                     </div>
+                   </div>
+            <div className={styles.modalFooter}>
+              <button className={styles.modalButton} onClick={closeSecurityModal}>
+                {CONTENT.desktop.mac.securityModal.confirmText}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

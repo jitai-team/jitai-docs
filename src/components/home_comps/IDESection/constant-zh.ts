@@ -2,7 +2,7 @@ const CONTENT = {
 
   title: 'Jit 开发工具',
   subtitle: '编排式定义业务模块、组合模块，编程式开发业务处理逻辑，自动生成高质量代码，同时支持原生编码',
-  color: '#b45309',
+  color: '#3D65FD',
   videoHoverText: '点击全屏查看高清视频',
   coreFeatures:[
       {
@@ -30,7 +30,7 @@ const CONTENT = {
       {
         title: '页面可视化开发',
         description: '灵活组合组件，界面完全自由排版，支持自定义组件事件和变量函数',
-        link: './docs/devguide/shell-and-page/component-based-page-development',
+        link: './docs/devguide/shell-and-page/generic-page',
       },
       {
         title: '服务可视化开发',

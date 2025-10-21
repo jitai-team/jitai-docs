@@ -1,7 +1,7 @@
 const CONTENT = {
   title: 'Jit Development Framework',
   subtitle: 'JAAP-based enterprise application development framework providing comprehensive full-stack technical infrastructure',
-  color: '#0e7490',
+  color: '#3D65FD',
   learnMore: 'Learn More',
   frameworks: [
     {

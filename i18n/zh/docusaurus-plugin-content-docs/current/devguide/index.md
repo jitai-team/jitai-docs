@@ -77,8 +77,9 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="学习如何更新和升级平台节点，保持系统稳定性和功能更新。"
 >
   <LinkGrid links={[
-    { text: "更新流程", href: "devguide/installation-activation/platform-node-updates-upgrades" },
-    { text: "升级方法", href: "devguide/installation-activation/platform-node-updates-upgrades" }
+    { text: "升级提示与入口", href: "devguide/installation-activation/platform-node-updates-upgrades#upgrade-entry" },
+    { text: "一键升级流程", href: "devguide/installation-activation/platform-node-updates-upgrades#one-click-upgrade" },
+    { text: "集群环境中的升级建议", href: "devguide/installation-activation/platform-node-updates-upgrades#cluster-recommendations" },
   ]} />
 </IndexCard>
 
@@ -285,19 +286,25 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="创建组件化页面"
-  href="devguide/shell-and-page/component-based-page-development"
+  title="组件化页面"
+  href="devguide/shell-and-page/componentized-page"
+  description="理解组件化页面——JitAi页面系统的基础，由功能组件构建，用于数据展示和用户交互。"
+/>
+
+<IndexCard
+  title="创建常规页面"
+  href="devguide/shell-and-page/generic-page"
   description="使用可视化编辑器构建页面界面，配置组件和事件，实现丰富的用户交互功能。"
 >
   <LinkGrid links={[
-    { text: "新建常规页面", href: "devguide/shell-and-page/component-based-page-development#creating-generic-pages" },
-    { text: "可视化页面编辑器", href: "devguide/shell-and-page/component-based-page-development#visual-page-editor" },
-    { text: "组件通用操作", href: "devguide/shell-and-page/component-based-page-development#component-common-operations" },
-    { text: "页面变量", href: "devguide/shell-and-page/component-based-page-development#page-variables" },
-    { text: "页面函数", href: "devguide/shell-and-page/component-based-page-development#page-functions" },
-    { text: "页面事件", href: "devguide/shell-and-page/component-based-page-development#page-events" },
-    { text: "快捷操作", href: "devguide/shell-and-page/component-based-page-development#shortcuts" },
-    { text: "为页面启用AI助理", href: "devguide/shell-and-page/component-based-page-development#enabling-ai-assistant" }
+    { text: "新建常规页面", href: "devguide/shell-and-page/generic-page" },
+    { text: "可视化页面编辑器", href: "devguide/shell-and-page/generic-page#visual-page-editor" },
+    { text: "组件通用操作", href: "devguide/shell-and-page/generic-page#component-common-operations" },
+    { text: "页面变量", href: "devguide/shell-and-page/generic-page#page-variables" },
+    { text: "页面函数", href: "devguide/shell-and-page/generic-page#page-functions" },
+    { text: "页面事件", href: "devguide/shell-and-page/generic-page#page-events" },
+    { text: "快捷操作", href: "devguide/shell-and-page/generic-page#shortcuts" },
+    { text: "为页面启用AI助理", href: "devguide/shell-and-page/generic-page#enabling-ai-assistant" }
   ]} />
 </IndexCard>
 

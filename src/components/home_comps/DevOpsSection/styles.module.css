@@ -1,10 +1,8 @@
-/* DevOps Section 样式 - 橙色主题浅色渐变背景 */
+/* DevOps Section 样式 - 重构版本 */
+
 .devopsSection {
   padding: var(--section-padding);
-  background: linear-gradient(135deg,
-    color-mix(in srgb, var(--section-color) 5%, white) 0%,
-    color-mix(in srgb, var(--section-color) 3%, white) 50%,
-    color-mix(in srgb, var(--section-color) 7%, white) 100%);
+  background: var(--bg-secondary);
   position: relative;
   overflow: hidden;
   --image-left-ratio: 14;
@@ -12,27 +10,14 @@
   --image-height: 20;
 }
 
-.devopsSection::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background:
-    radial-gradient(circle at 20% 80%, color-mix(in srgb, var(--section-color) 8%, transparent) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, color-mix(in srgb, var(--section-color) 6%, transparent) 0%, transparent 50%);
-  pointer-events: none;
-}
-
 .sectionSubtitle {
   font-size: var(--font-size-subtitle);
   text-align: center;
   color: var(--text-secondary);
-  margin-bottom: 4rem;
+  margin-bottom: var(--space-16);
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.6;
+  line-height: var(--line-height-relaxed);
 }
 
 .featuresContainer {
@@ -42,60 +27,37 @@
 
 .featureRow {
   display: flex;
-  gap: 2rem;
-  margin-bottom: 2rem;
+  gap: var(--space-8);
+  margin-bottom: var(--space-8);
   min-height: 400px;
 }
 
 .featureCard {
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--bg-card);
   backdrop-filter: blur(10px);
-  border-radius: 12px;
-  padding: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-6);
+  border: 1px solid var(--border-color-light);
   transition: var(--transition-primary);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
 }
-
-.featureCard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--card-color) 0%, color-mix(in srgb, var(--card-color) 80%, white) 100%);
-  transform: scaleX(0);
-  transition: transform 0.4s ease;
-}
-
-.featureCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px color-mix(in srgb, var(--card-color) 20%, transparent);
-  border-color: var(--card-color);
-}
-/*
-.featureCard:hover::before {
-  transform: scaleX(1);
-} */
-
 
 .wideCard {
   flex: var(--image-left-ratio);
+}
 
-  .imagePlaceholder {
-    aspect-ratio: var(--image-height)/var(--image-right-ratio);
-  }
+.wideCard .imagePlaceholder {
+  aspect-ratio: var(--image-height)/var(--image-right-ratio);
 }
 
 .narrowCard {
   flex: var(--image-right-ratio);
+}
 
-  .imagePlaceholder {
-    aspect-ratio: var(--image-height)/var(--image-left-ratio);
-  }
+.narrowCard .imagePlaceholder {
+  aspect-ratio: var(--image-height)/var(--image-left-ratio);
 }
 
 .featureImage {
@@ -104,7 +66,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--space-6);
 }
 
 .featureContent {
@@ -115,9 +77,16 @@
 }
 
 .featureContent h3 {
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-4);
   position: relative;
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-semibold);
+  transition: color var(--transition-normal);
 }
+
+/* .featureCard:hover .featureContent h3 {
+  color: var(--color-primary);
+} */
 
 .featureContent:hover h3::after {
   opacity: 1;
@@ -125,32 +94,28 @@
 
 .featureContent p {
   color: var(--text-secondary);
-  line-height: 1.6;
-  font-size: 1rem;
+  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-body);
   margin: 0;
 }
 
-/* 响应式设计 */
 
+/* 响应式设计 */
 @media (max-width: 768px) {
   .devopsSection {
-    padding: 6rem 0;
+    padding: var(--space-24) 0;
   }
 
   .sectionSubtitle {
-    font-size: 1rem;
-    margin-bottom: 3rem;
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-12);
   }
 
   .featureRow {
     flex-direction: column;
-    gap: 2rem;
-    margin-bottom: 3rem;
+    gap: var(--space-8);
+    margin-bottom: var(--space-12);
   }
-
-  /* .featureImage {
-    min-height: 200px;
-  } */
 
   .wideCard,
   .narrowCard {
@@ -160,26 +125,23 @@
   }
 
   .featureContent p {
-    font-size: 0.95rem;
+    font-size: var(--font-size-sm);
   }
+
 }
 
 @media (max-width: 480px) {
   .devopsSection {
-    padding: 4rem 0;
+    padding: var(--space-16) 0;
   }
 
   .featureRow {
-    gap: 1.5rem;
-    margin-bottom: 2rem;
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
   }
 
-  /* .featureImage {
-    min-height: 150px;
-  } */
-
   .featureCard {
-    padding: 1rem;
+    padding: var(--space-4);
   }
 
   .wideCard,
@@ -189,39 +151,7 @@
   }
 
   .featureContent p {
-    font-size: 0.9rem;
+    font-size: var(--font-size-sm);
   }
-}
 
-/* SVG 样式 */
-.svgContainer {
-  color: var(--section-primary);
-}
-
-.svgBackground {
-  fill: var(--svg-bg-light);
-  stroke: var(--svg-border-light);
-}
-
-.svgContentArea {
-  fill: var(--svg-bg-light);
-  stroke: var(--svg-border-light);
-}
-
-@media (max-width: 768px) {
-  .imagePlaceholder {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-@media (max-width: 480px) {
-  .imagePlaceholder {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 }

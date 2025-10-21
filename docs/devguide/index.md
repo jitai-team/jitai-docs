@@ -77,8 +77,9 @@ Set up your development environment by installing the platform and activating no
   description="Keep your platform nodes up-to-date with the latest features and stability improvements."
 >
   <LinkGrid links={[
-    { text: "Update Procedures", href: "devguide/installation-activation/platform-node-updates-upgrades" },
-    { text: "Upgrade Methods", href: "devguide/installation-activation/platform-node-updates-upgrades" }
+    { text: "Update banner and entry", href: "devguide/installation-activation/platform-node-updates-upgrades#upgrade-entry" },
+    { text: "One‑click upgrade flow", href: "devguide/installation-activation/platform-node-updates-upgrades#one-click-upgrade" },
+    { text: "Recommendations for clusters", href: "devguide/installation-activation/platform-node-updates-upgrades#cluster-recommendations" }
   ]} />
 </IndexCard>
 
@@ -285,19 +286,25 @@ Craft beautiful, intuitive user interfaces. Build portal navigation, construct d
 </IndexCard>
 
 <IndexCard
-  title="Component-Based Page Development"
-  href="devguide/shell-and-page/component-based-page-development"
+  title="Componentized Pages"
+  href="devguide/shell-and-page/componentized-page"
+  description="Understand componentized pages—the foundation of JitAi's page system, built with functional components for data display and user interaction."
+/>
+
+<IndexCard
+  title="Creating Generic Pages"
+  href="devguide/shell-and-page/generic-page"
   description="Build page interfaces visually—drag and drop components, configure events, and create rich interactive experiences without writing code."
 >
   <LinkGrid links={[
-    { text: "Creating generic pages", href: "devguide/shell-and-page/component-based-page-development#creating-generic-pages" },
-    { text: "Visual page editor", href: "devguide/shell-and-page/component-based-page-development#visual-page-editor" },
-    { text: "Component common operations", href: "devguide/shell-and-page/component-based-page-development#component-common-operations" },
-    { text: "Page variables", href: "devguide/shell-and-page/component-based-page-development#page-variables" },
-    { text: "Page functions", href: "devguide/shell-and-page/component-based-page-development#page-functions" },
-    { text: "Page events", href: "devguide/shell-and-page/component-based-page-development#page-events" },
-    { text: "Shortcuts", href: "devguide/shell-and-page/component-based-page-development#shortcuts" },
-    { text: "Enabling AI assistant for page", href: "devguide/shell-and-page/component-based-page-development#enabling-ai-assistant" }
+    { text: "Creating generic pages", href: "devguide/shell-and-page/generic-page" },
+    { text: "Visual page editor", href: "devguide/shell-and-page/generic-page#visual-page-editor" },
+    { text: "Component common operations", href: "devguide/shell-and-page/generic-page#component-common-operations" },
+    { text: "Page variables", href: "devguide/shell-and-page/generic-page#page-variables" },
+    { text: "Page functions", href: "devguide/shell-and-page/generic-page#page-functions" },
+    { text: "Page events", href: "devguide/shell-and-page/generic-page#page-events" },
+    { text: "Shortcuts", href: "devguide/shell-and-page/generic-page#shortcuts" },
+    { text: "Enabling AI assistant for page", href: "devguide/shell-and-page/generic-page#enabling-ai-assistant" }
   ]} />
 </IndexCard>
 

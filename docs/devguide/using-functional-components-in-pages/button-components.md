@@ -10,7 +10,7 @@ Button components are fundamental interactive elements responsible for triggerin
 ## Creating button components {#button-component-creation}
 ![Creating Button Components](./img/10/button_2025-08-29_14-52-51.png)
 
-In the page visual editor, click `Insert Component` and drag the "Button" component onto the page. Then configure the button component parameters in the right configuration panel.
+In the page visual editor, click `Insert Component` and drag the `Button` component onto the page. Then configure the button component parameters in the right configuration panel.
 
 ## Title/icon/type configuration {#title-icon-type-configuration}
 Similar to Ant Design's Button component, button components offer extensive parameter configuration options for setting button titles, icons, styles, types, sizes, and other functionality.

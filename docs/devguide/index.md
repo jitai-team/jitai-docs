@@ -77,8 +77,9 @@ Set up your development environment by installing the platform and activating no
   description="Keep your platform nodes up-to-date with the latest features and stability improvements."
 >
   <LinkGrid links={[
-    { text: "Update Procedures", href: "devguide/installation-activation/platform-node-updates-upgrades" },
-    { text: "Upgrade Methods", href: "devguide/installation-activation/platform-node-updates-upgrades" }
+    { text: "Update banner and entry", href: "devguide/installation-activation/platform-node-updates-upgrades#upgrade-entry" },
+    { text: "One‑click upgrade flow", href: "devguide/installation-activation/platform-node-updates-upgrades#one-click-upgrade" },
+    { text: "Recommendations for clusters", href: "devguide/installation-activation/platform-node-updates-upgrades#cluster-recommendations" }
   ]} />
 </IndexCard>
 
@@ -835,29 +836,31 @@ Leverage a powerful component library for rapid development. Drag and drop table
 <IndexCard
   title="Approval Components"
   href="devguide/using-functional-components-in-pages/approval-components"
-  description="UI components related to approval processes, supporting application initiation and approval processing."
+  description="Workflow-integrated UI components for submitting approval requests, processing approval tasks, and managing approval history with event-driven notifications."
 >
   <LinkGrid columns={2} links={[
-    { text: "Create Initiate Application Component", href: "devguide/using-functional-components-in-pages/approval-components#create-initiate-application-component" },
-    { text: "Parameter Configuration for Initiate Application", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-1" },
-    { text: "Post-processing/Refresh Event for Initiate Application", href: "devguide/using-functional-components-in-pages/approval-components#post-processing-refresh-event" },
-    { text: "Create Approval Process Component", href: "devguide/using-functional-components-in-pages/approval-components#create-approval-workflow-component" },
-    { text: "Parameter Configuration for Approval Processing", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-2" },
-    { text: "Keep Historical Approval Records", href: "devguide/using-functional-components-in-pages/approval-components#keep-historical-approval-records" },
-    { text: "Post-processing/Refresh Event for Approval Processing", href: "devguide/using-functional-components-in-pages/approval-components#post-processing-refresh-event-1" }
+    { text: "Initiate application component", href: "devguide/using-functional-components-in-pages/approval-components#initiate-application-component" },
+    { text: "Creating initiate application component", href: "devguide/using-functional-components-in-pages/approval-components#create-initiate-application-component" },
+    { text: "Parameter configuration", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-1" },
+    { text: "After processing/refresh events", href: "devguide/using-functional-components-in-pages/approval-components#post-processing-refresh-event" },
+    { text: "Approval processing component", href: "devguide/using-functional-components-in-pages/approval-components#approval-processing-component" },
+    { text: "Creating approval processing component", href: "devguide/using-functional-components-in-pages/approval-components#create-approval-workflow-component" },
+    { text: "Parameter configuration", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-2" },
+    { text: "Retaining historical approval records", href: "devguide/using-functional-components-in-pages/approval-components#keep-historical-approval-records" },
+    { text: "After processing/refresh events", href: "devguide/using-functional-components-in-pages/approval-components#post-processing-refresh-event-1" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Payment Components"
   href="devguide/using-functional-components-in-pages/payment-components"
-  description="Components integrating payment functionality, supporting multiple payment methods and payment flows."
+  description="Functional UI elements enabling multi-platform payment processing with native Alipay and WeChat Pay support for complete transaction lifecycle management."
 >
   <LinkGrid links={[
-    { text: "Create Component", href: "devguide/using-functional-components-in-pages/payment-components#payment-component-creation" },
-    { text: "Component Functions", href: "devguide/using-functional-components-in-pages/payment-components#initiate-payment-function" },
-    { text: "Component Event Logic", href: "devguide/using-functional-components-in-pages/payment-components#event-logic" },
-    { text: "Component Usage", href: "devguide/using-functional-components-in-pages/payment-components#component-usage" }
+    { text: "Creating payment components", href: "devguide/using-functional-components-in-pages/payment-components#payment-component-creation" },
+    { text: "Initiate payment function", href: "devguide/using-functional-components-in-pages/payment-components#initiate-payment-function" },
+    { text: "Event logic", href: "devguide/using-functional-components-in-pages/payment-components#event-logic" },
+    { text: "Component usage", href: "devguide/using-functional-components-in-pages/payment-components#component-usage" }
   ]} />
 </IndexCard>
 

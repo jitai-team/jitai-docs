@@ -255,11 +255,11 @@ footer .footer__link-item[href^="mailto:"]::before {
   font-size: 0.9em;
 }
 
-footer .footer__link-item[href*="blog"]::before {
+/* footer .footer__link-item[href*="blog"]::before {
   content: '📝';
   margin-right: 0.5rem;
   font-size: 0.9em;
-}
+} */
 
 footer .footer__link-item[href*="releases"]::before {
   content: '📦';

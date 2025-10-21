@@ -162,3 +162,59 @@ Delete(
     Q("f1", "=", "value")
 )
 ``` 
+
+## 使用TQL查询数据
+
+在业务逻辑中，可以通过模型服务的 `previewTData` 方法执行TQL查询语句，实现复杂的数据查询操作。
+
+#### 方法签名
+```python
+@classmethod
+def previewTData(cls, tStr, limit=50)
+```
+
+该方法使用TQL（Table Query Language）语句进行复杂查询，支持多表联查、条件筛选、字段映射等高级查询功能。
+
+**参数说明：**
+- `tStr` (str): TQL查询语句字符串，支持Select、Join、Where等完整TQL语法
+- `limit` (int, 可选): 返回结果的最大记录数，默认值为50条
+
+**返回值：**
+- 返回查询结果集，包含符合条件的数据记录列表
+
+**使用示例：**
+```python
+# 1. 获取模型服务元素
+modelSvc = app.getElement("models.services.ModelSvc")
+
+# 2. 构建TQL查询语句（用户与部门的关联查询）
+tql = """
+Select(
+    [F("u.name", "username"), F("d.title", "dept_name")],
+    From(["UserModel", "u"]),
+    LeftJoin("DeptModel", "d"),
+    On(["u.deptId", "=", "d.id"])
+)
+"""
+
+# 3. 执行查询，获取前50条记录
+result = modelSvc.previewTData(tql, limit=50)
+
+# 4. 处理查询结果
+for row in result:
+    print(f"用户名: {row['username']}, 部门: {row['dept_name']}")
+```
+
+:::tip 使用提示
+- TQL查询语句支持Python多行字符串格式，便于编写复杂的查询逻辑
+- `limit` 参数可以有效控制返回数据量，避免大数据集影响性能
+- 查询结果中的字段名由 `F()` 函数的第二个参数指定（别名）
+- 建议在生产环境中根据实际业务需求合理设置 `limit` 值
+:::
+
+:::warning 注意事项
+- TQL查询语句必须符合正确的语法格式，否则会抛出异常
+- 模型名称（如"UserModel"、"DeptModel"）必须是已定义的数据模型
+- 字段名必须与模型中定义的字段名称一致
+- 关联条件（On子句）中的字段必须确保数据类型匹配
+:::

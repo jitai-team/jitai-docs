@@ -162,3 +162,59 @@ Delete(
     Q("f1", "=", "value")
 )
 ```
+
+## Querying data with TQL
+
+In business logic, you can execute TQL query statements through the model service's `previewTData` method to perform complex data queries.
+
+#### Method signature
+```python
+@classmethod
+def previewTData(cls, tStr, limit=50)
+```
+
+This method uses TQL (Table Query Language) statements for complex queries, supporting advanced query capabilities such as multi-table joins, conditional filtering, and field mapping.
+
+**Parameters:**
+- `tStr` (str): TQL query statement string, supporting complete TQL syntax including Select, Join, Where, etc.
+- `limit` (int, optional): Maximum number of records to return, defaults to 50
+
+**Return value:**
+- Returns a result set containing a list of data records that match the criteria
+
+**Usage example:**
+```python
+# 1. Get the model service element
+modelSvc = app.getElement("models.services.ModelSvc")
+
+# 2. Construct TQL query statement (join query between user and department)
+tql = """
+Select(
+    [F("u.name", "username"), F("d.title", "dept_name")],
+    From(["UserModel", "u"]),
+    LeftJoin("DeptModel", "d"),
+    On(["u.deptId", "=", "d.id"])
+)
+"""
+
+# 3. Execute query and retrieve the first 50 records
+result = modelSvc.previewTData(tql, limit=50)
+
+# 4. Process query results
+for row in result:
+    print(f"Username: {row['username']}, Department: {row['dept_name']}")
+```
+
+:::tip Usage tips
+- TQL query statements support Python multi-line string format for easier composition of complex query logic
+- The `limit` parameter effectively controls the volume of returned data to prevent large datasets from impacting performance
+- Field names in query results are specified by the second parameter (alias) of the `F()` function
+- It's recommended to set the `limit` value appropriately based on actual business requirements in production environments
+:::
+
+:::warning Important notes
+- TQL query statements must conform to the correct syntax format, otherwise an exception will be thrown
+- Model names (e.g., "UserModel", "DeptModel") must be defined data models
+- Field names must match the field names defined in the models
+- Fields in join conditions (On clause) must ensure data type compatibility
+:::

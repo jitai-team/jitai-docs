@@ -205,11 +205,42 @@ for row in result:
     print(f"Username: {row['username']}, Department: {row['dept_name']}")
 ```
 
+**Alternative query approach:**
+
+In addition to using the model service's `previewTData` method, you can also parse TQL strings directly and execute queries using the `Select.getTQLByString` method:
+
+```python
+from models.Meta import Select
+
+# 1. TQL query statement string
+tStr = """
+Select(
+    [F("u.name", "username"), F("d.title", "dept_name")],
+    From(["UserModel", "u"]),
+    LeftJoin("DeptModel", "d"),
+    On(["u.deptId", "=", "d.id"])
+)
+"""
+
+# 2. Parse TQL string into a TQL object
+tql = Select.getTQLByString(tStr)
+
+# 3. Execute query directly through the database (returns raw data)
+rowDataList = tql.database.query(tql)
+
+# 4. Process query results
+for row in rowDataList:
+    print(f"Username: {row['username']}, Department: {row['dept_name']}")
+```
+
 :::tip Usage tips
 - TQL query statements support Python multi-line string format for easier composition of complex query logic
 - The `limit` parameter effectively controls the volume of returned data to prevent large datasets from impacting performance
 - Field names in query results are specified by the second parameter (alias) of the `F()` function
 - It's recommended to set the `limit` value appropriately based on actual business requirements in production environments
+- The `Select.getTQLByString` approach is suitable for scenarios requiring direct database query control, offering more flexible query management
+- The `previewTData` method is better suited for quick data previews and testing, while the `database.query` method is more appropriate for complex queries in production environments
+- **Important**: The `database.query` method returns raw database data, while `previewTData` performs additional processing and formatting on the data
 :::
 
 :::warning Important notes
@@ -217,4 +248,6 @@ for row in result:
 - Model names (e.g., "UserModel", "DeptModel") must be defined data models
 - Field names must match the field names defined in the models
 - Fields in join conditions (On clause) must ensure data type compatibility
+- When using the `database.query` method, ensure that the database connection is available
+- **Performance warning**: If the TQL query statement does not include a `Limit` clause, `tql.database.query(tql)` will return all records that match the criteria. This can severely impact performance and memory usage when dealing with large datasets. It is strongly recommended to add a `Limit` clause to your queries to restrict the amount of data returned
 :::

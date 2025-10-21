@@ -205,11 +205,42 @@ for row in result:
     print(f"用户名: {row['username']}, 部门: {row['dept_name']}")
 ```
 
+**另一种查询方式：**
+
+除了使用模型服务的 `previewTData` 方法外，还可以通过 `Select.getTQLByString` 方法直接解析TQL字符串并执行查询：
+
+```python
+from models.Meta import Select
+
+# 1. TQL查询语句字符串
+tStr = """
+Select(
+    [F("u.name", "username"), F("d.title", "dept_name")],
+    From(["UserModel", "u"]),
+    LeftJoin("DeptModel", "d"),
+    On(["u.deptId", "=", "d.id"])
+)
+"""
+
+# 2. 将TQL字符串解析为TQL对象
+tql = Select.getTQLByString(tStr)
+
+# 3. 通过数据库直接执行查询（返回原始数据）
+rowDataList = tql.database.query(tql)
+
+# 4. 处理查询结果
+for row in rowDataList:
+    print(f"用户名: {row['username']}, 部门: {row['dept_name']}")
+```
+
 :::tip 使用提示
 - TQL查询语句支持Python多行字符串格式，便于编写复杂的查询逻辑
 - `limit` 参数可以有效控制返回数据量，避免大数据集影响性能
 - 查询结果中的字段名由 `F()` 函数的第二个参数指定（别名）
 - 建议在生产环境中根据实际业务需求合理设置 `limit` 值
+- 使用 `Select.getTQLByString` 方式适合需要直接控制数据库查询的场景，可以获得更灵活的查询控制
+- `previewTData` 方法更适合快速数据预览和测试场景，而 `database.query` 方法更适合生产环境的复杂查询
+- **重要**：`database.query` 方法返回的是数据库原始数据，而 `previewTData` 会对数据进行额外的处理和格式化
 :::
 
 :::warning 注意事项
@@ -217,4 +248,6 @@ for row in result:
 - 模型名称（如"UserModel"、"DeptModel"）必须是已定义的数据模型
 - 字段名必须与模型中定义的字段名称一致
 - 关联条件（On子句）中的字段必须确保数据类型匹配
+- 使用 `database.query` 方法时，需要确保数据库连接可用
+- **性能警告**：如果TQL查询语句中没有设置 `Limit` 子句，`tql.database.query(tql)` 会返回所有符合条件的数据。当数据量大时会严重影响性能和内存占用，强烈建议在查询时添加 `Limit` 子句来限制返回的数据量
 :::

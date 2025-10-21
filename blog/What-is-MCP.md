@@ -12,9 +12,9 @@ tags: [MCP]
 
 > Connect AI to external tools with one click, boosting development efficiency by 300%.
 
-In today's rapidly evolving AI landscape, Large Language Models demonstrate impressive capabilities, yet they often operate as isolated "intelligent islands," unable to directly access our file systems, databases, or API services. This is the core problem that the Model Context Protocol aims to solve.
+In today's rapidly evolving AI landscape, Large Language Models demonstrate impressive capabilities, yet they often operate as isolated "intelligent islands," unable to directly access our file systems, databases, or API services. This is the core problem that the Model Context Protocol aims to solve.
 
-## What is MCP? The "Universal Interface" for the AI World
+## What is MCP? The "Universal Interface" for the AI World
 
 The **Model Context Protocol (MCP)​**, introduced by Anthropic in November 2024, is an ​**open protocol**​ designed to standardize the interaction interface between large models and external tools or data sources. Think of MCP as the "USB-C standard" for the AI field—it provides a unified connection method, allowing different AI models to seamlessly access various external resources .
 

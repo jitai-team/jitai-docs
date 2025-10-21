@@ -2,64 +2,35 @@
 
 .container {
   min-height: 100vh;
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
+  padding: var(--section-padding);
 }
 
-/* 英雄区域 */
-.heroSection {
-  padding: var(--space-32) 0 var(--space-24) 0;
-  background: var(--bg-primary);
+.pageHeader {
+  text-align: center;
+  margin-bottom: var(--space-16);
+  margin-top: var(--space-8);
 }
 
-.heroContent {
-  max-width: 1400px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 var(--container-padding);
-  display: flex;
-  align-items: center;
-  gap: var(--space-16);
-}
-
-.heroText {
-  flex: 1;
-}
-
-.heroTitle {
-  font-size: 3.5rem;
-  font-weight: 700;
-  color: var(--text-primary);
+.pageTitle {
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-secondary);
   margin-bottom: var(--space-6);
-  line-height: 1.1;
+  line-height: 1.5;
 }
 
-.heroDescription {
-  font-size: 1.25rem;
+.pageSubtitle {
+  font-size: var(--font-size-subtitle);
   color: var(--text-secondary);
-  line-height: 1.6;
-  max-width: 600px;
-}
-
-.heroImage {
-  flex: 0 0 400px;
-  height: 300px;
-}
-
-.imagePlaceholder {
-  width: 100%;
-  height: 100%;
-  background: var(--color-gray-200);
-  border-radius: var(--border-radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-gray-400);
+  line-height: var(--line-height-relaxed);
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* 博客网格区域 */
 .blogGridSection {
-  padding: var(--space-24) 0 var(--space-16) 0;
-  background: var(--bg-primary);
+  overflow-x: hidden; /* 防止横向滚动 */
 }
 
 .blogGrid {
@@ -67,15 +38,36 @@
   width: 100%;
   margin: 0 auto;
   padding: 0 var(--container-padding);
+  padding-bottom: var(--space-8);
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-10);
+  row-gap: var(--space-10); /* 增大行间距，避免阴影被下一行遮挡 */
+  overflow-x: hidden; /* 防止横向滚动 */
+  align-items: stretch; /* 确保同一行卡片高度一致 */
 }
 
 .blogCardLink {
   display: block;
+  width: 100%;
   text-decoration: none;
   color: inherit;
+}
+
+.blogCard {
+  background: var(--bg-card);
+  backdrop-filter: blur(15px);
+  border-radius: var(--border-radius-card);
+  border: 1px solid var(--border-color-light);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-primary);
+  position: relative;
+  overflow: hidden;
+  padding: var(--card-padding);
+  z-index: 0; /* 使 hover 时可叠在上层 */
+  height: 100%; /* 确保卡片占满网格高度 */
+  display: flex;
+  flex-direction: column;
 }
 
 .blogCardLink:hover {
@@ -87,45 +79,59 @@
   box-shadow: var(--shadow-md);
   border-color: var(--color-primary);
   background: var(--bg-card-hover);
+  z-index: 2;
 }
 
 .cardContent {
   display: flex;
-  gap: var(--space-8);
-  align-items: flex-start;
+  flex-direction: column;
+  gap: var(--space-6);
   height: 100%;
+  min-width: 0; /* 允许子元素在 flex 下收缩 */
+  flex-grow: 1; /* 占据剩余空间 */
 }
 
 .cardText {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+  justify-content: flex-start;
+  min-width: 0;
+  order: 1; /* 文字内容在上方 */
 }
 
 .cardTitle {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-semibold);
-  margin-bottom: var(--space-6);
-  line-height: var(--line-height-tight);
+  margin-bottom: var(--space-4);
   color: var(--text-primary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+  word-break: break-word;
+  flex-shrink: 0;
 }
 
 .cardExcerpt {
   color: var(--text-secondary);
   line-height: var(--line-height-relaxed);
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-6);
   display: -webkit-box;
-  -webkit-line-clamp: 4;
-  line-clamp: 4;
+  -webkit-line-clamp: 3; /* 减少为 2 行，给标题更多空间 */
+  line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  flex-grow: 1;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
 }
 
 .cardMeta {
   display: flex;
+  justify-content: space-between; /* 左侧时间，右侧阅读更多 */
+  align-items: center;
   gap: var(--space-5);
   font-size: var(--font-size-sm);
   color: var(--text-tertiary);
@@ -135,39 +141,40 @@
   font-weight: var(--font-weight-medium);
 }
 
-.readTime {
-  opacity: 0.8;
-}
-
-.cardImage {
-  flex: 0 0 180px;
-  height: 140px;
-  border-radius: var(--border-radius-md);
-  overflow: hidden;
-}
-
-.cardImage img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.cardImage .imagePlaceholder {
-  width: 100%;
-  height: 100%;
-  background: var(--color-gray-100);
+.readMoreIndicator {
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: var(--color-gray-400);
+  gap: var(--space-2);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+  transition: var(--transition-primary);
+  cursor: pointer;
+  opacity: 0; /* 默认隐藏 */
+  transform: translateX(-4px); /* 默认向左偏移 */
 }
+
+.blogCard:hover .readMoreIndicator {
+  opacity: 1; /* hover 时显示 */
+  transform: translateX(0); /* hover 时回到正常位置 */
+}
+
+.readMoreIndicator svg {
+  transition: transform var(--transition-primary);
+}
+
+.blogCard:hover .readMoreIndicator svg {
+  transform: translateX(0); /* hover 时图标也在正常位置 */
+}
+
+/* 图片相关样式已移除 */
 
 /* 分页 */
 .paginatorWrapper {
   padding: var(--space-16) 0;
   display: flex;
   justify-content: center;
-  background: var(--bg-primary);
+  display: none;
 }
 
 /* 订阅区域 */

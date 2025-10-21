@@ -11,13 +11,15 @@ interface PageLayoutProps {
   title: string;
   description: string;
   containerClassName?: string;
+  withLayout?: boolean; // 是否包裹主题 Layout，默认 true
 }
 
 const PageLayout: React.FC<PageLayoutProps> = ({
   children,
   title,
   description,
-  containerClassName = ''
+  containerClassName = '',
+  withLayout = true,
 }) => {
   const { i18n } = useDocusaurusContext();
 
@@ -38,8 +40,8 @@ const PageLayout: React.FC<PageLayoutProps> = ({
     return child;
   });
 
-  return (
-    <LayoutComponent>
+  const content = (
+    <>
       <Head children={
         <>
           <title>{title}</title>
@@ -54,8 +56,10 @@ const PageLayout: React.FC<PageLayoutProps> = ({
         <Navbar currentLocale={i18n.currentLocale}/>
         {childrenWithProps}
       </div>
-    </LayoutComponent>
+    </>
   );
+
+  return withLayout ? <LayoutComponent>{content}</LayoutComponent> : content;
 };
 
 export default PageLayout;

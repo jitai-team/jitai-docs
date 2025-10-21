@@ -1,40 +1,51 @@
-/* 博客文章详情页面样式 */
-
-.container {
-  min-height: 100vh;
-  background: var(--bg-primary);
+.blogPostWrapper {
+  padding-top: 72px; /* avoid overlapping with fixed navbar */
 }
 
-.blogPostPage {
-  display: flex;
-  gap: var(--space-8);
-  max-width: 1400px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 var(--container-padding);
+.blogPostWrapper :global(a.tagRegular)  {
+  display: none !important;
 }
 
-.main {
-  flex: 1;
-  min-width: 0; /* 防止 flex 子元素溢出 */
+.blogPostWrapper :global(.theme-edit-this-page) {
+  display: none !important;
 }
 
-/* 响应式设计 */
-@media (max-width: 996px) {
-  .blogPostPage {
-    flex-direction: column;
-    gap: var(--space-6);
-  }
+.blogPostWrapper :global(.pagination-nav__link) {
+  display: none !important;
 }
 
-@media (max-width: 768px) {
-  .blogPostPage {
-    padding: 0 var(--space-6);
-  }
+.blogPostWrapper :global(.col--2) {
+  display: none !important;
 }
 
-@media (max-width: 480px) {
-  .blogPostPage {
-    padding: 0 var(--space-4);
-  }
+.blogPostWrapper :global(.col--9) {
+  width: 100% !important;
+  max-width: 800px !important;
+  margin: 0 auto !important;
 }
+
+/* 修改标签样式为普通文本，禁止点击 */
+
+
+.blogPostWrapper :global(.col--9 a[href*="tag"]) {
+  background: none !important;
+  border: none !important;
+  color: var(--text-primary) !important;
+  font-size: var(--font-size-sm) !important;
+  font-weight: var(--font-weight-normal) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  cursor: default !important;
+  pointer-events: none !important;
+  text-decoration: none !important;
+  display: inline !important;
+}
+
+
+.blogPostWrapper :global(.col--9 a[href*="tag"]:hover) {
+  background: none !important;
+  color: var(--text-primary) !important;
+  transform: none !important;
+}
+

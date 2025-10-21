@@ -9,6 +9,7 @@ const CONTENT = {
   subscriptionButton: 'Subscribe',
   subscriptionSuccessMessage: 'Subscription successful',
   readMoreButton: 'Read more',
+  readMore: 'Read more',
   readTimeSuffix: 'min read',
   noDescriptionAvailable: 'No description available'
 };

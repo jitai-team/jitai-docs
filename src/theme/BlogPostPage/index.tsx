@@ -1,24 +1,31 @@
 import React from 'react';
-import type {Props} from '@theme/BlogPostPage';
-import PageLayout from '../../components/PageLayout';
-import BlogPostPageOriginal from '@theme-original/BlogPostPage';
-import clsx from 'clsx';
+import type BlogPostPageType from '@theme/BlogPostPage';
+import BlogPostPage from '@theme-original/BlogPostPage';
+import PageLayout from '@site/src/components/PageLayout';
 import styles from './styles.module.css';
 
-export default function BlogPostPage(props: Props): React.JSX.Element {
-  const {metadata} = props;
-  const title = metadata?.title || 'Blog Post';
-  const description = metadata?.description || '';
+type Props = React.ComponentProps<typeof BlogPostPageType>;
+
+export default function BlogPostPageWrapper(props: Props): React.ReactElement {
+  const { content } = props;
+  const { metadata, frontMatter } = content;
+
+  const title = metadata?.title || frontMatter?.title || '';
+  const description = metadata?.description || frontMatter?.description || '';
+
+  // 强制移除左侧 Recent posts 侧边栏和右侧 TOC
+  const blogPostProps = {
+    ...props,
+    sidebar: null,
+  };
 
   return (
-    <PageLayout 
-      title={title} 
-      description={description}
-      containerClassName={styles.container}
-    >
-      <div className={clsx(styles.blogPostPage)}>
-        <BlogPostPageOriginal {...props} />
+    <PageLayout title={title} description={description} containerClassName="blog-post-page" withLayout={false}>
+      <div className={styles.blogPostWrapper}>
+        <BlogPostPage {...blogPostProps} />
       </div>
     </PageLayout>
   );
 }
+
+

@@ -39,6 +39,13 @@ function formatRelativeTime(dateString: string, locale: string): string {
 export default function BlogListPage(props: Props): React.JSX.Element {
   const {metadata, items} = props;
   
+  // 按照创建时间倒序排序（最新的在前）
+  const sortedItems = [...items].sort((a, b) => {
+    const aDate = new Date(a.content.metadata.date);
+    const bDate = new Date(b.content.metadata.date);
+    return bDate.getTime() - aDate.getTime(); // 倒序：最新的在前
+  });
+  
   // 检测当前语言
   const currentLocale = typeof window !== 'undefined' 
     ? window.location.pathname.startsWith('/zh') ? 'zh' : 'en'
@@ -57,20 +64,11 @@ export default function BlogListPage(props: Props): React.JSX.Element {
     >
       {/* 英雄区域 */}
       <section className={styles.heroSection}>
-        <div className={styles.heroContent}>
-          <div className={styles.heroText}>
-            <h1 className={styles.heroTitle}>{CONTENT.heroTitle}</h1>
-            <p className={styles.heroDescription}>
-              {CONTENT.heroDescription}
-            </p>
-          </div>
-          <div className={styles.heroImage}>
-            <div className={styles.imagePlaceholder}>
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 16L8.586 11.414C9.367 10.633 10.633 10.633 11.414 11.414L16 16M14 14L15.586 12.414C16.367 11.633 17.633 11.633 18.414 12.414L20 14M14 8H14.01M6 20H18C19.105 20 20 19.105 20 18V6C20 4.895 19.105 4 18 4H6C4.895 4 4 4.895 4 6V18C4 19.105 4.895 20 6 20Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-          </div>
+        <div className={styles.pageHeader}>
+          <h1 className={styles.pageTitle}>{CONTENT.heroTitle}</h1>
+          <p className={styles.pageSubtitle}>
+            {CONTENT.heroDescription}
+          </p>
         </div>
       </section>
 
@@ -78,7 +76,7 @@ export default function BlogListPage(props: Props): React.JSX.Element {
       {/* 博客文章网格 */}
       <section className={styles.blogGridSection}>
         <div className={styles.blogGrid}>
-              {items.map(({content: BlogPost}) => {
+              {sortedItems.map(({content: BlogPost}) => {
                 const {frontMatter, metadata: postMeta} = BlogPost;
                 const {title: postTitle, description: postExcerpt, authors, tags, image} = frontMatter as any;
                 const {permalink, date, formattedDate, readingTime} = postMeta as any;
@@ -98,18 +96,13 @@ export default function BlogListPage(props: Props): React.JSX.Element {
                             <span className={styles.postDate}>
                               {formatRelativeTime(date, currentLocale)}
                             </span>
-                          </div>
-                        </div>
-                        <div className={styles.cardImage}>
-                          {image ? (
-                            <img src={image} alt={postTitle} />
-                          ) : (
-                            <div className={styles.imagePlaceholder}>
-                              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4 16L8.586 11.414C9.367 10.633 10.633 10.633 11.414 11.414L16 16M14 14L15.586 12.414C16.367 11.633 17.633 11.633 18.414 12.414L20 14M14 8H14.01M6 20H18C19.105 20 20 19.105 20 18V6C20 4.895 19.105 4 18 4H6C4.895 4 4 4.895 4 6V18C4 19.105 4.895 20 6 20Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <div className={styles.readMoreIndicator}>
+                              <span>{CONTENT.readMore}</span>
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
                               </svg>
                             </div>
-                          )}
+                          </div>
                         </div>
                       </div>
                     </article>

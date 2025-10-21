@@ -9,6 +9,7 @@ const CONTENT = {
   subscriptionButton: '订阅',
   subscriptionSuccessMessage: '订阅成功',
   readMoreButton: '阅读更多',
+  readMore: '阅读更多',
   readTimeSuffix: '分钟阅读',
   noDescriptionAvailable: '暂无描述'
 };

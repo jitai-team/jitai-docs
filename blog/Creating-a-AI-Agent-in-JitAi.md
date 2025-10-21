@@ -8,19 +8,19 @@ description: "An AI Agent (intelligent agent) possesses autonomous decisi
 
 An AI Agent (intelligent agent) possesses autonomous decision-making and task execution capabilities. It can automatically select appropriate tools based on user input and contextual information to complete complex business processes. An Agent consists of three core components: a system prompt, tools, and LLMS. Agents can also integrate with knowledge bases to implement Retrieval-Augmented Generation (RAG). This article will guide you through quickly creating a ReActAgent in Jitai, which combines reasoning and acting, and discuss the remarkably simple workflow and impressive results of AI Agents in Jitai.
 
-### Creating a ReActAgent​
+## Creating a ReActAgent​
 
 Developers can select "AI Agent" in the element directory tree and choose "ReActAgent". A form popup will appear where you can enter a name. Clicking the "OK" button creates a ReActAgent and automatically enters the visual editor.
 
-### Writing the System Prompt​
+## Writing the System Prompt​
 
 The system prompt is a crucial guide for the AI Agent's behavior and decision-making. In Jitai, the Agent's prompt generally covers several dimensions: role definition, available tools, decision-making process, output specifications, and clarification mechanisms. You can modify the default template or write your own following your preferred format to ensure the Agent operates as intended.
 
-### Selecting a LLM​
+## Selecting a LLM​
 
 Jitai allows for internal configuration of LLMS (you need to purchase the corresponding API key from the model vendor in advance; we also provide a limited free token allowance for you to use). You can select a pre-configured LLM in the AI Agent settings. Once configured, the AI Agent can understand user input, perform reasoning by combining the prompt and context, and generate responses.
 
-### Tools for the Agent​
+## Tools for the Agent​
 
 Tools extend the Agent's executable capabilities, enabling it not only to understand and process natural language but also to proactively call external services, databases, APIs, etc., to perform complex operations like information querying, data processing, and task execution. Below are two examples of tool functionalities.
 

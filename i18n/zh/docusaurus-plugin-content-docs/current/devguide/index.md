@@ -838,29 +838,31 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <IndexCard
   title="审批组件"
   href="devguide/using-functional-components-in-pages/approval-components"
-  description="审批流程相关的界面组件，支持申请发起和审批处理。"
+  description="与工作流集成的UI组件，用于提交审批申请、处理审批任务和管理审批历史，具有事件驱动通知功能。"
 >
   <LinkGrid columns={2} links={[
-    { text: "发起申请组件的创建", href: "devguide/using-functional-components-in-pages/approval-components#create-initiate-application-component" },
-    { text: "发起申请的参数配置", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-1" },
-    { text: "发起申请的处理后/刷新后事件", href: "devguide/using-functional-components-in-pages/approval-components#post-processing-refresh-event" },
-    { text: "审批处理组件创建", href: "devguide/using-functional-components-in-pages/approval-components#create-approval-workflow-component" },
-    { text: "审批处理的参数配置", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-2" },
-    { text: "是否保留历史审批记录", href: "devguide/using-functional-components-in-pages/approval-components#keep-historical-approval-records" },
-    { text: "审批处理的处理后/刷新后事件", href: "devguide/using-functional-components-in-pages/approval-components#post-processing-refresh-event-1" }
+    { text: "发起申请组件", href: "devguide/using-functional-components-in-pages/approval-components#initiate-application-component" },
+    { text: "创建发起申请组件", href: "devguide/using-functional-components-in-pages/approval-components#create-initiate-application-component" },
+    { text: "参数配置", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-1" },
+    { text: "处理后/刷新后事件", href: "devguide/using-functional-components-in-pages/approval-components#post-processing-refresh-event" },
+    { text: "审批处理组件", href: "devguide/using-functional-components-in-pages/approval-components#approval-processing-component" },
+    { text: "创建审批处理组件", href: "devguide/using-functional-components-in-pages/approval-components#create-approval-workflow-component" },
+    { text: "参数配置", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-2" },
+    { text: "保留历史审批记录", href: "devguide/using-functional-components-in-pages/approval-components#keep-historical-approval-records" },
+    { text: "处理后/刷新后事件", href: "devguide/using-functional-components-in-pages/approval-components#post-processing-refresh-event-1" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="支付组件"
   href="devguide/using-functional-components-in-pages/payment-components"
-  description="集成支付功能的组件，支持多种支付方式和支付流程。"
+  description="通过统一接口实现多平台支付处理的功能性UI元素，原生支持支付宝和微信支付，提供完整的交易生命周期管理。"
 >
   <LinkGrid links={[
-    { text: "创建组件", href: "devguide/using-functional-components-in-pages/payment-components#payment-component-creation" },
-    { text: "组件函数", href: "devguide/using-functional-components-in-pages/payment-components#initiate-payment-function" },
-    { text: "组件事件逻辑", href: "devguide/using-functional-components-in-pages/payment-components#event-logic" },
-    { text: "组件的使用", href: "devguide/using-functional-components-in-pages/payment-components#component-usage" }
+    { text: "支付组件的创建", href: "devguide/using-functional-components-in-pages/payment-components#payment-component-creation" },
+    { text: "发起支付函数", href: "devguide/using-functional-components-in-pages/payment-components#initiate-payment-function" },
+    { text: "事件逻辑", href: "devguide/using-functional-components-in-pages/payment-components#event-logic" },
+    { text: "组件使用", href: "devguide/using-functional-components-in-pages/payment-components#component-usage" }
   ]} />
 </IndexCard>
 

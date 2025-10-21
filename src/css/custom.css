@@ -377,12 +377,14 @@ body[data-page-type="custom-layout"] .external-link,body:has(.custom-page) .exte
 
 
 .navbar__items>a[href*="demo.jit.pro"] {
-  background: linear-gradient(135deg, rgb(36, 73, 254) 0%, rgb(202, 75, 167) 100%);
+  background: var(--primary-color) !important;
   color: white !important;
   margin-left: 1rem;
   position: relative;
   overflow: hidden;
   border-radius: 12px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
 }
 
 .navbar__items>a[href*="demo.jit.pro"]::before {

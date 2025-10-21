@@ -1,7 +1,7 @@
 const CONTENT = {
   title: 'Jit DevOps Tools',
   subtitle: 'Streamlined and lightweight solution for build, release, deployment, and operations',
-  color: '#047857',
+  color: '#3D65FD',
   features: [
     {
       title: 'Multiple Application Deployment Methods',

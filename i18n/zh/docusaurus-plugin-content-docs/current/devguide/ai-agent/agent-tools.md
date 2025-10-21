@@ -7,7 +7,7 @@ slug: agent-tools
 
 工具为Agent扩展了可执行的能力，使其不仅能理解和处理自然语言，还能主动调用外部服务、数据库、API等，实现信息查询、数据处理、任务执行等复杂操作。通过为Agent添加合适的工具，开发者可以让Agent具备更强的业务处理和自动化能力，满足多样化的应用场景需求。
 
-基于JitAi解释型系统架构构建的应用，其自描述的元素可以被大模型准确理解，成为Agent可用的工具。开发者可以在Agent可视化编辑器的`工具`中添加[模型函数](../data-modeling/create-data-model-functions)、[服务函数](../business-logic-development/creating-service-elements#create-service-functions)、[MCP服务](https://modelcontextprotocol.io/docs/getting-started/intro)、[外部API](../third-party-integration/external-api)、[页面函数](../shell-and-page/component-based-page-development#page-functions)，实现AI对前后端全栈元素的调用。
+基于JitAi解释型系统架构构建的应用，其自描述的元素可以被大模型准确理解，成为Agent可用的工具。开发者可以在Agent可视化编辑器的`工具`中添加[模型函数](../data-modeling/create-data-model-functions)、[服务函数](../business-logic-development/creating-service-elements#create-service-functions)、[MCP服务](https://modelcontextprotocol.io/docs/getting-started/intro)、[外部API](../third-party-integration/external-api)、[页面函数](../shell-and-page/generic-page#page-functions)，实现AI对前后端全栈元素的调用。
 
 ## Agent调用模型函数 {#calling-model-functions}
 [数据模型](../../reference/framework/JitORM/data-models#model-built-in-functions)自带常用的增删改查函数，开发者还可以根据实际业务需求[自定义模型函数](../data-modeling/create-data-model-functions)。将数据模型函数作为工具添加到Agent后，Agent便能够通过这些函数实现对数据的增、删、改、查等操作，满足多样化的数据处理场景。
@@ -67,7 +67,7 @@ JitAi支持开发者通过[外部API](../third-party-integration/external-api)�
 默认情况下会把外部API所有函数都添加为工具，开发者应按照实际需要将不需要的函数关闭。
 
 ## Agent调用页面函数 {#calling-page-functions}
-页面中的内置函数（例如获取页面变量）、页面中组件的函数（例如表格刷新、打开弹窗）以及开发者自定义的[页面函数](../shell-and-page/component-based-page-development#page-functions)都可以作为工具被Agent调用，从而实现了AI对前端界面的操作。
+页面中的内置函数（例如获取页面变量）、页面中组件的函数（例如表格刷新、打开弹窗）以及开发者自定义的[页面函数](../shell-and-page/generic-page#page-functions)都可以作为工具被Agent调用，从而实现了AI对前端界面的操作。
 
 ![Agent添加页面函数工具](./img/agent/agent-add-page-function-tool.gif)
 

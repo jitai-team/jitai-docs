@@ -1,5 +1,6 @@
-/* DownloadSection 样式 - 参考首页设计风格 */
+/* DownloadSection 样式 - 遵循统一设计规范 */
 
+/* 页面特定变量 */
 :root {
   --page-title-line-height: 1.5;
   --card-title-line-height: 1.3;
@@ -11,95 +12,99 @@
   --card-title-line-height: 1.4 !important;
 }
 
-.sectionContent {
-  width: 100%;
-  max-width: 1500px;
-}
-
+/* ===== 页面容器 ===== */
 .download {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: var(--hero-bg);
-  color: #1a1a1a;
-  padding: 8rem 0;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
   position: relative;
   overflow: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: var(--font-primary);
+  padding: var(--section-padding);
 }
 
-/* 页面标题 */
+/* ===== 页面布局 ===== */
+.sectionContent {
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+
+/* ===== 页面标题 ===== */
 .pageHeader {
   text-align: center;
-  margin: 4rem 0;
+  margin-bottom: var(--space-16);
+  margin-top: var(--space-8);
 }
 
 .pageTitle {
-  font-size: 3.5rem;
-  font-weight: 700;
-  background: var(--hero-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 1.5rem;
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-secondary);
+  margin-bottom: var(--space-6);
   line-height: var(--page-title-line-height) !important;
 }
 
 .pageSubtitle {
-  font-size: 1.25rem;
-  color: #6b7280;
+  font-size: var(--font-size-subtitle);
+  color: var(--text-secondary);
   max-width: 800px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: var(--line-height-relaxed);
 }
 
 
-/* 下载内容区域 */
+/* ===== 下载内容区域 ===== */
 .downloadContent {
-  margin: 3rem 0;
+  margin: var(--space-12) 0;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: var(--space-6);
   align-items: stretch;
 }
 
-/* 桌面版卡片容器 */
+/* ===== 网格布局 ===== */
 .desktopCards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  gap: var(--space-6);
   align-items: stretch;
 }
 
-/* Docker 卡片独立一行 */
 .dockerCard {
   width: 100%;
 }
 
 
+/* ===== 版本卡片 ===== */
 .versionCard {
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
+  background: var(--bg-card);
+  backdrop-filter: blur(15px);
+  border-radius: var(--border-radius-card);
+  border: 1px solid var(--border-color-light);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-primary);
+  padding: var(--card-padding);
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: var(--space-8);
+  position: relative;
+  overflow: hidden;
 }
 
 .versionCard:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-md) !important;
+  border-color: var(--color-primary);
+  background: var(--bg-card-hover);
 }
 
 .versionHeader {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--space-2);
 }
 
 .versionIcon {
@@ -108,7 +113,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #667eea;
+  color: var(--color-secondary);
   flex-shrink: 0;
 }
 
@@ -132,36 +137,32 @@
 }
 
 .versionTitle {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #1a1a1a;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-secondary);
   margin: 0;
-  background: var(--hero-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .versionDescription {
-  font-size: 0.95rem;
-  color: #6b7280;
-  line-height: 1.5;
-  margin: 0.5rem 0;
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  line-height: var(--line-height-normal);
+  margin: var(--space-2) 0;
 }
 
 .versionInfo {
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--space-6);
 }
 
 .requirements {
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--space-6);
 }
 
 .requirementsTitle {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #374151;
-  margin-bottom: 0.75rem;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
 }
 
 .requirementsList {
@@ -171,10 +172,10 @@
 }
 
 .requirementsList li {
-  padding: 0.5rem 0;
-  color: #6b7280;
+  padding: var(--space-2) 0;
+  color: var(--text-secondary);
   position: relative;
-  padding-left: 1.5rem;
+  padding-left: var(--space-6);
 }
 
 .requirementsList li::before {
@@ -182,14 +183,14 @@
   position: absolute;
   left: 0;
   color: #10b981;
-  font-weight: bold;
+  font-weight: var(--font-weight-bold);
 }
 
-/* 下载按钮 */
+/* ===== 下载按钮 ===== */
 .downloadActions {
   display: flex;
   flex-direction: row;
-  gap: 0.8rem;
+  gap: var(--space-3);
   margin: 0;
   flex-wrap: wrap;
 }
@@ -198,38 +199,98 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.6rem 1.2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  padding: var(--space-3) var(--space-5);
+  background: var(--color-primary);
+  color: var(--color-white);
   text-decoration: none;
-  border-radius: 6px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
-  font-size: 0.9rem;
+  border-radius: var(--border-radius-button);
+  font-weight: var(--font-weight-semibold);
+  transition: var(--transition-primary);
+  box-shadow: var(--shadow-md);
+  font-size: var(--font-size-base);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.downloadButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.downloadButton:hover::before {
+  left: 100%;
 }
 
 .downloadButton:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-  color: white;
+  box-shadow: var(--hover-shadow-primary);
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+/* ===== 次按钮样式 ===== */
+.downloadButtonSecondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3) var(--space-5);
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  text-decoration: none;
+  border-radius: var(--border-radius-button);
+  font-weight: var(--font-weight-semibold);
+  transition: var(--transition-primary);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.downloadButtonSecondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.downloadButtonSecondary:hover::before {
+  left: 100%;
+}
+
+.downloadButtonSecondary:hover {
+  box-shadow: var(--hover-shadow-primary);
+  background: transparent;
+  color: var(--color-primary);
   text-decoration: none;
 }
 
 .buttonText {
-  font-size: 0.9rem;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.02em;
 }
 
-/* 安装步骤 */
+/* ===== 安装步骤 ===== */
 .installationSteps {
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--space-6);
 }
 
 .stepsTitle {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #374151;
-  margin-bottom: 0.75rem;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
 }
 
 .stepsList {
@@ -240,10 +301,10 @@
 }
 
 .stepsList li {
-  padding: 0.75rem 0;
-  color: #6b7280;
+  padding: var(--space-3) 0;
+  color: var(--text-secondary);
   position: relative;
-  padding-left: 2.5rem;
+  padding-left: var(--space-10);
   counter-increment: step-counter;
 }
 
@@ -251,32 +312,32 @@
   content: counter(step-counter);
   position: absolute;
   left: 0;
-  top: 0.75rem;
-  width: 1.5rem;
-  height: 1.5rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border-radius: 50%;
+  top: var(--space-3);
+  width: var(--space-6);
+  height: var(--space-6);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: var(--color-white);
+  border-radius: var(--border-radius-full);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.875rem;
-  font-weight: 600;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
 }
 
-/* 警告框 */
+/* ===== 警告框 ===== */
 .warningBox {
   background: #fef3cd;
   border: 1px solid #fde68a;
-  border-radius: 8px;
-  padding: 1rem;
+  border-radius: var(--border-radius-md);
+  padding: var(--space-4);
   display: flex;
-  gap: 0.75rem;
-  margin-top: 1.5rem;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
 }
 
 .warningIcon {
-  font-size: 1.25rem;
+  font-size: var(--font-size-xl);
   color: #d97706;
 }
 
@@ -285,49 +346,49 @@
 }
 
 .warningTitle {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
   color: #d97706;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 var(--space-2) 0;
 }
 
 .warningText {
-  font-size: 0.9rem;
+  font-size: var(--font-size-sm);
   color: #92400e;
   margin: 0;
-  line-height: 1.5;
+  line-height: var(--line-height-normal);
 }
 
-/* 代码块 */
+/* ===== 代码块 ===== */
 .codeBlock {
-  background: #1a1a1a;
-  border-radius: 8px;
+  background: var(--color-gray-900);
+  border-radius: var(--border-radius-md);
   margin: 0;
   overflow: hidden;
   width: 100%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  border: 1px solid #333;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-gray-700);
 }
 
 .codeContent {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 1rem;
+  padding: var(--space-4);
   margin: 0;
   overflow-x: auto;
   flex-wrap: wrap;
-  gap: 0rem;
+  gap: 0;
 }
 
 .codePrompt {
   color: #00ff88;
   font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-  font-weight: bold;
-  font-size: 0.85rem;
-  margin-right: 0.5rem;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+  margin-right: var(--space-2);
   flex-shrink: 0;
-  line-height: 1.5;
+  line-height: var(--line-height-normal);
   margin-top: 0;
 }
 
@@ -335,118 +396,326 @@
   display: flex;
   flex: 1;
   align-items: flex-start;
-  gap: 0.5rem;
+  gap: var(--space-2);
 }
 
 .codeContent code {
   font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-  font-size: 0.85rem;
+  font-size: var(--font-size-sm);
   background: transparent;
-  color: #e0e0e0;
-  line-height: 1.5;
+  color: var(--color-gray-200);
+  line-height: var(--line-height-normal);
   white-space: pre-wrap;
   word-break: break-all;
   flex: 1;
-  margin-right: 1rem;
+  margin-right: var(--space-4);
   padding: 0;
 }
 
-.copyButton {
-  background: #333;
-  color: #e0e0e0;
-  border: 1px solid #555;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-size: 0.75rem;
+/* ===== 代码块头部 ===== */
+.codeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-gray-800);
+  border-bottom: 1px solid var(--color-gray-700);
+  border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+}
+
+/* ===== 分段控制器 ===== */
+.segmentedControl {
+  display: flex;
+  background: var(--color-gray-900);
+  border-radius: var(--border-radius-sm);
+  padding: 1px;
+  border: 1px solid var(--color-gray-600);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.segmentButton {
+  background: transparent;
+  border: none;
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-400);
   cursor: pointer;
-  transition: all 0.2s ease;
-  flex-shrink: 0;
-  font-weight: 500;
+  transition: all var(--transition-fast);
+  border-radius: calc(var(--border-radius-sm) - 1px);
   font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  min-width: 60px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+.segmentButton:hover {
+  color: var(--color-gray-200);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.segmentActive {
+  background: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transform: translateY(-0.5px);
+}
+
+.segmentActive:hover {
+  background: var(--color-secondary);
+  color: var(--color-white);
+  transform: translateY(-0.5px);
+}
+
+/* 添加分隔线效果 */
+.segmentButton:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 20%;
+  bottom: 20%;
+  width: 1px;
+  background: var(--color-gray-600);
+  opacity: 0.5;
+}
+
+.segmentActive:not(:last-child)::after {
+  display: none;
+}
+
+.copyButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-primary);
+  color: var(--color-white);
+  text-decoration: none;
+  border-radius: var(--border-radius-sm);
+  font-weight: var(--font-weight-medium);
+  transition: var(--transition-primary);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  font-size: var(--font-size-xs);
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  border: none;
+}
+
+.copyButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.copyButton:hover::before {
+  left: 100%;
 }
 
 .copyButton:hover {
-  background: #444;
-  border-color: #666;
-  color: #fff;
+  box-shadow: var(--hover-shadow-primary);
+  color: var(--color-white);
+  text-decoration: none;
 }
 
-/* 帮助链接 */
-.helpLink {
-  margin-top: 2rem;
+/* ===== 弹窗样式 ===== */
+       .modalOverlay {
+         position: fixed;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         background: rgba(0, 0, 0, 0.8);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         z-index: 1000;
+         padding: var(--space-4);
+       }
+
+       .modalContent {
+         background: var(--bg-card);
+         border-radius: var(--border-radius-lg);
+         box-shadow: var(--shadow-xl);
+         width: 90%;
+         max-width: none;
+         height: 90vh;
+         display: flex;
+         flex-direction: column;
+         animation: modalSlideIn 0.3s ease-out;
+       }
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+       .modalHeader {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         padding: var(--space-6) var(--space-6) var(--space-4);
+         border-bottom: 1px solid var(--border-color-light);
+         flex-shrink: 0;
+       }
+
+.modalTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.modalClose {
+  background: none;
+  border: none;
+  font-size: var(--font-size-2xl);
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: var(--space-1);
+  line-height: 1;
+  transition: var(--transition-fast);
+}
+
+.modalClose:hover {
+  color: var(--text-primary);
+}
+
+       .modalBody {
+         padding: var(--space-6);
+         flex: 1;
+         overflow-y: auto;
+         min-height: 0;
+       }
+
+.modalImage {
   text-align: center;
-  padding: 0 1rem;
+  margin-bottom: var(--space-4);
+}
+
+.securityImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+       .modalText {
+         font-size: var(--font-size-base);
+         color: var(--text-secondary);
+         line-height: var(--line-height-relaxed);
+         margin: 0 0 var(--space-6) 0;
+       }
+
+       .modalFooter {
+         padding: var(--space-4) var(--space-6) var(--space-6);
+         text-align: center;
+         flex-shrink: 0;
+         border-top: 1px solid var(--border-color-light);
+       }
+
+.modalButton {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.modalButton:hover {
+  background: var(--color-secondary);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .modalContent {
+    margin: var(--space-4);
+    width: 90%;
+    height: 90vh;
+    max-width: none;
+  }
+  
+  .modalHeader {
+    padding: var(--space-4);
+  }
+  
+  .modalBody {
+    padding: var(--space-4);
+  }
+  
+  .modalFooter {
+    padding: var(--space-4);
+  }
+  
+  .modalTitle {
+    font-size: var(--font-size-lg);
+  }
+}
+
+
+/* ===== 帮助链接 ===== */
+.helpLink {
+  margin-top: var(--space-8);
+  text-align: center;
+  padding: 0 var(--space-4);
 }
 
 .helpLink a {
-  color: #667eea;
+  color: var(--color-primary);
   text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: color 0.2s ease;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  transition: var(--transition-fast);
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: var(--space-1);
 }
 
 .helpLink a:hover {
-  color: #764ba2;
+  color: var(--color-secondary);
   text-decoration: underline;
 }
 
 .helpLink a::after {
   content: "→";
-  font-size: 0.8rem;
-  transition: transform 0.2s ease;
+  font-size: var(--font-size-xs);
+  transition: transform var(--transition-fast);
 }
 
 .helpLink a:hover::after {
-  transform: translateX(2px);
+  transform: translateX(var(--space-1));
 }
 
-/* 提示框 */
-.tipBox {
-  background: #dbeafe;
-  border: 1px solid #93c5fd;
-  border-radius: 8px;
-  padding: 1rem;
-  margin-top: 1.5rem;
-}
-
-.tipIcon {
-  font-size: 1.25rem;
-  color: #2563eb;
-}
-
-.tipContent {
-  flex: 1;
-}
-
-.tipTitle {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #2563eb;
-  margin: 0 0 0.5rem 0;
-}
-
-.tipText {
-  font-size: 0.9rem;
-  color: #1e40af;
-  margin: 0 0 1rem 0;
-  line-height: 1.5;
-}
-
+/* ===== 响应式设计 ===== */
 @media (max-width: 768px) {
   .pageTitle {
-    font-size: 2.5rem;
+    font-size: var(--font-size-4xl);
   }
   
   .pageSubtitle {
-    font-size: 1.1rem;
+    font-size: var(--font-size-base);
   }
   
   .versionTitle {
-    font-size: 1.25rem;
+    font-size: var(--font-size-xl);
   }
   
   .versionIcon {
@@ -457,19 +726,18 @@
   .iconSvg {
     width: 44px;
     height: 44px;
-    display: block;
   }
   
   .desktopCards {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: var(--space-4);
   }
   
   .versionCard {
-    padding: 1.5rem;
+    padding: var(--space-6);
     flex-direction: column;
     text-align: center;
-    gap: 1.5rem;
+    gap: var(--space-6);
   }
   
   .versionHeader {
@@ -481,40 +749,63 @@
   }
   
   .codeContent {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 0.75rem;
+    /* flex-direction: column;
+    align-items: stretch; */
+    padding: var(--space-3);
   }
   
   .codeText {
-    margin-bottom: 0.75rem;
+    margin-bottom: var(--space-3);
   }
   
   .codeContent code {
     margin-right: 0;
+    text-align: left;
+  }
+  
+  .codeHeader {
+    justify-content: center;
+    padding: var(--space-2) var(--space-3);
+  }
+  
+  .segmentedControl {
+    width: 100%;
+    max-width: 180px;
+  }
+  
+  .segmentButton {
+    flex: 1;
+    min-width: 50px;
+    padding: var(--space-1) var(--space-2);
+    font-size: var(--font-size-xs);
+    white-space: nowrap;
   }
 }
 
 @media (max-width: 480px) {
   .download {
-    padding: 4rem 0;
+    padding: var(--space-16) 0;
   }
   
   .pageHeader {
-    margin: 2rem 0;
+    margin: var(--space-8) 0;
   }
   
   .pageTitle {
-    font-size: 2rem;
+    font-size: var(--font-size-3xl);
   }
   
-  .platformCard {
-    padding: 1rem;
+  .versionCard {
+    padding: var(--space-4);
   }
   
-  .platformIcon {
+  .versionIcon {
     width: 50px;
     height: 50px;
-    font-size: 2rem;
+  }
+  
+  .iconSvg {
+    width: 40px;
+    height: 40px;
   }
 }

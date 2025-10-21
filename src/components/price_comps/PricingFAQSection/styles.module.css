@@ -1,12 +1,15 @@
-/* FAQ Section */
+/* FAQ Section - 遵循统一设计规范 */
+
+/* ===== FAQ 区域 ===== */
 .faqSection {
-  margin: 8rem 0;
-  background: var(--section-bg);
-  transform: translateY(30px);
+  margin: var(--section-padding);
+  background: var(--bg-primary);
+  transform: translateY(var(--space-8));
 }
 
 .faqTitle {
-  margin-bottom: 3rem;
+  margin-bottom: var(--space-12);
+  color: var(--color-secondary);
 }
 
 .faqContainer {
@@ -16,9 +19,10 @@
   flex-direction: column;
 }
 
+/* ===== FAQ 项目 ===== */
 .faqItem {
-  border-bottom: 1px solid #e5e7eb;
-  transition: all 0.3s ease;
+  border-bottom: 1px solid var(--border-color);
+  transition: var(--transition-primary);
 }
 
 .faqItem:last-child {
@@ -26,7 +30,7 @@
 }
 
 .faqItem:hover {
-  border-bottom-color: #d1d5db;
+  border-bottom-color: var(--color-gray-300);
 }
 
 .faqQuestion {
@@ -34,11 +38,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 0;
+  padding: var(--space-8) 0;
   background: none;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: var(--transition-primary);
   text-align: left;
 }
 
@@ -51,11 +55,11 @@
 }
 
 .faqQuestionText {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #111827;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
   flex: 1;
-  line-height: 1.5;
+  line-height: var(--line-height-normal);
 }
 
 .faqIcon {
@@ -63,10 +67,10 @@
   align-items: center;
   width: 24px;
   height: 24px;
-  color: #374151;
-  transition: all 0.3s ease;
+  color: var(--text-secondary);
+  transition: var(--transition-primary);
   flex-shrink: 0;
-  margin-left: 1rem;
+  margin-left: var(--space-4);
 }
 
 .faqIcon svg {
@@ -76,13 +80,14 @@
 
 .faqIconRotated {
   transform: rotate(180deg);
-  color: #111827;
+  color: var(--text-primary);
 }
 
+/* ===== FAQ 答案 ===== */
 .faqAnswer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease;
+  transition: max-height var(--transition-normal);
 }
 
 .faqAnswerOpen {
@@ -90,42 +95,42 @@
 }
 
 .faqAnswerContent {
-  padding: 0 0 2rem 0;
-  color: #4b5563;
-  line-height: 1.7;
-  font-size: 1.125rem;
+  padding: 0 0 var(--space-8) 0;
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-lg);
 }
 
-/* 响应式设计 */
+/* ===== 响应式设计 ===== */
 @media (max-width: 768px) {
   .faqSection {
-    margin: 6rem 0;
+    margin: var(--space-24) 0;
   }
 
   .faqTitle {
-    font-size: 1.75rem;
+    font-size: var(--font-size-3xl);
   }
 
   .faqQuestion {
-    padding: 1.5rem 0;
+    padding: var(--space-6) 0;
   }
 
   .faqQuestionText {
-    font-size: 1.125rem;
+    font-size: var(--font-size-lg);
   }
 
   .faqAnswerContent {
-    padding: 0 0 1.5rem 0;
-    font-size: 1rem;
+    padding: 0 0 var(--space-6) 0;
+    font-size: var(--font-size-base);
   }
 }
 
 @media (max-width: 480px) {
   .faqSection {
-    margin: 4rem 0;
+    margin: var(--space-16) 0;
   }
 
   .faqTitle {
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--space-6);
   }
 }

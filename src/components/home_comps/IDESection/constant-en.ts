@@ -2,7 +2,7 @@ const CONTENT = {
 
   title: 'Jit Development Tools',
   subtitle: 'Orchestration-based business module composition with programming-based logic development, automatic high-quality code generation, and native coding support',
-  color: '#b45309',
+  color: '#3D65FD',
   videoHoverText: 'Click to view HD video in fullscreen',
   coreFeatures:[
       {
@@ -30,7 +30,7 @@ const CONTENT = {
       {
         title: 'Page Visual Develop',
         description: 'Flexible component combination, completely free interface layout, supports custom component events and variable functions',
-        link: './docs/devguide/shell-and-page/component-based-page-development',
+        link: './docs/devguide/shell-and-page/generic-page',
       },
       {
         title: 'Service Visual Develop',

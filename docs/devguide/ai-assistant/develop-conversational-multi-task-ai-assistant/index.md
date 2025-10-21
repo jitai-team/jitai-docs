@@ -1,6 +1,6 @@
 ---
 sidebar_position: 16
-slug: develop-conversational-multi-task-ai-assistant
+slug: /devguide/ai-assistant/develop-conversational-multi-task-ai-assistant
 ---
 
 # Developing Conversational Multi-Task AI Assistant

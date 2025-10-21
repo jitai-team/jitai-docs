@@ -64,4 +64,4 @@ Create model events to automate business logic.
 
 ![Configure Model Events](./img/jitorm/configure-model-events.png "Configure Model Events")
 
-Automatically update product inventory quantities based on purchase quantity changes in the order detail table.
+Automatically update product inventory quantities based on purchase quantity changes in the order table.

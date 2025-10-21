@@ -18,15 +18,24 @@ export interface DownloadContent {
       intelDownloadText: string;
       appleDownloadUrl: string;
       appleDownloadText: string;
+      securityModal: {
+        title: string;
+        content: string;
+        imageUrl: string;
+        confirmText: string;
+      };
     };
   };
   server: {
     docker: {
       title: string;
       description: string;
-      command: string;
+      globalCommand: string;
+      chinaCommand: string;
       copyText: string;
       copySuccess: string;
+      globalSegment: string;
+      chinaSegment: string;
     };
   };
 }
@@ -51,7 +60,13 @@ const CONTENT: DownloadContent = {
       intelDownloadUrl: 'https://apk.jit.pro/latest/darwin/x64/jit.dmg',
       intelDownloadText: 'for Intel processor',
       appleDownloadUrl: 'https://apk.jit.pro/latest/darwin/arm/jit.dmg',
-      appleDownloadText: 'for Apple silicon'
+      appleDownloadText: 'for Apple silicon',
+      securityModal: {
+        title: 'macOS Security Notice',
+        content: 'If macOS displays a security warning, click "Done", then navigate to System Settings → Privacy & Security → Security, set "Allow apps downloaded from" to "App Store and identified developers", and click "Open Anyway".',
+        imageUrl: '/img/openanyway_en.gif',
+        confirmText: 'Got it'
+      }
     }
   },
   
@@ -59,9 +74,12 @@ const CONTENT: DownloadContent = {
     docker: {
       title: 'Docker Image',
       description: 'Supports Linux\\Ubuntu\\CentOS etc., suitable for deployment on servers as test or production environment',
-      command: 'docker run -itd --name jit -p 80:80 -p 3306:3306 --init --privileged -v /your/local/path:/data/JitNode jitaiplatform/jit',
+      globalCommand: 'docker run -itd --name jit -p 80:80 -p 3306:3306 --init --privileged -v /your/local/path:/data/JitNode jitaiplatform/jit',
+      chinaCommand: 'docker run -itd --name jit -p 80:80 -p 3306:3306 --init --privileged -v /your/local/path:/data/JitNode registry.cn-hangzhou.aliyuncs.com/jitpro/jit',
       copyText: '📋 Copy',
-      copySuccess: '✅ Copied'
+      copySuccess: '✅ Copied',
+      globalSegment: 'Global Mirror',
+      chinaSegment: 'China Mirror'
     }
   }
 };

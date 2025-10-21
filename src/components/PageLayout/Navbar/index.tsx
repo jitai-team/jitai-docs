@@ -32,7 +32,21 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
     // 设置当前活跃的导航项
     const setCurrentActiveNav = () => {
       const currentPath = window.location.pathname;
-      const currentItem = CONTENT.navItems.find(item => item.url === currentPath);
+      
+      // 首先尝试精确匹配
+      let currentItem = CONTENT.navItems.find(item => item.url === currentPath);
+      
+      // 如果没有精确匹配，则尝试前缀匹配
+      if (!currentItem) {
+        currentItem = CONTENT.navItems.find(item => {
+          // 确保不是根路径，避免误匹配
+          if (item.url === '/' || item.url === '/zh') {
+            return false;
+          }
+          return currentPath.startsWith(item.url);
+        });
+      }
+      
       if (currentItem) {
         setActiveNavItem(currentItem.id);
       }
@@ -66,7 +80,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
         window.location.href = item.url;
         setIsMobileMenuOpen(false);
       } else {
-        if (item.isNewTab) {
+        if (item.type === 'newTab') {
           window.open(item.url, '_blank');
         } else {
           window.location.href = item.url;

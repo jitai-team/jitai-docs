@@ -35,7 +35,7 @@
 /* ===== 页面标题 ===== */
 .pageHeader {
   text-align: center;
-  margin-bottom: var(--space-16);
+  margin-bottom: var(--space-4);
   margin-top: var(--space-8);
 }
 

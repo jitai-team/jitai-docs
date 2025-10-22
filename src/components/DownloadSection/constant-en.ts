@@ -18,12 +18,7 @@ export interface DownloadContent {
       intelDownloadText: string;
       appleDownloadUrl: string;
       appleDownloadText: string;
-      securityModal: {
-        title: string;
-        content: string;
-        imageUrl: string;
-        confirmText: string;
-      };
+      macSecurityUrl: string;
     };
   };
   server: {
@@ -61,12 +56,7 @@ const CONTENT: DownloadContent = {
       intelDownloadText: 'for Intel processor',
       appleDownloadUrl: 'https://apk.jit.pro/latest/darwin/arm/jit.dmg',
       appleDownloadText: 'for Apple silicon',
-      securityModal: {
-        title: 'macOS Security Notice',
-        content: 'If macOS displays a security warning, click "Done", then navigate to System Settings → Privacy & Security → Security, set "Allow apps downloaded from" to "App Store and identified developers", and click "Open Anyway".',
-        imageUrl: '/img/openanyway_en.gif',
-        confirmText: 'Got it'
-      }
+      macSecurityUrl: '/download/mac-security'
     }
   },
   

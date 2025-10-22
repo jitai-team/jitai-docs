@@ -169,14 +169,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
            position: 'left',
            label: 'Open Source',
          },
-        // {to: '/blog', label: '博客', position: 'left'},
+        {to: '/blog', label: 'Blog', position: 'left'},
         //{
         //  type: 'docSidebar',
         //  sidebarId: 'appmarketSidebar',
         //  position: 'left',
         // label: 'App Market',
         //},
-        // {to: '/blog', label: '博客', position: 'left'},
          {
            href: 'https://forum.jit.pro',
            position: 'left',
@@ -216,6 +215,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             {
               label: 'Download',
               to: '/download',
+            },
+            {
+              label: 'Blog',
+              to: '/blog',
             },
             {
               label: 'Try Online',

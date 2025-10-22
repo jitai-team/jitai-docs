@@ -1,19 +1,64 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+JitAi:
+  label: JitAi
+  permalink: /jitai
+  description: JitAi platform and related topics
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+'AI Agent':
+  label: AI Agent
+  permalink: /ai-agent
+  description: AI Agent development and applications
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
+'AI Native':
+  label: AI Native
+  permalink: /ai-native
+  description: AI Native development concepts and practices
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+'Development Platform':
+  label: Development Platform
+  permalink: /development-platform
+  description: Development platform technologies and tools
+
+MCP:
+  label: MCP
+  permalink: /mcp
+  description: Model Context Protocol and related topics
+
+production-grade-ai-app:
+  label: Production-Grade AI App
+  permalink: /production-grade-ai-app
+  description: Building production-grade AI applications
+
+architecture:
+  label: Architecture
+  permalink: /architecture
+  description: Software architecture and design patterns
+
+enterprise-ai:
+  label: Enterprise AI
+  permalink: /enterprise-ai
+  description: Enterprise AI applications and solutions
+
+ai-native-architecture:
+  label: AI-Native Architecture
+  permalink: /ai-native-architecture
+  description: AI-native application architecture and design principles
+
+'Application Architecture':
+  label: Application Architecture
+  permalink: /application-architecture
+  description: Application architecture patterns and best practices
+
+'Event-Driven':
+  label: Event-Driven
+  permalink: /event-driven
+  description: Event-driven architecture and development patterns
+
+JAAP:
+  label: JAAP
+  permalink: /jaap
+  description: JitAi AI Application Protocol
+
+'Enterprise Applications':
+  label: Enterprise Applications
+  permalink: /enterprise-applications
+  description: Enterprise application development and solutions

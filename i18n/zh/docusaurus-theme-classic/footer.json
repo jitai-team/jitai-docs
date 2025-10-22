@@ -19,6 +19,10 @@
     "message": "下载安装",
     "description": "The label of footer link with label=Download linking to /docs/tutorial/download-installation"
   },
+  "link.item.label.Blog": {
+    "message": "博客",
+    "description": "The label of footer link with label=Blog linking to /blog"
+  },
   "link.item.label.Try Online": {
     "message": "在线试用",
     "description": "The label of footer link with label=Try Online linking to https://demo.jit.pro"

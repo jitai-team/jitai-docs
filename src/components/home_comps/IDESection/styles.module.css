@@ -14,7 +14,7 @@
 
 .ideSection {
   padding: var(--section-padding);
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
   position: relative;
   overflow: hidden;
 }
@@ -123,9 +123,9 @@
   font-weight: var(--font-weight-semibold);
 }
 
-.featureCard:hover .featureTitle {
+/* .featureCard:hover .featureTitle {
   color: var(--color-primary);
-}
+} */
 
 .featureDescription {
   color: var(--text-secondary);

@@ -11,7 +11,7 @@
 .hero {
   display: flex;
   align-items: center;
-  background: var(--bg-primary);
+  background: var(--bg-secondary);
   color: var(--text-primary);
   padding: var(--space-32) 0 var(--space-24) 0;
   position: relative;

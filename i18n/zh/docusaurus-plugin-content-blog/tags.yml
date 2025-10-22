@@ -49,3 +49,11 @@ JAAP:
 'Enterprise Applications':
   label: 企业应用
   description: 企业应用开发与解决方案
+
+ai-adoption:
+  label: AI 应用落地
+  description: AI 在企业中规模化应用的实践与挑战
+
+development-methodology:
+  label: 开发方法论
+  description: AI 应用开发方法论与最佳实践

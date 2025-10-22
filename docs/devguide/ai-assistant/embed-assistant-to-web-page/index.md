@@ -26,23 +26,23 @@ This deep integration capability is currently not available in other AI products
 
 Integrating an AI assistant into an external web page requires only three steps:
 
-1. **Create an Embeded AI Assistant Page**: Create a dedicated AI assistant page for embedding, and obtain the access URL and Token
+1. **Create an Embedded AI Assistant Page**: Create a dedicated AI assistant page for embedding, and obtain the access URL and Token
 2. **Import SDK and Initialize in Your Web Page**: Embed the AI assistant into your web page with just a few lines of code
 3. **Configure Bidirectional Interaction (Optional)**: Configure advanced capabilities such as AI invoking web page functions and web page controlling AI as needed
 
 This document will detail the specific operational methods for each step.
 
-## Step 1: Create an Embeded AI Assistant Page {#creating-embeded-ai-assistant-page}
+## Step 1: Create an Embedded AI Assistant Page {#creating-embeded-ai-assistant-page}
 
-First, you need to create an **Embeded AI Assistant Page**
+First, you need to create an **Embedded AI Assistant Page**
 
-:::tip What is an Embeded AI Assistant Page?
-An Embeded AI Assistant Page is a special page type that encapsulates the interactive interface and runtime logic of an AI assistant, which can be embedded into any external web page. Unlike regular AI assistant pages, it is specifically optimized for external integration scenarios, supporting features like cross-domain communication and Token authentication.
+:::tip What is an Embedded AI Assistant Page?
+An Embedded AI Assistant Page is a special page type that encapsulates the interactive interface and runtime logic of an AI assistant, which can be embedded into any external web page. Unlike regular AI assistant pages, it is specifically optimized for external integration scenarios, supporting features like cross-domain communication and Token authentication.
 :::
 
 **Creation Steps:**
 
-1. Click <span style={{ background:"#3d65fd", display: "inline-block", borderRadius: "8px", textAlign: "center", lineHeight: "100%", color: "#ffffff", fontSize: "24px", padding: "0px 10px 5px" }}>+</span>  → **Page** → **Embeded AI Assistant Page**
+1. Click <span style={{ background:"#3d65fd", display: "inline-block", borderRadius: "8px", textAlign: "center", lineHeight: "100%", color: "#ffffff", fontSize: "24px", padding: "0px 10px 5px" }}>+</span>  → **Page** → **Embedded AI Assistant Page**
 
 ![create-embed-assistant-page](./imgs/create-embed-assistant-page.png)
 

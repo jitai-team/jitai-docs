@@ -1225,7 +1225,7 @@ Design intelligent workflows visually. Orchestrate business processes with drag-
   ]} />
 </IndexCard>
 
-<IndexCard
+<!-- <IndexCard
   title="Embedding AI Assistant in External Web Pages"
   href="devguide/ai-assistant/embed-assistant-to-web-page"
   description="Integrate AI assistant into any web page with deep bidirectional interaction capabilities."
@@ -1240,7 +1240,7 @@ Design intelligent workflows visually. Orchestrate business processes with drag-
     { text: "Send messages to AI", href: "devguide/ai-assistant/embed-assistant-to-web-page#send-message-to-ai" },
     { text: "JS SDK API reference", href: "devguide/ai-assistant/embed-assistant-to-web-page#js-sdk" }
   ]} />
-</IndexCard>
+</IndexCard> -->
 
 <IndexCard
   title="AI Assistant API Integration"

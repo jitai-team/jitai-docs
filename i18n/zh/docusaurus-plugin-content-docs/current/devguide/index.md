@@ -1229,7 +1229,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   ]} />
 </IndexCard>
 
-<IndexCard
+<!-- <IndexCard
   title="将AI助手嵌入到外部网页中"
   href="devguide/ai-assistant/embed-assistant-to-web-page"
   description="将AI助手集成到任何网页中，实现深度双向交互能力。"
@@ -1244,7 +1244,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "网页向AI发送消息", href: "devguide/ai-assistant/embed-assistant-to-web-page#send-message-to-ai" },
     { text: "JS SDK API参考", href: "devguide/ai-assistant/embed-assistant-to-web-page#js-sdk" }
   ]} />
-</IndexCard>
+</IndexCard> -->
 
 <IndexCard
   title="AI助理的API开放"

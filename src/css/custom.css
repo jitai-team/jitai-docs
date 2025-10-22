@@ -376,7 +376,7 @@ body[data-page-type="custom-layout"] .external-link,body:has(.custom-page) .exte
 }
 
 
-.navbar__items>a[href*="demo.jit.pro"] {
+.navbar__items>a[href*="download"] {
   background: var(--primary-color) !important;
   color: white !important;
   margin-left: 1rem;
@@ -387,7 +387,7 @@ body[data-page-type="custom-layout"] .external-link,body:has(.custom-page) .exte
   white-space: nowrap;
 }
 
-.navbar__items>a[href*="demo.jit.pro"]::before {
+.navbar__items>a[href*="download"]::before {
   content: '';
   position: absolute;
   top: 0;
@@ -398,7 +398,7 @@ body[data-page-type="custom-layout"] .external-link,body:has(.custom-page) .exte
   transition: left 0.5s ease;
 }
 
-.navbar__items>a[href*="demo.jit.pro"]:hover::before {
+.navbar__items>a[href*="download"]:hover::before {
   left: 100%;
 }
 

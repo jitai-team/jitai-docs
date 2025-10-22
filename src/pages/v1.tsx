@@ -7,7 +7,7 @@ import IDESection from '../components/v1_home_comps/IDESection';
 import PlatformSection from '../components/v1_home_comps/PlatformSection';
 import FrameworkSection from '../components/v1_home_comps/FrameworkSection';
 import TechnologiesSection from '../components/v1_home_comps/TechnologiesSection';
-import styles from './v1_index.module.css';
+import styles from './v1.module.css';
 
 const HomePage: React.FC = () => {
   const homeTitle = 'Next-Gen AI App Development Technology - JitAI';

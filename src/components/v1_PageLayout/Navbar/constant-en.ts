@@ -5,7 +5,7 @@ const CONTENT = {
       label: 'Home',
       type: 'link',
       isNewTab: false,
-      url: '/v1_index',
+      url: '/v1',
       external: true
     },    
     // {

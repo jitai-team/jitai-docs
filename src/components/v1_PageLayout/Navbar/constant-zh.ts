@@ -5,7 +5,7 @@ const CONTENT = {
       label: '首页',
       type: 'link',
       isNewTab: false,
-      url: '/zh/v1_index',
+      url: '/zh/v1',
       external: true
     },    
     // {

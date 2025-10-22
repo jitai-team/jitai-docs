@@ -40,9 +40,14 @@ const CONTENT = {
   tryOnlineButton: {
     id: 'try-online',
     label: 'Try Online',
-    type: 'button',
-    isNewTab: true,
+    type: 'newTab',
     url: 'https://demo.jit.pro',
+  },
+  downloadButton: {
+    id: 'download',
+    label: 'Download',
+    type: 'currentPage',
+    url: '/download',
   }
 };
 

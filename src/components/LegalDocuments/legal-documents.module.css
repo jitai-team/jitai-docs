@@ -1,0 +1,122 @@
+/* 法律文档页面样式 */
+.legalDocumentContainer {
+  background-color: var(--bg-primary);
+  padding: var(--section-padding);
+}
+
+.legalDocumentBody {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  line-height: 1.6;
+  margin-top: var(--space-8);
+}
+
+/* 标题样式 */
+.legalDocumentBody h1 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.legalDocumentBody h2 {
+  color: #34495e;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem 0;
+  /* padding-left: 0.5rem; */
+  /* border-left: 4px solid var(--primary-color); */
+}
+
+.legalDocumentBody h3 {
+  color: #2c3e50;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.8rem 0;
+}
+
+/* 段落样式 */
+.legalDocumentBody p {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+/* 列表样式 */
+.legalDocumentBody ol,
+.legalDocumentBody ul {
+  margin: 1rem 0;
+  padding-left: 2rem;
+}
+
+.legalDocumentBody li {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.legalDocumentBody li p {
+  margin-bottom: 0.5rem;
+}
+
+/* 强调文本样式 */
+.legalDocumentBody strong {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.legalDocumentBody u {
+  text-decoration: underline;
+  color: #e74c3c;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .legalDocumentContainer {
+    padding: 1rem 0.5rem;
+  }
+  
+  .legalDocumentBody {
+    padding: 1rem;
+  }
+  
+  .legalDocumentBody h1 {
+    font-size: 2rem;
+  }
+  
+  .legalDocumentBody h2 {
+    font-size: 1.5rem;
+  }
+  
+  .legalDocumentBody h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* 打印样式 */
+@media print {
+  .legalDocumentCard {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+  
+  .legalDocumentBody {
+    padding: 0;
+  }
+  
+  .legalDocumentBody h1,
+  .legalDocumentBody h2,
+  .legalDocumentBody h3 {
+    color: #000;
+  }
+  
+  .legalDocumentBody p,
+  .legalDocumentBody li {
+    color: #000;
+  }
+}

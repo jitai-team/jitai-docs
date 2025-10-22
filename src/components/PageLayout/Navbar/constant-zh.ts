@@ -41,9 +41,14 @@ const CONTENT = {
   tryOnlineButton: {
     id: 'try-online',
     label: '在线试用',
-    type: 'button',
-    isNewTab: true,
+    type: 'newTab',
     url: 'https://demo.jit.pro',
+  },
+  downloadButton: {
+    id: 'download',
+    label: '立即下载',
+    type: 'currentPage',
+    url: '/zh/download',
   }
 };
 

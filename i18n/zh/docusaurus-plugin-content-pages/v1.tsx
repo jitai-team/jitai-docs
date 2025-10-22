@@ -7,7 +7,7 @@ import IDESection from '../../../src/components/v1_home_comps/IDESection';
 import PlatformSection from '../../../src/components/v1_home_comps/PlatformSection';
 import FrameworkSection from '../../../src/components/v1_home_comps/FrameworkSection';
 import TechnologiesSection from '../../../src/components/v1_home_comps/TechnologiesSection';
-import styles from './v1_index.module.css';
+import styles from './v1.module.css';
 
 const HomePage: React.FC = () => {
   const homeTitle = '下一代AI应用开发技术体系';

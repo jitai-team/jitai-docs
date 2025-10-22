@@ -14,7 +14,6 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ currentLocale }) => {
   const [copySuccess, setCopySuccess] = useState(false);
   // 中文版默认使用中国大陆镜像，英文版默认使用全球镜像
   const [isChinaMirror, setIsChinaMirror] = useState(currentLocale === 'zh');
-  const [showSecurityModal, setShowSecurityModal] = useState(false);
 
   const handleCopy = async () => {
     try {
@@ -30,16 +29,12 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ currentLocale }) => {
   };
 
   const handleMacDownload = (url: string) => {
-    // 显示安全提示弹窗
-    setShowSecurityModal(true);
-    // 延迟打开下载链接，让用户先看到提示
+    // 先打开安全提示页面
+    window.open(url);
+    // 延迟打开下载链接，避免浏览器拦截
     setTimeout(() => {
-      window.open(url, '_blank');
-    }, 1000);
-  };
-
-  const closeSecurityModal = () => {
-    setShowSecurityModal(false);
+      window.location.href = CONTENT.desktop.mac.macSecurityUrl;
+    }, 100);
   };
 
   return (
@@ -164,33 +159,6 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ currentLocale }) => {
           </a>
         </div>
       </div>
-
-      {/* macOS 安全提示弹窗 */}
-      {showSecurityModal && (
-        <div className={styles.modalOverlay} onClick={closeSecurityModal}>
-          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-            <div className={styles.modalHeader}>
-              <h3 className={styles.modalTitle}>{CONTENT.desktop.mac.securityModal.title}</h3>
-              <button className={styles.modalClose} onClick={closeSecurityModal}>×</button>
-            </div>
-                   <div className={styles.modalBody}>
-                     <p className={styles.modalText}>{CONTENT.desktop.mac.securityModal.content}</p>
-                     <div className={styles.modalImage}>
-                       <img
-                         src={CONTENT.desktop.mac.securityModal.imageUrl}
-                         alt="macOS Security Warning"
-                         className={styles.securityImage}
-                       />
-                     </div>
-                   </div>
-            <div className={styles.modalFooter}>
-              <button className={styles.modalButton} onClick={closeSecurityModal}>
-                {CONTENT.desktop.mac.securityModal.confirmText}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };

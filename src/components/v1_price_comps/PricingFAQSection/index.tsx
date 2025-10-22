@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import globalStyles from '../../../pages/v1_index.module.css';
+import globalStyles from '../../../pages/v1.module.css';
 import styles from './styles.module.css';
 import CONTENT_EN from './constant-en';
 import CONTENT_ZH from './constant-zh';

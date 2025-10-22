@@ -1,29 +1,30 @@
-/* Footer 美化样式 */
+/* Footer 样式 - 基于 index.module.css 设计系统 */
+
+/* Footer 主容器 */
 footer.theme-layout-footer.footer {
-  /* background: linear-gradient(135deg, rgb(36, 73, 254) 0%, rgb(202, 75, 167) 100%); */
-  color: white;
-  padding: 3rem 0 2rem;
+  background: var(--color-secondary);
+  color: var(--color-white);
+  padding: var(--space-32) 0 var(--space-20);
   position: relative;
   overflow: hidden;
-  /* margin-top: 1400px; */
 }
 
-/* Footer 容器样式 */
+/* Footer 容器 */
 footer .container {
   position: relative;
   z-index: 1;
 }
 
-/* Footer 链接区域样式 */
+/* Footer 链接区域 */
 footer .footer__links {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 3rem;
+  gap: var(--space-12);
   flex-wrap: wrap;
 }
 
-/* Footer 链接组样式 */
+/* Footer 链接组 */
 footer .footer__col {
   display: flex;
   flex-direction: column;
@@ -31,12 +32,12 @@ footer .footer__col {
 
 /* Footer 链接组标题 */
 footer .footer__col-title {
-  color: white;
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
+  color: var(--color-white);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-4);
   position: relative;
-  padding-bottom: 0.5rem;
+  padding-bottom: var(--space-2);
 }
 
 /* Footer 链接组标题下划线 */
@@ -48,7 +49,7 @@ footer .footer__col-title::after {
   width: 30px;
   height: 2px;
   background: rgba(255, 255, 255, 0.3);
-  border-radius: 1px;
+  border-radius: var(--border-radius-sm);
 }
 
 /* Footer 链接列表 */
@@ -60,23 +61,24 @@ footer .footer__items {
 
 /* Footer 链接项 */
 footer .footer__item {
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--space-3);
 }
 
 /* Footer 链接样式 */
 footer .footer__link-item {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: var(--transition-primary);
   display: inline-block;
   position: relative;
-  padding: 0.25rem 0;
+  padding: var(--space-1) 0;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
 }
 
 /* Footer 链接悬停效果 */
 footer .footer__link-item:hover {
-  color: white;
-  /* transform: translateX(5px); */
+  color: var(--color-white);
 }
 
 /* Footer 链接悬停下划线 */
@@ -87,8 +89,8 @@ footer .footer__link-item::after {
   left: 0;
   width: 0;
   height: 1px;
-  background: white;
-  transition: width 0.3s ease;
+  background: var(--color-white);
+  transition: width var(--transition-normal);
 }
 
 footer .footer__link-item:hover::after {
@@ -96,13 +98,11 @@ footer .footer__link-item:hover::after {
 }
 
 /* Footer Logo 区域 */
-
-/* Footer Logo 图片 */
 footer .footer__logo img {
   max-width: 280px;
   height: auto;
   filter: brightness(0) invert(1);
-  transition: transform 0.3s ease;
+  transition: var(--transition-primary);
 }
 
 footer .footer__logo img:hover {
@@ -113,8 +113,8 @@ footer .footer__logo img:hover {
 footer .footer__copyright {
   text-align: center;
   color: rgba(255, 255, 255, 0.7);
-  font-size: 0.9rem;
-  padding-top: 2rem;
+  font-size: var(--font-size-sm);
+  padding-top: var(--space-8);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
 }
@@ -131,66 +131,6 @@ footer .footer__copyright::before {
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
 }
 
-/* 响应式设计 */
-@media (max-width: 768px) {
-  footer.theme-layout-footer.footer {
-    padding: 2rem 0 1.5rem;
-  }
-
-  footer .footer__links {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  footer .footer__col-title {
-    font-size: 1rem;
-  }
-
-  footer .footer__logo img {
-    max-width: 220px;
-  }
-
-  footer .footer__copyright {
-    font-size: 0.8rem;
-    padding-top: 1.5rem;
-  }
-}
-
-/* 深色模式优化 */
-[data-theme='dark'] footer.theme-layout-footer.footer {
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-}
-
-/* 动画效果 */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-footer .footer__links {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-footer .footer__logo {
-  animation: fadeInUp 0.6s ease-out 0.2s both;
-
-  margin-top: 0 !important;
-}
-
-footer .footer__copyright {
-  animation: fadeInUp 0.6s ease-out 0.4s both;
-}
-
-/* 额外的美化效果 */
-/* 链接图标 */
-
 /* 社交媒体图标公共样式 */
 footer .footer__link-item[href*="forum.jit.pro"]::before,
 footer .footer__link-item[href*="github.com"]::before,
@@ -200,7 +140,7 @@ footer .footer__link-item[href*="instagram.com"]::before,
 footer .footer__link-item[href*="facebook.com"]::before,
 footer .footer__link-item[href*="linkedin.com"]::before {
   content: '';
-  margin-right: 0.5rem;
+  margin-right: var(--space-2);
   width: 1em;
   height: 1em;
   display: inline-block;
@@ -243,79 +183,56 @@ footer .footer__link-item[href*="linkedin.com"]::before {
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%230077B5' d='M20.447 20.452h-3.554V14.83c0-1.344-.027-3.072-1.871-3.072-1.872 0-2.159 1.462-2.159 2.973v5.721H9.309V9h3.414v1.561h.049c.476-.9 1.637-1.852 3.37-1.852 3.603 0 4.267 2.372 4.267 5.455v6.289zM5.337 7.433c-1.144 0-2.067-.926-2.067-2.067 0-1.143.923-2.066 2.067-2.066 1.142 0 2.066.923 2.066 2.066 0 1.141-.924 2.067-2.066 2.067zM6.815 20.452H3.861V9h2.954v11.452z'/%3E%3C/svg%3E") no-repeat center;
 }
 
-/* footer .footer__link-item[href*="forum"]::before {
-  content: '💬';
-  margin-right: 0.5rem;
-  font-size: 0.9em;
-} */
-
+/* 邮件图标 */
 footer .footer__link-item[href^="mailto:"]::before {
   content: '📧';
-  margin-right: 0.5rem;
+  margin-right: var(--space-2);
   font-size: 0.9em;
 }
 
-/* footer .footer__link-item[href*="blog"]::before {
-  content: '📝';
-  margin-right: 0.5rem;
-  font-size: 0.9em;
-} */
-
+/* 发布图标 */
 footer .footer__link-item[href*="releases"]::before {
   content: '📦';
-  margin-right: 0.5rem;
+  margin-right: var(--space-2);
   font-size: 0.9em;
 }
 
+/* 问题图标 */
 footer .footer__link-item[href*="issues"]::before {
   content: '🐛';
-  margin-right: 0.5rem;
+  margin-right: var(--space-2);
   font-size: 0.9em;
 }
 
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-3px);
-  }
-  60% {
-    transform: translateY(-1px);
-  }
-}
-
-/* 版权信息中的爱心动画 */
-footer .footer__copyright {
-  position: relative;
-}
-
-/*
-footer .footer__copyright::after {
-  content: '❤️';
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  animation: heartbeat 2s ease-in-out infinite;
-}
-*/
-
-@keyframes heartbeat {
-  0%, 100% {
-    transform: translateY(-50%) scale(1);
-  }
-  50% {
-    transform: translateY(-50%) scale(1.1);
-  }
-}
-
-/* 移动端隐藏版权信息中的爱心 */
+/* 响应式设计 */
 @media (max-width: 768px) {
-  footer .footer__copyright::after {
-    display: none;
+  footer.theme-layout-footer.footer {
+    padding: var(--space-20) 0 var(--space-16);
   }
+
+  footer .footer__links {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-8);
+  }
+
+  footer .footer__col-title {
+    font-size: var(--font-size-lg);
+  }
+
+  footer .footer__logo img {
+    max-width: 220px;
+  }
+
+  footer .footer__copyright {
+    font-size: var(--font-size-xs);
+    padding-top: var(--space-6);
+  }
+}
+
+/* 深色模式优化 */
+[data-theme='dark'] footer.theme-layout-footer.footer {
+  background: var(--color-gray-800);
 }
 
 /* Footer 背景光效 */
@@ -340,14 +257,13 @@ footer.theme-layout-footer.footer::after {
   }
 }
 
-
 @media (max-width: 996px) {
   .footer__col {
     margin-bottom: 0;
-    padding: 0 2em;
+    padding: 0 var(--space-8);
   }
 }
 
 .footer {
-  background-color: #131418;
+  background-color: var(--color-secondary);
 }

@@ -1,20 +1,16 @@
 import React from 'react';
-import PageLayout from '../components/PageLayout';
-import HeroSection from '../components/home_comps/HeroSection';
-import PlatformSection from '../components/home_comps/PlatformSection';
-import FrameworkSection from '../components/home_comps/FrameworkSection';
-import IDESection from '../components/home_comps/IDESection';
-import DevOpsSection from '../components/home_comps/DevOpsSection';
-import styles from './index.module.css';
+import PageLayout from '@site/src/components/PageLayout';
+import HeroSection from '@site/src/components/home_comps/HeroSection';
+import PlatformSection from '@site/src/components/home_comps/PlatformSection';
+import FrameworkSection from '@site/src/components/home_comps/FrameworkSection';
+import IDESection from '@site/src/components/home_comps/IDESection';
+import DevOpsSection from '@site/src/components/home_comps/DevOpsSection';
+import styles from '@site/src/pages/index.module.css';
 
 const HomePage: React.FC = () => {
-  const homeTitle = 'JitAI - Quickly Build Production-Grade AI Apps';
-  const homeDesc = "The world's first interpreted app framework enabling AI agents to perceive and orchestrate systems in real-time, boosting development efficiency by 10x! ";
-
   return (
     <PageLayout 
-      title={homeTitle} 
-      description={homeDesc}
+      pageId="index"
       containerClassName={styles.container}
     >
       <HeroSection />

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './styles.module.css';
-import globalStyles from '../../../pages/v1_index.module.css';
+import globalStyles from '../../../pages/v1.module.css';
 import ImageComponent from './ImageComponents';
 import ScrollAnimation from '../../ScrollAnimation';
 import CONTENT_EN from './constant-en';

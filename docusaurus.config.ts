@@ -169,7 +169,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
            position: 'left',
            label: 'Open Source',
          },
-        {to: '/blog', label: 'Blog', position: 'left'},
         //{
         //  type: 'docSidebar',
         //  sidebarId: 'appmarketSidebar',
@@ -188,9 +187,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         //    position: 'right',
         //  },
         {
-          href: 'https://demo.jit.pro',
+          href: 'https://jit.pro/download',
           position: 'left',
-          label: 'Try Online',
+          label: 'Download',
         },
         {
           type: 'search',

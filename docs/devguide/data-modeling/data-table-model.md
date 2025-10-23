@@ -3,7 +3,7 @@ sidebar_position: 3
 slug: data-table-model
 ---
 
-# Creating Data Tables {#data-table-model}
+# Creating Data Tables
 Data table models constitute the foundational data layer for JitAi applications. Each data table model corresponds directly to a database table, defining the structure, data types, and constraint rules for business data. JitAi offers two distinct approaches for creating data table models: developing new data table models from scratch, which proves ideal for ground-up business data structure design, or generating models from existing database tables, which streamlines the management and extension of legacy data architectures.
 
 ## Data table creation entry {#data-table-create-entry}

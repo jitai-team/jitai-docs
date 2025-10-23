@@ -1,7 +1,7 @@
 ---
 slug: wechat-work-qr-login
 ---
-# WeCom Custom QR Code Login {#wechat-work-custom-qr-login}
+# WeCom Custom QR Code Login
 WeCom custom QR code login is a login authentication element based on WeCom custom applications, supporting PC-side QR code scanning login and password-free login within WeCom workspace. It handles WeCom OAuth authorization flow, user identity authentication, and account binding, while supporting seamless integration with WeCom organizational architecture and user information synchronization.
 
 The hierarchical structure of WeCom custom QR code login elements is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.QywxInnerType) → Instance. Developers can quickly create WeCom custom QR code login instance elements through JitAi's visual development tools.

@@ -2,7 +2,7 @@
 sidebar_position: 2
 slug: login-authentication
 ---
-# Login Authentication {#login-authentication}
+# Login Authentication
 
 The JitAi platform supports multiple login authentication methods, including account password login, phone login, DingTalk self-built QR code login, WeCom self-built QR code login, WeChat authentication, WeChat official account authentication, WeChat mini program authentication, GitHub login, Google login, and Microsoft Teams authentication. These methods meet diverse user access and authentication needs across different scenarios, enabling enterprises and individual users to access applications conveniently and securely.
 

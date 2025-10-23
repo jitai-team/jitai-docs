@@ -73,6 +73,36 @@ development-methodology:
   permalink: /development-methodology
   description: AI application development methodologies and best practices
 
+ai-coding:
+  label: AI Coding
+  permalink: /ai-coding
+  description: AI-powered coding tools and techniques
+
+cursor:
+  label: Cursor
+  permalink: /cursor
+  description: Cursor AI coding assistant and related topics
+
+jitai:
+  label: jitai
+  permalink: /jitai-tag
+  description: JitAi platform features and capabilities
+
+ai-development:
+  label: AI Development
+  permalink: /ai-development
+  description: AI application development practices and tools
+
+low-code:
+  label: Low-Code
+  permalink: /low-code
+  description: Low-code and visual development platforms
+
+business-applications:
+  label: Business Applications
+  permalink: /business-applications
+  description: Enterprise business application development and solutions
+
 forward deployed engineer
   label: Forward-Deployed-Engineer
   permalink: /forward deployed engineer

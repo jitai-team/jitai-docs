@@ -3,7 +3,7 @@ sidebar_position: 9
 slug: data-object-model
 ---
 
-# Data Object Models {#data-object-model}
+# Data Object Models
 Data Object Models represent specialized data structures engineered for full-code development environments, functioning similarly to DTOs (Data Transfer Objects) and commonly referred to as `Table-less Models`. These models are custom-designed by developers to meet specific business requirements without directly mapping to or associating with database tables. Data object models serve as the backbone for structured data expression, transmission, and transformation within business logic components such as service functions, event handlers, and workflow orchestration systems. Through data object models, developers can architect flexible multi-layered nested and complex composite data structures that facilitate standardized data interactions between modules while enhancing code maintainability, reusability, and business decoupling capabilities. Data object models excel in scenarios involving complex business logic, multi-tier data interactions, and temporary data encapsulation.
 
 ## Creating data object models {#creating-data-object-model}

@@ -3,7 +3,7 @@ sidebar_position: 4
 slug: integrate-knowledge-base-into-agent
 ---
 
-# Integrating Knowledge Base Into Agent {#integrating-knowledge-base-into-agent}
+# Integrating Knowledge Base Into Agent
 
 Knowledge bases serve as the core knowledge backbone for AI Agents, delivering accurate and timely domain expertise through Retrieval-Augmented Generation (RAG) technology. This integration significantly enhances an Agent's professional capabilities and response quality.
 

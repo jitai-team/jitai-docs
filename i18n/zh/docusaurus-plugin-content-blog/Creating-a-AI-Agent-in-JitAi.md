@@ -1,9 +1,10 @@
 ---
-title: Creating a AI Agent in JitAi: A Comprehensive Guide
+title: "Creating a AI Agent in JitAi: A Comprehensive Guide"
 authors: []
-tags: [AI Agent, JitAi]
+tags: [ai agent, JitAi]
 date: 2025/9/1
-description: "AI Agent具备自主决策与任务执行能力。它能够根据用户输入和上下文信息，自动选择合适工具来完成复杂业务流程。一个Agent由三大核心组件构成：系统提示词、工具集和大语言模型（LLMS）。Agent还可集成知识库实现检索增强生成（RAG）。本文将引导您快速在JitAI中创建ReActAgent——一种推理与行动结合的Agent，并深入探讨JitAI中AI Agent简洁高效的工作流程与卓越成效。"
+description: "AI Agent具备自主决策与任务执行能力。它能够根据用户输入和上下文信息，自动选择合适工具来完成复杂业务流程。一个Agent由三大核心组件构成：系统提示词、工具集和大语言模型（LLMS）。Agent还可集成知识库实现检索增强生成（RAG）。本文将引导您快速在JitAI中创建ReActAgent——一种推理与行动结合的Agent，并深入探讨JitAI中AI Agent简洁高效的工作流程与卓越成效。"
+keywords: [AI Agent, 智能体, ReActAgent, JitAi, 系统提示词, LLMS, 大语言模型, MCP, 模型上下文协议, RAG, 检索增强生成, 工具集, CRUD, 企业AI]
 ---
 
 AI Agent具备自主决策与任务执行能力。它能够根据用户输入和上下文信息，自动选择合适工具来完成复杂业务流程。一个Agent由三大核心组件构成：系统提示词、工具集和大语言模型（LLMS）。Agent还可集成知识库实现检索增强生成（RAG）。本文将引导您快速在JitAI中创建ReActAgent——一种推理与行动结合的Agent，并深入探讨JitAI中AI Agent简洁高效的工作流程与卓越成效。

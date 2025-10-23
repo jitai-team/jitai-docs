@@ -19,22 +19,22 @@ const CONTENT = {
       url: '/download',
     },
     {
-      id: 'blog',
-      label: 'Blog',
-      type: 'currentPage',
-      url: '/blog',
-    },
-    {
       id: 'guide',
       label: 'Docs',
       type: 'newTab',
       url: '/docs/tutorial',
     },
     {
-      id: 'community',
-      label: 'Community',
+      id: 'forum',
+      label: 'Forum',
       type: 'newTab',
       url: 'https://forum.jit.pro',
+    },
+    {
+      id: 'blog',
+      label: 'Blog',
+      type: 'currentPage',
+      url: '/blog',
     },
   ],
   tryOnlineButton: {

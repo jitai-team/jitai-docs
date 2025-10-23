@@ -3,7 +3,7 @@ sidebar_position: 5
 slug: default-language
 ---
 
-# Default Language {#default-language}
+# Default Language
 
 The default language determines the display language of the application when users have not explicitly selected a language. Properly configuring the default language can improve user experience and ensure the application displays in a language familiar to users upon first access.
 

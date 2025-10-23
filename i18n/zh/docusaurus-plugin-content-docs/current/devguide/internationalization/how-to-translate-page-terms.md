@@ -3,7 +3,7 @@ sidebar_position: 3
 slug: how-to-translate-page-terms
 ---
 
-# 如何翻译页面术语 {#how-to-translate-page-terms}
+# 如何翻译页面术语
 
 ## 自动文本翻译 {#automatic-text-translation}
 

@@ -3,7 +3,7 @@ sidebar_position: 3
 slug: role-portal-menu-permissions
 ---
 
-# 角色与门户菜单权限 {#role-portal-menu-permissions}
+# 角色与门户菜单权限
 
 RBAC（基于角色的访问控制）是一种常用的权限管理机制，通过为用户分配角色，并为角色授予相应的权限，实现对系统资源的访问控制。
 

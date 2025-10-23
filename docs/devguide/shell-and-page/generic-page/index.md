@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Creating Generic Pages {#creating-generic-pages}
+# Creating Generic Pages
 
 Generic pages are the most widely used page type in page development. Developers add components to blank pages as needed to create page layouts, and configure components and write event logic. This article uses generic pages to demonstrate **how to perform componentized page development**.
 

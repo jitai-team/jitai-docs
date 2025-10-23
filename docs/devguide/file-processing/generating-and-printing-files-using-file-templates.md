@@ -3,7 +3,7 @@ sidebar_position: 3
 slug: generating-and-printing-files-using-file-templates
 ---
 
-# Generating and Printing Files Using File Templates {#generating-and-printing-files-using-file-templates}
+# Generating and Printing Files Using File Templates
 
 After file templates are created, you can generate and print files by calling the print service. This document describes how to use created file templates to generate and print Word documents and Excel documents.
 

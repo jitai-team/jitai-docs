@@ -1,10 +1,11 @@
 ---
-title: 什么是 MCP？—— AI与开发工具之间的无缝连接革命
+title: 什么是 MCP？—— AI与开发工具之间的无缝连接革命
 authors: []
 date: 2025/10/15
 description: |
-  在当今快速演进的 AI 时代，大语言模型（LLM）展现了惊人的能力，但它们往往是彼此孤立的“智能孤岛”，无法直接访问我们的文件系统、数据库或 API 服务。Model Context Protocol（模型上下文协议，简称 MCP）的出现正是为了解决这一核心问题。
+  在当今快速演进的 AI 时代，大语言模型（LLM）展现了惊人的能力，但它们往往是彼此孤立的"智能孤岛"，无法直接访问我们的文件系统、数据库或 API 服务。Model Context Protocol（模型上下文协议，简称 MCP）的出现正是为了解决这一核心问题。
 tags: [MCP]
+keywords: [MCP, 模型上下文协议, Model Context Protocol, Anthropic, AI工具集成, JitAi, LLM, 大语言模型, JSON-RPC, Function Calling, AI Agent, MCP Server, MCP Client, 开发效率, 标准化协议]
 ---
 
 > 只需一键，即可让 AI 连接外部工具，让开发效率提升 300%。

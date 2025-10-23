@@ -98,9 +98,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           editUrl:
             'https://github.com/jitai-team/jitai-docs/tree/master',
           // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
+          onInlineTags: 'throw',
+          onInlineAuthors: 'throw',
+          onUntruncatedBlogPosts: 'throw',
         },
         theme: {
           customCss: ['./src/css/variables.css', './src/css/custom.css'],

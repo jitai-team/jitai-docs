@@ -1,9 +1,10 @@
 ---
-title: Creating a AI Agent in JitAi: A Comprehensive Guide
+title: "Creating a AI Agent in JitAi: A Comprehensive Guide"
 authors: []
-tags: [AI Agent, JitAi]
+tags: [ai agent, JitAi]
 date: 2025/9/1
-description: "An AI Agent (intelligent agent) possesses autonomous decision-making and task execution capabilities. It can automatically select appropriate tools based on user input and contextual information to complete complex business processes."
+description: "An AI Agent (intelligent agent) possesses autonomous decision-making and task execution capabilities. It can automatically select appropriate tools based on user input and contextual information to complete complex business processes."
+keywords: [AI Agent, intelligent agent, ReActAgent, JitAi, system prompt, LLMS, large language models, MCP, Model Context Protocol, RAG, Retrieval-Augmented Generation, tools, CRUD, enterprise AI]
 ---
 
 An AI Agent (intelligent agent) possesses autonomous decision-making and task execution capabilities. It can automatically select appropriate tools based on user input and contextual information to complete complex business processes. An Agent consists of three core components: a system prompt, tools, and LLMS. Agents can also integrate with knowledge bases to implement Retrieval-Augmented Generation (RAG). This article will guide you through quickly creating a ReActAgent in Jitai, which combines reasoning and acting, and discuss the remarkably simple workflow and impressive results of AI Agents in Jitai.

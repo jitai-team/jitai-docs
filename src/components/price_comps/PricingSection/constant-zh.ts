@@ -48,7 +48,6 @@ const PRICING_PLANS: PricingPlan[] = [
         '✓ 2个组织',
         '✓ 1个应用',
         '✓ 在线开发',
-        '✓ 仅单进程运行',
         '✓ 仅单机运行'
     ]
   },
@@ -69,21 +68,21 @@ const PRICING_PLANS: PricingPlan[] = [
         '✓ 可加入集群环境'
     ]
   },
-  {
-    id: 'professional',
-    title: '服务器专业版许可证',
-    subtitle: '大型企业首选',
-    icon: '💎',
-    monthlyPrice: '14000',
-    yearlyPrice: '140,000',
-    buyoutPrice: '700,000',
-    cardType: 'professionalCard',
-    features: [
-        '服务器标准版所有功能，以及',
-        '✓ 20个组织',
-        '✓ 10个应用',
-    ]
-  },
+  // {
+  //   id: 'professional',
+  //   title: '服务器专业版许可证',
+  //   subtitle: '大型企业首选',
+  //   icon: '💎',
+  //   monthlyPrice: '14000',
+  //   yearlyPrice: '140,000',
+  //   buyoutPrice: '700,000',
+  //   cardType: 'professionalCard',
+  //   features: [
+  //       '服务器标准版所有功能，以及',
+  //       '✓ 20个组织',
+  //       '✓ 10个应用',
+  //   ]
+  // },
   {
     id: 'enterprise',
     title: '自定义组合',

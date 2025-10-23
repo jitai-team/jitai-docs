@@ -62,3 +62,13 @@ JAAP:
   label: Enterprise Applications
   permalink: /enterprise-applications
   description: Enterprise application development and solutions
+
+ai-adoption:
+  label: AI Adoption
+  permalink: /ai-adoption
+  description: AI adoption practices and challenges in enterprises
+
+development-methodology:
+  label: Development Methodology
+  permalink: /development-methodology
+  description: AI application development methodologies and best practices

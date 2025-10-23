@@ -9,7 +9,7 @@ slug: role
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
-<VideoPlayer relatePath="/docs/tutorial/role_effect.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/en/role_effect.mp4" />
 
 ## Implementation process
 

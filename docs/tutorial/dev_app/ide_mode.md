@@ -44,7 +44,7 @@ Here's an overview of the most essential and fundamental elements:
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
-<VideoPlayer relatePath="/docs/tutorial/ide_mode_effect.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/en/ide_mode_effect.mp4" />
 
 
 ## Implementation process
@@ -80,21 +80,21 @@ Pages comprise components that allow flexible layout adjustments for complete in
 
 #### Implementing component linkage
 
-<VideoPlayer relatePath="/docs/tutorial/ide_mode_page_design.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/en/ide_mode_page_design.mp4" />
 
 #### Implementing calculation logic within forms
 
-<VideoPlayer relatePath="/docs/tutorial/ide_mode_page_form.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/en/ide_mode_page_form.mp4" />
 
 You can also switch to source code mode for direct code development.
 
-<VideoPlayer relatePath="/docs/tutorial/ide_mode_code.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/en/ide_mode_code.mp4" />
 
 ### Implementing algorithm-based question generation through service functions
 
 This demonstrates the simplest implementation scenario. Source code mode similarly supports full-code implementation of more complex logic.
 
-<VideoPlayer relatePath="/docs/tutorial/ide_mode_func.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/en/ide_mode_func.mp4" />
 
 ### Implementing automatic answer sheet creation through backend events
 

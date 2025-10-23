@@ -12,7 +12,7 @@ The following demonstrates creating an AI-powered data management system with CR
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
-<VideoPlayer relatePath="/docs/tutorial/easy_questions.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/en/easy_questions.mp4" />
 
 ![](../img/ease_mode_11.png)
 ![](../img/ease_mode_12.png)

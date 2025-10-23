@@ -25,15 +25,15 @@ After setting up your environment, you can deploy this application directly to e
 ### Examiner portal
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
-<VideoPlayer relatePath="/docs/tutorial/project_examiner.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/en/project_examiner.mp4" />
 
 ### Examinee portal
 
-<VideoPlayer relatePath="/docs/tutorial/project_examinee.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/en/project_examinee.mp4" />
 
 ### Administrator portal
 
-<VideoPlayer relatePath="/docs/tutorial/project_admin.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/en/project_admin.mp4" />
 
 ## Data model overview
 * **Question Bank Table**: Stores comprehensive question information including content, type, difficulty level, and metadata

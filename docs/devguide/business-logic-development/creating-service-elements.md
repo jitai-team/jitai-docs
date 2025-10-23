@@ -3,7 +3,7 @@ sidebar_position: 1
 slug: creating-service-elements
 ---
 
-# Creating Service Elements {#create-service-elements}
+# Creating Service Elements
 Whether in object-oriented or procedural development, encapsulating functions makes code reusable and maintainable. Through function encapsulation, commonly used or complex business logic can be isolated for convenient invocation and management. JitAi enables developers to define custom business service functions through service elements.
 
 Service elements are Python-based backend elements. Within service elements, developers can flexibly declare multiple service functions and effectively organize and manage complex business logic code through proper categorization. Developers can create multiple service elements in applications following the principles of high cohesion and low coupling, managing different service functions by category, such as user services, order services, or payment services.

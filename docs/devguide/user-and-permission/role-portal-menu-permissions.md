@@ -3,7 +3,7 @@ sidebar_position: 3
 slug: role-portal-menu-permissions
 ---
 
-# Role and Portal Menu Permissions {#role-portal-menu-permissions}
+# Role and Portal Menu Permissions
 
 RBAC (Role-Based Access Control) is a widely adopted permission management mechanism that controls access to system resources by assigning roles to users and granting appropriate permissions to those roles.
 

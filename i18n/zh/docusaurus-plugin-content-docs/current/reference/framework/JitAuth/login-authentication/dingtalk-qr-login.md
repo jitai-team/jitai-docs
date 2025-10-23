@@ -1,7 +1,7 @@
 ---
 slug: dingtalk-qr-login
 ---
-# 钉钉自建扫码登录 {#dingtalk-custom-qr-login}
+# 钉钉自建扫码登录
 钉钉自建扫码登录（DDInnerType）是基于钉钉自建应用的登录认证元素，支持PC端二维码扫码登录和钉钉工作台内免密登录。它负责处理钉钉OAuth授权流程、用户身份验证和账号绑定，同时支持与钉钉企业组织架构的无缝集成和用户信息同步。
 
 钉钉自建扫码登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.DDInnerType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建钉钉自建扫码登录实例元素。

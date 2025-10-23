@@ -3,7 +3,7 @@ sidebar_position: 10
 slug: calling-data-models-in-pages-and-functions
 ---
 
-# Using Data Models in Pages and Functions {#calling-data-models-in-pages-and-functions}
+# Using Data Models in Pages and Functions
 
 When developing applications on the JitAi platform, data models serve not only as tools for data storage and management, but can also be flexibly integrated into page displays, form interactions, and custom function logic. By calling data models in pages and functions, developers can achieve dynamic data operations including reading, writing, updating, and deleting, thereby meeting diverse data processing requirements across various business scenarios.
 

@@ -4,7 +4,7 @@ slug: ai-assistant-example
 draft: true
 ---
 
-# Example Demo {#example-demo}
+# Example Demo
 This example demonstrates how to build an intelligent customer information management assistant that can understand users' natural language instructions and automatically perform CRUD operations on customer information.
 
 **Running Effect Demo**:

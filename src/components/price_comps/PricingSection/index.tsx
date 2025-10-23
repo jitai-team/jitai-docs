@@ -14,6 +14,28 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [animateElements, setAnimateElements] = useState(false);
   const [activeTab, setActiveTab] = useState<'yearly' | 'monthly' | 'buyout'>('yearly');
+  
+  // 弹窗相关状态
+  const [showModal, setShowModal] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<any>(null);
+  const [teamId, setTeamId] = useState('');
+  const [teamTitle, setTeamTitle] = useState('');
+  const [teamIdError, setTeamIdError] = useState('');
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  // 解析URL参数
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlTeamId = urlParams.get('team_id');
+    const urlTeamTitle = urlParams.get('team_title');
+    
+    if (urlTeamId) {
+      setTeamId(urlTeamId);
+    }
+    if (urlTeamTitle) {
+      setTeamTitle(urlTeamTitle);
+    }
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -25,6 +47,73 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
 
     return () => clearTimeout(timer);
   }, []);
+
+  // 组件卸载时清理滚动状态
+  useEffect(() => {
+    return () => {
+      document.body.classList.remove('modal-open');
+      document.body.style.top = '';
+    };
+  }, []);
+
+  // 处理支付按钮点击
+  const handlePaymentClick = (plan: any) => {
+    if (plan.id === 'enterprise') {
+      // 企业版联系销售，可以跳转到联系页面或显示联系方式
+      return;
+    }
+    
+    setSelectedPlan(plan);
+    setShowModal(true);
+    
+    // 保存当前滚动位置并阻止底层页面滚动
+    const currentScrollY = window.scrollY;
+    setScrollPosition(currentScrollY);
+    document.body.style.top = `-${currentScrollY}px`;
+    document.body.classList.add('modal-open');
+    console.log('Modal opened, scroll position saved:', currentScrollY);
+  };
+
+  // 处理弹窗确认
+  const handleModalConfirm = () => {
+    // 验证team_id必填
+    if (!teamId.trim()) {
+      setTeamIdError(CONTENT.modal.teamIdRequired);
+      return;
+    }
+    
+    // 验证team_id格式
+    if (!CONTENT.modal.teamIdPattern.test(teamId.trim())) {
+      setTeamIdError(CONTENT.modal.teamIdPatternMessage);
+      return;
+    }
+    
+    setTeamIdError('');
+    
+    // 构建带参数的链接
+    const link = selectedPlan.links?.[activeTab];
+    if (link) {
+      const url = new URL(link, window.location.origin);
+      url.searchParams.set('client_reference_id', teamId.trim());
+      window.open(url.toString(), '_blank');
+    }
+    
+    setShowModal(false);
+    document.body.classList.remove('modal-open');
+    document.body.style.top = '';
+    window.scrollTo(0, scrollPosition);
+    console.log('Modal closed, scroll position restored:', scrollPosition);
+  };
+
+  // 处理弹窗取消
+  const handleModalCancel = () => {
+    setShowModal(false);
+    setTeamIdError('');
+    document.body.classList.remove('modal-open');
+    document.body.style.top = '';
+    window.scrollTo(0, scrollPosition);
+    console.log('Modal cancelled, scroll position restored:', scrollPosition);
+  };
 
   return (
     <section id="pricing-section" className={`${styles.pricing} ${isVisible ? styles.fadeIn : ''}`}>
@@ -97,7 +186,10 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
                 </div>
               </div>
               <div className={styles.cardAction}>
-                <button className={styles.orderButton}>
+                <button 
+                  className={styles.orderButton}
+                  onClick={() => handlePaymentClick(plan)}
+                >
                   {plan.id === 'enterprise' ? CONTENT.contactSales : (activeTab === 'buyout' ? CONTENT.pay : CONTENT.subscribe)}
                 </button>
               </div>
@@ -134,6 +226,102 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
           </div>
         </div>
 
+        {/* 支付确认弹窗 */}
+        {showModal && (
+          <div className={styles.modalOverlay}>
+            <div className={styles.modalContent}>
+              <div className={styles.modalHeader}>
+                <h3 className={styles.modalTitle}>
+                  {CONTENT.modal.title}
+                </h3>
+                <button 
+                  className={styles.modalClose}
+                  onClick={handleModalCancel}
+                >
+                  ×
+                </button>
+              </div>
+              
+              <div className={styles.modalBody}>
+                <div className={styles.formGroup}>
+                  <div className={styles.formLabelRow}>
+                    <label className={styles.formLabel}>
+                      {CONTENT.modal.teamIdLabel} *
+                    </label>
+                    <a 
+                      href={CONTENT.modal.teamIdHelpLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.helpLink}
+                    >
+                      {CONTENT.modal.teamIdHelpText}
+                    </a>
+                  </div>
+                  <input
+                    type="text"
+                    className={`${styles.formInput} ${teamIdError ? styles.formInputError : ''}`}
+                    value={teamId}
+                    onChange={(e) => {
+                      const value = e.target.value;
+                      setTeamId(value);
+                      
+                      // 清除错误状态
+                      if (teamIdError) {
+                        setTeamIdError('');
+                      }
+                      
+                      // 实时验证格式（可选，提供即时反馈）
+                      if (value.trim() && !CONTENT.modal.teamIdPattern.test(value.trim())) {
+                        setTeamIdError(CONTENT.modal.teamIdPatternMessage);
+                      }
+                    }}
+                    placeholder={CONTENT.modal.teamIdPlaceholder}
+                  />
+                  {teamIdError && (
+                    <div className={styles.errorMessage}>{teamIdError}</div>
+                  )}
+                </div>
+                
+                <div className={styles.formGroup}>
+                  <label className={styles.formLabel}>
+                    {CONTENT.modal.teamTitleLabel}
+                  </label>
+                  <input
+                    type="text"
+                    className={styles.formInput}
+                    value={teamTitle}
+                    onChange={(e) => setTeamTitle(e.target.value)}
+                    placeholder={CONTENT.modal.teamTitlePlaceholder}
+                  />
+                </div>
+                
+                <div className={styles.modalPlanInfo}>
+                  <h4 className={styles.planInfoTitle}>
+                    {CONTENT.modal.purchasePlanTitle}
+                  </h4>
+                  <p className={styles.planInfoText}>
+                    {selectedPlan?.title} - {CONTENT[activeTab]}
+                  </p>
+                </div>
+              </div>
+              
+              <div className={styles.modalFooter}>
+                <button 
+                  className={styles.modalButtonCancel}
+                  onClick={handleModalCancel}
+                >
+                  {CONTENT.modal.cancelButton}
+                </button>
+                <button 
+                  className={styles.modalButtonConfirm}
+                  onClick={handleModalConfirm}
+                >
+                  {CONTENT.modal.confirmButton}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
 
       </div>
     </section>

@@ -10,6 +10,11 @@ export interface PricingPlan {
   features: string[];
   isRecommended?: boolean;
   cardType: string;
+  links?: {
+    monthly: string;
+    yearly: string;
+    buyout: string;
+  };
 }
 
 
@@ -32,7 +37,12 @@ const PRICING_PLANS: PricingPlan[] = [
       '✓ Online development',
       '✓ Single process only',
       '✓ Single machine only'
-    ]
+    ],
+    links: {
+      monthly: 'https://buy.stripe.com/test_14AeVd6zCcjr7ci2dSebu01',
+      yearly: '/en/pricing/desktop/yearly',
+      buyout: '/en/pricing/desktop/buyout',
+    }
   },
   {
     id: 'basic',
@@ -49,7 +59,12 @@ const PRICING_PLANS: PricingPlan[] = [
         '✓ 1 application',
         '✓ Online development',
         '✓ Single machine only'
-    ]
+    ],
+    links: {
+      monthly: '/en/pricing/basic/monthly',
+      yearly: '/en/pricing/basic/yearly',
+      buyout: '/en/pricing/basic/buyout',
+    }
   },
   {
     id: 'standard',
@@ -66,7 +81,12 @@ const PRICING_PLANS: PricingPlan[] = [
         '✓ 10 organizations',
         '✓ 5 applications',
         '✓ Cluster environment support'
-    ]
+    ],
+    links: {
+      monthly: '/en/pricing/standard/monthly',
+      yearly: '/en/pricing/standard/yearly',
+      buyout: '/en/pricing/standard/buyout',
+    }
   },
   // {
   //   id: 'professional',
@@ -96,11 +116,17 @@ const PRICING_PLANS: PricingPlan[] = [
         '✓ More organizations',
         '✓ More applications',
         '✓ Bulk license discounts',
-    ]
+    ],
+    links: {
+      monthly: '/en/pricing/enterprise/monthly',
+      yearly: '/en/pricing/enterprise/yearly',
+      buyout: '/en/pricing/enterprise/buyout',
+    }
   }
 ];
 
 const CONTENT = {
+  locale: 'en',
   pricingPlans: PRICING_PLANS,
   title: 'Pricing',
   subtitle: 'JitAi can be deployed on any personal computer or server. Purchase the appropriate license for your deployment needs',
@@ -120,10 +146,26 @@ const CONTENT = {
   includes: 'This includes:',
   specialOffer: 'Special Offer',
   specialOfferDescriptions: [
-    'Each registered development organization receives',
-    '3 desktop licenses',
-    '(valid for 1 month), allowing you to fully experience the powerful features of JitAi!',
+    'Each developer team receives',
+    ' 1 desktop version license for 7 days ',
+    'to fully experience the powerful features of JitAi!',
   ],
+  // Modal related text
+  modal: {
+    title: 'Confirm Purchase Information',
+    teamIdLabel: 'Developer Team ID',
+    teamIdPlaceholder: 'Enter developer team ID',
+    teamIdRequired: 'Developer Team ID is required',
+    teamIdPattern: /^[a-z][a-z0-9]{3,19}$/,
+    teamIdPatternMessage: 'Please enter 4-20 characters of lowercase letters and numbers starting with lowercase letter',
+    teamIdHelpText: 'How to get?',
+    teamIdHelpLink: '/docs/devguide/installation-activation/developer-team-management#view-and-refresh-team-bind-code',
+    teamTitleLabel: 'Developer Team Title',
+    teamTitlePlaceholder: 'Enter developer team title',
+    purchasePlanTitle: 'Purchase Plan',
+    cancelButton: 'Cancel',
+    confirmButton: 'Confirm Purchase',
+  },
 };
 
 export default CONTENT;

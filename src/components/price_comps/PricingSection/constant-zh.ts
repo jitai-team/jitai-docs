@@ -32,7 +32,7 @@ const PRICING_PLANS: PricingPlan[] = [
       '✓ 在线开发',
       '✓ 仅单进程运行',
       '✓ 仅单机运行'
-    ]
+    ],
   },
   {
     id: 'basic',
@@ -49,7 +49,7 @@ const PRICING_PLANS: PricingPlan[] = [
         '✓ 1个应用',
         '✓ 在线开发',
         '✓ 仅单机运行'
-    ]
+    ],
   },
   {
     id: 'standard',
@@ -66,7 +66,7 @@ const PRICING_PLANS: PricingPlan[] = [
         '✓ 10个组织',
         '✓ 5个应用',
         '✓ 可加入集群环境'
-    ]
+    ],
   },
   // {
   //   id: 'professional',
@@ -96,11 +96,12 @@ const PRICING_PLANS: PricingPlan[] = [
         '✓ 更多组织数',
         '✓ 更多应用数',
         '✓ 批量许可证价格优惠',
-    ]
+    ],
   }
 ];
 
 const CONTENT = {
+  locale: 'zh',
   pricingPlans: PRICING_PLANS,
   title: '价格',
   subtitle: 'JitAi可部署在任意个人电脑或服务器上，按需购买对应终端规格的许可证即可',
@@ -109,7 +110,7 @@ const CONTENT = {
   buyout: '一次性买断',
   recommendedBadge: '推荐',
   contactSales: '联系销售',
-  moneyUnit: '¥',
+  moneyUnit: 'US$',
   priceUnit: {
     monthly: '个/月',
     yearly: '个/年',
@@ -120,10 +121,26 @@ const CONTENT = {
   includes: '这包括：',
   specialOffer: '特别优惠',
   specialOfferDescriptions: [
-    '每个开发组织注册即送',
-    '3个桌面版许可证',
-    '（时长均为1个月），让你充分体验JitAi的强大功能！',
+    '每个开发者团队注册即送',
+    '1个7天桌面版许可证',
+    '，充分体验JitAi的强大功能！',
   ],
+  // 弹窗相关文案
+  modal: {
+    title: '确认购买信息',
+    teamIdLabel: '开发者团队ID',
+    teamIdPlaceholder: '请输入开发者团队ID',
+    teamIdRequired: '开发者团队ID为必填项',
+    teamIdPattern: /^[a-z][a-z0-9]{3,19}$/,
+    teamIdPatternMessage: '请输入4-20个字符，以小写字母开头，只能包含小写字母和数字',
+    teamIdHelpText: '如何获取？',
+    teamIdHelpLink: '/docs/devguide/installation-activation/developer-team-management#view-and-refresh-team-bind-code',
+    teamTitleLabel: '开发者团队名称',
+    teamTitlePlaceholder: '请输入开发者团队名称',
+    purchasePlanTitle: '购买方案',
+    cancelButton: '取消',
+    confirmButton: '确认购买',
+  },
 };
 
 export default CONTENT;

@@ -19,12 +19,6 @@ const CONTENT = {
       url: '/download',
     },
     {
-      id: 'blog',
-      label: 'Blog',
-      type: 'currentPage',
-      url: '/blog',
-    },
-    {
       id: 'guide',
       label: 'Docs',
       type: 'newTab',
@@ -35,6 +29,12 @@ const CONTENT = {
       label: 'Community',
       type: 'newTab',
       url: 'https://forum.jit.pro',
+    },
+    {
+      id: 'blog',
+      label: 'Blog',
+      type: 'currentPage',
+      url: '/blog',
     },
   ],
   tryOnlineButton: {

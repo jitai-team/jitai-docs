@@ -29,6 +29,10 @@ export const PAGE_METADATA_ZH: Record<string, PageMetadata> = {
     title: 'macOS 安全提示 - JitAI 安装指南',
     description: 'macOS 系统安全设置指南，帮助您正确安装和运行 JitAI 应用程序。'
   },
+  'blog': {
+    title: '博客',
+    description: '探索AI应用开发的最新趋势，学习实用的技术教程，了解JitAI平台的最新功能和成功案例'
+  },
   
   // V1 pages
   'v1': {

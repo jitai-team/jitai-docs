@@ -1,18 +1,15 @@
-# Next-Gen AI App Development Technology
+# Quickly BuildProduction-Grade AIApps
 
-> JitAI: The world's first interpreted app framework enabling AI agents to perceive and orchestrate systems in real-time, boosting development efficiency by 10x! Experience the new era of intelligent development now.
+> The world's first interpreted app framework enabling AI agents to perceive and orchestrate systems in real-time, boosting development efficiency by 10x!
 
 Website: https://jit.pro
 
-- [Next-Gen AI App Development Technology](https://jit.pro): JitAI: The world's first interpreted app framework enabling AI agents to perceive and orchestrate systems in real-time, boosting development efficiency by 10x! Experience the new era of intelligent de...
-- [Blog | JitAi](https://jit.pro/blog): Blog
-- [docs](https://jit.pro/docs):This page contains introductory tutorials, developer guides, and extension guides for the jitai product, providing users with learning resources to understand its functionality.
-- [Search the documentation](https://jit.pro/search)
-- [Pricing](https://jit.pro/pricing): Choose the JitAI pricing plan that fits your team and enjoy all the features of our enterprise-grade AI development platform. We support pay-as-you-go and customized solutions.
-- [Download](https://jit.pro/download): Download the JitAI desktop version for local development, or choose the server version for production deployment. Supports Windows, Mac, and Docker installation methods.
-- [Extending Guide Index](https://jit.pro/docs/extguide): Why do we need framework extensions?
-- [Developer Guide Index](https://jit.pro/docs/devguide): Ready to experience a revolutionary new way of application development? Start here and learn to build powerful enterprise-grade applications using the cutting-edge technology stack of the AI era.
-- [Tutorial Index](https://jit.pro/docs/tutorial): Welcome to the JitAi Getting Started Tutorial! We provide progressive, practice-oriented step-by-step learning guides to help you quickly master JitAi application development and build powerful AI app...
-- [Appmarket](https://jit.pro/docs/appmarket): - Show all available apps (country/language)
-- [Reference Index](https://jit.pro/docs/reference): JitAi reference documentation provides comprehensive API documentation, configuration instructions, and technical specifications. Developers can query element configuration parameters, method invocati...
-- [Open Source](https://jit.pro/docs/opensource): GitHub Organization
+- [Quickly BuildProduction-Grade AIApps](https://jit.pro): The world's first interpreted app framework enabling AI agents to perceive and orchestrate systems in real-time, boosting development efficiency by 10x!
+- [Blog](https://jit.pro/blog): Explore the latest trends in AI application development, learn practical technical tutorials, and discover the latest features and success stories of the JitAI platform
+- [Download](https://jit.pro/download): Download JitAI desktop edition for local development, or choose server edition for production deployment. Supports Windows, Mac and Docker installation methods.
+- [Tutorial Index](https://jit.pro/docs/tutorial): Welcome to the JitAI Getting Started Tutorial! We provide progressive, practice-oriented step-by-step learning guides to help you quickly master JitAI application development and build powerful AI apps.
+- [Developer Guide Index](https://jit.pro/docs/devguide): Experience a revolutionary approach to application development. Build powerful enterprise-grade applications using cutting-edge AI technology.
+- [Extending Guide Index](https://jit.pro/docs/extguide): JitAI provides a rich set of official development frameworks, enabling you to build solutions tailored to specific needs on the JitAI ecosystem.
+- [Reference Index](https://jit.pro/docs/reference): JitAI reference documentation provides comprehensive API documentation, configuration instructions, and technical specifications. Developers can query element configuration parameters, method invocation interfaces, data structure definitions, and platform protocol specifications to quickly resolve technical issues during development.
+- [Open Source](https://jit.pro/docs/opensource): Explore our open source projects at https://github.com/jitai-team
+

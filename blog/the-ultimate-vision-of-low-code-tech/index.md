@@ -2,7 +2,7 @@
 title: What Is the Ultimate Vision of Low-Code/Visual Development?
 date: 2025/10/23
 authors: []
-tags: [low-code, visual-development, DSL, orchestration, architecture, JAAP, Development Platform, Enterprise Applications]
+tags: [low code, visual development, DSL, orchestration, architecture, JAAP, development platform, enterprise applications]
 description: "Traditional low-code/visual development platforms rely on black-box rule engines, fundamentally limiting application extensibility. They sacrifice expressive power for simplicity, inevitably failing in complex enterprise scenarios. True visual development shouldn't constrain capabilities—it should enable developers to orchestrate system modules and technical capabilities visually, transitioning from closed DSL (Domain Specific Language) engines to open orchestration protocols, from limited expression to unlimited integration."
 keywords: [low-code, visual development, DSL, domain specific language, orchestration architecture, JAAP, development platform, enterprise application development, low-code platform, Meta, Type, Instance]
 ---

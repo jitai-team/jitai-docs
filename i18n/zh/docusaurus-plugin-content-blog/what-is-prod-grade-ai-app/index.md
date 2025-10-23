@@ -3,7 +3,7 @@ slug: what-is-production-grade-ai-app
 title: 生产级AI应用是什么样子?
 date: 2025/10/20
 authors: []
-tags: [production-grade-ai-app]
+tags: [production grade ai app]
 description: "整个行业都在探索企业AI应用的落地形态，但很多尝试都走入了误区。输出结果不能局部调整、与业务系统割裂而独立部署、独立UI不能与人协同、号称通用标品，这些都不是生产级AI应用该有的样子。"
 keywords: [生产级AI应用, 企业AI, AI原生架构, AI协同, AI助理, JAAP, 模块感知, 模块编排, UI协同, 企业知识建模, 局部调整, 定制化开发, 业务流程]
 ---

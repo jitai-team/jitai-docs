@@ -2,7 +2,7 @@
 title: JitAi与Cursor不同的AI Coding新范式
 date: 2025/10/22
 authors: []
-tags: [ai-coding, cursor, jitai, ai-development, low-code, business-applications]
+tags: [ai coding, cursor, jitai, ai development, low code, business applications]
 description: "探索JitAi如何通过高准确度、低门槛和成本效益的创新AI编码方法，解决Cursor等工具在企业业务应用开发中的关键局限性。"
 keywords: [AI编码, Cursor, JitAi, AI开发, 低代码, 可视化开发, 业务应用开发, Meta, Type, Instance, Vibe Coding, FDE, 代码生成, Token优化]
 ---

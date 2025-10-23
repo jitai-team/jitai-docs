@@ -2,7 +2,7 @@
 title: 低代码/可视化技术的最终形态是什么？
 date: 2025/10/23
 authors: []
-tags: [low-code, visual-development, DSL, orchestration, architecture, JAAP, Development Platform, Enterprise Applications]
+tags: [low code, visual development, DSL, orchestration, architecture, JAAP, development platform, enterprise applications]
 description: "传统低代码/可视化开发技术通过黑盒规则引擎运行，这种设计极大制约了应用系统的扩展性。它们用更少的表达能力换取更简单的使用方式，在企业级复杂场景下必然走向失败。真正的可视化开发不应该限制表达能力，而是让开发者用可视化的方式编排各种系统模块和技术能力，从黑盒DSL（Domain Specific Language）引擎转向开放的编排协议，从受限的表达转向无限的可集成性。"
 keywords: [低代码, 可视化开发, DSL, 领域特定语言, 编排架构, JAAP, 开发平台, 企业应用开发, 低代码平台, Meta, Type, Instance]
 ---

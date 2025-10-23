@@ -31,8 +31,8 @@ const PRICING_PLANS: PricingPlan[] = [
     cardType: 'desktopCard',
     features: [
       '✓ Development environment only',
-      '✓ Unlimited organizations',
       '✓ Unlimited applications',
+      '✓ Unlimited organizations',
       '✓ Desktop development',
       '✓ Online development',
       '✓ Single process only',
@@ -55,8 +55,8 @@ const PRICING_PLANS: PricingPlan[] = [
     cardType: 'basicCard',
     features: [
         '✓ For development/testing/production environments',
-        '✓ 2 organizations',
         '✓ 1 application',
+        '✓ 2 organizations',
         '✓ Online development',
         '✓ Single machine only'
     ],
@@ -78,8 +78,8 @@ const PRICING_PLANS: PricingPlan[] = [
     isRecommended: true,
     features: [
         'All Server Basic features, plus',
-        '✓ 10 organizations',
         '✓ 5 applications',
+        '✓ 10 organizations',
         '✓ Cluster environment support'
     ],
     links: {
@@ -99,8 +99,8 @@ const PRICING_PLANS: PricingPlan[] = [
   //   cardType: 'professionalCard',
   //   features: [
   //       'All Server Standard features, plus',
-  //       '✓ 20 organizations',
   //       '✓ 10 applications',
+  //       '✓ 20 organizations',
   //   ]
   // },
   {
@@ -113,8 +113,8 @@ const PRICING_PLANS: PricingPlan[] = [
     buyoutPrice: 'Custom',
     cardType: 'enterpriseCard',
     features: [
-        '✓ More organizations',
         '✓ More applications',
+        '✓ More organizations',
         '✓ Bulk license discounts',
     ],
     links: {

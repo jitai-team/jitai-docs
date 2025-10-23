@@ -47,8 +47,11 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
         });
       }
       
+      // 如果找到匹配项则设置，否则清空激活状态（避免默认高亮首页）
       if (currentItem) {
         setActiveNavItem(currentItem.id);
+      } else {
+        setActiveNavItem('');
       }
     };
 

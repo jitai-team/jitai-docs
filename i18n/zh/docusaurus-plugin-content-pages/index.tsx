@@ -1,20 +1,16 @@
-import React, { useEffect } from 'react';
-import PageLayout from '../../../src/components/PageLayout';
-import HeroSection from '../../../src/components/home_comps/HeroSection';
-import DevOpsSection from '../../../src/components/home_comps/DevOpsSection';
-import IDESection from '../../../src/components/home_comps/IDESection';
-import PlatformSection from '../../../src/components/home_comps/PlatformSection';
-import FrameworkSection from '../../../src/components/home_comps/FrameworkSection';
-import styles from '../../../src/pages/index.module.css';
+import React from 'react';
+import PageLayout from '@site/src/components/PageLayout';
+import HeroSection from '@site/src/components/home_comps/HeroSection';
+import PlatformSection from '@site/src/components/home_comps/PlatformSection';
+import FrameworkSection from '@site/src/components/home_comps/FrameworkSection';
+import IDESection from '@site/src/components/home_comps/IDESection';
+import DevOpsSection from '@site/src/components/home_comps/DevOpsSection';
+import styles from '@site/src/pages/index.module.css';
 
 const HomePage: React.FC = () => {
-  const homeTitle = 'JitAI - 生产级AI应用开发平台';
-  const homeDesc = 'JitAI全球首创解释型应用架构，让AI智能体实时感知与编排系统，开发效率提升10倍！立即体验智能开发新时代。';
-
   return (
     <PageLayout 
-      title={homeTitle} 
-      description={homeDesc}
+      pageId="index"
       containerClassName={styles.container}
     >
       <HeroSection />

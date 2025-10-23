@@ -1,5 +1,5 @@
 import React from 'react';
-import globalStyles from '../../pages/v1_index.module.css';
+import globalStyles from '../../pages/v1.module.css';
 import imageStyles from './image.module.css';
 
 interface ImageComponentProps {

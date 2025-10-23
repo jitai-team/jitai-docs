@@ -3,7 +3,7 @@ sidebar_position: 7
 slug: aggregate-table-model
 ---
 
-# Aggregated Table Model {#aggregate-table-model}
+# Aggregated Table Model
 
 The Aggregated Table Model is an advanced data modeling approach provided by JitAi, specifically designed for handling complex data analysis and statistical scenarios. Unlike [regular data table models](./data-table-model), aggregated table models do not directly correspond to a single table structure in the database. Instead, they flexibly configure, associate, merge, and calculate multiple data table models to ultimately generate virtual data tables that meet specific business requirements.
 

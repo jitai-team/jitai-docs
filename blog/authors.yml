@@ -1,11 +1,35 @@
 liushao:
-  name: iSuperCoder
-  title: Engineer
+  name: Shao Liu
+  title: Technology Expert
   url: https://github.com/iSuperCoder
   image_url: https://avatars.githubusercontent.com/u/12913198?s=400&u=2cf6029c46f4eaa45f7353ce0a6bd5812fb682e2&v=4
   page: true
   socials:
     github: iSuperCoder
+
+hehao:
+  name: Hao He
+  title: CEO
+
+xiaohe:
+  name: XiaoHe Tian
+  title: Technology Expert
+  url: https://github.com/forgxq
+  image_url: https://avatars.githubusercontent.com/u/11289236?s=400&u=2cf6029c46f4eaa45f7353ce0a6bd5812fb682e2&v=4
+  socials:
+    github: forgxq
+
+huaqiao:
+  name: HuaQiao Wu
+  title: Product Expert​
+  url: https://github.com/wuaoo
+  image_url: https://avatars.githubusercontent.com/u/17021118?s=400&u=2cf6029c46f4eaa45f7353ce0a6bd5812fb682e2&v=4
+  socials:
+    github: wuaoo
+
+huanliu:
+  name: Huan Liu
+  title: Marketing Expert​
 
 slorber:
   name: Sébastien Lorber

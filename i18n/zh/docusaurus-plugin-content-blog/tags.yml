@@ -1,0 +1,83 @@
+JitAi:
+  label: JitAi
+  description: JitAi 平台相关主题
+
+'AI Agent':
+  label: AI 智能体
+  description: AI 智能体开发与应用
+
+'AI Native':
+  label: AI 原生
+  description: AI 原生开发理念与实践
+
+'Development Platform':
+  label: 开发平台
+  description: 开发平台技术与工具
+
+MCP:
+  label: MCP
+  description: 模型上下文协议相关主题
+
+production-grade-ai-app:
+  label: 生产级 AI 应用
+  description: 构建生产级 AI 应用
+
+architecture:
+  label: 架构
+  description: 软件架构与设计模式
+
+enterprise-ai:
+  label: 企业 AI
+  description: 企业 AI 应用与解决方案
+
+ai-native-architecture:
+  label: AI 原生架构
+  description: AI 原生应用架构与设计原则
+
+'Application Architecture':
+  label: 应用架构
+  description: 应用架构模式与最佳实践
+
+'Event-Driven':
+  label: 事件驱动
+  description: 事件驱动架构与开发模式
+
+JAAP:
+  label: JAAP
+  description: JitAi AI 应用协议
+
+'Enterprise Applications':
+  label: 企业应用
+  description: 企业应用开发与解决方案
+
+ai-adoption:
+  label: AI 应用落地
+  description: AI 在企业中规模化应用的实践与挑战
+
+development-methodology:
+  label: 开发方法论
+  description: AI 应用开发方法论与最佳实践
+
+ai-coding:
+  label: AI 编码
+  description: AI 驱动的编码工具与技术
+
+cursor:
+  label: Cursor
+  description: Cursor AI 编码助手相关主题
+
+jitai:
+  label: jitai
+  description: JitAi 平台功能与能力
+
+ai-development:
+  label: AI 开发
+  description: AI 应用开发实践与工具
+
+low-code:
+  label: 低代码
+  description: 低代码与可视化开发平台
+
+business-applications:
+  label: 业务应用
+  description: 企业业务应用开发与解决方案

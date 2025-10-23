@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'ignore',
+          onUntruncatedBlogPosts: 'warn',
         },
         theme: {
           customCss: ['./src/css/variables.css', './src/css/custom.css'],
@@ -169,7 +169,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
            position: 'left',
            label: 'Open Source',
          },
-        {to: '/blog', label: 'Blog', position: 'left'},
         //{
         //  type: 'docSidebar',
         //  sidebarId: 'appmarketSidebar',
@@ -179,7 +178,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
          {
            href: 'https://forum.jit.pro',
            position: 'left',
-           label: 'Community',
+           label: 'Forum',
          },
         //GitHub  目前GitHub上没有开源项目，而且当前菜单中有 「开源」菜单，为节省菜单空间，这里先隐藏
         //  {
@@ -188,9 +187,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         //    position: 'right',
         //  },
         {
-          href: 'https://demo.jit.pro',
+          href: 'https://jit.pro/download',
           position: 'left',
-          label: 'Try Online',
+          label: 'Download',
         },
         {
           type: 'search',
@@ -251,7 +250,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
            title: 'Social',
            items: [
             {
-              label: 'Community',
+              label: 'Forum',
               href: 'https://forum.jit.pro',
             },
              {

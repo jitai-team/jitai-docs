@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1.5
 ---
-# Componentized Pages {#componentized-page}
+# Componentized Pages
 
 Pages are the primary interfaces where users interact with application systems, providing data display and interactive operation interfaces. When [creating portals](/docs/devguide/shell-and-page/portal-navigation-design), developers plan the navigation menus for each portal, with each menu item corresponding to both PC and mobile versions of a page. If developers choose to create pages while creating portal menus, the system automatically generates a page that can be found and edited in the element directory tree.
 

@@ -3,7 +3,7 @@ sidebar_position: 4
 slug: integrate-knowledge-base-into-agent
 ---
 
-# 把知识库集成到agent {#integrating-knowledge-base-into-agent}
+# 把知识库集成到agent
 
 知识库作为AI Agent的核心知识支撑，通过检索增强生成（RAG）技术为Agent提供准确、及时的领域知识，显著提升Agent的专业能力和回答质量。
 

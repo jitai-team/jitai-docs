@@ -3,7 +3,7 @@ sidebar_position: 1
 slug: file-storage
 ---
 
-# Configuring Your Own File Storage Service {#configuring-your-own-file-storage-service}
+# Configuring Your Own File Storage Service
 
 File upload and usage is a core functionality of web applications, widely used in scenarios such as attachment uploads, avatar management, and image previews. JitAi provides developers with a comprehensive file storage solution, supporting 7 storage methods: alioss, EOS, MinIO, Qiniu Cloud, AWS S3, Cloudflare R2, and disk storage.
 

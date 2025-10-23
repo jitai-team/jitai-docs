@@ -48,7 +48,6 @@ const PRICING_PLANS: PricingPlan[] = [
         '✓ 2 organizations',
         '✓ 1 application',
         '✓ Online development',
-        '✓ Single process only',
         '✓ Single machine only'
     ]
   },
@@ -69,21 +68,21 @@ const PRICING_PLANS: PricingPlan[] = [
         '✓ Cluster environment support'
     ]
   },
-  {
-    id: 'professional',
-    title: 'Server Pro License',
-    subtitle: 'First Choice for Large Enterprises',
-    icon: '💎',
-    monthlyPrice: '2000',
-    yearlyPrice: '20,000',
-    buyoutPrice: '100,000',
-    cardType: 'professionalCard',
-    features: [
-        'All Server Standard features, plus',
-        '✓ 20 organizations',
-        '✓ 10 applications',
-    ]
-  },
+  // {
+  //   id: 'professional',
+  //   title: 'Server Pro License',
+  //   subtitle: 'First Choice for Large Enterprises',
+  //   icon: '💎',
+  //   monthlyPrice: '2000',
+  //   yearlyPrice: '20,000',
+  //   buyoutPrice: '100,000',
+  //   cardType: 'professionalCard',
+  //   features: [
+  //       'All Server Standard features, plus',
+  //       '✓ 20 organizations',
+  //       '✓ 10 applications',
+  //   ]
+  // },
   {
     id: 'enterprise',
     title: 'Custom Package',

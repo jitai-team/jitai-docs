@@ -20,30 +20,35 @@ const CONTENT = {
       url: '/zh/download',
     },
     {
-      id: 'blog',
-      label: '博客',
-      type: 'currentPage',
-      url: '/zh/blog',
-    },
-    {
       id: 'guide',
       label: '文档',
       type: 'newTab',
       url: '/zh/docs/tutorial',
     },
     {
-      id: 'community',
-      label: '社区',
+      id: 'forum',
+      label: '论坛',
       type: 'newTab',
       url: 'https://forum.jit.pro',
+    },
+    {
+      id: 'blog',
+      label: '博客',
+      type: 'currentPage',
+      url: '/zh/blog',
     },
   ],
   tryOnlineButton: {
     id: 'try-online',
     label: '在线试用',
-    type: 'button',
-    isNewTab: true,
+    type: 'newTab',
     url: 'https://demo.jit.pro',
+  },
+  downloadButton: {
+    id: 'download',
+    label: '立即下载',
+    type: 'currentPage',
+    url: '/zh/download',
   }
 };
 

@@ -1,0 +1,63 @@
+/* MacSecurityPage 样式 - 遵循统一设计规范 */
+
+/* ===== 页面内容样式 ===== */
+.pageContent {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: var(--section-padding);
+}
+
+.pageHeader {
+  text-align: center;
+  margin-bottom: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+.pageTitle {
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-secondary);
+  margin-bottom: var(--space-6);
+  line-height: var(--page-title-line-height) !important;
+}
+
+.pageBody {
+  padding: 0 var(--space-8);
+  flex: 1;
+}
+
+.pageText {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin: 0 0 var(--space-8) 0;
+  text-align: center;
+}
+
+.pageImage {
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .pageHeader {
+    padding: var(--space-6) var(--space-6) var(--space-4);
+  }
+  
+  .pageTitle {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .pageBody {
+    padding: var(--space-6);
+  }
+  
+  .pageText {
+    font-size: var(--font-size-base);
+  }
+}

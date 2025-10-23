@@ -359,6 +359,12 @@
   line-height: var(--line-height-normal);
 }
 
+/* ===== 代码块容器 ===== */
+.codeContainer {
+  position: relative;
+  width: 100%;
+}
+
 /* ===== 代码块 ===== */
 .codeBlock {
   background: var(--color-gray-900);
@@ -373,7 +379,7 @@
 .codeContent {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: var(--space-4);
   margin: 0;
   overflow-x: auto;
@@ -408,7 +414,6 @@
   white-space: pre-wrap;
   word-break: break-all;
   flex: 1;
-  margin-right: var(--space-4);
   padding: 0;
 }
 
@@ -421,6 +426,15 @@
   background: var(--color-gray-800);
   border-bottom: 1px solid var(--color-gray-700);
   border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+}
+
+/* ===== 代码块操作按钮 ===== */
+.codeActions {
+  display: flex;
+  align-items: center;
+  /* justify-content: flex-end; */
+  margin-top: var(--space-3);
+  padding: 0;
 }
 
 /* ===== 分段控制器 ===== */
@@ -442,7 +456,7 @@
   font-weight: var(--font-weight-medium);
   color: var(--color-gray-400);
   cursor: pointer;
-  transition: all var(--transition-fast);
+  transition: none;
   border-radius: calc(var(--border-radius-sm) - 1px);
   font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
   min-width: 60px;
@@ -454,21 +468,22 @@
 
 .segmentButton:hover {
   color: var(--color-gray-200);
-  background: rgba(255, 255, 255, 0.05);
+  /* background: rgba(255, 255, 255, 0.05); */
+  transition: none;
 }
 
 .segmentActive {
   background: var(--color-primary);
   color: var(--color-white);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  transform: translateY(-0.5px);
+  /* transform: translateY(-0.5px); */
 }
 
-.segmentActive:hover {
+/* .segmentActive:hover {
   background: var(--color-secondary);
   color: var(--color-white);
-  transform: translateY(-0.5px);
-}
+  transition: none;
+} */
 
 /* 添加分隔线效果 */
 .segmentButton:not(:last-child)::after {
@@ -490,19 +505,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-2) var(--space-4);
+  padding: var(--space-3) var(--space-5);
   background: var(--color-primary);
   color: var(--color-white);
   text-decoration: none;
-  border-radius: var(--border-radius-sm);
-  font-weight: var(--font-weight-medium);
+  border-radius: var(--border-radius-button);
+  font-weight: var(--font-weight-semibold);
   transition: var(--transition-primary);
+  box-shadow: var(--shadow-md);
+  font-size: var(--font-size-base);
+  border: none;
+  cursor: pointer;
   position: relative;
   overflow: hidden;
-  cursor: pointer;
-  font-size: var(--font-size-xs);
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-  border: none;
 }
 
 .copyButton::before {
@@ -525,151 +540,6 @@
   color: var(--color-white);
   text-decoration: none;
 }
-
-/* ===== 弹窗样式 ===== */
-       .modalOverlay {
-         position: fixed;
-         top: 0;
-         left: 0;
-         right: 0;
-         bottom: 0;
-         background: rgba(0, 0, 0, 0.8);
-         display: flex;
-         align-items: center;
-         justify-content: center;
-         z-index: 1000;
-         padding: var(--space-4);
-       }
-
-       .modalContent {
-         background: var(--bg-card);
-         border-radius: var(--border-radius-lg);
-         box-shadow: var(--shadow-xl);
-         width: 90%;
-         max-width: none;
-         height: 90vh;
-         display: flex;
-         flex-direction: column;
-         animation: modalSlideIn 0.3s ease-out;
-       }
-
-@keyframes modalSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px) scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-       .modalHeader {
-         display: flex;
-         align-items: center;
-         justify-content: space-between;
-         padding: var(--space-6) var(--space-6) var(--space-4);
-         border-bottom: 1px solid var(--border-color-light);
-         flex-shrink: 0;
-       }
-
-.modalTitle {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--text-primary);
-  margin: 0;
-}
-
-.modalClose {
-  background: none;
-  border: none;
-  font-size: var(--font-size-2xl);
-  color: var(--text-secondary);
-  cursor: pointer;
-  padding: var(--space-1);
-  line-height: 1;
-  transition: var(--transition-fast);
-}
-
-.modalClose:hover {
-  color: var(--text-primary);
-}
-
-       .modalBody {
-         padding: var(--space-6);
-         flex: 1;
-         overflow-y: auto;
-         min-height: 0;
-       }
-
-.modalImage {
-  text-align: center;
-  margin-bottom: var(--space-4);
-}
-
-.securityImage {
-  max-width: 100%;
-  height: auto;
-  border-radius: var(--border-radius-md);
-  box-shadow: var(--shadow-md);
-}
-
-       .modalText {
-         font-size: var(--font-size-base);
-         color: var(--text-secondary);
-         line-height: var(--line-height-relaxed);
-         margin: 0 0 var(--space-6) 0;
-       }
-
-       .modalFooter {
-         padding: var(--space-4) var(--space-6) var(--space-6);
-         text-align: center;
-         flex-shrink: 0;
-         border-top: 1px solid var(--border-color-light);
-       }
-
-.modalButton {
-  background: var(--color-primary);
-  color: var(--color-white);
-  border: none;
-  padding: var(--space-3) var(--space-6);
-  border-radius: var(--border-radius-md);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-semibold);
-  cursor: pointer;
-  transition: var(--transition-fast);
-}
-
-.modalButton:hover {
-  background: var(--color-secondary);
-}
-
-/* 响应式设计 */
-@media (max-width: 768px) {
-  .modalContent {
-    margin: var(--space-4);
-    width: 90%;
-    height: 90vh;
-    max-width: none;
-  }
-  
-  .modalHeader {
-    padding: var(--space-4);
-  }
-  
-  .modalBody {
-    padding: var(--space-4);
-  }
-  
-  .modalFooter {
-    padding: var(--space-4);
-  }
-  
-  .modalTitle {
-    font-size: var(--font-size-lg);
-  }
-}
-
 
 /* ===== 帮助链接 ===== */
 .helpLink {
@@ -749,8 +619,6 @@
   }
   
   .codeContent {
-    /* flex-direction: column;
-    align-items: stretch; */
     padding: var(--space-3);
   }
   
@@ -759,8 +627,12 @@
   }
   
   .codeContent code {
-    margin-right: 0;
     text-align: left;
+  }
+  
+  .codeActions {
+    justify-content: center;
+    margin-top: var(--space-2);
   }
   
   .codeHeader {

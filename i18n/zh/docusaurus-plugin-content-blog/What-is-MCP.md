@@ -11,7 +11,7 @@ tags: [MCP]
 
   
 在当今快速演进的 AI 时代，大语言模型（LLM）展现了惊人的能力，但它们往往是彼此孤立的“智能孤岛”，无法直接访问我们的文件系统、数据库或 API 服务。Model Context Protocol（模型上下文协议，简称 MCP）的出现正是为了解决这一核心问题。
-
+<!--truncate-->
 ## 什么是 MCP？——AI 世界的“通用接口标准”
 
 **Model Context Protocol（MCP）由 Anthropic 于 2024 年 11 月推出，是一种开放协议**，旨在标准化大模型与外部工具或数据源之间的交互接口。  

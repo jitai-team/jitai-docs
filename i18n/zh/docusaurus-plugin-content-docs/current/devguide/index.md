@@ -1229,6 +1229,23 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   ]} />
 </IndexCard>
 
+<!-- <IndexCard
+  title="将AI助手嵌入到外部网页中"
+  href="devguide/ai-assistant/embed-assistant-to-web-page"
+  description="将AI助手集成到任何网页中，实现深度双向交互能力。"
+>
+  <LinkGrid links={[
+    { text: "核心优势", href: "devguide/ai-assistant/embed-assistant-to-web-page#core-advantages" },
+    { text: "集成流程", href: "devguide/ai-assistant/embed-assistant-to-web-page#integration-process" },
+    { text: "创建可嵌入的AI助手页面", href: "devguide/ai-assistant/embed-assistant-to-web-page#creating-embeded-ai-assistant-page" },
+    { text: "嵌入到外部网页", href: "devguide/ai-assistant/embed-assistant-to-web-page#how-to-embeded-to-a-web-page" },
+    { text: "AI调用网页函数", href: "devguide/ai-assistant/embed-assistant-to-web-page#how-to-call-page-functions" },
+    { text: "网页订阅AI事件", href: "devguide/ai-assistant/embed-assistant-to-web-page#subscribe-ai-events" },
+    { text: "网页向AI发送消息", href: "devguide/ai-assistant/embed-assistant-to-web-page#send-message-to-ai" },
+    { text: "JS SDK API参考", href: "devguide/ai-assistant/embed-assistant-to-web-page#js-sdk" }
+  ]} />
+</IndexCard> -->
+
 <IndexCard
   title="AI助理的API开放"
   href="devguide/ai-assistant/ai-assistant-api-exposure"

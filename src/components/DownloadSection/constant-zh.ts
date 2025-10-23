@@ -18,12 +18,7 @@ export interface DownloadContent {
       intelDownloadText: string;
       appleDownloadUrl: string;
       appleDownloadText: string;
-      securityModal: {
-        title: string;
-        content: string;
-        imageUrl: string;
-        confirmText: string;
-      };
+      macSecurityUrl: string;
     };
   };
   server: {
@@ -61,12 +56,7 @@ const CONTENT: DownloadContent = {
       intelDownloadText: 'Intel芯片安装包',
       appleDownloadUrl: 'https://apk.jit.pro/latest/darwin/arm/jit.dmg',
       appleDownloadText: 'Apple芯片安装包',
-      securityModal: {
-        title: 'macOS 安全提示',
-        content: '如果 macOS 显示安全警告，请点击"完成"，然后前往系统设置 → 隐私与安全性 → 安全性，将"允许从以下位置下载的应用"设置为"App Store 和被认可的开发者"，然后点击"仍要打开"。',
-        imageUrl: '/img/openanyway_zh.gif',
-        confirmText: '我知道了'
-      }
+      macSecurityUrl: '/zh/download/mac-security'
     }
   },
   

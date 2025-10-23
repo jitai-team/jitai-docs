@@ -3,12 +3,31 @@ import styles from './styles.module.css';
 import LanguageSwitcher from '../LanguageSwitcher';
 import CONTENT_EN from './constant-en';
 import CONTENT_ZH from './constant-zh';
+import { PAGE_METADATA_EN } from '../page-metadata-en';
+import { PAGE_METADATA_ZH } from '../page-metadata-zh';
 
 interface NavbarProps {
   currentLocale?: string;
+  pageId?: string;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
+// 导出获取页面元数据的函数，供其他组件使用
+export const usePageMetadata = (pageId: string, currentLocale?: string) => {
+  const metadata = currentLocale === 'zh' ? PAGE_METADATA_ZH : PAGE_METADATA_EN;
+  
+  // 如果找不到对应的页面元数据，返回默认值
+  if (!metadata[pageId]) {
+    console.warn(`Page metadata not found for pageId: ${pageId}, locale: ${currentLocale}`);
+    return {
+      title: 'JitAI',
+      description: 'JitAI - AI Development Platform'
+    };
+  }
+  
+  return metadata[pageId];
+};
+
+const Navbar: React.FC<NavbarProps> = ({ currentLocale, pageId }) => {
   const [scrolled, setScrolled] = useState(false);
   const [activeNavItem, setActiveNavItem] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -98,7 +117,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
         {/* Logo 和导航菜单在左侧 */}
         <div className={styles.leftSection}>
           <div className={styles.logo} onClick={() => handleNavClick(CONTENT.navItems[0])}>
-            <img src="/img/jit.png" alt="JitAI" />
+            <img src="https://jit-www.oss-cn-beijing.aliyuncs.com/logo/logo_title.png" alt="JitAI" />
           </div>
 
           {/* 桌面端导航 */}
@@ -120,7 +139,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
           </div>
         </div>
 
-        {/* 右侧区域：语言切换器和 Try Online 按钮 */}
+        {/* 右侧区域：语言切换器、Download 按钮和 Try Online 按钮 */}
         <div className={styles.rightSection}>
           <LanguageSwitcher className={styles.languageSwitcher} />
           <button
@@ -129,6 +148,13 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
             data-type={CONTENT.tryOnlineButton.type}
           >
             {CONTENT.tryOnlineButton.label}
+          </button>
+          <button
+            className={styles.downloadButton}
+            onClick={() => handleNavClick(CONTENT.downloadButton)}
+            data-type={CONTENT.downloadButton.type}
+          >
+            {CONTENT.downloadButton.label}
           </button>
         </div>
 

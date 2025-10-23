@@ -3,7 +3,7 @@ sidebar_position: 8
 slug: extended-table-model
 ---
 
-# Extension Table Model {#extension-table-model}
+# Extension Table Model
 
 The extension table model is a data modeling approach that enables business field extension and multi-table data integration through flexible associations with other data tables, without modifying the original base table structure.
 

@@ -19,30 +19,35 @@ const CONTENT = {
       url: '/download',
     },
     {
-      id: 'blog',
-      label: 'Blog',
-      type: 'currentPage',
-      url: '/blog',
-    },
-    {
       id: 'guide',
       label: 'Docs',
       type: 'newTab',
       url: '/docs/tutorial',
     },
     {
-      id: 'community',
-      label: 'Community',
+      id: 'forum',
+      label: 'Forum',
       type: 'newTab',
       url: 'https://forum.jit.pro',
+    },
+    {
+      id: 'blog',
+      label: 'Blog',
+      type: 'currentPage',
+      url: '/blog',
     },
   ],
   tryOnlineButton: {
     id: 'try-online',
     label: 'Try Online',
-    type: 'button',
-    isNewTab: true,
+    type: 'newTab',
     url: 'https://demo.jit.pro',
+  },
+  downloadButton: {
+    id: 'download',
+    label: 'Download',
+    type: 'currentPage',
+    url: '/download',
   }
 };
 

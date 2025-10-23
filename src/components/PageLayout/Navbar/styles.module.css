@@ -232,7 +232,7 @@
   border: none;
 }
 
-.navLinks button[data-type="newTab"]::after {
+/* .navLinks button[data-type="newTab"]::after {
   content: '↗';
   font-size: 0.8rem;
   opacity: 0.7;
@@ -242,7 +242,7 @@
 .navLinks button[data-type="newTab"]:hover::after {
   opacity: 1;
   transform: translateX(2px) translateY(-2px);
-}
+} */
 
 .navLinks button:active {
   transform: translateY(0) scale(0.98);

@@ -20,12 +20,6 @@ const CONTENT = {
       url: '/zh/download',
     },
     {
-      id: 'blog',
-      label: '博客',
-      type: 'currentPage',
-      url: '/zh/blog',
-    },
-    {
       id: 'guide',
       label: '文档',
       type: 'newTab',
@@ -36,6 +30,12 @@ const CONTENT = {
       label: '社区',
       type: 'newTab',
       url: 'https://forum.jit.pro',
+    },
+    {
+      id: 'blog',
+      label: '博客',
+      type: 'currentPage',
+      url: '/zh/blog',
     },
   ],
   tryOnlineButton: {

@@ -116,7 +116,7 @@
 /* ===== 价格卡片网格 ===== */
 .pricingCards {
   display: grid;
-  grid-template-columns: repeat(5, minmax(240px, 1fr));
+  grid-template-columns: repeat(4, minmax(240px, 1fr));
   gap: var(--space-5);
   margin-bottom: var(--space-16);
   transition-delay: 0.2s;

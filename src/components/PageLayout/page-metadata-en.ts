@@ -29,6 +29,10 @@ export const PAGE_METADATA_EN: Record<string, PageMetadata> = {
     title: 'macOS Security Notice - JitAI Installation Guide',
     description: 'macOS system security settings guide to help you properly install and run JitAI applications.'
   },
+  'blog': {
+    title: 'Blog',
+    description: 'Explore the latest trends in AI application development, learn practical technical tutorials, and discover the latest features and success stories of the JitAI platform'
+  },
   
   // V1 pages
   'v1': {

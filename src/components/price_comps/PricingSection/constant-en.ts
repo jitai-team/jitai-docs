@@ -1,3 +1,4 @@
+
 // 价格页面常量配置
 export interface PricingPlan {
   id: string;
@@ -10,11 +11,6 @@ export interface PricingPlan {
   features: string[];
   isRecommended?: boolean;
   cardType: string;
-  links?: {
-    monthly: string;
-    yearly: string;
-    buyout: string;
-  };
 }
 
 
@@ -38,11 +34,6 @@ const PRICING_PLANS: PricingPlan[] = [
       '✓ Single process only',
       '✓ Single machine only'
     ],
-    links: {
-      monthly: 'https://buy.stripe.com/test_14AeVd6zCcjr7ci2dSebu01',
-      yearly: '/en/pricing/desktop/yearly',
-      buyout: '/en/pricing/desktop/buyout',
-    }
   },
   {
     id: 'basic',
@@ -60,11 +51,6 @@ const PRICING_PLANS: PricingPlan[] = [
         '✓ Online development',
         '✓ Single machine only'
     ],
-    links: {
-      monthly: '/en/pricing/basic/monthly',
-      yearly: '/en/pricing/basic/yearly',
-      buyout: '/en/pricing/basic/buyout',
-    }
   },
   {
     id: 'standard',
@@ -82,11 +68,6 @@ const PRICING_PLANS: PricingPlan[] = [
         '✓ 10 organizations',
         '✓ Cluster environment support'
     ],
-    links: {
-      monthly: '/en/pricing/standard/monthly',
-      yearly: '/en/pricing/standard/yearly',
-      buyout: '/en/pricing/standard/buyout',
-    }
   },
   // {
   //   id: 'professional',
@@ -117,11 +98,6 @@ const PRICING_PLANS: PricingPlan[] = [
         '✓ More organizations',
         '✓ Bulk license discounts',
     ],
-    links: {
-      monthly: '/en/pricing/enterprise/monthly',
-      yearly: '/en/pricing/enterprise/yearly',
-      buyout: '/en/pricing/enterprise/buyout',
-    }
   }
 ];
 

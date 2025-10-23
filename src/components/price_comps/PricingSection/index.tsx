@@ -3,6 +3,7 @@ import styles from './styles.module.css';
 import globalStyles from '../../../pages/index.module.css';
 import CONTENT_EN from './constant-en';
 import CONTENT_ZH from './constant-zh';
+import { STRIPE_LINKS } from './constant-common';
 
 interface PricingSectionProps {
   currentLocale?: string;
@@ -73,7 +74,6 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
     setScrollPosition(currentScrollY);
     document.body.style.top = `-${currentScrollY}px`;
     document.body.classList.add('modal-open');
-    console.log('Modal opened, scroll position saved:', currentScrollY);
   };
 
   // 处理弹窗确认
@@ -93,10 +93,11 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
     setTeamIdError('');
     
     // 构建带参数的链接
-    const link = selectedPlan.links?.[activeTab];
+    const link = STRIPE_LINKS[selectedPlan.id][activeTab];
     if (link) {
       const url = new URL(link, window.location.origin);
       url.searchParams.set('client_reference_id', teamId.trim());
+      url.searchParams.set('locale', CONTENT.locale);
       window.open(url.toString(), '_blank');
     }
     
@@ -104,7 +105,6 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
     document.body.classList.remove('modal-open');
     document.body.style.top = '';
     window.scrollTo(0, scrollPosition);
-    console.log('Modal closed, scroll position restored:', scrollPosition);
   };
 
   // 处理弹窗取消
@@ -114,7 +114,6 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
     document.body.classList.remove('modal-open');
     document.body.style.top = '';
     window.scrollTo(0, scrollPosition);
-    console.log('Modal cancelled, scroll position restored:', scrollPosition);
   };
 
   return (

@@ -10,11 +10,6 @@ export interface PricingPlan {
   features: string[];
   isRecommended?: boolean;
   cardType: string;
-  links?: {
-    monthly: string;
-    yearly: string;
-    buyout: string;
-  };
 }
 
 
@@ -38,11 +33,6 @@ const PRICING_PLANS: PricingPlan[] = [
       '✓ 仅单进程运行',
       '✓ 仅单机运行'
     ],
-    links: {
-      monthly: 'https://buy.stripe.com/test_dRm7sLe24dnv0NU6u8ebu00',
-      yearly: '/zh/pricing/desktop/yearly',
-      buyout: '/zh/pricing/desktop/buyout',
-    }
   },
   {
     id: 'basic',
@@ -60,11 +50,6 @@ const PRICING_PLANS: PricingPlan[] = [
         '✓ 在线开发',
         '✓ 仅单机运行'
     ],
-    links: {
-      monthly: '/zh/pricing/basic/monthly',
-      yearly: '/zh/pricing/basic/yearly',
-      buyout: '/zh/pricing/basic/buyout',
-    }
   },
   {
     id: 'standard',
@@ -82,11 +67,6 @@ const PRICING_PLANS: PricingPlan[] = [
         '✓ 5个应用',
         '✓ 可加入集群环境'
     ],
-    links: {
-      monthly: '/zh/pricing/standard/monthly',
-      yearly: '/zh/pricing/standard/yearly',
-      buyout: '/zh/pricing/standard/buyout',
-    }
   },
   // {
   //   id: 'professional',
@@ -117,11 +97,6 @@ const PRICING_PLANS: PricingPlan[] = [
         '✓ 更多应用数',
         '✓ 批量许可证价格优惠',
     ],
-    links: {
-      monthly: '/zh/pricing/enterprise/monthly',
-      yearly: '/zh/pricing/enterprise/yearly',
-      buyout: '/zh/pricing/enterprise/buyout',
-    }
   }
 ];
 

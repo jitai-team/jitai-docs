@@ -22,6 +22,7 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
   const [teamTitle, setTeamTitle] = useState('');
   const [teamIdError, setTeamIdError] = useState('');
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [showComingSoonModal, setShowComingSoonModal] = useState(false);
 
   // 解析URL参数
   useEffect(() => {
@@ -59,7 +60,8 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
   // 处理支付按钮点击
   const handlePaymentClick = (plan: any) => {
     if (plan.id === 'enterprise') {
-      // 企业版联系销售，可以跳转到联系页面或显示联系方式
+      // 企业版：显示即将支持提示
+      setShowComingSoonModal(true);
       return;
     }
     
@@ -317,6 +319,43 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
                   onClick={handleModalConfirm}
                 >
                   {CONTENT.modal.confirmButton}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* 即将支持提示弹窗 */}
+        {showComingSoonModal && (
+          <div className={styles.modalOverlay} onClick={() => setShowComingSoonModal(false)}>
+            <div className={styles.modalContent} style={{ maxWidth: '400px' }} onClick={(e) => e.stopPropagation()}>
+              <div className={styles.modalHeader}>
+                <h3 className={styles.modalTitle}>
+                  {currentLocale === 'zh' ? '即将支持' : 'Coming Soon'}
+                </h3>
+                <button 
+                  className={styles.modalClose}
+                  onClick={() => setShowComingSoonModal(false)}
+                >
+                  ×
+                </button>
+              </div>
+              
+              <div className={styles.modalBody}>
+                <p style={{ textAlign: 'center', fontSize: '16px', color: '#666', margin: '20px 0' }}>
+                  {currentLocale === 'zh' 
+                    ? '即将上线，敬请期待！' 
+                    : 'Feature will be available soon. Stay tuned!'}
+                </p>
+              </div>
+              
+              <div className={styles.modalFooter}>
+                <button 
+                  className={styles.modalButtonConfirm}
+                  onClick={() => setShowComingSoonModal(false)}
+                  style={{ width: '100%' }}
+                >
+                  {currentLocale === 'zh' ? '知道了' : 'Got it'}
                 </button>
               </div>
             </div>

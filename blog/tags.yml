@@ -103,12 +103,28 @@ business-applications:
   permalink: /business-applications
   description: Enterprise business application development and solutions
 
-forward deployed engineer
+'forward deployed engineer':
   label: Forward-Deployed-Engineer
   permalink: /forward deployed engineer
   description: Engineers who work directly with clients to deploy and tailor complex software solutions in real-world environments.
 
-low code:
+'low code':
   label: Low Code
   permalink: /Low-Code
   description: A visual development approach that minimizes hand-coding, enabling faster application creation through drag-and-drop components.
+ 
+visual-development:
+  label: Visual Development
+  permalink: /visual-development
+  description: Visual development tools and technologies
+
+DSL:
+  label: DSL
+  permalink: /dsl
+  description: Domain Specific Language
+
+orchestration:
+  label: Orchestration
+  permalink: /orchestration
+  description: Orchestration-oriented system architecture and development patterns
+

@@ -82,10 +82,23 @@ business-applications:
   label: 业务应用
   description: 企业业务应用开发与解决方案
 
-forward deployed engineer:
+'forward deployed engineer':
   label: 前沿部署工程师
   description: 直接与客户合作，在真实业务环境中部署和定制复杂软件解决方案的工程师
 
-low code:
+'low code':
   label: 低代码
   description: 一种以可视化拖拽为主、减少手写代码的开发方式，帮助更快速地构建应用
+
+visual-development:
+  label: 可视化开发
+  description: 可视化开发工具与技术
+
+DSL:
+  label: DSL
+  description: 领域特定语言（Domain Specific Language）
+
+orchestration:
+  label: 编排架构
+  description: 面向编排的系统架构与开发模式
+

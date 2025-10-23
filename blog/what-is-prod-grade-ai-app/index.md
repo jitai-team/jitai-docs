@@ -4,6 +4,7 @@ date: 2025/10/20
 authors: []
 tags: [production-grade-ai-app, enterprise-ai, ai-native-architecture]
 description: "The industry is exploring how to deploy enterprise AI applications, but many attempts have gone astray. Inability to make partial adjustments to outputs, deployment isolated from business systems, standalone UIs that can't collaborate with humans, and claims of being universal products—none of these represent what production-grade AI applications should be."
+keywords: [production-grade AI, enterprise AI, AI native architecture, AI collaboration, AI assistant, JAAP, module perception, module orchestration, UI collaboration, enterprise knowledge modeling, partial adjustments, custom development, business workflows]
 ---
 
 # What is Production-Grade AI Application?

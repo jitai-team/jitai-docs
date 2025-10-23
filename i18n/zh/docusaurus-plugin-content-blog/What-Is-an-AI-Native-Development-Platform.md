@@ -4,8 +4,9 @@ authors: []
 date: 2025/9/15
 tags: [AI Native, Development Platform]
 image: https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/YdgOk2b4aeB12q4B/img/a572437b-216d-4d6a-86cf-22b6eb57160d.png
-description: "在当今人人都在拥抱 AI 的软件开发时代，你自己写的代码有多少？AI 生成的代码又占了多少？在这个不断发展的环境中，每一位软件工程师很快都将不得不成为 AI 原生开发者。
-但我们是否需要手动调试和适配每一行 AI 生成的代码——无论是在嵌入式 AI 场景还是环境编程中？是否存在一种开发方式可以真正简化这一过程？也许 AI 原生开发平台 能为我们提供答案。"
+description: "在当今人人都在拥抱 AI 的软件开发时代，你自己写的代码有多少？AI 生成的代码又占了多少？在这个不断发展的环境中，每一位软件工程师很快都将不得不成为 AI 原生开发者。
+但我们是否需要手动调试和适配每一行 AI 生成的代码——无论是在嵌入式 AI 场景还是环境编程中？是否存在一种开发方式可以真正简化这一过程？也许 AI 原生开发平台 能为我们提供答案。"
+keywords: [AI原生, AI原生开发平台, 开发平台, JitAi, JAAP, 嵌入式AI, 智能设计师, 可解释性, 持续学习, 自适应界面, 人机协作, 低代码, 全代码, AI代码生成]
 ---
 
 ![banner.png](https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/YdgOk2b4aeB12q4B/img/a572437b-216d-4d6a-86cf-22b6eb57160d.png)

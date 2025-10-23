@@ -4,6 +4,7 @@ date: 2025/10/21
 authors: []
 tags: [AI Native, Application Architecture, Event-Driven, JAAP, Enterprise Applications]
 description: "AI原生的应用架构不仅要解决AI模块怎么设计和集成的问题，而且要解决传统技术模块怎样被AI模块感知、驱动、编排的问题。企图在旧的事件驱动应用架构中集成AI能力就好比在牛车上使用内燃机，愚蠢低效。传统的ERP、CRM、OA等企业应用必将被新的AI原生应用架构以及开发范式所重塑。"
+keywords: [AI原生, AI原生架构, 应用架构, 事件驱动, JAAP, 企业应用, Meta, Type, Instance, 模块化架构, 智能体驱动, 自描述模块, 热加载, ERP, CRM, OA]
 ---
 # AI原生应用架构是什么样子
 

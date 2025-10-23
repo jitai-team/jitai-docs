@@ -14,9 +14,11 @@ A **Forward Deployed Engineer (FDE)** is a software engineer who works
 
 The title originated at **Palantir**, a company renowned for embedding engineers within client teams to ensure successful software adoption. The concept has since spread across the AI and enterprise software ecosystem, especially among companies developing AI-powered automation and low-code development platforms.
 
+<!--truncate-->
+
 > In essence, **FDEs don’t just write code**—they engineer impact.
 
-![Products of Palantir](/blog/forward-deployed-engineer-ai-enterprise/Products%20of%20Palantir.png)
+![Products of Palantir](Products-of-Palantir.png)
 
 
 ## The Rise of the Forward Deployed Engineer Role
@@ -27,7 +29,7 @@ This is precisely where FDEs thrive. By combining software engineering�
 
 Moreover, the*global AI software market, projected to exceed $900 billion by 2030 (Statista, 2024), is driving demand for professionals capable of bridging the “last mile” between AI platforms and production environments.
 
-![Palantir](/blog/forward-deployed-engineer-ai-enterprise/Palantir.png)
+![Palantir](Palantir.png)
 
 
 
@@ -35,7 +37,7 @@ Moreover, the*global AI software market, projected to exceed $900 billi
 
 A successful Forward Deployed Engineer is part developer, part consultant, and part strategist. Their work typically involves:
 
-![software engineer works with customer](/blog/forward-deployed-engineer-ai-enterprise/software%20engineer%20works%20with%20customer.jpg)
+![software engineer works with customer](software-engineer-works-with-customer.jpg)
 
 ### 1. Solution Deployment
 

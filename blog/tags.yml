@@ -72,3 +72,13 @@ development-methodology:
   label: Development Methodology
   permalink: /development-methodology
   description: AI application development methodologies and best practices
+
+forward deployed engineer
+  label: Forward-Deployed-Engineer
+  permalink: /forward deployed engineer
+  description: Engineers who work directly with clients to deploy and tailor complex software solutions in real-world environments.
+
+low code:
+  label: Low Code
+  permalink: /Low-Code
+  description: A visual development approach that minimizes hand-coding, enabling faster application creation through drag-and-drop components.

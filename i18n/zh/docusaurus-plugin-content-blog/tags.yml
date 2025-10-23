@@ -57,3 +57,11 @@ ai-adoption:
 development-methodology:
   label: 开发方法论
   description: AI 应用开发方法论与最佳实践
+
+forward deployed engineer:
+  label: 前沿部署工程师
+  description: 直接与客户合作，在真实业务环境中部署和定制复杂软件解决方案的工程师
+
+low code:
+  label: 低代码
+  description: 一种以可视化拖拽为主、减少手写代码的开发方式，帮助更快速地构建应用

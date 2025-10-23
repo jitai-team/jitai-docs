@@ -8,13 +8,15 @@ description: "了解前沿部署工程师 (FDE) 在人工智能企业转型中�
 
 在当今技术快速演进的时代，企业对能将前沿AI技术转化为可落地、可扩展业务系统的工程师需求急剧上升。这个角色有一个特定的名字——**Forward Deployed Engineer（前沿部署工程师，简称FDE）**。他们是连接AI创新与现实应用的桥梁，既懂技术又懂业务，是推动AI从实验室走向企业生产的关键力量。
 
+<!--truncate-->
+
 ## 什么是 Forward Deployed Engineer（FDE）？
 
 **Forward Deployed Engineer（FDE）** 是一种兼具工程能力与业务理解的技术角色，他们的职责是 **为企业客户定制、部署并扩展复杂的AI或数据驱动系统**。  
 与传统的软件开发工程师不同，FDE常常深入客户现场，与业务团队直接协作，将强大的平台（如AI开发系统或低代码平台）定制为贴合特定业务场景的解决方案。
 
 这一职位最早由 **Palantir** 提出，用于描述那些“深入客户现场，与客户一起解决问题”的工程师。如今，这一理念已广泛应用于AI、企业软件和自动化行业，尤其是在推动 **AI-powered automation（AI驱动自动化）** 与 **low-code development（低代码开发）** 的企业中。
-![Palantir产品](/i18n/zh/docusaurus-plugin-content-blog/forward-deployed-engineer-ai-enterprise/Products%20of%20Palantir.png)
+![Palantir产品](Products-of-Palantir.png)
 > 简而言之，FDE不仅仅写代码，他们在工程中创造“影响力（impact）”。
 
 
@@ -27,7 +29,7 @@ FDE的兴起源于一个现实难题：越来越多企业引入AI技术，却缺
 这正是FDE发挥作用的地方。通过结合软件开发能力与领域理解，FDE帮助企业快速部署 **AI驱动的业务解决方案**，无论是物流预测、质量检测，还是生产自动化，都能在较短周期内实现可见成效。
 
 同时，全球AI软件市场预计将在**2030年突破9000亿美元规模**（Statista, 2024），这也意味着能“打通AI最后一公里”的FDE将成为各行业的核心稀缺人才。
-![Palantir](/i18n/zh/docusaurus-plugin-content-blog/forward-deployed-engineer-ai-enterprise/Products%20of%20Palantir.png)
+![Palantir](Palantir.png)
 
 
 ## FDE的核心技能与职责
@@ -35,7 +37,7 @@ FDE的兴起源于一个现实难题：越来越多企业引入AI技术，却缺
 一个合格的Forward Deployed Engineer通常兼具开发者、顾问与战略思维三重身份。  
 他们的典型工作包括：
 
-![前沿部署工程师工作示意图](/i18n/zh/docusaurus-plugin-content-blog/forward-deployed-engineer-ai-enterprise/software%20engineer%20works%20with%20customer.jpg)
+![前沿部署工程师工作示意图](software-engineer-works-with-customer.jpg)
 ### 1. 解决方案部署（Solution Deployment）
 
 基于企业实际需求，定制并部署AI模型或数据流程。借助如 **JitAI** 这样的 **低代码AI开发平台（AI development platform）**，FDE能在更短时间内实现快速集成与验证。

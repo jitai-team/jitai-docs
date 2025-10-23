@@ -178,7 +178,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
          {
            href: 'https://forum.jit.pro',
            position: 'left',
-           label: 'Community',
+           label: 'Forum',
          },
         //GitHub  目前GitHub上没有开源项目，而且当前菜单中有 「开源」菜单，为节省菜单空间，这里先隐藏
         //  {
@@ -250,7 +250,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
            title: 'Social',
            items: [
             {
-              label: 'Community',
+              label: 'Forum',
               href: 'https://forum.jit.pro',
             },
              {

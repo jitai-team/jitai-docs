@@ -26,8 +26,8 @@ const CONTENT = {
       url: '/zh/docs/tutorial',
     },
     {
-      id: 'community',
-      label: '社区',
+      id: 'forum',
+      label: '论坛',
       type: 'newTab',
       url: 'https://forum.jit.pro',
     },

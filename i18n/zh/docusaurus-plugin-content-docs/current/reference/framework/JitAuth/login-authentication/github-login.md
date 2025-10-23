@@ -1,7 +1,7 @@
 ---
 slug: github-login
 ---
-# GitHub 登录 {#github-login}
+# GitHub 登录
 GitHub 登录（GitHubType）是基于 GitHub 开放平台的登录认证元素，支持PC端和移动端的OAuth授权登录。它负责处理GitHub OAuth授权流程、用户身份验证和账号绑定，特别适用于开发者社区、技术类产品、开源项目管理等需要统一身份管理的场景。
 
 GitHub 登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.GitHubType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建GitHub登录实例元素。

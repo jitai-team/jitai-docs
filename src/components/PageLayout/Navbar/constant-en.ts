@@ -25,8 +25,8 @@ const CONTENT = {
       url: '/docs/tutorial',
     },
     {
-      id: 'community',
-      label: 'Community',
+      id: 'forum',
+      label: 'Forum',
       type: 'newTab',
       url: 'https://forum.jit.pro',
     },

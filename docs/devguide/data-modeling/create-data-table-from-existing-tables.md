@@ -3,7 +3,7 @@ sidebar_position: 4
 slug: create-data-table-from-existing-tables
 ---
 
-# Creating Data Table Elements from Existing Database Tables {#from-existing-data-table}
+# Creating Data Table Elements from Existing Database Tables
 
 This approach is ideal for scenarios where database tables already exist and corresponding data models need to be quickly created in JitAi applications.
 

@@ -110,7 +110,7 @@ const CONTENT = {
   buyout: '一次性买断',
   recommendedBadge: '推荐',
   contactSales: '联系销售',
-  moneyUnit: '¥',
+  moneyUnit: 'US$',
   priceUnit: {
     monthly: '个/月',
     yearly: '个/年',

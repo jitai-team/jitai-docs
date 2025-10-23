@@ -65,7 +65,7 @@
 .tabGroup {
   display: flex;
   backdrop-filter: blur(20px);
-  border-radius: var(--border-radius-xl);
+  border-radius: var(--border-radius-card);
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--border-color-light);
 }
@@ -129,7 +129,7 @@
 .pricingCard {
   background: var(--bg-card);
   backdrop-filter: blur(20px);
-  border-radius: var(--border-radius-xl);
+  border-radius: var(--border-radius-card);
   padding: var(--space-5);
   border: 1px solid var(--border-color-light);
   box-shadow: var(--shadow-md);
@@ -172,7 +172,7 @@
   background: var(--color-primary);
   color: var(--color-white);
   padding: var(--space-2) var(--space-6);
-  border-radius: 0 0 0rem var(--border-radius-md);
+  border-radius: 0 0 0rem var(--border-radius-card);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
   box-shadow: var(--hover-shadow-primary);
@@ -499,7 +499,7 @@
   
   .tableContainer {
     padding: var(--space-4);
-    border-radius: var(--border-radius-xl);
+    border-radius: var(--border-radius-card);
   }
   
   .table {
@@ -594,7 +594,7 @@
 
 .modalContent {
   background: var(--bg-primary);
-  border-radius: var(--border-radius-xl);
+  border-radius: var(--border-radius-card);
   box-shadow: var(--shadow-2xl);
   max-width: 500px;
   width: 100%;

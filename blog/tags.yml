@@ -102,3 +102,18 @@ business-applications:
   label: Business Applications
   permalink: /business-applications
   description: Enterprise business application development and solutions
+
+visual-development:
+  label: Visual Development
+  permalink: /visual-development
+  description: Visual development tools and technologies
+
+DSL:
+  label: DSL
+  permalink: /dsl
+  description: Domain Specific Language
+
+orchestration:
+  label: Orchestration
+  permalink: /orchestration
+  description: Orchestration-oriented system architecture and development patterns

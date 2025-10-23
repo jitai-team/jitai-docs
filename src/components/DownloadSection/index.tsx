@@ -114,32 +114,39 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ currentLocale }) => {
               <h2 className={styles.versionTitle}>{CONTENT.server.docker.title}</h2>
               <p className={styles.versionDescription}>{CONTENT.server.docker.description}</p>
               
-              {/* 代码块 */}
-              <div className={styles.codeBlock}>
-                {/* 代码块头部 - 分段控制器在左上角 */}
-                <div className={styles.codeHeader}>
-                  <div className={styles.segmentedControl}>
-                    <button 
-                      className={`${styles.segmentButton} ${!isChinaMirror ? styles.segmentActive : ''}`}
-                      onClick={() => setIsChinaMirror(false)}
-                    >
-                      {CONTENT.server.docker.globalSegment}
-                    </button>
-                    <button 
-                      className={`${styles.segmentButton} ${isChinaMirror ? styles.segmentActive : ''}`}
-                      onClick={() => setIsChinaMirror(true)}
-                    >
-                      {CONTENT.server.docker.chinaSegment}
-                    </button>
+              {/* 代码块容器 */}
+              <div className={styles.codeContainer}>
+                {/* 代码块 */}
+                <div className={styles.codeBlock}>
+                  {/* 代码块头部 - 分段控制器在左上角 */}
+                  <div className={styles.codeHeader}>
+                    <div className={styles.segmentedControl}>
+                      <button 
+                        className={`${styles.segmentButton} ${!isChinaMirror ? styles.segmentActive : ''}`}
+                        onClick={() => setIsChinaMirror(false)}
+                      >
+                        {CONTENT.server.docker.globalSegment}
+                      </button>
+                      <button 
+                        className={`${styles.segmentButton} ${isChinaMirror ? styles.segmentActive : ''}`}
+                        onClick={() => setIsChinaMirror(true)}
+                      >
+                        {CONTENT.server.docker.chinaSegment}
+                      </button>
+                    </div>
+                  </div>
+                  
+                  {/* 代码内容 */}
+                  <div className={styles.codeContent}>
+                    <span className={styles.codePrompt}>{'>'}</span>
+                    <div className={styles.codeText}>
+                      <code>{isChinaMirror ? CONTENT.server.docker.chinaCommand : CONTENT.server.docker.globalCommand}</code>
+                    </div>
                   </div>
                 </div>
                 
-                {/* 代码内容 */}
-                <div className={styles.codeContent}>
-                  <span className={styles.codePrompt}>{'>'}</span>
-                  <div className={styles.codeText}>
-                    <code>{isChinaMirror ? CONTENT.server.docker.chinaCommand : CONTENT.server.docker.globalCommand}</code>
-                  </div>
+                {/* 复制按钮 - 位于代码块外面右下角 */}
+                <div className={styles.codeActions}>
                   <button 
                     className={styles.copyButton}
                     onClick={handleCopy}

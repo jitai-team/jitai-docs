@@ -3,7 +3,7 @@ sidebar_position: 2
 slug: login-authentication
 ---
 
-# 登录认证 {#login-authentication}
+# 登录认证
 
 JitAi平台支持多种登录认证方式，包括账号密码登录、手机号登录、钉钉自建二维码登录、企业微信自建二维码登录、微信登录、微信公众号登录、微信小程序登录、GitHub登录、Google登录和Microsoft Teams认证，满足不同场景下用户的接入和认证需求，助力企业和个人用户便捷、安全地访问应用。
 

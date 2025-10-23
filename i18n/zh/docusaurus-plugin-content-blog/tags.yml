@@ -57,3 +57,27 @@ ai-adoption:
 development-methodology:
   label: 开发方法论
   description: AI 应用开发方法论与最佳实践
+
+ai-coding:
+  label: AI 编码
+  description: AI 驱动的编码工具与技术
+
+cursor:
+  label: Cursor
+  description: Cursor AI 编码助手相关主题
+
+jitai:
+  label: jitai
+  description: JitAi 平台功能与能力
+
+ai-development:
+  label: AI 开发
+  description: AI 应用开发实践与工具
+
+low-code:
+  label: 低代码
+  description: 低代码与可视化开发平台
+
+business-applications:
+  label: 业务应用
+  description: 企业业务应用开发与解决方案

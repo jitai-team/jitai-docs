@@ -3,7 +3,7 @@ sidebar_position: 5
 slug: built-in-data-management-tools
 ---
 
-# Built-in Data Management Tools {#built-in-data-management-tools}
+# Built-in Data Management Tools
 
 JitAi provides comprehensive data management capabilities for data table models, enabling CRUD operations on data tables without requiring code development. Data can be managed directly within the development environment through an intuitive visual interface.
 

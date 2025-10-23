@@ -1,6 +1,8 @@
-/* PricingSection 样式 - 遵循统一设计规范 */
+/* ========================================
+   PricingSection 样式 - 遵循统一设计规范
+   ======================================== */
 
-/* 页面特定变量 */
+/* ==================== CSS 变量定义 ==================== */
 :root {
   --page-title-line-height: 1.5;
   --card-title-line-height: 1.3;
@@ -12,14 +14,13 @@
   --card-title-line-height: 1.4 !important;
 }
 
-/* ===== 页面布局 ===== */
+/* ==================== 页面布局 ==================== */
 .sectionContent {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 var(--container-padding);
 }
 
-/* ===== 页面容器 ===== */
 .pricing {
   min-height: 100vh;
   display: flex;
@@ -32,7 +33,7 @@
   font-family: var(--font-primary);
 }
 
-/* ===== 页面标题 ===== */
+/* ==================== 页面标题 ==================== */
 .pageHeader {
   text-align: center;
   margin: var(--space-16) 0;
@@ -53,8 +54,7 @@
   line-height: var(--line-height-relaxed);
 }
 
-
-/* ===== 标签页容器 ===== */
+/* ==================== 标签页 ==================== */
 .tabContainer {
   display: flex;
   justify-content: center;
@@ -113,7 +113,9 @@
   font-weight: var(--font-weight-semibold);
 }
 
-/* ===== 价格卡片网格 ===== */
+/* ==================== 价格卡片 ==================== */
+
+/* 价格卡片网格 */
 .pricingCards {
   display: grid;
   grid-template-columns: repeat(4, minmax(240px, 1fr));
@@ -125,7 +127,7 @@
   margin-right: auto;
 }
 
-/* ===== 价格卡片基础样式 ===== */
+/* 价格卡片基础样式 */
 .pricingCard {
   background: var(--bg-card);
   backdrop-filter: blur(20px);
@@ -163,7 +165,7 @@
   transform: scaleX(1);
 }
 
-/* ===== 推荐卡片样式 ===== */
+/* 推荐徽章 */
 .recommendedBadge {
   position: absolute;
   line-height: normal;
@@ -178,7 +180,7 @@
   box-shadow: var(--hover-shadow-primary);
 }
 
-/* ===== 卡片头部 ===== */
+/* 卡片头部 */
 .cardHeader {
   text-align: center;
   margin-top: var(--space-4);
@@ -206,7 +208,7 @@
   text-align: center;
 }
 
-/* ===== 价格部分 ===== */
+/* 价格部分 */
 .cardPrice {
   margin-bottom: var(--space-5);
   background: transparent;
@@ -251,7 +253,15 @@
   font-weight: var(--font-weight-medium);
 }
 
-/* ===== 功能列表 ===== */
+/* 功能列表 */
+.packageInfo {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-2);
+  text-align: left;
+}
+
 .cardFeatures {
   display: flex;
   flex-direction: column;
@@ -269,16 +279,7 @@
   text-align: left;
 }
 
-/* ===== 包含内容信息 ===== */
-.packageInfo {
-  font-size: var(--font-size-sm);
-  color: var(--text-secondary);
-  font-weight: var(--font-weight-semibold);
-  margin-bottom: var(--space-2);
-  text-align: left;
-}
-
-/* ===== 订购按钮区域 ===== */
+/* 订购按钮 */
 .cardAction {
   margin-bottom: var(--space-4);
   padding: var(--space-2) 0;
@@ -303,7 +304,6 @@
   color: var(--text-primary);
 }
 
-/* ===== 卡片悬停时的按钮样式 ===== */
 .pricingCard:hover .orderButton {
   background: var(--color-primary);
   color: var(--color-white);
@@ -316,8 +316,7 @@
   box-shadow: var(--hover-shadow-primary);
 }
 
-
-/* ===== 特别说明 ===== */
+/* ==================== 特别说明 ==================== */
 .specialNote {
   display: flex;
   align-items: center;
@@ -353,7 +352,7 @@
   font-weight: var(--font-weight-semibold);
 }
 
-/* ===== 下载按钮 ===== */
+/* ==================== 下载按钮 ==================== */
 .downloadButton {
   display: inline-flex;
   align-items: center;
@@ -411,165 +410,7 @@
   height: 100%;
 }
 
-
-/* 响应式设计 */
-
-/* ===== 响应式设计 ===== */
-@media (max-width: 1400px) {
-  .pricingCards {
-    grid-template-columns: repeat(5, minmax(200px, 1fr));
-    gap: var(--space-3);
-    max-width: 1200px;
-  }
-  
-  .pricingCard {
-    padding: var(--space-3);
-    min-height: 380px;
-  }
-  
-  .recommended {
-    transform: scale(1.02);
-  }
-  
-  .pageTitle {
-    font-size: var(--font-size-4xl);
-  }
-  
-  .cardTitle {
-    font-size: var(--font-size-base);
-  }
-  
-  .amount {
-    font-size: var(--font-size-2xl);
-  }
-}
-
-@media (max-width: 768px) {
-  .pricing {
-    padding: var(--space-24) 0;
-  }
-
-  .pageTitle {
-    font-size: var(--font-size-4xl);
-  }
-  
-  .pageSubtitle {
-    font-size: var(--font-size-base);
-  }
-  
-  .tabContainer {
-    margin-bottom: var(--space-8);
-  }
-  
-  .tab {
-    padding: var(--space-3) var(--space-5);
-    font-size: var(--font-size-sm);
-    min-width: 100px;
-  }
-  
-  .tabIcon {
-    font-size: var(--font-size-base);
-  }
-  
-  .pricingCards {
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
-    margin-bottom: var(--space-16);
-  }
-
-  .recommended {
-    transform: scale(1);
-  }
-  
-  .cardIcon {
-    font-size: var(--font-size-5xl);
-  }
-  
-  .cardTitle {
-    font-size: var(--font-size-xl);
-  }
-  
-  .amount {
-    font-size: var(--font-size-3xl);
-  }
-  
-  .comparisonTitle {
-    font-size: var(--font-size-2xl);
-  }
-  
-  .tableContainer {
-    padding: var(--space-4);
-    border-radius: var(--border-radius-card);
-  }
-  
-  .table {
-    font-size: var(--font-size-sm);
-  }
-  
-  .tableHeader {
-    padding: var(--space-4) var(--space-2);
-    font-size: var(--font-size-xs);
-  }
-  
-  .featureCell {
-    padding: var(--space-4) var(--space-2);
-    font-size: var(--font-size-sm);
-  }
-  
-  .specialNote {
-    flex-direction: column;
-    text-align: center;
-    gap: var(--space-4);
-  }
-  
-  .noteIcon {
-    font-size: var(--font-size-5xl);
-  }
-}
-
-@media (max-width: 480px) {
-  .pricing {
-    padding: var(--space-16) 0;
-  }
-
-  .pageTitle {
-    font-size: var(--font-size-3xl);
-  }
-  
-  .pageSubtitle {
-    font-size: var(--font-size-base);
-  }
-  
-  .amount {
-    font-size: var(--font-size-4xl);
-  }
-  
-  .comparisonTitle {
-    font-size: var(--font-size-xl);
-  }
-  
-  .tableContainer {
-    padding: var(--space-3);
-  }
-  
-  .tableHeader {
-    padding: var(--space-3) var(--space-1);
-    font-size: var(--font-size-xs);
-  }
-  
-  .featureCell {
-    padding: var(--space-3) var(--space-1);
-    font-size: var(--font-size-xs);
-  }
-
-  .downloadButton {
-    padding: var(--space-3) var(--space-6);
-    font-size: var(--font-size-sm);
-    margin-top: var(--space-3);
-  }
-}
-
-/* ===== 弹窗样式 ===== */
+/* ==================== 弹窗样式 ==================== */
 .modalOverlay {
   position: fixed;
   top: 0;
@@ -585,7 +426,6 @@
   overflow-y: auto;
 }
 
-/* 阻止弹窗打开时底层页面滚动 */
 :global(body.modal-open) {
   overflow: hidden !important;
   position: fixed !important;
@@ -614,6 +454,7 @@
   }
 }
 
+/* 弹窗头部 */
 .modalHeader {
   display: flex;
   align-items: center;
@@ -645,6 +486,7 @@
   color: var(--text-primary);
 }
 
+/* 弹窗主体 */
 .modalBody {
   padding: var(--space-6);
 }
@@ -736,6 +578,7 @@
   margin: 0;
 }
 
+/* 弹窗底部 */
 .modalFooter {
   display: flex;
   gap: var(--space-3);
@@ -801,7 +644,166 @@
   cursor: not-allowed;
 }
 
-/* 弹窗响应式设计 */
+/* ==================== 响应式布局 ==================== */
+
+/* 大屏幕 (≤1400px) */
+@media (max-width: 1400px) {
+  .pricingCards {
+    grid-template-columns: repeat(5, minmax(200px, 1fr));
+    gap: var(--space-3);
+    max-width: 1200px;
+  }
+  
+  .pricingCard {
+    padding: var(--space-3);
+    min-height: 380px;
+  }
+  
+  .recommended {
+    transform: scale(1.02);
+  }
+  
+  .pageTitle {
+    font-size: var(--font-size-4xl);
+  }
+  
+  .cardTitle {
+    font-size: var(--font-size-base);
+  }
+  
+  .amount {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+/* 平板 (≤768px) */
+@media (max-width: 768px) {
+  .pricing {
+    padding: var(--space-24) 0;
+  }
+
+  .pageTitle {
+    font-size: var(--font-size-4xl);
+  }
+  
+  .pageSubtitle {
+    font-size: var(--font-size-base);
+  }
+  
+  .tabContainer {
+    margin-bottom: var(--space-8);
+  }
+  
+  .tab {
+    padding: var(--space-3) var(--space-5);
+    font-size: var(--font-size-sm);
+    min-width: 100px;
+  }
+  
+  .tabIcon {
+    font-size: var(--font-size-base);
+  }
+  
+  .pricingCards {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin-bottom: var(--space-16);
+  }
+
+  .recommended {
+    transform: scale(1);
+  }
+  
+  .cardIcon {
+    font-size: var(--font-size-5xl);
+  }
+  
+  .cardTitle {
+    font-size: var(--font-size-xl);
+  }
+  
+  .amount {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .comparisonTitle {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .tableContainer {
+    padding: var(--space-4);
+    border-radius: var(--border-radius-card);
+  }
+  
+  .table {
+    font-size: var(--font-size-sm);
+  }
+  
+  .tableHeader {
+    padding: var(--space-4) var(--space-2);
+    font-size: var(--font-size-xs);
+  }
+  
+  .featureCell {
+    padding: var(--space-4) var(--space-2);
+    font-size: var(--font-size-sm);
+  }
+  
+  .specialNote {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-4);
+  }
+  
+  .noteIcon {
+    font-size: var(--font-size-5xl);
+  }
+}
+
+/* 手机 (≤480px) */
+@media (max-width: 480px) {
+  .pricing {
+    padding: var(--space-16) 0;
+  }
+
+  .pageTitle {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .pageSubtitle {
+    font-size: var(--font-size-base);
+  }
+  
+  .amount {
+    font-size: var(--font-size-4xl);
+  }
+  
+  .comparisonTitle {
+    font-size: var(--font-size-xl);
+  }
+  
+  .tableContainer {
+    padding: var(--space-3);
+  }
+  
+  .tableHeader {
+    padding: var(--space-3) var(--space-1);
+    font-size: var(--font-size-xs);
+  }
+  
+  .featureCell {
+    padding: var(--space-3) var(--space-1);
+    font-size: var(--font-size-xs);
+  }
+
+  .downloadButton {
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--font-size-sm);
+    margin-top: var(--space-3);
+  }
+}
+
+/* 弹窗响应式 (≤640px) */
 @media (max-width: 640px) {
   .modalOverlay {
     padding: var(--space-2);

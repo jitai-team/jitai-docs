@@ -7,19 +7,19 @@ slug: code
 
 ## Case effect
 
-<VideoPlayer relatePath="/docs/tutorial/code_effect.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/en/code_effect.mp4" />
 
 ## Implementation process
 
 ### Create portal
 
-The previous question bank, test creation, and grading functions were designed for teachers. We'll rename the "User Portal" to "Teacher Portal."
+The previous question bank, test creation, and grading functions were designed for examiners. We'll rename the "User Portal" to "Examiner Portal."
 
-Simultaneously, we'll create a new "Student Portal" for students to answer questions and view test scores:
+Simultaneously, we'll create a new "Examinee Portal" for examinees to answer questions and view test scores:
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
-<VideoPlayer relatePath="/docs/tutorial/code_create_shell.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/en/code_create_shell.mp4" />
 
 For detailed information, see [Portal Navigation Design](../../devguide/shell-and-page/portal-navigation-design).
 
@@ -29,11 +29,11 @@ Create a page variable "Test Paper ID" and enable value passing through URL para
 
 Create a page variable "Test Paper." After page load, retrieve test paper details using the test paper ID and store them in the test paper variable.
 
-<VideoPlayer relatePath="/docs/tutorial/code_page_var.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/en/code_page_var.mp4" />
 
 Next, drag in full-code components to implement the exam page using complete code implementation.
 
-<VideoPlayer relatePath="/docs/tutorial/code_component.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/en/code_component.mp4" />
 
 For detailed information, see [Full Code Components](../../devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications).
 

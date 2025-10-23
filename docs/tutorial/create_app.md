@@ -8,13 +8,13 @@ slug: create_app
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
-<VideoPlayer relatePath="/docs/tutorial/create_app.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/en/create_app.mp4" />
 
 For detailed information, see [Application Creation and Management](../devguide/creating-and-publishing-applications/creating-and-deploying-applications).
 
 ## Accessing your application
 
-<VideoPlayer relatePath="/docs/tutorial/visit_app.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/en/visit_app.mp4" />
 
 :::warning Default Credentials
 The default username and password are both `admin123`

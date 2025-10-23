@@ -1,5 +1,5 @@
 ---
-title: What is MCP? The Seamless Connection Revolution Between AI and Development Tools
+title: "What is MCP? The Seamless Connection Revolution Between AI and Development Tools"
 authors: []
 date: 2025/10/15
 description: |
@@ -8,6 +8,7 @@ description: |
   databases, or API services.
   This is the core problem that the Model Context Protocol aims to solve.
 tags: [MCP]
+keywords: [MCP, Model Context Protocol, Anthropic, AI tool integration, JitAi, LLM, Large Language Models, JSON-RPC, Function Calling, AI Agent, MCP Server, MCP Client, development efficiency, standardized protocol]
 ---
 
 > Connect AI to external tools with one click, boosting development efficiency by 300%.

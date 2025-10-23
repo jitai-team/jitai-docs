@@ -3,7 +3,7 @@ sidebar_position: 4
 slug: translate-ignore-rules
 ---
 
-# 忽略翻译规则 {#translation-ignore-rules}
+# 忽略翻译规则
 
 在JitAi平台中，默认情况下所有DOM节点中的文本内容都会自动进行翻译处理。但在某些场景下，您可能需要阻止特定文本被翻译，比如：
 

@@ -10,7 +10,7 @@ slug: ai_ui
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
-<VideoPlayer relatePath="/docs/tutorial/ai_ui_effect.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/en/ai_ui_effect.mp4" />
 
 ## Implementation process
 
@@ -31,7 +31,7 @@ JitAi's Agent implementation is natively and deeply integrated with application 
 
 In this case, creating an AI Agent involves the following configuration steps: This includes reading current answer sheet details through the page's `getVariableValue` function, then directly obtaining the standard answer for questions associated with answer sheet details as scoring references.
 
-<VideoPlayer relatePath="/docs/tutorial/ai_ui_agent.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/en/ai_ui_agent.mp4" />
 
 For detailed information, see [AI Agent](../../devguide/ai-agent/create-ai-agent).
 
@@ -42,7 +42,7 @@ An AI Agent functions like a company employee, responsible for completing specif
 JitAi's AI Assistant includes a dialog interface for direct user interaction.
 
 Creating an AI Assistant in this case involves the following configuration steps:
-<VideoPlayer relatePath="/docs/tutorial/ai_ui_assi.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/en/ai_ui_assi.mp4" />
 
 For detailed information, see [AI Assistant](../../devguide/ai-assistant/create-ai-assistant).
 
@@ -57,7 +57,7 @@ In this case, we aim to achieve the following objectives:
 
 The implementation is straightforward—configure page events as follows:
 
-<VideoPlayer relatePath="/docs/tutorial/ai_ui_page.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/en/ai_ui_page.mp4" />
 
 :::warning Prerequisites
 You must first enable the AI Assistant to access the `Send AI Message` function.

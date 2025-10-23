@@ -1,7 +1,7 @@
 ---
 slug: aws-s3-storage
 ---
-# AWS S3存储 {#aws-s3-storage}
+# AWS S3存储
 AWS S3存储是面向全球化云存储的Type元素，基于Amazon Simple Storage Service实现海量数据存储、全球CDN加速和企业级安全管控。它提供标准化的文件上传、下载、删除操作，集成AWS生态的访问控制和权限管理，支持多种存储类型和数据备份策略，确保数据安全性和高可用性。
 
 AWS S3存储元素分层结构为Meta（storages.Meta） → Type（storages.AwsS3Type） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建AWS S3存储实例元素。

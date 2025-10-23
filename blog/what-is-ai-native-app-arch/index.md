@@ -2,7 +2,7 @@
 title: What is AI Native Application Architecture?
 date: 2025/10/21
 authors: []
-tags: [AI Native, Application Architecture, Event-Driven, JAAP, Enterprise Applications]
+tags: [ai native, application architecture, event driven, JAAP, enterprise applications]
 description: "AI-native application architecture must address not only how AI modules are designed and integrated, but also how traditional technical modules are perceived, driven, and orchestrated by AI. Attempting to integrate AI capabilities into legacy event-driven architectures is like putting an internal combustion engine on a horse cart—foolish and inefficient. Traditional enterprise applications like ERP, CRM, and OA systems will inevitably be reshaped by new AI-native architectures and development paradigms."
 keywords: [AI native, AI native architecture, application architecture, event-driven, JAAP, enterprise applications, Meta, Type, Instance, modular architecture, AI-driven systems, self-describing modules, hot loading, ERP, CRM, OA]
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Creating a AI Agent in JitAi: A Comprehensive Guide"
 authors: []
-tags: [AI Agent, JitAi]
+tags: [ai agent, JitAi]
 date: 2025/9/1
 description: "An AI Agent (intelligent agent) possesses autonomous decision-making and task execution capabilities. It can automatically select appropriate tools based on user input and contextual information to complete complex business processes."
 keywords: [AI Agent, intelligent agent, ReActAgent, JitAi, system prompt, LLMS, large language models, MCP, Model Context Protocol, RAG, Retrieval-Augmented Generation, tools, CRUD, enterprise AI]

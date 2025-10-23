@@ -2,7 +2,7 @@
 title: Forward Deployed Engineer：AI创新与企业落地之间的桥梁
 date: 2025/10/23
 authors: []
-tags: [前沿部署工程师,开发平台,低代码]
+tags: [forward deployed engineer, development platform, low code]
 description: "了解前沿部署工程师 (FDE) 在人工智能企业转型中的作用。了解 JitAI 等低代码平台如何实现人工智能驱动的大规模自动化。"
 ---
 

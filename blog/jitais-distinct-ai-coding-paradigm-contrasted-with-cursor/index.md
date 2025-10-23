@@ -2,7 +2,7 @@
 title: JitAi's Distinct AI Coding Paradigm Contrasted with Cursor
 date: 2025/10/22
 authors: []
-tags: [ai-coding, cursor, jitai, ai-development, low-code, business-applications]
+tags: [ai coding, cursor, jitai, ai development, low code, business applications]
 description: "Discover how JitAi's innovative AI coding approach addresses the key limitations of tools like Cursor through high accuracy, low barrier to entry, and cost efficiency for enterprise business application development."
 keywords: [AI coding, Cursor, JitAi, AI development, low-code, visual development, business application development, Meta, Type, Instance, Vibe Coding, FDE, code generation, token optimization]
 ---

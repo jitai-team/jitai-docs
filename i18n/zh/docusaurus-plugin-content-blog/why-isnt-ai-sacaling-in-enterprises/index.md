@@ -2,7 +2,7 @@
 title: AI为什么没在企业中规模化应用？
 date: 2025/10/22
 authors: []
-tags: [enterprise-ai, production-grade-ai-app, ai-native-architecture, ai-adoption, development-methodology, JAAP, JitAi]
+tags: [enterprise ai, production grade ai app, ai native architecture, ai adoption, development methodology, JAAP, JitAi]
 description: "与传统企业Web应用相比，生产级AI应用具有天然的复杂性。其本质是做事而非仅仅记录事，这要求它必须与企业独特的业务流程和数据知识环境深度集成。定制化开发成为必然选择，但现实却是成本高昂、效果不佳。传统的开发范式已经落后，市场迫切需要AI原生的应用工程技术和开发方法论。"
 keywords: [企业AI, AI规模化, AI应用落地, 生产级AI应用, AI开发方法论, JAAP, AI工程技术, 定制化开发, AI原生架构, JitAi平台, LangChain, 事务执行系统]
 ---

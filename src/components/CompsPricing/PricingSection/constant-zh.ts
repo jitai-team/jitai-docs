@@ -122,9 +122,9 @@ const CONTENT = {
   includes: '这包括：',
   specialOffer: '特别优惠',
   specialOfferDescriptions: [
-    '每个开发者团队注册即送',
-    '1个7天桌面版许可证',
-    '，充分体验JitAi的强大功能！',
+    '立即注册，每个开发者团队即赠',
+    '免费1个月桌面版许可证',
+    '尽情体验JitAi的强大功能！',
   ],
   // 弹窗相关文案
   modal: {

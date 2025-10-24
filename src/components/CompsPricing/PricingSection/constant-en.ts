@@ -123,8 +123,8 @@ const CONTENT = {
   includes: 'This includes:',
   specialOffer: 'Special Offer',
   specialOfferDescriptions: [
-    'Each developer team receives',
-    ' 1 desktop version license for 7 days ',
+    'Sign up now and each developer team receives',
+    ' a FREE 1-month desktop license ',
     'to fully experience the powerful features of JitAi!',
   ],
   // Modal related text

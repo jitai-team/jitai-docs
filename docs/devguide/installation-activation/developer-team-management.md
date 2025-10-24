@@ -41,6 +41,11 @@ When a user logs into an already activated and bound node for the first time, th
 
 After entering the team invite code and clicking the `Join team and active JitNode` button, the user automatically becomes a regular team member.
 
+## Viewing team ID {#view-team-id}
+Any team member can view the team title and team ID on the team management page.
+
+![View Team ID](./img/view-team-id.png)
+
 ## Viewing and refreshing team invite code {#view-and-refresh-team-bind-code}
 Any team member can view and refresh the team invite code on the team management page.
 

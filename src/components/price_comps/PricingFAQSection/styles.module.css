@@ -87,11 +87,11 @@
 .faqAnswer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height var(--transition-normal);
+  transition: max-height 0.3s ease-in-out;
 }
 
 .faqAnswerOpen {
-  max-height: 200px;
+  max-height: 500px;
 }
 
 .faqAnswerContent {

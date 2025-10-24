@@ -131,6 +131,7 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
         {/* 价格模式切换标签 */}
         <div className={`${styles.tabContainer} ${animateElements ? styles.tabAnimate : ''}`}>
           <div className={styles.tabGroup}>
+            <div className={`${styles.tabSlider} ${styles[`tabSlider${activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}`]}`} />
             <button
                 key='monthly'
                 className={`${styles.tab} ${activeTab === 'monthly' ? styles.tabActive : ''}`}
@@ -145,7 +146,10 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
                 onClick={() => setActiveTab('yearly')}
               >
                 <span className={styles.tabIcon}>📅</span>
-                <span className={styles.tabText}>{CONTENT.yearly}</span>
+                <span className={styles.tabText}>
+                  {CONTENT.yearly}
+                  <span className={styles.yearlyBadge}>{CONTENT.yearlyBadge}</span>
+                </span>
             </button>
             <button
                 key='buyout'

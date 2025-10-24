@@ -1,6 +1,8 @@
-/* PricingSection 样式 - 遵循统一设计规范 */
+/* ========================================
+   PricingSection 样式 - 遵循统一设计规范
+   ======================================== */
 
-/* 页面特定变量 */
+/* ==================== CSS 变量定义 ==================== */
 :root {
   --page-title-line-height: 1.5;
   --card-title-line-height: 1.3;
@@ -12,14 +14,13 @@
   --card-title-line-height: 1.4 !important;
 }
 
-/* ===== 页面布局 ===== */
+/* ==================== 页面布局 ==================== */
 .sectionContent {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 var(--container-padding);
 }
 
-/* ===== 页面容器 ===== */
 .pricing {
   min-height: 100vh;
   display: flex;
@@ -32,7 +33,7 @@
   font-family: var(--font-primary);
 }
 
-/* ===== 页面标题 ===== */
+/* ==================== 页面标题 ==================== */
 .pageHeader {
   text-align: center;
   margin: var(--space-16) 0;
@@ -53,8 +54,7 @@
   line-height: var(--line-height-relaxed);
 }
 
-
-/* ===== 标签页容器 ===== */
+/* ==================== 标签页 ==================== */
 .tabContainer {
   display: flex;
   justify-content: center;
@@ -65,7 +65,7 @@
 .tabGroup {
   display: flex;
   backdrop-filter: blur(20px);
-  border-radius: var(--border-radius-xl);
+  border-radius: var(--border-radius-card);
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--border-color-light);
 }
@@ -113,7 +113,9 @@
   font-weight: var(--font-weight-semibold);
 }
 
-/* ===== 价格卡片网格 ===== */
+/* ==================== 价格卡片 ==================== */
+
+/* 价格卡片网格 */
 .pricingCards {
   display: grid;
   grid-template-columns: repeat(4, minmax(240px, 1fr));
@@ -125,11 +127,11 @@
   margin-right: auto;
 }
 
-/* ===== 价格卡片基础样式 ===== */
+/* 价格卡片基础样式 */
 .pricingCard {
   background: var(--bg-card);
   backdrop-filter: blur(20px);
-  border-radius: var(--border-radius-xl);
+  border-radius: var(--border-radius-card);
   padding: var(--space-5);
   border: 1px solid var(--border-color-light);
   box-shadow: var(--shadow-md);
@@ -163,7 +165,7 @@
   transform: scaleX(1);
 }
 
-/* ===== 推荐卡片样式 ===== */
+/* 推荐徽章 */
 .recommendedBadge {
   position: absolute;
   line-height: normal;
@@ -172,13 +174,13 @@
   background: var(--color-primary);
   color: var(--color-white);
   padding: var(--space-2) var(--space-6);
-  border-radius: 0 0 0rem var(--border-radius-md);
+  border-radius: 0 0 0rem var(--border-radius-card);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
   box-shadow: var(--hover-shadow-primary);
 }
 
-/* ===== 卡片头部 ===== */
+/* 卡片头部 */
 .cardHeader {
   text-align: center;
   margin-top: var(--space-4);
@@ -206,7 +208,7 @@
   text-align: center;
 }
 
-/* ===== 价格部分 ===== */
+/* 价格部分 */
 .cardPrice {
   margin-bottom: var(--space-5);
   background: transparent;
@@ -251,7 +253,15 @@
   font-weight: var(--font-weight-medium);
 }
 
-/* ===== 功能列表 ===== */
+/* 功能列表 */
+.packageInfo {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-2);
+  text-align: left;
+}
+
 .cardFeatures {
   display: flex;
   flex-direction: column;
@@ -269,16 +279,7 @@
   text-align: left;
 }
 
-/* ===== 包含内容信息 ===== */
-.packageInfo {
-  font-size: var(--font-size-sm);
-  color: var(--text-secondary);
-  font-weight: var(--font-weight-semibold);
-  margin-bottom: var(--space-2);
-  text-align: left;
-}
-
-/* ===== 订购按钮区域 ===== */
+/* 订购按钮 */
 .cardAction {
   margin-bottom: var(--space-4);
   padding: var(--space-2) 0;
@@ -303,7 +304,6 @@
   color: var(--text-primary);
 }
 
-/* ===== 卡片悬停时的按钮样式 ===== */
 .pricingCard:hover .orderButton {
   background: var(--color-primary);
   color: var(--color-white);
@@ -316,8 +316,7 @@
   box-shadow: var(--hover-shadow-primary);
 }
 
-
-/* ===== 特别说明 ===== */
+/* ==================== 特别说明 ==================== */
 .specialNote {
   display: flex;
   align-items: center;
@@ -353,7 +352,7 @@
   font-weight: var(--font-weight-semibold);
 }
 
-/* ===== 下载按钮 ===== */
+/* ==================== 下载按钮 ==================== */
 .downloadButton {
   display: inline-flex;
   align-items: center;
@@ -411,10 +410,243 @@
   height: 100%;
 }
 
+/* ==================== 弹窗样式 ==================== */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--space-4);
+  overflow-y: auto;
+}
 
-/* 响应式设计 */
+:global(body.modal-open) {
+  overflow: hidden !important;
+  position: fixed !important;
+  width: 100% !important;
+}
 
-/* ===== 响应式设计 ===== */
+.modalContent {
+  background: var(--bg-primary);
+  border-radius: var(--border-radius-card);
+  box-shadow: var(--shadow-2xl);
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 弹窗头部 */
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-6) var(--space-6) var(--space-4);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modalTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.modalClose {
+  background: none;
+  border: none;
+  font-size: var(--font-size-2xl);
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: var(--space-2);
+  border-radius: var(--border-radius-md);
+  transition: all 0.2s ease;
+}
+
+.modalClose:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* 弹窗主体 */
+.modalBody {
+  padding: var(--space-6);
+}
+
+.formGroup {
+  margin-bottom: var(--space-5);
+}
+
+.formLabel {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.formLabelRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+}
+
+.helpLink {
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  text-decoration: none;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--border-radius-sm);
+  transition: all 0.2s ease;
+}
+
+.helpLink:hover {
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+.formInput {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.formInputError {
+  border-color: #ef4444;
+}
+
+.formInputError:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.errorMessage {
+  color: #ef4444;
+  font-size: var(--font-size-sm);
+  margin-top: var(--space-1);
+}
+
+.modalPlanInfo {
+  background: var(--bg-secondary);
+  padding: var(--space-4);
+  border-radius: var(--border-radius-md);
+  margin-top: var(--space-4);
+}
+
+.planInfoTitle {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  margin: 0 0 var(--space-2);
+}
+
+.planInfoText {
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* 弹窗底部 */
+.modalFooter {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-6) var(--space-6);
+  border-top: 1px solid var(--border-color);
+}
+
+.modalButtonCancel {
+  flex: 1;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modalButtonCancel:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.modalButtonConfirm {
+  flex: 1;
+  padding: var(--space-3) var(--space-4);
+  border: none;
+  border-radius: var(--border-radius-md);
+  background: var(--color-primary);
+  color: white;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 3px 6px rgba(61, 101, 253, 0.3), 0 1px 2px rgba(19, 28, 67, 0.2);
+}
+
+.modalButtonConfirm::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: left 0.5s ease;
+}
+
+.modalButtonConfirm:hover::before {
+  left: 100%;
+}
+
+.modalButtonConfirm:hover {
+  box-shadow: 0 6px 20px rgba(61, 101, 253, 0.4), 0 2px 8px rgba(19, 28, 67, 0.3);
+}
+
+.modalButtonConfirm:disabled {
+  background: var(--text-tertiary);
+  cursor: not-allowed;
+}
+
+/* ==================== 响应式布局 ==================== */
+
+/* 大屏幕 (≤1400px) */
 @media (max-width: 1400px) {
   .pricingCards {
     grid-template-columns: repeat(5, minmax(200px, 1fr));
@@ -444,6 +676,7 @@
   }
 }
 
+/* 平板 (≤768px) */
 @media (max-width: 768px) {
   .pricing {
     padding: var(--space-24) 0;
@@ -499,7 +732,7 @@
   
   .tableContainer {
     padding: var(--space-4);
-    border-radius: var(--border-radius-xl);
+    border-radius: var(--border-radius-card);
   }
   
   .table {
@@ -527,6 +760,7 @@
   }
 }
 
+/* 手机 (≤480px) */
 @media (max-width: 480px) {
   .pricing {
     padding: var(--space-16) 0;
@@ -566,5 +800,32 @@
     padding: var(--space-3) var(--space-6);
     font-size: var(--font-size-sm);
     margin-top: var(--space-3);
+  }
+}
+
+/* 弹窗响应式 (≤640px) */
+@media (max-width: 640px) {
+  .modalOverlay {
+    padding: var(--space-2);
+  }
+  
+  .modalContent {
+    max-width: none;
+  }
+  
+  .modalHeader,
+  .modalBody,
+  .modalFooter {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+  
+  .modalFooter {
+    flex-direction: column;
+  }
+  
+  .modalButtonCancel,
+  .modalButtonConfirm {
+    flex: none;
   }
 }

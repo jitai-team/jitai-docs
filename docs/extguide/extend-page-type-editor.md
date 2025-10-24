@@ -473,7 +473,7 @@ class ExamTimerPage extends Jit.TimerPage {
         // Exam page specific configuration
         this.config = {
             duration: 7200,      // 2 hours
-            autoStart: false,    // Requires student to click start
+            autoStart: false,    // Requires examinee to click start
             warnAt: 300,         // Warning at last 5 minutes
             theme: 'exam'
         };

@@ -18,8 +18,8 @@ const FAQ_DATA: FAQ[] = [
     answer: 'All licenses do not limit user count, table capacity, or attachment capacity. They are all deployed on your own servers with data stored in your own databases.'
   },
   {
-    question: 'Do development organizations count towards the organization limit?',
-    answer: 'Development organizations do not count towards the organization limit. The organization count in specifications refers to organizations within applications and has no necessary relationship with development organizations.'
+    question: 'Do developer team count towards the organization limit?',
+    answer: 'Developer team do not count towards the organization limit. The organization count in specifications refers to organizations within applications and has no necessary relationship with developer team.'
   },
   {
     question: 'How are external contacts charged?',

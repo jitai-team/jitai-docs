@@ -44,6 +44,7 @@ const PRICING_PLANS: PricingPlan[] = [
     yearlyPrice: '200',
     buyoutPrice: '12,000',
     cardType: 'basicCard',
+    isRecommended: true,
     features: [
         '✓ For development/testing/production environments',
         '✓ 1 application',
@@ -61,7 +62,6 @@ const PRICING_PLANS: PricingPlan[] = [
     yearlyPrice: '400',
     buyoutPrice: '24,000',
     cardType: 'standardCard',
-    isRecommended: true,
     features: [
         'All Server Basic features, plus',
         '✓ 5 applications',

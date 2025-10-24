@@ -107,6 +107,31 @@
 }
 
 /* ===== 响应式设计 ===== */
+
+/* 大平板 (≤1024px) */
+@media (max-width: 1024px) {
+  .faqSection {
+    margin: var(--space-32) 0;
+  }
+  
+  .faqTitle {
+    margin-bottom: var(--space-10);
+  }
+  
+  .faqContainer {
+    max-width: 900px;
+  }
+  
+  .faqQuestionText {
+    font-size: var(--font-size-lg);
+  }
+  
+  .faqAnswerContent {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* 平板 (≤768px) */
 @media (max-width: 768px) {
   .faqSection {
     margin: var(--space-24) 0;
@@ -114,28 +139,71 @@
 
   .faqTitle {
     font-size: var(--font-size-3xl);
+    margin-bottom: var(--space-8);
+    text-align: center;
+  }
+
+  .faqContainer {
+    max-width: 100%;
   }
 
   .faqQuestion {
-    padding: var(--space-6) 0;
+    padding: var(--space-5) 0;
   }
 
   .faqQuestionText {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base);
+    padding-right: var(--space-2);
+  }
+  
+  .faqIcon {
+    width: 20px;
+    height: 20px;
   }
 
   .faqAnswerContent {
-    padding: 0 0 var(--space-6) 0;
-    font-size: var(--font-size-base);
+    padding: 0 0 var(--space-5) 0;
+    font-size: var(--font-size-sm);
+  }
+  
+  .faqInput:checked ~ .faqAnswer {
+    max-height: 600px;
   }
 }
 
+/* 手机 (≤480px) */
 @media (max-width: 480px) {
   .faqSection {
     margin: var(--space-16) 0;
   }
 
   .faqTitle {
+    font-size: var(--font-size-2xl);
     margin-bottom: var(--space-6);
+  }
+  
+  .faqQuestion {
+    padding: var(--space-4) 0;
+  }
+  
+  .faqQuestionText {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-relaxed);
+  }
+  
+  .faqIcon {
+    width: 18px;
+    height: 18px;
+    margin-left: var(--space-2);
+  }
+  
+  .faqAnswerContent {
+    padding: 0 0 var(--space-4) 0;
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-relaxed);
+  }
+  
+  .faqItem {
+    border-bottom-width: 1px;
   }
 }

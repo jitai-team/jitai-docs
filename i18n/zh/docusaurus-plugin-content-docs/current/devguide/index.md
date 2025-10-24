@@ -66,6 +66,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "在激活节点时将节点绑定到自己已加入的组织", href: "devguide/installation-activation/developer-team-management#bind-node-to-joined-team-when-activating" },
     { text: "在激活节点时使用组织绑定码加入组织并绑定", href: "devguide/installation-activation/developer-team-management#use-team-bind-code-to-join-and-bind-when-activating-node" },
     { text: "在登录已有节点时通过组织绑定码加入组织", href: "devguide/installation-activation/developer-team-management#join-team-via-bind-code-when-logging-into-existing-node" },
+    { text: "查看团队ID", href: "devguide/installation-activation/developer-team-management#view-team-id" },
     { text: "查看和刷新组织绑定码", href: "devguide/installation-activation/developer-team-management#view-and-refresh-team-bind-code" },
     { text: "移除组织成员", href: "devguide/installation-activation/developer-team-management#remove-team-member" }
   ]} />

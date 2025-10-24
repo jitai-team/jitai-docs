@@ -3,31 +3,12 @@ import styles from './styles.module.css';
 import LanguageSwitcher from '../LanguageSwitcher';
 import CONTENT_EN from './constant-en';
 import CONTENT_ZH from './constant-zh';
-import { PAGE_METADATA_EN } from '../page-metadata-en';
-import { PAGE_METADATA_ZH } from '../page-metadata-zh';
 
 interface NavbarProps {
   currentLocale?: string;
-  pageId?: string;
 }
 
-// 导出获取页面元数据的函数，供其他组件使用
-export const usePageMetadata = (pageId: string, currentLocale?: string) => {
-  const metadata = currentLocale === 'zh' ? PAGE_METADATA_ZH : PAGE_METADATA_EN;
-  
-  // 如果找不到对应的页面元数据，返回默认值
-  if (!metadata[pageId]) {
-    console.warn(`Page metadata not found for pageId: ${pageId}, locale: ${currentLocale}`);
-    return {
-      title: 'JitAI',
-      description: 'JitAI - AI Development Platform'
-    };
-  }
-  
-  return metadata[pageId];
-};
-
-const Navbar: React.FC<NavbarProps> = ({ currentLocale, pageId }) => {
+const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
   const [scrolled, setScrolled] = useState(false);
   const [activeNavItem, setActiveNavItem] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -66,8 +47,11 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale, pageId }) => {
         });
       }
       
+      // 如果找到匹配项则设置，否则清空激活状态（避免默认高亮首页）
       if (currentItem) {
         setActiveNavItem(currentItem.id);
+      } else {
+        setActiveNavItem('');
       }
     };
 

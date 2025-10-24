@@ -1,3 +1,4 @@
+
 // 价格页面常量配置
 export interface PricingPlan {
   id: string;
@@ -26,13 +27,13 @@ const PRICING_PLANS: PricingPlan[] = [
     cardType: 'desktopCard',
     features: [
       '✓ Development environment only',
-      '✓ Unlimited organizations',
       '✓ Unlimited applications',
+      '✓ Unlimited organizations',
       '✓ Desktop development',
       '✓ Online development',
       '✓ Single process only',
       '✓ Single machine only'
-    ]
+    ],
   },
   {
     id: 'basic',
@@ -45,11 +46,11 @@ const PRICING_PLANS: PricingPlan[] = [
     cardType: 'basicCard',
     features: [
         '✓ For development/testing/production environments',
-        '✓ 2 organizations',
         '✓ 1 application',
+        '✓ 2 organizations',
         '✓ Online development',
         '✓ Single machine only'
-    ]
+    ],
   },
   {
     id: 'standard',
@@ -63,10 +64,10 @@ const PRICING_PLANS: PricingPlan[] = [
     isRecommended: true,
     features: [
         'All Server Basic features, plus',
-        '✓ 10 organizations',
         '✓ 5 applications',
+        '✓ 10 organizations',
         '✓ Cluster environment support'
-    ]
+    ],
   },
   // {
   //   id: 'professional',
@@ -79,8 +80,8 @@ const PRICING_PLANS: PricingPlan[] = [
   //   cardType: 'professionalCard',
   //   features: [
   //       'All Server Standard features, plus',
-  //       '✓ 20 organizations',
   //       '✓ 10 applications',
+  //       '✓ 20 organizations',
   //   ]
   // },
   {
@@ -93,14 +94,15 @@ const PRICING_PLANS: PricingPlan[] = [
     buyoutPrice: 'Custom',
     cardType: 'enterpriseCard',
     features: [
-        '✓ More organizations',
         '✓ More applications',
+        '✓ More organizations',
         '✓ Bulk license discounts',
-    ]
+    ],
   }
 ];
 
 const CONTENT = {
+  locale: 'en',
   pricingPlans: PRICING_PLANS,
   title: 'Pricing',
   subtitle: 'JitAi can be deployed on any personal computer or server. Purchase the appropriate license for your deployment needs',
@@ -120,10 +122,26 @@ const CONTENT = {
   includes: 'This includes:',
   specialOffer: 'Special Offer',
   specialOfferDescriptions: [
-    'Each registered development organization receives',
-    '3 desktop licenses',
-    '(valid for 1 month), allowing you to fully experience the powerful features of JitAi!',
+    'Each developer team receives',
+    ' 1 desktop version license for 7 days ',
+    'to fully experience the powerful features of JitAi!',
   ],
+  // Modal related text
+  modal: {
+    title: 'Confirm Purchase Information',
+    teamIdLabel: 'Developer Team ID',
+    teamIdPlaceholder: 'Enter developer team ID',
+    teamIdRequired: 'Developer Team ID is required',
+    teamIdPattern: /^[a-z][a-z0-9]{3,19}$/,
+    teamIdPatternMessage: 'Please enter 4-20 characters of lowercase letters and numbers starting with lowercase letter',
+    teamIdHelpText: 'How to get?',
+    teamIdHelpLink: '/docs/devguide/installation-activation/developer-team-management#view-and-refresh-team-bind-code',
+    teamTitleLabel: 'Developer Team Title',
+    teamTitlePlaceholder: 'Enter developer team title',
+    purchasePlanTitle: 'Purchase Plan',
+    cancelButton: 'Cancel',
+    confirmButton: 'Confirm Purchase',
+  },
 };
 
 export default CONTENT;

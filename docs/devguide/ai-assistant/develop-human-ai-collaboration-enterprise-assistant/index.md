@@ -59,11 +59,11 @@ Traditional AI development platforms have a fundamental limitation: they can onl
 
 ### Case background and process {#case-background-and-process}
 
-**Business scenario**: Educational institution teachers need to grade exams, with traditional manual grading being labor-intensive and error-prone.
+**Business scenario**: Educational institution examiners need to grade exams, with traditional manual grading being labor-intensive and error-prone.
 
-**Core requirements**: AI helps teachers with intelligent grading, with key quality control handled by teachers, improving efficiency while ensuring quality.
+**Core requirements**: AI helps examiners with intelligent grading, with key quality control handled by examiners, improving efficiency while ensuring quality.
 
-**Technical challenge**: How to significantly improve efficiency while ensuring quality? How to enable seamless collaboration between AI and teachers?
+**Technical challenge**: How to significantly improve efficiency while ensuring quality? How to enable seamless collaboration between AI and examiners?
 
 **AI automatic ccoring + human review mode**
 
@@ -71,11 +71,11 @@ Traditional AI development platforms have a fundamental limitation: they can onl
 The grading Agent automatically scores each question and generates scoring rationale, greatly improving grading efficiency.
 
 **Step 2: Human-machine collaboration Node**
-After AI grading is complete, the process pauses through the dialog area human-machine interaction node, outputting grading results to the dialog box for teacher confirmation.
-If teachers find any score inappropriate, they can continue dialoguing with AI to request re-grading.
+After AI grading is complete, the process pauses through the dialog area human-machine interaction node, outputting grading results to the dialog box for examiner confirmation.
+If examiners find any score inappropriate, they can continue dialoguing with AI to request re-grading.
 
 **Step 3: UI page collaboration**
-If teachers find the scores appropriate and confirm, the grading results are automatically updated to the page grading form.
+If examiners find the scores appropriate and confirm, the grading results are automatically updated to the page grading form.
 
 ### Effect demonstration {#effect-demonstration}
 

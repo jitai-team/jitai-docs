@@ -33,6 +33,13 @@
   border-bottom-color: var(--color-gray-300);
 }
 
+/* 隐藏 radio input */
+.faqInput {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .faqQuestion {
   width: 100%;
   display: flex;
@@ -47,10 +54,6 @@
 }
 
 .faqQuestion:hover {
-  background: none;
-}
-
-.faqQuestionActive {
   background: none;
 }
 
@@ -78,11 +81,6 @@
   height: 100%;
 }
 
-.faqIconRotated {
-  transform: rotate(180deg);
-  color: var(--text-primary);
-}
-
 /* ===== FAQ 答案 ===== */
 .faqAnswer {
   max-height: 0;
@@ -90,8 +88,15 @@
   transition: max-height 0.3s ease-in-out;
 }
 
-.faqAnswerOpen {
+/* 当 radio 被选中时，展开答案 */
+.faqInput:checked ~ .faqAnswer {
   max-height: 500px;
+}
+
+/* 当 radio 被选中时，旋转图标 */
+.faqInput:checked ~ .faqQuestion .faqIcon {
+  transform: rotate(180deg);
+  color: var(--text-primary);
 }
 
 .faqAnswerContent {

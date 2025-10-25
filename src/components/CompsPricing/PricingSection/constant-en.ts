@@ -112,6 +112,7 @@ const CONTENT = {
   yearlyBadge: 'Save 20%',
   recommendedBadge: 'Recommended',
   contactSales: 'Contact Sales',
+  contactSalesLink: 'https://wy.jit.pro/whwy/jitRDM/publicPortal/contactus',
   moneyUnit: '$',
   priceUnit: {
     monthly: 'per month',

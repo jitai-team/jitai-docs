@@ -29,7 +29,7 @@
 }
 
 /* 中文主题变量 */
-[lang="zh-CN"] {
+:root[lang="zh-CN"] {
   --font-family-primary: var(--font-family-zh);
   --text-line-height: 1.6;
 }

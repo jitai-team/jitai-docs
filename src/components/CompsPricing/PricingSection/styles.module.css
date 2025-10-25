@@ -6,12 +6,14 @@
 :root {
   --page-title-line-height: 1.5;
   --card-title-line-height: 1.3;
+  --tab-min-width: 120px;
 }
 
 /* 中文主题变量 */
-[data-locale="zh"] {
-  --page-title-line-height: 1.4 !important;
-  --card-title-line-height: 1.4 !important;
+[lang="zh-CN"] {
+  --page-title-line-height: 1.4;
+  --card-title-line-height: 1.4;
+  --tab-min-width: 166px;
 }
 
 /* ==================== 页面布局 ==================== */
@@ -109,7 +111,7 @@
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
   color: var(--text-secondary);
-  min-width: 180px;
+  min-width: var(--tab-min-width);
   justify-content: center;
   position: relative;
   z-index: 1;

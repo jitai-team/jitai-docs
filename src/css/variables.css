@@ -29,7 +29,7 @@
 }
 
 /* 中文主题变量 */
-[data-locale="zh"] {
-  --font-family-primary: var(--font-family-zh) !important;
-  --text-line-height: 1.6 !important;
+[lang="zh-CN"] {
+  --font-family-primary: var(--font-family-zh);
+  --text-line-height: 1.6;
 }

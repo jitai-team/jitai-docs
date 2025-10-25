@@ -6,10 +6,10 @@
   --aspect-ratio: 16/9;
 }
 
-[data-locale="zh"] {
-  --module-card-width: 250px !important;
-  --module-desc-line-clamp: 2 !important;
-  --aspect-ratio: 16/10 !important;
+[lang="zh-CN"] {
+  --module-card-width: 250px;
+  --module-desc-line-clamp: 2;
+  --aspect-ratio: 16/10;
 }
 
 .ideSection {

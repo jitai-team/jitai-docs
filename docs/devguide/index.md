@@ -66,6 +66,7 @@ Set up your development environment by installing the platform and activating no
     { text: "Bind Node to Joined Organization When Activating", href: "devguide/installation-activation/developer-team-management#bind-node-to-joined-team-when-activating" },
     { text: "Use Organization Bind Code to Join and Bind When Activating Node", href: "devguide/installation-activation/developer-team-management#use-team-bind-code-to-join-and-bind-when-activating-node" },
     { text: "Join Organization via Bind Code When Logging into Existing Node", href: "devguide/installation-activation/developer-team-management#join-team-via-bind-code-when-logging-into-existing-node" },
+    { text: "Viewing team ID", href: "devguide/installation-activation/developer-team-management#view-team-id" },
     { text: "View and Refresh Organization Bind Code", href: "devguide/installation-activation/developer-team-management#view-and-refresh-team-bind-code" },
     { text: "Remove Organization Member", href: "devguide/installation-activation/developer-team-management#remove-team-member" }
   ]} />

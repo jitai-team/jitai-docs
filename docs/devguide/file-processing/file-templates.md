@@ -3,7 +3,7 @@ sidebar_position: 2
 slug: file-templates
 ---
 
-# Creating File Templates {#file-template}
+# Creating File Templates
 
 File templates are document generation tools that achieve dynamic content filling through preset variables, and can be used to dynamically generate sales contracts, production work orders, and invoice documents.
 JitAi supports Word templates and Excel templates.
@@ -99,14 +99,6 @@ After template creation is complete, for detailed instructions on how to generat
 ## Excel template {#excel-template}
 
 When the finance department creates monthly sales reports, the report format is fixed but data needs to be dynamically filled. Through Excel templates, you can set variables such as sales personnel, product categories, sales quantities, and amounts to quickly generate standardized sales analysis reports.
-
-Original data used in this document:
-
-![Original Data for Excel](./img/2/2025-08-29-17-24-59.png "Original Data for Excel")
-
-Excel document configured with template variables:
-
-![Excel Document with Variables](./img/2/2025-09-01-10-58-16.png "Excel Document with Variables")
 
 :::info Generating and Printing Files
 After template creation is complete, for detailed instructions on how to generate and print files, please refer to: [Generating and Printing Files Using File Templates](./generating-and-printing-files-using-file-templates)

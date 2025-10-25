@@ -4,8 +4,6 @@
  * work well for content-centric websites.
  */
 
-/* 引入 Footer 样式 */
-@import './footer.css';
 
 
 /* You can override the default Infima variables here. */
@@ -371,18 +369,23 @@ body[data-page-type="custom-layout"] .navbar,body:has(.custom-page) .navbar {
   display: none !important;
 }
 
+body[data-page-type="custom-layout"] .external-link,body:has(.custom-page) .external-link {
+  display: block !important;
+}
 
 
-.navbar__items>a[href*="demo.jit.pro"] {
-  background: linear-gradient(135deg, rgb(36, 73, 254) 0%, rgb(202, 75, 167) 100%);
+.navbar__items>a[href*="download"] {
+  background: var(--primary-color) !important;
   color: white !important;
   margin-left: 1rem;
   position: relative;
   overflow: hidden;
   border-radius: 12px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
 }
 
-.navbar__items>a[href*="demo.jit.pro"]::before {
+.navbar__items>a[href*="download"]::before {
   content: '';
   position: absolute;
   top: 0;
@@ -393,7 +396,7 @@ body[data-page-type="custom-layout"] .navbar,body:has(.custom-page) .navbar {
   transition: left 0.5s ease;
 }
 
-.navbar__items>a[href*="demo.jit.pro"]:hover::before {
+.navbar__items>a[href*="download"]:hover::before {
   left: 100%;
 }
 
@@ -797,12 +800,12 @@ body[data-page-type="custom-layout"] .navbar,body:has(.custom-page) .navbar {
 }
 
 .theme-doc-markdown th {
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-light)) !important;
-  color: white !important;
-  font-weight: 600 !important;
+  font-weight: 700 !important;
   padding: 1rem !important;
   text-align: left !important;
   font-size: 0.875rem !important;
+  color: #111827 !important;
+  border-bottom: 2px solid #e5e7eb !important;
 }
 
 .theme-doc-markdown td {
@@ -933,6 +936,11 @@ body[data-page-type="custom-layout"] .navbar,body:has(.custom-page) .navbar {
   background: #1f2937 !important;
 }
 
+[data-theme='dark'] .theme-doc-markdown th {
+  color: #f9fafb !important;
+  border-bottom-color: #4b5563 !important;
+}
+
 [data-theme='dark'] .theme-doc-markdown td {
   border-bottom-color: #374151 !important;
   color: #d1d5db !important;
@@ -1026,3 +1034,6 @@ body[data-page-type="custom-layout"] .navbar,body:has(.custom-page) .navbar {
 .table-of-contents li{
   margin: 0;
 }
+
+/* 引入 Footer 样式 */
+@import './footer.css';

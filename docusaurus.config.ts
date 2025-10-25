@@ -98,9 +98,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           editUrl:
             'https://github.com/jitai-team/jitai-docs/tree/master',
           // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
+          onInlineTags: 'throw',
+          onInlineAuthors: 'throw',
+          onUntruncatedBlogPosts: 'throw',
         },
         theme: {
           customCss: ['./src/css/variables.css', './src/css/custom.css'],
@@ -169,18 +169,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
            position: 'left',
            label: 'Open Source',
          },
-        // {to: '/blog', label: '博客', position: 'left'},
         //{
         //  type: 'docSidebar',
         //  sidebarId: 'appmarketSidebar',
         //  position: 'left',
         // label: 'App Market',
         //},
-        // {to: '/blog', label: '博客', position: 'left'},
          {
            href: 'https://forum.jit.pro',
            position: 'left',
-           label: 'Community',
+           label: 'Forum',
          },
         //GitHub  目前GitHub上没有开源项目，而且当前菜单中有 「开源」菜单，为节省菜单空间，这里先隐藏
         //  {
@@ -189,9 +187,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         //    position: 'right',
         //  },
         {
-          href: 'https://demo.jit.pro',
+          href: 'https://jit.pro/download',
           position: 'left',
-          label: 'Try Online',
+          label: 'Download',
         },
         {
           type: 'search',
@@ -216,6 +214,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             {
               label: 'Download',
               to: '/download',
+            },
+            {
+              label: 'Blog',
+              to: '/blog',
             },
             {
               label: 'Try Online',
@@ -248,7 +250,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
            title: 'Social',
            items: [
             {
-              label: 'Community',
+              label: 'Forum',
               href: 'https://forum.jit.pro',
             },
              {

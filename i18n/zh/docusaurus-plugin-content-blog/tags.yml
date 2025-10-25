@@ -1,0 +1,112 @@
+JitAi:
+  label: JitAi
+  description: JitAi 平台相关主题
+
+'ai agent':
+  label: AI 智能体
+  description: AI 智能体开发与应用
+
+'ai native':
+  label: AI 原生
+  description: AI 原生开发理念与实践
+
+'development platform':
+  label: 开发平台
+  description: 开发平台技术与工具
+
+MCP:
+  label: MCP
+  description: 模型上下文协议相关主题
+
+'production grade ai app':
+  label: 生产级 AI 应用
+  description: 构建生产级 AI 应用
+
+architecture:
+  label: 架构
+  description: 软件架构与设计模式
+
+'enterprise ai':
+  label: 企业 AI
+  description: 企业 AI 应用与解决方案
+
+'ai native architecture':
+  label: AI 原生架构
+  description: AI 原生应用架构与设计原则
+
+'application architecture':
+  label: 应用架构
+  description: 应用架构模式与最佳实践
+
+'event driven':
+  label: 事件驱动
+  description: 事件驱动架构与开发模式
+
+JAAP:
+  label: JAAP
+  description: JitAi AI 应用协议
+
+'enterprise applications':
+  label: 企业应用
+  description: 企业应用开发与解决方案
+
+'ai adoption':
+  label: AI 应用落地
+  description: AI 在企业中规模化应用的实践与挑战
+
+'development methodology':
+  label: 开发方法论
+  description: AI 应用开发方法论与最佳实践
+
+'ai coding':
+  label: AI 编码
+  description: AI 驱动的编码工具与技术
+
+cursor:
+  label: Cursor
+  description: Cursor AI 编码助手相关主题
+
+jitai:
+  label: jitai
+  description: JitAi 平台功能与能力
+
+'ai development':
+  label: AI 开发
+  description: AI 应用开发实践与工具
+
+'business applications':
+  label: 业务应用
+  description: 企业业务应用开发与解决方案
+
+'forward deployed engineer':
+  label: 前沿部署工程师
+  description: 直接与客户合作，在真实业务环境中部署和定制复杂软件解决方案的工程师
+
+'low code':
+  label: 低代码
+  permalink: /low-code
+  description: 一种以可视化拖拽为主、减少手写代码的开发方式，帮助更快速地构建应用
+
+'visual development':
+  label: 可视化开发
+  description: 可视化开发工具与技术
+
+DSL:
+  label: DSL
+  description: 领域特定语言（Domain Specific Language）
+
+orchestration:
+  label: 编排
+  description: 面向编排的系统架构与开发模式
+
+programming:
+  label: 编程
+  description: 编程技术与开发实践
+
+'development framework':
+  label: 开发框架
+  description: 应用开发框架与技术栈
+
+'system architecture':
+  label: 系统架构
+  description: 系统架构设计与实现

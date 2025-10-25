@@ -1,7 +1,7 @@
 ---
 slug: mobile-login
 ---
-# Mobile Number Login
+# Phone Number Login
 Mobile number login is an authentication method based on mobile phone numbers and SMS verification codes, implementing user identity authentication through SMS verification code validation. It handles verification code sending, verification code validation, and user login, supporting user registration, mobile number binding/unbinding, verification code validity period management, and other security features.
 
 The hierarchical structure of mobile number login elements is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.PhoneType) → Instance. Developers can quickly create mobile number login instance elements through JitAi's visual development tools.
@@ -22,7 +22,7 @@ auths/loginTypes/
 ```json title="e.json Configuration Example"
 {
   "type": "auths.loginTypes.PhoneType",
-  "title": "Mobile Number Login",
+  "title": "Phone Number Login",
   "backendBundleEntry": ".",
   "frontBundleEntry": "./phoneConfig.json",
   "variables": [],
@@ -169,7 +169,7 @@ Bind mobile number authentication for current user.
 Success returns SUCCESS_RETURN.
 
 #### Usage Example
-```python title="Bind Mobile Number Example"
+```python title="Bind Phone Number Example"
 phone_auth = app.getElement("auths.loginTypes.myPhoneLogin")
 
 try:
@@ -192,7 +192,7 @@ Unbind user's mobile number authentication.
 Success returns SUCCESS_RETURN.
 
 #### Usage Example
-```python title="Unbind Mobile Number Example"
+```python title="Unbind Phone Number Example"
 phone_auth = app.getElement("auths.loginTypes.myPhoneLogin")
 
 try:
@@ -244,7 +244,7 @@ Update user's mobile number.
 Success returns SUCCESS_RETURN.
 
 #### Usage Example
-```python title="Update Mobile Number Example"
+```python title="Update Phone Number Example"
 phone_auth = app.getElement("auths.loginTypes.myPhoneLogin")
 
 try:

@@ -32,9 +32,26 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
     // 设置当前活跃的导航项
     const setCurrentActiveNav = () => {
       const currentPath = window.location.pathname;
-      const currentItem = CONTENT.navItems.find(item => item.url === currentPath);
+      
+      // 首先尝试精确匹配
+      let currentItem = CONTENT.navItems.find(item => item.url === currentPath);
+      
+      // 如果没有精确匹配，则尝试前缀匹配
+      if (!currentItem) {
+        currentItem = CONTENT.navItems.find(item => {
+          // 确保不是根路径，避免误匹配
+          if (item.url === '/' || item.url === '/zh') {
+            return false;
+          }
+          return currentPath.startsWith(item.url);
+        });
+      }
+      
+      // 如果找到匹配项则设置，否则清空激活状态（避免默认高亮首页）
       if (currentItem) {
         setActiveNavItem(currentItem.id);
+      } else {
+        setActiveNavItem('');
       }
     };
 
@@ -66,7 +83,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
         window.location.href = item.url;
         setIsMobileMenuOpen(false);
       } else {
-        if (item.isNewTab) {
+        if (item.type === 'newTab') {
           window.open(item.url, '_blank');
         } else {
           window.location.href = item.url;
@@ -84,7 +101,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
         {/* Logo 和导航菜单在左侧 */}
         <div className={styles.leftSection}>
           <div className={styles.logo} onClick={() => handleNavClick(CONTENT.navItems[0])}>
-            <span>JitAi</span>
+            <img src="https://jit-www.oss-cn-beijing.aliyuncs.com/logo/logo_title.png" alt="JitAI" />
           </div>
 
           {/* 桌面端导航 */}
@@ -106,7 +123,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
           </div>
         </div>
 
-        {/* 右侧区域：语言切换器和 Try Online 按钮 */}
+        {/* 右侧区域：语言切换器、Download 按钮和 Try Online 按钮 */}
         <div className={styles.rightSection}>
           <LanguageSwitcher className={styles.languageSwitcher} />
           <button
@@ -115,6 +132,13 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
             data-type={CONTENT.tryOnlineButton.type}
           >
             {CONTENT.tryOnlineButton.label}
+          </button>
+          <button
+            className={styles.downloadButton}
+            onClick={() => handleNavClick(CONTENT.downloadButton)}
+            data-type={CONTENT.downloadButton.type}
+          >
+            {CONTENT.downloadButton.label}
           </button>
         </div>
 

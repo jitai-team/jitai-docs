@@ -10,7 +10,7 @@ slug: ai_func
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
-<VideoPlayer relatePath="/docs/tutorial/ai_func_effect.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/en/ai_func_effect.mp4" />
 
 
 ## Implementation process
@@ -20,14 +20,14 @@ To implement AI functionality, you must first integrate with large language mode
 The JitAi development framework integrates nearly 10 mainstream LLM vendors and supports privately deployed large models.
 
 Creating a new LLM vendor element:
-<VideoPlayer relatePath="/docs/tutorial/ai_func_llm.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/en/ai_func_llm.mp4" />
 
 The "Question Bank Management" page uses the "AI Data Management Page" type. We need to convert it to a "Generic Page" type for greater flexibility:
 
-<VideoPlayer relatePath="/docs/tutorial/ai_func_page_convert.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/en/ai_func_page_convert.mp4" />
 
 In JitAi, invoking large models is straightforward—similar to calling ordinary functions. Large models can be invoked directly from frontend pages or backend service functions.
 
-<VideoPlayer relatePath="/docs/tutorial/ai_func_page_event.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/en/ai_func_page_event.mp4" />
 
 For detailed information, see [AI Large Language Models](../../devguide/ai-llm/create-ai-llm).

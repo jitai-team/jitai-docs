@@ -15,9 +15,17 @@
     "message": "开源",
     "description": "Navbar item with label Open Source"
   },
+  "item.label.Blog": {
+    "message": "博客",
+    "description": "Navbar item with label Blog"
+  },
   "item.label.Community": {
     "message": "社区",
     "description": "Navbar item with label Community"
+  },
+  "item.label.Forum": {
+    "message": "论坛",
+    "description": "Navbar item with label Forum"
   },
   "item.label.Try Online": {
     "message": "在线试用",

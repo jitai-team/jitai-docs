@@ -9,13 +9,13 @@ slug: role
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
-<VideoPlayer relatePath="/docs/tutorial/role_effect.mp4" />
+<VideoPlayer relatePath="/docs/tutorial/en/role_effect.mp4" />
 
 ## Implementation process
 
 The JitAi application framework includes built-in "Developer" and "Administrator" roles, corresponding to the "Developer Portal" and "Manager Portal" respectively.
 
-This project requires two role types: Teacher and Student. Since we've already created "Teacher Portal" and "Student Portal" for these roles, permission configuration becomes straightforward.
+This project requires two role types: Examiner and Examinee. Since we've already created "Examiner Portal" and "Examinee Portal" for these roles, permission configuration becomes straightforward.
 
 ### Creating application roles and managing permission scope in the "Developer Portal"
 
@@ -29,13 +29,13 @@ You can also click "Configure" for each menu to further configure component-leve
 
 ![](../img/role_155400.png)
 
-In this application, we'll create "Teacher" and "Student" departments.
+In this application, we'll create "Examiner" and "Examinee" departments.
 
 For detailed information, see [Organizational Structure](../../devguide/user-and-permission/organization).
 
 ### Configuring Role Membership in the "Manager Portal"
 
-Add the "Teacher" department to the "Teacher" role's member configuration, and add the "Student" department to the "Student" role's member configuration.
+Add the "Examiner" department to the "Examiner" role's member configuration, and add the "Examinee" department to the "Examinee" role's member configuration.
 
 ![](../img/role_160224.png)
 

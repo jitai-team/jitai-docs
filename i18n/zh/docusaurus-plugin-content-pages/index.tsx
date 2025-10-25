@@ -1,27 +1,19 @@
-import React, { useEffect } from 'react';
-import PageLayout from '../../../src/components/PageLayout';
-import HeroSection from '../../../src/components/home_comps/HeroSection';
-import ProductSection from '../../../src/components/home_comps/ProductSection';
-import DevOpsSection from '../../../src/components/home_comps/DevOpsSection';
-import IDESection from '../../../src/components/home_comps/IDESection';
-import PlatformSection from '../../../src/components/home_comps/PlatformSection';
-import FrameworkSection from '../../../src/components/home_comps/FrameworkSection';
-import TechnologiesSection from '../../../src/components/home_comps/TechnologiesSection';
-import styles from './index.module.css';
+import React from 'react';
+import PageLayout from '@site/src/components/PageLayout';
+import HeroSection from '@site/src/components/CompsHome/HeroSection';
+import PlatformSection from '@site/src/components/CompsHome/PlatformSection';
+import FrameworkSection from '@site/src/components/CompsHome/FrameworkSection';
+import IDESection from '@site/src/components/CompsHome/IDESection';
+import DevOpsSection from '@site/src/components/CompsHome/DevOpsSection';
+import styles from '@site/src/pages/index.module.css';
 
 const HomePage: React.FC = () => {
-  const homeTitle = '下一代AI应用开发技术体系';
-  const homeDesc = 'JitAI全球首创解释型应用架构，让AI智能体实时感知与编排系统，开发效率提升10倍！立即体验智能开发新时代。';
-
   return (
     <PageLayout 
-      title={homeTitle} 
-      description={homeDesc}
+      pageId="index"
       containerClassName={styles.container}
     >
       <HeroSection />
-      <ProductSection />
-      <TechnologiesSection />
       <PlatformSection />
       <FrameworkSection />
       <IDESection />

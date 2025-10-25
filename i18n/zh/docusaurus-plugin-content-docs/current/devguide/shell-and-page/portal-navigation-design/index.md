@@ -118,7 +118,7 @@ SSR(Server-Side Rendering，服务端渲染)门户用于提升首屏加载性能
 开发者可以展开菜单项右侧的`更多`按钮，点击`页面变量赋值`按钮，在弹窗中为页面变量赋值。
 
 :::warning
-开发者需要在页面中声明[页面变量](/docs/devguide/shell-and-page/component-based-page-development#page-variables)，页面没有声明变量时则无法在门户中设置页面变量赋值。
+开发者需要在页面中声明[页面变量](/docs/devguide/shell-and-page/generic-page#page-variables)，页面没有声明变量时则无法在门户中设置页面变量赋值。
 :::
 
 ### 重写菜单页面 {#rewriting-menu-pages}
@@ -159,8 +159,8 @@ SSR(Server-Side Rendering，服务端渲染)门户用于提升首屏加载性能
 ### 设置在门户列表中的顺序 {#portal-ordering}
 当应用包含多个门户时，开发者可以在`布局设计`中设置顺序值，从而调整每个门户在门户切换菜单中的显示顺序。
 
-## 启用或关闭常用功能入口 {#managing-common-function-entries}
-每个新建的门户默认都会有一些常用功能入口：发起申请、待办中心、消息中心、个人中心、新建功能（支持简易模式下新建功能模块，开发能力弱于[可视化开发工具](/docs/devguide/development-tool-and-publish-service/visual-development-tool)）。以上入口支持在`布局设计`中启用或禁用。
+## 启用或关闭常用功能入口 {#managing-common-features-entries}
+每个新建的门户默认都会有一些常用功能入口：发起申请、待办中心、新建功能（支持简易模式下新建功能模块，开发能力弱于[可视化开发工具](/docs/devguide/development-tool-and-publish-service/visual-development-tool)）。以上入口支持在`布局设计`中启用或禁用。
 
 ![门户常用功能入口](./imgs/portal-common-function-entry.png)
 
@@ -170,10 +170,10 @@ SSR(Server-Side Rendering，服务端渲染)门户用于提升首屏加载性能
 
 上图是启用所有常用功能入口后的效果。
 
-### 发起申请/待办/消息中心入口 {#application-and-workflow-entries}
-当开发者开启`发起申请`+`待办中心`+`消息中心`入口时，用户可以在访问门户时发起审批流程、查看待办审批事项、查看消息通知。
+### 发起申请/待办 {#application-and-workflow-entries}
+当开发者开启`发起申请`+`待办中心`入口时，用户可以在访问门户时发起审批流程、查看待办审批事项。
 
-![发起申请/待办/消息中心入口](./imgs/initiate-application-todo-message-center-entry.gif)
+![发起申请/待办](./imgs/initiate-application-todo-message-center-entry.gif)
 
 ### 个人中心入口 {#profile-entry}
 当开发者开启`个人中心`入口时，用户在访问门户时可以查看个人基本信息以及修改昵称、密码，也可以切换[组织架构](/docs/devguide/user-and-permission/organization)、退出登录。

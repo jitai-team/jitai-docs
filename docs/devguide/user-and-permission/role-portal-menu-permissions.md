@@ -3,7 +3,7 @@ sidebar_position: 3
 slug: role-portal-menu-permissions
 ---
 
-# Role and Portal Menu Permissions {#role-portal-menu-permissions}
+# Role and Portal Menu Permissions
 
 RBAC (Role-Based Access Control) is a widely adopted permission management mechanism that controls access to system resources by assigning roles to users and granting appropriate permissions to those roles.
 
@@ -91,7 +91,7 @@ Application roles can be organized into management hierarchies with defined scop
 
 ![Role Management Scope Configuration](./img/role/role-management-scope-configuration.gif "Role Management Scope Configuration")
 
-The Manager Portal has a built-in `Permission Manage` menu enabled by default. Developers click the `Configuration` button in the operation column to the right of `Permission Manage` and specify `Management Role Scope` as either `All Roles` or `Specify Roles` in the popup dialog.
+The Manager Portal has a built-in `Permission Manage` menu enabled by default. Developers click the `Configuration` button in the operation column to the right of `Permission Manage` and specify `Manage Role Scope` as either `All Roles` or `Specify Roles` in the popup dialog.
 
 ## Application role member management {#application-role-member-management}
 

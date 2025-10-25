@@ -18,15 +18,19 @@ export interface DownloadContent {
       intelDownloadText: string;
       appleDownloadUrl: string;
       appleDownloadText: string;
+      macSecurityUrl: string;
     };
   };
   server: {
     docker: {
       title: string;
       description: string;
-      command: string;
+      globalCommand: string;
+      chinaCommand: string;
       copyText: string;
       copySuccess: string;
+      globalSegment: string;
+      chinaSegment: string;
     };
   };
 }
@@ -51,7 +55,8 @@ const CONTENT: DownloadContent = {
       intelDownloadUrl: 'https://apk.jit.pro/latest/darwin/x64/jit.dmg',
       intelDownloadText: 'Intel芯片安装包',
       appleDownloadUrl: 'https://apk.jit.pro/latest/darwin/arm/jit.dmg',
-      appleDownloadText: 'Apple芯片安装包'
+      appleDownloadText: 'Apple芯片安装包',
+      macSecurityUrl: '/zh/download/mac-security'
     }
   },
   
@@ -59,9 +64,12 @@ const CONTENT: DownloadContent = {
     docker: {
       title: 'Docker 镜像',
       description: '支持Liunx\\Ubuntu\\CentOS等，适合部署在服务器上，作为测试或生产环境',
-      command: 'docker run -itd --name jit -p 80:80 -p 3306:3306 --init --privileged -v /your/local/path:/data/JitNode jitaiplatform/jit',
+      globalCommand: 'docker run -itd --name jit -p 80:80 -p 3306:3306 --init --privileged -v /your/local/path:/data/JitNode jitaiplatform/jit',
+      chinaCommand: 'docker run -itd --name jit -p 80:80 -p 3306:3306 --init --privileged -v /your/local/path:/data/JitNode registry.cn-hangzhou.aliyuncs.com/jitpro/jit',
       copyText: '📋 复制',
-      copySuccess: '✅ 已复制'
+      copySuccess: '✅ 已复制',
+      globalSegment: '全球镜像源',
+      chinaSegment: '中国镜像源'
     }
   }
 };

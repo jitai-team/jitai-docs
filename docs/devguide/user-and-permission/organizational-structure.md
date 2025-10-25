@@ -3,7 +3,7 @@ sidebar_position: 1
 slug: organization
 ---
 
-# Organization {#organization}
+# Organization
 JitAi provides flexible and comprehensive organization management capabilities, supporting four types: `Generic Organization`, `DingTalk Self-built Org.`, `WeCom Self-built Org.`, and `Microsoft Teams`. Based on your specific management needs and existing systems, you can select the most appropriate organization to efficiently manage members and departments. The platform not only supports flexible member and department configuration but also seamlessly integrates with third-party platforms, fully accommodating diverse enterprise organizational management scenarios.
 
 ## Default organization {#default-organization}
@@ -74,10 +74,10 @@ After completing the configuration, the system will automatically pull organizat
 
 **WeCom Configuration Information Acquisition Guide: Please refer to [WeCom Official Documentation](https://work.weixin.qq.com)**
 
-![](./img/corp/wechat-work-id.png)
+![WeCom Enterprise ID](./img/corp/wechat-work-id.png "WeCom Enterprise ID")
 The Enterprise ID (CorpId) can be obtained from the enterprise information page in the WeCom management backend.
 
-![](./img/corp/wechat-work-config-2.png)
+![WeCom Application Configuration](./img/corp/wechat-work-config-2.png "WeCom Application Configuration")
 Application-related configuration information can be viewed on the details page of the WeCom custom application.
 
 After the organizational structure is created, JitAi will automatically configure [WeCom Self-built QR Code](./login-authentication#wechat-work-custom-qr-login) for the organization without manual setup, facilitating members to quickly log in to the system through WeCom QR code scanning.

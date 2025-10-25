@@ -4,46 +4,48 @@ slug: api-authorization
 ---
 
 # Creating API Authorization Elements
-API Authorization is the process of controlling access permissions to interfaces (APIs), designed to ensure that only authorized external callers can access specific resources or perform specific operations.
 
-## Creating New API Authorization {#api-authorization-creation}
+API Authorization is a mechanism for controlling access permissions to interfaces (APIs), ensuring that only authorized external callers can access specific resources or perform designated operations.
+
+## Creating new API authorization {#api-authorization-creation}
+
 ![Creating API Authorization](./img/api_2025-08-26_15-21-40.png)
 
-Click the `+` button on the left element tree to open a popup. Move your mouse to "More" and you will see "API Authorization". Click "Standard Authorization" within "API Authorization" to open the new standard authorization popup page.
+Click the `+` button in the element tree on the left to open a dialog. to reveal "API Auths", then click "Generic API Auth" to open the creation dialog.
 
-![API Creation Popup](./img/api_2025-08-26_15-26-59.png)
+![API Creation Dialog](./img/api_2025-08-26_15-26-59.png)
 
-In the new standard authorization popup page, fill in the API authorization name and accessKey, then click `Save` to create a new API authorization.
+In the generic API auth creation dialog, enter the API name and accessKey, then click `Save` to create a new API authorization.
 
 :::tip Tip
-The accessKey is the secret key for API authorization, consisting of an 8-32 character string of letters or numbers, and cannot contain special characters.
+The accessKey serves as the authentication key for API authorization. It must be an 8-32 character string containing only letters or numbers—special characters are not permitted.
 
-Before creating API authorization, the system will first generate an accessSecret based on the accessKey. The accessKey and accessSecret are the credentials for API authorization access.
+When creating API authorization, the system automatically generates an accessSecret based on the accessKey. Both the accessKey and accessSecret serve as authentication credentials for API access.
 
 :::
 
-## API Authorization Details {#api-authorization-detail}
+## API authorization details {#api-authorization-detail}
 
-After developers click `Confirm` in the new API authorization popup, the page will redirect to the authorization list page and display the newly created authorization information. Alternatively, you can view all created authorization information by clicking `API Authorization` in the left element tree.
+After clicking `Confirm` in the creation dialog, the page redirects to the authorization list, displaying the newly created authorization. You can also view all created authorizations by clicking `API Auths` in the element tree on the left.
 
 ![API Authorization Details](./img/api_2025-09-16_11-59-38.png)
 
-In the API details page, you can view authorization information including authorization name, accessKey, accessSecret, call address, authorized interfaces, and other information. The `call URL` is the call address for the authorized interface, which callers can use to make calls. `Authorized interfaces` can authorize service functions and other elements in the current application.
+The authorization details page displays comprehensive information, including the authorization name, accessKey, accessSecret, call URL, and authorized interfaces. The `Callurl` represents the endpoint that external callers use to make requests.
 
-There is a `Copy` button in the upper left corner of the authorization details page. Clicking `Copy` will copy the authorization information to the clipboard.
+A `Copy` button located in the upper left corner of the authorization details page allows you to copy the authorization information to your clipboard.
 
 :::warning Note
 
-On the authorization page, developers can modify the accessKey. After modifying the accessKey, please make sure to regenerate a new accessSecret, otherwise validation will fail.
+You can modify the accessKey on the authorization page. However, after modifying the accessKey, you must regenerate a new accessSecret, otherwise authentication will fail.
 
 :::
 
-## Call Records {#call-records}
+## Call records {#call-records}
 
-When callers initiate calls, JitAi will generate call records.
+JitAi generates call records whenever external callers make requests.
 
-![Call Records](./img/api_2025-08-26_15-50-10.gif)
+![Call Records](./img/api_2025-10-16_17-41-02.png)
 
-In the authorized API's visual editor, click `Call Records` in the upper right corner to open the call records popup.
+In the authorized API's visual editor, click `Call Records` in the upper right corner to open the call records dialog.
 
-In the call records popup, you can view information such as interface address, call time, call IP, call results, and can also filter by call result status and call time.
+The call records dialog displays information such as interface address, call time, caller IP, call results, and provides filtering options by result status and call time.

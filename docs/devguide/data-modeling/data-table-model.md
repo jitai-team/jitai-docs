@@ -3,7 +3,7 @@ sidebar_position: 3
 slug: data-table-model
 ---
 
-# Creating Data Tables {#data-table-model}
+# Creating Data Tables
 Data table models constitute the foundational data layer for JitAi applications. Each data table model corresponds directly to a database table, defining the structure, data types, and constraint rules for business data. JitAi offers two distinct approaches for creating data table models: developing new data table models from scratch, which proves ideal for ground-up business data structure design, or generating models from existing database tables, which streamlines the management and extension of legacy data architectures.
 
 ## Data table creation entry {#data-table-create-entry}
@@ -27,9 +27,9 @@ JitAi applications provide comprehensive support for various data types includin
 
 When architecting data tables, select appropriate field types aligned with your specific business requirements.
 
-Each data type presents distinct configuration options. Consider **Single Line Text** as an exemplar:
+Each data type presents distinct configuration options. Consider **Single-line Text** as an exemplar:
 
-![Single Line Text Configuration](./img/single-line-text-configuration.png "Single Line Text Configuration")
+![Single-line Text Configuration](./img/single-line-text-configuration.png "Single-line Text Configuration")
 
 The single-line text data type enjoys widespread adoption and represents one of the most fundamental field types in data modeling. Key characteristics encompass: exclusive support for single-line text content without line breaks, automatic field name generation (e.g., `f5f6`) for streamlined database operations, and a default storage capacity of 255 characters. This field type accommodates extensive customization options and constraints, empowering you to configure placeholder text, enforce maximum text length restrictions, ensure field value uniqueness through uniqueness constraints, and establish database indexes for enhanced query performance. Furthermore, single-line text fields support calculation formulas for dynamic computations and default value configurations, addressing diverse requirements across varied business scenarios.
 

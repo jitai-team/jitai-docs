@@ -3,7 +3,7 @@ sidebar_position: 1
 slug: file-storage
 ---
 
-# Configuring Your Own File Storage Service {#configuring-your-own-file-storage-service}
+# Configuring Your Own File Storage Service
 
 File upload and usage is a core functionality of web applications, widely used in scenarios such as attachment uploads, avatar management, and image previews. JitAi provides developers with a comprehensive file storage solution, supporting 7 storage methods: alioss, EOS, MinIO, Qiniu Cloud, AWS S3, Cloudflare R2, and disk storage.
 
@@ -139,8 +139,3 @@ export default async (file: Record<string, any>, ...args: Array<any>) => {
     return await el?.uploadFile(file, ...args);
 };
 ```
-
-Note: await app.getElement() can use the storage service's fullName as a parameter to get non-default storage services. The storage service's fullName can be found in the response value of the getAppInfo interface by searching for the storage service name.
-
-![Storage Service FullName](./img/1/2025-08-28-17-36-57.png "Storage Service FullName")
-

@@ -1,12 +1,12 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 slug: business-entity-modeling-and-data-analysis
 ---
 
 # 业务数据建模与数据分析
 构建销售数据分析系统，管理客户、门店、销售员、产品、订单等实体，支持多数据库配置（历史数据归档到单独的数据库实例中）、客户信息中扩展常用统计字段、多维度聚合分析，以及数据变更时的业务规则自动化处理。
 
-## 创建数据库实例
+## 创建数据库实例 {#creating-database-instances}
 创建主业务数据库与历史数据库（可选），支持可映射已有库表。
 
 1. 创建主业务数据库：配置MySQL数据库实例，用于系统运行时的业务数据存储
@@ -15,7 +15,7 @@ slug: business-entity-modeling-and-data-analysis
    
 2. 创建历史数据库（可选）：配置MySQL数据库实例，用于分析归档后的历史数据
 
-## 建模业务实体与数据类型
+## 建模业务实体与数据类型 {#modeling-business-entities}
 实体：客户、订单、订单明细、产品、门店、销售员。
 
 关系：客户/门店/销售员 → 订单（一对多），订单 → 订单明细（一对多），产品 → 订单明细（一对多）。
@@ -34,7 +34,7 @@ slug: business-entity-modeling-and-data-analysis
 
 在创建模型时需要选择正确的数据库实例元素。
 
-## 配置客户信息扩展表
+## 配置客户信息扩展表 {#configuring-extension-tables}
 在不改动客户模型结构的前提下，关联订单数据，生成统计字段。以客户为基础，关联订单；扩展累计消费金额(求和)与购买次数(计数)
 
 1. 创建客户购买统计扩展表：以客户模型为基础模型
@@ -44,7 +44,7 @@ slug: business-entity-modeling-and-data-analysis
 2. 添加关联的数据表：通过客户模型的主键ID字段与订单模型的关联客户字段建立关联，在添加关联关系时可以配置对订单模型的筛选条件，如支付状态为已付款等。
 3. 配置扩展字段：对销售金额字段求和，作为新的"累计消费金额"字段；对订单记录计数，作为新的"购买次数"字段。
 
-## 配置聚合表（分组与汇总）
+## 配置聚合表（分组与汇总） {#configuring-aggregate-tables}
 按年、季度、月、周分组，统计销售金额(SUM)、订单数量(COUNT)。利用地址字段的province、city解析功能，按地区分组统计销售业绩。基于产品分类字段分组，分析各品类销售表现和占比。
 
 1. 创建时间维度聚合表：以订单模型为数据源，筛选已支付订单，基于订单日期字段按年、季度、月、周分组，配置销售金额(对销售金额求和)、订单数(对订单ID计数)聚合
@@ -53,7 +53,7 @@ slug: business-entity-modeling-and-data-analysis
 
 ![配置聚合表](./img/jitorm/configure-aggregate-table.png)
 
-## 配置模型事件（业务规则自动化）
+## 配置模型事件（业务规则自动化） {#configuring-model-events}
 新建模型事件
 
 ![配置模型事件](./img/jitorm/configure-model-events.png)

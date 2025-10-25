@@ -3,10 +3,10 @@ sidebar_position: 1
 slug: create-ai-llm
 ---
 
-# 创建大模型元素 {#create-ai-llm}
-随着AI技术快速发展，现代应用系统正在经历智能化革命。然而，面对众多的AI服务提供商和不断更新的模型版本，开发者往往面临选择困难和集成复杂性的挑战。
+# 创建大模型元素
+大模型元素是JitAi平台统一接入各类AI大模型服务的核心组件。它为平台中的[AI Agent](../ai-agent/create-ai-agent)、[AI助理](../ai-assistant/create-ai-assistant)、[AI知识库](../knowledge-base/create-knowledge-elements)提供底层模型能力支撑。
 
-大模型厂商元素正是JitAi平台为解决这一问题而设计的统一AI接入方案。无论你要构建智能[AI知识库](../knowledge-base/create-knowledge-elements)、开发AI助理、还是创建自主决策的Agent，它都能提供稳定可靠的大模型服务支撑。
+平台内置支持Anthropic、OpenAI、Gemini、Deepseek、阿里云百炼、硅基流动等主流大模型厂商，同时提供OpenAI兼容接口以支持任何兼容OpenAI协议的大模型服务（包括私有化部署的）。通过灵活的API Key管理和智能重试机制，确保模型调用的稳定性和可靠性。开发者也可以扩展新的大语言模型Type元素，即可支持任意不同协议、不同厂商的开源/闭源大模型服务。
 
 ## 主流大模型厂商支持列表 {#mainstream-llm-vendor-support-list}
 *   Anthropic

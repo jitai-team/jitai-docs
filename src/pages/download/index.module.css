@@ -1,0 +1,15 @@
+/* Download page styles - 遵循统一设计规范 */
+
+/* ===== 页面容器 ===== */
+.container {
+  min-height: 100vh;
+  /* background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-primary); */
+}
+
+/* ===== 自定义页面布局 ===== */
+.custom-page {
+  position: relative;
+  overflow-x: hidden;
+}

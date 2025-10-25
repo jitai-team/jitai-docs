@@ -1,0 +1,100 @@
+/* 联系我们区域 - 遵循统一设计规范 */
+
+/* ===== 联系我们区域 ===== */
+.contactSection {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(var(--space-8));
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0.6s;
+  padding: var(--section-padding);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+}
+
+.contactSection.contactAnimate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contactTitle {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+  line-height: var(--line-height-tight);
+}
+
+.contactSubtitle {
+  font-size: var(--font-size-subtitle);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-10);
+  margin-left: auto;
+  margin-right: auto;
+  line-height: var(--line-height-relaxed);
+}
+
+/* ===== 联系按钮 ===== */
+.contactButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--space-5) var(--space-10);
+  border-radius: var(--border-radius-xl);
+  text-decoration: none;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-lg);
+  transition: var(--transition-primary);
+  box-shadow: var(--hover-shadow-primary);
+}
+
+.contactButton:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--hover-shadow-primary);
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.buttonText {
+  font-weight: var(--font-weight-semibold);
+}
+
+.buttonIcon {
+  display: flex;
+  align-items: center;
+}
+
+.buttonIcon svg {
+  width: var(--space-5);
+  height: var(--space-5);
+}
+
+/* ===== 响应式设计 ===== */
+@media (max-width: 768px) {
+  .contactTitle {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .contactButton {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .contactTitle {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .contactSubtitle {
+    font-size: var(--font-size-base);
+  }
+  
+  .contactButton {
+    padding: var(--space-4) var(--space-6);
+    font-size: var(--font-size-sm);
+  }
+}

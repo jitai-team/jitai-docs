@@ -1,0 +1,926 @@
+/* ========================================
+   PricingSection 样式 - 遵循统一设计规范
+   ======================================== */
+
+/* ==================== CSS 变量定义 ==================== */
+:root {
+  --page-title-line-height: 1.5;
+  --card-title-line-height: 1.3;
+  --tab-min-width: 120px;
+}
+
+/* 中文主题变量 */
+:root[lang="zh-CN"] {
+  --page-title-line-height: 1.4;
+  --card-title-line-height: 1.4;
+  --tab-min-width: 166px;
+}
+
+/* ==================== 页面布局 ==================== */
+.sectionContent {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.pricing {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: var(--section-padding);
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-primary);
+}
+
+/* ==================== 页面标题 ==================== */
+.pageHeader {
+  text-align: center;
+  margin: var(--space-16) 0;
+}
+
+.pageTitle {
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-secondary);
+  margin-bottom: var(--space-6);
+  line-height: var(--page-title-line-height) !important;
+}
+
+.pageSubtitle {
+  font-size: var(--font-size-subtitle);
+  color: var(--text-secondary);
+  margin: 0 auto;
+  line-height: var(--line-height-relaxed);
+}
+
+/* ==================== 标签页 ==================== */
+.tabContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-12);
+  transition-delay: 0.1s;
+}
+
+.tabGroup {
+  display: flex;
+  backdrop-filter: blur(20px);
+  border-radius: var(--border-radius-card);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color-light);
+  position: relative;
+  padding: 4px;
+}
+
+.tabSlider {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  width: calc(33.333% - 4px);
+  background: var(--color-primary);
+  border-radius: var(--border-radius-lg);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+  box-shadow: var(--hover-shadow-primary);
+}
+
+.tabSliderMonthly {
+  transform: translateX(0);
+}
+
+.tabSliderYearly {
+  transform: translateX(calc(100% + 4px));
+}
+
+.tabSliderBuyout {
+  transform: translateX(calc(200% + 8px));
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: transparent;
+  border: none;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--border-radius-lg);
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  min-width: var(--tab-min-width);
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
+.tab:hover {
+  color: var(--color-primary);
+}
+
+.tabActive {
+  color: var(--color-white) !important;
+}
+
+.tabActive:hover {
+  color: var(--color-white);
+}
+
+.tabIcon {
+  font-size: var(--font-size-lg);
+  display: none;
+}
+
+.tabText {
+  font-weight: var(--font-weight-semibold);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.yearlyBadge {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.tabActive .yearlyBadge {
+  color: var(--color-white);
+}
+
+/* ==================== 价格卡片 ==================== */
+
+/* 价格卡片网格 */
+.pricingCards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(240px, 1fr));
+  gap: var(--space-5);
+  margin-bottom: var(--space-16);
+  transition-delay: 0.2s;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 价格卡片基础样式 */
+.pricingCard {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  border-radius: var(--border-radius-card);
+  padding: var(--space-5);
+  border: 1px solid var(--border-color-light);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-primary);
+  position: relative;
+  overflow: hidden;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricingCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transition: transform var(--transition-primary);
+}
+
+.pricingCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--hover-shadow-primary);
+  border-color: var(--color-primary);
+}
+
+.pricingCard:hover::before {
+  transform: scaleX(1);
+}
+
+/* 推荐徽章 */
+.recommendedBadge {
+  position: absolute;
+  line-height: normal;
+  top: -1px;
+  right: 0rem;
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--space-2) var(--space-6);
+  border-radius: 0 0 0rem var(--border-radius-card);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  box-shadow: var(--hover-shadow-primary);
+}
+
+/* 卡片头部 */
+.cardHeader {
+  text-align: center;
+  margin-top: var(--space-4);
+}
+
+.cardIcon {
+  font-size: var(--font-size-5xl);
+  margin-bottom: var(--space-3);
+}
+
+.cardTitle {
+  font-size: var(--font-size-lg) !important;
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+  line-height: var(--card-title-line-height) !important;
+  text-align: center;
+}
+
+.cardSubtitle {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin: 0 0 var(--space-4) 0;
+  line-height: var(--line-height-normal);
+  text-align: center;
+}
+
+/* 价格部分 */
+.cardPrice {
+  margin-bottom: var(--space-5);
+  background: transparent;
+  border-radius: 0;
+  border: none;
+  text-align: center;
+}
+
+.priceGroup {
+  text-align: center;
+}
+
+.priceLabel {
+  display: block;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: var(--space-1);
+}
+
+.currency {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.amount {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+}
+
+.period {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* 功能列表 */
+.packageInfo {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-2);
+  text-align: left;
+}
+
+.cardFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
+  margin-top: auto;
+}
+
+.cardFeatures .featureItem {
+  display: block;
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  padding: var(--space-1) 0;
+  line-height: var(--line-height-normal);
+  text-align: left;
+}
+
+/* 订购按钮 */
+.cardAction {
+  margin-bottom: var(--space-4);
+  padding: var(--space-2) 0;
+}
+
+.orderButton {
+  width: 100%;
+  background: var(--color-gray-100);
+  color: var(--text-secondary);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: var(--transition-primary);
+  box-shadow: none;
+}
+
+.orderButton:hover {
+  background: var(--color-gray-200);
+  color: var(--text-primary);
+}
+
+.pricingCard:hover .orderButton {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  box-shadow: var(--hover-shadow-primary);
+}
+
+.pricingCard:hover .orderButton:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--hover-shadow-primary);
+}
+
+/* ==================== 特别说明 ==================== */
+.specialNote {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  transition-delay: 0.4s;
+}
+
+.noteIcon {
+  font-size: var(--font-size-6xl);
+  flex-shrink: 0;
+}
+
+.noteContent {
+  flex: 1;
+}
+
+.noteTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.noteText {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  line-height: var(--line-height-normal);
+  margin: 0;
+}
+
+.noteText strong {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ==================== 下载按钮 ==================== */
+.downloadButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--space-4) var(--space-7);
+  border-radius: var(--border-radius-lg);
+  text-decoration: none;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  margin-top: var(--space-4);
+  transition: var(--transition-primary);
+  box-shadow: var(--hover-shadow-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.downloadButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.downloadButton:hover::before {
+  left: 100%;
+}
+
+.downloadButton:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--hover-shadow-primary);
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.downloadButton:hover .buttonIcon {
+  transform: translateY(2px);
+}
+
+.downloadButton .buttonIcon {
+  display: flex;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  transition: transform var(--transition-normal);
+}
+
+.downloadButton .buttonIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ==================== 弹窗表单样式 ==================== */
+
+.formGroup {
+  margin-bottom: var(--space-5);
+}
+
+.formLabel {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.formLabelRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+}
+
+.helpLink {
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  text-decoration: none;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--border-radius-sm);
+  transition: all 0.2s ease;
+}
+
+.helpLink:hover {
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+.formInput {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.formInputError {
+  border-color: #ef4444;
+}
+
+.formInputError:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.errorMessage {
+  color: #ef4444;
+  font-size: var(--font-size-sm);
+  margin-top: var(--space-1);
+}
+
+.modalPlanInfo {
+  background: var(--bg-secondary);
+  padding: var(--space-4);
+  border-radius: var(--border-radius-md);
+  margin-top: var(--space-4);
+}
+
+.planInfoTitle {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  margin: 0 0 var(--space-2);
+}
+
+.planInfoText {
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* 弹窗按钮样式 */
+.modalButtonCancel {
+  flex: 1;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modalButtonCancel:hover {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.modalButtonConfirm {
+  flex: 1;
+  padding: var(--space-3) var(--space-4);
+  border: none;
+  border-radius: var(--border-radius-md);
+  background: var(--color-primary);
+  color: white;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 3px 6px rgba(61, 101, 253, 0.3), 0 1px 2px rgba(19, 28, 67, 0.2);
+}
+
+.modalButtonConfirm::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: left 0.5s ease;
+}
+
+.modalButtonConfirm:hover::before {
+  left: 100%;
+}
+
+.modalButtonConfirm:hover {
+  box-shadow: 0 6px 20px rgba(61, 101, 253, 0.4), 0 2px 8px rgba(19, 28, 67, 0.3);
+}
+
+.modalButtonConfirm:disabled {
+  background: var(--text-tertiary);
+  cursor: not-allowed;
+}
+
+/* ==================== 响应式布局 ==================== */
+
+/* 大屏幕 (≤1400px) - 减少到3列 */
+@media (max-width: 1400px) {
+  .pricingCards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+    max-width: 1200px;
+  }
+  
+  .pricingCard {
+    padding: var(--space-4);
+    min-height: 400px;
+  }
+  
+  .pageTitle {
+    font-size: var(--font-size-4xl);
+  }
+  
+  .cardTitle {
+    font-size: var(--font-size-base) !important;
+  }
+  
+  .amount {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .noteTitle {
+    font-size: var(--font-size-xl);
+  }
+  
+  .noteText {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* 中等屏幕 (≤1200px) - 2列布局 */
+@media (max-width: 1200px) {
+  .pricingCards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+  }
+  
+  .pricingCard {
+    min-height: 420px;
+  }
+  
+  .recommended {
+    transform: scale(1);
+  }
+}
+
+/* 大平板 (≤1024px) */
+@media (max-width: 1024px) {
+  .pricing {
+    padding: var(--space-32) 0;
+  }
+  
+  .pageHeader {
+    margin: var(--space-12) 0;
+  }
+  
+  .pricingCards {
+    margin-bottom: var(--space-12);
+  }
+  
+  .tabGroup {
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .tab {
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--font-size-sm);
+    min-width: auto;
+  }
+  
+  .yearlyBadge {
+    display: block;
+    margin-top: 2px;
+  }
+}
+
+/* 平板 (≤768px) - 改为1列 */
+@media (max-width: 768px) {
+  .pricing {
+    padding: var(--space-24) 0;
+  }
+
+  .pageHeader {
+    margin: var(--space-8) 0;
+  }
+
+  .pageTitle {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--space-4);
+  }
+  
+  .pageSubtitle {
+    font-size: var(--font-size-base);
+  }
+  
+  .tabContainer {
+    margin-bottom: var(--space-8);
+    padding: 0 var(--space-2);
+  }
+  
+  .tabGroup {
+    width: 100%;
+    max-width: none;
+  }
+  
+  .tab {
+    padding: var(--space-2-5) var(--space-3);
+    font-size: var(--font-size-sm);
+    min-width: 0;
+    flex: 1;
+  }
+  
+  .tabText {
+    flex-direction: column;
+    gap: 2px;
+    text-align: center;
+  }
+  
+  .yearlyBadge {
+    font-size: 10px;
+  }
+  
+  .pricingCards {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+    margin-bottom: var(--space-12);
+  }
+
+  .pricingCard {
+    min-height: 380px;
+    padding: var(--space-5);
+  }
+
+  .recommended {
+    transform: scale(1);
+  }
+  
+  .cardIcon {
+    font-size: var(--font-size-5xl);
+  }
+  
+  .cardTitle {
+    font-size: var(--font-size-lg) !important;
+  }
+  
+  .cardSubtitle {
+    font-size: var(--font-size-sm);
+  }
+  
+  .amount {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .specialNote {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-4);
+    padding: var(--space-6) var(--space-4);
+  }
+  
+  .noteIcon {
+    font-size: var(--font-size-5xl);
+  }
+  
+  .noteTitle {
+    font-size: var(--font-size-xl);
+  }
+  
+  .noteText {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* 手机 (≤480px) */
+@media (max-width: 480px) {
+  .pricing {
+    padding: var(--space-16) 0;
+  }
+
+  .pageHeader {
+    margin: var(--space-6) 0;
+  }
+
+  .pageTitle {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-3);
+  }
+  
+  .pageSubtitle {
+    font-size: var(--font-size-sm);
+  }
+  
+  .tabContainer {
+    margin-bottom: var(--space-6);
+  }
+  
+  .tab {
+    padding: var(--space-2) var(--space-2);
+    font-size: 12px;
+    gap: var(--space-1);
+  }
+  
+  .tabSlider {
+    width: calc(33.333% - 3px);
+  }
+  
+  .tabSliderYearly {
+    transform: translateX(calc(100% + 3px));
+  }
+  
+  .tabSliderBuyout {
+    transform: translateX(calc(200% + 6px));
+  }
+  
+  .yearlyBadge {
+    font-size: 9px;
+  }
+  
+  .pricingCards {
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+  }
+  
+  .pricingCard {
+    padding: var(--space-4);
+    min-height: 360px;
+  }
+  
+  .cardHeader {
+    margin-top: var(--space-3);
+  }
+  
+  .cardTitle {
+    font-size: var(--font-size-base) !important;
+    margin-bottom: var(--space-2);
+  }
+  
+  .cardSubtitle {
+    font-size: var(--font-size-xs);
+  }
+  
+  .amount {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .period {
+    font-size: var(--font-size-xs);
+  }
+  
+  .cardFeatures .featureItem {
+    font-size: var(--font-size-xs);
+    padding: var(--space-1) 0;
+  }
+  
+  .orderButton {
+    padding: var(--space-2-5) var(--space-3);
+    font-size: var(--font-size-sm);
+  }
+  
+  .recommendedBadge {
+    font-size: var(--font-size-xs);
+  }
+  
+  .specialNote {
+    padding: var(--space-5) var(--space-3);
+    gap: var(--space-3);
+  }
+  
+  .noteIcon {
+    font-size: var(--font-size-4xl);
+  }
+  
+  .noteTitle {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-2);
+  }
+  
+  .noteText {
+    font-size: var(--font-size-sm);
+  }
+
+  .downloadButton {
+    padding: var(--space-3) var(--space-5);
+    font-size: var(--font-size-sm);
+    margin-top: var(--space-3);
+  }
+}
+
+/* 弹窗表单响应式 (≤480px) */
+@media (max-width: 480px) {
+  .modalButtonCancel,
+  .modalButtonConfirm {
+    padding: var(--space-3);
+    font-size: var(--font-size-sm);
+  }
+  
+  .formLabel {
+    font-size: var(--font-size-xs);
+  }
+  
+  .formInput {
+    padding: var(--space-2-5) var(--space-3);
+    font-size: var(--font-size-sm);
+  }
+  
+  .helpLink {
+    font-size: var(--font-size-xs);
+  }
+  
+  .planInfoTitle {
+    font-size: var(--font-size-xs);
+  }
+  
+  .planInfoText {
+    font-size: var(--font-size-sm);
+  }
+}

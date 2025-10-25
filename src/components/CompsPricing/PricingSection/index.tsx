@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './styles.module.css';
 import globalStyles from '../../../pages/index.module.css';
+import Modal from '../../Modal';
 import CONTENT_EN from './constant-en';
 import CONTENT_ZH from './constant-zh';
 import { STRIPE_LINKS } from './constant-common';
@@ -17,13 +18,12 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
   const [activeTab, setActiveTab] = useState<'yearly' | 'monthly' | 'buyout'>('yearly');
   
   // 弹窗相关状态
-  const [showModal, setShowModal] = useState(false);
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
+  const [showContactModal, setShowContactModal] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<any>(null);
   const [teamId, setTeamId] = useState('');
   const [teamTitle, setTeamTitle] = useState('');
   const [teamIdError, setTeamIdError] = useState('');
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [showComingSoonModal, setShowComingSoonModal] = useState(false);
 
   // 解析URL参数
   useEffect(() => {
@@ -50,34 +50,20 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
     return () => clearTimeout(timer);
   }, []);
 
-  // 组件卸载时清理滚动状态
-  useEffect(() => {
-    return () => {
-      document.body.classList.remove('modal-open');
-      document.body.style.top = '';
-    };
-  }, []);
-
   // 处理支付按钮点击
   const handlePaymentClick = (plan: any) => {
     if (plan.id === 'enterprise') {
-      // 企业版：显示即将支持提示
-      setShowComingSoonModal(true);
+      // 企业版：打开联系我们弹窗
+      setShowContactModal(true);
       return;
     }
     
     setSelectedPlan(plan);
-    setShowModal(true);
-    
-    // 保存当前滚动位置并阻止底层页面滚动
-    const currentScrollY = window.scrollY;
-    setScrollPosition(currentScrollY);
-    document.body.style.top = `-${currentScrollY}px`;
-    document.body.classList.add('modal-open');
+    setShowPaymentModal(true);
   };
 
-  // 处理弹窗确认
-  const handleModalConfirm = () => {
+  // 处理支付确认
+  const handlePaymentConfirm = () => {
     // 验证team_id必填
     if (!teamId.trim()) {
       setTeamIdError(CONTENT.modal.teamIdRequired);
@@ -101,19 +87,13 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
       window.open(url.toString(), '_blank');
     }
     
-    setShowModal(false);
-    document.body.classList.remove('modal-open');
-    document.body.style.top = '';
-    window.scrollTo(0, scrollPosition);
+    setShowPaymentModal(false);
   };
 
-  // 处理弹窗取消
-  const handleModalCancel = () => {
-    setShowModal(false);
+  // 处理支付取消
+  const handlePaymentCancel = () => {
+    setShowPaymentModal(false);
     setTeamIdError('');
-    document.body.classList.remove('modal-open');
-    document.body.style.top = '';
-    window.scrollTo(0, scrollPosition);
   };
 
   return (
@@ -131,6 +111,7 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
         {/* 价格模式切换标签 */}
         <div className={`${styles.tabContainer} ${animateElements ? styles.tabAnimate : ''}`}>
           <div className={styles.tabGroup}>
+            <div className={`${styles.tabSlider} ${styles[`tabSlider${activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}`]}`} />
             <button
                 key='monthly'
                 className={`${styles.tab} ${activeTab === 'monthly' ? styles.tabActive : ''}`}
@@ -145,7 +126,10 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
                 onClick={() => setActiveTab('yearly')}
               >
                 <span className={styles.tabIcon}>📅</span>
-                <span className={styles.tabText}>{CONTENT.yearly}</span>
+                <span className={styles.tabText}>
+                  {CONTENT.yearly}
+                  <span className={styles.yearlyBadge}>{CONTENT.yearlyBadge}</span>
+                </span>
             </button>
             <button
                 key='buyout'
@@ -228,138 +212,111 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
         </div>
 
         {/* 支付确认弹窗 */}
-        {showModal && (
-          <div className={styles.modalOverlay}>
-            <div className={styles.modalContent}>
-              <div className={styles.modalHeader}>
-                <h3 className={styles.modalTitle}>
-                  {CONTENT.modal.title}
-                </h3>
-                <button 
-                  className={styles.modalClose}
-                  onClick={handleModalCancel}
-                >
-                  ×
-                </button>
-              </div>
-              
-              <div className={styles.modalBody}>
-                <div className={styles.formGroup}>
-                  <div className={styles.formLabelRow}>
-                    <label className={styles.formLabel}>
-                      {CONTENT.modal.teamIdLabel} *
-                    </label>
-                    <a 
-                      href={CONTENT.modal.teamIdHelpLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.helpLink}
-                    >
-                      {CONTENT.modal.teamIdHelpText}
-                    </a>
-                  </div>
-                  <input
-                    type="text"
-                    className={`${styles.formInput} ${teamIdError ? styles.formInputError : ''}`}
-                    value={teamId}
-                    onChange={(e) => {
-                      const value = e.target.value;
-                      setTeamId(value);
-                      
-                      // 清除错误状态
-                      if (teamIdError) {
-                        setTeamIdError('');
-                      }
-                      
-                      // 实时验证格式（可选，提供即时反馈）
-                      if (value.trim() && !CONTENT.modal.teamIdPattern.test(value.trim())) {
-                        setTeamIdError(CONTENT.modal.teamIdPatternMessage);
-                      }
-                    }}
-                    placeholder={CONTENT.modal.teamIdPlaceholder}
-                  />
-                  {teamIdError && (
-                    <div className={styles.errorMessage}>{teamIdError}</div>
-                  )}
-                </div>
-                
-                <div className={styles.formGroup}>
-                  <label className={styles.formLabel}>
-                    {CONTENT.modal.teamTitleLabel}
-                  </label>
-                  <input
-                    type="text"
-                    className={styles.formInput}
-                    value={teamTitle}
-                    onChange={(e) => setTeamTitle(e.target.value)}
-                    placeholder={CONTENT.modal.teamTitlePlaceholder}
-                  />
-                </div>
-                
-                <div className={styles.modalPlanInfo}>
-                  <h4 className={styles.planInfoTitle}>
-                    {CONTENT.modal.purchasePlanTitle}
-                  </h4>
-                  <p className={styles.planInfoText}>
-                    {selectedPlan?.title} - {CONTENT[activeTab]}
-                  </p>
-                </div>
-              </div>
-              
-              <div className={styles.modalFooter}>
-                <button 
-                  className={styles.modalButtonCancel}
-                  onClick={handleModalCancel}
-                >
-                  {CONTENT.modal.cancelButton}
-                </button>
-                <button 
-                  className={styles.modalButtonConfirm}
-                  onClick={handleModalConfirm}
-                >
-                  {CONTENT.modal.confirmButton}
-                </button>
-              </div>
+        <Modal
+          isOpen={showPaymentModal}
+          onClose={handlePaymentCancel}
+          title={CONTENT.modal.title}
+          maxWidth="500px"
+          footer={
+            <>
+              <button 
+                className={styles.modalButtonCancel}
+                onClick={handlePaymentCancel}
+              >
+                {CONTENT.modal.cancelButton}
+              </button>
+              <button 
+                className={styles.modalButtonConfirm}
+                onClick={handlePaymentConfirm}
+              >
+                {CONTENT.modal.confirmButton}
+              </button>
+            </>
+          }
+        >
+          <div className={styles.formGroup}>
+            <div className={styles.formLabelRow}>
+              <label className={styles.formLabel}>
+                {CONTENT.modal.teamIdLabel} *
+              </label>
+              <a 
+                href={CONTENT.modal.teamIdHelpLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.helpLink}
+              >
+                {CONTENT.modal.teamIdHelpText}
+              </a>
             </div>
+            <input
+              type="text"
+              className={`${styles.formInput} ${teamIdError ? styles.formInputError : ''}`}
+              value={teamId}
+              onChange={(e) => {
+                const value = e.target.value;
+                setTeamId(value);
+                
+                // 清除错误状态
+                if (teamIdError) {
+                  setTeamIdError('');
+                }
+                
+                // 实时验证格式（可选，提供即时反馈）
+                if (value.trim() && !CONTENT.modal.teamIdPattern.test(value.trim())) {
+                  setTeamIdError(CONTENT.modal.teamIdPatternMessage);
+                }
+              }}
+              placeholder={CONTENT.modal.teamIdPlaceholder}
+            />
+            {teamIdError && (
+              <div className={styles.errorMessage}>{teamIdError}</div>
+            )}
           </div>
-        )}
+          
+          <div className={styles.formGroup}>
+            <label className={styles.formLabel}>
+              {CONTENT.modal.teamTitleLabel}
+            </label>
+            <input
+              type="text"
+              className={styles.formInput}
+              value={teamTitle}
+              onChange={(e) => setTeamTitle(e.target.value)}
+              placeholder={CONTENT.modal.teamTitlePlaceholder}
+            />
+          </div>
+          
+          <div className={styles.modalPlanInfo}>
+            <h4 className={styles.planInfoTitle}>
+              {CONTENT.modal.purchasePlanTitle}
+            </h4>
+            <p className={styles.planInfoText}>
+              {selectedPlan?.title} - {CONTENT[activeTab]}
+            </p>
+          </div>
+        </Modal>
 
-        {/* 即将支持提示弹窗 */}
-        {showComingSoonModal && (
-          <div className={styles.modalOverlay} onClick={() => setShowComingSoonModal(false)}>
-            <div className={styles.modalContent} style={{ maxWidth: '400px' }} onClick={(e) => e.stopPropagation()}>
-              <div className={styles.modalHeader}>
-                <h3 className={styles.modalTitle}>
-                  {currentLocale === 'zh' ? '即将支持' : 'Coming Soon'}
-                </h3>
-                <button 
-                  className={styles.modalClose}
-                  onClick={() => setShowComingSoonModal(false)}
-                >
-                  ×
-                </button>
-              </div>
-              
-              <div className={styles.modalBody}>
-                <p style={{ textAlign: 'center', fontSize: '16px', color: '#666', margin: '20px 0' }}>
-                  {currentLocale === 'zh' 
-                    ? '即将上线，敬请期待！' 
-                    : 'Feature will be available soon. Stay tuned!'}
-                </p>
-              </div>
-              
-              <div className={styles.modalFooter}>
-                <button 
-                  className={styles.modalButtonConfirm}
-                  onClick={() => setShowComingSoonModal(false)}
-                  style={{ width: '100%' }}
-                >
-                  {currentLocale === 'zh' ? '知道了' : 'Got it'}
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
+        {/* 企业版联系我们弹窗 */}
+        <Modal
+          isOpen={showContactModal}
+          onClose={() => setShowContactModal(false)}
+          title={currentLocale === 'zh' ? '联系我们' : 'Contact Us'}
+          maxWidth="500px"
+          // maxHeight="80vh"
+          bodyStyle={{ padding: 0 }}
+        >
+          <iframe
+            src="https://wy.jit.pro/whwy/jitRDM/publicPortal/contactus"
+            style={{
+              width: '100%',
+              // height: '70vh',
+              minHeight: '500px',
+              border: 'none',
+              display: 'block'
+            }}
+            title={currentLocale === 'zh' ? '联系我们' : 'Contact Us'}
+          />
+        </Modal>
 
       </div>
     </section>

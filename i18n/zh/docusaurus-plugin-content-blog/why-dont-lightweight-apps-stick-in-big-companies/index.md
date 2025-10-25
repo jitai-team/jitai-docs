@@ -1,4 +1,5 @@
 ---
+title: "严肃场景不要用Coze/n8n这样的轻应用平台"
 date: 2025/10/24
 authors: []
 tags: [enterprise ai, low code, ai native, production grade ai app, jitai]

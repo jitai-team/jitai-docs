@@ -122,3 +122,18 @@ orchestration:
   label: Orchestration
   permalink: /orchestration
   description: Orchestration-oriented system architecture and development patterns
+
+programming:
+  label: Programming
+  permalink: /programming
+  description: Programming techniques and development practices
+
+'development framework':
+  label: Development Framework
+  permalink: /development-framework
+  description: Application development frameworks and technology stacks
+
+'system architecture':
+  label: System Architecture
+  permalink: /system-architecture
+  description: System architecture design and implementation

@@ -4,8 +4,8 @@
   --hero-title-font-size: var(--font-size-6xl);
 }
 
-[data-locale="zh"] {
-  --hero-title-font-size: var(--font-size-7xl) !important; 
+:root[lang="zh-CN"] {
+  --hero-title-font-size: var(--font-size-7xl); 
 }
 
 .hero {

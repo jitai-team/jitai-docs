@@ -6,8 +6,8 @@
 }
 
 
-[data-locale="zh"] {
-  --hero-title-font-size: 4rem !important; 
+:root[lang="zh-CN"] {
+  --hero-title-font-size: 4rem; 
 }
 
 .hero {

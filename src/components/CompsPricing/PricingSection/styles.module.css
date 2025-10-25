@@ -6,12 +6,14 @@
 :root {
   --page-title-line-height: 1.5;
   --card-title-line-height: 1.3;
+  --tab-min-width: 120px;
 }
 
 /* 中文主题变量 */
-[data-locale="zh"] {
-  --page-title-line-height: 1.4 !important;
-  --card-title-line-height: 1.4 !important;
+:root[lang="zh-CN"] {
+  --page-title-line-height: 1.4;
+  --card-title-line-height: 1.4;
+  --tab-min-width: 166px;
 }
 
 /* ==================== 页面布局 ==================== */
@@ -68,6 +70,32 @@
   border-radius: var(--border-radius-card);
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--border-color-light);
+  position: relative;
+  padding: 4px;
+}
+
+.tabSlider {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  width: calc(33.333% - 4px);
+  background: var(--color-primary);
+  border-radius: var(--border-radius-lg);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 0;
+  box-shadow: var(--hover-shadow-primary);
+}
+
+.tabSliderMonthly {
+  transform: translateX(0);
+}
+
+.tabSliderYearly {
+  transform: translateX(calc(100% + 4px));
+}
+
+.tabSliderBuyout {
+  transform: translateX(calc(200% + 8px));
 }
 
 .tab {
@@ -79,29 +107,27 @@
   padding: var(--space-3) var(--space-6);
   border-radius: var(--border-radius-lg);
   cursor: pointer;
-  transition: var(--transition-primary);
+  transition: color 0.3s ease;
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
   color: var(--text-secondary);
-  min-width: 120px;
+  min-width: var(--tab-min-width);
   justify-content: center;
+  position: relative;
+  z-index: 1;
+  flex: 1;
 }
 
 .tab:hover {
   color: var(--color-primary);
-  background: rgba(61, 101, 253, 0.05);
 }
 
 .tabActive {
-  background: var(--color-primary);
-  color: var(--color-white);
-  box-shadow: var(--hover-shadow-primary);
-  transform: scale(1.02);
+  color: var(--color-white) !important;
 }
 
 .tabActive:hover {
   color: var(--color-white);
-  background: var(--color-primary);
 }
 
 .tabIcon {
@@ -111,6 +137,22 @@
 
 .tabText {
   font-weight: var(--font-weight-semibold);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.yearlyBadge {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.tabActive .yearlyBadge {
+  color: var(--color-white);
 }
 
 /* ==================== 价格卡片 ==================== */
@@ -410,86 +452,7 @@
   height: 100%;
 }
 
-/* ==================== 弹窗样式 ==================== */
-.modalOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  padding: var(--space-4);
-  overflow-y: auto;
-}
-
-:global(body.modal-open) {
-  overflow: hidden !important;
-  position: fixed !important;
-  width: 100% !important;
-}
-
-.modalContent {
-  background: var(--bg-primary);
-  border-radius: var(--border-radius-card);
-  box-shadow: var(--shadow-2xl);
-  max-width: 500px;
-  width: 100%;
-  max-height: 90vh;
-  overflow-y: auto;
-  animation: modalSlideIn 0.3s ease-out;
-}
-
-@keyframes modalSlideIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px) scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* 弹窗头部 */
-.modalHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--space-6) var(--space-6) var(--space-4);
-  border-bottom: 1px solid var(--border-color);
-}
-
-.modalTitle {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-semibold);
-  color: var(--text-primary);
-  margin: 0;
-}
-
-.modalClose {
-  background: none;
-  border: none;
-  font-size: var(--font-size-2xl);
-  color: var(--text-secondary);
-  cursor: pointer;
-  padding: var(--space-2);
-  border-radius: var(--border-radius-md);
-  transition: all 0.2s ease;
-}
-
-.modalClose:hover {
-  background: var(--bg-secondary);
-  color: var(--text-primary);
-}
-
-/* 弹窗主体 */
-.modalBody {
-  padding: var(--space-6);
-}
+/* ==================== 弹窗表单样式 ==================== */
 
 .formGroup {
   margin-bottom: var(--space-5);
@@ -578,14 +541,7 @@
   margin: 0;
 }
 
-/* 弹窗底部 */
-.modalFooter {
-  display: flex;
-  gap: var(--space-3);
-  padding: var(--space-4) var(--space-6) var(--space-6);
-  border-top: 1px solid var(--border-color);
-}
-
+/* 弹窗按钮样式 */
 .modalButtonCancel {
   flex: 1;
   padding: var(--space-3) var(--space-4);
@@ -646,21 +602,17 @@
 
 /* ==================== 响应式布局 ==================== */
 
-/* 大屏幕 (≤1400px) */
+/* 大屏幕 (≤1400px) - 减少到3列 */
 @media (max-width: 1400px) {
   .pricingCards {
-    grid-template-columns: repeat(5, minmax(200px, 1fr));
-    gap: var(--space-3);
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
     max-width: 1200px;
   }
   
   .pricingCard {
-    padding: var(--space-3);
-    min-height: 380px;
-  }
-  
-  .recommended {
-    transform: scale(1.02);
+    padding: var(--space-4);
+    min-height: 400px;
   }
   
   .pageTitle {
@@ -668,22 +620,82 @@
   }
   
   .cardTitle {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-base) !important;
   }
   
   .amount {
     font-size: var(--font-size-2xl);
   }
+  
+  .noteTitle {
+    font-size: var(--font-size-xl);
+  }
+  
+  .noteText {
+    font-size: var(--font-size-base);
+  }
 }
 
-/* 平板 (≤768px) */
+/* 中等屏幕 (≤1200px) - 2列布局 */
+@media (max-width: 1200px) {
+  .pricingCards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+  }
+  
+  .pricingCard {
+    min-height: 420px;
+  }
+  
+  .recommended {
+    transform: scale(1);
+  }
+}
+
+/* 大平板 (≤1024px) */
+@media (max-width: 1024px) {
+  .pricing {
+    padding: var(--space-32) 0;
+  }
+  
+  .pageHeader {
+    margin: var(--space-12) 0;
+  }
+  
+  .pricingCards {
+    margin-bottom: var(--space-12);
+  }
+  
+  .tabGroup {
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .tab {
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--font-size-sm);
+    min-width: auto;
+  }
+  
+  .yearlyBadge {
+    display: block;
+    margin-top: 2px;
+  }
+}
+
+/* 平板 (≤768px) - 改为1列 */
 @media (max-width: 768px) {
   .pricing {
     padding: var(--space-24) 0;
   }
 
+  .pageHeader {
+    margin: var(--space-8) 0;
+  }
+
   .pageTitle {
-    font-size: var(--font-size-4xl);
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--space-4);
   }
   
   .pageSubtitle {
@@ -692,22 +704,40 @@
   
   .tabContainer {
     margin-bottom: var(--space-8);
+    padding: 0 var(--space-2);
+  }
+  
+  .tabGroup {
+    width: 100%;
+    max-width: none;
   }
   
   .tab {
-    padding: var(--space-3) var(--space-5);
+    padding: var(--space-2-5) var(--space-3);
     font-size: var(--font-size-sm);
-    min-width: 100px;
+    min-width: 0;
+    flex: 1;
   }
   
-  .tabIcon {
-    font-size: var(--font-size-base);
+  .tabText {
+    flex-direction: column;
+    gap: 2px;
+    text-align: center;
+  }
+  
+  .yearlyBadge {
+    font-size: 10px;
   }
   
   .pricingCards {
     grid-template-columns: 1fr;
-    gap: var(--space-6);
-    margin-bottom: var(--space-16);
+    gap: var(--space-5);
+    margin-bottom: var(--space-12);
+  }
+
+  .pricingCard {
+    min-height: 380px;
+    padding: var(--space-5);
   }
 
   .recommended {
@@ -719,44 +749,34 @@
   }
   
   .cardTitle {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-lg) !important;
+  }
+  
+  .cardSubtitle {
+    font-size: var(--font-size-sm);
   }
   
   .amount {
     font-size: var(--font-size-3xl);
   }
   
-  .comparisonTitle {
-    font-size: var(--font-size-2xl);
-  }
-  
-  .tableContainer {
-    padding: var(--space-4);
-    border-radius: var(--border-radius-card);
-  }
-  
-  .table {
-    font-size: var(--font-size-sm);
-  }
-  
-  .tableHeader {
-    padding: var(--space-4) var(--space-2);
-    font-size: var(--font-size-xs);
-  }
-  
-  .featureCell {
-    padding: var(--space-4) var(--space-2);
-    font-size: var(--font-size-sm);
-  }
-  
   .specialNote {
     flex-direction: column;
     text-align: center;
     gap: var(--space-4);
+    padding: var(--space-6) var(--space-4);
   }
   
   .noteIcon {
     font-size: var(--font-size-5xl);
+  }
+  
+  .noteTitle {
+    font-size: var(--font-size-xl);
+  }
+  
+  .noteText {
+    font-size: var(--font-size-base);
   }
 }
 
@@ -766,66 +786,141 @@
     padding: var(--space-16) 0;
   }
 
+  .pageHeader {
+    margin: var(--space-6) 0;
+  }
+
   .pageTitle {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-3);
   }
   
   .pageSubtitle {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-sm);
+  }
+  
+  .tabContainer {
+    margin-bottom: var(--space-6);
+  }
+  
+  .tab {
+    padding: var(--space-2) var(--space-2);
+    font-size: 12px;
+    gap: var(--space-1);
+  }
+  
+  .tabSlider {
+    width: calc(33.333% - 3px);
+  }
+  
+  .tabSliderYearly {
+    transform: translateX(calc(100% + 3px));
+  }
+  
+  .tabSliderBuyout {
+    transform: translateX(calc(200% + 6px));
+  }
+  
+  .yearlyBadge {
+    font-size: 9px;
+  }
+  
+  .pricingCards {
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+  }
+  
+  .pricingCard {
+    padding: var(--space-4);
+    min-height: 360px;
+  }
+  
+  .cardHeader {
+    margin-top: var(--space-3);
+  }
+  
+  .cardTitle {
+    font-size: var(--font-size-base) !important;
+    margin-bottom: var(--space-2);
+  }
+  
+  .cardSubtitle {
+    font-size: var(--font-size-xs);
   }
   
   .amount {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .period {
+    font-size: var(--font-size-xs);
+  }
+  
+  .cardFeatures .featureItem {
+    font-size: var(--font-size-xs);
+    padding: var(--space-1) 0;
+  }
+  
+  .orderButton {
+    padding: var(--space-2-5) var(--space-3);
+    font-size: var(--font-size-sm);
+  }
+  
+  .recommendedBadge {
+    font-size: var(--font-size-xs);
+  }
+  
+  .specialNote {
+    padding: var(--space-5) var(--space-3);
+    gap: var(--space-3);
+  }
+  
+  .noteIcon {
     font-size: var(--font-size-4xl);
   }
   
-  .comparisonTitle {
-    font-size: var(--font-size-xl);
+  .noteTitle {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-2);
   }
   
-  .tableContainer {
-    padding: var(--space-3);
-  }
-  
-  .tableHeader {
-    padding: var(--space-3) var(--space-1);
-    font-size: var(--font-size-xs);
-  }
-  
-  .featureCell {
-    padding: var(--space-3) var(--space-1);
-    font-size: var(--font-size-xs);
+  .noteText {
+    font-size: var(--font-size-sm);
   }
 
   .downloadButton {
-    padding: var(--space-3) var(--space-6);
+    padding: var(--space-3) var(--space-5);
     font-size: var(--font-size-sm);
     margin-top: var(--space-3);
   }
 }
 
-/* 弹窗响应式 (≤640px) */
-@media (max-width: 640px) {
-  .modalOverlay {
-    padding: var(--space-2);
-  }
-  
-  .modalContent {
-    max-width: none;
-  }
-  
-  .modalHeader,
-  .modalBody,
-  .modalFooter {
-    padding-left: var(--space-4);
-    padding-right: var(--space-4);
-  }
-  
-  .modalFooter {
-    flex-direction: column;
-  }
-  
+/* 弹窗表单响应式 (≤480px) */
+@media (max-width: 480px) {
   .modalButtonCancel,
   .modalButtonConfirm {
-    flex: none;
+    padding: var(--space-3);
+    font-size: var(--font-size-sm);
+  }
+  
+  .formLabel {
+    font-size: var(--font-size-xs);
+  }
+  
+  .formInput {
+    padding: var(--space-2-5) var(--space-3);
+    font-size: var(--font-size-sm);
+  }
+  
+  .helpLink {
+    font-size: var(--font-size-xs);
+  }
+  
+  .planInfoTitle {
+    font-size: var(--font-size-xs);
+  }
+  
+  .planInfoText {
+    font-size: var(--font-size-sm);
   }
 }

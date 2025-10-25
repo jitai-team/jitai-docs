@@ -6,9 +6,9 @@
 }
 
 /* 中文主题变量 */
-[data-locale="zh"] {
-  --page-title-line-height: 1.4 !important;
-  --card-title-line-height: 1.4 !important;
+:root[lang="zh-CN"] {
+  --page-title-line-height: 1.4;
+  --card-title-line-height: 1.4;
 }
 
 .sectionContent {

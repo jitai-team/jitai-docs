@@ -96,5 +96,41 @@ DSL:
   description: 领域特定语言（Domain Specific Language）
 
 orchestration:
-  label: 编排架构
+  label: 编排
   description: 面向编排的系统架构与开发模式
+
+programming:
+  label: 编程
+  description: 编程技术与开发实践
+
+'development framework':
+  label: 开发框架
+  description: 应用开发框架与技术栈
+
+'system architecture':
+  label: 系统架构
+  description: 系统架构设计与实现
+
+'on-premises':
+  label: 私有化部署
+  description: 本地部署、自托管解决方案与私有基础设施
+
+'public cloud':
+  label: 公有云
+  description: 公有云服务与解决方案
+
+saas:
+  label: SaaS
+  description: 软件即服务模式与应用
+
+'data sovereignty':
+  label: 数据主权
+  description: 企业数据主权与安全控制
+
+'vendor lock-in':
+  label: 供应商锁定
+  description: 供应商锁定问题与应对策略
+
+'operational cost':
+  label: 运维成本
+  description: 系统运维成本与优化

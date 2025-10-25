@@ -24,9 +24,9 @@ MCP:
   description: Model Context Protocol and related topics
 
 'production grade ai app':
-  label: Production-Grade AI App
+  label: Production-Grade AI Applications
   permalink: /production-grade-ai-app
-  description: Building production-grade AI applications
+  description: Building and deploying production-grade AI applications
 
 architecture:
   label: Architecture
@@ -66,17 +66,17 @@ JAAP:
 'ai adoption':
   label: AI Adoption
   permalink: /ai-adoption
-  description: AI adoption practices and challenges in enterprises
+  description: Enterprise AI adoption strategies, challenges, and scaling practices
 
 'development methodology':
-  label: Development Methodology
+  label: Development Methodologies
   permalink: /development-methodology
-  description: AI application development methodologies and best practices
+  description: Software development methodologies, agile practices, and workflows
 
 'ai coding':
-  label: AI Coding
+  label: AI-Assisted Coding
   permalink: /ai-coding
-  description: AI-powered coding tools and techniques
+  description: AI-powered development tools, code generation, and intelligent assistance
 
 cursor:
   label: Cursor
@@ -104,36 +104,66 @@ jitai:
   description: Engineers who work directly with clients to deploy and tailor complex software solutions in real-world environments.
 
 'low code':
-  label: Low Code
+  label: Low-Code Development
   permalink: /low-code
-  description: A visual development approach that minimizes hand-coding, enabling faster application creation through drag-and-drop components.
+  description: Visual development platforms that minimize hand-coding and accelerate application delivery
 
 'visual development':
   label: Visual Development
   permalink: /visual-development
-  description: Visual development tools and technologies
+  description: Visual development tools, WYSIWYG editors, and no-code platforms
 
 DSL:
-  label: DSL
+  label: Domain-Specific Languages
   permalink: /dsl
-  description: Domain Specific Language
+  description: Domain-specific languages and custom language design
 
 orchestration:
   label: Orchestration
   permalink: /orchestration
-  description: Orchestration-oriented system architecture and development patterns
+  description: Service orchestration, workflow automation, and composition patterns
 
 programming:
   label: Programming
   permalink: /programming
-  description: Programming techniques and development practices
+  description: Programming paradigms, languages, and best practices
 
 'development framework':
-  label: Development Framework
+  label: Development Frameworks
   permalink: /development-framework
-  description: Application development frameworks and technology stacks
+  description: Application frameworks, libraries, and development toolchains
 
 'system architecture':
   label: System Architecture
   permalink: /system-architecture
-  description: System architecture design and implementation
+  description: System architecture patterns, design principles, and scalability
+
+'on-premises':
+  label: On-Premises
+  permalink: /on-premises
+  description: On-premises deployment, self-hosted solutions, and private infrastructure
+
+'public cloud':
+  label: Public Cloud
+  permalink: /public-cloud
+  description: Public cloud platforms and services
+
+saas:
+  label: SaaS
+  permalink: /saas
+  description: Software-as-a-Service models and platforms
+
+'data sovereignty':
+  label: Data Sovereignty
+  permalink: /data-sovereignty
+  description: Data sovereignty, compliance, and regulatory control
+
+'vendor lock-in':
+  label: Vendor Lock-In
+  permalink: /vendor-lock-in
+  description: Vendor lock-in risks and mitigation strategies
+
+'operational cost':
+  label: Operational Costs
+  permalink: /operational-cost
+  description: Total cost of ownership and operational efficiency

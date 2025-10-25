@@ -28,7 +28,7 @@ When users need to query data, the **Customer Management Agent** will directly t
 
 **Example Source Code Acquisition and Configuration**
 
-Download address: <a href="https://jit-www.oss-cn-beijing.aliyuncs.com/AIDemo.zip">Demo Example Source Code</a>
+Download address: <a href="https://jit-www.oss-accelerate.aliyuncs.com/AIDemo.zip">Demo Example Source Code</a>
 
 **Source Code Import Steps**:
 

@@ -208,7 +208,7 @@ At this point, we have completed the development of the AI grading functionality
 
 ### Example source code {#source-code}
 
-Download link: <a href="https://jit-www.oss-cn-beijing.aliyuncs.com/docs/ai-grade-demo/whwy.quickTutorialEn.0_0_0.zip">AI Grade Demo Source Code</a>.
+Download link: <a href="https://jit-www.oss-accelerate.aliyuncs.com/docs/ai-grade-demo/whwy.quickTutorialEn.0_0_0.zip">AI Grade Demo Source Code</a>.
 
 Enter the [JitNode Console](/docs/devguide/creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment) and import directly.
 

@@ -109,7 +109,7 @@
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
   color: var(--text-secondary);
-  min-width: 120px;
+  min-width: 180px;
   justify-content: center;
   position: relative;
   z-index: 1;
@@ -121,7 +121,7 @@
 }
 
 .tabActive {
-  color: var(--color-white);
+  color: var(--color-white) !important;
 }
 
 .tabActive:hover {

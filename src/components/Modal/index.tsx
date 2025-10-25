@@ -27,20 +27,30 @@ const Modal: React.FC<ModalProps> = ({
   useEffect(() => {
     if (isOpen) {
       // 保存当前滚动位置并阻止底层页面滚动
-      const currentScrollY = window.scrollY;
-      document.body.style.top = `-${currentScrollY}px`;
+      const scrollY = window.scrollY;
+      document.body.style.top = `-${scrollY}px`;
       document.body.classList.add('modal-open');
-    }
-
-    return () => {
-      if (isOpen) {
-        // 恢复滚动位置
-        const scrollY = document.body.style.top;
-        document.body.classList.remove('modal-open');
-        document.body.style.top = '';
-        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      
+      // 保存滚动位置到 data 属性，供关闭时使用
+      document.body.setAttribute('data-scroll-y', scrollY.toString());
+    } else {
+      // 恢复滚动位置
+      const scrollY = document.body.getAttribute('data-scroll-y');
+      document.body.classList.remove('modal-open');
+      document.body.style.top = '';
+      document.body.removeAttribute('data-scroll-y');
+      
+      if (scrollY) {
+        // 使用 requestAnimationFrame 确保在正确的时机恢复滚动
+        // 并明确指定不使用平滑滚动，避免移动端的滚动动画
+        requestAnimationFrame(() => {
+          window.scrollTo({
+            top: parseInt(scrollY, 10),
+            behavior: 'instant' as ScrollBehavior
+          });
+        });
       }
-    };
+    }
   }, [isOpen]);
 
   if (!isOpen) return null;

@@ -111,6 +111,7 @@ const CONTENT = {
   yearlyBadge: '省 20%',
   recommendedBadge: '推荐',
   contactSales: '联系销售',
+  contactSalesLink: 'https://wy.jit.pro/whwy/jitRDM/publicPortal/ContactSalesCn',
   moneyUnit: 'US$ ',
   priceUnit: {
     monthly: '个/月',

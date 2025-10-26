@@ -4,7 +4,7 @@
 
 .blogPostWrapper :global(.col--9) {
   width: 100% !important;
-  max-width: 800px !important;
+  max-width: 1000px !important;
   margin: 0 auto !important;
   padding: 0 var(--space-8) !important;
 }

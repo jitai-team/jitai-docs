@@ -134,3 +134,23 @@ saas:
 'operational cost':
   label: 运维成本
   description: 系统运维成本与优化
+
+'cloud native':
+  label: 云原生
+  description: 云原生架构与技术
+
+microservices:
+  label: 微服务
+  description: 微服务架构与实践
+
+kubernetes:
+  label: Kubernetes
+  description: Kubernetes 容器编排与管理
+
+container:
+  label: 容器化
+  description: 容器化技术与部署
+
+devops:
+  label: DevOps
+  description: DevOps 工具链与实践

@@ -32,7 +32,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 ### 智能客服Agent {#customer-service-agent}
 
 创建一个名为**客服知识库**的知识库元素，创建过程参考：[创建知识库](/docs/devguide/knowledge-base/create-knowledge-elements)。
-创建完成后，添加<a href="https://jit-www.oss-cn-beijing.aliyuncs.com/docs/ai-multi-task-demo/customer-service-knowledge.md">客服知识示例</a>，添加方式参考：[知识库文档管理](/docs/devguide/knowledge-base/knowledge-base-document-management)。
+创建完成后，添加<a href="https://jit-www.oss-accelerate.aliyuncs.com/docs/ai-multi-task-demo/customer-service-knowledge.md">客服知识示例</a>，添加方式参考：[知识库文档管理](/docs/devguide/knowledge-base/knowledge-base-document-management)。
 
 创建一个命名为**智能客服Agent**的AI Agent，创建过程参考：[创建AI Agent](/docs/devguide/ai-agent/create-ai-agent)。
 创建完成后，配置以下内容:
@@ -60,7 +60,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 ### 解决方案Agent {#solution-agent}
 创建一个名为**报价知识库**的知识库元素，创建过程参考：[创建知识库](/docs/devguide/knowledge-base/create-knowledge-elements)。
-创建完成后，添加<a href="https://jit-www.oss-cn-beijing.aliyuncs.com/docs/ai-multi-task-demo/quotetion-knowledge.md">报价知识示例</a>，添加方式参考：[知识库文档管理](/docs/devguide/knowledge-base/knowledge-base-document-management)。
+创建完成后，添加<a href="https://jit-www.oss-accelerate.aliyuncs.com/docs/ai-multi-task-demo/quotetion-knowledge.md">报价知识示例</a>，添加方式参考：[知识库文档管理](/docs/devguide/knowledge-base/knowledge-base-document-management)。
 
 创建一个命名为**解决方案Agent**的AI Agent，创建过程参考：[创建AI Agent](/docs/devguide/ai-agent/create-ai-agent)。
 创建完成后，配置以下内容:
@@ -446,7 +446,7 @@ class QuoteSvc(NormalService):
 
 ## 示例源码
 
-<a href="https://jit-www.oss-cn-beijing.aliyuncs.com/docs/ai-multi-task-demo/whwy.MultiTaskAssistantDemo.0_0_0.zip">下载示例完整源码</a>.
+<a href="https://jit-www.oss-accelerate.aliyuncs.com/docs/ai-multi-task-demo/whwy.MultiTaskAssistantDemo.0_0_0.zip">下载示例完整源码</a>.
 
 该示例中助理的路由决策节点及各Agent使用了阿里云百炼平台的qwen-max-latest模型。你需要先<a href="https://bailian.console.aliyun.com/?tab=model#/api-key" target="_blank">申请API Key</a>，然后配置到环境变量中。配置方式如下：
 

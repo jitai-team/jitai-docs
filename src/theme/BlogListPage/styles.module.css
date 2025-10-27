@@ -174,7 +174,6 @@
   padding: var(--space-16) 0;
   display: flex;
   justify-content: center;
-  display: none;
 }
 
 /* 订阅区域 */

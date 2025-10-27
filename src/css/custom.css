@@ -1035,5 +1035,14 @@ body[data-page-type="custom-layout"] .external-link,body:has(.custom-page) .exte
   margin: 0;
 }
 
+/* 下划线文本样式 (支持 ++text++ 语法) */
+.theme-doc-markdown ins {
+  text-decoration: underline !important;
+  text-decoration-color: var(--primary-color) !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 2px !important;
+  font-weight: 500 !important;
+}
+
 /* 引入 Footer 样式 */
 @import './footer.css';

@@ -1,0 +1,161 @@
+<svg width="1200" height="480" viewBox="0 0 1200 480" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with Light Gray Gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F9FAFB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F3F4F6;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Left Side Warning Gradient -->
+    <linearGradient id="warningGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#DC2626;stop-opacity:0.15" />
+      <stop offset="100%" style="stop-color:#F59E0B;stop-opacity:0.15" />
+    </linearGradient>
+    
+    <!-- Right Side Success Gradient -->
+    <linearGradient id="successGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:0.15" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:0.15" />
+    </linearGradient>
+    
+    <!-- AI Core Gradient -->
+    <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Glow Effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Shadow -->
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect width="1200" height="480" fill="url(#bgGradient)"/>
+  
+  <!-- VS Divider in Center -->
+  <g id="vs-divider">
+    <circle cx="600" cy="240" r="36" fill="#E5E7EB" filter="url(#shadow)"/>
+    <circle cx="600" cy="240" r="32" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="2"/>
+    <text x="600" y="252" font-family="PingFang SC, sans-serif" font-size="20" font-weight="700" fill="#6B7280" text-anchor="middle">VS</text>
+  </g>
+  
+  <!-- Left Side: Trapped AI (Warning) -->
+  <g id="trapped-ai">
+    <!-- Background Box with Warning Color -->
+    <rect x="80" y="40" width="480" height="400" rx="16" fill="url(#warningGradient)" stroke="#DC2626" stroke-width="2" filter="url(#shadow)"/>
+    
+    <!-- Header -->
+    <text x="320" y="80" font-family="PingFang SC, sans-serif" font-size="26" font-weight="700" fill="#EF4444" text-anchor="middle">
+      ❌ 被困的AI
+    </text>
+    <text x="320" y="108" font-family="PingFang SC, sans-serif" font-size="14" fill="#F87171" text-anchor="middle">
+      (投入300万，使用率&lt;5%)
+    </text>
+    
+    <!-- Trapped Chat Window with Chain -->
+    <g id="trapped-chat">
+      <!-- Chat Window -->
+      <rect x="190" y="140" width="260" height="160" rx="12" fill="#FFFFFF" stroke="#DC2626" stroke-width="3" filter="url(#shadow)"/>
+      <rect x="200" y="150" width="240" height="40" rx="8" fill="#F3F4F6"/>
+      <circle cx="216" cy="170" r="8" fill="#EF4444"/>
+      <rect x="232" y="162" width="190" height="16" rx="4" fill="#D1D5DB"/>
+      
+      <!-- Chat Bubbles -->
+      <rect x="210" y="210" width="120" height="32" rx="16" fill="#E5E7EB"/>
+      <rect x="250" y="250" width="160" height="32" rx="16" fill="#D1D5DB"/>
+      
+      <!-- Chain/Lock Icon -->
+      <g transform="translate(360, 260)">
+        <circle cx="0" cy="0" r="18" fill="#DC2626" opacity="0.9"/>
+        <path d="M -6 -2 L -6 -8 A 6 6 0 0 1 6 -8 L 6 -2" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+        <rect x="-8" y="-2" width="16" height="12" rx="2" fill="#FFFFFF"/>
+        <circle cx="0" cy="2" r="2" fill="#DC2626"/>
+      </g>
+    </g>
+    
+    <!-- Problem Labels -->
+    <text x="140" y="350" font-family="PingFang SC, sans-serif" font-size="13" font-weight="600" fill="#F87171" text-anchor="middle">❌ 无法调整</text>
+    <text x="320" y="350" font-family="PingFang SC, sans-serif" font-size="13" font-weight="600" fill="#F87171" text-anchor="middle">❌ 系统割裂</text>
+    <text x="500" y="350" font-family="PingFang SC, sans-serif" font-size="13" font-weight="600" fill="#F87171" text-anchor="middle">❌ 不懂业务</text>
+    
+    <!-- Bottom Warning -->
+    <text x="320" y="390" font-family="PingFang SC, sans-serif" font-size="15" font-weight="700" fill="#FBBF24" text-anchor="middle">
+      💸 投入高昂，却沦为摆设
+    </text>
+    <text x="320" y="415" font-family="PingFang SC, sans-serif" font-size="12" fill="#F87171" text-anchor="middle">
+      独立 · 割裂 · 无价值
+    </text>
+  </g>
+  
+  <!-- Right Side: Real Working AI (Success) -->
+  <g id="working-ai">
+    <!-- Background Box with Success Color -->
+    <rect x="640" y="40" width="480" height="400" rx="16" fill="url(#successGradient)" stroke="#3B82F6" stroke-width="3" filter="url(#shadow)"/>
+    
+    <!-- Header -->
+    <text x="880" y="80" font-family="PingFang SC, sans-serif" font-size="26" font-weight="700" fill="#2563EB" text-anchor="middle">
+      ✓ 真正工作的AI
+    </text>
+    <text x="880" y="108" font-family="PingFang SC, sans-serif" font-size="14" fill="#3B82F6" text-anchor="middle">
+      (深度融合，持续创造价值)
+    </text>
+    
+    <!-- Connected Modules with Flow Effect -->
+    <g id="module-network">
+      <!-- Module 1 -->
+      <rect x="720" y="140" width="100" height="65" rx="12" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5" filter="url(#glow)"/>
+      <text x="770" y="177" font-family="PingFang SC, sans-serif" font-size="14" font-weight="600" fill="#1E40AF" text-anchor="middle">模块A</text>
+      
+      <!-- Module 2 -->
+      <rect x="840" y="140" width="100" height="65" rx="12" fill="#F0FDF4" stroke="#10B981" stroke-width="2.5" filter="url(#glow)"/>
+      <text x="890" y="177" font-family="PingFang SC, sans-serif" font-size="14" font-weight="600" fill="#047857" text-anchor="middle">模块B</text>
+      
+      <!-- Module 3 -->
+      <rect x="960" y="140" width="100" height="65" rx="12" fill="#FAF5FF" stroke="#A855F7" stroke-width="2.5" filter="url(#glow)"/>
+      <text x="1010" y="177" font-family="PingFang SC, sans-serif" font-size="14" font-weight="600" fill="#7C3AED" text-anchor="middle">模块C</text>
+      
+      <!-- AI Core (Center) -->
+      <circle cx="880" cy="260" r="46" fill="url(#aiGradient)" filter="url(#glow)"/>
+      <circle cx="880" cy="260" r="40" fill="#FFFFFF" stroke="#60A5FA" stroke-width="3"/>
+      <text x="880" y="270" font-family="PingFang SC, sans-serif" font-size="20" font-weight="700" fill="#3B82F6" text-anchor="middle">AI</text>
+      
+      <!-- Connection Lines with Flow -->
+      <line x1="770" y1="205" x2="850" y2="235" stroke="#3B82F6" stroke-width="3" opacity="0.8" filter="url(#glow)"/>
+      <line x1="890" y1="205" x2="880" y2="220" stroke="#10B981" stroke-width="3" opacity="0.8" filter="url(#glow)"/>
+      <line x1="1010" y1="205" x2="910" y2="235" stroke="#A855F7" stroke-width="3" opacity="0.8" filter="url(#glow)"/>
+      
+      <!-- Flow Dots (animation effect) -->
+      <circle cx="810" cy="220" r="4" fill="#60A5FA" opacity="0.9">
+        <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="880" cy="212" r="4" fill="#6EE7B7" opacity="0.9">
+        <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="950" cy="220" r="4" fill="#D8B4FE" opacity="0.9">
+        <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="1s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Success Labels -->
+    <text x="750" y="350" font-family="PingFang SC, sans-serif" font-size="13" font-weight="600" fill="#059669" text-anchor="middle">✓ 灵活调整</text>
+    <text x="880" y="350" font-family="PingFang SC, sans-serif" font-size="13" font-weight="600" fill="#2563EB" text-anchor="middle">✓ 原生融合</text>
+    <text x="1010" y="350" font-family="PingFang SC, sans-serif" font-size="13" font-weight="600" fill="#7C3AED" text-anchor="middle">✓ 理解业务</text>
+    
+    <!-- Bottom Success -->
+    <text x="880" y="390" font-family="PingFang SC, sans-serif" font-size="15" font-weight="700" fill="#2563EB" text-anchor="middle">
+      🚀 融入流程，真正提效
+    </text>
+    <text x="880" y="415" font-family="PingFang SC, sans-serif" font-size="12" fill="#3B82F6" text-anchor="middle">
+      融合 · 协同 · 持续创造价值
+    </text>
+  </g>
+</svg>

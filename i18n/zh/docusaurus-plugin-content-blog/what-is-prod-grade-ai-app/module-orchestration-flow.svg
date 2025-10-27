@@ -1,0 +1,128 @@
+<svg width="1200" height="520" viewBox="0 0 1200 520" xmlns="http://www.w3.org/2000/svg">
+  <!-- 定义箭头标记 -->
+  <defs>
+    <!-- 主色箭头 -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#326DFF" />
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="520" fill="#FFFFFF"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" font-family="PingFang SC, sans-serif" font-size="24" font-weight="600" fill="#111827" text-anchor="middle">
+    AI模块感知 / 驱动 / 编排流程
+  </text>
+  
+  <!-- System Modules (Left) -->
+  <g id="system-modules">
+    <text x="150" y="100" font-family="PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#6B7280" text-anchor="middle">系统模块</text>
+    
+    <!-- Module A - Data -->
+    <rect x="80" y="120" width="140" height="80" rx="8" fill="rgba(50, 109, 255, 0.1)" stroke="#326DFF" stroke-width="2"/>
+    <circle cx="110" cy="150" r="12" fill="none" stroke="#326DFF" stroke-width="2"/>
+    <rect x="105" y="155" width="10" height="10" fill="#326DFF"/>
+    <text x="167" y="153" font-family="PingFang SC, sans-serif" font-size="14" font-weight="600" fill="#326DFF" text-anchor="middle">数据模块</text>
+    <text x="167" y="170" font-family="PingFang SC, sans-serif" font-size="11" fill="#6B7280" text-anchor="middle">自描述</text>
+    <rect x="142" y="176" width="50" height="14" rx="7" fill="rgba(50, 109, 255, 0.2)" stroke="#326DFF" stroke-width="1"/>
+    <text x="167" y="186" font-family="PingFang SC, sans-serif" font-size="9" fill="#326DFF" text-anchor="middle">API</text>
+    
+    <!-- Module B - Logic -->
+    <rect x="80" y="220" width="140" height="80" rx="8" fill="rgba(50, 109, 255, 0.1)" stroke="#326DFF" stroke-width="2"/>
+    <path d="M 105 245 L 115 260 L 105 275" fill="none" stroke="#326DFF" stroke-width="2"/>
+    <text x="167" y="253" font-family="PingFang SC, sans-serif" font-size="14" font-weight="600" fill="#326DFF" text-anchor="middle">业务逻辑</text>
+    <text x="167" y="270" font-family="PingFang SC, sans-serif" font-size="11" fill="#6B7280" text-anchor="middle">自描述</text>
+    <rect x="142" y="276" width="50" height="14" rx="7" fill="rgba(50, 109, 255, 0.2)" stroke="#326DFF" stroke-width="1"/>
+    <text x="167" y="286" font-family="PingFang SC, sans-serif" font-size="9" fill="#326DFF" text-anchor="middle">Func</text>
+    
+    <!-- Module C - UI -->
+    <rect x="80" y="320" width="140" height="80" rx="8" fill="rgba(50, 109, 255, 0.1)" stroke="#326DFF" stroke-width="2"/>
+    <rect x="100" y="345" width="30" height="20" rx="2" fill="none" stroke="#326DFF" stroke-width="2"/>
+    <rect x="105" y="350" width="20" height="10" fill="#326DFF"/>
+    <text x="167" y="353" font-family="PingFang SC, sans-serif" font-size="14" font-weight="600" fill="#326DFF" text-anchor="middle">UI模块</text>
+    <text x="167" y="370" font-family="PingFang SC, sans-serif" font-size="11" fill="#6B7280" text-anchor="middle">自描述</text>
+    <rect x="142" y="376" width="50" height="14" rx="7" fill="rgba(50, 109, 255, 0.2)" stroke="#326DFF" stroke-width="1"/>
+    <text x="167" y="386" font-family="PingFang SC, sans-serif" font-size="9" fill="#326DFF" text-anchor="middle">View</text>
+  </g>
+  
+  <!-- Arrow to AI Perception -->
+  <path d="M 220 260 L 310 260" stroke="#326DFF" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- AI Perception (Center-Left) -->
+  <g id="ai-perception">
+    <rect x="310" y="200" width="160" height="120" rx="8" fill="rgba(50, 109, 255, 0.15)" stroke="#326DFF" stroke-width="2"/>
+    <text x="390" y="225" font-family="PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#326DFF" text-anchor="middle">AI感知</text>
+    
+    <!-- Eye Icon -->
+    <ellipse cx="390" cy="260" rx="20" ry="12" fill="none" stroke="#326DFF" stroke-width="2"/>
+    <circle cx="390" cy="260" r="6" fill="#326DFF"/>
+    
+    <!-- Scan Lines -->
+    <line x1="320" y1="250" x2="460" y2="250" stroke="#8EAEFF" stroke-width="1" stroke-dasharray="4,2" opacity="0.5"/>
+    <line x1="320" y1="270" x2="460" y2="270" stroke="#8EAEFF" stroke-width="1" stroke-dasharray="4,2" opacity="0.5"/>
+    
+    <text x="390" y="295" font-family="PingFang SC, sans-serif" font-size="13" font-weight="600" fill="#111827" text-anchor="middle">JAAP协议</text>
+    <text x="390" y="312" font-family="PingFang SC, sans-serif" font-size="11" fill="#6B7280" text-anchor="middle">模块自描述</text>
+  </g>
+  
+  <!-- Arrow to AI Decision -->
+  <path d="M 470 260 L 560 260" stroke="#326DFF" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- AI Decision (Center) -->
+  <g id="ai-decision">
+    <rect x="560" y="200" width="160" height="120" rx="8" fill="rgba(50, 109, 255, 0.15)" stroke="#326DFF" stroke-width="2"/>
+    <text x="640" y="225" font-family="PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#326DFF" text-anchor="middle">AI决策</text>
+    
+    <!-- Brain Icon -->
+    <circle cx="640" cy="260" r="18" fill="none" stroke="#326DFF" stroke-width="2"/>
+    <path d="M 628 260 Q 632 252, 640 254 Q 648 256, 652 260" fill="none" stroke="#326DFF" stroke-width="2"/>
+    <path d="M 628 260 Q 632 268, 640 266 Q 648 264, 652 260" fill="none" stroke="#326DFF" stroke-width="2"/>
+    
+    <text x="640" y="298" font-family="PingFang SC, sans-serif" font-size="11" fill="#6B7280" text-anchor="middle">智能分析</text>
+    <text x="640" y="311" font-family="PingFang SC, sans-serif" font-size="11" fill="#6B7280" text-anchor="middle">编排规划</text>
+  </g>
+  
+  <!-- Arrow to AI Orchestration -->
+  <path d="M 720 260 L 810 260" stroke="#326DFF" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- AI Orchestration (Center-Right) -->
+  <g id="ai-orchestration">
+    <rect x="810" y="200" width="160" height="120" rx="8" fill="rgba(142, 174, 255, 0.15)" stroke="#8EAEFF" stroke-width="2"/>
+    <text x="890" y="225" font-family="PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#326DFF" text-anchor="middle">AI编排</text>
+    
+    <!-- Execution Queue -->
+    <rect x="830" y="245" width="120" height="20" rx="4" fill="#FFFFFF" stroke="#8EAEFF" stroke-width="1"/>
+    <text x="890" y="260" font-family="PingFang SC, sans-serif" font-size="12" fill="#326DFF" text-anchor="middle">1 → 2 → 3</text>
+    
+    <!-- Execution Icon -->
+    <circle cx="850" cy="290" r="8" fill="#326DFF"/>
+    <circle cx="890" cy="290" r="8" fill="#326DFF"/>
+    <circle cx="930" cy="290" r="8" fill="#326DFF"/>
+    
+    <text x="890" y="315" font-family="PingFang SC, sans-serif" font-size="11" fill="#6B7280" text-anchor="middle">按需驱动</text>
+  </g>
+  
+  <!-- Arrow to Execution Result -->
+  <path d="M 970 260 L 1060 260" stroke="#326DFF" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Execution Result -->
+  <g id="execution-result">
+    <rect x="1060" y="220" width="100" height="80" rx="8" fill="rgba(142, 174, 255, 0.15)" stroke="#8EAEFF" stroke-width="2"/>
+    <text x="1110" y="245" font-family="PingFang SC, sans-serif" font-size="14" font-weight="600" fill="#326DFF" text-anchor="middle">执行</text>
+    <text x="1110" y="265" font-family="PingFang SC, sans-serif" font-size="14" font-weight="600" fill="#326DFF" text-anchor="middle">调用</text>
+    <circle cx="1110" cy="283" r="10" fill="#326DFF"/>
+    <path d="M 1105 283 L 1108 286 L 1115 276" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Arrow from Execution to UI Module -->
+  <path d="M 1110 300 L 1110 360 L 220 360" stroke="#326DFF" stroke-width="2" fill="none" stroke-dasharray="6,4" marker-end="url(#arrowhead)"/>
+  
+  <!-- Legend -->
+  <g id="legend" transform="translate(80, 480)">
+    <text x="460" y="0" font-family="PingFang SC, sans-serif" font-size="12" fill="#6B7280" text-anchor="middle">
+      流程：系统模块 → AI感知(JAAP) → AI决策 → AI编排 → 执行调用 → UI模块
+    </text>
+  </g>
+</svg>
+

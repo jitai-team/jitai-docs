@@ -6,7 +6,7 @@ const CONTENT = {
         {
             title: "多种应用分发方式",
             description:
-                "线上，可上传到云端仓库、从云端仓库下载；线下，可导出源码包到本地、从本地导入源码包",
+                "在线，可上传到云端仓库、从云端仓库下载；离线，可导出源码包到本地、从本地导入源码包",
             image: "https://jit-www.oss-accelerate.aliyuncs.com/devops_fenfa.png",
             imageAlt: "多种应用分发方式",
         },

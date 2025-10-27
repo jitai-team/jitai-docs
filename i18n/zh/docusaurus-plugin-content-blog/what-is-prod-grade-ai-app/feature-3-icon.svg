@@ -1,0 +1,121 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="128" cy="128" r="120" fill="url(#gradient-bg-3)" opacity="0.1"/>
+  
+  <!-- Main Container Circle -->
+  <circle cx="128" cy="128" r="100" fill="none" stroke="url(#gradient-main-3)" stroke-width="3"/>
+  
+  <!-- Feature 3: Enterprise Knowledge Modeling -->
+  
+  <!-- Central Brain + Database Icon -->
+  <g id="brain-database">
+    <!-- Brain outline -->
+    <circle cx="128" cy="110" r="38" fill="url(#gradient-main-3)" opacity="0.2" stroke="url(#gradient-main-3)" stroke-width="2"/>
+    <!-- Brain details -->
+    <path d="M 110 100 Q 115 90, 128 93 Q 140 95, 146 100" fill="none" stroke="#7C3AED" stroke-width="2"/>
+    <path d="M 110 100 Q 115 110, 128 107 Q 140 105, 146 100" fill="none" stroke="#7C3AED" stroke-width="2"/>
+    <path d="M 110 110 Q 115 120, 128 117 Q 140 115, 146 110" fill="none" stroke="#7C3AED" stroke-width="2"/>
+    
+    <!-- Brain nodes (knowledge points) -->
+    <circle cx="118" cy="98" r="3" fill="#7C3AED"/>
+    <circle cx="128" cy="95" r="3" fill="#7C3AED"/>
+    <circle cx="138" cy="98" r="3" fill="#7C3AED"/>
+    <circle cx="118" cy="110" r="3" fill="#C026D3"/>
+    <circle cx="138" cy="110" r="3" fill="#C026D3"/>
+    <circle cx="128" cy="120" r="3" fill="#C026D3"/>
+    
+    <!-- Database component -->
+    <ellipse cx="128" cy="145" rx="28" ry="8" fill="#FFFFFF" stroke="#C026D3" stroke-width="2"/>
+    <path d="M 100 145 L 100 157 Q 100 162, 128 162 Q 156 162, 156 157 L 156 145" stroke="#C026D3" stroke-width="2" fill="none"/>
+    <ellipse cx="128" cy="157" rx="28" ry="8" fill="#FFFFFF" stroke="#C026D3" stroke-width="2"/>
+    
+    <!-- Data layers -->
+    <line x1="110" y1="150" x2="146" y2="150" stroke="#E9D5FF" stroke-width="1"/>
+    <line x1="110" y1="154" x2="146" y2="154" stroke="#E9D5FF" stroke-width="1"/>
+  </g>
+  
+  <!-- Knowledge Graph Network -->
+  <!-- Top left node -->
+  <g id="node-1">
+    <circle cx="70" cy="65" r="14" fill="#FFFFFF" stroke="url(#gradient-main-3)" stroke-width="2"/>
+    <rect x="64" y="60" width="12" height="10" rx="2" fill="none" stroke="#7C3AED" stroke-width="1.5"/>
+    <line x1="67" y1="63" x2="73" y2="63" stroke="#7C3AED" stroke-width="0.5"/>
+    <line x1="67" y1="65" x2="73" y2="65" stroke="#7C3AED" stroke-width="0.5"/>
+    <line x1="67" y1="67" x2="73" y2="67" stroke="#7C3AED" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Top right node -->
+  <g id="node-2">
+    <circle cx="186" cy="65" r="14" fill="#FFFFFF" stroke="url(#gradient-main-3)" stroke-width="2"/>
+    <circle cx="186" cy="62" r="5" fill="none" stroke="#C026D3" stroke-width="1.5"/>
+    <rect x="183" y="67" width="6" height="6" fill="#C026D3"/>
+  </g>
+  
+  <!-- Bottom left node -->
+  <g id="node-3">
+    <circle cx="70" cy="191" r="14" fill="#FFFFFF" stroke="url(#gradient-main-3)" stroke-width="2"/>
+    <path d="M 65 186 L 68 193 L 65 195" stroke="#DB2777" stroke-width="1.5" fill="none"/>
+    <path d="M 70 186 Q 71 189, 70 192 Q 69 195, 70 198" stroke="#DB2777" stroke-width="1.5" fill="none"/>
+    <circle cx="75" cy="191" r="3" fill="none" stroke="#DB2777" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Bottom right node -->
+  <g id="node-4">
+    <circle cx="186" cy="191" r="14" fill="#FFFFFF" stroke="url(#gradient-main-3)" stroke-width="2"/>
+    <rect x="180" y="186" width="12" height="10" rx="2" fill="none" stroke="#7C3AED" stroke-width="1.5"/>
+    <circle cx="188" cy="197" r="2" fill="#7C3AED"/>
+  </g>
+  
+  <!-- Connection lines (Knowledge relationships) -->
+  <line x1="80" y1="72" x2="110" y2="95" stroke="url(#gradient-main-3)" stroke-width="2" opacity="0.5"/>
+  <line x1="176" y1="72" x2="146" y2="95" stroke="url(#gradient-main-3)" stroke-width="2" opacity="0.5"/>
+  <line x1="80" y1="184" x2="110" y2="140" stroke="url(#gradient-main-3)" stroke-width="2" opacity="0.5"/>
+  <line x1="176" y1="184" x2="146" y2="140" stroke="url(#gradient-main-3)" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Data flow indicators -->
+  <circle cx="95" cy="84" r="3" fill="#7C3AED" opacity="0.6"/>
+  <circle cx="161" cy="84" r="3" fill="#C026D3" opacity="0.6"/>
+  <circle cx="95" cy="162" r="3" fill="#DB2777" opacity="0.6"/>
+  <circle cx="161" cy="162" r="3" fill="#7C3AED" opacity="0.6"/>
+  
+  <!-- Additional network connections -->
+  <line x1="70" y1="79" x2="70" y2="177" stroke="#E9D5FF" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.3"/>
+  <line x1="186" y1="79" x2="186" y2="177" stroke="#E9D5FF" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.3"/>
+  <line x1="84" y1="65" x2="172" y2="65" stroke="#E9D5FF" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.3"/>
+  <line x1="84" y1="191" x2="172" y2="191" stroke="#E9D5FF" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.3"/>
+  
+  <!-- Outer decorative elements representing data points -->
+  <circle cx="50" cy="128" r="6" fill="#FFFFFF" stroke="#7C3AED" stroke-width="2"/>
+  <circle cx="52" cy="126" r="2" fill="#7C3AED"/>
+  
+  <circle cx="206" cy="128" r="6" fill="#FFFFFF" stroke="#C026D3" stroke-width="2"/>
+  <circle cx="208" cy="126" r="2" fill="#C026D3"/>
+  
+  <circle cx="128" cy="35" r="6" fill="#FFFFFF" stroke="#DB2777" stroke-width="2"/>
+  <circle cx="130" cy="33" r="2" fill="#DB2777"/>
+  
+  <circle cx="128" cy="221" r="6" fill="#FFFFFF" stroke="#7C3AED" stroke-width="2"/>
+  <circle cx="130" cy="219" r="2" fill="#7C3AED"/>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="gradient-main-3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7C3AED;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#C026D3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DB2777;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="gradient-bg-3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7C3AED;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DB2777;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Animated pulse effect (knowledge flow) -->
+  <circle cx="128" cy="128" r="75" fill="none" stroke="url(#gradient-main-3)" stroke-width="1" stroke-dasharray="8,4" opacity="0.2"/>
+  <circle cx="128" cy="128" r="85" fill="none" stroke="url(#gradient-main-3)" stroke-width="1" stroke-dasharray="12,6" opacity="0.15"/>
+  
+  <!-- Label -->
+  <text x="128" y="245" font-family="sans-serif" font-size="12" font-weight="600" fill="#6B7280" text-anchor="middle">企业知识建模</text>
+</svg>
+

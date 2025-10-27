@@ -196,6 +196,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     href: "https://jit.pro/download",
                     position: "left",
                     label: "Download",
+                    className: "analytics-download",
                 },
                 {
                     type: "search",

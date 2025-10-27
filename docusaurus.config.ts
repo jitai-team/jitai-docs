@@ -90,6 +90,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 },
                 blog: {
                     showReadingTime: true,
+                    postsPerPage: 9999, // 显示全部文章，不分页
                     feedOptions: {
                         type: ["rss", "atom"],
                         xslt: true,

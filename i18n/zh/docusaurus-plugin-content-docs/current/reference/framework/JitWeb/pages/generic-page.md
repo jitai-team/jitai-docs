@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-slug: regular-page
+slug: generic-page
 ---
 
 # 常规页面

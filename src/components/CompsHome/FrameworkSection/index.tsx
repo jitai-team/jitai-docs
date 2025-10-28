@@ -33,6 +33,7 @@ const FrameworkSection: React.FC<FrameworkSectionProps> = ({ currentLocale }) =>
             <a
               href={`/docs/reference/framework/${framework.name}`}
               target="_blank"
+              key={index}
               className={`${globalStyles.baseCard} ${styles.frameworkCard} ${styles.frameworkLink} animatedChild`}
             // style={{ '--card-color': framework.color } as React.CSSProperties}
             >

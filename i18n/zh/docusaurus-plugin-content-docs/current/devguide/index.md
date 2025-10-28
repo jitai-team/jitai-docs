@@ -323,7 +323,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "配置表单中允许查看和编辑的字段", href: "devguide/shell-and-page/ai-data-management-page#configure-viewable-editable-fields-in-form" },
     { text: "配置批量编辑表单中展示的字段", href: "devguide/shell-and-page/ai-data-management-page#configure-fields-displayed-in-batch-edit-form" },
     { text: "启用AI数据管理助手", href: "devguide/shell-and-page/ai-data-management-page#enable-ai-data-management-assistant" },
-    { text: "转换为常规页面进行修改", href: "devguide/shell-and-page/ai-data-management-page#convert-to-regular-page-for-modification" }
+    { text: "转换为常规页面进行修改", href: "devguide/shell-and-page/ai-data-management-page#convert-to-generic-page-for-modification" }
   ]} />
 </IndexCard>
 
@@ -378,7 +378,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "使用样式", href: "devguide/frontend-ui-customization/page-customization#use-style" },
     { text: "使用本地资源", href: "devguide/frontend-ui-customization/page-customization#use-local-resources" },
     { text: "使用 Ant Design 的组件", href: "devguide/frontend-ui-customization/page-customization#use-ant-design-components" },
-    { text: "内嵌已有常规页面", href: "devguide/frontend-ui-customization/page-customization#embed-existing-regular-page" },
+    { text: "内嵌已有常规页面", href: "devguide/frontend-ui-customization/page-customization#embed-existing-generic-page" },
     { text: "使用标准组件", href: "devguide/frontend-ui-customization/page-customization#use-standard-component" },
     { text: "调用数据模型函数", href: "devguide/frontend-ui-customization/page-customization#call-data-model-function" },
     { text: "调用服务函数", href: "devguide/frontend-ui-customization/page-customization#call-service-function" },
@@ -2122,7 +2122,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "使用样式", href: "devguide/frontend-ui-customization/page-customization#use-style" },
     { text: "使用本地资源", href: "devguide/frontend-ui-customization/page-customization#use-local-resources" },
     { text: "使用 Ant Design 的组件", href: "devguide/frontend-ui-customization/page-customization#use-ant-design-components" },
-    { text: "内嵌已有常规页面", href: "devguide/frontend-ui-customization/page-customization#embed-existing-regular-page" },
+    { text: "内嵌已有常规页面", href: "devguide/frontend-ui-customization/page-customization#embed-existing-generic-page" },
     { text: "使用标准组件", href: "devguide/frontend-ui-customization/page-customization#use-standard-component" },
     { text: "调用数据模型函数", href: "devguide/frontend-ui-customization/page-customization#call-data-model-function" },
     { text: "调用服务函数", href: "devguide/frontend-ui-customization/page-customization#call-service-function" },

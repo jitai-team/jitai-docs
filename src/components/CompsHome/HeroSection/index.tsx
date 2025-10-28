@@ -42,7 +42,7 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({ currentLocale }) =>
 
           {/* 行动按钮区域 */}
           <div className={styles.heroButtons}>
-            <a className={`${styles.primaryButton}`} href="./download" >
+            <a className={`${styles.primaryButton} analytics-download`} href="./download" >
               <span className={styles.buttonText}>
                 {content.buttonDownload}
               </span>
@@ -52,7 +52,7 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({ currentLocale }) =>
                 </svg>
               </span>
             </a>
-            <a className={styles.secondaryButton} href={isMobile ? "./docs/tutorial" : "https://demo.jit.pro"} target="_blank">
+            <a className={`${styles.secondaryButton} analytics-tryOnline`} href={isMobile ? "./docs/tutorial" : "https://demo.jit.pro"} target="_blank">
               <span className={styles.buttonText}>
                 {isMobile ? content.buttonGetStart : content.buttonDemo}
               </span>
@@ -70,6 +70,7 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({ currentLocale }) =>
               {content.cards.map((card, index) => (
                   <div
                     className={`${globalStyles.baseCard} ${styles.card}`}
+                    key={index}
                   >
                     <div className={styles.cardHeader}>
                       <h3>{card.title}</h3>

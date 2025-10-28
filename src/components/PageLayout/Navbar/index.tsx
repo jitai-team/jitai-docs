@@ -124,7 +124,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                                 <button
                                     key={item.id}
                                     onClick={() => handleNavClick(item)}
-                                    className={isActive ? styles.active : ""}
+                                    className={`${isActive ? styles.active : ""} ${item.class || ""}`}
                                     data-type={item.type}
                                 >
                                     {item.label}
@@ -138,14 +138,14 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                 <div className={styles.rightSection}>
                     <LanguageSwitcher className={styles.languageSwitcher} />
                     <button
-                        className={styles.tryOnlineButton}
+                        className={`${styles.tryOnlineButton} analytics-tryOnline`}
                         onClick={() => handleNavClick(CONTENT.tryOnlineButton)}
                         data-type={CONTENT.tryOnlineButton.type}
                     >
                         {CONTENT.tryOnlineButton.label}
                     </button>
                     <button
-                        className={styles.downloadButton}
+                        className={`${styles.downloadButton} analytics-download`}
                         onClick={() => handleNavClick(CONTENT.downloadButton)}
                         data-type={CONTENT.downloadButton.type}
                     >
@@ -182,7 +182,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                                     onClick={() => handleNavClick(item)}
                                     className={`${styles.mobileNavItem} ${
                                         isActive ? styles.active : ""
-                                    } mobile-nav-item`}
+                                    } ${item.class || ""} mobile-nav-item`}
                                     data-type={item.type}
                                 >
                                     {item.label}

@@ -1,0 +1,33 @@
+.tagsContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.tagsTitle {
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  white-space: nowrap;
+}
+
+.tagsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.75rem;
+  row-gap: 0.75rem;
+  margin: 0;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  border-radius: 0.25rem;
+  cursor: default;
+}
+

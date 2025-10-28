@@ -66,12 +66,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             en: {
                 label: "English",
                 direction: "ltr",
-                htmlLang: "en-US",
+                htmlLang: "en",
             },
             zh: {
                 label: "简体中文",
                 direction: "ltr",
-                htmlLang: "zh-CN",
+                htmlLang: "zh",
             },
         },
     },
@@ -196,6 +196,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     href: "https://jit.pro/download",
                     position: "left",
                     label: "Download",
+                    className: "analytics-download",
                 },
                 {
                     type: "search",

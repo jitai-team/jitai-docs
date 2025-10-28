@@ -186,3 +186,7 @@ customization:
 'ai assistant':
   label: AI 助理
   description: AI智能助理的开发与应用
+
+'architecture transformation':
+  label: 架构转型
+  description: 企业架构转型与现代化升级

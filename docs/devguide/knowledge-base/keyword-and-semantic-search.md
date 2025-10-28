@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: keyword-and-semantic-search
+description: "Keyword and semantic search in knowledge bases. Vector similarity search and hybrid retrieval strategies for documents."
 ---
 
 # Keyword and Semantic Search Using Knowledge Base Elements

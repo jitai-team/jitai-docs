@@ -1,5 +1,8 @@
 ---
 slug: aliyun-oss-storage
+title: "Aliyun OSS Storage Reference"
+description: "Aliyun OSS Storage Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Aliyun OSS Storage"
 ---
 # Aliyun OSS Storage
 

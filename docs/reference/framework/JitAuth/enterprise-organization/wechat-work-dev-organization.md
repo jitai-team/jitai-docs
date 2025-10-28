@@ -1,5 +1,8 @@
 ---
 slug: wechat-work-dev-organization
+title: "WeCom Proxy Development Organization Reference"
+description: "WeCom Proxy Development Organization Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "WeCom Proxy Development Organization"
 ---
 # WeCom Proxy Development Organization
 WeCom proxy development organization is a specialized organization integration type for WeCom third-party applications, implementing multi-enterprise organization management and cross-enterprise authorization based on WeCom proxy development mode. It handles organization synchronization, member management, and permission assignment under WeCom proxy development mode, supporting multi-tenant SaaS service providers to uniformly manage organizational architectures of multiple authorized enterprises.

@@ -1,5 +1,6 @@
 ---
 sidebar_position: 5
+description: "Build data entry pages for form collection. Personnel, vehicle, equipment registration with viewable and editable field configuration."
 ---
 
 # Data Entry Pages

@@ -2,6 +2,7 @@
 sidebar_position: 2
 slug: start-node-configuration
 title: Start Node Configuration
+description: "Configure workflow start node where initiators submit approval requests. Process cancellation functionality and initiator operations."
 ---
 
 # Start Node Configuration

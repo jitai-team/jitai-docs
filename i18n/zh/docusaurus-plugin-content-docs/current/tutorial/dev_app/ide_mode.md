@@ -2,6 +2,7 @@
 sidebar_position: 2
 title: 用专业模式搭建试卷管理
 slug: ide_mode
+description: "使用开发者门户的专业模式开发。学习基于元素的开发、可视化编辑器和构建复杂试卷管理系统。"
 ---
 
 # 用专业模式搭建试卷管理

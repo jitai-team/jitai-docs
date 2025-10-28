@@ -1,5 +1,8 @@
 ---
 slug: collapse-panel
+title: "Collapse Panel Reference"
+description: "Collapse Panel Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Collapse Panel"
 ---
 # Collapse Panel
 The collapse panel is a content container component that can be expanded and collapsed, supporting nested combinations of single and multiple panels. It handles content categorization, space optimization, and interactive layout management, providing persistent storage of expand/collapse states and flexible panel configuration capabilities.

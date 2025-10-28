@@ -1,5 +1,8 @@
 ---
 slug: wechat-work-qr-login
+title: "WeCom Custom QR Code Login Reference"
+description: "WeCom Custom QR Code Login Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "WeCom Custom QR Code Login"
 ---
 # WeCom Custom QR Code Login
 WeCom custom QR code login is a login authentication element based on WeCom custom applications, supporting PC-side QR code scanning login and password-free login within WeCom workspace. It handles WeCom OAuth authorization flow, user identity authentication, and account binding, while supporting seamless integration with WeCom organizational architecture and user information synchronization.

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 slug: react-full-code-page
+description: "React全代码页面 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # React全代码页面

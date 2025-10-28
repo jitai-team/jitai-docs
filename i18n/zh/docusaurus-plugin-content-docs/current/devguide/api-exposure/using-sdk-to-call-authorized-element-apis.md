@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: using-sdk-to-call-authorized-element-apis
+description: "使用SDK调用授权元素API的详细指南和说明。"
 ---
 
 # 使用SDK调用授权元素API

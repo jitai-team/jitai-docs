@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: alipay
+description: "支付宝支付 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # 支付宝支付

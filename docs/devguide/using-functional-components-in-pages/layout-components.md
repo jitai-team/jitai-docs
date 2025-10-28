@@ -1,6 +1,7 @@
 ---
 sidebar_position: 11
 slug: layout-components
+description: "布局组件配置指南。弹窗、遮罩、自定义大小、中间弹出或右侧滑出等灵活布局选项。"
 ---
 
 # 布局组件

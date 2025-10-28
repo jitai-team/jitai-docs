@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: ai-data-management-page
+description: "AI数据管理页面 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # AI数据管理页面

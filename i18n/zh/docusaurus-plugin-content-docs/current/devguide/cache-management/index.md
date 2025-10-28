@@ -1,5 +1,6 @@
 ---
 sidebar_position: 21.5
+description: "缓存配置与使用的详细指南和说明。"
 ---
 
 # 缓存配置与使用

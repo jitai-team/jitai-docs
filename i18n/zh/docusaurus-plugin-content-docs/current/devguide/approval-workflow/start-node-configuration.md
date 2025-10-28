@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: start-node-configuration
+description: "发起节点配置的详细指南和说明。"
 ---
 
 # 发起节点配置

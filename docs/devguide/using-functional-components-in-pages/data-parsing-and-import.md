@@ -1,6 +1,7 @@
 ---
 sidebar_position: 12
 slug: data-parsing-and-import
+description: "Import data from Excel files with import component. Bulk employee entry, financial reports, inventory lists batch import."
 ---
 
 # Data Parsing and Import

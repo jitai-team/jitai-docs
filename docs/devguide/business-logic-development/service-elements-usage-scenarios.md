@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: service-elements-usage-scenarios
+description: "Service elements usage scenarios and best practices. When and how to use service elements for business logic in applications."
 ---
 
 # Service Elements Usage Scenarios

@@ -1,5 +1,8 @@
 ---
 slug: blank-portal
+title: "Blank Portal Reference"
+description: "Blank Portal Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Blank Portal"
 ---
 # Blank Portal
 Blank Portal is a minimal portal implementation that provides basic page containers and routing framework. It does not include built-in navigation systems, allowing developers to completely customize the interface structure, suitable for highly customized application interfaces and special display requirements. Blank Portal only supports frontend implementation, achieving a clean portal foundation through custom rendering logic.

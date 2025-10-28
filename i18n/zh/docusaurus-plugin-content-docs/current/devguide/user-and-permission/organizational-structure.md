@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: organization
+description: "组织架构的详细指南和说明。"
 ---
 
 # 组织架构

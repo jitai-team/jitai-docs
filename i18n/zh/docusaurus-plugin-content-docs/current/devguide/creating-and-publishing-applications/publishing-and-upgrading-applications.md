@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: publishing-and-upgrading-applications
+description: "发布与升级应用的详细指南和说明。"
 ---
 
 # 发布与升级应用

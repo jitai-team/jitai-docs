@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: add-frontend-components
+description: "扩展自己的UI组件Type元素的详细指南和说明。"
 ---
 
 # 扩展自己的UI组件Type元素

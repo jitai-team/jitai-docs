@@ -1,5 +1,6 @@
 ---
 slug: external-api-integration
+description: "外部API集成 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 外部API集成
 外部API集成是用于调用第三方HTTP接口的元素，基于requests库实现RESTful API的统一调用管理。它负责HTTP请求封装、参数处理和响应解析，支持GET、POST、PUT、DELETE等标准HTTP方法，提供请求前后处理和回调机制。

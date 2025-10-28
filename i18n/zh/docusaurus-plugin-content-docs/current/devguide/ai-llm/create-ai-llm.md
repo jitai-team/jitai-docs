@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: create-ai-llm
+description: "创建大模型元素的详细指南和说明。"
 ---
 
 # 创建大模型元素

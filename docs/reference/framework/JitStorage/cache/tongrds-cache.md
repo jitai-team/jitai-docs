@@ -1,5 +1,8 @@
 ---
 slug: tongrds-cache
+title: "TongRDS Cache Reference"
+description: "TongRDS Cache Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "TongRDS Cache"
 ---
 # TongRDS Cache
 TongRDS cache is a high-performance data caching service based on Redis protocol implementation for Oriental Tong database, specifically designed for enterprise applications with domestic database requirements. It adopts the same client interface as Redis, supports distributed deployment and enterprise-level connection management, and ensures stable performance in high-concurrency environments through connection pool mechanisms.

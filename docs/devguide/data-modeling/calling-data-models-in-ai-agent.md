@@ -1,6 +1,7 @@
 ---
 sidebar_position: 11
 slug: calling-data-models-in-ai-agent
+description: "Invoke data models with AI Agents. Add model functions as Agent tools for intelligent CRUD operations and automated data processing."
 ---
 
 # Calling Data Models with AI Agents

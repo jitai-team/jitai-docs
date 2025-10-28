@@ -1,6 +1,7 @@
 ---
 sidebar_position: 9
 slug: time-management-components
+description: "时间管理组件配置指南。日历组件展示任务、会议、活动，支持拖拽和点击交互操作。"
 ---
 
 # 时间管理组件

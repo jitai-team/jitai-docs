@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 slug: process-orchestration-node-configuration
+description: "Design AI Assistant workflows with visual orchestration. Drag-and-drop node configuration for intelligent business processes."
 ---
 
 # Process Orchestration and Node Configuration

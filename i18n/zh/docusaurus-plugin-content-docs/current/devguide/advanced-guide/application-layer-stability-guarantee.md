@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 slug: application-layer-stability-guarantee
+description: "应用层稳定性保障的详细指南和说明。"
 ---
 
 import Tabs from '@theme/Tabs';

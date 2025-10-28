@@ -1,6 +1,7 @@
 ---
 slug: programming-orchestration-dual-mode
 sidebar_position: 8
+description: "Dual-mode development in JitAi - programming and orchestration. Understand how to build system structure and process with visual tools and code."
 ---
 # Dual-Mode Visual Development Tool - Programming and Orchestration
 

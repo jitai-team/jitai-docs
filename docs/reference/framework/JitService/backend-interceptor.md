@@ -1,5 +1,8 @@
 ---
 slug: backend-interceptor
+title: "Backend Interceptor Reference"
+description: "Backend Interceptor Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Backend Interceptor"
 ---
 # Backend Interceptor
 HTTP request processing component based on interceptor pattern, providing the ability to automatically execute business logic before and after request processing, supporting unified management of cross-cutting concerns such as permission verification, parameter validation, log recording, and exception handling.

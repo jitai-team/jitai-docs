@@ -1,6 +1,9 @@
 ---
 sidebar_position: 5
 slug: TQL
+title: "TQL Usage Guide Reference"
+description: "TQL Usage Guide Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "TQL Usage Guide"
 ---
 
 # TQL Usage Guide

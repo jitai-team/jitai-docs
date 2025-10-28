@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: integrate-knowledge-base-into-agent
+description: "把知识库集成到agent的详细指南和说明。"
 ---
 
 # 把知识库集成到agent

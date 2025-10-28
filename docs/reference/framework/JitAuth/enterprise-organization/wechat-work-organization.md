@@ -1,5 +1,9 @@
 ---
 slug: wechat-work-organization
+title: "WeCom Self-built Org. Reference"
+description: "WeCom Self-built Org. Reference - API documentation for developers. Complete specifications, methods, and examples."
+label: "WeCom Self-built Org."
+sidebar_label: "WeCom Self-built Org."
 ---
 # WeCom Self-built Org.
 WeCom Self-built Org. is an enterprise-level organizational architecture integration type in the JitAuth framework, implementing organizational architecture synchronization and user management based on WeCom custom application API. It handles WeCom contact synchronization, organizational information retrieval, and user identity authentication, supporting automatic organizational architecture synchronization and user permission inheritance.

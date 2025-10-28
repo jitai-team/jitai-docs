@@ -1,5 +1,8 @@
 ---
 slug: api-authorization
+title: "API Authorization Reference"
+description: "API Authorization Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "API Authorization"
 ---
 # API Authorization
 API authorization is used to manage third-party applications' access permissions to this application's API interfaces, controlling which external applications can call which APIs through accessKey/accessSecret key pairs. It ensures call security through signature verification mechanisms, automatically records all API access logs, and provides standardized API open capabilities for applications.

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 slug: application-layer-stability-guarantee
+description: "Application layer stability measures in JitAi. Version control, rollback strategies, hot updates, and zero-downtime deployment."
 ---
 
 import Tabs from '@theme/Tabs';

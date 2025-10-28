@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: ai-knowledge-base
+description: "AI知识库 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # AI知识库

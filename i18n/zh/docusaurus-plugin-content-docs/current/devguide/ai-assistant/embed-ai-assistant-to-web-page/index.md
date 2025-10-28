@@ -1,6 +1,7 @@
 ---
 sidebar_position: 14
 slug: /devguide/ai-assistant/embed-assistant-to-web-page
+description: "嵌入式AI助理的详细指南和说明。"
 ---
 
 # 嵌入式AI助理

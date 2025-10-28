@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: briefintro
+description: "Introduction to JitAi - AI-native enterprise application development platform. Learn how JitAi transforms application engineering for the AI era with novel architecture and development paradigms."
 ---
 # Introduction
 

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: ElementAttrDict
+description: "ElementAttrDict API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # ElementAttrDict

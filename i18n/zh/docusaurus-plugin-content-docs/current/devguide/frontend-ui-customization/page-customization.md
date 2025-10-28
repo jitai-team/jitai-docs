@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: page-customization
+description: "页面定制的详细指南和说明。"
 ---
 
 import Tabs from '@theme/Tabs';

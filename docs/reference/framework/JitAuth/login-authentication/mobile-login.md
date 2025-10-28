@@ -1,5 +1,8 @@
 ---
 slug: mobile-login
+title: "Phone Number Login Reference"
+description: "Phone Number Login Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Phone Number Login"
 ---
 # Phone Number Login
 Mobile number login is an authentication method based on mobile phone numbers and SMS verification codes, implementing user identity authentication through SMS verification code validation. It handles verification code sending, verification code validation, and user login, supporting user registration, mobile number binding/unbinding, verification code validity period management, and other security features.

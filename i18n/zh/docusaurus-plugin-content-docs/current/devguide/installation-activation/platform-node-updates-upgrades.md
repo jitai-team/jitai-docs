@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: platform-node-updates-upgrades
+description: "JitNode平台节点更新和升级指南。一键升级流程和版本管理说明。"
 ---
 # 平台节点的更新升级
 

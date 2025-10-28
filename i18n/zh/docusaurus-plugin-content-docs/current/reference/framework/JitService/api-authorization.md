@@ -1,5 +1,6 @@
 ---
 slug: api-authorization
+description: "API授权 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # API授权
 API授权用于管理第三方应用对本应用API接口的访问权限，通过accessKey/accessSecret密钥对控制哪些外部应用可以调用哪些API。它基于签名验证机制确保调用安全，自动记录所有API访问日志，为应用提供标准化的API开放能力。

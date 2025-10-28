@@ -1,6 +1,7 @@
 ---
 sidebar_position: 15
 slug: full-code-components
+description: "全代码组件的详细指南和说明。"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,5 +1,8 @@
 ---
 slug: carousel
+title: "Carousel Reference"
+description: "Carousel Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Carousel"
 ---
 # Carousel
 Carousel is a view component for displaying images and content, implementing image carousel display, content switching, and user interaction based on data sources. It handles data loading, image rendering, and event processing, supporting autoplay, manual switching, click interaction, and other features, while providing rich style configuration options.

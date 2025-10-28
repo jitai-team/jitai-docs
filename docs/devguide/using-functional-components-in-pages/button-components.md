@@ -2,6 +2,7 @@
 sidebar_position: 10
 slug: button-components
 title: Button Components
+description: "Learn to use button components in pages. Visual editor guide for creating interactive buttons with styles, permissions, and events."
 ---
 
 # Button Components

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: visual-development-tool
+description: "可视化开发工具的详细指南和说明。"
 ---
 
 # 可视化开发工具

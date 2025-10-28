@@ -1,6 +1,9 @@
 ---
 sidebar_position: 4
 slug: AIAgent
+title: "AIAgent Reference"
+description: "AIAgent Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "AIAgent"
 ---
 
 # AIAgent

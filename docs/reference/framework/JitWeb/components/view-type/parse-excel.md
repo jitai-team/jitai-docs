@@ -1,5 +1,8 @@
 ---
 slug: parse-excel
+title: "Parse Excel Reference"
+description: "Parse Excel Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Parse Excel"
 ---
 # Parse Excel
 Parse Excel is a component for parsing .xlsx format files and importing data into specified data models, implemented based on Steps stepper and table display to provide Excel data upload, parsing, and import functionality. It handles file upload validation, data format conversion, and batch data import, supporting field alias mapping, data preview, and custom button operations.

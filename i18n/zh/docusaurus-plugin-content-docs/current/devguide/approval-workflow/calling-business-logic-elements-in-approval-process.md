@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 slug: calling-business-logic-elements-in-approval-workflow
+description: "在审批流程中调用业务逻辑元素的详细指南和说明。"
 ---
 
 # 在审批流程中调用业务逻辑元素

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4.5
 slug: create-ai-assistant
+description: "创建AI助理元素的详细指南和说明。"
 ---
 
 # 创建AI助理元素 

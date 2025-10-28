@@ -1,5 +1,8 @@
 ---
 slug: eos-storage
+title: "EOS Storage Reference"
+description: "EOS Storage Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "EOS Storage"
 ---
 # EOS Storage
 

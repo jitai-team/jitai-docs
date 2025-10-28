@@ -2,6 +2,7 @@
 sidebar_position: 3
 slug: publishing-and-upgrading-applications
 title: Publishing and Upgrading Applications
+description: "Publish application versions for deployment. Version management, automatic updates, update logs, source code inclusion, and initialization data."
 ---
 
 # Publishing and Upgrading Applications

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 13
 slug: ai-conversation-history
+description: "Manage AI Assistant conversation history. Create, save, and use historical conversations for accurate contextual responses."
 ---
 
 # Conversation History

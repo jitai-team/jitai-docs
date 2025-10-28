@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: visual-development-tool
+description: "JitAi visual development tools overview. Graphical orchestration tools for application development without coding."
 ---
 
 # Visual Development Tool

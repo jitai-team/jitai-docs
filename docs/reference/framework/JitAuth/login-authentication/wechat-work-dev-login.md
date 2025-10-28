@@ -1,5 +1,8 @@
 ---
 slug: wechat-work-dev-login
+title: "WeCom Proxy Development Login Reference"
+description: "WeCom Proxy Development Login Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "WeCom Proxy Development Login"
 ---
 # WeCom Proxy Development Login
 WeCom proxy development login is a login authentication Type element provided by the JitAi framework, implementing enterprise-level single sign-on based on WeCom third-party application proxy development mode. It handles WeCom OAuth authorization flow, user identity authentication, and multi-enterprise proxy management, supporting password-free login within workspace, QR code login, and callback event handling.

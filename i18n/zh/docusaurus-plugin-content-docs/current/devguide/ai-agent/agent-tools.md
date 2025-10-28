@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: agent-tools
+description: "Agent中的工具的详细指南和说明。"
 ---
 
 # Agent中的工具

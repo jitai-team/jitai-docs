@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: create-data-table-from-existing-tables
+description: "Generate data models from existing database tables. Quickly create JitAi models for legacy database architectures with field mapping."
 ---
 
 # Creating Data Table Elements from Existing Database Tables

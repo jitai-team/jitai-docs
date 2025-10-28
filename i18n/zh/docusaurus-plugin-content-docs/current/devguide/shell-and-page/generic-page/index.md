@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+description: "创建常规页面的详细指南和说明。"
 ---
 
 # 创建常规页面

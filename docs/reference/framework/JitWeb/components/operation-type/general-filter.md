@@ -1,5 +1,8 @@
 ---
 slug: general-filter
+title: "General Filter Reference"
+description: "General Filter Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "General Filter"
 ---
 # General Filter
 The general filter is a data query filtering component that implements flexible data filtering functionality based on configurable filter fields and conditions. It handles filter condition construction, field mapping processing, and Q-expression generation, supporting filtering operations for multiple data types and custom filter logic configuration.

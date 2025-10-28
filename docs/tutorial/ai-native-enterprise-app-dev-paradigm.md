@@ -1,6 +1,7 @@
 ---
 sidebar_position: 9
 slug: ai-native-enterprise-app-dev-paradigm
+description: "AI-native application development paradigm shift. From human-computer interaction to human-AI collaboration, and from hard-coded to AI decision-driven systems."
 ---
 # AI-Native Enterprise Application Development Paradigm
 

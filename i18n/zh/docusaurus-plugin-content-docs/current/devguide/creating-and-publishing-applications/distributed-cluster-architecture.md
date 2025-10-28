@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 slug: distributed-cluster-architecture
+description: "实现无限横向扩展的分布式集群架构的详细指南和说明。"
 ---
 # 实现无限横向扩展的分布式集群架构
 

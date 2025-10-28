@@ -2,6 +2,7 @@
 sidebar_position: 10
 title: Implementing Permission Control with Application Roles
 slug: role
+description: "Implement role-based access control in JitAi applications. Configure examiner and examinee roles with granular menu and component-level permissions."
 ---
 # Implementing Permission Control with Application Roles
 

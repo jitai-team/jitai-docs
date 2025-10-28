@@ -1,5 +1,8 @@
 ---
 slug: wechat-official-login
+title: "WeChat Official Account Login Reference"
+description: "WeChat Official Account Login Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "WeChat Official Account Login"
 ---
 # WeChat Official Account Login
 WeChat Official Account login is an authentication login method for the WeChat Official Account ecosystem, implementing user identity authentication and login based on OAuth2.0 web authorization mechanism. It handles WeChat Official Account user identity recognition, authorization information acquisition, and login status management, supporting both silent authorization and user information authorization modes, providing complete frontend-backend integration solutions.

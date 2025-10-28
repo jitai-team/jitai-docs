@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 slug: extend-page-type-editor
+description: "扩展自己的页面Type和编辑器的详细指南和说明。"
 ---
 
 # 扩展自己的页面Type和编辑器

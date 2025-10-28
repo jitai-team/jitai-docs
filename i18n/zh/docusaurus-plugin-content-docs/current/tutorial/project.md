@@ -2,6 +2,7 @@
 sidebar_position: 3
 title: 案例介绍
 slug: project
+description: "探索教育评测系统案例。通过考官、考生和自动阅卷的真实案例学习系统架构。"
 ---
 # 案例介绍
 

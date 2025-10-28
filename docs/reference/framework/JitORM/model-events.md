@@ -1,5 +1,8 @@
 ---
 slug: model-events
+title: "Model Events Reference"
+description: "Model Events Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Model Events"
 ---
 # Model Events
 Model events are event mechanisms that automatically trigger based on model data operations, implementing data change monitoring and response based on event subscription-publish patterns. They are responsible for monitoring model CRUD operations, providing rich trigger timing options and supporting conditional filtering with field-level trigger control, supporting both synchronous and asynchronous execution modes, suitable for data auditing, business rule execution, message notification, and other scenarios.

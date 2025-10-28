@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: calling-fullcode-component-functions-in-page-code
+description: "Call fullcode component functions from page code. Invoke custom component methods and manage component state from pages."
 ---
 
 # Calling Full-Code Component Functions in Page Code

@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+description: "JitAi platform basics and fundamental concepts. JAAP protocol, elements, application runtime, DevOps tools, and development workflows."
 ---
 # Basic Concepts
 

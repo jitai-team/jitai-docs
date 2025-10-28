@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: global-styles
+description: "Define global styles and themes for applications. CSS variables, theme configuration, and consistent styling across pages."
 ---
 
 # Global Styles

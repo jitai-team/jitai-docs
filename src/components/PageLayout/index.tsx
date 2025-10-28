@@ -122,7 +122,6 @@ const PageLayout: React.FC<PageLayoutProps> = ({
       <Head 
         title={finalTitle}
         titleTemplate="%s - JitAI"
-        htmlAttributes={{ lang: i18n.currentLocale }}
         meta={[
           { name: 'description', content: finalDescription },
           { property: 'og:title', content: finalTitle },

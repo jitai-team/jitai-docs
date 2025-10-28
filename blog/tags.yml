@@ -167,3 +167,28 @@ saas:
   label: Operational Costs
   permalink: /operational-cost
   description: Total cost of ownership and operational efficiency
+
+'cloud native':
+  label: Cloud Native
+  permalink: /cloud-native
+  description: Cloud-native architecture, patterns, and technologies
+
+microservices:
+  label: Microservices
+  permalink: /microservices
+  description: Microservices architecture and implementation practices
+
+kubernetes:
+  label: Kubernetes
+  permalink: /kubernetes
+  description: Kubernetes container orchestration and management
+
+container:
+  label: Containerization
+  permalink: /container
+  description: Container technology and deployment strategies
+
+devops:
+  label: DevOps
+  permalink: /devops
+  description: DevOps practices, tools, and automation

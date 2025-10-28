@@ -1,13 +1,11 @@
 ---
-title: "Cloud Native for Enterprise Systems Is a Scam"
+title: "Why Don't B2B Enterprise Systems Need Cloud Native?"
 date: 2025/10/27
 authors: []
 tags: [cloud native, microservices, kubernetes, container, enterprise applications, system architecture, devops, jitai]
-description: "Microservices, containerization, elastic scaling—these cloud-native technologies sound impressive, but they're complete overkill for most enterprise systems. Cloud-native architecture is designed for consumer applications serving millions of concurrent users. Why should internal enterprise systems serving a few hundred users bear the complexity of K8s clusters? Behind this tech hype lies carefully crafted vendor marketing."
+description: "Microservices, containerization, elastic scaling—these cloud-native technologies sound impressive, but they're complete overkill for most enterprise systems. Cloud-native architecture is designed for consumer applications serving millions of concurrent users. Why should internal enterprise systems serving a few hundred users bear the complexity of K8s clusters?"
 keywords: [cloud native, microservices, containerization, K8s, Kubernetes, elastic scaling, enterprise applications, system architecture, DevOps, technology selection, architectural complexity, operational costs, B2B, B2C, JitAi, deployment automation, horizontal scaling]
 ---
-
-# Cloud Native for Enterprise Systems Is a Scam
 
 Over the past few years, "cloud native" has become the buzzword in enterprise IT circles. Microservices architecture, containerized deployment, K8s orchestration, elastic scaling—these concepts flood technical conferences and cloud vendor marketing materials. Enterprise CTOs, fearing they'll fall behind if they don't ride this wave, rush to invest budgets in architectural transformations.
 <!--truncate-->

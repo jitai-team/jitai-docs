@@ -1,6 +1,6 @@
 ---
 title: AI原生架构：让AI真正驱动企业应用的四大支柱
-date: 2025/10/21
+date: 2025/10/27
 authors: []
 tags: [ai native, ai native architecture, application architecture, event driven, JAAP, enterprise applications, architecture transformation]
 description: "你有没有想过，为什么那么多企业投入重金做AI转型，最后却铩羽而归？根本原因不是AI技术不够好，而是试图在旧架构上硬塞AI能力——就像在牛车上装内燃机，注定失败。本文揭示AI原生架构的四大核心支柱：规范化建模、模块感知、智能驱动、热加载，以及为什么这场架构革命关乎企业生死。"

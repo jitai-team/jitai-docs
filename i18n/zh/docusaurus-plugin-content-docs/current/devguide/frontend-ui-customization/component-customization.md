@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: component-customization
+description: "组件定制的详细指南和说明。"
 ---
 
 # 组件定制

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 slug: extend-page-type-editor
+description: "Create custom page Types with visual editors. Complete guide to building specialized page types like countdown timers for unique use cases."
 ---
 
 # Extend Your Own Page Type and Editor

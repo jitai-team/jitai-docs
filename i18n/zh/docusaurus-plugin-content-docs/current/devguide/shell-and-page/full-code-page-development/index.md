@@ -1,5 +1,6 @@
 ---
 sidebar_position: 7
+description: "创建全代码页面的详细指南和说明。"
 ---
 
 import Tabs from '@theme/Tabs';

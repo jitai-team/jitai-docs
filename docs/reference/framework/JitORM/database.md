@@ -1,6 +1,9 @@
 ---
 sidebar_position: 1
 slug: database
+title: "Database Reference"
+description: "Database Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Database"
 ---
 
 # Database

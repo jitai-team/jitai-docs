@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 slug: vue-full-code-page
+description: "Vue全代码页面 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # Vue全代码页面

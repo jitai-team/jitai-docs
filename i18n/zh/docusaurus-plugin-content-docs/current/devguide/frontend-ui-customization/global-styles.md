@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: global-styles
+description: "全局样式的详细指南和说明。"
 ---
 
 # 全局样式

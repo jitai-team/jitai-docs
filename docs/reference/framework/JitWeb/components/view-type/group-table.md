@@ -1,5 +1,8 @@
 ---
 slug: group-table
+title: "Group Table Reference"
+description: "Group Table Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Group Table"
 ---
 # Group Table
 Group table is a powerful data display component, implemented based on antd Table to provide grouping aggregation, inline editing, toolbar operations, and other functions. It handles multi-dimensional data grouping display, statistical calculations, and interactive operations, supporting field-level configuration control, permission management, and custom style rules.

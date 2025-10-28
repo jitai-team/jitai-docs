@@ -2,6 +2,7 @@
 sidebar_position: 6
 title: Implementing AI/UI Collaborative Grading with AI Agent
 slug: ai_ui
+description: "Build AI-assisted grading system with collaborative UI using AI Agent. Combine automatic AI scoring with manual review workflows."
 ---
 
 # Implementing AI/UI Collaborative Grading with AI Agent

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 slug: built-in-data-management-tools
+description: "Visual data management tools for CRUD operations. Filter, add, edit, delete, batch modify, import, and export data without coding."
 ---
 
 # Built-in Data Management Tools

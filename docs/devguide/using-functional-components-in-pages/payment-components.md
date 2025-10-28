@@ -2,6 +2,7 @@
 sidebar_position: 14
 slug: payment-components
 title: Payment Components
+description: "Multi-platform payment processing with unified interface. Order creation, payment workflow, transaction tracking for Alipay and WeChat Pay."
 ---
 
 # Payment Components

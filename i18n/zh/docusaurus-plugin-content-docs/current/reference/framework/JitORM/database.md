@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: database
+description: "数据库 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # 数据库

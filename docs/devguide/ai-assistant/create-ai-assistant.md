@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4.5
 slug: create-ai-assistant
+description: "Create AI Assistant elements with multi-agent collaboration. Build production-grade AI components with drag-and-drop flow designer."
 ---
 
 # Creating AI Assistant Elements

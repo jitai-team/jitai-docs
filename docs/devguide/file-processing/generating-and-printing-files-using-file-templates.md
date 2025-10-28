@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: generating-and-printing-files-using-file-templates
+description: "Generate and print files using templates. Call print service to produce Word and Excel documents from created file templates."
 ---
 
 # Generating and Printing Files Using File Templates

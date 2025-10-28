@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: develop-frontend-component-visual-editor
+description: "为UI组件Type元素开发可视化编辑器的详细指南和说明。"
 ---
 
 # 为UI组件Type元素开发可视化编辑器

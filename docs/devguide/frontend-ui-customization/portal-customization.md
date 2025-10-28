@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 slug: portal-customization
+description: "Customize portal appearance and behavior. Theme customization, branding, and portal-level UI modifications."
 ---
 
 # Portal Customization

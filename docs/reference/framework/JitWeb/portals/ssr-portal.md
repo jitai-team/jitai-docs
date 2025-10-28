@@ -1,5 +1,8 @@
 ---
 slug: ssr-portal
+title: "SSR Portal Reference"
+description: "SSR Portal Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "SSR Portal"
 ---
 # SSR Portal
 SSR Portal is a portal type that supports server-side rendering, used to improve first-screen loading performance and SEO optimization, supporting theme customization and multi-template switching.

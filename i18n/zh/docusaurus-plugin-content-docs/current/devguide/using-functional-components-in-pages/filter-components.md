@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 slug: filter-components
+description: "筛选器组件的详细指南和说明。"
 ---
 
 # 筛选器组件

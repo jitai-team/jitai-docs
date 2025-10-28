@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 slug: default-language
+description: "Configure default language for JitAi applications. Set language selection strategy and improve user experience for multilingual apps."
 ---
 
 # Default Language

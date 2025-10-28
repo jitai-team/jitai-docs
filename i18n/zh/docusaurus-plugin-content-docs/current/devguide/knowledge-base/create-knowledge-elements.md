@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: create-knowledge-elements
+description: "创建知识库元素的详细指南和说明。"
 ---
 
 # 创建知识库元素

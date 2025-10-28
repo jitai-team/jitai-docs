@@ -1,5 +1,6 @@
 ---
 sidebar_position: 0
+description: "JitAi developer guide overview. Complete documentation for building applications on the JitAi platform."
 ---
 
 import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';

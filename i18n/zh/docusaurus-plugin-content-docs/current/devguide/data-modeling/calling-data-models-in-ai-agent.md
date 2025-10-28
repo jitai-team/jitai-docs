@@ -1,6 +1,7 @@
 ---
 sidebar_position: 11
 slug: calling-data-models-in-ai-agent
+description: "在AI Agent中调用数据模型的详细指南和说明。"
 ---
 
 # 在AI Agent中调用数据模型

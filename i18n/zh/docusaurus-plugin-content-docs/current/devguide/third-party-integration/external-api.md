@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: external-api
+description: "创建通用的外部API元素的详细指南和说明。"
 ---
 
 # 创建通用的外部API元素

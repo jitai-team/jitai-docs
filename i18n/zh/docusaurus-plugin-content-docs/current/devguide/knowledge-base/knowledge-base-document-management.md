@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: knowledge-base-document-management
+description: "知识库文档管理的详细指南和说明。"
 ---
 
 # 知识库文档管理

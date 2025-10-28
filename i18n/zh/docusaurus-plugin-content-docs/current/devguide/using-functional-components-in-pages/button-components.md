@@ -1,6 +1,7 @@
 ---
 sidebar_position: 10
 slug: button-components
+description: "学习在页面中使用按钮组件。可视化编辑器指南，创建具有样式、权限和事件的交互式按钮。"
 ---
 
 # 按钮组件

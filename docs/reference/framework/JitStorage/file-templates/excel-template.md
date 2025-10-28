@@ -1,5 +1,8 @@
 ---
 slug: excel-template
+title: "Excel Template Reference"
+description: "Excel Template Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Excel Template"
 ---
 # Excel Template
 

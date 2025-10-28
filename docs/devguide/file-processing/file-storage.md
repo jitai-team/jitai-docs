@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: file-storage
+description: "Configure file storage services with 7 storage methods. AliOSS, EOS, MinIO, Qiniu, AWS S3, Cloudflare R2, and disk storage support."
 ---
 
 # Configuring Your Own File Storage Service

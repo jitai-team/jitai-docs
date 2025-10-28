@@ -1,5 +1,8 @@
 ---
 slug: modal
+title: "Modal Reference"
+description: "Modal Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Modal"
 ---
 # Modal
 The modal is a page overlay container component, implementing dialog and drawer modal interfaces based on Ant Design's Modal and Drawer components. It handles temporary content display, user interaction confirmation, and complex form entry, supporting both modal and non-modal display modes, custom size and position configuration, and embedding other components to build complex modal interfaces.

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 slug: using-interceptors-for-custom-request-authentication
+description: "使用拦截器实现自定义请求鉴权的详细指南和说明。"
 ---
 
 # 使用拦截器实现自定义请求鉴权

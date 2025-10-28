@@ -1,6 +1,7 @@
 ---
 sidebar_position: 17
 slug: /devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant
+description: "Develop enterprise assistants with human-AI collaboration and UI integration. AI handles decisions while humans provide quality control."
 ---
 
 # Developing Human-AI Collaborative Enterprise Assistant Applications with UI Page Integration

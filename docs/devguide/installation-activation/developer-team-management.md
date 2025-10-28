@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: developer-team-management
+description: "Node activation and developer team management in JitAi. Create teams, bind nodes, manage members, and configure team collaboration."
 ---
 
 # Node Activation and Developer Team Management

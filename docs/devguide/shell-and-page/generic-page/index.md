@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+description: "Create generic pages with componentized development. Visual page editor for adding components, configuring layouts, and writing event logic."
 ---
 
 # Creating Generic Pages

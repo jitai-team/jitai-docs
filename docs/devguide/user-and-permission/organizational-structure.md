@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: organization
+description: "Manage organizational structure and hierarchies. Define departments, teams, reporting relationships, and user assignments."
 ---
 
 # Organization

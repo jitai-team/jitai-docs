@@ -1,6 +1,7 @@
 ---
 sidebar_position: 14
 slug: ai-assistant-api-exposure
+description: "AI助理的API开放的详细指南和说明。"
 ---
 
 # AI助理的API开放

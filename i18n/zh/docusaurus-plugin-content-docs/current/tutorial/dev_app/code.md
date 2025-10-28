@@ -2,6 +2,7 @@
 sidebar_position: 7
 title: 用全代码实现答卷页面
 slug: code
+description: "学习使用全代码开发方式实现答卷页面。创建自定义门户和Vue组件实现考试功能。"
 ---
 # 用全代码实现答卷页面
 

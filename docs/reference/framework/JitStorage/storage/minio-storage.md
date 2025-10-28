@@ -1,5 +1,8 @@
 ---
 slug: minio-storage
+title: "MinIO Storage Reference"
+description: "MinIO Storage Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "MinIO Storage"
 ---
 # MinIO Storage
 

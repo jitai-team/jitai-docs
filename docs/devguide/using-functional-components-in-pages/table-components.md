@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: table-components
+description: "表格组件完整指南。分页、排序、筛选、分组显示、极速模式、列宽调整、行内编辑等高级功能。"
 ---
 
 # 表格组件

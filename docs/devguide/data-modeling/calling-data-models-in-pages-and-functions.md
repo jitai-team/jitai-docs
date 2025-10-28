@@ -1,6 +1,7 @@
 ---
 sidebar_position: 10
 slug: calling-data-models-in-pages-and-functions
+description: "Use data models in pages and functions. Built-in CRUD functions, custom model functions, and dynamic data operations for business logic."
 ---
 
 # Using Data Models in Pages and Functions

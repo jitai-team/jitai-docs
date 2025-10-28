@@ -1,6 +1,9 @@
 ---
 sidebar_position: 1
 slug: alipay
+title: "Alipay Payment Reference"
+description: "Alipay Payment Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Alipay Payment"
 ---
 
 # Alipay Payment

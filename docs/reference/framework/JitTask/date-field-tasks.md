@@ -1,6 +1,9 @@
 ---
 sidebar_position: 2
 slug: date-field-tasks
+title: "Date Field Tasks Reference"
+description: "Date Field Tasks Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Date Field Tasks"
 ---
 
 # Date Field Tasks

@@ -1,5 +1,6 @@
 ---
 slug: sqlite-cache
+description: "SQLite缓存 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # SQLite缓存
 SQLite缓存是JitStorage框架提供的轻量级文件缓存解决方案，基于diskcache库和SQLite数据库实现高性能的键值对缓存服务。它负责提供零配置部署、跨平台兼容和SQL查询支持，无需额外的数据库服务器即可实现完整的缓存功能。

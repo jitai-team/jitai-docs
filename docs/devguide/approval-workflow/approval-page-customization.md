@@ -2,6 +2,7 @@
 sidebar_position: 5
 slug: approval-page-customization
 title: Approval Page Customization
+description: "Customize approval pages for different workflow nodes. Default and custom approval pages for distinct interfaces per node."
 ---
 
 # Approval Page Customization

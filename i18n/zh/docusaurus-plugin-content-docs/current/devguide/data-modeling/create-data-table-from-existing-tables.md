@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: create-data-table-from-existing-tables
+description: "从已有数据表中创建数据表的详细指南和说明。"
 ---
 
 # 从已有数据表中创建数据表

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: data-types
+description: "数据类型 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # 数据类型

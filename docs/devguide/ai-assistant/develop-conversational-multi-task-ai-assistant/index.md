@@ -1,6 +1,7 @@
 ---
 sidebar_position: 16
 slug: /devguide/ai-assistant/develop-conversational-multi-task-ai-assistant
+description: "Build conversational AI assistant handling multiple tasks. Integrate content optimization, customer service, and quotation capabilities."
 ---
 
 # Developing Conversational Multi-Task AI Assistant

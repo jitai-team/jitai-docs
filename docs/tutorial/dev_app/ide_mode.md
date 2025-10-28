@@ -2,6 +2,7 @@
 sidebar_position: 2
 title: Building Test Paper Management with Professional Mode
 slug: ide_mode
+description: "Professional mode development using Developer Portal. Learn element-based development, visual editors, and building complex test paper management systems."
 ---
 
 # Building Test Paper Management with Professional Mode

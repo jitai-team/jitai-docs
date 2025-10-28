@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: keyword-and-semantic-search
+description: "使用知识库元素实现关键词检索和语义检索的详细指南和说明。"
 ---
 
 # 使用知识库元素实现关键词检索和语义检索

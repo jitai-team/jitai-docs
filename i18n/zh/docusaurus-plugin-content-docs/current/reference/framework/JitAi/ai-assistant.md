@@ -1,6 +1,8 @@
 ---
 sidebar_position: 5
 slug: ai-assistant
+description: "AI助理 API 参考文档。完整的规格说明、方法和示例。"
+title: "AI助理参考指南"
 ---
 
 # AI助理

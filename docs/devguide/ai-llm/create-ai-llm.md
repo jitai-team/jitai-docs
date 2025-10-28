@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: create-ai-llm
+description: "Create AI LLM elements for language models. Configure and integrate large language models in applications."
 ---
 
 # Creating AI LLM Elements

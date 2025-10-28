@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: translate-ignore-rules
+description: "忽略翻译规则的详细指南和说明。"
 ---
 
 # 忽略翻译规则

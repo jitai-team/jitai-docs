@@ -1,6 +1,7 @@
 ---
 sidebar_position: 12
 slug: welcome-message-and-opening
+description: "欢迎语与开场白的详细指南和说明。"
 ---
 
 # 欢迎语与开场白

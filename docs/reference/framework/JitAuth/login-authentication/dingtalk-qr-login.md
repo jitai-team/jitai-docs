@@ -1,5 +1,8 @@
 ---
 slug: dingtalk-qr-login
+title: "DingTalk Custom QR Code Login Reference"
+description: "DingTalk Custom QR Code Login Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "DingTalk Custom QR Code Login"
 ---
 # DingTalk Custom QR Code Login
 DingTalk custom QR code login (DDInnerType) is a login authentication element based on DingTalk custom applications, supporting PC-side QR code scanning login and password-free login within DingTalk workspace. It handles DingTalk OAuth authorization flow, user identity authentication, and account binding, while supporting seamless integration with DingTalk enterprise organizational architecture and user information synchronization.

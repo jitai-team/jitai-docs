@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+description: "创建门户的详细指南和说明。"
 ---
 
 # 创建门户

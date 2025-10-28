@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: sms-service
+description: "Integrate SMS services for notifications. Send text messages via Twilio, Alibaba Cloud, and other SMS providers."
 ---
 
 # Built-in SMS Service

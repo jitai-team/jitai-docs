@@ -1,5 +1,8 @@
 ---
 slug: batch-edit-form
+title: "Batch Edit Form Reference"
+description: "Batch Edit Form Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Batch Edit Form"
 ---
 # Batch Edit Form
 The batch edit form is a form component used for unified editing operations on multiple data records, implementing batch data modification capabilities based on data models and field configurations. It handles form data management, field edit control, and batch submission processing, supporting flexible field configuration, layout customization, and permission control.

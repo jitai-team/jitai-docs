@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: using-sdk-to-call-authorized-element-apis
+description: "Use SDK to call authorized element APIs. Client SDK usage for accessing exposed business logic securely."
 ---
 
 # Using SDK to Call Authorized Element APIs

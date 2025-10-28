@@ -1,6 +1,9 @@
 ---
 sidebar_position: 5
 slug: markdown-page
+title: "Markdown Page Reference"
+description: "Markdown Page Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Markdown Page"
 ---
 
 # Markdown Page

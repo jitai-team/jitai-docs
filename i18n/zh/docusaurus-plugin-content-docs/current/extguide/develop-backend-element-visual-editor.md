@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: develop-backend-element-visual-editor
+description: "为后端Type元素开发可视化编辑器的详细指南和说明。"
 ---
 
 # 为后端Type元素开发可视化编辑器

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 8
 slug: frontend-debugging-guide
+description: "Frontend debugging tools and techniques. Debug custom events, trace execution flow, and resolve frontend issues effectively."
 ---
 
 # Frontend Debugging Guide

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 slug: create-data-model-functions
+description: "创建数据模型函数的详细指南和说明。"
 ---
 
 # 创建数据模型函数

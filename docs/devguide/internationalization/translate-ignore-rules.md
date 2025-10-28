@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: translate-ignore-rules
+description: "Control translation behavior with ignore rules. Prevent brand names, technical terms, and specific content from automatic translation."
 ---
 
 # Translation Ignore Rules

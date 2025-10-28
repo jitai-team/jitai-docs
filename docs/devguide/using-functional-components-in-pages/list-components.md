@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: list-components
+description: "列表组件配置指南。标题、摘要、按钮灵活配置，适用于新闻、消息、任务等各类列表展示场景。"
 ---
 
 # 列表组件

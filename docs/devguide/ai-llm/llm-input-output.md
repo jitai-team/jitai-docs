@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: llm-input-output
+description: "Configure LLM input and output parameters. Customize prompts, temperature, tokens, and response handling."
 ---
 
 # LLM Function Input and Output

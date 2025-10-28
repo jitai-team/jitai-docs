@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: local-development-and-debugging
+description: "Develop and debug JitAi applications with VSCode or PyCharm. Set up local environment, configure IDE, and debug Python backend code."
 ---
 
 # Developing and Debugging JitAi Applications With VSCode or PyCharm

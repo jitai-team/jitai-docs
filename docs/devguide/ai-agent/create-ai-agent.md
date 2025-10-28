@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: create-ai-agent
+description: "Create AI Agent elements for intelligent automation. Build autonomous agents with tools, prompts, and workflows."
 ---
 
 # Creating AI Agents

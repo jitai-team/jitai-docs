@@ -2,6 +2,7 @@
 sidebar_position: 3
 title: 用AI大模型函数实现生成答案
 slug: ai_func
+description: "使用AI大模型函数实现自动答案生成。配置大语言模型并创建AI驱动的答案服务。"
 ---
 
 # 用AI大模型函数实现生成答案

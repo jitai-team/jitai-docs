@@ -1,5 +1,8 @@
 ---
 slug: standard-organization
+title: "Generic Organization Reference"
+description: "Generic Organization Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Generic Organization"
 ---
 # Generic Organization
 Generic organization is an enterprise organizational architecture management element in the JitAuth framework, implementing enterprise personnel management based on department hierarchical structure and role permission system. It handles organizational architecture maintenance, member management, and permission assignment, supporting department hierarchical management, role permission control, and member status management.

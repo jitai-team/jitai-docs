@@ -1,5 +1,8 @@
 ---
 slug: google-login
+title: "Google Login Reference"
+description: "Google Login Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Google Login"
 ---
 # Google Login
 Google Login (GoogleType) is an authentication element built on the Google platform that supports OAuth authorization for both PC and mobile environments. It manages the complete Google OAuth flow, user authentication, and account binding processes, making it ideal for international applications, SaaS platforms, educational products, and other scenarios that benefit from streamlined registration processes.

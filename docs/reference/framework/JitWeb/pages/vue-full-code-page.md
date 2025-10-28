@@ -1,6 +1,9 @@
 ---
 sidebar_position: 7
 slug: vue-full-code-page
+title: "Vue Full Code Page Reference"
+description: "Vue Full Code Page Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Vue Full Code Page"
 ---
 
 # Vue Full Code Page

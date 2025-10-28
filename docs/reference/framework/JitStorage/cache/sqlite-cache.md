@@ -1,5 +1,8 @@
 ---
 slug: sqlite-cache
+title: "SQLite Cache Reference"
+description: "SQLite Cache Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "SQLite Cache"
 ---
 # SQLite Cache
 SQLite cache is a lightweight file caching solution provided by the JitStorage framework, implementing high-performance key-value cache services based on diskcache library and SQLite database. It provides zero-configuration deployment, cross-platform compatibility, and SQL query support, enabling complete caching functionality without additional database servers.

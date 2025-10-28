@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: scheduled-tasks
+description: "定时任务 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # 定时任务

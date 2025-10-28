@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <!-- Star path for ratings -->
+    <path id="star" d="M 12 2 L 15 10 L 24 10 L 17 16 L 20 24 L 12 18 L 4 24 L 7 16 L 0 10 L 9 10 Z" />
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="900" fill="#f8fafc" />
+  
+  <!-- Title -->
+  <text x="600" y="60" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#1f2937" text-anchor="middle">传统应用 vs AI应用复杂度对比</text>
+  
+  <!-- Left Card: 传统应用 -->
+  <g id="leftCard">
+    <!-- Card background -->
+    <rect x="50" y="120" width="500" height="700" rx="16" fill="#ffffff" />
+    
+    <!-- Title -->
+    <text x="300" y="170" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#326DFF" text-anchor="middle">传统应用</text>
+    
+    <!-- Item 1: 逻辑固定 -->
+    <g transform="translate(100, 200)">
+      <rect width="40" height="40" fill="#326DFF" rx="4" />
+      <text x="60" y="28" font-family="Arial, sans-serif" font-size="20" fill="#374151">逻辑固定</text>
+      <!-- 2 filled stars + 3 empty -->
+      <use href="#star" x="256" y="10" fill="#fbbf24" />
+      <use href="#star" x="286" y="10" fill="#fbbf24" />
+      <use href="#star" x="316" y="10" fill="none" stroke="#fbbf24" stroke-width="1" />
+      <use href="#star" x="346" y="10" fill="none" stroke="#fbbf24" stroke-width="1" />
+      <use href="#star" x="376" y="10" fill="none" stroke="#fbbf24" stroke-width="1" />
+    </g>
+    
+    <!-- Item 2: 边界清晰 -->
+    <g transform="translate(100, 320)">
+      <!-- Frame icon with clear borders -->
+      <rect width="38" height="38" x="1" y="1" fill="none" stroke="#326DFF" stroke-width="3" rx="2" />
+      <line x1="0" y1="20" x2="40" y2="20" stroke="#326DFF" stroke-width="2" />
+      <line x1="20" y1="0" x2="20" y2="40" stroke="#326DFF" stroke-width="2" />
+      <text x="60" y="28" font-family="Arial, sans-serif" font-size="20" fill="#374151">边界清晰</text>
+      <!-- 2 filled stars + 3 empty -->
+      <use href="#star" x="256" y="10" fill="#fbbf24" />
+      <use href="#star" x="286" y="10" fill="#fbbf24" />
+      <use href="#star" x="316" y="10" fill="none" stroke="#fbbf24" stroke-width="1" />
+      <use href="#star" x="346" y="10" fill="none" stroke="#fbbf24" stroke-width="1" />
+      <use href="#star" x="376" y="10" fill="none" stroke="#fbbf24" stroke-width="1" />
+    </g>
+    
+    <!-- Item 3: 开发周期 -->
+    <g transform="translate(100, 440)">
+      <circle cx="20" cy="20" r="20" fill="none" stroke="#326DFF" stroke-width="3" />
+      <circle cx="20" cy="20" r="2" fill="#326DFF" />
+      <line x1="20" y1="20" x2="20" y2="10" stroke="#326DFF" stroke-width="2" />
+      <line x1="20" y1="20" x2="28" y2="20" stroke="#326DFF" stroke-width="2" />
+      <text x="60" y="28" font-family="Arial, sans-serif" font-size="20" fill="#374151">开发周期</text>
+      <text x="400" y="32" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#326DFF" text-anchor="end">3-6个月</text>
+    </g>
+    
+    <!-- Item 4: 复杂度指数 -->
+    <g transform="translate(100, 560)">
+      <circle cx="20" cy="20" r="20" fill="none" stroke="#326DFF" stroke-width="3" />
+      <path d="M 15 20 Q 20 15, 25 20" stroke="#326DFF" stroke-width="2" fill="none" />
+      <text x="60" y="28" font-family="Arial, sans-serif" font-size="20" fill="#374151">复杂度指数</text>
+      <text x="400" y="35" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#059669" text-anchor="end">1x</text>
+    </g>
+    
+    <!-- Item 5: 可预测性 -->
+    <g transform="translate(100, 680)">
+      <circle cx="20" cy="20" r="18" fill="#059669" />
+      <path d="M 12 20 L 18 26 L 30 14" stroke="#ffffff" stroke-width="3" fill="none" />
+      <text x="60" y="28" font-family="Arial, sans-serif" font-size="20" fill="#374151">可预测性</text>
+      <text x="400" y="32" font-family="Arial, sans-serif" font-size="24" fill="#059669" text-anchor="end">高</text>
+    </g>
+  </g>
+  
+  <!-- Right Card: AI应用 -->
+  <g id="rightCard">
+    <!-- Card background -->
+    <rect x="650" y="120" width="500" height="700" rx="16" fill="#ffffff" />
+    
+    <!-- Title -->
+    <text x="900" y="170" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#FF6B35" text-anchor="middle">AI应用</text>
+    
+    <!-- Item 1: 逻辑动态 -->
+    <g transform="translate(700, 200)">
+      <path d="M 0 20 Q 10 10, 20 20 T 40 20" stroke="#FF6B35" stroke-width="3" fill="none" />
+      <text x="60" y="28" font-family="Arial, sans-serif" font-size="20" fill="#374151">逻辑动态</text>
+      <!-- 5 filled stars -->
+      <use href="#star" x="256" y="10" fill="#fbbf24" />
+      <use href="#star" x="286" y="10" fill="#fbbf24" />
+      <use href="#star" x="316" y="10" fill="#fbbf24" />
+      <use href="#star" x="346" y="10" fill="#fbbf24" />
+      <use href="#star" x="376" y="10" fill="#fbbf24" />
+    </g>
+    
+    <!-- Item 2: 边界模糊 -->
+    <g transform="translate(700, 320)">
+      <rect width="40" height="40" fill="none" stroke="#FF6B35" stroke-width="2" stroke-dasharray="4,4" rx="4" />
+      <text x="60" y="28" font-family="Arial, sans-serif" font-size="20" fill="#374151">边界模糊</text>
+      <!-- 4 filled stars + 1 empty -->
+      <use href="#star" x="256" y="10" fill="#fbbf24" />
+      <use href="#star" x="286" y="10" fill="#fbbf24" />
+      <use href="#star" x="316" y="10" fill="#fbbf24" />
+      <use href="#star" x="346" y="10" fill="#fbbf24" />
+      <use href="#star" x="376" y="10" fill="none" stroke="#fbbf24" stroke-width="1" />
+    </g>
+    
+    <!-- Item 3: 开发周期 -->
+    <g transform="translate(700, 440)">
+      <circle cx="20" cy="20" r="20" fill="none" stroke="#FF6B35" stroke-width="3" />
+      <circle cx="20" cy="20" r="2" fill="#FF6B35" />
+      <line x1="20" y1="20" x2="20" y2="10" stroke="#FF6B35" stroke-width="2" />
+      <line x1="20" y1="20" x2="28" y2="20" stroke="#FF6B35" stroke-width="2" />
+      <text x="60" y="28" font-family="Arial, sans-serif" font-size="20" fill="#374151">开发周期</text>
+      <text x="400" y="32" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FF6B35" text-anchor="end">8-12个月</text>
+      <!-- Upward arrow -->
+      <path d="M 420 10 L 420 30 M 420 10 L 415 15 M 420 10 L 425 15" stroke="#FF6B35" stroke-width="2" fill="none" />
+    </g>
+    
+    <!-- Item 4: 复杂度指数 -->
+    <g transform="translate(700, 560)">
+      <circle cx="20" cy="20" r="20" fill="none" stroke="#FF6B35" stroke-width="3" />
+      <path d="M 15 25 Q 20 15, 25 25" stroke="#FF6B35" stroke-width="2" fill="none" />
+      <text x="60" y="28" font-family="Arial, sans-serif" font-size="20" fill="#374151">复杂度指数</text>
+      <text x="400" y="35" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#ef4444" text-anchor="end">3-5x</text>
+    </g>
+    
+    <!-- Item 5: 可预测性 -->
+    <g transform="translate(700, 680)">
+      <circle cx="20" cy="20" r="18" fill="#ef4444" />
+      <text x="20" y="30" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle">?</text>
+      <text x="60" y="28" font-family="Arial, sans-serif" font-size="20" fill="#374151">可预测性</text>
+      <text x="400" y="32" font-family="Arial, sans-serif" font-size="24" fill="#ef4444" text-anchor="end">低</text>
+    </g>
+  </g>
+</svg>
+

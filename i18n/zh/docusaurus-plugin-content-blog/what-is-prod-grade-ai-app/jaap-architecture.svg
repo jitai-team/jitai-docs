@@ -1,0 +1,186 @@
+<svg width="1000" height="1000" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1000" height="1000" fill="#FFFFFF"/>
+  
+  <!-- Title -->
+  <text x="500" y="50" font-family="PingFang SC, sans-serif" font-size="28" font-weight="600" fill="#111827" text-anchor="middle">
+    JAAP协议架构
+  </text>
+  <text x="500" y="80" font-family="PingFang SC, sans-serif" font-size="16" fill="#6B7280" text-anchor="middle">
+    JitAi AI Application Protocol
+  </text>
+  
+  <!-- AI Layer (Top) -->
+  <g id="ai-layer">
+    <rect x="150" y="120" width="700" height="200" rx="12" fill="url(#gradient-ai)" stroke="#326DFF" stroke-width="3"/>
+    
+    <!-- Layer Label -->
+    <rect x="170" y="135" width="100" height="30" rx="4" fill="#FFFFFF"/>
+    <text x="220" y="155" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#326DFF" text-anchor="middle">AI Layer</text>
+    
+    <!-- AI Engine Box (centered) -->
+    <rect x="250" y="170" width="500" height="120" rx="8" fill="#FFFFFF" stroke="#326DFF" stroke-width="2"/>
+    <text x="500" y="210" font-family="PingFang SC, sans-serif" font-size="18" font-weight="600" fill="#326DFF" text-anchor="middle">
+      LLM / AI Engine
+    </text>
+    
+    <!-- AI Brain Icon -->
+    <circle cx="420" cy="250" r="25" fill="#EFF6FF" stroke="#326DFF" stroke-width="2"/>
+    <path d="M 405 250 Q 410 240, 420 243 Q 430 245, 435 250" fill="none" stroke="#326DFF" stroke-width="2"/>
+    <path d="M 405 250 Q 410 260, 420 257 Q 430 255, 435 250" fill="none" stroke="#326DFF" stroke-width="2"/>
+    
+    <text x="490" y="240" font-family="PingFang SC, sans-serif" font-size="14" fill="#6B7280">• 语义理解</text>
+    <text x="490" y="260" font-family="PingFang SC, sans-serif" font-size="14" fill="#6B7280">• 决策生成</text>
+  </g>
+  
+  <!-- Connection Arrow -->
+  <defs>
+    <marker id="arrow-primary" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#326DFF" />
+    </marker>
+    <linearGradient id="gradient-ai" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#EFF6FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DBEAFE;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradient-jaap" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#EEF2FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0E7FF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradient-app" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F0FDF4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DCFCE7;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <line x1="500" y1="320" x2="500" y2="350" stroke="#326DFF" stroke-width="3" marker-end="url(#arrow-primary)"/>
+  
+  <!-- JAAP Protocol Layer (Middle) -->
+  <g id="jaap-layer">
+    <rect x="150" y="360" width="700" height="280" rx="12" fill="url(#gradient-jaap)" stroke="#326DFF" stroke-width="3"/>
+    
+    <!-- Layer Label -->
+    <rect x="170" y="375" width="180" height="30" rx="4" fill="#FFFFFF"/>
+    <text x="260" y="395" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#326DFF" text-anchor="middle">JAAP Protocol Layer</text>
+    
+    <!-- JAAP Core Box (centered) -->
+    <rect x="200" y="425" width="600" height="195" rx="8" fill="#FFFFFF" stroke="#326DFF" stroke-width="2"/>
+    
+    <!-- Module Discovery -->
+    <g transform="translate(330, 445)">
+      <rect x="0" y="0" width="160" height="50" rx="6" fill="#EEF2FF" stroke="#326DFF" stroke-width="2"/>
+      <circle cx="25" cy="25" r="12" fill="#326DFF"/>
+      <path d="M 20 25 L 23 28 L 30 18" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+      <text x="50" y="20" font-family="PingFang SC, sans-serif" font-size="13" font-weight="600" fill="#326DFF">模块发现</text>
+      <text x="50" y="35" font-family="PingFang SC, sans-serif" font-size="11" fill="#6B7280">与注册</text>
+    </g>
+    
+    <!-- Capability Description -->
+    <g transform="translate(510, 445)">
+      <rect x="0" y="0" width="160" height="50" rx="6" fill="#EEF2FF" stroke="#326DFF" stroke-width="2"/>
+      <rect x="15" y="15" width="20" height="20" rx="2" fill="none" stroke="#326DFF" stroke-width="2"/>
+      <line x1="19" y1="21" x2="31" y2="21" stroke="#326DFF" stroke-width="1"/>
+      <line x1="19" y1="25" x2="31" y2="25" stroke="#326DFF" stroke-width="1"/>
+      <line x1="19" y1="29" x2="28" y2="29" stroke="#326DFF" stroke-width="1"/>
+      <text x="50" y="20" font-family="PingFang SC, sans-serif" font-size="13" font-weight="600" fill="#326DFF">能力描述</text>
+      <text x="50" y="35" font-family="PingFang SC, sans-serif" font-size="11" fill="#6B7280">解析</text>
+    </g>
+    
+    <!-- JAAP Features -->
+    <text x="500" y="525" font-family="PingFang SC, sans-serif" font-size="12" fill="#326DFF" font-weight="600" text-anchor="middle">核心特性：</text>
+    <text x="500" y="541" font-family="PingFang SC, sans-serif" font-size="11" fill="#6B7280" text-anchor="middle">模块自描述 • 动态发现 • 智能编排</text>
+    
+    <!-- Orchestration Engine (centered) -->
+    <g transform="translate(325, 555)">
+      <rect x="0" y="0" width="350" height="60" rx="6" fill="#EEF2FF" stroke="#326DFF" stroke-width="2"/>
+      <circle cx="30" cy="30" r="13" fill="#326DFF"/>
+      <path d="M 25 30 L 30 35 L 35 30 L 30 25 Z" fill="#FFFFFF"/>
+      <text x="55" y="25" font-family="PingFang SC, sans-serif" font-size="14" font-weight="600" fill="#326DFF">调用编排引擎</text>
+      <text x="55" y="43" font-family="PingFang SC, sans-serif" font-size="11" fill="#6B7280">• 智能路由  • 时序编排  • 错误处理</text>
+    </g>
+  </g>
+  
+  <!-- Connection Arrow -->
+  <line x1="500" y1="645" x2="500" y2="670" stroke="#326DFF" stroke-width="3" marker-end="url(#arrow-primary)"/>
+  
+  <!-- Application Layer (Bottom) -->
+  <g id="app-layer">
+    <rect x="150" y="680" width="700" height="250" rx="12" fill="url(#gradient-app)" stroke="#10B981" stroke-width="3"/>
+    
+    <!-- Layer Label -->
+    <rect x="170" y="695" width="180" height="30" rx="4" fill="#FFFFFF"/>
+    <text x="260" y="715" font-family="Inter, sans-serif" font-size="14" font-weight="600" fill="#10B981" text-anchor="middle">Application Layer</text>
+    
+    <!-- Top Row Modules (centered) -->
+    <g id="modules-top">
+      <!-- Module A -->
+      <g transform="translate(240, 745)">
+        <rect x="0" y="0" width="140" height="70" rx="8" fill="#FFFFFF" stroke="#10B981" stroke-width="2"/>
+        <text x="70" y="25" font-family="PingFang SC, sans-serif" font-size="15" font-weight="600" fill="#10B981" text-anchor="middle">模块 A</text>
+        <rect x="15" y="35" width="110" height="18" rx="4" fill="#D1FAE5"/>
+        <text x="70" y="47" font-family="PingFang SC, sans-serif" font-size="11" fill="#10B981" text-anchor="middle">自描述</text>
+        <circle cx="25" cy="60" r="3" fill="#10B981"/>
+        <circle cx="70" cy="60" r="3" fill="#10B981"/>
+        <circle cx="115" cy="60" r="3" fill="#10B981"/>
+      </g>
+      
+      <!-- Module B -->
+      <g transform="translate(410, 745)">
+        <rect x="0" y="0" width="140" height="70" rx="8" fill="#FFFFFF" stroke="#10B981" stroke-width="2"/>
+        <text x="70" y="25" font-family="PingFang SC, sans-serif" font-size="15" font-weight="600" fill="#10B981" text-anchor="middle">模块 B</text>
+        <rect x="15" y="35" width="110" height="18" rx="4" fill="#D1FAE5"/>
+        <text x="70" y="47" font-family="PingFang SC, sans-serif" font-size="11" fill="#10B981" text-anchor="middle">自描述</text>
+        <circle cx="25" cy="60" r="3" fill="#10B981"/>
+        <circle cx="70" cy="60" r="3" fill="#10B981"/>
+        <circle cx="115" cy="60" r="3" fill="#10B981"/>
+      </g>
+      
+      <!-- Module C -->
+      <g transform="translate(580, 745)">
+        <rect x="0" y="0" width="140" height="70" rx="8" fill="#FFFFFF" stroke="#10B981" stroke-width="2"/>
+        <text x="70" y="25" font-family="PingFang SC, sans-serif" font-size="15" font-weight="600" fill="#10B981" text-anchor="middle">模块 C</text>
+        <rect x="15" y="35" width="110" height="18" rx="4" fill="#D1FAE5"/>
+        <text x="70" y="47" font-family="PingFang SC, sans-serif" font-size="11" fill="#10B981" text-anchor="middle">自描述</text>
+        <circle cx="25" cy="60" r="3" fill="#10B981"/>
+        <circle cx="70" cy="60" r="3" fill="#10B981"/>
+        <circle cx="115" cy="60" r="3" fill="#10B981"/>
+      </g>
+    </g>
+    
+    <!-- Bottom Row Modules (centered) -->
+    <g id="modules-bottom">
+      <!-- Frontend -->
+      <g transform="translate(260, 845)">
+        <rect x="0" y="0" width="120" height="55" rx="8" fill="#FFFFFF" stroke="#326DFF" stroke-width="2"/>
+        <text x="60" y="22" font-family="PingFang SC, sans-serif" font-size="14" font-weight="600" fill="#326DFF" text-anchor="middle">前端</text>
+        <rect x="30" y="30" width="60" height="8" rx="2" fill="#DBEAFE"/>
+        <rect x="30" y="40" width="60" height="8" rx="2" fill="#DBEAFE"/>
+      </g>
+      
+      <!-- Backend -->
+      <g transform="translate(410, 845)">
+        <rect x="0" y="0" width="120" height="55" rx="8" fill="#FFFFFF" stroke="#8EAEFF" stroke-width="2"/>
+        <text x="60" y="22" font-family="PingFang SC, sans-serif" font-size="14" font-weight="600" fill="#8EAEFF" text-anchor="middle">后端</text>
+        <circle cx="40" cy="38" r="6" fill="#E0E7FF"/>
+        <circle cx="60" cy="38" r="6" fill="#E0E7FF"/>
+        <circle cx="80" cy="38" r="6" fill="#E0E7FF"/>
+      </g>
+      
+      <!-- Data -->
+      <g transform="translate(560, 845)">
+        <rect x="0" y="0" width="120" height="55" rx="8" fill="#FFFFFF" stroke="#F59E0B" stroke-width="2"/>
+        <text x="60" y="22" font-family="PingFang SC, sans-serif" font-size="14" font-weight="600" fill="#F59E0B" text-anchor="middle">数据</text>
+        <circle cx="60" cy="38" r="10" fill="none" stroke="#FCD34D" stroke-width="2"/>
+        <line x1="52" y1="38" x2="68" y2="38" stroke="#FCD34D" stroke-width="2"/>
+        <line x1="60" y1="30" x2="60" y2="46" stroke="#FCD34D" stroke-width="2"/>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Legend -->
+  <g id="legend" transform="translate(150, 950)">
+    <text x="0" y="0" font-family="PingFang SC, sans-serif" font-size="13" fill="#6B7280">
+      数据流：AI Engine ⇄ JAAP Protocol ⇄ Application Modules (双向通信)
+    </text>
+  </g>
+</svg>
+

@@ -110,3 +110,83 @@ programming:
 'system architecture':
   label: 系统架构
   description: 系统架构设计与实现
+
+'on-premises':
+  label: 私有化部署
+  description: 本地部署、自托管解决方案与私有基础设施
+
+'public cloud':
+  label: 公有云
+  description: 公有云服务与解决方案
+
+saas:
+  label: SaaS
+  description: 软件即服务模式与应用
+
+'data sovereignty':
+  label: 数据主权
+  description: 企业数据主权与安全控制
+
+'vendor lock-in':
+  label: 供应商锁定
+  description: 供应商锁定问题与应对策略
+
+'operational cost':
+  label: 运维成本
+  description: 系统运维成本与优化
+
+'cloud native':
+  label: 云原生
+  description: 云原生架构与技术
+
+microservices:
+  label: 微服务
+  description: 微服务架构与实践
+
+kubernetes:
+  label: Kubernetes
+  description: Kubernetes 容器编排与管理
+
+container:
+  label: 容器化
+  description: 容器化技术与部署
+
+devops:
+  label: DevOps
+  description: DevOps 工具链与实践
+
+'ai collaboration':
+  label: AI 协同
+  description: AI与人类协同工作的模式与实践
+
+chatbot:
+  label: 聊天机器人
+  description: 聊天机器人技术与应用
+
+'module orchestration':
+  label: 模块编排
+  description: 软件模块编排与智能调度
+
+'ui collaboration':
+  label: UI 协同
+  description: 基于用户界面的人机协同操作
+
+'knowledge modeling':
+  label: 知识建模
+  description: 企业知识建模与结构化表达
+
+'ai integration':
+  label: AI 系统融合
+  description: AI与传统业务系统的深度融合
+
+customization:
+  label: 定制化开发
+  description: 企业级定制化开发与实施
+
+'ai assistant':
+  label: AI 助理
+  description: AI智能助理的开发与应用
+
+'architecture transformation':
+  label: 架构转型
+  description: 企业架构转型与现代化升级

@@ -1,0 +1,199 @@
+<svg width="1200" height="400" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="400" fill="#F9FAFB"/>
+  
+  <!-- Title -->
+  <text x="600" y="35" font-family="PingFang SC, sans-serif" font-size="22" font-weight="600" fill="#111827" text-anchor="middle">
+    企业AI应用的四大误区
+  </text>
+  
+  <!-- Panel 1: Cannot Adjust Locally -->
+  <g id="panel1">
+    <!-- Panel Border -->
+    <rect x="20" y="60" width="280" height="320" rx="12" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+    
+    <!-- Header -->
+    <rect x="20" y="60" width="280" height="40" rx="12" fill="#FEF2F2"/>
+    <text x="160" y="85" font-family="PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#EF4444" text-anchor="middle">
+      误区1：完全重新生成
+    </text>
+    
+  <!-- Developer Character -->
+  <circle cx="100" cy="150" r="30" fill="#E8EFFF" stroke="#326DFF" stroke-width="2"/>
+  <circle cx="92" cy="145" r="4" fill="#326DFF"/>
+  <circle cx="108" cy="145" r="4" fill="#326DFF"/>
+  <path d="M 92 155 Q 100 160, 108 155" stroke="#326DFF" stroke-width="2" fill="none"/>
+  <!-- Frustrated face -->
+  <path d="M 90 158 Q 100 165, 110 158" stroke="#EF4444" stroke-width="2" fill="none"/>
+    
+    <!-- Computer Screen -->
+    <rect x="190" y="120" width="80" height="60" rx="4" fill="#374151" stroke="#6B7280" stroke-width="2"/>
+    <text x="230" y="145" font-family="PingFang SC, sans-serif" font-size="11" fill="#10B981" text-anchor="middle">生成中...</text>
+    <rect x="197" y="160" width="66" height="4" rx="2" fill="#10B981"/>
+    <rect x="197" y="167" width="45" height="4" rx="2" fill="#10B981"/>
+    
+    <!-- Loading indicator -->
+    <circle cx="160" cy="220" r="20" fill="none" stroke="#EF4444" stroke-width="3" stroke-dasharray="60,40" opacity="0.7"/>
+    <text x="160" y="255" font-family="PingFang SC, sans-serif" font-size="12" fill="#6B7280" text-anchor="middle">重新生成...</text>
+    
+    <!-- Speech Bubble -->
+    <rect x="45" y="290" width="230" height="50" rx="8" fill="#FEF2F2" stroke="#EF4444" stroke-width="2"/>
+    <polygon points="140,290 150,275 160,290" fill="#FEF2F2" stroke="#EF4444" stroke-width="2"/>
+    <text x="160" y="310" font-family="PingFang SC, sans-serif" font-size="13" fill="#EF4444" text-anchor="middle">😩 又要等几分钟...</text>
+    <text x="160" y="328" font-family="PingFang SC, sans-serif" font-size="11" fill="#9CA3AF" text-anchor="middle">❌ token消耗巨大</text>
+  </g>
+  
+  <!-- Panel 2: Isolated Deployment -->
+  <g id="panel2">
+    <!-- Panel Border -->
+    <rect x="320" y="60" width="280" height="320" rx="12" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+    
+    <!-- Header -->
+    <rect x="320" y="60" width="280" height="40" rx="12" fill="#FEF2F2"/>
+    <text x="460" y="85" font-family="PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#EF4444" text-anchor="middle">
+      误区2：割裂独立部署
+    </text>
+    
+    <!-- AI Island (Left) -->
+    <g transform="translate(350, 120)">
+      <ellipse cx="40" cy="70" rx="50" ry="30" fill="#E8EFFF" stroke="#326DFF" stroke-width="2"/>
+      <circle cx="40" cy="55" r="20" fill="#326DFF"/>
+      <text x="40" y="63" font-family="PingFang SC, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF" text-anchor="middle">AI</text>
+      <text x="40" y="88" font-family="PingFang SC, sans-serif" font-size="11" fill="#326DFF" text-anchor="middle">独立系统</text>
+    </g>
+    
+    <!-- Gap/Chasm -->
+    <g transform="translate(460, 135)">
+      <path d="M 0 0 L -8 50 L 8 50 L 0 0" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="1" stroke-dasharray="4,2"/>
+      <text x="0" y="65" font-family="PingFang SC, sans-serif" font-size="10" fill="#9CA3AF" text-anchor="middle">深沟</text>
+    </g>
+    
+    <!-- Data Island (Right) -->
+    <g transform="translate(495, 120)">
+      <ellipse cx="40" cy="70" rx="50" ry="30" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2"/>
+      <circle cx="40" cy="58" r="16" fill="none" stroke="#F59E0B" stroke-width="2"/>
+      <rect x="35" y="63" width="10" height="10" fill="#F59E0B"/>
+      <text x="40" y="88" font-family="PingFang SC, sans-serif" font-size="11" fill="#F59E0B" text-anchor="middle">业务系统</text>
+    </g>
+    
+    <!-- Label -->
+    <text x="460" y="255" font-family="PingFang SC, sans-serif" font-size="14" fill="#EF4444" text-anchor="middle">❌ 无法调用模块</text>
+    <text x="460" y="275" font-family="PingFang SC, sans-serif" font-size="12" fill="#9CA3AF" text-anchor="middle">系统割裂</text>
+    <rect x="350" y="295" width="220" height="65" rx="8" fill="#FEF2F2" stroke="#EF4444" stroke-width="2"/>
+    <text x="460" y="325" font-family="PingFang SC, sans-serif" font-size="12" fill="#EF4444" text-anchor="middle">无法理解已有系统能力</text>
+    <text x="460" y="345" font-family="PingFang SC, sans-serif" font-size="11" fill="#9CA3AF" text-anchor="middle">AI与业务完全隔离</text>
+  </g>
+  
+  <!-- Panel 3: Switching Between Windows -->
+  <g id="panel3">
+    <!-- Panel Border -->
+    <rect x="620" y="60" width="280" height="320" rx="12" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+    
+    <!-- Header -->
+    <rect x="620" y="60" width="280" height="40" rx="12" fill="#FEF2F2"/>
+    <text x="760" y="85" font-family="PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#EF4444" text-anchor="middle">
+      误区3：来回切换
+    </text>
+    
+    <!-- Chat Window (Left) -->
+    <rect x="645" y="130" width="80" height="70" rx="6" fill="#374151" stroke="#6B7280" stroke-width="2"/>
+    <rect x="650" y="135" width="70" height="15" rx="3" fill="#1F2937"/>
+    <text x="685" y="147" font-family="PingFang SC, sans-serif" font-size="9" fill="#9CA3AF" text-anchor="middle">AI聊天</text>
+    <rect x="655" y="160" width="60" height="12" rx="6" fill="#4B5563"/>
+    <rect x="655" y="175" width="60" height="12" rx="6" fill="#326DFF"/>
+    
+    <!-- Business System (Right) -->
+    <rect x="805" y="130" width="80" height="70" rx="6" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="2"/>
+    <rect x="810" y="135" width="70" height="15" rx="3" fill="#F9FAFB"/>
+    <text x="845" y="147" font-family="PingFang SC, sans-serif" font-size="9" fill="#6B7280" text-anchor="middle">业务系统</text>
+    <line x1="815" y1="160" x2="875" y2="160" stroke="#E5E7EB" stroke-width="1"/>
+    <line x1="815" y1="167" x2="875" y2="167" stroke="#E5E7EB" stroke-width="1"/>
+    <line x1="815" y1="174" x2="870" y2="174" stroke="#E5E7EB" stroke-width="1"/>
+    
+    <!-- User Character (Center, switching) -->
+    <circle cx="760" cy="165" r="25" fill="#E8EFFF" stroke="#326DFF" stroke-width="2"/>
+    <!-- Dizzy face -->
+    <text x="760" y="175" font-family="sans-serif" font-size="28" text-anchor="middle">😵</text>
+    
+    <!-- Switching Arrows -->
+    <path d="M 740 140 Q 760 120, 780 140" stroke="#EF4444" stroke-width="3" fill="none" marker-end="url(#arrow-red)"/>
+    <path d="M 780 190 Q 760 210, 740 190" stroke="#EF4444" stroke-width="3" fill="none" marker-end="url(#arrow-red)"/>
+    <defs>
+      <marker id="arrow-red" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#EF4444" />
+      </marker>
+    </defs>
+    
+    <!-- Multiple arrows showing confusion -->
+    <text x="720" y="235" font-family="sans-serif" font-size="20">⇄</text>
+    <text x="755" y="235" font-family="sans-serif" font-size="20">⇄</text>
+    <text x="790" y="235" font-family="sans-serif" font-size="20">⇄</text>
+    
+    <!-- Label -->
+    <text x="760" y="280" font-family="PingFang SC, sans-serif" font-size="14" fill="#EF4444" text-anchor="middle">❌ 来回切换</text>
+    <rect x="650" y="295" width="220" height="60" rx="8" fill="#FEF2F2" stroke="#EF4444" stroke-width="2"/>
+    <text x="760" y="320" font-family="PingFang SC, sans-serif" font-size="12" fill="#EF4444" text-anchor="middle">😵 晕头转向</text>
+    <text x="760" y="338" font-family="PingFang SC, sans-serif" font-size="11" fill="#9CA3AF" text-anchor="middle">效率低下、重复劳动</text>
+  </g>
+  
+  <!-- Panel 4: Generic Product -->
+  <g id="panel4">
+    <!-- Panel Border -->
+    <rect x="920" y="60" width="280" height="320" rx="12" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+    
+    <!-- Header -->
+    <rect x="920" y="60" width="280" height="40" rx="12" fill="#FEF2F2"/>
+    <text x="1060" y="85" font-family="PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#EF4444" text-anchor="middle">
+      误区4：通用标品
+    </text>
+    
+    <!-- "Universal AI" Icon -->
+    <circle cx="1053" cy="150" r="35" fill="url(#gradient-universal)" stroke="#9CA3AF" stroke-width="2"/>
+    <text x="1053" y="155" font-family="PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#FFFFFF" text-anchor="middle">万能</text>
+    <text x="1053" y="171" font-family="PingFang SC, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF" text-anchor="middle">AI</text>
+    
+    <!-- Mismatched X marks -->
+    <text x="978" y="208" font-family="sans-serif" font-size="18" fill="#EF4444" text-anchor="middle">❌</text>
+    <text x="1028" y="208" font-family="sans-serif" font-size="18" fill="#EF4444" text-anchor="middle">❌</text>
+    <text x="1078" y="208" font-family="sans-serif" font-size="18" fill="#EF4444" text-anchor="middle">❌</text>
+    <text x="1128" y="208" font-family="sans-serif" font-size="18" fill="#EF4444" text-anchor="middle">❌</text>
+    
+    <!-- Various Industry Puzzle Pieces (Not matching) -->
+    <g transform="translate(958, 215)">
+      <!-- Healthcare -->
+      <rect x="0" y="0" width="40" height="40" rx="4" fill="#FEE2E2" stroke="#EF4444" stroke-width="2"/>
+      <text x="20" y="25" font-family="sans-serif" font-size="20" text-anchor="middle">🏥</text>
+      <text x="20" y="52" font-family="PingFang SC, sans-serif" font-size="9" fill="#6B7280" text-anchor="middle">医疗</text>
+      
+      <!-- Finance -->
+      <rect x="50" y="0" width="40" height="40" rx="4" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2"/>
+      <text x="70" y="25" font-family="sans-serif" font-size="20" text-anchor="middle">💰</text>
+      <text x="70" y="52" font-family="PingFang SC, sans-serif" font-size="9" fill="#6B7280" text-anchor="middle">金融</text>
+      
+      <!-- Manufacturing -->
+      <rect x="100" y="0" width="40" height="40" rx="4" fill="#E8EFFF" stroke="#326DFF" stroke-width="2"/>
+      <text x="120" y="25" font-family="sans-serif" font-size="20" text-anchor="middle">🏭</text>
+      <text x="120" y="52" font-family="PingFang SC, sans-serif" font-size="9" fill="#6B7280" text-anchor="middle">制造</text>
+      
+      <!-- Retail -->
+      <rect x="150" y="0" width="40" height="40" rx="4" fill="#F5E8FF" stroke="#A855F7" stroke-width="2"/>
+      <text x="170" y="25" font-family="sans-serif" font-size="20" text-anchor="middle">🛒</text>
+      <text x="170" y="52" font-family="PingFang SC, sans-serif" font-size="9" fill="#6B7280" text-anchor="middle">零售</text>
+    </g>
+    
+    <!-- Label -->
+    <text x="1060" y="295" font-family="PingFang SC, sans-serif" font-size="14" fill="#EF4444" text-anchor="middle">❌ 通用 = 无用</text>
+    <rect x="950" y="310" width="220" height="55" rx="8" fill="#FEF2F2" stroke="#EF4444" stroke-width="2"/>
+    <text x="1060" y="335" font-family="PingFang SC, sans-serif" font-size="12" fill="#EF4444" text-anchor="middle">拼图不匹配</text>
+    <text x="1060" y="353" font-family="PingFang SC, sans-serif" font-size="11" fill="#9CA3AF" text-anchor="middle">不懂企业业务逻辑</text>
+  </g>
+  
+  <!-- Gradient Definitions -->
+  <defs>
+    <linearGradient id="gradient-universal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9CA3AF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6B7280;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>
+

@@ -41,7 +41,7 @@ const DevOpsSection: React.FC<DevOpsSectionProps> = ({ currentLocale }) => {
             const isOddRow = rowIndex % 2 === 0; // 单数行（0-based索引）
 
             return (
-              <div className={styles.featureRow}>
+              <div className={styles.featureRow} key={rowIndex}>
                 {row.map((feature, featureIndex) => {
                   const isWideCard = isOddRow
                     ? featureIndex === 0  // 单数行：左侧宽

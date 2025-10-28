@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700">
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#326DFF;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#8EAEFF;stop-opacity:0.1" />
+    </linearGradient>
+    <filter id="cardShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.2"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="700" fill="#ffffff"/>
+  
+  <!-- Title -->
+  <text x="600" y="60" font-family="PingFang SC, sans-serif" font-size="28" font-weight="700" fill="#374151" text-anchor="middle">模块感知机制：AI如何理解系统</text>
+  
+  <!-- Step 1: Application Build -->
+  <g id="step1" transform="translate(50, 150)">
+    <rect x="0" y="0" width="240" height="280" rx="12" fill="#f8fafc" stroke="#e5e7eb" stroke-width="2" filter="url(#cardShadow)"/>
+    
+    <!-- Icon -->
+    <g transform="translate(90, 40)">
+      <rect x="0" y="0" width="60" height="70" rx="4" fill="#9ca3af"/>
+      <rect x="10" y="10" width="40" height="8" rx="2" fill="white" opacity="0.7"/>
+      <rect x="10" y="24" width="40" height="8" rx="2" fill="white" opacity="0.7"/>
+      <rect x="10" y="38" width="25" height="8" rx="2" fill="white" opacity="0.7"/>
+    </g>
+    
+    <!-- Title -->
+    <text x="120" y="140" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700" fill="#374151" text-anchor="middle">应用构建</text>
+    
+    <!-- Description -->
+    <text x="120" y="170" font-family="PingFang SC, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">开发者编写</text>
+    <text x="120" y="190" font-family="PingFang SC, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">模块代码</text>
+    
+    <!-- Step number -->
+    <circle cx="30" cy="30" r="20" fill="#9ca3af"/>
+    <text x="30" y="38" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700" fill="white" text-anchor="middle">1</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <g transform="translate(290, 290)">
+    <line x1="0" y1="0" x2="70" y2="0" stroke="#326DFF" stroke-width="3" marker-end="url(#arrowBlue)"/>
+  </g>
+  
+  <!-- Step 2: JAAP Processing -->
+  <g id="step2" transform="translate(360, 150)">
+    <rect x="0" y="0" width="240" height="280" rx="12" fill="url(#blueGrad)" stroke="#326DFF" stroke-width="2" filter="url(#cardShadow)"/>
+    
+    <!-- Icon: JAAP Logo -->
+    <g transform="translate(90, 35)">
+      <circle cx="30" cy="35" r="32" fill="#326DFF" opacity="0.2"/>
+      <text x="30" y="48" font-family="PingFang SC, sans-serif" font-size="24" font-weight="700" fill="#326DFF" text-anchor="middle">JAAP</text>
+    </g>
+    
+    <!-- Title -->
+    <text x="120" y="140" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700" fill="#326DFF" text-anchor="middle">JAAP协议处理</text>
+    
+    <!-- Description -->
+    <text x="120" y="170" font-family="PingFang SC, sans-serif" font-size="14" fill="#326DFF" text-anchor="middle">自动生成</text>
+    <text x="120" y="190" font-family="PingFang SC, sans-serif" font-size="14" fill="#326DFF" text-anchor="middle">声明信息</text>
+    
+    <!-- Info labels -->
+    <g transform="translate(20, 210)">
+      <text x="0" y="0" font-family="PingFang SC, sans-serif" font-size="12" fill="#6b7280">• 功能描述</text>
+      <text x="0" y="18" font-family="PingFang SC, sans-serif" font-size="12" fill="#6b7280">• 参数要求</text>
+      <text x="110" y="0" font-family="PingFang SC, sans-serif" font-size="12" fill="#6b7280">• 返回格式</text>
+      <text x="110" y="18" font-family="PingFang SC, sans-serif" font-size="12" fill="#6b7280">• 调用限制</text>
+    </g>
+    
+    <!-- Step number -->
+    <circle cx="30" cy="30" r="20" fill="#326DFF"/>
+    <text x="30" y="38" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700" fill="white" text-anchor="middle">2</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <g transform="translate(600, 290)">
+    <line x1="0" y1="0" x2="70" y2="0" stroke="#326DFF" stroke-width="3" marker-end="url(#arrowBlue)"/>
+  </g>
+  
+  <!-- Step 3: Structured Storage -->
+  <g id="step3" transform="translate(670, 150)">
+    <rect x="0" y="0" width="240" height="280" rx="12" fill="#e0f2fe" stroke="#5D8DFF" stroke-width="2" filter="url(#cardShadow)"/>
+    
+    <!-- Icon: JSON document -->
+    <g transform="translate(85, 35)">
+      <rect x="0" y="0" width="70" height="80" rx="4" fill="white" stroke="#5D8DFF" stroke-width="2"/>
+      <text x="10" y="20" font-family="monospace" font-size="10" fill="#5D8DFF">{</text>
+      <text x="15" y="35" font-family="monospace" font-size="8" fill="#6b7280">"name":</text>
+      <text x="15" y="47" font-family="monospace" font-size="8" fill="#6b7280">"type":</text>
+      <text x="15" y="59" font-family="monospace" font-size="8" fill="#6b7280">"desc":</text>
+      <text x="10" y="72" font-family="monospace" font-size="10" fill="#5D8DFF">}</text>
+    </g>
+    
+    <!-- Title -->
+    <text x="120" y="140" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700" fill="#5D8DFF" text-anchor="middle">结构化存储</text>
+    
+    <!-- Description -->
+    <text x="120" y="170" font-family="PingFang SC, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">清晰、准确</text>
+    <text x="120" y="190" font-family="PingFang SC, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">结构化</text>
+    
+    <!-- Step number -->
+    <circle cx="30" cy="30" r="20" fill="#5D8DFF"/>
+    <text x="30" y="38" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700" fill="white" text-anchor="middle">3</text>
+  </g>
+  
+  <!-- Arrow 3 -->
+  <g transform="translate(910, 290)">
+    <line x1="0" y1="0" x2="70" y2="0" stroke="#326DFF" stroke-width="3" marker-end="url(#arrowBlue)"/>
+  </g>
+  
+  <!-- Step 4: AI Understanding -->
+  <g id="step4" transform="translate(980, 150)">
+    <rect x="0" y="0" width="190" height="280" rx="12" fill="#326DFF" opacity="0.9" filter="url(#cardShadow)"/>
+    
+    <!-- Icon: AI Brain -->
+    <g transform="translate(60, 35)">
+      <ellipse cx="35" cy="35" rx="32" ry="28" fill="#8EAEFF"/>
+      <circle cx="25" cy="30" r="4" fill="white"/>
+      <circle cx="45" cy="30" r="4" fill="white"/>
+      <path d="M 25 42 Q 35 48, 45 42" stroke="white" stroke-width="2" fill="none"/>
+    </g>
+    
+    <!-- Title -->
+    <text x="95" y="140" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700" fill="white" text-anchor="middle">AI理解</text>
+    
+    <!-- Description -->
+    <text x="95" y="170" font-family="PingFang SC, sans-serif" font-size="14" fill="white" text-anchor="middle">AI读取并</text>
+    <text x="95" y="190" font-family="PingFang SC, sans-serif" font-size="14" fill="white" text-anchor="middle">理解模块</text>
+    
+    <!-- Step number -->
+    <circle cx="30" cy="30" r="20" fill="white"/>
+    <text x="30" y="38" font-family="PingFang SC, sans-serif" font-size="18" font-weight="700" fill="#326DFF" text-anchor="middle">4</text>
+  </g>
+  
+  <!-- Bottom explanation -->
+  <g transform="translate(600, 500)">
+    <rect x="-280" y="0" width="560" height="80" rx="8" fill="#f8fafc" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="0" y="30" font-family="PingFang SC, sans-serif" font-size="16" fill="#6b7280" text-anchor="middle">💡 就像每个模块都有一张"说明书"</text>
+    <text x="0" y="55" font-family="PingFang SC, sans-serif" font-size="16" fill="#6b7280" text-anchor="middle">AI读一遍就知道怎么用</text>
+  </g>
+  
+  <!-- Bottom flow summary -->
+  <g transform="translate(350, 620)">
+    <text x="0" y="0" font-family="PingFang SC, sans-serif" font-size="14" fill="#9ca3af">代码</text>
+    <path d="M 40 -5 L 100 -5" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrowGray)"/>
+    <text x="110" y="0" font-family="PingFang SC, sans-serif" font-size="14" fill="#9ca3af">JAAP处理</text>
+    <path d="M 190 -5 L 250 -5" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrowGray)"/>
+    <text x="260" y="0" font-family="PingFang SC, sans-serif" font-size="14" fill="#9ca3af">结构化数据</text>
+    <path d="M 360 -5 L 420 -5" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrowGray)"/>
+    <text x="430" y="0" font-family="PingFang SC, sans-serif" font-size="14" fill="#9ca3af">AI可理解</text>
+  </g>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#326DFF" />
+    </marker>
+    <marker id="arrowGray" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,5 L7,2.5 z" fill="#9ca3af" />
+    </marker>
+  </defs>
+</svg>

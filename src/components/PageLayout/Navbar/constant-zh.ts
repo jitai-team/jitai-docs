@@ -18,6 +18,7 @@ const CONTENT = {
       label: '下载',
       type: 'currentPage',
       url: '/zh/download',
+      class: 'analytics-download',
     },
     {
       id: 'guide',

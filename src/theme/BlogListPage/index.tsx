@@ -1,6 +1,6 @@
 import React from 'react';
 import type {Props} from '@theme/BlogListPage';
-import BlogListPaginator from '@theme/BlogListPaginator';
+// import BlogListPaginator from '@theme/BlogListPaginator';
 import Link from '@docusaurus/Link';
 import PageLayout from '../../components/PageLayout';
 import styles from './styles.module.css';
@@ -113,9 +113,9 @@ export default function BlogListPage(props: Props): React.JSX.Element {
       </section>
 
       {/* 分页 */}
-      <div className={styles.paginatorWrapper}>
+      {/* <div className={styles.paginatorWrapper}>
         <BlogListPaginator metadata={metadata} />
-      </div>
+      </div> */}
 
       {/* 订阅区域 */}
       <section className={styles.subscriptionSection} style={{ display: 'none' }}>

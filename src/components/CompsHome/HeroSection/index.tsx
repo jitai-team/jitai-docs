@@ -70,6 +70,7 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({ currentLocale }) =>
               {content.cards.map((card, index) => (
                   <div
                     className={`${globalStyles.baseCard} ${styles.card}`}
+                    key={index}
                   >
                     <div className={styles.cardHeader}>
                       <h3>{card.title}</h3>

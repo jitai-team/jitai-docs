@@ -200,18 +200,22 @@ import type { ComponentConfig } from 'components/Meta/frontend/type';
 import { Jit } from 'jit';
 
 export class CounterComponent extends Jit.BaseComponent {
-  public value: number;
 
   /**
    * Must implement: Get component variable list
    * Used by visual editor to display available variables
+    After the variable is declared here, Jit will automatically generate variables based on the name:  this.value = {
+    value: 0,
+    title: 'Current Value',
+    } 
    */
   static getVariableList(compConfig: Record<string, any>) {
     return [
       {
         name: 'value',
         title: 'Current Value',
-        dataType: 'Numeric'
+        dataType: 'Numeric',
+        value:0
       }
     ];
   }
@@ -239,18 +243,18 @@ export class CounterComponent extends Jit.BaseComponent {
       {
         name: 'valueChange',
         title: 'Value Change',
-        data: 'eventData'
+        data: 'eventData
       }
     ];
   }
 
   constructor(componentInfo: ComponentConfig<any>) {
     super(componentInfo);
-    this.value = this.config?.initialValue || 0;
+    this.value.value = this.config?.initialValue || 0;
   }
 
   getValue(): number {
-    return this.value;
+    return this.value.value;
   }
 
   async init() {

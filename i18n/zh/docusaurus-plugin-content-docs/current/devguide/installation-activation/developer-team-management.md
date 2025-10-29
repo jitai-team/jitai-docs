@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: developer-team-management
+description: "节点激活与开发者团队的详细指南和说明。"
 ---
 
 # 节点激活与开发者团队

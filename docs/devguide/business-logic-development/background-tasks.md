@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: background-tasks
+description: "Implement periodic and automated business processing with JitTask. Scheduled tasks and date field tasks for background automation."
 ---
 
 # Background Tasks

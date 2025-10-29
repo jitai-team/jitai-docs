@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: how-to-translate-page-terms
+description: "Translate page terms automatically in JitAi. Learn automatic text translation, dynamic content translation, and translation ignore rules."
 ---
 
 # How to Translate Page Terms

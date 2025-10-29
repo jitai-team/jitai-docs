@@ -1,6 +1,9 @@
 ---
 sidebar_position: 2
 slug: ElementDefine
+title: "ElementDefine Reference"
+sidebar_label: "ElementDefine"
+description: "Frontend ElementDefine object for accessing element definition information in JavaScript. Learn to retrieve and use element definitions."
 ---
 
 # ElementDefine

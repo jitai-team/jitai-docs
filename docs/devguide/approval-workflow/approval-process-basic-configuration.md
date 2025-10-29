@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: approval-workflow-basic-configuration
+description: "Configure enterprise approval workflows visually. Rule engines, conditional branching, parallel processing, and subprocess flow design."
 ---
 
 # Approval Workflow Basic Configuration

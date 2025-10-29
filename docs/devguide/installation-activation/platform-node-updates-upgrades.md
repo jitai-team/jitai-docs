@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: platform-node-updates-upgrades
+description: "Guide to updating and upgrading JitNode platform nodes. One-click upgrade process and version management instructions."
 ---
 # Platform Node Updates and Upgrades
 

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: external-api
+description: "Integrate external APIs and web services. Call third-party REST APIs, GraphQL, and SOAP services from applications."
 ---
 
 # Creating Universal External API Elements

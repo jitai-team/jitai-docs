@@ -1,6 +1,7 @@
 ---
 sidebar_position: 13
 slug: approval-components
+description: "审批组件的详细指南和说明。"
 ---
 
 # 审批组件

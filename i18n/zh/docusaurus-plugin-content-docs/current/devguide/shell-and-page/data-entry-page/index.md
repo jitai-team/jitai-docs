@@ -1,5 +1,6 @@
 ---
 sidebar_position: 5
+description: "数据录入页面的详细指南和说明。"
 ---
 
 # 数据录入页面

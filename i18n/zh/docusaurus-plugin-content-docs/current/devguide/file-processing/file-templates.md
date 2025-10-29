@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: file-templates
+description: "创建文件模板的详细指南和说明。"
 ---
 
 # 创建文件模板

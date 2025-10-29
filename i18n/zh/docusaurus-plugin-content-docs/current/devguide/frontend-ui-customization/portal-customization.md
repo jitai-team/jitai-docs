@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 slug: portal-customization
+description: "门户定制的详细指南和说明。"
 ---
 
 # 门户定制

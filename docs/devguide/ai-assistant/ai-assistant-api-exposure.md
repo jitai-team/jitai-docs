@@ -1,6 +1,7 @@
 ---
 sidebar_position: 14
 slug: ai-assistant-api-exposure
+description: "Expose AI Assistant APIs for external access. Send messages, call assistants, and integrate with third-party systems."
 ---
 
 # AI Assistant API Exposure

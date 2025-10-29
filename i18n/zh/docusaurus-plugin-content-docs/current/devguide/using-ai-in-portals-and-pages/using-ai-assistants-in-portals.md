@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: using-ai-assistants-in-portals
+description: "在常规门户中使用AI助理的详细指南和说明。"
 ---
 
 # 在常规门户中使用AI助理

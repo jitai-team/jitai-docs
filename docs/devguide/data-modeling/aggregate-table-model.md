@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 slug: aggregate-table-model
+description: "Build aggregated table models for complex data analysis. Associate, merge, and calculate multiple tables for statistical scenarios."
 ---
 
 # Aggregated Table Model

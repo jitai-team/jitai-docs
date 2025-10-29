@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 slug: create-data-model-functions
+description: "Create custom data model functions for business logic. Encapsulate functions within models with parameters, return values, and visual editor."
 ---
 
 # Creating Data Model Functions

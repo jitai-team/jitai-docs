@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: ai-customer-service
+description: "Build AI customer service agent from scratch. Master JitAi platform fundamentals and integrate intelligent agents into application portals."
 ---
 
 # AI Customer Service Agent

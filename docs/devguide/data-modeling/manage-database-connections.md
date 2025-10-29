@@ -1,6 +1,7 @@
 ---
 sidebar_position: 12
 slug: manage-database-connections
+description: "Manage database connections across multiple instances. Configure MySQL, PostgreSQL, Oracle, SQL Server, and more for different scenarios."
 ---
 
 # Managing Database Connections

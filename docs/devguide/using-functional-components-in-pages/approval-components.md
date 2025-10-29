@@ -2,6 +2,7 @@
 sidebar_position: 13
 slug: approval-components
 title: Approval Components
+description: "Build approval workflows with initiate application component. Submit requests, launch processes, display progress, and handle approvals."
 ---
 
 # Approval Components

@@ -2,6 +2,7 @@
 sidebar_position: 5
 title: 发布应用
 slug: publish_app
+description: "发布和部署JitAi应用。学习在线分发、环境变量配置、生产环境设置和应用更新流程。"
 ---
 # 发布应用
 

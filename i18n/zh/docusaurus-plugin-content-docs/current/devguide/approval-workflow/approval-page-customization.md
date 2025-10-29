@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 slug: approval-page-customization
+description: "审批页面定制的详细指南和说明。"
 ---
 
 # 审批页面定制

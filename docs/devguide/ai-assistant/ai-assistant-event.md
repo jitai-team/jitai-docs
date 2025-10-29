@@ -1,6 +1,7 @@
 ---
 sidebar_position: 10
 slug: ai-assistant-event
+description: "Subscribe to AI Assistant events for flexible process control. Handle node execution, tool calls, and user interaction events."
 ---
 
 # AI Assistant Events

@@ -2,6 +2,7 @@
 sidebar_position: 14
 slug: /devguide/ai-assistant/embed-assistant-to-web-page
 title: Embedded AI Assistant
+description: "Embed AI Assistant into external web pages. Deep bidirectional interaction between web pages and AI with cross-origin security."
 ---
 
 # Embedded AI Assistant

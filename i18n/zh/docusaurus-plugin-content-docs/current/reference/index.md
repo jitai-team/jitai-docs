@@ -1,5 +1,6 @@
 ---
 sidebar_position: -1
+description: "参考手册导读 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';

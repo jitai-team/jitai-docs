@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 slug: TQL
+description: "TQL使用指南 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # TQL使用指南

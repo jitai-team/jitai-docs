@@ -1,5 +1,8 @@
 ---
 slug: global-styles
+title: "Global Styles Reference"
+description: "Global Styles Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Global Styles"
 ---
 # Global Styles
 

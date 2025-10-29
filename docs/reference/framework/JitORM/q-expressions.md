@@ -1,6 +1,9 @@
 ---
 sidebar_position: 4
 slug: q-expressions
+title: "Q Expressions Reference"
+description: "Q Expressions Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Q Expressions"
 ---
 
 # Q Expressions

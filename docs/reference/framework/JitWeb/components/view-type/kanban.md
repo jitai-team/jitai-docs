@@ -1,5 +1,8 @@
 ---
 slug: kanban
+title: "Kanban Reference"
+description: "Kanban Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Kanban"
 ---
 # Kanban
 Kanban is a visual data display component that presents data in columns based on grouping fields, supporting card dragging, custom buttons, and real-time data interaction. It handles data grouping display, card operation interaction, and status flow management, providing intuitive project management and workflow visualization capabilities.

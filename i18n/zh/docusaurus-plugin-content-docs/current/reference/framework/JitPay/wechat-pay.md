@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: wechat-pay
+description: "微信支付 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # 微信支付

@@ -1,5 +1,8 @@
 ---
 slug: cascade-tree
+title: "Cascade Tree Reference"
+description: "Cascade Tree Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Cascade Tree"
 ---
 # Cascade Tree
 Cascade Tree is a tree structure component for displaying hierarchical relationship data, implementing parent-child node cascade selection and linkage relationships based on data models. It handles tree data display, node selection interaction, and cascade operations, supporting single-select and multi-select modes, suitable for organizational structures, category directories, region selection, and other scenarios.

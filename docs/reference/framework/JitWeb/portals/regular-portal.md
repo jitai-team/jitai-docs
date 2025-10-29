@@ -1,5 +1,8 @@
 ---
 slug: regular-portal
+title: "Generic Portal Reference"
+description: "Generic Portal Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Generic Portal"
 ---
 # Generic Portal
 Generic Portal is a complete portal solution provided by JitWeb, implementing an enterprise-level portal framework based on the React technology stack. It is responsible for application entry management, navigation system construction, and user interface unification, with built-in complete portal components such as left navigation, top navigation, and user information display, while supporting responsive adaptation for both PC and mobile devices.

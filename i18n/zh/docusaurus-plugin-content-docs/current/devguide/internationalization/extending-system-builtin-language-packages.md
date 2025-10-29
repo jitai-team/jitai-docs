@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: extending-system-builtin-language-packages
+description: "扩展平台内置语言包的详细指南和说明。"
 ---
 
 # 扩展平台内置语言包

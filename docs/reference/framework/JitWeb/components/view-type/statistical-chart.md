@@ -1,5 +1,8 @@
 ---
 slug: statistical-chart
+title: "Statistical Chart Reference"
+description: "Statistical Chart Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Statistical Chart"
 ---
 # Statistical Chart
 Statistical chart is an important component for data visualization display, implemented based on ECharts chart library to provide diverse chart rendering capabilities. It handles converting data models into intuitive graphical representations, supports interactive data exploration, and provides rich style configuration options, supporting 24 chart types including line charts, bar charts, pie charts, maps, radar charts, etc.

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: page-customization
+description: "Customize pages with full-code development. Advanced page customization techniques for React and Vue pages."
 ---
 
 import Tabs from '@theme/Tabs';

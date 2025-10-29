@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: briefintro
+description: "JitAi简介 - AI原生企业应用开发平台。了解JitAi如何用全新架构和开发范式变革AI时代的应用工程。"
 ---
 # 简介
 

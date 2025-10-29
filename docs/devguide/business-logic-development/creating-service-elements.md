@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: creating-service-elements
+description: "Create service elements for business logic encapsulation. Define custom Python-based backend functions with high cohesion and low coupling."
 ---
 
 # Creating Service Elements

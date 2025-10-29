@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: sms-service
+description: "内置的短信服务的详细指南和说明。"
 ---
 
 # 内置的短信服务

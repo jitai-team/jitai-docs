@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: task-service
+description: "任务服务 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # 任务服务

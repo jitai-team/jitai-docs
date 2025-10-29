@@ -1,6 +1,9 @@
 ---
 sidebar_position: 6
 slug: react-full-code-page
+title: "React Full Code Page Reference"
+description: "React Full Code Page Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "React Full Code Page"
 ---
 
 # React Full Code Page

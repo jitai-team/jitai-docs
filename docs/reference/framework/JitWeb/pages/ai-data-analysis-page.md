@@ -1,6 +1,9 @@
 ---
 sidebar_position: 2
 slug: ai-data-analysis-page
+title: "AI Data Analysis Page Reference"
+description: "AI Data Analysis Page Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "AI Data Analysis Page"
 ---
 
 # AI Data Analysis Page

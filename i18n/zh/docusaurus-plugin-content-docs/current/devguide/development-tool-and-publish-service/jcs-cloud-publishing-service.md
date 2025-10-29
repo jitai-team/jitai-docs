@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: jcs-cloud-publishing-service
+description: "JCS云端应用发布服务的详细指南和说明。"
 ---
 
 # JCS云端应用发布服务

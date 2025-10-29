@@ -1,5 +1,8 @@
 ---
 slug: list
+title: "List Reference"
+description: "List Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "List"
 ---
 # List
 List is a view component for displaying model data, implemented based on pagination query mechanism to provide efficient data loading and display. It handles data filtering, pagination loading, and user interaction, supporting custom field display, sorting rules, and various operation buttons, providing a complete data list display solution.

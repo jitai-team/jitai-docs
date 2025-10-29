@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1.5
+description: "Componentized pages for user interfaces. Generic, AI data management, data entry pages, and full-code pages with JitAi components."
 ---
 # Componentized Pages
 

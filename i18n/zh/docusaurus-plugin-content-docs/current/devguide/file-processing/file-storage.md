@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: file-storage
+description: "配置自己的文件存储服务的详细指南和说明。"
 ---
 
 # 配置自己的文件存储服务

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: agent-knowledge-base
+description: "Configure Agent knowledge base for RAG. Connect knowledge bases to agents for retrieval-augmented generation."
 ---
 
 # Using Knowledge Base for Retrieval-Augmented Generation (RAG)

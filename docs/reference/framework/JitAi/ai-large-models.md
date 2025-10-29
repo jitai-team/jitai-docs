@@ -1,6 +1,9 @@
 ---
 sidebar_position: 1
 slug: ai-large-models
+title: "AI Large Language Models(LLM) Reference"
+description: "AI Large Language Models(LLM) Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "AI Large Language Models(LLM)"
 ---
 
 # AI Large Language Models(LLM)

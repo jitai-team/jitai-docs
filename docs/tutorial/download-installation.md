@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: download-installation
+description: "Download and install JitAi for Windows, macOS, and Docker. Complete setup guide including activation, server deployment, and environment configuration."
 ---
 
 # Download and Installation

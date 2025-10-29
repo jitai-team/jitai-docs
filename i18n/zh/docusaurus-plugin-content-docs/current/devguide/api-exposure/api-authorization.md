@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: api-authorization
+description: "创建API授权元素的详细指南和说明。"
 ---
 
 # 创建API授权元素

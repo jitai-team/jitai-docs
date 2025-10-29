@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: application-directory-and-element-source-code
+description: "Understand JitAi application directory structure. JAAP-based organization of element code, folder conventions, and source code layout."
 ---
 
 # Application Directory and Element Source Code

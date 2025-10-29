@@ -1,5 +1,8 @@
 ---
 slug: custom-business-service
+title: "Custom Business Service Reference"
+description: "Custom Business Service Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Custom Business Service"
 ---
 # Custom Business Service
 Service elements are core components in the JitAI platform responsible for business logic processing, used to encapsulate data processing, business calculations, and system interaction logic.

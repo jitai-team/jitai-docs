@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: create-knowledge-elements
+description: "Create knowledge base elements for document storage. Build knowledge repositories for AI agents with vector embedding support."
 ---
 
 # Creating Knowledge Base Elements

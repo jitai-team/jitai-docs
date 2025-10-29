@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: calling-data-model-functions-in-pages
+description: "在页面中调用数据模型函数的详细指南和说明。"
 ---
 
 # 在页面中调用数据模型函数

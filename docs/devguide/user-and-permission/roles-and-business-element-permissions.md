@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: roles-and-business-element-permissions
+description: "Configure role-based permissions for business elements. Data access control, element permissions, and role management in applications."
 ---
 
 # Roles and Business Element Permissions

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: api-authorization
+description: "Configure API authorization and authentication. Secure exposed APIs with OAuth, API keys, and role-based access control."
 ---
 
 # Creating API Authorization Elements

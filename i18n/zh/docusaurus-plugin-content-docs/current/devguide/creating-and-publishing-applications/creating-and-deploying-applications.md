@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: creating-and-deploying-applications
+description: "创建和部署应用的详细指南和说明。"
 ---
 
 # 创建和部署应用

@@ -1,5 +1,6 @@
 ---
 sidebar_position: 5
+description: "Display hierarchical data with tree components. Tree form and cascade tree for file directories, org structures, and product categories."
 ---
 
 # Tree Components

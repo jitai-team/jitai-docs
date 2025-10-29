@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: data-table-model
+description: "创建数据表的详细指南和说明。"
 ---
 
 # 创建数据表

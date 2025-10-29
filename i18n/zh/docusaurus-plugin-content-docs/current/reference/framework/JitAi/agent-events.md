@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 slug: agent-events
+description: "Agent事件 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # Agent事件

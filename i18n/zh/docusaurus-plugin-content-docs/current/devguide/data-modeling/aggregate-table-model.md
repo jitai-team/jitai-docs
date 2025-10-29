@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 slug: aggregate-table-model
+description: "聚合表模型的详细指南和说明。"
 ---
 
 # 聚合表模型

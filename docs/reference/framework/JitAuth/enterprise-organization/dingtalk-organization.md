@@ -1,5 +1,8 @@
 ---
 slug: dingtalk-organization
+title: "DingTalk Self-built Org. Reference"
+description: "DingTalk Self-built Org. Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "DingTalk Self-built Org."
 ---
 # DingTalk Self-built Org.
 DingTalk Self-built Org. is a specialized organization type in the JitAuth framework for integrating DingTalk enterprise internal application organizational architecture, implemented based on DingTalk Open Platform API to achieve automatic synchronization and unified management of enterprise organizational architecture. It handles DingTalk contact synchronization, department structure retrieval, and user identity authentication, supporting seamless integration with DingTalk workspace and providing enterprise-level permission management and user relationship maintenance capabilities.

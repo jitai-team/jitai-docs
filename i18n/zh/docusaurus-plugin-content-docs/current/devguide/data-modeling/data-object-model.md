@@ -1,6 +1,7 @@
 ---
 sidebar_position: 9
 slug: data-object-model
+description: "数据对象模型的详细指南和说明。"
 ---
 
 # 数据对象模型

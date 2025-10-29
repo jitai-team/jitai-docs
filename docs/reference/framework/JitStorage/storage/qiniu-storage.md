@@ -1,5 +1,8 @@
 ---
 slug: qiniu-storage
+title: "Qiniu Cloud Storage Reference"
+description: "Qiniu Cloud Storage Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Qiniu Cloud Storage"
 ---
 # Qiniu Cloud Storage
 

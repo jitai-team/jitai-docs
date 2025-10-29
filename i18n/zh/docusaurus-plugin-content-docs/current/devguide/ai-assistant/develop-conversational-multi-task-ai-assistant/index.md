@@ -1,6 +1,7 @@
 ---
 sidebar_position: 16
 slug: /devguide/ai-assistant/develop-conversational-multi-task-ai-assistant
+description: "构建处理多任务的对话式AI助理。集成文案优化、客服和报价等功能能力。"
 ---
 
 # 开发流程化多任务的对话式AI助理

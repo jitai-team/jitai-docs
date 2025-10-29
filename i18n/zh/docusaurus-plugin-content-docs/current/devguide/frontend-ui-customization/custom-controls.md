@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: custom-controls
+description: "自定义控件的详细指南和说明。"
 ---
 
 import Tabs from '@theme/Tabs';

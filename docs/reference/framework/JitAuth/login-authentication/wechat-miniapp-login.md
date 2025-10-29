@@ -1,5 +1,8 @@
 ---
 slug: wechat-miniapp-login
+title: "WeChat Mini Program Login Reference"
+description: "WeChat Mini Program Login Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "WeChat Mini Program Login"
 ---
 # WeChat Mini Program Login
 WeChat Mini Program login is an authentication method based on WeChat official authorization mechanism, responsible for Mini Program authorization login, user identity authentication, and account binding management. It supports automatic acquisition of WeChat user identifiers like openId/unionId, invite code mechanism for new user registration, Session key security management, and account binding/unbinding operations, with deep integration into the WeChat Mini Program ecosystem.

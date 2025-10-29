@@ -1,5 +1,6 @@
 ---
 slug: frontend
+description: "前端 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 前端
 为前端开发提供统一的全局组件、公共模块、工具函数和Web Workers支持。

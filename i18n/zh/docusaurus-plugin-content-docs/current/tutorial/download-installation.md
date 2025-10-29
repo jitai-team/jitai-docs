@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: download-installation
+description: "下载安装JitAi - 支持Windows、macOS和Docker。完整的安装指南，包括激活、服务器部署和环境配置。"
 ---
 
 # 下载安装

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: special-node-configuration
+description: "特殊节点配置的详细指南和说明。"
 ---
 
 # 特殊节点配置

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 10
 slug: ai-assistant-event
+description: "AI助理的事件的详细指南和说明。"
 ---
 
 # AI助理的事件

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 slug: assistant-events
+description: "助理事件 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # 助理事件

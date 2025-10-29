@@ -1,6 +1,9 @@
 ---
 sidebar_position: 2
 slug: wechat-pay
+title: "WeChat Pay Reference"
+description: "WeChat Pay Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "WeChat Pay"
 ---
 
 # WeChat Pay

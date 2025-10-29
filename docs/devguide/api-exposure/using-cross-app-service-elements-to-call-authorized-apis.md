@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: using-cross-app-service-elements-to-call-authorized-apis
+description: "Call authorized APIs across applications. Cross-app service integration with authorization and authentication."
 ---
 
 # Using Cross-App Service Elements to Call Authorized Element APIs

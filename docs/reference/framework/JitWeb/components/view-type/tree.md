@@ -1,5 +1,8 @@
 ---
 slug: tree
+title: "Tree Reference"
+description: "Tree Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Tree"
 ---
 # Tree
 Tree is a view component for displaying hierarchical structure data, building multi-level tree navigation based on data model fields. It is responsible for data loading, hierarchical display and node interaction, supporting single and multiple selection modes, providing node click events and filter condition output.

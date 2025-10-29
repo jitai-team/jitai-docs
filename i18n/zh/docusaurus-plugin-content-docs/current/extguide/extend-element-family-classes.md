@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: extend-element-family-classes
+description: "扩展自己的元素族类的详细指南和说明。"
 ---
 
 # 扩展自己的元素族类

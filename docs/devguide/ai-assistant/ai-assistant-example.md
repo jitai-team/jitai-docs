@@ -2,6 +2,7 @@
 sidebar_position: 15
 slug: ai-assistant-example
 draft: true
+description: "Build intelligent customer information management assistant. Complete example demonstrating AI Assistant CRUD operations with natural language."
 ---
 
 # Example Demo

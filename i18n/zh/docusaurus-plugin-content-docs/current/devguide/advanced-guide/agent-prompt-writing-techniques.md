@@ -1,6 +1,7 @@
 ---
 sidebar_position: 0.3
 slug: agent-prompt-writing-techniques
+description: "Agent提示词编写技巧的详细指南和说明。"
 ---
 
 # Agent提示词编写技巧

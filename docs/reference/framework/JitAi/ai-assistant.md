@@ -1,6 +1,9 @@
 ---
 sidebar_position: 5
 slug: ai-assistant
+title: "AI Assistant Reference"
+description: "AI Assistant Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "AI Assistant"
 ---
 
 # AI Assistant

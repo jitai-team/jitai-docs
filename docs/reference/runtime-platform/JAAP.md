@@ -1,6 +1,9 @@
 ---
 sidebar_position: 0
 slug: JAAP
+title: "JAAP (JitAi Ai Application Protocol) Reference"
+description: "JAAP (JitAi Ai Application Protocol) Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "JAAP (JitAi Ai Application Protocol)"
 ---
 
 # JAAP (JitAi Ai Application Protocol)

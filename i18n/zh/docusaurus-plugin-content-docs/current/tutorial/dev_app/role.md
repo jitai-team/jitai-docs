@@ -2,6 +2,7 @@
 sidebar_position: 10
 title: 用应用角色实现权限控制
 slug: role
+description: "在JitAi应用中实现基于角色的访问控制。配置考官和考生角色，实现细粒度的菜单和组件级权限。"
 ---
 # 用应用角色实现权限控制
 

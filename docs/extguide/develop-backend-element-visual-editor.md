@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: develop-backend-element-visual-editor
+description: "Develop visual configuration editors for backend Type elements. Create graphical interfaces that business experts can use without coding."
 ---
 
 # Developing Visual Editors for Backend Type Elements

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: devops-management-tool
+description: "DevOps management tool for application lifecycle. Manage development, testing, deployment, and operations in one platform."
 title: DevOps Management Tool
 ---
 

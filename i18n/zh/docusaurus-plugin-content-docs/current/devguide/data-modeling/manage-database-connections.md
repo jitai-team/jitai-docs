@@ -1,6 +1,7 @@
 ---
 sidebar_position: 12
 slug: manage-database-connections
+description: "管理数据库连接的详细指南和说明。"
 ---
 
 # 管理数据库连接

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: login-authentication
+description: "登录认证的详细指南和说明。"
 ---
 
 # 登录认证

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: add-frontend-components
+description: "Extend UI component Type elements in JitAi. Learn to create custom components like counters and integrate them into visual development tools."
 ---
 
 # Extend Your Own UI Component Type Elements

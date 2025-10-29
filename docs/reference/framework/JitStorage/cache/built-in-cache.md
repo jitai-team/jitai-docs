@@ -1,5 +1,8 @@
 ---
 slug: built-in-cache
+title: "Built-in Cache Reference"
+description: "Built-in Cache Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Built-in Cache"
 ---
 # Built-in Cache
 Built-in cache is an intelligent caching solution provided by the platform, implementing out-of-the-box caching capabilities based on environment adaptive mechanisms. It automatically uses SQLite cache in desktop environments and container-built-in Redis in server environments. Built-in cache is mainly used in development and testing phases, providing developers with configuration-free caching services.

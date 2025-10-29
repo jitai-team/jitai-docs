@@ -1,6 +1,9 @@
 ---
 sidebar_position: 1
 slug: 01Environ
+title: "Environ Reference"
+description: "Environ Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Environ"
 ---
 
 # Environ

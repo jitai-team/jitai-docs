@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: create-ai-agent
+description: "创建AI Agent的详细指南和说明。"
 ---
 
 # 创建AI Agent

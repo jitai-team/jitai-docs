@@ -235,7 +235,7 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
               </div>
               <div className={styles.cardAction}>
                 <button 
-                  className={styles.orderButton}
+                  className={`${styles.orderButton} ${plan.analyticsCssClass}`}
                   onClick={() => handlePaymentClick(plan)}
                 >
                   {plan.id === 'enterprise' ? CONTENT.contactSales : (activeTab === 'buyout' ? CONTENT.pay : CONTENT.subscribe)}
@@ -289,7 +289,7 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
                 {CONTENT.modal.cancelButton}
               </button>
               <button 
-                className={styles.modalButtonConfirm}
+                className={`${styles.modalButtonConfirm} analytics-payConfirm`}
                 onClick={handlePaymentConfirm}
               >
                 {CONTENT.modal.confirmButton}

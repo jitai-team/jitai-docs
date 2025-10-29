@@ -10,6 +10,7 @@ export interface PricingPlan {
   features: string[];
   isRecommended?: boolean;
   cardType: string;
+  analyticsCssClass: string;
 }
 
 
@@ -24,6 +25,7 @@ const PRICING_PLANS: PricingPlan[] = [
     yearlyPrice: '16',
     buyoutPrice: '960',
     cardType: 'desktopCard',
+    analyticsCssClass: 'analytics-pay',
     features: [
       '✓ 仅用于开发环境',
       '✓ 无限组织数',
@@ -44,6 +46,7 @@ const PRICING_PLANS: PricingPlan[] = [
     buyoutPrice: '12,000',
     cardType: 'basicCard',
     isRecommended: true,
+    analyticsCssClass: 'analytics-pay',
     features: [
         '✓ 用于开发/测试/生产环境',
         '✓ 2个组织',
@@ -61,6 +64,7 @@ const PRICING_PLANS: PricingPlan[] = [
     yearlyPrice: '400',
     buyoutPrice: '24,000',
     cardType: 'standardCard',
+    analyticsCssClass: 'analytics-pay',
     features: [
         '服务器基础版所有功能，以及',
         '✓ 10个组织',
@@ -92,6 +96,7 @@ const PRICING_PLANS: PricingPlan[] = [
     yearlyPrice: '价格商议',
     buyoutPrice: '价格商议',
     cardType: 'enterpriseCard',
+    analyticsCssClass: 'analytics-contactSale',
     features: [
         '✓ 更多组织数',
         '✓ 更多应用数',

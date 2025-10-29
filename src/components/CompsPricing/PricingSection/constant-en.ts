@@ -11,6 +11,7 @@ export interface PricingPlan {
   features: string[];
   isRecommended?: boolean;
   cardType: string;
+  analyticsCssClass: string;
 }
 
 
@@ -34,6 +35,7 @@ const PRICING_PLANS: PricingPlan[] = [
       '✓ Single process only',
       '✓ Single machine only'
     ],
+    analyticsCssClass: 'analytics-pay',
   },
   {
     id: 'basic',
@@ -45,6 +47,7 @@ const PRICING_PLANS: PricingPlan[] = [
     buyoutPrice: '12,000',
     cardType: 'basicCard',
     isRecommended: true,
+    analyticsCssClass: 'analytics-pay',
     features: [
         '✓ For development/testing/production environments',
         '✓ 1 application',
@@ -62,6 +65,7 @@ const PRICING_PLANS: PricingPlan[] = [
     yearlyPrice: '400',
     buyoutPrice: '24,000',
     cardType: 'standardCard',
+    analyticsCssClass: 'analytics-pay',
     features: [
         'All Server Basic features, plus',
         '✓ 5 applications',
@@ -93,6 +97,7 @@ const PRICING_PLANS: PricingPlan[] = [
     yearlyPrice: 'Custom',
     buyoutPrice: 'Custom',
     cardType: 'enterpriseCard',
+    analyticsCssClass: 'analytics-contactSale',
     features: [
         '✓ More applications',
         '✓ More organizations',

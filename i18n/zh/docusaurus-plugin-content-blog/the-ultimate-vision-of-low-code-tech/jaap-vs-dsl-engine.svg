@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 1600 900" 
+     role="img"
+     aria-labelledby="jaapTitle jaapDesc">
+  <title id="jaapTitle">JAAP协议 vs DSL引擎</title>
+  <desc id="jaapDesc">JAAP是开放协议，每层都有开放接口；DSL是封闭引擎，内部不可见</desc>
+  
+  <defs>
+    <style>
+      .bg { fill: #F5F5F5; }
+      .gray-dark { fill: #4b5563; }
+      .gray { fill: #9ca3af; }
+      .blue-light { fill: #8EAEFF; }
+      .blue { fill: #326DFF; }
+      .blue-dark { fill: #1E4FCC; }
+      .accent { fill: #FF6B35; }
+      .text-dark { fill: #333333; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .text-white { fill: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .text-gray { fill: #9ca3af; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .text-blue { fill: #326DFF; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+    </style>
+    
+    <marker id="arrow-gray" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#9ca3af"/>
+    </marker>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1600" height="900" class="bg"/>
+  
+  <!-- 左侧：DSL引擎 -->
+  <g id="dsl-engine" transform="translate(150, 130)">
+    <!-- 标题 -->
+    <text x="200" y="30" text-anchor="middle" class="text-dark" font-size="20" font-weight="700">
+      DSL引擎
+    </text>
+    
+    <!-- 黑盒 -->
+    <rect x="0" y="80" width="400" height="400" rx="8" class="gray-dark"/>
+    
+    <!-- 问号表示内部不可见 -->
+    <text x="200" y="290" text-anchor="middle" class="text-gray" font-size="120" font-weight="700">
+      ???
+    </text>
+    
+    <!-- 输入箭头 -->
+    <path d="M -100 180 L 0 180" stroke="#9ca3af" stroke-width="3" marker-end="url(#arrow-gray)"/>
+    <text x="-100" y="160" class="text-gray" font-size="14">
+      DSL配置文件
+    </text>
+    
+    <!-- 输出箭头 -->
+    <path d="M 400 350 L 500 350" stroke="#9ca3af" stroke-width="3" marker-end="url(#arrow-gray)"/>
+    <text x="500" y="370" class="text-gray" font-size="14">
+      运行结果
+    </text>
+    
+    <!-- 标注 -->
+    <text x="200" y="540" text-anchor="middle" class="text-gray" font-size="14">
+      ✗ 封闭
+    </text>
+    <text x="200" y="565" text-anchor="middle" class="text-gray" font-size="14">
+      ✗ 平台控制
+    </text>
+    <text x="200" y="590" text-anchor="middle" class="text-gray" font-size="14">
+      ✗ 无法扩展
+    </text>
+  </g>
+  
+  <!-- 右侧：JAAP协议 -->
+  <g id="jaap-protocol" transform="translate(900, 130)">
+    <!-- 标题 -->
+    <text x="300" y="30" text-anchor="middle" class="text-dark" font-size="20" font-weight="700">
+      JAAP协议
+    </text>
+    
+    <!-- 三层结构 -->
+    <!-- Meta层 -->
+    <g id="meta-layer">
+      <rect x="50" y="80" width="500" height="120" rx="8" class="blue-light"/>
+      <text x="300" y="135" text-anchor="middle" class="text-dark" font-size="18" font-weight="600">
+        Meta 层
+      </text>
+      <!-- 开放接口 -->
+      <circle cx="520" cy="140" r="8" fill="#FFFFFF" stroke="#326DFF" stroke-width="2"/>
+      <circle cx="30" cy="140" r="8" fill="#FFFFFF" stroke="#326DFF" stroke-width="2"/>
+    </g>
+    
+    <!-- Type层 -->
+    <g id="type-layer">
+      <rect x="50" y="220" width="500" height="120" rx="8" class="blue"/>
+      <text x="300" y="275" text-anchor="middle" class="text-white" font-size="18" font-weight="600">
+        Type 层
+      </text>
+      <!-- 开放接口 -->
+      <circle cx="520" cy="280" r="8" fill="#FFFFFF" stroke="#326DFF" stroke-width="2"/>
+      <circle cx="30" cy="280" r="8" fill="#FFFFFF" stroke="#326DFF" stroke-width="2"/>
+    </g>
+    
+    <!-- Instance层 -->
+    <g id="instance-layer">
+      <rect x="50" y="360" width="500" height="120" rx="8" class="blue-dark"/>
+      <text x="300" y="415" text-anchor="middle" class="text-white" font-size="18" font-weight="600">
+        Instance 层
+      </text>
+      <!-- 开放接口 -->
+      <circle cx="520" cy="420" r="8" fill="#FFFFFF" stroke="#326DFF" stroke-width="2"/>
+      <circle cx="30" cy="420" r="8" fill="#FFFFFF" stroke="#326DFF" stroke-width="2"/>
+    </g>
+    
+    <!-- 协议连接线（虚线） -->
+    <line x1="150" y1="200" x2="150" y2="220" stroke="#326DFF" stroke-width="2" stroke-dasharray="5,5"/>
+    <line x1="450" y1="200" x2="450" y2="220" stroke="#326DFF" stroke-width="2" stroke-dasharray="5,5"/>
+    <line x1="150" y1="340" x2="150" y2="360" stroke="#326DFF" stroke-width="2" stroke-dasharray="5,5"/>
+    <line x1="450" y1="340" x2="450" y2="360" stroke="#326DFF" stroke-width="2" stroke-dasharray="5,5"/>
+    
+    <!-- 标注 -->
+    <text x="300" y="540" text-anchor="middle" class="text-blue" font-size="14">
+      ✓ 开放
+    </text>
+    <text x="300" y="565" text-anchor="middle" class="text-blue" font-size="14">
+      ✓ 自描述
+    </text>
+    <text x="300" y="590" text-anchor="middle" class="text-blue" font-size="14">
+      ✓ 动态加载
+    </text>
+  </g>
+  
+  <!-- 中间强调文字 -->
+  <g id="emphasis" transform="translate(600, 710)">
+    <rect x="0" y="0" width="400" height="60" rx="8" fill="#FFF5F0"/>
+    <text x="200" y="40" text-anchor="middle" class="accent" font-size="18" font-weight="700">
+      JAAP是协议，不是引擎
+    </text>
+  </g>
+</svg>
+

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="title desc" viewBox="0 0 1600 1000"><desc id="desc">展示Cursor和JitAi在7个维度的特性对比</desc><defs><style>.primary{fill:#326dff}.text-dark{fill:#333;font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,&quot;PingFang SC&quot;,&quot;Hiragino Sans GB&quot;,&quot;Microsoft YaHei&quot;,sans-serif}.text-medium{fill:#6b7280}</style></defs><path d="M0 0h1600v1000H0z" style="fill:#f9fafb"/><text x="800" y="70" class="text-dark" font-size="36" font-weight="700" text-anchor="middle">
+    Cursor vs JitAi 功能对比
+  </text><rect width="400" height="60" x="100" y="120" fill="#E5E7EB" rx="8"/><text x="300" y="157" class="text-dark" font-size="20" font-weight="700" text-anchor="middle">
+    对比维度
+  </text><rect width="520" height="60" x="520" y="120" fill="#9ca3af" opacity=".3" rx="8"/><text x="780" y="157" font-size="20" font-weight="700" style="fill:#6b7280" text-anchor="middle">
+    Cursor
+  </text><rect width="520" height="60" x="1060" y="120" fill="#326DFF" opacity=".2" rx="8"/><text x="1320" y="157" class="primary" font-size="20" font-weight="700" text-anchor="middle">
+    JitAi
+  </text><g id="row-1"><rect width="400" height="90" x="100" y="200" fill="#FFF" stroke="#E5E7EB" stroke-width="2" rx="8"/><text x="300" y="235" class="text-dark" font-size="18" font-weight="600" text-anchor="middle">
+      核心定位
+    </text><text x="300" y="265" class="text-medium" font-size="14" text-anchor="middle">
+      工具定位和核心场景
+    </text><rect width="520" height="90" x="520" y="200" fill="#F3F4F6" rx="8"/><text x="780" y="240" class="text-medium" font-size="16" text-anchor="middle">
+      原生编程语言层面
+    </text><text x="780" y="265" class="text-medium" font-size="16" text-anchor="middle">
+      的AI助手
+    </text><rect width="520" height="90" x="1060" y="200" fill="#EEF2FF" rx="8"/><text x="1320" y="240" class="primary" font-size="16" font-weight="600" text-anchor="middle">
+      业务应用工程层面
+    </text><text x="1320" y="265" class="primary" font-size="16" font-weight="600" text-anchor="middle">
+      的开发平台
+    </text></g><g id="row-2"><rect width="400" height="90" x="100" y="310" fill="#FFF" stroke="#E5E7EB" stroke-width="2" rx="8"/><text x="300" y="345" class="text-dark" font-size="18" font-weight="600" text-anchor="middle">
+      操作颗粒度
+    </text><text x="300" y="375" class="text-medium" font-size="14" text-anchor="middle">
+      AI操作的最小单元
+    </text><rect width="520" height="90" x="520" y="310" fill="#F3F4F6" rx="8"/><text x="780" y="360" class="text-medium" font-size="16" text-anchor="middle">
+      代码行 / 函数 / 文件
+    </text><rect width="520" height="90" x="1060" y="310" fill="#EEF2FF" rx="8"/><text x="1320" y="360" class="primary" font-size="16" font-weight="600" text-anchor="middle">
+      业务模块 / 配置项 / 组件
+    </text></g><g id="row-3"><rect width="400" height="90" x="100" y="420" fill="#FFF" stroke="#E5E7EB" stroke-width="2" rx="8"/><text x="300" y="455" class="text-dark" font-size="18" font-weight="600" text-anchor="middle">
+      适用场景
+    </text><text x="300" y="485" class="text-medium" font-size="14" text-anchor="middle">
+      最佳适用的项目类型
+    </text><rect width="520" height="90" x="520" y="420" fill="#F3F4F6" rx="8"/><text x="780" y="470" class="text-medium" font-size="16" text-anchor="middle">
+      算法开发、底层库、技术组件
+    </text><rect width="520" height="90" x="1060" y="420" fill="#EEF2FF" rx="8"/><text x="1320" y="470" class="primary" font-size="16" font-weight="600" text-anchor="middle">
+      企业系统、定制化项目、FDE交付
+    </text></g><g id="row-4"><rect width="400" height="90" x="100" y="530" fill="#FFF" stroke="#E5E7EB" stroke-width="2" rx="8"/><text x="300" y="565" class="text-dark" font-size="18" font-weight="600" text-anchor="middle">
+      开发门槛
+    </text><text x="300" y="595" class="text-medium" font-size="14" text-anchor="middle">
+      使用者技能要求
+    </text><rect width="520" height="90" x="520" y="530" fill="#F3F4F6" rx="8"/><text x="780" y="570" class="text-medium" font-size="16" text-anchor="middle">
+      需要编程经验和
+    </text><text x="780" y="595" class="text-medium" font-size="16" text-anchor="middle">
+      代码审查能力
+    </text><rect width="520" height="90" x="1060" y="530" fill="#EEF2FF" rx="8"/><text x="1320" y="570" class="primary" font-size="16" font-weight="600" text-anchor="middle">
+      业务专家可独立使用
+    </text><text x="1320" y="595" class="primary" font-size="16" font-weight="600" text-anchor="middle">
+      降低技术门槛
+    </text></g><g id="row-5"><rect width="400" height="90" x="100" y="640" fill="#FFF" stroke="#E5E7EB" stroke-width="2" rx="8"/><text x="300" y="675" class="text-dark" font-size="18" font-weight="600" text-anchor="middle">
+      准确度保障
+    </text><text x="300" y="705" class="text-medium" font-size="14" text-anchor="middle">
+      如何确保输出质量
+    </text><rect width="520" height="90" x="520" y="640" fill="#F3F4F6" rx="8"/><text x="780" y="680" class="text-medium" font-size="16" text-anchor="middle">
+      依赖开发者判断和修正
+    </text><text x="780" y="705" class="text-medium" font-size="16" text-anchor="middle">
+      需人工验证
+    </text><rect width="520" height="90" x="1060" y="640" fill="#EEF2FF" rx="8"/><text x="1320" y="680" class="primary" font-size="16" font-weight="600" text-anchor="middle">
+      架构层面的约束保障
+    </text><text x="1320" y="705" class="primary" font-size="16" font-weight="600" text-anchor="middle">
+      准确度高
+    </text></g><g id="row-6"><rect width="400" height="90" x="100" y="750" fill="#FFF" stroke="#E5E7EB" stroke-width="2" rx="8"/><text x="300" y="785" class="text-dark" font-size="18" font-weight="600" text-anchor="middle">
+      成本结构
+    </text><text x="300" y="815" class="text-medium" font-size="14" text-anchor="middle">
+      主要成本构成
+    </text><rect width="520" height="90" x="520" y="750" fill="#F3F4F6" rx="8"/><text x="780" y="790" class="text-medium" font-size="16" text-anchor="middle">
+      持续token消耗
+    </text><text x="780" y="815" class="text-medium" font-size="16" text-anchor="middle">
+      + 返工成本
+    </text><rect width="520" height="90" x="1060" y="750" fill="#EEF2FF" rx="8"/><text x="1320" y="790" class="primary" font-size="16" font-weight="600" text-anchor="middle">
+      低token消耗
+    </text><text x="1320" y="815" class="primary" font-size="16" font-weight="600" text-anchor="middle">
+      + 架构复用
+    </text></g><g id="row-7"><rect width="400" height="90" x="100" y="860" fill="#FFF" stroke="#E5E7EB" stroke-width="2" rx="8"/><text x="300" y="895" class="text-dark" font-size="18" font-weight="600" text-anchor="middle">
+      协作方式
+    </text><text x="300" y="925" class="text-medium" font-size="14" text-anchor="middle">
+      人机交互模式
+    </text><rect width="520" height="90" x="520" y="860" fill="#F3F4F6" rx="8"/><text x="780" y="900" class="text-medium" font-size="16" text-anchor="middle">
+      IDE内对话 + 代码生成
+    </text><rect width="520" height="90" x="1060" y="860" fill="#EEF2FF" rx="8"/><text x="1320" y="890" class="primary" font-size="16" font-weight="600" text-anchor="middle">
+      可视化配置 + AI助理
+    </text><text x="1320" y="915" class="primary" font-size="16" font-weight="600" text-anchor="middle">
+      + 代码模式
+    </text></g></svg>

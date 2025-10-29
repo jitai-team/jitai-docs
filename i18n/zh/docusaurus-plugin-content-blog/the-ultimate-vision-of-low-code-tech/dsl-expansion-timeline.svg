@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 1600 800" 
+     role="img"
+     aria-labelledby="timelineTitle timelineDesc">
+  <title id="timelineTitle">工作流DSL扩展困境示意</title>
+  <desc id="timelineDesc">DSL扩展的演进过程，复杂度指数增长而覆盖率增速递减</desc>
+  
+  <defs>
+    <style>
+      .bg { fill: #F5F5F5; }
+      .blue-light { fill: #8EAEFF; }
+      .blue { fill: #326DFF; }
+      .blue-dark { fill: #1E4FCC; }
+      .gray-dark { fill: #6b7280; }
+      .accent { fill: #FF6B35; }
+      .gray { fill: #9ca3af; }
+      .text-dark { fill: #333333; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .text-gray { fill: #6b7280; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+    </style>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1600" height="800" class="bg"/>
+  
+  <!-- 时间轴 -->
+  <line x1="200" y1="400" x2="1400" y2="400" stroke="#9ca3af" stroke-width="2"/>
+  
+  <!-- 阶段1：初始版本 -->
+  <g id="stage1" transform="translate(200, 300)">
+    <rect x="0" y="0" width="120" height="150" rx="8" class="blue-light"/>
+    <!-- 标签符号 -->
+    <rect x="20" y="30" width="80" height="15" rx="3" fill="#FFFFFF"/>
+    <rect x="20" y="55" width="80" height="15" rx="3" fill="#FFFFFF"/>
+    <rect x="20" y="80" width="80" height="15" rx="3" fill="#FFFFFF"/>
+    <rect x="20" y="105" width="80" height="15" rx="3" fill="#FFFFFF"/>
+    
+    <text x="60" y="180" text-anchor="middle" class="text-dark" font-size="14">
+      <tspan x="60" dy="0">串行、并行</tspan>
+      <tspan x="60" dy="18">条件分支</tspan>
+    </text>
+  </g>
+  
+  <!-- 阶段2：需求1扩展 -->
+  <g id="stage2" transform="translate(450, 270)">
+    <rect x="0" y="0" width="150" height="200" rx="8" class="blue"/>
+    <!-- 更多标签 -->
+    <rect x="15" y="20" width="120" height="12" rx="2" fill="#FFFFFF"/>
+    <rect x="15" y="40" width="120" height="12" rx="2" fill="#FFFFFF"/>
+    <rect x="15" y="60" width="120" height="12" rx="2" fill="#FFFFFF"/>
+    <rect x="15" y="80" width="120" height="12" rx="2" fill="#FFFFFF"/>
+    <rect x="15" y="100" width="120" height="12" rx="2" fill="#FFFFFF"/>
+    <rect x="15" y="120" width="120" height="12" rx="2" fill="#FFFFFF"/>
+    <rect x="15" y="140" width="120" height="12" rx="2" fill="#FFFFFF"/>
+    
+    <text x="75" y="230" text-anchor="middle" class="text-dark" font-size="14">
+      <tspan x="75" dy="0">+动态审批人</tspan>
+    </text>
+  </g>
+  
+  <!-- 阶段3：需求2扩展 -->
+  <g id="stage3" transform="translate(750, 240)">
+    <rect x="0" y="0" width="180" height="250" rx="8" class="blue-dark"/>
+    <!-- 密集标签 -->
+    <rect x="15" y="15" width="150" height="10" rx="2" fill="#FFFFFF"/>
+    <rect x="15" y="32" width="150" height="10" rx="2" fill="#FFFFFF"/>
+    <rect x="15" y="49" width="150" height="10" rx="2" fill="#FFFFFF"/>
+    <rect x="15" y="66" width="150" height="10" rx="2" fill="#FFFFFF"/>
+    <rect x="15" y="83" width="150" height="10" rx="2" fill="#FFFFFF"/>
+    <rect x="15" y="100" width="150" height="10" rx="2" fill="#FFFFFF"/>
+    <rect x="15" y="117" width="150" height="10" rx="2" fill="#FFFFFF"/>
+    <rect x="15" y="134" width="150" height="10" rx="2" fill="#FFFFFF"/>
+    <rect x="15" y="151" width="150" height="10" rx="2" fill="#FFFFFF"/>
+    <rect x="15" y="168" width="150" height="10" rx="2" fill="#FFFFFF"/>
+    
+    <text x="90" y="280" text-anchor="middle" class="text-dark" font-size="14">
+      <tspan x="90" dy="0">+跨系统审批</tspan>
+    </text>
+  </g>
+  
+  <!-- 阶段4：需求N扩展 -->
+  <g id="stage4" transform="translate(1080, 200)">
+    <rect x="0" y="0" width="220" height="300" rx="8" class="gray-dark"/>
+    <!-- 非常密集的标签 -->
+    <g opacity="0.5">
+      <rect x="10" y="10" width="200" height="8" rx="1" fill="#FFFFFF"/>
+      <rect x="10" y="23" width="200" height="8" rx="1" fill="#FFFFFF"/>
+      <rect x="10" y="36" width="200" height="8" rx="1" fill="#FFFFFF"/>
+      <rect x="10" y="49" width="200" height="8" rx="1" fill="#FFFFFF"/>
+      <rect x="10" y="62" width="200" height="8" rx="1" fill="#FFFFFF"/>
+      <rect x="10" y="75" width="200" height="8" rx="1" fill="#FFFFFF"/>
+      <rect x="10" y="88" width="200" height="8" rx="1" fill="#FFFFFF"/>
+      <rect x="10" y="101" width="200" height="8" rx="1" fill="#FFFFFF"/>
+      <rect x="10" y="114" width="200" height="8" rx="1" fill="#FFFFFF"/>
+      <rect x="10" y="127" width="200" height="8" rx="1" fill="#FFFFFF"/>
+      <rect x="10" y="140" width="200" height="8" rx="1" fill="#FFFFFF"/>
+      <rect x="10" y="153" width="200" height="8" rx="1" fill="#FFFFFF"/>
+      <rect x="10" y="166" width="200" height="8" rx="1" fill="#FFFFFF"/>
+      <rect x="10" y="179" width="200" height="8" rx="1" fill="#FFFFFF"/>
+      <rect x="10" y="192" width="200" height="8" rx="1" fill="#FFFFFF"/>
+    </g>
+    
+    <text x="110" y="330" text-anchor="middle" class="text-dark" font-size="14">
+      <tspan x="110" dy="0">+AI路由 + ...</tspan>
+    </text>
+  </g>
+  
+  <!-- 上方：复杂度曲线 -->
+  <g id="complexity-curve">
+    <path d="M 200 250 Q 800 150 1300 100" 
+          stroke="#FF6B35" stroke-width="3" fill="none"/>
+    <text x="1320" y="110" class="accent" font-size="14" font-weight="600">
+      复杂度 ↑
+    </text>
+  </g>
+  
+  <!-- 下方：有效性曲线 -->
+  <g id="coverage-curve">
+    <path d="M 200 550 Q 800 590 1300 620" 
+          stroke="#9ca3af" stroke-width="3" fill="none"/>
+    <text x="1320" y="630" class="gray" font-size="14">
+      有效性 ↓
+    </text>
+  </g>
+</svg>
+

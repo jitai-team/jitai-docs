@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 1600 900" 
+     role="img"
+     aria-labelledby="frameworkTitle frameworkDesc">
+  <title id="frameworkTitle">JitAi开发框架元素族类</title>
+  <desc id="frameworkDesc">JitAi开发框架提供的10大Meta元素族类，覆盖企业应用核心场景</desc>
+  
+  <defs>
+    <style>
+      .bg { fill: #F5F5F5; }
+      .primary { fill: #326DFF; }
+      .element { fill: #8EAEFF; opacity: 0.9; }
+      .text-dark { fill: #333333; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .text-white { fill: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .text-element { fill: #326DFF; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+    </style>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1600" height="900" class="bg"/>
+  
+  <!-- 中心圆 -->
+  <g id="center">
+    <circle cx="800" cy="380" r="110" class="primary"/>
+    <text x="800" y="370" text-anchor="middle" class="text-white" font-size="18" font-weight="700">
+      <tspan x="800" dy="0">JitAi</tspan>
+      <tspan x="800" dy="25">开发框架</tspan>
+    </text>
+  </g>
+  
+  <!-- 连接线（虚线） -->
+  <g id="connections" opacity="0.3">
+    <line x1="800" y1="270" x2="800" y2="120" stroke="#8EAEFF" stroke-width="2" stroke-dasharray="5,5"/>
+    <line x1="893" y1="318" x2="1050" y2="175" stroke="#8EAEFF" stroke-width="2" stroke-dasharray="5,5"/>
+    <line x1="930" y1="410" x2="1150" y2="380" stroke="#8EAEFF" stroke-width="2" stroke-dasharray="5,5"/>
+    <line x1="893" y1="442" x2="1050" y2="585" stroke="#8EAEFF" stroke-width="2" stroke-dasharray="5,5"/>
+    <line x1="800" y1="490" x2="800" y2="640" stroke="#8EAEFF" stroke-width="2" stroke-dasharray="5,5"/>
+    <line x1="707" y1="442" x2="550" y2="585" stroke="#8EAEFF" stroke-width="2" stroke-dasharray="5,5"/>
+    <line x1="670" y1="410" x2="450" y2="380" stroke="#8EAEFF" stroke-width="2" stroke-dasharray="5,5"/>
+    <line x1="707" y1="318" x2="550" y2="175" stroke="#8EAEFF" stroke-width="2" stroke-dasharray="5,5"/>
+  </g>
+  
+  <!-- 元素1：门户 -->
+  <g id="element1" transform="translate(700, 40)">
+    <rect x="0" y="0" width="200" height="80" rx="8" class="element"/>
+    <text x="100" y="35" text-anchor="middle" class="text-element" font-size="16" font-weight="600">
+      <tspan x="100" dy="0">门户</tspan>
+      <tspan x="100" dy="20">Portal</tspan>
+    </text>
+  </g>
+  
+  <!-- 元素2：页面 -->
+  <g id="element2" transform="translate(950, 110)">
+    <rect x="0" y="0" width="200" height="80" rx="8" class="element"/>
+    <text x="100" y="35" text-anchor="middle" class="text-element" font-size="16" font-weight="600">
+      <tspan x="100" dy="0">页面</tspan>
+      <tspan x="100" dy="20">Page</tspan>
+    </text>
+  </g>
+  
+  <!-- 元素3：组件 -->
+  <g id="element3" transform="translate(1150, 340)">
+    <rect x="0" y="0" width="200" height="80" rx="8" class="element"/>
+    <text x="100" y="35" text-anchor="middle" class="text-element" font-size="16" font-weight="600">
+      <tspan x="100" dy="0">组件</tspan>
+      <tspan x="100" dy="20">Component</tspan>
+    </text>
+  </g>
+  
+  <!-- 元素4：数据模型 -->
+  <g id="element4" transform="translate(950, 570)">
+    <rect x="0" y="0" width="200" height="80" rx="8" class="element"/>
+    <text x="100" y="35" text-anchor="middle" class="text-element" font-size="16" font-weight="600">
+      <tspan x="100" dy="0">数据模型</tspan>
+      <tspan x="100" dy="20">Model</tspan>
+    </text>
+  </g>
+  
+  <!-- 元素5：服务 -->
+  <g id="element5" transform="translate(700, 640)">
+    <rect x="0" y="0" width="200" height="80" rx="8" class="element"/>
+    <text x="100" y="35" text-anchor="middle" class="text-element" font-size="16" font-weight="600">
+      <tspan x="100" dy="0">服务</tspan>
+      <tspan x="100" dy="20">Service</tspan>
+    </text>
+  </g>
+  
+  <!-- 元素6：工作流 -->
+  <g id="element6" transform="translate(450, 570)">
+    <rect x="0" y="0" width="200" height="80" rx="8" class="element"/>
+    <text x="100" y="35" text-anchor="middle" class="text-element" font-size="16" font-weight="600">
+      <tspan x="100" dy="0">工作流</tspan>
+      <tspan x="100" dy="20">Workflow</tspan>
+    </text>
+  </g>
+  
+  <!-- 元素7：权限 -->
+  <g id="element7" transform="translate(250, 340)">
+    <rect x="0" y="0" width="200" height="80" rx="8" class="element"/>
+    <text x="100" y="35" text-anchor="middle" class="text-element" font-size="16" font-weight="600">
+      <tspan x="100" dy="0">权限</tspan>
+      <tspan x="100" dy="20">Permission</tspan>
+    </text>
+  </g>
+  
+  <!-- 元素8：组织架构 -->
+  <g id="element8" transform="translate(450, 110)">
+    <rect x="0" y="0" width="200" height="80" rx="8" class="element"/>
+    <text x="100" y="35" text-anchor="middle" class="text-element" font-size="16" font-weight="600">
+      <tspan x="100" dy="0">组织</tspan>
+      <tspan x="100" dy="20">Organization</tspan>
+    </text>
+  </g>
+  
+  <!-- 省略号提示（表示还有更多元素） -->
+  <g id="more-hint" opacity="0.6">
+    <text x="800" y="760" text-anchor="middle" class="text-dark" font-size="28" font-weight="700">
+      · · ·
+    </text>
+    <text x="800" y="785" text-anchor="middle" class="text-dark" font-size="14">
+      等更多元素族类
+    </text>
+  </g>
+  
+  <!-- 底部标注 -->
+  <g id="footer" transform="translate(0, 820)">
+    <text x="800" y="0" text-anchor="middle" class="text-dark" font-size="16">
+      开箱即用的Type + 自定义扩展
+    </text>
+  </g>
+</svg>
+

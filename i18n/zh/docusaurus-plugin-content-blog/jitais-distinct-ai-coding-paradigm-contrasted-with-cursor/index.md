@@ -1,12 +1,12 @@
 ---
-title: JitAi vs Cursor：业务系统需要不同的AI编程范式
+title: Cursor让你快3倍，但你还没看到AI编程的完整可能
 date: 2025/10/29
 authors: []
 tags: [ai coding, cursor, jitai, ai development, low code, business applications, FDE]
 description: "Cursor在原生编程语言层面证明了AI和人基于UI协作的可行性，但业务系统开发需要更大颗粒度的范式。探索JitAi如何通过高准确度、低门槛、低成本解决企业定制化项目交付的核心挑战。"
 keywords: [AI编码, Cursor, JitAi, AI开发, 低代码, 可视化开发, 业务应用开发, Meta, Type, Instance, Vibe Coding, FDE, Forward Deployed Engineer, 代码生成, Token优化, AI原生开发]
 ---
-# JitAi vs Cursor：业务系统需要不同的AI编程范式
+# Cursor让你快3倍，但你还没看到AI编程的完整可能
 
 你有没有对Cursor、Claude Code或者其它AI编程工具说过这些话？
 

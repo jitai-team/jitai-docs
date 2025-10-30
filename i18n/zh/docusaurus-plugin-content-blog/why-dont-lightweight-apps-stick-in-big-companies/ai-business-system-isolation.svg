@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 1600 900" 
+     role="img"
+     aria-labelledby="isolation-title isolation-desc">
+  <title id="isolation-title">AI与业务系统的隔离</title>
+  <desc id="isolation-desc">展示独立AI应用与业务系统之间的交互断层：上层是员工使用的业务系统，下层是独立的AI聊天窗口，中间存在明显的隔离，员工需要在两个系统之间频繁切换和复制粘贴信息</desc>
+  
+  <!-- 样式定义 -->
+  <defs>
+    <style>
+      .bg { fill: #F5F5F5; }
+      .primary { fill: #326DFF; }
+      .primary-light { fill: #8EAEFF; }
+      .warning { fill: #FF6B35; }
+      .text-dark { fill: #333333; }
+      .text-medium { fill: #6b7280; }
+      .text-main { 
+        fill: #333333; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .text-title { 
+        fill: #333333; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+      }
+      .text-sub { 
+        fill: #6b7280; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 16px;
+      }
+      .text-small { 
+        fill: #FFFFFF; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 14px;
+      }
+    </style>
+    
+    <!-- 断裂效果 -->
+    <pattern id="breakPattern" patternUnits="userSpaceOnUse" width="20" height="20">
+      <line x1="0" y1="0" x2="20" y2="20" stroke="#FF6B35" stroke-width="2"/>
+    </pattern>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1600" height="900" class="bg"/>
+  
+  <!-- 标题 -->
+  <text x="800" y="60" text-anchor="middle" class="text-title">独立AI应用与业务系统的交互断层</text>
+  
+  <!-- 上层：业务系统 -->
+  <g id="business-systems">
+    <text x="400" y="130" text-anchor="middle" class="text-main" fill="#326DFF">业务系统（员工日常工作）</text>
+    
+    <!-- ERP系统窗口 -->
+    <g transform="translate(100, 160)">
+      <rect x="0" y="0" width="300" height="200" rx="12" fill="#FFFFFF" stroke="#326DFF" stroke-width="3"/>
+      <!-- 窗口标题栏 -->
+      <rect x="0" y="0" width="300" height="40" rx="12" fill="#326DFF"/>
+      <text x="150" y="27" text-anchor="middle" class="text-small" font-weight="600">ERP系统</text>
+      <!-- 窗口内容 -->
+      <text x="20" y="70" class="text-sub" font-size="14" font-weight="600">采购申请单 #2024-1234</text>
+      <text x="20" y="95" class="text-sub" font-size="13">供应商：ABC科技有限公司</text>
+      <text x="20" y="115" class="text-sub" font-size="13">采购物资：服务器设备</text>
+      <text x="20" y="135" class="text-sub" font-size="13">金额：￥85,000</text>
+      <text x="20" y="155" class="text-sub" font-size="13">状态：待审批</text>
+      <rect x="20" y="170" width="80" height="25" rx="4" fill="#326DFF"/>
+      <text x="60" y="188" text-anchor="middle" class="text-small" font-size="12">审批</text>
+    </g>
+    
+    <!-- CRM系统窗口 -->
+    <g transform="translate(450, 160)">
+      <rect x="0" y="0" width="300" height="200" rx="12" fill="#FFFFFF" stroke="#326DFF" stroke-width="3"/>
+      <!-- 窗口标题栏 -->
+      <rect x="0" y="0" width="300" height="40" rx="12" fill="#326DFF"/>
+      <text x="150" y="27" text-anchor="middle" class="text-small" font-weight="600">CRM系统</text>
+      <!-- 窗口内容 -->
+      <text x="20" y="70" class="text-sub" font-size="14" font-weight="600">客户详情</text>
+      <text x="20" y="95" class="text-sub" font-size="13">客户名称：深圳某公司</text>
+      <text x="20" y="115" class="text-sub" font-size="13">客户类型：VIP客户</text>
+      <text x="20" y="135" class="text-sub" font-size="13">历史订单：23笔</text>
+      <text x="20" y="155" class="text-sub" font-size="13">总金额：￥3,200,000</text>
+      <rect x="20" y="170" width="80" height="25" rx="4" fill="#326DFF"/>
+      <text x="60" y="188" text-anchor="middle" class="text-small" font-size="12">编辑</text>
+    </g>
+    
+    <!-- 仓储系统窗口 -->
+    <g transform="translate(800, 160)">
+      <rect x="0" y="0" width="300" height="200" rx="12" fill="#FFFFFF" stroke="#326DFF" stroke-width="3"/>
+      <!-- 窗口标题栏 -->
+      <rect x="0" y="0" width="300" height="40" rx="12" fill="#326DFF"/>
+      <text x="150" y="27" text-anchor="middle" class="text-small" font-weight="600">仓储系统</text>
+      <!-- 窗口内容 -->
+      <text x="20" y="70" class="text-sub" font-size="14" font-weight="600">库存查询</text>
+      <text x="20" y="95" class="text-sub" font-size="13">产品：服务器设备</text>
+      <text x="20" y="115" class="text-sub" font-size="13">在库数量：12台</text>
+      <text x="20" y="135" class="text-sub" font-size="13">在途数量：5台</text>
+      <text x="20" y="155" class="text-sub" font-size="13">预警阈值：10台</text>
+      <rect x="20" y="170" width="80" height="25" rx="4" fill="#326DFF"/>
+      <text x="60" y="188" text-anchor="middle" class="text-small" font-size="12">查询</text>
+    </g>
+  </g>
+  
+  <!-- 中间：断裂区域 -->
+  <g id="isolation-zone" transform="translate(0, 390)">
+    <!-- 断裂线 -->
+    <line x1="100" y1="0" x2="1100" y2="0" stroke="#FF6B35" stroke-width="4" stroke-dasharray="15,10"/>
+    
+    <!-- 断裂符号 -->
+    <g transform="translate(500, -15)">
+      <rect x="0" y="0" width="100" height="30" rx="6" fill="#FF6B35"/>
+      <text x="50" y="20" text-anchor="middle" fill="#FFFFFF" font-size="16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-weight="600">隔离</text>
+    </g>
+    
+    <!-- 说明文字 -->
+    <text x="550" y="40" text-anchor="middle" class="text-sub" fill="#FF6B35" font-weight="600">⚠ 权限脱节 | 上下文丢失 | 需要频繁切换</text>
+  </g>
+  
+  <!-- 下层：AI聊天界面 -->
+  <g id="ai-system">
+    <text x="400" y="470" text-anchor="middle" class="text-main" fill="#8EAEFF">独立AI应用（聊天机器人）</text>
+    
+    <!-- AI聊天窗口 -->
+    <g transform="translate(100, 500)">
+      <rect x="0" y="0" width="650" height="300" rx="12" fill="#FFFFFF" stroke="#8EAEFF" stroke-width="3"/>
+      <!-- 窗口标题栏 -->
+      <rect x="0" y="0" width="650" height="40" rx="12" fill="#8EAEFF"/>
+      <text x="325" y="27" text-anchor="middle" class="text-small" font-weight="600">AI助手</text>
+      
+      <!-- 对话气泡1：用户 -->
+      <g transform="translate(400, 60)">
+        <rect x="0" y="0" width="230" height="60" rx="8" fill="#E8F1FF"/>
+        <text x="10" y="20" class="text-sub" font-size="13">帮我分析供应商</text>
+        <text x="10" y="38" class="text-sub" font-size="13">ABC科技有限公司的</text>
+        <text x="10" y="56" class="text-sub" font-size="13">交付质量</text>
+      </g>
+      
+      <!-- 对话气泡2：AI回复 -->
+      <g transform="translate(20, 135)">
+        <rect x="0" y="0" width="280" height="60" rx="8" fill="#F5F9FF"/>
+        <text x="10" y="20" class="text-sub" font-size="13">❓ 请提供供应商的完整名称</text>
+        <text x="10" y="38" class="text-sub" font-size="13">和您需要分析的具体维度</text>
+        <text x="10" y="56" class="text-sub" font-size="13">（如：历史订单、交付时效等）</text>
+      </g>
+      
+      <!-- 对话气泡3：用户重新输入 -->
+      <g transform="translate(360, 210)">
+        <rect x="0" y="0" width="270" height="75" rx="8" fill="#E8F1FF"/>
+        <text x="10" y="20" class="text-sub" font-size="13">供应商：ABC科技有限公司</text>
+        <text x="10" y="38" class="text-sub" font-size="13">需要查看：</text>
+        <text x="10" y="56" class="text-sub" font-size="13">1. 历史订单交付质量</text>
+        <text x="10" y="72" class="text-sub" font-size="13">2. 财务状况</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- 右侧：操作流程图 -->
+  <g id="workflow" transform="translate(850, 500)">
+    <text x="300" y="0" text-anchor="middle" class="text-main" fill="#6b7280">员工的实际操作流程</text>
+    
+    <!-- 步骤1 -->
+    <g transform="translate(0, 30)">
+      <circle cx="30" cy="30" r="22" fill="#6b7280"/>
+      <text x="30" y="37" text-anchor="middle" fill="#FFFFFF" font-size="16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-weight="600">1</text>
+      <text x="70" y="37" class="text-sub" font-size="15">在ERP中打开采购单</text>
+    </g>
+    
+    <!-- 箭头 -->
+    <path d="M 30 85 L 30 105" stroke="#6b7280" stroke-width="2" fill="none"/>
+    <path d="M 20 95 L 30 105 L 40 95" fill="#6b7280"/>
+    
+    <!-- 步骤2 -->
+    <g transform="translate(0, 110)">
+      <circle cx="30" cy="30" r="22" fill="#6b7280"/>
+      <text x="30" y="37" text-anchor="middle" fill="#FFFFFF" font-size="16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-weight="600">2</text>
+      <text x="70" y="37" class="text-sub" font-size="15">复制供应商名称</text>
+    </g>
+    
+    <!-- 箭头 -->
+    <path d="M 30 165 L 30 185" stroke="#6b7280" stroke-width="2" fill="none"/>
+    <path d="M 20 175 L 30 185 L 40 175" fill="#6b7280"/>
+    
+    <!-- 步骤3 -->
+    <g transform="translate(0, 190)">
+      <circle cx="30" cy="30" r="22" fill="#FF6B35"/>
+      <text x="30" y="37" text-anchor="middle" fill="#FFFFFF" font-size="16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-weight="600">3</text>
+      <text x="70" y="37" class="text-sub" font-size="15" fill="#FF6B35" font-weight="600">切换到AI聊天窗口</text>
+    </g>
+    
+    <!-- 箭头 -->
+    <path d="M 30 245 L 30 265" stroke="#FF6B35" stroke-width="2" fill="none"/>
+    <path d="M 20 255 L 30 265 L 40 255" fill="#FF6B35"/>
+    
+    <!-- 步骤4 -->
+    <g transform="translate(0, 270)">
+      <circle cx="30" cy="30" r="22" fill="#6b7280"/>
+      <text x="30" y="37" text-anchor="middle" fill="#FFFFFF" font-size="16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-weight="600">4</text>
+      <text x="70" y="37" class="text-sub" font-size="15">粘贴名称并询问AI</text>
+    </g>
+    
+    <!-- 说明 -->
+    <rect x="60" y="320" width="600" height="40" rx="8" fill="#FF6B35" opacity="0.1"/>
+    <text x="360" y="345" text-anchor="middle" class="text-sub" fill="#FF6B35" font-size="15" font-weight="600">AI不知道你在看哪个采购单，需要重新描述上下文</text>
+  </g>
+  
+  <!-- 底部总结 -->
+  <text x="800" y="870" text-anchor="middle" class="text-main" fill="#FF6B35">结果：原本想提升效率，实际却在两个系统之间当"信息搬运工"</text>
+</svg>
+

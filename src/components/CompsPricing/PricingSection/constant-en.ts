@@ -5,6 +5,7 @@ export interface PricingPlan {
   title: string;
   subtitle: string;
   icon: string;
+  isShowPriceUnit: boolean;
   monthlyPrice: string;
   yearlyPrice: string;
   buyoutPrice: string;
@@ -12,36 +13,56 @@ export interface PricingPlan {
   isRecommended?: boolean;
   cardType: string;
   analyticsCssClass: string;
+  customPayActionText?: string; // 自定义支付按钮文本
 }
 
 
 // 价格方案配置
 const PRICING_PLANS: PricingPlan[] = [
   {
-    id: 'desktop',
-    title: 'Desktop License', 
-    subtitle: 'Essential for Local Development',
+    id: 'free',
+    title: 'Desktop Basic License', 
+    subtitle: 'Get 3 Free on Sign-up',
     icon: '🖥️',
-    monthlyPrice: '20',
-    yearlyPrice: '16',
-    buyoutPrice: '960',
+    isShowPriceUnit: false,
+    customPayActionText: 'Download',
+    monthlyPrice: 'Free',
+    yearlyPrice: 'Free',
+    buyoutPrice: 'Free',
     cardType: 'desktopCard',
+    analyticsCssClass: 'analytics-payFree analytics-download',
     features: [
-      '✓ Development environment only',
-      '✓ Unlimited applications',
+      '✓ For development environment only',
+      '✓ 1 app only',
       '✓ Unlimited organizations',
       '✓ Desktop development',
       '✓ Online development',
       '✓ Single process only',
       '✓ Single machine only'
     ],
+  },
+  {
+    id: 'desktopStandard',
+    title: 'Desktop Standard License', 
+    subtitle: 'Recommended for Local Development',
+    icon: '🖥️',
+    isShowPriceUnit: true,
+    monthlyPrice: '20',
+    yearlyPrice: '16',
+    buyoutPrice: '960',
+    cardType: 'desktopCard',
+    features: [
+      'All Desktop Basic features, plus',
+      '✓ Up to 10 apps',
+    ],
     analyticsCssClass: 'analytics-pay',
   },
   {
-    id: 'basic',
+    id: 'serverBasic',
     title: 'Server Basic License',
     subtitle: 'Entry Choice for SMEs',
     icon: '🚀',
+    isShowPriceUnit: true,
     monthlyPrice: '250',
     yearlyPrice: '200',
     buyoutPrice: '12,000',
@@ -50,17 +71,18 @@ const PRICING_PLANS: PricingPlan[] = [
     analyticsCssClass: 'analytics-pay',
     features: [
         '✓ For development/testing/production environments',
-        '✓ 1 application',
-        '✓ 2 organizations',
+        '✓ 1 app only',
+        '✓ Up to 2 organizations',
         '✓ Online development',
         '✓ Single machine only'
     ],
   },
   {
-    id: 'standard',
+    id: 'serverStandard',
     title: 'Server Standard License',
     subtitle: 'Enterprise Standard Configuration',
     icon: '⭐',
+    isShowPriceUnit: true,
     monthlyPrice: '500',
     yearlyPrice: '400',
     buyoutPrice: '24,000',
@@ -68,8 +90,8 @@ const PRICING_PLANS: PricingPlan[] = [
     analyticsCssClass: 'analytics-pay',
     features: [
         'All Server Basic features, plus',
-        '✓ 5 applications',
-        '✓ 10 organizations',
+        '✓ Up to 5 apps',
+        '✓ Up to 10 organizations',
         '✓ Cluster environment support'
     ],
   },
@@ -84,31 +106,25 @@ const PRICING_PLANS: PricingPlan[] = [
   //   cardType: 'professionalCard',
   //   features: [
   //       'All Server Standard features, plus',
-  //       '✓ 10 applications',
+  //       '✓ 10 apps',
   //       '✓ 20 organizations',
   //   ]
-  // },
-  {
-    id: 'enterprise',
-    title: 'Custom Package',
-    subtitle: 'For Bulk License Customers',
-    icon: '🌟',
-    monthlyPrice: 'Custom',
-    yearlyPrice: 'Custom',
-    buyoutPrice: 'Custom',
-    cardType: 'enterpriseCard',
-    analyticsCssClass: 'analytics-contactSale',
-    features: [
-        '✓ More applications',
-        '✓ More organizations',
-        '✓ Bulk license discounts',
-    ],
-  }
+  // }
 ];
+
+// Custom plan configuration
+const CUSTOM_PLAN = {
+  id: 'custom',
+  title: 'Need More Licenses or Custom Solutions?',
+  description: 'Volume discounts available. Flexible customization supported. Contact sales for exclusive quotes.',
+  contactText: 'Contact Sales',
+  analyticsCssClass: 'analytics-contactSale',
+};
 
 const CONTENT = {
   locale: 'en',
   pricingPlans: PRICING_PLANS,
+  customPlan: CUSTOM_PLAN,
   title: 'Pricing',
   subtitle: 'JitAi can be deployed on any personal computer or server. Purchase the appropriate license for your deployment needs',
   monthly: 'Monthly',
@@ -116,7 +132,11 @@ const CONTENT = {
   buyout: 'One-time',
   yearlyBadge: 'Save 20%',
   recommendedBadge: 'Recommended',
-  contactSales: 'Contact Sales',
+  payActionText: {
+    monthly: 'Subscribe',
+    yearly: 'Subscribe',
+    buyout: 'Pay',
+  },
   contactSalesLink: 'https://wy.jit.pro/whwy/jitRDM/publicPortal/contactus',
   moneyUnit: '$',
   priceUnit: {
@@ -127,12 +147,6 @@ const CONTENT = {
   subscribe: 'Subscribe',
   pay: 'Pay',
   includes: 'This includes:',
-  specialOffer: 'Special Offer',
-  specialOfferDescriptions: [
-    'Sign up now and each developer team receives',
-    ' a FREE 1-month desktop license ',
-    'to fully experience the powerful features of JitAi!',
-  ],
   // Modal related text
   modal: {
     title: 'Confirm Purchase Information',

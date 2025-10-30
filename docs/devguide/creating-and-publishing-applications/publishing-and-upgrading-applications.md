@@ -46,6 +46,12 @@ Developers can specify which data table models should include initial data, with
 
 Developers of inherited applications continuously release new versions to address bugs, introduce features, and implement improvements. Version checking and upgrading can be performed through the [Node Console](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment).
 
+![Update](./img/1/update.png)
+From the application list in the Node Console, click the `Update` button on the application card to update the application.
+
+![应用升级](./img/1/application-version.png)
+Additionally, by clicking the `More` button on the application card and selecting `Inherit Other Applications`, you can view the version information of the inherited application.
+
 ## Planning application deployment strategies {#application-deployment-strategies}
 
 Following application publication, deployment across various runtime environments becomes possible, supporting both development and production modes alongside flexible weight configuration and automated update strategies.

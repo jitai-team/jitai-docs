@@ -323,11 +323,20 @@
   gap: 0;
 }
 
-/* 移动端语言切换器 */
+/* 移动端顶部语言切换器 - 显示在汉堡菜单按钮左侧 */
+.mobileTopLanguageSwitcher {
+  display: none;
+  align-items: center;
+  margin-right: 1rem;
+  z-index: 1001;
+  position: relative;
+}
+
+/* 移动端语言切换器（已移除，保留样式以防需要） */
 .mobileLanguageSwitcher {
   padding: 1.5rem 0;
-  margin-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
 }
@@ -428,10 +437,12 @@
 @media (max-width: 768px) {
   .navContent {
     padding: 0 1rem;
+    justify-content: space-between;
   }
 
   .leftSection {
     gap: 3rem;
+    flex: 1;
   }
 
   .rightSection {
@@ -456,11 +467,16 @@
     display: flex;
   }
 
+  /* 显示移动端顶部语言切换器 */
+  .mobileTopLanguageSwitcher {
+    display: flex;
+  }
+
   .navbar {
     padding: 0.75rem 0;
   }
 
-  /* 移动端隐藏 Download 按钮、Try Online 按钮和语言切换器 */
+  /* 移动端隐藏 Download 按钮、Try Online 按钮和桌面端语言切换器 */
   .downloadButton,
   .tryOnlineButton,
   .languageSwitcher {

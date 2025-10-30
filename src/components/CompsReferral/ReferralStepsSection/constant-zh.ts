@@ -31,7 +31,7 @@ const STEPS: Step[] = [
 ];
 
 const CONTENT = {
-  title: '被邀请者操作步骤',
+  title: '受邀人操作步骤',
   subtitle: '',
   steps: STEPS,
 };

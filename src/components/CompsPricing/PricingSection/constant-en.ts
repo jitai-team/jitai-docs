@@ -118,7 +118,7 @@ const CUSTOM_PLAN = {
   title: 'Need More Licenses or Custom Solutions?',
   description: 'Volume discounts available. Flexible customization supported. Contact sales for exclusive quotes.',
   contactText: 'Contact Sales',
-  analyticsCssClass: 'analytics-contactSale',
+    analyticsCssClass: 'analytics-contactSale',
 };
 
 const CONTENT = {

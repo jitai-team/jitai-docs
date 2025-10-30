@@ -33,6 +33,10 @@ export const PAGE_METADATA_ZH: Record<string, PageMetadata> = {
     title: '博客',
     description: '探索AI应用开发的最新趋势，学习实用的技术教程，了解JitAI平台的最新功能和成功案例'
   },
+  'referral': {
+    title: 'JitAI 推荐有礼 - 邀请好友赚应用额度',
+    description: '邀请好友注册JitAI，每成功推荐1位好友，您的桌面版许可证应用数上限即可增加1个，最高可达10个应用。立即参与推荐活动！'
+  },
   
   // V1 pages
   'v1': {

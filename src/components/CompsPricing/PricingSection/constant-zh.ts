@@ -118,7 +118,7 @@ const CUSTOM_PLAN = {
   title: '需要更多许可证或定制方案？',
   description: '批量购买可享优惠，支持灵活定制。联系销售获取专属报价。',
   contactText: '联系销售',
-  analyticsCssClass: 'analytics-contactSale',
+    analyticsCssClass: 'analytics-contactSale',
 };
 
 const CONTENT = {

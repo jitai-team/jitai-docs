@@ -670,7 +670,7 @@
   .recommended {
     transform: scale(1);
   }
-  
+
   /* 自定义组合区域响应式 */
   .customPlanCard {
     padding: var(--space-6) var(--space-8);

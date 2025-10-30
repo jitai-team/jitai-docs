@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 1600 1200" 
+     role="img"
+     aria-labelledby="dilemmaTitle dilemmaDesc">
+  <title id="dilemmaTitle">DSL的两难困境</title>
+  <desc id="dilemmaDesc">DSL设计者面临的两难选择，无论走哪条路都会遇到困境</desc>
+  
+  <defs>
+    <style>
+      .bg { fill: #F5F5F5; }
+      .primary { fill: #326DFF; }
+      .primary-light { fill: #8EAEFF; }
+      .accent { fill: #FF6B35; }
+      .text-dark { fill: #333333; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .text-white { fill: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+    </style>
+    
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#326DFF"/>
+    </marker>
+    
+    <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#FF6B35"/>
+    </marker>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1600" height="1200" class="bg"/>
+  
+  <!-- 顶部起点 -->
+  <g id="start" transform="translate(600, 100)">
+    <rect x="0" y="0" width="400" height="80" rx="12" class="primary"/>
+    <text x="200" y="50" text-anchor="middle" class="text-white" font-size="18" font-weight="600">
+      遇到DSL无法表达的需求
+    </text>
+  </g>
+  
+  <!-- 左路径 -->
+  <g id="left-path">
+    <!-- 连接线 -->
+    <path d="M 650 200 L 400 350" stroke="#326DFF" stroke-width="3" fill="none" marker-end="url(#arrowBlue)"/>
+    
+    <!-- 步骤1 -->
+    <g transform="translate(150, 350)">
+      <rect x="0" y="0" width="250" height="70" rx="8" class="primary-light"/>
+      <text x="125" y="45" text-anchor="middle" class="text-dark" font-size="16">
+        扩展DSL语法
+      </text>
+    </g>
+    
+    <!-- 箭头 -->
+    <path d="M 275 440 L 275 550" stroke="#FF6B35" stroke-width="3" fill="none" marker-end="url(#arrowOrange)"/>
+    
+    <!-- 步骤2 -->
+    <g transform="translate(150, 550)">
+      <rect x="0" y="0" width="250" height="70" rx="8" class="accent" opacity="0.3"/>
+      <text x="125" y="45" text-anchor="middle" class="text-dark" font-size="16">
+        语法越来越复杂
+      </text>
+    </g>
+    
+    <!-- 箭头 -->
+    <path d="M 275 640 L 275 750" stroke="#FF6B35" stroke-width="3" fill="none" marker-end="url(#arrowOrange)"/>
+    
+    <!-- 结果 -->
+    <g transform="translate(150, 750)">
+      <rect x="0" y="0" width="250" height="80" rx="8" class="accent"/>
+      <text x="125" y="45" text-anchor="middle" class="text-white" font-size="18" font-weight="700">
+        难以维护
+      </text>
+      <!-- X符号 -->
+      <g transform="translate(200, 40)">
+        <line x1="-15" y1="-15" x2="15" y2="15" stroke="#FFFFFF" stroke-width="4"/>
+        <line x1="15" y1="-15" x2="-15" y2="15" stroke="#FFFFFF" stroke-width="4"/>
+      </g>
+    </g>
+  </g>
+  
+  <!-- 右路径 -->
+  <g id="right-path">
+    <!-- 连接线 -->
+    <path d="M 950 200 L 1200 350" stroke="#326DFF" stroke-width="3" fill="none" marker-end="url(#arrowBlue)"/>
+    
+    <!-- 步骤1 -->
+    <g transform="translate(1075, 350)">
+      <rect x="0" y="0" width="300" height="70" rx="8" class="primary-light"/>
+      <text x="150" y="45" text-anchor="middle" class="text-dark" font-size="16">
+        特殊处理/放弃DSL
+      </text>
+    </g>
+    
+    <!-- 箭头 -->
+    <path d="M 1225 440 L 1225 550" stroke="#FF6B35" stroke-width="3" fill="none" marker-end="url(#arrowOrange)"/>
+    
+    <!-- 步骤2 -->
+    <g transform="translate(1075, 550)">
+      <rect x="0" y="0" width="300" height="70" rx="8" class="accent" opacity="0.3"/>
+      <text x="150" y="45" text-anchor="middle" class="text-dark" font-size="16">
+        系统一致性破坏
+      </text>
+    </g>
+    
+    <!-- 箭头 -->
+    <path d="M 1225 640 L 1225 750" stroke="#FF6B35" stroke-width="3" fill="none" marker-end="url(#arrowOrange)"/>
+    
+    <!-- 结果 -->
+    <g transform="translate(1075, 750)">
+      <rect x="0" y="0" width="300" height="80" rx="8" class="accent"/>
+      <text x="150" y="45" text-anchor="middle" class="text-white" font-size="18" font-weight="700">
+        两套体系切换
+      </text>
+      <!-- X符号 -->
+      <g transform="translate(250, 40)">
+        <line x1="-15" y1="-15" x2="15" y2="15" stroke="#FFFFFF" stroke-width="4"/>
+        <line x1="15" y1="-15" x2="-15" y2="15" stroke="#FFFFFF" stroke-width="4"/>
+      </g>
+    </g>
+  </g>
+  
+  <!-- 底部结论 -->
+  <g id="conclusion" transform="translate(400, 950)">
+    <rect x="0" y="0" width="800" height="100" rx="12" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+    <text x="400" y="60" text-anchor="middle" class="text-dark" font-size="20" font-weight="700">
+      DSL是技术路线的本质约束
+    </text>
+  </g>
+</svg>
+

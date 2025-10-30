@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 1600 1200" 
+     role="img"
+     aria-labelledby="db-title db-desc">
+  <title id="db-title">数据库UI化 vs 流程编排对比图</title>
+  <desc id="db-desc">对比展示数据库UI化范式与流程编排范式的能力差异：左侧展示数据库UI化只能记录数据的线性结构，右侧展示流程编排可以实现复杂业务逻辑的非线性结构</desc>
+  
+  <!-- 样式定义 -->
+  <defs>
+    <style>
+      .bg { fill: #F5F5F5; }
+      .primary-light { fill: #8EAEFF; }
+      .primary { fill: #326DFF; }
+      .text-dark { fill: #333333; }
+      .text-medium { fill: #6b7280; }
+      .text-main { 
+        fill: #333333; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+      }
+      .text-title { 
+        fill: #333333; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+      }
+      .text-sub { 
+        fill: #6b7280; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 16px;
+      }
+      .text-label { 
+        fill: #FFFFFF; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 14px;
+      }
+    </style>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1600" height="1200" class="bg"/>
+  
+  <!-- 标题 -->
+  <text x="800" y="70" text-anchor="middle" class="text-title">数据库UI化 vs 流程编排</text>
+  
+  <!-- 分隔线 -->
+  <line x1="800" y1="120" x2="800" y2="1080" stroke="#9ca3af" stroke-width="3"/>
+  
+  <!-- 左侧：数据库UI化 -->
+  <g id="left-database-ui">
+    <!-- 标题 -->
+    <text x="400" y="160" text-anchor="middle" class="text-main" fill="#8EAEFF">数据库UI化</text>
+    
+    <!-- 表单框1 -->
+    <g transform="translate(200, 220)">
+      <rect x="0" y="0" width="400" height="140" rx="12" fill="#FFFFFF" stroke="#8EAEFF" stroke-width="3"/>
+      <text x="20" y="30" class="text-sub" font-weight="600">客户信息表</text>
+      <!-- 字段 -->
+      <rect x="20" y="50" width="360" height="20" rx="4" fill="#E8F1FF"/>
+      <text x="30" y="65" class="text-sub" font-size="14">客户名称</text>
+      <rect x="20" y="75" width="360" height="20" rx="4" fill="#E8F1FF"/>
+      <text x="30" y="90" class="text-sub" font-size="14">联系方式</text>
+      <rect x="20" y="100" width="360" height="20" rx="4" fill="#E8F1FF"/>
+      <text x="30" y="115" class="text-sub" font-size="14">所属区域</text>
+    </g>
+    
+    <!-- 箭头 -->
+    <path d="M 400 380 L 400 420" stroke="#8EAEFF" stroke-width="2" fill="none"/>
+    <path d="M 390 410 L 400 420 L 410 410" fill="#8EAEFF"/>
+    
+    <!-- 表单框2 -->
+    <g transform="translate(200, 440)">
+      <rect x="0" y="0" width="400" height="140" rx="12" fill="#FFFFFF" stroke="#8EAEFF" stroke-width="3"/>
+      <text x="20" y="30" class="text-sub" font-weight="600">订单信息表</text>
+      <!-- 字段 -->
+      <rect x="20" y="50" width="360" height="20" rx="4" fill="#E8F1FF"/>
+      <text x="30" y="65" class="text-sub" font-size="14">订单编号</text>
+      <rect x="20" y="75" width="360" height="20" rx="4" fill="#E8F1FF"/>
+      <text x="30" y="90" class="text-sub" font-size="14">下单时间</text>
+      <rect x="20" y="100" width="360" height="20" rx="4" fill="#E8F1FF"/>
+      <text x="30" y="115" class="text-sub" font-size="14">订单金额</text>
+    </g>
+    
+    <!-- 箭头 -->
+    <path d="M 400 600 L 400 640" stroke="#8EAEFF" stroke-width="2" fill="none"/>
+    <path d="M 390 630 L 400 640 L 410 630" fill="#8EAEFF"/>
+    
+    <!-- 表单框3 -->
+    <g transform="translate(200, 660)">
+      <rect x="0" y="0" width="400" height="140" rx="12" fill="#FFFFFF" stroke="#8EAEFF" stroke-width="3"/>
+      <text x="20" y="30" class="text-sub" font-weight="600">发货信息表</text>
+      <!-- 字段 -->
+      <rect x="20" y="50" width="360" height="20" rx="4" fill="#E8F1FF"/>
+      <text x="30" y="65" class="text-sub" font-size="14">收货地址</text>
+      <rect x="20" y="75" width="360" height="20" rx="4" fill="#E8F1FF"/>
+      <text x="30" y="90" class="text-sub" font-size="14">物流单号</text>
+      <rect x="20" y="100" width="360" height="20" rx="4" fill="#E8F1FF"/>
+      <text x="30" y="115" class="text-sub" font-size="14">发货状态</text>
+    </g>
+    
+    <!-- 箭头 -->
+    <path d="M 400 820 L 400 860" stroke="#8EAEFF" stroke-width="2" fill="none"/>
+    <path d="M 390 850 L 400 860 L 410 850" fill="#8EAEFF"/>
+    
+    <!-- 表单框4 -->
+    <g transform="translate(200, 880)">
+      <rect x="0" y="0" width="400" height="100" rx="12" fill="#FFFFFF" stroke="#8EAEFF" stroke-width="3"/>
+      <text x="20" y="30" class="text-sub" font-weight="600">报表统计表</text>
+      <!-- 字段 -->
+      <rect x="20" y="50" width="360" height="20" rx="4" fill="#E8F1FF"/>
+      <text x="30" y="65" class="text-sub" font-size="14">月度销售额</text>
+    </g>
+    
+    <!-- 底部说明 -->
+    <rect x="150" y="1050" width="500" height="80" rx="12" fill="#8EAEFF" opacity="0.9"/>
+    <text x="400" y="1080" text-anchor="middle" fill="#FFFFFF" font-size="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-weight="600">只能记录发生了什么</text>
+    <text x="400" y="1110" text-anchor="middle" fill="#FFFFFF" font-size="16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif">线性结构，缺乏流程控制能力</text>
+  </g>
+  
+  <!-- 右侧：流程编排 -->
+  <g id="right-workflow">
+    <!-- 标题 -->
+    <text x="1200" y="160" text-anchor="middle" class="text-main" fill="#326DFF">流程编排</text>
+    
+    <!-- 开始节点 -->
+    <g transform="translate(1150, 220)">
+      <circle cx="50" cy="30" r="30" fill="#326DFF"/>
+      <text x="50" y="37" text-anchor="middle" class="text-label" font-weight="600">开始</text>
+    </g>
+    
+    <!-- 箭头 -->
+    <path d="M 1200 280 L 1200 320" stroke="#326DFF" stroke-width="2" fill="none"/>
+    <path d="M 1190 310 L 1200 320 L 1210 310" fill="#326DFF"/>
+    
+    <!-- 处理节点1 -->
+    <g transform="translate(1050, 330)">
+      <rect x="0" y="0" width="300" height="60" rx="8" fill="#326DFF"/>
+      <text x="150" y="37" text-anchor="middle" class="text-label" font-size="16">接收订单</text>
+    </g>
+    
+    <!-- 箭头 -->
+    <path d="M 1200 410 L 1200 450" stroke="#326DFF" stroke-width="2" fill="none"/>
+    <path d="M 1190 440 L 1200 450 L 1210 440" fill="#326DFF"/>
+    
+    <!-- 判断节点：金额判断 -->
+    <g transform="translate(1200, 520)">
+      <path d="M 0 -70 L 100 0 L 0 70 L -100 0 Z" fill="#326DFF"/>
+      <text x="0" y="-20" text-anchor="middle" class="text-label" font-size="14">订单金额</text>
+      <text x="0" y="0" text-anchor="middle" class="text-label" font-size="14">&gt; 10000?</text>
+    </g>
+    
+    <!-- 分支箭头：是 -->
+    <path d="M 1300 520 L 1400 520" stroke="#326DFF" stroke-width="2" fill="none"/>
+    <text x="1350" y="510" class="text-sub" font-size="14" fill="#326DFF" font-weight="600">是</text>
+    <path d="M 1390 510 L 1400 520 L 1390 530" fill="#326DFF"/>
+    
+    <!-- 高价值处理 -->
+    <g transform="translate(1400, 500)">
+      <rect x="0" y="-30" width="150" height="60" rx="8" fill="#FF6B35"/>
+      <text x="75" y="7" text-anchor="middle" class="text-label" font-size="14">VIP审批</text>
+    </g>
+    
+    <!-- 分支箭头：否 -->
+    <path d="M 1100 520 L 1000 520" stroke="#326DFF" stroke-width="2" fill="none"/>
+    <text x="1050" y="510" class="text-sub" font-size="14" fill="#326DFF" font-weight="600">否</text>
+    <path d="M 1010 510 L 1000 520 L 1010 530" fill="#326DFF"/>
+    
+    <!-- 普通处理 -->
+    <g transform="translate(850, 500)">
+      <rect x="0" y="-30" width="150" height="60" rx="8" fill="#326DFF"/>
+      <text x="75" y="7" text-anchor="middle" class="text-label" font-size="14">标准审批</text>
+    </g>
+    
+    <!-- 合并箭头 -->
+    <path d="M 925 540 L 925 640 L 1200 640" stroke="#326DFF" stroke-width="2" fill="none"/>
+    <path d="M 1475 540 L 1475 640 L 1200 640" stroke="#326DFF" stroke-width="2" fill="none"/>
+    <path d="M 1200 640 L 1200 680" stroke="#326DFF" stroke-width="2" fill="none"/>
+    <path d="M 1190 670 L 1200 680 L 1210 670" fill="#326DFF"/>
+    
+    <!-- 循环处理节点 -->
+    <g transform="translate(1050, 690)">
+      <rect x="0" y="0" width="300" height="60" rx="8" fill="#326DFF"/>
+      <text x="150" y="37" text-anchor="middle" class="text-label" font-size="16">生成发货单</text>
+    </g>
+    
+    <!-- 箭头 -->
+    <path d="M 1200 770 L 1200 810" stroke="#326DFF" stroke-width="2" fill="none"/>
+    <path d="M 1190 800 L 1200 810 L 1210 800" fill="#326DFF"/>
+    
+    <!-- 判断节点：异常处理 -->
+    <g transform="translate(1200, 880)">
+      <path d="M 0 -70 L 100 0 L 0 70 L -100 0 Z" fill="#326DFF"/>
+      <text x="0" y="-10" text-anchor="middle" class="text-label" font-size="14">库存充足?</text>
+    </g>
+    
+    <!-- 异常循环箭头 -->
+    <path d="M 1100 880 L 900 880 L 900 730 L 1030 730" stroke="#FF6B35" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+    <text x="950" y="870" class="text-sub" font-size="14" fill="#FF6B35" font-weight="600">否：重新审批</text>
+    <path d="M 1020 720 L 1030 730 L 1020 740" fill="#FF6B35"/>
+    
+    <!-- 正常流向 -->
+    <path d="M 1200 950 L 1200 990" stroke="#326DFF" stroke-width="2" fill="none"/>
+    <text x="1230" y="970" class="text-sub" font-size="14" fill="#326DFF" font-weight="600">是</text>
+    <path d="M 1190 980 L 1200 990 L 1210 980" fill="#326DFF"/>
+    
+    <!-- 结束节点 -->
+    <g transform="translate(1150, 1000)">
+      <circle cx="50" cy="30" r="30" fill="#326DFF"/>
+      <text x="50" y="37" text-anchor="middle" class="text-label" font-weight="600">完成</text>
+    </g>
+    
+    <!-- 底部说明 -->
+    <rect x="950" y="1050" width="500" height="80" rx="12" fill="#326DFF" opacity="0.9"/>
+    <text x="1200" y="1080" text-anchor="middle" fill="#FFFFFF" font-size="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-weight="600">可以编排应该怎么做</text>
+    <text x="1200" y="1110" text-anchor="middle" fill="#FFFFFF" font-size="16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif">支持分支、循环、异常处理</text>
+  </g>
+</svg>
+

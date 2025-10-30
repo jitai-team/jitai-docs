@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 1600 900" 
+     role="img"
+     aria-labelledby="complexity-title complexity-desc">
+  <title id="complexity-title">配置规则数量的指数级增长</title>
+  <desc id="complexity-desc">展示轻应用配置规则随时间的指数增长趋势：从上线第1个月的10条规则，到第18个月的300条规则，呈现指数级增长态势</desc>
+  
+  <!-- 样式定义 -->
+  <defs>
+    <style>
+      .bg { fill: #FFFFFF; }
+      .primary { fill: #326DFF; }
+      .warning { fill: #FF6B35; }
+      .text-dark { fill: #333333; }
+      .text-medium { fill: #6b7280; }
+      .text-main { 
+        fill: #333333; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+      }
+      .text-sub { 
+        fill: #6b7280; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 16px;
+      }
+      .text-small { 
+        fill: #6b7280; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 14px;
+      }
+      .axis { stroke: #9ca3af; stroke-width: 2; fill: none; }
+      .grid { stroke: #e5e7eb; stroke-width: 1; fill: none; }
+    </style>
+    
+    <!-- 渐变：蓝色到橙色 -->
+    <linearGradient id="curveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#326DFF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#5B8BFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF6B35;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 渐变填充 -->
+    <linearGradient id="areaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#326DFF;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#326DFF;stop-opacity:0.05" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1600" height="900" class="bg"/>
+  
+  <!-- 标题 -->
+  <text x="800" y="60" text-anchor="middle" class="text-main" font-size="28">配置规则数量的指数级增长</text>
+  
+  <!-- 图表区域 -->
+  <g id="chart" transform="translate(150, 120)">
+    <!-- 网格线 -->
+    <line x1="0" y1="150" x2="1200" y2="150" class="grid"/>
+    <line x1="0" y1="300" x2="1200" y2="300" class="grid"/>
+    <line x1="0" y1="450" x2="1200" y2="450" class="grid"/>
+    <line x1="0" y1="600" x2="1200" y2="600" class="grid"/>
+    
+    <!-- 坐标轴 -->
+    <line x1="0" y1="0" x2="0" y2="650" class="axis"/>
+    <line x1="0" y1="650" x2="1200" y2="650" class="axis"/>
+    
+    <!-- Y轴标签 -->
+    <text x="-30" y="5" text-anchor="end" class="text-small">350条</text>
+    <text x="-30" y="155" text-anchor="end" class="text-small">300条</text>
+    <text x="-30" y="305" text-anchor="end" class="text-small">200条</text>
+    <text x="-30" y="455" text-anchor="end" class="text-small">100条</text>
+    <text x="-30" y="605" text-anchor="end" class="text-small">50条</text>
+    <text x="-30" y="655" text-anchor="end" class="text-small">0条</text>
+    
+    <!-- X轴标签 -->
+    <text x="0" y="680" text-anchor="middle" class="text-small">第1个月</text>
+    <text x="400" y="680" text-anchor="middle" class="text-small">第6个月</text>
+    <text x="800" y="680" text-anchor="middle" class="text-small">第12个月</text>
+    <text x="1200" y="680" text-anchor="middle" class="text-small">第18个月</text>
+    
+    <!-- 曲线（指数增长） -->
+    <path d="M 0 600 
+             Q 200 580, 400 500
+             Q 600 380, 800 200
+             Q 1000 80, 1200 20" 
+          stroke="url(#curveGradient)" 
+          stroke-width="4" 
+          fill="none"
+          stroke-linecap="round"/>
+    
+    <!-- 曲线下方填充 -->
+    <path d="M 0 600 
+             Q 200 580, 400 500
+             Q 600 380, 800 200
+             Q 1000 80, 1200 20
+             L 1200 650 L 0 650 Z" 
+          fill="url(#areaGradient)"/>
+    
+    <!-- 数据点1：10条 -->
+    <circle cx="0" cy="600" r="10" fill="#326DFF" stroke="#FFFFFF" stroke-width="3"/>
+    <rect x="-50" y="540" width="100" height="50" rx="6" fill="#326DFF"/>
+    <text x="0" y="563" text-anchor="middle" fill="#FFFFFF" font-size="16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-weight="600">10条规则</text>
+    <text x="0" y="582" text-anchor="middle" fill="#FFFFFF" font-size="14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif">上线初期</text>
+    
+    <!-- 数据点2：45条 -->
+    <circle cx="400" cy="500" r="10" fill="#326DFF" stroke="#FFFFFF" stroke-width="3"/>
+    <rect x="340" y="440" width="120" height="50" rx="6" fill="#326DFF"/>
+    <text x="400" y="463" text-anchor="middle" fill="#FFFFFF" font-size="16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-weight="600">45条规则</text>
+    <text x="400" y="482" text-anchor="middle" fill="#FFFFFF" font-size="14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif">业务拓展期</text>
+    
+    <!-- 数据点3：120条 + 痛点标注 -->
+    <circle cx="800" cy="200" r="10" fill="#FF6B35" stroke="#FFFFFF" stroke-width="3"/>
+    <rect x="720" y="90" width="160" height="100" rx="8" fill="#FF6B35"/>
+    <text x="800" y="115" text-anchor="middle" fill="#FFFFFF" font-size="16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-weight="600">120条规则</text>
+    <text x="800" y="137" text-anchor="middle" fill="#FFFFFF" font-size="14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif">业务部门开始抱怨</text>
+    <text x="800" y="158" text-anchor="middle" fill="#FFFFFF" font-size="14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif">"配置太复杂"</text>
+    <text x="800" y="179" text-anchor="middle" fill="#FFFFFF" font-size="14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif">"谁也不敢改"</text>
+    
+    <!-- 数据点4：300条 + 痛点标注 -->
+    <circle cx="1200" cy="20" r="12" fill="#FF6B35" stroke="#FFFFFF" stroke-width="3"/>
+    <rect x="1050" y="-110" width="300" height="120" rx="8" fill="#FF6B35"/>
+    <text x="1200" y="-80" text-anchor="middle" fill="#FFFFFF" font-size="18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-weight="700">300条规则</text>
+    <text x="1200" y="-56" text-anchor="middle" fill="#FFFFFF" font-size="14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif">配置后台加载需要3秒</text>
+    <text x="1200" y="-37" text-anchor="middle" fill="#FFFFFF" font-size="14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif">新需求无法实现</text>
+    <text x="1200" y="-18" text-anchor="middle" fill="#FFFFFF" font-size="14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif">考虑迁移到新系统</text>
+    
+    <!-- 警示区域（从12个月开始） -->
+    <rect x="800" y="0" width="400" height="650" fill="#FF6B35" opacity="0.05"/>
+    <text x="1000" y="690" text-anchor="middle" class="text-small" fill="#FF6B35" font-weight="600">⚠ 系统进入危险期</text>
+  </g>
+  
+  <!-- 图例和说明 -->
+  <g id="legend" transform="translate(150, 820)">
+    <rect x="0" y="0" width="400" height="4" fill="url(#curveGradient)" rx="2"/>
+    <text x="420" y="6" class="text-sub">配置规则数量（条）</text>
+    
+    <circle cx="900" cy="2" r="8" fill="#326DFF" stroke="#FFFFFF" stroke-width="2"/>
+    <text x="920" y="6" class="text-sub">正常运行阶段</text>
+    
+    <circle cx="1150" cy="2" r="8" fill="#FF6B35" stroke="#FFFFFF" stroke-width="2"/>
+    <text x="1170" y="6" class="text-sub">痛点爆发阶段</text>
+  </g>
+</svg>
+

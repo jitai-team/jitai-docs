@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="title desc" viewBox="0 0 1600 900"><desc id="desc">展示JitAi的三层模块结构，将技术复杂度控制在Type层，让AI在Instance层工作</desc><defs><filter id="shadow" width="200%" height="200%" x="-50%" y="-50%"><feGaussianBlur in="SourceAlpha" stdDeviation="6"/><feOffset dy="3" result="offsetblur"/><feComponentTransfer><feFuncA slope=".15" type="linear"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter><style>.primary{fill:#326dff}.text-dark{fill:#333;font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,&quot;PingFang SC&quot;,&quot;Hiragino Sans GB&quot;,&quot;Microsoft YaHei&quot;,sans-serif}.text-medium{fill:#6b7280}.text-white{fill:#fff}</style></defs><path d="M0 0h1600v900H0z" style="fill:#f9fafb"/><text x="800" y="70" class="text-dark" font-size="36" font-weight="700" text-anchor="middle">
+    Meta/Type/Instance 三层架构
+  </text><text x="800" y="115" class="text-medium" font-size="18" text-anchor="middle">
+    将技术复杂度控制在Type层，让AI在Instance层高准确度工作
+  </text><g id="meta-layer" filter="url(#shadow)"><rect width="1400" height="160" x="100" y="180" fill="#E5E7EB" rx="12"/><circle cx="180" cy="260" r="40" fill="#6b7280"/><text x="180" y="275" class="text-white" font-size="32" text-anchor="middle">📋</text><text x="250" y="250" class="text-dark" font-size="28" font-weight="700">
+      Meta 层
+    </text><text x="250" y="285" class="text-medium" font-size="18">
+      定义领域和类别
+    </text><rect width="450" height="80" x="600" y="220" fill="#FFF" stroke="#9ca3af" stroke-width="2" rx="8"/><text x="630" y="250" class="text-medium" font-size="16" font-weight="600">
+      示例：
+    </text><text x="630" y="280" class="text-dark" font-size="18">
+      定义审批流程、数据报表等概念的领域归属
+    </text></g><path fill="none" stroke="#326DFF" stroke-width="4" marker-end="url(#arrow)" d="M800 360v40"/><text x="850" y="390" class="text-medium" font-size="14">封装实现</text><g id="type-layer" filter="url(#shadow)"><rect width="1400" height="160" x="100" y="420" fill="#8EAEFF" opacity=".3" rx="12"/><rect width="1400" height="160" x="100" y="420" fill="none" stroke="#326DFF" stroke-width="3" rx="12"/><circle cx="180" cy="500" r="40" class="primary"/><text x="180" y="515" class="text-white" font-size="32" text-anchor="middle">⚙️</text><text x="250" y="490" class="primary" font-size="28" font-weight="700">
+      Type 层
+    </text><text x="250" y="525" class="text-dark" font-size="18" font-weight="600">
+      封装技术实现，开放数量可控的配置项
+    </text>    <rect width="300" height="45" x="1150" y="478" fill="#FF6B35" rx="22"/><text x="1300" y="508" class="text-white" font-size="18" font-weight="700" text-anchor="middle">
+      🔒 技术复杂度封装在此
+    </text><rect width="450" height="80" x="600" y="460" fill="#FFF" stroke="#326DFF" stroke-width="2" rx="8"/><text x="630" y="490" class="primary" font-size="16" font-weight="600">
+      示例：
+    </text><text x="630" y="520" class="text-dark" font-size="18">
+      审批流程的通用实现逻辑、状态机、通知机制
+    </text></g><path fill="none" stroke="#326DFF" stroke-width="4" marker-end="url(#arrow)" d="M800 600v40"/><text x="850" y="630" class="text-medium" font-size="14">业务配置</text><g id="instance-layer" filter="url(#shadow)"><rect width="1400" height="160" x="100" y="660" fill="#8EAEFF" opacity=".15" rx="12"/><rect width="1400" height="160" x="100" y="660" fill="none" stroke="#326DFF" stroke-dasharray="8,4" stroke-width="2" rx="12"/><circle cx="180" cy="740" r="40" fill="#8EAEFF"/><text x="180" y="755" class="text-white" font-size="32" text-anchor="middle">🎯</text><text x="250" y="730" class="primary" font-size="28" font-weight="700">
+      Instance 层
+    </text><text x="250" y="765" class="text-dark" font-size="18" font-weight="600">
+      应用层的个性化业务配置
+    </text><rect width="300" height="45" x="1150" y="718" fill="#00C853" rx="22"/><text x="1300" y="748" class="text-white" font-size="18" font-weight="700" text-anchor="middle">
+      ✨ AI工作区域，准确度高
+    </text><rect width="450" height="80" x="600" y="700" fill="#FFF" stroke="#8EAEFF" stroke-width="2" rx="8"/><text x="630" y="730" font-size="16" font-weight="600" style="fill:#8eaeff">
+      示例：
+    </text><text x="630" y="760" class="text-dark" font-size="18">
+      具体的&quot;报销审批流程&quot;配置：审批人、金额阈值
+    </text></g>  <g id="value-proposition"><rect width="300" height="45" x="1150" y="238" fill="#8B5CF6" rx="22"/><text x="1300" y="268" class="text-white" font-size="18" font-weight="700" text-anchor="middle">
+      💡 降低复杂度·提升准确度
+    </text></g><defs><marker id="arrow" markerHeight="10" markerWidth="10" orient="auto" refX="8" refY="5"><path fill="#326DFF" d="m0 0 10 5-10 5z"/></marker></defs><text x="800" y="870" font-size="16" font-style="italic" style="fill:#9ca3af" text-anchor="middle">
+    颗粒度降低一个数量级 · 准确度提升也是数量级的
+  </text></svg>

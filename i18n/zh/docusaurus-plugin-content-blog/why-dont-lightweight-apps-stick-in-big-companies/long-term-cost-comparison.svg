@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 1600 900" 
+     role="img"
+     aria-labelledby="cost-title cost-desc">
+  <title id="cost-title">长期成本对比曲线</title>
+  <desc id="cost-desc">轻应用与工程化应用的36个月成本对比：轻应用前期投入低但后期成本急剧上升，工程化应用前期投入较高但后期稳定，36个月时轻应用总成本高出60%</desc>
+  
+  <!-- 样式定义 -->
+  <defs>
+    <style>
+      .bg { fill: #FFFFFF; }
+      .primary { fill: #326DFF; }
+      .warning { fill: #FF6B35; }
+      .text-dark { fill: #333333; }
+      .text-medium { fill: #6b7280; }
+      .text-main { 
+        fill: #333333; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .text-sub { 
+        fill: #6b7280; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 16px;
+      }
+      .text-small { 
+        fill: #6b7280; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 14px;
+      }
+      .axis { stroke: #9ca3af; stroke-width: 2; fill: none; }
+      .grid { stroke: #e5e7eb; stroke-width: 1; fill: none; }
+    </style>
+    
+    <!-- 渐变：轻应用曲线（橙色渐变） -->
+    <linearGradient id="lightweightGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF6B35;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#FF6B35;stop-opacity:0.6" />
+    </linearGradient>
+    
+    <!-- 渐变：工程化曲线（蓝色渐变） -->
+    <linearGradient id="engineeringGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#326DFF;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#326DFF;stop-opacity:0.4" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1600" height="900" class="bg"/>
+  
+  <!-- 标题 -->
+  <text x="800" y="60" text-anchor="middle" class="text-main" font-size="28">长期成本对比：轻应用 vs 工程化应用</text>
+  
+  <!-- 图表区域 -->
+  <g id="chart" transform="translate(150, 120)">
+    <!-- 网格线 -->
+    <line x1="0" y1="150" x2="1300" y2="150" class="grid"/>
+    <line x1="0" y1="300" x2="1300" y2="300" class="grid"/>
+    <line x1="0" y1="450" x2="1300" y2="450" class="grid"/>
+    <line x1="0" y1="600" x2="1300" y2="600" class="grid"/>
+    
+    <!-- 坐标轴 -->
+    <line x1="0" y1="0" x2="0" y2="650" class="axis"/>
+    <line x1="0" y1="650" x2="1300" y2="650" class="axis"/>
+    
+    <!-- Y轴标签 -->
+    <text x="-20" y="10" text-anchor="end" class="text-small">高</text>
+    <text x="-20" y="330" text-anchor="end" class="text-small">累计成本</text>
+    <text x="-20" y="655" text-anchor="end" class="text-small">低</text>
+    
+    <!-- X轴标签 -->
+    <text x="0" y="680" text-anchor="middle" class="text-small">0</text>
+    <text x="325" y="680" text-anchor="middle" class="text-small">6个月</text>
+    <text x="650" y="680" text-anchor="middle" class="text-small">12个月</text>
+    <text x="975" y="680" text-anchor="middle" class="text-small">18个月</text>
+    <text x="1300" y="680" text-anchor="middle" class="text-small">36个月</text>
+    
+    <!-- 轻应用曲线（前期低，12个月后急剧上升） -->
+    <path d="M 0 550 
+             Q 162 520, 325 480
+             Q 488 430, 650 380
+             Q 813 280, 975 180
+             Q 1138 80, 1300 20" 
+          stroke="#FF6B35" 
+          stroke-width="4" 
+          fill="none"
+          stroke-linecap="round"/>
+    
+    <!-- 轻应用曲线下方填充 -->
+    <path d="M 0 550 
+             Q 162 520, 325 480
+             Q 488 430, 650 380
+             Q 813 280, 975 180
+             Q 1138 80, 1300 20
+             L 1300 650 L 0 650 Z" 
+          fill="url(#lightweightGradient)" 
+          opacity="0.3"/>
+    
+    <!-- 工程化应用曲线（前期高，后续平稳增长） -->
+    <path d="M 0 450 
+             Q 162 400, 325 370
+             Q 488 350, 650 340
+             Q 813 330, 975 320
+             Q 1138 310, 1300 300" 
+          stroke="#326DFF" 
+          stroke-width="4" 
+          fill="none"
+          stroke-linecap="round"/>
+    
+    <!-- 工程化曲线下方填充 -->
+    <path d="M 0 450 
+             Q 162 400, 325 370
+             Q 488 350, 650 340
+             Q 813 330, 975 320
+             Q 1138 310, 1300 300
+             L 1300 650 L 0 650 Z" 
+          fill="url(#engineeringGradient)" 
+          opacity="0.3"/>
+    
+    <!-- 交叉点标注（12个月） -->
+    <circle cx="650" cy="360" r="8" fill="#6b7280" stroke="#FFFFFF" stroke-width="3"/>
+    <line x1="650" y1="360" x2="650" y2="280" stroke="#6b7280" stroke-width="2" stroke-dasharray="4,4"/>
+    <rect x="560" y="240" width="180" height="35" rx="6" fill="#6b7280"/>
+    <text x="650" y="263" text-anchor="middle" fill="#FFFFFF" font-size="16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif">12个月：成本持平</text>
+    
+    <!-- 轻应用终点标注 -->
+    <circle cx="1300" cy="20" r="10" fill="#FF6B35" stroke="#FFFFFF" stroke-width="3"/>
+    <rect x="1090" y="50" width="220" height="70" rx="8" fill="#FF6B35" opacity="0.95"/>
+    <text x="1200" y="75" text-anchor="middle" fill="#FFFFFF" font-size="16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-weight="600">轻应用</text>
+    <text x="1200" y="97" text-anchor="middle" fill="#FFFFFF" font-size="14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif">36个月：总成本高出</text>
+    <text x="1200" y="115" text-anchor="middle" fill="#FFFFFF" font-size="18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-weight="700">60%</text>
+    
+    <!-- 工程化应用终点标注 -->
+    <circle cx="1300" cy="300" r="10" fill="#326DFF" stroke="#FFFFFF" stroke-width="3"/>
+    <rect x="1090" y="320" width="220" height="50" rx="8" fill="#326DFF" opacity="0.95"/>
+    <text x="1200" y="345" text-anchor="middle" fill="#FFFFFF" font-size="16" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif" font-weight="600">工程化应用</text>
+    <text x="1200" y="365" text-anchor="middle" fill="#FFFFFF" font-size="14" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif">长期成本更优</text>
+    
+    <!-- 起点标注 -->
+    <circle cx="0" cy="550" r="8" fill="#FF6B35" stroke="#FFFFFF" stroke-width="3"/>
+    <circle cx="0" cy="450" r="8" fill="#326DFF" stroke="#FFFFFF" stroke-width="3"/>
+  </g>
+  
+  <!-- 图例 -->
+  <g id="legend" transform="translate(200, 820)">
+    <rect x="0" y="0" width="30" height="4" fill="#FF6B35" rx="2"/>
+    <text x="40" y="6" class="text-sub">轻应用：前期低、后期高，迁移成本巨大</text>
+    
+    <rect x="480" y="0" width="30" height="4" fill="#326DFF" rx="2"/>
+    <text x="520" y="6" class="text-sub">工程化应用：前期投入较高、长期稳定增长</text>
+  </g>
+</svg>
+

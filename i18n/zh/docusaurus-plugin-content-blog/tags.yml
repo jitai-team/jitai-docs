@@ -82,6 +82,10 @@ jitai:
   label: 前沿部署工程师
   description: 直接与客户合作，在真实业务环境中部署和定制复杂软件解决方案的工程师
 
+FDE:
+  label: FDE
+  description: Forward Deployed Engineer，前沿部署工程师的简称
+
 'low code':
   label: 低代码
   permalink: /low-code

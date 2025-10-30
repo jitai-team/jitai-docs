@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="dualTitle dualDesc">
+  <title id="dualTitle">可视化与代码双模式无缝切换</title>
+  <desc id="dualDesc">展示可视化编排模式和代码编程模式如何无缝切换、实时同步</desc>
+  
+  <defs>
+    <style>
+      .primary { fill: #326DFF; }
+      .primary-light { fill: #8EAEFF; }
+      .text-dark { fill: #333333; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .text-medium { fill: #6b7280; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .code-text { fill: #1f2937; font-family: "Monaco", monospace; font-size: 12px; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1600" height="900" fill="#F9FAFB"/>
+  
+  <!-- Title -->
+  <text x="800" y="50" text-anchor="middle" class="text-dark" font-size="28" font-weight="700">编排+编程：双模式无缝协同</text>
+  
+  <!-- Left: Visual Mode -->
+  <g id="visual-mode">
+    <rect x="50" y="100" width="650" height="550" rx="12" fill="white" stroke="#E5E7EB" stroke-width="2"/>
+    
+    <!-- Mode label -->
+    <rect x="50" y="100" width="650" height="50" rx="12" fill="#326DFF"/>
+    <text x="375" y="135" text-anchor="middle" fill="white" font-size="20" font-weight="700">可视化编排模式</text>
+    
+    <!-- Canvas area -->
+    <rect x="80" y="180" width="590" height="400" rx="8" fill="#F3F4F6"/>
+    
+    <!-- Visual components -->
+    <rect x="120" y="220" width="120" height="80" rx="8" fill="#326DFF" opacity="0.9"/>
+    <text x="180" y="270" text-anchor="middle" fill="white" font-size="14" font-weight="600">用户页面</text>
+    
+    <rect x="280" y="220" width="120" height="80" rx="8" fill="#8EAEFF" opacity="0.9"/>
+    <text x="340" y="270" text-anchor="middle" fill="white" font-size="14" font-weight="600">表单组件</text>
+    
+    <rect x="440" y="220" width="120" height="80" rx="8" fill="#8EAEFF" opacity="0.9"/>
+    <text x="500" y="270" text-anchor="middle" fill="white" font-size="14" font-weight="600">数据服务</text>
+    
+    <!-- Connection lines -->
+    <line x1="240" y1="260" x2="280" y2="260" stroke="#326DFF" stroke-width="3"/>
+    <line x1="400" y1="260" x2="440" y2="260" stroke="#326DFF" stroke-width="3"/>
+    
+    <!-- Lower components -->
+    <rect x="280" y="360" width="120" height="80" rx="8" fill="#326DFF" opacity="0.7"/>
+    <text x="340" y="410" text-anchor="middle" fill="white" font-size="14" font-weight="600">用户模型</text>
+    
+    <line x1="340" y1="300" x2="340" y2="360" stroke="#326DFF" stroke-width="3"/>
+    <line x1="500" y1="300" x2="340" y2="360" stroke="#326DFF" stroke-width="3"/>
+    
+    <!-- Component library sidebar -->
+    <rect x="80" y="480" width="150" height="80" rx="6" fill="#E0E7FF"/>
+    <text x="155" y="510" text-anchor="middle" class="text-dark" font-size="14" font-weight="600">组件库</text>
+    <rect x="100" y="525" width="30" height="20" rx="2" fill="#326DFF" opacity="0.6"/>
+    <rect x="140" y="525" width="30" height="20" rx="2" fill="#8EAEFF" opacity="0.6"/>
+    
+    <!-- Properties panel -->
+    <rect x="250" y="480" width="150" height="80" rx="6" fill="#E0E7FF"/>
+    <text x="325" y="510" text-anchor="middle" class="text-dark" font-size="14" font-weight="600">属性配置</text>
+    <line x1="270" y1="530" x2="380" y2="530" stroke="#6b7280" stroke-width="2"/>
+    <line x1="270" y1="545" x2="350" y2="545" stroke="#6b7280" stroke-width="2"/>
+    
+    <!-- Label -->
+    <text x="375" y="620" text-anchor="middle" class="primary" font-size="18" font-weight="700">结构编排：3-5倍效率提升</text>
+  </g>
+  
+  <!-- Center: Bidirectional sync -->
+  <g id="center-sync">
+    <!-- Right arrow -->
+    <line x1="720" y1="340" x2="850" y2="340" stroke="#326DFF" stroke-width="5"/>
+    <path d="M 830 330 L 850 340 L 830 350 Z" fill="#326DFF"/>
+    
+    <!-- Left arrow -->
+    <line x1="850" y1="400" x2="720" y2="400" stroke="#8EAEFF" stroke-width="5"/>
+    <path d="M 740 390 L 720 400 L 740 410 Z" fill="#8EAEFF"/>
+    
+    <!-- Sync icon -->
+    <circle cx="785" cy="370" r="45" fill="white" stroke="#326DFF" stroke-width="3"/>
+    <path d="M 770 355 Q 785 345, 800 355" stroke="#326DFF" stroke-width="3" fill="none"/>
+    <path d="M 800 385 Q 785 395, 770 385" stroke="#326DFF" stroke-width="3" fill="none"/>
+    <path d="M 798 352 L 805 345 L 798 338" stroke="#326DFF" stroke-width="2" fill="none"/>
+    <path d="M 772 388 L 765 395 L 772 402" stroke="#326DFF" stroke-width="2" fill="none"/>
+    
+    <!-- Text labels -->
+    <text x="785" y="300" text-anchor="middle" class="text-dark" font-size="18" font-weight="700">无缝切换</text>
+    <text x="785" y="450" text-anchor="middle" class="text-dark" font-size="18" font-weight="700">实时同步</text>
+  </g>
+  
+  <!-- Right: Code Mode -->
+  <g id="code-mode">
+    <rect x="900" y="100" width="650" height="550" rx="12" fill="white" stroke="#E5E7EB" stroke-width="2"/>
+    
+    <!-- Mode label -->
+    <rect x="900" y="100" width="650" height="50" rx="12" fill="#1f2937"/>
+    <text x="1225" y="135" text-anchor="middle" fill="white" font-size="20" font-weight="700">代码编程模式</text>
+    
+    <!-- Code editor -->
+    <rect x="930" y="180" width="590" height="400" rx="8" fill="#1f2937"/>
+    
+    <!-- Code content -->
+    <text x="950" y="215" class="code-text" fill="#8EAEFF">// 用户页面定义</text>
+    <text x="950" y="240" class="code-text" fill="#E0E7FF">const UserPage = {</text>
+    <text x="970" y="265" class="code-text" fill="#E0E7FF">  id: 'user-page',</text>
+    <text x="970" y="290" class="code-text" fill="#E0E7FF">  components: [</text>
+    <text x="990" y="315" class="code-text" fill="#FCD34D">    'user-form',</text>
+    <text x="990" y="340" class="code-text" fill="#FCD34D">    'data-service'</text>
+    <text x="970" y="365" class="code-text" fill="#E0E7FF">  ],</text>
+    <text x="970" y="390" class="code-text" fill="#E0E7FF">  model: 'UserModel',</text>
+    <text x="970" y="415" class="code-text" fill="#E0E7FF">  async handleSubmit(data) {</text>
+    <text x="990" y="440" class="code-text" fill="#A78BFA">    // 业务逻辑</text>
+    <text x="990" y="465" class="code-text" fill="#E0E7FF">    await this.save(data);</text>
+    <text x="990" y="490" class="code-text" fill="#E0E7FF">    return this.validate();</text>
+    <text x="970" y="515" class="code-text" fill="#E0E7FF">  }</text>
+    <text x="950" y="540" class="code-text" fill="#E0E7FF">};</text>
+    
+    <!-- Code toolbar -->
+    <rect x="930" y="480" width="180" height="80" rx="6" fill="#374151"/>
+    <text x="1020" y="510" text-anchor="middle" fill="white" font-size="14" font-weight="600">调试工具</text>
+    <circle cx="970" cy="535" r="8" fill="#10B981"/>
+    <text x="990" y="540" fill="white" font-size="12">运行</text>
+    <circle cx="1040" cy="535" r="8" fill="#EF4444"/>
+    <text x="1060" y="540" fill="white" font-size="12">停止</text>
+    
+    <!-- Version control -->
+    <rect x="1130" y="480" width="180" height="80" rx="6" fill="#374151"/>
+    <text x="1220" y="510" text-anchor="middle" fill="white" font-size="14" font-weight="600">版本控制</text>
+    <text x="1220" y="540" text-anchor="middle" fill="#9ca3af" font-size="12">git commit</text>
+    
+    <!-- Label -->
+    <text x="1225" y="620" text-anchor="middle" class="text-dark" font-size="18" font-weight="700">过程实现：精确控制</text>
+  </g>
+  
+  <!-- Bottom: Workflow timeline -->
+  <g id="workflow-timeline">
+    <rect x="100" y="700" width="1400" height="160" rx="12" fill="#EFF6FF" stroke="#326DFF" stroke-width="2"/>
+    
+    <text x="800" y="740" text-anchor="middle" class="text-dark" font-size="20" font-weight="700">协同工作流</text>
+    
+    <!-- Timeline -->
+    <line x1="200" y1="790" x2="1400" y2="790" stroke="#326DFF" stroke-width="3"/>
+    
+    <!-- Steps -->
+    <circle cx="300" cy="790" r="12" fill="#326DFF"/>
+    <text x="300" y="825" text-anchor="middle" class="text-medium" font-size="14">可视化创建</text>
+    <text x="300" y="840" text-anchor="middle" class="text-medium" font-size="14">架构</text>
+    
+    <circle cx="600" cy="790" r="12" fill="#8EAEFF"/>
+    <text x="600" y="825" text-anchor="middle" class="text-medium" font-size="14">代码实现</text>
+    <text x="600" y="840" text-anchor="middle" class="text-medium" font-size="14">业务逻辑</text>
+    
+    <circle cx="900" cy="790" r="12" fill="#326DFF"/>
+    <text x="900" y="825" text-anchor="middle" class="text-medium" font-size="14">可视化调整</text>
+    <text x="900" y="840" text-anchor="middle" class="text-medium" font-size="14">模块关系</text>
+    
+    <circle cx="1200" cy="790" r="12" fill="#8EAEFF"/>
+    <text x="1200" y="825" text-anchor="middle" class="text-medium" font-size="14">代码调试</text>
+    <text x="1200" y="840" text-anchor="middle" class="text-medium" font-size="14">完善功能</text>
+  </g>
+</svg>
+

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="title desc" viewBox="0 0 1600 800"><desc id="desc">展示OpenAI、Anthropic、Palantir等顶尖AI公司对Forward Deployed Engineer的需求快速增长</desc><defs><linearGradient id="blueGradient" x1="0%" x2="0%" y1="100%" y2="0%"><stop offset="0%" style="stop-color:#326dff;stop-opacity:.2"/><stop offset="100%" style="stop-color:#326dff;stop-opacity:.8"/></linearGradient><style>.primary{fill:#326dff}.text-dark{fill:#333;font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,&quot;PingFang SC&quot;,&quot;Hiragino Sans GB&quot;,&quot;Microsoft YaHei&quot;,sans-serif}.text-medium{fill:#6b7280}.text-white{fill:#fff}</style></defs><path d="M0 0h1600v800H0z" style="fill:#f9fafb"/><text x="800" y="70" class="text-dark" font-size="36" font-weight="700" text-anchor="middle">
+    FDE 招聘需求快速增长
+  </text><text x="800" y="110" class="text-medium" font-size="18" text-anchor="middle">
+    顶尖AI公司大量招聘Forward Deployed Engineers
+  </text><g id="company-logos"><g id="openai"><circle cx="350" cy="200" r="70" fill="#FFF" stroke="#E5E7EB" stroke-width="2"/><circle cx="350" cy="200" r="50" fill="#10A37F"/><text x="350" y="220" class="text-white" font-size="32" font-weight="700" text-anchor="middle">
+        O
+      </text><text x="350" y="300" class="text-dark" font-size="20" font-weight="700" text-anchor="middle">
+        OpenAI
+      </text><rect width="120" height="28" x="290" y="315" fill="#10A37F" rx="14"/><text x="350" y="335" class="text-white" font-size="14" font-weight="600" text-anchor="middle">
+        大量招聘
+      </text></g><g id="anthropic"><circle cx="800" cy="200" r="70" fill="#FFF" stroke="#E5E7EB" stroke-width="2"/><circle cx="800" cy="200" r="50" fill="#D97706"/><text x="800" y="220" class="text-white" font-size="32" font-weight="700" text-anchor="middle">
+        A
+      </text><text x="800" y="300" class="text-dark" font-size="20" font-weight="700" text-anchor="middle">
+        Anthropic
+      </text><rect width="120" height="28" x="740" y="315" fill="#D97706" rx="14"/><text x="800" y="335" class="text-white" font-size="14" font-weight="600" text-anchor="middle">
+        快速扩张
+      </text></g><g id="palantir"><circle cx="1250" cy="200" r="70" fill="#FFF" stroke="#E5E7EB" stroke-width="2"/><circle cx="1250" cy="200" r="50" fill="#1E40AF"/><text x="1250" y="220" class="text-white" font-size="32" font-weight="700" text-anchor="middle">
+        P
+      </text><text x="1250" y="300" class="text-dark" font-size="20" font-weight="700" text-anchor="middle">
+        Palantir
+      </text><rect width="120" height="28" x="1190" y="315" fill="#1E40AF" rx="14"/><text x="1250" y="335" class="text-white" font-size="14" font-weight="600" text-anchor="middle">
+        创始模式
+      </text></g></g><g id="trend-chart"><rect width="1200" height="300" x="200" y="400" fill="#FFF" stroke="#E5E7EB" stroke-width="2" rx="12"/><path stroke="#9ca3af" stroke-width="2" d="M250 450v220"/><text x="240" y="460" class="text-medium" font-size="14" text-anchor="end">高</text><text x="240" y="670" class="text-medium" font-size="14" text-anchor="end">低</text><text x="180" y="560" class="text-medium" font-size="16" font-weight="600" text-anchor="middle" transform="rotate(-90 180 560)">
+      招聘需求
+    </text><path stroke="#9ca3af" stroke-width="2" d="M250 670h1100"/><text x="450" y="695" class="text-medium" font-size="14" text-anchor="middle">2022</text><text x="700" y="695" class="text-medium" font-size="14" text-anchor="middle">2023</text><text x="950" y="695" class="text-medium" font-size="14" text-anchor="middle">2024</text><text x="1200" y="695" class="text-medium" font-size="14" text-anchor="middle">2025</text><text x="800" y="725" class="text-medium" font-size="16" font-weight="600" text-anchor="middle">
+      年份
+    </text><path fill="none" stroke="#326DFF" stroke-linecap="round" stroke-width="5" d="M280 620q220-70 420-140t620-50"/><path fill="url(#blueGradient)" d="M280 620q220-70 420-140t620-50v240H280Z" opacity=".5"/><circle cx="280" cy="620" r="8" class="primary"/><circle cx="700" cy="480" r="8" class="primary"/><circle cx="1120" cy="440" r="8" class="primary"/><circle cx="1320" cy="430" r="10" class="primary"/><rect width="280" height="100" x="1050" y="480" fill="#EEF2FD" stroke="#326DFF" stroke-width="2" rx="8"/><text x="1190" y="510" class="primary" font-size="18" font-weight="700" text-anchor="middle">
+      📈 持续高速增长
+    </text><text x="1190" y="540" class="text-dark" font-size="15" text-anchor="middle">
+      AI系统落地需求激增
+    </text><text x="1190" y="565" class="text-medium" font-size="14" text-anchor="middle">
+      企业需要快速交付能力
+    </text><defs><marker id="arrow-up" markerHeight="10" markerWidth="10" orient="auto" refX="5" refY="5"><path fill="#326DFF" d="m0 0 10 5-10 5z"/></marker></defs></g><g id="keywords"><rect width="1200" height="50" x="200" y="730" fill="#326DFF" opacity=".1" rx="25"/><text x="380" y="762" class="primary" font-size="16" font-weight="600" text-anchor="middle">
+      🎯 AI系统落地
+    </text><text x="650" y="762" class="primary" font-size="16" font-weight="600" text-anchor="middle">
+      ⚡ 规模化交付
+    </text><text x="920" y="762" class="primary" font-size="16" font-weight="600" text-anchor="middle">
+      🚀 快速部署
+    </text><text x="1180" y="762" class="primary" font-size="16" font-weight="600" text-anchor="middle">
+      💼 业务+技术
+    </text></g></svg>

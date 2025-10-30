@@ -1,0 +1,422 @@
+.stepsSection {
+  padding: var(--section-padding);
+  background: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--space-16);
+}
+
+.sectionHeader h2 {
+  color: var(--color-secondary) !important;
+}
+
+.stepsContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+/* 左侧标签页容器 */
+.tabsContainer {
+  flex: 0 0 400px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* 标签项 */
+.tabItem {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: var(--space-5) var(--space-6);
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color-light);
+  border-radius: var(--border-radius-card);
+  cursor: pointer;
+  transition: var(--transition-primary);
+  gap: var(--space-4);
+  box-shadow: var(--shadow-md);
+}
+
+.tabItem:hover {
+  border-color: var(--color-primary);
+  background: var(--bg-secondary);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.tabItem.tabActive {
+  border-color: var(--color-primary);
+  background: var(--bg-secondary);
+  box-shadow: var(--shadow-lg);
+}
+
+.tabNumber {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-primary);
+}
+
+/* .tabItem:hover .tabNumber {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+} */
+
+.tabItem.tabActive .tabNumber {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.tabContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.tabTitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+  line-height: 1.4;
+}
+
+.tabItem.tabActive .tabTitle {
+  color: var(--color-primary);
+}
+
+.tabDescription {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 右侧图片容器 */
+.imageContainer {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+}
+
+.stepImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius-card);
+  border: 1px solid var(--border-color-light);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: var(--space-8); */
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition-primary);
+}
+
+.stepImage {
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: var(--transition-primary);
+  border-radius: var(--border-radius-sm);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: white;
+  display: block;
+}
+
+.stepImagePlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  border-radius: var(--border-radius-sm);
+}
+
+.stepImagePlaceholder .stepIcon {
+  font-size: 80px;
+  opacity: 0.5;
+}
+
+.tipsBox {
+  max-width: 800px;
+  margin: 60px auto 0;
+  background: #e0e7ff;
+  border-radius: var(--border-radius-card);
+  padding: 32px 40px;
+  border: 1px solid var(--border-color);
+}
+
+.tipsTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tipsIcon {
+  font-size: 24px;
+}
+
+.tipsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.tipItem {
+  font-size: 15px;
+  color: var(--text-primary);
+  padding-left: 28px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.tipItem::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* 响应式设计 */
+@media (max-width: 968px) {
+  .stepsSection {
+    padding: var(--space-16) var(--space-6);
+  }
+
+  .sectionHeader {
+    margin-bottom: var(--space-12);
+  }
+
+  .stepsContainer {
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .tabsContainer {
+    flex: 1;
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: var(--space-3);
+    padding-bottom: var(--space-2);
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) var(--bg-secondary);
+  }
+
+  .tabsContainer::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .tabsContainer::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+    border-radius: 3px;
+  }
+
+  .tabsContainer::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+  }
+
+  .tabsContainer::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+  }
+
+  .tabItem {
+    flex: 0 0 280px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: var(--space-5);
+  }
+
+  .tabItem:hover {
+    transform: translateY(-2px);
+  }
+
+  .tabNumber {
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+  }
+
+  .tabContent {
+    width: 100%;
+  }
+
+  .tabTitle {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-1);
+  }
+
+  .tabDescription {
+    font-size: var(--font-size-xs);
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+  .imageContainer {
+    width: 100%;
+  }
+
+  .stepImageWrapper {
+    min-height: 400px;
+    padding: var(--space-6);
+  }
+
+  .stepImage {
+    max-height: 400px;
+  }
+
+  .stepImagePlaceholder {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stepsSection {
+    padding: var(--space-12) var(--space-4);
+  }
+
+  .sectionHeader {
+    margin-bottom: var(--space-8);
+  }
+
+  .stepsContainer {
+    gap: var(--space-4);
+  }
+
+  .tabsContainer {
+    gap: var(--space-2);
+    padding-bottom: var(--space-3);
+  }
+
+  .tabItem {
+    flex: 0 0 220px;
+    padding: var(--space-4) var(--space-3);
+    min-height: 100px;
+  }
+
+  .tabNumber {
+    width: 26px;
+    height: 26px;
+    font-size: 14px;
+  }
+
+  .tabTitle {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-1);
+  }
+
+  .tabDescription {
+    font-size: var(--font-size-xs);
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    line-height: 1.5;
+  }
+
+  .stepImageWrapper {
+    min-height: 300px;
+    padding: var(--space-4);
+  }
+
+  .stepImage {
+    max-height: 300px;
+  }
+
+  .stepImagePlaceholder {
+    min-height: 300px;
+  }
+
+  .stepImagePlaceholder .stepIcon {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stepsSection {
+    padding: var(--space-8) var(--space-3);
+  }
+
+  .tabsContainer {
+    gap: var(--space-2);
+  }
+
+  .tabItem {
+    flex: 0 0 180px;
+    padding: var(--space-3);
+    min-height: 90px;
+  }
+
+  .tabNumber {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+    border-width: 1.5px;
+  }
+
+  .tabTitle {
+    font-size: var(--font-size-xs);
+  }
+
+  .tabDescription {
+    font-size: 11px;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+  .stepImageWrapper {
+    min-height: 250px;
+    padding: var(--space-3);
+  }
+
+  .stepImage {
+    max-height: 250px;
+  }
+
+  .stepImagePlaceholder {
+    min-height: 250px;
+  }
+
+  .stepImagePlaceholder .stepIcon {
+    font-size: 50px;
+  }
+}
+

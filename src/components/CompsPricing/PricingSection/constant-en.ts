@@ -156,7 +156,7 @@ const CONTENT = {
     teamIdPattern: /^[a-z][a-z0-9]{3,19}$/,
     teamIdPatternMessage: 'Please enter 4-20 characters of lowercase letters and numbers starting with lowercase letter',
     teamIdHelpText: 'How to get?',
-    teamIdHelpLink: '/docs/devguide/installation-activation/developer-team-management#view-and-refresh-team-bind-code',
+    teamIdHelpLink: '/docs/devguide/installation-activation/developer-team-management#view-team-id',
     teamTitleLabel: 'Developer Team Title',
     teamTitlePlaceholder: 'Enter developer team title',
     purchasePlanTitle: 'Purchase Plan',

@@ -155,7 +155,7 @@ const CONTENT = {
     teamIdPattern: /^[a-z][a-z0-9]{3,19}$/,
     teamIdPatternMessage: '请输入4-20个字符，以小写字母开头，只能包含小写字母和数字',
     teamIdHelpText: '如何获取？',
-    teamIdHelpLink: '/docs/devguide/installation-activation/developer-team-management#view-and-refresh-team-bind-code',
+    teamIdHelpLink: '/zh/docs/devguide/installation-activation/developer-team-management#view-team-id',
     teamTitleLabel: '开发者团队名称',
     teamTitlePlaceholder: '请输入开发者团队名称',
     purchasePlanTitle: '购买方案',

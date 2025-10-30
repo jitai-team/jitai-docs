@@ -21,7 +21,7 @@ const PRICING_PLANS: PricingPlan[] = [
   {
     id: 'free',
     title: '桌面基础版许可证',
-    subtitle: '注册即得 3 个',
+    subtitle: '注册即送 3 个',
     icon: '🖥️',
     isShowPriceUnit: false,
     customPayActionText: '下载',

@@ -6,7 +6,7 @@
   --aspect-ratio: 16/9;
 }
 
-:root[lang="zh-CN"] {
+:root[lang="zh"] {
   --module-card-width: 250px;
   --module-desc-line-clamp: 2;
   --aspect-ratio: 16/10;

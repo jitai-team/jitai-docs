@@ -153,6 +153,11 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                     </button>
                 </div>
 
+                {/* 移动端语言切换器 - 显示在汉堡菜单按钮左侧 */}
+                <div className={styles.mobileTopLanguageSwitcher}>
+                    <LanguageSwitcher />
+                </div>
+
                 {/* 移动端汉堡菜单按钮 */}
                 <button
                     className={`${styles.mobileMenuButton} ${
@@ -189,9 +194,6 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                                 </button>
                             );
                         })}
-                        <div className={styles.mobileLanguageSwitcher}>
-                            <LanguageSwitcher />
-                        </div>
                     </div>
                 </div>
 

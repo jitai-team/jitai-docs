@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" role="img" aria-labelledby="depTitle depDesc">
+  <title id="depTitle">依赖关系混乱vs可视化对比</title>
+  <desc id="depDesc">对比传统开发中隐藏在代码中的混乱依赖关系与编排开发中清晰可视的架构结构</desc>
+  
+  <defs>
+    <style>
+      .primary { fill: #326DFF; }
+      .primary-light { fill: #8EAEFF; }
+      .text-dark { fill: #333333; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .text-medium { fill: #6b7280; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .chaos-module { fill: #D1D5DB; }
+      .chaos-line { stroke: #9ca3af; stroke-width: 1; opacity: 0.3; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1600" height="1200" fill="#F9FAFB"/>
+  
+  <!-- Left Side: Traditional Chaos -->
+  <g id="traditional-chaos">
+    <rect x="40" y="40" width="740" height="1120" rx="12" fill="white" stroke="#E5E7EB" stroke-width="2"/>
+    
+    <!-- Title -->
+    <text x="410" y="100" text-anchor="middle" class="text-dark" font-size="24" font-weight="700">传统开发</text>
+    <text x="410" y="135" text-anchor="middle" class="text-medium" font-size="18">依赖关系隐藏在代码中</text>
+    
+    <!-- Many small modules in chaos -->
+    <g id="chaos-modules">
+      <!-- Generate a grid of small rectangles representing modules -->
+      <rect x="80" y="180" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="110" y="180" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="140" y="185" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="170" y="180" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="200" y="190" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="230" y="180" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="260" y="185" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="290" y="180" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="320" y="190" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="350" y="180" width="15" height="15" rx="2" class="chaos-module"/>
+      
+      <rect x="90" y="220" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="120" y="215" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="150" y="220" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="180" y="225" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="210" y="220" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="240" y="215" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="270" y="220" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="300" y="225" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="330" y="220" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="360" y="215" width="15" height="15" rx="2" class="chaos-module"/>
+      
+      <!-- More rows... -->
+      <rect x="85" y="260" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="115" y="255" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="145" y="260" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="175" y="265" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="205" y="260" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="235" y="255" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="265" y="260" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="295" y="265" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="325" y="260" width="15" height="15" rx="2" class="chaos-module"/>
+      <rect x="355" y="255" width="15" height="15" rx="2" class="chaos-module"/>
+    </g>
+    
+    <!-- Chaotic dependency lines -->
+    <line x1="87" y1="187" x2="147" y2="192" class="chaos-line"/>
+    <line x1="117" y1="187" x2="207" y2="197" class="chaos-line"/>
+    <line x1="147" y1="192" x2="177" y2="187" class="chaos-line"/>
+    <line x1="177" y1="187" x2="267" y2="192" class="chaos-line"/>
+    <line x1="207" y1="197" x2="297" y2="187" class="chaos-line"/>
+    <line x1="237" y1="187" x2="357" y2="187" class="chaos-line"/>
+    <line x1="267" y1="192" x2="97" y2="227" class="chaos-line"/>
+    <line x1="297" y1="187" x2="127" y2="222" class="chaos-line"/>
+    <line x1="327" y1="197" x2="157" y2="227" class="chaos-line"/>
+    <line x1="357" y1="187" x2="187" y2="232" class="chaos-line"/>
+    <line x1="97" y1="227" x2="217" y2="227" class="chaos-line"/>
+    <line x1="127" y1="222" x2="247" y2="222" class="chaos-line"/>
+    <line x1="157" y1="227" x2="277" y2="227" class="chaos-line"/>
+    <line x1="187" y1="232" x2="307" y2="232" class="chaos-line"/>
+    <line x1="217" y1="227" x2="337" y2="227" class="chaos-line"/>
+    <line x1="247" y1="222" x2="367" y2="222" class="chaos-line"/>
+    <line x1="277" y1="227" x2="92" y2="267" class="chaos-line"/>
+    <line x1="307" y1="232" x2="122" y2="262" class="chaos-line"/>
+    <line x1="337" y1="227" x2="152" y2="267" class="chaos-line"/>
+    
+    <!-- Label "200+ modules" -->
+    <text x="220" y="320" text-anchor="middle" class="text-medium" font-size="16" font-weight="600">200+模块散落在代码中</text>
+    
+    <!-- Magnifying glass showing code -->
+    <circle cx="410" cy="480" r="120" fill="white" stroke="#9ca3af" stroke-width="4"/>
+    <line x1="500" y1="570" x2="580" y2="650" stroke="#9ca3af" stroke-width="8" stroke-linecap="round"/>
+    
+    <!-- Code snippet inside magnifying glass -->
+    <text x="350" y="450" font-family="Monaco, monospace" font-size="12" fill="#6b7280">import { A } from './a';</text>
+    <text x="350" y="470" font-family="Monaco, monospace" font-size="12" fill="#6b7280">import { B } from './b';</text>
+    <text x="350" y="490" font-family="Monaco, monospace" font-size="12" fill="#6b7280">import { C } from './c';</text>
+    <text x="350" y="510" font-family="Monaco, monospace" font-size="12" fill="#6b7280">import { D } from './d';</text>
+    
+    <!-- Stats box -->
+    <rect x="100" y="780" width="620" height="120" rx="8" fill="#FEF2F2" stroke="#DC2626" stroke-width="2"/>
+    <text x="410" y="825" text-anchor="middle" class="text-dark" font-size="20" font-weight="700">传统开发困境</text>
+    <text x="410" y="855" text-anchor="middle" class="text-medium" font-size="16">200+模块，500+文件</text>
+    <text x="410" y="880" text-anchor="middle" class="text-medium" font-size="16">理解架构全貌：需要2-3周</text>
+  </g>
+  
+  <!-- Right Side: Visual Clarity -->
+  <g id="visual-clarity">
+    <rect x="820" y="40" width="740" height="1120" rx="12" fill="white" stroke="#E5E7EB" stroke-width="2"/>
+    
+    <!-- Title -->
+    <text x="1190" y="100" text-anchor="middle" class="text-dark" font-size="24" font-weight="700">编排开发</text>
+    <text x="1190" y="135" text-anchor="middle" class="text-medium" font-size="18">结构可视化</text>
+    
+    <!-- Clear hierarchical structure -->
+    <g id="clear-structure">
+      <!-- Top level -->
+      <rect x="1040" y="200" width="120" height="80" rx="8" class="primary" opacity="0.9"/>
+      <text x="1100" y="250" text-anchor="middle" fill="white" font-size="16" font-weight="600">门户</text>
+      
+      <rect x="1220" y="200" width="120" height="80" rx="8" class="primary" opacity="0.9"/>
+      <text x="1280" y="250" text-anchor="middle" fill="white" font-size="16" font-weight="600">页面层</text>
+      
+      <!-- Arrows -->
+      <line x1="1100" y1="280" x2="1100" y2="340" stroke="#326DFF" stroke-width="3"/>
+      <path d="M 1095 330 L 1100 340 L 1105 330" fill="#326DFF"/>
+      
+      <line x1="1280" y1="280" x2="1280" y2="340" stroke="#326DFF" stroke-width="3"/>
+      <path d="M 1275 330 L 1280 340 L 1285 330" fill="#326DFF"/>
+      
+      <!-- Second level -->
+      <rect x="990" y="350" width="110" height="70" rx="8" class="primary-light" opacity="0.9"/>
+      <text x="1045" y="395" text-anchor="middle" fill="white" font-size="14" font-weight="600">组件A</text>
+      
+      <rect x="1130" y="350" width="110" height="70" rx="8" class="primary-light" opacity="0.9"/>
+      <text x="1185" y="395" text-anchor="middle" fill="white" font-size="14" font-weight="600">组件B</text>
+      
+      <rect x="1270" y="350" width="110" height="70" rx="8" class="primary-light" opacity="0.9"/>
+      <text x="1325" y="395" text-anchor="middle" fill="white" font-size="14" font-weight="600">服务层</text>
+      
+      <!-- Arrows -->
+      <line x1="1045" y1="420" x2="1140" y2="490" stroke="#8EAEFF" stroke-width="3"/>
+      <line x1="1185" y1="420" x2="1140" y2="490" stroke="#8EAEFF" stroke-width="3"/>
+      <line x1="1325" y1="420" x2="1240" y2="490" stroke="#8EAEFF" stroke-width="3"/>
+      
+      <!-- Third level -->
+      <rect x="1070" y="500" width="140" height="70" rx="8" class="primary" opacity="0.7"/>
+      <text x="1140" y="545" text-anchor="middle" fill="white" font-size="14" font-weight="600">业务逻辑</text>
+      
+      <rect x="1230" y="500" width="140" height="70" rx="8" class="primary" opacity="0.7"/>
+      <text x="1300" y="545" text-anchor="middle" fill="white" font-size="14" font-weight="600">数据访问</text>
+      
+      <!-- Arrows -->
+      <line x1="1140" y1="570" x2="1190" y2="640" stroke="#326DFF" stroke-width="3"/>
+      <line x1="1300" y1="570" x2="1190" y2="640" stroke="#326DFF" stroke-width="3"/>
+      
+      <!-- Bottom level -->
+      <rect x="1120" y="650" width="140" height="70" rx="8" class="primary" opacity="0.6"/>
+      <text x="1190" y="695" text-anchor="middle" fill="white" font-size="14" font-weight="600">数据库</text>
+    </g>
+    
+    <!-- Eye icon -->
+    <ellipse cx="940" cy="600" rx="50" ry="35" fill="none" stroke="#326DFF" stroke-width="5"/>
+    <circle cx="940" cy="600" r="18" class="primary"/>
+    <text x="940" y="670" text-anchor="middle" class="text-medium" font-size="16">一目了然</text>
+    
+    <!-- Stats box -->
+    <rect x="880" y="780" width="620" height="120" rx="8" fill="#F0FDF4" stroke="#16A34A" stroke-width="2"/>
+    <text x="1190" y="825" text-anchor="middle" class="text-dark" font-size="20" font-weight="700">编排开发优势</text>
+    <text x="1190" y="855" text-anchor="middle" class="text-medium" font-size="16">可视化架构，清晰分层</text>
+    <text x="1190" y="880" text-anchor="middle" class="text-medium" font-size="16">理解架构全貌：只需2-3小时</text>
+  </g>
+  
+  <!-- Bottom summary -->
+  <rect x="200" y="1000" width="1200" height="160" rx="12" fill="#EFF6FF" stroke="#326DFF" stroke-width="3"/>
+  <text x="800" y="1060" text-anchor="middle" class="text-dark" font-size="28" font-weight="700">效率对比：从2-3周降到2-3小时</text>
+  <text x="800" y="1100" text-anchor="middle" class="primary" font-size="32" font-weight="700">架构清晰度提升10倍</text>
+  <text x="800" y="1140" text-anchor="middle" class="text-medium" font-size="18">可视化编排让系统结构一目了然</text>
+</svg>
+

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: AppResource
+description: "AppResource API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # AppResource

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: custom-controls
+description: "Develop custom form controls and input components. Extend built-in controls with specialized input functionality."
 ---
 
 import Tabs from '@theme/Tabs';

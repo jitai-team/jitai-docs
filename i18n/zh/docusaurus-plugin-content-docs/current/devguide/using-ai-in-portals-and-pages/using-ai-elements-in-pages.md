@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: using-ai-elements-in-pages
+description: "在页面中使用AI元素的详细指南和说明。"
 ---
 
 # 在页面中使用AI元素

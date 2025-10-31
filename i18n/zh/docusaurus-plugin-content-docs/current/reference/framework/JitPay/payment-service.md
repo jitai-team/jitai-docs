@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: payment-service
+description: "支付服务 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # 支付服务

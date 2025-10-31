@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: page-customization
+description: "页面定制的详细指南和说明。"
 ---
 
 import Tabs from '@theme/Tabs';
@@ -148,7 +149,7 @@ export const Render = () =>{
 
 更多内置包，请查看[系统内置包一览表](#system-built-in-package-overview)。
 
-### 内嵌已有常规页面 {#embed-existing-regular-page}
+### 内嵌已有常规页面 {#embed-existing-generic-page}
 在全代码页面中复用已有的常规页面，可以减少重复开发，提高代码复用性。下图展示了全代码页面与内嵌常规页面的交互示例。
 
 ![全代码页面内嵌页面](./img/full-code-page-embedded-page.gif)

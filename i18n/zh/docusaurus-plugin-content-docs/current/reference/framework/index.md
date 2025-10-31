@@ -1,5 +1,6 @@
 ---
 sidebar_position: 0
+description: "开发框架概述 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # 开发框架概述

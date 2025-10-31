@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: Element
+description: "Python中访问和操作元素的后端Element对象API。包含属性、方法和使用示例。"
 ---
 
 # Element

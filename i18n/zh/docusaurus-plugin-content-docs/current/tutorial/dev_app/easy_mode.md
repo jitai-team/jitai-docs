@@ -2,6 +2,7 @@
 sidebar_position: 1
 title: 用简易模式搭建题库管理
 slug: easy_mode
+description: "3步构建带CRUD操作的AI数据管理系统。适合初学者和常见业务场景的快速开发。"
 ---
 
 # 用简易模式搭建题库管理

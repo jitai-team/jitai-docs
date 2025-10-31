@@ -1,7 +1,8 @@
 ---
 slug: custom-events
+description: "自定义事件 API 参考文档。完整的规格说明、方法和示例。"
 ---
-# 自定义事件 {#custom-events}
+# 自定义事件
 自定义事件由开发者在服务元素中根据需要自由定义，并在业务逻辑代码中进行触发，为事件驱动型的系统开发提供足够的灵活度。
 
 自定义事件元素分层结构为Meta（events.Meta） → Type（events.NormalType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建自定义事件实例元素。

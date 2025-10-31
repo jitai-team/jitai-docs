@@ -1,5 +1,8 @@
 ---
 slug: button
+title: "Button Reference"
+sidebar_label: "Button"
+description: "Button component API reference. Complete configuration options, event handlers, and programmatic usage for operation buttons."
 ---
 # Button
 The button is a basic interactive component responsible for triggering various operations and events. It implements user interaction functionality based on Ant Design Button component, supporting multiple button styles, status display, permission control, and conditional display, providing asynchronous operation and loading state feedback capabilities.

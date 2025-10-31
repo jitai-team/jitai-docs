@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: calling-other-elements-in-service-functions
+description: "Call data models, services, AI elements, and other business elements from service functions. Inter-element communication patterns."
 ---
 
 # Calling Elements in Service Functions

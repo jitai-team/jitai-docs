@@ -1,5 +1,8 @@
 ---
 slug: payment
+title: "Payment Reference"
+description: "Payment Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Payment"
 ---
 # Payment
 A payment operation component that implements multi-platform payment functionality based on unified payment interfaces. It handles order creation, payment process management, and status monitoring, supporting Alipay and WeChat Pay platforms, providing complete payment lifecycle management.

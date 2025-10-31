@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: App
+description: "JavaScript开发者的前端App对象API参考。学习访问应用属性和管理前端元素。"
 ---
 
 import Tabs from '@theme/Tabs';

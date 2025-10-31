@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: calling-page-and-component-functions-in-fullcode-components
+description: "在全代码组件中调用页面和组件函数的详细指南和说明。"
 ---
 
 # 在全代码组件中调用页面和组件函数

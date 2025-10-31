@@ -1,7 +1,8 @@
 ---
 slug: cloudflare-r2-storage
+description: "Cloudflare R2存储 API 参考文档。完整的规格说明、方法和示例。"
 ---
-# Cloudflare R2存储 {#cloudflare-r2-storage}
+# Cloudflare R2存储
 Cloudflare R2存储是面向高性能边缘云存储的Type元素，基于Cloudflare R2对象存储服务实现全球分布式数据存储、零出站费用和企业级性能优化。它提供标准化的文件上传、下载、删除操作，兼容S3 API接口，具有出色的成本效益和全球访问性能。
 
 Cloudflare R2存储元素分层结构为Meta（storages.Meta） → Type（storages.CloudflareR2Type） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建Cloudflare R2存储实例元素。

@@ -1,6 +1,9 @@
 ---
 sidebar_position: 1
 slug: Node
+title: "Node Reference"
+description: "Node Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Node"
 ---
 
 # Node

@@ -1,6 +1,9 @@
 ---
 sidebar_position: 6
 slug: agent-events
+title: "Agent Events Reference"
+description: "Agent Events Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Agent Events"
 ---
 
 # Agent Events

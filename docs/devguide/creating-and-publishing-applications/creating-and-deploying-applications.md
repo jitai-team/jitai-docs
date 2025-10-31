@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: creating-and-deploying-applications
+description: "Create and deploy JitAi applications following JAAP specifications. Application structure, elements, and deployment across runtime environments."
 ---
 
 # Creating and Deploying Applications

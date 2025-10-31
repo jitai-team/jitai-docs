@@ -1,5 +1,6 @@
 ---
 slug: global-styles
+description: "全局样式 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 全局样式
 全局样式是基于Ant Design Design Token体系的样式配置系统，负责统一管理应用的视觉设计规范。它通过标准化的设计令牌（Design Token）控制字体、颜色、圆角、阴影等视觉元素，确保整个应用界面的一致性和可维护性。

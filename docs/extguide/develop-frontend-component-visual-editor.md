@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: develop-frontend-component-visual-editor
+description: "Build visual editors for UI component Type elements. Enable drag-and-drop configuration with property panels for frontend components."
 ---
 
 # Developing Visual Editors for UI Component Type Elements

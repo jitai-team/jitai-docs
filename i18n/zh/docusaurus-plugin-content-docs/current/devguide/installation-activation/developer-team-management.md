@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: developer-team-management
+description: "节点激活与开发者团队的详细指南和说明。"
 ---
 
 # 节点激活与开发者团队
@@ -40,6 +41,10 @@ Jit节点（即JitNode）是运行在操作系统上的一个应用程序（支�
 ![输入团队邀请码加入并绑定](./img/enter-team-binding-code-join-and-bind.png)
 
 用户输入团队邀请码后点击`加入团队`即可，用户自动成为该团队普通成员。
+
+## 查看团队ID {#view-team-id}
+任意团队成员都可以在团队管理页面中查看团队名称和团队ID。
+![查看团队ID](./img/view-team-id.png)
 
 ## 查看和刷新团队邀请码 {#view-and-refresh-team-bind-code}
 任意团队成员都可以在团队管理页面中查看和刷新团队邀请码。

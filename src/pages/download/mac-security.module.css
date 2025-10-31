@@ -1,0 +1,16 @@
+/* Mac Security Page Styles - 遵循统一设计规范 */
+
+.container {
+  min-height: 100vh;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: var(--section-padding);
+}

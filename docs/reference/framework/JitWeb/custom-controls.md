@@ -1,5 +1,8 @@
 ---
 slug: custom-controls
+title: "Custom Controls Reference"
+description: "Custom Controls Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Custom Controls"
 ---
 # Custom Controls
 

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: emitting-events
+description: "Emit events from fullcode components. Custom event handling and communication between components and pages."
 ---
 
 # Publishing and Subscribing Events

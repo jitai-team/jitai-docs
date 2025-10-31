@@ -1,6 +1,9 @@
 ---
 sidebar_position: 1
 slug: Element
+title: "Element Reference"
+sidebar_label: "Element"
+description: "Backend Element object API for accessing and manipulating elements in Python. Properties, methods, and usage examples included."
 ---
 
 # Element

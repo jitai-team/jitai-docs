@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" role="img" aria-labelledby="quadTitle quadDesc">
+  <title id="quadTitle">可视化在结构-过程象限中的正确定位</title>
+  <desc id="quadDesc">展示可视化应该在结构层面发挥作用，而不是替代编程处理复杂过程逻辑</desc>
+  
+  <defs>
+    <style>
+      .primary { fill: #326DFF; }
+      .primary-light { fill: #8EAEFF; }
+      .text-dark { fill: #333333; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .text-medium { fill: #6b7280; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .axis { stroke: #374151; stroke-width: 3; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1600" height="1200" fill="#F9FAFB"/>
+  
+  <!-- Title -->
+  <text x="800" y="80" text-anchor="middle" class="text-dark" font-size="32" font-weight="700">可视化的正确定位</text>
+  
+  <!-- Axes -->
+  <line x1="800" y1="200" x2="800" y2="1000" class="axis"/>
+  <line x1="200" y1="600" x2="1400" y2="600" class="axis"/>
+  
+  <!-- Arrow heads -->
+  <path d="M 790 210 L 800 200 L 810 210 Z" fill="#374151"/>
+  <path d="M 1390 590 L 1400 600 L 1390 610 Z" fill="#374151"/>
+  
+  <!-- Axis labels -->
+  <text x="800" y="180" text-anchor="middle" class="text-dark" font-size="20" font-weight="700">复杂</text>
+  <text x="800" y="1040" text-anchor="middle" class="text-dark" font-size="20" font-weight="700">简单</text>
+  <text x="170" y="610" text-anchor="end" class="text-dark" font-size="20" font-weight="700">结构</text>
+  <text x="1430" y="610" text-anchor="start" class="text-dark" font-size="20" font-weight="700">过程</text>
+  
+  <!-- Quadrant 1: Top-Left (Structure + Complex) - HIGHLIGHT -->
+  <rect x="200" y="200" width="600" height="400" fill="#326DFF" opacity="0.15" stroke="#326DFF" stroke-width="4"/>
+  <text x="500" y="280" text-anchor="middle" class="primary" font-size="28" font-weight="700">编排最适合</text>
+  <text x="500" y="320" text-anchor="middle" class="text-dark" font-size="18" font-weight="600">可视化编排</text>
+  <text x="500" y="350" text-anchor="middle" class="text-medium" font-size="16">• 系统架构设计</text>
+  <text x="500" y="380" text-anchor="middle" class="text-medium" font-size="16">• 模块关系管理</text>
+  <text x="500" y="410" text-anchor="middle" class="text-medium" font-size="16">• 依赖结构梳理</text>
+  <text x="500" y="440" text-anchor="middle" class="text-medium" font-size="16">• 架构可视化</text>
+  
+  <!-- Icon for orchestration -->
+  <g transform="translate(420, 470)">
+    <rect x="0" y="0" width="40" height="30" rx="4" fill="#326DFF" opacity="0.8"/>
+    <rect x="50" y="0" width="40" height="30" rx="4" fill="#8EAEFF" opacity="0.8"/>
+    <rect x="100" y="0" width="40" height="30" rx="4" fill="#326DFF" opacity="0.8"/>
+    <line x1="20" y1="30" x2="70" y2="50" stroke="#326DFF" stroke-width="2"/>
+    <line x1="70" y1="30" x2="70" y2="50" stroke="#326DFF" stroke-width="2"/>
+    <line x1="120" y1="30" x2="70" y2="50" stroke="#326DFF" stroke-width="2"/>
+    <rect x="50" y="50" width="40" height="30" rx="4" fill="#326DFF" opacity="0.8"/>
+  </g>
+  
+  <!-- Quadrant 2: Top-Right (Process + Complex) -->
+  <rect x="800" y="200" width="600" height="400" fill="#E5E7EB" opacity="0.3" stroke="#9ca3af" stroke-width="2"/>
+  <text x="1100" y="280" text-anchor="middle" class="text-dark" font-size="28" font-weight="700">编程最适合</text>
+  <text x="1100" y="320" text-anchor="middle" class="text-dark" font-size="18" font-weight="600">代码实现</text>
+  <text x="1100" y="350" text-anchor="middle" class="text-medium" font-size="16">• 复杂业务逻辑</text>
+  <text x="1100" y="380" text-anchor="middle" class="text-medium" font-size="16">• 算法实现</text>
+  <text x="1100" y="410" text-anchor="middle" class="text-medium" font-size="16">• 性能优化</text>
+  <text x="1100" y="440" text-anchor="middle" class="text-medium" font-size="16">• 精确控制流程</text>
+  
+  <!-- Icon for programming -->
+  <g transform="translate(1020, 470)">
+    <path d="M 20 10 L 40 30 L 20 50" stroke="#6b7280" stroke-width="3" fill="none"/>
+    <path d="M 60 10 L 40 30 L 60 50" stroke="#6b7280" stroke-width="3" fill="none"/>
+    <text x="90" y="35" font-family="Monaco" font-size="24" fill="#6b7280">{}</text>
+  </g>
+  
+  <!-- Quadrant 3: Bottom-Left (Structure + Simple) -->
+  <rect x="200" y="600" width="600" height="400" fill="#E5E7EB" opacity="0.2" stroke="#D1D5DB" stroke-width="2"/>
+  <text x="500" y="720" text-anchor="middle" class="text-dark" font-size="24" font-weight="700">配置即可</text>
+  <text x="500" y="760" text-anchor="middle" class="text-medium" font-size="16">• 简单页面布局</text>
+  <text x="500" y="790" text-anchor="middle" class="text-medium" font-size="16">• 基础数据绑定</text>
+  <text x="500" y="820" text-anchor="middle" class="text-medium" font-size="16">• 表单配置</text>
+  
+  <!-- Icon for config -->
+  <circle cx="500" cy="880" r="30" fill="none" stroke="#9ca3af" stroke-width="3"/>
+  <line x1="485" y1="880" x2="515" y2="880" stroke="#9ca3af" stroke-width="3"/>
+  <line x1="500" y1="865" x2="500" y2="895" stroke="#9ca3af" stroke-width="3"/>
+  
+  <!-- Quadrant 4: Bottom-Right (Process + Simple) -->
+  <rect x="800" y="600" width="600" height="400" fill="#E5E7EB" opacity="0.2" stroke="#D1D5DB" stroke-width="2"/>
+  <text x="1100" y="720" text-anchor="middle" class="text-dark" font-size="24" font-weight="700">模板化</text>
+  <text x="1100" y="760" text-anchor="middle" class="text-medium" font-size="16">• 标准CRUD</text>
+  <text x="1100" y="790" text-anchor="middle" class="text-medium" font-size="16">• 常见业务模式</text>
+  <text x="1100" y="820" text-anchor="middle" class="text-medium" font-size="16">• 代码生成</text>
+  
+  <!-- Icon for templates -->
+  <rect x="1070" y="860" width="60" height="40" rx="4" fill="none" stroke="#9ca3af" stroke-width="3"/>
+  <line x1="1080" y1="875" x2="1120" y2="875" stroke="#9ca3af" stroke-width="2"/>
+  <line x1="1080" y1="885" x2="1110" y2="885" stroke="#9ca3af" stroke-width="2"/>
+  
+  <!-- Key message -->
+  <rect x="300" y="1080" width="1000" height="80" rx="12" fill="#EFF6FF" stroke="#326DFF" stroke-width="3"/>
+  <text x="800" y="1125" text-anchor="middle" class="primary" font-size="24" font-weight="700">可视化应该用于编排结构，而不是替代编程</text>
+</svg>
+

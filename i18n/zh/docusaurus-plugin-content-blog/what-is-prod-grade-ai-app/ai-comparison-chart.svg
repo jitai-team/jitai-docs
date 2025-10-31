@@ -1,0 +1,135 @@
+<svg width="1200" height="680" viewBox="0 0 1200 680" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="680" fill="#FFFFFF"/>
+  
+  <!-- Title Section -->
+  <g id="title">
+    <!-- Title Text -->
+    <text x="600" y="80" font-family="PingFang SC, sans-serif" font-size="28" font-weight="600" fill="#111827" text-anchor="middle">
+      传统AI应用 vs 生产级AI应用
+    </text>
+  </g>
+  
+  <!-- Table Header -->
+  <rect x="100" y="120" width="1000" height="50" fill="#F9FAFB" stroke="#e5e7eb" stroke-width="2"/>
+  <line x1="350" y1="120" x2="350" y2="170" stroke="#e5e7eb" stroke-width="2"/>
+  <line x1="700" y1="120" x2="700" y2="170" stroke="#e5e7eb" stroke-width="2"/>
+  
+  <text x="225" y="152" font-family="PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#6b7280" text-anchor="middle">对比维度</text>
+  <text x="525" y="152" font-family="PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#6b7280" text-anchor="middle">传统AI（误区）</text>
+  <text x="900" y="152" font-family="PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#6b7280" text-anchor="middle">生产级AI（特征）</text>
+  
+  <!-- Row 1: Output Adjustment -->
+  <g id="row1">
+    <rect x="100" y="170" width="250" height="100" fill="#FFFFFF" stroke="#e5e7eb" stroke-width="2"/>
+    <rect x="350" y="170" width="350" height="100" fill="rgba(250, 56, 62, 0.05)" stroke="#e5e7eb" stroke-width="2"/>
+    <rect x="700" y="170" width="400" height="100" fill="rgba(0, 164, 0, 0.05)" stroke="#e5e7eb" stroke-width="2"/>
+    
+    <text x="225" y="195" font-family="PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#111827" text-anchor="middle">输出调整</text>
+    <circle cx="225" cy="230" r="25" fill="rgba(250, 56, 62, 0.1)" stroke="#fa383e" stroke-width="2"/>
+    <path d="M 235 220 Q 245 240, 215 240 Q 205 220, 235 220" stroke="#fa383e" stroke-width="2" fill="none"/>
+    <circle cx="232" cy="225" r="2" fill="#fa383e"/>
+    <circle cx="218" cy="225" r="2" fill="#fa383e"/>
+    
+    <text x="525" y="210" font-family="PingFang SC, sans-serif" font-size="15" fill="#fa383e" text-anchor="middle">❌ 完全重新生成</text>
+    <text x="525" y="235" font-family="PingFang SC, sans-serif" font-size="12" fill="#9ca3af" text-anchor="middle">等待时间长</text>
+    <text x="525" y="252" font-family="PingFang SC, sans-serif" font-size="12" fill="#9ca3af" text-anchor="middle">token消耗巨大</text>
+    
+    <text x="900" y="210" font-family="PingFang SC, sans-serif" font-size="15" fill="#00a400" text-anchor="middle">✓ 持续局部调整</text>
+    <text x="900" y="235" font-family="PingFang SC, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">精准修改</text>
+    <text x="900" y="252" font-family="PingFang SC, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">不影响其他部分</text>
+  </g>
+  
+  <!-- Row 2: System Integration -->
+  <g id="row2">
+    <rect x="100" y="270" width="250" height="100" fill="#FFFFFF" stroke="#e5e7eb" stroke-width="2"/>
+    <rect x="350" y="270" width="350" height="100" fill="rgba(250, 56, 62, 0.05)" stroke="#e5e7eb" stroke-width="2"/>
+    <rect x="700" y="270" width="400" height="100" fill="rgba(0, 164, 0, 0.05)" stroke="#e5e7eb" stroke-width="2"/>
+    
+    <text x="225" y="295" font-family="PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#111827" text-anchor="middle">系统集成</text>
+    <rect x="205" y="310" width="20" height="20" rx="4" fill="none" stroke="#9ca3af" stroke-width="2" stroke-dasharray="4,2"/>
+    <rect x="230" y="310" width="20" height="20" rx="4" fill="none" stroke="#9ca3af" stroke-width="2" stroke-dasharray="4,2"/>
+    
+    <text x="525" y="310" font-family="PingFang SC, sans-serif" font-size="15" fill="#fa383e" text-anchor="middle">❌ 割裂独立部署</text>
+    <text x="525" y="335" font-family="PingFang SC, sans-serif" font-size="12" fill="#9ca3af" text-anchor="middle">无法调用模块</text>
+    <text x="525" y="352" font-family="PingFang SC, sans-serif" font-size="12" fill="#9ca3af" text-anchor="middle">孤立系统</text>
+    
+    <text x="900" y="310" font-family="PingFang SC, sans-serif" font-size="15" fill="#00a400" text-anchor="middle">✓ 模块原生融合</text>
+    <text x="900" y="335" font-family="PingFang SC, sans-serif" font-size="12" font-weight="600" fill="#326DFF" text-anchor="middle">JAAP协议</text>
+    <text x="900" y="352" font-family="PingFang SC, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">感知/驱动/编排</text>
+  </g>
+  
+  <!-- Row 3: Human-AI Interaction -->
+  <g id="row3">
+    <rect x="100" y="370" width="250" height="100" fill="#FFFFFF" stroke="#e5e7eb" stroke-width="2"/>
+    <rect x="350" y="370" width="350" height="100" fill="rgba(250, 56, 62, 0.05)" stroke="#e5e7eb" stroke-width="2"/>
+    <rect x="700" y="370" width="400" height="100" fill="rgba(0, 164, 0, 0.05)" stroke="#e5e7eb" stroke-width="2"/>
+    
+    <text x="225" y="395" font-family="PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#111827" text-anchor="middle">人机交互</text>
+    <rect x="210" y="410" width="30" height="20" rx="4" fill="none" stroke="#6b7280" stroke-width="2"/>
+    <circle cx="218" cy="420" r="2" fill="#6b7280"/>
+    <circle cx="232" cy="420" r="2" fill="#6b7280"/>
+    <rect x="213" y="423" width="14" height="3" rx="1" fill="#6b7280"/>
+    
+    <text x="525" y="410" font-family="PingFang SC, sans-serif" font-size="15" fill="#fa383e" text-anchor="middle">❌ 独立聊天窗口</text>
+    <text x="525" y="435" font-family="PingFang SC, sans-serif" font-size="12" fill="#9ca3af" text-anchor="middle">来回切换</text>
+    <text x="525" y="452" font-family="PingFang SC, sans-serif" font-size="12" fill="#9ca3af" text-anchor="middle">割裂体验</text>
+    
+    <text x="900" y="410" font-family="PingFang SC, sans-serif" font-size="15" fill="#00a400" text-anchor="middle">✓ UI协同操作</text>
+    <text x="900" y="435" font-family="PingFang SC, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">同屏协同</text>
+    <text x="900" y="452" font-family="PingFang SC, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">实时干预</text>
+  </g>
+  
+  <!-- Row 4: Business Understanding -->
+  <g id="row4">
+    <rect x="100" y="470" width="250" height="100" fill="#FFFFFF" stroke="#e5e7eb" stroke-width="2"/>
+    <rect x="350" y="470" width="350" height="100" fill="rgba(250, 56, 62, 0.05)" stroke="#e5e7eb" stroke-width="2"/>
+    <rect x="700" y="470" width="400" height="100" fill="rgba(0, 164, 0, 0.05)" stroke="#e5e7eb" stroke-width="2"/>
+    
+    <text x="225" y="495" font-family="PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#111827" text-anchor="middle">业务理解</text>
+    <circle cx="225" cy="530" r="20" fill="none" stroke="#9ca3af" stroke-width="2"/>
+    <path d="M 215 525 L 220 530 L 215 535" stroke="#9ca3af" stroke-width="2" fill="none"/>
+    <path d="M 235 525 L 230 530 L 235 535" stroke="#9ca3af" stroke-width="2" fill="none"/>
+    
+    <text x="525" y="510" font-family="PingFang SC, sans-serif" font-size="15" fill="#fa383e" text-anchor="middle">❌ 通用标品</text>
+    <text x="525" y="535" font-family="PingFang SC, sans-serif" font-size="12" fill="#9ca3af" text-anchor="middle">不懂业务</text>
+    <text x="525" y="552" font-family="PingFang SC, sans-serif" font-size="12" fill="#9ca3af" text-anchor="middle">千篇一律</text>
+    
+    <text x="900" y="510" font-family="PingFang SC, sans-serif" font-size="15" fill="#00a400" text-anchor="middle">✓ 定制化业务建模</text>
+    <text x="900" y="535" font-family="PingFang SC, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">理解企业知识</text>
+    <text x="900" y="552" font-family="PingFang SC, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">符合业务逻辑</text>
+  </g>
+  
+  <!-- Conclusion Section -->
+  <g id="conclusion">
+    <rect x="100" y="570" width="1000" height="80" fill="#F9FAFB" stroke="#e5e7eb" stroke-width="2"/>
+    
+    <!-- Left Side - Failure -->
+    <g transform="translate(200, 615)">
+      <text x="0" y="0" font-family="sans-serif" font-size="32">💸</text>
+      <text x="50" y="0" font-family="PingFang SC, sans-serif" font-size="16" fill="#fa383e">高额投入</text>
+    </g>
+    
+    <text x="400" y="615" font-family="Inter, sans-serif" font-size="24" fill="#9ca3af" text-anchor="middle">→</text>
+    
+    <g transform="translate(450, 615)">
+      <text x="0" y="0" font-family="sans-serif" font-size="32">📦</text>
+      <text x="50" y="0" font-family="PingFang SC, sans-serif" font-size="16" fill="#fa383e">沦为摆设</text>
+    </g>
+    
+    <!-- Right Side - Success -->
+    <g transform="translate(650, 615)">
+      <text x="0" y="0" font-family="sans-serif" font-size="32">💡</text>
+      <text x="50" y="0" font-family="PingFang SC, sans-serif" font-size="16" fill="#00a400">AI原生架构</text>
+    </g>
+    
+    <text x="850" y="615" font-family="Inter, sans-serif" font-size="24" fill="#00a400" text-anchor="middle">→</text>
+    
+    <g transform="translate(900, 615)">
+      <text x="0" y="0" font-family="sans-serif" font-size="32">📈</text>
+      <text x="50" y="0" font-family="PingFang SC, sans-serif" font-size="16" fill="#00a400">创造价值</text>
+    </g>
+  </g>
+  
+</svg>
+

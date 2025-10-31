@@ -1,5 +1,8 @@
 ---
 slug: event-service
+title: "Event Service Reference"
+description: "Event Service Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Event Service"
 ---
 # Event Service
 Event service is an event management and triggering service provided by the JitAi platform, implementing event query, monitoring, and manual triggering capabilities. It handles event execution log management, event status tracking, and asynchronous event task processing, supporting unified management of various event types including model events and workflow events.

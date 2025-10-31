@@ -1,5 +1,8 @@
 ---
 slug: table
+title: "Table Reference"
+description: "Table Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Table"
 ---
 # Table
 Table is a data display component that implements pagination, sorting, filtering and other functions based on model data sources. It handles data list display, row-level operations, batch operations and statistical summaries, supporting inline editing, field click events, toolbar buttons and mobile adaptive display.

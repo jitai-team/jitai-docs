@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 title: JitAi vs. Mainstream AI Application Platforms
+description: "Compare JitAi with Coze, Dify, and n8n. Discover six unique technical breakthroughs including interpretive system architecture and deep business integration."
 ---
 
 # JitAi vs. Mainstream AI Application Platforms

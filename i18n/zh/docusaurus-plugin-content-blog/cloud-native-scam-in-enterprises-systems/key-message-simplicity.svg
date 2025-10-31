@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 600" role="img" aria-labelledby="messageTitle messageDesc">
+  <title id="messageTitle">企业系统不需要云原生</title>
+  <desc id="messageDesc">核心观点：几百用户的企业系统，用不着K8s集群的复杂度</desc>
+  
+  <defs>
+    <style>
+      .bg { fill: #F5F5F5; }
+      .primary { fill: #326DFF; }
+      .accent { fill: #FF6B35; }
+      .text-main { 
+        fill: #333333; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 64px;
+        font-weight: 700;
+      }
+      .text-sub { 
+        fill: #6b7280; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 24px;
+      }
+    </style>
+    
+    <linearGradient id="topGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#326DFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8EAEFF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1600" height="600" class="bg"/>
+  
+  <!-- 顶部装饰条 -->
+  <rect x="0" y="0" width="1600" height="8" fill="url(#topGrad)"/>
+  
+  <!-- 左侧：复杂（不需要） -->
+  <g id="complex" transform="translate(200, 300)">
+    <!-- 复杂的图形 -->
+    <g opacity="0.3">
+      <rect x="0" y="-80" width="8" height="160" class="accent"/>
+      <rect x="20" y="-60" width="8" height="120" class="accent"/>
+      <rect x="40" y="-70" width="8" height="140" class="accent"/>
+      <rect x="60" y="-50" width="8" height="100" class="accent"/>
+      <rect x="80" y="-90" width="8" height="180" class="accent"/>
+      <rect x="100" y="-40" width="8" height="80" class="accent"/>
+      <rect x="120" y="-75" width="8" height="150" class="accent"/>
+    </g>
+    
+    <text x="65" y="120" text-anchor="middle" style="font-size: 20px; fill: #FF6B35; font-family: -apple-system, sans-serif; font-weight: 600;">
+      云原生
+    </text>
+    <text x="65" y="145" text-anchor="middle" style="font-size: 16px; fill: #9ca3af; font-family: -apple-system, sans-serif;">
+      过度复杂
+    </text>
+  </g>
+  
+  <!-- 中间：核心观点 -->
+  <g id="message">
+    <text x="800" y="250" text-anchor="middle" class="text-main" fill="#326DFF">
+      企业系统不需要云原生
+    </text>
+    
+    <text x="800" y="320" text-anchor="middle" class="text-sub">
+      几百用户的企业系统
+    </text>
+    <text x="800" y="360" text-anchor="middle" class="text-sub">
+      用不着K8s集群的复杂度
+    </text>
+    <text x="800" y="400" text-anchor="middle" class="text-sub">
+      也不需要微服务的分布式陷阱
+    </text>
+  </g>
+  
+  <!-- 右侧：简单（需要） -->
+  <g id="simple" transform="translate(1330, 300)">
+    <!-- 简单的图形 -->
+    <g opacity="0.5">
+      <rect x="0" y="-60" width="60" height="120" rx="8" class="primary"/>
+    </g>
+    
+    <text x="30" y="100" text-anchor="middle" style="font-size: 20px; fill: #326DFF; font-family: -apple-system, sans-serif; font-weight: 600;">
+      简单架构
+    </text>
+    <text x="30" y="125" text-anchor="middle" style="font-size: 16px; fill: #6b7280; font-family: -apple-system, sans-serif;">
+      正确选择
+    </text>
+  </g>
+  
+  <!-- 底部强调 -->
+  <rect x="250" y="480" width="1100" height="80" rx="12" fill="#E8F4FF"/>
+  <text x="800" y="530" text-anchor="middle" style="font-size: 28px; font-weight: 700; fill: #326DFF; font-family: -apple-system, sans-serif;">
+    简单可靠 > 过度设计
+  </text>
+</svg>
+

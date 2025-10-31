@@ -1,66 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="1000" height="500" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
-  <!-- 背景 -->
+  <!-- Background -->
   <rect width="1000" height="500" fill="#FAFAFA"/>
   
-  <!-- 定义箭头和动画 -->
+  <!-- Define Arrows and Animations -->
   <defs>
     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
       <polygon points="0 0, 10 3.5, 0 7" fill="#4A90E2" opacity="0.8"/>
     </marker>
     
-    <!-- 简单的渐变 -->
+    <!-- Simple Gradient -->
     <linearGradient id="nodeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
       <stop offset="0%" style="stop-color:#E3F2FD;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#BBDEFB;stop-opacity:1" />
     </linearGradient>
   </defs>
   
-  <!-- 标题 -->
-  <text x="500" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1976D2">JAAP 元素开发工作流程</text>
+  <!-- Title -->
+  <text x="500" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1976D2">JAAP Element Development Workflow</text>
   
-  <!-- 开发流程节点 -->
-  <!-- 1. 需求分析 -->
+  <!-- Development Workflow Nodes -->
+  <!-- 1. Requirements Analysis -->
   <g>
     <rect x="50" y="80" width="140" height="70" rx="8" fill="url(#nodeGradient)" stroke="#4A90E2" stroke-width="2"/>
-    <text x="120" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1976D2">📋 需求分析</text>
-    <text x="120" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">明确功能范围</text>
-    <text x="120" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">和要求</text>
+    <text x="120" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1976D2">📋 Requirements</text>
+    <text x="120" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Clarify functional</text>
+    <text x="120" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">scope &amp; needs</text>
   </g>
   
-  <!-- 2. 元素设计 -->
+  <!-- 2. Element Design -->
   <g>
     <rect x="240" y="80" width="140" height="70" rx="8" fill="url(#nodeGradient)" stroke="#4A90E2" stroke-width="2"/>
-    <text x="310" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1976D2">🎯 元素设计</text>
-    <text x="310" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">设计元素族类</text>
-    <text x="310" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">优先复用已有</text>
+    <text x="310" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1976D2">🎯 Design</text>
+    <text x="310" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Design element families</text>
+    <text x="310" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Prioritize reuse</text>
   </g>
   
-  <!-- 3. 创建元素目录 -->
+  <!-- 3. Create Element Directory -->
   <g>
     <rect x="430" y="80" width="140" height="70" rx="8" fill="url(#nodeGradient)" stroke="#4A90E2" stroke-width="2"/>
-    <text x="500" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1976D2">📁 创建目录</text>
-    <text x="500" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">按元素规范实现</text>
-    <text x="500" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">可视化配置</text>
+    <text x="500" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1976D2">📁 Create</text>
+    <text x="500" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Follow specifications</text>
+    <text x="500" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Visual configuration</text>
   </g>
   
-  <!-- 4. 实现元素逻辑 -->
+  <!-- 4. Implement Element Logic -->
   <g>
     <rect x="620" y="80" width="140" height="70" rx="8" fill="url(#nodeGradient)" stroke="#4A90E2" stroke-width="2"/>
-    <text x="690" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1976D2">💻 实现逻辑</text>
-    <text x="690" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">业务逻辑与</text>
-    <text x="690" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">生命周期</text>
+    <text x="690" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1976D2">💻 Implement</text>
+    <text x="690" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Business logic &amp;</text>
+    <text x="690" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">lifecycle</text>
   </g>
   
-  <!-- 5. 打包部署 -->
+  <!-- 5. Package & Deploy -->
   <g>
     <rect x="810" y="80" width="140" height="70" rx="8" fill="url(#nodeGradient)" stroke="#4A90E2" stroke-width="2"/>
-    <text x="880" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1976D2">🚀 打包部署</text>
-    <text x="880" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">即改即生效</text>
-    <text x="880" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">自动打包部署</text>
+    <text x="880" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1976D2">🚀 Deploy</text>
+    <text x="880" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Instant effect</text>
+    <text x="880" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Auto build &amp; deploy</text>
   </g>
   
-  <!-- 流程箭头 -->
+  <!-- Workflow Arrows -->
   <path d="M190 115 L230 115" stroke="#4A90E2" stroke-width="2" fill="none" marker-end="url(#arrowhead)" opacity="0.8">
     <animate attributeName="stroke-dasharray" values="0,200;200,0" dur="4s" repeatCount="indefinite"/>
   </path>
@@ -77,35 +77,35 @@
     <animate attributeName="stroke-dasharray" values="0,200;200,0" dur="4s" begin="2.4s" repeatCount="indefinite"/>
   </path>
   
-  <!-- 开发模式说明区域 -->
+  <!-- Development Mode Comparison Area -->
   <rect x="50" y="200" width="900" height="250" rx="12" fill="#F8F9FA" stroke="#E0E0E0" stroke-width="2"/>
   
-  <!-- 开发模式标题 -->
-  <text x="500" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1976D2">🛠️ 开发模式对比</text>
+  <!-- Development Mode Title -->
+  <text x="500" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1976D2">🛠️ Development Mode Comparison</text>
   
-  <!-- JitAi开发工具模式 -->
+  <!-- JitAi Development Tools Mode -->
   <rect x="80" y="250" width="380" height="170" rx="8" fill="#E8F5E8" stroke="#4CAF50" stroke-width="2"/>
-  <text x="270" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2E7D32">🎨 JitAi开发工具模式</text>
+  <text x="270" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2E7D32">🎨 JitAi Development Tools Mode</text>
   
-  <text x="100" y="300" font-family="Arial, sans-serif" font-size="12" fill="#333">✨ 特点：</text>
-  <text x="100" y="320" font-family="Arial, sans-serif" font-size="11" fill="#666">• 可视化配置界面</text>
-  <text x="100" y="335" font-family="Arial, sans-serif" font-size="11" fill="#666">• 拖拽式元素创建</text>
-  <text x="100" y="350" font-family="Arial, sans-serif" font-size="11" fill="#666">• 实时预览效果</text>
-  <text x="100" y="365" font-family="Arial, sans-serif" font-size="11" fill="#666">• 自动生成代码结构</text>
-  <text x="100" y="380" font-family="Arial, sans-serif" font-size="11" fill="#666">• 即改即生效</text>
-  <text x="100" y="395" font-family="Arial, sans-serif" font-size="11" fill="#666">• 零配置部署</text>
+  <text x="100" y="300" font-family="Arial, sans-serif" font-size="12" fill="#333">✨ Features:</text>
+  <text x="100" y="320" font-family="Arial, sans-serif" font-size="11" fill="#666">• Visual configuration interface</text>
+  <text x="100" y="335" font-family="Arial, sans-serif" font-size="11" fill="#666">• Drag-and-drop element creation</text>
+  <text x="100" y="350" font-family="Arial, sans-serif" font-size="11" fill="#666">• Real-time preview</text>
+  <text x="100" y="365" font-family="Arial, sans-serif" font-size="11" fill="#666">• Auto-generate code structure</text>
+  <text x="100" y="380" font-family="Arial, sans-serif" font-size="11" fill="#666">• Instant effect</text>
+  <text x="100" y="395" font-family="Arial, sans-serif" font-size="11" fill="#666">• Zero-configuration deployment</text>
   
-  <!-- 本地全代码开发模式 -->
+  <!-- Local Full-Code Development Mode -->
   <rect x="540" y="250" width="380" height="170" rx="8" fill="#FFF3E0" stroke="#FF9800" stroke-width="2"/>
-  <text x="730" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#E65100">⌨️ 本地全代码开发模式</text>
+  <text x="730" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#E65100">⌨️ Local Full-Code Development Mode</text>
   
-  <text x="560" y="300" font-family="Arial, sans-serif" font-size="12" fill="#333">🔧 特点：</text>
-  <text x="560" y="320" font-family="Arial, sans-serif" font-size="11" fill="#666">• 手动创建目录结构</text>
-  <text x="560" y="335" font-family="Arial, sans-serif" font-size="11" fill="#666">• 编写完整配置文件</text>
-  <text x="560" y="350" font-family="Arial, sans-serif" font-size="11" fill="#666">• 自定义加载器逻辑</text>
-  <text x="560" y="365" font-family="Arial, sans-serif" font-size="11" fill="#666">• 完全控制实现细节</text>
-  <text x="560" y="380" font-family="Arial, sans-serif" font-size="11" fill="#666">• 手动构建部署</text>
-  <text x="560" y="395" font-family="Arial, sans-serif" font-size="11" fill="#666">• 适合复杂定制需求</text>
+  <text x="560" y="300" font-family="Arial, sans-serif" font-size="12" fill="#333">🔧 Features:</text>
+  <text x="560" y="320" font-family="Arial, sans-serif" font-size="11" fill="#666">• Manual directory creation</text>
+  <text x="560" y="335" font-family="Arial, sans-serif" font-size="11" fill="#666">• Write complete config files</text>
+  <text x="560" y="350" font-family="Arial, sans-serif" font-size="11" fill="#666">• Custom loader logic</text>
+  <text x="560" y="365" font-family="Arial, sans-serif" font-size="11" fill="#666">• Full control over details</text>
+  <text x="560" y="380" font-family="Arial, sans-serif" font-size="11" fill="#666">• Manual build &amp; deploy</text>
+  <text x="560" y="395" font-family="Arial, sans-serif" font-size="11" fill="#666">• Suitable for complex customization</text>
   
 
 </svg> 

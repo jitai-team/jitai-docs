@@ -1,6 +1,7 @@
 ---
 sidebar_position: 17
-slug: develop-human-ai-collaboration-enterprise-assistant
+slug: /devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant
+description: "Develop enterprise assistants with human-AI collaboration and UI integration. AI handles decisions while humans provide quality control."
 ---
 
 # Developing Human-AI Collaborative Enterprise Assistant Applications with UI Page Integration
@@ -59,11 +60,11 @@ Traditional AI development platforms have a fundamental limitation: they can onl
 
 ### Case background and process {#case-background-and-process}
 
-**Business scenario**: Educational institution teachers need to grade exams, with traditional manual grading being labor-intensive and error-prone.
+**Business scenario**: Educational institution examiners need to grade exams, with traditional manual grading being labor-intensive and error-prone.
 
-**Core requirements**: AI helps teachers with intelligent grading, with key quality control handled by teachers, improving efficiency while ensuring quality.
+**Core requirements**: AI helps examiners with intelligent grading, with key quality control handled by examiners, improving efficiency while ensuring quality.
 
-**Technical challenge**: How to significantly improve efficiency while ensuring quality? How to enable seamless collaboration between AI and teachers?
+**Technical challenge**: How to significantly improve efficiency while ensuring quality? How to enable seamless collaboration between AI and examiners?
 
 **AI automatic ccoring + human review mode**
 
@@ -71,11 +72,11 @@ Traditional AI development platforms have a fundamental limitation: they can onl
 The grading Agent automatically scores each question and generates scoring rationale, greatly improving grading efficiency.
 
 **Step 2: Human-machine collaboration Node**
-After AI grading is complete, the process pauses through the dialog area human-machine interaction node, outputting grading results to the dialog box for teacher confirmation.
-If teachers find any score inappropriate, they can continue dialoguing with AI to request re-grading.
+After AI grading is complete, the process pauses through the dialog area human-machine interaction node, outputting grading results to the dialog box for examiner confirmation.
+If examiners find any score inappropriate, they can continue dialoguing with AI to request re-grading.
 
 **Step 3: UI page collaboration**
-If teachers find the scores appropriate and confirm, the grading results are automatically updated to the page grading form.
+If examiners find the scores appropriate and confirm, the grading results are automatically updated to the page grading form.
 
 ### Effect demonstration {#effect-demonstration}
 
@@ -115,7 +116,7 @@ Next, we'll add AI grading functionality to the Grading Management Page.
 The grading Agent's workflow is as follows:
 Obtain answer details from the page, score each item, provide scores and rationale and update them to answer details; then provide an overall comment based on the overall scoring situation; finally output answer details with scores and rationale along with the overall comment.
 
-- **Create Grading Agent**: Refer to [Creating AI Agent](../../ai-agent/create-ai-agent) for the creation process. After creation, [configure the large model](../../ai-agent/create-ai-agent#selecting-models-configuring-parameters).
+- **Create Grading Agent**: Refer to [Creating AI Agent](/docs/devguide/ai-agent/create-ai-agent) for the creation process. After creation, [configure the large model](/docs/devguide/ai-agent/create-ai-agent#selecting-models-configuring-parameters).
 - **Write prompt**:
 ```markdown
 # Role: Grading Expert
@@ -164,33 +165,33 @@ Note: This is sample data only, not your final return data
     - comments (comments): Overall comment on the answer sheet
 ![Grading Agent Output](./img/agent-output.png)
 
-Configuration method reference: [Configure Output Parameters](../../ai-agent/agent-input-output#configuring-output-results)
+Configuration method reference: [Configure Output Parameters](/docs/devguide/ai-agent/agent-input-output#configuring-output-results)
 
 - **Configure tool invocation**: Add the **Grading Management Page** - `Get Variable Value` as a tool, through which the Agent obtains answer detail data from the grading form on the page.
-Configuration method reference: [Agent Add Page Tools](../../ai-agent/agent-tools#calling-page-functions)。
+Configuration method reference: [Agent Add Page Tools](/docs/devguide/ai-agent/agent-tools#calling-page-functions)。
 
 ![Grading Agent Tool](./img/agent-tool.png)
 
 
 ### Developing the grading assistant {#developing-the-grading-assistant}
 
-- **Create Grading Assistant**: Refer to [Creating AI Assistant](../create-ai-assistant) for creation method
+- **Create Grading Assistant**: Refer to [Creating AI Assistant](/docs/devguide/ai-assistant/create-ai-assistant) for creation method
 
 - **Orchestrate assistant process**:
 ![Grading assistant process](./img/assistant-process.png)
 
 Process steps: `Start` -> `Grading By Agent` -> `Confirm Scores` -> `Update Grading Form`
-    - **Grading By Agent**: [AI Agent Node](../process-orchestration-node-configuration#ai-agent), bound to the Grading Agent.
+    - **Grading By Agent**: [AI Agent Node](/docs/devguide/ai-assistant/process-orchestration-node-configuration#ai-agent), bound to the Grading Agent.
 ![assistant-bind-agent](./img/assistant-bind-agent.png)
-    - **Confirm results**: [Dialog Area Human-Machine Interaction Node](../process-orchestration-node-configuration#action-in-conversation), displays answer details and comments output by the grading Agent, waits for human confirmation, then updates the grading form after confirmation.
+    - **Confirm results**: [Dialog Area Human-Machine Interaction Node](/docs/devguide/ai-assistant/process-orchestration-node-configuration#action-in-conversation), displays answer details and comments output by the grading Agent, waits for human confirmation, then updates the grading form after confirmation.
 ![assistant-human-confirm](./img/assistant-human-confirm.png)
-    - **Update Grading Form**: [Action in page node](../process-orchestration-node-configuration#action-in-page), pauses the process and outputs answer details and comments to the page. Set a friendly prompt message to guide users on next steps.
+    - **Update Grading Form**: [Action in page node](/docs/devguide/ai-assistant/process-orchestration-node-configuration#action-in-page), pauses the process and outputs answer details and comments to the page. Set a friendly prompt message to guide users on next steps.
 
 ![Grading By Agent](./img/assistant-uiinterrupt.png)
 
 ### Using the grading assistant on the grading page {#using-the-grading-assistant-on-the-grading-page}
 
-[Enable AI Assistant](../../using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#enable-ai-assistant) and bind the grading assistant.
+[Enable AI Assistant](/docs/devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#enable-ai-assistant) and bind the grading assistant.
 
 ![Page Using AI Assistant](./img/page-use-assistant.png)
 
@@ -208,8 +209,8 @@ At this point, we have completed the development of the AI grading functionality
 
 ### Example source code {#source-code}
 
-Download link: <a href="https://jit-www.oss-cn-beijing.aliyuncs.com/docs/ai-grade-demo/whwy.quickTutorialEn.0_0_0.zip">AI Grade Demo Source Code</a>.
+Download link: <a href="https://jit-www.oss-accelerate.aliyuncs.com/docs/ai-grade-demo/whwy.quickTutorialEn.0_0_0.zip">AI Grade Demo Source Code</a>.
 
-Enter the [JitNode Console](../../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment) and import directly.
+Enter the [JitNode Console](/docs/devguide/creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment) and import directly.
 
 ![Import Example Source Code](./img/import-source-code.png)

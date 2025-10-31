@@ -1,7 +1,10 @@
 ---
 slug: github-login
+title: "GitHub Login Reference"
+description: "GitHub Login Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "GitHub Login"
 ---
-# GitHub Login {#github-login}
+# GitHub Login
 GitHub Login (GitHubType) is an authentication element built on the GitHub platform that supports OAuth authorization for both PC and mobile environments. It manages the complete GitHub OAuth flow, user authentication, and account binding processes, making it ideal for developer communities, technical products, open-source project management, and other scenarios requiring unified identity management.
 
 GitHub login elements follow a hierarchical structure: Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.GitHubType) → Instance. Developers can rapidly create GitHub login instances using JitAi's visual development tools.

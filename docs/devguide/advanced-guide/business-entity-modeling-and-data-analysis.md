@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 slug: business-entity-modeling-and-data-analysis
+description: "Build comprehensive sales data analysis system. Multi-database configuration, entity modeling, aggregation analysis, and automated business rules."
 ---
 
 # Business Entity Modeling and Data Analysis

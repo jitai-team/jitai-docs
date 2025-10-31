@@ -1,8 +1,10 @@
 ---
 slug: microsoft-teams-login
-title: Microsoft Teams Login
+title: "Microsoft Teams Login Reference"
+description: "Microsoft Teams Login Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Microsoft Teams Login"
 ---
-# Microsoft Teams Login {#microsoft-teams-login}
+# Microsoft Teams Login
 Microsoft Teams Login (MicrosoftTeamsType) is a login authentication element based on Microsoft Teams applications, supporting OAuth authorization login for PC and mobile platforms. It handles Microsoft Teams OAuth authorization flows, user authentication, and account binding, while supporting seamless integration with Microsoft Teams enterprise organization structure and user information synchronization.
 
 The Microsoft Teams login element hierarchy is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.MicrosoftTeamsType) → Instance. Developers can quickly create Microsoft Teams login instance elements through JitAi's visual development tools.

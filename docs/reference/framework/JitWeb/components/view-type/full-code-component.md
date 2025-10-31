@@ -1,5 +1,8 @@
 ---
 slug: full-code-component
+title: "Full Code Component Reference"
+description: "Full Code Component Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Full Code Component"
 ---
 # Full Code Component
 Full code component is a universal custom component in the JitAi development framework that supports developers using React and JavaScript to write completely custom component implementations. It provides complete component lifecycle management, event publishing and subscription, variable management, and configuration management capabilities, while integrating error boundary protection to ensure component rendering stability.

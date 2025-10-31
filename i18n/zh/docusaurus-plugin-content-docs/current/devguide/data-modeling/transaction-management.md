@@ -1,6 +1,7 @@
 ---
 sidebar_position: 14
 slug: transaction-management
+description: "事务管理的详细指南和说明。"
 ---
 
 # 事务管理

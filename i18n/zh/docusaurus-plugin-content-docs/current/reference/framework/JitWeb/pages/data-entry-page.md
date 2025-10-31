@@ -1,6 +1,8 @@
 ---
 sidebar_position: 4
 slug: data-entry-page
+description: "数据录入页面 API 参考文档。完整的规格说明、方法和示例。"
+title: "数据录入页面参考指南"
 ---
 
 # 数据录入页面

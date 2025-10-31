@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: publishing-and-upgrading-applications
+description: "发布与升级应用的详细指南和说明。"
 ---
 
 # 发布与升级应用
@@ -43,6 +44,12 @@ slug: publishing-and-upgrading-applications
 ## 应用版本升级 {#application-version-updates}
 
 被继承应用的开发者会持续发布新的版本，以修复bug、添加新功能等，开发者可以在[节点控制台](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment)或[在应用设置](../development-tool-and-publish-service/visual-development-tool#application-settings)中检查新版本并更新。
+
+![待更新](./img/1/update.png)
+在节点控制台的应用列表中，可以点击应用卡片上的`待更新`按钮，即可进行应用升级。
+
+![应用升级](./img/1/application-version.png)
+同时，在应用卡片上的`更多`按钮中，点击`继承应用`按钮，可以查看继承应用的版本信息。
 
 ## 应用部署策略 {#application-deployment-strategies}
 

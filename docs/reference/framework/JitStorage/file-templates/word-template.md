@@ -1,5 +1,8 @@
 ---
 slug: word-template
+title: "Word Template Reference"
+description: "Word Template Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Word Template"
 ---
 # Word Template
 

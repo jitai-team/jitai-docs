@@ -3,51 +3,52 @@ const CONTENT = {
     {
       id: 'home',
       label: 'Home',
-      type: 'link',
-      isNewTab: false,
+      type: 'currentPage',
       url: '/',
-      external: true
     },    
     // {
     //   id: 'pricing',
     //   label: 'Pricing',
-    //   type: 'link',
-    //   isNewTab: false,
+    //   type: 'currentPage',
     //   url: '/pricing',
-    //   external: true
     // },
     {
       id: 'download',
       label: 'Download',
-      type: 'link',
-      isNewTab: false,
+      type: 'currentPage',
       url: '/download',
-      external: true
+      class: 'analytics-download',
     },
     {
       id: 'guide',
       label: 'Docs',
-      type: 'link',
-      isNewTab: true,
+      type: 'newTab',
       url: '/docs/tutorial',
-      external: true
     },
     {
-      id: 'community',
-      label: 'Community',
-      type: 'link',
-      isNewTab: true,
+      id: 'forum',
+      label: 'Forum',
+      type: 'newTab',
       url: 'https://forum.jit.pro',
-      external: true
+    },
+    {
+      id: 'blog',
+      label: 'Blog',
+      type: 'currentPage',
+      url: '/blog',
     },
   ],
   tryOnlineButton: {
     id: 'try-online',
     label: 'Try Online',
-    type: 'button',
-    isNewTab: true,
+    type: 'newTab',
     url: 'https://demo.jit.pro',
-    external: true
+  },
+  downloadButton: {
+    id: 'download',
+    label: 'Download',
+    type: 'currentPage',
+    url: '/download',
   }
 };
 

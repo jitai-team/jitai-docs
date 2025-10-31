@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: devops-management-tool
+description: "运维管理工具的详细指南和说明。"
 ---
 
 # 运维管理工具

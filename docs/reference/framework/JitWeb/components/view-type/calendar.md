@@ -1,5 +1,8 @@
 ---
 slug: calendar
+title: "Calendar Reference"
+description: "Calendar Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Calendar"
 ---
 # Calendar
 Calendar is a view component for displaying and managing time-related data, based on Ant Design Calendar to implement schedule management, event management, and time planning functionality. It handles data source binding, schedule creation and editing, and interactive event processing, supporting drag operations, custom rendering, and multiple view modes.

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: table-components
+description: "表格组件的详细指南和说明。"
 ---
 
 # 表格组件

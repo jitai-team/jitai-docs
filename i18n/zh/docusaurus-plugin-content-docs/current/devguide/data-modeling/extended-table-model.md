@@ -1,9 +1,10 @@
 ---
 sidebar_position: 8
 slug: extended-table-model
+description: "扩展表模型的详细指南和说明。"
 ---
 
-# 扩展表模型 {#extension-table-model}
+# 扩展表模型
 
 扩展表模型是一种在不改变原有基础数据表结构的前提下，通过灵活关联其他数据表，实现业务字段扩展和多表数据整合的建模方式。
 

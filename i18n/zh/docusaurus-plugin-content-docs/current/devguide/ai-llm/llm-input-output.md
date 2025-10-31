@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: llm-input-output
+description: "大模型函数的输入输出的详细指南和说明。"
 ---
 
 # 大模型函数的输入输出

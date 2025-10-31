@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+description: "Create portals for role-based access control. Built-in developer, manager, and user portals with customizable navigation menus."
 ---
 
 # Creating Portals
@@ -118,7 +119,7 @@ The same page may be utilized by multiple portal menus. When accessed from diffe
 Developers can expand the `More` button on the right side of the menu item, click the `Page Variables` button, and assign values to page variables in the resulting dialog.
 
 :::warning
-Developers must first declare [page variables](/docs/devguide/shell-and-page/component-based-page-development#page-variables) within the page. If no variables are declared in the page, page variable assignment cannot be configured in the portal.
+Developers must first declare [page variables](/docs/devguide/shell-and-page/generic-page#page-variables) within the page. If no variables are declared in the page, page variable assignment cannot be configured in the portal.
 :::
 
 ### Rewriting menu pages {#rewriting-menu-pages}

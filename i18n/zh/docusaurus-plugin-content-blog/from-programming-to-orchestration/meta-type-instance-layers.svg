@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" role="img" aria-labelledby="layersTitle layersDesc">
+  <title id="layersTitle">Meta/Type/Instance三层架构</title>
+  <desc id="layersDesc">展示分层建模架构，从元素分类、技术封装到业务实例的三层结构</desc>
+  
+  <defs>
+    <style>
+      .primary { fill: #326DFF; }
+      .primary-light { fill: #8EAEFF; }
+      .text-dark { fill: #333333; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .text-medium { fill: #6b7280; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+    </style>
+    
+    <linearGradient id="metaGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E40AF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#326DFF;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="typeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#326DFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8EAEFF;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="instanceGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8EAEFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DBEAFE;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1600" height="1200" fill="#F9FAFB"/>
+  
+  <!-- Title -->
+  <text x="800" y="80" text-anchor="middle" class="text-dark" font-size="32" font-weight="700">Meta/Type/Instance 三层架构</text>
+  <text x="800" y="120" text-anchor="middle" class="text-medium" font-size="18">标准化与扩展性并重的分层模型</text>
+  
+  <!-- Pyramid structure -->
+  <g id="pyramid">
+    <!-- Top layer: Meta -->
+    <path d="M 800 200 L 550 350 L 1050 350 Z" fill="url(#metaGradient)" stroke="#1E40AF" stroke-width="3"/>
+    <text x="800" y="260" text-anchor="middle" fill="white" font-size="28" font-weight="700">Meta 层</text>
+    <text x="800" y="295" text-anchor="middle" fill="white" font-size="18">元素分类定义</text>
+    
+    <!-- Middle layer: Type -->
+    <path d="M 550 350 L 350 550 L 1250 550 L 1050 350 Z" fill="url(#typeGradient)" stroke="#326DFF" stroke-width="3"/>
+    <text x="800" y="420" text-anchor="middle" fill="white" font-size="28" font-weight="700">Type 层</text>
+    <text x="800" y="455" text-anchor="middle" fill="white" font-size="18">技术实现封装</text>
+    
+    <!-- Bottom layer: Instance -->
+    <path d="M 350 550 L 200 800 L 1400 800 L 1250 550 Z" fill="url(#instanceGradient)" stroke="#8EAEFF" stroke-width="3"/>
+    <text x="800" y="640" text-anchor="middle" fill="#1f2937" font-size="28" font-weight="700">Instance 层</text>
+    <text x="800" y="675" text-anchor="middle" fill="#1f2937" font-size="18">业务实例配置</text>
+  </g>
+  
+  <!-- Meta examples -->
+  <g id="meta-examples">
+    <rect x="580" y="900" width="440" height="80" rx="8" fill="#1E40AF" opacity="0.9"/>
+    <text x="800" y="930" text-anchor="middle" fill="white" font-size="16" font-weight="700">Meta 示例</text>
+    <text x="800" y="960" text-anchor="middle" fill="white" font-size="14">门户 • 页面 • 组件 • 模型 • 服务 • 权限</text>
+  </g>
+  
+  <!-- Type examples -->
+  <g id="type-examples">
+    <rect x="380" y="1000" width="440" height="80" rx="8" fill="#326DFF" opacity="0.9"/>
+    <text x="600" y="1030" text-anchor="middle" fill="white" font-size="16" font-weight="700">Type 示例</text>
+    <text x="600" y="1060" text-anchor="middle" fill="white" font-size="14">React页面 • Vue页面 • REST服务</text>
+    
+    <rect x="860" y="1000" width="440" height="80" rx="8" fill="#326DFF" opacity="0.9"/>
+    <text x="1080" y="1030" text-anchor="middle" fill="white" font-size="16" font-weight="700">Type 示例</text>
+    <text x="1080" y="1060" text-anchor="middle" fill="white" font-size="14">GraphQL服务 • MySQL模型 • MongoDB模型</text>
+  </g>
+  
+  <!-- Instance examples -->
+  <g id="instance-examples">
+    <rect x="200" y="1100" width="360" height="80" rx="8" fill="#8EAEFF" opacity="0.9"/>
+    <text x="380" y="1130" text-anchor="middle" fill="white" font-size="16" font-weight="700">Instance 示例</text>
+    <text x="380" y="1160" text-anchor="middle" fill="white" font-size="14">用户列表页 • 订单详情页</text>
+    
+    <rect x="620" y="1100" width="360" height="80" rx="8" fill="#8EAEFF" opacity="0.9"/>
+    <text x="800" y="1130" text-anchor="middle" fill="white" font-size="16" font-weight="700">Instance 示例</text>
+    <text x="800" y="1160" text-anchor="middle" fill="white" font-size="14">支付服务 • 用户认证服务</text>
+    
+    <rect x="1040" y="1100" width="360" height="80" rx="8" fill="#8EAEFF" opacity="0.9"/>
+    <text x="1220" y="1130" text-anchor="middle" fill="white" font-size="16" font-weight="700">Instance 示例</text>
+    <text x="1220" y="1160" text-anchor="middle" fill="white" font-size="14">用户模型 • 订单模型</text>
+  </g>
+  
+  <!-- Right side: Extensibility arrows -->
+  <g id="extensibility">
+    <!-- Meta extensibility -->
+    <line x1="1100" y1="275" x2="1250" y2="275" stroke="#1E40AF" stroke-width="4"/>
+    <path d="M 1230 265 L 1250 275 L 1230 285 Z" fill="#1E40AF"/>
+    <text x="1280" y="280" class="text-dark" font-size="16" font-weight="600">可扩展</text>
+    <text x="1280" y="300" class="text-medium" font-size="14">自定义元素类别</text>
+    
+    <!-- Type extensibility -->
+    <line x1="1290" y1="450" x2="1400" y2="450" stroke="#326DFF" stroke-width="4"/>
+    <path d="M 1380 440 L 1400 450 L 1380 460 Z" fill="#326DFF"/>
+    <text x="1420" y="455" class="text-dark" font-size="16" font-weight="600">可扩展</text>
+    <text x="1420" y="475" class="text-medium" font-size="14">支持新技术栈</text>
+    
+    <!-- Instance extensibility -->
+    <line x1="1430" y1="675" x2="1530" y2="675" stroke="#8EAEFF" stroke-width="4"/>
+    <path d="M 1510 665 L 1530 675 L 1510 685 Z" fill="#8EAEFF"/>
+    <text x="1280" y="735" class="text-dark" font-size="16" font-weight="600">无限扩展</text>
+    <text x="1280" y="755" class="text-medium" font-size="14">创建任意业务实例</text>
+  </g>
+  
+  <!-- Left side: Key features -->
+  <g id="features">
+    <rect x="50" y="300" width="280" height="450" rx="12" fill="white" stroke="#E5E7EB" stroke-width="2"/>
+    <text x="190" y="340" text-anchor="middle" class="text-dark" font-size="20" font-weight="700">核心特性</text>
+    
+    <!-- Feature 1 -->
+    <circle cx="80" cy="390" r="8" fill="#326DFF"/>
+    <text x="100" y="395" class="text-dark" font-size="15" font-weight="600">标准化骨架</text>
+    <text x="100" y="415" class="text-medium" font-size="13">Meta层定义最佳实践</text>
+    
+    <!-- Feature 2 -->
+    <circle cx="80" cy="460" r="8" fill="#326DFF"/>
+    <text x="100" y="465" class="text-dark" font-size="15" font-weight="600">技术无关</text>
+    <text x="100" y="485" class="text-medium" font-size="13">Type层封装技术差异</text>
+    
+    <!-- Feature 3 -->
+    <circle cx="80" cy="530" r="8" fill="#326DFF"/>
+    <text x="100" y="535" class="text-dark" font-size="15" font-weight="600">业务灵活</text>
+    <text x="100" y="555" class="text-medium" font-size="13">Instance层自由配置</text>
+    
+    <!-- Feature 4 -->
+    <circle cx="80" cy="600" r="8" fill="#326DFF"/>
+    <text x="100" y="605" class="text-dark" font-size="15" font-weight="600">架构稳定</text>
+    <text x="100" y="625" class="text-medium" font-size="13">结构永不腐化</text>
+    
+    <!-- Feature 5 -->
+    <circle cx="80" cy="670" r="8" fill="#326DFF"/>
+    <text x="100" y="675" class="text-dark" font-size="15" font-weight="600">可视可控</text>
+    <text x="100" y="695" class="text-medium" font-size="13">三层均可可视化编排</text>
+  </g>
+</svg>
+

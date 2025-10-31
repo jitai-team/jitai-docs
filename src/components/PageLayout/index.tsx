@@ -3,32 +3,37 @@ import Head from '@docusaurus/Head';
 import Layout from '@theme/Layout';
 import Navbar from './Navbar';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { PAGE_METADATA_EN } from './page-metadata-en';
+import { PAGE_METADATA_ZH } from './page-metadata-zh';
 
-const LayoutComponent = Layout as unknown as React.ComponentType<any>;
+const LayoutComponent = Layout as React.ComponentType<any>;
 
 interface PageLayoutProps {
   children: ReactNode;
-  title: string;
-  description: string;
+  pageId: string;
+  title?: string;
+  description?: string;
   containerClassName?: string;
+  withLayout?: boolean; // 是否包裹主题 Layout，默认 true
 }
 
 const PageLayout: React.FC<PageLayoutProps> = ({
   children,
+  pageId,
   title,
   description,
-  containerClassName = ''
+  containerClassName = '',
+  withLayout = true,
 }) => {
   const { i18n } = useDocusaurusContext();
 
-  useEffect(() => {
-    document.body.setAttribute('data-page-type', 'custom-layout');
+  // 根据 pageId 和语言获取页面元数据
+  const metadata = i18n.currentLocale === 'zh' ? PAGE_METADATA_ZH : PAGE_METADATA_EN;
+  const pageMetadata = metadata[pageId] || metadata['index'];
 
-    // 清理函数：组件卸载时移除类名
-    return () => {
-      document.body.removeAttribute('data-page-type');
-    };
-  }, []);
+  // 使用传入的 title/description 或默认的元数据
+  const finalTitle = title || pageMetadata.title;
+  const finalDescription = description || pageMetadata.description;
 
   // 为子组件注入 currentLocale prop
   const childrenWithProps = React.Children.map(children, (child) => {
@@ -38,24 +43,28 @@ const PageLayout: React.FC<PageLayoutProps> = ({
     return child;
   });
 
-  return (
-    <LayoutComponent>
-      <Head children={
-        <>
-          <title>{title}</title>
-          <meta name="description" content={description} />
-          <meta property="og:title" content={title} />
-          <meta property="og:description" content={description} />
-          <meta name="twitter:title" content={title} />
-          <meta name="twitter:description" content={description} />
-        </>
-      } />
+  const content = (
+    <>
+      <Head 
+        title={finalTitle}
+        titleTemplate="%s - JitAI"
+        meta={[
+          { name: 'description', content: finalDescription },
+          { property: 'og:title', content: finalTitle },
+          { property: 'og:description', content: finalDescription },
+          { name: 'twitter:title', content: finalTitle },
+          { name: 'twitter:description', content: finalDescription },
+        ]}
+        children={<></>}
+      />
       <div className={`${containerClassName} custom-page`}>
         <Navbar currentLocale={i18n.currentLocale}/>
         {childrenWithProps}
       </div>
-    </LayoutComponent>
+    </>
   );
+
+  return withLayout ? <LayoutComponent>{content}</LayoutComponent> : content;
 };
 
 export default PageLayout;

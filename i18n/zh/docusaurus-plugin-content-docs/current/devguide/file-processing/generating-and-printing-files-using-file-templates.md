@@ -1,9 +1,10 @@
 ---
 sidebar_position: 3
 slug: generating-and-printing-files-using-file-templates
+description: "用文件模板生成和打印文件的详细指南和说明。"
 ---
 
-# 用文件模板生成和打印文件 {#generating-and-printing-files-using-file-templates}
+# 用文件模板生成和打印文件
 
 文件模板创建完成后，可以通过调用打印服务来生成和打印文件。本文档介绍如何使用已创建的文件模板来生成和打印Word文档和Excel文档。
 

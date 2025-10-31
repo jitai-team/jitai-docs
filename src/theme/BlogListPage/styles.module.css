@@ -1,0 +1,474 @@
+/* 博客列表页面样式 - 按照原型设计 */
+
+.container {
+  min-height: 100vh;
+  background: var(--bg-secondary);
+  padding: var(--section-padding);
+}
+
+.pageHeader {
+  text-align: center;
+  margin-bottom: var(--space-16);
+  margin-top: var(--space-8);
+}
+
+.pageTitle {
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-secondary);
+  margin-bottom: var(--space-6);
+  line-height: 1.5;
+}
+
+.pageSubtitle {
+  font-size: var(--font-size-subtitle);
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* 博客网格区域 */
+.blogGridSection {
+  overflow-x: hidden; /* 防止横向滚动 */
+}
+
+.blogGrid {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  padding-bottom: var(--space-8);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-10);
+  row-gap: var(--space-10); /* 增大行间距，避免阴影被下一行遮挡 */
+  overflow-x: hidden; /* 防止横向滚动 */
+  align-items: stretch; /* 确保同一行卡片高度一致 */
+}
+
+.blogCardLink {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.blogCard {
+  background: var(--bg-card);
+  backdrop-filter: blur(15px);
+  border-radius: var(--border-radius-card);
+  border: 1px solid var(--border-color-light);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-primary);
+  position: relative;
+  overflow: hidden;
+  padding: var(--card-padding);
+  z-index: 0; /* 使 hover 时可叠在上层 */
+  height: 100%; /* 确保卡片占满网格高度 */
+  display: flex;
+  flex-direction: column;
+}
+
+.blogCardLink:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.blogCard:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+  background: var(--bg-card-hover);
+  z-index: 2;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  height: 100%;
+  min-width: 0; /* 允许子元素在 flex 下收缩 */
+  flex-grow: 1; /* 占据剩余空间 */
+}
+
+.cardText {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-width: 0;
+  order: 1; /* 文字内容在上方 */
+}
+
+.cardTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-4);
+  color: var(--text-primary);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+  word-break: break-word;
+  flex-shrink: 0;
+}
+
+.cardExcerpt {
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-6);
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* 减少为 2 行，给标题更多空间 */
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
+}
+
+.cardMeta {
+  display: flex;
+  justify-content: space-between; /* 左侧时间，右侧阅读更多 */
+  align-items: center;
+  gap: var(--space-5);
+  font-size: var(--font-size-sm);
+  color: var(--text-tertiary);
+}
+
+.postDate {
+  font-weight: var(--font-weight-medium);
+}
+
+.readMoreIndicator {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+  transition: var(--transition-primary);
+  cursor: pointer;
+  opacity: 0; /* 默认隐藏 */
+  transform: translateX(-4px); /* 默认向左偏移 */
+}
+
+.blogCard:hover .readMoreIndicator {
+  opacity: 1; /* hover 时显示 */
+  transform: translateX(0); /* hover 时回到正常位置 */
+}
+
+.readMoreIndicator svg {
+  transition: transform var(--transition-primary);
+}
+
+.blogCard:hover .readMoreIndicator svg {
+  transform: translateX(0); /* hover 时图标也在正常位置 */
+}
+
+/* 图片相关样式已移除 */
+
+/* 分页 */
+.paginatorWrapper {
+  padding: var(--space-16) 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* 订阅区域 */
+.subscriptionSection {
+  padding: var(--space-32) 0;
+  background: var(--bg-secondary);
+}
+
+.subscriptionContent {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.subscriptionText {
+  flex: 1;
+}
+
+.subscriptionTitle {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-5);
+}
+
+.subscriptionDescription {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+  max-width: 500px;
+}
+
+.subscriptionForm {
+  flex: 0 0 400px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.emailInput {
+  padding: var(--space-5);
+  border: 1px solid var(--border-color-light);
+  border-radius: var(--border-radius-md);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-size: var(--font-size-base);
+}
+
+.emailInput:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(61, 101, 253, 0.1);
+}
+
+.subscribeButton {
+  padding: var(--space-5);
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: var(--transition-primary);
+}
+
+.subscribeButton:hover {
+  background: var(--color-primary-hover);
+}
+
+.successMessage {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-success);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+/* 响应式设计 */
+
+@media (max-width: 1024px) {
+  /* .container {
+    padding: var(--space-8);
+  } */
+  
+  .pageHeader {
+    margin-bottom: var(--space-12);
+    margin-top: var(--space-6);
+  }
+  
+  .pageTitle {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--space-5);
+  }
+  
+  .pageSubtitle {
+    font-size: var(--font-size-lg);
+    max-width: 600px;
+  }
+  
+  .blogGrid {
+    max-width: 1000px;
+    padding: 0 var(--space-6);
+    gap: var(--space-8);
+    row-gap: var(--space-8);
+  }
+  
+  .subscriptionContent {
+    flex-direction: column;
+    gap: var(--space-12);
+    text-align: center;
+  }
+  
+  .subscriptionForm {
+    flex: none;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  /* .container {
+    padding: var(--space-6);
+  } */
+  
+  .pageHeader {
+    margin-bottom: var(--space-10);
+    margin-top: var(--space-4);
+  }
+  
+  .pageTitle {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--space-4);
+  }
+  
+  .pageSubtitle {
+    font-size: var(--font-size-base);
+    max-width: 500px;
+    padding: 0 var(--space-4);
+  }
+  
+  .blogGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    row-gap: var(--space-6);
+    padding: 0 var(--space-4);
+  }
+  
+  .blogCard {
+    padding: var(--space-5);
+  }
+  
+  .cardContent {
+    gap: var(--space-5);
+  }
+  
+  .cardTitle {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-3);
+  }
+  
+  .cardExcerpt {
+    margin-bottom: var(--space-5);
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+  
+  .cardMeta {
+    gap: var(--space-4);
+    font-size: var(--font-size-xs);
+  }
+  
+  .subscriptionSection {
+    padding: var(--space-20) 0;
+  }
+  
+  .subscriptionContent {
+    padding: 0 var(--space-4);
+    gap: var(--space-10);
+  }
+  
+  .subscriptionTitle {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-4);
+  }
+  
+  .subscriptionDescription {
+    font-size: var(--font-size-sm);
+    max-width: 400px;
+  }
+  
+  .subscriptionForm {
+    max-width: 350px;
+    gap: var(--space-4);
+  }
+  
+  .emailInput,
+  .subscribeButton {
+    padding: var(--space-4);
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  /* .container {
+    padding: var(--space-4);
+  } */
+  
+  .pageHeader {
+    margin-bottom: var(--space-8);
+    margin-top: var(--space-3);
+  }
+  
+  .pageTitle {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-3);
+    line-height: 1.3;
+  }
+  
+  .pageSubtitle {
+    font-size: var(--font-size-sm);
+    max-width: 350px;
+    line-height: 1.4;
+  }
+  
+  .blogGrid {
+    gap: var(--space-5);
+    row-gap: var(--space-5);
+    padding: 0 var(--space-3);
+  }
+  
+  .blogCard {
+    padding: var(--space-4);
+  }
+  
+  .cardContent {
+    gap: var(--space-4);
+  }
+  
+  .cardTitle {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-2);
+    line-height: 1.3;
+  }
+  
+  .cardExcerpt {
+    margin-bottom: var(--space-4);
+    font-size: var(--font-size-sm);
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+  
+  .cardMeta {
+    gap: var(--space-3);
+    font-size: var(--font-size-xs);
+  }
+  
+  .readMoreIndicator {
+    font-size: var(--font-size-xs);
+  }
+  
+  .subscriptionSection {
+    padding: var(--space-16) 0;
+  }
+  
+  .subscriptionContent {
+    padding: 0 var(--space-3);
+    gap: var(--space-8);
+  }
+  
+  .subscriptionTitle {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-3);
+  }
+  
+  .subscriptionDescription {
+    font-size: var(--font-size-xs);
+    max-width: 300px;
+    line-height: 1.4;
+  }
+  
+  .subscriptionForm {
+    max-width: 300px;
+    gap: var(--space-3);
+  }
+  
+  .emailInput,
+  .subscribeButton {
+    padding: var(--space-3);
+    font-size: var(--font-size-xs);
+  }
+}

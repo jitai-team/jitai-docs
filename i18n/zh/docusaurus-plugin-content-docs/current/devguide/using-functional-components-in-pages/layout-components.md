@@ -1,6 +1,7 @@
 ---
 sidebar_position: 11
 slug: layout-components
+description: "布局组件的详细指南和说明。"
 ---
 
 # 布局组件

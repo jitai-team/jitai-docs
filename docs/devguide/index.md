@@ -1,5 +1,6 @@
 ---
 sidebar_position: 0
+description: "JitAi developer guide overview. Complete documentation for building applications on the JitAi platform."
 ---
 
 import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
@@ -66,6 +67,7 @@ Set up your development environment by installing the platform and activating no
     { text: "Bind Node to Joined Organization When Activating", href: "devguide/installation-activation/developer-team-management#bind-node-to-joined-team-when-activating" },
     { text: "Use Organization Bind Code to Join and Bind When Activating Node", href: "devguide/installation-activation/developer-team-management#use-team-bind-code-to-join-and-bind-when-activating-node" },
     { text: "Join Organization via Bind Code When Logging into Existing Node", href: "devguide/installation-activation/developer-team-management#join-team-via-bind-code-when-logging-into-existing-node" },
+    { text: "Viewing team ID", href: "devguide/installation-activation/developer-team-management#view-team-id" },
     { text: "View and Refresh Organization Bind Code", href: "devguide/installation-activation/developer-team-management#view-and-refresh-team-bind-code" },
     { text: "Remove Organization Member", href: "devguide/installation-activation/developer-team-management#remove-team-member" }
   ]} />
@@ -77,8 +79,9 @@ Set up your development environment by installing the platform and activating no
   description="Keep your platform nodes up-to-date with the latest features and stability improvements."
 >
   <LinkGrid links={[
-    { text: "Update Procedures", href: "devguide/installation-activation/platform-node-updates-upgrades" },
-    { text: "Upgrade Methods", href: "devguide/installation-activation/platform-node-updates-upgrades" }
+    { text: "Update banner and entry", href: "devguide/installation-activation/platform-node-updates-upgrades#upgrade-entry" },
+    { text: "One‑click upgrade flow", href: "devguide/installation-activation/platform-node-updates-upgrades#one-click-upgrade" },
+    { text: "Recommendations for clusters", href: "devguide/installation-activation/platform-node-updates-upgrades#cluster-recommendations" }
   ]} />
 </IndexCard>
 
@@ -285,19 +288,25 @@ Craft beautiful, intuitive user interfaces. Build portal navigation, construct d
 </IndexCard>
 
 <IndexCard
-  title="Component-Based Page Development"
-  href="devguide/shell-and-page/component-based-page-development"
+  title="Componentized Pages"
+  href="devguide/shell-and-page/componentized-page"
+  description="Understand componentized pages—the foundation of JitAi's page system, built with functional components for data display and user interaction."
+/>
+
+<IndexCard
+  title="Creating Generic Pages"
+  href="devguide/shell-and-page/generic-page"
   description="Build page interfaces visually—drag and drop components, configure events, and create rich interactive experiences without writing code."
 >
   <LinkGrid links={[
-    { text: "Creating generic pages", href: "devguide/shell-and-page/component-based-page-development#creating-generic-pages" },
-    { text: "Visual page editor", href: "devguide/shell-and-page/component-based-page-development#visual-page-editor" },
-    { text: "Component common operations", href: "devguide/shell-and-page/component-based-page-development#component-common-operations" },
-    { text: "Page variables", href: "devguide/shell-and-page/component-based-page-development#page-variables" },
-    { text: "Page functions", href: "devguide/shell-and-page/component-based-page-development#page-functions" },
-    { text: "Page events", href: "devguide/shell-and-page/component-based-page-development#page-events" },
-    { text: "Shortcuts", href: "devguide/shell-and-page/component-based-page-development#shortcuts" },
-    { text: "Enabling AI assistant for page", href: "devguide/shell-and-page/component-based-page-development#enabling-ai-assistant" }
+    { text: "Creating generic pages", href: "devguide/shell-and-page/generic-page" },
+    { text: "Visual page editor", href: "devguide/shell-and-page/generic-page#visual-page-editor" },
+    { text: "Component common operations", href: "devguide/shell-and-page/generic-page#component-common-operations" },
+    { text: "Page variables", href: "devguide/shell-and-page/generic-page#page-variables" },
+    { text: "Page functions", href: "devguide/shell-and-page/generic-page#page-functions" },
+    { text: "Page events", href: "devguide/shell-and-page/generic-page#page-events" },
+    { text: "Shortcuts", href: "devguide/shell-and-page/generic-page#shortcuts" },
+    { text: "Enabling AI assistant for page", href: "devguide/shell-and-page/generic-page#enabling-ai-assistant" }
   ]} />
 </IndexCard>
 
@@ -383,9 +392,11 @@ Elevate user experiences with AI-powered intelligence. Integrate AI assistants, 
   href="devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals"
   description="Embed AI assistants into portal interfaces—provide users with intelligent, contextual help throughout their workflow."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Configuring AI assistant", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals#configuring-ai-assistant" },
+    { text: "Runtime effects", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals#runtime-effects" },
+    { text: "Feature highlights", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals#feature-highlights" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -393,9 +404,13 @@ Elevate user experiences with AI-powered intelligence. Integrate AI assistants, 
   href="devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages"
   description="Enhance component pages with embedded AI assistants—deliver contextual help and intelligent interactions for task-specific workflows."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Enabling AI Assistant", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#enable-ai-assistant" },
+    { text: "AI assistant configuration", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#ai-assistant-configuration" },
+    { text: "AI assistant event subscription", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#ai-assistant-event-subscription" },
+    { text: "Send AI messages in pages", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#send-ai-message" },
+    { text: "Direct call to AI assistant", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#call-ai-assistant" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -403,9 +418,13 @@ Elevate user experiences with AI-powered intelligence. Integrate AI assistants, 
   href="devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages"
   description="Invoke AI elements directly from pages—leverage AI agents, LLM services, and knowledge bases for dynamic, intelligent content generation."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Using AI Assistant in pages", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#using-in-pages" },
+    { text: "Visual calling", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#visual-calling" },
+    { text: "Full code calling", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#full-code-calling" },
+    { text: "Using AI agent in pages", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#using-ai-agent-in-pages" },
+    { text: "Using large language models in pages", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#using-large-language-models-in-pages" }
+  ]} />
 </IndexCard>
 
 </div>
@@ -819,29 +838,31 @@ Leverage a powerful component library for rapid development. Drag and drop table
 <IndexCard
   title="Approval Components"
   href="devguide/using-functional-components-in-pages/approval-components"
-  description="UI components related to approval processes, supporting application initiation and approval processing."
+  description="Workflow-integrated UI components for submitting approval requests, processing approval tasks, and managing approval history with event-driven notifications."
 >
   <LinkGrid columns={2} links={[
-    { text: "Create Initiate Application Component", href: "devguide/using-functional-components-in-pages/approval-components#create-initiate-application-component" },
-    { text: "Parameter Configuration for Initiate Application", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-1" },
-    { text: "Post-processing/Refresh Event for Initiate Application", href: "devguide/using-functional-components-in-pages/approval-components#post-processing-refresh-event" },
-    { text: "Create Approval Process Component", href: "devguide/using-functional-components-in-pages/approval-components#create-approval-workflow-component" },
-    { text: "Parameter Configuration for Approval Processing", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-2" },
-    { text: "Keep Historical Approval Records", href: "devguide/using-functional-components-in-pages/approval-components#keep-historical-approval-records" },
-    { text: "Post-processing/Refresh Event for Approval Processing", href: "devguide/using-functional-components-in-pages/approval-components#post-processing-refresh-event-1" }
+    { text: "Initiate application component", href: "devguide/using-functional-components-in-pages/approval-components#initiate-application-component" },
+    { text: "Creating initiate application component", href: "devguide/using-functional-components-in-pages/approval-components#create-initiate-application-component" },
+    { text: "Parameter configuration", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-1" },
+    { text: "After processing/refresh events", href: "devguide/using-functional-components-in-pages/approval-components#post-processing-refresh-event" },
+    { text: "Approval processing component", href: "devguide/using-functional-components-in-pages/approval-components#approval-processing-component" },
+    { text: "Creating approval processing component", href: "devguide/using-functional-components-in-pages/approval-components#create-approval-workflow-component" },
+    { text: "Parameter configuration", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-2" },
+    { text: "Retaining historical approval records", href: "devguide/using-functional-components-in-pages/approval-components#keep-historical-approval-records" },
+    { text: "After processing/refresh events", href: "devguide/using-functional-components-in-pages/approval-components#post-processing-refresh-event-1" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="Payment Components"
   href="devguide/using-functional-components-in-pages/payment-components"
-  description="Components integrating payment functionality, supporting multiple payment methods and payment flows."
+  description="Functional UI elements enabling multi-platform payment processing with native Alipay and WeChat Pay support for complete transaction lifecycle management."
 >
   <LinkGrid links={[
-    { text: "Create Component", href: "devguide/using-functional-components-in-pages/payment-components#payment-component-creation" },
-    { text: "Component Functions", href: "devguide/using-functional-components-in-pages/payment-components#initiate-payment-function" },
-    { text: "Component Event Logic", href: "devguide/using-functional-components-in-pages/payment-components#event-logic" },
-    { text: "Component Usage", href: "devguide/using-functional-components-in-pages/payment-components#component-usage" }
+    { text: "Creating payment components", href: "devguide/using-functional-components-in-pages/payment-components#payment-component-creation" },
+    { text: "Initiate payment function", href: "devguide/using-functional-components-in-pages/payment-components#initiate-payment-function" },
+    { text: "Event logic", href: "devguide/using-functional-components-in-pages/payment-components#event-logic" },
+    { text: "Component usage", href: "devguide/using-functional-components-in-pages/payment-components#component-usage" }
   ]} />
 </IndexCard>
 
@@ -1138,42 +1159,145 @@ Design intelligent workflows visually. Orchestrate business processes with drag-
 <IndexCard
   title="Creating AI Assistant Elements"
   href="devguide/ai-assistant/create-ai-assistant"
-  description="Learn how to create AI assistant elements, configure workflows, node types, and event handling for intelligent business process automation."
+  description="Build production-grade AI applications with multi-agent collaboration, UI interaction, and visual orchestration—no coding required."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "What is AI assistant", href: "devguide/ai-assistant/create-ai-assistant#what-is-ai-assistant" },
+    { text: "Features", href: "devguide/ai-assistant/create-ai-assistant#features" },
+    { text: "Creating AI assistant", href: "devguide/ai-assistant/create-ai-assistant#creating-ai-assistant" }
+  ]} />
 </IndexCard>
 
 <IndexCard
   title="Process Orchestration and Node Configuration"
   href="devguide/ai-assistant/process-orchestration-node-configuration"
-  description="Deep dive into AI assistant process orchestration technology and detailed node configuration methods."
+  description="Master visual workflow design with 8+ node types including AIAgent, routing, conditional logic, and human-AI collaboration nodes."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Visual orchestration basics", href: "devguide/ai-assistant/process-orchestration-node-configuration#visual-orchestration" },
+    { text: "Start node", href: "devguide/ai-assistant/process-orchestration-node-configuration#start-node" },
+    { text: "Router node", href: "devguide/ai-assistant/process-orchestration-node-configuration#routing-decision" },
+    { text: "AIAgent node", href: "devguide/ai-assistant/process-orchestration-node-configuration#ai-agent" },
+    { text: "Action in conversation node", href: "devguide/ai-assistant/process-orchestration-node-configuration#action-in-conversation" },
+    { text: "Action in page node", href: "devguide/ai-assistant/process-orchestration-node-configuration#action-in-page" },
+    { text: "Function node", href: "devguide/ai-assistant/process-orchestration-node-configuration#function" },
+    { text: "IF-ELSE node", href: "devguide/ai-assistant/process-orchestration-node-configuration#if-else" },
+    { text: "Iteration node", href: "devguide/ai-assistant/process-orchestration-node-configuration#iteration" }
+  ]} />
 </IndexCard>
 
 <IndexCard
   title="AI Assistant Input and Output"
   href="devguide/ai-assistant/ai-assistant-input-output"
-  description="Understand AI assistant input and output configuration and data processing methods."
+  description="Configure custom input parameters, control runtime log verbosity, and send structured data to conversations with custom widgets."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Configuring input parameters", href: "devguide/ai-assistant/ai-assistant-input-output#input-args" },
+    { text: "Runtime process log output", href: "devguide/ai-assistant/ai-assistant-input-output#runtime-process-log-output" },
+    { text: "State data output to conversation", href: "devguide/ai-assistant/ai-assistant-input-output#state-data-output" },
+    { text: "Node output configuration", href: "devguide/ai-assistant/ai-assistant-input-output#message-output" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="AI Assistant Runtime State"
+  href="devguide/ai-assistant/ai-assistant-state"
+  description="Leverage runtime state as the AI's 'memory bank' for context preservation, multi-turn conversations, and error recovery."
+>
+  <LinkGrid links={[
+    { text: "State data storage repository", href: "devguide/ai-assistant/ai-assistant-state#state-data-storage-repository" },
+    { text: "Runtime state data content", href: "devguide/ai-assistant/ai-assistant-state#state-data-content" },
+    { text: "Data usage methods", href: "devguide/ai-assistant/ai-assistant-state#data-usage-methods" },
+    { text: "Data flow and inter-node transfer", href: "devguide/ai-assistant/ai-assistant-state#data-flow" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="AI Assistant Events"
+  href="devguide/ai-assistant/ai-assistant-event"
+  description="Subscribe to node execution, tool call, and human interaction events in both frontend pages and backend services."
+>
+  <LinkGrid links={[
+    { text: "Event type overview", href: "devguide/ai-assistant/ai-assistant-event#event-type-overview" },
+    { text: "Frontend page events", href: "devguide/ai-assistant/ai-assistant-event#frontend-page-events" },
+    { text: "Node execution events", href: "devguide/ai-assistant/ai-assistant-event#node-running-events" },
+    { text: "Tool call events", href: "devguide/ai-assistant/ai-assistant-event#agent-call-tool-events" },
+    { text: "Human interaction events", href: "devguide/ai-assistant/ai-assistant-event#action-in-conversation-events" },
+    { text: "Backend business events", href: "devguide/ai-assistant/ai-assistant-event#backend-business-events" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Embedding AI Assistant in External Web Pages"
+  href="devguide/ai-assistant/embed-assistant-to-web-page"
+  description="Integrate AI assistant into any web page with deep bidirectional interaction capabilities."
+>
+  <LinkGrid links={[
+    { text: "What is an embedded AI assistant", href: "devguide/ai-assistant/embed-assistant-to-web-page#what-is-embedded-ai-assistant" },
+    { text: "Core advantages", href: "devguide/ai-assistant/embed-assistant-to-web-page#core-advantages" },
+    { text: "Integration process", href: "devguide/ai-assistant/embed-assistant-to-web-page#integration-process" },
+    { text: "Creating embedded AI assistant", href: "devguide/ai-assistant/embed-assistant-to-web-page#creating-embedded-ai-assistant" },
+    { text: "Embed into external web page", href: "devguide/ai-assistant/embed-assistant-to-web-page#how-to-embeded-to-a-web-page" },
+    { text: "Authentication", href: "devguide/ai-assistant/embed-assistant-to-web-page#authentication" },
+    { text: "AI invoking web page functions", href: "devguide/ai-assistant/embed-assistant-to-web-page#how-to-call-page-functions" },
+    { text: "Subscribe to AI events", href: "devguide/ai-assistant/embed-assistant-to-web-page#subscribe-ai-events" },
+    { text: "Runtime configuration", href: "devguide/ai-assistant/embed-assistant-to-web-page#runtime-config" },
+    { text: "Send messages to AI", href: "devguide/ai-assistant/embed-assistant-to-web-page#send-message-to-ai" },
+    { text: "JS SDK API reference", href: "devguide/ai-assistant/embed-assistant-to-web-page#js-sdk" }
+  ]} />
 </IndexCard>
 
 <IndexCard
   title="AI Assistant API Integration"
   href="devguide/ai-assistant/ai-assistant-api-exposure"
-  description="Expose AI assistant capabilities through API interfaces for integration with external systems."
+  description="Expose AI assistant capabilities through API interfaces for integration within applications and external systems."
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "Send AI message function", href: "devguide/ai-assistant/ai-assistant-api-exposure#send-ai-message" },
+    { text: "Calling AI assistant within application", href: "devguide/ai-assistant/ai-assistant-api-exposure#calling-ai-assistant-within-application" },
+    { text: "External AI assistant calling", href: "devguide/ai-assistant/ai-assistant-api-exposure#external-ai-assistant-calling" }
+  ]} />
 </IndexCard>
+
+<IndexCard
+  title="Welcome Message and Conversation History"
+  href="devguide/ai-assistant/welcome-message-and-opening"
+  description="Configure welcome messages, opening statements, and manage conversation history for better user engagement and context continuity."
+>
+  <LinkGrid links={[
+    { text: "Welcome message configuration", href: "devguide/ai-assistant/welcome-message-and-opening#welcome-message-configuration" },
+    { text: "Preamble configuration", href: "devguide/ai-assistant/welcome-message-and-opening#preamble-configuration" },
+    { text: "Conversation history management", href: "devguide/ai-assistant/ai-conversation-history#start-and-managing-conversation" },
+    { text: "Using historical conversations", href: "devguide/ai-assistant/ai-conversation-history#using-historical-conversations" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Conversational Multi-Task AI Assistant"
+  href="devguide/ai-assistant/develop-conversational-multi-task-ai-assistant"
+  description="Complete tutorial: Build an AI assistant with intelligent routing, multiple agents, and automated document generation."
+>
+  <LinkGrid links={[
+    { text: "Writing Agent development", href: "devguide/ai-assistant/develop-conversational-multi-task-ai-assistant#writing-agent" },
+    { text: "Customer Service Agent with knowledge base", href: "devguide/ai-assistant/develop-conversational-multi-task-ai-assistant#customer-service-agent" },
+    { text: "Solution Agent for quotations", href: "devguide/ai-assistant/develop-conversational-multi-task-ai-assistant#solution-agent" },
+    { text: "Process orchestration and integration", href: "devguide/ai-assistant/develop-conversational-multi-task-ai-assistant#developing-ai-assistant" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="Human-AI Collaborative Enterprise Assistant"
+  href="devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant"
+  description="Build a sophisticated AI grading system demonstrating deep UI integration, event-driven collaboration, and human oversight."
+>
+  <LinkGrid links={[
+    { text: "Product core features", href: "devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant#product-core-features-overview" },
+    { text: "Deep integration with frontend", href: "devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant#deep-integration-of-ai-with-frontend" },
+    { text: "Human-machine collaboration design", href: "devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant#human-machine-collaboration-node-design" },
+    { text: "AI grading case study", href: "devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant#demonstrating-collaboration-features-through-ai-grading-case-study" }
+  ]} />
+</IndexCard>
+
 </div>
 
 ## Data modeling {#data-modeling}
@@ -1792,8 +1916,12 @@ Connect to the broader ecosystem—integrate third-party APIs, payment gateways 
   <LinkGrid links={[
     { text: "Alibaba Cloud SMS", href: "devguide/third-party-integration/sms-service#aliyun-sms" },
     { text: "Creating Alibaba Cloud SMS Service", href: "devguide/third-party-integration/sms-service#aliyun-sms-service-creation" },
+    { text: "AWS SNS SMS", href: "devguide/third-party-integration/sms-service#aws-sns-sms" },
+    { text: "Creating AWS SNS SMS service", href: "devguide/third-party-integration/sms-service#aws-sns-service-creation" },
+    { text: "Twilio SMS", href: "devguide/third-party-integration/sms-service#twilio-sms" },
+    { text: "Creating Twilio SMS service", href: "devguide/third-party-integration/sms-service#twilio-service-creation" },
     { text: "Using SMS Service in Mobile Login", href: "devguide/third-party-integration/sms-service#use-sms-service-in-mobile-login" },
-    { text: "Using SMS Service in Approval Workflows", href: "devguide/third-party-integration/sms-service#use-sms-service-in-approval-workflow" },
+    { text: "Using SMS Service in Approval Workflows", href: "devguide/third-party-integration/sms-service#use-sms-service-in-approval-flow" },
     { text: "SMS Notification Function", href: "devguide/third-party-integration/sms-service#sms-notification-function" }
   ]} />
 </IndexCard>

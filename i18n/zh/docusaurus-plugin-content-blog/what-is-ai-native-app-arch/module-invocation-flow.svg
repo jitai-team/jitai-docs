@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700">
+  <defs>
+    <filter id="shadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="0" dy="2"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.2"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="700" fill="#ffffff"/>
+  
+  <!-- Title -->
+  <text x="600" y="50" font-family="PingFang SC, sans-serif" font-size="28" font-weight="700" fill="#374151" text-anchor="middle">模块驱动机制：统一调用语法</text>
+  
+  <!-- Top Section: Traditional Way -->
+  <g id="traditionalWay">
+    <rect x="100" y="100" width="1000" height="220" rx="12" fill="#fff7ed" stroke="#ffba00" stroke-width="2" filter="url(#shadow)"/>
+    
+    <!-- Title -->
+    <text x="600" y="135" font-family="PingFang SC, sans-serif" font-size="20" font-weight="700" fill="#ffba00" text-anchor="middle">传统方式：多种调用方式（混乱）</text>
+    
+    <!-- AI Icon -->
+    <g transform="translate(200, 180)">
+      <circle cx="0" cy="0" r="35" fill="#ffba00" opacity="0.3"/>
+      <ellipse cx="0" cy="0" rx="28" ry="25" fill="#ffba00"/>
+      <circle cx="-8" cy="-5" r="4" fill="white"/>
+      <circle cx="8" cy="-5" r="4" fill="white"/>
+      <path d="M -8 8 Q 0 14, 8 8" stroke="white" stroke-width="2" fill="none"/>
+      <text x="0" y="55" font-family="PingFang SC, sans-serif" font-size="14" font-weight="600" fill="#6b7280" text-anchor="middle">AI</text>
+    </g>
+    
+    <!-- Diverging arrows to different protocols -->
+    <g stroke="#ffba00" stroke-width="2" fill="none">
+      <path d="M 240 180 L 380 160" marker-end="url(#arrowOrange)"/>
+      <path d="M 240 180 L 380 180" marker-end="url(#arrowOrange)"/>
+      <path d="M 240 180 L 380 200" marker-end="url(#arrowOrange)"/>
+      <path d="M 240 180 L 380 220" marker-end="url(#arrowOrange)"/>
+    </g>
+    
+    <!-- Different Protocol Boxes -->
+    <g transform="translate(400, 150)">
+      <!-- REST API -->
+      <rect x="0" y="0" width="140" height="50" rx="6" fill="white" stroke="#ffba00" stroke-width="2"/>
+      <text x="70" y="22" font-family="PingFang SC, sans-serif" font-size="14" font-weight="600" fill="#6b7280" text-anchor="middle">REST API</text>
+      <text x="70" y="38" font-family="PingFang SC, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">HTTP协议</text>
+      
+      <!-- RPC -->
+      <g transform="translate(180, 20)">
+        <rect x="0" y="0" width="140" height="50" rx="6" fill="white" stroke="#ffba00" stroke-width="2"/>
+        <text x="70" y="22" font-family="PingFang SC, sans-serif" font-size="14" font-weight="600" fill="#6b7280" text-anchor="middle">RPC</text>
+        <text x="70" y="38" font-family="PingFang SC, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">远程调用</text>
+      </g>
+      
+      <!-- Message Queue -->
+      <g transform="translate(360, 40)">
+        <rect x="0" y="0" width="140" height="50" rx="6" fill="white" stroke="#ffba00" stroke-width="2"/>
+        <text x="70" y="22" font-family="PingFang SC, sans-serif" font-size="14" font-weight="600" fill="#6b7280" text-anchor="middle">消息队列</text>
+        <text x="70" y="38" font-family="PingFang SC, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">异步通信</text>
+      </g>
+      
+      <!-- Function Call -->
+      <g transform="translate(540, 60)">
+        <rect x="0" y="0" width="140" height="50" rx="6" fill="white" stroke="#ffba00" stroke-width="2"/>
+        <text x="70" y="22" font-family="PingFang SC, sans-serif" font-size="14" font-weight="600" fill="#6b7280" text-anchor="middle">函数调用</text>
+        <text x="70" y="38" font-family="PingFang SC, sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">直接调用</text>
+      </g>
+    </g>
+    
+    <!-- Problem label -->
+    <text x="850" y="290" font-family="PingFang SC, sans-serif" font-size="14" fill="#ffba00" text-anchor="end">需要为每种方式写适配代码 😰</text>
+  </g>
+  
+  <!-- Middle: JitAi Solution -->
+  <g transform="translate(600, 350)">
+    <rect x="-100" y="-20" width="200" height="40" rx="20" fill="#326DFF"/>
+    <text x="0" y="5" font-family="PingFang SC, sans-serif" font-size="16" font-weight="700" fill="white" text-anchor="middle">JitAi 解决方案 ⬇</text>
+  </g>
+  
+  <!-- Bottom Section: AI Native Way -->
+  <g id="aiNativeWay">
+    <rect x="100" y="400" width="1000" height="220" rx="12" fill="rgba(50, 109, 255, 0.05)" stroke="#326DFF" stroke-width="2" filter="url(#shadow)"/>
+    
+    <!-- Title -->
+    <text x="600" y="435" font-family="PingFang SC, sans-serif" font-size="20" font-weight="700" fill="#326DFF" text-anchor="middle">AI原生方式：统一语法（简洁）</text>
+    
+    <!-- AI Icon -->
+    <g transform="translate(200, 510)">
+      <circle cx="0" cy="0" r="35" fill="#326DFF" opacity="0.2"/>
+      <ellipse cx="0" cy="0" rx="28" ry="25" fill="#326DFF"/>
+      <circle cx="-8" cy="-5" r="4" fill="white"/>
+      <circle cx="8" cy="-5" r="4" fill="white"/>
+      <path d="M -8 8 Q 0 14, 8 8" stroke="white" stroke-width="2" fill="none"/>
+      <text x="0" y="55" font-family="PingFang SC, sans-serif" font-size="14" font-weight="600" fill="#326DFF" text-anchor="middle">AI</text>
+    </g>
+    
+    <!-- Single arrow to JAAP interface -->
+    <g stroke="#326DFF" stroke-width="3" fill="none">
+      <path d="M 240 510 L 360 510" marker-end="url(#arrowBlue)"/>
+    </g>
+    
+    <!-- JAAP Interface Box -->
+    <g transform="translate(380, 485)">
+      <rect x="0" y="0" width="120" height="50" rx="6" fill="#326DFF"/>
+      <text x="60" y="22" font-family="PingFang SC, sans-serif" font-size="16" font-weight="700" fill="white" text-anchor="middle">JAAP</text>
+      <text x="60" y="38" font-family="PingFang SC, sans-serif" font-size="11" fill="white" text-anchor="middle">统一接口</text>
+    </g>
+    
+    <!-- Arrows to all modules -->
+    <g stroke="#326DFF" stroke-width="2" fill="none">
+      <path d="M 510 510 L 570 485" marker-end="url(#arrowBlue)"/>
+      <path d="M 510 510 L 570 510" marker-end="url(#arrowBlue)"/>
+      <path d="M 510 510 L 570 535" marker-end="url(#arrowBlue)"/>
+      <path d="M 510 510 L 570 560" marker-end="url(#arrowBlue)"/>
+    </g>
+    
+    <!-- All Module Boxes (same style) -->
+    <g transform="translate(590, 470)">
+      <!-- Frontend -->
+      <rect x="0" y="0" width="100" height="40" rx="6" fill="white" stroke="#326DFF" stroke-width="2"/>
+      <text x="50" y="25" font-family="PingFang SC, sans-serif" font-size="13" font-weight="500" fill="#326DFF" text-anchor="middle">前端组件</text>
+      
+      <!-- Backend -->
+      <g transform="translate(130, 25)">
+        <rect x="0" y="0" width="100" height="40" rx="6" fill="white" stroke="#326DFF" stroke-width="2"/>
+        <text x="50" y="25" font-family="PingFang SC, sans-serif" font-size="13" font-weight="500" fill="#326DFF" text-anchor="middle">后端服务</text>
+      </g>
+      
+      <!-- Database -->
+      <g transform="translate(260, 50)">
+        <rect x="0" y="0" width="100" height="40" rx="6" fill="white" stroke="#326DFF" stroke-width="2"/>
+        <text x="50" y="25" font-family="PingFang SC, sans-serif" font-size="13" font-weight="500" fill="#326DFF" text-anchor="middle">数据库</text>
+      </g>
+      
+      <!-- Third Party API -->
+      <g transform="translate(390, 75)">
+        <rect x="0" y="0" width="100" height="40" rx="6" fill="white" stroke="#326DFF" stroke-width="2"/>
+        <text x="50" y="18" font-family="PingFang SC, sans-serif" font-size="12" font-weight="500" fill="#326DFF" text-anchor="middle">第三方</text>
+        <text x="50" y="32" font-family="PingFang SC, sans-serif" font-size="12" font-weight="500" fill="#326DFF" text-anchor="middle">API</text>
+      </g>
+    </g>
+    
+    <!-- Solution label -->
+    <text x="850" y="595" font-family="PingFang SC, sans-serif" font-size="14" fill="#326DFF" text-anchor="end">一种语法调用所有模块 🎯</text>
+  </g>
+  
+  <!-- Bottom Comparison -->
+  <g transform="translate(600, 660)">
+    <text x="0" y="0" font-family="PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#374151" text-anchor="middle">集成复杂度：O(n²) → O(1)</text>
+  </g>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ffba00" />
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#326DFF" />
+    </marker>
+  </defs>
+</svg>

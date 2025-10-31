@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: extend-element-family-classes
+description: "Extend your own element families in JitAi. Step-by-step guide to creating custom Type elements and building DingTalk robot integration."
 ---
 
 # Extend Your Own Element Families

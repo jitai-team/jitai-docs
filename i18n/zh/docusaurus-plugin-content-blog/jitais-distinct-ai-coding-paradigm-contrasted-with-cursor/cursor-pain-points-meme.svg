@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="title desc" viewBox="0 0 1600 900"><desc id="desc">展示Cursor用户在开发过程中的7句经典无奈对话，体现AI编码在细颗粒度层面的准确度挑战</desc><defs><linearGradient id="blueGradient" x1="0%" x2="100%" y1="0%" y2="0%"><stop offset="0%" style="stop-color:#326dff;stop-opacity:1"/><stop offset="100%" style="stop-color:#8eaeff;stop-opacity:1"/></linearGradient><style>.primary{fill:#326dff}.accent{fill:#ff6b35}.card-bg{fill:#fff}.text-dark{fill:#333;font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,&quot;PingFang SC&quot;,&quot;Hiragino Sans GB&quot;,&quot;Microsoft YaHei&quot;,sans-serif}.text-medium{fill:#6b7280}.shadow{filter:drop-shadow(0 4px 12px rgba(0,0,0,.08))}</style></defs><path d="M0 0h1600v900H0z" style="fill:#f5f5f5"/><text x="800" y="50" class="text-dark" font-size="32" font-weight="700" text-anchor="middle">
+    AI编程之-当下最热门编程语言-你会几种？
+  </text><g id="chat-bubbles"><g class="shadow"><rect width="560" height="90" x="80" y="100" stroke="#326DFF" stroke-width="2" class="card-bg" rx="12"/><circle cx="120" cy="145" r="20" fill="#326DFF" opacity=".2"/><text x="120" y="150" class="primary" font-size="24" font-weight="700" text-anchor="middle">😤</text><text x="160" y="135" class="text-dark" font-size="20" font-weight="600">
+        &quot;你要生成完整代码&quot;
+      </text><text x="160" y="165" class="text-medium" font-size="14">
+        为什么总是生成一半就停了...
+      </text></g><g class="shadow"><rect width="560" height="90" x="960" y="100" stroke="#FF6B35" stroke-width="2" class="card-bg" rx="12"/><circle cx="1000" cy="145" r="20" fill="#FF6B35" opacity=".2"/><text x="1000" y="150" class="accent" font-size="24" font-weight="700" text-anchor="middle">😰</text><text x="1040" y="135" class="text-dark" font-size="20" font-weight="600">
+        &quot;还是无法运行&quot;
+      </text><text x="1040" y="165" class="text-medium" font-size="14">
+        又是一堆报错信息...
+      </text></g><g class="shadow"><rect width="560" height="90" x="80" y="210" stroke="#326DFF" stroke-width="2" class="card-bg" rx="12"/><circle cx="120" cy="255" r="20" fill="#326DFF" opacity=".2"/><text x="120" y="260" class="primary" font-size="24" font-weight="700" text-anchor="middle">😩</text><text x="160" y="245" class="text-dark" font-size="20" font-weight="600">
+        &quot;你的代码还是有问题&quot;
+      </text><text x="160" y="275" class="text-medium" font-size="14">
+        这个bug到底怎么解决...
+      </text></g><g class="shadow"><rect width="560" height="90" x="960" y="210" stroke="#FF6B35" stroke-width="2" class="card-bg" rx="12"/><circle cx="1000" cy="255" r="20" fill="#FF6B35" opacity=".2"/><text x="1000" y="260" class="accent" font-size="24" font-weight="700" text-anchor="middle">😤</text><text x="1040" y="245" class="text-dark" font-size="20" font-weight="600">
+        &quot;不要添加不必要的注释&quot;
+      </text><text x="1040" y="275" class="text-medium" font-size="14">
+        我只要代码，不是注释大全...
+      </text></g><g class="shadow"><rect width="560" height="90" x="80" y="320" stroke="#326DFF" stroke-width="2" class="card-bg" rx="12"/><circle cx="120" cy="365" r="20" fill="#326DFF" opacity=".2"/><text x="120" y="370" class="primary" font-size="24" font-weight="700" text-anchor="middle">😫</text><text x="160" y="355" class="text-dark" font-size="20" font-weight="600">
+        &quot;只生成我让你生成的部分&quot;
+      </text><text x="160" y="385" class="text-medium" font-size="14">
+        为什么总是多此一举...
+      </text></g><g class="shadow"><rect width="560" height="90" x="960" y="320" stroke="#FF6B35" stroke-width="2" class="card-bg" rx="12"/><circle cx="1000" cy="365" r="20" fill="#FF6B35" opacity=".2"/><text x="1000" y="370" class="accent" font-size="24" font-weight="700" text-anchor="middle">😠</text><text x="1040" y="355" class="text-dark" font-size="20" font-weight="600">
+        &quot;都说了参考我之前的代码&quot;
+      </text><text x="1040" y="385" class="text-medium" font-size="14">
+        上下文理解能力太弱了...
+      </text></g><g class="shadow"><rect width="560" height="90" x="520" y="430" stroke="#FF6B35" stroke-width="3" class="card-bg" rx="12"/><circle cx="560" cy="475" r="20" fill="#FF6B35" opacity=".2"/><text x="560" y="480" class="accent" font-size="24" font-weight="700" text-anchor="middle">😡</text><text x="600" y="465" class="text-dark" font-size="20" font-weight="700">
+        &quot;不要改已经没问题的代码&quot;
+      </text><text x="600" y="495" class="text-medium" font-size="14">
+        好不容易调通的，又被你改坏了！
+      </text></g></g><g id="problem-indicator"><path fill="none" stroke="#FF6B35" stroke-dasharray="8,4" stroke-width="3" d="M400 550q200 60 400 120m400-120q-200 60-400 120" opacity=".2"/><g class="shadow"><rect width="1000" height="110" x="300" y="720" fill="url(#blueGradient)" opacity=".12" rx="16"/><rect width="1000" height="110" x="300" y="720" fill="none" stroke="#326DFF" stroke-width="3" rx="16"/>      <text x="800" y="790" class="primary" font-size="40" font-weight="700" text-anchor="middle">
+        AI在细颗粒度层面难以保持稳定的准确度
+      </text><text x="800" y="815" class="text-medium" font-size="16" text-anchor="middle">
+        JitAi (https://jit.pro)
+      </text></g></g></svg>

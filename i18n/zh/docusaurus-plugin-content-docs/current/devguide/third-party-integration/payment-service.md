@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: payment-service
+description: "内置的支付服务的详细指南和说明。"
 title: 内置的支付服务
 ---
 

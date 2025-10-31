@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: creating-language-packages
+description: "Creating Language Packages的详细指南和说明。"
 title: 创建语言包
 ---
 

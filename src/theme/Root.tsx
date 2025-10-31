@@ -10,8 +10,8 @@ export default function Root({children}: RootProps) {
   const isZh = i18n.currentLocale.startsWith('zh');
 
   const title = isZh
-    ? '下一代AI应用开发技术体系'
-    : 'Next-Gen AI App Development Technology';
+    ? 'JitAI - 生产级AI应用开发平台'
+    : 'JitAI - Quickly Build Production-Grade AI Apps';
 
   const description = isZh
     ? 'JitAI全球首创解释型应用架构，让AI智能体实时感知与编排系统，开发效率提升10倍！立即体验智能开发新时代。'

@@ -4,8 +4,6 @@
  * work well for content-centric websites.
  */
 
-/* 引入 Footer 样式 */
-@import './footer.css';
 
 
 /* You can override the default Infima variables here. */
@@ -376,16 +374,18 @@ body[data-page-type="custom-layout"] .external-link,body:has(.custom-page) .exte
 }
 
 
-.navbar__items>a[href*="demo.jit.pro"] {
-  background: linear-gradient(135deg, rgb(36, 73, 254) 0%, rgb(202, 75, 167) 100%);
+.navbar__items>a[href*="download"] {
+  background: var(--primary-color) !important;
   color: white !important;
   margin-left: 1rem;
   position: relative;
   overflow: hidden;
   border-radius: 12px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
 }
 
-.navbar__items>a[href*="demo.jit.pro"]::before {
+.navbar__items>a[href*="download"]::before {
   content: '';
   position: absolute;
   top: 0;
@@ -396,7 +396,7 @@ body[data-page-type="custom-layout"] .external-link,body:has(.custom-page) .exte
   transition: left 0.5s ease;
 }
 
-.navbar__items>a[href*="demo.jit.pro"]:hover::before {
+.navbar__items>a[href*="download"]:hover::before {
   left: 100%;
 }
 
@@ -1034,3 +1034,15 @@ body[data-page-type="custom-layout"] .external-link,body:has(.custom-page) .exte
 .table-of-contents li{
   margin: 0;
 }
+
+/* 下划线文本样式 (支持 ++text++ 语法) */
+.theme-doc-markdown ins {
+  text-decoration: underline !important;
+  text-decoration-color: var(--primary-color) !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 2px !important;
+  font-weight: 500 !important;
+}
+
+/* 引入 Footer 样式 */
+@import './footer.css';

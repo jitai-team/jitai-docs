@@ -1,5 +1,8 @@
 ---
 slug: wechat-login
+title: "WeChat Login Reference"
+description: "WeChat Login Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "WeChat Login"
 ---
 # WeChat Login
 WeChat login is a third-party authentication method based on WeChat Open Platform OAuth2.0 protocol, implementing seamless integration with WeChat user system through QR code login and user information retrieval. It handles WeChat user identity authentication, account binding management, and login status maintenance, supporting frontend-backend separation architecture and complete user authentication flow.

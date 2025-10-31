@@ -1,5 +1,8 @@
 ---
 slug: cascade-table
+title: "Cascade Table Reference"
+description: "Cascade Table Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Cascade Table"
 ---
 # Cascade Table
 Cascade Table is a table component that supports hierarchical relationship data display, implementing parent-child cascade display and linkage operations based on tree data structure. It handles hierarchical data display, expand/collapse operations, and cascade data linkage, supporting visual management of multi-level data structures and data operations for complex relationships.

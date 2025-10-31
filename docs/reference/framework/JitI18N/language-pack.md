@@ -1,5 +1,8 @@
 ---
 slug: language-pack
+title: "Language Pack Reference"
+description: "Language Pack Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Language Pack"
 ---
 # Language Pack
 Language pack is the core component of the JitI18N internationalization framework, responsible for providing multi-language translation configuration and automated translation processing. It implements real-time internationalization of page content based on DOM monitoring and text replacement mechanisms, supporting text node translation, attribute translation, dynamic content monitoring, and language switching functions.

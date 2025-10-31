@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: using-cross-app-service-elements-to-call-authorized-apis
+description: "使用跨App服务元素调用授权元素API的详细指南和说明。"
 ---
 
 # 使用跨App服务元素调用授权元素API

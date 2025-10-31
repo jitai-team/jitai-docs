@@ -1,10 +1,11 @@
 ---
 sidebar_position: 15
 slug: ai-assistant-example
+description: "示例演示的详细指南和说明。"
 draft: true
 ---
 
-# 示例演示 {#example-demo}
+# 示例演示
 本示例将展示如何构建一个智能客户信息管理助理，该助理能够理解用户的自然语言指令，并自动执行客户信息的增删改查操作。
 
 **运行效果展示**：
@@ -28,7 +29,7 @@ draft: true
 
 **示例源码获取与配置**
 
-下载地址：<a href="https://jit-www.oss-cn-beijing.aliyuncs.com/AIDemo.zip">演示示例源码</a>
+下载地址：<a href="https://jit-www.oss-accelerate.aliyuncs.com/AIDemo.zip">演示示例源码</a>
 
 **源码导入步骤**：
 

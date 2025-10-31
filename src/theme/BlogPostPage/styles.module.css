@@ -1,0 +1,34 @@
+.blogPostWrapper {
+  padding-top: 72px; /* avoid overlapping with fixed navbar */
+}
+
+.blogPostWrapper :global(.col--9) {
+  width: 100% !important;
+  max-width: 1000px !important;
+  margin: 0 auto !important;
+  padding: 0 var(--space-8) !important;
+}
+
+.blogPostWrapper :global(.col--9 header) {
+  margin: 2.5rem 0 3rem 0 !important;
+}
+
+.blogPostWrapper :global(a.tagRegular)  {
+  display: none !important;
+}
+
+.blogPostWrapper :global(.theme-edit-this-page) {
+  display: none !important;
+}
+
+.blogPostWrapper :global(.pagination-nav__link) {
+  display: none !important;
+}
+
+.blogPostWrapper :global(.col--2) {
+  display: none !important;
+}
+
+
+
+

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: ai-data-analysis-page
+description: "AI数据分析页面 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # AI数据分析页面

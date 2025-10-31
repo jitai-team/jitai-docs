@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: ai-customer-service
+description: "AI智能客服的详细指南和说明。"
 ---
 
 # AI智能客服

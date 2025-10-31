@@ -1,5 +1,6 @@
 ---
 sidebar_position: -1
+description: "JitAi framework extension guide. Learn to extend element families, create custom components, and build specialized functionality for your business needs."
 ---
 # Extending Guide Index
 

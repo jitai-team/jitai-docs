@@ -1,19 +1,194 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
+JitAi:
+  label: JitAi
+  permalink: /jitai
+  description: JitAi platform and related topics
 
-hello:
-  label: Hello
-  permalink: /hello
-  description: Hello tag description
+'ai agent':
+  label: AI Agent
+  permalink: /ai-agent
+  description: AI Agent development and applications
 
-docusaurus:
-  label: Docusaurus
-  permalink: /docusaurus
-  description: Docusaurus tag description
+'ai native':
+  label: AI Native
+  permalink: /ai-native
+  description: AI Native development concepts and practices
 
-hola:
-  label: Hola
-  permalink: /hola
-  description: Hola tag description
+'development platform':
+  label: Development Platform
+  permalink: /development-platform
+  description: Development platform technologies and tools
+
+MCP:
+  label: MCP
+  permalink: /mcp
+  description: Model Context Protocol and related topics
+
+'production grade ai app':
+  label: Production-Grade AI Applications
+  permalink: /production-grade-ai-app
+  description: Building and deploying production-grade AI applications
+
+architecture:
+  label: Architecture
+  permalink: /architecture
+  description: Software architecture and design patterns
+
+'enterprise ai':
+  label: Enterprise AI
+  permalink: /enterprise-ai
+  description: Enterprise AI applications and solutions
+
+'ai native architecture':
+  label: AI-Native Architecture
+  permalink: /ai-native-architecture
+  description: AI-native application architecture and design principles
+
+'application architecture':
+  label: Application Architecture
+  permalink: /application-architecture
+  description: Application architecture patterns and best practices
+
+'event driven':
+  label: Event-Driven
+  permalink: /event-driven
+  description: Event-driven architecture and development patterns
+
+JAAP:
+  label: JAAP
+  permalink: /jaap
+  description: JitAi AI Application Protocol
+
+'enterprise applications':
+  label: Enterprise Applications
+  permalink: /enterprise-applications
+  description: Enterprise application development and solutions
+
+'ai adoption':
+  label: AI Adoption
+  permalink: /ai-adoption
+  description: Enterprise AI adoption strategies, challenges, and scaling practices
+
+'development methodology':
+  label: Development Methodologies
+  permalink: /development-methodology
+  description: Software development methodologies, agile practices, and workflows
+
+'ai coding':
+  label: AI-Assisted Coding
+  permalink: /ai-coding
+  description: AI-powered development tools, code generation, and intelligent assistance
+
+cursor:
+  label: Cursor
+  permalink: /cursor
+  description: Cursor AI coding assistant and related topics
+
+jitai:
+  label: jitai
+  permalink: /jitai-tag
+  description: JitAi platform features and capabilities
+
+'ai development':
+  label: AI Development
+  permalink: /ai-development
+  description: AI application development practices and tools
+
+'business applications':
+  label: Business Applications
+  permalink: /business-applications
+  description: Enterprise business application development and solutions
+
+'forward deployed engineer':
+  label: Forward-Deployed-Engineer
+  permalink: /forward-deployed-engineer
+  description: Engineers who work directly with clients to deploy and tailor complex software solutions in real-world environments.
+
+'low code':
+  label: Low-Code Development
+  permalink: /low-code
+  description: Visual development platforms that minimize hand-coding and accelerate application delivery
+
+'visual development':
+  label: Visual Development
+  permalink: /visual-development
+  description: Visual development tools, WYSIWYG editors, and no-code platforms
+
+DSL:
+  label: Domain-Specific Languages
+  permalink: /dsl
+  description: Domain-specific languages and custom language design
+
+orchestration:
+  label: Orchestration
+  permalink: /orchestration
+  description: Service orchestration, workflow automation, and composition patterns
+
+programming:
+  label: Programming
+  permalink: /programming
+  description: Programming paradigms, languages, and best practices
+
+'development framework':
+  label: Development Frameworks
+  permalink: /development-framework
+  description: Application frameworks, libraries, and development toolchains
+
+'system architecture':
+  label: System Architecture
+  permalink: /system-architecture
+  description: System architecture patterns, design principles, and scalability
+
+'on-premises':
+  label: On-Premises
+  permalink: /on-premises
+  description: On-premises deployment, self-hosted solutions, and private infrastructure
+
+'public cloud':
+  label: Public Cloud
+  permalink: /public-cloud
+  description: Public cloud platforms and services
+
+saas:
+  label: SaaS
+  permalink: /saas
+  description: Software-as-a-Service models and platforms
+
+'data sovereignty':
+  label: Data Sovereignty
+  permalink: /data-sovereignty
+  description: Data sovereignty, compliance, and regulatory control
+
+'vendor lock-in':
+  label: Vendor Lock-In
+  permalink: /vendor-lock-in
+  description: Vendor lock-in risks and mitigation strategies
+
+'operational cost':
+  label: Operational Costs
+  permalink: /operational-cost
+  description: Total cost of ownership and operational efficiency
+
+'cloud native':
+  label: Cloud Native
+  permalink: /cloud-native
+  description: Cloud-native architecture, patterns, and technologies
+
+microservices:
+  label: Microservices
+  permalink: /microservices
+  description: Microservices architecture and implementation practices
+
+kubernetes:
+  label: Kubernetes
+  permalink: /kubernetes
+  description: Kubernetes container orchestration and management
+
+container:
+  label: Containerization
+  permalink: /container
+  description: Container technology and deployment strategies
+
+devops:
+  label: DevOps
+  permalink: /devops
+  description: DevOps practices, tools, and automation

@@ -1,6 +1,9 @@
 ---
 sidebar_position: 1
 slug: App
+title: "App Reference"
+sidebar_label: "App"
+description: "Backend App object API reference for Python developers. Access application properties, manage elements, and handle runtime operations."
 ---
 
 import Tabs from '@theme/Tabs';

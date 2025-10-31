@@ -1,5 +1,8 @@
 ---
 slug: gallery
+title: "Gallery Reference"
+description: "Gallery Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Gallery"
 ---
 # Gallery
 Gallery is a card view component used to display data lists in a grid layout. It automatically renders card-based interfaces based on model data, supporting field display configuration, image display, action buttons, and interactive events. It is suitable for scenarios such as product display, personnel information, and image gallery browsing.

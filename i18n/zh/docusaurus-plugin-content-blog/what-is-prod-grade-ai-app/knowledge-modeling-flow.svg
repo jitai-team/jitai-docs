@@ -1,0 +1,155 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="700" fill="#FFFFFF"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" font-family="PingFang SC, sans-serif" font-size="24" font-weight="600" fill="#111827" text-anchor="middle">
+    企业知识建模与AI应用流程
+  </text>
+  
+  <!-- Layer 1: Enterprise Assets -->
+  <g id="layer1">
+    <rect x="200" y="80" width="800" height="100" rx="12" fill="rgba(50, 109, 255, 0.05)" stroke="#326DFF" stroke-width="2"/>
+    <text x="600" y="110" font-family="PingFang SC, sans-serif" font-size="18" font-weight="600" fill="#326DFF" text-anchor="middle">
+      企业私有资产
+    </text>
+    
+    <!-- Asset 1: Data -->
+    <g transform="translate(330, 130)">
+      <circle cx="20" cy="15" r="18" fill="rgba(50, 109, 255, 0.1)" stroke="#326DFF" stroke-width="2"/>
+      <circle cx="20" cy="12" r="6" fill="none" stroke="#326DFF" stroke-width="2"/>
+      <line x1="14" y1="18" x2="26" y2="18" stroke="#326DFF" stroke-width="2"/>
+      <line x1="14" y1="21" x2="26" y2="21" stroke="#326DFF" stroke-width="2"/>
+      <text x="20" y="43" font-family="PingFang SC, sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">数据</text>
+    </g>
+    
+    <!-- Asset 2: Knowledge -->
+    <g transform="translate(480, 130)">
+      <circle cx="20" cy="15" r="18" fill="rgba(50, 109, 255, 0.1)" stroke="#326DFF" stroke-width="2"/>
+      <rect x="12" y="9" width="16" height="12" rx="2" fill="none" stroke="#326DFF" stroke-width="2"/>
+      <line x1="15" y1="12" x2="25" y2="12" stroke="#326DFF" stroke-width="1"/>
+      <line x1="15" y1="15" x2="25" y2="15" stroke="#326DFF" stroke-width="1"/>
+      <line x1="15" y1="18" x2="25" y2="18" stroke="#326DFF" stroke-width="1"/>
+      <text x="20" y="43" font-family="PingFang SC, sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">知识</text>
+    </g>
+    
+    <!-- Asset 3: Rules -->
+    <g transform="translate(630, 130)">
+      <circle cx="20" cy="15" r="18" fill="rgba(50, 109, 255, 0.1)" stroke="#326DFF" stroke-width="2"/>
+      <path d="M 12 12 L 16 20 L 12 22" stroke="#326DFF" stroke-width="2" fill="none"/>
+      <path d="M 20 12 Q 22 15, 20 18 Q 18 21, 20 24" stroke="#326DFF" stroke-width="2" fill="none"/>
+      <circle cx="28" cy="15" r="4" fill="none" stroke="#326DFF" stroke-width="2"/>
+      <text x="20" y="43" font-family="PingFang SC, sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">规则</text>
+    </g>
+    
+    <!-- Asset 4: Cases -->
+    <g transform="translate(780, 130)">
+      <circle cx="20" cy="15" r="18" fill="rgba(50, 109, 255, 0.1)" stroke="#326DFF" stroke-width="2"/>
+      <rect x="12" y="10" width="16" height="11" rx="2" fill="none" stroke="#326DFF" stroke-width="2"/>
+      <line x1="15" y1="14" x2="25" y2="14" stroke="#326DFF" stroke-width="1"/>
+      <line x1="15" y1="17" x2="22" y2="17" stroke="#326DFF" stroke-width="1"/>
+      <circle cx="25" cy="24" r="2.5" fill="#326DFF"/>
+      <text x="20" y="43" font-family="PingFang SC, sans-serif" font-size="13" fill="#6b7280" text-anchor="middle">案例</text>
+    </g>
+  </g>
+  
+  <!-- Arrow Down -->
+  <defs>
+    <marker id="arrowdown-blue" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" fill="#326DFF" />
+    </marker>
+    <marker id="arrowdown-purple" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" fill="#8EAEFF" />
+    </marker>
+    <marker id="arrowdown-green" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" fill="#326DFF" />
+    </marker>
+  </defs>
+  
+  <path d="M 600 180 L 600 220" stroke="#326DFF" stroke-width="2" marker-end="url(#arrowdown-blue)"/>
+  
+  <!-- Layer 2: Structured Modeling -->
+  <g id="layer2">
+    <rect x="200" y="230" width="800" height="120" rx="12" fill="rgba(142, 174, 255, 0.08)" stroke="#8EAEFF" stroke-width="2"/>
+    <text x="600" y="260" font-family="PingFang SC, sans-serif" font-size="18" font-weight="600" fill="#326DFF" text-anchor="middle">
+      结构化建模
+    </text>
+    
+    <g transform="translate(260, 285)">
+      <circle cx="0" cy="0" r="4" fill="#8EAEFF"/>
+      <text x="15" y="5" font-family="PingFang SC, sans-serif" font-size="14" fill="#6B7280">数据模型：业务实体及其属性、关系</text>
+    </g>
+    <g transform="translate(260, 310)">
+      <circle cx="0" cy="0" r="4" fill="#8EAEFF"/>
+      <text x="15" y="5" font-family="PingFang SC, sans-serif" font-size="14" fill="#6B7280">文档模板：各领域特有的Doc/Excel文档模板</text>
+    </g>
+    <g transform="translate(610, 285)">
+      <circle cx="0" cy="0" r="4" fill="#8EAEFF"/>
+      <text x="15" y="5" font-family="PingFang SC, sans-serif" font-size="14" fill="#6B7280">业务规则：决策规则、计算公式、约束条件</text>
+    </g>
+    <g transform="translate(610, 310)">
+      <circle cx="0" cy="0" r="4" fill="#8EAEFF"/>
+      <text x="15" y="5" font-family="PingFang SC, sans-serif" font-size="14" fill="#6B7280">知识图谱：概念关系、实体关联</text>
+    </g>
+  </g>
+  
+  <path d="M 600 350 L 600 390" stroke="#8EAEFF" stroke-width="2" marker-end="url(#arrowdown-purple)"/>
+  
+  <!-- Layer 3: AI Understanding -->
+  <g id="layer3">
+    <rect x="200" y="400" width="800" height="120" rx="12" fill="rgba(50, 109, 255, 0.12)" stroke="#326DFF" stroke-width="2"/>
+    <text x="600" y="430" font-family="PingFang SC, sans-serif" font-size="18" font-weight="600" fill="#326DFF" text-anchor="middle">
+      AI理解与应用
+    </text>
+    
+    <!-- AI Brain Icon -->
+    <circle cx="340" cy="475" r="28" fill="#FFFFFF" stroke="#326DFF" stroke-width="2"/>
+    <path d="M 326 475 Q 330 466, 340 469 Q 350 471, 354 475" fill="none" stroke="#326DFF" stroke-width="2"/>
+    <path d="M 326 475 Q 330 484, 340 481 Q 350 479, 354 475" fill="none" stroke="#326DFF" stroke-width="2"/>
+    <circle cx="334" cy="472" r="2" fill="#326DFF"/>
+    <circle cx="346" cy="472" r="2" fill="#326DFF"/>
+    
+    <g transform="translate(390, 455)">
+      <circle cx="0" cy="0" r="4" fill="#326DFF"/>
+      <text x="15" y="5" font-family="PingFang SC, sans-serif" font-size="14" fill="#6B7280">语义理解：理解企业领域术语和概念</text>
+    </g>
+    <g transform="translate(390, 478)">
+      <circle cx="0" cy="0" r="4" fill="#326DFF"/>
+      <text x="15" y="5" font-family="PingFang SC, sans-serif" font-size="14" fill="#6B7280">推理计算：基于规则和知识进行推理</text>
+    </g>
+    <g transform="translate(390, 501)">
+      <circle cx="0" cy="0" r="4" fill="#326DFF"/>
+      <text x="15" y="5" font-family="PingFang SC, sans-serif" font-size="14" fill="#6B7280">决策支持：提供符合业务逻辑的建议</text>
+    </g>
+  </g>
+  
+  <path d="M 600 520 L 600 560" stroke="#326DFF" stroke-width="2" marker-end="url(#arrowdown-green)"/>
+  
+  <!-- Layer 4: Value Output -->
+  <g id="layer4">
+    <rect x="200" y="570" width="800" height="100" rx="12" fill="rgba(50, 109, 255, 0.15)" stroke="#326DFF" stroke-width="2"/>
+    <text x="600" y="600" font-family="PingFang SC, sans-serif" font-size="18" font-weight="600" fill="#326DFF" text-anchor="middle">
+      价值输出
+    </text>
+    
+    <g transform="translate(305, 635)">
+      <circle cx="0" cy="0" r="12" fill="#326DFF"/>
+      <path d="M -4 0 L -1 4 L 6 -5" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+      <text x="20" y="5" font-family="PingFang SC, sans-serif" font-size="14" fill="#326DFF">符合企业逻辑</text>
+    </g>
+    
+    <g transform="translate(515, 635)">
+      <circle cx="0" cy="0" r="12" fill="#326DFF"/>
+      <path d="M -4 0 L -1 4 L 6 -5" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+      <text x="20" y="5" font-family="PingFang SC, sans-serif" font-size="14" fill="#326DFF">精准决策支持</text>
+    </g>
+    
+    <g transform="translate(725, 635)">
+      <circle cx="0" cy="0" r="12" fill="#326DFF"/>
+      <path d="M -4 0 L -1 4 L 6 -5" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+      <text x="20" y="5" font-family="PingFang SC, sans-serif" font-size="14" fill="#326DFF">可持续优化</text>
+    </g>
+  </g>
+  
+</svg>
+

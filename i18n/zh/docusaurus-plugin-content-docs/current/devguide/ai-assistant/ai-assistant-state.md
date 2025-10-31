@@ -1,6 +1,7 @@
 ---
 sidebar_position: 11
 slug: ai-assistant-state
+description: "AI助理的运行状态的详细指南和说明。"
 ---
 
 # AI助理的运行状态

@@ -1,5 +1,6 @@
 ---
 sidebar_position: 0
+description: "JitAi快速入门教程 - 从安装到生产部署的渐进式学习指南。通过实践构建AI应用。"
 ---
 
 # 入门教程导读

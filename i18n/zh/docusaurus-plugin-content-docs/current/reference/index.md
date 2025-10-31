@@ -1,5 +1,6 @@
 ---
 sidebar_position: -1
+description: "参考手册导读 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
@@ -76,7 +77,7 @@ JitAi参考手册提供完整的API文档、配置说明和技术规范。开发
     { text: "SSR门户", href: "reference/framework/JitWeb/portals/ssr-portal" },
     { text: "AI数据管理页面", href: "reference/framework/JitWeb/pages/ai-data-management-page" },
     { text: "AI数据分析页面", href: "reference/framework/JitWeb/pages/ai-data-analysis-page" },
-    { text: "常规页面", href: "reference/framework/JitWeb/pages/regular-page" },
+    { text: "常规页面", href: "reference/framework/JitWeb/pages/generic-page" },
     { text: "数据录入页面", href: "reference/framework/JitWeb/pages/data-entry-page" },
     { text: "Markdown页面", href: "reference/framework/JitWeb/pages/markdown-page" },
     { text: "React全代码页面", href: "reference/framework/JitWeb/pages/react-full-code-page" },

@@ -1,5 +1,6 @@
 ---
 sidebar_position: -1
+description: "运行平台概述 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 运行平台概述
 [**JAAP（JitAi Application Protocol）**](/docs/reference/runtime-platform/JAAP) 完成了对应用开发复杂度的抽象，使业务专家能够专注于上层业务逻辑的编排，而要让JAAP真正发挥作用，就需要一个能够理解和执行JAAP的环境——应用运行容器。

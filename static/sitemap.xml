@@ -7,3003 +7,2503 @@
 
 
 <url>
-  <loc>https://jit.pro</loc>
-  <lastmod>2025-09-26T03:33:17+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <loc>https://jit.pro/</loc>
+  <lastmod>2025-10-22T01:30:14+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/tutorial</loc>
-  <lastmod>2025-09-26T03:33:17+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:14+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide</loc>
-  <lastmod>2025-09-26T03:32:50+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-20T02:40:35+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/extguide</loc>
-  <lastmod>2025-09-26T03:33:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-20T02:40:41+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference</loc>
-  <lastmod>2025-09-26T03:33:01+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-20T02:40:41+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/opensource</loc>
-  <lastmod>2025-09-26T03:33:01+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh</loc>
-  <lastmod>2025-09-26T03:38:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-20T02:40:41+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://jit.pro/download</loc>
-  <lastmod>2025-09-26T03:32:50+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:29:59+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jit.pro/zh</loc>
+  <lastmod>2025-10-22T01:33:11+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/reference/framework/JitAi</loc>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/reference/framework/JitWeb</loc>
+  <lastmod>2025-10-22T01:30:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/reference/framework/JitService</loc>
+  <lastmod>2025-10-22T01:30:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/reference/framework/JitAuth</loc>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/reference/framework/JitORM</loc>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/reference/framework/JitStorage</loc>
+  <lastmod>2025-10-22T01:30:08+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/reference/framework/JitWorkflow</loc>
+  <lastmod>2025-10-22T01:30:13+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/reference/framework/JitTask</loc>
+  <lastmod>2025-10-22T01:30:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/reference/framework/JitMessage</loc>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/reference/framework/JitPay</loc>
+  <lastmod>2025-10-22T01:30:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/reference/framework/JitI18N</loc>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/reference/framework/JitCommons</loc>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://jit.pro/blog</loc>
+  <lastmod>2025-10-22T01:29:59+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/tutorial</loc>
-  <lastmod>2025-09-26T03:38:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/tutorial/briefintro</loc>
-  <lastmod>2025-09-26T03:33:17+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/tutorial/download-installation</loc>
-  <lastmod>2025-09-26T03:33:17+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-20T02:40:49+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/tutorial/project</loc>
-  <lastmod>2025-09-26T03:33:17+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/tutorial/create_app</loc>
-  <lastmod>2025-09-26T03:33:17+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/tutorial/dev_app</loc>
-  <lastmod>2025-09-26T03:33:17+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/tutorial/dev_app/easy_mode</loc>
-  <lastmod>2025-09-26T03:33:17+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/tutorial/dev_app/ide_mode</loc>
-  <lastmod>2025-09-26T03:33:17+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/tutorial/dev_app/ai_func</loc>
-  <lastmod>2025-09-26T03:33:17+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/tutorial/dev_app/ai_ui</loc>
-  <lastmod>2025-09-26T03:33:17+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/tutorial/dev_app/code</loc>
-  <lastmod>2025-09-26T03:33:17+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/tutorial/dev_app/role</loc>
-  <lastmod>2025-09-26T03:33:17+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/tutorial/publish_app</loc>
-  <lastmod>2025-09-26T03:33:17+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/tutorial/jitai-comparison</loc>
-  <lastmod>2025-09-26T03:33:17+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/tutorial/programming-orchestration-dual-mode</loc>
-  <lastmod>2025-09-26T03:33:17+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/tutorial/ai-native-enterprise-app-dev-paradigm</loc>
-  <lastmod>2025-09-26T03:33:17+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide</loc>
-  <lastmod>2025-09-26T03:38:26+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/basic-concept</loc>
-  <lastmod>2025-09-26T03:32:54+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/installation-activation</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/development-tool-and-publish-service</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/creating-and-publishing-applications</loc>
-  <lastmod>2025-09-26T03:32:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/shell-and-page</loc>
-  <lastmod>2025-09-26T03:32:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/using-ai-in-portals-and-pages</loc>
-  <lastmod>2025-09-26T03:32:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/ai-llm</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/ai-agent</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:29:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/ai-assistant</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:00+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/knowledge-base</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/using-functional-components-in-pages</loc>
-  <lastmod>2025-09-26T03:32:59+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/calling-business-elements-in-pages</loc>
-  <lastmod>2025-09-26T03:32:54+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/data-modeling</loc>
-  <lastmod>2025-09-26T03:32:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/business-logic-development</loc>
-  <lastmod>2025-09-26T03:32:54+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/frontend-ui-customization</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/fullcode-ui-components-in-pages</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/user-and-permission</loc>
-  <lastmod>2025-09-26T03:32:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/approval-workflow</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/api-exposure</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/third-party-integration</loc>
-  <lastmod>2025-09-26T03:32:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/file-processing</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/cache-management</loc>
-  <lastmod>2025-09-26T03:32:54+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/internationalization</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/advanced-guide</loc>
-  <lastmod>2025-09-26T03:32:50+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:29:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/advanced-guide/team-collaborative-development</loc>
-  <lastmod>2025-09-26T03:32:50+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:29:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/advanced-guide/local-development-and-debugging</loc>
-  <lastmod>2025-09-26T03:32:50+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:29:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/advanced-guide/ai-customer-service</loc>
-  <lastmod>2025-09-26T03:32:50+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://jit.pro/docs/devguide/advanced-guide/ai-question-grading</loc>
-  <lastmod>2025-09-26T03:32:50+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:29:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/advanced-guide/agent-prompt-writing-techniques</loc>
-  <lastmod>2025-09-26T03:32:50+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:29:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/advanced-guide/business-entity-modeling-and-data-analysis</loc>
-  <lastmod>2025-09-26T03:32:50+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:29:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/advanced-guide/using-interceptors-for-custom-request-authentication</loc>
-  <lastmod>2025-09-26T03:32:50+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:29:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/advanced-guide/application-layer-stability-guarantee</loc>
-  <lastmod>2025-09-26T03:32:50+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:29:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/installation-activation/download-installation</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://jit.pro/docs/devguide/installation-activation/developer-organization-management</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <loc>https://jit.pro/docs/devguide/installation-activation/developer-team-management</loc>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/installation-activation/platform-node-updates-upgrades</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://jit.pro/docs/devguide/development-tool-and-publish-service/jitai-visual-development-tools</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <loc>https://jit.pro/docs/devguide/development-tool-and-publish-service/visual-development-tool</loc>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/development-tool-and-publish-service/devops-management-tool</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/development-tool-and-publish-service/jcs-cloud-publishing-service</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/creating-and-publishing-applications/creating-and-deploying-applications</loc>
-  <lastmod>2025-09-26T03:32:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/creating-and-publishing-applications/application-directory-and-element-source-code</loc>
-  <lastmod>2025-09-26T03:32:54+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/creating-and-publishing-applications/publishing-and-upgrading-applications</loc>
-  <lastmod>2025-09-26T03:32:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/creating-and-publishing-applications/runtime-environment-management</loc>
-  <lastmod>2025-09-26T03:32:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/creating-and-publishing-applications/distributed-cluster-architecture</loc>
-  <lastmod>2025-09-26T03:32:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/shell-and-page/portal-navigation-design</loc>
-  <lastmod>2025-09-26T03:32:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://jit.pro/docs/devguide/shell-and-page/component-based-page-development</loc>
-  <lastmod>2025-09-26T03:32:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <loc>https://jit.pro/docs/devguide/shell-and-page/componentized-page</loc>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/devguide/shell-and-page/generic-page</loc>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/shell-and-page/ai-data-management-page</loc>
-  <lastmod>2025-09-26T03:32:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/shell-and-page/ai-data-analysis-page</loc>
-  <lastmod>2025-09-26T03:32:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/shell-and-page/data-entry-page</loc>
-  <lastmod>2025-09-26T03:32:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/shell-and-page/markdown-page</loc>
-  <lastmod>2025-09-26T03:32:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/shell-and-page/full-code-page-development</loc>
-  <lastmod>2025-09-26T03:32:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals</loc>
-  <lastmod>2025-09-26T03:32:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages</loc>
-  <lastmod>2025-09-26T03:32:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages</loc>
-  <lastmod>2025-09-26T03:32:59+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/calling-business-elements-in-pages/calling-service-functions-in-pages</loc>
-  <lastmod>2025-09-26T03:32:54+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages</loc>
-  <lastmod>2025-09-26T03:32:54+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/fullcode-ui-components-in-pages/emitting-events</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/using-functional-components-in-pages/form-components</loc>
-  <lastmod>2025-09-26T03:32:59+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/using-functional-components-in-pages/table-components</loc>
-  <lastmod>2025-09-26T03:33:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/using-functional-components-in-pages/tree-components</loc>
-  <lastmod>2025-09-26T03:33:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/using-functional-components-in-pages/list-components</loc>
-  <lastmod>2025-09-26T03:33:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/using-functional-components-in-pages/filter-components</loc>
-  <lastmod>2025-09-26T03:32:59+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/using-functional-components-in-pages/time-management-components</loc>
-  <lastmod>2025-09-26T03:33:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/using-functional-components-in-pages/button-components</loc>
-  <lastmod>2025-09-26T03:32:59+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/using-functional-components-in-pages/layout-components</loc>
-  <lastmod>2025-09-26T03:33:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/using-functional-components-in-pages/approval-components</loc>
-  <lastmod>2025-09-26T03:32:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/using-functional-components-in-pages/payment-components</loc>
-  <lastmod>2025-09-26T03:33:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/using-functional-components-in-pages/data-parsing-and-import</loc>
-  <lastmod>2025-09-26T03:32:59+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/ai-llm/create-ai-llm</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/ai-llm/llm-input-output</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/ai-llm/implement-multimodal-aigc</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/knowledge-base/create-knowledge-elements</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/knowledge-base/knowledge-base-document-management</loc>
-  <lastmod>2025-09-26T03:32:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://jit.pro/docs/devguide/knowledge-base/full-text-and-semantic-search</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <loc>https://jit.pro/docs/devguide/knowledge-base/keyword-and-semantic-search</loc>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/knowledge-base/integrate-knowledge-base-into-agent</loc>
-  <lastmod>2025-09-26T03:32:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/knowledge-base/vector-database-standalone-deployment</loc>
-  <lastmod>2025-09-26T03:32:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/knowledge-base/ai-knowledge-base-api-exposure</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/ai-agent/create-ai-agent</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:29:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/ai-agent/agent-tools</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:29:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/ai-agent/agent-input-output</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:29:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/ai-agent/agent-knowledge-base</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:29:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/ai-agent/single-task-intelligent-agent</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:00+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/ai-agent/agent-api-exposure</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:29:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/ai-assistant/create-ai-assistant</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:00+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/ai-assistant/process-orchestration-node-configuration</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/ai-assistant/ai-assistant-input-output</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:00+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://jit.pro/docs/devguide/ai-assistant/ai-assistant-api-integration</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <loc>https://jit.pro/docs/devguide/ai-assistant/ai-assistant-state</loc>
+  <lastmod>2025-10-22T01:30:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/devguide/ai-assistant/ai-assistant-event</loc>
+  <lastmod>2025-10-22T01:30:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/devguide/ai-assistant/ai-assistant-api-exposure</loc>
+  <lastmod>2025-10-22T01:29:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/devguide/ai-assistant/welcome-message-and-opening</loc>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/devguide/ai-assistant/ai-conversation-history</loc>
+  <lastmod>2025-10-22T01:30:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/devguide/ai-assistant/develop-conversational-multi-task-ai-assistant</loc>
+  <lastmod>2025-10-22T01:30:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant</loc>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/data-modeling/data-table-model</loc>
-  <lastmod>2025-09-26T03:32:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/data-modeling/create-data-table-from-existing-tables</loc>
-  <lastmod>2025-09-26T03:32:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/data-modeling/built-in-data-management-tools</loc>
-  <lastmod>2025-09-26T03:32:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/data-modeling/create-data-model-functions</loc>
-  <lastmod>2025-09-26T03:32:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/data-modeling/aggregate-table-model</loc>
-  <lastmod>2025-09-26T03:32:54+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/data-modeling/extended-table-model</loc>
-  <lastmod>2025-09-26T03:32:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/data-modeling/calling-data-models-in-pages-and-functions</loc>
-  <lastmod>2025-09-26T03:32:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/data-modeling/data-object-model</loc>
-  <lastmod>2025-09-26T03:32:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/data-modeling/calling-data-models-in-ai-agent</loc>
-  <lastmod>2025-09-26T03:32:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/data-modeling/manage-database-connections</loc>
-  <lastmod>2025-09-26T03:32:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/data-modeling/supported-database-vendors</loc>
-  <lastmod>2025-09-26T03:32:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/data-modeling/transaction-management</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://jit.pro/docs/devguide/user-and-permission/organizational-structure</loc>
-  <lastmod>2025-09-26T03:32:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <loc>https://jit.pro/docs/devguide/user-and-permission/organization</loc>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/user-and-permission/login-authentication</loc>
-  <lastmod>2025-09-26T03:32:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/user-and-permission/role-portal-menu-permissions</loc>
-  <lastmod>2025-09-26T03:32:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/user-and-permission/roles-and-business-element-permissions</loc>
-  <lastmod>2025-09-26T03:32:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/user-and-permission/agent-tool-permission-control</loc>
-  <lastmod>2025-09-26T03:32:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/business-logic-development/creating-service-elements</loc>
-  <lastmod>2025-09-26T03:32:54+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/business-logic-development/calling-other-elements-in-service-functions</loc>
-  <lastmod>2025-09-26T03:32:54+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/business-logic-development/service-elements-usage-scenarios</loc>
-  <lastmod>2025-09-26T03:32:54+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/business-logic-development/background-tasks</loc>
-  <lastmod>2025-09-26T03:32:54+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/business-logic-development/event-handling</loc>
-  <lastmod>2025-09-26T03:32:54+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/approval-workflow/approval-workflow-basic-configuration</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/approval-workflow/start-node-configuration</loc>
-  <lastmod>2025-09-26T03:32:54+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/approval-workflow/approval-node-configuration</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/approval-workflow/special-node-configuration</loc>
-  <lastmod>2025-09-26T03:32:54+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/approval-workflow/approval-page-customization</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/approval-workflow/approval-workflow-usage</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/approval-workflow/calling-business-logic-elements-in-approval-workflow</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/approval-workflow/integrating-ai-in-approval-workflow</loc>
-  <lastmod>2025-09-26T03:32:54+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/file-processing/file-storage</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/file-processing/file-templates</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/file-processing/generating-and-printing-files-using-file-templates</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/third-party-integration/external-api</loc>
-  <lastmod>2025-09-26T03:32:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/third-party-integration/payment-service</loc>
-  <lastmod>2025-09-26T03:32:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/third-party-integration/sms-service</loc>
-  <lastmod>2025-09-26T03:32:58+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/api-exposure/api-authorization</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/api-exposure/api-exposure-examples-for-various-elements</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/api-exposure/using-sdk-to-call-authorized-element-apis</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/api-exposure/using-cross-app-service-elements-to-call-authorized-apis</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:01+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/internationalization/creating-language-packages</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/internationalization/extending-system-builtin-language-packages</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/internationalization/how-to-translate-page-terms</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/devguide/internationalization/translate-ignore-rules</loc>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/devguide/internationalization/default-language</loc>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/frontend-ui-customization/global-styles</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/frontend-ui-customization/custom-controls</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/frontend-ui-customization/component-customization</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/frontend-ui-customization/page-customization</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/frontend-ui-customization/portal-customization</loc>
-  <lastmod>2025-09-26T03:32:57+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/extguide</loc>
-  <lastmod>2025-09-26T03:38:38+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/extguide/extend-element-family-classes</loc>
-  <lastmod>2025-09-26T03:33:01+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/extguide/develop-backend-element-visual-editor</loc>
-  <lastmod>2025-09-26T03:33:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/extguide/add-frontend-components</loc>
-  <lastmod>2025-09-26T03:33:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/extguide/develop-frontend-component-visual-editor</loc>
-  <lastmod>2025-09-26T03:33:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:05+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/extguide/extend-page-type-editor</loc>
-  <lastmod>2025-09-26T03:33:01+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/extguide/extend-database-type-elements</loc>
-  <lastmod>2025-09-26T03:33:01+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/extguide/extend-data-model-type-elements</loc>
-  <lastmod>2025-09-26T03:33:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/extguide/extend-ai-agent-type-elements</loc>
-  <lastmod>2025-09-26T03:33:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:05+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/extguide/extend-ai-assistant-type-elements</loc>
-  <lastmod>2025-09-26T03:33:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:05+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/extguide/extend-payment-type-elements</loc>
-  <lastmod>2025-09-26T03:33:01+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/runtime-platform/JAAP</loc>
-  <lastmod>2025-09-26T03:33:17+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/reference</loc>
-  <lastmod>2025-09-26T03:38:38+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework</loc>
-  <lastmod>2025-09-26T03:33:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://jit.pro/docs/reference/framework/JitAi</loc>
-  <lastmod>2025-09-26T03:33:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://jit.pro/docs/reference/framework/JitAuth</loc>
-  <lastmod>2025-09-26T03:33:03+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://jit.pro/docs/reference/framework/JitCommons</loc>
-  <lastmod>2025-09-26T03:33:04+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://jit.pro/docs/reference/framework/JitI18N</loc>
-  <lastmod>2025-09-26T03:33:04+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://jit.pro/docs/reference/framework/JitMessage</loc>
-  <lastmod>2025-09-26T03:33:04+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://jit.pro/docs/reference/framework/JitORM</loc>
-  <lastmod>2025-09-26T03:33:04+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://jit.pro/docs/reference/framework/JitPay</loc>
-  <lastmod>2025-09-26T03:33:05+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://jit.pro/docs/reference/framework/JitService</loc>
-  <lastmod>2025-09-26T03:33:06+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://jit.pro/docs/reference/framework/JitStorage</loc>
-  <lastmod>2025-09-26T03:33:07+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://jit.pro/docs/reference/framework/JitTask</loc>
-  <lastmod>2025-09-26T03:33:09+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://jit.pro/docs/reference/framework/JitWeb</loc>
-  <lastmod>2025-09-26T03:33:09+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://jit.pro/docs/reference/framework/JitWorkflow</loc>
-  <lastmod>2025-09-26T03:33:16+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/runtime-platform</loc>
-  <lastmod>2025-09-26T03:33:16+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:13+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/runtime-platform/frontend</loc>
-  <lastmod>2025-09-26T03:33:17+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/runtime-platform/backend</loc>
-  <lastmod>2025-09-26T03:33:15+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:13+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/runtime-platform/jitnode-directory</loc>
-  <lastmod>2025-09-26T03:33:17+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitAi/AIAgent</loc>
-  <lastmod>2025-09-26T03:33:03+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitAi/ai-assistant</loc>
-  <lastmod>2025-09-26T03:33:02+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitAi/ai-large-models</loc>
-  <lastmod>2025-09-26T03:33:03+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitAi/ai-knowledge-base</loc>
-  <lastmod>2025-09-26T03:33:03+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitAi/agent-events</loc>
-  <lastmod>2025-09-26T03:33:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitAi/assistant-events</loc>
-  <lastmod>2025-09-26T03:33:03+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitAuth/regular-roles</loc>
-  <lastmod>2025-09-26T03:33:04+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitAuth/login-authentication/account-password-login</loc>
-  <lastmod>2025-09-26T03:33:04+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitAuth/login-authentication/mobile-login</loc>
-  <lastmod>2025-09-26T03:33:04+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitAuth/login-authentication/wechat-login</loc>
-  <lastmod>2025-09-26T03:33:04+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitAuth/login-authentication/wechat-miniapp-login</loc>
-  <lastmod>2025-09-26T03:33:04+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitAuth/login-authentication/wechat-official-login</loc>
-  <lastmod>2025-09-26T03:33:04+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitAuth/login-authentication/wechat-work-dev-login</loc>
-  <lastmod>2025-09-26T03:33:04+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitAuth/login-authentication/wechat-work-qr-login</loc>
-  <lastmod>2025-09-26T03:33:04+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitAuth/login-authentication/dingtalk-qr-login</loc>
-  <lastmod>2025-09-26T03:33:04+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitAuth/enterprise-organization/standard-organization</loc>
-  <lastmod>2025-09-26T03:33:04+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitAuth/enterprise-organization/wechat-work-dev-organization</loc>
-  <lastmod>2025-09-26T03:33:04+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitAuth/enterprise-organization/wechat-work-organization</loc>
-  <lastmod>2025-09-26T03:33:04+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitAuth/enterprise-organization/dingtalk-organization</loc>
-  <lastmod>2025-09-26T03:33:04+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitORM/database</loc>
-  <lastmod>2025-09-26T03:33:05+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:07+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitORM/data-models</loc>
-  <lastmod>2025-09-26T03:33:04+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitORM/data-types</loc>
-  <lastmod>2025-09-26T03:33:04+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:07+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitORM/q-expressions</loc>
-  <lastmod>2025-09-26T03:33:05+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:07+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitORM/TQL</loc>
-  <lastmod>2025-09-26T03:33:05+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:07+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitORM/model-events</loc>
-  <lastmod>2025-09-26T03:33:05+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:07+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/global-styles</loc>
-  <lastmod>2025-09-26T03:33:15+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:13+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/portals/regular-portal</loc>
-  <lastmod>2025-09-26T03:33:16+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:13+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/portals/blank-portal</loc>
-  <lastmod>2025-09-26T03:33:15+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:13+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/portals/ssr-portal</loc>
-  <lastmod>2025-09-26T03:33:16+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:13+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/pages/ai-data-management-page</loc>
-  <lastmod>2025-09-26T03:33:15+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:13+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/pages/ai-data-analysis-page</loc>
-  <lastmod>2025-09-26T03:33:15+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://jit.pro/docs/reference/framework/JitWeb/pages/regular-page</loc>
-  <lastmod>2025-09-26T03:33:15+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <loc>https://jit.pro/docs/reference/framework/JitWeb/pages/generic-page</loc>
+  <lastmod>2025-10-22T01:30:13+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/pages/data-entry-page</loc>
-  <lastmod>2025-09-26T03:33:15+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:13+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/pages/markdown-page</loc>
-  <lastmod>2025-09-26T03:33:15+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:13+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/pages/react-full-code-page</loc>
-  <lastmod>2025-09-26T03:33:15+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:13+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/pages/vue-full-code-page</loc>
-  <lastmod>2025-09-26T03:33:15+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:13+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/view-type/table</loc>
-  <lastmod>2025-09-26T03:33:14+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/view-type/list</loc>
-  <lastmod>2025-09-26T03:33:13+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/view-type/statistical-chart</loc>
-  <lastmod>2025-09-26T03:33:13+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/view-type/tree</loc>
-  <lastmod>2025-09-26T03:33:15+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/view-type/calendar</loc>
-  <lastmod>2025-09-26T03:33:11+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/view-type/gantt-chart</loc>
-  <lastmod>2025-09-26T03:33:12+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/view-type/kanban</loc>
-  <lastmod>2025-09-26T03:33:13+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/view-type/gallery</loc>
-  <lastmod>2025-09-26T03:33:12+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/view-type/carousel</loc>
-  <lastmod>2025-09-26T03:33:12+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/view-type/timeline</loc>
-  <lastmod>2025-09-26T03:33:15+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/view-type/cross-table</loc>
-  <lastmod>2025-09-26T03:33:12+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/view-type/group-table</loc>
-  <lastmod>2025-09-26T03:33:12+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/view-type/cascade-table</loc>
-  <lastmod>2025-09-26T03:33:12+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/view-type/cascade-tree</loc>
-  <lastmod>2025-09-26T03:33:12+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/view-type/row-to-column</loc>
-  <lastmod>2025-09-26T03:33:13+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:12+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/view-type/import</loc>
-  <lastmod>2025-09-26T03:33:12+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/view-type/parse-excel</loc>
-  <lastmod>2025-09-26T03:33:13+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/view-type/full-code-component</loc>
-  <lastmod>2025-09-26T03:33:12+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/form-type/form</loc>
-  <lastmod>2025-09-26T03:33:11+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/form-type/batch-edit-form</loc>
-  <lastmod>2025-09-26T03:33:11+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:10+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/operation-type/button</loc>
-  <lastmod>2025-09-26T03:33:11+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/operation-type/model-filter</loc>
-  <lastmod>2025-09-26T03:33:11+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/operation-type/general-filter</loc>
-  <lastmod>2025-09-26T03:33:11+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/operation-type/data-correction</loc>
-  <lastmod>2025-09-26T03:33:11+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/operation-type/payment</loc>
-  <lastmod>2025-09-26T03:33:11+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/layout-type/tabs</loc>
-  <lastmod>2025-09-26T03:33:11+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/layout-type/modal</loc>
-  <lastmod>2025-09-26T03:33:11+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/layout-type/sub-page</loc>
-  <lastmod>2025-09-26T03:33:11+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/layout-type/collapse-panel</loc>
-  <lastmod>2025-09-26T03:33:11+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:10+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/approval-type/initiate-application</loc>
-  <lastmod>2025-09-26T03:33:11+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:11+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/components/approval-type/approval-workflowing</loc>
-  <lastmod>2025-09-26T03:33:09+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:10+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWeb/custom-controls</loc>
-  <lastmod>2025-09-26T03:33:15+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:13+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitService/api-authorization</loc>
-  <lastmod>2025-09-26T03:33:06+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:08+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitService/external-api-integration</loc>
-  <lastmod>2025-09-26T03:33:06+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:08+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitService/frontend-interceptor</loc>
-  <lastmod>2025-09-26T03:33:06+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:08+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitService/backend-interceptor</loc>
-  <lastmod>2025-09-26T03:33:06+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:08+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitService/custom-business-service</loc>
-  <lastmod>2025-09-26T03:33:06+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:08+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitService/custom-events</loc>
-  <lastmod>2025-09-26T03:33:06+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:08+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitService/event-service</loc>
-  <lastmod>2025-09-26T03:33:06+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:08+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitStorage/storage/disk-storage</loc>
-  <lastmod>2025-09-26T03:33:07+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:08+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitStorage/storage/aliyun-oss-storage</loc>
-  <lastmod>2025-09-26T03:33:06+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:08+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitStorage/storage/qiniu-storage</loc>
-  <lastmod>2025-09-26T03:33:07+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:09+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitStorage/storage/minio-storage</loc>
-  <lastmod>2025-09-26T03:33:07+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:09+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitStorage/storage/eos-storage</loc>
-  <lastmod>2025-09-26T03:33:07+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:08+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitStorage/cache/built-in-cache</loc>
-  <lastmod>2025-09-26T03:33:06+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:08+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitStorage/cache/redis-cache</loc>
-  <lastmod>2025-09-26T03:33:07+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:08+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitStorage/cache/sqlite-cache</loc>
-  <lastmod>2025-09-26T03:33:07+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:08+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitStorage/cache/tongrds-cache</loc>
-  <lastmod>2025-09-26T03:33:07+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:08+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitStorage/file-templates/excel-template</loc>
-  <lastmod>2025-09-26T03:33:06+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:08+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitStorage/file-templates/word-template</loc>
-  <lastmod>2025-09-26T03:33:07+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:08+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitPay/payment-service</loc>
-  <lastmod>2025-09-26T03:33:05+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:08+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitPay/wechat-pay</loc>
-  <lastmod>2025-09-26T03:33:06+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:08+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitPay/alipay</loc>
-  <lastmod>2025-09-26T03:33:04+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWorkflow/regular-approval</loc>
-  <lastmod>2025-09-26T03:33:16+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:13+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitWorkflow/approval-events</loc>
-  <lastmod>2025-09-26T03:33:15+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:13+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitTask/task-service</loc>
-  <lastmod>2025-09-26T03:33:09+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:09+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitTask/scheduled-tasks</loc>
-  <lastmod>2025-09-26T03:33:09+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:09+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitTask/date-field-tasks</loc>
-  <lastmod>2025-09-26T03:33:07+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:08+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitI18N/language-pack</loc>
-  <lastmod>2025-09-26T03:33:04+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitMessage/aliyun-sms</loc>
-  <lastmod>2025-09-26T03:33:04+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitCommons/frontend</loc>
-  <lastmod>2025-09-26T03:33:04+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/framework/JitCommons/backend</loc>
-  <lastmod>2025-09-26T03:33:04+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/runtime-platform/frontend/applications/App</loc>
-  <lastmod>2025-09-26T03:33:17+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:13+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/runtime-platform/frontend/elements/ElementDefine</loc>
-  <lastmod>2025-09-26T03:33:17+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:14+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/runtime-platform/backend/applications/App</loc>
-  <lastmod>2025-09-26T03:33:15+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:13+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/runtime-platform/backend/applications/AppCode</loc>
-  <lastmod>2025-09-26T03:33:16+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:13+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/runtime-platform/backend/applications/AppResource</loc>
-  <lastmod>2025-09-26T03:33:16+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:13+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/runtime-platform/backend/runtime-environment/01Environ</loc>
-  <lastmod>2025-09-26T03:33:16+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:13+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/runtime-platform/backend/elements/Element</loc>
-  <lastmod>2025-09-26T03:33:16+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:13+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/reference/runtime-platform/backend/jit-nodes/Node</loc>
-  <lastmod>2025-09-26T03:33:16+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:13+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/opensource</loc>
-  <lastmod>2025-09-26T03:38:38+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:03+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/download</loc>
-  <lastmod>2025-09-26T03:38:26+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:56+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/zh/blog</loc>
+  <lastmod>2025-10-22T01:32:56+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/zh/docs/reference/framework/JitAi</loc>
+  <lastmod>2025-10-22T01:33:03+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/reference/framework/JitAi/vector-database</loc>
+  <lastmod>2025-10-22T01:30:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/zh/docs/reference/framework/JitWeb</loc>
+  <lastmod>2025-10-20T02:43:32+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/reference/framework/JitWeb/portals</loc>
+  <lastmod>2025-10-22T01:30:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/reference/framework/JitWeb/pages</loc>
+  <lastmod>2025-10-22T01:30:13+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/reference/framework/JitWeb/components</loc>
+  <lastmod>2025-10-22T01:30:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/zh/docs/reference/framework/JitService</loc>
+  <lastmod>2025-10-22T01:33:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/zh/docs/reference/framework/JitAuth</loc>
+  <lastmod>2025-10-22T01:33:04+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/category/login-authentication</loc>
+  <lastmod>2025-10-22T01:29:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/category/enterprise-organization</loc>
+  <lastmod>2025-10-22T01:29:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/zh/docs/reference/framework/JitORM</loc>
+  <lastmod>2025-10-22T01:33:04+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/zh/docs/reference/framework/JitStorage</loc>
+  <lastmod>2025-10-22T01:33:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/reference/framework/JitStorage/cache</loc>
+  <lastmod>2025-10-22T01:30:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/reference/framework/JitStorage/file-templates</loc>
+  <lastmod>2025-10-22T01:30:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/docs/reference/framework/JitStorage/storage</loc>
+  <lastmod>2025-10-22T01:30:08+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/zh/docs/reference/framework/JitWorkflow</loc>
+  <lastmod>2025-10-22T01:33:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/zh/docs/reference/framework/JitTask</loc>
+  <lastmod>2025-10-22T01:33:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/zh/docs/reference/framework/JitMessage</loc>
+  <lastmod>2025-10-22T01:33:04+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/zh/docs/reference/framework/JitPay</loc>
+  <lastmod>2025-10-22T01:33:04+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/zh/docs/reference/framework/JitI18N</loc>
+  <lastmod>2025-10-22T01:33:04+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/zh/docs/reference/framework/JitCommons</loc>
+  <lastmod>2025-10-22T01:33:04+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/blog/2025/10/21/what-is-ai-native-app-arch</loc>
+  <lastmod>2025-10-22T01:29:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/blog/2025/10/20/what-is-prod-grade-ai-app</loc>
+  <lastmod>2025-10-22T01:30:00+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/blog/What-is-MCP</loc>
+  <lastmod>2025-10-22T01:29:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/blog/Why-Did-We-Build-JitAi</loc>
+  <lastmod>2025-10-22T01:29:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/blog/What-Is-an-AI-Native-Development-Platform</loc>
+  <lastmod>2025-10-22T01:29:59+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://jit.pro/blog/Creating-a-AI-Agent-in-JitAi</loc>
+  <lastmod>2025-10-22T01:29:59+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/tutorial/briefintro</loc>
-  <lastmod>2025-09-26T03:38:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:11+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/tutorial/download-installation</loc>
-  <lastmod>2025-09-26T03:38:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:11+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/tutorial/project</loc>
-  <lastmod>2025-09-26T03:38:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:11+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/tutorial/create_app</loc>
-  <lastmod>2025-09-26T03:38:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:11+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/tutorial/dev_app</loc>
-  <lastmod>2025-09-26T03:38:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:11+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/tutorial/dev_app/easy_mode</loc>
-  <lastmod>2025-09-26T03:38:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:11+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/tutorial/dev_app/ide_mode</loc>
-  <lastmod>2025-09-26T03:38:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:11+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/tutorial/dev_app/ai_func</loc>
-  <lastmod>2025-09-26T03:38:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:11+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/tutorial/dev_app/ai_ui</loc>
-  <lastmod>2025-09-26T03:38:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:11+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/tutorial/dev_app/code</loc>
-  <lastmod>2025-09-26T03:38:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:11+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/tutorial/dev_app/role</loc>
-  <lastmod>2025-09-26T03:38:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:11+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/tutorial/publish_app</loc>
-  <lastmod>2025-09-26T03:38:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:11+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/tutorial/jitai-comparison</loc>
-  <lastmod>2025-09-26T03:38:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:11+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/tutorial/programming-orchestration-dual-mode</loc>
-  <lastmod>2025-09-26T03:38:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:11+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/tutorial/ai-native-enterprise-app-dev-paradigm</loc>
-  <lastmod>2025-09-26T03:38:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:11+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/basic-concept</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/installation-activation</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:00+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/development-tool-and-publish-service</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/creating-and-publishing-applications</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/shell-and-page</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/using-ai-in-portals-and-pages</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/ai-llm</loc>
-  <lastmod>2025-09-26T03:38:29+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/ai-agent</loc>
-  <lastmod>2025-09-26T03:38:28+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/ai-assistant</loc>
-  <lastmod>2025-09-26T03:38:28+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/knowledge-base</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:00+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/using-functional-components-in-pages</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/calling-business-elements-in-pages</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/data-modeling</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/business-logic-development</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/frontend-ui-customization</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/fullcode-ui-components-in-pages</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/user-and-permission</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/approval-workflow</loc>
-  <lastmod>2025-09-26T03:38:29+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/api-exposure</loc>
-  <lastmod>2025-09-26T03:38:29+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/third-party-integration</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/file-processing</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/cache-management</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/internationalization</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:00+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/advanced-guide</loc>
-  <lastmod>2025-09-26T03:38:26+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/advanced-guide/team-collaborative-development</loc>
-  <lastmod>2025-09-26T03:38:26+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/advanced-guide/agent-prompt-writing-techniques</loc>
-  <lastmod>2025-09-26T03:38:26+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/advanced-guide/local-development-and-debugging</loc>
-  <lastmod>2025-09-26T03:38:26+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/advanced-guide/ai-customer-service</loc>
-  <lastmod>2025-09-26T03:38:26+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/devguide/advanced-guide/ai-question-grading</loc>
-  <lastmod>2025-09-26T03:38:26+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/advanced-guide/business-entity-modeling-and-data-analysis</loc>
-  <lastmod>2025-09-26T03:38:26+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/advanced-guide/using-interceptors-for-custom-request-authentication</loc>
-  <lastmod>2025-09-26T03:38:26+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/advanced-guide/application-layer-stability-guarantee</loc>
-  <lastmod>2025-09-26T03:38:26+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/installation-activation/download-installation</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:00+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://jit.pro/zh/docs/devguide/installation-activation/developer-organization-management</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <loc>https://jit.pro/zh/docs/devguide/installation-activation/developer-team-management</loc>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/installation-activation/platform-node-updates-upgrades</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:00+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://jit.pro/zh/docs/devguide/development-tool-and-publish-service/jitai-visual-development-tools</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <loc>https://jit.pro/zh/docs/devguide/development-tool-and-publish-service/visual-development-tool</loc>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/development-tool-and-publish-service/devops-management-tool</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/development-tool-and-publish-service/jcs-cloud-publishing-service</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/creating-and-publishing-applications/creating-and-deploying-applications</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/creating-and-publishing-applications/application-directory-and-element-source-code</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/creating-and-publishing-applications/publishing-and-upgrading-applications</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/creating-and-publishing-applications/runtime-environment-management</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/creating-and-publishing-applications/distributed-cluster-architecture</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/shell-and-page/portal-navigation-design</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://jit.pro/zh/docs/devguide/shell-and-page/component-based-page-development</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <loc>https://jit.pro/zh/docs/devguide/shell-and-page/componentized-page</loc>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://jit.pro/zh/docs/devguide/shell-and-page/generic-page</loc>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/shell-and-page/ai-data-management-page</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/shell-and-page/ai-data-analysis-page</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:00+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/shell-and-page/data-entry-page</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/shell-and-page/markdown-page</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/shell-and-page/full-code-page-development</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/frontend-ui-customization/page-customization</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/calling-business-elements-in-pages/calling-service-functions-in-pages</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:00+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/fullcode-ui-components-in-pages/emitting-events</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:00+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/using-functional-components-in-pages/form-components</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/using-functional-components-in-pages/table-components</loc>
-  <lastmod>2025-09-26T03:38:38+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:02+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/using-functional-components-in-pages/tree-components</loc>
-  <lastmod>2025-09-26T03:38:38+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:02+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/using-functional-components-in-pages/list-components</loc>
-  <lastmod>2025-09-26T03:38:38+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:02+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/using-functional-components-in-pages/filter-components</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/using-functional-components-in-pages/time-management-components</loc>
-  <lastmod>2025-09-26T03:38:38+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:02+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/using-functional-components-in-pages/button-components</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/using-functional-components-in-pages/layout-components</loc>
-  <lastmod>2025-09-26T03:38:38+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/using-functional-components-in-pages/approval-components</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/using-functional-components-in-pages/payment-components</loc>
-  <lastmod>2025-09-26T03:38:38+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:02+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/using-functional-components-in-pages/data-parsing-and-import</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/ai-llm/create-ai-llm</loc>
-  <lastmod>2025-09-26T03:38:28+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/ai-llm/llm-input-output</loc>
-  <lastmod>2025-09-26T03:38:29+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/ai-llm/implement-multimodal-aigc</loc>
-  <lastmod>2025-09-26T03:38:29+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/knowledge-base/create-knowledge-elements</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:00+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/knowledge-base/knowledge-base-document-management</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://jit.pro/zh/docs/devguide/knowledge-base/full-text-and-semantic-search</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <loc>https://jit.pro/zh/docs/devguide/knowledge-base/keyword-and-semantic-search</loc>
+  <lastmod>2025-10-22T01:33:00+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/knowledge-base/integrate-knowledge-base-into-agent</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:00+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/knowledge-base/vector-database-standalone-deployment</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/knowledge-base/ai-knowledge-base-api-exposure</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:00+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/ai-agent/create-ai-agent</loc>
-  <lastmod>2025-09-26T03:38:28+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/ai-agent/agent-tools</loc>
-  <lastmod>2025-09-26T03:38:28+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/ai-agent/agent-input-output</loc>
-  <lastmod>2025-09-26T03:38:28+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/ai-agent/agent-knowledge-base</loc>
-  <lastmod>2025-09-26T03:38:28+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/ai-agent/single-task-intelligent-agent</loc>
-  <lastmod>2025-09-26T03:38:28+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/ai-agent/agent-api-exposure</loc>
-  <lastmod>2025-09-26T03:38:28+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/ai-assistant/create-ai-assistant</loc>
-  <lastmod>2025-09-26T03:38:29+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/ai-assistant/process-orchestration-node-configuration</loc>
-  <lastmod>2025-09-26T03:38:29+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/ai-assistant/ai-assistant-input-output</loc>
-  <lastmod>2025-09-26T03:38:29+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://jit.pro/zh/docs/devguide/ai-assistant/ai-assistant-api-integration</loc>
-  <lastmod>2025-09-26T03:38:28+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <loc>https://jit.pro/zh/docs/devguide/ai-assistant/ai-assistant-state</loc>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://jit.pro/zh/docs/devguide/ai-assistant/ai-assistant-event</loc>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://jit.pro/zh/docs/devguide/ai-assistant/ai-assistant-api-exposure</loc>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://jit.pro/zh/docs/devguide/ai-assistant/welcome-message-and-opening</loc>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://jit.pro/zh/docs/devguide/ai-assistant/ai-conversation-history</loc>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://jit.pro/zh/docs/devguide/ai-assistant/develop-conversational-multi-task-ai-assistant</loc>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://jit.pro/zh/docs/devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant</loc>
+  <lastmod>2025-10-22T01:32:57+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/data-modeling/data-table-model</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/data-modeling/create-data-table-from-existing-tables</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/data-modeling/built-in-data-management-tools</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/data-modeling/create-data-model-functions</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/data-modeling/aggregate-table-model</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/data-modeling/extended-table-model</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/data-modeling/calling-data-models-in-pages-and-functions</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/data-modeling/data-object-model</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/data-modeling/calling-data-models-in-ai-agent</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/data-modeling/manage-database-connections</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/data-modeling/supported-database-vendors</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/data-modeling/transaction-management</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
-  <loc>https://jit.pro/zh/docs/devguide/user-and-permission/organizational-structure</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <loc>https://jit.pro/zh/docs/devguide/user-and-permission/organization</loc>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/user-and-permission/login-authentication</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/user-and-permission/role-portal-menu-permissions</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/user-and-permission/roles-and-business-element-permissions</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/user-and-permission/agent-tool-permission-control</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/business-logic-development/creating-service-elements</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/business-logic-development/calling-other-elements-in-service-functions</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/business-logic-development/service-elements-usage-scenarios</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/business-logic-development/background-tasks</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/business-logic-development/event-handling</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/approval-workflow/approval-workflow-basic-configuration</loc>
-  <lastmod>2025-09-26T03:38:29+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/approval-workflow/start-node-configuration</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/approval-workflow/approval-node-configuration</loc>
-  <lastmod>2025-09-26T03:38:28+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/approval-workflow/special-node-configuration</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/approval-workflow/approval-page-customization</loc>
-  <lastmod>2025-09-26T03:38:29+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/approval-workflow/approval-workflow-usage</loc>
-  <lastmod>2025-09-26T03:38:29+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/approval-workflow/calling-business-logic-elements-in-approval-workflow</loc>
-  <lastmod>2025-09-26T03:38:29+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/approval-workflow/integrating-ai-in-approval-workflow</loc>
-  <lastmod>2025-09-26T03:38:31+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/file-processing/file-storage</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/file-processing/file-templates</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/file-processing/generating-and-printing-files-using-file-templates</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/third-party-integration/external-api</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:00+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/third-party-integration/payment-service</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/third-party-integration/sms-service</loc>
-  <lastmod>2025-09-26T03:38:34+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:01+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/api-exposure/api-authorization</loc>
-  <lastmod>2025-09-26T03:38:28+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/api-exposure/api-exposure-examples-for-various-elements</loc>
-  <lastmod>2025-09-26T03:38:29+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/api-exposure/using-sdk-to-call-authorized-element-apis</loc>
-  <lastmod>2025-09-26T03:38:29+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/api-exposure/using-cross-app-service-elements-to-call-authorized-apis</loc>
-  <lastmod>2025-09-26T03:38:29+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:58+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/internationalization/creating-language-packages</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:00+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/internationalization/extending-system-builtin-language-packages</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:00+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/internationalization/how-to-translate-page-terms</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:33:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://jit.pro/zh/docs/devguide/internationalization/translate-ignore-rules</loc>
+  <lastmod>2025-10-22T01:33:00+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://jit.pro/zh/docs/devguide/internationalization/default-language</loc>
+  <lastmod>2025-10-22T01:33:00+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/frontend-ui-customization/global-styles</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/frontend-ui-customization/custom-controls</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/frontend-ui-customization/component-customization</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/zh/docs/devguide/frontend-ui-customization/portal-customization</loc>
-  <lastmod>2025-09-26T03:38:33+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/docs/devguide/ai-assistant/ai-assistant-event</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/docs/devguide/ai-assistant/ai-assistant-state</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/docs/devguide/ai-assistant/welcome-message-and-opening</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/docs/devguide/ai-assistant/ai-conversation-history</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/docs/devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant/develop-human-ai-collaboration-enterprise-assistant</loc>
-  <lastmod>2025-09-26T03:32:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:32:59+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/using-functional-components-in-pages/statistical-charts</loc>
-  <lastmod>2025-09-26T03:33:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/using-functional-components-in-pages/card-and-media-display</loc>
-  <lastmod>2025-09-26T03:32:59+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 <url>
   <loc>https://jit.pro/docs/devguide/using-functional-components-in-pages/full-code-components</loc>
-  <lastmod>2025-09-26T03:33:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/docs/reference/framework/JitWeb/components</loc>
-  <lastmod>2025-09-26T03:33:07+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/docs/reference/framework/JitAi/vector-database</loc>
-  <lastmod>2025-09-26T03:33:03+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/extguide/extend-element-family-classes</loc>
-  <lastmod>2025-09-26T03:38:38+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/extguide/develop-backend-element-visual-editor</loc>
-  <lastmod>2025-09-26T03:38:38+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/extguide/add-frontend-components</loc>
-  <lastmod>2025-09-26T03:38:38+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/extguide/develop-frontend-component-visual-editor</loc>
-  <lastmod>2025-09-26T03:38:38+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/extguide/extend-page-type-editor</loc>
-  <lastmod>2025-09-26T03:38:38+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/extguide/extend-database-type-elements</loc>
-  <lastmod>2025-09-26T03:38:38+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/extguide/extend-data-model-type-elements</loc>
-  <lastmod>2025-09-26T03:38:38+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/extguide/extend-ai-agent-type-elements</loc>
-  <lastmod>2025-09-26T03:38:38+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/extguide/extend-ai-assistant-type-elements</loc>
-  <lastmod>2025-09-26T03:38:38+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/extguide/extend-payment-type-elements</loc>
-  <lastmod>2025-09-26T03:38:38+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/runtime-platform/JAAP</loc>
-  <lastmod>2025-09-26T03:38:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/framework</loc>
-  <lastmod>2025-09-26T03:38:38+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/framework/JitAi</loc>
-  <lastmod>2025-09-26T03:38:38+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/framework/JitAuth</loc>
-  <lastmod>2025-09-26T03:38:39+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/framework/JitCommons</loc>
-  <lastmod>2025-09-26T03:38:42+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/framework/JitI18N</loc>
-  <lastmod>2025-09-26T03:38:42+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/framework/JitMessage</loc>
-  <lastmod>2025-09-26T03:38:42+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/framework/JitORM</loc>
-  <lastmod>2025-09-26T03:38:42+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/framework/JitPay</loc>
-  <lastmod>2025-09-26T03:38:43+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/framework/JitService</loc>
-  <lastmod>2025-09-26T03:38:44+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/framework/JitStorage</loc>
-  <lastmod>2025-09-26T03:38:45+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/framework/JitTask</loc>
-  <lastmod>2025-09-26T03:38:46+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/framework/JitWeb</loc>
-  <lastmod>2025-09-26T03:38:46+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/framework/JitWorkflow</loc>
-  <lastmod>2025-09-26T03:38:53+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/runtime-platform</loc>
-  <lastmod>2025-09-26T03:38:54+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/runtime-platform/frontend</loc>
-  <lastmod>2025-09-26T03:38:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/runtime-platform/backend</loc>
-  <lastmod>2025-09-26T03:38:52+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/runtime-platform/jitnode-directory</loc>
-  <lastmod>2025-09-26T03:38:55+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/framework/JitAi/AIAgent</loc>
-  <lastmod>2025-09-26T03:38:39+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/framework/JitAi/ai-assistant</loc>
-  <lastmod>2025-09-26T03:38:39+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/framework/JitAi/ai-large-models</loc>
-  <lastmod>2025-09-26T03:38:39+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/framework/JitAi/ai-knowledge-base</loc>
-  <lastmod>2025-09-26T03:38:39+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/framework/JitAi/agent-events</loc>
-  <lastmod>2025-09-26T03:38:38+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/framework/JitAi/assistant-events</loc>
-  <lastmod>2025-09-26T03:38:39+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/framework/JitAuth/regular-roles</loc>
-  <lastmod>2025-09-26T03:38:42+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/framework/JitAuth/login-authentication/account-password-login</loc>
-  <lastmod>2025-09-26T03:38:40+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/framework/JitAuth/login-authentication/mobile-login</loc>
-  <lastmod>2025-09-26T03:38:42+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://jit.pro/zh/docs/reference/framework/JitAuth/login-authentication/wechat-login</loc>
-  <lastmod>2025-09-26T03:38:42+00:00</lastmod>
-  <changefreq>monthly</changefreq>
+  <lastmod>2025-10-22T01:30:04+00:00</lastmod>
   <priority>0.51</priority>
 </url>
 

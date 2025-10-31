@@ -1,6 +1,7 @@
 ---
 sidebar_position: 12
 slug: welcome-message-and-opening
+description: "Configure welcome messages and preambles for AI Assistant. Set greetings and preset questions to guide user interactions."
 ---
 
 # Welcome Message and Preamble

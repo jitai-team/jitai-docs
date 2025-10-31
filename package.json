@@ -7,10 +7,10 @@
     "start": "docusaurus start",
     "start:zh": "docusaurus start --locale zh",
     "start:en": "docusaurus start --locale en",
-    "build": "docusaurus build",
-    "build:low-cpu": "UV_THREADPOOL_SIZE=1 NODE_OPTIONS='--max-old-space-size=1024' docusaurus build",
-    "build:zh": "docusaurus build --locale zh",
-    "build:en": "docusaurus build --locale en",
+    "build": "docusaurus build --out-dir build1 && cp -rf build1/. build/ && rm -rf build1 && node scripts/fix-homepage-links.js",
+    "build:low-cpu": "UV_THREADPOOL_SIZE=1 NODE_OPTIONS='--max-old-space-size=1024' docusaurus build --out-dir build1 && cp -rf build1/. build/ && rm -rf build1 && node scripts/fix-homepage-links.js",
+    "build:zh": "docusaurus build --locale zh --out-dir build1 && cp -rf build1/. build/ && rm -rf build1 && node scripts/fix-homepage-links.js",
+    "build:en": "docusaurus build --locale en --out-dir build1 && cp -rf build1/. build/ && rm -rf build1 && node scripts/fix-homepage-links.js",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -22,10 +22,10 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.9.1",
-    "@docusaurus/preset-classic": "^3.9.1",
-    "@docusaurus/theme-common": "^3.9.1",
-    "@docusaurus/theme-mermaid": "^3.9.1",
+    "@docusaurus/core": "^3.9.2",
+    "@docusaurus/preset-classic": "^3.9.2",
+    "@docusaurus/theme-common": "^3.9.2",
+    "@docusaurus/theme-mermaid": "^3.9.2",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
     "prism-react-renderer": "^2.3.0",
@@ -33,9 +33,9 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.9.1",
-    "@docusaurus/tsconfig": "^3.9.1",
-    "@docusaurus/types": "^3.9.1",
+    "@docusaurus/module-type-aliases": "^3.9.2",
+    "@docusaurus/tsconfig": "^3.9.2",
+    "@docusaurus/types": "^3.9.2",
     "typescript": "~5.6.2"
   },
   "browserslist": {

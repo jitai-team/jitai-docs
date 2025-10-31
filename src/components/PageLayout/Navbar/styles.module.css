@@ -58,23 +58,16 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: 1.6rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #2461fe 0%, #ca4ba7 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
 .logo:hover {
   transform: scale(1.05);
-  filter: drop-shadow(0 2px 4px rgba(36, 97, 254, 0.3));
 }
 
 .logo img {
-  height: 36px;
+  height: 40px;
   width: auto;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
   transition: all 0.3s ease;
@@ -82,7 +75,7 @@
 
 .logo:hover img {
   transform: scale(1.1);
-  filter: drop-shadow(0 4px 8px rgba(36, 97, 254, 0.4));
+  filter: drop-shadow(0 4px 8px rgba(61, 101, 253, 0.3));
 }
 
 .navLinks {
@@ -103,27 +96,27 @@
   opacity: 1;
 }
 
-/* Try Online 按钮样式 */
-.tryOnlineButton {
-  background: linear-gradient(135deg, rgb(36, 73, 254) 0%, rgb(202, 75, 167) 100%);
+/* Download 按钮样式 */
+.downloadButton {
+  background: var(--color-primary);
   color: white;
   border: none;
-  padding: 0.75rem 1.75rem;
-  border-radius: 10px;
-  font-size: 0.95rem;
+  padding: 0.7rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 
-    0 3px 6px rgba(102, 126, 234, 0.2),
-    0 1px 2px rgba(0, 0, 0, 0.08);
+    0 3px 6px rgba(61, 101, 253, 0.3),
+    0 1px 2px rgba(19, 28, 67, 0.2);
   position: relative;
   overflow: hidden;
   letter-spacing: 0.01em;
   white-space: nowrap;
 }
 
-.tryOnlineButton::before {
+.downloadButton::before {
   content: '';
   position: absolute;
   top: 0;
@@ -134,32 +127,76 @@
   transition: left 0.5s ease;
 }
 
+.downloadButton:hover::before {
+  left: 100%;
+}
+
+.downloadButton:hover {
+  box-shadow: 
+    0 6px 20px rgba(61, 101, 253, 0.4),
+    0 2px 8px rgba(19, 28, 67, 0.3);
+}
+
+.downloadButton:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 3px 8px rgba(61, 101, 253, 0.3),
+    0 1px 3px rgba(19, 28, 67, 0.2);
+}
+
+/* Try Online 按钮样式 */
+.tryOnlineButton {
+  background: transparent;
+  color: var(--color-secondary);
+  border: 2px solid var(--color-secondary);
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  backdrop-filter: blur(10px);
+}
+
+.tryOnlineButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
 .tryOnlineButton:hover::before {
   left: 100%;
 }
 
 .tryOnlineButton:hover {
-  /* transform: translateY(-2px); */
-  box-shadow: 
-    0 6px 20px rgba(102, 126, 234, 0.35),
-    0 2px 8px rgba(0, 0, 0, 0.12);
+  background: rgba(19, 28, 67, 0.05);
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+  box-shadow: 0 16px 32px rgba(19, 28, 67, 0.15);
 }
 
 .tryOnlineButton:active {
   transform: translateY(0);
-  box-shadow: 
-    0 3px 8px rgba(102, 126, 234, 0.25),
-    0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 16px rgba(19, 28, 67, 0.1);
 }
 
 .navLinks button {
   background: none;
   border: none;
-  color: #22292f;
+  color: #4a5568;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  padding: 0rem 1.5rem;
+  padding: 0rem 1rem;
   border-radius: 0;
   box-shadow: none;
   transition: color 0.2s;
@@ -178,48 +215,31 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #2461fe, #ca4ba7);
+  background: linear-gradient(90deg, #3D65FD, #131C43);
   transform: scaleX(0);
   transition: transform 0.4s ease;
 }
 
 .navLinks button:hover, .navLinks button:focus {
-  color: #7c3aed;
+  color: #3D65FD;
   background: none;
   border: none;
 }
 
 .navLinks button.active {
-  color: #7c3aed;
+  color: #3D65FD;
   background: none;
   border: none;
 }
 
-/* 外部链接按钮特殊样式 */
-/* .navLinks button[data-type="link"] {
-  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
-  border-color: rgba(34, 197, 94, 0.3);
-  color: #065f46;
-}
-
-.navLinks button[data-type="link"]:hover {
-  background: linear-gradient(135deg, rgba(34, 197, 94, 0.15) 0%, rgba(16, 185, 129, 0.15) 100%);
-  border-color: rgba(34, 197, 94, 0.5);
-  color: #047857;
-}
-
-.navLinks button[data-type="link"]::before {
-  background: linear-gradient(90deg, #10b981, #059669, #047857);
-} */
-
-/* .navLinks button[data-type="link"]::after {
+/* .navLinks button[data-type="newTab"]::after {
   content: '↗';
   font-size: 0.8rem;
   opacity: 0.7;
   transition: all 0.3s ease;
-} */
+}
 
-/* .navLinks button[data-type="link"]:hover::after {
+.navLinks button[data-type="newTab"]:hover::after {
   opacity: 1;
   transform: translateX(2px) translateY(-2px);
 } */
@@ -243,6 +263,7 @@
   z-index: 1001;
   position: relative;
   gap: 0.32rem;
+  display: none;
 }
 
 .mobileMenuButton span {
@@ -281,10 +302,11 @@
   right: -100%;
   width: 280px;
   height: 100vh;
-  background: rgba(255, 255, 255, 0.98);
+  background: var(--bg-primary);
   backdrop-filter: blur(20px);
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(20px);
+  border-left: 1px solid rgba(61, 101, 253, 0.1);
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.08);
   transition: right 0.3s ease;
   z-index: 1000;
   padding: 5rem 0 2rem 0;
@@ -301,11 +323,20 @@
   gap: 0;
 }
 
-/* 移动端语言切换器 */
+/* 移动端顶部语言切换器 - 显示在汉堡菜单按钮左侧 */
+.mobileTopLanguageSwitcher {
+  display: none;
+  align-items: center;
+  margin-right: 1rem;
+  z-index: 1001;
+  position: relative;
+}
+
+/* 移动端语言切换器（已移除，保留样式以防需要） */
 .mobileLanguageSwitcher {
   padding: 1.5rem 0;
-  margin-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
 }
@@ -313,7 +344,7 @@
 .mobileNavItem {
   background: none;
   border: none;
-  color: #22292f;
+  color: #4a5568;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
@@ -344,19 +375,19 @@
 }
 
 .mobileNavItem:hover {
-  color: #7c3aed;
-  background: rgba(124, 58, 237, 0.05);
+  color: #3D65FD;
+  background: rgba(61, 101, 253, 0.05);
 }
 
 .mobileNavItem.active {
-  color: #7c3aed;
-  background: rgba(124, 58, 237, 0.1);
+  color: #3D65FD;
+  background: rgba(61, 101, 253, 0.1);
   /* padding-left: 1rem; */
 }
 
 /* 移动端 Try Online 按钮样式 */
 .mobileTryOnlineButton {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  background: #3D65FD !important;
   color: white !important;
   margin: 1rem 2rem;
   border-radius: 8px;
@@ -366,7 +397,7 @@
 }
 
 .mobileTryOnlineButton:hover {
-  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%) !important;
+  background: #2B4FD1 !important;
   color: white !important;
   transform: translateY(-1px);
 }
@@ -377,15 +408,15 @@
 
 
 
-
-/* .mobileNavItem[data-type="link"]::after {
+/* 
+.mobileNavItem[data-type="newTab"]::after {
   content: '↗';
   font-size: 0.9rem;
   opacity: 0.7;
   transition: all 0.3s ease;
 } */
 
-.mobileNavItem[data-type="link"]:hover::after {
+.mobileNavItem[data-type="newTab"]:hover::after {
   opacity: 1;
   transform: translateX(2px) translateY(-2px);
 }
@@ -406,10 +437,12 @@
 @media (max-width: 768px) {
   .navContent {
     padding: 0 1rem;
+    justify-content: space-between;
   }
 
   .leftSection {
     gap: 3rem;
+    flex: 1;
   }
 
   .rightSection {
@@ -421,7 +454,7 @@
   }
 
   .logo img {
-    height: 32px;
+    height: 2.8rem;
   }
 
   /* 隐藏桌面端导航 */
@@ -434,11 +467,17 @@
     display: flex;
   }
 
+  /* 显示移动端顶部语言切换器 */
+  .mobileTopLanguageSwitcher {
+    display: flex;
+  }
+
   .navbar {
     padding: 0.75rem 0;
   }
 
-  /* 移动端隐藏 Try Online 按钮和语言切换器 */
+  /* 移动端隐藏 Download 按钮、Try Online 按钮和桌面端语言切换器 */
+  .downloadButton,
   .tryOnlineButton,
   .languageSwitcher {
     display: none !important;
@@ -455,7 +494,7 @@
   }
 
   .logo img {
-    height: 28px;
+    height: 2.6rem;
   }
 
   .mobileMenu {
@@ -466,20 +505,5 @@
   .mobileNavItem {
     font-size: 1rem;
     padding: 1.2rem 2rem;
-  }
-}
-
-/* 桌面端保持原有样式 */
-@media (min-width: 769px) {
-  .mobileMenuButton {
-    display: none;
-  }
-
-  .mobileMenu {
-    display: none;
-  }
-
-  .mobileOverlay {
-    display: none;
   }
 }

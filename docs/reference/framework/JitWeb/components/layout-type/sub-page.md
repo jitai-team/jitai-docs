@@ -1,5 +1,8 @@
 ---
 slug: sub-page
+title: "Sub Page Reference"
+description: "Sub Page Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Sub Page"
 ---
 # Sub Page
 The sub page is a layout container component used to embed other pages within the current page, implementing modular construction of complex interfaces through reference mechanisms. It handles dynamic loading of sub-pages, data passing, and state management, supporting communication mechanisms between parent and child pages, suitable for page segmentation and modular development of large applications.

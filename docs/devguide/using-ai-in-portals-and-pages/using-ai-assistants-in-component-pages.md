@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: using-ai-assistants-in-component-pages
+description: "Integrate AI Assistant in component pages. Enable AI dialog, configure assistants, and subscribe to events for human-AI collaboration."
 ---
 
 # Using AI Assistant in Component Pages
@@ -53,7 +54,7 @@ this.subscribeEvent("AI:aiagents.ClientManagementagent.callTool.preEvent", async
 ```
 
 ### Subscribe to action in conversation node events {#subscribe-action-in-conversation-events}
-Pages can subscribe to [action in conversation node events](../ai-assistant/ai-assistant-event#in-conversation-action-events).
+Pages can subscribe to [action in conversation node events](../ai-assistant/ai-assistant-event#action-in-conversation-events).
 The subscription method is as follows:
 
 ![AI Assistant - Chat Area Human-Machine Interaction Event Subscription](./img/assistant-chat-event.png)

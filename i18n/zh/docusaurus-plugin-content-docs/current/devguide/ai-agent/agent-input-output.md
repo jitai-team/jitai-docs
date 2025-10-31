@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: agent-input-output
+description: "Agent的输入与输出的详细指南和说明。"
 ---
 
 # Agent的输入与输出
@@ -79,5 +80,5 @@ Agent的运行通常需要一定时间，若用户等待过久会影响体验。
 
 [如何在AI助理中调用Agent?](../ai-assistant/process-orchestration-node-configuration#ai-agent)
 
-[如何在页面中启用AI助理？](../shell-and-page/component-based-page-development#enabling-ai-assistant)
+[如何在页面中启用AI助理？](../shell-and-page/generic-page#enabling-ai-assistant)
 

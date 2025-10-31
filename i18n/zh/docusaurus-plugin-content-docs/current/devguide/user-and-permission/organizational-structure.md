@@ -1,9 +1,10 @@
 ---
 sidebar_position: 1
 slug: organization
+description: "组织架构的详细指南和说明。"
 ---
 
-# 组织架构 {#organization}
+# 组织架构
 JitAi平台提供灵活多样的组织架构能力，支持常规组织、钉钉自建组织、企业微信自建组织及 Microsoft Teams 四种类型。用户可根据实际管理需求和系统基础，灵活选择合适的组织架构，实现高效的成员与部门管理。平台不仅支持成员和部门的灵活配置，还可无缝集成第三方平台，全面满足企业多元化的组织管理场景。
 
 ## 默认组织架构 {#default-organization}

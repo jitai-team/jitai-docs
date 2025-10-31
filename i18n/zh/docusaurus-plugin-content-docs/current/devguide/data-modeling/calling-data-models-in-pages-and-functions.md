@@ -1,9 +1,10 @@
 ---
 sidebar_position: 10
 slug: calling-data-models-in-pages-and-functions
+description: "在页面和函数逻辑中调用数据模型的详细指南和说明。"
 ---
 
-# 在页面和函数逻辑中调用数据模型 {#calling-data-models-in-pages-and-functions}
+# 在页面和函数逻辑中调用数据模型
 
 在JitAi平台开发应用时，数据模型不仅仅用于数据的存储和管理，还可以在页面展示、表单交互以及自定义函数逻辑中被灵活调用。通过在页面和函数中调用数据模型，开发者能够实现数据的动态读取、写入、更新和删除操作，从而满足各种业务场景下的数据处理需求。
 

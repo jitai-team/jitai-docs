@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 slug: vector-database-standalone-deployment
+description: "向量数据库的独立部署的详细指南和说明。"
 ---
 
 # 向量数据库的独立部署

@@ -1,0 +1,263 @@
+<svg width="1200" height="420" viewBox="0 0 1200 420" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="600" y="35" font-family="PingFang SC, sans-serif" font-size="22" font-weight="600" fill="#111827" text-anchor="middle">
+    生产级AI应用的三大核心特征
+  </text>
+  
+  <!-- Feature 1: AI Module Perception / Drive / Orchestration -->
+  <g id="feature-1" transform="translate(60, 70)">
+    <!-- Background Circle -->
+    <circle cx="128" cy="128" r="120" fill="url(#gradient-bg-1)" opacity="0.1"/>
+    
+    <!-- Main Container Circle -->
+    <circle cx="128" cy="128" r="100" fill="none" stroke="url(#gradient-main-1)" stroke-width="3"/>
+    
+    <!-- Central AI Eye Icon -->
+    <circle cx="128" cy="128" r="35" fill="url(#gradient-main-1)"/>
+    <ellipse cx="128" cy="128" rx="22" ry="14" fill="#FFFFFF"/>
+    <circle cx="128" cy="128" r="10" fill="url(#gradient-main-1)"/>
+    <circle cx="130" cy="126" r="4" fill="#FFFFFF"/>
+    
+    <!-- Module Nodes -->
+    <rect x="108" y="35" width="40" height="30" rx="6" fill="#FFFFFF" stroke="url(#gradient-main-1)" stroke-width="2"/>
+    <circle cx="115" cy="47" r="3" fill="#4F46E5"/>
+    <circle cx="128" cy="47" r="3" fill="#4F46E5"/>
+    <circle cx="141" cy="47" r="3" fill="#4F46E5"/>
+    <text x="128" y="61" font-family="sans-serif" font-size="10" fill="#4F46E5" text-anchor="middle">A</text>
+    
+    <rect x="191" y="108" width="40" height="30" rx="6" fill="#FFFFFF" stroke="url(#gradient-main-1)" stroke-width="2"/>
+    <circle cx="198" cy="120" r="3" fill="#7C3AED"/>
+    <circle cx="211" cy="120" r="3" fill="#7C3AED"/>
+    <circle cx="224" cy="120" r="3" fill="#7C3AED"/>
+    <text x="211" y="134" font-family="sans-serif" font-size="10" fill="#7C3AED" text-anchor="middle">B</text>
+    
+    <rect x="108" y="191" width="40" height="30" rx="6" fill="#FFFFFF" stroke="url(#gradient-main-1)" stroke-width="2"/>
+    <circle cx="115" cy="203" r="3" fill="#4F46E5"/>
+    <circle cx="128" cy="203" r="3" fill="#4F46E5"/>
+    <circle cx="141" cy="203" r="3" fill="#4F46E5"/>
+    <text x="128" y="217" font-family="sans-serif" font-size="10" fill="#4F46E5" text-anchor="middle">C</text>
+    
+    <rect x="25" y="108" width="40" height="30" rx="6" fill="#FFFFFF" stroke="url(#gradient-main-1)" stroke-width="2"/>
+    <circle cx="32" cy="120" r="3" fill="#7C3AED"/>
+    <circle cx="45" cy="120" r="3" fill="#7C3AED"/>
+    <circle cx="58" cy="120" r="3" fill="#7C3AED"/>
+    <text x="45" y="134" font-family="sans-serif" font-size="10" fill="#7C3AED" text-anchor="middle">D</text>
+    
+    <!-- Connection Lines -->
+    <line x1="128" y1="65" x2="128" y2="93" stroke="url(#gradient-main-1)" stroke-width="2"/>
+    <circle cx="128" cy="80" r="4" fill="#4F46E5" opacity="0.6"/>
+    
+    <line x1="191" y1="123" x2="163" y2="128" stroke="url(#gradient-main-1)" stroke-width="2"/>
+    <circle cx="177" cy="125" r="4" fill="#7C3AED" opacity="0.6"/>
+    
+    <line x1="128" y1="191" x2="128" y2="163" stroke="url(#gradient-main-1)" stroke-width="2"/>
+    <circle cx="128" cy="177" r="4" fill="#4F46E5" opacity="0.6"/>
+    
+    <line x1="65" y1="123" x2="93" y2="128" stroke="url(#gradient-main-1)" stroke-width="2"/>
+    <circle cx="79" cy="125" r="4" fill="#7C3AED" opacity="0.6"/>
+    
+    <line x1="60" y1="128" x2="196" y2="128" stroke="#7C3AED" stroke-width="1" stroke-dasharray="4,2" opacity="0.3"/>
+    <line x1="128" y1="60" x2="128" y2="196" stroke="#4F46E5" stroke-width="1" stroke-dasharray="4,2" opacity="0.3"/>
+    
+    <circle cx="128" cy="25" r="4" fill="#4F46E5" opacity="0.4"/>
+    <circle cx="231" cy="128" r="4" fill="#7C3AED" opacity="0.4"/>
+    <circle cx="128" cy="231" r="4" fill="#4F46E5" opacity="0.4"/>
+    <circle cx="25" cy="128" r="4" fill="#7C3AED" opacity="0.4"/>
+    
+    <!-- Label -->
+    <text x="128" y="285" font-family="PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#111827" text-anchor="middle">AI模块感知、驱动和编排</text>
+    <text x="128" y="310" font-family="PingFang SC, sans-serif" font-size="13" fill="#6B7280" text-anchor="middle">让AI成为系统的原生能力</text>
+    <text x="128" y="330" font-family="PingFang SC, sans-serif" font-size="13" fill="#6B7280" text-anchor="middle">而非独立应用</text>
+  </g>
+  
+  <!-- Feature 2: AI and Human UI Collaboration -->
+  <g id="feature-2" transform="translate(472, 70)">
+    <!-- Background Circle -->
+    <circle cx="128" cy="128" r="120" fill="url(#gradient-bg-2)" opacity="0.1"/>
+    
+    <!-- Main Container Circle -->
+    <circle cx="128" cy="128" r="100" fill="none" stroke="url(#gradient-main-2)" stroke-width="3"/>
+    
+    <!-- Shared Screen/Interface -->
+    <rect x="78" y="70" width="100" height="80" rx="8" fill="#FFFFFF" stroke="url(#gradient-main-2)" stroke-width="2"/>
+    <rect x="78" y="70" width="100" height="18" rx="8" fill="url(#gradient-main-2)" opacity="0.2"/>
+    <circle cx="86" cy="79" r="2" fill="#10B981"/>
+    <circle cx="93" cy="79" r="2" fill="#F59E0B"/>
+    <circle cx="100" cy="79" r="2" fill="#EF4444"/>
+    
+    <line x1="88" y1="100" x2="168" y2="100" stroke="#DBEAFE" stroke-width="2"/>
+    <line x1="88" y1="110" x2="160" y2="110" stroke="#D1FAE5" stroke-width="2"/>
+    <line x1="88" y1="120" x2="155" y2="120" stroke="#DBEAFE" stroke-width="2"/>
+    <line x1="88" y1="130" x2="165" y2="130" stroke="#D1FAE5" stroke-width="2"/>
+    
+    <circle cx="172" cy="110" r="6" fill="#3B82F6"/>
+    <text x="172" y="113" font-family="sans-serif" font-size="8" font-weight="bold" fill="#FFFFFF" text-anchor="middle">AI</text>
+    
+    <path d="M 150 135 L 150 145 L 154 142 L 157 147 L 160 146 L 157 141 L 162 141 Z" fill="#10B981"/>
+    
+    <!-- Human Character -->
+    <circle cx="75" cy="180" r="22" fill="#DBEAFE" stroke="#3B82F6" stroke-width="2"/>
+    <circle cx="70" cy="176" r="2" fill="#3B82F6"/>
+    <circle cx="80" cy="176" r="2" fill="#3B82F6"/>
+    <path d="M 70 184 Q 75 188, 80 184" stroke="#3B82F6" stroke-width="2" fill="none"/>
+    <rect x="60" y="202" width="30" height="35" rx="4" fill="#DBEAFE" stroke="#3B82F6" stroke-width="2"/>
+    <path d="M 60 210 Q 50 190, 70 165" stroke="#3B82F6" stroke-width="2" fill="none"/>
+    <circle cx="70" cy="165" r="4" fill="#3B82F6"/>
+    
+    <!-- AI Robot -->
+    <circle cx="181" cy="180" r="22" fill="url(#gradient-main-2)" stroke="#7C3AED" stroke-width="2"/>
+    <rect x="175" y="174" width="4" height="4" rx="1" fill="#FFFFFF"/>
+    <rect x="183" y="174" width="4" height="4" rx="1" fill="#FFFFFF"/>
+    <rect x="177" y="182" width="8" height="2" rx="1" fill="#FFFFFF"/>
+    <line x1="181" y1="158" x2="181" y2="168" stroke="#7C3AED" stroke-width="2"/>
+    <circle cx="181" cy="156" r="3" fill="#10B981"/>
+    <rect x="166" y="202" width="30" height="35" rx="4" fill="url(#gradient-main-2)" opacity="0.3" stroke="#7C3AED" stroke-width="2"/>
+    <circle cx="174" cy="215" r="3" fill="#10B981"/>
+    <circle cx="188" cy="215" r="3" fill="#10B981"/>
+    <path d="M 196 210 Q 206 190, 186 165" stroke="#7C3AED" stroke-width="2" fill="none"/>
+    <circle cx="186" cy="165" r="4" fill="#7C3AED"/>
+    
+    <!-- Handshake -->
+    <circle cx="128" cy="195" r="18" fill="#FFFFFF" stroke="url(#gradient-main-2)" stroke-width="2"/>
+    <path d="M 120 195 L 125 190 L 130 195 L 125 200 Z" fill="#3B82F6"/>
+    <path d="M 136 195 L 131 190 L 126 195 L 131 200 Z" fill="#10B981"/>
+    
+    <path d="M 85 202 Q 100 195, 110 195" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4,2" opacity="0.5"/>
+    <path d="M 171 202 Q 156 195, 146 195" stroke="#7C3AED" stroke-width="2" stroke-dasharray="4,2" opacity="0.5"/>
+    
+    <circle cx="128" cy="50" r="4" fill="#3B82F6" opacity="0.4"/>
+    <circle cx="50" cy="128" r="4" fill="#10B981" opacity="0.4"/>
+    <circle cx="206" cy="128" r="4" fill="#7C3AED" opacity="0.4"/>
+    
+    <g transform="translate(120, 25)">
+      <circle cx="8" cy="8" r="6" fill="none" stroke="#10B981" stroke-width="2"/>
+      <circle cx="8" cy="8" r="2" fill="#10B981"/>
+      <path d="M 12 6 L 16 4" stroke="#10B981" stroke-width="1.5"/>
+      <path d="M 12 10 L 16 12" stroke="#10B981" stroke-width="1.5"/>
+    </g>
+    
+    <!-- Label -->
+    <text x="128" y="285" font-family="PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#111827" text-anchor="middle">AI与人类基于UI的协同</text>
+    <text x="128" y="310" font-family="PingFang SC, sans-serif" font-size="13" fill="#6B7280" text-anchor="middle">让AI在人类的工作界面上</text>
+    <text x="128" y="330" font-family="PingFang SC, sans-serif" font-size="13" fill="#6B7280" text-anchor="middle">协同操作，而非割裂的聊天窗口</text>
+  </g>
+  
+  <!-- Feature 3: Enterprise Knowledge Modeling -->
+  <g id="feature-3" transform="translate(884, 70)">
+    <!-- Background Circle -->
+    <circle cx="128" cy="128" r="120" fill="url(#gradient-bg-3)" opacity="0.1"/>
+    
+    <!-- Main Container Circle -->
+    <circle cx="128" cy="128" r="100" fill="none" stroke="url(#gradient-main-3)" stroke-width="3"/>
+    
+    <!-- Brain + Database -->
+    <circle cx="128" cy="110" r="38" fill="url(#gradient-main-3)" opacity="0.2" stroke="url(#gradient-main-3)" stroke-width="2"/>
+    <path d="M 110 100 Q 115 90, 128 93 Q 140 95, 146 100" fill="none" stroke="#7C3AED" stroke-width="2"/>
+    <path d="M 110 100 Q 115 110, 128 107 Q 140 105, 146 100" fill="none" stroke="#7C3AED" stroke-width="2"/>
+    <path d="M 110 110 Q 115 120, 128 117 Q 140 115, 146 110" fill="none" stroke="#7C3AED" stroke-width="2"/>
+    
+    <circle cx="118" cy="98" r="3" fill="#7C3AED"/>
+    <circle cx="128" cy="95" r="3" fill="#7C3AED"/>
+    <circle cx="138" cy="98" r="3" fill="#7C3AED"/>
+    <circle cx="118" cy="110" r="3" fill="#C026D3"/>
+    <circle cx="138" cy="110" r="3" fill="#C026D3"/>
+    <circle cx="128" cy="120" r="3" fill="#C026D3"/>
+    
+    <ellipse cx="128" cy="145" rx="28" ry="8" fill="#FFFFFF" stroke="#C026D3" stroke-width="2"/>
+    <path d="M 100 145 L 100 157 Q 100 162, 128 162 Q 156 162, 156 157 L 156 145" stroke="#C026D3" stroke-width="2" fill="none"/>
+    <ellipse cx="128" cy="157" rx="28" ry="8" fill="#FFFFFF" stroke="#C026D3" stroke-width="2"/>
+    <line x1="110" y1="150" x2="146" y2="150" stroke="#E9D5FF" stroke-width="1"/>
+    <line x1="110" y1="154" x2="146" y2="154" stroke="#E9D5FF" stroke-width="1"/>
+    
+    <!-- Knowledge Nodes -->
+    <circle cx="70" cy="65" r="14" fill="#FFFFFF" stroke="url(#gradient-main-3)" stroke-width="2"/>
+    <rect x="64" y="60" width="12" height="10" rx="2" fill="none" stroke="#7C3AED" stroke-width="1.5"/>
+    <line x1="67" y1="63" x2="73" y2="63" stroke="#7C3AED" stroke-width="0.5"/>
+    <line x1="67" y1="65" x2="73" y2="65" stroke="#7C3AED" stroke-width="0.5"/>
+    <line x1="67" y1="67" x2="73" y2="67" stroke="#7C3AED" stroke-width="0.5"/>
+    
+    <circle cx="186" cy="65" r="14" fill="#FFFFFF" stroke="url(#gradient-main-3)" stroke-width="2"/>
+    <circle cx="186" cy="62" r="5" fill="none" stroke="#C026D3" stroke-width="1.5"/>
+    <rect x="183" y="67" width="6" height="6" fill="#C026D3"/>
+    
+    <circle cx="70" cy="191" r="14" fill="#FFFFFF" stroke="url(#gradient-main-3)" stroke-width="2"/>
+    <path d="M 65 186 L 68 193 L 65 195" stroke="#DB2777" stroke-width="1.5" fill="none"/>
+    <path d="M 70 186 Q 71 189, 70 192 Q 69 195, 70 198" stroke="#DB2777" stroke-width="1.5" fill="none"/>
+    <circle cx="75" cy="191" r="3" fill="none" stroke="#DB2777" stroke-width="1.5"/>
+    
+    <circle cx="186" cy="191" r="14" fill="#FFFFFF" stroke="url(#gradient-main-3)" stroke-width="2"/>
+    <rect x="180" y="186" width="12" height="10" rx="2" fill="none" stroke="#7C3AED" stroke-width="1.5"/>
+    <circle cx="188" cy="197" r="2" fill="#7C3AED"/>
+    
+    <!-- Connections -->
+    <line x1="80" y1="72" x2="110" y2="95" stroke="url(#gradient-main-3)" stroke-width="2" opacity="0.5"/>
+    <line x1="176" y1="72" x2="146" y2="95" stroke="url(#gradient-main-3)" stroke-width="2" opacity="0.5"/>
+    <line x1="80" y1="184" x2="110" y2="140" stroke="url(#gradient-main-3)" stroke-width="2" opacity="0.5"/>
+    <line x1="176" y1="184" x2="146" y2="140" stroke="url(#gradient-main-3)" stroke-width="2" opacity="0.5"/>
+    
+    <circle cx="95" cy="84" r="3" fill="#7C3AED" opacity="0.6"/>
+    <circle cx="161" cy="84" r="3" fill="#C026D3" opacity="0.6"/>
+    <circle cx="95" cy="162" r="3" fill="#DB2777" opacity="0.6"/>
+    <circle cx="161" cy="162" r="3" fill="#7C3AED" opacity="0.6"/>
+    
+    <line x1="70" y1="79" x2="70" y2="177" stroke="#E9D5FF" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.3"/>
+    <line x1="186" y1="79" x2="186" y2="177" stroke="#E9D5FF" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.3"/>
+    <line x1="84" y1="65" x2="172" y2="65" stroke="#E9D5FF" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.3"/>
+    <line x1="84" y1="191" x2="172" y2="191" stroke="#E9D5FF" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.3"/>
+    
+    <circle cx="50" cy="128" r="6" fill="#FFFFFF" stroke="#7C3AED" stroke-width="2"/>
+    <circle cx="52" cy="126" r="2" fill="#7C3AED"/>
+    
+    <circle cx="206" cy="128" r="6" fill="#FFFFFF" stroke="#C026D3" stroke-width="2"/>
+    <circle cx="208" cy="126" r="2" fill="#C026D3"/>
+    
+    <circle cx="128" cy="35" r="6" fill="#FFFFFF" stroke="#DB2777" stroke-width="2"/>
+    <circle cx="130" cy="33" r="2" fill="#DB2777"/>
+    
+    <circle cx="128" cy="221" r="6" fill="#FFFFFF" stroke="#7C3AED" stroke-width="2"/>
+    <circle cx="130" cy="219" r="2" fill="#7C3AED"/>
+    
+    <circle cx="128" cy="128" r="75" fill="none" stroke="url(#gradient-main-3)" stroke-width="1" stroke-dasharray="8,4" opacity="0.2"/>
+    <circle cx="128" cy="128" r="85" fill="none" stroke="url(#gradient-main-3)" stroke-width="1" stroke-dasharray="12,6" opacity="0.15"/>
+    
+    <!-- Label -->
+    <text x="128" y="285" font-family="PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#111827" text-anchor="middle">企业知识建模</text>
+    <text x="128" y="310" font-family="PingFang SC, sans-serif" font-size="13" fill="#6B7280" text-anchor="middle">让AI真正理解企业私有数据</text>
+    <text x="128" y="330" font-family="PingFang SC, sans-serif" font-size="13" fill="#6B7280" text-anchor="middle">和特有业务模型</text>
+  </g>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="gradient-main-1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="gradient-bg-1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="gradient-main-2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10B981;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="gradient-bg-2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10B981;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="gradient-main-3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7C3AED;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#C026D3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DB2777;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="gradient-bg-3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7C3AED;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DB2777;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>
+

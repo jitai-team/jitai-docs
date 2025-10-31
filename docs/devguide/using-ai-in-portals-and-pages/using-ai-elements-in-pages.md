@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: using-ai-elements-in-pages
+description: "Use AI elements in pages with visual or code calling. Invoke AI Assistants, Agents, and LLM functions directly from page logic."
 ---
 
 # Using AI Elements in Pages

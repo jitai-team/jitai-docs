@@ -1,9 +1,10 @@
 ---
 sidebar_position: 1
 slug: organization
+description: "Manage organizational structure and hierarchies. Define departments, teams, reporting relationships, and user assignments."
 ---
 
-# Organization {#organization}
+# Organization
 JitAi provides flexible and comprehensive organization management capabilities, supporting four types: `Generic Organization`, `DingTalk Self-built Org.`, `WeCom Self-built Org.`, and `Microsoft Teams`. Based on your specific management needs and existing systems, you can select the most appropriate organization to efficiently manage members and departments. The platform not only supports flexible member and department configuration but also seamlessly integrates with third-party platforms, fully accommodating diverse enterprise organizational management scenarios.
 
 ## Default organization {#default-organization}

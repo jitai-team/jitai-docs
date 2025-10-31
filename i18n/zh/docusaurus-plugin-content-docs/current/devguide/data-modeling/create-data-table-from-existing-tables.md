@@ -1,9 +1,10 @@
 ---
 sidebar_position: 4
 slug: create-data-table-from-existing-tables
+description: "从已有数据表中创建数据表的详细指南和说明。"
 ---
 
-# 从已有数据表中创建数据表 {#from-existing-data-table}
+# 从已有数据表中创建数据表
 
 适用于数据库中已有数据表，需要在JitAi应用中快速创建对应模型的场景。
 

@@ -1,5 +1,6 @@
 ---
 sidebar_position: 7
+description: "Develop full-code pages with React or Vue. Native frontend development with platform integration for complex interactions and custom requirements."
 ---
 
 import Tabs from '@theme/Tabs';

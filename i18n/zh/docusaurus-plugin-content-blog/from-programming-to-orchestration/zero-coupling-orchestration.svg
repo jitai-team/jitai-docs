@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 800" role="img" aria-labelledby="zeroTitle zeroDesc">
+  <title id="zeroTitle">零耦合编排vs传统依赖对比</title>
+  <desc id="zeroDesc">对比传统import依赖网络与零耦合ID引用的灵活性差异</desc>
+  
+  <defs>
+    <style>
+      .primary { fill: #326DFF; }
+      .primary-light { fill: #8EAEFF; }
+      .text-dark { fill: #333333; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .text-medium { fill: #6b7280; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .code-text { fill: #1f2937; font-family: "Monaco", monospace; font-size: 11px; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1600" height="800" fill="#F9FAFB"/>
+  
+  <!-- Left Side: Traditional Import Network -->
+  <g id="traditional-import">
+    <rect x="40" y="40" width="740" height="680" rx="12" fill="white" stroke="#E5E7EB" stroke-width="2"/>
+    
+    <!-- Title -->
+    <text x="410" y="90" text-anchor="middle" class="text-dark" font-size="24" font-weight="700">传统依赖：import 网络</text>
+    
+    <!-- Module A -->
+    <rect x="100" y="150" width="180" height="100" rx="8" fill="#D1D5DB" stroke="#9ca3af" stroke-width="2"/>
+    <text x="190" y="185" text-anchor="middle" class="text-dark" font-size="16" font-weight="600">Module A</text>
+    <text x="120" y="210" class="code-text">import B from './b';</text>
+    <text x="120" y="225" class="code-text">import C from './c';</text>
+    
+    <!-- Module B -->
+    <rect x="320" y="150" width="180" height="100" rx="8" fill="#D1D5DB" stroke="#9ca3af" stroke-width="2"/>
+    <text x="410" y="185" text-anchor="middle" class="text-dark" font-size="16" font-weight="600">Module B</text>
+    <text x="340" y="210" class="code-text">import D from './d';</text>
+    <text x="340" y="225" class="code-text">import E from './e';</text>
+    
+    <!-- Module C -->
+    <rect x="540" y="150" width="180" height="100" rx="8" fill="#D1D5DB" stroke="#9ca3af" stroke-width="2"/>
+    <text x="630" y="185" text-anchor="middle" class="text-dark" font-size="16" font-weight="600">Module C</text>
+    <text x="560" y="210" class="code-text">import D from './d';</text>
+    <text x="560" y="225" class="code-text">import F from './f';</text>
+    
+    <!-- Module D -->
+    <rect x="210" y="320" width="180" height="100" rx="8" fill="#D1D5DB" stroke="#9ca3af" stroke-width="2"/>
+    <text x="300" y="355" text-anchor="middle" class="text-dark" font-size="16" font-weight="600">Module D</text>
+    <text x="230" y="380" class="code-text">import E from './e';</text>
+    
+    <!-- Module E -->
+    <rect x="430" y="320" width="180" height="100" rx="8" fill="#D1D5DB" stroke="#9ca3af" stroke-width="2"/>
+    <text x="520" y="355" text-anchor="middle" class="text-dark" font-size="16" font-weight="600">Module E</text>
+    <text x="450" y="380" class="code-text">// circular dep</text>
+    
+    <!-- Module F -->
+    <rect x="320" y="490" width="180" height="100" rx="8" fill="#D1D5DB" stroke="#9ca3af" stroke-width="2"/>
+    <text x="410" y="525" text-anchor="middle" class="text-dark" font-size="16" font-weight="600">Module F</text>
+    <text x="340" y="550" class="code-text">import A from './a';</text>
+    
+    <!-- Complex dependency lines -->
+    <line x1="280" y1="200" x2="320" y2="200" stroke="#EF4444" stroke-width="2"/>
+    <line x1="190" y1="250" x2="540" y2="200" stroke="#EF4444" stroke-width="2"/>
+    <line x1="410" y1="250" x2="300" y2="320" stroke="#EF4444" stroke-width="2"/>
+    <line x1="500" y1="250" x2="520" y2="320" stroke="#EF4444" stroke-width="2"/>
+    <line x1="630" y1="250" x2="390" y2="320" stroke="#EF4444" stroke-width="2"/>
+    <line x1="630" y1="250" x2="410" y2="490" stroke="#EF4444" stroke-width="2"/>
+    <line x1="300" y1="420" x2="520" y2="370" stroke="#EF4444" stroke-width="2"/>
+    <line x1="410" y1="590" x2="190" y2="250" stroke="#EF4444" stroke-width="2" stroke-dasharray="5,5"/>
+    
+    <!-- Warning icon -->
+    <circle cx="410" cy="640" r="25" fill="#FEE2E2" stroke="#EF4444" stroke-width="3"/>
+    <text x="410" y="652" text-anchor="middle" font-size="24" font-weight="bold" fill="#EF4444">!</text>
+    
+    <!-- Problems list -->
+    <text x="410" y="690" text-anchor="middle" class="text-medium" font-size="14">难以复用 • 迁移成本高 • 循环依赖</text>
+  </g>
+  
+  <!-- Right Side: Zero Coupling -->
+  <g id="zero-coupling">
+    <rect x="820" y="40" width="740" height="680" rx="12" fill="white" stroke="#E5E7EB" stroke-width="2"/>
+    
+    <!-- Title -->
+    <text x="1190" y="90" text-anchor="middle" class="text-dark" font-size="24" font-weight="700">零耦合：ID 引用</text>
+    
+    <!-- Module A -->
+    <rect x="880" y="150" width="180" height="100" rx="8" class="primary-light" opacity="0.9" stroke="#326DFF" stroke-width="2"/>
+    <text x="970" y="185" text-anchor="middle" fill="white" font-size="16" font-weight="600">Module A</text>
+    <text x="900" y="210" class="code-text" fill="white">uses: ['#module-b',</text>
+    <text x="900" y="225" class="code-text" fill="white">       '#module-c']</text>
+    
+    <!-- Module B -->
+    <rect x="1100" y="150" width="180" height="100" rx="8" class="primary-light" opacity="0.9" stroke="#326DFF" stroke-width="2"/>
+    <text x="1190" y="185" text-anchor="middle" fill="white" font-size="16" font-weight="600">Module B</text>
+    <text x="1120" y="210" class="code-text" fill="white">uses: ['#module-d',</text>
+    <text x="1120" y="225" class="code-text" fill="white">       '#module-e']</text>
+    
+    <!-- Module C -->
+    <rect x="1320" y="150" width="180" height="100" rx="8" class="primary-light" opacity="0.9" stroke="#326DFF" stroke-width="2"/>
+    <text x="1410" y="185" text-anchor="middle" fill="white" font-size="16" font-weight="600">Module C</text>
+    <text x="1340" y="210" class="code-text" fill="white">uses: ['#module-d']</text>
+    
+    <!-- Module D -->
+    <rect x="990" y="320" width="180" height="100" rx="8" class="primary" opacity="0.9" stroke="#1E40AF" stroke-width="2"/>
+    <text x="1080" y="355" text-anchor="middle" fill="white" font-size="16" font-weight="600">Module D</text>
+    <text x="1010" y="380" class="code-text" fill="white">uses: ['#module-e']</text>
+    
+    <!-- Module E -->
+    <rect x="1210" y="320" width="180" height="100" rx="8" class="primary" opacity="0.9" stroke="#1E40AF" stroke-width="2"/>
+    <text x="1300" y="355" text-anchor="middle" fill="white" font-size="16" font-weight="600">Module E</text>
+    <text x="1230" y="380" class="code-text" fill="white">// standalone</text>
+    
+    <!-- Module F -->
+    <rect x="1100" y="490" width="180" height="100" rx="8" class="primary" opacity="0.9" stroke="#1E40AF" stroke-width="2"/>
+    <text x="1190" y="525" text-anchor="middle" fill="white" font-size="16" font-weight="600">Module F</text>
+    <text x="1120" y="550" class="code-text" fill="white">uses: ['#module-a']</text>
+    
+    <!-- Clean dependency lines -->
+    <line x1="1060" y1="200" x2="1100" y2="200" stroke="#10B981" stroke-width="3"/>
+    <path d="M 1090 195 L 1100 200 L 1090 205 Z" fill="#10B981"/>
+    
+    <line x1="970" y1="250" x2="1320" y2="200" stroke="#10B981" stroke-width="3"/>
+    <path d="M 1310 205 L 1320 200 L 1315 195 Z" fill="#10B981"/>
+    
+    <line x1="1190" y1="250" x2="1080" y2="320" stroke="#10B981" stroke-width="3"/>
+    <path d="M 1085 310 L 1080 320 L 1090 315 Z" fill="#10B981"/>
+    
+    <line x1="1280" y1="250" x2="1170" y2="320" stroke="#10B981" stroke-width="3"/>
+    <path d="M 1175 310 L 1170 320 L 1180 315 Z" fill="#10B981"/>
+    
+    <line x1="1410" y1="250" x2="1170" y2="320" stroke="#10B981" stroke-width="3"/>
+    <path d="M 1175 310 L 1170 320 L 1180 315 Z" fill="#10B981"/>
+    
+    <line x1="1080" y1="420" x2="1300" y2="370" stroke="#10B981" stroke-width="3"/>
+    <path d="M 1295 375 L 1300 370 L 1290 370 Z" fill="#10B981"/>
+    
+    <line x1="1190" y1="490" x2="970" y2="250" stroke="#10B981" stroke-width="3"/>
+    <path d="M 975 255 L 970 250 L 970 260 Z" fill="#10B981"/>
+    
+    <!-- Success icon -->
+    <circle cx="1190" cy="640" r="25" fill="#D1FAE5" stroke="#10B981" stroke-width="3"/>
+    <path d="M 1180 640 L 1187 647 L 1205 629" stroke="#10B981" stroke-width="3" fill="none" stroke-linecap="round"/>
+    
+    <!-- Benefits list -->
+    <text x="1190" y="690" text-anchor="middle" class="primary" font-size="14" font-weight="600">自由复用 • 跨应用编排 • 动态加载</text>
+  </g>
+  
+  <!-- Bottom: Copy example -->
+  <rect x="200" y="740" width="1200" height="40" rx="8" fill="#EFF6FF" stroke="#326DFF" stroke-width="2"/>
+  <text x="800" y="765" text-anchor="middle" class="text-dark" font-size="16" font-weight="700">复制目录 → 直接使用 • 无需处理依赖 • 跨项目迁移零成本</text>
+</svg>
+

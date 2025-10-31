@@ -11,7 +11,7 @@ const FAQ_DATA: FAQ[] = [
   },
   {
     question: 'Can a license be migrated from one terminal to another?',
-    answer: 'Yes.'
+    answer: 'Yes, you need to migrate the JitNode node data directory together.'
   },
   {
     question: 'Are there limitations on user count, table capacity, or attachment capacity?',
@@ -27,6 +27,10 @@ const FAQ_DATA: FAQ[] = [
   },
   {
     question: 'Can license specifications be upgraded at any time?',
+    answer: 'Yes, after upgrading, the old license will be immediately unbound, and the old license can still be used on other nodes.'
+  },
+  {
+    question: 'Can license specifications be downgraded at any time?',
     answer: 'Not currently supported.'
   }
 ];

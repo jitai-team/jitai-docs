@@ -4,6 +4,7 @@ export interface PricingPlan {
   title: string;
   subtitle: string;
   icon: string;
+  isShowPriceUnit: boolean;
   monthlyPrice: string;
   yearlyPrice: string;
   buyoutPrice: string;
@@ -11,25 +12,28 @@ export interface PricingPlan {
   isRecommended?: boolean;
   cardType: string;
   analyticsCssClass: string;
+  customPayActionText?: string;
 }
 
 
 // 价格方案配置
 const PRICING_PLANS: PricingPlan[] = [
   {
-    id: 'desktop',
-    title: '桌面版许可证',
-    subtitle: '本地开发必备',
+    id: 'free',
+    title: '桌面基础版许可证',
+    subtitle: '注册即送 3 个',
     icon: '🖥️',
-    monthlyPrice: '20',
-    yearlyPrice: '16',
-    buyoutPrice: '960',
+    isShowPriceUnit: false,
+    customPayActionText: '下载',
+    monthlyPrice: '免费',
+    yearlyPrice: '免费',
+    buyoutPrice: '免费',
     cardType: 'desktopCard',
-    analyticsCssClass: 'analytics-pay',
+    analyticsCssClass: 'analytics-payFree analytics-download',
     features: [
       '✓ 仅用于开发环境',
+      '✓ 1个应用',
       '✓ 无限组织数',
-      '✓ 无限应用数',
       '✓ 桌面端开发',
       '✓ 在线开发',
       '✓ 仅单进程运行',
@@ -37,10 +41,27 @@ const PRICING_PLANS: PricingPlan[] = [
     ],
   },
   {
-    id: 'basic',
+    id: 'desktopStandard',
+    title: '桌面标准版许可证',
+    subtitle: '本地开发推荐',
+    icon: '🖥️',
+    isShowPriceUnit: true,
+    monthlyPrice: '20',
+    yearlyPrice: '16',
+    buyoutPrice: '960',
+    cardType: 'desktopCard',
+    analyticsCssClass: 'analytics-pay',
+    features: [
+      '桌面基础版所有功能，以及',
+      '✓ 10个应用',
+    ],
+  },
+  {
+    id: 'serverBasic',
     title: '服务器基础版许可证',
     subtitle: '中小企业入门选择',
     icon: '🚀',
+    isShowPriceUnit: true,
     monthlyPrice: '250',
     yearlyPrice: '200',
     buyoutPrice: '12,000',
@@ -48,18 +69,20 @@ const PRICING_PLANS: PricingPlan[] = [
     isRecommended: true,
     analyticsCssClass: 'analytics-pay',
     features: [
+        '服务器基础版所有功能，以及',
         '✓ 用于开发/测试/生产环境',
-        '✓ 2个组织',
         '✓ 1个应用',
+        '✓ 2个组织',
         '✓ 在线开发',
         '✓ 仅单机运行'
     ],
   },
   {
-    id: 'standard',
+    id: 'serverStandard',
     title: '服务器标准版许可证',
     subtitle: '企业标准配置',
     icon: '⭐',
+    isShowPriceUnit: true,
     monthlyPrice: '500',
     yearlyPrice: '400',
     buyoutPrice: '24,000',
@@ -67,8 +90,8 @@ const PRICING_PLANS: PricingPlan[] = [
     analyticsCssClass: 'analytics-pay',
     features: [
         '服务器基础版所有功能，以及',
-        '✓ 10个组织',
         '✓ 5个应用',
+        '✓ 10个组织',
         '✓ 可加入集群环境'
     ],
   },
@@ -83,31 +106,25 @@ const PRICING_PLANS: PricingPlan[] = [
   //   cardType: 'professionalCard',
   //   features: [
   //       '服务器标准版所有功能，以及',
-  //       '✓ 20个组织',
   //       '✓ 10个应用',
+  //       '✓ 20个组织',
   //   ]
-  // },
-  {
-    id: 'enterprise',
-    title: '自定义组合',
-    subtitle: '批量许可证需求客户',
-    icon: '🌟',
-    monthlyPrice: '价格商议',
-    yearlyPrice: '价格商议',
-    buyoutPrice: '价格商议',
-    cardType: 'enterpriseCard',
-    analyticsCssClass: 'analytics-contactSale',
-    features: [
-        '✓ 更多组织数',
-        '✓ 更多应用数',
-        '✓ 批量许可证价格优惠',
-    ],
-  }
+  // }
 ];
+
+// 自定义组合配置
+const CUSTOM_PLAN = {
+  id: 'custom',
+  title: '需要更多许可证或定制方案？',
+  description: '批量购买可享优惠，支持灵活定制。联系销售获取专属报价。',
+  contactText: '联系销售',
+    analyticsCssClass: 'analytics-contactSale',
+};
 
 const CONTENT = {
   locale: 'zh',
   pricingPlans: PRICING_PLANS,
+  customPlan: CUSTOM_PLAN,
   title: '价格',
   subtitle: 'JitAi可部署在任意个人电脑或服务器上，按需购买对应终端规格的许可证即可',
   monthly: '按月订阅',
@@ -115,7 +132,11 @@ const CONTENT = {
   buyout: '一次性买断',
   yearlyBadge: '省 20%',
   recommendedBadge: '推荐',
-  contactSales: '联系销售',
+  payActionText: {
+    monthly: '订阅',
+    yearly: '订阅',
+    buyout: '支付',
+  },
   contactSalesLink: 'https://wy.jit.pro/whwy/jitRDM/publicPortal/ContactSalesCn',
   moneyUnit: 'US$ ',
   priceUnit: {
@@ -123,15 +144,8 @@ const CONTENT = {
     yearly: '个/月',
     buyout: '个/永久',
   },
-  subscribe: '订阅',
-  pay: '支付',
+  free: '免费',
   includes: '这包括：',
-  specialOffer: '特别优惠',
-  specialOfferDescriptions: [
-    '立即注册，每个开发者团队即赠',
-    '免费1个月桌面版许可证',
-    '尽情体验JitAi的强大功能！',
-  ],
   // 弹窗相关文案
   modal: {
     title: '确认购买信息',
@@ -141,7 +155,7 @@ const CONTENT = {
     teamIdPattern: /^[a-z][a-z0-9]{3,19}$/,
     teamIdPatternMessage: '请输入4-20个字符，以小写字母开头，只能包含小写字母和数字',
     teamIdHelpText: '如何获取？',
-    teamIdHelpLink: '/docs/devguide/installation-activation/developer-team-management#view-and-refresh-team-bind-code',
+    teamIdHelpLink: '/zh/docs/devguide/installation-activation/developer-team-management#view-team-id',
     teamTitleLabel: '开发者团队名称',
     teamTitlePlaceholder: '请输入开发者团队名称',
     purchasePlanTitle: '购买方案',

@@ -194,3 +194,15 @@ customization:
 'architecture transformation':
   label: 架构转型
   description: 企业架构转型与现代化升级
+
+'cloud repatriation':
+  label: 云遣返
+  description: 企业从公有云迁回私有化基础设施的趋势与实践
+
+tco:
+  label: TCO
+  description: 总体拥有成本分析与对比
+
+'37signals':
+  label: 37signals
+  description: 37signals公司及其云迁移案例

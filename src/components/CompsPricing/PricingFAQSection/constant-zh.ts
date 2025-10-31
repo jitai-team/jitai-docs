@@ -11,7 +11,7 @@ const FAQ_DATA: FAQ[] = [
   },
   {
     question: '一个许可证可以从一个终端上迁移到另一个终端吗？',
-    answer: '可以。'
+    answer: '可以。需要连同 JitNode 节点数据目录一起迁移。'
   },
   {
     question: '限制用户数、表容量、附件容量？',
@@ -27,7 +27,11 @@ const FAQ_DATA: FAQ[] = [
   },
   {
     question: '可以随时升级许可证规格吗？',
-    answer: '暂不支持。'
+    answer: '支持，升级后，立即解绑旧许可证，旧许可证仍然可用于其他节点。'
+  },
+  {
+    question: '可以随时降级许可证规格吗？',
+    answer: '暂时不支持。'
   }
 ];
 

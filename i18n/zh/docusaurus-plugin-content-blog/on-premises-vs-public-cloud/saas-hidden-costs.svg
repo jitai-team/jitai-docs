@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 1600 900" 
+     role="img"
+     aria-labelledby="hiddenCostsTitle hiddenCostsDesc">
+  <title id="hiddenCostsTitle">SaaS隐性成本拆解</title>
+  <desc id="hiddenCostsDesc">冰山图展示SaaS的显性成本（80-85%）和隐性成本（15-20%），揭示被忽视的额外支出</desc>
+  
+  <!-- 样式定义 -->
+  <defs>
+    <style>
+      .primary { fill: #326DFF; }
+      .primary-light { fill: #8EAEFF; }
+      .accent-orange { fill: #FF6B35; }
+      .bg { fill: #F5F7FA; }
+      .water { fill: #B8D4FF; opacity: 0.4; }
+      .text-dark { 
+        fill: #1f2937; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+      .text-medium { 
+        fill: #6b7280; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+      .text-white {
+        fill: #ffffff;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+      .text-small {
+        fill: #9ca3af;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+    </style>
+    
+    <!-- 渐变 -->
+    <linearGradient id="icebergGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8EAEFF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#326DFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E4FCC;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF8C5A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF6B35;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1600" height="900" class="bg"/>
+  
+  <!-- 标题 -->
+  <text x="800" y="60" text-anchor="middle" class="text-dark" font-size="28" font-weight="700">SaaS隐性成本：冰山之下的真相</text>
+  
+  <!-- 图表区域 -->
+  <g id="iceberg-diagram" transform="translate(400, 150)">
+    
+    <!-- 水面线 -->
+    <rect x="0" y="350" width="800" height="300" class="water"/>
+    <line x1="0" y1="350" x2="800" y2="350" stroke="#326DFF" stroke-width="3" stroke-dasharray="10,5"/>
+    <text x="-50" y="360" class="text-dark" font-size="16" font-weight="600">水面线</text>
+    
+    <!-- 冰山形状 -->
+    <g id="iceberg">
+      <!-- 水面上部分（显性成本 80-85%） -->
+      <path d="M 400 100 L 550 350 L 250 350 Z" 
+            fill="url(#icebergGradient)" opacity="0.9"/>
+      
+      <!-- 水面下部分（隐性成本 15-20%） -->
+      <path d="M 250 350 L 550 350 L 600 600 L 200 600 Z" 
+            fill="url(#icebergGradient)" opacity="0.7"/>
+    </g>
+    
+    <!-- 显性成本标注（水面上） -->
+    <g id="visible-costs">
+      <rect x="580" y="180" width="180" height="120" rx="8" fill="#ffffff" stroke="#326DFF" stroke-width="2"/>
+      <text x="670" y="210" text-anchor="middle" class="text-dark" font-size="18" font-weight="700">显性成本</text>
+      <text x="670" y="240" text-anchor="middle" class="primary" font-size="24" font-weight="700">80-85%</text>
+      <text x="670" y="270" text-anchor="middle" class="text-medium" font-size="14">订阅费用</text>
+      <text x="670" y="290" text-anchor="middle" class="text-medium" font-size="14">账面成本</text>
+      <line x1="580" y1="220" x2="550" y2="220" stroke="#326DFF" stroke-width="2"/>
+    </g>
+    
+    <!-- 隐性成本标注（水面下） -->
+    <g id="hidden-costs">
+      <rect x="40" y="420" width="180" height="180" rx="8" fill="#ffffff" stroke="#FF6B35" stroke-width="2"/>
+      <text x="130" y="450" text-anchor="middle" class="text-dark" font-size="18" font-weight="700">隐性成本</text>
+      <text x="130" y="480" text-anchor="middle" class="accent-orange" font-size="24" font-weight="700">15-20%</text>
+      <rect x="50" y="495" width="160" height="1" fill="#e5e7eb"/>
+      <text x="130" y="515" text-anchor="middle" class="text-medium" font-size="13">API超限升级</text>
+      <text x="130" y="535" text-anchor="middle" class="text-medium" font-size="13">强制升级计划</text>
+      <text x="130" y="555" text-anchor="middle" class="text-medium" font-size="13">数据迁移成本</text>
+      <text x="130" y="575" text-anchor="middle" class="text-medium" font-size="13">定制开发受限</text>
+      <line x1="220" y1="500" x2="250" y2="480" stroke="#FF6B35" stroke-width="2"/>
+    </g>
+    
+  </g>
+  
+  <!-- 关键洞察 -->
+  <g id="insights" transform="translate(200, 780)">
+    <rect x="0" y="0" width="1200" height="80" rx="12" fill="#FFF4ED" stroke="#FF6B35" stroke-width="2"/>
+    <text x="600" y="30" text-anchor="middle" class="text-dark" font-size="16" font-weight="600">💡 关键洞察</text>
+    <text x="600" y="60" text-anchor="middle" class="text-medium" font-size="14">表面上每月2000元的订阅，5年实际花费可能达到15-20万——而且永远没有"付清"的那一天</text>
+  </g>
+  
+  <!-- 数据来源 -->
+  <text x="800" y="885" text-anchor="middle" class="text-small" font-size="12">数据来源：Forrester Cloud Cost Reality 2024</text>
+</svg>

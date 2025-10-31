@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 1600 900" 
+     role="img"
+     aria-labelledby="caseTitle caseDesc">
+  <title id="caseTitle">37signals云遣返案例</title>
+  <desc id="caseDesc">展示37signals从AWS迁移到私有化的三阶段过程和每年节省700万美元的成果</desc>
+  
+  <!-- 样式定义 -->
+  <defs>
+    <style>
+      .primary { fill: #326DFF; }
+      .primary-light { fill: #8EAEFF; }
+      .accent-orange { fill: #FF6B35; }
+      .success-green { fill: #00D66A; }
+      .bg { fill: #ffffff; }
+      .card-bg { fill: #F5F7FA; }
+      .text-dark { 
+        fill: #1f2937; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+      .text-medium { 
+        fill: #6b7280; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+      .text-white {
+        fill: #ffffff;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+      .quote-text {
+        fill: #4b5563;
+        font-style: italic;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+    </style>
+    
+    <!-- 阴影 -->
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="4" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.2"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1600" height="900" class="bg"/>
+  
+  <!-- 标题 -->
+  <text x="800" y="60" text-anchor="middle" class="text-dark" font-size="28" font-weight="700">37signals：从AWS逃离，每年节省$700万</text>
+  
+  <!-- 时间轴 -->
+  <g id="timeline">
+    <line x1="200" y1="650" x2="1400" y2="650" stroke="#e5e7eb" stroke-width="4"/>
+    <circle cx="350" cy="650" r="12" fill="#9ca3af"/>
+    <circle cx="800" cy="650" r="12" fill="#FF6B35"/>
+    <circle cx="1250" cy="650" r="12" class="primary"/>
+    
+    <text x="350" y="690" text-anchor="middle" class="text-medium" font-size="14">2022年初</text>
+    <text x="800" y="690" text-anchor="middle" class="text-medium" font-size="14">2022-2023</text>
+    <text x="1250" y="690" text-anchor="middle" class="text-medium" font-size="14">2024年至今</text>
+  </g>
+  
+  <!-- 阶段1：迁移前 -->
+  <g id="stage1" transform="translate(150, 150)">
+    <rect x="0" y="0" width="350" height="400" rx="16" class="card-bg" filter="url(#cardShadow)"/>
+    
+    <!-- AWS云图标 -->
+    <g id="aws-cloud" transform="translate(175, 50)">
+      <ellipse cx="0" cy="0" rx="60" ry="35" fill="#9ca3af" opacity="0.6"/>
+      <ellipse cx="-40" cy="8" rx="45" ry="28" fill="#9ca3af" opacity="0.6"/>
+      <ellipse cx="40" cy="8" rx="45" ry="28" fill="#9ca3af" opacity="0.6"/>
+    </g>
+    
+    <text x="175" y="150" text-anchor="middle" class="text-dark" font-size="20" font-weight="700">迁移前（2022）</text>
+    
+    <!-- 数据卡片 -->
+    <rect x="40" y="180" width="270" height="180" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+    <text x="175" y="210" text-anchor="middle" class="text-dark" font-size="16" font-weight="600">状态：成本失控 ❌</text>
+    
+    <text x="60" y="250" class="text-medium" font-size="14">• 月成本：</text>
+    <text x="240" y="250" text-anchor="end" class="accent-orange" font-size="16" font-weight="700">$50万</text>
+    
+    <text x="60" y="280" class="text-medium" font-size="14">• 年成本：</text>
+    <text x="240" y="280" text-anchor="end" class="accent-orange" font-size="16" font-weight="700">$600万+</text>
+    
+    <text x="60" y="310" class="text-medium" font-size="14">• 性能：</text>
+    <text x="240" y="310" text-anchor="end" class="text-medium" font-size="14">频现瓶颈</text>
+    
+    <text x="60" y="340" class="text-medium" font-size="14">• 控制权：</text>
+    <text x="240" y="340" text-anchor="end" class="text-medium" font-size="14">受限</text>
+  </g>
+  
+  <!-- 箭头 -->
+  <g id="arrow1">
+    <path d="M 520 350 L 580 350" stroke="#FF6B35" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+        <polygon points="0 0, 10 3, 0 6" fill="#FF6B35"/>
+      </marker>
+    </defs>
+  </g>
+  
+  <!-- 阶段2：迁移中 -->
+  <g id="stage2" transform="translate(600, 150)">
+    <rect x="0" y="0" width="350" height="400" rx="16" class="card-bg" filter="url(#cardShadow)"/>
+    
+    <!-- 迁移图标 -->
+    <g id="migration-icon" transform="translate(175, 70)">
+      <path d="M -40 -20 L 40 -20 L 40 20 L -40 20 Z" fill="none" stroke="#FF6B35" stroke-width="4" stroke-dasharray="8,4"/>
+      <path d="M 0 -30 L 20 0 L 0 30 M 0 -20 L 0 20" stroke="#FF6B35" stroke-width="4" fill="none"/>
+    </g>
+    
+    <text x="175" y="150" text-anchor="middle" class="text-dark" font-size="20" font-weight="700">迁移中（2022-2023）</text>
+    
+    <!-- 数据卡片 -->
+    <rect x="40" y="180" width="270" height="180" rx="8" fill="#ffffff" stroke="#e5e7eb" stroke-width="2"/>
+    <text x="175" y="210" text-anchor="middle" class="text-dark" font-size="16" font-weight="600">行动：自建集群 🔧</text>
+    
+    <text x="60" y="250" class="text-medium" font-size="14">• 投资：</text>
+    <text x="240" y="250" text-anchor="end" class="accent-orange" font-size="16" font-weight="700">$200万</text>
+    
+    <text x="60" y="280" class="text-medium" font-size="14">• 时长：</text>
+    <text x="240" y="280" text-anchor="end" class="text-medium" font-size="16" font-weight="600">9个月</text>
+    
+    <text x="60" y="310" class="text-medium" font-size="14">• 范围：</text>
+    <text x="240" y="310" text-anchor="end" class="text-medium" font-size="14">核心业务</text>
+    
+    <text x="60" y="340" class="text-medium" font-size="14">• 保留：</text>
+    <text x="240" y="340" text-anchor="end" class="text-medium" font-size="14">非核心云端</text>
+  </g>
+  
+  <!-- 箭头 -->
+  <g id="arrow2">
+    <path d="M 970 350 L 1030 350" stroke="#326DFF" stroke-width="4" fill="none" marker-end="url(#arrowhead2)"/>
+    <defs>
+      <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+        <polygon points="0 0, 10 3, 0 6" class="primary"/>
+      </marker>
+    </defs>
+  </g>
+  
+  <!-- 阶段3：迁移后 -->
+  <g id="stage3" transform="translate(1050, 150)">
+    <rect x="0" y="0" width="400" height="400" rx="16" fill="#E8F4FF" stroke="#326DFF" stroke-width="3" filter="url(#cardShadow)"/>
+    
+    <!-- 服务器图标 -->
+    <g id="server-icon" transform="translate(200, 60)">
+      <rect x="-50" y="-25" width="100" height="60" rx="8" fill="url(#blueGradient)"/>
+      <rect x="-40" y="-15" width="20" height="12" rx="2" fill="#ffffff" opacity="0.8"/>
+      <rect x="-10" y="-15" width="20" height="12" rx="2" fill="#ffffff" opacity="0.8"/>
+      <rect x="20" y="-15" width="20" height="12" rx="2" fill="#ffffff" opacity="0.8"/>
+      <circle cx="-35" cy="20" r="4" class="success-green"/>
+      <circle cx="-20" cy="20" r="4" class="success-green"/>
+    </g>
+    
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#326DFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8EAEFF;stop-opacity:1" />
+    </linearGradient>
+    
+    <text x="200" y="150" text-anchor="middle" class="text-dark" font-size="20" font-weight="700">迁移后（2024）</text>
+    
+    <!-- 数据卡片 - 突出成果 -->
+    <rect x="40" y="180" width="320" height="180" rx="8" fill="#ffffff" stroke="#326DFF" stroke-width="2"/>
+    <text x="200" y="210" text-anchor="middle" class="text-dark" font-size="16" font-weight="600">成果：巨大成功 ✅</text>
+    
+    <text x="60" y="250" class="text-medium" font-size="14">• 年节省：</text>
+    <text x="290" y="250" text-anchor="end" class="primary" font-size="20" font-weight="700">$700万 ⭐</text>
+    
+    <text x="60" y="285" class="text-medium" font-size="14">• 性能提升：</text>
+    <text x="290" y="285" text-anchor="end" class="success-green" font-size="16" font-weight="700">20-30%</text>
+    
+    <text x="60" y="320" class="text-medium" font-size="14">• 投资回报期：</text>
+    <text x="290" y="320" text-anchor="end" class="primary" font-size="16" font-weight="700">4个月</text>
+    
+    <text x="60" y="350" class="text-medium" font-size="14">• 数据控制：</text>
+    <text x="290" y="350" text-anchor="end" class="text-dark" font-size="14" font-weight="600">完全自主</text>
+  </g>
+  
+  <!-- DHH引用 -->
+  <g id="quote" transform="translate(200, 750)">
+    <rect x="0" y="0" width="1200" height="100" rx="12" fill="#F9FAFB" stroke="#e5e7eb" stroke-width="2"/>
+    <text x="40" y="30" class="text-dark" font-size="32" font-weight="700">"</text>
+    <text x="600" y="40" text-anchor="middle" class="quote-text" font-size="16">云服务的真正成本不是账单上的数字，</text>
+    <text x="600" y="70" text-anchor="middle" class="quote-text" font-size="16">而是你为了便利性放弃的控制权和利润空间。</text>
+    <text x="1050" y="90" text-anchor="end" class="text-medium" font-size="14">—— DHH, 37signals CEO</text>
+  </g>
+</svg>
+

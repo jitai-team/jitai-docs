@@ -724,7 +724,7 @@ result = storageSvc.uploadByFile(
 ```
 
 ## 注意事项 {#important-notes}
-1. **默认存储配置**：确保在 `jit.config` 中正确配置了默认存储实例
+1. **默认存储配置**：确保在可视化开发工具的[默认元素](../../../../devguide/development-tool-and-publish-service/visual-development-tool#default-elements)中正确配置了默认存储实例
 2. **过期文件清理**：设置了过期时间的文件在访问时会自动清理，无需手动删除
 3. **MD5使用**：使用MD5参数可以避免重复文件，但会改变存储的文件名
 4. **存储实例命名**：指定存储实例时使用完整的元素名称，如 `storages.MyOss`

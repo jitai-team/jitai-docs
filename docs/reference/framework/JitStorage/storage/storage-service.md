@@ -777,7 +777,7 @@ result = storageSvc.uploadByFile(
 
 ## Important Notes {#important-notes}
 
-1. **Default storage configuration**: Ensure default storage instance is correctly configured in `jit.config`
+1. **Default storage configuration**: Ensure default storage instance is correctly configured in the Visual Development Tool's [Default Elements](../../../../devguide/development-tool-and-publish-service/visual-development-tool#default-elements) section
 2. **Expired file cleanup**: Files with expiration time set are automatically cleaned upon access, no manual deletion needed
 3. **MD5 usage**: Using MD5 parameter can avoid duplicate files, but will change the stored filename
 4. **Storage instance naming**: Use complete element name when specifying storage instance, such as `storages.MyOss`

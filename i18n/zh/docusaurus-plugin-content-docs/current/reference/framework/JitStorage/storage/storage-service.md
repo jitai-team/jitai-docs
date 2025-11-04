@@ -735,4 +735,3 @@ result = storageSvc.uploadByFile(
 - **FileModel** (`storages.services.models.FileModel`) - 文件记录数据模型
 - **存储类型元素** - 各种存储后端实现（OssType, S3Type, MinioType等）
 - **NormalService** - 服务基类
-

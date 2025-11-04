@@ -1,5 +1,8 @@
 ---
 slug: redis-cache
+title: "Redis Cache Reference"
+description: "Redis Cache Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Redis Cache"
 ---
 # Redis Cache
 Redis cache is a high-performance caching service based on Redis in-memory database, providing distributed caching capabilities and rich data operation functions. It encapsulates Redis client connection management and standard cache operation interfaces, supporting multiple data structure operations, expiration time control, and connection pool management, suitable for high-concurrency and low-latency application scenarios.

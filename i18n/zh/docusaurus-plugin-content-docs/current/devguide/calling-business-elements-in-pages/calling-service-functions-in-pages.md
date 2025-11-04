@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: calling-service-functions-in-pages
+description: "在页面中调用服务函数的详细指南和说明。"
 ---
 
 # 在页面中调用服务函数

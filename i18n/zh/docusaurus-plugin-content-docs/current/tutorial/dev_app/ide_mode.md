@@ -2,6 +2,7 @@
 sidebar_position: 2
 title: 用专业模式搭建试卷管理
 slug: ide_mode
+description: "使用开发者门户的专业模式开发。学习基于元素的开发、可视化编辑器和构建复杂试卷管理系统。"
 ---
 
 # 用专业模式搭建试卷管理
@@ -72,7 +73,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 页面由组件组成，可灵活调整组件布局，实现整体界面排版自由。
 组件对接数据模型已经内置好对模型的数据读写，通过组件详情配置实现局部的定制自由。
 组件之间可以配置组件事件、调用其他组件的函数，从而实现组件之间的交互联动自由。
-阅读[组件化页面开发](../../devguide/shell-and-page/component-based-page-development)了解更多。
+阅读[组件化页面开发](../../devguide/shell-and-page/generic-page)了解更多。
 
 ![](../img/ide_mode_143959.png)
 

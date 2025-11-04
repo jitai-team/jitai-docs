@@ -1,7 +1,10 @@
 ---
 slug: approval-events
+title: "Approval Events Reference"
+description: "Approval Events Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Approval Events"
 ---
-# Approval Events {#approval-events}
+# Approval Events
 Approval Events are event handlers specifically designed to process approval workflow status changes and node operations in the JitAI platform, implementing automated responses to approval processes based on event-driven mechanisms. They are responsible for listening to critical moments such as approval status changes, node changes, and node processing, and automatically executing predefined business logic, supporting complex approval workflow automation scenarios.
 
 The Approval Events element hierarchy is Meta (events.Meta) → Type (events.WorkflowType) → Instance. Developers can quickly create Approval Events instance elements through JitAI's visual development tools.

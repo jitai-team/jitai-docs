@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 slug: ai-assistant-input-output
+description: "AI助理的输入与输出的详细指南和说明。"
 ---
 
 # AI助理的输入与输出

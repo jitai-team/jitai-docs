@@ -1,0 +1,302 @@
+/* Hero Section 样式 - 重构版本 */
+
+:root {
+  --hero-title-font-size: var(--font-size-6xl);
+}
+
+:root[lang="zh"] {
+  --hero-title-font-size: var(--font-size-7xl); 
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: var(--space-32) 0 var(--space-24) 0;
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-primary);
+}
+
+.titleSection {
+  margin-bottom: var(--space-16);
+  margin-top: var(--space-12);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.heroTitleContainer {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.heroTitle {
+  font-size: var(--hero-title-font-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-secondary);
+  margin: 0;
+  position: relative;
+  display: inline-block;
+  text-shadow: 0 2px 8px rgba(19, 28, 67, 0.1);
+}
+
+.highlightTitle {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  margin-left: var(--space-2);
+}
+
+
+/* 按钮区域 */
+.heroButtons {
+  display: flex;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.primaryButton {
+  background: var(--color-primary);
+  color: white;
+  border: none;
+  padding: var(--space-3) var(--space-8);
+  border-radius: var(--border-radius-xl);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: var(--transition-primary);
+  box-shadow: 0 8px 24px rgba(61, 101, 253, 0.15);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  position: relative;
+  overflow: hidden;
+}
+
+.primaryButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.primaryButton:hover::before {
+  left: 100%;
+}
+
+.primaryButton:hover {
+  background: var(--color-primary);
+  box-shadow: 0 12px 32px rgba(61, 101, 253, 0.25);
+  text-decoration: none;
+}
+
+.secondaryButton {
+  background: transparent;
+  color: var(--color-secondary);
+  border: 2px solid var(--color-secondary);
+  padding: var(--space-3) var(--space-8);
+  border-radius: var(--border-radius-xl);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: var(--transition-primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  backdrop-filter: blur(10px);
+}
+
+.secondaryButton:hover {
+  background: rgba(19, 28, 67, 0.05);
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+  box-shadow: 0 16px 32px rgba(19, 28, 67, 0.15);
+  text-decoration: none;
+}
+
+.buttonText {
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.02em;
+}
+
+.buttonIcon {
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-normal);
+}
+
+.primaryButton:hover .buttonIcon,
+.secondaryButton:hover .buttonIcon {
+  transform: translateX(4px);
+}
+
+/* 卡片网格 */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--space-8);
+  margin-top: var(--space-16);
+  align-items: stretch;
+}
+
+.card {
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color-light);
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition-normal);
+  cursor: pointer;
+}
+
+.cardHeader {
+  width: 100%;
+  text-align: left;
+  margin-bottom: var(--space-4);
+  position: relative;
+  z-index: 2;
+}
+
+.card h3 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  margin: 0;
+  color: var(--color-gray-800);
+  text-align: left;
+  position: relative;
+  line-height: var(--line-height-tight);
+}
+
+.cardDescription {
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-sm);
+  text-align: left;
+  margin: 0;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  font-weight: var(--font-weight-normal);
+}
+
+/* 响应式设计 */
+@media (max-width: 1400px) {
+  .hero {
+    padding: var(--space-20) 0 var(--space-16) 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--space-12) 0 var(--space-8) 0;
+    min-height: 100vh;
+    justify-content: center;
+  }
+
+  .titleSection {
+    margin-top: var(--space-16);
+    margin-bottom: var(--space-8);
+  }
+
+  .heroTitle {
+    font-size: var(--font-size-4xl) !important;
+    line-height: var(--line-height-tight);
+  }
+
+  .heroButtons {
+    gap: var(--space-4);
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    max-width: 280px;
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--font-size-base);
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin-top: var(--space-12);
+  }
+
+  .card {
+    padding: var(--space-8) var(--space-6);
+  }
+
+  .cardHeader {
+    margin-bottom: var(--space-4);
+  }
+
+  .card h3 {
+    font-size: var(--font-size-lg);
+  }
+
+  .cardDescription {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-normal);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: var(--space-12) 0 var(--space-6) 0;
+  }
+
+  .titleSection {
+    margin-top: var(--space-12);
+    margin-bottom: var(--space-10);
+  }
+
+  .heroTitle {
+    font-size: var(--font-size-3xl) !important;
+    line-height: var(--line-height-tight);
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    padding: var(--space-3) var(--space-5);
+    font-size: var(--font-size-sm);
+  }
+
+  .cardsGrid {
+    gap: var(--space-5);
+  }
+
+  .card {
+    padding: var(--space-7) var(--space-5);
+  }
+
+  .cardHeader {
+    margin-bottom: var(--space-3);
+  }
+
+  .card h3 {
+    font-size: var(--font-size-base);
+  }
+
+  .cardDescription {
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-normal);
+  }
+}

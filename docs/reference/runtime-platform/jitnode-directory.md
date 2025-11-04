@@ -1,6 +1,9 @@
 ---
 sidebar_position: 3
 slug: jitnode-directory
+title: "JitNode Directory Reference"
+description: "JitNode Directory Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "JitNode Directory"
 ---
 
 import Tabs from '@theme/Tabs';

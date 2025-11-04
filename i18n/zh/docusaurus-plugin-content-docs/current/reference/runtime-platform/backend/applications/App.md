@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: App
+description: "Python开发者的后端App对象API参考。访问应用属性、管理元素和处理运行时操作。"
 ---
 
 import Tabs from '@theme/Tabs';

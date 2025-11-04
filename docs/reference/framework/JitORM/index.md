@@ -1,5 +1,6 @@
 ---
 sidebar_position: 0
+description: "JitORM Overview Reference - API documentation for developers. Complete specifications, methods, and examples."
 ---
 
 # JitORM Overview

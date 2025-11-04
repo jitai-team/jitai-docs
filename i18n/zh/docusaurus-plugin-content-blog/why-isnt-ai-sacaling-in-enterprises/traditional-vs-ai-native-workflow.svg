@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <!-- Arrow marker for solid lines -->
+    <marker id="arrowSolid" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#326DFF" />
+    </marker>
+    <!-- Arrow marker for dashed lines -->
+    <marker id="arrowDashed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#10b981" />
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1600" height="900" fill="#ffffff" />
+  
+  <!-- Title -->
+  <text x="800" y="50" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#1f2937" text-anchor="middle">传统开发 vs AI原生开发</text>
+  
+  <!-- Upper Section: 传统开发 -->
+  <g id="traditionalDev">
+    <!-- Section title -->
+    <text x="800" y="120" font-family="Arial, sans-serif" font-size="24" fill="#326DFF" text-anchor="middle">传统开发（固定流程）</text>
+    
+    <!-- Node 1: 需求分析 -->
+    <g transform="translate(130, 180)">
+      <rect width="180" height="80" rx="8" fill="#326DFF" />
+      <text x="90" y="50" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">需求分析</text>
+      <text x="90" y="115" font-family="Arial, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">固定</text>
+    </g>
+    
+    <!-- Node 2: 设计 -->
+    <g transform="translate(350, 180)">
+      <rect width="180" height="80" rx="8" fill="#326DFF" />
+      <text x="90" y="50" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">设计</text>
+      <text x="90" y="115" font-family="Arial, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">固定</text>
+    </g>
+    
+    <!-- Node 3: 编码 -->
+    <g transform="translate(570, 180)">
+      <rect width="180" height="80" rx="8" fill="#326DFF" />
+      <text x="90" y="50" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">编码</text>
+      <text x="90" y="115" font-family="Arial, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">固定</text>
+    </g>
+    
+    <!-- Node 4: 测试 -->
+    <g transform="translate(790, 180)">
+      <rect width="180" height="80" rx="8" fill="#326DFF" />
+      <text x="90" y="50" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">测试</text>
+      <text x="90" y="115" font-family="Arial, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">固定</text>
+    </g>
+    
+    <!-- Node 5: 部署 -->
+    <g transform="translate(1010, 180)">
+      <rect width="180" height="80" rx="8" fill="#326DFF" />
+      <text x="90" y="50" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">部署</text>
+      <text x="90" y="115" font-family="Arial, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">固定</text>
+    </g>
+    
+    <!-- Node 6: 维护 -->
+    <g transform="translate(1230, 180)">
+      <rect width="180" height="80" rx="8" fill="#326DFF" />
+      <text x="90" y="50" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">维护</text>
+      <text x="90" y="115" font-family="Arial, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">固定</text>
+    </g>
+    
+    <!-- Connecting arrows -->
+    <line x1="310" y1="220" x2="350" y2="220" stroke="#326DFF" stroke-width="3" marker-end="url(#arrowSolid)" />
+    <line x1="530" y1="220" x2="570" y2="220" stroke="#326DFF" stroke-width="3" marker-end="url(#arrowSolid)" />
+    <line x1="750" y1="220" x2="790" y2="220" stroke="#326DFF" stroke-width="3" marker-end="url(#arrowSolid)" />
+    <line x1="970" y1="220" x2="1010" y2="220" stroke="#326DFF" stroke-width="3" marker-end="url(#arrowSolid)" />
+    <line x1="1190" y1="220" x2="1230" y2="220" stroke="#326DFF" stroke-width="3" marker-end="url(#arrowSolid)" />
+  </g>
+  
+  <!-- Lower Section: AI原生开发 -->
+  <g id="aiNativeDev">
+    <!-- Section title -->
+    <text x="800" y="520" font-family="Arial, sans-serif" font-size="24" fill="#10b981" text-anchor="middle">AI原生开发（迭代流程）</text>
+    
+    <!-- Node 1: 业务理解 -->
+    <g transform="translate(130, 580)">
+      <rect width="180" height="80" rx="8" fill="#10b981" />
+      <text x="90" y="50" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">业务理解</text>
+      <text x="90" y="115" font-family="Arial, sans-serif" font-size="14" fill="#10b981" text-anchor="middle">↻ 迭代</text>
+    </g>
+    
+    <!-- Node 2: 知识建模 -->
+    <g transform="translate(350, 580)">
+      <rect width="180" height="80" rx="8" fill="#10b981" />
+      <text x="90" y="50" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">知识建模</text>
+      <text x="90" y="115" font-family="Arial, sans-serif" font-size="14" fill="#10b981" text-anchor="middle">↻ 迭代</text>
+    </g>
+    
+    <!-- Node 3: AI集成 -->
+    <g transform="translate(570, 580)">
+      <rect width="180" height="80" rx="8" fill="#10b981" />
+      <text x="90" y="50" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">AI集成</text>
+      <text x="90" y="115" font-family="Arial, sans-serif" font-size="14" fill="#10b981" text-anchor="middle">↻ 迭代</text>
+    </g>
+    
+    <!-- Node 4: 人机协同设计 -->
+    <g transform="translate(790, 580)">
+      <rect width="180" height="80" rx="8" fill="#10b981" />
+      <text x="90" y="45" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">人机协同</text>
+      <text x="90" y="65" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">设计</text>
+      <text x="90" y="115" font-family="Arial, sans-serif" font-size="14" fill="#10b981" text-anchor="middle">↻ 迭代</text>
+    </g>
+    
+    <!-- Node 5: 持续优化 -->
+    <g transform="translate(1010, 580)">
+      <rect width="180" height="80" rx="8" fill="#10b981" />
+      <text x="90" y="50" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">持续优化</text>
+      <text x="90" y="115" font-family="Arial, sans-serif" font-size="14" fill="#10b981" text-anchor="middle">↻ 迭代</text>
+    </g>
+    
+    <!-- Node 6: 动态调整 -->
+    <g transform="translate(1230, 580)">
+      <rect width="180" height="80" rx="8" fill="#10b981" />
+      <text x="90" y="50" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">动态调整</text>
+      <text x="90" y="115" font-family="Arial, sans-serif" font-size="14" fill="#10b981" text-anchor="middle">↻ 迭代</text>
+    </g>
+    
+    <!-- Connecting arrows (dashed) -->
+    <line x1="310" y1="620" x2="350" y2="620" stroke="#10b981" stroke-width="3" stroke-dasharray="5,5" marker-end="url(#arrowDashed)" />
+    <line x1="530" y1="620" x2="570" y2="620" stroke="#10b981" stroke-width="3" stroke-dasharray="5,5" marker-end="url(#arrowDashed)" />
+    <line x1="750" y1="620" x2="790" y2="620" stroke="#10b981" stroke-width="3" stroke-dasharray="5,5" marker-end="url(#arrowDashed)" />
+    <line x1="970" y1="620" x2="1010" y2="620" stroke="#10b981" stroke-width="3" stroke-dasharray="5,5" marker-end="url(#arrowDashed)" />
+    <line x1="1190" y1="620" x2="1230" y2="620" stroke="#10b981" stroke-width="3" stroke-dasharray="5,5" marker-end="url(#arrowDashed)" />
+  </g>
+  
+  <!-- Comparison symbol -->
+  <g transform="translate(1450, 450)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="20" fill="#6b7280" text-anchor="middle">固定 vs 迭代</text>
+    <text x="0" y="30" font-family="Arial, sans-serif" font-size="36" fill="#6b7280" text-anchor="middle">⇄</text>
+  </g>
+</svg>
+

@@ -1,5 +1,6 @@
 ---
 sidebar_position: 0
+description: "JitAi Getting Started Tutorial - progressive learning guide from installation to production deployment. Build AI applications through hands-on practice."
 ---
 
 # Tutorial Index

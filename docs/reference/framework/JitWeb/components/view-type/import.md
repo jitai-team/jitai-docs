@@ -1,5 +1,8 @@
 ---
 slug: import
+title: "Import Reference"
+description: "Import Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Import"
 ---
 # Import
 Import is a view component for Excel file data import, implemented with a step-by-step guided interface to provide file upload, field mapping, data preview, and batch import functionality. It handles Excel file parsing, field validation mapping, and data insertion operations, supporting both append and replace import modes with progress monitoring and error handling capabilities.

@@ -1,6 +1,9 @@
 ---
 sidebar_position: 1
 slug: scheduled-tasks
+title: "Scheduled Tasks Reference"
+description: "Scheduled Tasks Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Scheduled Tasks"
 ---
 
 # Scheduled Tasks

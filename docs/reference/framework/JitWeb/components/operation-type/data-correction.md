@@ -1,5 +1,8 @@
 ---
 slug: data-correction
+title: "Data Correction Reference"
+description: "Data Correction Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Data Correction"
 ---
 # Data Correction
 The data correction component is an operation component specifically designed for data quality checking and error correction, implementing data consistency checking and outlier handling through visual configuration. It handles batch data correction, field value validation, and correction rule management, supporting automatic correction and manual confirmation modes, providing a complete solution for data cleaning and quality management scenarios.

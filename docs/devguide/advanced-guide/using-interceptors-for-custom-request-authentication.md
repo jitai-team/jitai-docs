@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 slug: using-interceptors-for-custom-request-authentication
+description: "Implement custom request authentication with backend interceptors. Build Bearer Token authentication for external API access without SDK."
 ---
 
 # Using Interceptors for Custom Request Authentication

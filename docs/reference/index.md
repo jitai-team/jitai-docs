@@ -1,5 +1,6 @@
 ---
 sidebar_position: -1
+description: "Reference Index API documentation for developers. Complete specifications, methods, and examples."
 ---
 
 import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';

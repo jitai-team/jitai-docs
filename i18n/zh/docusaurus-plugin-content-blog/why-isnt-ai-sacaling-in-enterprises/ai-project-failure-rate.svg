@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1a2332" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#bgGradient)" />
+  
+  <!-- Left Section (1%) -->
+  <g id="leftSection">
+    <!-- Concentric circles decoration -->
+    <circle cx="480" cy="540" r="160" fill="none" stroke="#326DFF" stroke-width="2" opacity="0.1" />
+    <circle cx="480" cy="540" r="120" fill="none" stroke="#326DFF" stroke-width="2" opacity="0.15" />
+    <circle cx="480" cy="540" r="80" fill="none" stroke="#326DFF" stroke-width="2" opacity="0.2" />
+    
+    <!-- Main number 1% -->
+    <text x="480" y="580" font-family="Arial, sans-serif" font-size="180" font-weight="bold" fill="#8EAEFF" text-anchor="middle">1%</text>
+    
+    <!-- Subtitle -->
+    <text x="480" y="640" font-family="Arial, sans-serif" font-size="32" fill="#d1d5db" text-anchor="middle">AI部署达到成熟的企业</text>
+  </g>
+  
+  <!-- Center divider -->
+  <line x1="960" y1="200" x2="960" y2="880" stroke="#4b5563" stroke-width="2" stroke-dasharray="10,10" opacity="0.5" />
+  
+  <!-- Right Section (52%) -->
+  <g id="rightSection">
+    <!-- Main number 52% -->
+    <text x="1440" y="580" font-family="Arial, sans-serif" font-size="180" font-weight="bold" fill="#FF6B35" text-anchor="middle">52%</text>
+    
+    <!-- Subtitle -->
+    <text x="1440" y="640" font-family="Arial, sans-serif" font-size="32" fill="#d1d5db" text-anchor="middle">项目从未进入生产</text>
+    
+    <!-- Downward arrow -->
+    <g opacity="0.3">
+      <path d="M 1440 720 L 1440 780 L 1420 760 M 1440 780 L 1460 760" stroke="#FF6B35" stroke-width="4" fill="none" />
+    </g>
+  </g>
+  
+  <!-- Bottom label -->
+  <text x="960" y="1020" font-family="Arial, sans-serif" font-size="18" fill="#9ca3af" text-anchor="middle">数据来源：McKinsey 2025 &amp; Gartner 2024</text>
+</svg>
+

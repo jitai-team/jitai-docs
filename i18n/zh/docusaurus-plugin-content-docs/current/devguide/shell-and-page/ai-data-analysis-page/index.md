@@ -1,5 +1,6 @@
 ---
 sidebar_position: 4
+description: "AI数据分析页面的详细指南和说明。"
 ---
 
 # AI数据分析页面

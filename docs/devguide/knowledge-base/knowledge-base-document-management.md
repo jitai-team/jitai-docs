@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: knowledge-base-document-management
+description: "Manage documents in knowledge bases. Upload, organize, and maintain document collections for AI retrieval."
 ---
 
 # Knowledge Base Document Management

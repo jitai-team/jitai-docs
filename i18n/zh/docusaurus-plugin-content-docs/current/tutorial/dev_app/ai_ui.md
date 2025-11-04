@@ -2,6 +2,7 @@
 sidebar_position: 6
 title: 用AI Agent实现AI/UI协同阅卷
 slug: ai_ui
+description: "使用AI Agent构建AI辅助阅卷系统与协同UI。结合AI自动评分和人工审核工作流。"
 ---
 
 # 用AI Agent实现AI/UI协同阅卷

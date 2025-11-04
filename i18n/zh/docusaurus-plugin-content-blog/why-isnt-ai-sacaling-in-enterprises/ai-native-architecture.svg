@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1600" height="900" fill="url(#bgGradient)" />
+  
+  <!-- Title -->
+  <text x="800" y="50" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#ffffff" text-anchor="middle">遵循JAAP的AI原生应用架构</text>
+  
+  <!-- Layer 1: AI层 -->
+  <g id="aiLayer">
+    <!-- Container -->
+    <rect x="200" y="120" width="1200" height="200" rx="12" fill="rgba(59, 130, 246, 0.2)" stroke="#3b82f6" stroke-width="2" />
+    
+    <!-- Label -->
+    <text x="250" y="160" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#8EAEFF">AI层</text>
+    
+    <!-- Module 1: 大模型 -->
+    <g transform="translate(400, 180)">
+      <rect width="150" height="80" rx="8" fill="#3b82f6" />
+      <text x="75" y="30" font-family="Arial, sans-serif" font-size="24" fill="#ffffff" text-anchor="middle">⚡</text>
+      <text x="75" y="60" font-family="Arial, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle">大模型</text>
+    </g>
+    
+    <!-- Module 2: 推理引擎 -->
+    <g transform="translate(650, 180)">
+      <rect width="150" height="80" rx="8" fill="#3b82f6" />
+      <text x="75" y="30" font-family="Arial, sans-serif" font-size="24" fill="#ffffff" text-anchor="middle">⚙️</text>
+      <text x="75" y="60" font-family="Arial, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle">推理引擎</text>
+    </g>
+    
+    <!-- Module 3: Agent编排 -->
+    <g transform="translate(900, 180)">
+      <rect width="150" height="80" rx="8" fill="#3b82f6" />
+      <text x="75" y="30" font-family="Arial, sans-serif" font-size="24" fill="#ffffff" text-anchor="middle">🔗</text>
+      <text x="75" y="60" font-family="Arial, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle">Agent编排</text>
+    </g>
+  </g>
+  
+  <!-- Layer 2: JAAP协议层 (emphasized) -->
+  <g id="protocolLayer">
+    <!-- Container with thicker border -->
+    <rect x="200" y="380" width="1200" height="200" rx="12" fill="rgba(139, 92, 246, 0.2)" stroke="#8b5cf6" stroke-width="3" />
+    
+    <!-- Label -->
+    <text x="250" y="420" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#a78bfa">JAAP协议层</text>
+    
+    <!-- Core label (highlighted) -->
+    <text x="800" y="420" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#fbbf24" text-anchor="middle">统一协议</text>
+    
+    <!-- Mechanism 1: 模块感知 -->
+    <g transform="translate(300, 460)">
+      <text x="90" y="30" font-family="Arial, sans-serif" font-size="16" fill="#e9d5ff" text-anchor="middle">📡</text>
+      <text x="90" y="55" font-family="Arial, sans-serif" font-size="16" fill="#e9d5ff" text-anchor="middle">模块感知</text>
+    </g>
+    
+    <!-- Mechanism 2: 驱动编排 -->
+    <g transform="translate(550, 460)">
+      <text x="90" y="30" font-family="Arial, sans-serif" font-size="16" fill="#e9d5ff" text-anchor="middle">🎯</text>
+      <text x="90" y="55" font-family="Arial, sans-serif" font-size="16" fill="#e9d5ff" text-anchor="middle">驱动编排</text>
+    </g>
+    
+    <!-- Mechanism 3: 热加载 -->
+    <g transform="translate(800, 460)">
+      <text x="90" y="30" font-family="Arial, sans-serif" font-size="16" fill="#e9d5ff" text-anchor="middle">🔥</text>
+      <text x="90" y="55" font-family="Arial, sans-serif" font-size="16" fill="#e9d5ff" text-anchor="middle">热加载</text>
+    </g>
+    
+    <!-- Mechanism 4: 系统建模 -->
+    <g transform="translate(1050, 460)">
+      <text x="90" y="30" font-family="Arial, sans-serif" font-size="16" fill="#e9d5ff" text-anchor="middle">🏗️</text>
+      <text x="90" y="55" font-family="Arial, sans-serif" font-size="16" fill="#e9d5ff" text-anchor="middle">系统建模</text>
+    </g>
+  </g>
+  
+  <!-- Layer 3: 应用层 -->
+  <g id="applicationLayer">
+    <!-- Container -->
+    <rect x="200" y="640" width="1200" height="200" rx="12" fill="rgba(16, 185, 129, 0.2)" stroke="#10b981" stroke-width="2" />
+    
+    <!-- Label -->
+    <text x="250" y="680" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#6ee7b7">应用层</text>
+    
+    <!-- Module 1: 企业系统 -->
+    <g transform="translate(350, 700)">
+      <rect width="180" height="80" rx="8" fill="#10b981" />
+      <text x="90" y="50" font-family="Arial, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle">企业系统</text>
+    </g>
+    
+    <!-- Module 2: 数据源 -->
+    <g transform="translate(650, 700)">
+      <rect width="180" height="80" rx="8" fill="#10b981" />
+      <text x="90" y="50" font-family="Arial, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle">数据源</text>
+    </g>
+    
+    <!-- Module 3: 知识库 -->
+    <g transform="translate(950, 700)">
+      <rect width="180" height="80" rx="8" fill="#10b981" />
+      <text x="90" y="50" font-family="Arial, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle">知识库</text>
+    </g>
+    
+    <!-- Module 4: 业务模型 -->
+    <g transform="translate(1200, 700)">
+      <rect width="180" height="80" rx="8" fill="#10b981" />
+      <text x="90" y="50" font-family="Arial, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle">业务模型</text>
+    </g>
+  </g>
+</svg>
+

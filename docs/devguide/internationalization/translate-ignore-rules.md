@@ -1,9 +1,10 @@
 ---
 sidebar_position: 4
 slug: translate-ignore-rules
+description: "Control translation behavior with ignore rules. Prevent brand names, technical terms, and specific content from automatic translation."
 ---
 
-# Translation Ignore Rules {#translation-ignore-rules}
+# Translation Ignore Rules
 
 In the JitAi platform, by default all text content within DOM nodes is automatically processed for translation. However, in certain scenarios, you may need to prevent specific text from being translated, such as:
 

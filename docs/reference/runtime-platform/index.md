@@ -1,5 +1,6 @@
 ---
 sidebar_position: -1
+description: "Runtime Platform Overview Reference - API documentation for developers. Complete specifications, methods, and examples."
 ---
 # Runtime Platform Overview
 [**JAAP (JitAi Application Protocol)**](/docs/reference/runtime-platform/JAAP) abstracts the complexity of application development, enabling business experts to focus on orchestrating high-level business logic. To make JAAP truly effective, an environment that can understand and execute JAAP is needed—the application runtime container.

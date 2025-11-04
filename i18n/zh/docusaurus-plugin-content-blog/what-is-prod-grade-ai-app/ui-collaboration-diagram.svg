@@ -1,0 +1,139 @@
+<svg width="1000" height="800" viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1000" height="800" fill="#FFFFFF"/>
+  
+  <!-- Title -->
+  <text x="500" y="40" font-family="PingFang SC, sans-serif" font-size="24" font-weight="600" fill="#111827" text-anchor="middle">
+    AI与人类基于UI的协同
+  </text>
+  
+  <!-- Traditional Mode (Top Half) -->
+  <g id="traditional-mode">
+    <!-- Background -->
+    <rect x="50" y="70" width="900" height="340" rx="12" fill="#F3F4F6" stroke="#D1D5DB" stroke-width="2"/>
+    
+    <!-- Header -->
+    <text x="500" y="105" font-family="PingFang SC, sans-serif" font-size="20" font-weight="600" fill="#EF4444" text-anchor="middle">
+      ❌ 传统模式：割裂的聊天窗口
+    </text>
+    
+    <!-- Chat Window (Left) -->
+    <g id="chat-window">
+      <rect x="120" y="140" width="320" height="220" rx="8" fill="#374151" stroke="#6B7280" stroke-width="2"/>
+      <!-- Window Header -->
+      <rect x="120" y="140" width="320" height="35" rx="8" fill="#1F2937"/>
+      <circle cx="135" cy="157" r="5" fill="#EF4444"/>
+      <circle cx="150" cy="157" r="5" fill="#F59E0B"/>
+      <circle cx="165" cy="157" r="5" fill="#10B981"/>
+      <text x="280" y="162" font-family="PingFang SC, sans-serif" font-size="12" fill="#9CA3AF" text-anchor="middle">AI聊天窗口</text>
+      
+      <!-- Chat Bubbles -->
+      <rect x="140" y="195" width="200" height="30" rx="15" fill="#4B5563"/>
+      <text x="150" y="215" font-family="PingFang SC, sans-serif" font-size="12" fill="#E5E7EB">用户: 审核合同...</text>
+      
+      <rect x="200" y="235" width="220" height="30" rx="15" fill="#326DFF"/>
+      <text x="210" y="255" font-family="PingFang SC, sans-serif" font-size="12" fill="#FFFFFF">AI: 已生成审核报告...</text>
+      
+      <rect x="140" y="275" width="240" height="30" rx="15" fill="#4B5563"/>
+      <text x="150" y="295" font-family="PingFang SC, sans-serif" font-size="12" fill="#E5E7EB">用户: 需要修改第3条...</text>
+      
+      <rect x="180" y="315" width="240" height="30" rx="15" fill="#326DFF"/>
+      <text x="190" y="335" font-family="PingFang SC, sans-serif" font-size="12" fill="#FFFFFF">AI: 重新生成中...</text>
+    </g>
+    
+    <!-- Business System (Right) -->
+    <g id="business-system">
+      <rect x="560" y="140" width="320" height="220" rx="8" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="2"/>
+      <!-- System Header -->
+      <rect x="560" y="140" width="320" height="35" rx="8" fill="#F9FAFB"/>
+      <text x="720" y="162" font-family="PingFang SC, sans-serif" font-size="12" fill="#6B7280" text-anchor="middle">业务系统</text>
+      
+      <!-- Document Content -->
+      <rect x="580" y="190" width="280" height="150" rx="4" fill="#FEFCE8" stroke="#EAB308" stroke-width="1"/>
+      <line x1="590" y1="205" x2="850" y2="205" stroke="#D1D5DB" stroke-width="1"/>
+      <line x1="590" y1="220" x2="850" y2="220" stroke="#D1D5DB" stroke-width="1"/>
+      <line x1="590" y1="235" x2="850" y2="235" stroke="#D1D5DB" stroke-width="1"/>
+      <line x1="590" y1="250" x2="820" y2="250" stroke="#D1D5DB" stroke-width="1"/>
+      <text x="600" y="280" font-family="PingFang SC, sans-serif" font-size="11" fill="#6B7280">人工手动修改...</text>
+      <text x="600" y="300" font-family="PingFang SC, sans-serif" font-size="11" fill="#9CA3AF">需在两边切换</text>
+    </g>
+    
+    <!-- Switching Arrows -->
+    <g id="switching">
+      <path d="M 450 220 Q 500 180, 550 220" stroke="#EF4444" stroke-width="3" fill="none" marker-end="url(#arrowhead-red)"/>
+      <path d="M 550 280 Q 500 320, 450 280" stroke="#EF4444" stroke-width="3" fill="none" marker-end="url(#arrowhead-red)"/>
+      <text x="500" y="245" font-family="PingFang SC, sans-serif" font-size="14" font-weight="600" fill="#EF4444" text-anchor="middle">来回切换</text>
+    </g>
+    
+    <!-- Labels -->
+    <text x="180" y="385" font-family="PingFang SC, sans-serif" font-size="13" fill="#EF4444">❌ 来回切换</text>
+    <text x="350" y="385" font-family="PingFang SC, sans-serif" font-size="13" fill="#EF4444">❌ 重复劳动</text>
+    <text x="720" y="385" font-family="PingFang SC, sans-serif" font-size="13" fill="#EF4444">❌ 效率低下</text>
+  </g>
+  
+  <!-- Production Mode (Bottom Half) -->
+  <g id="production-mode">
+    <!-- Background -->
+    <rect x="50" y="430" width="900" height="340" rx="12" fill="#FFFFFF" stroke="#10B981" stroke-width="3"/>
+    
+    <!-- Header -->
+    <text x="500" y="465" font-family="PingFang SC, sans-serif" font-size="20" font-weight="600" fill="#10B981" text-anchor="middle">
+      ✓ 生产级模式：统一UI协同
+    </text>
+    
+    <!-- Unified Interface -->
+    <g id="unified-interface">
+      <rect x="120" y="490" width="760" height="230" rx="8" fill="#FEFCE8" stroke="#10B981" stroke-width="2"/>
+      
+      <!-- Interface Header -->
+      <rect x="120" y="490" width="760" height="35" rx="8" fill="#F0FDF4"/>
+      <text x="500" y="512" font-family="PingFang SC, sans-serif" font-size="14" font-weight="600" fill="#10B981" text-anchor="middle">统一业务界面 - 合同审核</text>
+      
+      <!-- Document with AI Annotations -->
+      <rect x="140" y="540" width="340" height="160" rx="4" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1"/>
+      
+      <!-- Document Lines -->
+      <line x1="150" y1="555" x2="470" y2="555" stroke="#D1D5DB" stroke-width="1"/>
+      <line x1="150" y1="570" x2="440" y2="570" stroke="#EF4444" stroke-width="2" stroke-dasharray="4,2"/>
+      <text x="450" y="573" font-family="PingFang SC, sans-serif" font-size="10" fill="#EF4444">← AI标注风险</text>
+      
+      <line x1="150" y1="585" x2="470" y2="585" stroke="#D1D5DB" stroke-width="1"/>
+      <line x1="150" y1="600" x2="440" y2="600" stroke="#10B981" stroke-width="2"/>
+      <text x="445" y="603" font-family="PingFang SC, sans-serif" font-size="10" fill="#10B981">← AI建议</text>
+      
+      <line x1="150" y1="615" x2="470" y2="615" stroke="#D1D5DB" stroke-width="1"/>
+      <line x1="150" y1="630" x2="460" y2="630" stroke="#326DFF" stroke-width="2"/>
+      <text x="465" y="633" font-family="PingFang SC, sans-serif" font-size="10" fill="#326DFF">← 人工调整</text>
+      
+      <!-- AI Operations Panel -->
+      <rect x="520" y="540" width="160" height="70" rx="6" fill="#F3E8FF" stroke="#7C3AED" stroke-width="2"/>
+      <text x="600" y="560" font-family="PingFang SC, sans-serif" font-size="13" font-weight="600" fill="#7C3AED" text-anchor="middle">AI操作</text>
+      <text x="530" y="580" font-family="PingFang SC, sans-serif" font-size="11" fill="#6B7280">• 高亮标注</text>
+      <text x="530" y="595" font-family="PingFang SC, sans-serif" font-size="11" fill="#6B7280">• 建议填充</text>
+      
+      <!-- Human Operations Panel -->
+      <rect x="700" y="540" width="160" height="70" rx="6" fill="#EBF2FF" stroke="#326DFF" stroke-width="2"/>
+      <text x="780" y="560" font-family="PingFang SC, sans-serif" font-size="13" font-weight="600" fill="#326DFF" text-anchor="middle">人类干预</text>
+      <text x="710" y="580" font-family="PingFang SC, sans-serif" font-size="11" fill="#6B7280">• 微调修改</text>
+      <text x="710" y="595" font-family="PingFang SC, sans-serif" font-size="11" fill="#6B7280">• 观察确认</text>
+      
+      <!-- Collaboration Icon -->
+      <circle cx="600" cy="660" r="25" fill="#10B981"/>
+      <text x="600" y="670" font-family="sans-serif" font-size="24" fill="#FFFFFF" text-anchor="middle">🤝</text>
+      <text x="600" y="695" font-family="PingFang SC, sans-serif" font-size="12" fill="#6B7280" text-anchor="middle">实时协同</text>
+    </g>
+    
+    <!-- Labels -->
+    <text x="180" y="745" font-family="PingFang SC, sans-serif" font-size="13" fill="#10B981">✓ 同屏协同</text>
+    <text x="350" y="745" font-family="PingFang SC, sans-serif" font-size="13" fill="#10B981">✓ 实时干预</text>
+    <text x="720" y="745" font-family="PingFang SC, sans-serif" font-size="13" fill="#10B981">✓ 效率倍增</text>
+  </g>
+  
+  <!-- Markers -->
+  <defs>
+    <marker id="arrowhead-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#EF4444" />
+    </marker>
+  </defs>
+</svg>
+

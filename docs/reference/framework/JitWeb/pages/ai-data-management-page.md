@@ -1,6 +1,9 @@
 ---
 sidebar_position: 1
 slug: ai-data-management-page
+title: "AI Data Management Page Reference"
+description: "AI Data Management Page Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "AI Data Management Page"
 ---
 
 # AI Data Management Page

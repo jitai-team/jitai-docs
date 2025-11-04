@@ -1,6 +1,9 @@
 ---
 sidebar_position: 3
 slug: AppResource
+title: "AppResource Reference"
+description: "AppResource Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "AppResource"
 ---
 
 # AppResource

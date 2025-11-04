@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: list-components
+description: "列表组件配置指南。标题、摘要、按钮灵活配置，适用于新闻、消息、任务等各类列表展示场景。"
 ---
 
 # 列表组件
@@ -9,7 +10,7 @@ slug: list-components
 ![](./img/4/2025-09-02-15-55-18.png)
 
 ## 配置列表标题 {#configure-list-title}
-在[页面编辑器](../shell-and-page/component-based-page-development#visual-page-editor)中拖入列表组件后，会默认使用数据表模型中的第一个字段作为字段标题。用户可以按照下面操作修改标题：
+在[页面编辑器](../shell-and-page/generic-page#visual-page-editor)中拖入列表组件后，会默认使用数据表模型中的第一个字段作为字段标题。用户可以按照下面操作修改标题：
 
 ![](./img/4/2025-09-02_16-16-41.gif)
 

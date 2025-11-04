@@ -1,6 +1,9 @@
 ---
 sidebar_position: 1
 slug: App
+title: "App Reference"
+sidebar_label: "App"
+description: "Frontend App object API reference for JavaScript developers. Learn to access application properties and manage frontend elements."
 ---
 
 import Tabs from '@theme/Tabs';

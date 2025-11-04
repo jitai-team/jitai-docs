@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="timelineTitle timelineDesc">
+  <title id="timelineTitle">50年编程与编排发展失衡</title>
+  <desc id="timelineDesc">展示1975-2025年编程工具快速进化与编排能力长期缺失的对比</desc>
+  
+  <defs>
+    <style>
+      .primary { fill: #326DFF; }
+      .primary-light { fill: #8EAEFF; }
+      .text-dark { fill: #333333; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .text-medium { fill: #6b7280; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .timeline-line { stroke: #9ca3af; stroke-width: 3; }
+    </style>
+    
+    <linearGradient id="growthGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8EAEFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#326DFF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1600" height="900" fill="#F9FAFB"/>
+  
+  <!-- Title -->
+  <text x="800" y="60" text-anchor="middle" class="text-dark" font-size="32" font-weight="700">编程与编排：50年的发展失衡</text>
+  
+  <!-- Timeline axis -->
+  <line x1="150" y1="450" x2="1450" y2="450" class="timeline-line"/>
+  
+  <!-- Year markers -->
+  <g id="year-markers" class="text-medium" font-size="18">
+    <text x="150" y="480" text-anchor="middle">1975</text>
+    <text x="410" y="480" text-anchor="middle">1985</text>
+    <text x="670" y="480" text-anchor="middle">1995</text>
+    <text x="930" y="480" text-anchor="middle">2005</text>
+    <text x="1190" y="480" text-anchor="middle">2015</text>
+    <text x="1450" y="480" text-anchor="middle">2025</text>
+  </g>
+  
+  <!-- Programming Evolution (Upper curve) -->
+  <g id="programming-evolution">
+    <path d="M 150 440 Q 280 400, 410 320 T 670 180 T 930 120 T 1190 80 L 1380 60" 
+          fill="none" stroke="url(#growthGradient)" stroke-width="6"/>
+    
+    <!-- Milestones -->
+    <circle cx="150" cy="440" r="8" fill="#8EAEFF"/>
+    <text x="150" y="530" text-anchor="middle" class="text-medium" font-size="14">汇编语言</text>
+    
+    <circle cx="410" cy="320" r="8" fill="#8EAEFF"/>
+    <text x="410" y="580" text-anchor="middle" class="text-medium" font-size="14">高级语言</text>
+    <text x="410" y="600" text-anchor="middle" class="text-medium" font-size="14">C/Pascal</text>
+    
+    <circle cx="670" cy="180" r="8" fill="#326DFF"/>
+    <text x="670" y="620" text-anchor="middle" class="text-medium" font-size="14">面向对象</text>
+    <text x="670" cy="640" text-anchor="middle" class="text-medium" font-size="14">Java/C++</text>
+    
+    <circle cx="930" cy="120" r="8" fill="#326DFF"/>
+    <text x="930" y="580" text-anchor="middle" class="text-medium" font-size="14">云原生</text>
+    <text x="930" y="600" text-anchor="middle" class="text-medium" font-size="14">微服务</text>
+    
+    <circle cx="1190" cy="80" r="8" fill="#326DFF"/>
+    <text x="1190" y="620" text-anchor="middle" class="text-medium" font-size="14">AI辅助编程</text>
+    <text x="1190" y="640" text-anchor="middle" class="text-medium" font-size="14">Copilot</text>
+    
+    <!-- Label -->
+    <text x="1380" y="40" text-anchor="end" class="primary" font-size="20" font-weight="700">编程工具进化</text>
+    
+    <!-- Tools icons -->
+    <rect x="250" y="250" width="80" height="60" rx="4" fill="#E0E7FF" opacity="0.6"/>
+    <text x="290" y="285" text-anchor="middle" font-size="14" fill="#326DFF">IDE</text>
+    
+    <rect x="520" y="150" width="100" height="60" rx="4" fill="#E0E7FF" opacity="0.6"/>
+    <text x="570" y="185" text-anchor="middle" font-size="14" fill="#326DFF">调试器</text>
+    
+    <rect x="780" y="90" width="100" height="60" rx="4" fill="#E0E7FF" opacity="0.6"/>
+    <text x="830" y="125" text-anchor="middle" font-size="14" fill="#326DFF">版本控制</text>
+  </g>
+  
+  <!-- Orchestration flatline (Lower line) -->
+  <g id="orchestration-flatline">
+    <line x1="150" y1="700" x2="1350" y2="700" stroke="#D1D5DB" stroke-width="6" stroke-dasharray="10,5"/>
+    
+    <!-- Flat markers -->
+    <circle cx="410" cy="700" r="6" fill="#D1D5DB"/>
+    <circle cx="670" cy="700" r="6" fill="#D1D5DB"/>
+    <circle cx="930" cy="700" r="6" fill="#D1D5DB"/>
+    <circle cx="1190" cy="700" r="6" fill="#D1D5DB"/>
+    
+    <!-- Label -->
+    <text x="750" y="750" text-anchor="middle" class="text-medium" font-size="24" font-weight="600">编排能力缺失50年</text>
+    
+    <!-- 2025 Breakthrough -->
+    <line x1="1350" y1="700" x2="1420" y2="580" stroke="#FF6B35" stroke-width="6"/>
+    <path d="M 1405 590 L 1420 580 L 1430 600 Z" fill="#FF6B35"/>
+    
+    <circle cx="1420" cy="580" r="10" fill="#FF6B35"/>
+    <text x="1420" y="560" text-anchor="middle" font-size="20" font-weight="700" fill="#FF6B35">编排革命</text>
+  </g>
+  
+  <!-- Annotations -->
+  <rect x="1100" y="780" width="400" height="80" rx="8" fill="#FFF7ED" stroke="#FF6B35" stroke-width="2"/>
+  <text x="1300" y="815" text-anchor="middle" class="text-dark" font-size="16" font-weight="600">2025年：编排+编程双模式开发</text>
+  <text x="1300" y="840" text-anchor="middle" class="text-medium" font-size="14">结构可视化 • 架构可管理</text>
+</svg>
+

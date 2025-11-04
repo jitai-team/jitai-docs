@@ -1,6 +1,9 @@
 ---
 sidebar_position: 2
 slug: AppCode
+title: "AppCode Reference"
+description: "AppCode Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "AppCode"
 ---
 
 # AppCode

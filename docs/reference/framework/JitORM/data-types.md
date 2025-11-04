@@ -1,6 +1,9 @@
 ---
 sidebar_position: 2
 slug: data-types
+title: "Data Types Reference"
+description: "Data Types Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Data Types"
 ---
 
 # Data Types

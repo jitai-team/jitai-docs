@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: data-models
+description: "数据模型 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # 数据模型
@@ -451,32 +452,6 @@ export_data = UserModel.getExportData(
 
 ### 高级功能
 提供更高级的数据操作和管理功能。
-
-#### queryTQL - TQL查询
-```python
-@classmethod
-def queryTQL(cls, tqlStr)
-```
-
-使用TQL（Table Query Language）语句进行复杂查询。
-
-**参数说明：**
-- `tqlStr`: TQL查询语句
-
-**使用示例：**
-```python
-# 获取模型元素，使用TQL进行复杂联表查询
-UserModel = app.getElement("models.UserModel")
-tql = """
-Select(
-    [F("u.name", "username"), F("d.title", "dept_name")],
-    From(["UserModel", "u"]),
-    LeftJoin("DeptModel", "d"),
-    On(["u.deptId", "=", "d.id"])
-)
-"""
-result = UserModel.queryTQL(tql)
-```
 
 #### aggregate - 聚合计算
 ```python

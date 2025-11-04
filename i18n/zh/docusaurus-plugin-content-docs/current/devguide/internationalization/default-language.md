@@ -1,9 +1,10 @@
 ---
 sidebar_position: 5
 slug: default-language
+description: "默认语言的详细指南和说明。"
 ---
 
-# 默认语言 {#default-language}
+# 默认语言
 默认语言决定了应用在没有用户明确选择语言时的显示语言。合理配置默认语言可以提升用户体验，确保应用在首次访问时就能以用户熟悉的语言显示。
 
 ## 默认语言配置 {#default-language-configuration}

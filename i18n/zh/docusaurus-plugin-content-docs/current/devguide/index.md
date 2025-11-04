@@ -1,5 +1,6 @@
 ---
 sidebar_position: 0
+description: "开发者指南导读的详细指南和说明。"
 ---
 
 import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
@@ -66,6 +67,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "在激活节点时将节点绑定到自己已加入的组织", href: "devguide/installation-activation/developer-team-management#bind-node-to-joined-team-when-activating" },
     { text: "在激活节点时使用组织绑定码加入组织并绑定", href: "devguide/installation-activation/developer-team-management#use-team-bind-code-to-join-and-bind-when-activating-node" },
     { text: "在登录已有节点时通过组织绑定码加入组织", href: "devguide/installation-activation/developer-team-management#join-team-via-bind-code-when-logging-into-existing-node" },
+    { text: "查看团队ID", href: "devguide/installation-activation/developer-team-management#view-team-id" },
     { text: "查看和刷新组织绑定码", href: "devguide/installation-activation/developer-team-management#view-and-refresh-team-bind-code" },
     { text: "移除组织成员", href: "devguide/installation-activation/developer-team-management#remove-team-member" }
   ]} />
@@ -77,8 +79,9 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   description="学习如何更新和升级平台节点，保持系统稳定性和功能更新。"
 >
   <LinkGrid links={[
-    { text: "更新流程", href: "devguide/installation-activation/platform-node-updates-upgrades" },
-    { text: "升级方法", href: "devguide/installation-activation/platform-node-updates-upgrades" }
+    { text: "升级提示与入口", href: "devguide/installation-activation/platform-node-updates-upgrades#upgrade-entry" },
+    { text: "一键升级流程", href: "devguide/installation-activation/platform-node-updates-upgrades#one-click-upgrade" },
+    { text: "集群环境中的升级建议", href: "devguide/installation-activation/platform-node-updates-upgrades#cluster-recommendations" },
   ]} />
 </IndexCard>
 
@@ -285,19 +288,25 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </IndexCard>
 
 <IndexCard
-  title="创建组件化页面"
-  href="devguide/shell-and-page/component-based-page-development"
+  title="组件化页面"
+  href="devguide/shell-and-page/componentized-page"
+  description="理解组件化页面——JitAi页面系统的基础，由功能组件构建，用于数据展示和用户交互。"
+/>
+
+<IndexCard
+  title="创建常规页面"
+  href="devguide/shell-and-page/generic-page"
   description="使用可视化编辑器构建页面界面，配置组件和事件，实现丰富的用户交互功能。"
 >
   <LinkGrid links={[
-    { text: "新建常规页面", href: "devguide/shell-and-page/component-based-page-development#creating-generic-pages" },
-    { text: "可视化页面编辑器", href: "devguide/shell-and-page/component-based-page-development#visual-page-editor" },
-    { text: "组件通用操作", href: "devguide/shell-and-page/component-based-page-development#component-common-operations" },
-    { text: "页面变量", href: "devguide/shell-and-page/component-based-page-development#page-variables" },
-    { text: "页面函数", href: "devguide/shell-and-page/component-based-page-development#page-functions" },
-    { text: "页面事件", href: "devguide/shell-and-page/component-based-page-development#page-events" },
-    { text: "快捷操作", href: "devguide/shell-and-page/component-based-page-development#shortcuts" },
-    { text: "为页面启用AI助理", href: "devguide/shell-and-page/component-based-page-development#enabling-ai-assistant" }
+    { text: "新建常规页面", href: "devguide/shell-and-page/generic-page" },
+    { text: "可视化页面编辑器", href: "devguide/shell-and-page/generic-page#visual-page-editor" },
+    { text: "组件通用操作", href: "devguide/shell-and-page/generic-page#component-common-operations" },
+    { text: "页面变量", href: "devguide/shell-and-page/generic-page#page-variables" },
+    { text: "页面函数", href: "devguide/shell-and-page/generic-page#page-functions" },
+    { text: "页面事件", href: "devguide/shell-and-page/generic-page#page-events" },
+    { text: "快捷操作", href: "devguide/shell-and-page/generic-page#shortcuts" },
+    { text: "为页面启用AI助理", href: "devguide/shell-and-page/generic-page#enabling-ai-assistant" }
   ]} />
 </IndexCard>
 
@@ -315,7 +324,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "配置表单中允许查看和编辑的字段", href: "devguide/shell-and-page/ai-data-management-page#configure-viewable-editable-fields-in-form" },
     { text: "配置批量编辑表单中展示的字段", href: "devguide/shell-and-page/ai-data-management-page#configure-fields-displayed-in-batch-edit-form" },
     { text: "启用AI数据管理助手", href: "devguide/shell-and-page/ai-data-management-page#enable-ai-data-management-assistant" },
-    { text: "转换为常规页面进行修改", href: "devguide/shell-and-page/ai-data-management-page#convert-to-regular-page-for-modification" }
+    { text: "转换为常规页面进行修改", href: "devguide/shell-and-page/ai-data-management-page#convert-to-generic-page-for-modification" }
   ]} />
 </IndexCard>
 
@@ -370,7 +379,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "使用样式", href: "devguide/frontend-ui-customization/page-customization#use-style" },
     { text: "使用本地资源", href: "devguide/frontend-ui-customization/page-customization#use-local-resources" },
     { text: "使用 Ant Design 的组件", href: "devguide/frontend-ui-customization/page-customization#use-ant-design-components" },
-    { text: "内嵌已有常规页面", href: "devguide/frontend-ui-customization/page-customization#embed-existing-regular-page" },
+    { text: "内嵌已有常规页面", href: "devguide/frontend-ui-customization/page-customization#embed-existing-generic-page" },
     { text: "使用标准组件", href: "devguide/frontend-ui-customization/page-customization#use-standard-component" },
     { text: "调用数据模型函数", href: "devguide/frontend-ui-customization/page-customization#call-data-model-function" },
     { text: "调用服务函数", href: "devguide/frontend-ui-customization/page-customization#call-service-function" },
@@ -392,9 +401,11 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals"
   description="学习如何将AI助理集成到门户界面中，为用户在整个工作流程中提供智能帮助和指导。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "配置AI助理", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals#configuring-ai-assistant" },
+    { text: "运行时效果", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals#runtime-effects" },
+    { text: "功能亮点", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals#feature-highlights" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -402,9 +413,13 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages"
   description="将AI助理嵌入到基于组件的页面中，增强用户交互并为特定任务提供上下文帮助。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "启用AI助理", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#enable-ai-assistant" },
+    { text: "AI助理配置", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#ai-assistant-configuration" },
+    { text: "AI助理事件订阅", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#ai-assistant-event-subscription" },
+    { text: "在页面中发送AI消息", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#send-ai-message" },
+    { text: "直接调用AI助理", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#call-ai-assistant" }
+  ]} />
 </IndexCard>
 
 <IndexCard
@@ -412,9 +427,13 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   href="devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages"
   description="掌握从页面调用AI元素的技巧，包括AI智能体、LLM服务和知识库，用于动态内容生成。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
+  <LinkGrid links={[
+    { text: "在页面中使用AI助理", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#using-in-pages" },
+    { text: "可视化调用", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#visual-calling" },
+    { text: "全代码调用", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#full-code-calling" },
+    { text: "在页面中使用AI Agent", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#using-ai-agent-in-pages" },
+    { text: "在页面中使用大模型", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#using-large-language-models-in-pages" }
+  ]} />
 </IndexCard>
 
 </div>
@@ -828,29 +847,31 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <IndexCard
   title="审批组件"
   href="devguide/using-functional-components-in-pages/approval-components"
-  description="审批流程相关的界面组件，支持申请发起和审批处理。"
+  description="与工作流集成的UI组件，用于提交审批申请、处理审批任务和管理审批历史，具有事件驱动通知功能。"
 >
   <LinkGrid columns={2} links={[
-    { text: "发起申请组件的创建", href: "devguide/using-functional-components-in-pages/approval-components#create-initiate-application-component" },
-    { text: "发起申请的参数配置", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-1" },
-    { text: "发起申请的处理后/刷新后事件", href: "devguide/using-functional-components-in-pages/approval-components#post-processing-refresh-event" },
-    { text: "审批处理组件创建", href: "devguide/using-functional-components-in-pages/approval-components#create-approval-workflow-component" },
-    { text: "审批处理的参数配置", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-2" },
-    { text: "是否保留历史审批记录", href: "devguide/using-functional-components-in-pages/approval-components#keep-historical-approval-records" },
-    { text: "审批处理的处理后/刷新后事件", href: "devguide/using-functional-components-in-pages/approval-components#post-processing-refresh-event-1" }
+    { text: "发起申请组件", href: "devguide/using-functional-components-in-pages/approval-components#initiate-application-component" },
+    { text: "创建发起申请组件", href: "devguide/using-functional-components-in-pages/approval-components#create-initiate-application-component" },
+    { text: "参数配置", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-1" },
+    { text: "处理后/刷新后事件", href: "devguide/using-functional-components-in-pages/approval-components#post-processing-refresh-event" },
+    { text: "审批处理组件", href: "devguide/using-functional-components-in-pages/approval-components#approval-processing-component" },
+    { text: "创建审批处理组件", href: "devguide/using-functional-components-in-pages/approval-components#create-approval-workflow-component" },
+    { text: "参数配置", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-2" },
+    { text: "保留历史审批记录", href: "devguide/using-functional-components-in-pages/approval-components#keep-historical-approval-records" },
+    { text: "处理后/刷新后事件", href: "devguide/using-functional-components-in-pages/approval-components#post-processing-refresh-event-1" }
   ]} />
 </IndexCard>
 
 <IndexCard
   title="支付组件"
   href="devguide/using-functional-components-in-pages/payment-components"
-  description="集成支付功能的组件，支持多种支付方式和支付流程。"
+  description="通过统一接口实现多平台支付处理的功能性UI元素，原生支持支付宝和微信支付，提供完整的交易生命周期管理。"
 >
   <LinkGrid links={[
-    { text: "创建组件", href: "devguide/using-functional-components-in-pages/payment-components#payment-component-creation" },
-    { text: "组件函数", href: "devguide/using-functional-components-in-pages/payment-components#initiate-payment-function" },
-    { text: "组件事件逻辑", href: "devguide/using-functional-components-in-pages/payment-components#event-logic" },
-    { text: "组件的使用", href: "devguide/using-functional-components-in-pages/payment-components#component-usage" }
+    { text: "支付组件的创建", href: "devguide/using-functional-components-in-pages/payment-components#payment-component-creation" },
+    { text: "发起支付函数", href: "devguide/using-functional-components-in-pages/payment-components#initiate-payment-function" },
+    { text: "事件逻辑", href: "devguide/using-functional-components-in-pages/payment-components#event-logic" },
+    { text: "组件使用", href: "devguide/using-functional-components-in-pages/payment-components#component-usage" }
   ]} />
 </IndexCard>
 
@@ -1142,41 +1163,143 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <IndexCard
   title="创建AI助理元素"
   href="devguide/ai-assistant/create-ai-assistant"
-  description="学习如何创建AI助理元素，配置工作流、节点类型和事件处理，实现智能业务流程自动化。"
+  description="构建生产级AI应用，支持多智能体协作、UI交互和可视化编排，无需编写代码。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "什么是AI助理", href: "devguide/ai-assistant/create-ai-assistant#what-is-ai-assistant" },
+    { text: "功能特性", href: "devguide/ai-assistant/create-ai-assistant#features" },
+    { text: "创建AI助理", href: "devguide/ai-assistant/create-ai-assistant#creating-ai-assistant" }
+  ]} />
 </IndexCard>
 
 <IndexCard
   title="流程编排与节点配置"
   href="devguide/ai-assistant/process-orchestration-node-configuration"
-  description="深入了解AI助理流程编排技术和详细的节点配置方法。"
+  description="掌握可视化工作流设计，包含8种以上节点类型：AIAgent、路由、条件逻辑、人机协作节点等。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "可视化编排", href: "devguide/ai-assistant/process-orchestration-node-configuration#visual-orchestration" },
+    { text: "开始节点", href: "devguide/ai-assistant/process-orchestration-node-configuration#start-node" },
+    { text: "路由节点", href: "devguide/ai-assistant/process-orchestration-node-configuration#routing-decision" },
+    { text: "AIAgent节点", href: "devguide/ai-assistant/process-orchestration-node-configuration#ai-agent" },
+    { text: "对话区人机交互节点", href: "devguide/ai-assistant/process-orchestration-node-configuration#action-in-conversation" },
+    { text: "工作区人机交互节点", href: "devguide/ai-assistant/process-orchestration-node-configuration#action-in-page" },
+    { text: "函数节点", href: "devguide/ai-assistant/process-orchestration-node-configuration#function" },
+    { text: "条件分支节点", href: "devguide/ai-assistant/process-orchestration-node-configuration#if-else" },
+    { text: "循环节点", href: "devguide/ai-assistant/process-orchestration-node-configuration#iteration" }
+  ]} />
 </IndexCard>
 
 <IndexCard
   title="AI助理的输入与输出"
   href="devguide/ai-assistant/ai-assistant-input-output"
-  description="理解AI助理的输入输出配置和数据处理方法。"
+  description="配置自定义输入参数、控制运行时日志详细程度，并使用自定义控件向对话发送结构化数据。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "配置输入参数", href: "devguide/ai-assistant/ai-assistant-input-output#input-args" },
+    { text: "运行时流程日志输出", href: "devguide/ai-assistant/ai-assistant-input-output#runtime-process-log-output" },
+    { text: "状态数据输出到对话", href: "devguide/ai-assistant/ai-assistant-input-output#state-data-output" },
+    { text: "节点输出配置", href: "devguide/ai-assistant/ai-assistant-input-output#message-output" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="AI助理的运行时状态"
+  href="devguide/ai-assistant/ai-assistant-state"
+  description="利用运行时状态作为AI的「记忆库」，实现上下文保留、多轮对话和错误恢复。"
+>
+  <LinkGrid links={[
+    { text: "状态数据存储仓库", href: "devguide/ai-assistant/ai-assistant-state#state-data-storage-repository" },
+    { text: "运行时状态数据内容", href: "devguide/ai-assistant/ai-assistant-state#state-data-content" },
+    { text: "数据使用方法", href: "devguide/ai-assistant/ai-assistant-state#data-usage-methods" },
+    { text: "数据流与节点间传递", href: "devguide/ai-assistant/ai-assistant-state#data-flow" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="AI助理的事件"
+  href="devguide/ai-assistant/ai-assistant-event"
+  description="在前端页面和后端服务中订阅节点执行、工具调用和人机交互事件。"
+>
+  <LinkGrid links={[
+    { text: "事件类型概述", href: "devguide/ai-assistant/ai-assistant-event#event-type-overview" },
+    { text: "前端页面事件", href: "devguide/ai-assistant/ai-assistant-event#frontend-page-events" },
+    { text: "节点执行事件", href: "devguide/ai-assistant/ai-assistant-event#node-running-events" },
+    { text: "工具调用事件", href: "devguide/ai-assistant/ai-assistant-event#agent-call-tool-events" },
+    { text: "人机交互事件", href: "devguide/ai-assistant/ai-assistant-event#action-in-conversation-events" },
+    { text: "后端业务事件", href: "devguide/ai-assistant/ai-assistant-event#backend-business-events" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="将AI助手嵌入到外部网页中"
+  href="devguide/ai-assistant/embed-assistant-to-web-page"
+  description="将AI助手集成到任何网页中，实现深度双向交互能力。"
+>
+  <LinkGrid links={[
+    { text: "什么是嵌入式AI助理", href: "devguide/ai-assistant/embed-assistant-to-web-page#what-is-embedded-ai-assistant" },
+    { text: "核心优势", href: "devguide/ai-assistant/embed-assistant-to-web-page#core-advantages" },
+    { text: "集成流程", href: "devguide/ai-assistant/embed-assistant-to-web-page#integration-process" },
+    { text: "创建嵌入式AI助理", href: "devguide/ai-assistant/embed-assistant-to-web-page#creating-embedded-ai-assistant" },
+    { text: "嵌入到外部网页", href: "devguide/ai-assistant/embed-assistant-to-web-page#how-to-embeded-to-a-web-page" },
+    { text: "身份验证", href: "devguide/ai-assistant/embed-assistant-to-web-page#authentication" },
+    { text: "AI调用网页函数", href: "devguide/ai-assistant/embed-assistant-to-web-page#how-to-call-page-functions" },
+    { text: "网页订阅AI事件", href: "devguide/ai-assistant/embed-assistant-to-web-page#subscribe-ai-events" },
+    { text: "运行时配置", href: "devguide/ai-assistant/embed-assistant-to-web-page#runtime-config" },
+    { text: "网页向AI发送消息", href: "devguide/ai-assistant/embed-assistant-to-web-page#send-message-to-ai" },
+    { text: "JS SDK API参考", href: "devguide/ai-assistant/embed-assistant-to-web-page#js-sdk" }
+  ]} />
 </IndexCard>
 
 <IndexCard
   title="AI助理的API开放"
   href="devguide/ai-assistant/ai-assistant-api-exposure"
-  description="通过API接口开放AI助理能力，实现与外部系统的集成。"
+  description="通过API接口开放AI助理能力，实现应用内集成和外部系统对接。"
 >
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 敬请期待...
-  </div>
+  <LinkGrid links={[
+    { text: "发送AI消息函数", href: "devguide/ai-assistant/ai-assistant-api-exposure#send-ai-message" },
+    { text: "在应用内调用AI助理", href: "devguide/ai-assistant/ai-assistant-api-exposure#calling-ai-assistant-within-application" },
+    { text: "外部调用AI助理", href: "devguide/ai-assistant/ai-assistant-api-exposure#external-ai-assistant-calling" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="欢迎语与对话历史"
+  href="devguide/ai-assistant/welcome-message-and-opening"
+  description="配置欢迎语、开场白，管理对话历史，提升用户参与度和上下文连续性。"
+>
+  <LinkGrid links={[
+    { text: "欢迎语配置", href: "devguide/ai-assistant/welcome-message-and-opening#welcome-message-configuration" },
+    { text: "开场白配置", href: "devguide/ai-assistant/welcome-message-and-opening#preamble-configuration" },
+    { text: "对话历史管理", href: "devguide/ai-assistant/ai-conversation-history#start-and-managing-conversation" },
+    { text: "使用历史对话", href: "devguide/ai-assistant/ai-conversation-history#using-historical-conversations" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="开发对话式多任务AI助理"
+  href="devguide/ai-assistant/develop-conversational-multi-task-ai-assistant"
+  description="完整教程：构建具有智能路由、多个智能体和自动文档生成功能的AI助理。"
+>
+  <LinkGrid links={[
+    { text: "文案Agent开发", href: "devguide/ai-assistant/develop-conversational-multi-task-ai-assistant#writing-agent" },
+    { text: "客服Agent与知识库", href: "devguide/ai-assistant/develop-conversational-multi-task-ai-assistant#customer-service-agent" },
+    { text: "方案Agent生成报价", href: "devguide/ai-assistant/develop-conversational-multi-task-ai-assistant#solution-agent" },
+    { text: "流程编排与集成", href: "devguide/ai-assistant/develop-conversational-multi-task-ai-assistant#developing-ai-assistant" }
+  ]} />
+</IndexCard>
+
+<IndexCard
+  title="开发人机协作式企业级AI助理"
+  href="devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant"
+  description="构建复杂的AI评分系统，展示深度UI集成、事件驱动协作和人工监督。"
+>
+  <LinkGrid links={[
+    { text: "产品核心特性", href: "devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant#product-core-features-overview" },
+    { text: "与前端深度融合", href: "devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant#deep-integration-of-ai-with-frontend" },
+    { text: "人机协作节点设计", href: "devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant#human-machine-collaboration-node-design" },
+    { text: "AI评分案例研究", href: "devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant#demonstrating-collaboration-features-through-ai-grading-case-study" }
+  ]} />
 </IndexCard>
 
 </div>
@@ -1796,8 +1919,12 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   <LinkGrid links={[
     { text: "阿里云短信", href: "devguide/third-party-integration/sms-service#aliyun-sms" },
     { text: "阿里云短信服务创建", href: "devguide/third-party-integration/sms-service#aliyun-sms-service-creation" },
+    { text: "AWS SNS短信", href: "devguide/third-party-integration/sms-service#aws-sns-sms" },
+    { text: "AWS SNS短信服务创建", href: "devguide/third-party-integration/sms-service#aws-sns-service-creation" },
+    { text: "Twilio短信", href: "devguide/third-party-integration/sms-service#twilio-sms" },
+    { text: "Twilio短信服务创建", href: "devguide/third-party-integration/sms-service#twilio-service-creation" },
     { text: "手机登录方式中使用短信服务", href: "devguide/third-party-integration/sms-service#use-sms-service-in-mobile-login" },
-    { text: "审批流程中使用短信服务", href: "devguide/third-party-integration/sms-service#use-sms-service-in-approval-workflow" },
+    { text: "审批流程中使用短信服务", href: "devguide/third-party-integration/sms-service#use-sms-service-in-approval-flow" },
     { text: "短信通知功能", href: "devguide/third-party-integration/sms-service#sms-notification-function" }
   ]} />
 </IndexCard>
@@ -1996,7 +2123,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "使用样式", href: "devguide/frontend-ui-customization/page-customization#use-style" },
     { text: "使用本地资源", href: "devguide/frontend-ui-customization/page-customization#use-local-resources" },
     { text: "使用 Ant Design 的组件", href: "devguide/frontend-ui-customization/page-customization#use-ant-design-components" },
-    { text: "内嵌已有常规页面", href: "devguide/frontend-ui-customization/page-customization#embed-existing-regular-page" },
+    { text: "内嵌已有常规页面", href: "devguide/frontend-ui-customization/page-customization#embed-existing-generic-page" },
     { text: "使用标准组件", href: "devguide/frontend-ui-customization/page-customization#use-standard-component" },
     { text: "调用数据模型函数", href: "devguide/frontend-ui-customization/page-customization#call-data-model-function" },
     { text: "调用服务函数", href: "devguide/frontend-ui-customization/page-customization#call-service-function" },

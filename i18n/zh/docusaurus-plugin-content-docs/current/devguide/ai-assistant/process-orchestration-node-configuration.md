@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 slug: process-orchestration-node-configuration
+description: "流程编排与节点配置的详细指南和说明。"
 ---
 
 # 流程编排与节点配置
@@ -74,13 +75,13 @@ AIAgent节点就是调用具体的AIAgent来处理特定任务。
 
 当任务流程运行到这个节点时会暂停，在对话框中显示数据，用户确认数据并进行相应操作后流程才能继续。如果没有下一步节点，流程就自动结束了。
 在这个节点用户可以做**同意**、**拒绝**、**回复**及**编辑数据**(需要开启编辑功能)等操作。
-运行时进行**同意**、**拒绝**、**回复**及**编辑数据**操作后会恢复流程，同时触发[对话区人机交互事件](./ai-assistant-event#chat-area-human-machine-interaction-events)。
+运行时进行**同意**、**拒绝**、**回复**及**编辑数据**操作后会恢复流程，同时触发[对话区人机交互事件](./ai-assistant-event#action-in-conversation-events)。
 
 #### 节点配置详解 {#conversation-node-configuration-details}
 - **需展示的数据**：你可以自由定义需要用户确认的数据内容，这些数据来源于[运行状态数据](./ai-assistant-state#state-data-content)。
 - **可编辑**：开启后，用户才能编辑展示的数据，编辑后的数据会自动更新到运行状态中。
 - **使用自定义控件渲染**：默认会用平台内置的数据渲染控件显示数据，你也可以使用[自定义控件](../frontend-ui-customization/custom-controls)渲染。
-- **显示操作按钮**：你可以在这个节点自定义操作按钮，点击后可触发[对话区人机交互事件](./ai-assistant-event#chat-area-human-machine-interaction-events)。
+- **显示操作按钮**：你可以在这个节点自定义操作按钮，点击后可触发[对话区人机交互事件](./ai-assistant-event#action-in-conversation-events)。
 
 ![节点配置-对话区人机交互-设置](./img/assistant/human-Interrupt-setting.png)
 

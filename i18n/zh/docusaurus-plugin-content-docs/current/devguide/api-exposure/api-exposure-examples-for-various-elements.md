@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: api-exposure-examples-for-various-elements
+description: "各类元素的API开放示例的详细指南和说明。"
 ---
 
 # 各类元素的API开放示例

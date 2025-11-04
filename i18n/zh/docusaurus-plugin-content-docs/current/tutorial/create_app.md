@@ -2,6 +2,7 @@
 sidebar_position: 4
 title: 创建应用
 slug: create_app
+description: "创建你的第一个JitAi应用。应用设置、门户配置和访问用户、管理员、开发者界面的分步指南。"
 ---
 # 创建应用
 

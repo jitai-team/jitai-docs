@@ -1,9 +1,10 @@
 ---
 sidebar_position: 7
 slug: aggregate-table-model
+description: "聚合表模型的详细指南和说明。"
 ---
 
-# 聚合表模型 {#aggregate-table-model}
+# 聚合表模型
 
 聚合表模型是JitAi提供的一种高级数据建模方式，专门用于处理复杂的数据分析和统计场景。与[普通数据表模型](./data-table-model)不同，聚合表模型不直接对应数据库中的单一表结构，而是通过灵活的配置将多个数据表模型进行关联、合并和计算，最终生成满足特定业务需求的虚拟数据表。
 

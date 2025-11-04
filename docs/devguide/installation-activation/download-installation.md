@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: download-installation
+description: "Download and install JitAi runtime platform. Desktop version for Windows/macOS development, server version for production deployment."
 ---
 # Download and Installation
 

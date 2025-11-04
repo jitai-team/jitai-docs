@@ -1,6 +1,9 @@
 ---
 sidebar_position: 2
 slug: vector-database
+title: "Vector Database Reference"
+description: "Vector Database Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Vector Database"
 ---
 
 # Vector Database

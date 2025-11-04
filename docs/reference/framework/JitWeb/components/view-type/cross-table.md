@@ -1,5 +1,8 @@
 ---
 slug: cross-table
+title: "Cross Table Reference"
+description: "Cross Table Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Cross Table"
 ---
 # Cross Table
 Cross table is a specialized table component for data pivoting and cross-analysis, implemented based on AntV S2 to display multi-dimensional data in row-column intersections. It handles multi-dimensional data grouping, aggregation calculations, and cross-analysis, supporting dynamic dimension configuration, data drilling, and complex data visualization requirements. It is a core component for business intelligence and data analysis scenarios.

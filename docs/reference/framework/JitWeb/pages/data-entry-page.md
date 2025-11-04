@@ -1,6 +1,9 @@
 ---
 sidebar_position: 4
 slug: data-entry-page
+title: "Data Entry Page Reference"
+description: "Data Entry Page Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Data Entry Page"
 ---
 
 # Data Entry Page

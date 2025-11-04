@@ -1,0 +1,157 @@
+/* DevOps Section 样式 - 重构版本 */
+
+.devopsSection {
+  padding: var(--section-padding);
+  background: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+  --image-left-ratio: 14;
+  --image-right-ratio: 10;
+  --image-height: 20;
+}
+
+.sectionSubtitle {
+  font-size: var(--font-size-subtitle);
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-16);
+  margin-left: auto;
+  margin-right: auto;
+  line-height: var(--line-height-relaxed);
+}
+
+.featuresContainer {
+  position: relative;
+  z-index: 1;
+}
+
+.featureRow {
+  display: flex;
+  gap: var(--space-8);
+  margin-bottom: var(--space-8);
+  min-height: 400px;
+}
+
+.featureCard {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-6);
+  border: 1px solid var(--border-color-light);
+  transition: var(--transition-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.wideCard {
+  flex: var(--image-left-ratio);
+}
+
+.wideCard .imagePlaceholder {
+  aspect-ratio: var(--image-height)/var(--image-right-ratio);
+}
+
+.narrowCard {
+  flex: var(--image-right-ratio);
+}
+
+.narrowCard .imagePlaceholder {
+  aspect-ratio: var(--image-height)/var(--image-left-ratio);
+}
+
+.featureImage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: var(--space-6);
+}
+
+.featureContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.featureContent h3 {
+  margin-bottom: var(--space-4);
+  position: relative;
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-semibold);
+  transition: color var(--transition-normal);
+}
+
+/* .featureCard:hover .featureContent h3 {
+  color: var(--color-primary);
+} */
+
+.featureContent:hover h3::after {
+  opacity: 1;
+}
+
+.featureContent p {
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-body);
+  margin: 0;
+}
+
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .devopsSection {
+    padding: var(--space-24) 0;
+  }
+
+  .sectionSubtitle {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-12);
+  }
+
+  .featureRow {
+    flex-direction: column;
+    gap: var(--space-8);
+    margin-bottom: var(--space-12);
+  }
+
+  .wideCard,
+  .narrowCard {
+    flex: none;
+    width: 100%;
+    display: block;
+  }
+
+  .featureContent p {
+    font-size: var(--font-size-sm);
+  }
+
+}
+
+@media (max-width: 480px) {
+  .devopsSection {
+    padding: var(--space-16) 0;
+  }
+
+  .featureRow {
+    gap: var(--space-6);
+    margin-bottom: var(--space-8);
+  }
+
+  .featureCard {
+    padding: var(--space-4);
+  }
+
+  .wideCard,
+  .narrowCard {
+    width: 100%;
+    display: block;
+  }
+
+  .featureContent p {
+    font-size: var(--font-size-sm);
+  }
+
+}

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: emitting-events
+description: "发布和订阅事件的详细指南和说明。"
 ---
 
 # 发布和订阅事件

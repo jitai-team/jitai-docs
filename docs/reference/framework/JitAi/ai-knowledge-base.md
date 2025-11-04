@@ -1,6 +1,9 @@
 ---
 sidebar_position: 3
 slug: ai-knowledge-base
+title: "AI Knowledge Base Reference"
+description: "AI Knowledge Base Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "AI Knowledge Base"
 ---
 
 # AI Knowledge Base

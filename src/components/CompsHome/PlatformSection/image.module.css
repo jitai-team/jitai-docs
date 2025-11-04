@@ -1,0 +1,257 @@
+.image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* 微内核 */
+.microkernel::before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    border: 3px solid #131C43;
+}
+
+.microkernel::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #131C43;
+    border-radius: 50%;
+}
+
+/* 解释型 */
+.interpreter::before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background: #131C43;
+    border-radius: 2px;
+    top: calc(50% - 15px);
+}
+
+.interpreter::after {
+    content: '';
+    position: absolute;
+    width: 45px;
+    height: 3px;
+    background: #131C43;
+    border-radius: 2px;
+}
+
+.interpreter .extraLine {
+    position: absolute;
+    width: 70px;
+    height: 3px;
+    background: rgba(19, 28, 67, 0.3);
+    border-radius: 2px;
+    top: calc(50% + 10px);
+}
+
+/* 容器化管理运行 */
+.containerMgmt::before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 40px;
+    border: 2px solid #131C43;
+    border-radius: 6px;
+}
+
+.containerMgmt::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 25px;
+    border: 2px solid #131C43;
+    border-radius: 4px;
+}
+
+/* 虚拟化运行环境 */
+.virtualization::before {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 45px;
+    border: 2px solid #131C43;
+    border-radius: 8px;
+    background: rgba(19, 28, 67, 0.1);
+}
+
+.virtualization::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #131C43;
+    border-radius: 50%;
+    top: 45px;
+}
+
+.virtualization .vmLine {
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    background: #131C43;
+    top: 80px;
+}
+
+/* 私有化 */
+.privatization::before {
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 40px;
+    background: rgba(19, 28, 67, 0.1);
+    border-radius: 18px 18px 6px 6px;
+    top: 35px;
+}
+
+.privatization::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #131C43;
+    border-radius: 50%;
+    top: 45px;
+    background: transparent;
+}
+
+.privatization .lockBody {
+    position: absolute;
+    width: 45px;
+    height: 25px;
+    background: #131C43;
+    border-radius: 4px;
+    top: 60px;
+}
+
+/* 跨平台 */
+.crossPlatform::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #131C43;
+    border-radius: 6px;
+    transform: rotate(45deg);
+}
+
+.crossPlatform::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #131C43;
+    border-radius: 4px;
+    transform: rotate(45deg);
+}
+
+/* 全栈/跨端/跨语言 */
+.fullstack::before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background: #131C43;
+}
+
+.fullstack::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 60px;
+    background: #131C43;
+    /* left: 108px; */
+}
+
+.fullstack .cornerDots {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #131C43;
+    border-radius: 50%;
+}
+
+.fullstack .cornerDotsDot1 { top: calc(50% - 30px); left: calc(50% - 30px); }
+.fullstack .cornerDotsDot2 { top: calc(50% - 30px); right: calc(50% - 30px); }
+.fullstack .cornerDotsDot3 { bottom: calc(50% - 30px); left: calc(50% - 30px); }
+.fullstack .cornerDotsDot4 { bottom: calc(50% - 30px); right: calc(50% - 30px); }
+
+/* 分布式/负载均衡 */
+.distributed::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #131C43;
+    z-index: 2;
+    border-radius: 50%;
+    top: calc(50% - 35px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.distributed::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #131C43;
+    z-index: 2;
+    border-radius: 50%;
+    top: calc(50% + 15px);
+    left: calc(50% - 40px);
+}
+
+.distributed .extraDot {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #131C43;
+    z-index: 2;
+    border-radius: 50%;
+    top: calc(50% + 15px);
+    right: calc(50% - 40px);
+}
+
+.distributed .connectionLine1 {
+    position: absolute;
+    width: 2px;
+    height: 55px;
+    background: #131C43;
+    top: calc(50% - 28px);
+    left: 50%;
+    transform: translateX(-50%) rotate(35deg);
+    transform-origin: top center;
+}
+
+.distributed .connectionLine2 {
+    position: absolute;
+    width: 2px;
+    height: 55px;
+    background: #131C43;
+    top: calc(50% - 28px);
+    left: 50%;
+    transform: translateX(-50%) rotate(-35deg);
+    transform-origin: top center;
+}
+
+.distributed .connectionLine3 {
+    position: absolute;
+    width: 80px;
+    height: 2px;
+    background: rgba(19, 28, 67, 0.3);
+    top: calc(50% + 23px);
+    left: 50%;
+    transform: translateX(-50%);
+}

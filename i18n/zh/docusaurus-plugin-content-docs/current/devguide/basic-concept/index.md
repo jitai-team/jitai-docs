@@ -1,5 +1,6 @@
 ---
 sidebar_position: 0.5
+description: "基础概念的详细指南和说明。"
 ---
 # 基础概念
 

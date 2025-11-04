@@ -2,6 +2,7 @@
 sidebar_position: 10
 slug: button-components
 title: Button Components
+description: "Learn to use button components in pages. Visual editor guide for creating interactive buttons with styles, permissions, and events."
 ---
 
 # Button Components
@@ -10,7 +11,7 @@ Button components are fundamental interactive elements responsible for triggerin
 ## Creating button components {#button-component-creation}
 ![Creating Button Components](./img/10/button_2025-08-29_14-52-51.png)
 
-In the page visual editor, click `Insert Component` and drag the "Button" component onto the page. Then configure the button component parameters in the right configuration panel.
+In the page visual editor, click `Insert Component` and drag the `Button` component onto the page. Then configure the button component parameters in the right configuration panel.
 
 ## Title/icon/type configuration {#title-icon-type-configuration}
 Similar to Ant Design's Button component, button components offer extensive parameter configuration options for setting button titles, icons, styles, types, sizes, and other functionality.
@@ -22,7 +23,7 @@ Generally, button components display button titles by default. If the button tit
 
 By default, button dimensions scale proportionally and adaptively. However, if there are no other components below the button component on the current page, the button will occupy the remaining space.
 
-Button components can be set to fixed width and height through `Set Dimensions`. For specific operations, refer to [Set Dimensions](../shell-and-page/component-based-page-development#custom-sizing-adaptive-layout).
+Button components can be set to fixed width and height through `Set Dimensions`. For specific operations, refer to [Set Dimensions](../shell-and-page/generic-page#custom-sizing-adaptive-layout).
 :::
 
 ## Click event handling {#click-event}

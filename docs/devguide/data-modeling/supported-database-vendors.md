@@ -1,6 +1,7 @@
 ---
 sidebar_position: 13
 slug: supported-database-vendors
+description: "Supported database vendors in JitAi. Connect to SQLite, MySQL, PostgreSQL, Oracle, SQL Server, and DM8 with unified interface."
 ---
 
 # Supported Database Vendors

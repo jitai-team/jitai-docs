@@ -1,6 +1,9 @@
 ---
 sidebar_position: 3
 slug: data-models
+title: "Data Models Reference"
+description: "Data Models Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Data Models"
 ---
 
 # Data Models
@@ -451,32 +454,6 @@ export_data = UserModel.getExportData(
 
 ### Advanced Features
 Provide more advanced data operation and management functionality.
-
-#### queryTQL - TQL Query
-```python
-@classmethod
-def queryTQL(cls, tqlStr)
-```
-
-Use TQL (Table Query Language) statements for complex queries.
-
-**Parameter Description:**
-- `tqlStr`: TQL query statement
-
-**Usage Example:**
-```python
-# Get model element, use TQL for complex join table query
-UserModel = app.getElement("models.UserModel")
-tql = """
-Select(
-    [F("u.name", "username"), F("d.title", "dept_name")],
-    From(["UserModel", "u"]),
-    LeftJoin("DeptModel", "d"),
-    On(["u.deptId", "=", "d.id"])
-)
-"""
-result = UserModel.queryTQL(tql)
-```
 
 #### aggregate - Aggregation Calculation
 ```python

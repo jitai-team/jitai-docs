@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 1920 1080" 
+     role="img"
+     aria-labelledby="mtiTitle mtiDesc">
+  <title id="mtiTitle">Meta/Type/Instance三层结构示例</title>
+  <desc id="mtiDesc">以"登录方式"为例展示三层结构，Type可扩展，Instance可复用</desc>
+  
+  <defs>
+    <style>
+      .bg { fill: #F5F5F5; }
+      .blue-light { fill: #8EAEFF; }
+      .blue { fill: #326DFF; }
+      .blue-dark { fill: #1E4FCC; }
+      .gray { fill: #9ca3af; }
+      .text-dark { fill: #333333; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .text-white { fill: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .text-gray { fill: #9ca3af; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+    </style>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1920" height="1080" class="bg"/>
+  
+  <!-- Meta层 -->
+  <g id="meta-layer" transform="translate(150, 60)">
+    <text x="60" y="35" class="text-dark" font-size="24" font-weight="600">
+      Meta层：场景类别
+    </text>
+    
+    <!-- Meta 1: 登录方式 -->
+    <g transform="translate(50, 70)">
+      <rect x="0" y="0" width="360" height="190" rx="8" class="blue-light"/>
+      <text x="180" y="110" text-anchor="middle" class="text-dark" font-size="26" font-weight="700">
+        登录方式
+      </text>
+    </g>
+    
+    <!-- Meta 2: 数据存储 -->
+    <g transform="translate(450, 70)">
+      <rect x="0" y="0" width="360" height="190" rx="8" class="blue-light"/>
+      <text x="180" y="110" text-anchor="middle" class="text-dark" font-size="26" font-weight="700">
+        数据存储
+      </text>
+    </g>
+    
+    <!-- Meta 3: 消息推送 -->
+    <g transform="translate(850, 70)">
+      <rect x="0" y="0" width="360" height="190" rx="8" class="blue-light"/>
+      <text x="180" y="110" text-anchor="middle" class="text-dark" font-size="26" font-weight="700">
+        消息推送
+      </text>
+    </g>
+    
+    <!-- Meta 4: 可扩展 -->
+    <g transform="translate(1250, 70)">
+      <rect x="0" y="0" width="360" height="190" rx="8" fill="none" stroke="#9ca3af" stroke-width="2" stroke-dasharray="8,4"/>
+      <text x="180" y="65" text-anchor="middle" class="text-gray" font-size="20" font-weight="700">
+        自定义场景
+      </text>
+      <text x="180" y="135" text-anchor="middle" class="text-gray" font-size="70">
+        +
+      </text>
+    </g>
+  </g>
+  
+  <!-- Type层 -->
+  <g id="type-layer" transform="translate(150, 330)">
+    <text x="60" y="35" class="text-dark" font-size="24" font-weight="600">
+      Type层：技术实现+配置项
+    </text>
+    
+    <!-- Type 1: 密码登录 -->
+    <g transform="translate(50, 70)">
+      <rect x="0" y="0" width="360" height="260" rx="8" class="blue"/>
+      <text x="180" y="50" text-anchor="middle" class="text-white" font-size="22" font-weight="700">
+        密码登录
+      </text>
+      <text x="180" y="85" text-anchor="middle" class="text-white" font-size="15">
+        技术实现+配置项
+      </text>
+      <line x1="40" y1="110" x2="320" y2="110" stroke="#FFFFFF" stroke-width="1"/>
+      <text x="180" y="145" text-anchor="middle" class="text-white" font-size="17">
+        配置项：
+      </text>
+      <text x="180" y="180" text-anchor="middle" class="text-white" font-size="15">
+        • 密码策略
+      </text>
+      <text x="180" y="210" text-anchor="middle" class="text-white" font-size="15">
+        • 加密方式
+      </text>
+    </g>
+    
+    <!-- Type 2: OAuth登录 -->
+    <g transform="translate(450, 70)">
+      <rect x="0" y="0" width="360" height="260" rx="8" class="blue"/>
+      <text x="180" y="50" text-anchor="middle" class="text-white" font-size="22" font-weight="700">
+        OAuth登录
+      </text>
+      <text x="180" y="85" text-anchor="middle" class="text-white" font-size="15">
+        技术实现+配置项
+      </text>
+      <line x1="40" y1="110" x2="320" y2="110" stroke="#FFFFFF" stroke-width="1"/>
+      <text x="180" y="145" text-anchor="middle" class="text-white" font-size="17">
+        配置项：
+      </text>
+      <text x="180" y="180" text-anchor="middle" class="text-white" font-size="15">
+        • OAuth服务商
+      </text>
+      <text x="180" y="210" text-anchor="middle" class="text-white" font-size="15">
+        • 回调地址
+      </text>
+    </g>
+    
+    <!-- Type 3: LDAP登录 -->
+    <g transform="translate(850, 70)">
+      <rect x="0" y="0" width="360" height="260" rx="8" class="blue"/>
+      <text x="180" y="50" text-anchor="middle" class="text-white" font-size="22" font-weight="700">
+        LDAP登录
+      </text>
+      <text x="180" y="85" text-anchor="middle" class="text-white" font-size="15">
+        技术实现+配置项
+      </text>
+      <line x1="40" y1="110" x2="320" y2="110" stroke="#FFFFFF" stroke-width="1"/>
+      <text x="180" y="145" text-anchor="middle" class="text-white" font-size="17">
+        配置项：
+      </text>
+      <text x="180" y="180" text-anchor="middle" class="text-white" font-size="15">
+        • LDAP服务器
+      </text>
+      <text x="180" y="210" text-anchor="middle" class="text-white" font-size="15">
+        • 查询规则
+      </text>
+    </g>
+    
+    <!-- Type 4: 自定义扩展 -->
+    <g transform="translate(1250, 70)">
+      <rect x="0" y="0" width="360" height="260" rx="8" fill="none" stroke="#9ca3af" stroke-width="2" stroke-dasharray="8,4"/>
+      <text x="180" y="50" text-anchor="middle" class="text-gray" font-size="22" font-weight="700">
+        自定义扩展
+      </text>
+      <text x="180" y="165" text-anchor="middle" class="text-gray" font-size="70">
+        +
+      </text>
+    </g>
+  </g>
+  
+  <!-- Instance层 -->
+  <g id="instance-layer" transform="translate(150, 680)">
+    <text x="60" y="35" class="text-dark" font-size="24" font-weight="600">
+      Instance层：业务配置（同一Type可复用于不同场景）
+    </text>
+    
+    <!-- 第一行：密码登录的两个不同实例 -->
+    <g transform="translate(0, 70)">
+      <!-- Instance 1-1 -->
+      <g transform="translate(50, 0)">
+        <rect x="0" y="0" width="280" height="220" rx="8" class="blue-dark"/>
+        <text x="140" y="40" text-anchor="middle" class="text-white" font-size="18" font-weight="700">
+          企业A：密码登录
+        </text>
+        <line x1="30" y1="60" x2="250" y2="60" stroke="#FFFFFF" stroke-width="1"/>
+        <text x="140" y="95" text-anchor="middle" class="text-white" font-size="15">
+          配置：
+        </text>
+        <text x="140" y="130" text-anchor="middle" class="text-white" font-size="14">
+          最小8位
+        </text>
+        <text x="140" y="160" text-anchor="middle" class="text-white" font-size="14">
+          +特殊字符
+        </text>
+        <text x="140" y="190" text-anchor="middle" class="text-white" font-size="14">
+          SHA256加密
+        </text>
+      </g>
+      
+      <!-- Instance 1-2 -->
+      <g transform="translate(370, 0)">
+        <rect x="0" y="0" width="280" height="220" rx="8" class="blue-dark"/>
+        <text x="140" y="40" text-anchor="middle" class="text-white" font-size="18" font-weight="700">
+          企业D：密码登录
+        </text>
+        <line x1="30" y1="60" x2="250" y2="60" stroke="#FFFFFF" stroke-width="1"/>
+        <text x="140" y="95" text-anchor="middle" class="text-white" font-size="15">
+          配置：
+        </text>
+        <text x="140" y="130" text-anchor="middle" class="text-white" font-size="14">
+          最小12位
+        </text>
+        <text x="140" y="160" text-anchor="middle" class="text-white" font-size="14">
+          +大小写+数字
+        </text>
+        <text x="140" y="190" text-anchor="middle" class="text-white" font-size="14">
+          BCrypt加密
+        </text>
+      </g>
+      
+      <!-- Instance 2-1 -->
+      <g transform="translate(690, 0)">
+        <rect x="0" y="0" width="280" height="220" rx="8" class="blue-dark"/>
+        <text x="140" y="40" text-anchor="middle" class="text-white" font-size="18" font-weight="700">
+          企业B：OAuth
+        </text>
+        <line x1="30" y1="60" x2="250" y2="60" stroke="#FFFFFF" stroke-width="1"/>
+        <text x="140" y="95" text-anchor="middle" class="text-white" font-size="15">
+          配置：
+        </text>
+        <text x="140" y="130" text-anchor="middle" class="text-white" font-size="14">
+          GitHub OAuth
+        </text>
+        <text x="140" y="160" text-anchor="middle" class="text-white" font-size="14">
+          自动注册
+        </text>
+      </g>
+      
+      <!-- Instance 3-1 -->
+      <g transform="translate(1010, 0)">
+        <rect x="0" y="0" width="280" height="220" rx="8" class="blue-dark"/>
+        <text x="140" y="40" text-anchor="middle" class="text-white" font-size="18" font-weight="700">
+          企业C：LDAP
+        </text>
+        <line x1="30" y1="60" x2="250" y2="60" stroke="#FFFFFF" stroke-width="1"/>
+        <text x="140" y="95" text-anchor="middle" class="text-white" font-size="15">
+          配置：
+        </text>
+        <text x="140" y="130" text-anchor="middle" class="text-white" font-size="14">
+          AD域集成
+        </text>
+        <text x="140" y="160" text-anchor="middle" class="text-white" font-size="14">
+          自动同步组织
+        </text>
+      </g>
+      
+      <!-- 可复用标识 -->
+      <g transform="translate(1330, 0)">
+        <rect x="0" y="0" width="280" height="220" rx="8" fill="none" stroke="#9ca3af" stroke-width="2" stroke-dasharray="8,4"/>
+        <text x="140" y="50" text-anchor="middle" class="text-gray" font-size="18" font-weight="700">
+          更多配置
+        </text>
+        <text x="140" y="130" text-anchor="middle" class="text-gray" font-size="70">
+          +
+        </text>
+        <text x="140" y="185" text-anchor="middle" class="text-gray" font-size="13">
+          同一Type可创建
+        </text>
+        <text x="140" y="205" text-anchor="middle" class="text-gray" font-size="13">
+          多个Instance
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>
+

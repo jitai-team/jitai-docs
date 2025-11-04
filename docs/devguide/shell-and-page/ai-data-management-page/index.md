@@ -1,5 +1,6 @@
 ---
 sidebar_position: 3
+description: "AI-powered data management pages with natural language operations. CRUD operations, filtering, sorting, and AI assistant for intelligent data processing."
 ---
 
 # AI Data Management Page
@@ -99,7 +100,7 @@ When users access the page, they will see a fully functional data management int
 
 ## Convert to generic page for modification {#convert-to-generic-page-for-modification}
 The AI data management page is a built-in page type provided by JitAI out of the box, which developers can quickly create and use. When developers want to make more refined custom modifications based on the default implementation, they can convert the page to a generic page for unlimited modification.<br/>
-Developers can click the <span style={{ display: "inline-flex", alignItems: "center", verticalAlign: "middle", margin: "0 4px", height: '30px' }}>![Convert Button](./imgs/trans-type.png)</span> button in the top right corner of the page editor to convert the page to a generic page. For generic page development methods, refer to [Component-based Page Development](/docs/devguide/shell-and-page/component-based-page-development).
+Developers can click the <span style={{ display: "inline-flex", alignItems: "center", verticalAlign: "middle", margin: "0 4px", height: '30px' }}>![Convert Button](./imgs/trans-type.png)</span> button in the top right corner of the page editor to convert the page to a generic page. For generic page development methods, refer to [Component-based Page Development](/docs/devguide/shell-and-page/generic-page).
 
 :::warning
 After converting to a generic page, it cannot be restored to the original `AI Data Management Page` type.

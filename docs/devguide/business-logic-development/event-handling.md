@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 slug: event-handling
+description: "Event-driven automation mechanism for JitAi applications. Model events, approval events, custom events, and AI-related event handling."
 ---
 
 # Event Handling

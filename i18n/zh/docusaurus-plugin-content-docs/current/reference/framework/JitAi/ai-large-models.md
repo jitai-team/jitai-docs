@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: ai-large-models
+description: "AI大模型 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # AI大模型

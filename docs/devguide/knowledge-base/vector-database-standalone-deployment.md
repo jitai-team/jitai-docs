@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 slug: vector-database-standalone-deployment
+description: "Deploy vector database for knowledge bases. Standalone vector store deployment for production-scale document retrieval."
 ---
 
 # Deploying Vector Databases as Standalone Services

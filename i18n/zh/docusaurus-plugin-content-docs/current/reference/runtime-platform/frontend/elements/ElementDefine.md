@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: ElementDefine
+description: "JavaScript中访问元素定义信息的前端ElementDefine对象。学习检索和使用元素定义。"
 ---
 
 # ElementDefine

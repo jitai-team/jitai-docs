@@ -2,6 +2,7 @@
 sidebar_position: 5
 title: Publish Application
 slug: publish_app
+description: "Publish and deploy JitAi applications. Learn online distribution, environment variables, production setup, and application update workflows."
 ---
 # Publish Application
 

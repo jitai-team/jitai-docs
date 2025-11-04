@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 title: 对比JitAi与主流AI应用平台
+description: "对比JitAi与Coze、Dify、n8n。探索包括可解释系统架构和深度业务集成在内的六大技术突破。"
 ---
 
 # 对比JitAi与主流AI应用平台

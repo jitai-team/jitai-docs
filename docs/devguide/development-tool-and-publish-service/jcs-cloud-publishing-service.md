@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: jcs-cloud-publishing-service
+description: "JCS cloud publishing service for application deployment. Publish and distribute JitAi applications via cloud infrastructure."
 title: JCS Cloud Application Publishing Service
 ---
 

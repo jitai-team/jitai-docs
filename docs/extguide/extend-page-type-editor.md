@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 slug: extend-page-type-editor
+description: "Create custom page Types with visual editors. Complete guide to building specialized page types like countdown timers for unique use cases."
 ---
 
 # Extend Your Own Page Type and Editor
@@ -473,7 +474,7 @@ class ExamTimerPage extends Jit.TimerPage {
         // Exam page specific configuration
         this.config = {
             duration: 7200,      // 2 hours
-            autoStart: false,    // Requires student to click start
+            autoStart: false,    // Requires examinee to click start
             warnAt: 300,         // Warning at last 5 minutes
             theme: 'exam'
         };

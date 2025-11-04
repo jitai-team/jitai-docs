@@ -1,5 +1,7 @@
 ---
 slug: initiate-application
+title: "Initiate Application Reference"
+sidebar_label: "Initiate Application"
 ---
 # Initiate Application
 

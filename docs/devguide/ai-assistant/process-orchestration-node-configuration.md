@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 slug: process-orchestration-node-configuration
+description: "Design AI Assistant workflows with visual orchestration. Drag-and-drop node configuration for intelligent business processes."
 ---
 
 # Process Orchestration and Node Configuration
@@ -71,13 +72,13 @@ After this node completes execution, it will store the [Agent's output results](
 
 When the task flow runs to this node, it will pause and display data in the dialog box. The flow can only continue after the user confirms the data and performs corresponding operations. If there is no next node, the flow automatically ends.
 At this node, users can perform operations such as **Approve**, **Reject**, **Reply**, and **Edit data** (editing functionality needs to be enabled).
-During runtime, after performing **Approve**, **Reject**, **Reply**, and **Edit data** operations, the flow will resume and trigger [dialog area human-machine interaction events](./ai-assistant-event#in-conversation-action-events).
+During runtime, after performing **Approve**, **Reject**, **Reply**, and **Edit data** operations, the flow will resume and trigger [dialog area human-machine interaction events](./ai-assistant-event#action-in-conversation-events).
 
 #### Node configuration details {#conversation-node-configuration-details}
 - **Data to Display**: You can freely define the data content that needs user confirmation, sourced from [runtime state data](./ai-assistant-state#state-data-content).
 - **Editable**: When enabled, users can edit the displayed data, and the edited data will automatically update to the runtime state.
 - **Use Custom Control Rendering**: By default, it uses the platform's built-in data rendering controls to display data, but you can also use [custom controls](../frontend-ui-customization/custom-controls) for rendering.
-- **Display Operation Buttons**: You can customize operation buttons at this node, which can trigger [dialog area human-machine interaction events](./ai-assistant-event#in-conversation-action-events) when clicked.
+- **Display Operation Buttons**: You can customize operation buttons at this node, which can trigger [dialog area human-machine interaction events](./ai-assistant-event#action-in-conversation-events) when clicked.
 
 ![Node Configuration - Dialog Area Human-Machine Interaction - Settings](./img/assistant/human-Interrupt-setting.png)
 

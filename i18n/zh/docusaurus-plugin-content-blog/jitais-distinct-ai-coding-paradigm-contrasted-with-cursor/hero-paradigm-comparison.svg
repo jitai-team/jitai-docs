@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="title desc" viewBox="0 0 1920 1080"><desc id="desc">对比Cursor和JitAi两种不同颗粒度的AI编程范式</desc><defs><linearGradient id="blueGradient" x1="0%" x2="0%" y1="0%" y2="100%"><stop offset="0%" style="stop-color:#326dff;stop-opacity:.8"/><stop offset="100%" style="stop-color:#8eaeff;stop-opacity:.4"/></linearGradient><linearGradient id="grayGradient" x1="0%" x2="0%" y1="0%" y2="100%"><stop offset="0%" style="stop-color:#6b7280;stop-opacity:.6"/><stop offset="100%" style="stop-color:#9ca3af;stop-opacity:.3"/></linearGradient><style>.primary{fill:#326dff}.text-dark{fill:#333;font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,&quot;PingFang SC&quot;,&quot;Hiragino Sans GB&quot;,&quot;Microsoft YaHei&quot;,sans-serif}.text-medium{fill:#6b7280}</style></defs><path d="M0 0h1920v1080H0z" style="fill:#f9fafb"/><path fill="url(#blueGradient)" d="M0 0h1920v8H0z"/><text x="960" y="120" class="text-dark" font-size="48" font-weight="700" text-anchor="middle">
+    JitAi vs Cursor：不同的AI编程范式
+  </text><g id="cursor-side"><rect width="700" height="700" x="100" y="250" fill="#FFF" stroke="#E5E7EB" stroke-width="2" rx="16"/><circle cx="450" cy="350" r="60" fill="url(#grayGradient)"/><text x="450" y="365" class="text-dark" font-size="48" font-weight="700" text-anchor="middle">C</text><text x="450" y="460" class="text-dark" font-size="32" font-weight="700" text-anchor="middle">
+      Cursor
+    </text><g id="cursor-features"><rect width="600" height="60" x="150" y="520" fill="#F3F4F6" rx="8"/><text x="180" y="555" class="text-medium" font-size="18" font-weight="600">
+        🔧 原生代码层面
+      </text><rect width="600" height="60" x="150" y="600" fill="#F3F4F6" rx="8"/><text x="180" y="635" class="text-medium" font-size="18" font-weight="600">
+        📝 细颗粒度操作（代码行/函数/文件）
+      </text><rect width="600" height="60" x="150" y="680" fill="#F3F4F6" rx="8"/><text x="180" y="715" class="text-medium" font-size="18" font-weight="600">
+        💻 IDE内AI助手
+      </text><rect width="600" height="60" x="150" y="760" fill="#F3F4F6" rx="8"/><text x="180" y="795" class="text-medium" font-size="18" font-weight="600">
+        ⚙️ 适合算法开发、技术组件
+      </text></g><g id="fine-granularity"><path fill="#6b7280" d="M200 880h3v40h-3zm10 0h3v40h-3zm10 0h3v40h-3zm10 0h3v40h-3zm10 0h3v40h-3zm10 0h3v40h-3z" opacity=".6"/><text x="300" y="905" font-size="16" style="fill:#9ca3af">细颗粒度</text></g></g><g id="vs-symbol"><circle cx="960" cy="600" r="80" fill="#FFF" stroke="#326DFF" stroke-width="4"/><text x="960" y="625" class="primary" font-size="56" font-weight="700" text-anchor="middle">
+      VS
+    </text></g><g id="jitai-side"><rect width="700" height="700" x="1120" y="250" fill="#FFF" stroke="#326DFF" stroke-width="3" rx="16"/><circle cx="1470" cy="350" r="60" fill="url(#blueGradient)"/><text x="1470" y="365" fill="#FFF" font-size="48" font-weight="700" text-anchor="middle">J</text><text x="1470" y="460" class="primary" font-size="32" font-weight="700" text-anchor="middle">
+      JitAi
+    </text><g id="jitai-features"><rect width="600" height="60" x="1170" y="520" fill="#EEF2FF" stroke="#326DFF" rx="8"/><text x="1200" y="555" class="primary" font-size="18" font-weight="600">
+        🏗️ 业务应用工程层面
+      </text><rect width="600" height="60" x="1170" y="600" fill="#EEF2FF" stroke="#326DFF" rx="8"/><text x="1200" y="635" class="primary" font-size="18" font-weight="600">
+        🧩 大颗粒度操作（业务模块/组件）
+      </text><rect width="600" height="60" x="1170" y="680" fill="#EEF2FF" stroke="#326DFF" rx="8"/><text x="1200" y="715" class="primary" font-size="18" font-weight="600">
+        🎨 可视化配置 + AI助理
+      </text><rect width="600" height="60" x="1170" y="760" fill="#EEF2FF" stroke="#326DFF" rx="8"/><text x="1200" y="795" class="primary" font-size="18" font-weight="600">
+        🚀 适合企业系统、定制化项目
+      </text></g><g id="coarse-granularity"><rect width="80" height="60" x="1350" y="870" class="primary" opacity=".8" rx="8"/><rect width="80" height="60" x="1450" y="870" class="primary" opacity=".8" rx="8"/><text x="1560" y="905" class="primary" font-size="16" font-weight="600">大颗粒度</text></g></g><rect width="1120" height="60" x="400" y="1000" fill="#326DFF" opacity=".1" rx="30"/><text x="960" y="1040" class="primary" font-size="22" font-weight="600" text-anchor="middle">
+    颗粒度决定范式 · 业务系统开发需要在更大颗粒度层面操作
+  </text></svg>

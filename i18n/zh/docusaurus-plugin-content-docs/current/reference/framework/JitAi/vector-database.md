@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: vector-database
+description: "向量数据库 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # 向量数据库

@@ -1,8 +1,10 @@
 ---
 slug: aws-s3-storage
-title: AWS S3 Storage
+title: "AWS S3 Storage Reference"
+description: "AWS S3 Storage Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "AWS S3 Storage"
 ---
-# AWS S3 Storage {#aws-s3-storage}
+# AWS S3 Storage
 AWS S3 Storage is a Type element for global cloud storage, implementing massive data storage, global CDN acceleration, and enterprise-level security management based on Amazon Simple Storage Service. It provides standardized file upload, download, and delete operations, integrates AWS ecosystem access control and permission management, supports multiple storage types and data backup strategies, ensuring data security and high availability.
 
 The AWS S3 storage element hierarchy is Meta (storages.Meta) → Type (storages.AwsS3Type) → Instance. Developers can quickly create AWS S3 storage instance elements through JitAi's visual development tools.

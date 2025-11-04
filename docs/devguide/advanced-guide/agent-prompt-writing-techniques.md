@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: agent-prompt-writing-techniques
+description: "Master AI Agent prompt writing techniques. Structured templates, best practices, and examples for stable, controllable agent behavior."
 ---
 
 # Agent Prompt Writing Techniques

@@ -1110,6 +1110,8 @@ Build intelligent agents with reasoning and action capabilities. Configure promp
     { text: "Configuring input variables", href: "devguide/ai-agent/agent-input-output#configuring-input-variables" },
     { text: "Using variables in prompts", href: "devguide/ai-agent/agent-input-output#using-variables-in-prompts" },
     { text: "Configuring output results", href: "devguide/ai-agent/agent-input-output#configuring-output-results" },
+    { text: "JSON structured output", href: "devguide/ai-agent/agent-input-output#json-structured-output" },
+    { text: "Plain text output", href: "devguide/ai-agent/agent-input-output#plain-text-output" },
     { text: "Output result data types", href: "devguide/ai-agent/agent-input-output#output-result-data-types" },
     { text: "Agent streaming output", href: "devguide/ai-agent/agent-input-output#agent-streaming-output" },
     { text: "Calling Agent in frontend functions", href: "devguide/ai-agent/agent-input-output#calling-agent-in-frontend-functions" },

@@ -1114,6 +1114,8 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "配置输入变量", href: "devguide/ai-agent/agent-input-output#configuring-input-variables" },
     { text: "在提示词中使用变量", href: "devguide/ai-agent/agent-input-output#using-variables-in-prompts" },
     { text: "配置输出结果", href: "devguide/ai-agent/agent-input-output#configuring-output-results" },
+    { text: "结构化输出", href: "devguide/ai-agent/agent-input-output#json-structured-output" },
+    { text: "纯文本输出", href: "devguide/ai-agent/agent-input-output#plain-text-output" },
     { text: "输出结果数据类型", href: "devguide/ai-agent/agent-input-output#output-result-data-types" },
     { text: "Agent的流式输出", href: "devguide/ai-agent/agent-input-output#agent-streaming-output" },
     { text: "在前端函数中调用Agent", href: "devguide/ai-agent/agent-input-output#calling-agent-in-frontend-functions" },

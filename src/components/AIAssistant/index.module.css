@@ -1,0 +1,147 @@
+/* AI 助手悬浮图标 */
+.aiAssistantButton {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #2850E8 100%);
+  border: none;
+  box-shadow: 
+    0 8px 16px -4px rgba(61, 101, 253, 0.4),
+    0 20px 40px -8px rgba(61, 101, 253, 0.25),
+    0 30px 60px -12px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+    0 2px 4px rgba(255, 255, 255, 0.2) inset;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9998;
+  transition: var(--transition-primary);
+}
+
+.aiAssistantButton:hover {
+  transform: scale(1.15) translateY(-2px);
+  box-shadow: 
+    0 12px 24px -4px rgba(61, 101, 253, 0.5),
+    0 30px 60px -8px rgba(61, 101, 253, 0.35),
+    0 40px 80px -12px rgba(0, 0, 0, 0.2),
+    0 0 40px rgba(61, 101, 253, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+    0 2px 4px rgba(255, 255, 255, 0.3) inset;
+}
+
+/* AI Assistant 浮窗容器 */
+.aiAssistantWindow {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 390px;
+  height: 752px;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--border-color-light);
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1) translateY(0);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 隐藏状态 - 只隐藏但不销毁 DOM，方便快速二次打开 */
+.aiAssistantWindow.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.95) translateY(10px);
+  pointer-events: none;
+}
+
+/* 浮窗标题栏 */
+.aiAssistantHeader {
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: var(--border-radius-lg);
+  border-top-right-radius: var(--border-radius-lg);
+  z-index: 10;
+}
+
+.aiAssistantTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.aiAssistantTitleText {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+}
+
+/* 关闭按钮 */
+.aiAssistantCloseButton {
+  background: none;
+  border: none;
+  color: var(--color-white);
+  cursor: pointer;
+  padding: var(--space-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition-fast);
+}
+
+.aiAssistantCloseButton:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* AI Assistant 内容区域 */
+.aiAssistantContent {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  margin-top: -52px;
+}
+
+/* 响应式样式 */
+@media (max-width: 768px) {
+  .aiAssistantWindow {
+    width: calc(100vw - 40px);
+    height: calc(100vh - 100px);
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .aiAssistantButton {
+    bottom: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+  }
+}
+
+@media (max-width: 480px) {
+  .aiAssistantWindow {
+    width: calc(100vw - 20px);
+    height: calc(100vh - 80px);
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .aiAssistantButton {
+    bottom: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+  }
+}
+

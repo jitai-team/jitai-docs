@@ -7,10 +7,10 @@
     "start": "docusaurus start",
     "start:zh": "docusaurus start --locale zh",
     "start:en": "docusaurus start --locale en",
-    "build": "NODE_OPTIONS='--max-old-space-size=2048' docusaurus build --out-dir build1 && cp -rf build1/. build/ && rm -rf build1",
-    "build:low-cpu": "UV_THREADPOOL_SIZE=1 NODE_OPTIONS='--max-old-space-size=2048' docusaurus build --out-dir build1 && cp -rf build1/. build/ && rm -rf build1",
-    "build:zh": "NODE_OPTIONS='--max-old-space-size=2048' docusaurus build --locale zh --out-dir build1 && cp -rf build1/. build/ && rm -rf build1",
-    "build:en": "NODE_OPTIONS='--max-old-space-size=2048' docusaurus build --locale en --out-dir build1 && cp -rf build1/. build/ && rm -rf build1",
+    "build": "cross-env NODE_OPTIONS='--max-old-space-size=2048' docusaurus build --out-dir build1 && cp -rf build1/. build/ && rm -rf build1 && node scripts/fix-homepage-links.js",
+    "build:low-cpu": "cross-env UV_THREADPOOL_SIZE=1 NODE_OPTIONS='--max-old-space-size=2048' docusaurus build --out-dir build1 && cp -rf build1/. build/ && rm -rf build1 && node scripts/fix-homepage-links.js",
+    "build:zh": "cross-env NODE_OPTIONS='--max-old-space-size=2048' docusaurus build --locale zh --out-dir build1 && cp -rf build1/. build/ && rm -rf build1 && node scripts/fix-homepage-links.js",
+    "build:en": "cross-env NODE_OPTIONS='--max-old-space-size=2048' docusaurus build --locale en --out-dir build1 && cp -rf build1/. build/ && rm -rf build1 && node scripts/fix-homepage-links.js",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -36,6 +36,8 @@
     "@docusaurus/module-type-aliases": "^3.9.2",
     "@docusaurus/tsconfig": "^3.9.2",
     "@docusaurus/types": "^3.9.2",
+    "cross-env": "^10.1.0",
+    "shx": "^0.4.0",
     "typescript": "~5.6.2"
   },
   "browserslist": {

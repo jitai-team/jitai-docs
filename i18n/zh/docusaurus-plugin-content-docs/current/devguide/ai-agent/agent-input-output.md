@@ -29,7 +29,7 @@ Agent的输入输出配置是实现智能交互的关键环节。通过合理配
 ## 配置输出结果 {#configuring-output-results}
 Agent支持两种输出模式：**结构化输出**和**纯文本输出**。各模式介绍如下：
 
-### 结构化输出
+### 结构化输出 {#json-structured-output}
 在该模式下，Agent将以json格式输出最终结果。运行完成后默认会返回一个字典，字典中仅包括一个`output`文本字段。如果要在程序逻辑中调用Agent，或者在[AI助理](../ai-assistant/create-ai-assistant)中编排Agent和其它节点的流转关系，则Agent的输出结果需要是能够被程序逻辑解析的结构化数据，而不是仅有一段字符串。
 
 ![配置Agent输出结果](./img/agent/configure-agent-output-results.gif)
@@ -55,7 +55,7 @@ Agent支持两种输出模式：**结构化输出**和**纯文本输出**。各�
 
 选择合适的数据类型有助于大模型更准确地理解输出要求，并生成符合预期格式的结果。
 
-### 纯文本输出
+### 纯文本输出 {#plain-text-output}
 该模式下，Agent 将以纯文本格式输出最终结果至助理对话框。运行完成后返回一个字典，其中仅包含 `output` 文本字段， 字段值就是输出的最终结果。该字段可用于程序逻辑中调用 Agent，或在 [AI助理](../ai-assistant/create-ai-assistant) 中编排 Agent 与其它节点的流转关系。
 
 

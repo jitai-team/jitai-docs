@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './index.module.css';
-import { AI_ASSISTANT_CONFIG, AI_ASSISTANT_EVENTS } from './constant';
+import ZH_CONTENT from './constant-zh';
+import EN_CONTENT from './constant-en';
 
 interface AIAssistantProps {
   className?: string;
@@ -147,10 +148,14 @@ const generateBrowserFingerprint = async (): Promise<string> => {
   return fingerprint;
 };
 
+
 const AIAssistant: React.FC<AIAssistantProps> = ({ className, visible = true }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const scriptLoadedRef = useRef<boolean>(false);
   const [isAssistantOpen, setIsAssistantOpen] = useState(false);
+
+  // 依据 HTML lang 属性选择常量
+  const CONTENT = (document.documentElement.lang || 'en') === 'en' ? EN_CONTENT : ZH_CONTENT;
 
   // 页面加载后自动在后台加载和初始化 AI Assistant SDK
   useEffect(() => {
@@ -158,7 +163,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ className, visible = true }) 
       if (scriptLoadedRef.current) return;
       
       const script = document.createElement('script');
-      script.src = AI_ASSISTANT_CONFIG.SDK_URL;
+      script.src = 'https://jit-front.oss-cn-hangzhou.aliyuncs.com/ai-sdk/jitai-assistant-sdk.min.js';
       script.async = true;
       script.onload = () => {
         scriptLoadedRef.current = true;
@@ -176,15 +181,15 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ className, visible = true }) 
 
       // 生成浏览器指纹
       const userKey = await generateBrowserFingerprint();
-      console.log('生成的浏览器指纹:', userKey);
 
       const aiAssistant = new (window as any).JitAIAssistant();
       
       aiAssistant.init({
-        containerId: AI_ASSISTANT_CONFIG.CONTAINER_ID,
-        assistantUrl: AI_ASSISTANT_CONFIG.ASSISTANT_URL,
-        accessKey: AI_ASSISTANT_CONFIG.ACCESS_KEY,
-        welcomeMessage: AI_ASSISTANT_CONFIG.AUTH_INFO.welcomeMessage,
+        containerId: 'ai-assistant-container',
+        assistantUrl: 'https://wy.jit.pro/whwy/jitRDM/aiassistants/consultancyAssistant',
+        accessKey: 'yzxOZfkrCYGKdPmhpDFVRgnIvecJWSEB',
+        logContent: 'LLM_CONCISE_LOG',
+        welcomeMessage: CONTENT.welcomeMessage,
         authInfo: {
           userKey: userKey, // 使用浏览器指纹生成的唯一用户key
         },
@@ -193,19 +198,19 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ className, visible = true }) 
         }
       });
       
-      aiAssistant.subscribeEvent(AI_ASSISTANT_EVENTS.BEFORE_NODE_RUN, (data: any) => {
+      aiAssistant.subscribeEvent('AI:aiagent_webpage.beforeNodeRun', (data: any) => {
         console.log('AI Agent Before Node Run:', data);
       });
       
-      aiAssistant.subscribeEvent(AI_ASSISTANT_EVENTS.AFTER_NODE_RUN, (data: any) => {
+      aiAssistant.subscribeEvent('AI:aiagent_webpage.afterNodeRun', (data: any) => {
         console.log('AI Agent After Node Run:', data);
       });
       
-      aiAssistant.subscribeEvent(AI_ASSISTANT_EVENTS.CALL_TOOL_PRE, (data: any) => {
+      aiAssistant.subscribeEvent('AI:aiagent_webpage.callTool.preEvent', (data: any) => {
         console.log('AI Agent Call Tool Pre Event:', data);
       });
       
-      aiAssistant.subscribeEvent(AI_ASSISTANT_EVENTS.CALL_TOOL_POST, (data: any) => {
+      aiAssistant.subscribeEvent('AI:aiagent_webpage.callTool.postEvent', (data: any) => {
         console.log('AI Agent Call Tool Post Event:', data);
       });
     };
@@ -225,7 +230,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ className, visible = true }) 
         <button
           onClick={() => setIsAssistantOpen(true)}
           className={styles.aiAssistantButton}
-          aria-label="打开 AI 助手"
+          aria-label={CONTENT.openAssistantAriaLabel}
         >
           <svg 
             width="32" 
@@ -268,12 +273,12 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ className, visible = true }) 
                 strokeLinejoin="round"
               />
             </svg>
-            <span className={styles.aiAssistantTitleText}>JitAI 助手</span>
+            <span className={styles.aiAssistantTitleText}>{CONTENT.windowTitle}</span>
           </div>
           <button
             onClick={() => setIsAssistantOpen(false)}
             className={styles.aiAssistantCloseButton}
-            aria-label="关闭 JitAI 助手"
+            aria-label={CONTENT.closeAssistantAriaLabel}
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
               <path 
@@ -289,7 +294,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ className, visible = true }) 
         
         {/* AI Assistant 内容区域 */}
         <div 
-          id={AI_ASSISTANT_CONFIG.CONTAINER_ID}
+          id="ai-assistant-container"
           ref={containerRef}
           className={styles.aiAssistantContent}
         />

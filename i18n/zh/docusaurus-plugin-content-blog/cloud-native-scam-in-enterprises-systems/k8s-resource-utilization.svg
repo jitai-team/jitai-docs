@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="utilizationTitle utilizationDesc">
+  <title id="utilizationTitle">K8s集群资源利用率</title>
+  <desc id="utilizationDesc">展示典型K8s集群的CPU和内存利用率远低于预期，存在大量资源浪费</desc>
+  
+  <defs>
+    <style>
+      .bg { fill: #F5F5F5; }
+      .primary { fill: #326DFF; }
+      .gray { fill: #E0E0E0; }
+      .text-title { 
+        fill: #333333; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 42px;
+        font-weight: 700;
+      }
+      .text-label { 
+        fill: #6b7280; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 20px;
+      }
+      .text-percentage { 
+        fill: #333333; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 36px;
+        font-weight: 700;
+      }
+      .text-small { 
+        fill: #9ca3af; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 14px;
+      }
+      .grid-line { stroke: rgba(107, 114, 128, 0.1); stroke-width: 1; }
+    </style>
+    
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#326DFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8EAEFF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1600" height="900" class="bg"/>
+  
+  <!-- 标题 -->
+  <text x="800" y="100" text-anchor="middle" class="text-title">
+    典型K8s集群资源利用率
+  </text>
+  
+  <!-- Y轴网格线和标签 -->
+  <g id="yAxis">
+    <line x1="200" y1="700" x2="1400" y2="700" class="grid-line"/>
+    <text x="170" y="710" text-anchor="end" class="text-label">0%</text>
+    
+    <line x1="200" y1="575" x2="1400" y2="575" class="grid-line"/>
+    <text x="170" y="585" text-anchor="end" class="text-label">25%</text>
+    
+    <line x1="200" y1="450" x2="1400" y2="450" class="grid-line"/>
+    <text x="170" y="460" text-anchor="end" class="text-label">50%</text>
+    
+    <line x1="200" y1="325" x2="1400" y2="325" class="grid-line"/>
+    <text x="170" y="335" text-anchor="end" class="text-label">75%</text>
+    
+    <line x1="200" y1="200" x2="1400" y2="200" class="grid-line"/>
+    <text x="170" y="210" text-anchor="end" class="text-label">100%</text>
+  </g>
+  
+  <!-- CPU利用率柱状图 -->
+  <g id="cpuBar">
+    <rect x="400" y="200" width="280" height="500" rx="8" class="gray" opacity="0.3"/>
+    <rect x="400" y="575" width="280" height="125" rx="8" fill="url(#blueGrad)"/>
+    
+    <text x="540" y="650" text-anchor="middle" class="text-percentage" fill="#FFFFFF">
+      13-25%
+    </text>
+    
+    <text x="540" y="750" text-anchor="middle" class="text-label" font-weight="600">
+      CPU利用率
+    </text>
+    
+    <!-- 浪费标注 -->
+    <text x="540" y="400" text-anchor="middle" class="text-label" fill="#9ca3af">
+      75-87%
+    </text>
+    <text x="540" y="430" text-anchor="middle" class="text-label" fill="#9ca3af">
+      资源浪费
+    </text>
+  </g>
+  
+  <!-- 内存利用率柱状图 -->
+  <g id="memoryBar">
+    <rect x="920" y="200" width="280" height="500" rx="8" class="gray" opacity="0.3"/>
+    <rect x="920" y="540" width="280" height="160" rx="8" fill="url(#blueGrad)"/>
+    
+    <text x="1060" y="635" text-anchor="middle" class="text-percentage" fill="#FFFFFF">
+      18-35%
+    </text>
+    
+    <text x="1060" y="750" text-anchor="middle" class="text-label" font-weight="600">
+      内存利用率
+    </text>
+    
+    <!-- 浪费标注 -->
+    <text x="1060" y="380" text-anchor="middle" class="text-label" fill="#9ca3af">
+      65-82%
+    </text>
+    <text x="1060" y="410" text-anchor="middle" class="text-label" fill="#9ca3af">
+      资源浪费
+    </text>
+  </g>
+  
+  <!-- 底部说明 -->
+  <rect x="300" y="800" width="1000" height="60" rx="8" fill="#FFE5E5"/>
+  <text x="800" y="840" text-anchor="middle" class="text-label" fill="#FF6B35" font-weight="600">
+    企业花大价钱搭建的K8s集群，70-80%的资源都在浪费
+  </text>
+  
+  <!-- 数据来源 -->
+  <text x="1550" y="880" text-anchor="end" class="text-small">
+    数据来源：36 Kubernetes Statistics 2025
+  </text>
+</svg>
+

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="impactTitle impactDesc">
+  <title id="impactTitle">K8s采用后成本影响</title>
+  <desc id="impactDesc">CNCF调查显示49%的组织采用K8s后云支出上升，仅24%实现成本节省</desc>
+  
+  <defs>
+    <style>
+      .bg { fill: #F5F5F5; }
+      .text-title { 
+        fill: #333333; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 42px;
+        font-weight: 700;
+      }
+      .text-label { 
+        fill: #333333; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 22px;
+      }
+      .text-percentage { 
+        fill: #333333; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 36px;
+        font-weight: 700;
+      }
+      .text-small { 
+        fill: #9ca3af; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 14px;
+      }
+    </style>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1600" height="900" class="bg"/>
+  
+  <!-- 标题 -->
+  <text x="800" y="100" text-anchor="middle" class="text-title">
+    采用K8s后的成本影响（CNCF调查）
+  </text>
+  
+  <!-- 饼图中心 -->
+  <g id="pieChart" transform="translate(500, 500)">
+    <!-- 云支出上升 49% (橙色警示) -->
+    <path d="M 0,-250 A 250,250 0 0,1 217.5,125 L 0,0 Z" fill="#FF6B35"/>
+    <text x="120" y="-120" text-anchor="middle" class="text-percentage" fill="#FFFFFF">
+      49%
+    </text>
+    
+    <!-- 无明显变化 27% (灰色) -->
+    <path d="M 217.5,125 A 250,250 0 0,1 -108.25,229.5 L 0,0 Z" fill="#9ca3af"/>
+    <text x="120" y="150" text-anchor="middle" class="text-percentage" fill="#FFFFFF">
+      27%
+    </text>
+    
+    <!-- 成本节省 24% (绿色) -->
+    <path d="M -108.25,229.5 A 250,250 0 0,1 0,-250 L 0,0 Z" fill="#00a400"/>
+    <text x="-60" y="60" text-anchor="middle" class="text-percentage" fill="#FFFFFF">
+      24%
+    </text>
+  </g>
+  
+  <!-- 图例 -->
+  <g id="legend" transform="translate(850, 350)">
+    <!-- 云支出上升 -->
+    <rect x="0" y="0" width="400" height="80" rx="8" fill="#FFE5E5"/>
+    <rect x="20" y="25" width="30" height="30" rx="4" fill="#FF6B35"/>
+    <text x="70" y="40" class="text-label" font-weight="600">
+      云支出上升
+    </text>
+    <text x="70" y="65" class="text-label" fill="#FF6B35">
+      49% 的组织
+    </text>
+    
+    <!-- 无明显变化 -->
+    <rect x="0" y="100" width="400" height="80" rx="8" fill="#F5F5F5" stroke="#E0E0E0" stroke-width="1"/>
+    <rect x="20" y="125" width="30" height="30" rx="4" fill="#9ca3af"/>
+    <text x="70" y="140" class="text-label" font-weight="600">
+      无明显变化
+    </text>
+    <text x="70" y="165" class="text-label" fill="#6b7280">
+      27% 的组织
+    </text>
+    
+    <!-- 成本节省 -->
+    <rect x="0" y="200" width="400" height="80" rx="8" fill="#E8F5E9"/>
+    <rect x="20" y="225" width="30" height="30" rx="4" fill="#00a400"/>
+    <text x="70" y="240" class="text-label" font-weight="600">
+      成本节省
+    </text>
+    <text x="70" y="265" class="text-label" fill="#00a400">
+      仅24% 的组织
+    </text>
+  </g>
+  
+  <!-- 关键发现 -->
+  <rect x="200" y="790" width="1200" height="70" rx="12" fill="#FFF3E0" stroke="#FF6B35" stroke-width="2"/>
+  <text x="800" y="818" text-anchor="middle" style="font-size: 16px; fill: #6b7280; font-family: -apple-system, sans-serif;">
+    关键发现
+  </text>
+  <text x="800" y="845" text-anchor="middle" style="font-size: 22px; font-weight: 700; fill: #FF6B35; font-family: -apple-system, sans-serif;">
+    近一半组织采用K8s后成本不降反升
+  </text>
+  
+  <!-- 数据来源 -->
+  <text x="1550" y="880" text-anchor="end" class="text-small">
+    数据来源：CNCF Survey
+  </text>
+</svg>
+

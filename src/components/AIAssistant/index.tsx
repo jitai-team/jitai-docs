@@ -218,15 +218,10 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ className, visible = true }) 
     };
   }, []); // 空依赖数组，只在组件挂载时执行一次
 
-  // 即使 visible 为 false，SDK 仍会在后台加载（通过 useEffect），只是不显示 UI
-  if (!visible) {
-    return null;
-  }
-
   return (
     <div className={className}>
       {/* AI 助手悬浮图标 */}
-      {!isAssistantOpen && (
+      {(!isAssistantOpen && visible) && (
         <button
           onClick={() => setIsAssistantOpen(true)}
           className={styles.aiAssistantButton}

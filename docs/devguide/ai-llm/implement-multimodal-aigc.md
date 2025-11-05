@@ -60,7 +60,7 @@ In the configuration panel, select an appropriate model and configure the prompt
 #### Example {#text-to-video-example}
 
 <VideoPlayer
-  url={require('./img/3/text-to-video-example.mp4').default}
+  url="https://jit-www.oss-cn-beijing.aliyuncs.com/text-to-video-example.mp4"
   controls={true}
   autoplay={false}
   muted={false}

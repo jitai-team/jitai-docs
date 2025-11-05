@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="heroTitle heroDesc">
+  <title id="heroTitle">K8s资源利用率鸿沟</title>
+  <desc id="heroDesc">展示云厂商宣传的理想资源利用率与企业实际情况的巨大差距</desc>
+  
+  <defs>
+    <style>
+      .bg { fill: #F5F5F5; }
+      .primary { fill: #326DFF; }
+      .primary-light { fill: #8EAEFF; }
+      .accent { fill: #FF6B35; }
+      .text-title { 
+        fill: #333333; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 48px;
+        font-weight: 700;
+      }
+      .text-large { 
+        fill: #333333; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 72px;
+        font-weight: 700;
+      }
+      .text-medium { 
+        fill: #6b7280; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 24px;
+      }
+      .text-small { 
+        fill: #9ca3af; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        font-size: 14px;
+      }
+      .warning-bg { fill: #FFF3E0; }
+    </style>
+    
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#326DFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8EAEFF;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B35;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFB020;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1600" height="900" class="bg"/>
+  
+  <!-- 顶部标题区 -->
+  <text x="800" y="120" text-anchor="middle" class="text-title">
+    K8s资源利用率：理想 vs 现实
+  </text>
+  
+  <!-- 左侧：云厂商宣传 -->
+  <g id="ideal">
+    <!-- 标签 -->
+    <rect x="150" y="200" width="500" height="80" rx="12" class="primary" opacity="0.1"/>
+    <text x="400" y="250" text-anchor="middle" class="text-medium">
+      云厂商宣传
+    </text>
+    
+    <!-- 柱状图 -->
+    <rect x="200" y="320" width="120" height="450" rx="8" fill="url(#blueGradient)"/>
+    <text x="260" y="550" text-anchor="middle" class="text-large" fill="#FFFFFF">
+      85%
+    </text>
+    
+    <!-- 说明 -->
+    <text x="260" y="800" text-anchor="middle" class="text-medium">
+      理想利用率
+    </text>
+    
+    <!-- 图标装饰 -->
+    <circle cx="450" cy="400" r="60" class="primary" opacity="0.2"/>
+    <text x="450" y="420" text-anchor="middle" style="font-size: 48px; fill: #326DFF;">✓</text>
+  </g>
+  
+  <!-- 中间：巨大差距箭头 -->
+  <g id="gap">
+    <path d="M 680 450 L 920 450" stroke="#FF6B35" stroke-width="4" fill="none" stroke-dasharray="10,5"/>
+    <polygon points="920,450 900,440 900,460" fill="#FF6B35"/>
+    
+    <text x="800" y="430" text-anchor="middle" class="text-medium" fill="#FF6B35">
+      巨大鸿沟
+    </text>
+  </g>
+  
+  <!-- 右侧：企业实际 -->
+  <g id="reality">
+    <!-- 标签 -->
+    <rect x="950" y="200" width="500" height="80" rx="12" class="warning-bg"/>
+    <text x="1200" y="250" text-anchor="middle" class="text-medium" fill="#FF6B35">
+      企业实际情况
+    </text>
+    
+    <!-- 柱状图（低） -->
+    <rect x="1000" y="660" width="120" height="110" rx="8" fill="#E0E0E0"/>
+    <rect x="1000" y="660" width="120" height="110" rx="8" fill="url(#orangeGradient)" opacity="0.6"/>
+    <text x="1060" y="720" text-anchor="middle" class="text-large" fill="#333333">
+      19%
+    </text>
+    
+    <!-- 浪费空间 -->
+    <rect x="1000" y="320" width="120" height="330" rx="8" fill="#E0E0E0" opacity="0.3"/>
+    <text x="1060" y="480" text-anchor="middle" class="text-medium" fill="#9ca3af">
+      资源浪费
+    </text>
+    
+    <!-- 说明 -->
+    <text x="1060" y="800" text-anchor="middle" class="text-medium">
+      实际利用率
+    </text>
+    
+    <!-- 警告图标 -->
+    <circle cx="1350" cy="500" r="60" class="accent" opacity="0.2"/>
+    <text x="1350" y="520" text-anchor="middle" style="font-size: 48px; fill: #FF6B35;">⚠</text>
+  </g>
+  
+  <!-- 底部来源 -->
+  <text x="1550" y="880" text-anchor="end" class="text-small">
+    数据来源：36 Kubernetes Statistics 2025
+  </text>
+</svg>
+

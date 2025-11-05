@@ -4,6 +4,7 @@ import { AI_ASSISTANT_CONFIG, AI_ASSISTANT_EVENTS } from './constant';
 
 interface AIAssistantProps {
   className?: string;
+  visible?: boolean; // 是否显示 AI 助手，默认为 true。即使为 false，SDK 也会在后台加载
 }
 
 /**
@@ -146,7 +147,7 @@ const generateBrowserFingerprint = async (): Promise<string> => {
   return fingerprint;
 };
 
-const AIAssistant: React.FC<AIAssistantProps> = ({ className }) => {
+const AIAssistant: React.FC<AIAssistantProps> = ({ className, visible = true }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const scriptLoadedRef = useRef<boolean>(false);
   const [isAssistantOpen, setIsAssistantOpen] = useState(false);
@@ -216,6 +217,11 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ className }) => {
       // Cleanup if needed
     };
   }, []); // 空依赖数组，只在组件挂载时执行一次
+
+  // 即使 visible 为 false，SDK 仍会在后台加载（通过 useEffect），只是不显示 UI
+  if (!visible) {
+    return null;
+  }
 
   return (
     <div className={className}>

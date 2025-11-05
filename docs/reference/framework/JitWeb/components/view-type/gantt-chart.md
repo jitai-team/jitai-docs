@@ -1,5 +1,8 @@
 ---
 slug: gantt-chart
+title: "Gantt Chart Reference"
+description: "Gantt Chart Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Gantt Chart"
 ---
 # Gantt Chart
 Gantt chart is a project progress and time management visualization component, implemented based on VTable Gantt chart library to provide intuitive display of task timelines. It handles task progress tracking, time dependency relationship display, and progress adjustment interactions, supporting drag-and-drop modifications, multi-time dimension switching, and real-time data updates. It is suitable for business scenarios such as project management, production planning, and resource scheduling.

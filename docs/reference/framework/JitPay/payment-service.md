@@ -1,6 +1,9 @@
 ---
 sidebar_position: 3
 slug: payment-service
+title: "Payment Service Reference"
+description: "Payment Service Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Payment Service"
 ---
 
 # Payment Service

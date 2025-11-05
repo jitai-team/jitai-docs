@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: using-ai-assistants-in-component-pages
+description: "在组件化页面中使用AI助理的详细指南和说明。"
 ---
 
 # 在组件化页面中使用AI助理

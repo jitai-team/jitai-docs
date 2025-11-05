@@ -1,6 +1,7 @@
 ---
 sidebar_position: 8
 slug: extended-table-model
+description: "Extend data tables with business fields through flexible associations. Multi-table data integration without modifying base table structure."
 ---
 
 # Extension Table Model

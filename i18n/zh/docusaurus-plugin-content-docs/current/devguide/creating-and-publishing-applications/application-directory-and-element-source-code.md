@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: application-directory-and-element-source-code
+description: "应用目录和元素源码的详细指南和说明。"
 ---
 
 # 应用目录和元素源码

@@ -1,5 +1,8 @@
 ---
 slug: regular-approval
+title: "Regular Approval Reference"
+description: "Regular Approval Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Regular Approval"
 ---
 # Regular Approval
 Regular Approval is the core element of enterprise workflow management, implementing complete approval process handling capabilities based on the JitWorkflow approval engine. It is responsible for approval node configuration, approver assignment, conditional branching, and parallel processing, supporting various approval modes and complex approval strategies to meet approval requirements in different business scenarios.

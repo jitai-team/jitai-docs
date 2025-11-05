@@ -20,7 +20,7 @@ export default function BlogPostPageWrapper(props: Props): React.ReactElement {
   };
 
   return (
-    <PageLayout title={title} description={description} containerClassName="blog-post-page" withLayout={false}>
+    <PageLayout pageId="blog-post" title={title} description={description} containerClassName="blog-post-page" withLayout={false}>
       <div className={styles.blogPostWrapper}>
         <BlogPostPage {...blogPostProps} />
       </div>

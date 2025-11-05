@@ -1,6 +1,9 @@
 ---
 sidebar_position: 1
 slug: ElementAttrDict
+title: "ElementAttrDict Reference"
+description: "ElementAttrDict Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "ElementAttrDict"
 ---
 
 # ElementAttrDict

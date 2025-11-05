@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: agent-input-output
+description: "Configure Agent input and output parameters. Define agent inputs, outputs, and response formatting."
 ---
 
 # Agent Input and Output

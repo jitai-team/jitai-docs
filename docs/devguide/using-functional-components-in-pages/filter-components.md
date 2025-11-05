@@ -2,6 +2,7 @@
 sidebar_position: 6
 slug: filter-components
 title: Filter Components
+description: "Filter data with model filters and universal filters. Extract specific data subsets with customizable search parameters and criteria."
 ---
 
 # Filter Components

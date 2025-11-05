@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: approval-node-configuration
+description: "审批节点配置的详细指南和说明。"
 ---
 
 # 审批节点配置

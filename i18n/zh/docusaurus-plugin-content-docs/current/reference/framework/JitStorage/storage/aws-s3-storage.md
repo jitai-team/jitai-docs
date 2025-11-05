@@ -1,5 +1,6 @@
 ---
 slug: aws-s3-storage
+description: "AWS S3存储 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # AWS S3存储
 AWS S3存储是面向全球化云存储的Type元素，基于Amazon Simple Storage Service实现海量数据存储、全球CDN加速和企业级安全管控。它提供标准化的文件上传、下载、删除操作，集成AWS生态的访问控制和权限管理，支持多种存储类型和数据备份策略，确保数据安全性和高可用性。

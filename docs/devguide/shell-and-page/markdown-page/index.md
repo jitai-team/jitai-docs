@@ -1,5 +1,6 @@
 ---
 sidebar_position: 6
+description: "Create markdown pages for help documentation, announcements, and agreements. Write content using markdown syntax in JitAi development tools."
 ---
 
 # Markdown Pages

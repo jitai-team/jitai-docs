@@ -1,6 +1,7 @@
 ---
 sidebar_position: 17
 slug: /devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant
+description: "开发人机协作与UI集成的企业级助理。AI处理决策，人工提供质量控制。"
 ---
 
 # 开发与UI页面协作的人机协作式企业级AI助理应用
@@ -207,7 +208,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 ### 示例源码 {#source-code}
 
-下载地址: <a href="https://jit-www.oss-cn-beijing.aliyuncs.com/docs/ai-grade-demo/whwy.quickTutorial.0_0_0.zip">AI阅卷Demo源码</a>。
+下载地址: <a href="https://jit-www.oss-accelerate.aliyuncs.com/docs/ai-grade-demo/whwy.quickTutorial.0_0_0.zip">AI阅卷Demo源码</a>。
 
 进入[JitNode控制台](/docs/devguide/creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment), 导入即可。
 

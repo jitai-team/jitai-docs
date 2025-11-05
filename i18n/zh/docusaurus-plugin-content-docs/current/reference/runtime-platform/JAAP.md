@@ -1,6 +1,7 @@
 ---
 sidebar_position: 0
 slug: JAAP
+description: "JAAP（JitAi Application Protocol） API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # JAAP（JitAi Application Protocol）

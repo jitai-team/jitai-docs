@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: visual-development-tool
+description: "可视化开发工具的详细指南和说明。"
 ---
 
 # 可视化开发工具
@@ -51,21 +52,24 @@ JitAi为开发者提供了可视化和全代码、编程与编排双模式的应
 ## 应用设置 {#application-settings}
 在IDE的左侧区域点击`设置`标签页，即可打开应用设置。
 
+### 基本信息 {#basic-information}
+
 ![设置应用基本信息](./img/ide/set-app-basic-info.png)
 
-### 基本信息 {#basic-information}
 在应用基本信息中，开发者可以设置应用的标题、logo、继承的应用以及版本、检查继承应用版本更新。
+
+### 默认元素 {#default-elements}
 
 ![设置应用默认元素](./img/ide/set-app-default-element.gif)
 
-### 默认元素 {#default-elements}
 在应用默认元素中，开发者可以设置应用的默认元素（门户、全局样式、数据库、缓存、文件存储、登录页）。
 
 开发者可以在设置的同时创建新的默认元素，例如：创建一个新的文件存储元素并设置为默认使用的文件存储。
 
+### 环境变量 {#environment-variables}
+
 ![设置应用环境变量值](./img/ide/set-app-environment-variables.png)
 
-### 环境变量 {#environment-variables}
 在应用环境变量中，开发者可以设置应用的环境变量值，设置后即可在当前运行环境下生效。
 
 ## 门户切换 {#portal-switching}

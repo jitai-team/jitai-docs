@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: how-to-translate-page-terms
+description: "如何翻译页面术语的详细指南和说明。"
 ---
 
 # 如何翻译页面术语

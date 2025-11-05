@@ -1,6 +1,7 @@
 ---
 sidebar_position: 10
 slug: calling-data-models-in-pages-and-functions
+description: "在页面和函数逻辑中调用数据模型的详细指南和说明。"
 ---
 
 # 在页面和函数逻辑中调用数据模型

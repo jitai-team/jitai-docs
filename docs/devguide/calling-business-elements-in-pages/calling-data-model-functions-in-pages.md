@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: calling-data-model-functions-in-pages
+description: "Invoke data model functions for CRUD operations. Streamlined data operations without complex API calls using intuitive syntax."
 ---
 
 # Calling Data Model Functions in Pages

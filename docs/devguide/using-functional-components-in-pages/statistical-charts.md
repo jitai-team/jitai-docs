@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 slug: statistical-charts
+description: "统计图表配置指南。数据模型绑定、筛选条件、图例显示、多种图表类型支持数据可视化。"
 ---
 
 # 统计图表

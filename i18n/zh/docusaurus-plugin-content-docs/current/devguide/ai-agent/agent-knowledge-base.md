@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: agent-knowledge-base
+description: "使用知识库实现检索增强生成（RAG）的详细指南和说明。"
 ---
 
 # 使用知识库实现检索增强生成（RAG）

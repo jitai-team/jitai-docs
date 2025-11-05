@@ -4,7 +4,7 @@
 
 .blogPostWrapper :global(.col--9) {
   width: 100% !important;
-  max-width: 800px !important;
+  max-width: 1000px !important;
   margin: 0 auto !important;
   padding: 0 var(--space-8) !important;
 }
@@ -31,28 +31,4 @@
 
 
 
-/* 修改标签样式为普通文本，禁止点击 */
-
-
-.blogPostWrapper :global(.col--9 a[href*="tag"]) {
-  background: none !important;
-  border: none !important;
-  color: var(--text-primary) !important;
-  font-size: var(--font-size-sm) !important;
-  font-weight: var(--font-weight-normal) !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  border-radius: 0 !important;
-  cursor: default !important;
-  pointer-events: none !important;
-  text-decoration: none !important;
-  display: inline !important;
-}
-
-
-.blogPostWrapper :global(.col--9 a[href*="tag"]:hover) {
-  background: none !important;
-  color: var(--text-primary) !important;
-  transform: none !important;
-}
 

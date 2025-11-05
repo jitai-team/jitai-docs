@@ -1,6 +1,8 @@
 ---
 slug: microsoft-teams-organization
-title: Microsoft Teams Organization
+title: "Microsoft Teams Organization Reference"
+description: "Microsoft Teams Organization Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Microsoft Teams Organization"
 ---
 # Microsoft Teams Organization
 Microsoft Teams Organization is a specialized organization type in the JitAuth framework for integrating Microsoft Teams enterprise internal application organization architecture, implementing automatic synchronization and unified management of enterprise organization architecture based on Microsoft Graph API. It handles Microsoft Teams directory synchronization, department structure retrieval, and user authentication, supporting seamless integration with Microsoft Teams workspace and providing enterprise-level permission management and user relationship maintenance capabilities.

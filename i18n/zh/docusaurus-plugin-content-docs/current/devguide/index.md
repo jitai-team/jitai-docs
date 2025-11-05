@@ -1,5 +1,6 @@
 ---
 sidebar_position: 0
+description: "开发者指南导读的详细指南和说明。"
 ---
 
 import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
@@ -323,7 +324,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "配置表单中允许查看和编辑的字段", href: "devguide/shell-and-page/ai-data-management-page#configure-viewable-editable-fields-in-form" },
     { text: "配置批量编辑表单中展示的字段", href: "devguide/shell-and-page/ai-data-management-page#configure-fields-displayed-in-batch-edit-form" },
     { text: "启用AI数据管理助手", href: "devguide/shell-and-page/ai-data-management-page#enable-ai-data-management-assistant" },
-    { text: "转换为常规页面进行修改", href: "devguide/shell-and-page/ai-data-management-page#convert-to-regular-page-for-modification" }
+    { text: "转换为常规页面进行修改", href: "devguide/shell-and-page/ai-data-management-page#convert-to-generic-page-for-modification" }
   ]} />
 </IndexCard>
 
@@ -378,7 +379,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "使用样式", href: "devguide/frontend-ui-customization/page-customization#use-style" },
     { text: "使用本地资源", href: "devguide/frontend-ui-customization/page-customization#use-local-resources" },
     { text: "使用 Ant Design 的组件", href: "devguide/frontend-ui-customization/page-customization#use-ant-design-components" },
-    { text: "内嵌已有常规页面", href: "devguide/frontend-ui-customization/page-customization#embed-existing-regular-page" },
+    { text: "内嵌已有常规页面", href: "devguide/frontend-ui-customization/page-customization#embed-existing-generic-page" },
     { text: "使用标准组件", href: "devguide/frontend-ui-customization/page-customization#use-standard-component" },
     { text: "调用数据模型函数", href: "devguide/frontend-ui-customization/page-customization#call-data-model-function" },
     { text: "调用服务函数", href: "devguide/frontend-ui-customization/page-customization#call-service-function" },
@@ -1232,22 +1233,25 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   ]} />
 </IndexCard>
 
-<!-- <IndexCard
+<IndexCard
   title="将AI助手嵌入到外部网页中"
   href="devguide/ai-assistant/embed-assistant-to-web-page"
   description="将AI助手集成到任何网页中，实现深度双向交互能力。"
 >
   <LinkGrid links={[
+    { text: "什么是嵌入式AI助理", href: "devguide/ai-assistant/embed-assistant-to-web-page#what-is-embedded-ai-assistant" },
     { text: "核心优势", href: "devguide/ai-assistant/embed-assistant-to-web-page#core-advantages" },
     { text: "集成流程", href: "devguide/ai-assistant/embed-assistant-to-web-page#integration-process" },
-    { text: "创建可嵌入的AI助手页面", href: "devguide/ai-assistant/embed-assistant-to-web-page#creating-embeded-ai-assistant-page" },
+    { text: "创建嵌入式AI助理", href: "devguide/ai-assistant/embed-assistant-to-web-page#creating-embedded-ai-assistant" },
     { text: "嵌入到外部网页", href: "devguide/ai-assistant/embed-assistant-to-web-page#how-to-embeded-to-a-web-page" },
+    { text: "身份验证", href: "devguide/ai-assistant/embed-assistant-to-web-page#authentication" },
     { text: "AI调用网页函数", href: "devguide/ai-assistant/embed-assistant-to-web-page#how-to-call-page-functions" },
     { text: "网页订阅AI事件", href: "devguide/ai-assistant/embed-assistant-to-web-page#subscribe-ai-events" },
+    { text: "运行时配置", href: "devguide/ai-assistant/embed-assistant-to-web-page#runtime-config" },
     { text: "网页向AI发送消息", href: "devguide/ai-assistant/embed-assistant-to-web-page#send-message-to-ai" },
     { text: "JS SDK API参考", href: "devguide/ai-assistant/embed-assistant-to-web-page#js-sdk" }
   ]} />
-</IndexCard> -->
+</IndexCard>
 
 <IndexCard
   title="AI助理的API开放"
@@ -2121,7 +2125,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "使用样式", href: "devguide/frontend-ui-customization/page-customization#use-style" },
     { text: "使用本地资源", href: "devguide/frontend-ui-customization/page-customization#use-local-resources" },
     { text: "使用 Ant Design 的组件", href: "devguide/frontend-ui-customization/page-customization#use-ant-design-components" },
-    { text: "内嵌已有常规页面", href: "devguide/frontend-ui-customization/page-customization#embed-existing-regular-page" },
+    { text: "内嵌已有常规页面", href: "devguide/frontend-ui-customization/page-customization#embed-existing-generic-page" },
     { text: "使用标准组件", href: "devguide/frontend-ui-customization/page-customization#use-standard-component" },
     { text: "调用数据模型函数", href: "devguide/frontend-ui-customization/page-customization#call-data-model-function" },
     { text: "调用服务函数", href: "devguide/frontend-ui-customization/page-customization#call-service-function" },

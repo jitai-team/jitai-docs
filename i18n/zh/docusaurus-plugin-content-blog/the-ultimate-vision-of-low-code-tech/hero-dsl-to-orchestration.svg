@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 1600 900" 
+     role="img"
+     aria-labelledby="heroTitle heroDesc">
+  <title id="heroTitle">低代码的终极形态</title>
+  <desc id="heroDesc">从封闭的DSL黑盒转向开放的编排协议</desc>
+  
+  <defs>
+    <style>
+      .bg { fill: #F5F5F5; }
+      .primary { fill: #326DFF; }
+      .primary-light { fill: #8EAEFF; }
+      .gray-dark { fill: #6b7280; }
+      .gray { fill: #9ca3af; }
+      .accent { fill: #FF6B35; }
+      .text-dark { fill: #333333; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .text-white { fill: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .text-gray { fill: #6b7280; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+    </style>
+    
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.15"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1600" height="900" class="bg"/>
+  
+  <!-- 主标题 -->
+  <text x="800" y="150" text-anchor="middle" class="text-dark" font-size="32" font-weight="700">
+    低代码的终极形态
+  </text>
+  
+  <!-- 副标题 -->
+  <text x="800" y="190" text-anchor="middle" class="text-gray" font-size="20">
+    从封闭黑盒到开放编排
+  </text>
+  
+  <!-- 左侧：封闭的DSL黑盒 -->
+  <g id="dsl-blackbox" transform="translate(200, 280)">
+    <!-- 黑盒主体 -->
+    <rect x="0" y="0" width="300" height="350" rx="8" class="gray-dark" filter="url(#shadow)"/>
+    
+    <!-- 锁链符号 -->
+    <g transform="translate(130, 40)">
+      <circle cx="0" cy="0" r="15" fill="none" stroke="#4b5563" stroke-width="6"/>
+      <circle cx="40" cy="0" r="15" fill="none" stroke="#4b5563" stroke-width="6"/>
+      <rect x="8" y="-3" width="24" height="6" fill="#4b5563"/>
+    </g>
+    
+    <!-- DSL引擎文字 -->
+    <text x="150" y="150" text-anchor="middle" class="text-white" font-size="20" font-weight="600">
+      DSL引擎
+    </text>
+    
+    <!-- 特征标注 -->
+    <text x="150" y="220" text-anchor="middle" class="text-gray" font-size="14">
+      封闭
+    </text>
+    <text x="150" y="250" text-anchor="middle" class="text-gray" font-size="14">
+      受限
+    </text>
+    <text x="150" y="280" text-anchor="middle" class="text-gray" font-size="14">
+      等待
+    </text>
+  </g>
+  
+  <!-- 中间：转变箭头 -->
+  <g id="arrow" transform="translate(550, 455)">
+    <path d="M 0 0 L 450 0" stroke="#FF6B35" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="225" y="-15" text-anchor="middle" class="text-dark" font-size="16" font-weight="600">
+      技术路线转变
+    </text>
+  </g>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#FF6B35"/>
+    </marker>
+  </defs>
+  
+  <!-- 右侧：开放的编排协议 -->
+  <g id="orchestration" transform="translate(1050, 280)">
+    <!-- 网格结构背景 -->
+    <rect x="0" y="0" width="300" height="350" rx="8" fill="#E8F0FE" filter="url(#shadow)"/>
+    
+    <!-- 网格节点 -->
+    <g id="grid-nodes">
+      <!-- 第一行节点 -->
+      <circle cx="75" cy="100" r="12" class="primary"/>
+      <circle cx="150" cy="100" r="12" class="primary"/>
+      <circle cx="225" cy="100" r="12" class="primary"/>
+      
+      <!-- 第二行节点 -->
+      <circle cx="75" cy="175" r="12" class="primary"/>
+      <circle cx="150" cy="175" r="12" class="primary"/>
+      <circle cx="225" cy="175" r="12" class="primary"/>
+      
+      <!-- 第三行节点 -->
+      <circle cx="75" cy="250" r="12" class="primary"/>
+      <circle cx="150" cy="250" r="12" class="primary"/>
+      <circle cx="225" cy="250" r="12" class="primary"/>
+      
+      <!-- 连接线 -->
+      <line x1="75" y1="100" x2="150" y2="100" stroke="#8EAEFF" stroke-width="2"/>
+      <line x1="150" y1="100" x2="225" y2="100" stroke="#8EAEFF" stroke-width="2"/>
+      <line x1="75" y1="175" x2="150" y2="175" stroke="#8EAEFF" stroke-width="2"/>
+      <line x1="150" y1="175" x2="225" y2="175" stroke="#8EAEFF" stroke-width="2"/>
+      <line x1="75" y1="100" x2="75" y2="175" stroke="#8EAEFF" stroke-width="2"/>
+      <line x1="150" y1="100" x2="150" y2="175" stroke="#8EAEFF" stroke-width="2"/>
+      <line x1="225" y1="100" x2="225" y2="175" stroke="#8EAEFF" stroke-width="2"/>
+      <line x1="75" y1="175" x2="75" y2="250" stroke="#8EAEFF" stroke-width="2"/>
+      <line x1="150" y1="175" x2="150" y2="250" stroke="#8EAEFF" stroke-width="2"/>
+      <line x1="225" y1="175" x2="225" y2="250" stroke="#8EAEFF" stroke-width="2"/>
+    </g>
+    
+    <!-- 编排协议文字 -->
+    <text x="150" y="60" text-anchor="middle" class="primary" font-size="20" font-weight="600">
+      编排协议
+    </text>
+    
+    <!-- 特征标注 -->
+    <text x="150" y="300" text-anchor="middle" class="primary" font-size="14">
+      开放
+    </text>
+    <text x="150" y="325" text-anchor="middle" class="primary" font-size="14">
+      扩展
+    </text>
+  </g>
+</svg>
+

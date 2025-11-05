@@ -1,5 +1,8 @@
 ---
 slug: approval-workflowing
+title: "Approval Processing Reference"
+description: "Approval Processing Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Approval Processing"
 ---
 # Approval Processing
 

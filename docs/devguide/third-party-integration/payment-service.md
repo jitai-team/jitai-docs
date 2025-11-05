@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: payment-service
+description: "Integrate payment gateways for transactions. Connect Alipay, WeChat Pay, Stripe, and other payment providers."
 title: Built-in Payment Services
 ---
 

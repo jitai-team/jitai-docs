@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: integrate-knowledge-base-into-agent
+description: "Integrate knowledge bases with AI Agents. Enable agents to access and retrieve relevant documents for contextual responses."
 ---
 
 # Integrating Knowledge Base Into Agent

@@ -1,5 +1,8 @@
 ---
 slug: disk-storage
+title: "Disk Storage Reference"
+description: "Disk Storage Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Disk Storage"
 ---
 # Disk Storage
 

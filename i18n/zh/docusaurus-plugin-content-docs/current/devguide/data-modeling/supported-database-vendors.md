@@ -1,6 +1,7 @@
 ---
 sidebar_position: 13
 slug: supported-database-vendors
+description: "支持的数据库厂商的详细指南和说明。"
 ---
 
 # 支持的数据库厂商

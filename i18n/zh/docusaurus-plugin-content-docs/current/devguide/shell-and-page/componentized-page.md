@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1.5
+description: "组件化页面的详细指南和说明。"
 ---
 # 组件化页面
 

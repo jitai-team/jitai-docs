@@ -1,6 +1,7 @@
 ---
 sidebar_position: 16
 slug: /devguide/ai-assistant/develop-conversational-multi-task-ai-assistant
+description: "Build conversational AI assistant handling multiple tasks. Integrate content optimization, customer service, and quotation capabilities."
 ---
 
 # Developing Conversational Multi-Task AI Assistant
@@ -34,7 +35,7 @@ After creation, configure the following:
 
 Create a knowledge base element named **Customer Service Knowledge**. For the creation process, refer to: [Creating Knowledge Base](/docs/devguide/knowledge-base/create-knowledge-elements).
 
-After creation, add <a href="https://jit-www.oss-cn-beijing.aliyuncs.com/docs/ai-multi-task-demo/customer-service-knowledge-en.md">Customer Service Knowledge Examples</a>. For the addition method, refer to: [Knowledge Base Document Management](/docs/devguide/knowledge-base/knowledge-base-document-management).
+After creation, add <a href="https://jit-www.oss-accelerate.aliyuncs.com/docs/ai-multi-task-demo/customer-service-knowledge-en.md">Customer Service Knowledge Examples</a>. For the addition method, refer to: [Knowledge Base Document Management](/docs/devguide/knowledge-base/knowledge-base-document-management).
 
 Create an AI Agent named **Customer Service Agent**. For the creation process, refer to: [Creating AI Agent](/docs/devguide/ai-agent/create-ai-agent).
 
@@ -64,7 +65,7 @@ Incorrect answer content example: "The method for xxxx has been provided, please
 ### Solution Agent
 Create a knowledge base element named **Quotation Knowledge**. For the creation process, refer to: [Creating Knowledge Base](/docs/devguide/knowledge-base/create-knowledge-elements).
 
-After creation, add <a href="https://jit-www.oss-cn-beijing.aliyuncs.com/docs/ai-multi-task-demo/quotetion-knowledge-en.md">Quotation Knowledge Examples</a>. For the addition method, refer to: [Knowledge Base Document Management](/docs/devguide/knowledge-base/knowledge-base-document-management).
+After creation, add <a href="https://jit-www.oss-accelerate.aliyuncs.com/docs/ai-multi-task-demo/quotetion-knowledge-en.md">Quotation Knowledge Examples</a>. For the addition method, refer to: [Knowledge Base Document Management](/docs/devguide/knowledge-base/knowledge-base-document-management).
 
 Create an AI Agent named **Solution Agent**. For the creation process, refer to: [Creating AI Agent](/docs/devguide/ai-agent/create-ai-agent).
 
@@ -451,7 +452,7 @@ An AI assistant can handle multiple different types of tasks. It is recommended 
 
 ## Example Source Code
 
-<a href="https://jit-www.oss-cn-beijing.aliyuncs.com/docs/ai-multi-task-demo/whwy.MultiTaskAssistantDemoEn.0_0_0.zip">Download Complete Sample Source Code</a>.
+<a href="https://jit-www.oss-accelerate.aliyuncs.com/docs/ai-multi-task-demo/whwy.MultiTaskAssistantDemoEn.0_0_0.zip">Download Complete Sample Source Code</a>.
 
 This example uses the qwen-max-latest large model from Alibaba Cloud Bailian platform. You need to first <a href="https://bailian.console.aliyun.com/?tab=model#/api-key" target="_blank">apply for an API Key</a>, then configure it in the application environment variables:
 

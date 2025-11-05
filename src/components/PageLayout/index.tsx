@@ -35,15 +35,6 @@ const PageLayout: React.FC<PageLayoutProps> = ({
   const finalTitle = title || pageMetadata.title;
   const finalDescription = description || pageMetadata.description;
 
-  useEffect(() => {
-    document.body.setAttribute('data-page-type', 'custom-layout');
-
-    // 清理函数：组件卸载时移除类名
-    return () => {
-      document.body.removeAttribute('data-page-type');
-    };
-  }, []);
-
   // 为子组件注入 currentLocale prop
   const childrenWithProps = React.Children.map(children, (child) => {
     if (isValidElement(child)) {
@@ -54,16 +45,18 @@ const PageLayout: React.FC<PageLayoutProps> = ({
 
   const content = (
     <>
-      <Head children={
-        <>
-          <title>{finalTitle}</title>
-          <meta name="description" content={finalDescription} />
-          <meta property="og:title" content={finalTitle} />
-          <meta property="og:description" content={finalDescription} />
-          <meta name="twitter:title" content={finalTitle} />
-          <meta name="twitter:description" content={finalDescription} />
-        </>
-      } />
+      <Head 
+        title={finalTitle}
+        titleTemplate="%s - JitAI"
+        meta={[
+          { name: 'description', content: finalDescription },
+          { property: 'og:title', content: finalTitle },
+          { property: 'og:description', content: finalDescription },
+          { name: 'twitter:title', content: finalTitle },
+          { name: 'twitter:description', content: finalDescription },
+        ]}
+        children={<></>}
+      />
       <div className={`${containerClassName} custom-page`}>
         <Navbar currentLocale={i18n.currentLocale}/>
         {childrenWithProps}

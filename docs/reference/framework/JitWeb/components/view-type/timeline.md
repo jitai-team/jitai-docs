@@ -1,5 +1,8 @@
 ---
 slug: timeline
+title: "Timeline Reference"
+description: "Timeline Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Timeline"
 ---
 # Timeline
 Timeline is a view component for displaying time-series data, implementing timeline-style data visualization based on data models. It is responsible for displaying data records in chronological order, supporting custom time positioning and providing interactive operations, with configurable toolbar buttons, color styles, and data filtering functionality.

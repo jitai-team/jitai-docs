@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: add-frontend-components
+description: "扩展自己的UI组件Type元素的详细指南和说明。"
 ---
 
 # 扩展自己的UI组件Type元素
@@ -200,18 +201,22 @@ import type { ComponentConfig } from 'components/Meta/frontend/type';
 import { Jit } from 'jit';
 
 export class CounterComponent extends Jit.BaseComponent {
-  public value: number;
 
   /**
    * 必须实现：获取组件变量列表
    * 用于可视化编辑器显示可用变量
+   * 此处声明变量后， jit会自动根据name生成 this.value = {
+   *  value : 0,
+   *  title : '当前值'
+   * } 这样Object类型的变量
    */
   static getVariableList(compConfig: Record<string, any>) {
     return [
       {
         name: 'value',
         title: '当前值',
-        dataType: 'Numeric'
+        dataType: 'Numeric',
+        value:0
       }
     ];
   }
@@ -246,11 +251,11 @@ export class CounterComponent extends Jit.BaseComponent {
 
   constructor(componentInfo: ComponentConfig<any>) {
     super(componentInfo);
-    this.value = this.config?.initialValue || 0;
+    this.value.value = this.config?.initialValue || 0;
   }
 
   getValue(): number {
-    return this.value;
+    return this.value.value;
   }
 
   async init() {

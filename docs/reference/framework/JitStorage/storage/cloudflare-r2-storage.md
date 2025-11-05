@@ -1,6 +1,8 @@
 ---
 slug: cloudflare-r2-storage
-title: Cloudflare R2 Storage
+title: "Cloudflare R2 Storage Reference"
+description: "Cloudflare R2 Storage Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Cloudflare R2 Storage"
 ---
 # Cloudflare R2 Storage
 Cloudflare R2 Storage is a Type element for high-performance edge cloud storage, implementing global distributed data storage, zero egress fees, and enterprise-level performance optimization based on Cloudflare R2 object storage service. It provides standardized file upload, download, and delete operations, is compatible with S3 API interfaces, and offers excellent cost-effectiveness and global access performance.

@@ -33,6 +33,10 @@ export const PAGE_METADATA_EN: Record<string, PageMetadata> = {
     title: 'Blog',
     description: 'Explore the latest trends in AI application development, learn practical technical tutorials, and discover the latest features and success stories of the JitAI platform'
   },
+  'referral': {
+    title: 'JitAI Referral Rewards - Invite Friends to Earn App Quotas',
+    description: 'Invite friends to register JitAI. For each successful referral, your desktop license app limit increases by 1, up to a maximum of 10 apps. Join the referral program now!'
+  },
   
   // V1 pages
   'v1': {

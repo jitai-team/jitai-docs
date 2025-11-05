@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 slug: approval-workflow-usage
+description: "门户中的审批发起和待办的详细指南和说明。"
 ---
 
 # 门户中的审批发起和待办

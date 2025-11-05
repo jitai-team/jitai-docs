@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: role-portal-menu-permissions
+description: "Configure portal menu permissions by role. Control access to navigation menus and pages based on user roles in portals."
 ---
 
 # Role and Portal Menu Permissions

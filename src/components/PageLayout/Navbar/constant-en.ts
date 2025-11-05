@@ -17,6 +17,7 @@ const CONTENT = {
       label: 'Download',
       type: 'currentPage',
       url: '/download',
+      class: 'analytics-download',
     },
     {
       id: 'guide',

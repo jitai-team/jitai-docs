@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: generating-and-printing-files-using-file-templates
+description: "用文件模板生成和打印文件的详细指南和说明。"
 ---
 
 # 用文件模板生成和打印文件

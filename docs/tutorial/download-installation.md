@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: download-installation
+description: "Download and install JitAi for Windows, macOS, and Docker. Complete setup guide including activation, server deployment, and environment configuration."
 ---
 
 # Download and Installation
@@ -19,7 +20,7 @@ Supports Windows 10 and Windows 11 (64-bit).
 
 Installation steps:
 
-1. [Download the installer](https://apk.jit.pro/latest/windows/jit.exe).
+1. <a href="https://apk.jit.pro/latest/windows/jit.exe" className="analytics-downloadWindows">Download the installer</a>
 2. Run the .exe file and follow the installation wizard.
 3. Complete the activation process as prompted. See [Developer Team Management](../devguide/installation-activation/developer-team-management) for detailed instructions.
 
@@ -29,7 +30,7 @@ Requires macOS 12.6.0 (Monterey) or later.
 
 Installation steps:
 
-1. Download the appropriate installer: [Intel-based Macs](https://apk.jit.pro/latest/darwin/x64/jit.dmg) or [Apple Silicon Macs](https://apk.jit.pro/latest/darwin/arm/jit.dmg).
+1. Download the appropriate installer: <a href="https://apk.jit.pro/latest/darwin/arm/jit.dmg" className="analytics-downloadMac analytics-downloadMacApple">Apple Silicon Macs</a> or <a href="https://apk.jit.pro/latest/darwin/x64/jit.dmg" className="analytics-downloadMac analytics-downloadMacIntel">Intel-based Macs</a> 
 2. Open the .dmg file and follow the installation instructions.
 3. Complete the activation process as prompted. See [Developer Team Management](../devguide/installation-activation/developer-team-management) for detailed instructions.
 

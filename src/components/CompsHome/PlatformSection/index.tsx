@@ -32,6 +32,7 @@ const PlatformSection: React.FC<PlatformSectionProps> = ({ currentLocale }) => {
           {CONTENT.features.map((feature, index) => (
             <div
               className={`${globalStyles.baseCard} ${styles.featureCard} animatedChild`}
+              key={index}
             // style={{
             //   '--card-color': CONTENT.color,
             // } as React.CSSProperties}

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 slug: distributed-cluster-architecture
+description: "Scale from single-node to enterprise clusters. Four-layer architecture model with resource scheduling and load balancing capabilities."
 ---
 # Distributed Cluster Architecture for Unlimited Horizontal Scaling
 

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: ui-component-interface-specifications
+description: "UI component interface specifications for fullcode development. Component lifecycle, props, events, and API conventions."
 ---
 
 import Tabs from '@theme/Tabs';

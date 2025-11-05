@@ -1,0 +1,231 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <filter id="layerShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="0" dy="2"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.25"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#ffffff"/>
+  
+  <!-- Title -->
+  <text x="600" y="60" font-family="PingFang SC, sans-serif" font-size="28" font-weight="700" fill="#374151" text-anchor="middle">Meta/Type/Instance：复杂度分层控制</text>
+  
+  <!-- Three Layer Structure -->
+  
+  <!-- Meta Layer (Top) -->
+  <g id="metaLayer">
+    <rect x="150" y="120" width="900" height="140" rx="12" fill="#326DFF" filter="url(#layerShadow)"/>
+    
+    <!-- Layer Label -->
+    <g transform="translate(50, 180)">
+      <rect x="0" y="0" width="80" height="45" rx="6" fill="#326DFF"/>
+      <text x="40" y="18" font-family="PingFang SC, sans-serif" font-size="16" font-weight="700" fill="white" text-anchor="middle">Meta</text>
+      <text x="40" y="35" font-family="PingFang SC, sans-serif" font-size="11" fill="white" text-anchor="middle">元类别</text>
+    </g>
+    
+    <!-- Content -->
+    <g transform="translate(180, 150)">
+      <!-- Icon Examples -->
+      <g>
+        <rect x="0" y="0" width="60" height="60" rx="6" fill="white" opacity="0.25"/>
+        <text x="30" y="40" font-size="30" text-anchor="middle">🏠</text>
+      </g>
+      <g transform="translate(80, 0)">
+        <rect x="0" y="0" width="60" height="60" rx="6" fill="white" opacity="0.25"/>
+        <text x="30" y="40" font-size="30" text-anchor="middle">📄</text>
+      </g>
+      <g transform="translate(160, 0)">
+        <rect x="0" y="0" width="60" height="60" rx="6" fill="white" opacity="0.25"/>
+        <text x="30" y="40" font-size="30" text-anchor="middle">🧩</text>
+      </g>
+      <g transform="translate(240, 0)">
+        <rect x="0" y="0" width="60" height="60" rx="6" fill="white" opacity="0.25"/>
+        <text x="30" y="40" font-size="30" text-anchor="middle">🗄️</text>
+      </g>
+      <g transform="translate(320, 0)">
+        <text x="30" y="35" font-size="24" fill="white" text-anchor="middle" opacity="0.6">...</text>
+      </g>
+      
+      <!-- Labels -->
+      <text x="30" y="80" font-family="PingFang SC, sans-serif" font-size="13" fill="white" text-anchor="middle">门户</text>
+      <text x="110" y="80" font-family="PingFang SC, sans-serif" font-size="13" fill="white" text-anchor="middle">页面</text>
+      <text x="190" y="80" font-family="PingFang SC, sans-serif" font-size="13" fill="white" text-anchor="middle">组件</text>
+      <text x="270" y="80" font-family="PingFang SC, sans-serif" font-size="13" fill="white" text-anchor="middle">模型</text>
+    </g>
+    
+    <!-- Characteristics -->
+    <g transform="translate(570, 150)">
+      <text x="0" y="20" font-family="PingFang SC, sans-serif" font-size="14" font-weight="600" fill="white">领域定义</text>
+      <text x="0" y="45" font-family="PingFang SC, sans-serif" font-size="13" fill="white" opacity="0.9">• 最抽象、最宏观，变化最少</text>
+      <text x="0" y="65" font-family="PingFang SC, sans-serif" font-size="13" fill="white" opacity="0.9">• JitAi已实现多种Meta（门户、页面、组件、模型等），可扩展</text>
+      <text x="0" y="85" font-family="PingFang SC, sans-serif" font-size="13" fill="white" opacity="0.9">• 框架开发者负责</text>
+    </g>
+    
+    <!-- Complexity Label -->
+    <g transform="translate(980, 190)">
+      <circle cx="0" cy="0" r="45" fill="white" opacity="0.25"/>
+      <text x="0" y="8" font-family="PingFang SC, sans-serif" font-size="24" font-weight="700" fill="white" text-anchor="middle">10%</text>
+      <text x="0" y="-20" font-family="PingFang SC, sans-serif" font-size="12" fill="white" text-anchor="middle">复杂度</text>
+    </g>
+  </g>
+  
+  <!-- Arrow Down -->
+  <g transform="translate(600, 260)">
+    <line x1="0" y1="0" x2="0" y2="40" stroke="#326DFF" stroke-width="3" marker-end="url(#arrowBlue)"/>
+    <text x="15" y="22" font-family="PingFang SC, sans-serif" font-size="12" fill="#6b7280">继承</text>
+  </g>
+  
+  <!-- Type Layer (Middle) -->
+  <g id="typeLayer">
+    <rect x="150" y="300" width="900" height="180" rx="12" fill="#5D8DFF" filter="url(#layerShadow)"/>
+    
+    <!-- Layer Label -->
+    <g transform="translate(50, 375)">
+      <rect x="0" y="0" width="80" height="45" rx="6" fill="#5D8DFF"/>
+      <text x="40" y="18" font-family="PingFang SC, sans-serif" font-size="16" font-weight="700" fill="white" text-anchor="middle">Type</text>
+      <text x="40" y="35" font-family="PingFang SC, sans-serif" font-size="11" fill="white" text-anchor="middle">类型</text>
+    </g>
+    
+    <!-- Content -->
+    <g transform="translate(180, 352)">
+      <!-- Type Examples -->
+      <g>
+        <rect x="0" y="0" width="105" height="75" rx="8" fill="white" opacity="0.25"/>
+        <text x="52.5" y="26" font-family="PingFang SC, sans-serif" font-size="12" font-weight="600" fill="white" text-anchor="middle">开发者</text>
+        <text x="52.5" y="43" font-family="PingFang SC, sans-serif" font-size="12" font-weight="600" fill="white" text-anchor="middle">门户</text>
+        <text x="52.5" y="60" font-family="sans-serif" font-size="9" fill="white" opacity="0.8" text-anchor="middle">(基于门户Meta)</text>
+      </g>
+      <g transform="translate(115, 0)">
+        <rect x="0" y="0" width="105" height="75" rx="8" fill="white" opacity="0.25"/>
+        <text x="52.5" y="26" font-family="PingFang SC, sans-serif" font-size="12" font-weight="600" fill="white" text-anchor="middle">AI数据</text>
+        <text x="52.5" y="43" font-family="PingFang SC, sans-serif" font-size="12" font-weight="600" fill="white" text-anchor="middle">分析页面</text>
+        <text x="52.5" y="60" font-family="sans-serif" font-size="9" fill="white" opacity="0.8" text-anchor="middle">(基于页面Meta)</text>
+      </g>
+      <g transform="translate(230, 0)">
+        <rect x="0" y="0" width="105" height="75" rx="8" fill="white" opacity="0.25"/>
+        <text x="52.5" y="26" font-family="PingFang SC, sans-serif" font-size="12" font-weight="600" fill="white" text-anchor="middle">数据表格</text>
+        <text x="52.5" y="43" font-family="PingFang SC, sans-serif" font-size="12" font-weight="600" fill="white" text-anchor="middle">组件</text>
+        <text x="52.5" y="60" font-family="sans-serif" font-size="9" fill="white" opacity="0.8" text-anchor="middle">(基于组件Meta)</text>
+      </g>
+      <g transform="translate(345, 0)">
+        <rect x="0" y="0" width="105" height="75" rx="8" fill="white" opacity="0.25"/>
+        <text x="52.5" y="26" font-family="PingFang SC, sans-serif" font-size="12" font-weight="600" fill="white" text-anchor="middle">数据库表</text>
+        <text x="52.5" y="43" font-family="PingFang SC, sans-serif" font-size="12" font-weight="600" fill="white" text-anchor="middle">模型</text>
+        <text x="52.5" y="60" font-family="sans-serif" font-size="9" fill="white" opacity="0.8" text-anchor="middle">(基于模型Meta)</text>
+      </g>
+      <g transform="translate(460, 30)">
+        <text x="0" y="0" font-size="20" fill="white" text-anchor="middle" opacity="0.6">...</text>
+      </g>
+    </g>
+    
+    <!-- Characteristics -->
+    <g transform="translate(680, 352)">
+      <text x="0" y="15" font-family="PingFang SC, sans-serif" font-size="14" font-weight="600" fill="white">技术实现封装</text>
+      <text x="0" y="32" font-family="PingFang SC, sans-serif" font-size="12" fill="white" opacity="0.9">• 封装复杂技术，暴露配置项</text>
+      <text x="0" y="47" font-family="PingFang SC, sans-serif" font-size="12" fill="white" opacity="0.9">• 内置丰富Type库（门户、页面、</text>
+      <text x="0" y="62" font-family="PingFang SC, sans-serif" font-size="12" fill="white" opacity="0.9">  组件、模型等）</text>
+      <text x="0" y="77" font-family="PingFang SC, sans-serif" font-size="12" fill="white" opacity="0.9">• 开发者可扩展或重写</text>
+    </g>
+    
+    <!-- Complexity Label -->
+    <g transform="translate(980, 390)">
+      <circle cx="0" cy="0" r="45" fill="white" opacity="0.25"/>
+      <text x="0" y="8" font-family="PingFang SC, sans-serif" font-size="24" font-weight="700" fill="white" text-anchor="middle">85%</text>
+      <text x="0" y="-20" font-family="PingFang SC, sans-serif" font-size="12" fill="white" text-anchor="middle">复杂度</text>
+    </g>
+  </g>
+  
+  <!-- Arrow Down -->
+  <g transform="translate(600, 480)">
+    <line x1="0" y1="0" x2="0" y2="40" stroke="#5D8DFF" stroke-width="3" marker-end="url(#arrowMid)"/>
+    <text x="15" y="22" font-family="PingFang SC, sans-serif" font-size="12" fill="#6b7280">配置</text>
+  </g>
+  
+  <!-- Instance Layer (Bottom) -->
+  <g id="instanceLayer">
+    <rect x="150" y="520" width="900" height="190" rx="12" fill="#8EAEFF" filter="url(#layerShadow)"/>
+    
+    <!-- Layer Label -->
+    <g transform="translate(50, 592)">
+      <rect x="0" y="0" width="80" height="45" rx="6" fill="#8EAEFF"/>
+      <text x="40" y="18" font-family="PingFang SC, sans-serif" font-size="16" font-weight="700" fill="white" text-anchor="middle">Instance</text>
+      <text x="40" y="35" font-family="PingFang SC, sans-serif" font-size="11" fill="white" text-anchor="middle">实例</text>
+    </g>
+    
+    <!-- Content -->
+    <g transform="translate(170, 580)">
+      <!-- Instance Examples -->
+      <g>
+        <rect x="0" y="0" width="120" height="70" rx="8" fill="white" opacity="0.3"/>
+        <text x="60" y="22" font-family="PingFang SC, sans-serif" font-size="11" font-weight="600" fill="#326DFF" text-anchor="middle">应用开发</text>
+        <text x="60" y="36" font-family="PingFang SC, sans-serif" font-size="11" font-weight="600" fill="#326DFF" text-anchor="middle">门户</text>
+        <text x="60" y="50" font-family="sans-serif" font-size="8.5" fill="#6b7280" text-anchor="middle">在线编辑开发应用</text>
+        <text x="60" y="62" font-family="sans-serif" font-size="8.5" fill="#9ca3af" text-anchor="middle">(开发者门户实例)</text>
+      </g>
+      <g transform="translate(130, 0)">
+        <rect x="0" y="0" width="120" height="70" rx="8" fill="white" opacity="0.3"/>
+        <text x="60" y="22" font-family="PingFang SC, sans-serif" font-size="11" font-weight="600" fill="#326DFF" text-anchor="middle">销售漏斗</text>
+        <text x="60" y="36" font-family="PingFang SC, sans-serif" font-size="11" font-weight="600" fill="#326DFF" text-anchor="middle">分析页面</text>
+        <text x="60" y="50" font-family="sans-serif" font-size="8.5" fill="#6b7280" text-anchor="middle">AI智能分析配置</text>
+        <text x="60" y="62" font-family="sans-serif" font-size="8.5" fill="#9ca3af" text-anchor="middle">(AI分析页面实例)</text>
+      </g>
+      <g transform="translate(260, 0)">
+        <rect x="0" y="0" width="120" height="70" rx="8" fill="white" opacity="0.3"/>
+        <text x="60" y="22" font-family="PingFang SC, sans-serif" font-size="11" font-weight="600" fill="#326DFF" text-anchor="middle">订单列表</text>
+        <text x="60" y="36" font-family="PingFang SC, sans-serif" font-size="11" font-weight="600" fill="#326DFF" text-anchor="middle">表格组件</text>
+        <text x="60" y="50" font-family="sans-serif" font-size="8.5" fill="#6b7280" text-anchor="middle">含筛选、分页等</text>
+        <text x="60" y="62" font-family="sans-serif" font-size="8.5" fill="#9ca3af" text-anchor="middle">(数据表格实例)</text>
+      </g>
+      <g transform="translate(390, 0)">
+        <rect x="0" y="0" width="120" height="70" rx="8" fill="white" opacity="0.3"/>
+        <text x="60" y="22" font-family="PingFang SC, sans-serif" font-size="11" font-weight="600" fill="#326DFF" text-anchor="middle">客户信息表</text>
+        <text x="60" y="36" font-family="PingFang SC, sans-serif" font-size="11" font-weight="600" fill="#326DFF" text-anchor="middle">扩展模型</text>
+        <text x="60" y="50" font-family="sans-serif" font-size="8.5" fill="#6b7280" text-anchor="middle">含自定义字段</text>
+        <text x="60" y="62" font-family="sans-serif" font-size="8.5" fill="#9ca3af" text-anchor="middle">(数据库表实例)</text>
+      </g>
+      <g transform="translate(520, 30)">
+        <text x="0" y="0" font-size="20" fill="white" text-anchor="middle" opacity="0.6">...</text>
+      </g>
+    </g>
+    
+    <!-- Characteristics -->
+    <g transform="translate(700, 552)">
+      <text x="0" y="25" font-family="PingFang SC, sans-serif" font-size="14" font-weight="600" fill="white">业务个性化配置</text>
+      <text x="0" y="47" font-family="PingFang SC, sans-serif" font-size="13" fill="white" opacity="0.95">• 复杂度极低，主要是配置数据</text>
+      <text x="0" y="65" font-family="PingFang SC, sans-serif" font-size="13" fill="white" opacity="0.95">• 易于理解和生成，几分钟即可完成</text>
+      <text x="0" y="83" font-family="PingFang SC, sans-serif" font-size="13" fill="white" opacity="0.95">• 人类开发者和AI都能快速完成</text>
+      <text x="0" y="101" font-family="PingFang SC, sans-serif" font-size="13" font-weight="600" fill="white">✨ 应用层开发在这里进行</text>
+    </g>
+    
+    <!-- Complexity Label -->
+    <g transform="translate(980, 615)">
+      <circle cx="0" cy="0" r="45" fill="white" opacity="0.25"/>
+      <text x="0" y="8" font-family="PingFang SC, sans-serif" font-size="24" font-weight="700" fill="white" text-anchor="middle">5%</text>
+      <text x="0" y="-20" font-family="PingFang SC, sans-serif" font-size="12" fill="white" text-anchor="middle">复杂度</text>
+    </g>
+  </g>
+  
+  <!-- Bottom Analogy -->
+  <g transform="translate(600, 740)">
+    <text x="0" y="0" font-family="PingFang SC, sans-serif" font-size="15" fill="#6b7280" text-anchor="middle">🏗️ 就像建筑：Meta定义类别（门户、页面、组件、模型等），Type提供具体规范，Instance是实际应用（应用开发在此进行）</text>
+  </g>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#326DFF" />
+    </marker>
+    <marker id="arrowMid" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#5D8DFF" />
+    </marker>
+  </defs>
+</svg>

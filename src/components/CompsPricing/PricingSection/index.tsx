@@ -105,14 +105,23 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
 
   // 处理支付按钮点击
   const handlePaymentClick = (plan: any) => {
-    if (plan.id === 'enterprise') {
-      // 企业版：打开联系我们弹窗
-      setShowContactModal(true);
-      return;
+    switch (plan.id) {
+      case 'free':
+        window.location.href = './download';
+        break;
+      case 'custom':
+        setShowContactModal(true);
+        break;
+      default:
+        setSelectedPlan(plan);
+        setShowPaymentModal(true);
+        break;
     }
-    
-    setSelectedPlan(plan);
-    setShowPaymentModal(true);
+  };
+  
+  // 处理自定义方案联系销售点击
+  const handleCustomContactClick = () => {
+    setShowContactModal(true);
   };
 
   // 处理支付确认
@@ -210,7 +219,7 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
             <div 
               key={plan.id} 
               className={`${styles.pricingCard} ${styles[plan.cardType]} ${plan.isRecommended ? styles.recommended : ''}`}
-              onMouseEnter={plan.id === 'enterprise' ? handleEnterpriseCardHover : undefined}
+              onMouseEnter={plan.id === 'custom' ? handleEnterpriseCardHover : undefined}
             >
               {plan.isRecommended && (
                 <div className={styles.recommendedBadge}>{CONTENT.recommendedBadge}</div>
@@ -223,22 +232,21 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
               <div className={styles.cardPrice}>
                 <div className={styles.priceGroup}>
                   <div className={styles.price}>
-                    {/* <span className={styles.currency}>¥</span> */}
-                    <span className={styles.amount}>{plan.id === 'enterprise' ? '' : CONTENT.moneyUnit}
+                    <span className={styles.amount}>{plan.isShowPriceUnit ? CONTENT.moneyUnit : ''}
                      {plan[activeTab+'Price']}
                     </span>
                     <span className={styles.period}>
-                      {plan.id === 'enterprise' ? '' : CONTENT.priceUnit[activeTab]}
+                      {plan.isShowPriceUnit ? CONTENT.priceUnit[activeTab] : ''}
                     </span>
                   </div>
                 </div>
               </div>
               <div className={styles.cardAction}>
                 <button 
-                  className={styles.orderButton}
+                  className={`${styles.orderButton} ${plan.analyticsCssClass}`}
                   onClick={() => handlePaymentClick(plan)}
                 >
-                  {plan.id === 'enterprise' ? CONTENT.contactSales : (activeTab === 'buyout' ? CONTENT.pay : CONTENT.subscribe)}
+                  {plan.customPayActionText ? plan.customPayActionText:  CONTENT.payActionText[activeTab]}
                 </button>
               </div>
               <div className={styles.cardFeatures}>
@@ -251,26 +259,21 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
           ))}
         </div>
 
-        {/* 特别说明 */}
-        <div className={`${styles.specialNote} ${animateElements ? styles.noteAnimate : ''}`}>
-          <div className={styles.noteIcon}>🎁</div>
-          <div className={styles.noteContent}>
-            <h3 className={styles.noteTitle}>{CONTENT.specialOffer}</h3>
-            <p className={styles.noteText}>
-              {CONTENT.specialOfferDescriptions[0]}
-              <strong>{CONTENT.specialOfferDescriptions[1]}</strong>
-              {CONTENT.specialOfferDescriptions[2]}
-            </p>
-            {/* <a className={styles.downloadButton} href="./docs/tutorial/download-installation" target="_blank">
-              <span className={styles.buttonText}>立即下载</span>
-              <span className={styles.buttonIcon}>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                  <polyline points="7,10 12,15 17,10"/>
-                  <line x1="12" y1="15" x2="12" y2="3"/>
-                </svg>
-              </span>
-            </a> */}
+        {/* 自定义组合区域 */}
+        <div className={`${styles.customPlanSection} ${animateElements ? styles.customAnimate : ''}`}>
+          <div className={styles.customPlanCard}>
+            <div className={styles.customPlanContent}>
+              <h3 className={styles.customPlanTitle}>{CONTENT.customPlan.title}</h3>
+              <p className={styles.customPlanDescription}>{CONTENT.customPlan.description}</p>
+            </div>
+            <div className={styles.customPlanAction}>
+              <button 
+                className={`${styles.customContactButton} ${CONTENT.customPlan.analyticsCssClass}`}
+                onClick={handleCustomContactClick}
+              >
+                {CONTENT.customPlan.contactText}
+              </button>
+            </div>
           </div>
         </div>
 
@@ -289,7 +292,7 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
                 {CONTENT.modal.cancelButton}
               </button>
               <button 
-                className={styles.modalButtonConfirm}
+                className={`${styles.modalButtonConfirm} analytics-payConfirm`}
                 onClick={handlePaymentConfirm}
               >
                 {CONTENT.modal.confirmButton}
@@ -363,7 +366,7 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
         <Modal
           isOpen={showContactModal}
           onClose={() => setShowContactModal(false)}
-          title={CONTENT.contactSales}
+          title={CONTENT.customPlan.contactText}
           maxWidth="500px"
           // maxHeight="80vh"
           bodyStyle={{ padding: 0 }}
@@ -377,7 +380,7 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
               border: 'none',
               display: 'block'
             }}
-            title={CONTENT.contactSales}
+            title={CONTENT.customPlan.contactText}
             loading="eager"
           />
         </Modal>

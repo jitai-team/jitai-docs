@@ -1,5 +1,6 @@
 ---
 slug: excel-template
+description: "Excel模板 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # Excel模板
 Excel模板元素是基于文件模板框架的Excel文档生成组件，基于openpyxl和Jinja2模板引擎实现动态Excel文档生成。它负责Excel模板的解析处理、数据渲染和特殊功能支持（图片嵌入、超链接、下拉框等），为企业级报表生成提供完整的Excel输出能力。

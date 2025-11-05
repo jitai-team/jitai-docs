@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: visual-development-tool
+description: "JitAi visual development tools overview. Graphical orchestration tools for application development without coding."
 ---
 
 # Visual Development Tool
@@ -51,21 +52,24 @@ Under the source code file tree view, developers can conveniently import element
 ## Application settings {#application-settings}
 Clicking the `Settings` tab in the left panel of the IDE opens the application settings.
 
+### Basic information {#basic-information}
+
 ![Set Application Basic Information](./img/ide/set-app-basic-info.png "Set Application Basic Information")
 
-### Basic information {#basic-information}
 In the application basic information section, developers can configure the application's title, logo, inherited applications and their versions, and check for inherited application version updates.
+
+### Default elements {#default-elements}
 
 ![Set Application Default Elements](./img/ide/set-app-default-element.gif "Set Application Default Elements")
 
-### Default elements {#default-elements}
 In the application default elements section, developers can configure the application's default elements including portal, global styles, database, cache, file storage, and login page.
 
 Developers can create new default elements during configuration, for example: creating a new file storage element and setting it as the default file storage service.
 
+### Environment variables {#environment-variables}
+
 ![Set Application Environment Variable Values](./img/ide/set-app-environment-variables.png "Set Application Environment Variable Values")
 
-### Environment variables {#environment-variables}
 In the application environment variables section, developers can set environment variable values, which take effect immediately in the current runtime environment upon configuration.
 
 ## Portal switching {#portal-switching}

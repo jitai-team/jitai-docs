@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: roles-and-business-element-permissions
+description: "角色与业务元素权限的详细指南和说明。"
 ---
 
 # 角色与业务元素权限

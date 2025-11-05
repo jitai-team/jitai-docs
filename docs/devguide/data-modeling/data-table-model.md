@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: data-table-model
+description: "Create data table models for JitAi applications. Define structure, data types, and constraint rules from scratch or existing tables."
 ---
 
 # Creating Data Tables

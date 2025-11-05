@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: download-installation
+description: "下载与安装的详细指南和说明。"
 ---
 # 下载与安装
 

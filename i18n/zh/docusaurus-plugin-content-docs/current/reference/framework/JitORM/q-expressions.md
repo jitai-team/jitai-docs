@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: q-expressions
+description: "Q表达式 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # Q表达式

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 8
 slug: extended-table-model
+description: "扩展表模型的详细指南和说明。"
 ---
 
 # 扩展表模型

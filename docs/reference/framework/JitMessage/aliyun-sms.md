@@ -1,5 +1,8 @@
 ---
 slug: aliyun-sms
+title: "Alibaba Cloud SMS Reference"
+description: "Alibaba Cloud SMS Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Alibaba Cloud SMS"
 ---
 # Alibaba Cloud SMS
 Alibaba Cloud SMS is an enterprise-level SMS notification service based on Alibaba Cloud SMS API, implementing SMS business scenarios such as verification code sending and notification reminders through the standard sendMessage interface. It integrates Alibaba Cloud SMS API, supports AccessKey authentication and signature verification mechanisms, provides complete error handling and log monitoring, ensuring message delivery reliability.

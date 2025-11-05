@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+description: "Create portals for role-based access control. Built-in developer, manager, and user portals with customizable navigation menus."
 ---
 
 # Creating Portals

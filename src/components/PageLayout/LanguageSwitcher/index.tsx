@@ -22,6 +22,8 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className }) => {
 
   const handleLanguageSwitch = () => {
     const currentPath = window.location.pathname;
+    const searchParams = window.location.search; // 获取 URL 参数（?key=value）
+    const hash = window.location.hash; // 获取 hash（#anchor）
     let newPath = '';
     let newLang = '';
     
@@ -46,7 +48,9 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className }) => {
     // 保存用户的语言偏好
     localStorage.setItem('jitai-preferred-language', newLang);
     
-    window.location.href = newPath;
+    // 拼接完整 URL，保留参数和 hash
+    const newUrl = newPath + searchParams + hash;
+    window.location.href = newUrl;
   };
 
   return (

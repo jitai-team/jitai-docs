@@ -1,5 +1,8 @@
 ---
 slug: form
+title: "Form Reference"
+description: "Form Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Form"
 ---
 # Form
 The form is an interactive component used for data entry, editing, and viewing, implementing data management capabilities through a model-driven approach. It handles field layout rendering, data validation, and user interaction, supporting multiple display modes and rich field types, and provides comprehensive permission control, rule engine, and approval workflow integration.

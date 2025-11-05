@@ -1,6 +1,9 @@
 ---
 sidebar_position: 3
 slug: data-models
+title: "Data Models Reference"
+description: "Data Models Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Data Models"
 ---
 
 # Data Models

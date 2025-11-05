@@ -2,6 +2,7 @@
 sidebar_position: 7
 slug: calling-business-logic-elements-in-approval-workflow
 title: Calling Business Logic Elements in Approval Workflows
+description: "Invoke business logic within approval workflows. Approval events, function processing in subprocesses, and automated responses."
 ---
 
 # Calling Business Logic Elements in Approval Workflows

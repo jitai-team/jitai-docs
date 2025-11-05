@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: ui-component-interface-specifications
+description: "全代码组件接口规范的详细指南和说明。"
 ---
 
 import Tabs from '@theme/Tabs';

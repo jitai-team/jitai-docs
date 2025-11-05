@@ -73,7 +73,7 @@ const IDESection: React.FC<IDESectionProps> = ({ currentLocale }) => {
         <div className={styles.coreFeatures}>
           <div className={styles.featuresGrid}>
             {CONTENT.coreFeatures.map((feature, index) => (
-              <div className={`${styles.featureCard} ${index % 2 === 1 ? styles.reverseCard : ''}`}>
+              <div className={`${styles.featureCard} ${index % 2 === 1 ? styles.reverseCard : ''}`} key={index}>
                 <div className={styles.featureImage}>
                   {feature.video ? (
                     <div

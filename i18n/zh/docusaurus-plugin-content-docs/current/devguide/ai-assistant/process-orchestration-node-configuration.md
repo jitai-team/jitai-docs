@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 slug: process-orchestration-node-configuration
+description: "流程编排与节点配置的详细指南和说明。"
 ---
 
 # 流程编排与节点配置

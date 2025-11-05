@@ -65,7 +65,7 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ currentLocale }) => {
                 <div className={styles.downloadActions}>
                   <a 
                     href={CONTENT.desktop.windows.downloadUrl} 
-                    className={styles.downloadButton}
+                    className={`${styles.downloadButton} analytics-downloadWindows`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -88,13 +88,13 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ currentLocale }) => {
                 <div className={styles.downloadActions}>
                   <button 
                     onClick={() => handleMacDownload(CONTENT.desktop.mac.appleDownloadUrl)}
-                    className={styles.downloadButton}
+                    className={`${styles.downloadButton} analytics-downloadMac analytics-downloadMacApple`}
                   >
                     <span className={styles.buttonText}>{CONTENT.desktop.mac.appleDownloadText}</span>
                   </button>
                   <button 
                     onClick={() => handleMacDownload(CONTENT.desktop.mac.intelDownloadUrl)}
-                    className={styles.downloadButtonSecondary}
+                    className={`${styles.downloadButtonSecondary}  analytics-downloadMac analytics-downloadMacIntel`}
                   >
                     <span className={styles.buttonText}>{CONTENT.desktop.mac.intelDownloadText}</span>
                   </button>
@@ -148,7 +148,7 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ currentLocale }) => {
                 {/* 复制按钮 - 位于代码块外面右下角 */}
                 <div className={styles.codeActions}>
                   <button 
-                    className={styles.copyButton}
+                    className={`${styles.copyButton} analytics-copyDocker`}
                     onClick={handleCopy}
                   >
                     {copySuccess ? CONTENT.server.docker.copySuccess : CONTENT.server.docker.copyText}

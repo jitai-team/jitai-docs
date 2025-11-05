@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 1600 900" 
+     role="img"
+     aria-labelledby="heroTitle heroDesc">
+  <title id="heroTitle">私有化vs公有云对比</title>
+  <desc id="heroDesc">左侧展示公有云SaaS的受限和成本上升，右侧展示私有化部署的自主和成本可控</desc>
+  
+  <!-- 样式定义 -->
+  <defs>
+    <style>
+      .primary { fill: #326DFF; }
+      .primary-light { fill: #8EAEFF; }
+      .accent-orange { fill: #FF6B35; }
+      .bg { fill: #F5F7FA; }
+      .text-dark { 
+        fill: #1f2937; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+      .text-medium { 
+        fill: #6b7280; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+      .text-white {
+        fill: #ffffff;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+    </style>
+    
+    <!-- 渐变定义 -->
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#326DFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8EAEFF;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B35;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff8c5a;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 阴影滤镜 -->
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="4" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.15"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1600" height="900" class="bg"/>
+  
+  <!-- 左侧：公有云SaaS (橙色警示) -->
+  <g id="saas-side" transform="translate(200, 200)">
+    <!-- 云朵图标 -->
+    <g id="cloud-icon">
+      <ellipse cx="150" cy="150" rx="80" ry="50" fill="url(#orangeGradient)" opacity="0.9"/>
+      <ellipse cx="100" cy="160" rx="60" ry="40" fill="url(#orangeGradient)" opacity="0.9"/>
+      <ellipse cx="200" cy="160" rx="60" ry="40" fill="url(#orangeGradient)" opacity="0.9"/>
+    </g>
+    
+    <!-- 锁链图标 -->
+    <g id="lock-chain" transform="translate(120, 220)">
+      <rect x="20" y="0" width="40" height="50" rx="5" class="accent-orange" opacity="0.8"/>
+      <circle cx="40" cy="25" r="15" fill="#F5F7FA"/>
+      <path d="M 35 15 Q 40 10 45 15 L 45 30 Q 40 35 35 30 Z" class="accent-orange"/>
+    </g>
+    
+    <!-- 向上箭头（成本上升） -->
+    <g id="cost-arrow" transform="translate(135, 300)">
+      <path d="M 0 80 L 0 10 M -15 25 L 0 10 L 15 25" 
+            stroke="#FF6B35" 
+            stroke-width="6" 
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+    </g>
+    
+    <!-- 标签 -->
+    <text x="150" y="420" text-anchor="middle" class="text-dark" font-size="24" font-weight="600">公有云 SaaS</text>
+    <text x="150" y="450" text-anchor="middle" class="text-medium" font-size="16">成本失控</text>
+    <text x="150" y="475" text-anchor="middle" class="text-medium" font-size="16">数据受限</text>
+    <text x="150" y="500" text-anchor="middle" class="text-medium" font-size="16">供应商锁定</text>
+  </g>
+  
+  <!-- 中间：VS -->
+  <g id="vs-text" transform="translate(800, 450)">
+    <circle cx="0" cy="0" r="60" fill="#ffffff" filter="url(#softShadow)"/>
+    <text x="0" y="0" text-anchor="middle" dominant-baseline="middle" 
+          class="text-dark" font-size="48" font-weight="700">VS</text>
+  </g>
+  
+  <!-- 右侧：私有化 (蓝色安全) -->
+  <g id="on-prem-side" transform="translate(1200, 200)">
+    <!-- 服务器图标 -->
+    <g id="server-icon">
+      <rect x="100" y="120" width="100" height="70" rx="8" fill="url(#blueGradient)" opacity="0.9"/>
+      <rect x="110" y="135" width="20" height="15" rx="2" fill="#F5F7FA" opacity="0.8"/>
+      <rect x="140" y="135" width="20" height="15" rx="2" fill="#F5F7FA" opacity="0.8"/>
+      <rect x="170" y="135" width="20" height="15" rx="2" fill="#F5F7FA" opacity="0.8"/>
+      <circle cx="115" cy="170" r="4" fill="#00ff88"/>
+      <circle cx="130" cy="170" r="4" fill="#00ff88"/>
+    </g>
+    
+    <!-- 盾牌图标 -->
+    <g id="shield-icon" transform="translate(130, 210)">
+      <path d="M 20 0 L 40 0 L 50 10 L 50 40 Q 30 55 20 40 Q 10 55 0 40 L 0 10 Z" 
+            class="primary" opacity="0.8"/>
+      <path d="M 15 20 L 22 27 L 35 14" 
+            stroke="#ffffff" 
+            stroke-width="3" 
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+    </g>
+    
+    <!-- 稳定曲线 -->
+    <g id="stable-curve" transform="translate(80, 320)">
+      <path d="M 0 40 Q 30 30 60 30 L 100 30" 
+            stroke="#326DFF" 
+            stroke-width="5" 
+            fill="none"
+            stroke-linecap="round"/>
+      <circle cx="0" cy="40" r="5" class="primary"/>
+      <circle cx="100" cy="30" r="5" class="primary"/>
+    </g>
+    
+    <!-- 标签 -->
+    <text x="150" y="420" text-anchor="middle" class="text-dark" font-size="24" font-weight="600">私有化部署</text>
+    <text x="150" y="450" text-anchor="middle" class="text-medium" font-size="16">成本可控</text>
+    <text x="150" y="475" text-anchor="middle" class="text-medium" font-size="16">数据主权</text>
+    <text x="150" y="500" text-anchor="middle" class="text-medium" font-size="16">完全自主</text>
+  </g>
+  
+  <!-- 顶部标题 -->
+  <text x="800" y="80" text-anchor="middle" class="text-dark" font-size="32" font-weight="700">被SaaS厂商隐藏的真相</text>
+</svg>
+

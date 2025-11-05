@@ -2,6 +2,7 @@
 sidebar_position: 2
 slug: form-components
 title: Form Components
+description: "Build enterprise-grade forms with visual design. Data model binding, permission control, business rules, and advanced data processing."
 ---
 
 # Form Components

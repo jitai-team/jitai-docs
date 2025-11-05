@@ -1,5 +1,6 @@
 ---
 sidebar_position: 3
+description: "AI-powered data management pages with natural language operations. CRUD operations, filtering, sorting, and AI assistant for intelligent data processing."
 ---
 
 # AI Data Management Page

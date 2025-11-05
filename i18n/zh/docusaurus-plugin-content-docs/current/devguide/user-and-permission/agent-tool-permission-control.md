@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 slug: agent-tool-permission-control
+description: "Agent工具权限控制的详细指南和说明。"
 ---
 
 # Agent工具权限控制

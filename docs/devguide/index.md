@@ -1,5 +1,6 @@
 ---
 sidebar_position: 0
+description: "JitAi developer guide overview. Complete documentation for building applications on the JitAi platform."
 ---
 
 import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
@@ -1228,22 +1229,25 @@ Design intelligent workflows visually. Orchestrate business processes with drag-
   ]} />
 </IndexCard>
 
-<!-- <IndexCard
+<IndexCard
   title="Embedding AI Assistant in External Web Pages"
   href="devguide/ai-assistant/embed-assistant-to-web-page"
   description="Integrate AI assistant into any web page with deep bidirectional interaction capabilities."
 >
   <LinkGrid links={[
+    { text: "What is an embedded AI assistant", href: "devguide/ai-assistant/embed-assistant-to-web-page#what-is-embedded-ai-assistant" },
     { text: "Core advantages", href: "devguide/ai-assistant/embed-assistant-to-web-page#core-advantages" },
     { text: "Integration process", href: "devguide/ai-assistant/embed-assistant-to-web-page#integration-process" },
-    { text: "Creating embeded AI assistant page", href: "devguide/ai-assistant/embed-assistant-to-web-page#creating-embeded-ai-assistant-page" },
+    { text: "Creating embedded AI assistant", href: "devguide/ai-assistant/embed-assistant-to-web-page#creating-embedded-ai-assistant" },
     { text: "Embed into external web page", href: "devguide/ai-assistant/embed-assistant-to-web-page#how-to-embeded-to-a-web-page" },
+    { text: "Authentication", href: "devguide/ai-assistant/embed-assistant-to-web-page#authentication" },
     { text: "AI invoking web page functions", href: "devguide/ai-assistant/embed-assistant-to-web-page#how-to-call-page-functions" },
     { text: "Subscribe to AI events", href: "devguide/ai-assistant/embed-assistant-to-web-page#subscribe-ai-events" },
+    { text: "Runtime configuration", href: "devguide/ai-assistant/embed-assistant-to-web-page#runtime-config" },
     { text: "Send messages to AI", href: "devguide/ai-assistant/embed-assistant-to-web-page#send-message-to-ai" },
     { text: "JS SDK API reference", href: "devguide/ai-assistant/embed-assistant-to-web-page#js-sdk" }
   ]} />
-</IndexCard> -->
+</IndexCard>
 
 <IndexCard
   title="AI Assistant API Integration"

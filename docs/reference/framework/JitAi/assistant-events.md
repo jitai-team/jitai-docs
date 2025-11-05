@@ -1,6 +1,9 @@
 ---
 sidebar_position: 7
 slug: assistant-events
+title: "Assistant Events Reference"
+description: "Assistant Events Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Assistant Events"
 ---
 
 # Assistant Events

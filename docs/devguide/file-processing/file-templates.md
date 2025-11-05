@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: file-templates
+description: "Create Word and Excel file templates for dynamic document generation. Sales contracts, work orders, and invoice documents with variables."
 ---
 
 # Creating File Templates

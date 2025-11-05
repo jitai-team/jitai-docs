@@ -2,6 +2,7 @@
 sidebar_position: 1
 slug: creating-language-packages
 title: Creating Language Packages
+description: "Create custom language packages for multilingual support. Build translation mappings to display interfaces in different languages automatically."
 ---
 
 ## What is language package {#what-is-language-package}

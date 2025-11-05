@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 1600 1200" 
+     role="img"
+     aria-labelledby="comparisonTitle comparisonDesc">
+  <title id="comparisonTitle">私有化vs公有云对比总结</title>
+  <desc id="comparisonDesc">全面对比SaaS与私有化在7个关键维度的优劣，私有化在5个维度占优</desc>
+  
+  <!-- 样式定义 -->
+  <defs>
+    <style>
+      .primary { fill: #326DFF; }
+      .primary-light { fill: #8EAEFF; }
+      .accent-orange { fill: #FF6B35; }
+      .success-green { fill: #00D66A; }
+      .neutral-gray { fill: #9ca3af; }
+      .bg { fill: #ffffff; }
+      .text-dark { 
+        fill: #1f2937; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+      .text-medium { 
+        fill: #6b7280; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+      .text-white {
+        fill: #ffffff;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+    </style>
+    
+    <!-- 阴影 -->
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.15"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1600" height="1200" class="bg"/>
+  
+  <!-- 标题 -->
+  <text x="800" y="60" text-anchor="middle" class="text-dark" font-size="32" font-weight="700">私有化 vs 公有云：全维度对比</text>
+  
+  <!-- 表头 -->
+  <g id="table-header" transform="translate(200, 120)">
+    <rect x="0" y="0" width="300" height="60" fill="#F5F7FA" stroke="#e5e7eb" stroke-width="2"/>
+    <text x="150" y="40" text-anchor="middle" class="text-dark" font-size="18" font-weight="700">对比维度</text>
+    
+    <rect x="300" y="0" width="350" height="60" fill="#FFF4ED" stroke="#e5e7eb" stroke-width="2"/>
+    <text x="475" y="40" text-anchor="middle" class="text-dark" font-size="18" font-weight="700">SaaS公有云</text>
+    
+    <rect x="650" y="0" width="350" height="60" fill="#E8F4FF" stroke="#e5e7eb" stroke-width="2"/>
+    <text x="825" y="40" text-anchor="middle" class="text-dark" font-size="18" font-weight="700">私有化部署</text>
+    
+    <rect x="1000" y="0" width="200" height="60" fill="#F5F7FA" stroke="#e5e7eb" stroke-width="2"/>
+    <text x="1100" y="40" text-anchor="middle" class="text-dark" font-size="18" font-weight="700">优势方</text>
+  </g>
+  
+  <!-- 行1：初始成本 -->
+  <g id="row1" transform="translate(200, 180)">
+    <rect x="0" y="0" width="300" height="100" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="150" y="55" text-anchor="middle" class="text-dark" font-size="16" font-weight="600">初始成本</text>
+    
+    <rect x="300" y="0" width="350" height="100" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="475" y="45" text-anchor="middle" class="text-medium" font-size="15">低</text>
+    <text x="475" y="70" text-anchor="middle" class="text-medium" font-size="14">（10-30%）</text>
+    
+    <rect x="650" y="0" width="350" height="100" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="825" y="45" text-anchor="middle" class="text-medium" font-size="15">高</text>
+    <text x="825" y="70" text-anchor="middle" class="text-medium" font-size="14">（100%）</text>
+    
+    <rect x="1000" y="0" width="200" height="100" fill="#FFF4ED" stroke="#e5e7eb" stroke-width="1"/>
+    <circle cx="1100" cy="50" r="30" class="accent-orange" opacity="0.2"/>
+    <text x="1100" y="60" text-anchor="middle" class="accent-orange" font-size="28">✓</text>
+  </g>
+  
+  <!-- 行2：5年TCO -->
+  <g id="row2" transform="translate(200, 280)">
+    <rect x="0" y="0" width="300" height="100" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="150" y="55" text-anchor="middle" class="text-dark" font-size="16" font-weight="600">5年TCO</text>
+    
+    <rect x="300" y="0" width="350" height="100" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="475" y="45" text-anchor="middle" class="text-medium" font-size="15">高</text>
+    <text x="475" y="70" text-anchor="middle" class="text-medium" font-size="14">（超出60%）</text>
+    
+    <rect x="650" y="0" width="350" height="100" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="825" y="45" text-anchor="middle" class="text-medium" font-size="15">稳定</text>
+    <text x="825" y="70" text-anchor="middle" class="text-medium" font-size="14">（可控）</text>
+    
+    <rect x="1000" y="0" width="200" height="100" fill="#E8F4FF" stroke="#e5e7eb" stroke-width="1"/>
+    <circle cx="1100" cy="50" r="30" class="primary" opacity="0.2"/>
+    <text x="1100" y="60" text-anchor="middle" class="primary" font-size="28">✓</text>
+  </g>
+  
+  <!-- 行3：数据主权 -->
+  <g id="row3" transform="translate(200, 380)">
+    <rect x="0" y="0" width="300" height="100" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="150" y="55" text-anchor="middle" class="text-dark" font-size="16" font-weight="600">数据主权</text>
+    
+    <rect x="300" y="0" width="350" height="100" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="475" y="45" text-anchor="middle" class="text-medium" font-size="15">受限</text>
+    <text x="475" y="70" text-anchor="middle" class="text-medium" font-size="14">（第三方托管）</text>
+    
+    <rect x="650" y="0" width="350" height="100" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="825" y="45" text-anchor="middle" class="text-medium" font-size="15">完全控制</text>
+    <text x="825" y="70" text-anchor="middle" class="text-medium" font-size="14">（自主可控）</text>
+    
+    <rect x="1000" y="0" width="200" height="100" fill="#E8F4FF" stroke="#e5e7eb" stroke-width="1"/>
+    <circle cx="1100" cy="50" r="30" class="primary" opacity="0.2"/>
+    <text x="1100" y="60" text-anchor="middle" class="primary" font-size="28">✓</text>
+  </g>
+  
+  <!-- 行4：供应商锁定 -->
+  <g id="row4" transform="translate(200, 480)">
+    <rect x="0" y="0" width="300" height="100" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="150" y="55" text-anchor="middle" class="text-dark" font-size="16" font-weight="600">供应商锁定</text>
+    
+    <rect x="300" y="0" width="350" height="100" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="475" y="45" text-anchor="middle" class="text-medium" font-size="15">高风险</text>
+    <text x="475" y="70" text-anchor="middle" class="text-medium" font-size="14">（迁移困难）</text>
+    
+    <rect x="650" y="0" width="350" height="100" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="825" y="45" text-anchor="middle" class="text-medium" font-size="15">无锁定</text>
+    <text x="825" y="70" text-anchor="middle" class="text-medium" font-size="14">（技术自主）</text>
+    
+    <rect x="1000" y="0" width="200" height="100" fill="#E8F4FF" stroke="#e5e7eb" stroke-width="1"/>
+    <circle cx="1100" cy="50" r="30" class="primary" opacity="0.2"/>
+    <text x="1100" y="60" text-anchor="middle" class="primary" font-size="28">✓</text>
+  </g>
+  
+  <!-- 行5：运维复杂度 -->
+  <g id="row5" transform="translate(200, 580)">
+    <rect x="0" y="0" width="300" height="100" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="150" y="55" text-anchor="middle" class="text-dark" font-size="16" font-weight="600">运维复杂度</text>
+    
+    <rect x="300" y="0" width="350" height="100" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="475" y="45" text-anchor="middle" class="text-medium" font-size="15">低</text>
+    <text x="475" y="70" text-anchor="middle" class="text-medium" font-size="14">（厂商负责）</text>
+    
+    <rect x="650" y="0" width="350" height="100" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="825" y="40" text-anchor="middle" class="text-medium" font-size="15">接近零</text>
+    <text x="825" y="65" text-anchor="middle" class="text-medium" font-size="13">（现代平台）</text>
+    <text x="825" y="85" text-anchor="middle" class="success-green" font-size="12" font-weight="600">如JitAi</text>
+    
+    <rect x="1000" y="0" width="200" height="100" fill="#F5F7FA" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="1100" y="55" text-anchor="middle" class="neutral-gray" font-size="16">持平</text>
+  </g>
+  
+  <!-- 行6：定制能力 -->
+  <g id="row6" transform="translate(200, 680)">
+    <rect x="0" y="0" width="300" height="100" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="150" y="55" text-anchor="middle" class="text-dark" font-size="16" font-weight="600">定制能力</text>
+    
+    <rect x="300" y="0" width="350" height="100" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="475" y="45" text-anchor="middle" class="text-medium" font-size="15">受限</text>
+    <text x="475" y="70" text-anchor="middle" class="text-medium" font-size="14">（平台边界）</text>
+    
+    <rect x="650" y="0" width="350" height="100" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="825" y="45" text-anchor="middle" class="text-medium" font-size="15">灵活</text>
+    <text x="825" y="70" text-anchor="middle" class="text-medium" font-size="14">（自由扩展）</text>
+    
+    <rect x="1000" y="0" width="200" height="100" fill="#E8F4FF" stroke="#e5e7eb" stroke-width="1"/>
+    <circle cx="1100" cy="50" r="30" class="primary" opacity="0.2"/>
+    <text x="1100" y="60" text-anchor="middle" class="primary" font-size="28">✓</text>
+  </g>
+  
+  <!-- 行7：长期成本 -->
+  <g id="row7" transform="translate(200, 780)">
+    <rect x="0" y="0" width="300" height="100" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="150" y="55" text-anchor="middle" class="text-dark" font-size="16" font-weight="600">长期成本</text>
+    
+    <rect x="300" y="0" width="350" height="100" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="475" y="45" text-anchor="middle" class="text-medium" font-size="15">持续上升</text>
+    <text x="475" y="70" text-anchor="middle" class="text-medium" font-size="14">（无限期订阅）</text>
+    
+    <rect x="650" y="0" width="350" height="100" fill="#ffffff" stroke="#e5e7eb" stroke-width="1"/>
+    <text x="825" y="45" text-anchor="middle" class="text-medium" font-size="15">边际成本低</text>
+    <text x="825" y="70" text-anchor="middle" class="text-medium" font-size="14">（资产摊销后）</text>
+    
+    <rect x="1000" y="0" width="200" height="100" fill="#E8F4FF" stroke="#e5e7eb" stroke-width="1"/>
+    <circle cx="1100" cy="50" r="30" class="primary" opacity="0.2"/>
+    <text x="1100" y="60" text-anchor="middle" class="primary" font-size="28">✓</text>
+  </g>
+  
+  <!-- 总结卡片 -->
+  <g id="summary" transform="translate(200, 920)">
+    <rect x="0" y="0" width="1200" height="100" rx="12" fill="#E8F4FF" stroke="#326DFF" stroke-width="3" filter="url(#cardShadow)"/>
+    <text x="600" y="40" text-anchor="middle" class="text-dark" font-size="24" font-weight="700">💡 总结</text>
+    <text x="600" y="75" text-anchor="middle" class="primary" font-size="20" font-weight="600">现代部署技术让私有化在7个维度中占据5个优势</text>
+  </g>
+  
+  <!-- 图例说明 -->
+  <g id="legend" transform="translate(200, 1050)">
+    <circle cx="10" cy="0" r="8" class="primary" opacity="0.2"/>
+    <text x="25" y="5" class="text-medium" font-size="14">蓝色 = 私有化优势</text>
+    
+    <circle cx="200" cy="0" r="8" class="accent-orange" opacity="0.2"/>
+    <text x="215" y="5" class="text-medium" font-size="14">橙色 = SaaS优势</text>
+    
+    <text x="390" y="5" class="text-medium" font-size="14">灰色 = 持平</text>
+  </g>
+  
+  <!-- 注释 -->
+  <text x="800" y="1150" text-anchor="middle" class="text-medium" font-size="13" font-style="italic">* 基于现代应用平台（如JitAi）的私有化部署方案</text>
+</svg>
+

@@ -1,5 +1,8 @@
 ---
 slug: account-password-login
+title: "Account Password Login Reference"
+description: "Account Password Login Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Account Password Login"
 ---
 # Account Password Login
 Account password login is a basic login authentication method provided by the JitAi platform, supporting username-password verification, graphic captcha protection, and encrypted password storage. It handles user identity authentication, account binding management, and login security protection, suitable for internal enterprise applications and scenarios requiring traditional authentication methods.

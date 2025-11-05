@@ -2,6 +2,7 @@
 sidebar_position: 4
 slug: special-node-configuration
 title: Special Node Configuration
+description: "Configure specialized workflow nodes. CC nodes, branch nodes, parallel nodes, and subprocess nodes for complex approval logic."
 ---
 
 # Special Node Configuration

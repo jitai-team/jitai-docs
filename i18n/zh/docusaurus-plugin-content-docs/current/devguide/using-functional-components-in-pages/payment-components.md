@@ -1,6 +1,7 @@
 ---
 sidebar_position: 14
 slug: payment-components
+description: "支付组件的详细指南和说明。"
 ---
 
 # 支付组件

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: approval-workflow-basic-configuration
+description: "审批流程基础配置的详细指南和说明。"
 ---
 
 # 审批流程基础配置

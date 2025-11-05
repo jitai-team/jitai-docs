@@ -1,5 +1,8 @@
 ---
 slug: custom-events
+title: "Custom Events Reference"
+description: "Custom Events Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Custom Events"
 ---
 # Custom Events
 Custom events are freely defined by developers in service elements as needed and triggered in business logic code, providing sufficient flexibility for event-driven system development.

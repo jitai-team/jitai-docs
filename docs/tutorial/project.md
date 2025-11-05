@@ -2,6 +2,7 @@
 sidebar_position: 3
 title: Case Study
 slug: project
+description: "Explore the educational assessment system case study. Learn system architecture through a real-world example with examiners, examinees, and automated grading."
 ---
 # Case Study
 

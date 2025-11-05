@@ -1,5 +1,8 @@
 ---
 slug: frontend
+title: "Frontend Reference"
+description: "Frontend Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Frontend"
 ---
 # Frontend
 Provides unified global components, public modules, utility functions, and Web Workers support for frontend development.

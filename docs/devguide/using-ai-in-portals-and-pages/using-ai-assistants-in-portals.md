@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: using-ai-assistants-in-portals
+description: "Configure AI Assistant in generic portals. Bind assistants, customize welcome messages, and enable AI-powered portal features."
 ---
 
 # Using AI Assistant in Generic Portals

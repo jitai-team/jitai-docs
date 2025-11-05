@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: agent-tools
+description: "Configure Agent tools for task execution. Add business elements as tools for agents to invoke during operation."
 ---
 
 # Tools in Agent

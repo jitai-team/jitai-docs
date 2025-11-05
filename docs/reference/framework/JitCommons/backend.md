@@ -1,5 +1,8 @@
 ---
 slug: backend
+title: "Backend Reference"
+description: "Backend Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Backend"
 ---
 # Backend
 Provides unified public modules, error code system, constant definitions, and global component support for backend development. Error codes, constants, enums, etc. are located in the commons directory of the official JitCommonsApp, which developers can directly import and use. Developers can also create their own commons directory in their own App (backend only) to implement their own encapsulation.

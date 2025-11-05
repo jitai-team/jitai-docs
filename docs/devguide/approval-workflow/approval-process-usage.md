@@ -2,6 +2,7 @@
 sidebar_position: 6
 slug: approval-workflow-usage
 title: Approval Initiation and To-Do in Portal
+description: "Initiate applications and manage approvals in portal. Initiate application module and to-do center for processing workflows."
 ---
 
 # Approval Initiation and To-Do in Portal

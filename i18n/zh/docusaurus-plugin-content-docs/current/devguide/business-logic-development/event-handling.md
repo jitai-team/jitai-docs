@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: event-handling
+description: "事件处理的详细指南和说明。"
 ---
 
 # 事件处理

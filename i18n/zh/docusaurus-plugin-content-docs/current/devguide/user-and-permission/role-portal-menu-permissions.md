@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: role-portal-menu-permissions
+description: "角色与门户菜单权限的详细指南和说明。"
 ---
 
 # 角色与门户菜单权限

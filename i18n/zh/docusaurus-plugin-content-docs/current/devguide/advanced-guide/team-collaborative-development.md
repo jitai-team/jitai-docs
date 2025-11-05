@@ -1,6 +1,7 @@
 ---
 sidebar_position: 0
 slug: team-collaborative-development
+description: "使用JitAi桌面版进行团队协作开发的详细指南和说明。"
 ---
 
 # 使用JitAi桌面版进行团队协作开发

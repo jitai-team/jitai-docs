@@ -2,6 +2,7 @@
 sidebar_position: 15
 slug: ai-assistant-example
 draft: true
+description: "Build intelligent customer information management assistant. Complete example demonstrating AI Assistant CRUD operations with natural language."
 ---
 
 # Example Demo
@@ -28,7 +29,7 @@ When users need to query data, the **Customer Management Agent** will directly t
 
 **Example Source Code Acquisition and Configuration**
 
-Download address: <a href="https://jit-www.oss-cn-beijing.aliyuncs.com/AIDemo.zip">Demo Example Source Code</a>
+Download address: <a href="https://jit-www.oss-accelerate.aliyuncs.com/AIDemo.zip">Demo Example Source Code</a>
 
 **Source Code Import Steps**:
 

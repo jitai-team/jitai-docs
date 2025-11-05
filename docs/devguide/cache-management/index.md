@@ -1,5 +1,6 @@
 ---
 sidebar_position: 21.5
+description: "Cache management strategies for performance. Configure caching layers for data, API responses, and application state."
 ---
 
 # Cache Configuration and Usage

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: login-authentication
+description: "User authentication and login methods. Multiple authentication strategies including OAuth, SSO, and built-in authentication."
 ---
 # Login Authentication
 

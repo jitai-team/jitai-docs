@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 slug: agent-tool-permission-control
+description: "Control AI Agent tool permissions for security. Restrict agent access to business elements and data based on user roles."
 ---
 
 # Agent Tool Permission Control

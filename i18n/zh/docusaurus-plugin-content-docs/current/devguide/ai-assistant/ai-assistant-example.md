@@ -1,6 +1,7 @@
 ---
 sidebar_position: 15
 slug: ai-assistant-example
+description: "示例演示的详细指南和说明。"
 draft: true
 ---
 
@@ -28,7 +29,7 @@ draft: true
 
 **示例源码获取与配置**
 
-下载地址：<a href="https://jit-www.oss-cn-beijing.aliyuncs.com/AIDemo.zip">演示示例源码</a>
+下载地址：<a href="https://jit-www.oss-accelerate.aliyuncs.com/AIDemo.zip">演示示例源码</a>
 
 **源码导入步骤**：
 

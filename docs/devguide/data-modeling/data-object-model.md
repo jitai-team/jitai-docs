@@ -1,6 +1,7 @@
 ---
 sidebar_position: 9
 slug: data-object-model
+description: "Design data object models for full-code development. DTOs for structured data expression without direct database table mapping."
 ---
 
 # Data Object Models

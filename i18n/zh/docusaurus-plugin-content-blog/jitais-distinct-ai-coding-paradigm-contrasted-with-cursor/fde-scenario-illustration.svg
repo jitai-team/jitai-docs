@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="title desc" viewBox="0 0 1600 900"><desc id="desc">展示Forward Deployed Engineer在客户现场快速交付AI定制项目的工作场景</desc><defs><style>.primary{fill:#326dff}.text-dark{fill:#333;font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,&quot;PingFang SC&quot;,&quot;Hiragino Sans GB&quot;,&quot;Microsoft YaHei&quot;,sans-serif}.text-medium{fill:#6b7280}.text-white{fill:#fff}</style></defs><path d="M0 0h1600v900H0z" style="fill:#f9fafb"/><text x="800" y="60" class="text-dark" font-size="32" font-weight="700" text-anchor="middle">
+    FDE 快速交付场景
+  </text><text x="800" y="100" class="text-medium" font-size="18" text-anchor="middle">
+    2-3周内完成客户定制化AI系统交付
+  </text><g id="time-indicator"><rect width="200" height="60" x="1350" y="30" fill="#FF6B35" rx="30"/><text x="1450" y="55" class="text-white" font-size="16" font-weight="700" text-anchor="middle">
+      ⏰ 倒计时
+    </text><text x="1450" y="80" class="text-white" font-size="24" font-weight="700" text-anchor="middle">
+      2-3周
+    </text></g><g id="client-side"><rect width="400" height="650" x="80" y="150" fill="#FFF" stroke="#E5E7EB" stroke-width="2" rx="12"/><circle cx="280" cy="230" r="50" fill="#E5E7EB"/><text x="280" y="245" font-size="40" text-anchor="middle">👔</text><text x="280" y="310" class="text-dark" font-size="22" font-weight="700" text-anchor="middle">
+      客户业务团队
+    </text><rect width="320" height="60" x="120" y="350" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2" rx="8"/><text x="140" y="385" class="text-dark" font-size="16" font-weight="600">
+      📋 需求：数据管理系统
+    </text><rect width="320" height="50" x="120" y="430" fill="#F3F4F6" rx="8"/><text x="140" y="460" class="text-medium" font-size="15">
+      • 多表关联数据录入
+    </text><rect width="320" height="50" x="120" y="495" fill="#F3F4F6" rx="8"/><text x="140" y="525" class="text-medium" font-size="15">
+      • 多级审批流程
+    </text><rect width="320" height="50" x="120" y="560" fill="#F3F4F6" rx="8"/><text x="140" y="590" class="text-medium" font-size="15">
+      • 基于角色的权限控制
+    </text><rect width="320" height="50" x="120" y="625" fill="#F3F4F6" rx="8"/><text x="140" y="655" class="text-medium" font-size="15">
+      • 可配置的数据报表
+    </text><text x="280" y="730" font-size="16" font-weight="700" style="fill:#ff6b35" text-anchor="middle">
+      期望：快速上线 · 稳定可靠
+    </text></g><path fill="none" stroke="#326DFF" stroke-width="4" marker-end="url(#arrow)" d="M500 450h80"/><text x="540" y="420" class="text-medium" font-size="14" text-anchor="middle">
+    需求
+  </text><g id="fde-engineer"><rect width="400" height="650" x="600" y="150" fill="#EEF2FF" stroke="#326DFF" stroke-width="3" rx="12"/><circle cx="800" cy="230" r="50" fill="#326DFF"/><text x="800" y="245" class="text-white" font-size="40" text-anchor="middle">👨‍💻</text><text x="800" y="310" class="primary" font-size="22" font-weight="700" text-anchor="middle">
+      FDE 工程师
+    </text><text x="800" y="340" class="text-medium" font-size="14" text-anchor="middle">
+      Forward Deployed Engineer
+    </text><rect width="320" height="70" x="640" y="370" fill="#FFF" stroke="#326DFF" stroke-width="2" rx="8"/><text x="660" y="395" class="primary" font-size="16" font-weight="600">
+      🧠 快速理解业务逻辑
+    </text><text x="660" y="420" class="text-medium" font-size="14">
+      审批规则、权限划分、数据关系
+    </text><text x="800" y="470" class="text-dark" font-size="18" font-weight="700" text-anchor="middle">
+      ⬇️ 使用 JitAi
+    </text><rect width="320" height="60" x="640" y="490" fill="#FFF" stroke="#326DFF" stroke-width="2" rx="8"/><text x="660" y="515" class="primary" font-size="15">
+      ⚙️ 配置数据模型
+    </text><text x="660" y="535" class="text-medium" font-size="13">
+      字段、关系、验证规则
+    </text><rect width="320" height="60" x="640" y="565" fill="#FFF" stroke="#326DFF" stroke-width="2" rx="8"/><text x="660" y="590" class="primary" font-size="15">
+      🔄 配置审批流程
+    </text><text x="660" y="610" class="text-medium" font-size="13">
+      节点、条件、流转规则
+    </text><rect width="320" height="60" x="640" y="640" fill="#FFF" stroke="#326DFF" stroke-width="2" rx="8"/><text x="660" y="665" class="primary" font-size="15">
+      🎨 实时预览调整
+    </text><text x="660" y="685" class="text-medium" font-size="13">
+      可视化配置 + AI助理
+    </text><text x="800" y="750" class="primary" font-size="16" font-weight="700" text-anchor="middle">
+      专注业务 · 告别代码细节
+    </text></g><path fill="none" stroke="#00C853" stroke-width="4" marker-end="url(#arrow-green)" d="M1020 450h80"/><text x="1060" y="420" font-size="14" font-weight="600" style="fill:#00c853" text-anchor="middle">
+    快速交付
+  </text><g id="delivery"><rect width="400" height="650" x="1120" y="150" fill="#FFF" stroke="#00C853" stroke-width="3" rx="12"/><circle cx="1320" cy="230" r="50" fill="#C8E6C9"/><text x="1320" y="245" font-size="40" text-anchor="middle">✅</text><text x="1320" y="310" font-size="22" font-weight="700" style="fill:#00c853" text-anchor="middle">
+      交付成果
+    </text><rect width="320" height="400" x="1160" y="350" fill="#F9FAFB" stroke="#00C853" stroke-width="2" rx="12"/><rect width="280" height="50" x="1180" y="370" fill="#FFF" stroke="#E5E7EB" rx="8"/><text x="1200" y="400" class="text-dark" font-size="16" font-weight="600">
+      📊 数据管理界面
+    </text><rect width="280" height="50" x="1180" y="440" fill="#FFF" stroke="#E5E7EB" rx="8"/><text x="1200" y="470" class="text-dark" font-size="16" font-weight="600">
+      ✏️ 审批流程运行中
+    </text><rect width="280" height="50" x="1180" y="510" fill="#FFF" stroke="#E5E7EB" rx="8"/><text x="1200" y="540" class="text-dark" font-size="16" font-weight="600">
+      🔐 权限控制生效
+    </text><rect width="280" height="50" x="1180" y="580" fill="#FFF" stroke="#E5E7EB" rx="8"/><text x="1200" y="610" class="text-dark" font-size="16" font-weight="600">
+      📈 数据报表可用
+    </text><rect width="280" height="80" x="1180" y="650" fill="#E8F5E9" stroke="#00C853" stroke-width="2" rx="8"/><text x="1320" y="680" font-size="16" font-weight="700" style="fill:#00c853" text-anchor="middle">
+      ✨ 2-3周交付完成
+    </text><text x="1320" y="705" class="text-medium" font-size="14" text-anchor="middle">
+      客户满意 · 质量可靠
+    </text></g><rect width="800" height="50" x="400" y="830" fill="#326DFF" opacity=".1" rx="25"/><text x="800" y="862" class="primary" font-size="18" font-weight="700" text-anchor="middle">
+    JitAi让FDE从&quot;全栈工程师&quot;变为&quot;业务架构师&quot; · 降低认知负担 · 提升交付速度
+  </text><defs><marker id="arrow" markerHeight="10" markerWidth="10" orient="auto" refX="8" refY="5"><path fill="#326DFF" d="m0 0 10 5-10 5z"/></marker><marker id="arrow-green" markerHeight="10" markerWidth="10" orient="auto" refX="8" refY="5"><path fill="#00C853" d="m0 0 10 5-10 5z"/></marker></defs></svg>

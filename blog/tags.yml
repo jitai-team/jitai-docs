@@ -192,3 +192,8 @@ devops:
   label: DevOps
   permalink: /devops
   description: DevOps practices, tools, and automation
+
+automation:
+  label: Automation
+  permalink: /automation
+  description: Automation technologies, workflows, and AI-driven automation strategies

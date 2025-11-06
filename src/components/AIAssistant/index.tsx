@@ -153,15 +153,15 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ className, visible = true }) 
   const containerRef = useRef<HTMLDivElement>(null);
   const scriptLoadedRef = useRef<boolean>(false);
   const [isAssistantOpen, setIsAssistantOpen] = useState(false);
-  const [CONTENT, setCONTENT] = useState(EN_CONTENT); // 默认使用英文内容
+  const [CONTENT, setCONTENT] = useState(ZH_CONTENT); // 默认使用英文内容
 
-  // 在客户端根据 HTML lang 属性选择常量
-  useEffect(() => {
-    if (typeof document !== 'undefined') {
-      const lang = document.documentElement.lang || 'en';
-      setCONTENT(lang === 'en' ? EN_CONTENT : ZH_CONTENT);
-    }
-  }, []);
+  // // 在客户端根据 HTML lang 属性选择常量
+  // useEffect(() => {
+  //   if (typeof document !== 'undefined') {
+  //     const lang = document.documentElement.lang || 'en';
+  //     setCONTENT(lang === 'en' ? EN_CONTENT : ZH_CONTENT);
+  //   }
+  // }, []);
 
   // 页面加载后自动在后台加载和初始化 AI Assistant SDK
   useEffect(() => {

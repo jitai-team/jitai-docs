@@ -194,8 +194,9 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ className, visible = true }) 
         containerId: 'ai-assistant-container',
         assistantUrl: 'https://wy.jit.pro/whwy/jitRDM/aiassistants/consultancyAssistant',
         accessKey: 'yzxOZfkrCYGKdPmhpDFVRgnIvecJWSEB',
-        logContent: 'LLM_CONCISE_LOG',
+        logContent: 'NOT_OUTPUT',
         welcomeMessage: CONTENT.welcomeMessage,
+        prologues: CONTENT.prologues,
         authInfo: {
           userKey: userKey, // 使用浏览器指纹生成的唯一用户key
         },
@@ -280,6 +281,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ className, visible = true }) 
               />
             </svg>
             <span className={styles.aiAssistantTitleText}>{CONTENT.windowTitle}</span>
+            <span className={styles.betaBadge}>Beta</span>
           </div>
           <button
             onClick={() => setIsAssistantOpen(false)}
@@ -304,6 +306,11 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ className, visible = true }) 
           ref={containerRef}
           className={styles.aiAssistantContent}
         />
+        
+        {/* 浮窗底部说明 */}
+        <div className={styles.aiAssistantFooter}>
+          <span className={styles.poweredByText}>Powered by JitAI</span>
+        </div>
       </div>
     </div>
   );

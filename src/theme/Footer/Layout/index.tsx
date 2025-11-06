@@ -57,7 +57,7 @@ export default function FooterLayout({
       </footer>
       
       {/* AI Assistant 组件 - 默认隐藏，点击 logo 后显示 */}
-      <AIAssistant visible={showAIAssistant} />
+      <AIAssistant visible={true} />
     </>
   );
 }

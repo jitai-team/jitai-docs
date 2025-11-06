@@ -1,7 +1,7 @@
 /* AI 助手悬浮图标 */
 .aiAssistantButton {
   position: fixed;
-  bottom: 30px;
+  bottom: 80px;
   right: 30px;
   width: 60px;
   height: 60px;
@@ -39,7 +39,7 @@
   bottom: 20px;
   right: 20px;
   width: 390px;
-  height: 752px;
+  height: 722px;
   background-color: var(--color-white);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-xl);
@@ -86,6 +86,21 @@
   font-size: var(--font-size-base);
 }
 
+/* Beta 标签 */
+.betaBadge {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  margin-left: var(--space-2);
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 /* 关闭按钮 */
 .aiAssistantCloseButton {
   background: none;
@@ -108,8 +123,26 @@
 .aiAssistantContent {
   flex: 1;
   width: 100%;
-  height: 100%;
+  min-height: 0;
   margin-top: -52px;
+  overflow: hidden;
+}
+
+/* 浮窗底部说明 */
+.aiAssistantFooter {
+  flex-shrink: 0;
+  padding: 0 var(--space-4) var(--space-2) var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom-left-radius: var(--border-radius-lg);
+  border-bottom-right-radius: var(--border-radius-lg);
+}
+
+.poweredByText {
+  font-size: 12px;
+  color: var(--color-text-secondary, #6c757d);
+  font-weight: var(--font-weight-normal);
 }
 
 /* 响应式样式 */

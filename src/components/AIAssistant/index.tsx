@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./index.module.css";
 import ZH_CONTENT from "./constant-zh";
 import EN_CONTENT from "./constant-en";
@@ -167,7 +168,9 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
     const containerRef = useRef<HTMLDivElement>(null);
     const scriptLoadedRef = useRef<boolean>(false);
     const [isAssistantOpen, setIsAssistantOpen] = useState(false);
-    const [CONTENT, setCONTENT] = useState(ZH_CONTENT); // 默认使用英文内容
+
+    const { i18n } = useDocusaurusContext();
+    const CONTENT = i18n.currentLocale === "zh" ? ZH_CONTENT : EN_CONTENT;
 
     /**
      * 处理移动端滚动穿透问题
@@ -196,14 +199,6 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
             };
         }
     }, [isAssistantOpen]);
-
-    // // 在客户端根据 HTML lang 属性选择常量
-    // useEffect(() => {
-    //   if (typeof document !== 'undefined') {
-    //     const lang = document.documentElement.lang || 'en';
-    //     setCONTENT(lang === 'en' ? EN_CONTENT : ZH_CONTENT);
-    //   }
-    // }, []);
 
     // 页面加载后自动在后台加载和初始化 AI Assistant SDK
     useEffect(() => {

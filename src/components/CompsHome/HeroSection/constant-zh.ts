@@ -4,6 +4,7 @@ const CONTENT = {
   buttonDownload: '立即下载',
   buttonDemo: '在线试用',
   buttonGetStart: '了解更多',
+  previewVideoUrl: 'https://jit-www.oss-accelerate.aliyuncs.com/zh_preview.mp4',
   cards: [
     {
       title: '生产级AI应用开发',
@@ -36,12 +37,12 @@ const CONTENT = {
       可视化编排分布式集群`,
       color: '#3D65FD' 
     },
-    {
-      title: '无缝集成与无限扩展',
-      description: `可无限集成任何技术到编排模式。<br/>
-      可无限扩展和改写任何集成。`,
-      color: '#3D65FD'
-    }
+    // {
+    //   title: '无缝集成与无限扩展',
+    //   description: `可无限集成任何技术到编排模式。<br/>
+    //   可无限扩展和改写任何集成。`,
+    //   color: '#3D65FD'
+    // }
   ]
 };
 

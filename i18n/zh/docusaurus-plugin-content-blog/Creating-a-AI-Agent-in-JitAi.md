@@ -1,5 +1,5 @@
 ---
-title: "Creating a AI Agent in JitAi: A Comprehensive Guide"
+title: "从0到1：在JitAI中构建AI Agent"
 authors: []
 tags: [ai agent, JitAi]
 date: 2025/9/1

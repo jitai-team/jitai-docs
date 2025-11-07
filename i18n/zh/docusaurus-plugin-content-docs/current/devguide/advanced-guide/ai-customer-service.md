@@ -59,14 +59,9 @@ description: "AI智能客服的详细指南和说明。"
    
    ![添加知识库文件](./img/jitairobot/add-knowledge-base-files.png)
 
-6. 触发文档向量化任务（服务器版无需手动触发）
+6. 等待后台向量化任务完成
 
-    打开一个新的浏览器页签，访问以下地址，触发向量化任务：
-    ```shell
-    http://127.0.0.1:8080/onTimer
-    ```
-    
-    稍等片刻，向量化任务完成，知识库中文档状态变为`正常`。
+    稍等片刻，向量化任务完成，知识库中文档状态变为`ok`。
 
     ![知识库文件添加成功](./img/jitairobot/knowledge-base-files-added-successfully.png)
 

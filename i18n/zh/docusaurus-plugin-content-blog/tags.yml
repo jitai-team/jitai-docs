@@ -206,3 +206,7 @@ tco:
 '37signals':
   label: 37signals
   description: 37signals公司及其云迁移案例
+
+automation:
+  label: 自动化
+  description: 自动化技术、工作流与 AI 驱动的自动化策略

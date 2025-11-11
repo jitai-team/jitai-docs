@@ -84,6 +84,47 @@ class CustomerModel(NormalModel):
 from .model import CustomerModel
 ```
 
+## Setting Data Titles {#setting-data-titles}
+
+Designating a field as the data title within a data model enhances the readability and recognizability of data rows in the interface. The data title field value serves as the primary display information for data records, enabling users to quickly identify and distinguish different data rows.
+
+### Supported Field Types {#supported-field-types}
+
+The system supports designating the following field types as data titles:
+
+- **Single-line Text** - Ideal for storing names, titles, and other brief textual information
+- **Multi-line Text** - Suitable for storing longer descriptive content
+- **Serial Number** - System-generated unique identifiers
+- **ID Number** - Standard ID number format
+- **Phone Number** - Phone number information
+- **License Plate Number** - License plate number information
+- **Single Choice** - Text content from single-selection options
+- **Single Select** - Text content from dropdown selections
+
+### Configuration Method {#configuration-method}
+
+Best practice recommends using fields with uniqueness and descriptive qualities as data titles, such as name, title, or ID number fields. These fields possess strong readability and intuitively describe the content of data rows.
+
+You can set the data title field through the visual interface or by specifying the `dataTitle` attribute in the model's Meta section:
+
+```python
+class CustomerModel(NormalModel):
+    # Fields definition...
+    name = datatypes.Stext(name="name", title="Name")
+    
+    class Meta:
+        modelType = "NormalType"
+        db = "databases.Default"
+        dataTitle = "name"  # Set name field as data title
+        dbTable = "CustomerModel"
+        name = "CustomerModel"
+        title = "Customer Table Model"
+```
+
+:::tip Tip
+Each data table model can only designate one field as the data title. If you need to combine multiple fields to represent the data title, consider using computed fields to achieve this.
+:::
+
 ## Model Built-in Functions {#model-built-in-functions}
 JitORM data models provide rich built-in functions covering data creation, reading, updating, deletion, and other operations. These functions support single and batch operations and provide flexible query and aggregation capabilities.
 

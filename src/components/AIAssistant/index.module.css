@@ -153,11 +153,17 @@
 @media (max-width: 768px) {
   .aiAssistantWindow {
     width: 100vw;
+    /* 使用 CSS 变量，由 JavaScript 动态设置真实的视口高度 */
+    /* 回退到 100vh 以防 JavaScript 未执行 */
     height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     bottom: 0;
     right: 0;
     border-radius: 0; /* 移动端全屏不需要圆角 */
     overflow: hidden; /* 容器本身不滚动 */
+    /* 适配安全区域（如 iPhone 的刘海屏） */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
   }
 
   .aiAssistantButton {
@@ -178,11 +184,17 @@
 @media (max-width: 480px) {
   .aiAssistantWindow {
     width: 100vw;
+    /* 使用 CSS 变量，由 JavaScript 动态设置真实的视口高度 */
+    /* 回退到 100vh 以防 JavaScript 未执行 */
     height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     bottom: 0;
     right: 0;
     border-radius: 0; /* 移动端全屏不需要圆角 */
     overflow: hidden; /* 容器本身不滚动 */
+    /* 适配安全区域（如 iPhone 的刘海屏） */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
   }
 
   .aiAssistantButton {

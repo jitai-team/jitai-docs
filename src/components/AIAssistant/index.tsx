@@ -200,6 +200,29 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
         }
     }, [isAssistantOpen]);
 
+    // 设置移动端真实视口高度的 CSS 变量，解决地址栏遮挡问题
+    useEffect(() => {
+        const setViewportHeight = () => {
+            // 获取真实的视口高度（不包含地址栏）
+            const vh = window.innerHeight * 0.01;
+            // 将值设置为 CSS 变量 --vh
+            document.documentElement.style.setProperty("--vh", `${vh}px`);
+        };
+
+        // 初始设置
+        setViewportHeight();
+
+        // 监听窗口大小变化（包括地址栏显示/隐藏）
+        window.addEventListener("resize", setViewportHeight);
+        // 监听设备方向变化
+        window.addEventListener("orientationchange", setViewportHeight);
+
+        return () => {
+            window.removeEventListener("resize", setViewportHeight);
+            window.removeEventListener("orientationchange", setViewportHeight);
+        };
+    }, []);
+
     // 页面加载后自动在后台加载和初始化 AI Assistant SDK
     useEffect(() => {
         const loadScript = () => {

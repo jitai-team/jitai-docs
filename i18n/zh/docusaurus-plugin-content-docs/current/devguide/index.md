@@ -1317,6 +1317,8 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   <LinkGrid links={[
     { text: "数据表创建入口", href: "devguide/data-modeling/data-table-model#data-table-create-entry" },
     { text: "设计表字段与数据类型", href: "devguide/data-modeling/data-table-model#design-table-fields-and-data-types" },
+    { text: "字段操作按钮", href: "devguide/data-modeling/data-table-model#field-operation-buttons" },
+    { text: "设置数据标题", href: "devguide/data-modeling/data-table-model#set-data-title" },
     { text: "配置表索引优化查询", href: "devguide/data-modeling/data-table-model#configure-table-index-optimization" },
     { text: "多列联合唯一约束", href: "devguide/data-modeling/data-table-model#multi-column-composite-unique" },
     { text: "组合索引", href: "devguide/data-modeling/data-table-model#composite-index" },

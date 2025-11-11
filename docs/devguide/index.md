@@ -1313,6 +1313,8 @@ Build a robust data foundation visually—no SQL expertise required. Create tabl
   <LinkGrid links={[
     { text: "Data table creation entry", href: "devguide/data-modeling/data-table-model#data-table-create-entry" },
     { text: "Designing table fields and data types", href: "devguide/data-modeling/data-table-model#design-table-fields-and-data-types" },
+    { text: "Field operation buttons", href: "devguide/data-modeling/data-table-model#field-operation-buttons" },
+    { text: "Setting data titles", href: "devguide/data-modeling/data-table-model#set-data-title" },
     { text: "Configuring table indexes for query optimization", href: "devguide/data-modeling/data-table-model#configure-table-index-optimization" },
     { text: "Multi-column composite unique constraints", href: "devguide/data-modeling/data-table-model#multi-column-composite-unique" },
     { text: "Composite indexes", href: "devguide/data-modeling/data-table-model#composite-index" },

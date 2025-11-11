@@ -13,7 +13,7 @@
   align-items: center;
   background: var(--bg-secondary);
   color: var(--text-primary);
-  padding: var(--space-32) 0 var(--space-24) 0;
+  padding: var(--space-20) 0 var(--space-16) 0;
   position: relative;
   overflow: hidden;
   font-family: var(--font-primary);
@@ -143,10 +143,63 @@
   transform: translateX(4px);
 }
 
+/* 第一个卡片内容 + 视频区块 */
+.featuredContent {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: var(--space-12);
+  margin-top: var(--space-16);
+  align-items: center;
+  padding: var(--space-8);
+  background: var(--bg-card);
+  border-radius: var(--border-radius-xl);
+  border: 1px solid var(--border-color-light);
+  box-shadow: var(--shadow-lg);
+}
+
+.featuredText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.featuredTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  margin: 0;
+  color: var(--color-gray-800);
+  line-height: var(--line-height-tight);
+}
+
+.featuredDescription {
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-base);
+  margin: 0;
+  font-weight: var(--font-weight-normal);
+}
+
+.featuredVideo {
+  width: 100%;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  line-height: 0 !important;
+  font-size: 0;
+}
+
+.video {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 9;
+  vertical-align: bottom;
+}
+
 /* 卡片网格 */
 .cardsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-8);
   margin-top: var(--space-16);
   align-items: stretch;
@@ -234,6 +287,21 @@
     font-size: var(--font-size-base);
   }
 
+  .featuredContent {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    margin-top: var(--space-12);
+    padding: var(--space-6);
+  }
+
+  .featuredTitle {
+    font-size: var(--font-size-xl);
+  }
+
+  .featuredDescription {
+    font-size: var(--font-size-sm);
+  }
+
   .cardsGrid {
     grid-template-columns: 1fr;
     gap: var(--space-6);
@@ -277,6 +345,15 @@
   .secondaryButton {
     padding: var(--space-3) var(--space-5);
     font-size: var(--font-size-sm);
+  }
+
+  .featuredContent {
+    padding: var(--space-5);
+    gap: var(--space-6);
+  }
+
+  .featuredTitle {
+    font-size: var(--font-size-lg);
   }
 
   .cardsGrid {

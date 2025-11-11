@@ -126,7 +126,7 @@ class CustomerModel(NormalModel):
 ## 模型内置函数 {#model-built-in-functions}
 JitORM数据模型提供了丰富的内置函数，涵盖数据的创建、读取、更新、删除等操作。这些函数支持单条和批量操作，并提供了灵活的查询和聚合功能。
 
-### 基础数据操作 
+### 基础数据操作 {#basic-data-operations} 
 用于处理单条数据的基本CRUD操作。
 
 #### create - 创建数据
@@ -455,12 +455,6 @@ stats = UserModel.statisticFieldData(
     {"age": "AVG", "salary": "SUM"}
 )
 ```
-
-### 模型内置函数 {#model-built-in-functions}
-模型元素提供了丰富的内置函数，用于数据的创建、查询、更新、删除等操作。
-
-### 基础数据操作 {#basic-data-operations}
-提供标准的CRUD操作和数据查询功能。
 
 ### 数据导入导出
 用于数据导出和批量数据处理的工具函数。

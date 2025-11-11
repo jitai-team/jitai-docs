@@ -128,7 +128,7 @@ Each data table model can only designate one field as the data title. If you nee
 ## Model Built-in Functions {#model-built-in-functions}
 JitORM data models provide rich built-in functions covering data creation, reading, updating, deletion, and other operations. These functions support single and batch operations and provide flexible query and aggregation capabilities.
 
-### Basic Data Operations
+### Basic Data Operations {#basic-data-operations}
 Used for basic CRUD operations on single data records.
 
 #### create - Create Data
@@ -457,12 +457,6 @@ stats = UserModel.statisticFieldData(
     {"age": "AVG", "salary": "SUM"}
 )
 ```
-
-### Model Built-in Functions {#model-built-in-functions}
-Model elements provide rich built-in functions for data creation, query, update, deletion, and other operations.
-
-### Basic Data Operations {#basic-data-operations}
-Provide standard CRUD operations and data query functionality.
 
 ### Data Import Export
 Tool functions for data export and batch data processing.

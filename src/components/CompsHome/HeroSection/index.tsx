@@ -64,13 +64,34 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({ currentLocale }) =>
               </span>
             </a>
           </div>
+
+          {/* 第一个卡片内容 + 视频区块 */}
+          {content.cards.length > 0 && (
+            <div className={styles.featuredContent}>
+              <div className={styles.featuredText}>
+                <h3 className={styles.featuredTitle}>{content.cards[0].title}</h3>
+                <p className={styles.featuredDescription} dangerouslySetInnerHTML={{ __html: content.cards[0].description }} />
+              </div>
+              <div className={styles.featuredVideo}>
+                <video 
+                  className={styles.video}
+                  controls
+                  playsInline
+                  preload="metadata"
+                >
+                  <source src={content.previewVideoUrl} type="video/mp4" />
+                  您的浏览器不支持视频播放。
+                </video>
+              </div>
+            </div>
+          )}
         </div>
 
         <div className={styles.cardsGrid}>
-              {content.cards.map((card, index) => (
+              {content.cards.slice(1).map((card, index) => (
                   <div
                     className={`${globalStyles.baseCard} ${styles.card}`}
-                    key={index}
+                    key={index + 1}
                   >
                     <div className={styles.cardHeader}>
                       <h3>{card.title}</h3>

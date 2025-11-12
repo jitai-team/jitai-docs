@@ -36,6 +36,48 @@ The single-line text data type enjoys widespread adoption and represents one of 
 
 Single-line text fields prove optimal for storing: names, usernames, titles, brief descriptions, and other concise textual information that doesn't necessitate line breaks.
 
+## Field operation buttons {#field-operation-buttons}
+
+Within the data table field configuration interface, hovering over a field row reveals a set of quick-access operation buttons on the right side, enabling developers to efficiently manage fields.
+
+![Field Operation Buttons](./img/set-data-title.png "Field Operation Buttons")
+
+These operation buttons include:
+
+- **Add Field** (`+`) - Quickly inserts a new field below the current field
+- **Set as Data Title** (`T`) - Designates the current field as the data title field for this table
+- **Duplicate Field** - Creates a copy of the current field, including its type and configuration settings
+- **Delete Field** - Removes the current field (system prompts for confirmation to prevent accidental deletion)
+
+:::note Note
+Only specific field types can be designated as data titles. See the "Setting data titles" section below for details.
+:::
+
+### Setting data titles {#set-data-title}
+
+Designating a field as the data title within a data model enhances the readability and recognizability of data rows in the interface. The data title field value serves as the primary display information for data records, enabling users to quickly identify and distinguish different data rows. The system supports designating the following field types as data titles:
+
+- **Single-line Text** - Ideal for storing names, titles, and other brief textual information
+- **Multi-line Text** - Suitable for storing longer descriptive content
+- **Serial Number** - System-generated unique identifiers
+- **ID Number** - Standard ID number format
+- **Phone Number** - Phone number information
+- **License Plate Number** - License plate number information
+- **Single Choice** - Text content from single-selection options
+- **Single Select** - Text content from dropdown selections
+
+Best practice recommends using fields with uniqueness and descriptive qualities as data titles, such as name, title, or ID number fields. These fields possess strong readability and intuitively describe the content of data rows.
+
+![Setting Data Title in Code](./img/code-set-data-title.png "Setting Data Title in Code")
+
+When designing data models, you can designate a field as the data title through either visual interface operations or code-based configuration. For full-code adjustments, specify the `dataTitle` attribute within the model definition's Meta section to set the data title field.
+
+:::tip Tip
+Each data table model can only designate one field as the data title. If you need to combine multiple fields to represent the data title, consider using computed fields to achieve this.
+:::
+
+
+
 ## Configuring table indexes for query optimization {#configure-table-index-optimization}
 Advanced configuration capabilities enable you to incorporate `Multi-column Unique Indexes` and `Composite Indexes` into data tables for optimizing query performance and ensuring data integrity.
 

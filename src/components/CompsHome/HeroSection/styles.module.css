@@ -193,13 +193,11 @@
   height: auto;
   display: block;
   aspect-ratio: 16 / 9;
-  vertical-align: bottom;
 }
 
 /* 卡片网格 */
 .cardsGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-8);
   margin-top: var(--space-16);
   align-items: stretch;

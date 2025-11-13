@@ -133,12 +133,7 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                     )}
                 </div>
 
-                <div
-                    className={styles.cardsGrid}
-                    style={{
-                        gridTemplateColumns: `repeat(${cardsCount}, 1fr)`,
-                    }}
-                >
+                <div className={styles.cardsGrid}>
                     {content.cards.slice(1).map((card, index) => (
                         <div
                             className={`${globalStyles.baseCard} ${styles.card}`}

@@ -201,6 +201,7 @@
   gap: var(--space-8);
   margin-top: var(--space-16);
   align-items: stretch;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .card {

@@ -5,6 +5,5 @@
     "baseUrl": ".",
     "jsx": "react-jsx"
   },
-  "include": ["src"],
   "exclude": [".docusaurus", "build"]
 }

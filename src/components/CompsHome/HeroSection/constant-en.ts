@@ -38,12 +38,12 @@ const CONTENT = {
       <br/>Visual orchestration of distributed clusters.`,
             color: "#3D65FD",
         },
-        // {
-        //   "title": "Seamless Integration and Infinite Extension",
-        //   "description": `Can infinitely integrate any technology into orchestration mod.
-        //   <br/>Can infinitely extend and modify any integration.`,
-        //   "color": "#3D65FD"
-        // }
+        {
+          "title": "Seamless Integration and Infinite Extension",
+          "description": `Can infinitely integrate any technology into orchestration mod.
+          <br/>Can infinitely extend and modify any integration.`,
+          "color": "#3D65FD"
+        }
     ],
 };
 

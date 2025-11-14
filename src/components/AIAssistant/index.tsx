@@ -161,17 +161,61 @@ const generateBrowserFingerprint = async (): Promise<string> => {
     return fingerprint;
 };
 
+const AI_ASSISTANT_STORAGE_KEY = 'jitai-assistant-open-state';
+
 const AIAssistant: React.FC<AIAssistantProps> = ({
     className,
     visible = true,
 }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const scriptLoadedRef = useRef<boolean>(false);
-    const [isAssistantOpen, setIsAssistantOpen] = useState(false);
+    // PC 端根据缓存或默认打开，移动端默认关闭
+    const [isAssistantOpen, setIsAssistantOpen] = useState(() => {
+        if (typeof window !== 'undefined') {
+            const isMobile = window.innerWidth <= 768;
+            
+            // 移动端始终默认关闭
+            if (isMobile) {
+                return false;
+            }
+            
+            // PC 端读取缓存状态
+            try {
+                const cachedState = localStorage.getItem(AI_ASSISTANT_STORAGE_KEY);
+                if (cachedState !== null) {
+                    return cachedState === 'true';
+                }
+            } catch (error) {
+                console.warn('Failed to read AI assistant state from localStorage:', error);
+            }
+            
+            // 默认打开
+            return true;
+        }
+        return false;
+    });
     const scrollPositionRef = useRef<number>(0);
 
     const { i18n } = useDocusaurusContext();
     const CONTENT = i18n.currentLocale === "zh" ? ZH_CONTENT : EN_CONTENT;
+    
+    /**
+     * 保存 AI 助理状态到 localStorage（仅 PC 端）
+     */
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const isMobile = window.innerWidth <= 768;
+            
+            // 只在 PC 端保存状态
+            if (!isMobile) {
+                try {
+                    localStorage.setItem(AI_ASSISTANT_STORAGE_KEY, String(isAssistantOpen));
+                } catch (error) {
+                    console.warn('Failed to save AI assistant state to localStorage:', error);
+                }
+            }
+        }
+    }, [isAssistantOpen]);
 
     /**
      * 处理移动端滚动穿透问题

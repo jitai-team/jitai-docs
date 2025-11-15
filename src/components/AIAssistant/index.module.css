@@ -39,7 +39,7 @@
   bottom: 1.25rem; /* 20px */
   right: 1.25rem; /* 20px */
   width: 24.375rem; /* 390px */
-  height: 45.125rem; /* 722px */
+  height: 40.125rem;
   background-color: var(--color-white);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-xl);
@@ -65,13 +65,14 @@
 /* 浮窗标题栏 */
 .aiAssistantHeader {
   padding: var(--space-3) var(--space-4);
-  background-color: var(--color-primary);
-  color: var(--color-white);
+  background-color: var(--color-white);
+  color: var(--color-text-primary, #333);
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-top-left-radius: var(--border-radius-lg);
   border-top-right-radius: var(--border-radius-lg);
+  border-bottom: 1px solid var(--border-color-light, #e5e7eb);
   z-index: 10;
 }
 
@@ -92,8 +93,8 @@
   padding: 0.125rem 0.5rem; /* 2px 8px */
   font-size: 0.75rem; /* 12px */
   font-weight: var(--font-weight-semibold);
-  color: var(--color-primary);
-  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--color-white);
+  background-color: var(--color-primary);
   border-radius: 0.75rem; /* 12px */
   margin-left: var(--space-2);
   line-height: 1.2;
@@ -105,7 +106,7 @@
 .aiAssistantCloseButton {
   background: none;
   border: none;
-  color: var(--color-white);
+  color: var(--color-text-secondary, #6c757d);
   cursor: pointer;
   padding: var(--space-1);
   display: flex;
@@ -116,7 +117,8 @@
 }
 
 .aiAssistantCloseButton:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--color-text-primary, #333);
 }
 
 /* AI Assistant 内容区域 */
@@ -125,11 +127,8 @@
   width: 100%;
   min-height: 0; /* 重要：允许 flex 子元素收缩 */
   margin-top: -3.25rem; /* -52px */
-  overflow-y: auto; /* 内容区域可以滚动 */
-  overflow-x: hidden;
-  /* 优化移动端滚动体验 */
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: contain; /* 防止滚动链 */
+  margin-bottom: -1rem;
+  overflow: hidden; /* 隐藏溢出内容，不显示滚动条 */
 }
 
 /* 浮窗底部说明 */
@@ -173,11 +172,9 @@
     height: 3.5rem; /* 56px */
   }
   
-  /* 移动端确保内容区域可滚动 */
+  /* 移动端内容区域不滚动 */
   .aiAssistantContent {
     overflow: hidden;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
   }
 }
 
@@ -204,11 +201,9 @@
     height: 3.125rem; /* 50px */
   }
   
-  /* 移动端确保内容区域可滚动 */
+  /* 移动端内容区域不滚动 */
   .aiAssistantContent {
     overflow: hidden;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
   }
 }
 

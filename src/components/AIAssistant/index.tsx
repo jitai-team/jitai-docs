@@ -161,41 +161,100 @@ const generateBrowserFingerprint = async (): Promise<string> => {
     return fingerprint;
 };
 
+const AI_ASSISTANT_STORAGE_KEY = 'jitai-assistant-open-state';
+
 const AIAssistant: React.FC<AIAssistantProps> = ({
     className,
     visible = true,
 }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const scriptLoadedRef = useRef<boolean>(false);
-    const [isAssistantOpen, setIsAssistantOpen] = useState(false);
+    // PC 端根据缓存或默认打开，移动端默认关闭
+    const [isAssistantOpen, setIsAssistantOpen] = useState(() => {
+        if (typeof window !== 'undefined') {
+            const isMobile = window.innerWidth <= 768;
+            
+            // 移动端始终默认关闭
+            if (isMobile) {
+                return false;
+            }
+            
+            // PC 端读取缓存状态
+            try {
+                const cachedState = localStorage.getItem(AI_ASSISTANT_STORAGE_KEY);
+                if (cachedState !== null) {
+                    return cachedState === 'true';
+                }
+            } catch (error) {
+                console.warn('Failed to read AI assistant state from localStorage:', error);
+            }
+            
+            // 默认打开
+            return true;
+        }
+        return false;
+    });
+    const scrollPositionRef = useRef<number>(0);
 
     const { i18n } = useDocusaurusContext();
     const CONTENT = i18n.currentLocale === "zh" ? ZH_CONTENT : EN_CONTENT;
+    
+    /**
+     * 保存 AI 助理状态到 localStorage（仅 PC 端）
+     */
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const isMobile = window.innerWidth <= 768;
+            
+            // 只在 PC 端保存状态
+            if (!isMobile) {
+                try {
+                    localStorage.setItem(AI_ASSISTANT_STORAGE_KEY, String(isAssistantOpen));
+                } catch (error) {
+                    console.warn('Failed to save AI assistant state to localStorage:', error);
+                }
+            }
+        }
+    }, [isAssistantOpen]);
 
     /**
      * 处理移动端滚动穿透问题
      * 当 AI 助手窗口打开时，阻止背景页面滚动
+     * 只在移动端应用此逻辑
      */
     useEffect(() => {
-        if (isAssistantOpen) {
-            // 保存原始的 overflow 和 position 值
-            const originalOverflow = document.body.style.overflow;
-            const originalPosition = document.body.style.position;
-            const scrollY = window.scrollY;
+        // 检测是否为移动端
+        const isMobile = window.innerWidth <= 768;
+        
+        if (isAssistantOpen && isMobile) {
+            // 保存当前滚动位置
+            scrollPositionRef.current = window.scrollY;
 
             // 阻止背景页面滚动
             document.body.style.overflow = "hidden";
             document.body.style.position = "fixed";
-            document.body.style.top = `-${scrollY}px`;
+            document.body.style.top = `-${scrollPositionRef.current}px`;
             document.body.style.width = "100%";
+            document.body.style.left = "0";
+            document.body.style.right = "0";
 
             return () => {
-                // 恢复原始状态
-                document.body.style.overflow = originalOverflow;
-                document.body.style.position = originalPosition;
+                const savedScrollPosition = scrollPositionRef.current;
+                
+                // 先恢复样式
+                document.body.style.overflow = "";
+                document.body.style.position = "";
                 document.body.style.top = "";
                 document.body.style.width = "";
-                window.scrollTo(0, scrollY);
+                document.body.style.left = "";
+                document.body.style.right = "";
+                
+                // 使用 scrollTo 的 instant 行为，不使用平滑滚动
+                window.scrollTo({
+                    top: savedScrollPosition,
+                    left: 0,
+                    behavior: 'instant' as ScrollBehavior
+                });
             };
         }
     }, [isAssistantOpen]);
@@ -259,6 +318,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
                 logContent: "NOT_OUTPUT",
                 welcomeMessage: CONTENT.welcomeMessage,
                 prologues: CONTENT.prologues,
+                placeholder: CONTENT.placeholder,
                 authInfo: {
                     userKey: userKey, // 使用浏览器指纹生成的唯一用户key
                 },
@@ -357,7 +417,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
                         >
                             <path
                                 d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-                                stroke="white"
+                                stroke="currentColor"
                                 strokeWidth="2"
                                 strokeLinecap="round"
                                 strokeLinejoin="round"

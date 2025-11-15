@@ -1,7 +1,6 @@
 const CONTENT = {
     title: "Jit Development Tools",
-    subtitle:
-        "Orchestration-based business module composition with programming-based logic development, automatic high-quality code generation, and native coding support",
+    subtitle: "Primarily visual orchestration with optional visual coding, generating fully editable native code — simple and efficient without sacrificing flexibility",
     color: "#3D65FD",
     videoHoverText: "Click to view HD video in fullscreen",
     coreFeatures: [

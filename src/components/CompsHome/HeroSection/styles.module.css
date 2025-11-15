@@ -201,7 +201,7 @@
   gap: var(--space-8);
   margin-top: var(--space-16);
   align-items: stretch;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .card {
@@ -255,6 +255,12 @@
 @media (max-width: 1400px) {
   .hero {
     padding: var(--space-20) 0 var(--space-16) 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

@@ -1,7 +1,6 @@
 const CONTENT = {
     title: "Jit 开发工具",
-    subtitle:
-        "编排式定义业务模块、组合模块，编程式开发业务处理逻辑，自动生成高质量代码，同时支持原生编码",
+    subtitle: "可视化编排为主，可视化编程为辅，输出可自由编辑的原生代码，简单高效而不牺牲自由度",
     color: "#3D65FD",
     videoHoverText: "点击全屏查看高清视频",
     coreFeatures: [

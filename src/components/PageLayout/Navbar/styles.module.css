@@ -328,7 +328,7 @@
   display: none;
   align-items: center;
   margin-right: 1rem;
-  z-index: 1001;
+  z-index: 1000;
   position: relative;
 }
 

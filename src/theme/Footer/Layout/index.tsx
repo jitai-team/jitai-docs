@@ -9,9 +9,6 @@ export default function FooterLayout({
   logo,
   copyright,
 }: Props): React.JSX.Element {
-  // 控制 AI 助手的显示状态
-  const [showAIAssistant, setShowAIAssistant] = useState(false);
-
   return (
     <>
       <footer
@@ -22,20 +19,7 @@ export default function FooterLayout({
           {links}
           {(logo || copyright) && (
             <div className="footer__bottom text--center">
-              {logo && (
-                <div 
-                  className="margin-bottom--sm" 
-                  onClick={(e) => {
-                    e.stopPropagation(); // 阻止事件冒泡
-                    e.preventDefault(); // 阻止默认行为
-                    setShowAIAssistant(true);
-                  }}
-                  style={{ cursor: 'pointer' }}
-                  title="点击打开 AI 助手"
-                >
-                  {logo}
-                </div>
-              )}
+              {logo && <div className="margin-bottom--sm">{logo}</div>}
               {/* toolfame 徽章 */}
               <div style={{ marginBottom: '1rem', display:'none' }} className='external-link'>
                 <a 
@@ -57,7 +41,7 @@ export default function FooterLayout({
       </footer>
       
       {/* AI Assistant 组件 - 默认隐藏，点击 logo 后显示 */}
-      <AIAssistant visible={showAIAssistant} />
+      <AIAssistant visible={true} />
     </>
   );
 }

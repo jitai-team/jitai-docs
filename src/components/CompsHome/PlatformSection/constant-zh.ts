@@ -1,6 +1,6 @@
 const CONTENT = {
   title: 'Jit 运行平台',
-  subtitle: '本地部署的集成化应用运行环境',
+  subtitle: '本地部署、自动更新、开箱即用，为AI原生的企业应用提供健壮、安全、可扩展、跨平台的分布式运行平台',
   color: '#3D65FD',
   features: [
     {

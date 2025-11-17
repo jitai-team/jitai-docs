@@ -22,6 +22,14 @@ const config: Config = {
     baseUrl: "/",
     // Algolia site verification and Google Tag Manager
     headTags: [
+        // Viewport meta tag for mobile optimization
+        {
+            tagName: "meta",
+            attributes: {
+                name: "viewport",
+                content: "width=device-width, viewport-fit=cover, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no",
+            },
+        },
         // Google Tag Manager
         {
             tagName: "script",

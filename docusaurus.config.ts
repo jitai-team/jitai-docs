@@ -22,14 +22,8 @@ const config: Config = {
     baseUrl: "/",
     // Algolia site verification and Google Tag Manager
     headTags: [
-        // Viewport meta tag for mobile optimization
-        {
-            tagName: "meta",
-            attributes: {
-                name: "viewport",
-                content: "width=device-width, viewport-fit=cover, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no",
-            },
-        },
+        // 注意：Viewport 配置已移至 themeConfig.metadata
+        // 在此处配置会被 Docusaurus 默认的 viewport 覆盖
         // Google Tag Manager
         {
             tagName: "script",
@@ -132,6 +126,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     },
     themes: ["@docusaurus/theme-mermaid"],
     themeConfig: {
+        // 覆盖默认的 viewport meta 标签，禁止移动端缩放
+        metadata: [
+            {
+                name: 'viewport',
+                content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
+            }
+        ],
         // Replace with your project's social card
         image: "https://jit-www.oss-accelerate.aliyuncs.com/logo/logo_dark.png",
         colorMode: {

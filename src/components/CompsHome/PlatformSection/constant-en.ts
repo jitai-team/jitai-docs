@@ -1,6 +1,6 @@
 const CONTENT = {
   title: 'Jit Runtime Platform',
-  subtitle: 'Locally Deployed Integrated Application Runtime Environment',
+  subtitle: 'On-premises deployment, automatic updates, and out-of-the-box readiness — a robust, secure, scalable, and cross-platform distributed runtime platform for AI-native enterprise applications',
   color: '#3D65FD',
   features: [
     {

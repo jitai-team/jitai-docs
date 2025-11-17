@@ -9,8 +9,8 @@ const CONTENT = {
     cards: [
         {
             title: "Production-Grade AI Application Development",
-            description: `AI&UI collaborative AI application development framework for rapidly developing AI applications where humans and AI collaborat.
-      <br/>Traditional information application development framework for quickly building enterprise information system.`,
+            description: `A full-stack development framework for LLMs, AI workflows, AI agents, and AI-assisted human–UI collaboration — radically simplifying the rapid development of production-grade AI applications.
+      <br/>A comprehensive integration of modern information technologies that streamlines the rapid development of AI-native, enterprise-grade IT applications.`,
             color: "#3D65FD",
         },
         // <br/>Doc/Excel assistant application development framework for rapidly customizing enterprise-specific document writing AI assistants.
@@ -38,12 +38,12 @@ const CONTENT = {
       <br/>Visual orchestration of distributed clusters.`,
             color: "#3D65FD",
         },
-        // {
-        //   "title": "Seamless Integration and Infinite Extension",
-        //   "description": `Can infinitely integrate any technology into orchestration mod.
-        //   <br/>Can infinitely extend and modify any integration.`,
-        //   "color": "#3D65FD"
-        // }
+        {
+          "title": "Seamless Integration and Infinite Extension",
+          "description": `Can infinitely integrate any technology into orchestration mod.
+          <br/>Can infinitely extend and modify any integration.`,
+          "color": "#3D65FD"
+        }
     ],
 };
 

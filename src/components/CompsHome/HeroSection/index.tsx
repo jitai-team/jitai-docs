@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import globalStyles from "../../../pages/index.module.css";
 import CONTENT_ZH from "./constant-zh";
 import CONTENT_EN from "./constant-en";
+import { addUTMToUrl } from "../../../utils/utm";
 
 const HeroSection: React.FC<{ currentLocale?: string }> = ({
     currentLocale,
@@ -78,7 +79,7 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                             href={
                                 isMobile
                                     ? "./docs/tutorial"
-                                    : "https://demo.jit.pro"
+                                    : addUTMToUrl("https://demo.jit.pro")
                             }
                             target="_blank"
                         >

@@ -3,6 +3,7 @@ import styles from './styles.module.css';
 import globalStyles from '../../../pages/v1.module.css';
 import CONTENT_ZH from './constant-zh';
 import CONTENT_EN from './constant-en';
+import { addUTMToUrl } from '../../../utils/utm';
 
 // 打字机效果组件
 const TypewriterText: React.FC<{ text: string; isVisible: boolean; speed?: number; repeat?: boolean }> = ({
@@ -167,7 +168,7 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({ currentLocale }) =>
 
           {/* 行动按钮区域 */}
           <div className={`${styles.heroButtons} ${animateElements ? styles.buttonsAnimate : ''}`}>
-            <a className={styles.primaryButton} href={isMobile ? "./docs/tutorial" : "https://demo.jit.pro"} target="_blank">
+            <a className={styles.primaryButton} href={isMobile ? "./docs/tutorial" : addUTMToUrl("https://demo.jit.pro")} target="_blank">
               <span className={styles.buttonText}>
                 {isMobile ? content.buttonGetStart : content.buttonDemo}
               </span>

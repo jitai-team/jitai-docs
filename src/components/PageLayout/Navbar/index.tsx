@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import LanguageSwitcher from "../LanguageSwitcher";
 import CONTENT_EN from "./constant-en";
 import CONTENT_ZH from "./constant-zh";
+import { addUTMToUrl } from "../../../utils/utm";
 
 interface NavbarProps {
     currentLocale?: string;
@@ -79,15 +80,20 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
     }, [isMobileMenuOpen]);
 
     const handleNavClick = (item: any) => {
+        // 为 demo.jit.pro 链接添加 UTM 参数
+        const url = item.url && item.url.includes('demo.jit.pro') 
+            ? addUTMToUrl(item.url) 
+            : item.url;
+        
         // 移动端点击后关闭菜单
         if (isMobile) {
-            window.location.href = item.url;
+            window.location.href = url;
             setIsMobileMenuOpen(false);
         } else {
             if (item.type === "newTab") {
-                window.open(item.url, "_blank");
+                window.open(url, "_blank");
             } else {
-                window.location.href = item.url;
+                window.location.href = url;
             }
         }
     };

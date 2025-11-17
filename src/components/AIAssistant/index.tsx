@@ -14,6 +14,18 @@ interface AIAssistantProps {
  * 返回20位的十六进制哈希值
  */
 const simpleHash = async (str: string): Promise<string> => {
+    // 检查 crypto.subtle 是否可用（在 HTTP 环境或某些浏览器中可能不可用）
+    if (typeof crypto === 'undefined' || !crypto.subtle) {
+        // 降级方案：使用简单的字符串哈希
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) {
+            const char = str.charCodeAt(i);
+            hash = ((hash << 5) - hash) + char;
+            hash = hash & hash; // Convert to 32bit integer
+        }
+        return Math.abs(hash).toString(16).padStart(20, '0').substring(0, 20);
+    }
+    
     const encoder = new TextEncoder();
     const data = encoder.encode(str);
     const hashBuffer = await crypto.subtle.digest("SHA-256", data);

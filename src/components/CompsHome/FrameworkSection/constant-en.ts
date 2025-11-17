@@ -1,6 +1,6 @@
 const CONTENT = {
   title: 'Jit Development Framework',
-  subtitle: 'JAAP-based enterprise application development framework providing comprehensive full-stack technical infrastructure',
+  subtitle: 'An AI-native full-stack development framework built on the JAAP protocol, seamlessly integrating mainstream technologies for both AI and traditional application development — dramatically simplifying rapid application-layer development',
   color: '#3D65FD',
   learnMore: 'Learn More',
   frameworks: [

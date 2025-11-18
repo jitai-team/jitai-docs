@@ -33,6 +33,25 @@ function extractUTMParams() {
 }
 
 /**
+ * 格式化时间为 "YYYY-MM-DD HH:mm:ss" 格式（UTC 0时区）
+ */
+function formatUTCTime(date) {
+  return date.toISOString().slice(0, 19).replace('T', ' ');
+}
+
+/**
+ * 将 UTC 时间字符串转换为 +8 时区
+ * @param {string} utcTimeStr - UTC 时间字符串 "YYYY-MM-DD HH:mm:ss"
+ * @returns {string} - +8 时区时间字符串 "YYYY-MM-DD HH:mm:ss"
+ */
+function convertToUTC8(utcTimeStr) {
+  if (!utcTimeStr) return utcTimeStr;
+  const date = new Date(utcTimeStr + ' UTC');
+  const utc8Date = new Date(date.getTime() + 8 * 60 * 60 * 1000);
+  return formatUTCTime(utc8Date);
+}
+
+/**
  * 获取客户端 IP 地址（通过第三方 API）
  */
 async function getClientIP() {
@@ -55,7 +74,7 @@ async function getClientIP() {
 async function saveUTMParams(params) {
   const expiryDate = new Date();
   expiryDate.setDate(expiryDate.getDate() + UTM_EXPIRY_DAYS);
-  const now = new Date().toISOString();
+  const now = formatUTCTime(new Date()); // 格式化为 "YYYY-MM-DD HH:mm:ss" UTC 时间
 
   // 获取 IP 地址（异步）
   const ip = await getClientIP();
@@ -137,26 +156,39 @@ export function clearUTMParams() {
 }
 
 /**
- * 给 URL 添加 UTM 参数
+ * 给 URL 添加 UTM 参数和访问信息
  * @param {string} url - 原始 URL
- * @returns {string} - 添加了 UTM 参数的 URL
+ * @returns {string} - 添加了 UTM 参数和访问信息的 URL
  */
 export function addUTMToUrl(url) {
   if (!url) return url;
   
-  const utmParams = getUTMParams();
-  if (!utmParams || Object.keys(utmParams).length === 0) {
+  const visitInfo = getVisitInfo();
+  if (!visitInfo) {
     return url;
   }
 
   try {
     const urlObj = new URL(url, window.location.origin);
     
-    // 添加 UTM 参数到 URL
-    Object.entries(utmParams).forEach(([key, value]) => {
-      if (value) {
-        urlObj.searchParams.set(key, value);
-      }
+    // 添加 UTM 参数
+    if (visitInfo.utm) {
+      Object.entries(visitInfo.utm).forEach(([key, value]) => {
+        if (value) urlObj.searchParams.set(key, value);
+      });
+    }
+    
+    // 添加访问信息参数（first_visit 转换为 +8 时区）
+    const params = {
+      first_visit: convertToUTC8(visitInfo.firstVisit),
+      user_agent: visitInfo.userAgent,
+      ip: visitInfo.ip,
+      referrer: visitInfo.referrer,
+      landing_page: visitInfo.landingPage
+    };
+    
+    Object.entries(params).forEach(([key, value]) => {
+      if (value) urlObj.searchParams.set(key, value);
     });
 
     return urlObj.toString();

@@ -137,7 +137,7 @@ const CONTENT = {
     yearly: 'Subscribe',
     buyout: 'Pay',
   },
-  contactSalesLink: 'https://wy.jit.pro/whwy/jitRDM/publicPortal/contactus',
+  contactSalesLink: 'https://wy.jit.pro/whwy/aicrm/public/contactus',
   moneyUnit: '$',
   priceUnit: {
     monthly: 'per month',

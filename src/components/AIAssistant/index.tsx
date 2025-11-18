@@ -325,8 +325,8 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
             aiAssistant.init({
                 containerId: "ai-assistant-container",
                 assistantUrl:
-                    "https://wy.jit.pro/whwy/jitRDM/aiassistants/consultancyAssistant",
-                accessKey: "yzxOZfkrCYGKdPmhpDFVRgnIvecJWSEB",
+                    "https://wy.jit.pro/whwy/aicrm/aiassistants/techSupportAssistant",
+                accessKey: "bazYVkcxUHwqduXhCtADGnyfRKTiIrlN",
                 logContent: "NOT_OUTPUT",
                 welcomeMessage: CONTENT.welcomeMessage,
                 prologues: CONTENT.prologues,

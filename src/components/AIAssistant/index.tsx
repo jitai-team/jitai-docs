@@ -3,6 +3,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./index.module.css";
 import ZH_CONTENT from "./constant-zh";
 import EN_CONTENT from "./constant-en";
+import { addUTMToUrl } from "../../utils/utm";
 
 interface AIAssistantProps {
     className?: string;
@@ -383,6 +384,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
                     },
                     functions: {
                         // Add your custom functions here
+                        addUTMToUrl: addUTMToUrl
                     },
                 });
 

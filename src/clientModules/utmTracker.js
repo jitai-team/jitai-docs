@@ -21,35 +21,58 @@ const UTM_PARAMS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm
 function extractUTMParams() {
   const urlParams = new URLSearchParams(window.location.search);
   const utmParams = {};
-  let hasParams = false;
 
   UTM_PARAMS.forEach(param => {
     const value = urlParams.get(param);
     if (value) {
       utmParams[param] = value;
-      hasParams = true;
     }
   });
 
-  return hasParams ? utmParams : null;
+  return utmParams;
 }
 
 /**
- * 保存 UTM 参数到 localStorage
+ * 获取客户端 IP 地址（通过第三方 API）
  */
-function saveUTMParams(params) {
+async function getClientIP() {
+  try {
+    const response = await fetch('https://api.ipify.org?format=json', {
+      method: 'GET',
+      timeout: 3000
+    });
+    const data = await response.json();
+    return data.ip || 'unknown';
+  } catch (error) {
+    console.warn('[UTM Tracker] 无法获取 IP 地址：', error);
+    return 'unknown';
+  }
+}
+
+/**
+ * 保存 UTM 参数和访问信息到 localStorage
+ */
+async function saveUTMParams(params) {
   const expiryDate = new Date();
   expiryDate.setDate(expiryDate.getDate() + UTM_EXPIRY_DAYS);
+  const now = new Date().toISOString();
+
+  // 获取 IP 地址（异步）
+  const ip = await getClientIP();
 
   const data = {
     params: params,
     expiry: expiryDate.getTime(),
-    firstSeen: new Date().toISOString()
+    firstVisit: now,
+    firstSeen: now, // 保持兼容性
+    userAgent: navigator.userAgent || 'unknown',
+    ip: ip,
+    referrer: document.referrer || 'direct',
+    landingPage: window.location.href
   };
 
   try {
     localStorage.setItem(UTM_STORAGE_KEY, JSON.stringify(data));
-    console.log('[UTM Tracker] UTM 参数已保存，有效期至：', expiryDate.toLocaleString());
   } catch (error) {
     console.error('[UTM Tracker] 保存 UTM 参数失败：', error);
   }
@@ -68,7 +91,6 @@ function loadUTMParams() {
 
     // 检查是否过期
     if (now > data.expiry) {
-      console.log('[UTM Tracker] UTM 参数已过期，已清除');
       localStorage.removeItem(UTM_STORAGE_KEY);
       return null;
     }
@@ -89,11 +111,29 @@ export function getUTMParams() {
 }
 
 /**
+ * 获取完整的访问信息（包括 UTM 参数和访问详情）
+ */
+export function getVisitInfo() {
+  const data = loadUTMParams();
+  if (!data) return null;
+  
+  return {
+    utm: data.params,
+    firstVisit: data.firstVisit,
+    userAgent: data.userAgent,
+    ip: data.ip,
+    referrer: data.referrer,
+    landingPage: data.landingPage,
+    expiresAt: new Date(data.expiry).toISOString(),
+    remainingDays: Math.ceil((data.expiry - new Date().getTime()) / (1000 * 60 * 60 * 24))
+  };
+}
+
+/**
  * 清除保存的 UTM 参数
  */
 export function clearUTMParams() {
   localStorage.removeItem(UTM_STORAGE_KEY);
-  console.log('[UTM Tracker] UTM 参数已清除');
 }
 
 /**
@@ -127,66 +167,20 @@ export function addUTMToUrl(url) {
 }
 
 /**
- * 为页面上的 demo.jit.pro 链接添加 UTM 参数
- */
-function updateDemoLinks() {
-  const utmParams = getUTMParams();
-  if (!utmParams || Object.keys(utmParams).length === 0) {
-    return;
-  }
-
-  // 查找所有指向 demo.jit.pro 的链接
-  const links = document.querySelectorAll('a[href*="demo.jit.pro"]');
-  
-  links.forEach(link => {
-    const originalHref = link.getAttribute('href');
-    if (originalHref && !link.dataset.utmProcessed) {
-      const newHref = addUTMToUrl(originalHref);
-      link.setAttribute('href', newHref);
-      link.dataset.utmProcessed = 'true';
-    }
-  });
-
-  if (links.length > 0) {
-    console.log('[UTM Tracker] 已为', links.length, '个链接添加 UTM 参数');
-  }
-}
-
-/**
  * 初始化 UTM 追踪器
  */
-function initUTMTracker() {
-  // 检查当前 URL 是否包含 UTM 参数
-  const currentUTMParams = extractUTMParams();
+async function initUTMTracker() {
+  // 检查是否已有保存的数据
+  const storedData = loadUTMParams();
   
-  if (currentUTMParams) {
-    // 如果当前 URL 有 UTM 参数，保存（覆盖旧的）
-    saveUTMParams(currentUTMParams);
-    console.log('[UTM Tracker] 检测到新的 UTM 参数：', currentUTMParams);
-  } else {
-    // 如果当前 URL 没有 UTM 参数，检查是否有已保存的参数
-    const storedData = loadUTMParams();
-    if (storedData) {
-      const remainingDays = Math.ceil((storedData.expiry - new Date().getTime()) / (1000 * 60 * 60 * 24));
-      console.log('[UTM Tracker] 使用已保存的 UTM 参数，剩余有效期：', remainingDays, '天');
-      console.log('[UTM Tracker] 参数详情：', storedData.params);
-    }
+  // 如果已有存储数据，不覆盖，继续使用首次访问信息
+  if (storedData) {
+    return; // 已有数据，不再保存新数据
   }
-
-  // 更新页面上的 demo.jit.pro 链接
-  updateDemoLinks();
-
-  // 监听 DOM 变化，处理动态加载的链接
-  if (typeof MutationObserver !== 'undefined') {
-    const observer = new MutationObserver(() => {
-      updateDemoLinks();
-    });
-
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true
-    });
-  }
+  
+  // 首次访问，保存数据
+  const currentUTMParams = extractUTMParams();
+  await saveUTMParams(currentUTMParams);
 }
 
 // 页面加载时自动执行
@@ -201,6 +195,7 @@ if (typeof window !== 'undefined') {
   // 将工具函数暴露到全局对象（方便调试和外部调用）
   window.jitaiUTM = {
     getParams: getUTMParams,
+    getVisitInfo: getVisitInfo,
     clearParams: clearUTMParams,
     addUTMToUrl: addUTMToUrl,
     init: initUTMTracker

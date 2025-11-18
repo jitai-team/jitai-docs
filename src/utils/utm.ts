@@ -43,11 +43,36 @@ export function getUTMParams(): Record<string, string> | null {
   return window.jitaiUTM.getParams();
 }
 
+/**
+ * 获取完整的访问信息
+ * @returns 访问信息对象或 null
+ */
+export function getVisitInfo(): VisitInfo | null {
+  if (typeof window === 'undefined' || !window.jitaiUTM) {
+    return null;
+  }
+  
+  return window.jitaiUTM.getVisitInfo();
+}
+
+// TypeScript 类型定义
+export interface VisitInfo {
+  utm: Record<string, string>;
+  firstVisit: string;
+  userAgent: string;
+  ip: string;
+  referrer: string;
+  landingPage: string;
+  expiresAt: string;
+  remainingDays: number;
+}
+
 // TypeScript 类型声明
 declare global {
   interface Window {
     jitaiUTM?: {
       getParams: () => Record<string, string> | null;
+      getVisitInfo: () => VisitInfo | null;
       clearParams: () => void;
       addUTMToUrl: (url: string) => string;
       init: () => void;

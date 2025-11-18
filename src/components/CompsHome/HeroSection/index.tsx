@@ -120,8 +120,11 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                                 <video
                                     className={styles.video}
                                     controls
+                                    autoPlay
+                                    muted
+                                    loop
                                     playsInline
-                                    preload="metadata"
+                                    preload="auto"
                                 >
                                     <source
                                         src={content.previewVideoUrl}

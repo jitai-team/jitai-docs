@@ -78,6 +78,9 @@ async function saveUTMParams(params) {
 
   // 获取 IP 地址（异步）
   const ip = await getClientIP();
+  
+  // 获取着陆页 URL（去掉参数）
+  const landingPage = window.location.origin + window.location.pathname;
 
   const data = {
     params: params,
@@ -87,7 +90,7 @@ async function saveUTMParams(params) {
     userAgent: navigator.userAgent || 'unknown',
     ip: ip,
     referrer: document.referrer || 'direct',
-    landingPage: window.location.href
+    landingPage: landingPage
   };
 
   try {

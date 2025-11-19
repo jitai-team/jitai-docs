@@ -9,6 +9,7 @@
  * @returns 添加了 UTM 参数的 URL
  */
 export function addUTMToUrl(url: string): string {
+  console.error('aiaddUTMToUrl========================', url);
   if (typeof window === 'undefined' || !window.jitaiUTM) {
     return url;
   }

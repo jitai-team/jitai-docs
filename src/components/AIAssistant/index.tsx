@@ -5,6 +5,17 @@ import ZH_CONTENT from "./constant-zh";
 import EN_CONTENT from "./constant-en";
 import { addUTMToUrl } from "../../utils/utm";
 
+
+const getCompleteReferenceFormUrl = function(lang: string) {
+    let baseUrl = "";
+    if (lang === "zh") {
+        baseUrl = "https://wy.jit.pro/whwy/aicrm/s/zhcontactus";
+    } else {
+        baseUrl = "https://wy.jit.pro/whwy/aicrm/s/contactus";
+    }
+    return addUTMToUrl(baseUrl);
+}
+
 interface AIAssistantProps {
     className?: string;
     visible?: boolean; // 是否显示 AI 助手，默认为 true。即使为 false，SDK 也会在后台加载
@@ -384,7 +395,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
                     },
                     functions: {
                         // Add your custom functions here
-                        addUTMToUrl: addUTMToUrl
+                        getCompleteReferenceFormUrl: getCompleteReferenceFormUrl
                     },
                 });
 

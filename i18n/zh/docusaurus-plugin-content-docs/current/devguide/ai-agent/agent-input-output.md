@@ -15,7 +15,7 @@ Agent的输入输出配置是实现智能交互的关键环节。通过合理配
 
 开发者在Agent可视化编辑器中切换到`输入变量`页签，点击`添加输入变量`按钮，在弹出的对话框中填写变量标题、选择变量数据类型，点击`确定`按钮即可。
 
-输入变量支持单行文本、多行文本、数字、金额、字典等JitAi[数据类型](../../reference/framework/JitORM/data-types)及其配置项。
+输入变量支持单行文本、多行文本、数字、金额、字典等JitAI[数据类型](../../reference/framework/JitORM/data-types)及其配置项。
 
 ### 在提示词中使用变量 {#using-variables-in-prompts}
 在调用Agent时，除了可以传递用户的输入内容，还可以动态传入变量。这些变量能够在提示词中被引用，实现更灵活的上下文定制和信息填充，使Agent能够根据实际业务场景动态调整行为和响应内容。
@@ -43,7 +43,7 @@ Agent支持两种输出模式：**结构化输出**和**纯文本输出**。各�
 :::
 
 #### 输出结果数据类型 {#output-result-data-types}
-输出结果支持JitAi平台的各种[数据类型](../../reference/framework/JitORM/data-types)，包括：
+输出结果支持JitAI平台的各种[数据类型](../../reference/framework/JitORM/data-types)，包括：
 
 - **单行文本**：适用于简短的文本输出，如标题、名称等
 - **多行文本**：适用于较长的文本内容，如描述、总结等

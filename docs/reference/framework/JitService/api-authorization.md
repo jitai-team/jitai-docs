@@ -7,9 +7,9 @@ sidebar_label: "API Authorization"
 # API Authorization
 API authorization is used to manage third-party applications' access permissions to this application's API interfaces, controlling which external applications can call which APIs through accessKey/accessSecret key pairs. It ensures call security through signature verification mechanisms, automatically records all API access logs, and provides standardized API open capabilities for applications.
 
-The hierarchical structure of API authorization elements is Meta (apiAuths.Meta) → Type (apiAuths.NormalType) → Instance. Developers can quickly create API authorization instance elements through JitAi's visual development tools.
+The hierarchical structure of API authorization elements is Meta (apiAuths.Meta) → Type (apiAuths.NormalType) → Instance. Developers can quickly create API authorization instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `apiAuths.NormalType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `apiAuths.NormalType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

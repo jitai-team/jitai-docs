@@ -7,9 +7,9 @@ description: "Vue全代码页面 API 参考文档。完整的规格说明、方�
 # Vue全代码页面
 Vue全代码页面是基于Vue.js技术栈的全代码页面类型，集成Element Plus UI组件库，支持Vue 3的组合式API和响应式数据系统。它为熟悉Vue的开发者提供完整的Vue开发环境，可以使用Vue生态的第三方插件和工具链，适用于需要Vue技术栈的项目或团队技术选型。
 
-Vue全代码页面元素分层结构为Meta（pages.Meta） → Type（pages.VueType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建Vue全代码页面实例元素。
+Vue全代码页面元素分层结构为Meta（pages.Meta） → Type（pages.VueType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建Vue全代码页面实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的pages.VueType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的pages.VueType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素
@@ -547,10 +547,10 @@ async function Render(props: any) {
 }
 ```
 
-### 与JitAi系统集成
-Vue页面可以直接调用JitAi的服务和模型。
+### 与JitAI系统集成
+Vue页面可以直接调用JitAI的服务和模型。
 
-#### 调用JitAi服务
+#### 调用JitAI服务
 ```vue title="调用服务示例"
 <template>
   <div>

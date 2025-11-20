@@ -5,9 +5,9 @@ description: "常规审批 API 参考文档。完整的规格说明、方法和�
 # 常规审批
 常规审批是企业工作流管理的核心元素，基于JitWorkflow审批引擎实现完整的审批流程处理能力。它负责审批节点配置、审批人分配、条件分支和并行处理，支持多种审批模式和复杂审批策略，满足不同业务场景的审批需求。
 
-常规审批元素分层结构为Meta（workflows.Meta） → Type（workflows.NormalType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建常规审批实例元素。
+常规审批元素分层结构为Meta（workflows.Meta） → Type（workflows.NormalType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建常规审批实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的workflows.NormalType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的workflows.NormalType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

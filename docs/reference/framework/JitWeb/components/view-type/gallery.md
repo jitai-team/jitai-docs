@@ -9,7 +9,7 @@ Gallery is a card view component used to display data lists in a grid layout. It
 
 The gallery element has a hierarchical structure of Meta (components.Meta) → Type (components.Gallery) → Instance. Developers can quickly create Gallery instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `components.GalleryType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `components.GalleryType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start 
 ### Basic Configuration Example

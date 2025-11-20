@@ -7,7 +7,7 @@ description: "Build enterprise-grade forms with visual design. Data model bindin
 
 # Form Components
 
-Forms are among the most frequently used components in application development. While traditional forms are limited to collecting, validating, and submitting user input data, JitAi's form components extend far beyond these basic functions. They provide powerful capabilities including visual design, data model binding, permission control, and business rule configuration. Through intuitive drag-and-drop operations, you can construct enterprise-grade form applications with sophisticated interaction logic and advanced data processing capabilities.
+Forms are among the most frequently used components in application development. While traditional forms are limited to collecting, validating, and submitting user input data, JitAI's form components extend far beyond these basic functions. They provide powerful capabilities including visual design, data model binding, permission control, and business rule configuration. Through intuitive drag-and-drop operations, you can construct enterprise-grade form applications with sophisticated interaction logic and advanced data processing capabilities.
 
 ## Basic configuration and item management {#basic-configuration-and-item-management}
 In the page visual editor, click `Insert Component` and drag the `Form component` onto the page. Select a data model in the data source configuration and click `Confirm`.

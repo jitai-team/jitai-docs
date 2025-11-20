@@ -7,9 +7,9 @@ description: "Agent事件 API 参考文档。完整的规格说明、方法和�
 # Agent事件
 Agent事件是专用于AIAgent相关操作的事件处理，它负责监听Agent的创建、执行、完成等状态变化，支持Agent任务启动、进度更新、结果回调等关键环节的事件触发和处理，为Agent间协作和任务链式执行提供统一的事件处理机制。
 
-Agent事件元素分层结构为Meta（events.Meta） → Type（events.AIAgentType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建Agent事件实例元素。
+Agent事件元素分层结构为Meta（events.Meta） → Type（events.AIAgentType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建Agent事件实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的events.AIAgentType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的events.AIAgentType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

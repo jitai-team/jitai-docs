@@ -9,7 +9,7 @@ description: "支付服务 API 参考文档。完整的规格说明、方法和�
 
 支付服务作为JitPay框架的预置实例元素（pays.services.PaySvc），开发者可以直接通过`app.getElement("pays.services.PaySvc")`获取并使用，无需手动创建配置。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的pays.services.PaySvc元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的pays.services.PaySvc元素，以实现自己的封装。
 
 ## 基本用法
 ### 获取服务实例

@@ -6,14 +6,14 @@ description: "Reference Index API documentation for developers. Complete specifi
 import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 # Reference Index
-JitAi reference documentation provides comprehensive API documentation, configuration instructions, and technical specifications. Developers can query element configuration parameters, method invocation interfaces, data structure definitions, and platform protocol specifications to quickly resolve technical issues during development.
+JitAI reference documentation provides comprehensive API documentation, configuration instructions, and technical specifications. Developers can query element configuration parameters, method invocation interfaces, data structure definitions, and platform protocol specifications to quickly resolve technical issues during development.
 ## [Development Framework](reference/framework)
 Provides element configuration, API interfaces, and usage methods for each framework module, including complete parameter descriptions, code examples, and best practice guidance.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', gap: '16px', marginBottom: '32px'}}>
 
 <IndexCard
-  title="JitAi"
+  title="JitAI"
   href="reference/framework/JitAi"
   description="AI application development framework that provides comprehensive AI-native application building capabilities."
 >

@@ -9,7 +9,7 @@ Cross table is a specialized table component for data pivoting and cross-analysi
 
 The cross table element has a hierarchical structure of Meta (`components.Meta`) → Type (`components.CrossTable`) → Instance. Developers can quickly create cross table instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `components.CrossTableType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `components.CrossTableType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start 
 ### Basic Configuration Example

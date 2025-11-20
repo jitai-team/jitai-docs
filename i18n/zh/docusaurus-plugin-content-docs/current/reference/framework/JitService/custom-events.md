@@ -5,9 +5,9 @@ description: "自定义事件 API 参考文档。完整的规格说明、方法�
 # 自定义事件
 自定义事件由开发者在服务元素中根据需要自由定义，并在业务逻辑代码中进行触发，为事件驱动型的系统开发提供足够的灵活度。
 
-自定义事件元素分层结构为Meta（events.Meta） → Type（events.NormalType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建自定义事件实例元素。
+自定义事件元素分层结构为Meta（events.Meta） → Type（events.NormalType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建自定义事件实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的events.NormalType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的events.NormalType元素，以实现自己的封装。
 
 ## 快速开始 
 开发者需要先[在服务元素中定义事件](./custom-business-service#event-definition-and-usage)，然后才能创建`自定义事件`实例元素订阅服务中定义的事件，并编写事件业务逻辑代码。

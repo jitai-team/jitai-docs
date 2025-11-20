@@ -3,11 +3,11 @@ slug: full-code-component
 description: "全代码组件 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 全代码组件
-全代码组件是JitAi开发框架中的通用自定义组件，支持开发者使用React和JavaScript编写完全自定义的组件实现。它提供完整的组件生命周期管理、事件发布订阅、变量管理和配置管理能力，同时集成错误边界保护确保组件渲染稳定性。
+全代码组件是JitAI开发框架中的通用自定义组件，支持开发者使用React和JavaScript编写完全自定义的组件实现。它提供完整的组件生命周期管理、事件发布订阅、变量管理和配置管理能力，同时集成错误边界保护确保组件渲染稳定性。
 
 全代码组件元素分层结构为Meta（components.Meta） → Type（components.BlankComponent） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建全代码组件实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.BlankComponentType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的components.BlankComponentType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 基础配置示例

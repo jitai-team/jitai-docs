@@ -10,7 +10,7 @@ Global Styles is a style configuration system based on Ant Design Design Token s
 
 The Global Styles element has a hierarchical structure of Meta (themes.Meta) → Type (themes.NormalType) → Instance. Developers can quickly create global styles instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official themes.NormalType element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official themes.NormalType element provided by JitAI in their own App to implement their own encapsulation.
 
 :::tip Reference Documentation
 Developers can refer to [Ant Design Customize Theme Documentation](https://ant-design.antgroup.com/docs/react/customize-theme-cn#seedtoken) to learn more about Design Token concepts and usage.

@@ -7,7 +7,7 @@ description: "支付 API 参考文档。完整的规格说明、方法和示例�
 
 支付元素分层结构为Meta（components.Meta） → Type（components.Payment） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建支付实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.PaymentType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的components.PaymentType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 基础配置示例

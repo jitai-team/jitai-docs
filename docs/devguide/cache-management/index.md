@@ -4,7 +4,7 @@ description: "Cache management strategies for performance. Configure caching lay
 ---
 
 # Cache Configuration and Usage
-JitAi supports multiple cache types, including Redis, SQLite, and TongRDS, covering different scenarios from development and testing to production deployment. Caches are suitable for storing frequently accessed data that can tolerate brief inconsistencies, such as user sessions, verification codes, hot configurations, list aggregation results, and rate limiting counters. The system automatically adds key name prefixes for different applications to avoid cross-application conflicts.
+JitAI supports multiple cache types, including Redis, SQLite, and TongRDS, covering different scenarios from development and testing to production deployment. Caches are suitable for storing frequently accessed data that can tolerate brief inconsistencies, such as user sessions, verification codes, hot configurations, list aggregation results, and rate limiting counters. The system automatically adds key name prefixes for different applications to avoid cross-application conflicts.
 Built-in caches are used for "out-of-the-box" development/testing environments: desktop environments default to SQLite, while server environments default to containerized Redis. For production environments, it's recommended to deploy Redis independently and create corresponding cache instances in the application.
 
 ## Cache Service Configuration {#cache-service-configuration}

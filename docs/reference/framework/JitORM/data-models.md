@@ -7,9 +7,9 @@ sidebar_label: "Data Models"
 ---
 
 # Data Models
-Models are business entity objects, and data models have built-in data operation interfaces commonly used in the business layer. JitORM provides object-oriented data model definition methods based on rich data types. Developers can use the visual interface of JitAi development tools to edit model elements, or use full-code approach.
+Models are business entity objects, and data models have built-in data operation interfaces commonly used in the business layer. JitORM provides object-oriented data model definition methods based on rich data types. Developers can use the visual interface of JitAI development tools to edit model elements, or use full-code approach.
 
-The hierarchical structure of data model elements is Meta (models.Meta) → Type (models.NormalType) → Instance. Developers can also create their own Type elements or modify the official `models.NormalType` element provided by JitAi in their own App to implement their own encapsulation.
+The hierarchical structure of data model elements is Meta (models.Meta) → Type (models.NormalType) → Instance. Developers can also create their own Type elements or modify the official `models.NormalType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Model Classification
 Data models include regular data models, aggregation table models, extension table models, and data object models (tableless models).

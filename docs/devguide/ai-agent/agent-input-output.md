@@ -15,7 +15,7 @@ Each Agent receives a default parameter when called: `User Input`. Developers ca
 
 Developers can switch to the `Input Variables` tab in the Agent visual editor, click the `Add Input Variable` button, fill in the variable title and select the variable data type in the popup dialog, then click the `Confirm` button.
 
-Input variables support JitAi [data types](../../reference/framework/JitORM/data-types) and their configuration options, including single-line text, multi-line text, numbers, amounts, dictionaries, and more.
+Input variables support JitAI [data types](../../reference/framework/JitORM/data-types) and their configuration options, including single-line text, multi-line text, numbers, amounts, dictionaries, and more.
 
 ### Using variables in prompts {#using-variables-in-prompts}
 When calling an Agent, in addition to passing user input content, you can also dynamically pass in variables. These variables can be referenced in prompts, enabling more flexible context customization and information filling, allowing the Agent to dynamically adjust behavior and response content based on actual business scenarios.
@@ -44,7 +44,7 @@ The title and name of each output result field need to be carefully considered t
 :::
 
 #### Output result data types {#output-result-data-types}
-Output results support various [data types](../../reference/framework/JitORM/data-types) of the JitAi platform, including:
+Output results support various [data types](../../reference/framework/JitORM/data-types) of the JitAI platform, including:
 
 - **Single-line Text**: Suitable for short text output, such as titles, names, etc.
 - **Multi-line Text**: Suitable for longer text content, such as descriptions, summaries, etc.

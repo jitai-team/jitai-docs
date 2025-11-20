@@ -5,7 +5,7 @@ description: "Create service elements for business logic encapsulation. Define c
 ---
 
 # Creating Service Elements
-Whether in object-oriented or procedural development, encapsulating functions makes code reusable and maintainable. Through function encapsulation, commonly used or complex business logic can be isolated for convenient invocation and management. JitAi enables developers to define custom business service functions through service elements.
+Whether in object-oriented or procedural development, encapsulating functions makes code reusable and maintainable. Through function encapsulation, commonly used or complex business logic can be isolated for convenient invocation and management. JitAI enables developers to define custom business service functions through service elements.
 
 Service elements are Python-based backend elements. Within service elements, developers can flexibly declare multiple service functions and effectively organize and manage complex business logic code through proper categorization. Developers can create multiple service elements in applications following the principles of high cohesion and low coupling, managing different service functions by category, such as user services, order services, or payment services.
 
@@ -14,7 +14,7 @@ Service elements are Python-based backend elements. Within service elements, dev
 To create a service element, locate `Services` in the element directory tree, click the `+` button on the right side, select `Generic Service`, fill in the service name in the popup dialog, and click `Confirm` to complete creation and automatically enter the visual editor.
 
 ## Creating service functions {#create-service-functions}
-JitAi enables developers to create multiple service functions within a single service element.
+JitAI enables developers to create multiple service functions within a single service element.
 
 ![Create Service Function](./img/create-service-function.gif "Create Service Function")
 
@@ -30,14 +30,14 @@ Click the `</>` button in the upper right corner of the service element visual e
 For detailed information about the internal structure of service elements, refer to the [Custom Business Services](../../reference/framework/JitService/custom-business-service) reference documentation.
 
 ## Adding new dependency libraries {#add-new-dependency-library}
-Developers sometimes need to use mature third-party libraries to improve development efficiency and code quality. JitAi allows developers to modify the `requirements.txt` file to add new dependency libraries.
+Developers sometimes need to use mature third-party libraries to improve development efficiency and code quality. JitAI allows developers to modify the `requirements.txt` file to add new dependency libraries.
 
 ![Add Third-Party Dependencies](./img/add-third-party-dependencies.gif "Add Third-Party Dependencies")
 
 To add dependencies, switch the element directory tree to `Codes` view, locate the `requirements.txt` file and add new dependency libraries to the file, then click the `Save` button. After saving, you can directly import packages from these dependency libraries in service functions.
 
 ## Using cross-app service elements to call authorized APIs {#use-cross-app-service-elements-to-call-authorized-apis} 
-When a JitAi application uses [API authorization elements](../api-exposure/api-authorization) to expose service functions externally, another JitAi application can use `Cross-App Service` elements to access those authorized functions, enabling cross-application service function calls. This calling method is limited to communication between JitAi applications; if the caller is not a JitAi application, it must use the [API authorization element SDK calling method](../api-exposure/using-sdk-to-call-authorized-element-apis.md).
+When a JitAI application uses [API authorization elements](../api-exposure/api-authorization) to expose service functions externally, another JitAI application can use `Cross-App Service` elements to access those authorized functions, enabling cross-application service function calls. This calling method is limited to communication between JitAI applications; if the caller is not a JitAI application, it must use the [API authorization element SDK calling method](../api-exposure/using-sdk-to-call-authorized-element-apis.md).
 
 ### Creating cross-app service elements {#create-cross-app-service-elements}
 ![Create Cross-App Service](./img/create-cross-app-service.gif "Create Cross-App Service")

@@ -5,7 +5,7 @@ description: "创建服务元素的详细指南和说明。"
 ---
 
 # 创建服务元素
-无论是在面向对象还是面向过程开发中，封装函数都可以让代码可复用、更易维护。通过封装函数可以把常用或复杂的业务逻辑独立出来，方便调用和管理。JitAi以服务元素的方式支持开发者自定义业务服务函数。
+无论是在面向对象还是面向过程开发中，封装函数都可以让代码可复用、更易维护。通过封装函数可以把常用或复杂的业务逻辑独立出来，方便调用和管理。JitAI以服务元素的方式支持开发者自定义业务服务函数。
 
 服务元素是基于Python的后端元素。在服务元素中，开发者可以灵活地声明多个服务函数，通过对服务函数的合理分类，有效组织和管理复杂的业务逻辑代码。开发者可以按照高内聚低耦合的原则，在应用中创建多个服务元素，分类管理不同的服务函数。例如：用户服务、订单服务、支付服务等。
 
@@ -14,7 +14,7 @@ description: "创建服务元素的详细指南和说明。"
 开发者在元素目录树上找到`服务`，点击还右侧`+`按钮，选择`标准服务`，在弹窗中填写服务名称，点击`确定`后即可完成服务创建并自动进入可视化编辑器。
 
 ## 创建服务函数 {#create-service-functions}
-JitAi支持开发者在一个服务元素中创建多个服务函数。
+JitAI支持开发者在一个服务元素中创建多个服务函数。
 
 ![创建服务函数](./img/create-service-function.gif)
 
@@ -30,14 +30,14 @@ JitAi支持开发者在一个服务元素中创建多个服务函数。
 关于服务元素的详细内部结构，可以查看[自定义业务服务](../../reference/framework/JitService/custom-business-service)的参考文档。
 
 ## 添加新的依赖库 {#add-new-dependency-library}
-开发者有时会需要使用成熟的第三方库来提升开发效率和代码质量。JitAi支持开发者修改`requirements.txt`文件，添加新的依赖库。
+开发者有时会需要使用成熟的第三方库来提升开发效率和代码质量。JitAI支持开发者修改`requirements.txt`文件，添加新的依赖库。
 
 ![添加三方依赖库](./img/add-third-party-dependencies.gif)
 
 开发者需要将元素目录树切换到`源码`视图，找到`requirements.txt`文件并在文件中添加新的依赖库，点击`保存`按钮即可在服务函数中可以直接导入这些依赖库中的包。
 
 ## 使用跨App服务元素调用授权接口 {#use-cross-app-service-elements-to-call-authorized-apis} 
-当一个JitAi应用使用[API授权元素](../api-exposure/api-authorization)对外开放了服务函数，另一个JitAi应用可以使用`跨APP服务`元素访问该授权函数，实现跨应用服务函数调用。这种调用方式仅限于在JitAi应用之间进行，调用方不是JitAi应用则依然需要使用[API授权元素SDK调用方式](../api-exposure/using-sdk-to-call-authorized-element-apis.md)。
+当一个JitAI应用使用[API授权元素](../api-exposure/api-authorization)对外开放了服务函数，另一个JitAI应用可以使用`跨APP服务`元素访问该授权函数，实现跨应用服务函数调用。这种调用方式仅限于在JitAI应用之间进行，调用方不是JitAI应用则依然需要使用[API授权元素SDK调用方式](../api-exposure/using-sdk-to-call-authorized-element-apis.md)。
 
 ### 创建跨App服务元素 {#create-cross-app-service-elements}
 ![创建跨App服务](./img/create-cross-app-service.gif)

@@ -4,7 +4,7 @@ description: "Build data entry pages for form collection. Personnel, vehicle, eq
 ---
 
 # Data Entry Pages
-In business scenarios such as personnel registration, vehicle registration, and equipment registration, users need to fill out forms and submit data to the backend for processing. JitAi provides built-in data entry pages that help developers quickly implement form data collection functionality.
+In business scenarios such as personnel registration, vehicle registration, and equipment registration, users need to fill out forms and submit data to the backend for processing. JitAI provides built-in data entry pages that help developers quickly implement form data collection functionality.
 
 ## Creating a data entry page {#creating-data-entry-page}
 The process for creating data entry pages is essentially the same as [creating generic pages](/docs/devguide/shell-and-page/generic-page), except that data entry pages must be bound to a [data table model](/docs/devguide/data-modeling/data-table-model) to store user-submitted data.
@@ -37,7 +37,7 @@ After users complete a data submission, you can display a feedback interface to 
 When developers check the `Show Result Feedback UI` option in the page editor, users will see a success confirmation interface after completing the form and clicking `Submit`. This option is enabled by default.
 
 ## Converting to generic page for modification {#converting-to-generic-page-for-modification}
-Data entry pages are out-of-the-box page types provided by JitAi that developers can create and use immediately. When developers need more granular customization beyond the default implementation, they can convert the page to a generic page for unlimited modifications.
+Data entry pages are out-of-the-box page types provided by JitAI that developers can create and use immediately. When developers need more granular customization beyond the default implementation, they can convert the page to a generic page for unlimited modifications.
 
 ![Convert to Generic Page](./imgs/convert-to-generic-page.gif "Convert to Generic Page")
 

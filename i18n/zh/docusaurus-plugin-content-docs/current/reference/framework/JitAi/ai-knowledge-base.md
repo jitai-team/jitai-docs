@@ -7,9 +7,9 @@ description: "AI知识库 API 参考文档。完整的规格说明、方法和�
 # AI知识库
 AI知识库是基于RAG（检索增强生成）技术的企业级知识管理系统，支持智能文档检索和知识增强功能。它负责文档向量化存储、语义检索、内容重排序和实时更新，提供精准的知识检索和内容管理能力。
 
-AI知识库元素分层结构为Meta（rags.Meta） → Type（rags.NormalType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建AI知识库实例元素。
+AI知识库元素分层结构为Meta（rags.Meta） → Type（rags.NormalType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建AI知识库实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的rags.NormalType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的rags.NormalType元素，以实现自己的封装。
 
 **支持的Type类型：**
 - **rags.NormalType**：标准知识库类型，提供完整的文档管理和智能检索功能

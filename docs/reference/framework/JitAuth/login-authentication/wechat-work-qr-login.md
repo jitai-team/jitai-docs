@@ -7,13 +7,13 @@ sidebar_label: "WeCom Custom QR Code Login"
 # WeCom Custom QR Code Login
 WeCom custom QR code login is a login authentication element based on WeCom custom applications, supporting PC-side QR code scanning login and password-free login within WeCom workspace. It handles WeCom OAuth authorization flow, user identity authentication, and account binding, while supporting seamless integration with WeCom organizational architecture and user information synchronization.
 
-The hierarchical structure of WeCom custom QR code login elements is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.QywxInnerType) → Instance. Developers can quickly create WeCom custom QR code login instance elements through JitAi's visual development tools.
+The hierarchical structure of WeCom custom QR code login elements is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.QywxInnerType) → Instance. Developers can quickly create WeCom custom QR code login instance elements through JitAI's visual development tools.
 
 **Supported Login Methods**:
 - PC-side QR code scanning login - Display WeCom login QR code, users scan with WeCom App to complete login
 - WeCom workspace login - Directly call JSAPI within WeCom workspace to get password-free authorization code for login
 
-Of course, developers can also create their own Type elements or modify the official `auths.loginTypes.QywxInnerType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `auths.loginTypes.QywxInnerType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

@@ -6,7 +6,7 @@ description: "Markdown页面的详细指南和说明。"
 # Markdown页面
 在企业应用系统中，开发者想创建一个纯文本页面，比如帮助文档、公告、协议等，那么他就可以选择使用 Markdown 语法来进行编写。
 
-JitAi 提供了 Markdown 页面开发功能，开发者可以在 JitAi 开发工具中创建 Markdown 页面，并使用 Markdown 语法编写页面内容。
+JitAI 提供了 Markdown 页面开发功能，开发者可以在 JitAI 开发工具中创建 Markdown 页面，并使用 Markdown 语法编写页面内容。
 
 ## 创建 Markdown 页面 {#create-markdown-page}
 ![新建Markdown页面](./imgs/markdown_2025-08-28_13-51-10.png)
@@ -30,7 +30,7 @@ JitAi 提供了 Markdown 页面开发功能，开发者可以在 JitAi 开发工
 :::
 
 ## Markdown 语法 {#markdown-syntax}
-JitAi 集成了 Markdown 的常用语法，开发者可以在可视化编辑器中编写 Markdown 页面。
+JitAI 集成了 Markdown 的常用语法，开发者可以在可视化编辑器中编写 Markdown 页面。
 
 常用的 Markdown 语法有
 
@@ -160,5 +160,5 @@ function hello() {
 ```
 
 :::tip 提示
-在 JitAi 的 Markdown 编辑器中，你可以实时预览效果。建议在编写时参考右侧的预览区域，确保格式正确。
+在 JitAI 的 Markdown 编辑器中，你可以实时预览效果。建议在编写时参考右侧的预览区域，确保格式正确。
 :::

@@ -10,7 +10,7 @@ AI Agent是具备自主决策和任务执行能力的智能体，能够理解用
 Agent由系统提示词、大模型和工具三个核心部分组成。平台支持为Agent配置丰富的工具集，包括数据模型函数、服务函数、MCP服务、外部API和页面函数，**实现AI对前后端全栈元素的智能调用**。此外，Agent还支持灵活的输入输出配置以实现程序化调用，以及集成知识库实现检索增强生成（RAG），提升回答的准确性和时效性。
 
 ## 创建ReActAgent {#creating-react-agent}
-ReAct（Reasoning and Acting）是一种结合"推理"与"行动"的Agent工作模式。它让AI在面对复杂任务时，能够交替进行思考和采取行动，并根据每一步的反馈动态调整后续决策。开发者使用JitAi可以快速开发调试出与应用原生融合的ReAct模式Agent，即ReActAgent。
+ReAct（Reasoning and Acting）是一种结合"推理"与"行动"的Agent工作模式。它让AI在面对复杂任务时，能够交替进行思考和采取行动，并根据每一步的反馈动态调整后续决策。开发者使用JitAI可以快速开发调试出与应用原生融合的ReAct模式Agent，即ReActAgent。
 
 ![创建ReActAgent](./img/agent/create-react-agent.gif)
 
@@ -21,7 +21,7 @@ ReActAgent中支持编写系统提示词、选择大模型、编写描述信息�
 ## 编写系统提示词 {#writing-system-prompts}
 系统提示词是指导Agent行为和决策的重要依据。它为Agent提供任务目标、角色设定、行为规范等关键信息，指导Agent更准确地完成任务。合理设计系统提示词可以提升Agent的智能表现和交互体验。
 
-考虑到许多开发者并不擅长提示词的编写，JitAi提供了默认的系统提示词模版，开发者可以基于默认模版进行修改，在熟练掌握提示词编写技巧后也可以按照自己的格式进行编写。
+考虑到许多开发者并不擅长提示词的编写，JitAI提供了默认的系统提示词模版，开发者可以基于默认模版进行修改，在熟练掌握提示词编写技巧后也可以按照自己的格式进行编写。
 
 ![编写Agent提示词](./img/agent/write-agent-prompts.png)
 
@@ -34,7 +34,7 @@ Agent可视化编辑器的整个左侧区域都用于提示词编写，开发者
 
 ![配置大模型及其参数](./img/agent/configure-large-model-and-parameters.gif)
 
-JitAi提供了[AI大模型](../ai-llm/create-ai-llm)元素，用于对接市面上主流的大模型服务，而且支持私有化大模型服务的集成。在ReActAgent的基础配置中，从已经创建的大模型实例中选择并配置其参数即可。
+JitAI提供了[AI大模型](../ai-llm/create-ai-llm)元素，用于对接市面上主流的大模型服务，而且支持私有化大模型服务的集成。在ReActAgent的基础配置中，从已经创建的大模型实例中选择并配置其参数即可。
 
 :::tip
 开发者需要先完成大模型实例元素的创建，才能在ReActAgent中选择使用。如果需要调用工具，则对应的模型必须支持Function Calling。
@@ -50,7 +50,7 @@ JitAi提供了[AI大模型](../ai-llm/create-ai-llm)元素，用于对接市面�
 开发者在Agent可视化编辑器的`基础配置`-`Agent描述`输入框中填写描述信息后点击`保存`即可。通常，描述信息和系统提示词中的角色描述可以保持一致。
 
 ## 配置运行状态存储仓 {#configuring-runtime-state-storage}
-Agent在执行过程中需要保存和更新状态信息，以便在对话中保持一致性和连续性。开发者需要选择一个合适的存储仓来保存Agent的运行状态。JitAi支持使用内存、MySQL或者PostgreSQL作为存储仓。如果开发者不进行配置，桌面版默认使用内存存储，服务器版默认使用内置的MySQL数据库存储。
+Agent在执行过程中需要保存和更新状态信息，以便在对话中保持一致性和连续性。开发者需要选择一个合适的存储仓来保存Agent的运行状态。JitAI支持使用内存、MySQL或者PostgreSQL作为存储仓。如果开发者不进行配置，桌面版默认使用内存存储，服务器版默认使用内置的MySQL数据库存储。
 
 ![配置运行状态存储仓](./img/agent/configure-runtime-state-storage.gif)
 

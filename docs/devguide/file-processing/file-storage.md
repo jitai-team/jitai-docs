@@ -6,15 +6,15 @@ description: "Configure file storage services with 7 storage methods. AliOSS, EO
 
 # Configuring Your Own File Storage Service
 
-File upload and usage is a core functionality of web applications, widely used in scenarios such as attachment uploads, avatar management, and image previews. JitAi provides developers with a comprehensive file storage solution, supporting 7 storage methods: alioss, EOS, MinIO, Qiniu Cloud, AWS S3, Cloudflare R2, and disk storage.
+File upload and usage is a core functionality of web applications, widely used in scenarios such as attachment uploads, avatar management, and image previews. JitAI provides developers with a comprehensive file storage solution, supporting 7 storage methods: alioss, EOS, MinIO, Qiniu Cloud, AWS S3, Cloudflare R2, and disk storage.
 
 ## Local storage configuration {#local-storage-configuration}
 
-Local disk storage saves file resources in the server's local disk. The system automatically generates 30×30 pixel and 300×300 pixel thumbnails for uploaded images while preserving the original size images. JitAi intelligently selects appropriate image sizes based on different usage scenarios, effectively saving network bandwidth and improving page loading speed.
+Local disk storage saves file resources in the server's local disk. The system automatically generates 30×30 pixel and 300×300 pixel thumbnails for uploaded images while preserving the original size images. JitAI intelligently selects appropriate image sizes based on different usage scenarios, effectively saving network bandwidth and improving page loading speed.
 
 ### Adding local storage {#add-local-storage}
 
-JitAi supports adding storage services in the following two locations:
+JitAI supports adding storage services in the following two locations:
 
 ![Storage Service Creation](./img/1/2025-08-28-14-04-15.png "Storage Service Creation")
 
@@ -26,7 +26,7 @@ Place the mouse over the `+` button to the right of the `Storages` menu in the m
 
 ![New Disk Storage Panel](./img/1/2025-08-28-15-52-02.png "New Disk Storage Panel")
 
-In the popup New Disk Storage panel, fill in the name. JitAi will automatically translate it, and users can also specify the English name themselves. The default element path can be used.
+In the popup New Disk Storage panel, fill in the name. JitAI will automatically translate it, and users can also specify the English name themselves. The default element path can be used.
 
 :::tip
 The element path is the location where the storage service configuration file is stored, while the storage directory is the location where images, attachments, and other files are actually stored.
@@ -97,7 +97,7 @@ The configuration method for Cloudflare R2 is basically the same as AWS S3. You 
 
 ### Using environment variables to prevent configuration information leakage {#prevent-config-info-leak-with-env-variables}
 
-To improve security, it is recommended to convert cloud service configuration parameters (such as accessKeyId, accessKeySecret, etc.) into environment variables to avoid exposing sensitive information in the code. JitAi supports one-click conversion of cloud service parameters to environment variables.
+To improve security, it is recommended to convert cloud service configuration parameters (such as accessKeyId, accessKeySecret, etc.) into environment variables to avoid exposing sensitive information in the code. JitAI supports one-click conversion of cloud service parameters to environment variables.
 
 ![Environment Variable Conversion](./img/1/2025-08-28-15-16-32.png "Environment Variable Conversion")
 
@@ -115,7 +115,7 @@ The variable displayed on the page will change to the environment variable name 
 
 ![Default Storage Service Setting](./img/1/2025-08-28-14-47-53.png "Default Storage Service Setting")
 
-In the development area, click the "Settings" tab, click the application's "Default Elements", and switch the default file storage service in the dropdown box under "Default File Storage". JitAi's built-in image and attachment data types will store files to the default storage service.
+In the development area, click the "Settings" tab, click the application's "Default Elements", and switch the default file storage service in the dropdown box under "Default File Storage". JitAI's built-in image and attachment data types will store files to the default storage service.
 
 :::warning Note
 Changing the default file storage will result in data loss for previously stored images, attachments, and other field data. You should first backup or migrate previously stored images, attachments, and other files before switching the default storage service.

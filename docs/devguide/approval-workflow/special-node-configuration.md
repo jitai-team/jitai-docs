@@ -7,7 +7,7 @@ description: "Configure specialized workflow nodes. CC nodes, branch nodes, para
 
 # Special Node Configuration
 
-In addition to commonly used nodes, JitAi's approval workflows support specialized nodes including CC nodes, branch nodes, parallel nodes, and subprocess nodes.
+In addition to commonly used nodes, JitAI's approval workflows support specialized nodes including CC nodes, branch nodes, parallel nodes, and subprocess nodes.
 
 ## CC nodes {#cc-node}
 When users need to carbon copy other users during application initiation or approval document processing, CC nodes provide this functionality.

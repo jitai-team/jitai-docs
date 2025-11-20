@@ -7,7 +7,7 @@ description: "AI数据分析页面 API 参考文档。完整的规格说明、�
 # AI数据分析页面
 AI数据分析页面是专门用于使用AI做数据分析，生成统计图表，通过可视化简单配置快速构建数据分析界面。
 
-AI数据分析页面元素分层结构为Meta（pages.Meta） → Type（pages.DataAnalysisType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建AI数据分析页面实例元素。
+AI数据分析页面元素分层结构为Meta（pages.Meta） → Type（pages.DataAnalysisType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建AI数据分析页面实例元素。
 
 ## 快速开始 
 ### 创建实例元素

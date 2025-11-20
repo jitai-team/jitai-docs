@@ -7,9 +7,9 @@ sidebar_label: "Custom Events"
 # Custom Events
 Custom events are freely defined by developers in service elements as needed and triggered in business logic code, providing sufficient flexibility for event-driven system development.
 
-The hierarchical structure of custom event elements is Meta (events.Meta) → Type (events.NormalType) → Instance. Developers can quickly create custom event instance elements through JitAi's visual development tools.
+The hierarchical structure of custom event elements is Meta (events.Meta) → Type (events.NormalType) → Instance. Developers can quickly create custom event instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `events.NormalType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `events.NormalType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 Developers need to first [define events in service elements](./custom-business-service#event-definition-and-usage), then create `Custom Event` instance elements to subscribe to events defined in services, and write event business logic code.

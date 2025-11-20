@@ -7,9 +7,9 @@ description: "助理事件 API 参考文档。完整的规格说明、方法和�
 # 助理事件
 助理事件是专用于AI助理交互的事件处理，它负责监听AI助理的执行过程、状态变化和用户交互，提供用户意图识别、助理切换、会话管理等核心交互事件的处理能力。
 
-助理事件元素分层结构为Meta（events.Meta） → Type（events.AIAssistantType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建助理事件实例元素。
+助理事件元素分层结构为Meta（events.Meta） → Type（events.AIAssistantType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建助理事件实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的events.AIAssistantType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的events.AIAssistantType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

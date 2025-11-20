@@ -5,9 +5,9 @@ description: "常规门户 API 参考文档。完整的规格说明、方法和�
 # 常规门户
 常规门户是JitWeb提供的完整门户解决方案，基于React技术栈实现企业级门户框架。它负责应用入口管理、导航体系构建和用户界面统一，内置左侧导航、顶部导航、用户信息展示等完整门户组件，同时支持PC端和移动端的响应式适配。
 
-常规门户元素分层结构为Meta（shells.Meta） → Type（shells.DefaultType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建常规门户实例元素。
+常规门户元素分层结构为Meta（shells.Meta） → Type（shells.DefaultType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建常规门户实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的shells.DefaultType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的shells.DefaultType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

@@ -9,7 +9,7 @@ Kanban is a visual data display component that presents data in columns based on
 
 The kanban element has a hierarchical structure of Meta (components.Meta) → Type (components.Board) → Instance. Developers can quickly create kanban instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `components.BoardType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `components.BoardType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start 
 ### Basic Configuration Example

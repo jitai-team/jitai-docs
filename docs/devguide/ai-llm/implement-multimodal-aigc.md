@@ -9,7 +9,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 # Implementing Multimodal AIGC {#implementing-multimodal-aigc}
 
-Multimodal AIGC (AI-Generated Content) refers to the capability of leveraging artificial intelligence to automatically generate various forms of content—such as images and videos—based on text prompts. The JitAi platform deeply integrates multimodal generation capabilities, enabling developers to effortlessly implement innovative features like text-to-image and text-to-video in their applications.
+Multimodal AIGC (AI-Generated Content) refers to the capability of leveraging artificial intelligence to automatically generate various forms of content—such as images and videos—based on text prompts. The JitAI platform deeply integrates multimodal generation capabilities, enabling developers to effortlessly implement innovative features like text-to-image and text-to-video in their applications.
 
 
 :::tip
@@ -22,11 +22,11 @@ The current version supports only the **Alibaba Cloud Bailian** platform's Wanx 
 
 #### Example {#text-to-image-example}
 
-Imagine entering a story text and having the system automatically generate matching illustrations for a picture book—this is a real-world application of the JitAi platform's text-to-image capabilities.
+Imagine entering a story text and having the system automatically generate matching illustrations for a picture book—this is a real-world application of the JitAI platform's text-to-image capabilities.
 
 Taking children's picture book creation as an example, we've implemented an intelligent text-to-image workflow: through 5 AI processing stages (story segmentation → character design → scene design → illustration style → prompt optimization), the system progressively transforms ordinary story text into professional text-to-image prompts, ultimately generating batches of illustrations with consistent style and coherent narrative. The entire process requires no manual intervention and can complete in minutes what would otherwise take designers hours or even days.
 
-This example demonstrates the core advantage of the JitAi platform: **building complex AI workflows by chaining multiple LLM calls**. You can combine capabilities like text generation, logical reasoning, and image generation like building blocks to create your own AIGC applications.
+This example demonstrates the core advantage of the JitAI platform: **building complex AI workflows by chaining multiple LLM calls**. You can combine capabilities like text generation, logical reasoning, and image generation like building blocks to create your own AIGC applications.
 
 ![Picture book example](./img/3/text-to-img-example.png)
 
@@ -71,7 +71,7 @@ Text-to-video goes beyond simply converting text to video—it's a creative proc
 
 Taking classical poetry visualization as an example, we've built a professional text-to-video workflow: through 5 specialized AI processing stages (paragraph segmentation → script writing → cinematography design → visual effects post-production → prompt optimization), the system progressively transforms classical poetry or classical Chinese text into professional, cinema-grade video prompts. Each stage simulates real film production workflows—from storyboard design and camera language planning to lighting and color grading—ultimately generating batches of short video clips with consistent style and smooth cinematography.
 
-Compared to traditional video production, which requires collaboration across multiple stages like scriptwriting, directing, cinematography, and post-production, this workflow encodes professional knowledge into AI prompts, enabling ordinary users to create professional-quality video content. This is the unique value of the JitAi platform: **condensing complex professional knowledge into reusable AI workflows, democratizing content creation**.
+Compared to traditional video production, which requires collaboration across multiple stages like scriptwriting, directing, cinematography, and post-production, this workflow encodes professional knowledge into AI prompts, enabling ordinary users to create professional-quality video content. This is the unique value of the JitAI platform: **condensing complex professional knowledge into reusable AI workflows, democratizing content creation**.
 
 ![Video example](./img/3/text-to-video-example.png)
 

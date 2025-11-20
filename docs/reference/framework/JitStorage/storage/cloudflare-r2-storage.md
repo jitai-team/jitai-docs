@@ -7,9 +7,9 @@ sidebar_label: "Cloudflare R2 Storage"
 # Cloudflare R2 Storage
 Cloudflare R2 Storage is a Type element for high-performance edge cloud storage, implementing global distributed data storage, zero egress fees, and enterprise-level performance optimization based on Cloudflare R2 object storage service. It provides standardized file upload, download, and delete operations, is compatible with S3 API interfaces, and offers excellent cost-effectiveness and global access performance.
 
-The Cloudflare R2 storage element hierarchy is Meta (storages.Meta) → Type (storages.CloudflareR2Type) → Instance. Developers can quickly create Cloudflare R2 storage instance elements through JitAi's visual development tools.
+The Cloudflare R2 storage element hierarchy is Meta (storages.Meta) → Type (storages.CloudflareR2Type) → Instance. Developers can quickly create Cloudflare R2 storage instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or override the storages.CloudflareR2Type element officially provided by JitAi in their own applications to implement their own encapsulation.
+Of course, developers can also create their own Type elements or override the storages.CloudflareR2Type element officially provided by JitAI in their own applications to implement their own encapsulation.
 
 ## Quick Start 
 ### Creating Instance Elements

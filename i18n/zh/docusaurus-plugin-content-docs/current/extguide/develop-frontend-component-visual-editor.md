@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 当我们完成了[扩展自己的UI组件Type元素](./add-frontend-components)后，组件虽然可以在页面中使用，但配置参数需要手动修改`scheme.json`文件，这对不擅长编码的业务专家来说并不友好。
 
-本文将介绍如何为计数器组件开发可视化配置编辑器，实现在JitAi开发工具中像官方组件一样的图形化配置体验。
+本文将介绍如何为计数器组件开发可视化配置编辑器，实现在JitAI开发工具中像官方组件一样的图形化配置体验。
 
 ## 效果预览 {#preview-of-editor-interface}
 开发完成后，在可视化开发工具中选中计数器组件时，右侧属性面板将显示友好的配置界面：
@@ -56,7 +56,7 @@ mkdir -p Editor
 **创建编辑器元素定义文件** `components/CounterType/Editor/e.json`：
 
 :::tip 编辑器也是元素
-在JitAi中，编辑器本身也是一个元素，拥有自己的`e.json`定义文件。
+在JitAI中，编辑器本身也是一个元素，拥有自己的`e.json`定义文件。
 :::
 
 ```json title="components/CounterType/Editor/e.json"
@@ -90,7 +90,7 @@ export const Editor = CounterEditor;
 ```
 
 :::important 编辑器导出规范
-编辑器必须导出名为`Editor`的组件，这是JitAi工具识别编辑器的固定约定。
+编辑器必须导出名为`Editor`的组件，这是JitAI工具识别编辑器的固定约定。
 :::
 
   </TabItem>
@@ -174,12 +174,12 @@ graph LR
 
 ### 核心接口规范 {#core-interface-specifications}
 #### CompEditorProps接口 {#compeditorprops-interface}
-:::info JitAi提供的接口
-`CompEditorProps`是由JitAi IDEApp提供的标准接口，开发者可直接从`components/common/types`导入使用，无需自己定义。
+:::info JitAI提供的接口
+`CompEditorProps`是由JitAI IDEApp提供的标准接口，开发者可直接从`components/common/types`导入使用，无需自己定义。
 :::
 
 ```typescript
-// 从JitAi导入，无需自己定义
+// 从JitAI导入，无需自己定义
 import type { CompEditorProps } from 'components/common/types';
 
 interface CompEditorProps {
@@ -224,7 +224,7 @@ const updateConfig = (updates: Record<string, any>) => {
 3. **触发打包**：访问应用页面，系统自动重新打包
 
 ### 验证编辑器功能 {#verifying-editor-functionality}
-1. **打开页面编辑器**：在JitAi开发工具中打开包含计数器组件的页面
+1. **打开页面编辑器**：在JitAI开发工具中打开包含计数器组件的页面
 2. **选中组件**：点击页面中的计数器组件
 3. **查看属性面板**：右侧属性面板应显示"初始值"配置项
 4. **修改配置**：尝试修改初始值，观察组件是否实时更新
@@ -276,6 +276,6 @@ const updateConfig = (updates: Record<string, any>) => {
 
 **关键要点**：
 - 导出名`Editor`不可更改
-- `CompEditorProps`由JitAi提供，直接导入使用
+- `CompEditorProps`由JitAI提供，直接导入使用
 - 必须正确合并更新配置对象
 - 使用`didMountRef`避免初始化时的无效回调

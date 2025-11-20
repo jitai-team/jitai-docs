@@ -5,14 +5,14 @@ description: "Microsoft Teams 登录 API 参考文档。完整的规格说明、
 # Microsoft Teams 登录
 Microsoft Teams 登录（MicrosoftTeamsType）是基于 Microsoft Teams 应用的登录认证元素，支持PC端和移动端的OAuth授权登录。它负责处理Microsoft Teams OAuth授权流程、用户身份验证和账号绑定，同时支持与Microsoft Teams企业组织架构的无缝集成和用户信息同步。
 
-Microsoft Teams 登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.MicrosoftTeamsType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建Microsoft Teams登录实例元素。
+Microsoft Teams 登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.MicrosoftTeamsType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建Microsoft Teams登录实例元素。
 
 **支持的登录方式**：
 - PC端OAuth授权登录 - 跳转到Microsoft Teams登录页面完成OAuth授权登录
 - 移动端OAuth授权登录 - 在移动设备上调用Microsoft Teams应用完成授权登录
 - 企业内部单点登录 - 与Azure Active Directory集成的单点登录
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的auths.loginTypes.MicrosoftTeamsType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的auths.loginTypes.MicrosoftTeamsType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

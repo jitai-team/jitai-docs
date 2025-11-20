@@ -5,7 +5,7 @@ description: "Master AI Agent prompt writing techniques. Structured templates, b
 ---
 
 # Agent Prompt Writing Techniques
-This article is designed for developers who craft systematic prompts for `Agents` in JitAi. Through "Poor vs. Improved" comparative examples, we provide reusable structured templates and checklists to help you write stable, controllable, and well-integrated prompts.
+This article is designed for developers who craft systematic prompts for `Agents` in JitAI. Through "Poor vs. Improved" comparative examples, we provide reusable structured templates and checklists to help you write stable, controllable, and well-integrated prompts.
 
 ## Quick overview: Rewriting a customer information management agent prompt {#quick-overview}
 ### Poor version {#poor-version}

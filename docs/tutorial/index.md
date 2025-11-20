@@ -1,15 +1,15 @@
 ---
 sidebar_position: 0
-description: "JitAi Getting Started Tutorial - progressive learning guide from installation to production deployment. Build AI applications through hands-on practice."
+description: "JitAI Getting Started Tutorial - progressive learning guide from installation to production deployment. Build AI applications through hands-on practice."
 ---
 
 # Tutorial Index
 
-Welcome to the JitAi Getting Started Tutorial! We provide progressive, practice-oriented step-by-step learning guides to help you quickly master JitAi application development and build powerful AI applications.
+Welcome to the JitAI Getting Started Tutorial! We provide progressive, practice-oriented step-by-step learning guides to help you quickly master JitAI application development and build powerful AI applications.
 
 ## Learning path
-- [JitAi Introduction](tutorial/briefintro) - Overview of JitAi, its features, system architecture, and comparisons with traditional development technologies and no-code/low-code platforms
-- [Download and Installation](tutorial/download-installation) - JitAi package download and environment setup for Windows, Mac, and Docker deployments
+- [JitAI Introduction](tutorial/briefintro) - Overview of JitAI, its features, system architecture, and comparisons with traditional development technologies and no-code/low-code platforms
+- [Download and Installation](tutorial/download-installation) - JitAI package download and environment setup for Windows, Mac, and Docker deployments
 - [Case Study](tutorial/project) - Explore the business context of our case application (question creation, examination, grading) and understand system functions and data models
 - [Create Application](tutorial/create_app) - Learn application creation and understand different portal roles
 - [Develop Application](tutorial/dev_app) - Learn application development techniques
@@ -25,6 +25,6 @@ Welcome to the JitAi Getting Started Tutorial! We provide progressive, practice-
 
 1. **Progressive Learning**: Follow the learning path sequentially—first set up the environment, then explore the project, and finally proceed with development
 2. **Hands-on Practice**: Each chapter includes practical exercises—learn by doing for best results
-3. **Continuous Learning**: After mastering the basics, explore the [Application Development Guide](devguide/) to fully understand JitAi's capabilities
+3. **Continuous Learning**: After mastering the basics, explore the [Application Development Guide](devguide/) to fully understand JitAI's capabilities
 
  

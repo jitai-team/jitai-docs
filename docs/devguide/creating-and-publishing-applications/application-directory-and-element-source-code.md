@@ -1,12 +1,12 @@
 ---
 sidebar_position: 2
 slug: application-directory-and-element-source-code
-description: "Understand JitAi application directory structure. JAAP-based organization of element code, folder conventions, and source code layout."
+description: "Understand JitAI application directory structure. JAAP-based organization of element code, folder conventions, and source code layout."
 ---
 
 # Application Directory and Element Source Code
 
-JitAi application directories are built upon the [JAAP (JitAi AI Application Protocol)](../../reference/runtime-platform/JAAP), utilizing standardized directory structures to organize element code systematically.
+JitAI application directories are built upon the [JAAP (JitAI AI Application Protocol)](../../reference/runtime-platform/JAAP), utilizing standardized directory structures to organize element code systematically.
 
 ## Understanding application directory structure {#application-directory-structure}
 
@@ -27,11 +27,11 @@ MyApp/                     # Application root directory
 └── storages/         # Storage service elements
 ```
 
-The `dist` directory contains build artifacts generated when JitNodes package the application. Whenever developers modify application element code and save changes in JitAi development tools, incremental packaging is automatically triggered.
+The `dist` directory contains build artifacts generated when JitNodes package the application. Whenever developers modify application element code and save changes in JitAI development tools, incremental packaging is automatically triggered.
 
 ## Understanding element code directory structure {#element-code-directory-structure}
 
-Application directories consist of element directories, each adhering to the [JAAP (JitAi AI Application Protocol)](../../reference/runtime-platform/JAAP) with its own structural conventions.
+Application directories consist of element directories, each adhering to the [JAAP (JitAI AI Application Protocol)](../../reference/runtime-platform/JAAP) with its own structural conventions.
 
 ```plaintext title="Standard Element Directory Structure"
 element-name/
@@ -44,7 +44,7 @@ element-name/
 
 ## Exporting and importing application source code {#application-export-import}
 
-JitAi offers comprehensive application export and import capabilities, supporting multiple formats including source code packages and WeChat MiniProgram exports to facilitate application distribution, backup, and modular reuse.
+JitAI offers comprehensive application export and import capabilities, supporting multiple formats including source code packages and WeChat MiniProgram exports to facilitate application distribution, backup, and modular reuse.
 
 ### Exporting source code zip packages {#export-source-code-zip}
 
@@ -62,7 +62,7 @@ The platform enables application export as WeChat MiniPrograms, embedding applic
 
 **WeChat MiniProgram Export Capabilities:**
 - Automatically adapts to WeChat MiniProgram directory conventions
-- Transforms JitAi components into MiniProgram-compatible formats
+- Transforms JitAI components into MiniProgram-compatible formats
 - Maintains business logic and data processing functionality
 - Supports MiniProgram-specific lifecycle hooks and APIs
 

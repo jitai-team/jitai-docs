@@ -12,7 +12,7 @@ Scheduled Tasks are core elements in the JitTask framework used to implement per
 
 The Scheduled Task element has a hierarchical structure of Meta (tasks.Meta) → Type (tasks.NormalType) → Instance. Developers can quickly create scheduled task instance elements through visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official tasks.NormalType element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official tasks.NormalType element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

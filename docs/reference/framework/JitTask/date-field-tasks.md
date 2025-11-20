@@ -10,9 +10,9 @@ sidebar_label: "Date Field Tasks"
 
 Date Field Tasks are scheduled tasks that are automatically triggered based on date-time field values in models. When the specified date-time field reaches the set time, the task logic is automatically executed. It is responsible for monitoring date-time fields in model data, automatically triggering execution when field values expire, and providing flexible time offset configuration, supporting precise time control for early or delayed execution.
 
-The Date Field Task element has a hierarchical structure of Meta (tasks.Meta) → Type (tasks.DateFieldType) → Instance. Developers can quickly create date field task instance elements through JitAi's visual development tools.
+The Date Field Task element has a hierarchical structure of Meta (tasks.Meta) → Type (tasks.DateFieldType) → Instance. Developers can quickly create date field task instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official tasks.DateFieldType element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official tasks.DateFieldType element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements
@@ -112,7 +112,7 @@ Date Field Tasks do not require additional business configuration files, all con
 Main method for task execution, defined in inner.py.
 
 #### Parameter Details
-| Parameter Name | JitAi Type | Native Type | Required | Description |
+| Parameter Name | JitAI Type | Native Type | Required | Description |
 |--------|-----------|----------|------|------|
 | app | App | object | Yes | Application instance, used to get other elements |
 | taskInstance | TaskInstance | object | Yes | Current task instance |

@@ -240,7 +240,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         },
                         {
                             label: "Try Online",
-                            to: "https://demo.jit.pro",
+                            to: "https://demo.jit.pro/wanyun/AdminApp",
                         },
                     ],
                 },

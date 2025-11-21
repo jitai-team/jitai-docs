@@ -46,7 +46,7 @@ const CONTENT = {
     label: 'Try Online',
     type: 'button',
     isNewTab: true,
-    url: 'https://demo.jit.pro',
+    url: 'https://demo.jit.pro/wanyun/AdminApp',
     external: true
   }
 };

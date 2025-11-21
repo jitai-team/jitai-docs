@@ -29,4 +29,4 @@ The AI assistant interface adopts a left-right split layout: the left side displ
 
 ## Feature highlights {#feature-highlights}
 
-The JitAi framework has achieved deep integration between AI assistants and portal pages. The previous example briefly demonstrated using AI assistants to open functional pages. In actual scenarios, AI assistants in portals are typically at the subsystem level, with their functional capabilities completely customizable by developers.
+The JitAI framework has achieved deep integration between AI assistants and portal pages. The previous example briefly demonstrated using AI assistants to open functional pages. In actual scenarios, AI assistants in portals are typically at the subsystem level, with their functional capabilities completely customizable by developers.

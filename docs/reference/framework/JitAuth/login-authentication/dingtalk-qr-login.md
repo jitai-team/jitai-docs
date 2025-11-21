@@ -7,13 +7,13 @@ sidebar_label: "DingTalk Custom QR Code Login"
 # DingTalk Custom QR Code Login
 DingTalk custom QR code login (DDInnerType) is a login authentication element based on DingTalk custom applications, supporting PC-side QR code scanning login and password-free login within DingTalk workspace. It handles DingTalk OAuth authorization flow, user identity authentication, and account binding, while supporting seamless integration with DingTalk enterprise organizational architecture and user information synchronization.
 
-The hierarchical structure of DingTalk custom QR code login elements is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.DDInnerType) → Instance. Developers can quickly create DingTalk custom QR code login instance elements through JitAi's visual development tools.
+The hierarchical structure of DingTalk custom QR code login elements is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.DDInnerType) → Instance. Developers can quickly create DingTalk custom QR code login instance elements through JitAI's visual development tools.
 
 **Supported Login Methods**:
 - PC-side QR code scanning login - Display DingTalk login QR code, users scan with DingTalk App to complete login
 - DingTalk workspace login - Directly call JSAPI within DingTalk workspace to get password-free authorization code for login
 
-Of course, developers can also create their own Type elements or modify the official `auths.loginTypes.DDInnerType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `auths.loginTypes.DDInnerType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

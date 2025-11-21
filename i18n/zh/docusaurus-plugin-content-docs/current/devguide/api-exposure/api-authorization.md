@@ -5,9 +5,9 @@ description: "创建API授权元素的详细指南和说明。"
 ---
 
 # 创建API授权元素
-API授权是JitAi平台提供的接口访问控制机制，用于将应用内的元素能力安全地对外开放。通过创建API授权元素并配置访问凭证（accessKey/accessSecret），开发者可以将服务函数、数据模型、AI Agent、AI助理等业务能力以标准API的形式提供给外部系统调用。
+API授权是JitAI平台提供的接口访问控制机制，用于将应用内的元素能力安全地对外开放。通过创建API授权元素并配置访问凭证（accessKey/accessSecret），开发者可以将服务函数、数据模型、AI Agent、AI助理等业务能力以标准API的形式提供给外部系统调用。
 
-平台提供完整的授权管理能力，包括接口授权配置、调用地址生成、调用记录追踪等。外部系统可以通过平台提供的多语言SDK（Python、Node.js、Java）进行调用，或者在JitAi应用之间通过[跨App服务元素](../business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-apis)实现互通，构建灵活的应用集成生态。
+平台提供完整的授权管理能力，包括接口授权配置、调用地址生成、调用记录追踪等。外部系统可以通过平台提供的多语言SDK（Python、Node.js、Java）进行调用，或者在JitAI应用之间通过[跨App服务元素](../business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-apis)实现互通，构建灵活的应用集成生态。
 
 ## 创建新的API授权 {#api-authorization-creation}
 ![API 授权的创建](./img/api_2025-08-26_15-21-40.png)
@@ -43,7 +43,7 @@ API详情页面中可以查看授权信息，包括授权名称、accessKey、ac
 
 ## 调用记录 {#call-records}
 
-当调用方发起调用后，JitAi 会生成调用记录。
+当调用方发起调用后，JitAI 会生成调用记录。
 
 ![调用记录](./img/api_2025-10-16_20-24-49.png)
 

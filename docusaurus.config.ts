@@ -22,6 +22,8 @@ const config: Config = {
     baseUrl: "/",
     // Algolia site verification and Google Tag Manager
     headTags: [
+        // 注意：Viewport 配置已移至 themeConfig.metadata
+        // 在此处配置会被 Docusaurus 默认的 viewport 覆盖
         // Google Tag Manager
         {
             tagName: "script",
@@ -115,7 +117,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         ],
     ],
     // 添加客户端模块
-    clientModules: ["./src/clientModules/readingProgress.js"],
+    clientModules: [
+        "./src/clientModules/readingProgress.js",
+        "./src/clientModules/utmTracker.js",
+    ],
     markdown: {
         mermaid: true,
         hooks: {
@@ -124,6 +129,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     },
     themes: ["@docusaurus/theme-mermaid"],
     themeConfig: {
+        // 覆盖默认的 viewport meta 标签，禁止移动端缩放
+        metadata: [
+            {
+                name: 'viewport',
+                content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
+            }
+        ],
         // Replace with your project's social card
         image: "https://jit-www.oss-accelerate.aliyuncs.com/logo/logo_dark.png",
         colorMode: {
@@ -228,7 +240,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         },
                         {
                             label: "Try Online",
-                            to: "https://demo.jit.pro",
+                            to: "https://demo.jit.pro/wanyun/AdminApp",
                         },
                     ],
                 },

@@ -9,9 +9,9 @@ sidebar_label: "Assistant Events"
 # Assistant Events
 Assistant Events are specialized event handling for AI Assistant interactions. They are responsible for monitoring AI Assistant execution processes, state changes, and user interactions, providing processing capabilities for core interaction events such as user intent recognition, assistant switching, and session management.
 
-The Assistant Events element hierarchical structure is Meta (events.Meta) → Type (events.AIAssistantType) → Instance. Developers can quickly create Assistant Events instance elements through JitAi's visual development tools.
+The Assistant Events element hierarchical structure is Meta (events.Meta) → Type (events.AIAssistantType) → Instance. Developers can quickly create Assistant Events instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements, or override the official events.AIAssistantType element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements, or override the official events.AIAssistantType element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start 
 ### Creating Instance Elements

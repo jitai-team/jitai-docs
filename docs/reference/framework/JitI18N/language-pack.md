@@ -9,7 +9,7 @@ Language pack is the core component of the JitI18N internationalization framewor
 
 The hierarchical structure of language pack elements is Meta (languages.Meta) → Type (languages.NormalType) → Instance. Developers can quickly create language pack instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `languages.NormalType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `languages.NormalType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Basic Configuration Example

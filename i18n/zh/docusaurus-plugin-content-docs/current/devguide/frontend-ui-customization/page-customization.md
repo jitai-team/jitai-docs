@@ -815,10 +815,10 @@ esm.sh 还提供了一些优化参数，比如使用 `?bundle` 可以将多个 E
 | `localforage` | 1.10.0 | `localforage` | 本地存储库 |
 | `recast` | 0.23.4 | `recast` | JavaScript AST 工具 |
 | **平台专用** | | | |
-| `jit` | - | `JitCore` | JitAi 核心库 |
-| `jit-utils` | - | `JitUtils` | JitAi 工具库 |
-| `jit-ui` | - | `JitUi` | JitAi UI 组件库 |
-| `jit-widgets` | - | `JitWidgets` | JitAi控件库 |
+| `jit` | - | `JitCore` | JitAI 核心库 |
+| `jit-utils` | - | `JitUtils` | JitAI 工具库 |
+| `jit-ui` | - | `JitUi` | JitAI UI 组件库 |
+| `jit-widgets` | - | `JitWidgets` | JitAI控件库 |
 
 :::tip 直接使用
 这些库无需安装即可直接导入使用，例如：`import { useState } from 'react'`、`import { Button } from 'antd'` 等。

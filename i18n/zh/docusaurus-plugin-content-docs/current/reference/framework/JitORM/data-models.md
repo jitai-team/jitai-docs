@@ -5,9 +5,9 @@ description: "数据模型 API 参考文档。完整的规格说明、方法和�
 ---
 
 # 数据模型
-模型即业务实体对象，且数据模型内置了业务层常用的数据操作接口。JitORM基于丰富的数据类型，提供面向对象的数据模型定义方式。开发者使用JitAi开发工具的可视化界面编辑模型元素，也可以使用全代码方式。
+模型即业务实体对象，且数据模型内置了业务层常用的数据操作接口。JitORM基于丰富的数据类型，提供面向对象的数据模型定义方式。开发者使用JitAI开发工具的可视化界面编辑模型元素，也可以使用全代码方式。
 
-数据模型元素的分层结构为Meta（models.Meta） → Type（models.NormalType） → 实例，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的models.NormalType元素，以实现自己的封装。
+数据模型元素的分层结构为Meta（models.Meta） → Type（models.NormalType） → 实例，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的models.NormalType元素，以实现自己的封装。
 
 ## 模型分类
 数据模型包括普通数据模型、聚合表模型、扩展表模型、数据对象模型（无表模型）。
@@ -82,10 +82,51 @@ class CustomerModel(NormalModel):
 from .model import CustomerModel
 ```
 
+## 设置数据标题 {#setting-data-titles}
+
+在数据模型中,将字段设置为数据标题可以让数据行在界面上更具可读性和辨识度。数据标题字段的值会作为数据记录的主要显示信息,帮助用户快速识别和区分不同的数据行。
+
+### 支持的字段类型 {#supported-field-types}
+
+系统支持将以下字段类型设置为数据标题:
+
+- **单行文本（Single-line Text）** - 适合存储名称、标题等简短文本信息
+- **多行文本（Multi-line Text）** - 适合存储较长的描述性内容
+- **流水号（Serial Number）** - 系统自动生成的唯一编号
+- **身份证（ID Number）** - 标准的身份证号码格式
+- **手机号（Phone Number）** - 手机号码信息
+- **车牌号（License Plate Number）** - 车牌号码信息
+- **单选（Single Choice）** - 单选选项的文本内容
+- **下拉单选（Single Select）** - 下拉选择的文本内容
+
+### 配置方式 {#configuration-method}
+
+通常建议使用具有唯一性和描述性的字段作为数据标题,例如名称、标题、编号等字段,这些字段的值具备较好的可读性,能够直观地描述数据行的内容。
+
+您可以通过界面操作或在模型的 Meta 中指定 `dataTitle` 属性来设置数据标题字段：
+
+```python
+class CustomerModel(NormalModel):
+    # 字段定义...
+    name = datatypes.Stext(name="name", title="姓名")
+    
+    class Meta:
+        modelType = "NormalType"
+        db = "databases.Default"
+        dataTitle = "name"  # 将 name 字段设置为数据标题
+        dbTable = "CustomerModel"
+        name = "CustomerModel"
+        title = "客户表模型"
+```
+
+:::tip 提示
+每个数据表模型只能设置一个字段作为数据标题。如果您需要组合多个字段来表示数据标题,可以考虑使用计算字段来实现。
+:::
+
 ## 模型内置函数 {#model-built-in-functions}
 JitORM数据模型提供了丰富的内置函数，涵盖数据的创建、读取、更新、删除等操作。这些函数支持单条和批量操作，并提供了灵活的查询和聚合功能。
 
-### 基础数据操作 
+### 基础数据操作 {#basic-data-operations} 
 用于处理单条数据的基本CRUD操作。
 
 #### create - 创建数据
@@ -414,12 +455,6 @@ stats = UserModel.statisticFieldData(
     {"age": "AVG", "salary": "SUM"}
 )
 ```
-
-### 模型内置函数 {#model-built-in-functions}
-模型元素提供了丰富的内置函数，用于数据的创建、查询、更新、删除等操作。
-
-### 基础数据操作 {#basic-data-operations}
-提供标准的CRUD操作和数据查询功能。
 
 ### 数据导入导出
 用于数据导出和批量数据处理的工具函数。

@@ -9,9 +9,9 @@ sidebar_label: "Agent Events"
 # Agent Events
 Agent events are specialized event handling for AIAgent-related operations. They are responsible for monitoring state changes such as Agent creation, execution, and completion, supporting event triggering and processing for key aspects like Agent task startup, progress updates, and result callbacks, providing a unified event handling mechanism for Agent collaboration and task chain execution.
 
-The Agent event element hierarchical structure is Meta (events.Meta) → Type (events.AIAgentType) → Instance. Developers can quickly create Agent event instance elements through JitAi's visual development tools.
+The Agent event element hierarchical structure is Meta (events.Meta) → Type (events.AIAgentType) → Instance. Developers can quickly create Agent event instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements, or override the official events.AIAgentType element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements, or override the official events.AIAgentType element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start 
 ### Creating Instance Elements

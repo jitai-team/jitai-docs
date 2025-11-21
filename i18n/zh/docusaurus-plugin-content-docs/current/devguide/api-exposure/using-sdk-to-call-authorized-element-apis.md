@@ -6,13 +6,13 @@ description: "使用SDK调用授权元素API的详细指南和说明。"
 
 # 使用SDK调用授权元素API
 
-开发者配置好授权信息和授权接口后，调用方可以通过调用 JitAi 提供的 SDK 来调用授权方开放的接口。
+开发者配置好授权信息和授权接口后，调用方可以通过调用 JitAI 提供的 SDK 来调用授权方开放的接口。
 
 在授权详情页面中，点击`SDK下载`，可以查看SDK使用指南和下载地址。
 
 ![SDK 集成](./img/api_2025-10-16_20-26-15.png)
 
-JitAi 提供了 Python、Nodejs、Java 三种语言的 SDK。
+JitAI 提供了 Python、Nodejs、Java 三种语言的 SDK。
 
 ## 使用Python SDK {#using-python-sdk}
 作为Python 开发者，可以使用 Python SDK 来调用授权方开放的接口。

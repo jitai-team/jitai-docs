@@ -1,18 +1,18 @@
 ---
 sidebar_position: 5
 slug: event-handling
-description: "Event-driven automation mechanism for JitAi applications. Model events, approval events, custom events, and AI-related event handling."
+description: "Event-driven automation mechanism for JitAI applications. Model events, approval events, custom events, and AI-related event handling."
 ---
 
 # Event Handling
 
-Event handling is an automation mechanism within JitAi applications. When specific conditions occur—such as data changes or approval status updates—the system automatically executes predefined business logic. In essence, it's a "when...then automatically do..." response mechanism that enables developers to build event-driven application systems.
+Event handling is an automation mechanism within JitAI applications. When specific conditions occur—such as data changes or approval status updates—the system automatically executes predefined business logic. In essence, it's a "when...then automatically do..." response mechanism that enables developers to build event-driven application systems.
 
-JitAi supports multiple event types, including `Model Events`, `Approval Events`, `Custom Events`, and `AI-related Events`. These can be triggered during function execution, data modifications, approval workflows, and AI Assistant/Agent runtime, addressing diverse business automation needs.
+JitAI supports multiple event types, including `Model Events`, `Approval Events`, `Custom Events`, and `AI-related Events`. These can be triggered during function execution, data modifications, approval workflows, and AI Assistant/Agent runtime, addressing diverse business automation needs.
 
 ## Creating events {#creating-events}
 
-Creating events in the JitAi development environment is straightforward. The system provides a visual interface that helps developers quickly configure various event types.
+Creating events in the JitAI development environment is straightforward. The system provides a visual interface that helps developers quickly configure various event types.
 
 ![Event creation](./img/event-creation.png "Event creation")
 
@@ -24,7 +24,7 @@ Model events are the most commonly used event type. When data in a table changes
 
 ### Seven trigger timings {#seven-trigger-timings}
 
-JitAi supports seven model event trigger timings, allowing developers to select the most appropriate timing based on business requirements:
+JitAI supports seven model event trigger timings, allowing developers to select the most appropriate timing based on business requirements:
 
 - **Before data creation**: Executed before data is written to the database. Commonly used for data preprocessing, automatic field population, and validation to ensure data compliance before database entry.
 - **After data creation**: Executed after data is successfully written to the database. Suitable for message notifications, statistics updates, and associated data synchronization, implementing automatic responses following data creation.
@@ -36,7 +36,7 @@ JitAi supports seven model event trigger timings, allowing developers to select 
 
 ### Triggering on any or specific fields {#triggering-on-any-or-specific-fields}
 
-JitAi provides two trigger field configuration methods, allowing developers to flexibly choose based on actual business scenarios:
+JitAI provides two trigger field configuration methods, allowing developers to flexibly choose based on actual business scenarios:
 
 - **All fields**: The event triggers whenever any field in the model changes. Suitable for scenarios requiring responses to all data modifications.
 - **Specific fields**: The event triggers only when selected fields change. Ideal for business requirements focusing on specific field changes, effectively reducing irrelevant event triggers and improving system efficiency.
@@ -65,7 +65,7 @@ Approval events are specifically designed for automated approval workflow proces
 
 ### Three trigger timings {#three-trigger-timings}
 
-JitAi provides three trigger timings for approval events, allowing developers to select appropriate trigger points based on approval workflow requirements:
+JitAI provides three trigger timings for approval events, allowing developers to select appropriate trigger points based on approval workflow requirements:
 
 - **Approval status change**: Triggered when an approval record's overall status changes (e.g., from "Pending Approval" to "Approved" or "Rejected"). Suitable for scenarios tracking final approval results, such as status synchronization, result notifications, and subsequent process initiation.
 
@@ -163,7 +163,7 @@ In the IDE, click `+` → `Event` → `Agent Tool Event`, open the event configu
 
 ## Replacing event internal functions with service functions {#replacing-event-internal-functions-with-service-functions}
 
-When creating events, the default execution function is the event internal function, with logic located in the event element's code. JitAi also supports using service functions to encapsulate event execution logic.
+When creating events, the default execution function is the event internal function, with logic located in the event element's code. JitAI also supports using service functions to encapsulate event execution logic.
 
 ![Service function events](./img/service-function-events.gif "Service function events")
 
@@ -179,7 +179,7 @@ All events are disabled by default after creation. Developers must manually turn
 
 ## Executing events synchronously or asynchronously {#executing-events-synchronously-or-asynchronously}
 
-JitAi supports both synchronous and asynchronous event execution modes. Developers can flexibly choose based on business scenarios and performance requirements.
+JitAI supports both synchronous and asynchronous event execution modes. Developers can flexibly choose based on business scenarios and performance requirements.
 
 ![Event async sync](./img/event-async-sync.png "Event async sync")
 
@@ -193,7 +193,7 @@ For time-consuming event processing (such as sending emails, calling external AP
 
 ## Viewing event execution records {#viewing-event-execution-records}
 
-JitAi provides comprehensive event execution monitoring and debugging capabilities to help developers quickly locate and resolve issues during event execution.
+JitAI provides comprehensive event execution monitoring and debugging capabilities to help developers quickly locate and resolve issues during event execution.
 
 ![Execution record 1](./img/execution-record-1.png "Execution record 1")
 

@@ -193,16 +193,17 @@
   height: auto;
   display: block;
   aspect-ratio: 16 / 9;
-  vertical-align: bottom;
+  transform: scale(1.01);
+  object-fit: cover;
 }
 
 /* 卡片网格 */
 .cardsGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-8);
   margin-top: var(--space-16);
   align-items: stretch;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .card {
@@ -256,6 +257,12 @@
 @media (max-width: 1400px) {
   .hero {
     padding: var(--space-20) 0 var(--space-16) 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

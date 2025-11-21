@@ -6,7 +6,7 @@ description: "创建文件模板的详细指南和说明。"
 
 # 创建文件模板
 文件模板是一种文档生成工具，通过预设变量实现动态内容填充，可用于动态生成销售合同、生产工单、发票单据。
-JitAi支持Word模板和Excel模板。
+JitAI支持Word模板和Excel模板。
 
 ## Word模板 {#word-template}
 采销人员为不同客户准备合同时，合同格式固定但客户信息和订单内容不同。通过Word模板设置客户姓名、产品名称、数量、金额等变量，快速生成个性化合同文档。
@@ -54,11 +54,11 @@ JitAi支持Word模板和Excel模板。
 ### 在Word文档中使用模板变量 {#use-template-variables-in-word}
 在Word文档中使用模板变量，需要以下三步：
 
-在本地电脑上创建Word文档（目前JitAi仅支持.docx格式文件），将变量代码复制到Word文档中并完成布局排版设计，将设计好的Word文档上传到平台。
+在本地电脑上创建Word文档（目前JitAI仅支持.docx格式文件），将变量代码复制到Word文档中并完成布局排版设计，将设计好的Word文档上传到平台。
 
 ![](./img/2/2025-08-29-10-32-15.png)
 
-#### 从JitAi平台复制模板变量 {#copy-template-variables-in-word}
+#### 从JitAI平台复制模板变量 {#copy-template-variables-in-word}
 ![](./img/2/2025-08-29_10-35-49.gif)
 
 鼠标放到变量名称上，点击复制复制变量代码，在下拉面板中选择“值”选项的”展示单行文本”。
@@ -66,7 +66,7 @@ JitAi支持Word模板和Excel模板。
 :::tip
 “展示单行文本”是模板变量的一种常用展示样式，变量的值在文档中以单行文本形式展示。
 
-JitAi支持**30+种模板变量样式**，包括文本处理、数值计算、日期格式化、列表操作等，帮助你实现各种复杂的数据展示需求。详细用法请参考：[模板变量样式说明](#template-variable-style-description)。
+JitAI支持**30+种模板变量样式**，包括文本处理、数值计算、日期格式化、列表操作等，帮助你实现各种复杂的数据展示需求。详细用法请参考：[模板变量样式说明](#template-variable-style-description)。
 :::
 
 #### 在Word文档中使用变量：{#using-variables-in-word}
@@ -129,9 +129,9 @@ Excel模板的创建方式和Word模板创建方式一样。
 
 ### 在Excel文档中使用模板变量 {#use-template-variables-in-excel}
 在Excel文档中使用模板变量，需要以下三步：
-在本地电脑上创建Excel文档（目前JitAi仅支持.xlsx格式文件），将变量代码复制到Excel文档中并完成布局排版设计，将设计好的Excel文档上传到平台。
+在本地电脑上创建Excel文档（目前JitAI仅支持.xlsx格式文件），将变量代码复制到Excel文档中并完成布局排版设计，将设计好的Excel文档上传到平台。
 
-#### 从JitAi平台复制模板变量 {#copy-template-variables-in-excel}
+#### 从JitAI平台复制模板变量 {#copy-template-variables-in-excel}
 ![](./img/2/2025-09-01_11-36-45.gif)
 
 鼠标放到变量名称上，点击复制复制变量代码，在下拉面板中选择“值”选项的“展示多行数据”。
@@ -139,7 +139,7 @@ Excel模板的创建方式和Word模板创建方式一样。
 :::tip
 “展示多行数据”，是将值在文档中通过循环语句展示成多行多列。
 
-JitAi支持**30+种模板变量样式**，包括文本处理、数值计算、日期格式化、列表操作等，帮助你实现各种复杂的数据展示需求。详细用法请参考：[模板变量样式说明](#template-variable-style-description)。
+JitAI支持**30+种模板变量样式**，包括文本处理、数值计算、日期格式化、列表操作等，帮助你实现各种复杂的数据展示需求。详细用法请参考：[模板变量样式说明](#template-variable-style-description)。
 :::
 
  

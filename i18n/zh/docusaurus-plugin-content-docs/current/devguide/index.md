@@ -16,14 +16,14 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 
 ## 基础概念 {#basic-concepts}
-掌握JitAi平台的核心理念和架构原理。了解平台应用、元素体系、开发框架、可视化开发工具等基础概念，为后续开发工作奠定理论基础。
+掌握JitAI平台的核心理念和架构原理。了解平台应用、元素体系、开发框架、可视化开发工具等基础概念，为后续开发工作奠定理论基础。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
   title="平台架构与核心概念"
   href="devguide/basic-concept"
-  description="了解JitAi平台架构、应用概念、JAAP协议、元素体系和开发框架，掌握平台的基础原理。"
+  description="了解JitAI平台架构、应用概念、JAAP协议、元素体系和开发框架，掌握平台的基础原理。"
 >
   <LinkGrid columns={2} links={[
     { text: "平台与应用", href: "devguide/basic-concept#platform-and-applications" },
@@ -48,7 +48,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <IndexCard
   title="下载与安装"
   href="devguide/installation-activation/download-installation"
-  description="学习如何下载和安装JitAi平台，包括桌面版和服务器版的不同部署场景。"
+  description="学习如何下载和安装JitAI平台，包括桌面版和服务器版的不同部署场景。"
 >
   <LinkGrid links={[
     { text: "详细安装步骤", href: "devguide/installation-activation/download-installation#detailed-installation-steps" }
@@ -93,7 +93,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="JitAi可视化开发工具"
+  title="JitAI可视化开发工具"
   href="devguide/development-tool-and-publish-service/visual-development-tool"
   description="掌握强大的可视化开发环境，熟悉IDE的各个功能区域，学会在可视化和源码双模式之间自由切换。"
 >
@@ -290,7 +290,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <IndexCard
   title="组件化页面"
   href="devguide/shell-and-page/componentized-page"
-  description="理解组件化页面——JitAi页面系统的基础，由功能组件构建，用于数据展示和用户交互。"
+  description="理解组件化页面——JitAI页面系统的基础，由功能组件构建，用于数据展示和用户交互。"
 />
 
 <IndexCard
@@ -1314,11 +1314,13 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <IndexCard
   title="数据表模型"
   href="devguide/data-modeling/data-table-model"
-  description="JitAi应用的数据基础层，学习如何创建和配置数据表，设计字段类型和约束。"
+  description="JitAI应用的数据基础层，学习如何创建和配置数据表，设计字段类型和约束。"
 >
   <LinkGrid links={[
     { text: "数据表创建入口", href: "devguide/data-modeling/data-table-model#data-table-create-entry" },
     { text: "设计表字段与数据类型", href: "devguide/data-modeling/data-table-model#design-table-fields-and-data-types" },
+    { text: "字段操作按钮", href: "devguide/data-modeling/data-table-model#field-operation-buttons" },
+    { text: "设置数据标题", href: "devguide/data-modeling/data-table-model#set-data-title" },
     { text: "配置表索引优化查询", href: "devguide/data-modeling/data-table-model#configure-table-index-optimization" },
     { text: "多列联合唯一约束", href: "devguide/data-modeling/data-table-model#multi-column-composite-unique" },
     { text: "组合索引", href: "devguide/data-modeling/data-table-model#composite-index" },
@@ -1445,7 +1447,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <IndexCard
   title="支持的数据库厂商"
   href="devguide/data-modeling/supported-database-vendors"
-  description="了解JitAi支持的各种数据库类型和连接配置。"
+  description="了解JitAI支持的各种数据库类型和连接配置。"
 >
   <LinkGrid links={[
     { text: "场景选择建议", href: "devguide/data-modeling/supported-database-vendors#scenario-selection-recommendations" },
@@ -1997,7 +1999,7 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 <IndexCard
   title="使用跨App服务元素调用被授权元素的API"
   href="devguide/api-exposure/using-cross-app-service-elements-to-call-authorized-apis"
-  description="使用服务元素实现跨应用API调用，实现不同JitAi应用之间的无缝集成。"
+  description="使用服务元素实现跨应用API调用，实现不同JitAI应用之间的无缝集成。"
 >
     <LinkGrid links={[
         { text: "使用跨App服务元素", href: "devguide/api-exposure/using-cross-app-service-elements-to-call-authorized-apis#using-cross-app-service-elements" }

@@ -8,7 +8,7 @@ description: "Configure enterprise approval workflows visually. Rule engines, co
 
 Approval workflows represent structured organizational processes for reviewing and authorizing specific requests. The approval engine manages diverse approval scenarios—including expense reimbursements, leave requests, and purchase orders—through predefined business rules, workflow logic, and conditional criteria.
 
-JitAi enables visual construction of enterprise approval workflows based on comprehensive organizational patterns. The platform integrates extensive customization capabilities, encompassing advanced features such as rule engines, conditional branching, parallel processing, and subprocess approval flow design.
+JitAI enables visual construction of enterprise approval workflows based on comprehensive organizational patterns. The platform integrates extensive customization capabilities, encompassing advanced features such as rule engines, conditional branching, parallel processing, and subprocess approval flow design.
 
 ## Creating processes {#create-process}
 Approval workflows are typically designed around specific business scenarios such as leave management, expense processing, or procurement workflows, requiring corresponding business data storage in data table models. Therefore, creating an approval workflow necessitates selecting an associated data model.
@@ -18,7 +18,7 @@ Approval workflows are typically designed around specific business scenarios suc
 Click the `+` button adjacent to "Approval" in the left element tree to open the new approval workflow dialog. Enter the approval workflow name and select the associated data model, then click `Save` to create the workflow.
 
 ## Configuring process nodes {#drag-process-node}
-JitAi provides developers with an intuitive visual process configuration interface enabling rapid workflow creation through node-based design.
+JitAI provides developers with an intuitive visual process configuration interface enabling rapid workflow creation through node-based design.
 
 ![Approval Configuration Panel](./img/workflow_2025-08-23_11-41-38.png)
 
@@ -79,7 +79,7 @@ In the process configuration panel, click `Approval Configuration` in the upper 
 The configuration dialog provides access to associated data models, approval information synchronization to corresponding data models, approval icon settings, approval prediction feature enablement, comment functionality, sharing permissions, approval form printing capabilities, and other advanced functions.
 
 ### Synchronizing approval information to data table models {#sync-approval-info-to-data-table-model}
-To facilitate integration of approval-related information (such as initiator details, initiation timestamps, approval status, etc.) with business data for analysis, reporting, and statistical purposes, JitAi enables synchronization of approval process information to developer-specified data table models.
+To facilitate integration of approval-related information (such as initiator details, initiation timestamps, approval status, etc.) with business data for analysis, reporting, and statistical purposes, JitAI enables synchronization of approval process information to developer-specified data table models.
 
 ![Data Table Model](./img/workflow_2025-08-23_13-57-55.png)
 

@@ -12,7 +12,7 @@ An Agent consists of three core components: system prompts, large language model
 
 ## Creating ReActAgent {#creating-react-agent}
 
-ReAct (Reasoning and Acting) is an Agent working mode that combines "reasoning" and "acting". It enables AI to alternately think and take actions when facing complex tasks, dynamically adjusting subsequent decisions based on feedback from each step. Developers can use JitAi to quickly develop and debug ReAct-mode Agents that are natively integrated with applications, known as ReActAgents.
+ReAct (Reasoning and Acting) is an Agent working mode that combines "reasoning" and "acting". It enables AI to alternately think and take actions when facing complex tasks, dynamically adjusting subsequent decisions based on feedback from each step. Developers can use JitAI to quickly develop and debug ReAct-mode Agents that are natively integrated with applications, known as ReActAgents.
 
 ![Create ReActAgent](./img/agent/create-react-agent.gif "Create ReActAgent")
 
@@ -24,7 +24,7 @@ ReActAgent supports writing system prompts, selecting large language models, wri
 
 System prompts are important guidelines for Agent behavior and decision-making. They provide Agents with key information such as task objectives, role settings, and behavioral norms, guiding Agents to complete tasks more accurately. Well-designed system prompts can improve an Agent's intelligent performance and interaction experience.
 
-Considering that many developers are not skilled in writing prompts, JitAi provides default system prompt templates. Developers can modify these default templates, and after mastering prompt writing techniques, they can write according to their own format.
+Considering that many developers are not skilled in writing prompts, JitAI provides default system prompt templates. Developers can modify these default templates, and after mastering prompt writing techniques, they can write according to their own format.
 
 ![Write Agent Prompts](./img/agent/write-agent-prompts.png "Write Agent Prompts")
 
@@ -38,7 +38,7 @@ Large language models are the core of an Agent's intelligent decision-making and
 
 ![Configure Large Language Model and Parameters](./img/agent/configure-large-model-and-parameters.gif "Configure Large Language Model and Parameters")
 
-JitAi provides [AI Large Language Model](../ai-llm/create-ai-llm) elements for connecting to mainstream large language model services in the market, and also supports integration of private large language model services. In the basic configuration of ReActAgent, you can select from already created large language model instances and configure their parameters.
+JitAI provides [AI Large Language Model](../ai-llm/create-ai-llm) elements for connecting to mainstream large language model services in the market, and also supports integration of private large language model services. In the basic configuration of ReActAgent, you can select from already created large language model instances and configure their parameters.
 
 :::tip
 Developers need to complete the creation of large language model instance elements before they can be selected and used in ReActAgent. If you need to call tools, the corresponding model must support Function Calling.
@@ -56,7 +56,7 @@ Developers can fill in the description information in the `Basic Configuration` 
 
 ## Configuring runtime state storage {#configuring-runtime-state-storage}
 
-Agents need to save and update state information during execution to maintain consistency and continuity in conversations. Developers need to select an appropriate storage repository to save the Agent's runtime state. JitAi supports using memory, MySQL, or PostgreSQL as storage repositories. If developers do not configure it, the desktop version defaults to memory storage, and the server version defaults to the built-in MySQL database storage.
+Agents need to save and update state information during execution to maintain consistency and continuity in conversations. Developers need to select an appropriate storage repository to save the Agent's runtime state. JitAI supports using memory, MySQL, or PostgreSQL as storage repositories. If developers do not configure it, the desktop version defaults to memory storage, and the server version defaults to the built-in MySQL database storage.
 
 ![Configure Runtime State Storage](./img/agent/configure-runtime-state-storage.gif "Configure Runtime State Storage")
 

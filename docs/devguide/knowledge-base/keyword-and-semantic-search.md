@@ -6,7 +6,7 @@ description: "Keyword and semantic search in knowledge bases. Vector similarity 
 
 # Keyword and Semantic Search Using Knowledge Base Elements
 
-Knowledge bases support two retrieval methods: **keyword search** for precise keyword matching, and **semantic search** for understanding semantic meaning through vector similarity. JitAi knowledge bases combine the strengths of both approaches, enabling precise keyword queries and intelligent semantic understanding.
+Knowledge bases support two retrieval methods: **keyword search** for precise keyword matching, and **semantic search** for understanding semantic meaning through vector similarity. JitAI knowledge bases combine the strengths of both approaches, enabling precise keyword queries and intelligent semantic understanding.
 
 ## Calling AI knowledge base in backend visual programming {#call-ai-knowledge-base-in-backend-visual-programming}
 Knowledge base elements in backend visual programming functions (service functions, model functions, task functions, and event functions) provide four methods: Query, Add Document, Delete Document, and Keyword Query.

@@ -8,9 +8,9 @@ sidebar_label: "WeCom Self-built Org."
 # WeCom Self-built Org.
 WeCom Self-built Org. is an enterprise-level organizational architecture integration type in the JitAuth framework, implementing organizational architecture synchronization and user management based on WeCom custom application API. It handles WeCom contact synchronization, organizational information retrieval, and user identity authentication, supporting automatic organizational architecture synchronization and user permission inheritance.
 
-The hierarchical structure of WeCom Self-built Org. elements is Meta (corps.Meta) → Type (corps.QywxInnerType) → Instance. Developers can quickly create WeCom Self-built Org. instance elements through JitAi's visual development tools.
+The hierarchical structure of WeCom Self-built Org. elements is Meta (corps.Meta) → Type (corps.QywxInnerType) → Instance. Developers can quickly create WeCom Self-built Org. instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `corps.QywxInnerType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `corps.QywxInnerType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

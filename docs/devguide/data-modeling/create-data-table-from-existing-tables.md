@@ -1,12 +1,12 @@
 ---
 sidebar_position: 4
 slug: create-data-table-from-existing-tables
-description: "Generate data models from existing database tables. Quickly create JitAi models for legacy database architectures with field mapping."
+description: "Generate data models from existing database tables. Quickly create JitAI models for legacy database architectures with field mapping."
 ---
 
 # Creating Data Table Elements from Existing Database Tables
 
-This approach is ideal for scenarios where database tables already exist and corresponding data models need to be quickly created in JitAi applications.
+This approach is ideal for scenarios where database tables already exist and corresponding data models need to be quickly created in JitAI applications.
 
 ![Creating Model Based on Database Table](./img/based-on-existing-data-model.png "Creating Model Based on Database Table")
 

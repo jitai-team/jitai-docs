@@ -10,7 +10,7 @@ sidebar_label: "Task Service"
 
 Task Service is the core API service of the JitTask framework, responsible for task template management, task creation and execution, status control, and forced termination. The element has a hierarchical structure of Meta (services.Meta) → Type (services.NormalType) → Instance (services.TaskSvc). Developers can directly use the TaskSvc instance element.
 
-Of course, developers can also create their own Type elements or modify the official services.NormalType element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official services.NormalType element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 Task Service, as a built-in instance element of the JitTask framework, can be directly obtained and used through `app.getElement()`:

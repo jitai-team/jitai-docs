@@ -6,7 +6,7 @@ description: "Control translation behavior with ignore rules. Prevent brand name
 
 # Translation Ignore Rules
 
-In the JitAi platform, by default all text content within DOM nodes is automatically processed for translation. However, in certain scenarios, you may need to prevent specific text from being translated, such as:
+In the JitAI platform, by default all text content within DOM nodes is automatically processed for translation. However, in certain scenarios, you may need to prevent specific text from being translated, such as:
 
 - Brand names, product names, and other proper nouns
 - Technical terms and code snippets

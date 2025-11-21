@@ -10,7 +10,7 @@ Data models can be invoked not only within pages and functions, but also as tool
 
 ## Data models as Agent tools {#data-models-as-agent-tools}
 
-Applications built on JitAi's interpretive system architecture possess self-describing characteristics, meaning that application elements can be accurately understood by large language models. Data models and their functions are precisely such self-describing elements that can serve directly as available tools for Agents.
+Applications built on JitAI's interpretive system architecture possess self-describing characteristics, meaning that application elements can be accurately understood by large language models. Data models and their functions are precisely such self-describing elements that can serve directly as available tools for Agents.
 
 When data model functions are added as Agent tools, AI gains the ability to:
 

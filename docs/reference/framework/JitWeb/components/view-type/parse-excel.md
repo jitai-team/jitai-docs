@@ -9,7 +9,7 @@ Parse Excel is a component for parsing .xlsx format files and importing data int
 
 The parse Excel element has a hierarchical structure of Meta (components.Meta) → Type (components.ParseData) → Instance. Developers can quickly create parse Excel instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `components.ParseDataType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `components.ParseDataType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start 
 ### Basic Configuration Example

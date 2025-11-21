@@ -7,7 +7,7 @@ description: "Create Word and Excel file templates for dynamic document generati
 # Creating File Templates
 
 File templates are document generation tools that achieve dynamic content filling through preset variables, and can be used to dynamically generate sales contracts, production work orders, and invoice documents.
-JitAi supports Word templates and Excel templates.
+JitAI supports Word templates and Excel templates.
 
 ## Word template {#word-template}
 
@@ -59,11 +59,11 @@ The configured template variables are as follows:
 
 Using template variables in Word documents requires the following three steps:
 
-Create a Word document on your local computer (currently JitAi only supports .docx format files), copy variable codes to the Word document and complete layout design, then upload the designed Word document to the platform.
+Create a Word document on your local computer (currently JitAI only supports .docx format files), copy variable codes to the Word document and complete layout design, then upload the designed Word document to the platform.
 
 ![Word Document Layout](./img/2/2025-08-29-10-32-15.png "Word Document Layout")
 
-#### Copying template variables from JitAi platform {#copy-template-variables-in-word}
+#### Copying template variables from JitAI platform {#copy-template-variables-in-word}
 
 ![Copy Template Variables](./img/2/2025-08-29_10-35-49.gif "Copy Template Variables")
 
@@ -72,7 +72,7 @@ Place the mouse over the variable name, click copy to copy the variable code, an
 :::tip
 "Display Single-line Text" is a commonly used display style for template variables, where the variable's value is displayed as single-line text in the document.
 
-JitAi supports **30+ template variable styles**, including text processing, numerical calculations, date formatting, list operations, etc., helping you achieve various complex data display requirements. For detailed usage, please refer to: [Template Variable Style Description](#template-variable-style-description).
+JitAI supports **30+ template variable styles**, including text processing, numerical calculations, date formatting, list operations, etc., helping you achieve various complex data display requirements. For detailed usage, please refer to: [Template Variable Style Description](#template-variable-style-description).
 :::
 
 #### Using variables in Word documents {#use-variables-in-word}
@@ -132,9 +132,9 @@ The configured variables are shown below:
 ### Using template variables in Excel documents {#use-template-variables-in-excel}
 
 Using template variables in Excel documents requires the following three steps:
-Create an Excel document on your local computer (currently JitAi only supports .xlsx format files), copy variable codes to the Excel document and complete layout design, then upload the designed Excel document to the platform.
+Create an Excel document on your local computer (currently JitAI only supports .xlsx format files), copy variable codes to the Excel document and complete layout design, then upload the designed Excel document to the platform.
 
-#### Copying template variables from JitAi platform {#copy-template-variables-in-excel}
+#### Copying template variables from JitAI platform {#copy-template-variables-in-excel}
 
 ![Copy Excel Variables](./img/2/2025-09-01_11-36-45.gif "Copy Excel Variables")
 
@@ -143,7 +143,7 @@ Place the mouse over the variable name, click copy to copy the variable code, an
 :::tip
 "Display Multi-row Data" displays values in the document through loop statements to show multiple rows and columns.
 
-JitAi supports **30+ template variable styles**, including text processing, numerical calculations, date formatting, list operations, etc., helping you achieve various complex data display requirements. For detailed usage, please refer to: [Template Variable Style Description](#template-variable-style-description).
+JitAI supports **30+ template variable styles**, including text processing, numerical calculations, date formatting, list operations, etc., helping you achieve various complex data display requirements. For detailed usage, please refer to: [Template Variable Style Description](#template-variable-style-description).
 :::
 
 #### Pasting variables in Excel documents {#paste-variables-in-excel}

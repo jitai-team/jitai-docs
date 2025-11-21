@@ -8,7 +8,7 @@ sidebar_label: "Database"
 
 # Database
 ## Introduction
-JitAi officially provides multiple database Type elements, supporting unified database access interfaces and connection management functionality. The supported database types and their corresponding Type element fullNames are as follows:
+JitAI officially provides multiple database Type elements, supporting unified database access interfaces and connection management functionality. The supported database types and their corresponding Type element fullNames are as follows:
 - **SQLite**: databases.SqliteType
 - **MySQL**: databases.MySQLType
 - **PostgreSQL**: databases.PgSqlType
@@ -16,9 +16,9 @@ JitAi officially provides multiple database Type elements, supporting unified da
 - **Microsoft SQL Server**: databases.SqlServerType
 - **DM (Dameng)**: databases.DmdbType
 
-Developers can use the visual interface in JitAi development tools to create and configure database instance elements, or use full-code approach.
+Developers can use the visual interface in JitAI development tools to create and configure database instance elements, or use full-code approach.
 
-Of course, developers can also create their own Type elements or modify the official `databases.xxxType` elements provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `databases.xxxType` elements provided by JitAI in their own App to implement their own encapsulation.
 
 ## Element Directory Structure
 All database instance element directories are composed of element definition files and configuration files.

@@ -7,7 +7,7 @@ description: "后端 API 参考文档。完整的规格说明、方法和示例�
 
 globals.Calc是官方内置的公共模块元素，提供数学、逻辑、文本、日期时间、高级统计和地址处理等80+个计算函数。globals.Calc元素层级结构为Meta（globals.Meta） → Type（globals.Calc），开发者可以使用`app.getElement("globals.Calc")`获取并直接使用。
 
-当然，开发者也可以创建自己的公共模块元素，或者在自己的App中改写JitAi官方提供的globals.Calc元素，以实现自己的封装。后端实现应位于globals.Calc的backend子目录下。
+当然，开发者也可以创建自己的公共模块元素，或者在自己的App中改写JitAI官方提供的globals.Calc元素，以实现自己的封装。后端实现应位于globals.Calc的backend子目录下。
 
 ## 计算组件
 ### 基本用法
@@ -159,7 +159,7 @@ except Code as error:
 ## 常量定义
 常量定义模块，提供系统级常量和业务常量。
 
-当然，开发者也可以创建自己的常量定义元素，或者在自己的App中改写JitAi官方提供的commons.consts元素，以实现自己的封装。
+当然，开发者也可以创建自己的常量定义元素，或者在自己的App中改写JitAI官方提供的commons.consts元素，以实现自己的封装。
 
 ### 基础常量
 ```python title="基础常量使用"

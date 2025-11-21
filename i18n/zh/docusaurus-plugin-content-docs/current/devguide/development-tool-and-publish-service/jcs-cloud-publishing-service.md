@@ -6,7 +6,7 @@ description: "JCS云端应用发布服务的详细指南和说明。"
 
 # JCS云端应用发布服务
 
-JCS（JitAi Cloud Service）是JitAi官方负责维护部署的云端应用发布服务，也是一个JitAi应用。作为一个中心化的公共服务，JCS运行在官方Jit节点上。
+JCS（JitAI Cloud Service）是JitAI官方负责维护部署的云端应用发布服务，也是一个JitAI应用。作为一个中心化的公共服务，JCS运行在官方Jit节点上。
 
 每个Jit节点在启动时都会自动连接到JCS，与JCS同步运行环境配置、节点状态、版本信息。通过JCS，每个Jit节点可以访问云端应用仓库，在组织内或全网范围内发布和部署共享应用。
 

@@ -5,9 +5,9 @@ description: "审批事件 API 参考文档。完整的规格说明、方法和�
 # 审批事件
 审批事件是极态平台中专门处理审批流程状态变更和节点操作的事件处理器，基于事件驱动机制实现审批流程的自动化响应。它负责监听审批状态变更、节点变更和节点处理等关键时机，并自动执行预定义的业务逻辑，支持复杂的审批流程自动化场景。
 
-审批事件元素分层结构为Meta（events.Meta） → Type（events.WorkflowType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建审批事件实例元素。
+审批事件元素分层结构为Meta（events.Meta） → Type（events.WorkflowType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建审批事件实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的events.WorkflowType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的events.WorkflowType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

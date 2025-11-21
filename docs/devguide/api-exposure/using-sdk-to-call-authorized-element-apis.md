@@ -6,13 +6,13 @@ description: "Use SDK to call authorized element APIs. Client SDK usage for acce
 
 # Using SDK to Call Authorized Element APIs
 
-Once authorization information and authorized interfaces are configured, callers can invoke authorized APIs using the SDKs provided by JitAi.
+Once authorization information and authorized interfaces are configured, callers can invoke authorized APIs using the SDKs provided by JitAI.
 
 On the authorization details page, click `Download SDK` to view the SDK usage guide and download links.
 
 ![SDK Integration](./img/api_2025-10-16_20-35-49.png)
 
-JitAi provides SDKs for three languages: Python, Node.js, and Java.
+JitAI provides SDKs for three languages: Python, Node.js, and Java.
 
 ## Using Python SDK {#using-python-sdk}
 

@@ -10,7 +10,7 @@ Approval Processing is the core operation component for workflow approval tasks,
 
 The Approval Processing element has a hierarchical structure of Meta (components.Meta) → Type (components.TaskHandle) → Instance. Developers can quickly create approval processing instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official components.TaskHandleType element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official components.TaskHandleType element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Basic Configuration Example

@@ -1,21 +1,21 @@
 ---
 sidebar_position: -1
-description: "JitAi framework extension guide. Learn to extend element families, create custom components, and build specialized functionality for your business needs."
+description: "JitAI framework extension guide. Learn to extend element families, create custom components, and build specialized functionality for your business needs."
 ---
 # Extending Guide Index
 
 **Why do we need framework extensions?**
 
-JitAi provides a rich set of official development frameworks, but in real business scenarios, you may encounter:
+JitAI provides a rich set of official development frameworks, but in real business scenarios, you may encounter:
 - Industry-specific requirements not yet covered by the official framework
 - Existing component functionality that's close but needs customization
 - Internal enterprise standards requiring unified custom component libraries
 
-Framework extensions are designed to solve these problems, enabling you to build solutions that meet specific requirements on top of the JitAi ecosystem.
+Framework extensions are designed to solve these problems, enabling you to build solutions that meet specific requirements on top of the JitAI ecosystem.
 
 ## Must understand JAAP first {#must-understand-jaap-first}
 
-Before extending the JitAi development framework, developers must have a thorough understanding of the JAAP (JitAi AI Application Protocol) specifications, particularly the concepts of Meta, Type, and Instance elements and their relationships. If you intend to override or rewrite the official framework, you'll also need to understand the principles of inheritance and overriding.
+Before extending the JitAI development framework, developers must have a thorough understanding of the JAAP (JitAI AI Application Protocol) specifications, particularly the concepts of Meta, Type, and Instance elements and their relationships. If you intend to override or rewrite the official framework, you'll also need to understand the principles of inheritance and overriding.
 
 [Click here to learn JAAP](/docs/reference/runtime-platform/JAAP)
 
@@ -23,7 +23,7 @@ Before extending the JitAi development framework, developers must have a thoroug
 
 | What You Want to Achieve | Related Documentation |
 |-------------|----------|
-| Add a custom chart component that's not available in JitAi | [Extend Your Own UI Component Type Elements](/docs/extguide/add-frontend-components) |
+| Add a custom chart component that's not available in JitAI | [Extend Your Own UI Component Type Elements](/docs/extguide/add-frontend-components) |
 | Make my custom components configurable through drag-and-drop interface | [Developing Visual Editors for UI Component Type Elements](/docs/extguide/develop-frontend-component-visual-editor) |
 | Integrate third-party services like Slack bots or IoT devices | [Extend Your Own Element Families](/docs/extguide/extend-element-family-classes) |
 | Create user-friendly configuration panels for my backend integrations | [Developing Visual Editors for Backend Type Elements](/docs/extguide/develop-backend-element-visual-editor) |

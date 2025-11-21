@@ -5,11 +5,11 @@ description: "微信登录 API 参考文档。完整的规格说明、方法和�
 # 微信登录
 微信登录是基于微信开放平台OAuth2.0协议的第三方认证方式，通过扫码登录和用户信息获取实现与微信用户体系的无缝集成。它负责微信用户身份验证、账户绑定管理和登录状态维护，支持前后端分离架构和完整的用户认证流程。
 
-微信登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.WeChatType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建微信登录实例元素。
+微信登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.WeChatType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建微信登录实例元素。
 
 微信登录基于标准OAuth2.0认证流程，用户通过微信客户端扫码授权后，系统获取访问令牌和用户标识，完成身份验证和账户关联。支持用户绑定、解绑操作和多应用场景的身份管理。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的auths.loginTypes.WeChatType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的auths.loginTypes.WeChatType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

@@ -5,9 +5,9 @@ description: "微信公众号登录 API 参考文档。完整的规格说明、�
 # 微信公众号登录
 微信公众号登录是面向微信公众号生态的认证登录方式，基于OAuth2.0网页授权机制实现用户身份验证和登录。它负责微信公众号用户身份识别、授权信息获取和登录状态管理，支持静默授权和用户信息授权两种模式，提供完整的前后端集成方案。
 
-微信公众号登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.WechatPublicType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建微信公众号登录实例元素。
+微信公众号登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.WechatPublicType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建微信公众号登录实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的auths.loginTypes.WechatPublicType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的auths.loginTypes.WechatPublicType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

@@ -1,7 +1,6 @@
 const CONTENT = {
     title: "Jit DevOps Tools",
-    subtitle:
-        "Streamlined and lightweight solution for build, release, deployment, and operations",
+    subtitle: "Fully visualized and automated app creation, publishing, deployment, and updates — simple and efficient",
     color: "#3D65FD",
     features: [
         {

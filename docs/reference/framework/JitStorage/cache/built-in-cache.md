@@ -7,9 +7,9 @@ sidebar_label: "Built-in Cache"
 # Built-in Cache
 Built-in cache is an intelligent caching solution provided by the platform, implementing out-of-the-box caching capabilities based on environment adaptive mechanisms. It automatically uses SQLite cache in desktop environments and container-built-in Redis in server environments. Built-in cache is mainly used in development and testing phases, providing developers with configuration-free caching services.
 
-The hierarchical structure of built-in cache elements is Meta (caches.Meta) → Type (caches.BuiltinsType) → Instance. Developers can quickly create built-in cache instance elements through JitAi's visual development tools.
+The hierarchical structure of built-in cache elements is Meta (caches.Meta) → Type (caches.BuiltinsType) → Instance. Developers can quickly create built-in cache instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `caches.BuiltinsType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `caches.BuiltinsType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

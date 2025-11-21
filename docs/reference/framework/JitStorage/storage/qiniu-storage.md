@@ -8,9 +8,9 @@ sidebar_label: "Qiniu Cloud Storage"
 
 Qiniu Cloud Storage is a cloud storage solution based on Qiniu Cloud Object Storage service, providing cost-effective storage capabilities. It supports multimedia file processing and automatic compression optimization for images and videos, provides simple and easy-to-use API interfaces and rapid integration capabilities, suitable for cloud storage needs of small and medium enterprises and startup teams.
 
-The Qiniu Cloud Storage element has a hierarchical structure of Meta (storages.Meta) → Type (storages.QiniuType) → Instance. Developers can quickly create Qiniu Cloud storage instance elements through JitAi's visual development tools.
+The Qiniu Cloud Storage element has a hierarchical structure of Meta (storages.Meta) → Type (storages.QiniuType) → Instance. Developers can quickly create Qiniu Cloud storage instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official storages.QiniuType element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official storages.QiniuType element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

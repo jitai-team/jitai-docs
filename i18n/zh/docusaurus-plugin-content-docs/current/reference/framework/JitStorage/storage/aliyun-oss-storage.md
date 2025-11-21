@@ -5,9 +5,9 @@ description: "阿里云OSS存储 API 参考文档。完整的规格说明、方�
 # 阿里云OSS存储
 阿里云OSS存储是面向企业级云存储的Type元素，基于阿里云对象存储服务实现海量数据存储、全球CDN加速和企业级安全管控。它提供标准化的文件上传、下载、删除操作，集成阿里云生态的访问控制和权限管理，支持多种存储类型和数据备份策略，确保数据安全性和高可用性。
 
-阿里云OSS存储元素分层结构为Meta（storages.Meta） → Type（storages.OssType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建阿里云OSS存储实例元素。
+阿里云OSS存储元素分层结构为Meta（storages.Meta） → Type（storages.OssType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建阿里云OSS存储实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的storages.OssType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的storages.OssType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

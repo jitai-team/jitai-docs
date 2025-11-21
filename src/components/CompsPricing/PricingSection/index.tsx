@@ -5,6 +5,7 @@ import Modal from "../../Modal";
 import CONTENT_EN from "./constant-en";
 import CONTENT_ZH from "./constant-zh";
 import { STRIPE_LINKS } from "./constant-common";
+import { addUTMToUrl } from "../../../utils/utm";
 
 interface PricingSectionProps {
     currentLocale?: string;
@@ -163,10 +164,11 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
     // Build contact sales URL with parameters
     const getContactSalesUrl = () => {
         if (typeof window === "undefined") return "";
-        const url = new URL(CONTENT.contactSalesLink, window.location.origin);
+        const url = new URL(addUTMToUrl(CONTENT.contactSalesLink), window.location.origin);
         url.searchParams.set("team_id", teamId.trim());
         url.searchParams.set("team_title", teamTitle.trim());
         url.searchParams.set("is_popup", "1");
+        console.log("🚀 url:", url.toString());
         return url.toString();
     };
 

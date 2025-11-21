@@ -3,6 +3,18 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./index.module.css";
 import ZH_CONTENT from "./constant-zh";
 import EN_CONTENT from "./constant-en";
+import { addUTMToUrl } from "../../utils/utm";
+
+
+const getCompleteReferenceFormUrl = function(lang: string) {
+    let baseUrl = "";
+    if (lang === "zh") {
+        baseUrl = "https://wy.jit.pro/whwy/aicrm/s/zhcontactus";
+    } else {
+        baseUrl = "https://wy.jit.pro/whwy/aicrm/s/contactus";
+    }
+    return addUTMToUrl(baseUrl);
+}
 
 interface AIAssistantProps {
     className?: string;
@@ -173,7 +185,9 @@ const generateBrowserFingerprint = async (): Promise<string> => {
     return fingerprint;
 };
 
-const AI_ASSISTANT_STORAGE_KEY = 'jitai-assistant-open-state';
+const AI_ASSISTANT_HIDE_KEY = 'is_hide_jitai_assistant';
+const AI_ASSISTANT_VERSION_KEY = 'jitai-assistant-version';
+const CURRENT_VERSION = '6'; // 增加版本号来清除旧的错误缓存
 
 const AIAssistant: React.FC<AIAssistantProps> = ({
     className,
@@ -181,6 +195,8 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
 }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const scriptLoadedRef = useRef<boolean>(false);
+    const [sdkLoaded, setSdkLoaded] = useState(false); // 跟踪 SDK 是否加载完成
+    
     // PC 端根据缓存或默认打开，移动端默认关闭
     const [isAssistantOpen, setIsAssistantOpen] = useState(() => {
         if (typeof window !== 'undefined') {
@@ -191,18 +207,8 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
                 return false;
             }
             
-            // PC 端读取缓存状态
-            try {
-                const cachedState = localStorage.getItem(AI_ASSISTANT_STORAGE_KEY);
-                if (cachedState !== null) {
-                    return cachedState === 'true';
-                }
-            } catch (error) {
-                console.warn('Failed to read AI assistant state from localStorage:', error);
-            }
-            
-            // 默认打开
-            return true;
+            // PC 端初始不打开，等 SDK 加载完成后再决定
+            return false;
         }
         return false;
     });
@@ -212,22 +218,71 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
     const CONTENT = i18n.currentLocale === "zh" ? ZH_CONTENT : EN_CONTENT;
     
     /**
-     * 保存 AI 助理状态到 localStorage（仅 PC 端）
+     * 保存 AI 助理状态到 localStorage（仅 PC 端，且只在 SDK 加载完成后）
+     * 逻辑：关闭时设置缓存，打开时删除缓存
      */
     useEffect(() => {
-        if (typeof window !== 'undefined') {
+        // 只在 SDK 加载完成后才保存状态，避免保存初始的 false 状态
+        if (sdkLoaded && typeof window !== 'undefined') {
             const isMobile = window.innerWidth <= 768;
             
             // 只在 PC 端保存状态
             if (!isMobile) {
                 try {
-                    localStorage.setItem(AI_ASSISTANT_STORAGE_KEY, String(isAssistantOpen));
+                    if (isAssistantOpen) {
+                        // 打开时删除缓存
+                        localStorage.removeItem(AI_ASSISTANT_HIDE_KEY);
+                    } else {
+                        // 关闭时设置缓存
+                        localStorage.setItem(AI_ASSISTANT_HIDE_KEY, 'true');
+                    }
                 } catch (error) {
                     console.warn('Failed to save AI assistant state to localStorage:', error);
                 }
             }
         }
-    }, [isAssistantOpen]);
+    }, [isAssistantOpen, sdkLoaded]);
+
+    /**
+     * SDK 加载完成后，PC 端根据缓存状态或默认打开弹窗
+     */
+    useEffect(() => {
+        if (sdkLoaded && typeof window !== 'undefined') {
+            const isMobile = window.innerWidth <= 768;
+            console.log('SDK loaded, checking if should open assistant. isMobile:', isMobile);
+            
+            // 只在 PC 端自动打开
+            if (!isMobile) {
+                // 检查版本，如果版本不匹配则清除旧缓存
+                const cachedVersion = localStorage.getItem(AI_ASSISTANT_VERSION_KEY);
+                if (cachedVersion !== CURRENT_VERSION) {
+                    console.log('Version mismatch, clearing old cache. Old version:', cachedVersion, 'Current version:', CURRENT_VERSION);
+                    // 清除旧的缓存 key（兼容旧版本）
+                    localStorage.removeItem('jitai-assistant-open-state');
+                    localStorage.removeItem(AI_ASSISTANT_HIDE_KEY);
+                    localStorage.setItem(AI_ASSISTANT_VERSION_KEY, CURRENT_VERSION);
+                }
+                
+                // 检查是否隐藏：如果 is_hide_jitai_assistant 存在，说明用户之前关闭了
+                const isHidden = localStorage.getItem(AI_ASSISTANT_HIDE_KEY) === 'true';
+                console.log('AI assistant hide state:', isHidden);
+                if (isHidden) {
+                    // 如果缓存存在，说明用户之前关闭了，保持关闭状态
+                    console.log('User previously closed assistant, keeping closed');
+                    setIsAssistantOpen(false);
+                } else {
+                    // 如果没有缓存，默认打开（延迟 4 秒）
+                    console.log('No hide cache found, will open by default after 2 seconds');
+                    const timer = setTimeout(() => {
+                        setIsAssistantOpen(true);
+                    }, 4000);
+                    
+                    // 清理定时器
+                    return () => clearTimeout(timer);
+                }
+            }
+        }
+    }, [sdkLoaded]);
 
     /**
      * 处理移动端滚动穿透问题
@@ -307,6 +362,9 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
                 scriptLoadedRef.current = true;
                 initializeAssistant();
             };
+            script.onerror = () => {
+                console.error("Failed to load JitAI Assistant SDK");
+            };
             document.head.appendChild(script);
         };
 
@@ -317,55 +375,64 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
                 return;
             }
 
-            // 生成浏览器指纹
-            const userKey = await generateBrowserFingerprint();
+            try {
+                // 生成浏览器指纹
+                const userKey = await generateBrowserFingerprint();
 
-            const aiAssistant = new (window as any).JitAIAssistant();
+                const aiAssistant = new (window as any).JitAIAssistant();
 
-            aiAssistant.init({
-                containerId: "ai-assistant-container",
-                assistantUrl:
-                    "https://wy.jit.pro/whwy/jitRDM/aiassistants/consultancyAssistant",
-                accessKey: "yzxOZfkrCYGKdPmhpDFVRgnIvecJWSEB",
-                logContent: "NOT_OUTPUT",
-                welcomeMessage: CONTENT.welcomeMessage,
-                prologues: CONTENT.prologues,
-                placeholder: CONTENT.placeholder,
-                authInfo: {
-                    userKey: userKey, // 使用浏览器指纹生成的唯一用户key
-                },
-                functions: {
-                    // Add your custom functions here
-                },
-            });
+                aiAssistant.init({
+                    containerId: "ai-assistant-container",
+                    assistantUrl:
+                        "https://wy.jit.pro/whwy/aicrm/aiassistants/techSupportAssistant",
+                    accessKey: "bazYVkcxUHwqduXhCtADGnyfRKTiIrlN",
+                    logContent: "NOT_OUTPUT",
+                    welcomeMessage: CONTENT.welcomeMessage,
+                    prologues: CONTENT.prologues,
+                    placeholder: CONTENT.placeholder,
+                    authInfo: {
+                        userKey: userKey, // 使用浏览器指纹生成的唯一用户key
+                    },
+                    functions: {
+                        // Add your custom functions here
+                        getCompleteReferenceFormUrl: getCompleteReferenceFormUrl
+                    },
+                });
 
-            aiAssistant.subscribeEvent(
-                "AI:aiagent_webpage.beforeNodeRun",
-                (data: any) => {
-                    console.log("AI Agent Before Node Run:", data);
-                }
-            );
+                aiAssistant.subscribeEvent(
+                    "AI:aiagent_webpage.beforeNodeRun",
+                    (data: any) => {
+                        console.log("AI Agent Before Node Run:", data);
+                    }
+                );
 
-            aiAssistant.subscribeEvent(
-                "AI:aiagent_webpage.afterNodeRun",
-                (data: any) => {
-                    console.log("AI Agent After Node Run:", data);
-                }
-            );
+                aiAssistant.subscribeEvent(
+                    "AI:aiagent_webpage.afterNodeRun",
+                    (data: any) => {
+                        console.log("AI Agent After Node Run:", data);
+                    }
+                );
 
-            aiAssistant.subscribeEvent(
-                "AI:aiagent_webpage.callTool.preEvent",
-                (data: any) => {
-                    console.log("AI Agent Call Tool Pre Event:", data);
-                }
-            );
+                aiAssistant.subscribeEvent(
+                    "AI:aiagent_webpage.callTool.preEvent",
+                    (data: any) => {
+                        console.log("AI Agent Call Tool Pre Event:", data);
+                    }
+                );
 
-            aiAssistant.subscribeEvent(
-                "AI:aiagent_webpage.callTool.postEvent",
-                (data: any) => {
-                    console.log("AI Agent Call Tool Post Event:", data);
-                }
-            );
+                aiAssistant.subscribeEvent(
+                    "AI:aiagent_webpage.callTool.postEvent",
+                    (data: any) => {
+                        console.log("AI Agent Call Tool Post Event:", data);
+                    }
+                );
+                
+                // SDK 初始化完成，设置状态
+                console.log("AI Assistant SDK initialized successfully");
+                setSdkLoaded(true);
+            } catch (error) {
+                console.error("Failed to initialize AI Assistant SDK:", error);
+            }
         };
 
         // 页面加载后立即在后台加载 SDK 和初始化 AI Assistant
@@ -374,7 +441,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
         return () => {
             // Cleanup if needed
         };
-    }, []); // 空依赖数组，只在组件挂载时执行一次
+    }, [CONTENT]); // 添加 CONTENT 依赖
 
     return (
         <div className={className}>

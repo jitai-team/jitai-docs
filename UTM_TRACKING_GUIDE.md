@@ -257,7 +257,7 @@ window.jitaiUTM.getParams()
 JSON.parse(localStorage.getItem('jitai_utm_params'))
 
 // 测试 URL 转换
-window.jitaiUTM.addUTMToUrl('https://demo.jit.pro')
+window.jitaiUTM.addUTMToUrl('https://demo.jit.pro/wanyun/AdminApp')
 
 // 清除所有数据
 window.jitaiUTM.clearParams()

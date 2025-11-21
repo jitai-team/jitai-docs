@@ -817,10 +817,10 @@ The platform pre-includes commonly used third-party libraries that can be import
 | `localforage` | 1.10.0 | `localforage` | Local storage library |
 | `recast` | 0.23.4 | `recast` | JavaScript AST tool |
 | **Platform-Specific** | | | |
-| `jit` | - | `JitCore` | JitAi core library |
-| `jit-utils` | - | `JitUtils` | JitAi utilities |
-| `jit-ui` | - | `JitUi` | JitAi UI components |
-| `jit-widgets` | - | `JitWidgets` | JitAi widgets |
+| `jit` | - | `JitCore` | JitAI core library |
+| `jit-utils` | - | `JitUtils` | JitAI utilities |
+| `jit-ui` | - | `JitUi` | JitAI UI components |
+| `jit-widgets` | - | `JitWidgets` | JitAI widgets |
 
 :::tip
 These libraries can be imported and used directly without installation, e.g., `import { useState } from 'react'` or `import { Button } from 'antd'`.

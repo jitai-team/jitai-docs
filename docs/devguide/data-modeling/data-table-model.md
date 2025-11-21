@@ -1,11 +1,11 @@
 ---
 sidebar_position: 3
 slug: data-table-model
-description: "Create data table models for JitAi applications. Define structure, data types, and constraint rules from scratch or existing tables."
+description: "Create data table models for JitAI applications. Define structure, data types, and constraint rules from scratch or existing tables."
 ---
 
 # Creating Data Tables
-Data table models constitute the foundational data layer for JitAi applications. Each data table model corresponds directly to a database table, defining the structure, data types, and constraint rules for business data. JitAi offers two distinct approaches for creating data table models: developing new data table models from scratch, which proves ideal for ground-up business data structure design, or generating models from existing database tables, which streamlines the management and extension of legacy data architectures.
+Data table models constitute the foundational data layer for JitAI applications. Each data table model corresponds directly to a database table, defining the structure, data types, and constraint rules for business data. JitAI offers two distinct approaches for creating data table models: developing new data table models from scratch, which proves ideal for ground-up business data structure design, or generating models from existing database tables, which streamlines the management and extension of legacy data architectures.
 
 ## Data table creation entry {#data-table-create-entry}
 ![Model Creation Configuration](./img/model-creation-configuration.png "Model Creation Configuration")
@@ -22,7 +22,7 @@ For creating models from existing tables, see [Creating Data Table Elements from
  
 
 ## Designing table fields and data types {#design-table-fields-and-data-types}
-JitAi applications provide comprehensive support for various data types including `Single-line Text`, `Multi-line Text`, `Rich Text`, `Number`, `Currency`, and numerous others that function as database table fields.
+JitAI applications provide comprehensive support for various data types including `Single-line Text`, `Multi-line Text`, `Rich Text`, `Number`, `Currency`, and numerous others that function as database table fields.
 
 ![Field Configuration](./img/field-configuration.png "Field Configuration")
 

@@ -5,9 +5,9 @@ description: "TongRDS缓存 API 参考文档。完整的规格说明、方法和
 # TongRDS缓存
 TongRDS缓存是基于Redis协议实现的东方通数据库缓存解决方案，专门为有国产化数据库需求的企业级应用提供高性能数据缓存服务。它采用与Redis相同的客户端接口，支持分布式部署和企业级连接管理，通过连接池机制确保高并发环境下的稳定性能。
 
-TongRDS缓存元素分层结构为Meta（caches.Meta） → Type（caches.TongRDSType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建TongRDS缓存实例元素。
+TongRDS缓存元素分层结构为Meta（caches.Meta） → Type（caches.TongRDSType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建TongRDS缓存实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的caches.TongRDSType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的caches.TongRDSType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

@@ -9,7 +9,7 @@ Model events are event mechanisms that automatically trigger based on model data
 
 The hierarchical structure of model event elements is Meta (events.Meta) → Type (events.ModelType) → Instance. Developers can quickly create model event instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `events.ModelType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `events.ModelType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Basic Configuration Example

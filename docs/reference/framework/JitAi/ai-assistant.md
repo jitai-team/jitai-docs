@@ -9,9 +9,9 @@ sidebar_label: "AI Assistant"
 # AI Assistant
 AI Assistant is the unified interface for AI application-user interaction, implementing intelligent routing and multi-Agent collaboration based on LangGraph architecture. It is responsible for routing decisions, intelligent dialogue, and workflow control, supporting visual orchestration, complex business logic, and one-click integration capabilities.
 
-The AI Assistant element hierarchical structure is Meta (aiassistants.Meta) → Type (aiassistants.NormalType) → Instance. Developers can quickly create AI Assistant instance elements through JitAi's visual development tools.
+The AI Assistant element hierarchical structure is Meta (aiassistants.Meta) → Type (aiassistants.NormalType) → Instance. Developers can quickly create AI Assistant instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements, or override the official aiassistants.NormalType element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements, or override the official aiassistants.NormalType element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start 
 ### Creating Instance Elements
@@ -74,7 +74,7 @@ aiassistants/
   "welcomeMessage": "Happy to serve you! How can I help you?",
   "prologues": [
     "What is the element mechanism?",
-    "Does JitAi App support private deployment?"
+    "Does JitAI App support private deployment?"
   ]
 }
 ```

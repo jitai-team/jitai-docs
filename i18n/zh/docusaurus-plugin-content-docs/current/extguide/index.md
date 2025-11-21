@@ -6,16 +6,16 @@ description: "扩展指南导读的详细指南和说明。"
 
 **为什么需要框架扩展？**
 
-JitAi提供了丰富的官方开发框架，但在实际业务场景中，你可能会遇到：
+JitAI提供了丰富的官方开发框架，但在实际业务场景中，你可能会遇到：
 - 特定行业需求，官方框架暂未覆盖
 - 现有组件功能接近，但需要定制化调整
 - 企业内部标准，需要统一的定制组件库
 
-框架扩展正是为了解决这些问题，让你能够在JitAi生态基础上，构建满足特定需求的解决方案。
+框架扩展正是为了解决这些问题，让你能够在JitAI生态基础上，构建满足特定需求的解决方案。
 
 ## 必须先了解JAAP {#must-understand-jaap-first}
 
-开发者对JitAi开发框架进行扩展的认知前提是深入理解JAAP（JitAi Ai Application Protocol）中的规范，尤其是Meta、Type、Instance元素的概念和三者之间的关系。如果要对官方框架进行覆盖重写，则还需要理解继承重写的原理。
+开发者对JitAI开发框架进行扩展的认知前提是深入理解JAAP（JitAI Ai Application Protocol）中的规范，尤其是Meta、Type、Instance元素的概念和三者之间的关系。如果要对官方框架进行覆盖重写，则还需要理解继承重写的原理。
 
 [点击此处学习JAAP](/docs/reference/runtime-platform/JAAP)
 
@@ -23,7 +23,7 @@ JitAi提供了丰富的官方开发框架，但在实际业务场景中，你可
 
 | 你想要实现什么 | 相关文档 |
 |-------------|----------|
-| 添加JitAi中没有的自定义图表组件 | [扩展自己的UI组件Type元素](/docs/extguide/add-frontend-components) |
+| 添加JitAI中没有的自定义图表组件 | [扩展自己的UI组件Type元素](/docs/extguide/add-frontend-components) |
 | 让我的自定义组件可以通过拖拽界面进行配置 | [为UI组件Type元素开发可视化编辑器](/docs/extguide/develop-frontend-component-visual-editor) |
 | 集成第三方服务，如Slack机器人或IoT设备 | [扩展自己的元素族类](/docs/extguide/extend-element-family-classes) |
 | 为我的后端集成创建用户友好的配置面板 | [为后端Type元素开发可视化编辑器](/docs/extguide/develop-backend-element-visual-editor) |

@@ -7,9 +7,9 @@ description: "日期字段任务 API 参考文档。完整的规格说明、方�
 # 日期字段任务
 日期字段任务是基于模型中日期时间字段值自动触发的定时任务，当指定的日期时间字段到达设定时间时自动执行任务逻辑。它负责监控模型数据中的日期时间字段、在字段值到期时自动触发执行和提供灵活的时间偏移配置，支持提前或延后执行的精确时间控制。
 
-日期字段任务元素分层结构为Meta（tasks.Meta） → Type（tasks.DateFieldType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建日期字段任务实例元素。
+日期字段任务元素分层结构为Meta（tasks.Meta） → Type（tasks.DateFieldType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建日期字段任务实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的tasks.DateFieldType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的tasks.DateFieldType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素
@@ -109,7 +109,7 @@ task = app.getElement("tasks.ExampleDateTask")
 任务执行的主要方法，在inner.py中定义。
 
 #### 参数详解
-| 参数名 | JitAi类型 | 原生类型 | 必填 | 说明 |
+| 参数名 | JitAI类型 | 原生类型 | 必填 | 说明 |
 |--------|-----------|----------|------|------|
 | app | App | object | 是 | 应用实例，用于获取其他元素 |
 | taskInstance | TaskInstance | object | 是 | 当前任务实例 |

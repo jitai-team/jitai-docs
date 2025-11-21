@@ -8,9 +8,9 @@ sidebar_label: "Disk Storage"
 
 Disk Storage is a storage service based on the local file system, providing high-speed file read/write capabilities and direct file path access. It is suitable for small applications, development environments, and internal system deployments with high data security requirements. Disk Storage supports file upload, download, delete, preview, and thumbnail generation functions, with built-in MIME type recognition and error handling mechanisms.
 
-The Disk Storage element has a hierarchical structure of Meta (storages.Meta) → Type (storages.DiskType) → Instance. Developers can quickly create disk storage instance elements through JitAi's visual development tools.
+The Disk Storage element has a hierarchical structure of Meta (storages.Meta) → Type (storages.DiskType) → Instance. Developers can quickly create disk storage instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official storages.DiskType element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official storages.DiskType element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

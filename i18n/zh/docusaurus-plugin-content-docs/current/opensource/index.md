@@ -1,5 +1,5 @@
 ---
-description: "JitAi开源项目。探索GitHub上的12个核心框架仓库，包括AI、认证、ORM、支付、工作流和Web组件。"
+description: "JitAI开源项目。探索GitHub上的12个核心框架仓库，包括AI、认证、ORM、支付、工作流和Web组件。"
 ---
 
 # 开源

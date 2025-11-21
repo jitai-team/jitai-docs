@@ -6,7 +6,7 @@ description: "可视化开发工具的详细指南和说明。"
 
 # 可视化开发工具
 
-JitAi为开发者提供了可视化和全代码、编程与编排双模式的应用开发工具(后续简称IDE)。在运维管理工具的[节点控制台](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment)中点击`开发`按钮或在应用内切换到`开发者门户`均可进入应用开发界面，IDE会自动加载所有应用模块的源码，开发者可以同时进行可视化编辑和源码编辑。
+JitAI为开发者提供了可视化和全代码、编程与编排双模式的应用开发工具(后续简称IDE)。在运维管理工具的[节点控制台](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment)中点击`开发`按钮或在应用内切换到`开发者门户`均可进入应用开发界面，IDE会自动加载所有应用模块的源码，开发者可以同时进行可视化编辑和源码编辑。
 
 ![IDE首页](./img/ide/ide-homepage.png)
 
@@ -91,7 +91,7 @@ JitAi为开发者提供了可视化和全代码、编程与编排双模式的应
 
 ![切换界面显示语言](./img/ide/switch-interface-display-language.gif)
 
-多语言是JitAi开发框架提供的元素之一，不仅用于IDE的国际化，同样可以用于任意其它应用的国际化。
+多语言是JitAI开发框架提供的元素之一，不仅用于IDE的国际化，同样可以用于任意其它应用的国际化。
 
 ## 导航标签 {#navigation-tabs}
 IDEApp中打开的所有界面都会显示为导航标签。

@@ -11,7 +11,7 @@ globals.Calc is an official built-in public module Type element that provides ma
 
 modules.xxx series are official instance elements providing frontend data processing, user interface feedback, files and tools, message communication, and other functions. The element hierarchical structure is Meta (modules.Meta) → Type (modules.FrontType) → Instance, and developers can use `app.getElement("modules.xxx")` to get and use them directly.
 
-Of course, developers can also create their own public modules and modules.xxx series elements, or modify the official elements provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own public modules and modules.xxx series elements, or modify the official elements provided by JitAI in their own App to implement their own encapsulation.
 
 ## Calculation Components
 ### globals.Calc

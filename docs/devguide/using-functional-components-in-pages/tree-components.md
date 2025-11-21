@@ -5,7 +5,7 @@ description: "Display hierarchical data with tree components. Tree form and casc
 
 # Tree Components
 
-Tree components are primarily used to display hierarchical data structures, such as file directories, organizational structures, and product categories. They provide an intuitive visualization of parent-child relationships, supporting node expansion/collapse and selection operations, offering users a clear data navigation experience. JitAi's tree components are divided into tree form components and cascade tree components.
+Tree components are primarily used to display hierarchical data structures, such as file directories, organizational structures, and product categories. They provide an intuitive visualization of parent-child relationships, supporting node expansion/collapse and selection operations, offering users a clear data navigation experience. JitAI's tree components are divided into tree form components and cascade tree components.
 
 ## Tree Form Component {#tree-form-component}
 

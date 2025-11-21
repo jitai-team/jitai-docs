@@ -6,11 +6,11 @@ description: "Use data models in pages and functions. Built-in CRUD functions, c
 
 # Using Data Models in Pages and Functions
 
-When developing applications on the JitAi platform, data models serve not only as tools for data storage and management, but can also be flexibly integrated into page displays, form interactions, and custom function logic. By calling data models in pages and functions, developers can achieve dynamic data operations including reading, writing, updating, and deleting, thereby meeting diverse data processing requirements across various business scenarios.
+When developing applications on the JitAI platform, data models serve not only as tools for data storage and management, but can also be flexibly integrated into page displays, form interactions, and custom function logic. By calling data models in pages and functions, developers can achieve dynamic data operations including reading, writing, updating, and deleting, thereby meeting diverse data processing requirements across various business scenarios.
 
 ## Built-in model functions {#built-in-model-functions}
 
-The JitAi platform provides a comprehensive suite of built-in data operation functions for each data model, enabling developers to seamlessly integrate them into pages, forms, and custom function logic to implement CRUD operations and statistical analysis. Common built-in model functions include:
+The JitAI platform provides a comprehensive suite of built-in data operation functions for each data model, enabling developers to seamlessly integrate them into pages, forms, and custom function logic to implement CRUD operations and statistical analysis. Common built-in model functions include:
 
 - **Get One Record**: Retrieve a single data record based on specified conditions.
 - **Query Multiple Rows**: Query multiple data records with support for conditional filtering and pagination.
@@ -30,17 +30,17 @@ For more detailed usage, please refer to: [Calling Data Model Functions in Pages
 
 ## Calling data models in pages {#calling-data-models-in-pages}
 
-In the JitAi platform, pages serve not only as display and interaction interfaces, but can also be directly integrated with data models to achieve dynamic data operations. By calling data model functions in page events, developers can easily implement comprehensive data reading, writing, updating, and deleting functionality.
+In the JitAI platform, pages serve not only as display and interaction interfaces, but can also be directly integrated with data models to achieve dynamic data operations. By calling data model functions in page events, developers can easily implement comprehensive data reading, writing, updating, and deleting functionality.
 
 ![Page Using Data Model](./img/page-use-model.png "Page Using Data Model")
 
 For example, after adding a button component to an existing page, you can configure click events for that button. In the event configuration interface, select "Data Model" to choose the data model you need to operate and its corresponding methods. By flexibly configuring these methods, you can implement various business scenarios such as list display, detail viewing, form submission, and data editing. When calling data models, you can also set parameters, handle return results, and link with other components on the page to enhance the page's interactivity and data-driven capabilities.
 
-In addition, JitAi also supports binding data model call results with page variables to achieve automatic data refresh and dynamic display, greatly improving development efficiency and user experience.
+In addition, JitAI also supports binding data model call results with page variables to achieve automatic data refresh and dynamic display, greatly improving development efficiency and user experience.
 
 ## Calling data models in functions {#calling-data-models-in-functions}
 
-In the JitAi platform, in addition to directly calling data models in pages, you can also flexibly call data models in Service Functions or Model Functions to implement more complex business logic and data processing.
+In the JitAI platform, in addition to directly calling data models in pages, you can also flexibly call data models in Service Functions or Model Functions to implement more complex business logic and data processing.
 
 ![Function Using Data Model](./img/func-use-model.png "Function Using Data Model")
 

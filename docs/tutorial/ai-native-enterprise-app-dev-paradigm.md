@@ -71,7 +71,7 @@ Transcending traditional backend service limitations to enable unified frontend 
 **[JAAP (Jit AI Application Protocol)](../reference/runtime-platform/JAAP)** defines AI-native enterprise application architecture through structural definition and process-driven approaches, addressing the requirements of AI application development paradigms.
 
 ## AI product components
-JitAi has developed four core AI product components that collectively form the technical foundation for enterprise-level AI application development.
+JitAI has developed four core AI product components that collectively form the technical foundation for enterprise-level AI application development.
 
 ### AI large language models
 An enterprise-grade large model service gateway that interfaces with various large model service providers, providing a unified model invocation interface.

@@ -5,9 +5,9 @@ description: "内置缓存 API 参考文档。完整的规格说明、方法和�
 # 内置缓存
 内置缓存是平台提供的智能缓存解决方案，基于环境自适应机制实现开箱即用的缓存能力。它在桌面版环境下自动使用SQLite缓存，在服务器版环境下自动使用容器内置的Redis。内置缓存主要用于开发和测试阶段，为开发者提供无需配置的缓存服务。
 
-内置缓存元素分层结构为Meta（caches.Meta） → Type（caches.BuiltinsType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建内置缓存实例元素。
+内置缓存元素分层结构为Meta（caches.Meta） → Type（caches.BuiltinsType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建内置缓存实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的caches.BuiltinsType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的caches.BuiltinsType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

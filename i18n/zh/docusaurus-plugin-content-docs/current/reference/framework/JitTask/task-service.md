@@ -7,7 +7,7 @@ description: "任务服务 API 参考文档。完整的规格说明、方法和�
 # 任务服务
 任务服务是JitTask框架的核心API服务，负责任务模板管理、任务创建执行、状态控制和强制终止等功能。元素分层结构为Meta（services.Meta） → Type（services.NormalType） → 实例（services.TaskSvc），开发者可直接使用TaskSvc实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的services.NormalType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的services.NormalType元素，以实现自己的封装。
 
 ## 快速开始 
 任务服务作为JitTask框架的内置实例元素，可直接通过`app.getElement()`获取使用：

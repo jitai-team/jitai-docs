@@ -109,10 +109,10 @@ Header 参数会放在请求头中，在请求的时候，会将公共配置中�
 
 ![返回值类型](./img/1/api_2025-08-27_17-13-42.gif)
 
-注意：这里的返回值类型都是 JitAi 里面定义的[数据类型](../../reference/framework/JitORM/data-types)
+注意：这里的返回值类型都是 JitAI 里面定义的[数据类型](../../reference/framework/JitORM/data-types)
 
 #### 回调函数 {#callback-function}
-JitAi 通过回调函数配置服务元素中的函数，对最终结果进行业务处理。
+JitAI 通过回调函数配置服务元素中的函数，对最终结果进行业务处理。
 
 ![回调函数](./img/1/api_2025-08-27_15-13-23.png)
 

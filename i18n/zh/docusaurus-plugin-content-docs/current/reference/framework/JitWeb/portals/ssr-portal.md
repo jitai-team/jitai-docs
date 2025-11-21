@@ -7,7 +7,7 @@ SSR门户是支持服务端渲染的门户类型，用于提升首屏加载性�
 
 SSR门户元素分层结构为Meta（shells.Meta） → Type（shells.SSRType） → 实例，开发者可通过可视化开发工具创建实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的shells.SSRType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的shells.SSRType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

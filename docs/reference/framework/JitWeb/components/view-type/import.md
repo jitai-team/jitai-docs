@@ -9,7 +9,7 @@ Import is a view component for Excel file data import, implemented with a step-b
 
 The import element has a hierarchical structure of Meta (components.Meta) → Type (components.Import) → Instance. Developers can quickly create import instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `components.ImportType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `components.ImportType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start 
 ### Basic Configuration Example

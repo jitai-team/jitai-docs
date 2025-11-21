@@ -5,7 +5,7 @@ description: "Manage database connections across multiple instances. Configure M
 ---
 
 # Managing Database Connections
-JitAi provides unified database connection management through database elements. You can create multiple database instances within the same application and configure, switch, and use them separately to meet different scenarios such as development, testing, production, or multi-system integration.
+JitAI provides unified database connection management through database elements. You can create multiple database instances within the same application and configure, switch, and use them separately to meet different scenarios such as development, testing, production, or multi-system integration.
 
 ## Creating database connections {#create-database-connection}
 Navigate to the application's `Developer Portal` and select the `Databases` element in the element directory tree. Choose the database type you want to connect to (such as MySQL, PostgreSQL, Oracle, SQL Server, DM8, SQLite, etc.). The system will display a connection configuration window where you simply fill in the host, port, database name, username, password, and other information as prompted. For production environments, it's recommended to store sensitive information such as usernames and passwords in environment variables and configure actual values during deployment. This approach is both secure and convenient for cross-environment migration. See [Database connection security configuration](#database-connection-security-configuration) for details.

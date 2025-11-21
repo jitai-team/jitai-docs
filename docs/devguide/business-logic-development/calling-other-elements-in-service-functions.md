@@ -6,17 +6,17 @@ description: "Call data models, services, AI elements, and other business elemen
 
 # Calling Elements in Service Functions
 
-Within service elements, each service function can call other backend elements to compose complex business processing workflows. JitAi supports both visual element invocation and direct code-based calling within service functions.
+Within service elements, each service function can call other backend elements to compose complex business processing workflows. JitAI supports both visual element invocation and direct code-based calling within service functions.
 
 ## Using platform APIs to call other elements {#use-platform-api-to-call-other-elements}
 
-The JitAi application runtime platform provides system-level APIs for use within function logic, including the `app.getElement` function for element invocation. The `app.getElement` function returns an element instance object, exposing all declared functions for calling.
+The JitAI application runtime platform provides system-level APIs for use within function logic, including the `app.getElement` function for element invocation. The `app.getElement` function returns an element instance object, exposing all declared functions for calling.
 
 ```python title="Example"
 element = app.getElement("element fullName")
 result = element.func1(params)
 ```
-The `app` object is a runtime object provided by the JitAi platform that references the current application. For details, see the [App](../../reference/runtime-platform/backend/applications/App) reference documentation.
+The `app` object is a runtime object provided by the JitAI platform that references the current application. For details, see the [App](../../reference/runtime-platform/backend/applications/App) reference documentation.
 
 ## Typical examples {#typical-examples}
 

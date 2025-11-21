@@ -7,7 +7,7 @@ description: "解析Excel API 参考文档。完整的规格说明、方法和�
 
 解析Excel元素分层结构为Meta（components.Meta） → Type（components.ParseData） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建解析Excel实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.ParseDataType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的components.ParseDataType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 基础配置示例

@@ -174,7 +174,7 @@ Q expressions, also known as Query Expressions, are used to build query conditio
 ```
 
 ## Practical Usage Examples
-In JitAi applications, Q expressions are typically used in conjunction with model query methods. Here are some complete examples for real-world scenarios:
+In JitAI applications, Q expressions are typically used in conjunction with model query methods. Here are some complete examples for real-world scenarios:
 
 ### Basic Query Examples
 ```python

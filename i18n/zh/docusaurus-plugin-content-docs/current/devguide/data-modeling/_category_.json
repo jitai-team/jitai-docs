@@ -4,7 +4,7 @@
   "link": {
     "type": "generated-index",
     "slug": "devguide/data-modeling",
-    "description": "学习如何在JitAi中进行业务数据建模，包括数据库连接、数据表设计、扩展表和聚合表等。",
+    "description": "学习如何在JitAI中进行业务数据建模，包括数据库连接、数据表设计、扩展表和聚合表等。",
     "keywords": ["数据建模", "数据库", "数据表", "索引", "字段", "数据类型"]
   }
 }

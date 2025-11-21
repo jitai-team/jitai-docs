@@ -5,11 +5,11 @@ description: "Account Password Login Reference - API documentation for developer
 sidebar_label: "Account Password Login"
 ---
 # Account Password Login
-Account password login is a basic login authentication method provided by the JitAi platform, supporting username-password verification, graphic captcha protection, and encrypted password storage. It handles user identity authentication, account binding management, and login security protection, suitable for internal enterprise applications and scenarios requiring traditional authentication methods.
+Account password login is a basic login authentication method provided by the JitAI platform, supporting username-password verification, graphic captcha protection, and encrypted password storage. It handles user identity authentication, account binding management, and login security protection, suitable for internal enterprise applications and scenarios requiring traditional authentication methods.
 
-The hierarchical structure of account password login elements is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.PasswordType) → Instance. Developers can quickly create account password login instance elements through JitAi's visual development tools.
+The hierarchical structure of account password login elements is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.PasswordType) → Instance. Developers can quickly create account password login instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `auths.loginTypes.PasswordType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `auths.loginTypes.PasswordType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

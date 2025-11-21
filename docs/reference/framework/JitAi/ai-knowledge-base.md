@@ -9,9 +9,9 @@ sidebar_label: "AI Knowledge Base"
 # AI Knowledge Base
 AI Knowledge Base is an enterprise-level knowledge management system based on RAG (Retrieval-Augmented Generation) technology, supporting intelligent document retrieval and knowledge enhancement functions. It is responsible for document vectorization storage, semantic retrieval, content reranking, and real-time updates, providing precise knowledge retrieval and content management capabilities.
 
-The AI Knowledge Base element hierarchical structure is Meta (rags.Meta) → Type (rags.NormalType) → Instance. Developers can quickly create AI Knowledge Base instance elements through JitAi's visual development tools.
+The AI Knowledge Base element hierarchical structure is Meta (rags.Meta) → Type (rags.NormalType) → Instance. Developers can quickly create AI Knowledge Base instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements, or override the official rags.NormalType element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements, or override the official rags.NormalType element provided by JitAI in their own App to implement their own encapsulation.
 
 **Supported Type Classes:**
 - **rags.NormalType**: Standard knowledge base type, providing complete document management and intelligent retrieval functions
@@ -59,7 +59,7 @@ myKnowledgeBase/           # Knowledge base name (path customizable)
 knowledge_base = app.getElement("rags.myKnowledgeBase")
 
 # Query knowledge base
-result = knowledge_base.query("What are the features of JitAi platform?")
+result = knowledge_base.query("What are the features of JitAI platform?")
 print(result)
 
 # Add document
@@ -105,7 +105,7 @@ Intelligently query knowledge base content, retrieving relevant document segment
 
 #### Usage Example
 ```python title="Query Knowledge Base"
-result = knowledge_base.query("What is JitAi platform?")
+result = knowledge_base.query("What is JitAI platform?")
 print(result)
 ```
 

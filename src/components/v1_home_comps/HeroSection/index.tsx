@@ -168,7 +168,7 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({ currentLocale }) =>
 
           {/* 行动按钮区域 */}
           <div className={`${styles.heroButtons} ${animateElements ? styles.buttonsAnimate : ''}`}>
-            <a className={styles.primaryButton} href={isMobile ? "./docs/tutorial" : addUTMToUrl("https://demo.jit.pro")} target="_blank">
+            <a className={styles.primaryButton} href={isMobile ? "./docs/tutorial" : addUTMToUrl("https://demo.jit.pro/wanyun/AdminApp")} target="_blank">
               <span className={styles.buttonText}>
                 {isMobile ? content.buttonGetStart : content.buttonDemo}
               </span>

@@ -79,7 +79,7 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                             href={
                                 isMobile
                                     ? "./docs/tutorial"
-                                    : addUTMToUrl("https://demo.jit.pro")
+                                    : addUTMToUrl("https://demo.jit.pro/wanyun/AdminApp")
                             }
                             target="_blank"
                         >

@@ -117,7 +117,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         ],
     ],
     // 添加客户端模块
-    clientModules: ["./src/clientModules/readingProgress.js"],
+    clientModules: [
+        "./src/clientModules/readingProgress.js",
+        "./src/clientModules/utmTracker.js",
+    ],
     markdown: {
         mermaid: true,
         hooks: {

@@ -137,7 +137,7 @@ const CONTENT = {
     yearly: '订阅',
     buyout: '支付',
   },
-  contactSalesLink: 'https://wy.jit.pro/whwy/jitRDM/publicPortal/ContactSalesCn',
+  contactSalesLink: 'https://wy.jit.pro/whwy/aicrm/public/zhcontactus',
   moneyUnit: 'US$ ',
   priceUnit: {
     monthly: '个/月',

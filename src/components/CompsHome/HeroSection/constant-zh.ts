@@ -9,7 +9,7 @@ const CONTENT = {
     cards: [
         {
             title: "生产级AI应用开发",
-            description: `AAI大模型、AI工作流、AI智能体以及AI&UI协作的AI助理的全栈开发框架，极简化生产级AI应用的快速开发。
+            description: `AI大模型、AI工作流、AI智能体以及AI&UI协作的AI助理的全栈开发框架，极简化生产级AI应用的快速开发。
             <br/>全面的信息化技术的集成，极简化AI原生的企业级IT应用的快速开发。`,
             color: "#3D65FD",
         },

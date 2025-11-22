@@ -102,14 +102,14 @@ footer .footer__link-item:hover::after {
 }
 
 /* Footer Logo 区域 */
-footer .footer__logo img {
-  max-width: 240px;
+footer .footer__logo  {
   height: auto;
+  max-width: 12rem;
   filter: brightness(0) invert(1);
   transition: all 0.3s ease;
 }
 
-footer .footer__logo img:hover {
+footer .footer__logo:hover {
   transform: scale(1.05);
 }
 
@@ -261,8 +261,8 @@ footer .footer__link-item>svg {
     bottom: 1rem;
   }
 
-  footer .footer__logo img {
-    max-width: 200px;
+  footer .footer__logo  {
+    max-width: 10rem;
   }
 
   footer .footer__copyright {
@@ -295,8 +295,7 @@ footer .footer__link-item>svg {
     font-size: 0.8rem;
   }
 
-  footer .footer__logo img {
-    max-width: 160px;
+  footer .footer__logo  {
     margin-top: 0rem !important;
   }
 

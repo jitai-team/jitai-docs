@@ -1,8 +1,10 @@
 /* AI 助手悬浮图标 */
 .aiAssistantButton {
+  --ai-btn-right-spacing: 1.875rem; /* 30px */
+  
   position: fixed;
   bottom: 6.25rem; /* 100px */
-  right: 1.875rem; /* 30px */
+  right: var(--ai-btn-right-spacing);
   width: 3.75rem; /* 60px */
   height: 3.75rem; /* 60px */
   border-radius: 50%;
@@ -35,11 +37,13 @@
 
 /* AI Assistant 浮窗容器 */
 .aiAssistantWindow {
+  --ai-window-spacing: 1.25rem; /* 20px */
+
   position: fixed;
-  bottom: 1.25rem; /* 20px */
-  right: 1.25rem; /* 20px */
+  bottom: var(--ai-window-spacing);
+  right: var(--ai-window-spacing);
   width: 24.375rem; /* 390px */
-  height: 40.125rem;
+  height: min(80vh, 800px);
   background-color: var(--color-white);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-xl);
@@ -212,3 +216,13 @@
   }
 }
 
+/* 大屏适配：超过 1920px 时，保持在内容区域右侧 */
+@media (min-width: 1920px) {
+  .aiAssistantButton {
+    right: calc(50vw - 960px + var(--ai-btn-right-spacing));
+  }
+
+  .aiAssistantWindow {
+    right: calc(50vw - 960px + var(--ai-window-spacing));
+  }
+}

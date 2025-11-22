@@ -45,7 +45,7 @@
 .leftSection {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .rightSection {
@@ -74,7 +74,7 @@
 }
 
 .logo:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
   filter: drop-shadow(0 4px 8px rgba(61, 101, 253, 0.3));
 }
 

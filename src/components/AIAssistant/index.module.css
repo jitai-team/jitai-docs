@@ -43,7 +43,7 @@
   bottom: var(--ai-window-spacing);
   right: var(--ai-window-spacing);
   width: 24.375rem; /* 390px */
-  height: 80vh;
+  height: min(80vh, 800px);
   background-color: var(--color-white);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-xl);

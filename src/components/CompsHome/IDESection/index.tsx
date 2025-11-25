@@ -3,6 +3,7 @@ import styles from './styles.module.css';
 import globalStyles from '../../../pages/index.module.css';
 import CONTENT_EN from './constant-en';
 import CONTENT_ZH from './constant-zh';
+import LazyVideo from '../../LazyVideo';
 
 interface ModuleCardProps {
   module: {
@@ -76,27 +77,26 @@ const IDESection: React.FC<IDESectionProps> = ({ currentLocale }) => {
               <div className={`${styles.featureCard} ${index % 2 === 1 ? styles.reverseCard : ''}`} key={index}>
                 <div className={styles.featureImage}>
                   {feature.video ? (
-                    <div
+                    <LazyVideo
+                      src={feature.video}
                       className={styles.videoContainer}
+                      videoClassName={styles.videoElement}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      rootMargin="200px 0px"
                       onClick={() => handleVideoClick(feature.video, index)}
+                      videoRef={(el) => {
+                        videoRefs.current[`video-${index}`] = el;
+                      }}
                     >
-                      <video
-                        ref={(el) => {
-                          videoRefs.current[`video-${index}`] = el;
-                        }}
-                        src={feature.video}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className={styles.videoElement}
-                      />
                       <div className={styles.videoOverlay}>
                         <div className={styles.hoverText}>
                           {CONTENT.videoHoverText}
                         </div>
                       </div>
-                    </div>
+                    </LazyVideo>
                   ) : (
                     <div className={globalStyles.imagePlaceholder} />
                   )}

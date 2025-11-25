@@ -8,7 +8,7 @@ const config: Config = {
     title: "JitAi",
     tagline:
         "Next-generation application development technology system designed for AI, accelerating AI application processes and ushering in the era of large-scale AI applications",
-    favicon: "img/jit.png",
+    favicon: "https://jit-www.oss-accelerate.aliyuncs.com/logo/logo.svg",
 
     // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
     future: {
@@ -137,7 +137,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }
         ],
         // Replace with your project's social card
-        image: "https://jit-www.oss-accelerate.aliyuncs.com/logo/logo_dark.png",
+        image: "https://jit-www.oss-accelerate.aliyuncs.com/logo/logo_dark.svg",
         colorMode: {
             defaultMode: "light",
             disableSwitch: true, // 暂时禁用主题切换， 因为 深色模式下 logo 要调整，以及官网要强制为浅色模式
@@ -146,7 +146,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         navbar: {
             logo: {
                 alt: "Jit Logo",
-                src: "https://jit-www.oss-accelerate.aliyuncs.com/logo/logo_title.png",
+                src: "https://jit-www.oss-accelerate.aliyuncs.com/logo/logo_title.svg",
                 srcDark:
                     "https://jit-www.oss-accelerate.aliyuncs.com/logo/logo_title_dark.svg", // logo 大小待调整
             },

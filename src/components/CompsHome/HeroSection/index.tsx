@@ -9,6 +9,7 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
     currentLocale,
 }) => {
     const [isMobile, setIsMobile] = useState(false);
+    const [demoUrl, setDemoUrl] = useState("https://demo.jit.pro/wanyun/AdminApp");
 
     const content = currentLocale === "zh" ? CONTENT_ZH : CONTENT_EN;
 
@@ -27,6 +28,37 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
         return () => {
             window.removeEventListener("resize", checkMobile);
         };
+    }, []);
+
+    // 等待 UTM 追踪器初始化后更新链接 URL
+    useEffect(() => {
+        let retryCount = 0;
+        const maxRetries = 50; // 最多重试 50 次（5秒）
+        
+        // 等待 window.jitaiUTM 初始化完成
+        const updateUrl = () => {
+            if (typeof window !== 'undefined' && window.jitaiUTM) {
+                const urlWithUTM = addUTMToUrl("https://demo.jit.pro/wanyun/AdminApp");
+                setDemoUrl(urlWithUTM);
+            } else if (retryCount < maxRetries) {
+                // 如果还没初始化，延迟重试
+                retryCount++;
+                setTimeout(updateUrl, 100);
+            }
+            // 如果超过最大重试次数，保持原始 URL
+        };
+
+        // 如果已经初始化，立即更新
+        if (typeof window !== 'undefined' && window.jitaiUTM) {
+            updateUrl();
+        } else {
+            // 否则等待 DOMContentLoaded 或延迟检查
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', updateUrl);
+            } else {
+                setTimeout(updateUrl, 100);
+            }
+        }
     }, []);
 
     return (
@@ -79,7 +111,7 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                             href={
                                 isMobile
                                     ? "./docs/tutorial"
-                                    : addUTMToUrl("https://demo.jit.pro/wanyun/AdminApp")
+                                    : demoUrl
                             }
                             target="_blank"
                         >

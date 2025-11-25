@@ -182,7 +182,6 @@ JitAI参考手册提供完整的API文档、配置说明和技术规范。开发
   description="任务调度框架，支持定时任务和基于数据模型日期字段的智能任务调度，提供任务监控和管理能力。"
 >
   <LinkGrid columns={2} links={[
-    { text: "任务服务", href: "reference/framework/JitTask/task-service" },
     { text: "定时任务", href: "reference/framework/JitTask/scheduled-tasks" },
     { text: "日期字段任务", href: "reference/framework/JitTask/date-field-tasks" }
   ]} />

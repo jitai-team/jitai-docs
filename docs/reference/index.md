@@ -182,7 +182,6 @@ Provides element configuration, API interfaces, and usage methods for each frame
   description="Task scheduling framework supporting scheduled tasks and intelligent task scheduling based on data model date fields, providing task monitoring and management capabilities."
 >
   <LinkGrid columns={2} links={[
-    { text: "Task Service", href: "reference/framework/JitTask/task-service" },
     { text: "Scheduled Tasks", href: "reference/framework/JitTask/scheduled-tasks" },
     { text: "Date Field Tasks", href: "reference/framework/JitTask/date-field-tasks" }
   ]} />

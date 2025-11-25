@@ -4,6 +4,7 @@ import globalStyles from "../../../pages/index.module.css";
 import CONTENT_ZH from "./constant-zh";
 import CONTENT_EN from "./constant-en";
 import { addUTMToUrl } from "../../../utils/utm";
+import LazyVideo from "../../LazyVideo";
 
 const HeroSection: React.FC<{ currentLocale?: string }> = ({
     currentLocale,
@@ -137,21 +138,17 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                                 />
                             </div>
                             <div className={styles.featuredVideo}>
-                                <video
+                                <LazyVideo
+                                    src={content.previewVideoUrl}
                                     className={styles.video}
-                                    controls
+                                    videoClassName={styles.videoElement}
                                     autoPlay
                                     muted
                                     loop
                                     playsInline
-                                    preload="auto"
-                                >
-                                    <source
-                                        src={content.previewVideoUrl}
-                                        type="video/mp4"
-                                    />
-                                    您的浏览器不支持视频播放。
-                                </video>
+                                    controls
+                                    rootMargin="50px 0px"
+                                />
                             </div>
                         </div>
                     )}

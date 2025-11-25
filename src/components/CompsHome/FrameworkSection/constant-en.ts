@@ -1,8 +1,13 @@
+import { getIntegrations } from './integrations';
+
 const CONTENT = {
   title: 'Jit Development Framework',
   subtitle: 'An AI-native full-stack development framework built on the JAAP protocol, seamlessly integrating mainstream technologies for both AI and traditional application development — dramatically simplifying rapid application-layer development',
   color: '#3D65FD',
   learnMore: 'Learn More',
+  integrationsSubtitlePrefix: 'JitAI Framework has integrated numerous third-party frameworks and supports ',
+  integrationsSubtitleLinkText: 'developer self-extensions',
+  integrationsSubtitleLink: '/docs/extguide',
   frameworks: [
     {
       id: 'jitai',
@@ -76,7 +81,8 @@ const CONTENT = {
       description: 'Common utility library providing frequently used utility classes, helper functions, global variables, etc., to improve development efficiency',
       icon: '🛠️',
     }
-  ]
+  ],
+  integrations: getIntegrations('en')
 };
 
 export default CONTENT;

@@ -48,7 +48,7 @@
 
 /* 核心特性部分 */
 .coreFeatures {
-  margin-bottom: var(--space-24);
+  margin-bottom: var(--space-8);
 }
 
 .featuresGrid {
@@ -135,12 +135,39 @@
 }
 
 /* 可视化开发模块部分 */
+.modulesWrapper {
+  margin-top: var(--space-12);
+}
+
 .developmentModules {
-  margin-top: var(--space-16);
   overflow: hidden;
   position: relative;
   padding: 0 var(--space-16);
   width: 100%;
+}
+
+/* 脚注样式 - 放在滚动区下方 */
+.modulesFooter {
+  text-align: center;
+  margin-top: var(--space-6);
+}
+
+.modulesFootnote {
+  font-size: var(--font-size-base); /* 16px */
+  color: var(--text-tertiary);
+  margin: 0 auto;
+  line-height: var(--line-height-normal);
+  opacity: 0.6;
+}
+
+.modulesFootnoteLink {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.modulesFootnoteLink:hover {
+  text-decoration: underline;
 }
 
 /* 左右边界渐变遮罩 */
@@ -186,13 +213,28 @@
 .modulesRow {
   display: flex;
   gap: var(--space-4);
-  animation: slideLeft 40s linear infinite;
+  animation: slideLeft 60s linear infinite;
   width: max-content;
   will-change: transform;
 }
 
+/* 第二行反向滚动，创造错位效果，同时保持初始左对齐 */
 .modulesRow:nth-child(2) {
-  animation-delay: -30s;
+  animation-name: slideRight;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* 鼠标 hover 时暂停滚动 */
+.developmentModules:hover .modulesRow {
+  animation-play-state: paused;
 }
 
 @keyframes slideLeft {
@@ -311,6 +353,10 @@
     font-size: var(--font-size-sm);
   }
 
+  .modulesWrapper {
+    margin-top: var(--space-8);
+  }
+
   .developmentModules {
     padding: 0 var(--space-8);
   }
@@ -318,6 +364,15 @@
   .developmentModules::before,
   .developmentModules::after {
     width: var(--space-8);
+  }
+  
+  .modulesFooter {
+    margin-top: var(--space-4);
+  }
+  
+  .modulesFootnote {
+    font-size: 11px;
+    padding: 0 var(--space-4);
   }
 
   .ideSection {
@@ -379,6 +434,10 @@
     font-size: var(--font-size-xs);
   }
 
+  .modulesWrapper {
+    margin-top: var(--space-6);
+  }
+
   .developmentModules {
     padding: 0 var(--space-6);
   }
@@ -386,6 +445,11 @@
   .developmentModules::before,
   .developmentModules::after {
     width: var(--space-6);
+  }
+  
+  .modulesFootnote {
+    font-size: 10px;
+    padding: 0 var(--space-2);
   }
 
   .ideSection {

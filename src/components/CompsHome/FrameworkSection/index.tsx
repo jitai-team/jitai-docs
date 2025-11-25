@@ -11,6 +11,9 @@ interface FrameworkSectionProps {
 const FrameworkSection: React.FC<FrameworkSectionProps> = ({ currentLocale }) => {
   const CONTENT = currentLocale === 'zh' ? CONTENT_ZH : CONTENT_EN;
 
+  // 获取所有集成项（已经是扁平列表）
+  const allItems = CONTENT.integrations;
+
   return (
     <section
       id="section-framework"
@@ -21,6 +24,7 @@ const FrameworkSection: React.FC<FrameworkSectionProps> = ({ currentLocale }) =>
       } as React.CSSProperties}
     >
       <div className={globalStyles.sectionContent}>
+        {/* Frameworks Section */}
         <div className={styles.headerSection}>
           <h2 className={globalStyles.sectionTitle}>{CONTENT.title}</h2>
           <p className={styles.sectionSubtitle}>
@@ -35,7 +39,6 @@ const FrameworkSection: React.FC<FrameworkSectionProps> = ({ currentLocale }) =>
               target="_blank"
               key={index}
               className={`${globalStyles.baseCard} ${styles.frameworkCard} ${styles.frameworkLink} animatedChild`}
-            // style={{ '--card-color': framework.color } as React.CSSProperties}
             >
               <div className={styles.cardHeader}>
                 <div className={styles.cardIcon}>
@@ -52,6 +55,95 @@ const FrameworkSection: React.FC<FrameworkSectionProps> = ({ currentLocale }) =>
               <p className={styles.frameworkDescription}>{framework.description}</p>
             </a>
           ))}
+        </div>
+
+        {/* Integrations Section - 滚动卡片效果 */}
+        <div className={styles.integrationsWrapper}>
+          <div className={styles.integrationsSection}>
+            <div className={styles.integrationsGrid}>
+              {/* 将集成项分成3行 */}
+              {[0, 1, 2].map((rowIndex) => {
+                const itemsPerRow = Math.ceil(allItems.length / 3);
+                const startIndex = rowIndex * itemsPerRow;
+                const endIndex = startIndex + itemsPerRow;
+                const rowItems = allItems.slice(startIndex, endIndex);
+                
+                return (
+                  <div key={rowIndex} className={styles.integrationsRow}>
+                    {rowItems.map((item, index) => {
+                      const variant = (item as any).variant || 'icon';
+                      const assetSize = (item as any).assetSize || 'medium';
+                      const textSize = (item as any).textSize || 'large';
+                      
+                      // 根据 variant 选择不同的样式类
+                      const assetClass = variant === 'logo' 
+                        ? styles.integrationLogo 
+                        : styles.integrationIcon;
+                      const assetSizeClass = styles[`assetSize${assetSize.charAt(0).toUpperCase() + assetSize.slice(1)}`] || '';
+                      const textSizeClass = styles[`textSize${textSize.charAt(0).toUpperCase() + textSize.slice(1)}`] || '';
+                      
+                      return (
+                        <div key={`${rowIndex}-${index}`} className={styles.integrationCard}>
+                          {(item as any).asset && (
+                            <img
+                              src={(item as any).asset}
+                              alt={item.name}
+                              className={`${assetClass} ${assetSizeClass}`}
+                            />
+                          )}
+                          {variant === 'icon' && (
+                            <span className={`${styles.integrationName} ${textSizeClass}`}>{item.name}</span>
+                          )}
+                        </div>
+                      );
+                    })}
+                    {/* 重复当前行卡片，实现无缝循环滚动 */}
+                    {rowItems.map((item, index) => {
+                      const variant = (item as any).variant || 'icon';
+                      const assetSize = (item as any).assetSize || 'medium';
+                      const textSize = (item as any).textSize || 'large';
+                      
+                      const assetClass = variant === 'logo' 
+                        ? styles.integrationLogo 
+                        : styles.integrationIcon;
+                      const assetSizeClass = styles[`assetSize${assetSize.charAt(0).toUpperCase() + assetSize.slice(1)}`] || '';
+                      const textSizeClass = styles[`textSize${textSize.charAt(0).toUpperCase() + textSize.slice(1)}`] || '';
+                      
+                      return (
+                        <div key={`${rowIndex}-${index}-repeat`} className={styles.integrationCard}>
+                          {(item as any).asset && (
+                            <img
+                              src={(item as any).asset}
+                              alt={item.name}
+                              className={`${assetClass} ${assetSizeClass}`}
+                            />
+                          )}
+                          {variant === 'icon' && (
+                            <span className={`${styles.integrationName} ${textSizeClass}`}>{item.name}</span>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          
+          {/* 脚注 - 放在滚动区下方 */}
+          <div className={styles.integrationsFooter}>
+            <p className={styles.integrationsFootnote}>
+              {CONTENT.integrationsSubtitlePrefix}
+              <a 
+                href={CONTENT.integrationsSubtitleLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.integrationsFootnoteLink}
+              >
+                {CONTENT.integrationsSubtitleLinkText}
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </section>

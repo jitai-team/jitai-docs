@@ -29,6 +29,25 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
         };
     }, []);
 
+    /**
+     * 处理按钮点击事件，添加 UTM 参数后跳转
+     */
+    const handleButtonClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        // 移动端跳转到教程页面，不需要添加 UTM 参数
+        if (isMobile) {
+            return; // 让默认的 href 行为执行
+        }
+
+        // 阻止默认跳转
+        e.preventDefault();
+        
+        // 获取带 UTM 参数的 URL
+        const urlWithUTM = addUTMToUrl("https://demo.jit.pro/wanyun/AdminApp");
+        
+        // 在新标签页打开
+        window.open(urlWithUTM, '_blank');
+    };
+
     return (
         <section id="section-0" className={styles.hero}>
             <div className={globalStyles.sectionContent}>
@@ -81,6 +100,7 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                                     ? "./docs/tutorial"
                                     : addUTMToUrl("https://demo.jit.pro/wanyun/AdminApp")
                             }
+                            onClick={handleButtonClick}
                             target="_blank"
                         >
                             <span className={styles.buttonText}>

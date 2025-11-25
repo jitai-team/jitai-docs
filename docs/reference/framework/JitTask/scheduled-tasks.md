@@ -32,7 +32,7 @@ tasks/
     └── __init__.py       # [File] Python package identifier
 ```
 
-#### e.json File
+#### e.json
 
 ```json title="tasks/MyDailyJob/e.json"
 {
@@ -53,6 +53,30 @@ tasks/
   "backendBundleEntry": "."
 }
 ```
+
+#### inner.py
+
+```python title="tasks/MyDailyJob/inner.py"
+from jit.commons.utils.logger import log
+
+def customFunc():
+    """
+    Function name must be customFunc
+    """
+    # Business logic...
+    # When `funcType` is `Global`, this function does not need to be implemented.
+    pass
+```
+
+#### __init__.py
+
+```python title="tasks/MyDailyJob/__init__.py"
+# -*-coding:utf-8-*-
+
+from .inner import customFunc
+```
+
+When `funcType` is `Global`, the execution function is a service function, not `customFunc`.
 
 ## Element Configuration
 
@@ -106,7 +130,7 @@ Suitable for reusing existing Service logic.
 
 Ensure a service with `fullName` as `services.DataSyncService` exists and contains the `syncUserData` function.
 
-```python title="services/DataSyncService.py"
+```python title="services/DataSyncService/service.py"
 
 from datatypes.Meta import datatypes
 from services.NormalType import NormalService

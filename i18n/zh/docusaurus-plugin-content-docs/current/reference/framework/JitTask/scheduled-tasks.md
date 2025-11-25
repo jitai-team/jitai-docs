@@ -52,6 +52,28 @@ tasks/
 }
 ```
 
+#### inner.py文件
+
+```python title="tasks/MyDailyJob/inner.py"
+from jit.commons.utils.logger import log
+
+def customFunc():
+    """
+    函数名必须为 customFunc
+    """
+    # 业务逻辑...
+    # 当 `funcType` 为 `Global` 时，无需实现该函数。
+    pass
+```
+
+#### __init__.py文件
+
+```python title="tasks/MyDailyJob/__init__.py"
+# -*-coding:utf-8-*-
+
+from .inner import customFunc
+```
+
 ## 元素配置
 
 ### e.json配置
@@ -106,7 +128,7 @@ tasks/
 
 确保 fullName 为 `services.DataSyncService` 的服务存在，且该服务中有 `syncUserData` 函数。
 
-```python title="services/DataSyncService.py"
+```python title="services/DataSyncService/service.py"
 
 from datatypes.Meta import datatypes
 from services.NormalType import NormalService

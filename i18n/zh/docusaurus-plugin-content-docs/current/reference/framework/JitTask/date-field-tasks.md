@@ -57,6 +57,31 @@ tasks/
 }
 ```
 
+#### inner.py文件
+
+```python title="tasks/MeetingReminder/inner.py"
+from jit.commons.utils.logger import log
+
+def customFunc(rowData):
+    """
+    函数名必须为 customFunc
+    :param rowData: 触发任务的业务数据行
+    """
+    # 业务逻辑...
+    # 当 `funcType` 为 `Global` 时，无需实现该函数。
+    pass
+```
+
+#### __init__.py文件
+
+```python title="tasks/MeetingReminder/__init__.py"
+# -*-coding:utf-8-*-
+
+from .inner import customFunc
+```
+
+当 `funcType` 为 `Global` 时，执行函数是一个服务函数，而不是 `customFunc`。
+
 ## 元素配置
 
 ### e.json配置
@@ -124,7 +149,7 @@ tasks/
 
 适用于复用已有的 Service 逻辑。
 
-```python title="services/MeetingSvc.py"
+```python title="services/MeetingSvc/service.py"
 from datatypes.Meta import datatypes
 from services.NormalType import NormalService
 

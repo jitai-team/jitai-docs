@@ -111,26 +111,43 @@ const IDESection: React.FC<IDESectionProps> = ({ currentLocale }) => {
         </div>
 
         {/* 可视化开发模块部分 - 2行卡片自动滚动 */}
-        <div className={styles.developmentModules}>
-          <div className={styles.modulesGrid}>
-            <div className={styles.modulesRow}>
-              {CONTENT.developmentModules.slice(0, Math.ceil(CONTENT.developmentModules.length / 2)).map((module, index) => (
-                <ModuleCard key={`row1-${index}`} module={module} />
-              ))}
-              {/* 重复第一行卡片，实现无缝循环 */}
-              {CONTENT.developmentModules.slice(0, Math.ceil(CONTENT.developmentModules.length / 2)).map((module, index) => (
-                <ModuleCard key={`row1-repeat-${index}`} module={module} />
-              ))}
+        <div className={styles.modulesWrapper}>
+          <div className={styles.developmentModules}>
+            <div className={styles.modulesGrid}>
+              <div className={styles.modulesRow}>
+                {CONTENT.developmentModules.slice(0, Math.ceil(CONTENT.developmentModules.length / 2)).map((module, index) => (
+                  <ModuleCard key={`row1-${index}`} module={module} />
+                ))}
+                {/* 重复第一行卡片，实现无缝循环 */}
+                {CONTENT.developmentModules.slice(0, Math.ceil(CONTENT.developmentModules.length / 2)).map((module, index) => (
+                  <ModuleCard key={`row1-repeat-${index}`} module={module} />
+                ))}
+              </div>
+              <div className={styles.modulesRow}>
+                {CONTENT.developmentModules.slice(Math.ceil(CONTENT.developmentModules.length / 2)).map((module, index) => (
+                  <ModuleCard key={`row2-${index}`} module={module} />
+                ))}
+                {/* 重复第二行卡片，实现无缝循环 */}
+                {CONTENT.developmentModules.slice(Math.ceil(CONTENT.developmentModules.length / 2)).map((module, index) => (
+                  <ModuleCard key={`row2-repeat-${index}`} module={module} />
+                ))}
+              </div>
             </div>
-            <div className={styles.modulesRow}>
-              {CONTENT.developmentModules.slice(Math.ceil(CONTENT.developmentModules.length / 2)).map((module, index) => (
-                <ModuleCard key={`row2-${index}`} module={module} />
-              ))}
-              {/* 重复第二行卡片，实现无缝循环 */}
-              {CONTENT.developmentModules.slice(Math.ceil(CONTENT.developmentModules.length / 2)).map((module, index) => (
-                <ModuleCard key={`row2-repeat-${index}`} module={module} />
-              ))}
-            </div>
+          </div>
+          
+          {/* 脚注 - 放在滚动区下方 */}
+          <div className={styles.modulesFooter}>
+            <p className={styles.modulesFootnote}>
+              {CONTENT.modulesFootnotePrefix}
+              <a 
+                href={CONTENT.modulesFootnoteLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.modulesFootnoteLink}
+              >
+                {CONTENT.modulesFootnoteLinkText}
+              </a>
+            </p>
           </div>
         </div>
       </div>

@@ -3,6 +3,9 @@ const CONTENT = {
     subtitle: "Primarily visual orchestration with optional visual coding, generating fully editable native code — simple and efficient without sacrificing flexibility",
     color: "#3D65FD",
     videoHoverText: "Click to view HD video in fullscreen",
+    modulesFootnotePrefix: "JitAI IDE has built-in visual editors for various elements and supports developer ",
+    modulesFootnoteLinkText: "extensions",
+    modulesFootnoteLink: "/docs/extguide/develop-backend-element-visual-editor",
     coreFeatures: [
         {
             title: "Simple, Flexible, and Consistent Development Paradigm",

@@ -173,19 +173,6 @@ def customFunc(rowData):
     return {"status": "success", "meetingId": meeting_id}
 ```
 
-## Usage Example
-
-```python title="Acquiring and Using Date Field Task Element"
-# Get the date field task element
-task_element = app.getElement("tasks.MeetingReminder")
-
-# Get model data
-MeetingModel = app.getElement("models.MeetingModel")
-meetings = MeetingModel.query(filter="Q(status='pending')")
-
-# The system automatically creates corresponding task instances for each data row matching the conditions
-```
-
 ## Debugging and Notes
 
 1.  **Field Format**: The `startField` in the model must be of type `DateTime` or `Date`.

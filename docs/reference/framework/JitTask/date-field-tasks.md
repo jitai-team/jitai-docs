@@ -46,9 +46,9 @@ tasks/
   "timerCfg": {
     "startField": "startTime",
     "startOffset": {
-      "type": -1,
-      "value": 15,
-      "unit": "minute"
+      "offsetType": -1,
+      "offset": 15,
+      "offsetUnit": "minute"
     },
     "repeat": {
       "repeatType": "normal"
@@ -90,16 +90,16 @@ This is the core part of the configuration, determining when the task executes.
 
 | Parameter Name | Type | Required | Description | Optional Values |
 |--------|------|------|------|--------|
-| `type` | Integer | **Yes** | Offset direction | `-1`: Before (Precede)<br/>`0`: On time<br/>`1`: After (Delay) |
-| `value` | Integer | **Yes** | Offset quantity | Positive Integer |
-| `unit` | String | **Yes** | Time unit | `"minute"`: Minute<br/>`"hour"`: Hour<br/>`"day"`: Day |
-| `time` | String | No | Forced time point, format `HH:mm`.<br/>If this field is set, the offset logic of `value` and `unit` will be ignored. | `"09:00"` |
+| `offsetType` | Integer | **Yes** | Offset direction | `-1`: Before (Precede)<br/>`0`: On time<br/>`1`: After (Delay) |
+| `offset` | Integer | **Yes** | Offset quantity | Positive Integer |
+| `offsetUnit` | String | **Yes** | Time unit | `"minute"`: Minute<br/>`"hour"`: Hour<br/>`"day"`: Day |
+| `time` | String | No | Forced time point, format `HH:mm`.<br/>If this field is set, the offset logic of `offset` and `offsetType` will be ignored. | `"09:00"` |
 
 **Example Combinations**:
 
-*   **15 minutes in advance**: `{"type": -1, "value": 15, "unit": "minute"}`
-*   **3 days later**: `{"type": 1, "value": 3, "unit": "day"}`
-*   **9:00 AM on the same day** (ignoring specific hours/minutes/seconds): `{"type": 0, "value": 0, "unit": "day", "time": "09:00"}`
+*   **15 minutes in advance**: `{"offsetType": -1, "offset": 15, "offsetUnit": "minute"}`
+*   **3 days later**: `{"offsetType": 1, "offset": 3, "offsetUnit": "day"}`
+*   **9:00 AM on the same day** (ignoring specific hours/minutes/seconds): `{"offsetType": 0, "offset": 0, "offsetUnit": "day", "time": "09:00"}`
 
 ### repeat Configuration
 

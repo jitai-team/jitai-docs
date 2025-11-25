@@ -44,9 +44,9 @@ tasks/
   "timerCfg": {
     "startField": "startTime",
     "startOffset": {
-      "type": -1,
-      "value": 15,
-      "unit": "minute"
+      "offsetType": -1,
+      "offset": 15,
+      "offsetUnit": "minute"
     },
     "repeat": {
       "repeatType": "normal"
@@ -88,16 +88,16 @@ tasks/
 
 | 参数名 | 类型 | 必填 | 说明 | 可选值 |
 |--------|------|------|------|--------|
-| `type` | Integer | **是** | 偏移方向 | `-1`: 之前（提前）<br />`0`: 准点<br />`1`: 之后（延后） |
-| `value` | Integer | **是** | 偏移数量 | 正整数 |
-| `unit` | String | **是** | 时间单位 | `"minute"`: 分钟<br />`"hour"`: 小时<br />`"day"`: 天 |
-| `time` | String | 否 | 强制时间点，格式 `HH:mm`。<br />如果设置此字段，`value` 和 `unit` 的偏移逻辑将被忽略 | `"09:00"` |
+| `offsetType` | Integer | **是** | 偏移方向 | `-1`: 之前（提前）<br />`0`: 准点<br />`1`: 之后（延后） |
+| `offset` | Integer | **是** | 偏移数量 | 正整数 |
+| `offsetUnit` | String | **是** | 时间单位 | `"minute"`: 分钟<br />`"hour"`: 小时<br />`"day"`: 天 |
+| `time` | String | 否 | 强制时间点，格式 `HH:mm`。<br />如果设置此字段，`offset` 和 `offsetUnit` 的偏移逻辑将被忽略 | `"09:00"` |
 
 **示例组合**：
 
-*   **提前 15 分钟**: `{"type": -1, "value": 15, "unit": "minute"}`
-*   **延后 3 天**: `{"type": 1, "value": 3, "unit": "day"}`
-*   **当天上午 9 点** (忽略具体时分秒): `{"type": 0, "value": 0, "unit": "day", "time": "09:00"}`
+*   **提前 15 分钟**: `{"offsetType": -1, "offset": 15, "offsetUnit": "minute"}`
+*   **延后 3 天**: `{"offsetType": 1, "offset": 3, "offsetUnit": "day"}`
+*   **当天上午 9 点** (忽略具体时分秒): `{"offsetType": 0, "offset": 0, "offsetUnit": "day", "time": "09:00"}`
 
 ### repeat配置
 

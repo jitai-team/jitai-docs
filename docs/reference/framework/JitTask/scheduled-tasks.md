@@ -145,24 +145,6 @@ def customFunc():
     return {"status": "success", "processedCount": len(users["rowDatas"])}
 ```
 
-## Usage Example
-
-```python title="Acquiring and Using Scheduled Task Element"
-# Get scheduled task element
-task_element = app.getElement("tasks.MyDailyJob")
-
-# Create task instance
-from tasks.Meta import Timer
-timer = Timer({
-    "startTime": "2024-01-01 09:00:00",
-    "repeat": {"repeatType": "day", "period": 1}
-})
-
-# Calculate next execution time
-next_time = timer.nextTime()
-print(f"Next execution time: {next_time}")
-```
-
 ## Debugging and Notes
 
 1.  **Effective Time**: Changes to `e.json` usually require a restart of the backend service to take effect.

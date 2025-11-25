@@ -34,7 +34,7 @@ tasks/
     └── __init__.py       # [File] Python package identifier
 ```
 
-#### e.json File
+#### e.json
 
 ```json title="tasks/MeetingReminder/e.json"
 {
@@ -58,6 +58,31 @@ tasks/
   "backendBundleEntry": "."
 }
 ```
+
+#### inner.py
+
+```python title="tasks/MeetingReminder/inner.py"
+from jit.commons.utils.logger import log
+
+def customFunc(rowData):
+    """
+    Function name must be customFunc
+    :param rowData: The business data row triggering the task
+    """
+    # Business logic...
+    # When `funcType` is `Global`, this function does not need to be implemented.
+    pass
+```
+
+#### __init__.py
+
+```python title="tasks/MeetingReminder/__init__.py"
+# -*-coding:utf-8-*-
+
+from .inner import customFunc
+```
+
+When `funcType` is `Global`, the execution function is a service function, not `customFunc`.
 
 ## Element Configuration
 
@@ -126,7 +151,7 @@ For date field tasks, `repeat` determines whether to trigger multiple times for 
 
 Suitable for reusing existing Service logic.
 
-```python title="services/MeetingSvc.py"
+```python title="services/MeetingSvc/service.py"
 from datatypes.Meta import datatypes
 from services.NormalType import NormalService
 

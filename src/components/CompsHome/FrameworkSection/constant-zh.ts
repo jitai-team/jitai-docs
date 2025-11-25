@@ -5,9 +5,9 @@ const CONTENT = {
   subtitle: '基于JAAP协议的AI-Native全栈开发框架，高度集成AI应用和传统应用开发的主流技术，极大简化应用层的快速开发',
   color: '#3D65FD',
   learnMore: '了解更多',
-  integrationsSubtitlePrefix: 'JitAI Framework 已集成大量第三方框架，且支持开发者自己',
-  integrationsSubtitleLinkText: '扩展',
-  integrationsSubtitleLink: '/docs/extguide',
+  integrationsSubtitlePrefix: 'JitAI Framework 已集成大量第三方框架，且支持',
+  integrationsSubtitleLinkText: '开发者自己扩展',
+  integrationsSubtitleLink: '/zh/docs/extguide',
   frameworks: [
     {
       id: 'jitai',

@@ -16,6 +16,8 @@ interface LazySectionProps {
   minHeight?: number | string;
   /** 容器的 className */
   className?: string;
+  /** 当前语言（由 PageLayout 注入） */
+  currentLocale?: string;
 }
 
 /**
@@ -29,7 +31,10 @@ const ClientLazySection: React.FC<LazySectionProps> = ({
   rootMargin = '200px 0px',
   minHeight = 400,
   className = '',
+  currentLocale,
 }) => {
+  // 合并 componentProps 和 currentLocale
+  const mergedProps = { ...componentProps, currentLocale };
   const [shouldLoad, setShouldLoad] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -105,7 +110,7 @@ const ClientLazySection: React.FC<LazySectionProps> = ({
     <div ref={containerRef} className={className}>
       {shouldLoad ? (
         <Suspense fallback={fallback || defaultFallback}>
-          <Component {...componentProps} />
+          <Component {...mergedProps} />
         </Suspense>
       ) : (
         fallback || defaultFallback
@@ -121,7 +126,9 @@ const ClientLazySection: React.FC<LazySectionProps> = ({
  * - 客户端：使用 Intersection Observer 实现懒加载
  */
 const LazySection: React.FC<LazySectionProps> = (props) => {
-  const { component: Component, componentProps = {}, fallback, minHeight = 400 } = props;
+  const { component: Component, componentProps = {}, fallback, minHeight = 400, currentLocale } = props;
+  // 合并 componentProps 和 currentLocale
+  const mergedProps = { ...componentProps, currentLocale };
 
   const defaultFallback = (
     <div
@@ -140,7 +147,7 @@ const LazySection: React.FC<LazySectionProps> = (props) => {
       fallback={
         // SSR 时直接渲染组件，确保内容可被搜索引擎索引
         <Suspense fallback={fallback || defaultFallback}>
-          <Component {...componentProps} />
+          <Component {...mergedProps} />
         </Suspense>
       }
     >

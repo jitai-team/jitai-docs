@@ -6,7 +6,7 @@ const CONTENT = {
   color: '#3D65FD',
   learnMore: 'Learn More',
   integrationsSubtitlePrefix: 'JitAI Framework has integrated numerous third-party frameworks and supports ',
-  integrationsSubtitleLinkText: 'developer extensions',
+  integrationsSubtitleLinkText: 'developer self-extensions',
   integrationsSubtitleLink: '/docs/extguide',
   frameworks: [
     {

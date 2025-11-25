@@ -113,6 +113,13 @@ tasks/
 
 ## 执行函数
 
+### 函数入参
+| 参数名 | JitAI类型 | Python类型 | 必填 | 说明 |
+|--------|-----------|-------------|------|------|
+| rowData | RowData | object | 是 | 触发任务的模型数据 |
+
+### 函数体
+
 **服务函数（推荐）**
 
 适用于复用已有的 Service 逻辑。
@@ -142,7 +149,7 @@ class MeetingSvc(NormalService)：
 
 **任务内置函数**
 
-适用于逻辑仅属于该任务，不需要复用的场景。
+适用于逻辑仅属于该任务，不需要复用的场景。函数实现在元素目录下的inner.py中，函数名固定为`customFunc`。
 
 ```python title="tasks/MeetingReminder/inner.py"
 from jit.commons.utils.logger import log
@@ -163,19 +170,6 @@ def customFunc(rowData):
     # send_message(user_id, f"会议 {title} 将于 {start_time} 开始")
     
     return {"status": "success", "meetingId": meeting_id}
-```
-
-## 调用示例
-
-```python title="获取和使用日期字段任务元素"
-# 获取日期字段任务元素
-task_element = app.getElement("tasks.MeetingReminder")
-
-# 获取模型数据
-MeetingModel = app.getElement("models.MeetingModel")
-meetings = MeetingModel.query(filter="Q(status='pending')")
-
-# 系统会自动为每条符合条件的数据创建对应的任务实例
 ```
 
 ## 调试与注意事项

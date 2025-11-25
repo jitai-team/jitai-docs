@@ -1,260 +1,133 @@
 ---
 sidebar_position: 4
 slug: task-service
-title: "Task Service Reference"
-description: "Task Service Reference - API documentation for developers. Complete specifications, methods, and examples."
-sidebar_label: "Task Service"
+description: "Temporary Task API Reference. Complete specifications, methods, and examples."
+draft: true
 ---
 
-# Task Service
+# Temporary Tasks
 
-Task Service is the core API service of the JitTask framework, responsible for task template management, task creation and execution, status control, and forced termination. The element has a hierarchical structure of Meta (services.Meta) → Type (services.NormalType) → Instance (services.TaskSvc). Developers can directly use the TaskSvc instance element.
+Temporary tasks (`tasks.TemporaryType`) differ from the other two task types in that they do **not** have a static configuration file (`e.json`) to define execution rules. They are a **code-triggered** mechanism that allows developers to dynamically create one-off background tasks within business logic.
 
-Of course, developers can also create their own Type elements or modify the official services.NormalType element provided by JitAI in their own App to implement their own encapsulation.
+**Core Features**:
+*   **Dynamic**: Execution time, parameters, and execution function are specified at runtime.
+*   **One-off**: The task is destroyed immediately after execution and does not repeat automatically.
+*   **Asynchronous**: Commonly used to decouple time-consuming operations and improve API response speed.
 
 ## Quick Start
-Task Service, as a built-in instance element of the JitTask framework, can be directly obtained and used through `app.getElement()`:
 
-```python title="Basic Usage Example"
-# Get task service instance
-taskSvc = app.getElement("services.TaskSvc")
+### Scenario Example
 
-# Get task template list
-templates = taskSvc.getTaskTmplList("")
+**Scenario**: Automatically cancel an order 30 minutes after creation.
 
-# Create scheduled task
-result = taskSvc.createTimerTask(
-    fullName="tasks.MyTask",
-    startTime="2024-01-01 10:00:00",
-    funcName="executeTask",
-    taskType="tasks.NormalType",
-    argDict={"param1": "value1"}
-)
-```
+#### Business Code (Trigger Point)
 
-## Methods
-### getTaskTmplList
-Get all available task template lists in the system, supporting filtering by name.
+Call `createTemporaryTask` within the business logic to create the task.
 
-#### Parameter Details
-| Parameter Name | Type | Corresponding Native Type | Required | Description |
-|--------|------|-------------|------|------|
-| queryStr | Stext | str | Yes | Template name filter condition, empty string returns all templates |
+```python title="services/OrderSvc.py"
+from tasks.TemporaryType.task import createTemporaryTask
+from jit_utils.time import now
 
-#### Return Value
-JitList type, containing task template information list, each item includes title, taskType, repeatType, fullName fields.
-
-#### Usage Example
-```python title="Get Task Template List"
-taskSvc = app.getElement("services.TaskSvc")
-
-# Get all task templates
-all_templates = taskSvc.getTaskTmplList("")
-
-# Filter task templates by name
-filtered_templates = taskSvc.getTaskTmplList("Data Backup")
-
-# Process returned results
-for template in all_templates:
-    print(f"Template name: {template['title']}")
-    print(f"Task type: {template['taskType']}")
-    print(f"Repeat type: {template['repeatType']}")
-    print(f"Full path: {template['fullName']}")
-```
-
-### createTimerTask
-Create a scheduled task, supporting specified execution time, function path, and parameters.
-
-#### Parameter Details
-| Parameter Name | Type | Corresponding Native Type | Required | Description |
-|--------|------|-------------|------|------|
-| fullName | Stext | str | Yes | Full path of task element |
-| startTime | Datetime | datetime | Yes | Task start execution time |
-| funcName | Stext | str | Yes | Function path to execute |
-| taskType | Stext | str | Yes | Task type, such as tasks.NormalType |
-| argDict | JitDict | dict | Yes | Parameter dictionary passed to execution function |
-
-#### Return Value
-JitDict type, containing task creation result information.
-
-#### Usage Example
-```python title="Create Scheduled Task"
-from datetime import datetime, timedelta
-
-taskSvc = app.getElement("services.TaskSvc")
-
-# Create task to execute in 1 hour
-future_time = datetime.now() + timedelta(hours=1)
-
-result = taskSvc.createTimerTask(
-    fullName="tasks.DataBackup",
-    startTime=future_time.strftime("%Y-%m-%d %H:%M:%S"),
-    funcName="services.BackupSvc.backupDatabase",
-    taskType="tasks.NormalType",
-    argDict={
-        "database": "main_db",
-        "backup_path": "/backup/",
-        "compress": True
-    }
-)
-
-print(f"Task creation result: {result}")
-```
-
-### forcedEnd
-Manually force end specified task, will update task status and trigger subsequent processing.
-
-#### Parameter Details
-| Parameter Name | Type | Corresponding Native Type | Required | Description |
-|--------|------|-------------|------|------|
-| taskId | Stext | str | Yes | Task ID to end |
-
-#### Return Value
-JitDict type, operation result information.
-
-#### Usage Example
-```python title="Force End Task"
-taskSvc = app.getElement("services.TaskSvc")
-
-# Force end specified task
-result = taskSvc.forcedEnd("task_uuid_12345")
-
-print(f"Task force end result: {result}")
-```
-
-### saveDateFieldTask
-Handle date field-based task save callback, automatically trigger task scheduling when date fields in model data change.
-
-#### Parameter Details
-| Parameter Name | Type | Corresponding Native Type | Required | Description |
-|--------|------|-------------|------|------|
-| rowObj | RowData | dict | Yes | Row object containing data change information |
-
-#### Return Value
-JitDict type, processing result information.
-
-#### Usage Example
-```python title="Date Field Task Save Callback"
-# Usually used in model events
-def onModelUpdate(rowObj):
-    taskSvc = app.getElement("services.TaskSvc")
+def create_order(user_id, items):
+    # 1. Order creation logic...
+    order_id = "ORD_123456"
     
-    # Handle date field task
-    result = taskSvc.saveDateFieldTask(rowObj)
+    # 2. Calculate time 30 minutes later
+    # use arrow or jit_utils
+    exec_time = now().shift(minutes=30).format("YYYY-MM-DD HH:mm:ss")
     
-    return result
-```
-
-### deleteDateFieldTask
-Handle date field-based task delete callback, clean up related tasks when associated model data is deleted.
-
-#### Parameter Details
-| Parameter Name | Type | Corresponding Native Type | Required | Description |
-|--------|------|-------------|------|------|
-| rowObj | RowData | dict | Yes | Row object containing deleted data information |
-
-#### Return Value
-JitDict type, processing result information.
-
-#### Usage Example
-```python title="Date Field Task Delete Callback"
-# Usually used in model events
-def onModelDelete(rowObj):
-    taskSvc = app.getElement("services.TaskSvc")
-    
-    # Clean up related tasks
-    result = taskSvc.deleteDateFieldTask(rowObj)
-    
-    return result
-```
-
-## Attributes
-Task Service inherits from services.NormalType, no specific public attributes.
-
-## Advanced Features
-### Task Lifecycle Management
-Task Service supports complete task lifecycle management, including creation, execution, monitoring, and termination:
-
-```python title="Task Lifecycle Management"
-taskSvc = app.getElement("services.TaskSvc")
-
-# 1. Get available templates
-templates = taskSvc.getTaskTmplList("")
-
-# 2. Create task based on template
-if templates:
-    template = templates[0]
-    result = taskSvc.createTimerTask(
-        fullName=template['fullName'],
-        startTime="2024-12-01 09:00:00",
-        funcName="services.BusinessSvc.processData",
-        taskType=template['taskType'],
-        argDict={"batch_size": 100}
+    # 3. Create delayed check task
+    task_id = createTemporaryTask(
+        func="services.OrderSvc.checkAndCancel",
+        argDict={
+            "orderId": order_id,
+            "reason": "timeout"
+        },
+        startTime=exec_time
     )
     
-    # 3. Force terminate task if needed
-    # taskSvc.forcedEnd("task_id")
+    print(f"Order created, delayed task generated: {task_id}")
+    return order_id
 ```
 
-### Model Event Integration
-Task Service is deeply integrated with model events, supporting data change-driven task scheduling:
+#### Task Execution Function
 
-```python title="Model Event Integration"
-# Used in model lifecycle functions
-def afterSave(self, triggerEvent=1):
-    """Trigger task service after model save"""
-    taskSvc = app.getElement("services.TaskSvc")
-    
-    # Construct row object
-    rowObj = {
-        'postData': self,  # Updated data
-        'prevData': self._original_data  # Pre-update data (needs to be maintained manually)
-    }
-    
-    # Trigger date field task processing
-    taskSvc.saveDateFieldTask(rowObj)
+Implement the specific business processing logic.
 
-def afterDelete(self, triggerEvent=1):
-    """Clean up related tasks after model delete"""
-    taskSvc = app.getElement("services.TaskSvc")
+```python title="services/OrderSvc.py"
+def checkAndCancel(orderId, reason="unknown"):
+    """
+    Parameter names must match keys in argDict
+    """
+    print(f"Checking order payment status: {orderId}, Reason: {reason}")
     
-    rowObj = {
-        'prevData': self  # Deleted data
-    }
+    # Query database to check if paid
+    # if not paid: cancel_order()
     
-    # Clean up related tasks
-    taskSvc.deleteDateFieldTask(rowObj)
+    return "Checked"
 ```
 
-### Batch Task Management
-Support batch creation and management of multiple related tasks:
+## API Reference
 
-```python title="Batch Task Management"
-taskSvc = app.getElement("services.TaskSvc")
+### createTemporaryTask
 
-# Batch create a group of related tasks
-task_configs = [
-    {
-        "fullName": "tasks.DataSync",
-        "startTime": "2024-12-01 01:00:00",
-        "funcName": "services.SyncSvc.syncUserData",
-        "taskType": "tasks.NormalType",
-        "argDict": {"table": "users"}
-    },
-    {
-        "fullName": "tasks.DataSync", 
-        "startTime": "2024-12-01 02:00:00",
-        "funcName": "services.SyncSvc.syncOrderData",
-        "taskType": "tasks.NormalType",
-        "argDict": {"table": "orders"}
-    }
-]
+The system provides the `createTemporaryTask` helper function to create tasks.
 
-# Batch create tasks
-results = []
-for config in task_configs:
-    result = taskSvc.createTimerTask(**config)
-    results.append(result)
+#### Import
 
-print(f"Batch created {len(results)} tasks")
+```python
+from tasks.TemporaryType.task import createTemporaryTask
 ```
+
+#### Function Signature
+
+```python
+def createTemporaryTask(func, argDict=None, startTime=None):
+    """
+    :param func: (str) Global function path to execute
+    :param argDict: (dict) Keyword arguments dictionary passed to the function
+    :param startTime: (str) Scheduled execution time, format "yyyy-MM-dd HH:mm:ss"
+    :return: (str) Generated Task ID (taskId)
+    """
+```
+
+#### Parameter Details
+
+| Parameter | Type | Required | Description | Example |
+| :--- | :--- | :--- | :--- | :--- |
+| `func` | String | **Yes** | Globally accessible service function path. Function must exist and be loaded. | `"services.OrderSvc.autoCancel"` |
+| `argDict` | Dict | No | Dictionary of keyword arguments to pass to the function. | `{"orderId": "123"}` |
+| `startTime` | String | No | Scheduled execution time, format `yyyy-MM-dd HH:mm:ss`.<br />If omitted, defaults to immediate execution (within system scan cycle). | `"2023-12-25 10:00:00"` |
+
+## Execution Function
+
+### Function Arguments
+
+The execution function parameters for a temporary task are determined by the `argDict` provided when creating the task.
+
+| Parameter | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| (Custom) | (Custom) | No | Function parameter names must correspond one-to-one with keys in `argDict` (unless `**kwargs` is used). |
+
+### Function Body
+
+The function must be a globally accessible service function (usually under `services/`).
+
+*   **Parameter Matching**: Ensure the function's parameter list can receive all keys in `argDict`.
+*   **Stateless**: The function should be stateless; all necessary context should be passed via `argDict` (passing IDs is recommended).
+
+## Debugging & Considerations
+
+1.  **Passing Complex Parameters**:
+    *   Since `argDict` is serialized and stored in the database, it is recommended to **pass IDs only**.
+    *   Do not pass entire objects (like a `User` object); pass `userId` instead. Re-query the data by ID within the execution function.
+    *   Prefer JSON-compatible types like String, Number, Boolean, List, Dict.
+
+2.  **Error Handling**:
+    *   If a temporary task fails (throws an exception), its status changes to `error` and is recorded in the history table.
+    *   **No Auto-Retry**: By default, temporary tasks do not retry automatically upon failure.
+    *   **Manual Intervention**: Administrators can view failed task history in the backend.
+
+3.  **Transaction Note**:
+    *   `createTemporaryTask` itself is a database insert operation (`TaskModel.create`).
+    *   If called within a transaction (`@transaction`), the task record creation is committed along with the transaction. If the transaction rolls back, the task is not created. This is usually expected behavior (if the business logic fails, the corresponding follow-up task should not execute).

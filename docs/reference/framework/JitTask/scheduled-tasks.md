@@ -100,7 +100,7 @@ The `repeatType` in the `repeat` object determines the specific repetition strat
 
 ## Execution Function
 
-### Service Function (Recommended)
+**Service Function (Recommended)**
 
 Suitable for reusing existing Service logic.
 
@@ -119,9 +119,9 @@ class DataSyncService(NormalService):
       return {"status": "completed"}
 ```
 
-### Internal Task Function
+**Internal Task Function**
 
-Suitable for scenarios where the logic belongs exclusively to the task and does not need to be reused.
+Suitable for scenarios where the logic belongs exclusively to the task and does not need to be reused. The function is implemented in `inner.py` under the element directory, with the function name fixed as `customFunc`.
 
 ```python title="tasks/MyDailyJob/inner.py"
 from jit.commons.utils.logger import log
@@ -161,106 +161,6 @@ timer = Timer({
 # Calculate next execution time
 next_time = timer.nextTime()
 print(f"Next execution time: {next_time}")
-```
-
-## Advanced Features
-
-### Complex Cycle Configuration
-
-#### Weekly Repeat Configuration
-
-```json title="Execute every Monday, Wednesday, and Friday"
-{
-  "timerCfg": {
-    "startTime": "2024-01-01 09:00:00",
-    "repeat": {
-      "repeatType": "week",
-      "period": 1,
-      "weekday": [0, 2, 4]  // 0=Mon, 1=Tue ... 6=Sun
-    }
-  }
-}
-```
-
-#### Monthly Repeat Configuration
-
-**Mode A: By Date**
-
-```json title="Execute on the 1st, 15th, and last day of every month"
-{
-  "timerCfg": {
-    "startTime": "2024-01-01 10:00:00",
-    "repeat": {
-      "repeatType": "month",
-      "period": 1,
-      "subType": "day",
-      "day": [1, 15, -1]  // -1 indicates the last day
-    }
-  }
-}
-```
-
-**Mode B: By Week**
-
-```json title="Execute on the Monday of the 2nd week of every month"
-{
-  "timerCfg": {
-    "startTime": "2024-01-01 10:00:00",
-    "repeat": {
-      "repeatType": "month",
-      "period": 1,
-      "subType": "week",
-      "week": 2,        // 2nd week
-      "weekday": [0]    // Monday
-    }
-  }
-}
-```
-
-#### Yearly Repeat Configuration
-
-```json title="Execute on October 1st every year"
-{
-  "timerCfg": {
-    "startTime": "2024-10-01 09:00:00",
-    "repeat": {
-      "repeatType": "year",
-      "period": 1,
-      "month": 10,
-      "day": 1
-    }
-  }
-}
-```
-
-```json title="Execute on the first Monday of June every year"
-{
-  "timerCfg": {
-    "startTime": "2024-06-01 09:00:00",
-    "repeat": {
-      "repeatType": "year",
-      "period": 1,
-      "month": 6,
-      "week": 1,
-      "weekday": [1]
-    }
-  }
-}
-```
-
-### Parameterized Tasks
-
-```python title="Task Parameter Passing"
-def customFunc():
-    # Get task parameters from global variables
-    task = GlobalVar.currentTask
-    params = task.argDict.value
-    
-    batch_size = params.get("batchSize", 100)
-    filter_condition = params.get("filter", "")
-    
-    # Use parameters to execute business logic
-    return process_data(batch_size, filter_condition)
 ```
 
 ## Debugging and Notes

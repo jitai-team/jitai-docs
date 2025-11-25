@@ -98,6 +98,8 @@ tasks/
 
 ## 执行函数
 
+### 函数体
+
 **服务函数（推荐）**
 
 适用于复用已有的 Service 逻辑。
@@ -119,7 +121,7 @@ class DataSyncService(NormalService)：
 
 **任务内置函数**
 
-适用于逻辑仅属于该任务，不需要复用的场景。
+适用于逻辑仅属于该任务，不需要复用的场景。函数实现在元素目录下的inner.py中，函数名固定为`customFunc`。
 
 ```python title="tasks/MyDailyJob/inner.py"
 from jit.commons.utils.logger import log
@@ -141,124 +143,6 @@ def customFunc():
     
     log.info("任务执行完成")
     return {"status": "success", "processedCount": len(users["rowDatas"])}
-```
-
-## 调用示例
-
-```python title="获取和使用定时任务元素"
-# 获取定时任务元素
-task_element = app.getElement("tasks.MyDailyJob")
-
-# 创建任务实例
-from tasks.Meta import Timer
-timer = Timer({
-    "startTime": "2024-01-01 09:00:00",
-    "repeat": {"repeatType": "day", "period": 1}
-})
-
-# 计算下次执行时间
-next_time = timer.nextTime()
-print(f"下次执行时间: {next_time}")
-```
-
-## 高级特性
-
-### 复杂周期配置
-
-#### 按周重复配置
-
-```json title="每周一、三、五执行"
-{
-  "timerCfg": {
-    "startTime": "2024-01-01 09:00:00",
-    "repeat": {
-      "repeatType": "week",
-      "period": 1,
-      "weekday": [0, 2, 4]  // 0=周一, 1=周二 ... 6=周日
-    }
-  }
-}
-```
-
-#### 按月重复配置
-
-**模式 A: 按日期**
-
-```json title="每月1号、15号、最后一天执行"
-{
-  "timerCfg": {
-    "startTime": "2024-01-01 10:00:00",
-    "repeat": {
-      "repeatType": "month",
-      "period": 1,
-      "subType": "day",
-      "day": [1, 15, -1]  // -1 表示最后一天
-    }
-  }
-}
-```
-
-**模式 B: 按星期**
-
-```json title="每月第2周的周一执行"
-{
-  "timerCfg": {
-    "startTime": "2024-01-01 10:00:00",
-    "repeat": {
-      "repeatType": "month",
-      "period": 1,
-      "subType": "week",
-      "week": 2,        // 第2周
-      "weekday": [0]    // 周一
-    }
-  }
-}
-```
-
-#### 按年重复配置
-
-```json title="每年10月1日执行"
-{
-  "timerCfg": {
-    "startTime": "2024-10-01 09:00:00",
-    "repeat": {
-      "repeatType": "year",
-      "period": 1,
-      "month": 10,
-      "day": 1
-    }
-  }
-}
-```
-
-```json title="每年6月第一个周一执行"
-{
-  "timerCfg": {
-    "startTime": "2024-06-01 09:00:00",
-    "repeat": {
-      "repeatType": "year",
-      "period": 1,
-      "month": 6,
-      "week": 1,
-      "weekday": [1]
-    }
-  }
-}
-```
-
-### 带参数任务
-
-```python title="任务参数传递"
-def customFunc():
-    # 从全局变量获取任务参数
-    task = GlobalVar.currentTask
-    params = task.argDict.value
-    
-    batch_size = params.get("batchSize", 100)
-    filter_condition = params.get("filter", "")
-    
-    # 使用参数执行业务逻辑
-    return process_data(batch_size, filter_condition)
 ```
 
 ## 调试与注意事项

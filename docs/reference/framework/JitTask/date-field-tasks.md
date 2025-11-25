@@ -115,7 +115,14 @@ For date field tasks, `repeat` determines whether to trigger multiple times for 
 
 ## Execution Function
 
-### Service Function (Recommended)
+### Function Parameters
+| Parameter Name | JitAI Type | Python Type | Required | Description |
+| :--- | :--- | :--- | :--- | :--- |
+| `rowData` | RowData | Object | **Yes** | Model data triggering the task |
+
+### Function
+
+**Service Function (Recommended)**
 
 Suitable for reusing existing Service logic.
 
@@ -141,9 +148,9 @@ class MeetingSvc(NormalService):
       return "Done"
 ```
 
-### Internal Task Function
+**Internal Task Function**
 
-Suitable for scenarios where the logic belongs exclusively to the task and does not need to be reused.
+Suitable for scenarios where the logic belongs exclusively to the task and does not need to be reused. The function is implemented in `inner.py` under the element directory, with the function name fixed as `customFunc`.
 
 ```python title="tasks/MeetingReminder/inner.py"
 from jit.commons.utils.logger import log

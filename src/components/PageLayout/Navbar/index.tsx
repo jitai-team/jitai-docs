@@ -116,7 +116,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                         onClick={() => handleNavClick(CONTENT.navItems[0])}
                     >
                         <img
-                            src="https://jit-www.oss-accelerate.aliyuncs.com/logo/logo_title.png"
+                            src="https://jit-www.oss-accelerate.aliyuncs.com/logo/logo_title.svg"
                             alt="JitAI"
                         />
                     </div>

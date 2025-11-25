@@ -159,30 +159,6 @@ export function clearUTMParams() {
 }
 
 /**
- * 获取当前访问信息（如果 localStorage 中没有，则使用当前页面信息）
- */
-function getCurrentVisitInfo() {
-  const storedInfo = getVisitInfo();
-  if (storedInfo) {
-    return storedInfo;
-  }
-  
-  // 如果没有保存的信息，使用当前页面信息
-  const now = formatUTCTime(new Date());
-  const landingPage = window.location.origin + window.location.pathname;
-  const currentUTMParams = extractUTMParams();
-  
-  return {
-    utm: currentUTMParams,
-    firstVisit: now,
-    userAgent: navigator.userAgent || 'unknown',
-    ip: 'unknown', // IP 需要异步获取，这里先用 unknown
-    referrer: document.referrer || 'direct',
-    landingPage: landingPage
-  };
-}
-
-/**
  * 给 URL 添加 UTM 参数和访问信息
  * @param {string} url - 原始 URL
  * @returns {string} - 添加了 UTM 参数和访问信息的 URL
@@ -190,7 +166,7 @@ function getCurrentVisitInfo() {
 export function addUTMToUrl(url) {
   if (!url) return url;
   
-  const visitInfo = getCurrentVisitInfo();
+  const visitInfo = getVisitInfo();
   if (!visitInfo) {
     return url;
   }
@@ -199,7 +175,7 @@ export function addUTMToUrl(url) {
     const urlObj = new URL(url, window.location.origin);
     
     // 添加 UTM 参数
-    if (visitInfo.utm && Object.keys(visitInfo.utm).length > 0) {
+    if (visitInfo.utm) {
       Object.entries(visitInfo.utm).forEach(([key, value]) => {
         if (value) urlObj.searchParams.set(key, value);
       });
@@ -215,9 +191,7 @@ export function addUTMToUrl(url) {
     };
     
     Object.entries(params).forEach(([key, value]) => {
-      if (value && value !== 'unknown') {
-        urlObj.searchParams.set(key, value);
-      }
+      if (value) urlObj.searchParams.set(key, value);
     });
 
     return urlObj.toString();
@@ -239,14 +213,21 @@ async function initUTMTracker() {
     return; // 已有数据，不再保存新数据
   }
   
-  // 首次访问，保存数据（即使没有 UTM 参数也保存访问信息）
+  // 首次访问，保存数据
   const currentUTMParams = extractUTMParams();
   await saveUTMParams(currentUTMParams);
 }
 
 // 页面加载时自动执行
 if (typeof window !== 'undefined') {
-  // 先将工具函数暴露到全局对象（确保在初始化完成前就可以使用）
+  // 确保在 DOM 加载后执行
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initUTMTracker);
+  } else {
+    initUTMTracker();
+  }
+
+  // 将工具函数暴露到全局对象（方便调试和外部调用）
   window.jitaiUTM = {
     getParams: getUTMParams,
     getVisitInfo: getVisitInfo,
@@ -254,14 +235,6 @@ if (typeof window !== 'undefined') {
     addUTMToUrl: addUTMToUrl,
     init: initUTMTracker
   };
-  
-  // 确保在 DOM 加载后执行初始化
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initUTMTracker);
-  } else {
-    initUTMTracker();
-  }
 }
 
 export default initUTMTracker;
-

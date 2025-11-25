@@ -9,7 +9,6 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
     currentLocale,
 }) => {
     const [isMobile, setIsMobile] = useState(false);
-    const [demoUrl, setDemoUrl] = useState("https://demo.jit.pro/wanyun/AdminApp");
 
     const content = currentLocale === "zh" ? CONTENT_ZH : CONTENT_EN;
 
@@ -30,36 +29,24 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
         };
     }, []);
 
-    // 等待 UTM 追踪器初始化后更新链接 URL
-    useEffect(() => {
-        let retryCount = 0;
-        const maxRetries = 50; // 最多重试 50 次（5秒）
-        
-        // 等待 window.jitaiUTM 初始化完成
-        const updateUrl = () => {
-            if (typeof window !== 'undefined' && window.jitaiUTM) {
-                const urlWithUTM = addUTMToUrl("https://demo.jit.pro/wanyun/AdminApp");
-                setDemoUrl(urlWithUTM);
-            } else if (retryCount < maxRetries) {
-                // 如果还没初始化，延迟重试
-                retryCount++;
-                setTimeout(updateUrl, 100);
-            }
-            // 如果超过最大重试次数，保持原始 URL
-        };
-
-        // 如果已经初始化，立即更新
-        if (typeof window !== 'undefined' && window.jitaiUTM) {
-            updateUrl();
-        } else {
-            // 否则等待 DOMContentLoaded 或延迟检查
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', updateUrl);
-            } else {
-                setTimeout(updateUrl, 100);
-            }
+    /**
+     * 处理按钮点击事件，添加 UTM 参数后跳转
+     */
+    const handleButtonClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        // 移动端跳转到教程页面，不需要添加 UTM 参数
+        if (isMobile) {
+            return; // 让默认的 href 行为执行
         }
-    }, []);
+
+        // 阻止默认跳转
+        e.preventDefault();
+        
+        // 获取带 UTM 参数的 URL
+        const urlWithUTM = addUTMToUrl("https://demo.jit.pro/wanyun/AdminApp");
+        
+        // 在新标签页打开
+        window.open(urlWithUTM, '_blank');
+    };
 
     return (
         <section id="section-0" className={styles.hero}>
@@ -111,8 +98,9 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                             href={
                                 isMobile
                                     ? "./docs/tutorial"
-                                    : demoUrl
+                                    : addUTMToUrl("https://demo.jit.pro/wanyun/AdminApp")
                             }
+                            onClick={handleButtonClick}
                             target="_blank"
                         >
                             <span className={styles.buttonText}>

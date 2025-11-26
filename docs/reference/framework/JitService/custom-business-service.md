@@ -200,6 +200,13 @@ Service elements support defining and triggering custom events.
 }
 ```
 
+**Trigger Event**: Trigger using the `app.event.publish` method.
+
+```python
+# sender: fullName of the service element declaring the event . event name
+app.event.publish(sender="services.MyService.CustomEvent", args=("paramValue",), kwargs={"key": "value"})
+```
+
 ```python title="Trigger Event Example"
 def processData(self, data):
     # Data processing logic

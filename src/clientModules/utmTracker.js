@@ -174,20 +174,21 @@ export function addUTMToUrl(url) {
   try {
     const urlObj = new URL(url, window.location.origin);
     
-    // 添加 UTM 参数
+    // 1. 添加 UTM 参数
+    // 直接添加会追加到 URL 参数末尾（如果已存在则原地更新）
     if (visitInfo.utm) {
       Object.entries(visitInfo.utm).forEach(([key, value]) => {
         if (value) urlObj.searchParams.set(key, value);
       });
     }
     
-    // 添加访问信息参数（first_visit 转换为 +8 时区）
+    // 2. 添加访问信息参数（追加在最后）
     const params = {
-      first_visit: convertToUTC8(visitInfo.firstVisit),
+      referrer: visitInfo.referrer,
+      landing_page: visitInfo.landingPage,
       user_agent: visitInfo.userAgent,
       ip: visitInfo.ip,
-      referrer: visitInfo.referrer,
-      landing_page: visitInfo.landingPage
+      first_visit: convertToUTC8(visitInfo.firstVisit)
     };
     
     Object.entries(params).forEach(([key, value]) => {

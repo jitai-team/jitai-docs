@@ -249,14 +249,14 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
     useEffect(() => {
         if (sdkLoaded && typeof window !== 'undefined') {
             const isMobile = window.innerWidth <= 768;
-            console.log('SDK loaded, checking if should open assistant. isMobile:', isMobile);
+            // console.log('SDK loaded, checking if should open assistant. isMobile:', isMobile);
             
             // 只在 PC 端自动打开
             if (!isMobile) {
                 // 检查版本，如果版本不匹配则清除旧缓存
                 const cachedVersion = localStorage.getItem(AI_ASSISTANT_VERSION_KEY);
                 if (cachedVersion !== CURRENT_VERSION) {
-                    console.log('Version mismatch, clearing old cache. Old version:', cachedVersion, 'Current version:', CURRENT_VERSION);
+                    // console.log('Version mismatch, clearing old cache. Old version:', cachedVersion, 'Current version:', CURRENT_VERSION);
                     // 清除旧的缓存 key（兼容旧版本）
                     localStorage.removeItem('jitai-assistant-open-state');
                     localStorage.removeItem(AI_ASSISTANT_HIDE_KEY);
@@ -265,14 +265,14 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
                 
                 // 检查是否隐藏：如果 is_hide_jitai_assistant 存在，说明用户之前关闭了
                 const isHidden = localStorage.getItem(AI_ASSISTANT_HIDE_KEY) === 'true';
-                console.log('AI assistant hide state:', isHidden);
+                // console.log('AI assistant hide state:', isHidden);
                 if (isHidden) {
                     // 如果缓存存在，说明用户之前关闭了，保持关闭状态
-                    console.log('User previously closed assistant, keeping closed');
+                    // console.log('User previously closed assistant, keeping closed');
                     setIsAssistantOpen(false);
                 } else {
                     // 如果没有缓存，默认打开（延迟 4 秒）
-                    console.log('No hide cache found, will open by default after 2 seconds');
+                    // console.log('No hide cache found, will open by default after 2 seconds');
                     const timer = setTimeout(() => {
                         setIsAssistantOpen(true);
                     }, 4000);
@@ -402,33 +402,33 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
                 aiAssistant.subscribeEvent(
                     "AI:aiagent_webpage.beforeNodeRun",
                     (data: any) => {
-                        console.log("AI Agent Before Node Run:", data);
+                        // console.log("AI Agent Before Node Run:", data);
                     }
                 );
 
                 aiAssistant.subscribeEvent(
                     "AI:aiagent_webpage.afterNodeRun",
                     (data: any) => {
-                        console.log("AI Agent After Node Run:", data);
+                        // console.log("AI Agent After Node Run:", data);
                     }
                 );
 
                 aiAssistant.subscribeEvent(
                     "AI:aiagent_webpage.callTool.preEvent",
                     (data: any) => {
-                        console.log("AI Agent Call Tool Pre Event:", data);
+                        // console.log("AI Agent Call Tool Pre Event:", data);
                     }
                 );
 
                 aiAssistant.subscribeEvent(
                     "AI:aiagent_webpage.callTool.postEvent",
                     (data: any) => {
-                        console.log("AI Agent Call Tool Post Event:", data);
+                        // console.log("AI Agent Call Tool Post Event:", data);
                     }
                 );
                 
                 // SDK 初始化完成，设置状态
-                console.log("AI Assistant SDK initialized successfully");
+                // console.log("AI Assistant SDK initialized successfully");
                 setSdkLoaded(true);
             } catch (error) {
                 console.error("Failed to initialize AI Assistant SDK:", error);
@@ -474,7 +474,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
                             strokeWidth="2"
                             strokeLinecap="round"
                             strokeLinejoin="round"
-                        />
+                    />
                     </svg>
                 </button>
             )}

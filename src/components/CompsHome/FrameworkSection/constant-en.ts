@@ -5,8 +5,9 @@ const CONTENT = {
   subtitle: 'An AI-native full-stack development framework built on the JAAP protocol, seamlessly integrating mainstream technologies for both AI and traditional application development — dramatically simplifying rapid application-layer development',
   color: '#3D65FD',
   learnMore: 'Learn More',
-  integrationsSubtitlePrefix: 'JitAI Framework has integrated numerous third-party frameworks and supports ',
-  integrationsSubtitleLinkText: 'developer self-extensions',
+  integrationsSubtitlePrefix: 'The Jit development framework includes extensive built-in integrations and offers robust extensibility (see the ',
+  integrationsSubtitleLinkText: 'Extension Guide',
+  integrationsSubtitleSuffix: ')',
   integrationsSubtitleLink: '/docs/extguide',
   frameworks: [
     {

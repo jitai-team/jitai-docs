@@ -35,7 +35,7 @@ export const INTEGRATIONS: IntegrationItem[] = [
   { nameZh: 'Oracle', nameEn: 'Oracle', logo: 'oracle.svg', variant: 'logo', assetSize: 'medium' },
   { nameZh: 'SQL Server', nameEn: 'SQL Server', logo: 'sqlserver.svg', variant: 'icon', assetSize: 'medium', textSize: 'large'},
   { nameZh: '达梦', nameEn: 'DM8', logo: 'dm8.jpg', variant: 'icon', assetSize: 'small', textSize: 'large' },
-  { nameZh: 'SQLite', nameEn: 'SQLite', logo: 'sqlite.svg', variant: 'logo', assetSize: 'medium' },
+  // { nameZh: 'SQLite', nameEn: 'SQLite', logo: 'sqlite.svg', variant: 'logo', assetSize: 'medium' },
 
   // AI 模型
   { nameZh: 'OpenAI', nameEn: 'OpenAI', logo: 'openai.svg', variant: 'logo', assetSize: 'small' },

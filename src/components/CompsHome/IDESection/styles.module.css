@@ -218,24 +218,13 @@
   will-change: transform;
 }
 
-/* 第二行反向滚动，创造错位效果，同时保持初始左对齐 */
-.modulesRow:nth-child(2) {
-  animation-name: slideRight;
-}
+/* 所有行统一左对齐，同步单向滚动 */
 
-@keyframes slideRight {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-/* 鼠标 hover 时暂停滚动 */
+/* 鼠标 hover 时暂停滚动（已禁用）
 .developmentModules:hover .modulesRow {
   animation-play-state: paused;
 }
+*/
 
 @keyframes slideLeft {
   0% {

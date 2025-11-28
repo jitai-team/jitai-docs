@@ -3,8 +3,9 @@ const CONTENT = {
     subtitle: "可视化编排为主，可视化编程为辅，输出可自由编辑的原生代码，简单高效而不牺牲自由度",
     color: "#3D65FD",
     videoHoverText: "点击全屏查看高清视频",
-    modulesFootnotePrefix: "JitAI IDE 已内置了多种元素的可视化编辑器，且支持",
-    modulesFootnoteLinkText: "开发者自己扩展",
+    modulesFootnotePrefix: "Jit开发工具内置了丰富的可视化编辑器，并提供强大的扩展能力（详见《",
+    modulesFootnoteLinkText: "扩展指南",
+    modulesFootnoteSuffix: "》）",
     modulesFootnoteLink: "/zh/docs/extguide/develop-backend-element-visual-editor",
     coreFeatures: [
         {

@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import styles from './styles.module.css';
 import globalStyles from '../../../pages/index.module.css';
 import CONTENT_EN from './constant-en';
 import CONTENT_ZH from './constant-zh';
+
+// Fisher-Yates 洗牌算法
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
 
 interface FrameworkSectionProps {
   currentLocale?: string;
@@ -11,8 +21,8 @@ interface FrameworkSectionProps {
 const FrameworkSection: React.FC<FrameworkSectionProps> = ({ currentLocale }) => {
   const CONTENT = currentLocale === 'zh' ? CONTENT_ZH : CONTENT_EN;
 
-  // 获取所有集成项（已经是扁平列表）
-  const allItems = CONTENT.integrations;
+  // 获取所有集成项并随机排序（每次页面加载时随机一次）
+  const allItems = useMemo(() => shuffleArray(CONTENT.integrations), [CONTENT.integrations]);
 
   return (
     <section
@@ -61,9 +71,9 @@ const FrameworkSection: React.FC<FrameworkSectionProps> = ({ currentLocale }) =>
         <div className={styles.integrationsWrapper}>
           <div className={styles.integrationsSection}>
             <div className={styles.integrationsGrid}>
-              {/* 将集成项分成3行 */}
-              {[0, 1, 2].map((rowIndex) => {
-                const itemsPerRow = Math.ceil(allItems.length / 3);
+              {/* 将集成项分成4行 */}
+              {[0, 1, 2, 3].map((rowIndex) => {
+                const itemsPerRow = Math.ceil(allItems.length / 4);
                 const startIndex = rowIndex * itemsPerRow;
                 const endIndex = startIndex + itemsPerRow;
                 const rowItems = allItems.slice(startIndex, endIndex);
@@ -142,6 +152,7 @@ const FrameworkSection: React.FC<FrameworkSectionProps> = ({ currentLocale }) =>
               >
                 {CONTENT.integrationsSubtitleLinkText}
               </a>
+              {CONTENT.integrationsSubtitleSuffix}
             </p>
           </div>
         </div>

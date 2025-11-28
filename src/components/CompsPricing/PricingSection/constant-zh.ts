@@ -32,7 +32,7 @@ const PRICING_PLANS: PricingPlan[] = [
     analyticsCssClass: 'analytics-payFree analytics-download',
     features: [
       '✓ 仅用于开发环境',
-      '✓ 1个应用',
+      '✓ 3个应用',
       '✓ 无限组织数',
       '✓ 桌面端开发',
       '✓ 在线开发',

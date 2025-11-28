@@ -1,14 +1,14 @@
 ---
 sidebar_position: 1
 slug: aggr-models
-description: "API reference documentation for Aggregation Models. Complete specifications, methods, and examples."
+description: "API reference documentation for Aggregation Model. Complete specifications, methods, and examples."
 toc_min_heading_level: 2
 toc_max_heading_level: 4
 ---
 
-# Aggregation Models
+# Aggregation Model
 
-Aggregation Models do not correspond directly to single database tables. Instead, they are virtual data tables generated through flexible configurations that correlate, merge, and calculate data from multiple data table models to meet specific business requirements. They function similarly to database views but are processed entirely dynamically at the application layer without creating actual view objects in the database.
+Aggregation Model do not correspond directly to single database tables. Instead, they are virtual data tables generated through flexible configurations that correlate, merge, and calculate data from multiple data table models to meet specific business requirements. They function similarly to database views but are processed entirely dynamically at the application layer without creating actual view objects in the database.
 
 
 :::tip Use Cases
@@ -72,7 +72,7 @@ class SalesAnalysisModel(AggrModel):
         """
 ```
 
-The field configuration and `Meta` structure of Aggregation Models are fundamentally consistent with Data Models. The only distinction is that in Data Models, `Meta.dbTable` corresponds to a database table name, whereas in Aggregation Models, it contains a [TQL expression](../TQL).
+The field configuration and `Meta` structure of Aggregation Model are fundamentally consistent with Data Models. The only distinction is that in Data Models, `Meta.dbTable` corresponds to a database table name, whereas in Aggregation Model, it contains a [TQL expression](../TQL).
 
 ### \_\_init\_\_.py Initialization
 
@@ -181,7 +181,7 @@ class OrderJoinModel(AggrModel):
 
 ## Model Functions
 
-Aggregation Models support most data query functions but **do not support** direct data modification operations such as `save`, `delete`, `create`, or `update`.
+Aggregation Model support most data query functions but **do not support** direct data modification operations such as `save`, `delete`, `create`, or `update`.
 
 ### Built-in Model Functions {#model-built-in-functions}
 
@@ -268,7 +268,7 @@ stats = SalesAggrModel.statisticFieldData(
 
 ### Multi-Level Aggregation and Nesting
 
-Aggregation Models support layered calculations, allowing the result of one aggregation model to serve as the input for another (referencing another model or subquery in the `From` clause).
+Aggregation Model support layered calculations, allowing the result of one aggregation model to serve as the input for another (referencing another model or subquery in the `From` clause).
 
 **Example:**
 

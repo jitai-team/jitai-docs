@@ -1,11 +1,11 @@
 ---
 sidebar_position: 5
 slug: TQL
-title: TQL Guide
+title: TQL Expression 
 description: "TQL Expression API Reference. Complete specifications, methods, and examples."
 ---
 
-# TQL Expression Guide
+# TQL Expression
 
 TQL (Table Query Language) is an object-oriented query language designed for constructing complex queries based on data models. It adopts a structure similar to SQL but is optimized for object models.
 

@@ -32,7 +32,7 @@ const PRICING_PLANS: PricingPlan[] = [
     analyticsCssClass: 'analytics-payFree analytics-download',
     features: [
       '✓ 仅用于开发环境',
-      '✓ 1个应用',
+      '✓ 3个应用',
       '✓ 无限组织数',
       '✓ 桌面端开发',
       '✓ 在线开发',
@@ -137,7 +137,7 @@ const CONTENT = {
     yearly: '订阅',
     buyout: '支付',
   },
-  contactSalesLink: 'https://wy.jit.pro/whwy/jitRDM/publicPortal/ContactSalesCn',
+  contactSalesLink: 'https://wy.jit.pro/whwy/aicrm/s/zhcontactus',
   moneyUnit: 'US$ ',
   priceUnit: {
     monthly: '个/月',

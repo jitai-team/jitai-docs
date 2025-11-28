@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="static/img/jit.png" alt="JitAi Logo" width="200" />
+<img src="https://jit-www.oss-accelerate.aliyuncs.com/logo/logo_title.svg" alt="JitAi Logo" width="400" />
 
 **为AI而生的下一代应用开发技术体系**
 

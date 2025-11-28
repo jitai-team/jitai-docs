@@ -1,13 +1,13 @@
 ---
 sidebar_position: 4
 slug: jcs-cloud-publishing-service
-description: "JCS cloud publishing service for application deployment. Publish and distribute JitAi applications via cloud infrastructure."
+description: "JCS cloud publishing service for application deployment. Publish and distribute JitAI applications via cloud infrastructure."
 title: JCS Cloud Application Publishing Service
 ---
 
 # JCS Cloud Application Publishing Service
 
-JCS (JitAi Cloud Service) is the official cloud application publishing service maintained and deployed by JitAi. As a centralized public service built on the JitAi platform itself, JCS operates on official JitNodes to provide enterprise-grade application distribution capabilities.
+JCS (JitAI Cloud Service) is the official cloud application publishing service maintained and deployed by JitAI. As a centralized public service built on the JitAI platform itself, JCS operates on official JitNodes to provide enterprise-grade application distribution capabilities.
 
 Each JitNode establishes automatic connectivity with JCS during startup, maintaining continuous synchronization of runtime environment configurations, node status, and version information. Through JCS, individual JitNodes gain access to the centralized cloud application repository, enabling seamless publication and deployment of shared applications across organizational boundaries and the broader network ecosystem.
 

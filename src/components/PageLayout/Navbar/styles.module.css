@@ -45,13 +45,13 @@
 .leftSection {
   display: flex;
   align-items: center;
-  gap: 5rem;
+  gap: 2.5rem;
 }
 
 .rightSection {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .logo {
@@ -74,13 +74,13 @@
 }
 
 .logo:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
   filter: drop-shadow(0 4px 8px rgba(61, 101, 253, 0.3));
 }
 
 .navLinks {
   display: flex;
-  gap: 0.5rem;
+  gap: 2rem;
   align-items: center;
 }
 
@@ -196,7 +196,6 @@
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  padding: 0rem 1rem;
   border-radius: 0;
   box-shadow: none;
   transition: color 0.2s;
@@ -205,7 +204,6 @@
   overflow: visible;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
 }
 
 .navLinks button::before {
@@ -220,7 +218,7 @@
   transition: transform 0.4s ease;
 }
 
-.navLinks button:hover, .navLinks button:focus {
+.navLinks button:hover {
   color: #3D65FD;
   background: none;
   border: none;
@@ -328,7 +326,7 @@
   display: none;
   align-items: center;
   margin-right: 1rem;
-  z-index: 1001;
+  z-index: 1000;
   position: relative;
 }
 

@@ -7,7 +7,7 @@ description: "自定义业务服务 API 参考文档。完整的规格说明、�
 
 服务元素分层结构为Meta（services.Meta） → Type（services.NormalType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建服务实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的services.NormalType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的services.NormalType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素
@@ -186,6 +186,7 @@ def processUser(self, userId, userName):
 ### 事件定义与使用 {#event-definition-and-usage} 
 服务元素支持定义和触发自定义事件。
 
+**事件定义**: 在服务e.json文件中添加触发的事件声明 `eventDescs`
 ```json title="事件定义示例"
 {
     "eventDescs": [
@@ -198,6 +199,12 @@ def processUser(self, userId, userName):
 }
 ```
 
+**触发事件**：使用`app.event.publish`方法触发
+
+```python
+# sender：声明事件的服务元素的fullName.事件名
+app.event.publish(sender="services.MyService.CustomEvent", args=("paramValue",), kwargs={"key": "value"})
+```
 ```python title="触发事件示例"
 def processData(self, data):
     # 处理数据逻辑

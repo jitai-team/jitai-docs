@@ -5,7 +5,7 @@ description: "Implement custom request authentication with backend interceptors.
 ---
 
 # Using Interceptors for Custom Request Authentication
-When systems need to provide APIs to external partners, authentication is often required to restrict unauthorized access. While JitAi's API authorization elements can expose API interfaces to third parties (the recommended approach), this requires callers to use JitAi's client SDK. When callers cannot use the SDK, you can leverage [backend interceptors](../../reference/framework/JitService/backend-interceptor) to implement custom authentication methods that accommodate different calling patterns. This document demonstrates custom Bearer Token authentication as an example.
+When systems need to provide APIs to external partners, authentication is often required to restrict unauthorized access. While JitAI's API authorization elements can expose API interfaces to third parties (the recommended approach), this requires callers to use JitAI's client SDK. When callers cannot use the SDK, you can leverage [backend interceptors](../../reference/framework/JitService/backend-interceptor) to implement custom authentication methods that accommodate different calling patterns. This document demonstrates custom Bearer Token authentication as an example.
 
 ## Creating interceptor instance element directory {#creating-interceptor-directory}
 Interceptor elements are not currently supported for creation in the visual development tool. Developers should use the desktop version for [local development and debugging](./local-development-and-debugging) and manually create the element directory within the application directory.
@@ -88,7 +88,7 @@ from .interceptor import BearerToken
 ```
 
 ## Creating service functions {#creating-service-functions}
-Developers can use JitAi's visual development tool to quickly create service elements and functions.
+Developers can use JitAI's visual development tool to quickly create service elements and functions.
 
 ![Visual Creation of Order Query Function](./img/jitservice/visual-create-order-query-service-function.png "Visual Creation of Order Query Function")
 

@@ -1,13 +1,13 @@
 ---
 sidebar_position: 1
 slug: download-installation
-description: "Download and install JitAi runtime platform. Desktop version for Windows/macOS development, server version for production deployment."
+description: "Download and install JitAI runtime platform. Desktop version for Windows/macOS development, server version for production deployment."
 ---
 # Download and Installation
 
-As introduced in [Basic Concepts](../basic-concept/), JitAi is a cutting-edge application runtime platform and comprehensive technology ecosystem. To begin developing applications with JitAi, you must first install the JitAi runtime platform.
+As introduced in [Basic Concepts](../basic-concept/), JitAI is a cutting-edge application runtime platform and comprehensive technology ecosystem. To begin developing applications with JitAI, you must first install the JitAI runtime platform.
 
-JitAi offers two installation package versions:
+JitAI offers two installation package versions:
 
 - **Desktop Version**: Designed for developers to build, run, debug, and publish applications on personal workstations, with support for Windows and macOS systems
 - **Server Version**: Engineered for deploying application systems on server infrastructure, supporting cluster deployments and serving as both testing and production environments

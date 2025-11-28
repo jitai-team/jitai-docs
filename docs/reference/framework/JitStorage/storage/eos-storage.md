@@ -8,9 +8,9 @@ sidebar_label: "EOS Storage"
 
 EOS Storage is an enterprise-level storage solution based on China Mobile Cloud EOS (Cloud Object Storage) service, providing high-performance and high-availability cloud storage capabilities. It supports large-scale data storage and high-concurrency access, specifically designed for file storage requirements of enterprise core business systems.
 
-The EOS Storage element has a hierarchical structure of Meta (storages.Meta) → Type (storages.EosType) → Instance. Developers can quickly create EOS storage instance elements through JitAi's visual development tools.
+The EOS Storage element has a hierarchical structure of Meta (storages.Meta) → Type (storages.EosType) → Instance. Developers can quickly create EOS storage instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official storages.EosType element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official storages.EosType element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

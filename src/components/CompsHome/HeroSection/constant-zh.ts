@@ -9,8 +9,8 @@ const CONTENT = {
     cards: [
         {
             title: "生产级AI应用开发",
-            description: `AI&UI协作的AI应用开发框架，快速开发人类和AI协作的AI应用。
-            <br/>传统信息化应用开发框架，快速开发的企业信息化系统。`,
+            description: `AI大模型、AI工作流、AI智能体以及AI&UI协作的AI助理的全栈开发框架，极简化生产级AI应用的快速开发。
+            <br/>全面的信息化技术的集成，极简化AI原生的企业级IT应用的快速开发。`,
             color: "#3D65FD",
         },
         // <br/>Doc/Excel助手应用开发框架，快速定制企业专用文档编写AI助手。
@@ -38,12 +38,12 @@ const CONTENT = {
       可视化编排分布式集群`,
             color: "#3D65FD",
         },
-        // {
-        //   title: '无缝集成与无限扩展',
-        //   description: `可无限集成任何技术到编排模式。<br/>
-        //   可无限扩展和改写任何集成。`,
-        //   color: '#3D65FD'
-        // }
+        {
+          title: '无缝集成与无限扩展',
+          description: `可无限集成任何技术到编排模式。<br/>
+          可无限扩展和改写任何集成。`,
+          color: '#3D65FD'
+        }
     ],
 };
 

@@ -9,9 +9,9 @@ sidebar_label: "WeChat Pay"
 # WeChat Pay
 WeChat Pay is a payment processing element integrated with WeChat Pay's official API, implementing multiple payment methods including QR code payment, H5 payment, and mini-program payment based on WeChat Pay V2 API. It handles order creation, payment status queries, and callback notification processing, providing seamless payment experience within the WeChat ecosystem. WeChat Pay is suitable for WeChat mini-programs, official accounts, apps, and other WeChat ecosystem application scenarios, simplifying payment integration complexity through standardized APIs.
 
-The hierarchical structure of WeChat Pay elements is Meta (pays.Meta) → Type (pays.WechatPayType) → Instance. Developers can quickly create WeChat Pay instance elements through JitAi's visual development tools.
+The hierarchical structure of WeChat Pay elements is Meta (pays.Meta) → Type (pays.WechatPayType) → Instance. Developers can quickly create WeChat Pay instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `pays.WechatPayType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `pays.WechatPayType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

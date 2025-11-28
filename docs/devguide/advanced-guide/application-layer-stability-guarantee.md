@@ -1,7 +1,7 @@
 ---
 sidebar_position: 7
 slug: application-layer-stability-guarantee
-description: "Application layer stability measures in JitAi. Version control, rollback strategies, hot updates, and zero-downtime deployment."
+description: "Application layer stability measures in JitAI. Version control, rollback strategies, hot updates, and zero-downtime deployment."
 ---
 
 import Tabs from '@theme/Tabs';
@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 # Application Layer Stability Guarantee
 
-JitAi supports industry-standard and advanced stability assurance measures at the application layer.
+JitAI supports industry-standard and advanced stability assurance measures at the application layer.
 
 Application layer updates are characterized by **relatively localized impact, high update frequency, and sensitivity to user experience**. This requires balancing stability with the ability to iterate rapidly.
 
@@ -24,7 +24,7 @@ Application layer updates are characterized by **relatively localized impact, hi
 
 ### Multiple runtime environments {#multiple-runtime-environments}
 
-Create multiple runtime environments in the JitAi operations platform, adopting a progressive validation workflow: **Test Environment → Beta Environment → Production Environment**.
+Create multiple runtime environments in the JitAI operations platform, adopting a progressive validation workflow: **Test Environment → Beta Environment → Production Environment**.
 
 ```mermaid
 graph TD
@@ -117,7 +117,7 @@ graph TD
 
 ### Node-level canary release {#node-level-canary-release}
 
-In the JitAi cluster architecture, one JitNode serves as the load balancer, controlling traffic distribution. The runtime environment entry address resolves to this node.
+In the JitAI cluster architecture, one JitNode serves as the load balancer, controlling traffic distribution. The runtime environment entry address resolves to this node.
 
 ```mermaid
 graph TB
@@ -225,11 +225,11 @@ Observability features are currently under development and will be available soo
 
 ### Integrating with OpenTelemetry and APM ecosystem {#integrating-with-opentelemetry-and-apm-ecosystem}
 
-The JitAi Application Runtime Platform supports [OpenTelemetry](https://opentelemetry.io/), the industry-standard framework for observability. OpenTelemetry plays an essential role in technology evolution, ecosystem integration, and industry best practices.
+The JitAI Application Runtime Platform supports [OpenTelemetry](https://opentelemetry.io/), the industry-standard framework for observability. OpenTelemetry plays an essential role in technology evolution, ecosystem integration, and industry best practices.
 
 ```mermaid
 graph TB
-    subgraph "JitAi Three-Layer Architecture"
+    subgraph "JitAI Three-Layer Architecture"
         subgraph "Application Layer"
             App1[Business Application A<br/>Application Instance Running]
             App2[Business Application B<br/>Application Instance Running]
@@ -259,7 +259,7 @@ graph TB
     
     subgraph "Visualization and Analysis"
         Grafana[Grafana Dashboard<br/>Three-Layer Architecture Monitoring]
-        JitAiConsole[JitAi Operations Platform<br/>Built-in APM Console]
+        JitAIConsole[JitAI Operations Platform<br/>Built-in APM Console]
         AlertManager[Alert System<br/>JAAP Exception Alerts]
     end
     
@@ -295,9 +295,9 @@ graph TB
     Jaeger --> Grafana
     Prometheus --> Grafana
     ES --> Grafana
-    Jaeger --> JitAiConsole
-    Prometheus --> JitAiConsole
-    ES --> JitAiConsole
+    Jaeger --> JitAIConsole
+    Prometheus --> JitAIConsole
+    ES --> JitAIConsole
     
     %% Alert connections
     Prometheus --> AlertManager

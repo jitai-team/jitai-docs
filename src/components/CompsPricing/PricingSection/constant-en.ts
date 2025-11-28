@@ -33,7 +33,7 @@ const PRICING_PLANS: PricingPlan[] = [
     analyticsCssClass: 'analytics-payFree analytics-download',
     features: [
       '✓ For development environment only',
-      '✓ 1 app only',
+      '✓ 3 app only',
       '✓ Unlimited organizations',
       '✓ Desktop development',
       '✓ Online development',
@@ -137,7 +137,7 @@ const CONTENT = {
     yearly: 'Subscribe',
     buyout: 'Pay',
   },
-  contactSalesLink: 'https://wy.jit.pro/whwy/jitRDM/publicPortal/contactus',
+  contactSalesLink: 'https://wy.jit.pro/whwy/aicrm/s/contactus',
   moneyUnit: '$',
   priceUnit: {
     monthly: 'per month',

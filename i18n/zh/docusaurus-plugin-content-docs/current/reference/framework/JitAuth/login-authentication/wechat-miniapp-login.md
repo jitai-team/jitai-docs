@@ -5,9 +5,9 @@ description: "微信小程序登录 API 参考文档。完整的规格说明、�
 # 微信小程序登录
 微信小程序登录是基于微信官方授权机制的认证方式，负责小程序授权登录、用户身份验证和账号绑定管理。它支持自动获取openId/unionId等微信用户标识、绑定码机制新用户注册、Session密钥安全管理和账号绑定/解绑操作，与微信小程序生态深度集成。
 
-微信小程序登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.WeChatMiniType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建微信小程序登录实例元素。
+微信小程序登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.WeChatMiniType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建微信小程序登录实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的auths.loginTypes.WeChatMiniType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的auths.loginTypes.WeChatMiniType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

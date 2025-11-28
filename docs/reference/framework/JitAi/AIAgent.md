@@ -9,9 +9,9 @@ sidebar_label: "AIAgent"
 # AIAgent
 AIAgent is the core execution engine for AI applications, implementing reasoning and action loop decision-making based on the ReAct architecture. It is responsible for tool orchestration, dynamic composition and invocation of various business tools and services, maintaining dialogue context, task execution state and data flow state, supporting decomposition and execution of complex business logic, and providing role-based tool access permission management.
 
-The AIAgent element hierarchical structure is Meta (aiagents.Meta) → Type (aiagents.ReActType) → Instance. Developers can quickly create AIAgent instance elements through JitAi's visual development tools.
+The AIAgent element hierarchical structure is Meta (aiagents.Meta) → Type (aiagents.ReActType) → Instance. Developers can quickly create AIAgent instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements, or override the official aiagents.ReActType element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements, or override the official aiagents.ReActType element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start 
 ### Creating Instance Elements
@@ -592,7 +592,7 @@ Knowledge base integration supports two working modes:
 
 ### Custom Callback Handlers {#custom-callback-handlers}
 
-JitAi's ReActAgent is built on LangGraph, and callback handlers are used to monitor and handle various key process events such as Agent reasoning and tool calls. It is compatible with all callback methods defined in [langchain_core.callbacks.BaseCallbackHandler](https://python.langchain.com/api_reference/core/callbacks/langchain_core.callbacks.base.BaseCallbackHandler.html#langchain_core.callbacks.base.BaseCallbackHandler) as well as pre_model_hook and post_model_hook functions (refer to the definitions of pre_model_hook and post_model_hook in [LangChain official documentation](https://langchain-ai.github.io/langgraph/reference/agents/?h=create_react#langgraph.prebuilt.chat_agent_executor.create_react_agent)).
+JitAI's ReActAgent is built on LangGraph, and callback handlers are used to monitor and handle various key process events such as Agent reasoning and tool calls. It is compatible with all callback methods defined in [langchain_core.callbacks.BaseCallbackHandler](https://python.langchain.com/api_reference/core/callbacks/langchain_core.callbacks.base.BaseCallbackHandler.html#langchain_core.callbacks.base.BaseCallbackHandler) as well as pre_model_hook and post_model_hook functions (refer to the definitions of pre_model_hook and post_model_hook in [LangChain official documentation](https://langchain-ai.github.io/langgraph/reference/agents/?h=create_react#langgraph.prebuilt.chat_agent_executor.create_react_agent)).
 
 Through custom callback handlers, developers can flexibly intervene in various stages such as before and after model reasoning, before and after tool calls, etc., to implement advanced features such as logging, parameter validation, and context enhancement.
 

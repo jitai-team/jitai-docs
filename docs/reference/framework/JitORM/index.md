@@ -4,7 +4,7 @@ description: "JitORM Overview Reference - API documentation for developers. Comp
 ---
 
 # JitORM Overview
-JitORM (JitAi Object-Relational Mapping) is an object-relational mapping framework composed of [Database Elements](/docs/reference/framework/JitORM/database), [Data Type Elements](/docs/reference/framework/JitORM/data-types), and [Model Elements](/docs/reference/framework/JitORM/data-models) as core components, while also providing auxiliary data query and operation tools such as [Q Expressions](/docs/reference/framework/JitORM/q-expressions) and [TQL](/docs/reference/framework/JitORM/TQL).
+JitORM (JitAI Object-Relational Mapping) is an object-relational mapping framework composed of [Database Elements](/docs/reference/framework/JitORM/database), [Data Type Elements](/docs/reference/framework/JitORM/data-types), and [Model Elements](/docs/reference/framework/JitORM/data-models) as core components, while also providing auxiliary data query and operation tools such as [Q Expressions](/docs/reference/framework/JitORM/q-expressions) and [TQL](/docs/reference/framework/JitORM/TQL).
 
 ## Database
 Database elements encapsulate extensive technical implementations for database integration, automatically managing database connections, supporting the following multiple databases:
@@ -15,10 +15,10 @@ Database elements encapsulate extensive technical implementations for database i
 - Microsoft SQL Server
 - PostgreSQL
 
-JitAi supports creating multiple database element instances within one application for integration with multiple database instances.
+JitAI supports creating multiple database element instances within one application for integration with multiple database instances.
 
 ## Data Types
-JitAi provides various data types for defining field types of business entity objects, with each data type encapsulating corresponding business functionality and UI rendering logic.
+JitAI provides various data types for defining field types of business entity objects, with each data type encapsulating corresponding business functionality and UI rendering logic.
 
 - **Basic Field Types**: Single-line text, multi-line text, number, amount, percentage, rich text, number, serial number
 - **Selector Types**: Option group single/multiple selection, dropdown selection, checkbox, date time

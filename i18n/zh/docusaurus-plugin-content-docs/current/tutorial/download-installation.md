@@ -1,12 +1,12 @@
 ---
 sidebar_position: 2
 slug: download-installation
-description: "下载安装JitAi - 支持Windows、macOS和Docker。完整的安装指南，包括激活、服务器部署和环境配置。"
+description: "下载安装JitAI - 支持Windows、macOS和Docker。完整的安装指南，包括激活、服务器部署和环境配置。"
 ---
 
 # 下载安装
 
-JitAi安装包分为桌面版（支持Windows、Mac）和服务器版（提供Docker镜像）。
+JitAI安装包分为桌面版（支持Windows、Mac）和服务器版（提供Docker镜像）。
 
 ## 桌面版
 
@@ -99,7 +99,7 @@ docker run -itd --name jitnode \
 
 ## 常见问题
 
-安装完成后，建议你详细了解 JitAi 的目录组织架构，以便更好地进行后续开发和管理工作，请参阅 [JitNode目录](../reference/runtime-platform/jitnode-directory) 。
+安装完成后，建议你详细了解 JitAI 的目录组织架构，以便更好地进行后续开发和管理工作，请参阅 [JitNode目录](../reference/runtime-platform/jitnode-directory) 。
 
 <details>
 <summary>桌面版启动失败？</summary>

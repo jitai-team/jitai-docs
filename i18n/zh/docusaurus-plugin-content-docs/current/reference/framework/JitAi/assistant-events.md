@@ -1,248 +1,111 @@
 ---
 sidebar_position: 7
 slug: assistant-events
-description: "助理事件 API 参考文档。完整的规格说明、方法和示例。"
+description: "助理事件参考文档。完整的规格说明、方法和示例。"
 ---
 
 # 助理事件
-助理事件是专用于AI助理交互的事件处理，它负责监听AI助理的执行过程、状态变化和用户交互，提供用户意图识别、助理切换、会话管理等核心交互事件的处理能力。
 
-助理事件元素分层结构为Meta（events.Meta） → Type（events.AIAssistantType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建助理事件实例元素。
+助理事件 (`events.AIAssistantType`) 是极态平台中专用于 AI 助理 (AI Assistant) 交互的事件处理器。它负责监听 AI 助理的执行过程、状态变化和用户交互。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的events.AIAssistantType元素，以实现自己的封装。
+**核心机制**：助理事件**不会影响** AI 助理流程的正常运行。它仅在合适的时机（如运行前后、节点审批时）触发事件消息以执行额外的业务逻辑（如审计、通知）。这些业务逻辑的运行是**旁路**的，旨在确保 AI 助理的主流程始终保持独立和稳定。
 
-## 快速开始 
+助理事件适用于增强 AI 助理能力的旁路场景，例如：
+
+*   **流程监控**：监听助理运行状态，记录执行日志。
+*   **协同工作**：在助理执行前后触发其他助理或业务逻辑。
+*   **人工介入**：监听人工审核节点的审批动作（同意/拒绝/回复）。
+*   **节点控制**：在特定流程节点执行前后进行数据校验或状态同步。
+
+助理事件元素分层结构为 Meta (`events.Meta`) → Type (`events.AIAssistantType`) → 实例，开发者可通过可视化开发工具快捷地创建助理事件实例元素。
+
+## 快速开始
+
 ### 创建实例元素
+
 #### 目录结构
-```text title="推荐目录结构"
+
+在 `events/` 目录下创建一个新的事件目录（例如 `AssistantMonitorEvent`），标准结构如下：
+
+```text
 events/
-└── testAssistantEvents/
-    ├── __init__.py
-    ├── e.json
-    └── inner.py
+└── AssistantMonitorEvent/   # [目录] 事件元素名称
+    ├── e.json               # [文件] 核心配置文件
 ```
 
 #### e.json文件
-```json title="e.json配置文件"
+
+```json title="events/AssistantMonitorEvent/e.json"
 {
-  "asyncType": false,
-  "title": "测试助理事件",
-  "sender": "aiassistants.toolTest",
+  "title": "助理运行监控事件",
+  "type": "events.AIAssistantType",
+  "sender": "aiassistants.CustomerService",
   "operate": "afterRun",
-  "func": "services.standardServicesTested.sayHello",
-  "backendBundleEntry": ".",
-  "type": "events.AIAssistantType"
+  "func": "services.LogService.record_execution",
+  "asyncType": false,
+  "backendBundleEntry": "."
 }
 ```
 
-#### 业务逻辑代码
-```python title="inner.py文件"
-# -*-coding:utf-8-*-
-from datatypes.Meta import datatypes
-
-def customFunc(eventOutData):
-    """
-    自定义事件处理函数
-    :param eventOutData: 事件输出数据
-    """
-    # 处理事件数据的业务逻辑
-    pass
-```
-
-#### 调用示例
-```python title="获取和使用助理事件"
-# 获取助理事件实例
-event = app.getElement("events.testAssistantEvents")
-
-# 事件会自动在AI助理执行afterRun时触发
-# 调用指定的目标函数：services.standardServicesTested.sayHello
-```
 
 ## 元素配置
+
 ### e.json配置
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|-----|---|----|---|---|
-| type | str | str | 是 | 固定值：events.AIAssistantType |
-| title | str | str | 是 | 事件显示名称 |
-| sender | str | str | 是 | 事件发送方，通常为AI助理的fullName |
-| operate | str | str | 是 | 事件触发时机：基础时机(beforeRun/afterRun)、节点时机(nodeId.beforeNodeRun等)、人工操作时机(nodeId.approved等) |
-| func | str | str | 是 | 事件触发时调用的目标函数 |
-| asyncType | bool | bool | 否 | 是否异步执行，默认false |
-| backendBundleEntry | str | str | 是 | 固定值："." |
 
-### 业务逻辑代码配置
-inner.py文件用于定义自定义的事件处理逻辑：
+| 字段名 | 类型 | 必填 | 说明 |
+| :--- | :--- | :--- | :--- |
+| `title` | String | **是** | 事件显示名称 |
+| `type` | String | **是** | 固定值：`events.AIAssistantType` |
+| `sender` | String | **是** | 事件发送方，通常为 AI 助理的 `fullName` |
+| `operate` | String | **是** | 事件触发时机，详见下文 [触发时机](#触发时机-operate) |
+| `enable` | Integer | 否 | 1: 启用, 0: 禁用 | `1` (默认) |
+| `func` | String | **是** | 指向服务函数路径 | 如：`"services.AuditSvc.log_agent_action"` |
+| `asyncType` | Boolean | 否 | 是否异步执行，默认 `false` |
+| `backendBundleEntry` | String | **是** | 固定值：`"."` |
 
-```python title="自定义处理函数示例"
-def customFunc(eventOutData):
-    """
-    自定义事件处理函数
-    :param eventOutData: 事件输出的数据
-    """
-    # 处理事件数据的业务逻辑
-    print(f"助理事件触发: {eventOutData}")
-    return eventOutData
+### 触发时机 (operate)
+
+`operate` 字段决定了事件在何时被触发，支持以下几种模式：
+
+#### 1. 基础时机 (助理级)
+监听整个 AI 助理的运行周期：
+*   `beforeRun`: 助理运行前触发。
+*   `afterRun`: 助理运行后触发。
+
+#### 2. 节点时机 (节点级)
+监听流程中特定节点的执行状态，格式为 `${nodeId}.${timing}`：
+*   `${nodeId}.beforeNodeRun`: 指定节点即将执行时触发。
+*   `${nodeId}.afterNodeRun`: 指定节点执行完成后触发。
+
+> **示例**：`node001.beforeNodeRun` (监听 node001 节点开始运行)
+
+#### 3. 人工操作时机 (交互级)
+监听人工节点（如审核、输入节点）的用户操作，格式为 `${nodeId}.${action}`：
+*   `${nodeId}.approved`: 用户点击“同意”后触发。
+*   `${nodeId}.rejected`: 用户点击“拒绝”后触发。
+*   `${nodeId}.replied`: 用户回复消息后触发。
+*   `${nodeId}.edited`: 用户编辑内容后触发。
+
+> **示例**：`approvalNode.approved` (监听审核节点被通过)
+
+## 执行函数
+
+**函数入参**
+调用函数时会将AI助理节点上配置的事件输出参数作为函数参数传入，请到AI助理元素中查看节点事件输出参数
+
+**函数示例**
+
+```python title="services/AuditSvc/service.py"
+class AuditSvc(NormalService):
+
+    def log_assistant(self, arg1, arg2, ..):
+        print(arg1.vallue)
+        print(arg2.vallue)
 ```
 
-## 方法 
-### getSender
-获取完整的事件发送方标识，格式为"sender.operate"。
+## 调试与注意事项
 
-#### 参数详解
-无参数
-
-#### 返回值
-| 类型 | 说明 |
-|---|---|
-| str | 事件发送方的完整标识 |
-
-#### 使用示例
-```python title="获取事件发送方"
-event = app.getElement("events.testAssistantEvents")
-sender = event.getSender()
-print(sender)  # 输出：aiassistants.toolTest.afterRun
-```
-
-### isValid
-验证事件是否有效，用于判断当前条件下事件是否应该触发。
-
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|-----|---|----|---|---|
-| rowObj | object | object | 否 | 数据行对象 |
-| args | tuple | tuple | 否 | 额外参数 |
-| kwargs | dict | dict | 否 | 关键字参数 |
-
-#### 返回值
-| 类型 | 说明 |
-|---|---|
-| bool | 事件是否有效 |
-
-#### 使用示例
-```python title="验证事件有效性"
-event = app.getElement("events.testAssistantEvents")
-is_valid = event.isValid()
-print(is_valid)  # 输出：True
-```
-
-### handleNode
-处理事件节点，解析事件参数并准备调用目标函数。
-
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|-----|---|----|---|---|
-| node | object | object | 是 | 事件节点对象 |
-| args | tuple | tuple | 否 | 传递给目标函数的参数 |
-| kwargs | dict | dict | 否 | 传递给目标函数的关键字参数 |
-
-#### 返回值
-| 类型 | 说明 |
-|---|---|
-| tuple | 返回处理后的(node, args, kwargs) |
-
-#### 使用示例
-```python title="处理事件节点"
-event = app.getElement("events.testAssistantEvents")
-# 通常由事件系统自动调用，开发者一般不需要直接使用
-```
-
-## 属性
-### sender
-事件发送方的标识，通常为触发事件的AI助理的fullName。
-
-### operate
-事件触发的操作时机，支持多种触发场景：
-
-- **基础时机**: `beforeRun`(助理运行前)、`afterRun`(助理运行后)
-- **节点时机**: `${nodeId}.beforeNodeRun`(节点到达时)、`${nodeId}.afterNodeRun`(节点执行后)
-- **人工操作时机**: `${nodeId}.approved`(同意后)、`${nodeId}.rejected`(拒绝后)、`${nodeId}.replied`(回复后)、`${nodeId}.edited`(编辑后)
-
-### func
-事件触发时调用的目标函数，格式：`{元素名}.{函数名}`。
-
-### asyncType
-事件是否异步执行，为true时事件处理不会阻塞主流程。
-
-## 高级特性
-### 事件参数解析机制
-助理事件具有智能的参数解析能力，会根据目标函数的参数定义自动调整传递的参数。如果目标函数没有设置参数，事件系统会自动传递空参数。
-
-```python title="参数解析示例"
-# 目标函数定义
-def targetFunction(param1, param2):
-    return f"处理参数：{param1}, {param2}"
-
-# 事件会自动解析并传递正确的参数数量和类型
-```
-
-### 节点级事件配置
-助理事件支持对AI助理流程中的特定节点进行事件监听，实现更精细的流程控制。
-
-```python title="节点级事件配置示例"
-# 监听特定节点的执行
-{
-  "title": "数据处理节点事件",
-  "sender": "aiassistants.dataProcessor",
-  "operate": "node001.beforeNodeRun",  # 监听节点node001的到达
-  "func": "services.validationService.validateData"
-}
-
-# 监听人工审核节点
-{
-  "title": "审核通过事件",
-  "sender": "aiassistants.approvalAssistant",
-  "operate": "approvalNode.approved",  # 监听审核节点的通过操作
-  "func": "services.workflowService.processApproval"
-}
-
-# 自定义事件处理逻辑
-def customFunc(eventOutData):
-    node_id = eventOutData.get("nodeId", "")
-    node_type = eventOutData.get("nodeType", "")
-    operation = eventOutData.get("operation", "")
-
-    if operation == "beforeNodeRun":
-        # 节点执行前的预处理
-        print(f"节点 {node_id} 即将执行")
-        # 可以进行数据验证、权限检查等
-
-    elif operation == "approved":
-        # 审核通过后的处理
-        approval_data = eventOutData.get("approvalData", {})
-        print(f"审核节点 {node_id} 审核通过")
-        # 可以触发后续流程、发送通知等
-
-    return eventOutData
-```
-
-### 与AI助理的协同工作
-助理事件与AI助理组件深度集成，支持多种协同场景：
-
-```python title="协同工作示例"
-# 监听助理执行完成事件进行日志记录
-{
-  "sender": "aiassistants.customerService",
-  "operate": "afterRun",
-  "func": "services.logService.recordInteraction"
-}
-
-# 监听关键业务节点进行状态同步
-{
-  "sender": "aiassistants.businessProcessor",
-  "operate": "paymentNode.afterNodeRun",
-  "func": "services.paymentService.confirmPayment"
-}
-
-# 自定义协同处理逻辑
-def customFunc(eventOutData):
-    operation = eventOutData.get("operation", "")
-
-    if operation == "afterRun":
-        # 助理执行完成后的协同处理
-        result = eventOutData.get("result", {})
-        # 可以触发其他助理、发送通知、更新状态等
-
-    return eventOutData
-```
-
-通过合理配置助理事件，可以实现AI助理行为的自动化监控、日志记录、状态同步等功能，为企业级AI应用提供完整的事件驱动支持。
+1.  **非阻塞原则**：助理事件作为旁路逻辑，不应设计为拦截器。请确保事件处理逻辑函数的稳定性，避免因事件逻辑的失败影响助理主流程的体验。
+2.  **异常处理**：务必在事件处理函数中添加 `try-except` 捕获异常，防止未处理的错误中断 AI 助理的执行。
+3.  **死循环风险**：如果在事件处理中再次触发了当前的 AI 助理（例如在 `afterRun` 中又调用该助理），会导致无限循环，请谨慎设计。
+4.  **异步执行**：对于耗时的日志记录或通知操作，建议将 `asyncType` 设置为 `true`，以减少对主流程响应时间的影响。

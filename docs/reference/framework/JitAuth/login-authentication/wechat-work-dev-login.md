@@ -5,16 +5,16 @@ description: "WeCom Proxy Development Login Reference - API documentation for de
 sidebar_label: "WeCom Proxy Development Login"
 ---
 # WeCom Proxy Development Login
-WeCom proxy development login is a login authentication Type element provided by the JitAi framework, implementing enterprise-level single sign-on based on WeCom third-party application proxy development mode. It handles WeCom OAuth authorization flow, user identity authentication, and multi-enterprise proxy management, supporting password-free login within workspace, QR code login, and callback event handling.
+WeCom proxy development login is a login authentication Type element provided by the JitAI framework, implementing enterprise-level single sign-on based on WeCom third-party application proxy development mode. It handles WeCom OAuth authorization flow, user identity authentication, and multi-enterprise proxy management, supporting password-free login within workspace, QR code login, and callback event handling.
 
-The hierarchical structure of WeCom proxy development login elements is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.QywxProxyType) → Instance. Developers can quickly create WeCom proxy development login instance elements through JitAi's visual development tools.
+The hierarchical structure of WeCom proxy development login elements is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.QywxProxyType) → Instance. Developers can quickly create WeCom proxy development login instance elements through JitAI's visual development tools.
 
 **Supported Login Methods**:
 - WeCom workspace login - Users click application directly in WeCom workspace to login
 - QR code login - Login through WeCom QR code scanning
 - Callback handling - Handle WeCom OAuth callbacks and event notifications
 
-Of course, developers can also create their own Type elements or modify the official `auths.loginTypes.QywxProxyType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `auths.loginTypes.QywxProxyType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

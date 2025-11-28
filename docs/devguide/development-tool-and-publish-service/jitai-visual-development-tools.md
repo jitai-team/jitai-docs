@@ -1,12 +1,12 @@
 ---
 sidebar_position: 2
 slug: visual-development-tool
-description: "JitAi visual development tools overview. Graphical orchestration tools for application development without coding."
+description: "JitAI visual development tools overview. Graphical orchestration tools for application development without coding."
 ---
 
 # Visual Development Tool
 
-JitAi provides developers with a comprehensive dual-mode application development environment that seamlessly integrates visual design and full-code development capabilities, combining programming and orchestration workflows (referred to as the IDE). Developers can access the application development interface by clicking the `Develop` button in the [Node Console](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment) within the DevOps management tool, or by navigating to the `Developer Portal` within the application. The IDE automatically loads the source code for all application modules, enabling developers to perform both visual editing and source code editing simultaneously.
+JitAI provides developers with a comprehensive dual-mode application development environment that seamlessly integrates visual design and full-code development capabilities, combining programming and orchestration workflows (referred to as the IDE). Developers can access the application development interface by clicking the `Develop` button in the [Node Console](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment) within the DevOps management tool, or by navigating to the `Developer Portal` within the application. The IDE automatically loads the source code for all application modules, enabling developers to perform both visual editing and source code editing simultaneously.
 
 ![IDE Homepage](./img/ide/ide-homepage.png "IDE Homepage")
 
@@ -91,7 +91,7 @@ Click the language indicator in the lower left corner of the IDE (English, Simpl
 
 ![Switch Language](./img/ide/switch-interface-display-language.gif "Switch Language")
 
-Multi-language support is one of the core elements provided by the JitAi development framework, utilized not only for IDE internationalization but also for internationalizing any other applications built on the platform.
+Multi-language support is one of the core elements provided by the JitAI development framework, utilized not only for IDE internationalization but also for internationalizing any other applications built on the platform.
 
 ## Navigation tabs {#navigation-tabs}
 All interfaces opened within the IDE are displayed as navigation tabs for efficient workflow management.

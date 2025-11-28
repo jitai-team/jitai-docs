@@ -7,9 +7,9 @@ description: "Markdown页面 API 参考文档。完整的规格说明、方法�
 # Markdown页面
 Markdown页面是专用于Markdown文档展示的页面类型，基于Python markdown库实现文档渲染能力。它负责将Markdown内容转换为HTML展示、提供代码高亮和表格渲染等特性，适用于技术文档、产品说明、帮助手册、知识库等内容展示场景。
 
-Markdown页面元素分层结构为Meta（pages.Meta） → Type（pages.MarkdownPageType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建Markdown页面实例元素。
+Markdown页面元素分层结构为Meta（pages.Meta） → Type（pages.MarkdownPageType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建Markdown页面实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的pages.MarkdownPageType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的pages.MarkdownPageType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

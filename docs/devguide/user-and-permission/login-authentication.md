@@ -5,11 +5,11 @@ description: "User authentication and login methods. Multiple authentication str
 ---
 # Login Authentication
 
-The JitAi platform supports multiple login authentication methods, including account password login, phone login, DingTalk self-built QR code login, WeCom self-built QR code login, WeChat authentication, WeChat official account authentication, WeChat mini program authentication, GitHub login, Google login, and Microsoft Teams authentication. These methods meet diverse user access and authentication needs across different scenarios, enabling enterprises and individual users to access applications conveniently and securely.
+The JitAI platform supports multiple login authentication methods, including account password login, phone login, DingTalk self-built QR code login, WeCom self-built QR code login, WeChat authentication, WeChat official account authentication, WeChat mini program authentication, GitHub login, Google login, and Microsoft Teams authentication. These methods meet diverse user access and authentication needs across different scenarios, enabling enterprises and individual users to access applications conveniently and securely.
 
 ## Creating login authentication {#creating-login-method}
 
-JitAi enables developers to freely configure and add multiple login authentication methods according to their business requirements, helping applications achieve multi-platform convenient access and unified authentication management.
+JitAI enables developers to freely configure and add multiple login authentication methods according to their business requirements, helping applications achieve multi-platform convenient access and unified authentication management.
 
 ![Login Method Creation](./img/auth/login-method-creation.png "Login Method Creation")
 
@@ -17,7 +17,7 @@ In the element tree of the development area, locate `Login Authentication` and c
 
 ## Account password login {#account-password-login}
 
-Account password login is the most commonly used and fundamental login method, allowing users to securely access applications by entering their account credentials and password. When creating a JitAi application, an account password login method is automatically created.
+Account password login is the most commonly used and fundamental login method, allowing users to securely access applications by entering their account credentials and password. When creating a JitAI application, an account password login method is automatically created.
 
 ![Account Password Creation](./img/auth/account-password-creation.png "Account Password Creation")
 

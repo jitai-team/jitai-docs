@@ -8,7 +8,7 @@ description: "Configure portal menu permissions by role. Control access to navig
 
 RBAC (Role-Based Access Control) is a widely adopted permission management mechanism that controls access to system resources by assigning roles to users and granting appropriate permissions to those roles.
 
-Designing a comprehensive role-based permission system aligned with business processes is a critical aspect of enterprise application design. JitAi provides multi-layered, granular operational and data permission control solutions. For any combination of `application role + portal + page + component + data model + model function`, you can implement fine-grained permission configurations to ensure maximum data security during application usage and prevent unauthorized access.
+Designing a comprehensive role-based permission system aligned with business processes is a critical aspect of enterprise application design. JitAI provides multi-layered, granular operational and data permission control solutions. For any combination of `application role + portal + page + component + data model + model function`, you can implement fine-grained permission configurations to ensure maximum data security during application usage and prevent unauthorized access.
 
 ## Built-in application roles {#built-in-three-application-roles}
 
@@ -20,7 +20,7 @@ Organizational roles correspond to positions within the enterprise organizationa
 
 ### Anonymous user {#anonymous-user}
 
-Anonymous users are unregistered users who have not logged into the system. Applications typically configure publicly accessible pages and data for anonymous users. By default, JitAi does not grant anonymous users any portal permissions, which developers must explicitly configure.
+Anonymous users are unregistered users who have not logged into the system. Applications typically configure publicly accessible pages and data for anonymous users. By default, JitAI does not grant anonymous users any portal permissions, which developers must explicitly configure.
 
 ### Developer {#developer}
 

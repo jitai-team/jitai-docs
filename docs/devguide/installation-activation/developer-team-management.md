@@ -1,13 +1,13 @@
 ---
 sidebar_position: 2
 slug: developer-team-management
-description: "Node activation and developer team management in JitAi. Create teams, bind nodes, manage members, and configure team collaboration."
+description: "Node activation and developer team management in JitAI. Create teams, bind nodes, manage members, and configure team collaboration."
 ---
 
 # Node Activation and Developer Team Management
 
 ## What is a node {#what-is-jitnode}
-A JitNode is an application that runs on an operating system, available as both a desktop installation and a Docker image. It serves as the runtime engine for JitAi applications, providing a virtualized environment for interpreting and executing JitAi apps. JitNodes form the foundational infrastructure layer of the JitAi technology stack.
+A JitNode is an application that runs on an operating system, available as both a desktop installation and a Docker image. It serves as the runtime engine for JitAI applications, providing a virtualized environment for interpreting and executing JitAI apps. JitNodes form the foundational infrastructure layer of the JitAI technology stack.
 
 ## What is a developer team {#what-is-developer-team}
 A developer team is the fundamental organizational unit for managing development groups and projects. Team members within the same team can collaborate on application development and share resources. Different teams maintain isolation across hardware and software resources, data, applications, and other assets. Each developer team can bind multiple JitNodes, while each node can only be bound to one team, and each developer can participate in multiple developer teams.

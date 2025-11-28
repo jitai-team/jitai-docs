@@ -8,9 +8,9 @@ description: "Integrate SMS services for notifications. Send text messages via T
 
 SMS services are primarily used for verification codes, notifications, and marketing campaigns, offering high availability, low latency, and robust reliability.
 
-JitAi integrates SMS services by allowing developers to configure SMS service parameters in the IDE portal, making them available to other modules such as mobile login and approval notifications.
+JitAI integrates SMS services by allowing developers to configure SMS service parameters in the IDE portal, making them available to other modules such as mobile login and approval notifications.
 
-Currently, JitAi supports Alibaba Cloud SMS, AWS SNS SMS, and Twilio SMS services.
+Currently, JitAI supports Alibaba Cloud SMS, AWS SNS SMS, and Twilio SMS services.
 
 ## Alibaba Cloud SMS {#aliyun-sms}
 

@@ -10,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 当我们完成了[扩展自己的元素族类](./extend-element-family-classes)后，虽然可以创建实例并运行，但配置参数需要手动修改文件，这对不熟悉代码的业务开发者来说并不友好。
 
-本文将介绍如何为钉钉机器人开发可视化配置编辑器，实现在JitAi开发工具中像官方元素一样的图形化配置体验。
+本文将介绍如何为钉钉机器人开发可视化配置编辑器，实现在JitAI开发工具中像官方元素一样的图形化配置体验。
 
 ## 效果预览 {#effect-preview}
 ![编辑器效果](./img/dingtalk-robot-element-configuration-interface.png "编辑器效果")
@@ -65,7 +65,7 @@ mkdir -p Editor
 **创建编辑器元素定义文件** `Editor/e.json`：
 
 :::tip 编辑器也是元素
-在JitAi中，编辑器本身也是一个元素，拥有自己的`e.json`定义文件。
+在JitAI中，编辑器本身也是一个元素，拥有自己的`e.json`定义文件。
 :::
 
 ```json title="Editor/e.json"
@@ -101,7 +101,7 @@ export { Editor } from './Editor';
 ```
 
 :::important 编辑器导出规范
-编辑器必须导出名为`Editor`的组件，这是JitAi工具识别编辑器的固定约定。
+编辑器必须导出名为`Editor`的组件，这是JitAI工具识别编辑器的固定约定。
 :::
 
   </TabItem>
@@ -358,7 +358,7 @@ if (!config.apiKey || !config.endpoint) {
 3. **触发打包**：访问应用页面，系统自动重新打包
 
 ### 验证编辑器功能 {#verifying-editor-functionality}
-1. **创建元素实例**：在JitAi开发工具中创建钉钉机器人元素实例
+1. **创建元素实例**：在JitAI开发工具中创建钉钉机器人元素实例
 2. **打开编辑器**：点击元素实例进入编辑器
 3. **切换模式**：点击配置/代码图标，验证模式切换
 4. **修改配置**：尝试在GUI模式修改配置，观察代码模式是否同步
@@ -375,7 +375,7 @@ if (!config.apiKey || !config.endpoint) {
 1. **创建Editor目录** + 配置编辑器元素定义文件`e.json`（`type: "editors.React"`）
 2. **实现Editor组件**：支持GUI/代码双模式 + 文件管理 + 双向同步
 3. **定制配置结构**：根据后端元素需求调整配置接口和表单
-4. **测试验证**：确保编辑器在JitAi中正常工作
+4. **测试验证**：确保编辑器在JitAI中正常工作
 
 **关键要点**：
 - 导出名`Editor`不可更改

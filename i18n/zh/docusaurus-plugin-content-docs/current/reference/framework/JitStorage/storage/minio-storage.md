@@ -5,9 +5,9 @@ description: "MinIO存储 API 参考文档。完整的规格说明、方法和�
 # MinIO存储
 MinIO存储是开源的私有云对象存储服务，基于S3兼容API实现海量非结构化数据的高性能存储管理。它负责文件上传、下载、删除和签名URL生成，支持分布式部署和数据分片，适合需要数据本地化管理的企业私有云环境。
 
-MinIO存储元素分层结构为Meta（storages.Meta） → Type（storages.MinioType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建MinIO存储实例元素。
+MinIO存储元素分层结构为Meta（storages.Meta） → Type（storages.MinioType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建MinIO存储实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的storages.MinioType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的storages.MinioType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

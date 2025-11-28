@@ -7,9 +7,9 @@ sidebar_label: "Phone Number Login"
 # Phone Number Login
 Mobile number login is an authentication method based on mobile phone numbers and SMS verification codes, implementing user identity authentication through SMS verification code validation. It handles verification code sending, verification code validation, and user login, supporting user registration, mobile number binding/unbinding, verification code validity period management, and other security features.
 
-The hierarchical structure of mobile number login elements is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.PhoneType) → Instance. Developers can quickly create mobile number login instance elements through JitAi's visual development tools.
+The hierarchical structure of mobile number login elements is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.PhoneType) → Instance. Developers can quickly create mobile number login instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `auths.loginTypes.PhoneType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `auths.loginTypes.PhoneType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

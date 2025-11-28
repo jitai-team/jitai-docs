@@ -4,6 +4,7 @@ import globalStyles from "../../../pages/index.module.css";
 import CONTENT_ZH from "./constant-zh";
 import CONTENT_EN from "./constant-en";
 import { addUTMToUrl } from "../../../utils/utm";
+import LazyVideo from "../../LazyVideo";
 
 const HeroSection: React.FC<{ currentLocale?: string }> = ({
     currentLocale,
@@ -28,6 +29,25 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
             window.removeEventListener("resize", checkMobile);
         };
     }, []);
+
+    /**
+     * 处理按钮点击事件，添加 UTM 参数后跳转
+     */
+    const handleButtonClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        // 移动端跳转到教程页面，不需要添加 UTM 参数
+        if (isMobile) {
+            return; // 让默认的 href 行为执行
+        }
+
+        // 阻止默认跳转
+        e.preventDefault();
+        
+        // 获取带 UTM 参数的 URL
+        const urlWithUTM = addUTMToUrl("https://demo.jit.pro/wanyun/AdminApp");
+        
+        // 在新标签页打开
+        window.open(urlWithUTM, '_blank');
+    };
 
     return (
         <section id="section-0" className={styles.hero}>
@@ -81,6 +101,7 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                                     ? "./docs/tutorial"
                                     : addUTMToUrl("https://demo.jit.pro/wanyun/AdminApp")
                             }
+                            onClick={handleButtonClick}
                             target="_blank"
                         >
                             <span className={styles.buttonText}>
@@ -117,21 +138,17 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                                 />
                             </div>
                             <div className={styles.featuredVideo}>
-                                <video
+                                <LazyVideo
+                                    src={content.previewVideoUrl}
                                     className={styles.video}
-                                    controls
+                                    videoClassName={styles.videoElement}
                                     autoPlay
                                     muted
                                     loop
                                     playsInline
-                                    preload="auto"
-                                >
-                                    <source
-                                        src={content.previewVideoUrl}
-                                        type="video/mp4"
-                                    />
-                                    您的浏览器不支持视频播放。
-                                </video>
+                                    controls
+                                    rootMargin="50px 0px"
+                                />
                             </div>
                         </div>
                     )}

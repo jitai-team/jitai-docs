@@ -8,29 +8,38 @@ sidebar_label: "Scheduled Tasks"
 
 # Scheduled Tasks
 
-Scheduled Tasks are core elements in the JitTask framework used to implement periodic business automation, responsible for task execution logic processing, next execution time calculation, and task status management.
+Scheduled Tasks (`tasks.NormalType`) are the most fundamental task type in the JitTask framework, similar to Cron jobs in Linux. They rely entirely on the system clock and preset configurations to trigger, making them suitable for periodic background jobs that are not strongly correlated with specific business data rows, such as:
 
-The Scheduled Task element has a hierarchical structure of Meta (tasks.Meta) → Type (tasks.NormalType) → Instance. Developers can quickly create scheduled task instance elements through visual development tools.
+*   Daily data cleanup at midnight
+*   Periodic statistical reporting
+*   System status inspection
 
-Of course, developers can also create their own Type elements or modify the official tasks.NormalType element provided by JitAI in their own App to implement their own encapsulation.
+The Scheduled Task element follows a hierarchical structure: Meta (`tasks.Meta`) → Type (`tasks.NormalType`) → Instance. Developers can quickly create scheduled task instance elements using visual development tools.
 
 ## Quick Start
-### Creating Instance Elements
+
+### Creating an Instance Element
+
 #### Directory Structure
-```title="Recommended Directory Structure"
+
+Create a new task directory (e.g., `MyDailyJob`) under the `tasks/` directory. The standard structure is as follows:
+
+```text
 tasks/
-└── TestTimeTasks/
-    ├── e.json
-    ├── inner.py
-    └── __init__.py
+└── MyDailyJob/           # [Directory] Task element name
+    ├── e.json            # [File] Core configuration file
+    ├── inner.py          # [File] (Optional) Internal execution logic code
+    └── __init__.py       # [File] Python package identifier
 ```
 
-#### e.json File
-```json title="tasks/TestTimeTasks/e.json"
+#### e.json
+
+```json title="tasks/MyDailyJob/e.json"
 {
   "type": "tasks.NormalType",
-  "funcType": "Inner",
-  "title": "Test Scheduled Task",
+  "funcType": "Global",
+  "func": "services.DataSyncService.syncUserData",
+  "title": "Daily Data Sync",
   "timerCfg": {
     "startTime": "2024-01-01 09:00:00",
     "endTime": "2024-12-31 18:00:00",
@@ -45,14 +54,108 @@ tasks/
 }
 ```
 
-#### Business Logic Code
-```python title="tasks/TestTimeTasks/inner.py"
-from datatypes.Meta import datatypes
+#### inner.py
+
+```python title="tasks/MyDailyJob/inner.py"
 from jit.commons.utils.logger import log
 
 def customFunc():
-    """Scheduled task execution function"""
-    log.info("Scheduled task started")
+    """
+    Function name must be customFunc
+    """
+    # Business logic...
+    # When `funcType` is `Global`, this function does not need to be implemented.
+    pass
+```
+
+#### __init__.py
+
+```python title="tasks/MyDailyJob/__init__.py"
+# -*-coding:utf-8-*-
+
+from .inner import customFunc
+```
+
+When `funcType` is `Global`, the execution function is a service function, not `customFunc`.
+
+## Element Configuration
+
+### e.json Configuration
+
+| Field Name | Type | Required | Description | Example |
+| :--- | :--- | :--- | :--- | :--- |
+| `type` | String | **Yes** | Fixed value | `"tasks.NormalType"` |
+| `title` | String | **Yes** | Task display name | `"Daily Data Sync"` |
+| `enable` | Integer | No | 1: Enable, 0: Disable (Default: 0) | `1` |
+| `funcType` | String | **Yes** | Function type: `"Inner"` or `"Global"` | `"Inner"` |
+| `func` | String | Conditional | Required when `funcType` is `"Global"`, points to the service function path | `"services.MySvc.run"` |
+| `backendBundleEntry` | String | **Yes** | Backend load entry, fixed as `"."` | `"."` |
+
+### timerCfg Configuration
+
+This is the core part of the configuration, determining when the task executes.
+
+| Parameter Name | Type | Required | Description | Example Value |
+|--------|------|------|------|--------|
+| `startTime` | String | **Yes** | First execution time, format: `yyyy-MM-dd HH:mm:ss` | `"2024-01-01 09:00:00"` |
+| `endTime` | String | No | Task termination time; the task stops automatically after this time | `"2024-12-31 18:00:00"` |
+| `skipHoliday` | Integer | No | Whether to skip holidays: 1 to skip, 0 not to skip | `1` |
+| `repeat` | Object | **Yes** | Configuration object for repetition | See repeat configuration |
+
+**Explanation**:
+*   If the current time is later than `startTime` and the task has not been executed yet, the system will calculate the next scheduled execution time based on the `repeat` rules.
+*   If the scheduled execution time falls on a holiday (based on the system calendar) and `skipHoliday` is 1, it will be postponed by one cycle.
+
+### repeat Configuration
+
+The `repeatType` in the `repeat` object determines the specific repetition strategy.
+
+| Parameter Name | Type | Required | Description | Optional Values |
+|--------|------|------|------|--------|
+| `repeatType` | String | **Yes** | Repeat type | `"year"`, `"month"`, `"week"`, `"day"`, `"hour"`, `"minute"`, `"normal"` |
+| `period` | Integer | **Yes** | Repeat period, indicating the interval count | Positive Integer |
+
+**Basic Repeat Types**:
+
+*   **Daily**: `"repeatType": "day", "period": 1` (Every day)
+*   **Hourly**: `"repeatType": "hour", "period": 2` (Every 2 hours)
+*   **Every 30 Minutes**: `"repeatType": "minute", "period": 30`
+*   **No Repeat**: `"repeatType": "normal"` (Executes only once at startTime)
+
+## Execution Function
+
+**Service Function (Recommended)**
+
+Suitable for reusing existing Service logic.
+
+Ensure a service with `fullName` as `services.DataSyncService` exists and contains the `syncUserData` function.
+
+```python title="services/DataSyncService/service.py"
+
+from datatypes.Meta import datatypes
+from services.NormalType import NormalService
+
+class DataSyncService(NormalService):
+
+  def syncUserData(self):
+      """Service function example"""
+      # Business logic...
+      return {"status": "completed"}
+```
+
+**Internal Task Function**
+
+Suitable for scenarios where the logic belongs exclusively to the task and does not need to be reused. The function is implemented in `inner.py` under the element directory, with the function name fixed as `customFunc`.
+
+```python title="tasks/MyDailyJob/inner.py"
+from jit.commons.utils.logger import log
+
+def customFunc():
+    """
+    Function name must be customFunc
+    No arguments
+    """
+    log.info("Starting daily task execution...")
     
     # Get user model for data operations
     UserModel = app.getElement("models.UserModel")
@@ -62,229 +165,16 @@ def customFunc():
         # Execute business logic
         log.info(f"Processing user: {user.name.value}")
     
-    log.info("Scheduled task completed")
+    log.info("Task execution completed")
     return {"status": "success", "processedCount": len(users["rowDatas"])}
 ```
 
-#### Usage Example
-```python title="Get and Use Scheduled Task Element"
-# Get scheduled task element
-task_element = app.getElement("tasks.TestTimeTasks")
+## Debugging and Notes
 
-# Create task instance
-from tasks.Meta import Timer
-timer = Timer({
-    "startTime": "2024-01-01 09:00:00",
-    "repeat": {"repeatType": "day", "period": 1}
-})
+1.  **Effective Time**: Changes to `e.json` usually require a restart of the backend service to take effect.
 
-# Calculate next execution time
-next_time = timer.nextTime()
-print(f"Next execution time: {next_time}")
-```
+2.  **Exception Handling**:
+    *   If the code throws an exception, the task status will become `error`.
+    *   **Important**: If an exception causes the program to crash and is not caught, it may affect the generation of the next task (because the next task is generated during the `afterReturn` phase of the current task). It is recommended to use `try...except` protection within `customFunc`.
 
-## Element Configuration
-### e.json Configuration
-| Parameter Name | Type | Required | Description | Example Value |
-|--------|------|------|------|--------|
-| type | string | Yes | Element type, fixed as "tasks.NormalType" | "tasks.NormalType" |
-| funcType | string | Yes | Function type: "Inner" (internal function) or "Global" (global function) | "Inner" |
-| title | string | Yes | Task title | "Data Sync Task" |
-| timerCfg | object | Yes | Time configuration object | See timerCfg configuration |
-| enable | number | No | Whether to enable: 1 enable, 0 disable | 1 |
-| backendBundleEntry | string | Yes | Backend entry, fixed as "." | "." |
-
-### timerCfg Configuration
-| Parameter Name | Type | Required | Description | Example Value |
-|--------|------|------|------|--------|
-| startTime | string | Yes | Start time | "2024-01-01 09:00:00" |
-| endTime | string | No | End time | "2024-12-31 18:00:00" |
-| repeat | object | Yes | Repeat configuration object | See repeat configuration |
-| skipHoliday | number | No | Whether to skip holidays: 1 skip, 0 don't skip | 1 |
-
-### repeat Configuration
-| Parameter Name | Type | Required | Description | Optional Values |
-|--------|------|------|------|--------|
-| repeatType | string | Yes | Repeat type | "year","month","week","day","hour","minute","normal" |
-| period | number | Yes | Repeat period | Positive integer |
-
-## Methods
-### handle
-Core method for task execution, handling specific business logic.
-
-#### Parameter Details
-| Parameter Name | JitAI Type | Python Type | Required | Description |
-|--------|-----------|-------------|------|------|
-| task | RowData | object | Yes | Task data object |
-
-#### Return Value
-- **Type**: any
-- **Description**: Task execution result, can be dictionary, string, or other data types
-
-#### Usage Example
-```python title="Override handle Method"
-from tasks.Meta import BaseTask
-
-class CustomTask(BaseTask):
-    def handle(self, task):
-        # Get task parameters
-        params = task.argDict.value or {}
-        
-        # Execute business logic
-        result = self.processData(params)
-        
-        return result
-```
-
-### getNextRunTime
-Calculate next execution time for task.
-
-#### Parameter Details
-| Parameter Name | JitAI Type | Python Type | Required | Description |
-|--------|-----------|-------------|------|------|
-| task | RowData | object | Yes | Task data object |
-| now | Datetime | datetime | No | Current time, used for testing |
-
-#### Return Value
-- **Type**: Arrow object or None
-- **Description**: Next execution time, None means no next execution
-
-#### Usage Example
-```python title="Calculate Next Execution Time"
-# Get scheduled task element
-task_element = app.getElement("tasks.TestTimeTasks")
-
-# Simulate task object
-task_data = {
-    "element": "tasks.TestTimeTasks",
-    "startTime": "2024-01-01 09:00:00"
-}
-
-# Calculate next execution time
-next_time = task_element.getNextRunTime(task_data)
-if next_time:
-    print(f"Next execution time: {next_time.format('YYYY-MM-DD HH:mm:ss')}")
-```
-
-### afterReturn
-Callback method after task execution completion, used for calculating next task.
-
-#### Parameter Details
-| Parameter Name | JitAI Type | Python Type | Required | Description |
-|--------|-----------|-------------|------|------|
-| task | RowData | object | Yes | Current task data object |
-
-#### Usage Example
-```python title="Custom Task Completion Processing"
-def afterReturn(self, task):
-    # Execute parent class logic: create next task
-    super().afterReturn(task)
-    
-    # Custom post-processing logic
-    self.sendNotification(task)
-```
-
-### getFunc
-Get task execution function.
-
-#### Parameter Details
-| Parameter Name | JitAI Type | Python Type | Required | Description |
-|--------|-----------|-------------|------|------|
-| task | RowData | object | Yes | Task data object |
-
-#### Return Value
-- **Type**: function or None
-- **Description**: Executable function object
-
-#### Usage Example
-```python title="Get Execution Function"
-# Get task execution function
-func = task_element.getFunc(task)
-if func:
-    result = func(**task.argDict.value or {})
-```
-
-## Attributes
-### config
-Task configuration information, containing all configuration items from e.json.
-
-### customFunc
-Internal custom function, used when funcType is "Inner".
-
-### taskType
-Task type identifier, value is the type field from configuration.
-
-### TaskModel
-Task data model, used for database operations.
-
-### TaskHistoryModel
-Task history record model, used for recording execution history.
-
-## Advanced Features
-### Complex Period Configuration
-#### Monthly Repeat Configuration
-```json title="Execute on 15th of Each Month"
-{
-  "timerCfg": {
-    "startTime": "2024-01-15 10:00:00",
-    "repeat": {
-      "repeatType": "month",
-      "period": 1,
-      "subType": "day",
-      "day": [15]
-    }
-  }
-}
-```
-
-#### Weekly Repeat Configuration
-```json title="Execute on Monday, Wednesday, Friday"
-{
-  "timerCfg": {
-    "startTime": "2024-01-01 09:00:00",
-    "repeat": {
-      "repeatType": "week",
-      "period": 1,
-      "weekday": [1, 3, 5]
-    }
-  }
-}
-```
-
-#### Yearly Repeat Configuration
-```json title="Execute on First Monday of June Each Year"
-{
-  "timerCfg": {
-    "startTime": "2024-06-01 09:00:00",
-    "repeat": {
-      "repeatType": "year",
-      "period": 1,
-      "month": 6,
-      "week": 1,
-      "weekday": [1]
-    }
-  }
-}
-```
-
-### Global Function Call
-```json title="Call Service Function"
-{
-  "funcType": "Global",
-  "taskFunc": "services.DataSyncService.syncUserData"
-}
-```
-
-### Parameterized Tasks
-```python title="Task Parameter Passing"
-def customFunc():
-    # Get task parameters from global variables
-    task = GlobalVar.currentTask
-    params = task.argDict.value
-    
-    batch_size = params.get("batchSize", 100)
-    filter_condition = params.get("filter", "")
-    
-    # Use parameters to execute business logic
-    return process_data(batch_size, filter_condition)
-```
+3.  **Timeout**: The default timeout is 12 hours. If a task execution exceeds this time, it may be marked as expired by the system.

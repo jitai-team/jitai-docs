@@ -186,6 +186,7 @@ def processUser(self, userId, userName):
 ### 事件定义与使用 {#event-definition-and-usage} 
 服务元素支持定义和触发自定义事件。
 
+**事件定义**: 在服务e.json文件中添加触发的事件声明 `eventDescs`
 ```json title="事件定义示例"
 {
     "eventDescs": [
@@ -198,6 +199,12 @@ def processUser(self, userId, userName):
 }
 ```
 
+**触发事件**：使用`app.event.publish`方法触发
+
+```python
+# sender：声明事件的服务元素的fullName.事件名
+app.event.publish(sender="services.MyService.CustomEvent", args=("paramValue",), kwargs={"key": "value"})
+```
 ```python title="触发事件示例"
 def processData(self, data):
     # 处理数据逻辑

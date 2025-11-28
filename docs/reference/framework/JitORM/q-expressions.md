@@ -140,11 +140,9 @@ Q(
 
 Q expressions are typically passed as parameters to data model methods for filtering data.
 
-### Query List (Query)
-
-```javascript
+```javascript title="javascript"
 // Basic condition query (Note: Single condition must be wrapped in Q())
-const users = await UserModel.query(
+const users = await this.app.models.UserModel.query(
     Q(Q('status', '=', 'active')),
     null,
     null,
@@ -153,7 +151,7 @@ const users = await UserModel.query(
 );
 
 // Complex combined condition query
-const result = await OrderModel.query(
+const result = this.app.models.await OrderModel.query(
     Q(Q('amount', 'gt', 100), Q.AND, Q('createTime', 'year', 2023)),
     null,
     null,
@@ -162,31 +160,17 @@ const result = await OrderModel.query(
 );
 ```
 
-### Get Single Record (Get)
 
-```javascript
-// Get user by email
-const user = await UserModel.get(Q(Q('email', '=', 'test@example.com')));
+```python title="python"
+# Basic condition query (Note: Single condition must be wrapped in Q())
+app.models.UserModel.query(Q(Q('status', '=', 'active')), None, None, 1, 20)
 
-// Get the most recent pending order
-const order = await OrderModel.get(Q(Q('status', '=', 'pending')));
-```
-
-### Batch Update (Update)
-
-```javascript
-// Update status to 'out_of_stock' for all products with low stock
-await ProductModel.updateByFilter(
-    Q(Q('stock', 'lt', 10)),
-    { status: 'out_of_stock' }
-);
-```
-
-### Batch Delete (Delete)
-
-```javascript
-// Delete expired temporary data
-await TempDataModel.deleteByFilter(
-    Q(Q('expireTime', 'lt', '2024-01-01'))
-);
+# Complex combined condition query
+app.models.OrderModel.query(
+    Q(Q('amount', 'gt', 100), Q.AND, Q('createTime', 'year', 2023)),
+    None,
+    None,
+    1,
+    20
+)
 ```

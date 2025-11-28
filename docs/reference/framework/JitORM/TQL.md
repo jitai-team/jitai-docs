@@ -1,256 +1,401 @@
 ---
 sidebar_position: 5
 slug: TQL
-title: "TQL Usage Guide Reference"
-description: "TQL Usage Guide Reference - API documentation for developers. Complete specifications, methods, and examples."
-sidebar_label: "TQL Usage Guide"
+title: TQL Guide
+description: "TQL Expression API Reference. Complete specifications, methods, and examples."
 ---
 
-# TQL Usage Guide
-TQL, also known as Table Query Language, is used to build data query syntax for data models, where query conditions use [Q Expressions](./q-expressions).
+# TQL Expression Guide
 
-## Basic Queries
-### Simple Queries
-```plaintext
-# Query all fields
-Select("models.UserModel")
+TQL (Table Query Language) is an object-oriented query language designed for constructing complex queries based on data models. It adopts a structure similar to SQL but is optimized for object models.
 
-# Query specified fields
-Select(
-    [F("t1.f1", "f1"), F("t1.f2", "f2")],
-    From(["models.UserModel", "t1"])
-)
+This document provides a comprehensive reference for TQL core expressions, covering query construction, join operations, set operations, and more.
+
+## Core Expressions
+
+### Select
+
+`Select` is the entry point expression for TQL. It supports various query patterns depending on the number and type of arguments provided.
+
+**Syntax**
+```python
+Select(*args)
 ```
 
-### Conditional Queries
-```plaintext
-# Single condition query
-Select(
-    [F("t1.f1", "f1")],
-    From(["models.UserModel", "t1"]),
-    Where(Q("f1", ">", 1))
-)
+**Common Usage Patterns**
 
-# Multi-condition combined query
-Select(
-    [F("t1.f1", "f1")],
-    From(["models.UserModel", "t1"]),
-    Where(Q("f1", ">", 1) & Q("f2", "=", "test"))
-)
-```
+1.  **Full Model Query** (Single Argument)
+    Selects all fields from the specified model, equivalent to `SELECT * FROM table`.
+    ```python
+    Select("models.UserModel")
+    ```
 
-## Join Queries
-### Left Join
-```plaintext
-Select(
-    [
-        F("t1.userId", "userId"),
-        F("t2.deptId", "deptId")
-    ],
-    From(
-        ["models.UserModel", "t1"],
-        LeftJoin("models.DeptMemberModel", "t2"),
-        On(["t1.userId", "=", "t2.userId"])
+2.  **Aliased Full Query** (Two Arguments)
+    Selects all fields while defining an alias for the primary table.
+    ```python
+    Select("*", From(["models.UserModel", "t1"]))
+    ```
+
+3.  **Complex Query with Specific Fields** (Multiple Arguments)
+    This is the most common pattern. The first argument is a list of fields, followed by clauses such as `From`, `Where`, and `OrderBy`.
+    ```python
+    Select(
+        [F("t1.name", "username"), F("t1.age", "age")],  # Field List
+        From(["models.UserModel", "t1"]),               # Data Source
+        Where(Q("age", ">", 18))                        # Filter Condition
     )
+    ```
+
+### F (Field)
+
+The `F` expression defines the fields to be queried, including their aliases and display titles. It supports field references, cross-table references, inline formulas, and post-calculation configurations.
+
+**Syntax**
+```python
+F(content, alias=None, title=None, twiceCalc=None, **config)
+```
+
+*   **content**: The field identifier. Can be:
+    *   Model field path: `"t1.field_name"`
+    *   Inline formula: `Formula("SUM(F('amount'))")`
+*   **alias**: (Optional) The field alias, used as the key in the result set.
+*   **title**: (Optional) The display title for the field, often used in frontend views.
+*   **twiceCalc**: (Optional) Configuration for secondary calculations (e.g., period-over-period growth).
+*   **config**: (Optional) Additional configuration options, such as formatting parameters.
+
+**Examples**
+
+```python
+# 1. Standard Field
+F("name")
+
+# 2. Cross-table Field with Alias
+F("t1.deptId", "dept_id")
+
+# 3. Aggregate/Formula Field
+F(Formula("COUNT(*)"), "total_count", "Total")
+
+# 4. Complex Calculation Field
+F(Formula("SUM(F('f1')) + AVG(F('f2'))"), "calc_result")
+
+# 5. Field with Secondary Calculation Configuration
+F("t1.sales", "sales", "Revenue", "YoY_Growth", format="currency")
+```
+
+### Formula
+
+`Formula` embeds calculation logic within a query, supporting both inline arithmetic and aggregate functions.
+
+**Syntax**
+```python
+Formula(expression_string)
+```
+
+**Examples**
+```python
+# Arithmetic Operation
+Formula("F('price') * F('quantity')")
+
+# Aggregate Function
+Formula("MAX(F('score'))")
+
+# Mixed Operation
+Formula("SUM(F('f1')) + 100 + AVG(F('f2'))")
+```
+
+### From
+
+The `From` expression establishes the context for the data source, supporting single tables, subqueries, and multi-table joins.
+
+**Syntax**
+```python
+From(primary_table, *join_clauses)
+```
+
+**Argument Rules**
+
+:::warning Limitation on Multi-table Joins
+TQL strictly supports **pairwise joins only** within a single `From` expression. You cannot chain multiple joins (e.g., `From(T1, Join T2, On..., Join T3, On...)`).
+
+To join more than two tables, you must use **nested subqueries**. The result of the first join (a `Select` expression) becomes the source for the second join.
+:::
+
+1.  **Argument Count**: The `From` expression accepts either 1 argument (source only) or 3 arguments (source, join, on).
+    *   1st Argument: Primary Table (or Subquery).
+    *   2nd & 3rd Arguments: Join Clause + On Clause.
+2.  **Join Pairing**: Every `Join Expression` (e.g., `LeftJoin`) must be immediately followed by an `On Expression`.
+3.  **Positional Constraints**:
+    *   An `On Expression` must be preceded by a `Join Expression` (or another `On Expression` in rare nested cases).
+    *   An `On Expression` must be followed by a `Join Expression` (unless it is the final argument).
+
+**Argument Format**
+*   **Primary Table/Subquery**:
+    *   Model Reference: `["models.UserModel", "t1"]`
+    *   Subquery: `[Select(...), "sub_alias"]`
+*   **Join Sequence**: `LeftJoin(...)`, `On(...)`, `InnerJoin(...)`, `On(...)` ...
+
+**Example**
+
+```python
+From(
+    # 1. Primary Table (Argument 1)
+    ["models.UserModel", "t1"],
+
+    # 2. Left Join Department Table (Argument 2: Join)
+    LeftJoin("models.DeptModel", "t2"),
+    # (Argument 3: On)
+    On(["t1.deptId", "=", "t2.id"])
 )
 ```
 
-### Multi-table Joins
-```plaintext
-Select(
-    [
-        F("t1.userId", "userId"),
-        F("t2.deptId", "deptId"),
-        F("t3.deptTitle", "deptTitle")
-    ],
-    From(
-        ["models.UserModel", "t1"],
-        LeftJoin("models.DeptMemberModel", "t2"),
-        On(["t1.userId", "=", "t2.userId"]),
-        LeftJoin("models.DeptModel", "t3"),
-        On(["t2.deptId", "=", "t3.deptId"])
-    )
+### Join Family
+
+TQL supports various join types used as arguments within `From`.
+
+*   **LeftJoin(table, alias, title=None)**: Left Outer Join
+*   **RightJoin(table, alias, title=None)**: Right Outer Join
+*   **InnerJoin(table, alias, title=None)**: Inner Join
+*   **FullJoin(table, alias, title=None)**: Full Outer Join
+
+**Parameters**
+*   **table**: Target model path string or `Select` object (Subquery). (Required)
+*   **alias**: Alias assigned to the joined table. (Required)
+*   **title**: (Optional) Descriptive title for the joined table.
+
+### On
+
+The `On` expression immediately follows a Join expression to define the join condition.
+
+**Syntax**
+```python
+On(*conditions)
+```
+
+*   **conditions**: One or more condition arrays in the format `[left_field, operator, right_field]`.
+
+**Example**
+```python
+On(
+    ["t1.uid", "=", "t2.uid"],
+    ["t1.status", "=", "t2.status"]  # Multi-condition join
 )
 ```
 
-## Sorting and Pagination
-### Sorting
-```plaintext
+### Where
+
+The `Where` expression filters data using one or more `Q` expressions.
+
+**Syntax**
+```python
+Where(*q_expressions)
+```
+
+*   Multiple arguments are combined with `AND` logic by default.
+
+**Example**
+```python
+Where(
+    Q("age", ">", 18),
+    Q("status", "=", "active")
+)
+```
+
+### Q (Query Condition)
+
+The `Q` expression constructs specific filter conditions, supporting logical composition and nesting.
+
+**Basic Syntax**
+```python
+Q(field_or_q, operator=None, value_or_q=None)
+```
+
+**Usage Forms**
+1.  **Standard Condition**: `Q("field", "operator", "value")`
+    *   `operator`: `=`, `>`, `<`, `in`, `like`, etc.
+2.  **Explicit Logical Composition**: `Q(Q1, "Q.and", Q2)` or `Q(Q1, "Q.or", Q2)`
+    *   Supports nesting: `Q(Q(Q1), "Q.or", Q(Q2))`
+3.  **Operator Overloading Composition**: `Q1 & Q2`, `Q1 | Q2`, `~Q1`
+
+**Advanced Features**
+*   **Implicit Relationship**: `Q("ref_field__name", "=", "Admin")`
+    *   *Note*: Double underscores `__` denote cross-table relationships. The backend automatically parses this and injects the necessary LeftJoin logic. While this simplifies frontend query construction, be aware that it incurs additional join overhead during execution.
+*   **Subquery**: `Q("id", "in", Select(...))`
+
+**Examples**
+```python
+# Simple Condition
+Q("f1", "=", 1)
+
+# Nested Composition
+Q(Q("f1", ">", 10) | Q("f2", "<", 5))
+
+# Explicit Logical Operator
+Q(Q("f1", "=", 1), "Q.or", Q("f2", "=", 2))
+
+# Related Field Filter (Implicit Join)
+Q("user__dept__name", "=", "Sales")
+```
+
+### GroupBy & Having
+
+Used for grouping and post-aggregation filtering.
+
+**Syntax**
+```python
+GroupBy(*fields)
+Having(*q_expressions)
+```
+
+**Example**
+```python
 Select(
-    [F("t1.f1", "f1")],
+    [F("t1.deptId"), F(Formula("COUNT(*)"), "total")],
     From(["models.UserModel", "t1"]),
-    OrderBy((F("f1"), 1))  # 1 means ascending, -1 means descending
+    GroupBy(F("t1.deptId")),
+    Having(Q("total", ">", 100))  # Filter grouped results
 )
 ```
 
-### Pagination
-```plaintext
-Select(
-    [F("t1.f1", "f1")],
-    From(["models.UserModel", "t1"]),
-    Limit(0, 20)  # Start from 0th record, return 20 records
+### OrderBy
+
+Used for sorting results.
+
+**Syntax**
+```python
+OrderBy(*sort_items)
+```
+
+**Example**
+```python
+OrderBy(
+    (F("create_time"), -1),  # -1: Descending
+    (F("name"), 1)           # 1: Ascending
 )
 ```
 
-## Aggregate Queries
-### Group Queries
-```plaintext
-Select(
-    [F("t1.f1", "f1"), F("COUNT(*)", "count")],
-    From(["models.UserModel", "t1"]),
-    GroupBy(F("f1"))
-)
+### Limit
+
+Used for pagination.
+
+**Syntax**
+```python
+Limit(offset, limit)
 ```
 
-### Group Filtering
-```plaintext
-Select(
-    [F("t1.f1", "f1"), F("COUNT(*)", "count")],
-    From(["models.UserModel", "t1"]),
-    GroupBy(F("f1")),
-    Having(Q("count", ">", 1))
-)
+**Example**
+```python
+Limit(0, 20)  # Offset 0, limit 20 records
 ```
 
-## Union Queries
-### UNION
-```plaintext
+## Set Operations (Union)
+
+TQL supports `Union` (distinct union) and `UnionAll` (union with duplicates).
+
+**Syntax**
+```python
+Union(*queries, mapping)
+```
+
+*   **queries**: A list of `[SelectObject, alias]` pairs.
+*   **mapping**: Definition of result set field mapping.
+
+**Mapping Rules**
+The `mapping` is a 2D array where each item defines an output field:
+`[target_field_name, source_fields_list, title]`
+*   `target_field_name`: The field name in the merged result.
+*   `source_fields_list`: A list of source field names corresponding to each subquery (order must match `queries`). If a subquery lacks a specific field, use a placeholder or omit it depending on implementation specifics (usually strict correspondence is required).
+*   `title`: Field display title.
+
+**Example**
+
+```python
 Union(
-    [Select([F("f1"), F("f2")], From(["models.UserModel1"])), "t1"],
-    [Select([F("f3"), F("f4")], From(["models.UserModel2"])), "t2"],
+    # Subquery 1
+    [Select([F("f1"), F("f2")], From(["models.ModelA"])), "t1"],
+    # Subquery 2
+    [Select([F("f3"), F("f4")], From(["models.ModelB"])), "t2"],
+    # Field Mapping
     [
-        ["f1", ["t1.f1", "t2.f3"], "title"],
-        ["f2", ["t1.f2", "t2.f4"], "title"]
+        ["name", ["t1.f1", "t2.f3"], "User Name"],  # Map t1.f1 and t2.f3 to 'name'
+        ["age",  ["t1.f2", "t2.f4"], "User Age"]    # Map t1.f2 and t2.f4 to 'age'
     ]
 )
 ```
 
-### UNION ALL
-```plaintext
-UnionAll(
-    [Select([F("f1"), F("f2")], From(["models.UserModel1"])), "t1"],
-    [Select([F("f3"), F("f4")], From(["models.UserModel2"])), "t2"],
-    [
-        ["f1", ["t1.f1", "t2.f3"], "title"],
-        ["f2", ["t1.f2", "t2.f4"], "title"]
-    ]
-)
-```
+## Comprehensive Example
 
-## Data Operations
-### Insert Data
-```plaintext
-Insert(
-    "models.UserModel",
-    [
-        {"f1": "value1", "f2": "value2"},
-        {"f1": "value3", "f2": "value4"}
-    ]
-)
-```
+Below is a complete TQL example demonstrating subqueries, joins, aggregation, and filtering:
 
-### Update Data
-```plaintext
-Update(
-    "models.UserModel",
-    {"f1": "new_value"},
-    Q("f2", "=", "old_value")
-)
-```
-
-### Delete Data
-```plaintext
-Delete(
-    "models.UserModel",
-    Q("f1", "=", "value")
-)
-```
-
-## Querying data with TQL
-
-In business logic, you can execute TQL query statements through the model service's `previewTData` method to perform complex data queries.
-
-#### Method signature
 ```python
-@classmethod
-def previewTData(cls, tStr, limit=50)
+Select(
+    [
+        F("sub.username", "username"),
+        F("sub.dept_name", "dept_name"),
+        F(Formula("COUNT(t3.id)"), "project_count")
+    ],
+    From(
+        [
+            Select(
+                [
+                    F("t1.name", "username"),
+                    F("t1.id", "uid"),
+                    F("t1.status", "status"),
+                    F("t2.title", "dept_name"),
+                    F("t2.is_deleted", "dept_deleted")
+                ],
+                From(
+                    ["models.UserModel", "t1"],
+                    LeftJoin("models.DeptModel", "t2"),
+                    On(["t1.deptId", "=", "t2.id"])
+                )
+            ),
+            "sub"
+        ],
+        # Join Project Table (for statistics)
+        LeftJoin("models.ProjectModel", "t3"),
+        On(["sub.uid", "=", "t3.managerId"])
+    ),
+    Where(
+        Q("sub.status", "=", "active") & 
+        Q("sub.dept_deleted", "=", False)
+    ),
+    GroupBy(F("sub.username"), F("sub.dept_name")),
+    Having(Q("project_count", ">", 0)),
+    OrderBy((F("project_count"), -1)),
+    Limit(0, 50)
+)
 ```
 
-This method uses TQL (Table Query Language) statements for complex queries, supporting advanced query capabilities such as multi-table joins, conditional filtering, and field mapping.
+## Executing Queries
 
-**Parameters:**
-- `tStr` (str): TQL query statement string, supporting complete TQL syntax including Select, Join, Where, etc.
-- `limit` (int, optional): Maximum number of records to return, defaults to 50
+In business logic, TQL queries can be executed via the `models.services.ModelSvc.previewTData` method to perform complex data query operations.
 
-**Return value:**
-- Returns a result set containing a list of data records that match the criteria
+**Parameter Description:**
 
-**Usage example:**
+*   `tStr` (str): The TQL query string, supporting full TQL syntax such as `Select`, `Join`, `Where`, etc.
+*   `limit` (int, optional): The maximum number of records to return. Defaults to 50.
+
+**Return Value:**
+
+Returns the query result set, containing a list of data records that match the conditions.
+
+**Example:**
+
 ```python
-# 1. Get the model service element
-modelSvc = app.getElement("models.services.ModelSvc")
-
-# 2. Construct TQL query statement (join query between user and department)
+# Construct TQL query statement (association query for users and departments)
 tql = """
 Select(
     [F("u.name", "username"), F("d.title", "dept_name")],
-    From(["UserModel", "u"]),
-    LeftJoin("DeptModel", "d"),
+    From(["models.UserModel", "u"]),
+    LeftJoin("models.DeptModel", "d"),
     On(["u.deptId", "=", "d.id"])
 )
 """
 
-# 3. Execute query and retrieve the first 50 records
-result = modelSvc.previewTData(tql, limit=50)
+# Execute query, get first 50 records
+result = app.models.services.ModelSvc.previewTData(tql, limit=50)
 
-# 4. Process query results
+# Process query results
 for row in result:
     print(f"Username: {row['username']}, Department: {row['dept_name']}")
 ```
-
-**Alternative query approach:**
-
-In addition to using the model service's `previewTData` method, you can also parse TQL strings directly and execute queries using the `Select.getTQLByString` method:
-
-```python
-from models.Meta import Select
-
-# 1. TQL query statement string
-tStr = """
-Select(
-    [F("u.name", "username"), F("d.title", "dept_name")],
-    From(["UserModel", "u"]),
-    LeftJoin("DeptModel", "d"),
-    On(["u.deptId", "=", "d.id"])
-)
-"""
-
-# 2. Parse TQL string into a TQL object
-tql = Select.getTQLByString(tStr)
-
-# 3. Execute query directly through the database (returns raw data)
-rowDataList = tql.database.query(tql)
-
-# 4. Process query results
-for row in rowDataList:
-    print(f"Username: {row['username']}, Department: {row['dept_name']}")
-```
-
-:::tip Usage tips
-- TQL query statements support Python multi-line string format for easier composition of complex query logic
-- The `limit` parameter effectively controls the volume of returned data to prevent large datasets from impacting performance
-- Field names in query results are specified by the second parameter (alias) of the `F()` function
-- It's recommended to set the `limit` value appropriately based on actual business requirements in production environments
-- The `Select.getTQLByString` approach is suitable for scenarios requiring direct database query control, offering more flexible query management
-- The `previewTData` method is better suited for quick data previews and testing, while the `database.query` method is more appropriate for complex queries in production environments
-- **Important**: The `database.query` method returns raw database data, while `previewTData` performs additional processing and formatting on the data
-:::
-
-:::warning Important notes
-- TQL query statements must conform to the correct syntax format, otherwise an exception will be thrown
-- Model names (e.g., "UserModel", "DeptModel") must be defined data models
-- Field names must match the field names defined in the models
-- Fields in join conditions (On clause) must ensure data type compatibility
-- When using the `database.query` method, ensure that the database connection is available
-- **Performance warning**: If the TQL query statement does not include a `Limit` clause, `tql.database.query(tql)` will return all records that match the criteria. This can severely impact performance and memory usage when dealing with large datasets. It is strongly recommended to add a `Limit` clause to your queries to restrict the amount of data returned
-:::

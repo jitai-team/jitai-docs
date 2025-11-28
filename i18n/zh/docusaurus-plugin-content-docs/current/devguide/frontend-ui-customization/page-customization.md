@@ -705,7 +705,7 @@ Vue全代码页面专注于原生Vue开发体验，完整支持[数据模型函�
 
 # 相关资料
 ## 数据模型的增删改查 {#crud-operations-for-data-models}
-后端数据模型提供了完善的增删改查功能，[API文档](/docs/reference/framework/JitORM/data-models#basic-data-operations)。
+后端数据模型提供了完善的增删改查功能，[API文档](/docs/reference/framework/JitORM/model-types/data-models#model-built-in-functions)。
 
 但是后端的函数只能在后端运行时（服务函数、定时任务函数、事件函数）中才能调用。考虑到这一点，前端环境平台也提供了数据模型的操作接口，如下图：
 

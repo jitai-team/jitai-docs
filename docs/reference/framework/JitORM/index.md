@@ -4,7 +4,7 @@ description: "JitORM Overview Reference - API documentation for developers. Comp
 ---
 
 # JitORM Overview
-JitORM (JitAI Object-Relational Mapping) is an object-relational mapping framework composed of [Database Elements](/docs/reference/framework/JitORM/database), [Data Type Elements](/docs/reference/framework/JitORM/data-types), and [Model Elements](/docs/reference/framework/JitORM/data-models) as core components, while also providing auxiliary data query and operation tools such as [Q Expressions](/docs/reference/framework/JitORM/q-expressions) and [TQL](/docs/reference/framework/JitORM/TQL).
+JitORM (JitAI Object-Relational Mapping) is an object-relational mapping framework composed of [Database Elements](/docs/reference/framework/JitORM/database), [Data Type Elements](/docs/reference/framework/JitORM/data-types), and [Model Elements](/docs/reference/framework/JitORM/model-types/data-models) as core components, while also providing auxiliary data query and operation tools such as [Q Expressions](/docs/reference/framework/JitORM/q-expressions) and [TQL](/docs/reference/framework/JitORM/TQL).
 
 ## Database
 Database elements encapsulate extensive technical implementations for database integration, automatically managing database connections, supporting the following multiple databases:

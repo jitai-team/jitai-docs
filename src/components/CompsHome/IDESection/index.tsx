@@ -1,9 +1,19 @@
-import React, { useRef } from 'react';
+import React, { useRef, useMemo } from 'react';
 import styles from './styles.module.css';
 import globalStyles from '../../../pages/index.module.css';
 import CONTENT_EN from './constant-en';
 import CONTENT_ZH from './constant-zh';
 import LazyVideo from '../../LazyVideo';
+
+// Fisher-Yates 洗牌算法
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
 
 interface ModuleCardProps {
   module: {
@@ -39,6 +49,9 @@ interface IDESectionProps {
 const IDESection: React.FC<IDESectionProps> = ({ currentLocale }) => {
   const CONTENT = currentLocale === 'zh' ? CONTENT_ZH : CONTENT_EN;
   const videoRefs = useRef<{ [key: string]: HTMLVideoElement | null }>({});
+  
+  // 随机排序开发模块（每次页面加载时随机一次）
+  const shuffledModules = useMemo(() => shuffleArray(CONTENT.developmentModules), [CONTENT.developmentModules]);
 
   const handleVideoClick = (videoSrc: string, index: number) => {
     const videoElement = videoRefs.current[`video-${index}`];
@@ -110,28 +123,28 @@ const IDESection: React.FC<IDESectionProps> = ({ currentLocale }) => {
           </div>
         </div>
 
-        {/* 可视化开发模块部分 - 2行卡片自动滚动 */}
+        {/* 可视化开发模块部分 - 2行卡片自动滚动（随机排序，单向滚动） */}
         <div className={styles.modulesWrapper}>
           <div className={styles.developmentModules}>
             <div className={styles.modulesGrid}>
-              <div className={styles.modulesRow}>
-                {CONTENT.developmentModules.slice(0, Math.ceil(CONTENT.developmentModules.length / 2)).map((module, index) => (
-                  <ModuleCard key={`row1-${index}`} module={module} />
-                ))}
-                {/* 重复第一行卡片，实现无缝循环 */}
-                {CONTENT.developmentModules.slice(0, Math.ceil(CONTENT.developmentModules.length / 2)).map((module, index) => (
-                  <ModuleCard key={`row1-repeat-${index}`} module={module} />
-                ))}
-              </div>
-              <div className={styles.modulesRow}>
-                {CONTENT.developmentModules.slice(Math.ceil(CONTENT.developmentModules.length / 2)).map((module, index) => (
-                  <ModuleCard key={`row2-${index}`} module={module} />
-                ))}
-                {/* 重复第二行卡片，实现无缝循环 */}
-                {CONTENT.developmentModules.slice(Math.ceil(CONTENT.developmentModules.length / 2)).map((module, index) => (
-                  <ModuleCard key={`row2-repeat-${index}`} module={module} />
-                ))}
-              </div>
+              {[0, 1].map((rowIndex) => {
+                const itemsPerRow = Math.ceil(shuffledModules.length / 2);
+                const startIndex = rowIndex * itemsPerRow;
+                const endIndex = startIndex + itemsPerRow;
+                const rowItems = shuffledModules.slice(startIndex, endIndex);
+                
+                return (
+                  <div key={rowIndex} className={styles.modulesRow}>
+                    {rowItems.map((module, index) => (
+                      <ModuleCard key={`row${rowIndex}-${index}`} module={module} />
+                    ))}
+                    {/* 重复当前行卡片，实现无缝循环 */}
+                    {rowItems.map((module, index) => (
+                      <ModuleCard key={`row${rowIndex}-repeat-${index}`} module={module} />
+                    ))}
+                  </div>
+                );
+              })}
             </div>
           </div>
           
@@ -147,6 +160,7 @@ const IDESection: React.FC<IDESectionProps> = ({ currentLocale }) => {
               >
                 {CONTENT.modulesFootnoteLinkText}
               </a>
+              {CONTENT.modulesFootnoteSuffix}
             </p>
           </div>
         </div>

@@ -115,9 +115,36 @@ const ClientLazyVideo: React.FC<LazyVideoProps> = ({
     }
   }, [isLoaded, autoPlay]);
 
-  const handleLoadedData = () => {
-    setIsLoaded(true);
-    onLoad?.();
+  // 标记加载完成
+  const markAsLoaded = useCallback(() => {
+    if (!isLoaded) {
+      setIsLoaded(true);
+      onLoad?.();
+    }
+  }, [isLoaded, onLoad]);
+
+  // 移动端超时保护：如果 3 秒后视频还没加载完，强制显示
+  useEffect(() => {
+    if (!isInView || isLoaded) return;
+
+    const timer = setTimeout(() => {
+      if (videoRef.current) {
+        // 检查视频是否已经有数据
+        if (videoRef.current.readyState >= 2) {
+          markAsLoaded();
+        } else {
+          // 强制显示视频，让用户看到加载进度
+          markAsLoaded();
+        }
+      }
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [isInView, isLoaded, markAsLoaded]);
+
+  // 多种加载事件监听，确保移动端能正确触发
+  const handleVideoReady = () => {
+    markAsLoaded();
   };
 
   return (
@@ -150,8 +177,11 @@ const ClientLazyVideo: React.FC<LazyVideoProps> = ({
           muted={muted}
           playsInline={playsInline}
           controls={controls}
-          preload="metadata"
-          onLoadedData={handleLoadedData}
+          preload="auto"
+          onLoadedData={handleVideoReady}
+          onCanPlay={handleVideoReady}
+          onLoadedMetadata={handleVideoReady}
+          onPlaying={handleVideoReady}
         />
       )}
 

@@ -291,13 +291,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     ],
                 },
             ],
-            logo: {
-                alt: "Next-generation AI application development technology system",
-                src: "https://jit-www.oss-accelerate.aliyuncs.com/logo/logo_title_dark.svg",
-                href: "https://jit.pro",
-                width: 340,
-                height: 100,
-            },
+            // logo: {
+            //     alt: "Next-generation AI application development technology system",
+            //     src: "https://jit-www.oss-accelerate.aliyuncs.com/logo/logo_title_dark.svg",
+            //     href: "https://jit.pro",
+            //     width: 340,
+            //     height: 100,
+            // },
             copyright: `Copyright © ${new Date().getFullYear()} , jitai platform LLC.`,
         },
         prism: {

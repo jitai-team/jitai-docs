@@ -8,7 +8,8 @@
   background: rgba(255, 255, 255, 0.62);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  z-index: 1000;
+  z-index: 2147483647; /* 提升到 32位整数最大值，尝试覆盖视频 */
+  transform: translate3d(0, 0, 0); /* 启用硬件加速，尝试强制层级 */
   padding: 0.75rem 0;
   box-shadow:
     0 4px 6px -1px rgba(0, 0, 0, 0.08),

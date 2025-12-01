@@ -82,7 +82,7 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ currentLocale }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className={styles.buttonText}>{CONTENT.desktop.windows.downloadText}</span>
+                {CONTENT.desktop.windows.downloadText}
               </a>
             </div>
           </div>
@@ -103,13 +103,13 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ currentLocale }) => {
                 onClick={() => handleMacDownload(CONTENT.desktop.mac.appleDownloadUrl)}
                 className={`${styles.downloadButton} ${'analytics-downloadMac' + (isMobile ? '-mobile' : '')} ${'analytics-downloadMacApple' + (isMobile ? '-mobile' : '')}`}
               >
-                <span className={styles.buttonText}>{CONTENT.desktop.mac.appleDownloadText}</span>
+                {CONTENT.desktop.mac.appleDownloadText}
               </button>
               <button 
                 onClick={() => handleMacDownload(CONTENT.desktop.mac.intelDownloadUrl)}
                 className={`${styles.downloadButtonSecondary} ${'analytics-downloadMac' + (isMobile ? '-mobile' : '')} ${'analytics-downloadMacIntel' + (isMobile ? '-mobile' : '')}`}
               >
-                <span className={styles.buttonText}>{CONTENT.desktop.mac.intelDownloadText}</span>
+                {CONTENT.desktop.mac.intelDownloadText}
               </button>
             </div>
           </div>

@@ -193,7 +193,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                                     onClick={() => handleNavClick(item)}
                                     className={`${styles.mobileNavItem} ${
                                         isActive ? styles.active : ""
-                                    } ${item.class || ""} mobile-nav-item`}
+                                    } ${item.class+'-mobile' || ""} mobile-nav-item`}
                                     data-type={item.type}
                                 >
                                     {item.label}

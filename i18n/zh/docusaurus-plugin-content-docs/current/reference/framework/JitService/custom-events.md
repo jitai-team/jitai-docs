@@ -22,7 +22,7 @@ description: "自定义事件 API 参考文档。完整的规格说明、方法�
 开发者需要先**在服务元素中定义事件**，然后才能创建`自定义事件`实例元素来订阅该事件。
 参见：[在服务元素中定义事件](./custom-business-service#event-definition-and-usage)
 
-### 创建实例元素
+### 创建实例元素 {#subscribe-custom-event}
 
 #### 目录结构
 

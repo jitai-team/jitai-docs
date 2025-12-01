@@ -3,9 +3,15 @@ const CONTENT = {
     highlightTitle: "生产级AI",
     buttonDownload: "立即下载",
     buttonDemo: "在线试用",
-    buttonGetStart: "了解更多",
+    buttonGetStart: "在线试用",
     previewVideoUrl:
         "https://jit-www.oss-accelerate.aliyuncs.com/zh_preview.mp4",
+    modal: {
+        title: "体验提示",
+        content: "为了获得最佳体验，建议您在电脑端访问 JitAI 官网进行在线试用。<br/><br/>您现在想先浏览开发文档吗？",
+        confirm: "浏览文档",
+        cancel: "稍后再说",
+    },
     cards: [
         {
             title: "生产级AI应用开发",

@@ -6,6 +6,12 @@ const CONTENT = {
     buttonGetStart: "Get Start",
     previewVideoUrl:
         "https://jit-www.oss-accelerate.aliyuncs.com/en_preview.mp4",
+    modal: {
+        title: "Experience Tip",
+        content: "For the best experience, we recommend visiting the JitAI website on a PC to try it online.<br/><br/>Would you like to browse the development documentation now?",
+        confirm: "View Docs",
+        cancel: "Later",
+    },
     cards: [
         {
             title: "Production-Grade AI Application Development",

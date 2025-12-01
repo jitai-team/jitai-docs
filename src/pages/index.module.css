@@ -187,6 +187,7 @@ body img {
 .container {
   min-height: 100vh;
   background: var(--bg-primary);
+  box-sizing: border-box;
 }
 
 /* ===== 公共组件样式系统 ===== */
@@ -197,6 +198,7 @@ body img {
   width: 100%;
   margin: 0 auto;
   padding: 0 var(--container-padding);
+  box-sizing: border-box;
 }
 
 .sectionTitle {
@@ -227,6 +229,7 @@ body img {
   transition: var(--transition-primary);
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .baseCard:hover {

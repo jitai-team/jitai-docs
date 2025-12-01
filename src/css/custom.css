@@ -104,12 +104,18 @@
   /* 优化滚动体验 */
   html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%; /* 禁止文字自动缩放 */
+    text-size-adjust: 100%;
   }
 
   /* 防止移动端横向滚动 */
   body {
     overflow-x: hidden;
     width: 100%;
+    /* 适配安全区域 */
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
   }
 
   /* 优化移动端点击区域 */

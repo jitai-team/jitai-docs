@@ -57,7 +57,7 @@ Provides element configuration, API interfaces, and usage methods for each frame
   <LinkGrid columns={2} links={[
     { text: "ORM Overview", href: "reference/framework/JitORM/" },
     { text: "Database", href: "reference/framework/JitORM/database" },
-    { text: "Data Models", href: "reference/framework/JitORM/data-models" },
+    { text: "Data Models", href: "reference/framework/JitORM/model-types/data-models" },
     { text: "Data Types", href: "reference/framework/JitORM/data-types" },
     { text: "Q Expressions", href: "reference/framework/JitORM/q-expressions" },
     { text: "TQL", href: "reference/framework/JitORM/TQL" },

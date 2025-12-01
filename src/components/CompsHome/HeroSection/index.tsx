@@ -148,6 +148,13 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                                     playsInline
                                     controls
                                     rootMargin="50px 0px"
+                                    {...{
+                                        "x5-video-player-type": "h5",
+                                        "x5-video-player-fullscreen": "false",
+                                        "x5-playsinline": "true",
+                                        "webkit-playsinline": "true",
+                                        "t7-video-player-type": "inline"
+                                    } as any}
                                 />
                             </div>
                         </div>

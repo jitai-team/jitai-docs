@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1600 900" 
+     role="img"
+     aria-labelledby="title9 desc9">
+  <title id="title9">Dual Complexity Challenge Facing AI Applications</title>
+  <desc id="desc9">Contrasting complexity differences between IT and AI applications, showing the dilemma of compounding difficulty</desc>
+
+  <!-- 样式定义 -->
+  <defs>
+    <style>
+      :root {
+        --primary-color: #326DFF;
+        --primary-light: #8EAEFF;
+        --primary-dark: #1E4FCC;
+        --accent-orange: #FF6B35;
+        --accent-red: #EF4444;
+        --accent-purple: #8B5CF6;
+        --bg-light: #F9FAFB;
+        --bg-white: #FFFFFF;
+        --text-primary: #326DFF;
+        --text-secondary: #6b7280;
+        --text-dark: #1e293b;
+        --border-color: #E5E7EB;
+      }
+      
+      .primary { fill: var(--primary-color); }
+      .primary-light { fill: var(--primary-light); }
+      .accent { fill: var(--accent-orange); }
+      .bg-light { fill: var(--bg-light); }
+      .bg-white { fill: var(--bg-white); }
+      
+      .text-main { 
+        fill: var(--text-dark); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+      }
+      
+      .text-title { 
+        fill: var(--text-primary); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 26px;
+        font-weight: 600;
+      }
+      
+      .text-label { 
+        fill: var(--text-dark); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+      }
+      
+      .text-sub { 
+        fill: var(--text-secondary); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 18px;
+      }
+      
+      .text-small { 
+        fill: var(--text-secondary); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 16px;
+      }
+
+      .card-border {
+        fill: var(--bg-white);
+        stroke: var(--border-color);
+        stroke-width: 1;
+      }
+    </style>
+
+    <!-- 箭头标记 -->
+    <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#326DFF" />
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <g id="background">
+    <rect width="1600" height="900" class="bg-light"/>
+  </g>
+
+  <!-- 主标题 -->
+  <g id="header">
+    <text x="800" y="60" text-anchor="middle" class="text-main">Dual Complexity Challenge Facing AI Applications</text>
+    <text x="800" y="92" text-anchor="middle" class="text-sub">Complexity Inversion + Difficulty Escalation + Universality Paradox</text>
+  </g>
+
+  <!-- 左侧：业务复杂度 -->
+  <g id="business-complexity">
+    <!-- 背景去除，改用边框 -->
+    <rect x="130" y="130" width="520" height="400" rx="12" class="card-border"/>
+    
+    <!-- 标题 -->
+    <text x="390" y="198" text-anchor="middle" class="text-title" fill="#326DFF">Business Complexity</text>
+    <text x="390" y="228" text-anchor="middle" class="text-sub" fill="#6b7280">Traditional Enterprise Software</text>
+    
+    <!-- 特点 -->
+    <text x="390" y="280" text-anchor="middle" class="text-label" fill="#1e293b">Record-oriented System</text>
+    <text x="390" y="318" text-anchor="middle" class="text-sub" fill="#6b7280">• Static Mapping</text>
+    <text x="390" y="348" text-anchor="middle" class="text-sub" fill="#6b7280">• Logic Preset</text>
+    <text x="390" y="378" text-anchor="middle" class="text-sub" fill="#6b7280">• Deterministic Process</text>
+  </g>
+
+  <!-- 右侧：技术复杂度 -->
+  <g id="technical-complexity">
+    <!-- 背景去除，改用边框 -->
+    <rect x="950" y="130" width="520" height="400" rx="12" class="bg-white" stroke="#EF4444" stroke-width="2"/>
+    
+    <!-- 标题 -->
+    <text x="1210" y="168" text-anchor="middle" class="text-title" fill="#EF4444">Technical Complexity</text>
+    <text x="1210" y="198" text-anchor="middle" class="text-sub" fill="#DC2626">Intelligent Enterprise Software</text>
+    
+    <!-- 特点 -->
+    <text x="1210" y="248" text-anchor="middle" class="text-label" fill="#991B1B">Execution-oriented System</text>
+    <text x="1210" y="283" text-anchor="middle" class="text-sub" fill="#991B1B">• Dynamic Decision</text>
+    <text x="1210" y="313" text-anchor="middle" class="text-sub" fill="#991B1B">• Normal Uncertainty</text>
+    <text x="1210" y="343" text-anchor="middle" class="text-sub" fill="#991B1B">• Context Dependency</text>
+    <text x="1210" y="373" text-anchor="middle" class="text-sub" fill="#991B1B">• Multi-modal Fusion</text>
+    <text x="1210" y="403" text-anchor="middle" class="text-sub" fill="#991B1B">• Continuous Learning</text>
+  </g>
+
+  <!-- 中间：对比箭头 -->
+  <g id="comparison">
+    <path d="M 650 335 L 950 335" stroke="#326DFF" stroke-width="3" fill="none" marker-end="url(#arrowPurple)"/>
+    <rect x="720" y="305" width="180" height="60" rx="8" fill="#F0F7FF" stroke="#326DFF" stroke-width="1"/>
+    <text x="810" y="333" text-anchor="middle" class="text-label" fill="#326DFF">Complexity Multiplication</text>
+    <text x="810" y="355" text-anchor="middle" class="text-small" fill="#326DFF">Exponential Increase</text>
+  </g>
+
+  <!-- 底部：核心挑战 -->
+  <g id="challenges">
+    <!-- 核心困境 -->
+    <rect x="350" y="590" width="900" height="70" rx="12" fill="#F9FAFB" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="800" y="620" text-anchor="middle" class="text-title" fill="#326DFF">Dual Complexity Challenge</text>
+    <text x="800" y="648" text-anchor="middle" class="text-sub">Tech Complexity × Biz Complexity = Engineering Dilemma</text>
+    
+    <!-- 三个挑战 -->
+    <rect x="160" y="690" width="390" height="75" rx="8" class="bg-white" stroke="#EF4444" stroke-width="1"/>
+    <text x="355" y="720" text-anchor="middle" class="text-label" fill="#EF4444">Complexity Inversion</text>
+    <text x="355" y="746" text-anchor="middle" class="text-sub">Exponential Growth</text>
+
+    <rect x="605" y="690" width="390" height="75" rx="8" class="card-border"/>
+    <text x="800" y="720" text-anchor="middle" class="text-label" fill="#326DFF">Lack of Methodology</text>
+    <text x="800" y="746" text-anchor="middle" class="text-sub">No Mature Path</text>
+
+    <rect x="1050" y="690" width="390" height="75" rx="8" class="card-border"/>
+    <text x="1245" y="720" text-anchor="middle" class="text-label" fill="#326DFF">High Cost</text>
+    <text x="1245" y="746" text-anchor="middle" class="text-sub">Talent Scarcity · High Risk</text>
+  </g>
+</svg>
+

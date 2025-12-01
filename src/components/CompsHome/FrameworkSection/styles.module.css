@@ -356,6 +356,7 @@
 
 @media (max-width: 768px) {
   .frameworkSection {
+    /* 恢复为 0，交由 sectionContent 控制左右间距 */
     padding: var(--space-24) 0;
   }
 
@@ -369,13 +370,23 @@
   }
 
   .frameworksGrid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: var(--space-4);
-    padding: 0 var(--space-4);
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .frameworkCard {
     padding: var(--space-7);
+    margin-bottom: var(--space-4);
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .frameworkCard:last-child {
+    margin-bottom: 0;
   }
 
   .cardHeader {
@@ -443,11 +454,12 @@
 
   .frameworksGrid {
     gap: var(--space-4);
-    padding: 0 var(--space-2);
+    padding: 0;
   }
 
   .frameworkCard {
     padding: var(--space-6);
+    margin-bottom: var(--space-4);
   }
 
   .iconEmoji {

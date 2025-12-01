@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1600 900" 
+     role="img"
+     aria-labelledby="title7 desc7">
+  <title id="title7">FDE Work Mode: New Division of Labor and Endogenous Capability Building</title>
+  <desc id="desc7">Showing how Forward Deployed Engineers efficiently use the platform and underlying building blocks to connect technology with frontline business</desc>
+
+  <!-- 样式定义 -->
+  <defs>
+    <style>
+      :root {
+        --primary-color: #326DFF;
+        --primary-light: #8EAEFF;
+        --primary-dark: #1E4FCC;
+        --accent-orange: #FF6B35;
+        --accent-green: #10B981;
+        --accent-purple: #8B5CF6;
+        --bg-light: #F9FAFB;
+        --bg-white: #FFFFFF;
+        --text-dark: #333333;
+        --text-medium: #6b7280;
+        --text-light: #9ca3af;
+        --border-color: #E5E7EB;
+      }
+      
+      .primary { fill: var(--primary-color); }
+      .primary-light { fill: var(--primary-light); }
+      .accent { fill: var(--accent-orange); }
+      .bg-light { fill: var(--bg-light); }
+      .bg-white { fill: var(--bg-white); }
+      
+      .text-main { 
+        fill: #1e293b; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+      }
+      
+      .text-title { 
+        fill: #326DFF; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 26px;
+        font-weight: 600;
+      }
+      
+      .text-label { 
+        fill: #1e293b; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+      }
+      
+      .text-sub { 
+        fill: #6b7280; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 18px;
+      }
+      
+      .text-small { 
+        fill: #6b7280; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 16px;
+      }
+
+      .card-border {
+        fill: var(--bg-white);
+        stroke: var(--border-color);
+        stroke-width: 1;
+      }
+    </style>
+
+    <!-- 积木块图标 -->
+    <symbol id="block-icon" viewBox="0 0 40 40">
+      <rect x="5" y="5" width="30" height="30" rx="4" fill="#326DFF"/>
+      <rect x="10" y="10" width="8" height="8" fill="#FFFFFF" opacity="0.7"/>
+      <rect x="22" y="10" width="8" height="8" fill="#FFFFFF" opacity="0.7"/>
+      <rect x="10" y="22" width="8" height="8" fill="#FFFFFF" opacity="0.7"/>
+      <rect x="22" y="22" width="8" height="8" fill="#FFFFFF" opacity="0.7"/>
+    </symbol>
+
+    <!-- 工程师图标 -->
+    <symbol id="engineer-icon" viewBox="0 0 80 100">
+      <circle cx="40" cy="25" r="15" fill="#326DFF"/>
+      <path d="M 15 75 Q 15 45 40 45 Q 65 45 65 75 Z" fill="#326DFF"/>
+      <rect x="35" y="60" width="10" height="25" fill="#326DFF"/>
+      <rect x="25" y="65" width="30" height="3" fill="#8EAEFF"/>
+    </symbol>
+
+    <!-- 工具箱图标 -->
+    <symbol id="toolbox-icon" viewBox="0 0 80 60">
+      <rect x="10" y="20" width="60" height="35" rx="3" fill="#326DFF"/>
+      <rect x="20" y="10" width="40" height="15" rx="2" fill="#8EAEFF"/>
+      <line x1="35" y1="10" x2="35" y2="20" stroke="#326DFF" stroke-width="2"/>
+      <line x1="45" y1="10" x2="45" y2="20" stroke="#326DFF" stroke-width="2"/>
+    </symbol>
+
+    <!-- 业务场景图标 -->
+    <symbol id="business-icon" viewBox="0 0 80 80">
+      <rect x="10" y="25" width="60" height="50" fill="#326DFF"/>
+      <rect x="25" y="35" width="10" height="15" fill="#FFFFFF" opacity="0.7"/>
+      <rect x="45" y="35" width="10" height="15" fill="#FFFFFF" opacity="0.7"/>
+      <rect x="25" y="55" width="10" height="20" fill="#8EAEFF"/>
+      <rect x="45" y="55" width="10" height="20" fill="#8EAEFF"/>
+      <polygon points="10,25 40,5 70,25" fill="#326DFF"/>
+    </symbol>
+  </defs>
+
+  <!-- 背景 -->
+  <g id="background">
+    <rect width="1600" height="900" class="bg-light"/>
+  </g>
+
+  <!-- 主标题 -->
+  <g id="header">
+    <text x="800" y="70" text-anchor="middle" class="text-main">FDE Work Mode: New Division of Labor &amp; Endogenous Capability Building</text>
+    <text x="800" y="105" text-anchor="middle" class="text-sub">Forward Deployed Engineer - Not Reinventing the Wheel</text>
+  </g>
+
+  <!-- 底层：通用技术模块提供者 -->
+  <g id="module-providers">
+    <!-- 标题栏 - 扁平化 - 变浅 -->
+    <rect x="250" y="670" width="1100" height="50" rx="8" fill="#F0F7FF" stroke="#8EAEFF" stroke-width="1"/>
+    <text x="800" y="705" text-anchor="middle" class="text-title" fill="#326DFF">General Technology Module Providers</text>
+
+    <!-- 积木块 -->
+    <g>
+      <use href="#block-icon" x="300" y="750" width="40" height="40"/>
+      <text x="320" y="810" text-anchor="middle" class="text-small">ETL</text>
+
+      <use href="#block-icon" x="400" y="750" width="40" height="40"/>
+      <text x="420" y="810" text-anchor="middle" class="text-small">Algorithm</text>
+
+      <use href="#block-icon" x="500" y="750" width="40" height="40"/>
+      <text x="520" y="810" text-anchor="middle" class="text-small">UI Comp</text>
+
+      <use href="#block-icon" x="600" y="750" width="40" height="40"/>
+      <text x="620" y="810" text-anchor="middle" class="text-small">Data Src</text>
+
+      <use href="#block-icon" x="700" y="750" width="40" height="40"/>
+      <text x="720" y="810" text-anchor="middle" class="text-small">Workflow</text>
+
+      <use href="#block-icon" x="800" y="750" width="40" height="40"/>
+      <text x="820" y="810" text-anchor="middle" class="text-small">Report</text>
+
+      <use href="#block-icon" x="900" y="750" width="40" height="40"/>
+      <text x="920" y="810" text-anchor="middle" class="text-small">Integration</text>
+
+      <use href="#block-icon" x="1000" y="750" width="40" height="40"/>
+      <text x="1020" y="810" text-anchor="middle" class="text-small">AI Cap</text>
+
+      <use href="#block-icon" x="1100" y="750" width="40" height="40"/>
+      <text x="1120" y="810" text-anchor="middle" class="text-small">...</text>
+    </g>
+  </g>
+
+  <!-- 中层：JitAI平台 -->
+  <g id="jitai-platform">
+    <!-- 标题栏 - 扁平化 -->
+    <rect x="250" y="440" width="1100" height="60" rx="8" fill="#F0F7FF" stroke="#326DFF" stroke-width="1"/>
+    <text x="800" y="480" text-anchor="middle" class="text-title" fill="#326DFF">JitAI Platform</text>
+
+    <!-- 平台能力 -->
+    <g>
+      <rect x="280" y="530" width="200" height="50" rx="6" class="card-border"/>
+      <use href="#toolbox-icon" x="310" y="540" width="40" height="30"/>
+      <text x="370" y="560" class="text-sub">Dev Tools</text>
+
+      <rect x="520" y="530" width="200" height="50" rx="6" class="card-border"/>
+      <text x="620" y="560" text-anchor="middle" class="text-sub">Runtime Engine</text>
+
+      <rect x="760" y="530" width="200" height="50" rx="6" class="card-border"/>
+      <text x="860" y="560" text-anchor="middle" class="text-sub">Element System</text>
+
+      <rect x="1000" y="530" width="200" height="50" rx="6" class="card-border"/>
+      <text x="1100" y="560" text-anchor="middle" class="text-sub">AI Integration</text>
+    </g>
+
+    <!-- 向下箭头 -->
+    <path d="M 380 600 L 380 650" stroke="#326DFF" stroke-width="3" fill="none"/>
+    <path d="M 620 600 L 620 650" stroke="#326DFF" stroke-width="3" fill="none"/>
+    <path d="M 860 600 L 860 650" stroke="#326DFF" stroke-width="3" fill="none"/>
+    <path d="M 1100 600 L 1100 650" stroke="#326DFF" stroke-width="3" fill="none"/>
+    <polygon points="615,645 620,655 625,645" fill="#326DFF"/>
+    <polygon points="855,645 860,655 865,645" fill="#326DFF"/>
+    <text x="800" y="640" text-anchor="middle" class="text-small" fill="#326DFF">Get Building Blocks</text>
+  </g>
+
+  <!-- 顶层：FDE -->
+  <g id="fde-layer">
+    <!-- 标题栏 - 扁平化 - 移除深色背景 -->
+    <rect x="250" y="180" width="1100" height="60" rx="8" fill="#F0F7FF" stroke="#326DFF" stroke-width="1"/>
+    <text x="800" y="220" text-anchor="middle" class="text-title" fill="#326DFF">FDE (Forward Deployed Engineer)</text>
+
+    <!-- FDE工作内容 -->
+    <g>
+      <use href="#engineer-icon" x="500" y="260" width="80" height="100"/>
+      
+      <rect x="620" y="270" width="500" height="80" rx="6" class="card-border"/>
+      <text x="870" y="300" text-anchor="middle" class="text-label">Core Work</text>
+      <text x="870" y="325" text-anchor="middle" class="text-sub">• Understand Business Needs &amp; Pain Points</text>
+      <text x="870" y="345" text-anchor="middle" class="text-sub">• Quickly Build with Platform &amp; Blocks</text>
+    </g>
+
+    <!-- 向上箭头到业务 -->
+    <path d="M 800 390 L 800 420" stroke="#326DFF" stroke-width="4" fill="none"/>
+    <polygon points="795,415 800,425 805,415" fill="#326DFF"/>
+  </g>
+
+  <!-- 向上：部署到企业业务前沿 -->
+  <g id="business-frontline">
+    <line x1="100" y1="140" x2="1500" y2="140" stroke="#FF6B35" stroke-width="3" stroke-dasharray="10,5"/>
+    <text x="800" y="130" text-anchor="middle" class="text-label" fill="#FF6B35">━━━ Enterprise Business Frontline ━━━</text>
+  </g>
+
+
+  <!-- 底部总结 -->
+  <g id="summary">
+    <rect x="100" y="830" width="1400" height="50" rx="8" fill="#F9FAFB" stroke="#326DFF" stroke-width="1"/>
+    <text x="800" y="862" text-anchor="middle" class="text-label" fill="#326DFF">New Division of Labor: Module Providers Supply Blocks + FDE Builds Quickly with Platform + Deep into Frontline</text>
+  </g>
+</svg>
+

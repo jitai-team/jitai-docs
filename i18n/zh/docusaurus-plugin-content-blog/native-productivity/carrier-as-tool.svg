@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1600 900" 
+     role="img"
+     aria-labelledby="title5 desc5">
+  <title id="title5">AI时代的"载体即工具"哲学</title>
+  <desc id="desc5">展示AI侧和IT侧的融合，传统载体如何转化为AI可利用的"元素"</desc>
+
+  <!-- 样式定义 -->
+  <defs>
+    <style>
+      :root {
+        --primary-color: #326DFF;
+        --primary-light: #8EAEFF;
+        --primary-dark: #1E4FCC;
+        --accent-orange: #FF6B35;
+        --accent-green: #10B981;
+        --accent-purple: #8B5CF6;
+        --bg-light: #F9FAFB;
+        --bg-white: #FFFFFF;
+        --text-primary: #326DFF;
+        --text-secondary: #6b7280;
+        --text-dark: #1e293b;
+        --border-color: #E5E7EB;
+      }
+      
+      .primary { fill: var(--primary-color); }
+      .primary-light { fill: var(--primary-light); }
+      .accent { fill: var(--accent-orange); }
+      .bg-light { fill: var(--bg-light); }
+      .bg-white { fill: var(--bg-white); }
+      
+      .text-main { 
+        fill: var(--text-dark); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+      }
+      
+      .text-title { 
+        fill: var(--text-primary); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 26px;
+        font-weight: 600;
+      }
+      
+      .text-label { 
+        fill: var(--text-dark); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+      }
+      
+      .text-sub { 
+        fill: var(--text-secondary); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 18px;
+      }
+      
+      .text-small { 
+        fill: var(--text-secondary); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 16px;
+      }
+
+      .card-border {
+        fill: var(--bg-white);
+        stroke: var(--border-color);
+        stroke-width: 1;
+      }
+    </style>
+
+    <!-- 操作系统图标 -->
+    <symbol id="os-icon" viewBox="0 0 60 60">
+      <rect x="5" y="5" width="50" height="50" rx="6" fill="#326DFF"/>
+      <rect x="12" y="12" width="36" height="8" fill="#FFFFFF" opacity="0.8"/>
+      <rect x="12" y="25" width="15" height="15" fill="#FFFFFF" opacity="0.6"/>
+      <rect x="32" y="25" width="15" height="15" fill="#FFFFFF" opacity="0.6"/>
+    </symbol>
+
+    <!-- 数据库图标 -->
+    <symbol id="db-icon" viewBox="0 0 60 60">
+      <ellipse cx="30" cy="15" rx="20" ry="8" fill="#326DFF"/>
+      <rect x="10" y="15" width="40" height="30" fill="#326DFF"/>
+      <ellipse cx="30" cy="45" rx="20" ry="8" fill="#8EAEFF"/>
+      <ellipse cx="30" cy="30" rx="20" ry="8" fill="#326DFF" opacity="0.5"/>
+    </symbol>
+
+    <!-- IoT图标 -->
+    <symbol id="iot-icon" viewBox="0 0 60 60">
+      <circle cx="30" cy="30" r="8" fill="#326DFF"/>
+      <circle cx="15" cy="15" r="5" fill="#8EAEFF"/>
+      <circle cx="45" cy="15" r="5" fill="#8EAEFF"/>
+      <circle cx="15" cy="45" r="5" fill="#8EAEFF"/>
+      <circle cx="45" cy="45" r="5" fill="#8EAEFF"/>
+      <line x1="30" y1="30" x2="15" y2="15" stroke="#326DFF" stroke-width="2"/>
+      <line x1="30" y1="30" x2="45" y2="15" stroke="#326DFF" stroke-width="2"/>
+      <line x1="30" y1="30" x2="15" y2="45" stroke="#326DFF" stroke-width="2"/>
+      <line x1="30" y1="30" x2="45" y2="45" stroke="#326DFF" stroke-width="2"/>
+    </symbol>
+
+    <!-- 浏览器图标 -->
+    <symbol id="browser-icon" viewBox="0 0 60 60">
+      <rect x="5" y="10" width="50" height="45" rx="4" fill="#FF6B35"/>
+      <rect x="5" y="10" width="50" height="10" rx="4" fill="#FFB35E"/>
+      <circle cx="12" cy="15" r="2" fill="#FFFFFF"/>
+      <circle cx="19" cy="15" r="2" fill="#FFFFFF"/>
+      <circle cx="26" cy="15" r="2" fill="#FFFFFF"/>
+      <rect x="10" y="25" width="40" height="25" fill="#FFFFFF" opacity="0.8"/>
+    </symbol>
+
+    <!-- 互联网图标 -->
+    <symbol id="internet-icon" viewBox="0 0 60 60">
+      <circle cx="30" cy="30" r="25" fill="#326DFF"/>
+      <circle cx="30" cy="30" r="25" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+      <ellipse cx="30" cy="30" rx="12" ry="25" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+      <line x1="5" y1="30" x2="55" y2="30" stroke="#FFFFFF" stroke-width="2"/>
+      <path d="M 10 15 Q 30 12 50 15" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+      <path d="M 10 45 Q 30 48 50 45" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+    </symbol>
+  </defs>
+
+  <!-- 背景 -->
+  <g id="background">
+    <rect width="1600" height="900" class="bg-light"/>
+  </g>
+
+  <!-- 主标题 -->
+  <g id="header">
+    <text x="800" y="60" text-anchor="middle" class="text-main">AI时代的"载体即工具"哲学</text>
+    <text x="800" y="92" text-anchor="middle" class="text-sub">应用工程的扩展与融合</text>
+  </g>
+
+  <!-- 左侧：AI侧工程 -->
+  <g id="ai-side">
+    <!-- 标题条 - 扁平化，移除深色背景 -->
+    <rect x="120" y="150" width="460" height="60" rx="8" fill="#F0F7FF" stroke="#326DFF" stroke-width="1"/>
+    <text x="350" y="188" text-anchor="middle" class="text-title" fill="#326DFF">AI侧工程</text>
+
+    <!-- 感知 -->
+    <g>
+      <rect x="140" y="240" width="420" height="105" rx="8" class="card-border"/>
+      <text x="350" y="278" text-anchor="middle" class="text-label">感知能力</text>
+      <text x="350" y="305" text-anchor="middle" class="text-sub">AI能"看见"外界系统</text>
+      <text x="350" y="330" text-anchor="middle" class="text-small">理解系统结构和能力</text>
+    </g>
+
+    <!-- 驱动 -->
+    <g>
+      <rect x="140" y="370" width="420" height="105" rx="8" class="card-border"/>
+      <text x="350" y="408" text-anchor="middle" class="text-label">驱动能力</text>
+      <text x="350" y="435" text-anchor="middle" class="text-sub">AI能操控外界系统</text>
+      <text x="350" y="460" text-anchor="middle" class="text-small">执行操作和调用功能</text>
+    </g>
+
+    <!-- 智力输出 -->
+    <g>
+      <rect x="140" y="500" width="420" height="105" rx="8" class="card-border"/>
+      <text x="350" y="538" text-anchor="middle" class="text-label">智力输出</text>
+      <text x="350" y="565" text-anchor="middle" class="text-sub">多种模态的输出方式</text>
+      <text x="350" y="590" text-anchor="middle" class="text-small">文本、图像、音频、决策</text>
+    </g>
+  </g>
+
+  <!-- 右侧：IT侧工程 -->
+  <g id="it-side">
+    
+    <!-- 标题条 - 扁平化，移除深色背景 -->
+    <rect x="1020" y="150" width="460" height="60" rx="8" fill="#F0F7FF" stroke="#8EAEFF" stroke-width="1"/>
+    <text x="1250" y="188" text-anchor="middle" class="text-title" fill="#326DFF">IT侧工程</text>
+
+    <!-- 加载运行 -->
+    <g>
+      <rect x="1040" y="240" width="420" height="105" rx="8" class="card-border"/>
+      <text x="1250" y="278" text-anchor="middle" class="text-label">加载运行方法</text>
+      <text x="1250" y="305" text-anchor="middle" class="text-sub">模块动态加载和执行</text>
+      <text x="1250" y="330" text-anchor="middle" class="text-small">热插拔、依赖管理</text>
+    </g>
+
+    <!-- 接口规范 -->
+    <g>
+      <rect x="1040" y="370" width="420" height="105" rx="8" class="card-border"/>
+      <text x="1250" y="408" text-anchor="middle" class="text-label">接口规范</text>
+      <text x="1250" y="435" text-anchor="middle" class="text-sub">统一的调用标准</text>
+      <text x="1250" y="460" text-anchor="middle" class="text-small">参数、返回值、异常处理</text>
+    </g>
+
+    <!-- 语义表达 -->
+    <g>
+      <rect x="1040" y="500" width="420" height="105" rx="8" class="card-border"/>
+      <text x="1250" y="538" text-anchor="middle" class="text-label">语义表达方法</text>
+      <text x="1250" y="565" text-anchor="middle" class="text-sub">机器可理解的描述</text>
+      <text x="1250" y="590" text-anchor="middle" class="text-small">元数据、注解、文档</text>
+    </g>
+  </g>
+
+  <!-- 中心：JitAI核心价值 -->
+  <g id="jitai-core">
+    <!-- 中央枢纽 -->
+    <rect x="640" y="220" width="320" height="400" rx="16" fill="#FFFFFF" stroke="#326DFF" stroke-width="2"/>
+    <!-- <rect x="655" y="235" width="290" height="370" rx="12" fill="#FFFFFF" opacity="0.1"/> -->
+
+    <!-- 标题 -->
+    <text x="800" y="275" text-anchor="middle" fill="#326DFF" font-size="26" font-weight="700">JitAI 核心价值</text>
+    <text x="800" y="305" text-anchor="middle" fill="#326DFF" font-size="20" font-weight="600">载体标准化为元素</text>
+
+    <!-- 传统载体图标 -->
+    <g id="carriers">
+      <!-- OS -->
+      <use href="#os-icon" x="680" y="350" width="55" height="55"/>
+      <text x="707" y="425" text-anchor="middle" fill="#1e293b" font-size="18" font-weight="700">OS</text>
+
+      <!-- DB -->
+      <use href="#db-icon" x="773" y="350" width="55" height="55"/>
+      <text x="800" y="425" text-anchor="middle" fill="#1e293b" font-size="18" font-weight="700">DB</text>
+
+      <!-- IoT -->
+      <use href="#iot-icon" x="865" y="350" width="55" height="55"/>
+      <text x="892" y="425" text-anchor="middle" fill="#1e293b" font-size="18" font-weight="700">IoT</text>
+
+      <!-- 浏览器 -->
+      <use href="#browser-icon" x="680" y="465" width="55" height="55"/>
+      <text x="707" y="540" text-anchor="middle" fill="#1e293b" font-size="18" font-weight="700">浏览器</text>
+
+      <!-- 互联网 -->
+      <use href="#internet-icon" x="795" y="465" width="55" height="55"/>
+      <text x="822" y="540" text-anchor="middle" fill="#1e293b" font-size="18" font-weight="700">互联网</text>
+    </g>
+
+    <!-- 箭头向下 -->
+    <path d="M 800 560 L 800 620" stroke="#326DFF" stroke-width="3" fill="none"/>
+    <polygon points="795,615 800,625 805,615" fill="#326DFF"/>
+  </g>
+
+  <!-- 元素化标签 -->
+  <g id="element-label">
+    <rect x="700" y="630" width="200" height="40" rx="20" fill="#FFFFFF" stroke="#326DFF" stroke-width="1"/>
+    <text x="800" y="657" text-anchor="middle" class="text-label" fill="#326DFF">元素化转换</text>
+  </g>
+
+  <!-- 连接箭头 -->
+  <g id="connections">
+    <!-- AI侧到中心 -->
+    <path d="M 570 292 L 640 292" stroke="#326DFF" stroke-width="3" fill="none"/>
+    <path d="M 570 422 L 640 422" stroke="#326DFF" stroke-width="3" fill="none"/>
+    <path d="M 570 552 L 640 552" stroke="#326DFF" stroke-width="3" fill="none"/>
+
+    <!-- IT侧到中心 -->
+    <path d="M 960 292 L 1030 292" stroke="#326DFF" stroke-width="3" fill="none"/>
+    <path d="M 960 422 L 1030 422" stroke="#326DFF" stroke-width="3" fill="none"/>
+    <path d="M 960 552 L 1030 552" stroke="#326DFF" stroke-width="3" fill="none"/>
+  </g>
+
+  <!-- 底部洞察 -->
+  <g id="insight">
+    <rect x="250" y="700" width="1100" height="70" rx="12" fill="#F9FAFB" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="800" y="732" text-anchor="middle" class="text-title" fill="#326DFF">载体即工具</text>
+    <text x="800" y="760" text-anchor="middle" class="text-sub">传统的OS、浏览器、互联网、数据库、IoT，既是载体又是工具</text>
+  </g>
+</svg>

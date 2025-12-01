@@ -507,6 +507,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
 
     return (
         <div className={className}>
+            {/* @ts-ignore */}
             <Head>
                 <link rel="dns-prefetch" href="https://jit-front.oss-cn-hangzhou.aliyuncs.com" />
                 <link rel="preconnect" href="https://jit-front.oss-cn-hangzhou.aliyuncs.com" />

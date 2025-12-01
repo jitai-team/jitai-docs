@@ -89,10 +89,10 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                             className={`${styles.primaryButton} ${isMobile ? 'analytics-download-mobile' : 'analytics-download'}`}
                             href="./download"
                         >
-                            <span className={styles.buttonText}>
+                            <span className={`${styles.buttonText} ${isMobile ? 'analytics-download-mobile' : 'analytics-download'}`}>
                                 {content.buttonDownload}
                             </span>
-                            <span className={styles.buttonIcon}>
+                            <span className={`${styles.buttonIcon} ${isMobile ? 'analytics-download-mobile' : 'analytics-download'}`}>
                                 <svg
                                     viewBox="0 0 24 24"
                                     fill="none"
@@ -108,10 +108,10 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                             onClick={handleButtonClick}
                             target="_blank"
                         >
-                            <span className={styles.buttonText}>
+                            <span className={`${styles.buttonText} ${isMobile ? 'analytics-tryOnline-mobile' : 'analytics-tryOnline'}`}>
                                 {content.buttonDemo}
                             </span>
-                            <span className={styles.buttonIcon}>
+                            <span className={`${styles.buttonIcon} ${isMobile ? 'analytics-tryOnline-mobile' : 'analytics-tryOnline'}`}>
                                 <svg
                                     viewBox="0 0 24 24"
                                     fill="none"

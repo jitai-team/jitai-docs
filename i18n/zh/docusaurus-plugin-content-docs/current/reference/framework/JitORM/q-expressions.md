@@ -138,11 +138,9 @@ Q(
 
 Q表达式通常作为参数传递给数据模型的方法，用于过滤数据。
 
-### 查询列表 (Query)
-
-```javascript
+```javascript title="javascript示例"
 // 基础条件查询 (注意：单条件需包裹 Q())
-const users = await UserModel.query(
+const users = await this.app.models.UserModel.query(
     Q(Q('status', '=', 'active')),
     None,
     None,
@@ -151,7 +149,7 @@ const users = await UserModel.query(
 );
 
 // 复杂组合条件查询
-const result = await OrderModel.query(
+const result = await this.app.models.OrderModel.query(
     Q(Q('amount', 'gt', 100), Q.AND, Q('createTime', 'year', 2023)),
     None,
     None,
@@ -160,31 +158,16 @@ const result = await OrderModel.query(
 );
 ```
 
-### 获取单条记录 (Get)
+```python title="python示例"
+# 基础条件查询 (注意：单条件需包裹 Q())
+app.models.UserModel.query(Q(Q('status', '=', 'active')), None, None, 1, 20)
 
-```javascript
-// 通过邮箱获取用户
-const user = await UserModel.get(Q(Q('email', '=', 'test@example.com')));
-
-// 获取最近一笔未处理订单
-const order = await OrderModel.get(Q(Q('status', '=', 'pending')));
-```
-
-### 批量更新 (Update)
-
-```javascript
-// 将所有库存不足的产品状态更新为缺货
-await ProductModel.updateByFilter(
-    Q(Q('stock', 'lt', 10)),
-    { status: 'out_of_stock' }
-);
-```
-
-### 批量删除 (Delete)
-
-```javascript
-// 删除已过期的临时数据
-await TempDataModel.deleteByFilter(
-    Q(Q('expireTime', 'lt', '2024-01-01'))
-);
+# 复杂组合条件查询
+app.models.OrderModel.query(
+    Q(Q('amount', 'gt', 100), Q.AND, Q('createTime', 'year', 2023)),
+    None,
+    None,
+    1,
+    20
+)
 ```

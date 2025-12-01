@@ -1,0 +1,10 @@
+{
+  "position": 3,
+  "label": "Model",
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "Model",
+    "description": "Data models are the abstract framework of business system data characteristics. They act like a blueprint, defining the organization, operation methods, and constraints of data, so that application systems can effectively manage and process information. The platform has built-in various data model types, including data table models, aggregation table models, extension table models, and data object models (tableless models). Developers can also create their own model types, or rewrite the official built-in model types of JitAI in their own App to implement their own encapsulation."
+  }
+}

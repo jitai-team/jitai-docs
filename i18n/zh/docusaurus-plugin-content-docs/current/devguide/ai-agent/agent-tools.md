@@ -11,7 +11,7 @@ description: "Agent中的工具的详细指南和说明。"
 基于JitAI解释型系统架构构建的应用，其自描述的元素可以被大模型准确理解，成为Agent可用的工具。开发者可以在Agent可视化编辑器的`工具`中添加[模型函数](../data-modeling/create-data-model-functions)、[服务函数](../business-logic-development/creating-service-elements#create-service-functions)、[MCP服务](https://modelcontextprotocol.io/docs/getting-started/intro)、[外部API](../third-party-integration/external-api)、[页面函数](../shell-and-page/generic-page#page-functions)，实现AI对前后端全栈元素的调用。
 
 ## Agent调用模型函数 {#calling-model-functions}
-[数据模型](../../reference/framework/JitORM/data-models#model-built-in-functions)自带常用的增删改查函数，开发者还可以根据实际业务需求[自定义模型函数](../data-modeling/create-data-model-functions)。将数据模型函数作为工具添加到Agent后，Agent便能够通过这些函数实现对数据的增、删、改、查等操作，满足多样化的数据处理场景。
+[数据模型](../../reference/framework/JitORM/model-types/data-models#model-built-in-functions)自带常用的增删改查函数，开发者还可以根据实际业务需求[自定义模型函数](../data-modeling/create-data-model-functions)。将数据模型函数作为工具添加到Agent后，Agent便能够通过这些函数实现对数据的增、删、改、查等操作，满足多样化的数据处理场景。
 
 ![Agent添加模型函数工具](./img/agent/agent-add-model-function-tool.gif)
 

@@ -7,7 +7,7 @@ sidebar_label: "Data Types"
 ---
 
 # Data Types
-JitAI's data type Type elements are encapsulations of programming language native data types (such as: strings, numbers, lists, dictionaries, etc.), providing additional functionality and features, frequently used to define field types for [Data Models](./data-models).
+JitAI's data type Type elements are encapsulations of programming language native data types (such as: strings, numbers, lists, dictionaries, etc.), providing additional functionality and features, frequently used to define field types for [Data Models](./model-types/data-models).
 
 The hierarchical structure of data type elements is Meta (datatypes.Meta) → Type (datatypes.xxx). Developers can also create their own Type elements or modify the official data types provided by JitAI in their own App to implement their own encapsulation.
 

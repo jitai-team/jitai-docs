@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1600 850" 
+     role="img"
+     aria-labelledby="title3 desc3">
+  <title id="title3">JAAP Protocol Architecture</title>
+  <desc id="desc3">Showing JAAP's core mechanism: perception, drive, orchestration loop, transforming software modules into AI-usable elements</desc>
+
+  <!-- 样式定义 -->
+  <defs>
+    <style>
+      :root {
+        --primary-color: #326DFF;
+        --primary-light: #8EAEFF;
+        --primary-dark: #1E4FCC;
+        --accent-orange: #FF6B35;
+        --accent-green: #10B981;
+        --accent-purple: #8B5CF6;
+        --bg-light: #F9FAFB;
+        --bg-white: #FFFFFF;
+        --text-dark: #1e293b;
+        --text-medium: #6b7280;
+        --text-light: #9ca3af;
+        --border-color: #E5E7EB;
+        --text-primary: #326DFF;
+      }
+      
+      .primary { fill: var(--primary-color); }
+      .primary-light { fill: var(--primary-light); }
+      .accent { fill: var(--accent-orange); }
+      .bg-light { fill: var(--bg-light); }
+      .bg-white { fill: var(--bg-white); }
+      
+      .text-main { 
+        fill: var(--text-dark); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+      }
+      
+      .text-title { 
+        fill: var(--text-primary); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 26px;
+        font-weight: 600;
+      }
+      
+      .text-label { 
+        fill: var(--text-dark); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+      }
+      
+      .text-sub { 
+        fill: var(--text-medium); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 18px;
+      }
+      
+      .text-small { 
+        fill: var(--text-medium); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 16px;
+      }
+
+      .card-border {
+        fill: var(--bg-white);
+        stroke: var(--border-color);
+        stroke-width: 1;
+      }
+    </style>
+
+    <!-- AI大脑图标 -->
+    <symbol id="brain-icon" viewBox="0 0 100 100">
+      <!-- 大脑轮廓 -->
+      <path d="M 30 35 Q 25 20 40 20 Q 45 10 55 10 Q 65 10 70 20 Q 85 20 80 35 Q 88 45 82 55 Q 85 70 70 75 Q 65 80 55 80 Q 45 80 40 75 Q 25 70 28 55 Q 22 45 30 35 Z" 
+            fill="#326DFF"/>
+      <!-- 神经网络线条 -->
+      <path d="M 40 35 Q 50 40 60 35 M 38 50 Q 50 50 62 50 M 42 65 Q 50 60 58 65" 
+            stroke="#FFFFFF" stroke-width="2" fill="none" opacity="0.8"/>
+      <!-- 节点 -->
+      <circle cx="40" cy="35" r="3" fill="#FFFFFF"/>
+      <circle cx="60" cy="35" r="3" fill="#FFFFFF"/>
+      <circle cx="50" cy="40" r="3" fill="#FFFFFF"/>
+      <circle cx="38" cy="50" r="3" fill="#FFFFFF"/>
+      <circle cx="50" cy="50" r="3" fill="#FFFFFF"/>
+      <circle cx="62" cy="50" r="3" fill="#FFFFFF"/>
+      <circle cx="42" cy="65" r="3" fill="#FFFFFF"/>
+      <circle cx="50" cy="60" r="3" fill="#FFFFFF"/>
+      <circle cx="58" cy="65" r="3" fill="#FFFFFF"/>
+    </symbol>
+
+    <!-- 模块图标 -->
+    <symbol id="module-icon" viewBox="0 0 60 60">
+      <rect x="5" y="5" width="50" height="50" rx="4" fill="#9ca3af"/>
+      <rect x="12" y="12" width="15" height="15" fill="#FFFFFF" opacity="0.6"/>
+      <rect x="33" y="12" width="15" height="15" fill="#FFFFFF" opacity="0.6"/>
+      <rect x="12" y="33" width="15" height="15" fill="#FFFFFF" opacity="0.6"/>
+      <rect x="33" y="33" width="15" height="15" fill="#FFFFFF" opacity="0.6"/>
+    </symbol>
+
+    <!-- 元素图标 -->
+    <symbol id="element-icon" viewBox="0 0 60 60">
+      <rect x="5" y="5" width="50" height="50" rx="8" fill="#326DFF"/>
+      <path d="M 20 30 L 30 20 L 40 30 L 30 40 Z" fill="#FFFFFF" opacity="0.8"/>
+      <circle cx="30" cy="30" r="4" fill="#FFFFFF"/>
+    </symbol>
+  </defs>
+
+  <!-- 背景 -->
+  <g id="background">
+    <rect width="1600" height="850" class="bg-light"/>
+  </g>
+
+  <!-- 主标题 -->
+  <g id="header">
+    <text x="800" y="60" text-anchor="middle" class="text-main">JitAI Core Protocol: JAAP &amp; Element System</text>
+    <text x="800" y="92" text-anchor="middle" class="text-sub">Making Software Modules Truly AI-Usable Tools</text>
+  </g>
+
+  <!-- 输入：传统软件模块 -->
+  <g id="input">
+    <rect x="650" y="130" width="300" height="90" rx="12" class="bg-white" stroke="#9ca3af" stroke-width="2"/>
+    <use href="#module-icon" x="710" y="145" width="55" height="55"/>
+    <text x="780" y="172" class="text-label" fill="#6b7280">Traditional Software Module</text>
+    <text x="780" y="198" class="text-small" fill="#6b7280">Dead Code · Not Understood by AI</text>
+    
+    <!-- 箭头向下 -->
+    <path d="M 800 220 L 800 270" stroke="#6b7280" stroke-width="2" fill="none" marker-end="url(#arrowGray)"/>
+    <text x="830" y="250" class="text-small" fill="#6b7280">JAAP Protocol Transformation</text>
+  </g>
+
+  <!-- 中心：JAAP核心区域 -->
+  <g id="jaap-core">
+    <!-- 背景去除，改用边框 -->
+    <rect x="140" y="280" width="1320" height="340" rx="16" fill="none" stroke="#E5E7EB" stroke-width="1"/>
+    
+    <!-- 标题 -->
+    <text x="800" y="318" text-anchor="middle" class="text-title" fill="#326DFF">JAAP Protocol Core Process</text>
+    <text x="800" y="345" text-anchor="middle" class="text-sub">JitAI AI Application Protocol</text>
+    
+    <!-- 步骤1：感知 -->
+    <g id="step1-perception">
+      <rect x="180" y="375" width="360" height="115" rx="12" fill="#F0F7FF" stroke="#8EAEFF" stroke-width="1"/>
+      <text x="360" y="408" text-anchor="middle" class="text-title" fill="#326DFF">Step 1: Perception</text>
+      <text x="360" y="435" text-anchor="middle" class="text-label" fill="#1e293b">Element Semantics</text>
+      <text x="360" y="460" text-anchor="middle" class="text-small" fill="#6b7280">Endowing Modules with Self-Desc</text>
+      <text x="360" y="481" text-anchor="middle" class="text-small" fill="#6b7280">AI 'Sees' and Understands Modules</text>
+    </g>
+    
+    <!-- 箭头1 -->
+    <path d="M 540 432 L 600 432" stroke="#326DFF" stroke-width="2" fill="none" marker-end="url(#arrowGreen)"/>
+    
+    <!-- 步骤2：驱动 -->
+    <g id="step2-drive">
+      <rect x="600" y="375" width="360" height="115" rx="12" fill="#F0F7FF" stroke="#326DFF" stroke-width="1"/>
+      <text x="780" y="408" text-anchor="middle" class="text-title" fill="#326DFF">Step 2: Drive</text>
+      <text x="780" y="435" text-anchor="middle" class="text-label" fill="#1e293b">Element Loading/Calling</text>
+      <text x="780" y="460" text-anchor="middle" class="text-small" fill="#6b7280">Unified Call Method, Supports Self-Loading</text>
+      <text x="780" y="481" text-anchor="middle" class="text-small" fill="#6b7280">AI 'Uses' Module Functions</text>
+    </g>
+    
+    <!-- 箭头2 -->
+    <path d="M 960 432 L 1020 432" stroke="#326DFF" stroke-width="2" fill="none" marker-end="url(#arrowPurple)"/>
+    
+    <!-- 步骤3：编排 -->
+    <g id="step3-orchestration">
+      <rect x="1020" y="375" width="360" height="115" rx="12" fill="#F0F7FF" stroke="#326DFF" stroke-width="1"/>
+      <text x="1200" y="408" text-anchor="middle" class="text-title" fill="#326DFF">Step 3: Orchestration</text>
+      <text x="1200" y="435" text-anchor="middle" class="text-label" fill="#1e293b">Element Orchestration</text>
+      <text x="1200" y="460" text-anchor="middle" class="text-small" fill="#6b7280">AI Dynamically Combines by Intent</text>
+      <text x="1200" y="481" text-anchor="middle" class="text-small" fill="#6b7280">AI 'Coordinates' Module Synergy</text>
+    </g>
+    
+    <!-- 中心AI图标 -->
+    <use href="#brain-icon" x="750" y="520" width="100" height="100"/>
+    <text x="800" y="618" text-anchor="middle" class="text-sub" fill="#326DFF">AI Agent</text>
+  </g>
+
+  <!-- 箭头向下到输出 -->
+  <path d="M 800 620 L 800 670" stroke="#326DFF" stroke-width="2" fill="none" marker-end="url(#arrowBlue)"/>
+
+  <!-- 输出：AI可用元素 -->
+  <g id="output">
+    <rect x="620" y="670" width="360" height="75" rx="12" class="bg-white" stroke="#326DFF" stroke-width="2"/>
+    <use href="#element-icon" x="680" y="680" width="55" height="55"/>
+    <text x="780" y="705" class="text-label" fill="#326DFF">AI-Usable Elements</text>
+    <text x="780" y="730" class="text-small" fill="#326DFF">Live Modules · Perceived &amp; Driven by AI</text>
+  </g>
+
+  <!-- 箭头标记定义 -->
+  <defs>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#326DFF" />
+    </marker>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#326DFF" />
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#326DFF" />
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#326DFF" />
+    </marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#6b7280" />
+    </marker>
+  </defs>
+
+  <!-- 底部核心价值说明 -->
+  <g id="footer">
+    <rect x="250" y="770" width="1100" height="50" rx="8" fill="#F9FAFB" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="800" y="802" text-anchor="middle" class="text-label" fill="#326DFF">Essence of Tool-ization: Letting AI 'See', 'Use', and 'Coordinate' All Software Modules</text>
+  </g>
+</svg>
+

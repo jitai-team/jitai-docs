@@ -4,6 +4,11 @@
  */
 
 function fixHomeLinks() {
+  // 确保在浏览器环境中运行
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
   // 只在首页执行
   const pathname = window.location.pathname;
   const isHomePage = pathname === '/' || pathname === '/zh' || pathname === '/zh/';
@@ -40,17 +45,20 @@ function fixHomeLinks() {
   }
 }
 
-// 页面加载完成后执行
-if (typeof document !== 'undefined') {
+// 导出为 Docusaurus 客户端模块
+export default function() {
+  // 只在浏览器环境执行
+  if (typeof window === 'undefined') {
+    return {};
+  }
+
+  // 页面加载完成后执行
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', fixHomeLinks);
   } else {
     fixHomeLinks();
   }
-}
 
-// 导出为 Docusaurus 客户端模块
-export default function() {
   return {
     onRouteUpdate({ location }) {
       // 路由更新时也执行修复

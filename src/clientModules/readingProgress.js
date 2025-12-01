@@ -42,17 +42,19 @@ function initReadingProgress() {
   updateProgress();
 }
 
-// 页面加载完成后初始化
-if (typeof document !== 'undefined') {
+export default function() {
+  // 客户端模块导出函数 - 只在浏览器环境执行
+  if (typeof window === 'undefined') {
+    return {};
+  }
+
+  // 页面加载完成后初始化
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initReadingProgress);
   } else {
     initReadingProgress();
   }
-}
 
-// 支持 SPA 路由变化
-if (typeof window !== 'undefined' && typeof history !== 'undefined') {
   // 监听路由变化（Docusaurus 使用 React Router）
   const originalPushState = history.pushState;
   const originalReplaceState = history.replaceState;
@@ -70,10 +72,7 @@ if (typeof window !== 'undefined' && typeof history !== 'undefined') {
   window.addEventListener('popstate', () => {
     setTimeout(initReadingProgress, 100);
   });
-}
 
-export default function() {
-  // 客户端模块导出函数
   return {
     onRouteUpdate() {
       setTimeout(initReadingProgress, 100);

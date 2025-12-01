@@ -44,7 +44,13 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className }) => {
     }
     
     // 保存用户的语言偏好
-    localStorage.setItem('jitai-preferred-language', newLang);
+    if (typeof localStorage !== 'undefined') {
+      try {
+        localStorage.setItem('jitai-preferred-language', newLang);
+      } catch (e) {
+        console.warn('Failed to save language preference:', e);
+      }
+    }
     
     window.location.href = newPath;
   };

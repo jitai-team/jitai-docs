@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
 slug: create-ai-llm
+description: "Create AI LLM elements for language models. Configure and integrate large language models in applications."
 ---
 
 # Creating AI LLM Elements
-LLM elements are the core components that enable unified integration of various AI large language model services within the JitAi platform. They provide foundational model capabilities for [AI Agents](../ai-agent/create-ai-agent), [AI Assistants](../ai-assistant/create-ai-assistant), and [AI Knowledge Bases](../knowledge-base/create-knowledge-elements).
+LLM elements are the core components that enable unified integration of various AI large language model services within the JitAI platform. They provide foundational model capabilities for [AI Agents](../ai-agent/create-ai-agent), [AI Assistants](../ai-assistant/create-ai-assistant), and [AI Knowledge Bases](../knowledge-base/create-knowledge-elements).
 
 The platform natively supports mainstream LLM vendors including Anthropic, OpenAI, Gemini, Deepseek, Alibaba Cloud Bailian, and SiliconFlow, while also providing OpenAI-compatible interfaces to support any LLM services compatible with the OpenAI protocol (including privately deployed ones). Flexible API key management and intelligent retry mechanisms ensure reliable and stable model invocations. Developers can also extend new LLM Type elements to support any open-source or closed-source LLM services from different vendors with different protocols.
 

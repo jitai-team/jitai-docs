@@ -2,6 +2,7 @@
 sidebar_position: 3
 slug: approval-node-configuration
 title: Approval Node Configuration
+description: "Configure approval nodes with approver settings, workflow rules, and permissions. Most frequently used node type for review workflows."
 ---
 
 # Approval Node Configuration

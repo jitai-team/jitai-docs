@@ -1,6 +1,7 @@
 ---
 sidebar_position: 17
 slug: /devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant
+description: "开发人机协作与UI集成的企业级助理。AI处理决策，人工提供质量控制。"
 ---
 
 # 开发与UI页面协作的人机协作式企业级AI助理应用
@@ -9,7 +10,7 @@ slug: /devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant
 
 传统AI开发平台存在一个根本性限制：它们只能在后端运行，无法与用户界面进行深度交互。这就像让一个盲人做需要视觉判断的工作，效果可想而知。
 
-**JitAi的创新突破**在于让AI能够真正"看到"和"操作"用户界面，实现AI与UI页面的深度融合协作。AI不仅能理解用户在页面上的操作，还能根据用户行为动态调整自己的决策。
+**JitAI的创新突破**在于让AI能够真正"看到"和"操作"用户界面，实现AI与UI页面的深度融合协作。AI不仅能理解用户在页面上的操作，还能根据用户行为动态调整自己的决策。
 
 **核心价值**：AI负责智能决策，人工负责质量把控，界面实现实时交互。三者完美结合，让AI应用真正变得实用和可靠。
 

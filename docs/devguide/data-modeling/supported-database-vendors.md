@@ -1,11 +1,12 @@
 ---
 sidebar_position: 13
 slug: supported-database-vendors
+description: "Supported database vendors in JitAI. Connect to SQLite, MySQL, PostgreSQL, Oracle, SQL Server, and DM8 with unified interface."
 ---
 
 # Supported Database Vendors
 
-JitAi provides unified connection management and access interfaces for multiple database vendors, enabling you to connect to different database types within the same application.
+JitAI provides unified connection management and access interfaces for multiple database vendors, enabling you to connect to different database types within the same application.
 
 The platform natively supports the following databases:
 

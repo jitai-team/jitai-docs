@@ -1,12 +1,15 @@
 ---
 slug: statistical-chart
+title: "Statistical Chart Reference"
+description: "Statistical Chart Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Statistical Chart"
 ---
 # Statistical Chart
 Statistical chart is an important component for data visualization display, implemented based on ECharts chart library to provide diverse chart rendering capabilities. It handles converting data models into intuitive graphical representations, supports interactive data exploration, and provides rich style configuration options, supporting 24 chart types including line charts, bar charts, pie charts, maps, radar charts, etc.
 
 The statistical chart element has a hierarchical structure of Meta (components.Meta) → Type (components.Chart) → Instance. Developers can quickly create statistical chart instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `components.ChartType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `components.ChartType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start 
 ### Basic Configuration Example

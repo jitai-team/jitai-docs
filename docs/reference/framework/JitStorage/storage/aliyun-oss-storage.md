@@ -1,13 +1,16 @@
 ---
 slug: aliyun-oss-storage
+title: "Aliyun OSS Storage Reference"
+description: "Aliyun OSS Storage Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Aliyun OSS Storage"
 ---
 # Aliyun OSS Storage
 
 Aliyun OSS Storage is a Type element for enterprise-level cloud storage, implemented based on Alibaba Cloud Object Storage Service for massive data storage, global CDN acceleration, and enterprise-level security control. It provides standardized file upload, download, and delete operations, integrates with Alibaba Cloud ecosystem's access control and permission management, supports multiple storage types and data backup strategies, ensuring data security and high availability.
 
-The Aliyun OSS Storage element has a hierarchical structure of Meta (storages.Meta) → Type (storages.OssType) → Instance. Developers can quickly create Aliyun OSS storage instance elements through JitAi's visual development tools.
+The Aliyun OSS Storage element has a hierarchical structure of Meta (storages.Meta) → Type (storages.OssType) → Instance. Developers can quickly create Aliyun OSS storage instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official storages.OssType element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official storages.OssType element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

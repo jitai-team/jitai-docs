@@ -2,12 +2,13 @@
 sidebar_position: 6
 slug: filter-components
 title: Filter Components
+description: "Filter data with model filters and universal filters. Extract specific data subsets with customizable search parameters and criteria."
 ---
 
 # Filter Components
 Filters are essential data processing tools designed to extract specific data subsets from large datasets based on defined criteria. They enable users to customize search parameters—such as date ranges, price intervals, or categories—to display results that match their requirements.
 
-JitAi offers two types of filters: model filters that target specific data models, and universal filters that can be configured at runtime to filter multiple models simultaneously.
+JitAI offers two types of filters: model filters that target specific data models, and universal filters that can be configured at runtime to filter multiple models simultaneously.
 
 ## Model filters {#model-filters}
 In the page visual editor, click `Insert Component` and drag the `Model Filter` component onto the page. Select a data model in the data source configuration and click `Confirm`.

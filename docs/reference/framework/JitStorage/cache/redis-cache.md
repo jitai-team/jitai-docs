@@ -1,12 +1,15 @@
 ---
 slug: redis-cache
+title: "Redis Cache Reference"
+description: "Redis Cache Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Redis Cache"
 ---
 # Redis Cache
 Redis cache is a high-performance caching service based on Redis in-memory database, providing distributed caching capabilities and rich data operation functions. It encapsulates Redis client connection management and standard cache operation interfaces, supporting multiple data structure operations, expiration time control, and connection pool management, suitable for high-concurrency and low-latency application scenarios.
 
-The hierarchical structure of Redis cache elements is Meta (caches.Meta) → Type (caches.RedisType) → Instance. Developers can quickly create Redis cache instances through JitAi's visual development tools.
+The hierarchical structure of Redis cache elements is Meta (caches.Meta) → Type (caches.RedisType) → Instance. Developers can quickly create Redis cache instances through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `caches.RedisType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `caches.RedisType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

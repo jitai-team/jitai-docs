@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: create_app
+description: "Create your first JitAI application. Step-by-step guide to application setup, portal configuration, and accessing user, admin, and developer interfaces."
 ---
 # Create Application
 

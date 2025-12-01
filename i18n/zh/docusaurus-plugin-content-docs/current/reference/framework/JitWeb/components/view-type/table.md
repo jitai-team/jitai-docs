@@ -1,12 +1,13 @@
 ---
 slug: table
+description: "表格 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 表格
 表格是数据展示组件，基于模型数据源实现分页查询、排序、筛选等功能。它负责数据列表的展示、行级操作、批量操作和统计汇总，支持行内编辑、字段点击事件、工具栏按钮和移动端自适应显示。
 
 表格元素分层结构为Meta（components.Meta） → Type（components.Table） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建表格实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.TableType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的components.TableType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 基础配置示例

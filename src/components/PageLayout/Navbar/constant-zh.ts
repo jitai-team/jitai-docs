@@ -43,7 +43,7 @@ const CONTENT = {
     id: 'try-online',
     label: '在线试用',
     type: 'newTab',
-    url: 'https://demo.jit.pro',
+    url: 'https://demo.jit.pro/wanyun/AdminApp',
   },
   downloadButton: {
     id: 'download',

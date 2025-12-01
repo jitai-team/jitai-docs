@@ -1,9 +1,10 @@
 ---
 sidebar_position: 1
 slug: local-development-and-debugging
+description: "使用VSCode或PyCharm开发与调试JitAI应用的详细指南和说明。"
 ---
 
-# 使用VSCode或PyCharm开发与调试JitAi应用
+# 使用VSCode或PyCharm开发与调试JitAI应用
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

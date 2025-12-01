@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     viewBox="0 0 1600 900" 
+     role="img"
+     aria-labelledby="trendTitle trendDesc">
+  <title id="trendTitle">云遣返趋势图</title>
+  <desc id="trendDesc">展示2023-2025年企业混合架构预算占比上升趋势，从38%升至52%</desc>
+  
+  <!-- 样式定义 -->
+  <defs>
+    <style>
+      .primary { fill: #326DFF; }
+      .primary-light { fill: #8EAEFF; }
+      .accent-orange { fill: #FF6B35; }
+      .success-green { fill: #00D66A; }
+      .bg { fill: #ffffff; }
+      .grid-line { stroke: #e5e7eb; stroke-width: 1; }
+      .axis-line { stroke: #9ca3af; stroke-width: 2; }
+      .text-dark { 
+        fill: #1f2937; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+      .text-medium { 
+        fill: #6b7280; 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+      .text-small {
+        fill: #9ca3af;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+      .text-white {
+        fill: #ffffff;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      }
+    </style>
+    
+    <!-- 渐变 -->
+    <linearGradient id="barGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#326DFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8EAEFF;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="orangeBarGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B35;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff8c5a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="1600" height="900" class="bg"/>
+  
+  <!-- 标题 -->
+  <text x="800" y="50" text-anchor="middle" class="text-dark" font-size="28" font-weight="700">云遣返潮起：企业预算回归私有化</text>
+  
+  <!-- 图表区域 -->
+  <g id="chart-area" transform="translate(200, 100)">
+    
+    <!-- 网格线 -->
+    <g id="grid">
+      <line x1="0" y1="500" x2="1200" y2="500" class="grid-line"/>
+      <line x1="0" y1="400" x2="1200" y2="400" class="grid-line"/>
+      <line x1="0" y1="300" x2="1200" y2="300" class="grid-line"/>
+      <line x1="0" y1="200" x2="1200" y2="200" class="grid-line"/>
+      <line x1="0" y1="100" x2="1200" y2="100" class="grid-line"/>
+      <line x1="0" y1="0" x2="1200" y2="0" class="grid-line"/>
+    </g>
+    
+    <!-- 坐标轴 -->
+    <g id="axes">
+      <line x1="0" y1="500" x2="1200" y2="500" class="axis-line"/>
+      <line x1="0" y1="0" x2="0" y2="500" class="axis-line"/>
+    </g>
+    
+    <!-- Y轴标签 -->
+    <g id="y-labels">
+      <text x="-20" y="505" text-anchor="end" class="text-medium" font-size="14">0%</text>
+      <text x="-20" y="405" text-anchor="end" class="text-medium" font-size="14">20%</text>
+      <text x="-20" y="305" text-anchor="end" class="text-medium" font-size="14">40%</text>
+      <text x="-20" y="205" text-anchor="end" class="text-medium" font-size="14">60%</text>
+      <text x="-20" y="105" text-anchor="end" class="text-medium" font-size="14">80%</text>
+      <text x="-20" y="5" text-anchor="end" class="text-medium" font-size="14">100%</text>
+      <text x="-80" y="250" text-anchor="middle" class="text-dark" font-size="16" font-weight="600" transform="rotate(-90, -80, 250)">企业预算占比</text>
+    </g>
+    
+    <!-- 柱状图 - 2023年 38% -->
+    <g id="bar-2023">
+      <rect x="150" y="310" width="200" height="190" rx="8" fill="url(#barGradient)" opacity="0.8"/>
+      <text x="250" y="280" text-anchor="middle" class="primary" font-size="32" font-weight="700">38%</text>
+      <text x="250" y="545" text-anchor="middle" class="text-dark" font-size="18" font-weight="600">2023年</text>
+      <text x="250" y="570" text-anchor="middle" class="text-medium" font-size="14">（实际数据）</text>
+    </g>
+    
+    <!-- 柱状图 - 2024年 45% -->
+    <g id="bar-2024">
+      <rect x="500" y="275" width="200" height="225" rx="8" fill="url(#barGradient)" opacity="0.9"/>
+      <text x="600" y="245" text-anchor="middle" class="primary" font-size="32" font-weight="700">45%</text>
+      <text x="600" y="545" text-anchor="middle" class="text-dark" font-size="18" font-weight="600">2024年</text>
+      <text x="600" y="570" text-anchor="middle" class="text-medium" font-size="14">（估算）</text>
+    </g>
+    
+    <!-- 柱状图 - 2025年 52% -->
+    <g id="bar-2025">
+      <rect x="850" y="240" width="200" height="260" rx="8" fill="url(#barGradient)"/>
+      <text x="950" y="210" text-anchor="middle" class="primary" font-size="32" font-weight="700">52%</text>
+      <text x="950" y="545" text-anchor="middle" class="text-dark" font-size="18" font-weight="600">2025年</text>
+      <text x="950" y="570" text-anchor="middle" class="accent-orange" font-size="14" font-weight="600">（Gartner预测）</text>
+    </g>
+    
+    <!-- 趋势箭头 -->
+    <g id="trend-arrow">
+      <path d="M 250 250 L 600 205 L 950 170" 
+            stroke="#326DFF" 
+            stroke-width="4" 
+            stroke-dasharray="8,4"
+            fill="none"
+            stroke-linecap="round"/>
+      <path d="M 930 165 L 950 170 L 940 185" 
+            stroke="#326DFF" 
+            stroke-width="4" 
+            fill="none"
+            stroke-linecap="round"/>
+      <text x="700" y="150" text-anchor="middle" class="primary" font-size="16" font-weight="600">↗ 持续上升</text>
+    </g>
+    
+  </g>
+  
+  <!-- 补充数据卡片：去SaaS化企业占比 -->
+  <g id="supplementary-data" transform="translate(200, 750)">
+    <rect x="0" y="0" width="1200" height="100" rx="12" fill="#FFF4ED" stroke="#FF6B35" stroke-width="2"/>
+    
+    <text x="600" y="30" text-anchor="middle" class="text-dark" font-size="18" font-weight="700">补充数据：去SaaS化企业占比</text>
+    
+    <g id="desaas-data">
+      <circle cx="300" cy="65" r="8" class="accent-orange"/>
+      <text x="320" y="70" class="text-dark" font-size="16" font-weight="600">2024年：15%</text>
+      
+      <circle cx="750" cy="65" r="8" class="accent-orange"/>
+      <text x="770" y="70" class="text-dark" font-size="16" font-weight="600">2025年预测：20%</text>
+    </g>
+  </g>
+  
+  <!-- 关键洞察 -->
+  <g id="key-insight" transform="translate(100, 650)">
+    <rect x="0" y="0" width="450" height="80" rx="8" fill="#E8F4FF" stroke="#326DFF" stroke-width="2"/>
+    <text x="225" y="30" text-anchor="middle" class="text-dark" font-size="16" font-weight="600">💡 关键洞察</text>
+    <text x="225" y="55" text-anchor="middle" class="text-medium" font-size="14">近20%企业考虑</text>
+    <text x="225" y="75" text-anchor="middle" class="text-medium" font-size="14">"去SaaS化"</text>
+  </g>
+  
+  <g id="key-insight2" transform="translate(1050, 650)">
+    <rect x="0" y="0" width="450" height="80" rx="8" fill="#E8F4FF" stroke="#326DFF" stroke-width="2"/>
+    <text x="225" y="30" text-anchor="middle" class="text-dark" font-size="16" font-weight="600">📊 增长趋势</text>
+    <text x="225" y="55" text-anchor="middle" class="text-medium" font-size="14">混合架构预算</text>
+    <text x="225" y="75" text-anchor="middle" class="primary" font-size="14" font-weight="600">3年增长14个百分点</text>
+  </g>
+  
+  <!-- 数据来源 -->
+  <text x="800" y="890" text-anchor="middle" class="text-small" font-size="12">数据来源：IDC 2024 &amp; Gartner预测</text>
+</svg>

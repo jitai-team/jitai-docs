@@ -1,6 +1,7 @@
 ---
 sidebar_position: 11
 slug: ai-assistant-state
+description: "Manage AI Assistant runtime state and memory. Configure persistent storage with in-memory or relational database options."
 ---
 
 # AI Assistant Runtime State

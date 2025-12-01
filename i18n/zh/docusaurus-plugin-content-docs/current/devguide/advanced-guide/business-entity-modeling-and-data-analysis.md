@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 slug: business-entity-modeling-and-data-analysis
+description: "业务数据建模与数据分析的详细指南和说明。"
 ---
 
 # 业务数据建模与数据分析

@@ -2,6 +2,7 @@
 sidebar_position: 2
 title: Building Test Paper Management with Professional Mode
 slug: ide_mode
+description: "Professional mode development using Developer Portal. Learn element-based development, visual editors, and building complex test paper management systems."
 ---
 
 # Building Test Paper Management with Professional Mode
@@ -10,18 +11,18 @@ slug: ide_mode
 
 Professional mode utilizes the "Developer Portal" interface.
 
-JitAi applications comprise elements, with development achieved through adding, deleting, and modifying these elements. Each element represents a module, and element modification constitutes development of that specific module.
+JitAI applications comprise elements, with development achieved through adding, deleting, and modifying these elements. Each element represents a module, and element modification constitutes development of that specific module.
 
-Element modules within the JitAi application layer:
+Element modules within the JitAI application layer:
 
 * Most consist of orchestration-based structures or parameter definitions configurable through visual interfaces (element editors)
-* A smaller portion involves programming-based processing logic that can be coded directly or developed visually using JitAi's programming-based element editors
+* A smaller portion involves programming-based processing logic that can be coded directly or developed visually using JitAI's programming-based element editors
 
 The developer portal displays the element tree and corresponding editors for each element, including both visual development editors and source code development editors.
 
 ![](../img/ide_mode_10.png)
 
-For detailed information, see [JitAi Visual Development Tools](../../devguide/development-tool-and-publish-service/visual-development-tool).
+For detailed information, see [JitAI Visual Development Tools](../../devguide/development-tool-and-publish-service/visual-development-tool).
 
 Reviewing the previous [Building Question Bank Management with Easy Mode](./easy_mode) step, switching to professional mode reveals the following elements in the "Developer Portal":
 

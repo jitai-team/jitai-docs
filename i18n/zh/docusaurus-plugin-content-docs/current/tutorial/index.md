@@ -1,14 +1,15 @@
 ---
 sidebar_position: 0
+description: "JitAI快速入门教程 - 从安装到生产部署的渐进式学习指南。通过实践构建AI应用。"
 ---
 
 # 入门教程导读
 
-欢迎来到JitAi入门教程！这里提供手把手的学习指南，循序渐进，注重实践，让你快速掌握JitAi应用开发，尽快做出有用的AI应用。
+欢迎来到JitAI入门教程！这里提供手把手的学习指南，循序渐进，注重实践，让你快速掌握JitAI应用开发，尽快做出有用的AI应用。
 
 ## 学习路径
-- [JitAi简介](tutorial/briefintro) - 介绍JitAi是什么、有什么特点、其体系结构、与传统开发技术和零/低代码平台的对比
-- [下载安装](tutorial/download-installation) - JitAi安装包下载和环境搭建，支持Windows、Mac和Docker部署
+- [JitAI简介](tutorial/briefintro) - 介绍JitAI是什么、有什么特点、其体系结构、与传统开发技术和零/低代码平台的对比
+- [下载安装](tutorial/download-installation) - JitAI安装包下载和环境搭建，支持Windows、Mac和Docker部署
 - [案例介绍](tutorial/project) - 熟悉案例应用的业务背景（出题、考试、阅卷），了解系统功能和数据模型
 - [创建应用](tutorial/create_app) - 学习如何创建应用，了解不同门户的作用
 - [开发应用](tutorial/create_app) - 学习如何开发应用
@@ -24,6 +25,6 @@ sidebar_position: 0
 
 1. **循序渐进**：建议按照学习路径顺序学习，先搭建环境，再体验项目，最后进行开发
 2. **动手实践**：每个章节都包含实际操作，建议边学边做
-3. **持续学习**：掌握基础后，推荐阅读[应用开发指南](devguide/) 全面了解JitAi的功能
+3. **持续学习**：掌握基础后，推荐阅读[应用开发指南](devguide/) 全面了解JitAI的功能
 
  

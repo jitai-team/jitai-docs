@@ -1,6 +1,7 @@
 ---
 sidebar_position: 14
 slug: transaction-management
+description: "Database transaction management with JitORM. Default transaction handling, manual commit/rollback, and transaction decorator for atomicity."
 ---
 
 # Transaction Management

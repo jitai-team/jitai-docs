@@ -1,12 +1,13 @@
 ---
 slug: blank-portal
+description: "空白门户 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 空白门户
 空白门户是最小化的门户实现，提供基础的页面容器和路由框架。它不包含内置导航体系，完全由开发者自定义界面结构，适用于高度定制化的应用界面和特殊展示需求。空白门户仅支持前端实现，通过自定义渲染逻辑实现纯净的门户基础。
 
-空白门户元素分层结构为Meta（shells.Meta） → Type（shells.BlankType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建空白门户实例元素。
+空白门户元素分层结构为Meta（shells.Meta） → Type（shells.BlankType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建空白门户实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的shells.BlankType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的shells.BlankType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

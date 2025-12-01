@@ -1,12 +1,15 @@
 ---
 slug: wechat-work-dev-organization
+title: "WeCom Proxy Development Organization Reference"
+description: "WeCom Proxy Development Organization Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "WeCom Proxy Development Organization"
 ---
 # WeCom Proxy Development Organization
 WeCom proxy development organization is a specialized organization integration type for WeCom third-party applications, implementing multi-enterprise organization management and cross-enterprise authorization based on WeCom proxy development mode. It handles organization synchronization, member management, and permission assignment under WeCom proxy development mode, supporting multi-tenant SaaS service providers to uniformly manage organizational architectures of multiple authorized enterprises.
 
-The hierarchical structure of WeCom proxy development organization elements is Meta (corps.Meta) → Type (corps.QywxProxyType) → Instance. Developers can quickly create WeCom proxy development organization instance elements through JitAi's visual development tools.
+The hierarchical structure of WeCom proxy development organization elements is Meta (corps.Meta) → Type (corps.QywxProxyType) → Instance. Developers can quickly create WeCom proxy development organization instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `corps.QywxProxyType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `corps.QywxProxyType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

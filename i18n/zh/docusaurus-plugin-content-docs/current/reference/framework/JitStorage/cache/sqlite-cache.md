@@ -1,12 +1,13 @@
 ---
 slug: sqlite-cache
+description: "SQLite缓存 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # SQLite缓存
 SQLite缓存是JitStorage框架提供的轻量级文件缓存解决方案，基于diskcache库和SQLite数据库实现高性能的键值对缓存服务。它负责提供零配置部署、跨平台兼容和SQL查询支持，无需额外的数据库服务器即可实现完整的缓存功能。
 
-SQLite缓存元素分层结构为Meta（caches.Meta） → Type（caches.SqliteType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建SQLite缓存实例元素。
+SQLite缓存元素分层结构为Meta（caches.Meta） → Type（caches.SqliteType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建SQLite缓存实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的caches.SqliteType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的caches.SqliteType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

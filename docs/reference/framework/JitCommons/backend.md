@@ -1,12 +1,15 @@
 ---
 slug: backend
+title: "Backend Reference"
+description: "Backend Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Backend"
 ---
 # Backend
 Provides unified public modules, error code system, constant definitions, and global component support for backend development. Error codes, constants, enums, etc. are located in the commons directory of the official JitCommonsApp, which developers can directly import and use. Developers can also create their own commons directory in their own App (backend only) to implement their own encapsulation.
 
 globals.Calc is an official built-in public module element that provides 80+ calculation functions for mathematics, logic, text, date/time, advanced statistics, and address processing. The globals.Calc element hierarchical structure is Meta (globals.Meta) → Type (globals.Calc), and developers can use `app.getElement("globals.Calc")` to get and use it directly.
 
-Of course, developers can also create their own public module elements or modify the official `globals.Calc` element provided by JitAi in their own App to implement their own encapsulation. Backend implementation should be located in the backend subdirectory of globals.Calc.
+Of course, developers can also create their own public module elements or modify the official `globals.Calc` element provided by JitAI in their own App to implement their own encapsulation. Backend implementation should be located in the backend subdirectory of globals.Calc.
 
 ## Calculation Components
 ### Basic Usage
@@ -158,7 +161,7 @@ except Code as error:
 ## Constant Definitions
 Constant definition module providing system-level and business constants.
 
-Of course, developers can also create their own constant definition elements or modify the official `commons.consts` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own constant definition elements or modify the official `commons.consts` element provided by JitAI in their own App to implement their own encapsulation.
 
 ### Basic Constants
 ```python title="Basic Constants Usage"

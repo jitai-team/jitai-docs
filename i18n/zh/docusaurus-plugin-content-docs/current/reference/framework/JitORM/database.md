@@ -1,11 +1,12 @@
 ---
 sidebar_position: 1
 slug: database
+description: "数据库 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # 数据库
 ## 简介
-JitAi官方提供了多种数据库Type元素，支持统一的数据库访问接口和连接管理功能，已支持的数据库类型以及对应的Type元素fullName如下：
+JitAI官方提供了多种数据库Type元素，支持统一的数据库访问接口和连接管理功能，已支持的数据库类型以及对应的Type元素fullName如下：
 - **SQLite**: databases.SqliteType
 - **MySQL**: databases.MySQLType
 - **PostgreSQL**: databases.PgSqlType
@@ -13,9 +14,9 @@ JitAi官方提供了多种数据库Type元素，支持统一的数据库访问�
 - **Microsoft SQL Server**: databases.SqlServerType
 - **达梦**: databases.DmdbType
 
-开发者可以在JitAi开发工具中使用可视化界面创建和配置数据库实例元素，也可以使用全代码方式。
+开发者可以在JitAI开发工具中使用可视化界面创建和配置数据库实例元素，也可以使用全代码方式。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的databases.xxxType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的databases.xxxType元素，以实现自己的封装。
 
 ## 元素目录构成
 所有数据库实例元素的目录都是由元素定义文件和配置文件构成。

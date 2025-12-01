@@ -1,13 +1,14 @@
 ---
 sidebar_position: 3
 slug: add-frontend-components
+description: "扩展自己的UI组件Type元素的详细指南和说明。"
 ---
 
 # 扩展自己的UI组件Type元素
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-当JitAi开发框架中现有的前端组件无法满足特定业务需求时，开发者可以在`components.Meta`下扩展新的组件，并在JitAi可视化开发工具中为页面添加这个新组件。
+当JitAI开发框架中现有的前端组件无法满足特定业务需求时，开发者可以在`components.Meta`下扩展新的组件，并在JitAI可视化开发工具中为页面添加这个新组件。
 
 接下来我们以一个简单的计数器组件为例，演示如何新增前端组件。计数器组件具有显示数值、点击按钮增减数值等基础功能。
 
@@ -21,7 +22,7 @@ import TabItem from '@theme/TabItem';
 ### 元素设计 {#element-design}
 | 元素层次 | fullName | 主要职责 |
 |---------|----------|----------|
-| **Meta元素** | `components.Meta` | JitAi开发框架中现有的Meta元素（无需创建） |
+| **Meta元素** | `components.Meta` | JitAI开发框架中现有的Meta元素（无需创建） |
 | **Type元素** | `components.CounterType` | type指向`components.Meta`，封装基础计数器功能，处理数值增减、样式配置等 |
 | **在页面中使用时的配置** | 页面scheme.json | 在页面中配置组件的具体运行时参数并声明事件、函数、变量 |
 
@@ -43,7 +44,7 @@ import TabItem from '@theme/TabItem';
 
 ## 操作指南 {#operation-guide}
 ### 创建目录结构 {#creating-directory-structure}
-在你的JitAi应用根目录中，按照以下结构创建目录：
+在你的JitAI应用根目录中，按照以下结构创建目录：
 
 ```bash
 # 在应用根目录执行
@@ -79,7 +80,7 @@ import Render from './render/pc/CounterRender';
 import { CounterComponent } from './CounterComponent';
 export { COUNTER_EVENTS } from './constants';
 
-// 重命名导出供JitAi工具识别
+// 重命名导出供JitAI工具识别
 export { CounterComponent as ComponentCls, Render };
 ```
 
@@ -90,7 +91,7 @@ import Render from './render/mobile/CounterRender';
 import { CounterComponent } from './CounterComponent';
 export { COUNTER_EVENTS } from './constants';
 
-// 重命名导出供JitAi工具识别
+// 重命名导出供JitAI工具识别
 export { CounterComponent as ComponentCls, Render };
 ```
 
@@ -313,7 +314,7 @@ static getEventList(): Array<{
 3. **触发打包**：访问应用页面，系统自动重新打包
 
 #### 在常规页面中测试 {#testing-in-generic-pages}
-进入JitAi可视化开发工具，创建一个`常规页面`，在页面中添加刚刚创建的`计数器`组件。
+进入JitAI可视化开发工具，创建一个`常规页面`，在页面中添加刚刚创建的`计数器`组件。
 
 当切换到代码模式下会看到页面的`scheme.json`文件中自动生成了如下配置：
 

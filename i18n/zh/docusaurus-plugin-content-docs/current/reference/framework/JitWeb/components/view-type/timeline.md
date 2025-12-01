@@ -1,12 +1,13 @@
 ---
 slug: timeline
+description: "时间轴 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 时间轴
 时间轴是一个用于展示时间序列数据的视图组件，基于数据模型实现时间线形式的数据可视化。它负责按时间顺序展示数据记录、支持自定义时间位置和提供交互操作，可配置工具栏按钮、颜色样式和数据筛选功能。
 
 时间轴元素分层结构为Meta（components.Meta） → Type（components.TimeLine） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建时间轴实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.TimeLineType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的components.TimeLineType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 基础配置示例

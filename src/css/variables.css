@@ -26,10 +26,11 @@
   --transition-primary: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   --border-radius: 1.5rem;
   --card-padding: 2.5rem;
+
 }
 
 /* 中文主题变量 */
-:root[lang="zh-CN"] {
+:root[lang="zh"] {
   --font-family-primary: var(--font-family-zh);
   --text-line-height: 1.6;
 }

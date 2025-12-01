@@ -1,10 +1,11 @@
 ---
 sidebar_position: 5
 slug: distributed-cluster-architecture
+description: "实现无限横向扩展的分布式集群架构的详细指南和说明。"
 ---
 # 实现无限横向扩展的分布式集群架构
 
-JitAi支持从单节点部署到大规模企业级集群部署，通过组织、节点、运行环境、应用的层级管理，实现了资源调度和负载均衡。
+JitAI支持从单节点部署到大规模企业级集群部署，通过组织、节点、运行环境、应用的层级管理，实现了资源调度和负载均衡。
 
 ## 四层架构模型 {#four-layer-architecture}
 

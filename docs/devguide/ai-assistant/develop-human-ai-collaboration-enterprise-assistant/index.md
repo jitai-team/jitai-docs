@@ -1,6 +1,7 @@
 ---
 sidebar_position: 17
 slug: /devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant
+description: "Develop enterprise assistants with human-AI collaboration and UI integration. AI handles decisions while humans provide quality control."
 ---
 
 # Developing Human-AI Collaborative Enterprise Assistant Applications with UI Page Integration
@@ -9,7 +10,7 @@ slug: /devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant
 
 Traditional AI development platforms have a fundamental limitation: they can only run on the backend and cannot deeply interact with user interfaces. This is like asking a blind person to do work that requires visual judgment - the results are predictable.
 
-**JitAi's innovative breakthrough** lies in enabling AI to truly "see" and "operate" user interfaces, achieving deep integration and collaboration between AI and UI pages. AI can not only understand user operations on pages but also dynamically adjust its decisions based on user behavior.
+**JitAI's innovative breakthrough** lies in enabling AI to truly "see" and "operate" user interfaces, achieving deep integration and collaboration between AI and UI pages. AI can not only understand user operations on pages but also dynamically adjust its decisions based on user behavior.
 
 **Core value**: AI handles intelligent decision-making, humans handle quality control, and the interface enables real-time interaction. The perfect combination of these three elements makes AI applications truly practical and reliable.
 

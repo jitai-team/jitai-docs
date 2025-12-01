@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="title desc" viewBox="0 0 1800 900"><desc id="desc">对比使用Cursor和JitAi的开发流程，展示JitAi在减少返工和提升效率方面的优势</desc><defs><marker id="arrow-orange" markerHeight="10" markerWidth="10" orient="auto" refX="8" refY="5"><path fill="#FF6B35" d="m0 0 10 5-10 5z"/></marker><marker id="arrow-blue" markerHeight="10" markerWidth="10" orient="auto" refX="8" refY="5"><path fill="#326DFF" d="m0 0 10 5-10 5z"/></marker><style>.primary{fill:#326dff}.accent{fill:#ff6b35}.success{fill:#00c853}.text-dark{fill:#333;font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,&quot;PingFang SC&quot;,&quot;Hiragino Sans GB&quot;,&quot;Microsoft YaHei&quot;,sans-serif}.text-medium{fill:#6b7280}</style></defs><path d="M0 0h1800v900H0z" style="fill:#f9fafb"/><text x="900" y="60" class="text-dark" font-size="36" font-weight="700" text-anchor="middle">
+    开发流程对比
+  </text><g id="cursor-flow"><rect width="1600" height="350" x="100" y="120" fill="#FFF5F5" stroke="#FF6B35" stroke-width="2" rx="16"/><text x="150" y="165" class="accent" font-size="24" font-weight="700">
+      原生代码开发（Cursor）
+    </text><text x="150" y="195" class="text-medium" font-size="16">
+      细颗粒度操作 · 高返工成本
+    </text><g id="cursor-steps"><rect width="160" height="70" x="150" y="230" fill="#FFF" stroke="#9ca3af" stroke-width="2" rx="8"/><text x="230" y="260" class="text-dark" font-size="16" font-weight="600" text-anchor="middle">
+        1. 需求理解
+      </text><text x="230" y="285" class="text-medium" font-size="13" text-anchor="middle">
+        梳理需求
+      </text><path stroke="#FF6B35" stroke-width="3" marker-end="url(#arrow-orange)" d="M320 265h50"/><rect width="160" height="70" x="380" y="230" fill="#FFF" stroke="#9ca3af" stroke-width="2" rx="8"/><text x="460" y="260" class="text-dark" font-size="16" font-weight="600" text-anchor="middle">
+        2. AI生成代码
+      </text><text x="460" y="285" class="text-medium" font-size="13" text-anchor="middle">
+        提示词生成
+      </text><path stroke="#FF6B35" stroke-width="3" marker-end="url(#arrow-orange)" d="M550 265h50"/><rect width="160" height="70" x="610" y="230" fill="#FFE0B2" stroke="#FF6B35" stroke-width="2" rx="8"/><text x="690" y="260" class="text-dark" font-size="16" font-weight="600" text-anchor="middle">
+        3. 调试修正
+      </text><text x="690" y="285" class="text-medium" font-size="13" text-anchor="middle">
+        发现问题
+      </text><path stroke="#FF6B35" stroke-width="3" marker-end="url(#arrow-orange)" d="M780 265h50"/><rect width="160" height="70" x="840" y="230" fill="#FFE0B2" stroke="#FF6B35" stroke-width="2" rx="8"/><text x="920" y="260" class="text-dark" font-size="16" font-weight="600" text-anchor="middle">
+        4. 再次生成
+      </text><text x="920" y="285" class="text-medium" font-size="13" text-anchor="middle">
+        修改提示词
+      </text><path stroke="#FF6B35" stroke-width="3" marker-end="url(#arrow-orange)" d="M1010 265h50"/><rect width="160" height="70" x="1070" y="230" fill="#FFCCBC" stroke="#FF6B35" stroke-width="3" rx="8"/><text x="1150" y="260" class="accent" font-size="16" font-weight="700" text-anchor="middle">
+        5. 反复迭代
+      </text><text x="1150" y="285" class="accent" font-size="13" text-anchor="middle">
+        循环调试
+      </text><path fill="none" stroke="#FF6B35" stroke-dasharray="8,4" stroke-width="3" marker-end="url(#arrow-orange)" d="M1070 250q-150-70-300 0"/><text x="920" y="200" class="accent" font-size="14" font-weight="600" text-anchor="middle">
+        ❌ 返工循环
+      </text><path stroke="#FF6B35" stroke-width="3" marker-end="url(#arrow-orange)" d="M1240 265h50"/><rect width="160" height="70" x="1300" y="230" fill="#FFF" stroke="#9ca3af" stroke-width="2" rx="8"/><text x="1380" y="260" class="text-dark" font-size="16" font-weight="600" text-anchor="middle">
+        6. 集成测试
+      </text><text x="1380" y="285" class="text-medium" font-size="13" text-anchor="middle">
+        系统测试
+      </text><path stroke="#FF6B35" stroke-width="3" marker-end="url(#arrow-orange)" d="M1470 265h50"/><rect width="120" height="70" x="1530" y="230" fill="#FFF" stroke="#9ca3af" stroke-width="2" rx="8"/><text x="1590" y="260" class="text-dark" font-size="16" font-weight="600" text-anchor="middle">
+        7. 交付
+      </text><text x="1590" y="285" class="text-medium" font-size="13" text-anchor="middle">
+        上线
+      </text></g><g id="cursor-problems"><rect width="1500" height="100" x="150" y="340" fill="#FFF" opacity=".9" rx="8"/><text x="170" y="370" class="accent" font-size="18" font-weight="700">
+        ⚠️ 主要问题：
+      </text><text x="170" y="400" class="text-medium" font-size="15">
+        • 准确率随代码量增长而下降  • AI难以把握全局上下文  • 大量时间耗费在调试和修正
+      </text><text x="170" y="425" class="text-medium" font-size="15">
+        • 每次修改可能破坏其他模块  • 技术细节和业务逻辑混在一起  • 返工成本高
+      </text></g></g><g id="jitai-flow"><rect width="1600" height="350" x="100" y="510" fill="#E3F2FD" stroke="#326DFF" stroke-width="3" rx="16"/><text x="150" y="555" class="primary" font-size="24" font-weight="700">
+      业务应用工程开发（JitAi）
+    </text><text x="150" y="585" class="text-medium" font-size="16">
+      大颗粒度操作 · 低返工成本
+    </text><g id="jitai-steps"><rect width="200" height="70" x="150" y="620" fill="#FFF" stroke="#326DFF" stroke-width="2" rx="8"/><text x="250" y="650" class="primary" font-size="16" font-weight="600" text-anchor="middle">
+        1. 需求理解
+      </text><text x="250" y="675" class="text-medium" font-size="13" text-anchor="middle">
+        业务逻辑梳理
+      </text><path stroke="#326DFF" stroke-width="3" marker-end="url(#arrow-blue)" d="M360 655h60"/><rect width="220" height="70" x="430" y="620" fill="#BBDEFB" stroke="#326DFF" stroke-width="2" rx="8"/><text x="540" y="650" class="primary" font-size="16" font-weight="600" text-anchor="middle">
+        2. 可视化配置
+      </text><text x="540" y="675" class="text-dark" font-size="13" text-anchor="middle">
+        拖拽 + 配置业务模块
+      </text><path stroke="#326DFF" stroke-width="3" marker-end="url(#arrow-blue)" d="M660 655h60"/><rect width="220" height="70" x="730" y="620" fill="#90CAF9" stroke="#326DFF" stroke-width="3" rx="8"/><text x="840" y="650" class="primary" font-size="16" font-weight="700" text-anchor="middle">
+        3. AI助理生成
+      </text><text x="840" y="675" class="text-dark" font-size="13" text-anchor="middle">
+        自然语言描述需求
+      </text><path stroke="#326DFF" stroke-width="3" marker-end="url(#arrow-blue)" d="M960 655h60"/><rect width="200" height="70" x="1030" y="620" fill="#BBDEFB" stroke="#326DFF" stroke-width="2" rx="8"/><text x="1130" y="650" class="primary" font-size="16" font-weight="600" text-anchor="middle">
+        4. 实时预览
+      </text><text x="1130" y="675" class="text-dark" font-size="13" text-anchor="middle">
+        即时查看效果
+      </text><path stroke="#326DFF" stroke-width="3" marker-end="url(#arrow-blue)" d="M1240 655h60"/><rect width="180" height="70" x="1310" y="620" fill="#FFF" stroke="#326DFF" stroke-width="2" rx="8"/><text x="1400" y="650" class="primary" font-size="16" font-weight="600" text-anchor="middle">
+        5. 微调优化
+      </text><text x="1400" y="675" class="text-medium" font-size="13" text-anchor="middle">
+        快速调整
+      </text><path fill="none" stroke="#326DFF" stroke-dasharray="4,4" stroke-width="2" d="M1310 640q-180-60-350 0" opacity=".4"/><path stroke="#00C853" stroke-width="4" marker-end="url(#arrow-green)" d="M1500 655h60"/><rect width="130" height="70" x="1570" y="620" fill="#C8E6C9" stroke="#00C853" stroke-width="3" rx="8"/><text x="1635" y="650" class="success" font-size="16" font-weight="700" text-anchor="middle">
+        6. 交付
+      </text><text x="1635" y="675" class="success" font-size="13" font-weight="600" text-anchor="middle">
+        快速上线
+      </text></g><g id="jitai-advantages"><rect width="1500" height="100" x="150" y="730" fill="#FFF" opacity=".9" rx="8"/><text x="170" y="760" class="primary" font-size="18" font-weight="700">
+        ✨ 核心优势：
+      </text><text x="170" y="790" class="text-medium" font-size="15">
+        • AI在大颗粒度层面准确度高  • 架构约束避免全局混乱  • 实时预览减少返工
+      </text><text x="170" y="815" class="text-medium" font-size="15">
+        • 业务专家可独立完成  • 技术复杂度被封装  • 交付周期大幅缩短
+      </text></g></g><defs><marker id="arrow-green" markerHeight="10" markerWidth="10" orient="auto" refX="8" refY="5"><path fill="#00C853" d="m0 0 10 5-10 5z"/></marker></defs></svg>

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 1
 slug: create-ai-llm
+description: "创建大模型元素的详细指南和说明。"
 ---
 
 # 创建大模型元素
-大模型元素是JitAi平台统一接入各类AI大模型服务的核心组件。它为平台中的[AI Agent](../ai-agent/create-ai-agent)、[AI助理](../ai-assistant/create-ai-assistant)、[AI知识库](../knowledge-base/create-knowledge-elements)提供底层模型能力支撑。
+大模型元素是JitAI平台统一接入各类AI大模型服务的核心组件。它为平台中的[AI Agent](../ai-agent/create-ai-agent)、[AI助理](../ai-assistant/create-ai-assistant)、[AI知识库](../knowledge-base/create-knowledge-elements)提供底层模型能力支撑。
 
 平台内置支持Anthropic、OpenAI、Gemini、Deepseek、阿里云百炼、硅基流动等主流大模型厂商，同时提供OpenAI兼容接口以支持任何兼容OpenAI协议的大模型服务（包括私有化部署的）。通过灵活的API Key管理和智能重试机制，确保模型调用的稳定性和可靠性。开发者也可以扩展新的大语言模型Type元素，即可支持任意不同协议、不同厂商的开源/闭源大模型服务。
 

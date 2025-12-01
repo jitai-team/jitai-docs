@@ -2,6 +2,7 @@
 sidebar_position: 7
 title: Implementing Answer Sheet Page with Full Code
 slug: code
+description: "Learn to implement answer sheet pages using full-code development approach. Create custom portals and Vue components for exam functionality."
 ---
 # Implementing Answer Sheet Page with Full Code
 

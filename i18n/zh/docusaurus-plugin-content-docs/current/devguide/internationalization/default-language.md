@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 slug: default-language
+description: "默认语言的详细指南和说明。"
 ---
 
 # 默认语言

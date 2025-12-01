@@ -1,5 +1,6 @@
 ---
 sidebar_position: 4
+description: "AI data visualization solution for natural language data analysis. Automatic chart generation, statistical rankings, and trend analysis."
 ---
 
 # AI Data Analysis Page

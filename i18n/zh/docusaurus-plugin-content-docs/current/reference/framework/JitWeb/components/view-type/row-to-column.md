@@ -1,12 +1,13 @@
 ---
 slug: row-to-column
+description: "行转列 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 行转列
 行转列是数据结构转换组件，基于数据透视原理实现行列互换功能。它负责动态转置数据结构、重组数据格式和提供数据预览，适用于数据格式转换和报表生成场景。
 
 行转列元素分层结构为Meta（components.Meta） → Type（components.Transpose） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建行转列实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.TransposeType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的components.TransposeType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 基础配置示例

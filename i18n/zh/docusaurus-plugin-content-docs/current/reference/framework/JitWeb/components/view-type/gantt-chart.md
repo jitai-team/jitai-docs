@@ -1,12 +1,13 @@
 ---
 slug: gantt-chart
+description: "甘特图 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 甘特图
 甘特图是项目进度和时间管理可视化组件，基于VTable甘特图库实现任务时间线的直观展示。它负责任务进度跟踪、时间依赖关系显示和进度调整交互，支持拖拽修改、多时间维度切换和实时数据更新等功能，适用于项目管理、生产计划和资源调度等业务场景。
 
 甘特图元素分层结构为Meta（components.Meta） → Type（components.GanttChart） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建甘特图实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.GanttChartType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的components.GanttChartType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 基础配置示例

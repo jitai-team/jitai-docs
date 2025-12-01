@@ -1,17 +1,18 @@
 ---
 slug: github-login
+description: "GitHub 登录 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # GitHub 登录
 GitHub 登录（GitHubType）是基于 GitHub 开放平台的登录认证元素，支持PC端和移动端的OAuth授权登录。它负责处理GitHub OAuth授权流程、用户身份验证和账号绑定，特别适用于开发者社区、技术类产品、开源项目管理等需要统一身份管理的场景。
 
-GitHub 登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.GitHubType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建GitHub登录实例元素。
+GitHub 登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.GitHubType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建GitHub登录实例元素。
 
 **支持的登录方式**：
 - PC端OAuth授权登录 - 跳转到GitHub登录页面完成OAuth授权登录
 - 移动端OAuth授权登录 - 在移动设备上调用GitHub OAuth服务完成授权登录
 - GitHub Enterprise集成 - 支持GitHub Enterprise Server登录
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的auths.loginTypes.GitHubType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的auths.loginTypes.GitHubType元素，以实现自己的封装。
 
 ## 快速开始 {#quick-start}
 ### 创建实例元素 {#creating-instance-elements}

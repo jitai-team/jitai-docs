@@ -1,14 +1,15 @@
 ---
 sidebar_position: 1
 slug: ai-large-models
+description: "AI大模型 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # AI大模型
 AI大模型是企业级大模型服务网关，对接各个大模型厂商，提供统一的模型调用接口，屏蔽不同大模型厂商的API差异。它负责API密钥管理、负载均衡、故障转移和重试机制，支持结构化输出和多轮对话。
 
-AI大模型元素分层结构为Meta（llms.Meta） → Type（llms.Bailian、llms.OpenAI等） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建AI大模型实例元素。
+AI大模型元素分层结构为Meta（llms.Meta） → Type（llms.Bailian、llms.OpenAI等） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建AI大模型实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的llms.Bailian、llms.OpenAI等元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的llms.Bailian、llms.OpenAI等元素，以实现自己的封装。
 
 **支持的大模型厂商：**
 

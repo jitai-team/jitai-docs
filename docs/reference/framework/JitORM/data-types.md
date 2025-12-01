@@ -1,12 +1,15 @@
 ---
 sidebar_position: 2
 slug: data-types
+title: "Data Types Reference"
+description: "Data Types Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Data Types"
 ---
 
 # Data Types
-JitAi's data type Type elements are encapsulations of programming language native data types (such as: strings, numbers, lists, dictionaries, etc.), providing additional functionality and features, frequently used to define field types for [Data Models](./data-models).
+JitAI's data type Type elements are encapsulations of programming language native data types (such as: strings, numbers, lists, dictionaries, etc.), providing additional functionality and features, frequently used to define field types for [Data Models](./model-types/data-models).
 
-The hierarchical structure of data type elements is Meta (datatypes.Meta) → Type (datatypes.xxx). Developers can also create their own Type elements or modify the official data types provided by JitAi in their own App to implement their own encapsulation.
+The hierarchical structure of data type elements is Meta (datatypes.Meta) → Type (datatypes.xxx). Developers can also create their own Type elements or modify the official data types provided by JitAI in their own App to implement their own encapsulation.
 
 :::info About Data Type Object Constructor Parameters
 - **init parameters**: Parameters that can be used in the constructor when constructing objects of a certain data type

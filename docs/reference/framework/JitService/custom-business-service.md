@@ -1,12 +1,15 @@
 ---
 slug: custom-business-service
+title: "Custom Business Service Reference"
+description: "Custom Business Service Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Custom Business Service"
 ---
 # Custom Business Service
 Service elements are core components in the JitAI platform responsible for business logic processing, used to encapsulate data processing, business calculations, and system interaction logic.
 
 The hierarchical structure of service elements is Meta (services.Meta) → Type (services.NormalType) → Instance. Developers can quickly create service instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `services.NormalType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `services.NormalType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements
@@ -195,6 +198,13 @@ Service elements support defining and triggering custom events.
         }
     ]
 }
+```
+
+**Trigger Event**: Trigger using the `app.event.publish` method.
+
+```python
+# sender: fullName of the service element declaring the event . event name
+app.event.publish(sender="services.MyService.CustomEvent", args=("paramValue",), kwargs={"key": "value"})
 ```
 
 ```python title="Trigger Event Example"

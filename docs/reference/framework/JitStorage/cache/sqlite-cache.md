@@ -1,12 +1,15 @@
 ---
 slug: sqlite-cache
+title: "SQLite Cache Reference"
+description: "SQLite Cache Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "SQLite Cache"
 ---
 # SQLite Cache
 SQLite cache is a lightweight file caching solution provided by the JitStorage framework, implementing high-performance key-value cache services based on diskcache library and SQLite database. It provides zero-configuration deployment, cross-platform compatibility, and SQL query support, enabling complete caching functionality without additional database servers.
 
-The hierarchical structure of SQLite cache elements is Meta (caches.Meta) → Type (caches.SqliteType) → Instance. Developers can quickly create SQLite cache instance elements through JitAi's visual development tools.
+The hierarchical structure of SQLite cache elements is Meta (caches.Meta) → Type (caches.SqliteType) → Instance. Developers can quickly create SQLite cache instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `caches.SqliteType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `caches.SqliteType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

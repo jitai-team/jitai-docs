@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: develop-frontend-component-visual-editor
+description: "Build visual editors for UI component Type elements. Enable drag-and-drop configuration with property panels for frontend components."
 ---
 
 # Developing Visual Editors for UI Component Type Elements
@@ -9,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 After completing [Extend Your Own UI Component Type Elements](./add-frontend-components), components can be used in pages, but their configuration parameters must be manually modified in the `scheme.json` file. This is not user-friendly for business experts who lack coding skills.
 
-This guide demonstrates how to develop a visual configuration editor for counter components, providing the same graphical configuration experience as JitAi's official components.
+This guide demonstrates how to develop a visual configuration editor for counter components, providing the same graphical configuration experience as JitAI's official components.
 
 ## Preview of the editor interface {#preview-of-editor-interface}
 Once development is complete, selecting a counter component in the visual development tool displays a user-friendly configuration interface in the right property panel:
@@ -55,7 +56,7 @@ mkdir -p Editor
 **Create the editor element definition file** `components/CounterType/Editor/e.json`:
 
 :::tip Editors are elements too
-In JitAi, editors are also elements with their own `e.json` definition files.
+In JitAI, editors are also elements with their own `e.json` definition files.
 :::
 
 ```json title="components/CounterType/Editor/e.json"
@@ -89,7 +90,7 @@ export const Editor = CounterEditor;
 ```
 
 :::important Editor export naming convention
-Editors must export a component named `Editor`. This is a fixed convention that JitAi tools use to recognize editors.
+Editors must export a component named `Editor`. This is a fixed convention that JitAI tools use to recognize editors.
 :::
 
   </TabItem>
@@ -173,12 +174,12 @@ graph LR
 
 ### Core interface specifications {#core-interface-specifications}
 #### CompEditorProps interface {#compeditorprops-interface}
-:::info Interface provided by JitAi
-`CompEditorProps` is a standard interface provided by JitAi IDEApp. Developers can directly import it from `components/common/types` without defining it themselves.
+:::info Interface provided by JitAI
+`CompEditorProps` is a standard interface provided by JitAI IDEApp. Developers can directly import it from `components/common/types` without defining it themselves.
 :::
 
 ```typescript
-// Import from JitAi—no need to define yourself
+// Import from JitAI—no need to define yourself
 import type { CompEditorProps } from 'components/common/types';
 
 interface CompEditorProps {
@@ -223,7 +224,7 @@ const updateConfig = (updates: Record<string, any>) => {
 3. **Trigger repackaging**: Access the application page; the system will automatically repackage
 
 ### Verifying editor functionality {#verifying-editor-functionality}
-1. **Open the page editor**: Open a page containing counter components in the JitAi development tool
+1. **Open the page editor**: Open a page containing counter components in the JitAI development tool
 2. **Select the component**: Click the counter component in the page
 3. **View the property panel**: The right property panel should display the "Initial Value" configuration item
 4. **Modify configuration**: Try modifying the initial value and observe whether the component updates in real-time
@@ -275,6 +276,6 @@ Supported Ant Design components include: `InputNumber`, `Input`, `Switch`, `Sele
 
 **Key points**:
 - The export name `Editor` must not be changed
-- `CompEditorProps` is provided by JitAi—import it directly
+- `CompEditorProps` is provided by JitAI—import it directly
 - Configuration objects must be merged and updated correctly
 - Use `didMountRef` to prevent invalid callbacks during initialization

@@ -2,6 +2,7 @@
 sidebar_position: 3
 title: 用AI大模型函数实现生成答案
 slug: ai_func
+description: "使用AI大模型函数实现自动答案生成。配置大语言模型并创建AI驱动的答案服务。"
 ---
 
 # 用AI大模型函数实现生成答案
@@ -16,7 +17,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 ## 实现过程
 
 实现AI功能，首先需要对接大模型。大模型厂商元素是为AI大模型厂商提供统一的接入方案，屏蔽不同大模型厂商的API差异，开发者只需要简单配置下密钥即可调用。
-JitAi开发框架中已经集成了近10种主流大模型厂商，且支持对接私有化部署的大模型。
+JitAI开发框架中已经集成了近10种主流大模型厂商，且支持对接私有化部署的大模型。
 
 新建大模型厂商元素操作如下
 <VideoPlayer relatePath="/docs/tutorial/ai_func_llm.mp4" />
@@ -25,7 +26,7 @@ JitAi开发框架中已经集成了近10种主流大模型厂商，且支持对�
 
 <VideoPlayer relatePath="/docs/tutorial/ai_func_page_convert.mp4" />
 
-在JitAi中，调用大模型非常简单，就普通函数一样调用，即可以在前端页面中直接调用，也可以在后端服务函数中调用。
+在JitAI中，调用大模型非常简单，就普通函数一样调用，即可以在前端页面中直接调用，也可以在后端服务函数中调用。
 
 <VideoPlayer relatePath="/docs/tutorial/ai_func_page_event.mp4" />
 

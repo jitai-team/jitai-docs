@@ -1,12 +1,13 @@
 ---
 slug: account-password-login
+description: "账号密码登录 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 账号密码登录
 账号密码登录是极态平台提供的基础登录认证方式，支持用户名密码验证、图形验证码防护和密码加密存储等功能。它负责用户身份认证、账号绑定管理和登录安全防护，适用于企业内部应用和需要传统认证方式的场景。
 
-账号密码登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.PasswordType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建账号密码登录实例元素。
+账号密码登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.PasswordType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建账号密码登录实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的auths.loginTypes.PasswordType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的auths.loginTypes.PasswordType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

@@ -1,12 +1,13 @@
 ---
 slug: parse-excel
+description: "解析Excel API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 解析Excel
 解析Excel是用于解析.xlsx格式文件并将数据导入到指定数据模型的组件，基于Steps步骤条和表格展示实现Excel数据的上传、解析和导入功能。它负责文件上传验证、数据格式转换和批量数据导入，支持字段别名映射、数据预览和自定义按钮操作。
 
 解析Excel元素分层结构为Meta（components.Meta） → Type（components.ParseData） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建解析Excel实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.ParseDataType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的components.ParseDataType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 基础配置示例

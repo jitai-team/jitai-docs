@@ -1,10 +1,11 @@
 ---
 sidebar_position: 4
 slug: agent-prompt-writing-techniques
+description: "Master AI Agent prompt writing techniques. Structured templates, best practices, and examples for stable, controllable agent behavior."
 ---
 
 # Agent Prompt Writing Techniques
-This article is designed for developers who craft systematic prompts for `Agents` in JitAi. Through "Poor vs. Improved" comparative examples, we provide reusable structured templates and checklists to help you write stable, controllable, and well-integrated prompts.
+This article is designed for developers who craft systematic prompts for `Agents` in JitAI. Through "Poor vs. Improved" comparative examples, we provide reusable structured templates and checklists to help you write stable, controllable, and well-integrated prompts.
 
 ## Quick overview: Rewriting a customer information management agent prompt {#quick-overview}
 ### Poor version {#poor-version}

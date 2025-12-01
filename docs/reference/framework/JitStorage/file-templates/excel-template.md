@@ -1,13 +1,16 @@
 ---
 slug: excel-template
+title: "Excel Template Reference"
+description: "Excel Template Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Excel Template"
 ---
 # Excel Template
 
 Excel Template element is an Excel document generation component based on the file template framework, implemented using openpyxl and Jinja2 template engine for dynamic Excel document generation. It handles Excel template parsing, data rendering, and special feature support (image embedding, hyperlinks, dropdown boxes, etc.), providing complete Excel output capabilities for enterprise-level report generation.
 
-The Excel Template element has a hierarchical structure of Meta (fileTmpls.Meta) → Type (fileTmpls.ExcelType) → Instance. Developers can quickly create Excel template instance elements through JitAi's visual development tools.
+The Excel Template element has a hierarchical structure of Meta (fileTmpls.Meta) → Type (fileTmpls.ExcelType) → Instance. Developers can quickly create Excel template instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official fileTmpls.ExcelType element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official fileTmpls.ExcelType element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

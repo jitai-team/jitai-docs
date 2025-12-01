@@ -1,17 +1,18 @@
 ---
 slug: google-login
+description: "Google 登录 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # Google 登录
 Google 登录（GoogleType）是基于 Google 开放平台的登录认证元素，支持PC端和移动端的OAuth授权登录。它负责处理Google OAuth授权流程、用户身份验证和账号绑定，适用于面向国际用户的应用、SaaS 平台、教育类产品等场景，能够提升用户体验，简化注册流程。
 
-Google 登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.GoogleType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建Google登录实例元素。
+Google 登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.GoogleType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建Google登录实例元素。
 
 **支持的登录方式**：
 - PC端OAuth授权登录 - 跳转到Google登录页面完成OAuth授权登录
 - 移动端OAuth授权登录 - 在移动设备上调用Google OAuth服务完成授权登录
 - 单点登录集成 - 与Google Workspace集成的单点登录
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的auths.loginTypes.GoogleType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的auths.loginTypes.GoogleType元素，以实现自己的封装。
 
 ## 快速开始 {#quick-start}
 ### 创建实例元素 {#creating-instance-elements}

@@ -1,11 +1,12 @@
 ---
 sidebar_position: 6
+description: "Create markdown pages for help documentation, announcements, and agreements. Write content using markdown syntax in JitAI development tools."
 ---
 
 # Markdown Pages
 In enterprise application systems, when developers want to create plain text pages such as help documentation, announcements, agreements, etc., they can choose to use Markdown syntax for writing.
 
-JitAi provides Markdown page development functionality, allowing developers to create Markdown pages in the JitAi development tools and write page content using Markdown syntax.
+JitAI provides Markdown page development functionality, allowing developers to create Markdown pages in the JitAI development tools and write page content using Markdown syntax.
 
 ## Creating Markdown Pages {#create-markdown-page}
 ![Create New Markdown Page](./imgs/markdown_2025-08-28_13-51-10.png)
@@ -29,7 +30,7 @@ If users want to display Markdown pages in the usage area, they need to bind the
 :::
 
 ## Markdown Syntax {#markdown-syntax}
-JitAi integrates common Markdown syntax, allowing developers to write Markdown pages in the visual editor.
+JitAI integrates common Markdown syntax, allowing developers to write Markdown pages in the visual editor.
 
 Common Markdown syntax includes:
 
@@ -159,5 +160,5 @@ If you need to display special characters, you can use backslashes for escaping:
 ```
 
 :::tip Tip
-In JitAi's Markdown editor, you can preview effects in real-time. It's recommended to refer to the preview area on the right while writing to ensure correct formatting.
+In JitAI's Markdown editor, you can preview effects in real-time. It's recommended to refer to the preview area on the right while writing to ensure correct formatting.
 :::

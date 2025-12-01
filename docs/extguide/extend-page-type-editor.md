@@ -1,17 +1,18 @@
 ---
 sidebar_position: 5
 slug: extend-page-type-editor
+description: "Create custom page Types with visual editors. Complete guide to building specialized page types like countdown timers for unique use cases."
 ---
 
 # Extend Your Own Page Type and Editor
 
-Imagine you're tasked with building a countdown timer page for an online examination system. You open JitAi and review the existing page types: generic pages are too simplistic, data management pages don't fit the use case, and Markdown pages are completely unsuitable. At this point, you realize you need to create an entirely new page type.
+Imagine you're tasked with building a countdown timer page for an online examination system. You open JitAI and review the existing page types: generic pages are too simplistic, data management pages don't fit the use case, and Markdown pages are completely unsuitable. At this point, you realize you need to create an entirely new page type.
 
-This guide will walk you through the complete process of developing a custom page Type element. More importantly, you'll discover how JitAi's elegant architecture makes this seemingly complex task surprisingly straightforward.
+This guide will walk you through the complete process of developing a custom page Type element. More importantly, you'll discover how JitAI's elegant architecture makes this seemingly complex task surprisingly straightforward.
 
 ## Understanding how pages are loaded {#understanding-how-pages-are-loaded}
 
-Before diving into code, let's first understand a fundamental concept: when a user accesses a page, how does JitAi locate and load the appropriate code?
+Before diving into code, let's first understand a fundamental concept: when a user accesses a page, how does JitAI locate and load the appropriate code?
 
 ### The page loading journey {#the-page-loading-journey}
 
@@ -21,7 +22,7 @@ Let's trace the complete journey from URL to rendering:
 // User visits: /pages/examTimer
 ```
 
-When this request arrives, JitAi initiates an elegant discovery process:
+When this request arrives, JitAI initiates an elegant discovery process:
 
 ```typescript
 // Step 1: runApp.ts starts the application
@@ -41,7 +42,7 @@ This is where we encounter our first key concept: **Loader**.
 
 ### Loader - the secret to flexibility {#loader-the-secret-to-flexibility}
 
-The Loader represents one of JitAi's most ingenious architectural designs. Rather than rigid loading logic, it's an **inheritable, overridable function chain** that provides tremendous flexibility.
+The Loader represents one of JitAI's most ingenious architectural designs. Rather than rigid loading logic, it's an **inheritable, overridable function chain** that provides tremendous flexibility.
 
 ```typescript
 // Finding a loader is like finding the right key
@@ -113,7 +114,7 @@ Notice the key difference? Vue pages require a real DOM element for mounting, wh
 
 ## Developing a timer page Type {#developing-a-timer-page-type}
 
-Now that we've grasped the underlying principles, let's develop a timer page Type. This hands-on example will truly showcase JitAi's power. Here's what we'll build:
+Now that we've grasped the underlying principles, let's develop a timer page Type. This hands-on example will truly showcase JitAI's power. Here's what we'll build:
 
 ![Instance Demo](./img/5/实例展示.png) "Instance Demo"
 
@@ -417,7 +418,7 @@ We also need to configure this Type for startup loading in its e.json file:
 
 ### Step 5: Understanding dynamic inheritance {#step-5-understanding-dynamic-inheritance}
 
-Here's where we encounter an elegant architectural pattern: **dynamic inheritance**. During application startup, JitAi performs the following:
+Here's where we encounter an elegant architectural pattern: **dynamic inheritance**. During application startup, JitAI performs the following:
 
 ```typescript
 // app.ts - loads elements marked as startUp during initialization
@@ -553,7 +554,7 @@ Notice how dynamic inheritance enables the exam timer to:
 
 This exemplifies the elegance of the Type mechanism: **achieving the optimal balance between code reuse and customization**.
 
-In fact, JitAi's built-in page types follow this exact same pattern:
+In fact, JitAI's built-in page types follow this exact same pattern:
 - `Jit.BasePage` — Foundation class for all pages
 - `Jit.GridPage` — Used by standard grid pages
 - `Jit.DataManagePage` — Used by data management pages
@@ -796,7 +797,7 @@ Of course, if you wish to deliver a more specialized editing experience, you can
 
 #### Core editor APIs {#core-editor-apis}
 
-JitAi provides two essential APIs for editor development:
+JitAI provides two essential APIs for editor development:
 
 **1. Retrieving source code**
 ```typescript
@@ -831,7 +832,7 @@ The specific editor interface design is entirely at the developer's discretion a
 
 ## More application scenarios {#more-application-scenarios}
 
-Beyond timer pages, JitAi's page Type mechanism supports a wide variety of specialized use cases:
+Beyond timer pages, JitAI's page Type mechanism supports a wide variety of specialized use cases:
 
 ### Special requirement types {#special-requirement-types}
 

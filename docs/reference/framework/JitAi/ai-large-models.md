@@ -1,14 +1,17 @@
 ---
 sidebar_position: 1
 slug: ai-large-models
+title: "AI Large Language Models(LLM) Reference"
+description: "AI Large Language Models(LLM) Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "AI Large Language Models(LLM)"
 ---
 
 # AI Large Language Models(LLM)
 AI LLMs is an enterprise-level large model service gateway that connects to various large model vendors, providing a unified model calling interface that shields API differences between different large model vendors. It handles API key management, load balancing, failover and retry mechanisms, supporting structured output and multi-turn conversations.
 
-The AI LLMs element has a hierarchical structure of Meta (llms.Meta) → Type (llms.Bailian, llms.OpenAI, etc.) → Instance. Developers can quickly create AI LLMs instance elements through JitAi's visual development tools.
+The AI LLMs element has a hierarchical structure of Meta (llms.Meta) → Type (llms.Bailian, llms.OpenAI, etc.) → Instance. Developers can quickly create AI LLMs instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `llms.Bailian`, `llms.OpenAI` and other elements provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `llms.Bailian`, `llms.OpenAI` and other elements provided by JitAI in their own App to implement their own encapsulation.
 
 **Supported LLMs Vendors:**
 

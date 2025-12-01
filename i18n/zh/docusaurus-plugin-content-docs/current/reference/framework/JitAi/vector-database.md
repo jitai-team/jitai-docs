@@ -1,14 +1,15 @@
 ---
 sidebar_position: 2
 slug: vector-database
+description: "向量数据库 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # 向量数据库
 向量数据库是用于向量存储和检索的数据库，提供语义搜索功能。它负责向量存储、相似度检索、元数据过滤和集合管理，支持余弦相似度、欧几里得距离等多种度量算法，为AI知识库和语义搜索提供数据支撑。
 
-向量数据库元素分层结构为Meta（vectordbs.Meta） → Type（vectordbs.ChromaType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建向量数据库实例元素。
+向量数据库元素分层结构为Meta（vectordbs.Meta） → Type（vectordbs.ChromaType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建向量数据库实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的vectordbs.ChromaType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的vectordbs.ChromaType元素，以实现自己的封装。
 
 **支持的Type类型：**
 
@@ -176,7 +177,7 @@ vector_db = app.getElement("vectordbs.MyVectorDB")
 
 # 配置集合参数
 collection_name = "jitai_documents"
-metadata = {"description": "JitAi框架演示集合"}
+metadata = {"description": "JitAI框架演示集合"}
 
 try:
     # 创建集合
@@ -236,7 +237,7 @@ sample_embeddings = [
 
 # 配置元数据
 sample_metadata = [
-    {"title": "JitAi架构文档", "category": "技术", "source": "internal"},
+    {"title": "JitAI架构文档", "category": "技术", "source": "internal"},
     {"title": "向量数据库使用指南", "category": "教程", "source": "docs"},
     {"title": "AI助手开发实践", "category": "技术", "source": "blog"},
 ]

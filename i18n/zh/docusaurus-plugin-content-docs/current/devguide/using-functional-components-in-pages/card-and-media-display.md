@@ -1,6 +1,7 @@
 ---
 sidebar_position: 8
 slug: card-and-media-display
+description: "卡片与媒体展示的详细指南和说明。"
 ---
 
 # 卡片与媒体展示

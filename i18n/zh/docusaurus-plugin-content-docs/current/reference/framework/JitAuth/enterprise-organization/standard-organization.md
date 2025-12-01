@@ -1,12 +1,13 @@
 ---
 slug: standard-organization
+description: "常规组织 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 常规组织
 常规组织是JitAuth框架中的企业组织架构管理元素，基于部门层级结构和角色权限体系实现企业人员管理。它负责组织架构维护、成员管理和权限分配，支持部门层级管理、角色权限控制和成员状态管理等功能。
 
-常规组织元素分层结构为Meta（corps.Meta） → Type（corps.NormalType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建常规组织实例元素。
+常规组织元素分层结构为Meta（corps.Meta） → Type（corps.NormalType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建常规组织实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的corps.NormalType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的corps.NormalType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

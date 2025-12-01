@@ -1,12 +1,13 @@
 ---
 slug: import
+description: "导入 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 导入
 导入是用于Excel文件数据导入的视图组件，基于分步骤引导式界面实现文件上传、字段映射、数据预览和批量导入功能。它负责处理Excel文件解析、字段验证映射和数据入库操作，支持追加和替换两种导入模式，具备进度监控和错误处理能力。
 
 导入元素分层结构为Meta（components.Meta） → Type（components.Import） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建导入实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.ImportType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的components.ImportType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 基础配置示例

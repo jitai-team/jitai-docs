@@ -1,5 +1,8 @@
 ---
 slug: tabs
+title: "Tabs Reference"
+description: "Tabs Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Tabs"
 ---
 # Tabs
 Tabs is a layout component used to switch between multiple content panels within limited space. It implements componentized layout based on React technology stack, supporting line and card visual styles, and can be placed in four positions: top, bottom, left, and right. Tabs handle organization and management of multiple content panels, tab switching interaction, and dynamic display control, supporting permission filtering, dynamic alias settings, and event-driven interactive responses.

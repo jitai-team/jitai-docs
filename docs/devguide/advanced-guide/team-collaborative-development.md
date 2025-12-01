@@ -1,9 +1,10 @@
 ---
 sidebar_position: 0
 slug: team-collaborative-development
+description: "Team collaboration workflows with JitAI Desktop. Local development, version release, test deployment, and production deployment strategies."
 ---
 
-# Team Collaborative Development with JitAi Desktop
+# Team Collaborative Development with JitAI Desktop
 
 ## Desktop development workflow (recommended) {#desktop-development-workflow}
 

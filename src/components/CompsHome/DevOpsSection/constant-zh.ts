@@ -1,6 +1,6 @@
 const CONTENT = {
     title: "Jit 运维工具",
-    subtitle: "构建、发布、部署、运维全面简化轻量化",
+    subtitle: "全面可视化和自动化应用的创建、发布、部署和更新，简单且高效",
     color: "#3D65FD",
     features: [
         {

@@ -1,12 +1,13 @@
 ---
 slug: model-filter
+description: "模型筛选器 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 模型筛选器
 模型筛选器是用于对指定模型数据进行筛选操作的交互组件，基于React和TypeScript实现数据查询条件的可视化配置能力。它负责构建查询条件、管理筛选状态和触发查询事件，支持简单模式、复杂模式和自由模式三种筛选方式，提供列表和标签两种展示样式。
 
 模型筛选器元素分层结构为Meta（components.Meta）→ Type（components.Filter）→ 实例，开发者可通过JitAI的可视化开发工具快捷地创建模型筛选器实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.FilterType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的components.FilterType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 基础配置示例

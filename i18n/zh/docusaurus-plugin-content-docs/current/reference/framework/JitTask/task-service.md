@@ -1,256 +1,133 @@
 ---
 sidebar_position: 4
 slug: task-service
+description: "临时任务 API 参考文档。完整的规格说明、方法和示例。"
+draft: true
 ---
 
-# 任务服务
-任务服务是JitTask框架的核心API服务，负责任务模板管理、任务创建执行、状态控制和强制终止等功能。元素分层结构为Meta（services.Meta） → Type（services.NormalType） → 实例（services.TaskSvc），开发者可直接使用TaskSvc实例元素。
+# 临时任务
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的services.NormalType元素，以实现自己的封装。
+临时任务 (`tasks.TemporaryType`) 与前两种任务不同，它**没有**静态的配置文件 (`e.json`) 来定义执行规则。它是一种**代码触发**机制，允许开发人员在业务逻辑中动态地创建一次性的后台任务。
 
-## 快速开始 
-任务服务作为JitTask框架的内置实例元素，可直接通过`app.getElement()`获取使用：
+**核心特性**:
+*   **动态性**: 执行时间、参数、执行函数都在运行时指定。
+*   **一次性**: 任务执行完毕后即销毁，不会自动重复。
+*   **异步化**: 常用于解耦耗时操作，提升接口响应速度。
 
-```python title="基础使用示例"
-# 获取任务服务实例
-taskSvc = app.getElement("services.TaskSvc")
+## 快速开始
 
-# 获取任务模板列表
-templates = taskSvc.getTaskTmplList("")
+### 场景示例
 
-# 创建定时任务
-result = taskSvc.createTimerTask(
-    fullName="tasks.MyTask",
-    startTime="2024-01-01 10:00:00",
-    funcName="executeTask",
-    taskType="tasks.NormalType",
-    argDict={"param1": "value1"}
-)
-```
+**场景**：订单创建 30 分钟后自动取消。
 
-## 方法 
-### getTaskTmplList
-获取系统中所有可用的任务模板列表，支持按名称筛选。
+#### 业务代码 (触发点)
 
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| queryStr | Stext | str | 是 | 模板名称筛选条件，空字符串返回所有模板 |
+在业务逻辑中调用 `createTemporaryTask` 创建任务。
 
-#### 返回值
-JitList类型，包含任务模板信息列表，每个项目包含title、taskType、repeatType、fullName字段。
+```python title="services/OrderSvc.py"
+from tasks.TemporaryType.task import createTemporaryTask
+from jit_utils.time import now
 
-#### 使用示例
-```python title="获取任务模板列表"
-taskSvc = app.getElement("services.TaskSvc")
-
-# 获取所有任务模板
-all_templates = taskSvc.getTaskTmplList("")
-
-# 按名称筛选任务模板
-filtered_templates = taskSvc.getTaskTmplList("数据备份")
-
-# 处理返回结果
-for template in all_templates:
-    print(f"模板名称: {template['title']}")
-    print(f"任务类型: {template['taskType']}")
-    print(f"重复类型: {template['repeatType']}")
-    print(f"完整路径: {template['fullName']}")
-```
-
-### createTimerTask
-创建一个定时任务，支持指定执行时间、函数路径和参数。
-
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| fullName | Stext | str | 是 | 任务元素的完整路径 |
-| startTime | Datetime | datetime | 是 | 任务开始执行时间 |
-| funcName | Stext | str | 是 | 要执行的函数路径 |
-| taskType | Stext | str | 是 | 任务类型，如tasks.NormalType |
-| argDict | JitDict | dict | 是 | 传递给执行函数的参数字典 |
-
-#### 返回值
-JitDict类型，包含任务创建结果信息。
-
-#### 使用示例
-```python title="创建定时任务"
-from datetime import datetime, timedelta
-
-taskSvc = app.getElement("services.TaskSvc")
-
-# 创建1小时后执行的任务
-future_time = datetime.now() + timedelta(hours=1)
-
-result = taskSvc.createTimerTask(
-    fullName="tasks.DataBackup",
-    startTime=future_time.strftime("%Y-%m-%d %H:%M:%S"),
-    funcName="services.BackupSvc.backupDatabase",
-    taskType="tasks.NormalType",
-    argDict={
-        "database": "main_db",
-        "backup_path": "/backup/",
-        "compress": True
-    }
-)
-
-print(f"任务创建结果: {result}")
-```
-
-### forcedEnd
-手动强制结束指定的任务，会更新任务状态并触发后续处理。
-
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| taskId | Stext | str | 是 | 要结束的任务ID |
-
-#### 返回值
-JitDict类型，操作结果信息。
-
-#### 使用示例
-```python title="强制结束任务"
-taskSvc = app.getElement("services.TaskSvc")
-
-# 强制结束指定任务
-result = taskSvc.forcedEnd("task_uuid_12345")
-
-print(f"任务强制结束结果: {result}")
-```
-
-### saveDateFieldTask
-处理基于日期字段的任务保存回调，当模型数据的日期字段发生变化时自动触发任务调度。
-
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| rowObj | RowData | dict | 是 | 包含数据变更信息的行对象 |
-
-#### 返回值
-JitDict类型，处理结果信息。
-
-#### 使用示例
-```python title="日期字段任务保存回调"
-# 通常在模型事件中使用
-def onModelUpdate(rowObj):
-    taskSvc = app.getElement("services.TaskSvc")
+def create_order(user_id, items):
+    # 1. 创建订单逻辑...
+    order_id = "ORD_123456"
     
-    # 处理日期字段任务
-    result = taskSvc.saveDateFieldTask(rowObj)
+    # 2. 计算 30 分钟后的时间
+    # use arrow or jit_utils
+    exec_time = now().shift(minutes=30).format("YYYY-MM-DD HH:mm:ss")
     
-    return result
-```
-
-### deleteDateFieldTask
-处理基于日期字段的任务删除回调，当关联的模型数据被删除时清理相关任务。
-
-#### 参数详解
-| 参数名 | 类型 | 对应原生类型 | 必填 | 说明 |
-|--------|------|-------------|------|------|
-| rowObj | RowData | dict | 是 | 包含被删除数据信息的行对象 |
-
-#### 返回值
-JitDict类型，处理结果信息。
-
-#### 使用示例
-```python title="日期字段任务删除回调"
-# 通常在模型事件中使用
-def onModelDelete(rowObj):
-    taskSvc = app.getElement("services.TaskSvc")
-    
-    # 清理相关任务
-    result = taskSvc.deleteDateFieldTask(rowObj)
-    
-    return result
-```
-
-## 属性
-任务服务继承自services.NormalType，暂无特有的公开属性。
-
-## 高级特性
-### 任务生命周期管理
-任务服务支持完整的任务生命周期管理，包括创建、执行、监控和终止：
-
-```python title="任务生命周期管理"
-taskSvc = app.getElement("services.TaskSvc")
-
-# 1. 获取可用模板
-templates = taskSvc.getTaskTmplList("")
-
-# 2. 基于模板创建任务
-if templates:
-    template = templates[0]
-    result = taskSvc.createTimerTask(
-        fullName=template['fullName'],
-        startTime="2024-12-01 09:00:00",
-        funcName="services.BusinessSvc.processData",
-        taskType=template['taskType'],
-        argDict={"batch_size": 100}
+    # 3. 创建延时检查任务
+    task_id = createTemporaryTask(
+        func="services.OrderSvc.checkAndCancel",
+        argDict={
+            "orderId": order_id,
+            "reason": "timeout"
+        },
+        startTime=exec_time
     )
     
-    # 3. 如需要可强制终止任务
-    # taskSvc.forcedEnd("task_id")
+    print(f"订单创建成功，延时任务已生成: {task_id}")
+    return order_id
 ```
 
-### 模型事件集成
-任务服务与模型事件深度集成，支持数据变更驱动的任务调度：
+#### 任务执行函数
 
-```python title="模型事件集成"
-# 在模型的生命周期函数中使用
-def afterSave(self, triggerEvent=1):
-    """模型保存后触发任务服务"""
-    taskSvc = app.getElement("services.TaskSvc")
-    
-    # 构造行对象
-    rowObj = {
-        'postData': self,  # 更新后的数据
-        'prevData': self._original_data  # 更新前的数据（需要自行维护）
-    }
-    
-    # 触发日期字段任务处理
-    taskSvc.saveDateFieldTask(rowObj)
+实现具体的业务处理逻辑。
 
-def afterDelete(self, triggerEvent=1):
-    """模型删除后清理相关任务"""
-    taskSvc = app.getElement("services.TaskSvc")
+```python title="services/OrderSvc.py"
+def checkAndCancel(orderId, reason="unknown"):
+    """
+    参数名必须与 argDict 中的 key 保持一致
+    """
+    print(f"检查订单支付状态: {orderId}, 原因: {reason}")
     
-    rowObj = {
-        'prevData': self  # 被删除的数据
-    }
+    # 查询数据库判断是否已支付
+    # if not paid: cancel_order()
     
-    # 清理相关任务
-    taskSvc.deleteDateFieldTask(rowObj)
+    return "Checked"
 ```
 
-### 批量任务管理
-支持批量创建和管理多个关联任务：
+## API 说明
 
-```python title="批量任务管理"
-taskSvc = app.getElement("services.TaskSvc")
+### createTemporaryTask
 
-# 批量创建一组相关任务
-task_configs = [
-    {
-        "fullName": "tasks.DataSync",
-        "startTime": "2024-12-01 01:00:00",
-        "funcName": "services.SyncSvc.syncUserData",
-        "taskType": "tasks.NormalType",
-        "argDict": {"table": "users"}
-    },
-    {
-        "fullName": "tasks.DataSync", 
-        "startTime": "2024-12-01 02:00:00",
-        "funcName": "services.SyncSvc.syncOrderData",
-        "taskType": "tasks.NormalType",
-        "argDict": {"table": "orders"}
-    }
-]
+系统提供了 `createTemporaryTask` 辅助函数来创建任务。
 
-# 批量创建任务
-results = []
-for config in task_configs:
-    result = taskSvc.createTimerTask(**config)
-    results.append(result)
+#### 引入方式
 
-print(f"批量创建了 {len(results)} 个任务")
-``` 
+```python
+from tasks.TemporaryType.task import createTemporaryTask
+```
+
+#### 函数签名
+
+```python
+def createTemporaryTask(func, argDict=None, startTime=None):
+    """
+    :param func: (str) 要执行的全局函数路径
+    :param argDict: (dict) 传递给函数的关键字参数字典
+    :param startTime: (str) 计划执行时间，格式 "yyyy-MM-dd HH:mm:ss"
+    :return: (str) 生成的任务 ID (taskId)
+    """
+```
+
+#### 参数详解
+
+| 参数名 | 类型 | 必填 | 说明 | 示例 |
+| :--- | :--- | :--- | :--- | :--- |
+| `func` | String | **是** | 全局可访问的服务函数路径。函数必须存在且已加载。 | `"services.OrderSvc.autoCancel"` |
+| `argDict` | Dict | 否 | 传递给函数的关键字参数字典。 | `{"orderId": "123"}` |
+| `startTime` | String | 否 | 计划执行时间，格式 `yyyy-MM-dd HH:mm:ss`。<br />如果不传，默认为立即执行（系统扫描周期内）。 | `"2023-12-25 10:00:00"` |
+
+## 执行函数
+
+### 函数入参
+
+临时任务的执行函数参数由创建任务时的 `argDict` 决定。
+
+| 参数名 | 类型 | 必填 | 说明 |
+| :--- | :--- | :--- | :--- |
+| (自定义) | (自定义) | 否 | 函数参数名必须与 `argDict` 中的 Key 一一对应（除非使用 `**kwargs`）。 |
+
+### 函数体
+
+函数必须是全局可访问的服务函数（通常在 `services/` 下）。
+
+*   **参数匹配**: 确保函数定义的参数列表能接收 `argDict` 中的所有键。
+*   **无状态**: 函数应当是无状态的，所有必要上下文应通过 `argDict` 传递（推荐传递 ID）。
+
+## 调试与注意事项
+
+1.  **传递复杂参数**:
+    *   由于 `argDict` 会被序列化存储到数据库中，建议**仅传递 ID**。
+    *   不要传递整个对象（如 `User` 对象），而是传递 `userId`。在执行函数中通过 ID 重新查询数据。
+    *   尽量只使用 String, Number, Boolean, List, Dict 等 JSON 兼容类型。
+
+2.  **错误处理**:
+    *   临时任务一旦执行失败（抛出异常），状态会变为 `error` 并记录在历史表中。
+    *   **无自动重试**: 默认情况下，临时任务失败不会自动重试。
+    *   **手动干预**: 管理员可以在后台查看失败的任务历史。
+
+3.  **事务注意**:
+    *   `createTemporaryTask` 本身是一个数据库插入操作 (`TaskModel.create`)。
+    *   如果在事务 (`@transaction`) 中调用它，任务记录的创建会随事务提交。如果事务回滚，任务也不会被创建，这通常是符合预期的行为（业务失败了，对应的后续任务自然也不该执行）。

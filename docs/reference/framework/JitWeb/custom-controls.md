@@ -1,5 +1,8 @@
 ---
 slug: custom-controls
+title: "Custom Controls Reference"
+description: "Custom Controls Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Custom Controls"
 ---
 # Custom Controls
 
@@ -7,7 +10,7 @@ Custom Controls are reusable UI component elements in the JitWeb framework, impl
 
 The Custom Control element has a hierarchical structure of Meta (widgets.Meta) → Type (widgets.React) → Instance. Developers can quickly create custom control instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official widgets.ReactType element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official widgets.ReactType element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Basic Configuration Example

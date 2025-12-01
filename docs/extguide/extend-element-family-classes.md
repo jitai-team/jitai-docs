@@ -1,11 +1,12 @@
 ---
 sidebar_position: 1
 slug: extend-element-family-classes
+description: "Extend your own element families in JitAI. Step-by-step guide to creating custom Type elements and building DingTalk robot integration."
 ---
 
 # Extend Your Own Element Families
 
-When existing Type elements in the JitAi development framework cannot meet specific business requirements, developers can extend functionality through two approaches:
+When existing Type elements in the JitAI development framework cannot meet specific business requirements, developers can extend functionality through two approaches:
 
 1. **Reuse existing Meta and create new Type elements**: Suitable for extending functionality within existing families. For example, adding email notifications under the messaging service framework, or integrating PayPal payments under the payment service framework. These are all new Type elements pointing to existing Meta.
 2. **Create entirely new element families**: Suitable for extensions in completely new business domains, forming self-contained new element families. For example, IoT integration that needs to support various protocols like MQTT, Modbus, etc.
@@ -518,7 +519,7 @@ __all__ = ["Loader"]
   "backendLoadTime": "afterAppInit",
   "type": "imRobots.dingTalkStreamType",
   "title": "DingTalk Intelligent Customer Service",
-  "description": "JitAi intelligent customer service DingTalk robot instance, configure specific parameters"
+  "description": "JitAI intelligent customer service DingTalk robot instance, configure specific parameters"
 }
 ```
 

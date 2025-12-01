@@ -2,6 +2,7 @@
 sidebar_position: 10
 title: Implementing Permission Control with Application Roles
 slug: role
+description: "Implement role-based access control in JitAI applications. Configure examiner and examinee roles with granular menu and component-level permissions."
 ---
 # Implementing Permission Control with Application Roles
 
@@ -13,7 +14,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 ## Implementation process
 
-The JitAi application framework includes built-in "Developer" and "Administrator" roles, corresponding to the "Developer Portal" and "Manager Portal" respectively.
+The JitAI application framework includes built-in "Developer" and "Administrator" roles, corresponding to the "Developer Portal" and "Manager Portal" respectively.
 
 This project requires two role types: Examiner and Examinee. Since we've already created "Examiner Portal" and "Examinee Portal" for these roles, permission configuration becomes straightforward.
 

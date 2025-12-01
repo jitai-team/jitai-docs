@@ -1,12 +1,15 @@
 ---
 slug: gallery
+title: "Gallery Reference"
+description: "Gallery Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Gallery"
 ---
 # Gallery
 Gallery is a card view component used to display data lists in a grid layout. It automatically renders card-based interfaces based on model data, supporting field display configuration, image display, action buttons, and interactive events. It is suitable for scenarios such as product display, personnel information, and image gallery browsing.
 
 The gallery element has a hierarchical structure of Meta (components.Meta) → Type (components.Gallery) → Instance. Developers can quickly create Gallery instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `components.GalleryType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `components.GalleryType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start 
 ### Basic Configuration Example

@@ -1,11 +1,12 @@
 ---
 sidebar_position: 2
 slug: visual-development-tool
+description: "JitAI visual development tools overview. Graphical orchestration tools for application development without coding."
 ---
 
 # Visual Development Tool
 
-JitAi provides developers with a comprehensive dual-mode application development environment that seamlessly integrates visual design and full-code development capabilities, combining programming and orchestration workflows (referred to as the IDE). Developers can access the application development interface by clicking the `Develop` button in the [Node Console](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment) within the DevOps management tool, or by navigating to the `Developer Portal` within the application. The IDE automatically loads the source code for all application modules, enabling developers to perform both visual editing and source code editing simultaneously.
+JitAI provides developers with a comprehensive dual-mode application development environment that seamlessly integrates visual design and full-code development capabilities, combining programming and orchestration workflows (referred to as the IDE). Developers can access the application development interface by clicking the `Develop` button in the [Node Console](../creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment) within the DevOps management tool, or by navigating to the `Developer Portal` within the application. The IDE automatically loads the source code for all application modules, enabling developers to perform both visual editing and source code editing simultaneously.
 
 ![IDE Homepage](./img/ide/ide-homepage.png "IDE Homepage")
 
@@ -51,21 +52,24 @@ Under the source code file tree view, developers can conveniently import element
 ## Application settings {#application-settings}
 Clicking the `Settings` tab in the left panel of the IDE opens the application settings.
 
+### Basic information {#basic-information}
+
 ![Set Application Basic Information](./img/ide/set-app-basic-info.png "Set Application Basic Information")
 
-### Basic information {#basic-information}
 In the application basic information section, developers can configure the application's title, logo, inherited applications and their versions, and check for inherited application version updates.
+
+### Default elements {#default-elements}
 
 ![Set Application Default Elements](./img/ide/set-app-default-element.gif "Set Application Default Elements")
 
-### Default elements {#default-elements}
 In the application default elements section, developers can configure the application's default elements including portal, global styles, database, cache, file storage, and login page.
 
 Developers can create new default elements during configuration, for example: creating a new file storage element and setting it as the default file storage service.
 
+### Environment variables {#environment-variables}
+
 ![Set Application Environment Variable Values](./img/ide/set-app-environment-variables.png "Set Application Environment Variable Values")
 
-### Environment variables {#environment-variables}
 In the application environment variables section, developers can set environment variable values, which take effect immediately in the current runtime environment upon configuration.
 
 ## Portal switching {#portal-switching}
@@ -87,7 +91,7 @@ Click the language indicator in the lower left corner of the IDE (English, Simpl
 
 ![Switch Language](./img/ide/switch-interface-display-language.gif "Switch Language")
 
-Multi-language support is one of the core elements provided by the JitAi development framework, utilized not only for IDE internationalization but also for internationalizing any other applications built on the platform.
+Multi-language support is one of the core elements provided by the JitAI development framework, utilized not only for IDE internationalization but also for internationalizing any other applications built on the platform.
 
 ## Navigation tabs {#navigation-tabs}
 All interfaces opened within the IDE are displayed as navigation tabs for efficient workflow management.

@@ -1,18 +1,19 @@
 ---
 sidebar_position: 3
 slug: add-frontend-components
+description: "Extend UI component Type elements in JitAI. Learn to create custom components like counters and integrate them into visual development tools."
 ---
 
 # Extend Your Own UI Component Type Elements
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-When the existing UI components in the JitAi development framework don't meet your specific business requirements, you can extend new components under `components.Meta` and integrate them into pages using the JitAi visual development tool.
+When the existing UI components in the JitAI development framework don't meet your specific business requirements, you can extend new components under `components.Meta` and integrate them into pages using the JitAI visual development tool.
 
 In this guide, we'll walk through creating a simple counter component that demonstrates how to extend UI components. This counter features basic functionality including value display and increment/decrement buttons.
 
 :::tip Tip
-While JitAi's existing portal and page types are comprehensive and rarely need extension, UI components offer significant opportunities for customization to meet diverse presentation requirements.
+While JitAI's existing portal and page types are comprehensive and rarely need extension, UI components offer significant opportunities for customization to meet diverse presentation requirements.
 :::
 
 ### Effect preview {#effect-preview}
@@ -21,7 +22,7 @@ While JitAi's existing portal and page types are comprehensive and rarely need e
 ### Element design {#element-design}
 | Element Level | fullName | Main Responsibilities |
 |---------|----------|----------|
-| **Meta Element** | `components.Meta` | Existing Meta element in JitAi development framework (no need to create) |
+| **Meta Element** | `components.Meta` | Existing Meta element in JitAI development framework (no need to create) |
 | **Type Element** | `components.CounterType` | type points to `components.Meta`, encapsulates basic counter functionality, handles value increment/decrement, style configuration, etc. |
 | **Configuration when used in pages** | Page scheme.json | Configure specific runtime parameters for components in pages and declare events, functions, variables |
 
@@ -43,7 +44,7 @@ While JitAi's existing portal and page types are comprehensive and rarely need e
 
 ## Operation guide {#operation-guide}
 ### Creating directory structure {#creating-directory-structure}
-In your JitAi application root directory, create directories according to the following structure:
+In your JitAI application root directory, create directories according to the following structure:
 
 ```bash
 # Execute in application root directory
@@ -79,7 +80,7 @@ import Render from './render/pc/CounterRender';
 import { CounterComponent } from './CounterComponent';
 export { COUNTER_EVENTS } from './constants';
 
-// Rename exports for JitAi tool recognition
+// Rename exports for JitAI tool recognition
 export { CounterComponent as ComponentCls, Render };
 ```
 
@@ -90,7 +91,7 @@ import Render from './render/mobile/CounterRender';
 import { CounterComponent } from './CounterComponent';
 export { COUNTER_EVENTS } from './constants';
 
-// Rename exports for JitAi tool recognition
+// Rename exports for JitAI tool recognition
 export { CounterComponent as ComponentCls, Render };
 ```
 
@@ -316,7 +317,7 @@ static getEventList(): Array<{
 3. **Trigger packaging**: Access the application page, the system will automatically repackage
 
 #### Testing in generic pages {#testing-in-generic-pages}
-Enter the JitAi visual development tool, create a `Generic Page`, and add the newly created `Counter` component to the page.
+Enter the JitAI visual development tool, create a `Generic Page`, and add the newly created `Counter` component to the page.
 
 When switching to code mode, you'll see the following configuration automatically generated in the page's `scheme.json` file:
 

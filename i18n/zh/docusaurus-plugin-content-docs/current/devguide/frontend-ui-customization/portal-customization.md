@@ -1,11 +1,12 @@
 ---
 sidebar_position: 5
 slug: portal-customization
+description: "门户定制的详细指南和说明。"
 ---
 
 # 门户定制
 
-当JitAi内置的常规门户、空白门户和SSR门户无法满足特定的界面需求时，全代码自定义门户提供了灵活的解决方案。自定义门户主要适用于以下场景：
+当JitAI内置的常规门户、空白门户和SSR门户无法满足特定的界面需求时，全代码自定义门户提供了灵活的解决方案。自定义门户主要适用于以下场景：
 
 - **导航布局调整**：需要改变导航菜单的位置、排列方式或层级结构
 - **界面风格定制**：企业品牌要求或特殊设计规范下的界面样式调整
@@ -13,7 +14,7 @@ slug: portal-customization
 - **响应式适配**：针对特殊屏幕尺寸或设备类型进行界面适配
 - **功能区域重组**：重新组织页面功能区域的布局和展示方式
 
-自定义门户在保持JitAi平台数据模型、权限管理等核心功能的基础上，让开发者可以灵活调整门户的外观表现和用户交互方式。
+自定义门户在保持JitAI平台数据模型、权限管理等核心功能的基础上，让开发者可以灵活调整门户的外观表现和用户交互方式。
 
 ## 创建自定义门户 {#creating-custom-portal}
 
@@ -80,7 +81,7 @@ openMenu(menuName: string): void
 ```typescript
 import { ElementRender } from 'jit-widgets';
 
-// ElementRender是JitAi中最重要的页面渲染组件
+// ElementRender是JitAI中最重要的页面渲染组件
 // 用于渲染门户中的具体页面内容
 <ElementRender
     elementPath={item.page}  // 页面元素路径

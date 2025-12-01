@@ -1,12 +1,15 @@
 ---
 slug: wechat-official-login
+title: "WeChat Official Account Login Reference"
+description: "WeChat Official Account Login Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "WeChat Official Account Login"
 ---
 # WeChat Official Account Login
 WeChat Official Account login is an authentication login method for the WeChat Official Account ecosystem, implementing user identity authentication and login based on OAuth2.0 web authorization mechanism. It handles WeChat Official Account user identity recognition, authorization information acquisition, and login status management, supporting both silent authorization and user information authorization modes, providing complete frontend-backend integration solutions.
 
-The hierarchical structure of WeChat Official Account login elements is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.WechatPublicType) → Instance. Developers can quickly create WeChat Official Account login instance elements through JitAi's visual development tools.
+The hierarchical structure of WeChat Official Account login elements is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.WechatPublicType) → Instance. Developers can quickly create WeChat Official Account login instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `auths.loginTypes.WechatPublicType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `auths.loginTypes.WechatPublicType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

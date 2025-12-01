@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: roles-and-business-element-permissions
+description: "Configure role-based permissions for business elements. Data access control, element permissions, and role management in applications."
 ---
 
 # Roles and Business Element Permissions
@@ -9,7 +10,7 @@ RBAC (Role-Based Access Control) not only controls user access to portals and pa
 
 ## Portal-level data operation type and scope control {#portal-level-data-operation-type-and-scope-control}
 
-To enforce control over unauthorized data operations, JitAi supports specifying global data access permission controls for roles within specific portals, restricting access to data models and their operation functions (query, create, update, delete, and statistics). Even if developers include data query components and operation buttons on portal pages, users cannot perform operations or view data beyond their authorized permission scope.
+To enforce control over unauthorized data operations, JitAI supports specifying global data access permission controls for roles within specific portals, restricting access to data models and their operation functions (query, create, update, delete, and statistics). Even if developers include data query components and operation buttons on portal pages, users cannot perform operations or view data beyond their authorized permission scope.
 
 ![Custom Data Model Permissions](./img/role/custom-data-model-permissions.gif "Custom Data Model Permissions")
 

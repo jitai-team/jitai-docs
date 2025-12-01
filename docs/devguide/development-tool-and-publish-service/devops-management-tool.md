@@ -1,12 +1,13 @@
 ---
 sidebar_position: 3
 slug: devops-management-tool
+description: "DevOps management tool for application lifecycle. Manage development, testing, deployment, and operations in one platform."
 title: DevOps Management Tool
 ---
 
 # DevOps Management Tool
 
-Every JitNode includes a built-in DevOps management tool (AdminApp) that delivers comprehensive management capabilities spanning the entire lifecycle from project inception to deployment and operations. The DevOps management tool is itself a JitAi application running on JitNodes, exemplifying the platform's bootstrapping capability—leveraging its own tools for self-management.
+Every JitNode includes a built-in DevOps management tool (AdminApp) that delivers comprehensive management capabilities spanning the entire lifecycle from project inception to deployment and operations. The DevOps management tool is itself a JitAI application running on JitNodes, exemplifying the platform's bootstrapping capability—leveraging its own tools for self-management.
 
 AdminApp employs a dual-console architecture, featuring both a local node console and an organization management console, designed to address single-node application management and enterprise-level cluster management requirements respectively. When developers access the node entry point, they are automatically redirected to the node console.
 

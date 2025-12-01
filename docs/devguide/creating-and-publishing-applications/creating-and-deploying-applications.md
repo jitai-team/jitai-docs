@@ -1,12 +1,13 @@
 ---
 sidebar_position: 1
 slug: creating-and-deploying-applications
+description: "Create and deploy JitAI applications following JAAP specifications. Application structure, elements, and deployment across runtime environments."
 ---
 
 # Creating and Deploying Applications
-Applications in JitAi are collectively referred to as `JitAi Apps`, and their structure follows the application specifications defined in [JAAP](/docs/reference/runtime-platform/JAAP). Both `Official Apps` and developer-created `MyApps` are `JitAi Apps`. An application's composition adheres to JAAP specifications and typically contains multiple fundamental elements such as [portals and pages](../shell-and-page/portal-navigation-design), [page components](../using-functional-components-in-pages), [data models](../data-modeling), and [service functions](../business-logic-development/creating-service-elements), with each element serving as an independent functional module.
+Applications in JitAI are collectively referred to as `JitAI Apps`, and their structure follows the application specifications defined in [JAAP](/docs/reference/runtime-platform/JAAP). Both `Official Apps` and developer-created `MyApps` are `JitAI Apps`. An application's composition adheres to JAAP specifications and typically contains multiple fundamental elements such as [portals and pages](../shell-and-page/portal-navigation-design), [page components](../using-functional-components-in-pages), [data models](../data-modeling), and [service functions](../business-logic-development/creating-service-elements), with each element serving as an independent functional module.
 
-Application development is the process of adding, modifying, and removing code for various elements within an application. Unlike modules in traditional development paradigms, elements in JitAi Apps have no static dependencies and zero coupling, making it exceptionally easy to reuse, modify, and replace application modules.
+Application development is the process of adding, modifying, and removing code for various elements within an application. Unlike modules in traditional development paradigms, elements in JitAI Apps have no static dependencies and zero coupling, making it exceptionally easy to reuse, modify, and replace application modules.
 
 ## Creating Your First Application {#creating-first-application}
 
@@ -21,10 +22,10 @@ Click the `Create Application` button in the Node Console to open the applicatio
 Developers simply need to provide the application name and ID, then click confirm to quickly complete application creation.
 
 ## Developing Applications Based on Existing Templates {#developing-applications-based-on-existing-templates}
-To facilitate rapid development and customization based on existing applications, JitAi provides two approaches: application inheritance and creating copies.
+To facilitate rapid development and customization based on existing applications, JitAI provides two approaches: application inheritance and creating copies.
   
 ### Inheriting from applications {#inheriting-from-applications}
-Inheritance enables an application to acquire the functional modules of the inherited application. Every newly created application inherits two official application templates by default: JIT Development Framework and JIT Development Tools. The former is JitAi's official development framework, providing rich out-of-the-box elements, while the latter provides visual and full-code dual-mode development tools for the application development process. Beyond the default inherited official application templates, developers can add additional applications to inherit.
+Inheritance enables an application to acquire the functional modules of the inherited application. Every newly created application inherits two official application templates by default: JIT Development Framework and JIT Development Tools. The former is JitAI's official development framework, providing rich out-of-the-box elements, while the latter provides visual and full-code dual-mode development tools for the application development process. Beyond the default inherited official application templates, developers can add additional applications to inherit.
 
 ![Add Application Template](./img/1/add-application-template.gif "Add Application Template")
 
@@ -36,7 +37,7 @@ Developers of inherited applications continuously release new versions to fix bu
 
 :::
 
-In JitAi development tools, developers can both develop new elements and view elements inherited from parent applications, and override individual elements as needed.
+In JitAI development tools, developers can both develop new elements and view elements inherited from parent applications, and override individual elements as needed.
 
 ![Override Inherited Elements](./img/1/override-inherited-elements.gif "Override Inherited Elements")
 
@@ -52,7 +53,7 @@ The duplicated application is a completely new application. Developers need to p
 Developers can sequentially click the `More` and `Duplicate` buttons to open the duplicate application dialog. After providing a new application name and ID, clicking the `Confirm` button completes the duplication process.
 
 ## Configuring Data Storage and Environment Variables {#configuring-data-storage-and-environment-variables}
-When creating a new application, JitAi uses local disk as the default file storage method. The desktop version uses SQLite as the default database and cache for applications, while the server version uses MySQL as the default database and Redis as the default cache. Developers can modify the default configuration during application creation to connect to their specified OSS storage, database, and cache services.
+When creating a new application, JitAI uses local disk as the default file storage method. The desktop version uses SQLite as the default database and cache for applications, while the server version uses MySQL as the default database and Redis as the default cache. Developers can modify the default configuration during application creation to connect to their specified OSS storage, database, and cache services.
 
 ![Custom Database Connection](./img/1/custom-database-connection.gif "Custom Database Connection")
 
@@ -60,7 +61,7 @@ Using MySQL database connection as an example, developers prepare their own MySQ
 
 ![Configure Environment Variables](./img/1/configure-environment-variables.gif "Configure Environment Variables")
 
-The official base framework encapsulates Alibaba Cloud OCR recognition and Amap API, with the required API key information defined as environment variables. PDF conversion and file preview use JitAi official servers by default, but developers can deploy their own servers and configure service addresses in environment variables.
+The official base framework encapsulates Alibaba Cloud OCR recognition and Amap API, with the required API key information defined as environment variables. PDF conversion and file preview use JitAI official servers by default, but developers can deploy their own servers and configure service addresses in environment variables.
 
 Developers can also define environment variables when developing their own applications, such as using environment variables to store database connection information, API keys, etc., ensuring that sensitive information will not be exposed when applications are exported or published.
 

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 15
 slug: ai-assistant-example
+description: "示例演示的详细指南和说明。"
 draft: true
 ---
 

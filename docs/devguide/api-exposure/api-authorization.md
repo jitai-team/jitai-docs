@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: api-authorization
+description: "Configure API authorization and authentication. Secure exposed APIs with OAuth, API keys, and role-based access control."
 ---
 
 # Creating API Authorization Elements
@@ -42,7 +43,7 @@ You can modify the accessKey on the authorization page. However, after modifying
 
 ## Call records {#call-records}
 
-JitAi generates call records whenever external callers make requests.
+JitAI generates call records whenever external callers make requests.
 
 ![Call Records](./img/api_2025-10-16_17-41-02.png)
 

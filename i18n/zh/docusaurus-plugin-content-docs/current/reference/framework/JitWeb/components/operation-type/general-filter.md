@@ -1,12 +1,13 @@
 ---
 slug: general-filter
+description: "通用筛选器 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 通用筛选器
 通用筛选器是数据查询筛选组件，基于可配置的筛选字段和条件实现灵活的数据过滤功能。它负责筛选条件的构建、字段映射处理和Q表达式生成，支持多种数据类型的筛选操作和自定义筛选逻辑配置。
 
 通用筛选器元素分层结构为Meta（components.Meta） → Type（components.GenericFilter） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建通用筛选器实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.GenericFilterType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的components.GenericFilterType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 基础配置示例

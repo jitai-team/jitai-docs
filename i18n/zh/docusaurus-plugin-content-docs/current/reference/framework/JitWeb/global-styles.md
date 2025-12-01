@@ -1,12 +1,13 @@
 ---
 slug: global-styles
+description: "全局样式 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 全局样式
 全局样式是基于Ant Design Design Token体系的样式配置系统，负责统一管理应用的视觉设计规范。它通过标准化的设计令牌（Design Token）控制字体、颜色、圆角、阴影等视觉元素，确保整个应用界面的一致性和可维护性。
 
 全局样式元素分层结构为Meta（themes.Meta） → Type（themes.NormalType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建全局样式实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的themes.NormalType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的themes.NormalType元素，以实现自己的封装。
 
 :::tip 参考文档
 开发者可参考 [Ant Design 定制主题文档](https://ant-design.antgroup.com/docs/react/customize-theme-cn#seedtoken) 了解更多 Design Token 的概念和用法。

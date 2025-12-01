@@ -1,265 +1,123 @@
 ---
 sidebar_position: 6
 slug: agent-events
+title: "Agent Events Reference"
+description: "Agent Events Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Agent Events"
 ---
 
-# Agent Events
-Agent events are specialized event handling for AIAgent-related operations. They are responsible for monitoring state changes such as Agent creation, execution, and completion, supporting event triggering and processing for key aspects like Agent task startup, progress updates, and result callbacks, providing a unified event handling mechanism for Agent collaboration and task chain execution.
+# Agent Tool Invocation Events
 
-The Agent event element hierarchical structure is Meta (events.Meta) → Type (events.AIAgentType) → Instance. Developers can quickly create Agent event instance elements through JitAi's visual development tools.
+Agent Tool Invocation Events (`events.AIAgentType`) are event handlers within the JitAi platform specifically designed for AIAgent-related operations. These events **do not affect** the normal operation of the Agent. They only trigger event messages before or after the Agent invokes a tool to execute additional business logic.
 
-Of course, developers can also create their own Type elements, or override the official events.AIAgentType element provided by JitAi in their own App to implement their own encapsulation.
+Agent Tool Invocation Events are suitable for side-channel scenarios that enhance Agent capabilities, such as:
 
-## Quick Start 
-### Creating Instance Elements
+*   **Audit Logging**: Recording detailed logs including input/output of tool invocations and execution duration.
+*   **Notifications**: Sending notification messages before or after critical tool execution.
+*   **State Synchronization**: Synchronizing the Agent's execution status to external business systems.
+
+The hierarchical structure of Agent Event elements is Meta (`events.Meta`) → Type (`events.AIAgentType`) → Instance. Developers can rapidly create Agent Event instance elements using the visual development tools.
+
+**Working Principle**: The system monitors tool invocation behaviors of the associated Agent. When a specified stage (`stage`) occurs (e.g., before invocation `preEvent`, after invocation `postEvent`), the event is triggered. The event automatically executes the configured function and passes context data such as the tool name (`toolName`) and tool arguments/return values (`args`) to the execution function.
+
+## Quick Start
+
+### Creating an Instance Element
+
 #### Directory Structure
-```text title="Recommended Directory Structure"
+
+Create a new event directory (e.g., `AgentToolEvent`) under the `events/` directory. The standard structure is as follows:
+
+```text
 events/
-└── agentToolEvent/
-    ├── e.json              # Event configuration file
-    ├── inner.py           # Business logic code
-    └── __init__.py        # Initialization file
+└── AgentToolEvent/          # [Directory] Event element name
+    ├── e.json               # [File] Core configuration file
 ```
 
 #### e.json File
-```json title="Basic Configuration Example"
+
+```json title="events/AgentToolEvent/e.json"
 {
-  "title": "Agent Tool Event",
+  "title": "Agent Tool Audit Event",
   "type": "events.AIAgentType",
   "sender": "aiagents.ModelKnowTest",
   "stage": "preEvent",
-  "func": "services.standardServicesTested.sayHello",
+  "funcType": "Inner",
   "asyncType": false,
   "backendBundleEntry": "."
 }
 ```
 
-#### Usage Example
-```python title="Agent Event Usage Example"
-# Get Agent event instance
-agent_event = app.getElement("events.agentToolEvent")
-
-# Events are automatically triggered when Agent tools are called
-# Event processing logic is automatically executed when AIAgent executes tools
-# Events can also be manually triggered (for testing)
-output_data = {
-    "toolName": "searchTool",
-    "stage": "preEvent",
-    "args": ["Search keywords"],
-    "kwargs": {}
-}
-
-# Events are automatically processed according to configured stage and func
-```
+### Call Example
 
 ## Element Configuration
+
 ### e.json Configuration
-| Parameter | Type | Native Type | Required | Description |
-|--------|------|-------------|------|------|
-| title | Stext | str | Yes | Event title for identifying event purpose |
-| type | Stext | str | Yes | Fixed value: events.AIAgentType |
-| sender | Stext | str | Yes | Event sender, usually the fullName of AIAgent |
-| stage | Stext | str | Yes | Event trigger stage: preEvent (before tool call) or postEvent (after tool call) |
-| func | Stext | str | Yes | Event handler function fullName, format: elementName.functionName |
-| asyncType | JitBool | bool | No | Whether to execute asynchronously, default false |
-| backendBundleEntry | Stext | str | No | Backend entry point, default "." |
 
-### Business Logic Configuration
-Agent events support defining custom processing logic in `inner.py`:
+| Field Name | Type | Required | Default | Description |
+| :--- | :--- | :--- | :--- | :--- |
+| `title` | String | **Yes** | - | Event title, used to identify the event's purpose. |
+| `type` | String | **Yes** | - | Fixed value: `events.AIAgentType`. |
+| `sender` | String | **Yes** | - | Event sender, typically the `fullName` of the AIAgent. |
+| `enable` | Integer | No | 1: Enable, 0: Disable | `1` (Default) |
+| `stage` | String | **Yes** | - | Event trigger stage: `preEvent` / `postEvent`. |
+| `func` | String | **Yes** | Path to the service function | Example: `"services.AuditSvc.log_agent_action"`. |
+| `asyncType` | Boolean | No | `false` | Whether to execute asynchronously. |
+| `backendBundleEntry` | String | No | `"."` | Backend entry path. |
 
-```python title="Business Logic Configuration Example"
-# -*-coding:utf-8-*-
-from datatypes.Meta import datatypes
-from jit.commons.utils.logger import log
+### Trigger Stages (stage)
 
-def customFunc(eventOutData):
-    """
-    Custom event handler function
-    :param eventOutData: Event output data containing toolName, stage, args and other information
-    """
-    tool_name = eventOutData.get("toolName", "")
-    stage = eventOutData.get("stage", "")
+*   `preEvent`: **Triggered before tool invocation**.
+    *   Usage: Recording invocation parameters, sending start notifications.
+    *   Characteristics: Runs as a hook; should not block the actual tool invocation.
+*   `postEvent`: **Triggered after tool invocation**.
+    *   Usage: Recording execution results, triggering subsequent flows, state synchronization.
+    *   Characteristics: Can access the final result of the tool execution for side-channel processing.
 
-    # Execute corresponding processing logic based on different stages
-    log.info(f"Tool {tool_name} called at {stage} stage")
+## Execution Function
 
-    return eventOutData
+**Function Parameters**
+
+| Parameter Name | Description |
+| :--- | :--- |
+| `eventOutData` | Type `JitDict`, containing event context data. |
+
+**Common Properties of eventOutData**:
+
+| Property Name | Type | Description | Applicable Stage |
+| :--- | :--- | :--- | :--- |
+| `toolName` | Stext | Name of the invoked tool. | All |
+| `stage` | Stext | Current trigger stage (`preEvent`/`postEvent`) | All |
+| `args` | JitDict/Ltext | Tool input parameters (`preEvent`) or execution results (`postEvent`) | All |
+
+**Service Function Example**
+
+```python title="services/AuditSvc/service.py"
+from services.NormalType import NormalService
+
+class AuditSvc(NormalService):
+    def log_agent_action(self, eventOutData):
+        """
+        :param eventOutData: Event context data
+        """
+        if eventOutData.stage.value == "postEvent":
+            # Record execution log
+            self.save_audit_log(eventOutData.toolName.value, eventOutData.args.value)
+        return eventOutData
 ```
 
-## Methods 
-### handleNode
-The core method for event processing, responsible for parsing and handling Agent tool call events.
+## Debugging and Considerations
 
-#### Parameter Details
-| Parameter | Type | Native Type | Required | Description |
-|--------|------|-------------|------|------|
-| node | EventNode | object | Yes | Event node object containing event configuration information |
-| args | JitList | tuple | No | Positional parameters containing event output data |
-| kwargs | JitDict | dict | No | Keyword parameters |
+1.  **Non-blocking Design**:
+    *   Agent Events are designed primarily as **Hooks**, not interceptors.
+    *   Although event execution occupies time in synchronous mode, avoid throwing exceptions or performing overly long operations within the event to prevent affecting the normal response of the Agent.
 
-#### Return Value
-| Return Value | Type | Description |
-|--------|------|------|
-| node | EventNode | Processed event node |
-| args | tuple | Processed parameters |
-| kwargs | dict | Processed keyword parameters |
+2.  **Exception Handling**:
+    *   Ensure that business logic within the service function is wrapped in `try-except` blocks.
+    *   Guarantee that the continuity of the Agent's main task is not affected even if the event response logic fails.
 
-#### Usage Example
-```python title="handleNode Usage Example"
-# The handleNode method of Agent events is automatically executed when Agent calls tools
-# Developers usually don't need to call this method directly
-# Get event instance
-agent_event = app.getElement("events.agentToolEvent")
+3.  **Avoiding Infinite Loops**:
+    *   Calling the same Agent that triggered the event within the Agent Event may lead to infinite recursion and cause a dead loop. Design subsequent actions after the event trigger with caution.
 
-# Simulate event node data
-class MockEventNode:
-    def __init__(self):
-        self.remark = ""
-        self.event = MockEvent()
-
-class MockEvent:
-    def __init__(self):
-        self.func = "services.standardServicesTested.sayHello"
-
-# Simulate event processing
-output_args = [{
-    "toolName": "searchTool",
-    "stage": "preEvent"
-}]
-
-node = MockEventNode()
-processed_node, processed_args, processed_kwargs = agent_event.handleNode(
-    node,
-    output_args
-)
-
-print(f"Event remark: {processed_node.remark}")
-# Output: Event remark: Before calling searchTool
-```
-
-## Properties
-### stage
-Event trigger stage identifier that determines at which point during Agent tool calls the event is triggered.
-
-**Type**: `str`
-**Optional Values**:
-- `preEvent`: Triggered before tool call, can be used for parameter validation, permission checking and other preprocessing
-- `postEvent`: Triggered after tool call, can be used for result processing, status updates and other post-processing
-
-**Parameter Description**:
-- `preEvent`: Passes JitDict type parameters containing tool name (toolName) and tool input parameters (args as JitDict type)
-- `postEvent`: Passes JitDict type parameters containing tool name (toolName) and tool input parameters (args as text type)
-
-**Usage Example**:
-```python
-agent_event = app.getElement("events.agentToolEvent")
-print(f"Event stage: {agent_event.stage}")
-```
-
-### sender
-Event sender identifier, usually the fullName of the AIAgent element that triggers the event, format: `aiagents.{AgentName}`.
-
-### func
-Associated event handler function fullName, format: `{elementName}.{functionName}`.
-
-### asyncType
-Asynchronous execution identifier that controls whether the event executes asynchronously, default is `false`.
-
-## Advanced Features
-### Permission Control and Security Validation
-Agent events can be used to implement permission control and security validation for tool calls:
-
-```python title="Permission Control Example"
-# inner.py
-def customFunc(eventOutData):
-    tool_name = eventOutData.get("toolName", "")
-    stage = eventOutData.get("stage", "")
-
-    if stage == "preEvent" and tool_name == "sensitiveDataTool":
-        # Permission check before sensitive tool call
-        if not check_permission():
-            raise Exception("No permission to call sensitive tool")
-
-    return eventOutData
-
-def check_permission():
-    # Permission check logic
-    return True
-```
-
-### Multi-Agent Collaboration Events
-Agent events support multi-Agent collaboration scenarios, implementing Agent state synchronization and task coordination through event mechanisms.
-
-```python title="Multi-Agent Collaboration Configuration"
-# Main Agent event configuration
-{
-  "title": "Main Agent Collaboration Event",
-  "type": "events.AIAgentType",
-  "sender": "aiagents.MainAgent",
-  "stage": "postEvent",
-  "func": "services.agentCoordinator.notifySubAgents"
-}
-
-# Collaboration processing logic
-def customFunc(eventOutData):
-    tool_name = eventOutData.get("toolName", "")
-
-    if tool_name == "taskDistributor":
-        # Notify sub-Agents after task distribution completion
-        sub_tasks = eventOutData.get("result", {}).get("subTasks", [])
-
-        for task in sub_tasks:
-            agent_name = task.get("assignedAgent")
-            if agent_name:
-                # Trigger sub-Agent task start event
-                notify_sub_agent(agent_name, task)
-
-    return eventOutData
-
-def notify_sub_agent(agent_name, task):
-    # Notify sub-Agent to start task
-    sub_agent = app.getElement(f"aiagents.{agent_name}")
-    if sub_agent:
-        sub_agent.executeTask(task)
-```
-
-### Task Chain Execution
-Complex task chain execution can be implemented through Agent events, where one Agent's completion event triggers the next Agent's start.
-
-```python title="Task Chain Execution Configuration"
-# Configure task chain events
-{
-  "title": "Task Chain Execution Event",
-  "type": "events.AIAgentType",
-  "sender": "aiagents.DataProcessor",
-  "stage": "postEvent",
-  "func": "services.taskChain.nextStep"
-}
-
-# Task chain processing logic
-def customFunc(eventOutData):
-    current_tool = eventOutData.get("toolName", "")
-    result = eventOutData.get("result", {})
-
-    # Define task chain configuration
-    task_chain = {
-        "dataCollector": "dataProcessor",
-        "dataProcessor": "dataAnalyzer",
-        "dataAnalyzer": "reportGenerator"
-    }
-
-    # Get next task
-    next_agent_name = task_chain.get(current_tool)
-
-    if next_agent_name and result.get("success"):
-        # Start next Agent
-        next_agent = app.getElement(f"aiagents.{next_agent_name}")
-        if next_agent:
-            # Use current result as input for next Agent
-            next_agent.start(input_data=result.get("data"))
-
-            # Log task chain execution
-            print(f"Task chain: {current_tool} -> {next_agent_name}")
-
-    return eventOutData
-```
+4.  **Logging and Debugging**:
+    *   It is recommended to use `jit.commons.utils.logger` to print `toolName`, `stage`, and key parameters to troubleshoot the Agent's decision path and execution status.

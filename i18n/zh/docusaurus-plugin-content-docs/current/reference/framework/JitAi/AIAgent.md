@@ -1,14 +1,15 @@
 ---
 sidebar_position: 4
 slug: AIAgent
+description: "AIAgent API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # AIAgent
 AIAgent是AI应用核心执行引擎，基于ReAct架构实现推理与行动的循环决策。它负责工具编排、动态组合和调用各种业务工具和服务，维护对话上下文、任务执行状态和数据流转状态，支持复杂业务逻辑的分解和执行，并提供基于用户角色的工具访问权限管理。
 
-AIAgent元素分层结构为Meta（aiagents.Meta） → Type（aiagents.ReActType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建AIAgent实例元素。
+AIAgent元素分层结构为Meta（aiagents.Meta） → Type（aiagents.ReActType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建AIAgent实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的aiagents.ReActType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的aiagents.ReActType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素
@@ -589,7 +590,7 @@ agent.run(
 
 ### 自定义回调处理器 {#custom-callback-handlers}
 
-JitAi的ReActAgent基于LangGraph构建，回调处理器用于监听和处理Agent推理、工具调用等各类关键流程事件，兼容[langchain_core.callbacks.BaseCallbackHandler](https://python.langchain.com/api_reference/core/callbacks/langchain_core.callbacks.base.BaseCallbackHandler.html#langchain_core.callbacks.base.BaseCallbackHandler)中定义的全部回调方法以及pre_model_hook和post_model_hook函数（参考[LangChain官方文档](https://langchain-ai.github.io/langgraph/reference/agents/?h=create_react#langgraph.prebuilt.chat_agent_executor.create_react_agent)中pre_model_hook和post_model_hook的定义）。
+JitAI的ReActAgent基于LangGraph构建，回调处理器用于监听和处理Agent推理、工具调用等各类关键流程事件，兼容[langchain_core.callbacks.BaseCallbackHandler](https://python.langchain.com/api_reference/core/callbacks/langchain_core.callbacks.base.BaseCallbackHandler.html#langchain_core.callbacks.base.BaseCallbackHandler)中定义的全部回调方法以及pre_model_hook和post_model_hook函数（参考[LangChain官方文档](https://langchain-ai.github.io/langgraph/reference/agents/?h=create_react#langgraph.prebuilt.chat_agent_executor.create_react_agent)中pre_model_hook和post_model_hook的定义）。
 
 通过自定义回调处理器，开发者可以灵活介入模型推理前后、工具调用前后等环节，实现日志记录、参数校验、上下文增强等高级功能。
 

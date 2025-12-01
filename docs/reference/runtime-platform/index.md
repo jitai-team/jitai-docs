@@ -1,17 +1,18 @@
 ---
 sidebar_position: -1
+description: "Runtime Platform Overview Reference - API documentation for developers. Complete specifications, methods, and examples."
 ---
 # Runtime Platform Overview
-[**JAAP (JitAi Application Protocol)**](/docs/reference/runtime-platform/JAAP) abstracts the complexity of application development, enabling business experts to focus on orchestrating high-level business logic. To make JAAP truly effective, an environment that can understand and execute JAAP is needed—the application runtime container.
+[**JAAP (JitAI Application Protocol)**](/docs/reference/runtime-platform/JAAP) abstracts the complexity of application development, enabling business experts to focus on orchestrating high-level business logic. To make JAAP truly effective, an environment that can understand and execute JAAP is needed—the application runtime container.
 
 ## JAAP Application Runtime Container
-The application runtime container is the JitAi application runtime platform, built into the installation package and loaded when the JitNode starts. The JitAi application runtime platform is cross-platform, supporting operation on Windows, MacOS, and Linux operating systems.
+The application runtime container is the JitAI application runtime platform, built into the installation package and loaded when the JitNode starts. The JitAI application runtime platform is cross-platform, supporting operation on Windows, MacOS, and Linux operating systems.
 
 We can understand the JAAP application runtime container by comparing it to JVM and Docker:
 
-| Analogy | Interpretation Object | Execution Result | JitAi Application Runtime Platform |
+| Analogy | Interpretation Object | Execution Result | JitAI Application Runtime Platform |
 |---------|----------|----------|------------|
-| **JVM** | Java bytecode | Cross-platform Java program execution | Interprets JAAP configuration, runs JitAi applications cross-platform |
+| **JVM** | Java bytecode | Cross-platform Java program execution | Interprets JAAP configuration, runs JitAI applications cross-platform |
 | **Docker** | Dockerfile | Build and run containers | Interprets JAAP configuration, builds and runs applications |
 
 ## Feature Overview

@@ -1,11 +1,12 @@
 ---
 sidebar_position: 1
 slug: extend-element-family-classes
+description: "扩展自己的元素族类的详细指南和说明。"
 ---
 
 # 扩展自己的元素族类
 
-当JitAi开发框架中现有的Type元素无法满足特定业务需求时，开发者可以通过两种方式扩展功能：
+当JitAI开发框架中现有的Type元素无法满足特定业务需求时，开发者可以通过两种方式扩展功能：
 
 1. **复用现有Meta，创建新的Type元素**：适合在已有族类内扩展功能。比如在消息服务框架下增加微信企业号通知、邮件通知，在支付服务框架下集成PayPal支付。以上都是指向已有Meta的新Type元素。
 2. **创建全新元素族类**：适合全新业务领域的扩展，自成体系的新元素族类。比如IoT集成，需要支持MQTT、Modbus等多种不同的协议。
@@ -518,7 +519,7 @@ __all__ = ["Loader"]
   "backendLoadTime": "afterAppInit",
   "type": "imRobots.dingTalkStreamType",
   "title": "钉钉智能客服",
-  "description": "JitAi智能客服钉钉机器人实例，配置具体参数"
+  "description": "JitAI智能客服钉钉机器人实例，配置具体参数"
 }
 ```
 

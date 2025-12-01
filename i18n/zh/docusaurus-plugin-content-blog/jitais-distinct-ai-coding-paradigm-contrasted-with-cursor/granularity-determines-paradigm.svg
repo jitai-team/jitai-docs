@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-labelledby="title desc" viewBox="0 0 1600 600"><desc id="desc">JitAi核心观点强调图，展示颗粒度与开发范式的关系</desc><defs><linearGradient id="blueGradient" x1="0%" x2="100%" y1="0%" y2="0%"><stop offset="0%" style="stop-color:#326dff;stop-opacity:1"/><stop offset="100%" style="stop-color:#8eaeff;stop-opacity:1"/></linearGradient><filter id="shadow" width="200%" height="200%" x="-50%" y="-50%"><feGaussianBlur in="SourceAlpha" stdDeviation="8"/><feOffset dy="4" result="offsetblur"/><feComponentTransfer><feFuncA slope=".15" type="linear"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter><style>.primary{fill:#326dff}.text-medium{fill:#6b7280}</style></defs><path d="M0 0h1600v600H0z" style="fill:#f5f5f5"/><path fill="url(#blueGradient)" d="M0 0h1600v8H0z"/><g id="main-content"><text x="800" y="250" font-size="72" font-weight="700" style="fill:#333;font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,&quot;PingFang SC&quot;,&quot;Hiragino Sans GB&quot;,&quot;Microsoft YaHei&quot;,sans-serif" text-anchor="middle">
+      颗粒度决定范式
+    </text><text x="800" y="320" class="text-medium" font-size="24" font-weight="500" text-anchor="middle">
+      Granularity Determines Paradigm
+    </text><g id="fine-grain"><path d="M250 400h4v50h-4z" class="primary" opacity=".3"/><path d="M260 400h4v50h-4z" class="primary" opacity=".35"/><path d="M270 400h4v50h-4z" class="primary" opacity=".4"/><path d="M280 400h4v50h-4z" class="primary" opacity=".45"/><path d="M290 400h4v50h-4z" class="primary" opacity=".5"/><path d="M300 400h4v50h-4z" class="primary" opacity=".55"/><path d="M310 400h4v50h-4z" class="primary" opacity=".6"/><path d="M320 400h4v50h-4z" class="primary" opacity=".65"/><path d="M330 400h4v50h-4z" class="primary" opacity=".7"/><path d="M340 400h4v50h-4z" class="primary" opacity=".75"/><text x="50" y="80" class="text-medium" font-size="16" text-anchor="middle" transform="translate(250 400)">
+        细颗粒度
+      </text><text x="50" y="105" class="text-medium" font-size="14" text-anchor="middle" transform="translate(250 400)">
+        代码行/函数
+      </text></g><g id="coarse-grain" transform="translate(1200 380)"><rect width="80" height="70" class="primary" opacity=".85" rx="8"/><rect width="80" height="70" x="95" class="primary" opacity=".9" rx="8"/><text x="90" y="100" class="primary" font-size="16" font-weight="600" text-anchor="middle">
+        大颗粒度
+      </text><text x="90" y="125" class="text-medium" font-size="14" text-anchor="middle">
+        业务模块/组件
+      </text></g><path fill="none" stroke="#326DFF" stroke-width="3" d="M400 425h750m-20-10 20 10-20 10" opacity=".5"/><text x="775" y="415" class="text-medium" font-size="14" text-anchor="middle">
+      准确度提升
+    </text></g><text x="800" y="555" class="text-medium" font-size="18" text-anchor="middle">
+    业务系统开发需要在更大颗粒度层面操作
+  </text></svg>

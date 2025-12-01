@@ -1,14 +1,15 @@
 ---
 sidebar_position: 2
 slug: wechat-pay
+description: "微信支付 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # 微信支付
 微信支付是集成微信支付官方API的支付处理元素，基于微信支付V2API实现扫码支付、H5支付、小程序支付等多种支付方式。它负责订单创建、支付状态查询和回调通知处理，提供微信生态内的无缝支付体验。微信支付适用于微信小程序、公众号、APP等微信生态应用场景，通过标准化API简化支付集成复杂度。
 
-微信支付元素分层结构为Meta（pays.Meta） → Type（pays.WechatPayType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建微信支付实例元素。
+微信支付元素分层结构为Meta（pays.Meta） → Type（pays.WechatPayType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建微信支付实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的pays.WechatPayType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的pays.WechatPayType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

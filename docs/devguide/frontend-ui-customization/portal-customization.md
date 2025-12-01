@@ -1,11 +1,12 @@
 ---
 sidebar_position: 5
 slug: portal-customization
+description: "Customize portal appearance and behavior. Theme customization, branding, and portal-level UI modifications."
 ---
 
 # Portal Customization
 
-When JitAi's built-in regular portals, blank portals, and SSR portals cannot meet specific interface requirements, full-code custom portals provide flexible solutions. Custom portals are mainly suitable for the following scenarios:
+When JitAI's built-in regular portals, blank portals, and SSR portals cannot meet specific interface requirements, full-code custom portals provide flexible solutions. Custom portals are mainly suitable for the following scenarios:
 
 - **Navigation Layout Adjustment**: Need to change navigation menu position, arrangement, or hierarchical structure
 - **Interface Style Customization**: Interface style adjustments under enterprise branding requirements or special design specifications
@@ -13,7 +14,7 @@ When JitAi's built-in regular portals, blank portals, and SSR portals cannot mee
 - **Responsive Adaptation**: Interface adaptation for special screen sizes or device types
 - **Functional Area Reorganization**: Reorganize layout and display methods of page functional areas
 
-Custom portals maintain JitAi platform's core functions such as data models and permission management while allowing developers to flexibly adjust portal appearance and user interaction methods.
+Custom portals maintain JitAI platform's core functions such as data models and permission management while allowing developers to flexibly adjust portal appearance and user interaction methods.
 
 ## Creating Custom Portal
 
@@ -80,7 +81,7 @@ openMenu(menuName: string): void
 ```typescript
 import { ElementRender } from 'jit-widgets';
 
-// ElementRender is the most important page rendering component in JitAi
+// ElementRender is the most important page rendering component in JitAI
 // Used to render specific page content in portals
 <ElementRender
     elementPath={item.page}  // Page element path

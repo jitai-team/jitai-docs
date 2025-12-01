@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: page-customization
+description: "Customize pages with full-code development. Advanced page customization techniques for React and Vue pages."
 ---
 
 import Tabs from '@theme/Tabs';
@@ -706,7 +707,7 @@ Vue full-code pages deliver a native Vue development experience with full suppor
 # Related Materials
 
 ## CRUD operations for data models {#crud-operations-for-data-models}
-Backend data models provide comprehensive CRUD functionality. See the [API Documentation](/docs/reference/framework/JitORM/data-models#basic-data-operations) for details.
+Backend data models provide comprehensive CRUD functionality. See the [API Documentation](/docs/reference/framework/JitORM/model-types/data-models#model-built-in-functions) for details.
 
 However, backend functions can only be called in backend runtime contexts (service functions, scheduled task functions, event functions). To address this, the platform also provides data model operation interfaces for the frontend environment:
 
@@ -816,10 +817,10 @@ The platform pre-includes commonly used third-party libraries that can be import
 | `localforage` | 1.10.0 | `localforage` | Local storage library |
 | `recast` | 0.23.4 | `recast` | JavaScript AST tool |
 | **Platform-Specific** | | | |
-| `jit` | - | `JitCore` | JitAi core library |
-| `jit-utils` | - | `JitUtils` | JitAi utilities |
-| `jit-ui` | - | `JitUi` | JitAi UI components |
-| `jit-widgets` | - | `JitWidgets` | JitAi widgets |
+| `jit` | - | `JitCore` | JitAI core library |
+| `jit-utils` | - | `JitUtils` | JitAI utilities |
+| `jit-ui` | - | `JitUi` | JitAI UI components |
+| `jit-widgets` | - | `JitWidgets` | JitAI widgets |
 
 :::tip
 These libraries can be imported and used directly without installation, e.g., `import { useState } from 'react'` or `import { Button } from 'antd'`.

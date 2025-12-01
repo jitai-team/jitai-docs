@@ -1,12 +1,15 @@
 ---
 slug: external-api-integration
+title: "External API Integration Reference"
+description: "External API Integration Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "External API Integration"
 ---
 # External API Integration
 External API integration is an element used to call third-party HTTP interfaces, implementing unified call management for RESTful APIs based on the requests library. It handles HTTP request encapsulation, parameter processing, and response parsing, supporting standard HTTP methods like GET, POST, PUT, DELETE, and provides pre/post request processing and callback mechanisms.
 
-The hierarchical structure of external API integration elements is Meta (externalAPIs.Meta) → Type (externalAPIs.NormalType) → Instance. Developers can quickly create external API integration instance elements through JitAi's visual development tools.
+The hierarchical structure of external API integration elements is Meta (externalAPIs.Meta) → Type (externalAPIs.NormalType) → Instance. Developers can quickly create external API integration instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `externalAPIs.NormalType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `externalAPIs.NormalType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

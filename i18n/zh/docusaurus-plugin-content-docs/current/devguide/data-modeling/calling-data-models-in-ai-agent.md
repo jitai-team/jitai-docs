@@ -1,6 +1,7 @@
 ---
 sidebar_position: 11
 slug: calling-data-models-in-ai-agent
+description: "在AI Agent中调用数据模型的详细指南和说明。"
 ---
 
 # 在AI Agent中调用数据模型
@@ -9,7 +10,7 @@ slug: calling-data-models-in-ai-agent
 
 ## 数据模型作为Agent工具 {#data-models-as-agent-tools}
 
-基于JitAi解释性系统架构构建的应用具有自描述特性，应用中的元素能够被大语言模型准确理解。数据模型及其函数正是这样的自描述元素，可以直接作为Agent的可用工具。
+基于JitAI解释性系统架构构建的应用具有自描述特性，应用中的元素能够被大语言模型准确理解。数据模型及其函数正是这样的自描述元素，可以直接作为Agent的可用工具。
 
 当数据模型函数被添加为Agent工具后，AI可以：
 

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 800" role="img" aria-labelledby="compTitle compDesc">
+  <title id="compTitle">编程vs编排对比</title>
+  <desc id="compDesc">左侧展示编程表达过程逻辑，右侧展示编排表达结构关系，二者相互转化互为补充</desc>
+  
+  <defs>
+    <style>
+      .primary { fill: #326DFF; }
+      .primary-light { fill: #8EAEFF; }
+      .text-dark { fill: #333333; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .text-medium { fill: #6b7280; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif; }
+      .code-text { fill: #1f2937; font-family: "Monaco", "Menlo", monospace; font-size: 14px; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1600" height="800" fill="#F9FAFB"/>
+  
+  <!-- Left Side: Programming (Process) -->
+  <g id="programming-side">
+    <rect x="40" y="40" width="580" height="720" rx="12" fill="white" stroke="#E5E7EB" stroke-width="2"/>
+    
+    <!-- Title -->
+    <text x="330" y="100" text-anchor="middle" class="text-dark" font-size="28" font-weight="700">编程：表达过程逻辑</text>
+    
+    <!-- Code icon -->
+    <path d="M 150 150 L 180 180 L 150 210" stroke="#326DFF" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 220 150 L 190 180 L 220 210" stroke="#326DFF" stroke-width="3" fill="none" stroke-linecap="round"/>
+    
+    <!-- Code block example -->
+    <rect x="80" y="250" width="500" height="420" rx="8" fill="#F3F4F6"/>
+    
+    <text x="100" y="290" class="code-text">function calculatePrice(user, items) {</text>
+    <text x="120" y="320" class="code-text">  let total = 0;</text>
+    <text x="120" y="350" class="code-text">  for (let item of items) {</text>
+    <text x="140" y="380" class="code-text">    total += item.price;</text>
+    <text x="120" y="410" class="code-text">  }</text>
+    <text x="120" y="450" class="code-text">  if (user.vipLevel > 3) {</text>
+    <text x="140" y="480" class="code-text">    total *= 0.8; // 8折</text>
+    <text x="120" y="510" class="code-text">  } else if (user.vipLevel > 1) {</text>
+    <text x="140" y="540" class="code-text">    total *= 0.9; // 9折</text>
+    <text x="120" y="570" class="code-text">  }</text>
+    <text x="120" y="610" class="code-text">  return total;</text>
+    <text x="100" y="640" class="code-text">}</text>
+  </g>
+  
+  <!-- Center: Bidirectional Arrow -->
+  <g id="center-arrow">
+    <!-- Right arrow -->
+    <line x1="670" y1="380" x2="880" y2="380" stroke="#326DFF" stroke-width="4"/>
+    <path d="M 860 370 L 880 380 L 860 390 Z" fill="#326DFF"/>
+    
+    <!-- Left arrow -->
+    <line x1="880" y1="420" x2="670" y2="420" stroke="#8EAEFF" stroke-width="4"/>
+    <path d="M 690 410 L 670 420 L 690 430 Z" fill="#8EAEFF"/>
+    
+    <!-- Text -->
+    <text x="775" y="340" text-anchor="middle" class="text-medium" font-size="18" font-weight="600">相互转化</text>
+    <text x="775" y="470" text-anchor="middle" class="text-medium" font-size="18" font-weight="600">互为补充</text>
+  </g>
+  
+  <!-- Right Side: Orchestration (Structure) -->
+  <g id="orchestration-side">
+    <rect x="980" y="40" width="580" height="720" rx="12" fill="white" stroke="#E5E7EB" stroke-width="2"/>
+    
+    <!-- Title -->
+    <text x="1270" y="100" text-anchor="middle" class="text-dark" font-size="28" font-weight="700">编排：表达结构关系</text>
+    
+    <!-- Structure icon -->
+    <rect x="1210" y="150" width="40" height="40" rx="4" fill="#326DFF" opacity="0.8"/>
+    <rect x="1260" y="150" width="40" height="40" rx="4" fill="#8EAEFF" opacity="0.8"/>
+    <rect x="1310" y="150" width="40" height="40" rx="4" fill="#326DFF" opacity="0.8"/>
+    
+    <!-- Architecture diagram -->
+    <g id="architecture">
+      <!-- Top layer -->
+      <rect x="1150" y="260" width="140" height="80" rx="8" fill="#326DFF" opacity="0.9"/>
+      <text x="1220" y="310" text-anchor="middle" fill="white" font-size="16" font-weight="600">用户界面</text>
+      
+      <rect x="1320" y="260" width="140" height="80" rx="8" fill="#326DFF" opacity="0.9"/>
+      <text x="1390" y="310" text-anchor="middle" fill="white" font-size="16" font-weight="600">管理后台</text>
+      
+      <!-- Arrows down -->
+      <line x1="1220" y1="340" x2="1220" y2="390" stroke="#326DFF" stroke-width="3"/>
+      <path d="M 1215 380 L 1220 390 L 1225 380 Z" fill="#326DFF"/>
+      
+      <line x1="1390" y1="340" x2="1390" y2="390" stroke="#326DFF" stroke-width="3"/>
+      <path d="M 1385 380 L 1390 390 L 1395 380 Z" fill="#326DFF"/>
+      
+      <!-- Middle layer -->
+      <rect x="1100" y="400" width="160" height="80" rx="8" fill="#8EAEFF" opacity="0.9"/>
+      <text x="1180" y="450" text-anchor="middle" fill="white" font-size="16" font-weight="600">业务服务</text>
+      
+      <rect x="1280" y="400" width="160" height="80" rx="8" fill="#8EAEFF" opacity="0.9"/>
+      <text x="1360" y="450" text-anchor="middle" fill="white" font-size="16" font-weight="600">数据服务</text>
+      
+      <!-- Arrows down -->
+      <line x1="1180" y1="480" x2="1270" y2="530" stroke="#8EAEFF" stroke-width="3"/>
+      <line x1="1360" y1="480" x2="1270" y2="530" stroke="#8EAEFF" stroke-width="3"/>
+      
+      <!-- Bottom layer -->
+      <rect x="1190" y="540" width="160" height="80" rx="8" fill="#326DFF" opacity="0.7"/>
+      <text x="1270" y="590" text-anchor="middle" fill="white" font-size="16" font-weight="600">数据库</text>
+    </g>
+  </g>
+</svg>
+

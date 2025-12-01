@@ -1,11 +1,12 @@
 ---
 sidebar_position: 7
 slug: aggregate-table-model
+description: "Build aggregated table models for complex data analysis. Associate, merge, and calculate multiple tables for statistical scenarios."
 ---
 
 # Aggregated Table Model
 
-The Aggregated Table Model is an advanced data modeling approach provided by JitAi, specifically designed for handling complex data analysis and statistical scenarios. Unlike [regular data table models](./data-table-model), aggregated table models do not directly correspond to a single table structure in the database. Instead, they flexibly configure, associate, merge, and calculate multiple data table models to ultimately generate virtual data tables that meet specific business requirements.
+The Aggregated Table Model is an advanced data modeling approach provided by JitAI, specifically designed for handling complex data analysis and statistical scenarios. Unlike [regular data table models](./data-table-model), aggregated table models do not directly correspond to a single table structure in the database. Instead, they flexibly configure, associate, merge, and calculate multiple data table models to ultimately generate virtual data tables that meet specific business requirements.
 
 ![Create Aggregated Table](./img/create-aggregate-table.png "Create Aggregated Table")
 
@@ -85,7 +86,7 @@ Taking a horizontal join aggregated table as an example, on the data configurati
 
 In the formula panel, you can select fields, functions, or operators such as `+`, `-`, `*`, `/` from above. Click to add them to the panel.
 
-JitAi provides a rich formula function library covering calculation needs for different data types. **Numeric types** include aggregate functions such as maximum (`MAX`), average (`AVG`), sum (`SUM`) for data statistical analysis; **Date types** include functions such as current time (`NOW`), date addition (`DATEADD`), month start (`MONTHSTART`) for time-related calculations; **Text types** include functions such as text concatenation (`CONCAT`), text replacement (`REPLACE`), text length (`LEN`) for string processing; **Logic types** include functions such as conditional judgment (`IF`), multi-layer judgment (`IFS`), conditional concatenation (`AND`/`OR`) for business logic control.
+JitAI provides a rich formula function library covering calculation needs for different data types. **Numeric types** include aggregate functions such as maximum (`MAX`), average (`AVG`), sum (`SUM`) for data statistical analysis; **Date types** include functions such as current time (`NOW`), date addition (`DATEADD`), month start (`MONTHSTART`) for time-related calculations; **Text types** include functions such as text concatenation (`CONCAT`), text replacement (`REPLACE`), text length (`LEN`) for string processing; **Logic types** include functions such as conditional judgment (`IF`), multi-layer judgment (`IFS`), conditional concatenation (`AND`/`OR`) for business logic control.
 
 ![Formula Field Settings](./img/formula-field-settings.gif "Formula Field Settings")
 

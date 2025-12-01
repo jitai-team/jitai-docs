@@ -1,12 +1,15 @@
 ---
 slug: gantt-chart
+title: "Gantt Chart Reference"
+description: "Gantt Chart Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Gantt Chart"
 ---
 # Gantt Chart
 Gantt chart is a project progress and time management visualization component, implemented based on VTable Gantt chart library to provide intuitive display of task timelines. It handles task progress tracking, time dependency relationship display, and progress adjustment interactions, supporting drag-and-drop modifications, multi-time dimension switching, and real-time data updates. It is suitable for business scenarios such as project management, production planning, and resource scheduling.
 
 The Gantt chart element has a hierarchical structure of Meta (components.Meta) → Type (components.GanttChart) → Instance. Developers can quickly create Gantt chart instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `components.GanttChartType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `components.GanttChartType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start 
 ### Basic Configuration Example

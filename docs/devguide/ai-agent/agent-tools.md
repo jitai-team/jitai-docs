@@ -1,16 +1,17 @@
 ---
 sidebar_position: 2
 slug: agent-tools
+description: "Configure Agent tools for task execution. Add business elements as tools for agents to invoke during operation."
 ---
 
 # Tools in Agent
 
 Tools extend an Agent's capabilities beyond natural language understanding and processing, enabling it to actively invoke external services, databases, APIs, and other resources to perform complex operations including information retrieval, data processing, and task execution. By integrating appropriate tools with an Agent, developers can enhance its business processing and automation capabilities to address diverse application requirements.
 
-Applications built on JitAi's interpretive system architecture feature self-describing elements that large language models can accurately understand and utilize as Agent tools. Through the Agent visual editor's `Tools` section, developers can integrate [Model Functions](../data-modeling/create-data-model-functions), [Service Functions](../business-logic-development/creating-service-elements#create-service-functions), [MCP servers](https://modelcontextprotocol.io/docs/getting-started/intro), [External APIs](../third-party-integration/external-api), and [Page Functions](../shell-and-page/generic-page#page-functions), empowering AI to interact with full-stack elements across both frontend and backend systems.
+Applications built on JitAI's interpretive system architecture feature self-describing elements that large language models can accurately understand and utilize as Agent tools. Through the Agent visual editor's `Tools` section, developers can integrate [Model Functions](../data-modeling/create-data-model-functions), [Service Functions](../business-logic-development/creating-service-elements#create-service-functions), [MCP servers](https://modelcontextprotocol.io/docs/getting-started/intro), [External APIs](../third-party-integration/external-api), and [Page Functions](../shell-and-page/generic-page#page-functions), empowering AI to interact with full-stack elements across both frontend and backend systems.
 
 ## Calling model functions {#calling-model-functions}
-[Data models](../../reference/framework/JitORM/data-models#model-built-in-functions) include standard CRUD functions, and developers can [create custom model functions](../data-modeling/create-data-model-functions) to meet specific business requirements. Once data model functions are added as Agent tools, the Agent can perform create, read, update, and delete operations through these functions, supporting various data processing scenarios.
+[Data models](../../reference/framework/JitORM/model-types/data-models#model-built-in-functions) include standard CRUD functions, and developers can [create custom model functions](../data-modeling/create-data-model-functions) to meet specific business requirements. Once data model functions are added as Agent tools, the Agent can perform create, read, update, and delete operations through these functions, supporting various data processing scenarios.
 
 ![Add Model Functions](./img/agent/agent-add-model-function-tool.gif "Add Model Functions")
 
@@ -32,13 +33,13 @@ Well-defined function names, comprehensive descriptions, and clear parameter dec
 :::
 
 ## Calling MCP servers {#calling-mcp-servers}
-The Model Context Protocol (MCP) is an open standard introduced by Anthropic in November 2024 to standardize interactions between large language models (LLMs) and external data sources, tools, and services. MCP enables AI models to securely and flexibly access real-time data, APIs, databases, and other resources through unified communication specifications, enhancing AI application execution capabilities and accuracy. JitAi provides visual configuration support for MCP servers, allowing developers to integrate them as Agent tools.
+The Model Context Protocol (MCP) is an open standard introduced by Anthropic in November 2024 to standardize interactions between large language models (LLMs) and external data sources, tools, and services. MCP enables AI models to securely and flexibly access real-time data, APIs, databases, and other resources through unified communication specifications, enhancing AI application execution capabilities and accuracy. JitAI provides visual configuration support for MCP servers, allowing developers to integrate them as Agent tools.
 
 ![Add MCP Servers](./img/agent/agent-add-mcp-service-tool.gif "Add MCP Servers")
 
 To add MCP servers, navigate to the `Tools` tab in the Agent visual editor, click `Add Tool`, select `MCP Servers` from the list, enter the server name and configuration in the popup dialog, and click `Confirm`. The platform will load the MCP server and, upon successful loading, display the available functions for selection.
 
-For enhanced developer experience, JitAi includes pre-verified MCP servers in the addition interface. Developers can quickly select from these built-in options by hovering over `Select MCP Server` in the popup, which automatically populates the configuration information. For services not included in the built-in list, manual configuration entry is required.
+For enhanced developer experience, JitAI includes pre-verified MCP servers in the addition interface. Developers can quickly select from these built-in options by hovering over `Select MCP Server` in the popup, which automatically populates the configuration information. For services not included in the built-in list, manual configuration entry is required.
 
 Existing MCP server configurations can be modified at any time. The platform includes a convenient copy configuration feature that transfers MCP server settings to the system clipboard with a single click for easy reuse.
 
@@ -58,7 +59,7 @@ In production environments, MCP server configurations often contain sensitive in
 To convert configurations, click the `Generate Environment Variable` button, enter the environment variable name and value in the popup dialog, and click `Confirm` to store the configuration as an environment variable. Configurations can be reverted to JSON format at any time.
 
 ## Calling external APIs {#calling-external-apis}
-JitAi enables developers to integrate various external system APIs into the platform through [External API](../third-party-integration/external-api) elements, making these APIs available as Agent tools.
+JitAI enables developers to integrate various external system APIs into the platform through [External API](../third-party-integration/external-api) elements, making these APIs available as Agent tools.
 
 ![Add External API](./img/agent/agent-add-external-api-tool.gif "Add External API")
 

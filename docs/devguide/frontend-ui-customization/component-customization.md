@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: component-customization
+description: "Customize frontend components for specific needs. Create reusable custom components with JitAI framework integration."
 ---
 
 # Component Customization

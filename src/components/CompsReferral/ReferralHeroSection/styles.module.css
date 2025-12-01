@@ -1,0 +1,331 @@
+/* ===== 页面特定变量 ===== */
+:root {
+  --page-title-line-height: 1.5;
+  --max-invite-container-width: 900px;
+}
+
+/* 中文主题变量 */
+:root[lang="zh"] {
+  --page-title-line-height: 1.4;
+  --max-invite-container-width: 700px;
+}
+
+/* ===== 页面容器 ===== */
+.heroSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-primary);
+  padding: var(--section-padding);
+}
+
+/* ===== 页面布局 ===== */
+.sectionContent {
+  margin: 0 auto;
+  max-width: 1400px;
+  width: 100%;
+}
+
+/* ===== 页面标题 ===== */
+.pageHeader {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.giftIcon {
+  font-size: 72px;
+  margin-bottom: var(--space-6);
+  display: inline-block;
+  animation: bounce 2s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(61, 101, 253, 0.15));
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.05);
+  }
+}
+
+.pageTitle {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-secondary);
+  margin-bottom: var(--space-8);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.pageSubtitle {
+  font-size: var(--font-size-subtitle);
+  color: var(--text-primary);
+  max-width: var(--max-page-description-width);
+  margin: 0 auto var(--space-4);
+  line-height: var(--line-height-relaxed);
+  font-weight: var(--font-weight-medium);
+}
+
+.pageDescription {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  max-width: var(--max-page-description-width);
+  margin: 0 auto;
+  line-height: 1.6;
+  font-weight: var(--font-weight-normal);
+}
+
+/* ===== 响应式设计 ===== */
+@media (max-width: 968px) {
+  .heroSection {
+    padding: var(--space-16) var(--space-6);
+    min-height: auto;
+  }
+
+  .pageHeader {
+    margin-bottom: var(--space-10);
+  }
+
+  .pageTitle {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--space-6);
+  }
+
+  .pageDescription {
+    font-size: var(--font-size-base);
+  }
+
+  .giftIcon {
+    font-size: 64px;
+  }
+
+  .inviteContainer {
+    padding: var(--space-8) var(--space-6);
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: var(--space-12) var(--space-4);
+  }
+
+  .pageTitle {
+    font-size: var(--font-size-3xl);
+    line-height: 1.3;
+  }
+
+  .pageDescription {
+    font-size: var(--font-size-sm);
+  }
+
+  .giftIcon {
+    font-size: 56px;
+    margin-bottom: var(--space-4);
+  }
+
+  .inviteContainer {
+    padding: var(--space-6) var(--space-5);
+  }
+
+  .codeDisplay {
+    font-size: var(--font-size-xl);
+    padding: var(--space-4) var(--space-5);
+    letter-spacing: 2px;
+  }
+
+  .copyButton {
+    padding: var(--space-4) var(--space-6);
+    min-width: 120px;
+    font-size: var(--font-size-sm);
+  }
+
+  .rewardNote {
+    padding: var(--space-5);
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .pageTitle {
+    font-size: var(--font-size-2xl);
+  }
+
+  .giftIcon {
+    font-size: 48px;
+  }
+
+  .inputRow {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .copyButton {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .codeDisplay {
+    font-size: var(--font-size-lg);
+    letter-spacing: 1.5px;
+  }
+}
+
+/* ===== 邀请码区域 ===== */
+.inviteContainer {
+  max-width: var(--max-invite-container-width);
+  margin: 0 auto;
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius-card);
+  padding: var(--space-10) var(--space-12);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color-light);
+}
+
+.inviteBox {
+  margin-bottom: 0;
+}
+
+.inviteLabel {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.inputRow {
+  display: flex;
+  gap: var(--space-4);
+  align-items: stretch;
+}
+
+.codeDisplay {
+  flex: 1;
+  /* padding: var(--space-5) var(--space-6); */
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  text-align: center;
+  letter-spacing: 3px;
+  font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+  transition: var(--transition-primary);
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.codeDisplay:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(61, 101, 253, 0.1);
+}
+
+.copyButton {
+  padding: var(--space-5) var(--space-8);
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius-lg);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  box-shadow: 
+    0 3px 6px rgba(61, 101, 253, 0.3),
+    0 1px 2px rgba(19, 28, 67, 0.2);
+  min-width: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.copyButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: left 0.5s ease;
+}
+
+.copyButton:hover::before {
+  left: 100%;
+}
+
+.copyButton:hover {
+  background: var(--color-primary);
+  box-shadow: 
+    0 6px 20px rgba(61, 101, 253, 0.4),
+    0 2px 8px rgba(19, 28, 67, 0.3);
+}
+
+.copyButton:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 3px 8px rgba(61, 101, 253, 0.3),
+    0 1px 3px rgba(19, 28, 67, 0.2);
+}
+
+.copyButton.copied {
+  background: #10b981;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.copyButton.copied:hover {
+  background: #059669;
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+.rewardNote {
+  margin-top: var(--space-8);
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+  line-height: var(--line-height-relaxed);
+  font-weight: var(--font-weight-normal);
+  transition: var(--transition-primary);
+  position: relative;
+}
+
+/* 无邀请码状态 */
+.noCodeContainer {
+  max-width: var(--max-invite-container-width);
+  margin: var(--space-12) auto 0;
+  text-align: center;
+}
+
+.noCodeIcon {
+  font-size: 80px;
+  margin-bottom: var(--space-6);
+  opacity: 0.5;
+}
+
+.noCodeTitle {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.noCodeDesc {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+

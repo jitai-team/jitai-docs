@@ -1,13 +1,16 @@
 ---
 slug: word-template
+title: "Word Template Reference"
+description: "Word Template Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Word Template"
 ---
 # Word Template
 
 Word Template is specifically designed for generating and processing Word format documents, implemented using the Jinja2 template engine for dynamic document generation. It handles Word document template rendering, variable replacement, and complex content filling, supporting dynamic processing of various elements such as text, images, tables, and links. It is suitable for batch generation of formal documents like contracts, reports, and official documents.
 
-The Word Template element has a hierarchical structure of Meta (fileTmpls.Meta) → Type (fileTmpls.WordType) → Instance. Developers can quickly create Word template instance elements through JitAi's visual development tools.
+The Word Template element has a hierarchical structure of Meta (fileTmpls.Meta) → Type (fileTmpls.WordType) → Instance. Developers can quickly create Word template instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official fileTmpls.WordType element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official fileTmpls.WordType element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

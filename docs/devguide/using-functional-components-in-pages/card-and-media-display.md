@@ -1,6 +1,7 @@
 ---
 sidebar_position: 8
 slug: card-and-media-display
+description: "卡片与媒体展示组件。看板组件分组显示、卡片标题摘要配置、灵活的数据可视化方式。"
 ---
 
 # 卡片与媒体展示

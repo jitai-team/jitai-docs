@@ -1,6 +1,9 @@
 ---
 sidebar_position: 3
 slug: payment-service
+title: "Payment Service Reference"
+description: "Payment Service Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Payment Service"
 ---
 
 # Payment Service
@@ -8,7 +11,7 @@ Payment service is a core business service component preset in the JitPay paymen
 
 As a preset instance element of the JitPay framework (pays.services.PaySvc), developers can directly obtain and use it through `app.getElement("pays.services.PaySvc")` without manual configuration.
 
-Of course, developers can also create their own Type elements or modify the official `pays.services.PaySvc` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `pays.services.PaySvc` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Basic Usage
 ### Getting Service Instance

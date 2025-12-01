@@ -1,14 +1,15 @@
 ---
 sidebar_position: 1
 slug: ai-data-management-page
+description: "AI数据管理页面 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # AI数据管理页面
 AI数据管理页面是专门用于数据增删改查操作的页面类型，基于组件化可视配置架构实现数据表格管理能力。它负责数据列表展示、数据筛选、数据编辑和数据导入导出，通过拖拽式布局快速构建数据管理界面。
 
-AI数据管理页面元素分层结构为Meta（pages.Meta） → Type（pages.DataManagePageType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建AI数据管理页面实例元素。
+AI数据管理页面元素分层结构为Meta（pages.Meta） → Type（pages.DataManagePageType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建AI数据管理页面实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的pages.DataManagePageType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的pages.DataManagePageType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

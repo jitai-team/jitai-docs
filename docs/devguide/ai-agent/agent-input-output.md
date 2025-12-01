@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: agent-input-output
+description: "Configure Agent input and output parameters. Define agent inputs, outputs, and response formatting."
 ---
 
 # Agent Input and Output
@@ -14,7 +15,7 @@ Each Agent receives a default parameter when called: `User Input`. Developers ca
 
 Developers can switch to the `Input Variables` tab in the Agent visual editor, click the `Add Input Variable` button, fill in the variable title and select the variable data type in the popup dialog, then click the `Confirm` button.
 
-Input variables support JitAi [data types](../../reference/framework/JitORM/data-types) and their configuration options, including single-line text, multi-line text, numbers, amounts, dictionaries, and more.
+Input variables support JitAI [data types](../../reference/framework/JitORM/data-types) and their configuration options, including single-line text, multi-line text, numbers, amounts, dictionaries, and more.
 
 ### Using variables in prompts {#using-variables-in-prompts}
 When calling an Agent, in addition to passing user input content, you can also dynamically pass in variables. These variables can be referenced in prompts, enabling more flexible context customization and information filling, allowing the Agent to dynamically adjust behavior and response content based on actual business scenarios.
@@ -26,7 +27,11 @@ Developers can trigger the variable selection list by typing `{` where they need
 By default, only the `User Input` variable is available, but developers can add more through the input variables configuration.
 
 ## Configuring output results {#configuring-output-results}
-By default, an Agent outputs a dictionary containing only one `output` text field after completion. If you need to call the Agent in program logic or orchestrate the Agent with other nodes in [AI Assistant](../ai-assistant/create-ai-assistant), the Agent's output results must be structured data that can be parsed programmatically, rather than just a string.
+
+Agents support two output modes: **JSON structured output** and **Plain text output**. Each mode is described below:
+
+### JSON structured output {#json-structured-output}
+In this mode, the agent outputs results in JSON format. By default, an Agent outputs a dictionary containing only one `output` text field after completion. If you need to call the Agent in program logic or orchestrate the Agent with other nodes in [AI Assistant](../ai-assistant/create-ai-assistant), the Agent's output results must be structured data that can be parsed programmatically, rather than just a string.
 
 ![Configure Agent Output Results](./img/agent/configure-agent-output-results.gif "Configure Agent Output Results")
 
@@ -38,8 +43,8 @@ Output results are automatically converted to JSON Schema that large language mo
 The title and name of each output result field need to be carefully considered to be self-explanatory, so that the large language model can understand correctly.
 :::
 
-### Output result data types {#output-result-data-types}
-Output results support various [data types](../../reference/framework/JitORM/data-types) of the JitAi platform, including:
+#### Output result data types {#output-result-data-types}
+Output results support various [data types](../../reference/framework/JitORM/data-types) of the JitAI platform, including:
 
 - **Single-line Text**: Suitable for short text output, such as titles, names, etc.
 - **Multi-line Text**: Suitable for longer text content, such as descriptions, summaries, etc.
@@ -50,6 +55,9 @@ Output results support various [data types](../../reference/framework/JitORM/dat
 - **Date Time**: Suitable for time-related output
 
 Choosing the appropriate data type helps the large language model understand output requirements more accurately and generate results that meet expected formats.
+
+### Plain text output {#plain-text-output}
+In this mode, the agent outputs the final result as plain text to the assistant conversation. Upon completion, it returns a dictionary containing only an `output` text field with the final result as its value. This field can be used when invoking the agent programmatically or when orchestrating the flow between the agent and other nodes in the [AI Assistant](../ai-assistant/create-ai-assistant).
 
 ## Agent streaming output {#agent-streaming-output}
 During Agent execution, it continuously receives information such as large language model reasoning progress, text content, and tool calls. Developers can obtain and process this data in real-time using streaming methods.

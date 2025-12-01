@@ -1,12 +1,13 @@
 ---
 slug: tree
+description: "树形 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 树形
 树形是用于展示层级结构数据的视图组件，基于数据模型字段构建多层级的树形导航。它负责数据加载、层级展示和节点交互，支持单选和多选模式，提供节点点击事件和筛选条件输出。
 
 树形元素分层结构为Meta（components.Meta） → Type（components.Tree） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建树形实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.TreeType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的components.TreeType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 基础配置示例

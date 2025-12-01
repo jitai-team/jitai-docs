@@ -1,11 +1,12 @@
 ---
 sidebar_position: 2
 slug: download-installation
+description: "Download and install JitAI for Windows, macOS, and Docker. Complete setup guide including activation, server deployment, and environment configuration."
 ---
 
 # Download and Installation
 
-JitAi offers two installation options: the Desktop Version (available for Windows and macOS) and the Server Version (distributed as Docker images).
+JitAI offers two installation options: the Desktop Version (available for Windows and macOS) and the Server Version (distributed as Docker images).
 
 ## Desktop Version
 
@@ -98,7 +99,7 @@ docker run -itd --name jitnode \
 
 ## Frequently Asked Questions
 
-After installation, we recommend familiarizing yourself with JitAi's directory structure for more effective development and management. See [JitNode Directory](../reference/runtime-platform/jitnode-directory) for details.
+After installation, we recommend familiarizing yourself with JitAI's directory structure for more effective development and management. See [JitNode Directory](../reference/runtime-platform/jitnode-directory) for details.
 
 <details>
 <summary>Desktop Version won't start?</summary>

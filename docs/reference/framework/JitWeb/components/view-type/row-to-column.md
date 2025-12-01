@@ -1,12 +1,15 @@
 ---
 slug: row-to-column
+title: "Row to Column Reference"
+description: "Row to Column Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Row to Column"
 ---
 # Row to Column
 Row to Column is a data structure transformation component that implements row-column interchange functionality based on data pivot principles. It handles dynamic data structure transposition, data format reorganization, and provides data preview, suitable for data format conversion and report generation scenarios.
 
 The row to column element has a hierarchical structure of Meta (components.Meta) → Type (components.Transpose) → Instance. Developers can quickly create row to column instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `components.TransposeType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `components.TransposeType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start 
 ### Basic Configuration Example

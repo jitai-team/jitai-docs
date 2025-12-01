@@ -1,6 +1,9 @@
 ---
 sidebar_position: 1
 slug: App
+title: "App Reference"
+sidebar_label: "App"
+description: "Backend App object API reference for Python developers. Access application properties, manage elements, and handle runtime operations."
 ---
 
 import Tabs from '@theme/Tabs';
@@ -165,16 +168,16 @@ Parent application metadata, where key is `appKey` and value is Dict (containing
 OrderedDict[str, Dict]
 
 ### newVariable
-Create a variable object that complies with JitAi data type specifications.
+Create a variable object that complies with JitAI data type specifications.
 
 **Parameters:**
 
-* **config** (Dict[str, Any]): Variable configuration dictionary, must contain `dataType` field specifying JitAi data type
+* **config** (Dict[str, Any]): Variable configuration dictionary, must contain `dataType` field specifying JitAI data type
 * **value** (Any): Initial value of the variable, type must be compatible with the specified data type
 
 **Returns:** 
 
-Variable object instance that complies with JitAi specifications.
+Variable object instance that complies with JitAI specifications.
 
 **Return Type:** 
 

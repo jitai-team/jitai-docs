@@ -1,12 +1,13 @@
 ---
 slug: data-correction
+description: "数据修正 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 数据修正
 数据修正组件是专门用于数据质量检查和错误修正的操作类组件，基于可视化配置实现数据一致性检查和异常值处理。它负责批量数据修正、字段值验证和修正规则管理，支持自动修正和手动确认模式，为数据清洗和质量管理场景提供完整的解决方案。
 
 数据修正组件元素分层结构为Meta（components.Meta） → Type（components.DataCheck） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建数据修正组件实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.DataCheckType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的components.DataCheckType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 基础配置示例

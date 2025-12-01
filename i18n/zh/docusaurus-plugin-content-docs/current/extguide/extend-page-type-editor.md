@@ -1,17 +1,18 @@
 ---
 sidebar_position: 5
 slug: extend-page-type-editor
+description: "扩展自己的页面Type和编辑器的详细指南和说明。"
 ---
 
 # 扩展自己的页面Type和编辑器
 
-想象一下，你需要为一个在线考试系统开发倒计时页面。你打开JitAi，查看现有的页面类型：常规页面太简单，数据管理页面不合适，Markdown页面更不行...这时候你意识到，需要创建一个全新的页面类型。
+想象一下，你需要为一个在线考试系统开发倒计时页面。你打开JitAI，查看现有的页面类型：常规页面太简单，数据管理页面不合适，Markdown页面更不行...这时候你意识到，需要创建一个全新的页面类型。
 
-这篇文档将带你完整体验如何开发自定义页面Type，更重要的是，你将理解JitAi是如何通过巧妙的设计，让这件看似复杂的事变得如此简单。
+这篇文档将带你完整体验如何开发自定义页面Type，更重要的是，你将理解JitAI是如何通过巧妙的设计，让这件看似复杂的事变得如此简单。
 
 ## 理解页面是如何被加载的 {#understanding-how-pages-are-loaded}
 
-在开始动手之前，让我们先理解一个核心问题：当用户访问一个页面时，JitAi是如何找到并加载正确的代码的？
+在开始动手之前，让我们先理解一个核心问题：当用户访问一个页面时，JitAI是如何找到并加载正确的代码的？
 
 ### 一次页面加载之旅 {#the-page-loading-journey}
 
@@ -21,7 +22,7 @@ slug: extend-page-type-editor
 // 用户访问: /pages/examTimer
 ```
 
-当这个请求到达时，JitAi开始了一段精妙的查找之旅：
+当这个请求到达时，JitAI开始了一段精妙的查找之旅：
 
 ```typescript
 // 第一步：runApp.ts 启动应用
@@ -41,7 +42,7 @@ async getElement(elementPath: string) {
 
 ### Loader - 灵活性的秘密 {#loader-the-secret-to-flexibility}
 
-Loader是JitAi最巧妙的设计之一。它不是一个固定的加载逻辑，而是一个**可继承、可覆盖的函数链**。
+Loader是JitAI最巧妙的设计之一。它不是一个固定的加载逻辑，而是一个**可继承、可覆盖的函数链**。
 
 ```typescript
 // 寻找loader的过程就像找钥匙
@@ -113,7 +114,7 @@ export default async (elements) => {
 
 ## 开发计时器页面Type {#developing-a-timer-page-type}
 
-现在我们理解了原理，让我们开始开发一个计时器页面Type。这个过程会让你真正体会到JitAi的强大。然我们先看看效果：
+现在我们理解了原理，让我们开始开发一个计时器页面Type。这个过程会让你真正体会到JitAI的强大。然我们先看看效果：
 
 ![实例展示](./img/5/实例展示.png)
 
@@ -417,7 +418,7 @@ export {
 
 ### 第五步：理解动态继承机制 {#step-5-understanding-dynamic-inheritance}
 
-这里有一个精妙的设计 - **动态继承**。当应用启动时，JitAi会：
+这里有一个精妙的设计 - **动态继承**。当应用启动时，JitAI会：
 
 ```typescript
 // app.ts - 启动时加载标记为startUp的元素
@@ -553,7 +554,7 @@ export { ExamTimerPage as default, PageCls };
 
 这就是Type机制的魅力 - **在复用和定制之间找到完美平衡**。
 
-实际上，JitAi内置的页面类型也是这样工作的：
+实际上，JitAI内置的页面类型也是这样工作的：
 - `Jit.BasePage` - 所有页面的基类
 - `Jit.GridPage` - 常规页面使用的类
 - `Jit.DataManagePage` - 数据管理页面使用的类
@@ -796,7 +797,7 @@ export { ${name}Page as default, PageCls };
 
 #### 编辑器核心API {#core-editor-apis}
 
-JitAi提供了两个核心API来支持编辑器开发：
+JitAI提供了两个核心API来支持编辑器开发：
 
 **1. 获取源码**
 ```typescript
@@ -831,7 +832,7 @@ await app.saveElementResource(
 
 ## 更多应用场景 {#more-application-scenarios}
 
-除了计时器页面，JitAi的页面Type机制还可以支持许多其他场景：
+除了计时器页面，JitAI的页面Type机制还可以支持许多其他场景：
 
 ### 特殊需求类型 {#special-requirement-types}
 

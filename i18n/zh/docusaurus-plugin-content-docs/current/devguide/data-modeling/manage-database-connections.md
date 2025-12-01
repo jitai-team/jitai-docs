@@ -1,10 +1,11 @@
 ---
 sidebar_position: 12
 slug: manage-database-connections
+description: "管理数据库连接的详细指南和说明。"
 ---
 
 # 管理数据库连接
-JitAi通过数据库元素统一管理数据库连接。你可以在同一应用里创建多个数据库实例，并且分别配置、切换和使用，满足开发、测试、生产或多系统对接等不同场景。
+JitAI通过数据库元素统一管理数据库连接。你可以在同一应用里创建多个数据库实例，并且分别配置、切换和使用，满足开发、测试、生产或多系统对接等不同场景。
 
 ## 创建数据库连接 {#create-database-connection}
 进入应用的`开发者门户`，在元素目录树中选择`数据库`元素。接着选择要接入的数据库类型（如 MySQL、PostgreSQL、Oracle、SQL Server、达梦DM8、SQLite 等），系统会弹出连接配置窗口，开发者只需要把主机、端口、库名、账号、密码等信息按提示填写完整即可。生产环境建议把账号和密码等敏感信息放到环境变量里，部署时再配置实际值，既安全也方便跨环境迁移，参考：[数据库连接安全配置](#database-connection-security-configuration)。

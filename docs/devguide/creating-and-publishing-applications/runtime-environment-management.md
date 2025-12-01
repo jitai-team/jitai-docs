@@ -2,6 +2,7 @@
 sidebar_position: 4
 slug: runtime-environment-management
 title: Runtime Environment Management
+description: "Manage runtime environments for application deployment. Isolated spaces with complete resource directory separation across environments."
 ---
 
 # Runtime Environment Management
@@ -11,7 +12,7 @@ Runtime environments provide isolated spaces for application deployment and exec
 Developer teams can create multiple runtime environments, each capable of containing one or more JitNodes (excluding the default runtime environment) and hosting multiple applications. Individual nodes can participate in multiple runtime environments simultaneously.
 
 ## Managing node local default runtime environment {#node-local-default-runtime-environment}
-Upon node activation, a local default runtime environment is automatically created. This environment remains invisible in the runtime environment management interface and serves to run JitAi's built-in DevOps management platform on that node. User access to the node automatically redirects to the node's local default runtime environment management page, known as the Node Console.
+Upon node activation, a local default runtime environment is automatically created. This environment remains invisible in the runtime environment management interface and serves to run JitAI's built-in DevOps management platform on that node. User access to the node automatically redirects to the node's local default runtime environment management page, known as the Node Console.
 
 ![Node Console](./img/4/node-console.png "Node Console")
 
@@ -59,7 +60,7 @@ The node list presents comprehensive information for each node: name, ID, addres
 Nodes designated by runtime environment visit entry addresses handle request forwarding and load balancing using other cluster node addresses. Upon activation, nodes automatically adopt the internal network IP as their address, though users can manually modify node addresses.
 
 ### Monitoring node status {#node-status}
-Node status displays as `Error` when the JitNode process hasn't started or network anomalies cause disconnection from JitAi Cloud. When the JitNode process operates normally, the status shows as `OK`.
+Node status displays as `Error` when the JitNode process hasn't started or network anomalies cause disconnection from JitAI Cloud. When the JitNode process operates normally, the status shows as `OK`.
 
 ## Deploying applications in runtime environments {#deploy-application-in-runtime-environment}
 Users can deploy applications across one or multiple nodes within a runtime environment, with support for multiple application deployments within a single environment.

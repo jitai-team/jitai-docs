@@ -1,16 +1,17 @@
 ---
 slug: programming-orchestration-dual-mode
 sidebar_position: 8
+description: "Dual-mode development in JitAI - programming and orchestration. Understand how to build system structure and process with visual tools and code."
 ---
 # Dual-Mode Visual Development Tool - Programming and Orchestration
 
-Traditional development tools are primarily programming-oriented, requiring developers to integrate various technical frameworks and write business logic code. The [JitAi Development Framework](../reference/framework) provides out-of-the-box element family classes by encapsulating technical infrastructure and common business components. However, enabling developers to use these capabilities more easily and intuitively requires purpose-built development tools.
+Traditional development tools are primarily programming-oriented, requiring developers to integrate various technical frameworks and write business logic code. The [JitAI Development Framework](../reference/framework) provides out-of-the-box element family classes by encapsulating technical infrastructure and common business components. However, enabling developers to use these capabilities more easily and intuitively requires purpose-built development tools.
 
-**IDEApp** is JitAi's dual-mode enterprise application development tool supporting both programming and orchestration. As an independent JitAi application, every application inherits IDEApp's capabilities by default and **can be used immediately upon entering the development environment**. IDEApp automatically adapts to framework extensions and developer-customized element family classes, supporting seamless switching between visual development and full-code development modes.
+**IDEApp** is JitAI's dual-mode enterprise application development tool supporting both programming and orchestration. As an independent JitAI application, every application inherits IDEApp's capabilities by default and **can be used immediately upon entering the development environment**. IDEApp automatically adapts to framework extensions and developer-customized element family classes, supporting seamless switching between visual development and full-code development modes.
 
 ## Programming and orchestration
 
-Any complex system comprises two fundamental elements: **structure** and **process**. The mission of development tools is to enable developers to construct structure and process more easily—this is the design philosophy behind JitAi development tools.
+Any complex system comprises two fundamental elements: **structure** and **process**. The mission of development tools is to enable developers to construct structure and process more easily—this is the design philosophy behind JitAI development tools.
 
 - **Structure**: The constituent modules of a system and their interrelationships, expressed through **orchestration**
 - **Process**: The behavioral sequences and logical flows during system runtime, expressed through **programming**

@@ -1,10 +1,11 @@
 ---
 sidebar_position: 5
 slug: using-interceptors-for-custom-request-authentication
+description: "使用拦截器实现自定义请求鉴权的详细指南和说明。"
 ---
 
 # 使用拦截器实现自定义请求鉴权
-当系统需要为外部合作方提供API时，常需要进行鉴权，限制非授权调用。JitAi的API授权元素可以实现对外开放API接口（推荐使用方式），但需要调用方使用JitAi提供的客户端SDK。当调用方无法使用SDK时，可以使用[后端拦截器](../../reference/framework/JitService/backend-interceptor)实现自定义的鉴权方式，以适配调用方的调用方式，本文以自定义Bearer Token鉴权为例。
+当系统需要为外部合作方提供API时，常需要进行鉴权，限制非授权调用。JitAI的API授权元素可以实现对外开放API接口（推荐使用方式），但需要调用方使用JitAI提供的客户端SDK。当调用方无法使用SDK时，可以使用[后端拦截器](../../reference/framework/JitService/backend-interceptor)实现自定义的鉴权方式，以适配调用方的调用方式，本文以自定义Bearer Token鉴权为例。
 
 ## 创建拦截器实例元素目录 {#creating-interceptor-directory}
 拦截器元素暂不支持在可视化开发工具中创建，请开发者使用桌面版进行[本地开发与调试](./local-development-and-debugging)，在应用目录中手动创建元素目录。
@@ -87,7 +88,7 @@ from .interceptor import BearerToken
 ```
 
 ## 创建服务函数 {#creating-service-functions}
-开发者可以借助JitAi可视化开发工具快速创建服务元素以及函数。
+开发者可以借助JitAI可视化开发工具快速创建服务元素以及函数。
 
 ![可视化创建订单查询函数](./img/jitservice/visual-create-order-query-service-function.png "可视化创建订单查询函数")
 

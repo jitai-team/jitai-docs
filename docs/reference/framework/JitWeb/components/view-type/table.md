@@ -1,12 +1,15 @@
 ---
 slug: table
+title: "Table Reference"
+description: "Table Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Table"
 ---
 # Table
 Table is a data display component that implements pagination, sorting, filtering and other functions based on model data sources. It handles data list display, row-level operations, batch operations and statistical summaries, supporting inline editing, field click events, toolbar buttons and mobile adaptive display.
 
 The table element has a hierarchical structure of Meta (components.Meta) → Type (components.Table) → Instance. Developers can quickly create table instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `components.TableType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `components.TableType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start 
 ### Basic Configuration Example

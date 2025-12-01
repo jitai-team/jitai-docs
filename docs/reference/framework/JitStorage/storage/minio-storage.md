@@ -1,13 +1,16 @@
 ---
 slug: minio-storage
+title: "MinIO Storage Reference"
+description: "MinIO Storage Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "MinIO Storage"
 ---
 # MinIO Storage
 
 MinIO Storage is an open-source private cloud object storage service, implemented based on S3-compatible API for high-performance storage management of massive unstructured data. It handles file upload, download, delete, and signed URL generation, supports distributed deployment and data sharding, suitable for enterprise private cloud environments requiring data localization management.
 
-The MinIO Storage element has a hierarchical structure of Meta (storages.Meta) → Type (storages.MinioType) → Instance. Developers can quickly create MinIO storage instance elements through JitAi's visual development tools.
+The MinIO Storage element has a hierarchical structure of Meta (storages.Meta) → Type (storages.MinioType) → Instance. Developers can quickly create MinIO storage instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official storages.MinioType element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official storages.MinioType element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

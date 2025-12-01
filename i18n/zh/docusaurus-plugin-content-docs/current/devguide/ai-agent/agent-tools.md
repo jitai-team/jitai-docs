@@ -1,16 +1,17 @@
 ---
 sidebar_position: 2
 slug: agent-tools
+description: "Agent中的工具的详细指南和说明。"
 ---
 
 # Agent中的工具
 
 工具为Agent扩展了可执行的能力，使其不仅能理解和处理自然语言，还能主动调用外部服务、数据库、API等，实现信息查询、数据处理、任务执行等复杂操作。通过为Agent添加合适的工具，开发者可以让Agent具备更强的业务处理和自动化能力，满足多样化的应用场景需求。
 
-基于JitAi解释型系统架构构建的应用，其自描述的元素可以被大模型准确理解，成为Agent可用的工具。开发者可以在Agent可视化编辑器的`工具`中添加[模型函数](../data-modeling/create-data-model-functions)、[服务函数](../business-logic-development/creating-service-elements#create-service-functions)、[MCP服务](https://modelcontextprotocol.io/docs/getting-started/intro)、[外部API](../third-party-integration/external-api)、[页面函数](../shell-and-page/generic-page#page-functions)，实现AI对前后端全栈元素的调用。
+基于JitAI解释型系统架构构建的应用，其自描述的元素可以被大模型准确理解，成为Agent可用的工具。开发者可以在Agent可视化编辑器的`工具`中添加[模型函数](../data-modeling/create-data-model-functions)、[服务函数](../business-logic-development/creating-service-elements#create-service-functions)、[MCP服务](https://modelcontextprotocol.io/docs/getting-started/intro)、[外部API](../third-party-integration/external-api)、[页面函数](../shell-and-page/generic-page#page-functions)，实现AI对前后端全栈元素的调用。
 
 ## Agent调用模型函数 {#calling-model-functions}
-[数据模型](../../reference/framework/JitORM/data-models#model-built-in-functions)自带常用的增删改查函数，开发者还可以根据实际业务需求[自定义模型函数](../data-modeling/create-data-model-functions)。将数据模型函数作为工具添加到Agent后，Agent便能够通过这些函数实现对数据的增、删、改、查等操作，满足多样化的数据处理场景。
+[数据模型](../../reference/framework/JitORM/model-types/data-models#model-built-in-functions)自带常用的增删改查函数，开发者还可以根据实际业务需求[自定义模型函数](../data-modeling/create-data-model-functions)。将数据模型函数作为工具添加到Agent后，Agent便能够通过这些函数实现对数据的增、删、改、查等操作，满足多样化的数据处理场景。
 
 ![Agent添加模型函数工具](./img/agent/agent-add-model-function-tool.gif)
 
@@ -32,13 +33,13 @@ slug: agent-tools
 :::
 
 ## Agent调用MCP服务 {#calling-mcp-servers}
-MCP（Model Context Protocol，模型上下文协议）是Anthropic在2024年11月推出的一种开放标准协议，旨在标准化大型语言模型（LLM）与外部数据源、工具和服务之间的交互方式。它通过定义统一的通信规范，使AI模型能够安全、灵活地访问实时数据、API、数据库等资源，从而提升AI应用的执行能力和准确性。JitAi支持开发者以可视化的方式配置MCP服务，并将其添加为工具。
+MCP（Model Context Protocol，模型上下文协议）是Anthropic在2024年11月推出的一种开放标准协议，旨在标准化大型语言模型（LLM）与外部数据源、工具和服务之间的交互方式。它通过定义统一的通信规范，使AI模型能够安全、灵活地访问实时数据、API、数据库等资源，从而提升AI应用的执行能力和准确性。JitAI支持开发者以可视化的方式配置MCP服务，并将其添加为工具。
 
 ![Agent添加MCP服务工具](./img/agent/agent-add-mcp-service-tool.gif)
 
 开发者在Agent可视化编辑器中切换到`工具`页签，点击`添加工具`按钮，在列表中选择`MCP服务`，然后在弹窗中填写服务名称和配置，点击`确定`按钮。平台会进行MCP Server的加载，加载成功后会展示MCP Server的函数列表，开发者按需勾选。
 
-为了方便开发者使用，JitAi在MCP Server添加界面中内置了一些经过验证的MCP Server，开发者在弹窗中将鼠标放在`选择MCP服务`上即可在内置列表中进行快速选择，配置信息会被自动填写。不在内置列表中的则需要开发者手动填写配置。
+为了方便开发者使用，JitAI在MCP Server添加界面中内置了一些经过验证的MCP Server，开发者在弹窗中将鼠标放在`选择MCP服务`上即可在内置列表中进行快速选择，配置信息会被自动填写。不在内置列表中的则需要开发者手动填写配置。
 
 对于已添加的MCP Server可以随时修改配置，平台还提供了复制配置的功能，可以一键把MCP Server配置复制到系统剪贴板中，方便开发者进行粘贴使用。
 
@@ -58,7 +59,7 @@ MCP（Model Context Protocol，模型上下文协议）是Anthropic在2024年11�
 开发者点击`设置为环境变量`按钮后，在弹窗中填写环境变量名称和变量值，点击`确定`按钮即可将配置存储到应用环境变量中，开发者也可以随时修改回JSON格式的配置。
 
 ## Agent调用外部API {#calling-external-apis}
-JitAi支持开发者通过[外部API](../third-party-integration/external-api)元素，将各类外部系统接口集成到平台中，并将这些API作为Agent的工具使用。
+JitAI支持开发者通过[外部API](../third-party-integration/external-api)元素，将各类外部系统接口集成到平台中，并将这些API作为Agent的工具使用。
 
 ![Agent添加外部API工具](./img/agent/agent-add-external-api-tool.gif)
 

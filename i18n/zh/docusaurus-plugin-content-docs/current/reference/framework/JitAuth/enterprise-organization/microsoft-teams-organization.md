@@ -1,12 +1,13 @@
 ---
 slug: microsoft-teams-organization
+description: "Microsoft Teams 组织架构 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # Microsoft Teams 组织架构
 Microsoft Teams 组织架构是JitAuth框架中用于集成Microsoft Teams企业内部应用组织架构的专用组织类型，基于Microsoft Graph API实现企业组织架构自动同步和统一管理。它负责Microsoft Teams通讯录同步、部门结构获取和用户身份验证，支持与Microsoft Teams工作台的无缝集成，提供企业级权限管理和用户关系维护能力。
 
-Microsoft Teams组织元素分层结构为Meta（corps.Meta） → Type（corps.MicrosoftTeamsType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建Microsoft Teams组织实例元素。
+Microsoft Teams组织元素分层结构为Meta（corps.Meta） → Type（corps.MicrosoftTeamsType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建Microsoft Teams组织实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的corps.MicrosoftTeamsType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的corps.MicrosoftTeamsType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

@@ -1,5 +1,6 @@
 ---
 slug: frontend
+description: "前端 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 前端
 为前端开发提供统一的全局组件、公共模块、工具函数和Web Workers支持。
@@ -8,7 +9,7 @@ globals.Calc是官方内置的公共模块Type元素，提供数学、逻辑、�
 
 modules.xxx系列是官方提供的前端数据处理、用户界面反馈、文件与工具、消息通信等功能的实例元素，元素层级结构为Meta（modules.Meta） → Type（modules.FrontType） → 实例，开发者可以使用`app.getElement("modules.xxx")`获取并直接使用。
 
-当然，开发者也可以创建自己的公共模块以及modules.xxx系列元素，或者在自己的App中改写JitAi官方提供的元素，以实现自己的封装。
+当然，开发者也可以创建自己的公共模块以及modules.xxx系列元素，或者在自己的App中改写JitAI官方提供的元素，以实现自己的封装。
 
 ## 计算组件
 ### globals.Calc

@@ -1,12 +1,15 @@
 ---
 slug: group-table
+title: "Group Table Reference"
+description: "Group Table Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Group Table"
 ---
 # Group Table
 Group table is a powerful data display component, implemented based on antd Table to provide grouping aggregation, inline editing, toolbar operations, and other functions. It handles multi-dimensional data grouping display, statistical calculations, and interactive operations, supporting field-level configuration control, permission management, and custom style rules.
 
 The group table element has a hierarchical structure of Meta (components.Meta) → Type (components.GroupTable) → Instance. Developers can quickly create group table instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `components.GroupTableType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `components.GroupTableType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start 
 ### Basic Configuration Example

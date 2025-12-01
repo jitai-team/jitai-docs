@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: integrate-knowledge-base-into-agent
+description: "Integrate knowledge bases with AI Agents. Enable agents to access and retrieve relevant documents for contextual responses."
 ---
 
 # Integrating Knowledge Base Into Agent
@@ -9,7 +10,7 @@ Knowledge bases serve as the core knowledge backbone for AI Agents, delivering a
 
 ## Relationship between knowledge base and agent {#relationship-between-knowledge-base-and-agent}
 
-Within the JitAi platform, knowledge base elements establish a tightly integrated collaborative relationship with AI Agents:
+Within the JitAI platform, knowledge base elements establish a tightly integrated collaborative relationship with AI Agents:
 
 - **Knowledge provisioning**: Knowledge bases transform diverse documents into structured, machine-understandable knowledge, providing Agents with rich knowledge repositories
 - **Intelligent retrieval**: Through vector similarity matching and reranking models, knowledge bases comprehend the semantic intent behind Agent queries and return the most relevant knowledge fragments

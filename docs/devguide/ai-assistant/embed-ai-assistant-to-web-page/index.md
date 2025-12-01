@@ -2,6 +2,7 @@
 sidebar_position: 14
 slug: /devguide/ai-assistant/embed-assistant-to-web-page
 title: Embedded AI Assistant
+description: "Embed AI Assistant into external web pages. Deep bidirectional interaction between web pages and AI with cross-origin security."
 ---
 
 # Embedded AI Assistant
@@ -12,7 +13,7 @@ In real-world enterprise application scenarios, there is often a need to integra
 
 ## Core Advantages {#core-advantages}
 
-Unlike other AI products on the market, JitAi's embedded AI assistant enables **deep bidirectional interaction between web pages and AI**. Traditional AI products can only handle simple conversational Q&A, while the embedded AI assistant adds two core capabilities on top of that:
+Unlike other AI products on the market, JitAI's embedded AI assistant enables **deep bidirectional interaction between web pages and AI**. Traditional AI products can only handle simple conversational Q&A, while the embedded AI assistant adds two core capabilities on top of that:
 
 1. **AI Controls Web Pages**: The AI assistant can understand conversational intent and proactively invoke functions in the web page (such as submitting forms, deleting data, navigating pages, etc.)
 2. **Web Pages Drive AI**: Web pages can actively trigger AI to execute tasks and monitor AI execution processes and results in real-time
@@ -83,7 +84,7 @@ Example code:
     <!-- Your web page content -->
     <div id="ai-assistant-container" style="width: 400px; height: 600px;"></div>
 
-    <!-- Import JitAi SDK -->
+    <!-- Import JitAI SDK -->
     <script src="https://jit-front.oss-cn-hangzhou.aliyuncs.com/ai-sdk/jitai-assistant-sdk.min.js"></script>
     <script>
         var aiAssistant = new JitAIAssistant();
@@ -130,7 +131,7 @@ aiAssistant.init({
 
 ### User authentication  {#user-authentication}
 
-**Authentication Callback**: To ensure the access security of the AI assistant, you can configure a dedicated authentication callback interface. During runtime, the AI assistant will invoke this interface to verify the legitimacy of user identities. If this interface is not configured, users must log in to the JitAi application by default before they can use the AI assistant.
+**Authentication Callback**: To ensure the access security of the AI assistant, you can configure a dedicated authentication callback interface. During runtime, the AI assistant will invoke this interface to verify the legitimacy of user identities. If this interface is not configured, users must log in to the JitAI application by default before they can use the AI assistant.
 
 The AI assistant will call this interface via POST, passing `authInfo` in JSON format with the following parameter format:
 ```json
@@ -231,7 +232,7 @@ Once declared, functions are automatically registered in the corresponding Agent
 ```
 
 :::warning Note
-Function names in the web page must match the function names declared in the JitAi platform.
+Function names in the web page must match the function names declared in the JitAI platform.
 :::
 
 ## Subscribe to AI Events in Web Pages {#subscribe-ai-events}
@@ -249,7 +250,7 @@ aiAssistant.subscribeEvent('AI:aiagent_webpage.afterNodeRun', (data) => {
 });
 ```
 
-All subscribable events can be viewed in the **Events** tab of the JitAi platform:
+All subscribable events can be viewed in the **Events** tab of the JitAI platform:
 
 ![assistant-events](./imgs/assistant-events.png)
 
@@ -444,7 +445,7 @@ The following is a complete example of using an embedded AI assistant, demonstra
     <!-- AI Assistant Container -->
     <div id="ai-assistant-container"></div>
 
-    <!-- Import JitAi SDK -->
+    <!-- Import JitAI SDK -->
     <script src="https://jit-front.oss-cn-hangzhou.aliyuncs.com/ai-sdk/jitai-assistant-sdk.min.js"></script>
     <script>
         // Define web page functions for AI to call

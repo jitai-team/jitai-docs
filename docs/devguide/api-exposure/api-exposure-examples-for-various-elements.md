@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: api-exposure-examples-for-various-elements
+description: "API exposure examples for business elements. Sample code for exposing services, models, and functions as APIs."
 ---
 
 # API Exposure Examples for Various Elements

@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+description: "创建常规页面的详细指南和说明。"
 ---
 
 # 创建常规页面
@@ -16,13 +17,13 @@ sidebar_position: 2
 新页面将拥有被继承页面的所有组件配置（不包含事件逻辑），开发者可以在新页面中进行编辑。
 
 ## 可视化页面编辑器 {#visual-page-editor}
-JitAi为页面元素提供了可视化拖拽式的页面编辑器，开发者可以在页面编辑器中拖拽功能组件到画布中，并进行组件的配置和事件逻辑的编写。
+JitAI为页面元素提供了可视化拖拽式的页面编辑器，开发者可以在页面编辑器中拖拽功能组件到画布中，并进行组件的配置和事件逻辑的编写。
 
 ![页面编辑器总体布局](./imgs/page-editor-overall-layout.png)
 
 页面编辑器总体布局分为四个区域：工具栏、画布、组件配置面板、事件面板。
 
-JitAi开发框架提供了丰富的组件库，每种组件的配置项和事件各有不同，开发者可以参考[在页面中使用功能组件](/docs/devguide/using-functional-components-in-pages)，了解每种组件详细用法。
+JitAI开发框架提供了丰富的组件库，每种组件的配置项和事件各有不同，开发者可以参考[在页面中使用功能组件](/docs/devguide/using-functional-components-in-pages)，了解每种组件详细用法。
 
 ## 在页面中集成AI助理 {#integrating-ai-assistants-in-pages}
 页面支持集成AI助理，提供智能对话和辅助功能，增强用户体验。
@@ -120,7 +121,7 @@ JitAi开发框架提供了丰富的组件库，每种组件的配置项和事件
 页面变量可以用于存储临时数据，函数逻辑中可以基于页面变量进行逻辑控制，页面自身的函数以及页面中其它组件的函数都可以访问当前页面的变量。
 
 ### 变量声明 {#variable-declaration}
-开发者可以根据需要声明一个或多个页面变量，变量类型支持单行文本、多行文本、日期时间等全部JitAi[数据类型](/docs/reference/framework/JitORM/data-types)。
+开发者可以根据需要声明一个或多个页面变量，变量类型支持单行文本、多行文本、日期时间等全部JitAI[数据类型](/docs/reference/framework/JitORM/data-types)。
 
 ![页面变量声明](./imgs/page-variable-declaration.gif)
 
@@ -131,7 +132,7 @@ JitAi开发框架提供了丰富的组件库，每种组件的配置项和事件
 不同数据类型的变量支持的配置参数也有所不同，例如Stext、Ltext等文本类型支持配置限制的字数。
 
 ### 从请求链接中获取页面变量值 {#getting-variables-from-urls}
-JitAi支持从用户访问页面的请求链接中获取变量值。开发者在声明变量后，在`选择通过Url参数赋值的变量`下拉列表中选择对应的变量即可，支持多选。
+JitAI支持从用户访问页面的请求链接中获取变量值。开发者在声明变量后，在`选择通过Url参数赋值的变量`下拉列表中选择对应的变量即可，支持多选。
 ## 页面函数 {#page-functions}
 页面函数是开发者根据业务需要自行封装的程序逻辑，可以被页面中各类组件的函数、事件调用。
 
@@ -193,7 +194,7 @@ JitAi支持从用户访问页面的请求链接中获取变量值。开发者在
 
 ## 函数编辑时的快捷操作 {#shortcuts}
 ### 清空语句 {#clearing-statements}
-当某个页面函数逻辑需要全部重写时，JitAi支持一键清空函数语句。
+当某个页面函数逻辑需要全部重写时，JitAI支持一键清空函数语句。
 
 ![页面函数清空语句](./imgs/page-function-clear-statements.gif)
 
@@ -230,7 +231,7 @@ JitAi支持从用户访问页面的请求链接中获取变量值。开发者在
 开发者点击语句右侧的`</>`按钮，即可切换到源代码模式，编辑器自动定位到当前语句。在源代码模式下，开发者可以随意修改函数逻辑，也可以随时点击右上角的切换按钮切换回可视化编辑模式。
 
 ### 快捷键 {#keyboard-shortcuts}
-JitAi支持使用快捷键快速完成函数编辑，已支持的快捷键包括：全选（Ctrl/Command + A）、选中多条语句（Ctrl/Command + 选中语句）、复制（Ctrl/Command + C）、剪切（Ctrl/Command + X）、粘贴（Ctrl/Command + V）、生成副本（Ctrl/Command + D）、撤销（Ctrl/Command + Z）、重做（Ctrl/Command + Y）、删除（Delete）、快速添加基础语句（选中语句 + Enter）。
+JitAI支持使用快捷键快速完成函数编辑，已支持的快捷键包括：全选（Ctrl/Command + A）、选中多条语句（Ctrl/Command + 选中语句）、复制（Ctrl/Command + C）、剪切（Ctrl/Command + X）、粘贴（Ctrl/Command + V）、生成副本（Ctrl/Command + D）、撤销（Ctrl/Command + Z）、重做（Ctrl/Command + Y）、删除（Delete）、快速添加基础语句（选中语句 + Enter）。
 
 ![页面函数编辑快捷键](./imgs/page-function-edit-shortcuts.gif)
 
@@ -244,7 +245,7 @@ JitAi支持使用快捷键快速完成函数编辑，已支持的快捷键包括
 在上图的列表中可以看到变量、后端服务、后端数据模型、AI助理、页面函数、前端的反馈提醒/数据处理/工具函数/异常处理等多种可调用目标，开发者按需选择即可。
 
 ### 调用后端模型/服务 {#calling-backend-models-services}
-数据模型封装了对数据库表的增删改查，服务函数封装了自定义的业务逻辑，JitAi支持开发者以点选的方式完成后端接口调用，而不需要编写任何HTTP接口调用代码。
+数据模型封装了对数据库表的增删改查，服务函数封装了自定义的业务逻辑，JitAI支持开发者以点选的方式完成后端接口调用，而不需要编写任何HTTP接口调用代码。
 
 ![函数中调用模型](./imgs/call-model-in-function.png)
 
@@ -253,14 +254,14 @@ JitAi支持使用快捷键快速完成函数编辑，已支持的快捷键包括
 以上图为例，依次选中`数据模型`-`部门模型`-`获取一条数据`即可完成查询一条部门数据的功能。
 
 ### 调用前端服务 {#calling-frontend-services}
-在前端的业务功能开发中，开发者通常需要实现弹窗确认、反馈提醒、loading、消息提示(错误/警告/普通)、日志打印等常见功能，JitAi将这些功能内置到了前端服务中，开发者可以直接使用。
+在前端的业务功能开发中，开发者通常需要实现弹窗确认、反馈提醒、loading、消息提示(错误/警告/普通)、日志打印等常见功能，JitAI将这些功能内置到了前端服务中，开发者可以直接使用。
 
 ![函数中调用前端服务](./imgs/call-frontend-service-in-function.png)
 
 开发者点击`基于语句`按钮，在新插入的空白语句中中点击`请选择`文案，在弹出的列表中依次选中`反馈提醒`-`确认框`，平台会自动插入一条语句，在参数输入框内输入文案即可。
 
 ## 移动端页面编辑器 {#mobile-page-editor}
-JitAi已经内置了对移动端的适配，可以在移动端页面编辑器中像开发PC端页面一样开发移动端页面。
+JitAI已经内置了对移动端的适配，可以在移动端页面编辑器中像开发PC端页面一样开发移动端页面。
 
 ![创建移动端页面](./imgs/create-mobile-page.png)
 
@@ -271,7 +272,7 @@ JitAi已经内置了对移动端的适配，可以在移动端页面编辑器中
 移动端页面编辑器和PC端页面编辑器在功能上没有区别，配置/事件/函数/页面变量等操作和PC端页面编辑器完全一致。
 
 ## 在页面中集成AI助理 {#enabling-ai-assistant} 
-JitAi支持在页面中直接集成[AI助理](/docs/devguide/ai-assistant/create-ai-assistant)，用户在访问页面时可以与AI助理进行交互。
+JitAI支持在页面中直接集成[AI助理](/docs/devguide/ai-assistant/create-ai-assistant)，用户在访问页面时可以与AI助理进行交互。
 
 ![在页面中添加AI助理](./imgs/add-ai-assistant-to-page.gif)
 

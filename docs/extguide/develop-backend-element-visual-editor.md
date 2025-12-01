@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: develop-backend-element-visual-editor
+description: "Develop visual configuration editors for backend Type elements. Create graphical interfaces that business experts can use without coding."
 ---
 
 # Developing Visual Editors for Backend Type Elements
@@ -9,7 +10,7 @@ import TabItem from '@theme/TabItem';
 
 After completing the [Extend Your Own Element Families](./extend-element-family-classes) tutorial, you can create and run element instances. However, configuration parameters must be manually modified in files, which presents a challenge for business developers unfamiliar with code.
 
-This guide demonstrates how to develop a visual configuration editor for a DingTalk robot, delivering the same graphical configuration experience as official JitAi elements.
+This guide demonstrates how to develop a visual configuration editor for a DingTalk robot, delivering the same graphical configuration experience as official JitAI elements.
 
 ## Effect preview {#effect-preview}
 ![Editor Effect](./img/dingtalk-robot-element-configuration-interface.png "Editor Effect")
@@ -64,7 +65,7 @@ Add the Monaco Editor dependency to your project's `package.json`:
 **Create the editor element definition file** `Editor/e.json`:
 
 :::tip Editors are elements too
-In JitAi, editors are elements with their own `e.json` definition files.
+In JitAI, editors are elements with their own `e.json` definition files.
 :::
 
 ```json title="Editor/e.json"
@@ -100,7 +101,7 @@ export { Editor } from './Editor';
 ```
 
 :::important Editor export convention
-Backend element editors must export a component named `Editor`. This is a fixed convention that enables JitAi tools to recognize the editor.
+Backend element editors must export a component named `Editor`. This is a fixed convention that enables JitAI tools to recognize the editor.
 :::
 
   </TabItem>
@@ -376,7 +377,7 @@ export function getAvailableAgents(): Array<{ value: string; label: string }> {
 ### Data flow {#data-flow}
 ```mermaid
 graph LR
-    A[JitAi Tool] --> B[Editor Component]
+    A[JitAI Tool] --> B[Editor Component]
     B --> C[Form Fields]
     B --> D[JSON Editor]
     C --> E[handleSave]
@@ -398,7 +399,7 @@ graph LR
 3. **Trigger packaging**: Access the application page, the system will automatically repackage
 
 ### Verifying editor functionality {#verifying-editor-functionality}
-1. **Open element management**: Enter JitAi development tool's element management interface
+1. **Open element management**: Enter JitAI development tool's element management interface
 2. **Find target element**: Locate the DingTalk robot element instance
 3. **Open editor**: Click edit button, the visual editor should open
 4. **Test configuration**: Try modifying AI Agent, Client ID and other configurations

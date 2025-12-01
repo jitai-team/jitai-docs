@@ -1,12 +1,13 @@
 ---
 slug: language-pack
+description: "语言包 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 语言包
 语言包是JitI18N国际化框架的核心组件，负责提供多语言翻译配置和自动化翻译处理。它基于DOM监听和文本替换机制实现页面内容的实时国际化，支持文本节点翻译、属性翻译、动态内容监听和语言切换等功能。
 
 语言包元素分层结构为Meta（languages.Meta） → Type（languages.NormalType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建语言包实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的languages.NormalType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的languages.NormalType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 基础配置示例

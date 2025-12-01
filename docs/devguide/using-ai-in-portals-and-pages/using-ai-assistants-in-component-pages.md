@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: using-ai-assistants-in-component-pages
+description: "Integrate AI Assistant in component pages. Enable AI dialog, configure assistants, and subscribe to events for human-AI collaboration."
 ---
 
 # Using AI Assistant in Component Pages

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 5
 slug: vector-database-standalone-deployment
+description: "Deploy vector database for knowledge bases. Standalone vector store deployment for production-scale document retrieval."
 ---
 
 # Deploying Vector Databases as Standalone Services
@@ -17,7 +18,7 @@ Vector databases use `cosine similarity` as the default distance metric algorith
 
 ## Standalone deployment solution: Chroma vector database {#chroma-standalone-deployment}
 
-Chroma is the recommended vector database solution for the JitAi platform, offering standalone service deployment with a lightweight footprint, high performance, and easy maintenance. A standalone Chroma deployment provides unified vector storage services across multiple JitAi application instances, enabling enterprise-grade data management and service governance.
+Chroma is the recommended vector database solution for the JitAI platform, offering standalone service deployment with a lightweight footprint, high performance, and easy maintenance. A standalone Chroma deployment provides unified vector storage services across multiple JitAI application instances, enabling enterprise-grade data management and service governance.
 
 ### Advantages of standalone deployment {#advantages-of-standalone-deployment}
 
@@ -35,7 +36,7 @@ The official documentation offers multiple deployment methods to suit your speci
 
 ### Connecting to a standalone Chroma database {#connect-to-standalone-chroma}
 
-To connect to a standalone Chroma vector database in the JitAi platform:
+To connect to a standalone Chroma vector database in the JitAI platform:
 
 ![Remote](./img/remote.png)
 
@@ -48,11 +49,11 @@ Configuration parameters:
 
 ## Local configuration for development and testing {#local-development-config}
 
-For development and testing scenarios, JitAi supports local vector database configuration without requiring standalone deployment of external services—ready to use out of the box:
+For development and testing scenarios, JitAI supports local vector database configuration without requiring standalone deployment of external services—ready to use out of the box:
 
 ![Localization](./img/localization.png)
 
-Local configuration leverages built-in storage, with data saved directly in the JitAi platform's local environment. Simply provide a name and select a persistence mode to quickly create a local vector database, ideal for prototyping and feature validation.
+Local configuration leverages built-in storage, with data saved directly in the JitAI platform's local environment. Simply provide a name and select a persistence mode to quickly create a local vector database, ideal for prototyping and feature validation.
 
 :::tip
 For production environments, we recommend using standalone deployment to achieve optimal performance, reliability, and maintainability.

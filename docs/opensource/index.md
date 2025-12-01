@@ -1,3 +1,7 @@
+---
+description: "JitAI open source projects on GitHub. Explore 12 core framework repositories including AI, auth, ORM, payment, workflow, and web components."
+---
+
 # Open Source
 
 ## 🌐 GitHub Organization

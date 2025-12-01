@@ -1,12 +1,15 @@
 ---
 slug: full-code-component
+title: "Full Code Component Reference"
+description: "Full Code Component Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Full Code Component"
 ---
 # Full Code Component
-Full code component is a universal custom component in the JitAi development framework that supports developers using React and JavaScript to write completely custom component implementations. It provides complete component lifecycle management, event publishing and subscription, variable management, and configuration management capabilities, while integrating error boundary protection to ensure component rendering stability.
+Full code component is a universal custom component in the JitAI development framework that supports developers using React and JavaScript to write completely custom component implementations. It provides complete component lifecycle management, event publishing and subscription, variable management, and configuration management capabilities, while integrating error boundary protection to ensure component rendering stability.
 
 The full code component element has a hierarchical structure of Meta (components.Meta) → Type (components.BlankComponent) → Instance. Developers can quickly create full code component instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `components.BlankComponentType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `components.BlankComponentType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start 
 ### Basic Configuration Example
@@ -404,7 +407,7 @@ Full code components automatically integrate React error boundaries, displaying 
 ```
 
 ### Lifecycle Integration
-Full code components are fully integrated into the JitAi platform's component lifecycle management.
+Full code components are fully integrated into the JitAI platform's component lifecycle management.
 
 ```tsx title="Lifecycle Handling"
 export default class BlankComponent extends Jit.BaseComponent {
@@ -427,7 +430,7 @@ export default class BlankComponent extends Jit.BaseComponent {
 ```
 
 ### Permission Control Integration
-Full code components support the JitAi platform's permission control system.
+Full code components support the JitAI platform's permission control system.
 
 ```tsx title="Permission Control"
 const Render = (props) => {

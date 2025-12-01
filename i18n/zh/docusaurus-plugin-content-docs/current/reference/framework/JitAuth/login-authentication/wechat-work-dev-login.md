@@ -1,17 +1,18 @@
 ---
 slug: wechat-work-dev-login
+description: "企业微信代开发登录 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 企业微信代开发登录
 企业微信代开发登录是极态框架提供的登录认证Type元素，基于企业微信第三方应用代开发模式实现企业级单点登录。它负责处理企业微信OAuth授权流程、用户身份验证和多企业代理管理，支持工作台内免密登录、扫码登录和回调事件处理。
 
-企业微信代开发登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.QywxProxyType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建企业微信代开发登录实例元素。
+企业微信代开发登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.QywxProxyType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建企业微信代开发登录实例元素。
 
 **支持的登录方式**：
 - 企业微信工作台登录 - 用户在企业微信工作台中点击应用直接登录
 - 扫码登录 - 通过企业微信扫描二维码进行登录
 - 回调处理 - 处理企业微信的OAuth回调和事件通知
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的auths.loginTypes.QywxProxyType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的auths.loginTypes.QywxProxyType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

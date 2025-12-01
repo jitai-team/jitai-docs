@@ -1,12 +1,13 @@
 ---
 slug: cascade-tree
+description: "级联树 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 级联树
 级联树是用于展示具有层级关系数据的树形结构组件，基于数据模型实现父子节点的级联选择和联动关系。它负责数据的树形展示、节点选择交互和级联操作，支持单选和多选模式，适用于组织架构、分类目录、地区选择等场景。
 
 级联树元素分层结构为Meta（components.Meta） → Type（components.CascadeTree） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建级联树实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.CascadeTreeType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的components.CascadeTreeType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 基础配置示例

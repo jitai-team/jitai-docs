@@ -1,6 +1,9 @@
 ---
 sidebar_position: 3
 slug: generic-page
+title: "Generic Page Reference"
+description: "Generic Page Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Generic Page"
 ---
 
 # Generic Page

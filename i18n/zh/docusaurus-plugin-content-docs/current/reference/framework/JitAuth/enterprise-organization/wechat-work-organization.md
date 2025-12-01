@@ -1,12 +1,13 @@
 ---
 slug: wechat-work-organization
+description: "企业微信自建组织 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 企业微信自建组织
 企业微信自建组织是JitAuth框架中企业级组织架构集成类型，基于企业微信自建应用API实现组织架构同步和用户管理。它负责企业微信通讯录同步、组织信息获取和用户身份验证，支持自动组织架构同步和用户权限继承。
 
-企业微信自建组织元素分层结构为Meta（corps.Meta） → Type（corps.QywxInnerType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建企业微信自建组织实例元素。
+企业微信自建组织元素分层结构为Meta（corps.Meta） → Type（corps.QywxInnerType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建企业微信自建组织实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的corps.QywxInnerType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的corps.QywxInnerType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

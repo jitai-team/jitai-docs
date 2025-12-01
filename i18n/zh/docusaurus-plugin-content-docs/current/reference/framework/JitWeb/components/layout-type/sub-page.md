@@ -1,12 +1,13 @@
 ---
 slug: sub-page
+description: "子页面 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 子页面
 子页面是用于在当前页面中嵌入其他页面的布局容器组件，基于引用机制实现复杂界面的模块化构建。它负责子页面的动态加载、数据传递和状态管理，支持父子页面间的通信机制，适用于大型应用的页面分割和模块化开发。
 
 子页面元素分层结构为Meta（components.Meta） → Type（components.Container） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建子页面实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.ContainerType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的components.ContainerType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 基础配置示例

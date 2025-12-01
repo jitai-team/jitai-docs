@@ -1,6 +1,7 @@
 ---
 sidebar_position: 13
 slug: ai-conversation-history
+description: "对话记录的详细指南和说明。"
 ---
 
 # 对话记录

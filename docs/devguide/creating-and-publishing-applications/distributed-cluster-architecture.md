@@ -1,10 +1,11 @@
 ---
 sidebar_position: 5
 slug: distributed-cluster-architecture
+description: "Scale from single-node to enterprise clusters. Four-layer architecture model with resource scheduling and load balancing capabilities."
 ---
 # Distributed Cluster Architecture for Unlimited Horizontal Scaling
 
-JitAi enables seamless scaling from single-node deployments to large-scale enterprise cluster architectures through hierarchical management of teams, nodes, runtime environments, and applications, delivering comprehensive resource scheduling and load balancing capabilities.
+JitAI enables seamless scaling from single-node deployments to large-scale enterprise cluster architectures through hierarchical management of teams, nodes, runtime environments, and applications, delivering comprehensive resource scheduling and load balancing capabilities.
 
 ## Understanding the four-layer architecture model {#four-layer-architecture}
 

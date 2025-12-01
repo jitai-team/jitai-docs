@@ -1,5 +1,8 @@
 ---
 slug: model-filter
+title: "Model Filter Reference"
+description: "Model Filter Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Model Filter"
 ---
 # Model Filter
 The model filter is an interactive component used for filtering operations on specified model data, implementing visual configuration capabilities for data query conditions based on React and TypeScript. It handles query condition construction, filter state management, and query event triggering, supporting three filtering modes: simple mode, complex mode, and free mode, providing list and tag display styles.

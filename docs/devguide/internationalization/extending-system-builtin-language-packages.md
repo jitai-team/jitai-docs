@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 slug: extending-system-builtin-language-packages
+description: "Extend built-in Chinese and English language packages. Override or add custom translations for more granular localization control."
 ---
 
 # Extending system built-in language packages

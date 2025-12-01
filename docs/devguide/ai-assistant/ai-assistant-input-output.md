@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 slug: ai-assistant-input-output
+description: "Configure AI Assistant input parameters and output content. Customize input args and control runtime process log output."
 ---
 
 # AI Assistant Input and Output

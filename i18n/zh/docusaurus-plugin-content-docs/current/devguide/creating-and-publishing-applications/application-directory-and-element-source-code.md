@@ -1,11 +1,12 @@
 ---
 sidebar_position: 2
 slug: application-directory-and-element-source-code
+description: "应用目录和元素源码的详细指南和说明。"
 ---
 
 # 应用目录和元素源码
 
-JitAi应用目录基于[JAAP（JitAi Ai Application Protocol）](../../reference/runtime-platform/JAAP)构建，使用标准的目录结构组织元素代码。
+JitAI应用目录基于[JAAP（JitAI Ai Application Protocol）](../../reference/runtime-platform/JAAP)构建，使用标准的目录结构组织元素代码。
 
 ## 应用目录结构 {#application-directory-structure}
 
@@ -26,11 +27,11 @@ MyApp/                     # 应用根目录
 └── storages/         # 存储服务元素
 ```
 
-dist目录中存储构建产物，是由Jit节点对应用进行打包后生成的。开发者每次在JitAi开发工具中修改应用元素代码并保存后，都会自动触发增量的打包。
+dist目录中存储构建产物，是由Jit节点对应用进行打包后生成的。开发者每次在JitAI开发工具中修改应用元素代码并保存后，都会自动触发增量的打包。
 
 ## 元素代码目录结构 {#element-code-directory-structure}
 
-应用目录是由元素目录组成的，每个元素目录内部也遵循[JAAP（JitAi Ai Application Protocol）](../../reference/runtime-platform/JAAP)，有自己的构成规则。
+应用目录是由元素目录组成的，每个元素目录内部也遵循[JAAP（JitAI Ai Application Protocol）](../../reference/runtime-platform/JAAP)，有自己的构成规则。
 
 ```plaintext title="标准元素目录结构"
 element-name/
@@ -43,7 +44,7 @@ element-name/
 
 ## 应用源码导出导入 {#application-export-import}
 
-JitAi提供了灵活的应用导出导入功能，支持源码包导出、微信小程序导出等多种格式，便于应用的分发、备份、模块复用。
+JitAI提供了灵活的应用导出导入功能，支持源码包导出、微信小程序导出等多种格式，便于应用的分发、备份、模块复用。
 
 ### 导出源码zip包 {#export-source-code-zip}
 
@@ -61,7 +62,7 @@ JitAi提供了灵活的应用导出导入功能，支持源码包导出、微信
 
 **微信小程序导出特性：**
 - 自动适配微信小程序的目录结构
-- 转换 JitAi 组件为小程序兼容格式
+- 转换 JitAI 组件为小程序兼容格式
 - 保留业务逻辑和数据处理功能
 - 支持小程序特有的生命周期和API
 

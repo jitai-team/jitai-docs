@@ -1,12 +1,13 @@
 ---
 slug: calendar
+description: "日历 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 日历
 日历是一个用于展示和管理时间相关数据的视图组件，基于Ant Design Calendar实现日程安排、事件管理和时间规划功能。它负责数据源绑定、日程创建编辑和交互事件处理，支持拖拽操作、自定义渲染和多种视图模式。
 
 日历元素分层结构为Meta（components.Meta） → Type（components.Calendar） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建日历实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.CalendarType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的components.CalendarType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 基础配置示例

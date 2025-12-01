@@ -1,12 +1,13 @@
 ---
 slug: cross-table
+description: "交叉表 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 交叉表
 交叉表是专门用于数据透视和交叉分析的表格组件，基于 AntV S2 实现多维数据的行列交叉展示。它负责数据的多维度分组、聚合计算和交叉分析，支持动态维度配置、数据钻取和复杂的数据可视化需求，是商业智能和数据分析场景的核心组件。
 
 交叉表元素分层结构为Meta（`components.Meta`）→ Type（`components.CrossTable`）→ 实例，开发者可通过JitAI的可视化开发工具快捷地创建交叉表实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.CrossTableType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的components.CrossTableType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 基础配置示例

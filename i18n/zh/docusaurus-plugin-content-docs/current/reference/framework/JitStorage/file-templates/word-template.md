@@ -1,12 +1,13 @@
 ---
 slug: word-template
+description: "Word模板 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # Word模板
 Word模板专用于生成和处理Word格式文档，基于Jinja2模板引擎实现动态文档生成。它负责Word文档的模板化渲染、变量替换和复杂内容填充，支持文本、图片、表格、链接等多种元素的动态处理，适用于合同、报告、公文等正式文档的批量生成。
 
-Word模板元素分层结构为Meta（fileTmpls.Meta） → Type（fileTmpls.WordType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建Word模板实例元素。
+Word模板元素分层结构为Meta（fileTmpls.Meta） → Type（fileTmpls.WordType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建Word模板实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的fileTmpls.WordType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的fileTmpls.WordType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

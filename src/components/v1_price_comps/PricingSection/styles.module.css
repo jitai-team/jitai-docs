@@ -6,7 +6,7 @@
 }
 
 /* 中文主题变量 */
-:root[lang="zh-CN"] {
+:root[lang="zh"] {
   --page-title-line-height: 1.4;
   --card-title-line-height: 1.4;
 }

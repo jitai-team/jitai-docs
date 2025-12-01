@@ -1,14 +1,15 @@
 ---
 sidebar_position: 6
 slug: react-full-code-page
+description: "React全代码页面 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 # React全代码页面
 React全代码页面是 JitWeb 框架中提供最大开发灵活性的页面类型，基于 React 技术栈实现完全自定义的代码开发。它负责承载复杂业务逻辑、高度定制化界面和特殊技术需求，支持 TypeScript 和 JavaScript 开发，提供完整的页面生命周期管理和事件系统。
 
-React全代码页面元素分层结构为 Meta（pages.Meta） → Type（pages.NormalType） → 实例。开发者可通过 JitAi 的可视化开发工具快捷地创建React全代码页面实例元素。
+React全代码页面元素分层结构为 Meta（pages.Meta） → Type（pages.NormalType） → 实例。开发者可通过 JitAI 的可视化开发工具快捷地创建React全代码页面实例元素。
 
-当然，开发者也可以创建自己的 Type 元素，或者在自己的 App 中改写 JitAi 官方提供的 pages.NormalType 元素，以实现自己的封装。
+当然，开发者也可以创建自己的 Type 元素，或者在自己的 App 中改写 JitAI 官方提供的 pages.NormalType 元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

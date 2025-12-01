@@ -1,13 +1,14 @@
 ---
 sidebar_position: 4
 slug: background-tasks
+description: "Implement periodic and automated business processing with JitTask. Scheduled tasks and date field tasks for background automation."
 ---
 
 # Background Tasks
 
 Background tasks are the core capability for implementing periodic and automated business processing in the JitTask framework. Through background tasks, developers can enable the system to automatically execute specific business logic on a scheduled or on-demand basis without manual intervention.
 
-JitAi provides two types of background tasks: `Scheduled Tasks` that execute at fixed time intervals, and `Date Field Tasks` that trigger based on date fields in data tables.
+JitAI provides two types of background tasks: `Scheduled Tasks` that execute at fixed time intervals, and `Date Field Tasks` that trigger based on date fields in data tables.
 
 ## Creating tasks {#creating-tasks}
 
@@ -112,7 +113,7 @@ After enabling the **Skip Holidays** feature, tasks will automatically skip lega
 
 ## Developing task execution functions {#developing-task-execution-functions}
 
-After task creation, write the specific execution logic. JitAi provides two function development approaches:
+After task creation, write the specific execution logic. JitAI provides two function development approaches:
 
 ### Internal task functions {#internal-task-functions}
 

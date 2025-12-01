@@ -1,12 +1,13 @@
 ---
 slug: statistical-chart
+description: "统计图 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 统计图
 统计图是用于数据可视化展示的重要组件，基于ECharts图表库实现多样化的图表渲染能力。它负责将数据模型转换为直观的图形表示、支持交互式数据探索和提供丰富的样式配置选项，支持24种图表类型包括折线图、柱状图、饼图、地图、雷达图等。
 
 统计图元素分层结构为Meta（components.Meta） → Type（components.Chart） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建统计图实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.ChartType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的components.ChartType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 基础配置示例

@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import LanguageSwitcher from "../LanguageSwitcher";
 import CONTENT_EN from "./constant-en";
 import CONTENT_ZH from "./constant-zh";
+import { addUTMToUrl } from "../../../utils/utm";
 
 interface NavbarProps {
     currentLocale?: string;
@@ -79,15 +80,20 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
     }, [isMobileMenuOpen]);
 
     const handleNavClick = (item: any) => {
+        // 为 demo.jit.pro 链接添加 UTM 参数
+        const url = item.url && item.url.includes('demo.jit.pro') 
+            ? addUTMToUrl(item.url) 
+            : item.url;
+        
         // 移动端点击后关闭菜单
         if (isMobile) {
-            window.location.href = item.url;
+            window.location.href = url;
             setIsMobileMenuOpen(false);
         } else {
             if (item.type === "newTab") {
-                window.open(item.url, "_blank");
+                window.open(url, "_blank");
             } else {
-                window.location.href = item.url;
+                window.location.href = url;
             }
         }
     };
@@ -110,7 +116,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                         onClick={() => handleNavClick(CONTENT.navItems[0])}
                     >
                         <img
-                            src="https://jit-www.oss-accelerate.aliyuncs.com/logo/logo_title.png"
+                            src="https://jit-www.oss-accelerate.aliyuncs.com/logo/logo_title.svg"
                             alt="JitAI"
                         />
                     </div>
@@ -153,6 +159,11 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                     </button>
                 </div>
 
+                {/* 移动端语言切换器 - 显示在汉堡菜单按钮左侧 */}
+                <div className={styles.mobileTopLanguageSwitcher}>
+                    <LanguageSwitcher />
+                </div>
+
                 {/* 移动端汉堡菜单按钮 */}
                 <button
                     className={`${styles.mobileMenuButton} ${
@@ -189,9 +200,6 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                                 </button>
                             );
                         })}
-                        <div className={styles.mobileLanguageSwitcher}>
-                            <LanguageSwitcher />
-                        </div>
                     </div>
                 </div>
 

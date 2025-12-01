@@ -1,9 +1,10 @@
 ---
 sidebar_position: 0
+description: "Framework Overview Reference - API documentation for developers. Complete specifications, methods, and examples."
 ---
 
 # Framework Overview
-Through years of development in enterprise application development, numerous universal and common patterns/component models have been established. The JitAi development framework encapsulates these common components into different element family classes. Developers can extend and define their own element family classes, or inherit and modify official element family classes to meet specific business requirements.
+Through years of development in enterprise application development, numerous universal and common patterns/component models have been established. The JitAI development framework encapsulates these common components into different element family classes. Developers can extend and define their own element family classes, or inherit and modify official element family classes to meet specific business requirements.
 
 Based on the abstract concept of "System = Structure + Process", the development process for enterprise application systems becomes **selecting appropriate elements for structural design, then implementing the invocation process**.
 

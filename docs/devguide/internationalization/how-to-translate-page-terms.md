@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 slug: how-to-translate-page-terms
+description: "Translate page terms automatically in JitAI. Learn automatic text translation, dynamic content translation, and translation ignore rules."
 ---
 
 # How to Translate Page Terms
@@ -43,7 +44,7 @@ Additionally, more granular control can be achieved through custom [Translation 
 
 ## Dynamic text translation {#dynamic-text-translation}
 
-JitAi's internationalization solution supports DOM change monitoring mechanisms that can automatically detect dynamically added or modified DOM nodes on the page and perform real-time translation of their text content. This ensures that even content generated dynamically through JavaScript can automatically apply internationalization processing.
+JitAI's internationalization solution supports DOM change monitoring mechanisms that can automatically detect dynamically added or modified DOM nodes on the page and perform real-time translation of their text content. This ensures that even content generated dynamically through JavaScript can automatically apply internationalization processing.
 
 **How It Works**
 - **Automatic Monitoring**: The system automatically monitors DOM tree changes, including node addition, deletion, and modification operations
@@ -74,7 +75,7 @@ After adding translation mappings of `Click Me` → `点我` and `Already Clicke
 ## DOM node attribute translation {#dom-node-attribute-translation}
 
 In addition to text content within DOM nodes, attribute values in HTML tags often require translation.
-JitAi's internationalization solution automatically translates the following HTML attributes by default:
+JitAI's internationalization solution automatically translates the following HTML attributes by default:
 
 - **placeholder**: Input field placeholder text
 - **title**: Element title tooltip text
@@ -126,7 +127,7 @@ If you need to translate other HTML attributes, you can add them through code co
 
 ## Using API translation {#using-api-translation}
 
-In addition to DOM elements on the page, there are also non-DOM content (such as alert prompts, etc.) that cannot be processed through the DOM node automatic translation mechanism and require manual calls to the translation API. JitAi's internationalization solution provides a programmatic translation interface: `runtimeApp.i18n.translate('xxxx')`.
+In addition to DOM elements on the page, there are also non-DOM content (such as alert prompts, etc.) that cannot be processed through the DOM node automatic translation mechanism and require manual calls to the translation API. JitAI's internationalization solution provides a programmatic translation interface: `runtimeApp.i18n.translate('xxxx')`.
 
 Usage is as follows:
 

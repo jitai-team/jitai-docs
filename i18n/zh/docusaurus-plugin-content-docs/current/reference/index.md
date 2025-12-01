@@ -1,18 +1,19 @@
 ---
 sidebar_position: -1
+description: "参考手册导读 API 参考文档。完整的规格说明、方法和示例。"
 ---
 
 import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 # 参考手册导读
-JitAi参考手册提供完整的API文档、配置说明和技术规范。开发者可以查询元素配置参数、方法调用接口、数据结构定义和平台协议规范，快速解决开发过程中的技术问题。
+JitAI参考手册提供完整的API文档、配置说明和技术规范。开发者可以查询元素配置参数、方法调用接口、数据结构定义和平台协议规范，快速解决开发过程中的技术问题。
 ## [开发框架](reference/framework)
 提供各框架模块的元素配置、API接口和使用方法，包含完整的参数说明、代码示例和最佳实践指导。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', gap: '16px', marginBottom: '32px'}}>
 
 <IndexCard
-  title="JitAi"
+  title="JitAI"
   href="reference/framework/JitAi"
   description="AI应用开发框架，提供完整的AI原生应用构建能力。"
 >
@@ -56,7 +57,7 @@ JitAi参考手册提供完整的API文档、配置说明和技术规范。开发
   <LinkGrid columns={2} links={[
     { text: "ORM概述", href: "reference/framework/JitORM/" },
     { text: "数据库", href: "reference/framework/JitORM/database" },
-    { text: "数据模型", href: "reference/framework/JitORM/data-models" },
+    { text: "数据模型", href: "reference/framework/JitORM/model-types/data-models" },
     { text: "数据类型", href: "reference/framework/JitORM/data-types" },
     { text: "Q表达式", href: "reference/framework/JitORM/q-expressions" },
     { text: "TQL", href: "reference/framework/JitORM/TQL" },
@@ -181,7 +182,6 @@ JitAi参考手册提供完整的API文档、配置说明和技术规范。开发
   description="任务调度框架，支持定时任务和基于数据模型日期字段的智能任务调度，提供任务监控和管理能力。"
 >
   <LinkGrid columns={2} links={[
-    { text: "任务服务", href: "reference/framework/JitTask/task-service" },
     { text: "定时任务", href: "reference/framework/JitTask/scheduled-tasks" },
     { text: "日期字段任务", href: "reference/framework/JitTask/date-field-tasks" }
   ]} />

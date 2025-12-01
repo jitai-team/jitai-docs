@@ -1,14 +1,17 @@
 ---
 sidebar_position: 2
 slug: vector-database
+title: "Vector Database Reference"
+description: "Vector Database Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Vector Database"
 ---
 
 # Vector Database
 Vector database is a database for vector storage and retrieval, providing semantic search functionality. It handles vector storage, similarity retrieval, metadata filtering and collection management, supporting various metric algorithms such as cosine similarity, Euclidean distance, etc., providing data support for AI knowledge bases and semantic search.
 
-The vector database element has a hierarchical structure of Meta (vectordbs.Meta) → Type (vectordbs.ChromaType) → Instance. Developers can quickly create vector database instance elements through JitAi's visual development tools.
+The vector database element has a hierarchical structure of Meta (vectordbs.Meta) → Type (vectordbs.ChromaType) → Instance. Developers can quickly create vector database instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `vectordbs.ChromaType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `vectordbs.ChromaType` element provided by JitAI in their own App to implement their own encapsulation.
 
 **Supported Type Types:**
 
@@ -176,7 +179,7 @@ vector_db = app.getElement("vectordbs.MyVectorDB")
 
 # Configure collection parameters
 collection_name = "jitai_documents"
-metadata = {"description": "JitAi framework demo collection"}
+metadata = {"description": "JitAI framework demo collection"}
 
 try:
     # Create collection
@@ -236,7 +239,7 @@ sample_embeddings = [
 
 # Configure metadata
 sample_metadata = [
-    {"title": "JitAi Architecture Documentation", "category": "Technology", "source": "internal"},
+    {"title": "JitAI Architecture Documentation", "category": "Technology", "source": "internal"},
     {"title": "Vector Database Usage Guide", "category": "Tutorial", "source": "docs"},
     {"title": "AI Assistant Development Practice", "category": "Technology", "source": "blog"},
 ]

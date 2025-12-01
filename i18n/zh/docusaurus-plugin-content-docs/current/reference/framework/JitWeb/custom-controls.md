@@ -1,12 +1,13 @@
 ---
 slug: custom-controls
+description: "自定义控件 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 自定义控件
 自定义控件是JitWeb框架中的可复用UI组件元素，基于React技术栈实现前端交互功能。它负责封装特定业务逻辑、提供数据绑定能力和响应用户操作，支持在页面和工作流节点中灵活调用。
 
 自定义控件元素分层结构为Meta（widgets.Meta） → Type（widgets.React） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建自定义控件实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的widgets.ReactType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的widgets.ReactType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 基础配置示例

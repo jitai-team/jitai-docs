@@ -1,5 +1,6 @@
 ---
 sidebar_position: 3
+description: "AI数据管理页面的详细指南和说明。"
 ---
 
 # AI数据管理页面

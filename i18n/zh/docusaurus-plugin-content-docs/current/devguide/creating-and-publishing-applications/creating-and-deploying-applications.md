@@ -1,12 +1,13 @@
 ---
 sidebar_position: 1
 slug: creating-and-deploying-applications
+description: "创建和部署应用的详细指南和说明。"
 ---
 
 # 创建和部署应用
 
-JitAi中的应用被统称为`JitAi App`，其构成结构遵循[JAAP](/docs/reference/runtime-platform/JAAP)中的应用规范。`官方App`以及开发者开发的`MyApp`都是`JitAi App`。应用的构成遵循JAAP中的应用规范，一个应用中通常包含多个[门户、页面](../shell-and-page/portal-navigation-design)、[页面组件](../using-functional-components-in-pages)、[数据模型](../data-modeling)、[服务函数](../business-logic-development/creating-service-elements)等基本元素，每个元素都是一个独立的功能模块。
-开发应用就是对应用中各个元素的代码进行增删改的过程。不同于传统开发模式下的应用模块，JitAi App中的元素之间没有静态依赖，耦合度为零，极大方便了对应用模块的复用、改写、替换。
+JitAI中的应用被统称为`JitAI App`，其构成结构遵循[JAAP](/docs/reference/runtime-platform/JAAP)中的应用规范。`官方App`以及开发者开发的`MyApp`都是`JitAI App`。应用的构成遵循JAAP中的应用规范，一个应用中通常包含多个[门户、页面](../shell-and-page/portal-navigation-design)、[页面组件](../using-functional-components-in-pages)、[数据模型](../data-modeling)、[服务函数](../business-logic-development/creating-service-elements)等基本元素，每个元素都是一个独立的功能模块。
+开发应用就是对应用中各个元素的代码进行增删改的过程。不同于传统开发模式下的应用模块，JitAI App中的元素之间没有静态依赖，耦合度为零，极大方便了对应用模块的复用、改写、替换。
 
 ## 创建第一个应用 {#creating-first-application}
 
@@ -21,10 +22,10 @@ JitAi中的应用被统称为`JitAi App`，其构成结构遵循[JAAP](/docs/ref
 开发者只需要填写应用名称、ID，然后点击确定，即可快速完成一个应用的创建。
 
 ## 基于已有应用快速开发 {#developing-applications-based-on-existing-templates}
-为了方便开发者基于已有的应用快速开发定制，JitAi提供了两种方式：继承应用、创建副本。
+为了方便开发者基于已有的应用快速开发定制，JitAI提供了两种方式：继承应用、创建副本。
   
 ### 继承应用 {#inheriting-from-applications}
-继承可以让一个应用拥有被继承应用的功能模块，每一个新建的应用都默认继承了两个官方应用模板：JIT开发框架、JIT开发工具。前者是JitAi官方开发框架，提供丰富的开箱即用的元素，后者为应用开发过程提供可视化与全代码双模式的开发工具。除了默认继承的官方应用模板，开发者也可以继续添加其它要继承的应用。
+继承可以让一个应用拥有被继承应用的功能模块，每一个新建的应用都默认继承了两个官方应用模板：JIT开发框架、JIT开发工具。前者是JitAI官方开发框架，提供丰富的开箱即用的元素，后者为应用开发过程提供可视化与全代码双模式的开发工具。除了默认继承的官方应用模板，开发者也可以继续添加其它要继承的应用。
 
 ![添加应用模板](./img/1/add-application-template.gif)
 
@@ -36,7 +37,7 @@ JitAi中的应用被统称为`JitAi App`，其构成结构遵循[JAAP](/docs/ref
 
 :::
 
-在JitAi开发工具中，开发者既可以开发新的元素，也可以查看从被继承应用中继承的元素，并针对个别元素进行重写覆盖。
+在JitAI开发工具中，开发者既可以开发新的元素，也可以查看从被继承应用中继承的元素，并针对个别元素进行重写覆盖。
 
 ![重写继承的元素](./img/1/override-inherited-elements.gif)
 
@@ -50,7 +51,7 @@ JitAi中的应用被统称为`JitAi App`，其构成结构遵循[JAAP](/docs/ref
 开发者在依次点击`更多`、`生成副本`按钮后，会打开创建副本弹窗，开发者填写新的应用名称和ID，点击`确定`按钮即可完成副本创建。
 
 ## 数据存储与环境变量配置 {#configuring-data-storage-and-environment-variables}
-在新建应用时，JitAi会使用本地磁盘作为应用的默认文件存储方式。桌面版本使用SQLite作为应用默认的数据库和缓存，服务器版本使用MySQL作为默认数据库以及使用Redis作为默认缓存。开发者可以在创建应用时对默认配置进行修改，连接到自己指定的OSS存储、数据库以及缓存服务。
+在新建应用时，JitAI会使用本地磁盘作为应用的默认文件存储方式。桌面版本使用SQLite作为应用默认的数据库和缓存，服务器版本使用MySQL作为默认数据库以及使用Redis作为默认缓存。开发者可以在创建应用时对默认配置进行修改，连接到自己指定的OSS存储、数据库以及缓存服务。
 
 ![自定义数据库连接](./img/1/custom-database-connection.gif)
 
@@ -58,7 +59,7 @@ JitAi中的应用被统称为`JitAi App`，其构成结构遵循[JAAP](/docs/ref
 
 ![配置环境变量](./img/1/configure-environment-variables.gif)
 
-官方基础框架中封装了阿里云OCR识别、高德地图API，所需要的API密钥信息被定义成了环境变量。PDF转换、文件预览默认使用JitAi官方服务器，开发者可以自行搭建服务器，并在环境变量中配置服务地址。
+官方基础框架中封装了阿里云OCR识别、高德地图API，所需要的API密钥信息被定义成了环境变量。PDF转换、文件预览默认使用JitAI官方服务器，开发者可以自行搭建服务器，并在环境变量中配置服务地址。
 
 开发者在开发自己的应用时也可以定义环境变量，比如用环境变量来存储数据库连接信息、API密钥等，应用导出/发布时就不会泄露敏感信息。
 

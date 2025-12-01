@@ -1,6 +1,7 @@
 ---
 sidebar_position: 7
 slug: statistical-charts
+description: "统计图的详细指南和说明。"
 ---
 
 # 统计图

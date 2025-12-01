@@ -1,5 +1,8 @@
 ---
 slug: frontend-interceptor
+title: "Frontend Interceptor Reference"
+description: "Frontend Interceptor Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Frontend Interceptor"
 ---
 # Frontend Interceptor
 Based on frontend network request interception mechanisms (such as Axios interceptors), uniformly handle client-side logic before requests are sent and after responses are returned, such as adding request headers, parameter signing, response unpacking, error handling, and token refresh.

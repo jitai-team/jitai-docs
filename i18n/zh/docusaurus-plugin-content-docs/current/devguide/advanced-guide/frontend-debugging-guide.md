@@ -1,6 +1,7 @@
 ---
 sidebar_position: 8
 slug: frontend-debugging-guide
+description: "前端调试指南的详细指南和说明。"
 ---
 
 # 前端调试指南

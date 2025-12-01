@@ -1,14 +1,17 @@
 ---
 sidebar_position: 1
 slug: alipay
+title: "Alipay Payment Reference"
+description: "Alipay Payment Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Alipay Payment"
 ---
 
 # Alipay Payment
 Alipay payment is the core Type element of the JitPay framework, implementing integration of multiple payment methods based on Alipay's official API. It handles payment link generation, order status queries, and callback notification processing, supporting QR code payment, mobile website payment, and other methods, suitable for e-commerce, O2O, lifestyle services, and various other commercial application scenarios.
 
-The hierarchical structure of Alipay payment elements is Meta (pays.Meta) → Type (pays.AliPayType) → Instance. Developers can quickly create Alipay payment instance elements through JitAi's visual development tools.
+The hierarchical structure of Alipay payment elements is Meta (pays.Meta) → Type (pays.AliPayType) → Instance. Developers can quickly create Alipay payment instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `pays.AliPayType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `pays.AliPayType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

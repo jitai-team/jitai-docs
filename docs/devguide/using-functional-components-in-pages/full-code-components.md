@@ -1,6 +1,7 @@
 ---
 sidebar_position: 15
 slug: full-code-components
+description: "全代码组件开发指南。基于 React 自定义界面、逻辑、样式，实现灵活多变的功能需求。"
 ---
 
 import Tabs from '@theme/Tabs';

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 slug: calling-service-functions-in-pages
+description: "Call backend service functions from pages. Seamless frontend-backend interaction with simple syntax for data queries and business logic."
 ---
 
 # Calling Service Functions in Pages

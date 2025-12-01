@@ -1,12 +1,13 @@
 ---
 slug: button
+description: "按钮组件API参考文档。完整的配置选项、事件处理器和操作按钮的编程用法。"
 ---
 # 按钮
 按钮是基础交互组件，负责触发各种操作和事件。它基于Ant Design Button组件实现用户交互功能，支持多种按钮样式、状态显示、权限控制和条件显示，提供异步操作和加载状态反馈能力。
 
 按钮元素分层结构为Meta（components.Meta） → Type（components.Button） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建按钮实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.ButtonType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的components.ButtonType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 基础配置示例

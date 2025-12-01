@@ -1,12 +1,13 @@
 ---
 slug: approval-workflowing
+description: "审批处理 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 审批处理
 审批处理是工作流审批任务的核心操作组件，基于工作流引擎实现审批任务的处理、查看和状态管理。它负责加载指定工作流的待处理任务、展示审批历史记录和处理用户的审批操作，支持移动端和PC端的自适应渲染。
 
 审批处理元素分层结构为Meta（components.Meta）→ Type（components.TaskHandle）→ 实例，开发者可通过JitAI的可视化开发工具快捷地创建审批处理实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.TaskHandleType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的components.TaskHandleType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 基础配置示例

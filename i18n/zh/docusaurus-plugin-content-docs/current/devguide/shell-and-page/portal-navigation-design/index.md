@@ -1,23 +1,24 @@
 ---
 sidebar_position: 1
+description: "创建门户的详细指南和说明。"
 ---
 
 # 创建门户
-在企业级应用中，通常不同应用角色的用户因权限或负责业务范围不同，看到的系统功能入口有所区分。JitAi使用门户实现这种区分，不同应用角色的用户能看到的门户列表不同，每个门户中的导航菜单也不同。
+在企业级应用中，通常不同应用角色的用户因权限或负责业务范围不同，看到的系统功能入口有所区分。JitAI使用门户实现这种区分，不同应用角色的用户能看到的门户列表不同，每个门户中的导航菜单也不同。
 
 ![门户选择页面](./imgs/portal-select-page.gif)
 
 用户登录系统后即可在门户选择页面看到自己可以访问的门户列表，选择一个门户后即可进入该门户并访问门户中的功能。
 
 ## 应用内置3个门户 {#application-built-in-portals}
-JitAi会为每个新创建的应用创建三个内置的门户：开发者门户、管理者门户、使用者门户。
+JitAI会为每个新创建的应用创建三个内置的门户：开发者门户、管理者门户、使用者门户。
 
 ![IDE门户列表](./imgs/ide-portal-list.png)
 
 以开发者门户为例，用户在任意门户中的左上角都可以进行门户切换操作。
 
 ### 开发者门户 {#developer-portal} 
-开发者门户是给应用开发者使用的，开发者进入开发者门户后即可使用[JitAi开发工具](/docs/devguide/development-tool-and-publish-service/visual-development-tool)进行应用开发工作，例如给不同应用角色配置可访问的门户列表、搭建系统功能、配置应用信息等。
+开发者门户是给应用开发者使用的，开发者进入开发者门户后即可使用[JitAI开发工具](/docs/devguide/development-tool-and-publish-service/visual-development-tool)进行应用开发工作，例如给不同应用角色配置可访问的门户列表、搭建系统功能、配置应用信息等。
 
 除了开发者门户之外，其它所有门户的导航菜单都是由应用开发者在开发者门户中进行配置的。
 
@@ -27,7 +28,7 @@ JitAi会为每个新创建的应用创建三个内置的门户：开发者门户
 每个应用在创建时会自动创建一个管理员账号，初始用户名：`admin123`，初始密码：`admin123`，建议开发者登录后在个人[基本信息](/docs/devguide/development-tool-and-publish-service/visual-development-tool#profile)中修改。
 
 :::tip 组织架构角色与应用角色
-`组织架构角色`与用户在企业组织架构中的岗位相对应，而JitAi应用中的的`应用角色`则代表用户在应用系统中的权限。组织架构角色与应用角色类似但并无严格对照关系，一个普通员工也可以被赋予应用管理员的角色，管理一个应用系统。
+`组织架构角色`与用户在企业组织架构中的岗位相对应，而JitAI应用中的的`应用角色`则代表用户在应用系统中的权限。组织架构角色与应用角色类似但并无严格对照关系，一个普通员工也可以被赋予应用管理员的角色，管理一个应用系统。
 :::
 
 ### 使用者门户 {#user-portal}
@@ -38,7 +39,7 @@ JitAi会为每个新创建的应用创建三个内置的门户：开发者门户
 ## 3种门户类型 {#portal-types}
 ![新建门户](./imgs/create-portal.png)
 
-新建门户时，开发者需要选择门户类型。JitAi提供了三种门户类型：常规门户、SSR门户、空白门户。
+新建门户时，开发者需要选择门户类型。JitAI提供了三种门户类型：常规门户、SSR门户、空白门户。
 
 ### 常规门户 {#generic-portal}
 常规门户是最为常用的门户类型，内置了左侧导航、顶部导航、用户信息展示等完整门户组件，同时支持PC端和移动端的响应式适配。
@@ -181,7 +182,7 @@ SSR(Server-Side Rendering，服务端渲染)门户用于提升首屏加载性能
 ![个人中心功能](./imgs/profile-functions.gif)
 
 ## 在门户中集成AI助理 {#integrating-ai-assistants}
-JitAi支持在门户中直接集成[AI助理](/docs/devguide/ai-assistant/create-ai-assistant)，用户在访问门户时可以与AI助理进行交互。这里做概括性介绍，详细内容请参考[在门户中集成AI助理](/docs/devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals)。
+JitAI支持在门户中直接集成[AI助理](/docs/devguide/ai-assistant/create-ai-assistant)，用户在访问门户时可以与AI助理进行交互。这里做概括性介绍，详细内容请参考[在门户中集成AI助理](/docs/devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals)。
 
 ![门户集成AI助理](./imgs/portal-integrate-ai-assistant.gif)
 

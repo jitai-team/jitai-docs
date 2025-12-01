@@ -1,12 +1,13 @@
 ---
 slug: cascade-table
+description: "级联表 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 级联表
 级联表是支持层级关系数据展示的表格组件，基于树形数据结构实现父子级联显示和联动操作。它负责层级数据的展示、展开折叠操作和级联数据联动，支持多级数据结构的可视化管理和复杂关联关系的数据操作。
 
 级联表元素分层结构为Meta（components.Meta） → Type（components.CascadeTableNew） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建级联表实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的components.CascadeTableNewType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的components.CascadeTableNewType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 基础配置示例

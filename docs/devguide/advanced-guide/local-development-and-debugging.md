@@ -1,20 +1,21 @@
 ---
 sidebar_position: 1
 slug: local-development-and-debugging
+description: "Develop and debug JitAI applications with VSCode or PyCharm. Set up local environment, configure IDE, and debug Python backend code."
 ---
 
-# Developing and Debugging JitAi Applications With VSCode or PyCharm
+# Developing and Debugging JitAI Applications With VSCode or PyCharm
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-This guide walks you through setting up a local development and debugging environment using the desktop version of JitAi for efficient application development.
+This guide walks you through setting up a local development and debugging environment using the desktop version of JitAI for efficient application development.
 
 ## 🛠️ Environment setup {#environment-setup}
 :::info 
 Ensure you have completed the basic installation and configuration. If not yet installed, refer to the [Download and Installation](../../tutorial/download-installation) guide.
 :::
 
-JitAi supports multiple mainstream IDEs for local development and debugging. Choose the one that best suits your workflow:
+JitAI supports multiple mainstream IDEs for local development and debugging. Choose the one that best suits your workflow:
 
 - **Visual Studio Code**: A lightweight editor with a rich Python extension ecosystem
 - **PyCharm**: A professional Python IDE with powerful debugging and refactoring capabilities
@@ -22,7 +23,7 @@ JitAi supports multiple mainstream IDEs for local development and debugging. Cho
 ## ⚙️ IDE debug configuration {#ide-debug-configuration}
 ### Visual Studio Code {#visual-studio-code}
 #### Opening the project {#opening-the-project-vscode}
-Open the JitNode directory from your JitAi installation directory in VSCode:
+Open the JitNode directory from your JitAI installation directory in VSCode:
 
 ```shell title="Path on macOS"
 /Applications/Jit.app/Contents/Resources/app.asar.unpacked/JitNode
@@ -106,7 +107,7 @@ If the `.vscode` directory does not exist, create it first.
 
 ### PyCharm {#pycharm}
 #### Opening the project {#opening-the-project-pycharm}
-Open the JitNode directory from your JitAi installation directory in PyCharm:
+Open the JitNode directory from your JitAI installation directory in PyCharm:
 
 ```shell title="Path on macOS"
 /Applications/Jit.app/Contents/Resources/app.asar.unpacked/JitNode

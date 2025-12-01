@@ -1,6 +1,7 @@
 ---
 sidebar_position: 4
 slug: integrate-knowledge-base-into-agent
+description: "把知识库集成到agent的详细指南和说明。"
 ---
 
 # 把知识库集成到agent
@@ -9,7 +10,7 @@ slug: integrate-knowledge-base-into-agent
 
 ## 知识库与Agent的关系 {#relationship-between-knowledge-base-and-agent}
 
-在JitAi平台中，知识库元素与AI Agent形成了紧密的协作关系：
+在JitAI平台中，知识库元素与AI Agent形成了紧密的协作关系：
 
 - **知识供给者**：知识库将各类文档转化为可被"理解"的结构化知识，为Agent提供丰富的知识来源
 - **智能检索**：通过向量相似度和重排模型，知识库能够理解Agent查询的语义意图，返回最相关的知识片段

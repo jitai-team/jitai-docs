@@ -1,12 +1,15 @@
 ---
 slug: regular-roles
+title: "Generic Roles Reference"
+description: "Generic Roles Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "Generic Roles"
 ---
 # Generic Roles
 Regular roles are permission management components based on the RBAC model, providing a complete solution for role definition, permission assignment, and member binding. They handle user permission control, API access authorization, and portal access management, supporting role inheritance, permission composition, and hierarchical authorization mechanisms, with deep integration with organizational architecture to achieve enterprise-level permission control.
 
-The hierarchical structure of regular role elements is Meta (`roles.Meta`) → Type (`roles.NormalType`) → Instance. Developers can quickly create regular role instance elements through JitAi's visual development tools.
+The hierarchical structure of regular role elements is Meta (`roles.Meta`) → Type (`roles.NormalType`) → Instance. Developers can quickly create regular role instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `roles.NormalType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `roles.NormalType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

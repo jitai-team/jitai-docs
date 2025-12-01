@@ -2,6 +2,7 @@
 sidebar_position: 1
 title: Building Question Bank Management with Easy Mode
 slug: easy_mode
+description: "Build AI-powered data management with CRUD operations in 3 simple steps. Perfect for beginners and rapid development of common business scenarios."
 ---
 
 # Building Question Bank Management with Easy Mode

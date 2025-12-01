@@ -1,18 +1,19 @@
 ---
 sidebar_position: -1
+description: "Reference Index API documentation for developers. Complete specifications, methods, and examples."
 ---
 
 import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 # Reference Index
-JitAi reference documentation provides comprehensive API documentation, configuration instructions, and technical specifications. Developers can query element configuration parameters, method invocation interfaces, data structure definitions, and platform protocol specifications to quickly resolve technical issues during development.
+JitAI reference documentation provides comprehensive API documentation, configuration instructions, and technical specifications. Developers can query element configuration parameters, method invocation interfaces, data structure definitions, and platform protocol specifications to quickly resolve technical issues during development.
 ## [Development Framework](reference/framework)
 Provides element configuration, API interfaces, and usage methods for each framework module, including complete parameter descriptions, code examples, and best practice guidance.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', gap: '16px', marginBottom: '32px'}}>
 
 <IndexCard
-  title="JitAi"
+  title="JitAI"
   href="reference/framework/JitAi"
   description="AI application development framework that provides comprehensive AI-native application building capabilities."
 >
@@ -56,7 +57,7 @@ Provides element configuration, API interfaces, and usage methods for each frame
   <LinkGrid columns={2} links={[
     { text: "ORM Overview", href: "reference/framework/JitORM/" },
     { text: "Database", href: "reference/framework/JitORM/database" },
-    { text: "Data Models", href: "reference/framework/JitORM/data-models" },
+    { text: "Data Models", href: "reference/framework/JitORM/model-types/data-models" },
     { text: "Data Types", href: "reference/framework/JitORM/data-types" },
     { text: "Q Expressions", href: "reference/framework/JitORM/q-expressions" },
     { text: "TQL", href: "reference/framework/JitORM/TQL" },
@@ -181,7 +182,6 @@ Provides element configuration, API interfaces, and usage methods for each frame
   description="Task scheduling framework supporting scheduled tasks and intelligent task scheduling based on data model date fields, providing task monitoring and management capabilities."
 >
   <LinkGrid columns={2} links={[
-    { text: "Task Service", href: "reference/framework/JitTask/task-service" },
     { text: "Scheduled Tasks", href: "reference/framework/JitTask/scheduled-tasks" },
     { text: "Date Field Tasks", href: "reference/framework/JitTask/date-field-tasks" }
   ]} />

@@ -1,12 +1,13 @@
 ---
 slug: wechat-work-dev-organization
+description: "企业微信代开发组织 API 参考文档。完整的规格说明、方法和示例。"
 ---
 # 企业微信代开发组织
 企业微信代开发组织是专门针对企业微信第三方应用的组织集成类型，基于企业微信代开发模式实现多企业组织管理和跨企业授权。它负责企业微信代开发模式下的组织同步、成员管理和权限分配，支持多租户SaaS服务商统一管理多个授权企业的组织架构。
 
-企业微信代开发组织元素分层结构为Meta（corps.Meta）→ Type（corps.QywxProxyType）→ 实例，开发者可通过JitAi的可视化开发工具快捷地创建企业微信代开发组织实例元素。
+企业微信代开发组织元素分层结构为Meta（corps.Meta）→ Type（corps.QywxProxyType）→ 实例，开发者可通过JitAI的可视化开发工具快捷地创建企业微信代开发组织实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的corps.QywxProxyType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的corps.QywxProxyType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

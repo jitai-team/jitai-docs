@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1600 900" 
+     role="img"
+     aria-labelledby="title6 desc6">
+  <title id="title6">商业模式跃迁：从"卖账号"到"卖业务结果"</title>
+  <desc id="desc6">对比传统软件的一次性交付模式与内生系统的持续订阅模式</desc>
+
+  <!-- 样式定义 -->
+  <defs>
+    <style>
+      :root {
+        --primary-color: #326DFF;
+        --primary-light: #8EAEFF;
+        --primary-dark: #1E4FCC;
+        --accent-orange: #FF6B35;
+        --accent-green: #10B981;
+        --bg-light: #F9FAFB;
+        --bg-white: #FFFFFF;
+        --text-dark: #333333;
+        --text-medium: #6b7280;
+        --text-light: #9ca3af;
+        --border-color: #E5E7EB;
+        --text-primary: #326DFF;
+      }
+      
+      .primary { fill: var(--primary-color); }
+      .primary-light { fill: var(--primary-light); }
+      .accent { fill: var(--accent-orange); }
+      .bg-light { fill: var(--bg-light); }
+      .bg-white { fill: var(--bg-white); }
+      
+      .text-main { 
+        fill: var(--text-dark); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+      }
+      
+      .text-title { 
+        fill: var(--text-primary); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 26px;
+        font-weight: 600;
+      }
+      
+      .text-label { 
+        fill: var(--text-dark); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+      }
+      
+      .text-sub { 
+        fill: var(--text-medium); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 18px;
+      }
+      
+      .text-small { 
+        fill: var(--text-medium); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 16px;
+      }
+
+      .card-border {
+        fill: var(--bg-white);
+        stroke: var(--border-color);
+        stroke-width: 1;
+      }
+    </style>
+
+    <!-- 合同图标 -->
+    <symbol id="contract-icon" viewBox="0 0 60 80">
+      <rect x="10" y="10" width="40" height="60" rx="3" fill="#FFFFFF" stroke="#6b7280" stroke-width="2"/>
+      <line x1="18" y1="25" x2="42" y2="25" stroke="#6b7280" stroke-width="2"/>
+      <line x1="18" y1="35" x2="42" y2="35" stroke="#6b7280" stroke-width="2"/>
+      <line x1="18" y1="45" x2="35" y2="45" stroke="#6b7280" stroke-width="2"/>
+      <path d="M 25 55 Q 25 60 30 60 Q 35 60 35 55" stroke="#6b7280" stroke-width="2" fill="none"/>
+    </symbol>
+
+    <!-- 交付图标 -->
+    <symbol id="delivery-icon" viewBox="0 0 80 60">
+      <rect x="20" y="25" width="40" height="25" rx="3" fill="#6b7280"/>
+      <rect x="15" y="30" width="10" height="15" fill="#9ca3af"/>
+      <circle cx="30" cy="52" r="5" fill="#333333"/>
+      <circle cx="50" cy="52" r="5" fill="#333333"/>
+    </symbol>
+
+    <!-- 账户图标 -->
+    <symbol id="account-icon" viewBox="0 0 60 60">
+      <circle cx="30" cy="20" r="12" fill="#6b7280"/>
+      <path d="M 10 50 Q 10 35 30 35 Q 50 35 50 50 Z" fill="#6b7280"/>
+    </symbol>
+
+    <!-- 订阅图标 -->
+    <symbol id="subscription-icon" viewBox="0 0 80 60">
+      <rect x="15" y="10" width="50" height="40" rx="5" fill="#326DFF"/>
+      <circle cx="25" cy="25" r="3" fill="#FFFFFF"/>
+      <line x1="32" y1="25" x2="55" y2="25" stroke="#FFFFFF" stroke-width="2"/>
+      <circle cx="25" cy="35" r="3" fill="#FFFFFF"/>
+      <line x1="32" y1="35" x2="55" y2="35" stroke="#FFFFFF" stroke-width="2"/>
+      <circle cx="25" cy="45" r="3" fill="#FFFFFF"/>
+      <line x1="32" y1="45" x2="55" y2="45" stroke="#FFFFFF" stroke-width="2"/>
+    </symbol>
+
+    <!-- 循环箭头图标 -->
+    <symbol id="iteration-icon" viewBox="0 0 80 80">
+      <path d="M 40 20 A 20 20 0 1 1 40 60" stroke="#326DFF" stroke-width="4" fill="none"/>
+      <polygon points="35,18 40,10 45,18" fill="#326DFF"/>
+      <path d="M 40 60 A 20 20 0 1 1 40 20" stroke="#326DFF" stroke-width="4" fill="none" opacity="0.5"/>
+      <polygon points="35,62 40,70 45,62" fill="#326DFF" opacity="0.5"/>
+    </symbol>
+
+    <!-- 增长曲线图标 -->
+    <symbol id="growth-icon" viewBox="0 0 80 60">
+      <path d="M 10 50 L 20 45 L 30 40 L 40 30 L 50 25 L 60 15 L 70 10" 
+            stroke="#326DFF" stroke-width="3" fill="none"/>
+      <circle cx="10" cy="50" r="3" fill="#326DFF"/>
+      <circle cx="30" cy="40" r="3" fill="#326DFF"/>
+      <circle cx="50" cy="25" r="3" fill="#326DFF"/>
+      <circle cx="70" cy="10" r="3" fill="#326DFF"/>
+    </symbol>
+  </defs>
+
+  <!-- 背景 -->
+  <g id="background">
+    <rect width="1600" height="900" class="bg-light"/>
+  </g>
+
+  <!-- 主标题 -->
+  <g id="header">
+    <text x="800" y="60" text-anchor="middle" class="text-main">商业模式跃迁：从"卖账号"到"卖业务结果"</text>
+    <text x="800" y="92" text-anchor="middle" class="text-sub">Service-as-Software 的本质变革</text>
+  </g>
+
+  <!-- 左侧：传统软件模式 -->
+  <g id="traditional-model">
+    <!-- 背景去除 -->
+    
+    <rect x="120" y="160" width="590" height="60" rx="8" fill="#F0F7FF" stroke="#9ca3af" stroke-width="1"/>
+    <text x="415" y="198" text-anchor="middle" class="text-title" fill="#9ca3af">传统软件模式</text>
+
+    <!-- 流程 -->
+    <!-- 1. 合同 -->
+    <g>
+      <rect x="150" y="260" width="530" height="115" rx="8" class="card-border"/>
+      <use href="#contract-icon" x="185" y="278" width="58" height="78"/>
+      <text x="460" y="305" text-anchor="middle" class="text-label">签订合同</text>
+      <text x="460" y="335" text-anchor="middle" class="text-sub">一次性付费</text>
+      <text x="460" y="361" text-anchor="middle" class="text-small">固定功能，固定价格</text>
+    </g>
+
+    <!-- 箭头 -->
+    <path d="M 415 395 L 415 420" stroke="#6b7280" stroke-width="3" fill="none"/>
+    <polygon points="410,415 415,425 420,415" fill="#6b7280"/>
+
+    <!-- 2. 交付 -->
+    <g>
+      <rect x="150" y="440" width="530" height="115" rx="8" class="card-border"/>
+      <use href="#delivery-icon" x="185" y="463" width="78" height="58"/>
+      <text x="460" y="490" text-anchor="middle" class="text-label">软件交付</text>
+      <text x="460" y="520" text-anchor="middle" class="text-sub">部署上线</text>
+      <text x="460" y="546" text-anchor="middle" class="text-small">培训、验收、移交</text>
+    </g>
+
+    <!-- 箭头 -->
+    <path d="M 415 575 L 415 600" stroke="#6b7280" stroke-width="3" fill="none"/>
+    <polygon points="410,595 415,605 420,595" fill="#6b7280"/>
+
+    <!-- 3. 结果 -->
+    <g>
+      <rect x="150" y="620" width="530" height="70" rx="8" fill="#F0F7FF" stroke="#9ca3af" stroke-width="1"/>
+      <use href="#account-icon" x="185" y="627" width="58" height="58"/>
+      <text x="460" y="650" text-anchor="middle" class="text-label" fill="#6b7280">分配账号使用</text>
+      <text x="460" y="678" text-anchor="middle" class="text-sub" fill="#6b7280">一次性收入 / 交易结束</text>
+    </g>
+  </g>
+
+  <!-- 右侧：Service-as-Software -->
+  <g id="saas-model">
+    <!-- 背景去除 -->
+    
+    <rect x="890" y="160" width="590" height="60" rx="8" fill="#F0F7FF" stroke="#326DFF" stroke-width="1"/>
+    <text x="1185" y="198" text-anchor="middle" class="text-title" fill="#326DFF">Service-as-Software</text>
+
+    <!-- 流程 -->
+    <!-- 1. 订阅 -->
+    <g>
+      <rect x="920" y="260" width="530" height="115" rx="8" class="card-border"/>
+      <use href="#subscription-icon" x="955" y="278" width="78" height="58"/>
+      <text x="1220" y="305" text-anchor="middle" class="text-label" fill="#326DFF">订阅服务</text>
+      <text x="1220" y="335" text-anchor="middle" class="text-sub">按需付费</text>
+      <text x="1220" y="361" text-anchor="middle" class="text-small">持续演进，按价值计费</text>
+    </g>
+
+    <!-- 箭头 -->
+    <path d="M 1185 395 L 1185 420" stroke="#326DFF" stroke-width="3" fill="none"/>
+    <polygon points="1180,415 1185,425 1190,415" fill="#326DFF"/>
+
+    <!-- 2. 持续演进 -->
+    <g>
+      <rect x="920" y="440" width="530" height="115" rx="8" class="card-border"/>
+      <use href="#iteration-icon" x="955" y="455" width="78" height="78"/>
+      <text x="1220" y="490" text-anchor="middle" class="text-label" fill="#326DFF">持续演进</text>
+      <text x="1220" y="520" text-anchor="middle" class="text-sub">迭代优化</text>
+      <text x="1220" y="546" text-anchor="middle" class="text-small">随需求变化而进化</text>
+    </g>
+
+    <!-- 箭头 -->
+    <path d="M 1185 575 L 1185 600" stroke="#326DFF" stroke-width="3" fill="none"/>
+    <polygon points="1180,595 1185,605 1190,595" fill="#326DFF"/>
+
+    <!-- 3. 结果 -->
+    <g>
+      <rect x="920" y="620" width="530" height="70" rx="8" fill="#F0F7FF" stroke="#326DFF" stroke-width="1"/>
+      <use href="#growth-icon" x="955" y="637" width="78" height="58"/>
+      <text x="1220" y="650" text-anchor="middle" class="text-label" fill="#326DFF">持续产生业务结果</text>
+      <text x="1220" y="678" text-anchor="middle" class="text-sub" fill="#326DFF">持续收入 / 陪伴式服务</text>
+    </g>
+  </g>
+
+  <!-- 中间对比箭头 -->
+  <g id="comparison">
+    <line x1="770" y1="415" x2="830" y2="415" stroke="#326DFF" stroke-width="4"/>
+    <polygon points="825,410 835,415 825,420" fill="#326DFF"/>
+    <text x="800" y="445" text-anchor="middle" class="text-label" fill="#326DFF">模式跃迁</text>
+  </g>
+
+  <!-- 底部总结 -->
+  <g id="summary">
+    <rect x="250" y="730" width="1100" height="65" rx="8" fill="#F9FAFB" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="800" y="760" text-anchor="middle" class="text-label" fill="#326DFF">内生系统的本质决定了必须采用订阅式服务模式</text>
+    <text x="800" y="785" text-anchor="middle" class="text-sub">未来是长期订阅和陪伴式服务，迭代能力决定价值</text>
+  </g>
+</svg>

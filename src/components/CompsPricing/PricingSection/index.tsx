@@ -19,7 +19,15 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
     const [activeTab, setActiveTab] = useState<"yearly" | "monthly" | "buyout">(
         "yearly"
     );
-
+    const [isMobile, setIsMobile] = useState(false);
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
     // 弹窗相关状态
     const [showPaymentModal, setShowPaymentModal] = useState(false);
     const [showContactModal, setShowContactModal] = useState(false);
@@ -300,7 +308,7 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
                             </div>
                             <div className={styles.cardAction}>
                                 <button
-                                    className={`${styles.orderButton} ${plan.analyticsCssClass}`}
+                                    className={`${styles.orderButton} ${isMobile? plan.mobileAnalyticsCssClass || plan.analyticsCssClass : plan.analyticsCssClass }`}
                                     onClick={() => handlePaymentClick(plan)}
                                 >
                                     {plan.customPayActionText

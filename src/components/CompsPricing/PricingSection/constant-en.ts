@@ -13,6 +13,7 @@ export interface PricingPlan {
   isRecommended?: boolean;
   cardType: string;
   analyticsCssClass: string;
+  mobileAnalyticsCssClass?: string;
   customPayActionText?: string; // 自定义支付按钮文本
 }
 
@@ -31,6 +32,7 @@ const PRICING_PLANS: PricingPlan[] = [
     buyoutPrice: 'Free',
     cardType: 'desktopCard',
     analyticsCssClass: 'analytics-payFree analytics-download',
+    mobileAnalyticsCssClass: 'analytics-payFree analytics-download-mobile',
     features: [
       '✓ For development environment only',
       '✓ 3 app only',

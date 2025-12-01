@@ -3,7 +3,6 @@ const CONTENT = {
     highlightTitle: "生产级AI",
     buttonDownload: "立即下载",
     buttonDemo: "在线试用",
-    buttonGetStart: "在线试用",
     previewVideoUrl:
         "https://jit-www.oss-accelerate.aliyuncs.com/zh_preview.mp4",
     modal: {

@@ -3,7 +3,6 @@ const CONTENT = {
     highlightTitle: "Production-Grade AI",
     buttonDownload: "Download",
     buttonDemo: "Try Online",
-    buttonGetStart: "Get Start",
     previewVideoUrl:
         "https://jit-www.oss-accelerate.aliyuncs.com/en_preview.mp4",
     modal: {

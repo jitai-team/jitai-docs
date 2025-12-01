@@ -86,7 +86,7 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                     {/* 行动按钮区域 */}
                     <div className={styles.heroButtons}>
                         <a
-                            className={`${styles.primaryButton} analytics-download`}
+                            className={`${styles.primaryButton} ${isMobile ? 'analytics-download-mobile' : 'analytics-download'}`}
                             href="./download"
                         >
                             <span className={styles.buttonText}>
@@ -104,14 +104,12 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                             </span>
                         </a>
                         <a
-                            className={`${styles.secondaryButton} analytics-tryOnline`}
+                            className={`${styles.secondaryButton} ${isMobile ? 'analytics-tryOnline-mobile' : 'analytics-tryOnline'}`}
                             onClick={handleButtonClick}
                             target="_blank"
                         >
                             <span className={styles.buttonText}>
-                                {isMobile
-                                    ? content.buttonGetStart
-                                    : content.buttonDemo}
+                                {content.buttonDemo}
                             </span>
                             <span className={styles.buttonIcon}>
                                 <svg

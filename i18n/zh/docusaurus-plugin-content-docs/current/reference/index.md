@@ -57,7 +57,7 @@ JitAI参考手册提供完整的API文档、配置说明和技术规范。开发
   <LinkGrid columns={2} links={[
     { text: "ORM概述", href: "reference/framework/JitORM/" },
     { text: "数据库", href: "reference/framework/JitORM/database" },
-    { text: "数据模型", href: "reference/framework/JitORM/data-models" },
+    { text: "数据模型", href: "reference/framework/JitORM/model-types/data-models" },
     { text: "数据类型", href: "reference/framework/JitORM/data-types" },
     { text: "Q表达式", href: "reference/framework/JitORM/q-expressions" },
     { text: "TQL", href: "reference/framework/JitORM/TQL" },

@@ -707,7 +707,7 @@ Vue full-code pages deliver a native Vue development experience with full suppor
 # Related Materials
 
 ## CRUD operations for data models {#crud-operations-for-data-models}
-Backend data models provide comprehensive CRUD functionality. See the [API Documentation](/docs/reference/framework/JitORM/data-models#basic-data-operations) for details.
+Backend data models provide comprehensive CRUD functionality. See the [API Documentation](/docs/reference/framework/JitORM/model-types/data-models#model-built-in-functions) for details.
 
 However, backend functions can only be called in backend runtime contexts (service functions, scheduled task functions, event functions). To address this, the platform also provides data model operation interfaces for the frontend environment:
 

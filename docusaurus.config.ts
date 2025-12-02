@@ -236,12 +236,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             to: "/download",
                         },
                         {
-                            label: "Blog",
-                            to: "/blog",
-                        },
-                        {
                             label: "Try Online",
                             to: "https://demo.jit.pro/wanyun/AdminApp",
+                        },
+                        {
+                            label: "Blog",
+                            to: "/blog",
                         },
                     ],
                 },

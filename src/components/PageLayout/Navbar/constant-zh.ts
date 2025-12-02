@@ -40,7 +40,7 @@ const CONTENT = {
         },
         {
             id: "contact",
-            label: "商务咨询",
+            label: "联系我们",
             type: "currentPage",
             url: "/zh/contact",
         },

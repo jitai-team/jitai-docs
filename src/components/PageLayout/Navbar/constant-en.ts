@@ -39,7 +39,7 @@ const CONTENT = {
         },
         {
             id: "contact",
-            label: "Contact Sales",
+            label: "Contact Us",
             type: "currentPage",
             url: "/contact",
         },

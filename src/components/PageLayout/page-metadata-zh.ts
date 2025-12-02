@@ -46,8 +46,8 @@ export const PAGE_METADATA_ZH: Record<string, PageMetadata> = {
             "邀请好友注册JitAI，每成功推荐1位好友，您的桌面版许可证应用数上限即可增加1个，最高可达10个应用。立即参与推荐活动！",
     },
     contact: {
-        title: "商务咨询",
-        description: "填写表单提交您的需求，我们的专业团队将尽快与您联系",
+        title: "联系我们",
+        description: "留下您的联系方式，我们将尽快联系您",
     },
 };
 

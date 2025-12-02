@@ -46,9 +46,8 @@ export const PAGE_METADATA_EN: Record<string, PageMetadata> = {
             "Invite friends to register JitAI. For each successful referral, your desktop license app limit increases by 1, up to a maximum of 10 apps. Join the referral program now!",
     },
     contact: {
-        title: "Contact Sales",
-        description:
-            "Contact our sales team to get more information about JitAI and how it can help your business.",
+        title: "Contact Us",
+        description: "Leave your contact info and we'll get back to you soon",
     },
 };
 

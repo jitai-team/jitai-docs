@@ -308,7 +308,7 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
                             </div>
                             <div className={styles.cardAction}>
                                 <button
-                                    className={`${styles.orderButton} ${isMobile? plan.mobileAnalyticsCssClass || plan.analyticsCssClass : plan.analyticsCssClass }`}
+                                    className={`${styles.orderButton} ${plan.analyticsCssClass + (isMobile ? '-mobile': '')}`}
                                     onClick={() => handlePaymentClick(plan)}
                                 >
                                     {plan.customPayActionText

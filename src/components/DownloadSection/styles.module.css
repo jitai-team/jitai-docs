@@ -280,6 +280,7 @@
   transition: var(--transition-primary);
   box-shadow: var(--shadow-md);
   font-size: var(--font-size-base);
+  letter-spacing: 0.02em;
   border: none;
   cursor: pointer;
   position: relative;
@@ -323,6 +324,8 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  font-size: var(--font-size-base);
+  letter-spacing: 0.02em;
 }
 
 .downloadButtonSecondary::before {
@@ -345,12 +348,6 @@
   background: transparent;
   color: var(--color-primary);
   text-decoration: none;
-}
-
-.buttonText {
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: 0.02em;
 }
 
 /* ===== 安装步骤 ===== */

@@ -38,7 +38,7 @@
     display: grid;
     grid-template-columns: 1fr 20rem;
     gap: var(--space-8);
-    align-items: start;
+    align-items: stretch;
 }
 
 /* 左侧表单区域 */
@@ -75,8 +75,6 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-5);
-    position: sticky;
-    top: 6.25rem;
 }
 
 /* 联系卡片 */
@@ -88,6 +86,24 @@
     border: 1px solid var(--color-gray-200);
     transition: var(--transition-normal);
     text-align: center;
+}
+
+.contactCard:last-child {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.contactCard:last-child .cardHeader {
+    flex-shrink: 0;
+    margin-bottom: 0;
+}
+
+.contactCard:last-child .emailContent {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .contactCard:hover {
@@ -159,7 +175,7 @@
 }
 
 .emailAddress:hover {
-    color: var(--color-secondary);
+    text-decoration: underline;
 }
 
 /* 复制按钮 */
@@ -218,8 +234,11 @@
     }
 
     .contactCard {
-        flex: 1;
         min-width: auto;
+    }
+
+    .contactCard:last-child {
+        flex: none;
     }
 
     .title {

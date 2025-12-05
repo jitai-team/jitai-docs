@@ -5,7 +5,7 @@ description: "数据类型 API 参考文档。完整的规格说明、方法和�
 ---
 
 # 数据类型
-JitAI的数据类型Type元素是对编程语言原生数据类型（如：字符串、数字、列表、字典等）的封装，并提供了一些额外的功能和特性，高频用于定义[数据模型](./data-models)字段的类型。
+JitAI的数据类型Type元素是对编程语言原生数据类型（如：字符串、数字、列表、字典等）的封装，并提供了一些额外的功能和特性，高频用于定义[数据模型](./model-types/data-models)字段的类型。
 
 数据类型元素的分层结构为Meta（datatypes.Meta） → Type（datatypes.xxx），开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的数据类型，以实现自己的封装。
 
@@ -437,7 +437,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 - `value`: 编程语言原生类型的数据值，可读写
 :::
 
-### Stext（单行文本）
+### Stext（单行文本） {#stext}
 **属性：**
 - `length`: 文本长度，只读
 
@@ -455,7 +455,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### Ltext（长文本）
+### Ltext（长文本） {#ltext}
 **继承：** `Stext`
 
 **函数：**
@@ -466,7 +466,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### Numeric（数字）
+### Numeric（数字） {#numeric}
 **属性：**
 - `unit`: 单位，只读
 - `realDecimal`: 实际设置的小数位数，只读
@@ -487,7 +487,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### Money（金额）
+### Money（金额） {#money}
 **继承：** `Numeric`
 
 **属性：**
@@ -510,7 +510,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### Percent（百分比）
+### Percent（百分比） {#percent}
 **继承：** `Numeric`
 
 **属性：**
@@ -535,7 +535,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### RichText（富文本）
+### RichText（富文本） {#richtext}
 **继承：** `Stext`
 
 **属性：**
@@ -546,7 +546,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### AutoInt（自增整数）
+### AutoInt（自增整数） {#autoint}
 **继承：** `Numeric`
 
 **函数：**
@@ -559,7 +559,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### Serial（流水号）
+### Serial（流水号） {#serial}
 **继承：** `Stext`
 
 **函数：**
@@ -578,7 +578,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### Radio（单选）
+### Radio（单选） {#radio}
 **继承：** `Stext`
 
 **函数：**
@@ -588,7 +588,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### Dropdown（下拉选择）
+### Dropdown（下拉选择） {#dropdown}
 **继承：** `Radio`
 
 **属性：**
@@ -600,7 +600,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### MultiRadio（多选单选）
+### MultiRadio（多选单选） {#multiradio}
 **继承：** `Radio`
 
 **属性：**
@@ -620,7 +620,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### MultiDropdown（多选下拉）
+### MultiDropdown（多选下拉） {#multidropdown}
 **继承：** `MultiRadio`
 
 **属性：**
@@ -639,7 +639,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### Checkbox（复选框）
+### Checkbox（复选框） {#checkbox}
 **属性：**
 - `isEnableDescription`: 是否启用描述，只读
 - `checkboxDescription`: 复选框描述，只读
@@ -651,7 +651,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### Date（日期）
+### Date（日期） {#date}
 **属性：**
 - `dateTimeType`: 日期类型，只读
 - `dateTimeFormat`: 日期格式，只读
@@ -695,7 +695,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### Datetime（日期时间）
+### Datetime（日期时间） {#datetime}
 **继承：** `Date`
 
 **属性：**
@@ -711,7 +711,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### Time（时间）
+### Time（时间） {#time}
 **继承：** `Datetime`
 
 **函数：**
@@ -719,7 +719,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### File（附件）
+### File（附件） {#file}
 **继承：** `JitList`
 
 **属性：**
@@ -744,7 +744,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### Image（图片）
+### Image（图片） {#image}
 **继承：** `JitList`
 
 **属性：**
@@ -769,7 +769,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### Signature（手写签名）
+### Signature（手写签名） {#signature}
 **属性：**
 - `mode`: 签名模式，只读（new：每次重新签名，prev：使用上次签名）
 
@@ -778,7 +778,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### Dept（部门）
+### Dept（部门） {#dept}
 **继承：** `Stext`
 
 **属性：**
@@ -806,7 +806,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### MultiDept（多选部门）
+### MultiDept（多选部门） {#multidept}
 **继承：** `Dept`
 
 **函数：**
@@ -815,7 +815,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### Member（成员）
+### Member（成员） {#member}
 **继承：** `Stext`
 
 **属性：**
@@ -852,7 +852,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### MultiMember（多选成员）
+### MultiMember（多选成员） {#multimember}
 **继承：** `Member`
 
 **函数：**
@@ -861,7 +861,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### Address（地址）
+### Address（地址） {#address}
 **继承：** `JitDict`
 
 **属性：**
@@ -880,7 +880,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### Identify（身份证号）
+### Identify（身份证号） {#identify}
 **继承：** `Stext`
 
 **属性：**
@@ -891,7 +891,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### LicensePlate（车牌号）
+### LicensePlate（车牌号） {#licenseplate}
 **继承：** `Stext`
 
 **属性：**
@@ -903,7 +903,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### Phone（手机号）
+### Phone（手机号） {#phone}
 **继承：** `Stext`
 
 **属性：**
@@ -915,7 +915,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### Position（定位）
+### Position（定位） {#position}
 **继承：** `Address`
 
 **属性：**
@@ -934,7 +934,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### Link（超链接）
+### Link（超链接） {#link}
 **继承：** `JitDict`
 
 **属性：**
@@ -946,7 +946,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### SubTable（子表）
+### SubTable（子表） {#subtable}
 **继承：** `RowList`
 
 **属性：**
@@ -971,7 +971,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### JitDict（字典）
+### JitDict（字典） {#jitdict}
 **属性：**
 - `KVCount`: 键值对个数，只读
 - `value`: 变量返回值，可读写
@@ -987,7 +987,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### JitList（列表）
+### JitList（列表） {#jitlist}
 **属性：**
 - `calculable`: 是否可进行求和或平均数计算，只读
 - `comparable`: 是否可比较，只读
@@ -1016,7 +1016,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### JitMap（映射）
+### JitMap（映射） {#jitmap}
 **属性：**
 - `value`: 变量值，可读写
 - `keys`: 键列表，只读
@@ -1030,7 +1030,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### RowData（单行数据）
+### RowData（单行数据） {#rowdata}
 **属性：**
 - `value`: 变量值，可读写
 - `pkData`: 主键数据，只读
@@ -1043,7 +1043,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### RowList（多行数据）
+### RowList（多行数据） {#rowlist}
 **属性：**
 - `Model`: 对应的模型类，只读
 - `value`: 变量值，可读写
@@ -1073,7 +1073,7 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### RelateData（关联单选）
+### RelateData（关联单选） {#relatedata}
 **继承：** `RowData`
 
 **属性：**
@@ -1094,11 +1094,11 @@ JitAI的数据类型Type元素是对编程语言原生数据类型（如：字�
 
 ---
 
-### MultiRelateData（关联多选）
+### MultiRelateData（关联多选） {#multirelatedata}
 **继承：** `RowList`、`RelateData`
 
 ---
-### QFilter（查询过滤器）
+### QFilter（查询过滤器） {#qfilter}
 **属性：**
 - `value`: 变量值，可读写
 

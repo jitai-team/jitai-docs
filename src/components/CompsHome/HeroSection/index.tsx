@@ -4,11 +4,13 @@ import globalStyles from "../../../pages/index.module.css";
 import CONTENT_ZH from "./constant-zh";
 import CONTENT_EN from "./constant-en";
 import { addUTMToUrl } from "../../../utils/utm";
+import Modal from "../../Modal";
 
 const HeroSection: React.FC<{ currentLocale?: string }> = ({
     currentLocale,
 }) => {
     const [isMobile, setIsMobile] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const content = currentLocale === "zh" ? CONTENT_ZH : CONTENT_EN;
 
@@ -28,6 +30,34 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
             window.removeEventListener("resize", checkMobile);
         };
     }, []);
+
+    /**
+     * 处理按钮点击事件，添加 UTM 参数后跳转
+     */
+    const handleButtonClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        // 阻止默认跳转
+        e.preventDefault();
+
+        if (isMobile) {
+            setIsModalOpen(true);
+        } else {
+            // 获取带 UTM 参数的 URL
+            const urlWithUTM = addUTMToUrl(
+                "https://demo.jit.pro/wanyun/AdminApp"
+            );
+            // 在新标签页打开
+            window.open(urlWithUTM, "_blank");
+        }
+    };
+
+    const handleModalConfirm = () => {
+        window.open("./docs/tutorial", "_blank");
+        setIsModalOpen(false);
+    };
+
+    const handleModalCancel = () => {
+        setIsModalOpen(false);
+    };
 
     return (
         <section id="section-0" className={styles.hero}>
@@ -57,13 +87,29 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                     {/* 行动按钮区域 */}
                     <div className={styles.heroButtons}>
                         <a
-                            className={`${styles.primaryButton} analytics-download`}
+                            className={`${styles.primaryButton} ${
+                                isMobile
+                                    ? "analytics-download-mobile"
+                                    : "analytics-download"
+                            }`}
                             href="./download"
                         >
-                            <span className={styles.buttonText}>
+                            <span
+                                className={`${styles.buttonText} ${
+                                    isMobile
+                                        ? "analytics-download-mobile"
+                                        : "analytics-download"
+                                }`}
+                            >
                                 {content.buttonDownload}
                             </span>
-                            <span className={styles.buttonIcon}>
+                            <span
+                                className={`${styles.buttonIcon} ${
+                                    isMobile
+                                        ? "analytics-download-mobile"
+                                        : "analytics-download"
+                                }`}
+                            >
                                 <svg
                                     viewBox="0 0 24 24"
                                     fill="none"
@@ -75,20 +121,30 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                             </span>
                         </a>
                         <a
-                            className={`${styles.secondaryButton} analytics-tryOnline`}
-                            href={
+                            className={`${styles.secondaryButton} ${
                                 isMobile
-                                    ? "./docs/tutorial"
-                                    : addUTMToUrl("https://demo.jit.pro/wanyun/AdminApp")
-                            }
+                                    ? "analytics-tryOnline-mobile"
+                                    : "analytics-tryOnline"
+                            }`}
+                            onClick={handleButtonClick}
                             target="_blank"
                         >
-                            <span className={styles.buttonText}>
-                                {isMobile
-                                    ? content.buttonGetStart
-                                    : content.buttonDemo}
+                            <span
+                                className={`${styles.buttonText} ${
+                                    isMobile
+                                        ? "analytics-tryOnline-mobile"
+                                        : "analytics-tryOnline"
+                                }`}
+                            >
+                                {content.buttonDemo}
                             </span>
-                            <span className={styles.buttonIcon}>
+                            <span
+                                className={`${styles.buttonIcon} ${
+                                    isMobile
+                                        ? "analytics-tryOnline-mobile"
+                                        : "analytics-tryOnline"
+                                }`}
+                            >
                                 <svg
                                     viewBox="0 0 24 24"
                                     fill="none"
@@ -118,20 +174,21 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                             </div>
                             <div className={styles.featuredVideo}>
                                 <video
-                                    className={styles.video}
-                                    controls
+                                    src={content.previewVideoUrl}
+                                    className={`${styles.video} ${styles.videoElement}`}
                                     autoPlay
                                     muted
                                     loop
                                     playsInline
-                                    preload="auto"
-                                >
-                                    <source
-                                        src={content.previewVideoUrl}
-                                        type="video/mp4"
-                                    />
-                                    您的浏览器不支持视频播放。
-                                </video>
+                                    controls
+                                    {...({
+                                        "x5-video-player-type": "h5",
+                                        "x5-video-player-fullscreen": "false",
+                                        "x5-playsinline": "true",
+                                        "webkit-playsinline": "true",
+                                        "t7-video-player-type": "inline",
+                                    } as any)}
+                                />
                             </div>
                         </div>
                     )}
@@ -156,6 +213,50 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                     ))}
                 </div>
             </div>
+            <Modal
+                isOpen={isModalOpen}
+                onClose={handleModalCancel}
+                title={content.modal.title}
+                maxWidth="90%"
+                footer={
+                    <div
+                        style={{
+                            display: "flex",
+                            justifyContent: "flex-end",
+                            gap: "12px",
+                        }}
+                    >
+                        <button
+                            className={styles.secondaryButton}
+                            onClick={handleModalCancel}
+                            style={{
+                                padding: "8px 16px",
+                                fontSize: "14px",
+                                height: "auto",
+                                width: "auto",
+                            }}
+                        >
+                            {content.modal.cancel}
+                        </button>
+                        <button
+                            className={styles.primaryButton}
+                            onClick={handleModalConfirm}
+                            style={{
+                                padding: "8px 16px",
+                                fontSize: "14px",
+                                height: "auto",
+                                width: "auto",
+                            }}
+                        >
+                            {content.modal.confirm}
+                        </button>
+                    </div>
+                }
+            >
+                <div
+                    dangerouslySetInnerHTML={{ __html: content.modal.content }}
+                />
+            </Modal>
         </section>
     );
 };

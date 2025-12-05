@@ -1,214 +1,257 @@
 /* AI 助手悬浮图标 */
 .aiAssistantButton {
-  position: fixed;
-  bottom: 6.25rem; /* 100px */
-  right: 1.875rem; /* 30px */
-  width: 3.75rem; /* 60px */
-  height: 3.75rem; /* 60px */
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-primary) 0%, #2850E8 100%);
-  border: none;
-  box-shadow: 
-    0 0.5rem 1rem -0.25rem rgba(61, 101, 253, 0.4),
-    0 1.25rem 2.5rem -0.5rem rgba(61, 101, 253, 0.25),
-    0 1.875rem 3.75rem -0.75rem rgba(0, 0, 0, 0.15),
-    0 0 0 1px rgba(255, 255, 255, 0.1) inset,
-    0 0.125rem 0.25rem rgba(255, 255, 255, 0.2) inset;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9998;
-  transition: var(--transition-primary);
+    --ai-btn-right-spacing: 1.875rem;
+    /* 30px */
+
+    position: fixed;
+    bottom: 6.25rem;
+    /* 100px */
+    right: var(--ai-btn-right-spacing);
+    width: 3.75rem;
+    /* 60px */
+    height: 3.75rem;
+    /* 60px */
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #2850E8 100%);
+    border: none;
+    box-shadow:
+        0 0.5rem 1rem -0.25rem rgba(61, 101, 253, 0.4),
+        0 1.25rem 2.5rem -0.5rem rgba(61, 101, 253, 0.25),
+        0 1.875rem 3.75rem -0.75rem rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+        0 0.125rem 0.25rem rgba(255, 255, 255, 0.2) inset;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 998;
+    transition: var(--transition-primary);
 }
 
 .aiAssistantButton:hover {
-  transform: scale(1.15) translateY(-0.125rem);
-  box-shadow: 
-    0 0.75rem 1.5rem -0.25rem rgba(61, 101, 253, 0.5),
-    0 1.875rem 3.75rem -0.5rem rgba(61, 101, 253, 0.35),
-    0 2.5rem 5rem -0.75rem rgba(0, 0, 0, 0.2),
-    0 0 2.5rem rgba(61, 101, 253, 0.4),
-    0 0 0 1px rgba(255, 255, 255, 0.15) inset,
-    0 0.125rem 0.25rem rgba(255, 255, 255, 0.3) inset;
+    transform: scale(1.15) translateY(-0.125rem);
+    box-shadow:
+        0 0.75rem 1.5rem -0.25rem rgba(61, 101, 253, 0.5),
+        0 1.875rem 3.75rem -0.5rem rgba(61, 101, 253, 0.35),
+        0 2.5rem 5rem -0.75rem rgba(0, 0, 0, 0.2),
+        0 0 2.5rem rgba(61, 101, 253, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+        0 0.125rem 0.25rem rgba(255, 255, 255, 0.3) inset;
 }
 
 /* AI Assistant 浮窗容器 */
 .aiAssistantWindow {
-  position: fixed;
-  bottom: 1.25rem; /* 20px */
-  right: 1.25rem; /* 20px */
-  width: 24.375rem; /* 390px */
-  height: 40.125rem;
-  background-color: var(--color-white);
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-xl);
-  z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden; /* 容器本身不滚动 */
-  border: 1px solid var(--border-color-light);
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1) translateY(0);
-  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --ai-window-spacing: 1.25rem;
+    /* 20px */
+
+    position: fixed;
+    bottom: var(--ai-window-spacing);
+    right: var(--ai-window-spacing);
+    width: 24.375rem;
+    /* 390px */
+    height: min(80vh, 800px);
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-xl);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* 容器本身不滚动 */
+    border: 1px solid var(--border-color-light);
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) translateY(0);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* 隐藏状态 - 只隐藏但不销毁 DOM，方便快速二次打开 */
 .aiAssistantWindow.hidden {
-  opacity: 0;
-  visibility: hidden;
-  transform: scale(0.95) translateY(0.625rem); /* 10px */
-  pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.95) translateY(0.625rem);
+    /* 10px */
+    pointer-events: none;
 }
 
 /* 浮窗标题栏 */
 .aiAssistantHeader {
-  padding: var(--space-3) var(--space-4);
-  background-color: var(--color-white);
-  color: var(--color-text-primary, #333);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top-left-radius: var(--border-radius-lg);
-  border-top-right-radius: var(--border-radius-lg);
-  border-bottom: 1px solid var(--border-color-light, #e5e7eb);
-  z-index: 10;
+    padding: var(--space-3) var(--space-4);
+    background-color: var(--color-white);
+    color: var(--color-text-primary, #333);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: var(--border-radius-lg);
+    border-top-right-radius: var(--border-radius-lg);
+    border-bottom: 1px solid var(--border-color-light, #e5e7eb);
+    z-index: 10;
 }
 
 .aiAssistantTitle {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
 }
 
 .aiAssistantTitleText {
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-base);
 }
 
 /* Beta 标签 */
 .betaBadge {
-  display: inline-block;
-  padding: 0.125rem 0.5rem; /* 2px 8px */
-  font-size: 0.75rem; /* 12px */
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-white);
-  background-color: var(--color-primary);
-  border-radius: 0.75rem; /* 12px */
-  margin-left: var(--space-2);
-  line-height: 1.2;
-  text-transform: uppercase;
-  letter-spacing: 0.03125rem; /* 0.5px */
+    display: inline-block;
+    padding: 0.125rem 0.5rem;
+    /* 2px 8px */
+    font-size: 0.75rem;
+    /* 12px */
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    border-radius: 0.75rem;
+    /* 12px */
+    margin-left: var(--space-2);
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.03125rem;
+    /* 0.5px */
 }
 
 /* 关闭按钮 */
 .aiAssistantCloseButton {
-  background: none;
-  border: none;
-  color: var(--color-text-secondary, #6c757d);
-  cursor: pointer;
-  padding: var(--space-1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--border-radius-sm);
-  transition: var(--transition-fast);
+    background: none;
+    border: none;
+    color: var(--color-text-secondary, #6c757d);
+    cursor: pointer;
+    padding: var(--space-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius-sm);
+    transition: var(--transition-fast);
 }
 
 .aiAssistantCloseButton:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-  color: var(--color-text-primary, #333);
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--color-text-primary, #333);
 }
 
 /* AI Assistant 内容区域 */
 .aiAssistantContent {
-  flex: 1; /* 占据剩余空间 */
-  width: 100%;
-  min-height: 0; /* 重要：允许 flex 子元素收缩 */
-  margin-top: -3.25rem; /* -52px */
-  margin-bottom: -1rem;
-  overflow: hidden; /* 隐藏溢出内容，不显示滚动条 */
+    flex: 1;
+    /* 占据剩余空间 */
+    width: 100%;
+    min-height: 0;
+    /* 重要：允许 flex 子元素收缩 */
+    margin-top: -3.25rem;
+    /* -52px */
+    margin-bottom: -1rem;
+    overflow: hidden;
+    /* 隐藏溢出内容，不显示滚动条 */
 }
 
 /* 浮窗底部说明 */
 .aiAssistantFooter {
-  flex-shrink: 0;
-  padding: 0 var(--space-4) var(--space-2) var(--space-4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom-left-radius: var(--border-radius-lg);
-  border-bottom-right-radius: var(--border-radius-lg);
+    flex-shrink: 0;
+    padding: 0 var(--space-4) var(--space-2) var(--space-4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: var(--border-radius-lg);
+    border-bottom-right-radius: var(--border-radius-lg);
 }
 
 .poweredByText {
-  font-size: 0.75rem; /* 12px */
-  color: var(--color-text-secondary, #6c757d);
-  font-weight: var(--font-weight-normal);
+    font-size: 0.75rem;
+    /* 12px */
+    color: var(--color-text-secondary, #6c757d);
+    font-weight: var(--font-weight-normal);
 }
 
 /* 响应式样式 */
 @media (max-width: 768px) {
-  .aiAssistantWindow {
-    width: 100vw;
-    /* 使用 CSS 变量，由 JavaScript 动态设置真实的视口高度 */
-    /* 回退到 100vh 以防 JavaScript 未执行 */
-    height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
-    /* iOS Safari 虚拟键盘兼容 */
-    max-height: calc(var(--vh, 1vh) * 100);
-    bottom: 0;
-    right: 0;
-    border-radius: 0; /* 移动端全屏不需要圆角 */
-    overflow: hidden; /* 容器本身不滚动 */
-    /* 适配安全区域（如 iPhone 的刘海屏） */
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
-    /* 确保在虚拟键盘弹出时正确定位 */
-    position: fixed;
-    top: auto;
-  }
+    .aiAssistantWindow {
+        width: 100vw;
+        /* 使用 CSS 变量，由 JavaScript 动态设置真实的视口高度 */
+        /* 回退到 100vh 以防 JavaScript 未执行 */
+        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
+        /* iOS Safari 虚拟键盘兼容 */
+        max-height: calc(var(--vh, 1vh) * 100);
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+        /* 移动端全屏不需要圆角 */
+        overflow: hidden;
+        /* 容器本身不滚动 */
+        /* 适配安全区域（如 iPhone 的刘海屏） */
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+        /* 确保在虚拟键盘弹出时正确定位 */
+        position: fixed;
+        top: auto;
+    }
 
-  .aiAssistantButton {
-    bottom: 5rem; /* 80px */
-    right: 2rem; /* 32px */
-    width: 3.5rem; /* 56px */
-    height: 3.5rem; /* 56px */
-  }
-  
-  /* 移动端内容区域不滚动 */
-  .aiAssistantContent {
-    overflow: hidden;
-  }
+    .aiAssistantButton {
+        bottom: 5rem;
+        /* 80px */
+        right: 2rem;
+        /* 32px */
+        width: 3.5rem;
+        /* 56px */
+        height: 3.5rem;
+        /* 56px */
+    }
+
+    /* 移动端内容区域不滚动 */
+    .aiAssistantContent {
+        overflow: hidden;
+    }
 }
 
 @media (max-width: 480px) {
-  .aiAssistantWindow {
-    width: 100vw;
-    /* 使用 CSS 变量，由 JavaScript 动态设置真实的视口高度 */
-    /* 回退到 100vh 以防 JavaScript 未执行 */
-    height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
-    bottom: 0;
-    right: 0;
-    border-radius: 0; /* 移动端全屏不需要圆角 */
-    overflow: hidden; /* 容器本身不滚动 */
-    /* 适配安全区域（如 iPhone 的刘海屏） */
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
-  }
+    .aiAssistantWindow {
+        width: 100vw;
+        /* 使用 CSS 变量，由 JavaScript 动态设置真实的视口高度 */
+        /* 回退到 100vh 以防 JavaScript 未执行 */
+        height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+        /* 移动端全屏不需要圆角 */
+        overflow: hidden;
+        /* 容器本身不滚动 */
+        /* 适配安全区域（如 iPhone 的刘海屏） */
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
 
-  .aiAssistantButton {
-    bottom: 5rem; /* 80px */
-    right: 2rem; /* 32px */
-    width: 3.125rem; /* 50px */
-    height: 3.125rem; /* 50px */
-  }
-  
-  /* 移动端内容区域不滚动 */
-  .aiAssistantContent {
-    overflow: hidden;
-  }
+    .aiAssistantButton {
+        bottom: 5rem;
+        /* 80px */
+        right: 2rem;
+        /* 32px */
+        width: 3.125rem;
+        /* 50px */
+        height: 3.125rem;
+        /* 50px */
+    }
+
+    /* 移动端内容区域不滚动 */
+    .aiAssistantContent {
+        overflow: hidden;
+    }
 }
 
+/* 大屏适配：超过 1920px 时，保持在内容区域右侧 */
+@media (min-width: 1920px) {
+    .aiAssistantButton {
+        right: calc(50vw - 960px + var(--ai-btn-right-spacing));
+    }
+
+    .aiAssistantWindow {
+        right: calc(50vw - 960px + var(--ai-window-spacing));
+    }
+}

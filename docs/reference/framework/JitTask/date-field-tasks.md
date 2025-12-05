@@ -8,249 +8,215 @@ sidebar_label: "Date Field Tasks"
 
 # Date Field Tasks
 
-Date Field Tasks are scheduled tasks that are automatically triggered based on date-time field values in models. When the specified date-time field reaches the set time, the task logic is automatically executed. It is responsible for monitoring date-time fields in model data, automatically triggering execution when field values expire, and providing flexible time offset configuration, supporting precise time control for early or delayed execution.
+Date Field Tasks (`tasks.DateFieldType`) are a **data-driven** task type within the JitTask framework. Unlike standard scheduled tasks, their triggering does not rely solely on the system clock but rather on date/time fields within specific data rows of a Business Model. This makes them ideal for event reminders and processing logic strongly correlated with specific business data, such as:
 
-The Date Field Task element has a hierarchical structure of Meta (tasks.Meta) → Type (tasks.DateFieldType) → Instance. Developers can quickly create date field task instance elements through JitAI's visual development tools.
+*   Sending a reminder 15 minutes before a meeting starts.
+*   Automatically updating a contract's status to "Expired" on its expiration date.
+*   Sending birthday wishes on an employee's birthday.
 
-Of course, developers can also create their own Type elements or modify the official tasks.DateFieldType element provided by JitAI in their own App to implement their own encapsulation.
+The Date Field Task element follows a hierarchical structure: Meta (`tasks.Meta`) → Type (`tasks.DateFieldType`) → Instance. Developers can quickly create date field task instance elements using visual development tools.
+
+**How it Works**: The system scans the specified business model (`modelPath`), reads the designated time field (`startField`) for each row, and combines it with a configured offset (`offset`) to calculate the trigger time for that specific row. When the task triggers, the corresponding data row is passed as context to the execution function.
 
 ## Quick Start
-### Creating Instance Elements
+
+### Creating an Instance Element
+
 #### Directory Structure
-```
+
+Create a new task directory (e.g., `MeetingReminder`) under the `tasks/` directory. The standard structure is as follows:
+
+```text
 tasks/
-└── ExampleDateTask/          # Task name, customizable
-    ├── e.json               # Element configuration file
-    ├── inner.py             # Task execution logic (optional)
-    └── __init__.py          # Package initialization file
+└── MeetingReminder/      # [Directory] Task element name
+    ├── e.json            # [File] Core configuration file
+    ├── inner.py          # [File] (Optional) Internal execution logic code
+    └── __init__.py       # [File] Python package identifier
 ```
 
-#### e.json File
-```json title="e.json"
+#### e.json
+
+```json title="tasks/MeetingReminder/e.json"
 {
   "type": "tasks.DateFieldType",
-  "title": "Example Date Field Task",
-  "funcType": "Inner",
-  "modelPath": "models.OrderModel",
+  "title": "Meeting Reminder",
+  "modelPath": "models.MeetingModel",
+  "funcType": "Global",
+  "func": "services.MeetingSvc.notify",
   "timerCfg": {
-    "startField": "deliveryTime",
+    "startField": "startTime",
     "startOffset": {
-      "offsetType": 1,
-      "offset": 0,
-      "offsetUnit": "hours"
+      "offsetType": -1,
+      "offset": 15,
+      "offsetUnit": "minute"
     },
     "repeat": {
-      "repeatType": "day",
-      "period": 1
-    },
-    "endTimeType": 0,
-    "skipHoliday": 1
+      "repeatType": "normal"
+    }
   },
   "enable": 1,
   "backendBundleEntry": "."
 }
 ```
 
-#### Business Logic Code
-```python title="inner.py"
-def main(app, taskInstance, rowData):
+#### inner.py
+
+```python title="tasks/MeetingReminder/inner.py"
+from jit.commons.utils.logger import log
+
+def customFunc(rowData):
     """
-    Task execution main function
-    
-    Args:
-        app: Application instance
-        taskInstance: Task instance
-        rowData: Data row that triggered the task
+    Function name must be customFunc
+    :param rowData: The business data row triggering the task
     """
-    # Get order information
-    order_id = rowData.id
-    delivery_time = rowData.deliveryTime
-    
-    # Execute business logic
-    print(f"Order {order_id} delivery time {delivery_time} has arrived")
-    
-    # Can call other services for processing
-    # service = app.getElement("services.NotificationService")
-    # service.sendDeliveryNotification(order_id)
+    # Business logic...
+    # When `funcType` is `Global`, this function does not need to be implemented.
+    pass
 ```
 
-#### Usage Example
-```python title="Using Date Field Tasks"
-# Get task instance
-task = app.getElement("tasks.ExampleDateTask")
+#### __init__.py
 
-# Task will automatically monitor deliveryTime field in OrderModel
-# When field value reaches the set time, automatically execute main function in inner.py
-# System will calculate actual execution time based on timerCfg.startOffset configuration
+```python title="tasks/MeetingReminder/__init__.py"
+# -*-coding:utf-8-*-
+
+from .inner import customFunc
 ```
+
+When `funcType` is `Global`, the execution function is a service function, not `customFunc`.
 
 ## Element Configuration
+
 ### e.json Configuration
-| Parameter Name | Type | Required | Default Value | Description |
-|--------|------|------|--------|------|
-| title | string | Yes | - | Task title |
-| type | string | Yes | - | Must be `tasks.DateFieldType` |
-| funcType | string | Yes | - | Function type, fixed as `Inner` |
-| modelPath | string | Yes | - | FullName of target model |
-| timerCfg | object | Yes | - | Timer configuration object |
-| timerCfg.startField | string | Yes | - | Date-time field name in target model |
-| timerCfg.startOffset | object | No | - | Start time offset configuration |
-| timerCfg.startOffset.offset | int | No | 0 | Time offset amount, can be negative |
-| timerCfg.startOffset.offsetUnit | string | No | hours | Time offset unit: seconds/minutes/hours/days |
-| timerCfg.startOffset.offsetType | int | No | 1 | Offset type, fixed as 1 |
-| timerCfg.repeat | object | No | - | Repeat configuration |
-| timerCfg.endTimeType | int | No | 0 | End time type |
-| timerCfg.skipHoliday | int | No | 1 | Whether to skip holidays, 1 skip, 0 don't skip |
-| enable | int | No | 1 | Whether to enable, 1 enable, 0 disable |
-| backendBundleEntry | string | No | "." | Backend code entry directory |
 
-### Business Configuration File Configuration
-Date Field Tasks do not require additional business configuration files, all configuration is completed in e.json.
+| Field Name | Type | Required | Description | Example |
+| :--- | :--- | :--- | :--- | :--- |
+| `type` | String | **Yes** | Fixed value | `"tasks.DateFieldType"` |
+| `title` | String | **Yes** | Task display name | `"Meeting Reminder"` |
+| `modelPath` | String | **Yes** | Full path of the bound business model | `"models.MeetingModel"` |
+| `enable` | Integer | No | 1: Enable, 0: Disable (Default: 0) | `1` |
+| `funcType` | String | **Yes** | Function type: `"Inner"` or `"Global"` | `"Global"` |
+| `func` | String | Conditional | Required when `funcType` is `"Global"`, points to the service function path | `"services.MeetingSvc.notify"` |
+| `backendBundleEntry` | String | **Yes** | Backend load entry, fixed as `"."` | `"."` |
 
-## Methods
-### main
-Main method for task execution, defined in inner.py.
+### timerCfg Configuration
 
-#### Parameter Details
-| Parameter Name | JitAI Type | Native Type | Required | Description |
-|--------|-----------|----------|------|------|
-| app | App | object | Yes | Application instance, used to get other elements |
-| taskInstance | TaskInstance | object | Yes | Current task instance |
-| rowData | RowData | object | Yes | Data row object that triggered the task |
+This is the core part of the configuration, determining when the task executes.
 
-#### Return Value
-No return value required, function completion indicates task completion.
+| Parameter Name | Type | Required | Description | Example Value |
+|--------|------|------|------|--------|
+| `startField` | String | **Yes** | The time field name in the model; must be of type `DateTime` or `Date` | `"startTime"` |
+| `startOffset` | Object | **Yes** | Configuration object for trigger time offset | See offset configuration |
+| `endOffset` | Object | No | Configuration object for end time offset (for interval-based tasks) | See offset configuration |
+| `repeat` | Object | **Yes** | Configuration object for repetition | See repeat configuration |
 
-#### Usage Example
-```python title="Processing Order Delivery Reminders"
-def main(app, taskInstance, rowData):
-    # Get order data
-    order_id = rowData.id
-    customer_name = rowData.customerName
-    delivery_time = rowData.deliveryTime
+### offset Configuration
+
+`startOffset` (and the optional `endOffset`) defines the trigger timing relative to the field value.
+
+| Parameter Name | Type | Required | Description | Optional Values |
+|--------|------|------|------|--------|
+| `offsetType` | Integer | **Yes** | Offset direction | `-1`: Before (Precede)<br/>`0`: On time<br/>`1`: After (Delay) |
+| `offset` | Integer | **Yes** | Offset quantity | Positive Integer |
+| `offsetUnit` | String | **Yes** | Time unit | `"minute"`: Minute<br/>`"hour"`: Hour<br/>`"day"`: Day |
+| `time` | String | No | Forced time point, format `HH:mm`.<br/>If this field is set, the offset logic of `offset` and `offsetType` will be ignored. | `"09:00"` |
+
+**Example Combinations**:
+
+*   **15 minutes in advance**: `{"offsetType": -1, "offset": 15, "offsetUnit": "minute"}`
+*   **3 days later**: `{"offsetType": 1, "offset": 3, "offsetUnit": "day"}`
+*   **9:00 AM on the same day** (ignoring specific hours/minutes/seconds): `{"offsetType": 0, "offset": 0, "offsetUnit": "day", "time": "09:00"}`
+
+### repeat Configuration
+
+For date field tasks, `repeat` determines whether to trigger multiple times for the same data row.
+
+| Parameter Name | Type | Required | Description | Optional Values |
+|--------|------|------|------|--------|
+| `repeatType` | String | **Yes** | Repeat type | `"normal"`: Trigger only once<br/>`"year"`: Trigger annually |
+
+**Explanation**:
+*   **`normal` (Common)**: Triggers only once for that specific time point of the data row.
+*   **`year`**: Triggers every year. For example, if the model stores an employee's birth date, configuring this to repeat annually will trigger the task on that date every year.
+
+## Execution Function
+
+### Function Parameters
+| Parameter Name | JitAI Type | Python Type | Required | Description |
+| :--- | :--- | :--- | :--- | :--- |
+| `rowData` | RowData | Object | **Yes** | Model data triggering the task |
+
+### Function
+
+**Service Function (Recommended)**
+
+Suitable for reusing existing Service logic.
+
+```python title="services/MeetingSvc/service.py"
+from datatypes.Meta import datatypes
+from services.NormalType import NormalService
+
+class MeetingSvc(NormalService):
+
+  def notify(self, rowData):
+      """
+      :param rowData: The business data row triggering the task
+      """
+      meeting_id = rowData.id.value
+      title = rowData.title.value
+      start_time = rowData.startTime.value
+      
+      log.info(f"Executing meeting reminder: ID={meeting_id}, Title={title}")
+      
+      # Business logic: Send notification
+      # send_message(user_id, f"Meeting {title} will start at {start_time}")
+      
+      return "Done"
+```
+
+**Internal Task Function**
+
+Suitable for scenarios where the logic belongs exclusively to the task and does not need to be reused. The function is implemented in `inner.py` under the element directory, with the function name fixed as `customFunc`.
+
+```python title="tasks/MeetingReminder/inner.py"
+from jit.commons.utils.logger import log
+
+def customFunc(rowData):
+    """
+    Function name must be customFunc
+    :param rowData: The business data row triggering the task
+    """
+    # Get data (Note the use of .value)
+    meeting_id = rowData.id.value
+    title = rowData.title.value
+    start_time = rowData.startTime.value
     
-    # Get notification service
-    notification_service = app.getElement("services.NotificationService")
+    log.info(f"Executing meeting reminder: ID={meeting_id}, Title={title}")
     
-    # Send delivery reminder
-    notification_service.sendNotification({
-        "type": "delivery_reminder",
-        "orderId": order_id,
-        "customerName": customer_name,
-        "deliveryTime": delivery_time
-    })
+    # Business logic: Send notification
+    # send_message(user_id, f"Meeting {title} will start at {start_time}")
     
-    # Update order status
-    order_model = app.getElement("models.OrderModel")
-    order_model.id = order_id
-    order_model.status = "notified"
-    order_model.save()
+    return {"status": "success", "meetingId": meeting_id}
 ```
 
-## Attributes
-### config
-Task configuration object, containing all configuration information from e.json, read-only attribute.
+## Debugging and Notes
 
-### TaskModel
-Task model instance, inherited from parent class, used for managing task records.
+1.  **Field Format**: The `startField` in the model must be of type `DateTime` or `Date`.
 
-### TaskHistoryModel
-Task history model instance, inherited from parent class, used for recording task execution history.
+2.  **Effective Time**: Changes to `e.json` usually require a restart of the backend service to take effect.
 
-## Advanced Features
-### Time Offset Configuration
-Flexible time offset can be achieved through offset and offsetUnit parameters:
+3.  **Data Changes**: If the time field of the business data is modified (e.g., a meeting is postponed), the system typically recalculates the next trigger time (depending on the internal synchronization mechanism; please verify via testing).
 
-#### Early Execution Configuration
-```json title="Execute 1 Hour Early"
-{
-  "type": "tasks.DateFieldType",
-  "modelPath": "models.MeetingModel",
-  "timerCfg": {
-    "startField": "startTime",
-    "startOffset": {
-      "offsetType": 1,
-      "offset": -1,
-      "offsetUnit": "hours"
-    }
-  }
-}
-```
+4.  **Performance Considerations**:
+    *   If the bound model has a huge amount of data (millions), evaluate the pressure of the task scan on the database.
+    *   It is recommended to add database indexes to time fields to improve query performance.
+    *   You can limit the range of data for which tasks need to be created through filter conditions.
 
-#### Delayed Execution Configuration
-```json title="Execute 30 Minutes Later"
-{
-  "type": "tasks.DateFieldType",
-  "modelPath": "models.TaskModel",
-  "timerCfg": {
-    "startField": "deadline",
-    "startOffset": {
-      "offsetType": 1,
-      "offset": 30,
-      "offsetUnit": "minutes"
-    }
-  }
-}
-```
+5.  **RowData Context**:
+    *   The `rowData` passed to the function is a snapshot at the time the task is triggered.
+    *   If the latest data is needed, it is recommended to query the database again by ID within the function.
 
-#### Multiple Time Units
-```json title="Second-level Offset"
-{
-  "timerCfg": {
-    "startOffset": {
-      "offset": 5,
-      "offsetUnit": "seconds"
-    }
-  }
-}
-```
+6.  **Exception Handling**:
+    *   If the code throws an exception, the task status will become `error`.
+    *   It is recommended to use `try...except` blocks within the execution function to avoid affecting other tasks.
 
-```json title="Day-level Offset"
-{
-  "timerCfg": {
-    "startOffset": {
-      "offset": -1,
-      "offsetUnit": "days"
-    }
-  }
-}
-```
-
-### Complex Business Logic Processing
-```python title="Comprehensive Business Processing Example"
-def main(app, taskInstance, rowData):
-    # Get related services
-    email_service = app.getElement("services.EmailService")
-    sms_service = app.getElement("services.SmsService")
-    log_service = app.getElement("services.LogService")
-    
-    try:
-        # Record task start
-        log_service.info(f"Starting to process delivery reminder for order {rowData.id}")
-        
-        # Check customer preference settings
-        customer_model = app.getElement("models.CustomerModel")
-        customer = customer_model.get(f"Q(id={rowData.customerId})", [])
-        
-        # Choose notification method based on preference
-        if customer.notificationPreference == "email":
-            email_service.sendDeliveryReminder(rowData)
-        elif customer.notificationPreference == "sms":
-            sms_service.sendDeliveryReminder(rowData)
-        else:
-            # Default to email
-            email_service.sendDeliveryReminder(rowData)
-        
-        # Update notification status
-        order_model = app.getElement("models.OrderModel")
-        order_model.id = rowData.id
-        order_model.notificationSent = True
-        order_model.notificationTime = app.getElement("datatypes.Datetime")().getValue()
-        order_model.save()
-        
-        log_service.info(f"Delivery reminder for order {rowData.id} sent successfully")
-        
-    except Exception as e:
-        log_service.error(f"Error occurred while processing delivery reminder for order {rowData.id}: {str(e)}")
-        raise
-```
+8.  **Logs**: Task startup, execution results, and error reports are recorded in system logs. You can view them by searching for the keyword `DateFieldTask execution`.

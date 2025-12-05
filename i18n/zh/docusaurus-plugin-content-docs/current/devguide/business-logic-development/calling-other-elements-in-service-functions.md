@@ -21,7 +21,7 @@ result = element.func1(params)
 ## 几个典型示例 {#typical-examples}
 
 ### 调用数据模型函数 {#call-data-model-function}
-调用[数据模型内置函数](../../reference/framework/JitORM/data-models#model-built-in-functions)或者[数据模型自定义函数](../data-modeling/create-data-model-functions)完成增删改查操作。
+调用[数据模型内置函数](../../reference/framework/JitORM/model-types/data-models#model-built-in-functions)或者[数据模型自定义函数](../data-modeling/create-data-model-functions)完成增删改查操作。
 
 ```python
 # 调用数据模型函数

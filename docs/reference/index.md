@@ -57,7 +57,7 @@ Provides element configuration, API interfaces, and usage methods for each frame
   <LinkGrid columns={2} links={[
     { text: "ORM Overview", href: "reference/framework/JitORM/" },
     { text: "Database", href: "reference/framework/JitORM/database" },
-    { text: "Data Models", href: "reference/framework/JitORM/data-models" },
+    { text: "Data Models", href: "reference/framework/JitORM/model-types/data-models" },
     { text: "Data Types", href: "reference/framework/JitORM/data-types" },
     { text: "Q Expressions", href: "reference/framework/JitORM/q-expressions" },
     { text: "TQL", href: "reference/framework/JitORM/TQL" },
@@ -182,7 +182,6 @@ Provides element configuration, API interfaces, and usage methods for each frame
   description="Task scheduling framework supporting scheduled tasks and intelligent task scheduling based on data model date fields, providing task monitoring and management capabilities."
 >
   <LinkGrid columns={2} links={[
-    { text: "Task Service", href: "reference/framework/JitTask/task-service" },
     { text: "Scheduled Tasks", href: "reference/framework/JitTask/scheduled-tasks" },
     { text: "Date Field Tasks", href: "reference/framework/JitTask/date-field-tasks" }
   ]} />

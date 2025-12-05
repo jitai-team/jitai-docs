@@ -81,10 +81,11 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
 
     const handleNavClick = (item: any) => {
         // 为 demo.jit.pro 链接添加 UTM 参数
-        const url = item.url && item.url.includes('demo.jit.pro') 
-            ? addUTMToUrl(item.url) 
-            : item.url;
-        
+        const url =
+            item.url && item.url.includes("demo.jit.pro")
+                ? addUTMToUrl(item.url)
+                : item.url;
+
         // 移动端点击后关闭菜单
         if (isMobile) {
             window.location.href = url;
@@ -116,7 +117,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                         onClick={() => handleNavClick(CONTENT.navItems[0])}
                     >
                         <img
-                            src="https://jit-www.oss-accelerate.aliyuncs.com/logo/logo_title.png"
+                            src="https://jit-www.oss-accelerate.aliyuncs.com/logo/logo_title.svg"
                             alt="JitAI"
                         />
                     </div>
@@ -130,7 +131,9 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                                 <button
                                     key={item.id}
                                     onClick={() => handleNavClick(item)}
-                                    className={`${isActive ? styles.active : ""} ${item.class || ""}`}
+                                    className={`${
+                                        isActive ? styles.active : ""
+                                    } ${item.class || ""}`}
                                     data-type={item.type}
                                 >
                                     {item.label}
@@ -193,7 +196,9 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                                     onClick={() => handleNavClick(item)}
                                     className={`${styles.mobileNavItem} ${
                                         isActive ? styles.active : ""
-                                    } ${item.class || ""} mobile-nav-item`}
+                                    } ${
+                                        item.class + "-mobile" || ""
+                                    } mobile-nav-item`}
                                     data-type={item.type}
                                 >
                                     {item.label}

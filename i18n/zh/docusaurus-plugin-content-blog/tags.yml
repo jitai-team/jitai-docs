@@ -210,3 +210,15 @@ tco:
 automation:
   label: 自动化
   description: 自动化技术、工作流与 AI 驱动的自动化策略
+
+'native productivity':
+  label: 内生生产力
+  description: 基于企业独有数据、流程、规则培育的内生型生产力工具
+
+'application engineering':
+  label: 应用工程
+  description: AI 应用工程体系与技术实践
+
+'matrix framework':
+  label: 矩阵框架
+  description: JitAi 矩阵框架 - 现实建模与技术集成平台

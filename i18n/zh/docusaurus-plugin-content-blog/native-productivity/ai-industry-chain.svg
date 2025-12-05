@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1600 900" 
+     role="img"
+     aria-labelledby="title2 desc2">
+  <title id="title2">AI产业链上下游分野图</title>
+  <desc id="desc2">区分智力供给端和应用端的不同形态，突出ToB市场的定制化需求</desc>
+
+  <!-- 样式定义 -->
+  <defs>
+    <style>
+      :root {
+        --primary-color: #326DFF;
+        --primary-light: #8EAEFF;
+        --primary-dark: #1E4FCC;
+        --accent-orange: #FF6B35;
+        --bg-light: #F9FAFB;
+        --bg-white: #FFFFFF;
+        --text-primary: #326DFF;
+        --text-secondary: #6b7280;
+        --text-dark: #1e293b;
+        --border-color: #E5E7EB;
+      }
+      
+      .primary { fill: var(--primary-color); }
+      .primary-light { fill: var(--primary-light); }
+      .accent { fill: var(--accent-orange); }
+      .bg-light { fill: var(--bg-light); }
+      .bg-white { fill: var(--bg-white); }
+      
+      .text-main { 
+        fill: var(--text-dark); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+      }
+      
+      .text-title { 
+        fill: var(--text-primary); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 26px;
+        font-weight: 600;
+      }
+      
+      .text-label { 
+        fill: var(--text-dark); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+      }
+      
+      .text-sub { 
+        fill: var(--text-secondary); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 18px;
+      }
+      
+      .text-small { 
+        fill: var(--text-secondary); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 16px;
+      }
+
+      .card-border {
+        fill: var(--bg-white);
+        stroke: var(--border-color);
+        stroke-width: 1;
+      }
+    </style>
+
+    <!-- 云朵图标 -->
+    <symbol id="cloud-icon" viewBox="0 0 120 80">
+      <path d="M 30 50 Q 30 35 45 35 Q 45 20 60 20 Q 75 20 75 35 Q 90 35 90 50 Q 90 65 75 65 L 45 65 Q 30 65 30 50 Z" 
+            fill="#8EAEFF" opacity="0.8"/>
+    </symbol>
+
+    <!-- 工厂图标 -->
+    <symbol id="factory-icon" viewBox="0 0 120 100">
+      <rect x="20" y="40" width="80" height="50" fill="#326DFF"/>
+      <rect x="35" y="50" width="15" height="15" fill="#8EAEFF"/>
+      <rect x="65" y="50" width="15" height="15" fill="#8EAEFF"/>
+      <polygon points="20,40 40,20 40,40" fill="#1e293b"/>
+      <polygon points="50,40 70,15 70,40" fill="#1e293b"/>
+      <polygon points="80,40 100,25 100,40" fill="#1e293b"/>
+      <rect x="50" y="70" width="20" height="20" fill="#8EAEFF"/>
+    </symbol>
+
+    <!-- 电池图标 -->
+    <symbol id="battery-icon" viewBox="0 0 100 60">
+      <rect x="10" y="15" width="70" height="30" rx="4" fill="none" stroke="#326DFF" stroke-width="3"/>
+      <rect x="80" y="22" width="8" height="16" rx="2" fill="#326DFF"/>
+      <rect x="15" y="20" width="50" height="20" rx="2" fill="#8EAEFF"/>
+    </symbol>
+
+    <!-- 手机图标 -->
+    <symbol id="phone-icon" viewBox="0 0 60 100">
+      <rect x="10" y="5" width="40" height="90" rx="6" fill="#326DFF"/>
+      <rect x="15" y="12" width="30" height="65" fill="#8EAEFF"/>
+      <circle cx="30" cy="85" r="5" fill="#8EAEFF"/>
+    </symbol>
+
+    <!-- 企业系统图标 -->
+    <symbol id="enterprise-icon" viewBox="0 0 100 100">
+      <rect x="10" y="10" width="35" height="35" rx="4" fill="#326DFF"/>
+      <rect x="55" y="10" width="35" height="35" rx="4" fill="#8EAEFF"/>
+      <rect x="10" y="55" width="35" height="35" rx="4" fill="#8EAEFF"/>
+      <rect x="55" y="55" width="35" height="35" rx="4" fill="#326DFF"/>
+    </symbol>
+  </defs>
+
+  <!-- 背景 -->
+  <g id="background">
+    <rect width="1600" height="900" class="bg-light"/>
+  </g>
+
+  <!-- 主标题 -->
+  <g id="header">
+    <text x="800" y="60" text-anchor="middle" class="text-main">AI产业链上下游：供给与需求的本质区别</text>
+  </g>
+
+  <!-- 上游区域 -->
+  <g id="upstream">
+    <!-- 上游标题 -->
+    <text x="800" y="135" text-anchor="middle" class="text-title">上游：AI 智力供给端</text>
+
+    <!-- 中心化云端智厂 -->
+    <g id="centralized-factory">
+      <rect x="150" y="170" width="620" height="150" rx="12" class="card-border"/>
+      <use href="#cloud-icon" x="390" y="200" width="100" height="70"/>
+      
+      <text x="490" y="295" text-anchor="middle" class="text-label">中心化云端智厂</text>
+      <text x="490" y="315" text-anchor="middle" class="text-small">OpenAI · Google · Anthropic</text>
+    </g>
+
+    <!-- 独立式智机 -->
+    <g id="independent-device">
+      <rect x="830" y="170" width="620" height="150" rx="12" class="card-border"/>
+      <use href="#battery-icon" x="1070" y="210" width="100" height="60"/>
+      
+      <text x="1140" y="295" text-anchor="middle" class="text-label">独立式便携智机</text>
+      <text x="1140" y="315" text-anchor="middle" class="text-small">私有化部署 · 本地化服务器</text>
+    </g>
+
+    <!-- 核心输出 -->
+    <rect x="650" y="340" width="300" height="45" rx="22" fill="#F0F7FF" stroke="#326DFF" stroke-width="1"/>
+    <text x="800" y="368" text-anchor="middle" class="text-label" fill="#326DFF">通用智力 / LLM</text>
+  </g>
+
+  <!-- 关键分割线 -->
+  <g id="divider">
+    <line x1="80" y1="425" x2="1520" y2="425" stroke="#FF6B35" stroke-width="2" stroke-dasharray="10,5"/>
+    <text x="800" y="415" text-anchor="middle" class="text-label" fill="#FF6B35" font-size="16">供给与需求的分野</text>
+    
+    <!-- 简单向下箭头 -->
+    <path d="M 800 435 L 800 460" stroke="#FF6B35" stroke-width="2" fill="none"/>
+    <polygon points="795,455 800,465 805,455" fill="#FF6B35"/>
+  </g>
+
+  <!-- 下游区域 -->
+  <g id="downstream">
+    <!-- 下游标题 -->
+    <text x="800" y="515" text-anchor="middle" class="text-title">下游：生产力应用工具形态</text>
+
+    <!-- ToC 标品市场 -->
+    <g id="toc-market">
+      <rect x="150" y="550" width="620" height="220" rx="12" class="card-border"/>
+      <text x="460" y="585" text-anchor="middle" class="text-label">ToC 标品市场</text>
+      
+      <!-- 三个标准化软件图标 -->
+      <rect x="260" y="620" width="85" height="85" rx="12" fill="#326DFF"/>
+      <circle cx="302" cy="648" r="8" fill="#FFFFFF"/>
+      <circle cx="302" cy="670" r="5" fill="#FFFFFF"/>
+      
+      <rect x="368" y="620" width="85" height="85" rx="12" fill="#326DFF"/>
+      <rect x="385" y="638" width="50" height="35" rx="4" fill="#FFFFFF"/>
+      <path d="M 395 653 L 402 660 L 415 643" stroke="#326DFF" stroke-width="3" fill="none"/>
+      
+      <rect x="476" y="620" width="85" height="85" rx="12" fill="#326DFF"/>
+      <circle cx="503" cy="648" r="6" fill="#FFFFFF"/>
+      <circle cx="518" cy="648" r="6" fill="#FFFFFF"/>
+      <circle cx="533" cy="648" r="6" fill="#FFFFFF"/>
+      <rect x="500" y="668" width="36" height="20" rx="4" fill="#FFFFFF"/>
+      
+      <text x="460" y="725" text-anchor="middle" class="text-sub">标准化专业软件</text>
+      <text x="460" y="748" text-anchor="middle" class="text-small">Midjourney · GitHub Copilot</text>
+    </g>
+
+    <!-- ToB 定制市场 -->
+    <g id="tob-market">
+      <rect x="830" y="550" width="620" height="220" rx="12" class="bg-white" stroke="#FF6B35" stroke-width="1"/>
+      <text x="1140" y="585" text-anchor="middle" class="text-label" fill="#FF6B35">ToB 定制市场 ★</text>
+      
+      <use href="#enterprise-icon" x="1090" y="610" width="100" height="100"/>
+      
+      <text x="1140" y="720" text-anchor="middle" class="text-sub" fill="#FF6B35">企业内生功能模块</text>
+      <text x="1140" y="748" text-anchor="middle" class="text-small" fill="#FF6B35">大模型 + 企业系统 + 专门工具 + 企业数据</text>
+    </g>
+  </g>
+</svg>

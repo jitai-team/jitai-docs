@@ -22,7 +22,7 @@ The `app` object is a runtime object provided by the JitAI platform that referen
 
 ### Calling data model functions {#call-data-model-function}
 
-Invoke [data model built-in functions](../../reference/framework/JitORM/data-models#model-built-in-functions) or [custom data model functions](../data-modeling/create-data-model-functions) to perform CRUD operations.
+Invoke [data model built-in functions](../../reference/framework/JitORM/model-types/data-models#model-built-in-functions) or [custom data model functions](../data-modeling/create-data-model-functions) to perform CRUD operations.
 
 ```python
 # Call data model function

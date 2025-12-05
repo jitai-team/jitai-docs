@@ -5,7 +5,6 @@ import Modal from "../../Modal";
 import CONTENT_EN from "./constant-en";
 import CONTENT_ZH from "./constant-zh";
 import { STRIPE_LINKS } from "./constant-common";
-import { addUTMToUrl } from "../../../utils/utm";
 
 interface PricingSectionProps {
     currentLocale?: string;
@@ -19,15 +18,21 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
     const [activeTab, setActiveTab] = useState<"yearly" | "monthly" | "buyout">(
         "yearly"
     );
-
+    const [isMobile, setIsMobile] = useState(false);
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
     // 弹窗相关状态
     const [showPaymentModal, setShowPaymentModal] = useState(false);
-    const [showContactModal, setShowContactModal] = useState(false);
     const [selectedPlan, setSelectedPlan] = useState<any>(null);
     const [teamId, setTeamId] = useState("");
     const [teamTitle, setTeamTitle] = useState("");
     const [teamIdError, setTeamIdError] = useState("");
-    const [preloadIframe, setPreloadIframe] = useState(false);
 
     // 解析URL参数
     useEffect(() => {
@@ -54,58 +59,6 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
         return () => clearTimeout(timer);
     }, []);
 
-    // 预加载 iframe，延迟加载避免影响页面初始性能
-    useEffect(() => {
-        // 立即添加 DNS 预解析和预连接
-        const contactSalesUrl = CONTENT.contactSalesLink;
-        const hostname = new URL(contactSalesUrl).origin;
-
-        // 添加 DNS 预解析
-        const dnsPrefetch = document.createElement("link");
-        dnsPrefetch.rel = "dns-prefetch";
-        dnsPrefetch.href = hostname;
-        document.head.appendChild(dnsPrefetch);
-
-        // 添加预连接
-        const preconnect = document.createElement("link");
-        preconnect.rel = "preconnect";
-        preconnect.href = hostname;
-        document.head.appendChild(preconnect);
-
-        // 延迟加载 iframe
-        const preloadTimer = setTimeout(() => {
-            console.log("🚀 开始预加载联系销售表单 iframe");
-            setPreloadIframe(true);
-        }, 1000); // 页面加载 1 秒后开始预加载
-
-        return () => {
-            clearTimeout(preloadTimer);
-            // 清理添加的 link 标签
-            if (document.head.contains(dnsPrefetch)) {
-                document.head.removeChild(dnsPrefetch);
-            }
-            if (document.head.contains(preconnect)) {
-                document.head.removeChild(preconnect);
-            }
-        };
-    }, []);
-
-    // 处理鼠标悬停在企业版卡片上时，立即触发预加载
-    const handleEnterpriseCardHover = () => {
-        if (!preloadIframe) {
-            console.log("🎯 用户悬停企业版卡片，立即触发预加载");
-            setPreloadIframe(true);
-        }
-    };
-
-    // 监听预加载状态
-    useEffect(() => {
-        if (preloadIframe) {
-            console.log("✅ 预加载 iframe 已渲染");
-            console.log("📋 预加载 URL:", getContactSalesUrl());
-        }
-    }, [preloadIframe]);
-
     // 处理支付按钮点击
     const handlePaymentClick = (plan: any) => {
         switch (plan.id) {
@@ -113,7 +66,7 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
                 window.location.href = "./download";
                 break;
             case "custom":
-                setShowContactModal(true);
+                window.location.href = "./contact";
                 break;
             default:
                 setSelectedPlan(plan);
@@ -124,7 +77,7 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
 
     // 处理自定义方案联系销售点击
     const handleCustomContactClick = () => {
-        setShowContactModal(true);
+        window.location.href = "./contact";
     };
 
     // 处理支付确认
@@ -159,17 +112,6 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
     const handlePaymentCancel = () => {
         setShowPaymentModal(false);
         setTeamIdError("");
-    };
-
-    // Build contact sales URL with parameters
-    const getContactSalesUrl = () => {
-        if (typeof window === "undefined") return "";
-        const url = new URL(addUTMToUrl(CONTENT.contactSalesLink), window.location.origin);
-        url.searchParams.set("team_id", teamId.trim());
-        url.searchParams.set("team_title", teamTitle.trim());
-        url.searchParams.set("is_popup", "1");
-        console.log("🚀 url:", url.toString());
-        return url.toString();
     };
 
     return (
@@ -261,11 +203,6 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
                             className={`${styles.pricingCard} ${
                                 styles[plan.cardType]
                             } ${plan.isRecommended ? styles.recommended : ""}`}
-                            onMouseEnter={
-                                plan.id === "custom"
-                                    ? handleEnterpriseCardHover
-                                    : undefined
-                            }
                         >
                             {plan.isRecommended && (
                                 <div className={styles.recommendedBadge}>
@@ -300,7 +237,10 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
                             </div>
                             <div className={styles.cardAction}>
                                 <button
-                                    className={`${styles.orderButton} ${plan.analyticsCssClass}`}
+                                    className={`${styles.orderButton} ${
+                                        plan.analyticsCssClass +
+                                        (isMobile ? "-mobile" : "")
+                                    }`}
                                     onClick={() => handlePaymentClick(plan)}
                                 >
                                     {plan.customPayActionText
@@ -446,56 +386,6 @@ const PricingSection: React.FC<PricingSectionProps> = ({ currentLocale }) => {
                         </p>
                     </div>
                 </Modal>
-
-                {/* 企业版联系我们弹窗 */}
-                <Modal
-                    isOpen={showContactModal}
-                    onClose={() => setShowContactModal(false)}
-                    title={CONTENT.customPlan.contactText}
-                    maxWidth="500px"
-                    // maxHeight="80vh"
-                    bodyStyle={{ padding: 0 }}
-                >
-                    <iframe
-                        src={getContactSalesUrl()}
-                        style={{
-                            width: "100%",
-                            // height: '70vh',
-                            minHeight: "500px",
-                            border: "none",
-                            display: "block",
-                        }}
-                        title={CONTENT.customPlan.contactText}
-                        loading="eager"
-                    />
-                </Modal>
-
-                {/* 预加载 iframe - 隐藏但提前加载（使用完整 URL，包含参数） */}
-                {preloadIframe && !showContactModal && (
-                    <div
-                        style={{
-                            position: "fixed",
-                            top: 0,
-                            left: 0,
-                            width: "100vw",
-                            height: "100vh",
-                            visibility: "hidden",
-                            pointerEvents: "none",
-                            zIndex: -9999,
-                        }}
-                    >
-                        <iframe
-                            src={getContactSalesUrl()}
-                            style={{
-                                width: "100%",
-                                height: "100%",
-                                border: "none",
-                            }}
-                            title="Preload Contact Sales"
-                            aria-hidden="true"
-                        />
-                    </div>
-                )}
             </div>
         </section>
     );

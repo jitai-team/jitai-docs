@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import ReactDOM from 'react-dom';
 import styles from './styles.module.css';
 
 interface ModalProps {
@@ -24,6 +25,13 @@ const Modal: React.FC<ModalProps> = ({
   bodyStyle,
   onOverlayClick
 }) => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+    return () => setMounted(false);
+  }, []);
+
   useEffect(() => {
     if (isOpen) {
       // 保存当前滚动位置并阻止底层页面滚动
@@ -53,7 +61,7 @@ const Modal: React.FC<ModalProps> = ({
     }
   }, [isOpen]);
 
-  if (!isOpen) return null;
+  if (!isOpen || !mounted) return null;
 
   const handleOverlayClick = () => {
     if (onOverlayClick) {
@@ -63,7 +71,7 @@ const Modal: React.FC<ModalProps> = ({
     }
   };
 
-  return (
+  const modalContent = (
     <div className={styles.modalOverlay} onClick={handleOverlayClick}>
       <div 
         className={styles.modalContent} 
@@ -92,7 +100,8 @@ const Modal: React.FC<ModalProps> = ({
       </div>
     </div>
   );
+
+  return ReactDOM.createPortal(modalContent, document.body);
 };
 
 export default Modal;
-

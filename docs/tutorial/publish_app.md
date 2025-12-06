@@ -2,11 +2,11 @@
 sidebar_position: 5
 title: Publish Application
 slug: publish_app
-description: "Publish and deploy JitAi applications. Learn online distribution, environment variables, production setup, and application update workflows."
+description: "Publish and deploy JitAI applications. Learn online distribution, environment variables, production setup, and application update workflows."
 ---
 # Publish Application
 
-JitAi supports multiple application distribution methods across desktop, server, and cloud environments:
+JitAI supports multiple application distribution methods across desktop, server, and cloud environments:
 
 * **Online Distribution**: The most convenient approach for publishing, deploying, and updating applications (detailed below)
 * **Offline Distribution**: Export and import source code between different environments

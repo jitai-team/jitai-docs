@@ -3,9 +3,9 @@ slug: storage-service
 ---
 # Storage Service
 
-The Storage Service (StorageSvc) is JitAi platform's unified file storage management service, providing standardized file operation interfaces across storage types. It supports multiple storage backends (Aliyun OSS, AWS S3, Minio, local disk, etc.), implements core functionalities such as file upload, download, preview, and deletion, and features built-in file expiration management and automatic cleanup mechanisms, delivering flexible and reliable file storage solutions for enterprise applications.
+The Storage Service (StorageSvc) is JitAI platform's unified file storage management service, providing standardized file operation interfaces across storage types. It supports multiple storage backends (Aliyun OSS, AWS S3, Minio, local disk, etc.), implements core functionalities such as file upload, download, preview, and deletion, and features built-in file expiration management and automatic cleanup mechanisms, delivering flexible and reliable file storage solutions for enterprise applications.
 
-The Storage Service is a standard service element (services.NormalType). Developers can use it directly through JitAi's service invocation mechanism without worrying about underlying storage implementation details. The service automatically uses the system's default storage or a specified storage instance for file operations.
+The Storage Service is a standard service element (services.NormalType). Developers can use it directly through JitAI's service invocation mechanism without worrying about underlying storage implementation details. The service automatically uses the system's default storage or a specified storage instance for file operations.
 
 ## Quick start {#quick-start}
 
@@ -337,7 +337,7 @@ for file_path in files_to_delete:
 
 ### Attachment field storage format {#attachment-format}
 
-In JitAi system, attachment fields use a standardized JSON array format to store complete file metadata information for each attachment object.
+In JitAI system, attachment fields use a standardized JSON array format to store complete file metadata information for each attachment object.
 
 #### Data structure {#data-structure}
 

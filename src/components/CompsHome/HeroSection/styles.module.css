@@ -186,6 +186,9 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   line-height: 0 !important;
   font-size: 0;
+  /* 确保视频层级不至于过高，但主要还是靠视频标签属性控制 */
+  z-index: 1;
+  position: relative;
 }
 
 .video {
@@ -193,6 +196,8 @@
   height: auto;
   display: block;
   aspect-ratio: 16 / 9;
+  transform: scale(1.01);
+  object-fit: cover;
 }
 
 /* 卡片网格 */
@@ -267,7 +272,8 @@
 @media (max-width: 768px) {
   .hero {
     padding: var(--space-12) 0 var(--space-8) 0;
-    min-height: 100vh;
+    /* 移除强制 100vh，改用最小高度或 auto，避免百度浏览器地址栏问题 */
+    min-height: auto;
     justify-content: center;
   }
 
@@ -290,6 +296,8 @@
     max-width: 280px;
     padding: var(--space-3) var(--space-6);
     font-size: var(--font-size-base);
+    /* 移动端禁用 backdrop-filter，防止渲染异常 */
+    backdrop-filter: none;
   }
 
   .featuredContent {
@@ -311,10 +319,23 @@
     grid-template-columns: 1fr;
     gap: var(--space-6);
     margin-top: var(--space-12);
+    /* 确保 grid 布局在旧设备上也能工作 */
+    display: flex;
+    flex-direction: column;
   }
 
   .card {
     padding: var(--space-8) var(--space-6);
+    /* 移动端禁用 backdrop-filter */
+    backdrop-filter: none;
+    /* 提供一个不透明的背景色作为回退 */
+    background: var(--bg-card); 
+    /* 添加 margin-bottom 作为 gap 的回退 */
+    margin-bottom: var(--space-6);
+  }
+  
+  .card:last-child {
+    margin-bottom: 0;
   }
 
   .cardHeader {

@@ -6,7 +6,7 @@ description: "Create custom data model functions for business logic. Encapsulate
 
 # Creating Data Model Functions
 
-In object-oriented development, functions can be encapsulated within classes to implement specific business logic. JitAi's data models also support custom functions, extending data models with comprehensive business logic processing capabilities.
+In object-oriented development, functions can be encapsulated within classes to implement specific business logic. JitAI's data models also support custom functions, extending data models with comprehensive business logic processing capabilities.
 
 ![Model Function Interface](./img/model-function-1.png "Model Function Interface")
 

@@ -6,22 +6,22 @@ description: "在服务函数中调用其它元素的详细指南和说明。"
 
 # 在服务函数中调用其它元素
 
-在服务元素中，每个服务函数都可以调用其它后端元素，从而组成复杂的业务处理流程。JitAi支持开发者以可视化的方式调用其它元素，也可以在服务函数中直接写代码调用其它元素。
+在服务元素中，每个服务函数都可以调用其它后端元素，从而组成复杂的业务处理流程。JitAI支持开发者以可视化的方式调用其它元素，也可以在服务函数中直接写代码调用其它元素。
 
 ## 使用平台API调用其它元素 {#use-platform-api-to-call-other-elements}
 
-JitAi应用运行平台提供系统级API，开发者可以在函数逻辑中使用这些API，其中就包括调用元素时使用的`app.getElement`函数。`app.getElement`返回的是一个元素实例对象，该对象中声明的函数都可以被调用。
+JitAI应用运行平台提供系统级API，开发者可以在函数逻辑中使用这些API，其中就包括调用元素时使用的`app.getElement`函数。`app.getElement`返回的是一个元素实例对象，该对象中声明的函数都可以被调用。
 
 ```python title="示例"
 element = app.getElement("element fullName")
 result = element.func1(params)
 ```
-`app`是JitAi运行平台提供的运行时对象，指向当前应用，详情参考[App](../../reference/runtime-platform/backend/applications/App)参考文档。
+`app`是JitAI运行平台提供的运行时对象，指向当前应用，详情参考[App](../../reference/runtime-platform/backend/applications/App)参考文档。
 
 ## 几个典型示例 {#typical-examples}
 
 ### 调用数据模型函数 {#call-data-model-function}
-调用[数据模型内置函数](../../reference/framework/JitORM/data-models#model-built-in-functions)或者[数据模型自定义函数](../data-modeling/create-data-model-functions)完成增删改查操作。
+调用[数据模型内置函数](../../reference/framework/JitORM/model-types/data-models#model-built-in-functions)或者[数据模型自定义函数](../data-modeling/create-data-model-functions)完成增删改查操作。
 
 ```python
 # 调用数据模型函数

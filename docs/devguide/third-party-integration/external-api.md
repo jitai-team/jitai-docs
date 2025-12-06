@@ -121,11 +121,11 @@ If the interface returns data, you must configure the appropriate return value t
 
 ![Return Value Type](./img/1/api_2025-08-27_17-13-42.gif "Return Value Type")
 
-Note: All return value types are [data types](../../reference/framework/JitORM/data-types) defined within the JitAi framework.
+Note: All return value types are [data types](../../reference/framework/JitORM/data-types) defined within the JitAI framework.
 
 #### Callback function {#callback-function}
 
-JitAi uses callback functions to configure service functions that process API response results with business logic.
+JitAI uses callback functions to configure service functions that process API response results with business logic.
 
 ![Callback Function](./img/1/api_2025-08-27_15-13-23.png "Callback Function")
 

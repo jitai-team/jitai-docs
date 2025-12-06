@@ -1,27 +1,41 @@
 ---
 slug: model-events
-title: "Model Events Reference"
-description: "Model Events Reference - API documentation for developers. Complete specifications, methods, and examples."
-sidebar_label: "Model Events"
+description: "Model Events API Reference. Complete specifications, methods, and examples."
 ---
+
 # Model Events
-Model events are event mechanisms that automatically trigger based on model data operations, implementing data change monitoring and response based on event subscription-publish patterns. They are responsible for monitoring model CRUD operations, providing rich trigger timing options and supporting conditional filtering with field-level trigger control, supporting both synchronous and asynchronous execution modes, suitable for data auditing, business rule execution, message notification, and other scenarios.
 
-The hierarchical structure of model event elements is Meta (events.Meta) → Type (events.ModelType) → Instance. Developers can quickly create model event instance elements through JitAI's visual development tools.
+Model events (`events.ModelType`) are an event mechanism automatically triggered by model data operations. Based on the event publish-subscribe pattern, they listen for and respond to data changes, handling model Create, Read, Update, and Delete (CRUD) operations.
 
-Of course, developers can also create their own Type elements or modify the official `events.ModelType` element provided by JitAi in their own App to implement their own encapsulation.
+Model events are suitable for scenarios such as data auditing, business rule execution, and message notifications. For example:
+
+*   **Data Auditing**: Recording the history of changes to critical data.
+*   **Business Linkage**: Automatically adjusting inventory after an order status update.
+*   **Message Notification**: Sending a welcome email after a new user registers.
+
+The hierarchical structure of model event elements is: Meta (`events.Meta`) → Type (`events.ModelType`) → Instance. Developers can quickly create model event instance elements using the visual development tools.
+
+**Working Principle**: The system listens to a specified business model (`sender`). When a specific operation (`operate`) occurs and meets the filter conditions (`filter`), the event is triggered. The event can execute a specified function (`func` or `inner.py`) either synchronously or asynchronously (`asyncType`), passing the data before and after the change as context to the execution function.
 
 ## Quick Start
-### Basic Configuration Example
-```text title="Recommended Directory Structure"
+
+### Creating Instance Elements
+
+#### Directory Structure
+
+Create a new event directory (e.g., `UserDataAudit`) under the `events/` directory. The standard structure is as follows:
+
+```text
 events/
-└── UserDataAudit/           # User data audit event
-    ├── e.json              # Event configuration file
-    ├── inner.py            # Internal function implementation (when funcType is Inner)
-    └── __init__.py         # Package initialization file
+└── UserDataAudit/           # [Directory] Event element name
+    ├── e.json               # [File] Core configuration file
+    ├── inner.py             # [File] (Optional) Internal execution logic code
+    └── __init__.py          # [File] Python package identifier
 ```
 
-```json title="e.json - Event Configuration File"
+#### e.json
+
+```json title="events/UserDataAudit/e.json"
 {
   "type": "events.ModelType",
   "title": "User Data Audit",
@@ -29,20 +43,101 @@ events/
   "operate": "UpdateAfter",
   "funcType": "Inner",
   "asyncType": false,
-  "filter": "Q(status='active')",
+  "filter": "Q(Q('status', 'status', 'active'))",
   "fields": ["name", "email", "status"],
   "enable": 1,
   "backendBundleEntry": "."
 }
 ```
 
-```python title="inner.py - Event Handler Function"
+#### inner.py
+
+```python title="events/UserDataAudit/inner.py"
 def customFunc(eventOutData):
     """
-    User data change audit
-    
-    Args:
-        eventOutData: JitDict type, contains event-related data
+    Function name must be customFunc
+    :param eventOutData: JitDict type, contains event-related data
+    """
+    # When `funcType` is `Global`, this function implementation is not required.
+    pass
+```
+
+#### \_\_init\_\_.py
+
+```python title="events/UserDataAudit/__init__.py"
+from .inner import customFunc
+```
+
+### Element Configuration
+
+#### e.json Configuration
+
+| Field Name | Type | Required | Description | Example |
+| :--- | :--- | :--- | :--- | :--- |
+| `type` | String | **Yes** | Fixed value | `"events.ModelType"` |
+| `title` | String | **Yes** | Event display name | `"User Data Audit"` |
+| `sender` | String | **Yes** | Full path (fullName) of the monitored model | `"models.UserModel"` |
+| `operate` | String | **Yes** | Trigger operation type | `"UpdateAfter"` (see enumeration below) |
+| `funcType` | String | No | Function type: `"Global"` \| `"Inner"` | `"Global"` (Default/Recommended) |
+| `func` | String | Conditional | Required when `funcType` is `"Global"`; points to the service function  path | e.g., `"services.AuditSvc.log_change"` |
+| `asyncType` | Boolean | No | Whether to execute asynchronously | `false` (Default) |
+| `filter` | String | No | Q expression filter condition | `"Q(Q('status', 'status', 'active'))"` |
+| `fields` | Array | No | List of triggering fields; if empty, monitors all fields | `["name", "email"]` |
+| `enable` | Integer | No | 1: Enable, 0: Disable | `1` (Default) |
+| `backendBundleEntry` | String | **Yes** | Backend load entry, fixed as `"."` | `"."` |
+
+#### Operation Type Enumeration (operate)
+
+*   `AddBefore`: Triggered before adding data.
+*   `AddAfter`: Triggered after adding data.
+*   `UpdateBefore`: Triggered before updating data.
+*   `UpdateAfter`: Triggered after updating data.
+*   `DeleteBefore`: Triggered before deleting data.
+*   `DeleteAfter`: Triggered after deleting data.
+*   `FieldUpdateAfter`: Triggered after any write operation.
+
+## Execution Function
+
+### Function Arguments
+
+| Parameter Name | JitAI Type | Python Type | Description |
+| :--- | :--- | :--- | :--- |
+| `eventOutData` | JitDict | dict | Dictionary object containing event context data |
+
+**eventOutData Structure Description**:
+
+*   `model`: (Stext) Full model name.
+*   `optType`: (Stext) Operation type.
+*   `prevData`: (RowData) Data before change (empty for Add operations).
+*   `postData`: (RowData) Data after change (empty for Delete operations).
+
+### Function Body
+
+**Service Function (Recommended)**
+
+Suitable for reusing existing Service logic.
+
+```python title="services/AuditSvc/service.py"
+from services.NormalType import NormalService
+
+class AuditSvc(NormalService):
+    def log_change(self, eventOutData):
+        """
+        :param eventOutData: Event context data
+        """
+        post_data = eventOutData.postData.value
+        print(f"Received data change: {post_data.get('name')}")
+```
+
+**Event Internal Function**
+
+Suitable for scenarios where logic belongs exclusively to this event and does not need reuse. The function is implemented in `inner.py` under the element directory.
+
+```python title="events/UserDataAudit/inner.py"
+def customFunc(eventOutData):
+    """
+    Function name must be customFunc
+    :param eventOutData: Event context data
     """
     model = eventOutData.model.value
     opt_type = eventOutData.optType.value
@@ -54,317 +149,18 @@ def customFunc(eventOutData):
     print(f"Data after change: {post_data}")
 ```
 
-```python title="__init__.py"
-from .inner import customFunc
-```
+## Debugging and Notes
 
-### Configuration Properties Description
-| Property Name | Type | Description | Default Value | Required |
-|--------|------|------|---------|------|
-| type | string | Fixed value `events.ModelType` | - | Yes |
-| title | string | Event title | - | Yes |
-| sender | string | FullName of monitored model | - | Yes |
-| operate | string | Operation type, see operation type enumeration | - | Yes |
-| funcType | string | Function type: `Global` &#124; `Inner` | `Global` | No |
-| func | string | Global function path (required when funcType is Global) | - | No |
-| asyncType | boolean | Whether to execute asynchronously | `false` | No |
-| filter | string | Q expression filter condition | - | No |
-| fields | array | Trigger field list, empty means monitor all fields | `[]` | No |
-| enable | number | Whether enabled: 1 enabled, 0 disabled | `1` | No |
+1.  **Transaction Control**:
+    *   `*Before` events (e.g., `UpdateBefore`) are typically executed before the database transaction commits. If the event function throws an exception, the main operation may be rolled back.
+    *   `*After` events (e.g., `UpdateAfter`) are typically executed after the database operation completes.
+    *   If it is an asynchronous event (`asyncType: true`), it is always executed asynchronously after the main operation completes, without blocking the main thread or rolling back the main operation.
 
-**Operation Type Enumeration**:
-- `AddBefore` - Trigger before adding data
-- `AddAfter` - Trigger after adding data  
-- `UpdateBefore` - Trigger before updating data
-- `UpdateAfter` - Trigger after updating data
-- `DeleteBefore` - Trigger before deleting data
-- `DeleteAfter` - Trigger after deleting data
-- `FieldUpdateAfter` - Trigger after any write operation
+2.  **Infinite Recursion**:
+    *   If the same row of data for the current model is updated again within an `UpdateAfter` event, and no restrictions are applied via `fields` or `filter`, it may lead to an infinite event loop.
+    *   It is recommended to be extra careful when updating the model itself within an event handler, or use the `fields` property to explicitly specify monitoring only specific field changes.
 
-## Methods
-### getSender
-Get the real sender identifier of the event.
-
-#### Return Value
-| Type | Description |
-|------|------|
-| string | Sender identifier in format `{modelFullName}_{operate}` |
-
-#### Usage Example
-```python title="Get Event Sender"
-# In event handler function
-user_event = app.getElement("events.UserDataAudit")
-sender = user_event.getSender()
-print(f"Event sender: {sender}")  # Output: models.UserModel_UpdateAfter
-```
-
-### isValid
-Check whether the event should trigger, comprehensively validating filter conditions and field change conditions.
-
-#### Parameter Details
-| Parameter Name | Type | Description | Default Value | Required |
-|--------|------|------|---------|------|
-| rowObj | object | Row data object containing prevData and postData | `None` | No |
-
-#### Return Value
-| Type | Description |
-|------|------|
-| boolean | `True` means should trigger event, `False` means not trigger |
-
-#### Usage Example
-```python title="Event Validity Check"
-# Simulate row data object
-row_obj = type('obj', (), {
-    'value': {
-        'model': 'models.UserModel',
-        'prevData': {'id': 1, 'name': '张三', 'status': 'inactive'},
-        'postData': {'id': 1, 'name': '张三', 'status': 'active'}
-    }
-})()
-
-user_event = app.getElement("events.UserDataAudit")
-is_valid = user_event.isValid(row_obj)
-print(f"Whether event triggers: {is_valid}")
-```
-
-### isFilterValid
-Validate whether filter conditions are satisfied.
-
-#### Parameter Details
-| Parameter Name | Type | Description | Default Value | Required |
-|--------|------|------|---------|------|
-| rowObj | object | Row object containing data | `None` | No |
-
-#### Return Value
-| Type | Description |
-|------|------|
-| boolean | Whether filter conditions are satisfied |
-
-### isFieldValid
-Validate whether field change conditions are satisfied.
-
-#### Parameter Details
-| Parameter Name | Type | Description | Default Value | Required |
-|--------|------|------|---------|------|
-| rowObj | object | Row object containing data | `None` | No |
-
-#### Return Value
-| Type | Description |
-|------|------|
-| boolean | Whether field change conditions are satisfied |
-
-### buildEmptyDict
-Build empty dictionary structure of the model, containing all model fields with None values.
-
-#### Return Value
-| Type | Description |
-|------|------|
-| dict | Empty dictionary containing all model fields |
-
-#### Usage Example
-```python title="Build Empty Dictionary"
-user_event = app.getElement("events.UserDataAudit")
-empty_dict = user_event.buildEmptyDict()
-print(empty_dict)  # {'id': None, 'name': None, 'email': None, 'status': None}
-```
-
-### call
-Execute event function and record execution time.
-
-#### Parameter Details
-| Parameter Name | Type | Description | Default Value | Required |
-|--------|------|------|---------|------|
-| *args | any | Positional arguments passed to event function | - | No |
-| **kwargs | any | Keyword arguments passed to event function | - | No |
-
-#### Return Value
-| Type | Description |
-|------|------|
-| any | Return value of event function |
-
-#### Usage Example
-```python title="Manually Call Event"
-user_event = app.getElement("events.UserDataAudit")
-
-# Construct event data
-event_data = app.newVariable({
-    "name": "eventOutData",
-    "title": "Event Data",
-    "dataType": "JitDict",
-    "variableList": [
-        {"name": "model", "title": "Model", "dataType": "Stext"},
-        {"name": "optType", "title": "Operation Type", "dataType": "Stext"},
-        {"name": "prevData", "title": "Data Before Change", "dataType": "RowData"},
-        {"name": "postData", "title": "Data After Change", "dataType": "RowData"}
-    ]
-})
-
-event_data.value = {
-    "model": "models.UserModel",
-    "optType": "UpdateAfter",
-    "prevData": {"id": 1, "name": "张三"},
-    "postData": {"id": 1, "name": "李四"}
-}
-
-# Call event
-result = user_event.call(event_data)
-```
-
-### handleNode
-Process event node before executing event function, allowing customized operations on the node.
-
-#### Parameter Details
-| Parameter Name | Type | Description | Default Value | Required |
-|--------|------|------|---------|------|
-| node | object | Event node object | - | Yes |
-| *args | any | Event function arguments | - | No |
-| **kwargs | any | Event function keyword arguments | - | No |
-
-#### Return Value
-| Type | Description |
-|------|------|
-| tuple | Tuple containing processed (node, args, kwargs) |
-
-### buildTaskParams
-Construct asynchronous task parameters, serializing event parameters into storable format.
-
-#### Parameter Details
-| Parameter Name | Type | Description | Default Value | Required |
-|--------|------|------|---------|------|
-| *args | any | Event function arguments | - | No |
-| **kwargs | any | Event function keyword arguments | - | No |
-
-#### Return Value
-| Type | Description |
-|------|------|
-| dict | Serialized task parameters |
-
-### recoverTaskParams
-Recover event function parameters from task parameters.
-
-#### Parameter Details
-| Parameter Name | Type | Description | Default Value | Required |
-|--------|------|------|---------|------|
-| taskParam | dict | Task parameter dictionary | - | Yes |
-
-#### Return Value
-| Type | Description |
-|------|------|
-| tuple | Tuple containing recovered (args, kwargs) |
-
-### createTask
-Create asynchronous event task.
-
-#### Parameter Details
-| Parameter Name | Type | Description | Default Value | Required |
-|--------|------|------|---------|------|
-| taskParams | dict | Task parameters | - | Yes |
-| nodeId | string | Event node ID | - | Yes |
-| requestId | string | Request ID | - | Yes |
-
-## Properties
-### name
-Event fullName identifier, read-only property.
-
-### sender
-FullName of monitored model, read-only property.
-
-### funcType
-Function type, optional values are `Global` or `Inner`, read-only property.
-
-### func
-Global function path specified when funcType is Global, read-only property.
-
-### type
-Event type, fixed as `events.ModelType`, read-only property.
-
-### enable
-Whether event is enabled, 1 for enabled, 0 for disabled, read-only property.
-
-### title
-Event display title, read-only property.
-
-### asyncType
-Whether to execute event asynchronously, read-only property.
-
-### callTime
-Last execution time of event, may be None (never executed), read-only property.
-
-### operate
-Monitored operation type, corresponding to EventTypeEnum enumeration value, read-only property.
-
-### filterQ
-Q expression filter condition string, read-only property.
-
-### fields
-Specified trigger field list, empty list means monitor all fields, read-only property.
-
-## Advanced Features
-### Conditional Filtering and Field Monitoring
-Model events support precise trigger control, achieving accurate event response through filter conditions and field monitoring.
-
-```json title="Advanced Filter Configuration"
-{
-  "type": "events.ModelType",
-  "title": "VIP User Status Change Monitoring",
-  "sender": "models.UserModel",
-  "operate": "UpdateAfter",
-  "filter": "Q(user_type='vip') & Q(status__in=['active', 'inactive'])",
-  "fields": ["status", "level"],
-  "funcType": "Global",
-  "func": "services.NotificationSvc.sendVipStatusAlert",
-  "asyncType": true
-}
-```
-
-### Asynchronous Event Processing
-For complex business logic or time-consuming operations, asynchronous execution can be enabled to avoid blocking the main process.
-
-```python title="Asynchronous Event Handler Function"
-def customFunc(eventOutData):
-    """
-    Asynchronously process user data synchronization
-    """
-    import time
-    
-    user_data = eventOutData.postData.value
-    print(f"Start synchronizing user data: {user_data['name']}")
-    
-    # Simulate time-consuming operation
-    time.sleep(2)
-    
-    # Call external API to synchronize data
-    sync_service = app.getElement("services.DataSyncSvc")
-    sync_service.syncUserToThirdParty(user_data)
-    
-    print(f"User data synchronization completed: {user_data['name']}")
-```
-
-### Multi-Model Event Coordination
-Implement complex business process control by combining multiple model events.
-
-```json title="Order Status Change Event"
-{
-  "type": "events.ModelType", 
-  "title": "Inventory Update After Order Completion",
-  "sender": "models.OrderModel",
-  "operate": "UpdateAfter",
-  "filter": "Q(status='completed')",
-  "fields": ["status"],
-  "funcType": "Global", 
-  "func": "services.InventorySvc.updateStock"
-}
-```
-
-```json title="Inventory Change Notification Event"
-{
-  "type": "events.ModelType",
-  "title": "Low Stock Warning",
-  "sender": "models.InventoryModel", 
-  "operate": "UpdateAfter",
-  "filter": "Q(quantity__lt=10)",
-  "fields": ["quantity"],
-  "funcType": "Global",
-  "func": "services.AlertSvc.sendLowStockWarning"
-}
-```
+3.  **Pre and Post Data**:
+    *   `prevData` is the snapshot of data before modification.
+    *   `postData` is the snapshot of data after modification.
+    *   In `Add` operations, `prevData` is empty; in `Delete` operations, `postData` is empty.

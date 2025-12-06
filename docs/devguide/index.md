@@ -1,6 +1,6 @@
 ---
 sidebar_position: 0
-description: "JitAi developer guide overview. Complete documentation for building applications on the JitAi platform."
+description: "JitAI developer guide overview. Complete documentation for building applications on the JitAI platform."
 ---
 
 import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
@@ -16,14 +16,14 @@ First, you need to complete the basic [Download and Installation](tutorial/downl
 
 
 ## Basic concepts {#basic-concepts}
-Master JitAi's core concepts and architecture principles. Build a solid theoretical foundation by understanding platform applications, element systems, development frameworks, and visual development tools.
+Master JitAI's core concepts and architecture principles. Build a solid theoretical foundation by understanding platform applications, element systems, development frameworks, and visual development tools.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
   title="Platform Architecture and Core Concepts"
   href="devguide/basic-concept"
-  description="Learn JitAi's platform architecture, application concepts, JAAP protocol, element systems, and development frameworks—the foundational principles that power the platform."
+  description="Learn JitAI's platform architecture, application concepts, JAAP protocol, element systems, and development frameworks—the foundational principles that power the platform."
 >
   <LinkGrid columns={2} links={[
     { text: "Platform and applications", href: "devguide/basic-concept#platform-and-applications" },
@@ -48,7 +48,7 @@ Set up your development environment by installing the platform and activating no
 <IndexCard
   title="Download and Installation"
   href="devguide/installation-activation/download-installation"
-  description="Download and install JitAi platform for your deployment scenario—desktop or server versions available."
+  description="Download and install JitAI platform for your deployment scenario—desktop or server versions available."
 >
   <LinkGrid links={[
     { text: "Detailed Installation Steps", href: "devguide/installation-activation/download-installation#detailed-installation-steps" }
@@ -93,7 +93,7 @@ Accelerate development with a powerful, integrated toolchain. Master visual deve
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="JitAi Visual Development Tools"
+  title="JitAI Visual Development Tools"
   href="devguide/development-tool-and-publish-service/visual-development-tool"
   description="Navigate the visual development environment with confidence—explore IDE functional areas and seamlessly switch between visual and source code modes."
 >
@@ -173,7 +173,7 @@ Master the complete workflow from application creation to distributed deployment
 <IndexCard
   title="Application Directory and Element Source Code"
   href="devguide/creating-and-publishing-applications/application-directory-and-element-source-code"
-  description="Navigate JitAi's JAAP-based directory structure—understand element code organization and source code export/import workflows."
+  description="Navigate JitAI's JAAP-based directory structure—understand element code organization and source code export/import workflows."
 >
   <LinkGrid links={[
     { text: "Understanding application directory structure", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#application-directory-structure" },
@@ -290,7 +290,7 @@ Craft beautiful, intuitive user interfaces. Build portal navigation, construct d
 <IndexCard
   title="Componentized Pages"
   href="devguide/shell-and-page/componentized-page"
-  description="Understand componentized pages—the foundation of JitAi's page system, built with functional components for data display and user interaction."
+  description="Understand componentized pages—the foundation of JitAI's page system, built with functional components for data display and user interaction."
 />
 
 <IndexCard
@@ -1443,7 +1443,7 @@ Build a robust data foundation visually—no SQL expertise required. Create tabl
 <IndexCard
   title="Supported Database Vendors"
   href="devguide/data-modeling/supported-database-vendors"
-  description="Learn about various database types and connection configurations supported by JitAi."
+  description="Learn about various database types and connection configurations supported by JitAI."
 >
   <LinkGrid links={[
     { text: "Scenario selection recommendations", href: "devguide/data-modeling/supported-database-vendors#scenario-selection-recommendations" },
@@ -1996,7 +1996,7 @@ Expose application capabilities as APIs—generate standard interfaces, manage p
 <IndexCard
   title="Using Cross-App Service Elements to Call Authorized APIs"
   href="devguide/api-exposure/using-cross-app-service-elements-to-call-authorized-apis"
-  description="Implement cross-application API calls using service elements, enabling seamless integration between different JitAi applications."
+  description="Implement cross-application API calls using service elements, enabling seamless integration between different JitAI applications."
 >
     <LinkGrid links={[
         { text: "Using Cross-App Service Elements", href: "devguide/api-exposure/using-cross-app-service-elements-to-call-authorized-apis#using-cross-app-service-elements" }

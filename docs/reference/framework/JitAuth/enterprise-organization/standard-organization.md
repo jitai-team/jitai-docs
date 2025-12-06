@@ -7,9 +7,9 @@ sidebar_label: "Generic Organization"
 # Generic Organization
 Generic organization is an enterprise organizational architecture management element in the JitAuth framework, implementing enterprise personnel management based on department hierarchical structure and role permission system. It handles organizational architecture maintenance, member management, and permission assignment, supporting department hierarchical management, role permission control, and member status management.
 
-The hierarchical structure of standard organization elements is Meta (corps.Meta) → Type (corps.NormalType) → Instance. Developers can quickly create standard organization instance elements through JitAi's visual development tools.
+The hierarchical structure of standard organization elements is Meta (corps.Meta) → Type (corps.NormalType) → Instance. Developers can quickly create standard organization instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `corps.NormalType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `corps.NormalType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

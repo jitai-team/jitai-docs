@@ -5,9 +5,9 @@ description: "Redis缓存 API 参考文档。完整的规格说明、方法和�
 # Redis缓存
 Redis缓存是基于Redis内存数据库的高性能缓存服务，提供分布式缓存能力和丰富的数据操作功能。它封装了Redis客户端连接管理和标准缓存操作接口，支持多种数据结构操作、过期时间控制和连接池管理，适用于高并发和低延迟要求的应用场景。
 
-Redis缓存元素分层结构为Meta（caches.Meta） → Type（caches.RedisType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建Redis缓存实例。
+Redis缓存元素分层结构为Meta（caches.Meta） → Type（caches.RedisType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建Redis缓存实例。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的caches.RedisType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的caches.RedisType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

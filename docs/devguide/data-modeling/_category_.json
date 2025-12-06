@@ -4,7 +4,7 @@
   "link": {
     "type": "generated-index",
     "slug": "devguide/data-modeling",
-    "description": "Learn how to perform business data modeling in JitAi, including database connections, data table design, extended tables, and aggregated tables.",
+    "description": "Learn how to perform business data modeling in JitAI, including database connections, data table design, extended tables, and aggregated tables.",
     "keywords": ["data modeling", "database", "data tables", "indexes", "fields", "data types"]
   }
 }

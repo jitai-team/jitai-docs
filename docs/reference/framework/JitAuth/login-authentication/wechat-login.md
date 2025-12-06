@@ -7,11 +7,11 @@ sidebar_label: "WeChat Login"
 # WeChat Login
 WeChat login is a third-party authentication method based on WeChat Open Platform OAuth2.0 protocol, implementing seamless integration with WeChat user system through QR code login and user information retrieval. It handles WeChat user identity authentication, account binding management, and login status maintenance, supporting frontend-backend separation architecture and complete user authentication flow.
 
-The hierarchical structure of WeChat login elements is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.WeChatType) → Instance. Developers can quickly create WeChat login instance elements through JitAi's visual development tools.
+The hierarchical structure of WeChat login elements is Meta (auths.loginTypes.Meta) → Type (auths.loginTypes.WeChatType) → Instance. Developers can quickly create WeChat login instance elements through JitAI's visual development tools.
 
 WeChat login is based on standard OAuth2.0 authentication flow. After users authorize through WeChat client QR code scanning, the system obtains access tokens and user identifiers, completing identity authentication and account association. It supports user binding, unbinding operations, and identity management in multi-application scenarios.
 
-Of course, developers can also create their own Type elements or modify the official `auths.loginTypes.WeChatType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `auths.loginTypes.WeChatType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

@@ -149,6 +149,7 @@
 /* 响应式设计 */
 @media (max-width: 768px) {
   .platformSection {
+    /* 恢复为 0，交由 sectionContent 控制左右间距，避免双重 padding */
     padding: var(--space-24) 0;
   }
 
@@ -158,14 +159,24 @@
   }
 
   .featuresGrid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: var(--space-8);
     margin-top: var(--space-12);
+    width: 100%; /* 确保宽度不溢出 */
+    box-sizing: border-box;
   }
 
   .featureCard {
     padding: var(--space-4);
     min-height: 320px;
+    margin-bottom: var(--space-8);
+    width: 100%; /* 确保卡片宽度适应容器 */
+    box-sizing: border-box;
+  }
+
+  .featureCard:last-child {
+    margin-bottom: 0;
   }
 
   .featureImage {
@@ -186,6 +197,7 @@
   .featureCard {
     padding: var(--space-3);
     min-height: 300px;
+    margin-bottom: var(--space-6);
   }
 
   .featureImage {

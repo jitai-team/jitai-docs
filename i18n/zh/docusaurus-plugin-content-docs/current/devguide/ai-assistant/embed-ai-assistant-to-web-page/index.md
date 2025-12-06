@@ -12,7 +12,7 @@ description: "嵌入式AI助理的详细指南和说明。"
 
 ## 核心优势 {#core-advantages}
 
-与市面上其他AI产品不同，JitAi的嵌入式AI助理实现了**网页与AI的深度双向交互**。传统AI产品只能做简单的对话问答，而嵌入式AI助理在此基础上增加了两大核心能力：
+与市面上其他AI产品不同，JitAI的嵌入式AI助理实现了**网页与AI的深度双向交互**。传统AI产品只能做简单的对话问答，而嵌入式AI助理在此基础上增加了两大核心能力：
 
 1. **AI操控网页**：AI助理能够理解对话意图，主动调用网页中的功能（如提交表单、删除数据、跳转页面等）
 2. **网页驱动AI**：网页可以主动触发AI执行任务，并实时监听AI的执行过程和结果
@@ -83,7 +83,7 @@ description: "嵌入式AI助理的详细指南和说明。"
     <!-- 你的网页内容 -->
     <div id="ai-assistant-container" style="width: 400px; height: 600px;"></div>
 
-    <!-- 引入JitAi SDK -->
+    <!-- 引入JitAI SDK -->
     <script src="https://jit-front.oss-cn-hangzhou.aliyuncs.com/ai-sdk/jitai-assistant-sdk.min.js"></script>
     <script>
         var aiAssistant = new JitAIAssistant();
@@ -129,7 +129,7 @@ aiAssistant.init({
 - **网页白名单**：只有 URL 匹配白名单的网页才能嵌入该助理；如果不设置白名单，则所有网页均可嵌入。
 
 ### 用户认证 {#user-authentication}
-**身份验证回调**：为了确保AI助理的访问安全，你可以配置一个专门的用户身份认证接口。在运行时，AI助理将调用此接口验证用户身份的合法性。如果未配置此接口，用户在使用AI助理之前必须先登录 JitAi 应用程序。
+**身份验证回调**：为了确保AI助理的访问安全，你可以配置一个专门的用户身份认证接口。在运行时，AI助理将调用此接口验证用户身份的合法性。如果未配置此接口，用户在使用AI助理之前必须先登录 JitAI 应用程序。
 
 AI 助理会以 POST 的方式调用该接口，以 JSON 格式传入 `authInfo`，参数格式如下：
 ```json
@@ -228,7 +228,7 @@ aiAssistant.init({
 ```
 
 :::warning 注意
-网页中的函数名必须与 JitAi 平台中声明的函数名保持一致。
+网页中的函数名必须与 JitAI 平台中声明的函数名保持一致。
 :::
 
 ## 在网页中订阅 AI 事件 {#subscribe-ai-events}
@@ -246,7 +246,7 @@ aiAssistant.subscribeEvent('AI:aiagent_webpage.afterNodeRun', (data) => {
 });
 ```
 
-在 JitAi 平台的**事件**页签中可以查看所有可订阅的事件：
+在 JitAI 平台的**事件**页签中可以查看所有可订阅的事件：
 
 ![assistant-events](./imgs/assistant-events.png)
 
@@ -441,7 +441,7 @@ aiAssistant.subscribeEvent('AI:aiagent_webpage.onError', (data) => {
     <!-- AI 助理容器 -->
     <div id="ai-assistant-container"></div>
 
-    <!-- 引入 JitAi SDK -->
+    <!-- 引入 JitAI SDK -->
     <script src="https://jit-front.oss-cn-hangzhou.aliyuncs.com/ai-sdk/jitai-assistant-sdk.min.js"></script>
     <script>
         // 定义网页函数供 AI 调用

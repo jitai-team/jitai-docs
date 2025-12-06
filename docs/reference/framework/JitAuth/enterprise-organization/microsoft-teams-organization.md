@@ -7,9 +7,9 @@ sidebar_label: "Microsoft Teams Organization"
 # Microsoft Teams Organization
 Microsoft Teams Organization is a specialized organization type in the JitAuth framework for integrating Microsoft Teams enterprise internal application organization architecture, implementing automatic synchronization and unified management of enterprise organization architecture based on Microsoft Graph API. It handles Microsoft Teams directory synchronization, department structure retrieval, and user authentication, supporting seamless integration with Microsoft Teams workspace and providing enterprise-level permission management and user relationship maintenance capabilities.
 
-The Microsoft Teams organization element hierarchy is Meta (corps.Meta) → Type (corps.MicrosoftTeamsType) → Instance. Developers can quickly create Microsoft Teams organization instance elements through JitAi's visual development tools.
+The Microsoft Teams organization element hierarchy is Meta (corps.Meta) → Type (corps.MicrosoftTeamsType) → Instance. Developers can quickly create Microsoft Teams organization instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or override the corps.MicrosoftTeamsType element officially provided by JitAi in their own applications to implement their own encapsulation.
+Of course, developers can also create their own Type elements or override the corps.MicrosoftTeamsType element officially provided by JitAI in their own applications to implement their own encapsulation.
 
 ## Quick Start 
 ### Creating Instance Elements

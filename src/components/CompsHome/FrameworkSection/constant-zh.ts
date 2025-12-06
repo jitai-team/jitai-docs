@@ -1,8 +1,14 @@
+import { getIntegrations } from './integrations';
+
 const CONTENT = {
   title: 'Jit 开发框架',
   subtitle: '基于JAAP协议的AI-Native全栈开发框架，高度集成AI应用和传统应用开发的主流技术，极大简化应用层的快速开发',
   color: '#3D65FD',
   learnMore: '了解更多',
+  integrationsSubtitlePrefix: 'Jit 开发框架内置了丰富的集成模块，并提供强大的扩展能力（详见《',
+  integrationsSubtitleLinkText: '扩展指南',
+  integrationsSubtitleSuffix: '》）',
+  integrationsSubtitleLink: '/zh/docs/extguide',
   frameworks: [
     {
       id: 'jitai',
@@ -76,7 +82,8 @@ const CONTENT = {
       description: '通用工具库，提供常用的工具类、辅助函数、全局变量等，提升开发效率',
       icon: '🛠️',
     }
-  ]
+  ],
+  integrations: getIntegrations('zh')
 };
 
 export default CONTENT;

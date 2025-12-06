@@ -16,6 +16,7 @@
 .download {
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   background: var(--bg-secondary);
   color: var(--text-primary);
@@ -29,6 +30,7 @@
 .sectionContent {
   margin: 0 auto;
   max-width: 1400px;
+  width: 100%;
 }
 
 
@@ -77,6 +79,76 @@
   width: 100%;
 }
 
+/* ===== 移动端顶部提示条 ===== */
+.mobileTopBanner {
+  background: #EFF6FF; /* 浅蓝色背景 */
+  border-bottom: 1px solid #DBEAFE;
+  color: #1E40AF; /* 深蓝色文字 */
+  padding: var(--space-6) var(--space-2);
+  text-align: center;
+  position: relative;
+  width: 100%;
+  margin-top: 64px; /* 避开固定导航栏 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* 添加一个左侧强调线 */
+.mobileTopBanner::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #3B82F6; /* 提示蓝色 */
+}
+
+.mobileTopBannerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.mobileTopBannerTitle {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  margin: 0;
+  color: #1E3A8A; /* 更深的标题色 */
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* 添加提示图标 */
+.mobileTopBannerTitle::before {
+  content: "ⓘ"; /* 简单的信息图标，也可以用 SVG */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: #3B82F6;
+  color: white;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: serif; /* 让 i 看起来更像图标 */
+}
+
+.mobileTopBannerDescription {
+  font-size: var(--font-size-sm);
+  margin: 0;
+  opacity: 1;
+  line-height: 1.5;
+  color: #1E40AF;
+}
 
 /* ===== 版本卡片 ===== */
 .versionCard {
@@ -208,6 +280,7 @@
   transition: var(--transition-primary);
   box-shadow: var(--shadow-md);
   font-size: var(--font-size-base);
+  letter-spacing: 0.02em;
   border: none;
   cursor: pointer;
   position: relative;
@@ -251,6 +324,8 @@
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  font-size: var(--font-size-base);
+  letter-spacing: 0.02em;
 }
 
 .downloadButtonSecondary::before {
@@ -273,12 +348,6 @@
   background: transparent;
   color: var(--color-primary);
   text-decoration: none;
-}
-
-.buttonText {
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-semibold);
-  letter-spacing: 0.02em;
 }
 
 /* ===== 安装步骤 ===== */
@@ -609,7 +678,7 @@
     text-align: center;
     gap: var(--space-6);
   }
-  
+
   .versionHeader {
     text-align: center;
   }
@@ -656,7 +725,12 @@
 
 @media (max-width: 480px) {
   .download {
-    padding: var(--space-16) 0;
+    padding: 0;
+    padding-bottom: var(--space-16);
+  }
+  
+  .sectionContent {
+    padding: 0 var(--space-4);
   }
   
   .pageHeader {

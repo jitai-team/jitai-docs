@@ -5,9 +5,9 @@ description: "手机号登录 API 参考文档。完整的规格说明、方法�
 # 手机号登录
 手机号登录是基于手机号码和短信验证码的认证方式，通过短信验证码验证实现用户身份认证。它负责验证码发送、验证码校验和用户登录，支持用户注册、手机号绑定/解绑、验证码有效期管理等安全功能。
 
-手机号登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.PhoneType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建手机号登录实例元素。
+手机号登录元素分层结构为Meta（auths.loginTypes.Meta） → Type（auths.loginTypes.PhoneType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建手机号登录实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的auths.loginTypes.PhoneType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的auths.loginTypes.PhoneType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

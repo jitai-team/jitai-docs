@@ -1,14 +1,14 @@
 ---
 sidebar_position: 2
 slug: ai-customer-service
-description: "Build AI customer service agent from scratch. Master JitAi platform fundamentals and integrate intelligent agents into application portals."
+description: "Build AI customer service agent from scratch. Master JitAI platform fundamentals and integrate intelligent agents into application portals."
 ---
 
 # AI Customer Service Agent
 
 :::info
 This guide is designed to help beginners quickly get started. By completing this tutorial, you will:
-1. Master the fundamentals of the JitAi development platform.
+1. Master the fundamentals of the JitAI development platform.
 2. Build an AI customer service agent from scratch and integrate it into your application portals.
 :::
 
@@ -72,7 +72,7 @@ See [Using AI assistants in generic portals](../using-ai-in-portals-and-pages/us
 
 ## Congratulations! {#congratulations}
 
-You have successfully mastered the fundamentals of the JitAi development platform and built your first AI customer service agent.
+You have successfully mastered the fundamentals of the JitAI development platform and built your first AI customer service agent.
 
 
 

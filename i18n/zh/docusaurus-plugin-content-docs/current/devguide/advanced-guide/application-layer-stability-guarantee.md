@@ -8,7 +8,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 # 应用层稳定性保障
-JitAi有能力支撑行业主流和领先的应用层稳定性保证措施。
+JitAI有能力支撑行业主流和领先的应用层稳定性保证措施。
 
 应用层更新具有**影响范围相对局部、更新频率较高、用户体验敏感**的特点，需要在保证稳定性的同时支持快速迭代。
 
@@ -23,7 +23,7 @@ JitAi有能力支撑行业主流和领先的应用层稳定性保证措施。
 
 ### 多运行环境 {#multiple-runtime-environments}
 
-在JitAi运维平台创建多个运行环境，采用**测试环境 → Beta环境 → 正式环境**的渐进式验证流程：
+在JitAI运维平台创建多个运行环境，采用**测试环境 → Beta环境 → 正式环境**的渐进式验证流程：
 
 ```mermaid
 graph TD
@@ -116,7 +116,7 @@ graph TD
 
 ### 节点级灰度发布 {#node-level-canary-release}
 
-在JitAi集群架构中，其中一个JitNode节点承担负载均衡器角色，负责流量分发控制。运行环境入口地址就是解析到该节点。
+在JitAI集群架构中，其中一个JitNode节点承担负载均衡器角色，负责流量分发控制。运行环境入口地址就是解析到该节点。
 
 ```mermaid
 graph TB
@@ -224,11 +224,11 @@ graph TD
 
 ### OpenTelemetry及APM生态集成 {#integrating-with-opentelemetry-and-apm-ecosystem}
 
-JitAi应用运行平台支持[OpenTelemetry](https://opentelemetry.io/)，这是可观测性领域的核心标准，在技术演进、生态整合和行业实践中具有不替代的地位。
+JitAI应用运行平台支持[OpenTelemetry](https://opentelemetry.io/)，这是可观测性领域的核心标准，在技术演进、生态整合和行业实践中具有不替代的地位。
 
 ```mermaid
 graph TB
-    subgraph "JitAi三层架构"
+    subgraph "JitAI三层架构"
         subgraph "应用层"
             App1[业务应用A<br/>应用实例运行]
             App2[业务应用B<br/>应用实例运行]
@@ -258,7 +258,7 @@ graph TB
     
     subgraph "可视化与分析"
         Grafana[Grafana Dashboard<br/>三层架构监控]
-        JitAiConsole[极态运维平台<br/>内置APM控制台]
+        JitAIConsole[极态运维平台<br/>内置APM控制台]
         AlertManager[告警系统<br/>JAAP异常告警]
     end
     
@@ -294,9 +294,9 @@ graph TB
     Jaeger --> Grafana
     Prometheus --> Grafana
     ES --> Grafana
-    Jaeger --> JitAiConsole
-    Prometheus --> JitAiConsole
-    ES --> JitAiConsole
+    Jaeger --> JitAIConsole
+    Prometheus --> JitAIConsole
+    ES --> JitAIConsole
     
     %% 告警连接
     Prometheus --> AlertManager

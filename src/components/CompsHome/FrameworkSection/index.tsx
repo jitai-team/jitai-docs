@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import styles from './styles.module.css';
 import globalStyles from '../../../pages/index.module.css';
 import CONTENT_EN from './constant-en';
 import CONTENT_ZH from './constant-zh';
+
+// Fisher-Yates 洗牌算法
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
 
 interface FrameworkSectionProps {
   currentLocale?: string;
@@ -10,6 +20,9 @@ interface FrameworkSectionProps {
 
 const FrameworkSection: React.FC<FrameworkSectionProps> = ({ currentLocale }) => {
   const CONTENT = currentLocale === 'zh' ? CONTENT_ZH : CONTENT_EN;
+
+  // 获取所有集成项并随机排序（每次页面加载时随机一次）
+  const allItems = useMemo(() => shuffleArray(CONTENT.integrations), [CONTENT.integrations]);
 
   return (
     <section
@@ -21,6 +34,7 @@ const FrameworkSection: React.FC<FrameworkSectionProps> = ({ currentLocale }) =>
       } as React.CSSProperties}
     >
       <div className={globalStyles.sectionContent}>
+        {/* Frameworks Section */}
         <div className={styles.headerSection}>
           <h2 className={globalStyles.sectionTitle}>{CONTENT.title}</h2>
           <p className={styles.sectionSubtitle}>
@@ -35,7 +49,6 @@ const FrameworkSection: React.FC<FrameworkSectionProps> = ({ currentLocale }) =>
               target="_blank"
               key={index}
               className={`${globalStyles.baseCard} ${styles.frameworkCard} ${styles.frameworkLink} animatedChild`}
-            // style={{ '--card-color': framework.color } as React.CSSProperties}
             >
               <div className={styles.cardHeader}>
                 <div className={styles.cardIcon}>
@@ -52,6 +65,96 @@ const FrameworkSection: React.FC<FrameworkSectionProps> = ({ currentLocale }) =>
               <p className={styles.frameworkDescription}>{framework.description}</p>
             </a>
           ))}
+        </div>
+
+        {/* Integrations Section - 滚动卡片效果 */}
+        <div className={styles.integrationsWrapper}>
+          <div className={styles.integrationsSection}>
+            <div className={styles.integrationsGrid}>
+              {/* 将集成项分成4行 */}
+              {[0, 1, 2, 3].map((rowIndex) => {
+                const itemsPerRow = Math.ceil(allItems.length / 4);
+                const startIndex = rowIndex * itemsPerRow;
+                const endIndex = startIndex + itemsPerRow;
+                const rowItems = allItems.slice(startIndex, endIndex);
+                
+                return (
+                  <div key={rowIndex} className={styles.integrationsRow}>
+                    {rowItems.map((item, index) => {
+                      const variant = (item as any).variant || 'icon';
+                      const assetSize = (item as any).assetSize || 'medium';
+                      const textSize = (item as any).textSize || 'large';
+                      
+                      // 根据 variant 选择不同的样式类
+                      const assetClass = variant === 'logo' 
+                        ? styles.integrationLogo 
+                        : styles.integrationIcon;
+                      const assetSizeClass = styles[`assetSize${assetSize.charAt(0).toUpperCase() + assetSize.slice(1)}`] || '';
+                      const textSizeClass = styles[`textSize${textSize.charAt(0).toUpperCase() + textSize.slice(1)}`] || '';
+                      
+                      return (
+                        <div key={`${rowIndex}-${index}`} className={styles.integrationCard}>
+                          {(item as any).asset && (
+                            <img
+                              src={(item as any).asset}
+                              alt={item.name}
+                              className={`${assetClass} ${assetSizeClass}`}
+                            />
+                          )}
+                          {variant === 'icon' && (
+                            <span className={`${styles.integrationName} ${textSizeClass}`}>{item.name}</span>
+                          )}
+                        </div>
+                      );
+                    })}
+                    {/* 重复当前行卡片，实现无缝循环滚动 */}
+                    {rowItems.map((item, index) => {
+                      const variant = (item as any).variant || 'icon';
+                      const assetSize = (item as any).assetSize || 'medium';
+                      const textSize = (item as any).textSize || 'large';
+                      
+                      const assetClass = variant === 'logo' 
+                        ? styles.integrationLogo 
+                        : styles.integrationIcon;
+                      const assetSizeClass = styles[`assetSize${assetSize.charAt(0).toUpperCase() + assetSize.slice(1)}`] || '';
+                      const textSizeClass = styles[`textSize${textSize.charAt(0).toUpperCase() + textSize.slice(1)}`] || '';
+                      
+                      return (
+                        <div key={`${rowIndex}-${index}-repeat`} className={styles.integrationCard}>
+                          {(item as any).asset && (
+                            <img
+                              src={(item as any).asset}
+                              alt={item.name}
+                              className={`${assetClass} ${assetSizeClass}`}
+                            />
+                          )}
+                          {variant === 'icon' && (
+                            <span className={`${styles.integrationName} ${textSizeClass}`}>{item.name}</span>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          
+          {/* 脚注 - 放在滚动区下方 */}
+          <div className={styles.integrationsFooter}>
+            <p className={styles.integrationsFootnote}>
+              {CONTENT.integrationsSubtitlePrefix}
+              <a 
+                href={CONTENT.integrationsSubtitleLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.integrationsFootnoteLink}
+              >
+                {CONTENT.integrationsSubtitleLinkText}
+              </a>
+              {CONTENT.integrationsSubtitleSuffix}
+            </p>
+          </div>
         </div>
       </div>
     </section>

@@ -7,9 +7,9 @@ sidebar_label: "TongRDS Cache"
 # TongRDS Cache
 TongRDS cache is a high-performance data caching service based on Redis protocol implementation for Oriental Tong database, specifically designed for enterprise applications with domestic database requirements. It adopts the same client interface as Redis, supports distributed deployment and enterprise-level connection management, and ensures stable performance in high-concurrency environments through connection pool mechanisms.
 
-The hierarchical structure of TongRDS cache elements is Meta (caches.Meta) → Type (caches.TongRDSType) → Instance. Developers can quickly create TongRDS cache instance elements through JitAi's visual development tools.
+The hierarchical structure of TongRDS cache elements is Meta (caches.Meta) → Type (caches.TongRDSType) → Instance. Developers can quickly create TongRDS cache instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `caches.TongRDSType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `caches.TongRDSType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start
 ### Creating Instance Elements

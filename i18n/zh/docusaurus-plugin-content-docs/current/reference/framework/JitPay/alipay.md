@@ -7,9 +7,9 @@ description: "支付宝支付 API 参考文档。完整的规格说明、方法�
 # 支付宝支付
 支付宝支付是JitPay框架的核心Type元素，基于支付宝官方API实现多种支付方式的集成。它负责支付链接生成、订单状态查询和回调通知处理，支持扫码支付、手机网站支付等方式，适用于电商、O2O、生活服务等多种商业应用场景。
 
-支付宝支付元素分层结构为Meta（pays.Meta）→ Type（pays.AliPayType）→ 实例，开发者可通过JitAi的可视化开发工具快捷地创建支付宝支付实例元素。
+支付宝支付元素分层结构为Meta（pays.Meta）→ Type（pays.AliPayType）→ 实例，开发者可通过JitAI的可视化开发工具快捷地创建支付宝支付实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的pays.AliPayType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的pays.AliPayType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

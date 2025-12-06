@@ -30,7 +30,7 @@ In simple terms, AI Assistant is an intelligent system that can perfectly combin
 
 ### Differences from other tools {#compare-with-others}
 
-AI Assistant is fundamentally different from workflow tools on platforms like Coze, Dify, n8n, etc. These traditional tools can only create simple processing functions with relatively limited functionality, achieving effects equivalent to JitAi's "service functions". AI Assistant, on the other hand, is a complete intelligent application system with more powerful and flexible functionality. For details, see: [Comparing JitAi with Mainstream AI Application Platforms](../../tutorial/jitai-comparison)
+AI Assistant is fundamentally different from workflow tools on platforms like Coze, Dify, n8n, etc. These traditional tools can only create simple processing functions with relatively limited functionality, achieving effects equivalent to JitAI's "service functions". AI Assistant, on the other hand, is a complete intelligent application system with more powerful and flexible functionality. For details, see: [Comparing JitAI with Mainstream AI Application Platforms](../../tutorial/jitai-comparison)
 
 ### Main advantages {#advantages}
 

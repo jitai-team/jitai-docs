@@ -6,7 +6,7 @@ description: "使用跨App服务元素调用授权元素API的详细指南和说
 
 # 使用跨App服务元素调用授权元素API
 
-当调用方也是JitAi应用时，除了通过SDK实现，也可以直接使用[跨App服务元素](../business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-apis)调用授权方开放的接口。
+当调用方也是JitAI应用时，除了通过SDK实现，也可以直接使用[跨App服务元素](../business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-apis)调用授权方开放的接口。
 
 ## 使用跨App服务元素 {#using-cross-app-service-elements}
 

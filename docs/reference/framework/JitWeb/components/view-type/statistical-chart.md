@@ -9,7 +9,7 @@ Statistical chart is an important component for data visualization display, impl
 
 The statistical chart element has a hierarchical structure of Meta (components.Meta) → Type (components.Chart) → Instance. Developers can quickly create statistical chart instance elements through JitAI's visual development tools.
 
-Of course, developers can also create their own Type elements or modify the official `components.ChartType` element provided by JitAi in their own App to implement their own encapsulation.
+Of course, developers can also create their own Type elements or modify the official `components.ChartType` element provided by JitAI in their own App to implement their own encapsulation.
 
 ## Quick Start 
 ### Basic Configuration Example

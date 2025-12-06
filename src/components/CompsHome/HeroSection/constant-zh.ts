@@ -3,13 +3,18 @@ const CONTENT = {
     highlightTitle: "生产级AI",
     buttonDownload: "立即下载",
     buttonDemo: "在线试用",
-    buttonGetStart: "了解更多",
     previewVideoUrl:
         "https://jit-www.oss-accelerate.aliyuncs.com/zh_preview.mp4",
+    modal: {
+        title: "体验提示",
+        content: "为了获得最佳体验，建议您在电脑端访问 JitAI 官网进行在线试用。<br/><br/>您现在想先浏览开发文档吗？",
+        confirm: "浏览文档",
+        cancel: "稍后再说",
+    },
     cards: [
         {
             title: "生产级AI应用开发",
-            description: `AAI大模型、AI工作流、AI智能体以及AI&UI协作的AI助理的全栈开发框架，极简化生产级AI应用的快速开发。
+            description: `AI大模型、AI工作流、AI智能体以及AI&UI协作的AI助理的全栈开发框架，极简化生产级AI应用的快速开发。
             <br/>全面的信息化技术的集成，极简化AI原生的企业级IT应用的快速开发。`,
             color: "#3D65FD",
         },

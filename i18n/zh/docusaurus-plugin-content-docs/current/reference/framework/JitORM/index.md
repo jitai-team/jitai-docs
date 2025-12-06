@@ -4,7 +4,7 @@ description: "JitORM概述 API 参考文档。完整的规格说明、方法和�
 ---
 
 # JitORM概述
-JitORM（JitAi Object-Relational Mapping）是以[数据库元素](/docs/reference/framework/JitORM/database)、[数据类型元素](/docs/reference/framework/JitORM/data-types)、[模型元素](/docs/reference/framework/JitORM/data-models)为核心组成的对象关系映射框架，同时还提供了辅助数据查询以及操作的[Q表达式](/docs/reference/framework/JitORM/q-expressions)、[TQL](/docs/reference/framework/JitORM/TQL)。
+JitORM（JitAI Object-Relational Mapping）是以[数据库元素](/docs/reference/framework/JitORM/database)、[数据类型元素](/docs/reference/framework/JitORM/data-types)、[模型元素](/docs/reference/framework/JitORM/model-types/data-models)为核心组成的对象关系映射框架，同时还提供了辅助数据查询以及操作的[Q表达式](/docs/reference/framework/JitORM/q-expressions)、[TQL](/docs/reference/framework/JitORM/TQL)。
 
 ## 数据库
 数据库元素封装了数据库对接的大量技术实现，自动管理数据库连接，支持下列多种数据库：
@@ -15,10 +15,10 @@ JitORM（JitAi Object-Relational Mapping）是以[数据库元素](/docs/referen
 - Microsoft SQLServer
 - PostgreSQL
 
-JitAi支持一个应用中创建多个数据库元素实例，用于和多个数据库实例对接。
+JitAI支持一个应用中创建多个数据库元素实例，用于和多个数据库实例对接。
 
 ## 数据类型
-JitAi提供多种数据类型，用于定义业务实体对象的字段类型，每种数据类型都封装了对应的业务功能和UI渲染逻辑。
+JitAI提供多种数据类型，用于定义业务实体对象的字段类型，每种数据类型都封装了对应的业务功能和UI渲染逻辑。
 
 - **基础字段类型**：单行文本、多行文本、数字、金额、百分比、富文本、编号、流水号
 - **选择器类型**：选项组单选/多选、下拉选择、检查框、日期时间

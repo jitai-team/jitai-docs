@@ -20,6 +20,7 @@
   font-weight: var(--font-weight-normal);
 }
 
+/* Frameworks Grid (Existing) */
 .frameworksGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -123,6 +124,228 @@
   transform: translateX(3px);
 }
 
+/* Integrations Section (New) - 滚动卡片效果 */
+.integrationsWrapper {
+  margin-top: var(--space-12);
+}
+
+/* 脚注样式 - 放在滚动区下方 */
+.integrationsFooter {
+  text-align: center;
+  margin-top: var(--space-6);
+}
+
+.integrationsFootnote {
+  font-size: var(--font-size-base); /* 16px */
+  color: var(--text-tertiary);
+  margin: 0 auto;
+  line-height: var(--line-height-normal);
+  opacity: 0.6;
+}
+
+.integrationsFootnoteLink {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.integrationsFootnoteLink:hover {
+  text-decoration: underline;
+}
+
+.integrationsSection {
+  width: 100%;
+  padding: 0 var(--space-16);
+  overflow: hidden;
+  position: relative;
+}
+
+/* 左右边界渐变遮罩 */
+.integrationsSection::before,
+.integrationsSection::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--space-16);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.integrationsSection::before {
+  left: 0;
+  background: linear-gradient(to right,
+    rgba(240, 244, 255, 0.95) 0%,
+    rgba(240, 244, 255, 0.8) 20%,
+    rgba(240, 244, 255, 0.4) 60%,
+    rgba(240, 244, 255, 0.1) 85%,
+    rgba(240, 244, 255, 0) 100%);
+}
+
+.integrationsSection::after {
+  right: 0;
+  background: linear-gradient(to left,
+    rgba(240, 244, 255, 0.95) 0%,
+    rgba(240, 244, 255, 0.8) 20%,
+    rgba(240, 244, 255, 0.4) 60%,
+    rgba(240, 244, 255, 0.1) 85%,
+    rgba(240, 244, 255, 0) 100%);
+}
+
+.integrationsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin: var(--space-4) 0;
+  width: max-content;
+}
+
+.integrationsRow {
+  display: flex;
+  gap: var(--space-4);
+  animation: slideLeft 60s linear infinite;
+  width: max-content;
+  will-change: transform;
+}
+
+/* 所有行统一左对齐，同步单向滚动 */
+
+/* 鼠标 hover 时暂停滚动（已禁用）
+.integrationsSection:hover .integrationsRow {
+  animation-play-state: paused;
+}
+*/
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.integrationCard {
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  width: 220px; /* 固定宽度，一行3列 */
+  height: 64px; /* 固定高度 */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 当只有 Logo 时居中 */
+  padding: var(--space-3) var(--space-4);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+  position: relative;
+  flex: 0 0 auto; /* 不缩放，保持固定宽度 */
+  gap: var(--space-3);
+}
+
+.integrationCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+  background: var(--bg-card);
+}
+
+/* Logo 样式（variant: 'logo'，不显示文本） */
+.integrationLogo {
+  width: auto;
+  height: 40px; /* 默认 medium 尺寸 */
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+/* Icon 样式（variant: 'icon'，显示文本） */
+.integrationIcon {
+  width: auto;
+  height: 40px; /* 默认 medium 尺寸 */
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+/* 通用尺寸变体（同时控制宽度和高度） */
+.integrationLogo.assetSizeSmall,
+.integrationIcon.assetSizeSmall {
+  height: 32px;
+  max-width: 90px; /* 控制宽度，确保视觉统一 */
+}
+
+.integrationLogo.assetSizeMedium,
+.integrationIcon.assetSizeMedium {
+  height: 40px;
+  max-width: 110px; /* 控制宽度，确保视觉统一 */
+}
+
+.integrationLogo.assetSizeLarge,
+.integrationIcon.assetSizeLarge {
+  height: 48px;
+  max-width: 130px; /* 控制宽度，确保视觉统一 */
+}
+
+.integrationLogo.assetSizeXlarge,
+.integrationIcon.assetSizeXlarge {
+  height: 56px;
+  max-width: 150px; /* 控制宽度，确保视觉统一 */
+}
+
+.integrationCard:hover .integrationLogo,
+.integrationCard:hover .integrationIcon {
+  transform: scale(1.1);
+}
+
+.integrationName {
+  font-size: 16px; /* 默认 medium 尺寸，固定像素值，不受移动端调整影响 */
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color var(--transition-fast);
+}
+
+/* 文本尺寸变体 - 使用固定像素值，避免移动端响应式调整 */
+.integrationName.textSizeXs {
+  font-size: 12px; /* 固定 12px */
+}
+
+.integrationName.textSizeSmall {
+  font-size: 14px; /* 固定 14px */
+}
+
+.integrationName.textSizeMedium {
+  font-size: 16px; /* 固定 16px */
+}
+
+.integrationName.textSizeLarge {
+  font-size: 18px; /* 固定 18px */
+}
+
+.integrationName.textSizeXlarge {
+  font-size: 20px; /* 固定 20px */
+}
+
+/* .integrationCard:hover .integrationName {
+  color: var(--color-primary);
+} */
+
 /* 响应式设计 */
 @media (max-width: 1200px) {
   .frameworksGrid {
@@ -133,6 +356,7 @@
 
 @media (max-width: 768px) {
   .frameworkSection {
+    /* 恢复为 0，交由 sectionContent 控制左右间距 */
     padding: var(--space-24) 0;
   }
 
@@ -146,13 +370,23 @@
   }
 
   .frameworksGrid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: var(--space-4);
-    padding: 0 var(--space-4);
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .frameworkCard {
     padding: var(--space-7);
+    margin-bottom: var(--space-4);
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .frameworkCard:last-child {
+    margin-bottom: 0;
   }
 
   .cardHeader {
@@ -169,6 +403,37 @@
   }
 
   .frameworkDescription {
+    font-size: var(--font-size-sm);
+  }
+  
+  .integrationsWrapper {
+    margin-top: var(--space-8);
+  }
+  
+  .integrationsFooter {
+    margin-top: var(--space-4);
+  }
+  
+  .integrationsFootnote {
+    font-size: 11px;
+    padding: 0 var(--space-4);
+  }
+  
+  .integrationsSection {
+    padding: 0 var(--space-8);
+  }
+  
+  .integrationsSection::before,
+  .integrationsSection::after {
+    width: var(--space-8);
+  }
+  
+  .integrationCard {
+    padding: var(--space-2) var(--space-3);
+    gap: var(--space-2);
+  }
+
+  .integrationName {
     font-size: var(--font-size-sm);
   }
 }
@@ -189,11 +454,12 @@
 
   .frameworksGrid {
     gap: var(--space-4);
-    padding: 0 var(--space-2);
+    padding: 0;
   }
 
   .frameworkCard {
     padding: var(--space-6);
+    margin-bottom: var(--space-4);
   }
 
   .iconEmoji {
@@ -207,4 +473,23 @@
   .frameworkDescription {
     font-size: var(--font-size-xs);
   }
+  
+  .integrationsWrapper {
+    margin-top: var(--space-6);
+  }
+  
+  .integrationsFootnote {
+    font-size: 10px;
+    padding: 0 var(--space-2);
+  }
+  
+  .integrationsSection {
+    padding: 0 var(--space-6);
+  }
+  
+  .integrationsSection::before,
+  .integrationsSection::after {
+    width: var(--space-6);
+  }
+
 }

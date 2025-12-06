@@ -8,7 +8,7 @@ description: "Frontend debugging tools and techniques. Debug custom events, trac
 
 ## Overview
 
-When developing with JitAi, developers frequently encounter situations where custom events fail to execute as expected. Frontend debugging tools are essential for identifying and resolving these issues effectively.
+When developing with JitAI, developers frequently encounter situations where custom events fail to execute as expected. Frontend debugging tools are essential for identifying and resolving these issues effectively.
 
 ## Prerequisites
 
@@ -83,4 +83,4 @@ Add breakpoints to your event handlers in the development area to pause executio
 
 ## Summary
 
-By following these debugging techniques, you can systematically examine variable values at each step of event execution, making it easier to identify and resolve issues in your JitAi applications.
+By following these debugging techniques, you can systematically examine variable values at each step of event execution, making it easier to identify and resolve issues in your JitAI applications.

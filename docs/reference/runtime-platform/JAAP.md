@@ -1,17 +1,17 @@
 ---
 sidebar_position: 0
 slug: JAAP
-title: "JAAP (JitAi Ai Application Protocol) Reference"
-description: "JAAP (JitAi Ai Application Protocol) Reference - API documentation for developers. Complete specifications, methods, and examples."
-sidebar_label: "JAAP (JitAi Ai Application Protocol)"
+title: "JAAP (JitAI Ai Application Protocol) Reference"
+description: "JAAP (JitAI Ai Application Protocol) Reference - API documentation for developers. Complete specifications, methods, and examples."
+sidebar_label: "JAAP (JitAI Ai Application Protocol)"
 ---
 
-# JAAP (JitAi Ai Application Protocol)
+# JAAP (JitAI Ai Application Protocol)
 The emergence of operating systems marked a significant turning point in computer development history. Through hardware abstraction, operating systems enabled programmers to focus on algorithmic logic by transferring complexities such as CPU architecture, memory management, process management, and device drivers to the operating system itself. Today, modern application development has evolved from writing single programs to complex integration of multiple technology stacks, preventing developers from focusing on business logic implementation.
 
 We need to build upon operating systems and continue their philosophy by abstracting the complexity of application development, enabling business experts to focus maximally on orchestrating high-level business logic.
 
-**JAAP (JitAi Ai Application Protocol)** serves as a unified architectural language that achieves the aforementioned complexity abstraction through structural definition and process-driven approaches, defining construction standards and modular architecture for application systems, while the application runtime-platform is responsible for interpreting and executing JAAP applications. JAAP consists of two parts: **Application Specification** and **Element Specification**, which together build a complete application development and runtime system.
+**JAAP (JitAI Ai Application Protocol)** serves as a unified architectural language that achieves the aforementioned complexity abstraction through structural definition and process-driven approaches, defining construction standards and modular architecture for application systems, while the application runtime-platform is responsible for interpreting and executing JAAP applications. JAAP consists of two parts: **Application Specification** and **Element Specification**, which together build a complete application development and runtime system.
 
 ## 🏗️ Application Specification
 An application is a collection of related elements that implement specific business functions, with each application corresponding to an independent folder structure. Applications achieve modular management and inheritance reuse through standardized directory structures and configuration files.
@@ -113,7 +113,7 @@ The `dist/` directory stores the application's compiled build artifacts:
 :::
 
 ### Application Inheritance Mechanism
-JitAi applications support multi-level inheritance, where child applications inherit elements and configurations from parent applications through `extends` configuration, achieving code reuse and functionality extension.
+JitAI applications support multi-level inheritance, where child applications inherit elements and configurations from parent applications through `extends` configuration, achieving code reuse and functionality extension.
 
 ```mermaid title="Application Inheritance Relationship Diagram"
 graph TB
@@ -138,7 +138,7 @@ graph TB
 - **Incremental Development**: Functionality extension based on parent applications
 
 ## 🧩 Element Specification
-JitAi adopts a three-layer element architecture design, achieving high scalability and reusability. Both Type elements and instance elements support complete lifecycle management mechanisms:
+JitAI adopts a three-layer element architecture design, achieving high scalability and reusability. Both Type elements and instance elements support complete lifecycle management mechanisms:
 
 ![Three-Layer Element Architecture Diagram](img/type-instance-relationship.svg)
 
@@ -513,13 +513,13 @@ curl -X POST https://app.example.com/api/wanyun/MyApp/services/UserService/getUs
 
 ##### 3. 📁 Create Element Directory
 **Goal**: Implement various files according to element specifications
-- **JitAi Development Tools**: Visual configuration interface, drag-and-drop creation
-- **Local Full-Code Development**: Support manual creation of standard directory structure, can use JitAi development tools simultaneously during full-code development
+- **JitAI Development Tools**: Visual configuration interface, drag-and-drop creation
+- **Local Full-Code Development**: Support manual creation of standard directory structure, can use JitAI development tools simultaneously during full-code development
 - **Initialize core files**: e.json, config.json, loader.py, etc.
 - **Version control**: Include in Git version management
 
 :::info Development Mode Description
-- **JitAi Development Tool Mode**: Supports visual configuration, immediate effect, zero-configuration deployment
+- **JitAI Development Tool Mode**: Supports visual configuration, immediate effect, zero-configuration deployment
 - **Local Full-Code Development Mode**: Complete control over implementation details, suitable for complex customization requirements. Refer to [Local Development and Debugging](../../devguide/advanced-guide/local-development-and-debugging) to master local development and debugging techniques.
 :::
 
@@ -559,7 +559,7 @@ curl -X POST https://app.example.com/api/wanyun/MyApp/services/UserService/getUs
 
 ---
 
-By following JAAP, developers can build standardized, scalable, and maintainable JitAi application systems. The protocol's layered design and standardized interfaces ensure high quality and long-term evolution capabilities of applications. 
+By following JAAP, developers can build standardized, scalable, and maintainable JitAI application systems. The protocol's layered design and standardized interfaces ensure high quality and long-term evolution capabilities of applications. 
 
 :::tip Advanced Cases
 After mastering JAAP, you can deepen your understanding through advanced cases: [Extend Your Own Element Families](../../extguide/extend-element-family-classes), learn to implement custom element families.

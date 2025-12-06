@@ -1,59 +1,59 @@
 {
-  "name": "jitai-docs",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "docusaurus": "docusaurus",
-    "start": "docusaurus start",
-    "start:zh": "docusaurus start --locale zh",
-    "start:en": "docusaurus start --locale en",
-    "build": "cross-env NODE_OPTIONS='--max-old-space-size=2048' docusaurus build --out-dir build1 && cp -rf build1/. build/ && rm -rf build1 && node scripts/fix-homepage-links.js",
-    "build:low-cpu": "cross-env UV_THREADPOOL_SIZE=1 NODE_OPTIONS='--max-old-space-size=2048' docusaurus build --out-dir build1 && cp -rf build1/. build/ && rm -rf build1 && node scripts/fix-homepage-links.js",
-    "build:zh": "cross-env NODE_OPTIONS='--max-old-space-size=2048' docusaurus build --locale zh --out-dir build1 && cp -rf build1/. build/ && rm -rf build1 && node scripts/fix-homepage-links.js",
-    "build:en": "cross-env NODE_OPTIONS='--max-old-space-size=2048' docusaurus build --locale en --out-dir build1 && cp -rf build1/. build/ && rm -rf build1 && node scripts/fix-homepage-links.js",
-    "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy",
-    "clear": "docusaurus clear",
-    "serve": "docusaurus serve",
-    "write-translations": "docusaurus write-translations",
-    "write-translations:zh": "docusaurus write-translations --locale zh",
-    "write-translations:en": "docusaurus write-translations --locale en",
-    "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc"
-  },
-  "dependencies": {
-    "@docusaurus/core": "^3.9.2",
-    "@docusaurus/preset-classic": "^3.9.2",
-    "@docusaurus/theme-common": "^3.9.2",
-    "@docusaurus/theme-mermaid": "^3.9.2",
-    "@mdx-js/react": "^3.0.0",
-    "clsx": "^2.0.0",
-    "prism-react-renderer": "^2.3.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
-  },
-  "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.9.2",
-    "@docusaurus/tsconfig": "^3.9.2",
-    "@docusaurus/types": "^3.9.2",
-    "cross-env": "^10.1.0",
-    "shx": "^0.4.0",
-    "typescript": "~5.6.2"
-  },
-  "browserslist": {
-    "production": [
-      ">0.5%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 3 chrome version",
-      "last 3 firefox version",
-      "last 5 safari version"
-    ]
-  },
-  "engines": {
-    "node": ">=20.0"
-  },
-  "packageManager": "pnpm@9.5.0+sha1.8c155dc114e1689d18937974f6571e0ceee66f1d"
+    "name": "jitai-docs",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "docusaurus": "docusaurus",
+        "start": "docusaurus start --host 0.0.0.0",
+        "start:zh": "docusaurus start --locale zh --host 0.0.0.0",
+        "start:en": "docusaurus start --locale en --host 0.0.0.0",
+        "build": "cross-env NODE_OPTIONS='--max-old-space-size=2048' docusaurus build --out-dir build1 && cp -rf build1/. build/ && rm -rf build1 && node scripts/fix-homepage-links.js",
+        "build:low-cpu": "cross-env UV_THREADPOOL_SIZE=1 NODE_OPTIONS='--max-old-space-size=2048' docusaurus build --out-dir build1 && cp -rf build1/. build/ && rm -rf build1 && node scripts/fix-homepage-links.js",
+        "build:zh": "cross-env NODE_OPTIONS='--max-old-space-size=2048' docusaurus build --locale zh --out-dir build1 && cp -rf build1/. build/ && rm -rf build1 && node scripts/fix-homepage-links.js",
+        "build:en": "cross-env NODE_OPTIONS='--max-old-space-size=2048' docusaurus build --locale en --out-dir build1 && cp -rf build1/. build/ && rm -rf build1 && node scripts/fix-homepage-links.js",
+        "swizzle": "docusaurus swizzle",
+        "deploy": "docusaurus deploy",
+        "clear": "docusaurus clear",
+        "serve": "docusaurus serve --host 0.0.0.0",
+        "write-translations": "docusaurus write-translations",
+        "write-translations:zh": "docusaurus write-translations --locale zh",
+        "write-translations:en": "docusaurus write-translations --locale en",
+        "write-heading-ids": "docusaurus write-heading-ids",
+        "typecheck": "tsc"
+    },
+    "dependencies": {
+        "@docusaurus/core": "^3.9.2",
+        "@docusaurus/preset-classic": "^3.9.2",
+        "@docusaurus/theme-common": "^3.9.2",
+        "@docusaurus/theme-mermaid": "^3.9.2",
+        "@mdx-js/react": "^3.0.0",
+        "clsx": "^2.0.0",
+        "prism-react-renderer": "^2.3.0",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0"
+    },
+    "devDependencies": {
+        "@docusaurus/module-type-aliases": "^3.9.2",
+        "@docusaurus/tsconfig": "^3.9.2",
+        "@docusaurus/types": "^3.9.2",
+        "cross-env": "^10.1.0",
+        "shx": "^0.4.0",
+        "typescript": "~5.6.2"
+    },
+    "browserslist": {
+        "production": [
+            ">0.5%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 3 chrome version",
+            "last 3 firefox version",
+            "last 5 safari version"
+        ]
+    },
+    "engines": {
+        "node": ">=20.0"
+    },
+    "packageManager": "pnpm@9.5.0+sha1.8c155dc114e1689d18937974f6571e0ceee66f1d"
 }

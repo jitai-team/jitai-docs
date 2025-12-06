@@ -30,7 +30,7 @@ AI助理的核心设计理念包括三个方面：
 
 ### 与其他工具的区别 {#compare-with-others}
 
-AI助理与Coze、Dify、n8n等平台的工作流工具有本质不同。传统的这些工具只能创建简单的处理函数，功能相对单一，其达到的效果等同于JitAi的"服务函数"。而AI助理则是一个完整的智能应用系统，功能更加强大和灵活。详情请见：[对比JitAi与主流AI应用平台](../../tutorial/jitai-comparison)
+AI助理与Coze、Dify、n8n等平台的工作流工具有本质不同。传统的这些工具只能创建简单的处理函数，功能相对单一，其达到的效果等同于JitAI的"服务函数"。而AI助理则是一个完整的智能应用系统，功能更加强大和灵活。详情请见：[对比JitAI与主流AI应用平台](../../tutorial/jitai-comparison)
 
 ### 主要优势 {#advantages}
 

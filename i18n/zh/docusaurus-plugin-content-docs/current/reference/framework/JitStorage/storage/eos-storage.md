@@ -5,9 +5,9 @@ description: "EOS存储 API 参考文档。完整的规格说明、方法和示�
 # EOS存储
 EOS存储是基于中国移动云EOS（云对象存储）服务的企业级存储解决方案，提供高性能、高可用性的云存储能力。它支持大规模数据存储和高并发访问，专为企业核心业务系统的文件存储需求而设计。
 
-EOS存储元素分层结构为Meta（storages.Meta） → Type（storages.EosType） → 实例，开发者可通过JitAi的可视化开发工具快捷地创建EOS存储实例元素。
+EOS存储元素分层结构为Meta（storages.Meta） → Type（storages.EosType） → 实例，开发者可通过JitAI的可视化开发工具快捷地创建EOS存储实例元素。
 
-当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAi官方提供的storages.EosType元素，以实现自己的封装。
+当然，开发者也可以创建自己的Type元素，或者在自己的App中改写JitAI官方提供的storages.EosType元素，以实现自己的封装。
 
 ## 快速开始 
 ### 创建实例元素

@@ -17,13 +17,13 @@ To reuse an existing page, developers can select the page to inherit in the adva
 The new page will inherit all component configurations from the parent page (excluding event logic), and developers can modify these configurations in the new page.
 
 ## Visual page editor {#visual-page-editor}
-JitAi provides a visual drag-and-drop page editor for page elements. Developers can drag functional components onto the canvas within the page editor and configure components while writing event logic.
+JitAI provides a visual drag-and-drop page editor for page elements. Developers can drag functional components onto the canvas within the page editor and configure components while writing event logic.
 
 ![Page Editor Overall Layout](./imgs/page-editor-overall-layout.png "Page Editor Overall Layout")
 
 The page editor layout consists of four main areas: toolbar, canvas, component configuration panel, and event panel.
 
-The JitAi development framework provides a comprehensive component library. Each component has distinct configuration options and events. Developers can refer to [Using Functional Components in Pages](/docs/devguide/using-functional-components-in-pages) to understand the detailed usage of each component.
+The JitAI development framework provides a comprehensive component library. Each component has distinct configuration options and events. Developers can refer to [Using Functional Components in Pages](/docs/devguide/using-functional-components-in-pages) to understand the detailed usage of each component.
 
 ## Integrating AI assistant in pages {#integrating-ai-assistants-in-pages}
 Pages support AI assistant integration, providing intelligent dialogue and auxiliary functions to enhance user experience.
@@ -121,7 +121,7 @@ When a component is no longer needed on the page, developers click the `...` but
 Page variables store temporary data and enable logic control within function implementations. Both the page's own functions and functions from other page components can access the current page's variables.
 
 ### Variable declaration {#variable-declaration}
-Developers can declare one or more page variables as needed. Variable types support all JitAi [data types](/docs/reference/framework/JitORM/data-types), including single-line text, multi-line text, date and time, and more.
+Developers can declare one or more page variables as needed. Variable types support all JitAI [data types](/docs/reference/framework/JitORM/data-types), including single-line text, multi-line text, date and time, and more.
 
 ![Page Variable Declaration](./imgs/page-variable-declaration.gif "Page Variable Declaration")
 
@@ -132,7 +132,7 @@ In the page variable configuration interface, developers can click the `Declare 
 Different variable data types support distinct configuration parameters. For example, text types like Stext and Ltext support character limit configuration.
 
 ### Getting variable values from request URLs {#getting-variables-from-urls}
-JitAi supports extracting variable values from request URLs when users access pages. After declaring variables, developers can select the corresponding variables in the `Select variables assigned via URL parameters` dropdown list, with support for multiple selections.
+JitAI supports extracting variable values from request URLs when users access pages. After declaring variables, developers can select the corresponding variables in the `Select variables assigned via URL parameters` dropdown list, with support for multiple selections.
 ## Page functions {#page-functions}
 Page functions are custom program logic encapsulated by developers according to business requirements. These functions can be invoked by various component functions and events within the page.
 
@@ -194,7 +194,7 @@ In the example above, the `On Page Variable (var2) Change` event calls the `SayH
 
 ## Shortcuts {#shortcuts}
 ### Clearing statements {#clearing-statements}
-When page function logic requires complete rewriting, JitAi supports one-click clearing of function statements.
+When page function logic requires complete rewriting, JitAI supports one-click clearing of function statements.
 
 ![Clear Statements](./imgs/page-function-clear-statements.gif "Clear Statements")
 
@@ -231,7 +231,7 @@ While editing function logic through the visual editor, the platform automatical
 Developers click the `</>` button on the right side of the statement to switch to source code mode, with the editor automatically locating the current statement. In source code mode, developers can freely modify function logic and click the switch button in the upper right corner to return to visual editing mode.
 
 ### Keyboard shortcuts {#keyboard-shortcuts}
-JitAi supports keyboard shortcuts for efficient function editing. Available shortcuts include: Select All (Ctrl/Command + A), Select Multiple Statements (Ctrl/Command + Select Statement), Copy (Ctrl/Command + C), Cut (Ctrl/Command + X), Paste (Ctrl/Command + V), Duplicate (Ctrl/Command + D), Undo (Ctrl/Command + Z), Redo (Ctrl/Command + Y), Delete (Delete), and Quick Add Basic Statement (Select Statement + Enter).
+JitAI supports keyboard shortcuts for efficient function editing. Available shortcuts include: Select All (Ctrl/Command + A), Select Multiple Statements (Ctrl/Command + Select Statement), Copy (Ctrl/Command + C), Cut (Ctrl/Command + X), Paste (Ctrl/Command + V), Duplicate (Ctrl/Command + D), Undo (Ctrl/Command + Z), Redo (Ctrl/Command + Y), Delete (Delete), and Quick Add Basic Statement (Select Statement + Enter).
 
 ![Page Function Edit Shortcuts](./imgs/page-function-edit-shortcuts.gif "Page Function Edit Shortcuts")
 
@@ -245,7 +245,7 @@ Within frontend page functions and component event function logic, developers ca
 The list above displays various callable targets including variables, backend services, backend data models, AI assistants, page functions, and frontend utilities for feedback reminders, data processing, utility functions, and exception handling. Developers can select targets according to their needs.
 
 ### Calling backend models and services {#calling-backend-models-services}
-Data models encapsulate CRUD operations on database tables, while service functions encapsulate custom business logic. JitAi enables developers to complete backend interface calls through point-and-click selection without writing HTTP interface call code.
+Data models encapsulate CRUD operations on database tables, while service functions encapsulate custom business logic. JitAI enables developers to complete backend interface calls through point-and-click selection without writing HTTP interface call code.
 
 ![Call Model in Function](./imgs/call-model-in-function.png "Call Model in Function")
 
@@ -254,14 +254,14 @@ Developers click the `Basic Statement` button, then click the `Please select` te
 Using the example above, sequentially selecting `Data Models` - `Customer(example)` - `Get One Record` completes the functionality for querying a single department data record.
 
 ### Calling frontend services {#calling-frontend-services}
-In frontend business function development, developers typically need common functionality such as popup confirmations, feedback reminders, loading indicators, message prompts (error/warning/normal), and log printing. JitAi provides these functions as built-in frontend services for direct use.
+In frontend business function development, developers typically need common functionality such as popup confirmations, feedback reminders, loading indicators, message prompts (error/warning/normal), and log printing. JitAI provides these functions as built-in frontend services for direct use.
 
 ![Call Frontend Service in Function](./imgs/call-frontend-service-in-function.png "Call Frontend Service in Function")
 
 Developers click the `Basic Statement` button, click the `Please select` text in the newly inserted blank statement, sequentially select `Feedback` - `Confirmation Dialog` from the popup list, and the platform automatically inserts a statement. Developers then enter the desired text in the parameter input box.
 
 ## Mobile page editor {#mobile-page-editor}
-JitAi includes built-in mobile adaptation capabilities, enabling mobile page development in the mobile page editor with the same ease as PC page development.
+JitAI includes built-in mobile adaptation capabilities, enabling mobile page development in the mobile page editor with the same ease as PC page development.
 
 ![Create Mobile Page](./imgs/create-mobile-page.png "Create Mobile Page")
 
@@ -272,7 +272,7 @@ Developers can select `Mobile` as the page terminal type when creating pages (PC
 The mobile page editor maintains functional parity with the PC page editor. Configuration, events, functions, page variables, and other operations remain completely consistent between mobile and PC page editors.
 
 ## Enabling AI assistant for page {#enabling-ai-assistant}
-JitAi supports direct integration of [AI Assistants](/docs/devguide/ai-assistant/create-ai-assistant) within pages, enabling user interaction with AI assistants when accessing pages.
+JitAI supports direct integration of [AI Assistants](/docs/devguide/ai-assistant/create-ai-assistant) within pages, enabling user interaction with AI assistants when accessing pages.
 
 ![Enable AI Assistant for Page](./imgs/add-ai-assistant-to-page.gif "Enable AI Assistant for Page")
 

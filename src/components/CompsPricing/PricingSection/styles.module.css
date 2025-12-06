@@ -823,33 +823,3 @@
     font-size: var(--font-size-xs);
   }
 }
-
-/* 弹窗表单响应式 (≤480px) */
-@media (max-width: 480px) {
-  .modalButtonCancel,
-  .modalButtonConfirm {
-    padding: var(--space-3);
-    font-size: var(--font-size-sm);
-  }
-  
-  .formLabel {
-    font-size: var(--font-size-xs);
-  }
-  
-  .formInput {
-    padding: var(--space-2-5) var(--space-3);
-    font-size: var(--font-size-sm);
-  }
-  
-  .helpLink {
-    font-size: var(--font-size-xs);
-  }
-  
-  .planInfoTitle {
-    font-size: var(--font-size-xs);
-  }
-  
-  .planInfoText {
-    font-size: var(--font-size-sm);
-  }
-}

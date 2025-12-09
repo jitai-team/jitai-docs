@@ -153,6 +153,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             },
             items: [
                 {
+                    label: "Home",
+                    to: "/",
+                    position: "left",
+                    activeBaseRegex: "^/$",
+                },
+                {
                     type: "docSidebar",
                     sidebarId: "tutorialSidebar",
                     position: "left",

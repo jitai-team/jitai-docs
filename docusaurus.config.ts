@@ -132,9 +132,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         // 覆盖默认的 viewport meta 标签，禁止移动端缩放
         metadata: [
             {
-                name: 'viewport',
-                content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
-            }
+                name: "viewport",
+                content:
+                    "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
+            },
         ],
         // Replace with your project's social card
         image: "https://jit-www.oss-accelerate.aliyuncs.com/logo/logo_dark.svg",
@@ -235,12 +236,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             to: "/download",
                         },
                         {
-                            label: "Blog",
-                            to: "/blog",
-                        },
-                        {
                             label: "Try Online",
                             to: "https://demo.jit.pro/wanyun/AdminApp",
+                        },
+                        {
+                            label: "Blog",
+                            to: "/blog",
                         },
                     ],
                 },
@@ -291,13 +292,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     ],
                 },
             ],
-            // logo: {
-            //     alt: "Next-generation AI application development technology system",
-            //     src: "https://jit-www.oss-accelerate.aliyuncs.com/logo/logo_title_dark.svg",
-            //     href: "https://jit.pro",
-            //     width: 340,
-            //     height: 100,
-            // },
+            logo: {
+                alt: "Next-generation AI application development technology system",
+                src: "https://jit-www.oss-accelerate.aliyuncs.com/logo/logo_title_dark.svg",
+                href: "https://jit.pro",
+                width: 340,
+                height: 100,
+            },
             copyright: `Copyright © ${new Date().getFullYear()} , jitai platform LLC.`,
         },
         prism: {

@@ -195,11 +195,6 @@ result = productTable.query(
 #     size=20
 # )
 ```
-
-:::tip 提示
-为常用的筛选字段（如产品名称 `productName`、产品型号 `typeOfProduct`）创建索引可以大幅提升查询性能。参考 [配置表索引优化查询](data-table-model#configure-table-index-optimization)。
-:::
-
 ---
 
 ## 批量操作优化 {#batch-operations}
@@ -646,12 +641,6 @@ productTable.updateByPK(
     triggerEvent=0  # 不需要事件时跳过
 )
 ```
-
-**效果对比:**
-- 优化前: ~30秒
-- 优化后: ~2秒
-- 性能提升: **93% ↑**
-
 ---
 
 :::tip 总结

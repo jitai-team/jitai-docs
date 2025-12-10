@@ -191,6 +191,7 @@
         /* 确保在虚拟键盘弹出时正确定位 */
         position: fixed;
         top: auto;
+        z-index: 9999;
     }
 
     .aiAssistantButton {
@@ -226,6 +227,7 @@
         /* 适配安全区域（如 iPhone 的刘海屏） */
         padding-top: env(safe-area-inset-top);
         padding-bottom: env(safe-area-inset-bottom);
+        z-index: 9999;
     }
 
     .aiAssistantButton {

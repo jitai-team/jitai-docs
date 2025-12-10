@@ -7,22 +7,21 @@ const CONTENT = {
         "https://jit-www.oss-accelerate.aliyuncs.com/en_preview.mp4",
     modal: {
         title: "Experience Tip",
-        content: "For the best experience, we recommend visiting the JitAI website on a PC to try it online.<br/><br/>Would you like to browse the development documentation now?",
+        content:
+            "For the best experience, we recommend visiting the JitAI website on a PC to try it online.<br/><br/>Would you like to browse the development documentation now?",
         confirm: "View Docs",
         cancel: "Later",
     },
     cards: [
         {
             title: "Production-Grade AI Application Development",
-            description: `A full-stack development framework for LLMs, AI workflows, AI agents, and AI-assisted human–UI collaboration — radically simplifying the rapid development of production-grade AI applications.
-      <br/>A comprehensive integration of modern information technologies that streamlines the rapid development of AI-native, enterprise-grade IT applications.`,
+            description: `An all-in-one, infinitely scalable, full-stack framework for building production-grade applications. It comes with built-in support for large AI models, workflows, intelligent agents, collaborative AI & UI assistants, WebUI, databases, storage, permissions, security, payment, and more, dramatically simplifying​ the rapid development of AI-native enterprise applications.`,
             color: "#3D65FD",
         },
         // <br/>Doc/Excel assistant application development framework for rapidly customizing enterprise-specific document writing AI assistants.
         {
             title: "Interpretable AI-Native Application Architecture",
-            description: `World's first system-level full-stack AI context, enabling AI intelligence to perceive and drive everything, allowing enterprise systems to fully embrace AI and unleash the long-term value of AI intelligence.
-      <br/>Interpretable JAAP protocol and application inheritance mechanism enable infinite and arbitrary expansion of the entire system while maintaining simplicity and elegance.`,
+            description: `The world's first application architecture that supports system-level AI context, enabling AI agents to dynamically perceive, drive, and orchestrate all full-stack modules; coupled with a unified interpretive JAAP protocol and a matrix framework, it makes enterprise systems truly AI-native, infinitely scalable, and consistently concise and robust, safeguarding their long-term value in the rapidly evolving AI era.`,
             color: "#3D65FD",
         },
         {
@@ -44,11 +43,11 @@ const CONTENT = {
             color: "#3D65FD",
         },
         {
-          "title": "Seamless Integration and Infinite Extension",
-          "description": `Can infinitely integrate any technology into orchestration mod.
+            title: "Seamless Integration and Infinite Extension",
+            description: `Can infinitely integrate any technology into orchestration mod.
           <br/>Can infinitely extend and modify any integration.`,
-          "color": "#3D65FD"
-        }
+            color: "#3D65FD",
+        },
     ],
 };
 

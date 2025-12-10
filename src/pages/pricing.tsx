@@ -8,6 +8,7 @@ import styles from "@site/src/pages/pricing.module.css";
 const PricingPage: React.FC = () => {
     return (
         <PageLayout pageId="pricing" containerClassName={styles.container}>
+            {/* @ts-ignore */}
             <Head>
                 <meta name="robots" content="noindex, nofollow" />
             </Head>

@@ -190,11 +190,6 @@ result = productTable.query(
 #     size=20
 # )
 ```
-
-:::tip Tip
-Creating indexes for frequently filtered fields (e.g., `productName`, `typeOfProduct`) can dramatically improve query performance. See [Configuring table indexes for query optimization](data-table-model#configure-table-index-optimization).
-:::
-
 ---
 
 ## Batch operation optimization {#batch-operations}
@@ -644,12 +639,6 @@ productTable.updateByPK(
     triggerEvent=0  # Skip events if not needed
 )
 ```
-
-**Results:**
-- Before optimization: ~30 seconds
-- After optimization: ~2 seconds
-- Performance improvement: **93% ↑**
-
 ---
 
 :::tip Summary

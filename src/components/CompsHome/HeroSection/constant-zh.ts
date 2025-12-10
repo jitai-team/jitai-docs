@@ -7,22 +7,21 @@ const CONTENT = {
         "https://jit-www.oss-accelerate.aliyuncs.com/zh_preview.mp4",
     modal: {
         title: "体验提示",
-        content: "为了获得最佳体验，建议您在电脑端访问 JitAI 官网进行在线试用。<br/><br/>您现在想先浏览开发文档吗？",
+        content:
+            "为了获得最佳体验，建议您在电脑端访问 JitAI 官网进行在线试用。<br/><br/>您现在想先浏览开发文档吗？",
         confirm: "浏览文档",
         cancel: "稍后再说",
     },
     cards: [
         {
             title: "生产级AI应用开发",
-            description: `AI大模型、AI工作流、AI智能体以及AI&UI协作的AI助理的全栈开发框架，极简化生产级AI应用的快速开发。
-            <br/>全面的信息化技术的集成，极简化AI原生的企业级IT应用的快速开发。`,
+            description: `ALL-IN-ONE的、可无限扩展的、生产级AI应用的全栈开发框架，内置AI大模型、工作流、智能体、AI&UI协作式AI助理、WebUI、数据库、存储、权限、安全、支付等子框架，极简化AI原生企业级应用的快速开发`,
             color: "#3D65FD",
         },
         // <br/>Doc/Excel助手应用开发框架，快速定制企业专用文档编写AI助手。
         {
             title: "解释型AI原生应用架构",
-            description: `全球首个系统级全栈AI上下文，让AI智力能感知和驱动一切，让企业系统完全拥抱AI，激发AI智力的长期价值。<br/>
-      解释型JAAP协议、应用继承机制，让整个体系无限任意扩展，且一直简洁优雅。`,
+            description: `全球首个支持系统级AI上下文的应用架构，让全栈所有模块都能被AI agent动态感知、驱动、编排；以及统一的解释型JAAP协议和矩阵型框架，让企业系统真正AI原生、无限扩展且一直简洁健壮，保障企业系统在日新月异的AI时代的长期价值`,
             color: "#3D65FD",
         },
         {
@@ -44,11 +43,11 @@ const CONTENT = {
             color: "#3D65FD",
         },
         {
-          title: '无缝集成与无限扩展',
-          description: `可无限集成任何技术到编排模式。<br/>
+            title: "无缝集成与无限扩展",
+            description: `可无限集成任何技术到编排模式。<br/>
           可无限扩展和改写任何集成。`,
-          color: '#3D65FD'
-        }
+            color: "#3D65FD",
+        },
     ],
 };
 

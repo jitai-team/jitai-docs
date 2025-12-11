@@ -30,7 +30,7 @@ const PRICING_PLANS: PricingPlan[] = [
     yearlyPrice: 'Free',
     buyoutPrice: 'Free',
     cardType: 'desktopCard',
-    analyticsCssClass: 'analytics-payFree analytics-download',
+    analyticsCssClass: 'analytics-download',
     features: [
       '✓ For development environment only',
       '✓ 3 app only',
@@ -55,7 +55,7 @@ const PRICING_PLANS: PricingPlan[] = [
       'All Desktop Basic features, plus',
       '✓ Up to 10 apps',
     ],
-    analyticsCssClass: 'analytics-pay',
+    analyticsCssClass: '',
   },
   {
     id: 'serverBasic',
@@ -68,7 +68,7 @@ const PRICING_PLANS: PricingPlan[] = [
     buyoutPrice: '12,000',
     cardType: 'basicCard',
     isRecommended: true,
-    analyticsCssClass: 'analytics-pay',
+    analyticsCssClass: '',
     features: [
         '✓ For development/testing/production environments',
         '✓ 1 app only',
@@ -87,7 +87,7 @@ const PRICING_PLANS: PricingPlan[] = [
     yearlyPrice: '400',
     buyoutPrice: '24,000',
     cardType: 'standardCard',
-    analyticsCssClass: 'analytics-pay',
+    analyticsCssClass: '',
     features: [
         'All Server Basic features, plus',
         '✓ Up to 5 apps',

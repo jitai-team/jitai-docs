@@ -197,3 +197,23 @@ automation:
   label: Automation
   permalink: /automation
   description: Automation technologies, workflows, and AI-driven automation strategies
+
+FDE:
+  label: FDE
+  permalink: /fde
+  description: Forward Deployed Engineer - Bridging the gap between AI technology and business needs
+
+'native productivity':
+  label: Native Productivity
+  permalink: /native-productivity
+  description: Endogenous productivity tools nurtured from enterprise's unique data, processes, and rules
+
+'application engineering':
+  label: Application Engineering
+  permalink: /application-engineering
+  description: Engineering practices and systems for building AI applications
+
+'matrix framework':
+  label: Matrix Framework
+  permalink: /matrix-framework
+  description: JitAi Matrix Framework - A platform for Reality Modeling and Technology Integration

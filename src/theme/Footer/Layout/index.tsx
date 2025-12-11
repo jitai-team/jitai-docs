@@ -21,9 +21,9 @@ export default function FooterLayout({
             <div className="footer__bottom text--center">
               {logo && <div className="margin-bottom--sm">{logo}</div>}
               {/* toolfame 徽章 */}
-              <div style={{ marginBottom: '1rem', display:'none' }} className='external-link'>
+              <div style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'center' }} className='external-link'>
                 <a 
-                  href="https://toolfame.com/item/jitai" 
+                  href="https://toolfame.com/item/jitai"  
                   target="_blank" 
                   rel="noopener noreferrer"
                 >

@@ -18,10 +18,6 @@ JitAi:
   permalink: /development-platform
   description: Development platform technologies and tools
 
-MCP:
-  label: MCP
-  permalink: /mcp
-  description: Model Context Protocol and related topics
 
 'production grade ai app':
   label: Production-Grade AI Applications
@@ -247,3 +243,8 @@ outsystem:
   label: Integration Platforms
   permalink: /integration-platforms
   description: Integration platforms and iPaaS for AI tools
+
+'mcp':
+  label: MCP
+  permalink: /mcp
+  description: Model Context Protocol and related topics

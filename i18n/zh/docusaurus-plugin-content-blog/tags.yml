@@ -14,9 +14,6 @@ JitAi:
   label: 开发平台
   description: 开发平台技术与工具
 
-MCP:
-  label: MCP
-  description: 模型上下文协议相关主题
 
 'production grade ai app':
   label: 生产级 AI 应用
@@ -246,3 +243,7 @@ outsystem:
 'integration platforms':
   label: 集成平台
   description: AI 工具的集成平台与 iPaaS
+
+'mcp':
+  label: MCP
+  description: 模型上下文协议相关主题

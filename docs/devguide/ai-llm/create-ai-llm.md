@@ -42,6 +42,11 @@ To prevent model call failures caused by single key rate limits, excessive reque
 
 Click `Enable Backup Keys` → `+Backup Key` in the interface to add a key input field, enter your backup key, then click `Save`.
 
+## Custom model configuration {#custom-model-configuration}
+The platform supports custom management of model lists. In the LLM list area, you can select models to enable and click the `Edit` button to configure advanced parameters (such as temperature, max_tokens, etc.). Click the `+` button in the top right corner to add custom models, supporting configuration of model name, type (dialogue/vector/rerank), and JSON-formatted parameters. Custom models are displayed at the top and can be deleted at any time. This is particularly useful for integrating newly released models or privately deployed models.
+
+![Custom Configuration](./img/1/custom-llm.png)
+
 ## Private LLM integration {#private-llm-integration}
 For enhanced information security, developers may deploy private models, which the platform fully supports through seamless integration.
 

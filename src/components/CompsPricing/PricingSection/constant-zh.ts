@@ -29,7 +29,7 @@ const PRICING_PLANS: PricingPlan[] = [
     yearlyPrice: '免费',
     buyoutPrice: '免费',
     cardType: 'desktopCard',
-    analyticsCssClass: 'analytics-payFree analytics-download',
+    analyticsCssClass: 'analytics-download',
     features: [
       '✓ 仅用于开发环境',
       '✓ 3个应用',
@@ -50,7 +50,7 @@ const PRICING_PLANS: PricingPlan[] = [
     yearlyPrice: '16',
     buyoutPrice: '960',
     cardType: 'desktopCard',
-    analyticsCssClass: 'analytics-pay',
+    analyticsCssClass: '',
     features: [
       '桌面基础版所有功能，以及',
       '✓ 10个应用',
@@ -67,7 +67,7 @@ const PRICING_PLANS: PricingPlan[] = [
     buyoutPrice: '12,000',
     cardType: 'basicCard',
     isRecommended: true,
-    analyticsCssClass: 'analytics-pay',
+    analyticsCssClass: '',
     features: [
         '服务器基础版所有功能，以及',
         '✓ 用于开发/测试/生产环境',
@@ -87,7 +87,7 @@ const PRICING_PLANS: PricingPlan[] = [
     yearlyPrice: '400',
     buyoutPrice: '24,000',
     cardType: 'standardCard',
-    analyticsCssClass: 'analytics-pay',
+    analyticsCssClass: '',
     features: [
         '服务器基础版所有功能，以及',
         '✓ 5个应用',

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" 
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1600 900" 
+     role="img"
+     aria-labelledby="title1 desc1">
+  <title id="title1">AI智力生产力演进的两大阶段</title>
+  <desc id="desc1">展示从实验期到工程期的演进过程，突出应用工程是瓶颈突破口</desc>
+
+  <!-- 样式定义 -->
+  <defs>
+    <style>
+      :root {
+        --primary-color: #326DFF;
+        --primary-light: #8EAEFF;
+        --primary-dark: #1E4FCC;
+        --accent-orange: #FF6B35;
+        --bg-light: #F9FAFB;
+        --bg-white: #FFFFFF;
+        --text-primary: #326DFF;
+        --text-secondary: #6b7280;
+        --text-dark: #1e293b;
+        --border-color: #E5E7EB;
+      }
+      
+      .primary { fill: var(--primary-color); }
+      .primary-light { fill: var(--primary-light); }
+      .accent { fill: var(--accent-orange); }
+      .bg-light { fill: var(--bg-light); }
+      .bg-white { fill: var(--bg-white); }
+      
+      .text-main { 
+        fill: var(--text-dark); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+      }
+      
+      .text-title { 
+        fill: var(--text-primary); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 26px;
+        font-weight: 600;
+      }
+      
+      .text-label { 
+        fill: var(--text-dark); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+      }
+      
+      .text-sub { 
+        fill: var(--text-secondary); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 18px;
+      }
+      
+      .text-small { 
+        fill: var(--text-secondary); 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        font-size: 16px;
+      }
+
+      .card-border {
+        fill: var(--bg-white);
+        stroke: var(--border-color);
+        stroke-width: 1;
+      }
+    </style>
+
+    <!-- 齿轮图标定义 -->
+    <symbol id="gear-static" viewBox="0 0 100 100">
+      <path d="M 50 10 L 55 25 L 70 20 L 65 35 L 80 35 L 70 45 L 80 55 L 65 55 L 70 70 L 55 65 L 50 80 L 45 65 L 30 70 L 35 55 L 20 55 L 30 45 L 20 35 L 35 35 L 30 20 L 45 25 Z M 50 35 A 15 15 0 1 1 50 65 A 15 15 0 1 1 50 35" 
+            fill="#9ca3af" opacity="0.5"/>
+    </symbol>
+
+    <symbol id="gear-active" viewBox="0 0 100 100">
+      <path d="M 50 10 L 55 25 L 70 20 L 65 35 L 80 35 L 70 45 L 80 55 L 65 55 L 70 70 L 55 65 L 50 80 L 45 65 L 30 70 L 35 55 L 20 55 L 30 45 L 20 35 L 35 35 L 30 20 L 45 25 Z M 50 35 A 15 15 0 1 1 50 65 A 15 15 0 1 1 50 35" 
+            fill="#326DFF"/>
+    </symbol>
+
+    <!-- 锁图标 -->
+    <symbol id="lock-icon" viewBox="0 0 48 48">
+      <rect x="12" y="22" width="24" height="20" rx="3" fill="#FF6B35"/>
+      <path d="M 18 22 V 15 A 6 6 0 1 1 30 15 V 22" stroke="#FF6B35" stroke-width="3" fill="none"/>
+      <circle cx="24" cy="32" r="3" fill="#FFFFFF"/>
+    </symbol>
+  </defs>
+
+  <!-- 背景 -->
+  <g id="background">
+    <rect width="1600" height="900" class="bg-light"/>
+  </g>
+
+  <!-- 主标题 -->
+  <g id="header">
+    <text x="800" y="60" text-anchor="middle" class="text-main">AI智力生产力演进的两大阶段</text>
+  </g>
+
+  <!-- 时间线轴 - 拆分为左右两段，避免视觉干扰 -->
+  <g id="timeline">
+    <!-- 左段：实验期时间线 -->
+    <path d="M 100 450 L 710 450" stroke="#326DFF" stroke-width="3" stroke-opacity="0.6" fill="none"/>
+    
+    <!-- 右段：工程期时间线 -->
+    <path d="M 890 450 L 1500 450" stroke="#326DFF" stroke-width="3" stroke-opacity="0.6" fill="none"/>
+    <polygon points="1490,445 1500,450 1490,455" fill="#326DFF" opacity="0.6"/>
+  </g>
+
+  <!-- 左侧：实验期 -->
+  <g id="experimental-stage">
+    <!-- 阶段标题 -->
+    <rect x="130" y="120" width="540" height="70" rx="8" class="card-border"/>
+    <text x="400" y="160" text-anchor="middle" class="text-title">实验期</text>
+    <text x="400" y="185" text-anchor="middle" class="text-small">Demo &amp; 玩具</text>
+
+    <!-- 基础技术块 -->
+    <rect x="180" y="280" width="150" height="110" rx="8" class="primary-light"/>
+    <text x="255" y="330" text-anchor="middle" class="text-label" fill="#FFFFFF">基础</text>
+    <text x="255" y="355" text-anchor="middle" class="text-label" fill="#FFFFFF">技术</text>
+
+    <!-- 箭头 -->
+    <path d="M 340 335 L 380 335" stroke="#326DFF" stroke-width="2" fill="none"/>
+    <polygon points="375,330 385,335 375,340" fill="#326DFF"/>
+
+    <!-- 应用实验气泡 -->
+    <circle cx="450" cy="335" r="55" class="bg-white" stroke="#326DFF" stroke-width="2" stroke-dasharray="5,3"/>
+    <text x="450" y="330" text-anchor="middle" class="text-sub" fill="#326DFF">应用</text>
+    <text x="450" y="352" text-anchor="middle" class="text-sub" fill="#326DFF">实验</text>
+
+    <!-- 箭头 -->
+    <path d="M 515 335 L 555 335" stroke="#326DFF" stroke-width="2" fill="none"/>
+    <polygon points="550,330 560,335 550,340" fill="#326DFF"/>
+
+    <!-- 结果：静止齿轮 -->
+    <use href="#gear-static" x="580" y="285" width="100" height="100"/>
+    <text x="630" y="410" text-anchor="middle" class="text-small">新生产力</text>
+    <text x="630" y="430" text-anchor="middle" class="text-small">雏形</text>
+  </g>
+
+  <!-- 中间：断层/锁 -->
+  <g id="bottleneck">
+    <use href="#lock-icon" x="776" y="305" width="48" height="48"/>
+    <text x="800" y="380" text-anchor="middle" class="text-label" fill="#FF6B35">应用工程</text>
+    <text x="800" y="405" text-anchor="middle" class="text-label" fill="#FF6B35">瓶颈</text>
+    
+    <!-- 断裂箭头 - 橙色虚线连接左右两段 -->
+    <path d="M 710 450 L 890 450" stroke="#FF6B35" stroke-width="3" stroke-dasharray="8,4" fill="none"/>
+  </g>
+
+  <!-- 右侧：工程期 -->
+  <g id="engineering-stage">
+    <!-- 阶段标题 -->
+    <rect x="930" y="120" width="540" height="70" rx="8" class="card-border"/>
+    <text x="1200" y="160" text-anchor="middle" class="text-title">工程期</text>
+    <text x="1200" y="185" text-anchor="middle" class="text-small">普惠生产力</text>
+
+    <!-- 基础技术块 -->
+    <rect x="970" y="280" width="150" height="110" rx="8" class="primary-light"/>
+    <text x="1045" y="330" text-anchor="middle" class="text-label" fill="#FFFFFF">基础</text>
+    <text x="1045" y="355" text-anchor="middle" class="text-label" fill="#FFFFFF">技术</text>
+
+    <!-- 箭头 -->
+    <path d="M 1130 335 L 1170 335" stroke="#326DFF" stroke-width="2" fill="none"/>
+    <polygon points="1165,330 1175,335 1165,340" fill="#326DFF"/>
+
+    <!-- 应用工程块（加粗突出） -->
+    <rect x="1180" y="280" width="150" height="110" rx="8" fill="#F0F7FF" stroke="#326DFF" stroke-width="2"/>
+    <text x="1255" y="325" text-anchor="middle" class="text-label" fill="#326DFF" font-weight="700">应用</text>
+    <text x="1255" y="350" text-anchor="middle" class="text-label" fill="#326DFF" font-weight="700">工程</text>
+    <text x="1255" y="375" text-anchor="middle" class="text-small" fill="#326DFF">★</text>
+
+    <!-- 商业化产品气泡 -->
+    <circle cx="1255" cy="510" r="55" fill="#8EAEFF" opacity="0.3"/>
+    <text x="1255" y="505" text-anchor="middle" class="text-sub" fill="#1e293b">商业化</text>
+    <text x="1255" y="527" text-anchor="middle" class="text-sub" fill="#1e293b">产品</text>
+
+    <!-- 连接线 -->
+    <path d="M 1255 400 L 1255 445" stroke="#326DFF" stroke-width="2" fill="none"/>
+    <polygon points="1250,440 1255,450 1260,440" fill="#326DFF"/>
+
+    <!-- 箭头指向结果 -->
+    <path d="M 1320 510 L 1360 510" stroke="#326DFF" stroke-width="2" fill="none"/>
+    <polygon points="1355,505 1365,510 1355,515" fill="#326DFF"/>
+
+    <!-- 结果：运转齿轮 -->
+    <use href="#gear-active" x="1370" y="460" width="100" height="100"/>
+    <text x="1420" y="590" text-anchor="middle" class="text-label" fill="#326DFF">普惠</text>
+    <text x="1420" y="615" text-anchor="middle" class="text-label" fill="#326DFF">新生产力</text>
+  </g>
+
+  <!-- 底部说明 -->
+  <g id="footer">
+    <text x="400" y="730" text-anchor="middle" class="text-sub">基础技术 + 应用实验</text>
+    <text x="400" y="755" text-anchor="middle" class="text-sub">→ 新生产力雏形</text>
+    
+    <text x="1200" y="730" text-anchor="middle" class="text-sub">基础技术 + 应用工程 + 商业化</text>
+    <text x="1200" y="755" text-anchor="middle" class="text-sub">→ 普惠新生产力</text>
+  </g>
+
+  <!-- 关键洞察标注 -->
+  <g id="insight">
+    <rect x="640" y="510" width="320" height="70" rx="8" fill="#F9FAFB" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="800" y="543" text-anchor="middle" class="text-label" fill="#326DFF">关键突破点</text>
+    <text x="800" y="568" text-anchor="middle" class="text-sub" fill="#6b7280">补齐"应用工程"短板</text>
+  </g>
+</svg>

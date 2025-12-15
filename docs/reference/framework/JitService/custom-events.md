@@ -22,7 +22,7 @@ The hierarchical structure of custom event elements is Meta (`events.Meta`) → 
 Developers must first **define the event within a service element** before creating a `Custom Event` instance element to subscribe to that event.
 See: [Event Definition in Service Elements](./custom-business-service#event-definition-and-usage)
 
-### Creating Instance Elements
+### Creating Instance Elements  {#subscribe-custom-event}
 
 #### Directory Structure
 

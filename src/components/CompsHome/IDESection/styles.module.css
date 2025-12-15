@@ -323,6 +323,11 @@
     flex-direction: column;
     text-align: center;
     gap: var(--space-4);
+    margin-bottom: var(--space-6);
+  }
+  
+  .featureCard:last-child {
+    margin-bottom: 0;
   }
 
   .featureImage {
@@ -365,11 +370,11 @@
   }
 
   .ideSection {
-    padding: var(--space-24) 0;
+    padding: var(--space-24) var(--space-6);
   }
 
   .container {
-    padding: 0 var(--space-6);
+    padding: 0;
   }
 
   .header {
@@ -413,6 +418,7 @@
   .featureCard {
     padding: var(--space-4);
     min-height: 120px;
+    margin-bottom: var(--space-4);
   }
 
   .imagePlaceholder {
@@ -442,7 +448,7 @@
   }
 
   .ideSection {
-    padding: var(--space-16) 0;
+    padding: var(--space-16) var(--space-4);
   }
 
   .title {
@@ -474,6 +480,8 @@
     rgba(75, 85, 99, 0.08) 100%);
   border: 1px solid rgba(55, 65, 81, 0.06);
   transition: var(--transition-primary);
+  z-index: 1; /* 降低层级 */
+  transform: translate3d(0, 0, 0); /* 尝试限制层叠上下文 */
 }
 
 .videoContainer:hover {
@@ -553,6 +561,10 @@
 
 /* 响应式视频样式 */
 @media (max-width: 768px) {
+  .videoOverlay {
+    display: none;
+  }
+  
   .videoContainer {
     border-radius: var(--border-radius-md);
   }

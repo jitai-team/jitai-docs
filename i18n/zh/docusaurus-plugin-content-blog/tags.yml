@@ -14,9 +14,6 @@ JitAi:
   label: 开发平台
   description: 开发平台技术与工具
 
-MCP:
-  label: MCP
-  description: 模型上下文协议相关主题
 
 'production grade ai app':
   label: 生产级 AI 应用
@@ -210,3 +207,43 @@ tco:
 automation:
   label: 自动化
   description: 自动化技术、工作流与 AI 驱动的自动化策略
+
+'native productivity':
+  label: 内生生产力
+  description: 基于企业独有数据、流程、规则培育的内生型生产力工具
+
+'application engineering':
+  label: 应用工程
+  description: AI 应用工程体系与技术实践
+
+'matrix framework':
+  label: 矩阵框架
+  description: JitAi 矩阵框架 - 现实建模与技术集成平台
+
+'google ai':
+  label: 谷歌 AI
+  description: 谷歌 AI 相关主题与新闻
+
+doubao:
+  label: 豆包
+  description: 豆包 AI 及其相关主题
+
+'agentic smartphones':
+  label: 智能体手机
+  description: 智能体手机与 AI 原生移动架构
+
+outsystem:
+  label: OutSystems
+  description: OutSystems 低代码平台及相关主题
+
+'platform engineering':
+  label: 平台工程
+  description: 面向 AI 的平台工程实践与工具
+
+'integration platforms':
+  label: 集成平台
+  description: AI 工具的集成平台与 iPaaS
+
+'mcp':
+  label: MCP
+  description: 模型上下文协议相关主题

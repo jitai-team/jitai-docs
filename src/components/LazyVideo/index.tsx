@@ -2,21 +2,9 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import BrowserOnly from '@docusaurus/BrowserOnly';
 import styles from './styles.module.css';
 
-interface LazyVideoProps {
-  /** 视频源地址 */
+interface LazyVideoProps extends React.VideoHTMLAttributes<HTMLVideoElement> {
+  /** 视频源地址 (已在 VideoHTMLAttributes 中，但显式声明以增强提示) */
   src: string;
-  /** 封面图片（可选，推荐使用视频第一帧） */
-  poster?: string;
-  /** 是否自动播放（进入视口后） */
-  autoPlay?: boolean;
-  /** 是否循环播放 */
-  loop?: boolean;
-  /** 是否静音 */
-  muted?: boolean;
-  /** 是否内联播放（iOS） */
-  playsInline?: boolean;
-  /** 是否显示控件 */
-  controls?: boolean;
   /** 容器 className */
   className?: string;
   /** video 元素 className */
@@ -25,10 +13,6 @@ interface LazyVideoProps {
   rootMargin?: string;
   /** 加载回调 */
   onLoad?: () => void;
-  /** 点击回调 */
-  onClick?: () => void;
-  /** 子元素（覆盖层等） */
-  children?: React.ReactNode;
   /** video ref 回调 */
   videoRef?: React.RefCallback<HTMLVideoElement>;
 }
@@ -51,6 +35,7 @@ const ClientLazyVideo: React.FC<LazyVideoProps> = ({
   onClick,
   children,
   videoRef: externalVideoRef,
+  ...rest
 }) => {
   const [isInView, setIsInView] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -182,6 +167,7 @@ const ClientLazyVideo: React.FC<LazyVideoProps> = ({
           onCanPlay={handleVideoReady}
           onLoadedMetadata={handleVideoReady}
           onPlaying={handleVideoReady}
+          {...rest}
         />
       )}
 

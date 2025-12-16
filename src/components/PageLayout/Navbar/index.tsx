@@ -146,6 +146,8 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                 {/* 右侧区域：语言切换器、Download 按钮和 Try Online 按钮 */}
                 <div className={styles.rightSection}>
                     <LanguageSwitcher className={styles.languageSwitcher} />
+                    {/* 在线试用隐藏 2025/12/16 */}
+                    {/**
                     <button
                         className={`${styles.tryOnlineButton} analytics-tryOnline`}
                         onClick={() => handleNavClick(CONTENT.tryOnlineButton)}
@@ -153,6 +155,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                     >
                         {CONTENT.tryOnlineButton.label}
                     </button>
+                    */}
                     <button
                         className={`${styles.downloadButton} analytics-download`}
                         onClick={() => handleNavClick(CONTENT.downloadButton)}

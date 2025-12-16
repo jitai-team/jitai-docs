@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Head from '@docusaurus/Head';
+import Head from "@docusaurus/Head";
 import styles from "./index.module.css";
 import ZH_CONTENT from "./constant-zh";
 import EN_CONTENT from "./constant-en";
@@ -14,7 +14,7 @@ const getCompleteReferenceFormUrl = function (lang: string) {
         baseUrl = "https://wy.jit.pro/whwy/aicrm/s/contactus";
     }
     return addUTMToUrl(baseUrl);
-}
+};
 
 interface AIAssistantProps {
     className?: string;
@@ -27,15 +27,15 @@ interface AIAssistantProps {
  */
 const simpleHash = async (str: string): Promise<string> => {
     // 检查 crypto.subtle 是否可用（在 HTTP 环境或某些浏览器中可能不可用）
-    if (typeof crypto === 'undefined' || !crypto.subtle) {
+    if (typeof crypto === "undefined" || !crypto.subtle) {
         // 降级方案：使用简单的字符串哈希
         let hash = 0;
         for (let i = 0; i < str.length; i++) {
             const char = str.charCodeAt(i);
-            hash = ((hash << 5) - hash) + char;
+            hash = (hash << 5) - hash + char;
             hash = hash & hash; // Convert to 32bit integer
         }
-        return Math.abs(hash).toString(16).padStart(20, '0').substring(0, 20);
+        return Math.abs(hash).toString(16).padStart(20, "0").substring(0, 20);
     }
 
     const encoder = new TextEncoder();
@@ -49,10 +49,10 @@ const simpleHash = async (str: string): Promise<string> => {
     return hashHex.substring(0, 20);
 };
 
-const AI_ASSISTANT_HIDE_KEY = 'is_hide_jitai_assistant';
-const AI_ASSISTANT_VERSION_KEY = 'jitai-assistant-version';
-const BROWSER_FINGERPRINT_KEY = 'jitai-browser-fingerprint';
-const CURRENT_VERSION = '6'; // 增加版本号来清除旧的错误缓存
+const AI_ASSISTANT_HIDE_KEY = "is_hide_jitai_assistant";
+const AI_ASSISTANT_VERSION_KEY = "jitai-assistant-version";
+const BROWSER_FINGERPRINT_KEY = "jitai-browser-fingerprint";
+const CURRENT_VERSION = "6"; // 增加版本号来清除旧的错误缓存
 
 /**
  * 生成浏览器指纹
@@ -61,12 +61,12 @@ const CURRENT_VERSION = '6'; // 增加版本号来清除旧的错误缓存
 const generateBrowserFingerprint = async (): Promise<string> => {
     // 1. 尝试从缓存读取
     try {
-        if (typeof localStorage !== 'undefined') {
+        if (typeof localStorage !== "undefined") {
             const cached = localStorage.getItem(BROWSER_FINGERPRINT_KEY);
             if (cached) return cached;
         }
     } catch (e) {
-        console.warn('Failed to read fingerprint from cache:', e);
+        console.warn("Failed to read fingerprint from cache:", e);
     }
 
     const components: string[] = [];
@@ -92,7 +92,7 @@ const generateBrowserFingerprint = async (): Promise<string> => {
     components.push(String(new Date().getTimezoneOffset()));
 
     // 检测是否为移动端
-    const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+    const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
 
     // 仅在非移动端执行耗时指纹采集 (Canvas, WebGL, Audio)
     // 移动端性能较弱，跳过这些耗时操作以提升加载速度
@@ -124,7 +124,9 @@ const generateBrowserFingerprint = async (): Promise<string> => {
             const canvas = document.createElement("canvas");
             const gl =
                 (canvas.getContext("webgl") as WebGLRenderingContext) ||
-                (canvas.getContext("experimental-webgl") as WebGLRenderingContext);
+                (canvas.getContext(
+                    "experimental-webgl"
+                ) as WebGLRenderingContext);
             if (gl) {
                 const debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
                 if (debugInfo) {
@@ -132,7 +134,9 @@ const generateBrowserFingerprint = async (): Promise<string> => {
                         String(gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL))
                     );
                     components.push(
-                        String(gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL))
+                        String(
+                            gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL)
+                        )
                     );
                 }
             }
@@ -143,13 +147,18 @@ const generateBrowserFingerprint = async (): Promise<string> => {
         // 6. 音频指纹
         try {
             const AudioContext =
-                (window as any).AudioContext || (window as any).webkitAudioContext;
+                (window as any).AudioContext ||
+                (window as any).webkitAudioContext;
             if (AudioContext) {
                 const context = new AudioContext();
                 const oscillator = context.createOscillator();
                 const analyser = context.createAnalyser();
                 const gainNode = context.createGain();
-                const scriptProcessor = context.createScriptProcessor(4096, 1, 1);
+                const scriptProcessor = context.createScriptProcessor(
+                    4096,
+                    1,
+                    1
+                );
 
                 gainNode.gain.value = 0;
                 oscillator.connect(analyser);
@@ -157,22 +166,24 @@ const generateBrowserFingerprint = async (): Promise<string> => {
                 scriptProcessor.connect(gainNode);
                 gainNode.connect(context.destination);
 
-                const audioFingerprint = await new Promise<string>((resolve) => {
-                    scriptProcessor.onaudioprocess = function (event) {
-                        const output = event.outputBuffer.getChannelData(0);
-                        const sum = output.reduce(
-                            (acc, val) => acc + Math.abs(val),
-                            0
-                        );
-                        resolve(sum.toString());
-                        scriptProcessor.onaudioprocess = null;
-                    };
-                    oscillator.start(0);
-                    setTimeout(() => {
-                        oscillator.stop();
-                        resolve("audio-timeout");
-                    }, 100);
-                });
+                const audioFingerprint = await new Promise<string>(
+                    (resolve) => {
+                        scriptProcessor.onaudioprocess = function (event) {
+                            const output = event.outputBuffer.getChannelData(0);
+                            const sum = output.reduce(
+                                (acc, val) => acc + Math.abs(val),
+                                0
+                            );
+                            resolve(sum.toString());
+                            scriptProcessor.onaudioprocess = null;
+                        };
+                        oscillator.start(0);
+                        setTimeout(() => {
+                            oscillator.stop();
+                            resolve("audio-timeout");
+                        }, 100);
+                    }
+                );
                 components.push(audioFingerprint);
             }
         } catch (e) {
@@ -211,11 +222,11 @@ const generateBrowserFingerprint = async (): Promise<string> => {
 
     // 缓存指纹
     try {
-        if (typeof localStorage !== 'undefined') {
+        if (typeof localStorage !== "undefined") {
             localStorage.setItem(BROWSER_FINGERPRINT_KEY, fingerprint);
         }
     } catch (e) {
-        console.warn('Failed to save fingerprint to cache:', e);
+        console.warn("Failed to save fingerprint to cache:", e);
     }
 
     return fingerprint;
@@ -258,7 +269,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
      */
     useEffect(() => {
         // 只在 SDK 加载完成后才保存状态，避免保存初始的 false 状态
-        if (sdkLoaded && typeof window !== 'undefined') {
+        if (sdkLoaded && typeof window !== "undefined") {
             const isMobile = window.innerWidth <= 768;
 
             // 只在 PC 端保存状态
@@ -269,55 +280,58 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
                         localStorage.removeItem(AI_ASSISTANT_HIDE_KEY);
                     } else {
                         // 关闭时设置缓存
-                        localStorage.setItem(AI_ASSISTANT_HIDE_KEY, 'true');
+                        localStorage.setItem(AI_ASSISTANT_HIDE_KEY, "true");
                     }
                 } catch (error) {
-                    console.warn('Failed to save AI assistant state to localStorage:', error);
+                    console.warn(
+                        "Failed to save AI assistant state to localStorage:",
+                        error
+                    );
                 }
             }
         }
     }, [isAssistantOpen, sdkLoaded]);
 
     /**
-     * SDK 加载完成后，PC 端根据缓存状态或默认打开弹窗
+     * SDK 加载完成后，PC 端根据缓存状态或默认打开弹窗 --- 注释2025/12/16
      */
-    useEffect(() => {
-        if (sdkLoaded && typeof window !== 'undefined') {
-            const isMobile = window.innerWidth <= 768;
-            console.log('SDK loaded, checking if should open assistant. isMobile:', isMobile);
+    // useEffect(() => {
+    //     if (sdkLoaded && typeof window !== 'undefined') {
+    //         const isMobile = window.innerWidth <= 768;
+    //         console.log('SDK loaded, checking if should open assistant. isMobile:', isMobile);
 
-            // 只在 PC 端自动打开
-            if (!isMobile) {
-                // 检查版本，如果版本不匹配则清除旧缓存
-                const cachedVersion = localStorage.getItem(AI_ASSISTANT_VERSION_KEY);
-                if (cachedVersion !== CURRENT_VERSION) {
-                    console.log('Version mismatch, clearing old cache. Old version:', cachedVersion, 'Current version:', CURRENT_VERSION);
-                    // 清除旧的缓存 key（兼容旧版本）
-                    localStorage.removeItem('jitai-assistant-open-state');
-                    localStorage.removeItem(AI_ASSISTANT_HIDE_KEY);
-                    localStorage.setItem(AI_ASSISTANT_VERSION_KEY, CURRENT_VERSION);
-                }
+    //         // 只在 PC 端自动打开
+    //         if (!isMobile) {
+    //             // 检查版本，如果版本不匹配则清除旧缓存
+    //             const cachedVersion = localStorage.getItem(AI_ASSISTANT_VERSION_KEY);
+    //             if (cachedVersion !== CURRENT_VERSION) {
+    //                 console.log('Version mismatch, clearing old cache. Old version:', cachedVersion, 'Current version:', CURRENT_VERSION);
+    //                 // 清除旧的缓存 key（兼容旧版本）
+    //                 localStorage.removeItem('jitai-assistant-open-state');
+    //                 localStorage.removeItem(AI_ASSISTANT_HIDE_KEY);
+    //                 localStorage.setItem(AI_ASSISTANT_VERSION_KEY, CURRENT_VERSION);
+    //             }
 
-                // 检查是否隐藏：如果 is_hide_jitai_assistant 存在，说明用户之前关闭了
-                const isHidden = localStorage.getItem(AI_ASSISTANT_HIDE_KEY) === 'true';
-                console.log('AI assistant hide state:', isHidden);
-                if (isHidden) {
-                    // 如果缓存存在，说明用户之前关闭了，保持关闭状态
-                    console.log('User previously closed assistant, keeping closed');
-                    setIsAssistantOpen(false);
-                } else {
-                    // 如果没有缓存，默认打开（延迟 4 秒）
-                    console.log('No hide cache found, will open by default after 2 seconds');
-                    const timer = setTimeout(() => {
-                        setIsAssistantOpen(true);
-                    }, 4000);
+    //             // 检查是否隐藏：如果 is_hide_jitai_assistant 存在，说明用户之前关闭了
+    //             const isHidden = localStorage.getItem(AI_ASSISTANT_HIDE_KEY) === 'true';
+    //             console.log('AI assistant hide state:', isHidden);
+    //             if (isHidden) {
+    //                 // 如果缓存存在，说明用户之前关闭了，保持关闭状态
+    //                 console.log('User previously closed assistant, keeping closed');
+    //                 setIsAssistantOpen(false);
+    //             } else {
+    //                 // 如果没有缓存，默认打开（延迟 4 秒）
+    //                 console.log('No hide cache found, will open by default after 2 seconds');
+    //                 const timer = setTimeout(() => {
+    //                     setIsAssistantOpen(true);
+    //                 }, 4000);
 
-                    // 清理定时器
-                    return () => clearTimeout(timer);
-                }
-            }
-        }
-    }, [sdkLoaded]);
+    //                 // 清理定时器
+    //                 return () => clearTimeout(timer);
+    //             }
+    //         }
+    //     }
+    // }, [sdkLoaded]);
 
     /**
      * 处理移动端滚动穿透问题
@@ -355,7 +369,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
                 window.scrollTo({
                     top: savedScrollPosition,
                     left: 0,
-                    behavior: 'instant' as ScrollBehavior
+                    behavior: "instant" as ScrollBehavior,
                 });
             };
         }
@@ -412,7 +426,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
                 },
                 functions: {
                     // Add your custom functions here
-                    getCompleteReferenceFormUrl: getCompleteReferenceFormUrl
+                    getCompleteReferenceFormUrl: getCompleteReferenceFormUrl,
                 },
             });
 
@@ -488,7 +502,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
             }
         };
 
-        if ('requestIdleCallback' in window) {
+        if ("requestIdleCallback" in window) {
             const handle = (window as any).requestIdleCallback(triggerLoad);
             return () => (window as any).cancelIdleCallback(handle);
         } else {
@@ -511,9 +525,19 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
         <div className={className}>
             {/* @ts-ignore */}
             <Head>
-                <link rel="dns-prefetch" href="https://jit-front.oss-cn-hangzhou.aliyuncs.com" />
-                <link rel="preconnect" href="https://jit-front.oss-cn-hangzhou.aliyuncs.com" />
-                <link rel="preload" href="https://jit-front.oss-cn-hangzhou.aliyuncs.com/ai-sdk/jitai-assistant-sdk.min.js" as="script" />
+                <link
+                    rel="dns-prefetch"
+                    href="https://jit-front.oss-cn-hangzhou.aliyuncs.com"
+                />
+                <link
+                    rel="preconnect"
+                    href="https://jit-front.oss-cn-hangzhou.aliyuncs.com"
+                />
+                <link
+                    rel="preload"
+                    href="https://jit-front.oss-cn-hangzhou.aliyuncs.com/ai-sdk/jitai-assistant-sdk.min.js"
+                    as="script"
+                />
                 <link rel="dns-prefetch" href="https://wy.jit.pro" />
                 <link rel="preconnect" href="https://wy.jit.pro" />
             </Head>
@@ -554,8 +578,9 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
 
             {/* AI Assistant 浮窗容器 - 始终渲染但通过 CSS 控制显示/隐藏 */}
             <div
-                className={`${styles.aiAssistantWindow} ${!isAssistantOpen ? styles.hidden : ""
-                    }`}
+                className={`${styles.aiAssistantWindow} ${
+                    !isAssistantOpen ? styles.hidden : ""
+                }`}
             >
                 {/* 浮窗标题栏 */}
                 <div className={styles.aiAssistantHeader}>
@@ -602,29 +627,34 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
                 </div>
 
                 {/* AI Assistant 内容区域 */}
-                <div className={styles.aiAssistantContent} style={{ position: 'relative' }}>
+                <div
+                    className={styles.aiAssistantContent}
+                    style={{ position: "relative" }}
+                >
                     <div
                         id="ai-assistant-container"
                         ref={containerRef}
-                        style={{ width: '100%', height: '100%' }}
+                        style={{ width: "100%", height: "100%" }}
                     />
 
                     {/* 加载状态提示 - 独立于 SDK 容器，避免 DOM 冲突 */}
                     {isLoading && !sdkLoaded && (
-                        <div style={{
-                            position: 'absolute',
-                            top: 0,
-                            left: 0,
-                            width: '100%',
-                            height: '100%',
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            backgroundColor: '#fff',
-                            color: '#666',
-                            fontSize: '14px',
-                            zIndex: 10
-                        }}>
+                        <div
+                            style={{
+                                position: "absolute",
+                                top: 0,
+                                left: 0,
+                                width: "100%",
+                                height: "100%",
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                                backgroundColor: "#fff",
+                                color: "#666",
+                                fontSize: "14px",
+                                zIndex: 10,
+                            }}
+                        >
                             Loading AI Assistant...
                         </div>
                     )}

@@ -120,6 +120,8 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                                 </svg>
                             </span>
                         </a>
+                        {/** 在线试用隐藏 2025/12/16 */}
+                        {/**
                         <a
                             className={`${styles.secondaryButton} ${
                                 isMobile
@@ -156,6 +158,7 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                                 </svg>
                             </span>
                         </a>
+                        */}
                     </div>
 
                     {/* 第一个卡片内容 + 视频区块 */}

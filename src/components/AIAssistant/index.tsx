@@ -231,20 +231,22 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
     const [isLoading, setIsLoading] = useState(false); // 跟踪 SDK 是否正在加载
 
     // PC 端根据缓存或默认打开，移动端默认关闭
-    const [isAssistantOpen, setIsAssistantOpen] = useState(() => {
-        if (typeof window !== 'undefined') {
-            const isMobile = window.innerWidth <= 768;
+    // const [isAssistantOpen, setIsAssistantOpen] = useState(() => {
+    //     if (typeof window !== 'undefined') {
+    //         const isMobile = window.innerWidth <= 768;
 
-            // 移动端始终默认关闭
-            if (isMobile) {
-                return false;
-            }
+    //         // 移动端始终默认关闭
+    //         if (isMobile) {
+    //             return false;
+    //         }
 
-            // PC 端初始不打开，等 SDK 加载完成后再决定
-            return false;
-        }
-        return false;
-    });
+    //         // PC 端初始不打开，等 SDK 加载完成后再决定
+    //         return false;
+    //     }
+    //     return false;
+    // });
+
+    const [isAssistantOpen, setIsAssistantOpen] = useState(false);
     const scrollPositionRef = useRef<number>(0);
 
     const { i18n } = useDocusaurusContext();

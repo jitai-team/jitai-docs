@@ -120,6 +120,8 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                                 </svg>
                             </span>
                         </a>
+                        {/** 暂时隐藏试用按钮 */}
+                        {/**
                         <a
                             className={`${styles.secondaryButton} ${
                                 isMobile
@@ -156,6 +158,7 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                                 </svg>
                             </span>
                         </a>
+                        */}
                     </div>
 
                     {/* 第一个卡片内容 + 视频区块 */}

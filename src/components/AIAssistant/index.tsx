@@ -281,43 +281,43 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
     /**
      * SDK 加载完成后，PC 端根据缓存状态或默认打开弹窗
      */
-    useEffect(() => {
-        if (sdkLoaded && typeof window !== 'undefined') {
-            const isMobile = window.innerWidth <= 768;
-            console.log('SDK loaded, checking if should open assistant. isMobile:', isMobile);
+    // useEffect(() => {
+    //     if (sdkLoaded && typeof window !== 'undefined') {
+    //         const isMobile = window.innerWidth <= 768;
+    //         console.log('SDK loaded, checking if should open assistant. isMobile:', isMobile);
 
-            // 只在 PC 端自动打开
-            if (!isMobile) {
-                // 检查版本，如果版本不匹配则清除旧缓存
-                const cachedVersion = localStorage.getItem(AI_ASSISTANT_VERSION_KEY);
-                if (cachedVersion !== CURRENT_VERSION) {
-                    console.log('Version mismatch, clearing old cache. Old version:', cachedVersion, 'Current version:', CURRENT_VERSION);
-                    // 清除旧的缓存 key（兼容旧版本）
-                    localStorage.removeItem('jitai-assistant-open-state');
-                    localStorage.removeItem(AI_ASSISTANT_HIDE_KEY);
-                    localStorage.setItem(AI_ASSISTANT_VERSION_KEY, CURRENT_VERSION);
-                }
+    //         // 只在 PC 端自动打开
+    //         if (!isMobile) {
+    //             // 检查版本，如果版本不匹配则清除旧缓存
+    //             const cachedVersion = localStorage.getItem(AI_ASSISTANT_VERSION_KEY);
+    //             if (cachedVersion !== CURRENT_VERSION) {
+    //                 console.log('Version mismatch, clearing old cache. Old version:', cachedVersion, 'Current version:', CURRENT_VERSION);
+    //                 // 清除旧的缓存 key（兼容旧版本）
+    //                 localStorage.removeItem('jitai-assistant-open-state');
+    //                 localStorage.removeItem(AI_ASSISTANT_HIDE_KEY);
+    //                 localStorage.setItem(AI_ASSISTANT_VERSION_KEY, CURRENT_VERSION);
+    //             }
 
-                // 检查是否隐藏：如果 is_hide_jitai_assistant 存在，说明用户之前关闭了
-                const isHidden = localStorage.getItem(AI_ASSISTANT_HIDE_KEY) === 'true';
-                console.log('AI assistant hide state:', isHidden);
-                if (isHidden) {
-                    // 如果缓存存在，说明用户之前关闭了，保持关闭状态
-                    console.log('User previously closed assistant, keeping closed');
-                    setIsAssistantOpen(false);
-                } else {
-                    // 如果没有缓存，默认打开（延迟 4 秒）
-                    console.log('No hide cache found, will open by default after 2 seconds');
-                    const timer = setTimeout(() => {
-                        setIsAssistantOpen(true);
-                    }, 4000);
+    //             // 检查是否隐藏：如果 is_hide_jitai_assistant 存在，说明用户之前关闭了
+    //             const isHidden = localStorage.getItem(AI_ASSISTANT_HIDE_KEY) === 'true';
+    //             console.log('AI assistant hide state:', isHidden);
+    //             if (isHidden) {
+    //                 // 如果缓存存在，说明用户之前关闭了，保持关闭状态
+    //                 console.log('User previously closed assistant, keeping closed');
+    //                 setIsAssistantOpen(false);
+    //             } else {
+    //                 // 如果没有缓存，默认打开（延迟 4 秒）
+    //                 console.log('No hide cache found, will open by default after 2 seconds');
+    //                 const timer = setTimeout(() => {
+    //                     setIsAssistantOpen(true);
+    //                 }, 4000);
 
-                    // 清理定时器
-                    return () => clearTimeout(timer);
-                }
-            }
-        }
-    }, [sdkLoaded]);
+    //                 // 清理定时器
+    //                 return () => clearTimeout(timer);
+    //             }
+    //         }
+    //     }
+    // }, [sdkLoaded]);
 
     /**
      * 处理移动端滚动穿透问题

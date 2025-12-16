@@ -1,101 +1,51 @@
-# JitAI License Aggrement
-
-Updated Date: December 11, 2025
-
-\[JitAI Team / jitai platform LLC.\] (hereinafter referred to as "The Company") issues this License Agreement (hereinafter referred to as "This Agreement") to you. You, as an individual or an entity (hereinafter referred to as "The User"), will be deemed to voluntarily accept all terms of This Agreement by using JitAI Software (including but not limited to obtaining JitAI source code or installation packages in any form, installing and using JitAI, purchasing JitAI commercial licenses and services).
-
-If The User does not agree to any term of This Agreement, or cannot accurately understand our interpretation of the relevant terms, please stop using the software immediately.
-
-This Agreement applies to all software delivered by The Company, any references, contracts, and invoices. The Company reserves the right to formulate and modify This Agreement from time to time as needed. If there are changes, The Company will announce them in the form of website announcements, without further individual notification. The changed Agreement will automatically take effect once it is announced, becoming part of This Agreement.
-
-1. Definitions
-
-1.1 "Software": Refers to all content in all code repositories maintained and published by The Company under the GitHub organization account jitai-team ([https://github.com/jitai-team](https://github.com/jitai-team)). This includes but is not limited to the JitAI Kernel (JitNode), Development Framework, various extensions, frontend resources, tool scripts, as well as the source code, binary files, installation packages, images, documentation, and all modifications, updates, and upgrades of the aforementioned content.
-
-1.2 "Community Edition": Refers to the free version of the Software provided to The User through public channels.
-
-1.3 "Commercial Edition": Refers to the paid version of the Software purchased by The User from The Company or its agents, downloaded through exclusive channels, and including additional benefits.
-
-1.4 "Upper Layer Application": Refers to a specific business use case application developed based on the "Software", serving internal or external customers of The User (such as ERP, CRM, OA systems, etc.).
-
-1.5 "Customer": Refers to the end clients who purchase the "Upper Layer Application" developed by The User.
-
-1.6 "Third-Party Open Source Software": Refers to open source software provided along with the "Software". They are licensed according to their respective published open source software licenses or copyright notices.
-
-2. Intellectual Property Protection
-
-Except for Third-Party Open Source Software, The Company owns all copyrights, trademark rights, patent rights, trade secrets, and other intellectual property rights of the "Software", and has registered and protected them in accordance with relevant laws and regulations.
-
-3. Disclaimer
-
-3.1 The User shall not use the "Software" to engage in activities that violate applicable laws and regulations or offend public order and good morals. All legal liabilities and consequences arising from The User's use shall be borne by The User.
-
-3.2 Even if previously informed of the possibility of such damages, The Company shall not be liable for any direct, indirect, special, incidental, or consequential damages (including but not limited to loss of profits, business interruption, data loss, or disclosure of commercial information) caused by The User's use of the "Software".
-
-4. License Type
-
-4.1 This Agreement serves as the unified license agreement for JitAI Software, applying to both the Community Edition and the Commercial Edition.
-
-4.2 For Community Edition: This Agreement incorporates and references the full text of the GNU Affero General Public License v3.0 ("AGPL-3.0"). Community Edition users must comply with the AGPL-3.0 License as well as the additional terms set forth in This Agreement. In case of any inconsistency between AGPL-3.0 and This Agreement, the additional terms of This Agreement shall prevail.
-
-4.3 For Commercial Edition: Only the "Commercial License" terms contained in This Agreement apply. Commercial Edition users are exempt from AGPL-3.0 obligations.
-
-5. Rights and Obligations of Open Source License (Applicable to Community Edition)
-
-5.1 Commercial Use: The Software can be used for internal commercial purposes (e.g., internal enterprise management systems).
-
-5.2 Copyleft (Mandatory Open Source): Modifications or extensions to the Software developed by The User or third parties, as well as third-party applications developed based on the Software, must be open-sourced under the AGPL-3.0 license.
-
-5.3 Brand Protection: It is not allowed to remove or change the brand, name, link, version number, license, and other information about JitAI on the Software interface.
-
-5.4 Copyright Retention: It is not allowed to remove or change all intellectual property statements about JitAI in the code.
-
-5.5 Prohibition of Competing: It is strictly prohibited to use the original or modified Software to provide any form of no-code, zero-code, or low-code platform SaaS/PaaS products to the public (i.e., it is prohibited to package JitAI as a development platform for external operations).
-
-5.6 Comply with all requirements of the AGPL-3.0 License, including but not limited to:
-
-\* (a) Any modifications, extensions, or derivative works of the Software must be released under the AGPL-3.0 License;
-
-\* (b) If the Upper Layer Application is provided as a network service (including SaaS or PaaS), the complete corresponding source code must be made available to all users of the service;
-
-\* (c) The Software may not be combined with other software under incompatible licenses in a manner that would violate the AGPL-3.0 License.
-
-6. Rights of Commercial License (Applicable to Commercial Edition)
-
-6.1 Obtain a permanent commercial license for the Software.
-
-6.2 Receive software upgrades and exclusive VIP technical support (SLA assurance) during the upgrade validity period.
-
-6.3 The licensed Software can be used for commercial purposes. The specific limits on the number of applications, number of users, and distribution rights are subject to the commercial contract signed by both parties.
-
-6.4 Closed Source Protection: Modifications, extensions to the Software, and applications integrated with the Software do not need to be open-sourced.
-
-6.5 OEM Rights: Allowed to remove or change the brand, name, link, version number, license, and other information about JitAI on the Software interface (White Labeling / OEM).
-
-6.6 Sales of Upper Layer Applications: The User may sell the developed "Upper Layer Application" to their Customers, with specific rights subject to the commercial contract.
-
-6.7 Exemption from AGPL-3.0 Obligations, including but not limited to:
-
-\* (a) Exemption from the requirement to release source code of modifications, extensions, or derivative works;
-
-\* (b) Exemption from the requirement to provide source code when offering the Software as a network service.
-
-7. Obligations of Commercial License
-
-7.1 It is not allowed to remove or change all intellectual property statements about JitAI in the code (retain source code copyright headers).
-
-7.2 It is not allowed to sell, transfer, lease, share, gift, or distribute the Commercial License itself.
-
-7.3 Prohibition of Reselling Platform: It is not allowed to sell, transfer, lease, share, or distribute any no-code, zero-code, low-code platform or developer tools developed based on This Software.
-
-Interpretation: You may sell an ERP system developed based on JitAI, but you cannot sell the JitAI development tool itself.
-
-7.4 Prohibition of Competing SaaS: It is not allowed to use the original or modified Software to provide any form of no-code, zero-code, or low-code platform SaaS/PaaS products to the public.
-
-7.5 If there is a violation of the above obligations or the terms of This Agreement, the rights owned by The User will be immediately terminated, the paid fees will not be refunded, and The Company reserves the right to pursue The User's legal responsibility.
-
-8. Legal Jurisdiction and Dispute Resolution
-
-8.1 The interpretation, application, and all matters related to This Agreement are subject to the jurisdiction of Chinese Law (excluding conflict of law rules).
-
-8.2 Any dispute arising from or in connection with This Agreement shall first be resolved through friendly negotiation. If negotiation fails to resolve the dispute, the dispute shall be submitted to the China International Economic and Trade Arbitration Commission (CIETAC) for arbitration. The arbitration award is final and binding on both parties.
+JitAI License Agreement
+Updated Date: December 11, 2025
+[JitAI Team / jitai platform LLC.] (hereinafter referred to as "The Company") issues this License Agreement (hereinafter referred to as "This Agreement") to you. You, as an individual or an entity (hereinafter referred to as "The User"), will be deemed to voluntarily accept all terms of This Agreement by using JitAI Software (including but not limited to obtaining JitAI source code or installation packages in any form, installing and using JitAI, purchasing JitAI commercial licenses and services).
+If The User does not agree to any term of This Agreement, or cannot accurately understand our interpretation of the relevant terms, please stop using the software immediately.
+This Agreement applies to all software delivered by The Company, any references, contracts, and invoices. The Company reserves the right to formulate and modify This Agreement from time to time as needed. If there are changes, The Company will announce them in the form of website announcements, without further individual notification. The changed Agreement will automatically take effect once it is announced, becoming part of This Agreement.
+1. Definitions
+1.1 "Software": Refers to all content in all code repositories maintained and published by The Company under the GitHub organization account jitai-team (https://github.com/jitai-team). This includes but is not limited to the JitAI Kernel (JitNode), Development Framework, various extensions, frontend resources, tool scripts, as well as the source code, binary files, installation packages, images, documentation, and all modifications, updates, and upgrades of the aforementioned content.
+1.2 "Community Edition": Refers to the free version of the Software provided to The User through public channels.
+1.3 "Commercial Edition": Refers to the paid version of the Software purchased by The User from The Company or its agents, downloaded through exclusive channels, and including additional benefits.
+1.4 "Upper Layer Application": Refers to a specific business use case application developed based on the "Software", serving internal or external customers of The User (such as ERP, CRM, OA systems, etc.).
+1.5 "Customer": Refers to the end clients who purchase the "Upper Layer Application" developed by The User.
+1.6 "Third-Party Open Source Software": Refers to open source software provided along with the "Software". They are licensed according to their respective published open source software licenses or copyright notices.
+2. Intellectual Property Protection
+Except for Third-Party Open Source Software, The Company owns all copyrights, trademark rights, patent rights, trade secrets, and other intellectual property rights of the "Software", and has registered and protected them in accordance with relevant laws and regulations.
+3. Disclaimer
+3.1 The User shall not use the "Software" to engage in activities that violate applicable laws and regulations or offend public order and good morals. All legal liabilities and consequences arising from The User's use shall be borne by The User.
+3.2 Even if previously informed of the possibility of such damages, The Company shall not be liable for any direct, indirect, special, incidental, or consequential damages (including but not limited to loss of profits, business interruption, data loss, or disclosure of commercial information) caused by The User's use of the "Software".
+4. License Type
+4.1 This Agreement serves as the unified license agreement for JitAI Software, applying to both the Community Edition and the Commercial Edition.
+4.2 For Community Edition: This Agreement incorporates and references the full text of the GNU Affero General Public License v3.0 ("AGPL-3.0"). Community Edition users must comply with the AGPL-3.0 License as well as the additional terms set forth in This Agreement. In case of any inconsistency between AGPL-3.0 and This Agreement, the additional terms of This Agreement shall prevail.
+4.3 For Commercial Edition: Only the "Commercial License" terms contained in This Agreement apply. Commercial Edition users are exempt from AGPL-3.0 obligations.
+5. Rights and Obligations of Open Source License (Applicable to Community Edition)
+5.1 Commercial Use: The Software can be used for internal commercial purposes (e.g., internal enterprise management systems).
+5.2 Copyleft (Mandatory Open Source): Modifications or extensions to the Software developed by The User or third parties, as well as third-party applications developed based on the Software, must be open-sourced under the AGPL-3.0 license.
+5.3 Brand Protection: It is not allowed to remove or change the brand, name, link, version number, license, and other information about JitAI on the Software interface.
+5.4 Copyright Retention: It is not allowed to remove or change all intellectual property statements about JitAI in the code.
+5.5 Prohibition of Competing: It is strictly prohibited to use the original or modified Software to provide any form of no-code, zero-code, or low-code platform SaaS/PaaS products to the public (i.e., it is prohibited to package JitAI as a development platform for external operations).
+5.6 Comply with all requirements of the AGPL-3.0 License, including but not limited to:
+* (a) Any modifications, extensions, or derivative works of the Software must be released under the AGPL-3.0 License;
+* (b) If the Upper Layer Application is provided as a network service (including SaaS or PaaS), the complete corresponding source code must be made available to all users of the service;
+* (c) The Software may not be combined with other software under incompatible licenses in a manner that would violate the AGPL-3.0 License.
+6. Rights of Commercial License (Applicable to Commercial Edition)
+6.1 Obtain a permanent commercial license for the Software.
+6.2 Receive software upgrades and exclusive VIP technical support (SLA assurance) during the upgrade validity period.
+6.3 The licensed Software can be used for commercial purposes. The specific limits on the number of applications, number of users, and distribution rights are subject to the commercial contract signed by both parties.
+6.4 Closed Source Protection: Modifications, extensions to the Software, and applications integrated with the Software do not need to be open-sourced.
+6.5 OEM Rights: Allowed to remove or change the brand, name, link, version number, license, and other information about JitAI on the Software interface (White Labeling / OEM).
+6.6 Sales of Upper Layer Applications: The User may sell the developed "Upper Layer Application" to their Customers, with specific rights subject to the commercial contract.
+6.7 Exemption from AGPL-3.0 Obligations, including but not limited to:
+* (a) Exemption from the requirement to release source code of modifications, extensions, or derivative works;
+* (b) Exemption from the requirement to provide source code when offering the Software as a network service.
+7. Obligations of Commercial License
+7.1 It is not allowed to remove or change all intellectual property statements about JitAI in the code (retain source code copyright headers).
+7.2 It is not allowed to sell, transfer, lease, share, gift, or distribute the Commercial License itself.
+7.3 Prohibition of Reselling Platform: It is not allowed to sell, transfer, lease, share, or distribute any no-code, zero-code, low-code platform or developer tools developed based on This Software.
+Interpretation: You may sell an ERP system developed based on JitAI, but you cannot sell the JitAI development tool itself.
+7.4 Prohibition of Competing SaaS: It is not allowed to use the original or modified Software to provide any form of no-code, zero-code, or low-code platform SaaS/PaaS products to the public.
+7.5 If there is a violation of the above obligations or the terms of This Agreement, the rights owned by The User will be immediately terminated, the paid fees will not be refunded, and The Company reserves the right to pursue The User's legal responsibility.
+8. Legal Jurisdiction and Dispute Resolution
+8.1 The interpretation, application, and all matters related to This Agreement are subject to the jurisdiction of Chinese Law (excluding conflict of law rules).
+8.2 Any dispute arising from or in connection with This Agreement shall first be resolved through friendly negotiation. If negotiation fails to resolve the dispute, the dispute shall be submitted to the China International Economic and Trade Arbitration Commission (CIETAC) for arbitration. The arbitration award is final and binding on both parties.

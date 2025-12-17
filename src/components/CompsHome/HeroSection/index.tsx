@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./styles.module.css";
 import globalStyles from "../../../pages/index.module.css";
 import CONTENT_ZH from "./constant-zh";
@@ -11,6 +11,8 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
 }) => {
     const [isMobile, setIsMobile] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+    const videoRef = useRef<HTMLVideoElement>(null);
 
     const content = currentLocale === "zh" ? CONTENT_ZH : CONTENT_EN;
 
@@ -59,6 +61,20 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
         setIsModalOpen(false);
     };
 
+    const handleVideoPlay = () => {
+        if (videoRef.current) {
+            videoRef.current.play();
+            setIsVideoPlaying(true);
+        }
+    };
+
+    const handleVideoEnded = () => {
+        setIsVideoPlaying(false);
+        if (videoRef.current) {
+            videoRef.current.currentTime = 0;
+        }
+    };
+
     return (
         <section id="section-0" className={styles.hero}>
             <div className={globalStyles.sectionContent}>
@@ -88,23 +104,23 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                     <div className={styles.heroButtons}>
                         <a
                             className={`${styles.primaryButton} ${isMobile
-                                    ? "analytics-download-mobile"
-                                    : "analytics-download"
+                                ? "analytics-download-mobile"
+                                : "analytics-download"
                                 }`}
                             href="./download"
                         >
                             <span
                                 className={`${styles.buttonText} ${isMobile
-                                        ? "analytics-download-mobile"
-                                        : "analytics-download"
+                                    ? "analytics-download-mobile"
+                                    : "analytics-download"
                                     }`}
                             >
                                 {content.buttonDownload}
                             </span>
                             <span
                                 className={`${styles.buttonIcon} ${isMobile
-                                        ? "analytics-download-mobile"
-                                        : "analytics-download"
+                                    ? "analytics-download-mobile"
+                                    : "analytics-download"
                                     }`}
                             >
                                 <svg
@@ -174,13 +190,15 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                             </div>
                             <div className={styles.featuredVideo}>
                                 <video
+                                    ref={videoRef}
                                     src={content.previewVideoUrl}
                                     className={`${styles.video} ${styles.videoElement}`}
-                                    autoPlay
+                                    autoPlay={false}
                                     muted
-                                    loop
+                                    loop={false}
                                     playsInline
                                     controls={false}
+                                    onEnded={handleVideoEnded}
                                     {...({
                                         "x5-video-player-type": "h5",
                                         "x5-video-player-fullscreen": "false",
@@ -189,6 +207,24 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                                         "t7-video-player-type": "inline",
                                     } as any)}
                                 />
+                                {!isVideoPlaying && (
+                                    <>
+                                        <div className={styles.videoOverlay} />
+                                        <button
+                                            className={styles.playButton}
+                                            onClick={handleVideoPlay}
+                                            aria-label="Play video"
+                                        >
+                                            <svg
+                                                viewBox="0 0 24 24"
+                                                fill="currentColor"
+                                                className={styles.playIcon}
+                                            >
+                                                <path d="M8 5v14l11-7z" />
+                                            </svg>
+                                        </button>
+                                    </>
+                                )}
                             </div>
                         </div>
                     )}

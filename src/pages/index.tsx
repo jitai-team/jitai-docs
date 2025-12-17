@@ -11,9 +11,9 @@ const HomePage: React.FC = () => {
     return (
         <PageLayout pageId="index" containerClassName={styles.container}>
             <HeroSection />
-            <PlatformSection />
-            <FrameworkSection />
             <IDESection />
+            <FrameworkSection />
+            <PlatformSection />
             <DevOpsSection />
         </PageLayout>
     );

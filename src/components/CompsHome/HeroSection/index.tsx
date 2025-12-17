@@ -87,28 +87,25 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                     {/* Call to Action Buttons Area */}
                     <div className={styles.heroButtons}>
                         <a
-                            className={`${styles.primaryButton} ${
-                                isMobile
+                            className={`${styles.primaryButton} ${isMobile
                                     ? "analytics-download-mobile"
                                     : "analytics-download"
-                            }`}
+                                }`}
                             href="./download"
                         >
                             <span
-                                className={`${styles.buttonText} ${
-                                    isMobile
+                                className={`${styles.buttonText} ${isMobile
                                         ? "analytics-download-mobile"
                                         : "analytics-download"
-                                }`}
+                                    }`}
                             >
                                 {content.buttonDownload}
                             </span>
                             <span
-                                className={`${styles.buttonIcon} ${
-                                    isMobile
+                                className={`${styles.buttonIcon} ${isMobile
                                         ? "analytics-download-mobile"
                                         : "analytics-download"
-                                }`}
+                                    }`}
                             >
                                 <svg
                                     viewBox="0 0 24 24"
@@ -183,7 +180,7 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                                     muted
                                     loop
                                     playsInline
-                                    controls
+                                    controls={false}
                                     {...({
                                         "x5-video-player-type": "h5",
                                         "x5-video-player-fullscreen": "false",

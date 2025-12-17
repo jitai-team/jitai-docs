@@ -37,9 +37,8 @@ const CONTENT = {
         //         color: "#3D65FD",
         //     },
         {
-            title: "Evergreen Privatization",
-            description: `Platform ready-to-use, one-click application deployment, all automatically updated, zero-cost deployment and update.
-      <br/>Visual orchestration of distributed clusters.`,
+            title: "Streamlined Private Deployment",
+            description: `The platform supports out-of-the-box use, applications can be deployed with one click, and distributed clusters support visual orchestration. Both the platform and applications support automatic updates, significantly reducing the cost of private deployment operations and maintenance, while maximally safeguarding enterprise data assets and security.`,
             color: "#3D65FD",
         },
         {

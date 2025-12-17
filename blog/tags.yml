@@ -18,10 +18,6 @@ JitAi:
   permalink: /development-platform
   description: Development platform technologies and tools
 
-MCP:
-  label: MCP
-  permalink: /mcp
-  description: Model Context Protocol and related topics
 
 'production grade ai app':
   label: Production-Grade AI Applications
@@ -217,3 +213,38 @@ FDE:
   label: Matrix Framework
   permalink: /matrix-framework
   description: JitAi Matrix Framework - A platform for Reality Modeling and Technology Integration
+
+'google ai':
+  label: Google AI
+  permalink: /google-ai
+  description: Google AI related topics and news
+
+doubao:
+  label: Doubao
+  permalink: /doubao
+  description: Doubao AI and related topics
+
+'agentic smartphones':
+  label: Agentic Smartphones
+  permalink: /agentic-smartphones
+  description: Agentic smartphones and AI-native mobile architecture
+
+outsystem:
+  label: OutSystems
+  permalink: /outsystem
+  description: OutSystems low-code platform and related topics
+
+'platform engineering':
+  label: Platform Engineering
+  permalink: /platform-engineering
+  description: Platform engineering practices and tools for AI
+
+'integration platforms':
+  label: Integration Platforms
+  permalink: /integration-platforms
+  description: Integration platforms and iPaaS for AI tools
+
+'mcp':
+  label: MCP
+  permalink: /mcp
+  description: Model Context Protocol and related topics

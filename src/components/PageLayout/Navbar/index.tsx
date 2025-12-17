@@ -30,19 +30,19 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
             setScrolled(isScrolled);
         };
 
-        // 设置当前活跃的导航项
+        // Set current active nav item
         const setCurrentActiveNav = () => {
             const currentPath = window.location.pathname;
 
-            // 首先尝试精确匹配
+            // Try exact match first
             let currentItem = CONTENT.navItems.find(
                 (item) => item.url === currentPath
             );
 
-            // 如果没有精确匹配，则尝试前缀匹配
+            // If no exact match, try prefix match
             if (!currentItem) {
                 currentItem = CONTENT.navItems.find((item) => {
-                    // 确保不是根路径，避免误匹配
+                    // Ensure not root path to avoid false positive
                     if (item.url === "/" || item.url === "/zh") {
                         return false;
                     }
@@ -50,7 +50,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                 });
             }
 
-            // 如果找到匹配项则设置，否则清空激活状态（避免默认高亮首页）
+            // Set if matched, otherwise clear active state (avoid default home highlighting)
             if (currentItem) {
                 setActiveNavItem(currentItem.id);
             } else {
@@ -66,7 +66,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
         };
     }, []);
 
-    // 移动端菜单状态变化时控制背景滚动
+    // Control background scroll when mobile menu state changes
     useEffect(() => {
         if (isMobileMenuOpen) {
             document.body.classList.add("menu-open");
@@ -80,13 +80,13 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
     }, [isMobileMenuOpen]);
 
     const handleNavClick = (item: any) => {
-        // 为 demo.jit.pro 链接添加 UTM 参数
+        // Add UTM parameters for demo.jit.pro links
         const url =
             item.url && item.url.includes("demo.jit.pro")
                 ? addUTMToUrl(item.url)
                 : item.url;
 
-        // 移动端点击后关闭菜单
+        // Close menu after click on mobile
         if (isMobile) {
             window.location.href = url;
             setIsMobileMenuOpen(false);
@@ -110,7 +110,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
             } custom-navbar`}
         >
             <div className={styles.navContent}>
-                {/* Logo 和导航菜单在左侧 */}
+                {/* Logo and navigation menu on the left */}
                 <div className={styles.leftSection}>
                     <div
                         className={styles.logo}
@@ -122,7 +122,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                         />
                     </div>
 
-                    {/* 桌面端导航 */}
+                    {/* Desktop navigation */}
                     <div className={`${styles.navLinks} ${styles.desktopNav}`}>
                         {CONTENT.navItems.map((item, index) => {
                             const isActive = item.id === activeNavItem;
@@ -143,10 +143,10 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                     </div>
                 </div>
 
-                {/* 右侧区域：语言切换器、Download 按钮和 Try Online 按钮 */}
+                {/* Right section: Language switcher, Download button and Try Online button */}
                 <div className={styles.rightSection}>
                     <LanguageSwitcher className={styles.languageSwitcher} />
-                    {/* 在线试用隐藏 2025/12/16 */}
+                    {/* Try Online hidden 2025/12/16 */}
                     {/**
                     <button
                         className={`${styles.tryOnlineButton} analytics-tryOnline`}
@@ -165,12 +165,12 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                     </button>
                 </div>
 
-                {/* 移动端语言切换器 - 显示在汉堡菜单按钮左侧 */}
+                {/* Mobile language switcher - displayed to the left of the hamburger menu button */}
                 <div className={styles.mobileTopLanguageSwitcher}>
                     <LanguageSwitcher />
                 </div>
 
-                {/* 移动端汉堡菜单按钮 */}
+                {/* Mobile hamburger menu button */}
                 <button
                     className={`${styles.mobileMenuButton} ${
                         isMobileMenuOpen ? styles.active : ""
@@ -183,7 +183,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                     <span></span>
                 </button>
 
-                {/* 移动端导航菜单 */}
+                {/* Mobile navigation menu */}
                 <div
                     className={`${styles.mobileMenu} ${
                         isMobileMenuOpen ? styles.open : ""
@@ -211,7 +211,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                     </div>
                 </div>
 
-                {/* 移动端菜单遮罩 */}
+                {/* Mobile menu overlay */}
                 {isMobileMenuOpen && (
                     <div
                         className={styles.mobileOverlay}

@@ -14,10 +14,10 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
 
     const content = currentLocale === "zh" ? CONTENT_ZH : CONTENT_EN;
 
-    // 计算卡片网格的列数（除去第一个卡片后的数量）
+    // Calculate the number of columns for the card grid (excluding the first card)
     const cardsCount = content.cards.length - 1;
 
-    // 检测移动端
+    // Detect mobile device
     useEffect(() => {
         const checkMobile = () => {
             setIsMobile(window.innerWidth <= 768);
@@ -32,20 +32,20 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
     }, []);
 
     /**
-     * 处理按钮点击事件，添加 UTM 参数后跳转
+     * Handle button click event, redirect after adding UTM parameters
      */
     const handleButtonClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-        // 阻止默认跳转
+        // Prevent default redirect
         e.preventDefault();
 
         if (isMobile) {
             setIsModalOpen(true);
         } else {
-            // 获取带 UTM 参数的 URL
+            // Get URL with UTM parameters
             const urlWithUTM = addUTMToUrl(
                 "https://demo.jit.pro/wanyun/AdminApp"
             );
-            // 在新标签页打开
+            // Open in new tab
             window.open(urlWithUTM, "_blank");
         }
     };
@@ -63,7 +63,7 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
         <section id="section-0" className={styles.hero}>
             <div className={globalStyles.sectionContent}>
                 <div className={styles.heroLeft}>
-                    {/* 主标题区域 */}
+                    {/* Main Title Area */}
                     <div className={styles.titleSection}>
                         <div className={styles.heroTitleContainer}>
                             <h1 className={styles.heroTitle}>
@@ -84,7 +84,7 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                         </div>
                     </div>
 
-                    {/* 行动按钮区域 */}
+                    {/* Call to Action Buttons Area */}
                     <div className={styles.heroButtons}>
                         <a
                             className={`${styles.primaryButton} ${
@@ -120,7 +120,7 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                                 </svg>
                             </span>
                         </a>
-                        {/** 在线试用隐藏 2025/12/16 */}
+                        {/** Try Online hidden 2025/12/16 */}
                         {/**
                         <a
                             className={`${styles.secondaryButton} ${
@@ -161,7 +161,7 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                         */}
                     </div>
 
-                    {/* 第一个卡片内容 + 视频区块 */}
+                    {/* First Card Content + Video Section */}
                     {content.cards.length > 0 && (
                         <div className={styles.featuredContent}>
                             <div className={styles.featuredText}>

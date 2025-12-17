@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Head from '@docusaurus/Head';
+import Head from "@docusaurus/Head";
 import styles from "./index.module.css";
 import ZH_CONTENT from "./constant-zh";
 import EN_CONTENT from "./constant-en";
@@ -14,28 +14,28 @@ const getCompleteReferenceFormUrl = function (lang: string) {
         baseUrl = "https://wy.jit.pro/whwy/aicrm/s/contactus";
     }
     return addUTMToUrl(baseUrl);
-}
+};
 
 interface AIAssistantProps {
     className?: string;
-    visible?: boolean; // 是否显示 AI 助手，默认为 true。即使为 false，SDK 也会在后台加载
+    visible?: boolean; // Whether to show the AI assistant, defaults to true. Even if false, the SDK will load in the background
 }
 
 /**
- * 简单的哈希函数(使用 Web Crypto API)
- * 返回20位的十六进制哈希值
+ * Simple hash function (using Web Crypto API)
+ * Returns a 20-character hexadecimal hash value
  */
 const simpleHash = async (str: string): Promise<string> => {
-    // 检查 crypto.subtle 是否可用（在 HTTP 环境或某些浏览器中可能不可用）
-    if (typeof crypto === 'undefined' || !crypto.subtle) {
-        // 降级方案：使用简单的字符串哈希
+    // Check if crypto.subtle is available (may not be available in HTTP environments or some browsers)
+    if (typeof crypto === "undefined" || !crypto.subtle) {
+        // Fallback: Use simple string hashing
         let hash = 0;
         for (let i = 0; i < str.length; i++) {
             const char = str.charCodeAt(i);
-            hash = ((hash << 5) - hash) + char;
+            hash = (hash << 5) - hash + char;
             hash = hash & hash; // Convert to 32bit integer
         }
-        return Math.abs(hash).toString(16).padStart(20, '0').substring(0, 20);
+        return Math.abs(hash).toString(16).padStart(20, "0").substring(0, 20);
     }
 
     const encoder = new TextEncoder();
@@ -45,33 +45,33 @@ const simpleHash = async (str: string): Promise<string> => {
     const hashHex = hashArray
         .map((b) => b.toString(16).padStart(2, "0"))
         .join("");
-    // 截取前20位
+    // Truncate to first 20 characters
     return hashHex.substring(0, 20);
 };
 
-const AI_ASSISTANT_HIDE_KEY = 'is_hide_jitai_assistant';
-const AI_ASSISTANT_VERSION_KEY = 'jitai-assistant-version';
-const BROWSER_FINGERPRINT_KEY = 'jitai-browser-fingerprint';
-const CURRENT_VERSION = '6'; // 增加版本号来清除旧的错误缓存
+const AI_ASSISTANT_HIDE_KEY = "is_hide_jitai_assistant";
+const AI_ASSISTANT_VERSION_KEY = "jitai-assistant-version";
+const BROWSER_FINGERPRINT_KEY = "jitai-browser-fingerprint";
+const CURRENT_VERSION = "6"; // Increment version number to clear old erroneous cache
 
 /**
- * 生成浏览器指纹
- * 收集浏览器的各种特征并生成唯一的哈希值
+ * Generate browser fingerprint
+ * Collect various browser characteristics and generate a unique hash value
  */
 const generateBrowserFingerprint = async (): Promise<string> => {
-    // 1. 尝试从缓存读取
+    // 1. Try to read from cache
     try {
-        if (typeof localStorage !== 'undefined') {
+        if (typeof localStorage !== "undefined") {
             const cached = localStorage.getItem(BROWSER_FINGERPRINT_KEY);
             if (cached) return cached;
         }
     } catch (e) {
-        console.warn('Failed to read fingerprint from cache:', e);
+        console.warn("Failed to read fingerprint from cache:", e);
     }
 
     const components: string[] = [];
 
-    // 1. 基础浏览器信息
+    // 1. Basic browser information
     components.push(navigator.userAgent);
     components.push(navigator.language);
     components.push(navigator.languages ? navigator.languages.join(",") : "");
@@ -80,24 +80,24 @@ const generateBrowserFingerprint = async (): Promise<string> => {
     components.push(navigator.platform);
     components.push(navigator.vendor);
 
-    // 2. 屏幕信息
+    // 2. Screen information
     components.push(String(screen.width));
     components.push(String(screen.height));
     components.push(String(screen.colorDepth));
     components.push(String(screen.pixelDepth));
     components.push(String(window.devicePixelRatio));
 
-    // 3. 时区信息
+    // 3. Timezone information
     components.push(Intl.DateTimeFormat().resolvedOptions().timeZone);
     components.push(String(new Date().getTimezoneOffset()));
 
-    // 检测是否为移动端
-    const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+    // Detect if it is a mobile device
+    const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
 
-    // 仅在非移动端执行耗时指纹采集 (Canvas, WebGL, Audio)
-    // 移动端性能较弱，跳过这些耗时操作以提升加载速度
+    // Perform time-consuming fingerprint collection (Canvas, WebGL, Audio) only on non-mobile devices
+    // Mobile devices have weaker performance, skip these operations to improve loading speed
     if (!isMobile) {
-        // 4. Canvas指纹
+        // 4. Canvas fingerprint
         try {
             const canvas = document.createElement("canvas");
             const ctx = canvas.getContext("2d");
@@ -119,12 +119,14 @@ const generateBrowserFingerprint = async (): Promise<string> => {
             components.push("canvas-error");
         }
 
-        // 5. WebGL指纹
+        // 5. WebGL fingerprint
         try {
             const canvas = document.createElement("canvas");
             const gl =
                 (canvas.getContext("webgl") as WebGLRenderingContext) ||
-                (canvas.getContext("experimental-webgl") as WebGLRenderingContext);
+                (canvas.getContext(
+                    "experimental-webgl"
+                ) as WebGLRenderingContext);
             if (gl) {
                 const debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
                 if (debugInfo) {
@@ -132,7 +134,9 @@ const generateBrowserFingerprint = async (): Promise<string> => {
                         String(gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL))
                     );
                     components.push(
-                        String(gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL))
+                        String(
+                            gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL)
+                        )
                     );
                 }
             }
@@ -140,16 +144,21 @@ const generateBrowserFingerprint = async (): Promise<string> => {
             components.push("webgl-error");
         }
 
-        // 6. 音频指纹
+        // 6. Audio fingerprint
         try {
             const AudioContext =
-                (window as any).AudioContext || (window as any).webkitAudioContext;
+                (window as any).AudioContext ||
+                (window as any).webkitAudioContext;
             if (AudioContext) {
                 const context = new AudioContext();
                 const oscillator = context.createOscillator();
                 const analyser = context.createAnalyser();
                 const gainNode = context.createGain();
-                const scriptProcessor = context.createScriptProcessor(4096, 1, 1);
+                const scriptProcessor = context.createScriptProcessor(
+                    4096,
+                    1,
+                    1
+                );
 
                 gainNode.gain.value = 0;
                 oscillator.connect(analyser);
@@ -157,41 +166,43 @@ const generateBrowserFingerprint = async (): Promise<string> => {
                 scriptProcessor.connect(gainNode);
                 gainNode.connect(context.destination);
 
-                const audioFingerprint = await new Promise<string>((resolve) => {
-                    scriptProcessor.onaudioprocess = function (event) {
-                        const output = event.outputBuffer.getChannelData(0);
-                        const sum = output.reduce(
-                            (acc, val) => acc + Math.abs(val),
-                            0
-                        );
-                        resolve(sum.toString());
-                        scriptProcessor.onaudioprocess = null;
-                    };
-                    oscillator.start(0);
-                    setTimeout(() => {
-                        oscillator.stop();
-                        resolve("audio-timeout");
-                    }, 100);
-                });
+                const audioFingerprint = await new Promise<string>(
+                    (resolve) => {
+                        scriptProcessor.onaudioprocess = function (event) {
+                            const output = event.outputBuffer.getChannelData(0);
+                            const sum = output.reduce(
+                                (acc, val) => acc + Math.abs(val),
+                                0
+                            );
+                            resolve(sum.toString());
+                            scriptProcessor.onaudioprocess = null;
+                        };
+                        oscillator.start(0);
+                        setTimeout(() => {
+                            oscillator.stop();
+                            resolve("audio-timeout");
+                        }, 100);
+                    }
+                );
                 components.push(audioFingerprint);
             }
         } catch (e) {
             components.push("audio-error");
         }
     } else {
-        // 移动端占位符，保持结构一致性
+        // Mobile placeholder to maintain structural consistency
         components.push("mobile-skip-canvas");
         components.push("mobile-skip-webgl");
         components.push("mobile-skip-audio");
     }
 
-    // 7. 插件信息
+    // 7. Plugin information
     const plugins = Array.from(navigator.plugins || [])
         .map((p) => p.name)
         .join(",");
     components.push(plugins);
 
-    // 8. 存储支持检测
+    // 8. Storage support detection
     const storage = {
         localStorage: typeof localStorage !== "undefined",
         sessionStorage: typeof sessionStorage !== "undefined",
@@ -199,23 +210,23 @@ const generateBrowserFingerprint = async (): Promise<string> => {
     };
     components.push(JSON.stringify(storage));
 
-    // 9. Do Not Track设置
+    // 9. Do Not Track settings
     components.push((navigator as any).doNotTrack || "unknown");
 
-    // 10. Cookie启用状态
+    // 10. Cookie enabled status
     components.push(String(navigator.cookieEnabled));
 
-    // 合并所有组件并生成哈希
+    // Combine all components and generate hash
     const fingerprintString = components.join("|||");
     const fingerprint = await simpleHash(fingerprintString);
 
-    // 缓存指纹
+    // Cache fingerprint
     try {
-        if (typeof localStorage !== 'undefined') {
+        if (typeof localStorage !== "undefined") {
             localStorage.setItem(BROWSER_FINGERPRINT_KEY, fingerprint);
         }
     } catch (e) {
-        console.warn('Failed to save fingerprint to cache:', e);
+        console.warn("Failed to save fingerprint to cache:", e);
     }
 
     return fingerprint;
@@ -227,20 +238,20 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
 }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const scriptLoadedRef = useRef<boolean>(false);
-    const [sdkLoaded, setSdkLoaded] = useState(false); // 跟踪 SDK 是否加载完成
-    const [isLoading, setIsLoading] = useState(false); // 跟踪 SDK 是否正在加载
+    const [sdkLoaded, setSdkLoaded] = useState(false); // Track if SDK is loaded
+    const [isLoading, setIsLoading] = useState(false); // Track if SDK is loading
 
-    // PC 端根据缓存或默认打开，移动端默认关闭
+    // Open by default on PC based on cache or default, closed by default on mobile
     // const [isAssistantOpen, setIsAssistantOpen] = useState(() => {
     //     if (typeof window !== 'undefined') {
     //         const isMobile = window.innerWidth <= 768;
 
-    //         // 移动端始终默认关闭
+    //         // Always default to closed on mobile
     //         if (isMobile) {
     //             return false;
     //         }
 
-    //         // PC 端初始不打开，等 SDK 加载完成后再决定
+    //         // Do not open initially on PC, decide after SDK is loaded
     //         return false;
     //     }
     //     return false;
@@ -253,86 +264,89 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
     const CONTENT = i18n.currentLocale === "zh" ? ZH_CONTENT : EN_CONTENT;
 
     /**
-     * 保存 AI 助理状态到 localStorage（仅 PC 端，且只在 SDK 加载完成后）
-     * 逻辑：关闭时设置缓存，打开时删除缓存
+     * Save AI assistant state to localStorage (PC only, and only after SDK is loaded)
+     * Logic: Set cache when closed, remove cache when opened
      */
     useEffect(() => {
-        // 只在 SDK 加载完成后才保存状态，避免保存初始的 false 状态
-        if (sdkLoaded && typeof window !== 'undefined') {
+        // Save state only after SDK is loaded to avoid saving initial false state
+        if (sdkLoaded && typeof window !== "undefined") {
             const isMobile = window.innerWidth <= 768;
 
-            // 只在 PC 端保存状态
+            // Save state only on PC
             if (!isMobile) {
                 try {
                     if (isAssistantOpen) {
-                        // 打开时删除缓存
+                        // Remove cache when opened
                         localStorage.removeItem(AI_ASSISTANT_HIDE_KEY);
                     } else {
-                        // 关闭时设置缓存
-                        localStorage.setItem(AI_ASSISTANT_HIDE_KEY, 'true');
+                        // Set cache when closed
+                        localStorage.setItem(AI_ASSISTANT_HIDE_KEY, "true");
                     }
                 } catch (error) {
-                    console.warn('Failed to save AI assistant state to localStorage:', error);
+                    console.warn(
+                        "Failed to save AI assistant state to localStorage:",
+                        error
+                    );
                 }
             }
         }
     }, [isAssistantOpen, sdkLoaded]);
 
     /**
-     * SDK 加载完成后，PC 端根据缓存状态或默认打开弹窗
+     * After the SDK is loaded, the pop-up window is automatically opened on the PC based on the cache status or default status --- Commented on December 16, 2025
      */
-    useEffect(() => {
-        if (sdkLoaded && typeof window !== 'undefined') {
-            const isMobile = window.innerWidth <= 768;
-            console.log('SDK loaded, checking if should open assistant. isMobile:', isMobile);
+    // useEffect(() => {
+    //     if (sdkLoaded && typeof window !== 'undefined') {
+    //         const isMobile = window.innerWidth <= 768;
+    //         console.log('SDK loaded, checking if should open assistant. isMobile:', isMobile);
 
-            // 只在 PC 端自动打开
-            if (!isMobile) {
-                // 检查版本，如果版本不匹配则清除旧缓存
-                const cachedVersion = localStorage.getItem(AI_ASSISTANT_VERSION_KEY);
-                if (cachedVersion !== CURRENT_VERSION) {
-                    console.log('Version mismatch, clearing old cache. Old version:', cachedVersion, 'Current version:', CURRENT_VERSION);
-                    // 清除旧的缓存 key（兼容旧版本）
-                    localStorage.removeItem('jitai-assistant-open-state');
-                    localStorage.removeItem(AI_ASSISTANT_HIDE_KEY);
-                    localStorage.setItem(AI_ASSISTANT_VERSION_KEY, CURRENT_VERSION);
-                }
+    //         // Automatically open only on PC
+    //         if (!isMobile) {
+    //             // Check version, clear old cache if version mismatch
+    //             const cachedVersion = localStorage.getItem(AI_ASSISTANT_VERSION_KEY);
+    //             if (cachedVersion !== CURRENT_VERSION) {
+    //                 console.log('Version mismatch, clearing old cache. Old version:', cachedVersion, 'Current version:', CURRENT_VERSION);
+    //                 // Clear old cache key (compatible with old versions)
+    //                 localStorage.removeItem('jitai-assistant-open-state');
+    //                 localStorage.removeItem(AI_ASSISTANT_HIDE_KEY);
+    //                 localStorage.setItem(AI_ASSISTANT_VERSION_KEY, CURRENT_VERSION);
+    //             }
 
-                // 检查是否隐藏：如果 is_hide_jitai_assistant 存在，说明用户之前关闭了
-                const isHidden = localStorage.getItem(AI_ASSISTANT_HIDE_KEY) === 'true';
-                console.log('AI assistant hide state:', isHidden);
-                if (isHidden) {
-                    // 如果缓存存在，说明用户之前关闭了，保持关闭状态
-                    console.log('User previously closed assistant, keeping closed');
-                    setIsAssistantOpen(false);
-                } else {
-                    // 如果没有缓存，默认打开（延迟 4 秒）
-                    console.log('No hide cache found, will open by default after 2 seconds');
-                    const timer = setTimeout(() => {
-                        setIsAssistantOpen(true);
-                    }, 4000);
+    //             // Check if hidden: if is_hide_jitai_assistant exists, user previously closed it
+    //             const isHidden = localStorage.getItem(AI_ASSISTANT_HIDE_KEY) === 'true';
+    //             console.log('AI assistant hide state:', isHidden);
+    //             if (isHidden) {
+    //                 // If cache exists, user previously closed it, keep closed
+    //                 console.log('User previously closed assistant, keeping closed');
+    //                 setIsAssistantOpen(false);
+    //             } else {
+    //                 // If no cache, open by default (delay 4 seconds)
+    //                 console.log('No hide cache found, will open by default after 2 seconds');
+    //                 const timer = setTimeout(() => {
+    //                     setIsAssistantOpen(true);
+    //                 }, 4000);
 
-                    // 清理定时器
-                    return () => clearTimeout(timer);
-                }
-            }
-        }
-    }, [sdkLoaded]);
+    //                 // Clear timer
+    //                 return () => clearTimeout(timer);
+    //             }
+    //         }
+    //     }
+    // }, [sdkLoaded]);
 
     /**
-     * 处理移动端滚动穿透问题
-     * 当 AI 助手窗口打开时，阻止背景页面滚动
-     * 只在移动端应用此逻辑
+     * Handle mobile scrolling through problem
+     * When the AI assistant window is open, block background page scrolling
+     * Only apply this logic on mobile devices
      */
     useEffect(() => {
-        // 检测是否为移动端
+        // Detect if it is a mobile device
         const isMobile = window.innerWidth <= 768;
 
         if (isAssistantOpen && isMobile) {
-            // 保存当前滚动位置
+            // Save current scroll position
             scrollPositionRef.current = window.scrollY;
 
-            // 阻止背景页面滚动
+            // Prevent background page scrolling
             document.body.style.overflow = "hidden";
             document.body.style.position = "fixed";
             document.body.style.top = `-${scrollPositionRef.current}px`;
@@ -343,7 +357,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
             return () => {
                 const savedScrollPosition = scrollPositionRef.current;
 
-                // 先恢复样式
+                // Restore styles first
                 document.body.style.overflow = "";
                 document.body.style.position = "";
                 document.body.style.top = "";
@@ -351,31 +365,31 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
                 document.body.style.left = "";
                 document.body.style.right = "";
 
-                // 使用 scrollTo 的 instant 行为，不使用平滑滚动
+                // Use scrollTo instant behavior, do not use smooth scrolling
                 window.scrollTo({
                     top: savedScrollPosition,
                     left: 0,
-                    behavior: 'instant' as ScrollBehavior
+                    behavior: "instant" as ScrollBehavior,
                 });
             };
         }
     }, [isAssistantOpen]);
 
-    // 设置移动端真实视口高度的 CSS 变量，解决地址栏遮挡问题
+    // Set CSS variable for real mobile viewport height to solve address bar occlusion issue
     useEffect(() => {
         const setViewportHeight = () => {
-            // 获取真实的视口高度（不包含地址栏）
+            // Get real viewport height (excluding address bar)
             const vh = window.innerHeight * 0.01;
-            // 将值设置为 CSS 变量 --vh
+            // Set value to CSS variable --vh
             document.documentElement.style.setProperty("--vh", `${vh}px`);
         };
 
-        // 初始设置
+        // Initial setup
         setViewportHeight();
 
-        // 监听窗口大小变化（包括地址栏显示/隐藏）
+        // Listen for window resize (including address bar show/hide)
         window.addEventListener("resize", setViewportHeight);
-        // 监听设备方向变化
+        // Listen for device orientation change
         window.addEventListener("orientationchange", setViewportHeight);
 
         return () => {
@@ -393,7 +407,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
         }
 
         try {
-            // 生成浏览器指纹
+            // Generate browser fingerprint
             const userKey = await generateBrowserFingerprint();
 
             const aiAssistant = new (window as any).JitAIAssistant();
@@ -408,11 +422,11 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
                 prologues: CONTENT.prologues,
                 placeholder: CONTENT.placeholder,
                 authInfo: {
-                    userKey: userKey, // 使用浏览器指纹生成的唯一用户key
+                    userKey: userKey, // Unique user key generated using browser fingerprint
                 },
                 functions: {
                     // Add your custom functions here
-                    getCompleteReferenceFormUrl: getCompleteReferenceFormUrl
+                    getCompleteReferenceFormUrl: getCompleteReferenceFormUrl,
                 },
             });
 
@@ -444,7 +458,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
                 }
             );
 
-            // SDK 初始化完成，设置状态
+            // SDK initialization completed, set state
             console.log("AI Assistant SDK initialized successfully");
             setSdkLoaded(true);
         } catch (error) {
@@ -479,8 +493,8 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
         document.head.appendChild(script);
     };
 
-    // 页面加载后自动加载 SDK
-    // 使用 requestIdleCallback 尽早加载，不再强制延迟 2 秒
+    // Automatically load SDK after page load
+    // Use requestIdleCallback to load as early as possible, no longer force 2 second delay
     useEffect(() => {
         const triggerLoad = () => {
             if (!scriptLoadedRef.current) {
@@ -488,7 +502,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
             }
         };
 
-        if ('requestIdleCallback' in window) {
+        if ("requestIdleCallback" in window) {
             const handle = (window as any).requestIdleCallback(triggerLoad);
             return () => (window as any).cancelIdleCallback(handle);
         } else {
@@ -497,11 +511,11 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
         }
     }, [CONTENT]);
 
-    // 处理打开 AI 助手
+    // Handle opening AI assistant
     const handleOpenAssistant = () => {
         setIsAssistantOpen(true);
 
-        // 如果未加载，立即触发加载
+        // If not loaded, trigger load immediately
         if (!scriptLoadedRef.current && !isLoading && !sdkLoaded) {
             loadScript();
         }
@@ -511,14 +525,24 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
         <div className={className}>
             {/* @ts-ignore */}
             <Head>
-                <link rel="dns-prefetch" href="https://jit-front.oss-cn-hangzhou.aliyuncs.com" />
-                <link rel="preconnect" href="https://jit-front.oss-cn-hangzhou.aliyuncs.com" />
-                <link rel="preload" href="https://jit-front.oss-cn-hangzhou.aliyuncs.com/ai-sdk/jitai-assistant-sdk.min.js" as="script" />
+                <link
+                    rel="dns-prefetch"
+                    href="https://jit-front.oss-cn-hangzhou.aliyuncs.com"
+                />
+                <link
+                    rel="preconnect"
+                    href="https://jit-front.oss-cn-hangzhou.aliyuncs.com"
+                />
+                <link
+                    rel="preload"
+                    href="https://jit-front.oss-cn-hangzhou.aliyuncs.com/ai-sdk/jitai-assistant-sdk.min.js"
+                    as="script"
+                />
                 <link rel="dns-prefetch" href="https://wy.jit.pro" />
                 <link rel="preconnect" href="https://wy.jit.pro" />
             </Head>
 
-            {/* AI 助手悬浮图标 */}
+            {/* AI Assistant Floating Icon */}
             {!isAssistantOpen && visible && (
                 <button
                     onClick={handleOpenAssistant}
@@ -552,12 +576,13 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
                 </button>
             )}
 
-            {/* AI Assistant 浮窗容器 - 始终渲染但通过 CSS 控制显示/隐藏 */}
+            {/* AI Assistant Window Container - Always rendered but controlled by CSS for display/hide */}
             <div
-                className={`${styles.aiAssistantWindow} ${!isAssistantOpen ? styles.hidden : ""
-                    }`}
+                className={`${styles.aiAssistantWindow} ${
+                    !isAssistantOpen ? styles.hidden : ""
+                }`}
             >
-                {/* 浮窗标题栏 */}
+                {/* Window Header */}
                 <div className={styles.aiAssistantHeader}>
                     <div className={styles.aiAssistantTitle}>
                         <svg
@@ -601,36 +626,41 @@ const AIAssistant: React.FC<AIAssistantProps> = ({
                     </button>
                 </div>
 
-                {/* AI Assistant 内容区域 */}
-                <div className={styles.aiAssistantContent} style={{ position: 'relative' }}>
+                {/* AI Assistant Content Area */}
+                <div
+                    className={styles.aiAssistantContent}
+                    style={{ position: "relative" }}
+                >
                     <div
                         id="ai-assistant-container"
                         ref={containerRef}
-                        style={{ width: '100%', height: '100%' }}
+                        style={{ width: "100%", height: "100%" }}
                     />
 
-                    {/* 加载状态提示 - 独立于 SDK 容器，避免 DOM 冲突 */}
+                    {/* Loading State Prompt - Independent of SDK container to avoid DOM conflicts */}
                     {isLoading && !sdkLoaded && (
-                        <div style={{
-                            position: 'absolute',
-                            top: 0,
-                            left: 0,
-                            width: '100%',
-                            height: '100%',
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            backgroundColor: '#fff',
-                            color: '#666',
-                            fontSize: '14px',
-                            zIndex: 10
-                        }}>
+                        <div
+                            style={{
+                                position: "absolute",
+                                top: 0,
+                                left: 0,
+                                width: "100%",
+                                height: "100%",
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                                backgroundColor: "#fff",
+                                color: "#666",
+                                fontSize: "14px",
+                                zIndex: 10,
+                            }}
+                        >
                             Loading AI Assistant...
                         </div>
                     )}
                 </div>
 
-                {/* 浮窗底部说明 */}
+                {/* Window Footer */}
                 <div className={styles.aiAssistantFooter}>
                     <span className={styles.poweredByText}>
                         Powered by JitAI

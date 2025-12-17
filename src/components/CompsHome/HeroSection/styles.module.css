@@ -5,7 +5,7 @@
 }
 
 :root[lang="zh"] {
-  --hero-title-font-size: var(--font-size-7xl); 
+  --hero-title-font-size: var(--font-size-7xl);
 }
 
 .hero {
@@ -200,6 +200,56 @@
   object-fit: cover;
 }
 
+/* 视频蒙层 */
+.videoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* 视频播放按钮 */
+.playButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.playButton:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 0.75rem 2.5rem rgba(0, 0, 0, 0.25);
+}
+
+.playButton:active {
+  transform: translate(-50%, -50%) scale(0.95);
+}
+
+.playIcon {
+  width: 3.5rem;
+  height: 3.5rem;
+  color: var(--color-primary);
+  margin-left: 0.375rem;
+  /* 视觉上让播放图标居中 */
+}
+
 /* 卡片网格 */
 .cardsGrid {
   display: grid;
@@ -315,6 +365,22 @@
     font-size: var(--font-size-sm);
   }
 
+  .playButton {
+    width: 3.5rem;
+    height: 3.5rem;
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
+  }
+
+  .playButton:hover {
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.25);
+  }
+
+  .playIcon {
+    width: 2rem;
+    height: 2rem;
+    margin-left: 0.25rem;
+  }
+
   .cardsGrid {
     grid-template-columns: 1fr;
     gap: var(--space-6);
@@ -329,11 +395,11 @@
     /* 移动端禁用 backdrop-filter */
     backdrop-filter: none;
     /* 提供一个不透明的背景色作为回退 */
-    background: var(--bg-card); 
+    background: var(--bg-card);
     /* 添加 margin-bottom 作为 gap 的回退 */
     margin-bottom: var(--space-6);
   }
-  
+
   .card:last-child {
     margin-bottom: 0;
   }

@@ -20,7 +20,7 @@ JitAI安装包分为桌面版（支持Windows、Mac）和服务器版（提供Do
 
 安装步骤：
 
-1. <a href="https://apk.jit.pro/latest/windows/JitAI.exe" className="analytics-downloadWindows">点击此处下载</a>安装包。
+1. <a href="https://apk.jit.pro/latest/windows/JitAI-installer.exe" className="analytics-downloadWindows">点击此处下载</a>安装包。
 2. 双击exe文件安装。
 3. 按页面流程激活。 阅读[开发者团队管理](../devguide/installation-activation/developer-team-management)了解更多细节。
 
@@ -30,7 +30,7 @@ JitAI安装包分为桌面版（支持Windows、Mac）和服务器版（提供Do
 
 安装步骤：
 
-1. 下载安装包： <a href="https://apk.jit.pro/latest/darwin/arm/JitAI.dmg" className="analytics-downloadMac analytics-downloadMacApple">Apple芯片安装包</a> 或 <a href="https://apk.jit.pro/latest/darwin/x64/JitAI.dmg" className="analytics-downloadMac analytics-downloadMacIntel">Intel芯片安装包</a>
+1. 下载安装包： <a href="https://apk.jit.pro/latest/darwin/arm/JitAI-installer-apple.dmg" className="analytics-downloadMac analytics-downloadMacApple">Apple芯片安装包</a> 或 <a href="https://apk.jit.pro/latest/darwin/x64/JitAI-installer-intel.dmg" className="analytics-downloadMac analytics-downloadMacIntel">Intel芯片安装包</a>
 2. 双击dmg文件安装。
 3. 按页面流程激活。阅读[开发者团队管理](../devguide/installation-activation/developer-team-management)了解更多细节。
 

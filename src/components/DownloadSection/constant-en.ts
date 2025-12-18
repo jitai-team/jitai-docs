@@ -61,7 +61,7 @@ const CONTENT: DownloadContent = {
             title: "Windows Installer",
             description:
                 "Supports Win10+, suitable for local development and debugging",
-            downloadUrl: "https://apk.jit.pro/latest/windows/jit.exe",
+            downloadUrl: "https://apk.jit.pro/latest/windows/JitAI.exe",
             downloadText: "Download Now",
         },
 
@@ -69,9 +69,9 @@ const CONTENT: DownloadContent = {
             title: "macOS Installer",
             description:
                 "Supports macOS 12.6.7+， suitable for local development and debugging",
-            intelDownloadUrl: "https://apk.jit.pro/latest/darwin/x64/jit.dmg",
+            intelDownloadUrl: "https://apk.jit.pro/latest/darwin/x64/JitAI.dmg",
             intelDownloadText: "for Intel processor",
-            appleDownloadUrl: "https://apk.jit.pro/latest/darwin/arm/jit.dmg",
+            appleDownloadUrl: "https://apk.jit.pro/latest/darwin/arm/JitAI.dmg",
             appleDownloadText: "for Apple silicon",
             macSecurityUrl: "/download/mac-security",
         },

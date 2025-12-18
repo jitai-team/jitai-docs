@@ -59,16 +59,16 @@ const CONTENT: DownloadContent = {
         windows: {
             title: "Windows 安装包",
             description: "支持Win10、Win11， 适合本地开发和调试",
-            downloadUrl: "https://apk.jit.pro/latest/windows/jit.exe",
+            downloadUrl: "https://apk.jit.pro/latest/windows/JitAI.exe",
             downloadText: "立即下载",
         },
 
         mac: {
             title: "MacOS 安装包",
             description: "支持mac12.6.7+， 适合本地开发和调试",
-            intelDownloadUrl: "https://apk.jit.pro/latest/darwin/x64/jit.dmg",
+            intelDownloadUrl: "https://apk.jit.pro/latest/darwin/x64/JitAI.dmg",
             intelDownloadText: "Intel芯片安装包",
-            appleDownloadUrl: "https://apk.jit.pro/latest/darwin/arm/jit.dmg",
+            appleDownloadUrl: "https://apk.jit.pro/latest/darwin/arm/JitAI.dmg",
             appleDownloadText: "Apple芯片安装包",
             macSecurityUrl: "/zh/download/mac-security",
         },

@@ -14,7 +14,7 @@
 [🌐 在线文档](https://jit.pro/docs) | [📖 快速开始](#快速开始) | [🤝 参与贡献](#参与贡献) | [💬 社区交流](#社区交流)
 
 **语言版本 / Language Versions:**
-[🇨🇳 中文](README.md) | [🇺🇸 English](README_EN.md) | [🤝 贡献指南](CONTRIBUTING.md) | [🤝 Contributing Guide](CONTRIBUTING_EN.md)
+[🇨🇳 中文](README_ZH.md) | [🇺🇸 English](README.md) | [🤝 贡献指南](CONTRIBUTING_ZH.md) | [🤝 Contributing Guide](CONTRIBUTING.md)
 
 </div>
 

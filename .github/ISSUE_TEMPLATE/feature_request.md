@@ -1,6 +1,6 @@
 ---
 name: Feature Request
-description: Suggest a new feature or improvement for this project.
+about: Suggest a new feature or improvement for this project.
 title: "[Feature] "
 labels: [enhancement]
 assignees: []

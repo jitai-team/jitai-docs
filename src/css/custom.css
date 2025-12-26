@@ -491,7 +491,7 @@ body[data-page-type="custom-layout"] .external-link,body:has(.custom-page) .exte
   padding: 0.2rem 0.75rem !important;
   transition: var(--transition) !important;
   margin: 0.125rem 0 !important;
-  line-height: 14px;
+  line-height: 18px;
 }
 
 .menu__link:hover {

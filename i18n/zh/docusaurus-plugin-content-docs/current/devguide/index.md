@@ -6,7 +6,8 @@ description: "开发者指南导读的详细指南和说明。"
 import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 # 开发者指南导读
-准备好体验全新的应用开发方式了吗？从这里开始，你将学会使用AI时代的全新技术体系构建功能强大的企业级应用。
+
+准备好体验全新的应用开发方式了吗？从这里开始，你将学会使用 AI 时代的全新技术体系构建功能强大的企业级应用。
 
 开发指南提供从组织管理、应用开发基础到业务逻辑实现的完整学习路径，以及通过真实业务场景掌握复杂应用架构设计的最佳实践。
 
@@ -14,18 +15,19 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 首先，你需要完成基本的[下载安装](tutorial/download-installation)！
 
-
 ## 基础概念 {#basic-concepts}
-掌握JitAI平台的核心理念和架构原理。了解平台应用、元素体系、开发框架、可视化开发工具等基础概念，为后续开发工作奠定理论基础。
+
+掌握 JitAI 平台的核心理念和架构原理。了解平台应用、元素体系、开发框架、可视化开发工具等基础概念，为后续开发工作奠定理论基础。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="平台架构与核心概念"
-  href="devguide/basic-concept"
-  description="了解JitAI平台架构、应用概念、JAAP协议、元素体系和开发框架，掌握平台的基础原理。"
->
-  <LinkGrid columns={2} links={[
+title="平台架构与核心概念"
+href="devguide/basic-concept"
+description="了解 JitAI 平台架构、应用概念、JAAP 协议、元素体系和开发框架，掌握平台的基础原理。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "平台与应用", href: "devguide/basic-concept#platform-and-applications" },
     { text: "DevOps工具与服务", href: "devguide/basic-concept#devops-tools-and-services" },
     { text: "应用创建与开发", href: "devguide/basic-concept#application-creation-and-development" },
@@ -35,32 +37,37 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "业务应用与应用继承", href: "devguide/basic-concept#business-applications-and-application-inheritance" },
     { text: "开发工具", href: "devguide/basic-concept#development-tools" },
     { text: "扩展", href: "devguide/basic-concept#extension" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
 ## 平台安装与节点激活 {#platform-installation-node-activation}
+
 完成平台安装和节点激活流程。学习下载安装方法、节点激活流程、开发者团队管理等，建立开发环境基础。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="下载与安装"
-  href="devguide/installation-activation/download-installation"
-  description="学习如何下载和安装JitAI平台，包括桌面版和服务器版的不同部署场景。"
->
-  <LinkGrid links={[
+title="下载与安装"
+href="devguide/installation-activation/download-installation"
+description="学习如何下载和安装 JitAI 平台，包括桌面版和服务器版的不同部署场景。"
+
+> <LinkGrid links={[
+
     { text: "详细安装步骤", href: "devguide/installation-activation/download-installation#detailed-installation-steps" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="节点激活与开发者团队"
-  href="devguide/installation-activation/developer-team-management"
-  description="了解如何激活节点和管理开发者团队，包括组织绑定、成员管理等核心操作。"
->
-  <LinkGrid links={[
+title="节点激活与开发者团队"
+href="devguide/installation-activation/developer-team-management"
+description="了解如何激活节点和管理开发者团队，包括组织绑定、成员管理等核心操作。"
+
+> <LinkGrid links={[
+
     { text: "什么是节点", href: "devguide/installation-activation/developer-team-management#what-is-jitnode" },
     { text: "什么是开发者团队", href: "devguide/installation-activation/developer-team-management#what-is-developer-team" },
     { text: "在激活节点时创建新的开发组织", href: "devguide/installation-activation/developer-team-management#create-new-dev-team-when-activating-node" },
@@ -70,34 +77,39 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "查看团队ID", href: "devguide/installation-activation/developer-team-management#view-team-id" },
     { text: "查看和刷新组织绑定码", href: "devguide/installation-activation/developer-team-management#view-and-refresh-team-bind-code" },
     { text: "移除组织成员", href: "devguide/installation-activation/developer-team-management#remove-team-member" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="平台节点的更新升级"
-  href="devguide/installation-activation/platform-node-updates-upgrades"
-  description="学习如何更新和升级平台节点，保持系统稳定性和功能更新。"
->
-  <LinkGrid links={[
+title="平台节点的更新升级"
+href="devguide/installation-activation/platform-node-updates-upgrades"
+description="学习如何更新和升级平台节点，保持系统稳定性和功能更新。"
+
+> <LinkGrid links={[
+
     { text: "升级提示与入口", href: "devguide/installation-activation/platform-node-updates-upgrades#upgrade-entry" },
     { text: "一键升级流程", href: "devguide/installation-activation/platform-node-updates-upgrades#one-click-upgrade" },
     { text: "集群环境中的升级建议", href: "devguide/installation-activation/platform-node-updates-upgrades#cluster-recommendations" },
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
 ## 开发工具与发布服务 {#development-tools-publishing-services}
+
 强大的工具链助力高效开发。掌握可视化开发环境、运维管理工具和云端发布服务，实现从开发到部署的完整工具链支持。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="JitAI可视化开发工具"
-  href="devguide/development-tool-and-publish-service/visual-development-tool"
-  description="掌握强大的可视化开发环境，熟悉IDE的各个功能区域，学会在可视化和源码双模式之间自由切换。"
->
-  <LinkGrid links={[
+title="JitAI 可视化开发工具"
+href="devguide/development-tool-and-publish-service/visual-development-tool"
+description="掌握强大的可视化开发环境，熟悉 IDE 的各个功能区域，学会在可视化和源码双模式之间自由切换。"
+
+> <LinkGrid links={[
+
     { text: "元素目录树", href: "devguide/development-tool-and-publish-service/visual-development-tool#element-directory-tree" },
     { text: "添加元素", href: "devguide/development-tool-and-publish-service/visual-development-tool#adding-elements" },
     { text: "可视化编辑器", href: "devguide/development-tool-and-publish-service/visual-development-tool#visual-editor" },
@@ -111,15 +123,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "个人中心", href: "devguide/development-tool-and-publish-service/visual-development-tool#profile" },
     { text: "语言切换", href: "devguide/development-tool-and-publish-service/visual-development-tool#language-switching" },
     { text: "导航标签", href: "devguide/development-tool-and-publish-service/visual-development-tool#navigation-tabs" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="运维管理工具"
-  href="devguide/development-tool-and-publish-service/devops-management-tool"
-  description="双控制台架构的全面运维管理解决方案，提供从开发到部署的完整应用生命周期管理。"
->
-  <LinkGrid links={[
+title="运维管理工具"
+href="devguide/development-tool-and-publish-service/devops-management-tool"
+description="双控制台架构的全面运维管理解决方案，提供从开发到部署的完整应用生命周期管理。"
+
+> <LinkGrid links={[
+
     { text: "双控制台架构", href: "devguide/development-tool-and-publish-service/devops-management-tool#dual-console-architecture" },
     { text: "本地节点控制台", href: "devguide/development-tool-and-publish-service/devops-management-tool#local-node-console" },
     { text: "组织管理控制台", href: "devguide/development-tool-and-publish-service/devops-management-tool#organization-management-console" },
@@ -131,34 +145,39 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "版本发布与部署", href: "devguide/development-tool-and-publish-service/devops-management-tool#version-release-and-deployment" },
     { text: "多平台导出", href: "devguide/development-tool-and-publish-service/devops-management-tool#multi-platform-export" },
     { text: "应用模板生态", href: "devguide/development-tool-and-publish-service/devops-management-tool#application-template-ecosystem" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="JCS云端应用发布服务"
-  href="devguide/development-tool-and-publish-service/jcs-cloud-publishing-service"
-  description="官方云端应用发布服务，提供中心化应用仓库、版本管理和JitNode间的无缝部署。"
->
-  <LinkGrid links={[
+title="JCS 云端应用发布服务"
+href="devguide/development-tool-and-publish-service/jcs-cloud-publishing-service"
+description="官方云端应用发布服务，提供中心化应用仓库、版本管理和 JitNode 间的无缝部署。"
+
+> <LinkGrid links={[
+
     { text: "从JCS同步运行环境配置", href: "devguide/development-tool-and-publish-service/jcs-cloud-publishing-service#synchronizing-runtime-environment-configuration" },
     { text: "从JCS获取版本更新信息", href: "devguide/development-tool-and-publish-service/jcs-cloud-publishing-service#retrieving-version-update-information" },
     { text: "通过JCS访问云端应用仓库", href: "devguide/development-tool-and-publish-service/jcs-cloud-publishing-service#accessing-cloud-application-repository" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
 ## 创建与发布应用 {#creating-publishing-applications}
+
 从应用创建到分布式部署的完整流程。掌握应用创建、源码管理、版本发布、运行环境配置，以及如何构建无限横向扩展的分布式集群架构。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="创建和部署应用"
-  href="devguide/creating-and-publishing-applications/creating-and-deploying-applications"
-  description="学习应用的创建、继承、数据配置和部署流程，掌握应用开发的基础工作流程。"
->
-  <LinkGrid links={[
+title="创建和部署应用"
+href="devguide/creating-and-publishing-applications/creating-and-deploying-applications"
+description="学习应用的创建、继承、数据配置和部署流程，掌握应用开发的基础工作流程。"
+
+> <LinkGrid links={[
+
     { text: "创建第一个应用", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#creating-first-application" },
     { text: "基于已有应用快速开发", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#developing-applications-based-on-existing-templates" },
     { text: "继承应用", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#inheriting-from-applications" },
@@ -167,30 +186,34 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "应用部署", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#deploying-applications" },
     { text: "在指定节点上部署应用", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#deploying-applications-on-specified-nodes" },
     { text: "在指定运行环境中部署应用", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#deploying-applications-in-specified-runtime-environments" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="应用目录和元素源码"
-  href="devguide/creating-and-publishing-applications/application-directory-and-element-source-code"
-  description="基于JAAP协议的应用目录结构和元素源码管理，包括应用导出导入功能。"
->
-  <LinkGrid links={[
+title="应用目录和元素源码"
+href="devguide/creating-and-publishing-applications/application-directory-and-element-source-code"
+description="基于 JAAP 协议的应用目录结构和元素源码管理，包括应用导出导入功能。"
+
+> <LinkGrid links={[
+
     { text: "应用目录结构", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#application-directory-structure" },
     { text: "元素代码目录结构", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#element-code-directory-structure" },
     { text: "应用源码导出导入", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#application-export-import" },
     { text: "导出源码zip包", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#export-source-code-zip" },
     { text: "导出为微信小程序", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#export-to-wechat-miniprogram" },
     { text: "导入应用源码包", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#import-application-source-code" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="发布与升级应用"
-  href="devguide/creating-and-publishing-applications/publishing-and-upgrading-applications"
-  description="掌握应用版本管理、发布工作流程和升级策略，学习语义化版本控制和部署配置。"
->
-  <LinkGrid links={[
+title="发布与升级应用"
+href="devguide/creating-and-publishing-applications/publishing-and-upgrading-applications"
+description="掌握应用版本管理、发布工作流程和升级策略，学习语义化版本控制和部署配置。"
+
+> <LinkGrid links={[
+
     { text: "应用版本管理与发布", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#application-version-management-and-publish" },
     { text: "语义化版本号", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#semantic-versioning" },
     { text: "是否强制自动更新", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#force-auto-update" },
@@ -199,16 +222,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "包含一些初始化数据", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#include-initialization-data" },
     { text: "应用版本升级", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#application-version-updates" },
     { text: "应用部署策略", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#application-deployment-strategies" }
-  ]} />
+
+]} />
 </IndexCard>
 
-
 <IndexCard
-  title="运行环境管理"
-  href="devguide/creating-and-publishing-applications/runtime-environment-management"
-  description="掌握运行环境的创建、配置和管理，学习如何使用节点集群和应用部署。"
->
-  <LinkGrid links={[
+title="运行环境管理"
+href="devguide/creating-and-publishing-applications/runtime-environment-management"
+description="掌握运行环境的创建、配置和管理，学习如何使用节点集群和应用部署。"
+
+> <LinkGrid links={[
+
     { text: "什么是运行环境", href: "devguide/creating-and-publishing-applications/runtime-environment-management#what-is-runtime-environment" },
     { text: "节点的本地默认运行环境", href: "devguide/creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment" },
     { text: "创建新的运行环境", href: "devguide/creating-and-publishing-applications/runtime-environment-management#createnewrunenvironment" },
@@ -220,15 +244,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "在运行环境中部署应用", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-application-in-runtime-environment" },
     { text: "以生产模式部署", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-production-mode" },
     { text: "以开发模式部署", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-development-mode" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="实现无限横向扩展的分布式集群架构"
-  href="devguide/creating-and-publishing-applications/distributed-cluster-architecture"
-  description="学习如何构建和管理无限横向扩展的分布式集群架构，实现高可用和高性能部署。"
->
-  <LinkGrid links={[
+title="实现无限横向扩展的分布式集群架构"
+href="devguide/creating-and-publishing-applications/distributed-cluster-architecture"
+description="学习如何构建和管理无限横向扩展的分布式集群架构，实现高可用和高性能部署。"
+
+> <LinkGrid links={[
+
     { text: "四层架构模型", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#four-layer-architecture" },
     { text: "企业级集群部署架构", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#enterprise-cluster-deployment" },
     { text: "典型部署拓扑", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#typical-deployment-topology" },
@@ -241,23 +267,25 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "版本管理约束", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#version-management-constraints" },
     { text: "网络访问约束", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#network-access-constraints" },
     { text: "部署最佳实践", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#deployment-best-practices" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
-
 ## 前端门户与页面 {#frontend-portals-pages}
+
 设计精美的用户界面和交互体验。从门户导航到页面构建，从组件布局到数据管理，打造功能完整、用户友好的应用界面。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="创建门户"
-  href="devguide/shell-and-page/portal-navigation-design"
-  description="设计不同用户角色的门户界面，配置导航菜单和权限控制，创建个性化用户体验。"
->
-  <LinkGrid links={[
+title="创建门户"
+href="devguide/shell-and-page/portal-navigation-design"
+description="设计不同用户角色的门户界面，配置导航菜单和权限控制，创建个性化用户体验。"
+
+> <LinkGrid links={[
+
     { text: "应用内置3个门户", href: "devguide/shell-and-page/portal-navigation-design#application-built-in-portals" },
     { text: "开发者门户", href: "devguide/shell-and-page/portal-navigation-design#developer-portal" },
     { text: "管理者门户", href: "devguide/shell-and-page/portal-navigation-design#manager-portal" },
@@ -284,7 +312,8 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "发起申请/待办/消息中心入口", href: "devguide/shell-and-page/portal-navigation-design#application-and-workflow-entries" },
     { text: "个人中心入口", href: "devguide/shell-and-page/portal-navigation-design#profile-entry" },
     { text: "在门户中集成AI助理", href: "devguide/shell-and-page/portal-navigation-design#integrating-ai-assistants" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
@@ -294,11 +323,12 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 />
 
 <IndexCard
-  title="创建常规页面"
-  href="devguide/shell-and-page/generic-page"
-  description="使用可视化编辑器构建页面界面，配置组件和事件，实现丰富的用户交互功能。"
->
-  <LinkGrid links={[
+title="创建常规页面"
+href="devguide/shell-and-page/generic-page"
+description="使用可视化编辑器构建页面界面，配置组件和事件，实现丰富的用户交互功能。"
+
+> <LinkGrid links={[
+
     { text: "新建常规页面", href: "devguide/shell-and-page/generic-page" },
     { text: "可视化页面编辑器", href: "devguide/shell-and-page/generic-page#visual-page-editor" },
     { text: "组件通用操作", href: "devguide/shell-and-page/generic-page#component-common-operations" },
@@ -307,15 +337,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "页面事件", href: "devguide/shell-and-page/generic-page#page-events" },
     { text: "快捷操作", href: "devguide/shell-and-page/generic-page#shortcuts" },
     { text: "为页面启用AI助理", href: "devguide/shell-and-page/generic-page#enabling-ai-assistant" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="AI数据管理页面"
-  href="devguide/shell-and-page/ai-data-management-page"
-  description="AI加持的ai-data-management-page，智能辅助高效完成数据浏览、筛选、编辑与批量操作。"
->
-  <LinkGrid columns={2} links={[
+title="AI 数据管理页面"
+href="devguide/shell-and-page/ai-data-management-page"
+description="AI 加持的 ai-data-management-page，智能辅助高效完成数据浏览、筛选、编辑与批量操作。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "创建AI数据管理页面", href: "devguide/shell-and-page/ai-data-management-page#create-ai-data-management-page" },
     { text: "通过默认筛选条件限制页面表格查询的数据", href: "devguide/shell-and-page/ai-data-management-page#limit-page-table-query-data-through-default-filter-conditions" },
     { text: "配置默认的数据排序规则", href: "devguide/shell-and-page/ai-data-management-page#configure-default-data-sort-rules" },
@@ -325,56 +357,62 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "配置批量编辑表单中展示的字段", href: "devguide/shell-and-page/ai-data-management-page#configure-fields-displayed-in-batch-edit-form" },
     { text: "启用AI数据管理助手", href: "devguide/shell-and-page/ai-data-management-page#enable-ai-data-management-assistant" },
     { text: "转换为常规页面进行修改", href: "devguide/shell-and-page/ai-data-management-page#convert-to-generic-page-for-modification" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="AI数据分析页面"
-  href="devguide/shell-and-page/ai-data-analysis-page"
-  description="通过自然语言描述需求，AI自动生成数据图表，支持用户随时调整图表样式和统计维度。"
->
-  <LinkGrid links={[
+title="AI 数据分析页面"
+href="devguide/shell-and-page/ai-data-analysis-page"
+description="通过自然语言描述需求，AI 自动生成数据图表，支持用户随时调整图表样式和统计维度。"
+
+> <LinkGrid links={[
+
     { text: "创建AI数据分析页面", href: "devguide/shell-and-page/ai-data-analysis-page#create-ai-data-analysis-page" },
     { text: "页面配置", href: "devguide/shell-and-page/ai-data-analysis-page#page-configuration" },
     { text: "运行效果演示", href: "devguide/shell-and-page/ai-data-analysis-page#runtime-effects" },
     { text: "全代码开发", href: "devguide/shell-and-page/ai-data-analysis-page#full-code-development" },
     { text: "快捷创建", href: "devguide/shell-and-page/ai-data-analysis-page#quick-create" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="数据录入页面"
-  href="devguide/shell-and-page/data-entry-page"
-  description="快速创建数据录入表单，实现数据收集和提交功能。"
->
-  <LinkGrid links={[
+title="数据录入页面"
+href="devguide/shell-and-page/data-entry-page"
+description="快速创建数据录入表单，实现数据收集和提交功能。"
+
+> <LinkGrid links={[
+
     { text: "创建数据录入页面", href: "devguide/shell-and-page/data-entry-page#creating-data-entry-page" },
     { text: "配置允许查看和编辑的字段", href: "devguide/shell-and-page/data-entry-page#configuring-viewable-editable-fields" },
     { text: "提交后显示再次录入按钮", href: "devguide/shell-and-page/data-entry-page#showing-enter-again-button-after-submission" },
     { text: "提交后展示结果反馈界面", href: "devguide/shell-and-page/data-entry-page#showing-result-feedback-after-submission" },
     { text: "转换为常规页面进行修改", href: "devguide/shell-and-page/data-entry-page#converting-to-generic-page-for-modification" }
-  ]} />
+
+]} />
 </IndexCard>
 
-
 <IndexCard
-  title="Markdown页面"
-  href="devguide/shell-and-page/markdown-page"
-  description="创建文档型页面，支持丰富的Markdown语法和文档展示需求。"
->
-  <LinkGrid links={[
+title="Markdown 页面"
+href="devguide/shell-and-page/markdown-page"
+description="创建文档型页面，支持丰富的 Markdown 语法和文档展示需求。"
+
+> <LinkGrid links={[
+
     { text: "创建Markdown页面", href: "devguide/shell-and-page/markdown-page#create-markdown-page" },
     { text: "Markdown 语法", href: "devguide/shell-and-page/markdown-page#markdown-syntax" }
-  ]} />
+
+]} />
 </IndexCard>
 
-
 <IndexCard
-  title="全代码页面开发"
-  href="devguide/shell-and-page/full-code-page-development"
-  description="面向高级开发者的完全自定义页面开发方式，支持复杂业务逻辑和个性化界面。"
->
-  <LinkGrid columns={2} links={[
+title="全代码页面开发"
+href="devguide/shell-and-page/full-code-page-development"
+description="面向高级开发者的完全自定义页面开发方式，支持复杂业务逻辑和个性化界面。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "创建 React 全代码页面", href: "devguide/shell-and-page/full-code-page-development#creating-react-full-code-pages" },
     { text: "使用样式", href: "devguide/frontend-ui-customization/page-customization#use-style" },
     { text: "使用本地资源", href: "devguide/frontend-ui-customization/page-customization#use-local-resources" },
@@ -386,101 +424,116 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "创建Vue全代码页面", href: "devguide/shell-and-page/full-code-page-development#creating-vue-full-code-pages" },
     { text: "使用第三方包", href: "devguide/frontend-ui-customization/page-customization#use-third-party-packages" },
     { text: "打包配置的使用", href: "devguide/frontend-ui-customization/page-customization#use-packaging-configuration" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
-## 在门户和页面中集成AI元素 {#using-ai-portals-pages}
-通过智能AI元素提升用户体验。将AI助理、智能体和其他AI组件集成到门户和页面中，创建智能、交互式的应用程序，提供个性化帮助和自动化工作流程。
+## 在门户和页面中集成 AI 元素 {#using-ai-portals-pages}
+
+通过智能 AI 元素提升用户体验。将 AI 助理、智能体和其他 AI 组件集成到门户和页面中，创建智能、交互式的应用程序，提供个性化帮助和自动化工作流程。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="在门户中使用AI助理"
-  href="devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals"
-  description="学习如何将AI助理集成到门户界面中，为用户在整个工作流程中提供智能帮助和指导。"
->
-  <LinkGrid links={[
+title="在门户中使用 AI 助理"
+href="devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals"
+description="学习如何将 AI 助理集成到门户界面中，为用户在整个工作流程中提供智能帮助和指导。"
+
+> <LinkGrid links={[
+
     { text: "配置AI助理", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals#configuring-ai-assistant" },
     { text: "运行时效果", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals#runtime-effects" },
     { text: "功能亮点", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals#feature-highlights" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="在组件化页面中使用AI助理"
-  href="devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages"
-  description="将AI助理嵌入到基于组件的页面中，增强用户交互并为特定任务提供上下文帮助。"
->
-  <LinkGrid links={[
+title="在组件化页面中使用 AI 助理"
+href="devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages"
+description="将 AI 助理嵌入到基于组件的页面中，增强用户交互并为特定任务提供上下文帮助。"
+
+> <LinkGrid links={[
+
     { text: "启用AI助理", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#enable-ai-assistant" },
     { text: "AI助理配置", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#ai-assistant-configuration" },
     { text: "AI助理事件订阅", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#ai-assistant-event-subscription" },
     { text: "在页面中发送AI消息", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#send-ai-message" },
     { text: "直接调用AI助理", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#call-ai-assistant" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="在页面中使用AI元素"
-  href="devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages"
-  description="掌握从页面调用AI元素的技巧，包括AI智能体、LLM服务和知识库，用于动态内容生成。"
->
-  <LinkGrid links={[
+title="在页面中使用 AI 元素"
+href="devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages"
+description="掌握从页面调用 AI 元素的技巧，包括 AI 智能体、LLM 服务和知识库，用于动态内容生成。"
+
+> <LinkGrid links={[
+
     { text: "在页面中使用AI助理", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#using-in-pages" },
     { text: "可视化调用", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#visual-calling" },
     { text: "全代码调用", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#full-code-calling" },
     { text: "在页面中使用AI Agent", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#using-ai-agent-in-pages" },
     { text: "在页面中使用大模型", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#using-large-language-models-in-pages" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
 ## 在页面中调用业务元素 {#calling-business-elements-pages}
+
 将页面连接到强大的业务逻辑和数据操作。学习如何从页面调用服务函数和数据模型函数，创建动态的、数据驱动的用户界面，具备实时业务处理能力。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="在页面中调用服务函数"
-  href="devguide/calling-business-elements-in-pages/calling-service-functions-in-pages"
-  description="学习如何从页面调用服务函数来执行业务逻辑、处理数据并与外部系统集成，实现动态内容生成。"
->
-  <LinkGrid links={[
+title="在页面中调用服务函数"
+href="devguide/calling-business-elements-in-pages/calling-service-functions-in-pages"
+description="学习如何从页面调用服务函数来执行业务逻辑、处理数据并与外部系统集成，实现动态内容生成。"
+
+> <LinkGrid links={[
+
     { text: "标准页面中调用服务函数", href: "devguide/calling-business-elements-in-pages/calling-service-functions-in-pages#calling-service-functions-in-standard-pages" },
     { text: "全代码页面中调用服务函数", href: "devguide/calling-business-elements-in-pages/calling-service-functions-in-pages#calling-service-functions-in-full-code-pages" },
     { text: "复杂参数处理", href: "devguide/calling-business-elements-in-pages/calling-service-functions-in-pages#complex-parameter-handling" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="在页面中调用数据模型函数"
-  href="devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages"
-  description="掌握从页面调用数据模型函数的技巧，执行CRUD操作、数据查询和数据库交互，实现实时数据显示。"
->
-  <LinkGrid links={[
+title="在页面中调用数据模型函数"
+href="devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages"
+description="掌握从页面调用数据模型函数的技巧，执行 CRUD 操作、数据查询和数据库交互，实现实时数据显示。"
+
+> <LinkGrid links={[
+
     { text: "调用语法", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#calling-syntax" },
     { text: "全代码页面中的基本语法", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#basic-syntax-in-full-code-pages" },
     { text: "数据操作能力", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#data-operation-capabilities" },
     { text: "相关文档", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#related-documentation" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
-## 页面中的全代码自定义UI组件 {#fullcode-ui-components-pages}
-创建具有完全编程控制的高级自定义UI组件。构建复杂的交互元素，与页面逻辑无缝集成，处理复杂事件，提供超越标准组件的丰富用户体验。
+## 页面中的全代码自定义 UI 组件 {#fullcode-ui-components-pages}
+
+创建具有完全编程控制的高级自定义 UI 组件。构建复杂的交互元素，与页面逻辑无缝集成，处理复杂事件，提供超越标准组件的丰富用户体验。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="UI组件的接口规范"
-  href="devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications"
-  description="学习创建全代码UI组件的接口规范和标准，包括属性、状态管理和生命周期方法。"
->
-  <LinkGrid columns={2} links={[
+title="UI 组件的接口规范"
+href="devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications"
+description="学习创建全代码 UI 组件的接口规范和标准，包括属性、状态管理和生命周期方法。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "组件接口架构", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#component-interface-architecture" },
     { text: "核心接口定义", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#core-interface-definitions" },
     { text: "接口交互机制", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-interaction-mechanism" },
@@ -488,15 +541,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "接口运行时序", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-runtime-sequence" },
     { text: "接口调用说明", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-invocation-explanation" },
     { text: "相关文档", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#related-documentation" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="在全代码组件中调用页面的函数及其它组件的函数"
-  href="devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components"
-  description="掌握在全代码组件内调用页面函数和其他组件函数的技巧，实现无缝集成。"
->
-  <LinkGrid columns={2} links={[
+title="在全代码组件中调用页面的函数及其它组件的函数"
+href="devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components"
+description="掌握在全代码组件内调用页面函数和其他组件函数的技巧，实现无缝集成。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "调用原理", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#calling-principle" },
     { text: "实际应用示例", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#practical-examples" },
     { text: "基本组件调用", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#basic-component-calling" },
@@ -504,15 +559,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "常用组件调用方法", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#common-component-methods" },
     { text: "基本调用模式", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#basic-calling-pattern" },
     { text: "相关文档", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#related-documentation" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="发出事件"
-  href="devguide/fullcode-ui-components-in-pages/emitting-events"
-  description="学习如何从全代码组件发出自定义事件，与父页面和其他组件进行有效通信。"
->
-  <LinkGrid columns={2} links={[
+title="发出事件"
+href="devguide/fullcode-ui-components-in-pages/emitting-events"
+description="学习如何从全代码组件发出自定义事件，与父页面和其他组件进行有效通信。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "事件订阅原理", href: "devguide/fullcode-ui-components-in-pages/emitting-events#event-subscription-principles" },
     { text: "在全代码组件中响应事件", href: "devguide/fullcode-ui-components-in-pages/emitting-events#respond-in-custom-components" },
     { text: "发布自定义事件", href: "devguide/fullcode-ui-components-in-pages/emitting-events#publishing-custom-events" },
@@ -520,34 +577,39 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "标准组件事件", href: "devguide/fullcode-ui-components-in-pages/emitting-events#standard-component-events" },
     { text: "全代码组件的自定义事件", href: "devguide/fullcode-ui-components-in-pages/emitting-events#custom-component-events" },
     { text: "双向通信示例", href: "devguide/fullcode-ui-components-in-pages/emitting-events#bidirectional-communication-example" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="在页面代码中调用全代码组件的函数"
-  href="devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code"
-  description="了解如何从页面代码调用全代码组件暴露的函数，控制组件行为和数据流。"
->
-  <LinkGrid links={[
+title="在页面代码中调用全代码组件的函数"
+href="devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code"
+description="了解如何从页面代码调用全代码组件暴露的函数，控制组件行为和数据流。"
+
+> <LinkGrid links={[
+
     { text: "调用原理", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#invocation-mechanism" },
     { text: "调用时机和生命周期", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#invocation-timing-and-lifecycle" },
     { text: "相关文档", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#related-documentation" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
 ## 在页面中使用功能组件 {#using-functional-components-pages}
+
 丰富的组件库是你的超级工具箱。拖拽一个表格展示数据，添加表单收集信息，插入图表让数据可视化。让复杂的前端开发变得简单直观。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="表单组件"
-  href="devguide/using-functional-components-in-pages/form-components"
-  description="强大的表单构建工具，支持数据收集、验证、权限控制和复杂业务规则配置。"
->
-  <LinkGrid columns={2} links={[
+title="表单组件"
+href="devguide/using-functional-components-in-pages/form-components"
+description="强大的表单构建工具，支持数据收集、验证、权限控制和复杂业务规则配置。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "基础配置与配置项管理", href: "devguide/using-functional-components-in-pages/form-components#basic-configuration-and-item-management" },
     { text: "字段校验与交互", href: "devguide/using-functional-components-in-pages/form-components#field-validation-and-interaction" },
     { text: "布局设计", href: "devguide/using-functional-components-in-pages/form-components#layout-design" },
@@ -558,15 +620,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "批量编辑表单事件与交互", href: "devguide/using-functional-components-in-pages/form-components#batch-edit-form-events-and-interaction" },
     { text: "数据修正配置", href: "devguide/using-functional-components-in-pages/form-components#data-correction-configuration" },
     { text: "数据修正使用", href: "devguide/using-functional-components-in-pages/form-components#data-correction-usage" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="基础表格"
-  href="devguide/using-functional-components-in-pages/table-components#basic-table"
-  description="标准数据表格展示组件，支持数据源绑定、字段自定义、分页和排序等基础功能。"
->
-  <LinkGrid columns={2} links={[
+title="基础表格"
+href="devguide/using-functional-components-in-pages/table-components#basic-table"
+description="标准数据表格展示组件，支持数据源绑定、字段自定义、分页和排序等基础功能。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "设置数据源", href: "devguide/using-functional-components-in-pages/table-components#set-data-source" },
     { text: "自定义显示字段", href: "devguide/using-functional-components-in-pages/table-components#custom-display-fields" },
     { text: "按分组显示字段", href: "devguide/using-functional-components-in-pages/table-components#display-fields-by-group" },
@@ -586,35 +650,40 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "设置关联数据层级和表格无数据时文案", href: "devguide/using-functional-components-in-pages/table-components#set-related-data-levels-and-no-data-text" },
     { text: "表格事件", href: "devguide/using-functional-components-in-pages/table-components#table-events" },
     { text: "表格组件变量", href: "devguide/using-functional-components-in-pages/table-components#table-component-variables" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="分组表"
-  href="devguide/using-functional-components-in-pages/table-components#grouped-table"
-  description="按指定字段对数据进行分组展示的表格组件，适用于层次化数据管理。"
->
-  <LinkGrid links={[
+title="分组表"
+href="devguide/using-functional-components-in-pages/table-components#grouped-table"
+description="按指定字段对数据进行分组展示的表格组件，适用于层次化数据管理。"
+
+> <LinkGrid links={[
+
     { text: "分组字段配置", href: "devguide/using-functional-components-in-pages/table-components#grouped-field-configuration" },
     { text: "与基础表格相同的配置", href: "devguide/using-functional-components-in-pages/table-components#same-configuration-as-basic-table" },
     { text: "与基础表格相同的事件", href: "devguide/using-functional-components-in-pages/table-components#same-events-as-basic-table" },
     { text: "与基础表格相同的组件变量", href: "devguide/using-functional-components-in-pages/table-components#same-component-variables-as-basic-table" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="级联表"
-  href="devguide/using-functional-components-in-pages/table-components#cascaded-table"
-  description="处理具有父子关系的层级数据，支持树形结构展示和操作。"
->
-  <LinkGrid links={[
+title="级联表"
+href="devguide/using-functional-components-in-pages/table-components#cascaded-table"
+description="处理具有父子关系的层级数据，支持树形结构展示和操作。"
+
+> <LinkGrid links={[
+
     { text: "级联表示例数据", href: "devguide/using-functional-components-in-pages/table-components#cascaded-table-sample-data" },
     { text: "配置级联逻辑字段", href: "devguide/using-functional-components-in-pages/table-components#configure-cascaded-logic-fields" },
     { text: "级联表使用区效果", href: "devguide/using-functional-components-in-pages/table-components#cascaded-table-usage-effects" },
     { text: "与基础表格相同的配置", href: "devguide/using-functional-components-in-pages/table-components#same-configuration-as-basic-table" },
     { text: "与基础表格相同的事件", href: "devguide/using-functional-components-in-pages/table-components#same-events-as-basic-table" },
     { text: "与基础表格相同的表格变量", href: "devguide/using-functional-components-in-pages/table-components#same-table-variables-as-basic-table" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
@@ -628,11 +697,12 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', margin: '20px 0'}}>
 
 <IndexCard
-  title="交叉表"
-  href="devguide/using-functional-components-in-pages/table-components#crosstab"
-  description="多维数据透视表，支持行列交叉分析，适用于数据统计和报表展示。"
->
-  <LinkGrid columns={2} links={[
+title="交叉表"
+href="devguide/using-functional-components-in-pages/table-components#crosstab"
+description="多维数据透视表，支持行列交叉分析，适用于数据统计和报表展示。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "初始化配置", href: "devguide/using-functional-components-in-pages/table-components#initialization-configuration" },
     { text: "配置维度和指标", href: "devguide/using-functional-components-in-pages/table-components#configure-dimensions-and-metrics" },
     { text: "按年/季度/月/周/日统计", href: "devguide/using-functional-components-in-pages/table-components#configure-dimensions-and-metrics" },
@@ -648,15 +718,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "显示合计值", href: "devguide/using-functional-components-in-pages/table-components#show-total" },
     { text: "交叉表事件", href: "devguide/using-functional-components-in-pages/table-components#cross-table-events" },
     { text: "交叉表组件变量", href: "devguide/using-functional-components-in-pages/table-components#crosstab-component-variables" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="行转列"
-  href="devguide/using-functional-components-in-pages/table-components#row-to-column"
-  description="将行数据转换为列显示的特殊表格模式，适用于动态字段展示场景。"
->
-  <LinkGrid columns={2} links={[
+title="行转列"
+href="devguide/using-functional-components-in-pages/table-components#row-to-column"
+description="将行数据转换为列显示的特殊表格模式，适用于动态字段展示场景。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "基础配置", href: "devguide/using-functional-components-in-pages/table-components#basic-configuration" },
     { text: "自定义字段名称/对齐方式", href: "devguide/using-functional-components-in-pages/table-components#basic-configuration" },
     { text: "自定义字段渲染器", href: "devguide/using-functional-components-in-pages/table-components#custom-field-renderer" },
@@ -666,24 +738,28 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "按钮配置", href: "devguide/using-functional-components-in-pages/table-components#button-configuration" },
     { text: "行转列事件", href: "devguide/using-functional-components-in-pages/table-components#row-to-column-event" },
     { text: "行转列组件变量", href: "devguide/using-functional-components-in-pages/table-components#row-to-column-component-variables" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="统计图表（正在编辑中）"
-  description="丰富的数据可视化图表组件，支持柱状图、折线图、饼图等多种图表类型。"
+title="统计图表（正在编辑中）"
+description="丰富的数据可视化图表组件，支持柱状图、折线图、饼图等多种图表类型。"
+
 >
+
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     📝 文档正在完善中，敬请期待...
   </div>
 </IndexCard>
 
 <IndexCard
-  title="树组件"
-  href="devguide/using-functional-components-in-pages/tree-components"
-  description="层次化数据展示组件，支持树形结构的展示、选择和操作。"
->
-  <LinkGrid columns={2} links={[
+title="树组件"
+href="devguide/using-functional-components-in-pages/tree-components"
+description="层次化数据展示组件，支持树形结构的展示、选择和操作。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "创建树形组件", href: "devguide/using-functional-components-in-pages/tree-components#create-tree-form-component" },
     { text: "配置层级字段", href: "devguide/using-functional-components-in-pages/tree-components#configure-hierarchy-fields" },
     { text: "首次加载组件时刷新数据", href: "devguide/using-functional-components-in-pages/tree-components#tree-form-refresh-on-first-load" },
@@ -697,15 +773,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "级联树首次加载组件时刷新数据", href: "devguide/using-functional-components-in-pages/tree-components#cascade-tree-refresh-on-first-load" },
     { text: "级联树点击节点后事件", href: "devguide/using-functional-components-in-pages/tree-components#cascade-tree-click-node-event" },
     { text: "级联树选中节点后事件", href: "devguide/using-functional-components-in-pages/tree-components#cascade-tree-select-node-event" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="列表组件"
-  href="devguide/using-functional-components-in-pages/list-components"
-  description="灵活的数据列表展示组件，支持标题、摘要、按钮等配置，适用于各类列表展示场景。"
->
-  <LinkGrid columns={2} links={[
+title="列表组件"
+href="devguide/using-functional-components-in-pages/list-components"
+description="灵活的数据列表展示组件，支持标题、摘要、按钮等配置，适用于各类列表展示场景。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "配置列表标题", href: "devguide/using-functional-components-in-pages/list-components#configure-list-title" },
     { text: "设置摘要内容", href: "devguide/using-functional-components-in-pages/list-components#set-summary-content" },
     { text: "摘要中显示字段标题", href: "devguide/using-functional-components-in-pages/list-components#show-field-titles-in-summary" },
@@ -725,53 +803,61 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "按钮事件", href: "devguide/using-functional-components-in-pages/list-components#button-event" },
     { text: "列表组件变量", href: "devguide/using-functional-components-in-pages/list-components#list-component-variables" },
     { text: "刷新列表组件", href: "devguide/using-functional-components-in-pages/list-components#refresh-list-component" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="卡片与媒体展示（正在编辑中）"
-  description="用于展示卡片式内容和媒体文件的组件，包括看板和画廊功能。"
+title="卡片与媒体展示（正在编辑中）"
+description="用于展示卡片式内容和媒体文件的组件，包括看板和画廊功能。"
+
 >
+
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     📝 文档正在完善中，敬请期待...
   </div>
 </IndexCard>
 
 <IndexCard
-  title="模型筛选器"
-  href="devguide/using-functional-components-in-pages/filter-components#model-filters"
-  description="基于数据模型的高级筛选组件，支持简单、复杂和自由筛选模式。"
->
-  <LinkGrid links={[
+title="模型筛选器"
+href="devguide/using-functional-components-in-pages/filter-components#model-filters"
+description="基于数据模型的高级筛选组件，支持简单、复杂和自由筛选模式。"
+
+> <LinkGrid links={[
+
     { text: "简单筛选", href: "devguide/using-functional-components-in-pages/filter-components#simple-filter" },
     { text: "复杂筛选", href: "devguide/using-functional-components-in-pages/filter-components#complex-filter" },
     { text: "自由筛选", href: "devguide/using-functional-components-in-pages/filter-components#free-filter" },
     { text: "布局设置", href: "devguide/using-functional-components-in-pages/filter-components#layout-settings" },
     { text: "筛选器的使用", href: "devguide/using-functional-components-in-pages/filter-components#filter-usage" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="通用筛选器"
-  href="devguide/using-functional-components-in-pages/filter-components#universal-filters"
-  description="灵活的通用筛选组件，支持自定义字段配置和多种触发模式。"
->
-  <LinkGrid columns={2} links={[
+title="通用筛选器"
+href="devguide/using-functional-components-in-pages/filter-components#universal-filters"
+description="灵活的通用筛选组件，支持自定义字段配置和多种触发模式。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "筛选字段配置", href: "devguide/using-functional-components-in-pages/filter-components#filter-field-configuration" },
     { text: "快速布局", href: "devguide/using-functional-components-in-pages/filter-components#quick-layout" },
     { text: "显示 查询/重置 按钮", href: "devguide/using-functional-components-in-pages/filter-components#show-query-reset-buttons" },
     { text: "条件变更后触发查询", href: "devguide/using-functional-components-in-pages/filter-components#condition-change-trigger-query" },
     { text: "首次加载进行筛选", href: "devguide/using-functional-components-in-pages/filter-components#first-load-filter" },
     { text: "筛选器的使用", href: "devguide/using-functional-components-in-pages/filter-components#universal-filter-usage" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="日历"
-  href="devguide/using-functional-components-in-pages/time-management-components#calendar"
-  description="日程管理和时间安排组件，支持事件创建、编辑和视图切换。"
->
-  <LinkGrid columns={2} links={[
+title="日历"
+href="devguide/using-functional-components-in-pages/time-management-components#calendar"
+description="日程管理和时间安排组件，支持事件创建、编辑和视图切换。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "数据模型准备及组件创建", href: "devguide/using-functional-components-in-pages/time-management-components#data-model-preparation-and-component-creation" },
     { text: "基础配置", href: "devguide/using-functional-components-in-pages/time-management-components#basic-configuration" },
     { text: "日程类型", href: "devguide/using-functional-components-in-pages/time-management-components#schedule-type" },
@@ -783,30 +869,34 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "首次加载组件时刷新数据", href: "devguide/using-functional-components-in-pages/time-management-components#refresh-data-on-first-component-load" },
     { text: "新增日程", href: "devguide/using-functional-components-in-pages/time-management-components#new-schedule" },
     { text: "拖拽日程", href: "devguide/using-functional-components-in-pages/time-management-components#drag-agenda" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="时间轴"
-  href="devguide/using-functional-components-in-pages/time-management-components#timeline"
-  description="时间线展示组件，适用于展示历史记录和流程进度。"
->
-  <LinkGrid links={[
+title="时间轴"
+href="devguide/using-functional-components-in-pages/time-management-components#timeline"
+description="时间线展示组件，适用于展示历史记录和流程进度。"
+
+> <LinkGrid links={[
+
     { text: "数据模型准备及组件创建", href: "devguide/using-functional-components-in-pages/time-management-components#timeline-data-model-preparation-and-component-creation" },
     { text: "基础配置", href: "devguide/using-functional-components-in-pages/time-management-components#timeline-basic-configuration" },
     { text: "颜色类型", href: "devguide/using-functional-components-in-pages/time-management-components#color-type" },
     { text: "位置", href: "devguide/using-functional-components-in-pages/time-management-components#position" },
     { text: "按钮配置", href: "devguide/using-functional-components-in-pages/time-management-components#timeline-button-configuration" },
     { text: "首次加载组件时刷新数据", href: "devguide/using-functional-components-in-pages/time-management-components#timeline-refresh-data-on-first-component-load" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="甘特图"
-  href="devguide/using-functional-components-in-pages/time-management-components#gantt-chart"
-  description="项目管理和进度追踪组件，支持任务依赖关系和进度可视化。"
->
-  <LinkGrid columns={2} links={[
+title="甘特图"
+href="devguide/using-functional-components-in-pages/time-management-components#gantt-chart"
+description="项目管理和进度追踪组件，支持任务依赖关系和进度可视化。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "数据模型准备及组件创建", href: "devguide/using-functional-components-in-pages/time-management-components#gantt-data-model-preparation-and-component-creation" },
     { text: "基础配置", href: "devguide/using-functional-components-in-pages/time-management-components#gantt-basic-configuration" },
     { text: "进度", href: "devguide/using-functional-components-in-pages/time-management-components#progress" },
@@ -819,37 +909,52 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "首次加载组件时刷新数据", href: "devguide/using-functional-components-in-pages/time-management-components#gantt-refresh-data-on-first-component-load" },
     { text: "拖拽日期进度", href: "devguide/using-functional-components-in-pages/time-management-components#drag-date-progress" },
     { text: "允许添加排期", href: "devguide/using-functional-components-in-pages/time-management-components#allow-add-schedule" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="按钮组件"
-  href="devguide/using-functional-components-in-pages/button-components"
-  description="各种类型的按钮组件，支持不同样式和交互效果。"
->
-  <LinkGrid columns={2} links={[
+title="按钮组件"
+href="devguide/using-functional-components-in-pages/button-components"
+description="各种类型的按钮组件，支持不同样式和交互效果。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "按钮组件创建", href: "devguide/using-functional-components-in-pages/button-components#button-component-creation" },
     { text: "按钮标题/图标/类型/大小配置", href: "devguide/using-functional-components-in-pages/button-components#title-icon-type-configuration" },
     { text: "按钮点击后事件", href: "devguide/using-functional-components-in-pages/button-components#click-event" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="布局组件（正在编辑中）"
-  href="devguide/using-functional-components-in-pages/layout-components"
-  description="页面布局和容器组件，包括弹窗、标签页等界面结构元素。"
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 文档正在完善中，敬请期待...
-  </div>
+title="布局组件"
+href="devguide/using-functional-components-in-pages/layout-components"
+description="配置页面布局和容器组件，包括弹窗、标签页、折叠面板和子页面容器等。"
+
+> <LinkGrid links={[
+
+    { text: "弹窗组件", href: "devguide/using-functional-components-in-pages/layout-components#popup-components" },
+    { text: "弹窗组件配置", href: "devguide/using-functional-components-in-pages/layout-components#popup-components-configuration" },
+    { text: "弹窗交互设计", href: "devguide/using-functional-components-in-pages/layout-components#popup-components-interaction-design" },
+    { text: "标签页组件", href: "devguide/using-functional-components-in-pages/layout-components#tab-components" },
+    { text: "标签页组件配置", href: "devguide/using-functional-components-in-pages/layout-components#tab-components-configuration" },
+    { text: "标签页交互设计", href: "devguide/using-functional-components-in-pages/layout-components#tab-components-interaction-design" },
+    { text: "折叠面板组件", href: "devguide/using-functional-components-in-pages/layout-components#collapse-components" },
+    { text: "折叠面板组件配置", href: "devguide/using-functional-components-in-pages/layout-components#collapse-components-configuration" },
+    { text: "折叠面板交互设计", href: "devguide/using-functional-components-in-pages/layout-components#collapse-components-interaction-design" },
+    { text: "子页面组件", href: "devguide/using-functional-components-in-pages/layout-components#subpage-components" }
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="审批组件"
-  href="devguide/using-functional-components-in-pages/approval-components"
-  description="与工作流集成的UI组件，用于提交审批申请、处理审批任务和管理审批历史，具有事件驱动通知功能。"
->
-  <LinkGrid columns={2} links={[
+title="审批组件"
+href="devguide/using-functional-components-in-pages/approval-components"
+description="与工作流集成的 UI 组件，用于提交审批申请、处理审批任务和管理审批历史，具有事件驱动通知功能。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "发起申请组件", href: "devguide/using-functional-components-in-pages/approval-components#initiate-application-component" },
     { text: "创建发起申请组件", href: "devguide/using-functional-components-in-pages/approval-components#create-initiate-application-component" },
     { text: "参数配置", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-1" },
@@ -859,28 +964,32 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "参数配置", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-2" },
     { text: "保留历史审批记录", href: "devguide/using-functional-components-in-pages/approval-components#keep-historical-approval-records" },
     { text: "处理后/刷新后事件", href: "devguide/using-functional-components-in-pages/approval-components#post-processing-refresh-event-1" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="支付组件"
-  href="devguide/using-functional-components-in-pages/payment-components"
-  description="通过统一接口实现多平台支付处理的功能性UI元素，原生支持支付宝和微信支付，提供完整的交易生命周期管理。"
->
-  <LinkGrid links={[
+title="支付组件"
+href="devguide/using-functional-components-in-pages/payment-components"
+description="通过统一接口实现多平台支付处理的功能性 UI 元素，原生支持支付宝和微信支付，提供完整的交易生命周期管理。"
+
+> <LinkGrid links={[
+
     { text: "支付组件的创建", href: "devguide/using-functional-components-in-pages/payment-components#payment-component-creation" },
     { text: "发起支付函数", href: "devguide/using-functional-components-in-pages/payment-components#initiate-payment-function" },
     { text: "事件逻辑", href: "devguide/using-functional-components-in-pages/payment-components#event-logic" },
     { text: "组件使用", href: "devguide/using-functional-components-in-pages/payment-components#component-usage" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="数据解析与导入"
-  href="devguide/using-functional-components-in-pages/data-parsing-and-import"
-  description="强大的数据导入和解析工具，支持Excel文件批量导入、数据清洗、条件筛选和主子表关联导入。"
->
-  <LinkGrid columns={2} links={[
+title="数据解析与导入"
+href="devguide/using-functional-components-in-pages/data-parsing-and-import"
+description="强大的数据导入和解析工具，支持 Excel 文件批量导入、数据清洗、条件筛选和主子表关联导入。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "页面添加导入组件", href: "devguide/using-functional-components-in-pages/data-parsing-and-import#add-import-component-to-page" },
     { text: "导入流水号字段", href: "devguide/using-functional-components-in-pages/data-parsing-and-import#import-serial-number-fields" },
     { text: "设置必填字段", href: "devguide/using-functional-components-in-pages/data-parsing-and-import#set-required-fields" },
@@ -896,18 +1005,21 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "删除解析字段", href: "devguide/using-functional-components-in-pages/data-parsing-and-import#delete-parse-fields" },
     { text: "新建自定义按钮", href: "devguide/using-functional-components-in-pages/data-parsing-and-import#create-custom-buttons" },
     { text: "解析后事件", href: "devguide/using-functional-components-in-pages/data-parsing-and-import#post-parse-events" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="全代码组件"
-  href="devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications"
-  description="完全自定义的代码组件，支持高度个性化的功能实现。"
->
-  <LinkGrid columns={2} links={[
+title="全代码组件"
+href="devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications"
+description="完全自定义的代码组件，支持高度个性化的功能实现。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "创建全代码组件", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications" },
     { text: "界面渲染器 Page 与逻辑处理类", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
@@ -919,17 +1031,19 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
   </details>
 </div>
 
-## AI大模型 {#ai-large-language-models}
-接入GPT-4、Claude、通义千问等主流大模型。支持多厂商容灾和私有化部署，为应用提供智能对话、文本生成、代码辅助等AI能力。
+## AI 大模型 {#ai-large-language-models}
+
+接入 GPT-4、Claude、通义千问等主流大模型。支持多厂商容灾和私有化部署，为应用提供智能对话、文本生成、代码辅助等 AI 能力。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="创建AI大模型元素"
-  href="devguide/ai-llm/create-ai-llm"
-  description="学习如何集成主流大语言模型，配置API密钥，实现重试机制，并在应用中调用大模型函数。"
->
-  <LinkGrid links={[
+title="创建 AI 大模型元素"
+href="devguide/ai-llm/create-ai-llm"
+description="学习如何集成主流大语言模型，配置 API 密钥，实现重试机制，并在应用中调用大模型函数。"
+
+> <LinkGrid links={[
+
     { text: "主流大模型厂商支持列表", href: "devguide/ai-llm/create-ai-llm#mainstream-llm-vendor-support-list" },
     { text: "大模型厂商元素的创建", href: "devguide/ai-llm/create-ai-llm#creating-llm-vendor-elements" },
     { text: "重试及备用API Key机制", href: "devguide/ai-llm/create-ai-llm#retry-backup-api-key-mechanism" },
@@ -937,15 +1051,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "在页面中调用大模型", href: "devguide/ai-llm/llm-input-output#call-llm-in-pages" },
     { text: "在后端函数中调用大模型", href: "devguide/ai-llm/llm-input-output#call-llm-in-backend-functions" },
     { text: "大模型编程接口", href: "devguide/ai-llm/llm-input-output#llm-programming-interface" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="大模型输入与输出"
-  href="devguide/ai-llm/llm-input-output"
-  description="了解大语言模型的输入输出配置，实现最优的集成与性能表现。"
->
-  <LinkGrid links={[
+title="大模型输入与输出"
+href="devguide/ai-llm/llm-input-output"
+description="了解大语言模型的输入输出配置，实现最优的集成与性能表现。"
+
+> <LinkGrid links={[
+
     { text: "在页面中调用大模型", href: "devguide/ai-llm/llm-input-output#call-llm-in-pages" },
     { text: "函数输入一：设置大语言模型", href: "devguide/ai-llm/llm-input-output#setting-language-model" },
     { text: "函数输入二：使用提示词", href: "devguide/ai-llm/llm-input-output#using-prompts" },
@@ -955,14 +1071,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "runLlm", href: "devguide/ai-llm/llm-input-output#runllm" },
     { text: "embedDocuments", href: "devguide/ai-llm/llm-input-output#embeddocuments" },
     { text: "rerankDocuments", href: "devguide/ai-llm/llm-input-output#rerankdocuments" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="使用大模型函数实现多模态AIGC"
-  href="devguide/ai-llm/implement-multimodal-aigc"
-  description="探索如何利用大模型函数创建包含文本、图像等多种媒体类型的多模态AI生成内容。"
+title="使用大模型函数实现多模态 AIGC"
+href="devguide/ai-llm/implement-multimodal-aigc"
+description="探索如何利用大模型函数创建包含文本、图像等多种媒体类型的多模态 AI 生成内容。"
+
 >
+
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     📝 Coming soon...
   </div>
@@ -970,17 +1089,19 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-## AI知识库 {#ai-knowledge-base}
-将企业文档、手册、FAQ转化为智能知识库。支持文档自动处理、智能分段、语义检索，让AI基于企业知识精准回答问题。
+## AI 知识库 {#ai-knowledge-base}
+
+将企业文档、手册、FAQ 转化为智能知识库。支持文档自动处理、智能分段、语义检索，让 AI 基于企业知识精准回答问题。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="创建知识库元素"
-  href="devguide/knowledge-base/create-knowledge-elements"
-  description="学习如何创建AI知识库元素，并了解其工作原理。"
->
-  <LinkGrid columns={2} links={[
+title="创建知识库元素"
+href="devguide/knowledge-base/create-knowledge-elements"
+description="学习如何创建 AI 知识库元素，并了解其工作原理。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "创建AI知识库元素", href: "devguide/knowledge-base/create-knowledge-elements#create-ai-knowledge-base-element" },
     { text: "原理说明", href: "devguide/knowledge-base/create-knowledge-elements#principle-description" },
     { text: "核心构成要素", href: "devguide/knowledge-base/create-knowledge-elements#core-components" },
@@ -988,56 +1109,64 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "技术原理", href: "devguide/knowledge-base/create-knowledge-elements#technical-principles" },
     { text: "数据处理流程", href: "devguide/knowledge-base/create-knowledge-elements#data-processing-flow" },
     { text: "检索机制", href: "devguide/knowledge-base/create-knowledge-elements#retrieval-mechanism" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="知识库文档管理"
-  href="devguide/knowledge-base/knowledge-base-document-management"
-  description="管理知识库文档，配置知识库参数，进行查询测试与向量化调优。"
->
-  <LinkGrid columns={2} links={[
+title="知识库文档管理"
+href="devguide/knowledge-base/knowledge-base-document-management"
+description="管理知识库文档，配置知识库参数，进行查询测试与向量化调优。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "知识库设置", href: "devguide/knowledge-base/knowledge-base-document-management#knowledge-base-settings" },
     { text: "查询测试", href: "devguide/knowledge-base/knowledge-base-document-management#query-testing" },
     { text: "向量化配置说明", href: "devguide/knowledge-base/knowledge-base-document-management#vectorization-configuration" },
     { text: "知识库配置参数说明", href: "devguide/knowledge-base/knowledge-base-document-management#knowledge-base-configuration-parameters" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="使用知识库元素实现关键词检索和语义检索"
-  href="devguide/knowledge-base/keyword-and-semantic-search"
-  description="理解配置项如何参与查询流程，并在后端可视化编程中调用知识库。"
->
-  <LinkGrid columns={2} links={[
+title="使用知识库元素实现关键词检索和语义检索"
+href="devguide/knowledge-base/keyword-and-semantic-search"
+description="理解配置项如何参与查询流程，并在后端可视化编程中调用知识库。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "在后端可视化编程中调用 AI 知识库", href: "devguide/knowledge-base/keyword-and-semantic-search#call-ai-knowledge-base-in-backend-visual-programming" },
     { text: "语义检索", href: "devguide/knowledge-base/keyword-and-semantic-search#semantic-search" },
     { text: "新增文档", href: "devguide/knowledge-base/keyword-and-semantic-search#adding-document" },
     { text: "删除文档", href: "devguide/knowledge-base/keyword-and-semantic-search#deleting-document" },
     { text: "关键词检索", href: "devguide/knowledge-base/keyword-and-semantic-search#searching-by-keywords" },
     { text: "AI 知识库设置如何参与查询流程", href: "devguide/knowledge-base/keyword-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="把知识库集成到agent"
-  href="devguide/knowledge-base/integrate-knowledge-base-into-agent"
-  description="在Agent中集成知识库实现RAG。"
->
-  <LinkGrid links={[
+title="把知识库集成到 agent"
+href="devguide/knowledge-base/integrate-knowledge-base-into-agent"
+description="在 Agent 中集成知识库实现 RAG。"
+
+> <LinkGrid links={[
+
     { text: "知识库与Agent的关系", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#relationship-between-knowledge-base-and-agent" },
     { text: "技术集成原理", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#technical-integration-principles" },
     { text: "集成模式", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#integration-modes" },
     { text: "在Agent中使用知识库", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#using-knowledge-base-in-agent" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="向量数据库的独立部署"
-  href="devguide/knowledge-base/vector-database-standalone-deployment"
-  description="企业知识的智能存储引擎。将文本转化为向量数据，实现语义级精准搜索。"
->
-  <LinkGrid columns={2} links={[
+title="向量数据库的独立部署"
+href="devguide/knowledge-base/vector-database-standalone-deployment"
+description="企业知识的智能存储引擎。将文本转化为向量数据，实现语义级精准搜索。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "独立部署方案：Chroma 向量数据库", href: "devguide/knowledge-base/vector-database-standalone-deployment#chroma-standalone-deployment" },
     { text: "独立部署的优势", href: "devguide/knowledge-base/vector-database-standalone-deployment#advantages-of-standalone-deployment" },
     { text: "Chroma 独立部署安装", href: "devguide/knowledge-base/vector-database-standalone-deployment#chroma-installation" },
@@ -1048,14 +1177,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "create_collection", href: "devguide/knowledge-base/vector-database-standalone-deployment#create_collection" },
     { text: "add_vectors", href: "devguide/knowledge-base/vector-database-standalone-deployment#add_vectors" },
     { text: "query_vectors", href: "devguide/knowledge-base/vector-database-standalone-deployment#query_vectors" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="AI知识库的API开放"
-  href="devguide/knowledge-base/ai-knowledge-base-api-exposure"
-  description="通过API接口开放AI知识库能力，实现与外部系统集成。"
+title="AI 知识库的 API 开放"
+href="devguide/knowledge-base/ai-knowledge-base-api-exposure"
+description="通过 API 接口开放 AI 知识库能力，实现与外部系统集成。"
+
 >
+
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     📝 Coming soon...
   </div>
@@ -1064,16 +1196,18 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </div>
 
 ## AIAgent {#ai-agent}
-具备推理和行动能力的智能代理。通过提示词和工具配置，让AI自主分析问题、制定方案、执行任务，处理复杂业务场景。
+
+具备推理和行动能力的智能代理。通过提示词和工具配置，让 AI 自主分析问题、制定方案、执行任务，处理复杂业务场景。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="创建AI Agent"
-  href="devguide/ai-agent/create-ai-agent"
-  description="学习如何创建ReActAgent，配置系统提示词、大模型参数、输入输出变量，以及运行状态存储等基础配置。"
->
-  <LinkGrid columns={2} links={[
+title="创建 AI Agent"
+href="devguide/ai-agent/create-ai-agent"
+description="学习如何创建 ReActAgent，配置系统提示词、大模型参数、输入输出变量，以及运行状态存储等基础配置。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "创建ReActAgent", href: "devguide/ai-agent/create-ai-agent#creating-react-agent" },
     { text: "编写系统提示词", href: "devguide/ai-agent/create-ai-agent#writing-system-prompts" },
     { text: "选择模型并配置参数", href: "devguide/ai-agent/create-ai-agent#selecting-models-configuring-parameters" },
@@ -1083,15 +1217,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "数据库存储", href: "devguide/ai-agent/create-ai-agent#database-storage" },
     { text: "源码模式修改Agent", href: "devguide/ai-agent/create-ai-agent#modifying-agents-source-code-mode" },
     { text: "自定义回调处理器", href: "devguide/ai-agent/create-ai-agent#custom-callback-processors" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Agent中的工具"
-  href="devguide/ai-agent/agent-tools"
-  description="深入了解Agent中各种工具的使用方法和最佳实践，包括模型函数、服务函数、MCP服务、外部API和页面函数。"
->
-  <LinkGrid columns={2} links={[
+title="Agent 中的工具"
+href="devguide/ai-agent/agent-tools"
+description="深入了解 Agent 中各种工具的使用方法和最佳实践，包括模型函数、服务函数、MCP 服务、外部 API 和页面函数。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "Agent调用模型函数", href: "devguide/ai-agent/agent-tools#calling-model-functions" },
     { text: "Agent调用服务函数", href: "devguide/ai-agent/agent-tools#calling-service-functions" },
     { text: "Agent调用MCP服务", href: "devguide/ai-agent/agent-tools#calling-mcp-servers" },
@@ -1103,15 +1239,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "工具函数调用前/后事件触发", href: "devguide/ai-agent/agent-tools#tool-function-call-pre-post-event-triggering" },
     { text: "工具函数执行前的人工确认", href: "devguide/ai-agent/agent-tools#manual-confirmation-before-tool-execution" },
     { text: "限制工具函数调用的用户角色", href: "devguide/ai-agent/agent-tools#restricting-user-roles-for-tool-calls" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Agent的输入与输出"
-  href="devguide/ai-agent/agent-input-output"
-  description="详细了解Agent的输入输出配置和数据处理方式，包括变量配置、流式输出和调用方法。"
->
-  <LinkGrid columns={2} links={[
+title="Agent 的输入与输出"
+href="devguide/ai-agent/agent-input-output"
+description="详细了解 Agent 的输入输出配置和数据处理方式，包括变量配置、流式输出和调用方法。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "配置输入变量", href: "devguide/ai-agent/agent-input-output#configuring-input-variables" },
     { text: "在提示词中使用变量", href: "devguide/ai-agent/agent-input-output#using-variables-in-prompts" },
     { text: "配置输出结果", href: "devguide/ai-agent/agent-input-output#configuring-output-results" },
@@ -1122,34 +1260,41 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "在前端函数中调用Agent", href: "devguide/ai-agent/agent-input-output#calling-agent-in-frontend-functions" },
     { text: "在后端服务函数中调用Agent", href: "devguide/ai-agent/agent-input-output#calling-agent-in-backend-service-functions" },
     { text: "在页面助理中测试Agent", href: "devguide/ai-agent/agent-input-output#testing-agent-in-page-assistant" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="使用知识库实现检索增强生成（RAG）"
-  href="devguide/ai-agent/agent-knowledge-base"
-  description="学习如何为Agent集成知识库，实现检索增强生成，提升回答的准确性和时效性。"
->
-  <LinkGrid links={[
+title="使用知识库实现检索增强生成（RAG）"
+href="devguide/ai-agent/agent-knowledge-base"
+description="学习如何为 Agent 集成知识库，实现检索增强生成，提升回答的准确性和时效性。"
+
+> <LinkGrid links={[
+
     { text: "在Agent中添加知识库", href: "devguide/ai-agent/agent-knowledge-base#integrate-knowledge-base-rag" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="使用Agent实现单任务智能体"
-  href="devguide/ai-agent/single-task-intelligent-agent"
-  description="学习如何使用Agent实现专门的单任务智能体，优化特定业务场景的处理效果。"
+title="使用 Agent 实现单任务智能体"
+href="devguide/ai-agent/single-task-intelligent-agent"
+description="学习如何使用 Agent 实现专门的单任务智能体，优化特定业务场景的处理效果。"
+
 >
+
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     📝 Coming soon...
   </div>
 </IndexCard>
 
 <IndexCard
-  title="Agent的API开放"
-  href="devguide/ai-agent/agent-api-exposure"
-  description="将Agent能力通过API形式开放给外部系统调用。"
+title="Agent 的 API 开放"
+href="devguide/ai-agent/agent-api-exposure"
+description="将 Agent 能力通过 API 形式开放给外部系统调用。"
+
 >
+
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     📝 Coming soon...
   </div>
@@ -1157,29 +1302,33 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 </div>
 
-## AI助理 {#ai-assistant}
-可视化的智能工作流引擎。通过拖拽节点编排业务流程，结合AI决策和人机交互，实现客服、审批、数据处理等场景的智能自动化。
+## AI 助理 {#ai-assistant}
+
+可视化的智能工作流引擎。通过拖拽节点编排业务流程，结合 AI 决策和人机交互，实现客服、审批、数据处理等场景的智能自动化。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="创建AI助理元素"
-  href="devguide/ai-assistant/create-ai-assistant"
-  description="构建生产级AI应用，支持多智能体协作、UI交互和可视化编排，无需编写代码。"
->
-  <LinkGrid links={[
+title="创建 AI 助理元素"
+href="devguide/ai-assistant/create-ai-assistant"
+description="构建生产级 AI 应用，支持多智能体协作、UI 交互和可视化编排，无需编写代码。"
+
+> <LinkGrid links={[
+
     { text: "什么是AI助理", href: "devguide/ai-assistant/create-ai-assistant#what-is-ai-assistant" },
     { text: "功能特性", href: "devguide/ai-assistant/create-ai-assistant#features" },
     { text: "创建AI助理", href: "devguide/ai-assistant/create-ai-assistant#creating-ai-assistant" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="流程编排与节点配置"
-  href="devguide/ai-assistant/process-orchestration-node-configuration"
-  description="掌握可视化工作流设计，包含8种以上节点类型：AIAgent、路由、条件逻辑、人机协作节点等。"
->
-  <LinkGrid links={[
+title="流程编排与节点配置"
+href="devguide/ai-assistant/process-orchestration-node-configuration"
+description="掌握可视化工作流设计，包含 8 种以上节点类型：AIAgent、路由、条件逻辑、人机协作节点等。"
+
+> <LinkGrid links={[
+
     { text: "可视化编排", href: "devguide/ai-assistant/process-orchestration-node-configuration#visual-orchestration" },
     { text: "开始节点", href: "devguide/ai-assistant/process-orchestration-node-configuration#start-node" },
     { text: "路由节点", href: "devguide/ai-assistant/process-orchestration-node-configuration#routing-decision" },
@@ -1189,56 +1338,64 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "函数节点", href: "devguide/ai-assistant/process-orchestration-node-configuration#function" },
     { text: "条件分支节点", href: "devguide/ai-assistant/process-orchestration-node-configuration#if-else" },
     { text: "循环节点", href: "devguide/ai-assistant/process-orchestration-node-configuration#iteration" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="AI助理的输入与输出"
-  href="devguide/ai-assistant/ai-assistant-input-output"
-  description="配置自定义输入参数、控制运行时日志详细程度，并使用自定义控件向对话发送结构化数据。"
->
-  <LinkGrid links={[
+title="AI 助理的输入与输出"
+href="devguide/ai-assistant/ai-assistant-input-output"
+description="配置自定义输入参数、控制运行时日志详细程度，并使用自定义控件向对话发送结构化数据。"
+
+> <LinkGrid links={[
+
     { text: "配置输入参数", href: "devguide/ai-assistant/ai-assistant-input-output#input-args" },
     { text: "运行时流程日志输出", href: "devguide/ai-assistant/ai-assistant-input-output#runtime-process-log-output" },
     { text: "状态数据输出到对话", href: "devguide/ai-assistant/ai-assistant-input-output#state-data-output" },
     { text: "节点输出配置", href: "devguide/ai-assistant/ai-assistant-input-output#message-output" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="AI助理的运行时状态"
-  href="devguide/ai-assistant/ai-assistant-state"
-  description="利用运行时状态作为AI的「记忆库」，实现上下文保留、多轮对话和错误恢复。"
->
-  <LinkGrid links={[
+title="AI 助理的运行时状态"
+href="devguide/ai-assistant/ai-assistant-state"
+description="利用运行时状态作为 AI 的「记忆库」，实现上下文保留、多轮对话和错误恢复。"
+
+> <LinkGrid links={[
+
     { text: "状态数据存储仓库", href: "devguide/ai-assistant/ai-assistant-state#state-data-storage-repository" },
     { text: "运行时状态数据内容", href: "devguide/ai-assistant/ai-assistant-state#state-data-content" },
     { text: "数据使用方法", href: "devguide/ai-assistant/ai-assistant-state#data-usage-methods" },
     { text: "数据流与节点间传递", href: "devguide/ai-assistant/ai-assistant-state#data-flow" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="AI助理的事件"
-  href="devguide/ai-assistant/ai-assistant-event"
-  description="在前端页面和后端服务中订阅节点执行、工具调用和人机交互事件。"
->
-  <LinkGrid links={[
+title="AI 助理的事件"
+href="devguide/ai-assistant/ai-assistant-event"
+description="在前端页面和后端服务中订阅节点执行、工具调用和人机交互事件。"
+
+> <LinkGrid links={[
+
     { text: "事件类型概述", href: "devguide/ai-assistant/ai-assistant-event#event-type-overview" },
     { text: "前端页面事件", href: "devguide/ai-assistant/ai-assistant-event#frontend-page-events" },
     { text: "节点执行事件", href: "devguide/ai-assistant/ai-assistant-event#node-running-events" },
     { text: "工具调用事件", href: "devguide/ai-assistant/ai-assistant-event#agent-call-tool-events" },
     { text: "人机交互事件", href: "devguide/ai-assistant/ai-assistant-event#action-in-conversation-events" },
     { text: "后端业务事件", href: "devguide/ai-assistant/ai-assistant-event#backend-business-events" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="将AI助手嵌入到外部网页中"
-  href="devguide/ai-assistant/embed-assistant-to-web-page"
-  description="将AI助手集成到任何网页中，实现深度双向交互能力。"
->
-  <LinkGrid links={[
+title="将 AI 助手嵌入到外部网页中"
+href="devguide/ai-assistant/embed-assistant-to-web-page"
+description="将 AI 助手集成到任何网页中，实现深度双向交互能力。"
+
+> <LinkGrid links={[
+
     { text: "什么是嵌入式AI助理", href: "devguide/ai-assistant/embed-assistant-to-web-page#what-is-embedded-ai-assistant" },
     { text: "核心优势", href: "devguide/ai-assistant/embed-assistant-to-web-page#core-advantages" },
     { text: "集成流程", href: "devguide/ai-assistant/embed-assistant-to-web-page#integration-process" },
@@ -1250,73 +1407,84 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "运行时配置", href: "devguide/ai-assistant/embed-assistant-to-web-page#runtime-config" },
     { text: "网页向AI发送消息", href: "devguide/ai-assistant/embed-assistant-to-web-page#send-message-to-ai" },
     { text: "JS SDK API参考", href: "devguide/ai-assistant/embed-assistant-to-web-page#js-sdk" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="AI助理的API开放"
-  href="devguide/ai-assistant/ai-assistant-api-exposure"
-  description="通过API接口开放AI助理能力，实现应用内集成和外部系统对接。"
->
-  <LinkGrid links={[
+title="AI 助理的 API 开放"
+href="devguide/ai-assistant/ai-assistant-api-exposure"
+description="通过 API 接口开放 AI 助理能力，实现应用内集成和外部系统对接。"
+
+> <LinkGrid links={[
+
     { text: "发送AI消息函数", href: "devguide/ai-assistant/ai-assistant-api-exposure#send-ai-message" },
     { text: "在应用内调用AI助理", href: "devguide/ai-assistant/ai-assistant-api-exposure#calling-ai-assistant-within-application" },
     { text: "外部调用AI助理", href: "devguide/ai-assistant/ai-assistant-api-exposure#external-ai-assistant-calling" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="欢迎语与对话历史"
-  href="devguide/ai-assistant/welcome-message-and-opening"
-  description="配置欢迎语、开场白，管理对话历史，提升用户参与度和上下文连续性。"
->
-  <LinkGrid links={[
+title="欢迎语与对话历史"
+href="devguide/ai-assistant/welcome-message-and-opening"
+description="配置欢迎语、开场白，管理对话历史，提升用户参与度和上下文连续性。"
+
+> <LinkGrid links={[
+
     { text: "欢迎语配置", href: "devguide/ai-assistant/welcome-message-and-opening#welcome-message-configuration" },
     { text: "开场白配置", href: "devguide/ai-assistant/welcome-message-and-opening#preamble-configuration" },
     { text: "对话历史管理", href: "devguide/ai-assistant/ai-conversation-history#start-and-managing-conversation" },
     { text: "使用历史对话", href: "devguide/ai-assistant/ai-conversation-history#using-historical-conversations" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="开发对话式多任务AI助理"
-  href="devguide/ai-assistant/develop-conversational-multi-task-ai-assistant"
-  description="完整教程：构建具有智能路由、多个智能体和自动文档生成功能的AI助理。"
->
-  <LinkGrid links={[
+title="开发对话式多任务 AI 助理"
+href="devguide/ai-assistant/develop-conversational-multi-task-ai-assistant"
+description="完整教程：构建具有智能路由、多个智能体和自动文档生成功能的 AI 助理。"
+
+> <LinkGrid links={[
+
     { text: "文案Agent开发", href: "devguide/ai-assistant/develop-conversational-multi-task-ai-assistant#writing-agent" },
     { text: "客服Agent与知识库", href: "devguide/ai-assistant/develop-conversational-multi-task-ai-assistant#customer-service-agent" },
     { text: "方案Agent生成报价", href: "devguide/ai-assistant/develop-conversational-multi-task-ai-assistant#solution-agent" },
     { text: "流程编排与集成", href: "devguide/ai-assistant/develop-conversational-multi-task-ai-assistant#developing-ai-assistant" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="开发人机协作式企业级AI助理"
-  href="devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant"
-  description="构建复杂的AI评分系统，展示深度UI集成、事件驱动协作和人工监督。"
->
-  <LinkGrid links={[
+title="开发人机协作式企业级 AI 助理"
+href="devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant"
+description="构建复杂的 AI 评分系统，展示深度 UI 集成、事件驱动协作和人工监督。"
+
+> <LinkGrid links={[
+
     { text: "产品核心特性", href: "devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant#product-core-features-overview" },
     { text: "与前端深度融合", href: "devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant#deep-integration-of-ai-with-frontend" },
     { text: "人机协作节点设计", href: "devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant#human-machine-collaboration-node-design" },
     { text: "AI评分案例研究", href: "devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant#demonstrating-collaboration-features-through-ai-grading-case-study" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
 ## 数据建模 {#data-modeling}
-为你的应用设计强大的数据基础。无需复杂的SQL知识，通过可视化方式创建数据表，设计字段类型，建立关联关系。让数据管理变得轻松高效。
+
+为你的应用设计强大的数据基础。无需复杂的 SQL 知识，通过可视化方式创建数据表，设计字段类型，建立关联关系。让数据管理变得轻松高效。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="数据表模型"
-  href="devguide/data-modeling/data-table-model"
-  description="JitAI应用的数据基础层，学习如何创建和配置数据表，设计字段类型和约束。"
->
-  <LinkGrid links={[
+title="数据表模型"
+href="devguide/data-modeling/data-table-model"
+description="JitAI 应用的数据基础层，学习如何创建和配置数据表，设计字段类型和约束。"
+
+> <LinkGrid links={[
+
     { text: "数据表创建入口", href: "devguide/data-modeling/data-table-model#data-table-create-entry" },
     { text: "设计表字段与数据类型", href: "devguide/data-modeling/data-table-model#design-table-fields-and-data-types" },
     { text: "字段操作按钮", href: "devguide/data-modeling/data-table-model#field-operation-buttons" },
@@ -1325,45 +1493,53 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "多列联合唯一约束", href: "devguide/data-modeling/data-table-model#multi-column-composite-unique" },
     { text: "组合索引", href: "devguide/data-modeling/data-table-model#composite-index" },
     { text: "源码模式", href: "devguide/data-modeling/data-table-model#source-code-mode" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="从已有数据库模式创建数据表"
-  href="devguide/data-modeling/create-data-table-from-existing-tables"
-  description="从现有数据库表快速创建数据表元素，支持快速模型生成。"
->
-  <LinkGrid links={[
+title="从已有数据库模式创建数据表"
+href="devguide/data-modeling/create-data-table-from-existing-tables"
+description="从现有数据库表快速创建数据表元素，支持快速模型生成。"
+
+> <LinkGrid links={[
+
     { text: "从已有数据表中创建数据表", href: "devguide/data-modeling/create-data-table-from-existing-tables" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="内置数据管理工具"
-  href="devguide/data-modeling/built-in-data-management-tools"
-  description="利用内置数据管理工具进行高效的数据操作和管理。"
->
-  <LinkGrid links={[
+title="内置数据管理工具"
+href="devguide/data-modeling/built-in-data-management-tools"
+description="利用内置数据管理工具进行高效的数据操作和管理。"
+
+> <LinkGrid links={[
+
     { text: "内置数据管理工具", href: "devguide/data-modeling/built-in-data-management-tools" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="创建数据模型函数"
-  href="devguide/data-modeling/create-data-model-functions"
-  description="设计和实现自定义数据模型函数，扩展数据处理能力。"
->
-  <LinkGrid links={[
+title="创建数据模型函数"
+href="devguide/data-modeling/create-data-model-functions"
+description="设计和实现自定义数据模型函数，扩展数据处理能力。"
+
+> <LinkGrid links={[
+
     { text: "创建数据模型函数", href: "devguide/data-modeling/create-data-model-functions" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="聚合表模型"
-  href="devguide/data-modeling/aggregate-table-model"
-  description="多表数据整合和统计分析，支持复杂的数据聚合和计算功能。"
->
-  <LinkGrid columns={2} links={[
+title="聚合表模型"
+href="devguide/data-modeling/aggregate-table-model"
+description="多表数据整合和统计分析，支持复杂的数据聚合和计算功能。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "新建聚合表模型", href: "devguide/data-modeling/aggregate-table-model" },
     { text: "多表数据合并", href: "devguide/data-modeling/aggregate-table-model#multi-table-data-merge" },
     { text: "多表横向连接", href: "devguide/data-modeling/aggregate-table-model#multi-table-horizontal-connection" },
@@ -1371,15 +1547,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "扩展自定义计算字段", href: "devguide/data-modeling/aggregate-table-model#extend-custom-calculation-fields" },
     { text: "先聚合后筛选", href: "devguide/data-modeling/aggregate-table-model#aggregate-then-filter" },
     { text: "先筛选后聚合（推荐）", href: "devguide/data-modeling/aggregate-table-model#filter-first-then-aggregate" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="扩展表模型"
-  href="devguide/data-modeling/extended-table-model"
-  description="基于现有表的数据扩展，通过关联其他数据表实现业务字段扩展和多表数据整合。"
->
-  <LinkGrid columns={2} links={[
+title="扩展表模型"
+href="devguide/data-modeling/extended-table-model"
+description="基于现有表的数据扩展，通过关联其他数据表实现业务字段扩展和多表数据整合。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "扩展表创建", href: "devguide/data-modeling/extended-table-model" },
     { text: "连接设计", href: "devguide/data-modeling/extended-table-model#connection-design" },
     { text: "设置基准表筛选条件", href: "devguide/data-modeling/extended-table-model#setting-baseline-table-filter-conditions" },
@@ -1391,102 +1569,118 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "函数设计", href: "devguide/data-modeling/extended-table-model#function-design" },
     { text: "新建函数", href: "devguide/data-modeling/extended-table-model#creating-functions" },
     { text: "源代码查看编辑", href: "devguide/data-modeling/extended-table-model#source-code-viewing-and-editing" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="在页面和函数中使用数据模型"
-  href="devguide/data-modeling/calling-data-models-in-pages-and-functions"
-  description="学习如何在前端页面和后端函数逻辑中有效使用数据模型进行数据操作。"
->
-  <LinkGrid columns={2} links={[
+title="在页面和函数中使用数据模型"
+href="devguide/data-modeling/calling-data-models-in-pages-and-functions"
+description="学习如何在前端页面和后端函数逻辑中有效使用数据模型进行数据操作。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "模型内置函数", href: "devguide/data-modeling/calling-data-models-in-pages-and-functions#built-in-model-functions" },
     { text: "在页面中调用数据模型", href: "devguide/data-modeling/calling-data-models-in-pages-and-functions#calling-data-models-in-pages" },
     { text: "在函数中调用数据模型", href: "devguide/data-modeling/calling-data-models-in-pages-and-functions#calling-data-models-in-functions" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="创建数据对象模型"
-  href="devguide/data-modeling/data-object-model"
-  description="专为全代码开发环境设计的专业数据结构，类似于DTO，用于业务逻辑中的结构化数据表达和传递。"
->
-  <LinkGrid links={[
+title="创建数据对象模型"
+href="devguide/data-modeling/data-object-model"
+description="专为全代码开发环境设计的专业数据结构，类似于 DTO，用于业务逻辑中的结构化数据表达和传递。"
+
+> <LinkGrid links={[
+
     { text: "创建数据对象模型", href: "devguide/data-modeling/data-object-model#creating-data-object-model" },
     { text: "数据对象模型使用", href: "devguide/data-modeling/data-object-model#using-data-object-model" },
     { text: "自定义字段", href: "devguide/data-modeling/data-object-model#customizing-fields" },
     { text: "模型函数重写", href: "devguide/data-modeling/data-object-model#overriding-model-functions" },
     { text: "定义新函数", href: "devguide/data-modeling/data-object-model#defining-new-functions" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="在AI Agent中调用数据模型"
-  href="devguide/data-modeling/calling-data-models-in-ai-agent"
-  description="将数据模型函数添加为Agent工具，使AI能够智能地执行数据的创建、读取、更新、删除等操作。"
->
-  <LinkGrid links={[
+title="在 AI Agent 中调用数据模型"
+href="devguide/data-modeling/calling-data-models-in-ai-agent"
+description="将数据模型函数添加为 Agent 工具，使 AI 能够智能地执行数据的创建、读取、更新、删除等操作。"
+
+> <LinkGrid links={[
+
     { text: "数据模型作为Agent工具", href: "devguide/data-modeling/calling-data-models-in-ai-agent#data-models-as-agent-tools" }
-  ]} />
+
+]} />
 </IndexCard>
 
-
 <IndexCard
-  title="管理数据库连接"
-  href="devguide/data-modeling/manage-database-connections"
-  description="配置和管理多个数据库连接，支持多数据源应用开发。"
->
-  <LinkGrid links={[
+title="管理数据库连接"
+href="devguide/data-modeling/manage-database-connections"
+description="配置和管理多个数据库连接，支持多数据源应用开发。"
+
+> <LinkGrid links={[
+
     { text: "创建数据库连接", href: "devguide/data-modeling/manage-database-connections#create-database-connection" },
     { text: "多数据库连接管理", href: "devguide/data-modeling/manage-database-connections#multi-database-connection-management" },
     { text: "数据库连接安全配置", href: "devguide/data-modeling/manage-database-connections#database-connection-security-configuration" },
     { text: "连接测试与故障排查", href: "devguide/data-modeling/manage-database-connections#connection-test-and-troubleshooting" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="支持的数据库厂商"
-  href="devguide/data-modeling/supported-database-vendors"
-  description="了解JitAI支持的各种数据库类型和连接配置。"
->
-  <LinkGrid links={[
+title="支持的数据库厂商"
+href="devguide/data-modeling/supported-database-vendors"
+description="了解 JitAI 支持的各种数据库类型和连接配置。"
+
+> <LinkGrid links={[
+
     { text: "场景选择建议", href: "devguide/data-modeling/supported-database-vendors#scenario-selection-recommendations" },
     { text: "与云厂商的兼容性说明", href: "devguide/data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
     { text: "数据库元素使用", href: "devguide/data-modeling/supported-database-vendors#database-element-usage" }
-  ]} />
+
+]} />
 </IndexCard>
+
 </div>
 
 ## 事务管理 {#transaction-management}
+
 确保复杂业务操作中的数据一致性和可靠性。掌握数据库事务控制机制，实现原子操作，有效处理并发访问场景。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="事务管理"
-  href="devguide/data-modeling/transaction-management"
-  description="数据库事务控制和一致性管理，确保数据操作的可靠性。"
->
-  <LinkGrid links={[
+title="事务管理"
+href="devguide/data-modeling/transaction-management"
+description="数据库事务控制和一致性管理，确保数据操作的可靠性。"
+
+> <LinkGrid links={[
+
     { text: "默认事务管理机制", href: "devguide/data-modeling/transaction-management#default-transaction-management-mechanism" },
     { text: "手动事务提交/回滚", href: "devguide/data-modeling/transaction-management#manual-transaction-commit-rollback" },
     { text: "事务装饰器", href: "devguide/data-modeling/transaction-management#transaction-decorator" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
 ## 用户与权限 {#user-permission-management}
+
 构建安全可靠的用户体系。支持多种登录方式，灵活设计组织架构，精细化权限分配。让不同用户各司其职，确保数据安全和操作规范。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="组织架构"
-  href="devguide/user-and-permission/organization"
-  description="企业组织管理，包括部门、岗位和人员层级关系配置。"
->
-  <LinkGrid links={[
+title="组织架构"
+href="devguide/user-and-permission/organization"
+description="企业组织管理，包括部门、岗位和人员层级关系配置。"
+
+> <LinkGrid links={[
+
     { text: "默认组织架构", href: "devguide/user-and-permission/organization#default-organization" },
     { text: "组织架构创建", href: "devguide/user-and-permission/organization#organizational-structure-creation" },
     { text: "常规组织", href: "devguide/user-and-permission/organization#generic-organization" },
@@ -1513,15 +1707,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "企业微信自建组织通讯录", href: "devguide/user-and-permission/organization#wechat-work-organization-contacts" },
     { text: "同步企业微信组织架构", href: "devguide/user-and-permission/organization#syncing-wechat-work-organization-structure" },
     { text: "导出成员", href: "devguide/user-and-permission/organization#exporting-members-wechat-work" },
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="登录认证"
-  href="devguide/user-and-permission/login-authentication"
-  description="用户身份验证和登录方式配置，支持多种认证模式，包括第三方OAuth和企业集成。"
->
-  <LinkGrid links={[
+title="登录认证"
+href="devguide/user-and-permission/login-authentication"
+description="用户身份验证和登录方式配置，支持多种认证模式，包括第三方 OAuth 和企业集成。"
+
+> <LinkGrid links={[
+
     { text: "创建登录认证", href: "devguide/user-and-permission/login-authentication#creating-login-method" },
     { text: "账号密码登录", href: "devguide/user-and-permission/login-authentication#account-password-login" },
     { text: "手机号登录", href: "devguide/user-and-permission/login-authentication#mobile-phone-login" },
@@ -1535,15 +1731,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "微信小程序登录", href: "devguide/user-and-permission/login-authentication#wechat-mini-program-login" },
     { text: "GitHub登录", href: "devguide/user-and-permission/login-authentication#github-login" },
     { text: "Google登录", href: "devguide/user-and-permission/login-authentication#google-login" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="角色与门户菜单权限"
-  href="devguide/user-and-permission/role-portal-menu-permissions"
-  description="应用角色定义和权限分配，实现细粒度的访问控制。"
->
-  <LinkGrid columns={2} links={[
+title="角色与门户菜单权限"
+href="devguide/user-and-permission/role-portal-menu-permissions"
+description="应用角色定义和权限分配，实现细粒度的访问控制。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "内置的应用角色", href: "devguide/user-and-permission/role-portal-menu-permissions#built-in-three-application-roles" },
     { text: "匿名用户", href: "devguide/user-and-permission/role-portal-menu-permissions#anonymous-user" },
     { text: "开发者", href: "devguide/user-and-permission/role-portal-menu-permissions#developer" },
@@ -1558,57 +1756,66 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "应用角色成员的管理", href: "devguide/user-and-permission/role-portal-menu-permissions#application-role-member-management" },
     { text: "成员的添加/删除", href: "devguide/user-and-permission/role-portal-menu-permissions#member-addition-and-removal" },
     { text: "成员在组织架构中的管理范围设置", href: "devguide/user-and-permission/role-portal-menu-permissions#member-management-scope-settings-in-org" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="角色与业务元素权限"
-  href="devguide/user-and-permission/roles-and-business-element-permissions"
-  description="业务元素的高级基于角色的权限控制，包括数据模型和功能组件的权限管理。"
->
-  <LinkGrid links={[
+title="角色与业务元素权限"
+href="devguide/user-and-permission/roles-and-business-element-permissions"
+description="业务元素的高级基于角色的权限控制，包括数据模型和功能组件的权限管理。"
+
+> <LinkGrid links={[
+
     { text: "门户级的数据操作类型和操作范围控制", href: "devguide/user-and-permission/roles-and-business-element-permissions#portal-level-data-operation-type-and-scope-control" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Agent工具权限控制"
-  href="devguide/user-and-permission/agent-tool-permission-control"
-  description="配置和管理AI Agent工具的权限控制，确保代理操作的安全性和可控性。"
->
-  <LinkGrid links={[
+title="Agent 工具权限控制"
+href="devguide/user-and-permission/agent-tool-permission-control"
+description="配置和管理 AI Agent 工具的权限控制，确保代理操作的安全性和可控性。"
+
+> <LinkGrid links={[
+
     { text: "配置Agent的工具执行权限", href: "devguide/user-and-permission/agent-tool-permission-control#configure-agent-tool-execution-permissions" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
 ## 业务逻辑开发 {#business-logic-development}
+
 赋予应用强大的业务处理能力。通过可视化编程处理复杂业务规则，响应用户操作，执行后台任务。让逻辑编写像搭积木一样直观易懂。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="创建服务元素"
-  href="devguide/business-logic-development/creating-service-elements"
-  description="后端业务逻辑实现，通过服务元素封装可复用的业务函数，提供API接口和数据处理服务。"
->
-  <LinkGrid columns={2} links={[
+title="创建服务元素"
+href="devguide/business-logic-development/creating-service-elements"
+description="后端业务逻辑实现，通过服务元素封装可复用的业务函数，提供 API 接口和数据处理服务。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "创建服务函数", href: "devguide/business-logic-development/creating-service-elements#create-service-functions" },
     { text: "源码模式编辑服务函数", href: "devguide/business-logic-development/creating-service-elements#edit-service-functions-source-code-mode" },
     { text: "添加新的依赖库", href: "devguide/business-logic-development/creating-service-elements#add-new-dependency-library" },
     { text: "使用跨App服务元素调用授权接口", href: "devguide/business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-apis" },
     { text: "创建跨App服务元素", href: "devguide/business-logic-development/creating-service-elements#create-cross-app-service-elements" },
     { text: "在函数逻辑中使用跨App服务元素", href: "devguide/business-logic-development/creating-service-elements#use-cross-app-service-elements-in-functions" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="在服务函数中调用其它元素"
-  href="devguide/business-logic-development/calling-other-elements-in-service-functions"
-  description="学习如何在服务函数中调用其他元素，包括模型、其他服务、外部API和系统组件，实现全面的业务逻辑实现。"
->
-  <LinkGrid columns={2} links={[
+title="在服务函数中调用其它元素"
+href="devguide/business-logic-development/calling-other-elements-in-service-functions"
+description="学习如何在服务函数中调用其他元素，包括模型、其他服务、外部 API 和系统组件，实现全面的业务逻辑实现。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "使用平台API调用其它元素", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#use-platform-api-to-call-other-elements" },
     { text: "几个典型示例", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#typical-examples" },
     { text: "调用数据模型函数", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-data-model-function" },
@@ -1616,26 +1823,30 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "调用外部API", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-external-api" },
     { text: "调用AI大模型", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-ai-llm" },
     { text: "调用AI Agent", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-ai-agent" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="服务元素使用场景"
-  href="devguide/business-logic-development/service-elements-usage-scenarios"
-  description="探索服务元素在不同业务场景和应用架构中的实际使用场景和最佳实践。"
->
-  <LinkGrid links={[
+title="服务元素使用场景"
+href="devguide/business-logic-development/service-elements-usage-scenarios"
+description="探索服务元素在不同业务场景和应用架构中的实际使用场景和最佳实践。"
+
+> <LinkGrid links={[
+
     { text: "服务函数在哪里使用", href: "devguide/business-logic-development/service-elements-usage-scenarios#where-service-functions-are-used" },
     { text: "让AI更准确地理解服务函数", href: "devguide/business-logic-development/service-elements-usage-scenarios#help-ai-understand-service-functions" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="后台任务"
-  href="devguide/business-logic-development/background-tasks"
-  description="定时任务和异步处理，支持复杂的后台业务流程。"
->
-  <LinkGrid columns={2} links={[
+title="后台任务"
+href="devguide/business-logic-development/background-tasks"
+description="定时任务和异步处理，支持复杂的后台业务流程。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "创建任务", href: "devguide/business-logic-development/background-tasks#creating-tasks" },
     { text: "定时任务", href: "devguide/business-logic-development/background-tasks#scheduled-tasks" },
     { text: "日期字段任务", href: "devguide/business-logic-development/background-tasks#date-field-tasks" },
@@ -1643,15 +1854,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "开发任务执行函数", href: "devguide/business-logic-development/background-tasks#developing-task-execution-functions" },
     { text: "查看执行记录", href: "devguide/business-logic-development/background-tasks#viewing-execution-records" },
     { text: "源码模式", href: "devguide/business-logic-development/background-tasks#source-code-mode" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="事件处理"
-  href="devguide/business-logic-development/event-handling"
-  description="系统事件监听和处理机制，实现响应式业务逻辑。"
->
-  <LinkGrid columns={2} links={[
+title="事件处理"
+href="devguide/business-logic-development/event-handling"
+description="系统事件监听和处理机制，实现响应式业务逻辑。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "创建事件", href: "devguide/business-logic-development/event-handling#creating-events" },
     { text: "模型事件", href: "devguide/business-logic-development/event-handling#model-events" },
     { text: "审批事件", href: "devguide/business-logic-development/event-handling#approval-events" },
@@ -1663,22 +1876,25 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "同步/异步执行事件", href: "devguide/business-logic-development/event-handling#executing-events-synchronously-or-asynchronously" },
     { text: "查看事件执行记录", href: "devguide/business-logic-development/event-handling#viewing-event-execution-records" },
     { text: "查看/编辑全代码", href: "devguide/business-logic-development/event-handling#viewing-and-editing-full-code" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
 ## 审批流程 {#approval-process}
+
 让企业审批流程变得高效有序。通过拖拽方式设计流程图，配置审批人和条件，自动化处理流转。告别繁琐的纸质审批，拥抱数字化办公。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="审批流程基础配置"
-  href="devguide/approval-workflow/approval-workflow-basic-configuration"
-  description="审批流程的创建和基础设置，包括流程节点配置和路径设计。"
->
-  <LinkGrid columns={2} links={[
+title="审批流程基础配置"
+href="devguide/approval-workflow/approval-workflow-basic-configuration"
+description="审批流程的创建和基础设置，包括流程节点配置和路径设计。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "创建流程", href: "devguide/approval-workflow/approval-workflow-basic-configuration#create-process" },
     { text: "拖拽流程节点", href: "devguide/approval-workflow/approval-workflow-basic-configuration#drag-process-node" },
     { text: "审批流程默认页面", href: "devguide/approval-workflow/approval-workflow-basic-configuration#approval-workflow-default-page" },
@@ -1691,15 +1907,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "分享", href: "devguide/approval-workflow/approval-workflow-basic-configuration#share" },
     { text: "打印审批单", href: "devguide/approval-workflow/approval-workflow-basic-configuration#print-approval-form" },
     { text: "复用其他审批流程", href: "devguide/approval-workflow/approval-workflow-basic-configuration#reuse-other-approval-workflowes" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="发起节点配置"
-  href="devguide/approval-workflow/start-node-configuration"
-  description="审批流程起始节点的配置，定义申请发起的条件和规则。"
->
-  <LinkGrid columns={2} links={[
+title="发起节点配置"
+href="devguide/approval-workflow/start-node-configuration"
+description="审批流程起始节点的配置，定义申请发起的条件和规则。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "流程撤销功能", href: "devguide/approval-workflow/start-node-configuration#process-cancellation-function" },
     { text: "审批催办", href: "devguide/approval-workflow/start-node-configuration#approval-reminder" },
     { text: "审批暂存", href: "devguide/approval-workflow/start-node-configuration#approval-draft" },
@@ -1708,15 +1926,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "摘要信息显示", href: "devguide/approval-workflow/start-node-configuration#summary-display" },
     { text: "字段的查看编辑权限", href: "devguide/approval-workflow/start-node-configuration#field-view-edit-permissions" },
     { text: "布局控件权限", href: "devguide/approval-workflow/start-node-configuration#layout-control-permissions" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="审批节点配置"
-  href="devguide/approval-workflow/approval-node-configuration"
-  description="审批环节的详细配置，包括审批人设置和审批规则。"
->
-  <LinkGrid columns={2} links={[
+title="审批节点配置"
+href="devguide/approval-workflow/approval-node-configuration"
+description="审批环节的详细配置，包括审批人设置和审批规则。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "审批人设置", href: "devguide/approval-workflow/approval-node-configuration#approver-settings" },
     { text: "审批流转规则", href: "devguide/approval-workflow/approval-node-configuration#approval-flow-rules" },
     { text: "审批流程处理规则", href: "devguide/approval-workflow/approval-node-configuration#approval-workflow-rules" },
@@ -1734,15 +1954,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "摘要信息显示", href: "devguide/approval-workflow/approval-node-configuration#summary-display" },
     { text: "字段权限", href: "devguide/approval-workflow/approval-node-configuration#fieldpermission" },
     { text: "布局控件权限", href: "devguide/approval-workflow/approval-node-configuration#layout-control-permissions" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="特殊节点配置"
-  href="devguide/approval-workflow/special-node-configuration"
-  description="条件节点、并行节点等特殊流程节点的配置方法。"
->
-  <LinkGrid columns={2} links={[
+title="特殊节点配置"
+href="devguide/approval-workflow/special-node-configuration"
+description="条件节点、并行节点等特殊流程节点的配置方法。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "抄送节点", href: "devguide/approval-workflow/special-node-configuration#cc-node" },
     { text: "抄送人", href: "devguide/approval-workflow/special-node-configuration#sms-notification" },
     { text: "短信通知", href: "devguide/approval-workflow/special-node-configuration#sms-notification" },
@@ -1759,51 +1981,60 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "子流程流转后函数设计", href: "devguide/approval-workflow/special-node-configuration#sub-process-post-flow-function-design" },
     { text: "单个子流程结束时更新主流程数据", href: "devguide/approval-workflow/special-node-configuration#update-main-process-data-single-sub-process-end" },
     { text: "所有子流程结束时更新主流程数据", href: "devguide/approval-workflow/special-node-configuration#update-main-process-data-all-sub-processes-end" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="审批页面定制"
-  href="devguide/approval-workflow/approval-page-customization"
-  description="自定义审批界面和用户体验，提升审批效率。"
->
-  <LinkGrid links={[
+title="审批页面定制"
+href="devguide/approval-workflow/approval-page-customization"
+description="自定义审批界面和用户体验，提升审批效率。"
+
+> <LinkGrid links={[
+
     { text: "审批页面高级定制", href: "devguide/approval-workflow/approval-page-customization#approval-page-advanced-customization" },
     { text: "审批页面类型", href: "devguide/approval-workflow/approval-page-customization#approval-page-types" },
     { text: "自定义页面创建方式", href: "devguide/approval-workflow/approval-page-customization#custom-page-creation-method" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="审批流程的使用"
-  href="devguide/approval-workflow/approval-workflow-usage"
-  description="审批流程的实际应用和操作指南，包括发起和处理审批。"
->
-  <LinkGrid links={[
+title="审批流程的使用"
+href="devguide/approval-workflow/approval-workflow-usage"
+description="审批流程的实际应用和操作指南，包括发起和处理审批。"
+
+> <LinkGrid links={[
+
     { text: "发起申请", href: "devguide/approval-workflow/approval-workflow-usage#initiate-application" },
     { text: "待办中心", href: "devguide/approval-workflow/approval-workflow-usage#todo-center" },
     { text: "详情页面", href: "devguide/approval-workflow/approval-workflow-usage#detail-page" },
     { text: "委托他人处理", href: "devguide/approval-workflow/approval-workflow-usage#delegate-to-others-processing" },
     { text: "审批流程管理页面", href: "devguide/approval-workflow/approval-workflow-usage#approval-workflow-management-page" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="在审批流程中调用业务逻辑元素"
-  href="devguide/approval-workflow/calling-business-logic-elements-in-approval-workflow"
-  description="学习如何在审批流程中调用业务逻辑元素，实现复杂业务规则和自动化决策。"
->
-  <LinkGrid links={[
+title="在审批流程中调用业务逻辑元素"
+href="devguide/approval-workflow/calling-business-logic-elements-in-approval-workflow"
+description="学习如何在审批流程中调用业务逻辑元素，实现复杂业务规则和自动化决策。"
+
+> <LinkGrid links={[
+
     { text: "通过审批事件调用业务逻辑", href: "devguide/approval-workflow/calling-business-logic-elements-in-approval-workflow#calling-business-logic-through-approval-events" },
     { text: "子流程中函数处理", href: "devguide/approval-workflow/calling-business-logic-elements-in-approval-workflow#function-processing-in-subprocesses" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="在审批流程中集成AI元素"
-  href="devguide/approval-workflow/integrating-ai-in-approval-workflow"
-  description="将人工智能能力集成到审批流程中，实现智能路由、自动审查和智能决策。"
+title="在审批流程中集成 AI 元素"
+href="devguide/approval-workflow/integrating-ai-in-approval-workflow"
+description="将人工智能能力集成到审批流程中，实现智能路由、自动审查和智能决策。"
+
 >
+
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     📝 敬请期待...
   </div>
@@ -1812,16 +2043,18 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 </div>
 
 ## 文件处理 {#file-processing}
-轻松处理应用中的各种文件需求。支持多种格式文件上传下载，动态生成Word、Excel文档，让文件操作变得简单便捷。
+
+轻松处理应用中的各种文件需求。支持多种格式文件上传下载，动态生成 Word、Excel 文档，让文件操作变得简单便捷。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="文件存储"
-  href="devguide/file-processing/file-storage"
-  description="文件上传、存储和管理系统，支持多种存储方式和文件操作。"
->
-  <LinkGrid columns={2} links={[
+title="文件存储"
+href="devguide/file-processing/file-storage"
+description="文件上传、存储和管理系统，支持多种存储方式和文件操作。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "本地存储配置", href: "devguide/file-processing/file-storage#local-storage-configuration" },
     { text: "添加本地存储", href: "devguide/file-processing/file-storage#add-local-storage" },
     { text: "指定磁盘存储目录", href: "devguide/file-processing/file-storage#specify-disk-storage-directory" },
@@ -1835,15 +2068,17 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "用环境变量防止配置信息泄露", href: "devguide/file-processing/file-storage#prevent-config-info-leak-with-env-variables" },
     { text: "设置应用默认的存储服务", href: "devguide/file-processing/file-storage#set-application-default-storage-service" },
     { text: "在前端代码中调用文件上传", href: "devguide/file-processing/file-storage#call-file-upload-in-frontend-code" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="文件模板"
-  href="devguide/file-processing/file-templates"
-  description="文档模板生成和处理，支持动态内容填充和格式转换。"
->
-  <LinkGrid columns={2} links={[
+title="文件模板"
+href="devguide/file-processing/file-templates"
+description="文档模板生成和处理，支持动态内容填充和格式转换。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "Word模板", href: "devguide/file-processing/file-templates#word-template" },
     { text: "创建Word模板", href: "devguide/file-processing/file-templates#create-word-template" },
     { text: "创建Word模板变量", href: "devguide/file-processing/file-templates#create-word-template-variables" },
@@ -1857,34 +2092,39 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "数值类样式", href: "devguide/file-processing/file-templates#numeric-style" },
     { text: "日期时间类样式", href: "devguide/file-processing/file-templates#date-time-style" },
     { text: "多值类样式（复杂类型）", href: "devguide/file-processing/file-templates#multi-value-complex-types" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="用文件模板生成和打印文件"
-  href="devguide/file-processing/generating-and-printing-files-using-file-templates"
-  description="学习如何使用文件模板程序化生成和打印文档，包括动态内容填充和输出格式化。"
->
-  <LinkGrid links={[
+title="用文件模板生成和打印文件"
+href="devguide/file-processing/generating-and-printing-files-using-file-templates"
+description="学习如何使用文件模板程序化生成和打印文档，包括动态内容填充和输出格式化。"
+
+> <LinkGrid links={[
+
     { text: "打印Word模板", href: "devguide/file-processing/generating-and-printing-files-using-file-templates#print-word-template" },
     { text: "打印Excel模板", href: "devguide/file-processing/generating-and-printing-files-using-file-templates#print-excel-template" },
     { text: "生成附件", href: "devguide/file-processing/generating-and-printing-files-using-file-templates#generate-attachments" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
-## 外部API集成 {#external-api-integration}
-让你的应用连接更广阔的世界。轻松接入第三方API，集成微信支付、支付宝支付，配置短信通知服务。扩展应用能力边界，满足更多业务场景。
+## 外部 API 集成 {#external-api-integration}
+
+让你的应用连接更广阔的世界。轻松接入第三方 API，集成微信支付、支付宝支付，配置短信通知服务。扩展应用能力边界，满足更多业务场景。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="创建通用的外部API元素"
-  href="devguide/third-party-integration/external-api"
-  description="无缝集成第三方HTTP接口，提供统一的RESTful API调用管理，支持标准HTTP方法和高级处理功能。"
->
-  <LinkGrid columns={2} links={[
+title="创建通用的外部 API 元素"
+href="devguide/third-party-integration/external-api"
+description="无缝集成第三方 HTTP 接口，提供统一的 RESTful API 调用管理，支持标准 HTTP 方法和高级处理功能。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "外部API创建", href: "devguide/third-party-integration/external-api#creating-external-apis" },
     { text: "公共配置", href: "devguide/third-party-integration/external-api#public-configuration" },
     { text: "访问域名", href: "devguide/third-party-integration/external-api#access-domain" },
@@ -1900,27 +2140,31 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "API接口的测试及调用", href: "devguide/third-party-integration/external-api#api-interface-testing-and-calling" },
     { text: "API接口测试", href: "devguide/third-party-integration/external-api#api-interface-testing" },
     { text: "API调用", href: "devguide/third-party-integration/external-api#api-calling" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="内置的支付服务"
-  href="devguide/third-party-integration/payment-service"
-  description="集成主流支付平台，实现在线支付和交易功能。"
->
-  <LinkGrid links={[
+title="内置的支付服务"
+href="devguide/third-party-integration/payment-service"
+description="集成主流支付平台，实现在线支付和交易功能。"
+
+> <LinkGrid links={[
+
     { text: "微信支付服务配置", href: "devguide/third-party-integration/payment-service#wechat-payment-service-configuration" },
     { text: "支付宝支付服务配置", href: "devguide/third-party-integration/payment-service#alipay-payment-service-configuration" },
     { text: "支付服务使用", href: "devguide/third-party-integration/payment-service#payment-service-usage" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="内置的短信服务"
-  href="devguide/third-party-integration/sms-service"
-  description="短信发送和通知服务集成，支持验证码和消息推送。"
->
-  <LinkGrid links={[
+title="内置的短信服务"
+href="devguide/third-party-integration/sms-service"
+description="短信发送和通知服务集成，支持验证码和消息推送。"
+
+> <LinkGrid links={[
+
     { text: "阿里云短信", href: "devguide/third-party-integration/sms-service#aliyun-sms" },
     { text: "阿里云短信服务创建", href: "devguide/third-party-integration/sms-service#aliyun-sms-service-creation" },
     { text: "AWS SNS短信", href: "devguide/third-party-integration/sms-service#aws-sns-sms" },
@@ -1930,50 +2174,60 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "手机登录方式中使用短信服务", href: "devguide/third-party-integration/sms-service#use-sms-service-in-mobile-login" },
     { text: "审批流程中使用短信服务", href: "devguide/third-party-integration/sms-service#use-sms-service-in-approval-flow" },
     { text: "短信通知功能", href: "devguide/third-party-integration/sms-service#sms-notification-function" }
-  ]} />
+
+]} />
 </IndexCard>
+
 </div>
 
 ## 缓存管理 {#cache-management}
+
 让应用跑得更快更稳定。配置智能缓存策略，优化数据访问速度，提升用户体验。确保应用在高并发访问时依然流畅运行。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="缓存配置与使用"
-  href="devguide/cache-management"
-  description="应用缓存策略配置，提升系统性能和响应速度。"
->
-  <LinkGrid links={[
+title="缓存配置与使用"
+href="devguide/cache-management"
+description="应用缓存策略配置，提升系统性能和响应速度。"
+
+> <LinkGrid links={[
+
     { text: "缓存服务配置", href: "devguide/cache-management#cache-service-configuration" },
     { text: "多缓存服务管理", href: "devguide/cache-management#multi-cache-service-management" },
     { text: "缓存编程接口使用", href: "devguide/cache-management#cache-programming-interface-usage" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
-## 内部API开放 {#internal-api-exposure}
-将应用能力暴露给外部系统调用。一键生成标准API接口，管理调用权限，监控使用情况。让你的应用成为数据和服务的提供者。
+## 内部 API 开放 {#internal-api-exposure}
+
+将应用能力暴露给外部系统调用。一键生成标准 API 接口，管理调用权限，监控使用情况。让你的应用成为数据和服务的提供者。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="API授权"
-  href="devguide/api-exposure/api-authorization"
-  description="API接口的权限控制和访问授权管理。"
->
-  <LinkGrid links={[
+title="API 授权"
+href="devguide/api-exposure/api-authorization"
+description="API 接口的权限控制和访问授权管理。"
+
+> <LinkGrid links={[
+
     { text: "API授权的创建", href: "devguide/api-exposure/api-authorization#api-authorization-creation" },
     { text: "API授权详情", href: "devguide/api-exposure/api-authorization#api-authorization-detail" },
     { text: "API调用监控", href: "devguide/api-exposure/api-authorization#call-records" }
-  ]} />
+
+]} />
 </IndexCard>
 <IndexCard
-  title="各类元素的API暴露示例"
-  href="devguide/api-exposure/api-exposure-examples-for-various-elements"
-  description="全面展示如何将不同类型的元素暴露为API的示例，包括数据模型、服务和自定义函数。"
+title="各类元素的 API 暴露示例"
+href="devguide/api-exposure/api-exposure-examples-for-various-elements"
+description="全面展示如何将不同类型的元素暴露为 API 的示例，包括数据模型、服务和自定义函数。"
+
 >
+
     <LinkGrid links={[
         { text: "服务函数的API授权", href: "devguide/api-exposure/api-exposure-examples-for-various-elements#service-function-api-authorization" },
         { text: "数据模型的API授权", href: "devguide/api-exposure/api-exposure-examples-for-various-elements#data-model-api-authorization" },
@@ -1982,147 +2236,173 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
         { text: "AI助理的API授权", href: "devguide/api-exposure/api-exposure-examples-for-various-elements#ai-assistant-api-authorization" },
         { text: "审批流程的API授权", href: "devguide/api-exposure/api-exposure-examples-for-various-elements#approval-process-api-authorization" }
     ]} />
+
 </IndexCard>
 
 <IndexCard
-  title="使用SDK调用被授权元素的API"
-  href="devguide/api-exposure/using-sdk-to-call-authorized-element-apis"
-  description="学习如何使用官方SDK调用被授权的元素API，包括身份验证、请求处理和错误管理。"
+title="使用 SDK 调用被授权元素的 API"
+href="devguide/api-exposure/using-sdk-to-call-authorized-element-apis"
+description="学习如何使用官方 SDK 调用被授权的元素 API，包括身份验证、请求处理和错误管理。"
+
 >
+
     <LinkGrid links={[
         { text: "使用Python SDK", href: "devguide/api-exposure/using-sdk-to-call-authorized-element-apis#using-python-sdk" },
         { text: "使用Nodejs SDK", href: "devguide/api-exposure/using-sdk-to-call-authorized-element-apis#using-nodejs-sdk" },
         { text: "使用Java SDK", href: "devguide/api-exposure/using-sdk-to-call-authorized-element-apis#using-java-sdk" }
     ]} />
+
 </IndexCard>
 
 <IndexCard
-  title="使用跨App服务元素调用被授权元素的API"
-  href="devguide/api-exposure/using-cross-app-service-elements-to-call-authorized-apis"
-  description="使用服务元素实现跨应用API调用，实现不同JitAI应用之间的无缝集成。"
+title="使用跨 App 服务元素调用被授权元素的 API"
+href="devguide/api-exposure/using-cross-app-service-elements-to-call-authorized-apis"
+description="使用服务元素实现跨应用 API 调用，实现不同 JitAI 应用之间的无缝集成。"
+
 >
+
     <LinkGrid links={[
         { text: "使用跨App服务元素", href: "devguide/api-exposure/using-cross-app-service-elements-to-call-authorized-apis#using-cross-app-service-elements" }
     ]} />
+
 </IndexCard>
 </div>
 
 ## 国际化 {#internationalization}
+
 让你的应用面向全球用户。支持多语言、区域设置和动态语言切换，打造真正的国际化应用程序。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="创建语言包"
-  href="devguide/internationalization/creating-language-packages"
-  description="学习如何为应用程序创建自定义语言包，包括结构定义和内容组织。"
->
-  <LinkGrid links={[
+title="创建语言包"
+href="devguide/internationalization/creating-language-packages"
+description="学习如何为应用程序创建自定义语言包，包括结构定义和内容组织。"
+
+> <LinkGrid links={[
+
       { text: "创建语言包", href: "devguide/internationalization/creating-language-packages#creating-language-packages" },
       { text: "翻译内置词条", href: "devguide/internationalization/creating-language-packages#translating-built-in-terms" },
       { text: "添加新的词条", href: "devguide/internationalization/creating-language-packages#adding-new-terms" },
       { text: "导入词条", href: "devguide/internationalization/creating-language-packages#importing-terms" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="扩展系统内置的语言包"
-  href="devguide/internationalization/extending-system-builtin-language-packages"
-  description="扩展和自定义现有系统语言包，以满足特定业务需求和区域需要。"
+title="扩展系统内置的语言包"
+href="devguide/internationalization/extending-system-builtin-language-packages"
+description="扩展和自定义现有系统语言包，以满足特定业务需求和区域需要。"
+
 >
+
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     📝 Coming soon...
   </div>
 </IndexCard>
 
 <IndexCard
-  title="如何翻译页面中的术语"
-  href="devguide/internationalization/how-to-translate-page-terms"
-  description="掌握页面内容翻译技巧，包括动态文本替换和上下文感知翻译。"
->
-  <LinkGrid links={[
+title="如何翻译页面中的术语"
+href="devguide/internationalization/how-to-translate-page-terms"
+description="掌握页面内容翻译技巧，包括动态文本替换和上下文感知翻译。"
+
+> <LinkGrid links={[
+
       { text: "自动文本翻译", href: "devguide/internationalization/how-to-translate-page-terms#automatic-text-translation" },
       { text: "响应式文本翻译", href: "devguide/internationalization/how-to-translate-page-terms#dynamic-text-translation" },
       { text: "DOM节点属性翻译", href: "devguide/internationalization/how-to-translate-page-terms#dom-node-attribute-translation" },
       { text: "使用API翻译", href: "devguide/internationalization/how-to-translate-page-terms#using-api-translation" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="忽略翻译规则"
-  href="devguide/internationalization/translate-ignore-rules"
-  description="配置规则以排除特定内容不被翻译，确保正确处理品牌名称、技术术语和其他不可翻译内容。"
->
-  <LinkGrid links={[
+title="忽略翻译规则"
+href="devguide/internationalization/translate-ignore-rules"
+description="配置规则以排除特定内容不被翻译，确保正确处理品牌名称、技术术语和其他不可翻译内容。"
+
+> <LinkGrid links={[
+
       { text: "基础用法", href: "devguide/internationalization/translate-ignore-rules#basic-usage" },
       { text: "高级配置", href: "devguide/internationalization/translate-ignore-rules#advanced-configuration" },
       { text: "配置方法", href: "devguide/internationalization/translate-ignore-rules#configuration-method" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="默认语言"
-  href="devguide/internationalization/default-language"
-  description="为应用程序配置默认语言，确保首次访问用户和没有明确语言偏好的用户获得最佳体验。"
->
-  <LinkGrid links={[
+title="默认语言"
+href="devguide/internationalization/default-language"
+description="为应用程序配置默认语言，确保首次访问用户和没有明确语言偏好的用户获得最佳体验。"
+
+> <LinkGrid links={[
+
       { text: "默认语言配置", href: "devguide/internationalization/default-language#default-language-configuration" },
       { text: "语言选择策略", href: "devguide/internationalization/default-language#language-selection-strategy" },
       { text: "配置建议", href: "devguide/internationalization/default-language#configuration-recommendations" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
-## 前端UI定制 {#frontend-ui-customization}
-打造独特的视觉体验和品牌形象。自定义应用主题色彩，开发专属UI组件，让应用界面更符合企业品牌调性，提升用户体验和辨识度。
+## 前端 UI 定制 {#frontend-ui-customization}
+
+打造独特的视觉体验和品牌形象。自定义应用主题色彩，开发专属 UI 组件，让应用界面更符合企业品牌调性，提升用户体验和辨识度。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="全局样式"
-  href="devguide/frontend-ui-customization/global-styles"
-  description="应用整体样式和主题配置，统一界面风格和用户体验。"
->
-  <LinkGrid links={[
+title="全局样式"
+href="devguide/frontend-ui-customization/global-styles"
+description="应用整体样式和主题配置，统一界面风格和用户体验。"
+
+> <LinkGrid links={[
+
     { text: "创建全局样式元素", href: "devguide/frontend-ui-customization/global-styles#create-global-style-element" },
     { text: "修改全局样式", href: "devguide/frontend-ui-customization/global-styles#modify-global-style" },
     { text: "更多样式变量", href: "devguide/frontend-ui-customization/global-styles#more-style-variables" },
     { text: "调试主题", href: "devguide/frontend-ui-customization/global-styles#debug-theme" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="自定义控件"
-  href="devguide/frontend-ui-customization/custom-controls"
-  description="开发个性化UI组件，满足特殊业务需求和交互要求。"
->
-  <LinkGrid links={[
+title="自定义控件"
+href="devguide/frontend-ui-customization/custom-controls"
+description="开发个性化 UI 组件，满足特殊业务需求和交互要求。"
+
+> <LinkGrid links={[
+
     { text: "创建自定义控件", href: "devguide/frontend-ui-customization/custom-controls#create-custom-control-element" },
     { text: "修改自定义控件", href: "devguide/frontend-ui-customization/custom-controls#modify-custom-control" },
     { text: "表单中使用自定义控件", href: "devguide/frontend-ui-customization/custom-controls#use-custom-control-in-form" },
     { text: "表格中使用自定义控件", href: "devguide/frontend-ui-customization/custom-controls#use-custom-control-in-table" },
     { text: "自定义控件参数", href: "devguide/frontend-ui-customization/custom-controls#custom-control-parameters" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="组件定制"
-  href="devguide/frontend-ui-customization/component-customization"
-  description="平台提供两种主要的组件定制方式，以满足不同的开发需求和场景。"
->
-  <LinkGrid links={[
+title="组件定制"
+href="devguide/frontend-ui-customization/component-customization"
+description="平台提供两种主要的组件定制方式，以满足不同的开发需求和场景。"
+
+> <LinkGrid links={[
+
     { text: "开发全代码组件", href: "devguide/frontend-ui-customization/component-customization#developing-full-code-components" },
     { text: "扩展组件Type元素", href: "devguide/frontend-ui-customization/component-customization#extending-component-type-elements" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="页面定制"
-  href="devguide/frontend-ui-customization/page-customization"
-  description="介绍全代码页面的具体开发技术和使用方法，包括样式处理、组件使用、资源管理、数据操作等。"
->
-  <LinkGrid columns={2} links={[
+title="页面定制"
+href="devguide/frontend-ui-customization/page-customization"
+description="介绍全代码页面的具体开发技术和使用方法，包括样式处理、组件使用、资源管理、数据操作等。"
+
+> <LinkGrid columns={2} links={[
+
     { text: "创建 React 全代码页面", href: "devguide/frontend-ui-customization/page-customization#create-react-full-code-page" },
     { text: "使用样式", href: "devguide/frontend-ui-customization/page-customization#use-style" },
     { text: "使用本地资源", href: "devguide/frontend-ui-customization/page-customization#use-local-resources" },
@@ -2145,72 +2425,84 @@ import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
     { text: "引入打包插件", href: "devguide/frontend-ui-customization/page-customization#introducing-build-plugins" },
     { text: "系统内置包一览表", href: "devguide/frontend-ui-customization/page-customization#system-built-in-package-overview" },
     { text: "默认loader映射", href: "devguide/frontend-ui-customization/page-customization#default-loader-mapping" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="门户定制"
-  href="devguide/frontend-ui-customization/portal-customization"
-  description="全代码自定义门户提供了灵活的解决方案，适用于导航布局调整、界面风格定制和交互方式优化等场景。"
->
-  <LinkGrid links={[
+title="门户定制"
+href="devguide/frontend-ui-customization/portal-customization"
+description="全代码自定义门户提供了灵活的解决方案，适用于导航布局调整、界面风格定制和交互方式优化等场景。"
+
+> <LinkGrid links={[
+
     { text: "创建自定义门户", href: "devguide/frontend-ui-customization/portal-customization#creating-custom-portal" },
     { text: "核心文件结构", href: "devguide/frontend-ui-customization/portal-customization#core-file-structure" },
     { text: "重要API和方法", href: "devguide/frontend-ui-customization/portal-customization#important-apis-and-methods" },
     { text: "门户基础API", href: "devguide/frontend-ui-customization/portal-customization#portal-basic-apis" },
     { text: "页面渲染和导航", href: "devguide/frontend-ui-customization/portal-customization#page-rendering-and-navigation" },
     { text: "权限验证", href: "devguide/frontend-ui-customization/portal-customization#permission-verification" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
 ## 场景化进阶指南 {#advanced-guide}
+
 基于真实业务场景的深度实践指南，帮助开发者掌握复杂应用的架构设计和最佳实践。
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="开发与运维流程"
-  href="devguide/advanced-guide"
-  description="掌握高效的开发流程、调试技巧和生产环境部署管理，确保应用稳定性和团队协作效率。"
->
-  <LinkGrid links={[
+title="开发与运维流程"
+href="devguide/advanced-guide"
+description="掌握高效的开发流程、调试技巧和生产环境部署管理，确保应用稳定性和团队协作效率。"
+
+> <LinkGrid links={[
+
     { text: "本地开发与调试", href: "devguide/advanced-guide/local-development-and-debugging" },
     { text: "团队协作开发", href: "devguide/advanced-guide/team-collaborative-development" },
     { text: "应用层稳定性保障", href: "devguide/advanced-guide/application-layer-stability-guarantee" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="AI开发与应用"
-  href="devguide/advanced-guide"
-  description="使用AI智能体、助理和高级提示词工程技术构建智能应用，实现增强用户体验和自动化工作流程。"
->
-  <LinkGrid links={[
+title="AI 开发与应用"
+href="devguide/advanced-guide"
+description="使用 AI 智能体、助理和高级提示词工程技术构建智能应用，实现增强用户体验和自动化工作流程。"
+
+> <LinkGrid links={[
+
     { text: "AI智能客服", href: "devguide/advanced-guide/ai-customer-service" },
     { text: "Agent提示词编写技巧", href: "devguide/advanced-guide/agent-prompt-writing-techniques" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="数据建模与分析"
-  href="devguide/advanced-guide/business-entity-modeling-and-data-analysis"
-  description="基于JitORM构建销售数据分析系统，实现多维度聚合分析和业务规则自动化。"
->
-  <LinkGrid links={[
+title="数据建模与分析"
+href="devguide/advanced-guide/business-entity-modeling-and-data-analysis"
+description="基于 JitORM 构建销售数据分析系统，实现多维度聚合分析和业务规则自动化。"
+
+> <LinkGrid links={[
+
     { text: "业务实体建模与数据分析", href: "devguide/advanced-guide/business-entity-modeling-and-data-analysis" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="业务服务与API"
-  href="devguide/advanced-guide/using-interceptors-for-custom-request-authentication"
-  description="基于JitService实现自定义鉴权和业务服务架构。"
->
-  <LinkGrid links={[
+title="业务服务与 API"
+href="devguide/advanced-guide/using-interceptors-for-custom-request-authentication"
+description="基于 JitService 实现自定义鉴权和业务服务架构。"
+
+> <LinkGrid links={[
+
     { text: "使用拦截器实现自定义请求鉴权", href: "devguide/advanced-guide/using-interceptors-for-custom-request-authentication" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>

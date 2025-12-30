@@ -19,17 +19,21 @@ A created Word template consists of the following 2 components:
 1. Template variables, where variable names, [data types](../../reference/framework/JitORM/data-types), and [data table models](../data-modeling/data-table-model) are set in the variables.
 2. Word document, where template variables are used in the Word document, and data replacement is performed according to the template variable names in the Word document when calling the print service.
 
+3. If you need to display images in a Word template, the images should be separated from the text and placed on a separate line.
+
 Original data used in this document:
 
 ![Original Data](./img/2/2025-12-30-14-08-46.png "Original Data")
 
 Word document configured with template variables:
 
-![Word Document with Variables](./img/2/2025-12-30-14-10-28.png "Word Document with Variables")
+![Word Document with Variables](./img/2/2025-12-30-17-10-31.png "Word Document with Variables")
+
 
 Print effect display:
 
-![Print Effect](./img/2/2025-08-29-11-14-13.png "Print Effect")
+<!-- ![Print Effect](./img/2/2025-08-29-11-14-13.png "Print Effect") -->
+![Print Effect](./img/2/2025-12-30-17-12-13.png "Print Effect")
 
 ### Creating word template {#create-word-template}
 
@@ -77,7 +81,8 @@ JitAI supports **30+ template variable styles**, including text processing, nume
 
 #### Using variables in Word documents {#use-variables-in-word}
 
-![Using Variables in Word](./img/2/2025-12-30-14-15-52.png "Using Variables in Word")
+![Using Variables in Word](./img/2/2025-12-30-17-15-53.png "Using Variables in Word")
+
 
 Copy and paste other variables:
 
@@ -85,11 +90,12 @@ Copy and paste other variables:
 
 ![Display Image field as Picture](./img/2/2025-12-30-14-20-18.png "Display Image field as Picture")
 
-![Word Document with All Variables](./img/2/2025-12-30-14-18-58.png "Word Document with All Variables")
+![Word Document with All Variables](./img/2/2025-12-30-17-18-00.png "Word Document with All Variables")
+
 
 Final Word document content:
 
-![Final Word Document](./img/2/2025-12-30-14-10-28.png "Final Word Document")
+![Final Word Document](./img/2/2025-12-30-17-10-31.png "Final Word Document")
 
 #### Upload the configured Word document {#upload-configured-word-document}
 

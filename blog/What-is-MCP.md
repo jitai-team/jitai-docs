@@ -7,7 +7,7 @@ description: |
   yet they often operate as isolated "intelligent islands," unable to directly access our file systems,
   databases, or API services.
   This is the core problem that the Model Context Protocol aims to solve.
-tags: [MCP]
+tags: [mcp]
 keywords: [MCP, Model Context Protocol, Anthropic, AI tool integration, JitAi, LLM, Large Language Models, JSON-RPC, Function Calling, AI Agent, MCP Server, MCP Client, development efficiency, standardized protocol]
 ---
 

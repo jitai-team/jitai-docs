@@ -7,9 +7,13 @@ import { addUTMToUrl } from "../../../utils/utm";
 
 interface NavbarProps {
     currentLocale?: string;
+    hideLanguageSwitcher?: boolean;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
+const Navbar: React.FC<NavbarProps> = ({
+    currentLocale,
+    hideLanguageSwitcher,
+}) => {
     const [scrolled, setScrolled] = useState(false);
     const [activeNavItem, setActiveNavItem] = useState("home");
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -145,7 +149,9 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
 
                 {/* Right section: Language switcher, Download button and Try Online button */}
                 <div className={styles.rightSection}>
-                    <LanguageSwitcher className={styles.languageSwitcher} />
+                    {!hideLanguageSwitcher && (
+                        <LanguageSwitcher className={styles.languageSwitcher} />
+                    )}
                     {/* Try Online hidden 2025/12/16 */}
                     {/**
                     <button
@@ -167,7 +173,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
 
                 {/* Mobile language switcher - displayed to the left of the hamburger menu button */}
                 <div className={styles.mobileTopLanguageSwitcher}>
-                    <LanguageSwitcher />
+                    {!hideLanguageSwitcher && <LanguageSwitcher />}
                 </div>
 
                 {/* Mobile hamburger menu button */}

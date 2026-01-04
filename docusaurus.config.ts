@@ -321,7 +321,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             appId: "DZ5X5FUUCG",
             apiKey: "a3d6338cf6bd1e789ab3c6d7064e0796",
             indexName: "crawler_doc_spider",
-            contextualSearch: false, // 禁用上下文搜索以避免过度过滤
+            contextualSearch: true, // 启用上下文搜索，根据当前语言过滤结果
             searchPagePath: "search",
             insights: false,
         },

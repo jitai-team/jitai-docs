@@ -1,5 +1,6 @@
 ---
-title: "AI Coding 'Macro-Defocus': Why Large Systems Break Code-Gen Tools"
+title: "AI Programming's 'Macro-Defocus': Why Cursor Codes Fast, But Building Large Systems is Hard"
+seoTitle: "AI Coding 'Macro-Defocus': Why Large Systems Break Code-Gen Tools"
 date: 2026/01/26
 authors: []
 tags: []

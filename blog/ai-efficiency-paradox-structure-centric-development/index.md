@@ -1,5 +1,6 @@
 ---
 title: "The Efficiency Paradox: Why AI Coding Tools Haven't Slashed Delivery Cycles"
+seoTitle: "The Efficiency Paradox: Why AI Coding Tools Haven't Slashed Delivery Cycles"
 date: 2026/01/26
 authors: []
 tags: []

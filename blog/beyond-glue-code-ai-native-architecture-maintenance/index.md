@@ -1,5 +1,6 @@
 ---
-title: "Stop Writing Glue Code: Why AI-Native Architectures Beat Retrofitted Apps"
+title: "Beyond Glue Code: Why 'Bolting On' AI Creates a Maintenance Nightmare"
+seoTitle: "Stop Writing Glue Code: Why AI-Native Architectures Beat Retrofitted Apps"
 date: 2026/01/26
 authors: []
 tags: []

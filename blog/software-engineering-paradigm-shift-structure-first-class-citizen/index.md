@@ -1,5 +1,6 @@
 ---
-title: "Software Engineering Paradigm Shift: Why Structure Must Be a First-Class Citizen for AI"
+title: "The Paradigm Shift in Software Engineering: Why We Need to Make 'Structure' a First-Class Citizen"
+seoTitle: "Software Engineering Paradigm Shift: Why Structure Must Be a First-Class Citizen for AI"
 date: 2026/01/26
 authors: []
 tags: []

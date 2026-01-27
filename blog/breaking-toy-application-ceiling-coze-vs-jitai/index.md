@@ -1,5 +1,6 @@
 ---
-title: "From Coze to Business Systems: Breaking the AI 'Toy Application' Ceiling"
+title: "From Coze to Business Systems: Breaking the 'Toy Application' Ceiling"
+seoTitle: "From Coze to Business Systems: Breaking the AI 'Toy Application' Ceiling"
 date: 2026/01/26
 authors: []
 tags: []

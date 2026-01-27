@@ -1,5 +1,6 @@
 ---
-title: "解决 AI 原生开发中的“结构不可见性”难题：JitAI 架构解析"
+title: "解决 AI 原生开发中的“结构不可见性”难题：JitAI 架构解析"
+seoTitle: "解决 AI 原生开发中的“结构不可见性”难题：JitAI 架构解析"
 date: 2026/01/26
 authors: []
 tags: []

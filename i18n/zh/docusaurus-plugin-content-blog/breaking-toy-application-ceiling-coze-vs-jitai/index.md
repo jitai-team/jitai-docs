@@ -1,5 +1,6 @@
 ---
-title: "从 Coze 到业务系统：突破 AI“玩具应用”的天花板"
+title: "从 Coze 到业务系统：突破 AI“玩具应用”的天花板"
+seoTitle: "从 Coze 到业务系统：突破 AI“玩具应用”的天花板"
 date: 2026/01/26
 authors: []
 tags: []

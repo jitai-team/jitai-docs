@@ -1,5 +1,6 @@
 ---
-title: "黑盒困境：为什么 AI Agent 难以理解业务意图？"
+title: "黑盒困境：当 AI 读不懂业务意图，它就只是个“外挂”"
+seoTitle: "黑盒困境：为什么 AI Agent 难以理解业务意图？"
 date: 2025/11/06
 authors: []
 tags: []

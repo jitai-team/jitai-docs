@@ -1,5 +1,6 @@
 ---
-title: "The Three Big Lies of Enterprise AI Applications: Why Chatbots Are Not Enough"
+title: "The Three Big Lies of Enterprise AI: Why Chatbots Are Not the Endgame"
+seoTitle: "The Three Big Lies of Enterprise AI Applications: Why Chatbots Are Not Enough"
 date: 2026/01/26
 authors: []
 tags: []

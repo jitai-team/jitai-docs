@@ -1,5 +1,6 @@
 ---
-title: "The Black Box Dilemma: Why AI Agents Struggle with Business Intent"
+title: "The Black Box Dilemma: When AI Can't Read Your Business Intent, It's Just an 'Add-on'"
+seoTitle: "The Black Box Dilemma: Why AI Agents Struggle with Business Intent"
 date: 2025/11/06
 authors: []
 tags: []

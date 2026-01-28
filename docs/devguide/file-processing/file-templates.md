@@ -19,17 +19,21 @@ A created Word template consists of the following 2 components:
 1. Template variables, where variable names, [data types](../../reference/framework/JitORM/data-types), and [data table models](../data-modeling/data-table-model) are set in the variables.
 2. Word document, where template variables are used in the Word document, and data replacement is performed according to the template variable names in the Word document when calling the print service.
 
+3. If you need to display images in a Word template, the images should be separated from the text and placed on a separate line.
+
 Original data used in this document:
 
-![Original Data](./img/2/2025-08-29-17-24-59.png "Original Data")
+![Original Data](./img/2/2025-12-30-14-08-46.png "Original Data")
 
 Word document configured with template variables:
 
-![Word Document with Variables](./img/2/2025-08-29-10-48-20.png "Word Document with Variables")
+![Word Document with Variables](./img/2/2025-12-30-17-10-31.png "Word Document with Variables")
+
 
 Print effect display:
 
-![Print Effect](./img/2/2025-08-29-11-14-13.png "Print Effect")
+<!-- ![Print Effect](./img/2/2025-08-29-11-14-13.png "Print Effect") -->
+![Print Effect](./img/2/2025-12-30-17-12-13.png "Print Effect")
 
 ### Creating word template {#create-word-template}
 
@@ -77,17 +81,21 @@ JitAI supports **30+ template variable styles**, including text processing, nume
 
 #### Using variables in Word documents {#use-variables-in-word}
 
-![Using Variables in Word](./img/2/2025-08-29-10-41-50.png "Using Variables in Word")
+![Using Variables in Word](./img/2/2025-12-30-17-15-53.png "Using Variables in Word")
+
 
 Copy and paste other variables:
 
 ![Copy Other Variables](./img/2/2025-08-29_10-50-13.gif "Copy Other Variables")
 
-![Word Document with All Variables](./img/2/2025-08-29-10-45-29.png "Word Document with All Variables")
+![Display Image field as Picture](./img/2/2025-12-30-14-20-18.png "Display Image field as Picture")
+
+![Word Document with All Variables](./img/2/2025-12-30-17-18-00.png "Word Document with All Variables")
+
 
 Final Word document content:
 
-![Final Word Document](./img/2/2025-08-29-10-48-20.png "Final Word Document")
+![Final Word Document](./img/2/2025-12-30-17-10-31.png "Final Word Document")
 
 #### Upload the configured Word document {#upload-configured-word-document}
 
@@ -148,7 +156,12 @@ JitAI supports **30+ template variable styles**, including text processing, nume
 
 #### Pasting variables in Excel documents {#paste-variables-in-excel}
 
-![Paste Variables in Excel](./img/2/2025-08-29-16-19-46.png "Paste Variables in Excel")
+![Paste Variables in Excel](./img/2/2025-12-30-14-25-22.png "Paste Variables in Excel")
+
+
+Print effect display:
+
+![Print Effect](./img/2/2025-12-30-14-35-36.png "Print Effect")
 
 Paste the variables just copied in the Excel file, and adjust the variable order in the second row to correspond with the table headers. The variable names in the second row correspond to the table field names in the target table model.
 
@@ -160,11 +173,12 @@ Paste the variables just copied in the Excel file, and adjust the variable order
 
 Target table model variable names:
 
-![Target Table Variables](./img/2/2025-08-29-16-30-16.png "Target Table Variables")
+![Target Table Variables](./img/2/2025-12-30-14-27-35.png "Target Table Variables")
 
 #### Upload the adjusted Excel document {#upload-configured-excel-document}
 
 ![Upload Excel Document](./img/2/2025-08-29-14-22-04.png "Upload Excel Document")
+
 
 ## Template variable style description {#template-variable-style-description}
 
@@ -218,3 +232,10 @@ Target table model variable names:
 | List | Display List Count | ToCount | Get count of corresponding input collection | `{{a.value.ToCount}}` |
 | Dictionary | Display Dictionary Horizontally | ToDictionary | Display dictionary data horizontally | `{{a.value.ToDictionary.key}}` |
 | Dictionary | Display Dictionary Vertically | ToDictionary | Display dictionary data vertically | `{{a.value.ToDictionary.key}}` |
+
+
+### Image types {#images-types}
+| Type | Title | Function Name | Notes | Template Code |
+|------|------|--------|------|----------|
+| Image | Display Image | ToListPicture | Single row data uses `single row data.{image field}.value.ToListPicture()` | `rowData.pictures.value.ToListPicture()` |
+| Image | Display Image | ToListPicture | Multi-row data uses `each.{image field}.value.ToListPicture()` | `{% for each in data %}  {{each.imageField.value.ToListPicture()}} {% endfor %}` |

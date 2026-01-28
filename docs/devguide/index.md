@@ -6,6 +6,7 @@ description: "JitAI developer guide overview. Complete documentation for buildin
 import IndexCard, { LinkGrid } from '@site/src/components/IndexCard';
 
 # Developer Guide Index
+
 Experience a revolutionary approach to application development. Build powerful enterprise-grade applications using cutting-edge AI technology.
 
 This developer guide offers a comprehensive learning path—from organizational management and application fundamentals to business logic implementation—complete with best practices for mastering complex application architecture through real-world scenarios.
@@ -14,18 +15,19 @@ This developer guide offers a comprehensive learning path—from organizational 
 
 First, you need to complete the basic [Download and Installation](tutorial/download-installation)!
 
-
 ## Basic concepts {#basic-concepts}
+
 Master JitAI's core concepts and architecture principles. Build a solid theoretical foundation by understanding platform applications, element systems, development frameworks, and visual development tools.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Platform Architecture and Core Concepts"
-  href="devguide/basic-concept"
-  description="Learn JitAI's platform architecture, application concepts, JAAP protocol, element systems, and development frameworks—the foundational principles that power the platform."
->
-  <LinkGrid columns={2} links={[
+title="Platform Architecture and Core Concepts"
+href="devguide/basic-concept"
+description="Learn JitAI's platform architecture, application concepts, JAAP protocol, element systems, and development frameworks—the foundational principles that power the platform."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Platform and applications", href: "devguide/basic-concept#platform-and-applications" },
     { text: "DevOps tools and services", href: "devguide/basic-concept#devops-tools-and-services" },
     { text: "Application creation and development", href: "devguide/basic-concept#application-creation-and-development" },
@@ -35,32 +37,37 @@ Master JitAI's core concepts and architecture principles. Build a solid theoreti
     { text: "Business applications and application inheritance", href: "devguide/basic-concept#business-applications-and-application-inheritance" },
     { text: "Development tools", href: "devguide/basic-concept#development-tools" },
     { text: "Extension", href: "devguide/basic-concept#extension" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
 ## Platform installation and node activation {#platform-installation-node-activation}
+
 Set up your development environment by installing the platform and activating nodes. Master installation procedures, node activation workflows, and developer team management.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Download and Installation"
-  href="devguide/installation-activation/download-installation"
-  description="Download and install JitAI platform for your deployment scenario—desktop or server versions available."
->
-  <LinkGrid links={[
+title="Download and Installation"
+href="devguide/installation-activation/download-installation"
+description="Download and install JitAI platform for your deployment scenario—desktop or server versions available."
+
+> <LinkGrid links={[
+
     { text: "Detailed Installation Steps", href: "devguide/installation-activation/download-installation#detailed-installation-steps" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Node Activation and Developer Team"
-  href="devguide/installation-activation/developer-team-management"
-  description="Activate nodes and manage developer teams—configure organization binding, add team members, and perform essential management operations."
->
-  <LinkGrid links={[
+title="Node Activation and Developer Team"
+href="devguide/installation-activation/developer-team-management"
+description="Activate nodes and manage developer teams—configure organization binding, add team members, and perform essential management operations."
+
+> <LinkGrid links={[
+
     { text: "What is Node", href: "devguide/installation-activation/developer-team-management#what-is-jitnode" },
     { text: "What is Developer Team", href: "devguide/installation-activation/developer-team-management#what-is-developer-team" },
     { text: "Create New Development Organization When Activating Node", href: "devguide/installation-activation/developer-team-management#create-new-dev-team-when-activating-node" },
@@ -70,34 +77,39 @@ Set up your development environment by installing the platform and activating no
     { text: "Viewing team ID", href: "devguide/installation-activation/developer-team-management#view-team-id" },
     { text: "View and Refresh Organization Bind Code", href: "devguide/installation-activation/developer-team-management#view-and-refresh-team-bind-code" },
     { text: "Remove Organization Member", href: "devguide/installation-activation/developer-team-management#remove-team-member" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Platform Node Updates and Upgrades"
-  href="devguide/installation-activation/platform-node-updates-upgrades"
-  description="Keep your platform nodes up-to-date with the latest features and stability improvements."
->
-  <LinkGrid links={[
+title="Platform Node Updates and Upgrades"
+href="devguide/installation-activation/platform-node-updates-upgrades"
+description="Keep your platform nodes up-to-date with the latest features and stability improvements."
+
+> <LinkGrid links={[
+
     { text: "Update banner and entry", href: "devguide/installation-activation/platform-node-updates-upgrades#upgrade-entry" },
     { text: "One‑click upgrade flow", href: "devguide/installation-activation/platform-node-updates-upgrades#one-click-upgrade" },
     { text: "Recommendations for clusters", href: "devguide/installation-activation/platform-node-updates-upgrades#cluster-recommendations" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
 ## Development tools and publishing services {#development-tools-publishing-services}
+
 Accelerate development with a powerful, integrated toolchain. Master visual development environments, DevOps management tools, and cloud publishing services for seamless development-to-deployment workflows.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="JitAI Visual Development Tools"
-  href="devguide/development-tool-and-publish-service/visual-development-tool"
-  description="Navigate the visual development environment with confidence—explore IDE functional areas and seamlessly switch between visual and source code modes."
->
-  <LinkGrid links={[
+title="JitAI Visual Development Tools"
+href="devguide/development-tool-and-publish-service/visual-development-tool"
+description="Navigate the visual development environment with confidence—explore IDE functional areas and seamlessly switch between visual and source code modes."
+
+> <LinkGrid links={[
+
     { text: "Element directory tree", href: "devguide/development-tool-and-publish-service/visual-development-tool#element-directory-tree" },
     { text: "Adding elements", href: "devguide/development-tool-and-publish-service/visual-development-tool#adding-elements" },
     { text: "Visual editor", href: "devguide/development-tool-and-publish-service/visual-development-tool#visual-editor" },
@@ -111,15 +123,17 @@ Accelerate development with a powerful, integrated toolchain. Master visual deve
     { text: "Profile", href: "devguide/development-tool-and-publish-service/visual-development-tool#profile" },
     { text: "Language switching", href: "devguide/development-tool-and-publish-service/visual-development-tool#language-switching" },
     { text: "Navigation tabs", href: "devguide/development-tool-and-publish-service/visual-development-tool#navigation-tabs" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="DevOps Management Tool"
-  href="devguide/development-tool-and-publish-service/devops-management-tool"
-  description="Manage your entire application lifecycle with a comprehensive dual-console DevOps solution—from development through deployment and beyond."
->
-  <LinkGrid links={[
+title="DevOps Management Tool"
+href="devguide/development-tool-and-publish-service/devops-management-tool"
+description="Manage your entire application lifecycle with a comprehensive dual-console DevOps solution—from development through deployment and beyond."
+
+> <LinkGrid links={[
+
     { text: "Dual Console Architecture", href: "devguide/development-tool-and-publish-service/devops-management-tool#dual-console-architecture" },
     { text: "Local node console", href: "devguide/development-tool-and-publish-service/devops-management-tool#local-node-console" },
     { text: "Organization management console", href: "devguide/development-tool-and-publish-service/devops-management-tool#organization-management-console" },
@@ -131,34 +145,39 @@ Accelerate development with a powerful, integrated toolchain. Master visual deve
     { text: "Version release and deployment", href: "devguide/development-tool-and-publish-service/devops-management-tool#version-release-and-deployment" },
     { text: "Multi-platform export", href: "devguide/development-tool-and-publish-service/devops-management-tool#multi-platform-export" },
     { text: "Application template ecosystem", href: "devguide/development-tool-and-publish-service/devops-management-tool#application-template-ecosystem" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="JCS Cloud Application Publishing Service"
-  href="devguide/development-tool-and-publish-service/jcs-cloud-publishing-service"
-  description="Leverage the official cloud publishing service for centralized application repositories, version management, and seamless deployment across JitNodes."
->
-  <LinkGrid links={[
+title="JCS Cloud Application Publishing Service"
+href="devguide/development-tool-and-publish-service/jcs-cloud-publishing-service"
+description="Leverage the official cloud publishing service for centralized application repositories, version management, and seamless deployment across JitNodes."
+
+> <LinkGrid links={[
+
     { text: "Synchronizing runtime environment configuration from JCS", href: "devguide/development-tool-and-publish-service/jcs-cloud-publishing-service#synchronizing-runtime-environment-configuration" },
     { text: "Retrieving version update information from JCS", href: "devguide/development-tool-and-publish-service/jcs-cloud-publishing-service#retrieving-version-update-information" },
     { text: "Accessing cloud application repository through JCS", href: "devguide/development-tool-and-publish-service/jcs-cloud-publishing-service#accessing-cloud-application-repository" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
 ## Creating and publishing applications {#creating-publishing-applications}
+
 Master the complete workflow from application creation to distributed deployment. Learn application scaffolding, source code management, version publishing, runtime environment configuration, and infinitely scalable distributed architectures.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Creating and Deploying Applications"
-  href="devguide/creating-and-publishing-applications/creating-and-deploying-applications"
-  description="Create, configure, and deploy applications—from inheritance patterns to data configuration, master the fundamental development workflow."
->
-  <LinkGrid links={[
+title="Creating and Deploying Applications"
+href="devguide/creating-and-publishing-applications/creating-and-deploying-applications"
+description="Create, configure, and deploy applications—from inheritance patterns to data configuration, master the fundamental development workflow."
+
+> <LinkGrid links={[
+
     { text: "Creating Your First Application", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#creating-first-application" },
     { text: "Developing Applications Based on Existing Templates", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#developing-applications-based-on-existing-templates" },
     { text: "Inheriting from Applications", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#inheriting-from-applications" },
@@ -167,30 +186,34 @@ Master the complete workflow from application creation to distributed deployment
     { text: "Deploying Applications", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#deploying-applications" },
     { text: "Deploying Applications on Specified Nodes", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#deploying-applications-on-specified-nodes" },
     { text: "Deploying Applications in Specified Runtime Environments", href: "devguide/creating-and-publishing-applications/creating-and-deploying-applications#deploying-applications-in-specified-runtime-environments" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Application Directory and Element Source Code"
-  href="devguide/creating-and-publishing-applications/application-directory-and-element-source-code"
-  description="Navigate JitAI's JAAP-based directory structure—understand element code organization and source code export/import workflows."
->
-  <LinkGrid links={[
+title="Application Directory and Element Source Code"
+href="devguide/creating-and-publishing-applications/application-directory-and-element-source-code"
+description="Navigate JitAI's JAAP-based directory structure—understand element code organization and source code export/import workflows."
+
+> <LinkGrid links={[
+
     { text: "Understanding application directory structure", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#application-directory-structure" },
     { text: "Understanding element code directory structure", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#element-code-directory-structure" },
     { text: "Exporting and importing application source code", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#application-export-import" },
     { text: "Exporting source code zip packages", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#export-source-code-zip" },
     { text: "Exporting to WeChat MiniProgram", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#export-to-wechat-miniprogram" },
     { text: "Importing application source code packages", href: "devguide/creating-and-publishing-applications/application-directory-and-element-source-code#import-application-source-code" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Publishing and Upgrading Applications"
-  href="devguide/creating-and-publishing-applications/publishing-and-upgrading-applications"
-  description="Control your application lifecycle with version management, publishing workflows, and upgrade strategies—including semantic versioning and deployment best practices."
->
-  <LinkGrid links={[
+title="Publishing and Upgrading Applications"
+href="devguide/creating-and-publishing-applications/publishing-and-upgrading-applications"
+description="Control your application lifecycle with version management, publishing workflows, and upgrade strategies—including semantic versioning and deployment best practices."
+
+> <LinkGrid links={[
+
     { text: "Managing application version and publishing", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#application-version-management-and-publish" },
     { text: "Understanding semantic versioning", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#semantic-versioning" },
     { text: "Setting automatic updates", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#force-auto-update" },
@@ -199,16 +222,17 @@ Master the complete workflow from application creation to distributed deployment
     { text: "Including initialization data", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#include-initialization-data" },
     { text: "Upgrading application versions", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#application-version-updates" },
     { text: "Planning application deployment strategies", href: "devguide/creating-and-publishing-applications/publishing-and-upgrading-applications#application-deployment-strategies" }
-  ]} />
+
+]} />
 </IndexCard>
 
-
 <IndexCard
-  title="Runtime Environment Management"
-  href="devguide/creating-and-publishing-applications/runtime-environment-management"
-  description="Configure and manage runtime environments—create deployment targets, organize node clusters, and control application deployment strategies."
->
-  <LinkGrid links={[
+title="Runtime Environment Management"
+href="devguide/creating-and-publishing-applications/runtime-environment-management"
+description="Configure and manage runtime environments—create deployment targets, organize node clusters, and control application deployment strategies."
+
+> <LinkGrid links={[
+
     { text: "Understanding runtime environments", href: "devguide/creating-and-publishing-applications/runtime-environment-management#what-is-runtime-environment" },
     { text: "Managing node local default runtime environment", href: "devguide/creating-and-publishing-applications/runtime-environment-management#node-local-default-runtime-environment" },
     { text: "Creating new runtime environments", href: "devguide/creating-and-publishing-applications/runtime-environment-management#createnewrunenvironment" },
@@ -220,15 +244,17 @@ Master the complete workflow from application creation to distributed deployment
     { text: "Deploying applications in runtime environments", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-application-in-runtime-environment" },
     { text: "Deploying in production mode", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-production-mode" },
     { text: "Deploying in development mode", href: "devguide/creating-and-publishing-applications/runtime-environment-management#deploy-development-mode" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Distributed Cluster Architecture for Unlimited Horizontal Scaling"
-  href="devguide/creating-and-publishing-applications/distributed-cluster-architecture"
-  description="Build infinitely scalable distributed architectures—design enterprise cluster topologies for high availability and performance at scale."
->
-  <LinkGrid links={[
+title="Distributed Cluster Architecture for Unlimited Horizontal Scaling"
+href="devguide/creating-and-publishing-applications/distributed-cluster-architecture"
+description="Build infinitely scalable distributed architectures—design enterprise cluster topologies for high availability and performance at scale."
+
+> <LinkGrid links={[
+
     { text: "Understanding the four-layer architecture model", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#four-layer-architecture" },
     { text: "Designing enterprise cluster deployment architecture", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#enterprise-cluster-deployment" },
     { text: "Implementing typical deployment topology", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#typical-deployment-topology" },
@@ -241,23 +267,25 @@ Master the complete workflow from application creation to distributed deployment
     { text: "Managing version constraints", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#version-management-constraints" },
     { text: "Configuring network access constraints", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#network-access-constraints" },
     { text: "Following deployment best practices", href: "devguide/creating-and-publishing-applications/distributed-cluster-architecture#deployment-best-practices" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
-
 ## Frontend portals and pages {#frontend-portals-pages}
+
 Craft beautiful, intuitive user interfaces. Build portal navigation, construct dynamic pages, design component layouts, and manage data flows—everything you need for exceptional user experiences.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Creating Portals"
-  href="devguide/shell-and-page/portal-navigation-design"
-  description="Design role-based portal interfaces—configure navigation menus, set permission controls, and deliver personalized user experiences."
->
-  <LinkGrid links={[
+title="Creating Portals"
+href="devguide/shell-and-page/portal-navigation-design"
+description="Design role-based portal interfaces—configure navigation menus, set permission controls, and deliver personalized user experiences."
+
+> <LinkGrid links={[
+
     { text: "Application built-in portals", href: "devguide/shell-and-page/portal-navigation-design#application-built-in-portals" },
     { text: "Developer portal", href: "devguide/shell-and-page/portal-navigation-design#developer-portal" },
     { text: "Manager portal", href: "devguide/shell-and-page/portal-navigation-design#manager-portal" },
@@ -284,7 +312,8 @@ Craft beautiful, intuitive user interfaces. Build portal navigation, construct d
     { text: "Application and workflow entries", href: "devguide/shell-and-page/portal-navigation-design#application-and-workflow-entries" },
     { text: "Profile entry", href: "devguide/shell-and-page/portal-navigation-design#profile-entry" },
     { text: "Enabling AI assistant", href: "devguide/shell-and-page/portal-navigation-design#integrating-ai-assistants" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
@@ -294,11 +323,12 @@ Craft beautiful, intuitive user interfaces. Build portal navigation, construct d
 />
 
 <IndexCard
-  title="Creating Generic Pages"
-  href="devguide/shell-and-page/generic-page"
-  description="Build page interfaces visually—drag and drop components, configure events, and create rich interactive experiences without writing code."
->
-  <LinkGrid links={[
+title="Creating Generic Pages"
+href="devguide/shell-and-page/generic-page"
+description="Build page interfaces visually—drag and drop components, configure events, and create rich interactive experiences without writing code."
+
+> <LinkGrid links={[
+
     { text: "Creating generic pages", href: "devguide/shell-and-page/generic-page" },
     { text: "Visual page editor", href: "devguide/shell-and-page/generic-page#visual-page-editor" },
     { text: "Component common operations", href: "devguide/shell-and-page/generic-page#component-common-operations" },
@@ -307,15 +337,17 @@ Craft beautiful, intuitive user interfaces. Build portal navigation, construct d
     { text: "Page events", href: "devguide/shell-and-page/generic-page#page-events" },
     { text: "Shortcuts", href: "devguide/shell-and-page/generic-page#shortcuts" },
     { text: "Enabling AI assistant for page", href: "devguide/shell-and-page/generic-page#enabling-ai-assistant" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="AI Data Management Page"
-  href="devguide/shell-and-page/ai-data-management-page"
-  description="Leverage AI-powered data management—intelligently browse, filter, edit, and perform batch operations with built-in assistance."
->
-  <LinkGrid columns={2} links={[
+title="AI Data Management Page"
+href="devguide/shell-and-page/ai-data-management-page"
+description="Leverage AI-powered data management—intelligently browse, filter, edit, and perform batch operations with built-in assistance."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Create AI Data Management Page", href: "devguide/shell-and-page/ai-data-management-page#create-ai-data-management-page" },
     { text: "Limit Page Table Query Data Through Default Filter Conditions", href: "devguide/shell-and-page/ai-data-management-page#limit-page-table-query-data-through-default-filter-conditions" },
     { text: "Configure Default Data Sort Rules", href: "devguide/shell-and-page/ai-data-management-page#configure-default-data-sort-rules" },
@@ -325,153 +357,174 @@ Craft beautiful, intuitive user interfaces. Build portal navigation, construct d
     { text: "Configure Fields Displayed in Batch Edit Form", href: "devguide/shell-and-page/ai-data-management-page#configure-fields-displayed-in-batch-edit-form" },
     { text: "Enable AI Data Management Assistant", href: "devguide/shell-and-page/ai-data-management-page#enable-ai-data-management-assistant" },
     { text: "Convert to Generic Page for Modification", href: "devguide/shell-and-page/ai-data-management-page#convert-to-generic-page-for-modification" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="AI Data Analysis Page"
-  href="devguide/shell-and-page/ai-data-analysis-page"
-  description="Generate data visualizations using natural language—AI creates charts from your descriptions and lets you adjust styles and dimensions on the fly."
->
-  <LinkGrid links={[
+title="AI Data Analysis Page"
+href="devguide/shell-and-page/ai-data-analysis-page"
+description="Generate data visualizations using natural language—AI creates charts from your descriptions and lets you adjust styles and dimensions on the fly."
+
+> <LinkGrid links={[
+
     { text: "Create AI data analysis page", href: "devguide/shell-and-page/ai-data-analysis-page#create-ai-data-analysis-page" },
     { text: "Page configuration", href: "devguide/shell-and-page/ai-data-analysis-page#page-configuration" },
     { text: "Runtime effects demo", href: "devguide/shell-and-page/ai-data-analysis-page#runtime-effects" },
     { text: "Full code development", href: "devguide/shell-and-page/ai-data-analysis-page#full-code-development" },
     { text: "Quick create", href: "devguide/shell-and-page/ai-data-analysis-page#quick-create" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Data Entry Pages"
-  href="devguide/shell-and-page/data-entry-page"
-  description="Rapidly build data entry forms for streamlined data collection and submission workflows."
->
-  <LinkGrid links={[
+title="Data Entry Pages"
+href="devguide/shell-and-page/data-entry-page"
+description="Rapidly build data entry forms for streamlined data collection and submission workflows."
+
+> <LinkGrid links={[
+
     { text: "Creating a data entry page", href: "devguide/shell-and-page/data-entry-page#creating-data-entry-page" },
     { text: "Configuring viewable and editable fields", href: "devguide/shell-and-page/data-entry-page#configuring-viewable-editable-fields" },
     { text: "Showing enter again button after submission", href: "devguide/shell-and-page/data-entry-page#showing-enter-again-button-after-submission" },
     { text: "Showing result feedback after submission", href: "devguide/shell-and-page/data-entry-page#showing-result-feedback-after-submission" },
     { text: "Converting to generic page for modification", href: "devguide/shell-and-page/data-entry-page#converting-to-generic-page-for-modification" }
-  ]} />
+
+]} />
 </IndexCard>
 
-
 <IndexCard
-  title="Markdown Page"
-  href="devguide/shell-and-page/markdown-page"
-  description="Create document-rich pages with full Markdown support—perfect for documentation, guides, and formatted content."
->
-  <LinkGrid links={[
+title="Markdown Page"
+href="devguide/shell-and-page/markdown-page"
+description="Create document-rich pages with full Markdown support—perfect for documentation, guides, and formatted content."
+
+> <LinkGrid links={[
+
     { text: "Create Markdown Page", href: "devguide/shell-and-page/markdown-page#create-markdown-page" },
     { text: "Markdown Syntax", href: "devguide/shell-and-page/markdown-page#markdown-syntax" }
-  ]} />
+
+]} />
 </IndexCard>
 
-
 <IndexCard
-  title="Full Code Page Development"
-  href="devguide/shell-and-page/full-code-page-development"
-  description="Take full control with code-based page development—implement complex business logic and create fully customized interfaces."
->
-  <LinkGrid columns={2} links={[
+title="Full Code Page Development"
+href="devguide/shell-and-page/full-code-page-development"
+description="Take full control with code-based page development—implement complex business logic and create fully customized interfaces."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Creating React full-code pages", href: "devguide/shell-and-page/full-code-page-development#creating-react-full-code-pages" },
     { text: "Creating Vue full-code pages", href: "devguide/shell-and-page/full-code-page-development#creating-vue-full-code-pages" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
 ## Using AI in portals and pages {#using-ai-portals-pages}
+
 Elevate user experiences with AI-powered intelligence. Integrate AI assistants, agents, and smart components into portals and pages for personalized assistance and automated workflows.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Using AI Assistant in Portals"
-  href="devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals"
-  description="Embed AI assistants into portal interfaces—provide users with intelligent, contextual help throughout their workflow."
->
-  <LinkGrid links={[
+title="Using AI Assistant in Portals"
+href="devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals"
+description="Embed AI assistants into portal interfaces—provide users with intelligent, contextual help throughout their workflow."
+
+> <LinkGrid links={[
+
     { text: "Configuring AI assistant", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals#configuring-ai-assistant" },
     { text: "Runtime effects", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals#runtime-effects" },
     { text: "Feature highlights", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals#feature-highlights" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Using AI Assistant in Component Pages"
-  href="devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages"
-  description="Enhance component pages with embedded AI assistants—deliver contextual help and intelligent interactions for task-specific workflows."
->
-  <LinkGrid links={[
+title="Using AI Assistant in Component Pages"
+href="devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages"
+description="Enhance component pages with embedded AI assistants—deliver contextual help and intelligent interactions for task-specific workflows."
+
+> <LinkGrid links={[
+
     { text: "Enabling AI Assistant", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#enable-ai-assistant" },
     { text: "AI assistant configuration", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#ai-assistant-configuration" },
     { text: "AI assistant event subscription", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#ai-assistant-event-subscription" },
     { text: "Send AI messages in pages", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#send-ai-message" },
     { text: "Direct call to AI assistant", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#call-ai-assistant" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Using AI Elements in Pages"
-  href="devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages"
-  description="Invoke AI elements directly from pages—leverage AI agents, LLM services, and knowledge bases for dynamic, intelligent content generation."
->
-  <LinkGrid links={[
+title="Using AI Elements in Pages"
+href="devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages"
+description="Invoke AI elements directly from pages—leverage AI agents, LLM services, and knowledge bases for dynamic, intelligent content generation."
+
+> <LinkGrid links={[
+
     { text: "Using AI Assistant in pages", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#using-in-pages" },
     { text: "Visual calling", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#visual-calling" },
     { text: "Full code calling", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#full-code-calling" },
     { text: "Using AI agent in pages", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#using-ai-agent-in-pages" },
     { text: "Using large language models in pages", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#using-large-language-models-in-pages" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
 ## Calling business elements in pages {#calling-business-elements-pages}
+
 Power your pages with business logic and data operations. Invoke service functions and data model functions to build dynamic, data-driven interfaces with real-time processing capabilities.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Calling Service Functions in Pages"
-  href="devguide/calling-business-elements-in-pages/calling-service-functions-in-pages"
-  description="Execute business logic directly from pages—invoke service functions to process data, integrate external systems, and generate dynamic content."
->
-  <LinkGrid links={[
+title="Calling Service Functions in Pages"
+href="devguide/calling-business-elements-in-pages/calling-service-functions-in-pages"
+description="Execute business logic directly from pages—invoke service functions to process data, integrate external systems, and generate dynamic content."
+
+> <LinkGrid links={[
+
     { text: "Invoking service functions in standard pages", href: "devguide/calling-business-elements-in-pages/calling-service-functions-in-pages#calling-service-functions-in-standard-pages" },
     { text: "Invoking service functions in full-code pages", href: "devguide/calling-business-elements-in-pages/calling-service-functions-in-pages#calling-service-functions-in-full-code-pages" },
     { text: "Handling complex parameters", href: "devguide/calling-business-elements-in-pages/calling-service-functions-in-pages#complex-parameter-handling" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Calling Data Model Functions in Pages"
-  href="devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages"
-  description="Perform CRUD operations and complex queries—invoke data model functions from pages for real-time database interactions and data display."
->
-  <LinkGrid links={[
+title="Calling Data Model Functions in Pages"
+href="devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages"
+description="Perform CRUD operations and complex queries—invoke data model functions from pages for real-time database interactions and data display."
+
+> <LinkGrid links={[
+
     { text: "Calling syntax", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#calling-syntax" },
     { text: "Basic syntax in full-code pages", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#basic-syntax-in-full-code-pages" },
     { text: "Data operation capabilities", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#data-operation-capabilities" },
     { text: "Related documentation", href: "devguide/calling-business-elements-in-pages/calling-data-model-functions-in-pages#related-documentation" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
 ## Full-code UI components in pages {#fullcode-ui-components-pages}
+
 Build advanced custom UI components with complete programming control. Create sophisticated interactive elements, handle complex events, and deliver rich experiences beyond standard components.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="UI Component Interface Specifications"
-  href="devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications"
-  description="Master full-code component development—understand interface specifications, props management, state handling, and lifecycle methods."
->
-  <LinkGrid columns={2} links={[
+title="UI Component Interface Specifications"
+href="devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications"
+description="Master full-code component development—understand interface specifications, props management, state handling, and lifecycle methods."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Component interface architecture", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#component-interface-architecture" },
     { text: "Core interface definitions", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#core-interface-definitions" },
     { text: "Interface interaction mechanism", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-interaction-mechanism" },
@@ -479,15 +532,17 @@ Build advanced custom UI components with complete programming control. Create so
     { text: "Interface runtime sequence", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-runtime-sequence" },
     { text: "Interface invocation explanation", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#interface-invocation-explanation" },
     { text: "Related documentation", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#related-documentation" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Calling Page and Component Functions in Full-Code Components"
-  href="devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components"
-  description="Integrate full-code components seamlessly—invoke page functions and communicate with other components for cohesive interactions."
->
-  <LinkGrid columns={2} links={[
+title="Calling Page and Component Functions in Full-Code Components"
+href="devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components"
+description="Integrate full-code components seamlessly—invoke page functions and communicate with other components for cohesive interactions."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Calling principle", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#calling-principle" },
     { text: "Practical examples", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#practical-examples" },
     { text: "Basic component calling", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#basic-component-calling" },
@@ -495,15 +550,17 @@ Build advanced custom UI components with complete programming control. Create so
     { text: "Common component methods", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#common-component-methods" },
     { text: "Basic calling pattern", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#basic-calling-pattern" },
     { text: "Related documentation", href: "devguide/fullcode-ui-components-in-pages/calling-page-and-component-functions-in-fullcode-components#related-documentation" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Emitting Events"
-  href="devguide/fullcode-ui-components-in-pages/emitting-events"
-  description="Enable component communication with custom events—emit and handle events between full-code components, pages, and parent containers."
->
-  <LinkGrid columns={2} links={[
+title="Emitting Events"
+href="devguide/fullcode-ui-components-in-pages/emitting-events"
+description="Enable component communication with custom events—emit and handle events between full-code components, pages, and parent containers."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Event Subscription Principles", href: "devguide/fullcode-ui-components-in-pages/emitting-events#event-subscription-principles" },
     { text: "Responding to Events in Full-Code Components", href: "devguide/fullcode-ui-components-in-pages/emitting-events#respond-in-custom-components" },
     { text: "Publishing Custom Events", href: "devguide/fullcode-ui-components-in-pages/emitting-events#publishing-custom-events" },
@@ -511,34 +568,39 @@ Build advanced custom UI components with complete programming control. Create so
     { text: "Standard Component Events", href: "devguide/fullcode-ui-components-in-pages/emitting-events#standard-component-events" },
     { text: "Custom Events in Full-Code Components", href: "devguide/fullcode-ui-components-in-pages/emitting-events#custom-component-events" },
     { text: "Bidirectional Communication Example", href: "devguide/fullcode-ui-components-in-pages/emitting-events#bidirectional-communication-example" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Calling Full-Code Component Functions in Page Code"
-  href="devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code"
-  description="Control full-code components from page code—invoke exposed functions to manage component behavior and orchestrate data flow."
->
-  <LinkGrid links={[
+title="Calling Full-Code Component Functions in Page Code"
+href="devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code"
+description="Control full-code components from page code—invoke exposed functions to manage component behavior and orchestrate data flow."
+
+> <LinkGrid links={[
+
     { text: "Calling mechanism", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#calling-mechanism" },
     { text: "Calling timing and lifecycle", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#calling-timing-and-lifecycle" },
     { text: "Related documentation", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code#related-documentation" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
 ## Using functional components in pages {#using-functional-components-pages}
+
 Leverage a powerful component library for rapid development. Drag and drop tables, forms, charts, and more—build complex interfaces with simple, intuitive visual tools.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Form Components"
-  href="devguide/using-functional-components-in-pages/form-components"
-  description="Build sophisticated forms with validation, permission controls, and complex business rules—collect and manage data effortlessly."
->
-  <LinkGrid columns={2} links={[
+title="Form Components"
+href="devguide/using-functional-components-in-pages/form-components"
+description="Build sophisticated forms with validation, permission controls, and complex business rules—collect and manage data effortlessly."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Basic Configuration and Item Management", href: "devguide/using-functional-components-in-pages/form-components#basic-configuration-and-item-management" },
     { text: "Field Validation and Interaction", href: "devguide/using-functional-components-in-pages/form-components#field-validation-and-interaction" },
     { text: "Layout Design", href: "devguide/using-functional-components-in-pages/form-components#layout-design" },
@@ -549,15 +611,17 @@ Leverage a powerful component library for rapid development. Drag and drop table
     { text: "Batch Edit Form Events and Interaction", href: "devguide/using-functional-components-in-pages/form-components#batch-edit-form-events-and-interaction" },
     { text: "Data Correction Configuration", href: "devguide/using-functional-components-in-pages/form-components#data-correction-configuration" },
     { text: "Data Correction Usage", href: "devguide/using-functional-components-in-pages/form-components#data-correction-usage" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Basic Table"
-  href="devguide/using-functional-components-in-pages/table-components#basic-table"
-  description="Display data with rich table features—bind data sources, customize fields, enable pagination, sorting, and inline editing."
->
-  <LinkGrid columns={2} links={[
+title="Basic Table"
+href="devguide/using-functional-components-in-pages/table-components#basic-table"
+description="Display data with rich table features—bind data sources, customize fields, enable pagination, sorting, and inline editing."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Set Data Source", href: "devguide/using-functional-components-in-pages/table-components#set-data-source" },
     { text: "Custom Display Fields", href: "devguide/using-functional-components-in-pages/table-components#custom-display-fields" },
     { text: "Display Fields by Group", href: "devguide/using-functional-components-in-pages/table-components#display-fields-by-group" },
@@ -577,35 +641,40 @@ Leverage a powerful component library for rapid development. Drag and drop table
     { text: "Set Related Data Levels and No Data Text", href: "devguide/using-functional-components-in-pages/table-components#set-related-data-levels-and-no-data-text" },
     { text: "Table Events", href: "devguide/using-functional-components-in-pages/table-components#table-events" },
     { text: "Table Component Variables", href: "devguide/using-functional-components-in-pages/table-components#table-component-variables" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Grouped Table"
-  href="devguide/using-functional-components-in-pages/table-components#grouped-table"
-  description="Organize data hierarchically—group table rows by specified fields for structured data management and analysis."
->
-  <LinkGrid links={[
+title="Grouped Table"
+href="devguide/using-functional-components-in-pages/table-components#grouped-table"
+description="Organize data hierarchically—group table rows by specified fields for structured data management and analysis."
+
+> <LinkGrid links={[
+
     { text: "Grouped Field Configuration", href: "devguide/using-functional-components-in-pages/table-components#grouped-field-configuration" },
     { text: "Same Configuration as Basic Table", href: "devguide/using-functional-components-in-pages/table-components#same-configuration-as-basic-table" },
     { text: "Same Events as Basic Table", href: "devguide/using-functional-components-in-pages/table-components#same-events-as-basic-table" },
     { text: "Same Component Variables as Basic Table", href: "devguide/using-functional-components-in-pages/table-components#same-component-variables-as-basic-table" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Cascaded Table"
-  href="devguide/using-functional-components-in-pages/table-components#cascaded-table"
-  description="Display parent-child data hierarchies—manage tree structures with expandable rows and nested relationships."
->
-  <LinkGrid links={[
+title="Cascaded Table"
+href="devguide/using-functional-components-in-pages/table-components#cascaded-table"
+description="Display parent-child data hierarchies—manage tree structures with expandable rows and nested relationships."
+
+> <LinkGrid links={[
+
     { text: "Cascaded Table Sample Data", href: "devguide/using-functional-components-in-pages/table-components#cascaded-table-sample-data" },
     { text: "Configure Cascaded Logic Fields", href: "devguide/using-functional-components-in-pages/table-components#configure-cascaded-logic-fields" },
     { text: "Cascaded Table Usage Effects", href: "devguide/using-functional-components-in-pages/table-components#cascaded-table-usage-effects" },
     { text: "Same Configuration as Basic Table", href: "devguide/using-functional-components-in-pages/table-components#same-configuration-as-basic-table" },
     { text: "Same Events as Basic Table", href: "devguide/using-functional-components-in-pages/table-components#same-events-as-basic-table" },
     { text: "Same Table Variables as Basic Table", href: "devguide/using-functional-components-in-pages/table-components#same-table-variables-as-basic-table" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
@@ -619,11 +688,12 @@ Leverage a powerful component library for rapid development. Drag and drop table
     <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', margin: '20px 0'}}>
 
 <IndexCard
-  title="Crosstab"
-  href="devguide/using-functional-components-in-pages/table-components#crosstab"
-  description="Perform multi-dimensional data analysis—create pivot tables with row-column cross-analysis for statistical reports."
->
-  <LinkGrid columns={2} links={[
+title="Crosstab"
+href="devguide/using-functional-components-in-pages/table-components#crosstab"
+description="Perform multi-dimensional data analysis—create pivot tables with row-column cross-analysis for statistical reports."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Initialization Configuration", href: "devguide/using-functional-components-in-pages/table-components#initialization-configuration" },
     { text: "Configure Dimensions and Metrics", href: "devguide/using-functional-components-in-pages/table-components#configure-dimensions-and-metrics" },
     { text: "Statistics by Year/Quarter/Month/Week/Day", href: "devguide/using-functional-components-in-pages/table-components#configure-dimensions-and-metrics" },
@@ -639,15 +709,17 @@ Leverage a powerful component library for rapid development. Drag and drop table
     { text: "Show Total", href: "devguide/using-functional-components-in-pages/table-components#show-total" },
     { text: "Cross Table Events", href: "devguide/using-functional-components-in-pages/table-components#cross-table-events" },
     { text: "Crosstab Component Variables", href: "devguide/using-functional-components-in-pages/table-components#crosstab-component-variables" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Row to Column"
-  href="devguide/using-functional-components-in-pages/table-components#row-to-column"
-  description="Special table mode that converts row data to column display, suitable for dynamic field display scenarios."
->
-  <LinkGrid columns={2} links={[
+title="Row to Column"
+href="devguide/using-functional-components-in-pages/table-components#row-to-column"
+description="Special table mode that converts row data to column display, suitable for dynamic field display scenarios."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Basic Configuration", href: "devguide/using-functional-components-in-pages/table-components#basic-configuration" },
     { text: "Custom Field Names/Alignment", href: "devguide/using-functional-components-in-pages/table-components#basic-configuration" },
     { text: "Custom Field Renderer", href: "devguide/using-functional-components-in-pages/table-components#custom-field-renderer" },
@@ -657,24 +729,28 @@ Leverage a powerful component library for rapid development. Drag and drop table
     { text: "Button Configuration", href: "devguide/using-functional-components-in-pages/table-components#button-configuration" },
     { text: "Row to Column Event", href: "devguide/using-functional-components-in-pages/table-components#row-to-column-event" },
     { text: "Row to Column Component Variables", href: "devguide/using-functional-components-in-pages/table-components#row-to-column-component-variables" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Statistical Charts (Editing in Progress)"
-  description="Rich data visualization chart components supporting bar charts, line charts, pie charts and other chart types."
+title="Statistical Charts (Editing in Progress)"
+description="Rich data visualization chart components supporting bar charts, line charts, pie charts and other chart types."
+
 >
+
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     📝 Documentation is being improved, please stay tuned...
   </div>
 </IndexCard>
 
 <IndexCard
-  title="Tree Components"
-  href="devguide/using-functional-components-in-pages/tree-components"
-  description="Display hierarchical data structures with node expand/collapse and selection operations, providing clear data navigation experience."
->
-  <LinkGrid columns={2} links={[
+title="Tree Components"
+href="devguide/using-functional-components-in-pages/tree-components"
+description="Display hierarchical data structures with node expand/collapse and selection operations, providing clear data navigation experience."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Create Tree Component", href: "devguide/using-functional-components-in-pages/tree-components#create-tree-form-component" },
     { text: "Configure Hierarchical Fields", href: "devguide/using-functional-components-in-pages/tree-components#configure-hierarchy-fields" },
     { text: "Refresh Data on First Load", href: "devguide/using-functional-components-in-pages/tree-components#tree-form-refresh-on-first-load" },
@@ -688,15 +764,17 @@ Leverage a powerful component library for rapid development. Drag and drop table
     { text: "Cascade Tree Refresh Data on First Load", href: "devguide/using-functional-components-in-pages/tree-components#cascade-tree-refresh-on-first-load" },
     { text: "Cascade Tree Node Click Events", href: "devguide/using-functional-components-in-pages/tree-components#cascade-tree-click-node-event" },
     { text: "Cascade Tree Node Selection Events", href: "devguide/using-functional-components-in-pages/tree-components#cascade-tree-select-node-event" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="List Components"
-  href="devguide/using-functional-components-in-pages/list-components"
-  description="Flexible data list display component supporting title, summary, button configuration, suitable for various list display scenarios."
->
-  <LinkGrid columns={2} links={[
+title="List Components"
+href="devguide/using-functional-components-in-pages/list-components"
+description="Flexible data list display component supporting title, summary, button configuration, suitable for various list display scenarios."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Configure List Title", href: "devguide/using-functional-components-in-pages/list-components#configure-list-title" },
     { text: "Set Summary Content", href: "devguide/using-functional-components-in-pages/list-components#set-summary-content" },
     { text: "Show Field Titles in Summary", href: "devguide/using-functional-components-in-pages/list-components#show-field-titles-in-summary" },
@@ -716,53 +794,61 @@ Leverage a powerful component library for rapid development. Drag and drop table
     { text: "Button Event", href: "devguide/using-functional-components-in-pages/list-components#button-event" },
     { text: "List Component Variables", href: "devguide/using-functional-components-in-pages/list-components#list-component-variables" },
     { text: "Refresh List Component", href: "devguide/using-functional-components-in-pages/list-components#refresh-list-component" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Card and Media Display (Editing in Progress)"
-  description="Components for displaying card-style content and media files, including dashboard and gallery functions."
+title="Card and Media Display (Editing in Progress)"
+description="Components for displaying card-style content and media files, including dashboard and gallery functions."
+
 >
+
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     📝 Documentation is being improved, please stay tuned...
   </div>
 </IndexCard>
 
 <IndexCard
-  title="Model Filter"
-  href="devguide/using-functional-components-in-pages/filter-components#model-filters"
-  description="Advanced filtering component based on data models, supporting simple, complex and free filtering modes."
->
-  <LinkGrid links={[
+title="Model Filter"
+href="devguide/using-functional-components-in-pages/filter-components#model-filters"
+description="Advanced filtering component based on data models, supporting simple, complex and free filtering modes."
+
+> <LinkGrid links={[
+
     { text: "Simple Filter", href: "devguide/using-functional-components-in-pages/filter-components#simple-filter" },
     { text: "Complex Filter", href: "devguide/using-functional-components-in-pages/filter-components#complex-filter" },
     { text: "Free Filter", href: "devguide/using-functional-components-in-pages/filter-components#free-filter" },
     { text: "Layout Settings", href: "devguide/using-functional-components-in-pages/filter-components#layout-settings" },
     { text: "Filter Usage", href: "devguide/using-functional-components-in-pages/filter-components#filter-usage" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Universal Filter"
-  href="devguide/using-functional-components-in-pages/filter-components#universal-filters"
-  description="Flexible universal filtering component supporting custom field configuration and multiple trigger modes."
->
-  <LinkGrid columns={2} links={[
+title="Universal Filter"
+href="devguide/using-functional-components-in-pages/filter-components#universal-filters"
+description="Flexible universal filtering component supporting custom field configuration and multiple trigger modes."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Filter Field Configuration", href: "devguide/using-functional-components-in-pages/filter-components#filter-field-configuration" },
     { text: "Quick Layout", href: "devguide/using-functional-components-in-pages/filter-components#quick-layout" },
     { text: "Show Query/Reset Buttons", href: "devguide/using-functional-components-in-pages/filter-components#show-query-reset-buttons" },
     { text: "Condition Change Trigger Query", href: "devguide/using-functional-components-in-pages/filter-components#condition-change-trigger-query" },
     { text: "First Load Filter", href: "devguide/using-functional-components-in-pages/filter-components#first-load-filter" },
     { text: "Filter Usage", href: "devguide/using-functional-components-in-pages/filter-components#universal-filter-usage" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Calendar"
-  href="devguide/using-functional-components-in-pages/time-management-components#calendar"
-  description="Schedule management and time arrangement component supporting event creation, editing, and view switching."
->
-  <LinkGrid columns={2} links={[
+title="Calendar"
+href="devguide/using-functional-components-in-pages/time-management-components#calendar"
+description="Schedule management and time arrangement component supporting event creation, editing, and view switching."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Data Model Preparation and Component Creation", href: "devguide/using-functional-components-in-pages/time-management-components#data-model-preparation-and-component-creation" },
     { text: "Basic Configuration", href: "devguide/using-functional-components-in-pages/time-management-components#basic-configuration" },
     { text: "Schedule Type", href: "devguide/using-functional-components-in-pages/time-management-components#schedule-type" },
@@ -774,30 +860,34 @@ Leverage a powerful component library for rapid development. Drag and drop table
     { text: "Refresh Data on First Component Load", href: "devguide/using-functional-components-in-pages/time-management-components#refresh-data-on-first-component-load" },
     { text: "New Schedule", href: "devguide/using-functional-components-in-pages/time-management-components#new-schedule" },
     { text: "Drag Agenda", href: "devguide/using-functional-components-in-pages/time-management-components#drag-agenda" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Timeline"
-  href="devguide/using-functional-components-in-pages/time-management-components#timeline"
-  description="Timeline display component suitable for showing historical records and process progress."
->
-  <LinkGrid links={[
+title="Timeline"
+href="devguide/using-functional-components-in-pages/time-management-components#timeline"
+description="Timeline display component suitable for showing historical records and process progress."
+
+> <LinkGrid links={[
+
     { text: "Data Model Preparation and Component Creation", href: "devguide/using-functional-components-in-pages/time-management-components#timeline-data-model-preparation-and-component-creation" },
     { text: "Basic Configuration", href: "devguide/using-functional-components-in-pages/time-management-components#timeline-basic-configuration" },
     { text: "Color Type", href: "devguide/using-functional-components-in-pages/time-management-components#color-type" },
     { text: "Position", href: "devguide/using-functional-components-in-pages/time-management-components#position" },
     { text: "Button Configuration", href: "devguide/using-functional-components-in-pages/time-management-components#timeline-button-configuration" },
     { text: "Refresh Data on First Component Load", href: "devguide/using-functional-components-in-pages/time-management-components#timeline-refresh-data-on-first-component-load" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Gantt Chart"
-  href="devguide/using-functional-components-in-pages/time-management-components#gantt-chart"
-  description="Project management and progress tracking component supporting task dependencies and progress visualization."
->
-  <LinkGrid columns={2} links={[
+title="Gantt Chart"
+href="devguide/using-functional-components-in-pages/time-management-components#gantt-chart"
+description="Project management and progress tracking component supporting task dependencies and progress visualization."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Data Model Preparation and Component Creation", href: "devguide/using-functional-components-in-pages/time-management-components#gantt-data-model-preparation-and-component-creation" },
     { text: "Basic Configuration", href: "devguide/using-functional-components-in-pages/time-management-components#gantt-basic-configuration" },
     { text: "Progress", href: "devguide/using-functional-components-in-pages/time-management-components#progress" },
@@ -810,37 +900,52 @@ Leverage a powerful component library for rapid development. Drag and drop table
     { text: "Refresh Data on First Component Load", href: "devguide/using-functional-components-in-pages/time-management-components#gantt-refresh-data-on-first-component-load" },
     { text: "Drag Date Progress", href: "devguide/using-functional-components-in-pages/time-management-components#drag-date-progress" },
     { text: "Allow Add Schedule", href: "devguide/using-functional-components-in-pages/time-management-components#allow-add-schedule" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Button Components"
-  href="devguide/using-functional-components-in-pages/button-components"
-  description="Various types of button components supporting different styles and interactive effects."
->
-  <LinkGrid columns={2} links={[
+title="Button Components"
+href="devguide/using-functional-components-in-pages/button-components"
+description="Various types of button components supporting different styles and interactive effects."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Button Component Creation", href: "devguide/using-functional-components-in-pages/button-components#button-component-creation" },
     { text: "Button Title/Icon/Type/Size Configuration", href: "devguide/using-functional-components-in-pages/button-components#title-icon-type-configuration" },
     { text: "Button Click Event", href: "devguide/using-functional-components-in-pages/button-components#click-event" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Layout Components (Editing in Progress)"
-  href="devguide/using-functional-components-in-pages/layout-components"
-  description="Page layout and container components including popups, tabs and other interface structural elements."
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Documentation is being improved, please stay tuned...
-  </div>
+title="Layout Components"
+href="devguide/using-functional-components-in-pages/layout-components"
+description="Configure page layout and container components, including popups, tabs, collapse panels, and subpage containers."
+
+> <LinkGrid links={[
+
+    { text: "Popup components", href: "devguide/using-functional-components-in-pages/layout-components#popup-components" },
+    { text: "Popup component configuration", href: "devguide/using-functional-components-in-pages/layout-components#popup-components-configuration" },
+    { text: "Popup interaction design", href: "devguide/using-functional-components-in-pages/layout-components#popup-components-interaction-design" },
+    { text: "Tab components", href: "devguide/using-functional-components-in-pages/layout-components#tab-components" },
+    { text: "Tab component configuration", href: "devguide/using-functional-components-in-pages/layout-components#tab-components-configuration" },
+    { text: "Tab interaction design", href: "devguide/using-functional-components-in-pages/layout-components#tab-components-interaction-design" },
+    { text: "Collapse components", href: "devguide/using-functional-components-in-pages/layout-components#collapse-components" },
+    { text: "Collapse component configuration", href: "devguide/using-functional-components-in-pages/layout-components#collapse-components-configuration" },
+    { text: "Collapse interaction design", href: "devguide/using-functional-components-in-pages/layout-components#collapse-components-interaction-design" },
+    { text: "Subpage components", href: "devguide/using-functional-components-in-pages/layout-components#subpage-components" }
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Approval Components"
-  href="devguide/using-functional-components-in-pages/approval-components"
-  description="Workflow-integrated UI components for submitting approval requests, processing approval tasks, and managing approval history with event-driven notifications."
->
-  <LinkGrid columns={2} links={[
+title="Approval Components"
+href="devguide/using-functional-components-in-pages/approval-components"
+description="Workflow-integrated UI components for submitting approval requests, processing approval tasks, and managing approval history with event-driven notifications."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Initiate application component", href: "devguide/using-functional-components-in-pages/approval-components#initiate-application-component" },
     { text: "Creating initiate application component", href: "devguide/using-functional-components-in-pages/approval-components#create-initiate-application-component" },
     { text: "Parameter configuration", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-1" },
@@ -850,28 +955,32 @@ Leverage a powerful component library for rapid development. Drag and drop table
     { text: "Parameter configuration", href: "devguide/using-functional-components-in-pages/approval-components#parameter-configuration-2" },
     { text: "Retaining historical approval records", href: "devguide/using-functional-components-in-pages/approval-components#keep-historical-approval-records" },
     { text: "After processing/refresh events", href: "devguide/using-functional-components-in-pages/approval-components#post-processing-refresh-event-1" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Payment Components"
-  href="devguide/using-functional-components-in-pages/payment-components"
-  description="Functional UI elements enabling multi-platform payment processing with native Alipay and WeChat Pay support for complete transaction lifecycle management."
->
-  <LinkGrid links={[
+title="Payment Components"
+href="devguide/using-functional-components-in-pages/payment-components"
+description="Functional UI elements enabling multi-platform payment processing with native Alipay and WeChat Pay support for complete transaction lifecycle management."
+
+> <LinkGrid links={[
+
     { text: "Creating payment components", href: "devguide/using-functional-components-in-pages/payment-components#payment-component-creation" },
     { text: "Initiate payment function", href: "devguide/using-functional-components-in-pages/payment-components#initiate-payment-function" },
     { text: "Event logic", href: "devguide/using-functional-components-in-pages/payment-components#event-logic" },
     { text: "Component usage", href: "devguide/using-functional-components-in-pages/payment-components#component-usage" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Data Parsing and Import"
-  href="devguide/using-functional-components-in-pages/data-parsing-and-import"
-  description="Powerful data import and parsing tools supporting Excel file batch import, data cleaning, conditional filtering, and master-detail table association import."
->
-  <LinkGrid columns={2} links={[
+title="Data Parsing and Import"
+href="devguide/using-functional-components-in-pages/data-parsing-and-import"
+description="Powerful data import and parsing tools supporting Excel file batch import, data cleaning, conditional filtering, and master-detail table association import."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Import Component", href: "devguide/using-functional-components-in-pages/data-parsing-and-import#import-component" },
     { text: "Adding Import Component to Page", href: "devguide/using-functional-components-in-pages/data-parsing-and-import#add-import-component-to-page" },
     { text: "Import Serial Number Fields", href: "devguide/using-functional-components-in-pages/data-parsing-and-import#import-serial-number-fields" },
@@ -889,15 +998,17 @@ Leverage a powerful component library for rapid development. Drag and drop table
     { text: "Delete Parse Fields", href: "devguide/using-functional-components-in-pages/data-parsing-and-import#delete-parse-fields" },
     { text: "Create Custom Buttons", href: "devguide/using-functional-components-in-pages/data-parsing-and-import#create-custom-buttons" },
     { text: "Post-parse Events", href: "devguide/using-functional-components-in-pages/data-parsing-and-import#post-parse-events" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Full Code Components"
-  href="devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications"
-  description="Fully customized code components supporting highly personalized function implementation."
->
-  <LinkGrid columns={2} links={[
+title="Full Code Components"
+href="devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications"
+description="Fully customized code components supporting highly personalized function implementation."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Component Interface Specifications", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications" },
     { text: "Component Interface Architecture", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#component-interface-architecture" },
     { text: "Core Interface Definitions", href: "devguide/fullcode-ui-components-in-pages/ui-component-interface-specifications#core-interface-definitions" },
@@ -906,7 +1017,8 @@ Leverage a powerful component library for rapid development. Drag and drop table
     { text: "Event Subscription Principles", href: "devguide/fullcode-ui-components-in-pages/emitting-events#event-subscription-principles" },
     { text: "Bidirectional Communication", href: "devguide/fullcode-ui-components-in-pages/emitting-events#bidirectional-communication-example" },
     { text: "Calling Component Functions in Page Code", href: "devguide/fullcode-ui-components-in-pages/calling-fullcode-component-functions-in-page-code" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
@@ -919,29 +1031,33 @@ Leverage a powerful component library for rapid development. Drag and drop table
 </div>
 
 ## AI large language models {#ai-large-language-models}
+
 Integrate leading LLMs like GPT-4, Claude, and Tongyi Qianwen. Enable intelligent dialogue, text generation, and code assistance—with multi-vendor failover and private deployment options.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Create AI Large Language Model Element"
-  href="devguide/ai-llm/create-ai-llm"
-  description="Integrate major LLM providers—configure API keys, set up retry mechanisms, and invoke AI functions in your applications."
->
-  <LinkGrid links={[
+title="Create AI Large Language Model Element"
+href="devguide/ai-llm/create-ai-llm"
+description="Integrate major LLM providers—configure API keys, set up retry mechanisms, and invoke AI functions in your applications."
+
+> <LinkGrid links={[
+
     { text: "Mainstream LLM Vendor Support List", href: "devguide/ai-llm/create-ai-llm#mainstream-llm-vendor-support-list" },
     { text: "Creating LLM vendor elements", href: "devguide/ai-llm/create-ai-llm#creating-llm-vendor-elements" },
     { text: "Retry and backup API key mechanism", href: "devguide/ai-llm/create-ai-llm#retry-backup-api-key-mechanism" },
     { text: "Private LLM integration", href: "devguide/ai-llm/create-ai-llm#private-llm-integration" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="LLM Input and Output"
-  href="devguide/ai-llm/llm-input-output"
-  description="Configure LLM inputs and outputs—optimize prompts, model parameters, and response handling for peak performance."
->
-  <LinkGrid links={[
+title="LLM Input and Output"
+href="devguide/ai-llm/llm-input-output"
+description="Configure LLM inputs and outputs—optimize prompts, model parameters, and response handling for peak performance."
+
+> <LinkGrid links={[
+
     { text: "Calling LLM in pages", href: "devguide/ai-llm/llm-input-output#call-llm-in-pages" },
     { text: "Function input 1: Setting the language model", href: "devguide/ai-llm/llm-input-output#setting-language-model" },
     { text: "Function input 2: Using prompts", href: "devguide/ai-llm/llm-input-output#using-prompts" },
@@ -951,14 +1067,17 @@ Integrate leading LLMs like GPT-4, Claude, and Tongyi Qianwen. Enable intelligen
     { text: "runLlm", href: "devguide/ai-llm/llm-input-output#runllm" },
     { text: "embedDocuments", href: "devguide/ai-llm/llm-input-output#embeddocuments" },
     { text: "rerankDocuments", href: "devguide/ai-llm/llm-input-output#rerankdocuments" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Implement multimodal AIGC using LLM functions"
-  href="devguide/ai-llm/implement-multimodal-aigc"
-  description="Discover how to leverage LLM functions to create multimodal AI-generated content with text, images, and other media types."
+title="Implement multimodal AIGC using LLM functions"
+href="devguide/ai-llm/implement-multimodal-aigc"
+description="Discover how to leverage LLM functions to create multimodal AI-generated content with text, images, and other media types."
+
 >
+
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     📝 Coming soon...
   </div>
@@ -967,16 +1086,18 @@ Integrate leading LLMs like GPT-4, Claude, and Tongyi Qianwen. Enable intelligen
 </div>
 
 ## AI knowledge base {#ai-knowledge-base}
+
 Transform enterprise documents into intelligent, searchable knowledge bases. Enable automatic document processing, intelligent chunking, and semantic retrieval—empowering AI to answer questions accurately from your organizational knowledge.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Creating Knowledge Base Elements"
-  href="devguide/knowledge-base/create-knowledge-elements"
-  description="Build AI knowledge bases—understand core components, system architecture, and the principles behind semantic search."
->
-  <LinkGrid columns={2} links={[
+title="Creating Knowledge Base Elements"
+href="devguide/knowledge-base/create-knowledge-elements"
+description="Build AI knowledge bases—understand core components, system architecture, and the principles behind semantic search."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Creating AI knowledge base elements", href: "devguide/knowledge-base/create-knowledge-elements#create-ai-knowledge-base-element" },
     { text: "How it works", href: "devguide/knowledge-base/create-knowledge-elements#principle-description" },
     { text: "Core components", href: "devguide/knowledge-base/create-knowledge-elements#core-components" },
@@ -984,56 +1105,64 @@ Transform enterprise documents into intelligent, searchable knowledge bases. Ena
     { text: "Technical principles", href: "devguide/knowledge-base/create-knowledge-elements#technical-principles" },
     { text: "Data processing flow", href: "devguide/knowledge-base/create-knowledge-elements#data-processing-flow" },
     { text: "Retrieval mechanism", href: "devguide/knowledge-base/create-knowledge-elements#retrieval-mechanism" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Knowledge Base Document Management"
-  href="devguide/knowledge-base/knowledge-base-document-management"
-  description="Manage documents, fine-tune parameters, and optimize performance—test queries and configure vectorization settings."
->
-  <LinkGrid columns={2} links={[
+title="Knowledge Base Document Management"
+href="devguide/knowledge-base/knowledge-base-document-management"
+description="Manage documents, fine-tune parameters, and optimize performance—test queries and configure vectorization settings."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Knowledge base settings", href: "devguide/knowledge-base/knowledge-base-document-management#knowledge-base-settings" },
     { text: "Query testing", href: "devguide/knowledge-base/knowledge-base-document-management#query-testing" },
     { text: "Vectorization configuration", href: "devguide/knowledge-base/knowledge-base-document-management#vectorization-configuration" },
     { text: "Knowledge base configuration parameters", href: "devguide/knowledge-base/knowledge-base-document-management#knowledge-base-configuration-parameters" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Full-Text and Semantic Search Using Knowledge Base Elements"
-  href="devguide/knowledge-base/keyword-and-semantic-search"
-  description="Learn how to call knowledge bases in backend visual programming and understand how configuration settings participate in the query flow."
->
-  <LinkGrid columns={2} links={[
+title="Full-Text and Semantic Search Using Knowledge Base Elements"
+href="devguide/knowledge-base/keyword-and-semantic-search"
+description="Learn how to call knowledge bases in backend visual programming and understand how configuration settings participate in the query flow."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Calling AI knowledge base in backend visual programming", href: "devguide/knowledge-base/keyword-and-semantic-search#call-ai-knowledge-base-in-backend-visual-programming" },
     { text: "Semantic search", href: "devguide/knowledge-base/keyword-and-semantic-search#semantic-search" },
     { text: "Adding a document", href: "devguide/knowledge-base/keyword-and-semantic-search#adding-document" },
     { text: "Deleting a document", href: "devguide/knowledge-base/keyword-and-semantic-search#deleting-document" },
     { text: "Searching by keywords", href: "devguide/knowledge-base/keyword-and-semantic-search#searching-by-keywords" },
     { text: "How AI knowledge base settings participate in query flow", href: "devguide/knowledge-base/keyword-and-semantic-search#how-ai-knowledge-base-settings-participate-in-query-flow" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Integrating Knowledge Base into Agent"
-  href="devguide/knowledge-base/integrate-knowledge-base-into-agent"
-  description="Integrate knowledge base into Agent to implement RAG."
->
-  <LinkGrid links={[
+title="Integrating Knowledge Base into Agent"
+href="devguide/knowledge-base/integrate-knowledge-base-into-agent"
+description="Integrate knowledge base into Agent to implement RAG."
+
+> <LinkGrid links={[
+
     { text: "Relationship Between Knowledge Base and Agent", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#relationship-between-knowledge-base-and-agent" },
     { text: "Technical Integration Principles", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#technical-integration-principles" },
     { text: "Integration Modes", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#integration-modes" },
     { text: "Using Knowledge Base in Agent", href: "devguide/knowledge-base/integrate-knowledge-base-into-agent#using-knowledge-base-in-agent" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Deploying Vector Databases as Standalone Services"
-  href="devguide/knowledge-base/vector-database-standalone-deployment"
-  description="Intelligent storage engine for enterprise knowledge. Convert text into vector data to achieve semantic-level precise search."
->
-  <LinkGrid columns={2} links={[
+title="Deploying Vector Databases as Standalone Services"
+href="devguide/knowledge-base/vector-database-standalone-deployment"
+description="Intelligent storage engine for enterprise knowledge. Convert text into vector data to achieve semantic-level precise search."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Standalone deployment solution: Chroma vector database", href: "devguide/knowledge-base/vector-database-standalone-deployment#chroma-standalone-deployment" },
     { text: "Advantages of standalone deployment", href: "devguide/knowledge-base/vector-database-standalone-deployment#advantages-of-standalone-deployment" },
     { text: "Installing Chroma for standalone deployment", href: "devguide/knowledge-base/vector-database-standalone-deployment#chroma-installation" },
@@ -1044,14 +1173,17 @@ Transform enterprise documents into intelligent, searchable knowledge bases. Ena
     { text: "create_collection", href: "devguide/knowledge-base/vector-database-standalone-deployment#create_collection" },
     { text: "add_vectors", href: "devguide/knowledge-base/vector-database-standalone-deployment#add_vectors" },
     { text: "query_vectors", href: "devguide/knowledge-base/vector-database-standalone-deployment#query_vectors" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="AI Knowledge Base API Exposure"
-  href="devguide/knowledge-base/ai-knowledge-base-api-exposure"
-  description="Expose AI Knowledge Base capabilities through API interfaces for external system integration."
+title="AI Knowledge Base API Exposure"
+href="devguide/knowledge-base/ai-knowledge-base-api-exposure"
+description="Expose AI Knowledge Base capabilities through API interfaces for external system integration."
+
 >
+
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     📝 Coming soon...
   </div>
@@ -1060,16 +1192,18 @@ Transform enterprise documents into intelligent, searchable knowledge bases. Ena
 </div>
 
 ## AI agent {#ai-agent}
+
 Build intelligent agents with reasoning and action capabilities. Configure prompts and tools to enable AI-powered autonomous problem analysis, solution design, and task execution for complex business scenarios.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Creating AI Agents"
-  href="devguide/ai-agent/create-ai-agent"
-  description="Create ReActAgents with system prompts, model selection, capability descriptions, and runtime state storage configuration."
->
-  <LinkGrid columns={2} links={[
+title="Creating AI Agents"
+href="devguide/ai-agent/create-ai-agent"
+description="Create ReActAgents with system prompts, model selection, capability descriptions, and runtime state storage configuration."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Creating ReActAgent", href: "devguide/ai-agent/create-ai-agent#creating-react-agent" },
     { text: "Writing system prompts", href: "devguide/ai-agent/create-ai-agent#writing-system-prompts" },
     { text: "Selecting models and configuring parameters", href: "devguide/ai-agent/create-ai-agent#selecting-models-configuring-parameters" },
@@ -1079,15 +1213,17 @@ Build intelligent agents with reasoning and action capabilities. Configure promp
     { text: "Database storage", href: "devguide/ai-agent/create-ai-agent#database-storage" },
     { text: "Modifying agents in source code mode", href: "devguide/ai-agent/create-ai-agent#modifying-agents-source-code-mode" },
     { text: "Custom callback processors", href: "devguide/ai-agent/create-ai-agent#custom-callback-processors" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Tools in Agent"
-  href="devguide/ai-agent/agent-tools"
-  description="Learn how to add and manage various tools in Agent, including model functions, service functions, MCP services, external APIs, and page functions."
->
-  <LinkGrid columns={2} links={[
+title="Tools in Agent"
+href="devguide/ai-agent/agent-tools"
+description="Learn how to add and manage various tools in Agent, including model functions, service functions, MCP services, external APIs, and page functions."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Calling model functions", href: "devguide/ai-agent/agent-tools#calling-model-functions" },
     { text: "Calling service functions", href: "devguide/ai-agent/agent-tools#calling-service-functions" },
     { text: "Calling MCP servers", href: "devguide/ai-agent/agent-tools#calling-mcp-servers" },
@@ -1099,15 +1235,17 @@ Build intelligent agents with reasoning and action capabilities. Configure promp
     { text: "Tool function call pre/post event triggering", href: "devguide/ai-agent/agent-tools#tool-function-call-pre-post-event-triggering" },
     { text: "Manual confirmation before tool execution", href: "devguide/ai-agent/agent-tools#manual-confirmation-before-tool-execution" },
     { text: "Restricting user roles for tool calls", href: "devguide/ai-agent/agent-tools#restricting-user-roles-for-tool-calls" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Agent Input and Output"
-  href="devguide/ai-agent/agent-input-output"
-  description="Master Agent's input variable configuration, output result settings, streaming output, and various calling methods."
->
-  <LinkGrid columns={2} links={[
+title="Agent Input and Output"
+href="devguide/ai-agent/agent-input-output"
+description="Master Agent's input variable configuration, output result settings, streaming output, and various calling methods."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Configuring input variables", href: "devguide/ai-agent/agent-input-output#configuring-input-variables" },
     { text: "Using variables in prompts", href: "devguide/ai-agent/agent-input-output#using-variables-in-prompts" },
     { text: "Configuring output results", href: "devguide/ai-agent/agent-input-output#configuring-output-results" },
@@ -1118,34 +1256,41 @@ Build intelligent agents with reasoning and action capabilities. Configure promp
     { text: "Calling Agent in frontend functions", href: "devguide/ai-agent/agent-input-output#calling-agent-in-frontend-functions" },
     { text: "Calling Agent in backend service functions", href: "devguide/ai-agent/agent-input-output#calling-agent-in-backend-service-functions" },
     { text: "Testing Agent in page assistant", href: "devguide/ai-agent/agent-input-output#testing-agent-in-page-assistant" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Using Knowledge Base for Retrieval-Augmented Generation (RAG)"
-  href="devguide/ai-agent/agent-knowledge-base"
-  description="Learn how to integrate knowledge bases with Agent to implement RAG functionality for enhanced response accuracy."
->
-  <LinkGrid links={[
+title="Using Knowledge Base for Retrieval-Augmented Generation (RAG)"
+href="devguide/ai-agent/agent-knowledge-base"
+description="Learn how to integrate knowledge bases with Agent to implement RAG functionality for enhanced response accuracy."
+
+> <LinkGrid links={[
+
     { text: "Adding knowledge bases in Agent", href: "devguide/ai-agent/agent-knowledge-base#integrate-knowledge-base-rag" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Implement Single-Task Intelligent Agent with Agent"
-  href="devguide/ai-agent/single-task-intelligent-agent"
-  description="Learn how to use Agent to implement specialized single-task intelligent agents for optimized business scenario handling."
+title="Implement Single-Task Intelligent Agent with Agent"
+href="devguide/ai-agent/single-task-intelligent-agent"
+description="Learn how to use Agent to implement specialized single-task intelligent agents for optimized business scenario handling."
+
 >
+
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     📝 Coming soon...
   </div>
 </IndexCard>
 
 <IndexCard
-  title="Agent API Exposure"
-  href="devguide/ai-agent/agent-api-exposure"
-  description="Expose Agent capabilities through API interfaces for external system integration."
+title="Agent API Exposure"
+href="devguide/ai-agent/agent-api-exposure"
+description="Expose Agent capabilities through API interfaces for external system integration."
+
 >
+
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     📝 Coming soon...
   </div>
@@ -1154,28 +1299,32 @@ Build intelligent agents with reasoning and action capabilities. Configure promp
 </div>
 
 ## AI assistant {#ai-assistant}
+
 Design intelligent workflows visually. Orchestrate business processes with drag-and-drop nodes, blend AI decision-making with human interaction, and automate customer service, approvals, and data processing.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Creating AI Assistant Elements"
-  href="devguide/ai-assistant/create-ai-assistant"
-  description="Build production-grade AI applications with multi-agent collaboration, UI interaction, and visual orchestration—no coding required."
->
-  <LinkGrid links={[
+title="Creating AI Assistant Elements"
+href="devguide/ai-assistant/create-ai-assistant"
+description="Build production-grade AI applications with multi-agent collaboration, UI interaction, and visual orchestration—no coding required."
+
+> <LinkGrid links={[
+
     { text: "What is AI assistant", href: "devguide/ai-assistant/create-ai-assistant#what-is-ai-assistant" },
     { text: "Features", href: "devguide/ai-assistant/create-ai-assistant#features" },
     { text: "Creating AI assistant", href: "devguide/ai-assistant/create-ai-assistant#creating-ai-assistant" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Process Orchestration and Node Configuration"
-  href="devguide/ai-assistant/process-orchestration-node-configuration"
-  description="Master visual workflow design with 8+ node types including AIAgent, routing, conditional logic, and human-AI collaboration nodes."
->
-  <LinkGrid links={[
+title="Process Orchestration and Node Configuration"
+href="devguide/ai-assistant/process-orchestration-node-configuration"
+description="Master visual workflow design with 8+ node types including AIAgent, routing, conditional logic, and human-AI collaboration nodes."
+
+> <LinkGrid links={[
+
     { text: "Visual orchestration basics", href: "devguide/ai-assistant/process-orchestration-node-configuration#visual-orchestration" },
     { text: "Start node", href: "devguide/ai-assistant/process-orchestration-node-configuration#start-node" },
     { text: "Router node", href: "devguide/ai-assistant/process-orchestration-node-configuration#routing-decision" },
@@ -1185,56 +1334,64 @@ Design intelligent workflows visually. Orchestrate business processes with drag-
     { text: "Function node", href: "devguide/ai-assistant/process-orchestration-node-configuration#function" },
     { text: "IF-ELSE node", href: "devguide/ai-assistant/process-orchestration-node-configuration#if-else" },
     { text: "Iteration node", href: "devguide/ai-assistant/process-orchestration-node-configuration#iteration" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="AI Assistant Input and Output"
-  href="devguide/ai-assistant/ai-assistant-input-output"
-  description="Configure custom input parameters, control runtime log verbosity, and send structured data to conversations with custom widgets."
->
-  <LinkGrid links={[
+title="AI Assistant Input and Output"
+href="devguide/ai-assistant/ai-assistant-input-output"
+description="Configure custom input parameters, control runtime log verbosity, and send structured data to conversations with custom widgets."
+
+> <LinkGrid links={[
+
     { text: "Configuring input parameters", href: "devguide/ai-assistant/ai-assistant-input-output#input-args" },
     { text: "Runtime process log output", href: "devguide/ai-assistant/ai-assistant-input-output#runtime-process-log-output" },
     { text: "State data output to conversation", href: "devguide/ai-assistant/ai-assistant-input-output#state-data-output" },
     { text: "Node output configuration", href: "devguide/ai-assistant/ai-assistant-input-output#message-output" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="AI Assistant Runtime State"
-  href="devguide/ai-assistant/ai-assistant-state"
-  description="Leverage runtime state as the AI's 'memory bank' for context preservation, multi-turn conversations, and error recovery."
->
-  <LinkGrid links={[
+title="AI Assistant Runtime State"
+href="devguide/ai-assistant/ai-assistant-state"
+description="Leverage runtime state as the AI's 'memory bank' for context preservation, multi-turn conversations, and error recovery."
+
+> <LinkGrid links={[
+
     { text: "State data storage repository", href: "devguide/ai-assistant/ai-assistant-state#state-data-storage-repository" },
     { text: "Runtime state data content", href: "devguide/ai-assistant/ai-assistant-state#state-data-content" },
     { text: "Data usage methods", href: "devguide/ai-assistant/ai-assistant-state#data-usage-methods" },
     { text: "Data flow and inter-node transfer", href: "devguide/ai-assistant/ai-assistant-state#data-flow" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="AI Assistant Events"
-  href="devguide/ai-assistant/ai-assistant-event"
-  description="Subscribe to node execution, tool call, and human interaction events in both frontend pages and backend services."
->
-  <LinkGrid links={[
+title="AI Assistant Events"
+href="devguide/ai-assistant/ai-assistant-event"
+description="Subscribe to node execution, tool call, and human interaction events in both frontend pages and backend services."
+
+> <LinkGrid links={[
+
     { text: "Event type overview", href: "devguide/ai-assistant/ai-assistant-event#event-type-overview" },
     { text: "Frontend page events", href: "devguide/ai-assistant/ai-assistant-event#frontend-page-events" },
     { text: "Node execution events", href: "devguide/ai-assistant/ai-assistant-event#node-running-events" },
     { text: "Tool call events", href: "devguide/ai-assistant/ai-assistant-event#agent-call-tool-events" },
     { text: "Human interaction events", href: "devguide/ai-assistant/ai-assistant-event#action-in-conversation-events" },
     { text: "Backend business events", href: "devguide/ai-assistant/ai-assistant-event#backend-business-events" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Embedding AI Assistant in External Web Pages"
-  href="devguide/ai-assistant/embed-assistant-to-web-page"
-  description="Integrate AI assistant into any web page with deep bidirectional interaction capabilities."
->
-  <LinkGrid links={[
+title="Embedding AI Assistant in External Web Pages"
+href="devguide/ai-assistant/embed-assistant-to-web-page"
+description="Integrate AI assistant into any web page with deep bidirectional interaction capabilities."
+
+> <LinkGrid links={[
+
     { text: "What is an embedded AI assistant", href: "devguide/ai-assistant/embed-assistant-to-web-page#what-is-embedded-ai-assistant" },
     { text: "Core advantages", href: "devguide/ai-assistant/embed-assistant-to-web-page#core-advantages" },
     { text: "Integration process", href: "devguide/ai-assistant/embed-assistant-to-web-page#integration-process" },
@@ -1246,73 +1403,84 @@ Design intelligent workflows visually. Orchestrate business processes with drag-
     { text: "Runtime configuration", href: "devguide/ai-assistant/embed-assistant-to-web-page#runtime-config" },
     { text: "Send messages to AI", href: "devguide/ai-assistant/embed-assistant-to-web-page#send-message-to-ai" },
     { text: "JS SDK API reference", href: "devguide/ai-assistant/embed-assistant-to-web-page#js-sdk" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="AI Assistant API Integration"
-  href="devguide/ai-assistant/ai-assistant-api-exposure"
-  description="Expose AI assistant capabilities through API interfaces for integration within applications and external systems."
->
-  <LinkGrid links={[
+title="AI Assistant API Integration"
+href="devguide/ai-assistant/ai-assistant-api-exposure"
+description="Expose AI assistant capabilities through API interfaces for integration within applications and external systems."
+
+> <LinkGrid links={[
+
     { text: "Send AI message function", href: "devguide/ai-assistant/ai-assistant-api-exposure#send-ai-message" },
     { text: "Calling AI assistant within application", href: "devguide/ai-assistant/ai-assistant-api-exposure#calling-ai-assistant-within-application" },
     { text: "External AI assistant calling", href: "devguide/ai-assistant/ai-assistant-api-exposure#external-ai-assistant-calling" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Welcome Message and Conversation History"
-  href="devguide/ai-assistant/welcome-message-and-opening"
-  description="Configure welcome messages, opening statements, and manage conversation history for better user engagement and context continuity."
->
-  <LinkGrid links={[
+title="Welcome Message and Conversation History"
+href="devguide/ai-assistant/welcome-message-and-opening"
+description="Configure welcome messages, opening statements, and manage conversation history for better user engagement and context continuity."
+
+> <LinkGrid links={[
+
     { text: "Welcome message configuration", href: "devguide/ai-assistant/welcome-message-and-opening#welcome-message-configuration" },
     { text: "Preamble configuration", href: "devguide/ai-assistant/welcome-message-and-opening#preamble-configuration" },
     { text: "Conversation history management", href: "devguide/ai-assistant/ai-conversation-history#start-and-managing-conversation" },
     { text: "Using historical conversations", href: "devguide/ai-assistant/ai-conversation-history#using-historical-conversations" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Conversational Multi-Task AI Assistant"
-  href="devguide/ai-assistant/develop-conversational-multi-task-ai-assistant"
-  description="Complete tutorial: Build an AI assistant with intelligent routing, multiple agents, and automated document generation."
->
-  <LinkGrid links={[
+title="Conversational Multi-Task AI Assistant"
+href="devguide/ai-assistant/develop-conversational-multi-task-ai-assistant"
+description="Complete tutorial: Build an AI assistant with intelligent routing, multiple agents, and automated document generation."
+
+> <LinkGrid links={[
+
     { text: "Writing Agent development", href: "devguide/ai-assistant/develop-conversational-multi-task-ai-assistant#writing-agent" },
     { text: "Customer Service Agent with knowledge base", href: "devguide/ai-assistant/develop-conversational-multi-task-ai-assistant#customer-service-agent" },
     { text: "Solution Agent for quotations", href: "devguide/ai-assistant/develop-conversational-multi-task-ai-assistant#solution-agent" },
     { text: "Process orchestration and integration", href: "devguide/ai-assistant/develop-conversational-multi-task-ai-assistant#developing-ai-assistant" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Human-AI Collaborative Enterprise Assistant"
-  href="devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant"
-  description="Build a sophisticated AI grading system demonstrating deep UI integration, event-driven collaboration, and human oversight."
->
-  <LinkGrid links={[
+title="Human-AI Collaborative Enterprise Assistant"
+href="devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant"
+description="Build a sophisticated AI grading system demonstrating deep UI integration, event-driven collaboration, and human oversight."
+
+> <LinkGrid links={[
+
     { text: "Product core features", href: "devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant#product-core-features-overview" },
     { text: "Deep integration with frontend", href: "devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant#deep-integration-of-ai-with-frontend" },
     { text: "Human-machine collaboration design", href: "devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant#human-machine-collaboration-node-design" },
     { text: "AI grading case study", href: "devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant#demonstrating-collaboration-features-through-ai-grading-case-study" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
 ## Data modeling {#data-modeling}
+
 Build a robust data foundation visually—no SQL expertise required. Create tables, design field types, establish relationships, and manage data with intuitive visual tools.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Creating Data Tables"
-  href="devguide/data-modeling/data-table-model"
-  description="Build your data foundation—create tables, configure fields, design data types, and set constraints for optimal data integrity."
->
-  <LinkGrid links={[
+title="Creating Data Tables"
+href="devguide/data-modeling/data-table-model"
+description="Build your data foundation—create tables, configure fields, design data types, and set constraints for optimal data integrity."
+
+> <LinkGrid links={[
+
     { text: "Data table creation entry", href: "devguide/data-modeling/data-table-model#data-table-create-entry" },
     { text: "Designing table fields and data types", href: "devguide/data-modeling/data-table-model#design-table-fields-and-data-types" },
     { text: "Field operation buttons", href: "devguide/data-modeling/data-table-model#field-operation-buttons" },
@@ -1321,45 +1489,53 @@ Build a robust data foundation visually—no SQL expertise required. Create tabl
     { text: "Multi-column composite unique constraints", href: "devguide/data-modeling/data-table-model#multi-column-composite-unique" },
     { text: "Composite indexes", href: "devguide/data-modeling/data-table-model#composite-index" },
     { text: "Source code mode", href: "devguide/data-modeling/data-table-model#source-code-mode" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Creating Tables from Existing Database Schema"
-  href="devguide/data-modeling/create-data-table-from-existing-tables"
-  description="Quickly create data table elements from existing database tables, supporting rapid model generation."
->
-  <LinkGrid links={[
+title="Creating Tables from Existing Database Schema"
+href="devguide/data-modeling/create-data-table-from-existing-tables"
+description="Quickly create data table elements from existing database tables, supporting rapid model generation."
+
+> <LinkGrid links={[
+
     { text: "Creating tables from existing database schema", href: "devguide/data-modeling/create-data-table-from-existing-tables" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Built-in Data Management Tools"
-  href="devguide/data-modeling/built-in-data-management-tools"
-  description="Utilize built-in data management tools for efficient data operations and administration."
->
-  <LinkGrid links={[
+title="Built-in Data Management Tools"
+href="devguide/data-modeling/built-in-data-management-tools"
+description="Utilize built-in data management tools for efficient data operations and administration."
+
+> <LinkGrid links={[
+
     { text: "Built-in data management tools", href: "devguide/data-modeling/built-in-data-management-tools" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Creating Data Model Functions"
-  href="devguide/data-modeling/create-data-model-functions"
-  description="Design and implement custom data model functions to extend data processing capabilities."
->
-  <LinkGrid links={[
+title="Creating Data Model Functions"
+href="devguide/data-modeling/create-data-model-functions"
+description="Design and implement custom data model functions to extend data processing capabilities."
+
+> <LinkGrid links={[
+
     { text: "Creating data model functions", href: "devguide/data-modeling/create-data-model-functions" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Aggregated Table Model"
-  href="devguide/data-modeling/aggregate-table-model"
-  description="Multi-table data integration and statistical analysis, supporting complex data aggregation and calculation functions."
->
-  <LinkGrid columns={2} links={[
+title="Aggregated Table Model"
+href="devguide/data-modeling/aggregate-table-model"
+description="Multi-table data integration and statistical analysis, supporting complex data aggregation and calculation functions."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Create aggregated table model", href: "devguide/data-modeling/aggregate-table-model" },
     { text: "Multi-table data merge", href: "devguide/data-modeling/aggregate-table-model#multi-table-data-merge" },
     { text: "Multi-table horizontal join", href: "devguide/data-modeling/aggregate-table-model#multi-table-horizontal-connection" },
@@ -1367,15 +1543,17 @@ Build a robust data foundation visually—no SQL expertise required. Create tabl
     { text: "Extending custom calculation fields", href: "devguide/data-modeling/aggregate-table-model#extend-custom-calculation-fields" },
     { text: "Aggregate then filter", href: "devguide/data-modeling/aggregate-table-model#aggregate-then-filter" },
     { text: "Filter first then aggregate (recommended)", href: "devguide/data-modeling/aggregate-table-model#filter-first-then-aggregate" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Extension Table Model"
-  href="devguide/data-modeling/extended-table-model"
-  description="Data extension based on existing tables, implementing business field extension and multi-table data integration through association with other data tables."
->
-  <LinkGrid columns={2} links={[
+title="Extension Table Model"
+href="devguide/data-modeling/extended-table-model"
+description="Data extension based on existing tables, implementing business field extension and multi-table data integration through association with other data tables."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Extension table creation", href: "devguide/data-modeling/extended-table-model" },
     { text: "Connection design", href: "devguide/data-modeling/extended-table-model#connection-design" },
     { text: "Setting baseline table filter conditions", href: "devguide/data-modeling/extended-table-model#setting-baseline-table-filter-conditions" },
@@ -1387,103 +1565,118 @@ Build a robust data foundation visually—no SQL expertise required. Create tabl
     { text: "Function design", href: "devguide/data-modeling/extended-table-model#function-design" },
     { text: "Creating functions", href: "devguide/data-modeling/extended-table-model#creating-functions" },
     { text: "Source code viewing and editing", href: "devguide/data-modeling/extended-table-model#source-code-viewing-and-editing" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Using Data Models in Pages and Functions"
-  href="devguide/data-modeling/calling-data-models-in-pages-and-functions"
-  description="Learn how to effectively use data models in frontend pages and backend function logic for data operations."
->
-  <LinkGrid columns={2} links={[
+title="Using Data Models in Pages and Functions"
+href="devguide/data-modeling/calling-data-models-in-pages-and-functions"
+description="Learn how to effectively use data models in frontend pages and backend function logic for data operations."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Built-in model functions", href: "devguide/data-modeling/calling-data-models-in-pages-and-functions#built-in-model-functions" },
     { text: "Calling data models in pages", href: "devguide/data-modeling/calling-data-models-in-pages-and-functions#calling-data-models-in-pages" },
     { text: "Calling data models in functions", href: "devguide/data-modeling/calling-data-models-in-pages-and-functions#calling-data-models-in-functions" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Creating Data Object Models"
-  href="devguide/data-modeling/data-object-model"
-  description="Specialized data structures engineered for full-code development environments, similar to DTOs, used for structured data expression and transmission in business logic."
->
-  <LinkGrid links={[
+title="Creating Data Object Models"
+href="devguide/data-modeling/data-object-model"
+description="Specialized data structures engineered for full-code development environments, similar to DTOs, used for structured data expression and transmission in business logic."
+
+> <LinkGrid links={[
+
     { text: "Creating data object models", href: "devguide/data-modeling/data-object-model#creating-data-object-model" },
     { text: "Using data object models", href: "devguide/data-modeling/data-object-model#using-data-object-model" },
     { text: "Customizing fields", href: "devguide/data-modeling/data-object-model#customizing-fields" },
     { text: "Overriding model functions", href: "devguide/data-modeling/data-object-model#overriding-model-functions" },
     { text: "Defining new functions", href: "devguide/data-modeling/data-object-model#defining-new-functions" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Calling Data Models with AI Agents"
-  href="devguide/data-modeling/calling-data-models-in-ai-agent"
-  description="Add data model functions as Agent tools, enabling AI to intelligently perform CRUD operations and automated data processing."
->
-  <LinkGrid links={[
+title="Calling Data Models with AI Agents"
+href="devguide/data-modeling/calling-data-models-in-ai-agent"
+description="Add data model functions as Agent tools, enabling AI to intelligently perform CRUD operations and automated data processing."
+
+> <LinkGrid links={[
+
     { text: "Data models as Agent tools", href: "devguide/data-modeling/calling-data-models-in-ai-agent#data-models-as-agent-tools" }
-  ]} />
+
+]} />
 </IndexCard>
 
-
 <IndexCard
-  title="Managing Database Connections"
-  href="devguide/data-modeling/manage-database-connections"
-  description="Configure and manage multiple database connections, supporting multi-data source application development."
->
-  <LinkGrid links={[
+title="Managing Database Connections"
+href="devguide/data-modeling/manage-database-connections"
+description="Configure and manage multiple database connections, supporting multi-data source application development."
+
+> <LinkGrid links={[
+
     { text: "Creating database connections", href: "devguide/data-modeling/manage-database-connections#create-database-connection" },
     { text: "Multi-database connection management", href: "devguide/data-modeling/manage-database-connections#multi-database-connection-management" },
     { text: "Database connection security configuration", href: "devguide/data-modeling/manage-database-connections#database-connection-security-configuration" },
     { text: "Connection testing and troubleshooting", href: "devguide/data-modeling/manage-database-connections#connection-test-and-troubleshooting" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Supported Database Vendors"
-  href="devguide/data-modeling/supported-database-vendors"
-  description="Learn about various database types and connection configurations supported by JitAI."
->
-  <LinkGrid links={[
+title="Supported Database Vendors"
+href="devguide/data-modeling/supported-database-vendors"
+description="Learn about various database types and connection configurations supported by JitAI."
+
+> <LinkGrid links={[
+
     { text: "Scenario selection recommendations", href: "devguide/data-modeling/supported-database-vendors#scenario-selection-recommendations" },
     { text: "Cloud vendor compatibility", href: "devguide/data-modeling/supported-database-vendors#cloud-vendor-compatibility" },
     { text: "Database element usage", href: "devguide/data-modeling/supported-database-vendors#database-element-usage" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
 ## Transaction management {#transaction-management}
+
 Ensure data integrity in complex operations—master transaction control, implement atomic operations, and handle concurrency safely.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Transaction Management"
-  href="devguide/data-modeling/transaction-management"
-  description="Control database transactions and maintain consistency—ensure reliable, atomic data operations across your application."
->
-  <LinkGrid links={[
+title="Transaction Management"
+href="devguide/data-modeling/transaction-management"
+description="Control database transactions and maintain consistency—ensure reliable, atomic data operations across your application."
+
+> <LinkGrid links={[
+
     { text: "Default transaction management mechanism", href: "devguide/data-modeling/transaction-management#default-transaction-management-mechanism" },
     { text: "Manual transaction commit/rollback", href: "devguide/data-modeling/transaction-management#manual-transaction-commit-rollback" },
     { text: "Transaction decorator", href: "devguide/data-modeling/transaction-management#transaction-decorator" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
 ## User and permission management {#user-permission-management}
+
 Build secure user systems with flexible authentication and authorization. Support multiple login methods, organizational hierarchies, and fine-grained permissions—ensure data security while enabling role-based access.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Organization"
-  href="devguide/user-and-permission/organization"
-  description="Manage enterprise organizational structures—configure departments, positions, roles, and personnel hierarchies."
->
-  <LinkGrid links={[
+title="Organization"
+href="devguide/user-and-permission/organization"
+description="Manage enterprise organizational structures—configure departments, positions, roles, and personnel hierarchies."
+
+> <LinkGrid links={[
+
     { text: "Default organization", href: "devguide/user-and-permission/organization#default-organization" },
     { text: "Organizational structure creation", href: "devguide/user-and-permission/organization#organizational-structure-creation" },
     { text: "Generic organization", href: "devguide/user-and-permission/organization#generic-organization" },
@@ -1510,15 +1703,17 @@ Build secure user systems with flexible authentication and authorization. Suppor
     { text: "WeCom organization contacts", href: "devguide/user-and-permission/organization#wechat-work-organization-contacts" },
     { text: "Syncing WeCom organization structure", href: "devguide/user-and-permission/organization#syncing-wechat-work-organization-structure" },
     { text: "Exporting members", href: "devguide/user-and-permission/organization#exporting-members-wechat-work" },
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Login Authentication"
-  href="devguide/user-and-permission/login-authentication"
-  description="Configure secure authentication—support multiple login methods including password, phone, OAuth, and third-party providers."
->
-  <LinkGrid links={[
+title="Login Authentication"
+href="devguide/user-and-permission/login-authentication"
+description="Configure secure authentication—support multiple login methods including password, phone, OAuth, and third-party providers."
+
+> <LinkGrid links={[
+
     { text: "Creating login authentication", href: "devguide/user-and-permission/login-authentication#creating-login-method" },
     { text: "Account password login", href: "devguide/user-and-permission/login-authentication#account-password-login" },
     { text: "Phone login", href: "devguide/user-and-permission/login-authentication#mobile-phone-login" },
@@ -1532,15 +1727,17 @@ Build secure user systems with flexible authentication and authorization. Suppor
     { text: "WeChat mini program login", href: "devguide/user-and-permission/login-authentication#wechat-mini-program-login" },
     { text: "GitHub login", href: "devguide/user-and-permission/login-authentication#github-login" },
     { text: "Google login", href: "devguide/user-and-permission/login-authentication#google-login" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Role and Portal Menu Permissions"
-  href="devguide/user-and-permission/role-portal-menu-permissions"
-  description="Define application roles and allocate permissions—implement fine-grained access control for portals, menus, and components."
->
-  <LinkGrid columns={2} links={[
+title="Role and Portal Menu Permissions"
+href="devguide/user-and-permission/role-portal-menu-permissions"
+description="Define application roles and allocate permissions—implement fine-grained access control for portals, menus, and components."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Built-in application roles", href: "devguide/user-and-permission/role-portal-menu-permissions#built-in-three-application-roles" },
     { text: "Anonymous user", href: "devguide/user-and-permission/role-portal-menu-permissions#anonymous-user" },
     { text: "Developer", href: "devguide/user-and-permission/role-portal-menu-permissions#developer" },
@@ -1555,57 +1752,66 @@ Build secure user systems with flexible authentication and authorization. Suppor
     { text: "Application role member management", href: "devguide/user-and-permission/role-portal-menu-permissions#application-role-member-management" },
     { text: "Member addition and removal", href: "devguide/user-and-permission/role-portal-menu-permissions#member-addition-and-removal" },
     { text: "Member management scope settings in organization", href: "devguide/user-and-permission/role-portal-menu-permissions#member-management-scope-settings-in-org" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Roles and Business Element Permissions"
-  href="devguide/user-and-permission/roles-and-business-element-permissions"
-  description="Apply advanced role-based access control to business elements, data models, and functional components."
->
-  <LinkGrid links={[
+title="Roles and Business Element Permissions"
+href="devguide/user-and-permission/roles-and-business-element-permissions"
+description="Apply advanced role-based access control to business elements, data models, and functional components."
+
+> <LinkGrid links={[
+
     { text: "Portal-level data operation type and scope control", href: "devguide/user-and-permission/roles-and-business-element-permissions#portal-level-data-operation-type-and-scope-control" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Agent Tool Permission Control"
-  href="devguide/user-and-permission/agent-tool-permission-control"
-  description="Secure AI Agent operations—configure permission controls for tool execution and ensure safe, authorized agent actions."
->
-  <LinkGrid links={[
+title="Agent Tool Permission Control"
+href="devguide/user-and-permission/agent-tool-permission-control"
+description="Secure AI Agent operations—configure permission controls for tool execution and ensure safe, authorized agent actions."
+
+> <LinkGrid links={[
+
     { text: "Configuring Agent tool execution permissions", href: "devguide/user-and-permission/agent-tool-permission-control#configure-agent-tool-execution-permissions" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
 ## Business logic development {#business-logic-development}
+
 Implement powerful business logic with visual programming. Handle complex rules, respond to user actions, and execute background tasks—all as intuitive as assembling building blocks.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Creating Service Elements"
-  href="devguide/business-logic-development/creating-service-elements"
-  description="Encapsulate reusable backend logic—create service functions that provide API interfaces and data processing capabilities."
->
-  <LinkGrid columns={2} links={[
+title="Creating Service Elements"
+href="devguide/business-logic-development/creating-service-elements"
+description="Encapsulate reusable backend logic—create service functions that provide API interfaces and data processing capabilities."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Creating service functions", href: "devguide/business-logic-development/creating-service-elements#create-service-functions" },
     { text: "Editing service functions in source code mode", href: "devguide/business-logic-development/creating-service-elements#edit-service-functions-source-code-mode" },
     { text: "Adding new dependency libraries", href: "devguide/business-logic-development/creating-service-elements#add-new-dependency-library" },
     { text: "Using cross-app service elements to call authorized APIs", href: "devguide/business-logic-development/creating-service-elements#use-cross-app-service-elements-to-call-authorized-apis" },
     { text: "Creating cross-app service elements", href: "devguide/business-logic-development/creating-service-elements#create-cross-app-service-elements" },
     { text: "Using cross-app service elements in function logic", href: "devguide/business-logic-development/creating-service-elements#use-cross-app-service-elements-in-functions" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Calling Elements in Service Functions"
-  href="devguide/business-logic-development/calling-other-elements-in-service-functions"
-  description="Orchestrate comprehensive business logic—invoke data models, services, external APIs, and AI elements from service functions."
->
-  <LinkGrid columns={2} links={[
+title="Calling Elements in Service Functions"
+href="devguide/business-logic-development/calling-other-elements-in-service-functions"
+description="Orchestrate comprehensive business logic—invoke data models, services, external APIs, and AI elements from service functions."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Using platform APIs to call other elements", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#use-platform-api-to-call-other-elements" },
     { text: "Typical examples", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#typical-examples" },
     { text: "Calling data model functions", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-data-model-function" },
@@ -1613,26 +1819,30 @@ Implement powerful business logic with visual programming. Handle complex rules,
     { text: "Calling external APIs", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-external-api" },
     { text: "Calling AI large language models", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-ai-llm" },
     { text: "Calling AI agents", href: "devguide/business-logic-development/calling-other-elements-in-service-functions#call-ai-agent" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Service Elements Usage Scenarios"
-  href="devguide/business-logic-development/service-elements-usage-scenarios"
-  description="Discover practical patterns and best practices—apply service elements effectively across diverse business contexts and architectures."
->
-  <LinkGrid links={[
+title="Service Elements Usage Scenarios"
+href="devguide/business-logic-development/service-elements-usage-scenarios"
+description="Discover practical patterns and best practices—apply service elements effectively across diverse business contexts and architectures."
+
+> <LinkGrid links={[
+
     { text: "Where service functions are used", href: "devguide/business-logic-development/service-elements-usage-scenarios#where-service-functions-are-used" },
     { text: "Helping AI understand service functions accurately", href: "devguide/business-logic-development/service-elements-usage-scenarios#help-ai-understand-service-functions" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Background Tasks"
-  href="devguide/business-logic-development/background-tasks"
-  description="Automate workflows with scheduled and asynchronous tasks—execute complex background processes reliably."
->
-  <LinkGrid columns={2} links={[
+title="Background Tasks"
+href="devguide/business-logic-development/background-tasks"
+description="Automate workflows with scheduled and asynchronous tasks—execute complex background processes reliably."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Creating tasks", href: "devguide/business-logic-development/background-tasks#creating-tasks" },
     { text: "Scheduled tasks", href: "devguide/business-logic-development/background-tasks#scheduled-tasks" },
     { text: "Date field tasks", href: "devguide/business-logic-development/background-tasks#date-field-tasks" },
@@ -1640,15 +1850,17 @@ Implement powerful business logic with visual programming. Handle complex rules,
     { text: "Developing task execution functions", href: "devguide/business-logic-development/background-tasks#developing-task-execution-functions" },
     { text: "Viewing execution records", href: "devguide/business-logic-development/background-tasks#viewing-execution-records" },
     { text: "Source code mode", href: "devguide/business-logic-development/background-tasks#source-code-mode" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Event Handling"
-  href="devguide/business-logic-development/event-handling"
-  description="Implement reactive business logic—monitor and respond to system events, model changes, and custom triggers."
->
-  <LinkGrid columns={2} links={[
+title="Event Handling"
+href="devguide/business-logic-development/event-handling"
+description="Implement reactive business logic—monitor and respond to system events, model changes, and custom triggers."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Creating events", href: "devguide/business-logic-development/event-handling#creating-events" },
     { text: "Model events", href: "devguide/business-logic-development/event-handling#model-events" },
     { text: "Approval events", href: "devguide/business-logic-development/event-handling#approval-events" },
@@ -1660,22 +1872,25 @@ Implement powerful business logic with visual programming. Handle complex rules,
     { text: "Executing events synchronously or asynchronously", href: "devguide/business-logic-development/event-handling#executing-events-synchronously-or-asynchronously" },
     { text: "Viewing event execution records", href: "devguide/business-logic-development/event-handling#viewing-event-execution-records" },
     { text: "Viewing and editing full code", href: "devguide/business-logic-development/event-handling#viewing-and-editing-full-code" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
 ## Approval process {#approval-process}
+
 Streamline enterprise approvals with visual workflow design. Drag and drop to create flowcharts, configure approvers and conditions, and automate routing—transform paper-based processes into efficient digital workflows.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Approval Process Basic Configuration"
-  href="devguide/approval-workflow/approval-workflow-basic-configuration"
-  description="Creation and basic settings of approval processes, including process node configuration and path design."
->
-  <LinkGrid columns={2} links={[
+title="Approval Process Basic Configuration"
+href="devguide/approval-workflow/approval-workflow-basic-configuration"
+description="Creation and basic settings of approval processes, including process node configuration and path design."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Creating Processes", href: "devguide/approval-workflow/approval-workflow-basic-configuration#create-process" },
     { text: "Configuring Process Nodes", href: "devguide/approval-workflow/approval-workflow-basic-configuration#drag-process-node" },
     { text: "Approval Workflow Default Pages", href: "devguide/approval-workflow/approval-workflow-basic-configuration#approval-workflow-default-page" },
@@ -1688,15 +1903,17 @@ Streamline enterprise approvals with visual workflow design. Drag and drop to cr
     { text: "Sharing Capabilities", href: "devguide/approval-workflow/approval-workflow-basic-configuration#share" },
     { text: "Printing Approval Forms", href: "devguide/approval-workflow/approval-workflow-basic-configuration#print-approval-form" },
     { text: "Reusing Existing Approval Workflows", href: "devguide/approval-workflow/approval-workflow-basic-configuration#reuse-other-approval-workflowes" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Start Node Configuration"
-  href="devguide/approval-workflow/start-node-configuration"
-  description="Configuration of approval process start node, defining conditions and rules for application initiation."
->
-  <LinkGrid columns={2} links={[
+title="Start Node Configuration"
+href="devguide/approval-workflow/start-node-configuration"
+description="Configuration of approval process start node, defining conditions and rules for application initiation."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Process Cancellation Function", href: "devguide/approval-workflow/start-node-configuration#process-cancellation-function" },
     { text: "Approval Reminder", href: "devguide/approval-workflow/start-node-configuration#approval-reminder" },
     { text: "Approval Draft", href: "devguide/approval-workflow/start-node-configuration#approval-draft" },
@@ -1705,15 +1922,17 @@ Streamline enterprise approvals with visual workflow design. Drag and drop to cr
     { text: "Summary Display", href: "devguide/approval-workflow/start-node-configuration#summary-display" },
     { text: "Field View Edit Permissions", href: "devguide/approval-workflow/start-node-configuration#field-view-edit-permissions" },
     { text: "Layout Control Permissions", href: "devguide/approval-workflow/start-node-configuration#layout-control-permissions" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Approval Node Configuration"
-  href="devguide/approval-workflow/approval-node-configuration"
-  description="Detailed configuration of approval links, including approver settings and approval rules."
->
-  <LinkGrid columns={2} links={[
+title="Approval Node Configuration"
+href="devguide/approval-workflow/approval-node-configuration"
+description="Detailed configuration of approval links, including approver settings and approval rules."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Approver Settings", href: "devguide/approval-workflow/approval-node-configuration#approver-settings" },
     { text: "Approval Flow Rules", href: "devguide/approval-workflow/approval-node-configuration#approval-flow-rules" },
     { text: "Approval Workflow Processing Rules", href: "devguide/approval-workflow/approval-node-configuration#approval-workflow-rules" },
@@ -1731,15 +1950,17 @@ Streamline enterprise approvals with visual workflow design. Drag and drop to cr
     { text: "Summary Information Display", href: "devguide/approval-workflow/approval-node-configuration#summary-display" },
     { text: "Field Permissions", href: "devguide/approval-workflow/approval-node-configuration#fieldpermission" },
     { text: "Layout Control Permissions", href: "devguide/approval-workflow/approval-node-configuration#layout-control-permissions" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Special Node Configuration"
-  href="devguide/approval-workflow/special-node-configuration"
-  description="Configuration methods for special process nodes such as condition nodes and parallel nodes."
->
-  <LinkGrid columns={2} links={[
+title="Special Node Configuration"
+href="devguide/approval-workflow/special-node-configuration"
+description="Configuration methods for special process nodes such as condition nodes and parallel nodes."
+
+> <LinkGrid columns={2} links={[
+
     { text: "CC Node", href: "devguide/approval-workflow/special-node-configuration#cc-node" },
     { text: "CC Recipients", href: "devguide/approval-workflow/special-node-configuration#sms-notification" },
     { text: "SMS Notification", href: "devguide/approval-workflow/special-node-configuration#sms-notification" },
@@ -1756,51 +1977,60 @@ Streamline enterprise approvals with visual workflow design. Drag and drop to cr
     { text: "Sub-process Post-flow Function Design", href: "devguide/approval-workflow/special-node-configuration#sub-process-post-flow-function-design" },
     { text: "Update Main Process Data When Single Sub-process Ends", href: "devguide/approval-workflow/special-node-configuration#update-main-process-data-single-sub-process-end" },
     { text: "Update Main Process Data When All Sub-processes End", href: "devguide/approval-workflow/special-node-configuration#update-main-process-data-all-sub-processes-end" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Approval Page Customization"
-  href="devguide/approval-workflow/approval-page-customization"
-  description="Customize approval interface and user experience to improve approval efficiency."
->
-  <LinkGrid links={[
+title="Approval Page Customization"
+href="devguide/approval-workflow/approval-page-customization"
+description="Customize approval interface and user experience to improve approval efficiency."
+
+> <LinkGrid links={[
+
     { text: "Advanced Approval Page Customization", href: "devguide/approval-workflow/approval-page-customization#approval-page-advanced-customization" },
     { text: "Approval Page Types", href: "devguide/approval-workflow/approval-page-customization#approval-page-types" },
     { text: "Custom Page Creation Methods", href: "devguide/approval-workflow/approval-page-customization#custom-page-creation-method" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Approval Process Usage"
-  href="devguide/approval-workflow/approval-workflow-usage"
-  description="Practical application and operation guide of approval process, including initiating and processing approvals."
->
-  <LinkGrid links={[
+title="Approval Process Usage"
+href="devguide/approval-workflow/approval-workflow-usage"
+description="Practical application and operation guide of approval process, including initiating and processing approvals."
+
+> <LinkGrid links={[
+
     { text: "Initiating Applications", href: "devguide/approval-workflow/approval-workflow-usage#initiate-application" },
     { text: "To-Do Center", href: "devguide/approval-workflow/approval-workflow-usage#todo-center" },
     { text: "Detail Pages", href: "devguide/approval-workflow/approval-workflow-usage#detail-page" },
     { text: "Delegating to Others for Processing", href: "devguide/approval-workflow/approval-workflow-usage#delegate-to-others-processing" },
     { text: "Approval Workflow Management Pages", href: "devguide/approval-workflow/approval-workflow-usage#approval-workflow-management-page" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Calling Business Logic Elements in Approval Process"
-  href="devguide/approval-workflow/calling-business-logic-elements-in-approval-workflow"
-  description="Learn how to call business logic elements within approval processes to implement complex business rules and automated decisions."
->
-  <LinkGrid links={[
+title="Calling Business Logic Elements in Approval Process"
+href="devguide/approval-workflow/calling-business-logic-elements-in-approval-workflow"
+description="Learn how to call business logic elements within approval processes to implement complex business rules and automated decisions."
+
+> <LinkGrid links={[
+
     { text: "Calling Business Logic Through Approval Events", href: "devguide/approval-workflow/calling-business-logic-elements-in-approval-workflow#calling-business-logic-through-approval-events" },
     { text: "Function Processing in Subprocesses", href: "devguide/approval-workflow/calling-business-logic-elements-in-approval-workflow#function-processing-in-subprocesses" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Integrating AI in Approval Process"
-  href="devguide/approval-workflow/integrating-ai-in-approval-workflow"
-  description="Integrate artificial intelligence capabilities into approval processes to achieve intelligent routing, automated review, and smart decision making."
+title="Integrating AI in Approval Process"
+href="devguide/approval-workflow/integrating-ai-in-approval-workflow"
+description="Integrate artificial intelligence capabilities into approval processes to achieve intelligent routing, automated review, and smart decision making."
+
 >
+
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
     📝 Coming soon...
   </div>
@@ -1809,16 +2039,18 @@ Streamline enterprise approvals with visual workflow design. Drag and drop to cr
 </div>
 
 ## File processing {#file-processing}
+
 Handle files effortlessly—upload and download multiple formats, dynamically generate Word and Excel documents, and streamline all file operations.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="File Storage"
-  href="devguide/file-processing/file-storage"
-  description="Configure file upload and storage—support local disk, cloud providers (OSS, S3, MinIO), and comprehensive file management."
->
-  <LinkGrid columns={2} links={[
+title="File Storage"
+href="devguide/file-processing/file-storage"
+description="Configure file upload and storage—support local disk, cloud providers (OSS, S3, MinIO), and comprehensive file management."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Local storage configuration", href: "devguide/file-processing/file-storage#local-storage-configuration" },
     { text: "Adding local storage", href: "devguide/file-processing/file-storage#add-local-storage" },
     { text: "Specifying disk storage directory", href: "devguide/file-processing/file-storage#specify-disk-storage-directory" },
@@ -1832,15 +2064,17 @@ Handle files effortlessly—upload and download multiple formats, dynamically ge
     { text: "Using environment variables to prevent config info leak", href: "devguide/file-processing/file-storage#prevent-config-info-leak-with-env-variables" },
     { text: "Setting application default storage service", href: "devguide/file-processing/file-storage#set-application-default-storage-service" },
     { text: "Calling file upload in frontend code", href: "devguide/file-processing/file-storage#call-file-upload-in-frontend-code" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Creating File Templates"
-  href="devguide/file-processing/file-templates"
-  description="Document template generation and processing, supporting dynamic content filling and format conversion."
->
-  <LinkGrid columns={2} links={[
+title="Creating File Templates"
+href="devguide/file-processing/file-templates"
+description="Document template generation and processing, supporting dynamic content filling and format conversion."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Word template", href: "devguide/file-processing/file-templates#word-template" },
     { text: "Creating word template", href: "devguide/file-processing/file-templates#create-word-template" },
     { text: "Creating word template variables", href: "devguide/file-processing/file-templates#create-word-template-variables" },
@@ -1854,34 +2088,39 @@ Handle files effortlessly—upload and download multiple formats, dynamically ge
     { text: "Numeric styles", href: "devguide/file-processing/file-templates#numeric-style" },
     { text: "Date-time styles", href: "devguide/file-processing/file-templates#date-time-style" },
     { text: "Multi-value styles (complex types)", href: "devguide/file-processing/file-templates#multi-value-complex-types" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Generating and Printing Files Using File Templates"
-  href="devguide/file-processing/generating-and-printing-files-using-file-templates"
-  description="Learn how to use file templates to generate and print documents programmatically, including dynamic content population and output formatting."
->
-  <LinkGrid links={[
+title="Generating and Printing Files Using File Templates"
+href="devguide/file-processing/generating-and-printing-files-using-file-templates"
+description="Learn how to use file templates to generate and print documents programmatically, including dynamic content population and output formatting."
+
+> <LinkGrid links={[
+
     { text: "Printing Word templates", href: "devguide/file-processing/generating-and-printing-files-using-file-templates#print-word-template" },
     { text: "Printing Excel templates", href: "devguide/file-processing/generating-and-printing-files-using-file-templates#print-excel-template" },
     { text: "Generating attachments", href: "devguide/file-processing/generating-and-printing-files-using-file-templates#generate-attachments" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
 ## External API integration {#external-api-integration}
+
 Connect to the broader ecosystem—integrate third-party APIs, payment gateways (WeChat Pay, Alipay), and SMS services to extend your application's capabilities.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Creating Universal External API Elements"
-  href="devguide/third-party-integration/external-api"
-  description="Integrate third-party HTTP APIs seamlessly—manage RESTful calls with standard methods, preprocessing, and response handling."
->
-  <LinkGrid columns={2} links={[
+title="Creating Universal External API Elements"
+href="devguide/third-party-integration/external-api"
+description="Integrate third-party HTTP APIs seamlessly—manage RESTful calls with standard methods, preprocessing, and response handling."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Creating External APIs", href: "devguide/third-party-integration/external-api#creating-external-apis" },
     { text: "Public Configuration", href: "devguide/third-party-integration/external-api#public-configuration" },
     { text: "Access Domain", href: "devguide/third-party-integration/external-api#access-domain" },
@@ -1897,27 +2136,31 @@ Connect to the broader ecosystem—integrate third-party APIs, payment gateways 
     { text: "API Interface Testing and Calling", href: "devguide/third-party-integration/external-api#api-interface-testing-and-calling" },
     { text: "API Interface Testing", href: "devguide/third-party-integration/external-api#api-interface-testing" },
     { text: "API Calling", href: "devguide/third-party-integration/external-api#api-calling" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Built-in Payment Services"
-  href="devguide/third-party-integration/payment-service"
-  description="Integrate mainstream payment platforms to implement online payment and transaction functions."
->
-  <LinkGrid links={[
+title="Built-in Payment Services"
+href="devguide/third-party-integration/payment-service"
+description="Integrate mainstream payment platforms to implement online payment and transaction functions."
+
+> <LinkGrid links={[
+
     { text: "Configuring WeChat Payment Service", href: "devguide/third-party-integration/payment-service#wechat-payment-service-configuration" },
     { text: "Configuring Alipay Payment Service", href: "devguide/third-party-integration/payment-service#alipay-payment-service-configuration" },
     { text: "Using Payment Services", href: "devguide/third-party-integration/payment-service#payment-service-usage" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Built-in SMS Service"
-  href="devguide/third-party-integration/sms-service"
-  description="SMS sending and notification service integration, supporting verification codes and message push."
->
-  <LinkGrid links={[
+title="Built-in SMS Service"
+href="devguide/third-party-integration/sms-service"
+description="SMS sending and notification service integration, supporting verification codes and message push."
+
+> <LinkGrid links={[
+
     { text: "Alibaba Cloud SMS", href: "devguide/third-party-integration/sms-service#aliyun-sms" },
     { text: "Creating Alibaba Cloud SMS Service", href: "devguide/third-party-integration/sms-service#aliyun-sms-service-creation" },
     { text: "AWS SNS SMS", href: "devguide/third-party-integration/sms-service#aws-sns-sms" },
@@ -1927,50 +2170,61 @@ Connect to the broader ecosystem—integrate third-party APIs, payment gateways 
     { text: "Using SMS Service in Mobile Login", href: "devguide/third-party-integration/sms-service#use-sms-service-in-mobile-login" },
     { text: "Using SMS Service in Approval Workflows", href: "devguide/third-party-integration/sms-service#use-sms-service-in-approval-flow" },
     { text: "SMS Notification Function", href: "devguide/third-party-integration/sms-service#sms-notification-function" }
-  ]} />
+
+]} />
 </IndexCard>
+
 </div>
 
 ## Cache management {#cache-management}
+
 Boost performance with intelligent caching. Configure caching strategies to optimize data access speed and ensure smooth operation under high concurrency.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Cache Configuration and Usage"
-  href="devguide/cache-management"
-  description="Application cache strategy configuration to improve system performance and response speed."
->
-  <LinkGrid links={[
+title="Cache Configuration and Usage"
+href="devguide/cache-management"
+description="Application cache strategy configuration to improve system performance and response speed."
+
+> <LinkGrid links={[
+
     { text: "Cache Service Configuration", href: "devguide/cache-management#cache-service-configuration" },
     { text: "Multi-cache Service Management", href: "devguide/cache-management#multi-cache-service-management" },
     { text: "Cache Programming Interface Usage", href: "devguide/cache-management#cache-programming-interface-usage" }
-  ]} />
+
+]} />
 </IndexCard>
+
 </div>
 
 ## Internal API exposure {#internal-api-exposure}
+
 Expose application capabilities as APIs—generate standard interfaces, manage permissions, and monitor usage to enable external system integrations.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="API Authorization"
-  href="devguide/api-exposure/api-authorization"
-  description="Permission control and access authorization management for API interfaces."
->
-  <LinkGrid links={[
+title="API Authorization"
+href="devguide/api-exposure/api-authorization"
+description="Permission control and access authorization management for API interfaces."
+
+> <LinkGrid links={[
+
     { text: "API Authorization Creation", href: "devguide/api-exposure/api-authorization#api-authorization-creation" },
     { text: "API Authorization Detail", href: "devguide/api-exposure/api-authorization#api-authorization-detail" },
     { text: "Call Records", href: "devguide/api-exposure/api-authorization#call-records" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="API Exposure Examples for Various Elements"
-  href="devguide/api-exposure/api-exposure-examples-for-various-elements"
-  description="Comprehensive examples demonstrating how to expose different types of elements as APIs, including data models, services, and custom functions."
+title="API Exposure Examples for Various Elements"
+href="devguide/api-exposure/api-exposure-examples-for-various-elements"
+description="Comprehensive examples demonstrating how to expose different types of elements as APIs, including data models, services, and custom functions."
+
 >
+
     <LinkGrid links={[
         { text: "API Authorization for Service Functions", href: "devguide/api-exposure/api-exposure-examples-for-various-elements#service-function-api-authorization" },
         { text: "API Authorization for Data Models", href: "devguide/api-exposure/api-exposure-examples-for-various-elements#data-model-api-authorization" },
@@ -1979,148 +2233,173 @@ Expose application capabilities as APIs—generate standard interfaces, manage p
         { text: "API Authorization for AI Assistants", href: "devguide/api-exposure/api-exposure-examples-for-various-elements#ai-assistant-api-authorization" },
         { text: "API Authorization for Approval Processes", href: "devguide/api-exposure/api-exposure-examples-for-various-elements#approval-process-api-authorization" }
     ]} />
+
 </IndexCard>
 
 <IndexCard
-  title="Using SDK to Call Authorized Element APIs"
-  href="devguide/api-exposure/using-sdk-to-call-authorized-element-apis"
-  description="Learn how to use official SDKs to call authorized element APIs, including authentication, request handling, and error management."
+title="Using SDK to Call Authorized Element APIs"
+href="devguide/api-exposure/using-sdk-to-call-authorized-element-apis"
+description="Learn how to use official SDKs to call authorized element APIs, including authentication, request handling, and error management."
+
 >
+
     <LinkGrid links={[
         { text: "Using Python SDK", href: "devguide/api-exposure/using-sdk-to-call-authorized-element-apis#using-python-sdk" },
         { text: "Using Node.js SDK", href: "devguide/api-exposure/using-sdk-to-call-authorized-element-apis#using-nodejs-sdk" },
         { text: "Using Java SDK", href: "devguide/api-exposure/using-sdk-to-call-authorized-element-apis#using-java-sdk" }
     ]} />
+
 </IndexCard>
 
 <IndexCard
-  title="Using Cross-App Service Elements to Call Authorized APIs"
-  href="devguide/api-exposure/using-cross-app-service-elements-to-call-authorized-apis"
-  description="Implement cross-application API calls using service elements, enabling seamless integration between different JitAI applications."
+title="Using Cross-App Service Elements to Call Authorized APIs"
+href="devguide/api-exposure/using-cross-app-service-elements-to-call-authorized-apis"
+description="Implement cross-application API calls using service elements, enabling seamless integration between different JitAI applications."
+
 >
+
     <LinkGrid links={[
         { text: "Using Cross-App Service Elements", href: "devguide/api-exposure/using-cross-app-service-elements-to-call-authorized-apis#using-cross-app-service-elements" }
     ]} />
+
 </IndexCard>
 
 </div>
 
 ## Internationalization {#internationalization}
+
 Reach global audiences—support multiple languages, regional settings, and dynamic language switching for truly international applications.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Creating Language Packages"
-  href="devguide/internationalization/creating-language-packages"
-  description="Learn how to create custom language packages for your application, including structure definition and content organization."
->
-  <LinkGrid links={[
+title="Creating Language Packages"
+href="devguide/internationalization/creating-language-packages"
+description="Learn how to create custom language packages for your application, including structure definition and content organization."
+
+> <LinkGrid links={[
+
       { text: "Creating language packages", href: "devguide/internationalization/creating-language-packages#creating-language-packages" },
       { text: "Translating built-in terms", href: "devguide/internationalization/creating-language-packages#translating-built-in-terms" },
       { text: "Adding new terms", href: "devguide/internationalization/creating-language-packages#adding-new-terms" },
       { text: "Importing terms", href: "devguide/internationalization/creating-language-packages#importing-terms" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Extending System Built-in Language Packages"
-  href="devguide/internationalization/extending-system-builtin-language-packages"
-  description="Extend and customize existing system language packages to meet specific business requirements and regional needs."
+title="Extending System Built-in Language Packages"
+href="devguide/internationalization/extending-system-builtin-language-packages"
+description="Extend and customize existing system language packages to meet specific business requirements and regional needs."
+
 >
+
   <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
   </div>
 </IndexCard>
 
 <IndexCard
-  title="How to Translate Page Terms"
-  href="devguide/internationalization/how-to-translate-page-terms"
-  description="Master the techniques for translating page content, including dynamic text replacement and context-aware translations."
->
-  <LinkGrid links={[
+title="How to Translate Page Terms"
+href="devguide/internationalization/how-to-translate-page-terms"
+description="Master the techniques for translating page content, including dynamic text replacement and context-aware translations."
+
+> <LinkGrid links={[
+
       { text: "Automatic text translation", href: "devguide/internationalization/how-to-translate-page-terms#automatic-text-translation" },
       { text: "Dynamic text translation", href: "devguide/internationalization/how-to-translate-page-terms#dynamic-text-translation" },
       { text: "DOM node attribute translation", href: "devguide/internationalization/how-to-translate-page-terms#dom-node-attribute-translation" },
       { text: "Using API translation", href: "devguide/internationalization/how-to-translate-page-terms#using-api-translation" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Translation Ignore Rules"
-  href="devguide/internationalization/translate-ignore-rules"
-  description="Configure rules to exclude specific content from translation, ensuring proper handling of brand names, technical terms, and other non-translatable content."
->
-  <LinkGrid links={[
+title="Translation Ignore Rules"
+href="devguide/internationalization/translate-ignore-rules"
+description="Configure rules to exclude specific content from translation, ensuring proper handling of brand names, technical terms, and other non-translatable content."
+
+> <LinkGrid links={[
+
       { text: "Basic usage", href: "devguide/internationalization/translate-ignore-rules#basic-usage" },
       { text: "Advanced configuration", href: "devguide/internationalization/translate-ignore-rules#advanced-configuration" },
       { text: "Configuration method", href: "devguide/internationalization/translate-ignore-rules#configuration-method" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Default Language"
-  href="devguide/internationalization/default-language"
-  description="Configure the default language for your application to ensure optimal user experience for first-time visitors and users without explicit language preferences."
->
-  <LinkGrid links={[
+title="Default Language"
+href="devguide/internationalization/default-language"
+description="Configure the default language for your application to ensure optimal user experience for first-time visitors and users without explicit language preferences."
+
+> <LinkGrid links={[
+
       { text: "Default language configuration", href: "devguide/internationalization/default-language#default-language-configuration" },
       { text: "Language selection strategy", href: "devguide/internationalization/default-language#language-selection-strategy" },
       { text: "Configuration recommendations", href: "devguide/internationalization/default-language#configuration-recommendations" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>
 
-
 ## Frontend UI customization {#frontend-ui-customization}
+
 Craft unique brand experiences—customize themes, develop exclusive UI components, and align interfaces with your corporate identity while enhancing user experience.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Global Styles"
-  href="devguide/frontend-ui-customization/global-styles"
-  description="Application overall style and theme configuration, unifying interface style and user experience."
->
-  <LinkGrid links={[
+title="Global Styles"
+href="devguide/frontend-ui-customization/global-styles"
+description="Application overall style and theme configuration, unifying interface style and user experience."
+
+> <LinkGrid links={[
+
     { text: "Creating a global style element", href: "devguide/frontend-ui-customization/global-styles#create-global-style-element" },
     { text: "Modifying the global style", href: "devguide/frontend-ui-customization/global-styles#modify-global-style" },
     { text: "More style variables", href: "devguide/frontend-ui-customization/global-styles#more-style-variables" },
     { text: "Debugging the theme", href: "devguide/frontend-ui-customization/global-styles#debug-theme" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Custom Controls"
-  href="devguide/frontend-ui-customization/custom-controls"
-  description="Develop personalized UI components to meet special business needs and interaction requirements."
->
-  <LinkGrid links={[
+title="Custom Controls"
+href="devguide/frontend-ui-customization/custom-controls"
+description="Develop personalized UI components to meet special business needs and interaction requirements."
+
+> <LinkGrid links={[
+
     { text: "Creating Custom Control Element", href: "devguide/frontend-ui-customization/custom-controls#create-custom-control-element" },
     { text: "Modifying Custom Control", href: "devguide/frontend-ui-customization/custom-controls#modify-custom-control" },
     { text: "Using Custom Control in Forms", href: "devguide/frontend-ui-customization/custom-controls#use-custom-control-in-form" },
     { text: "Using Custom Control in Tables", href: "devguide/frontend-ui-customization/custom-controls#use-custom-control-in-table" },
     { text: "Custom Control Parameters", href: "devguide/frontend-ui-customization/custom-controls#custom-control-parameters" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Component Customization"
-  href="devguide/frontend-ui-customization/component-customization"
-  description="Platform provides two main approaches for component customization to meet different development needs and scenarios."
->
-  <LinkGrid links={[
+title="Component Customization"
+href="devguide/frontend-ui-customization/component-customization"
+description="Platform provides two main approaches for component customization to meet different development needs and scenarios."
+
+> <LinkGrid links={[
+
     { text: "Developing Full-code Components", href: "devguide/frontend-ui-customization/component-customization#developing-full-code-components" },
     { text: "Extending Component Type Elements", href: "devguide/frontend-ui-customization/component-customization#extending-component-type-elements" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Page Customization"
-  href="devguide/frontend-ui-customization/page-customization"
-  description="Specific development technologies and usage patterns for full-code pages, including style processing, component usage, resource management, and data operations."
->
-  <LinkGrid columns={2} links={[
+title="Page Customization"
+href="devguide/frontend-ui-customization/page-customization"
+description="Specific development technologies and usage patterns for full-code pages, including style processing, component usage, resource management, and data operations."
+
+> <LinkGrid columns={2} links={[
+
     { text: "Creating a React full-code page", href: "devguide/frontend-ui-customization/page-customization#create-react-full-code-page" },
     { text: "Using styles", href: "devguide/frontend-ui-customization/page-customization#use-style" },
     { text: "Using local resources", href: "devguide/frontend-ui-customization/page-customization#use-local-resources" },
@@ -2143,71 +2422,84 @@ Craft unique brand experiences—customize themes, develop exclusive UI componen
     { text: "Introducing build plugins", href: "devguide/frontend-ui-customization/page-customization#introducing-build-plugins" },
     { text: "System built-in package overview", href: "devguide/frontend-ui-customization/page-customization#system-built-in-package-overview" },
     { text: "Default loader mapping", href: "devguide/frontend-ui-customization/page-customization#default-loader-mapping" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Portal Customization"
-  href="devguide/frontend-ui-customization/portal-customization"
-  description="Full-code custom portals provide flexible solutions for navigation layout adjustment, interface style customization, and interaction method optimization."
->
-  <LinkGrid links={[
+title="Portal Customization"
+href="devguide/frontend-ui-customization/portal-customization"
+description="Full-code custom portals provide flexible solutions for navigation layout adjustment, interface style customization, and interaction method optimization."
+
+> <LinkGrid links={[
+
     { text: "Creating Custom Portal", href: "devguide/frontend-ui-customization/portal-customization#creating-custom-portal" },
     { text: "Core File Structure", href: "devguide/frontend-ui-customization/portal-customization#core-file-structure" },
     { text: "Important APIs and Methods", href: "devguide/frontend-ui-customization/portal-customization#important-apis-and-methods" },
     { text: "Portal Basic APIs", href: "devguide/frontend-ui-customization/portal-customization#portal-basic-apis" },
     { text: "Page Rendering and Navigation", href: "devguide/frontend-ui-customization/portal-customization#page-rendering-and-navigation" },
     { text: "Permission Verification", href: "devguide/frontend-ui-customization/portal-customization#permission-verification" }
-  ]} />
+
+]} />
 </IndexCard>
+
 </div>
 
 ## Advanced guide {#advanced-guide}
+
 Master complex architectures and best practices through real-world scenarios—in-depth guides for advanced application development.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Development and Operations Process"
-  href="devguide/advanced-guide/local-development-and-debugging"
-  description="Optimize your workflow—master development processes, debugging techniques, and production deployment for stable applications and efficient team collaboration."
->
-  <LinkGrid links={[
+title="Development and Operations Process"
+href="devguide/advanced-guide/local-development-and-debugging"
+description="Optimize your workflow—master development processes, debugging techniques, and production deployment for stable applications and efficient team collaboration."
+
+> <LinkGrid links={[
+
     { text: "Local Development and Debugging", href: "devguide/advanced-guide/local-development-and-debugging" },
     { text: "Team Collaborative Development", href: "devguide/advanced-guide/team-collaborative-development" },
     { text: "Application Layer Stability Guarantee", href: "devguide/advanced-guide/application-layer-stability-guarantee" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="AI Development and Applications"
-  href="devguide/advanced-guide/ai-customer-service"
-  description="Build intelligent applications with AI agents, assistants, and prompt engineering—deliver enhanced experiences and automated workflows."
->
-  <LinkGrid links={[
+title="AI Development and Applications"
+href="devguide/advanced-guide/ai-customer-service"
+description="Build intelligent applications with AI agents, assistants, and prompt engineering—deliver enhanced experiences and automated workflows."
+
+> <LinkGrid links={[
+
     { text: "AI Customer Service", href: "devguide/advanced-guide/ai-customer-service" },
     { text: "Agent Prompt Writing Techniques", href: "devguide/advanced-guide/agent-prompt-writing-techniques" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Data Modeling and Analysis"
-  href="devguide/advanced-guide/business-entity-modeling-and-data-analysis"
-  description="Build advanced data analysis systems with JitORM—implement multi-dimensional aggregations and automated business rules."
->
-  <LinkGrid links={[
+title="Data Modeling and Analysis"
+href="devguide/advanced-guide/business-entity-modeling-and-data-analysis"
+description="Build advanced data analysis systems with JitORM—implement multi-dimensional aggregations and automated business rules."
+
+> <LinkGrid links={[
+
     { text: "Business Entity Modeling and Data Analysis", href: "devguide/advanced-guide/business-entity-modeling-and-data-analysis" }
-  ]} />
+
+]} />
 </IndexCard>
 
 <IndexCard
-  title="Business Services and API"
-  href="devguide/advanced-guide/using-interceptors-for-custom-request-authentication"
-  description="Implement custom authentication and business service architectures with JitService—secure and organize your API layer."
->
-  <LinkGrid links={[
+title="Business Services and API"
+href="devguide/advanced-guide/using-interceptors-for-custom-request-authentication"
+description="Implement custom authentication and business service architectures with JitService—secure and organize your API layer."
+
+> <LinkGrid links={[
+
     { text: "Use Interceptors for Custom Request Authentication", href: "devguide/advanced-guide/using-interceptors-for-custom-request-authentication" }
-  ]} />
+
+]} />
 </IndexCard>
 
 </div>

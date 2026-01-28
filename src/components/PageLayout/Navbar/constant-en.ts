@@ -31,12 +31,12 @@ const CONTENT = {
             type: "newTab",
             url: "https://forum.jit.pro",
         },
-        {
-            id: "blog",
-            label: "Blog",
-            type: "currentPage",
-            url: "/blog",
-        },
+        // {
+        //     id: "blog",
+        //     label: "Blog",
+        //     type: "currentPage",
+        //     url: "/blog",
+        // },
         {
             id: "contact",
             label: "Contact Us",

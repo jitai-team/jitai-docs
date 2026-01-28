@@ -10,6 +10,16 @@ export const PAGE_METADATA_ZH: Record<string, PageMetadata> = {
         description:
             "JitAI全球首创解释型应用架构，让AI智能体实时感知与编排系统，开发效率提升10倍！立即体验智能开发新时代。",
     },
+    "ai-solution": {
+        title: "AI 解决方案落地 - JitAI",
+        description:
+            "用结构化确定性构建复杂 AI 解决方案。JAAP 让应用结构可解释、可编排、可上线，并支持版本治理与回滚。",
+    },
+    "low-code-platform": {
+        title: "低代码平台 - JitAI",
+        description:
+            "可视化结构 + 原生代码，构建企业级 AI 应用。支持编排式开发、配置即代码与生产级治理能力。",
+    },
     pricing: {
         title: "JitAI 定价方案 - 灵活的企业级 AI 开发平台",
         description:

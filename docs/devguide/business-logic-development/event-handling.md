@@ -105,7 +105,7 @@ Add statements in function logic to trigger custom events.
 
 ![Custom event trigger](./img/custom-event-trigger.png "Custom event trigger")
 
-In the service's `service.py` function logic, use `app.event.publish` to trigger events. The `sender` parameter represents the event sender (typically the function path), and `args` is used to pass parameters.
+In the `service.py` service function logic, import `from events.Meta import JitEvent` and use `JitEvent.publish` to trigger the event. The `sender` parameter represents the event sender (usually the function path), and `args` is used to pass parameters.
 
 ### Subscribing to custom events {#subscribing-to-custom-events}
 

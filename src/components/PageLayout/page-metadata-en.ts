@@ -10,6 +10,16 @@ export const PAGE_METADATA_EN: Record<string, PageMetadata> = {
         description:
             "The world's first interpreted app framework enabling AI agents to perceive and orchestrate systems in real-time, boosting development efficiency by 10x!",
     },
+    "ai-solution": {
+        title: "AI Solution Landing - JitAI",
+        description:
+            "Build complex AI solutions with structural certainty. JAAP makes application structure explicit, machine-readable, and production-ready.",
+    },
+    "low-code-platform": {
+        title: "Low-Code Platform - JitAI",
+        description:
+            "Build enterprise AI apps with visual structure and real code. Structure-first workflows, orchestration, and config-as-code for production governance.",
+    },
     pricing: {
         title: "JitAI Pricing Plans - Flexible Enterprise AI Development Platform",
         description:

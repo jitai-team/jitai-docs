@@ -1,8 +1,8 @@
-# Using WeChat Work Self-built Application and Adding Jit Application to Workspace
+# Using WeChat Work Self-built Application and Adding JitAI Application to Workspace
 
 ## Introduction
 
-Jit utilizes WeChat Work self-built organization elements with the help of WeChat Work self-built applications to achieve WeChat Work organizational structure synchronization, WeChat Work QR code login to Jit application, and implement password-free login in WeChat Work workspace, WeChat Work message notifications, WeChat Work approvals, and other functions.
+JitAI utilizes WeChat Work self-built organization elements with the help of WeChat Work self-built applications to achieve WeChat Work organizational structure synchronization, WeChat Work QR code login to JitAI application, and implement password-free login in WeChat Work workspace, WeChat Work message notifications, WeChat Work approvals, and other functions.
 
 The following steps explain how to implement the above functions
 
@@ -14,7 +14,7 @@ The following steps explain how to implement the above functions
     
     ![image.png](./img/qywx/3.png)
     
-2.  Enter the self-built application creation page, complete the application's basic information and application's visibility range. The visibility range determines the data range synchronized to Jit application organizational structure
+2.  Enter the self-built application creation page, complete the application's basic information and application's visibility range. The visibility range determines the data range synchronized to JitAI application organizational structure
     
     ![image.png](./img/qywx/4.png)
     
@@ -22,7 +22,7 @@ The following steps explain how to implement the above functions
     
     ![image.png](./img/qywx/5.png)
     
-4.  In the detailed page of the self-built enterprise, you need to configure the application homepage, which is the link to enter Jit application from the workspace. After completing this step, you can enter the application in WeChat Work workspace, but you still need to log in manually and password-free login has not been implemented yet
+4.  In the detailed page of the self-built enterprise, you need to configure the application homepage, which is the link to enter JitAI application from the workspace. After completing this step, you can enter the application in WeChat Work workspace, but you still need to log in manually and password-free login has not been implemented yet
     
     ![image.png](./img/qywx/6.png)
     
@@ -33,7 +33,7 @@ The following steps explain how to implement the above functions
 
 The main format of the URL is consistent with the above. Everyone needs to replace the color-coded content above:
 
-*   Red part: Jit application's access address, **urlencode the link**, you can use this website to escape the link: [https://www.w3cschool.cn/tools/index?name=urlencode_decode](https://www.w3cschool.cn/tools/index?name=urlencode_decode)
+*   Red part: JitAI application's access address, **urlencode the link**, you can use this website to escape the link: [https://www.w3cschool.cn/tools/index?name=urlencode_decode](https://www.w3cschool.cn/tools/index?name=urlencode_decode)
     
 *   Blue part: Enterprise's CorpID, there are instructions below on how to query this information
     
@@ -48,7 +48,7 @@ The main format of the URL is consistent with the above. Everyone needs to repla
 
 ![image](./img/qywx/8.png)
 
-*   Webpage authorization and JS-SDK, note: The domain registration subject of Jit application deployment needs to be the same as the current enterprise subject. The server needs to perform domain ownership authentication for the first configuration. You can view [WeChat Work Self-built - Domain Ownership Authentication Process](https://alidocs.dingtalk.com/i/nodes/dQPGYqjpJYgm3NbDTrOO0YxnWakx1Z5N?utm_scene=team_space)
+*   Webpage authorization and JS-SDK, note: The domain registration subject of JitAI application deployment needs to be the same as the current enterprise subject. The server needs to perform domain ownership authentication for the first configuration. You can view [WeChat Work Self-built - Domain Ownership Authentication Process](https://alidocs.dingtalk.com/i/nodes/dQPGYqjpJYgm3NbDTrOO0YxnWakx1Z5N?utm_scene=team_space)
     
 
 ![image.png](./img/qywx/9.png)
@@ -69,7 +69,7 @@ The main format of the URL is consistent with the above. Everyone needs to repla
 
 ![image.png](./img/qywx/13.png)
 
-## Create WeChat Work Self-built Organizational Structure Element in Jit Application
+## Create WeChat Work Self-built Organizational Structure Element in JitAI Application
 
 1.  Find the new creation entrance
     
@@ -110,7 +110,7 @@ After completing the above configuration, you can use WeChat Work QR code login 
 
 ![image.png](./img/qywx/21.png)
 
-## Password-free Login to Jit Application in WeChat Work Workspace
+## Password-free Login to JitAI Application in WeChat Work Workspace
 
 You can enter the application with password-free login in WeChat Work workspace
 

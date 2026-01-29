@@ -1,4 +1,4 @@
-# How to Add Jit Application to DingTalk Workspace and Implement Password-Free Login and Mobile Experience
+# How to Add JitAI Application to DingTalk Workspace and Implement Password-Free Login and Mobile Experience
 
 ## Add an Enterprise Internal Self-built Application in DingTalk Backend
 
@@ -40,9 +40,9 @@
 
 ![image.png](./img/dd/img9.png)
 
-**At this time, you need to create a DingTalk self-built organizational structure in Jit**
+**At this time, you need to create a DingTalk self-built organizational structure in JitAI**
 
-## Create a DingTalk Self-built Organizational Structure in Jit Application
+## Create a DingTalk Self-built Organizational Structure in JitAI Application
 
 1.  Get the configuration information of the DingTalk self-built application. Enter the application created above and go to [Credentials and Basic Information] to see so many strings
 
@@ -52,7 +52,7 @@
 
     ![image.png](./img/dd/img11.png)
 
-3.  At this time, create a new DingTalk self-built organizational structure in the Jit application. The entrance is as follows
+3.  At this time, create a new DingTalk self-built organizational structure in the JitAI application. The entrance is as follows
 
     ![image.png](./img/dd/img12.png)
 

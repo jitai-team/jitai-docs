@@ -16,7 +16,7 @@
 
 4.  添加之后需要配置 ，桌面端主页、移动端主页配置相关链接，这两个可以配置同一个链接。同时打开方式配置选择在飞书内新标签页打开。
 
-配置地址的规则：`https://domain/{orgid}/{appId}` `协议://域名/组织 id/应用 id`
+配置地址的规则：`https://domain/{orgid}/{appId}` `协议://域名/组织 id/应用 id`
 
 比如我的应用：https://jit-dev.wanyunapp.com/whwy/app1769584429813
 

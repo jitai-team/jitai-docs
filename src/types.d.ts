@@ -15,18 +15,6 @@ declare module "@docusaurus/useBaseUrl" {
     export default useBaseUrl;
 }
 
-declare module "react" {
-    const React: any;
-    export default React;
-    export const useState: any;
-}
-
-declare module "react/jsx-runtime" {
-    export const jsx: any;
-    export const jsxs: any;
-    export const Fragment: any;
-}
-
 declare module "*.svg?react" {
     const ReactComponent: any;
     export default ReactComponent;

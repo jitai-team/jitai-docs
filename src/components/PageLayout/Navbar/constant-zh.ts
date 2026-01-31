@@ -57,6 +57,7 @@ const CONTENT = {
         type: "currentPage",
         url: "/zh/download",
     },
+    caseCategory: ["客户管理系统", "全链路业务系统", "协同系统"],
 };
 
 export default CONTENT;

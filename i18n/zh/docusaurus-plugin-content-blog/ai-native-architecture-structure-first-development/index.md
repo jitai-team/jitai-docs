@@ -1,5 +1,6 @@
 ---
-title: "AI作为架构师：JitAI引领的结构优先范式变革"
+title: "为什么 AI 原生开发需要“结构优先”：从代码编写到架构定义的范式重构"
+seoTitle: "AI作为架构师：JitAI引领的结构优先范式变革"
 date: 2026/01/26
 authors: []
 tags: []

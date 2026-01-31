@@ -97,6 +97,23 @@ After configuration is completed, the system will automatically generate a WeCom
 WeCom self-built QR code login method needs to be used in conjunction with [WeCom Custom Organizational Structure](./organization#wechat-work-custom-organization). When creating a WeCom custom organizational structure, the system will automatically synchronize and generate the corresponding QR code login method without separate configuration.
 :::
 
+
+## Feishu Self-built QR Code Login {#feishu-custom-qr-login}
+
+Feishu Self-built QR Code Login is an enterprise-level identity authentication method based on the Feishu platform. Users can securely and conveniently log in to the system through QR code authorization via the Feishu client. This method is suitable for scenarios such as unified identity authentication for internal employees and password-free login, effectively improving login experience and security. When creating a Feishu custom organizational structure, the system will automatically generate a Feishu self-built QR code login method for that organizational structure. Developers can also independently add Feishu self-built QR code login authentication methods according to actual needs.
+
+![Feishu QR Code Scanning](./img/auth/feishu-qr-scan.gif)
+
+When developers choose to create `Feishu Self-built QR Code Login`, a configuration window for `Create Feishu Self-built QR Code Login` will pop up. In this window, you need to fill in the login method name (English name will be automatically generated) and configure the credential information for the Feishu custom application, including `App ID` and `App Secret`. For information on how to obtain the relevant configuration information, please refer to the [Organizational Structure Documentation](./organization#feishu-custom-organization).
+
+![Feishu Login Configuration](./img/auth/feishu-login-config.png)
+
+After completing the configuration, the system will automatically create the Feishu QR code login method and jump to the login method configuration page for your subsequent viewing and management.
+
+:::tip
+Feishu self-built QR code login method needs to be used in conjunction with [Feishu Custom Organizational Structure](./organization#feishu-custom-organization). When creating a Feishu custom organizational structure, the system will automatically synchronize and generate the corresponding QR code login method without separate configuration.
+:::
+
 ## WeChat login {#wechat-login}
 
 WeChat login is a third-party login method based on the WeChat Open Platform, allowing users to quickly and securely log in to the system through WeChat account authorization. This method is suitable for consumer-facing application scenarios, greatly improving user registration and login convenience, reducing user churn rates, while supporting user information acquisition and management within the WeChat ecosystem.

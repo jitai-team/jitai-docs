@@ -1,5 +1,6 @@
 ---
-title: "Solving Structural Invisibility in AI-Native Development: The JitAI Architecture"
+title: "Solving Structural Invisibility: The Architecture Behind JitAI’s AI-Native Platform"
+seoTitle: "Solving Structural Invisibility in AI-Native Development: The JitAI Architecture"
 date: 2026/01/26
 authors: []
 tags: []

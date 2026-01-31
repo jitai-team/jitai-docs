@@ -1,5 +1,6 @@
 ---
-title: "Semantic Collapse: Why Microservices Architecture Confuses AI Agents & How to Fix It"
+title: "Semantic Collapse: Why Your Microservices Architecture Looks Like a Mess to AI"
+seoTitle: "Semantic Collapse: Why Microservices Architecture Confuses AI Agents & How to Fix It"
 date: 2026/01/26
 authors: []
 tags: []

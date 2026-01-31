@@ -1,5 +1,6 @@
 ---
-title: "语义坍塌：微服务架构为何这类 AI Agent 的噩梦？如何用 JitAI 修复？"
+title: "语义坍塌：为什么微服务架构会让 AI Agent 困惑以及如何修复"
+seoTitle: "语义坍塌：微服务架构为何这类 AI Agent 的噩梦？如何用 JitAI 修复？"
 date: 2026/01/26
 authors: []
 tags: []

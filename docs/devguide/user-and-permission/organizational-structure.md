@@ -46,7 +46,7 @@ When creating an organization, select `DingTalk Self-built Org.` to open a dialo
 
 After configuration, the system automatically synchronizes organizational structure, department information, and member data from DingTalk, enabling unified identity authentication and permission management.
 
-**DingTalk Configuration Information Guide: Refer to [DingTalk Open Platform Documentation](https://open-dev.dingtalk.com)**
+**DingTalk Configuration Information Guide: Refer to [DingTalk Open Platform Documentation](https://open-dev.dingtalk.com), for detailed application creation and configuration steps, please refer to [DingTalk Workspace App Guide](./dingtalk-workspace-app-guide)**
 
 ![DingTalk Enterprise ID Example](./img/corp/dingtalk-enterprise-id.png "DingTalk Enterprise ID Example")
 
@@ -73,7 +73,7 @@ When creating an organizational structure, select `WeCom Self-built Org.`, and t
 
 After completing the configuration, the system will automatically pull organizational structure data from WeCom, including department hierarchy, member information, position information, etc., achieving deep integration and unified management with the WeCom ecosystem.
 
-**WeCom Configuration Information Acquisition Guide: Please refer to [WeCom Official Documentation](https://work.weixin.qq.com)**
+**WeCom Configuration Information Acquisition Guide: Please refer to [WeCom Official Documentation](https://work.weixin.qq.com), for detailed application creation and configuration steps, please refer to [WeChat Work App Guide](./wechat-work-app-guide)**
 
 ![WeCom Enterprise ID](./img/corp/wechat-work-id.png "WeCom Enterprise ID")
 The Enterprise ID (CorpId) can be obtained from the enterprise information page in the WeCom management backend.
@@ -100,6 +100,27 @@ When creating an organization, select `Microsoft Teams` as the organization type
 :::tip Note
 Before synchronizing your Microsoft Teams organization, ensure the application has been granted permissions to read organizational structure and member information in the Azure admin portal to guarantee smooth data synchronization.
 :::
+
+## Feishu Self-built Org. {#feishu-custom-organization}
+Feishu Self-built Org. is an organizational structure element designed for enterprises using the Feishu (Lark/Feishu) office platform. Through this type, deep integration with the Feishu platform can be achieved, automatically synchronizing department structures, member information, and other data from Feishu, avoiding the burden of redundantly maintaining contact lists and providing enterprises with an integrated office collaboration solution.
+
+![Creating Feishu Self-built Org.](./img/corp/feishu-custom-org-creation.gif)
+
+When creating an organizational structure, select `Feishu Self-built Org.` to display the `Create Feishu Self-built Org.` dialog. You need to fill in the organization name (English name will be automatically generated), App ID, App Secret, and other Feishu application configuration information. These configuration parameters are used to establish a secure connection with the Feishu platform, ensuring the accuracy and security of data synchronization. After configuration is completed, the system will automatically synchronize organizational structure, department information, and member data from the Feishu platform, enabling unified identity authentication and permission management.
+
+**Feishu Configuration Information Guide: Refer to [Feishu Open Platform Documentation](https://open.feishu.cn), for detailed application creation and configuration steps, please refer to [Feishu Workspace App Guide](./feishu-workspace-app-guide)**
+
+
+![Feishu App ID Example](./img/corp/feishu-app-key-secret.png)
+
+Application parameters such as App ID and App Secret need to be obtained from the custom application details page on the Feishu Open Platform.
+
+After the organizational structure is created, JitAI will automatically configure Feishu Self-built QR Code Login for the organization without manual setup, allowing members to quickly log in to the system via Feishu QR code scanning.
+
+:::tip Note
+Before performing Feishu organization synchronization, please ensure that the following permissions have been assigned to the custom application on the Feishu Open Platform: `Get User Basic Information`, `Get Address Book Basic Information`, `Read Address Book as Application`, etc., to ensure smooth data synchronization.
+:::
+
 
 ## Contact management entry {#contact-management-entry}
 JitAI provides a contact management page for viewing department, member, and role information in real-time.

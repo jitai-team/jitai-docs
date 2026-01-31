@@ -1,5 +1,6 @@
 ---
-title: "AI as Architect: The Structure-First Paradigm Shift with JitAI"
+title: "When AI Becomes the Architect: Redefining Human-Machine Collaboration in Software Development"
+seoTitle: "AI as Architect: The Structure-First Paradigm Shift with JitAI"
 date: 2026/01/26
 authors: []
 tags: []

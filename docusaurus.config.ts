@@ -1,8 +1,29 @@
 import { themes as prismThemes } from "prism-react-renderer";
+import fs from "fs";
+import path from "path";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+
+function getFirstCaseSlug(): string {
+    const casesDir = path.join(__dirname, "cases");
+    const entries = fs.readdirSync(casesDir, { withFileTypes: true });
+    const caseDirs = entries
+        .filter((e) => e.isDirectory())
+        .map((e) => e.name)
+        .filter((dirName) => {
+            const indexMd = path.join(casesDir, dirName, "index.md");
+            return fs.existsSync(indexMd);
+        })
+        .sort((a, b) => a.localeCompare(b));
+
+    if (caseDirs.length === 0) {
+        return "";
+    }
+
+    return caseDirs[0];
+}
 
 const config: Config = {
     title: "JitAi",
@@ -22,6 +43,23 @@ const config: Config = {
     baseUrl: "/",
     // Algolia site verification and Google Tag Manager
     headTags: [
+        {
+            tagName: "script",
+            attributes: {},
+            innerHTML: `(() => {
+  const slug = ${JSON.stringify(getFirstCaseSlug())};
+  if (!slug) return;
+  const p = window.location.pathname;
+  const isCases = p === '/cases' || p === '/cases/';
+  const isZhCases = p === '/zh/cases' || p === '/zh/cases/';
+  if (isCases) {
+    window.location.replace('/cases/' + slug + window.location.search + window.location.hash);
+  }
+  if (isZhCases) {
+    window.location.replace('/zh/cases/' + slug + window.location.search + window.location.hash);
+  }
+})();`,
+        },
         // 注意：Viewport 配置已移至 themeConfig.metadata
         // 在此处配置会被 Docusaurus 默认的 viewport 覆盖
         // Google Tag Manager
@@ -116,6 +154,54 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             } satisfies Preset.Options,
         ],
     ],
+
+    plugins: [
+        [
+            "@docusaurus/plugin-content-blog",
+            {
+                id: "cases",
+                path: "cases",
+                routeBasePath: "cases",
+                showReadingTime: false,
+                postsPerPage: 9999,
+                onInlineTags: "throw",
+                onInlineAuthors: "throw",
+                onUntruncatedBlogPosts: "throw",
+            },
+        ],
+        function svgrReactQueryPlugin() {
+            return {
+                name: "svgr-react-query-plugin",
+                configureWebpack() {
+                    return {
+                        mergeStrategy: {
+                            "module.rules": "prepend",
+                        },
+                        module: {
+                            rules: [
+                                {
+                                    test: /\.svg$/i,
+                                    resourceQuery: /react/,
+                                    use: [
+                                        {
+                                            loader: (require as any).resolve(
+                                                "@svgr/webpack",
+                                            ),
+                                            options: {
+                                                svgo: true,
+                                                titleProp: true,
+                                            },
+                                        },
+                                    ],
+                                },
+                            ],
+                        },
+                    };
+                },
+            };
+        },
+    ],
+
     // 添加客户端模块
     clientModules: [
         "./src/clientModules/readingProgress.js",

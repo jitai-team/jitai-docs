@@ -1,9 +1,44 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import LanguageSwitcher from "../LanguageSwitcher";
 import CONTENT_EN from "./constant-en";
 import CONTENT_ZH from "./constant-zh";
 import { addUTMToUrl } from "../../../utils/utm";
+
+type CaseNavItem = {
+    slug: string;
+    menuName: string;
+    category: string;
+};
+
+const casesZhContext = (require as any).context(
+    "@site/cases",
+    true,
+    /zhCN\.json$/,
+);
+
+const getAllZhCaseNavItems = (): CaseNavItem[] => {
+    if (!casesZhContext) return [];
+
+    const keys: string[] = casesZhContext.keys?.() || [];
+    return keys
+        .map((key) => {
+            const mod = casesZhContext(key);
+            const data = mod?.default || mod;
+
+            const match = String(key).match(/^\.\/([^/]+)\/zhCN\.json$/);
+            const slug = match?.[1] || "";
+            const menuName = String(data?.menuName || "").trim();
+            const category = String(data?.category || "").trim();
+
+            if (!slug || !menuName || !category) return null;
+            return { slug, menuName, category };
+        })
+        .filter(Boolean)
+        .sort((a: any, b: any) =>
+            String(a.menuName).localeCompare(String(b.menuName)),
+        );
+};
 
 interface NavbarProps {
     currentLocale?: string;
@@ -20,6 +55,24 @@ const Navbar: React.FC<NavbarProps> = ({
     const [isMobile, setIsMobile] = useState(false);
 
     const CONTENT = currentLocale === "zh" ? CONTENT_ZH : CONTENT_EN;
+
+    const caseCategoryGroups = React.useMemo(() => {
+        if (currentLocale !== "zh") return [];
+
+        const allItems = getAllZhCaseNavItems();
+        const categories: string[] = Array.isArray(
+            (CONTENT as any).caseCategory,
+        )
+            ? (CONTENT as any).caseCategory
+            : [];
+
+        const grouped = categories.map((category) => {
+            const items = allItems.filter((i) => i.category === category);
+            return { category, items };
+        });
+
+        return grouped;
+    }, [CONTENT, currentLocale]);
 
     useEffect(() => {
         const checkMobile = () => {
@@ -40,7 +93,7 @@ const Navbar: React.FC<NavbarProps> = ({
 
             // Try exact match first
             let currentItem = CONTENT.navItems.find(
-                (item) => item.url === currentPath
+                (item) => item.url === currentPath,
             );
 
             // If no exact match, try prefix match
@@ -128,20 +181,121 @@ const Navbar: React.FC<NavbarProps> = ({
 
                     {/* Desktop navigation */}
                     <div className={`${styles.navLinks} ${styles.desktopNav}`}>
-                        {CONTENT.navItems.map((item, index) => {
+                        {CONTENT.navItems.map((item) => {
                             const isActive = item.id === activeNavItem;
 
                             return (
-                                <button
-                                    key={item.id}
-                                    onClick={() => handleNavClick(item)}
-                                    className={`${
-                                        isActive ? styles.active : ""
-                                    } ${item.class || ""}`}
-                                    data-type={item.type}
-                                >
-                                    {item.label}
-                                </button>
+                                <React.Fragment key={item.id}>
+                                    <button
+                                        onClick={() => handleNavClick(item)}
+                                        className={`${
+                                            isActive ? styles.active : ""
+                                        } ${item.class || ""}`}
+                                        data-type={item.type}
+                                    >
+                                        {item.label}
+                                    </button>
+
+                                    {currentLocale === "zh" &&
+                                    item.id === "forum" &&
+                                    caseCategoryGroups.length > 0 ? (
+                                        <div
+                                            key="cases-menu"
+                                            className={styles.casesDropdown}
+                                        >
+                                            <button
+                                                type="button"
+                                                className={styles.casesButton}
+                                            >
+                                                案例
+                                                <svg
+                                                    className={
+                                                        styles.casesChevron
+                                                    }
+                                                    width="14"
+                                                    height="14"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        d="M6 9l6 6 6-6"
+                                                        stroke="currentColor"
+                                                        strokeWidth="2"
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                    />
+                                                </svg>
+                                            </button>
+
+                                            <div className={styles.casesMenu}>
+                                                <div
+                                                    className={
+                                                        styles.casesMenuGrid
+                                                    }
+                                                >
+                                                    {caseCategoryGroups.map(
+                                                        (group) => (
+                                                            <div
+                                                                key={
+                                                                    group.category
+                                                                }
+                                                                className={
+                                                                    styles.casesCol
+                                                                }
+                                                            >
+                                                                <h4
+                                                                    className={
+                                                                        styles.casesGroupTitle
+                                                                    }
+                                                                >
+                                                                    {
+                                                                        group.category
+                                                                    }
+                                                                </h4>
+                                                                <div
+                                                                    className={
+                                                                        styles.casesList
+                                                                    }
+                                                                >
+                                                                    {group.items.map(
+                                                                        (
+                                                                            caseItem,
+                                                                        ) => (
+                                                                            <button
+                                                                                key={
+                                                                                    caseItem.slug
+                                                                                }
+                                                                                type="button"
+                                                                                className={
+                                                                                    styles.casesItem
+                                                                                }
+                                                                                onClick={() =>
+                                                                                    handleNavClick(
+                                                                                        {
+                                                                                            id: "cases",
+                                                                                            label: caseItem.menuName,
+                                                                                            type: "currentPage",
+                                                                                            url: `/zh/cases/${caseItem.slug}`,
+                                                                                        },
+                                                                                    )
+                                                                                }
+                                                                            >
+                                                                                {
+                                                                                    caseItem.menuName
+                                                                                }
+                                                                            </button>
+                                                                        ),
+                                                                    )}
+                                                                </div>
+                                                            </div>
+                                                        ),
+                                                    )}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ) : null}
+                                </React.Fragment>
                             );
                         })}
                     </div>

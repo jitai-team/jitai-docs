@@ -56,6 +56,11 @@ const CONTENT = {
         type: "currentPage",
         url: "/download",
     },
+    caseCategory: [
+        "Customer Management System",
+        "Full-Chain Business System",
+        "Collaborative System",
+    ],
 };
 
 export default CONTENT;

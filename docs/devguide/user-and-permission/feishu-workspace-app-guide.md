@@ -1,4 +1,4 @@
-# How to Add Jit Application to Feishu Workspace and Implement Password-Free Login and Mobile Experience
+# How to Add JitAI Application to Feishu Workspace and Implement Password-Free Login and Mobile Experience
 
 ## Add an Enterprise Internal Self-built Application in Feishu Backend
 
@@ -16,9 +16,9 @@
 
 4.  After adding, you need to configure the desktop homepage and mobile homepage with relevant links. These two can be configured with the same link. At the same time, configure the opening method to open in a new tab within Feishu.
 
-Configuration address rule: `https://domain/{orgid}/{appId}/login` `protocol://domain/organization id/application id/login`
+Configuration address rule: `https://domain/{orgid}/{appId}` `protocol://domain/organization id/application id`
 
-For example, my application: https://jit-dev.wanyunapp.com/whwy/app1769584429813/login
+For example, my application: https://jit-dev.wanyunapp.com/whwy/app1769584429813
 
 ![img4.png](./img/fs/img4.png)
 
@@ -46,15 +46,15 @@ For example, my application: https://jit-dev.wanyunapp.com/whwy/app1769584429813
 
 ![img10.png](./img/fs/img10.png)
 
-**Although the application has been added to the workspace, password-free login has not been implemented yet. Even if the password-free link is configured, clicking this application will still enter the login page. At this time, you need to create a Feishu self-built organizational structure in the Jit application**
+**Although the application has been added to the workspace, password-free login has not been implemented yet. Even if the password-free link is configured, clicking this application will still enter the login page. At this time, you need to create a Feishu self-built organizational structure in the JitAI application**
 
-## Create a Feishu Self-built Organizational Structure in Jit Application
+## Create a Feishu Self-built Organizational Structure in JitAI Application
 
 1.  Get the configuration information of the Feishu self-built application. Enter the application created above and go to [Credentials and Basic Information] to see the APP ID and APP Secret information.
 
 ![img11.png](./img/fs/img11.png)
 
-2.  At this time, create a new Feishu self-built organizational structure in the Jit application. The entrance is as follows
+2.  At this time, create a new Feishu self-built organizational structure in the JitAI application. The entrance is as follows
 
 ![img12.png](./img/fs/img12.png)
 

@@ -4,6 +4,7 @@ import LanguageSwitcher from "../LanguageSwitcher";
 import CONTENT_EN from "./constant-en";
 import CONTENT_ZH from "./constant-zh";
 import { addUTMToUrl } from "../../../utils/utm";
+import { useLocation } from "@docusaurus/router";
 
 type CaseNavItem = {
     slug: string;
@@ -49,10 +50,15 @@ const Navbar: React.FC<NavbarProps> = ({
     currentLocale,
     hideLanguageSwitcher,
 }) => {
+    const { pathname } = useLocation();
     const [scrolled, setScrolled] = useState(false);
     const [activeNavItem, setActiveNavItem] = useState("home");
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
+
+    const shouldShowLanguageSwitcher =
+        !hideLanguageSwitcher &&
+        !/^\/(?:zh\/)?cases\/[^/]+(?:\/|$)/.test(pathname);
 
     const CONTENT = currentLocale === "zh" ? CONTENT_ZH : CONTENT_EN;
 
@@ -303,7 +309,7 @@ const Navbar: React.FC<NavbarProps> = ({
 
                 {/* Right section: Language switcher, Download button and Try Online button */}
                 <div className={styles.rightSection}>
-                    {!hideLanguageSwitcher && (
+                    {shouldShowLanguageSwitcher && (
                         <LanguageSwitcher className={styles.languageSwitcher} />
                     )}
                     {/* Try Online hidden 2025/12/16 */}
@@ -327,7 +333,7 @@ const Navbar: React.FC<NavbarProps> = ({
 
                 {/* Mobile language switcher - displayed to the left of the hamburger menu button */}
                 <div className={styles.mobileTopLanguageSwitcher}>
-                    {!hideLanguageSwitcher && <LanguageSwitcher />}
+                    {shouldShowLanguageSwitcher && <LanguageSwitcher />}
                 </div>
 
                 {/* Mobile hamburger menu button */}

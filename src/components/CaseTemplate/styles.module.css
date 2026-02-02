@@ -88,7 +88,9 @@
  }
 
  .casesDropdown {
-  position: relative;
+    height: 36px;
+    margin-top: 12px;
+    position: relative;
  }
 
  .casesButton {

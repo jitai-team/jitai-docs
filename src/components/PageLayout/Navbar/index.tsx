@@ -56,9 +56,9 @@ const Navbar: React.FC<NavbarProps> = ({
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
 
-    const shouldShowLanguageSwitcher =
-        !hideLanguageSwitcher &&
-        !/^\/(?:zh\/)?cases\/[^/]+(?:\/|$)/.test(pathname);
+    const isCaseDetail = /(?:^|\/)(?:zh\/)?cases\/[^/]+(?:\/|$)/.test(pathname);
+
+    const shouldShowLanguageSwitcher = !hideLanguageSwitcher && !isCaseDetail;
 
     const CONTENT = currentLocale === "zh" ? CONTENT_ZH : CONTENT_EN;
 

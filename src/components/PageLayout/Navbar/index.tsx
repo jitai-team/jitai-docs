@@ -54,11 +54,12 @@ const Navbar: React.FC<NavbarProps> = ({
     const [scrolled, setScrolled] = useState(false);
     const [activeNavItem, setActiveNavItem] = useState("home");
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isMobileCasesOpen, setIsMobileCasesOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
 
-    const shouldShowLanguageSwitcher =
-        !hideLanguageSwitcher &&
-        !/^\/(?:zh\/)?cases\/[^/]+(?:\/|$)/.test(pathname);
+    const isCaseDetail = /(?:^|\/)(?:zh\/)?cases\/[^/]+(?:\/|$)/.test(pathname);
+
+    const shouldShowLanguageSwitcher = !hideLanguageSwitcher && !isCaseDetail;
 
     const CONTENT = currentLocale === "zh" ? CONTENT_ZH : CONTENT_EN;
 
@@ -135,6 +136,7 @@ const Navbar: React.FC<NavbarProps> = ({
             document.body.classList.add("menu-open");
         } else {
             document.body.classList.remove("menu-open");
+            setIsMobileCasesOpen(false);
         }
 
         return () => {
@@ -356,22 +358,128 @@ const Navbar: React.FC<NavbarProps> = ({
                     }`}
                 >
                     <div className={styles.mobileNavLinks}>
-                        {CONTENT.navItems.map((item, index) => {
+                        {CONTENT.navItems.map((item) => {
                             const isActive = item.id === activeNavItem;
 
                             return (
-                                <button
-                                    key={item.id}
-                                    onClick={() => handleNavClick(item)}
-                                    className={`${styles.mobileNavItem} ${
-                                        isActive ? styles.active : ""
-                                    } ${
-                                        item.class + "-mobile" || ""
-                                    } mobile-nav-item`}
-                                    data-type={item.type}
-                                >
-                                    {item.label}
-                                </button>
+                                <React.Fragment key={item.id}>
+                                    <button
+                                        onClick={() => handleNavClick(item)}
+                                        className={`${styles.mobileNavItem} ${
+                                            isActive ? styles.active : ""
+                                        } ${
+                                            item.class + "-mobile" || ""
+                                        } mobile-nav-item`}
+                                        data-type={item.type}
+                                    >
+                                        {item.label}
+                                    </button>
+
+                                    {currentLocale === "zh" &&
+                                    item.id === "forum" &&
+                                    caseCategoryGroups.length > 0 ? (
+                                        <div
+                                            key="mobile-cases-menu"
+                                            className={styles.mobileCasesNav}
+                                        >
+                                            <button
+                                                type="button"
+                                                className={`${styles.mobileNavItem} ${
+                                                    styles.mobileCasesButton
+                                                } ${
+                                                    isMobileCasesOpen
+                                                        ? styles.active
+                                                        : ""
+                                                }`}
+                                                onClick={() =>
+                                                    setIsMobileCasesOpen(
+                                                        (v) => !v,
+                                                    )
+                                                }
+                                            >
+                                                案例
+                                                <svg
+                                                    className={`${
+                                                        styles.mobileCasesChevron
+                                                    } ${
+                                                        isMobileCasesOpen
+                                                            ? styles.open
+                                                            : ""
+                                                    }`}
+                                                    width="14"
+                                                    height="14"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        d="M6 9l6 6 6-6"
+                                                        stroke="currentColor"
+                                                        strokeWidth="2"
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                    />
+                                                </svg>
+                                            </button>
+
+                                            <div
+                                                className={`${
+                                                    styles.mobileCasesSubNav
+                                                } ${
+                                                    isMobileCasesOpen
+                                                        ? styles.open
+                                                        : ""
+                                                }`}
+                                            >
+                                                {caseCategoryGroups.map(
+                                                    (group) => (
+                                                        <div
+                                                            key={group.category}
+                                                            className={
+                                                                styles.mobileCasesGroup
+                                                            }
+                                                        >
+                                                            <div
+                                                                className={
+                                                                    styles.mobileCasesGroupTitle
+                                                                }
+                                                            >
+                                                                {group.category}
+                                                            </div>
+                                                            {group.items.map(
+                                                                (caseItem) => (
+                                                                    <button
+                                                                        key={
+                                                                            caseItem.slug
+                                                                        }
+                                                                        type="button"
+                                                                        className={
+                                                                            styles.mobileCasesLink
+                                                                        }
+                                                                        onClick={() =>
+                                                                            handleNavClick(
+                                                                                {
+                                                                                    id: "cases",
+                                                                                    label: caseItem.menuName,
+                                                                                    type: "currentPage",
+                                                                                    url: `/zh/cases/${caseItem.slug}`,
+                                                                                },
+                                                                            )
+                                                                        }
+                                                                    >
+                                                                        {
+                                                                            caseItem.menuName
+                                                                        }
+                                                                    </button>
+                                                                ),
+                                                            )}
+                                                        </div>
+                                                    ),
+                                                )}
+                                            </div>
+                                        </div>
+                                    ) : null}
+                                </React.Fragment>
                             );
                         })}
                     </div>

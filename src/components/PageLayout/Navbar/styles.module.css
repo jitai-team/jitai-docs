@@ -117,7 +117,8 @@
     left: 50%;
     top: 100%;
     transform: translateX(-50%);
-    background: rgba(255, 255, 255, 0.98);
+    margin-top: 16px;
+    background: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.06);
     border-radius: 12px;
     box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
@@ -126,7 +127,31 @@
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease;
+    transform: translateX(-50%) translateY(10px);
+    transition: opacity 220ms ease, transform 220ms cubic-bezier(0.16, 1, 0.3, 1), visibility 220ms ease;
+    z-index: 2000;
+}
+
+.casesMenu::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -16px;
+    height: 16px;
+}
+
+.casesMenu::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: -8px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #ffffff;
 }
 
 .casesDropdown:hover .casesMenu {
@@ -152,10 +177,22 @@
 .casesGroupTitle {
     margin: 0;
     padding-bottom: 10px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: none;
+    display: inline-block;
+    position: relative;
     font-size: 0.95rem;
     font-weight: 800;
     color: #2c3c64;
+}
+
+.casesGroupTitle::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.06);
 }
 
 .casesList {
@@ -176,12 +213,86 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    transition: color 140ms ease, transform 140ms ease;
+    position: relative;
+    transition: color 160ms ease;
 }
+
+/* .casesItem::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #3D65FD;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 180ms ease;
+} */
 
 .casesItem:hover {
     color: #3D65FD;
-    transform: translateX(4px);
+}
+
+/* .casesItem:hover::after {
+    transform: scaleX(1);
+} */
+
+.mobileCasesNav {
+    width: 100%;
+}
+
+.mobileCasesButton {
+    width: 100%;
+}
+
+.mobileCasesChevron {
+    transition: transform 180ms ease;
+}
+
+.mobileCasesChevron.open {
+    transform: rotate(180deg);
+}
+
+.mobileCasesSubNav {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 260ms ease, opacity 180ms ease;
+}
+
+.mobileCasesSubNav.open {
+    max-height: 720px;
+    opacity: 1;
+}
+
+.mobileCasesGroup {
+    padding: 0.4rem 0 0.8rem 0;
+}
+
+.mobileCasesGroupTitle {
+    padding: 0.6rem 2rem 0.4rem 2rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #2c3c64;
+    opacity: 0.9;
+}
+
+.mobileCasesLink {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 0.75rem 2rem 0.75rem 2.8rem;
+    color: #64748b;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.mobileCasesLink:hover {
+    color: #3D65FD;
+    background: rgba(61, 101, 253, 0.05);
 }
 
 /* 语言切换器样式 */
@@ -290,6 +401,7 @@
 }
 
 .navLinks button {
+    width: fit-content;
     background: none;
     border: none;
     color: #4a5568;
@@ -306,7 +418,7 @@
     align-items: center;
 }
 
-.navLinks button::before {
+/* .navLinks button::before {
     content: '';
     position: absolute;
     top: 0;
@@ -316,7 +428,7 @@
     background: linear-gradient(90deg, #3D65FD, #131C43);
     transform: scaleX(0);
     transition: transform 0.4s ease;
-}
+} */
 
 .navLinks button:hover {
     color: #3D65FD;
@@ -330,17 +442,6 @@
     border: none;
 }
 
-/* .navLinks button[data-type="newTab"]::after {
-  content: '↗';
-  font-size: 0.8rem;
-  opacity: 0.7;
-  transition: all 0.3s ease;
-}
-
-.navLinks button[data-type="newTab"]:hover::after {
-  opacity: 1;
-  transform: translateX(2px) translateY(-2px);
-} */
 
 .navLinks button:active {
     transform: translateY(0) scale(0.98);

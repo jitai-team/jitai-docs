@@ -4,7 +4,6 @@ date: 2026/02/10
 authors: []
 disableDefaultStructuredData: true
 description: "用可落地的方式定义 AI agent（智能体）与 AI assistant（助手），解释两者在企业工作流中的差异与价值，并给出用 LLM 交付可治理结果的建设路径。"
-disableDefaultStructuredData: true
 keywords:
     [
         AI agent,

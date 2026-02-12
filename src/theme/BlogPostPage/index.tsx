@@ -1,11 +1,14 @@
 import React from "react";
 import type BlogPostPageType from "@theme/BlogPostPage";
 import BlogPostPage from "@theme-original/BlogPostPage";
+import Layout from "@theme/Layout";
 import PageLayout from "@site/src/components/PageLayout";
 import CaseTemplate from "@site/src/components/CaseTemplate";
 import styles from "./styles.module.css";
 
 type Props = React.ComponentProps<typeof BlogPostPageType>;
+
+const LayoutComponent = Layout as React.ComponentType<any>;
 
 export default function BlogPostPageWrapper(props: Props): React.ReactElement {
     const { content } = props;
@@ -27,6 +30,24 @@ export default function BlogPostPageWrapper(props: Props): React.ReactElement {
         sidebar: null,
     };
 
+    if (isCase) {
+        return (
+            <LayoutComponent title={title} description={description} noNavbar>
+                <PageLayout
+                    pageId="blog-post"
+                    title={title}
+                    description={description}
+                    containerClassName="blog-post-page"
+                    withLayout={false}
+                >
+                    <div className={styles.blogPostWrapper}>
+                        <CaseTemplate />
+                    </div>
+                </PageLayout>
+            </LayoutComponent>
+        );
+    }
+
     return (
         <PageLayout
             pageId="blog-post"
@@ -36,11 +57,7 @@ export default function BlogPostPageWrapper(props: Props): React.ReactElement {
             withLayout={false}
         >
             <div className={styles.blogPostWrapper}>
-                {isCase ? (
-                    <CaseTemplate />
-                ) : (
-                    <BlogPostPage {...blogPostProps} />
-                )}
+                <BlogPostPage {...blogPostProps} />
             </div>
         </PageLayout>
     );

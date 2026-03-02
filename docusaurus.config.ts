@@ -274,12 +274,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 // position: 'left',
                 //  label: '应用市场',
                 //},
-                {
-                    type: "docSidebar",
-                    sidebarId: "opensourceSidebar",
-                    position: "left",
-                    label: "Open Source",
-                },
+                // {
+                //     type: "docSidebar",
+                //     sidebarId: "opensourceSidebar",
+                //     position: "left",
+                //     label: "Open Source",
+                // },
                 //{
                 //  type: 'docSidebar',
                 //  sidebarId: 'appmarketSidebar',

@@ -79,3 +79,10 @@
 **Note: If there is no DingTalk QR code when using DingTalk QR code login on the web, configure the access domain in the DingTalk backend. The server domain is sufficient, no need for the complete application address**
 
 ![image.png](./img/dd/img19.png)
+
+:::warning
+
+1. When authorizing permissions, pay special attention to permissions related to Address Book management, as well as the Address Book personal information read permission. It is best to select all of these.
+2. If you entered the wrong `corpId`/`agentId` when creating the organizational structure in MyApp, and you want to correct them, note that you must update the corresponding files under the `auths`, `corps`, and `tpsync` directories.
+
+:::

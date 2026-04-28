@@ -2,7 +2,7 @@ const CONTENT = {
     title: "Contact Us",
     subtitle: "Leave your contact info and we'll get back to you soon",
     formTitle: "Online Form",
-    wechatTitle: "WhatsApp",
+    wechatTitle: "Wechat",
     wechatDesc: "Scan to chat instantly",
     emailTitle: "Email Contact",
     emailSubject: "",

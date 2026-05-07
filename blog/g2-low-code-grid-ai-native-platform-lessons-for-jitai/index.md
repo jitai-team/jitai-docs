@@ -17,7 +17,7 @@ If you read this as someone building or evaluating an **AI-native development pl
 
 > What does this success pattern tell you about how **AI-native low-code** should be designed for the next decade?
 
-<!-- truncate -->
+{/* truncate */}
 
 ![image.png](img1.png)
 

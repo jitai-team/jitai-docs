@@ -1,0 +1,9 @@
+{
+    "label": "Development Tools and Publishing Services",
+    "position": 3,
+    "link": {
+      "type": "generated-index",
+      "slug": "devguide/development-tool-and-publish-service",
+      "description": "JitAI visual development tools, DevOps management tools, and cloud application publishing services."
+    }
+  } 

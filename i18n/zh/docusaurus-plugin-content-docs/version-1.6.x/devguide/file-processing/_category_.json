@@ -1,0 +1,9 @@
+{
+  "label": "文件存储与模板",
+  "position": 21,
+  "link": {
+    "type": "generated-index",
+    "slug": "devguide/file-processing",
+    "description": "学习如何处理文件存储和文件模板功能。"
+  }
+}

@@ -9,7 +9,7 @@ keywords: [low-code, visual development, DSL, domain specific language, orchestr
 # What Is the Ultimate Vision of Low-Code/Visual Development?
 
 Traditional low-code/visual development platforms rely on black-box rule engines, fundamentally limiting application extensibility. **They sacrifice expressive power for simplicity, inevitably failing in complex enterprise scenarios.** True visual development shouldn't constrain capabilities—it should enable developers to orchestrate system modules and technical capabilities visually, transitioning from closed DSL (Domain Specific Language) engines to open orchestration protocols, from limited expression to unlimited integration.
-<!--truncate-->
+{/*truncate*/}
 ## Limited Expressiveness of DSL Engines
 
 Enterprise application complexity stems from unpredictable requirements and inevitable differences between organizations. DSLs can only express scenarios their designers anticipated. When facing requirements beyond DSL capabilities, only two paths exist.

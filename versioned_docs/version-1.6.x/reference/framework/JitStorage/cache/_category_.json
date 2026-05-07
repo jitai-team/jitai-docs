@@ -1,0 +1,10 @@
+{
+  "position": 1,
+  "label": "Cache",
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "slug": "reference/framework/JitStorage/cache",
+    "description": "Cache management and data caching APIs for improving application performance and reducing database load."
+  }
+} 

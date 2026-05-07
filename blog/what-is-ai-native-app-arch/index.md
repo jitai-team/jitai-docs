@@ -9,7 +9,7 @@ keywords: [AI native, AI native architecture, application architecture, event-dr
 # What is AI Native Application Architecture?
 
 AI-native application architecture must address not only how AI modules are designed and integrated, but also how traditional technical modules are perceived, driven, and orchestrated by AI. Attempting to integrate AI capabilities into legacy event-driven architectures is like putting an internal combustion engine on a horse cart—foolish and inefficient. Traditional enterprise applications like ERP, CRM, and OA systems will inevitably be reshaped by new AI-native architectures and development paradigms.
-<!--truncate-->
+{/*truncate*/}
 
 Event-driven programming is the fundamental development paradigm for all current enterprise applications. Whether it's a CPU responding to interrupt signals to invoke driver programs, or a web service executing business logic based on user clicks, these are typical event-driven scenarios. In event-driven systems, the fundamental relationship is between events and responders (functions), with explicit mappings between events and functions that are determined at system development time. System architectures designed under this paradigm don't need to support function self-description, interpretability, or dynamism (hot generation, hot loading). In contrast, systems driven by AI intelligence require system modules to be identified, perceived, and invoked in real-time based on intent. System modules (tool functions) must be self-describing, hot-loadable, and hot-swappable.
 

@@ -11,7 +11,7 @@ Model Context Protocol（MCP）正式加入 Linux 基金会，成为全新 Agent
 
 这篇文章会用尽量通俗、但又对平台工程友好的方式，拆解三个问题：**MCP 到底解决了什么痛点？加入 Linux 基金会改变了什么？如果你在做 AI 原生平台、集成平台或企业级智能体，这件事和你有什么直接关系？**
 
-<!-- truncate -->
+{/* truncate */}
 
 ![image.png](img1.png)
 

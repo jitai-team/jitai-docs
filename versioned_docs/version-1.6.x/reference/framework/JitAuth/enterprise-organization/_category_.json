@@ -1,0 +1,10 @@
+{
+  "position": 4,
+  "label": "Enterprise Organization",
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "Enterprise Organization",
+    "description": "Enterprise organizational structure management APIs including departments, roles, hierarchies, and organizational relationships."
+  }
+} 

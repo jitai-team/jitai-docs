@@ -17,7 +17,7 @@ You see big changes in business technology. Agentic AI and Forward Deployed Engi
 | Companies using AI agents | [79%](https://usmsystems.com/agentic-ai-trends/) |
 | Companies planning to spend more on AI | 88% |
 
-<!--truncate-->
+{/*truncate*/}
 
 FDEs solve problems that are not about technology. They use smart platforms like JitAI to make work smoother and faster.
 

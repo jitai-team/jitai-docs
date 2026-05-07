@@ -10,7 +10,7 @@ In today's fast-changing tech world, forward-deployed engineers (FDEs) play an i
 
 They meet the growing need for smooth integration in businesses. As AI native development platforms gain traction, FDEs play a pivotal role in accelerating adoption, turning innovative concepts into scalable solutions that drive business value.
 
-<!--truncate-->
+{/*truncate*/}
 
 ![the-salary-of-fde](img1.png)
 

@@ -15,7 +15,7 @@ This is not just a headline problem. It exposes deep issues in how we design **A
 
 In this article, we’ll unpack what “Google AI data deletion” tells us about the future of development platforms, and how an AI-native platform like [JitAI](https://jit.pro) approaches the problem differently.
 
-<!-- truncate -->
+{/* truncate */}
 
 ![image.png](img1.png)
 

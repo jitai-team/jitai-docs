@@ -9,7 +9,7 @@ keywords: [AI coding, Cursor, JitAi, AI development, low-code, visual developmen
 # JitAi's Distinct AI Coding Paradigm Contrasted with Cursor
 
 Without question, Cursor is a highly successful AI coding tool. Developers simply describe their requirements in natural language, and it leverages large language models to generate code and files, significantly boosting daily coding productivity. However, nearly all users encounter some unavoidable pain points during use.
-<!--truncate-->
+{/*truncate*/}
 First is the accuracy issue. Generated code often contains errors that require manual correction by developers. What's more challenging is that when Cursor attempts to fix errors itself, it may inadvertently modify other parts of the code that were already correct. **Expecting Cursor to complete an entire business system development in one go is nearly impossible.** Since code ultimately serves business needs, we naturally need to pursue higher reliability in business application development scenarios.
 
 Second is the barrier to entry. **Developers who lack experience and judgment struggle to control Cursor's output, missing the sense of ownership code maintainers should have, and may still create chaotic projects.** Another scenario involves developers with sufficient experience and capability but lacking responsibility, who don't rigorously validate AI output quality. Neither of these situations is what we want to see.

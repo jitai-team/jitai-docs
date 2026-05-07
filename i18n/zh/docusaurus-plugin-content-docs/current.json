@@ -1,6 +1,6 @@
 {
   "version.label": {
-    "message": "最新版",
+    "message": "2.0.x",
     "description": "The label for version current"
   },
   "sidebar.tutorialSidebar.category.Develop Application": {

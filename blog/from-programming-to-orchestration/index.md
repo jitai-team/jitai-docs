@@ -10,7 +10,7 @@ keywords: [orchestration, programming, visual development, system architecture, 
 
 Over the past decades, development tools have continuously evolved in programming capabilities, yet orchestration abilities remain absent. Business systems comprise modules like portals, pages, components, models, and services—their organizational relationships determine architecture quality. Traditional tools lack visual orchestration support, hiding system structures within code and making maintenance difficult. Software development is undergoing a shift from programming-centric to balanced programming and orchestration, where orchestration-oriented architectures, frameworks, and tools deliver both improved development efficiency and sustained architectural elegance.
 
-<!--truncate-->
+{/*truncate*/}
 
 ## The Essential Relationship Between Programming and Orchestration
 

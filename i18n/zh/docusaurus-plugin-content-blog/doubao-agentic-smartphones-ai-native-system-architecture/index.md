@@ -20,7 +20,7 @@ slug: doubao-agentic-smartphones-ai-native-system-architecture
 而同样的张力，很快就会出现在 **企业后台系统、低代码平台和开发平台** 上。  
 决定未来 AI 落地成败的，已经不只是模型，而是 **整个系统的「AI 原生」架构是不是准备好了。**
 
-<!-- truncate -->
+{/* truncate */}
 
 ![豆包手机.png](img1.png)
 

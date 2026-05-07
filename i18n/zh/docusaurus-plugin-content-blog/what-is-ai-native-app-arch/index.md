@@ -15,7 +15,7 @@ keywords: [AI原生, AI原生架构, 应用架构, 架构转型, JAAP协议, 事
 
 ![AI原生架构概览](./ai-native-hero.svg "AI原生架构")
 
-<!--truncate-->
+{/*truncate*/}
 
 ## 01 旧架构的致命缺陷：事件驱动的困境
 

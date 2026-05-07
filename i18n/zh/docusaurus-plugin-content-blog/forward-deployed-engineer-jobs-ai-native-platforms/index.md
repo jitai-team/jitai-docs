@@ -8,7 +8,7 @@ description: "在当今快速变化的科技世界中，前沿部署工程师（
 
 在当今快速变化的科技世界中，前沿部署工程师（FDE, Forward Deployed Engineer）扮演着极为重要的角色。他们是软件工程与现实应用之间的桥梁，尤其在人工智能（AI）驱动的领域中。这些专业人士与客户紧密合作，构建并落地复杂系统，满足企业对无缝集成的迫切需求。随着AI原生开发平台（AI Native Development Platform） 的兴起，FDE 成为了加速其应用与创新落地的关键力量，他们将创意概念转化为可扩展的商业解决方案。
 
-<!--truncate-->
+{/*truncate*/}
 
 ![the-salary-of-fde](img1.png)
 

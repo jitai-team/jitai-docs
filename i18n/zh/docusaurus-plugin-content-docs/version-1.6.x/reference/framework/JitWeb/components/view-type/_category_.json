@@ -1,0 +1,9 @@
+{
+  "label": "View Components",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "slug": "reference/framework/JitWeb/components/view-type",
+    "description": "Display and visualization components for presenting data and content in various formats including charts, tables, and media elements."
+  }
+} 

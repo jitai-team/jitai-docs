@@ -85,10 +85,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             {
                 docs: {
                     sidebarPath: "./sidebars.ts",
-                    // Please change this to your repo.
-                    // Remove this to remove the "edit this page" links.
                     editUrl:
                         "https://github.com/jitai-team/jitai-docs/tree/master",
+                    lastVersion: "current",
+                    versions: {
+                        current: {
+                            label: "2.0.x",
+                            banner: "none",
+                        },
+                        "1.6.x": {
+                            label: "1.6.x",
+                            path: "1.6.x",
+                            banner: "none",
+                        },
+                    },
                 },
                 blog: {
                     showReadingTime: true,
@@ -123,6 +133,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     ],
     markdown: {
         mermaid: true,
+        mdx1Compat: {
+            comments: true,
+            admonitions: true,
+            headingIds: true,
+        },
         hooks: {
             onBrokenMarkdownLinks: "throw",
         },
@@ -220,6 +235,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 {
                     type: "search",
                     position: "right",
+                },
+                {
+                    type: "docsVersionDropdown",
+                    position: "right",
+                    dropdownActiveClassDisabled: true,
                 },
                 {
                     type: "localeDropdown",

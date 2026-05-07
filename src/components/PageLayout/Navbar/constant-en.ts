@@ -31,12 +31,12 @@ const CONTENT = {
             type: "newTab",
             url: "https://forum.jit.pro",
         },
-        {
-            id: "blog",
-            label: "Blog",
-            type: "currentPage",
-            url: "/blog",
-        },
+        // {
+        //     id: "blog",
+        //     label: "Blog",
+        //     type: "currentPage",
+        //     url: "/blog",
+        // },
         {
             id: "contact",
             label: "Contact Us",
@@ -56,6 +56,11 @@ const CONTENT = {
         type: "currentPage",
         url: "/download",
     },
+    caseCategory: [
+        "Customer Management System",
+        "Full-Chain Business System",
+        "Collaborative System",
+    ],
 };
 
 export default CONTENT;

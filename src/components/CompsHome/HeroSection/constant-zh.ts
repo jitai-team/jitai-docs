@@ -15,12 +15,12 @@ const CONTENT = {
     cards: [
         {
             title: "生产级AI应用开发",
-            description: `ALL-IN-ONE的、可无限扩展的、生产级AI应用的全栈开发框架，内置AI大模型、工作流、智能体、AI&UI协作式AI助理、WebUI、数据库、存储、权限、安全、支付等子框架，极简化AI原生企业级应用的快速开发`,
+            description: `all-in-one的、可无限扩展的、生产级AI应用的全栈开发框架，内置AI大模型、工作流、智能体、AI&UI协作式AI助理、WebUI、数据库、存储、权限、安全、支付等子框架，极简化AI原生企业级应用的快速开发`,
             color: "#3D65FD",
         },
         // <br/>Doc/Excel助手应用开发框架，快速定制企业专用文档编写AI助手。
         {
-            title: "解释型AI原生应用架构",
+            title: "可编排的解释型AI原生架构",
             description: `全球首个支持系统级AI上下文的应用架构，让全栈所有模块都能被AI agent动态感知、驱动、编排；以及统一的解释型JAAP协议和矩阵型框架，让企业系统真正AI原生、无限扩展且一直简洁健壮，保障企业系统在日新月异的AI时代的长期价值`,
             color: "#3D65FD",
         },

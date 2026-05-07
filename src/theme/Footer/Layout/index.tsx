@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
-import type {Props} from '@theme/Footer/Layout';
-import AIAssistant from '@site/src/components/AIAssistant';
+import type { Props } from '@theme/Footer/Layout';
+// import AIAssistant from '@site/src/components/AIAssistant';
 
 export default function FooterLayout({
   style,
@@ -22,15 +22,15 @@ export default function FooterLayout({
               {logo && <div className="margin-bottom--sm">{logo}</div>}
               {/* toolfame 徽章 */}
               <div style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'center' }} className='external-link'>
-                <a 
-                  href="https://toolfame.com/item/jitai"  
-                  target="_blank" 
+                <a
+                  href="https://toolfame.com/item/jitai"
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img 
-                    src="https://toolfame.com/badge-dark.svg" 
-                    alt="Featured on toolfame.com" 
-                    style={{ height: '54px', width: 'auto', opacity: 0.6 }} 
+                  <img
+                    src="https://toolfame.com/badge-dark.svg"
+                    alt="Featured on toolfame.com"
+                    style={{ height: '54px', width: 'auto', opacity: 0.6 }}
                   />
                 </a>
               </div>
@@ -39,9 +39,8 @@ export default function FooterLayout({
           )}
         </div>
       </footer>
-      
-      {/* AI Assistant 组件 - 默认隐藏，点击 logo 后显示 */}
-      <AIAssistant visible={true} />
+
+      {/* <AIAssistant visible={true} /> */}
     </>
   );
 }

@@ -34,6 +34,9 @@ const config: Config = {
     // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
     future: {
         v4: true, // Improve compatibility with the upcoming Docusaurus v4
+        faster: {
+            swcHtmlMinimizer: false, // SWC 的 JSON-LD 解析有 bug，退回到 Terser
+        },
     },
     trailingSlash: false,
     // Set the production url of your site here
@@ -187,6 +190,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         mergeStrategy: {
                             "module.rules": "prepend",
                         },
+                        ignoreWarnings: [
+                            {
+                                module: /vscode-languageserver-types/,
+                                message: /Critical dependency/,
+                            },
+                        ],
                         module: {
                             rules: [
                                 {

@@ -62,7 +62,7 @@ const SimpleLazyImage: React.FC<SimpleLazyImageProps> = ({
 
   return (
     <>
-      <div ref={imgRef} className={className} style={style}>
+      <span ref={imgRef} className={className} style={{display: 'block', ...style}}>
         {isInView ? (
           <img
             src={src}
@@ -78,21 +78,21 @@ const SimpleLazyImage: React.FC<SimpleLazyImageProps> = ({
             }}
           />
         ) : (
-          <div
+          <span
             style={{
+              display: 'block',
               width: '100%',
               height: '200px',
               backgroundColor: '#f5f5f5',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
+              lineHeight: '200px',
+              textAlign: 'center',
               color: '#999',
             }}
           >
             Loading...
-          </div>
+          </span>
         )}
-      </div>
+      </span>
 
       {isZoomed && (
         <div

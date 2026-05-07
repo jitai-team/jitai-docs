@@ -14,7 +14,7 @@ A **Forward Deployed Engineer (FDE)** is a software engineer who works
 
 The title originated at **Palantir**, a company renowned for embedding engineers within client teams to ensure successful software adoption. The concept has since spread across the AI and enterprise software ecosystem, especially among companies developing AI-powered automation and low-code development platforms.
 
-<!--truncate-->
+{/*truncate*/}
 
 > In essence, **FDEs don’t just write code**—they engineer impact.
 

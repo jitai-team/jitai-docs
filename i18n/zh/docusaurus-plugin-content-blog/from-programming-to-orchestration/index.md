@@ -19,7 +19,7 @@ keywords: [编排, 编程, 可视化开发, 系统架构可见性, 开发效率,
 
 ![从代码混乱到结构清晰：编排的力量](./hero-programming-to-orchestration.svg "架构隐藏在代码中的困境vs编排带来的清晰")
 
-<!--truncate-->
+{/*truncate*/}
 
 ## 系统的本质：结构与过程
 

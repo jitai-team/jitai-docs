@@ -1,0 +1,87 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="800" height="600" fill="#ffffff"/>
+  
+  <!-- 坐标轴 -->
+  <g stroke="#333" stroke-width="2" fill="none">
+    <!-- X轴 -->
+    <line x1="80" y1="520" x2="720" y2="520"/>
+    <!-- Y轴 -->
+    <line x1="80" y1="520" x2="80" y2="80"/>
+    
+    <!-- X轴箭头 -->
+    <polygon points="720,520 710,515 710,525" fill="#333"/>
+    <!-- Y轴箭头 -->
+    <polygon points="80,80 75,90 85,90" fill="#333"/>
+  </g>
+  
+  <!-- 坐标轴标签 -->
+  <text x="400" y="550" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#333">System Scale/Complexity</text>
+  <text x="30" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#333" transform="rotate(-90, 30, 300)">Development Efficiency</text>
+  
+  <!-- 刻度线 -->
+  <g stroke="#ccc" stroke-width="1">
+    <!-- X轴刻度 -->
+    <line x1="200" y1="515" x2="200" y2="525"/>
+    <line x1="350" y1="515" x2="350" y2="525"/>
+    <line x1="500" y1="515" x2="500" y2="525"/>
+    <line x1="650" y1="515" x2="650" y2="525"/>
+    
+    <!-- Y轴刻度 -->
+    <line x1="75" y1="450" x2="85" y2="450"/>
+    <line x1="75" y1="350" x2="85" y2="350"/>
+    <line x1="75" y1="250" x2="85" y2="250"/>
+    <line x1="75" y1="150" x2="85" y2="150"/>
+  </g>
+  
+  <!-- 网格线 -->
+  <g stroke="#f0f0f0" stroke-width="1">
+    <!-- 垂直网格线 -->
+    <line x1="200" y1="80" x2="200" y2="520"/>
+    <line x1="350" y1="80" x2="350" y2="520"/>
+    <line x1="500" y1="80" x2="500" y2="520"/>
+    <line x1="650" y1="80" x2="650" y2="520"/>
+    
+    <!-- 水平网格线 -->
+    <line x1="80" y1="450" x2="720" y2="450"/>
+    <line x1="80" y1="350" x2="720" y2="350"/>
+    <line x1="80" y1="250" x2="720" y2="250"/>
+    <line x1="80" y1="150" x2="720" y2="150"/>
+  </g>
+  
+  <!-- JitAi技术曲线 -->
+  <path d="M 80 180 C 250 177 400 165 500 150 C 600 130 680 110 720 100" 
+        stroke="#00AA44" stroke-width="2.5" fill="none"/>
+  
+  <!-- 低代码平台曲线 -->
+  <path d="M 80 175 C 200 175 240 178 280 185 C 320 200 360 230 400 280 C 440 350 480 440 500 480 C 510 490 520 500" 
+        stroke="#FF3333" stroke-width="2.5" fill="none"/>
+  
+  <!-- 零代码平台曲线 -->
+  <path d="M 80 170 C 200 170 240 173 280 180 C 310 195 340 230 370 280 C 400 340 430 410 450 460 C 470 490 500 515 520" 
+        stroke="#FF8800" stroke-width="2.5" fill="none"/>
+  
+  <!-- 传统开发技术曲线 -->
+  <path d="M 80 470 C 120 450 150 435 170 420 C 190 405 200 395 210 388 C 220 382 230 380 250 378 C 300 378 350 379 400 380 C 440 381 460 385 480 395 C 520 420 540 450 560 480" 
+        stroke="#6633CC" stroke-width="2.5" fill="none"/>
+  
+  <!-- 图例 -->
+  <g font-family="Arial, sans-serif" font-size="12">
+    <!-- JitAi技术 -->
+    <line x1="80" y1="25" x2="110" y2="25" stroke="#00AA44" stroke-width="2.5"/>
+    <text x="120" y="30" fill="#00AA44" font-weight="bold">JitAi Technology</text>
+    
+    <!-- 低代码平台 -->
+    <line x1="250" y1="25" x2="280" y2="25" stroke="#FF3333" stroke-width="2.5"/>
+    <text x="290" y="30" fill="#FF3333" font-weight="bold">Low-Code Platform</text>
+    
+    <!-- 零代码平台 -->
+    <line x1="430" y1="25" x2="460" y2="25" stroke="#FF8800" stroke-width="2.5"/>
+    <text x="470" y="30" fill="#FF8800" font-weight="bold">No-Code Platform</text>
+    
+    <!-- 传统开发技术 -->
+    <line x1="600" y1="25" x2="630" y2="25" stroke="#6633CC" stroke-width="2.5"/>
+    <text x="640" y="30" fill="#6633CC" font-weight="bold">Traditional Development</text>
+  </g>
+  
+</svg>

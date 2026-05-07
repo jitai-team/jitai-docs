@@ -12,7 +12,7 @@ keywords: [on-premises, private deployment, public cloud, SaaS, enterprise appli
 Over the past decade, the enterprise software market has been swept by the SaaS wave. Vendors attracted customers with promises of rapid deployment, pay-as-you-go pricing, and zero operations overhead. Enterprises seemed to have only one choice—entrust their data to third parties.
 
 But entrusting core data to third parties contradicts long-term enterprise interests! Enterprises chose SaaS because private deployment operations were too complex. But technology has advanced—private deployment is no longer expensive. Behind SaaS convenience lies data security risks, vendor lock-in, and runaway long-term costs. Enterprises should reconsider this choice.
-<!--truncate-->
+{/*truncate*/}
 
 ## Enterprise Data Is Inherently Private—On-Premises Is the Fundamental Requirement
 

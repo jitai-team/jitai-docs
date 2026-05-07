@@ -11,7 +11,7 @@ keywords: [JitAi, AI native development platform, low-code, enterprise AI, JAAP,
 ## 1. Enterprise Development Challenges in the AI Era
 
 Under the dual forces of AI advancement and its rapid evolution, enterprises are struggling with low development efficiency, high technical barriers, and poor system scalability. Traditional development takes months just to build basic infrastructure, while low-code platforms, though convenient at the start, quickly fall into the traps of limited flexibility and lack of AI-native support—making it hard to sustain complex business evolution.
-<!--truncate-->
+{/*truncate*/}
 We created **JitAi** precisely to resolve this contradiction: an integrated development platform that unifies enterprise-grade AI agents with software development. JitAi delivers **10x development efficiency** and **unlimited scalability**, ensuring that low-code platforms are no longer a "trap."
 
 ## 2. The Challenge: The Limitations of Traditional Development and Low-Code

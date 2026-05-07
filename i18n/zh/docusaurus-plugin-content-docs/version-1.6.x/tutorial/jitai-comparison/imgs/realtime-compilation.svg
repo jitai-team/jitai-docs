@@ -1,0 +1,118 @@
+<svg width="840" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: 'Arial', sans-serif; font-size: 24px; font-weight: bold; fill: #2c3e50; }
+      .subtitle { font-family: 'Arial', sans-serif; font-size: 18px; font-weight: bold; fill: #ffffff; }
+      .subtitle-1 { font-family: 'Arial', sans-serif; font-size: 18px; font-weight: bold; fill: #2c3e50; }
+      .text { font-family: 'Arial', sans-serif; font-size: 14px; fill: #ffffff; }
+      .small-text { font-family: 'Arial', sans-serif; font-size: 12px; fill: #ffffff; }
+      .code-block { fill: #2c3e50; stroke: #34495e; stroke-width: 1; }
+      .compiler { fill: #e74c3c; stroke: #c0392b; stroke-width: 2; }
+      .runtime { fill: #27ae60; stroke: #2ecc71; stroke-width: 2; }
+      .arrow { stroke: #2c3e50; stroke-width: 1; fill: none; marker-end: url(#arrowhead); }
+      .highlight { fill: #f39c12; stroke: #e67e22; stroke-width: 3; }
+      .pulse { animation: pulse 2s infinite; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2c3e50" />
+    </marker>
+  </defs>
+
+  <!-- 标题 -->
+  <text x="400" y="30" text-anchor="middle" class="title">JitAi 实时编译引擎架构</text>
+
+  <!-- 开发环境 -->
+  <rect x="50" y="80" width="300" height="150" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2" rx="10"/>
+  <text x="200" y="105" text-anchor="middle" class="subtitle-1">开发环境</text>
+
+  <!-- 代码编辑器 -->
+  <rect x="70" y="120" width="260" height="100" fill="#2c3e50" stroke="#34495e" stroke-width="1" rx="5"/>
+  <text x="200" y="140" text-anchor="middle" class="text" fill="white">代码编辑器</text>
+  <text x="80" y="160" class="small-text" fill="#ecf0f1">// 修改业务逻辑</text>
+  <text x="80" y="175" class="small-text" fill="#ecf0f1">function updateUser() {</text>
+  <text x="80" y="190" class="small-text" fill="#ecf0f1">  // 实时编译...</text>
+  <text x="80" y="205" class="small-text" fill="#ecf0f1">}</text>
+
+  <!-- 实时编译引擎 -->
+  <rect x="420" y="80" width="200" height="150" fill="#e74c3c" stroke="#c0392b" stroke-width="2" rx="10"/>
+  <text x="520" y="105" text-anchor="middle" class="subtitle" fill="white">实时编译引擎</text>
+  <text x="520" y="130" text-anchor="middle" class="text" fill="white">边用边改</text>
+  <text x="520" y="150" text-anchor="middle" class="text" fill="white">动态调整</text>
+  <text x="520" y="170" text-anchor="middle" class="text" fill="white">立即生效</text>
+  <text x="520" y="190" text-anchor="middle" class="text" fill="white">无需重启</text>
+  <text x="520" y="210" text-anchor="middle" class="text" fill="white">实时反馈</text>
+
+  <!-- 编译箭头 -->
+  <path d="M 350 155 Q 375 155 420 155" class="arrow"/>
+
+  <!-- 运行时环境 -->
+  <rect x="690" y="80" width="100" height="150" fill="#27ae60" stroke="#2ecc71" stroke-width="2" rx="10"/>
+  <text x="740" y="105" text-anchor="middle" class="subtitle" fill="white">运行时</text>
+  <text x="740" y="130" text-anchor="middle" class="text" fill="white">热更新</text>
+  <text x="740" y="150" text-anchor="middle" class="text" fill="white">零停机</text>
+  <text x="740" y="170" text-anchor="middle" class="text" fill="white">即时生效</text>
+  <text x="740" y="190" text-anchor="middle" class="text" fill="white">状态保持</text>
+  <text x="740" y="210" text-anchor="middle" class="text" fill="white">无缝切换</text>
+
+  <!-- 编译箭头 -->
+  <path d="M 620 155 Q 625 155 690 155" class="arrow"/>
+
+  <!-- 编译流程 -->
+  <rect x="50" y="280" width="740" height="120" fill="#f8f9fa" stroke="#dee2e6" stroke-width="2" rx="10"/>
+  <text x="400" y="305" text-anchor="middle" class="subtitle">实时编译流程</text>
+
+  <!-- 编译步骤 -->
+  <rect x="80" y="320" width="120" height="60" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="5"/>
+  <text x="140" y="340" text-anchor="middle" class="text" fill="white">1. 代码变更</text>
+  <text x="140" y="355" text-anchor="middle" class="small-text" fill="white">检测修改</text>
+  <text x="140" y="370" text-anchor="middle" class="small-text" fill="white">触发编译</text>
+
+  <rect x="220" y="320" width="120" height="60" fill="#e74c3c" stroke="#c0392b" stroke-width="2" rx="5"/>
+  <text x="280" y="340" text-anchor="middle" class="text" fill="white">2. 增量编译</text>
+  <text x="280" y="355" text-anchor="middle" class="small-text" fill="white">只编译变更</text>
+  <text x="280" y="370" text-anchor="middle" class="small-text" fill="white">快速构建</text>
+
+  <rect x="360" y="320" width="120" height="60" fill="#f39c12" stroke="#e67e22" stroke-width="2" rx="5"/>
+  <text x="420" y="340" text-anchor="middle" class="text" fill="white">3. 热替换</text>
+  <text x="420" y="355" text-anchor="middle" class="small-text" fill="white">动态加载</text>
+  <text x="420" y="370" text-anchor="middle" class="small-text" fill="white">无缝更新</text>
+
+  <rect x="500" y="320" width="120" height="60" fill="#27ae60" stroke="#2ecc71" stroke-width="2" rx="5"/>
+  <text x="560" y="340" text-anchor="middle" class="text" fill="white">4. 立即生效</text>
+  <text x="560" y="355" text-anchor="middle" class="small-text" fill="white">实时反馈</text>
+  <text x="560" y="370" text-anchor="middle" class="small-text" fill="white">用户可见</text>
+
+  <rect x="640" y="320" width="120" height="60" fill="#9b59b6" stroke="#8e44ad" stroke-width="2" rx="5"/>
+  <text x="700" y="340" text-anchor="middle" class="text" fill="white">5. 状态保持</text>
+  <text x="700" y="355" text-anchor="middle" class="small-text" fill="white">数据不丢失</text>
+  <text x="700" y="370" text-anchor="middle" class="small-text" fill="white">会话继续</text>
+
+  <!-- 流程箭头 -->
+  <path d="M 200 350 Q 210 350 220 350" class="arrow"/>
+  <path d="M 340 350 Q 350 350 360 350" class="arrow"/>
+  <path d="M 480 350 Q 490 350 500 350" class="arrow"/>
+  <path d="M 620 350 Q 630 350 640 350" class="arrow"/>
+
+  <!-- 优势展示 -->
+  <rect x="50" y="440" width="740" height="100" fill="#e8f5e8" stroke="#4caf50" stroke-width="2" rx="10"/>
+  <text x="400" y="465" text-anchor="middle" class="subtitle-1">实时编译优势</text>
+
+  <rect x="80" y="480" width="150" height="40" fill="#2ecc71" stroke="#27ae60" stroke-width="2" rx="5"/>
+  <text x="155" y="500" text-anchor="middle" class="text" fill="white">开发效率提升</text>
+  <text x="155" y="515" text-anchor="middle" class="small-text" fill="white">边用边改</text>
+
+  <rect x="250" y="480" width="150" height="40" fill="#3498db" stroke="#2980b9" stroke-width="2" rx="5"/>
+  <text x="325" y="500" text-anchor="middle" class="text" fill="white">零停机更新</text>
+  <text x="325" y="515" text-anchor="middle" class="small-text" fill="white">业务不中断</text>
+
+  <rect x="420" y="480" width="150" height="40" fill="#e74c3c" stroke="#c0392b" stroke-width="2" rx="5"/>
+  <text x="495" y="500" text-anchor="middle" class="text" fill="white">即时反馈</text>
+  <text x="495" y="515" text-anchor="middle" class="small-text" fill="white">实时看到效果</text>
+
+  <rect x="590" y="480" width="150" height="40" fill="#f39c12" stroke="#e67e22" stroke-width="2" rx="5"/>
+  <text x="665" y="500" text-anchor="middle" class="text" fill="white">状态保持</text>
+  <text x="665" y="515" text-anchor="middle" class="small-text" fill="white">数据不丢失</text>
+
+  <!-- 底部说明 -->
+  <text x="400" y="570" text-anchor="middle" class="text">动态调整立即生效：支持边用边改的开发模式，实时看到修改效果</text>
+</svg>

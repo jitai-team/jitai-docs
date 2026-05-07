@@ -1,0 +1,10 @@
+{
+  "position": 3,
+  "label": "Login Authentication",
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "title": "Login Authentication",
+    "description": "User authentication and login management APIs including login verification, session management, and authentication protocols."
+  }
+} 

@@ -18,28 +18,33 @@ const MDXLazyImage: React.FC<MDXLazyImageProps> = ({
   height,
   zoomable = true,
 }) => {
+  const imgStyle: React.CSSProperties = {
+    maxWidth: '100%',
+    height: 'auto',
+    width: width || '100%',
+  };
+
   return (
-    <figure style={{ margin: '1rem 0', textAlign: 'center' }}>
+    <span style={{ display: 'block', margin: '1rem 0', textAlign: 'center' }}>
       <SimpleLazyImage
         src={src}
         alt={alt}
         zoomable={zoomable}
-        style={{ 
-          maxWidth: '100%', 
-          height: 'auto',
-          width: width || '100%',
-        }}
+        style={imgStyle}
       />
       {title && (
-        <figcaption style={{ 
-          marginTop: '0.5rem', 
-          fontSize: '0.875rem', 
-          color: 'var(--ifm-color-content-secondary)' 
-        }}>
+        <span
+          style={{
+            display: 'block',
+            marginTop: '0.5rem',
+            fontSize: '0.875rem',
+            color: 'var(--ifm-color-content-secondary)',
+          }}
+        >
           {title}
-        </figcaption>
+        </span>
       )}
-    </figure>
+    </span>
   );
 };
 

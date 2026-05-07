@@ -1,0 +1,8 @@
+{
+  "label": "Developer Guide",
+  "position": 2,
+  "link": {
+    "slug": "devguide",
+    "description": "Deep understanding of system design concepts, high-level explanations to help you understand \"why\" and \"what\"."
+  }
+} 

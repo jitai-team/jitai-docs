@@ -199,7 +199,7 @@ sequenceDiagram
     M-->>-P: 完成加载链
 ```
 
-### 元素目录规范 {#element-directory-specification} 
+### 元素目录规范 {#element-directory-specification}
 每个元素遵循统一的目录结构和文件命名规范：
 
 ```plaintext title="标准元素目录结构"

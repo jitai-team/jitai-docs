@@ -201,7 +201,7 @@ sequenceDiagram
     M-->>-P: Complete loading chain
 ```
 
-### Element Directory Specification {#element-directory-specification} 
+### Element Directory Specification
 Each element follows a unified directory structure and file naming conventions:
 
 ```plaintext title="Standard Element Directory Structure"

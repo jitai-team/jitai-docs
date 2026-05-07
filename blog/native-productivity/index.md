@@ -11,7 +11,7 @@ The era of intelligence is here, so why are your enterprise AI applications stil
 
 Over the past two years, the AI wave triggered by ChatGPT has swept the globe, and the supply of intelligence is no longer a bottleneck. However, when enterprises try to introduce this powerful capability into core business systems, they encounter a common dilemma: **Intelligence supply is solved, but application engineering is lagging significantly.**
 
-<!--truncate-->
+{/*truncate*/}
 
 So, how can we break the deadlock and truly transform AI intelligence into an enterprise's **native productivity**?
 

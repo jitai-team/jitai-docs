@@ -1,0 +1,96 @@
+<svg width="900" height="640" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景框 -->
+  <rect width="100%" height="100%" fill="#f8fafc" />
+  
+  <!-- 标题 -->
+  <text x="450" y="40" text-anchor="middle" font-size="24" font-weight="bold" fill="#1a202c">JitAi 人机协作机制示意图</text>
+
+  <!-- 人机密切协作部分 -->
+  <rect x="75" y="80" width="750" height="180" rx="12" fill="#f0fdf4" stroke="#10b981" stroke-width="2" />
+  <text x="450" y="110" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a202c">人机密切协作</text>
+  
+  <!-- 协作流程图 - 居中对齐 -->
+  <g transform="translate(450, 0)">
+    <!-- AI图标 -->
+    <circle cx="-200" cy="160" r="35" fill="#10b981" stroke="#fff" stroke-width="3" />
+    <text x="-200" y="163" text-anchor="middle" fill="white" font-size="14" font-weight="bold">AI</text>
+    
+    <!-- 人类图标 -->
+    <circle cx="200" cy="160" r="35" fill="#10b981" stroke="#fff" stroke-width="3" />
+    <text x="200" y="163" text-anchor="middle" fill="white" font-size="14" font-weight="bold">人类</text>
+    
+    <!-- AI到人的箭头 -->
+    <path d="M-150 150 L150 150" stroke="#10b981" stroke-width="2" marker-end="url(#arrowhead)" />
+    <text x="0" y="140" text-anchor="middle" font-size="13" font-weight="bold" fill="#047857">AI反馈结果</text>
+    
+    <!-- 人到AI的箭头 -->
+    <path d="M150 170 L-150 170" stroke="#10b981" stroke-width="2" marker-end="url(#arrowhead)" />
+    <text x="0" y="185" text-anchor="middle" font-size="13" font-weight="bold" fill="#047857">人类指导</text>
+  </g>
+  
+  <text x="450" y="230" text-anchor="middle" font-size="15" fill="#4a5568">人与AI像同事一样互动，形成闭环协作</text>
+
+  <!-- 事件驱动协作部分 -->
+  <rect x="75" y="280" width="750" height="130" rx="12" fill="#fff7ed" stroke="#f59e0b" stroke-width="2" />
+  <text x="450" y="310" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a202c">事件驱动协作</text>
+  
+  <!-- 事件流程 - 居中对齐 -->
+  <g transform="translate(450, 0)">
+    <g>
+      <path d="M-200 345 L-200 365" stroke="#f59e0b" stroke-width="3" />
+      <circle cx="-200" cy="365" r="6" fill="#f59e0b" />
+      <text x="-200" y="330" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">任务开始</text>
+    </g>
+    <g>
+      <path d="M-100 345 L-100 365" stroke="#f59e0b" stroke-width="3" />
+      <circle cx="-100" cy="365" r="6" fill="#f59e0b" />
+      <text x="-100" y="330" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">任务完成</text>
+    </g>
+    <g>
+      <path d="M0 345 L0 365" stroke="#f59e0b" stroke-width="3" />
+      <circle cx="0" cy="365" r="6" fill="#f59e0b" />
+      <text x="0" y="330" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">任务暂停</text>
+    </g>
+    <g>
+      <path d="M100 345 L100 365" stroke="#f59e0b" stroke-width="3" />
+      <circle cx="100" cy="365" r="6" fill="#f59e0b" />
+      <text x="100" y="330" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">工具调用</text>
+    </g>
+    <g>
+      <path d="M200 345 L200 365" stroke="#f59e0b" stroke-width="3" />
+      <circle cx="200" cy="365" r="6" fill="#f59e0b" />
+      <text x="200" y="330" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">人员操作</text>
+    </g>
+  </g>
+  
+  <text x="450" y="395" text-anchor="middle" font-size="15" fill="#4a5568">AI触发事件，前后端订阅并响应，实现实时协同</text>
+
+  <!-- 智能工具调用部分 -->
+  <rect x="75" y="430" width="750" height="150" rx="12" fill="#e1f0ff" stroke="#3a8cff" stroke-width="2" />
+  <text x="450" y="460" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a202c">智能工具调用 (JAAP协议)</text>
+  
+  <!-- 工具图标组 - 居中对齐 -->
+  <g transform="translate(450, 0)">
+    <circle cx="-200" cy="510" r="32" fill="#3a8cff" stroke="#fff" stroke-width="3" />
+    <text x="-200" y="517" text-anchor="middle" fill="white" font-size="13" font-weight="bold">服务</text>
+    <circle cx="-120" cy="510" r="32" fill="#3a8cff" stroke="#fff" stroke-width="3" />
+    <text x="-120" y="517" text-anchor="middle" fill="white" font-size="13" font-weight="bold">模型</text>
+    <circle cx="-40" cy="510" r="32" fill="#3a8cff" stroke="#fff" stroke-width="3" />
+    <text x="-40" y="517" text-anchor="middle" fill="white" font-size="13" font-weight="bold">UI</text>
+    <circle cx="40" cy="510" r="32" fill="#3a8cff" stroke="#fff" stroke-width="3" />
+    <text x="40" y="517" text-anchor="middle" fill="white" font-size="13" font-weight="bold">API</text>
+    <circle cx="120" cy="510" r="32" fill="#3a8cff" stroke="#fff" stroke-width="3" />
+    <text x="120" y="517" text-anchor="middle" fill="white" font-size="13" font-weight="bold">MCP</text>
+    <circle cx="200" cy="510" r="32" fill="#3a8cff" stroke="#fff" stroke-width="3" />
+    <text x="200" y="517" text-anchor="middle" fill="white" font-size="13" font-weight="bold">......</text>
+  </g>
+  
+  <text x="450" y="570" text-anchor="middle" font-size="15" fill="#4a5568">AI通过JAAP协议感知并调用业务系统的各类接口和功能</text>
+
+  <!-- 定义箭头标记 -->
+  <defs>
+    <marker id="arrowhead" markerWidth="12" markerHeight="8" refX="11" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#10b981" />
+    </marker>
+  </defs>
+</svg>

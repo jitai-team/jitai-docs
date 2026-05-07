@@ -11,7 +11,7 @@ keywords: [lightweight apps, enterprise AI, low-code platforms, short-termism, l
 
 In enterprise digitalization and intelligent transformation, the biggest anxiety isn't the lack of tools—it's the fear of choosing the wrong path. Systems built with massive resource investments become obsolete and need complete overhauls within two years because they can't scale. Applications that required extensive employee training become bottlenecks as the business grows. AI technologies that look impressive in demos prove disconnected from business systems and unusable for employees. What enterprises truly need are systems that deliver fast, customize rapidly, and evolve with business needs—investments that generate long-term value. However, lightweight apps built on database-UI paradigms and AI applications deployed in isolation from business contexts are products of short-termism, failing to gain traction in large enterprises.
 
-<!--truncate-->
+{/*truncate*/}
 
 ## Lightweight Apps Built on Database-UI Paradigms
 

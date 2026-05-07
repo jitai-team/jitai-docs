@@ -10,7 +10,7 @@ Event handling is an automation mechanism within JitAI applications. When specif
 
 JitAI supports multiple event types, including `Model Events`, `Approval Events`, `Custom Events`, and `AI-related Events`. These can be triggered during function execution, data modifications, approval workflows, and AI Assistant/Agent runtime, addressing diverse business automation needs.
 
-## Creating events {#creating-events}
+## Creating events
 
 Creating events in the JitAI development environment is straightforward. The system provides a visual interface that helps developers quickly configure various event types.
 
@@ -18,11 +18,11 @@ Creating events in the JitAI development environment is straightforward. The sys
 
 In the development area element tree, click the `+` button next to the search box, select `Event`, and choose the specific event type based on your business requirements (Model Events, Approval Events, Custom Events, or AI-related Events). Fill in the basic event information and complete the relevant configuration to create the event.
 
-## Model events {#model-events}
+## Model events
 
 Model events are the most commonly used event type. When data in a table changes—through creation, updates, or deletion—the system automatically executes predefined business logic. Examples include sending notifications after user information updates or adjusting inventory after order status changes, enabling data changes to automatically trigger related business processes.
 
-### Seven trigger timings {#seven-trigger-timings}
+### Seven trigger timings
 
 JitAI supports seven model event trigger timings, allowing developers to select the most appropriate timing based on business requirements:
 
@@ -34,14 +34,14 @@ JitAI supports seven model event trigger timings, allowing developers to select 
 - **After data deletion**: Executed after data is successfully deleted. Used for cache cleanup, notifying related users, and updating statistics, ensuring system consistency after data deletion.
 - **After any write operation**: Triggered after any create, delete, or update operation completes. Ideal for general data change monitoring and audit logging, implementing unified tracking and recording of all data modifications.
 
-### Triggering on any or specific fields {#triggering-on-any-or-specific-fields}
+### Triggering on any or specific fields
 
 JitAI provides two trigger field configuration methods, allowing developers to flexibly choose based on actual business scenarios:
 
 - **All fields**: The event triggers whenever any field in the model changes. Suitable for scenarios requiring responses to all data modifications.
 - **Specific fields**: The event triggers only when selected fields change. Ideal for business requirements focusing on specific field changes, effectively reducing irrelevant event triggers and improving system efficiency.
 
-### Triggering when filter conditions are met {#triggering-when-filter-conditions-are-met}
+### Triggering when filter conditions are met
 
 Events support filter condition configuration. Events trigger only when changed data meets the specified filter conditions. If no filter conditions are set, all data changes trigger events by default. Through proper filter condition configuration, you can precisely control event trigger scope and improve system performance and business flexibility.
 
@@ -59,11 +59,11 @@ Edit the execution function within the event using the visual editor below. For 
 
 Add a basic statement, click to find `Service`, locate `Message Service` in the right panel, select `Message Notification` from the secondary list, and configure the parameters.
 
-## Approval events {#approval-events}
+## Approval events
 
 Approval events are specifically designed for automated approval workflow processing. When approval status changes—such as submission, approval, rejection, or transfer—the system automatically executes corresponding business logic. Examples include automatically granting permissions after approval or notifying applicants after rejection, making approval workflows more intelligent and efficient.
 
-### Three trigger timings {#three-trigger-timings}
+### Three trigger timings
 
 JitAI provides three trigger timings for approval events, allowing developers to select appropriate trigger points based on approval workflow requirements:
 
@@ -83,11 +83,11 @@ In the `New Approval Event` dialog, configure parameters in sequence: event name
 
 In the visual editor, to configure approval status changes to trigger message notifications, refer to the configuration above.
 
-## Custom events {#custom-events}
+## Custom events
 
 Custom events provide maximum flexibility, enabling developers to declare their own events based on specific business requirements. Unlike model and approval events with fixed trigger conditions, custom events can be triggered within any function logic, making them suitable for complex business scenario orchestration and inter-module communication.
 
-### Configuring event declarations {#configuring-event-declarations}
+### Configuring event declarations
 
 The workflow for custom events is as follows: first, declare events in service elements, then subscribe to and execute them through event elements.
 
@@ -99,7 +99,7 @@ Developers must first create a service element and write related business functi
 
 In the service's `e.json` configuration file, add the event declaration list `eventDescs`. Each event must include `name` (event name), `title` (title), and `desc` (description) attributes.
 
-### Triggering events in function logic {#triggering-events-in-function-logic}
+### Triggering events in function logic
 
 Add statements in function logic to trigger custom events.
 
@@ -107,7 +107,7 @@ Add statements in function logic to trigger custom events.
 
 In the `service.py` service function logic, import `from events.Meta import JitEvent` and use `JitEvent.publish` to trigger the event. The `sender` parameter represents the event sender (usually the function path), and `args` is used to pass parameters.
 
-### Subscribing to custom events {#subscribing-to-custom-events}
+### Subscribing to custom events
 
 Create a custom event element to subscribe to events declared in service functions.
 
@@ -117,7 +117,7 @@ In the `New Custom Event` dialog, select the declared event, configure the execu
 
 ![Custom event configuration](./img/custom-event-configuration.png "Custom event configuration")
 
-## AI Assistant events {#ai-assistant-events}
+## AI Assistant events
 
 Various nodes in AI Assistant can trigger events during runtime. Subscribe to these events to insert business processing logic at key points during assistant execution.
 
@@ -128,7 +128,7 @@ Various nodes in AI Assistant can trigger events during runtime. Subscribe to th
 - **Node arrival**: Triggered when AI Agent nodes, function call nodes, conditional branch nodes, and multi-task execution nodes are reached. The node must enable backend event triggering. For the enabling method, see: <a href="../ai-assistant/create-ai-assistant#node-runtime-events" target="_blank">Node Runtime Events</a>. The parameter is the `Node Arrival Event Output Parameter` configured on the node.
 - **After node execution**: Triggered after AI Agent nodes, function call nodes, conditional branch nodes, and multi-task execution nodes complete execution. The node must enable backend event triggering. The parameter is the `After Node Execution Output Parameter` configured on the node.
 
-### Subscribing to AI Assistant events {#subscribing-to-ai-assistant-events}
+### Subscribing to AI Assistant events
 
 Create an AI Assistant event element to subscribe to these events.
 
@@ -138,7 +138,7 @@ In the IDE, click `+` → `Event` → `AI Assistant Event`, open the event confi
 
 ![AI Assistant event configuration](./img/ai/assistant-event-config.png "AI Assistant event configuration")
 
-## Agent tool call events {#agent-tool-call-events}
+## Agent tool call events
 
 When AI Agent calls tools, subscribe to these events to insert business processing logic during Agent execution. The tool must enable <a href="../ai-agent#ai-agent-tool-configuration">event triggering</a>.
 
@@ -151,7 +151,7 @@ The event parameters are of dictionary (JitDict) type with the following attribu
 - **toolName**: Tool name, such as "services.ASvc.func1". In event processing logic, developers must perform corresponding processing based on the tool name.
 - **args**: Parameters. For pre-call events with `Include data in event message` enabled, args contains the input arguments for calling the tool. For post-call events with this option enabled, args contains the tool's return value.
 
-### Subscribing to Agent tool events {#subscribing-to-agent-tool-events}
+### Subscribing to Agent tool events
 
 Create an Agent tool event element to subscribe to these events.
 
@@ -161,7 +161,7 @@ In the IDE, click `+` → `Event` → `Agent Tool Event`, open the event configu
 
 ![Agent tool event configuration](./img/ai/agent-event-config.png "Agent tool event configuration")
 
-## Replacing event internal functions with service functions {#replacing-event-internal-functions-with-service-functions}
+## Replacing event internal functions with service functions
 
 When creating events, the default execution function is the event internal function, with logic located in the event element's code. JitAI also supports using service functions to encapsulate event execution logic.
 
@@ -169,7 +169,7 @@ When creating events, the default execution function is the event internal funct
 
 In the event's visual editor, switch the execution function to `Service Function` and select custom service functions, provided the function's parameter structure meets the specifications below.
 
-## Enabling events {#enabling-events}
+## Enabling events
 
 Events must be manually enabled after creation to function properly. The enable status can be flexibly managed through switch controls.
 
@@ -177,7 +177,7 @@ Events must be manually enabled after creation to function properly. The enable 
 
 All events are disabled by default after creation. Developers must manually turn on the switch button on the event details page for the event to trigger and execute normally. When the event switch is off, the event will not execute even if trigger conditions are met.
 
-## Executing events synchronously or asynchronously {#executing-events-synchronously-or-asynchronously}
+## Executing events synchronously or asynchronously
 
 JitAI supports both synchronous and asynchronous event execution modes. Developers can flexibly choose based on business scenarios and performance requirements.
 
@@ -191,7 +191,7 @@ JitAI supports both synchronous and asynchronous event execution modes. Develope
 For time-consuming event processing (such as sending emails, calling external APIs, or large-volume calculations), it's recommended to enable asynchronous execution mode to avoid affecting user experience and system response speed.
 :::
 
-## Viewing event execution records {#viewing-event-execution-records}
+## Viewing event execution records
 
 JitAI provides comprehensive event execution monitoring and debugging capabilities to help developers quickly locate and resolve issues during event execution.
 
@@ -207,7 +207,7 @@ The execution records page provides rich filtering capabilities, supporting filt
 
 Click the `Execution Path` button for individual records to view detailed execution logs and call chains, including execution status, timing information, and error details for each step, helping developers quickly diagnose and resolve issues.
 
-## Viewing and editing full code {#viewing-and-editing-full-code}
+## Viewing and editing full code
 
 Event functions can be viewed and edited in full code mode, with real-time synchronization with visual editing.
 

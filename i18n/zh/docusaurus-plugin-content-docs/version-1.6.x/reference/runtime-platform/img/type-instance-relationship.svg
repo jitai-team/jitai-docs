@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="400" viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="900" height="400" fill="#f8f9fa"/>
+  
+  <!-- 定义箭头 -->
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#7f8c8d"/>
+    </marker>
+  </defs>
+  
+  <!-- 标题 -->
+  <text x="450" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#2c3e50">
+    Type元素与实例元素的协作关系
+  </text>
+  
+  <!-- 实例元素（上层） -->
+  <g id="instance-layer">
+    <rect x="50" y="80" width="800" height="100" rx="15" fill="#f1f8e9" stroke="#689f38" stroke-width="2"/>
+    <text x="100" y="110" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#558b2f">
+      实例元素
+    </text>
+    <text x="100" y="135" font-family="Arial, sans-serif" font-size="14" fill="#558b2f">
+      业务应用层
+    </text>
+    <text x="100" y="155" font-family="Arial, sans-serif" font-size="12" fill="#558b2f">
+      简单的配置编排
+    </text>
+    
+    <!-- 实例元素特点 -->
+    <rect x="300" y="95" width="180" height="30" rx="8" fill="#e0f2f1" stroke="#00695c" stroke-width="1"/>
+    <text x="390" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#00695c">
+      简化业务逻辑实现
+    </text>
+    
+    <rect x="500" y="95" width="180" height="30" rx="8" fill="#fce4ec" stroke="#c2185b" stroke-width="1"/>
+    <text x="590" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#ad1457">
+      可视化界面配置
+    </text>
+    
+    <rect x="700" y="95" width="130" height="30" rx="8" fill="#fff3e0" stroke="#f57c00" stroke-width="1"/>
+    <text x="765" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#ef6c00">
+      即时生效
+    </text>
+  </g>
+  
+  <!-- Type元素（下层） -->
+  <g id="type-layer">
+    <rect x="50" y="220" width="800" height="100" rx="15" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="100" y="250" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1565c0">
+      Type元素
+    </text>
+    <text x="100" y="275" font-family="Arial, sans-serif" font-size="14" fill="#1565c0">
+      技术基础层
+    </text>
+    <text x="100" y="295" font-family="Arial, sans-serif" font-size="12" fill="#1565c0">
+      技术复杂度下沉
+    </text>
+    
+    <!-- Type元素职责 -->
+    <rect x="280" y="235" width="160" height="30" rx="8" fill="#fff3e0" stroke="#f57c00" stroke-width="1"/>
+    <text x="360" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#ef6c00">
+      封装技术实现
+    </text>
+    
+    <rect x="460" y="235" width="160" height="30" rx="8" fill="#f3e5f5" stroke="#9c27b0" stroke-width="1"/>
+    <text x="540" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#7b1fa2">
+      定义配置接口
+    </text>
+    
+    <rect x="640" y="235" width="180" height="30" rx="8" fill="#e8f5e8" stroke="#4caf50" stroke-width="1"/>
+    <text x="730" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#388e3c">
+      提供配置界面
+    </text>
+    
+    <rect x="280" y="275" width="160" height="30" rx="8" fill="#e1f5fe" stroke="#0288d1" stroke-width="1"/>
+    <text x="360" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0277bd">
+      运行时执行
+    </text>
+    
+    <rect x="460" y="275" width="160" height="30" rx="8" fill="#fce4ec" stroke="#e91e63" stroke-width="1"/>
+    <text x="540" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#c2185b">
+      生命周期管理
+    </text>
+    
+    <rect x="640" y="275" width="180" height="30" rx="8" fill="#f3e5f5" stroke="#9c27b0" stroke-width="1"/>
+    <text x="730" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#7b1fa2">
+      异常处理机制
+    </text>
+  </g>
+  
+  <!-- 支撑关系箭头 -->
+  <g id="support-arrows">
+    <!-- 主要支撑箭头 -->
+    <line x1="450" y1="210" x2="450" y2="190" stroke="#7f8c8d" stroke-width="4" marker-end="url(#arrowhead)"/>
+    
+    <!-- 支撑说明 -->
+    <text x="470" y="200" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#7f8c8d">
+      技术支撑
+    </text>
+  </g>
+  
+  <!-- 底部说明 -->
+  <text x="450" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#7f8c8d">
+    Type元素通过封装技术复杂度，为实例元素提供简化的配置编排能力
+  </text>
+</svg> 

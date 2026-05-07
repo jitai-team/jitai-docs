@@ -1,0 +1,9 @@
+{
+  "label": "应用创建与发布",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "slug": "devguide/creating-and-publishing-applications",
+    "description": "从应用创建到生产部署的完整指南。包括应用创建与部署、目录结构与源码管理、版本发布与更新、运行环境管理，以及分布式集群架构的实现。"
+  }
+}

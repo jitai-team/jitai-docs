@@ -26,7 +26,7 @@ keywords: [AI编码, Cursor, JitAi, AI开发, 低代码, 可视化开发, 业务
 
 但我要告诉你，**你还没有获得对AI辅助开发这件事的完整认知**。
 
-<!--truncate-->
+{/*truncate*/}
 
 原生编程语言是细粒度的，Cursor在原生编程语言层面证明了AI和人基于UI协作的可行性。
 

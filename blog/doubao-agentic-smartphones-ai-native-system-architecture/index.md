@@ -16,7 +16,7 @@ Under the hype, something deeper is happening:
 
 And the same tension is exactly what will decide the future of AI-native low code and development platforms.
 
-<!-- truncate -->
+{/* truncate */}
 
 ![Doubao Phone](img1.png)
 

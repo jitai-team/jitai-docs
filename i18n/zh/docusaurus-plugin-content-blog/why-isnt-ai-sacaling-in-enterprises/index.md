@@ -15,7 +15,7 @@ McKinsey 2025年1月报告显示，只有1%的企业领导者认为其公司在A
 
 **这篇文章会告诉你，AI规模化为什么这么难，以及如何破局**。
 
-<!--truncate-->
+{/*truncate*/}
 
 ![AI项目失败率：从48%进入生产到仅1%达到成熟的残酷现实](./ai-project-failure-rate.svg "AI项目失败率可视化 - McKinsey与Gartner数据")
 

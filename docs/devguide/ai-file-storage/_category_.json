@@ -1,0 +1,9 @@
+{
+  "label": "AI File Storage",
+  "position": 11,
+  "link": {
+    "type": "generated-index",
+    "slug": "devguide/ai-file-storage",
+    "description": "Learn about AI file spaces, how to create them, and how Agents can safely read and write files."
+  }
+}

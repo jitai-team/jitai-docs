@@ -1,0 +1,9 @@
+{
+  "label": "AI Speech Recognition",
+  "position": 11.1,
+  "link": {
+    "type": "generated-index",
+    "slug": "devguide/speech-recognition",
+    "description": "Learn how to create speech recognition services, configure speech-to-text models, and enable voice input for AI Agents."
+  }
+}

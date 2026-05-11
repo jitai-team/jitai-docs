@@ -1051,6 +1051,27 @@ Build intelligent agents with reasoning and action capabilities. From creating A
   📝 English version coming soon... Please refer to the <a href="/zh/docs/devguide#ai-agent">Chinese version</a> for the latest content.
 </div>
 
+## Skills
+Capture reusable business experience, workflows, output standards, and prompting capabilities as Skills so multiple AI Agents can share the same professional capability set.
+
+<div style={{padding: '40px', textAlign: 'center', color: '#888', fontStyle: 'italic', border: '1px dashed #ccc', borderRadius: '8px', marginBottom: '40px'}}>
+  📝 English version coming soon... Please refer to the <a href="/zh/docs/devguide#skills">Chinese version</a> for the latest content.
+</div>
+
+## AI File Storage
+Prepare readable and writable file spaces for Agents, including Agent workspaces, user file spaces, and organization shared files.
+
+<div style={{padding: '40px', textAlign: 'center', color: '#888', fontStyle: 'italic', border: '1px dashed #ccc', borderRadius: '8px', marginBottom: '40px'}}>
+  📝 English version coming soon... Please refer to the <a href="/zh/docs/devguide#ai-file-storage">Chinese version</a> for the latest content.
+</div>
+
+## AI Speech Recognition
+Turn user recordings into text that Agents can process. Create speech recognition services, configure speech-to-text models, and enable voice input in Agent input and output settings.
+
+<div style={{padding: '40px', textAlign: 'center', color: '#888', fontStyle: 'italic', border: '1px dashed #ccc', borderRadius: '8px', marginBottom: '40px'}}>
+  📝 English version coming soon... Please refer to the <a href="/zh/docs/devguide#speech-recognition">Chinese version</a> for the latest content.
+</div>
+
 ## Data modeling
 Build a robust data foundation visually—no SQL expertise required. Create tables, design field types, establish relationships, and manage data with intuitive visual tools.
 

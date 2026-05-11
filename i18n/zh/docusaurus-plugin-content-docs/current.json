@@ -351,6 +351,30 @@
     "message": "学习如何创建和管理AI代理，包括工具配置、输入输出处理、单任务实现以及向外部系统开放Agent API。",
     "description": "The generated-index page description for category AI Agent in sidebar devguideSidebar"
   },
+  "sidebar.devguideSidebar.category.Skills": {
+    "message": "AI 技能",
+    "description": "The label for category Skills in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.Skills.link.generated-index.description": {
+    "message": "了解 AI 技能的概念、创建方法、内容编写方法，以及如何在 AI Agent 中复用。",
+    "description": "The generated-index page description for category Skills in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.AI File Storage": {
+    "message": "AI 文件空间",
+    "description": "The label for category AI File Storage in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.AI File Storage.link.generated-index.description": {
+    "message": "了解 AI 文件空间的三种类型、创建方法、组织资料管理，以及如何让 Agent 安全读写文件。",
+    "description": "The generated-index page description for category AI File Storage in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.AI Speech Recognition": {
+    "message": "AI 语音识别",
+    "description": "The label for category AI Speech Recognition in sidebar devguideSidebar"
+  },
+  "sidebar.devguideSidebar.category.AI Speech Recognition.link.generated-index.description": {
+    "message": "了解 AI 语音识别的定位、服务创建、模型配置，以及如何为 Agent 开启语音输入能力。",
+    "description": "The generated-index page description for category AI Speech Recognition in sidebar devguideSidebar"
+  },
   "sidebar.devguideSidebar.category.AI Assistant": {
     "message": "AI助理",
     "description": "The label for category AI Assistant in sidebar devguideSidebar"

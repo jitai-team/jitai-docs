@@ -1,14 +1,16 @@
 ---
 sidebar_position: 11
 slug: agent-input-output
-description: "定义 Agent 的输入变量和输出格式，在系统提示词中引用变量。"
+description: "定义 Agent 的输入变量和输出格式，让聊天使用和程序调用都能获得稳定结果。"
 ---
 
-# 输入输出配置
+# 用输入输出配置让 Agent 可被程序稳定调用
 
 Agent 的输入输出配置决定了如何向 Agent 传递参数，以及 Agent 以什么格式返回结果。
 
 在 Agent 编辑器中切换到`更多` → `输入 & 输出`，可以配置输入变量、输出格式和语音识别服务。
+
+如果 Agent 只用于自由对话，可以先使用默认输入和纯文本输出。如果 Agent 会被页面函数、服务函数或外部流程调用，建议显式定义输入变量和输出格式，避免把所有参数都混在一段自然语言中。
 
 ## 定义输入变量 {#configuring-input-variables}
 
@@ -38,6 +40,15 @@ Agent 的输入输出配置决定了如何向 Agent 传递参数，以及 Agent 
 
 在服务函数或页面函数中调用 Agent 的 `run` 函数时，通过 `variables` 参数传入变量的值。详细说明请参考[将 Agent 集成到应用中](./agent-integration)。
 
+常见变量设计：
+
+| 场景 | 建议变量 |
+| --- | --- |
+| 查询订单 | `orderId`、`customerId` |
+| 生成报表 | `dateRange`、`departmentId`、`reportType` |
+| 审核合同 | `contractId`、`riskLevel` |
+| 分析客户 | `customerId`、`analysisGoal` |
+
 ## 定义输出格式
 
 支持两种输出模式：
@@ -51,6 +62,24 @@ Agent 的输入输出配置决定了如何向 Agent 传递参数，以及 Agent 
 每一个输出结果字段的标题和名称都需要仔细斟酌，做到见名知其意，以便大模型能正确理解。
 :::
 
-## 语音识别服务
+当输出会继续传给页面、服务函数或审批流程时，优先使用 JSON 结构化输出。当输出只给用户阅读时，纯文本通常更自然。
 
-可选择已创建的语音识别元素实例，为 Agent 开启语音输入能力。（语音识别元素实例的创建说明文档完善中）
+## 输入输出配置与提示词如何配合
+
+输入变量解决“业务参数从哪里来”，System Prompts 解决“拿到参数后怎么处理”，输出格式解决“结果以什么结构返回”。
+
+建议这样分工：
+
+- 输入变量中定义订单号、客户 ID、时间范围等外部参数。
+- System Prompts 中引用变量，并说明处理步骤和边界。
+- 输出格式中定义程序或用户真正需要的结果字段。
+
+如果输出依赖固定业务流程或团队规范，可以把流程沉淀为 [Skill](../skills/overview)，再在 Agent 中安装使用。
+
+## 语音识别服务 {#speech-recognition-service}
+
+可选择已创建的语音识别元素实例，为 Agent 开启语音输入能力。适合移动端、现场作业、客服坐席等不方便长文本输入的场景。
+
+配置后，用户在支持语音输入的聊天入口中录音，平台会先把语音转成文字，再交给 Agent 按普通文本消息处理。Agent 的输入变量、输出格式、工具、知识库、Skill 和文件空间配置不会因为语音输入而改变。
+
+如果还没有可用的语音识别服务，需要先创建一个服务并配置 API Key 和默认识别模型。完整说明见 [AI 语音识别](../speech-recognition/overview) 和 [为 Agent 开启语音输入能力](../speech-recognition/use-speech-recognition-in-agent)。

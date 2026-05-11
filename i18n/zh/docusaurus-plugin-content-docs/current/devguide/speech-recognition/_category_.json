@@ -1,0 +1,9 @@
+{
+  "label": "AI 语音识别",
+  "position": 11.1,
+  "link": {
+    "type": "generated-index",
+    "slug": "devguide/speech-recognition",
+    "description": "了解 AI 语音识别的定位、服务创建、模型配置，以及如何为 Agent 开启语音输入能力。"
+  }
+}

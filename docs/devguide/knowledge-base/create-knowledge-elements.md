@@ -6,7 +6,7 @@ description: "Create knowledge base elements for document storage. Build knowled
 
 # Creating Knowledge Base Elements
 
-AI Knowledge Base is an intelligent knowledge retrieval system that transforms unstructured documents into semantically understandable structured knowledge. As a core component for implementing RAG (Retrieval-Augmented Generation), the knowledge base provides accurate and timely domain knowledge retrieval capabilities for [AI Agents](../ai-agent/agent-knowledge-base) and [AI Assistants](../ai-assistant/create-ai-assistant).
+AI Knowledge Base is an intelligent knowledge retrieval system that transforms unstructured documents into semantically understandable structured knowledge. As a core component for implementing RAG (Retrieval-Augmented Generation), the knowledge base provides accurate and timely domain knowledge retrieval capabilities for [AI Agents](../ai-agent/agent-knowledge-base).
 
 The knowledge base operates through five core components working in concert: embedding models, reranking models, vector databases, document processors, and relational databases. It supports multiple document formats including PDF, DOCX, TXT, and MD, offering both semantic search and keyword search capabilities. Through a two-stage retrieval mechanism (vector retrieval + reranking), the system comprehends the semantic intent of queries and returns the most relevant knowledge fragments.
 

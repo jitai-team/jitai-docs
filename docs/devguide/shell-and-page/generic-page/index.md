@@ -271,9 +271,9 @@ Developers can select `Mobile` as the page terminal type when creating pages (PC
 
 The mobile page editor maintains functional parity with the PC page editor. Configuration, events, functions, page variables, and other operations remain completely consistent between mobile and PC page editors.
 
-## Enabling AI assistant for page {#enabling-ai-assistant}
-JitAI supports direct integration of [AI Assistants](/docs/devguide/ai-assistant/create-ai-assistant) within pages, enabling user interaction with AI assistants when accessing pages.
+## Enabling AI agent for page {#enabling-ai-assistant}
+JitAI supports direct integration of [AI Agents](/docs/devguide/ai-agent) within pages, enabling user interaction with AI agents when accessing pages.
 
-![Enable AI Assistant for Page](./imgs/add-ai-assistant-to-page.gif "Enable AI Assistant for Page")
+![Enable AI Agent for Page](./imgs/add-ai-assistant-to-page.gif "Enable AI Agent for Page")
 
-Developers enable the `AI Assistant` at the top of the page editor, select an [AI Assistant](/docs/devguide/ai-assistant/create-ai-assistant) from the popup list, and enable the AI assistant for the page.
+Developers enable the `AI Agent` at the top of the page editor, select an [AI Agent](/docs/devguide/ai-agent) from the popup list, and enable the AI agent for the page.

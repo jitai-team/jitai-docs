@@ -34,7 +34,7 @@ In this case, creating an AI Agent involves the following configuration steps: T
 
 <VideoPlayer relatePath="/docs/tutorial/en/ai_ui_agent.mp4" />
 
-For detailed information, see [AI Agent](../../devguide/ai-agent/create-ai-agent).
+For detailed information, see [AI Agent](../../devguide/ai-agent/overview).
 
 ### Creating AI Assistant
 
@@ -45,7 +45,7 @@ JitAI's AI Assistant includes a dialog interface for direct user interaction.
 Creating an AI Assistant in this case involves the following configuration steps:
 <VideoPlayer relatePath="/docs/tutorial/en/ai_ui_assi.mp4" />
 
-For detailed information, see [AI Assistant](../../devguide/ai-assistant/create-ai-assistant).
+For detailed information, see [AI Agent](../../devguide/ai-agent).
 
 ### Configuring Page Events to Work with AI Assistant
 

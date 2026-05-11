@@ -53,7 +53,7 @@ JitAI开发框架提供了丰富的组件库，每种组件的配置项和事件
 
 开发者在工具栏中打开组件配置，即可看到当前选中组件的配置项，例如表格的`数据源`、`字段`、`工具栏按钮`、`操作列按钮`、`显示模式`、`无数据时的文案`等。开发者在画布中点击其它组件即可切换到对应组件的配置区。
 
-### 事件面板  {#event-panel}
+### 事件面板 {#event-panel}
 事件面板是页面编辑器中用于编写组件事件逻辑的区域。
 
 ![打开事件面板](./imgs/open-event-panel.gif)
@@ -87,7 +87,7 @@ JitAI开发框架提供了丰富的组件库，每种组件的配置项和事件
 
 当标题被隐藏后，`隐藏标题`按钮会自动变为`显示标题`按钮，点击`显示标题`按钮即可恢复标题的显示。
 
-### 自定义尺寸或自适应  {#custom-sizing-adaptive-layout}
+### 自定义尺寸或自适应 {#custom-sizing-adaptive-layout}
 组件的尺寸大小不仅可以通过拖拽组件边缘的方式进行调整，也可以进行精确设置。
 
 ![设置组件尺寸](./imgs/set-component-size.gif)
@@ -271,9 +271,9 @@ JitAI已经内置了对移动端的适配，可以在移动端页面编辑器中
 
 移动端页面编辑器和PC端页面编辑器在功能上没有区别，配置/事件/函数/页面变量等操作和PC端页面编辑器完全一致。
 
-## 在页面中集成AI助理 {#enabling-ai-assistant} 
-JitAI支持在页面中直接集成[AI助理](/docs/devguide/ai-assistant/create-ai-assistant)，用户在访问页面时可以与AI助理进行交互。
+## 在页面中集成AI Agent {#enabling-ai-assistant}
+JitAI支持在页面中直接集成[AI Agent](/docs/devguide/ai-agent)，用户在访问页面时可以与AI Agent进行交互。
 
-![在页面中添加AI助理](./imgs/add-ai-assistant-to-page.gif)
+![在页面中添加AI Agent](./imgs/add-ai-assistant-to-page.gif)
 
-开发者在页面编辑器顶部打开`AI助理`开关，在弹出的列表中选择一个[AI助理](/docs/devguide/ai-assistant/create-ai-assistant)，即可在页面中集成AI助理。
+开发者在页面编辑器顶部打开`AI`开关，在弹出的列表中选择一个[AI Agent](/docs/devguide/ai-agent)，即可在页面中集成AI Agent。

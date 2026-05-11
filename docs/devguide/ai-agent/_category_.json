@@ -4,6 +4,6 @@
   "link": {
     "type": "generated-index",
     "slug": "devguide/ai-agent",
-    "description": "Learn how to create and manage AI agents, including tools, input/output handling, single-task implementations, and exposing Agent APIs for external systems."
+    "description": "Learn about the four types of AI Agents, how to create them, add tools, extend capabilities, and integrate them into your applications."
   }
 }

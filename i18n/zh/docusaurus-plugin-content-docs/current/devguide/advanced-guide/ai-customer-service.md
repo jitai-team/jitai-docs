@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 slug: ai-customer-service
-description: "AI智能客服的详细指南和说明。"
+description: "AI智能客服完整教程：创建 LLM → 知识库 → AI Agent → 页面集成。"
 ---
 
 # AI智能客服
@@ -100,37 +100,22 @@ description: "AI智能客服的详细指南和说明。"
 
 6. 保存
 
-
 ---
 
-### 创建AI助理实例元素 {#creating-ai-assistant-instance}
-
-1. 新建AI助理实例元素，命名为`智能客服`
-   
-   ![新建AI助理实例元素](./img/jitairobot/create-ai-assistant-instance-element.png)
-
-2. 添加一个`AI Agent`节点，并选择之前创建的AIAgent实例元素
-3. 将`Start`节点连线到名称为`智能客服`的AI Agent节点
-4. 设置欢迎语和开场白（可选）
-5. 保存
-
-![AI助理编排配置界面](./img/jitairobot/ai-assistant-flow-config.png)
-
----
-
-### 创建页面并启用AI助理 {#creating-page-enabling-assistant}
+### 创建页面并启用 AI Agent {#creating-page-enabling-agent}
 
 1. 新建一个`常规页面`实例元素
 
    ![新建常规页面实例元素](./img/jitairobot/create-generic-page-instance-element.png)
 
-2. 启用AI助理：选择刚才创建的名为`智能客服`的AI助理实例元素，即可在开发区可以直接使用AI助理
-   
+2. 启用 AI：在页面编辑器顶部打开 AI 开关，选择刚才创建的名为`智能客服`的 AI Agent 实例元素，即可在开发区直接与 Agent 对话
+
    ![为页面启用AI助理](./img/jitairobot/enable-ai-assistant-for-page.png)
 
    ![在开发区使用AI助理](./img/jitairobot/use-ai-assistant-in-dev-area.png)
 
-3. 在门户->使用者门户->新建菜单->绑定已有页面，用户即可在使用者门户中使用AI助理
+3. 在门户→使用者门户→新建菜单→绑定已有页面，用户即可在使用者门户中使用 AI Agent
+
     ![在使用者门户中配置AI助理页面](./img/jitairobot/configure-ai-assistant-page-in-user-portal.png)
 
     ![在使用者门户中使用AI助理](./img/jitairobot/final-result-embedded-ai-assistant.png)

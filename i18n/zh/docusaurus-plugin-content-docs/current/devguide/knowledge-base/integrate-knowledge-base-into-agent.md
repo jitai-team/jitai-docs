@@ -43,5 +43,5 @@ Agent集成知识库后，能够在推理过程中动态获取相关知识，实
 
 ## 在Agent中使用知识库 {#using-knowledge-base-in-agent}
 
-详细的集成配置和使用方法，请参考[集成知识库实现检索增强生成（RAG）](../ai-agent/agent-knowledge-base#integrate-knowledge-base-rag)。
+详细的集成配置和使用方法，请参考[集成知识库实现检索增强生成（RAG）](../ai-agent/agent-knowledge-base)。
 

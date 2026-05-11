@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 slug: ai-customer-service
-description: "Build AI customer service agent from scratch. Master JitAI platform fundamentals and integrate intelligent agents into application portals."
+description: "Build AI customer service agent from scratch with LLM, knowledge base, and AI Agent."
 ---
 
 # AI Customer Service Agent
@@ -38,7 +38,7 @@ See [Creating knowledge base elements](../knowledge-base/create-knowledge-elemen
 
 ### Creating an AI agent element {#creating-ai-agent-element}
 
-See [Creating AI agents](../ai-agent/create-ai-agent)
+See [Creating AI agents](../ai-agent/create-flow-agent)
 
 1. Create an AI Agent element and name it `Customer Service Agent`
 2. Select the previously created AI LLM element and choose a model
@@ -56,19 +56,14 @@ See [Creating AI agents](../ai-agent/create-ai-agent)
     4. If no relevant `knowledge fragments` are found, clearly state "This information is not available in our knowledge base"
     ```
 5. Save
-### Creating an AI assistant element {#creating-ai-assistant-element}
 
-1. Create an AI Assistant element and name it `Customer Service Assistant`. See [Creating an AI assistant](../ai-assistant/create-ai-assistant)
-2. Add an `AI Agent` node and select the previously created AI Agent element
-3. Connect the `Start` node to the AI Agent node named `Customer Service Agent`
-4. Save
+### Enabling AI agent in a page {#enabling-ai-agent-in-page}
 
-![AI Assistant Configuration](./img/jitairobot/ai-assistant-flow-config.gif "AI Assistant Configuration")
+1. Create a generic page element
+2. Enable AI in the page editor: select `AI Agent` and choose the previously created `Customer Service Agent`
+3. In the portal, bind the page to a menu item so users can access the AI agent
 
-
-### Enabling AI assistant for the default portal {#enabling-ai-assistant-for-portal}
-
-See [Using AI assistants in generic portals](../using-ai-in-portals-and-pages/using-ai-assistants-in-portals)
+See [Using AI elements in pages](../using-ai-in-portals-and-pages/using-ai-elements-in-pages#using-ai-agent-in-pages) for more details.
 
 ## Congratulations! {#congratulations}
 

@@ -12,13 +12,13 @@ This guide is designed to help beginners quickly get started. By completing this
 2. Build an AI customer service agent from scratch and integrate it into your application portals.
 :::
 
-## Preview {#preview}
+## Preview
 
 ![Preview in Portal](./img/jitairobot/final-result-embedded-ai-assistant.png "Preview in Portal")
 
-## Getting Started {#getting-started}
+## Getting Started
 
-### Prerequisites {#prerequisites}
+### Prerequisites
 
 1. [Download and install the Desktop Version](../../tutorial/download-installation) (skip if already installed)
 2. Obtain an API key for a large language model service.
@@ -65,7 +65,7 @@ See [Creating AI agents](../ai-agent/create-flow-agent)
 
 See [Using AI elements in pages](../using-ai-in-portals-and-pages/using-ai-elements-in-pages#using-ai-agent-in-pages) for more details.
 
-## Congratulations! {#congratulations}
+## Congratulations!
 
 You have successfully mastered the fundamentals of the JitAI development platform and built your first AI customer service agent.
 

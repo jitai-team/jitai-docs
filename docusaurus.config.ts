@@ -1,8 +1,29 @@
 import { themes as prismThemes } from "prism-react-renderer";
+import fs from "fs";
+import path from "path";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+
+function getFirstCaseSlug(): string {
+    const casesDir = path.join(__dirname, "cases");
+    const entries = fs.readdirSync(casesDir, { withFileTypes: true });
+    const caseDirs = entries
+        .filter((e) => e.isDirectory())
+        .map((e) => e.name)
+        .filter((dirName) => {
+            const indexMd = path.join(casesDir, dirName, "index.md");
+            return fs.existsSync(indexMd);
+        })
+        .sort((a, b) => a.localeCompare(b));
+
+    if (caseDirs.length === 0) {
+        return "";
+    }
+
+    return caseDirs[0];
+}
 
 const config: Config = {
     title: "JitAi",
@@ -13,6 +34,9 @@ const config: Config = {
     // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
     future: {
         v4: true, // Improve compatibility with the upcoming Docusaurus v4
+        faster: {
+            swcHtmlMinimizer: false, // SWC 的 JSON-LD 解析有 bug，退回到 Terser
+        },
     },
     trailingSlash: false,
     // Set the production url of your site here
@@ -22,6 +46,23 @@ const config: Config = {
     baseUrl: "/",
     // Algolia site verification and Google Tag Manager
     headTags: [
+        {
+            tagName: "script",
+            attributes: {},
+            innerHTML: `(() => {
+  const slug = ${JSON.stringify(getFirstCaseSlug())};
+  if (!slug) return;
+  const p = window.location.pathname;
+  const isCases = p === '/cases' || p === '/cases/';
+  const isZhCases = p === '/zh/cases' || p === '/zh/cases/';
+  if (isCases) {
+    window.location.replace('/cases/' + slug + window.location.search + window.location.hash);
+  }
+  if (isZhCases) {
+    window.location.replace('/zh/cases/' + slug + window.location.search + window.location.hash);
+  }
+})();`,
+        },
         // 注意：Viewport 配置已移至 themeConfig.metadata
         // 在此处配置会被 Docusaurus 默认的 viewport 覆盖
         // Google Tag Manager
@@ -85,10 +126,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             {
                 docs: {
                     sidebarPath: "./sidebars.ts",
-                    // Please change this to your repo.
-                    // Remove this to remove the "edit this page" links.
                     editUrl:
                         "https://github.com/jitai-team/jitai-docs/tree/master",
+                    lastVersion: "current",
+                    versions: {
+                        current: {
+                            label: "2.0.x",
+                            banner: "none",
+                        },
+                        "1.6.x": {
+                            label: "1.6.x",
+                            path: "1.6.x",
+                            banner: "none",
+                        },
+                    },
                 },
                 blog: {
                     showReadingTime: true,
@@ -116,6 +167,60 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             } satisfies Preset.Options,
         ],
     ],
+
+    plugins: [
+        [
+            "@docusaurus/plugin-content-blog",
+            {
+                id: "cases",
+                path: "cases",
+                routeBasePath: "cases",
+                showReadingTime: false,
+                postsPerPage: 9999,
+                onInlineTags: "throw",
+                onInlineAuthors: "throw",
+                onUntruncatedBlogPosts: "throw",
+            },
+        ],
+        function svgrReactQueryPlugin() {
+            return {
+                name: "svgr-react-query-plugin",
+                configureWebpack() {
+                    return {
+                        mergeStrategy: {
+                            "module.rules": "prepend",
+                        },
+                        ignoreWarnings: [
+                            {
+                                module: /vscode-languageserver-types/,
+                                message: /Critical dependency/,
+                            },
+                        ],
+                        module: {
+                            rules: [
+                                {
+                                    test: /\.svg$/i,
+                                    resourceQuery: /react/,
+                                    use: [
+                                        {
+                                            loader: (require as any).resolve(
+                                                "@svgr/webpack",
+                                            ),
+                                            options: {
+                                                svgo: true,
+                                                titleProp: true,
+                                            },
+                                        },
+                                    ],
+                                },
+                            ],
+                        },
+                    };
+                },
+            };
+        },
+    ],
+
     // 添加客户端模块
     clientModules: [
         "./src/clientModules/readingProgress.js",
@@ -123,6 +228,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     ],
     markdown: {
         mermaid: true,
+        mdx1Compat: {
+            comments: true,
+            admonitions: true,
+            headingIds: true,
+        },
         hooks: {
             onBrokenMarkdownLinks: "throw",
         },
@@ -188,12 +298,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 // position: 'left',
                 //  label: '应用市场',
                 //},
-                {
-                    type: "docSidebar",
-                    sidebarId: "opensourceSidebar",
-                    position: "left",
-                    label: "Open Source",
-                },
+                // {
+                //     type: "docSidebar",
+                //     sidebarId: "opensourceSidebar",
+                //     position: "left",
+                //     label: "Open Source",
+                // },
                 //{
                 //  type: 'docSidebar',
                 //  sidebarId: 'appmarketSidebar',
@@ -220,6 +330,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 {
                     type: "search",
                     position: "right",
+                },
+                {
+                    type: "docsVersionDropdown",
+                    position: "right",
+                    dropdownActiveClassDisabled: true,
                 },
                 {
                     type: "localeDropdown",
@@ -321,7 +436,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             appId: "DZ5X5FUUCG",
             apiKey: "a3d6338cf6bd1e789ab3c6d7064e0796",
             indexName: "crawler_doc_spider",
-            contextualSearch: false, // 禁用上下文搜索以避免过度过滤
+            contextualSearch: true, // 启用上下文搜索，根据当前语言过滤结果
             searchPagePath: "search",
             insights: false,
         },

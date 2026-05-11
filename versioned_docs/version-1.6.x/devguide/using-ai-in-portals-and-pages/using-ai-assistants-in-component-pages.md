@@ -1,0 +1,83 @@
+---
+sidebar_position: 2
+slug: using-ai-assistants-in-component-pages
+description: "Integrate AI Assistant in component pages. Enable AI dialog, configure assistants, and subscribe to events for human-AI collaboration."
+---
+
+# Using AI Assistant in Component Pages
+After using [AI Assistant](../ai-assistant) in component pages, an AI dialog box will be displayed on the right side of the page. The page can also subscribe to [AI Assistant events](../ai-assistant/ai-assistant-event) to enable interaction between the page and AI, as well as collaboration between users and AI.
+
+## Enabling AI Assistant {#enable-ai-assistant}
+Follow these steps:
+
+![Component Page - Bind AI Assistant](./img/component-page-bind-assistant.png)
+
+​Enable and select an `AI Assistant` at the top of the page editor.​​ 
+
+## AI assistant configuration
+
+After enabling the AI Assistant, an AI Assistant configuration panel will be displayed on the right side of the page editor with the following configuration options:
+- **AI Assistant**: Switch the AI assistant used in the page
+- **Welcome Message and Opening**: Set personalized [welcome message and opening](../ai-assistant/welcome-message-and-opening)
+- **Set the input args**: If the assistant being used has [custom input args](../ai-assistant/ai-assistant-input-output#input-args) configured, these args need to be assigned values.
+- **Output Process Log**: Customize the [runtime log](../ai-assistant/ai-assistant-input-output#message-output) content output by the assistant during runtime.
+
+![Component Page - Bind AI Assistant](./img/component-page-assistant-config.png)
+
+
+## AI assistant event subscription
+
+### Subscribe to Node Running Events {#subscribe-node-running-events}
+After enabling [Trigger page events](../ai-assistant/ai-assistant-event#frontend-page-events) for nodes in the assistant, there will be two events: **Arrived** and **Post-execution**. The page subscription method is as follows:
+
+![AI Assistant - Workspace Event Subscription](./img/assistant-workspace-event-subscribe.png)
+
+Within the event handler, you can access the event's payload:
+
+![AI Assistant - Workspace Event Subscription](./img/assistant-workspace-event-args.png)
+
+### Subscribe to Tool Call Events {#subscribe-call-tool-events}
+
+After enabling [Tool call events](../ai-assistant/ai-assistant-event#agent-call-tool-events) for AI Agent nodes in the assistant, there will be two events: **Tool Pre-call** and **Tool Post-call**. The page subscription method is as follows:
+
+![AI Assistant - Tool Call Event Subscription](./img/assistant-workspace-tool-event.png)
+
+Currently, [output parameters of tool call events](../ai-assistant/ai-assistant-event#agent-call-tool-events) cannot be used in visual tools and need to be used by developers through code writing in source code mode. The usage method is as follows:
+```javascript
+this.subscribeEvent("AI:aiagents.ClientManagementagent.callTool.preEvent", async ({ data}) => {
+    // AI: Fixed prefix for AI assistant events; aiagents.ClientManagementagent: Node ID in the assistant; callTool.preEvent: Before tool call event, callTool.postEvent: After tool call event
+    // data: Parameters carried by this tool event
+    if(data.toolName.value === "services.ASvc.func1"){
+        //TODO: If tool name is xxxx, do something 
+    }
+});
+```
+
+### Subscribe to action in conversation node events {#subscribe-action-in-conversation-events}
+Pages can subscribe to [action in conversation node events](../ai-assistant/ai-assistant-event#action-in-conversation-events).
+The subscription method is as follows:
+
+![AI Assistant - Chat Area Human-Machine Interaction Event Subscription](./img/assistant-chat-event.png)
+
+### Subscribe to action in page node events {#subscribe-action-in-page-events}
+Pages can subscribe to [action in conversation node events](../ai-assistant/ai-assistant-event#in-page-action-events).
+The subscription method is as follows:
+
+![AI Assistant - Workspace Human-Machine Interaction Event Subscription](./img/assistant-uiinterrupt-event.png)
+
+## Send AI messages in pages {#send-ai-message}
+
+After using AI Assistant in a page, there will be a **Send AI Message** function on the page. The calling method is as follows:
+
+![AI Assistant - Send AI Message](./img/send-ai-message.png)
+
+For function parameters, see [Send AI Message Function](../ai-assistant/ai-assistant-api-exposure#send-ai-message)
+
+
+## Direct call to AI assistant {#call-ai-assistant}
+
+Additionally, pages support directly calling AI Assistant without enabling it. The AI Assistant provides a **Run** method that can be called directly. The calling method is as follows:
+
+![AI Assistant - Send AI Message](./img/call-assistant.png)
+
+This method can also be called in service/model function logic.

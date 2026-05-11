@@ -33,7 +33,7 @@ Once created, the knowledge base will appear in the element tree on the left.
 
 ## How it works {#principle-description}
 
-### Core components {#core-components}
+### Core components
 
 AI knowledge bases are built on an advanced RAG (Retrieval-Augmented Generation) architecture, powered by five core components working in concert:
 
@@ -43,7 +43,7 @@ AI knowledge bases are built on an advanced RAG (Retrieval-Augmented Generation)
 - **Document Processor**: Intelligently parses, chunks, and cleans document content to optimize vectorization quality
 - **Relational Database**: Maintains document metadata and text chunks, ensuring data consistency and traceability
 
-### System architecture {#system-architecture}
+### System architecture
 
 ```mermaid
 graph TB
@@ -79,7 +79,7 @@ graph TB
     D --> H
 ```
 
-### Technical principles {#technical-principles}
+### Technical principles
 
 **Semantic understanding**: Advanced embedding models (also called vector models) convert natural language into points in a high-dimensional vector space, allowing the system to comprehend semantic relationships rather than relying solely on keyword matching.
 
@@ -89,7 +89,7 @@ graph TB
 
 **Hybrid storage**: Vector databases handle high-dimensional similarity computations, while relational databases manage structured metadata. This dual-storage approach ensures both retrieval speed and accuracy.
 
-### Data processing flow {#data-processing-flow}
+### Data processing flow
 
 ```mermaid
 flowchart LR
@@ -112,7 +112,7 @@ flowchart LR
     E -.-> K
 ```
 
-### Retrieval mechanism {#retrieval-mechanism}
+### Retrieval mechanism
 
 ```mermaid
 sequenceDiagram

@@ -1,0 +1,9 @@
+{
+  "label": "Reference",
+  "position": 3,
+  "collapsed": false,
+  "link": {
+    "slug": "reference",
+    "description": "Complete API documentation and technical specifications for quick reference during development."
+  }
+} 

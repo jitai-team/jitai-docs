@@ -1,0 +1,10 @@
+{
+  "position": 5,
+  "label": "Components",
+  "className": "red",
+  "link": {
+    "type": "generated-index",
+    "slug": "/reference/framework/JitWeb/components",
+    "description": "UI component management APIs for creating, configuring, and managing reusable UI components across different categories."
+  }
+} 

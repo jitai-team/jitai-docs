@@ -23,7 +23,7 @@ slug: google-ai-data-deletion-ai-native-low-code-development-platform
 *   像 [JitAI](https://jit.pro) 这样的 AI 原生开发平台，是如何在架构层面尽量避免这种“灾难级误操作”的
     
 
-<!-- truncate -->
+{/* truncate */}
 
 ![image.png](img1.png)
 

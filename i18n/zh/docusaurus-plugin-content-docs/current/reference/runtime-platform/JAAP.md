@@ -64,6 +64,8 @@ MyApp/                     # 应用根目录
 │   └── messages/      # 消息通信元素
 ```
 
+在MyApp中，`commons`不是元素目录，不能使用`app.getElement`语法引用。`commons`作为后端Python包/前端公共文件夹被MyApp中其它元素使用，通常用于存放公共代码，例如：常量、全局变量、工具函数、公共组件等。
+
 ### 应用配置清单
 `app.json` 是应用的核心配置文件，定义应用的基本信息和运行参数：
 
@@ -197,7 +199,7 @@ sequenceDiagram
     M-->>-P: 完成加载链
 ```
 
-### 元素目录规范 {#element-directory-specification} 
+### 元素目录规范 {#element-directory-specification}
 每个元素遵循统一的目录结构和文件命名规范：
 
 ```plaintext title="标准元素目录结构"

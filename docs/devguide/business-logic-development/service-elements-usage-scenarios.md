@@ -6,7 +6,7 @@ description: "Service elements usage scenarios and best practices. When and how 
 
 # Service Elements Usage Scenarios
 
-## Where service functions are used {#where-service-functions-are-used}
+## Where service functions are used
 Service functions can be invoked anywhere function logic can be implemented, including [page functions](../shell-and-page/generic-page#page-functions), [page events](../shell-and-page/generic-page#page-events), [frontend component event handlers](../shell-and-page/generic-page#event-panel), [task execution functions](./background-tasks#developing-task-execution-functions), [model events](./event-handling#model-events), [approval events](./event-handling#approval-events), [custom events](./event-handling#custom-events), [AI assistant events](./event-handling#ai-assistant-events), [AI Agent tool invocation events](./event-handling#agent-tool-call-events), and within other service functions themselves.
 
 Additionally, service functions can be invoked by large language models when configured [as AI Agent tools](../ai-agent/agent-tool-service-function), and exposed to external systems via [API authorization elements](../api-exposure/api-authorization).

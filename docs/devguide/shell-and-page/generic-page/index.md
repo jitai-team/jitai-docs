@@ -11,12 +11,12 @@ Generic pages are the most widely used page type in page development. Developers
 
 To create a page, developers locate `UI Pages` in the element directory tree, click `+` and select `Generic Page`, fill in the page name in the popup form, and click `Confirm` to complete page creation and automatically enter the [Visual Page Editor](#visual-page-editor).
 
-## Page inheritance {#page-inheritance}
+## Page inheritance
 To reuse an existing page, developers can select the page to inherit in the advanced configuration while filling in the page name.
 
 The new page will inherit all component configurations from the parent page (excluding event logic), and developers can modify these configurations in the new page.
 
-## Visual page editor {#visual-page-editor}
+## Visual page editor
 JitAI provides a visual drag-and-drop page editor for page elements. Developers can drag functional components onto the canvas within the page editor and configure components while writing event logic.
 
 ![Page Editor Overall Layout](./imgs/page-editor-overall-layout.png "Page Editor Overall Layout")
@@ -28,14 +28,14 @@ The JitAI development framework provides a comprehensive component library. Each
 ## Integrating AI assistant in pages {#integrating-ai-assistants-in-pages}
 Pages support AI assistant integration, providing intelligent dialogue and auxiliary functions to enhance user experience.
 
-### Toolbar {#toolbar}
+### Toolbar
 The toolbar serves as the quick operations area within the page editor. Developers can use toolbar buttons to add components, switch between compact/loose page modes, enable AI assistants, toggle the element directory tree, toggle the event panel, toggle the component configuration area, preview pages, switch between visual and source code modes, and save page modifications.
 
 :::tip Real-time preview
 During development, developers can click the preview button in the toolbar at any time to preview page effects in real-time.
 :::
 
-### Canvas {#canvas}
+### Canvas
 Developers create page layouts by dragging components onto the canvas.
 
 ![Add Components to Page](./imgs/page-add-component.gif "Add Components to Page")
@@ -46,14 +46,14 @@ To add components, developers click the `+ Insert Component` button on the leftm
 
 Each component features an `Events` button and a `...` button in the upper right corner. The `Events` button displays the current component's events in the event panel, while the `...` button opens the component's context menu with options including hide title, set size, move, generate copy, copy configuration, paste configuration, and delete.
 
-### Component configuration area {#component-configuration-area}
+### Component configuration area
 The component configuration area allows developers to configure component display title, properties, styles, rules, buttons, and other settings.
 
 ![Table Component Configuration Overview](./imgs/table-component-config-overview.png "Table Component Configuration Overview")
 
 When developers open component configuration in the toolbar, they can view the configuration options for the currently selected component, such as a table's `Data Source`, `Visible Fields`, `Buttons` and more. Clicking other components in the canvas switches to the corresponding component's configuration area.
 
-### Event panel {#event-panel}
+### Event panel
 The event panel serves as the dedicated area within the page editor for writing component event logic.
 
 ![Open Event Panel](./imgs/open-event-panel.gif "Open Event Panel")
@@ -68,8 +68,8 @@ Developers can write event logic visually. Event logic supports basic statements
 Event logic supports breakpoint insertion. Developers can pause execution at breakpoints and examine current variable values, call stacks, and other debugging information.
 :::
 
-## Component common operations {#component-common-operations}
-### Duplicating components {#duplicating-components}
+## Component common operations
+### Duplicating components
 When a page requires multiple components of the same type with similar configurations, components can be quickly added by duplicating existing ones.
 
 ![Duplicate Component](./imgs/generate-copy.gif "Duplicate Component")
@@ -80,7 +80,7 @@ Developers click the `...` button in the upper right corner of the component and
 Duplicating components only copies the component's configuration, not its event logic.
 :::
 
-### Title visibility {#title-visibility}
+### Title visibility
 Each component's title can be individually configured to show or hide.
 
 ![Title Visibility](./imgs/title-show-hide.gif "Title Visibility")
@@ -105,22 +105,22 @@ Developers click the `...` button in the upper right corner of the source compon
 Like duplicating components, copying and pasting configurations only transfers the component's configuration, not its event logic. Unlike duplicating components, this method supports cross-page operations.
 :::
 
-### Moving to layout components {#moving-to-layout-components}
+### Moving to layout components
 When layout components such as modals, tabs, and collapse panels exist on the page, developers can quickly move other components into these layout containers.
 
 ![Move Component to Other Layout Component](./imgs/move-component-to-other-layout-component.gif "Move Component to Other Layout Component")
 
 Developers click the `...` button in the upper right corner of the component, select `Move To` from the popup menu, choose the target layout component in the dialog, and complete the move operation.
 
-### Deleting from page {#deleting-from-page}
+### Deleting from page
 ![Delete Component](./imgs/delete-component.gif "Delete Component")
 
 When a component is no longer needed on the page, developers click the `...` button in the upper right corner of the component, select `Delete` from the popup menu, and remove the component from the page.
 
-## Page variables {#page-variables}
+## Page variables
 Page variables store temporary data and enable logic control within function implementations. Both the page's own functions and functions from other page components can access the current page's variables.
 
-### Variable declaration {#variable-declaration}
+### Variable declaration
 Developers can declare one or more page variables as needed. Variable types support all JitAI [data types](/docs/reference/framework/JitORM/data-types), including single-line text, multi-line text, date and time, and more.
 
 ![Page Variable Declaration](./imgs/page-variable-declaration.gif "Page Variable Declaration")
@@ -133,10 +133,10 @@ Different variable data types support distinct configuration parameters. For exa
 
 ### Getting variable values from request URLs {#getting-variables-from-urls}
 JitAI supports extracting variable values from request URLs when users access pages. After declaring variables, developers can select the corresponding variables in the `Select variables assigned via URL parameters` dropdown list, with support for multiple selections.
-## Page functions {#page-functions}
+## Page functions
 Page functions are custom program logic encapsulated by developers according to business requirements. These functions can be invoked by various component functions and events within the page.
 
-### Function declaration {#function-declaration}
+### Function declaration
 Developers can create new page functions within the event panel and implement their logic.
 
 ![Declare Page Function](./imgs/declare-page-function.gif "Declare Page Function")
@@ -149,7 +149,7 @@ The platform automatically generates English names based on Chinese function nam
 
 After creating a page function, developers can add function descriptions, configure parameter lists, set return value types, and implement function logic through either visual editing or full-code mode.
 
-### Function management operations {#function-management-operations}
+### Function management operations
 Existing page functions support rename, duplicate, and delete operations.The duplicate function enables quick reuse of existing functions with personalized modifications.
 
 ![Page Function More Operation Buttons](./imgs/page-function-more-operation-buttons.gif "Page Function More Operation Buttons")
@@ -163,22 +163,22 @@ Page functions can invoke other page functions within the current page and acces
 
 In the example above, the `TestInvoke` function calls the `SayHi` function and passes the value of the `Var1` page variable as an input parameter to the `SayHi` function.
 
-## Page events {#page-events}
-### After page load {#after-page-load}
+## Page events
+### After page load
 When a page completes loading, the `After Page Load` event triggers automatically. Developers can use this event to perform initialization operations after page loading, such as retrieving page variable values, calling page functions, displaying prompt information, and more.
 
 ![Page After Load Event](./imgs/page-after-load-event.gif "Page After Load Event")
 
 Developers switch to `Page Events` in the upper left corner of the `Main Page` event panel to view the current page's event list on the right side. Click the `After Page Load` tab to edit the `After Page Load` event logic below.
 
-### After page focus {#after-page-focus}
+### After page focus
 When browser tabs switch to the current page or platform navigation tabs switch to the current page, the `After Page Focus` event triggers. Developers can use this event to perform operations after the page gains focus.
 
 ![After Page Focus](./imgs/page-focus-after-event.png "After Page Focus")
 
 Developers switch to `Page Events` in the upper left corner of the `Main Page` event panel to view the current page's event list on the right side. Click the `After Page Focus` tab to edit the `After Page Focus` event logic below.
 
-### On page variable change {#on-page-variable-change}
+### On page variable change
 Each page variable automatically generates an `On Page Variable Change` event. When a page variable value changes, this event triggers automatically. For example, the variable `var1` generates the corresponding event `On Page Variable (var1) Change`.
 
 ![On Page Variable Change](./imgs/variable-value-change-after-event.png "On Page Variable Change")
@@ -192,8 +192,8 @@ Within event logic, developers can access the current page's variables and funct
 
 In the example above, the `On Page Variable (var2) Change` event calls the `SayHi` function and passes the `var2` page variable value as an input parameter to the `SayHi` function.
 
-## Shortcuts {#shortcuts}
-### Clearing statements {#clearing-statements}
+## Shortcuts
+### Clearing statements
 When page function logic requires complete rewriting, JitAI supports one-click clearing of function statements.
 
 ![Clear Statements](./imgs/page-function-clear-statements.gif "Clear Statements")
@@ -202,21 +202,21 @@ Developers can click the `Clear` button at the bottom of the function editing in
 
 The shortcut key `Ctrl/Command+Z` can undo the clear operation.
 
-### Duplicating statements {#duplicating-statements}
+### Duplicating statements
 When reusing and modifying an existing statement, developers can use the duplicate statement function.
 
 ![Duplicate Statement](./imgs/copy-statement.gif "Duplicate Statement")
 
 Developers click the duplicate button on the right side of the statement to create an identical statement below the current one, then modify the new statement as needed.
 
-### Dragging statements to adjust position {#dragging-statements-to-adjust-position}
+### Dragging statements to adjust position
 To quickly adjust the execution order of multiple statements, developers can use drag-and-drop repositioning.
 
 ![Drag Move Function Statement](./imgs/drag-move-function-statement.gif "Drag Move Function Statement")
 
 Developers position the mouse on the target statement line, and when the cursor changes to a hand icon, hold down the left mouse button and drag the statement line up or down to adjust its position.
 
-### Deleting statements {#deleting-statements}
+### Deleting statements
 When a statement's logic is no longer needed, developers can use the delete statement function.
 
 ![Delete Statement](./imgs/delete-statement.gif "Delete Statement")
@@ -230,7 +230,7 @@ While editing function logic through the visual editor, the platform automatical
 
 Developers click the `</>` button on the right side of the statement to switch to source code mode, with the editor automatically locating the current statement. In source code mode, developers can freely modify function logic and click the switch button in the upper right corner to return to visual editing mode.
 
-### Keyboard shortcuts {#keyboard-shortcuts}
+### Keyboard shortcuts
 JitAI supports keyboard shortcuts for efficient function editing. Available shortcuts include: Select All (Ctrl/Command + A), Select Multiple Statements (Ctrl/Command + Select Statement), Copy (Ctrl/Command + C), Cut (Ctrl/Command + X), Paste (Ctrl/Command + V), Duplicate (Ctrl/Command + D), Undo (Ctrl/Command + Z), Redo (Ctrl/Command + Y), Delete (Delete), and Quick Add Basic Statement (Select Statement + Enter).
 
 ![Page Function Edit Shortcuts](./imgs/page-function-edit-shortcuts.gif "Page Function Edit Shortcuts")
@@ -253,14 +253,14 @@ Developers click the `Basic Statement` button, then click the `Please select` te
 
 Using the example above, sequentially selecting `Data Models` - `Customer(example)` - `Get One Record` completes the functionality for querying a single department data record.
 
-### Calling frontend services {#calling-frontend-services}
+### Calling frontend services
 In frontend business function development, developers typically need common functionality such as popup confirmations, feedback reminders, loading indicators, message prompts (error/warning/normal), and log printing. JitAI provides these functions as built-in frontend services for direct use.
 
 ![Call Frontend Service in Function](./imgs/call-frontend-service-in-function.png "Call Frontend Service in Function")
 
 Developers click the `Basic Statement` button, click the `Please select` text in the newly inserted blank statement, sequentially select `Feedback` - `Confirmation Dialog` from the popup list, and the platform automatically inserts a statement. Developers then enter the desired text in the parameter input box.
 
-## Mobile page editor {#mobile-page-editor}
+## Mobile page editor
 JitAI includes built-in mobile adaptation capabilities, enabling mobile page development in the mobile page editor with the same ease as PC page development.
 
 ![Create Mobile Page](./imgs/create-mobile-page.png "Create Mobile Page")

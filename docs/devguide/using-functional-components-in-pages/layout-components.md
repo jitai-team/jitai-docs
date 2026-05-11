@@ -1,78 +1,87 @@
 ---
 sidebar_position: 11
 slug: layout-components
-description: "布局组件配置指南。弹窗、遮罩、自定义大小、中间弹出或右侧滑出等灵活布局选项。"
+description: "Layout component configuration guide. Popups, masks, custom size, centered popups or right-side sliding options."
 ---
 
-# 布局组件
-## 弹窗组件
-**覆盖特性：**
+# Layout Components
 
-*   配置预设的或自定义弹窗大小
+## Popup components {#popup-components}
 
-*   选择中间弹出或右侧滑出
+Popup components are one of the most commonly used layout components in web application development. They are primarily used to display temporary information or to provide interfaces for creating and editing data.
 
-*   设置全屏遮罩或仅页面遮罩
+In JitAI, popups support both standard dialog popups and side-drawer style popups. You can choose whether the popup appears within the current page or as a full-screen overlay. In addition, you can configure common behaviors such as predefined popup sizes, whether clicking the mask closes the popup, and event logic that runs when the popup opens and closes.
 
-*   设置是否允许点击遮罩区关闭弹窗
+### Popup component configuration {#popup-components-configuration}
 
-*   设置是否显示关闭图标
+Within a popup component, you can configure the preset size of the popup, how it opens, the mask style, how it is closed, the popup buttons, and the event logic for when the popup opens and closes.
 
-*   给弹窗添加按钮并实现点击后逻辑
+![](./img/11/popup-setting.png)
 
-*   编写弹窗打开后和关闭后事件逻辑
+Click the `+ Modal` button on the page to open the popup component configuration page. By default, the popup size is set to `Medium`, the open method is `Modal`, the popup position is `Within Page`, and the open/close event logic is empty.
 
-**内容要点：**
+### Popup interaction design {#popup-components-interaction-design}
 
-*   弹窗组件的配置和使用
+The popup component provides two built-in events: `After Open` and `After Close`. You can implement custom logic for both events. The `After Open` event is triggered after the popup opens, while the `After Close` event is triggered after the popup closes.
 
-*   弹窗交互的设计
+![](./img/11/popup-event.png)
 
-## 标签页组件
-**覆盖特性：**
+In addition, the popup component exposes two functions, `Open` and `Close`. You can call these functions to programmatically open and close the popup.
 
-*   配置标签页组件的标签数以及每个标签的标题
+![](./img/11/popup-function.png)
 
-*   配置标签的位置
+## Tab components {#tab-components}
 
-*   配置标签的大小
+Tab components are used to display multiple tabs within a page and switch between them to show different content.
 
-*   配置标签页的风格
+### Tab component configuration {#tab-components-configuration}
 
-*   编写每个标签的点击后事件逻辑
+Within a tab component, you can configure the title of each tab, as well as the position, size, and style of the tabs.
 
-**内容要点：**
+![](./img/11/tab-setting.png)
 
-*   标签页的布局设计
+Click the `+ Insert Component` button on the page and drag the "Tabs" component onto the page. By default, the component contains three tabs. The tab position is set to `Top`, the size is `Medium`, and the tab style is `Minimalist`.
 
-*   标签页的配置方法
+### Tab interaction design {#tab-components-interaction-design}
 
-## 折叠面板
-**覆盖特性：**
+Each tab in the tab component has a click event. When you click a tab, the corresponding click event logic is triggered.
 
-*   配置折叠面板的面板数以及每个面板标题及其背景色
+![](./img/11/tab-event.png)
 
-*   配置折叠面板风格
+In addition, the tab component provides two functions: `Open Specified Tab` and `Set Display Tabs`. You can call these functions to open a specific tab and control which tab is currently displayed.
 
-*   启用或禁用手风琴模式
+![](./img/11/tab-function.png)
 
-*   编辑每个面板的打开后事件逻辑
+## Collapse components {#collapse-components}
 
-**内容要点：**
+Collapse components are used to display multiple panels on a page, allowing users to expand or collapse panels to view different sections of content.
 
-*   折叠面板的应用场景
+### Collapse component configuration {#collapse-components-configuration}
 
-*   手风琴模式的使用
+Within a collapse component, you can configure each panel's title and background color, as well as the overall style of the collapse component and whether to enable accordion mode.
 
-## 子页面组件
-**覆盖特性：**
+![](./img/11/collapse-setting.png)
 
-*   配置子页面组件中加载的目标页面
+Click the `+ Insert Component` button on the page and drag the "Collapse Panel" component onto the page. By default, the component contains three panels. The panel background color is `#fafafa`, the component style is `Card`, and accordion mode is enabled by default.
 
-*   启用或禁用立即加载容器内页面
+### Collapse interaction design {#collapse-components-interaction-design}
 
-**内容要点：**
+Each panel in the collapse component has a click event. When you click a panel, the corresponding click event logic is triggered.
 
-*   子页面的嵌套使用
+![](./img/11/collapse-event.png)
 
-*   页面容器的配置
+In addition, the collapse component provides two functions: `Refresh` and `Set Display Panel`. You can call these functions to refresh a specific panel and open a specified panel.
+
+![](./img/11/collapse-function.png)
+
+## Subpage components {#subpage-components}
+
+When a page needs to be displayed inside another page, you can use a subpage component. First, treat the page to be displayed as a subpage. Then, add a subpage component to the parent page and configure which target page the subpage component should load.
+
+![](./img/11/subpage-setting.png)
+
+Click the `+ Insert Component` button on the page and drag the "Sub Page" component onto the page. By default, the subpage component has no target page configured, so no content is displayed inside it. Select a page in the configuration panel on the right to display that page as a subpage within the current page.
+
+By default, the subpage component enables `Load container page immediately`, meaning that once the subpage component is added to the parent page, it immediately loads the subpage content. You can also disable `Load container page immediately` and use the `Enable` function provided by the subpage component to load the subpage manually.
+
+![](./img/11/subpage-function.png)

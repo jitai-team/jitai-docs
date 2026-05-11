@@ -66,6 +66,8 @@ MyApp/                     # Application root directory
 │   └── messages/      # Message communication elements
 ```
 
+In MyApp, `commons` is not an element directory and cannot be referenced using the `app.getElement` syntax. The `commons` directory serves as a backend Python package / frontend shared folder used by other elements within MyApp, typically for storing shared code such as constants, global variables, utility functions, and common components.
+
 ### Application Configuration Manifest
 `app.json` is the core configuration file of the application, defining the application's basic information and runtime parameters:
 
@@ -199,7 +201,7 @@ sequenceDiagram
     M-->>-P: Complete loading chain
 ```
 
-### Element Directory Specification {#element-directory-specification} 
+### Element Directory Specification
 Each element follows a unified directory structure and file naming conventions:
 
 ```plaintext title="Standard Element Directory Structure"

@@ -1,0 +1,137 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 渐变定义 -->
+    <linearGradient id="assistantGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e74c3c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c0392b;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="traditionalGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2980b9;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="aiGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#27ae60;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#229954;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="agentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f39c12;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e67e22;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="toolGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#9b59b6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8e44ad;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 箭头标记 -->
+    <marker id="arrow" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <polygon points="0 0, 6 2, 0 4" fill="#2c3e50" />
+    </marker>
+    
+    <marker id="branchArrow" markerWidth="4" markerHeight="3" refX="3" refY="1.5" orient="auto">
+      <polygon points="0 0, 4 1.5, 0 3" fill="#9b59b6" />
+    </marker>
+    
+    <marker id="toolArrow" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <polygon points="0 0, 6 2, 0 4" fill="#9b59b6" />
+    </marker>
+  </defs>
+  
+  <!-- 总标题 -->
+  <text x="300" y="25" text-anchor="middle" font-size="18" font-weight="bold" fill="#2c3e50">智能助理内部架构</text>
+  <text x="300" y="45" text-anchor="middle" font-size="12" fill="#7f8c8d">Assistant Internal Architecture</text>
+  
+  <!-- 助理整体框架 -->
+  <rect x="30" y="70" width="540" height="300" rx="10" fill="url(#assistantGrad)" opacity="0.1" stroke="url(#assistantGrad)" stroke-width="3" />
+  <text x="300" y="90" text-anchor="middle" font-size="16" font-weight="bold" fill="#c0392b">助理 (Assistant)</text>
+  
+  <!-- 分层说明 -->
+  <text x="60" y="115" font-size="12" font-weight="bold" fill="#34495e">前端界面层</text>
+  <text x="60" y="220" font-size="12" font-weight="bold" fill="#34495e">后端编排层</text>
+  <text x="60" y="325" font-size="12" font-weight="bold" fill="#34495e">工具执行层</text>
+  
+  <!-- 前端UI组件 -->
+  <rect x="80" y="130" width="120" height="35" rx="5" fill="url(#traditionalGrad)" />
+  <text x="140" y="152" text-anchor="middle" fill="white" font-size="11" font-weight="bold">UI操作入口</text>
+  
+  <rect x="240" y="130" width="120" height="35" rx="5" fill="url(#aiGrad)" />
+  <text x="300" y="152" text-anchor="middle" fill="white" font-size="11" font-weight="bold">对话界面</text>
+  
+  <!-- 输入类型标签 -->
+  <text x="140" y="180" text-anchor="middle" fill="#2980b9" font-size="9">操作指令</text>
+  <text x="300" y="180" text-anchor="middle" fill="#229954" font-size="9">对话指令</text>
+  
+  <!-- 编排逻辑框架 -->
+  <rect x="80" y="235" width="480" height="75" rx="5" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.6)" stroke-width="2" />
+  <text x="320" y="250" text-anchor="middle" fill="#c0392b" font-size="12" font-weight="bold">智能编排逻辑</text>
+  
+  <!-- Agent节点 -->
+  <circle cx="120" cy="275" r="18" fill="url(#agentGrad)" />
+  <text x="120" y="279" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Agent1</text>
+  
+  <circle cx="200" cy="275" r="18" fill="url(#agentGrad)" />
+  <text x="200" y="279" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Agent2</text>
+  
+  <circle cx="280" cy="275" r="18" fill="url(#agentGrad)" />
+  <text x="280" y="279" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Agent3</text>
+  
+  <circle cx="360" cy="275" r="18" fill="url(#agentGrad)" />
+  <text x="360" y="279" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Agent4</text>
+  
+  <circle cx="440" cy="275" r="18" fill="url(#agentGrad)" />
+  <text x="440" y="279" text-anchor="middle" fill="white" font-size="9" font-weight="bold">Agent5</text>
+  
+  <!-- Agent流程连接 -->
+  <path d="M 138 275 L 182 275" stroke="#f39c12" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+  <path d="M 218 275 L 262 275" stroke="#f39c12" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+  <path d="M 298 275 L 342 275" stroke="#f39c12" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+  <path d="M 378 275 L 422 275" stroke="#f39c12" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+  
+  <!-- 条件分支示例 -->
+  <path d="M 200 293 Q 200 305 240 295" stroke="#9b59b6" stroke-width="1.5" stroke-dasharray="3,2" fill="none" marker-end="url(#branchArrow)" />
+  <path d="M 280 293 Q 280 305 320 295" stroke="#9b59b6" stroke-width="1.5" stroke-dasharray="3,2" fill="none" marker-end="url(#branchArrow)" />
+  
+  <text x="220" y="305" text-anchor="middle" fill="#9b59b6" font-size="7">条件分支</text>
+  <text x="300" y="305" text-anchor="middle" fill="#9b59b6" font-size="7">智能决策</text>
+  
+  <!-- UI到编排的连接 -->
+  <path d="M 140 185 L 140 235" stroke="#2980b9" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+  <path d="M 300 185 L 300 235" stroke="#229954" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+  
+  <!-- 工具执行层 -->
+  <rect x="80" y="340" width="100" height="25" rx="3" fill="url(#toolGrad)" />
+  <text x="130" y="355" text-anchor="middle" fill="white" font-size="9">数据库</text>
+  
+  <rect x="200" y="340" width="100" height="25" rx="3" fill="url(#toolGrad)" />
+  <text x="250" y="355" text-anchor="middle" fill="white" font-size="9">API服务</text>
+  
+  <rect x="320" y="340" width="100" height="25" rx="3" fill="url(#toolGrad)" />
+  <text x="370" y="355" text-anchor="middle" fill="white" font-size="9">UI操作</text>
+  
+  <rect x="440" y="340" width="100" height="25" rx="3" fill="url(#toolGrad)" />
+  <text x="490" y="355" text-anchor="middle" fill="white" font-size="9">外部工具</text>
+  
+  <!-- Agent到工具的连接 -->
+  <path d="M 120 293 L 130 340" stroke="#f39c12" stroke-width="1.5" fill="none" marker-end="url(#toolArrow)" />
+  <path d="M 200 293 L 250 340" stroke="#f39c12" stroke-width="1.5" fill="none" marker-end="url(#toolArrow)" />
+  <path d="M 280 293 L 370 340" stroke="#f39c12" stroke-width="1.5" fill="none" marker-end="url(#toolArrow)" />
+  <path d="M 360 293 L 490 340" stroke="#f39c12" stroke-width="1.5" fill="none" marker-end="url(#toolArrow)" />
+  <path d="M 440 293 L 430 340" stroke="#f39c12" stroke-width="1.5" fill="none" marker-end="url(#toolArrow)" />
+  
+  <!-- 直接操作路径 -->
+  <path d="M 140 185 Q 60 280 130 340" stroke="#2980b9" stroke-width="2" stroke-dasharray="4,3" fill="none" marker-end="url(#toolArrow)" />
+  <path d="M 300 185 Q 580 280 490 340" stroke="#229954" stroke-width="2" stroke-dasharray="4,3" fill="none" marker-end="url(#toolArrow)" />
+  
+  <text x="50" y="265" font-size="8" fill="#2980b9">直接操作</text>
+  <text x="530" y="265" font-size="8" fill="#229954">跳过编排</text>
+  
+  <!-- 特性说明 -->
+  <text x="300" y="390" text-anchor="middle" font-size="11" fill="#34495e" font-weight="bold">核心特性</text>
+  <text x="150" y="405" text-anchor="middle" font-size="9" fill="#7f8c8d">• 多入口处理</text>
+  <text x="300" y="405" text-anchor="middle" font-size="9" fill="#7f8c8d">• 智能编排决策</text>
+  <text x="450" y="405" text-anchor="middle" font-size="9" fill="#7f8c8d">• 灵活工具调用</text>
+  
+</svg> 

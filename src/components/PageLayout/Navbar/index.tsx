@@ -1,21 +1,85 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import LanguageSwitcher from "../LanguageSwitcher";
 import CONTENT_EN from "./constant-en";
 import CONTENT_ZH from "./constant-zh";
 import { addUTMToUrl } from "../../../utils/utm";
+import { useLocation } from "@docusaurus/router";
+
+type CaseNavItem = {
+    slug: string;
+    menuName: string;
+    category: string;
+};
+
+const casesZhContext = (require as any).context(
+    "@site/cases",
+    true,
+    /zhCN\.json$/,
+);
+
+const getAllZhCaseNavItems = (): CaseNavItem[] => {
+    if (!casesZhContext) return [];
+
+    const keys: string[] = casesZhContext.keys?.() || [];
+    return keys
+        .map((key) => {
+            const mod = casesZhContext(key);
+            const data = mod?.default || mod;
+
+            const match = String(key).match(/^\.\/([^/]+)\/zhCN\.json$/);
+            const slug = match?.[1] || "";
+            const menuName = String(data?.menuName || "").trim();
+            const category = String(data?.category || "").trim();
+
+            if (!slug || !menuName || !category) return null;
+            return { slug, menuName, category };
+        })
+        .filter(Boolean)
+        .sort((a: any, b: any) =>
+            String(a.menuName).localeCompare(String(b.menuName)),
+        );
+};
 
 interface NavbarProps {
     currentLocale?: string;
+    hideLanguageSwitcher?: boolean;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
+const Navbar: React.FC<NavbarProps> = ({
+    currentLocale,
+    hideLanguageSwitcher,
+}) => {
+    const { pathname } = useLocation();
     const [scrolled, setScrolled] = useState(false);
     const [activeNavItem, setActiveNavItem] = useState("home");
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isMobileCasesOpen, setIsMobileCasesOpen] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
 
+    const isCaseDetail = /(?:^|\/)(?:zh\/)?cases\/[^/]+(?:\/|$)/.test(pathname);
+
+    const shouldShowLanguageSwitcher = !hideLanguageSwitcher && !isCaseDetail;
+
     const CONTENT = currentLocale === "zh" ? CONTENT_ZH : CONTENT_EN;
+
+    const caseCategoryGroups = React.useMemo(() => {
+        if (currentLocale !== "zh") return [];
+
+        const allItems = getAllZhCaseNavItems();
+        const categories: string[] = Array.isArray(
+            (CONTENT as any).caseCategory,
+        )
+            ? (CONTENT as any).caseCategory
+            : [];
+
+        const grouped = categories.map((category) => {
+            const items = allItems.filter((i) => i.category === category);
+            return { category, items };
+        });
+
+        return grouped;
+    }, [CONTENT, currentLocale]);
 
     useEffect(() => {
         const checkMobile = () => {
@@ -30,19 +94,19 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
             setScrolled(isScrolled);
         };
 
-        // 设置当前活跃的导航项
+        // Set current active nav item
         const setCurrentActiveNav = () => {
             const currentPath = window.location.pathname;
 
-            // 首先尝试精确匹配
+            // Try exact match first
             let currentItem = CONTENT.navItems.find(
-                (item) => item.url === currentPath
+                (item) => item.url === currentPath,
             );
 
-            // 如果没有精确匹配，则尝试前缀匹配
+            // If no exact match, try prefix match
             if (!currentItem) {
                 currentItem = CONTENT.navItems.find((item) => {
-                    // 确保不是根路径，避免误匹配
+                    // Ensure not root path to avoid false positive
                     if (item.url === "/" || item.url === "/zh") {
                         return false;
                     }
@@ -50,7 +114,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                 });
             }
 
-            // 如果找到匹配项则设置，否则清空激活状态（避免默认高亮首页）
+            // Set if matched, otherwise clear active state (avoid default home highlighting)
             if (currentItem) {
                 setActiveNavItem(currentItem.id);
             } else {
@@ -66,12 +130,13 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
         };
     }, []);
 
-    // 移动端菜单状态变化时控制背景滚动
+    // Control background scroll when mobile menu state changes
     useEffect(() => {
         if (isMobileMenuOpen) {
             document.body.classList.add("menu-open");
         } else {
             document.body.classList.remove("menu-open");
+            setIsMobileCasesOpen(false);
         }
 
         return () => {
@@ -80,13 +145,13 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
     }, [isMobileMenuOpen]);
 
     const handleNavClick = (item: any) => {
-        // 为 demo.jit.pro 链接添加 UTM 参数
+        // Add UTM parameters for demo.jit.pro links
         const url =
             item.url && item.url.includes("demo.jit.pro")
                 ? addUTMToUrl(item.url)
                 : item.url;
 
-        // 移动端点击后关闭菜单
+        // Close menu after click on mobile
         if (isMobile) {
             window.location.href = url;
             setIsMobileMenuOpen(false);
@@ -110,7 +175,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
             } custom-navbar`}
         >
             <div className={styles.navContent}>
-                {/* Logo 和导航菜单在左侧 */}
+                {/* Logo and navigation menu on the left */}
                 <div className={styles.leftSection}>
                     <div
                         className={styles.logo}
@@ -122,30 +187,135 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                         />
                     </div>
 
-                    {/* 桌面端导航 */}
+                    {/* Desktop navigation */}
                     <div className={`${styles.navLinks} ${styles.desktopNav}`}>
-                        {CONTENT.navItems.map((item, index) => {
+                        {CONTENT.navItems.map((item) => {
                             const isActive = item.id === activeNavItem;
 
                             return (
-                                <button
-                                    key={item.id}
-                                    onClick={() => handleNavClick(item)}
-                                    className={`${
-                                        isActive ? styles.active : ""
-                                    } ${item.class || ""}`}
-                                    data-type={item.type}
-                                >
-                                    {item.label}
-                                </button>
+                                <React.Fragment key={item.id}>
+                                    <button
+                                        onClick={() => handleNavClick(item)}
+                                        className={`${
+                                            isActive ? styles.active : ""
+                                        } ${item.class || ""}`}
+                                        data-type={item.type}
+                                    >
+                                        {item.label}
+                                    </button>
+
+                                    {currentLocale === "zh" &&
+                                    item.id === "forum" &&
+                                    caseCategoryGroups.length > 0 ? (
+                                        <div
+                                            key="cases-menu"
+                                            className={styles.casesDropdown}
+                                        >
+                                            <button
+                                                type="button"
+                                                className={styles.casesButton}
+                                            >
+                                                案例
+                                                <svg
+                                                    className={
+                                                        styles.casesChevron
+                                                    }
+                                                    width="14"
+                                                    height="14"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        d="M6 9l6 6 6-6"
+                                                        stroke="currentColor"
+                                                        strokeWidth="2"
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                    />
+                                                </svg>
+                                            </button>
+
+                                            <div className={styles.casesMenu}>
+                                                <div
+                                                    className={
+                                                        styles.casesMenuGrid
+                                                    }
+                                                >
+                                                    {caseCategoryGroups.map(
+                                                        (group) => (
+                                                            <div
+                                                                key={
+                                                                    group.category
+                                                                }
+                                                                className={
+                                                                    styles.casesCol
+                                                                }
+                                                            >
+                                                                <h4
+                                                                    className={
+                                                                        styles.casesGroupTitle
+                                                                    }
+                                                                >
+                                                                    {
+                                                                        group.category
+                                                                    }
+                                                                </h4>
+                                                                <div
+                                                                    className={
+                                                                        styles.casesList
+                                                                    }
+                                                                >
+                                                                    {group.items.map(
+                                                                        (
+                                                                            caseItem,
+                                                                        ) => (
+                                                                            <button
+                                                                                key={
+                                                                                    caseItem.slug
+                                                                                }
+                                                                                type="button"
+                                                                                className={
+                                                                                    styles.casesItem
+                                                                                }
+                                                                                onClick={() =>
+                                                                                    handleNavClick(
+                                                                                        {
+                                                                                            id: "cases",
+                                                                                            label: caseItem.menuName,
+                                                                                            type: "currentPage",
+                                                                                            url: `/zh/cases/${caseItem.slug}`,
+                                                                                        },
+                                                                                    )
+                                                                                }
+                                                                            >
+                                                                                {
+                                                                                    caseItem.menuName
+                                                                                }
+                                                                            </button>
+                                                                        ),
+                                                                    )}
+                                                                </div>
+                                                            </div>
+                                                        ),
+                                                    )}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ) : null}
+                                </React.Fragment>
                             );
                         })}
                     </div>
                 </div>
 
-                {/* 右侧区域：语言切换器、Download 按钮和 Try Online 按钮 */}
+                {/* Right section: Language switcher, Download button and Try Online button */}
                 <div className={styles.rightSection}>
-                    <LanguageSwitcher className={styles.languageSwitcher} />
+                    {shouldShowLanguageSwitcher && (
+                        <LanguageSwitcher className={styles.languageSwitcher} />
+                    )}
+                    {/* Try Online hidden 2025/12/16 */}
+                    {/**
                     <button
                         className={`${styles.tryOnlineButton} analytics-tryOnline`}
                         onClick={() => handleNavClick(CONTENT.tryOnlineButton)}
@@ -153,6 +323,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                     >
                         {CONTENT.tryOnlineButton.label}
                     </button>
+                    */}
                     <button
                         className={`${styles.downloadButton} analytics-download`}
                         onClick={() => handleNavClick(CONTENT.downloadButton)}
@@ -162,12 +333,12 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                     </button>
                 </div>
 
-                {/* 移动端语言切换器 - 显示在汉堡菜单按钮左侧 */}
+                {/* Mobile language switcher - displayed to the left of the hamburger menu button */}
                 <div className={styles.mobileTopLanguageSwitcher}>
-                    <LanguageSwitcher />
+                    {shouldShowLanguageSwitcher && <LanguageSwitcher />}
                 </div>
 
-                {/* 移动端汉堡菜单按钮 */}
+                {/* Mobile hamburger menu button */}
                 <button
                     className={`${styles.mobileMenuButton} ${
                         isMobileMenuOpen ? styles.active : ""
@@ -180,35 +351,141 @@ const Navbar: React.FC<NavbarProps> = ({ currentLocale }) => {
                     <span></span>
                 </button>
 
-                {/* 移动端导航菜单 */}
+                {/* Mobile navigation menu */}
                 <div
                     className={`${styles.mobileMenu} ${
                         isMobileMenuOpen ? styles.open : ""
                     }`}
                 >
                     <div className={styles.mobileNavLinks}>
-                        {CONTENT.navItems.map((item, index) => {
+                        {CONTENT.navItems.map((item) => {
                             const isActive = item.id === activeNavItem;
 
                             return (
-                                <button
-                                    key={item.id}
-                                    onClick={() => handleNavClick(item)}
-                                    className={`${styles.mobileNavItem} ${
-                                        isActive ? styles.active : ""
-                                    } ${
-                                        item.class + "-mobile" || ""
-                                    } mobile-nav-item`}
-                                    data-type={item.type}
-                                >
-                                    {item.label}
-                                </button>
+                                <React.Fragment key={item.id}>
+                                    <button
+                                        onClick={() => handleNavClick(item)}
+                                        className={`${styles.mobileNavItem} ${
+                                            isActive ? styles.active : ""
+                                        } ${
+                                            item.class + "-mobile" || ""
+                                        } mobile-nav-item`}
+                                        data-type={item.type}
+                                    >
+                                        {item.label}
+                                    </button>
+
+                                    {currentLocale === "zh" &&
+                                    item.id === "forum" &&
+                                    caseCategoryGroups.length > 0 ? (
+                                        <div
+                                            key="mobile-cases-menu"
+                                            className={styles.mobileCasesNav}
+                                        >
+                                            <button
+                                                type="button"
+                                                className={`${styles.mobileNavItem} ${
+                                                    styles.mobileCasesButton
+                                                } ${
+                                                    isMobileCasesOpen
+                                                        ? styles.active
+                                                        : ""
+                                                }`}
+                                                onClick={() =>
+                                                    setIsMobileCasesOpen(
+                                                        (v) => !v,
+                                                    )
+                                                }
+                                            >
+                                                案例
+                                                <svg
+                                                    className={`${
+                                                        styles.mobileCasesChevron
+                                                    } ${
+                                                        isMobileCasesOpen
+                                                            ? styles.open
+                                                            : ""
+                                                    }`}
+                                                    width="14"
+                                                    height="14"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        d="M6 9l6 6 6-6"
+                                                        stroke="currentColor"
+                                                        strokeWidth="2"
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                    />
+                                                </svg>
+                                            </button>
+
+                                            <div
+                                                className={`${
+                                                    styles.mobileCasesSubNav
+                                                } ${
+                                                    isMobileCasesOpen
+                                                        ? styles.open
+                                                        : ""
+                                                }`}
+                                            >
+                                                {caseCategoryGroups.map(
+                                                    (group) => (
+                                                        <div
+                                                            key={group.category}
+                                                            className={
+                                                                styles.mobileCasesGroup
+                                                            }
+                                                        >
+                                                            <div
+                                                                className={
+                                                                    styles.mobileCasesGroupTitle
+                                                                }
+                                                            >
+                                                                {group.category}
+                                                            </div>
+                                                            {group.items.map(
+                                                                (caseItem) => (
+                                                                    <button
+                                                                        key={
+                                                                            caseItem.slug
+                                                                        }
+                                                                        type="button"
+                                                                        className={
+                                                                            styles.mobileCasesLink
+                                                                        }
+                                                                        onClick={() =>
+                                                                            handleNavClick(
+                                                                                {
+                                                                                    id: "cases",
+                                                                                    label: caseItem.menuName,
+                                                                                    type: "currentPage",
+                                                                                    url: `/zh/cases/${caseItem.slug}`,
+                                                                                },
+                                                                            )
+                                                                        }
+                                                                    >
+                                                                        {
+                                                                            caseItem.menuName
+                                                                        }
+                                                                    </button>
+                                                                ),
+                                                            )}
+                                                        </div>
+                                                    ),
+                                                )}
+                                            </div>
+                                        </div>
+                                    ) : null}
+                                </React.Fragment>
                             );
                         })}
                     </div>
                 </div>
 
-                {/* 移动端菜单遮罩 */}
+                {/* Mobile menu overlay */}
                 {isMobileMenuOpen && (
                     <div
                         className={styles.mobileOverlay}

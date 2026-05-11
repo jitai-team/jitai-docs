@@ -1,0 +1,8 @@
+{
+  "label": "Tutorial",
+  "position": 1,
+  "link": {
+    "slug": "tutorial",
+    "description": "Comparison between JitAI and mainstream AI application platforms."
+  }
+} 

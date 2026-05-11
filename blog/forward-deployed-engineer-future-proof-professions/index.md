@@ -14,7 +14,7 @@ You see the [Forward Deployed Engineer role](https://www.linkedin.com/posts/scot
     
 *   You help teams use AI safely and make sure everything works well for real people.
     
-<!--truncate-->
+{/*truncate*/}
 
 > _FDEs use both_ [_technical skills and customer communication_](https://opentools.ai/news/openai-and-anthropic-revolutionize-hiring-with-forward-deployed-engineers-surge) _to customize AI for each client. They help move projects from ideas to working products and focus on what customers actually need._
 

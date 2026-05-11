@@ -1,0 +1,91 @@
+<svg width="1000" height="520" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; }
+      .text { font-family: Arial, sans-serif; font-size: 12px; }
+      .ai-box { fill: #4CAF50; stroke: #2E7D32; stroke-width: 2; }
+      .system-box { fill: #2196F3; stroke: #1565C0; stroke-width: 2; }
+      .protocol-box { fill: #FF9800; stroke: #E65100; stroke-width: 2; }
+      .arrow { stroke: #333; stroke-width: 1; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="500" y="30" text-anchor="middle" class="title">JAAP Protocol Working Principle</text>
+  
+  <!-- Traditional Method -->
+  <text x="50" y="60" class="subtitle">Traditional Method: API Interface Interaction</text>
+  <rect x="50" y="80" width="150" height="80" class="ai-box" rx="5"/>
+  <text x="125" y="105" text-anchor="middle" class="text" fill="white">AI Application</text>
+  <text x="125" y="125" text-anchor="middle" class="text" fill="white">Call via API</text>
+  <text x="125" y="145" text-anchor="middle" class="text" fill="white">System Functions</text>
+  
+  <rect x="280" y="80" width="150" height="80" class="system-box" rx="5"/>
+  <text x="355" y="105" text-anchor="middle" class="text" fill="white">Business System</text>
+  <text x="355" y="125" text-anchor="middle" class="text" fill="white">Black Box Operation</text>
+  <text x="355" y="145" text-anchor="middle" class="text" fill="white">Internal Logic Invisible</text>
+  
+  <line x1="200" y1="120" x2="280" y2="120" class="arrow"/>
+  <text x="240" y="110" text-anchor="middle" class="text">API Call</text>
+  
+  <!-- JAAP Protocol Method -->
+  <text x="530" y="60" class="subtitle">JAAP Protocol: AI Directly Understands System</text>
+  <rect x="530" y="80" width="150" height="80" class="ai-box" rx="5"/>
+  <text x="605" y="105" text-anchor="middle" class="text" fill="white">AI Application</text>
+  <text x="605" y="125" text-anchor="middle" class="text" fill="white">Direct Understanding</text>
+  <text x="605" y="145" text-anchor="middle" class="text" fill="white">System Structure</text>
+  
+  <rect x="765" y="80" width="180" height="80" class="system-box" rx="5"/>
+  <text x="855" y="105" text-anchor="middle" class="text" fill="white">Business System</text>
+  <text x="855" y="125" text-anchor="middle" class="text" fill="white">Transparent Structure</text>
+  <text x="855" y="145" text-anchor="middle" class="text" fill="white">Internal Logic Visible</text>
+  
+  <line x1="680" y1="120" x2="765" y2="120" class="arrow"/>
+  <text x="722" y="110" text-anchor="middle" class="text">JAAP Protocol</text>
+  
+  <!-- JAAP Protocol Core Components -->
+  <rect x="50" y="200" width="895" height="280" class="protocol-box" rx="10"/>
+  <text x="500" y="225" text-anchor="middle" class="subtitle" fill="white">JAAP Protocol Core Components</text>
+  
+  <!-- Structured Description -->
+  <rect x="80" y="250" width="200" height="90" fill="white" stroke="#333" stroke-width="1" rx="5"/>
+  <text x="180" y="275" text-anchor="middle" class="subtitle">Structured Description</text>
+  <text x="100" y="295" class="text">• System Module Structure</text>
+  <text x="100" y="310" class="text">• Function Interface Definition</text>
+  <text x="100" y="325" class="text">• Data Flow Description</text>
+  
+  <!-- Dynamic Perception -->
+  <rect x="300" y="250" width="180" height="90" fill="white" stroke="#333" stroke-width="1" rx="5"/>
+  <text x="390" y="275" text-anchor="middle" class="subtitle">Dynamic Perception</text>
+  <text x="320" y="295" class="text">• System Status Monitoring</text>
+  <text x="320" y="310" class="text">• Function Change Detection</text>
+  <text x="320" y="325" class="text">• Real-time Data Acquisition</text>
+  
+  <!-- Intelligent Calling -->
+  <rect x="500" y="250" width="210" height="90" fill="white" stroke="#333" stroke-width="1" rx="5"/>
+  <text x="600" y="275" text-anchor="middle" class="subtitle">Intelligent Calling</text>
+  <text x="510" y="295" class="text">• Direct Function Calling</text>
+  <text x="510" y="310" class="text">• No API Conversion Needed</text>
+  <text x="510" y="325" class="text">• Automatic Parameter Adaptation</text>
+  
+  <!-- Dynamic Orchestration -->
+  <rect x="730" y="250" width="180" height="90" fill="white" stroke="#333" stroke-width="1" rx="5"/>
+  <text x="820" y="275" text-anchor="middle" class="subtitle">Dynamic Orchestration</text>
+  <text x="750" y="295" class="text">• Function Combination</text>
+  <text x="750" y="310" class="text">• Process Orchestration</text>
+  <text x="750" y="325" class="text">• Intelligent Decision Making</text>
+  
+  <!-- Advantages Comparison -->
+  <text x="500" y="370" text-anchor="middle" class="subtitle" fill="white">Core Advantages</text>
+  <text x="200" y="395" class="text" fill="white">✓ AI Truly Understands Business Logic</text>
+  <text x="200" y="415" class="text" fill="white">✓ Human-AI Collaborative Work</text>
+  <text x="200" y="435" class="text" fill="white">✓ System Transparency</text>
+  
+  <text x="650" y="395" class="text" fill="white">✓ Direct System Function Operation</text>
+  <text x="650" y="415" class="text" fill="white">✓ No API Conversion Required</text>
+  <text x="650" y="435" class="text" fill="white">✓ Dynamic Adaptation to Changes</text>
+</svg>

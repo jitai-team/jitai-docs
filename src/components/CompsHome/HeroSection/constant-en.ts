@@ -20,7 +20,7 @@ const CONTENT = {
         },
         // <br/>Doc/Excel assistant application development framework for rapidly customizing enterprise-specific document writing AI assistants.
         {
-            title: "Interpretable AI-Native Application Architecture",
+            title: "Composable, Interpretable, AI-Native Architecture",
             description: `The world's first application architecture that supports system-level AI context, enabling AI agents to dynamically perceive, drive, and orchestrate all full-stack modules; coupled with a unified interpretive JAAP protocol and a matrix framework, it makes enterprise systems truly AI-native, infinitely scalable, and consistently concise and robust, safeguarding their long-term value in the rapidly evolving AI era.`,
             color: "#3D65FD",
         },

@@ -1,0 +1,101 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; }
+      .subtitle { font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; }
+      .text { font-family: Arial, sans-serif; font-size: 12px; }
+      .matrix-box { fill: #4CAF50; stroke: #2E7D32; stroke-width: 2; }
+      .element-box { fill: #E8F5E8; stroke: #4CAF50; stroke-width: 1; }
+      .web-element { fill: #2196F3; stroke: #1565C0; stroke-width: 1; }
+      .ai-element { fill: #FF9800; stroke: #E65100; stroke-width: 1; }
+      .arrow { stroke: #333; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" class="title">JitAi Matrix Element Architecture</text>
+  
+  <!-- Core Architecture -->
+  <rect x="50" y="60" width="700" height="140" class="matrix-box" rx="10"/>
+  <text x="400" y="85" text-anchor="middle" class="subtitle" fill="white">JitAi Matrix Element Architecture</text>
+  <text x="400" y="105" text-anchor="middle" class="text" fill="white">200+ Ready-to-use Elements</text>
+  <text x="400" y="125" text-anchor="middle" class="text" fill="white">Self-describing Elements</text>
+  <text x="400" y="145" text-anchor="middle" class="text" fill="white">Dynamic Loading, On-demand</text>
+  <text x="400" y="165" text-anchor="middle" class="text" fill="white">Highly Extensible, Flexible Combination</text>
+  <text x="400" y="185" text-anchor="middle" class="text" fill="white">Real-time Compilation, Instant Effect</text>
+  
+  <!-- Web Development Elements -->
+  <rect x="80" y="220" width="300" height="280" fill="#E3F2FD" stroke="#1976D2" stroke-width="2" rx="10"/>
+  <text x="230" y="245" text-anchor="middle" class="subtitle">Web Development Elements</text>
+  
+  <!-- Frontend Elements -->
+  <rect x="100" y="270" width="120" height="80" class="web-element" rx="5"/>
+  <text x="160" y="290" text-anchor="middle" class="text" fill="white">Shell</text>
+  <text x="160" y="305" text-anchor="middle" class="text" fill="white">Page</text>
+  <text x="160" y="320" text-anchor="middle" class="text" fill="white">UI Component</text>
+  <text x="160" y="335" text-anchor="middle" class="text" fill="white">Style/Theme</text>
+  
+  <!-- Backend Elements -->
+  <rect x="240" y="270" width="120" height="80" class="web-element" rx="5"/>
+  <text x="300" y="290" text-anchor="middle" class="text" fill="white">Services</text>
+  <text x="300" y="305" text-anchor="middle" class="text" fill="white">Data Model</text>
+  <text x="300" y="320" text-anchor="middle" class="text" fill="white">Database</text>
+  <text x="300" y="335" text-anchor="middle" class="text" fill="white">Cache</text>
+  
+  <!-- Storage Elements -->
+  <rect x="100" y="370" width="120" height="80" class="web-element" rx="5"/>
+  <text x="160" y="390" text-anchor="middle" class="text" fill="white">Object Storage</text>
+  <text x="160" y="405" text-anchor="middle" class="text" fill="white">File Processing</text>
+  <text x="160" y="420" text-anchor="middle" class="text" fill="white">Template Engine</text>
+  <text x="160" y="435" text-anchor="middle" class="text" fill="white">API</text>
+  
+  <!-- Business Elements -->
+  <rect x="240" y="370" width="120" height="80" class="web-element" rx="5"/>
+  <text x="300" y="390" text-anchor="middle" class="text" fill="white">User Permissions</text>
+  <text x="300" y="405" text-anchor="middle" class="text" fill="white">Approval Process</text>
+  <text x="300" y="420" text-anchor="middle" class="text" fill="white">3rd-party Integration</text>
+  <text x="300" y="435" text-anchor="middle" class="text" fill="white">Enterprise Org.</text>
+  
+  <!-- AI Development Elements -->
+  <rect x="420" y="220" width="300" height="280" fill="#FFF3E0" stroke="#F57C00" stroke-width="2" rx="10"/>
+  <text x="570" y="245" text-anchor="middle" class="subtitle">AI Development Elements</text>
+
+  <!-- Development Tool Elements -->
+  <rect x="440" y="270" width="120" height="140" class="ai-element" rx="5"/>
+  <text x="500" y="290" text-anchor="middle" class="text" fill="white">Large Models</text>
+  <text x="500" y="305" text-anchor="middle" class="text" fill="white">Deepseek</text>
+  <text x="500" y="320" text-anchor="middle" class="text" fill="white">OpenAI</text>
+  <text x="500" y="335" text-anchor="middle" class="text" fill="white">Alibaba Bailian</text>
+  <text x="500" y="350" text-anchor="middle" class="text" fill="white">SiliconFlow</text>
+  <text x="500" y="365" text-anchor="middle" class="text" fill="white">Gemini</text>
+  <text x="500" y="380" text-anchor="middle" class="text" fill="white">Anthropic</text>
+  <text x="500" y="395" text-anchor="middle" class="text" fill="white">Private Models</text>
+  
+  <!-- AI Assistant Elements -->
+  <rect x="580" y="270" width="120" height="50" class="ai-element" rx="5"/>
+  <text x="640" y="300" text-anchor="middle" class="text" fill="white">AI Assistant</text>
+  
+  <!-- AI Agent Elements -->
+  <rect x="580" y="330" width="120" height="50" class="ai-element" rx="5"/>
+  <text x="640" y="360" text-anchor="middle" class="text" fill="white">AI Agent</text>
+
+  
+  <!-- Operations Elements -->
+  <rect x="580" y="390" width="120" height="50" class="ai-element" rx="5"/>
+  <text x="640" y="410" text-anchor="middle" class="text" fill="white">Vector Database</text>
+  <text x="640" y="425" text-anchor="middle" class="text" fill="white">RAG</text>
+  
+  <!-- Connection Lines -->
+  <line x1="400" y1="120" x2="230" y2="220" class="arrow"/>
+  <line x1="400" y1="120" x2="570" y2="220" class="arrow"/>
+  
+  <!-- Core Features -->
+  <text x="400" y="550" text-anchor="middle" class="subtitle">Core Features</text>
+  <text x="150" y="575" text-anchor="middle" class="text">✓ Self-describing Elements</text>
+  <text x="300" y="575" text-anchor="middle" class="text">✓ Highly Extensible</text>
+  <text x="450" y="575" text-anchor="middle" class="text">✓ Flexible Combination</text>
+  <text x="600" y="575" text-anchor="middle" class="text">✓ Real-time Effect</text>
+</svg>

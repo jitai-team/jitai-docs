@@ -11,7 +11,7 @@ keywords: [production-grade AI, enterprise AI, AI native architecture, AI collab
 
 The industry is exploring how to deploy enterprise AI applications in production, but many attempts have taken the wrong path. Inability to make partial adjustments to outputs, deployment isolated from business systems, standalone UIs that can't collaborate with humans, and claims of being universal products—none of these represent what production-grade AI applications should be.
 
-<!--truncate-->
+{/*truncate*/}
 
 In traditional software development, AI coding tools like Cursor have significantly boosted developer productivity. These tools can generate numerous code files based on a developer's single instruction. However, what they generate is never the final correct result the developer wants. This is because large language models inevitably experience hallucinations—even when developers provide very clear information, AI-generated results may contain errors. Moreover, developers can't always articulate all requirements in a single attempt.
 

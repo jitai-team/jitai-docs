@@ -18,7 +18,7 @@ description: "Enterprises are cooling on the AI agent hype. Discover why automat
     
 *   The real winners will be organizations that align AI capabilities with business goals—focusing on _adoption_, not just _experimentation_.
 
-<!--truncate-->
+{/*truncate*/}
 
 ## The Reality Check for AI Agents in the Enterprise
 

@@ -17,12 +17,12 @@ JitAI会为每个新创建的应用创建三个内置的门户：开发者门户
 
 以开发者门户为例，用户在任意门户中的左上角都可以进行门户切换操作。
 
-### 开发者门户 {#developer-portal} 
+### 开发者门户 {#developer-portal}
 开发者门户是给应用开发者使用的，开发者进入开发者门户后即可使用[JitAI开发工具](/docs/devguide/development-tool-and-publish-service/visual-development-tool)进行应用开发工作，例如给不同应用角色配置可访问的门户列表、搭建系统功能、配置应用信息等。
 
 除了开发者门户之外，其它所有门户的导航菜单都是由应用开发者在开发者门户中进行配置的。
 
-### 管理者门户 {#manager-portal} 
+### 管理者门户 {#manager-portal}
 拥有应用管理员角色的用户可以进入管理者门户对应用进行管理，比如管理组织架构、组织架构角色及其成员。开发者也可以对管理者门户进行修改。
 
 每个应用在创建时会自动创建一个管理员账号，初始用户名：`admin123`，初始密码：`admin123`，建议开发者登录后在个人[基本信息](/docs/devguide/development-tool-and-publish-service/visual-development-tool#profile)中修改。

@@ -11,7 +11,7 @@ The Model Context Protocol (MCP) has officially joined the Linux Foundation as a
 
 In this article, we’ll unpack what MCP actually is, what its move to the Linux Foundation changes, and how it reshapes the way you design AI-native platforms, integration hubs, and enterprise applications—especially if you’re building on AI tools and agents rather than just calling an isolated model.
 
-<!-- truncate -->
+{/* truncate */}
 
 ![image.png](img1.png)
 

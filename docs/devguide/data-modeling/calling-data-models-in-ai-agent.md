@@ -8,7 +8,7 @@ description: "Invoke data models with AI Agents. Add model functions as Agent to
 
 Data models can be invoked not only within pages and functions, but also as tools for AI Agents. By adding data model functions as Agent tools, AI can intelligently perform create, read, update, and delete (CRUD) operations, enabling more automated and intelligent data processing capabilities.
 
-## Data models as Agent tools {#data-models-as-agent-tools}
+## Data models as Agent tools
 
 Applications built on JitAI's interpretive system architecture possess self-describing characteristics, meaning that application elements can be accurately understood by large language models. Data models and their functions are precisely such self-describing elements that can serve directly as available tools for Agents.
 

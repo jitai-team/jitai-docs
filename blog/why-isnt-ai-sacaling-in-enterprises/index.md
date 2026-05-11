@@ -12,7 +12,7 @@ While AI technologies, particularly large language models, have seen explosive g
 
 Unlike traditional enterprise web applications, production-grade AI applications carry inherent complexity. They're fundamentally about executing tasks, not merely recording transactions. This requires deep integration with each organization's unique business processes, data ecosystems, and knowledge systems. Custom development becomes inevitable, yet the reality is prohibitively expensive and often disappointing. **Traditional development paradigms are no longer sufficient—the market urgently needs AI-native engineering practices and development methodologies.**
 
-<!--truncate-->
+{/*truncate*/}
 
 ## Production-Grade AI Applications Are Inherently Complex
 

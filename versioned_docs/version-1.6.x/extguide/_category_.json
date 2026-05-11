@@ -1,0 +1,8 @@
+{
+  "label": "Extending",
+  "position": 2,
+  "link": {
+    "slug": "extguide",
+    "description": "Extending JitAI framework capabilities, including adding new Type elements, developing visual editors."
+  }
+} 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./styles.module.css";
 import globalStyles from "../../../pages/index.module.css";
 import CONTENT_ZH from "./constant-zh";
@@ -11,13 +11,15 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
 }) => {
     const [isMobile, setIsMobile] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+    const videoRef = useRef<HTMLVideoElement>(null);
 
     const content = currentLocale === "zh" ? CONTENT_ZH : CONTENT_EN;
 
-    // 计算卡片网格的列数（除去第一个卡片后的数量）
+    // Calculate the number of columns for the card grid (excluding the first card)
     const cardsCount = content.cards.length - 1;
 
-    // 检测移动端
+    // Detect mobile device
     useEffect(() => {
         const checkMobile = () => {
             setIsMobile(window.innerWidth <= 768);
@@ -32,20 +34,20 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
     }, []);
 
     /**
-     * 处理按钮点击事件，添加 UTM 参数后跳转
+     * Handle button click event, redirect after adding UTM parameters
      */
     const handleButtonClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-        // 阻止默认跳转
+        // Prevent default redirect
         e.preventDefault();
 
         if (isMobile) {
             setIsModalOpen(true);
         } else {
-            // 获取带 UTM 参数的 URL
+            // Get URL with UTM parameters
             const urlWithUTM = addUTMToUrl(
                 "https://demo.jit.pro/wanyun/AdminApp"
             );
-            // 在新标签页打开
+            // Open in new tab
             window.open(urlWithUTM, "_blank");
         }
     };
@@ -59,11 +61,25 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
         setIsModalOpen(false);
     };
 
+    const handleVideoPlay = () => {
+        if (videoRef.current) {
+            videoRef.current.play();
+            setIsVideoPlaying(true);
+        }
+    };
+
+    const handleVideoEnded = () => {
+        setIsVideoPlaying(false);
+        if (videoRef.current) {
+            videoRef.current.currentTime = 0;
+        }
+    };
+
     return (
         <section id="section-0" className={styles.hero}>
             <div className={globalStyles.sectionContent}>
                 <div className={styles.heroLeft}>
-                    {/* 主标题区域 */}
+                    {/* Main Title Area */}
                     <div className={styles.titleSection}>
                         <div className={styles.heroTitleContainer}>
                             <h1 className={styles.heroTitle}>
@@ -84,31 +100,28 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                         </div>
                     </div>
 
-                    {/* 行动按钮区域 */}
+                    {/* Call to Action Buttons Area */}
                     <div className={styles.heroButtons}>
                         <a
-                            className={`${styles.primaryButton} ${
-                                isMobile
-                                    ? "analytics-download-mobile"
-                                    : "analytics-download"
-                            }`}
+                            className={`${styles.primaryButton} ${isMobile
+                                ? "analytics-download-mobile"
+                                : "analytics-download"
+                                }`}
                             href="./download"
                         >
                             <span
-                                className={`${styles.buttonText} ${
-                                    isMobile
-                                        ? "analytics-download-mobile"
-                                        : "analytics-download"
-                                }`}
+                                className={`${styles.buttonText} ${isMobile
+                                    ? "analytics-download-mobile"
+                                    : "analytics-download"
+                                    }`}
                             >
                                 {content.buttonDownload}
                             </span>
                             <span
-                                className={`${styles.buttonIcon} ${
-                                    isMobile
-                                        ? "analytics-download-mobile"
-                                        : "analytics-download"
-                                }`}
+                                className={`${styles.buttonIcon} ${isMobile
+                                    ? "analytics-download-mobile"
+                                    : "analytics-download"
+                                    }`}
                             >
                                 <svg
                                     viewBox="0 0 24 24"
@@ -120,6 +133,8 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                                 </svg>
                             </span>
                         </a>
+                        {/** Try Online hidden 2025/12/16 */}
+                        {/**
                         <a
                             className={`${styles.secondaryButton} ${
                                 isMobile
@@ -156,9 +171,10 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                                 </svg>
                             </span>
                         </a>
+                        */}
                     </div>
 
-                    {/* 第一个卡片内容 + 视频区块 */}
+                    {/* First Card Content + Video Section */}
                     {content.cards.length > 0 && (
                         <div className={styles.featuredContent}>
                             <div className={styles.featuredText}>
@@ -174,13 +190,15 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                             </div>
                             <div className={styles.featuredVideo}>
                                 <video
+                                    ref={videoRef}
                                     src={content.previewVideoUrl}
                                     className={`${styles.video} ${styles.videoElement}`}
-                                    autoPlay
+                                    autoPlay={false}
                                     muted
-                                    loop
+                                    loop={false}
                                     playsInline
-                                    controls
+                                    controls={false}
+                                    onEnded={handleVideoEnded}
                                     {...({
                                         "x5-video-player-type": "h5",
                                         "x5-video-player-fullscreen": "false",
@@ -189,6 +207,24 @@ const HeroSection: React.FC<{ currentLocale?: string }> = ({
                                         "t7-video-player-type": "inline",
                                     } as any)}
                                 />
+                                {!isVideoPlaying && (
+                                    <>
+                                        <div className={styles.videoOverlay} />
+                                        <button
+                                            className={styles.playButton}
+                                            onClick={handleVideoPlay}
+                                            aria-label="Play video"
+                                        >
+                                            <svg
+                                                viewBox="0 0 24 24"
+                                                fill="currentColor"
+                                                className={styles.playIcon}
+                                            >
+                                                <path d="M8 5v14l11-7z" />
+                                            </svg>
+                                        </button>
+                                    </>
+                                )}
                             </div>
                         </div>
                     )}

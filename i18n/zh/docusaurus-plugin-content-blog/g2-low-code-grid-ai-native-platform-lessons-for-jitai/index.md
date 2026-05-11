@@ -33,7 +33,7 @@ slug: g2-low-code-grid-ai-native-platform-lessons-for-jitai
 > “这套成功模式，告诉了我们一个什么样的 **AI 原生低代码** 未来图景？  
 > 我该如何顺着这条路径去设计自己的下一代平台？”
 
-<!-- truncate -->
+{/* truncate */}
 
 ![image.png](img1.png)
 

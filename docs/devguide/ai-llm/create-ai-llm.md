@@ -9,7 +9,7 @@ LLM elements are the core components that enable unified integration of various 
 
 The platform natively supports mainstream LLM vendors including Anthropic, OpenAI, Gemini, Deepseek, Alibaba Cloud Bailian, and SiliconFlow, while also providing OpenAI-compatible interfaces to support any LLM services compatible with the OpenAI protocol (including privately deployed ones). Flexible API key management and intelligent retry mechanisms ensure reliable and stable model invocations. Developers can also extend new LLM Type elements to support any open-source or closed-source LLM services from different vendors with different protocols.
 
-## Mainstream LLM Vendor Support List {#mainstream-llm-vendor-support-list}
+## Mainstream LLM Vendor Support List
 *   Anthropic
 *   Alibaba Cloud Bailian
 *   Deepseek
@@ -18,7 +18,7 @@ The platform natively supports mainstream LLM vendors including Anthropic, OpenA
 *   SiliconFlow
 *   OpenAI Compatible
 
-## Creating LLM vendor elements {#creating-llm-vendor-elements}
+## Creating LLM vendor elements
 ![LLM Vendor Creation](./img/1/large-model-creation.png)
 
 Click the `+` button next to the search box in the element directory tree, select `AI LLMs` from the popup menu, then choose the appropriate LLM vendor based on your requirements. After making your selection, the following dialog will appear.
@@ -42,12 +42,12 @@ To prevent model call failures caused by single key rate limits, excessive reque
 
 Click `Enable Backup Keys` → `+Backup Key` in the interface to add a key input field, enter your backup key, then click `Save`.
 
-## Custom model configuration {#custom-model-configuration}
+## Custom model configuration
 The platform supports custom management of model lists. In the LLM list area, you can select models to enable and click the `Edit` button to configure advanced parameters (such as temperature, max_tokens, etc.). Click the `+` button in the top right corner to add custom models, supporting configuration of model name, type (dialogue/vector/rerank), and JSON-formatted parameters. Custom models are displayed at the top and can be deleted at any time. This is particularly useful for integrating newly released models or privately deployed models.
 
 ![Custom Configuration](./img/1/custom-llm.png)
 
-## Private LLM integration {#private-llm-integration}
+## Private LLM integration
 For enhanced information security, developers may deploy private models, which the platform fully supports through seamless integration.
 
 ![Private Model](./img/1/private-model.png)

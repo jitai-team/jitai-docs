@@ -32,12 +32,12 @@ const CONTENT = {
             type: "newTab",
             url: "https://forum.jit.pro",
         },
-        {
-            id: "blog",
-            label: "博客",
-            type: "currentPage",
-            url: "/zh/blog",
-        },
+        // {
+        //     id: "blog",
+        //     label: "博客",
+        //     type: "currentPage",
+        //     url: "/zh/blog",
+        // },
         {
             id: "contact",
             label: "联系我们",
@@ -57,6 +57,7 @@ const CONTENT = {
         type: "currentPage",
         url: "/zh/download",
     },
+    caseCategory: ["客户管理系统", "全链路业务系统", "协同系统"],
 };
 
 export default CONTENT;

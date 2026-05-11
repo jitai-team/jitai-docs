@@ -1,0 +1,95 @@
+---
+sidebar_position: 5
+slug: create-flow-agent
+description: "FlowAgent—通过可视化工作流编排构建确定性业务流程。"
+---
+
+# 擅长工作流编排的 FlowAgent
+
+FlowAgent 提供可视化拖拽编排能力，适合需要确定性流程控制的场景。
+
+<!-- TODO: 配图 - GIF：创建入口 + 进入可视化编辑器 -->
+
+## FlowAgent 适合什么场景
+
+与 ReActAgent 的区别：
+
+- **ReActAgent**：自主决策，适合开放性任务
+- **FlowAgent**：流程确定，适合固定步骤的业务流程
+
+典型场景：审批流程、多 Agent 协作编排、数据 ETL 流水线。
+
+## 创建和编排工作流
+
+在元素目录树中依次点击 `+`、`AI Agent`、`FlowAgent`，填写名称后自动初始化 Start 节点并进入可视化编辑器。
+
+在画布中拖拽添加节点，从输出端口拖拽到输入端口建立连线。
+
+<!-- TODO: 配图 - GIF：拖拽添加节点 + 连线操作 -->
+
+## 节点类型一览
+
+<!-- TODO: 配图 - 截图：8 种节点类型全景图 -->
+
+- **开始 / 结束**：流程入口和出口
+- **调用 Agent**：在工作流中调用已有的 ReActAgent / DeepAgent
+- **智能路由**：基于 LLM 分析用户输入，自动选择下游 Agent
+- **条件分支**：基于状态变量值的条件判断
+- **循环处理**：遍历列表数据
+- **调用工具**：直接调用服务函数或模型函数
+- **人工操作**：暂停流程等待人工输入
+- **界面中断**：向用户展示信息并等待确认
+
+## 管理状态数据
+
+状态数据是流程执行过程中的"记忆库"，包含用户输入、节点输出、中间变量和用户反馈。
+
+数据在节点间自动传递，累积形成完整执行上下文。支持内存存储（开发）和数据库存储（生产）。
+
+<!-- TODO: 配图 - 截图：状态数据存储仓配置 -->
+
+## 订阅工作流事件
+
+FlowAgent 在工作流执行过程中会触发事件，可通过平台事件系统订阅，实现流程监控、审计日志、人工审批通知等旁路逻辑。
+
+### 事件触发时机
+
+事件分为三个层级：
+
+**Agent 级别**：监听整个 FlowAgent 的运行周期
+- `beforeRun`：工作流运行前触发
+- `afterRun`：工作流运行后触发
+
+**节点级别**：监听流程中特定节点的执行状态
+- `{nodeId}.beforeNodeRun`：指定节点即将执行时触发
+- `{nodeId}.afterNodeRun`：指定节点执行完成后触发
+
+**人工操作级别**：监听人工节点的用户操作
+- `{nodeId}.approved`：用户点击"同意"后触发
+- `{nodeId}.rejected`：用户点击"拒绝"后触发
+- `{nodeId}.replied`：用户回复消息后触发
+- `{nodeId}.edited`：用户编辑内容后触发
+
+### 创建事件实例
+
+通过 IDE `+` → `事件` 创建事件元素，类型选择 `events.AIAssistantType`，sender 指向 FlowAgent 元素，operate 配置触发时机：
+
+```json title="events/FlowMonitorEvent/e.json"
+{
+  "title": "工作流监控事件",
+  "type": "events.AIAssistantType",
+  "sender": "aiagents.MyFlowAgent",
+  "operate": "afterRun",
+  "func": "services.LogService.record_execution",
+  "asyncType": false,
+  "backendBundleEntry": "."
+}
+```
+
+详细配置请参考[助理事件参考](../../reference/framework/JitAi/assistant-events)。
+
+:::tip
+工作流事件是**旁路**逻辑，不影响主流程运行。即使事件处理失败，FlowAgent 的工作流仍会正常执行。建议耗时操作开启 `asyncType: true`。
+:::
+
+<!-- TODO: 配图 - 截图：事件配置面板 -->

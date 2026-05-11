@@ -71,3 +71,4 @@ export_logs/
 .cache/
 .cursor
 .cursorrules
+/.claude/settings.json

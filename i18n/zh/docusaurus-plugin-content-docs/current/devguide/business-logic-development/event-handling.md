@@ -110,7 +110,7 @@ AI助理的各节点运行时可触发一些事件，我们可以通过订阅该
 ### 触发时机 {#ai-assistant-trigger-timings}
 - **助理运行前**：助理开始运行前触发，携带的参数是用户输入。
 - **助理运行后**：助理运行完成后触发，没有参数。
-- **到达节点时**：AI Agent节点、函数调用节点、条件分支节点及多任务执行节点在到达节点时触发。前提是需要节点[开启触发后端事件](../ai-assistant/ai-assistant-event#backend-node-events)。携带的参数是节点上配置的`到达节点事件输出参数`。
+- **到达节点时**：AI Agent节点、函数调用节点、条件分支节点及多任务执行节点在到达节点时触发。前提是需要节点<a href="../ai-assistant/ai-assistant-event#backend-node-events">开启触发后端事件</a>。携带的参数是节点上配置的`到达节点事件输出参数`。
 - **节点执行后**：AI Agent节点、函数调用节点、条件分支节点及多任务执行节点执行后触发。前提是需要节点开启触发后端事件。携带的参数是节点上配置的`节点执行后输出参数`。
 
 ### 订阅事件 {#subscribing-to-ai-assistant-events}
@@ -122,7 +122,7 @@ AI助理的各节点运行时可触发一些事件，我们可以通过订阅该
 
 ![AI助理事件配置](./img/ai/assistant-event-config.png)
 
-选择要订阅的[AI助理](../ai-assistant) -> [事件触发事件](../ai-assistant/ai-assistant-event)，配置一个响应函数即可。
+选择要订阅的<a href="../ai-assistant">AI助理</a> -> <a href="../ai-assistant/ai-assistant-event">事件触发事件</a>，配置一个响应函数即可。
 
 ## Agent工具调用事件 {#agent-tool-call-events}
 AI Agent在调用工具时，我们可以通过订阅该事件在Agent运行过程中插入一些业务处理逻辑。前提是工具需要开启<a href="../ai-agent#ai-agent-tool-configuration">触发事件</a>。

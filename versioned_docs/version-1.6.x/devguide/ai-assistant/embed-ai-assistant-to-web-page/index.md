@@ -48,9 +48,9 @@ Integrating the AI assistant into an external web page requires only three steps
 
 3. After creation is complete, the system will automatically generate:
    - An embedded AI assistant element
-   - An [AI Agent element](/docs/devguide/ai-agent/create-ai-agent) (named `{Assistant Name}-Agent`)
+   - An [AI Agent element](../ai-agent/create-ai-agent) (named `{Assistant Name}-Agent`)
 
-The assistant contains an [AI Agent node](/docs/devguide/ai-assistant/process-orchestration-node-configuration#ai-agent), which is bound to the newly generated AI Agent element.
+The assistant contains an [AI Agent node](./process-orchestration-node-configuration#ai-agent), which is bound to the newly generated AI Agent element.
 
 ![create-assistant-agent](./imgs/create-assistant-agent.png)
 
@@ -254,15 +254,15 @@ All subscribable events can be viewed in the **Events** tab of the JitAI platfor
 
 ![assistant-events](./imgs/assistant-events.png)
 
-For a detailed list of events and descriptions, please refer to the [AI Assistant Events Documentation](/docs/devguide/ai-assistant/ai-assistant-event#frontend-page-events).
+For a detailed list of events and descriptions, please refer to the [AI Assistant Events Documentation](./ai-assistant-event#frontend-page-events).
 
 ## Runtime Configuration {#runtime-config}
 
 - **Container id**: The id of the container element in the web page used to display the assistant.
 - **Welcome Message**: Configure a brief greeting message displayed when users open or first enter the AI assistant interface.
 - **Prologues**: Conversation templates that guide users into the topic, inspire the scope of questions, and accelerate intent collection.
-- **Output Runtime Logs**: Specify the [log content](/docs/devguide/ai-assistant/ai-assistant-input-output#message-output) output during assistant runtime.
-- **Input Parameters**: When sending messages during AI assistant runtime, you can carry additional parameters, which need to be set in advance in the assistant. Setting method reference: [Custom Input Parameters](/docs/devguide/ai-assistant/ai-assistant-input-output#input-args).
+- **Output Runtime Logs**: Specify the [log content](./ai-assistant-input-output#message-output) output during assistant runtime.
+- **Input Parameters**: When sending messages during AI assistant runtime, you can carry additional parameters, which need to be set in advance in the assistant. Setting method reference: [Custom Input Parameters](./ai-assistant-input-output#input-args).
 
 
 ```javascript
@@ -337,10 +337,10 @@ Initialize the AI assistant and embed it into the specified container.
 | assistantUrl | string | Yes | The complete URL address of the AI assistant page |
 | accessKey | string | Yes | Access Key for web page authentication to verify whether the web page has permission to use the AI assistant |
 | authInfo | string | No | Authentication information for the authentication callback interface |
-| welcomeMessage | string | No | Set the [welcome message](/docs/devguide/ai-assistant/welcome-message-and-opening) for the assistant |
-| prologues | array | No | Set the [prologues](/docs/devguide/ai-assistant/welcome-message-and-opening) for the assistant |
-| logContent | string | No | Specify the [log content](/docs/devguide/ai-assistant/ai-assistant-input-output#message-output) output during assistant runtime |
-| inputArgs | object | No | Assign values to the assistant's [input parameters](/docs/devguide/ai-assistant/ai-assistant-input-output#input-args) |
+| welcomeMessage | string | No | Set the [welcome message](./welcome-message-and-opening) for the assistant |
+| prologues | array | No | Set the [prologues](./welcome-message-and-opening) for the assistant |
+| logContent | string | No | Specify the [log content](./ai-assistant-input-output#message-output) output during assistant runtime |
+| inputArgs | object | No | Assign values to the assistant's [input parameters](./ai-assistant-input-output#input-args) |
 | functions | object | No | Collection of JavaScript functions in the web page that the AI assistant can call |
 
 **Example:**

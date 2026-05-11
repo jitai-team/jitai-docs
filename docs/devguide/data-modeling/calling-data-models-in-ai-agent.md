@@ -19,4 +19,4 @@ When data model functions are added as Agent tools, AI gains the ability to:
 - Perform associated operations across multiple data models
 - Validate and process data according to business rules
 
-For detailed instructions on adding data model functions as Agent tools, please refer to [Agent calling model functions](../ai-agent/agent-tools#calling-model-functions).
+For detailed instructions on adding data model functions as Agent tools, please refer to [Agent calling model functions](../ai-agent/agent-tool-data-model).

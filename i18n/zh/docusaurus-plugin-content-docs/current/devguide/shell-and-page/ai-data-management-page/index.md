@@ -86,11 +86,10 @@ AI数据管理页面内置了一个通用的**AI数据管理助理**，用户可
 AI数据管理助理在运行时需要访问系统数据库及调用页面上的函数绘制图表。我们需要为其配置一个支持调用工具的[大模型](/docs/devguide/ai-llm/create-ai-llm)，推荐使用阿里云百炼平台的 qwen-max-latest。[申请API Key](https://bailian.console.aliyun.com/?tab=model#/api-key)
 
 ### 助理高级配置 {#assistant-advanced-configuration}
-- 支持自定义[欢迎语与开场白](/docs/devguide/ai-assistant/welcome-message-and-opening)
-- 支持自定义[输出运行过程日志](/docs/devguide/ai-assistant/ai-assistant-input-output#message-output)，默认会输出简要过程日志。
+- 支持自定义欢迎语与开场白
+- 支持自定义输出运行过程日志，默认会输出简要过程日志。
 
 
-关于AI助理的更多信息，请阅读[AI助理](/docs/devguide/ai-assistant/create-ai-assistant)相关文档。
 
 ## 运行效果 {#runtime-effect}
 

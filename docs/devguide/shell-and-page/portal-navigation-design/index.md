@@ -181,13 +181,13 @@ The `Profile` entry grants users access to profile management functionality, inc
 
 ![Profile](./imgs/profile-functions.gif "Profile")
 
-## Enabling AI assistant {#integrating-ai-assistants}
-JitAI provides native [AI Assistant](/docs/devguide/ai-assistant/create-ai-assistant) integration capabilities, allowing users to interact with intelligent assistants directly through the portal interface. This section offers a high-level overview; detailed implementation guidance is available in [Using AI Assistant in Generic Portals](/docs/devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals).
+## Enabling AI agent {#integrating-ai-assistants}
+JitAI provides native [AI Agent](/docs/devguide/ai-agent) integration capabilities, allowing users to interact with intelligent assistants directly through the portal interface. This section offers a high-level overview; detailed implementation guidance is available in [Using AI Elements in Pages](/docs/devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages).
 
-![Portal Integrate AI Assistant](./imgs/portal-integrate-ai-assistant.gif "Portal Integrate AI Assistant")
+![Portal Integrate AI Agent](./imgs/portal-integrate-ai-assistant.gif "Portal Integrate AI Agent")
 
-AI assistant integration is accomplished through the portal configuration interface: navigate to the `Enable AI Assistant` tab, activate the integration toggle, and select the desired [AI Assistant](/docs/devguide/ai-assistant/create-ai-assistant) for portal embedding.
+AI agent integration is accomplished through the portal configuration interface: navigate to the `Enable AI Agent` tab, activate the integration toggle, and select the desired [AI Agent](/docs/devguide/ai-agent) for portal embedding.
 
-![AI Assistant Effect in Portal](./imgs/ai-assistant-effect-in-portal.png "AI Assistant Effect in Portal")
+![AI Agent Effect in Portal](./imgs/ai-assistant-effect-in-portal.png "AI Agent Effect in Portal")
 
-Once AI assistant is enabled, users will observe an AI Assistant entry within the portal navigation menu. Selecting this entry launches an interactive dialog interface for direct communication with the AI assistant.
+Once AI agent is enabled, users will observe an AI Agent entry within the portal navigation menu. Selecting this entry launches an interactive dialog interface for direct communication with the AI agent.

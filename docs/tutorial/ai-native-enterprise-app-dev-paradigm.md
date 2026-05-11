@@ -122,4 +122,4 @@ The unified interface for AI application-user interaction, serving as the intera
 - **Function Invocation and Conditional Branching**: Supporting complex business logic control and multi-task execution
 - **One-click Integration**: Integrating into various corners of business systems through different entry forms
 
-> 📖 Learn more: [AI Assistant](../devguide/ai-assistant)
+> 📖 Learn more: [AI Agent](../devguide/ai-agent)

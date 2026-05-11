@@ -47,9 +47,9 @@ description: "嵌入式AI助理的详细指南和说明。"
 
 3. 创建完成后，系统会自动生成：
    - 一个嵌入式AI助理元素
-   - 一个 [AI Agent 元素](/docs/devguide/ai-agent/create-ai-agent)（名称为 `{助理名称}-Agent`）
+   - 一个 [AI Agent 元素](../ai-agent/create-ai-agent)（名称为 `{助理名称}-Agent`）
 
-助理中有一个 [AI Agent 节点](/docs/devguide/ai-assistant/process-orchestration-node-configuration#ai-agent)，绑定了新生成的 AI Agent 元素。
+助理中有一个 [AI Agent 节点](./process-orchestration-node-configuration#ai-agent)，绑定了新生成的 AI Agent 元素。
 
 ![create-assistant-agent](./imgs/create-assistant-agent.png)
 
@@ -250,15 +250,15 @@ aiAssistant.subscribeEvent('AI:aiagent_webpage.afterNodeRun', (data) => {
 
 ![assistant-events](./imgs/assistant-events.png)
 
-详细的事件列表和说明请参考 [AI助理事件文档](/docs/devguide/ai-assistant/ai-assistant-event#frontend-page-events)。
+详细的事件列表和说明请参考 [AI助理事件文档](./ai-assistant-event#frontend-page-events)。
 
 ## 运行时配置 {#runtime-config}
 
 - **Container id**：网页中用于显示助理的容器元素的 id。
 - **欢迎语**：配置用户打开或首次进入 AI 助理界面时显示的简短问候语。
 - **开场白**：引导用户进入主题、启发可问范围、加速意图收集的问话模板。
-- **输出运行过程日志**：指定助理运行过程中输出的[日志内容](/docs/devguide/ai-assistant/ai-assistant-input-output#message-output)。
-- **输入参数**：在 AI 助理运行时发送消息可以额外携带一些参数，这些参数需要在助理中提前设置好。设置方式参考：[自定义输入参数](/docs/devguide/ai-assistant/ai-assistant-input-output#input-args)。
+- **输出运行过程日志**：指定助理运行过程中输出的[日志内容](./ai-assistant-input-output#message-output)。
+- **输入参数**：在 AI 助理运行时发送消息可以额外携带一些参数，这些参数需要在助理中提前设置好。设置方式参考：[自定义输入参数](./ai-assistant-input-output#input-args)。
 
 
 ```javascript
@@ -332,10 +332,10 @@ var aiAssistant = new JitAIAssistant();
 | assistantUrl | string | 是 | AI 助理页面的完整 URL 地址 |
 | accessKey | string | 是 | Access Key，用于网页认证，校验网页是否有权限使用该 AI 助理 |
 | authInfo | string | 否 | 身份认证信息，用于身份验证回调接口 |
-| welcomeMessage | string | 否 | 给助理设置[欢迎语](/docs/devguide/ai-assistant/welcome-message-and-opening) |
-| prologues | array | 否 | 给助理设置[开场白](/docs/devguide/ai-assistant/welcome-message-and-opening) |
-| logContent | string | 否 | 指定助理运行过程中输出的[日志内容](/docs/devguide/ai-assistant/ai-assistant-input-output#message-output) |
-| inputArgs | object | 否 | 给助理[输入参数](/docs/devguide/ai-assistant/ai-assistant-input-output#input-args)赋值 |
+| welcomeMessage | string | 否 | 给助理设置[欢迎语](./welcome-message-and-opening) |
+| prologues | array | 否 | 给助理设置[开场白](./welcome-message-and-opening) |
+| logContent | string | 否 | 指定助理运行过程中输出的[日志内容](./ai-assistant-input-output#message-output) |
+| inputArgs | object | 否 | 给助理[输入参数](./ai-assistant-input-output#input-args)赋值 |
 | functions | object | 否 | 网页中可供 AI 助理调用的 JavaScript 函数集合 |
 
 **示例：**

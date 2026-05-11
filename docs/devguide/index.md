@@ -283,7 +283,7 @@ Craft beautiful, intuitive user interfaces. Build portal navigation, construct d
     { text: "Managing common features entries", href: "devguide/shell-and-page/portal-navigation-design#managing-common-features-entries" },
     { text: "Application and workflow entries", href: "devguide/shell-and-page/portal-navigation-design#application-and-workflow-entries" },
     { text: "Profile entry", href: "devguide/shell-and-page/portal-navigation-design#profile-entry" },
-    { text: "Enabling AI assistant", href: "devguide/shell-and-page/portal-navigation-design#integrating-ai-assistants" }
+    { text: "Enabling AI agent", href: "devguide/shell-and-page/portal-navigation-design#integrating-ai-assistants" }
   ]} />
 </IndexCard>
 
@@ -383,33 +383,19 @@ Craft beautiful, intuitive user interfaces. Build portal navigation, construct d
 </div>
 
 ## Using AI in portals and pages {#using-ai-portals-pages}
-Elevate user experiences with AI-powered intelligence. Integrate AI assistants, agents, and smart components into portals and pages for personalized assistance and automated workflows.
+Elevate user experiences with AI-powered intelligence. Integrate AI agents and smart components into portals and pages for personalized assistance and automated workflows.
 
 <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
 
 <IndexCard
-  title="Using AI Assistant in Portals"
-  href="devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals"
-  description="Embed AI assistants into portal interfaces—provide users with intelligent, contextual help throughout their workflow."
->
-  <LinkGrid links={[
-    { text: "Configuring AI assistant", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals#configuring-ai-assistant" },
-    { text: "Runtime effects", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals#runtime-effects" },
-    { text: "Feature highlights", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals#feature-highlights" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="Using AI Assistant in Component Pages"
+  title="Using AI Agent in Component Pages"
   href="devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages"
-  description="Enhance component pages with embedded AI assistants—deliver contextual help and intelligent interactions for task-specific workflows."
+  description="Integrate AI Agent into component pages and subscribe to AI events for human-AI collaboration."
 >
   <LinkGrid links={[
-    { text: "Enabling AI Assistant", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#enable-ai-assistant" },
-    { text: "AI assistant configuration", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#ai-assistant-configuration" },
-    { text: "AI assistant event subscription", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#ai-assistant-event-subscription" },
+    { text: "AI Agent event subscription", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#ai-agent-event-subscription" },
     { text: "Send AI messages in pages", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#send-ai-message" },
-    { text: "Direct call to AI assistant", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#call-ai-assistant" }
+    { text: "Direct call to AI agent", href: "devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-component-pages#call-ai-agent" }
   ]} />
 </IndexCard>
 
@@ -419,10 +405,9 @@ Elevate user experiences with AI-powered intelligence. Integrate AI assistants, 
   description="Invoke AI elements directly from pages—leverage AI agents, LLM services, and knowledge bases for dynamic, intelligent content generation."
 >
   <LinkGrid links={[
-    { text: "Using AI Assistant in pages", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#using-in-pages" },
-    { text: "Visual calling", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#visual-calling" },
-    { text: "Full code calling", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#full-code-calling" },
     { text: "Using AI agent in pages", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#using-ai-agent-in-pages" },
+    { text: "Visual calling", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#visual-calling-agent" },
+    { text: "Full code calling", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#full-code-calling-agent" },
     { text: "Using large language models in pages", href: "devguide/using-ai-in-portals-and-pages/using-ai-elements-in-pages#using-large-language-models-in-pages" }
   ]} />
 </IndexCard>
@@ -661,13 +646,10 @@ Leverage a powerful component library for rapid development. Drag and drop table
 </IndexCard>
 
 <IndexCard
-  title="Statistical Charts (Editing in Progress)"
+  title="Statistical Charts"
+  href="devguide/using-functional-components-in-pages/statistical-charts"
   description="Rich data visualization chart components supporting bar charts, line charts, pie charts and other chart types."
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Documentation is being improved, please stay tuned...
-  </div>
-</IndexCard>
+/>
 
 <IndexCard
   title="Tree Components"
@@ -720,13 +702,16 @@ Leverage a powerful component library for rapid development. Drag and drop table
 </IndexCard>
 
 <IndexCard
-  title="Card and Media Display (Editing in Progress)"
+  title="Card and Media Display"
+  href="devguide/using-functional-components-in-pages/card-and-media-display"
   description="Components for displaying card-style content and media files, including dashboard and gallery functions."
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Documentation is being improved, please stay tuned...
-  </div>
-</IndexCard>
+/>
+
+<IndexCard
+  title="Full-Code Components"
+  href="devguide/using-functional-components-in-pages/full-code-components"
+  description="Develop page-level custom React components with full control over UI, logic, style, and model data operations."
+/>
 
 <IndexCard
   title="Model Filter"
@@ -1060,246 +1045,10 @@ Transform enterprise documents into intelligent, searchable knowledge bases. Ena
 </div>
 
 ## AI agent
-Build intelligent agents with reasoning and action capabilities. Configure prompts and tools to enable AI-powered autonomous problem analysis, solution design, and task execution for complex business scenarios.
+Build intelligent agents with reasoning and action capabilities. From creating Agents, configuring tools and knowledge bases, to managing memory, file spaces, and runtime extensions—master the full AI Agent development and integration workflow.
 
-<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
-
-<IndexCard
-  title="Creating AI Agents"
-  href="devguide/ai-agent/create-ai-agent"
-  description="Create ReActAgents with system prompts, model selection, capability descriptions, and runtime state storage configuration."
->
-  <LinkGrid columns={2} links={[
-    { text: "Creating ReActAgent", href: "devguide/ai-agent/create-ai-agent#creating-react-agent" },
-    { text: "Writing system prompts", href: "devguide/ai-agent/create-ai-agent#writing-system-prompts" },
-    { text: "Selecting models and configuring parameters", href: "devguide/ai-agent/create-ai-agent#selecting-models-configuring-parameters" },
-    { text: "Writing agent capabilities", href: "devguide/ai-agent/create-ai-agent#writing-agent-capabilities" },
-    { text: "Configuring runtime state storage", href: "devguide/ai-agent/create-ai-agent#configuring-runtime-state-storage" },
-    { text: "Memory storage", href: "devguide/ai-agent/create-ai-agent#memory-storage" },
-    { text: "Database storage", href: "devguide/ai-agent/create-ai-agent#database-storage" },
-    { text: "Modifying agents in source code mode", href: "devguide/ai-agent/create-ai-agent#modifying-agents-source-code-mode" },
-    { text: "Custom callback processors", href: "devguide/ai-agent/create-ai-agent#custom-callback-processors" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="Tools in Agent"
-  href="devguide/ai-agent/agent-tools"
-  description="Learn how to add and manage various tools in Agent, including model functions, service functions, MCP services, external APIs, and page functions."
->
-  <LinkGrid columns={2} links={[
-    { text: "Calling model functions", href: "devguide/ai-agent/agent-tools#calling-model-functions" },
-    { text: "Calling service functions", href: "devguide/ai-agent/agent-tools#calling-service-functions" },
-    { text: "Calling MCP servers", href: "devguide/ai-agent/agent-tools#calling-mcp-servers" },
-    { text: "Converting MCP configuration to environment variable", href: "devguide/ai-agent/agent-tools#converting-mcp-config-to-environment-variable" },
-    { text: "Calling external APIs", href: "devguide/ai-agent/agent-tools#calling-external-apis" },
-    { text: "Calling page functions", href: "devguide/ai-agent/agent-tools#calling-page-functions" },
-    { text: "Tool function management", href: "devguide/ai-agent/agent-tools#tool-function-management" },
-    { text: "Enabling/disabling tool functions", href: "devguide/ai-agent/agent-tools#enabling-disabling-tool-functions" },
-    { text: "Tool function call pre/post event triggering", href: "devguide/ai-agent/agent-tools#tool-function-call-pre-post-event-triggering" },
-    { text: "Manual confirmation before tool execution", href: "devguide/ai-agent/agent-tools#manual-confirmation-before-tool-execution" },
-    { text: "Restricting user roles for tool calls", href: "devguide/ai-agent/agent-tools#restricting-user-roles-for-tool-calls" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="Agent Input and Output"
-  href="devguide/ai-agent/agent-input-output"
-  description="Master Agent's input variable configuration, output result settings, streaming output, and various calling methods."
->
-  <LinkGrid columns={2} links={[
-    { text: "Configuring input variables", href: "devguide/ai-agent/agent-input-output#configuring-input-variables" },
-    { text: "Using variables in prompts", href: "devguide/ai-agent/agent-input-output#using-variables-in-prompts" },
-    { text: "Configuring output results", href: "devguide/ai-agent/agent-input-output#configuring-output-results" },
-    { text: "JSON structured output", href: "devguide/ai-agent/agent-input-output#json-structured-output" },
-    { text: "Plain text output", href: "devguide/ai-agent/agent-input-output#plain-text-output" },
-    { text: "Output result data types", href: "devguide/ai-agent/agent-input-output#output-result-data-types" },
-    { text: "Agent streaming output", href: "devguide/ai-agent/agent-input-output#agent-streaming-output" },
-    { text: "Calling Agent in frontend functions", href: "devguide/ai-agent/agent-input-output#calling-agent-in-frontend-functions" },
-    { text: "Calling Agent in backend service functions", href: "devguide/ai-agent/agent-input-output#calling-agent-in-backend-service-functions" },
-    { text: "Testing Agent in page assistant", href: "devguide/ai-agent/agent-input-output#testing-agent-in-page-assistant" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="Using Knowledge Base for Retrieval-Augmented Generation (RAG)"
-  href="devguide/ai-agent/agent-knowledge-base"
-  description="Learn how to integrate knowledge bases with Agent to implement RAG functionality for enhanced response accuracy."
->
-  <LinkGrid links={[
-    { text: "Adding knowledge bases in Agent", href: "devguide/ai-agent/agent-knowledge-base#integrate-knowledge-base-rag" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="Implement Single-Task Intelligent Agent with Agent"
-  href="devguide/ai-agent/single-task-intelligent-agent"
-  description="Learn how to use Agent to implement specialized single-task intelligent agents for optimized business scenario handling."
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
-</IndexCard>
-
-<IndexCard
-  title="Agent API Exposure"
-  href="devguide/ai-agent/agent-api-exposure"
-  description="Expose Agent capabilities through API interfaces for external system integration."
->
-  <div style={{padding: '20px', textAlign: 'center', color: '#888', fontStyle: 'italic'}}>
-    📝 Coming soon...
-  </div>
-</IndexCard>
-
-</div>
-
-## AI assistant
-Design intelligent workflows visually. Orchestrate business processes with drag-and-drop nodes, blend AI decision-making with human interaction, and automate customer service, approvals, and data processing.
-
-<div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '20px', marginBottom: '40px'}}>
-
-<IndexCard
-  title="Creating AI Assistant Elements"
-  href="devguide/ai-assistant/create-ai-assistant"
-  description="Build production-grade AI applications with multi-agent collaboration, UI interaction, and visual orchestration—no coding required."
->
-  <LinkGrid links={[
-    { text: "What is AI assistant", href: "devguide/ai-assistant/create-ai-assistant#what-is-ai-assistant" },
-    { text: "Features", href: "devguide/ai-assistant/create-ai-assistant#features" },
-    { text: "Creating AI assistant", href: "devguide/ai-assistant/create-ai-assistant#creating-ai-assistant" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="Process Orchestration and Node Configuration"
-  href="devguide/ai-assistant/process-orchestration-node-configuration"
-  description="Master visual workflow design with 8+ node types including AIAgent, routing, conditional logic, and human-AI collaboration nodes."
->
-  <LinkGrid links={[
-    { text: "Visual orchestration basics", href: "devguide/ai-assistant/process-orchestration-node-configuration#visual-orchestration" },
-    { text: "Start node", href: "devguide/ai-assistant/process-orchestration-node-configuration#start-node" },
-    { text: "Router node", href: "devguide/ai-assistant/process-orchestration-node-configuration#routing-decision" },
-    { text: "AIAgent node", href: "devguide/ai-assistant/process-orchestration-node-configuration#ai-agent" },
-    { text: "Action in conversation node", href: "devguide/ai-assistant/process-orchestration-node-configuration#action-in-conversation" },
-    { text: "Action in page node", href: "devguide/ai-assistant/process-orchestration-node-configuration#action-in-page" },
-    { text: "Function node", href: "devguide/ai-assistant/process-orchestration-node-configuration#function" },
-    { text: "IF-ELSE node", href: "devguide/ai-assistant/process-orchestration-node-configuration#if-else" },
-    { text: "Iteration node", href: "devguide/ai-assistant/process-orchestration-node-configuration#iteration" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="AI Assistant Input and Output"
-  href="devguide/ai-assistant/ai-assistant-input-output"
-  description="Configure custom input parameters, control runtime log verbosity, and send structured data to conversations with custom widgets."
->
-  <LinkGrid links={[
-    { text: "Configuring input parameters", href: "devguide/ai-assistant/ai-assistant-input-output#input-args" },
-    { text: "Runtime process log output", href: "devguide/ai-assistant/ai-assistant-input-output#runtime-process-log-output" },
-    { text: "State data output to conversation", href: "devguide/ai-assistant/ai-assistant-input-output#state-data-output" },
-    { text: "Node output configuration", href: "devguide/ai-assistant/ai-assistant-input-output#message-output" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="AI Assistant Runtime State"
-  href="devguide/ai-assistant/ai-assistant-state"
-  description="Leverage runtime state as the AI's 'memory bank' for context preservation, multi-turn conversations, and error recovery."
->
-  <LinkGrid links={[
-    { text: "State data storage repository", href: "devguide/ai-assistant/ai-assistant-state#state-data-storage-repository" },
-    { text: "Runtime state data content", href: "devguide/ai-assistant/ai-assistant-state#state-data-content" },
-    { text: "Data usage methods", href: "devguide/ai-assistant/ai-assistant-state#data-usage-methods" },
-    { text: "Data flow and inter-node transfer", href: "devguide/ai-assistant/ai-assistant-state#data-flow" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="AI Assistant Events"
-  href="devguide/ai-assistant/ai-assistant-event"
-  description="Subscribe to node execution, tool call, and human interaction events in both frontend pages and backend services."
->
-  <LinkGrid links={[
-    { text: "Event type overview", href: "devguide/ai-assistant/ai-assistant-event#event-type-overview" },
-    { text: "Frontend page events", href: "devguide/ai-assistant/ai-assistant-event#frontend-page-events" },
-    { text: "Node execution events", href: "devguide/ai-assistant/ai-assistant-event#node-running-events" },
-    { text: "Tool call events", href: "devguide/ai-assistant/ai-assistant-event#agent-call-tool-events" },
-    { text: "Human interaction events", href: "devguide/ai-assistant/ai-assistant-event#action-in-conversation-events" },
-    { text: "Backend business events", href: "devguide/ai-assistant/ai-assistant-event#backend-business-events" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="Embedding AI Assistant in External Web Pages"
-  href="devguide/ai-assistant/embed-assistant-to-web-page"
-  description="Integrate AI assistant into any web page with deep bidirectional interaction capabilities."
->
-  <LinkGrid links={[
-    { text: "What is an embedded AI assistant", href: "devguide/ai-assistant/embed-assistant-to-web-page#what-is-embedded-ai-assistant" },
-    { text: "Core advantages", href: "devguide/ai-assistant/embed-assistant-to-web-page#core-advantages" },
-    { text: "Integration process", href: "devguide/ai-assistant/embed-assistant-to-web-page#integration-process" },
-    { text: "Creating embedded AI assistant", href: "devguide/ai-assistant/embed-assistant-to-web-page#creating-embedded-ai-assistant" },
-    { text: "Embed into external web page", href: "devguide/ai-assistant/embed-assistant-to-web-page#how-to-embeded-to-a-web-page" },
-    { text: "Authentication", href: "devguide/ai-assistant/embed-assistant-to-web-page#authentication" },
-    { text: "AI invoking web page functions", href: "devguide/ai-assistant/embed-assistant-to-web-page#how-to-call-page-functions" },
-    { text: "Subscribe to AI events", href: "devguide/ai-assistant/embed-assistant-to-web-page#subscribe-ai-events" },
-    { text: "Runtime configuration", href: "devguide/ai-assistant/embed-assistant-to-web-page#runtime-config" },
-    { text: "Send messages to AI", href: "devguide/ai-assistant/embed-assistant-to-web-page#send-message-to-ai" },
-    { text: "JS SDK API reference", href: "devguide/ai-assistant/embed-assistant-to-web-page#js-sdk" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="AI Assistant API Integration"
-  href="devguide/ai-assistant/ai-assistant-api-exposure"
-  description="Expose AI assistant capabilities through API interfaces for integration within applications and external systems."
->
-  <LinkGrid links={[
-    { text: "Send AI message function", href: "devguide/ai-assistant/ai-assistant-api-exposure#send-ai-message" },
-    { text: "Calling AI assistant within application", href: "devguide/ai-assistant/ai-assistant-api-exposure#calling-ai-assistant-within-application" },
-    { text: "External AI assistant calling", href: "devguide/ai-assistant/ai-assistant-api-exposure#external-ai-assistant-calling" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="Welcome Message and Conversation History"
-  href="devguide/ai-assistant/welcome-message-and-opening"
-  description="Configure welcome messages, opening statements, and manage conversation history for better user engagement and context continuity."
->
-  <LinkGrid links={[
-    { text: "Welcome message configuration", href: "devguide/ai-assistant/welcome-message-and-opening#welcome-message-configuration" },
-    { text: "Preamble configuration", href: "devguide/ai-assistant/welcome-message-and-opening#preamble-configuration" },
-    { text: "Conversation history management", href: "devguide/ai-assistant/ai-conversation-history#start-and-managing-conversation" },
-    { text: "Using historical conversations", href: "devguide/ai-assistant/ai-conversation-history#using-historical-conversations" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="Conversational Multi-Task AI Assistant"
-  href="devguide/ai-assistant/develop-conversational-multi-task-ai-assistant"
-  description="Complete tutorial: Build an AI assistant with intelligent routing, multiple agents, and automated document generation."
->
-  <LinkGrid links={[
-    { text: "Writing Agent development", href: "devguide/ai-assistant/develop-conversational-multi-task-ai-assistant#writing-agent" },
-    { text: "Customer Service Agent with knowledge base", href: "devguide/ai-assistant/develop-conversational-multi-task-ai-assistant#customer-service-agent" },
-    { text: "Solution Agent for quotations", href: "devguide/ai-assistant/develop-conversational-multi-task-ai-assistant#solution-agent" },
-    { text: "Process orchestration and integration", href: "devguide/ai-assistant/develop-conversational-multi-task-ai-assistant#developing-ai-assistant" }
-  ]} />
-</IndexCard>
-
-<IndexCard
-  title="Human-AI Collaborative Enterprise Assistant"
-  href="devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant"
-  description="Build a sophisticated AI grading system demonstrating deep UI integration, event-driven collaboration, and human oversight."
->
-  <LinkGrid links={[
-    { text: "Product core features", href: "devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant#product-core-features-overview" },
-    { text: "Deep integration with frontend", href: "devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant#deep-integration-of-ai-with-frontend" },
-    { text: "Human-machine collaboration design", href: "devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant#human-machine-collaboration-node-design" },
-    { text: "AI grading case study", href: "devguide/ai-assistant/develop-human-ai-collaboration-enterprise-assistant#demonstrating-collaboration-features-through-ai-grading-case-study" }
-  ]} />
-</IndexCard>
-
+<div style={{padding: '40px', textAlign: 'center', color: '#888', fontStyle: 'italic', border: '1px dashed #ccc', borderRadius: '8px', marginBottom: '40px'}}>
+  📝 English version coming soon... Please refer to the <a href="/zh/docs/devguide#ai-agent">Chinese version</a> for the latest content.
 </div>
 
 ## Data modeling
@@ -1578,6 +1327,18 @@ Build secure user systems with flexible authentication and authorization. Suppor
   ]} />
 </IndexCard>
 
+<IndexCard
+  title="Workspace App Guides"
+  href="devguide/user-and-permission/wechat-work-app-guide"
+  description="Add JitAI applications to enterprise workspaces and configure password-free login and mobile access."
+>
+  <LinkGrid links={[
+    { text: "WeCom workspace app guide", href: "devguide/user-and-permission/wechat-work-app-guide" },
+    { text: "DingTalk workspace app guide", href: "devguide/user-and-permission/dingtalk-workspace-app-guide" },
+    { text: "Feishu workspace app guide", href: "devguide/user-and-permission/feishu-workspace-app-guide" }
+  ]} />
+</IndexCard>
+
 </div>
 
 ## Business logic development
@@ -1653,7 +1414,7 @@ Implement powerful business logic with visual programming. Handle complex rules,
     { text: "Model events", href: "devguide/business-logic-development/event-handling#model-events" },
     { text: "Approval events", href: "devguide/business-logic-development/event-handling#approval-events" },
     { text: "Custom events", href: "devguide/business-logic-development/event-handling#custom-events" },
-    { text: "AI Assistant events", href: "devguide/business-logic-development/event-handling#ai-assistant-events" },
+    { text: "AI Agent events", href: "devguide/business-logic-development/event-handling" },
     { text: "Agent tool call events", href: "devguide/business-logic-development/event-handling#agent-tool-call-events" },
     { text: "Replacing event internal functions with service functions", href: "devguide/business-logic-development/event-handling#replacing-event-internal-functions-with-service-functions" },
     { text: "Enabling events", href: "devguide/business-logic-development/event-handling#enabling-events" },
@@ -1976,7 +1737,6 @@ Expose application capabilities as APIs—generate standard interfaces, manage p
         { text: "API Authorization for Data Models", href: "devguide/api-exposure/api-exposure-examples-for-various-elements#data-model-api-authorization" },
         { text: "API Authorization for Large Language Model Functions", href: "devguide/api-exposure/api-exposure-examples-for-various-elements#large-language-model-function-api-authorization" },
         { text: "API Authorization for AI Agents", href: "devguide/api-exposure/api-exposure-examples-for-various-elements#agent-api-authorization" },
-        { text: "API Authorization for AI Assistants", href: "devguide/api-exposure/api-exposure-examples-for-various-elements#ai-assistant-api-authorization" },
         { text: "API Authorization for Approval Processes", href: "devguide/api-exposure/api-exposure-examples-for-various-elements#approval-process-api-authorization" }
     ]} />
 </IndexCard>
@@ -2175,7 +1935,8 @@ Master complex architectures and best practices through real-world scenarios—i
   <LinkGrid links={[
     { text: "Local Development and Debugging", href: "devguide/advanced-guide/local-development-and-debugging" },
     { text: "Team Collaborative Development", href: "devguide/advanced-guide/team-collaborative-development" },
-    { text: "Application Layer Stability Guarantee", href: "devguide/advanced-guide/application-layer-stability-guarantee" }
+    { text: "Application Layer Stability Guarantee", href: "devguide/advanced-guide/application-layer-stability-guarantee" },
+    { text: "Frontend Debugging Guide", href: "devguide/advanced-guide/frontend-debugging-guide" }
   ]} />
 </IndexCard>
 
@@ -2196,7 +1957,8 @@ Master complex architectures and best practices through real-world scenarios—i
   description="Build advanced data analysis systems with JitORM—implement multi-dimensional aggregations and automated business rules."
 >
   <LinkGrid links={[
-    { text: "Business Entity Modeling and Data Analysis", href: "devguide/advanced-guide/business-entity-modeling-and-data-analysis" }
+    { text: "Business Entity Modeling and Data Analysis", href: "devguide/advanced-guide/business-entity-modeling-and-data-analysis" },
+    { text: "Model Performance Optimization", href: "devguide/advanced-guide/model-performance-optimization" }
   ]} />
 </IndexCard>
 

@@ -18,14 +18,14 @@ JitAI automatically provisions three built-in portals for every new application:
 Users can switch between available portals using the portal selector located in the upper-left corner of any portal interface. The developer portal serves as a representative example of this functionality.
 
 ### Developer portal
-The developer portal provides a comprehensive development environment exclusively for application developers. Within this portal, developers can access [JitAI Development Tools](/docs/devguide/development-tool-and-publish-service/visual-development-tool) to execute various development tasks, such as configuring role-based portal access, building system functionality, and managing application settings.
+The developer portal provides a comprehensive development environment exclusively for application developers. Within this portal, developers can access [JitAI Development Tools](../development-tool-and-publish-service/visual-development-tool) to execute various development tasks, such as configuring role-based portal access, building system functionality, and managing application settings.
 
 All portal navigation menus—except for the developer portal itself—are configured by developers through this centralized development interface.
 
 ### Manager portal
 The manager portal is designed for users with administrative privileges, enabling them to oversee application management tasks including organizational structure configuration, role management, and user administration. Developers retain the ability to customize this portal according to specific requirements.
 
-Upon application creation, the system automatically generates an administrator account with default credentials: username `admin123` and password `admin123`. For security purposes, it is strongly recommended that developers update these default credentials immediately after first login through the [personal information](/docs/devguide/development-tool-and-publish-service/visual-development-tool#profile) settings.
+Upon application creation, the system automatically generates an administrator account with default credentials: username `admin123` and password `admin123`. For security purposes, it is strongly recommended that developers update these default credentials immediately after first login through the [personal information](../development-tool-and-publish-service/visual-development-tool#profile) settings.
 
 :::tip Organizational Roles vs Application Roles
 `Organizational roles` correspond to users' positions within the enterprise organizational hierarchy, while `Application roles` in JitAI applications define users' permissions within the application system. Although organizational roles and application roles are conceptually similar, they do not have a strict one-to-one correspondence. For instance, a regular employee can be assigned an application administrator role to manage a specific application system.
@@ -119,7 +119,7 @@ The same page may be utilized by multiple portal menus. When accessed from diffe
 Developers can expand the `More` button on the right side of the menu item, click the `Page Variables` button, and assign values to page variables in the resulting dialog.
 
 :::warning
-Developers must first declare [page variables](/docs/devguide/shell-and-page/generic-page#page-variables) within the page. If no variables are declared in the page, page variable assignment cannot be configured in the portal.
+Developers must first declare [page variables](./generic-page#page-variables) within the page. If no variables are declared in the page, page variable assignment cannot be configured in the portal.
 :::
 
 ### Rewriting menu pages
@@ -161,7 +161,7 @@ When developers disable the `Display in portal switch menu` option in `Layout De
 When an application contains multiple portals, developers can configure order values in `Layout Design` to control the display sequence of each portal in the portal selector menu.
 
 ## Managing common features entries
-Every newly created portal includes a standard set of common features entries: `Submit Request`, `Approval Center`, `Create (Only effective on PC)`. The `Create` entry provides simplified module creation capabilities, though with reduced functionality compared to the comprehensive [Visual Development Tool](/docs/devguide/development-tool-and-publish-service/visual-development-tool). All entries can be selectively enabled or disabled through the `Layout Design` configuration.
+Every newly created portal includes a standard set of common features entries: `Submit Request`, `Approval Center`, `Create (Only effective on PC)`. The `Create` entry provides simplified module creation capabilities, though with reduced functionality compared to the comprehensive [Visual Development Tool](../development-tool-and-publish-service/visual-development-tool). All entries can be selectively enabled or disabled through the `Layout Design` configuration.
 
 ![Portal Common Features Entries](./imgs/portal-common-function-entry.png "Portal Common Features Entries")
 
@@ -182,11 +182,11 @@ The `Profile` entry grants users access to profile management functionality, inc
 ![Profile](./imgs/profile-functions.gif "Profile")
 
 ## Enabling AI assistant {#integrating-ai-assistants}
-JitAI provides native [AI Assistant](/docs/devguide/ai-assistant/create-ai-assistant) integration capabilities, allowing users to interact with intelligent assistants directly through the portal interface. This section offers a high-level overview; detailed implementation guidance is available in [Using AI Assistant in Generic Portals](/docs/devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals).
+JitAI provides native [AI Assistant](../ai-assistant/create-ai-assistant) integration capabilities, allowing users to interact with intelligent assistants directly through the portal interface. This section offers a high-level overview; detailed implementation guidance is available in [Using AI Assistant in Generic Portals](../using-ai-in-portals-and-pages/using-ai-assistants-in-portals).
 
 ![Portal Integrate AI Assistant](./imgs/portal-integrate-ai-assistant.gif "Portal Integrate AI Assistant")
 
-AI assistant integration is accomplished through the portal configuration interface: navigate to the `Enable AI Assistant` tab, activate the integration toggle, and select the desired [AI Assistant](/docs/devguide/ai-assistant/create-ai-assistant) for portal embedding.
+AI assistant integration is accomplished through the portal configuration interface: navigate to the `Enable AI Assistant` tab, activate the integration toggle, and select the desired [AI Assistant](../ai-assistant/create-ai-assistant) for portal embedding.
 
 ![AI Assistant Effect in Portal](./imgs/ai-assistant-effect-in-portal.png "AI Assistant Effect in Portal")
 

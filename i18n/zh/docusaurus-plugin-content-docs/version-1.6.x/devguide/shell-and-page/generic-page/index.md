@@ -23,7 +23,7 @@ JitAI为页面元素提供了可视化拖拽式的页面编辑器，开发者可
 
 页面编辑器总体布局分为四个区域：工具栏、画布、组件配置面板、事件面板。
 
-JitAI开发框架提供了丰富的组件库，每种组件的配置项和事件各有不同，开发者可以参考[在页面中使用功能组件](/docs/devguide/using-functional-components-in-pages)，了解每种组件详细用法。
+JitAI开发框架提供了丰富的组件库，每种组件的配置项和事件各有不同，开发者可以参考[在页面中使用功能组件](../using-functional-components-in-pages)，了解每种组件详细用法。
 
 ## 在页面中集成AI助理 {#integrating-ai-assistants-in-pages}
 页面支持集成AI助理，提供智能对话和辅助功能，增强用户体验。
@@ -272,8 +272,8 @@ JitAI已经内置了对移动端的适配，可以在移动端页面编辑器中
 移动端页面编辑器和PC端页面编辑器在功能上没有区别，配置/事件/函数/页面变量等操作和PC端页面编辑器完全一致。
 
 ## 在页面中集成AI助理 {#enabling-ai-assistant}
-JitAI支持在页面中直接集成[AI助理](/docs/devguide/ai-assistant/create-ai-assistant)，用户在访问页面时可以与AI助理进行交互。
+JitAI支持在页面中直接集成[AI助理](../ai-assistant/create-ai-assistant)，用户在访问页面时可以与AI助理进行交互。
 
 ![在页面中添加AI助理](./imgs/add-ai-assistant-to-page.gif)
 
-开发者在页面编辑器顶部打开`AI助理`开关，在弹出的列表中选择一个[AI助理](/docs/devguide/ai-assistant/create-ai-assistant)，即可在页面中集成AI助理。
+开发者在页面编辑器顶部打开`AI助理`开关，在弹出的列表中选择一个[AI助理](../ai-assistant/create-ai-assistant)，即可在页面中集成AI助理。

@@ -43,5 +43,5 @@ Knowledge bases support two integration modes:
 
 ## Using knowledge base in agent
 
-For detailed integration configuration and usage instructions, refer to [Integrating Knowledge Base for Retrieval-Augmented Generation (RAG)](../ai-agent/agent-knowledge-base#integrate-knowledge-base-rag).
+For detailed integration configuration and usage instructions, refer to [Integrating Knowledge Base for Retrieval-Augmented Generation (RAG)](../ai-agent/agent-knowledge-base).
 

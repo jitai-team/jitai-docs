@@ -16,7 +16,7 @@ JitAI支持多种缓存类型，包括 Redis、SQLite 和 TongRDS，能够覆盖
 
 ![参数配置](./img/parameter-configuration.png)
 
-弹出参数配置面板，按提示填写连接信息并保存。生产环境建议将连接参数通过环境变量注入，避免把密码等敏感信息写入仓库，参考：[数据库连接安全配置](/docs/devguide/data-modeling/manage-database-connections#database-connection-security-configuration)。
+弹出参数配置面板，按提示填写连接信息并保存。生产环境建议将连接参数通过环境变量注入，避免把密码等敏感信息写入仓库，参考：[数据库连接安全配置](./data-modeling/manage-database-connections#database-connection-security-configuration)。
 
 ![测试连接](./img/test-connection.png)
 

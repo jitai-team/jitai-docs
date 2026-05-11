@@ -18,10 +18,10 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 ### Writing Agent
 
-Create an AI Agent named **Writing Agent**. For the creation process, refer to: [Creating AI Agent](/docs/devguide/ai-agent/create-ai-agent).
+Create an AI Agent named **Writing Agent**. For the creation process, refer to: [Creating AI Agent](../ai-agent/create-ai-agent).
 
 After creation, configure the following:
-- **Large Language Model**: Configure a [large language model](/docs/devguide/ai-llm/create-ai-llm) for the Agent
+- **Large Language Model**: Configure a [large language model](../ai-llm/create-ai-llm) for the Agent
 - **Agent Description**: "Expert specializing in creative writing, article composition, and content optimization."
 - **Agent Prompt**:
 ```markdown
@@ -33,14 +33,14 @@ After creation, configure the following:
 
 ### Customer Service Agent
 
-Create a knowledge base element named **Customer Service Knowledge**. For the creation process, refer to: [Creating Knowledge Base](/docs/devguide/knowledge-base/create-knowledge-elements).
+Create a knowledge base element named **Customer Service Knowledge**. For the creation process, refer to: [Creating Knowledge Base](../knowledge-base/create-knowledge-elements).
 
-After creation, add <a href="https://jit-www.oss-accelerate.aliyuncs.com/docs/ai-multi-task-demo/customer-service-knowledge-en.md">Customer Service Knowledge Examples</a>. For the addition method, refer to: [Knowledge Base Document Management](/docs/devguide/knowledge-base/knowledge-base-document-management).
+After creation, add <a href="https://jit-www.oss-accelerate.aliyuncs.com/docs/ai-multi-task-demo/customer-service-knowledge-en.md">Customer Service Knowledge Examples</a>. For the addition method, refer to: [Knowledge Base Document Management](../knowledge-base/knowledge-base-document-management).
 
-Create an AI Agent named **Customer Service Agent**. For the creation process, refer to: [Creating AI Agent](/docs/devguide/ai-agent/create-ai-agent).
+Create an AI Agent named **Customer Service Agent**. For the creation process, refer to: [Creating AI Agent](../ai-agent/create-ai-agent).
 
 After creation, configure the following:
-- **Large Language Model**: Configure a [large language model](/docs/devguide/ai-llm/create-ai-llm) for the Agent
+- **Large Language Model**: Configure a [large language model](../ai-llm/create-ai-llm) for the Agent
 - **Agent Description**: "Intelligent customer service agent capable of addressing various common customer inquiries and providing comprehensive support."
 - **Agent Prompt**:
 ```markdown
@@ -59,18 +59,18 @@ Incorrect answer content example: "The method for xxxx has been provided, please
 ```
 ![customer-service-agent](./img/customer-service-agent.png)
 
-- **Knowledge Base**: Add **Customer Service Knowledge** as the knowledge base for this Agent. For the addition method, refer to [Adding Knowledge Base to Agent](/docs/devguide/ai-agent/agent-knowledge-base)
+- **Knowledge Base**: Add **Customer Service Knowledge** as the knowledge base for this Agent. For the addition method, refer to [Adding Knowledge Base to Agent](../ai-agent/agent-knowledge-base)
 ![customer-service-agent-knowledge](./img/customer-service-agent-knowledge.png)
 
 ### Solution Agent
-Create a knowledge base element named **Quotation Knowledge**. For the creation process, refer to: [Creating Knowledge Base](/docs/devguide/knowledge-base/create-knowledge-elements).
+Create a knowledge base element named **Quotation Knowledge**. For the creation process, refer to: [Creating Knowledge Base](../knowledge-base/create-knowledge-elements).
 
-After creation, add <a href="https://jit-www.oss-accelerate.aliyuncs.com/docs/ai-multi-task-demo/quotetion-knowledge-en.md">Quotation Knowledge Examples</a>. For the addition method, refer to: [Knowledge Base Document Management](/docs/devguide/knowledge-base/knowledge-base-document-management).
+After creation, add <a href="https://jit-www.oss-accelerate.aliyuncs.com/docs/ai-multi-task-demo/quotetion-knowledge-en.md">Quotation Knowledge Examples</a>. For the addition method, refer to: [Knowledge Base Document Management](../knowledge-base/knowledge-base-document-management).
 
-Create an AI Agent named **Solution Agent**. For the creation process, refer to: [Creating AI Agent](/docs/devguide/ai-agent/create-ai-agent).
+Create an AI Agent named **Solution Agent**. For the creation process, refer to: [Creating AI Agent](../ai-agent/create-ai-agent).
 
 After creation, configure the following:
-- **Large Language Model**: Configure a [large language model](/docs/devguide/ai-llm/create-ai-llm) for the Agent
+- **Large Language Model**: Configure a [large language model](../ai-llm/create-ai-llm) for the Agent
 - **Agent Description**:
 ```text
 Enterprise application solution design and cost estimation expert, developing solutions and quotations for enterprise application systems across various industries. Core areas include but are not limited to: Management Information Systems (such as OA, ERP, CRM) and Manufacturing Execution Systems (such as MES), specializing in cross-system integration, data collection and monitoring, and other complex scenarios.
@@ -126,7 +126,7 @@ Output complete quotation content, not a summary statement.
 ```
 ![quotetion-agent](./img/quote-agent.png)
 
-- **Knowledge Base**: Add **Quotation Knowledge** as the knowledge base for this Agent. For the addition method, refer to [Adding Knowledge Base to Agent](/docs/devguide/ai-agent/agent-knowledge-base).
+- **Knowledge Base**: Add **Quotation Knowledge** as the knowledge base for this Agent. For the addition method, refer to [Adding Knowledge Base to Agent](../ai-agent/agent-knowledge-base).
 ![quotetion-agent-knowledge](./img/quote-agent-Knowledge.png)
 
 
@@ -155,7 +155,7 @@ Develop an AI assistant with the following process design:
    - **Solution Agent**: Analyze requirements and generate quotation content. Node binds Solution Agent.
 ![quote-agent-setting](./img/quote-agent-setting.png)
 
-3. **Solution Agent** → **Confirm Quotation** ([Dialog Human-Machine Interaction Node](/docs/devguide/ai-assistant/process-orchestration-node-configuration#action-in-conversation)): Wait for manual confirmation after quotation completion.
+3. **Solution Agent** → **Confirm Quotation** ([Dialog Human-Machine Interaction Node](./process-orchestration-node-configuration#action-in-conversation)): Wait for manual confirmation after quotation completion.
 The Confirm Quotation node displays the quotation file content output by the Solution Agent, using Markdown control for rendering.
 ![quotetion-agent](./img/quote-confirm.png)
 
@@ -173,9 +173,9 @@ After confirmation, pass in quotation file content and automatically generate Wo
 
 ### Implementing Generate Quotation Function
 
-Create a service named **Solution Service**. For the creation method, refer to: [Creating Service Elements](/docs/devguide/business-logic-development/creating-service-elements).
+Create a service named **Solution Service**. For the creation method, refer to: [Creating Service Elements](../business-logic-development/creating-service-elements).
 
-Create a new function named **Generate Quotation** (generateQuotation) in this service, accepting one parameter: **Quotation Content** (quotationContent). This function will generate a Word file based on the quotation file content and return Word file information. For the function creation method, refer to: [Creating Service Functions](/docs/devguide/business-logic-development/creating-service-elements#create-service-functions).
+Create a new function named **Generate Quotation** (generateQuotation) in this service, accepting one parameter: **Quotation Content** (quotationContent). This function will generate a Word file based on the quotation file content and return Word file information. For the function creation method, refer to: [Creating Service Functions](../business-logic-development/creating-service-elements#create-service-functions).
 
 Service source code as follows:
 ```python
@@ -444,7 +444,7 @@ class SolutionSvc(NormalService):
 
 ```
 
-At this point, all components of the assistant have been developed. We can use this assistant in portals. For configuration method, refer to: [Using AI Assistant in Portals](/docs/devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals).
+At this point, all components of the assistant have been developed. We can use this assistant in portals. For configuration method, refer to: [Using AI Assistant in Portals](../using-ai-in-portals-and-pages/using-ai-assistants-in-portals).
 
 :::tip Tip
 An AI assistant can handle multiple different types of tasks. It is recommended to enable independent conversation processing flows for each task type.

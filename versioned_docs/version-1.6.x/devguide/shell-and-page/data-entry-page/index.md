@@ -7,11 +7,11 @@ description: "Build data entry pages for form collection. Personnel, vehicle, eq
 In business scenarios such as personnel registration, vehicle registration, and equipment registration, users need to fill out forms and submit data to the backend for processing. JitAI provides built-in data entry pages that help developers quickly implement form data collection functionality.
 
 ## Creating a data entry page {#creating-data-entry-page}
-The process for creating data entry pages is essentially the same as [creating generic pages](/docs/devguide/shell-and-page/generic-page), except that data entry pages must be bound to a [data table model](/docs/devguide/data-modeling/data-table-model) to store user-submitted data.
+The process for creating data entry pages is essentially the same as [creating generic pages](./generic-page), except that data entry pages must be bound to a [data table model](../data-modeling/data-table-model) to store user-submitted data.
 
 ![Creating Data Entry Page](./imgs/create-data-entry-page.png "Creating Data Entry Page")
 
-When creating a page, developers can select `Data Entry Page` as the page type and choose the target [data table model](/docs/devguide/data-modeling/data-table-model) in the `Select Data Table` section. After clicking `Confirm`, the visual editor will open automatically.
+When creating a page, developers can select `Data Entry Page` as the page type and choose the target [data table model](../data-modeling/data-table-model) in the `Select Data Table` section. After clicking `Confirm`, the visual editor will open automatically.
 
 ## Configuring viewable and editable fields {#configuring-viewable-editable-fields}
 When certain fields should not be exposed to users, developers can configure which fields are viewable. When fields should be visible but not editable, developers can configure which fields are editable.
@@ -41,7 +41,7 @@ Data entry pages are out-of-the-box page types provided by JitAI that developers
 
 ![Convert to Generic Page](./imgs/convert-to-generic-page.gif "Convert to Generic Page")
 
-Developers can click the `Convert to Generic Page` button in the upper-right corner of the page editor to convert the page to a generic page. For generic page development methods, refer to [Component-based Page Development](/docs/devguide/shell-and-page/generic-page).
+Developers can click the `Convert to Generic Page` button in the upper-right corner of the page editor to convert the page to a generic page. For generic page development methods, refer to [Component-based Page Development](./generic-page).
 
 :::warning
 Once converted to a generic page, it cannot be reverted to the original `Data Entry Page` type.

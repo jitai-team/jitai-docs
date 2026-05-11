@@ -23,7 +23,7 @@ JitAI provides a visual drag-and-drop page editor for page elements. Developers 
 
 The page editor layout consists of four main areas: toolbar, canvas, component configuration panel, and event panel.
 
-The JitAI development framework provides a comprehensive component library. Each component has distinct configuration options and events. Developers can refer to [Using Functional Components in Pages](/docs/devguide/using-functional-components-in-pages) to understand the detailed usage of each component.
+The JitAI development framework provides a comprehensive component library. Each component has distinct configuration options and events. Developers can refer to [Using Functional Components in Pages](../using-functional-components-in-pages) to understand the detailed usage of each component.
 
 ## Integrating AI assistant in pages {#integrating-ai-assistants-in-pages}
 Pages support AI assistant integration, providing intelligent dialogue and auxiliary functions to enhance user experience.
@@ -272,8 +272,8 @@ Developers can select `Mobile` as the page terminal type when creating pages (PC
 The mobile page editor maintains functional parity with the PC page editor. Configuration, events, functions, page variables, and other operations remain completely consistent between mobile and PC page editors.
 
 ## Enabling AI assistant for page {#enabling-ai-assistant}
-JitAI supports direct integration of [AI Assistants](/docs/devguide/ai-assistant/create-ai-assistant) within pages, enabling user interaction with AI assistants when accessing pages.
+JitAI supports direct integration of [AI Assistants](../ai-assistant/create-ai-assistant) within pages, enabling user interaction with AI assistants when accessing pages.
 
 ![Enable AI Assistant for Page](./imgs/add-ai-assistant-to-page.gif "Enable AI Assistant for Page")
 
-Developers enable the `AI Assistant` at the top of the page editor, select an [AI Assistant](/docs/devguide/ai-assistant/create-ai-assistant) from the popup list, and enable the AI assistant for the page.
+Developers enable the `AI Assistant` at the top of the page editor, select an [AI Assistant](../ai-assistant/create-ai-assistant) from the popup list, and enable the AI assistant for the page.

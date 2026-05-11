@@ -16,7 +16,7 @@ Open the application's Developer Portal "Element Directory Tree", click `+` -> `
 
 ![Parameter Configuration](./img/parameter-configuration.png)
 
-A parameter configuration panel will appear. Fill in the connection information as prompted and save. For production environments, it's recommended to inject connection parameters through environment variables to avoid writing sensitive information like passwords into the repository. Refer to: [Database Connection Security Configuration](/docs/devguide/data-modeling/manage-database-connections#database-connection-security-configuration).
+A parameter configuration panel will appear. Fill in the connection information as prompted and save. For production environments, it's recommended to inject connection parameters through environment variables to avoid writing sensitive information like passwords into the repository. Refer to: [Database Connection Security Configuration](./data-modeling/manage-database-connections#database-connection-security-configuration).
 
 ![Test Connection](./img/test-connection.png)
 

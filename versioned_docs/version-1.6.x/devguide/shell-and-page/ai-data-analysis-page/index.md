@@ -38,13 +38,13 @@ We provide visual development tools, and developers only need to make some simpl
 Specify the data tables and data conditions that can be analyzed. This configuration item controls the data allowed for analysis on this page, thereby controlling the data range that users can statistically analyze.
 
 ### Configure LLM for AI data analysis assistant
-We have built-in a specialized AI Assistant for data analysis on this page. This assistant needs to access the system database and call functions on the page to draw charts during runtime. We need to configure a [Large Language Model](/docs/devguide/ai-llm/create-ai-llm) that supports tool calling. We recommend using qwen-max-latest from Alibaba Cloud Bailian platform.<a href="https://bailian.console.aliyun.com/?tab=model#/api-key" target="_blank">Apply for API Key</a>
+We have built-in a specialized AI Assistant for data analysis on this page. This assistant needs to access the system database and call functions on the page to draw charts during runtime. We need to configure a [Large Language Model](../ai-llm/create-ai-llm) that supports tool calling. We recommend using qwen-max-latest from Alibaba Cloud Bailian platform.<a href="https://bailian.console.aliyun.com/?tab=model#/api-key" target="_blank">Apply for API Key</a>
 
 ### AI assistant advanced configuration
-- Support custom [Welcome Message and Opening](/docs/devguide/ai-assistant/welcome-message-and-opening)
-- Support custom [Output Process Log](/docs/devguide/ai-assistant/ai-assistant-input-output#message-output)
+- Support custom [Welcome Message and Opening](../ai-assistant/welcome-message-and-opening)
+- Support custom [Output Process Log](../ai-assistant/ai-assistant-input-output#message-output)
 
-For more information about AI assistants, please read the [AI Assistant](/docs/devguide/ai-assistant) related documentation.
+For more information about AI assistants, please read the [AI Assistant](../ai-assistant) related documentation.
 
 ## Full code development
 Click the <span style={{ display: "inline-flex", verticalAlign: "middle", margin: "0 !important", height: '30px', width: '40px', alignItems: "center" }}>![Full Code Button](./imgs/code.png)</span> button in the upper right corner of the page editor to switch to source code editing mode.
@@ -89,5 +89,5 @@ In addition to creating in the developer portal, you can also quickly create in 
 Click **Create** → **AI Data Analysis Functions**.This operation will create a new AI data analysis page and simultaneously create a menu in the portal and bind it to the newly added page.
 
 :::tip Tip
-You need to be granted [quick create permissions](/docs/devguide/user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus) to see the quick create entry.
+You need to be granted [quick create permissions](../user-and-permission/role-portal-menu-permissions#specify-accessible-portals-and-menus) to see the quick create entry.
 :::

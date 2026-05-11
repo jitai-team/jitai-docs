@@ -18,9 +18,9 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 ### 写作Agent {#writing-agent}
 
-创建一个命名为**写作Agent**的AI Agent，创建过程参考：[创建AI Agent](/docs/devguide/ai-agent/create-ai-agent)。
+创建一个命名为**写作Agent**的AI Agent，创建过程参考：[创建AI Agent](../ai-agent/create-ai-agent)。
 创建完成后，配置以下内容:
-- **大模型**：为Agent配置一个[大模型](/docs/devguide/ai-llm/create-ai-llm)
+- **大模型**：为Agent配置一个[大模型](../ai-llm/create-ai-llm)
 - **Agent描述**： "专注于作诗、写文章、优化文案的专家"。
 - **Agent提示词**：
 ```markdown
@@ -32,12 +32,12 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 ### 智能客服Agent {#customer-service-agent}
 
-创建一个名为**客服知识库**的知识库元素，创建过程参考：[创建知识库](/docs/devguide/knowledge-base/create-knowledge-elements)。
-创建完成后，添加<a href="https://jit-www.oss-accelerate.aliyuncs.com/docs/ai-multi-task-demo/customer-service-knowledge.md">客服知识示例</a>，添加方式参考：[知识库文档管理](/docs/devguide/knowledge-base/knowledge-base-document-management)。
+创建一个名为**客服知识库**的知识库元素，创建过程参考：[创建知识库](../knowledge-base/create-knowledge-elements)。
+创建完成后，添加<a href="https://jit-www.oss-accelerate.aliyuncs.com/docs/ai-multi-task-demo/customer-service-knowledge.md">客服知识示例</a>，添加方式参考：[知识库文档管理](../knowledge-base/knowledge-base-document-management)。
 
-创建一个命名为**智能客服Agent**的AI Agent，创建过程参考：[创建AI Agent](/docs/devguide/ai-agent/create-ai-agent)。
+创建一个命名为**智能客服Agent**的AI Agent，创建过程参考：[创建AI Agent](../ai-agent/create-ai-agent)。
 创建完成后，配置以下内容:
-- **大模型**：为Agent配置一个[大模型](/docs/devguide/ai-llm/create-ai-llm)
+- **大模型**：为Agent配置一个[大模型](../ai-llm/create-ai-llm)
 - **Agent描述**： "智能客服，能够回答各类客户的常见问题"。
 - **Agent提示词**：
 ```markdown
@@ -56,16 +56,16 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 ```
 ![customer-service-agent](./img/customer-service-agent.png)
 
-- **知识库**：将**客服知识库**添加为该Agent的知识库，添加方式参考[在Agent中添加知识库](/docs/devguide/ai-agent/agent-knowledge-base)
+- **知识库**：将**客服知识库**添加为该Agent的知识库，添加方式参考[在Agent中添加知识库](../ai-agent/agent-knowledge-base)
 ![customer-service-agent-knowledge](./img/customer-service-agent-knowledge.png)
 
 ### 解决方案Agent {#solution-agent}
-创建一个名为**报价知识库**的知识库元素，创建过程参考：[创建知识库](/docs/devguide/knowledge-base/create-knowledge-elements)。
-创建完成后，添加<a href="https://jit-www.oss-accelerate.aliyuncs.com/docs/ai-multi-task-demo/quotetion-knowledge.md">报价知识示例</a>，添加方式参考：[知识库文档管理](/docs/devguide/knowledge-base/knowledge-base-document-management)。
+创建一个名为**报价知识库**的知识库元素，创建过程参考：[创建知识库](../knowledge-base/create-knowledge-elements)。
+创建完成后，添加<a href="https://jit-www.oss-accelerate.aliyuncs.com/docs/ai-multi-task-demo/quotetion-knowledge.md">报价知识示例</a>，添加方式参考：[知识库文档管理](../knowledge-base/knowledge-base-document-management)。
 
-创建一个命名为**解决方案Agent**的AI Agent，创建过程参考：[创建AI Agent](/docs/devguide/ai-agent/create-ai-agent)。
+创建一个命名为**解决方案Agent**的AI Agent，创建过程参考：[创建AI Agent](../ai-agent/create-ai-agent)。
 创建完成后，配置以下内容:
-- **大模型**：为Agent配置一个[大模型](/docs/devguide/ai-llm/create-ai-llm)
+- **大模型**：为Agent配置一个[大模型](../ai-llm/create-ai-llm)
 - **Agent描述**：
 ```text
 企业级应用解决方案设计及成本估算专家，为各行业的企业级应用系统制定解决方案及报价单。核心包括但不限于：管理信息系统（如OA、ERP、CRM）和生产执行系统（如MES），擅长跨系统集成、数据采集与监控等复杂场景。
@@ -121,7 +121,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 ```
 ![quotetion-agent](./img/quote-agent.png)
 
-- **知识库**：将**报价知识库**添加为该Agent的知识库，添加方式参考[在Agent中添加知识库](/docs/devguide/ai-agent/agent-knowledge-base)。
+- **知识库**：将**报价知识库**添加为该Agent的知识库，添加方式参考[在Agent中添加知识库](../ai-agent/agent-knowledge-base)。
 ![quotetion-agent-knowledge](./img/quote-agent-Knowledge.png)
 
 
@@ -150,7 +150,7 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
    - **解决方案Agent**：分析需求，生成报价内容。节点绑定解决方案Agent。
 ![quote-agent-setting](./img/quote-agent-setting.png)
 
-3. **解决方案Agent** → **确认报价单**（[对话区人机交互节点](/docs/devguide/ai-assistant/process-orchestration-node-configuration#action-in-conversation)）：报价完成后等待人工确认。
+3. **解决方案Agent** → **确认报价单**（[对话区人机交互节点](./process-orchestration-node-configuration#action-in-conversation)）：报价完成后等待人工确认。
 确认报价单节点显示报价Agent输出的报价文件内容，使用Markdown控件渲染。
 ![quotetion-agent](./img/quote-confirm.png)
 
@@ -167,9 +167,9 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 
 ### 实现生成报价文件函数
 
-创建一个名为**报价服务**的服务，创建方式参考：[创建服务元素](/docs/devguide/business-logic-development/creating-service-elements)。
+创建一个名为**报价服务**的服务，创建方式参考：[创建服务元素](../business-logic-development/creating-service-elements)。
 
-在该服务中新建一个名为**生成报价文件**(generateQuotetion)的函数，接受一个参数：**报价文件内容**(quotetionContent)。该函数会基于报价文件内容生成一个Word文件，并返回Word文件信息。函数创建方式参考：[创建服务函数](/docs/devguide/business-logic-development/creating-service-elements#create-service-functions)。
+在该服务中新建一个名为**生成报价文件**(generateQuotetion)的函数，接受一个参数：**报价文件内容**(quotetionContent)。该函数会基于报价文件内容生成一个Word文件，并返回Word文件信息。函数创建方式参考：[创建服务函数](../business-logic-development/creating-service-elements#create-service-functions)。
 
 服务源码如下：
 ```python
@@ -438,7 +438,7 @@ class QuoteSvc(NormalService):
 
 ```
 
-至此，该助理的所有内容已开发完成。我们可以在门户中使用该助理，配置方式参考：[门户中使用AI助理](/docs/devguide/using-ai-in-portals-and-pages/using-ai-assistants-in-portals)。
+至此，该助理的所有内容已开发完成。我们可以在门户中使用该助理，配置方式参考：[门户中使用AI助理](../using-ai-in-portals-and-pages/using-ai-assistants-in-portals)。
 
 :::tip 提示
 一个AI助理可以处理多种不同类型的任务，建议为每种任务类型开启独立的对话处理流程。

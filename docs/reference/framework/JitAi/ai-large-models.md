@@ -277,6 +277,37 @@ response = LLMProvider.embedDocuments({
 })
 ```
 
+### embedQuery
+Query vectorization class method of AI large model, used to convert user query text to a vector for similarity search against document vectors.
+
+**Method Signature**
+```python
+@classmethod
+def embedQuery(cls, config: Dict[str, Any]) -> List[float]
+```
+
+#### Parameter Details
+**config parameter (configuration dictionary)**
+
+| Parameter | Type | Native Type | Required | Description |
+|------|------|-------------|------|------|
+| text | Stext | str | Yes | Query text to be vectorized |
+| model | Stext | str | Yes | Vectorization model name, such as `text-embedding-v3` |
+
+#### Return Value
+**Return Type**: List[float], vector representation of the query text.
+
+#### Usage Example
+**Query Vectorization**
+```python
+LLMProvider = app.getElement("llms.MyBailianLLM")
+
+response = LLMProvider.embedQuery({
+    "text": "What is artificial intelligence?",
+    "model": "text-embedding-v3"
+})
+```
+
 ### rerankDocuments
 Document reranking class method of AI large model, used to reorder candidate documents based on query text.
 
@@ -345,4 +376,3 @@ Built-in exponential backoff retry strategy, automatically handles temporary err
 
 ### Error Handling
 Provides standardized error codes, including invalid API keys, quota exceeded, request rate limiting and other common error types.
-

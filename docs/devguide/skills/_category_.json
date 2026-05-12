@@ -1,0 +1,9 @@
+{
+  "label": "Skills",
+  "position": 10,
+  "link": {
+    "type": "generated-index",
+    "slug": "devguide/skills",
+    "description": "Learn what Skills are, how to create and write them, and how to reuse them in AI Agents."
+  }
+}

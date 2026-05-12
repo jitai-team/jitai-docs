@@ -7,16 +7,16 @@ toc_max_heading_level: 4
 
 import VideoPlayer from '@site/src/components/VideoPlayer';
 
-# 使用大模型函数实现多模态AIGC {#implementing-multimodal-aigc}
+# 用百炼万相生成图片和视频内容 {#implementing-multimodal-aigc}
 
 多模态 AIGC（人工智能生成内容）是指利用人工智能技术，根据文本提示词自动生成图像、视频等多种形式内容的能力。JitAI 平台深度集成了多模态生成能力，让开发者能够在应用中轻松实现文生图和文生视频等创新功能。
 
 
 :::tip
-当前版本中，仅支持**阿里云百炼**平台的万相系列模型（Wanx）。使用前请确保已在系统中配置好百炼的 API 密钥。更多大模型厂商的支持正在开发中。
+本文以**阿里云百炼**平台的万相系列模型（Wanx）说明多模态生成配置。使用前请先创建[百炼大模型元素](./create-ai-llm#creating-llm-vendor-elements)并配置 API Key。不同厂商支持的多模态函数和参数范围不同，配置时以函数配置面板中可选模型和参数为准。
 :::
 
-## 百炼 {#bailian}
+## 使用百炼万相生成业务图片和视频 {#bailian}
 
 ### 文生图功能 {#text-to-image}
 
@@ -312,6 +312,3 @@ import VideoPlayer from '@site/src/components/VideoPlayer';
 :::tip
 详细参数说明请参考[通义万相首尾帧生视频官方文档](https://help.aliyun.com/zh/model-studio/image-to-video-by-first-and-last-frame-api-reference)
 :::
-
-## openAI
-敬请期待……

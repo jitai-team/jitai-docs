@@ -46,5 +46,5 @@ Agent 能调用自身应用内的函数，也能连接外部第三方应用。
 
 ## 下一步
 
-- **新手入门**：[最通用的 ReActAgent](./create-react-agent) → 添加[数据模型函数](./agent-tool-data-model) → 在[聊天页面](./agent-chat-page)中测试
+- **新手入门**：先按[从一个业务任务开始搭建可用 Agent](./build-first-usable-agent)完成第一条闭环
 - **有经验**：直接查看 [DeepAgent](./create-deep-agent) / [FlowAgent](./create-flow-agent) 或[运行时扩展](./agent-runtime-extension)

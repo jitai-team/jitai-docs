@@ -1,0 +1,9 @@
+{
+  "label": "AI 文件空间",
+  "position": 11,
+  "link": {
+    "type": "generated-index",
+    "slug": "devguide/ai-file-storage",
+    "description": "了解 AI 文件空间的三种类型、创建方法、组织资料管理，以及如何让 Agent 安全读写文件。"
+  }
+}

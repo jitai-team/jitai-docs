@@ -1,9 +1,9 @@
 {
-  "label": "AI Large Language Model",
+  "label": "AI大模型",
   "position": 8,
   "link": {
     "type": "generated-index",
     "slug": "devguide/ai-llm",
-    "description": "AI large language model integration and usage"
+    "description": "AI 大模型接入、模型配置、函数调用和多模态生成。"
   }
 }

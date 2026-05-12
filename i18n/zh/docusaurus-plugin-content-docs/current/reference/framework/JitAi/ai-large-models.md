@@ -275,6 +275,37 @@ response = LLMProvider.embedDocuments({
 })
 ```
 
+### embedQuery
+AI大模型的查询向量化类方法，用于将用户查询文本转换为向量，常用于和文档向量进行相似度检索。
+
+**方法签名**
+```python
+@classmethod
+def embedQuery(cls, config: Dict[str, Any]) -> List[float]
+```
+
+#### 参数详解
+**config参数（配置字典）**
+
+| 参数 | 类型 | 对应原生类型 | 必填 | 说明 |
+|------|------|-------------|------|------|
+| text | Stext | str | 是 | 要向量化的查询文本 |
+| model | Stext | str | 是 | 向量化模型名称，如`text-embedding-v3` |
+
+#### 返回值
+**返回类型**：List[float]，查询文本对应的向量。
+
+#### 使用示例
+**查询向量化**
+```python
+LLMProvider = app.getElement("llms.MyBailianLLM")
+
+response = LLMProvider.embedQuery({
+    "text": "什么是人工智能？",
+    "model": "text-embedding-v3"
+})
+```
+
 ### rerankDocuments
 AI大模型的文档重排类方法，用于基于查询文本对候选文档进行重新排序。
 
@@ -343,4 +374,3 @@ response = LLMProvider.rerankDocuments({
 
 ### 错误处理
 提供标准化错误码，包括API密钥无效、配额超限、请求频率限制等常见错误类型。
-

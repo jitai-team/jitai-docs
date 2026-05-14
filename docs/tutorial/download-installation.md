@@ -6,7 +6,7 @@ description: "Download and install JitAI for Windows, macOS, and Docker. Complet
 
 # Download and Installation
 
-JitAI offers two installation options: the Desktop Version (available for Windows and macOS) and the Server Version (distributed as Docker images).
+JitAI offers two installation options: the Desktop Version (available for Windows and macOS) and the Server Version (deployed with Docker).
 
 ## Desktop Version
 
@@ -42,60 +42,116 @@ If macOS displays a security warning, click "Done", then navigate to System Sett
 
 ## Server Version
 
-Designed for deploying applications in server environments with multi-threaded processing, clustering capabilities, and high-performance architecture. Suitable for testing and production environments. Supports online development but does not support server-side code debugging. Currently available only as Docker images.
+Designed for running applications in server environments with multi-process execution, clustering support, and high-performance architecture. Suitable for testing and production environments. It also supports online development, but does not support server-side code debugging.
 
-### Installation Steps
+### Quick Installation
 
 1. Install Docker following the [official Docker documentation](https://docs.docker.com/manuals/).
-
-2. Start the JitNode container using the following command:
+2. Make sure Docker Compose is available. JitAI prefers the `docker compose` v2 plugin and is also compatible with legacy `docker-compose`.
+3. Run the one-click installation script:
 
    ```bash
-   docker run -itd --name jit \
-     -p 80:80 \
-     -p 3306:3306 \
-     --init --privileged \
-     -v /your/local/path:/data/JitNode \
-     jitaiplatform/jit
+   curl -fsSL https://setup.jit.pro/install-jitai.sh | sudo sh
    ```
-   Replace `/your/local/path` with your actual host directory path (e.g., `/Users/username/JitNode` or `/opt/jitnode`).
 
-   :::tip For Chinese Users
-   Users in China can use the Alibaba Cloud mirror for faster downloads:
-   ```bash
-   docker run -itd --name jit \
-     -p 80:80 \
-     -p 3306:3306 \
-     --init --privileged \
-     -v /your/local/path:/data/JitNode \
-     registry.cn-hangzhou.aliyuncs.com/jitpro/jit
-   ```
-   :::
+   The script downloads the deployment package, checks Docker and Docker Compose, and then starts MySQL, Redis, the configuration initialization service, and the JitAI platform services.
 
-3. Open your browser and navigate to `http://{server-IP-address}:80`, then complete the activation process. See [Developer Team Management](../devguide/installation-activation/developer-team-management) for detailed instructions.
+4. Open your browser and navigate to `http://{server-IP-address}:80`, then complete the activation process. See [Developer Team Management](../devguide/installation-activation/developer-team-management) for detailed instructions.
 
+### Default Directories
 
-### Container Parameters
+These directories are useful when you need to back up data, inspect runtime files, or customize the server deployment.
 
-| Required | Parameter | Description |
-|---------|------|------|
-| **Required** | `--name {ContainerName}` | Container name |
-| **Required** | `-p {WebPort}:80` | External port for the web service |
-| **Required** | `-p {MySQLPort}:3306` | External port for JitNode's built-in MySQL database (default data storage for new applications) |
-| **Optional** | `-p {RedisPort}:6379` | External port for JitNode's built-in Redis cache |
-| **Optional** | `-e NODE_ADDRESS={URL}` | Node address for cluster deployments. Cluster nodes use this address to forward requests. Can be configured later via the admin interface |
-| **Optional** | `-v {LocalDir}:/data/JitNode` | Volume mount for persistent data including license information, MySQL data, Redis data, node.json, and runtime configurations. Essential for data backup and migration |
+| Purpose | Path |
+| --- | --- |
+| Deployment package directory | `/opt/jitai` |
+| Platform configuration directory | `/data/JitNode/home` |
+| Platform runtime environments and application source | `/data/JitNode/home/environs` |
+| MySQL data directory | `/data/JitNode/databases/mysql/db` |
+| Redis data directory | `/data/JitNode/databases/redis/db` |
 
-```bash title="Example with all parameters"
-docker run -itd --name jitnode \
-  -p 80:80 \
-  -p 3306:3306 \
-  -p 6379:6379 \
-  -e NODE_ADDRESS=http://your-server-ip:80 \
-  --init --privileged \
-  -v /your/local/path:/data/JitNode \
-  jitaiplatform/jit
+### Advanced Server Configuration
+
+If you need custom ports, passwords, data directories, or Compose files, use the deployment package and adjust the configuration files directly.
+
+JitAI server deployment usually has two modes:
+
+- **Full-stack mode**: includes MySQL, Redis, the configuration initialization service, and the JitAI platform services
+- **Production mode**: deploys only the JitAI platform services and requires external MySQL, Redis, and an existing `node.json`
+
+In these scenarios, the main files to adjust are:
+
+- `deploy/.env`
+- `deploy/docker-compose.yml`
+- `deploy/docker-compose.prod.yml`
+- `/data/JitNode/home/node.json`
+
+### Environment Variables
+
+Docker Compose automatically reads `deploy/.env`.
+
+- **Full-stack mode** uses MySQL, Redis, and app-level variables.
+- **Production mode** uses app-level variables only. MySQL and Redis connection information is maintained in `/data/JitNode/home/node.json`.
+
+| Variable | Used In | Description |
+| --- | --- | --- |
+| `MYSQL_ROOT_PASSWORD` | Full-stack mode | Root password for the built-in MySQL service |
+| `MYSQL_USER` | Full-stack mode | MySQL username |
+| `MYSQL_PORT` | Full-stack mode | Exposed host port for MySQL |
+| `MYSQL_DATA_DIR` | Full-stack mode | Host directory for MySQL data |
+| `REDIS_PASSWORD` | Full-stack mode | Password for the built-in Redis service |
+| `REDIS_PORT` | Full-stack mode | Exposed host port for Redis |
+| `REDIS_DATA_DIR` | Full-stack mode | Host directory for Redis data |
+| `CONFIG_DIR` | Both modes | Directory that stores `node.json`, logs, runtime environments, and other application data |
+| `TIME_ZONE` | Both modes | Time zone used by the server deployment |
+
+```bash title="Example deploy/.env"
+# MySQL
+MYSQL_ROOT_PASSWORD=your_password
+MYSQL_USER=root
+MYSQL_PORT=3307
+MYSQL_DATA_DIR=/data/JitNode/databases/mysql/db
+
+# Redis
+REDIS_PASSWORD=your_redis_password
+REDIS_PORT=6389
+REDIS_DATA_DIR=/data/JitNode/databases/redis/db
+
+# App
+CONFIG_DIR=/data/JitNode/home
+TIME_ZONE=Asia/Shanghai
 ```
+
+### node.json
+
+The core application runtime configuration file is located at:
+
+```text
+/data/JitNode/home/node.json
+```
+
+It maintains MySQL and Redis connection information for the JitAI platform.
+
+```json
+{
+  "MYSQL": {
+    "HOST": "mysql",
+    "PORT": 3306,
+    "USER": "root",
+    "PASSWORD": "your_password"
+  },
+  "REDIS": {
+    "HOST": "redis",
+    "PORT": 6379,
+    "PASSWORD": "your_redis_password",
+    "DB": 0
+  }
+}
+```
+
+- In **full-stack mode**, `config-init` generates this file automatically.
+- In **production mode**, create it manually from `node.json.template`.
+- The container validates this file on startup.
 
 ## Frequently Asked Questions
 
@@ -111,7 +167,8 @@ First, verify that no other process is using port 8080.
 <details>
 <summary>How do I change the port number?</summary>
 
-Modify the PORT value in `JitProjects/node.json` (default: 8080).
+- **Desktop Version**: modify the `PORT` value in `JitProjects/node.json` (default: `8080`).
+- **Server Version**: modify the port mappings in `deploy/docker-compose.yml` or `deploy/docker-compose.prod.yml`, then restart the services.
 
 </details>
 
@@ -126,7 +183,7 @@ Modify the PORT value in `JitProjects/node.json` (default: 8080).
 <details>
 <summary>How do I update to a new version?</summary>
 
-**Server Version**: AdminApp displays update notifications at the top of the page. Click to automatically restart and update. For Docker image updates, manually pull the latest image and restart the container, ensuring the volume mapping remains consistent.
+**Server Version**: AdminApp displays update notifications at the top of the page. Click to automatically restart and update. If you manage the Docker deployment package yourself, update the images and restart the services while keeping the same data directories and configuration files.
 
 **Desktop Version**: Manually close and restart the Jit application.
 

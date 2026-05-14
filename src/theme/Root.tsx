@@ -8,34 +8,42 @@ export default function Root({children}: RootProps) {
   const isZh = i18n.currentLocale.startsWith('zh');
 
   const title = isZh
-    ? 'JitAI - 生产级AI应用开发平台'
-    : 'JitAI - Quickly Build Production-Grade AI Apps';
+    ? 'JitAI - 企业级 AI 智能体平台'
+    : 'JitAI - Enterprise AI Agent Platform';
 
   const description = isZh
-    ? 'JitAI全球首创解释型应用架构，让AI智能体实时感知与编排系统，开发效率提升10倍！立即体验智能开发新时代。'
-    : "JitAI: The world's first interpreted app framework enabling AI agents to perceive and orchestrate systems in real-time, boosting development efficiency by 10x! Experience the new era of intelligent development now.";
+    ? 'JitAI 是企业级 AI 智能体平台，帮助企业快速构建 AI 智能体，赋能核心业务岗位，提升企业业务运转效率。'
+    : 'JitAI is an enterprise-grade AI agent platform for building AI agents that empower core business roles and improve operational efficiency.';
 
   useEffect(() => {
-    if (typeof window === 'undefined' || isZh) {
-      return;
+    if (typeof window === 'undefined') {
+      return undefined;
     }
 
-    const {pathname, search, hash} = window.location;
-    if (pathname !== '/' && pathname !== '') {
-      return;
-    }
+    const syncPreferredLanguage = (event: MouseEvent) => {
+      const target = event.target;
+      if (!(target instanceof Element)) {
+        return;
+      }
 
-    let preferredLanguage: string | null = null;
-    try {
-      preferredLanguage = window.localStorage.getItem('jitai-preferred-language');
-    } catch {
-      preferredLanguage = null;
-    }
+      const localeLink = target.closest<HTMLAnchorElement>('a[lang]');
+      const lang = localeLink?.getAttribute('lang');
+      if (lang !== 'en' && lang !== 'zh') {
+        return;
+      }
 
-    if (preferredLanguage !== 'en') {
-      window.location.replace(`/zh${search}${hash}`);
-    }
-  }, [isZh]);
+      try {
+        window.localStorage.setItem('jitai-preferred-language', lang);
+      } catch {
+        // Ignore storage failures and let the normal locale link continue.
+      }
+    };
+
+    document.addEventListener('click', syncPreferredLanguage, true);
+    return () => {
+      document.removeEventListener('click', syncPreferredLanguage, true);
+    };
+  }, []);
 
   useEffect(() => {
     // Update meta tags dynamically
@@ -77,4 +85,3 @@ export default function Root({children}: RootProps) {
     </>
   );
 }
-

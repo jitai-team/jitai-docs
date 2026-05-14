@@ -106,8 +106,8 @@ const Navbar: React.FC<NavbarProps> = ({
             // If no exact match, try prefix match
             if (!currentItem) {
                 currentItem = CONTENT.navItems.find((item) => {
-                    // Ensure not root path to avoid false positive
-                    if (item.url === "/" || item.url === "/zh") {
+                    // Ensure home paths do not become prefix matches for every route.
+                    if (item.url === "/" || item.url === "/zh" || item.url === "/zh/") {
                         return false;
                     }
                     return currentPath.startsWith(item.url);

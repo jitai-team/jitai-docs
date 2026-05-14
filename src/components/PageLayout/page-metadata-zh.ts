@@ -6,9 +6,9 @@ export interface PageMetadata {
 export const PAGE_METADATA_ZH: Record<string, PageMetadata> = {
     // Main pages
     index: {
-        title: "JitAI - 生产级AI应用开发平台",
+        title: "JitAI - 企业级 AI 智能体平台",
         description:
-            "JitAI全球首创解释型应用架构，让AI智能体实时感知与编排系统，开发效率提升10倍！立即体验智能开发新时代。",
+            "JitAI 是企业级 AI 智能体平台，支持企业构建 AI 智能体赋能业务岗位，提升企业业务运转效率。",
     },
     "ai-solution": {
         title: "AI 解决方案落地 - JitAI",

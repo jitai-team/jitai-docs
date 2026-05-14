@@ -46,6 +46,10 @@ const PageLayout: React.FC<PageLayoutProps> = ({
     // 为子组件注入 currentLocale prop
     const childrenWithProps = React.Children.map(children, (child: any) => {
         if (isValidElement(child)) {
+            if (typeof child.type === "string") {
+                return child;
+            }
+
             return cloneElement(child as any, {
                 currentLocale: i18n.currentLocale,
             });

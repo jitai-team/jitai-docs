@@ -50,6 +50,17 @@ const config: Config = {
             tagName: "script",
             attributes: {},
             innerHTML: `(() => {
+  const p = window.location.pathname;
+  if (p !== '/' && p !== '') return;
+  const preferred = window.localStorage && window.localStorage.getItem('jitai-preferred-language');
+  if (preferred === 'en') return;
+  window.location.replace('/zh/' + window.location.search + window.location.hash);
+})();`,
+        },
+        {
+            tagName: "script",
+            attributes: {},
+            innerHTML: `(() => {
   const slug = ${JSON.stringify(getFirstCaseSlug())};
   if (!slug) return;
   const p = window.location.pathname;

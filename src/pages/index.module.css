@@ -453,3 +453,519 @@ body img {
     gap: var(--space-5);
   }
 }
+
+/* ===== Homepage v2 content layout ===== */
+.homeHero {
+  background: var(--bg-secondary);
+  padding: var(--space-24) 0 var(--space-20);
+  overflow: hidden;
+}
+
+.heroLabel,
+.sectionLabel {
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0;
+  margin-bottom: var(--space-4);
+}
+
+.homeHeroTitle {
+  color: var(--color-secondary);
+  font-size: var(--font-size-7xl);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-tight);
+  margin: 0 0 var(--space-6);
+}
+
+.homeHeroTitle span {
+  color: var(--color-primary);
+}
+
+.homeHeroDescription {
+  color: var(--text-secondary);
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-relaxed);
+  max-width: 760px;
+  margin: 0 0 var(--space-10);
+}
+
+.homeHeroButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-16);
+}
+
+.homePrimaryButton,
+.homeSecondaryButton {
+  align-items: center;
+  border-radius: var(--border-radius-button);
+  display: inline-flex;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  gap: var(--space-3);
+  justify-content: center;
+  line-height: 1;
+  padding: var(--space-4) var(--space-8);
+  text-decoration: none;
+  transition: var(--transition-primary);
+}
+
+.homePrimaryButton {
+  background: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  color: var(--color-white);
+  box-shadow: 0 8px 24px rgba(61, 101, 253, 0.16);
+}
+
+.homePrimaryButton:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: var(--hover-shadow-hero);
+  text-decoration: none;
+}
+
+.homeSecondaryButton {
+  background: var(--color-white);
+  border: 2px solid var(--border-color);
+  color: var(--color-secondary);
+}
+
+.homeSecondaryButton:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.statsGrid {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color-light);
+  border-radius: var(--border-radius-card);
+  box-shadow: var(--shadow-lg);
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: repeat(4, 1fr);
+  padding: var(--space-8);
+}
+
+.statCard {
+  text-align: center;
+}
+
+.statValue {
+  color: var(--color-primary);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--space-2);
+}
+
+.statLabel {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.homeSection {
+  background: var(--bg-primary);
+  padding: var(--section-padding);
+}
+
+.sectionSoft {
+  background: var(--bg-secondary);
+}
+
+.homeSectionHeader {
+  margin: 0 auto var(--space-16);
+  max-width: 780px;
+  text-align: center;
+}
+
+.homeSectionHeader h2 {
+  color: var(--color-secondary);
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-tight);
+  margin: 0 0 var(--space-4);
+}
+
+.homeSectionHeader p {
+  color: var(--text-secondary);
+  font-size: var(--font-size-subtitle);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+.capabilityGrid {
+  display: grid;
+  gap: var(--space-8);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.homeCard,
+.architectureLayer,
+.deploymentCard,
+.ctaPanel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color-light);
+  border-radius: var(--border-radius-card);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-primary);
+}
+
+.homeCard {
+  min-height: 280px;
+  padding: var(--space-7);
+}
+
+.homeCard:hover,
+.architectureLayer:hover,
+.deploymentCard:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.deploymentIcon {
+  align-items: center;
+  background: rgba(61, 101, 253, 0.08);
+  border-radius: var(--border-radius-lg);
+  color: var(--color-primary);
+  display: inline-flex;
+  height: 48px;
+  justify-content: center;
+  margin-bottom: var(--space-5);
+  width: 48px;
+}
+
+.featureNumber {
+  color: var(--color-gray-300);
+  font-family: Georgia, serif;
+  font-size: var(--font-size-5xl);
+  font-weight: 400;
+  line-height: 1;
+  margin-bottom: var(--space-5);
+  transition: var(--transition-primary);
+}
+
+.homeCard:hover .featureNumber {
+  color: var(--color-primary);
+}
+
+.homeCard h3,
+.architectureLayer h3,
+.deploymentCard h3 {
+  color: var(--color-secondary);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  margin: 0 0 var(--space-4);
+}
+
+.homeCard p,
+.deploymentCard p {
+  color: var(--text-secondary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+.architectureStack {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.architectureLayer {
+  padding: var(--space-7);
+}
+
+.architectureParallel {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.layerHeader {
+  align-items: center;
+  border-bottom: 1px solid var(--border-color-light);
+  display: flex;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-5);
+}
+
+.layerNumber {
+  align-items: center;
+  background: var(--color-primary);
+  border-radius: var(--border-radius-md);
+  color: var(--color-white);
+  display: inline-flex;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  height: 36px;
+  justify-content: center;
+  width: 44px;
+}
+
+.layerIcon {
+  color: var(--color-primary);
+  flex: 0 0 auto;
+}
+
+.layerHeader h3 {
+  margin-bottom: var(--space-1);
+}
+
+.layerHeader p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.architectureItems {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.architectureItem {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color-light);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-4);
+  text-align: center;
+}
+
+.architectureItem strong {
+  color: var(--color-secondary);
+  display: block;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-1);
+}
+
+.architectureItem span {
+  color: var(--text-secondary);
+  display: block;
+  font-size: var(--font-size-sm);
+}
+
+.comparisonTable {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color-light);
+  border-radius: var(--border-radius-card);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.comparisonRow {
+  border-bottom: 1px solid var(--border-color-light);
+  display: grid;
+  grid-template-columns: 1.1fr 1.4fr 1.4fr;
+}
+
+.comparisonRow:last-child {
+  border-bottom: 0;
+}
+
+.comparisonRow > div {
+  align-items: center;
+  color: var(--text-secondary);
+  display: flex;
+  gap: var(--space-3);
+  min-height: 72px;
+  padding: var(--space-4) var(--space-5);
+}
+
+.comparisonHead {
+  background: var(--bg-secondary);
+}
+
+.comparisonHead > div,
+.comparisonLabel {
+  color: var(--color-secondary) !important;
+  font-weight: var(--font-weight-semibold);
+}
+
+.comparisonPositive svg {
+  color: var(--color-primary);
+  flex: 0 0 auto;
+}
+
+.comparisonNegative svg {
+  color: var(--color-gray-400);
+  flex: 0 0 auto;
+}
+
+.deploymentGrid {
+  display: grid;
+  gap: var(--space-8);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.deploymentCard {
+  padding: var(--space-8);
+}
+
+.deploymentCard ul {
+  display: grid;
+  gap: var(--space-3);
+  list-style: none;
+  margin: var(--space-6) 0 0;
+  padding: 0;
+}
+
+.deploymentCard li {
+  align-items: center;
+  color: var(--text-secondary);
+  display: flex;
+  gap: var(--space-3);
+  line-height: var(--line-height-normal);
+}
+
+.deploymentCard li svg {
+  color: var(--color-primary);
+  flex: 0 0 auto;
+}
+
+.ctaSection {
+  background: var(--bg-primary);
+  padding: var(--space-24) 0;
+}
+
+.ctaPanel {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-16);
+  text-align: center;
+}
+
+.ctaPanel > svg {
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+
+.ctaPanel h2 {
+  color: var(--color-secondary);
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-tight);
+  margin: 0 0 var(--space-4);
+}
+
+.ctaPanel p {
+  color: var(--text-secondary);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  margin: 0 0 var(--space-8);
+  max-width: 680px;
+}
+
+@media (max-width: 1200px) {
+  .capabilityGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .deploymentGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .homeHero {
+    padding: var(--space-20) 0 var(--space-12);
+  }
+
+  .homeHeroTitle {
+    font-size: var(--font-size-5xl);
+  }
+
+  .homeHeroDescription,
+  .homeSectionHeader p {
+    font-size: var(--font-size-base);
+  }
+
+  .homeHeroButtons {
+    margin-bottom: var(--space-10);
+  }
+
+  .statsGrid,
+  .capabilityGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .statValue {
+    font-size: var(--font-size-3xl);
+  }
+
+  .homeSection {
+    padding: var(--space-20) 0;
+  }
+
+  .homeSectionHeader {
+    margin-bottom: var(--space-10);
+  }
+
+  .homeSectionHeader h2,
+  .ctaPanel h2 {
+    font-size: var(--font-size-4xl);
+  }
+
+  .comparisonTable {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    display: grid;
+    gap: var(--space-4);
+  }
+
+  .comparisonHead {
+    display: none;
+  }
+
+  .comparisonRow {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color-light);
+    border-radius: var(--border-radius-card);
+    box-shadow: var(--shadow-sm);
+    grid-template-columns: 1fr;
+    overflow: hidden;
+  }
+
+  .comparisonRow > div {
+    min-height: auto;
+  }
+
+  .architectureParallel {
+    grid-template-columns: 1fr;
+  }
+
+  .comparisonLabel {
+    background: var(--bg-secondary);
+  }
+
+  .ctaPanel {
+    padding: var(--space-10) var(--space-6);
+  }
+}
+
+@media (max-width: 480px) {
+  .homeHeroTitle {
+    font-size: var(--font-size-4xl);
+  }
+
+  .homePrimaryButton,
+  .homeSecondaryButton {
+    width: 100%;
+  }
+
+  .statsGrid,
+  .homeCard,
+  .architectureLayer,
+  .deploymentCard {
+    padding: var(--space-5);
+  }
+
+  .layerHeader {
+    align-items: flex-start;
+  }
+}

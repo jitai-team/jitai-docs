@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useLocation } from "@docusaurus/router";
 import styles from "./styles.module.css";
 
@@ -8,7 +8,9 @@ interface LanguageSwitcherProps {
 
 const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className }) => {
     const location = useLocation();
-    const [currentLang, setCurrentLang] = useState<"zh" | "en">("en");
+    const currentLang: "zh" | "en" = location.pathname.startsWith("/zh")
+        ? "zh"
+        : "en";
 
     const isCaseDetail = /(?:^|\/)(?:zh\/)?cases\/[^/]+(?:\/|$)/.test(
         location.pathname,
@@ -17,16 +19,6 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className }) => {
     if (isCaseDetail) {
         return null;
     }
-
-    useEffect(() => {
-        // 根据当前路径判断语言
-        const path = location.pathname;
-        if (path.startsWith("/zh")) {
-            setCurrentLang("zh");
-        } else {
-            setCurrentLang("en");
-        }
-    }, [location.pathname]);
 
     const handleLanguageSwitch = () => {
         const currentPath = window.location.pathname;
@@ -39,7 +31,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className }) => {
             // 切换到中文
             newLang = "zh";
             if (currentPath === "/") {
-                newPath = "/zh";
+                newPath = "/zh/";
             } else {
                 newPath = `/zh${currentPath}`;
             }

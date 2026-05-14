@@ -25,12 +25,9 @@ export interface DownloadContent {
         docker: {
             title: string;
             description: string;
-            globalCommand: string;
-            chinaCommand: string;
+            command: string;
             copyText: string;
             copySuccess: string;
-            globalSegment: string;
-            chinaSegment: string;
         };
     };
     mobile?: {
@@ -82,14 +79,10 @@ const CONTENT: DownloadContent = {
             title: "Docker Image",
             description:
                 "Supports Linux\\Ubuntu\\CentOS etc., suitable for deployment on servers as test or production environment",
-            globalCommand:
-                "docker run -itd --name jit -p 80:80 -p 3306:3306 --init --privileged -v /your/local/path:/data/JitNode jitaiplatform/jit",
-            chinaCommand:
-                "docker run -itd --name jit -p 80:80 -p 3306:3306 --init --privileged -v /your/local/path:/data/JitNode registry.cn-hangzhou.aliyuncs.com/jitpro/jit",
+            command:
+                "curl -fsSL https://setup.jit.pro/install-jitai.sh | sudo sh",
             copyText: "📋 Copy",
             copySuccess: "✅ Copied",
-            globalSegment: "Global Mirror",
-            chinaSegment: "China Mirror",
         },
     },
 };

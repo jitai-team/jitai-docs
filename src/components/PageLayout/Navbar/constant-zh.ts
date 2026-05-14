@@ -4,7 +4,7 @@ const CONTENT = {
             id: "home",
             label: "首页",
             type: "currentPage",
-            url: "/zh",
+            url: "/zh/",
         },
         // {
         //   id: 'pricing',

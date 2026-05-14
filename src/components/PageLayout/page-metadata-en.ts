@@ -6,9 +6,9 @@ export interface PageMetadata {
 export const PAGE_METADATA_EN: Record<string, PageMetadata> = {
     // Main pages
     index: {
-        title: "JitAI - Quickly Build Production-Grade AI Apps",
+        title: "JitAI - Enterprise AI Agent Platform",
         description:
-            "The world's first interpreted app framework enabling AI agents to perceive and orchestrate systems in real-time, boosting development efficiency by 10x!",
+            "JitAI is an enterprise-grade AI agent platform for building AI agents that empower business roles and improve operational efficiency.",
     },
     "ai-solution": {
         title: "AI Solution Landing - JitAI",

@@ -12,8 +12,6 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ currentLocale }) => {
   const CONTENT = currentLocale === 'zh' ? CONTENT_ZH : CONTENT_EN;
 
   const [copySuccess, setCopySuccess] = useState(false);
-  // 中文版默认使用中国大陆镜像，英文版默认使用全球镜像
-  const [isChinaMirror, setIsChinaMirror] = useState(currentLocale === 'zh');
   const [isMobile, setIsMobile] = useState(false);
 
   // 检测移动端
@@ -32,8 +30,7 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ currentLocale }) => {
 
   const handleCopy = async () => {
     try {
-      const command = isChinaMirror ? CONTENT.server.docker.chinaCommand : CONTENT.server.docker.globalCommand;
-      await navigator.clipboard.writeText(command);
+      await navigator.clipboard.writeText(CONTENT.server.docker.command);
       setCopySuccess(true);
       setTimeout(() => {
         setCopySuccess(false);
@@ -131,29 +128,11 @@ const DownloadSection: React.FC<DownloadSectionProps> = ({ currentLocale }) => {
           <div className={styles.codeContainer}>
             {/* 代码块 */}
             <div className={styles.codeBlock}>
-              {/* 代码块头部 - 分段控制器在左上角 */}
-              <div className={styles.codeHeader}>
-                <div className={styles.segmentedControl}>
-                  <button 
-                    className={`${styles.segmentButton} ${!isChinaMirror ? styles.segmentActive : ''}`}
-                    onClick={() => setIsChinaMirror(false)}
-                  >
-                    {CONTENT.server.docker.globalSegment}
-                  </button>
-                  <button 
-                    className={`${styles.segmentButton} ${isChinaMirror ? styles.segmentActive : ''}`}
-                    onClick={() => setIsChinaMirror(true)}
-                  >
-                    {CONTENT.server.docker.chinaSegment}
-                  </button>
-                </div>
-              </div>
-              
               {/* 代码内容 */}
               <div className={styles.codeContent}>
                 <span className={styles.codePrompt}>{'>'}</span>
                 <div className={styles.codeText}>
-                  <code>{isChinaMirror ? CONTENT.server.docker.chinaCommand : CONTENT.server.docker.globalCommand}</code>
+                  <code>{CONTENT.server.docker.command}</code>
                 </div>
               </div>
             </div>

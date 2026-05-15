@@ -19,9 +19,21 @@
         "message": "开发",
         "description": "Navbar item with label Developer"
     },
-    "item.label.Docs": {
-        "message": "文档",
-        "description": "Navbar item with label Docs"
+    "item.label.Tutorial": {
+        "message": "入门教程",
+        "description": "Navbar item with label Tutorial"
+    },
+    "item.label.Developer Guide": {
+        "message": "开发者指南",
+        "description": "Navbar item with label Developer Guide"
+    },
+    "item.label.Reference": {
+        "message": "参考手册",
+        "description": "Navbar item with label Reference"
+    },
+    "item.label.Extending": {
+        "message": "扩展指南",
+        "description": "Navbar item with label Extending"
     },
     "item.label.Forum": {
         "message": "论坛",

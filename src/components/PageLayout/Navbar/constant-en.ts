@@ -31,10 +31,28 @@ const CONTENT = {
             url: "/docs/tutorial",
             children: [
                 {
-                    id: "docs",
-                    label: "Docs",
+                    id: "tutorial",
+                    label: "Tutorial",
                     type: "currentPage",
                     url: "/docs/tutorial",
+                },
+                {
+                    id: "devguide",
+                    label: "Developer Guide",
+                    type: "currentPage",
+                    url: "/docs/devguide",
+                },
+                {
+                    id: "reference",
+                    label: "Reference",
+                    type: "currentPage",
+                    url: "/docs/reference",
+                },
+                {
+                    id: "extguide",
+                    label: "Extending",
+                    type: "currentPage",
+                    url: "/docs/extguide",
                 },
                 {
                     id: "forum",

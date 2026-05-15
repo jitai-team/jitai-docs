@@ -14,30 +14,37 @@ const CONTENT = {
         //   external: true
         // },
         {
-            id: "download",
-            label: "下载",
+            id: "agent-products",
+            label: "Agent产品",
             type: "currentPage",
-            url: "/zh/download",
-            class: "analytics-download",
+            url: "/zh/agent-products",
         },
         {
-            id: "guide",
-            label: "文档",
-            type: "newTab",
+            id: "industry-agents",
+            label: "行业Agent",
+            type: "currentPage",
+            url: "/zh/industry-agents",
+        },
+        {
+            id: "develop",
+            label: "开发",
+            type: "dropdown",
             url: "/zh/docs/tutorial",
+            children: [
+                {
+                    id: "docs",
+                    label: "文档",
+                    type: "currentPage",
+                    url: "/zh/docs/tutorial",
+                },
+                {
+                    id: "forum",
+                    label: "论坛",
+                    type: "newTab",
+                    url: "https://forum.jit.pro",
+                },
+            ],
         },
-        {
-            id: "forum",
-            label: "论坛",
-            type: "newTab",
-            url: "https://forum.jit.pro",
-        },
-        // {
-        //     id: "blog",
-        //     label: "博客",
-        //     type: "currentPage",
-        //     url: "/zh/blog",
-        // },
         {
             id: "contact",
             label: "联系我们",
@@ -57,7 +64,6 @@ const CONTENT = {
         type: "currentPage",
         url: "/zh/download",
     },
-    caseCategory: ["客户管理系统", "全链路业务系统", "协同系统"],
 };
 
 export default CONTENT;

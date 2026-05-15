@@ -30,6 +30,16 @@ export const PAGE_METADATA_ZH: Record<string, PageMetadata> = {
         description:
             "下载 JitAI 桌面版用于本地开发，或选择服务器版进行生产部署。支持 Windows、Mac 和 Docker 安装方式。",
     },
+    "agent-products": {
+        title: "专业 Agent 产品 - JitAI",
+        description:
+            "针对销售、财务、人事、数据分析、知识共享和客服等岗位打造专属 AI 员工，提升业务处理效率。",
+    },
+    "industry-agents": {
+        title: "行业 Agent 解决方案 - JitAI",
+        description:
+            "面向工业、审计、企服、设计等行业场景，提供结合行业知识、业务流程和合规要求的 AI 智能体解决方案。",
+    },
     privacy: {
         title: "隐私政策",
         description:

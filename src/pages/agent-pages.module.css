@@ -1,0 +1,451 @@
+.page {
+    min-height: 100vh;
+    background: #ffffff;
+    color: #131c43;
+}
+
+.hero {
+    padding: 148px 24px 72px;
+    background:
+        linear-gradient(180deg, rgba(61, 101, 253, 0.08), rgba(255, 255, 255, 0)),
+        #ffffff;
+    border-bottom: 1px solid rgba(19, 28, 67, 0.08);
+}
+
+.heroInner,
+.sectionInner {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.heroContent {
+    max-width: 820px;
+}
+
+.eyebrow {
+    margin: 0 0 16px;
+    color: #3d65fd;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.heroTitle {
+    margin: 0 0 20px;
+    color: #131c43;
+    font-size: 3.25rem;
+    line-height: 1.12;
+    font-weight: 850;
+    letter-spacing: 0;
+}
+
+.heroDescription {
+    margin: 0;
+    color: #4b5563;
+    font-size: 1.14rem;
+    line-height: 1.85;
+}
+
+.section {
+    padding: 72px 24px;
+}
+
+.sectionAlt {
+    padding: 72px 24px;
+    background: #f7f9ff;
+}
+
+.productList,
+.industryList {
+    display: grid;
+    gap: 28px;
+}
+
+.productCard,
+.industryCard {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+    gap: 32px;
+    align-items: stretch;
+    padding: 34px;
+    border: 1px solid rgba(19, 28, 67, 0.1);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 16px 40px rgba(19, 28, 67, 0.06);
+}
+
+.productCardAlt,
+.industryCardAlt {
+    background: #f8fbff;
+}
+
+.productVisual,
+.industryStat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 260px;
+    padding: 28px;
+    border-radius: 8px;
+    border: 1px solid rgba(61, 101, 253, 0.13);
+    background:
+        linear-gradient(135deg, rgba(61, 101, 253, 0.1), rgba(19, 28, 67, 0.02)),
+        #ffffff;
+}
+
+.productVisual {
+    gap: 22px;
+    align-items: center;
+}
+
+.productImage {
+    width: 100%;
+    height: clamp(240px, 32vw, 430px);
+    object-fit: contain;
+    border: 1px solid rgba(19, 28, 67, 0.1);
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 12px 28px rgba(19, 28, 67, 0.08);
+}
+
+.efficiencyBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    max-width: 100%;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: rgba(61, 101, 253, 0.08);
+    color: #244bef;
+    font-weight: 800;
+    line-height: 1.4;
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.iconBox {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background: rgba(61, 101, 253, 0.08);
+    color: #3d65fd;
+}
+
+.iconBox svg {
+    width: 28px;
+    height: 28px;
+}
+
+.emojiIcon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.cardTitle {
+    margin: 0 0 14px;
+    color: #131c43;
+    font-size: 1.7rem;
+    line-height: 1.25;
+    font-weight: 820;
+    letter-spacing: 0;
+}
+
+.cardDescription {
+    margin: 0 0 18px;
+    color: #4b5563;
+    font-size: 1.02rem;
+    line-height: 1.8;
+}
+
+.featureList {
+    display: grid;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.featureItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: #475569;
+    line-height: 1.55;
+}
+
+.checkIcon {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+    color: #3d65fd;
+}
+
+.industryCard {
+    grid-template-columns: minmax(0, 1.18fr) minmax(240px, 0.82fr);
+}
+
+.industryCardReverse {
+    grid-template-columns: minmax(240px, 0.82fr) minmax(0, 1.18fr);
+}
+
+.industryCardReverse .industryStat {
+    order: -1;
+}
+
+.industryStat {
+    align-items: center;
+    text-align: center;
+}
+
+.statEmoji {
+    display: block;
+    margin-bottom: 18px;
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.statValue {
+    margin: 0 0 8px;
+    color: #3d65fd;
+    font-size: 2.55rem;
+    line-height: 1.1;
+    font-weight: 850;
+}
+
+.statLabel {
+    margin: 0;
+    color: #64748b;
+    font-weight: 750;
+}
+
+.sectionHeader {
+    max-width: 720px;
+    margin: 0 auto 34px;
+    text-align: center;
+}
+
+.sectionTitle {
+    margin: 0 0 10px;
+    color: #131c43;
+    font-size: 2.2rem;
+    line-height: 1.2;
+    font-weight: 850;
+    letter-spacing: 0;
+}
+
+.sectionSubtitle {
+    margin: 0;
+    color: #64748b;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.comparison {
+    overflow: hidden;
+    border: 1px solid rgba(19, 28, 67, 0.1);
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 16px 40px rgba(19, 28, 67, 0.06);
+}
+
+.comparisonRow {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr 1.05fr;
+    border-bottom: 1px solid rgba(19, 28, 67, 0.08);
+}
+
+.comparisonRow:last-child {
+    border-bottom: 0;
+}
+
+.comparisonHead {
+    background: #f1f5ff;
+}
+
+.comparisonCell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    padding: 18px 20px;
+    color: #475569;
+    line-height: 1.5;
+}
+
+.comparisonHead .comparisonCell {
+    color: #131c43;
+    font-weight: 800;
+}
+
+.comparisonLabel {
+    color: #131c43;
+    font-weight: 800;
+}
+
+.positiveIcon,
+.negativeIcon {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+}
+
+.positiveIcon {
+    color: #2563eb;
+}
+
+.negativeIcon {
+    color: #94a3b8;
+}
+
+.cta {
+    padding: 76px 24px;
+    background: #131c43;
+    color: #ffffff;
+    text-align: center;
+}
+
+.ctaInner {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.ctaTitle {
+    margin: 0 0 14px;
+    color: #ffffff;
+    font-size: 2.15rem;
+    line-height: 1.25;
+    font-weight: 850;
+    letter-spacing: 0;
+}
+
+.ctaDescription {
+    margin: 0 auto 28px;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 1.06rem;
+    line-height: 1.8;
+}
+
+.ctaButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 0 22px;
+    border-radius: 8px;
+    background: #3d65fd;
+    color: #ffffff;
+    font-weight: 800;
+    text-decoration: none;
+    transition: background 180ms ease, transform 180ms ease;
+}
+
+.ctaButton:hover {
+    color: #ffffff;
+    background: #5578ff;
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+.buttonIcon {
+    width: 18px;
+    height: 18px;
+}
+
+@media (max-width: 980px) {
+    .productCard,
+    .industryCard,
+    .industryCardReverse {
+        grid-template-columns: 1fr;
+    }
+
+    .industryCardReverse .industryStat {
+        order: initial;
+    }
+
+    .productVisual,
+    .industryStat {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 120px 18px 54px;
+    }
+
+    .heroTitle {
+        font-size: 2.35rem;
+    }
+
+    .heroDescription {
+        font-size: 1rem;
+    }
+
+    .section,
+    .sectionAlt {
+        padding: 52px 18px;
+    }
+
+    .productCard,
+    .industryCard {
+        padding: 22px;
+        gap: 22px;
+    }
+
+    .productVisual,
+    .industryStat {
+        padding: 22px;
+    }
+
+    .productImage {
+        height: 320px;
+    }
+
+    .cardTitle {
+        font-size: 1.45rem;
+    }
+
+    .sectionTitle,
+    .ctaTitle {
+        font-size: 1.8rem;
+    }
+
+    .comparison {
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .comparisonRow {
+        grid-template-columns: 1fr;
+        margin-bottom: 12px;
+        border: 1px solid rgba(19, 28, 67, 0.1);
+        border-radius: 8px;
+        background: #ffffff;
+    }
+
+    .comparisonHead {
+        display: none;
+    }
+
+    .comparisonCell {
+        padding: 14px 16px;
+        border-bottom: 1px solid rgba(19, 28, 67, 0.08);
+    }
+
+    .comparisonCell:last-child {
+        border-bottom: 0;
+    }
+}

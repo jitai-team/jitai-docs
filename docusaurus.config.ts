@@ -244,8 +244,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     position: "left",
                     items: [
                         {
-                            label: "Docs",
+                            label: "Tutorial",
                             to: "/docs/tutorial",
+                        },
+                        {
+                            label: "Developer Guide",
+                            to: "/docs/devguide",
+                        },
+                        {
+                            label: "Reference",
+                            to: "/docs/reference",
+                        },
+                        {
+                            label: "Extending",
+                            to: "/docs/extguide",
                         },
                         {
                             label: "Forum",

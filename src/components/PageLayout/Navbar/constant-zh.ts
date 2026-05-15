@@ -32,10 +32,28 @@ const CONTENT = {
             url: "/zh/docs/tutorial",
             children: [
                 {
-                    id: "docs",
-                    label: "文档",
+                    id: "tutorial",
+                    label: "入门教程",
                     type: "currentPage",
                     url: "/zh/docs/tutorial",
+                },
+                {
+                    id: "devguide",
+                    label: "开发者指南",
+                    type: "currentPage",
+                    url: "/zh/docs/devguide",
+                },
+                {
+                    id: "reference",
+                    label: "参考手册",
+                    type: "currentPage",
+                    url: "/zh/docs/reference",
+                },
+                {
+                    id: "extguide",
+                    label: "扩展指南",
+                    type: "currentPage",
+                    url: "/zh/docs/extguide",
                 },
                 {
                     id: "forum",

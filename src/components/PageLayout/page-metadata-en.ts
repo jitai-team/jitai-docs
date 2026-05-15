@@ -30,6 +30,16 @@ export const PAGE_METADATA_EN: Record<string, PageMetadata> = {
         description:
             "Download JitAI desktop edition for local development, or choose server edition for production deployment. Supports Windows, Mac and Docker installation methods.",
     },
+    "agent-products": {
+        title: "Agent Products - JitAI",
+        description:
+            "Role-specific AI agent products for sales, finance, HR, data analytics, knowledge sharing, and customer service.",
+    },
+    "industry-agents": {
+        title: "Industry Agent Solutions - JitAI",
+        description:
+            "Industry-specific AI agent solutions for manufacturing, auditing, enterprise services, and design workflows.",
+    },
     privacy: {
         title: "Privacy Policy",
         description:

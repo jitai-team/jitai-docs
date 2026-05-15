@@ -1,29 +1,8 @@
 import { themes as prismThemes } from "prism-react-renderer";
-import fs from "fs";
-import path from "path";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
-function getFirstCaseSlug(): string {
-    const casesDir = path.join(__dirname, "cases");
-    const entries = fs.readdirSync(casesDir, { withFileTypes: true });
-    const caseDirs = entries
-        .filter((e) => e.isDirectory())
-        .map((e) => e.name)
-        .filter((dirName) => {
-            const indexMd = path.join(casesDir, dirName, "index.md");
-            return fs.existsSync(indexMd);
-        })
-        .sort((a, b) => a.localeCompare(b));
-
-    if (caseDirs.length === 0) {
-        return "";
-    }
-
-    return caseDirs[0];
-}
 
 const config: Config = {
     title: "JitAi",
@@ -43,9 +22,23 @@ const config: Config = {
     url: "https://jit.pro",
     // Set the /<baseUrl>/ pathname under which your site is served
     // For GitHub pages deployment, it is often '/<projectName>/'
-    baseUrl: "/",
+    baseUrl: process.env.DOCUSAURUS_BASE_URL || "/",
     // Algolia site verification and Google Tag Manager
     headTags: [
+        {
+            tagName: "meta",
+            attributes: {
+                name: "algolia-site-verification",
+                content: "576057B2D3ECA7D8",
+            },
+        },
+        {
+            tagName: "meta",
+            attributes: {
+                name: "baidu-site-verification",
+                content: "codeva-pmUJofMRgx",
+            },
+        },
         {
             tagName: "script",
             attributes: {},
@@ -54,24 +47,7 @@ const config: Config = {
   if (p !== '/' && p !== '') return;
   const preferred = window.localStorage && window.localStorage.getItem('jitai-preferred-language');
   if (preferred === 'en') return;
-  window.location.replace('/zh/' + window.location.search + window.location.hash);
-})();`,
-        },
-        {
-            tagName: "script",
-            attributes: {},
-            innerHTML: `(() => {
-  const slug = ${JSON.stringify(getFirstCaseSlug())};
-  if (!slug) return;
-  const p = window.location.pathname;
-  const isCases = p === '/cases' || p === '/cases/';
-  const isZhCases = p === '/zh/cases' || p === '/zh/cases/';
-  if (isCases) {
-    window.location.replace('/cases/' + slug + window.location.search + window.location.hash);
-  }
-  if (isZhCases) {
-    window.location.replace('/zh/cases/' + slug + window.location.search + window.location.hash);
-  }
+  window.location.replace('/zh' + window.location.search + window.location.hash);
 })();`,
         },
         // 注意：Viewport 配置已移至 themeConfig.metadata
@@ -85,20 +61,6 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-K39JND5X');`,
-        },
-        {
-            tagName: "meta",
-            attributes: {
-                name: "algolia-site-verification",
-                content: "E1854FDB4BA5E984",
-            },
-        },
-        {
-            tagName: "meta",
-            attributes: {
-                name: "baidu-site-verification",
-                content: "codeva-pmUJofMRgx",
-            },
         },
     ],
 
@@ -180,19 +142,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     ],
 
     plugins: [
-        [
-            "@docusaurus/plugin-content-blog",
-            {
-                id: "cases",
-                path: "cases",
-                routeBasePath: "cases",
-                showReadingTime: false,
-                postsPerPage: 9999,
-                onInlineTags: "throw",
-                onInlineAuthors: "throw",
-                onUntruncatedBlogPosts: "throw",
-            },
-        ],
         function svgrReactQueryPlugin() {
             return {
                 name: "svgr-react-query-plugin",
@@ -236,6 +185,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     clientModules: [
         "./src/clientModules/readingProgress.js",
         "./src/clientModules/utmTracker.js",
+        "./src/clientModules/fixLocaleLinks.js",
     ],
     markdown: {
         mermaid: true,
@@ -280,63 +230,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     activeBaseRegex: "^/$",
                 },
                 {
-                    type: "docSidebar",
-                    sidebarId: "tutorialSidebar",
+                    label: "Agent Products",
+                    to: "/agent-products",
                     position: "left",
-                    label: "Tutorial",
                 },
                 {
-                    type: "docSidebar",
-                    sidebarId: "devguideSidebar",
+                    label: "Industry Agents",
+                    to: "/industry-agents",
                     position: "left",
-                    label: "Developer Guide",
                 },
                 {
-                    type: "docSidebar",
-                    sidebarId: "extguideSidebar",
+                    label: "Developer",
                     position: "left",
-                    label: "Extending",
+                    items: [
+                        {
+                            label: "Docs",
+                            to: "/docs/tutorial",
+                        },
+                        {
+                            label: "Forum",
+                            href: "https://forum.jit.pro",
+                        },
+                    ],
                 },
                 {
-                    type: "docSidebar",
-                    sidebarId: "referenceSidebar",
+                    label: "Contact Us",
+                    to: "/contact",
                     position: "left",
-                    label: "Reference",
-                },
-                //{
-                //type: 'docSidebar',
-                //  sidebarId: 'appmarketSidebar',
-                // position: 'left',
-                //  label: '应用市场',
-                //},
-                // {
-                //     type: "docSidebar",
-                //     sidebarId: "opensourceSidebar",
-                //     position: "left",
-                //     label: "Open Source",
-                // },
-                //{
-                //  type: 'docSidebar',
-                //  sidebarId: 'appmarketSidebar',
-                //  position: 'left',
-                // label: 'App Market',
-                //},
-                {
-                    href: "https://forum.jit.pro",
-                    position: "left",
-                    label: "Forum",
-                },
-                //GitHub  目前GitHub上没有开源项目，而且当前菜单中有 「开源」菜单，为节省菜单空间，这里先隐藏
-                //  {
-                //    href: 'https://github.com/jitai-team',
-                //    label: 'GitHub',
-                //    position: 'right',
-                //  },
-                {
-                    href: "https://jit.pro/download",
-                    position: "left",
-                    label: "Download",
-                    className: "analytics-download",
                 },
                 {
                     type: "search",

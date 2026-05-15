@@ -13,30 +13,37 @@ const CONTENT = {
         //   url: '/pricing',
         // },
         {
-            id: "download",
-            label: "Download",
+            id: "agent-products",
+            label: "Agent Products",
             type: "currentPage",
-            url: "/download",
-            class: "analytics-download",
+            url: "/agent-products",
         },
         {
-            id: "guide",
-            label: "Docs",
-            type: "newTab",
+            id: "industry-agents",
+            label: "Industry Agents",
+            type: "currentPage",
+            url: "/industry-agents",
+        },
+        {
+            id: "develop",
+            label: "Developer",
+            type: "dropdown",
             url: "/docs/tutorial",
+            children: [
+                {
+                    id: "docs",
+                    label: "Docs",
+                    type: "currentPage",
+                    url: "/docs/tutorial",
+                },
+                {
+                    id: "forum",
+                    label: "Forum",
+                    type: "newTab",
+                    url: "https://forum.jit.pro",
+                },
+            ],
         },
-        {
-            id: "forum",
-            label: "Forum",
-            type: "newTab",
-            url: "https://forum.jit.pro",
-        },
-        // {
-        //     id: "blog",
-        //     label: "Blog",
-        //     type: "currentPage",
-        //     url: "/blog",
-        // },
         {
             id: "contact",
             label: "Contact Us",
@@ -56,11 +63,6 @@ const CONTENT = {
         type: "currentPage",
         url: "/download",
     },
-    caseCategory: [
-        "Customer Management System",
-        "Full-Chain Business System",
-        "Collaborative System",
-    ],
 };
 
 export default CONTENT;

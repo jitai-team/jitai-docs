@@ -1,7 +1,12 @@
+User-agent: Algolia Crawler
+Allow: /
+Disallow: /search
+
 User-agent: *
 Allow: /
 Disallow: /search
 
+# Algolia-Crawler-Verif: 576057B2D3ECA7D8
 # Sitemap
 Sitemap: https://jit.pro/sitemap.xml
 

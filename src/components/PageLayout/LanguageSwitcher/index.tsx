@@ -12,14 +12,6 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className }) => {
         ? "zh"
         : "en";
 
-    const isCaseDetail = /(?:^|\/)(?:zh\/)?cases\/[^/]+(?:\/|$)/.test(
-        location.pathname,
-    );
-
-    if (isCaseDetail) {
-        return null;
-    }
-
     const handleLanguageSwitch = () => {
         const currentPath = window.location.pathname;
         const searchParams = window.location.search; // 获取 URL 参数（?key=value）

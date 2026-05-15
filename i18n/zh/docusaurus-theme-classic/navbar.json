@@ -7,44 +7,28 @@
         "message": "首页",
         "description": "Navbar item with label Home"
     },
-    "item.label.Tutorial": {
-        "message": "入门教程",
-        "description": "Navbar item with label Tutorial"
+    "item.label.Agent Products": {
+        "message": "Agent产品",
+        "description": "Navbar item with label Agent Products"
     },
-    "item.label.Reference": {
-        "message": "参考手册",
-        "description": "Navbar item with label Reference"
+    "item.label.Industry Agents": {
+        "message": "行业Agent",
+        "description": "Navbar item with label Industry Agents"
     },
-    "item.label.Blog": {
-        "message": "博客",
-        "description": "Navbar item with label Blog"
+    "item.label.Developer": {
+        "message": "开发",
+        "description": "Navbar item with label Developer"
     },
-    "item.label.Community": {
-        "message": "社区",
-        "description": "Navbar item with label Community"
+    "item.label.Docs": {
+        "message": "文档",
+        "description": "Navbar item with label Docs"
     },
     "item.label.Forum": {
         "message": "论坛",
         "description": "Navbar item with label Forum"
     },
-    "item.label.Try Online": {
-        "message": "在线试用",
-        "description": "Navbar item with label Try Online"
-    },
-    "item.label.Download": {
-        "message": "立即下载",
-        "description": "Navbar item with label Download"
-    },
-    "item.label.GitHub": {
-        "message": "GitHub",
-        "description": "Navbar item with label GitHub"
-    },
-    "item.label.Developer Guide": {
-        "message": "开发者指南",
-        "description": "Navbar item with label Developer Guide"
-    },
-    "item.label.Extending": {
-        "message": "扩展指南",
-        "description": "Navbar item with label Extending"
+    "item.label.Contact Us": {
+        "message": "联系我们",
+        "description": "Navbar item with label Contact Us"
     }
 }

@@ -211,7 +211,6 @@ const HomePage: React.FC = () => {
                 <OfficialHeader />
                 <main className={styles.main}>
                     <HeroSection />
-                    <ProblemSection />
                     <CapabilitiesSection />
                     <DeliverySection />
                     <ValueSection />
@@ -235,12 +234,10 @@ const HeroSection: React.FC = () => (
                     JitAI 一体化企业级智能体平台
                 </p>
                 <h1>
-                    用 AI 重塑生产力
-                    <br />
-                    <span>打造 Agentic 企业系统</span>
+                    <span>JitAI平台</span>，用AI落地AI
                 </h1>
                 <p className={styles.heroLead}>
-                    告别桌面级玩具，构建真正属于你企业的 AI 数字员工。
+                    无需人工开发，AI自动生成企业专属AI业务系统
                 </p>
                 <div className={styles.tagList}>
                     {HERO_TAGS.map((tag) => (
@@ -254,48 +251,6 @@ const HeroSection: React.FC = () => (
         </div>
         <div className={styles.scrollCue} aria-hidden="true">
             <ArrowDownIcon />
-        </div>
-    </section>
-);
-
-const ProblemSection: React.FC = () => (
-    <section className={`${styles.section} ${styles.subtleSection}`}>
-        <div className={styles.shell}>
-            <div className={styles.centerBlock}>
-                <Badge>核心问题</Badge>
-                <h2>为什么你的 AI 总是落不了地？</h2>
-                <p className={styles.sectionLead}>AI 不认识你的业务流程、规则和数据。</p>
-                <div className={styles.dividerTitle}>
-                    <span />
-                    <strong>JITAI</strong>
-                    <span />
-                </div>
-                <p className={styles.problemStatement}>
-                    JitAI 平台，把业务要素改造为 AI 可感知和调用的元素，
-                    <br />
-                    并「装入」AI 智能体，使之真正驱动你的业务。
-                </p>
-            </div>
-            <div className={styles.transformDiagram}>
-                <ElementGroup
-                    label="你的业务要素"
-                    items={["业务规则", "审批流程", "行业知识", "客户数据"]}
-                    muted
-                />
-                <div className={styles.transformBridge}>
-                    <span />
-                    <div>
-                        <strong>JitAI 改造</strong>
-                        <small>内置开发智能体</small>
-                    </div>
-                    <span />
-                </div>
-                <ElementGroup
-                    label="AI 可调用的元素"
-                    items={["LLM 模型", "Skills 技能", "Functions 函数", "数据 Models", "UI Cards"]}
-                    accent
-                />
-            </div>
         </div>
     </section>
 );
@@ -547,6 +502,14 @@ const HomeFooter: React.FC = () => {
                 </div>
                 <div className={styles.footerBottom}>
                     <span>© {COPYRIGHT_YEAR} JitAI. All rights reserved.</span>
+                    <a
+                        className={styles.footerIcp}
+                        href="https://beian.miit.gov.cn/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        鄂ICP备18017077号-7
+                    </a>
                 </div>
             </div>
         </footer>
@@ -569,13 +532,6 @@ const DownloadButton: React.FC<{ size: "md" | "lg" }> = ({ size }) => {
     );
 };
 
-const Badge: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-    <div className={styles.badge}>
-        <span />
-        <strong>{children}</strong>
-    </div>
-);
-
 const SectionHeader: React.FC<{
     eyebrow: string;
     title: React.ReactNode;
@@ -592,29 +548,6 @@ const SectionHeader: React.FC<{
         </span>
         <h2>{title}</h2>
         <p>{desc}</p>
-    </div>
-);
-
-const ElementGroup: React.FC<{
-    label: string;
-    items: string[];
-    muted?: boolean;
-    accent?: boolean;
-}> = ({ label, items, muted, accent }) => (
-    <div className={styles.elementGroup}>
-        <span className={accent ? styles.accentLabel : ""}>{label}</span>
-        <div>
-            {items.map((item) => (
-                <strong
-                    className={`${muted ? styles.mutedPill : ""} ${
-                        accent ? styles.accentPill : ""
-                    }`}
-                    key={item}
-                >
-                    {item}
-                </strong>
-            ))}
-        </div>
     </div>
 );
 

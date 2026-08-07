@@ -420,39 +420,12 @@
     background: #ffffff;
 }
 
-.centerBlock,
 .sectionHeader {
     margin: 0 auto 64px;
     max-width: 768px;
     text-align: center;
 }
 
-.badge {
-    align-items: center;
-    background: rgba(67, 97, 238, 0.05);
-    border: 1px solid rgba(67, 97, 238, 0.1);
-    border-radius: 999px;
-    display: inline-flex;
-    gap: 8px;
-    margin-bottom: 32px;
-    padding: 6px 16px;
-}
-
-.badge span {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    background: var(--home-accent);
-    border-radius: 999px;
-    height: 6px;
-    width: 6px;
-}
-
-.badge strong {
-    color: rgba(67, 97, 238, 0.7);
-    font-size: 12px;
-    font-weight: 500;
-}
-
-.centerBlock h2,
 .sectionHeader h2,
 .valueCopy h2,
 .contactBlock h2 {
@@ -471,132 +444,12 @@
     color: var(--home-accent);
 }
 
-.sectionLead,
 .sectionHeader p {
     color: var(--home-muted);
     font-size: 16px;
     line-height: 1.625;
     margin: 20px auto 0;
     max-width: 620px;
-}
-
-.dividerTitle {
-    align-items: center;
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    margin: 32px 0;
-}
-
-.dividerTitle span {
-    background: var(--home-border);
-    height: 1px;
-    width: 48px;
-}
-
-.dividerTitle strong {
-    color: var(--home-accent);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-}
-
-.problemStatement {
-    color: var(--home-foreground);
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.625;
-    margin: 0 auto;
-    max-width: 620px;
-}
-
-.transformDiagram {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    justify-content: center;
-    margin: 0 auto;
-    max-width: 768px;
-}
-
-.elementGroup {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.elementGroup > span {
-    color: rgba(71, 85, 105, 0.6);
-    font-size: 12px;
-}
-
-.elementGroup > span.accentLabel {
-    color: rgba(67, 97, 238, 0.6);
-}
-
-.elementGroup div {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    justify-content: center;
-    max-width: 220px;
-}
-
-.elementGroup strong {
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight: 500;
-    padding: 6px 12px;
-}
-
-.mutedPill {
-    border: 1px dashed rgba(226, 232, 240, 0.6);
-    color: rgba(71, 85, 105, 0.5);
-}
-
-.accentPill {
-    background: rgba(67, 97, 238, 0.05);
-    border: 1px solid rgba(67, 97, 238, 0.2);
-    color: var(--home-accent);
-}
-
-.transformBridge {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-    gap: 8px;
-}
-
-.transformBridge > span {
-    background: rgba(67, 97, 238, 0.4);
-    display: none;
-    height: 1px;
-    width: 60px;
-}
-
-.transformBridge div {
-    background: rgba(67, 97, 238, 0.1);
-    border: 1px solid rgba(67, 97, 238, 0.2);
-    border-radius: 12px;
-    padding: 10px 16px;
-    text-align: center;
-}
-
-.transformBridge strong {
-    color: var(--home-accent);
-    display: block;
-    font-size: 12px;
-    font-weight: 600;
-}
-
-.transformBridge small {
-    color: rgba(67, 97, 238, 0.6);
-    display: block;
-    font-size: 10px;
-    margin-top: 2px;
 }
 
 .sectionEyebrow,
@@ -1017,6 +870,16 @@
     padding-top: 24px;
 }
 
+.footerIcp {
+    color: rgba(255, 255, 255, 0.3);
+    text-decoration: none;
+    transition: color 150ms ease;
+}
+
+.footerIcp:hover {
+    color: #ffffff;
+}
+
 @media (min-width: 640px) {
     .shell {
         padding: 0 24px;
@@ -1058,29 +921,14 @@
         font-size: 72px;
     }
 
-    .heroLead,
-    .sectionLead {
+    .heroLead {
         font-size: 20px;
     }
 
-    .centerBlock h2,
     .sectionHeader h2,
     .valueCopy h2,
     .contactBlock h2 {
         font-size: 48px;
-    }
-
-    .problemStatement {
-        font-size: 18px;
-    }
-
-    .transformDiagram {
-        flex-direction: row;
-        gap: 40px;
-    }
-
-    .transformBridge > span {
-        display: block;
     }
 
     .scrollCue {
@@ -1166,15 +1014,10 @@
         max-width: calc(100vw - 32px);
     }
 
-    .centerBlock h2,
     .sectionHeader h2,
     .valueCopy h2,
     .contactBlock h2 {
         font-size: 28px;
-    }
-
-    .problemStatement br {
-        display: none;
     }
 
     .downloadButton {
@@ -1182,12 +1025,6 @@
         padding-left: 20px;
         padding-right: 20px;
         width: calc(100vw - 32px);
-    }
-}
-
-@keyframes pulse {
-    50% {
-        opacity: 0.5;
     }
 }
 

@@ -35,6 +35,16 @@ export default function FooterLayout({
                 </a>
               </div>
               {copyright}
+              <div className="footer__icp">
+                <a
+                  className="footer__icp-link"
+                  href="https://beian.miit.gov.cn/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  鄂ICP备18017077号-7
+                </a>
+              </div>
             </div>
           )}
         </div>
@@ -44,4 +54,3 @@ export default function FooterLayout({
     </>
   );
 }
-

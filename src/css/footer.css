@@ -136,6 +136,22 @@ footer .footer__copyright::before {
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
 }
 
+footer .footer__icp {
+  text-align: center;
+  font-size: 0.75rem;
+  padding-bottom: 1rem;
+}
+
+footer .footer__icp-link {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer .footer__icp-link:hover {
+  color: var(--color-white);
+}
+
 /* 社交媒体图标公共样式 */
 footer .footer__link-item[href*="forum.jit.pro"]::before,
 footer .footer__link-item[href*="github.com"]::before,
@@ -270,6 +286,10 @@ footer .footer__link-item>svg {
     padding: 0.5rem 0;
     margin-top: 1rem;
   }
+
+  footer .footer__icp {
+    font-size: 0.7rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -303,6 +323,10 @@ footer .footer__link-item>svg {
     font-size: 0.65rem;
     padding: 0.4rem 0;
     margin-top: 0.8rem;
+  }
+
+  footer .footer__icp {
+    font-size: 0.65rem;
   }
 }
 

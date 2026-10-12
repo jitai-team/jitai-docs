@@ -47,7 +47,7 @@ const CONTENT: DownloadContent = {
     mobile: {
         title: "Download Tip",
         description:
-            "JitAI is a desktop productivity tool designed for developers. For the full experience, please visit and download on a Windows or macOS device",
+            "You are visiting from a mobile device. JitAI is software designed to run on PCs and servers. Please use a Windows PC, Mac, or Linux server to download and install it.",
         buttonText: "View Documentation",
         buttonUrl: "/docs/devguide",
     },

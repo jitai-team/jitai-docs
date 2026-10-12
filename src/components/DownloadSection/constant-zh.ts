@@ -46,7 +46,7 @@ const CONTENT: DownloadContent = {
     mobile: {
         title: "下载提示",
         description:
-            "JitAI 是专为开发者打造的桌面端生产力工具，为了获得完整的功能体验，请在 Windows 或 macOS 设备上访问并下载",
+            "您正在通过移动端设备访问，JitAI 平台是PC 和服务器设备上运行的软件，请前往 Windows、MacOS、Linux 服务器等设备上进行下载安装",
         buttonText: "浏览开发文档",
         buttonUrl: "/zh/docs/devguide",
     },

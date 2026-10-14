@@ -73,7 +73,7 @@ const CONTENT: DownloadContent = {
         docker: {
             title: "Docker 镜像",
             description:
-                "支持Liunx\\Ubuntu\\CentOS等，适合部署在服务器上，作为测试或生产环境",
+                "支持Liunx\\Ubuntu\\CentOS等，适合部署在服务器上，用作生产环境",
             command:
                 "curl -fsSL https://setup.jit.pro/install-jitai.sh | sudo sh",
             copyText: "📋 复制",

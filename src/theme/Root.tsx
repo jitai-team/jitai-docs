@@ -71,7 +71,7 @@ export default function Root({children}: RootProps) {
 
   return (
     <>
-      {/* Google Tag Manager (noscript) */}
+      {/* 暂停加载 Google Tag Manager 的 noscript iframe，避免第三方请求影响页面加载速度。
       <noscript>
         <iframe 
           src="https://www.googletagmanager.com/ns.html?id=GTM-K39JND5X"
@@ -80,7 +80,7 @@ export default function Root({children}: RootProps) {
           style={{display: 'none', visibility: 'hidden'}}
         />
       </noscript>
-      {/* End Google Tag Manager (noscript) */}
+      */}
       {children}
     </>
   );

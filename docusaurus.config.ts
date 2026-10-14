@@ -52,8 +52,8 @@ const config: Config = {
         },
         // 注意：Viewport 配置已移至 themeConfig.metadata
         // 在此处配置会被 Docusaurus 默认的 viewport 覆盖
-        // Google Tag Manager
-        {
+        // 暂停加载 Google Tag Manager，避免第三方脚本影响页面加载速度。
+        /* {
             tagName: "script",
             attributes: {},
             innerHTML: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -61,7 +61,7 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-K39JND5X');`,
-        },
+        }, */
     ],
 
     // GitHub pages deployment config.

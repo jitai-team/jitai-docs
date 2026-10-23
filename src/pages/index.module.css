@@ -315,14 +315,6 @@
     z-index: 1;
 }
 
-.heroEyebrow {
-    color: var(--home-muted);
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    margin-bottom: 24px;
-}
-
 .hero h1 {
     color: var(--home-foreground);
     font-size: 40px;
@@ -332,16 +324,17 @@
     overflow-wrap: break-word;
 }
 
-.hero h1 span {
+.hero h1 .heroBrand {
     color: var(--home-accent);
 }
 
-.heroLead {
-    color: rgba(71, 85, 105, 0.7);
-    font-size: 18px;
-    line-height: 1.625;
-    margin-top: 24px;
-    max-width: 560px;
+.hero h1.heroTitleZh {
+    font-size: clamp(28px, 4.5vw, 64px);
+}
+
+.heroTitleZh > span {
+    display: inline-block;
+    white-space: nowrap;
 }
 
 .tagList {
@@ -836,12 +829,6 @@
     letter-spacing: 0;
 }
 
-.footerBrand p {
-    color: rgba(255, 255, 255, 0.3);
-    font-size: 12px;
-    margin-top: 4px;
-}
-
 .footerLinks {
     display: flex;
     flex-wrap: wrap;
@@ -921,10 +908,6 @@
         font-size: 72px;
     }
 
-    .heroLead {
-        font-size: 20px;
-    }
-
     .sectionHeader h2,
     .valueCopy h2,
     .contactBlock h2 {
@@ -999,13 +982,6 @@
         letter-spacing: 0;
         line-height: 1.2;
         max-width: calc(100vw - 32px);
-    }
-
-    .heroLead {
-        font-size: 16px;
-        max-width: calc(100vw - 32px);
-        overflow-wrap: anywhere;
-        word-break: break-all;
     }
 
     .heroContent,

@@ -1,3 +1,5 @@
+import { BRAND_COPY } from "../../brand";
+
 export interface PageMetadata {
     title: string;
     description: string;
@@ -5,11 +7,7 @@ export interface PageMetadata {
 
 export const PAGE_METADATA_ZH: Record<string, PageMetadata> = {
     // Main pages
-    index: {
-        title: "JitAI - 企业级 AI 智能体平台",
-        description:
-            "JitAI 是企业级 AI 智能体平台，支持企业构建 AI 智能体赋能业务岗位，提升企业业务运转效率。",
-    },
+    index: BRAND_COPY.zh,
     "ai-solution": {
         title: "AI 解决方案落地 - JitAI",
         description:

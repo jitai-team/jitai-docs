@@ -3,7 +3,7 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./styles.module.css";
 
-const PLATFORM_NAME = "企业级智能体开发运行一体化平台";
+import { BRAND_COPY } from "../../brand";
 
 const getLocalePaths = (locale: string) => {
     const root = locale === "zh" ? "/zh/" : "/";
@@ -42,6 +42,7 @@ const OfficialHeader: React.FC<{ currentLocale?: string }> = ({
 }) => {
     const { i18n } = useDocusaurusContext();
     const locale = currentLocale || i18n.currentLocale;
+    const brand = BRAND_COPY[locale.startsWith("zh") ? "zh" : "en"];
     const { root, download, navItems, downloadLabel } = useMemo(
         () => getLocalePaths(locale),
         [locale],
@@ -106,7 +107,7 @@ const OfficialHeader: React.FC<{ currentLocale?: string }> = ({
                             <span className={styles.brandName}>JitAI</span>
                             <span className={styles.brandDivider} />
                             <span className={styles.brandSubline}>
-                                {PLATFORM_NAME}
+                                {brand.title.slice("JitAI".length).replace(/^[，,]\s*/, "")}
                             </span>
                         </Link>
                         <nav className={styles.desktopNav}>

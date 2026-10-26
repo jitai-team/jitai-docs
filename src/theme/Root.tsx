@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { BRAND_COPY } from '../brand';
 
 type RootProps = { children?: React.ReactNode };
 
@@ -7,13 +8,7 @@ export default function Root({children}: RootProps) {
   const {i18n} = useDocusaurusContext();
   const isZh = i18n.currentLocale.startsWith('zh');
 
-  const title = isZh
-    ? 'JitAI - 企业级 AI 智能体平台'
-    : 'JitAI - Enterprise AI Agent Platform';
-
-  const description = isZh
-    ? 'JitAI 是企业级 AI 智能体平台，帮助企业快速构建 AI 智能体，赋能核心业务岗位，提升企业业务运转效率。'
-    : 'JitAI is an enterprise-grade AI agent platform for building AI agents that empower core business roles and improve operational efficiency.';
+  const {title, description} = BRAND_COPY[isZh ? 'zh' : 'en'];
 
   useEffect(() => {
     if (typeof window === 'undefined') {

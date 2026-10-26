@@ -4,9 +4,8 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import OfficialHeader from "@site/src/components/OfficialHeader";
 import styles from "./index.module.css";
+import { BRAND_COPY } from "../brand";
 
-const PLATFORM_NAME = "企业级智能体开发运行一体化平台";
-const TAGLINE = "从 Demo 到生产，重塑企业AI生产力";
 const COPYRIGHT_YEAR = new Date().getFullYear();
 
 const getDownloadUrl = (locale: string) =>
@@ -185,26 +184,32 @@ const handleTopLink = (event: React.MouseEvent<HTMLAnchorElement>) => {
 };
 
 const HomePage: React.FC = () => {
+    const { i18n } = useDocusaurusContext();
+    const brand = BRAND_COPY[i18n.currentLocale.startsWith("zh") ? "zh" : "en"];
+
     return (
         <>
             <Head
-                title="JitAI — 企业级智能体开发运行一体化平台"
+                title={brand.title}
+                titleTemplate="%s"
             >
                 <meta
                     name="description"
-                    content="JitAI 是企业级 BS 架构、多用户协同、支持全私有化部署的智能体开发运行一体化平台。从 Demo 到生产，重塑企业AI生产力。"
+                    content={brand.description}
                 />
+                <meta name="twitter:title" content={brand.title} />
+                <meta name="twitter:description" content={brand.description} />
                 <meta
                     name="keywords"
                     content="JitAI,企业智能体,AI平台,智能体开发,私有化部署,Agentic Company,企业AI"
                 />
                 <meta
                     property="og:title"
-                    content="JitAI — 企业级智能体开发运行一体化平台"
+                    content={brand.title}
                 />
                 <meta
                     property="og:description"
-                    content="JitAI 是企业级 BS 架构、多用户协同、支持全私有化部署的智能体开发运行一体化平台。从 Demo 到生产，重塑企业AI生产力。"
+                    content={brand.description}
                 />
             </Head>
             <div className={`${styles.homePage} custom-page`}>
@@ -222,38 +227,44 @@ const HomePage: React.FC = () => {
     );
 };
 
-const HeroSection: React.FC = () => (
-    <section className={`${styles.section} ${styles.hero}`}>
-        <div className={styles.heroGlow} aria-hidden="true">
-            <div className={styles.glowLarge} />
-            <div className={styles.glowSmall} />
-        </div>
-        <div className={styles.shell}>
-            <div className={styles.heroContent}>
-                <p className={styles.heroEyebrow}>
-                    JitAI 一体化企业级智能体平台
-                </p>
-                <h1>
-                    <span>JitAI平台</span>，用AI落地AI
-                </h1>
-                <p className={styles.heroLead}>
-                    无需人工开发，AI自动生成企业专属AI业务系统
-                </p>
-                <div className={styles.tagList}>
-                    {HERO_TAGS.map((tag) => (
-                        <span key={tag}>{tag}</span>
-                    ))}
-                </div>
-                <div className={styles.heroActions}>
-                    <DownloadButton size="md" />
+const HeroSection: React.FC = () => {
+    const { i18n } = useDocusaurusContext();
+    const isZh = i18n.currentLocale.startsWith("zh");
+    const brand = BRAND_COPY[isZh ? "zh" : "en"];
+    const separator = isZh ? "，" : ", ";
+    const titleParts = brand.description.split(separator);
+
+    return (
+        <section className={`${styles.section} ${styles.hero}`}>
+            <div className={styles.heroGlow} aria-hidden="true">
+                <div className={styles.glowLarge} />
+                <div className={styles.glowSmall} />
+            </div>
+            <div className={styles.shell}>
+                <div className={styles.heroContent}>
+                    <h1 className={isZh ? styles.heroTitleZh : undefined}>
+                        {titleParts.map((part, index) => (
+                            <span key={part} className={index === 0 ? styles.heroBrand : undefined}>
+                                {part}{index < titleParts.length - 1 ? separator : ""}
+                            </span>
+                        ))}
+                    </h1>
+                    <div className={styles.tagList}>
+                        {HERO_TAGS.map((tag) => (
+                            <span key={tag}>{tag}</span>
+                        ))}
+                    </div>
+                    <div className={styles.heroActions}>
+                        <DownloadButton size="md" />
+                    </div>
                 </div>
             </div>
-        </div>
-        <div className={styles.scrollCue} aria-hidden="true">
-            <ArrowDownIcon />
-        </div>
-    </section>
-);
+            <div className={styles.scrollCue} aria-hidden="true">
+                <ArrowDownIcon />
+            </div>
+        </section>
+    );
+};
 
 const CapabilitiesSection: React.FC = () => {
     const { i18n } = useDocusaurusContext();
@@ -459,32 +470,37 @@ const ValueVisual: React.FC<{ type: string }> = ({ type }) => {
     );
 };
 
-const ContactSection: React.FC = () => (
-    <section id="contact" className={`${styles.section} ${styles.contactSection}`}>
-        <div className={styles.shell}>
-            <div className={styles.contactBlock}>
-                <h2>准备好构建属于你的 AI 数字员工了吗？</h2>
-                <p>
-                    预约专属演示，了解 JitAI 如何帮助企业落地 AI，转型为智能驱动型组织。
-                </p>
-                <DownloadButton size="lg" />
-                <strong>JitAI，与您共创智能未来！</strong>
+const ContactSection: React.FC = () => {
+    const { i18n } = useDocusaurusContext();
+    const brand = BRAND_COPY[i18n.currentLocale.startsWith("zh") ? "zh" : "en"];
+
+    return (
+        <section id="contact" className={`${styles.section} ${styles.contactSection}`}>
+            <div className={styles.shell}>
+                <div className={styles.contactBlock}>
+                    <h2>准备好构建属于你的 AI 数字员工了吗？</h2>
+                    <p>
+                        预约专属演示，了解 JitAI 如何帮助企业落地 AI，转型为智能驱动型组织。
+                    </p>
+                    <DownloadButton size="lg" />
+                    <strong>{brand.title}</strong>
+                </div>
             </div>
-        </div>
-    </section>
-);
+        </section>
+    );
+};
 
 const HomeFooter: React.FC = () => {
     const { i18n } = useDocusaurusContext();
     const navItems = getFooterNavItems(i18n.currentLocale);
+    const brand = BRAND_COPY[i18n.currentLocale.startsWith("zh") ? "zh" : "en"];
 
     return (
         <footer className={styles.footer}>
             <div className={styles.shell}>
                 <div className={styles.footerTop}>
                     <div className={styles.footerBrand}>
-                        <span>JitAI · {PLATFORM_NAME}</span>
-                        <p>{TAGLINE}</p>
+                        <span>{brand.description}</span>
                     </div>
                     <nav className={styles.footerLinks}>
                         {navItems.map((item) => (

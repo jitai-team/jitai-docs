@@ -4,10 +4,11 @@ import type * as Preset from "@docusaurus/preset-classic";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
+import { BRAND_COPY } from "./src/brand";
+
 const config: Config = {
-    title: "JitAi",
-    tagline:
-        "Next-generation application development technology system designed for AI, accelerating AI application processes and ushering in the era of large-scale AI applications",
+    title: "JitAI",
+    tagline: BRAND_COPY.en.description,
     favicon: "https://jit-www.oss-accelerate.aliyuncs.com/logo/logo.svg",
 
     // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future

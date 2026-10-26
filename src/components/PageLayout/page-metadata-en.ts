@@ -1,3 +1,5 @@
+import { BRAND_COPY } from "../../brand";
+
 export interface PageMetadata {
     title: string;
     description: string;
@@ -5,11 +7,7 @@ export interface PageMetadata {
 
 export const PAGE_METADATA_EN: Record<string, PageMetadata> = {
     // Main pages
-    index: {
-        title: "JitAI - Enterprise AI Agent Platform",
-        description:
-            "JitAI is an enterprise-grade AI agent platform for building AI agents that empower business roles and improve operational efficiency.",
-    },
+    index: BRAND_COPY.en,
     "ai-solution": {
         title: "AI Solution Landing - JitAI",
         description:

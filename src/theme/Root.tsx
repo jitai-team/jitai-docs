@@ -1,14 +1,18 @@
 import React, { useEffect } from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { useLocation } from '@docusaurus/router';
 import { BRAND_COPY } from '../brand';
 
 type RootProps = { children?: React.ReactNode };
 
 export default function Root({children}: RootProps) {
   const {i18n} = useDocusaurusContext();
+  const { pathname } = useLocation();
+  const pagePath = pathname.replace(/^\/zh(?=\/|$)/, '').replace(/\/$/, '') || '/';
+  const hasPageMetadata = ['/', '/solutions', '/whitepaper', '/cases', '/partners', '/about', '/contact', '/download', '/privacy', '/terms-of-service'].includes(pagePath);
   const isZh = i18n.currentLocale.startsWith('zh');
 
-  const {title, description} = BRAND_COPY[isZh ? 'zh' : 'en'];
+  const { title, description } = BRAND_COPY[isZh ? 'zh' : 'en'];
 
   useEffect(() => {
     if (typeof window === 'undefined') {
@@ -42,6 +46,8 @@ export default function Root({children}: RootProps) {
 
   useEffect(() => {
     // Update meta tags dynamically
+    // Marketing pages own their localized metadata; do not overwrite it after hydration.
+    if (hasPageMetadata) return;
     const updateMetaTag = (name: string, content: string, attributeType?: string) => {
       const isProperty = attributeType === 'property';
       let meta = document.querySelector(`meta[${isProperty ? 'property' : 'name'}="${name}"]`) as HTMLMetaElement;
@@ -62,7 +68,7 @@ export default function Root({children}: RootProps) {
     updateMetaTag('og:description', description, 'property');
     updateMetaTag('twitter:title', title);
     updateMetaTag('twitter:description', description);
-  }, [title, description]);
+  }, [title, description, hasPageMetadata]);
 
   return (
     <>

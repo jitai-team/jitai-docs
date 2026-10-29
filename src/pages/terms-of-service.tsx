@@ -1,11 +1,10 @@
 import React from 'react';
-import PageLayout from '@site/src/components/PageLayout';
-import { LegalDocumentPage } from '@site/src/components/LegalDocuments/copyRight';
-
-export default function ServiceAgreementPage(): React.JSX.Element {
-  return (
-    <PageLayout pageId="terms-of-service">
-      <LegalDocumentPage type="service" />
-    </PageLayout>
-  );
+import MarketingLayout from '@site/src/components/MarketingSite';
+import { useMarketingCopy } from '@site/src/components/MarketingSite/copy';
+import Chinese from '@site/src/components/LegalDocuments/terms-of-service-zh.mdx';
+import English from '@site/src/components/LegalDocuments/terms-of-service-en.mdx';
+export default function Page() {
+  const { isZh, text } = useMarketingCopy();
+  const Content = isZh ? Chinese : English;
+  return <MarketingLayout route="/terms-of-service" title={text('服务条款', 'Terms of service')} description={text('JitAI 服务条款', 'JitAI Terms of service')}><article className="legal-copy"><Content /></article></MarketingLayout>;
 }

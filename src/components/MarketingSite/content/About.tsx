@@ -10,7 +10,7 @@ export default function About() {
 <div className="wrap">
 <p className="kicker reveal">{t("关于我们")}</p>
 <h1 className="h1 mt-16 reveal" style={{"fontSize": "clamp(1.9rem,4.2vw,3rem)", "maxWidth": "100%"}}>{t("让每一家企业，都拥有自己可控、可进化的 AI 业务大脑")}</h1>
-<p className="lead mt-24 reveal" style={{"maxWidth": "70ch"}}>{t("JitAI 是 AI 时代开发和运行一体化平台。我们做的不是给系统外挂一个 AI， 而是让 AI 成为系统内生的一部分 —— 能看懂业务、能驱动业务、还能持续造系统。")}</p>
+<p className="lead mt-24 reveal" style={{"maxWidth": "70ch"}}>{t("JitAI 是 AI 原生应用平台。我们做的不是给系统外挂一个 AI， 而是让 AI 成为系统内生的一部分 —— 能看懂业务、能驱动业务、还能持续造系统。")}</p>
 <div className="btn-row mt-32 reveal">
 <a className="btn btn-primary" href={path("/download")}>{t("免费下载桌面版")}</a>
 <a className="btn btn-ghost" href="#contact">{t("联系我们")}</a>

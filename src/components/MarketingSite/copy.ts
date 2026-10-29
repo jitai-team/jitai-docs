@@ -1,4 +1,5 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { BRAND_COPY } from '../../brand';
 import english from './content/en.json';
 
 export function useMarketingCopy() {
@@ -7,7 +8,7 @@ export function useMarketingCopy() {
   const text = (zh: string, en: string) => isZh ? zh : en;
   const path = (route: string) => isZh ? `/zh${route === '/' ? '/' : route}` : route;
   const t = (source: keyof typeof english) => isZh ? source : `${english[source]} `;
-  return { isZh, text, path, t };
+  return { isZh, text, path, t, brand: BRAND_COPY[isZh ? 'zh' : 'en'] };
 }
 
 export const CONTACT_EMAIL = 'support@jit.pro';

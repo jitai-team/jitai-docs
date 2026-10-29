@@ -18,7 +18,7 @@ export default function Footer({ theme }: { theme: 'light' | 'dark' }) {
     <div className="footer-top">
       <div className="footer-brand">
         <a className="brand" href={path('/')}><img className="official-logo" src={theme === 'dark' ? LOGO_DARK : LOGO_LIGHT} alt="JitAI" width="112" height="34" /></a>
-        <p>{text('AI 时代开发和运行一体化平台。让企业拥有可持续进化的 AI 业务大脑。', 'One platform for development and operations. Build business AI that evolves with your enterprise.')}</p>
+        <p>{text('AI 原生应用平台。让企业拥有可自生长的 AI 经营大脑。', 'An AI-native application platform. Give enterprises a business AI brain that continually evolves.')}</p>
         <div className="tag-row mt-16"><span className="tag">{text('业务系统 AI 原生', 'AI-native systems')}</span><span className="tag">{text('开发过程 AI 原生', 'AI-native development')}</span></div>
       </div>
       {groups.map(group => <div className="footer-col" key={group.title}><h2 className="h5">{group.title}</h2><ul>{group.links.map(([url, label]) => <li key={url}><a href={url.startsWith('/') ? path(url) : url}>{label}</a></li>)}</ul></div>)}

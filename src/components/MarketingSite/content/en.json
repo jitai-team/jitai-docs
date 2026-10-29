@@ -1,13 +1,7 @@
 {
-  "AI 时代开发和运行一体化平台": "One platform for development and operations in the AI era",
-  "打造 AI 原生系统，": "Build AI-native systems.",
-  "让 AI 看懂您的业务全貌": "Give AI the full picture of your business.",
-  "JitAI，AI 时代开发和运行一体化平台，构建": "JitAI brings development and operations together to build",
   "AI 原生": "AI-native",
-  "的业务系统和 AI 智能体， 实现 AI 化转型，撬动业务增长的 AI 杠杆。": "business systems and agents, turning AI transformation into business growth.",
   "免费体验桌面版": "Try the desktop edition",
   "预约企业落地沟通": "Discuss your rollout",
-  "与外挂式通用桌面 Agent、AI 代码助手不同，JitAI 的 AI 和 AI 开发都内生在系统之中。": "JitAI embeds AI and AI development inside the business system, beyond standalone desktop agents and coding assistants.",
   "行业现状": "The challenge",
   "企业 AI 落地的两座大山": "Two barriers to enterprise AI",
   "业务运行侧：智能体游离在系统之外": "Operations: agents remain outside the system",
@@ -669,7 +663,6 @@
   "先下载桌面版体验": "Download and try JitAI",
   "关于我们": "About us",
   "让每一家企业，都拥有自己可控、可进化的 AI 业务大脑": "Give every enterprise an AI business system it can control and evolve",
-  "JitAI 是 AI 时代开发和运行一体化平台。我们做的不是给系统外挂一个 AI， 而是让 AI 成为系统内生的一部分 —— 能看懂业务、能驱动业务、还能持续造系统。": "JitAI brings development and operations together. AI is embedded in the system so it can understand the business, drive operations and keep building the system.",
   "免费下载桌面版": "Download desktop for free",
   "联系我们": "Contact us",
   "品牌愿景": "Our vision",
@@ -885,5 +878,7 @@
   "欢迎带着具体行业与客户需求，与我们开始交流。": "Bring your industry context and customer needs to the conversation.",
   "共建企业 AI 原生生态，从合作交流开始": "Build an AI-native enterprise ecosystem, starting with a conversation",
   "企业 AI 落地需要技术能力与行业经验结合。 欢迎与 JitAI 一起探讨客户需求、产品应用与服务合作。": "Enterprise AI combines technology capabilities with industry experience. Explore customer needs, product applications and service collaboration with JitAI.",
-  "商务对接咨询": "Talk to our team"
+  "商务对接咨询": "Talk to our team",
+  "与外挂式桌面 AI 智能体不同，JitAI 的业务 AI 和开发 AI 都内生在业务系统之中。": "Unlike external desktop AI agents, JitAI embeds both business AI and development AI within the business system.",
+  "JitAI 是 AI 原生应用平台。我们做的不是给系统外挂一个 AI， 而是让 AI 成为系统内生的一部分 —— 能看懂业务、能驱动业务、还能持续造系统。": "JitAI is an AI-native application platform. Instead of adding AI to a system from the outside, we make it an integral part of the system — able to understand the business, drive operations and keep building the system."
 }

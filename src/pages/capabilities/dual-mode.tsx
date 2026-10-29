@@ -1,6 +1,3 @@
-import React from "react";
-import OfficialCapabilityDetail from "@site/src/components/OfficialCapabilityDetail";
-
-export default function DualModePage() {
-    return <OfficialCapabilityDetail slug="dual-mode" />;
-}
+import React from 'react';
+import LegacyRedirect from '@site/src/components/MarketingSite/LegacyRedirect';
+export default function Page() { return <LegacyRedirect to="/whitepaper#architecture" />; }

@@ -1,0 +1,966 @@
+[
+  {
+    "sourceSlide": 1,
+    "id": "chapter-01",
+    "title": "JitAI Technical Whitepaper",
+    "intro": [
+      "The AI-native paradigm: development and operations working as one",
+      "Embedded AI · Full system visibility · Development inside the application · A continuous development and runtime loop"
+    ]
+  },
+  {
+    "sourceSlide": 2,
+    "id": "chapter-02",
+    "title": "Two barriers to enterprise AI adoption",
+    "intro": [
+      "Employees already have AI assistants, but real business value remains inside systems that AI struggles to enter"
+    ],
+    "notes": [
+      "The core issue is where agents operate and whether they specialize, rather than model capability alone"
+    ],
+    "cards": [
+      {
+        "title": "Barrier one: general-purpose agents remain outside the system",
+        "paragraphs": [
+          "API access reveals only function names, parameters and return values",
+          "Business objects, field semantics, relationships and state rules remain invisible",
+          "Agents cannot execute accurately or reason from the complete business context"
+        ]
+      },
+      {
+        "title": "Barrier two: general-purpose agents lack task specialization",
+        "paragraphs": [
+          "One general-purpose agent handles every business task",
+          "It lacks focus, depth and domain-specific decision criteria",
+          "Capabilities stay on individual desktops, outside shared governance and reuse"
+        ]
+      }
+    ]
+  },
+  {
+    "sourceSlide": 3,
+    "id": "chapter-03",
+    "title": "What kind of system can overcome these barriers?",
+    "intro": [
+      "To bring AI inside and align systems with the business, four requirements must be met together"
+    ],
+    "notes": [
+      "All four are essential: specialization provides expertise, embedding brings AI inside, and business twins with AI-friendly design provide visibility and understanding"
+    ],
+    "cards": [
+      {
+        "title": "Specialized agents",
+        "paragraphs": [
+          "Build dedicated agents for each business function",
+          "Each function focuses on its own responsibilities and decision criteria"
+        ]
+      },
+      {
+        "title": "Embedded agents",
+        "paragraphs": [
+          "Agents operate inside the system rather than as external tools",
+          "The runtime schedules them under shared governance"
+        ]
+      },
+      {
+        "title": "Business twins",
+        "paragraphs": [
+          "The system mirrors the real business",
+          "Business objects, processes and rules have corresponding system representations"
+        ]
+      },
+      {
+        "title": "AI-friendly systems",
+        "paragraphs": [
+          "AI can perceive and understand the system",
+          "AI can invoke and operate its capabilities"
+        ]
+      }
+    ]
+  },
+  {
+    "sourceSlide": 4,
+    "id": "chapter-04",
+    "title": "Development becomes the bottleneck: customization and fragmented AI context",
+    "notes": [
+      "Conclusion: effective AI system development first requires continuity of information across the development process"
+    ],
+    "cards": [
+      {
+        "title": "Traditional development: deep customization means high cost, long timelines and difficult maintenance",
+        "paragraphs": [
+          "A system meeting all four requirements must be built around the enterprise's actual business and cannot be replaced by generic software",
+          "Traditional custom development requires substantial investment, slow delivery and costly changes"
+        ]
+      },
+      {
+        "title": "Introducing AI development: AI coding delivers only about 15% overall efficiency improvement",
+        "paragraphs": [
+          "Root cause: information is fragmented across requirements, design, coding, validation, release and operations",
+          "AI cannot see the whole system and its context, leaving an unbounded range of errors that is hard to resolve",
+          "Generated code receives no automatic feedback; errors are discovered through manual testing"
+        ]
+      }
+    ]
+  },
+  {
+    "sourceSlide": 5,
+    "id": "chapter-05",
+    "title": "The concept: two dimensions of AI-native design",
+    "intro": [
+      "The chain of problems points to two dimensions that must both be AI-native"
+    ],
+    "notes": [
+      "These two dimensions form the element runtime and element development tracks that follow"
+    ],
+    "cards": [
+      {
+        "title": "1. AI-native application systems",
+        "paragraphs": [
+          "The runtime dimension: help operational AI understand the system",
+          "Every system module is a standardized, self-describing element",
+          "AI can see and understand every module",
+          "Including models, services, workflows, permissions, states and their constraints"
+        ]
+      },
+      {
+        "title": "2. AI-native application development technology",
+        "paragraphs": [
+          "The development dimension: help development AI understand what it is building",
+          "AI can see lifecycle information for the module being developed",
+          "Definitions, responsibilities, code, specifications, validation and runtime results",
+          "Requirements through operations are connected, allowing errors to converge"
+        ]
+      }
+    ]
+  },
+  {
+    "sourceSlide": 6,
+    "id": "chapter-06",
+    "title": "JitAI: one element runtime and specification for both AI-native dimensions",
+    "notes": [
+      "Systems can closely match enterprise needs with much lower customization and maintenance costs. Development and operations share one foundation for both AI-native dimensions."
+    ],
+    "cards": [
+      {
+        "title": "1. Design an abstract application system model",
+        "paragraphs": [
+          "Define system layers, element types and responsibility boundaries",
+          "Use system-level knowledge to guide AI architectural decomposition"
+        ]
+      },
+      {
+        "title": "2. Express system modules as elements",
+        "paragraphs": [
+          "Standardized and self-describing",
+          "Hot plugging and hot loading"
+        ]
+      },
+      {
+        "title": "3. Unify development and operations",
+        "paragraphs": [
+          "One system model, specification, runtime, architecture and technology framework",
+          "Development can also drive the runtime"
+        ]
+      },
+      {
+        "title": "4. Connect both directions",
+        "paragraphs": [
+          "Development can observe and drive operations",
+          "Operations can provide feedback to development"
+        ]
+      }
+    ]
+  },
+  {
+    "sourceSlide": 7,
+    "id": "chapter-07",
+    "title": "The essence of AI-native design: embedded AI with full system visibility",
+    "intro": [
+      "Both development and runtime AI should see and understand the full system and every element from inside it"
+    ],
+    "cards": [
+      {
+        "title": "Traditional approach: disconnected external tools",
+        "paragraphs": [
+          "Development tools sit outside the system architecture",
+          "Runtime agents operate outside the business system",
+          "Development AI cannot see the full lifecycle of its development targets",
+          "Runtime AI can call APIs but cannot see the complete business context"
+        ]
+      },
+      {
+        "title": "JitAI: embedded and connected",
+        "paragraphs": [
+          "Development technology is part of the architecture itself",
+          "AI operates inside the system rather than as an external tool",
+          "Development AI can see the full system and all elements",
+          "Runtime AI can also see the whole system and interact through business objects for complete perception"
+        ]
+      }
+    ],
+    "extras": [
+      {
+        "title": "The structure of this whitepaper",
+        "paragraphs": [
+          "Two parallel tracks: element development and element runtime. Each follows the same sequence: background problems → design principles → the JitAI approach",
+          "The tracks connect: development produces conforming elements → runtime loads and executes them → execution results return to development for iteration"
+        ]
+      }
+    ]
+  },
+  {
+    "sourceSlide": 8,
+    "id": "chapter-08",
+    "title": "Six structural gaps in traditional AI development",
+    "eyebrow": "Element development",
+    "notes": [
+      "Shared root cause: AI is external, without full system context, unified architectural constraints or a standardized output contract"
+    ],
+    "cards": [
+      {
+        "title": "Semantic gap",
+        "paragraphs": [
+          "AI does not actively clarify ambiguous requirements and implements the simplest interpretation",
+          "Root cause: no requirement clarification mechanism"
+        ]
+      },
+      {
+        "title": "Context gap",
+        "paragraphs": [
+          "Limited context windows cannot hold all materials, and content in the middle can be overlooked",
+          "Root cause: no structured context"
+        ]
+      },
+      {
+        "title": "Lifecycle gap",
+        "paragraphs": [
+          "AI is responsible only for writing code, excluding upstream requirements and downstream deployment and operations",
+          "Root cause: separation of development and operations"
+        ]
+      },
+      {
+        "title": "Feedback gap",
+        "paragraphs": [
+          "Generated code receives no automatic feedback; errors depend on manual testing",
+          "Root cause: no runtime-feedback loop"
+        ]
+      },
+      {
+        "title": "Memory gap",
+        "paragraphs": [
+          "Context and requirement clarification disappear between sessions, forcing repeated explanations",
+          "Root cause: no persistent design document"
+        ]
+      },
+      {
+        "title": "Observability gap",
+        "paragraphs": [
+          "AI cannot see where code runs, where it fails or who calls it",
+          "Root cause: no runtime observability"
+        ]
+      }
+    ]
+  },
+  {
+    "sourceSlide": 9,
+    "id": "chapter-09",
+    "title": "The JitAI approach: standardization and integration expose the system, element details and the full lifecycle to AI",
+    "eyebrow": "Element development",
+    "intro": [
+      "Three development principles address the causes of the six gaps"
+    ],
+    "notes": [
+      "Goal: move AI development from free-form coding to structured production governed by knowledge and contracts"
+    ],
+    "cards": [
+      {
+        "title": "A correct system-wide design perspective",
+        "paragraphs": [
+          "The abstract application model holds system knowledge and element responsibilities, enabling accurate architectural decomposition while maintaining a correct view of the whole system"
+        ],
+        "badge": "01"
+      },
+      {
+        "title": "Precise element development specifications",
+        "paragraphs": [
+          "Element specifications form the sole contract for development and operations. Standardizing smaller system modules constrains generation, improves accuracy and makes errors enumerable"
+        ],
+        "badge": "02"
+      },
+      {
+        "title": "An embedded loop: development, operations and feedback",
+        "paragraphs": [
+          "Development AI is embedded in the system and can see runtime results and exceptions, creating an automated development, validation and iteration loop"
+        ],
+        "badge": "03"
+      }
+    ]
+  },
+  {
+    "sourceSlide": 10,
+    "id": "chapter-10",
+    "title": "The abstract application model and element type system",
+    "eyebrow": "Element development",
+    "cards": [
+      {
+        "title": "Abstract application model: system-level knowledge",
+        "paragraphs": [
+          "Define common layers of enterprise application systems",
+          "Define responsibilities and collaboration between layers",
+          "Define element reference and invocation rules",
+          "Each node in the model represents an element type"
+        ]
+      },
+      {
+        "title": "Element types: knowledge of type responsibilities",
+        "paragraphs": [
+          "Every type has a clear position in the system",
+          "Specify field structures, public capabilities and modification boundaries",
+          "Specify validation methods and architectural ownership",
+          "Models · Services · Pages · Workflows · Events · Agents · Roles…"
+        ]
+      }
+    ],
+    "extras": [
+      {
+        "title": "How this guides development AI",
+        "paragraphs": [
+          "When designing an application's element architecture, AI reads system-model knowledge and type responsibilities to produce accurate system decomposition and element designs from the outset"
+        ]
+      }
+    ]
+  },
+  {
+    "sourceSlide": 11,
+    "id": "chapter-11",
+    "title": "SDD specification-driven development and element source control",
+    "eyebrow": "Element development",
+    "cards": [
+      {
+        "title": "Type specifications as upfront constraints",
+        "paragraphs": [
+          "Specifications are enforced by Types and validation tools rather than AI discretion",
+          "When specifications do not cover a scenario, stop and report the gap instead of inventing behavior",
+          "When specifications conflict with implementation, use implementation source as the authority"
+        ]
+      },
+      {
+        "title": "Elements are standardized source modules",
+        "paragraphs": [
+          "Development AI generates source code and delivers it as elements",
+          "Conversational development means business users normally need not touch source code",
+          "Source remains visible and editable, allowing manual changes"
+        ]
+      }
+    ],
+    "extras": [
+      {
+        "title": "Comparison with other development approaches",
+        "paragraphs": []
+      }
+    ],
+    "comparisons": [
+      {
+        "title": "Traditional AI coding",
+        "paragraphs": [
+          "Free-form coding with unbounded error types, guided by individual prompts"
+        ]
+      },
+      {
+        "title": "Specification-driven generation (SDD)",
+        "paragraphs": [
+          "People write specifications to generate source, followed by compilation and deployment"
+        ]
+      },
+      {
+        "title": "JitAI",
+        "paragraphs": [
+          "Type constraints generate standardized elements; development and runtime are unified without a separate compile-and-deploy step"
+        ]
+      }
+    ]
+  },
+  {
+    "sourceSlide": 12,
+    "id": "chapter-12",
+    "title": "Structured context and design-document management",
+    "eyebrow": "Element development",
+    "notes": [
+      "Persist facts—source, design documents, element inventories, tasks and logs—so work continues across sessions and assistants"
+    ],
+    "cards": [
+      {
+        "title": "Context: from one-time injection to retrieval on demand",
+        "paragraphs": [
+          "Traditional approach: a fixed, limited context window requires people to split tasks and choose materials",
+          "JitAI: addressable context retrieved on demand",
+          "One element is the smallest independently buildable and verifiable unit",
+          "Read only the current Type specification and direct dependencies",
+          "Content outside the target scope stays outside the context",
+          "Context becomes a retrieval problem rather than a capacity problem"
+        ]
+      },
+      {
+        "title": "Design documents: mandatory clarification and persistence",
+        "paragraphs": [
+          "Application design documents have states: draft → confirmed",
+          "Drafts record confirmed facts, public sources, inferences, assumptions and open questions; they are not implementation authority",
+          "Confirm scope, role permissions, state transitions, exceptions and acceptance criteria individually",
+          "Unresolved ambiguity prevents confirmation",
+          "Make ambiguity explicit · Carry clarification downstream · Separate facts from inferences"
+        ]
+      }
+    ]
+  },
+  {
+    "sourceSlide": 13,
+    "id": "chapter-13",
+    "title": "Six automated checks across the development lifecycle",
+    "eyebrow": "Element development",
+    "intro": [
+      "Completion means passing all six checks. Writing files, parsing JSON or building successfully is not sufficient"
+    ],
+    "notes": [
+      "Value: elements meet type contracts and load safely; production validation continually returns exceptions for improvement"
+    ],
+    "arrows": [
+      "→",
+      "→",
+      "→",
+      "→",
+      "→"
+    ],
+    "cards": [
+      {
+        "title": "Validation is feedback",
+        "paragraphs": [
+          "Development validation errors, runtime exceptions and logs return directly to development AI, creating an automated hypothesis → validation → modification → revalidation loop"
+        ]
+      },
+      {
+        "title": "Repair threshold",
+        "paragraphs": [
+          "Limit repairs on the same object to five attempts, then transfer to a person to prevent repeated iteration in the wrong direction"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "title": "1 Source checks",
+        "paragraphs": [
+          "Syntax, specifications and types"
+        ]
+      },
+      {
+        "title": "2 App relationships",
+        "paragraphs": [
+          "Complete reference and dependency relationships"
+        ]
+      },
+      {
+        "title": "3 Build checks",
+        "paragraphs": [
+          "Produce frontend and backend runtime resources"
+        ]
+      },
+      {
+        "title": "4 Loading checks",
+        "paragraphs": [
+          "Address resolution and registration"
+        ]
+      },
+      {
+        "title": "5 Functional validation",
+        "paragraphs": [
+          "Run with data in a pre-release environment"
+        ]
+      },
+      {
+        "title": "6 Runtime validation",
+        "paragraphs": [
+          "Production execution with exception feedback"
+        ]
+      }
+    ]
+  },
+  {
+    "sourceSlide": 14,
+    "id": "chapter-14",
+    "title": "Four structural defects in current AI application patterns, such as desktop agents with ERP",
+    "eyebrow": "Element runtime",
+    "notes": [
+      "Shared root cause: AI is outside the system, and the system was not designed for AI"
+    ],
+    "cards": [
+      {
+        "title": "01 External AI",
+        "paragraphs": [
+          "Agents run on employee desktops or in the cloud and use APIs. Outside the architecture, they cannot see the full system or element structure"
+        ]
+      },
+      {
+        "title": "02 Systems are not AI-native",
+        "paragraphs": [
+          "Legacy systems center on tables and pages, without AI-readable object models, field semantics or constraints. Agents see interfaces but not business objects"
+        ]
+      },
+      {
+        "title": "03 Disconnected judgment and execution",
+        "paragraphs": [
+          "Rules are duplicated in systems and agents and inevitably diverge. Chained API calls hide intermediate states and make failures difficult to roll back"
+        ]
+      },
+      {
+        "title": "04 Missing governance",
+        "paragraphs": [
+          "Integration accounts have coarse API-level permissions, while desktop skills and prompts cannot be audited or upgraded centrally"
+        ]
+      }
+    ]
+  },
+  {
+    "sourceSlide": 15,
+    "id": "chapter-15",
+    "title": "The JitAI approach: an element architecture with embedded AI",
+    "eyebrow": "Element runtime",
+    "intro": [
+      "Three runtime principles address the four structural defects"
+    ],
+    "notes": [
+      "Goal: embedded runtime AI with full visibility, clear responsibilities and deterministic controls"
+    ],
+    "cards": [
+      {
+        "title": "AI as a first-class element",
+        "paragraphs": [
+          "Agents are dedicated elements sharing specifications, builds and governance with business elements, scheduled by the runtime"
+        ],
+        "badge": "01"
+      },
+      {
+        "title": "Separate intelligence from functions",
+        "paragraphs": [
+          "AI handles non-deterministic reasoning, including interpretation, judgment and decisions based on knowledge, experience and thinking frameworks;",
+          "Runtime services deterministically execute strongly consistent calculations, inventory updates and state transitions"
+        ],
+        "badge": "02"
+      },
+      {
+        "title": "Unified governance",
+        "paragraphs": [
+          "Elements and agents share RBAC, data scope and audit trails; permissions determine AI visibility"
+        ],
+        "badge": "03"
+      }
+    ]
+  },
+  {
+    "sourceSlide": 16,
+    "id": "architecture",
+    "title": "Five layers of a unified AI-native application architecture",
+    "eyebrow": "Element runtime",
+    "intro": [
+      "JitAI application architecture is the overarching concept, not a runtime entity. Its executable entities and contracts form the layers below"
+    ],
+    "notes": [
+      "Every layer follows the same Type specifications and namespaces. Upper-layer elements call only lower-layer public capabilities, never their source directly.",
+      "The runtime loads and schedules all elements by contract, giving development and runtime AI a complete system environment and full visibility."
+    ],
+    "layers": [
+      {
+        "title": "Element specifications: contract layer",
+        "paragraphs": [
+          "Type definitions · Public capability contracts · Permission models · Namespaces shared by development and operations"
+        ]
+      },
+      {
+        "title": "Entry layer",
+        "paragraphs": [
+          "Messaging channels (Feishu / DingTalk / WeCom) · Business portals · External website embedding · Open APIs"
+        ]
+      },
+      {
+        "title": "Agent element layer",
+        "paragraphs": [
+          "Business agents · Long-running agents · Workflow orchestration agents · Skills · Plugins"
+        ]
+      },
+      {
+        "title": "Business application elements",
+        "paragraphs": [
+          "Models · Services · Pages and portals · Workflows · Events · Scheduled tasks"
+        ]
+      },
+      {
+        "title": "Foundation elements",
+        "paragraphs": [
+          "Element runtime · Databases · Cache · Object storage · Organizations and roles · Authorization · Auditing · Message queues"
+        ]
+      }
+    ]
+  },
+  {
+    "sourceSlide": 17,
+    "id": "chapter-17",
+    "title": "Two modes, one source: AI and people share the same business context",
+    "eyebrow": "Element runtime",
+    "notes": [
+      "AI and people use the same capabilities, without a second set of rules, permissions or entry points",
+      "Firm boundary: agents never write directly to the database. Changes use standardized business operations for financial consistency and auditability"
+    ],
+    "cards": [
+      {
+        "title": "Business agents: runtime AI",
+        "paragraphs": [
+          "Understand intent → Select authorized services → Record actions"
+        ]
+      },
+      {
+        "title": "People: manual operations",
+        "paragraphs": [
+          "Forms · Pages · Portals · Approvals"
+        ]
+      }
+    ],
+    "extras": [
+      {
+        "title": "Shared business foundation: a single source of truth",
+        "paragraphs": [
+          "The same data models",
+          "The same service functions",
+          "The same authorization checks",
+          "The same audit trails"
+        ]
+      }
+    ]
+  },
+  {
+    "sourceSlide": 18,
+    "id": "chapter-18",
+    "title": "Deterministic execution: precise programmatic logic stays outside the model",
+    "eyebrow": "Element runtime",
+    "notes": [
+      "Models analyze and judge; they do not execute financial, inventory or state changes"
+    ],
+    "cards": [
+      {
+        "title": "Language models: non-deterministic reasoning",
+        "paragraphs": [
+          "Understand goals, analyze situations and explain changes",
+          "Identify exceptions, propose solutions and handle ambiguity"
+        ]
+      },
+      {
+        "title": "System services: deterministic logic",
+        "paragraphs": [
+          "Calculate amounts, deduct inventory and manage batch states",
+          "Check permissions, execute approval transactions and reconcile accounts"
+        ]
+      }
+    ],
+    "extras": [
+      {
+        "title": "Responsibilities in real business questions: models provide evidence and systems execute decisions",
+        "paragraphs": []
+      }
+    ],
+    "examples": [
+      {
+        "title": "Can this order ship?",
+        "paragraphs": [
+          "AI summarizes customer credit and history",
+          "The system applies credit and release rules"
+        ]
+      },
+      {
+        "title": "Can this batch be released?",
+        "paragraphs": [
+          "AI retrieves inspection criteria and history",
+          "The system determines batch status and release"
+        ]
+      },
+      {
+        "title": "Do these balances reconcile?",
+        "paragraphs": [
+          "AI compares differences and explains exceptions",
+          "The system calculates amounts and reconciliation relationships"
+        ]
+      }
+    ]
+  },
+  {
+    "sourceSlide": 19,
+    "id": "chapter-19",
+    "title": "Agents as dedicated elements: modular and customized",
+    "eyebrow": "Element runtime",
+    "intro": [
+      "Four agent element forms"
+    ],
+    "notes": [
+      "Agent capabilities are elements too: the same specifications, builds, acceptance checks and records as business functions, including controlled entry points, minimal page context, result writeback and runtime records"
+    ],
+    "cards": [
+      {
+        "title": "Business agents",
+        "paragraphs": [
+          "Operate real business objects and workflows"
+        ]
+      },
+      {
+        "title": "Long-running agents",
+        "paragraphs": [
+          "Asynchronous extended execution, including unattended operation"
+        ]
+      },
+      {
+        "title": "Workflow orchestration",
+        "paragraphs": [
+          "Coordinate multi-step processes across activities"
+        ]
+      },
+      {
+        "title": "Embedded in external websites",
+        "paragraphs": [
+          "Expose controlled business intelligence to external users"
+        ]
+      }
+    ],
+    "extras": [
+      {
+        "title": "One focused agent per business function, instead of one general-purpose agent",
+        "paragraphs": [
+          "Sales, procurement, warehousing, production, quality, finance, HR and management operate within their own data, rules and permissions",
+          "Function-specific responsibilities · Focused expertise · Isolation to contain failures"
+        ]
+      }
+    ]
+  },
+  {
+    "sourceSlide": 20,
+    "id": "chapter-20",
+    "title": "Unified security and governance",
+    "eyebrow": "Element runtime",
+    "notes": [
+      "External access: API authentication · External client authorization · Third-party organization synchronization · Request-level cross-cutting processing"
+    ],
+    "cards": [
+      {
+        "title": "Shared RBAC and data scope",
+        "paragraphs": [
+          "Organizations, roles and data scope apply equally to people and agents",
+          "Agents can perform exactly the business capabilities they are authorized to use"
+        ]
+      },
+      {
+        "title": "Authorization before invocation",
+        "paragraphs": [
+          "Backend authorization, not interface visibility, controls access",
+          "Checks are specific to roles, workflow steps and data scope"
+        ]
+      },
+      {
+        "title": "End-to-end runtime records and auditing",
+        "paragraphs": [
+          "Backend requests, element execution, business exceptions and build diagnostics",
+          "Every business action is traceable and supports rollback"
+        ]
+      },
+      {
+        "title": "Sensitive-data filtering",
+        "paragraphs": [
+          "Keep secrets out of logs and raw variable values out of model context",
+          "Do not persist sensitive data; permissions determine what is visible"
+        ]
+      }
+    ]
+  },
+  {
+    "sourceSlide": 21,
+    "id": "chapter-21",
+    "title": "The two-track loop: development within the architecture, operations feeding development",
+    "flow": [
+      "Generate elements",
+      "Load and execute",
+      "Return execution results",
+      "Iterate and improve"
+    ],
+    "cards": [
+      {
+        "title": "Element development",
+        "paragraphs": [
+          "Read the abstract system model",
+          "Generate elements by Type specifications",
+          "Six automated checks",
+          "Deliver conforming element packages"
+        ]
+      },
+      {
+        "title": "Element specifications: the shared contract",
+        "paragraphs": [
+          "Type definitions · Public capabilities",
+          "Permission models · Namespaces"
+        ]
+      },
+      {
+        "title": "Element runtime",
+        "paragraphs": [
+          "Load elements by contract",
+          "Execute business logic and transitions",
+          "Runtime AI reasons and coordinates",
+          "Output states, exceptions and logs"
+        ]
+      }
+    ],
+    "extras": [
+      {
+        "title": "The value of the loop",
+        "paragraphs": [
+          "Development output becomes executable runtime elements. States, exceptions and logs return internally to development AI as runtime validation, the sixth check, driving continuous correction and iteration.",
+          "Development technology belongs to the architecture and development AI operates inside the system, fundamentally different from external AI tools."
+        ]
+      }
+    ]
+  },
+  {
+    "sourceSlide": 22,
+    "id": "chapter-22",
+    "title": "Deployment and integration options",
+    "eyebrow": "Element runtime",
+    "cards": [
+      {
+        "title": "Deployment options",
+        "paragraphs": [
+          "Private deployment: enterprise-owned infrastructure and data boundary",
+          "Multi-tenant SaaS: centrally hosted by the platform",
+          "Hybrid deployment: private core data with cloud-based peripheral capabilities"
+        ]
+      },
+      {
+        "title": "Model gateway",
+        "paragraphs": [
+          "Support multiple language-model providers through one interface",
+          "No dependency on a single model provider",
+          "Route by scenario: models handle judgment, services handle precise logic"
+        ]
+      }
+    ],
+    "extras": [
+      {
+        "title": "External systems and communication channels",
+        "paragraphs": [
+          "Messaging channels: Feishu, DingTalk and WeCom allow employees to perform business operations in conversations",
+          "Third-party systems connect through standard services and events without duplicating business rules",
+          "Open APIs expose controlled capabilities with full authorization and auditing"
+        ]
+      }
+    ]
+  },
+  {
+    "sourceSlide": 23,
+    "id": "chapter-23",
+    "title": "Industry positioning: external AI tools are not AI-native architecture",
+    "notes": [
+      "The core difference: other approaches lack a unified element type system derived from an abstract application model and a shared contract connecting development with operations. Their AI remains outside the architecture without full system visibility."
+    ],
+    "table": {
+      "headers": [
+        "Dimension",
+        "External agents",
+        "Traditional low-code",
+        "RPA",
+        "JitAI"
+      ],
+      "rows": [
+        [
+          "Is AI inside the system?",
+          "Outside the system",
+          "No AI-native design",
+          "Outside the system",
+          "Embedded in the system"
+        ],
+        [
+          "Full system visibility",
+          "API contracts only",
+          "Not supported",
+          "Interface elements only",
+          "Business objects and elements"
+        ],
+        [
+          "Unified element contract",
+          "None",
+          "Proprietary component specifications",
+          "None",
+          "Shared by development and operations"
+        ],
+        [
+          "Integrated development and operations",
+          "Separate",
+          "Separate",
+          "Separate",
+          "Development embedded in the architecture"
+        ],
+        [
+          "Runtime feedback into development",
+          "Relayed by people",
+          "Not available",
+          "Record and replay",
+          "Automatic feedback loop"
+        ]
+      ]
+    }
+  },
+  {
+    "sourceSlide": 24,
+    "id": "chapter-24",
+    "title": "Platform boundaries and technical direction",
+    "cards": [
+      {
+        "title": "Responsibilities the platform does not assume",
+        "paragraphs": [
+          "Replacing people in final business decisions",
+          "Performing exact financial and inventory calculations through AI; services handle these",
+          "General-purpose office and creative work",
+          "No dependency on a single model provider",
+          "Element modeling has a cost and requires acceptance testing with real data"
+        ]
+      },
+      {
+        "title": "Technical direction",
+        "paragraphs": [
+          "Continually improve element specifications",
+          "Industry templates and reusable element libraries",
+          "A marketplace for reusable skills and specialized agents",
+          "Partner-built Types and industry solutions"
+        ]
+      }
+    ],
+    "extras": [
+      {
+        "title": "Human-AI collaboration",
+        "paragraphs": [
+          "People set goals, handle exceptions and retain final responsibility. AI executes, reasons and records its actions. Collaboration, not an unstaffed enterprise"
+        ]
+      }
+    ]
+  },
+  {
+    "sourceSlide": 25,
+    "id": "chapter-25",
+    "title": "Summary: AI-native development and architecture working as one",
+    "intro": [
+      "AI-native means AI lives inside the system and can see the whole system and every element",
+      "Development technology belongs to the architecture; development AI and runtime AI are both first-class elements",
+      "The abstract application model provides knowledge and element specifications provide the shared contract",
+      "The two-track loop: development produces conforming elements, runtime executes them and returns feedback"
+    ],
+    "extras": [
+      {
+        "title": "Q & A",
+        "paragraphs": [
+          "Build AI-native enterprise systems with AI, and let AI drive business operations."
+        ]
+      }
+    ]
+  }
+]

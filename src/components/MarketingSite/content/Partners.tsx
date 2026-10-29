@@ -183,9 +183,9 @@ export default function Partners() {
 <div className="marketing-card reveal">
 <h3 className="h5 mb-16">{t("产品体系")}</h3>
 <ul className="bullets">
-<li><strong>{t("应用沙箱 & 工作台")}</strong>{t("：用于业务场景演示、搭建与验证")}</li>
+<li><strong>{t("组织与 AI 配额管理")}</strong>{t("：管理组织，为个人和 Agent 分别设置 Token 使用限额")}</li>
 <li><strong>{t("JitAI AI 开发助手")}</strong>{t("：支持对话式建模、生成、校验与迭代")}</li>
-<li><strong>{t("业务智能体能力集")}</strong>{t("：覆盖销售、采购、库存、生产、财务全经营场景")}</li>
+<li><strong>{t("应用部署运维")}</strong>{t("：管理应用部署、版本发布、运行环境与节点")}</li>
 <li><strong>{t("JitNode 运行时底座")}</strong>{t("：AI 原生系统核心，支撑所有业务运行")}</li>
 </ul>
 <div className="tag-row mt-16">

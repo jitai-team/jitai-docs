@@ -169,24 +169,23 @@ export default function Home() {
 <div className="marketing-card card-hover reveal">
 <div className="card-icon mb-16">
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-<rect x="4" y="8" width="16" height="12" rx="2"></rect>
-<circle cx="9" cy="14" r="1.2" fill="currentColor" stroke="none"></circle>
-<circle cx="15" cy="14" r="1.2" fill="currentColor" stroke="none"></circle>
-<path d="M12 8V4M8.5 4.6 9 8M15.5 4.6 15 8" strokeLinecap="round"></path>
+<rect x="3" y="3" width="18" height="7" rx="2"></rect>
+<rect x="3" y="14" width="18" height="7" rx="2"></rect>
+<path d="M7 6.5h.01M7 17.5h.01M11 6.5h6M11 17.5h6" strokeLinecap="round"></path>
 </svg>
 </div>
-<h3 className="h5">{t("业务智能体能力集")}</h3>
-<p className="small mt-8">{t("按业务板块内嵌的专用智能体，权限与规则可管、动作可审计。")}</p>
+<h3 className="h5">{t("应用部署运维")}</h3>
+<p className="small mt-8">{t("统一管理应用部署、版本发布、运行环境与节点，覆盖日常运维。")}</p>
 </div>
 <div className="marketing-card card-hover reveal">
 <div className="card-icon mb-16">
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-<path d="M21 8v8a2 2 0 0 1-1 1.73l-7 4a2 2 0 0 1-2 0l-7-4A2 2 0 0 1 3 16V8a2 2 0 0 1 1-1.73l7-4a2 2 0 0 1 2 0l7 4A2 2 0 0 1 21 8Z" strokeLinejoin="round"></path>
-<path d="m3.3 7 8.7 5 8.7-5M12 22V12" strokeLinejoin="round"></path>
+<circle cx="9" cy="8" r="3"></circle>
+<path d="M3 21v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6M18 15a5 5 0 0 1 3 4v2" strokeLinecap="round"></path>
 </svg>
 </div>
-<h3 className="h5">{t("应用沙箱 & 企业工作台")}</h3>
-<p className="small mt-8">{t("可视化搭建与调试，先跑通一个场景再全面推广。")}</p>
+<h3 className="h5">{t("组织与 AI 配额管理")}</h3>
+<p className="small mt-8">{t("统一管理组织，为个人和 Agent 分别设置 Token 使用限额，控制 AI 用量与成本。")}</p>
 </div>
 </div>
 <div className="section-head mt-40 reveal">

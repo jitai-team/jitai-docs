@@ -11,6 +11,7 @@ export default function MarketingLayout({ route, title, description, children }:
 }) {
   const { isZh, text, path } = useMarketingCopy();
   const { theme, toggleTheme } = useMarketingTheme();
+  const pageTitle = route === '/' ? title : `${title} | JitAI`;
   const root = useRef<HTMLDivElement>(null);
   useEffect(() => {
     // A direct visit to an English page should keep its Home link in English.
@@ -63,13 +64,13 @@ export default function MarketingLayout({ route, title, description, children }:
   }, [route]);
   return <div ref={root} className="marketing-site" data-marketing-theme={theme}>
     <Head>
-      <title>{title} | JitAI</title>
+      <title>{pageTitle}</title>
       <meta name="description" content={description} />
-      <meta property="og:title" content={`${title} | JitAI`} />
+      <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={LOGO_DARK} />
       <meta property="og:url" content={`https://jit.pro${path(route)}`} />
-      <meta name="twitter:title" content={`${title} | JitAI`} />
+      <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="theme-color" content={theme === 'dark' ? '#0a0d13' : '#f4f5f7'} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />

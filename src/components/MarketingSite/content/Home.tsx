@@ -3,7 +3,7 @@ import { useMarketingCopy } from "../copy";
 import ContactSection from "../ContactSection";
 
 export default function Home() {
-  const { t, path } = useMarketingCopy();
+  const { t, text, path, brand } = useMarketingCopy();
   return <>
 
 <section className="marketing-hero">
@@ -42,9 +42,9 @@ export default function Home() {
 </div>
 <div className="hero-veil" aria-hidden="true"></div>
 <div className="wrap hero-inner">
-<p className="kicker reveal">{t("AI 时代开发和运行一体化平台")}</p>
-<h1 className="h1 mt-16 reveal">{t("打造 AI 原生系统，")}<br />{t("让 AI 看懂您的业务全貌")}</h1>
-<p className="lead mt-24 reveal">{t("JitAI，AI 时代开发和运行一体化平台，构建")}<b className="mark">{t("AI 原生")}</b>{t("的业务系统和 AI 智能体， 实现 AI 化转型，撬动业务增长的 AI 杠杆。")}</p>
+<p className="kicker reveal">{brand.productTitle}</p>
+<h1 className="h1 mt-16 reveal">{text("构建 AI 原生系统，", "Build AI-Native Systems,")}<br />{text("释放 AI 无限潜能", "Unleash the Full Potential of AI")}</h1>
+<p className="lead mt-24 reveal">{text("JitAI，轻松构建", "JitAI makes it easy to build ")}<b className="mark">{text("AI 原生", "AI-native")}</b>{text("的业务系统，让 AI 看懂您的业务全貌，最大化释放 AI 智力生产力。", " business systems, gives AI the full picture of your business, and maximizes the productivity of AI intelligence.")}</p>
 <div className="btn-row mt-32 reveal">
 <a className="btn btn-primary btn-lg" href={path("/download")}>
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
@@ -52,7 +52,7 @@ export default function Home() {
 </svg>{t("免费体验桌面版")}</a>
 <a className="btn btn-ghost btn-lg" href={path("/about#contact")}>{t("预约企业落地沟通")}</a>
 </div>
-<p className="hero-note reveal">{t("与外挂式通用桌面 Agent、AI 代码助手不同，JitAI 的 AI 和 AI 开发都内生在系统之中。")}</p>
+<p className="hero-note reveal">{t("与外挂式桌面 AI 智能体不同，JitAI 的业务 AI 和开发 AI 都内生在业务系统之中。")}</p>
 </div>
 </section>
 

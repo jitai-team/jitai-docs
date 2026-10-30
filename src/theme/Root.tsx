@@ -9,7 +9,7 @@ export default function Root({children}: RootProps) {
   const {i18n} = useDocusaurusContext();
   const { pathname } = useLocation();
   const pagePath = pathname.replace(/^\/zh(?=\/|$)/, '').replace(/\/$/, '') || '/';
-  const hasPageMetadata = ['/', '/solutions', '/whitepaper', '/cases', '/partners', '/about', '/contact', '/download', '/privacy', '/terms-of-service'].includes(pagePath);
+  const hasPageMetadata = ['/', '/solutions', '/whitepaper', '/cases', '/partners', '/about', '/contact', '/download', '/privacy', '/terms-of-service'].includes(pagePath) || /^\/feature-(auto|twin|ai-native|private|dual-mode|robust|evolving|governance|dialog-code)$/.test(pagePath);
   const isZh = i18n.currentLocale.startsWith('zh');
 
   const { title, description } = BRAND_COPY[isZh ? 'zh' : 'en'];

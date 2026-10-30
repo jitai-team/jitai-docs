@@ -1,9 +1,12 @@
 import React from "react";
 import { useMarketingCopy } from "../copy";
 import ContactSection from "../ContactSection";
+import featuresZh from './features-zh.json';
+import featuresEn from './features-en.json';
 
 export default function Home() {
-  const { t, text, path, brand } = useMarketingCopy();
+  const { t, text, path, brand, isZh } = useMarketingCopy();
+  const features = isZh ? featuresZh : featuresEn;
   return <>
 
 <section className="marketing-hero">
@@ -44,7 +47,7 @@ export default function Home() {
 <div className="wrap hero-inner">
 <p className="kicker reveal">{brand.productTitle}</p>
 <h1 className="h1 mt-16 reveal">{text("构建 AI 原生系统，", "Build AI-Native Systems,")}<br />{text("释放 AI 无限潜能", "Unleash the Full Potential of AI")}</h1>
-<p className="lead mt-24 reveal">{text("JitAI，轻松构建", "JitAI makes it easy to build ")}<b className="mark">{text("AI 原生", "AI-native")}</b>{text("的业务系统，让 AI 看懂您的业务全貌，最大化释放 AI 智力生产力。", " business systems, gives AI the full picture of your business, and maximizes the productivity of AI intelligence.")}</p>
+<p className="lead mt-24 reveal">{text("JitAI，轻松构建", "JitAI makes it easy to build ")}<b className="mark">{text("AI 原生", "AI-native")}</b>{text("的业务系统，让 AI 看懂您的业务全貌，最大化释放 AI 生产力，用 AI 智力驱动企业业务运转。", " business systems, gives AI the full picture of your business, maximizes AI productivity, and applies AI intelligence to business operations.")}</p>
 <div className="btn-row mt-32 reveal">
 <a className="btn btn-primary btn-lg" href={path("/download")}>
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
@@ -56,10 +59,38 @@ export default function Home() {
 </div>
 </section>
 
+<section className="section section-alt zero-barrier-section">
+<div className="wrap">
+<div className="section-head reveal">
+<p className="kicker">{text("零门槛开发", "Development without a technical barrier")}</p>
+<h2 className="h2 mt-16">{text("自动化构建，无需专业 IT 知识技能基础", "Build automatically without a professional IT background")}</h2>
+<p className="lead mt-16">{text("业务人员描述业务，AI 生成系统功能，即时生效使用。", "Business users describe their work; AI generates system capabilities that can be used after validation.")}<br />{text("不用懂 Agent 开发、不用会写代码，", "No agent development or coding background is needed. ")}<strong>{text("非 IT 专业人员也能开发专业的 AI 原生系统", "People outside IT can build professional AI-native systems")}</strong>{text("。", ".")}</p>
+</div>
+<div className="grid g-3 mt-32 reveal">
+<div className="marketing-card"><div className="row gap-12 mb-12"><span className="num-badge">01</span><h3 className="h5">{text("描述业务", "Describe the business")}</h3></div>
+<div className="code"><span className="c-com">{text("// 业务人员输入", "// Business user input")}</span><br />{text("“帮我建一个销售订单审批流，金额超过 5 万自动升级总经理审批。”", '"Create a sales order approval flow. Orders above 50,000 require general manager approval."')}</div>
+<p className="small mt-8">{text("说人话即可，不写代码、不画流程图。", "Describe the need in business terms, without code or a flowchart.")}</p></div>
+<div className="marketing-card"><div className="row gap-12 mb-12"><span className="num-badge">02</span><h3 className="h5">{text("生成元素", "Generate elements")}</h3></div>
+<div className="code"><span className="c-com">{text("// AI 生成规范化元素", "// AI-generated standardized elements")}</span><br />✓ <span className="c-key">models.SalesOrder</span> {text("销售订单", "Sales order")}<br />✓ <span className="c-key">services.Approval</span> {text("审批流", "Approval flow")}<br />✓ <span className="c-key">pages.ApprovalDesk</span> {text("审批台", "Approval desk")}<br />✓ <span className="c-key">agents.OrderHelper</span> {text("订单助手", "Order assistant")}</div>
+<p className="small mt-8">{text("产出的不是代码片段，是可运行的专业系统构件。", "The output is runnable system components, not isolated code snippets.")}</p></div>
+<div className="marketing-card card-ok"><div className="row gap-12 mb-12"><span className="num-badge">03</span><h3 className="h5">{text("即时生效", "Take effect")}</h3></div>
+<div className="code"><span className="c-com">{text("// 六项校验通过", "// Six checks passed")}</span><br /><span className="c-str">{text("● 审批台已上线", "● Approval desk is live")}</span><br />{text("规则：金额 > 5 万 → 总经理", "Rule: amount > 50,000 → general manager")}<br />{text("全链路审计已开启", "End-to-end audit enabled")}</div>
+<p className="small mt-8">{text("校验通过后即可生效，无需等待传统上线排期。", "Changes take effect after validation without a traditional release schedule.")}</p></div>
+</div>
+<div className="table-wrap mt-32 reveal"><table className="data"><thead><tr><th>{text("系统构建", "Building the system")}</th><th>{text("过去", "Before")}</th><th className="col-us">{text("用 JitAI", "With JitAI")}</th></tr></thead><tbody>
+<tr><td>{text("谁来建", "Who builds it")}</td><td>{text("业务提需求 → 产品翻译 → 研发实现", "Business requests → product interpretation → engineering")}</td><td className="col-us yes">{text("业务人员自己建", "Business users build it themselves")}</td></tr>
+<tr><td>{text("怎么建", "How")}</td><td>{text("写代码、拖控件、配流程", "Write code, drag controls, configure flows")}</td><td className="col-us">{text("用业务语言对话描述", "Describe it in business language")}</td></tr>
+<tr><td>{text("需要什么背景", "Required background")}</td><td>{text("会编程、懂数据库设计", "Programming and database design")}</td><td className="col-us">{text("懂业务就够了", "Business knowledge is enough to start")}</td></tr>
+<tr><td>{text("多久见效", "Time to value")}</td><td>{text("排期开发到上线，以月计", "Planned development and release can take months")}</td><td className="col-us">{text("校验通过后生效", "Available after validation")}</td></tr>
+</tbody></table></div>
+<p className="quote-line mt-32 reveal">{text("懂业务的人，终于可以自己造系统。", "The people who know the business can now build its systems.")}<br />{text("系统构建权，第一次从 IT 部门回到业务一线。", "System creation moves closer to the people doing the work.")}</p>
+</div>
+</section>
+
 <section className="section">
 <div className="wrap">
 <div className="section-head reveal">
-<p className="kicker">{t("行业现状")}</p>
+<p className="kicker">{text("为什么过去做不到", "Why this was difficult before")}</p>
 <h2 className="h2 mt-16">{t("企业 AI 落地的两座大山")}</h2>
 </div>
 <div className="grid g-2">
@@ -193,15 +224,7 @@ export default function Home() {
 <h2 className="h2 mt-16">{t("JitAI 企业系统的九大特性")}</h2>
 </div>
 <div className="grid g-3">
-<div className="marketing-card card-flat reveal"><h3 className="h5">{t("自动生成")}</h3><p className="small mt-8">{t("AI 开发助手构建，无需手写")}</p></div>
-<div className="marketing-card card-flat reveal"><h3 className="h5">{t("业务孪生")}</h3><p className="small mt-8">{t("全场景映射真实业务")}</p></div>
-<div className="marketing-card card-flat reveal"><h3 className="h5">{t("AI 原生")}</h3><p className="small mt-8">{t("感知 / 理解 / 调用 / 执行")}</p></div>
-<div className="marketing-card card-flat reveal"><h3 className="h5">{t("企业私有")}</h3><p className="small mt-8">{t("私有化部署，数据自有")}</p></div>
-<div className="marketing-card card-flat reveal"><h3 className="h5">{t("双模同源")}</h3><p className="small mt-8">{t("智能与功能同一体系")}</p></div>
-<div className="marketing-card card-flat reveal"><h3 className="h5">{t("规范健壮")}</h3><p className="small mt-8">{t("规范化元素，六项验证")}</p></div>
-<div className="marketing-card card-flat reveal"><h3 className="h5">{t("持续扩展")}</h3><p className="small mt-8">{t("动态演变，随需而变")}</p></div>
-<div className="marketing-card card-flat reveal"><h3 className="h5">{t("可控可治理")}</h3><p className="small mt-8">{t("可审计、可追溯、可回退")}</p></div>
-<div className="marketing-card card-flat reveal"><h3 className="h5">{t("对话开发 + 源码兜底")}</h3><p className="small mt-8">{t("无需碰码，也可源码定制")}</p></div>
+{features.map(feature => <a key={feature.slug} className="marketing-card card-flat feature-card reveal" href={path(`/${feature.slug}`)}><h3 className="h5">{feature.name}</h3><p className="small mt-8">{feature.grid}</p><span className="feature-more">{text("了解详情", "Explore feature")} <span aria-hidden="true">→</span></span></a>)}
 </div>
 <div className="section-head mt-40 reveal">
 <p className="kicker">{t("交付形态")}</p>
@@ -266,6 +289,7 @@ export default function Home() {
 <p className="lead mt-16">{t("企业运转得快不快，不取决于文档写多快，而取决于大大小小的决策做得多快、多准， 采购多少？补不补货？订单接不接？价格怎么定？异常怎么处理？资源怎么分配？")}<strong>{t("决策越准越快，企业整体才会快。")}</strong>
 </p>
 </div>
+<p className="quote-line mt-32 reveal">{text("AI 的下一阶段，是进入企业组织做系统性的判断决策—— 这才是组织生产力的真正释放点。", "The next stage for AI is systematic decision-making within the enterprise — where organizational productivity can truly improve.")}</p>
 <div className="grid g-3 mt-32">
 <div className="marketing-card center reveal">
 <h3 className="h5">{t("会聊天")}</h3>
@@ -280,7 +304,6 @@ export default function Home() {
 <p className="small mt-8">{t("做经营决策")}<br />{t("驱动增长")}</p>
 </div>
 </div>
-<p className="quote-line mt-32 reveal">{t("AI 的下一阶段，是替企业做经营决策 —— 这才是组织生产力的真正释放点。")}</p>
 <p className="small dim center mt-40 reveal">{t("—— JitAI 的兑现方式 ——")}</p>
 <div className="grid g-4">
 <div className="marketing-card reveal">

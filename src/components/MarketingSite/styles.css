@@ -1479,6 +1479,16 @@
 .marketing-site .marketing-card .stat-label { margin-top: 12px; }
 .marketing-site .g-6 > .card-hover { padding: 24px 16px; display: flex; align-items: center; justify-content: center; }
 .marketing-site .contact-grid > aside { gap: 20px; }
+.marketing-site .zero-barrier-section .code { min-height: 166px; white-space: normal; overflow-wrap: anywhere; line-height: 1.75; }
+.marketing-site .zero-barrier-section .grid > .marketing-card { min-width: 0; }
+.marketing-site a.feature-card { display: block; color: inherit; text-decoration: none; transition: transform 0.18s var(--ease), border-color 0.18s var(--ease), box-shadow 0.18s var(--ease); }
+.marketing-site a.feature-card:hover { border-color: var(--accent-line); transform: translateY(-2px); box-shadow: var(--shadow); }
+.marketing-site a.feature-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.marketing-site .feature-more { display: inline-block; margin-top: 12px; font-size: var(--step--1); color: var(--accent); }
+.marketing-site .feature-more::after { content: ""; display: block; width: 0; height: 1px; margin-top: 2px; background: var(--accent); transition: width 0.18s var(--ease); }
+.marketing-site a.feature-card:hover .feature-more::after { width: 100%; }
+.marketing-site .feature-intro { padding-block: clamp(48px, 6vw, 72px); }
+.marketing-site .feature-actions { justify-content: center; }
 @media (max-width: 720px) {
   .marketing-site .marketing-card > .steps > .step { padding: 20px 0; }
   .marketing-site .marketing-card > .steps > .step + .step { border-left: 0; border-top: 1px solid var(--border); }

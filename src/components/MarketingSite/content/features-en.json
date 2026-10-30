@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "feature-auto", "num": "01", "name": "AI generation", "grid": "Built with the AI development assistant, without hand-written code",
+    "desc": "The AI development assistant generates standardized elements directly from element specifications. Six automated checks and runtime feedback validate the results.",
+    "lead": "Business requirements in, system capabilities out. The AI development assistant generates standardized elements from platform specifications, without hand-written code.",
+    "what": "Automatic generation in JitAI means more than AI helping you write code. AI produces system components directly under platform contracts: models, services, pages, workflows and agents are all delivered as elements that conform to specifications and are recognized by the runtime.",
+    "what_points": ["Describe requirements in a conversation; AI breaks them into elements and generates each one", "The output is standardized elements, rather than scattered code snippets", "Elements enter execution after passing all six automated checks"],
+    "pain": ["<strong>Traditional AI coding</strong>: an open programming space permits unbounded types of errors, and output still requires compilation and deployment", "<strong>Low-code platforms</strong>: people configure controls manually, while complex logic remains difficult to express", "<strong>Outsourced development</strong>: requirements become documents and then code, with delivery measured in months"],
+    "how": [["Contract-constrained generation", "Type specifications constrain the form of AI output, reducing unbounded errors to enumerable categories"], ["Six automated checks", "Validate source code, app relationships, builds, loading, functionality and runtime behavior"], ["Validation as feedback", "Validation results and runtime exceptions return directly to development AI without manual retelling"], ["Required design clarification", "Unresolved ambiguity prevents a design from being confirmed; persisted records contain facts rather than conversation history"]],
+    "quote": "AI produces elements inside the system under contracts, rather than writing code outside it."
+  },
+  {
+    "slug": "feature-twin", "num": "02", "name": "Business twins", "grid": "Map real business operations across scenarios",
+    "desc": "The system mirrors business reality: objects, field semantics, relationships, state rules and processes all have representations that give AI the full business picture.",
+    "lead": "Mirror business reality in the system: business objects, processes and rules each have a representation, giving AI the full picture.",
+    "what": "Business twins are a prerequisite for AI to understand a business. JitAI's element model places business semantics and technical components together: an order is more than a table, customer credit is more than a field, and state transition rules live on the elements themselves.",
+    "what_points": ["Elements carry business objects, field semantics, relationship constraints and state rules", "AI sees the full landscape of objects and elements, rather than only function names and parameters", "Parent Apps define shared rules; child Apps override elements by name, accommodating both headquarters and branches"],
+    "pain": ["<strong>External agents</strong>: API access exposes only function names, parameters and return values", "<strong>Missing business context</strong>: business objects, field semantics, relationship constraints and state rules remain invisible", "<strong>Conflicting rules</strong>: headquarters needs consistency while branches need flexibility, creating ongoing tension in the system"],
+    "how": [["Elements carry semantics", "Business semantics and technical components live together, where AI can read them directly"], ["App inheritance", "Parent Apps hold shared rules; child Apps override same-name elements with local rules"], ["Full visibility", "The full landscape of objects and elements is available to AI, beyond interface and API views"], ["Rules as elements", "State transitions, approval chains and validation rules are all elements AI can understand"]],
+    "quote": "For AI to understand a business, the business must actually be represented in the system."
+  },
+  {
+    "slug": "feature-ai-native", "num": "03", "name": "AI-native", "grid": "Perceive / understand / invoke / execute",
+    "desc": "AI is a first-class element: it shares specifications, builds and governance with business elements and is scheduled by the runtime across development and operations.",
+    "lead": "AI is a first-class element of the system, able to perceive the system, understand the business, invoke capabilities and drive execution.",
+    "what": "External AI tools do not make an architecture AI-native. In JitAI, AI and business elements share specifications, builds and governance, with unified scheduling by the runtime. AI spans development and operations: it helps build the system and runs inside it.",
+    "what_points": ["AI is a first-class element under the same specifications as business elements", "AI can perceive, understand, invoke and drive the system", "AI capabilities are governed together with the element system rather than operating outside it"],
+    "pain": ["<strong>External agents</strong>: AI operates outside the system with only a partial view through APIs", "<strong>Isolated capabilities</strong>: AI knowledge and permissions remain on individual desktops and cannot be reused", "<strong>Disconnected systems</strong>: AI and the business system remain separate and grow further apart with use"],
+    "how": [["AI as a first-class element", "Agents and business elements share specifications, builds and governance"], ["Across both sides", "AI participates in both system development and operations, bringing intelligence to each"], ["Unified scheduling", "The runtime schedules AI without people manually carrying context between tools"], ["Capabilities as elements", "LLMs, Skills, RAG and plugins are members of element families, composed as needed"]],
+    "quote": "AI-native means making systems understandable and usable by AI."
+  },
+  {
+    "slug": "feature-private", "num": "04", "name": "Enterprise ownership", "grid": "Private deployment, enterprise-owned data",
+    "desc": "Support private, multitenant SaaS and hybrid deployments. Keep data within your environment and element source code in enterprise-controlled version management, without dependence on one model provider.",
+    "lead": "Deploy privately and keep data within your environment. Manage element source code in your own version control, without being locked into one model provider.",
+    "what": "Enterprise data and system assets should belong to the enterprise. JitAI supports private deployment with data kept within the enterprise environment, multitenant SaaS and hybrid deployment. Element source code is the single business source of truth and stays in the enterprise's own version management system.",
+    "what_points": ["Private deployment keeps data within your environment", "Element source code is managed under enterprise-owned version control", "A model gateway adapts multiple model providers and routes requests by scenario"],
+    "pain": ["<strong>Data concerns</strong>: business data leaving the enterprise environment creates security and compliance barriers", "<strong>Vendor lock-in</strong>: dependence on one model or platform weakens negotiating power and makes migration difficult", "<strong>Loss of assets</strong>: system assets remain scattered across service providers rather than retained by the enterprise"],
+    "how": [["Three deployment options", "Choose private deployment, multitenant SaaS or a hybrid deployment as needed"], ["Model gateway", "Adapt multiple model providers and route judgment and deterministic logic according to the scenario"], ["Enterprise-owned source", "Element source code is the single business source of truth, under enterprise-owned version management"], ["Open integration", "IM channels, third-party systems and open APIs include authentication and auditing"]],
+    "quote": "Keep data within your environment, own your source code and choose your models freely."
+  },
+  {
+    "slug": "feature-dual-mode", "num": "05", "name": "Two modes, one foundation", "grid": "AI and application functions share one system",
+    "desc": "People use forms and approvals; agents interpret intent and invoke capabilities. Both share data models, service functions, permission checks and audit trails.",
+    "lead": "People and agents take different paths through one system while sharing the same foundation: data models, service functions, permissions and auditing.",
+    "what": "Two modes on one foundation resolve the split between AI and business systems. People use forms and approvals; agents interpret intent, invoke authorized services and record their actions. Both paths share data models, service functions, permission checks and audit trails.",
+    "what_points": ["People and agents share the same data models and service functions", "One set of permission checks and audit trails, without parallel systems", "Agents do not write directly to the database; changes go through standard business interfaces"],
+    "pain": ["<strong>Separate permission systems</strong>: AI bypasses business permissions and processes", "<strong>Audit gaps</strong>: AI actions cannot be traced or rolled back", "<strong>Accuracy risks</strong>: deterministic logic such as financial amounts and inventory is delegated to language models"],
+    "how": [["Shared source and foundation", "Development and operations share element contracts, and people and AI share business context"], ["Enforced constraints", "Agents do not write directly to databases; all changes pass through standardized business interfaces"], ["Deterministic execution", "Exact logic for amounts, inventory and state transitions executes outside language models"], ["Separate responsibilities", "AI uses evidence to assess situations; system rules make determinations, with a record throughout"]],
+    "quote": "AI handles judgment and decisions under uncertainty; system functions execute deterministic transactions."
+  },
+  {
+    "slug": "feature-robust", "num": "06", "name": "Robust by specification", "grid": "Standardized elements, six validation stages",
+    "desc": "Type specifications constrain AI output, reducing unbounded errors to enumerable categories. Six automated checks validate each layer from source code to runtime.",
+    "lead": "Element specifications are the single contract between development and operations. Type constraints make errors enumerable, and six automated checks validate everything from source to runtime.",
+    "what": "JitAI constrains all output through element specifications. Types define declarations, resources, capabilities, loading and validation. AI produces within these constraints, reducing errors from unlimited possibilities to an enumerable list, then eliminating them through six stages of automated validation.",
+    "what_points": ["Standardization: Types define declarations, resources, capabilities, loading and validation", "Self-description: declarations and resources live together as a complete unit", "Self-loading and replacement: resolve by fullName and override by name without modifying the parent App"],
+    "pain": ["<strong>Unbounded errors</strong>: unconstrained programming allows types of AI errors that cannot be exhaustively enumerated", "<strong>Manual recovery</strong>: without automatic feedback, errors must be found through manual testing", "<strong>Weak constraints</strong>: relying only on prompts leaves output quality unpredictable"],
+    "how": [["Type constraints", "Specifications guide the generation of standardized elements, connecting development directly to execution"], ["Six-stage validation", "Source → app relationships → build → loading → functional validation → runtime validation"], ["Three disciplines", "Specifications before code; collaborate only through public capabilities; validate changes from the entry App"], ["Context retrieved on demand", "An element is the smallest unit that can be independently built and validated"]],
+    "quote": "Errors become enumerable, and quality is upheld by the system rather than relying on people alone."
+  },
+  {
+    "slug": "feature-evolving", "num": "07", "name": "Continuous evolution", "grid": "Evolve dynamically as requirements change",
+    "desc": "Hot-pluggable, hot-updatable elements take effect once requirements are confirmed. Three feedback streams drive self-evolution and deepen the system's understanding of the business.",
+    "lead": "Once requirements are confirmed, system changes take effect immediately without waiting for compilation, deployment or a release window. Continuous runtime feedback helps the system understand the business better over time.",
+    "what": "As business changes, the system must keep pace. JitAI elements support hot plugging and hot updates, allowing new requirements to enter the system as new elements and take effect immediately. Runtime state, exceptions and logs continuously return to development AI, forming a feedback loop that drives self-evolution.",
+    "what_points": ["Hot-pluggable, hot-updatable elements make changes effective immediately", "Three feedback streams: system runtime, agents and people", "Child Apps extend behavior with same-name overrides without changing parent App behavior"],
+    "pain": ["<strong>Release cycles</strong>: even small changes require compilation, deployment and release windows measured in weeks", "<strong>Growing rigidity</strong>: a system becomes fixed at launch and cannot keep pace with business changes", "<strong>Lost feedback</strong>: operational problems never reach development, so mistakes recur"],
+    "how": [["JitNode runtime", "Standardized, self-describing elements with hot plugging and hot updates"], ["Feedback loop", "Runtime results automatically return to development, closing the iteration loop"], ["Three feedback streams", "System runtime feedback, agent feedback and human feedback"], ["Extension through overrides", "Child Apps override same-name elements with local rules, supporting different customers on one foundation"]],
+    "quote": "The system understands your business better with use, and its capabilities grow with your needs."
+  },
+  {
+    "slug": "feature-governance", "num": "08", "name": "Control and governance", "grid": "Auditable, traceable and reversible",
+    "desc": "Shared permissions and data scopes cover people and agents. Pre-call authorization, end-to-end auditing and sensitive-data filtering keep AI behavior under control.",
+    "lead": "People and agents share organizations, roles and data scopes. Every business action can be audited, traced and rolled back.",
+    "what": "Control is a prerequisite for agents to enter production systems. JitAI brings agents under the same governance as business elements: shared permissions and data scopes, authorization before backend calls, end-to-end audit records and automatic sensitive-data filtering.",
+    "what_points": ["Shared permissions and data scopes for people and agents", "Permission checks before calls; page visibility does not substitute for authorization", "End-to-end auditing makes each business action traceable and reversible"],
+    "pain": ["<strong>Governance gaps</strong>: AI capabilities remain on individual desktops, beyond unified enterprise management", "<strong>Unauthorized access</strong>: AI connects directly to databases and bypasses business rules and authorization", "<strong>Missing records</strong>: when something goes wrong, AI actions and their supporting evidence cannot be reconstructed"],
+    "how": [["One governance system", "All elements and agents share permissions, data scopes and audit trails"], ["Backend permission enforcement", "The base framework enforces authorization before calls"], ["End-to-end auditing", "Record business actions step by step to support traceability and rollback"], ["Sensitive-data filtering", "Keep secrets out of logs and sensitive data off disk"]],
+    "quote": "People set goals, handle exceptions and hold final responsibility; AI executes, assesses and records its actions."
+  },
+  {
+    "slug": "feature-dialog-code", "num": "09", "name": "Conversation + source code", "grid": "Build without touching code, customize with source when needed",
+    "desc": "Conversational development lets business users work without touching source code. Source remains visible and editable, so developers can take over for deeper customization.",
+    "lead": "Build through conversation by default, without business users touching code. Source remains visible and editable whenever deeper customization is needed.",
+    "what": "JitAI does not lock enterprises into a single development method. Handle everyday needs through conversation with the AI development assistant. For deeper customization, developers can edit element source directly, because output consists of standard source code and design documents from the start, rather than a black box.",
+    "what_points": ["Conversational development: describe the business and let AI generate the system", "Source code stays visible and editable, rather than hidden in a black box", "Standard source code and design documents let the enterprise take over at any time"],
+    "pain": ["<strong>Low-code black boxes</strong>: configuration stays under platform control, leaving no entry point for deeper customization", "<strong>Code-only barriers</strong>: business users cannot participate and must queue every request for engineering", "<strong>Difficult handovers</strong>: switching service providers means starting over, leaving previous assets behind"],
+    "how": [["AI development assistant", "Conversational development keeps business users away from source code by default"], ["Source-code fallback", "Visible, editable source lets developers work directly on complex scenarios"], ["Persistent design documents", "System design facts stay alongside source code so handovers retain context"], ["A different development paradigm", "Type constraints generate standardized elements, distinguishing this approach from free-form programming and specification-driven development"]],
+    "quote": "Start with conversation and fall back to source code: both paths lead to the same system."
+  }
+]
